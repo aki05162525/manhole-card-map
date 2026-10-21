@@ -109,7 +109,8 @@ go run ./cmd/ocrcheck -list data/raw/gkp-list-20261021.html
 
 ## 確認待ちの整理（2026-10-21）
 
-確認待ちの 46 枚をすべて目で確認し、結果を `data/overrides/cards.json` に記録した。
+確認待ちの 46 枚をすべて Claude（AI）が画像を拡大して目で確認し、結果を `data/overrides/cards.json` に記録した。
+人による確認はまだ行っておらず、記録には確認した者（`reviewer`）を残している。
 この記録は取り込み直しても消さない。
 次回の読み取りで結果が確認時と同じなら確認済みとして扱い、変わっていれば確認し直す（`cmd/ocrcheck`）。
 
