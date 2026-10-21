@@ -27,6 +27,7 @@ func main() {
 	indices := flag.String("indices", "", "取得する行の番号（0 始まり、カンマ区切り）")
 	all := flag.Bool("all", false, "すべての行の画像を取得する")
 	interval := flag.Duration("interval", time.Second, "取得の間隔")
+	maxFailures := flag.Int("max-failures", 3, "取得の失敗がこの回数続いたら停止する")
 	flag.Parse()
 	if *list == "" || (*indices == "") == !*all {
 		log.Fatal("使い方: fetchimages -list <HTML> (-indices 0,1,2 | -all)")
@@ -58,7 +59,7 @@ func main() {
 	}
 
 	client := &http.Client{Timeout: 60 * time.Second}
-	fetched, skipped, failed := 0, 0, 0
+	fetched, skipped, failed, streak := 0, 0, 0, 0
 	for _, r := range targets {
 		out := filepath.Join(*outDir, imageFileName(r.ImageURL))
 		if _, err := os.Stat(out); err == nil {
@@ -71,9 +72,14 @@ func main() {
 		if err := download(client, imageURL(r.ImageURL), out); err != nil {
 			log.Printf("失敗: 行 %d %s: %v", r.Index, r.ImageURL, err)
 			failed++
+			if streak++; streak >= *maxFailures {
+				log.Printf("失敗が %d 回続いたため停止する。同じコマンドで続きから再開できる", streak)
+				break
+			}
 			continue
 		}
 		fetched++
+		streak = 0
 		fmt.Printf("取得 %d/%d: %s\n", fetched+skipped+failed, len(targets), out)
 	}
 	fmt.Printf("取得: %d / 保存済みのため省略: %d / 失敗: %d\n", fetched, skipped, failed)
