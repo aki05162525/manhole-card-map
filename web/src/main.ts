@@ -66,6 +66,7 @@ async function show(ids: string[]) {
   const close = text("button", "閉じる");
   close.onclick = () => {
     detail.hidden = true;
+    adapter.select([]);
   };
   detail.append(close);
   for (const id of ids) {

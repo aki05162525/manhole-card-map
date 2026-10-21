@@ -54,18 +54,18 @@ main {
   min-height: 320px;
   background: #dbe8e9;
 }
+main:has(#detail:not([hidden])) #map {
+  height: 35vh;
+  min-height: 220px;
+}
 #detail {
-  position: absolute;
-  z-index: 1000;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  max-height: 45vh;
+  margin: 10px;
+  max-height: 30vh;
   overflow: auto;
   background: white;
   padding: 14px;
   border-radius: 12px;
-  box-shadow: 0 4px 24px #0004;
+  border: 1px solid #9baea9;
 }
 #detail h2 {
   margin: 0;
