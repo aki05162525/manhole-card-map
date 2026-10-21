@@ -183,6 +183,7 @@ export const create: Create = (pins, onSelect, view) => {
       map.on("moveend", fn);
     },
     select(ps) {
+      map.resize();
       if (!map.getSource("selected")) return;
       (map.getSource("selected") as GeoJSONSource).setData(geo(ps));
       if (ps.length) {
@@ -190,7 +191,7 @@ export const create: Create = (pins, onSelect, view) => {
         ps.forEach((p) => b.extend([p.lng, p.lat]));
         map.fitBounds(b, {
           maxZoom: 15,
-          padding: { top: 30, left: 30, right: 30, bottom: 70 },
+          padding: 55,
           duration: 0,
         });
       }

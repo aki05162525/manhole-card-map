@@ -85,6 +85,7 @@ export const create: Create = (pins, onSelect, view) => {
       map.on("moveend", fn);
     },
     select(ps) {
+      map.invalidateSize({ pan: false });
       selected.clearLayers();
       for (const p of ps)
         L.marker([p.lat, p.lng], { icon: icon(p, true) })
@@ -93,7 +94,7 @@ export const create: Create = (pins, onSelect, view) => {
       if (ps.length)
         map.fitBounds(L.latLngBounds(ps.map((p) => [p.lat, p.lng])), {
           maxZoom: 15,
-          padding: [30, 70],
+          padding: [55, 35],
           animate: false,
         });
     },
