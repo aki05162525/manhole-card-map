@@ -1,5 +1,6 @@
 // addresses は保存済みの一覧ページから配布場所の住所を取り出し、ジオコーダーに渡す1行1住所のファイルにする。
 // 都道府県名が省かれた住所には、カードの都道府県名を補う。重複する住所は1行にまとめる。
+// 町名と番地の間の空白と、対応する開き括弧のない閉じ括弧は、ジオコーダーが住所を読み損ねるため取り除く。
 //
 //	go run ./cmd/addresses -list data/raw/gkp-list-YYYYMMDD.html -pref 13,27 -out data/work/addresses.txt
 package main
@@ -29,7 +30,20 @@ type source struct {
 	Condition string `json:"condition,omitempty"`
 }
 
-var rePref = regexp.MustCompile(`^(?:北海道|東京都|大阪府|京都府|\p{Han}{2,3}県)`)
+var (
+	rePref       = regexp.MustCompile(`^(?:北海道|東京都|大阪府|京都府|\p{Han}{2,3}県)`)
+	reSpaceDigit = regexp.MustCompile(`([^\d\s])\s+(\d)`)
+)
+
+// query はジオコーダーに渡す形にする。一覧に書かれた住所は出どころのファイルに残す。
+func query(addr string) string {
+	q := strings.Join(strings.Fields(addr), " ")
+	q = reSpaceDigit.ReplaceAllString(q, "$1$2")
+	if strings.Count(q, ")") > strings.Count(q, "(") {
+		q = strings.TrimSpace(strings.TrimSuffix(q, ")"))
+	}
+	return q
+}
 
 func main() {
 	list := flag.String("list", "", "保存済みの一覧ページの HTML")
@@ -66,7 +80,7 @@ func main() {
 				continue
 			}
 			for _, addr := range strings.Split(p.Address, " / ") {
-				q := addr
+				q := query(addr)
 				if !rePref.MatchString(q) {
 					q = gkp.PrefName(r) + q
 				}
