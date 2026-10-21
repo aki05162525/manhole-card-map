@@ -1,0 +1,885 @@
+{
+  "functionalChecks": [
+    {
+      "engine": "a",
+      "fixture": true,
+      "detail": true,
+      "geolocationDenial": true,
+      "restore": true
+    },
+    {
+      "engine": "b",
+      "fixture": true,
+      "detail": true,
+      "geolocationDenial": true,
+      "restore": true
+    }
+  ],
+  "offlineChecks": [
+    {
+      "engine": "a",
+      "options": 1314,
+      "detail": "閉じる\n日本下水道事業団\n\n00-101-A001 / 第17弾 / 2022/08/06\n\n配布中。在庫は未確認。\n\n日本下水道事業団研修センター管理課\n埼玉県戸田市下笹目5141 048-421-2691\n\n地図の位置は未確定\n\n日本下水道事業団研修センター管理課\n埼玉県戸田市下笹目5141\n電話：048-421-2691\n\n【平日】10：00～12：00、13：00～16：00\n【土日祝日】13：00～15：00\nただし、年末年始及びお盆期間は配布を行いません。\n配布については、業務都合により急遽中止等の措置を講じる場合がありますのでお越しになる前に、必ず、JS公式ホームページの最新情報をご確認いただきますようお願いいたします\n\n情報取得日：2026-10-21\n\n公式の確認先　公式の確認先　",
+      "notice": "A / 1313枚 / 1309ピン。配布場所は位置未確定のため文字情報のみ。"
+    },
+    {
+      "engine": "b",
+      "options": 1314,
+      "detail": "閉じる\n日本下水道事業団\n\n00-101-A001 / 第17弾 / 2022/08/06\n\n配布中。在庫は未確認。\n\n日本下水道事業団研修センター管理課\n埼玉県戸田市下笹目5141 048-421-2691\n\n地図の位置は未確定\n\n日本下水道事業団研修センター管理課\n埼玉県戸田市下笹目5141\n電話：048-421-2691\n\n【平日】10：00～12：00、13：00～16：00\n【土日祝日】13：00～15：00\nただし、年末年始及びお盆期間は配布を行いません。\n配布については、業務都合により急遽中止等の措置を講じる場合がありますのでお越しになる前に、必ず、JS公式ホームページの最新情報をご確認いただきますようお願いいたします\n\n情報取得日：2026-10-21\n\n公式の確認先　公式の確認先　",
+      "notice": "読み込み中"
+    }
+  ],
+  "gpu": {
+    "devices": [
+      {
+        "vendorId": 65535,
+        "deviceId": 65535,
+        "vendorString": "Google Inc. (Google)",
+        "deviceString": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+        "driverVendor": "SwANGLE",
+        "driverVersion": "5.0.0"
+      }
+    ],
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver-5.0.0)"
+  },
+  "date": "2026-10-22",
+  "units": "bytes, ms",
+  "conditions": {
+    "chrome": "150.0.7871.46",
+    "cpuSlowdown": 4,
+    "cdp": {
+      "latencyMS": 150,
+      "downloadBPS": 200000,
+      "uploadBPS": 93750
+    },
+    "lighthouse": {
+      "output": "json",
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 90000,
+      "pauseAfterFcpMs": 5250,
+      "pauseAfterLoadMs": 5250,
+      "networkQuietThresholdMs": 5250,
+      "cpuQuietThresholdMs": 5250,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "devtools",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": true,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance"
+      ],
+      "skipAudits": null
+    }
+  },
+  "groups": [
+    {
+      "source": "cdp",
+      "engine": "a",
+      "mode": "full",
+      "cache": "cold",
+      "readyMedianMS": 4156.4000000059605,
+      "readyMaxMS": 4182.9000000059605,
+      "tapMedianMS": 101.29999999701977,
+      "tapMaxMS": 108.6000000089407,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 4182.9000000059605,
+          "tapMS": 108.6000000089407,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304477,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 2,
+          "readyMS": 4180.70000000298,
+          "tapMS": 97,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304541,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 3,
+          "readyMS": 4125.29999999702,
+          "tapMS": 100.20000000298023,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304514,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 4,
+          "readyMS": 4156.4000000059605,
+          "tapMS": 103.1000000089407,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304486,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 5,
+          "readyMS": 4154.4000000059605,
+          "tapMS": 101.29999999701977,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304530,
+          "pmtilesRequests": 0
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "a",
+      "mode": "full",
+      "cache": "warm",
+      "readyMedianMS": 594.7999999970198,
+      "readyMaxMS": 681.9000000059605,
+      "tapMedianMS": 52.79999999701977,
+      "tapMaxMS": 60.3999999910593,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 604.6000000089407,
+          "tapMS": 52.5,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 2,
+          "readyMS": 681.9000000059605,
+          "tapMS": 52.79999999701977,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 3,
+          "readyMS": 563.5999999940395,
+          "tapMS": 51.599999994039536,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 4,
+          "readyMS": 594.7999999970198,
+          "tapMS": 58.8999999910593,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 5,
+          "readyMS": 541.8999999910593,
+          "tapMS": 60.3999999910593,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "a",
+      "mode": "split",
+      "cache": "cold",
+      "readyMedianMS": 4194.20000000298,
+      "readyMaxMS": 4215.29999999702,
+      "tapMedianMS": 109.29999999701977,
+      "tapMaxMS": 117,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 4194.20000000298,
+          "tapMS": 113.5,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304542,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 2,
+          "readyMS": 4215.29999999702,
+          "tapMS": 102.5,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304502,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 3,
+          "readyMS": 4193.20000000298,
+          "tapMS": 105.3999999910593,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304487,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 4,
+          "readyMS": 4190.800000011921,
+          "tapMS": 117,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304501,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 5,
+          "readyMS": 4208.399999991059,
+          "tapMS": 109.29999999701977,
+          "backgroundRequests": 6,
+          "backgroundBytes": 304445,
+          "pmtilesRequests": 0
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "a",
+      "mode": "split",
+      "cache": "warm",
+      "readyMedianMS": 573.3999999910593,
+      "readyMaxMS": 629.8999999910593,
+      "tapMedianMS": 62,
+      "tapMaxMS": 62.900000005960464,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 531.0999999940395,
+          "tapMS": 56.599999994039536,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 2,
+          "readyMS": 572.7000000029802,
+          "tapMS": 60,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 3,
+          "readyMS": 573.3999999910593,
+          "tapMS": 62.900000005960464,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 4,
+          "readyMS": 629.8999999910593,
+          "tapMS": 62,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        },
+        {
+          "run": 5,
+          "readyMS": 615.4000000059605,
+          "tapMS": 62.099999994039536,
+          "backgroundRequests": 6,
+          "backgroundBytes": 0,
+          "pmtilesRequests": 0
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "b",
+      "mode": "full",
+      "cache": "cold",
+      "readyMedianMS": 7820.100000008941,
+      "readyMaxMS": 7846.20000000298,
+      "tapMedianMS": 173.19999998807907,
+      "tapMaxMS": 182.20000000298023,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 7832.5999999940395,
+          "tapMS": 173.19999998807907,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 2,
+          "readyMS": 7786.100000008941,
+          "tapMS": 178.59999999403954,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 3,
+          "readyMS": 7815.0999999940395,
+          "tapMS": 160.90000000596046,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 4,
+          "readyMS": 7846.20000000298,
+          "tapMS": 182.20000000298023,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 5,
+          "readyMS": 7820.100000008941,
+          "tapMS": 172.40000000596046,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "b",
+      "mode": "full",
+      "cache": "warm",
+      "readyMedianMS": 3063.699999988079,
+      "readyMaxMS": 3157,
+      "tapMedianMS": 110.20000000298023,
+      "tapMaxMS": 125,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 3063.699999988079,
+          "tapMS": 110.20000000298023,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 2,
+          "readyMS": 3157,
+          "tapMS": 106.09999999403954,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 3,
+          "readyMS": 3095.2000000029802,
+          "tapMS": 118.70000000298023,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 4,
+          "readyMS": 2980.1000000089407,
+          "tapMS": 125,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 5,
+          "readyMS": 2959.9000000059605,
+          "tapMS": 101,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "b",
+      "mode": "split",
+      "cache": "cold",
+      "readyMedianMS": 7887.70000000298,
+      "readyMaxMS": 7956.800000011921,
+      "tapMedianMS": 176.29999999701977,
+      "tapMaxMS": 185.79999999701977,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 7874.29999999702,
+          "tapMS": 176.29999999701977,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 2,
+          "readyMS": 7919.5999999940395,
+          "tapMS": 172.59999999403954,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 3,
+          "readyMS": 7870.5999999940395,
+          "tapMS": 185.79999999701977,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 4,
+          "readyMS": 7956.800000011921,
+          "tapMS": 178.40000000596046,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 5,
+          "readyMS": 7887.70000000298,
+          "tapMS": 174,
+          "backgroundRequests": 15,
+          "backgroundBytes": 575292,
+          "pmtilesRequests": 6
+        }
+      ]
+    },
+    {
+      "source": "cdp",
+      "engine": "b",
+      "mode": "split",
+      "cache": "warm",
+      "readyMedianMS": 3040.7000000029802,
+      "readyMaxMS": 3140.7000000029802,
+      "tapMedianMS": 117.90000000596046,
+      "tapMaxMS": 125.09999999403954,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 2988.5999999940395,
+          "tapMS": 117.90000000596046,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 2,
+          "readyMS": 2964.199999988079,
+          "tapMS": 125.09999999403954,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 3,
+          "readyMS": 3040.7000000029802,
+          "tapMS": 114.8999999910593,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 4,
+          "readyMS": 3118.5,
+          "tapMS": 107.20000000298023,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        },
+        {
+          "run": 5,
+          "readyMS": 3140.7000000029802,
+          "tapMS": 122.40000000596046,
+          "backgroundRequests": 15,
+          "backgroundBytes": 242559,
+          "pmtilesRequests": 6
+        }
+      ]
+    },
+    {
+      "source": "lighthouse",
+      "engine": "a",
+      "mode": "full",
+      "cache": "cold",
+      "readyMedianMS": 5989.5,
+      "readyMaxMS": 6017.5999999940395,
+      "tapMedianMS": 91.59999999403954,
+      "tapMaxMS": 102.6000000089407,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 5931.0999999940395,
+          "tapMS": 91.79999999701977,
+          "lcpMS": 5318.217,
+          "score": 0.75,
+          "offlineReady": true
+        },
+        {
+          "run": 2,
+          "readyMS": 6004.399999991059,
+          "tapMS": 102.6000000089407,
+          "lcpMS": 5401.921,
+          "score": 0.73,
+          "offlineReady": true
+        },
+        {
+          "run": 3,
+          "readyMS": 6017.5999999940395,
+          "tapMS": 79.70000000298023,
+          "lcpMS": 5393.158,
+          "score": 0.73,
+          "offlineReady": true
+        },
+        {
+          "run": 4,
+          "readyMS": 5989.5,
+          "tapMS": 85.20000000298023,
+          "lcpMS": 5377.32,
+          "score": 0.73,
+          "offlineReady": true
+        },
+        {
+          "run": 5,
+          "readyMS": 5975.9000000059605,
+          "tapMS": 91.59999999403954,
+          "lcpMS": 5380.239,
+          "score": 0.74,
+          "offlineReady": true
+        }
+      ]
+    },
+    {
+      "source": "lighthouse",
+      "engine": "a",
+      "mode": "full",
+      "cache": "warm",
+      "readyMedianMS": 708.2000000029802,
+      "readyMaxMS": 864,
+      "tapMedianMS": 94.5,
+      "tapMaxMS": 102.5,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 864,
+          "tapMS": 91.70000000298023,
+          "lcpMS": 856.533,
+          "score": 0.94,
+          "offlineReady": true
+        },
+        {
+          "run": 2,
+          "readyMS": 669.5999999940395,
+          "tapMS": 90.59999999403954,
+          "lcpMS": 639.646,
+          "score": 0.97,
+          "offlineReady": true
+        },
+        {
+          "run": 3,
+          "readyMS": 708.2000000029802,
+          "tapMS": 96.70000000298023,
+          "lcpMS": 677.136,
+          "score": 0.96,
+          "offlineReady": true
+        },
+        {
+          "run": 4,
+          "readyMS": 713.2999999970198,
+          "tapMS": 94.5,
+          "lcpMS": 700.652,
+          "score": 0.96,
+          "offlineReady": true
+        },
+        {
+          "run": 5,
+          "readyMS": 706.7000000029802,
+          "tapMS": 102.5,
+          "lcpMS": 672.839,
+          "score": 0.96,
+          "offlineReady": true
+        }
+      ]
+    },
+    {
+      "source": "lighthouse",
+      "engine": "b",
+      "mode": "full",
+      "cache": "cold",
+      "readyMedianMS": 11374,
+      "readyMaxMS": 11467.90000000596,
+      "tapMedianMS": 138.30000001192093,
+      "tapMaxMS": 154.79999999701977,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 11467.90000000596,
+          "tapMS": 133.5,
+          "lcpMS": 1320.558,
+          "score": 0.7,
+          "offlineReady": true
+        },
+        {
+          "run": 2,
+          "readyMS": 11335.59999999404,
+          "tapMS": 154.79999999701977,
+          "lcpMS": 1303.588,
+          "score": 0.72,
+          "offlineReady": true
+        },
+        {
+          "run": 3,
+          "readyMS": 11374,
+          "tapMS": 138.30000001192093,
+          "lcpMS": 1327.044,
+          "score": 0.72,
+          "offlineReady": true
+        },
+        {
+          "run": 4,
+          "readyMS": 11393.20000000298,
+          "tapMS": 136.29999999701977,
+          "lcpMS": 1287.133,
+          "score": 0.71,
+          "offlineReady": true
+        },
+        {
+          "run": 5,
+          "readyMS": 11320.09999999404,
+          "tapMS": 139.5,
+          "lcpMS": 1289.931,
+          "score": 0.72,
+          "offlineReady": true
+        }
+      ]
+    },
+    {
+      "source": "lighthouse",
+      "engine": "b",
+      "mode": "full",
+      "cache": "warm",
+      "readyMedianMS": 5190.0999999940395,
+      "readyMaxMS": 5226.29999999702,
+      "tapMedianMS": 150.09999999403954,
+      "tapMaxMS": 157.09999999403954,
+      "values": [
+        {
+          "run": 1,
+          "readyMS": 5218.5999999940395,
+          "tapMS": 121.5,
+          "lcpMS": 157.155,
+          "score": 0.76,
+          "offlineReady": true
+        },
+        {
+          "run": 2,
+          "readyMS": 5127.899999991059,
+          "tapMS": 153,
+          "lcpMS": 212.506,
+          "score": 0.78,
+          "offlineReady": true
+        },
+        {
+          "run": 3,
+          "readyMS": 5226.29999999702,
+          "tapMS": 157.09999999403954,
+          "lcpMS": 162.624,
+          "score": 0.77,
+          "offlineReady": true
+        },
+        {
+          "run": 4,
+          "readyMS": 5190.0999999940395,
+          "tapMS": 150.09999999403954,
+          "lcpMS": 227.165,
+          "score": 0.78,
+          "offlineReady": true
+        },
+        {
+          "run": 5,
+          "readyMS": 5097.4000000059605,
+          "tapMS": 143.09999999403954,
+          "lcpMS": 200.974,
+          "score": 0.79,
+          "offlineReady": true
+        }
+      ]
+    }
+  ],
+  "frames": {
+    "a": {
+      "completedRuns": 1,
+      "plannedRuns": 5,
+      "incompleteReason": "利用者の指示により追加計測を終了",
+      "runs": [
+        {
+          "run": 1,
+          "states": {
+            "STATE_NO_UPDATE_DESIRED": 169,
+            "STATE_PRESENTED_ALL": 225,
+            "STATE_DROPPED": 8,
+            "STATE_PRESENTED_PARTIAL": 10
+          },
+          "droppedRatio": 0.03292181069958848,
+          "rafCount": 379,
+          "rafOver33MS": 0,
+          "rafMaxMS": 33.30000000000018,
+          "rafMedianMS": 16.699999999999818,
+          "traceSHA256": "86db002a14517c99411d0850e423d06b00cbd22faed140dfda519d81443ae26a"
+        }
+      ],
+      "droppedRatioMedian": 0.03292181069958848,
+      "rafOver33MSMedian": 0,
+      "rafMaxMSMedian": 33.30000000000018
+    },
+    "b": {
+      "completedRuns": 1,
+      "plannedRuns": 5,
+      "incompleteReason": "利用者の指示により追加計測を終了",
+      "runs": [
+        {
+          "run": 1,
+          "states": {
+            "STATE_PRESENTED_ALL": 150,
+            "STATE_PRESENTED_PARTIAL": 148,
+            "STATE_DROPPED": 222,
+            "STATE_NO_UPDATE_DESIRED": 59
+          },
+          "droppedRatio": 0.4269230769230769,
+          "rafCount": 194,
+          "rafOver33MS": 79,
+          "rafMaxMS": 216.69999999999982,
+          "rafMedianMS": 33.30000000000018,
+          "traceSHA256": "d773fc0c49b2d807212b39c8e390833d1b09cd537236522b3c9c7e0cf36ea068"
+        }
+      ],
+      "droppedRatioMedian": 0.4269230769230769,
+      "rafOver33MSMedian": 79,
+      "rafMaxMSMedian": 216.69999999999982
+    }
+  },
+  "sizes": [
+    {
+      "file": "dist/assets/index-BDDSuaP8.js",
+      "raw": 7173,
+      "gzip": 3481,
+      "brotli": 2965
+    },
+    {
+      "file": "dist/assets/index-DeHCoSii.css",
+      "raw": 1630,
+      "gzip": 743,
+      "brotli": 588
+    },
+    {
+      "file": "dist/assets/leaflet-DsMdvQBq.js",
+      "raw": 185520,
+      "gzip": 52510,
+      "brotli": 45539
+    },
+    {
+      "file": "dist/assets/leaflet-JjN1qKoW.css",
+      "raw": 15785,
+      "gzip": 6471,
+      "brotli": 5763
+    },
+    {
+      "file": "dist/assets/maplibre-C3evRWYv.js",
+      "raw": 1127137,
+      "gzip": 302116,
+      "brotli": 246663
+    },
+    {
+      "file": "dist/assets/maplibre-gl-worker-BWso-Bu4.js",
+      "raw": 518423,
+      "gzip": 147753,
+      "brotli": 121456
+    },
+    {
+      "file": "dist/assets/maplibre-qvkd0SPb.css",
+      "raw": 71339,
+      "gzip": 10064,
+      "brotli": 8204
+    },
+    {
+      "file": "public/data/details.json",
+      "raw": 2556262,
+      "gzip": 427092,
+      "brotli": 213186
+    },
+    {
+      "file": "public/data/full.json",
+      "raw": 2749148,
+      "gzip": 449062,
+      "brotli": 223915
+    },
+    {
+      "file": "public/data/manifest.json",
+      "raw": 905,
+      "gzip": 558,
+      "brotli": 493
+    },
+    {
+      "file": "public/data/pins.json",
+      "raw": 193016,
+      "gzip": 21601,
+      "brotli": 17073
+    }
+  ],
+  "dataManifest": {
+    "files": {
+      "details.json": "7b80915f24bc8f881c3933312ca6f81307595e8b4daaedfc3900b864d20a9da0",
+      "full.json": "d2733fffb9cf2c86ce86fde6dbbe866ed8070542294ac4bd139f3fbb26050752",
+      "pins.json": "88c7f32aeb309853a73d99a974063cf61d3f9120b0eb6cf7620180936f6896d9"
+    },
+    "inputs": {
+      "data/overrides/cards.json": "b473a558e8170e195a81dbf89e4f39361afd0ae61ceaac213d61faeb17f9069e",
+      "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
+      "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
+      "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
+      "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
+      "docs/verification/05-findings.json": "d017aa64da312b51b4ac3568f9ee714dddad3e8305e2042e2cb71347c1068d20"
+    },
+    "referencePlaces": false,
+    "schema": 1,
+    "updated": "2026-10-21"
+  },
+  "pmtiles": {
+    "source": "https://build.protomaps.com/20261020.pmtiles",
+    "bbox": [
+      122,
+      20,
+      154,
+      46
+    ],
+    "maxZoom": 15,
+    "bytes": 3737849910,
+    "sha256": "ffe53b1be0ee26a2289f02c5bc4619959afd6e5cc203e29a5a7e1fe0e0f26797"
+  }
+}
