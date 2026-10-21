@@ -189,9 +189,9 @@ for (const mode of modes)
             if (part.eof) break;
           }
           await cdp.send("IO.close", { handle: stream });
-          await writeFile(`results/interaction-${engine}.trace.json`, trace);
+          await writeFile(`results/interaction-${engine}-1.trace.json`, trace);
           await writeFile(
-            `results/frames-${engine}.json`,
+            `results/frames-${engine}-1.json`,
             JSON.stringify(frames),
           );
           await page.screenshot({ path: `results/interaction-${engine}.png` });
