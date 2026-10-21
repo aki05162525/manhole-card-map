@@ -17,6 +17,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 
@@ -39,7 +40,18 @@ type result struct {
 	Lat       float64      `json:"lat,omitempty"`
 	Lng       float64      `json:"lng,omitempty"`
 	CoordErr  string       `json:"coordErr,omitempty"`
-	Reasons   []string     `json:"reasons,omitempty"` // 人が確認すべき理由
+	Reasons   []string     `json:"reasons,omitempty"`  // 人が確認すべき理由
+	Reviewed  bool         `json:"reviewed,omitempty"` // 手修正の上書きファイルで確認済み
+}
+
+// override は手修正の上書きファイル（data/overrides/cards.json）の1件のうち、照合に使う部分。
+type override struct {
+	Image string `json:"image"`
+	OCR   struct {
+		Code    string   `json:"code"`
+		Coord   string   `json:"coord"`
+		Reasons []string `json:"reasons"`
+	} `json:"ocr"`
 }
 
 // 人が確認すべき理由。
@@ -52,6 +64,7 @@ const (
 	reasonLowMargin    = "座標の数字の照合の確信度が低い"
 	reasonFarFromPref  = "座標が同じ都道府県のカードから離れすぎている"
 	reasonFarFromCity  = "座標が同じ自治体のカードから離れすぎている"
+	reasonOCRChanged   = "確認済みだが、確認時と読み取り結果が変わった"
 )
 
 func main() {
@@ -62,6 +75,7 @@ func main() {
 	reviewOut := flag.String("review", "data/work/review.json", "人が確認すべきカードの出力先")
 	labelsPath := flag.String("labels", "data/ocr-labels.json", "座標の正解ラベル")
 	minMargin := flag.Float64("min-margin", 0.02, "これより確信度の余裕が小さい座標を確認に回す")
+	overridesPath := flag.String("overrides", "data/overrides/cards.json", "人の確認と手修正の記録")
 	flag.Parse()
 
 	labels, err := loadLabels(*labelsPath)
@@ -134,6 +148,11 @@ func main() {
 	}
 
 	flagForReview(results, *minMargin)
+	overrides, err := loadOverrides(*overridesPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	applyReviewed(results, overrides)
 	report(results, missing, *minMargin)
 
 	writeJSON(*out, results)
@@ -215,8 +234,53 @@ func flagFar(results []result, key func(string) string, minCards int, reason str
 	}
 }
 
+// applyReviewed は、確認済みのカードのうち、読み取り結果が確認時と同じものを確認待ちから外す。
+// 読み取り結果が変わっていれば、確認し直すよう理由を付け替える。
+func applyReviewed(results []result, overrides map[string]override) {
+	for i := range results {
+		r := &results[i]
+		o, ok := overrides[r.Image]
+		if !ok {
+			continue
+		}
+		if r.Code == o.OCR.Code && r.Coord == o.OCR.Coord && slices.Equal(r.Reasons, o.OCR.Reasons) {
+			r.Reasons, r.Reviewed = nil, true
+		} else {
+			r.Reasons = append(r.Reasons, reasonOCRChanged)
+		}
+	}
+}
+
+func loadOverrides(p string) (map[string]override, error) {
+	b, err := os.ReadFile(p)
+	if os.IsNotExist(err) {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	var doc struct {
+		Cards []override `json:"cards"`
+	}
+	if err := json.Unmarshal(b, &doc); err != nil {
+		return nil, fmt.Errorf("%s: %w", p, err)
+	}
+	m := map[string]override{}
+	for _, o := range doc.Cards {
+		m[o.Image] = o
+	}
+	return m, nil
+}
+
 func report(results []result, missing int, minMargin float64) {
 	fmt.Printf("対象の画像: %d（未取得のため対象外: %d）\n", len(results), missing)
+	reviewed := 0
+	for _, r := range results {
+		if r.Reviewed {
+			reviewed++
+		}
+	}
+	fmt.Printf("手修正の記録で確認済み（読み取り結果が確認時と同じ）: %d\n", reviewed)
 
 	count := func(pred func(result) bool) (label, other int) {
 		for _, r := range results {
@@ -278,7 +342,7 @@ func report(results []result, missing int, minMargin float64) {
 			byReason[x] = append(byReason[x], r)
 		}
 	}
-	for _, reason := range []string{reasonCodeUnread, reasonCodeMismatch, reasonNoCandidate, reasonCodeDup,
+	for _, reason := range []string{reasonOCRChanged, reasonCodeUnread, reasonCodeMismatch, reasonNoCandidate, reasonCodeDup,
 		reasonCoordUnread, reasonLowMargin, reasonFarFromPref, reasonFarFromCity} {
 		rs := byReason[reason]
 		if len(rs) == 0 {
