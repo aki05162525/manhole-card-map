@@ -1,0 +1,1849 @@
+{
+  "schema": 1,
+  "region": "hokkaido",
+  "issue": 33,
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "selectedAt": "2026-11-05T11:22:58.847902+00:00",
+  "method": "旧調査のHTML座標探索/P05名称住所照合を反復せず、自治体公共施設CSV・公園施設GIS・配置図/建築図による建物対応を調べる。",
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/national/issue7/hokkaido.json": "a14245a921e0d0235968044735542f2ed2015c4d8adb029b5da52c254683970f",
+    "data/national/issue7/reviews/hokkaido.json": "63478319c50507671e59e31769a98a14e8d3e716f5771bff83200cb423a00a70",
+    "data/national/location-batch1/integration.json": "0932cd4daf333e549cfcffefb91cfb5692ed4500e334f8208f6d5adfbbd99732",
+    "data/national/location-batch1/followups.json": "49439a80e825cac9dc09c125a452a4bf7fa842151e5ec9ba3dbb3b50ac6bcb2d"
+  },
+  "summary": {
+    "regionalPopulation": 38,
+    "selected": 8,
+    "alreadyLocated": 0,
+    "nationalAssembledUnlocated": 608
+  },
+  "selectedIds": [
+    "facility:north-c6af31b0552e6e96071a",
+    "facility:north-proposal-furubira-duty",
+    "facility:north-42de513bcef33f8c7164",
+    "facility:north-82685b3507353b74ef2d",
+    "facility:north-2f26ae4b0395f3d156ca",
+    "facility:north-6470eb0a313ea693898c",
+    "facility:north-53b2b9df9a8da2705261",
+    "facility:north-8b10bcb76cb93263b696"
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:north-42de513bcef33f8c7164",
+      "automaticRank": 96,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-453-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-453-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/10"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:2"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "東神楽町役場守衛室",
+      "address": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。旧点の移転/別棟リスクを配置図・建築資料から照合する。"
+    },
+    {
+      "facilityId": "facility:north-4855b77907547ff0f2c6",
+      "automaticRank": 98,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-214-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-214-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/11"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": "data/national/issue20/north-outcomes.json#/groups/1",
+      "stopCondition": "完成時資料まで更新したが地理参照の橋渡しが不足。同一PDF再取得・旧庁舎点再検索は繰り返さない。",
+      "resumeCondition": [
+        "2025-10以降の撮影/整備時期が確認できる公開写真・GIS建物外形または市の直接代表座標を入手",
+        "公式供用時配置図と郵便局・駅前通り等の複数基準を照合し新庁舎内の点であることを独立確認",
+        "座標利用と原本再配布条件を個別に確認"
+      ],
+      "sharedGroupIds": [
+        "address:5"
+      ],
+      "selection": "issue20-hold",
+      "selectionReason": "Issue20の停止条件に対し新根拠を今回取得していない。",
+      "reevaluateWhen": "Issue20の施設別outcomeに記載された資料/CRS/利用条件/建物対応の再開条件を満たした際に再評価する。",
+      "name": "稚内市役所建設産業部水道企業室水道施設課",
+      "address": "北海道稚内市中央3丁目2番1号",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "Issue20の新庁舎保留。新資料未取得のため再開しない。"
+    },
+    {
+      "facilityId": "facility:north-4a3e61d50e9a48491365",
+      "automaticRank": 99,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-213-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-213-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/12"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "苫小牧市役所上下水道部下水道課",
+      "address": "北海道苫小牧市旭町4-5-6",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-65717121aad1d7580861",
+      "automaticRank": 100,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-402-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-402-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/20"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "道の駅いわない ガイドセンター たら丸館",
+      "address": "北海道岩内郡岩内町字万代47-4",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-82685b3507353b74ef2d",
+      "automaticRank": 101,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-453-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-453-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/26"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:2"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "東神楽町役場建設水道課",
+      "address": "北海道上川郡東神楽町南1条西1丁目3番2号",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。旧点の移転/別棟リスクを配置図・建築資料から照合する。"
+    },
+    {
+      "facilityId": "facility:north-8b10bcb76cb93263b696",
+      "automaticRank": 102,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-236-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-236-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/28"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "北斗市観光交流センター内 北斗市観光案内所(1階)",
+      "address": "北海道北斗市市渡1丁目1番1号",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。本館と別館を区別する新しい配置/建築資料を探す。"
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "automaticRank": 103,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-214-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-214-B001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/35"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "稚内副港市場 1階 カフェPotto",
+      "address": "北海道稚内市港1丁目6-28",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-c6af31b0552e6e96071a",
+      "automaticRank": 106,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-406-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-406-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/42"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:4"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "古平町複合施設かなえーる2階建設水道課",
+      "address": "北海道古平郡古平町大字浜町50番地",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。旧点の移転/別棟リスクを配置図・建築資料から照合する。"
+    },
+    {
+      "facilityId": "facility:north-cb479f7bbce2788c803e",
+      "automaticRank": 107,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-229-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-229-B001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/46"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "富良野チーズ工房",
+      "address": "北海道富良野市中五区",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-da208a6abd2abdb93a0a",
+      "automaticRank": 109,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-585-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-585-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/48"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "道の駅あびらD51ステーション",
+      "address": "北海道勇払郡安平町追分柏が丘49-1",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-e5fc22bb4348acd7bcdb",
+      "automaticRank": 112,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-214-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-214-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/53"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": "data/national/issue20/north-outcomes.json#/groups/1",
+      "stopCondition": "完成時資料まで更新したが地理参照の橋渡しが不足。同一PDF再取得・旧庁舎点再検索は繰り返さない。",
+      "resumeCondition": [
+        "2025-10以降の撮影/整備時期が確認できる公開写真・GIS建物外形または市の直接代表座標を入手",
+        "公式供用時配置図と郵便局・駅前通り等の複数基準を照合し新庁舎内の点であることを独立確認",
+        "座標利用と原本再配布条件を個別に確認"
+      ],
+      "sharedGroupIds": [
+        "address:5"
+      ],
+      "selection": "issue20-hold",
+      "selectionReason": "Issue20の停止条件に対し新根拠を今回取得していない。",
+      "reevaluateWhen": "Issue20の施設別outcomeに記載された資料/CRS/利用条件/建物対応の再開条件を満たした際に再評価する。",
+      "name": "稚内市役所 警備室",
+      "address": "北海道稚内市中央3丁目2番1号",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "Issue20の新庁舎保留。新資料未取得のため再開しない。"
+    },
+    {
+      "facilityId": "facility:north-ec1d5acd6800362be7ec",
+      "automaticRank": 113,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-216-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-216-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/55"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "芦別市観光物産センター(道の駅スタープラザ芦別内)",
+      "address": "北海道芦別市北4条東1-1",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-proposal-furubira-duty",
+      "automaticRank": 117,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-406-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-406-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/60"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:4"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "古平町複合施設かなえーる1階管理室",
+      "address": "北海道古平郡古平町大字浜町50番地",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。旧点の移転/別棟リスクを配置図・建築資料から照合する。"
+    },
+    {
+      "facilityId": "facility:north-03d0245a068dd82eaa37",
+      "automaticRank": 158,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/0"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "登別市役所都市整備部 下水道グループ",
+      "address": "北海道登別市中央町6丁目11番地",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-2a029b3a4fe86e92e4ea",
+      "automaticRank": 159,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/3"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "わっさむ町食と観光情報案内所",
+      "address": "北海道上川郡和寒町字北町200番地",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-7d980545cacdb9317d51",
+      "automaticRank": 160,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/22"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "留萌市役所上下水道課",
+      "address": "留萌市幸町1丁目11番地 分庁舎1階",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "automaticRank": 162,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/40"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "てしお温泉「夕映」",
+      "address": "北海道天塩郡天塩町サラキシ5807番地4",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-proposal-naie-office",
+      "automaticRank": 165,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/35",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/63"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "奈井江町役場建設環境課都市環境係",
+      "address": "北海道空知郡奈井江町字奈井江11番地",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-2f26ae4b0395f3d156ca",
+      "automaticRank": 444,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-100-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-100-C001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/5"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "大通公園インフォメーションセンター&オフィシャルショップ",
+      "address": "北海道札幌市中央区大通西7丁目",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。札幌共通の公共施設/公園GISを探し、独立した建物同定と数値原典を照合する。"
+    },
+    {
+      "facilityId": "facility:north-3b54409c9b1539133325",
+      "automaticRank": 448,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-231-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-231-C001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/9"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "花の拠点(はなふる)「センターハウス」",
+      "address": "北海道恵庭市南島松823-3",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-53b2b9df9a8da2705261",
+      "automaticRank": 452,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-100-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-100-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/15"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "札幌市下水道科学館",
+      "address": "北海道札幌市北区麻生町8",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。札幌共通の公共施設/公園GISを探し、独立した建物同定と数値原典を照合する。"
+    },
+    {
+      "facilityId": "facility:north-6470eb0a313ea693898c",
+      "automaticRank": 456,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-100-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-100-C001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/19"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "大通公園観光案内所",
+      "address": "北海道札幌市中央区大通西3丁目",
+      "currentlyLocated": false,
+      "selected": true,
+      "batch2Reason": "初ピン候補。札幌共通の公共施設/公園GISを探し、独立した建物同定と数値原典を照合する。"
+    },
+    {
+      "facilityId": "facility:north-853b19860f4c8e24d9b4",
+      "automaticRank": 460,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-205-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-205-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/27"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "室蘭観光協会",
+      "address": "北海道室蘭市海岸町1丁目5番1号",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-8b9eb37cc57d1790a6ab",
+      "automaticRank": 462,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-204-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-204-B001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/29"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "旭川観光物産情報センター",
+      "address": "北海道旭川市宮下通8丁目3番1号(JR旭川駅東コンコース)",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-9f9446b5647fc3b00482",
+      "automaticRank": 466,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-213-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-213-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/34"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "苫小牧観光案内所",
+      "address": "北海道苫小牧市表町5-11-5 (ふれんどビル1階)",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-a8b82abf28a7cf508886",
+      "automaticRank": 469,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-208-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-208-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/37"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:3"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "北見市上下水道局給排水課窓口",
+      "address": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-b3895bc1edbab7205d85",
+      "automaticRank": 470,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-487-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-487-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/39"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "天塩町ファミリースポーツセンター",
+      "address": "北海道天塩郡天塩町字川口5702番地の1",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-c9c5016d77e51377f615",
+      "automaticRank": 472,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-631-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-631-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/44"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "ガーデンスパ十勝川温泉",
+      "address": "河東郡音更町十勝川温泉北14丁目1",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-da9719ed3ef3729f4673",
+      "automaticRank": 477,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-206-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-206-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/49"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:6"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "釧路市上下水道部 南大通庁舎経営企画課",
+      "address": "北海道釧路市南大通2-1-121",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-dd30f89f2c53805091b6",
+      "automaticRank": 478,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-208-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-208-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/50"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:3"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "北見市上下水道局当直室",
+      "address": "北海道北見市中ノ島町1-4-1(北見市上下水道局庁舎内)",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-dddf18164e0a5e3df321",
+      "automaticRank": 479,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-206-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-206-A001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/51"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:6"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "釧路市上下水道部 南大通庁舎守衛室",
+      "address": "北海道釧路市南大通2-1-121",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-ebda8a1ab861f8da3b85",
+      "automaticRank": 481,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-221-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-221-B001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/54"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "なよろ観光まちづくり協会(駅前交流プラザ「よろーな」内)",
+      "address": "北海道名寄市東1条南7丁目1番地10",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-proposal-shintoku-shop",
+      "automaticRank": 486,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "01-635-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "01-635-B001"
+      ],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/37",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/66"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "新得駅前地域交流センターとくとく1Fショップレジ",
+      "address": "北海道上川郡新得町本通南1丁目21番地22",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-2c42d8946a63660d54a1",
+      "automaticRank": 593,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/4"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "足寄下水終末処理場",
+      "address": "北海道足寄郡足寄町共栄町120-5",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-907d32962778fcc976eb",
+      "automaticRank": 597,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/30"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "道の駅かみしほろ",
+      "address": "北海道河東郡上士幌町字上士幌東3線227番地",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-adeda0700dac8487ca81",
+      "automaticRank": 600,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/38"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "千歳市水道局庁舎2F総務課総務係窓口",
+      "address": "北海道千歳市東雲町3丁目2番地5",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-f487aee21374d9453844",
+      "automaticRank": 602,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/57"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "砂川市まちなか交流施設「すないる」",
+      "address": "北海道砂川市西1条北2丁目1番20号",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    },
+    {
+      "facilityId": "facility:north-proposal-otaru-duty",
+      "automaticRank": 604,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/hokkaido.json#/reviews/65"
+      ],
+      "blockers": [
+        "conditions"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "小樽市水道局本庁舎1階当直室",
+      "address": "北海道小樽市花園2丁目11番15号",
+      "currentlyLocated": false,
+      "selected": false,
+      "batch2Reason": "今回は8施設に限定。既存の障害分類・次回条件を保持し、未選定を調査済みとは扱わない。"
+    }
+  ],
+  "snapshotFieldNote": "selection/selectionReason/reevaluateWhenはIssue24原スナップショットの履歴。今回の判断はselected/batch2Reason。",
+  "selectionPolicyClarification": "自動順位順の採用ではない。旧庁舎点リスクを共有する古平・東神楽4窓口、札幌の共通施設一覧と公園図を使える3施設、本館/別館の誤誘導回避を試す北斗1施設を有意抽出。苫小牧・岩内・副港市場・富良野・安平・芦別など同じfirstPin候補も、今回はこの共通資料群に含めず次回へ残した。"
+}
