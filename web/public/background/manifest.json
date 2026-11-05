@@ -1,0 +1,43 @@
+{
+  "source": "国土数値情報（行政区域）2026年1月1日・都道府県界版を加工",
+  "sourceURL": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html",
+  "license": "CC BY 4.0",
+  "input": "N03-20260101_GML.zip",
+  "inputSHA256": "1f714fca019e22e6f84012dba420384fc7b49c6ad8bd0a867ab1cfb593a78477",
+  "archiveMembers": [
+    "N03-20260101_prefecture.shp",
+    "N03-20260101_prefecture.shx",
+    "N03-20260101_prefecture.dbf",
+    "N03-20260101_prefecture.prj",
+    "N03-20260101_prefecture.cpg"
+  ],
+  "mapshaper": "0.7.101",
+  "commands": [
+    "-dissolve",
+    "N03_001",
+    "-explode",
+    "-require",
+    "<temporary module containing background/protected-pins.json>",
+    "alias=sites",
+    "-filter",
+    "$.area >= 100000 || sites.some(p => p[0] >= $.bounds[0]-0.02 && p[0] <= $.bounds[2]+0.02 && p[1] >= $.bounds[1]-0.02 && p[1] <= $.bounds[3]+0.02)",
+    "-simplify",
+    "dp",
+    "interval=100m",
+    "keep-shapes",
+    "stats",
+    "-o",
+    "format=geojson",
+    "background.geojson"
+  ],
+  "protectedPinsSHA256": "59417d849a06c115e397e9c478e70c8844dec4d3de458bc6eebd7e7ebdd4a1fb",
+  "minimumUnprotectedIslandAreaM2": 100000,
+  "protectedPinMarginDegrees": 0.02,
+  "simplificationThresholdMeters": 100,
+  "maxZoom": 10,
+  "features": 4888,
+  "bytes": 4973599,
+  "gzipBytes": 1745304,
+  "brotliDefaultBytes": 1251956,
+  "outputSHA256": "779aca39d49a49214ee21568890a0ccf8dec22a901b07f1bcf75cccc4a9b25f8"
+}
