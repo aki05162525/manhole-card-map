@@ -1,0 +1,189 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "startedAt": "2026-11-05T15:32:51.594861+00:00",
+  "supersedes": "初回小PRで停止する方針を撤回。全18施設の実施証拠が必要。",
+  "groups": [
+    {
+      "owner": "tsuchiura",
+      "facilityIds": [
+        "facility:kanto-north-00d6ef3c990590c41abf",
+        "facility:kanto-north-0ebb925691ab4a56d116",
+        "facility:kanto-north-678eaa691f037721b1d4",
+        "facility:kanto-north-8b808446dd99e8fe8f0e",
+        "facility:kanto-north-c612c7c1c383a0ef7027"
+      ],
+      "names": [
+        "土浦市立一中地区公民館",
+        "土浦市観光案内所",
+        "霞ケ浦総合公園テニスコート管理事務所",
+        "土浦市観光協会",
+        "雪入ふれあいの里公園(ネイチャーセンター)"
+      ],
+      "output": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/",
+      "status": "investigation-records-complete; adoption-review-pending",
+      "verification": "原本/hash/数値のみ。全suite/PRは県親。",
+      "humanWaiting": []
+    },
+    {
+      "owner": "coastal",
+      "facilityIds": [
+        "facility:kanto-north-009640d63f2fbbd2a23d",
+        "facility:kanto-north-00f47f5cf9124efaa36e",
+        "facility:kanto-north-92eba9de67b549c59c91",
+        "facility:kanto-north-9e5838ad85ddd56ff5a1",
+        "facility:kanto-north-eda89f6600b8d5aa745d"
+      ],
+      "names": [
+        "水戸観光案内所",
+        "アクアワールド茨城県大洗水族館入口チケット窓口",
+        "大洗町観光情報交流センター「うみまちテラス」",
+        "ぷらっとひたち(日立駅情報交流プラザ)",
+        "那珂市曲がり屋"
+      ],
+      "output": "data/national/kanto-prefecture/ibaraki/round2/coastal/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/",
+      "status": "investigation-records-complete; adoption-review-pending",
+      "verification": "原本/hash/数値のみ。全suite/PRは県親。",
+      "humanWaiting": []
+    },
+    {
+      "owner": "south",
+      "facilityIds": [
+        "facility:kanto-north-02882996672a826c585c",
+        "facility:kanto-north-1fd6ee704dfe58bb5411",
+        "facility:kanto-north-a0cee7df87e79f814924",
+        "facility:kanto-north-fb8539f44aa2bc8487c0"
+      ],
+      "names": [
+        "つくば駅前観光案内所",
+        "牛久シャトーショップ",
+        "鹿島アントラーズオフィシャルショップ・クラブハウス店",
+        "龍ケ崎市観光物産センター"
+      ],
+      "output": "data/national/kanto-prefecture/ibaraki/round2/south/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/ibaraki/round2/south/",
+      "status": "investigation-records-complete; adoption-review-pending",
+      "verification": "原本/hash/数値のみ。全suite/PRは県親。",
+      "humanWaiting": []
+    },
+    {
+      "owner": "parent",
+      "facilityIds": [
+        "facility:kanto-north-18ff4d028e5a88922096",
+        "facility:kanto-north-2384f4b5d5bbd843bcbd",
+        "facility:kanto-north-3db2ac917f07b1de03e4",
+        "facility:kanto-north-45e8eab7ba6d2bdde8e5"
+      ],
+      "names": [
+        "道の駅グランテラス筑西総合案内所",
+        "古河市観光案内所",
+        "道の駅常陸大宮~かわプラザ~",
+        "守谷市役所"
+      ],
+      "output": "data/national/kanto-prefecture/ibaraki/round2/parent/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/ibaraki/round2/parent/",
+      "status": "investigation-records-complete; adoption-review-pending",
+      "verification": "原本/hash/数値のみ。全suite/PRは県親。",
+      "humanWaiting": []
+    }
+  ],
+  "humanQuestions": [
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "name": "土浦市立一中地区公民館",
+      "url": "https://www.city.tsuchiura.lg.jp/index.php?code=116",
+      "question": "土浦小学校の校舎南西の独立した矩形の3階建て（1階駐車場）で合っているか",
+      "resolves": "BldA4384との対応",
+      "status": "answered",
+      "repeatOfExistingAnswer": false,
+      "answer": "合っている",
+      "receivedAt": "2026-11-05T15:38:14.779325+00:00",
+      "origin": "user report; independent identity/geometry checks separate"
+    },
+    {
+      "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+      "name": "霞ケ浦総合公園テニスコート管理事務所",
+      "url": "https://www.city.tsuchiura.lg.jp/suigotennis-court/page001069.html",
+      "question": "テニスコート東側・駐車場との間にあるクラブハウスでカードを渡すか",
+      "answer": "そのクラブハウスで合っている",
+      "status": "answered",
+      "receivedAt": "2026-11-05T15:38:14.779341+00:00",
+      "origin": "user report; independent identity/geometry checks separate"
+    },
+    {
+      "facilityId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "name": "道の駅常陸大宮〜かわプラザ〜",
+      "urls": [
+        "https://www.michieki-hitachiomiya.jp/shisetsu/",
+        "https://www.michieki-hitachiomiya.jp/shisetsu/information_center/"
+      ],
+      "question": "休止前の配布窓口は本体棟東端の情報発信施設か",
+      "answer": "本体棟の情報発信施設で合っている",
+      "status": "answered",
+      "receivedAt": "2026-11-05T15:41:41.181408+00:00",
+      "origin": "user report; not evidence of reopening"
+    },
+    {
+      "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+      "name": "土浦市観光協会",
+      "url": "https://www.tsuchiura-kankou.jp/machikado_kura/",
+      "question": "大徳4棟のうち中城通りに北面する2階建て見世蔵1階か",
+      "answer": "はい。看板がある見世蔵1階のまちかど観光案内所／観光物産館。奥の前蔵・袖蔵・元蔵ではない。",
+      "status": "answered",
+      "recordedAt": "2026-11-05T15:49:22.902551+00:00",
+      "origin": "user report; independent primary reading and geometry checks separate"
+    },
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "name": "古河市観光案内所",
+      "url": "https://www.jreast.co.jp/estation/stations/676.html",
+      "question": "駅東側ホーム真下の駅舎本体内か東口広場への張出部分か",
+      "answer": "高架下（ホーム真下）を含む駅舎本体1階。改札外東西自由通路から東口に向かった右手南東側。広場側独立張出棟ではない。",
+      "status": "answered",
+      "recordedAt": "2026-11-05T15:49:22.902551+00:00",
+      "origin": "user report; independent primary reading and geometry checks separate"
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "name": "那珂市曲がり屋",
+      "url": "https://www.city.naka.lg.jp/event-kankou/kankou-spot/page000512.html",
+      "question": "公園北東小池の東側L形棟か",
+      "answer": "はい。一ノ関ため池親水公園北東、小池東側L形大型茅葺き本体棟。西側小棟ではない。",
+      "status": "answered",
+      "recordedAt": "2026-11-05T15:49:22.902551+00:00",
+      "origin": "user report; independent primary reading and geometry checks separate",
+      "receivedAt": "2026-11-05T15:50:09.157665+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "name": "うみまちテラス",
+      "url": "https://www.oarai-info.jp/umimachi/",
+      "question": "大洗駅すぐ南隣、南町道と東ロータリーに面する棟か",
+      "answer": "はい。大洗駅すぐ南隣、東ロータリーと南町道に面する長方形平屋棟。ロータリー南西角。",
+      "status": "answered",
+      "recordedAt": "2026-11-05T15:49:22.902551+00:00",
+      "origin": "user report; independent primary reading and geometry checks separate",
+      "receivedAt": "2026-11-05T15:50:09.157681+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "name": "水戸観光案内所",
+      "url": "https://mitokoumon.com/about/tourist_information_center/",
+      "question": "エクセルと連続する駅舎本体内か、北東デッキ小建屋か",
+      "answer": "駅舎本体改札階2階南北自由通路・JR改札口脇屋内。独立小建屋ではない。",
+      "status": "answered",
+      "recordedAt": "2026-11-05T15:56:54.381054+00:00",
+      "origin": "user report; numerical indices came from question, not independent user verification"
+    }
+  ],
+  "summary": {
+    "assigned": 18,
+    "actuallyInvestigated": 18,
+    "humanQuestions": 8,
+    "answered": 8,
+    "waiting": 0,
+    "unstarted": 0
+  }
+}

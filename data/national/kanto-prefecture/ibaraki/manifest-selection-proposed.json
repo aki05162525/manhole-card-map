@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "NOT APPROVED; do not copy until independent review and unresolved checks resolved",
+  "locations": [
+    {
+      "path": "data/national/kanto-prefecture/ibaraki/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+          "sha256": "6e02776bf51f865f6684f55e5f069ac357ce287520e593ccd6de17f29939c14b"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/national/kanto-prefecture/ibaraki/location-lifecycle-proposed.json",
+      "sha256": "a1bb105c3aa28f136b8aa8f5d6b2a1e510df8f632c3f6825f680efc6a73de312"
+    }
+  ]
+}
