@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "baselineCommit": "4f5253b8973cb388deecff0bc051f36770e77579",
+  "inputSHA256": {
+    "data/national/kanto-prefecture/gunma/outcomes.json": "db039ac518be73d815ead134351124737799e6a533179ae888dc1a4381836ead",
+    "data/national/kanto-prefecture/gunma/inventory.json": "c39df47c617f41f8f60b20de88f6d8ac338a0e82467049cd57a5fb830b778ef8",
+    "data/national/kanto-prefecture/gunma/human-question-proposed.json": "7c95859d61f48f155a8b28db2d2b13eace0e006b48946c25d4bda7e36eaf262b",
+    "data/national/kanto-prefecture/gunma/lifecycle-proposed.json": "60f8746ef6d7436494a3db5950408bda6ae265c2645adad98df401f3c5b1275b",
+    "data/national/kanto-prefecture/gunma/manifest-proposal.json": "31a2f613e9a9cbfc38f4b5ca6f9ad22c9b8df932d6441e9b324f61950d428da9",
+    "data/national/kanto-prefecture/gunma/locations-proposed.json": "e128a469fac9a5ea9c00441235f042b02589c935de0bdd2fef0eb21df1da9d0f",
+    "data/evidence/kanto-prefecture/gunma/numata-geometry.json": "92356b49cf01aab0b0152b5e3f852dbb467e63f780daa19a001c819d4812c7da",
+    "tools/national/test_kanto_gunma.py": "dcd10b4dc8c9a802f62889f2a9bff51e29193f6ca8dde872ffb08b50610a484c",
+    "tools/national/manifest.json": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d"
+  },
+  "red": {
+    "command": "python3 -B -m unittest discover -s tools/national -p test_kanto_gunma.py -v",
+    "exitCode": 1,
+    "log": "data/evidence/kanto-prefecture/gunma/red.log",
+    "reason": "candidate manifest and geometry absent; two errors"
+  },
+  "green": {
+    "command": "python3 -B -m unittest discover -s tools/national -p test_kanto_gunma.py -v",
+    "exitCode": 0,
+    "log": "data/evidence/kanto-prefecture/gunma/green.log"
+  },
+  "fullSuite": "pending normal commit hook; no manual duplicate run",
+  "ui": "not run; research artifacts only",
+  "independentReview": "pending parent assignment",
+  "actualManifestChanged": false
+}

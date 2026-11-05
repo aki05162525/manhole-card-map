@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "product": "国土地理院最適化ベクトルタイル",
+  "productURL": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+  "edition": "2026-07-01 per fixed readme c0e37e155f7773a2940fb1c2ad3da01cc6a29c90; PMTiles generator output26-07",
+  "rawRangeProvenance": "vector-retrievals.json",
+  "crs": {
+    "assessment": "国内JGD2011 / Web Mercator XYZ格子。製品readmeの地理院タイル仕様へのリンク、vt_exptのタイル分割定義、siyouの国内JGD2011記載を組合せて解釈。製品単独の測地系明記ではなく適用解釈を独立レビューへ渡す。",
+    "sourceLabels": [
+      "vector-readme-fixed",
+      "vector-crs",
+      "vector-definition"
+    ],
+    "axis": "tile x east, y south; output lat,lng",
+    "datumTransform": "none; no claim of WGS84 survey precision"
+  },
+  "licence": {
+    "assessment": "固定readmeが利用規約適用・基本測量成果でない試験公開を明記。保存規約PDL1.0と出典/加工明示を再読。",
+    "reusedOriginal": {
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "retrievedAt": "2026-11-05T10:46:50.392397+00:00",
+      "status": 200,
+      "method": "urllib verified TLS with legacy server connect compatibility",
+      "contentType": "text/html",
+      "path": "data/evidence/location-batch1/gsi-terms.html",
+      "sha256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+      "bytes": 23271
+    },
+    "reusedAt": "2026-11-05T14:58:10.639272+00:00",
+    "rawSHA256Verified": true,
+    "newRetrievalFailures": [
+      "vector-terms TLS legacy renegotiation",
+      "vector-terms-http HTTP failure"
+    ],
+    "newWebRead": "2026-11-05 web openで同規約本文確認。raw取得成功とは扱わない。"
+  },
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工して外形比較・候補点を作成。国土地理院による施設同定・承認ではない。",
+  "redistribution": "GSI PBFと派生図/数値のみGit保存。一般HTML/PDF/写真/GIF原本はignored data/work、再配布許諾未確認。",
+  "precision": "試験・一般化データ。小数7桁は格納桁数。各建物の精度・更新日不明。"
+}

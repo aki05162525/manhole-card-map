@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "adoptionApproved": false,
+  "manifestApplied": false,
+  "candidateIds": [
+    "facility:kanto-north-5084d7132f37de70e96a",
+    "facility:kanto-north-numata-water-4f"
+  ],
+  "locations": [
+    {
+      "path": "data/national/kanto-prefecture/gunma/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+          "sha256": "bec284e058719d4485910b5f2d539c818bb187bf48c0c462996d513935473a0e"
+        },
+        {
+          "facilityId": "facility:kanto-north-numata-water-4f",
+          "sha256": "32ce306f4eef5b7de7437b181fd57a57443c83dd8a6774bb017e839ac6b4f1a4"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/national/kanto-prefecture/gunma/lifecycle-proposed.json",
+      "sha256": "60f8746ef6d7436494a3db5950408bda6ae265c2645adad98df401f3c5b1275b"
+    }
+  ],
+  "note": "approved is assemble schema terminology only; independent review and parent approval required before copying into shared manifest"
+}
