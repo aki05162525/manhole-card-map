@@ -1,0 +1,12 @@
+{"at": "2026-11-05T15:25:42.152732+00:00", "event": "start", "facility": "nikko-museum", "scope": "access images/floor plan/current distribution reading"}
+{"at": "2026-11-05T15:31:05.063450+00:00", "event": "pause", "facility": "nikko-museum", "scope": "原本フロア図と9tile2範囲比較済み。中央7外形候補、北バス施設や連結部分区別の追検証へ。"}
+{"at": "2026-11-05T15:31:05.084229+00:00", "event": "start", "facility": "imaichi", "scope": "現配布棟と道の駅配置図照合"}
+{"at": "2026-11-05T15:33:42.756758+00:00", "event": "pause", "facility": "imaichi", "scope": "公式鳥瞰図・2026駐車案内全1頁と9tile比較。西側細長棟155候補。精密棟対応再確認を残す。"}
+{"at": "2026-11-05T15:33:42.775194+00:00", "event": "start", "facility": "ashikaga-pair", "scope": "公式写真・街歩き地図と太平記館/遊学館の隣接関係照合"}
+{"at": "2026-11-05T15:40:01.110086+00:00", "event": "pause", "facility": "ashikaga-pair", "scope": "2施設カルテ各全2頁・地図2種各全2頁・写真・9tile比較。建築面積確認と外形候補。"}
+{"at": "2026-11-05T15:40:01.142518+00:00", "event": "start", "facility": "tochigi", "scope": "公式配布先と倭町14-1施設所在調査"}
+{"at": "2026-11-05T15:51:26.145304+00:00", "event": "pause", "facility": "tochigi", "scope": "現2026カルテ取得・南蔵115.93㎡は延床で建築面積でない。公式小江戸ひろば南蔵と同定、数値上の単一棟は未選択。"}
+{"at": "2026-11-05T15:51:26.165223+00:00", "event": "start", "facility": "integration", "scope": "5施設履歴・候補数値・証拠索引整理。個別作業時間へ配賦しない。"}
+{"at": "2026-11-05T15:55:58.793009+00:00", "event": "stop", "facility": "integration", "scope": "outcomes5件/足利2候補/geometry4件・読解範囲保存完了。検証へ。"}
+{"at": "2026-11-05T15:59:40.124884+00:00", "event": "start", "facility": "aerial-comparison", "scope": "3施設航空取得後の公式図との同時比較。施設別へ後付け配賦しない。"}
+{"at": "2026-11-05T16:07:48.833418+00:00", "event": "stop", "facility": "aerial-comparison", "scope": "航空9tile×3/撮影時期領域/公式資料と配置照合。新規3候補、今市旧155棄却。検証PASS。"}

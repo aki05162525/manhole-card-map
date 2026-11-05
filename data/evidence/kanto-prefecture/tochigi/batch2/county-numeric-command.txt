@@ -1,0 +1,10 @@
+Executed from repository root, exit 0. Output: PASS 18 raw-decoded point containment checks.
+uv run --with mapbox-vector-tile==2.2.0 python - <<'PY'
+import sys,json,math,re,hashlib
+from pathlib import Path
+sys.path.insert(0,'tools/national');from research_common import decode_tile,contains_point
+rows=json.loads(Path('data/national/kanto-prefecture/tochigi/batch2-locations-proposed.json').read_text())['updates'];out=[]
+for r in rows:
+ p=Path(r['evidence']['snapshotPath']);x,y=map(int,re.search(r'(\d+)-(\d+)\.pbf\.gz$',p.name).groups());q=r['coordinate'];xy=[((q['lng']+180)/360*65536-x)*4096,((1-math.asinh(math.tan(math.radians(q['lat'])))/math.pi)/2*65536-y)*4096];data=decode_tile(p.read_bytes());inside=[i for i,f in enumerate(data['BldA']['features']) if contains_point(f['geometry'],xy)];assert inside,(r['facilityId'],xy);out.append({'facilityId':r['facilityId'],'snapshotPath':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'tile':{'z':16,'x':x,'y':y},'roundedPointTileXY':xy,'containingBldAIndices':inside,'roundedWithin':True,'identityApproved':False,'crsApproved':False})
+Path('data/evidence/kanto-prefecture/tochigi/batch2/county-numeric-validation.json').write_text(json.dumps({'schema':1,'command':'uv run --with mapbox-vector-tile==2.2.0 python (saved county numeric validation snippet)','exitCode':0,'checks':out},ensure_ascii=False,indent=2)+'\n');print('PASS',len(out),'raw-decoded point containment checks')
+PY

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.town.kaminokawa.lg.jp/0024/info-0000002440-0.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:52:01.767240+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.town.kaminokawa.lg.jp/0024/info-0000002440-0.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:52:01.919306+00:00",
+  "sha256": "08b0f110016bd7a594a53c7d4eacda1be30aee9207148c20bf9433ff0e6b9c1c",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/08b0f110016bd7a594a53c7d4eacda1be30aee9207148c20bf9433ff0e6b9c1c.raw",
+  "bytes": 40139,
+  "scopeName": "kankou-guide-index.html",
+  "elapsedSeconds": 0.1524289509980008,
+  "timingScope": "HTTP取得のみ"
+}

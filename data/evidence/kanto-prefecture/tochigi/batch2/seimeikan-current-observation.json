@@ -1,0 +1,18 @@
+{
+  "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+  "asOf": "2026-11-05",
+  "recordedAt": "2026-11-05T15:46:47.456506+00:00",
+  "sourcesRead": [
+    "seimeikan-current-city.html:2026-09-01更新の城址公園/清明館施設案内",
+    "seimeikan-tourism.html:歴史展示室を併設する清明館",
+    "seimeikan-exterior.jpg:切妻の低層展示施設、櫓とは別棟"
+  ],
+  "continuity": "現公式案内に同名施設が継続掲載。2022パンフの清明館位置と現外観を合わせて数値288の候補を維持。",
+  "orientationCorrection": "seimeikan-orientation-correction.jsonに従い伊賀門跡の北へ訂正。原観察記録の南は誤記。",
+  "adoptionApproved": false,
+  "remaining": [
+    "製品固有CRS一次根拠",
+    "独立レビュー"
+  ],
+  "timeAccounting": "追補取得elapsedはretrievals、独立手動タイマー未分離。後付け配賦しない。"
+}

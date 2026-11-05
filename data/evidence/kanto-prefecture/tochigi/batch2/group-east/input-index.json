@@ -1,0 +1,1506 @@
+{
+  "schema": 1,
+  "generalOriginals": "PDF/HTML/JPG/PNG/GIFはignoredに留置。数値raw tileと取得metadata/観察のみ親が選別統合。",
+  "files": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/baseline-diff.json",
+      "sha256": "6997fc943017fc69daa745ce0a20f5031108bea7c74a2f43fbaa65dafd60638f",
+      "bytes": 3619
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/check_east.py",
+      "sha256": "ca5ad4c49c6cb10df869d43ea4bf33f48159f7921481a145464e7da49aa7a850",
+      "bytes": 2287
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/derive.py",
+      "sha256": "95c5facb49266213aa5e156a1fe8230a82adfd17693ccc47184174a0273ca012",
+      "bytes": 1205
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/distribution-correction-proposed.json",
+      "sha256": "68d07745da69bd7025b2e726c334939d8cab1128bc64b4282856ba410fc84152",
+      "bytes": 498
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/fetch.py",
+      "sha256": "9ec1e0fa717bc2f4d0c23d1c649a2ee573700f8c4a8640b259f8b7a5ea6ef412",
+      "bytes": 662
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/finalize.py",
+      "sha256": "8a48ab2d06c828c5a2a550fe4f2f7be7a5c0976c260b894b6c60c44ba4d032f6",
+      "bytes": 3951
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/finish.py",
+      "sha256": "563d0b0072be56295426d342ad3ba37d2b36e6c6e3a09c6f6eeae8cf26e8338b",
+      "bytes": 6409
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-brochure.pdf-retrieval.json",
+      "sha256": "3c46b01e02e4217fcc4420a551b02bc184329b1de216bac6caba7712f8df4703",
+      "bytes": 1038
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-card-map.pdf-retrieval.json",
+      "sha256": "526781ffc7e242baa46cde5c4d934fb540a5ec05427a8f2d0692dfa08280dbbd",
+      "bytes": 1200
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-current-guide-1.png",
+      "sha256": "bae2199ad3d0ae4f0fab46f9a4a853c8aca121439ab846f6909f1c6d896f89b2",
+      "bytes": 3389369
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-current-guide.pdf",
+      "sha256": "4137f461869e499e612e3236fb5a90641aa9667b4fb1ecd835e37981403a3291",
+      "bytes": 9999873
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-current-guide.pdf-retrieval.json",
+      "sha256": "f2459eb7484416bf4b9fe11fb57e02825e75a8ed449d22aea35a6dd8713ac595",
+      "bytes": 986
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-current-guide.txt",
+      "sha256": "c7f9034fd448868f927dcf94fe314df53b524af244a01203ee2bad12dddc8386",
+      "bytes": 16
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-exterior.jpg",
+      "sha256": "b5facd68786c9125ad272e6e8df496bdcf61252790789a8be34ade76daa9ced0",
+      "bytes": 207150
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-exterior.jpg-retrieval.json",
+      "sha256": "c1196b9b54be88ed11368b11fb17cbd514cdc68ff28110a0cee39014fb784268",
+      "bytes": 950
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-contact.png",
+      "sha256": "873e525a232a8c470eb1569c7c698100f66f8e069a0fb11751cfa12f92f48961",
+      "bytes": 5027589
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-index.html",
+      "sha256": "08b0f110016bd7a594a53c7d4eacda1be30aee9207148c20bf9433ff0e6b9c1c",
+      "bytes": 40139
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-index.html-retrieval.json",
+      "sha256": "3729f4be28de44744782993d4fad64b9a08922a107423e3abce82da398b2fa48",
+      "bytes": 901
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-01.png",
+      "sha256": "3a2713a3d94912af3822f2a6252389406b8cfe1178a2a280a9fc3b80201c9a6d",
+      "bytes": 2412150
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-02.png",
+      "sha256": "094364d46aea548f8be8ceb10c31c0b002e8c7e38a8b4805db7a9ef5914c156d",
+      "bytes": 1785999
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-03.png",
+      "sha256": "e4ee9658dd98be614066d7ee8410644e94380129c1cc99d910fe539926fb64a5",
+      "bytes": 1627164
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-04.png",
+      "sha256": "b7936ee7c2735c25a352024544c3fb6fae6ce854a53158741276c206378ef3ae",
+      "bytes": 2070756
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-05.png",
+      "sha256": "6aa2f10171e75d6cc0eb1052acc0a902d54fd39297aaab14976962f6904109c0",
+      "bytes": 1998613
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-06.png",
+      "sha256": "ec551b75fdb8c96c4ad5e63d39c6d1bae66eaeb6939ba3991057c4e06cb42628",
+      "bytes": 1556929
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-07.png",
+      "sha256": "584b2d114e4762dac6644c5e764403589605230a1a72fd9750a537724cbb33b7",
+      "bytes": 1722688
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-08.png",
+      "sha256": "17464e48b83609a7c43a327940490f8016e8ee986a70f852c90d52a5508ba02d",
+      "bytes": 1313616
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-09.png",
+      "sha256": "2d7ebbc54fb8f7a9279ea1579e2b6ac90d5bbd43086d03f5b2e9f35e0d3af50a",
+      "bytes": 1851913
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-10.png",
+      "sha256": "5b46473241e6d8a3f76df1817c94ae9d7d3858592f12526cc3df534ba4aded79",
+      "bytes": 1372214
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-11.png",
+      "sha256": "2306999e59ca0d20619ff16aef2f29e51bd77483cf8896a438e9abef7e8fe3c3",
+      "bytes": 1876595
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-12.png",
+      "sha256": "d7b8cf73e8605b1573a798ff15bb39575922246ff8e5fd9578bb05568fb3f453",
+      "bytes": 1849006
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-13.png",
+      "sha256": "3f3521c44bfc32e32ed6819828a397138df1f04d05502c9db41a247733ec80c9",
+      "bytes": 1890279
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-14.png",
+      "sha256": "11f40bca660eb5f63cb2c8e566b3137190f671d2df424923429683515a03bd6f",
+      "bytes": 2044180
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-15.png",
+      "sha256": "3a6c8b94767179f7b666924f8b82d1bc1cb5bff7e040d01146bfc7ea969622c2",
+      "bytes": 1628228
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-guide-page-16.png",
+      "sha256": "d7b25823e6e46dd87f3a88c22d18150318e35b9496451cc5590d8b14c0d66a87",
+      "bytes": 984452
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-home.html",
+      "sha256": "b6e3ab69b91c0165dce17d65a771a7f692cc62fbb7348b6cb2f293871d5a25df",
+      "bytes": 64265
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-home.html-retrieval.json",
+      "sha256": "4966673e1a06e4e9348aeb151fb3294589d3ece855873d002aa4337f7cf67362",
+      "bytes": 847
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-human-response.json",
+      "sha256": "e2d3523cd870d2840105da0d0c00058429d16f677c898552baf46e9747ca5954",
+      "bytes": 363
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-museum.html",
+      "sha256": "69a20248556fd31c9074cdc009bd1aab136e6ae93c32a2eee9fc7165b7b1d8f4",
+      "bytes": 54393
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-museum.html-retrieval.json",
+      "sha256": "f7685156b8feda6597d27ca3022ca0fe5a6c40660f612e6b7ba879d64c25aef9",
+      "bytes": 1017
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-observation.json",
+      "sha256": "8b2c815aaec42ba1d3cf5c2fd908e673cd2515b47c64f086d55ca5ceb316656c",
+      "bytes": 2836
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-pref.html-retrieval.json",
+      "sha256": "4d0f397d9618edd75e297287b3e6048bb7fd511a5d45d218cdbb262e59566973",
+      "bytes": 987
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-1.png",
+      "sha256": "621cda68fd34a864bed838e69ae3f69bdfa0c803ffa85585acb3556c78693217",
+      "bytes": 2277672
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-2.png",
+      "sha256": "fa4b3ffbec4c3867b22dc65e8e7090c78bd4f70062ca3ada93b3f869143174a7",
+      "bytes": 1402583
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-3.png",
+      "sha256": "d24d3cf81298ef8e14ca53b344328f9d392166c7bb89daf5576e7d2ec39caf30",
+      "bytes": 1735484
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-4.png",
+      "sha256": "0d7ab11546b19e9d70ef31e20183c2cb62e42d55d1a07a003cf597ba81789d57",
+      "bytes": 2098193
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-5.png",
+      "sha256": "409a880c4d3064f415958cfb068e820427d6576630b378f2b41c0f168f9e3b00",
+      "bytes": 1298539
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-6.png",
+      "sha256": "ea47dbed1b5780292b2b138fdb3f78587290a14bceeac61c0bacbf80171b19cf",
+      "bytes": 1651542
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide-7.png",
+      "sha256": "453658d07382d645628348f8c6c9bd01970d2dc0f4d0aa468fe8551e945c1ac3",
+      "bytes": 1633308
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide.pdf",
+      "sha256": "d75837dac998107dc219f05a44b894cc38ab8bb234b9cbccafb37328ef8f6133",
+      "bytes": 10727739
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide.pdf-retrieval.json",
+      "sha256": "786988ffd772bf0de01105234b12c19a7bb5d2b9be086151b34308b76539dbd9",
+      "bytes": 983
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town-guide.txt",
+      "sha256": "150c43190b575d36a615b5e730bf57c8d0235d6a93dfa757b18940ccdf681e67",
+      "bytes": 147485
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town.html",
+      "sha256": "784c6c47028e2100d9462aa2adbd64011a6815962d14adb6515967d093151b71",
+      "bytes": 41543
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-town.html-retrieval.json",
+      "sha256": "4048e1926b826922771ad2a3cc3a721014e4dfb8836b487f15e6aa15ef543b6d",
+      "bytes": 895
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25634.pbf.gz",
+      "sha256": "b3fd55d1256a31c265698fcefbadb29c3a52ffe7472aee135efe2ac1e5afb7a6",
+      "bytes": 9726
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25635.pbf.gz",
+      "sha256": "cf7f53e4d927b820e2507adfbc8a446d54b42f649de3eebe73a7f8979138e72e",
+      "bytes": 7195
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25636.pbf.gz",
+      "sha256": "29f65fc49810541fb3d2dc033ae96ba1a4140cf17544680ea5d81af62025cf05",
+      "bytes": 6749
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25634.pbf.gz",
+      "sha256": "cb43303c089cdadd2a3c94dbe16b7bffaae01330b049c0baa575587a40707ef8",
+      "bytes": 16306
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25635.pbf.gz",
+      "sha256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7",
+      "bytes": 14819
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25636.pbf.gz",
+      "sha256": "e40949425e21c59e42178dd2198eb72eda32952477c1fd793063acabfe5e279a",
+      "bytes": 11181
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25634.pbf.gz",
+      "sha256": "0f91041b988d62e9b4326347a602f4fcacac57d070ed11fcd6368b46a4570120",
+      "bytes": 10452
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25635.pbf.gz",
+      "sha256": "3bf7c62ad662b4ff1d14ffc27f84172ffd36a7c1da3a83da95ee3028f2c381cc",
+      "bytes": 16800
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25636.pbf.gz",
+      "sha256": "5edb37b32f90ca7ff836157b74aa5f7ae305129af21064d569751f7edecaeb75",
+      "bytes": 18096
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/all.svg",
+      "sha256": "1026a6570beeb4771cd097ddd7c100706372bd058e1b575bf9d405f4ff0d8bc5",
+      "bytes": 1319163
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/candidate.json",
+      "sha256": "0ce573c726065f3d21dd213e6e85329a15c256dd2a4fc110ffd8f19944167405",
+      "bytes": 1956
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/combined.json",
+      "sha256": "1c591eca773cd2cce8ef413fe582b6ceda9cadfeb95923ae0f2e76a7330a01ed",
+      "bytes": 2419266
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/detail.png",
+      "sha256": "a7cfb3d9fa7fcff760936398ae140357312129d8b00a40f8f762c15e8df539f4",
+      "bytes": 140471
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/inputs.json",
+      "sha256": "49ff3e1b431a31a9a40bea5db03b2ee1be4fd09827bd18ebd2d71bd9422fcb2f",
+      "bytes": 2396
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/local.png",
+      "sha256": "d6f7f66737e2caad28a8b6b776919461bb2f69f7b4a3efe2b9dc431cc482908e",
+      "bytes": 613805
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/render.json",
+      "sha256": "b5d41a8e462c4a113bf83453cdc177fe28f0bd0fb6e2fffc3b3f4a5711981fff",
+      "bytes": 382
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/retrievals.json",
+      "sha256": "0ae72ea000e87f21c3a022b2a76879b6e1f088f9f73cdf3836c263d094fe262c",
+      "bytes": 37847
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-admin.jpg",
+      "sha256": "47f0958c553a0f3d772cf78c08b1759ca5d39db8b8a23b407d1bd0a31cd246da",
+      "bytes": 26231
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-admin.jpg-retrieval.json",
+      "sha256": "1dc3a399f88042de37c4351a74e1f60001d2248c14a069efca22589bb4881a0f",
+      "bytes": 965
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-aerial.gif",
+      "sha256": "72163e0ccab0d7f551a10806980529c00890e918fd1a06de3e52622f85951e90",
+      "bytes": 39748
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-aerial.gif-retrieval.json",
+      "sha256": "ad6597b95fa898089d946e66e66d60257b72f493bf756f66a4834743efa3941f",
+      "bytes": 958
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-facility.html",
+      "sha256": "ac6325282958a97b0c3828f12fbff3e636542d62be53bd46ceaba3b60d8e595b",
+      "bytes": 14783
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-facility.html-retrieval.json",
+      "sha256": "8487492a5ed9ba454e5312c2bfdbb715e5f9435492b3d120c291f7c28f4d55b1",
+      "bytes": 937
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-layout.png",
+      "sha256": "6c4300afddb437fd82e0ef20e45c27b82d647f4aca56922cf844678ea245986c",
+      "bytes": 339863
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-layout.png-retrieval.json",
+      "sha256": "1365d482e7eabeb4a32606186a298601ca5a1c60ee4e6f663f488981ab3d67c2",
+      "bytes": 964
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-observation.json",
+      "sha256": "a8c1ad85c2d12650971b05351716059243bc201b0149791e90fc4fcd65e92a9f",
+      "bytes": 2210
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-old-card-1.png",
+      "sha256": "70f104362db753fec8e0f2a6dbf6443084482e40a52459733a411922476b4b23",
+      "bytes": 755510
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-old-card.pdf",
+      "sha256": "c450cc57626d6b3075e13d2cebc5cb61a52699e7dad11afda579e41bb57681f9",
+      "bytes": 1045392
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-old-card.pdf-retrieval.json",
+      "sha256": "bc4b60a956e06c36787c56c6538093bf1ddb1ca815bfb129747f7ef8c8562434",
+      "bytes": 979
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-operator-access.html",
+      "sha256": "281d86113ed609b89078e06e72046f33cb7883ed3ec1415a1bcb4eb0388972cb",
+      "bytes": 16680
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-operator-access.html-retrieval.json",
+      "sha256": "ea8e254276c48831781779211b1230ba640c2a5ca79c5a72669b3441c75ab397",
+      "bytes": 916
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-register.pdf-retrieval.json",
+      "sha256": "e03510d55ec1471841f05cd4b968fc16b2445b6a11508dc0cbb39144ee80625d",
+      "bytes": 1205
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-system.html",
+      "sha256": "c6dc2f8599466307da6280708e3553c1c59edc4681c79ddbdbb567bd028af4d8",
+      "bytes": 17256
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-system.html-retrieval.json",
+      "sha256": "c95073617981155cc1848c72b7ff50dbb555a2e816f22e1e103a98089cafb335",
+      "bytes": 963
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58228-25640.pbf.gz",
+      "sha256": "325fcb260da1d99b87c6381fc74712e5a25a414f46e08f9cd3b1a8bd9312b794",
+      "bytes": 7793
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58228-25641.pbf.gz",
+      "sha256": "d5051e6971e98cc6fc89e79040246f6d80f1043b525b6a287639e19941b3c5d0",
+      "bytes": 7884
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58228-25642.pbf.gz",
+      "sha256": "a9bf5e719882a1680b5d61b60ee025aaffafa25359f3b9480909b88a8f2bc68b",
+      "bytes": 5560
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58229-25640.pbf.gz",
+      "sha256": "ae1325110bbd45f8b30a690fcdd59590f34d6558d1646ae31041b66475fc730e",
+      "bytes": 6053
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58229-25641.pbf.gz",
+      "sha256": "ba4cc7e71f67295fdf922b5861739e43f0a6894ea20561b642212d4d05c7f22a",
+      "bytes": 8131
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58229-25642.pbf.gz",
+      "sha256": "eb5e8e651a62e271a45bfb5a87add7deabd6790b6423fe4d3aa8bc832e0d679f",
+      "bytes": 9170
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58230-25640.pbf.gz",
+      "sha256": "8178c8cc76708dd7518b79ae52427f811b181b4d9ecf29919c4b16d348b57a2a",
+      "bytes": 4667
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58230-25641.pbf.gz",
+      "sha256": "0eb9dbdcda4180390dab2971dbf92807b785878cb35f1bb90e0e28a85857213a",
+      "bytes": 4778
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58230-25642.pbf.gz",
+      "sha256": "1cc88e19a1e5fb564d6ff33c917d76af5d568558e17d2cfcb4104d56dae1543f",
+      "bytes": 5047
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/all.svg",
+      "sha256": "4aee1563aa8af1f3f17e9d7a2b3073709e8d97ce4b4e3165032b8b4a007453a9",
+      "bytes": 615769
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/candidate.json",
+      "sha256": "1c8058b56e40bcc0426229f7a38a2c0f57ba4fd62b79ecf343ecddcbb69dd918",
+      "bytes": 2950
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/combined.json",
+      "sha256": "fcfec43fbc7397d07bcca772bfd5654a288a2ca0df8331aa74bbdd8bcfa230cb",
+      "bytes": 1142514
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/detail.png",
+      "sha256": "539098c59c88477cad92dd88da0e2898eff0972a1adedec551453ac6f544e198",
+      "bytes": 65014
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/inputs.json",
+      "sha256": "6460ae3dc47dfe32b20cf22902fc01edb63fa78845fe84c76a9d435099d5fb66",
+      "bytes": 2387
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/local.png",
+      "sha256": "c227e0ae850662e4359069bb85821e8b21712ff1570731bbe819eadf92ab3700",
+      "bytes": 547463
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/render.json",
+      "sha256": "d396b76b07990cc674e586a1cd72f130501f9adce5827aacf3398e05962e2adf",
+      "bytes": 383
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/retrievals.json",
+      "sha256": "aa98c0280d969c173f7c216141a7126400f5244027f8048cde185700abdc658e",
+      "bytes": 37541
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/location-lifecycle-proposed.json",
+      "sha256": "8252f28c927cbf88c8a0a8f23ef37fd5449c98f307d182d3fbf0e22b4e3884df",
+      "bytes": 5212
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/locations-proposed.json",
+      "sha256": "271aab60290a3bd6aa797fa83619a7cb1e0ebfada94ce3dc07131fc945181f14",
+      "bytes": 3593
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-01.png",
+      "sha256": "1313108c3a3840cb3f8f23ccb911e758c8712f80ea5c673ddac5505be3771576",
+      "bytes": 102218
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-02.png",
+      "sha256": "598a6ede08de11a75dcf7980ab83214046fe6f4f8c0dfafa95ea08deb12d871b",
+      "bytes": 772160
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-03.png",
+      "sha256": "a424d2f72571ddea3e57b1e60a53d811bffd0d34cdc7fbd5f00a28b5922d1843",
+      "bytes": 444757
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-04.png",
+      "sha256": "5ce74bfe350b519660d08fb41583fcb32cc50859d5dc718b419a7c9677bf707b",
+      "bytes": 286355
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-05.png",
+      "sha256": "282b13bc06f20daa212b2af0fd0c8ddb18647adc043c926eba700a435213b78c",
+      "bytes": 364168
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-06.png",
+      "sha256": "6e6ebd9629e1f6b1af733ef8d09f4547c05c393d16346b4620869df08ae0569a",
+      "bytes": 400558
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-07.png",
+      "sha256": "9025a73994e9ec32085276db9db22e690e05c2acf3d0ef358deca6e06f4cc1b1",
+      "bytes": 695073
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-08.png",
+      "sha256": "0dba86b0cd75c56b9efb0aea095a35ed87c29098fb0091656f2ae085366dc0e2",
+      "bytes": 378288
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-09.png",
+      "sha256": "8c61979f1a255229313e15297cb2387e83267a763050d1239a61c989d753c920",
+      "bytes": 711178
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic-10.png",
+      "sha256": "da3986e903defd36271ec0313f433ae858655969e7e04167ba7d6cddeb7fe29d",
+      "bytes": 877883
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic.pdf",
+      "sha256": "c77abd0bbb29ece7d0441b3779a2d78e812fa5842e1104c425003b3796650d3b",
+      "bytes": 7310008
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic.pdf-retrieval.json",
+      "sha256": "2a279894a6ebbdc3a05f91dcb814182c0d14d790bbebe165701bcab0961bd8f1",
+      "bytes": 978
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-basic.txt",
+      "sha256": "c430c7dabe1d353c566d3e61837731b45d397426f0d05435899a5685a0bbf489",
+      "bytes": 12
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-card-1.png",
+      "sha256": "fa81dbf4522dc97475a46a5471eb5295882906fc9644565dead23598ab9fe621",
+      "bytes": 508920
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-card.pdf",
+      "sha256": "74d5fe6d255e9bc5656ddbed00d56df2265987c076a0eba03ed28aa6a369c830",
+      "bytes": 267996
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-card.pdf-retrieval.json",
+      "sha256": "56239647d8d3945dfcc940c0abf7b60dab04ab12e49f85e084f708ba2f2273c7",
+      "bytes": 976
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-design-www.html",
+      "sha256": "7a7d96c67d99a2fd09de3c6b87378d16dfe9a9ffc34b27bc06b9284577efa2ec",
+      "bytes": 41798
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-design-www.html-retrieval.json",
+      "sha256": "1c275492a2a81383dd13dcd28418ea0db68c6166334eb564303b65b0485ac832",
+      "bytes": 902
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-design.html-retrieval.json",
+      "sha256": "b54b7d0557811d1d44abdaf7ffa0512543a9f4ac808048c9e796f81a7439486a",
+      "bytes": 580
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-facility.html",
+      "sha256": "95870e1a69ea58ea3e3b6e58974d2cd37753b9308805c226bdff1b2cf6119f15",
+      "bytes": 47849
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-facility.html-retrieval.json",
+      "sha256": "b70a564ba1143ab6f473e12a4ffeb410324e6476019808edb2663a69c539c97a",
+      "bytes": 900
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-01.png",
+      "sha256": "61bd7fedd8fc0b17022bf17caac774e5e382898cc0103c4b169fae1e6ffeae71",
+      "bytes": 1973388
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-02.png",
+      "sha256": "a94ee3f54229e74f1c0b7d5226889bef3373af155b38c99ccd18b4f3f1396df0",
+      "bytes": 503557
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-03.png",
+      "sha256": "1eb9b4dfaa21d54ea133ba49bac8347c1ae6e61793d3e357a69d2cb2bacb4e87",
+      "bytes": 859792
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-04.png",
+      "sha256": "6aaf2d67a594a8a9d292715d6711b5e95c05cf2e5d9cdc7cd5cf2fcece255e93",
+      "bytes": 573076
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-05.png",
+      "sha256": "72216639abed3a6a4d8b8bfd001ed34a555246133ac98c867cde065957c9fad6",
+      "bytes": 358320
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-06.png",
+      "sha256": "31263e7d280cd9f4be53638d9c1983d777dfe9667f20e112ae56f707e41b6833",
+      "bytes": 389107
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-07.png",
+      "sha256": "a6af25aabf1ced6861539efe9ce13ba3dde48caf10361dd4f83c29fe43175f5b",
+      "bytes": 810869
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-08.png",
+      "sha256": "e075ea070e6574e699f2cf42a0c0f0acd0f77b04a82d6a246ce83b908ccbfe60",
+      "bytes": 599450
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-09.png",
+      "sha256": "ca476a89b3d5af3101a8ac94559031743f427e8b26607148a2c2d3273963c1f1",
+      "bytes": 601459
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-10.png",
+      "sha256": "4a7ef8857fce5a32b4b7129e11a750d50c6b12dc4c78f32f0c8e4be778fc6338",
+      "bytes": 540339
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-11.png",
+      "sha256": "2e548fcc80934da79d5e4f7d591c477057bf7047f110f24cf177652d019fd057",
+      "bytes": 493171
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-12.png",
+      "sha256": "e1543ca1d75548cb0ad1e634592a966c8ea7189e6682db4a28acf6cf614dbfc7",
+      "bytes": 624998
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-13.png",
+      "sha256": "4e05ac521eb1bd40bb51f93f40809ac622fe478615dc73a4cab25f08023f1b52",
+      "bytes": 401969
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-14.png",
+      "sha256": "6b9c0e57d6357a57293fad409f5c400a8d5c18fbba04237c12a2b0a17077de87",
+      "bytes": 556775
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-15.png",
+      "sha256": "f4937830c37f62072b759809731a62bcf75e99f08236181f4d78b50fd6c95766",
+      "bytes": 496415
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-16.png",
+      "sha256": "f79f453468657bf0cdba76db168d61a6b0093d002171404cba9ee30c28277496",
+      "bytes": 561697
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-17.png",
+      "sha256": "079fd9aaaf6bfb96f49cd666727c7ea4de4b86f123552f5e83993fb295e06a82",
+      "bytes": 791045
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-18.png",
+      "sha256": "00d3f0df285ca41525a0b9c4e5b95d91043995f2838bac4efee694f74a9922c9",
+      "bytes": 535933
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-19.png",
+      "sha256": "ce9064629e4bfd41173f0e40af3fa8ea6db9cee3c0277d41430c6ee72635bcd6",
+      "bytes": 614055
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-20.png",
+      "sha256": "0a7fc54aabe1fdf2a4ebbb9b4e2612e72ee6ce4495189512e4e735f209f0568d",
+      "bytes": 1000590
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-21.png",
+      "sha256": "b6ffc65b0d4296d18c1e90b19a7aff626c206a92d25d52f165ac5050796ec06d",
+      "bytes": 857226
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-22.png",
+      "sha256": "2034b2599ca2cfa1a8c103db4c2572b921c44fa8618bb871cc8ffc2c015c6ec3",
+      "bytes": 718529
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-23.png",
+      "sha256": "818fab73572b35d79c40e0821f7d86b993e6bb9d0266cab631e03177600276fa",
+      "bytes": 676883
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-24.png",
+      "sha256": "b4abe38004d3adb0d77cef493cfc8d4fb5744d5206b5285e6fe07521d4630ef1",
+      "bytes": 947232
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-25.png",
+      "sha256": "2ac83f2960d4ec76e28cdc3ed07ad73a4a527bd6f0c691f8636ce74d748c2652",
+      "bytes": 562539
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-26.png",
+      "sha256": "b0326d427324cd2cb7d63375aeca9bf3891bb76c9751f5ae1d8164f96907ecfc",
+      "bytes": 544582
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-27.png",
+      "sha256": "91af6ce61e3d239128cc20218ad2caf26b86cdfe2eab185048da141ee03be9a6",
+      "bytes": 594136
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-28.png",
+      "sha256": "d68f8639202e40c8456f5e6c04645979b5104a4fa2570661e9ed510909ded7be",
+      "bytes": 592751
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-29.png",
+      "sha256": "c34c92b1387ca9d7d4186ebe7ad7c2ef02fe86a99720762f1dbf3bc762b078a2",
+      "bytes": 585911
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-30.png",
+      "sha256": "3c78d56f206f88c51c07f8d262d86e35acc7b535c71129f5d348b7a1a9c52c2e",
+      "bytes": 621956
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-31.png",
+      "sha256": "da87a5c294da97ff7fb2246e0b33147532ef3cae2e46abbf6531f3268cfdbb0d",
+      "bytes": 744303
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-32.png",
+      "sha256": "5b097ef418ffab2154198f1690eafe4a39461e990a923de60e14ea4c0bf387cd",
+      "bytes": 666306
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-33.png",
+      "sha256": "62fbbdc819c24b8c9d4e5f7e683adf3915b688af4522da9ad46df432d911cb0f",
+      "bytes": 882132
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-34.png",
+      "sha256": "02396399737cc93938e2a291bed496000ed794466bc03ef5c4e251c06e86069e",
+      "bytes": 642123
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-35.png",
+      "sha256": "904df18f52fbc0b1c267c0951a6c0309540f0c9931629e6dcb6eca2170fde904",
+      "bytes": 654692
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide-36.png",
+      "sha256": "b1455ea64548663934e6cc507e0fb5193559c63990919f8a1507fad22ab11156",
+      "bytes": 1940517
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide.pdf",
+      "sha256": "e5c9ab59201b196ed362acf1f969f258664f3108e23fe4eb93e9d08e9351f580",
+      "bytes": 10173029
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide.pdf-retrieval.json",
+      "sha256": "8273b6e994b6da32aff66a519bac9ebcef5f83d2c25c86c3cad2a896bfaf3d7d",
+      "bytes": 979
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-guide.txt",
+      "sha256": "4d7144a219b0470f761d39b9101d33b7c6643a5500160ed924d515c4c1525d3d",
+      "bytes": 210075
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-observation.json",
+      "sha256": "7322c37210e5fb75b2a247aa48c0e2a23f3cdf68efcdc1245d55136462dca627",
+      "bytes": 2586
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58236-25635.pbf.gz",
+      "sha256": "cf7f53e4d927b820e2507adfbc8a446d54b42f649de3eebe73a7f8979138e72e",
+      "bytes": 7195
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58236-25636.pbf.gz",
+      "sha256": "29f65fc49810541fb3d2dc033ae96ba1a4140cf17544680ea5d81af62025cf05",
+      "bytes": 6749
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58236-25637.pbf.gz",
+      "sha256": "7bd1df8c1951a3d917a2162c7fc1880b642d20d7477e926bbf1e58fd01567a36",
+      "bytes": 5782
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58237-25635.pbf.gz",
+      "sha256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7",
+      "bytes": 14819
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58237-25636.pbf.gz",
+      "sha256": "e40949425e21c59e42178dd2198eb72eda32952477c1fd793063acabfe5e279a",
+      "bytes": 11181
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58237-25637.pbf.gz",
+      "sha256": "f89fcde7b4eb6c3794d8c7674f637ccc8ba8aa75aa53064dea6d1a311d04d591",
+      "bytes": 19635
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58238-25635.pbf.gz",
+      "sha256": "3bf7c62ad662b4ff1d14ffc27f84172ffd36a7c1da3a83da95ee3028f2c381cc",
+      "bytes": 16800
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58238-25636.pbf.gz",
+      "sha256": "5edb37b32f90ca7ff836157b74aa5f7ae305129af21064d569751f7edecaeb75",
+      "bytes": 18096
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/58238-25637.pbf.gz",
+      "sha256": "15bfc0c00d7883243c5ab77f28ddd0e9441892ff474c1067e1253904bd53f736",
+      "bytes": 18921
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/all.svg",
+      "sha256": "a7e8d2302ad99ff1bde7acb5d666e20f526dba76c47842c5385fbdbe4a7a7569",
+      "bytes": 1430876
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/combined.json",
+      "sha256": "4416871dc602c925c1559698b9f803fb4ec28339fa9020bb25bf5e5c067e19ed",
+      "bytes": 2620954
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/inputs.json",
+      "sha256": "a4eb996c6f2f4583f11bc7a4b286f7a8a59189d0c96b2fa8f649a18ce9882a0d",
+      "bytes": 2405
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/local.png",
+      "sha256": "cbe366d0a9b377ec3bedbc25aa76343a1d191a7ae5999ed22535859a2bf57965",
+      "bytes": 598975
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/render.json",
+      "sha256": "eb1420bb386f2d2d4e93b5aa2e314ea908f852ee408a887c85384a453dafec67",
+      "bytes": 399
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/origami-vector/retrievals.json",
+      "sha256": "e92e70acc47306e266cab5f756a544c52a583e0afa01d4f6d48cea4065f2e6a0",
+      "bytes": 37547
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/outcomes.json",
+      "sha256": "2a0958e7290a4666e6543461c3be67a88bc66c54b63f514ebf26e20f5503b1fb",
+      "bytes": 3946
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/propose.py",
+      "sha256": "9ecdf9b7a157c1521d52307c4aacbd2fe3b209509c89b72697b1fe3be737cf6d",
+      "bytes": 3130
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/render.py",
+      "sha256": "fda21a99b4a8672956bbfc78d168d25347865ed8dffd12bdf4ae3fc8f8a0179f",
+      "bytes": 1486
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-access.html",
+      "sha256": "d7c7bac3ad8f90134ed8801b362411e76d63f15bb7398272cde901694827f9ac",
+      "bytes": 29350
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-access.html-retrieval.json",
+      "sha256": "1e2034f244b3794c2a14b1193ee8ab5a812f987de268fa899d2b14c6fbb84ef7",
+      "bytes": 913
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/comparison.json",
+      "sha256": "aa6b9fdbb6daff1ae54f08fcad18745038f5119a60cb926015a57ba2f8e0311a",
+      "bytes": 946
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/mosaic.png",
+      "sha256": "9cbde207d516b80e2dc5e85eb49bb6303316252fff7845a9ec397ffe889c2bce",
+      "bytes": 2538614
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/overlay.png",
+      "sha256": "52938049d4e43057bf026f6f1ee97cfa5a6d049571f202ff18aae98f0f53a6ab",
+      "bytes": 2637968
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/photo-spec.geojson",
+      "sha256": "e3ca858df7f75751310b4d31982f17bdb36fe21dc489ababef7acb280ea343f8",
+      "bytes": 1513
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/retrievals.json",
+      "sha256": "b89a9070945658ed046513a765e3df8ba8dfe7f4f933a3bfdb629b603868224c",
+      "bytes": 9163
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/start.json",
+      "sha256": "48a5635b6365315f4a35464262000cf787c70329a0230d47d7a5ca60985b1429",
+      "bytes": 99
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/timing.json",
+      "sha256": "a553d10bec17b7d2ab4917808a661dbe35362b1371200adae37d286e399d9e76",
+      "bytes": 259
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-aerial/window.json",
+      "sha256": "9f3966ed1617d9b8d41f2a0e8805a18c5002a91d17d61ab5e813b2534b1c0eda",
+      "bytes": 110
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-1.png",
+      "sha256": "017d7f20065bac08643c1b39a7397934e40e98fc4be951a6e2c141a6dc683885",
+      "bytes": 1268494
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-2.png",
+      "sha256": "6ef059baef4c1dbf1064057c8b6bcda0348f32c7ae1a9a846d835d526060332a",
+      "bytes": 946228
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-3.png",
+      "sha256": "0b44251a620a413873328c049bfee1012679e9cadf7cb3bbad7f2edf7b5d129a",
+      "bytes": 555138
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-4.png",
+      "sha256": "72ea6f7c0086d4aaf5ec710375ba0c36ddfed363247fdcb97cc77a2184fcf2b7",
+      "bytes": 1859043
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-5.png",
+      "sha256": "51c0d43941d03ca6008e3d6c6572817458e79324c14425731efbc7f071c78347",
+      "bytes": 1082555
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-6.png",
+      "sha256": "c095255d2a412c72ab6b9885e3c48f34d61b350fc08372c63c71035f27492314",
+      "bytes": 1509109
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-7.png",
+      "sha256": "1acc08e25933b2e3008a717373fb6143cd4201db9b6561f9550f57bea1238772",
+      "bytes": 1164185
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-news-8.png",
+      "sha256": "f57585ea55f1d2ccb4670d08757645e04f9bd7bcb003b04c0a9b53b390deea51",
+      "bytes": 722864
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-observation.json",
+      "sha256": "0456ca28167bfd609afd1b049472acada8c7bc36c292eb27569cf989e9d6b737",
+      "bytes": 2181
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58178-25653.pbf.gz",
+      "sha256": "61d15ba5dffbd20e206d6dca9604440cf74fd91208118752bd20184e18880b6c",
+      "bytes": 11446
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58178-25654.pbf.gz",
+      "sha256": "21905bdbeeb835a02700263d6b2eb92991d49b43e25267ffed8512c7b8cc9739",
+      "bytes": 10773
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58178-25655.pbf.gz",
+      "sha256": "ad65c5d91d654dc8d7388c9b3a1652e1bbc1ab4c17ec59ce4784e8bc4de2ee99",
+      "bytes": 8913
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58179-25653.pbf.gz",
+      "sha256": "360f746baca9cf2ebf005dc09202daa2f4fc3f70c3625d30826baf6970c3ad09",
+      "bytes": 14912
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58179-25654.pbf.gz",
+      "sha256": "ea1e40c11836cbc90c036fe361437e4208a88b14d60bc7e8a53632ab14a6bfab",
+      "bytes": 9657
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58179-25655.pbf.gz",
+      "sha256": "c8bd5c99498976339e15e1bca5b1503389ae7a42686c806ea1ed61e6c5e42c57",
+      "bytes": 5318
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58180-25653.pbf.gz",
+      "sha256": "4516dc7a27c0b9adf15a8de8793ee9b239aac14d6d07265ac44fa5dba7c34251",
+      "bytes": 6148
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58180-25654.pbf.gz",
+      "sha256": "5eb9e5294b85600a88020f5b38f46a7ba93a0a03beb4165bcd8f9139e2737da6",
+      "bytes": 7883
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/58180-25655.pbf.gz",
+      "sha256": "8d98c52bfcd494d6b09bc8c7a302f804953b5e54fbbebb7338b7fb1cd3d78aee",
+      "bytes": 4333
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/all.svg",
+      "sha256": "a737ad02192f11229a35d162b75fad80e9473e8695d61b6ac219e4ac10268d50",
+      "bytes": 727618
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/combined.json",
+      "sha256": "4aa1c2fe0786c940cd1be4f46074bf7b17856dc21ca125f20839ee0f2f88cc9e",
+      "bytes": 1356185
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/comparison-features.json",
+      "sha256": "725b8cad9a5e67b2b2826f53aa3bcd30667c7500cfc8efd939eaf5d3dea6c972",
+      "bytes": 7425
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/inputs.json",
+      "sha256": "a82dea293e72100820b3a474b3ea88523875ec325b6cbd92dd442b9161929cdc",
+      "bytes": 2378
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/local.png",
+      "sha256": "a659fefd837161aaf9a6688feea3434e424a17131d8eb50db3a1cb9e2ecc4892",
+      "bytes": 332610
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/render.json",
+      "sha256": "f95cf80887547322bcd0b95e324b9d0b7416a1c08126f96f056933f0c755c5c3",
+      "bytes": 383
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/retrievals.json",
+      "sha256": "c39f6afc738d4938a18ee3d98d11888628124b6cab4133d932377702b46cf4bb",
+      "bytes": 37394
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano-vector/school.png",
+      "sha256": "612fe451384b3b5b6c3ee77a56d4334ecd209d04df7f88938bda738b61ebe0f8",
+      "bytes": 78983
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sano_aerial.py",
+      "sha256": "3ac7ccabc669ad3b23131b638c3b0d17ee2ea2411eb45b33bd9f2c6774a4a321",
+      "bytes": 1949
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/selection-proposed.json",
+      "sha256": "45a1444ded5c03295cfc4bb8336b56deced2c641db30aefb53a0e0b902250593",
+      "bytes": 1027
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-floor.jpg",
+      "sha256": "0c557e93f49deaba4985b53ca6179ebecacce6dc8269076fee8d706d0580bfe1",
+      "bytes": 483287
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-floor.jpg-retrieval.json",
+      "sha256": "247441e08af1d49f8c7f819910d4eb676cd6417cfc5651ec2e4eaf30fd374f17",
+      "bytes": 973
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-museum.html",
+      "sha256": "f891fc98bd077d56e70a6d309eaaabb818a0a5f609867ba6e7fe383f85b76772",
+      "bytes": 105256
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-museum.html-retrieval.json",
+      "sha256": "ed48a944b21aa91de67f63a7a88fa54972846d6bb91771892579a06ec6593edd",
+      "bytes": 902
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-observation.json",
+      "sha256": "387683cc392aa55e851b05476249650f5e761e4940e38cbedf883625423fd683",
+      "bytes": 2375
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-06.png",
+      "sha256": "56a5ea1bed0199dfa72f11351e33e2674d08a57ed70894e2819d6fb3e755f0b4",
+      "bytes": 993365
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-07.png",
+      "sha256": "58eb56c5965a7510eadfb4a509d6920111dad6a9e5694ae372e69b0f131aed75",
+      "bytes": 245422
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-08.png",
+      "sha256": "e7991e5aff74b23433ebd60a91afb0cb85be938a55ff3eb86cc1c761e8268797",
+      "bytes": 319049
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-09.png",
+      "sha256": "b07c0772e377f26dcd7741f7341a3c7ee4342d7dc86d6083ab15f5c12ac1e547",
+      "bytes": 253678
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-10.png",
+      "sha256": "0e8253b21091ea99421aa348a28b13b5f655ee8aee862906d5632b24be924380",
+      "bytes": 735723
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-plan.pdf",
+      "sha256": "4c6dc5aa3ffd4d85d6c40aecb3239d6dddc1de057dc3dc100d60ef7537a02c57",
+      "bytes": 1096441
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-plan.pdf-retrieval.json",
+      "sha256": "08cda2139fcfa8740ebb954b56e74e0a9a71d17760138bf8368defff84005590",
+      "bytes": 985
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-park-plan.txt",
+      "sha256": "ec2446304d5e7a713f88cdb036cb26b819819b166a12bc03864a12e97810c6fc",
+      "bytes": 80356
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-01.png",
+      "sha256": "b193ebf2cb9c097574dffb3dc3dea6d13ba3ff138679cb7af7cbeb0333a5441c",
+      "bytes": 1828077
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-02.png",
+      "sha256": "d5189aea6d8c551af601726956a974d5705db08870af1e1f048f8cab66faa90c",
+      "bytes": 552978
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-03.png",
+      "sha256": "effb8fb768917e665a98036c0fc5f54a35ef3c160950a60b8f4dac0955fa404e",
+      "bytes": 657541
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-04.png",
+      "sha256": "614309f6f84af9cdee2403d8fce5d1e3c9c1873a144aabe6633cbc2ca4d0cd45",
+      "bytes": 783285
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-05.png",
+      "sha256": "7353e36eec508f1c9b09ca007aa2595b48e892a56d3182cf9ef615c19a17229b",
+      "bytes": 539483
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-06.png",
+      "sha256": "66433aeed345ef83fc5c8d43e10422b9977cd01589a03f2b0ef92988b960608a",
+      "bytes": 460354
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-07.png",
+      "sha256": "e542f4ab775b63cb95b20526c00f22dcde58460639fbd3802a2c698282710160",
+      "bytes": 564413
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-08.png",
+      "sha256": "aeea1c33226981ec12b25e3fa846af434dd7c2f204b4acaa9ee70063771babf7",
+      "bytes": 442444
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-09.png",
+      "sha256": "69e0ab9c97bde30287bad8402022b90bfd12d8ec8ea3cb630008a27dc8045176",
+      "bytes": 704822
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-10.png",
+      "sha256": "74e823ef96b0a0b45ded430dbb280c8c78082e97e53ab5e04b10806fa1ce7c78",
+      "bytes": 520482
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-11.png",
+      "sha256": "86cb1000ae27fc42cfc774c17b475be0f947b7a5528801def9b0aecf67ad650d",
+      "bytes": 558891
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-12.png",
+      "sha256": "e5a1d15b149ef4661d7d1076bd90af7001b8a1d8baa7092e9fbdee1b658c467f",
+      "bytes": 685644
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-13.png",
+      "sha256": "50c53935feaf427ca5a7bb370e6731dddd061f9bd0181b3b36ffd5e4d6a5e1c4",
+      "bytes": 884642
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-14.png",
+      "sha256": "27a90e108d0395570ee47ee4e33f71c15b06bff43292c15630c38ea50fc97628",
+      "bytes": 571368
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-15.png",
+      "sha256": "0c142321b3fc07fc828b78330332d4590cac536caccc29b2cad7ce24664a00b1",
+      "bytes": 713796
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-16.png",
+      "sha256": "5ab863bae4a093f41fe86e70b3272ad34845c1d712f1e027b70e4732c47ee405",
+      "bytes": 520632
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-17.png",
+      "sha256": "c795f55e5ef1e7c039d7e26eef98cbbc165dedccdf052da1a0b545a3414c0cea",
+      "bytes": 731278
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-18.png",
+      "sha256": "2ae7f0f755e34c2b762bef5d51fbe3c362f0dd14fa981ca349d60ab657a606c7",
+      "bytes": 655934
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-19.png",
+      "sha256": "4e736cbef227fb59fc493989882c0a6f7e7a7abcd8589a2c9fd6807570524c2a",
+      "bytes": 584041
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-20.png",
+      "sha256": "8fdb383da8ecba27d29db755f2ece43edb429bc273581250d327b7df1ab5c28f",
+      "bytes": 624466
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-21.png",
+      "sha256": "914f8ca22b6e9e9ab3bf708007c86bca565fd12c23315d10a24c9a30e8ab298c",
+      "bytes": 644275
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-22.png",
+      "sha256": "14ef55147bcee513a8c0424184de7b91af214957a04391ab321ddef47b9cc301",
+      "bytes": 615942
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-23.png",
+      "sha256": "dd56cfe45055b3f49881da869fddadafe686f2e1a3b2bc97d17cc8bc57cd3d2c",
+      "bytes": 760872
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-24.png",
+      "sha256": "c4c3c85310b02cd2ffeb5d5fbfb807db9fc308645701bc43452343c3c16eb776",
+      "bytes": 494024
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-25.png",
+      "sha256": "8b58003bb59386bbf86f4b73f7d65a55b741b136745cb2fa70ab37806ac41adb",
+      "bytes": 659389
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-26.png",
+      "sha256": "1473d9e685514eb254bd69044c8c455c87a031e8f5673ca5caa4e5002e9ccb64",
+      "bytes": 748525
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-27.png",
+      "sha256": "726c99180252d2822078ebaeb80e2f9562456bd7571f58e92e9aa7c15f58dfff",
+      "bytes": 683558
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-28.png",
+      "sha256": "c21b98ebe76e042b89b33c81522ddac22df721bea893675d3609f1edf1aec28c",
+      "bytes": 522223
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-29.png",
+      "sha256": "d7c9bb6845f0dc1384eacf5c683c752c3ac98307fc21850a3dc2cea98b974a60",
+      "bytes": 517213
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-30.png",
+      "sha256": "734c61bfb0aac3ebe5f3bd15f9de39ff6d9c9837767e4531806ff2ca4952bebf",
+      "bytes": 561344
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-31.png",
+      "sha256": "0f0ab5dff0f9d55032bb9de94dfc43bab182e4c70b45fe92e541f6a118f007a1",
+      "bytes": 610796
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-32.png",
+      "sha256": "2d687e87f6b5aadc5f88a6459a53d479588bf914d6069f1429fddcf751392ec8",
+      "bytes": 638839
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-33.png",
+      "sha256": "d8fa3bdbee6c10ec2fe9b2faa49a0f5c06244f1997095118fc5e8263fde43314",
+      "bytes": 572831
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-34.png",
+      "sha256": "7d6185265948f0b946c3fd7449883aa622fa4c1e2e1d94f77635d96aa567738d",
+      "bytes": 681118
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-35.png",
+      "sha256": "a6a779506f1a5a672d7ff1af8b7a74187c511c27ed8991e6890e43e9a5117580",
+      "bytes": 539908
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-36.png",
+      "sha256": "70c1506f6b26864d8b385eccb9d21d20acf7f08e128c67756e872df9af016355",
+      "bytes": 567088
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-37.png",
+      "sha256": "25454f6f3af290ff809622c5669381d27b573c6ce2cc49f23f846cda2c046454",
+      "bytes": 727443
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-38.png",
+      "sha256": "15e7bdcaeb0cd60177de9886eda00ac02dcf4cc5e6aed085aaa60feff9200922",
+      "bytes": 590627
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-39.png",
+      "sha256": "0e9e6f48c0cf81ac6586fc56a0fd362cfd46411870f4587727b02590654c4183",
+      "bytes": 1573799
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen-40.png",
+      "sha256": "569cf6e3d3a6ee8ce0479165b2fe4b1b0c52d9609ed5e1fcfee30d3465f56320",
+      "bytes": 653123
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen.pdf",
+      "sha256": "c508feed6bfe118be461d7754148d5ce133bb88fcaf682a6e85eff6237094880",
+      "bytes": 22916699
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen.pdf-retrieval.json",
+      "sha256": "62f24d932cfe5c4d70359d658868cfea6147d8d1ce252f2c4165d55eaf396990",
+      "bytes": 984
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-reopen.txt",
+      "sha256": "e421b28bff7b10f2ab9331654655021371d17ecfb079e984a547af40b2ded3ee",
+      "bytes": 215438
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58218-25647.pbf.gz",
+      "sha256": "c0cb8227581ece86034539143c46212d2dc44d9279b5d9598f715d25d018fc91",
+      "bytes": 5390
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58218-25648.pbf.gz",
+      "sha256": "4ad83043ce5bbf5b02c4ddee25e61f65ba2493e3bbb817c166b03e41dfd897ad",
+      "bytes": 7196
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58218-25649.pbf.gz",
+      "sha256": "0ff2fc5d2dd6690654801dc5f6628a961369dabb79457314320b422916db06ba",
+      "bytes": 4877
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58219-25647.pbf.gz",
+      "sha256": "16d86f6385199f98471e4c7b31aefa63741fe4bf440ac94c9f42076474b6ecc1",
+      "bytes": 5909
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58219-25648.pbf.gz",
+      "sha256": "39e124fbabad5496d4c26908ee041020306f7706fab0a85bffd074af29c280b2",
+      "bytes": 9945
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58219-25649.pbf.gz",
+      "sha256": "9b76bef7630310b55a633bd63058d4e7f15ff2e59fd07f4682ce5b75e50aaff7",
+      "bytes": 6949
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58220-25647.pbf.gz",
+      "sha256": "207205889541e3400e40912123ed62cf60802b08134018b8af6a72f4b1560c1b",
+      "bytes": 6409
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58220-25648.pbf.gz",
+      "sha256": "ff42d289b889e0bb5e7899651b3bcffc34be9a4cc5599922209e421829de2c77",
+      "bytes": 6148
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58220-25649.pbf.gz",
+      "sha256": "6b5d972c2008ee444cb1a877957be450252faeee53f38bf5d2a30c0b2efacc9a",
+      "bytes": 8098
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/all.svg",
+      "sha256": "df81d366eb5573eeb3af7bcea31a1ec3a6eb238689e4b819cca4def3e3bde60e",
+      "bytes": 540948
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/candidate.json",
+      "sha256": "b6bc22a2476b577a537a96422f7dddeff3875b1cd2852d3b280c2df43c178868",
+      "bytes": 4638
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/combined.json",
+      "sha256": "e8ecdfbba1255910577c7772a8fcb014cc95572bd0d7d871c344187e04a23e5a",
+      "bytes": 1056071
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/inputs.json",
+      "sha256": "30b0553faeeee8e7d35e7d59281521f4eab78ab89df84e3c72d1e363caf48b8b",
+      "bytes": 2432
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/local.png",
+      "sha256": "40023c2b5037d0f5eecb5e7f5f0c836b05c1be84e33152e606e20f90bf9a1903",
+      "bytes": 107214
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/render.json",
+      "sha256": "6ab3827e8a4c43dda4bbaf2694a440c6962650ff3a5a4035efa89c71cfe165e8",
+      "bytes": 384
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/retrievals.json",
+      "sha256": "681809e79f1d1a8621028bcfa570ccb3a82b55892b1d2e750b4f5080870c47c8",
+      "bytes": 37541
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-virtual-http.html-retrieval.json",
+      "sha256": "5050845bca9b3b1187b656f1651ae0e374b6870d166c3c3f4549963ddf8b6a06",
+      "bytes": 1204
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-virtual.html-retrieval.json",
+      "sha256": "0e6c780379578c4add68c854fd69f838fefdbecd9840317d4f5f576b1aa27252",
+      "bytes": 1201
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/sources-inherited.json",
+      "sha256": "8ff3fe2e1be1749432e1efdc9ac4502a07ae4c4b5f60f86d0a0fafb3bf445a52",
+      "bytes": 6711
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/timing.jsonl",
+      "sha256": "e7c26192fff64821358a4c8e788574899e888052b5b9a26f770f2fd3f222843d",
+      "bytes": 1956
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/vector.py",
+      "sha256": "fd9745528a365f9e059ce005f71b92208837f66334a88af2e1d7dcf4c8f1d2fd",
+      "bytes": 3312
+    }
+  ]
+}

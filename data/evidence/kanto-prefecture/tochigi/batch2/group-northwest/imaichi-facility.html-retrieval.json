@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.nikko-honjin.jp/facility/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:31:05.186368+00:00",
+  "httpStatus": 200,
+  "etag": "\"5b65-65adf0461f780\"",
+  "lastModified": "Mon, 07 Sep 2026 06:49:18 GMT",
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.nikko-honjin.jp/facility/",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:31:05.314454+00:00",
+  "sha256": "4e75c5726fe833177a8a6cb361fbc28ff213fe628de395b05b1827d60d0b00ac",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/4e75c5726fe833177a8a6cb361fbc28ff213fe628de395b05b1827d60d0b00ac.raw",
+  "bytes": 23397,
+  "scopeName": "imaichi-facility.html",
+  "elapsedSeconds": 0.12840478698490188,
+  "timingScope": "HTTP取得のみ"
+}

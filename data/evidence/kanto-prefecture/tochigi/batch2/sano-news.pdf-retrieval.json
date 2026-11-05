@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.sano.lg.jp/material/files/group/1/704_2-9.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:14:16.755440+00:00",
+  "httpStatus": 200,
+  "etag": "\"67e34c12-320985\"",
+  "lastModified": "Wed, 26 Mar 2025 00:36:34 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.sano.lg.jp/material/files/group/1/704_2-9.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:14:18.384873+00:00",
+  "sha256": "98d5fbff6370bf8220d69400968d0c1a83c87a48aaf613c218fcf05aa9cf5df3",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/98d5fbff6370bf8220d69400968d0c1a83c87a48aaf613c218fcf05aa9cf5df3.raw",
+  "bytes": 3279237,
+  "scopeName": "sano-news.pdf",
+  "elapsedSeconds": 1.6297946909908205,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.nikko-honjin.jp/assets/img/access/261021_parking_map.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:32:49.667063+00:00",
+  "httpStatus": 200,
+  "etag": "\"4c47df-65eb4895d9600\"",
+  "lastModified": "Mon, 26 Oct 2026 01:49:12 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.nikko-honjin.jp/assets/img/access/261021_parking_map.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:32:49.991748+00:00",
+  "sha256": "cb48772e56927ce953dd75293f8c2ad58d475b0406cd5a2d8be99fb05831fafb",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/cb48772e56927ce953dd75293f8c2ad58d475b0406cd5a2d8be99fb05831fafb.raw",
+  "bytes": 4999135,
+  "scopeName": "imaichi-parking.pdf",
+  "elapsedSeconds": 0.3252921109669842,
+  "timingScope": "HTTP取得のみ"
+}

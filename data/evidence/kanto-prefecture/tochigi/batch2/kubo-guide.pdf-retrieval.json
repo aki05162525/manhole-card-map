@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.moka.lg.jp/material/files/group/58/panfu01.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:14:18.442600+00:00",
+  "httpStatus": 200,
+  "etag": "\"698d1e40-11f7d8a\"",
+  "lastModified": "Thu, 12 Feb 2026 00:26:40 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.moka.lg.jp/material/files/group/58/panfu01.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:14:23.181327+00:00",
+  "sha256": "8e77791d0b2aed88722a89ddbfa6bec24470f4bba1183acfaf12944e044f7d9d",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/8e77791d0b2aed88722a89ddbfa6bec24470f4bba1183acfaf12944e044f7d9d.raw",
+  "bytes": 18840970,
+  "scopeName": "kubo-guide.pdf",
+  "elapsedSeconds": 4.739092734991573,
+  "timingScope": "HTTP取得のみ"
+}

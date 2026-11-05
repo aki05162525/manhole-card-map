@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-067336979043529fa019",
+      "coordinate": {
+        "lat": 36.4420835,
+        "lng": 139.8146166
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/mibu-vector/58220-25635.pbf.gz",
+        "snapshotSHA256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2",
+        "sourceLocator": "z16/58220/25635 BldA index37; principal part only representative, 52/53 compared separately",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化Vector数値外形を加工。公式配布先と棟配置を照合し建物代表点をXYZ逆投影、7桁丸め前後内包確認。製品固有CRS未確認・独立採用未承認。詳細はgroup-south/outcomes.jsonとnumeric-check。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "coordinate": {
+        "lat": 36.3145503,
+        "lng": 139.8007359
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-south/oyama-vector/58217-25664.pbf.gz",
+        "snapshotSHA256": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+        "sourceLocator": "z16/58217/25664 BldA65 + adjacent58218/25664 BldA17, buffer duplicate removed by union",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化Vector数値外形を加工。公式配布先と棟配置を照合し建物代表点をXYZ逆投影、7桁丸め前後内包確認。製品固有CRS未確認・独立採用未承認。詳細はgroup-south/outcomes.jsonとnumeric-check。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "coordinate": {
+        "lat": 36.3145503,
+        "lng": 139.8007359
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-south/oyama-vector/58217-25664.pbf.gz",
+        "snapshotSHA256": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+        "sourceLocator": "z16/58217/25664 BldA65 + adjacent58218/25664 BldA17, buffer duplicate removed by union",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化Vector数値外形を加工。公式配布先と棟配置を照合し建物代表点をXYZ逆投影、7桁丸め前後内包確認。製品固有CRS未確認・独立採用未承認。詳細はgroup-south/outcomes.jsonとnumeric-check。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-da24aa34d750c88eacd3",
+      "coordinate": {
+        "lat": 36.4420835,
+        "lng": 139.8146166
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/mibu-vector/58220-25635.pbf.gz",
+        "snapshotSHA256": "38edc34ce92b2c536748cddd2e06207ae2f56bfddbd7cede366ec889610c09d2",
+        "sourceLocator": "z16/58220/25635 BldA index37; principal part only representative, 52/53 compared separately",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化Vector数値外形を加工。公式配布先と棟配置を照合し建物代表点をXYZ逆投影、7桁丸め前後内包確認。製品固有CRS未確認・独立採用未承認。詳細はgroup-south/outcomes.jsonとnumeric-check。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "coordinate": {
+        "lat": 36.313596,
+        "lng": 139.8041951
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58218-25664.pbf.gz",
+        "snapshotSHA256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23",
+        "sourceLocator": "z16/58218/25664 BldA352; shikisaikan-numeric-check.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "GSI最適化Vector数値外形を加工。市名称付きmarker内包・公式正面写真・利用者による配布棟回答・航空写真の周辺配置から候補化。航空写真撮影年未特定/影で屋根判読不完全。建物代表点7桁丸め前後内包。製品CRS/独立棟同定/採用未承認。"
+      }
+    }
+  ]
+}

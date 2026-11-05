@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:25:26.443858+00:00",
+  "httpStatus": 200,
+  "etag": "\"6a59dd80-eea8\"",
+  "lastModified": "Fri, 17 Jul 2026 07:45:04 GMT",
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:25:26.653443+00:00",
+  "sha256": "49c39e17957481af13b8d8da3b27f951e179d1bdfeb00f25e885e99ede0208ba",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/49c39e17957481af13b8d8da3b27f951e179d1bdfeb00f25e885e99ede0208ba.raw",
+  "bytes": 61096,
+  "scopeName": "nikko-card.html",
+  "elapsedSeconds": 0.209962273016572,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.ashikaga.tochigi.jp/goverment/000085/000475/000908/p004502.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:37:50.954523+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.ashikaga.tochigi.jp/goverment/000085/000475/000908/p004502.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:37:51.093762+00:00",
+  "sha256": "b67d1300ab855deb2978c34394378ea19866f2fc14035c9318dcfbe59075815b",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/b67d1300ab855deb2978c34394378ea19866f2fc14035c9318dcfbe59075815b.raw",
+  "bytes": 134378,
+  "scopeName": "ashikaga-karte.html",
+  "elapsedSeconds": 0.1395206349552609,
+  "timingScope": "HTTP取得のみ"
+}

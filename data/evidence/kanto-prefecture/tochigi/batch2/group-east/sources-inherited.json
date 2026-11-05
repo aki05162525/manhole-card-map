@@ -1,0 +1,122 @@
+[
+  {
+    "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+    "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+    "sources": [
+      {
+        "evidence": {
+          "sourceUrl": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+          "snapshotPath": "data/evidence/national/kanto-north/ddfbf3e8e365a94d7ee6.html",
+          "snapshotSHA256": "b2f8e8810cd763b062be7a3da31ddf5bce8f51865bfdb6013f8ec7e8e06c4a44",
+          "sourceLocator": "09-204-B001 / 佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会) / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。11/5時点は休止期間前。将来休止を現在の休止と誤認しない。12/11以降は再確認へ。"
+        },
+        "textPath": "data/work/kanto-prefecture/tochigi/next-batch/071cd7f65ad7c1a06c54-0.txt",
+        "linksPath": "data/work/kanto-prefecture/tochigi/next-batch/071cd7f65ad7c1a06c54-0-links.json",
+        "status": "active",
+        "cardId": "09-204-B001"
+      }
+    ],
+    "startedAt": "2026-11-05T15:02:31.660528+00:00",
+    "elapsedSeconds": 0.0014719479950144887,
+    "timingScope": "旧原本のhash検査・テキスト/リンク抽出のみ。読解未実施"
+  },
+  {
+    "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+    "name": "しもつけ風土記の丘資料館",
+    "sources": [
+      {
+        "evidence": {
+          "sourceUrl": "https://www.city.shimotsuke.lg.jp/0918/info-0000010551-3.html",
+          "snapshotPath": "data/evidence/national/kanto-north/cde03caeeeaa0ada26ff.html",
+          "snapshotSHA256": "983090c5108bedc9dd9a9175a03012ba27b41f4a119c35e3479d786fb2dab43c",
+          "sourceLocator": "09-216-B001 / しもつけ風土記の丘資料館 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。文化財サイト503のため市公式に迂回。両資料館が対象。"
+        },
+        "textPath": "data/work/kanto-prefecture/tochigi/next-batch/a95e49dc07df945f06e9-0.txt",
+        "linksPath": "data/work/kanto-prefecture/tochigi/next-batch/a95e49dc07df945f06e9-0-links.json",
+        "status": "suspended",
+        "cardId": "09-216-B001"
+      }
+    ],
+    "startedAt": "2026-11-05T15:02:31.690307+00:00",
+    "elapsedSeconds": 0.006971905007958412,
+    "timingScope": "旧原本のhash検査・テキスト/リンク抽出のみ。読解未実施"
+  },
+  {
+    "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+    "name": "上三川町ORIGAMIプラザ",
+    "sources": [
+      {
+        "evidence": {
+          "sourceUrl": "https://www.town.kaminokawa.lg.jp/0092/info-0000003312-0.html",
+          "snapshotPath": "data/evidence/national/kanto-north/6e95468b4edd22001ee4.html",
+          "snapshotSHA256": "56b8b51a0dd234f10b03a59998450413f0bcf501b51e08c02ac7db6dda956318",
+          "sourceLocator": "09-301-A001 / 上三川町ORIGAMIプラザ / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        },
+        "textPath": "data/work/kanto-prefecture/tochigi/next-batch/ab5de7e90313a0f18ac5-0.txt",
+        "linksPath": "data/work/kanto-prefecture/tochigi/next-batch/ab5de7e90313a0f18ac5-0-links.json",
+        "status": "suspended",
+        "cardId": "09-301-A001"
+      }
+    ],
+    "startedAt": "2026-11-05T15:02:31.697295+00:00",
+    "elapsedSeconds": 0.0038660470163449645,
+    "timingScope": "旧原本のhash検査・テキスト/リンク抽出のみ。読解未実施"
+  },
+  {
+    "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+    "name": "栃木県下水道管理事務所",
+    "sources": [
+      {
+        "evidence": {
+          "sourceUrl": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+          "snapshotPath": "data/evidence/national/kanto-north/53320519c26c6a86d593.html",
+          "snapshotSHA256": "909e89100c3d6b468ac275c139b74cc3e8872e6843d45d4bbd98d6d8a665af2f",
+          "sourceLocator": "09-000-A001 / 栃木県下水道管理事務所 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公式の昼休みを補記。"
+        },
+        "textPath": "data/work/kanto-prefecture/tochigi/next-batch/e59ebd8f60bb60f5aab7-0.txt",
+        "linksPath": "data/work/kanto-prefecture/tochigi/next-batch/e59ebd8f60bb60f5aab7-0-links.json",
+        "status": "active",
+        "cardId": "09-000-A001"
+      }
+    ],
+    "startedAt": "2026-11-05T15:02:31.713535+00:00",
+    "elapsedSeconds": 0.0016710789641365409,
+    "timingScope": "旧原本のhash検査・テキスト/リンク抽出のみ。読解未実施"
+  },
+  {
+    "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+    "name": "上三川町観光協会",
+    "sources": [
+      {
+        "evidence": {
+          "sourceUrl": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+          "snapshotPath": "data/evidence/national/kanto-north/53320519c26c6a86d593.html",
+          "snapshotSHA256": "909e89100c3d6b468ac275c139b74cc3e8872e6843d45d4bbd98d6d8a665af2f",
+          "sourceLocator": "09-000-A001 / 上三川町観光協会 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公式の昼休みを補記。"
+        },
+        "textPath": "data/work/kanto-prefecture/tochigi/next-batch/f1b47f3c916256fbbc00-0.txt",
+        "linksPath": "data/work/kanto-prefecture/tochigi/next-batch/f1b47f3c916256fbbc00-0-links.json",
+        "status": "active",
+        "cardId": "09-000-A001"
+      }
+    ],
+    "startedAt": "2026-11-05T15:02:31.715216+00:00",
+    "elapsedSeconds": 0.0016741340514272451,
+    "timingScope": "旧原本のhash検査・テキスト/リンク抽出のみ。読解未実施"
+  }
+]

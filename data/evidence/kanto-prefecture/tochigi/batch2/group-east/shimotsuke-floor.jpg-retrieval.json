@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.shimotsuke.lg.jp/manage/contents/upload/605d5fcc15349.jpg",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:29:03.298101+00:00",
+  "httpStatus": 200,
+  "etag": "\"75fd7-5be68c70dcd40\"",
+  "lastModified": "Fri, 26 Mar 2021 04:15:09 GMT",
+  "contentType": "image/jpeg",
+  "contentRange": null,
+  "responseURL": "https://www.city.shimotsuke.lg.jp/manage/contents/upload/605d5fcc15349.jpg",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:29:04.437398+00:00",
+  "sha256": "0c557e93f49deaba4985b53ca6179ebecacce6dc8269076fee8d706d0580bfe1",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/0c557e93f49deaba4985b53ca6179ebecacce6dc8269076fee8d706d0580bfe1.raw",
+  "bytes": 483287,
+  "scopeName": "shimotsuke-floor.jpg",
+  "elapsedSeconds": 1.139645863964688,
+  "timingScope": "HTTP取得のみ"
+}

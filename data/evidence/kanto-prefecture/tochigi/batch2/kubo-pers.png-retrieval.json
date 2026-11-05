@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.kubokinen.net/images/pers.png",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:19:52.412357+00:00",
+  "httpStatus": 200,
+  "etag": "\"bbfb3-5bf80f152ae40\"",
+  "lastModified": "Fri, 09 Apr 2021 02:30:09 GMT",
+  "contentType": "image/png",
+  "contentRange": null,
+  "responseURL": "https://www.kubokinen.net/images/pers.png",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:19:52.621250+00:00",
+  "sha256": "d75f95d8bb112535e99bcab45a8b1ccc6907d5956bf000cd3efe7b046651e40c",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/d75f95d8bb112535e99bcab45a8b1ccc6907d5956bf000cd3efe7b046651e40c.raw",
+  "bytes": 769971,
+  "scopeName": "kubo-pers.png",
+  "elapsedSeconds": 0.20921567303594202,
+  "timingScope": "HTTP取得のみ"
+}

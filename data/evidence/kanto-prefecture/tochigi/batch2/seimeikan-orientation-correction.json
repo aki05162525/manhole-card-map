@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-11-05T15:25:07.452793+00:00",
+  "corrects": "seimeikan-observation.json#/identity",
+  "source": "seimeikan.pdf page2",
+  "old": "伊賀門の南",
+  "new": "伊賀門跡の北。図の北矢印が左を指すため、図中で左にある清明館は伊賀門跡より北。",
+  "impact": "東側建物候補288、数値点を変更するものではない。原記録は保持。"
+}

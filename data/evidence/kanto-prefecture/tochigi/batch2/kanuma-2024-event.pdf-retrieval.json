@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "url": "https://www.jibunstyle-kanuma.tochigi.jp/manage/contents/upload/6679346f7e995.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:34:43.890026+00:00",
+  "httpStatus": 404,
+  "responseHeaders": {
+    "Content-Type": "text/html",
+    "Content-Length": "874",
+    "Cache-Control": "max-age=300",
+    "Date": "Thu, 05 Nov 2026 15:34:43 GMT",
+    "Connection": "close"
+  },
+  "responseURL": "https://www.jibunstyle-kanuma.tochigi.jp/manage/contents/upload/6679346f7e995.pdf",
+  "responseSHA256": "1ac379772cc6e1019c19b4fc8832c3157f605083686697fbb0abf3b79dfa7143",
+  "responseRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/1ac379772cc6e1019c19b4fc8832c3157f605083686697fbb0abf3b79dfa7143.raw",
+  "responseBytes": 874,
+  "status": "failed",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "finishedAt": "2026-11-05T15:34:43.976003+00:00",
+  "scopeName": "kanuma-2024-event.pdf",
+  "elapsedSeconds": 0.08641939301742241,
+  "timingScope": "HTTP取得のみ"
+}

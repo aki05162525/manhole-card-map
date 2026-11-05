@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.town.mibu.tochigi.jp/docs/2019082000011/file_contents/kihonnsekkeisetumeisyo.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:04:01.543304+00:00",
+  "httpStatus": 200,
+  "etag": "\"64fd5eb5-74004a\"",
+  "lastModified": "Sun, 10 Sep 2023 06:14:13 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.town.mibu.tochigi.jp/docs/2019082000011/file_contents/kihonnsekkeisetumeisyo.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:04:01.944565+00:00",
+  "sha256": "64e591fa308222f4f55711458e306d71d46fbce320974b7c94c2d407826236cc",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/64e591fa308222f4f55711458e306d71d46fbce320974b7c94c2d407826236cc.raw",
+  "bytes": 7602250,
+  "scopeName": "mibu-design.pdf",
+  "elapsedSeconds": 0.4015980230178684,
+  "timingScope": "HTTP取得のみ"
+}

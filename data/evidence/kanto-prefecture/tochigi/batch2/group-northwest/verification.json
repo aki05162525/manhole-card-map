@@ -1,0 +1,709 @@
+{
+  "at": "2026-11-05T15:56:24.286842+00:00",
+  "commit": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "command": "python3 -B data/work/kanto-prefecture/tochigi/next-batch/group-northwest/check-package.py",
+  "exitCode": 0,
+  "log": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/check-package.log",
+  "inputs": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-minami-karte.pdf-retrieval.json",
+      "sha256": "b148c2468b4b4c5309b05a504aa61624fd2acf285916be65ee0bbaf949e191e1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki.html-retrieval.json",
+      "sha256": "143ff9c6354d6befaef7557452257034f6da4903b6ec15f2db1ab4d2dbf2447a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-parking.pdf-retrieval.json",
+      "sha256": "da630eae0274753d7b769a3e57675029c159c52699e61c59a7b75d1f00f2783a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-karte.pdf-retrieval.json",
+      "sha256": "ddb07ec49de7b940a1cd99a3ecd596e0c2455c0054f99c6e536aba75c0911be2"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116308-51319.json",
+      "sha256": "7d6fa6a78facc5e9e1233b1b39b10e5d8e653b43d54dae138d7846f6e8c938f3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-sansaku.pdf-retrieval.json",
+      "sha256": "202fe8b7729b7867640acd408a04d55abbca7e08602a587f0470a91f305775ac"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116309-51320.json",
+      "sha256": "612cb9e3101c93a1d5390794213c74c2fc261314e900cd45d21fcc4507508339"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/outcomes.json",
+      "sha256": "6a096719b481a433174d6a2c35963c62bdd21de85dc7877938d83769d2731619"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-light-map.pdf-retrieval.json",
+      "sha256": "692c4f00c8ccc7ec98a8fede9aa40f8457b732ac1f60453c9aa5fabb279d0bc2"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-1f.svg-retrieval.json",
+      "sha256": "0621fe063efd9c46c0674b78f56b2012ec7bdcf98caa89ebe3328751ebd6e9b1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-karte-index.html-retrieval.json",
+      "sha256": "540857672747605d78829e07a7f4ea647e2b6f50b52a7abcf014b3adcf5803e5"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116309-51319.json",
+      "sha256": "bc7757abf79b1a29d4a90bcc7115fd0e54d68ddccc52381c7011c99bbb64965d"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-card.html-retrieval.json",
+      "sha256": "acbad9b2e76ef4d1f4e4d6ef61086b65c86381b7318db270b4ed8465f74964ea"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-map.pdf-retrieval.json",
+      "sha256": "7834aba7892378647c4f9d5f06331552c2ffef67a16a5362e76154884d728438"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/assignment.json",
+      "sha256": "6440fd1633fa9654340aa461083601bc7aabcc4e94e1e68b27b0476f0e72d894"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-map.jpg-retrieval.json",
+      "sha256": "a6140f8894180047782c3865fd6a9bd9edc3cf8b4b80f75ddaf8328f8e4421a6"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/fetch.py",
+      "sha256": "c7d3df221eaa8650e05ab0223ef236e97b99f0166cc38f2d6d0a479af40e2a25"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-karte-current.pdf-retrieval.json",
+      "sha256": "bc4fe330549468f9249cdd5cf976fcca552685b3ddd8f3eda1888db8808ea6cb"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116308-51320.json",
+      "sha256": "10ea3026512ed49a0f0c413c735ceafc811e63da8692faa96cfe56e91bc6e3ff"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-root.html-retrieval.json",
+      "sha256": "15e1f9a4349a9b3d8cd14dcafe442153b06d3e4bb45acedf83aa13d39d232a92"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-access.html-retrieval.json",
+      "sha256": "c455e55fa1cedaf7273d90e9f0ea2710de0c6f0520def54e0288daac25d6eeb0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/history-extract.json",
+      "sha256": "ed7a426fd44fac71ca5359900339bc1b3e24bc7458fc6e4b6e3bd2edaa06d302"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/selection-proposed.json",
+      "sha256": "133b5f8c9d8bbc07648f900ea56f7c24e88abc09bb61f5b98148bdb37c35794f"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-floor.html-retrieval.json",
+      "sha256": "f0d8b870332e56b9fed675f422c0e1dcd3d56f9817df2d4845ea0fc8ce7e897c"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/check-package.py",
+      "sha256": "5725b815fae748c321c5ad1a6620de1e1e86a7ba26f450fa090775da45e150eb"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-card.html-retrieval.json",
+      "sha256": "dbcd843862b7b176b72d0e9be1d93016b7f02df1a85bbb49273ca0594ebd520c"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-access03.svg-retrieval.json",
+      "sha256": "4ec12aa994421b76bf0ba80a19f6c7066ae53ecd3f9b1d7477e43192ee35fd9c"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116309-51318.json",
+      "sha256": "75af4a65796d7f345e8e0b6ffc627f10cb185c0414bd97f365c1cd40657076bd"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-2f.svg-retrieval.json",
+      "sha256": "61034641b635589a240832eb34de151e865c1cb4650cdccd1f684e128e49ecfa"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/karte-index.html-retrieval.json",
+      "sha256": "dca49081374f168d69dbef030062bbde27312c51bb3610b7100fde65a1c213e8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/yugakukan.html-retrieval.json",
+      "sha256": "730aa3b7dca268a5dfb431b13b0d0c494f000f40827917d3696731e3a7fc2479"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector.py",
+      "sha256": "4ba2bed390a80da3748009de0352acd9825cacc73964f3dc5ed6649552f35440"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-info.html-retrieval.json",
+      "sha256": "03ef9db0dd28f06640d702e0edc696418fac09515f47eb4c7907a1e719358fd5"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-karte-current.pdf-retrieval.json",
+      "sha256": "7384a2e6fb4d66cbe3b9c7f881a5e7d00cf41fc53e9c69da1ba4fda283c8f48f"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/package.py",
+      "sha256": "12ae33892d1bf1afa0b5dd9bc9793396c9ec370ec17ec3510c5e8b5119ebe210"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-karte.pdf-retrieval.json",
+      "sha256": "8ba24c00e8651bab70e0550978096a7eff33e373672cff12bc53957d189a67a6"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki-karte.pdf-retrieval.json",
+      "sha256": "dee3a53b50a4eb27b0667106c9cc3d7a4856f125efb66d205d9b6ea333099563"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-map.svg-retrieval.json",
+      "sha256": "81561361ddbc12d1325c4a2de390213d94a9f3b669abc611e3b3ae8e3d06d364"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-info.jpg-retrieval.json",
+      "sha256": "0ef595cb99ccf16096f58a73f87f3e881158e20cb42b161835c530291045fb17"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-pref.html-retrieval.json",
+      "sha256": "d67a26e34717cb96fe52a4a770c8281b54f33cb3c9eb5e47214d2b2f90606a96"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-association.html-retrieval.json",
+      "sha256": "934f95ac77475264fe1031799387a6445b3abcbfcc287e501d5f7bc9b11feca0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/log.py",
+      "sha256": "dff9d52f16a0520f355979ac0f4d191de5cbaad041dcc65dc6f2efba9a97f1e4"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/location-lifecycle-proposed.json",
+      "sha256": "e1224548febda37846c52842dbc24a1e3605e18c3011e0d45d7fb68ff228aad6"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/yugakukan-karte.pdf-retrieval.json",
+      "sha256": "a3da55d82d21be261555601be2f287137c058a9c8f857062dd813b9bf4c98e32"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-facility.html-retrieval.json",
+      "sha256": "493b8f9c26258439268f164ec4c9517bc3d3892537fafbaee4a4868ca05cbc0d"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116310-51320.json",
+      "sha256": "125f891d46aeeff13ed5a9d406d357e0a9480b10d5fcdb447ab80299fa80ca19"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/geometry-observations.json",
+      "sha256": "bacf6554aa0a7a0f30da421b746ef960fc8e7b8df83f40357fc8889f320f463f"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki-city.html-retrieval.json",
+      "sha256": "3f69aa67252046ccebacac79c51b56a57a23035d4ea325d0374b7bc3a396bdc3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-information.html-retrieval.json",
+      "sha256": "f12004dd39c266d583d717f830cf4945e11cc5aa573862600b23333d52bd05f9"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-exterior.jpg-retrieval.json",
+      "sha256": "5001833b8ad1256f88d62819abf8ed60fc78760a979e84205f7a0949913b472b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-access.html-retrieval.json",
+      "sha256": "4e8be4db127f48037f5adee25c53fda7be2b9d4b8bb0f32b4d879c92edf2e850"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-card.html-retrieval.json",
+      "sha256": "e0fd79d2bf08b845a4a7c5f98dd2168ea052cb796a6845974f43f3cc4672b8f2"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki-photo2.jpeg-retrieval.json",
+      "sha256": "4593280c46683f47a45fe3e7bc68c379a07c912ebab397922b0484efc9517c27"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-karte.html-retrieval.json",
+      "sha256": "9b890424204a1b5ef41d8c3de9725cededd040dd0f6dd46d12f37a2667ece3f8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116310-51318.json",
+      "sha256": "7df4bf3edbe35099c34d6b18541ead0f8837a14cabce4789a72240c625b43e0b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki-exterior.jpg-retrieval.json",
+      "sha256": "65c418616275b824f454b529b374dfcab7efb7e66354e816169ce42065985af0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/yugakukan-exterior.jpeg-retrieval.json",
+      "sha256": "81ecba7717126593dd83c362317c8f11b27755591108c9d36cf7e3d64951479e"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/taiheiki-real-exterior.gif-retrieval.json",
+      "sha256": "68731bab9618abf13cbb29a8c7ca5bcd99f447398400a1cb674e27669e88db98"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116310-51319.json",
+      "sha256": "66626670b79b02b91b63b06c53c5d5265629a304172286b36e775d5210aac26b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/locations-proposed.json",
+      "sha256": "6ea4daafb5ee4ba93251267d181cd8465312b4fe7c694239a39c6d2f1be41fe3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-std-116308-51318.json",
+      "sha256": "96bd21acb5800919c93b545244f89e235fff2acc12c20ebdc541f941e202f847"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/render.json",
+      "sha256": "35453cdca7137e3663b01ca248d0b476e2de3ad4acbf8bc56f8d87aaccb99073"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/retrievals.json",
+      "sha256": "f272296ed40bd81a5a259de4bc26bba88f31bf528986459fca1401af2c741629"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/combined.json",
+      "sha256": "9edfa3ad95e2b48b939c545186767946f7c7abe184f15e37a975a1ebb6c640e8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/inputs.json",
+      "sha256": "83ca0d215c4109cee1e2c0ef9ed40a72176388d31cb287ed70d6c7233ca29113"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector/render.json",
+      "sha256": "d85423920361e7bd3e92ef58d43ca4cc917ed903576f30390a68e2788a64422b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector/retrievals.json",
+      "sha256": "0a6d2ae5b34c98a8f197a0579044738b7051865c5a71a77cd2fe1aec08348c28"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector/combined.json",
+      "sha256": "8bdb756009ec7961ac8810ffc66256ed20042871e1f5a6653c861d9db632424d"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector/inputs.json",
+      "sha256": "0e9e336739ff536b11e2401b4cb8a978ebadf08a01492f09bd3150a0b2ce9aaf"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/attempt-c0cb865f0e4c4b1a9b2b30066540f86c.json",
+      "sha256": "07e033db4ab741289066a97e9fc3744c61fff02922bc7c0226a5beef136fec98"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d9e03ae6fed9d8c649a4ae12b71fd2bf83c2184f24cf0b17948a4dd98b12892c.json",
+      "sha256": "669786ee715771dcd79ea6bf13f8fa89e8ec63abd12d370f8e19122433b7bd7e"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d6bf8f1564ec63b0c58c88d81457fb83c4570a8499f1598904391123c23edc27.json",
+      "sha256": "30d4da98369b84737953bbc84e630d2652cf42afd7918c5e340127f3c45a6ce1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/515530e30ad35e75b1b37e1438c122e5b9c8d03173200dcc1b2e088b633ee02f.json",
+      "sha256": "a7cd2e8e056cbb944b54ac44fcff9af2b6aa9ea799ac9dfbe554c1d09bcadd56"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/f6f21bdfa991553c935d88e3746c96f48756db648236e7ba7320583cacc512fa.json",
+      "sha256": "4077b2f70e54a144e0affb8897c0da4da379e5e0014a896cb52d5aa5f64bb7c4"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/attempt-2b6cc20c4cdf4a628449c9d0bc9eae3e.json",
+      "sha256": "a4cd7d71d2cfd820c4c3537592c34ee7701973d2555aec23e8286c0bf4912c27"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d6352906ae9670a6cbfb6fb2e05b6db2ff58462b7b4637c9f5d852e2fbfd87e3.json",
+      "sha256": "da6f3b417fcab4f4bc6240775f0478cd211cd3be770e3bd7de2e9e2cd0a94d1c"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/762f7e26da8f6cb073e807711c466aad3dd4cff6528d5d48febae87a5b02a67d.json",
+      "sha256": "03e44a5f9886995782234145c68a565dc668d1fcf362c24e7f3230860b339980"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/5a744601818d2812f67ca00d79aba5d0b6ce2ff8a68d94b64305b154f37307f0.json",
+      "sha256": "c7c34cde4e29e81ef56ddb7cd87cc416c38d3de76c7e4dfe376959985f55b8ae"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/c897e5a77a13a7938f5316882a61b0810718d753059933717295fef31ad48173.json",
+      "sha256": "1cf67320825b455def1475de1dc51b10d003ce1310bf346532f0f7d880805a64"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d8eff4b6a45561b93b0d7db7fe08b1745a1d630f55af0fd128175d61106650ec.json",
+      "sha256": "f461d943508746ffd08455adcaaae3305152887617faf4cf25fd76a455944f28"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/57971f5c51d335ef23d202cc5fb3476fa98721a7dac60b439fc9a900e8494876.json",
+      "sha256": "f0847615589c34a0f1450f110b85375eca56e1a76685cfb10695f2565468078a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/c50fc985df8b8f3730d2fb52b83ee8e426810bd857918ff05207b3d69cd2a1a4.json",
+      "sha256": "3aff2fdb77b52a6ecd792c8e445ee6b9089cf8b2c9dce1c57983b5a5a99423ae"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/c11de0bfe575dfc4ce575ddcec108d22ee62e515d77cd738ca84197d015a3a4b.json",
+      "sha256": "2be76dc2e5a24c89e6459a5cbf94ef7ad42462ddafedc57478632b2ab59492e0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/6f66d193ded0bc2a175ee49f3331e2998b9eb90bb2f39a08d2cc65f4b3936b2c.json",
+      "sha256": "d544bd6130dca2c4775b64cc1d6b90c39116dfa7c9053329cb05b72a934cc18f"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/1fff51f583ebe22cf1cfd2a0641368dc241e9d2eac27862b909615d27a347c6e.json",
+      "sha256": "d30f0a9fdb5c32938bf33df7e6fba20eaca7302e04f9470f2cf39058d828fd56"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/72fcfe6673fcec2af155e7e92040f8ec0779a4be095308de7708439032fc7aa4.json",
+      "sha256": "aef4ea1661b34c95bff46404275e1b189c2e4407473269e1ee527e2809d65673"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/da4484c1fbf19eb6deaeb5e3f83c38861f5824a293c52e361adf475055bb380f.json",
+      "sha256": "95b91259cadde769be3ad16c1315ed79fe503d4e33e7125ff858162201894439"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/a9f026ae42058353d10c66bee7133bae28daeacc0e06d35903aee21d6e6eade4.json",
+      "sha256": "a3e285a0fe7970734c0b323212b1044f5b1ed182a41e314ca02136f6a730e344"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/af2f6dcfbe2c5b5c0d9b21f466eb2b498073c05adadeb37a52c74660d3060098.json",
+      "sha256": "6caccdd632bd1556d7d0b4c94c140535fd61e1577133483c90eb36e737741c85"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/cc066ad6685c2b7b0f165fb1d6d37404e0e294fda737688f214384a387b73fe4.json",
+      "sha256": "f773c02c22c17476db02aeeb034c349b931d7236ff68503d8b0010980d7d8cf9"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/attempt-87e33de302fe47a8bebbb51ef20b6167.json",
+      "sha256": "f2066d36659bd300dac014d45556cfb7b4b160bbaa54cc8209e5cb7a2e88a8aa"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d10bb1e653a8a962deca1ef977363755b47cfc2443435e4c873da5da95a42083.json",
+      "sha256": "b30d2dd1efeaee14bbc901285c54aa8e858b74ea66cb5ca53be96c21aae45f2a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/2f3f70674f6848fdd33505376358e8f4a0b520cd4e76f673a179e6b6524a4302.json",
+      "sha256": "9ffc39091eb2aa238ec8ba8991461580f237447cf612c715298ebf87140ed828"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d2e297a56b12e10c930a12e8659872e4f0a4003916c12a43cf2d3cd60c9eff92.json",
+      "sha256": "df5ed3381a717ea442a16570f2b8697efa207c01bf5d5f77d06cd6e0dcf20a96"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/16ff78696c3452bdd56eefbb6615a95d0d60358d8ce29675e21af03579902a78.json",
+      "sha256": "8241896e19866818556b7fd4a48863ed2bd195888638c9b998a47e2c1898d7e1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/attempt-2e2028a822bf426fb48e8da3c8bd0d86.json",
+      "sha256": "939f797936b46cd17a739b437ed76d040b907131f07525f6ac6d7f85006465fe"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/e71733e07608948b0ff55950a2f63cad2227a8ea5cf93fd7423e8f8b51c1de4f.json",
+      "sha256": "6c1f3690de9d1430118dbc0d244efd7754ad4a9a6f92249d8fa740b609518ed3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/b432e149a7002b6998f9069ebdefc1f7687157a9c41d2f28c8aba430dde86422.json",
+      "sha256": "0e57533d86596c8ccbaba3f8381872f91679308d15ad79218111a88a7e64eb7a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/5936c488340c9aab98e3f6beedcd656b247f605709251f037d0844d87eff2dff.json",
+      "sha256": "20f84f30f56086589a0d7f80434a0c670a7e34896044bc788d7fd438cfde8b52"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/ff9e9cf916a11fad01af46028081ffb6e0f005788b4f66625c652fa083fbdace.json",
+      "sha256": "eccab5264b2ca42eb764abc5d75d2217d18b7a236fca555ab05fe6646301fe54"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/c289b1080b163e03994d0b6bcecf41a28c32e487dddd2ea06781cbad80c66c17.json",
+      "sha256": "e85ce23487bdb57c57da56bd47e2725cdcb3f6a295202424220ad9769ad90871"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/d26acb7731b1637de379deedc74d0aa52e69c74fa7c566e4c4ecb2a8c2a1f084.json",
+      "sha256": "702890c6f4322636af60673fde9059a4c526d6f80ae95937048eae2c169c2fc1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/bb3174ec5a157851306316e6b51c4b5705e9f5719849ec995d8b1e861bdd599c.json",
+      "sha256": "dde62278e76137fd469bb30b6453e53abb92ed695a4273de19b88b0d978f0fdb"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/90e1d8ebf2cdc5e41e435e176f85b9f5d3b725b7f99b0713fc01742ec002fd93.json",
+      "sha256": "f6ddf3414bdc69b700a49ce2f65288023025ec486d899450125b3f5afb0e9b2f"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/a10a780e554bca0cfaa1ae7a844d7e3b557211ba127f6f79f213ce8e4a370d3c.json",
+      "sha256": "5e90d6cb58c12d2ba07cefe01a60697df7027461dee3630689a8e98002465337"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/a202025563c2797cc5a89b5fb34330ca5bac327d3c542987e1c56972078e3e36.json",
+      "sha256": "a87957607b2d895b66ad4902bc8928c4bf7ba2158c14a15d714663f8395a6d1a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/54f92215b5591f4750881c872d46e0809dfa9f5c17fc381e5ed9643116f2dc38.json",
+      "sha256": "8cde0d5a5faa9536dec554a654cc7ac1814d34e7248ec72a1481dd7943371e7b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/attempt-41cd75f3fe9d4fd9908458fae68d7e47.json",
+      "sha256": "ba78f09968e1681177d7b63f496b01c093e9f5a8ad2dfe0aa685b238345ef059"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/2fca3259896713fa67d7d0203cad7fb272fff03255271668648cd8c9b77cd51f.json",
+      "sha256": "8d5231022df16516e088b85be4b0e09ef224dbb62d685106b2640ba5ca9dee50"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/481b2e9bb2d9c18e3476c1d741f13f255621fb2aeab0b4e2b0c9e9c22586c59d.json",
+      "sha256": "a4688c1e0ca6974455ade9ddcfb26e33bda198fc7a327b5a27a68ab6dec5b719"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/b6aaf72132616e44916ed8eca0243c244320a56326e4b79fcd1df044879b67ed.json",
+      "sha256": "159ed8c035e6dd372caf855e57e06310efd77cc2ea160208f5998dd0be56487d"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/3f8305405b023c058cacc5ac7d8389766fc247bd935ab0ad60f685f3ef38c7e9.json",
+      "sha256": "cc019dbe5875a825eb5289f80bc2686df6e4b5248bad25d017c24afef69fa9d8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/fcee62d79fd65fd01832ec0e0774d85f5b43937ff41cefad7aa6ef0d0a1bbe36.json",
+      "sha256": "cb3feb1863b7d0c26ff261c0857cd516eaba753e5ed6c3551778933ed4cae96a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/ac8d2dd33ec140bcf4d1982a924411e5e6a676da67e555d4694f4895f5be5431.json",
+      "sha256": "ca4bfdecc0f2b91403b5ca2d0f4e11fa1d5c6b89c6c62f55c5c26fa3db38e62a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/de974745ccbd288349caf3cfa8a7883124b3003a0812754e781ead9508c5a3d4.json",
+      "sha256": "eb275d502533929349cadac50f95b6dbf16c9c19faa303b71def921b28cfb42a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/aa681f46e237c6836ced37643fbb08fb109ecbaede3fca7f4f4500f27ef7573e.json",
+      "sha256": "64accc0fe3944f380758c721671a8afa5245c2e6d5d81cc0868300360b3e1fb0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/9466f32f7a9d7e94082910bd898ccad819dd8aecc1812b4879fab027c1ba0812.json",
+      "sha256": "aaff5fe835bbcc65e1d00ab6e8402bd4d7fa27e2009cf1813b7c7620cbb25e94"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/822e5f90bb5612e3f4861d429d5d83515471900348a2472ca134b12cabe09064.json",
+      "sha256": "356c6fd0d746ca0c8277d49edd72c32cc1c3e9c588e7aca371db3fed0068e2b3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector/render.json",
+      "sha256": "d40c6d82fca1132d84fcd56fd58329318b0c5282a9c2d8a34a647f413d5a886b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector/retrievals.json",
+      "sha256": "39008cd3a5e8c691d41e60e6c8915504281f8bb06deac3abea87e0b49e1fe5c5"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector/combined.json",
+      "sha256": "f9d4763f3e32d3e128747aca80bf2789388551771e2b036d206e959ec21710d2"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector/inputs.json",
+      "sha256": "7178240778ff236f9307a5f44e6eefc7ccdc9b1d8df197a94ba8ad7e1847f9f3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/a943b21b95854aa4b586ab6738e3d1dd2de37780bca70079b4fa3516b117aa73.json",
+      "sha256": "df8bce7929bcebee5f263a795469b6198d7418bce2d36680c055d8ee0dabc4ed"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/9f588f11780e8b809e236bff349c341f9d3c2206a3a53881cb1804e7fb1f9445.json",
+      "sha256": "129b94736cc67a5ba61f4288c6070ca63137e45c40d2bfdd96c966c02ef83bcf"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/2af9a80fa3933a96e6a95a8a4b4018bd62f5f8127e5290db65fcc6b0bfda41eb.json",
+      "sha256": "397c54b95fdad6c4585f65d4bf514204ac3fb4757591d6348187af157564ee62"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/9d201506fd153254826e2e88c478e6b6d6b747fa51c62c4f479622e1a838334d.json",
+      "sha256": "cb28d40a29411d38333e8ef062be5eaa7c83a00259ccbd7ea3284c95527b77c3"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/7e348d3824051415e31f9006e19d6f8e66f804607769221ccfad4020caa08956.json",
+      "sha256": "feee61f038bd2841acf85962b93b8895256c0420729fd5d102abb56d1d6d332e"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/ce7b144aab5b7df5e437ea89cb17c26336d4d814dda151afc7c1cf16cee0bfdc.json",
+      "sha256": "f5f503b3e33549ba03146a0996256e13390bcd62854ed270cf27aa37437f1245"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/9574c84c20a1daa98c434feabaa2334d29d22f1c6a7c7ab861b7eb918abfb6cc.json",
+      "sha256": "e7cc614276ab76901bd1b644d29840b11d8aa242e39db6a4ac940ceb9408bb52"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/6623f3085a825b2ea5aab36f2b440b8f106fa55a8d0580623097b3e486df98d6.json",
+      "sha256": "9002dff02d294b04f604a251528bbd092a554e5b40dd4428fe3f8a983fafb3c6"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/f8d4a45c40a3c39b192d56d173c6287f6f249de04a6c7833dbf3d27aecbd571c.json",
+      "sha256": "e64afc6ad0c62d9f1d224391c42ccfc1479036096bc3a0ca0b28c4b8b197c1f0"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/88c09ffa8611bd6f070a5e53ed88e90d2379d5f7e61ab418cff1732e61690e28.json",
+      "sha256": "e4320c2c3aa44ec0f00c9dcc3b7324d9004a1344aa76b35575683911b5ec5016"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/391e76f5cd3da887c6a7255ce8ad72b753460a1fb048e5d99081fb3db2803cd4.json",
+      "sha256": "979fe852aaaa31d9245e38a371869aa2a728065a1c7cecda8689f1619197bcde"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/40ce5a951e35c0f874fd41900f9d2feea0a96d550191f202b9bda78b66542b27.json",
+      "sha256": "1e4e63f74cc1273a4db6bc48fc53d5d6dcf282801c75db202c773a4baf0f28a8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/a319f8f2b74d854289b1961e396b594f5a91372556a5ade0ff777d79c14a2820.json",
+      "sha256": "69b096710658214f44c244e9bc23edd66f40caa74c76a993b9fe4c39cd1efc73"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/b25c2b1b6899852560ec8f721a6a4672e31c4f2ca9e02f057f9866640bc67f96.json",
+      "sha256": "e8254586d99b56038cbdca85562abe0e52d1448392189de44cf0b88e6079dd14"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/e9bea4b25a4513e252543339d201d44e1ae4dc1feb166e86fb9989936dcb0478.json",
+      "sha256": "2b6b7956ea9953c18902ac245fd80190e0bcb401b2ce9a38274538546d6a1fd7"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/d9cc09d668e23b5a3f6db232f525166af18bb5e4c153bc9749dc2d8f015addd1.json",
+      "sha256": "adfd5508bbfc4943ee76b592a22439217c469f7d98221f3210ca1c285713c86a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/3befc110092f42a73d567d327339afd422f414890f1e58de6be5839f8f203d12.json",
+      "sha256": "902e4c6e4a5ef9ef135ebeb4d694ba6e9a7923acf0e6f2901bff94250bdb5617"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/7b7266fedfac236dc1c90d055ca7719747178533e63421b8db4ec5c66ca015b7.json",
+      "sha256": "864c8f3f13abdd1ae59a88c8681804b85aa99d7c4b166fd7f4bc171162b70cfc"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/0b7a55bc603155c2c19e228689da9e9569a83562871c22f9ce8ab0bfc2530b88.json",
+      "sha256": "fcbd927bac8bc6a04eeaa7b292f76a82591ac4aef8b1ec9b49d1beb43979916d"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/ab6b8e588f8be188f9b9bd84d369d687db99b9e1dd3bdab691f6c916ba5a4006.json",
+      "sha256": "618f299e7d1f2fd97891c4fc866fd11f3ac8c8a864cc3f4ed8f299053abbd05a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/087b06de5071597f0cc676a185a81fa813581c43715b675ce5ad5490fba7739b.json",
+      "sha256": "eb45746810adfa40d24934a216b872040143d474458d8216529a96fa1e74c195"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/6b9879e7405ad5e211986845c1fda3dee853302eade3418cd98c98db6cb2f052.json",
+      "sha256": "3b492c852b9df04e99671fa2d56e0e31e6ea12a2240b0210695b60bd2402100c"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/53fee1226527bba9ce86cbd923c4e64c3e7733f89da01d75ebb3063c6f43bdfd.json",
+      "sha256": "b05053bc9bcb6378b16479331f32577ee3857343a8bc78cb56ba6c658f491969"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/b0daf169ff926fec2d335497a4203608e285e7a6b51bdad0c7dc96009206718f.json",
+      "sha256": "89781e218bb5e75b8756b46aef4f7882276cf62e4bc71a5267b6abb75e6af0d9"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/f5526e12fabde451077f0cee462a874cab08b3cbb5be54b03040220f16905b62.json",
+      "sha256": "ba1a7771cec2232617969a67cfbaa4bc80607d69ff472c1e02a976b9ea8d552a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/8cf4f735614a6a78d3b817125e990e7d9af9a3b0ac8ac08cf87850b325b01a59.json",
+      "sha256": "9c0d2cac3f377dfbc2de4dd97d618b179a52ab53350cec381d3741b1d316ce38"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/f029ec8d313f63c7610029d2ff88ae36992af3cbf6e5729aafcc5115668d3986.json",
+      "sha256": "f0a1ebc7298e3de1f6006e89a96c066c39839dbbb7f779c72b9b674a0e40011b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/36fe94244b1a8c12fd055c39ce5307a69147390cb892c40cc8f74d20677959a3.json",
+      "sha256": "760f65255c491242c82cfe0b6c24ab221babc90d4359f8a7c1540cfc3b8ae09b"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/49909dbe553c2bac65ffb14c1207ca7c46d9c1e91d2bfe6bee39f95e4b899e82.json",
+      "sha256": "7fc30de795127abfec7498751d219acad4e1b027c788fa146c0268c3cd4b95cc"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/09884c35be5eb27724a28dfe788a5b83cbc70270ca72c30fa0c398b35dc1b124.json",
+      "sha256": "e6de2cba06e951c1491954a79992df5a25b0791ccc333be37b1e9d6df22c66a5"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/4ba38f5fbf6466a8b49e61a545ed38de57f0a362cb27e7e45a00dc14fd15e197.json",
+      "sha256": "7a027441a0a7aa4fc24b0155c601e74c1a76d2c8374cb1cfb9b133490aa79d94"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/7174b37ec3ed4f533eff639302c44941cfff2ea3aafea25dc766a2bc02fe02d1.json",
+      "sha256": "d71a3f72fdcc4c5f429c0b429f3445ce61752ea137d4eff231e045d093de881a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/9df8e49acd4a70d39f21c50a1b65e0ce1a00bda71db32f90361444d9c5f56ad9.json",
+      "sha256": "bec38c53ce98098e7f5f6532d3e4e3158ee8bab7c1e5098bb47a27cd86799974"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/bf8b2b9ca51801b4559f0f2d0186aaa40330529541f31a71327779cc474f916c.json",
+      "sha256": "796afbfbfbadd00ea9c389e732ec3bfc037139a2410452dd8508cfa3aaa4dd29"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/1f0d50d2d88d38936a64d83815963715dd4eda8cee09ae417273fcf7a2cd9dd6.json",
+      "sha256": "0e6216ce86f7432b020470f8ef0bd4a7293bb39608937c4b3becfb2c48324595"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/9e467a15402c598a1e59b934030d285f37654a881150af52e3456c0cd2583f78.json",
+      "sha256": "9f7274f746525d9d95449b262dd402a55edea94c9d40742fa0bb08d5d213ff31"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/a48588840ee0a743196788eec0028b185c03a98d0f037073301bff771db9e25d.json",
+      "sha256": "0f6304cfb167922d52b0a40897993f86e11e709356b29c71f7c48b55e0dd04ba"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/b693cccb86083997b48eaa49cdd47813c1f4064740b22ca4553eee3a38e48823.json",
+      "sha256": "3723c7d6ee1494259bbf9c38049dd7eebb232369a90ba1e0fa81df947d7986b7"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/a52bf796671d08efc12b7178777e9a66381566f7c4ef8547df8e1896ba654485.json",
+      "sha256": "0a61373f9c22858cdec74fcfb1536b9d5bb04becf840aaf5cd47a3744cd81eb8"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/c87b936efdef5a6ba3dd07554666a0b00bcf34428d801dd11294ff51302b7486.json",
+      "sha256": "8f872ee4a061c02baa4363412d67c0409382cb4105424fd0cbfa3080352895fa"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/62ce639bfdf673b79fc36c9aae62fed99e9827d7106654edf47fbb0baaf5568e.json",
+      "sha256": "0c0051ecb668c4a345ae0b0979f806cb1cc6292a0e405cca0582a6bf8a9edc84"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/7c79a704f74d6e11f765637aad059bc5ab19bd5c70b0395a0b1b4f322a238ac6.json",
+      "sha256": "123112a9e3ef91ce56be32ae0be5dfc028fd5ad5b5c875b15f00065af1c9e6eb"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/2f589074f2dbc0bc26cbc3d9a87c6d42ea7604d5d2ba14af4dabf22b532b2828.json",
+      "sha256": "c2f67901d7a70c3126458dd1ce3abb6169c73688972bdf4bb112fa28aed650fa"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/96bf8ea4445830879ff0bfc140108ce923179c13f1305e403cab7a0218a6df78.json",
+      "sha256": "63e92b2f09516df9572d03a570a5b112906df766cb28c4a5cdc8b823d5a0c1f6"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/vector-cache/35f796ee8567d9cea3df2c8eda2a2fcbc572f6972bb1c5dea97be9e910486d2f.json",
+      "sha256": "c78c1b85de6228395f053a0dfa9fd32550ea59e0a867ede24cbe4d270226d098"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector/render.json",
+      "sha256": "9e65453ddfab85ab85d47ae39129e70b839ba90bd3a05a8e547ae322d75ca1a9"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector/retrievals.json",
+      "sha256": "bad5dc0338b8ed93d69d62656ce1e53b957344fe06710df707d63a47e1e1debe"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector/combined.json",
+      "sha256": "831fb5821e0717f87286b39be66db48e7eb794b6b800814da2371a0ccc06e4c1"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector/inputs.json",
+      "sha256": "bd0a2c354cbadd46e7b27052a0f081d0b0d0993592c4d13aebc7f65edc330ba7"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/render.json",
+      "sha256": "65e6fce116f7052779af3f41586b7bccee9babc00316dbe3758487303f88459a"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/retrievals.json",
+      "sha256": "14d9df45c42a01e8b3c68255c9a63a9e8b31662e66df0df10fd9ed8d8ffbfc70"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/combined.json",
+      "sha256": "5165f18ebe9161180220ac71e2edd8c523ca0d580e37736e3e140162b81657cf"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/inputs.json",
+      "sha256": "0c3565a0d4fa1d296c8c677d95ac790597dfd7518e474843b2a6c7202a3b3eea"
+    }
+  ]
+}

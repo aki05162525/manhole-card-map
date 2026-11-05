@@ -1,0 +1,169 @@
+{
+  "sourceCombinedSHA256": "fcfec43fbc7397d07bcca772bfd5654a288a2ca0df8331aa74bbdd8bcfa230cb",
+  "features": [
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6452,
+              5587
+            ],
+            [
+              6458,
+              5752
+            ],
+            [
+              6403,
+              5754
+            ],
+            [
+              6404,
+              5790
+            ],
+            [
+              6460,
+              5788
+            ],
+            [
+              6472,
+              6111
+            ],
+            [
+              6284,
+              6118
+            ],
+            [
+              6271,
+              5795
+            ],
+            [
+              6322,
+              5793
+            ],
+            [
+              6321,
+              5758
+            ],
+            [
+              6107,
+              5766
+            ],
+            [
+              6101,
+              5601
+            ],
+            [
+              6452,
+              5587
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58229/25641:BldA:108",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58229,
+        "y": 25641
+      },
+      "sourceFeatureIndex": 321,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    }
+  ],
+  "unionGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          6452.0,
+          5587.0
+        ],
+        [
+          6458.0,
+          5752.0
+        ],
+        [
+          6403.0,
+          5754.0
+        ],
+        [
+          6404.0,
+          5790.0
+        ],
+        [
+          6460.0,
+          5788.0
+        ],
+        [
+          6472.0,
+          6111.0
+        ],
+        [
+          6284.0,
+          6118.0
+        ],
+        [
+          6271.0,
+          5795.0
+        ],
+        [
+          6322.0,
+          5793.0
+        ],
+        [
+          6321.0,
+          5758.0
+        ],
+        [
+          6107.0,
+          5766.0
+        ],
+        [
+          6101.0,
+          5601.0
+        ],
+        [
+          6452.0,
+          5587.0
+        ]
+      ]
+    ]
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58228,
+    "y": 25640
+  },
+  "candidatePointMethod": "shapely representative_point",
+  "geometryType": "Polygon",
+  "areaApproxM2": 1760.4104549341437,
+  "boundsApproxWidthHeightM": [
+    44.572117746191495,
+    63.794594402230956
+  ],
+  "mechanical": {
+    "coordinate": {
+      "lat": 36.414858,
+      "lng": 139.8645022
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      6371.739638894796,
+      5952.992536574602
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "licenceApproved": false,
+  "adopted": false
+}

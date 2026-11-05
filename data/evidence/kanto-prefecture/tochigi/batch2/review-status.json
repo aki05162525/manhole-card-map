@@ -1,0 +1,6 @@
+{
+  "head": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "parentReported": "新規Codexレビュー完了。研究PRマージ可。矢板17一体外形/丸め/binding妥当。PMTiles版固有CRS根拠不足で位置採用保留。",
+  "doNotRun": "tracked verify.py mutates hashes; do not rerun",
+  "trackedEditsAllowed": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:05:23.872424+00:00",
+  "httpStatus": 200,
+  "etag": "\"6aea9c75-8106\"",
+  "lastModified": "Wed, 04 Nov 2026 02:46:13 GMT",
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:05:24.077011+00:00",
+  "sha256": "b2f8e8810cd763b062be7a3da31ddf5bce8f51865bfdb6013f8ec7e8e06c4a44",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/b2f8e8810cd763b062be7a3da31ddf5bce8f51865bfdb6013f8ec7e8e06c4a44.raw",
+  "bytes": 33030,
+  "scopeName": "sano-current.html",
+  "elapsedSeconds": 0.20486777398036793,
+  "timingScope": "HTTP取得のみ"
+}

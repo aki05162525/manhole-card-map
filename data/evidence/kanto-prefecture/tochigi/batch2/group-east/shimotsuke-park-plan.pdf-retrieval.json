@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.shimotsuke.lg.jp/manage/contents/upload/60ece4ee99606.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:30:15.173071+00:00",
+  "httpStatus": 200,
+  "etag": "\"10baf9-5c6f6b8309780\"",
+  "lastModified": "Tue, 13 Jul 2021 00:57:18 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.shimotsuke.lg.jp/manage/contents/upload/60ece4ee99606.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:30:15.345201+00:00",
+  "sha256": "4c6dc5aa3ffd4d85d6c40aecb3239d6dddc1de057dc3dc100d60ef7537a02c57",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/4c6dc5aa3ffd4d85d6c40aecb3239d6dddc1de057dc3dc100d60ef7537a02c57.raw",
+  "bytes": 1096441,
+  "scopeName": "shimotsuke-park-plan.pdf",
+  "elapsedSeconds": 0.1725967709789984,
+  "timingScope": "HTTP取得のみ"
+}

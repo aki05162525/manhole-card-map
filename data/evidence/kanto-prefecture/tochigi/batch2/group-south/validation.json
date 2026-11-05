@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-05T15:36:46.870049+00:00",
+  "head": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "facilityIds": [
+    "facility:kanto-north-067336979043529fa019",
+    "facility:kanto-north-8c9c3d00b39e57cb61d7",
+    "facility:kanto-north-caa883741cf60ee761be",
+    "facility:kanto-north-da24aa34d750c88eacd3",
+    "facility:kanto-north-cfbbd4559bc94f487c62"
+  ],
+  "checks": [
+    "5 proposal/binding/selection canonical hashes",
+    "all evidence source hashes and7field schema",
+    "18 newly obtained vector tiles hashes",
+    "all Range raw hashes and each set same ETag/LastModified",
+    "frozen inputs unchanged",
+    "git clean fixed head"
+  ],
+  "notRun": [
+    "tracked verify.py",
+    "full Python/Go suites",
+    "UI/browser"
+  ],
+  "notVerified": [
+    "building identity approval",
+    "product-specific CRS primary evidence",
+    "imagery photography date"
+  ],
+  "exitCode": 0
+}

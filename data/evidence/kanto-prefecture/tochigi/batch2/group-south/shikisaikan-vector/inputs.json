@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58217-25663.pbf.gz",
+    "sha256": "3c2a7c222fa780c7703ff59d6a89113258ad65e3f1321f87d3da726dfd9e0210",
+    "tile": {
+      "z": 16,
+      "x": 58217,
+      "y": 25663
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58218-25663.pbf.gz",
+    "sha256": "f0da1b91b0d66eeb07dec3ea5eb0bb28e9687d793b2a7ba7ee82cea3a33b4484",
+    "tile": {
+      "z": 16,
+      "x": 58218,
+      "y": 25663
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58219-25663.pbf.gz",
+    "sha256": "f14f0826e81a2443531b36d8be554bf86c035f3f1818bb734d08c70b1bc9fa0e",
+    "tile": {
+      "z": 16,
+      "x": 58219,
+      "y": 25663
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58217-25664.pbf.gz",
+    "sha256": "10b5a0580314fd224e13c7877915ea47ac6305e951e541d3a98c051344f42c20",
+    "tile": {
+      "z": 16,
+      "x": 58217,
+      "y": 25664
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58218-25664.pbf.gz",
+    "sha256": "6ad399b9295a3b29b315279eea416b5480c2bf10f27b1d59faff260389322e23",
+    "tile": {
+      "z": 16,
+      "x": 58218,
+      "y": 25664
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58219-25664.pbf.gz",
+    "sha256": "529648ea6ba5855c0014b1258aa58bc4120cae9cd3ed5139acd0b1d43ac59a40",
+    "tile": {
+      "z": 16,
+      "x": 58219,
+      "y": 25664
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58217-25665.pbf.gz",
+    "sha256": "a2648a76a5a371004244cd6716f986cb1550129f5e03fcef9eadcc5ecb552e88",
+    "tile": {
+      "z": 16,
+      "x": 58217,
+      "y": 25665
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58218-25665.pbf.gz",
+    "sha256": "c40f8ea70bc5a264fb76f6f7b475bb2a7abc6b75376d9aae77ec553e67ce0756",
+    "tile": {
+      "z": 16,
+      "x": 58218,
+      "y": 25665
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/shikisaikan-vector/58219-25665.pbf.gz",
+    "sha256": "3b08d84c44700dcdc1f55988efbbc4e59807a78c726517cd1e7947700b49a11a",
+    "tile": {
+      "z": 16,
+      "x": 58219,
+      "y": 25665
+    }
+  }
+]

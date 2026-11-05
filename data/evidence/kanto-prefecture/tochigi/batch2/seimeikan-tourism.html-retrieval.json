@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.utsunomiya-cvb.org/spot/detail_10048.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:45:41.024202+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://www.utsunomiya-cvb.org/spot/detail_10048.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:45:41.293481+00:00",
+  "sha256": "138b33d2e504e23e94a6afb3d10ddd53317c3c53e0235473d764f3ccf60eeed1",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/138b33d2e504e23e94a6afb3d10ddd53317c3c53e0235473d764f3ccf60eeed1.raw",
+  "bytes": 34702,
+  "scopeName": "seimeikan-tourism.html",
+  "elapsedSeconds": 0.26964371802750975,
+  "timingScope": "HTTP取得のみ"
+}

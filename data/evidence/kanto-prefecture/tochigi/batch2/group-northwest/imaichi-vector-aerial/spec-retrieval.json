@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1818/799.geojson",
+  "version": "northwest-aerial-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:58:50.913170+00:00",
+  "httpStatus": 200,
+  "etag": "\"6914d2cb51bcba09fa6ad3427330046d\"",
+  "lastModified": "Tue, 16 Jun 2026 10:19:02 GMT",
+  "contentType": "application/octet-stream",
+  "contentRange": null,
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1818/799.geojson",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:58:51.013063+00:00",
+  "sha256": "4d116c2a047ccee9837d79f7b74bb190f9325ab68fd6016edd70987526906ab6",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector-aerial/cache/4d116c2a047ccee9837d79f7b74bb190f9325ab68fd6016edd70987526906ab6.raw",
+  "bytes": 1628
+}

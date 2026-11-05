@@ -1,0 +1,79 @@
+{
+  "facilityId": "facility:kanto-north-2783364591474d8e2902",
+  "asOf": "2026-11-05",
+  "role": "追加実査担当移管、独立Codexレビューではない",
+  "inheritedReading": {
+    "source": "../../kubo-observation.json",
+    "guidePages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "cityBrochurePagesRead": [
+      7
+    ],
+    "cityBrochurePagesUnread": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "note": "前担当の全頁読解履歴を継承。本追補でPDF全頁を再読したとはしない。"
+  },
+  "newRead": [
+    "公式pers.png全体",
+    "kubo-pref-kids.html事務局所在記述",
+    "数値160m detail.png",
+    "航空写真3x3全体と重畳",
+    "写真年代geojsonの候補棟全体内包"
+  ],
+  "photoDate": [
+    {
+      "index": 4,
+      "properties": {
+        "データソース": "簡易空中写真",
+        "撮影年月": "2022年4月～5月",
+        "_color": "#ffbf00",
+        "_opacity": 0,
+        "_fillColor": "#ffbf00",
+        "_fillOpacity": 0.5
+      },
+      "fullFootprintCoverage": true
+    }
+  ],
+  "photoSourceURL": "https://maps.gsi.go.jp/xyz/seamlessphoto_spec/11/1820/801.geojson",
+  "orientation": "航空写真・数値はnorth-up。街路は北北東-南南西、敷地はその西側。公式鳥瞰図は方位記号なし、記念館と物産館が街路に面する並び、後方3棟/中央広場を回転対応させる。図の上を北と仮定しない。",
+  "observations": [
+    "175:道路沿い北東側前面の灰色切妻屋根。公式鳥瞰の久保記念館と相対位置/屋根形が整合。",
+    "176:175の南西側、黒い寄棟の物産館。両棟前面の広場と街路側横断歩道が公式図と航空写真で対応。",
+    "171:176背後に接する明るい屋根のレストラン、167は更に北西奥の小棟。",
+    "173:175の北西背後、細長い美術品展示館。174はさらに北東の敷地外建物で図の記念館ではない。",
+    "中央広場が175/176/171/167/173に囲まれる。公式図のモニュメント周辺位置とも矛盾なし。",
+    "航空写真上の175は数値外形内に概ね収まる。簡易空中写真の屋根偏位/撮影精度を数値測量の検証とはしない。"
+  ],
+  "identityConclusion": "175を久保記念館とする研究者候補を支持。旧配布窓口=観光協会→県公式事務局棟=久保記念館→公式鳥瞰と航空写真/数値の175という根拠連鎖。",
+  "unchangedCandidate": {
+    "lat": 36.4431559,
+    "lng": 140.0117853
+  },
+  "areaApproxM2": 145.3283238761223,
+  "areaLimit": "公式棟別面積未取得、約145㎡を独立面積一致とはしない。",
+  "state": "2026-04-04配布終了の歴史ID。現在の受取可/再開/在庫を推定しない。",
+  "adoptionApproval": false,
+  "manifestIntegrated": false,
+  "remaining": [
+    "PMTiles製品版固有CRS一次根拠",
+    "独立棟同定/採用レビュー"
+  ],
+  "newHumanQuestion": null
+}

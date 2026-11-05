@@ -1,0 +1,74 @@
+[
+  {
+    "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+    "baselinePlace": {
+      "id": "facility:kanto-north-a95e49dc07df945f06e9",
+      "legacyIds": [
+        "place:a95e49dc07df945f06e9"
+      ],
+      "name": "しもつけ風土記の丘資料館",
+      "address": "栃木県下野市国分寺993",
+      "phone": "0285-44-5049\"",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "09-216-B001 / しもつけ風土記の丘資料館 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    "baselinePlaceSHA256": "79476463798d58f410087fdd2125286e40a86b8109c8ab99a163a5720f24e990",
+    "proposedUpdateSHA256": "20e688beb1510bb6e5b6a1754a0a67b9c2b8bb53b205d73e356cd7419f5f45f7",
+    "adoptionApproval": false
+  },
+  {
+    "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+    "baselinePlace": {
+      "id": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "legacyIds": [
+        "place:f1b47f3c916256fbbc00"
+      ],
+      "name": "上三川町観光協会",
+      "address": "栃木県河内郡上三川町しらさぎ1-3-5(むかしなつかし館内)",
+      "phone": "0285-57-2335",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "09-000-A001 / 上三川町観光協会 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    "baselinePlaceSHA256": "dde770927a1e08c8b1a7845dffcc52aec6e07c77704f706c2c064fb9de20aa0a",
+    "proposedUpdateSHA256": "324741e8e35912a55113443a5831fc6775a9079738d2f773db909e908bd79826",
+    "adoptionApproval": false
+  },
+  {
+    "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+    "baselinePlace": {
+      "id": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "legacyIds": [
+        "place:e59ebd8f60bb60f5aab7"
+      ],
+      "name": "栃木県下水道管理事務所",
+      "address": "栃木県河内郡上三川町多功1159",
+      "phone": "0285-53-5695",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "09-000-A001 / 栃木県下水道管理事務所 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    "baselinePlaceSHA256": "391811fa02639ff1bf2b02e4eb0da45c61a7ab02b5dd5b3a1b0b97492856102e",
+    "proposedUpdateSHA256": "a9be099d00e4b3d4939de58a902688e81787c94981e9f8e33870801847117dd1",
+    "adoptionApproval": false
+  }
+]

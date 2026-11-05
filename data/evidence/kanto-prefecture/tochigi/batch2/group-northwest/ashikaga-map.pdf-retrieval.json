@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.ashikaga-kankou.jp/files/user/asset/pdf/%E8%B6%B3%E5%88%A9%E3%81%BE%E3%82%93%E3%81%AA%E3%81%8B%E3%81%BE%E3%81%A1%E3%81%95%E3%82%93%E3%81%BD-1-1.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:33:59.510071+00:00",
+  "httpStatus": 200,
+  "etag": "\"65b1b3f1-32035b\"",
+  "lastModified": "Thu, 25 Jan 2024 01:05:53 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.ashikaga-kankou.jp/files/user/asset/pdf/%E8%B6%B3%E5%88%A9%E3%81%BE%E3%82%93%E3%81%AA%E3%81%8B%E3%81%BE%E3%81%A1%E3%81%95%E3%82%93%E3%81%BD-1-1.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:33:59.764505+00:00",
+  "sha256": "153ec3fad533b21b88f9f0838dee660282970a378ae1f2ad0819935752e90b93",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/153ec3fad533b21b88f9f0838dee660282970a378ae1f2ad0819935752e90b93.raw",
+  "bytes": 3277659,
+  "scopeName": "ashikaga-map.pdf",
+  "elapsedSeconds": 0.25476267299382016,
+  "timingScope": "HTTP取得のみ"
+}

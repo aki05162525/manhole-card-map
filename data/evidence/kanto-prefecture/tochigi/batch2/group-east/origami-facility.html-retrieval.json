@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:32:57.996493+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:32:58.074623+00:00",
+  "sha256": "95870e1a69ea58ea3e3b6e58974d2cd37753b9308805c226bdff1b2cf6119f15",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/95870e1a69ea58ea3e3b6e58974d2cd37753b9308805c226bdff1b2cf6119f15.raw",
+  "bytes": 47849,
+  "scopeName": "origami-facility.html",
+  "elapsedSeconds": 0.07847152202157304,
+  "timingScope": "HTTP取得のみ"
+}

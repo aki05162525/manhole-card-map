@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://tocopo.pref.tochigi.lg.jp/search/search-48/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:42:16.202562+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://tocopo.pref.tochigi.lg.jp/search/search-48/",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:42:16.915224+00:00",
+  "sha256": "047a035aa7a43756b689039ea2ddd2ee7b2ffedc47c17dfe5e0f0d9bf5079b24",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/047a035aa7a43756b689039ea2ddd2ee7b2ffedc47c17dfe5e0f0d9bf5079b24.raw",
+  "bytes": 69038,
+  "scopeName": "kubo-pref-kids.html",
+  "elapsedSeconds": 0.7131560610141605,
+  "timingScope": "HTTP取得のみ"
+}

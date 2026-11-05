@@ -1,0 +1,284 @@
+[
+  {
+    "index": 36,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1370,
+            1210
+          ],
+          [
+            1936,
+            1417
+          ],
+          [
+            1920,
+            1461
+          ],
+          [
+            1332,
+            1318
+          ],
+          [
+            1370,
+            1210
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "areaApproxM2": 700.6591516058674,
+    "calculation": {
+      "coordinate": {
+        "lat": 36.441905,
+        "lng": 139.8142488
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        1668.0886817872524,
+        1367.479682072997
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  {
+    "index": 37,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1660,
+            886
+          ],
+          [
+            2131,
+            1058
+          ],
+          [
+            2097,
+            1152
+          ],
+          [
+            2369,
+            1251
+          ],
+          [
+            2300,
+            1439
+          ],
+          [
+            1516,
+            1153
+          ],
+          [
+            1571,
+            1001
+          ],
+          [
+            1613,
+            1016
+          ],
+          [
+            1660,
+            886
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "areaApproxM2": 3108.7216617788868,
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4420835,
+        "lng": 139.8146166
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        1942.3402393758297,
+        1202.0277371406555
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  {
+    "index": 49,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2258,
+            706
+          ],
+          [
+            2310,
+            725
+          ],
+          [
+            2194,
+            1041
+          ],
+          [
+            2142,
+            1022
+          ],
+          [
+            2258,
+            706
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3111,
+      "vt_lvorder": 0
+    },
+    "areaApproxM2": 268.79602691170635,
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4424379,
+        "lng": 139.814997
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        2225.9870378673077,
+        873.5326635688543
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  {
+    "index": 52,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2082,
+            1003
+          ],
+          [
+            2377,
+            1111
+          ],
+          [
+            2332,
+            1237
+          ],
+          [
+            2098,
+            1151
+          ],
+          [
+            2131,
+            1058
+          ],
+          [
+            2070,
+            1035
+          ],
+          [
+            2082,
+            1003
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "areaApproxM2": 513.0613831277225,
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4421601,
+        "lng": 139.8150124
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        2237.4701101481915,
+        1131.0269538611174
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  {
+    "index": 53,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2361,
+            1273
+          ],
+          [
+            2472,
+            1314
+          ],
+          [
+            2428,
+            1436
+          ],
+          [
+            2415,
+            1431
+          ],
+          [
+            2399,
+            1476
+          ],
+          [
+            2301,
+            1440
+          ],
+          [
+            2361,
+            1273
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "areaApproxM2": 292.90173069575036,
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4418996,
+        "lng": 139.8152144
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        2388.0922271311283,
+        1372.4849450588226
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  }
+]

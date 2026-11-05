@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/6269dd973300b.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:34:42.325345+00:00",
+  "httpStatus": 200,
+  "etag": "\"6f8ab8-5ddabe1749c70\"",
+  "lastModified": "Thu, 28 Apr 2022 00:19:35 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/6269dd973300b.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:34:42.653213+00:00",
+  "sha256": "c77abd0bbb29ece7d0441b3779a2d78e812fa5842e1104c425003b3796650d3b",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/c77abd0bbb29ece7d0441b3779a2d78e812fa5842e1104c425003b3796650d3b.raw",
+  "bytes": 7310008,
+  "scopeName": "origami-basic.pdf",
+  "elapsedSeconds": 0.3282407160149887,
+  "timingScope": "HTTP取得のみ"
+}

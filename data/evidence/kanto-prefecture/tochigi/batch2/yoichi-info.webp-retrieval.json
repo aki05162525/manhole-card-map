@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://yoichi.mods.jp/_official/wp-content/uploads/2000/02/jo.webp",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:27:41.644616+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": "Wed, 04 Mar 2026 06:24:19 GMT",
+  "contentType": "image/webp",
+  "contentRange": null,
+  "responseURL": "https://yoichi.mods.jp/_official/wp-content/uploads/2000/02/jo.webp",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:27:41.809945+00:00",
+  "sha256": "3b22682d73b999cb96077ee0a785d932b0ff65e573f20c8436a460ecc4f45e76",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/3b22682d73b999cb96077ee0a785d932b0ff65e573f20c8436a460ecc4f45e76.raw",
+  "bytes": 96540,
+  "scopeName": "yoichi-info.webp",
+  "elapsedSeconds": 0.16561063699191436,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58232-25608.pbf.gz",
+    "sha256": "6d966d4178887991d9ac837fa09debe873e805c26e843e929543c3ada2d79e04",
+    "tile": {
+      "z": 16,
+      "x": 58232,
+      "y": 25608
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58233-25608.pbf.gz",
+    "sha256": "61ee4c85c539f9b986d6cf87ba541dff1b024410b3085dc7c1f61cc0262459c8",
+    "tile": {
+      "z": 16,
+      "x": 58233,
+      "y": 25608
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58234-25608.pbf.gz",
+    "sha256": "55bb24e65189055c71b3157fc7d348a437aa0bd6d96ab6f588d87d08433fe89b",
+    "tile": {
+      "z": 16,
+      "x": 58234,
+      "y": 25608
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58232-25609.pbf.gz",
+    "sha256": "be3d0fad227a2ab49dab2076557fb7b4e4702b719380d5eeb01e1268e6df44b8",
+    "tile": {
+      "z": 16,
+      "x": 58232,
+      "y": 25609
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58233-25609.pbf.gz",
+    "sha256": "151ae05890d24abcd8be8a3b5ecc9a07c97347cc990b5963246a985472750b04",
+    "tile": {
+      "z": 16,
+      "x": 58233,
+      "y": 25609
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58234-25609.pbf.gz",
+    "sha256": "fc5ec7b99ff60373b5d30a2d15ac04eee850186720e0a4f385765530bb282e12",
+    "tile": {
+      "z": 16,
+      "x": 58234,
+      "y": 25609
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58232-25610.pbf.gz",
+    "sha256": "e2958152e956d0892ce50c9e3200b6db2d63be44bb95bdacbc317c9781d92697",
+    "tile": {
+      "z": 16,
+      "x": 58232,
+      "y": 25610
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58233-25610.pbf.gz",
+    "sha256": "47fa13d6d258c495a7328ffb4f0f4414f3d6113b20629ffef313dfcc06084429",
+    "tile": {
+      "z": 16,
+      "x": 58233,
+      "y": 25610
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/seimeikan-vector/58234-25610.pbf.gz",
+    "sha256": "83b03d8cd7b5a3bb658f407b42b12e6e1bf2466e515bf5d48399a540de2c35b3",
+    "tile": {
+      "z": 16,
+      "x": 58234,
+      "y": 25610
+    }
+  }
+]

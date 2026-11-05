@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-060fbafce589ea4ae65d",
+      "coordinate": {
+        "lat": 36.3350266,
+        "lng": 139.4541252
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+        "snapshotSHA256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37",
+        "sourceLocator": "z16/58154/25659 58154/25659:BldA:530; geometry-observations.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布案内・外観写真・施設カルテ・観光地図の道路と隣接棟を照合。外形重心をXYZ Web Mercatorとして逆投影し7桁丸め後内包。製品固有CRSは未確認、座標採用は未承認。建物代表点であり測量精度は保証しない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+      "coordinate": {
+        "lat": 36.3342959,
+        "lng": 139.452899
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+        "snapshotSHA256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37",
+        "sourceLocator": "z16/58154/25659 58154/25659:BldA:482; geometry-observations.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布案内・外観写真・施設カルテ・観光地図の道路と隣接棟を照合。外形重心をXYZ Web Mercatorとして逆投影し7桁丸め後内包。製品固有CRSは未確認、座標採用は未承認。建物代表点であり測量精度は保証しない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+      "coordinate": {
+        "lat": 36.7246428,
+        "lng": 139.6874263
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector/58197-25571.pbf.gz",
+        "snapshotSHA256": "dac892d34d14a15df31e4fcb91c4778da2d84035bae983e34971a903cb6b361e",
+        "sourceLocator": "58197/25571:BldA:186; aerial-comparison.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "航空2024年4～5月と現公式鳥瞰図は西細長棟186・北東交流館199・奥ホール201・東マルシェ202・中央広場と南駐車場が一致。186はコンビニ/公衆トイレ/観光情報館を含む一体屋根。全建物代表点であり室内窓口指定ではない。旧仮説155は国道119南の別棟なので棄却。 外形内部代表点をXYZ逆投影、7桁丸め後内包。製品固有CRS未確認、測量精度保証なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+      "coordinate": {
+        "lat": 36.3799297,
+        "lng": 139.7339682
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector/58205-25649.pbf.gz",
+        "snapshotSHA256": "9bd89c2e8e2fd6484d8ab0b6a80e19cbea988f8ea7e3a86a9453b616507ebd3f",
+        "sourceLocator": "58205/25649:BldA:471; aerial-comparison.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "航空2022年3月と市散策図/現市カルテ、2010小山高専紀要p8図7を比較。道路東側、北蔵469/470と南蔵471の間の東西路地が背後広場へ続く。南蔵は北蔵南の白壁小棟、コエド市場478/484より北に隣接する。95.2㎡外形と延床115.93㎡は直接比較できないが2階の小棟という規模を妨げない。論文著者自身が活用提案参加・撮影した一次観察。 外形内部代表点をXYZ逆投影、7桁丸め後内包。製品固有CRS未確認、測量精度保証なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+      "coordinate": {
+        "lat": 36.738681,
+        "lng": 139.5000361
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58163-25568.pbf.gz",
+        "snapshotSHA256": "82af29efa11a6db70bf86bbb310252ec0f1dcd3e8f42d1c15a720256150c71ce",
+        "sourceLocator": "58163/25568:BldA:7; aerial-comparison.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "航空2019年4月～2020年12月（索引z11/1817/798と799の両側）で7が複合屋根群の中央主要部。細長い5/6、北51、南8は中央7に屋根/接続が続く。公式現館内図の廊下・大展示室の連結構成、県現カルテ1棟、河川/道路/駐車場に囲まれた独立敷地という複数根拠から同一博物館の主要部分7を代表点候補とする。館内図の厳密な方位と各室→各ポリゴンの一対一対応は未確定だがICだけに点を限定せず同一建物代表点要件で判断。隣接店舗/バス停を代用しない。 外形内部代表点をXYZ逆投影、7桁丸め後内包。製品固有CRS未確認、測量精度保証なし。"
+      }
+    }
+  ]
+}
