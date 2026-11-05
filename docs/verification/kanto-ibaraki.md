@@ -22,6 +22,48 @@ Refs #65 / #60。確認基準日2026-11-05。取得日時・利用者回答の�
 
 以下の初回記録にある「1施設比較・17未着手」「質問未送信」は当時の履歴であり、今回の結果ではない。
 
+## round2 統合検証の実行後記録
+
+対象commit `6e6db15115406118f34d4928dd07ecc3c59a63a5`。`mise exec -- git commit -m 'research: investigate all 18 Ibaraki facilities and stage 17 proposals'` は終了コード0。通常hookで `go test -count=1 ./...` 成功。`TestNationalAssemblyFailureGuards` 内の全国Pythonを含む。手動で同一全suiteを重ねていない。round2/validation.jsonの全入力hashが対象commitのbytesと一致することを再確認した。そこにあるpendingは実行前記録で、本節が実行後の証跡となる。以後は文書だけの追記でデータ/コード入力は同一。
+
+古河の面積補足：保存済み z16/58201/25691 を再decodeし、比較外形BldA76=約2,022.3㎡、84=220.2㎡、87=76.4㎡、96=2,024.5㎡、103=2,029.9㎡。いずれも当該外形はタイル内に完結。緯度36.194付近の局所Mercator縮尺で面積換算した概数で、屋内床面積ではない。南北に長い平行屋根96/103のほぼ同じ面積は駅舎本体とホーム屋根の区別を解決せず、座標は保留を維持する。計算専用区間2026-11-05T15:59:38.260190Z〜15:59:38.281847Z（図読解時間ではない）、終了コード0。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	80.103s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.002s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.005s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 81.26 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (81.26 seconds)
+```
+
 ---
 
 # 初回Draftの記録（以下はround2以前の履歴）
