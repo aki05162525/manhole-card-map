@@ -1,8 +1,8 @@
 # マンホールカードの地図
 
-標準画面は Vite + React + mapcn / MapLibre。地図上でカードを探し、詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 成果物保存までを対象にする。
+標準画面は Vite + React + mapcn / MapLibre。配布場所を主に表示し、カードを受け取ってから対応する蓋へ向かう。詳細から Google マップへ渡す。外部公開は行わず、ローカル検証と CI 成果物保存までを対象にする。
 
-[採用理由と設計](../docs/mapcn-design.md)・[検証結果](../docs/verification/08-mapcn.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
+[配布場所の設計・整備手順](../docs/distribution-design.md)・[採用理由と設計](../docs/mapcn-design.md)・[検証結果](../docs/verification/08-mapcn.md)・[APM と公式スキル](../docs/development-agents.md)を参照。
 
 ## 開発環境
 
@@ -45,7 +45,7 @@ bun run test:browser
 ルートで保存済みデータから生成する。この処理で GKP へアクセスしない。素材が不足していれば通常ビルドは失敗し、合成データへ自動で置き換えない。
 
 ```sh
-go run ./cmd/builddata
+go run ./cmd/builddata -as-of 2026-11-05
 cd web
 bun run build
 bun run preview
@@ -55,7 +55,7 @@ bun run preview
 
 MapLibre Worker と shared モジュールはインストールした版から同一オリジンへ配信する。unpkg に依存しない。mapcn の取得元、変更点、MIT ライセンスは [MAPCN_PROVENANCE.md](MAPCN_PROVENANCE.md) を参照。
 
-位置未確定の配布場所は通常ピンにしない。`go run ./cmd/builddata -reference-places` は参考位置を使う検証用。公開用の確定状態に変換しない。検索は都道府県・自治体・カード番号を対象にし、配布場所の座標確定や更新運用は別の課題として残る。
+位置未確定の配布場所は通常ピンにしない。`go run ./cmd/builddata -reference-places` は参考位置を使う検証用。公開用の確定状態に変換しない。標準画面は確認済みの配布場所のみを初期表示する。「蓋の位置も表示」で蓋を追加し、カード詳細の「このカードの蓋を見る」で個別の蓋へ進む。参考ピンは標準画面には出さない。検索は都道府県・自治体・カード番号・施設名・住所を対象にする。施設台帳は一部の試行で、全国の確認と更新自動化は未完了。
 
 ## オフラインと比較画面
 

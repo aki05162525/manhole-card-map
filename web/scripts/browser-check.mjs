@@ -145,7 +145,54 @@ try {
     requests.some((url) => url.endsWith("/background/japan.geojson")),
     false,
   );
+  assert.equal(await page.locator("#show-lids").isChecked(), false);
   await stableMap(page);
+  await choose(page, "TEST-TOKYO-1");
+  await page
+    .getByText("カード配布時間：9:00–17:00（合成）", { exact: true })
+    .waitFor();
+  await page
+    .getByRole("button", { name: "このカードの蓋を見る", exact: true })
+    .click();
+  await page.waitForTimeout(650);
+  const lidView = await page.evaluate(() => window.prototype.adapter.view());
+  await page
+    .getByRole("button", { name: "配布場所を見る", exact: true })
+    .click();
+  await page.waitForTimeout(650);
+  const placeView = await page.evaluate(() => window.prototype.adapter.view());
+  assert.ok(
+    Math.abs(lidView.lng - placeView.lng) > 0.01,
+    "lid action changes destination",
+  );
+  await page.locator("#show-lids").check();
+  await page.locator("#show-lids").uncheck();
+  await page
+    .getByRole("button", { name: "このカードの蓋を見る", exact: true })
+    .click();
+  await page.waitForTimeout(650);
+  const afterToggle = await page.evaluate(() =>
+    window.prototype.adapter.view(),
+  );
+  assert.ok(
+    Math.abs(afterToggle.lng - lidView.lng) < 0.002,
+    "adapter remains live after pin toggle",
+  );
+  await closeDetail(page);
+  await choose(page, "TEST-OSAKA");
+  assert.equal(
+    await page
+      .getByRole("button", { name: "配布場所を見る", exact: true })
+      .isDisabled(),
+    true,
+  );
+  assert.equal(
+    await page
+      .getByRole("button", { name: "このカードの蓋を見る", exact: true })
+      .isEnabled(),
+    true,
+  );
+  await closeDetail(page);
   await page.locator("#search").fill("位置未確定");
   assert.equal(await page.locator("#cards option").count(), 2);
   await page.locator("#cards").focus();
@@ -165,7 +212,7 @@ try {
   );
   await page.locator("#search").fill("");
   await choose(page, "TEST-TOKYO-1");
-  assert.equal(await page.locator("#detail h3").count(), 2);
+  assert.equal(await page.locator("#detail .facility h3").count(), 2);
   const links = await page
     .locator('#detail a[href*="google.com/maps"]')
     .evaluateAll((nodes) =>
@@ -186,7 +233,7 @@ try {
     new URL(
       links.find((link) => link.text.startsWith("蓋")).href,
     ).searchParams.get("query"),
-    "35.68,139.76",
+    "35.7,139.78",
   );
   assert.ok(links.every((link) => link.rel.includes("noopener")));
   await closeDetail(page);
@@ -269,7 +316,7 @@ try {
   await page.reload({ waitUntil: "domcontentloaded" });
   await cardList(page);
   await choose(page, "TEST-TOKYO-1");
-  assert.equal(await page.locator("#detail h3").count(), 2);
+  assert.equal(await page.locator("#detail .facility h3").count(), 2);
   await page.waitForFunction(() => window.prototype.metrics.errors.length > 0);
   assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
   await ctx.close();

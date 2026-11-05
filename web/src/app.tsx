@@ -21,6 +21,7 @@ import {
   matchingCards,
   parseStoredView,
   selectionPins,
+  visiblePins,
 } from "./explorer-state";
 import { labels, painted, type Adapter, type Card, type Data } from "./types";
 
@@ -101,7 +102,19 @@ function ExternalLink({ link }: { link: MapLink | null }) {
   ) : null;
 }
 
-function CardDetail({ card, data }: { card: Card; data: Data }) {
+function CardDetail({
+  card,
+  data,
+  onShowLid,
+  onShowPlaces,
+  mapReady,
+}: {
+  card: Card;
+  data: Data;
+  onShowLid(): void;
+  onShowPlaces(): void;
+  mapReady: boolean;
+}) {
   const relations = data.relations.filter(
     (relation) => relation.cardId === card.id,
   );
@@ -119,6 +132,17 @@ function CardDetail({ card, data }: { card: Card; data: Data }) {
         </span>{" "}
         <span className="subtle">在庫は未確認です</span>
       </p>
+      <h3 className="journey-heading">1. カードをもらう</h3>
+      <button
+        type="button"
+        onClick={onShowPlaces}
+        disabled={
+          !mapReady ||
+          !selectionPins(visiblePins(data, false), [card.id]).length
+        }
+      >
+        配布場所を見る
+      </button>
       {relations.length > 1 && (
         <p>配布施設は曜日・条件を確認して選んでください。</p>
       )}
@@ -128,6 +152,16 @@ function CardDetail({ card, data }: { card: Card; data: Data }) {
         return (
           <section className="facility" key={`${relation.placeId}-${index}`}>
             <h3>{place.name}</h3>
+            {relation.status && (
+              <span className={`status-badge ${relation.status}`}>
+                {labels[relation.status]}
+              </span>
+            )}
+            {relation.review === "needs-review" && (
+              <p className="subtle">
+                配布情報は再確認待ちです。原文と公式情報をご確認ください。
+              </p>
+            )}
             <p>
               {place.address}
               {place.phone && `\n${place.phone}`}
@@ -137,6 +171,19 @@ function CardDetail({ card, data }: { card: Card; data: Data }) {
                 .filter(Boolean)
                 .join("\n")}
             </p>
+            {relation.hours?.length ? (
+              <p>カード配布時間：{relation.hours.join("\n")}</p>
+            ) : (
+              <p className="subtle">
+                この窓口の配布時間は未整理です。下記の原文・公式情報をご確認ください。
+              </p>
+            )}
+            {(relation.validFrom || relation.validTo) && (
+              <p>
+                適用期間：{relation.validFrom || "開始日未確認"} ～{" "}
+                {relation.validTo || "終了日未指定"}
+              </p>
+            )}
             <p className="subtle">
               {place.coordinate.status === "candidate"
                 ? "参考位置（未確定）"
@@ -144,16 +191,52 @@ function CardDetail({ card, data }: { card: Card; data: Data }) {
                   ? "位置確定"
                   : "地図の位置は未確定"}
             </p>
-            <ExternalLink link={facilityMapLink(place)} />
+            <ExternalLink link={facilityMapLink(place, relation)} />
+            {relation.evidence && (
+              <>
+                <ExternalLink
+                  link={
+                    safeHttpUrl(relation.evidence.sourceUrl)
+                      ? {
+                          href: safeHttpUrl(relation.evidence.sourceUrl)!,
+                          label: "この配布情報の出典",
+                        }
+                      : null
+                  }
+                />
+                <p className="subtle">
+                  情報確認日：{relation.evidence.checkedAt}
+                </p>
+              </>
+            )}
           </section>
         );
       })}
       {!relations.length && (
         <p>配布施設の登録なし。下記の文字情報・公式情報を確認してください。</p>
       )}
-      <p>{card.placeText.join("\n")}</p>
-      <p>{(card.hours || []).join("\n")}</p>
+      <details className="source-notes">
+        <summary>取得した配布情報の原文</summary>
+        <p>{card.placeText.join("\n")}</p>
+        <p>{(card.hours || []).join("\n")}</p>
+      </details>
+      <h3 className="journey-heading">2. 蓋を見に行く・撮影する</h3>
+      {lidLink && (
+        <button
+          className="primary-button"
+          type="button"
+          onClick={onShowLid}
+          disabled={!mapReady}
+        >
+          このカードの蓋を見る
+        </button>
+      )}
       <ExternalLink link={lidLink} />
+      {lidLink && (
+        <p className="subtle">
+          蓋の位置はカード印刷座標の読み取りを採用しています。現地位置の確認済みを意味しません。
+        </p>
+      )}
       {!lidLink && (
         <p className="subtle">
           蓋の位置は未確定または有効な座標なし：{card.lid.reason || ""}
@@ -177,7 +260,9 @@ function CardDetail({ card, data }: { card: Card; data: Data }) {
         />
       ))}
       <p className="subtle">
-        情報取得日：{card.acquired}。訪問前に公式情報をご確認ください。
+        一覧取得日：{card.acquired}。
+        {data.evaluatedAt && `配布期間の判定日：${data.evaluatedAt}。`}
+        訪問前に公式情報をご確認ください。
       </p>
     </>
   );
@@ -233,6 +318,8 @@ function SourceNotes() {
 export default function App() {
   const [data, setData] = useState<Data | null>(null);
   const [query, setQuery] = useState("");
+  const [showLids, setShowLids] = useState(false);
+  const [revealedLid, setRevealedLid] = useState<string>();
   const [selection, setSelection] = useState<{
     ids: string[];
     selectedId?: string;
@@ -265,16 +352,23 @@ export default function App() {
     [cards, selection],
   );
   const selected = detailCard(group, selection?.selectedId);
+  const pins = useMemo(
+    () => visiblePins(data, showLids, revealedLid),
+    [data, showLids, revealedLid],
+  );
+  const placeCount = useMemo(() => visiblePins(data, false).length, [data]);
   const selectedPins = useMemo(
     () =>
       selectionPins(
-        data?.pins || [],
+        pins.filter((pin) =>
+          revealedLid ? pin.kind === "lid" : pin.kind === "place",
+        ),
         selected ? [selected.id] : selection?.ids || [],
       ),
-    [data, selected, selection],
+    [pins, selected, selection, revealedLid],
   );
   const filtered = useMemo(
-    () => matchingCards(data?.cards || [], query),
+    () => matchingCards(data?.cards || [], query, data || undefined),
     [data, query],
   );
 
@@ -364,6 +458,7 @@ export default function App() {
     (ids: string[], selectedId?: string, started = performance.now()) => {
       if (!detailRef.current && document.activeElement instanceof HTMLElement)
         returnFocus.current = document.activeElement;
+      setRevealedLid(undefined);
       setSelection({ ids, selectedId, started });
       setChoice(ids[0] || "");
     },
@@ -378,6 +473,7 @@ export default function App() {
     [show],
   );
   const close = useCallback(() => {
+    setRevealedLid(undefined);
     setSelection(null);
     returnFocus.current?.focus();
   }, []);
@@ -396,6 +492,26 @@ export default function App() {
       cancelled = true;
     };
   }, [selection]);
+
+  function showLid() {
+    if (!selected) return;
+    setRevealedLid(selected.id);
+    activeAdapter?.select(
+      (data?.pins || []).filter(
+        (pin) =>
+          pin.kind === "lid" &&
+          !pin.reference &&
+          pin.cardIds.includes(selected.id),
+      ),
+    );
+  }
+  function showPlaces() {
+    setRevealedLid(undefined);
+    if (selected)
+      activeAdapter?.select(
+        selectionPins(visiblePins(data, false), [selected.id]),
+      );
+  }
 
   function locate() {
     if (!("geolocation" in navigator)) {
@@ -448,7 +564,7 @@ export default function App() {
               }
             >
               <CardMap
-                pins={data.pins}
+                pins={pins}
                 selectedPins={selectedPins}
                 onSelect={selectFromMap}
                 onReady={mapReady}
@@ -467,7 +583,7 @@ export default function App() {
           </span>
           <div>
             <h1>マンホールカード</h1>
-            <p>地図で見つける、次の一枚</p>
+            <p>配布場所で受け取って、蓋に会いに行こう</p>
           </div>
           <span className="preview-label">試作版</span>
         </header>
@@ -482,7 +598,7 @@ export default function App() {
         <input
           id="search"
           type="search"
-          placeholder="都道府県・自治体名・カード番号"
+          placeholder="自治体・配布施設・カード番号"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           disabled={!data}
@@ -510,6 +626,31 @@ export default function App() {
             </option>
           ))}
         </select>
+        <label className="layer-toggle" htmlFor="show-lids">
+          <input
+            id="show-lids"
+            type="checkbox"
+            checked={showLids}
+            onChange={(event) => {
+              setShowLids(event.target.checked);
+              setRevealedLid(undefined);
+            }}
+          />
+          蓋の位置も表示
+        </label>
+        <p className="map-legend">
+          ■ 配布場所　
+          {showLids || revealedLid
+            ? "● 蓋の位置"
+            : "蓋はカード詳細から表示できます"}
+        </p>
+        {data && (
+          <p id="coverage-note">
+            {placeCount
+              ? `位置を確認した配布場所 ${placeCount.toLocaleString("ja-JP")}か所を表示。未確認の配布場所も一覧から探せます。`
+              : "配布場所の位置を確認中です。カード一覧から施設名・住所を確認できます。"}
+          </p>
+        )}
         <p id="notice" role="status">
           {notice}
         </p>
@@ -570,10 +711,16 @@ export default function App() {
             )}
           </div>
           {selected && data ? (
-            <CardDetail card={selected} data={data} />
+            <CardDetail
+              card={selected}
+              data={data}
+              onShowLid={showLid}
+              onShowPlaces={showPlaces}
+              mapReady={mapState === "ready"}
+            />
           ) : group.length ? (
             <>
-              <p className="eyebrow">近くのカード</p>
+              <p className="eyebrow">この場所で探すカード</p>
               <h2 tabIndex={-1}>この位置・範囲のカード {group.length}枚</h2>
               <p>カードを選んで詳細を開く。矢印キーで選択できます。</p>
               <select

@@ -77,29 +77,50 @@ function square(color: string) {
 }
 
 function selectionPadding(container: HTMLElement) {
-  const width = container.clientWidth,
-    height = container.clientHeight;
-  // These match the floating panels; clamp pairs to leave at least 100px of map.
+  const bounds = container.getBoundingClientRect();
+  const width = bounds.width,
+    height = bounds.height;
+  const root = container.closest(".explorer");
+  const search = root?.querySelector(".search-panel")?.getBoundingClientRect();
+  const detail = root?.querySelector(".detail-panel")?.getBoundingClientRect();
+  const actions = root?.querySelector(".map-actions")?.getBoundingClientRect();
   const mobile = width <= 1000;
-  const horizontal = mobile
-    ? { left: 25, right: 65 }
-    : { left: 400, right: 450 };
-  const vertical = mobile
-    ? { top: 240, bottom: height * 0.48 + 45 }
-    : { top: 105, bottom: 85 };
+  // Measure actual overlays: coverage notices and selected details change height.
+  // Reserve the map controls at the right and leave the target wholly tappable.
+  const padding = mobile
+    ? {
+        left: 24,
+        right: 65,
+        top: search ? search.bottom - bounds.top + 20 : 24,
+        bottom:
+          height -
+          Math.min(
+            detail?.top ?? bounds.bottom - 40,
+            actions?.top ?? bounds.bottom - 40,
+          ) +
+          bounds.top +
+          20,
+      }
+    : {
+        left: search ? search.right - bounds.left + 20 : 24,
+        right: detail ? bounds.right - detail.left + 20 : 65,
+        top: actions ? actions.bottom - bounds.top + 20 : 24,
+        bottom: 70,
+      };
+  // Very small landscape windows may not fit both panels. Keep valid bounds.
   const xScale = Math.min(
     1,
-    Math.max(0, width - 100) / (horizontal.left + horizontal.right),
+    Math.max(0, width - 40) / (padding.left + padding.right),
   );
   const yScale = Math.min(
     1,
-    Math.max(0, height - 100) / (vertical.top + vertical.bottom),
+    Math.max(0, height - 40) / (padding.top + padding.bottom),
   );
   return {
-    left: horizontal.left * xScale,
-    right: horizontal.right * xScale,
-    top: vertical.top * yScale,
-    bottom: vertical.bottom * yScale,
+    left: padding.left * xScale,
+    right: padding.right * xScale,
+    top: padding.top * yScale,
+    bottom: padding.bottom * yScale,
   };
 }
 
@@ -135,7 +156,7 @@ function MapLayers(props: CardMapProps) {
     };
     map.addSource(SOURCE, {
       type: "geojson",
-      data,
+      data: pinsGeoJSON(callbacks.current.pins),
       cluster: true,
       clusterRadius: 45,
       clusterMaxZoom: 18,
@@ -387,7 +408,11 @@ function MapLayers(props: CardMapProps) {
       if (map.getStyle())
         for (const id of imageIds) if (map.hasImage(id)) map.removeImage(id);
     };
-  }, [map, isLoaded, data]);
+  }, [map, isLoaded]);
+  useEffect(() => {
+    if (!map || !isLoaded) return;
+    (map.getSource(SOURCE) as GeoJSONSource | undefined)?.setData(data);
+  }, [data, map, isLoaded]);
   useEffect(() => {
     adapterRef.current?.select(props.selectedPins);
   }, [props.selectedPins, map, isLoaded]);

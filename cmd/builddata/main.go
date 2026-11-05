@@ -27,6 +27,7 @@ type Coordinate struct {
 	Review string   `json:"review"`
 }
 type Card struct {
+	SourceStock  []string        `json:"-"`
 	ID           string          `json:"id"`
 	City         string          `json:"city"`
 	Pref         string          `json:"pref"`
@@ -47,17 +48,25 @@ type Place struct {
 	Address    string     `json:"address"`
 	Phone      string     `json:"phone"`
 	Coordinate Coordinate `json:"coordinate"`
+	Evidence   *Evidence  `json:"evidence,omitempty"`
 }
 type Relation struct {
-	CardID          string   `json:"cardId"`
-	PlaceID         string   `json:"placeId"`
-	Condition       string   `json:"condition"`
-	Raw             []string `json:"raw"`
-	PeriodRaw       string   `json:"periodRaw"`
-	AlternativeRaw  string   `json:"alternativeRaw"`
-	AlternativeTo   *string  `json:"alternativeTo"`
-	Interpretation  string   `json:"interpretation"`
-	AddressBorrowed bool     `json:"addressBorrowed"`
+	ReviewUntil     string    `json:"reviewUntil,omitempty"`
+	Hours           []string  `json:"hours,omitempty"`
+	Status          string    `json:"status,omitempty"`
+	ValidFrom       string    `json:"validFrom,omitempty"`
+	ValidTo         string    `json:"validTo,omitempty"`
+	Review          string    `json:"review,omitempty"`
+	Evidence        *Evidence `json:"evidence,omitempty"`
+	CardID          string    `json:"cardId"`
+	PlaceID         string    `json:"placeId"`
+	Condition       string    `json:"condition"`
+	Raw             []string  `json:"raw"`
+	PeriodRaw       string    `json:"periodRaw"`
+	AlternativeRaw  string    `json:"alternativeRaw"`
+	AlternativeTo   *string   `json:"alternativeTo"`
+	Interpretation  string    `json:"interpretation"`
+	AddressBorrowed bool      `json:"addressBorrowed"`
 }
 type Pin struct {
 	ID        string   `json:"id"`
@@ -69,12 +78,13 @@ type Pin struct {
 	Reference bool     `json:"reference"`
 }
 type Data struct {
-	Schema    int        `json:"schema"`
-	Updated   string     `json:"updated"`
-	Cards     []Card     `json:"cards"`
-	Places    []Place    `json:"places"`
-	Relations []Relation `json:"relations"`
-	Pins      []Pin      `json:"pins"`
+	EvaluatedAt string     `json:"evaluatedAt,omitempty"`
+	Schema      int        `json:"schema"`
+	Updated     string     `json:"updated"`
+	Cards       []Card     `json:"cards"`
+	Places      []Place    `json:"places"`
+	Relations   []Relation `json:"relations"`
+	Pins        []Pin      `json:"pins"`
 }
 type Check struct {
 	Kind             string   `json:"kind"`
@@ -144,6 +154,9 @@ func distribution(r gkp.Row, asOf time.Time) string {
 		return "unknown"
 	}
 	if ended {
+		if len(gkp.ParsePlaces(r.Place).Places) > 0 && strings.TrimSpace(text) != "配布終了" && strings.TrimSpace(text) != "配布を終了" {
+			return "unknown"
+		}
 		return "ended"
 	}
 	if suspended {
@@ -166,6 +179,8 @@ func main() {
 	checks := flag.String("checks", "data/work/municheck.json", "自治体照合結果。入力 SHA-256 も検証する")
 	out := flag.String("out", "web/public/data", "出力先")
 	date := flag.String("date", "2026-10-21", "一覧の取得日。配布開始前判定の基準日")
+	ledgerPath := flag.String("places", "data/overrides/places.json", "根拠付き配布施設台帳。空文字で無効化")
+	evaluationDate := flag.String("as-of", "", "配布条件の適用基準日。省略時は一覧取得日")
 	references := flag.Bool("reference-places", false, "候補の配布場所を試作の参考ピンに含める（公開禁止）")
 	flag.Parse()
 	asOf, e := time.Parse("2006-01-02", *date)
@@ -211,7 +226,6 @@ func main() {
 	d := Data{Schema: 1, Updated: *date, Cards: []Card{}, Places: []Place{}, Relations: []Relation{}, Pins: []Pin{}}
 	ids := map[string]bool{}
 	places := map[string]int{}
-	cardStatuses := map[string]string{}
 	for _, r := range rows {
 		c, ok := lids[r.Index]
 		if !ok || c.Code == "" {
@@ -236,10 +250,9 @@ func main() {
 			co.Reason = "自治体不一致の原因未確定"
 		}
 		status := distribution(r, asOf)
-		cardStatuses[c.Code] = status
 		// 照合の要約だけを公開データへ渡し、画像のパスは含めない。
 		summary, _ := json.Marshal(map[string]string{"byCode": c.ByCode.Status, "byName": c.ByName.Status})
-		card := Card{ID: c.Code, City: c.City, Pref: gkp.PrefName(r), Series: r.Dan, Issued: r.Issued, Status: status, Lid: co, PlaceText: r.Place, Hours: r.Hours, Links: r.Links, Acquired: *date, Override: overrides[c.Image], Municipality: summary}
+		card := Card{SourceStock: r.Stock, ID: c.Code, City: c.City, Pref: gkp.PrefName(r), Series: r.Dan, Issued: r.Issued, Status: status, Lid: co, PlaceText: r.Place, Hours: r.Hours, Links: r.Links, Acquired: *date, Override: overrides[c.Image], Municipality: summary}
 		d.Cards = append(d.Cards, card)
 		if co.Status == "confirmed" {
 			d.Pins = append(d.Pins, Pin{ID: "lid:" + c.Code, CardIDs: []string{c.Code}, Kind: "lid", Status: status, Lat: *co.Lat, Lng: *co.Lng})
@@ -270,37 +283,32 @@ func main() {
 			d.Relations = append(d.Relations, Relation{CardID: c.Code, PlaceID: pid, Condition: p.Condition, Raw: r.Place, PeriodRaw: period, AlternativeRaw: alternative, Interpretation: "条件は原文を参照。期間と代替先の構造化は未確認", AddressBorrowed: p.AddressFrom != nil})
 		}
 	}
-	if *references {
-		for _, p := range d.Places {
-			if p.Coordinate.Status != "candidate" {
-				continue
-			}
-			pin := Pin{ID: p.ID, Kind: "place", Lat: *p.Coordinate.Lat, Lng: *p.Coordinate.Lng, Reference: true, CardIDs: []string{}}
-			for _, rel := range d.Relations {
-				if rel.PlaceID != p.ID {
-					continue
-				}
-				pin.CardIDs = append(pin.CardIDs, rel.CardID)
-				status := cardStatuses[rel.CardID]
-				if pin.Status == "" {
-					pin.Status = status
-				} else if pin.Status != status {
-					pin.Status = "unknown"
-				}
-			}
-			d.Pins = append(d.Pins, pin)
-		}
+	ledger := PlaceLedger{Schema: 1}
+	if *ledgerPath != "" {
+		raw, err := os.ReadFile(*ledgerPath)
+		must(err)
+		must(decodeLedger(raw, &ledger))
+		report.Inputs[*ledgerPath] = hash(raw)
 	}
+	evaluation := asOf
+	if *evaluationDate != "" {
+		evaluation, e = time.Parse("2006-01-02", *evaluationDate)
+		must(e)
+	}
+	d.EvaluatedAt = evaluation.Format("2006-01-02")
+	must(applyPlaceLedger(&d, ledger, evaluation))
+	appendPlacePins(&d, *references)
 
 	sort.Slice(d.Places, func(i, j int) bool { return d.Places[i].ID < d.Places[j].ID })
 	must(os.MkdirAll(*out, 0755))
+	write(filepath.Join(*out, "quality.json"), qualityReport(d))
 	// full は比較用。split の起動ファイルには詳細を含めない。
 	full := write(filepath.Join(*out, "full.json"), d)
 	detail := d
 	detail.Pins = nil
 	details := write(filepath.Join(*out, "details.json"), detail)
 	boot := write(filepath.Join(*out, "pins.json"), map[string]any{"schema": 1, "updated": *date, "pins": d.Pins, "detailsSHA256": details})
-	write(filepath.Join(*out, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": full, "details.json": details, "pins.json": boot}, "inputs": report.Inputs, "referencePlaces": *references})
+	write(filepath.Join(*out, "manifest.json"), map[string]any{"schema": 1, "updated": *date, "files": map[string]string{"full.json": full, "details.json": details, "pins.json": boot}, "inputs": report.Inputs, "referencePlaces": *references, "evaluatedAt": d.EvaluatedAt})
 	counts := map[string]int{}
 	for _, p := range d.Pins {
 		counts[p.Kind]++
