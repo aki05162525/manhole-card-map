@@ -1,0 +1,238 @@
+{
+ "schema": 1,
+ "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+ "checkedAt": "2026-11-05",
+ "source": "国土地理院最適化ベクトルタイル PMTiles",
+ "sourceURL": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+ "tileRecord": "seoto-tiles.json",
+ "baseTile": {
+  "z": 16,
+  "x": 58105,
+  "y": 25795
+ },
+ "fullRender": "seoto-full.svg",
+ "processing": "manhole-card-map: decode mapbox-vector-tile 2.2.0, y down, combine_tiles; feature selected manually after reading official/secondary sources; Web Mercator inverse without datum transformation; 7 decimal rounding",
+ "reading": {
+  "currentDistribution": "市公式カード案内(既存原本48ddd4e7…を実読)：第16弾の配布場所は『秋川渓谷瀬音の湯 直売所』。在庫表記あり。現在在庫は保証しない。市の配布時間9:50-18:00に対し施設公式の物産販売所は4-11月9:50-19:00、12-3月9:50-18:00で季節差あり。配布時間は市案内を維持し台帳は変更しない。",
+  "plans": [
+   {
+    "source": "施設公式 周辺地図① n8r7.png(1503x1065)、② k2dv.png(1504x1061)",
+    "scope": "両図全面を目視。未読部分なし",
+    "age": "①は『2020_02』記載。②は年記載確認できず",
+    "orientation": "北記号なし。模式図",
+    "content": "瀬音の湯は1棟の模式描画で、温泉棟と販売所の区別なし。棟同定には不使用"
+   },
+   {
+    "source": "施設公式 /facility・/page1(直売所)・/about・/faq・/gallery HTML",
+    "scope": "全文取得し本文を読解。gallery画像は物産販売所・温泉棟・外観・駐車場の11枚を目視。他のgallery画像は未読",
+    "age": "サイトは2025-10-01更新と記載。撮影日不明。開業は/aboutの平成18年7月27日",
+    "orientation": "写真の構図と影で判断。写真8の視点は北東側広場から南西向きと推定",
+    "content": "caption『物産販売所』写真5は切妻ベージュ壁とウッドデッキ+テーブル+自販機、caption『温泉棟＆物産販売所』写真8は左に低い温泉棟、右に切妻の販売所、間に庇。写真2は販売所内部"
+   }
+  ],
+  "footprintComparison": "z16 x58105..58107 y25795..25797の9タイル全feature(1157)を全域SVGへ描画。秋川(南)、駐車場・アクセス道路(北西)、コテージ群672-681(西)、湾曲棟709、矩形棟706、接続部708、小棟707を公式写真と対応。",
+  "aerialCheck": "GSI seamlessphoto z18で706は東西棟脊の切妻屋根、東側に椅子が並ぶデッキ、709は湾曲屋根で外形とよく一致(タイル撮影日不明、z19は未取得)。読解補助で採用出典ではない。",
+  "identity": "物産販売所(直売所)=706、温泉棟=709、庇=708。根拠は公式写真の切妻+東側デッキと、東の低い湾曲棟との位置関係。706全体が販売所専用かは未確定(トイレ等の同居可能性)だが配布棟の代表点として成立。",
+  "excluded": "施設公式アクセスのGoogle q=35.727211,139.187894は706・709どちらの外形にも入らない施設全体の表示点(contains_pointで確認)。採用しない。705(南西小棟)・707(広場北の小棟)・コテージ672-681は別棟。蓋点も不使用。",
+  "limit": "実地確認なし。製品測地系・個別建物の測量日は未確定。"
+ },
+ "decision": "numerical candidate only; independent review and product datum applicability pending",
+ "adoptionApproval": false,
+ "manifestApplied": false,
+ "rights": {
+  "pmtiles": "出典: 国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0条件は既存Tokyo証跡(../retrievals.json)を参照し再取得していない。試験公開で基本測量成果ではない。",
+  "generalOriginals": "自治体・第三者HTML/PDF/画像全文はdata/workのみ。"
+ },
+ "crs": {
+  "tileGrid": "extent 4096 XYZ arithmetic",
+  "productSpecificDatum": "PMTiles metadata(tiles.json)に測地系宣言なし。一般タイル仕様JGD2011の製品適用は未承認。",
+  "approved": false
+ },
+ "features": [
+  {
+   "role": "物産販売所棟",
+   "sourceFeatureIdentity": "BldA array index 43 in z16/58106/25796; combined index 706; id=0 is not unique",
+   "properties": {
+    "vt_code": 3101,
+    "vt_lvorder": 0
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       5142,
+       5301
+      ],
+      [
+       5347,
+       5320
+      ],
+      [
+       5341,
+       5379
+      ],
+      [
+       5345,
+       5380
+      ],
+      [
+       5330,
+       5533
+      ],
+      [
+       5264,
+       5527
+      ],
+      [
+       5268,
+       5479
+      ],
+      [
+       5126,
+       5466
+      ],
+      [
+       5142,
+       5301
+      ]
+     ]
+    ]
+   },
+   "areaApproxM2": 553.8,
+   "tileBoundaryTouched": false,
+   "outerBoundaryTouched": false,
+   "manualPointXY": [
+    5270.4,
+    5423.1
+   ],
+   "inclusion": {
+    "coordinate": {
+     "lat": 35.7272322,
+     "lng": 139.187366
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+     5270.393469154835,
+     5423.120110288262
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+   }
+  },
+  {
+   "role": "温泉棟(非候補・比較用)",
+   "sourceFeatureIdentity": "BldA array index 46 in z16/58106/25796; combined index 709; id=0 is not unique",
+   "properties": {
+    "vt_code": 3101,
+    "vt_lvorder": 0
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       5978,
+       5234
+      ],
+      [
+       6080,
+       5245
+      ],
+      [
+       6139,
+       5290
+      ],
+      [
+       6098,
+       5400
+      ],
+      [
+       6003,
+       5390
+      ],
+      [
+       5980,
+       5400
+      ],
+      [
+       5907,
+       5505
+      ],
+      [
+       5865,
+       5538
+      ],
+      [
+       5754,
+       5589
+      ],
+      [
+       5690,
+       5598
+      ],
+      [
+       5581,
+       5583
+      ],
+      [
+       5378,
+       5510
+      ],
+      [
+       5434,
+       5362
+      ],
+      [
+       5633,
+       5440
+      ],
+      [
+       5667,
+       5443
+      ],
+      [
+       5731,
+       5431
+      ],
+      [
+       5766,
+       5417
+      ],
+      [
+       5810,
+       5379
+      ],
+      [
+       5883,
+       5277
+      ],
+      [
+       5978,
+       5234
+      ]
+     ]
+    ]
+   },
+   "areaApproxM2": 1814.8,
+   "tileBoundaryTouched": false,
+   "outerBoundaryTouched": false
+  }
+ ],
+ "nonCandidateFeaturesConsidered": [
+  {
+   "combinedIndex": 708,
+   "reason": "706と709の接続庇"
+  },
+  {
+   "combinedIndex": 707,
+   "reason": "広場北の小棟で写真の販売所と不一致"
+  },
+  {
+   "combinedIndex": 705,
+   "reason": "706南西の小棟"
+  }
+ ]
+}

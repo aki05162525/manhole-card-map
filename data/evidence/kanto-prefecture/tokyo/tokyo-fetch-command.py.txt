@@ -1,0 +1,14 @@
+import sys,json
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached
+p=Path('data/evidence/kanto-prefecture/tokyo/retrievals.json');rows=json.loads(p.read_text()) if p.exists() else []
+for url in sys.argv[1:]:
+ raw,rec=fetch_cached(url,'data/work/kanto-prefecture/tokyo/raw','tokyo-2026-11-05',timeout=25);rows.append(rec);p.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n');print(url,rec.get('status'),rec.get('rawPath',rec.get('error')))
+ if raw and '<' in raw[:100].decode(errors='ignore'):
+  from html.parser import HTMLParser
+  class P(HTMLParser):
+   def handle_starttag(self,tag,attrs):
+    a=dict(attrs)
+    if tag=='img':print('IMAGE',a.get('src'),a.get('alt'))
+  P().feed(raw.decode(errors='replace'))

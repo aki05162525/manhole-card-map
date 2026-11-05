@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "approval": false,
+  "manifestApplied": false,
+  "integrationBlockedBy": [
+    "independent Codex review",
+    "product-specific CRS applicability",
+    "per-facility remaining reasons in outcomes.json"
+  ],
+  "warning": "approved is only the manifest schema field; no approval granted. derived-held must not be applied.",
+  "sources": [
+    {
+      "path": "data/national/kanto-prefecture/tokyo/locations-proposal.json",
+      "sha256": "2d15d3a635833cfa3af52678d1820f8a6108081ead6e0822dafdb32dab3b2213"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/lifecycle-proposal.json",
+      "sha256": "1f5ee09fff3dc2675571211645c446fce3caaf8024c8fa66ff0d4c238e7883ec"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/north/locations-proposal.json",
+      "sha256": "262f48286dae3a4c66f3b570544a91eadc423d727ce2084e21d69f03765e5fc1"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/north/lifecycle-proposal.json",
+      "sha256": "669b405d579deedd21ac36037cef88dda6cb70c998cc162b9246660aeffa627d"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "sha256": "235a494229e9ddb78f4284afe9091921be4cab8496cc0bfe3c19e791ed2fe75c"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/east/lifecycle-proposal.json",
+      "sha256": "324491e161dd10a12302a9d64ba7df4dfd45bba07b3c3f0b231a57e4242d81c6"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/south/locations-proposal.json",
+      "sha256": "0dbd1e6b7268a91ddcc32faff4c99c8087c6435446bb0062335cf57735030fc8"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/south/lifecycle-proposal.json",
+      "sha256": "7909daabd4d7334dd81c8002ff53f79642c9e22df58920f91168455ff5f50c0d"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/west/locations-proposal.json",
+      "sha256": "e93f483ece3c6e0eb05ce5bd412eb8e312b56afef30c70897e6fa24ec7b36034"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/west/lifecycle-proposal.json",
+      "sha256": "521805a6d9135bf9f8eecb82583cf7e2d13a083fd1f94227bda0a2d0dba90896"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/locations-proposal.json",
+      "sha256": "9039076d92235b1e013603c8bf8fc6ee4286419770f1da2079d0868f3ff919e5"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-proposal.json",
+      "sha256": "dce94e95a0452f76d02da847afc1cdd798ac081d8540d5da83eb93021150b250"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/locations-plan-derived-proposal.json",
+      "sha256": "66ed6f7698211103de7f2ea02d28b081d5de408f9629b2d997b58fd52950fabe"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-plan-derived-proposal.json",
+      "sha256": "963ae5c17076a87ba4140601b294f1538f79e6feb0ec3a2053d8a4d6e5fdf479"
+    }
+  ],
+  "proposedManifestAppend": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/integration/footprint-locations-proposal.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+            "sha256": "e882473fc28b3a82b2a58b115e6914657022e31d6e0db7da03ca4af5400c213f"
+          },
+          {
+            "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+            "sha256": "ea57a54c01746c5c08541a828a690628a41861ba2767b17f84e7aa1935c95b91"
+          },
+          {
+            "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+            "sha256": "e62ec6f8871791f038df4c72a455ba0c4bff6287debd022f8763e02e27fd1d0f"
+          },
+          {
+            "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+            "sha256": "a650afc0882528731c4e05569fbc9992ef9f183ca33281a9867a783e0884156c"
+          },
+          {
+            "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+            "sha256": "bb9b6fc4f7df90262696fed995cc1586e102fdcff9f0bc4ff3d030a1a5c9ef2b"
+          },
+          {
+            "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+            "sha256": "12849e862b2805ee3860a70516e04cbd4651d756271e0f3b3aaf5e7b36536edc"
+          },
+          {
+            "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+            "sha256": "16bd77aae843edef96cbd1d7543c7e693863f2248eba69a11208b71820866fd9"
+          },
+          {
+            "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+            "sha256": "b326961d3321e4b385c2915eaff4f9f2e6ab73f0bb82e73c04b8ddf4caf5793c"
+          },
+          {
+            "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+            "sha256": "f965d0d04777d2e347120e8f412f781d0de78e44f68e7c324fd88ffbbd66f82b"
+          },
+          {
+            "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+            "sha256": "d1c86b5d8f013f8ad49a5293675fe4d6e520100dbd6e43762a14e1c0d31e753b"
+          },
+          {
+            "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+            "sha256": "a72658e88cfbdde0e5a8e23c1e30f1d08c5dcee51d0c973d746a1f9f757dbe59"
+          },
+          {
+            "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+            "sha256": "f7476036398313dc4b47b9bfab961cccb6f07380c13b5c11f0b6f3a5491f2389"
+          },
+          {
+            "facilityId": "facility:kanto-south-97a685101067226be52c",
+            "sha256": "4918a7b37cc5982ff7b3e67301b65c829b204ced2afcd9a2933f1dd854560fce"
+          },
+          {
+            "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+            "sha256": "9e152b85f22a30dbafc961f358972fe49f9f308158b8676ba5c398c8b69158e9"
+          },
+          {
+            "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+            "sha256": "28e89f1fbe2bf94b783332e0bf64cd8673ebf256de281a48eb1d5245bceb5f75"
+          },
+          {
+            "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+            "sha256": "1e9050804a83920ed7428ba5fd8472a49840965ed5d7d84963281e22a31491de"
+          },
+          {
+            "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+            "sha256": "60f2b14fe2a0eb07fe4cbd4e842031b0dcf6b03ec7786b0762dee058d1416cc9"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/integration/footprint-lifecycle-proposal.json",
+        "sha256": "93d09fbeeb25211dfbb6c9bb02de554f238f159df464d5489b0f1677515f0dea"
+      }
+    ]
+  }
+}

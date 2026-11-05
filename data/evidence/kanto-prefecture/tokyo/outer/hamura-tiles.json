@@ -1,0 +1,216 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "cacheVersion": "tokyo-outer-2026-11-05",
+  "searchSeedOnly": [
+    35.76739,
+    139.32662
+  ],
+  "seedBasis": "search window only; never adoption evidence",
+  "pmtilesHeader": {
+    "tile_compression": "Compression.GZIP",
+    "tile_type": "TileType.MVT",
+    "min_zoom": "4",
+    "max_zoom": "16"
+  },
+  "metadataKeys": [
+    "description",
+    "format",
+    "generator",
+    "generator_options",
+    "maxzoom",
+    "minzoom",
+    "name",
+    "tilestats",
+    "type",
+    "vector_layers",
+    "version"
+  ],
+  "metadataAttribution": null,
+  "metadataVersion": "2",
+  "metadataDescription": "output/tiles-25k.mbtiles",
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58130,
+        "y": 25786
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58130-25786.pbf.gz",
+      "sha256": "eb55fece87adbc423f42fe04405f4432917f6517f85be4b16c59df879efb65b7",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 3,
+        "BldA": 124,
+        "Cntr": 1,
+        "PwrTrnsmL": 1,
+        "RdCL": 49,
+        "RdCompt": 2,
+        "RdEdg": 52,
+        "TpgphLine": 53
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58131,
+        "y": 25786
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58131-25786.pbf.gz",
+      "sha256": "886baca6aa6640826d2372faaa13617c7270048d713fc38c1a2a21c8b35a270a",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 1,
+        "Anno": 3,
+        "BldA": 414,
+        "Cntr": 1,
+        "RdCL": 111,
+        "RdEdg": 88,
+        "TpgphLine": 11,
+        "WA": 4,
+        "WL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58132,
+        "y": 25786
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25786.pbf.gz",
+      "sha256": "de4c99944d6e44e549382b813271ff633f948396e49a6d2424397dc6ee9a578c",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 5,
+        "Anno": 7,
+        "BldA": 483,
+        "Cntr": 1,
+        "RdCL": 169,
+        "RdEdg": 119,
+        "SpcfArea": 4,
+        "WA": 2,
+        "WL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58130,
+        "y": 25787
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58130-25787.pbf.gz",
+      "sha256": "51e222023850523c011b11f5d3fd12b1d08c1ca5ea6175f0ff36edfd4380b9aa",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 5,
+        "BldA": 480,
+        "Cntr": 3,
+        "PwrTrnsmL": 4,
+        "RdCL": 135,
+        "RdCompt": 17,
+        "RdEdg": 68
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58131,
+        "y": 25787
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58131-25787.pbf.gz",
+      "sha256": "7ad36b1301a868a70f2facf7cd1ccb53d3f317716ddd53caf57346e3b4cfcf64",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 6,
+        "BldA": 563,
+        "Cntr": 4,
+        "PwrTrnsmL": 2,
+        "RdCL": 243,
+        "RdCompt": 2,
+        "RdEdg": 161,
+        "TpgphLine": 14,
+        "WA": 2,
+        "WL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58132,
+        "y": 25787
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25787.pbf.gz",
+      "sha256": "b66f40e8ef863c2fd3b3d83d3231494bb9076bd7b8f41d8dc3cd615fa976281d",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 5,
+        "Anno": 16,
+        "BldA": 309,
+        "Cntr": 2,
+        "RdCL": 198,
+        "RdEdg": 187,
+        "SpcfArea": 7,
+        "WA": 5,
+        "WL": 5
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58130,
+        "y": 25788
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58130-25788.pbf.gz",
+      "sha256": "e7c4be50e1b31f47d8dcc546c6e6aa4c79b8545bc96c1725f518c8c49727ee94",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 11,
+        "BldA": 792,
+        "Cntr": 1,
+        "RdCL": 162,
+        "RdCompt": 10,
+        "RdEdg": 67
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58131,
+        "y": 25788
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58131-25788.pbf.gz",
+      "sha256": "d6852001e6e87621dd74d2789ab673357ef44b68618fc37c3e2d493fb091c503",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 16,
+        "BldA": 761,
+        "Cntr": 1,
+        "PwrTrnsmL": 2,
+        "RdCL": 174,
+        "RdCompt": 16,
+        "RdEdg": 77,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58132,
+        "y": 25788
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/hamura-16-58132-25788.pbf.gz",
+      "sha256": "8ef0a3d6e00975752262f5bd7a5434039254f9d97f9b4a1ffd63102b7c2deb19",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 14,
+        "BldA": 681,
+        "Cntr": 2,
+        "RdCL": 163,
+        "RdEdg": 98,
+        "SpcfArea": 4,
+        "WA": 4,
+        "WL": 4
+      }
+    }
+  ]
+}

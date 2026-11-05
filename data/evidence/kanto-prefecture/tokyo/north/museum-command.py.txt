@@ -1,0 +1,24 @@
+import sys,json,glob
+sys.path.insert(0,sys.argv[1])
+from northlib import *
+from research_common import contains_point
+from PIL import Image
+from collections import deque
+im=Image.open(glob.glob(sys.argv[1]+'/view/map340-*.png')[0]).convert('RGB');W,H=im.size;px=im.load()
+# dark-gray building fill; labels inside are small and excluded by bbox-based centroid of filled mask
+mask=bytearray(W*H)
+for y in range(H):
+ for x in range(W):
+  r,g,b=px[x,y]
+  if abs(r-g)<8 and abs(g-b)<8 and 120<r<155:mask[y*W+x]=1
+seen=bytearray(W*H);comps=[]
+for s in range(W*H):
+ if mask[s] and not seen[s]:
+  q=deque([s]);seen[s]=1;xs=ys=n=0;x0=y0=10**9;x1=y1=0
+  while q:
+   p=q.popleft();y,x=divmod(p,W);n+=1;xs+=x;ys+=y;x0=min(x0,x);x1=max(x1,x);y0=min(y0,y);y1=max(y1,y)
+   for d in(p-1,p+1,p-W,p+W):
+    if 0<=d<W*H and mask[d] and not seen[d]:seen[d]=1;q.append(d)
+  if n>2000:comps.append(dict(cx=xs/n,cy=ys/n,n=n,bbox=[x0,y0,x1,y1]))
+comps.sort(key=lambda c:c['cx']);print(W,H);[print(c) for c in comps]
+json.dump(comps,open(sys.argv[2],'w'))

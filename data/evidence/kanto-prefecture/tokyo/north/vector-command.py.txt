@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# Acquire z16 3x3 PMTiles windows for north group; render full SVG; retain raw hash + range provenance.
+import sys,json,math,hashlib,datetime
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached,adjacent_tiles,decode_tile,combine_tiles,render_svg
+from pmtiles.reader import Reader
+E=Path('data/evidence/kanto-prefecture/tokyo/north');W=Path('data/work/kanto-prefecture/tokyo/north');url='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles';records=[]
+(E/'tiles').mkdir(exist_ok=True);(W/'vector').mkdir(exist_ok=True)
+def get_bytes(offset,length):
+ b,r=fetch_cached(url,W/'ranges','tokyo-north-2026-11-05',headers={'Range':f'bytes={offset}-{offset+length-1}'})
+ records.append(r);(E/'range-retrievals.json').write_text(json.dumps(records,ensure_ascii=False,indent=1)+'\n')
+ if b is None:raise ValueError(r)
+ return b
+reader=Reader(get_bytes)
+areas=dict(akabanedai=(35.7767,139.7160),forest=(35.7729,139.7100),amoa=(35.7890,139.7320),asukayama=(35.7505,139.7390))
+out=[]
+for name,(lat,lng) in areas.items():
+ center=dict(z=16,x=int((lng+180)/360*65536),y=int((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*65536));tiles=[];summary=[]
+ for t in adjacent_tiles(center):
+  raw=reader.get(t['z'],t['x'],t['y'])
+  p=E/'tiles'/f"{t['z']}-{t['x']}-{t['y']}.pbf.gz";p.write_bytes(raw);d=decode_tile(raw);fs=[]
+  for ln in ['BldA','RdCL','WL','WA','Cntr','RailCL','WStrA','RvrMgtBdry','AdmBdry','Anno']:
+   if ln in d:
+    fs.extend(dict(f,layer=ln) for f in d[ln]['features'] if f['geometry']['type'] in('Polygon','MultiPolygon','LineString','MultiLineString'))
+  tiles.append(dict(tile=t,extent=d['BldA']['extent'],features=fs));summary.append(dict(tile=t,path=str(p),sha256=hashlib.sha256(raw).hexdigest(),bytes=len(raw),layers={k:len(v['features']) for k,v in d.items()}))
+ c=combine_tiles(tiles);(W/'vector'/f'{name}-combined.json').write_text(json.dumps(c));(E/f'{name}-full.svg').write_text(render_svg(c))
+ out.append(dict(area=name,searchSeedOnly=[lat,lng],seedBasis='researcher search window; never adoption evidence',center=center,featureCount=len(c['features']),tiles=summary));print(name,center,len(c['features']))
+(E/'tiles.json').write_text(json.dumps(dict(sourceURL=url,fetchedVersionKey='tokyo-north-2026-11-05',areas=out),ensure_ascii=False,indent=1)+'\n')
+etags={r.get('etag') for r in records};st={r['status'] for r in records};print('etags',etags,'statuses',st,'n',len(records))

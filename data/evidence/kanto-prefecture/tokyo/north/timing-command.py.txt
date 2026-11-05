@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# Usage: timing.py start <facilityId|shared> <label> | stop [note]
+import json,sys,time,datetime
+from pathlib import Path
+p=Path('data/evidence/kanto-prefecture/tokyo/north/timing.json');d=json.loads(p.read_text())
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+if sys.argv[1]=='start':
+    if 'activeInterval' in d: raise SystemExit('active interval exists: '+d['activeInterval']['label'])
+    d['activeInterval']=dict(scope=sys.argv[2],label=sys.argv[3],startedAt=now,epochStart=time.time())
+else:
+    a=d.pop('activeInterval');a['seconds']=round(time.time()-a.pop('epochStart'),3);a['finishedAt']=now
+    if len(sys.argv)>2:a['note']=sys.argv[2]
+    d['intervals'].append(a)
+p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "coordinate": {
+        "lat": 35.7325569,
+        "lng": 139.2288693
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000019221.html",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+        "snapshotSHA256": "5e6baeae3c5390b9e28b4dbc6dbaedbe97c1aa3361cf92dfd5bf757bdc250c75",
+        "sourceLocator": "flare-comparison.json: reading.planDerivedEstimate; flare-estimate.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の推定点。対象棟の数値外形なし。市公式配置図の概寸で交番外形からオフセットし、計算後に別画像の屋根中央との一致を目視。外形内包検査は実施不可。採用方式自体が親判断待ち。"
+      }
+    }
+  ]
+}

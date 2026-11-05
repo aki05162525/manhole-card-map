@@ -1,0 +1,29 @@
+data/work/kanto-prefecture/tokyo/east/raw/x
+PASS assigned-rows-exact 5
+PASS assignments-match 
+PASS retrieval-raw-hash {'records': 214, 'ok': 191, 'failedAttempts': 23, 'bad': []}
+PASS photo-raw-hash 57
+PASS maruyoshi-tile-hash 
+PASS maruyoshi-range-provenance {'records': 36, 'etags': ['"dfa81a9cba11aad28247d63a2d8361ec-2015"']}
+PASS macaron-tile-hash 
+PASS macaron-range-provenance {'records': 36, 'etags': ['"dfa81a9cba11aad28247d63a2d8361ec-2015"']}
+PASS connect-tile-hash 
+PASS connect-range-provenance {'records': 36, 'etags': ['"dfa81a9cba11aad28247d63a2d8361ec-2015"']}
+PASS mikawashima-tile-hash 
+PASS mikawashima-range-provenance {'records': 36, 'etags': ['"dfa81a9cba11aad28247d63a2d8361ec-2015"']}
+PASS observations-valid 5
+PASS location-count-excludes-adachi 
+PASS snapshot-hash 6ad62274aac8 {'lat': 35.7375636, 'lng': 139.8496431}
+PASS snapshot-hash 2fec34e2db1f {'lat': 35.7638157, 'lng': 139.849112}
+PASS snapshot-hash 2340f9a5bfef {'lat': 35.710432, 'lng': 139.8057884}
+PASS snapshot-hash 1d850a2e973d {'lat': 35.7376191, 'lng': 139.7850113}
+PASS binding-hash 
+PASS selection-unapproved 
+PASS recompute maruyoshi {'lat': 35.7375636, 'lng': 139.8496431}
+PASS recompute macaron {'lat': 35.7638157, 'lng': 139.849112}
+PASS recompute mikawashima-a {'lat': 35.7376191, 'lng': 139.7850113}
+PASS recompute mikawashima-b {'lat': 35.7376191, 'lng': 139.7850113}
+PASS adachi-unchanged {'lat': 35.7744893, 'lng': 139.8045243}
+PASS shared-files-untouched 
+PASS work-ignored-by-git 
+FAILURES []

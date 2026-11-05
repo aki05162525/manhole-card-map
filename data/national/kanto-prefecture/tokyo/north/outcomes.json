@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "group": "north",
+  "targetCount": 5,
+  "numericalComparisonCount": 5,
+  "candidateCount": 5,
+  "footprintCandidateCount": 3,
+  "derivedCandidateCount": 2,
+  "approvedCount": 0,
+  "adoptedCount": 0,
+  "humanQuestions": [],
+  "humanQuestionReason": "5件とも公式資料と数値で候補まで到達し、人手一問で解消する論点はない。残りはレビュー判断と製品更新。",
+  "groupFindings": [
+    "GSI製品2026-09-17 ETag版でも赤羽台南街区の新棟（ミュージアム棟・14〜17号棟）は未反映で、旧外形とみられる3370等が残る。新しい建物の周辺では外形があることを現況の証拠としない。"
+  ],
+  "relationNotes": [
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "note": "開館時刻が区案内と館公式で差がある。台帳未変更。"
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "note": "台帳住所は管理事務所内、運営者は管理事務所隣、区地図は別棟。台帳未変更。"
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "note": "台帳10:00-17:00、館公式開館9:45-17:00。配布時間として矛盾はないが未確認。"
+    }
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "name": "Hintmation",
+      "inventoryIndex": 3,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "derived-from-official-layout; product-footprint-absent",
+      "coordinate": {
+        "lat": 35.7763847,
+        "lng": 139.7150606
+      },
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/hintmation-detail.svg",
+      "remainingReason": "製品に15号棟外形がなく外形内包で確認できない。",
+      "blockedBy": [
+        "独立レビュー",
+        "配置図写像点を棟代表点として許容する判断",
+        "UR図からの座標導出の利用条件",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで配置図写像点を棟代表点として許容するか判断する。製品更新後に15号棟外形が収録されたら内包を再検証する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "name": "赤羽スポーツの森公園競技場",
+      "inventoryIndex": 5,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate; no-official-site-plan",
+      "coordinate": {
+        "lat": 35.7722141,
+        "lng": 139.7087695
+      },
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/forest-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/forest-detail.svg",
+      "remainingReason": "公式配置図がなく写真・寸法照合に留まる。トラック4670の帰属は未確定。",
+      "blockedBy": [
+        "独立レビュー",
+        "公式配置図なしでの棟同定の可否",
+        "製品測地系適用"
+      ],
+      "nextAction": "区または指定管理者の配置図を得た場合に4617と窓口棟の一致を確認する。独立レビューでトラック4670の除外と写真解釈を確認する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "name": "荒川知水資料館 amoa",
+      "inventoryIndex": 8,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate",
+      "coordinate": {
+        "lat": 35.7856021,
+        "lng": 139.7301064
+      },
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/amoa-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/amoa-detail.svg",
+      "remainingReason": "AREA MAPに方位なし。6頁写真は縮小読解のみ。",
+      "blockedBy": [
+        "独立レビュー",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで棟対応と製品測地系適用を判断する。承認後に親がmanifestへ統合する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "name": "URまちとくらしのミュージアム",
+      "inventoryIndex": 10,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "derived-from-official-site-plan; product-footprint-absent",
+      "coordinate": {
+        "lat": 35.7767568,
+        "lng": 139.7159833
+      },
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/museum-detail.svg",
+      "remainingReason": "製品にミュージアム棟外形がなく外形内包で確認できない。",
+      "blockedBy": [
+        "独立レビュー",
+        "配置図写像点を棟代表点として許容する判断",
+        "UR図からの座標導出の利用条件",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで「公式配置図の写像点」を建物代表点として許容するか判断する。製品が更新され外形が収録されたら内包を再検証する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "name": "渋沢×北区 飛鳥山おみやげ館",
+      "inventoryIndex": 20,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate",
+      "coordinate": {
+        "lat": 35.7489982,
+        "lng": 139.7404262
+      },
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/asukayama-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/asukayama-detail.svg",
+      "remainingReason": "図の年代不明。方位記号と棟配列の向きに約24度差。",
+      "blockedBy": [
+        "独立レビュー",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで棟対応と製品測地系適用を判断する。承認後に親がmanifestへ統合する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    }
+  ]
+}

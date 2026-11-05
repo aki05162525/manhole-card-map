@@ -1,0 +1,362 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-97a685101067226be52c",
+  "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
+  "checkedAt": "2026-11-05",
+  "approval": false,
+  "sources": [
+    {
+      "url": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:35:59.563003+00:00",
+      "attemptedAt": "2026-11-05T15:35:59.428980+00:00",
+      "sha256": "6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c",
+      "etag": "\"acb8-65f88dbf48243\"",
+      "lastModified": "Thu, 05 Nov 2026 15:07:50 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c.raw"
+    },
+    {
+      "url": "https://www.city.musashino.lg.jp/_res/projects/default_project/_page_/001/036/039/QuOLa_Report.pdf",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:36:30.992458+00:00",
+      "attemptedAt": "2026-11-05T15:36:30.193065+00:00",
+      "sha256": "2ce6524a5bbf04872ee6396506f2c096aa0a845c64cadf4629f9886dd73be63f",
+      "etag": "\"3af894-618611a09ad00\"",
+      "lastModified": "Tue, 14 May 2024 02:53:08 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/2ce6524a5bbf04872ee6396506f2c096aa0a845c64cadf4629f9886dd73be63f.raw"
+    },
+    {
+      "url": "https://www.ryutsuu.biz/store/p032871.html",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:36:19.477443+00:00",
+      "attemptedAt": "2026-11-05T15:36:19.079445+00:00",
+      "sha256": "7676da506f9846db299763480b2b54e7d16b97fc40933c8f2ea8c8f888af59ad",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/7676da506f9846db299763480b2b54e7d16b97fc40933c8f2ea8c8f888af59ad.raw"
+    },
+    {
+      "url": "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city132039.csv.zip",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:32:44.229668+00:00",
+      "attemptedAt": "2026-11-05T15:32:44.069906+00:00",
+      "sha256": "23771c67b07f2044d9e673442af32f1d772d331532eb856293de6867ac07d89d",
+      "etag": "\"896268705ca3505c3fc04659a9c1a7a5\"",
+      "lastModified": "Mon, 27 Oct 2025 13:26:21 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/23771c67b07f2044d9e673442af32f1d772d331532eb856293de6867ac07d89d.raw"
+    }
+  ],
+  "reading": {
+    "distribution": "DEAN&DELUCAは武蔵野プレイス休館日の代替配布先。本文差分0行。令和8年10月から祝日振替休館時も対象。予告なく取りやめる場合あり。在庫保証なし",
+    "officialDiagram": "武蔵野市「武蔵境駅北口市有地有効活用事業 事業評価報告書」令和6年2月、p3案内図とp4フロアマップを高解像度で目視。平成30年1月竣工、敷地600.19㎡、建蔽率80%、3階以上とRC不可。令和5年3月の1階テナント入替をp4に記載し、フロアマップはDEAN&DELUCAベーカリー武蔵境を1階に表示",
+    "pages": "全44頁を文字抽出、p3・p4は描画も目視、語句一致頁p15・p29・p42も確認。musashino122広報PDFは取得したが主要資料ではなく語句抽出のみ",
+    "orientation": "p3に北記号なし。北口が上、南口が下、立川が左、三鷹が右のため北上と判断。p4は三鷹方面が左、駅北口側が右で入口が下にあり、南北が逆の向き",
+    "surroundings": "外形3568は北口東側で線路と道路の間にある細長い単独棟。北の3564/3567は道路を挟んだ別棟。東西約57m、南北最大約10m。西端が広く東端が狭い形がフロアマップの駅側広幅と一致。概算496.4㎡は敷地×建蔽率上限480㎡に近い概算値",
+    "selected": "BldA combined index 3568 (z16/58171/25801 tile内index368)。vt_code3101。点はフロアマップで店舗がある駅側（西側）",
+    "remaining": "フロアマップは模式図で店舗境界は測量ではない。2026年10月着手のJR東側駅ビルは検索要約のみで本文未読。製品CRSと独立レビューが残る",
+    "excludedPoints": "南口の武蔵野プレイス、地図表示中心、北側街区の3564/3567"
+  },
+  "identity": {
+    "status": "confirmed",
+    "reason": "市公式の案内図・フロアマップ・敷地条件と外形の位置・形・面積・構造属性が一致。ABR境1-1-7も北辺沿い"
+  },
+  "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+  "crs": "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認",
+  "licence": "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認",
+  "tiles": {
+    "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "searchSeedOnly": [
+      35.70234,
+      139.54513
+    ],
+    "seedBasis": "ABR 住居表示 武蔵野市境1-1-7 周辺の検索窓; 採用根拠は別途判断",
+    "retrievedAt": "2026-11-05T15:36:00.836826+00:00",
+    "items": [
+      {
+        "tile": {
+          "z": 16,
+          "x": 58170,
+          "y": 25800
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25800.pbf.gz",
+        "sha256": "0fd311725d8dca5cf44056310144c90360789eda50cdd5ac168219d8bd8ee884",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 11,
+          "BldA": 598,
+          "Cntr": 5,
+          "RdCL": 168,
+          "RdEdg": 115,
+          "SpcfArea": 1,
+          "TpgphLine": 8,
+          "WA": 6,
+          "WL": 9,
+          "WStrL": 11
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58171,
+          "y": 25800
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25800.pbf.gz",
+        "sha256": "579c7fc3c314f8705c06c6cd51c6933b51284ef59fe126a6e055aa527efde664",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 6,
+          "BldA": 605,
+          "Cntr": 2,
+          "RdCL": 191,
+          "RdEdg": 89,
+          "RvrCL": 1,
+          "SpcfArea": 4,
+          "TpgphLine": 82,
+          "WA": 20,
+          "WL": 22
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25800
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25800.pbf.gz",
+        "sha256": "61d170e7ca24c56a509bdfe7612cc030563d0d58e5798f294d92583cbac22527",
+        "layers": {
+          "AdmArea": 2,
+          "AdmBdry": 2,
+          "Anno": 7,
+          "BldA": 486,
+          "Cntr": 4,
+          "RdCL": 179,
+          "RdCompt": 5,
+          "RdEdg": 126,
+          "RvrCL": 1,
+          "SpcfArea": 4,
+          "TpgphLine": 111,
+          "WA": 27,
+          "WL": 30,
+          "WStrL": 7
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58170,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25801.pbf.gz",
+        "sha256": "d1bab146dea0fff2c8980917dc73a5227fda18827173277064456459d663a6ff",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 8,
+          "BldA": 679,
+          "Cntr": 4,
+          "RailCL": 5,
+          "RailTrCL": 18,
+          "RdCL": 170,
+          "RdEdg": 136,
+          "WA": 2,
+          "WL": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58171,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+        "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 8,
+          "BldA": 741,
+          "Cntr": 2,
+          "RailCL": 4,
+          "RailTrCL": 12,
+          "RdCL": 197,
+          "RdCompt": 4,
+          "RdEdg": 118,
+          "RvrCL": 2,
+          "WA": 1,
+          "WL": 1
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25801.pbf.gz",
+        "sha256": "2b7e795bb69ca9df8d3a0e61624348dea0c3badd93b9ff0af5767298abada3aa",
+        "layers": {
+          "AdmArea": 2,
+          "AdmBdry": 4,
+          "Anno": 7,
+          "BldA": 613,
+          "Cntr": 6,
+          "RailCL": 7,
+          "RailTrCL": 30,
+          "RdCL": 218,
+          "RdCompt": 7,
+          "RdEdg": 171,
+          "RvrCL": 1,
+          "TpgphLine": 51,
+          "WA": 3,
+          "WL": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58170,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25802.pbf.gz",
+        "sha256": "9ab377b32860144db152fd2330856e9c44b210e4ad557db077bb78cf6ccaae6c",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 6,
+          "BldA": 1017,
+          "RailCL": 3,
+          "RailTrCL": 12,
+          "RdCL": 215,
+          "RdEdg": 136,
+          "SpcfArea": 2
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58171,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25802.pbf.gz",
+        "sha256": "b982ab8fac49846c957d16cdd5a8830cdfe0afcd26cde868117f1b753c089ffe",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 21,
+          "BldA": 535,
+          "Cntr": 2,
+          "RailCL": 2,
+          "RailTrCL": 2,
+          "RdCL": 149,
+          "RdCompt": 3,
+          "RdEdg": 78,
+          "SpcfArea": 4,
+          "WA": 3,
+          "WL": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25802.pbf.gz",
+        "sha256": "69d76683836ce7bbed1fa385626264cbf6f36df3cd8013a45ef6d905e08c8427",
+        "layers": {
+          "AdmArea": 2,
+          "AdmBdry": 3,
+          "Anno": 7,
+          "BldA": 894,
+          "RailCL": 4,
+          "RailTrCL": 19,
+          "RdCL": 191,
+          "RdCompt": 5,
+          "RdEdg": 117,
+          "WA": 3,
+          "WL": 4
+        }
+      }
+    ],
+    "drawnScope": "9タイルの全BldA/RdCL/RailCL/WA/WLをfull.svgへ描画。near/wide PNGは拡大表示で取得範囲ではない",
+    "clipping": "選択外形はタイル境界・取得外端に接しない"
+  },
+  "candidate": {
+    "featureIndex": 3568,
+    "sourceTile": {
+      "z": 16,
+      "x": 58171,
+      "y": 25801
+    },
+    "sourceFeatureIndex": 368,
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": 0,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5557,
+            7814
+          ],
+          [
+            5833,
+            7820
+          ],
+          [
+            6030,
+            7842
+          ],
+          [
+            6028,
+            7890
+          ],
+          [
+            5557,
+            7898
+          ],
+          [
+            5553,
+            7817
+          ],
+          [
+            5557,
+            7814
+          ]
+        ]
+      ]
+    },
+    "areaApproxM2": 496.4,
+    "areaNote": "タイル格子からの概算水平面積。延床面積ではない",
+    "manualPointXY": [
+      5650.0,
+      7856.0
+    ],
+    "baseTile": {
+      "z": 16,
+      "x": 58170,
+      "y": 25800
+    },
+    "inclusion": {
+      "coordinate": {
+        "lat": 35.7022827,
+        "lng": 139.5449308
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5650.032740116119,
+        7855.960589826107
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  "adoptionApproval": false,
+  "manifestApplied": false
+}

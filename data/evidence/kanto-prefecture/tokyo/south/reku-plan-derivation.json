@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+  "checkedAt": "2026-11-05",
+  "computedAt": "2026-11-05T15:43:41.063580+00:00",
+  "method": "bilinear map of official plan block curb corners (manual read of sekkei p11 at 200dpi) onto GSI seamlessphoto z18 mosaic curb corners (manual read); seamlessphoto shows pre-renewal state so new building cannot be verified from imagery; plan point is manual; not a footprint",
+  "planControlPoints": {
+    "NW": [
+      447,
+      805
+    ],
+    "NE": [
+      2413,
+      797
+    ],
+    "SW": [
+      463,
+      1360
+    ],
+    "SE": [
+      2413,
+      1397
+    ]
+  },
+  "aerialControlPointsMosaicPx": {
+    "NW": [
+      207,
+      366
+    ],
+    "NE": [
+      697,
+      412
+    ],
+    "SW": [
+      198,
+      495
+    ],
+    "SE": [
+      692,
+      548
+    ]
+  },
+  "mosaicOriginTile": {
+    "z": 18,
+    "x": 232921,
+    "y": 103252
+  },
+  "metresPerAerialPixelApprox": 0.4852511901583193,
+  "checkPoint": {
+    "name": "existing high-voltage tower (plan label: 高圧線鉄塔(既存)); aerial red square pad",
+    "planPx": [
+      2030,
+      1255
+    ],
+    "aerialPx": [
+      592,
+      527
+    ],
+    "mappedPx": [
+      596.4728310995822,
+      506.92418538004364
+    ],
+    "residualApproxM": 10.0
+  },
+  "planBuildingWallBoxPx": [
+    [
+      537,
+      912
+    ],
+    [
+      725,
+      912
+    ],
+    [
+      725,
+      1175
+    ],
+    [
+      537,
+      1175
+    ]
+  ],
+  "mappedWallBoxLatLng": [
+    [
+      35.65111992389995,
+      139.8695343531552
+    ],
+    [
+      35.65110022104508,
+      139.86978650965767
+    ],
+    [
+      35.65083539952321,
+      139.869756575025
+    ],
+    [
+      35.65085450639398,
+      139.8695022363192
+    ]
+  ],
+  "planPointPx": [
+    640,
+    1040
+  ],
+  "manualPointLatLng": {
+    "lat": 35.6509801,
+    "lng": 139.8696575
+  },
+  "insideMappedWallBox": true,
+  "mappedWallBoxWidthsApproxM": [
+    22.9,
+    29.6
+  ],
+  "bldAContainingPoint": [],
+  "bldAVerticesInsideMappedWallBox": [],
+  "scaleBarDiscrepancy": {
+    "barPixelsFor50mAt200dpi": 333,
+    "planBlockPxWidth": 1966,
+    "barImpliedBlockWidthM": 295.2,
+    "aerialBlockWidthM": 238.8,
+    "note": "plan scale bar is inconsistent with the block width in GSI aerial/vector; the published plan scale bar is not used"
+  },
+  "northArrowNote": "p11 north arrow points straight up, while block long axis tilts about 5-6 degrees in GSI vector/aerial and p7 map; north arrow not used for georeferencing",
+  "identityApproved": false,
+  "crsApproved": false,
+  "adoptionApproval": false
+}

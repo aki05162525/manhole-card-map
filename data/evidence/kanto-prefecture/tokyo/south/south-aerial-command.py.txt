@@ -1,0 +1,21 @@
+import sys,math,json,io
+sys.path.insert(0,sys.argv[1])
+from research_common import fetch_cached
+from PIL import Image
+lat,lng,z,r,out=float(sys.argv[2]),float(sys.argv[3]),int(sys.argv[4]),int(sys.argv[5]),sys.argv[6]
+layer=sys.argv[7] if len(sys.argv)>7 else 'seamlessphoto'
+ext=sys.argv[8] if len(sys.argv)>8 else 'jpg'
+n=2**z;cx=int((lng+180)/360*n);cy=int((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*n)
+W='data/work/kanto-prefecture/tokyo/south/raw'
+recs=[];im=Image.new('RGB',((2*r+1)*256,(2*r+1)*256),'white')
+for j,y in enumerate(range(cy-r,cy+r+1)):
+    for i,x in enumerate(range(cx-r,cx+r+1)):
+        u=f'https://cyberjapandata.gsi.go.jp/xyz/{layer}/{z}/{x}/{y}.{ext}'
+        b,rc=fetch_cached(u,W,'tokyo-south-2026-11-05',timeout=30);recs.append({k:rc.get(k) for k in('url','status','httpStatus','sha256','fetchedAt','attemptedAt','lastModified','etag','error','rawPath')})
+        if b: im.paste(Image.open(io.BytesIO(b)).convert('RGB'),(i*256,j*256))
+im.save(out)
+print(cx,cy,sum(1 for r_ in recs if r_['status'] in('acquired','cached')),len(recs),{r_['lastModified'] for r_ in recs})
+p='data/evidence/kanto-prefecture/tokyo/south/imagery-retrievals.json'
+try: L=json.load(open(p))
+except Exception: L=[]
+L+=recs;json.dump(L,open(p,'w'),ensure_ascii=False,indent=1)

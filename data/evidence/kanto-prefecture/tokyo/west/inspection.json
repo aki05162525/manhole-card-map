@@ -1,0 +1,635 @@
+{
+  "schema": 1,
+  "group": "west",
+  "asOf": "2026-11-05",
+  "observations": [
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "plannedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "performedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+          "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+          "https://koganei-kanko.jp/contact/",
+          "https://koganei-kanko.jp/about/",
+          "https://koganei-kanko.jp/map/",
+          "https://koganei-kanko.jp/wp-content/uploads/2026/08/3c8347e3c85b92f69ef5a87ab6cf2345.pdf",
+          "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city132101.csv.zip"
+        ]
+      },
+      "pages": {
+        "total": null,
+        "checked": []
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "ABRとGSI描画は北上の数値座標。公式図の方位比較は対象図なし"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58163,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58164,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58165,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58163,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58164,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58165,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58163,
+            "y": 25803
+          },
+          {
+            "z": 16,
+            "x": 58164,
+            "y": 25803
+          },
+          {
+            "z": 16,
+            "x": 58165,
+            "y": 25803
+          }
+        ],
+        "boundaryClipping": "none on selected feature",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/full.svg"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "建物名と外形を結ぶ公式資料がない。ABR 18-14の基礎番号と道路順からの位置推定。部屋番号103を持つビルとして51㎡は小さく、外形4551の可能性を排除できない"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "ABR住居番号18-12〜18が街区北辺から東辺へ順に並び、18-14は北辺の道路沿い。真南に外形4550、東に18-15が接する4551、西に18-13側の4536"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+        "evidence": [
+          "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "plannedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "performedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+          "https://www.city.hino.lg.jp/shisetsu/aed/1005977.html",
+          "https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/011/841/map.jpg",
+          "https://www.city.hino.lg.jp/shisetsu/shiyakusho/desakli/1000917.html",
+          "https://www.city.hino.lg.jp/shisei/profile/soshiki/kankyokyosei/1004689.html"
+        ]
+      },
+      "pages": {
+        "total": null,
+        "checked": []
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "略図に北記号なし。道路名と日野駅、日野一小、中央道の配置がGSI北上描画と一致することで向きを確認"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58144,
+            "y": 25806
+          },
+          {
+            "z": 16,
+            "x": 58145,
+            "y": 25806
+          },
+          {
+            "z": 16,
+            "x": 58146,
+            "y": 25806
+          },
+          {
+            "z": 16,
+            "x": 58144,
+            "y": 25807
+          },
+          {
+            "z": 16,
+            "x": 58145,
+            "y": 25807
+          },
+          {
+            "z": 16,
+            "x": 58146,
+            "y": 25807
+          },
+          {
+            "z": 16,
+            "x": 58144,
+            "y": 25808
+          },
+          {
+            "z": 16,
+            "x": 58145,
+            "y": 25808
+          },
+          {
+            "z": 16,
+            "x": 58146,
+            "y": 25808
+          }
+        ],
+        "boundaryClipping": "none on selected feature",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/west/hino/full.svg"
+      },
+      "buildingIdentity": {
+        "status": "confirmed",
+        "evidence": [
+          "市公式施設markerが外形3319内に入り、住所・施設名・向かいのセンター・略図の方位関係が一致。棟図で名称を直接示した資料ではない"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "AED一覧の施設marker: 下水道課35.67635595288577,139.4003192415358（日野市日野本町1-7-2、AEDは1階エントランス、更新日令和8年4月1日）、生活・保健センター35.6758788,139.4000866。東西道路を挟んで南にセンター。日野一小の大外形は北西、中央道は南"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+        "evidence": [
+          "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "data/evidence/kanto-prefecture/tokyo/west/hino/comparison.json"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "plannedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "performedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+          "https://www.city.musashino.lg.jp/_res/projects/default_project/_page_/001/036/039/QuOLa_Report.pdf",
+          "https://www.ryutsuu.biz/store/p032871.html",
+          "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city132039.csv.zip"
+        ]
+      },
+      "pages": {
+        "total": null,
+        "checked": []
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "p3に北記号なし。北口が上、南口が下、立川が左、三鷹が右のため北上と判断。p4は三鷹方面が左、駅北口側が右で入口が下にあり、南北が逆の向き"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58170,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58171,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58172,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58170,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58171,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58172,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58170,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58171,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58172,
+            "y": 25802
+          }
+        ],
+        "boundaryClipping": "none on selected feature",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/west/quola/full.svg"
+      },
+      "buildingIdentity": {
+        "status": "confirmed",
+        "evidence": [
+          "市公式の案内図・フロアマップ・敷地条件と外形の位置・形・面積・構造属性が一致。ABR境1-1-7も北辺沿い"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "外形3568は北口東側で線路と道路の間にある細長い単独棟。北の3564/3567は道路を挟んだ別棟。東西約57m、南北最大約10m。西端が広く東端が狭い形がフロアマップの駅側広幅と一致。概算496.4㎡は敷地×建蔽率上限480㎡に近い概算値"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+        "evidence": [
+          "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "data/evidence/kanto-prefecture/tokyo/west/quola/comparison.json"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "plannedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "performedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+          "https://museum.toei-anim.co.jp/shop/",
+          "https://museum.toei-anim.co.jp/access/",
+          "https://museum.toei-anim.co.jp/guide/",
+          "https://museum.toei-anim.co.jp/exhibition/",
+          "https://museum.toei-anim.co.jp/assets/img/guide/floormap.png",
+          "https://museum.toei-anim.co.jp/assets/img/guide/map_restrictedarea.png",
+          "https://museum.toei-anim.co.jp/assets/img/exhibition/areamap_pc.png",
+          "https://museum.toei-anim.co.jp/assets/img/access/img_access.jpg",
+          "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city131202.csv.zip"
+        ]
+      },
+      "pages": {
+        "total": null,
+        "checked": []
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "図に北記号なし。出入口を道路側として前面棟の長辺と道路の平行関係から、図の下を北北西と推定。推定であり明示方位ではない"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58179,
+            "y": 25789
+          },
+          {
+            "z": 16,
+            "x": 58180,
+            "y": 25789
+          },
+          {
+            "z": 16,
+            "x": 58181,
+            "y": 25789
+          },
+          {
+            "z": 16,
+            "x": 58179,
+            "y": 25790
+          },
+          {
+            "z": 16,
+            "x": 58180,
+            "y": 25790
+          },
+          {
+            "z": 16,
+            "x": 58181,
+            "y": 25790
+          },
+          {
+            "z": 16,
+            "x": 58179,
+            "y": 25791
+          },
+          {
+            "z": 16,
+            "x": 58180,
+            "y": 25791
+          },
+          {
+            "z": 16,
+            "x": 58181,
+            "y": 25791
+          }
+        ],
+        "boundaryClipping": "none on selected feature",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/west/toei/full.svg"
+      },
+      "buildingIdentity": {
+        "status": "confirmed",
+        "evidence": [
+          "公式フロアマップの棟構成と入口写真の低層前面棟が外形5413に対応し、比率も近い（約3.25と約3.9）。出入口の開口は外形上は分離していない"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "道路沿いの細長い外形5413は長辺約25m、奥行約8m（比約3.25）。図の前面帯（ショップ＋出入口＋受付）は図上で比約3.9で、完全には一致しない。背後に外形5436があり、前面帯と背後棟の並びと間隔は図と同じ構成。比率の照合は図上の目測で測量ではない。空中写真でも道路際の独立した低層棟。ABR 10-5は外形5436の西角、10-7は5413の前面"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+        "evidence": [
+          "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "data/evidence/kanto-prefecture/tokyo/west/toei/comparison.json"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "plannedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "performedMethods": [
+        "現配布案内の再取得",
+        "公式図の読解",
+        "外形全描画と比較",
+        "丸め前後の内包検査"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+          "https://www.city.suginami.tokyo.jp/shisetsu/kouen/02/ogikubo/1054100.html",
+          "https://www.city.suginami.tokyo.jp/s100/shisetsu/21674.html",
+          "https://ogikubo3gardens.jp/tekigaiso/",
+          "https://ogikubo3gardens.jp/img/tekigaiso/visitor-map.svg",
+          "https://ogikubo3gardens.jp/img/tekigaiso/access.svg",
+          "https://www.city.suginami.tokyo.jp/documents/7585/tekigaiso2_1.pdf",
+          "https://www.city.suginami.tokyo.jp/documents/2242/061208tekigaisoukaiensiki.pdf",
+          "https://co-trip.jp/post/709964",
+          "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city131156.csv.zip"
+        ]
+      },
+      "pages": {
+        "total": null,
+        "checked": []
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "visitor-mapに北記号なし。access.svgと外周道路の傾きがGSI北上描画と一致するため概ね北上と判断"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58184,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58185,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58186,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58184,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58185,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58186,
+            "y": 25802
+          },
+          {
+            "z": 16,
+            "x": 58184,
+            "y": 25803
+          },
+          {
+            "z": 16,
+            "x": 58185,
+            "y": 25803
+          },
+          {
+            "z": 16,
+            "x": 58186,
+            "y": 25803
+          }
+        ],
+        "boundaryClipping": "none on selected feature",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/full.svg"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "5899が荻外荘本体に当たることは図と写真から確認。ただし受付の棟を公式に示す資料がなく、visitor-map上の本体東西幅に対し外形が短い。2024年の再移築部（玄関棟・客間棟）が外形・写真に未反映の可能性があり、受付が5899内と断定できない"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "外形5899の南に芝生広場、東に南北道路、さらに東に展示棟側の街区。区の公園q=35.698573,139.622272は芝生広場内で建物外。空中写真（撮影年不明、タイルLast-Modified 2025-08）では5899の屋根が一致"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+        "evidence": [
+          "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    }
+  ],
+  "abrNote": "ABR住居表示の基礎番号は外形外の道路際にも置かれる。rep_scaleは2500または25000。建物同定の補助に限り、候補座標には使わない。",
+  "osmNote": "Overpassの名称検索はdata/work/osm.jsonに保持。第三者データで候補座標に使わない。"
+}

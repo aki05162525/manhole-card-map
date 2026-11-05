@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+  "name": "小金井市観光まちおこし協会",
+  "checkedAt": "2026-11-05",
+  "approval": false,
+  "sources": [
+    {
+      "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:30:46.640506+00:00",
+      "attemptedAt": "2026-11-05T15:30:46.307318+00:00",
+      "sha256": "30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6",
+      "lastModified": "Wed, 30 Sep 2026 15:31:01 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6.raw"
+    },
+    {
+      "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:42:22.728595+00:00",
+      "attemptedAt": "2026-11-05T15:42:22.392224+00:00",
+      "sha256": "7d8f04c46009a4ade86d64e9279a36c05fc6988d339edae942a5daad2f39811b",
+      "lastModified": "Wed, 30 Sep 2026 15:31:01 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/7d8f04c46009a4ade86d64e9279a36c05fc6988d339edae942a5daad2f39811b.raw"
+    },
+    {
+      "url": "https://koganei-kanko.jp/contact/",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:30:44.623569+00:00",
+      "attemptedAt": "2026-11-05T15:30:43.840109+00:00",
+      "sha256": "55a03c231c3be9afedb650d2090d7d89f658d99fa78e80f91ff45b150184574e",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/55a03c231c3be9afedb650d2090d7d89f658d99fa78e80f91ff45b150184574e.raw"
+    },
+    {
+      "url": "https://koganei-kanko.jp/about/",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:30:45.515131+00:00",
+      "attemptedAt": "2026-11-05T15:30:44.624098+00:00",
+      "sha256": "ef8abe85d29e24d42b03d8ee022f071a9e44b889d6ce964f37b4f53204fd3979",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/ef8abe85d29e24d42b03d8ee022f071a9e44b889d6ce964f37b4f53204fd3979.raw"
+    },
+    {
+      "url": "https://koganei-kanko.jp/map/",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:31:12.214807+00:00",
+      "attemptedAt": "2026-11-05T15:31:11.497545+00:00",
+      "sha256": "49f64acc3726209936acfdef13a6cb95d89dddb24adb63f06220e277cbf5156b",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/49f64acc3726209936acfdef13a6cb95d89dddb24adb63f06220e277cbf5156b.raw"
+    },
+    {
+      "url": "https://koganei-kanko.jp/wp-content/uploads/2026/08/3c8347e3c85b92f69ef5a87ab6cf2345.pdf",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:31:12.402021+00:00",
+      "attemptedAt": "2026-11-05T15:31:12.215575+00:00",
+      "sha256": "a7a49f5f98d8e282fb9195e7d8f8e71290a790d34f55d49ae3294c8c7c8e9358",
+      "lastModified": "Thu, 20 Aug 2026 07:36:18 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/a7a49f5f98d8e282fb9195e7d8f8e71290a790d34f55d49ae3294c8c7c8e9358.raw"
+    },
+    {
+      "url": "https://data.address-br.digital.go.jp/mt_rsdtdsp_rsdt_pos/city/mt_rsdtdsp_rsdt_pos_city132101.csv.zip",
+      "status": "acquired",
+      "httpStatus": 200,
+      "fetchedAt": "2026-11-05T15:32:41.567059+00:00",
+      "attemptedAt": "2026-11-05T15:32:41.294628+00:00",
+      "sha256": "a6b8eb77f4060cfe5dfd9cf8d0296e592f7864bb532521f1a394e104ed2cc921",
+      "etag": "\"0d5e6f2b094b4a459ab14b22d9468395\"",
+      "lastModified": "Mon, 27 Oct 2025 13:28:14 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/west/raw/a6b8eb77f4060cfe5dfd9cf8d0296e592f7864bb532521f1a394e104ed2cc921.raw"
+    }
+  ],
+  "reading": {
+    "distribution": "A001は市案内で協会窓口を配布先として再読。B001は配布休止の旧記述を維持。本文差分0行。在庫保証なし",
+    "officialDiagram": "協会・市の原本に棟図なし。協会サイトのmap一覧、about、役員名簿PDF全1頁に事務所の棟を示す図はない。検索でも松島ビルの公式図は未発見",
+    "pages": "HTML5件を実読。PDF1頁を文字抽出で確認。map/page/2以降の個別スポットは未読",
+    "orientation": "ABRとGSI描画は北上の数値座標。公式図の方位比較は対象図なし",
+    "surroundings": "ABR住居番号18-12〜18が街区北辺から東辺へ順に並び、18-14は北辺の道路沿い。真南に外形4550、東に18-15が接する4551、西に18-13側の4536",
+    "selected": "BldA combined index 4550 (z16/58164/25802 tile内index209)。概算51.4㎡、vt_code3101",
+    "remaining": "松島ビルが4550か4551かの確認。NAVITIMEは住所と徒歩分のみで建物同定に使わない。商工会検索の旧本町6-5-3は移転前の値として流用しない",
+    "excludedPoints": "旧本町6-5-3、市役所アクセス座標、ABR基礎番号そのもの（外形外）"
+  },
+  "identity": {
+    "status": "insufficient",
+    "reason": "建物名と外形を結ぶ公式資料がない。ABR 18-14の基礎番号と道路順からの位置推定。部屋番号103を持つビルとして51㎡は小さく、外形4551の可能性を排除できない"
+  },
+  "product": "GSI optimal_bvmap PMTiles; README データ更新 2026-07-01、Range ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\"、Last-Modified 2026-09-17。個別建物の測量日は不明",
+  "crs": "一般タイル仕様はJGD2011。READMEはラスタと同方式と記すが当該PMTiles版の測地系を明示しない。Web Mercator逆変換のみ、測地系変換なし。製品固有CRSは未承認",
+  "licence": "GSI製品READMEと規約ミラーでPDL1.0、出典・加工表示、試験公開で基本測量成果ではないことを確認。自治体・事業者のHTML/PDF/画像全文はdata/workのみ。ABRと地図サービスの利用条件は本調査で未確認",
+  "tiles": {
+    "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "searchSeedOnly": [
+      35.7005,
+      139.5065
+    ],
+    "seedBasis": "researcher approximate address search window for 小金井市本町1丁目; never adoption evidence",
+    "retrievedAt": "2026-11-05T15:30:36.951939+00:00",
+    "items": [
+      {
+        "tile": {
+          "z": 16,
+          "x": 58163,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58163-25801.pbf.gz",
+        "sha256": "459e86c686a4521f9760323e1b1e31b24c4659fe428ea32bbaa60e43b581b781",
+        "layers": {
+          "AdmArea": 2,
+          "Anno": 4,
+          "BldA": 1029,
+          "Cntr": 3,
+          "RdCL": 216,
+          "RdEdg": 100,
+          "WA": 3,
+          "WL": 4
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58164,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58164-25801.pbf.gz",
+        "sha256": "f96a508860944324d32ac1af3307d9e548d7fb3097335272989af83dd4ec2a42",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 5,
+          "BldA": 894,
+          "Cntr": 6,
+          "RdCL": 201,
+          "RdEdg": 96,
+          "RvrCL": 4,
+          "WA": 2,
+          "WL": 6
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58165,
+          "y": 25801
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58165-25801.pbf.gz",
+        "sha256": "d0ee9061c84a68e671c0d1a479ea394a1cb2b5efb662fd6245f64830c2533596",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 3,
+          "BldA": 1062,
+          "Cntr": 2,
+          "RdCL": 193,
+          "RdEdg": 115,
+          "WA": 1,
+          "WL": 2
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58163,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58163-25802.pbf.gz",
+        "sha256": "6f1da21eae3bb4fe552e91dcf7f71605b0548dacbf751fc6a13aee52d119ac52",
+        "layers": {
+          "AdmArea": 2,
+          "Anno": 13,
+          "BldA": 551,
+          "Cntr": 7,
+          "RailCL": 5,
+          "RailTrCL": 31,
+          "RdCL": 168,
+          "RdEdg": 110,
+          "WA": 2,
+          "WL": 2
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58164,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58164-25802.pbf.gz",
+        "sha256": "f28c90520a8a2704395af7b452614ae02797bc8eda098f907f11c9fef8554bd8",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 11,
+          "BldA": 666,
+          "Cntr": 1,
+          "RailCL": 4,
+          "RailTrCL": 29,
+          "RdCL": 188,
+          "RdCompt": 7,
+          "RdEdg": 146,
+          "SpcfArea": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58165,
+          "y": 25802
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58165-25802.pbf.gz",
+        "sha256": "3a6f5c638878eb65b045a4585eea1bcdcba0a1f2ca9dcb8b7e464df5719de155",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 7,
+          "BldA": 939,
+          "RailCL": 1,
+          "RailTrCL": 4,
+          "RdCL": 219,
+          "RdEdg": 114,
+          "SpcfArea": 5,
+          "WA": 3,
+          "WL": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58163,
+          "y": 25803
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58163-25803.pbf.gz",
+        "sha256": "55f96d27108bb37f9cd2423967428c7a127b68814982e145fa0a4aab62cee02e",
+        "layers": {
+          "AdmArea": 2,
+          "Anno": 8,
+          "BldA": 989,
+          "Cntr": 2,
+          "RdCL": 261,
+          "RdEdg": 126,
+          "RvrCL": 1,
+          "SpcfArea": 1,
+          "TpgphLine": 61,
+          "WA": 5,
+          "WL": 6
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58164,
+          "y": 25803
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58164-25803.pbf.gz",
+        "sha256": "c911a5a2da9a46b06617598f3216f15bedd0d9d51cd63f1910d75a427d0f2d0a",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 6,
+          "BldA": 985,
+          "Cntr": 12,
+          "RdCL": 262,
+          "RdCompt": 1,
+          "RdEdg": 139,
+          "SpcfArea": 1,
+          "TpgphLine": 82,
+          "WA": 2,
+          "WL": 3
+        }
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58165,
+          "y": 25803
+        },
+        "path": "data/evidence/kanto-prefecture/tokyo/west/koganei/16-58165-25803.pbf.gz",
+        "sha256": "f87499c1d3b2fa99b0af0ff309593309eab5753a654edc5763e7c538407a2005",
+        "layers": {
+          "AdmArea": 1,
+          "Anno": 4,
+          "BldA": 997,
+          "Cntr": 4,
+          "RdCL": 223,
+          "RdEdg": 97,
+          "SpcfArea": 1,
+          "TpgphLine": 71,
+          "WA": 2,
+          "WL": 3
+        }
+      }
+    ],
+    "drawnScope": "9タイルの全BldA/RdCL/RailCL/WA/WLをfull.svgへ描画。near/wide PNGは拡大表示で取得範囲ではない",
+    "clipping": "選択外形はタイル境界・取得外端に接しない"
+  },
+  "candidate": {
+    "featureIndex": 4550,
+    "sourceTile": {
+      "z": 16,
+      "x": 58164,
+      "y": 25802
+    },
+    "sourceFeatureIndex": 209,
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": 0,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false,
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            6640,
+            5120
+          ],
+          [
+            6706,
+            5122
+          ],
+          [
+            6705,
+            5175
+          ],
+          [
+            6639,
+            5173
+          ],
+          [
+            6640,
+            5120
+          ]
+        ]
+      ]
+    },
+    "areaApproxM2": 51.4,
+    "areaNote": "タイル格子からの概算水平面積。延床面積ではない",
+    "manualPointXY": [
+      6672.0,
+      5148.0
+    ],
+    "baseTile": {
+      "z": 16,
+      "x": 58163,
+      "y": 25801
+    },
+    "inclusion": {
+      "coordinate": {
+        "lat": 35.700771,
+        "lng": 139.5078492
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        6671.987725675106,
+        5148.02815592289
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    }
+  },
+  "adoptionApproval": false,
+  "manifestApplied": false
+}

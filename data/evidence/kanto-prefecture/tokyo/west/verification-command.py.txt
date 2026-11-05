@@ -1,0 +1,64 @@
+"""west群の対象検証。原本hash、保存PBFからの内包再計算、提案のhash結合、編集範囲を確かめる。"""
+import hashlib, json, subprocess, sys
+from pathlib import Path
+sys.path.insert(0, 'tools/national')
+from research_common import combine_tiles, decode_tile, read_verified, rounded_coordinate
+
+E = Path('data/evidence/kanto-prefecture/tokyo/west')
+N = Path('data/national/kanto-prefecture/tokyo/west')
+results = dict(raw=[], pbf=[], points=[], proposals={}, scope={})
+for r in json.loads((E/'retrievals.json').read_text()):
+    if r.get('rawPath'):
+        read_verified(r['rawPath'], r['sha256'])
+        results['raw'].append(r['sha256'])
+results['raw'] = dict(checked=len(results['raw']), distinct=len(set(results['raw'])))
+ranges = json.loads((E/'range-retrievals.json').read_text())
+results['range'] = dict(records=len(ranges), statuses=sorted({r['status'] for r in ranges}), etags=sorted({str(r.get('etag')) for r in ranges}))
+assert results['range']['statuses'] == ['acquired', 'cached'] and len(results['range']['etags']) == 1
+outcomes = json.loads((N/'outcomes.json').read_text())
+for row in outcomes['rows']:
+    key = row['key']
+    meta = json.loads((E/key/'tiles.json').read_text())
+    tiles = []
+    for item in meta['tiles']:
+        raw = read_verified(item['path'], item['sha256'])
+        decoded = decode_tile(raw)
+        features = []
+        for name in ['BldA', 'RdCL', 'RailCL', 'WA', 'WL']:
+            if name in decoded:
+                features.extend(dict(f, layer=name) for f in decoded[name]['features'])
+        tiles.append(dict(tile=item['tile'], extent=4096, features=features))
+    combined = combine_tiles(tiles)
+    saved = json.loads((E/key/'candidate-point.json').read_text())
+    feature = combined['features'][saved['featureIndex']]
+    assert feature['geometry'] == saved['geometry'], key
+    assert feature['sourceTile'] == saved['sourceTile'] and not feature['tileBoundaryTouched'] and not feature['outerBoundaryTouched'], key
+    fresh = rounded_coordinate(feature['geometry'], combined['baseTile'], saved['manualPointXY'])
+    assert fresh == saved['inclusion'] and fresh['mechanicalChecksPassed'], key
+    assert fresh['coordinate'] == row['candidate']['coordinate'], key
+    assert hashlib.sha256(Path(row['candidate']['comparisonPath']).read_bytes()).hexdigest() == row['candidate']['comparisonSHA256'], key
+    results['pbf'].append(dict(key=key, tiles=len(tiles), features=len(combined['features'])))
+    results['points'].append(dict(key=key, coordinate=fresh['coordinate'], unroundedWithin=fresh['unroundedWithin'], roundedWithin=fresh['roundedWithin']))
+inventory = json.load(open('data/national/kanto-prefecture/tokyo/inventory.json'))
+expected = {inventory['rows'][i]['facilityId'] for i in (0, 9, 14, 18, 22)}
+assert {r['facilityId'] for r in outcomes['rows']} == expected and len(outcomes['rows']) == 5
+rowsha = lambda x: hashlib.sha256(json.dumps(x, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+locations = json.loads((N/'locations-proposal.json').read_text())
+lifecycle = json.loads((N/'lifecycle-proposal.json').read_text())
+selection = json.loads((N/'selection-proposal.json').read_text())
+assert selection['approval'] is False and selection['manifestApplied'] is False
+approved = {a['facilityId']: a['sha256'] for a in selection['proposedManifestAppend']['locations'][0]['approved']}
+for update, binding in zip(locations['updates'], lifecycle['bindings']):
+    assert rowsha(update) == approved[update['facilityId']] == binding['adoptionSHA256'] and binding['adoption'] == update
+    path = update['evidence']['snapshotPath']
+    assert hashlib.sha256(Path(path).read_bytes()).hexdigest() == update['evidence']['snapshotSHA256'], path
+assert selection['proposedManifestAppend']['locationLifecycle'][0]['sha256'] == hashlib.sha256((N/'lifecycle-proposal.json').read_bytes()).hexdigest()
+assert set(approved).isdisjoint(selection['notProposed'])
+results['proposals'] = dict(locations=len(locations['updates']), bindings=len(lifecycle['bindings']), notProposed=len(selection['notProposed']))
+status = subprocess.run(['git', 'status', '--short', '--', 'tools', 'web', 'cmd', 'internal', 'tools/national/manifest.json'], capture_output=True, text=True).stdout
+results['scope'] = dict(changesOutsideDataInCodeDirs=status.strip())
+assert not status.strip()
+tracked = subprocess.run(['git', 'check-ignore', 'data/work/kanto-prefecture/tokyo/west/raw'], capture_output=True, text=True)
+results['scope']['workIgnoredByGit'] = tracked.returncode == 0
+assert tracked.returncode == 0
+print(json.dumps(results, ensure_ascii=False))

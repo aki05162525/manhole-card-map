@@ -1,0 +1,231 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "cacheVersion": "tokyo-outer-2026-11-05",
+  "searchSeedOnly": [
+    35.732,
+    139.2283
+  ],
+  "seedBasis": "search window only; never adoption evidence",
+  "pmtilesHeader": {
+    "tile_compression": "Compression.GZIP",
+    "tile_type": "TileType.MVT",
+    "min_zoom": "4",
+    "max_zoom": "16"
+  },
+  "metadataKeys": [
+    "description",
+    "format",
+    "generator",
+    "generator_options",
+    "maxzoom",
+    "minzoom",
+    "name",
+    "tilestats",
+    "type",
+    "vector_layers",
+    "version"
+  ],
+  "metadataAttribution": null,
+  "metadataVersion": "2",
+  "metadataDescription": "output/tiles-25k.mbtiles",
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58112,
+        "y": 25794
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58112-25794.pbf.gz",
+      "sha256": "5074ef0152d41c2d10144c301a81dab185370ad7b663ed1e3b10df38a80d668a",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 23,
+        "BldA": 182,
+        "Cntr": 40,
+        "RdCL": 102,
+        "RdEdg": 60,
+        "RvrCL": 8,
+        "WA": 6,
+        "WL": 13,
+        "WStrL": 8
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58113,
+        "y": 25794
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58113-25794.pbf.gz",
+      "sha256": "9087f292b367eaf3e503f6255423bb8c59aca495ca05bd72fab611f50c8f4b59",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 15,
+        "BldA": 470,
+        "Cntr": 25,
+        "RailCL": 2,
+        "RailTrCL": 5,
+        "RdCL": 158,
+        "RdEdg": 102,
+        "RvrCL": 6,
+        "WA": 1,
+        "WL": 2,
+        "WStrL": 8
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25794
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58114-25794.pbf.gz",
+      "sha256": "faf5e3ed4577ca6c9bbadf856f8473074df73579cf83e645513f07034a1ea669",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 9,
+        "BldA": 81,
+        "Cntr": 63,
+        "PwrTrnsmL": 1,
+        "RailCL": 3,
+        "RailTrCL": 5,
+        "RdCL": 64,
+        "RdEdg": 48,
+        "RvrCL": 4,
+        "WA": 5,
+        "WL": 9,
+        "WStrL": 12
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58112,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58112-25795.pbf.gz",
+      "sha256": "633aa911ce5587f4e13b5c13a88cf455c1e8e6c057c83bd27413e16ea0534d53",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 15,
+        "BldA": 583,
+        "Cntr": 16,
+        "RdCL": 137,
+        "RdEdg": 105,
+        "RvrCL": 4,
+        "SpcfArea": 2,
+        "WA": 5,
+        "WL": 6,
+        "WStrL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58113,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58113-25795.pbf.gz",
+      "sha256": "5f82b2fcafd87190cb55547d0a6463289a08c80b46815a3bf5d1bcea73a05055",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 54,
+        "BldA": 602,
+        "Cntr": 23,
+        "RailCL": 2,
+        "RailTrCL": 8,
+        "RdCL": 153,
+        "RdCompt": 7,
+        "RdEdg": 135,
+        "RvrCL": 1,
+        "TpgphLine": 79,
+        "WA": 5,
+        "WL": 14,
+        "WStrL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58114-25795.pbf.gz",
+      "sha256": "08935b50b9f86322a3d9cb0c8797c1e15117a8a03daba84bef0fb691e51e38dc",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 8,
+        "BldA": 707,
+        "Cntr": 32,
+        "RailCL": 2,
+        "RailTrCL": 5,
+        "RdCL": 165,
+        "RdEdg": 122,
+        "RvrCL": 5,
+        "TpgphLine": 36,
+        "WA": 5,
+        "WL": 15
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58112,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58112-25796.pbf.gz",
+      "sha256": "789707c0cb85ef00d329c0a84d960b86cb98b109e66a9d8c194993673afd8b78",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 9,
+        "BldA": 849,
+        "Cntr": 18,
+        "RdCL": 202,
+        "RdEdg": 165,
+        "WA": 3,
+        "WL": 12
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58113,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58113-25796.pbf.gz",
+      "sha256": "036dcadb56635faf1aaa97a744feca343c7d6775783743fc70b71ed6f1ffec40",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 32,
+        "BldA": 460,
+        "Cntr": 27,
+        "RdCL": 158,
+        "RdEdg": 135,
+        "RvrCL": 4,
+        "TpgphLine": 17,
+        "WA": 5,
+        "WL": 10
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/flare-16-58114-25796.pbf.gz",
+      "sha256": "30b754a65d432459ba2148eab06d62e942b43885790a98ec9dc24b0d44735c5f",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 9,
+        "BldA": 527,
+        "Cntr": 18,
+        "RdCL": 150,
+        "RdEdg": 94,
+        "RvrCL": 2,
+        "WA": 5,
+        "WL": 13
+      }
+    }
+  ]
+}

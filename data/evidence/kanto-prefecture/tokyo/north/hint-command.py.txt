@@ -1,0 +1,13 @@
+import sys,json
+sys.path.insert(0,sys.argv[1])
+from northlib import *
+c=load('akabanedai');fs=c['features'];s=scale(35.777)
+A={'41号棟':(815,790,3660),'44号棟':(852,862,3662),'43号棟':(772,925,3664),'42号棟':(770,1012,3692)}
+src=[v[:2] for v in A.values()];dst=[centroid(outer(fs[v[2]])) for v in A.values()]
+a,b=fit(src,dst);print('m/px',abs(a)*s,'rot',rotationDeg(a))
+for k,v in A.items():print(k,round(math.dist(apply(a,b,v[:2]),centroid(outer(fs[v[2]])))*s,1),'m')
+T={'15号棟':(545,805),'16号棟':(580,960),'17号棟':(480,970),'14号棟北':(690,880),'14号棟南':(680,1025),'展示施設':(755,845),'11号棟':(1000,795),'自走式駐車場':(465,890),'賃貸建設中北':(410,815),'賃貸建設中南':(380,915),'12号棟':(1000,425),'8号棟南':(945,712),'6号棟':(745,715),'3号棟':(420,715)}
+out={}
+for k,p in T.items():
+ q=apply(a,b,p);n=nearest(c,q,3);out[k]=dict(px=p,pred=q,near=[[round(d*s,1),i] for d,i in n]);print(k,[round(x) for x in q],out[k]['near'])
+json.dump(dict(scale=abs(a)*s,rot=rotationDeg(a),targets=out),open(sys.argv[2],'w'),ensure_ascii=False)

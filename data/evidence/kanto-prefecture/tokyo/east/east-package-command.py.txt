@@ -1,0 +1,149 @@
+import json,hashlib,sys,re
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import new_observation,validate_observation
+E=Path('data/evidence/kanto-prefecture/tokyo/east');N=Path('data/national/kanto-prefecture/tokyo/east');W=Path('data/work/kanto-prefecture/tokyo/east')
+num=json.load(open(W/'candidate-numbers.json'));rets=json.load(open(E/'retrievals.json'))
+inv={r['facilityId']:r for r in json.load(open('data/national/kanto-prefecture/tokyo/inventory.json'))['rows']}
+def write(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def rowsha(x):return hashlib.sha256(json.dumps(x,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+def src(*needles):
+    out=[]
+    for n in needles:
+        hit=[r for r in rets if n in r['url'] and r.get('rawPath')]
+        if not hit: raise SystemExit('missing retrieval '+n)
+        r=hit[0];out.append(dict(url=r['url'],sha256=r['sha256'],fetchedAt=r.get('fetchedAt') or r.get('attemptedAt'),lastModified=r.get('lastModified'),rawPath=r['rawPath']))
+    return out
+GSI='国土地理院最適化ベクトルタイルPMTiles(metadata 26-07.mbtiles、README「2026年7月1日時点」、Range ETag dfa81a9c…-2015、Last-Modified 2026-09-17)をmanhole-card-mapが加工。試験公開で基本測量成果ではない。'
+CRS=dict(status='insufficient',product='GSI optimal_bvmap-v1 PMTiles',evidence=[
+ 'README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない',
+ 'maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）',
+ 'PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join',
+ '逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親'])
+LIC=dict(status='confirmed',evidence=['GSI出典・加工表示とPDL1.0は親の取得記録 ../retrievals.json の web1.gsi.go.jp 規約（本取得なし、継承）','自治体・商店街HTML/PDF/写真全文はdata/workのみ。Git/配信資産に入れていない'])
+ROWS=[]
+def obs(fid,planned,performed,recs,pages,orient,cov,ident,sur,mech,lic=LIC):
+    o=new_observation(fid,planned);o['performedMethods']=performed
+    o['acquisition']=dict(status='mixed' if any(r.get('note') for r in recs) else 'acquired',records=recs)
+    o['pages']=pages;o['orientation']=orient;o['coverage']=cov;o['buildingIdentity']=ident;o['surroundings']=sur;o['crs']=CRS;o['licence']=lic;o['mechanicalChecks']=mech
+    validate_observation(o);return o
+def tilecov(key,n):
+    t=json.load(open(E/f'{key}-tiles.json'))['tiles']
+    return dict(tiles=[x['tile'] for x in t],tileSHA256={f"{x['tile']['x']}/{x['tile']['y']}":x['sha256'] for x in t},boundaryClipping=n,renderPath=str(E/f'{key}-full.svg'),renderScope='9タイルの全BldA/RdCL/RailCL/RailTrCL/WA/WL。詳細PNGはdata/work/.../east/detailの部分窓で取得範囲ではない')
+FID=dict(maruyoshi='facility:kanto-south-13a98e4a6ad62274aac8',macaron='facility:kanto-south-1611a2392fec34e2db1f',connect='facility:kanto-south-c673e03f2340f9a5bfef',mikawashima='facility:kanto-south-cdc3bc3e1d850a2e973d',adachi='facility:kanto-south-integration-adachi-tourism-association')
+K='kushouren';PM=['official-reading','all-page-reading','footprint-comparison','aerial-overlay','rounded-inclusion']
+# ---- 丸吉
+maru=dict(schema=1,facilityId=FID['maruyoshi'],checkedAt='2026-11-05',decision='numeric candidate; adoption unapproved',adoptionApproval=False,manifestApplied=False,
+ distribution=dict(fact='区公式(更新日令和8年8月20日)とR8.4.1配布一覧PDF全1頁で丸吉玩具店(立石1-21-2)13:00-18:00。臨時休業時テクノプラザかつしか。別関係・在庫保証なし。店舗ページ営業時間10:30-19:30は配布時間と別。',sources=src('1026023/1032481','20260401_manholecard.pdf')),
+ identification=[
+  '区商連公式店舗ページs07043の地図マーカー LatLng(35.73758225,139.8496443)。作成者・手法不明のため目印扱い。外形2853と2982の間の隙間に落ち、候補点から約2.1m。',
+  '同ページ写真(s07043_1.jpg Last-Modified 2021-10-04)：黄看板「おもちゃの店 丸吉 TEL 697-4615」。店右手に別の道路と自転車、左隣は緑看板。',
+  '隣店花蝶商店(1-21-2)写真s07042_1.jpg：緑看板「花蝶」とTEL 3692-0031の右に丸吉の黄看板が写り、並びを相互確認。アーケード屋根も写る。',
+  '外形：東側街区の東西通り北側。西のN-S長形6500はアーケード屋根と航空写真で対応。写真右手=南の通りは東向きの撮影で成立し、西側街区には交差路がない。よって丸吉=東西通りに接する2982(z16/58226/25793 #1551、下タイル7479同形)、花蝶=2853。',
+  '間口：2982の西辺は約3.3m、写真の什器寸法から店幅約3mと整合(目測)。'],
+ rejected=[dict(point='国土地理院住所検索 立石一丁目21番2号 139.849548,35.737465',reason='アーケード外形6500内で棟を示さない。利用条件未確認(docs/verification/04-geocoding.md)。'),
+           dict(point='区案内Googleマップ/蓋の地点',reason='蓋の位置。旧記録どおり使用しない'),dict(point='テクノプラザかつしか',reason='臨時代替で別施設')],
+ inheritedRead='旧取得の区1026016(蓋の設置場所とGoogle地図リンク)、観光サイトblog1784(丸吉の配布時間変更告知)を読解。いずれも店舗位置を示さない',
+ limits=['公式の店舗配置図・棟名なし。写真は2021年以前の可能性','花蝶マーカーは2852内で、マーカーは棟単位の精度を持たない','点と外形端の余裕1.68m。狭小棟のため測地系差・外形誤差に対する余裕が小さい'],
+ sources=src('store/s07043','s07043_1.jpg','store/s07042','s07042_1.jpg','area/a03/m008','AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%91%9B%E9%A3%BE%E5%8C%BA%E7%AB%8B'),numeric=num['maruyoshi'],processing=GSI,candidate=num['maruyoshi']['features'][0]['check']['coordinate'])
+write(E/'maruyoshi-comparison.json',maru)
+# ---- マカロン
+mac=dict(schema=1,facilityId=FID['macaron'],checkedAt='2026-11-05',decision='numeric candidate; adoption unapproved',adoptionApproval=False,manifestApplied=False,
+ distribution=dict(fact='13-100-X001の主窓口は亀有観光案内所。マカロンは毎月第三火曜(祝日なら翌日以降平日)の代替で11:00-18:00。店舗定休は水曜(ゆうろーど)。同棟扱いせず別関係。',sources=src('1026023/1032481','20260401_manholecard.pdf')),
+ identification=[
+  'ゆうろーど公式E街区図(map-e.gif、方位記号なし)：東側を北からMORAES・マンマチャオ・寿々喜・マカロン・KAIHALE・小松眼科・みたから。全体図map-all.jpgで道路形状を確認。',
+  '各店公式ページの住所：MORAES/寿々喜3-35-4、マカロン/KAIHALE 3-35-3、小松眼科/みたから3-35-2。KAIHALEは「エルピス亀有102」と建物名を記載。',
+  '写真：マカロン(shop/buppin/macaron/top.jpg)右隣にKAIHALE。KAIHALE写真の左にマカロン、右に細い通り。小松眼科写真は左に同じ通りの角。よってマカロン・KAIHALEは東西通りの北角の棟。',
+  '外形：通り北の6109(z16/58226/25788 #618、vt_code3102堅ろう、間口約7.7m×奥行約17m、約134㎡)。2店の間口合計約8mと整合。北隣6029は間口約5.2mで2店が入らない。南の6121は通りの反対側。',
+  '国土地理院住所検索の号点：35-4→6027、35-3→6109、35-2→6121で公式の並びと順序一致(補助のみ)。'],
+ rejected=[dict(point='ゆうろーど埋込地図の!2d/!3d 139.84627633,35.76414785',reason='表示中心で実路線から約250m西。同ページ群の中心は路線から外れた値を多数含む'),
+           dict(point='亀有観光案内所',reason='通常窓口で別施設')],
+ inheritedRead='旧取得の区1026544(蓋とカード概要。特別版終了・通常版配布)を読解。店舗位置を示さない',
+ limits=['公式に「マカロン=外形6109」と書く資料はない。2016-05-10に新店舗へ移転のお知らせあり(macaron-3.com)で現店舗はそれ以降','E街区図・店舗写真の年代不明','エルピス亀有の第三者不動産情報は検索結果のみで原本取得なし、根拠にしない','macaron-3.com/access、/about はHTTP404'],
+ sources=src('shop-b-macaron','macaron/top.jpg','map-e.html','map-2/map-e.gif','map-2/map-all.jpg','shop-g-kaihale','gurume/kaihale/top.jpg','shop-i-komaysuganka','komatsuganka/top.jpg','shop-g-suzukisoba','shop-fo-mitakara','shop-b-moraes','macaron-3.com'),numeric=num['macaron'],processing=GSI,candidate=num['macaron']['features'][0]['check']['coordinate'])
+write(E/'macaron-comparison.json',mac)
+# ---- コネクトすみだ
+con=dict(schema=1,facilityId=FID['connect'],checkedAt='2026-11-05',decision='low-tier numeric candidate on viaduct centerline; no polygon inclusion possible; adoption unapproved',adoptionApproval=False,manifestApplied=False,
+ distribution=dict(fact='墨田区公式(Last-Modified 2026-11-04)：リコリス・リコイル、コネクトすみだ[まち処] 向島一丁目23番9号 イーストゾーンE03、10:30-18:00火曜定休、「在庫あり」(ページ記載時点)。運営者ページも同住所。',sources=src('designmanhole-sumida','visit-sumida.jp/connect')),
+ identification=[
+  '東京ミズマチ公式トップの2024-12-24アーカイブ：E01 WISE OWL、E02 ファミリーマート、E03 コネクトすみだ[まち処]、E04 WASH&FOLD…E08。',
+  '同アーカイブのimg_map.png：源森橋と小梅橋の間にE01〜E07を西→東の順で配置した模式図(縮尺なし、方位記号なし、左が浅草)。',
+  '国土地理院住所検索の号点：23-1〜23-17が高架北側に約14.6m間隔で連続し、23-9は(7669,4407)。隣接23-8/23-10も同列。',
+  '外形比較：z16 x58217..19 y25799..25801全域描画で、高架部はRailCL(vt_railstate=橋・高架)のみでBldA外形なし。航空写真も線路面。候補は23-9からRailCLへの垂線の足で、高架構造の中心線上。住所点からの距離7.9m。'],
+ rejected=[dict(point='国土地理院住所検索点そのもの',reason='高架北の道路側に落ち施設内でない'),dict(point='東京スカイツリータウン・区役所等の点',reason='別施設'),dict(point='隣接の一般建物5281ほか',reason='高架の北側の別棟')],
+ limits=['外形内包検査が成立しない(BldAに高架下店舗なし)。mechanicalChecks not_run','桁位置決定は国土地理院住所検索に依存。同APIの利用条件は未確認(docs/verification/04-geocoding.md)で座標出典にできるか親判断。ABR(catalog.registries.digital.go.jp)はNXDOMAINで代替取得不可','www.tokyo-mizumachi.jp は今回全URLがHTTP503。配置図はアーカイブで現行公式でない','E03の桁幅は未確認。沿線方向の誤差は1桁約14.6m規模','2023-05-03開業でWikipedia系の旧E03「すみずみ」とは時点差'],
+ baselineHashNote='gk-p基準 ad9d5072…は別原本。区案内 1f431f2c…は旧取得と同一hash、connect 0289618c…は旧5360df9b…と異なるが住所同一',
+ sources=src('visit-sumida.jp/connect','designmanhole-sumida','web.archive.org/web/2024/https://www.tokyo-mizumachi.jp/','img_map.png','visit-sumida.jp/docs/map/kanko_book.pdf'),numeric=num['connect'],processing=GSI,candidate=num['connect']['coordinate'])
+write(E/'connect-comparison.json',con)
+# ---- 旧三河島
+mk=dict(schema=1,facilityId=FID['mikawashima'],checkedAt='2026-11-05',decision='numeric candidate for 旧事務棟; card-window building one question open; adoption unapproved',adoptionApproval=False,manifestApplied=False,
+ distribution=dict(fact='下水道局案内ページの配布場所記載に加え、見学予約サイトのお知らせ22(2026-09-24)：アースくんカードは都庁で在庫切れ終了だが「旧三河島汚水処分場」運転開始100周年記念カードは引き続き 三河島重要文化財見学受付 で配付 9:00-16:00(火金年末年始除く)、お一人様1枚。13-100-D101はこの100周年カード。',sources=src('designmanhole/togesui','news/detail/22')),
+ identification=[
+  'アクセス図walk2025.jpg/car2025.jpg：N記号は左向き。正門・門衛所・旧事務棟(L字)・喞筒場施設の位置関係。「施設見学当日は、旧事務棟にお越しください」。',
+  'R8年3月発行リーフレットPDF全2頁：案内図に旧事務棟・門衛所・正門入口。立体図で旧事務棟はL字、①門衛所②入口阻水扉室上屋⑧喞筒室などは別棟。',
+  '外形：喞筒室(長大屋根)、濾格室上屋、沈砂池、阻水扉室上屋6149/6154を航空写真で対応。その南西のL字外形6677(z16/58215/25793 #695)+9777(z16/58215/25794 #60)が旧事務棟、南の小棟9780が門衛所。西の都電、東の南北道路と整合。',
+  'y=8192のタイル境界を跨ぎ、上タイル側はy8272、下タイル側はy8112で切断。手動接合の外形約741㎡(概算水平面積)。候補点(4443,8170)は両断片に内包。'],
+ rejected=[dict(point='喞筒室・濾格室など文化財本体',reason='受付でない可能性が高い別棟'),dict(point='国土地理院住所検索「荒川八丁目25番」139.788971,35.741524',reason='街区の代表点で約430m北東の別棟6277。号指定なし'),dict(point='オリンピック荒川一丁目店/荒川1-6-1',reason='カーナビ設定用の住所で別施設'),dict(point='GO TOKYO cid地図',reason='旧記録で429。表示地点は施設全体')],
+ limits=['「見学受付」と「旧事務棟」を同一と明記する資料は未発見。来場先の記載からの推論。人手一問あり(questions.json)','ポンプ室外壁工事の足場(令和8年12月上旬〜令和9年2月下旬予定)は配布変更を意味しない','リーフレット立体図は模式で縮尺なし'],
+ baselineHashNote='13-100-D101の案内HTML: 台帳基準 1ba88cb3…、今回 8be2daa0…。ページ全体の更新で当該節の配布記載を今回読解。hash差を配布変更と扱わない',
+ sources=src('news/detail/22','news/detail/5','access_walk/walk2025.jpg','access_car/car2025.jpg','03_kyuumikawashima_r8_jp','s_mikawa2','business/b4/guide/s-mikawa/index.html','gotokyo.org/jp/spot/1072'),numeric=num['mikawashima'],manualUnionRing=[[4313,8090],[4573,8090],[4574,8245],[4446,8245],[4445,8321],[4312,8320]],manualUnionAreaApproxM2=741.5,processing=GSI,candidate=num['mikawashima']['features'][0]['check']['coordinate'],firstWindowDiscarded='最初の探索窓(35.7475,139.7845)は研究者の誤推定で施設外。取得物をevidenceから除去、rangeキャッシュのみdata/workに残存。結果に不使用')
+write(E/'mikawashima-comparison.json',mk)
+# ---- 足立
+old=json.load(open('data/evidence/kanto-prefecture/tokyo/adachi-comparison.json'))
+ad=dict(schema=1,facilityId=FID['adachi'],checkedAt='2026-11-05',supplementTo='data/evidence/kanto-prefecture/tokyo/adachi-comparison.json',supplementToSHA256=sha('data/evidence/kanto-prefecture/tokyo/adachi-comparison.json'),existingCandidate=old['wholeInclusion']['coordinate'],reproducedCoordinate=num['adachi']['features'][0]['check']['coordinate'],coordinateChanged=False,adoptionApproval=False,manifestApplied=False,
+ identification=[
+  '区公式「本庁舎各階ご案内」r8zenkanannai20260401.pdf(全1頁、作成2026-04-02)で南館4階に「一般財団法人 足立区観光交流協会」。既存記録の旧PDF 404を解消。',
+  '区議会資料「本庁舎改修基本計画(案)」令和元年11月 p.5(26頁中)：配置図にN矢印(上向き)、北館・中央館・南館を明示。南館は中央館の南に接続し、S造地下3階地上14階、延床28,192.06㎡、1996年竣工。',
+  '区公式1F案内(r8kakukaiannnai1f.pdf)：南館に南出入口、中央館と接続。方位記号は左向きで別図の北上と向きが異なる(図ごとに回転)。',
+  '区公式アクセス図adachi-kuyakusyo-map.jpg(略図、N矢印上向き、差込図に北館・中央館・南館)：南館は中央館の南、国道4号は西。',
+  '航空写真重ね合わせ(detail/a-photo.png)：連続外形6761の南端張出に塔屋ヘリポートが対応。14階建の南館の屋上形状として整合。',
+  '区公式施設ページの地図リンク q=35.774942,139.804727 も同一連続外形内(中央部、(6856,6644))。庁舎全体の代表点で南館点ではないため候補に転用しない。'],
+ datumCheck=dict(result='製品の明示宣言は依然未確認',added=['pmtiles header/metadataにCRS項目なし','README sha一致(41a7a4d2…)、版は26-07','旧日本測地系なら約450mずれるが、区公式WGS84系リンク点と候補の差は同一外形内で、棟を外すズレはない(実用上の棟同定への影響の範囲を示すもので、測地系の承認ではない)','連続外形の端までの余裕17.99m']),
+ renovation='令和5年度から本庁舎改修中。全館案内で北館に工事中表示あり。南館4階の配置は2026-04時点の案内。工事の配布影響は未確認。',
+ limits=['外形は3棟接続の1ポリゴンで南館単独の境界は復元していない','基本計画は2019年案で現況と同一とは限らない。p.5以外は読解していない(p.23はクレーン検討の配置図でテキストのみ確認)','自治体原本全文はdata/workのみ'],
+ inheritedHashCheck='協会案内archives/56626は台帳基準と同一hash 73124e85…',
+ sources=src('r8zenkanannai20260401','r8kakukaiannnai1f','20191111houkoku4','chosha/shisetsu/kuyakusho/001','images/46088/adachi-kuyakusyo-map','kuyakusho_map.jpg','mitorizu.gif','archives/56626'),numeric=num['adachi'])
+write(E/'adachi-supplement.json',ad)
+# ---- inspection
+insp=[]
+insp.append(obs(FID['maruyoshi'],PM,['official-reading','all-page-reading','footprint-comparison','aerial-overlay','rounded-inclusion','neighbor-store-marker-comparison'],maru['sources'],dict(total=1,checked=[1],document='20260401_manholecard.pdf; HTML/写真は頁なし。未読頁なし'),
+ dict(status='insufficient',evidence=['公式図に方位記号なし。写真の向きは街区形状からの推定']),tilecov('maruyoshi','対象外形2982/7479はy=4096に頂点が接するが上下タイルで同形を確認。取得外端なし'),
+ dict(status='insufficient',evidence=maru['identification'][:4]),dict(status='confirmed',evidence=['アーケード6500、東西通りRdCL、東隣街区を航空写真と対応']),dict(status='passed',evidence=['丸め前後とも2982/7479内。余裕1.68m。他BldAに内包なし'])))
+insp.append(obs(FID['macaron'],PM,['official-reading','all-page-reading','footprint-comparison','aerial-overlay','rounded-inclusion','neighbor-store-order'],mac['sources'],dict(total=1,checked=[1],document='20260401_manholecard.pdf'),
+ dict(status='insufficient',evidence=['E街区図・全体図に方位記号なし。道路形状(両さん像前の分岐、並行路)で対応']),tilecov('macaron','対象外形6109はタイル境界・取得外端に接しない'),
+ dict(status='insufficient',evidence=mac['identification']),dict(status='confirmed',evidence=['E街区図の東西通りと6109南側RdCL、西並行路、北分岐を対応']),dict(status='passed',evidence=['丸め前後とも6109内。余裕3.79m'])))
+insp.append(obs(FID['connect'],PM,['official-reading','archive-reading','footprint-comparison','aerial-overlay','centerline-projection'],con['sources']+[dict(note='www.tokyo-mizumachi.jp 全URL HTTP503、ABR host NXDOMAIN、アーカイブのshopページはJS描画で店舗情報読めず')],dict(total=14,checked=[],document='kanko_book.pdf 2021年版。ミズマチ語句のテキスト抽出のみで頁読解なし。E03の位置判断に不使用'),
+ dict(status='insufficient',evidence=['模式図に方位記号なし。左が浅草・右がスカイツリーの地理対応のみ']),tilecov('connect','高架部BldAなし。切断の問題ではなく外形未表現'),
+ dict(status='insufficient',evidence=con['identification']),dict(status='confirmed',evidence=['高架RailCL、北の道路、南の北十間川(WA)、源森橋・小梅橋方向を航空写真と対応']),dict(status='not_run',evidence=[]),
+ lic=dict(status='insufficient',evidence=['桁位置に使った国土地理院住所検索APIの利用条件未確認(docs/verification/04-geocoding.md)。GSIタイル側はPDL1.0継承'])))
+insp.append(obs(FID['mikawashima'],PM,['official-reading','all-page-reading','footprint-comparison','aerial-overlay','rounded-inclusion','manual-tile-join'],mk['sources'],dict(total=2,checked=[1,2],document='03_kyuumikawashima_r8_jp'),
+ dict(status='confirmed',evidence=['アクセス図のN記号は左向き。都電=下(西)、正門=右(南)、喞筒場=左(北)で航空写真と一致。リーフレット案内図のN記号も確認']),tilecov('mikawashima','対象はy=8192を跨ぎ両断片を接合。取得外端なし'),
+ dict(status='insufficient',evidence=mk['identification']),dict(status='confirmed',evidence=['都電、南北道路、阻水扉室上屋、沈砂池、喞筒室、三河島公園の並びを対応']),dict(status='passed',evidence=['丸め前後とも6677・9777の両断片内。余裕7.03m以上'])))
+insp.append(obs(FID['adachi'],['official-reading','crs-applicability','identity-supplement'],['official-reading','all-page-reading','aerial-overlay','crs-documents','coordinate-reproduction'],ad['sources'],dict(total=1,checked=[1],document='r8zenkanannai20260401.pdf。基本計画26頁はp.5のみ読解'),
+ dict(status='confirmed',evidence=['基本計画p.5配置図のN上向き、議会JPEGのN上向き']),dict(tiles=[dict(z=16,x=x,y=y) for x in (58217,58218,58219) for y in (25784,25785,25786)],boundaryClipping='既存どおり対象外形はタイル境界・外端を跨がない',renderPath='data/evidence/kanto-prefecture/tokyo/adachi-full.svg',renderScope='既存SVG。追補は同タイルからdata/workへ再結合'),
+ dict(status='confirmed',evidence=ad['identification'][:5]),dict(status='confirmed',evidence=['国道4号、北の道路、高校、3棟の並びは既存読解を継承し航空写真で再確認']),dict(status='passed',evidence=['保存PBFから既存座標35.7744893,139.8045243を再現、丸め前後内包'])))
+write(E/'inspection.json',dict(schema=1,asOf='2026-11-05',reviewStatus='independent review pending',observations=insp))
+# ---- proposals
+def upd(fid,cmp_,coord,loc,meth):
+    p=E/cmp_;return dict(facilityId=fid,coordinate=coord,scope='building',evidence=dict(sourceUrl='https://github.com/gsi-cyberjapan/optimal_bvmap',snapshotPath=str(p),snapshotSHA256=sha(p),sourceLocator=loc,checkedAt='2026-11-05',actorType='ai',verificationMethod=meth+' 製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。'))
+ups=[upd(FID['maruyoshi'],'maruyoshi-comparison.json',maru['candidate'],'maruyoshi-comparison.json: BldA z16/58226/25793 #1551 (=25794 #1055), 手動内点(7580,4125)','未承認の調査候補。公式店舗ページのマーカー・店舗写真と隣店写真・街区形状から東西通り北の棟を推定し手動内点を逆投影。丸め前後の外形内包を確認。'),
+ upd(FID['macaron'],'macaron-comparison.json',mac['candidate'],'macaron-comparison.json: BldA z16/58226/25788 #618, 手動内点(7184,4581)','未承認の調査候補。商店街公式E街区図の店順、各店住所、店舗写真の隣接関係と外形の間口を比較し棟を推定し手動内点を逆投影。丸め前後の外形内包を確認。'),
+ upd(FID['connect'],'connect-comparison.json',con['candidate'],'connect-comparison.json: RailCL z16/58218/25800 高架中心線への垂線の足。BldAなし','未承認の低信頼候補。公式区画順と住所検索の号点から高架中心線上へ投影。外形内包不可。住所検索APIの利用条件未確認。'),
+ upd(FID['mikawashima'],'mikawashima-comparison.json',mk['candidate'],'mikawashima-comparison.json: BldA z16/58215/25793 #695 + 25794 #60 旧事務棟, 手動内点(4443,8170)','未承認の調査候補。公式アクセス図・リーフレットと航空写真からL字の旧事務棟を識別し手動内点を逆投影。丸め前後の外形内包を確認。受付=旧事務棟は推論。')]
+write(N/'locations-proposal.json',dict(schema=1,updates=ups))
+binds=[dict(facilityId=u['facilityId'],identity={k:inv[u['facilityId']]['baselinePlace'][k] for k in('name','address')},adoption=u,adoptionSHA256=rowsha(u),sourceVersion='GSI optimal_bvmap PMTiles 26-07 per metadata / 2026-07-01 per readme; explicit product datum applicability pending') for u in ups]
+write(N/'lifecycle-proposal.json',dict(schema=1,bindings=binds,events=[],groups=[]))
+write(N/'selection-proposal.json',dict(schema=1,approval=False,manifestApplied=False,integrationBlockedBy=['independent review','product-specific datum applicability','connect: address-search terms and no footprint','mikawashima: 受付棟の一問'],proposedManifestAppend=dict(locations=[dict(path=str(N/'locations-proposal.json'),approved=[dict(facilityId=u['facilityId'],sha256=rowsha(u)) for u in ups])],locationLifecycle=[dict(path=str(N/'lifecycle-proposal.json'),sha256=sha(N/'lifecycle-proposal.json'))]),adachiNote='足立の候補は既存 ../locations-proposal.json のまま。座標変更なし、eastへ重複させない',warning='approved is the existing manifest schema field, not granted approval; do not apply before parent review'))
+Q=[dict(facilityId=FID['mikawashima'],name='国指定重要文化財 旧三河島汚水処分場喞筒場施設',officialUrl='https://www.tgs-mikawashimayoyaku.jp/news/detail/22',question='マンホールカード(13-100-D101)を受け取る「三河島重要文化財見学受付」は、正門近くの旧事務棟の中にありますか。',resolves='カード窓口の棟。旧事務棟の候補点を確定できるか',status='unanswered',blocking=False,noMunicipalContact=True)]
+write(N/'questions.json',dict(schema=1,asOf='2026-11-05',questions=Q))
+T={'maruyoshi':('numeric-candidate-unapproved','B',maru['candidate'],'独立レビューで写真の並びと外形2982の対応を確認。測地系判断。','公式の店舗配置図がなく写真・マーカーからの推論。余裕1.68m。'),
+ 'macaron':('numeric-candidate-unapproved','B',mac['candidate'],'独立レビューで店順・住所・間口と外形6109の対応を確認。測地系判断。','公式に棟を直接示す資料なし。'),
+ 'connect':('low-tier-numeric-candidate-unapproved','C',con['candidate'],'tokyo-mizumachi.jpが復旧したら現行配置図とE03を再取得。住所検索APIの利用条件確認またはABRの現行取得先で号点を再確認。高架建物の外形を別資料で探す。','BldAに高架下店舗なし。桁位置が利用条件未確認APIに依存。'),
+ 'mikawashima':('numeric-candidate-unapproved','B',mk['candidate'],'人手一問で受付棟を確定。独立レビュー。測地系判断。','見学受付と旧事務棟の同一性が推論。'),
+ 'adachi':('existing-candidate-strengthened-unapproved','A',ad['existingCandidate'],'親が独立レビューと測地系判断後にのみ既存提案を統合。','製品測地系の明示宣言が未確認。3棟接続外形で南館単独境界は未復元。')}
+key=dict(maruyoshi='丸吉玩具店');rows=[]
+for k,(st,tier,c,nx,re_) in T.items():
+    rows.append(dict(facilityId=FID[k],name=inv[FID[k]]['name'],stage=st,candidateTier=tier,candidateCoordinate=c,adoptionApproval=False,manifestApplied=False,remainingReason=re_,nextAction=nx,evidence=str(E/('adachi-supplement.json' if k=='adachi' else k+'-comparison.json')),proposal=None if k=='adachi' else str(N/'locations-proposal.json'),existingProposal='data/national/kanto-prefecture/tokyo/locations-proposal.json' if k=='adachi' else None,relationChange=False))
+write(N/'outcomes.json',dict(schema=1,group='east',asOf='2026-11-05',assignedCount=5,facilityIds=list(FID.values()),numericalComparisonCount=5,candidateCount=5,approvedCount=0,adoptedCount=0,tierDefinition=dict(A='公式資料が現配布棟を明示、外形対応あり',B='公式資料・写真からの推論で棟を絞った',C='外形内包不可で位置の一部を補助情報に依存'),humanQuestions='questions.json',rows=rows,sharedFiles=dict(inspection=str(E/'inspection.json'),retrievals=str(E/'retrievals.json'),timing=str(E/'timing.json'),verification=str(E/'verification.json'))))
+print('packaged',[ (u['facilityId'][-12:],u['coordinate'],rowsha(u)[:12]) for u in ups])

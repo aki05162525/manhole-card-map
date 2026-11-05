@@ -1,0 +1,213 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "searchSeedOnly": [
+    35.70234,
+    139.54513
+  ],
+  "seedBasis": "ABR 住居表示 武蔵野市境1-1-7 周辺の検索窓; 採用根拠は別途判断",
+  "retrievedAt": "2026-11-05T15:36:00.836826+00:00",
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58170,
+        "y": 25800
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25800.pbf.gz",
+      "sha256": "0fd311725d8dca5cf44056310144c90360789eda50cdd5ac168219d8bd8ee884",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 11,
+        "BldA": 598,
+        "Cntr": 5,
+        "RdCL": 168,
+        "RdEdg": 115,
+        "SpcfArea": 1,
+        "TpgphLine": 8,
+        "WA": 6,
+        "WL": 9,
+        "WStrL": 11
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25800
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25800.pbf.gz",
+      "sha256": "579c7fc3c314f8705c06c6cd51c6933b51284ef59fe126a6e055aa527efde664",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 6,
+        "BldA": 605,
+        "Cntr": 2,
+        "RdCL": 191,
+        "RdEdg": 89,
+        "RvrCL": 1,
+        "SpcfArea": 4,
+        "TpgphLine": 82,
+        "WA": 20,
+        "WL": 22
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58172,
+        "y": 25800
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25800.pbf.gz",
+      "sha256": "61d170e7ca24c56a509bdfe7612cc030563d0d58e5798f294d92583cbac22527",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 2,
+        "Anno": 7,
+        "BldA": 486,
+        "Cntr": 4,
+        "RdCL": 179,
+        "RdCompt": 5,
+        "RdEdg": 126,
+        "RvrCL": 1,
+        "SpcfArea": 4,
+        "TpgphLine": 111,
+        "WA": 27,
+        "WL": 30,
+        "WStrL": 7
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58170,
+        "y": 25801
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25801.pbf.gz",
+      "sha256": "d1bab146dea0fff2c8980917dc73a5227fda18827173277064456459d663a6ff",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 8,
+        "BldA": 679,
+        "Cntr": 4,
+        "RailCL": 5,
+        "RailTrCL": 18,
+        "RdCL": 170,
+        "RdEdg": 136,
+        "WA": 2,
+        "WL": 3
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25801
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25801.pbf.gz",
+      "sha256": "b2f6b8c608ee227232e7deb31842399da90f95e58fc35e64c4b540e1fa6acb26",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 8,
+        "BldA": 741,
+        "Cntr": 2,
+        "RailCL": 4,
+        "RailTrCL": 12,
+        "RdCL": 197,
+        "RdCompt": 4,
+        "RdEdg": 118,
+        "RvrCL": 2,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58172,
+        "y": 25801
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25801.pbf.gz",
+      "sha256": "2b7e795bb69ca9df8d3a0e61624348dea0c3badd93b9ff0af5767298abada3aa",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 4,
+        "Anno": 7,
+        "BldA": 613,
+        "Cntr": 6,
+        "RailCL": 7,
+        "RailTrCL": 30,
+        "RdCL": 218,
+        "RdCompt": 7,
+        "RdEdg": 171,
+        "RvrCL": 1,
+        "TpgphLine": 51,
+        "WA": 3,
+        "WL": 3
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58170,
+        "y": 25802
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58170-25802.pbf.gz",
+      "sha256": "9ab377b32860144db152fd2330856e9c44b210e4ad557db077bb78cf6ccaae6c",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 6,
+        "BldA": 1017,
+        "RailCL": 3,
+        "RailTrCL": 12,
+        "RdCL": 215,
+        "RdEdg": 136,
+        "SpcfArea": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25802
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58171-25802.pbf.gz",
+      "sha256": "b982ab8fac49846c957d16cdd5a8830cdfe0afcd26cde868117f1b753c089ffe",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 21,
+        "BldA": 535,
+        "Cntr": 2,
+        "RailCL": 2,
+        "RailTrCL": 2,
+        "RdCL": 149,
+        "RdCompt": 3,
+        "RdEdg": 78,
+        "SpcfArea": 4,
+        "WA": 3,
+        "WL": 3
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58172,
+        "y": 25802
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/west/quola/16-58172-25802.pbf.gz",
+      "sha256": "69d76683836ce7bbed1fa385626264cbf6f36df3cd8013a45ef6d905e08c8427",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 3,
+        "Anno": 7,
+        "BldA": 894,
+        "RailCL": 4,
+        "RailTrCL": 19,
+        "RdCL": 191,
+        "RdCompt": 5,
+        "RdEdg": 117,
+        "WA": 3,
+        "WL": 4
+      }
+    }
+  ]
+}

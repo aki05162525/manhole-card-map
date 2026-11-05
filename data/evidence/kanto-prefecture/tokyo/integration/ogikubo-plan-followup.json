@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+  "asOf": "2026-11-05",
+  "recordedAt": "2026-11-05T16:07:50.842757+00:00",
+  "sourceURL": "https://www.city.suginami.tokyo.jp/documents/7586/tekigaisoukouen_keikaku02_4_1_3.pdf",
+  "sourceSHA256": "4cafe3550d02c45e6513fe8e082fe0f3fad93fce1363c665a39511a14035b1cc",
+  "sourceScope": "令和元年5月基本計画の第4章分割PDF、全6頁（本文p19〜24）をテキスト抽出・画像表示で確認。全計画書の他章は未読。PDFメタデータ作成日は2021-04-08、HTTP Last-Modifiedは2024-12-19。いずれも現況確認日ではない。",
+  "observations": [
+    {
+      "page": 19,
+      "finding": "北記号・0〜20mスケールあり。全体整備計画図は正門を北西側、受付・券売所を主屋北西側の小規模屋外施設として計画。正門と東門を同一視できない。"
+    },
+    {
+      "page": 20,
+      "finding": "動線図に券売所・受付、主屋の北西に付属するスペースの表示。正門から入場し券売所を通る計画。現在のカード配布を示す文書ではない。"
+    },
+    {
+      "pages": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "finding": "史跡整備の歴史的図面・写真資料。p23説明に正門を現在の西側とした近衞邸配置図。p23〜24の一部写真は原PDFで非掲載アイコン。現窓口証拠ではない。"
+    }
+  ],
+  "currentOperatorDiagram": {
+    "url": "https://ogikubo3gardens.jp/img/tekigaiso/visitor-map.svg",
+    "sha256": "dea302629875d99ec4f01741aa5bb5f1ed3b99df7d6ac6d9cc53f1991cb44eaf",
+    "reading": "西部担当取得の全図を親も目視。正門は左上、東門は右。見学者入口は主屋北側。受付/券売のラベルはなく、計画の券売所が現在同機能か断定できない。"
+  },
+  "humanClaimAssessment": "東側正門脇の独立管理棟という利用者補足は、確認した計画の方位・名称と一致しない。利用者回答のみで棟変更しない。",
+  "decision": "hold; current card reception to actual building linkage unresolved",
+  "nextAction": "開園後の受付・券売所の位置が判る公式案内/竣工配置図を取得し、保存9タイルと再照合。計画を現況へ読み替えない。",
+  "adoptionApproval": false
+}

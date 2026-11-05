@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+# vec.py prep <key> <lat> <lng> ; vec.py png <key> <cx> <cy> <half> <out.png> [--mark x,y ...] ; vec.py at <key> <lat> <lng>
+import sys,json,math,hashlib
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached,adjacent_tiles,decode_tile,combine_tiles,render_svg,contains_point
+E=Path('data/evidence/kanto-prefecture/tokyo/east');W=Path('data/work/kanto-prefecture/tokyo/east')
+URL='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles'
+LAY=['BldA','RdCL','RailCL','RailTrCL','WA','WL']
+def txy(lat,lng,base=None,z=16):
+    n=2**z;x=(lng+180)/360*n;y=(1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*n
+    return x,y
+def prep(key,lat,lng):
+    from pmtiles.reader import Reader
+    recs=[]
+    def get(o,l):
+        b,r=fetch_cached(URL,W/'ranges','tokyo-2026-11-05-east',headers={'Range':f'bytes={o}-{o+l-1}'})
+        recs.append(r);(E/f'{key}-range-retrievals.json').write_text(json.dumps(recs,indent=1)+'\n')
+        if b is None: raise ValueError(r)
+        return b
+    rd=Reader(get);x,y=txy(lat,lng);c=dict(z=16,x=int(x),y=int(y));tiles=[];summ=[];anno=[]
+    for t in adjacent_tiles(c):
+        raw=rd.get(t['z'],t['x'],t['y'])
+        if raw is None: raise ValueError(f'tile missing {t}')
+        p=E/f"{key}-{t['z']}-{t['x']}-{t['y']}.pbf.gz";p.write_bytes(raw);d=decode_tile(raw);fs=[]
+        for n in LAY:
+            if n in d: fs.extend(dict(f,layer=n) for f in d[n]['features'] if f['geometry']['type'] in('Polygon','MultiPolygon','LineString','MultiLineString'))
+        for a in d.get('Anno',{}).get('features',[]):
+            g=a['geometry']['coordinates']
+            if a['geometry']['type']=='Point': anno.append(dict(text=a['properties'].get('knj'),x=g[0]+(t['x'])*4096,y=g[1]+(t['y'])*4096))
+        tiles.append(dict(tile=t,extent=d['BldA']['extent'],features=fs))
+        summ.append(dict(tile=t,path=str(p),sha256=hashlib.sha256(raw).hexdigest(),layers={k:len(v['features']) for k,v in d.items()}))
+    cb=combine_tiles(tiles);b=cb['baseTile']
+    for a in anno: a['x']-=b['x']*4096;a['y']-=b['y']*4096
+    cb['anno']=anno
+    (W/f'{key}-combined.json').write_text(json.dumps(cb));(E/f'{key}-full.svg').write_text(render_svg(cb))
+    (E/f'{key}-tiles.json').write_text(json.dumps(dict(sourceURL=URL,searchSeedOnly=[lat,lng],seedBasis='search window only; never adoption evidence',tiles=summ),indent=1)+'\n')
+    print('tiles',len(tiles),'features',len(cb['features']),'base',b,'clip-free center tile',c)
+def load(key): return json.load(open(W/f'{key}-combined.json'))
+def rings(f):
+    g=f['geometry'];return g['coordinates'] if g['type']=='Polygon' else [r for p in g['coordinates'] for r in p]
+def at(key,lat,lng):
+    x=load(key);b=x['baseTile'];X,Y=txy(lat,lng);pt=[(X-b['x'])*4096,(Y-b['y'])*4096];print('point xy',pt)
+    hits=[];near=[]
+    for i,f in enumerate(x['features']):
+        if f['layer']!='BldA':continue
+        if contains_point(f['geometry'],pt): hits.append(i)
+        r=rings(f)[0];cx=sum(p[0] for p in r)/len(r);cy=sum(p[1] for p in r)/len(r);near.append((math.hypot(cx-pt[0],cy-pt[1]),i))
+    print('inside',hits);print('near',sorted(near)[:8]);return pt
+def png(key,cx,cy,half,out,marks):
+    from PIL import Image,ImageDraw,ImageFont
+    x=load(key);S=1400;sc=S/(2*half);im=Image.new('RGB',(S,S),'white');d=ImageDraw.Draw(im)
+    try: font=ImageFont.truetype('/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf',14)
+    except OSError:
+        try: font=ImageFont.truetype('/usr/share/fonts/opentype/ipafont-mincho/ipam.ttf',14)
+        except OSError: font=ImageFont.load_default()
+    P=lambda p:((p[0]-cx+half)*sc,(p[1]-cy+half)*sc)
+    inwin=lambda r:any(abs(p[0]-cx)<half*1.3 and abs(p[1]-cy)<half*1.3 for p in r)
+    col={'WA':(190,220,250),'BldA':(215,225,235)}
+    for lay in ['WA','BldA']:
+        for f in x['features']:
+            if f['layer']!=lay:continue
+            for r in rings(f):
+                if inwin(r): d.polygon([P(p) for p in r],fill=col[lay],outline=(70,70,70) if lay=='BldA' else None)
+    lc={'RdCL':(230,120,40),'RailCL':(0,0,0),'RailTrCL':(0,0,0),'WL':(60,120,220)}
+    for f in x['features']:
+        if f['layer'] not in lc:continue
+        g=f['geometry'];ls=[g['coordinates']] if g['type']=='LineString' else g['coordinates']
+        for r in ls:
+            if inwin(r): d.line([P(p) for p in r],fill=lc[f['layer']],width=2)
+    for i,f in enumerate(x['features']):
+        if f['layer']!='BldA':continue
+        r=rings(f)[0]
+        if inwin(r):
+            c=(sum(p[0] for p in r)/len(r),sum(p[1] for p in r)/len(r));q=P(c)
+            if 0<q[0]<S and 0<q[1]<S and half<=420: d.text(q,str(i),fill=(190,0,0),font=font,anchor='mm')
+    for a in x.get('anno',[]):
+        q=P((a['x'],a['y']))
+        if 0<q[0]<S and 0<q[1]<S and a['text']: d.text(q,a['text'],fill=(0,0,160),font=font)
+    for m in marks:
+        q=P(m);d.ellipse([q[0]-7,q[1]-7,q[0]+7,q[1]+7],outline=(255,0,255),width=3)
+    d.text((10,10),f'N up {key} center=({cx:.0f},{cy:.0f}) half={half} ~{half*2*40075016*math.cos(math.radians(35.7))/(65536*4096):.0f}m wide',fill=(0,0,0),font=font)
+    im.save(out);print(out)
+a=sys.argv
+if a[1]=='prep':prep(a[2],float(a[3]),float(a[4]))
+elif a[1]=='at':at(a[2],float(a[3]),float(a[4]))
+elif a[1]=='png':
+    marks=[tuple(map(float,m.split(','))) for m in a[7:]]
+    png(a[2],float(a[3]),float(a[4]),float(a[5]),a[6],marks)

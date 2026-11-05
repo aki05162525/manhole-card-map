@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""draw.py <prefix> <lat> <lng> <half_m> <out.png>: N-up PNG window; buildings outlined w/ index labels; roads/water/rail colored"""
+import sys,json,math
+from PIL import Image,ImageDraw,ImageFont
+prefix,lat,lng,half,out=sys.argv[1],float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]),sys.argv[5]
+c=json.load(open(f'data/work/kanto-prefecture/tokyo/south/{prefix}-combined.json'));b=c['baseTile'];n=2**16;ex=c['extent']
+def xy(la,ln):return ((ln+180)/360*n-b['x'])*ex,((1-math.asinh(math.tan(math.radians(la)))/math.pi)/2*n-b['y'])*ex
+scale=40075016.68557849*math.cos(math.radians(lat))/(n*ex)
+cx,cy=xy(lat,lng);h=half/scale;S=1400;k=S/(2*h);px=lambda p:((p[0]-cx+h)*k,(p[1]-cy+h)*k)
+im=Image.new('RGB',(S,S),'white');d=ImageDraw.Draw(im)
+col={'RdCL':'#d07','WL':'#06c','WA':'#9cf','WStrA':'#9cf','RailCL':'#080','Anno':'#888'}
+def rings(g):
+    t,cs=g['type'],g['coordinates']
+    return [r for po in cs for r in po] if t=='MultiPolygon' else cs if t in('Polygon','MultiLineString') else [cs]
+labels=[]
+for i,f in enumerate(c['features']):
+    g=f['geometry'];pts=[p for r in rings(g) for p in r]
+    if not(any(abs(p[0]-cx)<h and abs(p[1]-cy)<h for p in pts) or (min(p[0] for p in pts)<cx<max(p[0] for p in pts) and min(p[1] for p in pts)<cy<max(p[1] for p in pts))):continue
+    if f['layer']=='BldA':
+        for r in rings(g):
+            d.polygon([px(p) for p in r],fill='#dde8ee',outline='#c03' if f['tileBoundaryTouched'] else '#222')
+        r=rings(g)[0];A=abs(sum(a[0]*b_[1]-b_[0]*a[1] for a,b_ in zip(r,r[1:])))/2*scale*scale
+        mx,my=sum(p[0] for p in r)/len(r),sum(p[1] for p in r)/len(r)
+        if A>float(sys.argv[6] if len(sys.argv)>6 else 150):labels.append((px((mx,my)),f"{i}:{A:.0f}"))
+    else:
+        if g['type'] in('Polygon','MultiPolygon'):
+            for r in rings(g):d.polygon([px(p) for p in r],outline=col.get(f['layer'],'#888'))
+        else:
+            for r in rings(g):d.line([px(p) for p in r],fill=col.get(f['layer'],'#888'),width=1)
+for p,t in labels:d.text(p,t,fill='#00a')
+d.text((10,10),f'N up; {half*2:.0f}m window; center {lat},{lng} (window only); labels index:areaM2; red=tile boundary',fill='black')
+d.line([(S-40,70),(S-40,20)],fill='black',width=3);d.text((S-46,5),'N',fill='black')
+im.save(out);print('ok',len(labels),'labels; scale',scale)

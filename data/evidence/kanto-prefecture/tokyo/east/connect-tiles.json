@@ -1,0 +1,210 @@
+{
+ "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+ "searchSeedOnly": [
+  35.710499,
+  139.805817
+ ],
+ "seedBasis": "search window only; never adoption evidence",
+ "tiles": [
+  {
+   "tile": {
+    "z": 16,
+    "x": 58217,
+    "y": 25799
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58217-25799.pbf.gz",
+   "sha256": "787b256c5c596b8be61602e380e6e44d8156ec363dea4cde8bb0bd39052fadbb",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 3,
+    "Anno": 19,
+    "BldA": 946,
+    "RailCL": 5,
+    "RailTrCL": 18,
+    "RdCL": 315,
+    "RdCompt": 6,
+    "RdEdg": 274,
+    "WA": 7,
+    "WL": 9,
+    "WRltLine": 1
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58218,
+    "y": 25799
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58218-25799.pbf.gz",
+   "sha256": "67f5ecad6723c0c2e1688f4e817102e90865d63a72691eb5c30be89828d389e3",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 2,
+    "Anno": 14,
+    "BldA": 467,
+    "RailCL": 1,
+    "RailTrCL": 11,
+    "RdCL": 247,
+    "RdCompt": 4,
+    "RdEdg": 246,
+    "SpcfArea": 3,
+    "WA": 5,
+    "WL": 11,
+    "WRltLine": 1,
+    "WStrL": 6
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58219,
+    "y": 25799
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58219-25799.pbf.gz",
+   "sha256": "4d9ecfa2e980bc3ba43357f2a8a5bb0a34a4e27e17bb72bdfbead3dc6f3e8e86",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 14,
+    "BldA": 1225,
+    "RailCL": 1,
+    "RailTrCL": 2,
+    "RdCL": 237,
+    "RdCompt": 3,
+    "RdEdg": 165,
+    "SpcfArea": 4,
+    "WA": 2,
+    "WL": 2
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58217,
+    "y": 25800
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58217-25800.pbf.gz",
+   "sha256": "ce04fed7d52aad702a239f1346f50dccbf24adede134d51c662c128de6dcb4df",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 3,
+    "Anno": 19,
+    "BldA": 717,
+    "RailCL": 7,
+    "RailTrCL": 14,
+    "RdCL": 210,
+    "RdCompt": 28,
+    "RdEdg": 157,
+    "WA": 3,
+    "WL": 10,
+    "WRltLine": 4
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58218,
+    "y": 25800
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58218-25800.pbf.gz",
+   "sha256": "42b40843c73cafb7967142cc95a2cf7bae69e81c8d479437f375d0c7007399f1",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 27,
+    "BldA": 1230,
+    "RailCL": 4,
+    "RailTrCL": 4,
+    "RdCL": 246,
+    "RdCompt": 19,
+    "RdEdg": 124,
+    "SpcfArea": 1,
+    "WA": 2,
+    "WL": 5
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58219,
+    "y": 25800
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58219-25800.pbf.gz",
+   "sha256": "1eb98cf071a1116804c1404d336a108d67a43f971ffda117eb0af3f160c274e7",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 10,
+    "BldA": 765,
+    "RailCL": 9,
+    "RailTrCL": 31,
+    "RdCL": 228,
+    "RdCompt": 20,
+    "RdEdg": 201,
+    "SpcfArea": 1,
+    "StrctLine": 8,
+    "WA": 7,
+    "WL": 20,
+    "WStrL": 5
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58217,
+    "y": 25801
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58217-25801.pbf.gz",
+   "sha256": "1ca88eb827db911c14620e0ccab4ee9d092faa2d2db99af31bb52cc27daa61a6",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 1,
+    "Anno": 12,
+    "BldA": 1113,
+    "RailCL": 3,
+    "RailTrCL": 2,
+    "RdCL": 240,
+    "RdCompt": 7,
+    "RdEdg": 127,
+    "SpcfArea": 2,
+    "WA": 2,
+    "WL": 3,
+    "WRltLine": 1
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58218,
+    "y": 25801
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58218-25801.pbf.gz",
+   "sha256": "00ace210cbac817c2d64bd417fc1bb89c3cd3bed7dfb18eddcdce3ede5930f6a",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 14,
+    "BldA": 1516,
+    "RdCL": 238,
+    "RdEdg": 128,
+    "SpcfArea": 3,
+    "WA": 1,
+    "WL": 1
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58219,
+    "y": 25801
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/connect-16-58219-25801.pbf.gz",
+   "sha256": "ee0cb415eda9cb777d45017575e6b161d088b0d9fddcd51fac5a34b4a95a8fda",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 13,
+    "BldA": 840,
+    "RdCL": 202,
+    "RdEdg": 167,
+    "WA": 6,
+    "WL": 10
+   }
+  }
+ ]
+}

@@ -1,0 +1,364 @@
+{
+ "schema": 1,
+ "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+ "name": "渋沢×北区 飛鳥山 おみやげ館",
+ "checkedAt": "2026-11-05",
+ "distribution": {
+  "source": "北区マンホールカード案内 sha256 5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649（再取得で旧原本と同一hash）",
+  "fact": "しぶさわくん配布場所。所在地 北区西ケ原2-16（飛鳥山公園内）。ページ更新日2025年9月12日。在庫記載「有」は案内記載で現在在庫の保証ではない。"
+ },
+ "operatorPage": {
+  "url": "https://shibusawakitaku.tokyo/omiyage/",
+  "sha256": "8d86c67cd02866511587099e14c7afccc173542a74983594f15d17d9b3adbf7e",
+  "fact": "住所は「飛鳥山公園管理事務所隣」。台帳住所の「管理事務所内」と表現差があり、公式園内マップも別建物として描く。台帳は変更しない。"
+ },
+ "officialDiagram": {
+  "url": "https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/020/208/mappu.jpg",
+  "sha256": "b3f6949eb0cb589e32184edc1404327d86683bb89549055740793c105ace8190",
+  "pages": "1画像の全域を読解。未読頁なし。",
+  "age": "図中に作成年の記載なし。公開ページ更新日2025-09-12は図単体の作成日ではない。",
+  "orientation": "図右下に方位記号があり、N側はおおむね画面右。3棟fitの回転では画面右の方位が約318度で、方位記号の読取（約342度）と約24度差がある。略図の描画差として記録し、方位記号だけに依存せず棟配列で照合した。",
+  "reading": "赤札「配布場所」と矢印が番号2の橙色棟を指す。灰色の「飛鳥山公園管理事務所」はその隣の別形状として描かれる。カード画像の緯度経度は図右下の蓋設置場所の座標であり使用しない。"
+ },
+ "surroundings": "東の道路（公園東縁）、北西の史料館・博物館・紙の博物館の並び、庭園内の青淵文庫・晩香廬を全域描画と対応。北東の王子駅側と南西の西ヶ原側も図の向きと一致。",
+ "numericFit": {
+  "method": "番号3・1・4の3棟の図上中心と外形重心で相似変換を推定し、他4棟は当てはめに使わず予測。図上座標は手読みで、誤差検定ではなく棟対応の補助。",
+  "rows": [
+   {
+    "name": "3 渋沢史料館",
+    "officialPx": [
+     395,
+     140
+    ],
+    "mappedFeature": 5461,
+    "predicted": [
+     7152.565134740837,
+     5766.39323020136
+    ],
+    "featureCentroid": [
+     7154.74230751954,
+     5770.229149821819
+    ],
+    "residualUnits": 4.4,
+    "nearestFeatures": [
+     [
+      4.4,
+      5461
+     ],
+     [
+      123.6,
+      5460
+     ],
+     [
+      329.3,
+      5454
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "1 北区飛鳥山博物館",
+    "officialPx": [
+     497,
+     175
+    ],
+    "mappedFeature": 5455,
+    "predicted": [
+     6986.17861570959,
+     5383.397692627961
+    ],
+    "featureCentroid": [
+     6980.501813578986,
+     5376.273271572273
+    ],
+    "residualUnits": 9.1,
+    "nearestFeatures": [
+     [
+      9.1,
+      5455
+     ],
+     [
+      205.3,
+      5454
+     ],
+     [
+      283.0,
+      5453
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "4 紙の博物館",
+    "officialPx": [
+     596,
+     178
+    ],
+    "mappedFeature": 5401,
+    "predicted": [
+     6736.155006038065,
+     5092.565423624463
+    ],
+    "featureCentroid": [
+     6739.654635389966,
+     5095.853925059694
+    ],
+    "residualUnits": 4.8,
+    "nearestFeatures": [
+     [
+      4.8,
+      5401
+     ],
+     [
+      185.3,
+      5413
+     ],
+     [
+      220.3,
+      5453
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "5 青淵文庫",
+    "officialPx": [
+     333,
+     227
+    ],
+    "mappedFeature": 5466,
+    "predicted": [
+     7563.209567870432,
+     5716.369122498385
+    ],
+    "featureCentroid": [
+     7543.5095626460625,
+     5741.146086707684
+    ],
+    "residualUnits": 31.7,
+    "nearestFeatures": [
+     [
+      31.7,
+      5466
+     ],
+     [
+      225.7,
+      5465
+     ],
+     [
+      271.1,
+      5464
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "6 晩香廬",
+    "officialPx": [
+     247,
+     213
+    ],
+    "mappedFeature": 5467,
+    "predicted": [
+     7747.831709044094,
+     5998.773559328498
+    ],
+    "featureCentroid": [
+     7763.790179686749,
+     6039.524493129625
+    ],
+    "residualUnits": 43.8,
+    "nearestFeatures": [
+     [
+      43.8,
+      5467
+     ],
+     [
+      215.7,
+      5470
+     ],
+     [
+      326.9,
+      5469
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "飛鳥山公園管理事務所",
+    "officialPx": [
+     213,
+     248
+    ],
+    "mappedFeature": 5470,
+    "predicted": [
+     7936.692636126084,
+     6004.540105049403
+    ],
+    "featureCentroid": [
+     7960.635923918456,
+     6034.266413440883
+    ],
+    "residualUnits": 38.2,
+    "nearestFeatures": [
+     [
+      38.2,
+      5470
+     ],
+     [
+      158.0,
+      5469
+     ],
+     [
+      176.4,
+      5467
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "2 おみやげ館",
+    "officialPx": [
+     218,
+     288
+    ],
+    "mappedFeature": 5469,
+    "predicted": [
+     8037.973857458481,
+     5885.762838424396
+    ],
+    "featureCentroid": [
+     8061.88010284395,
+     5908.175481862385
+    ],
+    "residualUnits": 32.8,
+    "nearestFeatures": [
+     [
+      32.8,
+      5469
+     ],
+     [
+      83.0,
+      5468
+     ],
+     [
+      167.4,
+      5470
+     ]
+    ],
+    "role": "holdout"
+   }
+  ],
+  "scaleUnitsPerPx": 3.8722622973371053,
+  "rotationDeg": -132.4207991314778,
+  "scaleMetersPerPx": 0.46917210512941077
+ },
+ "footprint": {
+  "productVersion": "GSI optimal_bvmap PMTiles; ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\", Last-Modified 2026-09-17; 製品READMEの版記述は親記録で2026-07-01",
+  "featureIndexCombined": 5469,
+  "layer": "BldA",
+  "sourceTile": {
+   "z": 16,
+   "x": 58206,
+   "y": 25791
+  },
+  "sourceFeatureIndex": 743,
+  "featureId": 0,
+  "properties": {
+   "vt_code": 3101,
+   "vt_lvorder": 0
+  },
+  "tileBoundaryTouched": false,
+  "outerBoundaryTouched": false,
+  "vertexCount": 9,
+  "ring": [
+   [
+    8061,
+    5833
+   ],
+   [
+    8109,
+    5848
+   ],
+   [
+    8101,
+    5871
+   ],
+   [
+    8112,
+    5875
+   ],
+   [
+    8077,
+    5981
+   ],
+   [
+    8006,
+    5957
+   ],
+   [
+    8040,
+    5854
+   ],
+   [
+    8053,
+    5858
+   ],
+   [
+    8061,
+    5833
+   ]
+  ],
+  "areaApproxM2": 139.9,
+  "centroidCombined": [
+   8061.88010284395,
+   5908.175481862385
+  ],
+  "manualPointXY": [
+   8062,
+   5908
+  ],
+  "inclusion": {
+   "coordinate": {
+    "lat": 35.7489982,
+    "lng": 139.7404262
+   },
+   "unroundedWithin": true,
+   "roundedWithin": true,
+   "roundedTileXY": [
+    8061.968420416117,
+    5908.044329971075
+   ],
+   "mechanicalChecksPassed": true,
+   "identityApproved": false,
+   "crsApproved": false
+  },
+  "scaleMetersPerUnit": 0.12116227391208832
+ },
+ "alternatives": [
+  {
+   "feature": 5470,
+   "reason": "図の管理事務所に対応。別棟なので代用しない"
+  },
+  {
+   "feature": 5468,
+   "reason": "5469の北に近接する約8㎡の小外形。図の番号2の形状規模に合わない"
+  }
+ ],
+ "notUsed": [
+  "公園全体の地点",
+  "蓋の座標（カード記載 35°45'09.7\"N 139°44'13.7\"E）",
+  "管理事務所外形5470"
+ ],
+ "tileCoverage": "z16 x58205..58207 y25790..25792の9タイル。選択外形はタイル境界・取得外端を跨がない。詳細SVGの範囲は切抜きで取得範囲ではない。",
+ "limits": [
+  "建物同定は略図と外形の対応によるAI判断で現地確認ではない",
+  "図の年代不明",
+  "外形の個別測量日不明",
+  "製品測地系の適用は未承認",
+  "面積はタイル格子からの水平概算で延床面積ではない"
+ ],
+ "decision": "numerical candidate only",
+ "adoptionApproval": false,
+ "manifestApplied": false
+}

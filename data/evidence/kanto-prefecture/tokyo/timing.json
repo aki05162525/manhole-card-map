@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "priorSharedReading": "not measured; not allocated to facilities",
+  "intervals": [
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.053722+00:00",
+      "seconds": 0.017763
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.071495+00:00",
+      "seconds": 0.008733
+    },
+    {
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.080233+00:00",
+      "seconds": 0.01087
+    },
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.091115+00:00",
+      "seconds": 0.010182
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.101310+00:00",
+      "seconds": 0.01005
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.111369+00:00",
+      "seconds": 0.009635
+    },
+    {
+      "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.121008+00:00",
+      "seconds": 0.010636
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.131652+00:00",
+      "seconds": 0.008483
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.140140+00:00",
+      "seconds": 0.008011
+    },
+    {
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.148164+00:00",
+      "seconds": 0.009208
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.157376+00:00",
+      "seconds": 0.008082
+    },
+    {
+      "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.165463+00:00",
+      "seconds": 0.008087
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.173554+00:00",
+      "seconds": 0.007824
+    },
+    {
+      "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.181386+00:00",
+      "seconds": 0.008847
+    },
+    {
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.190238+00:00",
+      "seconds": 0.008174
+    },
+    {
+      "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.198418+00:00",
+      "seconds": 0.009231
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.207654+00:00",
+      "seconds": 0.00915
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.216823+00:00",
+      "seconds": 0.009131
+    },
+    {
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.225962+00:00",
+      "seconds": 0.008072
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.234039+00:00",
+      "seconds": 0.007999
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.242043+00:00",
+      "seconds": 0.007883
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.249933+00:00",
+      "seconds": 0.008049
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.257986+00:00",
+      "seconds": 0.007771
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "activity": "resolve indexed JSON pointers and verify historical raw hashes (machine time; excludes earlier shared reading)",
+      "startedAt": "2026-11-05T14:46:43.265762+00:00",
+      "seconds": 0.002151
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "activity": "official south-building plan and numerical footprint comparison",
+      "startedAt": "2026-11-05T14:47:14.653491+00:00",
+      "seconds": 386.327,
+      "finishedAt": "2026-11-05T14:53:40.980219+00:00",
+      "scope": "wall time including source retrieval, comparison, shared tools/CRS work; no allocation to other IDs"
+    }
+  ]
+}

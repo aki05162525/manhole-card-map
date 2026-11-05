@@ -1,0 +1,383 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+  "checkedAt": "2026-11-05",
+  "supplementTo": "data/evidence/kanto-prefecture/tokyo/adachi-comparison.json",
+  "supplementToSHA256": "0690fc96224fefd870660a458efffea3e7dc400558fc7f4d70e21df859c81c8f",
+  "existingCandidate": {
+    "lat": 35.7744893,
+    "lng": 139.8045243
+  },
+  "reproducedCoordinate": {
+    "lat": 35.7744893,
+    "lng": 139.8045243
+  },
+  "coordinateChanged": false,
+  "adoptionApproval": false,
+  "manifestApplied": false,
+  "identification": [
+    "区公式「本庁舎各階ご案内」r8zenkanannai20260401.pdf(全1頁、作成2026-04-02)で南館4階に「一般財団法人 足立区観光交流協会」。既存記録の旧PDF 404を解消。",
+    "区議会資料「本庁舎改修基本計画(案)」令和元年11月 p.5(26頁中)：配置図にN矢印(上向き)、北館・中央館・南館を明示。南館は中央館の南に接続し、S造地下3階地上14階、延床28,192.06㎡、1996年竣工。",
+    "区公式1F案内(r8kakukaiannnai1f.pdf)：南館に南出入口、中央館と接続。方位記号は左向きで別図の北上と向きが異なる(図ごとに回転)。",
+    "区公式アクセス図adachi-kuyakusyo-map.jpg(略図、N矢印上向き、差込図に北館・中央館・南館)：南館は中央館の南、国道4号は西。",
+    "航空写真重ね合わせ(detail/a-photo.png)：連続外形6761の南端張出に塔屋ヘリポートが対応。14階建の南館の屋上形状として整合。",
+    "区公式施設ページの地図リンク q=35.774942,139.804727 も同一連続外形内(中央部、(6856,6644))。庁舎全体の代表点で南館点ではないため候補に転用しない。"
+  ],
+  "datumCheck": {
+    "result": "製品の明示宣言は依然未確認",
+    "added": [
+      "pmtiles header/metadataにCRS項目なし",
+      "README sha一致(41a7a4d2…)、版は26-07",
+      "旧日本測地系なら約450mずれるが、区公式WGS84系リンク点と候補の差は同一外形内で、棟を外すズレはない(実用上の棟同定への影響の範囲を示すもので、測地系の承認ではない)",
+      "連続外形の端までの余裕17.99m"
+    ]
+  },
+  "renovation": "令和5年度から本庁舎改修中。全館案内で北館に工事中表示あり。南館4階の配置は2026-04時点の案内。工事の配布影響は未確認。",
+  "limits": [
+    "外形は3棟接続の1ポリゴンで南館単独の境界は復元していない",
+    "基本計画は2019年案で現況と同一とは限らない。p.5以外は読解していない(p.23はクレーン検討の配置図でテキストのみ確認)",
+    "自治体原本全文はdata/workのみ"
+  ],
+  "inheritedHashCheck": "協会案内archives/56626は台帳基準と同一hash 73124e85…",
+  "sources": [
+    {
+      "url": "https://www.city.adachi.tokyo.jp/documents/9017/r8zenkanannai20260401.pdf",
+      "sha256": "a6aa49799a8bc4b13462b01ec4d2c9b77e1e8a372f07960eef2622a683d47cca",
+      "fetchedAt": "2026-11-05T15:46:13.922223+00:00",
+      "lastModified": "Tue, 21 Jul 2026 00:30:05 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/a6aa49799a8bc4b13462b01ec4d2c9b77e1e8a372f07960eef2622a683d47cca.raw"
+    },
+    {
+      "url": "https://www.city.adachi.tokyo.jp/documents/9017/r8kakukaiannnai1f.pdf",
+      "sha256": "e6cebf14c3b113c5fffc112eee900f0ba5ac1dcd67361701d1f90f0c19f045d5",
+      "fetchedAt": "2026-11-05T15:46:14.139462+00:00",
+      "lastModified": "Tue, 21 Jul 2026 00:30:04 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e6cebf14c3b113c5fffc112eee900f0ba5ac1dcd67361701d1f90f0c19f045d5.raw"
+    },
+    {
+      "url": "https://www.gikai-adachi.jp/voices/GikaiDoc/attach/Nittei/soumu/pdf/20191111houkoku4.pdf",
+      "sha256": "b853d777de4ce47a164d65543a7f68b25b305ee52d6b5c4e7dd984cb1c583f3c",
+      "fetchedAt": "2026-11-05T15:46:01.154899+00:00",
+      "lastModified": "Thu, 26 Dec 2019 01:41:44 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/b853d777de4ce47a164d65543a7f68b25b305ee52d6b5c4e7dd984cb1c583f3c.raw"
+    },
+    {
+      "url": "https://www.city.adachi.tokyo.jp/chosha/shisetsu/kuyakusho/001.html",
+      "sha256": "d88cf6d9a1b45795e2ddc79b8982aff57ff26489a93144431a2dccedf95dcb3e",
+      "fetchedAt": "2026-11-05T15:46:00.840790+00:00",
+      "lastModified": "Sun, 01 Nov 2026 15:02:51 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/d88cf6d9a1b45795e2ddc79b8982aff57ff26489a93144431a2dccedf95dcb3e.raw"
+    },
+    {
+      "url": "https://www.city.adachi.tokyo.jp/images/46088/adachi-kuyakusyo-map.jpg",
+      "sha256": "fd2e8313a4c450e95c73211defe020a1d277d81162871e3d050efd142357f74e",
+      "fetchedAt": "2026-11-05T15:46:14.251158+00:00",
+      "lastModified": "Mon, 01 Jun 2026 06:30:04 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/fd2e8313a4c450e95c73211defe020a1d277d81162871e3d050efd142357f74e.raw"
+    },
+    {
+      "url": "https://www.gikai-adachi.jp/image/kuyakusho_map.jpg",
+      "sha256": "f001d30c9320c0943df5a32dbb68ad8583e8eb0f38058e6d4849114ed7e303b8",
+      "fetchedAt": "2026-11-05T15:45:26.224205+00:00",
+      "lastModified": "Fri, 07 Jun 2024 08:24:22 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/f001d30c9320c0943df5a32dbb68ad8583e8eb0f38058e6d4849114ed7e303b8.raw"
+    },
+    {
+      "url": "https://www.gikai-adachi.jp/image/mitorizu.gif",
+      "sha256": "2949b259fbe8a9e336898877913d52eb53372fe569523dea3fe49a9f3c3e866e",
+      "fetchedAt": "2026-11-05T15:45:27.290625+00:00",
+      "lastModified": "Thu, 26 Dec 2019 00:29:14 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/2949b259fbe8a9e336898877913d52eb53372fe569523dea3fe49a9f3c3e866e.raw"
+    },
+    {
+      "url": "https://www.adachikanko.net/news/archives/56626",
+      "sha256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a",
+      "fetchedAt": "2026-11-05T15:45:27.440461+00:00",
+      "lastModified": "Thu, 05 Nov 2026 02:25:03 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a.raw"
+    }
+  ],
+  "numeric": {
+    "baseTile": {
+      "z": 16,
+      "x": 58217,
+      "y": 25784
+    },
+    "bounds": [
+      0,
+      0,
+      12288,
+      12288
+    ],
+    "featureCounts": {
+      "BldA": 9630,
+      "RailCL": 7,
+      "RdCL": 2205,
+      "WA": 8
+    },
+    "pointTileXY": [
+      6705,
+      7060
+    ],
+    "features": [
+      {
+        "combinedIndex": 6761,
+        "sourceTile": {
+          "z": 16,
+          "x": 58218,
+          "y": 25785
+        },
+        "sourceFeatureIndex": 820,
+        "vt_code": 3102,
+        "idField": 0,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false,
+        "ring": [
+          [
+            6820,
+            5974
+          ],
+          [
+            6820,
+            6010
+          ],
+          [
+            6849,
+            6010
+          ],
+          [
+            6849,
+            6033
+          ],
+          [
+            6900,
+            6034
+          ],
+          [
+            6901,
+            6325
+          ],
+          [
+            6873,
+            6325
+          ],
+          [
+            6873,
+            6381
+          ],
+          [
+            6850,
+            6380
+          ],
+          [
+            6849,
+            6397
+          ],
+          [
+            6740,
+            6399
+          ],
+          [
+            6758,
+            6480
+          ],
+          [
+            6893,
+            6497
+          ],
+          [
+            7028,
+            6526
+          ],
+          [
+            7134,
+            6557
+          ],
+          [
+            7183,
+            6576
+          ],
+          [
+            7151,
+            6706
+          ],
+          [
+            7151,
+            6946
+          ],
+          [
+            6866,
+            6946
+          ],
+          [
+            6866,
+            7155
+          ],
+          [
+            6841,
+            7155
+          ],
+          [
+            6841,
+            7208
+          ],
+          [
+            6571,
+            7209
+          ],
+          [
+            6572,
+            7159
+          ],
+          [
+            6546,
+            7159
+          ],
+          [
+            6546,
+            6948
+          ],
+          [
+            6493,
+            6948
+          ],
+          [
+            6462,
+            6800
+          ],
+          [
+            6254,
+            6800
+          ],
+          [
+            6254,
+            6577
+          ],
+          [
+            6446,
+            6577
+          ],
+          [
+            6461,
+            6574
+          ],
+          [
+            6488,
+            6557
+          ],
+          [
+            6500,
+            6540
+          ],
+          [
+            6507,
+            6506
+          ],
+          [
+            6507,
+            6486
+          ],
+          [
+            6645,
+            6479
+          ],
+          [
+            6731,
+            6478
+          ],
+          [
+            6715,
+            6400
+          ],
+          [
+            6692,
+            6400
+          ],
+          [
+            6690,
+            6386
+          ],
+          [
+            6647,
+            6387
+          ],
+          [
+            6645,
+            6298
+          ],
+          [
+            6642,
+            6274
+          ],
+          [
+            6633,
+            6258
+          ],
+          [
+            6618,
+            6245
+          ],
+          [
+            6604,
+            6239
+          ],
+          [
+            6452,
+            6239
+          ],
+          [
+            6451,
+            6205
+          ],
+          [
+            6425,
+            6205
+          ],
+          [
+            6420,
+            6034
+          ],
+          [
+            6442,
+            6034
+          ],
+          [
+            6442,
+            6000
+          ],
+          [
+            6480,
+            6000
+          ],
+          [
+            6480,
+            5974
+          ],
+          [
+            6820,
+            5974
+          ]
+        ],
+        "approxAreaM2": 8685.0,
+        "marginToEdgeM": 17.99,
+        "check": {
+          "coordinate": {
+            "lat": 35.7744893,
+            "lng": 139.8045243
+          },
+          "unroundedWithin": true,
+          "roundedWithin": true,
+          "roundedTileXY": [
+            6704.9759266376495,
+            7059.996702581644
+          ],
+          "mechanicalChecksPassed": true,
+          "identityApproved": false,
+          "crsApproved": false
+        }
+      }
+    ],
+    "alsoContainingOtherBldA": [],
+    "metersPerUnit": 0.1211
+  }
+}

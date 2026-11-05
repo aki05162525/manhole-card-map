@@ -1,0 +1,223 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "searchSeedOnly": [
+    35.6855,
+    139.769
+  ],
+  "seedBasis": "researcher approximate search window around Otemachi 2-6; not adoption evidence",
+  "rangeEtags": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\""
+  ],
+  "rangeStatuses": [
+    "acquired",
+    "cached"
+  ],
+  "rangeFailures": 0,
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58211,
+        "y": 25804
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58211-25804.pbf.gz",
+      "sha256": "8b4fd09e0814c5f1bcbaca47b13dc3b1cdf026c492dbcb049df1fb4ae543ab4e",
+      "bytes": 17563,
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 2,
+        "Anno": 15,
+        "BldA": 518,
+        "Cntr": 3,
+        "RailCL": 6,
+        "RailTrCL": 12,
+        "RdCL": 281,
+        "RdCompt": 8,
+        "RdEdg": 183,
+        "WA": 2,
+        "WL": 14
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58212,
+        "y": 25804
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25804.pbf.gz",
+      "sha256": "bec3ac8e70f1a310e8c3d30ab3f05a93cf1843c57df363037b09f3eb981178f0",
+      "bytes": 23560,
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 2,
+        "Anno": 18,
+        "BldA": 927,
+        "Cntr": 2,
+        "RailCL": 12,
+        "RailTrCL": 32,
+        "RdCL": 315,
+        "RdEdg": 190,
+        "SpcfArea": 2,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58213,
+        "y": 25804
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58213-25804.pbf.gz",
+      "sha256": "9fc851226f4691924d45f6080993578fdbe07c3cbb36bc90814b71c41fc24a60",
+      "bytes": 22196,
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 5,
+        "Anno": 28,
+        "BldA": 800,
+        "RailCL": 7,
+        "RailTrCL": 8,
+        "RdCL": 311,
+        "RdCompt": 5,
+        "RdEdg": 209
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58211,
+        "y": 25805
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58211-25805.pbf.gz",
+      "sha256": "4cd2d3781fd526571db097187cea0334832af7a1a33db8af00e4e05cd2050a92",
+      "bytes": 6707,
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 1,
+        "Anno": 25,
+        "BldA": 68,
+        "RailCL": 21,
+        "RailTrCL": 42,
+        "RdCL": 67,
+        "RdCompt": 24,
+        "RdEdg": 65,
+        "WA": 2,
+        "WL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58212,
+        "y": 25805
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25805.pbf.gz",
+      "sha256": "8ab56a29f3c3168f4d2c430990c64d5604bcf03813e70986dc988280b034c490",
+      "bytes": 10072,
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 3,
+        "Anno": 20,
+        "BldA": 114,
+        "RailCL": 10,
+        "RailTrCL": 52,
+        "RdCL": 112,
+        "RdCompt": 26,
+        "RdEdg": 127,
+        "SpcfArea": 4,
+        "WA": 2,
+        "WL": 17
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58213,
+        "y": 25805
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58213-25805.pbf.gz",
+      "sha256": "030f6b0fc3fbe0a1adf26c06a3af1d1a0bb48974e9d3220a4d9b23cea7f6770a",
+      "bytes": 17164,
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 17,
+        "BldA": 558,
+        "RailCL": 6,
+        "RailTrCL": 8,
+        "RdCL": 255,
+        "RdCompt": 9,
+        "RdEdg": 163,
+        "WA": 2,
+        "WL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58211,
+        "y": 25806
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58211-25806.pbf.gz",
+      "sha256": "f1b56631831d6d9ad57353e28f10f5f30463b11218da4f43929bf20b27bc6f64",
+      "bytes": 8089,
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 17,
+        "BldA": 90,
+        "RailCL": 35,
+        "RailTrCL": 103,
+        "RdCL": 59,
+        "RdCompt": 18,
+        "RdEdg": 41,
+        "StrctArea": 2,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58212,
+        "y": 25806
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58212-25806.pbf.gz",
+      "sha256": "dd1b57a7730ff713beed37cec3f53e1d8e854e4f4051de2d5e786800ab244e89",
+      "bytes": 13146,
+      "layers": {
+        "AdmArea": 2,
+        "Anno": 20,
+        "BldA": 333,
+        "RailCL": 9,
+        "RailTrCL": 22,
+        "RdCL": 166,
+        "RdCompt": 50,
+        "RdEdg": 94,
+        "WA": 1,
+        "WL": 3
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58213,
+        "y": 25806
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/south/cadan-16-58213-25806.pbf.gz",
+      "sha256": "3252c276621361ef4a3587af4a2dd8401486d71f868d81e0924674c23e29ff2c",
+      "bytes": 14759,
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 26,
+        "BldA": 310,
+        "RailCL": 12,
+        "RailTrCL": 17,
+        "RdCL": 268,
+        "RdCompt": 26,
+        "RdEdg": 196,
+        "WA": 3,
+        "WL": 6
+      }
+    }
+  ]
+}

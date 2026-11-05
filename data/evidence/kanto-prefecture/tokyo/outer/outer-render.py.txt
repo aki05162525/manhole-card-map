@@ -1,0 +1,53 @@
+# usage: python outer-render.py.txt <key> <lat> <lng> <halfWidthMeters> <outPng> [labelMinArea]; north-up review window of all acquired features. Window != acquisition range.
+import sys,json,math
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont
+key,lat,lng,hw,out=sys.argv[1],float(sys.argv[2]),float(sys.argv[3]),float(sys.argv[4]),sys.argv[5]
+minA=float(sys.argv[6]) if len(sys.argv)>6 else 30
+x=json.load(open(f'data/work/kanto-prefecture/tokyo/outer/{key}-combined.json'));b=x['baseTile'];ext=x['extent'];n=2**b['z']
+def to_xy(la,ln):
+    return (((ln+180)/360*n-b['x'])*ext,((1-math.asinh(math.tan(math.radians(la)))/math.pi)/2*n-b['y'])*ext)
+def to_ll(px,py):
+    return (math.degrees(math.atan(math.sinh(math.pi*(1-2*(b['y']+py/ext)/n)))),(b['x']+px/ext)/n*360-180)
+scale=40075016.68557849*math.cos(math.radians(lat))/(n*ext) # m per unit
+cx,cy=to_xy(lat,lng);hu=hw/scale;S=1400
+tr=lambda p:((p[0]-cx+hu)/(2*hu)*S,(p[1]-cy+hu)/(2*hu)*S)
+im=Image.new('RGB',(S,S),'white');d=ImageDraw.Draw(im)
+try: font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',15)
+except Exception: font=ImageFont.load_default()
+area=lambda r:abs(sum(a[0]*c[1]-c[0]*a[1] for a,c in zip(r,r[1:])))/2
+col={'WA':'#b9dcf5','WL':'#7ab8e6','RdCL':'#c98a2b','RailCL':'#444444','BldA':'#dbe7ed'}
+labels=[]
+for order in ('WA','WL','RdCL','RailCL','BldA'):
+  for i,f in enumerate(x['features']):
+    if f['layer']!=order: continue
+    g=f['geometry'];k=g['type'];c=g['coordinates']
+    if k=='Polygon': polys=[c]
+    elif k=='MultiPolygon': polys=c
+    elif k=='LineString': lines=[c];polys=None
+    else: lines=c;polys=None
+    if polys is not None:
+        for poly in polys:
+            pts=[tr(p) for p in poly[0]]
+            if all(a[0]<0 or a[0]>S or a[1]<0 or a[1]>S for a in pts): continue
+            d.polygon(pts,fill=col[order] if order=='WA' else '#dbe7ed' ,outline='#2255aa' if order=='BldA' else None)
+            for hole in poly[1:]:
+                d.polygon([tr(p) for p in hole],fill='white',outline='#2255aa')
+            if order=='BldA':
+                A=area(poly[0])*scale*scale
+                if A>=minA:
+                    mx=sum(p[0] for p in pts[:-1])/max(1,len(pts)-1);my=sum(p[1] for p in pts[:-1])/max(1,len(pts)-1)
+                    if 0<=mx<=S and 0<=my<=S: labels.append((mx,my,str(i),A))
+    else:
+        for l in lines:
+            d.line([tr(p) for p in l],fill=col[order],width=(3 if order=='RailCL' else 2))
+for mx,my,t,A in labels: d.text((mx-10,my-8),t,fill='#c00000',font=font)
+# scale bar + N
+L=50/scale/(2*hu)*S;d.line((20,S-20,20+L,S-20),fill='black',width=4);d.text((20,S-45),'50 m',fill='black',font=font);d.text((S-60,15),'N up',fill='black',font=font)
+# lat/lng ticks
+d.text((20,15),f'center {lat:.6f},{lng:.6f} halfwidth {hw}m; red=feature index in combined; acquisition range differs',fill='black',font=font)
+im.save(out)
+import csv
+print('index area_m2 touchesTileEdge props')
+for mx,my,t,A in sorted(labels,key=lambda r:-r[3])[:40]:
+    f=x['features'][int(t)];print(t,round(A,1),f['tileBoundaryTouched'],f['outerBoundaryTouched'],f['sourceTile'],f['sourceFeatureIndex'],f.get('properties'))

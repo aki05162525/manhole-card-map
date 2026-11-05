@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "priorRunArtifacts": "RdCL-tiles.json / RdCL-range-retrievals.json は前回実行の誤キー残存記録。同一hash確認後に重複PBF 8件を除去し、内容が別のRdCL-full.svgも派生物として除去。どの比較にも不使用",
+  "annoLimit": "east-vec-command のAnno抽出キーが誤り(knj)で data/work 側の注記文字列はNull。保存PBFのvt_textを旧三河島で直接読み、結果に影響なし",
+  "zshNote": "一時的な引数分割ミスの失敗レコード1件がretrievals.jsonに残る(HTTP403、URL連結)。再取得済み"
+}

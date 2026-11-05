@@ -1,0 +1,112 @@
+import json,hashlib,sys,re
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import new_observation,validate_observation
+E=Path('data/evidence/kanto-prefecture/tokyo/south');N=Path('data/national/kanto-prefecture/tokyo/south');N.mkdir(parents=True,exist_ok=True)
+def write(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+rowsha=lambda x:hashlib.sha256(json.dumps(x,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+inv=json.load(open('data/national/kanto-prefecture/tokyo/inventory.json'))
+rows={r['facilityId']:r for i,r in enumerate(inv['rows']) if i in(6,11,13,15,19)}
+PRODUCT='GSI optimal_bvmap PMTiles; product README 2026-07-01 per parent record (hash 41a7a4d2…, not re-fetched by south); Range ETag "dfa81a9cba11aad28247d63a2d8361ec-2015", Last-Modified 2026-09-17, identical to parent Tokyo ranges'
+CRS=dict(status='insufficient',product='optimal_bvmap-v1 PMTiles',evidence=['XYZ/Web Mercator 逆算のみ。一般タイル仕様のJGD2011記述と当該PMTiles版の明示的な測地系宣言を同一視しない。親の共通確認(adachi-comparison.json crs節)を継承し、南群で追加根拠なし。'])
+LIC=dict(status='insufficient',evidence=['親のGSI規約記録(PDL1.0・出典/加工表示・試験公開で基本測量成果ではない)を継承。南群で本家規約を再取得していない。自治体・運営者のHTML/PDF/画像全文はdata/workのみ。Google My Maps/Mapsの点は同定の補助に限り座標源にしない。OSMは照合のみで座標源にしない。'])
+F={
+'facility:kanto-south-8eb0c39e8de39e13a0bf':dict(prefix='isle',key='isle',
+ status='numerical-candidate-unapproved',
+ distribution='公式お知らせ archives/489 (投稿2026-11-01/更新2026-11-02) に受付配布・時間・休館を確認。在庫保証なし。「受付」の星印図を配布位置として読解。',
+ sources=['isle-card.html','isle-about.html','isle-guidemap.pdf','raw/bdf118f3…(ガイド受付場所-1.jpg, 1000x918)'],
+ pages=(1,[1]),pageNote='GUIDEMAP-2-20221024.pdf 全1頁を読了。受付場所JPEGは全面読了。about掲載写真10枚はURLのみ確認で未読(棟判定に不使用)。',
+ age='案内図PDF作成 2022-10-24。受付画像はuploads/2022/10。製品個別建物の測量日は不明。',
+ orient='PDF下図とJPEGの方位記号は十字+旗が右向き＝図の右が北。文字位置(京浜運河が東/図下、品川ふ頭橋が南/図左)と道路方向で整合。上図に別途の方位記号なし。',
+ surround='図の京浜運河＝WA/WLの東側水涯、モノレール南口＝RdCL/RailCLと帯状棟1488の南端、海岸通り＝西の斜行道路、天王洲通り/品川ふ頭橋＝南の東西道路、東品川2-3開放広場＝棟南側の空地(小構造物を含む)。',
+ identity='青線外形1493+1636。公式図を90度回転した向きで、西辺の階段状突出・北西の面取り・南北長辺が一致。受付の張出は西辺中央の突出。棟は一つで隣接する別棟なし。',
+ footprint='z16/58208/25819 BldA配列index156(2191.8㎡)と 58209/25819 index5(281.3㎡)。タイル境界 x=58209 で切断された同一棟の断片として連結判断。計2473.1㎡(概算水平面積)。bbox 44.8×65.9m(主断片)。全棟が取得9タイル内。外端接触なし。',
+ mismatch='公式図は東側下辺が全幅の帯状に見えるが、GSIは東側中央のみ張出(1636)。図の模式化か改修差かは未確定。点はこの差の影響がない主断片中央(境界まで14.0m)。',
+ window='取得 z16 x58207..58209 y25818..25820 全BldA/RdCL/WL/WA/RailCL等を isle-full.svg に描画。detail PNGは取得範囲ではなく切抜。',
+ nextAction='親の独立レビュー。東側張出の差と製品CRS適用を確認。在庫は現在保証しない。',stop='製品CRS適用判断・独立レビュー未完了'),
+'facility:kanto-south-790a0057852ab669a5b8':dict(prefix='cadan',key='cadan',
+ status='numerical-candidate-unapproved',
+ distribution='東京都下水道局 designmanhole/togesui にCADAN大手町・銭瓶町ビルディング1階ぜにがめプレイス・12:00-19:00を確認。下水道局2022-07-06資料が同所でのカード配布予定を明記。cadan.org root と仮サイトは展覧会 2026-12-05 までと銭瓶町ビル1階を示す。',
+ sources=['gesui-card.html','gesui-press20220413.pdf','gesui-press20220706.pdf','tokyo-torch-tosei.pdf','cadan-root.html','cadan-temp.html','tecture-zenikame.html'],
+ pages=(1,[1]),pageNote='tokyo-torch-tosei.pdf 全1頁を読了。gesui-press20220413・20220706 は各全2頁の文字層のみ確認し頁画像は未読(配置図は tosei 版で読解。同一図かは文字位置からの推定)。tecture記事は建物名の補助で本文全読せず。',
+ age='竣工時配置図は2022年公表(銭瓶町ビル2022-03竣工)。B棟は当時工事予定で、GSI 3401 等は南側の現況と配置図の竣工形が一致しない。',
+ orient='着工時配置図の方位記号は上から左に約15度傾く。GSIの街区長辺の傾き約18度と整合。竣工時配置図単独には方位記号なし(同一街区の連続図として適用)。',
+ surround='常盤橋公園と区道104号線が北、日本橋川が北東、街区内南にB棟区画。GSI: 北の曲線道路、北東の水涯WL、公園構造物3405、南の大型棟3401と3399の間に細い隙間。',
+ identity='BldA 3399。D棟(銭瓶町ビルディング/下水ポンプ所)の平面=西角が丸く北東辺が面取りされた形・南辺が直線を一致。公式写真の曲面外壁とも矛盾しない。延床約30,000㎡/9階に対し外形2922㎡は同オーダー。',
+ footprint='z16/58212/25805 BldA配列index44、2922.2㎡(概算水平面積)。bbox 67.1×66.7m。タイル境界・取得外端を跨がない。',
+ mismatch='cadan.org自身が2026年10月20日頃の改ざんを告知し旧URLは500。告知本文の仮サイトは補助読解のみで、配布・棟同定は東京都下水道局原本に依拠。入居区画は室内図なしのため棟代表点までで止める。',
+ window='取得 z16 x58211..58213 y25804..25806 を cadan-full.svg に全描画。',
+ nextAction='親の独立レビューと製品CRS適用確認。',stop='製品CRS適用判断・独立レビュー未完了'),
+'facility:kanto-south-23883d07b60ef5d7bb0d':dict(prefix='niji',key='niji',
+ status='numerical-candidate-unapproved',
+ distribution='東京都下水道局 designmanhole/togesui に配布場所記載。館公式access/ に所在・開館時間・休館を確認。トップの通知(2026-07-21〜11-11の5F館内トイレ工事)は館の閉館を意味せず5F在館を補強。在庫保証なし。',
+ sources=['niji-access.html','niji-root.html','niji-parking.png','niji-summary.jpg','niji-dantai.pdf(p7)','niji-toilet.png','gesui-card.html','gesui-ariake-c.pdf','gesui-tokyo2025-17.pdf','gesui-tanbou006.pdf','koto-ariake-sc.html'],
+ pages=(7,[1,2,7]),pageNote='dantaiannai.pdf 全7頁中 p1,2,7 を読解。p3〜6は団体プログラムの文字層検索のみで未読。gesui-ariake-c.pdf 全8頁は事業所名・所在地節と検索語のみで未読部あり。',
+ age='parking.png/summary_img.jpgは年代表記なし、dantaiannai.pdf作成2025-04-01。',
+ orient='parking.pngの羅針盤は上やや右を北とする。図の首都高/国道357号の傾きとGSI道路の傾きが整合(図は約25度回転の模式図)。',
+ surround='図: 東雲運河・のぞみ橋が北西、首都高11号線が北、国道357号が南、有明テニスの森が東、有明清掃工場が南。GSI: 北西水涯と橋、南の大型棟655/493(清掃工場)、東の街路と対応。',
+ identity='BldA 480の楕円外形4758.3㎡。公式access掲載写真の卵形建物、parking.pngの楕円「体育館棟(5F)」と一致。北側の曲線棟478は「プール棟」(写真右のガラスドームと矛盾なし)に対応すると判断。',
+ footprint='z16/58214/25817 BldA配列index37、4758.3㎡。bbox 96.9×78.6m。タイル境界・取得外端を跨がない。隣接481/628はx境界で分割の別外形。',
+ mismatch='写真は上部が張り出す形で、外形は屋根投影に近い可能性。5階案内は図の括弧書き「(5F)」に依拠。下水道局公式の館内平面と棟の対応図は今回未発見。',
+ window='取得 z16 x58213..58215 y25816..25818 を niji-full.svg に全描画。',
+ nextAction='親の独立レビューと製品CRS適用確認。旧TLS/429は取得不能理由にしない(下記)。',stop='製品CRS適用判断・独立レビュー未完了',
+ tls='サーバーが中間証明書を送らず標準検証は失敗(curl/python/WebFetch)。leaf AIAのGlobalSign GCC R46 DV TLS CA 2025を取得し、システムCA束を基点に openssl verify OK を確認して検証付きで取得。検証は無効化していない。'),
+'facility:kanto-south-c2c0b9a15a98a189678c':dict(prefix='oi',key='oi',
+ status='numerical-candidate-unapproved',
+ distribution='品川区 デザインマンホール頁(更新2026-10-27)に第1弾配布場所・午前9:30〜午後5時・日祝年末年始休・在庫十分を確認。協会 tourist-information に しなかんPLAZA 同住所を確認。',
+ sources=['shinagawa-ward-card.html','shinagawa-tourist-info.html','shinagawa-pdf1.pdf','shinagawa-pdf2.pdf','shinagawa-mymaps.kml','shinagawa-photo1.png','shakyo-top.html','shakyo-map.html','shakyo-about2.html'],
+ pages=(2,[1,2]),pageNote='西口道案内PDF 全2頁と中央口PDF 全2頁の文字層を読了。西口PDFの頁画像と写真6枚を確認し、最後の到着写真は原解像度で確認。中央口PDFの写真画像は未読。',
+ age='道案内PDF作成2019-12-27、協会写真 uploads/2024/05。社協のgoo.gl地点と協会My Mapsの作成時期は不明。',
+ orient='到着写真は南向き撮影(横断歩道を渡り南側歩道の店舗へ到達)という道順からの推定。公式の北記号付き図はない。方位は道順の推定として扱う。',
+ surround='西口からの線路沿い東西道路の南側、建物右手(西)に南北街路。5756の西辺は南北道路に面し、北辺が東西道路に面する。',
+ identity='BldA 5756。協会公式PDFは「社会福祉協議会の標識…同じ建物の1階」、到着写真に社協としながわ観光協会の看板が同一壁面。社協公式の地図リンク(大井1丁目共同ビル)と協会My Mapsピンの2点はどちらも5756のみに内包。隣接5762は別外形。',
+ footprint='z16/58205/25823 BldA配列index135、459.0㎡。bbox 25.6×28.5m。タイル境界・取得外端を跨がない。',
+ mismatch='Google由来の2点は同定補助で座標源にしない。棟は隣接外形があるため、2点と写真・道順の整合に依拠する。建物名表示の個別確認は未実施。西口PDFの吉野家・アオキ等は2019年時点。',
+ window='取得 z16 x58204..58206 y25822..25824 を oi-full.svg に全描画。',
+ nextAction='親の独立レビューと製品CRS適用確認。Google点の利用条件を採用根拠に含めないこと。',stop='製品CRS適用判断・独立レビュー未完了'),
+'facility:kanto-south-dfd35978e81cbcc80123':dict(prefix='reku2',key='reku',
+ status='footprint-absent-in-compared-products; plan-derived reference only; human question open',
+ distribution='江戸川区 manhole頁で総合レクリエーション公園サービスセンター窓口・ファミリースポーツ広場内・8:30-17:15を確認。区の2025-01-25発表が同広場内のサービスセンターを新棟(円形屋根・屋内ひろば)と明記。運営サイトも同住所。',
+ sources=['edogawa-card.html','edogawa-sports.html','edogawa-reku-guide.html','edogawa-reku.csv','edogawa-sekkei.pdf','edogawa-1220.pdf','edogawa-press-0125.html','edogawa-famizupo2.jpg','recreation-family-map.html','recreation-access.html','recreation-mymap1.kml','recreation-mymap2.kml'],
+ pages=(17,[5,7,11,13,16]),pageNote='sekkeikoujisetumeikai.pdf 全17頁中 p5,7,11,13,16を読解、残りは検索語0件で未読。1220puresu.pdf 全5頁はp3読解と検索語のみ。kihonkousou_1.pdf 全23頁、bessi2.pdf 全34頁は計画資料で検索語のみ、未読頁あり。',
+ age='平面図は2023-10-24作成PDFの設計案。工期2024-04〜12、2025-01-25開園。竣工図は未取得で設計と現況の差は未確認。',
+ orient='p11方位記号は真上だが、街区長辺はp7地図・GSI・空中写真で約5〜6度傾く。方位は採用せず街区角で対応付け。p11縮尺棒は街区幅295mを示し空中写真238.8mと不一致のため不採用。',
+ surround='街区(北:区道404-0340、南:区道404-0350、西:南北街路、東:環七通り)、東寄りの既存高圧線鉄塔。旧配置(p7)の円形施設とGSI BldA 3532・3562が一致。',
+ identity='設計図 p11 の西端「屋内ひろば・管理事務所」が現サービスセンター新棟と判断(区発表の円形屋根・屋内ひろばと図の円形外周が一致、公式写真あり)。ただし公式の棟名対応は「管理棟(屋内ひろば)」→サービスセンターの推論。',
+ footprint='数値外形なし。z16 2026-07-01製品のBldAは街区西端の該当範囲に小片3311(19㎡)/3312(21㎡)のみで、写像した壁箱内に頂点0。GSI seamlessphoto z18・ort とも旧配置(テニスコート・円形施設)で新棟が写らない。OSM map APIの当該範囲にも該当buildingなし。現製品では「新棟未収録」を実比較で確認。',
+ mismatch='旧棟3562/3532を代用しない(区設計で移行、東側は相撲場等の別施設の可能性)。Edogawa公式地図リンクと p7 地図の数値は旧日本測地系と仮定すると本街区に一致するが仮定は未検証で数値は不使用。promo頁は03-3675-5030を「富士公園サービスセンター」と記載し他頁と異なる(旧表記の可能性、未確定)。',
+ window='最初の窓 reku(x58230..58232 y25813..25815)は街区が入らず、公式地図リンク数値の測地系差を疑って reku2(x58229..58231 y25812..25814)へ移動。両方 full.svg/tiles.json を保持。',
+ nextAction='人手一問で現況棟の代表点を確定(humanQuestions参照)。または新版外形/空中写真の更新後に p11 との照合を再実施。設計点は検証点残差約10m・棟半幅11〜15mのため採用候補にしない。',stop='数値外形・現況写真に新棟未収録'),
+}
+coords={};bindings=[];updates=[];approved=[];obs=[]
+for fid,f in F.items():
+    r=rows[fid];o=new_observation(fid,['official originals read','official figure read','numeric footprint comparison'])
+    o['performedMethods']=['official originals read','official figure read','GSI PMTiles Range acquisition','all-feature SVG render','manual footprint comparison','hash re-verification']
+    o['acquisition']={'status':'mixed','records':['retrievals.json',f"{f['prefix']}-range-retrievals.json",f"{f['prefix']}-tiles.json"]}
+    o['pages']={'total':f['pages'][0],'checked':f['pages'][1]}
+    o['pageNote']=f['pageNote'];o['figureAge']=f['age'];o['distribution']=f['distribution'];o['sourcesRead']=f['sources']
+    o['orientation']={'status':'confirmed' if f['prefix'] in('isle','cadan','niji') else 'insufficient','evidence':[f['orient']]}
+    o['coverage']={'tiles':f['window'],'boundaryClipping':f['footprint'],'renderPath':f"{f['prefix']}-full.svg",'detailPath':f"{f['prefix']}-detail.png"}
+    o['buildingIdentity']={'status':'confirmed' if f['prefix'] in('isle','cadan','oi','niji') else 'insufficient','evidence':[f['identity']],'note':'AI読解。独立レビュー前で承認ではない。'}
+    o['surroundings']={'status':'confirmed','evidence':[f['surround']]}
+    o['crs']=CRS;o['licence']=LIC
+    o['remainingMismatch']=f['mismatch']
+    if 'tls' in f:o['tls']=f['tls']
+    if f['prefix']!='reku2':
+        c=json.load(open(E/f"{f['prefix']}-calc.json"));o['mechanicalChecks']={'status':'passed' if c['inclusion']['mechanicalChecksPassed'] else 'failed','evidence':[f"{f['prefix']}-calc.json"]}
+        coord=c['inclusion']['coordinate'];coords[fid]=coord
+        p=E/f"{f['prefix']}-calc.json"
+        frag=c['fragments'][0];u=dict(facilityId=fid,coordinate=coord,scope='building',evidence=dict(sourceUrl='https://github.com/gsi-cyberjapan/optimal_bvmap',snapshotPath=str(p),snapshotSHA256=sha(p),sourceLocator=f"{p.name}: BldA z16/{frag['sourceTile']['x']}/{frag['sourceTile']['y']} feature index{frag['sourceFeatureIndex']}; readings in inspection.json",checkedAt='2026-11-05',actorType='ai',verificationMethod='未承認の調査候補。公式図と周辺道路・隣接棟をGSI外形に照合し手動内点を逆投影。丸め前後の内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。'))
+        updates.append(u);approved.append(dict(facilityId=fid,sha256=rowsha(u)))
+        bindings.append(dict(facilityId=fid,identity={k:r['baselinePlace'][k] for k in['name','address']},adoption=u,adoptionSHA256=rowsha(u),sourceVersion=PRODUCT+'; explicit product datum applicability pending'))
+    else:
+        o['mechanicalChecks']={'status':'failed','evidence':['reku-plan-derivation.json: 外形がないため内包検査は写像した設計壁箱に対する参考値のみ、検証点残差約10m']}
+    validate_observation(o);obs.append(o)
+write(E/'inspection.json',dict(schema=1,asOf='2026-11-05',note='AI読解の記録。承認ではない。検索で見た資料・取得した原本・読んだ原本は別扱い。',rows=obs))
+write(N/'locations-proposal.json',dict(schema=1,updates=updates))
+write(N/'lifecycle-proposal.json',dict(schema=1,bindings=bindings,events=[],groups=[]))
+write(N/'selection-proposal.json',dict(schema=1,approval=False,manifestApplied=False,integrationBlockedBy=['independent review by parent','product-specific datum applicability','full ledger diff/old value/ID/hash/binding verification by parent'],proposedManifestAppend=dict(locations=[dict(path=str(N/'locations-proposal.json'),approved=approved)],locationLifecycle=[dict(path=str(N/'lifecycle-proposal.json'),sha256=sha(N/'lifecycle-proposal.json'))]),warning='approved is the existing manifest schema field, not granted approval; do not apply before parent review. relationChanges: none.'))
+hq=[dict(facilityId='facility:kanto-south-dfd35978e81cbcc80123',name='総合レクリエーション公園サービスセンター',officialUrl='https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/sports.html',question='ファミリースポーツ広場(南葛西3-17-1)西端の2025年開業サービスセンター棟(円形屋根・屋内ひろば)の建物中央を、現況の航空写真等で緯度経度にしてもらえますか。',resolves='GSI外形・空中写真が旧配置のままで新棟の現況位置を数値で確定できない点。設計平面の写像点 35.6509801,139.8696575(残差約10m)の検証。',status='open; research continued without waiting')]
+write(N/'outcomes.json',dict(schema=1,group='south',asOf='2026-11-05',targetCount=5,numericalComparisonCount=5,numericalCandidateCount=4,noFootprintCount=1,approvedCount=0,adoptedCount=0,manifestApplied=False,humanQuestions=hq,rows=[dict(facilityId=fid,name=rows[fid]['name'],status=f['status'],distributionConfirmation=f['distribution'],coordinateCandidate=coords.get(fid),buildingIdentity=f['identity'],footprint=f['footprint'],remainingMismatch=f['mismatch'],remainingReason=f['stop'],nextAction=f['nextAction'],inspectionRef='data/evidence/kanto-prefecture/tokyo/south/inspection.json',adoptionApproval=False,relationChanges=False) for fid,f in F.items()]))
+print(json.dumps(coords,ensure_ascii=False))

@@ -1,0 +1,30 @@
+import json,hashlib,datetime,subprocess
+from pathlib import Path
+N=Path('data/national/kanto-prefecture/tokyo');E=Path('data/evidence/kanto-prefecture/tokyo/integration')
+def rd(p):return json.loads(p.read_text())
+def wr(p,d):p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+now=datetime.datetime.now(datetime.timezone.utc).isoformat();sources=rd(Path('/tmp/tokyo-answer-source-records.json'))
+entries=[('cdc3bc3e1d850a2e973d','旧三河島D101見学受付は旧事務棟内1F、東正門すぐ右の赤煉瓦寄棟。東京都施設配置図の個別URLはなし。','https://www.tgs-mikawashimayoyaku.jp/news/detail/22','原本は100周年カードを三河島重要文化財見学受付で配付と明記。旧事務棟内1F・東正門すぐ右・赤煉瓦寄棟の記載はない。別の既存アクセス図は旧事務棟へ来場するよう案内するが、カード窓口との同一性は引き続き推論。本文の1階は別カードの東京都庁の配付場所であり転用しない。','利用者回答を受領。旧事務棟との同一性の裏付け、1F・方位・外観は独立資料未確認。従来候補の再計算・承認はしない。'),('1e2eb2c199aa90b834c0','入口の羽ばたく屋根下のTICKET小棟がカード窓口。エントランス概要の個別URLはなし。入園不要は一次記載確認と分ける。','https://www.city.hamura.tokyo.jp/0000010587.html','市原本は配布場所をチケット売り場と明記。羽ばたく屋根・TICKET小棟との外形対応およびカード受取時の入園不要は明記なし。園内の蓋見学には別途入園料が必要という記載はカード窓口の条件と区別する。','利用者回答を受領。外形2872=TICKET小棟の直接裏付けは未確認、屋根外形の可能性と周辺外形不一致も残る。入園不要は未確認。'),('dfd35978e81cbcc80123','詳細配置図の直URLは未発見。ファミリースポーツ広場北西画地、北東西道路と西道路交点の南東付近、新設25台駐車場の東隣、南が広場／相撲場という利用者説明。道路名・方位・棟種・2025新築は独立照合が必要。','https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/sports.html','原本本文はサービスセンター・相撲場等の施設、南葛西3丁目17番1号、駐車場25台（EV4台）を確認できる。北西画地・道路交点・駐車場東隣・南側の配置関係、新設時期、2025新築の記載はない。更新日2025-01-09は建築年を証明しない。','利用者回答を受領。配置図直URLなし。位置関係は未検証の手掛かり。数値外形未収録と写像残差約10mの問題は未解消。')]
+hq=rd(N/'human-questions.json');out=rd(N/'outcomes.json');assign=rd(N/'assignments.json');follow=[]
+for suffix,report,url,finding,remaining in entries:
+ fid='facility:kanto-south-'+suffix;q=next(x for x in hq['questions'] if x['facilityId']==fid);q['status']='answer-received; independent-building-verification-pending';q['resolved']=False
+ q['answer']={'actorType':'human','reportedDate':'2026-11-06','recordedAt':now,'summary':report,'urls':[url],'specificPlanURL':None};q['independentResult']=finding
+ if suffix=='1e2eb2c199aa90b834c0':
+  p=Path('data/evidence/national/kanto-south/5374529443da774fef75.html');record={'url':url,'snapshotPath':str(p),'snapshotSHA256':sha(p),'reuse':'existing original; not fetched again'}
+ else:
+  record=sources[url];p=Path(record['rawPath']);assert sha(p)==record['sha256']
+ follow.append({'facilityId':fid,'humanReport':q['answer'],'independentOriginalReading':finding,'source':record,'remainingReason':remaining,'approval':False,'coordinateChanged':False})
+ row=next(x for x in out['rows'] if x['facilityId']==fid);row['humanAnswerRef']=str(N/'human-questions.json');row['remainingReason']=remaining;row['nextAction']='同じ質問は再送しない。既往comparisonと今回の回答照合を独立レビューへ引き継ぎ、直接資料が得られた場合に棟対応を再検証する。'
+ for g in assign['groups']:
+  if fid in g['humanWait']:g['humanWait'].remove(fid)
+wr(N/'human-questions.json',hq);wr(N/'outcomes.json',out);wr(N/'assignments.json',assign)
+wr(E/'human-answer-followup-20261106.json',{'schema':1,'asOf':'2026-11-05','recordedAt':now,'reportDate':'2026-11-06','rows':follow,'sourceFetchPerformed':False,'timing':'今回の原本再読解は開始時刻を個別記録していない。施設時間を後付け配賦しない。','policyReport':{'actorType':'human','reportedDate':'2026-11-06','researchPR':'研究保存PRはマージ可能という利用者方針。子はマージしない。','adoption':'位置採用は別保留。製品datum未確定：PMTiles入力CRS／事前変換の公式連鎖不足。これは親からの報告であり今回独立再調査していない。'},'adoptionApproved':False,'manifestApplied':False})
+# Freeze all position proposals and original comparisons, including lifecycle bindings.
+protected=[p for p in N.rglob('*.json') if 'proposal' in p.name]+[p for p in Path('data/evidence/kanto-prefecture/tokyo').rglob('*comparison.json')]+[Path('tools/national/manifest.json')]
+for p in protected:
+ old=subprocess.check_output(['git','show','HEAD:'+str(p)]);assert hashlib.sha256(old).hexdigest()==sha(p),p
+assert len(out['rows'])==24 and all(not x['adoptionApproval'] for x in out['rows'])
+assert not any(g['humanWait'] for g in assign['groups'])
+wr(E/'human-answer-verification-20261106.json',{'schema':1,'baseCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'command':'python3 -B /tmp/tokyo-record-answers.py','exitCode':0,'reportCount':3,'targetCount':24,'humanWaitCount':0,'buildingResolutionCount':0,'protectedInputSHA256':{str(p):sha(p) for p in protected},'editedInputSHA256':{str(p):sha(p) for p in [N/'human-questions.json',N/'outcomes.json',N/'assignments.json',E/'human-answer-followup-20261106.json']}})
+print('PASS 3 human reports recorded separately; existing source hashes checked; 24 IDs retained; human wait0; all coordinates/lifecycle/comparison/manifest unchanged')

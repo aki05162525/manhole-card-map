@@ -1,0 +1,17 @@
+import sys,json
+sys.path.insert(0,sys.argv[1])
+from northlib import *
+c=load('asukayama')
+ofc={'3 渋沢史料館':(395,140,5461),'1 北区飛鳥山博物館':(497,175,5455),'4 紙の博物館':(596,178,5401)}
+holdout={'5 青淵文庫':(333,227,5466),'6 晩香廬':(247,213,5467),'飛鳥山公園管理事務所':(213,248,5470),'2 おみやげ館':(218,288,5469)}
+src=[v[:2] for v in ofc.values()];dst=[centroid(outer(c['features'][v[2]])) for v in ofc.values()]
+a,b=fit(src,dst);rows=[]
+for k,v in {**ofc,**holdout}.items():
+ pred=apply(a,b,v[:2]);m=centroid(outer(c['features'][v[2]]));near=nearest(c,pred,3)
+ rows.append(dict(name=k,officialPx=v[:2],mappedFeature=v[2],predicted=pred,featureCentroid=m,residualUnits=round(math.dist(pred,m),1),nearestFeatures=[[round(d,1),i] for d,i in near],role='fit' if k in ofc else 'holdout'))
+rot=rotationDeg(a);print('scale units/px',abs(a),'rot',rot)
+for r in rows:print(r['name'],r['residualUnits'],r['nearestFeatures'])
+r=outer(c['features'][5469]);print('5469',r,centroid(r),c['features'][5469]['tileBoundaryTouched'],c['features'][5469]['sourceTile'],c['features'][5469]['sourceFeatureIndex'])
+d=describe(c,5469,[round(x) for x in centroid(r)]);print(d['inclusion'],d['areaApproxM2'],d['outerBoundaryTouched'],d['tileBoundaryTouched'],d['properties'])
+print({k:round(describe(c,k,[round(x) for x in centroid(outer(c['features'][k]))])['areaApproxM2']) for k in (5468,5470,5467,5466,5461,5455,5401)})
+json.dump(dict(rows=rows,scaleUnitsPerPx=abs(a),rotationDeg=rot,scaleMetersPerPx=abs(a)*d['scaleMetersPerUnit']),open(sys.argv[2],'w'),ensure_ascii=False,indent=1)
