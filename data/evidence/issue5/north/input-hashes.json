@@ -1,0 +1,42 @@
+[
+  {
+    "path": "data/work/issue5-baseline/ledger.json",
+    "sha256": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b"
+  },
+  {
+    "path": "data/work/issue5-baseline/full.json",
+    "sha256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150"
+  },
+  {
+    "path": "data/work/issue5-baseline/manifest.json",
+    "sha256": "d77fef7c9f1f8c59fa591becc73d6d9cfd6f1de698ba0167b5e1f57b71dc9a9d"
+  },
+  {
+    "path": "data/national/reviews/north-hokkaido.json",
+    "sha256": "723ab18f1986531921776c66565fd7bfa620749ba1688af0b181ec7cf25d1d19"
+  },
+  {
+    "path": "data/national/location-updates/north-hokkaido.json",
+    "sha256": "35f36f8f5803fdd51a8e8ca6c4855a1250c199ec574a616416b84852c9047bea"
+  },
+  {
+    "path": "data/national/location-updates/north-tohoku.json",
+    "sha256": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448"
+  },
+  {
+    "path": "data/national/location-updates/official-facility-index.json",
+    "sha256": "4084814e28076ea2849f6f9fcb27d1ce56c75677c47d3ab46b2a71bc30dcd5b2"
+  },
+  {
+    "path": "data/national/tohoku-location-integration.json",
+    "sha256": "de583e2dc52bb4317db8f2ccd04cdcc5935efe283beef693ee3f80ca4fb1ad4b"
+  },
+  {
+    "path": "data/overrides/regions/north.json",
+    "sha256": "802f2d8cec2f2ae7279f616326a1ec095f8875d7d7081fb1d465fc408fdcb3b3"
+  },
+  {
+    "path": "data/overrides/proposals/north.json",
+    "sha256": "c3a45d01d89adde2543c94f5c6e9d84ebe1b9e37d797c963388f4b9324991e79"
+  }
+]

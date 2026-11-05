@@ -1,0 +1,328 @@
+<!-- 店鋪単一ページ基本フォーマット single-shoplist.php -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>留萌市商店街振興組合連合会 &raquo; るもいプラザ　</title>
+<meta name="keywords" content="留萌市商店街振興組合連合会">
+<meta name="description" content="商店街にぎわい広場でのイベントや各商店街の紹介">
+<link rel="stylesheet" href="https://rumoi.main.jp/wp-content/themes/rumoitheme/reset.css">
+<link rel="stylesheet" href="https://rumoi.main.jp/wp-content/themes/rumoitheme/style.css" />
+<!-- apple-touch-icon/favicon -->
+<link rel="shortcut icon" href="https://rumoi.main.jp/wp-content/themes/rumoitheme/favicon.ico" >
+<link rel="apple-touch-icon-precomposed" href="https://rumoi.main.jp/wp-content/themes/rumoitheme/apple-touch-icon.png" />
+
+<!-- JQ本体 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- スマートフォンメニュー -->
+<script>
+$(function(){
+	$(".menubtn").click(function(){
+		$("#menu").toggleClass('togmenu');
+	});	
+});
+</script>
+
+<!-- 商店街マップ -->
+<script src="https://rumoi.main.jp/wp-content/themes/rumoitheme/js/jquery.rwdImageMaps.min.js"></script>
+<script>
+$(function(){
+	$('img[usemap]').rwdImageMaps();
+});
+</script>
+
+<style type="text/css">
+/* WEBフォント */
+.wf-roundedmplus1c { font-family: "Rounded Mplus 1c";}
+.wf-mplus1p { font-family: "M+ 1p heavy"; }
+</style>
+
+<!-- ↓重要 プラグイン作動用 -->
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/rumoi.main.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.23"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://rumoi.main.jp/wp-includes/css/dist/block-library/style.min.css?ver=5.6.23' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='fancybox-css'  href='https://rumoi.main.jp/wp-content/plugins/easy-fancybox/fancybox/1.5.4/jquery.fancybox.min.css?ver=5.6.23' type='text/css' media='screen' />
+<style id='fancybox-inline-css' type='text/css'>
+#fancybox-outer{background:#ffffff}#fancybox-content{background:#ffffff;border-color:#ffffff;color:#000000;}#fancybox-title,#fancybox-title-float-main{color:#fff}
+</style>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://rumoi.main.jp/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://rumoi.main.jp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://rumoi.main.jp/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.6.23" />
+<link rel="canonical" href="https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/" />
+<link rel='shortlink' href='https://rumoi.main.jp/?p=1202' />
+<link rel="alternate" type="application/json+oembed" href="https://rumoi.main.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frumoi.main.jp%2Fshoplist%2F%25e3%2582%258b%25e3%2582%2582%25e3%2581%2584%25e3%2583%2597%25e3%2583%25a9%25e3%2582%25b6%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://rumoi.main.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frumoi.main.jp%2Fshoplist%2F%25e3%2582%258b%25e3%2582%2582%25e3%2581%2584%25e3%2583%2597%25e3%2583%25a9%25e3%2582%25b6%2F&#038;format=xml" />
+
+<style>
+.scroll-back-to-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #aaaaaa;
+	color: #eeeeee;
+	width: 36px;
+	height: 34px;
+	line-height: 34px;
+	right: 15px;
+	bottom: 15px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-back-to-top-wrapper:hover {
+	background-color: #666666;
+  color: #eeeeee;
+}
+.scroll-back-to-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 0.5;
+}
+.scroll-back-to-top-wrapper i.fa {
+	line-height: inherit;
+}
+.scroll-back-to-top-wrapper .fa-lg {
+	vertical-align: 0;
+}
+</style></head>
+
+<body id="%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6" class="wf-roundedmplus1c">
+
+<div class="bgwall">
+  <div class="bgtown">
+    <header>
+      <div class="bgtownpadding">
+      
+		        <div class="head1">
+          <div class="site">
+            <h1><a href="https://rumoi.main.jp"><img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/siteid.png" width=304 height=28 alt=留萌市商店街振興組合連合会 /></a></h1>
+          </div>
+          <div class="kensaku"><form role="search" method="get" id="searchform" class="searchform" action="https://rumoi.main.jp/">
+				<div>
+					<label class="screen-reader-text" for="s">検索:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="検索" />
+				</div>
+			</form></div>
+          <div class="tel-kink">
+          <img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/mark-tel.png" alt="tel" class="tel-none" />
+          <img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/mark-tweet.png" alt="tweet" />
+          <img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/mark-facebook.png" alt="facebook" />
+          <img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/mark-mail.png" alt="email" />
+          <a href="https://rumoi.main.jp/link/"><img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/mark-link.png"></a>
+          </div>
+        </div>
+    
+ 
+		        <div class="head2">
+          <div class="menubtn">
+            <h6>▼メニュー表示▼</h6>
+          </div>
+          <nav id="menu" class="togmenu">
+            <div class="hanko_ss"><img src="https://rumoi.main.jp/wp-content/themes/rumoitheme/img/hanko_ss.png" alt=るもいにぎわい商店街 /></div>
+    
+
+		            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru1"><a href="https://rumoi.main.jp/category/news/">お知らせ一覧</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru2"><a href="https://rumoi.main.jp/about/">商店街について</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru3"><a href="https://rumoi.main.jp/ekimae/">駅前商店街</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru4"><a href="https://rumoi.main.jp/kaiun/">開運だるま商店街</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru5"><a href="https://rumoi.main.jp/jinjashita/">神社下商店街</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru6"><a href="https://rumoi.main.jp/sanbangai/">三番街商店街</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru7"><a href="https://rumoi.main.jp/chuo/">中央商店街</a></h3>
+            </div>
+            <div class="vertical">
+              <h3 class="wf-roundedmplus1c" id="maru9"><a href="https://rumoi.main.jp/nigiwifi/">留萌にぎわいファイ</a></h3>
+            </div>
+            <div class="vertical both-sp">
+              <h3 class="wf-roundedmplus1c" id="maru8"><a href="https://rumoi.main.jp/ichiran/">お店一覧</a></h3>
+            </div>
+            <div class="both1px">&nbsp;</div>
+          </nav>
+        </div>
+   
+        
+        <div class="both1px">&nbsp;</div>
+      </div>
+    </header>
+  </div>
+</div>
+   
+
+<!-- コンテンツ -->
+<div class="body wf-roundedmplus1c">
+  <article class="main">
+  
+  
+	<!-- ループ内容 -->
+	    <div class="h2">
+      <h2 class="wf-roundedmplus1c">るもいプラザ　</h2>
+      <p class="postcat">
+ <a href="https://rumoi.main.jp/shoplist-cat/jinjashita/" rel="tag">神社下商店街</a>      </p>
+      <div class="both1px">&nbsp;</div>
+    </div>
+<div class="content">
+
+　[2階]　まちなかにぎわい広場<div class="ct">
+<div class="ct-photo">
+<p><img loading="lazy" class="alignnone wp-image-1215" src="http://rumoi.main.jp/wp-content/uploads/2020/06/e1b4663f62bf90362d135f832b774b87.jpg" alt="" width="247" height="185" srcset="https://rumoi.main.jp/wp-content/uploads/2020/06/e1b4663f62bf90362d135f832b774b87.jpg 640w, https://rumoi.main.jp/wp-content/uploads/2020/06/e1b4663f62bf90362d135f832b774b87-320x240.jpg 320w" sizes="(max-width: 247px) 100vw, 247px" /></p>
+<p><strong><span style="font-family: 'arial black', sans-serif; color: #000080;">るもいプラザ</span></strong></p>
+<h4>＜２階＞<span style="color: #000080; font-family: arial,helvetica,sans-serif; font-size: 10pt;"><strong>にぎわい広場　　　　　　　　　　　　　　　　　　</strong></span></h4>
+<h4>　マンホールカード配布窓口</h4>
+<h4><strong>※年末年始の配布は休止します。</strong><br />
+<strong>※</strong>毎週水曜日の休館日については、留萌市役所上下水道課で配布します。<strong>（閉庁日を除く）</strong></h4>
+<p><img loading="lazy" class="alignnone  wp-image-2045" src="http://rumoi.main.jp/wp-content/uploads/2023/06/DSC00708.jpg" alt="" width="218" height="164" srcset="https://rumoi.main.jp/wp-content/uploads/2023/06/DSC00708.jpg 1280w, https://rumoi.main.jp/wp-content/uploads/2023/06/DSC00708-320x240.jpg 320w, https://rumoi.main.jp/wp-content/uploads/2023/06/DSC00708-1024x768.jpg 1024w, https://rumoi.main.jp/wp-content/uploads/2023/06/DSC00708-768x576.jpg 768w" sizes="(max-width: 218px) 100vw, 218px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<div class="ct-text">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="hyoTbl">
+            <tr>
+              <td colspan="2">◎基本情報</td>
+            </tr>
+            <tr>
+              <td nowrap>住所</td>
+              <td>留萌市開運町３丁目４番１１号</td>
+            </tr>
+            <tr>
+              <td nowrap>営業時間</td>
+              <td>10：00～18：00　18：30まで延長あり</td>
+            </tr>
+            <tr>
+              <td nowrap>定休日</td>
+              <td>水曜　</td>
+            </tr>
+            <tr>
+              <td nowrap>ＴＥＬ</td>
+              <td>0164-56-4382</td>
+            </tr>
+            <tr>
+              <td nowrap>ＦＡＸ</td>
+              <td>0164-56-4383</td>
+            </tr>
+            <tr>
+              <td nowrap>ＵＲＬ</td>
+              <td></td>
+            </tr>
+</table>
+<div class="map"><a href="https://goo.gl/maps/9N5kicx1tnbfZWJi6"target="_blank">MAPはこちら</a></div>
+
+</div>
+<div class="both1px">&nbsp;</div>
+</div>
+</div>
+	<!-- //ループ内容 -->
+    
+    
+  </article>
+</div>
+<!-- //コンテンツ -->
+
+<div class="footer-in">
+  <footer>
+    <p><span>留萌市商店街振興組合連合会</span><br>
+      <span>〒077-0044 北海道留萌市錦町3丁目1-5</span><br>
+      <span>TEL：0164-43-5911</span><br>
+      <span>FAX：0164-43-5916</span></p>
+    <p class="copyright">Copyright@2026留萌市商店街振興組合連合会 All Rights Reserved.</p>
+  </footer>
+</div>
+
+<!-- ↓重要 プラグイン作動用 -->
+<div class="scroll-back-to-top-wrapper">
+	<span class="scroll-back-to-top-inner">
+					<i class="fa fa-lg fa-angle-double-up"></i>
+			</span>
+</div><script type='text/javascript' id='scroll-back-to-top-js-extra'>
+/* <![CDATA[ */
+var scrollBackToTop = {"scrollDuration":"500","fadeDuration":"0.5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-content/plugins/scroll-back-to-top/assets/js/scroll-back-to-top.js' id='scroll-back-to-top-js'></script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-content/plugins/easy-fancybox/vendor/purify.min.js?ver=5.6.23' id='fancybox-purify-js'></script>
+<script type='text/javascript' id='jquery-fancybox-js-extra'>
+/* <![CDATA[ */
+var efb_i18n = {"close":"Close","next":"Next","prev":"Previous","startSlideshow":"Start slideshow","toggleSize":"Toggle size"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-content/plugins/easy-fancybox/fancybox/1.5.4/jquery.fancybox.min.js?ver=5.6.23' id='jquery-fancybox-js'></script>
+<script type='text/javascript' id='jquery-fancybox-js-after'>
+var fb_timeout, fb_opts={'autoScale':true,'showCloseButton':true,'width':560,'height':340,'margin':20,'pixelRatio':'false','padding':10,'centerOnScroll':false,'enableEscapeButton':true,'speedIn':300,'speedOut':300,'overlayShow':true,'hideOnOverlayClick':true,'overlayColor':'#000','overlayOpacity':0.6,'minViewportWidth':320,'minVpHeight':320,'disableCoreLightbox':'true','enableBlockControls':'true','fancybox_openBlockControls':'true' };
+if(typeof easy_fancybox_handler==='undefined'){
+var easy_fancybox_handler=function(){
+jQuery([".nolightbox","a.wp-block-file__button","a.pin-it-button","a[href*='pinterest.com\/pin\/create']","a[href*='facebook.com\/share']","a[href*='twitter.com\/share']"].join(',')).addClass('nofancybox');
+jQuery('a.fancybox-close').on('click',function(e){e.preventDefault();jQuery.fancybox.close()});
+/* IMG */
+						var unlinkedImageBlocks=jQuery(".wp-block-image > img:not(.nofancybox,figure.nofancybox>img)");
+						unlinkedImageBlocks.wrap(function() {
+							var href = jQuery( this ).attr( "src" );
+							return jQuery( "<a></a>" ).attr( "href", href );
+						});
+var fb_IMG_select=jQuery('a[href*=".jpg" i]:not(.nofancybox,li.nofancybox>a,figure.nofancybox>a),area[href*=".jpg" i]:not(.nofancybox),a[href*=".png" i]:not(.nofancybox,li.nofancybox>a,figure.nofancybox>a),area[href*=".png" i]:not(.nofancybox),a[href*=".webp" i]:not(.nofancybox,li.nofancybox>a,figure.nofancybox>a),area[href*=".webp" i]:not(.nofancybox),a[href*=".jpeg" i]:not(.nofancybox,li.nofancybox>a,figure.nofancybox>a),area[href*=".jpeg" i]:not(.nofancybox)');
+fb_IMG_select.addClass('fancybox image');
+var fb_IMG_sections=jQuery('.gallery,.wp-block-gallery,.tiled-gallery,.wp-block-jetpack-tiled-gallery,.ngg-galleryoverview,.ngg-imagebrowser,.nextgen_pro_blog_gallery,.nextgen_pro_film,.nextgen_pro_horizontal_filmstrip,.ngg-pro-masonry-wrapper,.ngg-pro-mosaic-container,.nextgen_pro_sidescroll,.nextgen_pro_slideshow,.nextgen_pro_thumbnail_grid,.tiled-gallery');
+fb_IMG_sections.each(function(){jQuery(this).find(fb_IMG_select).attr('rel','gallery-'+fb_IMG_sections.index(this));});
+jQuery('a.fancybox,area.fancybox,.fancybox>a').each(function(){jQuery(this).fancybox(jQuery.extend(true,{},fb_opts,{'transition':'elastic','transitionIn':'elastic','transitionOut':'elastic','opacity':false,'hideOnContentClick':false,'titleShow':true,'titlePosition':'over','titleFromAlt':true,'showNavArrows':true,'enableKeyboardNav':true,'cyclic':false,'mouseWheel':'true','changeSpeed':250,'changeFade':300}))});
+};};
+jQuery(easy_fancybox_handler);jQuery(document).on('post-load',easy_fancybox_handler);
+</script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-content/plugins/easy-fancybox/vendor/jquery.easing.min.js?ver=1.4.1' id='jquery-easing-js'></script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-content/plugins/easy-fancybox/vendor/jquery.mousewheel.min.js?ver=3.1.13' id='jquery-mousewheel-js'></script>
+<script type='text/javascript' src='https://rumoi.main.jp/wp-includes/js/wp-embed.min.js?ver=5.6.23' id='wp-embed-js'></script>
+
+</body>
+</html>

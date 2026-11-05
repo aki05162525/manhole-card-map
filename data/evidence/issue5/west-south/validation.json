@@ -1,0 +1,16 @@
+{
+  "validatedAt": "2026-11-05T05:52:02.108873+00:00",
+  "actorType": "ai",
+  "targetCount": 164,
+  "candidateUpdates": 6,
+  "unresolved": 158,
+  "corrections": 3,
+  "integratedProposalTargets": 18,
+  "coverage": "pass: unique and disjoint; relations.cardId prefix31–47",
+  "rawCoordinateValueCheck": "pass: all P05 feature values exact",
+  "snapshotHashCheck": "pass",
+  "fixedInputsUnchanged": "pass",
+  "semanticBuildingCheck": "AI manual review recorded in coordinate-proof.json; hashes alone do not prove building identity",
+  "researchCompletion": "baseline classification complete; focused followup complete; unresolved facilities are not all coordinate-confirmed or all freshly fetched",
+  "documentCodeDiscrepancies": []
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1003256.html",
+    "status": 200,
+    "finalUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1003256.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-layout.html",
+    "snapshotSHA256": "7b4fe637fa5f3068dc0d01738d231ea38cd45974c82c1c169e7e7734e3c8f9b0",
+    "fetchedAt": "2026-11-05T05:54:29.618619+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/1007958.html",
+    "status": 200,
+    "finalUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/1007958.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-revised.html",
+    "snapshotSHA256": "14e4816ff93ca3c5958693eaa832a3b8bd9630ba491c8a287b5ad5543f5325d7",
+    "fetchedAt": "2026-11-05T05:54:29.618148+00:00"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0.pdf",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0.pdf",
+    "snapshotPath": "data/evidence/issue5/review-chubu/p05-spec.pdf",
+    "snapshotSHA256": "ec3af6525d07bc2116325dd3f81bea0e5e82e53afa0b88c2ec810425b5138a15",
+    "fetchedAt": "2026-11-05T05:54:29.454951+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.yoshida.shizuoka.jp/2319.htm",
+    "status": 200,
+    "finalUrl": "https://www.town.yoshida.shizuoka.jp/2319.htm",
+    "snapshotPath": "data/evidence/issue5/review-chubu/yoshida-layout.html",
+    "snapshotSHA256": "7d0e9f354b36e698c8a7078dde9c35b7cfe860603f3ff2486166efa2102c4818",
+    "fetchedAt": "2026-11-05T05:54:29.644852+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm",
+    "status": 200,
+    "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm",
+    "snapshotPath": "data/evidence/issue5/review-chubu/numazu-layout.html",
+    "snapshotSHA256": "ee5516a29d1477aea5770fafc750ed8af1829941bb699271462e0f6e549ea16a",
+    "fetchedAt": "2026-11-05T05:54:29.377699+00:00"
+  },
+  {
+    "sourceUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/2322.html",
+    "status": 200,
+    "finalUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/2322.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-building.html",
+    "snapshotSHA256": "1386935a655e95d78bb6657bda1adf2ae7814de53f91ea262d9ab3724b440101",
+    "fetchedAt": "2026-11-05T05:54:29.561531+00:00"
+  }
+]

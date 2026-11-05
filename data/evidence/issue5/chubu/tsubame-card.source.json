@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+  "requestedAt": "2026-11-05T05:45:44.049808+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+  "contentType": "text/html",
+  "fetchedAt": "2026-11-05T05:45:44.182436+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/tsubame-card.html",
+  "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+  "bytes": 59117
+}

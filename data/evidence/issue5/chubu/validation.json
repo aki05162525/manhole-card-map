@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "verifiedAt": "2026-11-05T05:51:10.613800+00:00",
+  "actorType": "ai",
+  "targetCount": 138,
+  "updateCount": 8,
+  "unresolvedCount": 130,
+  "exactCorrections": 8,
+  "referencedHashesVerified": 280,
+  "baselineHashesUnchanged": true,
+  "allFacilityIdsExactlyClassified": true,
+  "originalCoordinateChecks": [
+    {
+      "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "37.68568231 138.87962802",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "37.68568231 138.87962802",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "38.12559907 139.44451505",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "36.47819439 138.14561078",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-oyabe-water-counter",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "36.67552978 136.86865754",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "35.09564600 138.86355600",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-iwata-water-counter",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "34.68153600 137.88106300",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    },
+    {
+      "facilityId": "facility:chubu-yoshida-water-counter",
+      "geojsonExact": true,
+      "gmlLatitudeLongitude": "34.77087000 138.25194300",
+      "gmlRoundingTolerance": 1e-07,
+      "buildingIdentity": "manually-reviewed-current-official-distribution-versus-named-P05-building-record"
+    }
+  ],
+  "currentOfficialTextAssertions": {
+    "tsubame-card": [
+      "燕市役所",
+      "1934",
+      "夜間休日受付",
+      "下水道課"
+    ],
+    "murakami-card": [
+      "荒川地区公民館",
+      "104-25"
+    ],
+    "arakawa-facility": [
+      "荒川地区公民館",
+      "104-25"
+    ],
+    "chikuma-card": [
+      "上山田文化会館",
+      "三丁目1番地1"
+    ],
+    "chikuma-facilities": [
+      "上山田文化会館",
+      "3-1-1"
+    ],
+    "oyabe-card": [
+      "市役所上下水道課窓口",
+      "本町1番1号"
+    ],
+    "numazu-card": [
+      "本庁舎1階",
+      "総合案内",
+      "水道部庁舎"
+    ],
+    "numazu-office": [
+      "御幸町16-1"
+    ],
+    "iwata-card": [
+      "福田400",
+      "福田支所2階"
+    ],
+    "yoshida-card": [
+      "吉田町役場2階上下水道課",
+      "住吉87"
+    ],
+    "sado-offices": [
+      "金井市民センター",
+      "第2庁舎1階",
+      "0259-63-3843"
+    ],
+    "p05-catalog": [
+      "JGD2011",
+      "オープンデータ"
+    ],
+    "p05-terms": [
+      "PDL1.0",
+      "2026",
+      "3月23日"
+    ]
+  },
+  "scope": "原本bytes/hash、数値・軸順、所属ID、訂正old一致を再検証。建物同定は上記公式本文を読んだAI判断であり、この機械検査自体が建物形状を検証するものではない。",
+  "unknownRetrievalTimes": [
+    "data/evidence/national/chubu-east/gkp-baseline-nagaoka-c-row.html",
+    "data/evidence/national/chubu-west/gkp-current-design.html"
+  ]
+}

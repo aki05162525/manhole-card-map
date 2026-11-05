@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+  "requestedAt": "2026-11-05T05:45:44.424109+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+  "contentType": "text/html; charset=utf-8",
+  "fetchedAt": "2026-11-05T05:45:44.623923+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/mizuho-card.html",
+  "snapshotSHA256": "98daa59dc31e1afded426b334327e3e117cee89ffb9351451a7c9957088cdb92",
+  "bytes": 54017
+}

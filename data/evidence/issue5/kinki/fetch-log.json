@@ -1,0 +1,81 @@
+[
+  {
+    "url": "https://www.city.kyoto.lg.jp/suido/page/0000309702.html",
+    "fetchedAt": "2026-11-05T05:45:46.898886+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+    "fetchedAt": "2026-11-05T05:45:46.964974+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/229a89da6feef8d0f0a9.bin",
+    "snapshotSHA256": "ce021d98b8b5dfa83bc1ab2debb71f281942d8225e71608a14d43ea34f31596d",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.otsu.lg.jp/soshiki/005/1227/od/40535.html",
+    "fetchedAt": "2026-11-05T05:45:47.082831+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.osaka.lg.jp/toshikeikaku/page/0000250227.html",
+    "fetchedAt": "2026-11-05T05:45:47.142041+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.osaka.lg.jp/toshikeikaku/page/0000250227.html",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/c0332485f9143c9ec044.bin",
+    "snapshotSHA256": "162130a6d67c64caa1b0a53d62a1b3892b13945d06c523b300e0fc4eddbecdba",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://data.city.kyoto.lg.jp/dataset/00003/?page=1",
+    "fetchedAt": "2026-11-05T05:46:02.965236+00:00",
+    "error": "<urlopen error timed out>"
+  },
+  {
+    "url": "https://www.mapnavi.city.osaka.lg.jp/osakacity/osakacity/opendatafile/map_1/CSV/opendata_1005.csv",
+    "fetchedAt": "2026-11-05T05:46:28.065531+00:00",
+    "error": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1082)>"
+  },
+  {
+    "url": "https://data.bodik.jp/api/3/action/package_search?q=organization:252069&rows=100",
+    "fetchedAt": "2026-11-05T05:46:28.119451+00:00",
+    "status": 200,
+    "finalUrl": "https://data.bodik.jp/api/3/action/package_search?q=organization:252069&rows=100",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/727a1cce8ebf4601c8b6.bin",
+    "snapshotSHA256": "dbf1ef4c8666a7beb44fdfca55904077013891d21df0f46206b57ad6f3e026ef",
+    "contentType": "application/json;charset=utf-8"
+  },
+  {
+    "url": "https://data.bodik.jp/api/3/action/package_search?q=organization:252069&rows=100&start=100",
+    "fetchedAt": "2026-11-05T05:46:46.678059+00:00",
+    "status": 200,
+    "finalUrl": "https://data.bodik.jp/api/3/action/package_search?q=organization:252069&rows=100&start=100",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/e87f9df78ed1bbcb27d8.bin",
+    "snapshotSHA256": "87998a27ba1787888a1e9d13ee64ee129aa73d277b1e5d2f263b0c2afb821040",
+    "contentType": "application/json;charset=utf-8"
+  },
+  {
+    "url": "https://map.city.kyoto.lg.jp/?lat=34.971000000000000&lng=135.756140000000000&id=1000001826&zoom=14",
+    "fetchedAt": "2026-11-05T05:46:47.068321+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.katano.osaka.jp/docs/about-site/",
+    "fetchedAt": "2026-11-05T05:48:03.828681+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katano.osaka.jp/docs/about-site/",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/2226679534eb6d7f1853.bin",
+    "snapshotSHA256": "4d4c14b55ac79ff83a94bdea5e556c6174e3ae7cd93ccff8779bf87c015dee54",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.neyagawa.osaka.jp/site/link.html",
+    "fetchedAt": "2026-11-05T05:48:03.993639+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.neyagawa.osaka.jp/site/link.html",
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/aa965eec22d6b5616b72.bin",
+    "snapshotSHA256": "fd74fb9997532f4c1e718eac5028003d3a05aa904660a3bc3f8ba00549b26776",
+    "contentType": "text/html"
+  }
+]

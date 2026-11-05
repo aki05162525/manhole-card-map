@@ -1,0 +1,187 @@
+[
+  {
+    "url": "https://www.city.setouchi.lg.jp/map/405.html",
+    "attemptedAt": "2026-11-05T05:46:23.461477+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/map/405.html",
+    "fetchedAt": "2026-11-05T05:46:23.767222+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f.bin",
+    "snapshotSHA256": "570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+    "attemptedAt": "2026-11-05T05:46:23.462137+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+    "fetchedAt": "2026-11-05T05:46:23.769039+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a.bin",
+    "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.tokunoshima-town.org/soumuka/zaisei/shinchosya01.html",
+    "attemptedAt": "2026-11-05T05:46:23.462692+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokunoshima-town.org/soumuka/zaisei/shinchosya01.html",
+    "fetchedAt": "2026-11-05T05:46:23.737988+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/21c3ea7fb2cffa45af7b6dc06553eaa9fe1241bfd5c4a88af6cfb930221cdf04.bin",
+    "snapshotSHA256": "21c3ea7fb2cffa45af7b6dc06553eaa9fe1241bfd5c4a88af6cfb930221cdf04",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+    "attemptedAt": "2026-11-05T05:46:23.463246+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+    "fetchedAt": "2026-11-05T05:46:24.037029+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2.bin",
+    "snapshotSHA256": "e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+    "attemptedAt": "2026-11-05T05:46:23.463741+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+    "fetchedAt": "2026-11-05T05:46:23.621144+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c.bin",
+    "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://tsuwano-kanko.net/category1/loca/",
+    "attemptedAt": "2026-11-05T05:46:23.621194+00:00",
+    "status": 200,
+    "finalUrl": "https://tsuwano-kanko.net/category1/loca/",
+    "fetchedAt": "2026-11-05T05:46:24.936410+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/7b31f1fe006ed375a7e86d3756bc8541729aceb20c732b5b652bc139a6fbf890.bin",
+    "snapshotSHA256": "7b31f1fe006ed375a7e86d3756bc8541729aceb20c732b5b652bc139a6fbf890",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city.kanzaki.saga.jp/main/7553.html",
+    "attemptedAt": "2026-11-05T05:47:10.732825+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kanzaki.saga.jp/main/7553.html",
+    "fetchedAt": "2026-11-05T05:47:11.649410+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e.bin",
+    "snapshotSHA256": "ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+    "attemptedAt": "2026-11-05T05:47:10.733243+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+    "fetchedAt": "2026-11-05T05:47:11.100223+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc.bin",
+    "snapshotSHA256": "b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/hayato.html",
+    "attemptedAt": "2026-11-05T05:47:10.733726+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/hayato.html",
+    "fetchedAt": "2026-11-05T05:47:10.889292+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a.bin",
+    "snapshotSHA256": "732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.dazaifu.lg.jp/soshiki/6/1900.html",
+    "attemptedAt": "2026-11-05T05:47:10.734189+00:00",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "http://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "attemptedAt": "2026-11-05T05:47:36.799854+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "fetchedAt": "2026-11-05T05:47:37.021732+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad.bin",
+    "snapshotSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+    "attemptedAt": "2026-11-05T05:47:36.800508+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+    "fetchedAt": "2026-11-05T05:47:36.975886+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7.bin",
+    "snapshotSHA256": "12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+    "attemptedAt": "2026-11-05T05:47:36.801059+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+    "fetchedAt": "2026-11-05T05:47:36.994766+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/02e8478b5bca74e75d503998ea86dae0eca100351f87e7bee43a743cb5788f1d.bin",
+    "snapshotSHA256": "02e8478b5bca74e75d503998ea86dae0eca100351f87e7bee43a743cb5788f1d",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.town.umi.lg.jp/site/profile/1482.html",
+    "attemptedAt": "2026-11-05T05:47:36.801539+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.umi.lg.jp/site/profile/1482.html",
+    "fetchedAt": "2026-11-05T05:47:36.963547+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/15156003084a7a0028dfe0f663632dd454892c2e88f3437e74eed3be09b9c315.bin",
+    "snapshotSHA256": "15156003084a7a0028dfe0f663632dd454892c2e88f3437e74eed3be09b9c315",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/soshiki/8/1420.html",
+    "attemptedAt": "2026-11-05T05:47:36.803293+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/soshiki/8/1420.html",
+    "fetchedAt": "2026-11-05T05:47:36.986812+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/4b85a894f408b1c049ffa54d481f8c7f932aec7d56d64f736f43f61fb5f2fc52.bin",
+    "snapshotSHA256": "4b85a894f408b1c049ffa54d481f8c7f932aec7d56d64f736f43f61fb5f2fc52",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.city.kanzaki.saga.jp/main/12136.html",
+    "attemptedAt": "2026-11-05T05:48:01.097980+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kanzaki.saga.jp/main/12136.html",
+    "fetchedAt": "2026-11-05T05:48:01.882185+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d.bin",
+    "snapshotSHA256": "02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city.saga-kashima.lg.jp/main/21632.html",
+    "attemptedAt": "2026-11-05T05:48:01.098560+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.saga-kashima.lg.jp/main/21632.html",
+    "fetchedAt": "2026-11-05T05:48:01.420714+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765.bin",
+    "snapshotSHA256": "d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/soshiki/21/",
+    "attemptedAt": "2026-11-05T05:48:01.098995+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/soshiki/21/",
+    "fetchedAt": "2026-11-05T05:48:01.250922+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/9cabb1f7ab21e99f05da730e74b0801a0de5d261dc0c0cd36fb8b6f4843b7b5f.bin",
+    "snapshotSHA256": "9cabb1f7ab21e99f05da730e74b0801a0de5d261dc0c0cd36fb8b6f4843b7b5f",
+    "contentType": "text/html"
+  },
+  {
+    "url": "https://www.town.tadotsu.kagawa.jp/choseijoho/opendata/index.html",
+    "attemptedAt": "2026-11-05T05:48:01.099415+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.tadotsu.kagawa.jp/choseijoho/opendata/index.html",
+    "fetchedAt": "2026-11-05T05:48:01.353622+00:00",
+    "snapshotPath": "data/evidence/issue5/west-south/d9a57808a2a9e78e1c39ddc68bb70164003a0d61c56a195a5daf33fc07629ea9.bin",
+    "snapshotSHA256": "d9a57808a2a9e78e1c39ddc68bb70164003a0d61c56a195a5daf33fc07629ea9",
+    "contentType": "text/html"
+  }
+]

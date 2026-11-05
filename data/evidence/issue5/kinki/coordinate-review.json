@@ -1,0 +1,158 @@
+[
+  {
+    "facilityId": "facility:kinki-katano-guard",
+    "name": "交野市上下水道部1階 警備員室窓口",
+    "address": "大阪府交野市私市2丁目24番1号",
+    "coordinate": {
+      "lat": 34.7739206,
+      "lng": 135.6831364
+    },
+    "coordinateOriginalValues": [
+      "34.7739206",
+      "135.6831364"
+    ],
+    "coordinateEvidence": {
+      "sourceUrl": "https://www.city.katano.osaka.jp/docs/2011083000083/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2aa2279cf2f5e93925571dcc1793531e356d7ac8e7a8ed3f317524189aaea873.html",
+      "snapshotSHA256": "2aa2279cf2f5e93925571dcc1793531e356d7ac8e7a8ed3f317524189aaea873",
+      "sourceLocator": "水道局のmarkerInfos title水道局のlat/lng。所在地私市2-24-1、2階に下水道課。2026年4月2日更新の施設案内。centerだけではなく明示マーカーを使用。 原典数値: 34.7739206, 135.6831364 / 公式配布表は平日窓口と休日警備員室をともに私市2丁目24番1号の上下水道部1階と明記。水道局施設ページのmarkerInfosのtitle=水道局を照合。市役所ではない。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。"
+    },
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.katano.osaka.jp/docs/2018053100033/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c.html",
+      "snapshotSHA256": "3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c",
+      "sourceLocator": "交野市上下水道部（旧水道局）1階 警備員室窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "buildingIdentification": "公式配布表は平日窓口と休日警備員室をともに私市2丁目24番1号の上下水道部1階と明記。水道局施設ページのmarkerInfosのtitle=水道局を照合。市役所ではない。",
+    "sourceFacilityId": "facility:kinki-8914b9e6744511e117c2",
+    "distributionStatuses": [
+      "active"
+    ],
+    "datum": "Web地図の緯度経度（十進度）。原典に測地系の名称は明記されず、変換は実施しない。測量精度を主張しない。",
+    "license": "明示的なオープンデータライセンスは未確認。自治体が掲載した数値と出典を候補化。OSM背景のライセンスを自治体マーカーに誤適用しない。HTML原本は監査資料。公開再配布・第三者地図数値の利用条件は親レビュー時に別途判断。",
+    "relocationConflict": "保存済み当日公式配布案内と建物住所は一致。この原本間では移転・別棟競合なし。"
+  },
+  {
+    "facilityId": "facility:kinki-neyagawa-holiday",
+    "name": "寝屋川市上下水道局庁舎1階 窓口",
+    "address": "大阪府寝屋川市本町15番1号",
+    "coordinate": {
+      "lat": 34.765068,
+      "lng": 135.62728879999997
+    },
+    "coordinateOriginalValues": [
+      "34.765068",
+      "135.62728879999997"
+    ],
+    "coordinateEvidence": {
+      "sourceUrl": "https://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/index.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-91098476fc503da211a304d1c28387e2cb0f9d2ad854c2cd583a95a07ea30554.html",
+      "snapshotSHA256": "91098476fc503da211a304d1c28387e2cb0f9d2ad854c2cd583a95a07ea30554",
+      "sourceLocator": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。終了状態の訂正を変えず旧配布施設の位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。"
+    },
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/manholecard/1531978868131.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad.html",
+      "snapshotSHA256": "dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad",
+      "sourceLocator": "上下水道局庁舎1階 窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "buildingIdentification": "配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+    "sourceFacilityId": "facility:kinki-2d25fa4fd7e5424d29b7",
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "datum": "Web地図の緯度経度（十進度）。原典に測地系の名称は明記されず、変換は実施しない。測量精度を主張しない。",
+    "license": "明示的なオープンデータライセンスは未確認。自治体が掲載した数値と出典を候補化。OSM背景のライセンスを自治体マーカーに誤適用しない。HTML原本は監査資料。公開再配布・第三者地図数値の利用条件は親レビュー時に別途判断。",
+    "relocationConflict": "保存済み当日公式配布案内と建物住所は一致。この原本間では移転・別棟競合なし。"
+  },
+  {
+    "facilityId": "facility:kinki-toyono-guard",
+    "name": "豊能町役場本庁舎1階 警備室窓口",
+    "address": "大阪府豊能郡豊能町余野414-1",
+    "coordinate": {
+      "lat": 34.9188505,
+      "lng": 135.4940959
+    },
+    "coordinateOriginalValues": [
+      "34.9188505",
+      "135.4940959"
+    ],
+    "coordinateEvidence": {
+      "sourceUrl": "https://www.town.toyono.osaka.jp/kurashi/seikatsu-infura/koukyou-koutsuu/page000638.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6bbd75e63afa090f17beaa9613191c3be04306a1d87f06c79f0ae07ecdae17e3.html",
+      "snapshotSHA256": "6bbd75e63afa090f17beaa9613191c3be04306a1d87f06c79f0ae07ecdae17e3",
+      "sourceLocator": "Leaflet L.marker(latlng)に渡される値。popupは豊能町役場、余野414番地の1。本庁と吉川支所を区別。 原典数値: 34.9188505, 135.4940959 / 配布案内が本庁舎3階と本庁舎1階警備室を区別し、共に余野414-1と明記。施設ページの豊能町役場popupに紐づくL.marker(latlng)。吉川支所ではない。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。"
+    },
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.toyono.osaka.jp/kurashi/seikatsu-infura/gesuidou/page002821.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8.html",
+      "snapshotSHA256": "da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8",
+      "sourceLocator": "閉庁日 ：豊能町役場 本庁舎1階 警備室窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "buildingIdentification": "配布案内が本庁舎3階と本庁舎1階警備室を区別し、共に余野414-1と明記。施設ページの豊能町役場popupに紐づくL.marker(latlng)。吉川支所ではない。",
+    "sourceFacilityId": "facility:kinki-87988ebfde4fcebbf78a",
+    "distributionStatuses": [
+      "active"
+    ],
+    "datum": "Web地図の緯度経度（十進度）。原典に測地系の名称は明記されず、変換は実施しない。測量精度を主張しない。",
+    "license": "明示的なオープンデータライセンスは未確認。自治体が掲載した数値と出典を候補化。OSM背景のライセンスを自治体マーカーに誤適用しない。HTML原本は監査資料。公開再配布・第三者地図数値の利用条件は親レビュー時に別途判断。",
+    "relocationConflict": "保存済み当日公式配布案内と建物住所は一致。この原本間では移転・別棟競合なし。"
+  },
+  {
+    "facilityId": "facility:kinki-yokkaichi-holiday",
+    "name": "四日市市上下水道局 夜間休日窓口",
+    "address": "三重県四日市市堀木一丁目3-18",
+    "coordinate": {
+      "lat": 34.9723329,
+      "lng": 136.6140131
+    },
+    "coordinateOriginalValues": [
+      "34.9723329",
+      "136.6140131"
+    ],
+    "coordinateEvidence": {
+      "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003.html",
+      "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+      "sourceLocator": "施設名・住所 / こちら / https://www.google.co.jp/maps/place/四日市市上下水道局+管理部総務課総務係/@34.9723894,136.6127705,18z/data=!4m5!3m4!1s0x0:0x406212661c98a2cd!8m2!3d34.9723329!4d136.6140131?hl=ja&shorturl=1 / 配布場所欄は堀木一丁目3-18の上下水道局2階総務課、土日祝は夜間休日窓口と明記。その直後の地図リンクのplace目的点を照合。後段のマンホール設置場所ではない。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。"
+    },
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003.html",
+      "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+      "sourceLocator": "※土日・祝日は夜間休日窓口で配布します。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "buildingIdentification": "配布場所欄は堀木一丁目3-18の上下水道局2階総務課、土日祝は夜間休日窓口と明記。その直後の地図リンクのplace目的点を照合。後段のマンホール設置場所ではない。",
+    "sourceFacilityId": "facility:kinki-efdb8ded331038c52b06",
+    "distributionStatuses": [
+      "active"
+    ],
+    "datum": "Web地図の緯度経度（十進度）。原典に測地系の名称は明記されず、変換は実施しない。測量精度を主張しない。",
+    "license": "明示的なオープンデータライセンスは未確認。自治体が掲載した数値と出典を候補化。OSM背景のライセンスを自治体マーカーに誤適用しない。HTML原本は監査資料。公開再配布・第三者地図数値の利用条件は親レビュー時に別途判断。",
+    "relocationConflict": "保存済み当日公式配布案内と建物住所は一致。この原本間では移転・別棟競合なし。"
+  }
+]

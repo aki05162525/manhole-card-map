@@ -1,0 +1,170 @@
+[
+  {
+    "facilityId": "facility:kanto-south-697024c210b4424f12ca",
+    "featureIndex": 239,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14112",
+        "P05_002": "5",
+        "P05_003": "旭区市民活動支援センターみなくる",
+        "P05_004": "横浜市旭区鶴ケ峰2-82-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.55003436557533,
+          35.47484467697792
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-c28de78bc3ef2c56b069",
+    "featureIndex": 1180,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14214",
+        "P05_002": "3",
+        "P05_003": "市役所駅窓口センター",
+        "P05_004": "伊勢原市桜台1-1-7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.31351027970655,
+          35.396031339519574
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-c7ea6b482b25915147a4",
+    "featureIndex": 1441,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14362",
+        "P05_002": "1",
+        "P05_003": "大井町役場",
+        "P05_004": "大井町金子1995"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.15664581966178,
+          35.326701516848516
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+    "featureIndex": 1441,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14362",
+        "P05_002": "1",
+        "P05_003": "大井町役場",
+        "P05_004": "大井町金子1995"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.15664581966178,
+          35.326701516848516
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+    "featureIndex": 1544,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14402",
+        "P05_002": "1",
+        "P05_003": "清川村役場",
+        "P05_004": "清川村煤ヶ谷2216"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2763758732199,
+          35.48233019463441
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-a9e505e27500c811b2a5",
+    "featureIndex": 1544,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14402",
+        "P05_002": "1",
+        "P05_003": "清川村役場",
+        "P05_004": "清川村煤ヶ谷2216"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2763758732199,
+          35.48233019463441
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-12",
+    "csvEncoding": "cp932",
+    "rawRow": {
+      "seq": "0",
+      "施設名": "綾瀬市役所",
+      "所在地": "神奈川県綾瀬市早川550番地",
+      "電話番号": "0467-77-1111（代表）",
+      "経度": "139.42616",
+      "緯度": "35.437177"
+    }
+  }
+]

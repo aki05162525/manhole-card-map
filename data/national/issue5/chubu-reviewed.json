@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+      "coordinate": {
+        "lat": 37.685682306167095,
+        "lng": 138.8796280155071
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/826; 燕市役所 / 燕市吉田西太田1934; coordinates=[longitude,latitude]",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。"
+      },
+      "supportingEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+          "snapshotPath": "data/evidence/issue5/chubu/tsubame-card.html",
+          "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+          "fetchedAt": "2026-11-05T05:45:44.182436+00:00",
+          "sourceLocator": "第5弾／平日・燕市役所2階20番窓口・吉田西太田1934",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+        }
+      ],
+      "datasetEvidence": {
+        "publisher": "国土交通省",
+        "dataset": "国土数値情報 市町村役場等及び公的集会施設データ P05-22",
+        "referenceDate": "2022-04",
+        "originalCRS": "EPSG:6668 / JGD2011",
+        "originalAxisOrder": "longitude, latitude",
+        "processing": "原本featureの抽出とlat/lngへの順序組替え。座標変換なし。国がこの配布施設追補を作成したとの意味ではない。",
+        "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3",
+        "license": "現行カタログ：適用する利用規約に基づく（オープンデータ）。現行規約：PDL1.0（2026-03-23施行）。旧資料のCC BY4.0記載のみで現行条件を説明しない。",
+        "catalogEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+          "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+          "fetchedAt": "2026-11-05T05:45:44.463528+00:00",
+          "sourceLocator": "座標系・使用許諾条件・主な品質情報",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。"
+        },
+        "termsEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+          "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+          "fetchedAt": "2026-11-05T05:45:44.454259+00:00",
+          "sourceLocator": "附則／出典・編集加工の記載",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。"
+        },
+        "attribution": "出典：国土交通省「国土数値情報 市町村役場等及び公的集会施設データ」 https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html を加工して作成。"
+      },
+      "identityReview": {
+        "name": "燕市役所 2階 下水道課",
+        "address": "新潟県燕市吉田西太田1934番地",
+        "datasetName": "燕市役所",
+        "datasetAddress": "燕市吉田西太田1934",
+        "finding": "現行公式が指定する配布先の入居建物と公的施設Pointの建物を照合。別棟・敷地全体への横展開なし。",
+        "relocation": "取得した現行配布案内に当該建物からの移転表示なし。将来移転や同住所建替え不存在の保証ではない。",
+        "limits": "2022年基準の代表点。室内・入口・センチメートル精度を主張しない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+      "coordinate": {
+        "lat": 37.685682306167095,
+        "lng": 138.8796280155071
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/826; 燕市役所 / 燕市吉田西太田1934; coordinates=[longitude,latitude]",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。"
+      },
+      "supportingEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+          "snapshotPath": "data/evidence/issue5/chubu/tsubame-card.html",
+          "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+          "fetchedAt": "2026-11-05T05:45:44.182436+00:00",
+          "sourceLocator": "第5弾／土日祝・燕市役所1階夜間休日受付・吉田西太田1934",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+        }
+      ],
+      "datasetEvidence": {
+        "publisher": "国土交通省",
+        "dataset": "国土数値情報 市町村役場等及び公的集会施設データ P05-22",
+        "referenceDate": "2022-04",
+        "originalCRS": "EPSG:6668 / JGD2011",
+        "originalAxisOrder": "longitude, latitude",
+        "processing": "原本featureの抽出とlat/lngへの順序組替え。座標変換なし。国がこの配布施設追補を作成したとの意味ではない。",
+        "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3",
+        "license": "現行カタログ：適用する利用規約に基づく（オープンデータ）。現行規約：PDL1.0（2026-03-23施行）。旧資料のCC BY4.0記載のみで現行条件を説明しない。",
+        "catalogEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+          "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+          "fetchedAt": "2026-11-05T05:45:44.463528+00:00",
+          "sourceLocator": "座標系・使用許諾条件・主な品質情報",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。"
+        },
+        "termsEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+          "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+          "fetchedAt": "2026-11-05T05:45:44.454259+00:00",
+          "sourceLocator": "附則／出典・編集加工の記載",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。"
+        },
+        "attribution": "出典：国土交通省「国土数値情報 市町村役場等及び公的集会施設データ」 https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html を加工して作成。"
+      },
+      "identityReview": {
+        "name": "燕市役所 1階 夜間休日受付",
+        "address": "新潟県燕市吉田西太田1934番地",
+        "datasetName": "燕市役所",
+        "datasetAddress": "燕市吉田西太田1934",
+        "finding": "現行公式が指定する配布先の入居建物と公的施設Pointの建物を照合。別棟・敷地全体への横展開なし。",
+        "relocation": "取得した現行配布案内に当該建物からの移転表示なし。将来移転や同住所建替え不存在の保証ではない。",
+        "limits": "2022年基準の代表点。室内・入口・センチメートル精度を主張しない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-oyabe-water-counter",
+      "coordinate": {
+        "lat": 36.67552978156142,
+        "lng": 136.868657542783
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_16_GML.zip!P05-22_16.geojson#/features/569; 小矢部市役所 / 富山県小矢部市本町1-1; coordinates=[longitude,latitude]",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。"
+      },
+      "supportingEvidence": [
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/kurashi/1002194/1002217/1002218.html",
+          "snapshotPath": "data/evidence/issue5/chubu/oyabe-card.html",
+          "snapshotSHA256": "bb5ca30672f20ae82be9eed4a9170bb8841b0d947a41ae8865ccc69e3bca0b1c",
+          "fetchedAt": "2026-11-05T05:45:44.739575+00:00",
+          "sourceLocator": "第17弾／年末年始を除く定休日の市役所上下水道課窓口・本町1番1号",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+        }
+      ],
+      "datasetEvidence": {
+        "publisher": "国土交通省",
+        "dataset": "国土数値情報 市町村役場等及び公的集会施設データ P05-22",
+        "referenceDate": "2022-04",
+        "originalCRS": "EPSG:6668 / JGD2011",
+        "originalAxisOrder": "longitude, latitude",
+        "processing": "原本featureの抽出とlat/lngへの順序組替え。座標変換なし。国がこの配布施設追補を作成したとの意味ではない。",
+        "memberSHA256": "e0de76b6d05dd266431b777dc56c2b52a2d445bd3edb0f857ce20b0f375d9425",
+        "license": "現行カタログ：適用する利用規約に基づく（オープンデータ）。現行規約：PDL1.0（2026-03-23施行）。旧資料のCC BY4.0記載のみで現行条件を説明しない。",
+        "catalogEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+          "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+          "fetchedAt": "2026-11-05T05:45:44.463528+00:00",
+          "sourceLocator": "座標系・使用許諾条件・主な品質情報",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。"
+        },
+        "termsEvidence": {
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+          "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+          "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+          "fetchedAt": "2026-11-05T05:45:44.454259+00:00",
+          "sourceLocator": "附則／出典・編集加工の記載",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。"
+        },
+        "attribution": "出典：国土交通省「国土数値情報 市町村役場等及び公的集会施設データ」 https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html を加工して作成。"
+      },
+      "identityReview": {
+        "name": "小矢部市役所上下水道課窓口",
+        "address": "富山県小矢部市本町1番1号",
+        "datasetName": "小矢部市役所",
+        "datasetAddress": "富山県小矢部市本町1-1",
+        "finding": "現行公式が指定する配布先の入居建物と公的施設Pointの建物を照合。別棟・敷地全体への横展開なし。",
+        "relocation": "現行庁舎1階に上下水道課。2026年9月修正の新庁舎計画では供用開始2028年12月予定、現庁舎解体は新庁舎供用後。2022年P05点は現庁舎に限定し、新庁舎へ継承しない。",
+        "limits": "2022年基準の代表点。室内・入口・センチメートル精度を主張しない。"
+      }
+    }
+  ]
+}

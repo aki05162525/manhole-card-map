@@ -1,0 +1,1399 @@
+{
+  "schema": 1,
+  "region": "chubu",
+  "checkedAt": "2026-11-05",
+  "actorType": "ai",
+  "reviewType": "independent-primary-source-building-review",
+  "candidateFile": "data/national/issue5/chubu.json",
+  "summary": {
+    "updates": 8,
+    "accepted": 3,
+    "deferred": 5,
+    "correction-required": 0,
+    "historicalCorrectionsReviewed": 8
+  },
+  "decisionIds": {
+    "accepted": [
+      "facility:chubu-east-0ec1549ca80513ef50b8",
+      "facility:chubu-east-4af15accba6e0c303389",
+      "facility:chubu-oyabe-water-counter"
+    ],
+    "deferred": [
+      "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "facility:chubu-east-aeb7a0221c19b68a47dc",
+      "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "facility:chubu-iwata-water-counter",
+      "facility:chubu-yoshida-water-counter"
+    ],
+    "correction-required": []
+  },
+  "reviews": [
+    {
+      "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+      "name": "燕市役所 2階 下水道課",
+      "decision": "accepted",
+      "coordinate": {
+        "lat": 37.685682306167095,
+        "lng": 138.8796280155071
+      },
+      "scope": "building",
+      "reason": "現行配布原本の2階20番窓口と吉田西太田1934がP05燕市役所と一致。2026年更新の市採用情報が2013年に現在の庁舎へ移転したことを明示するため、2022年以後の別庁舎へ読み替えず同じ建物を特定できる。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+        "locator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/826",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15213",
+            "P05_002": "1",
+            "P05_003": "燕市役所",
+            "P05_004": "燕市吉田西太田1934"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.8796280155071,
+              37.685682306167095
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt826\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">15213</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>1</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>燕市役所</ksj:Name>\r\n\t\t<ksj:address>燕市吉田西太田1934</ksj:address>\r\n\t",
+        "gmlLatLng": "37.68568231 138.87962802",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/tsubame-card.html",
+          "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+          "fetchedAt": "2026-11-05T05:53:55.035992+00:00",
+          "sourceLocator": "第5弾／平日・燕市役所2階20番窓口・吉田西太田1934",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/somu/1/23/information.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/tsubame-current-building.html",
+          "snapshotSHA256": "8ccfe875e64ace964ba1d651bdadd39ef9a2c4ebdb4a00c0a09761784b95e951",
+          "fetchedAt": "2026-11-05T05:57:32.876245+00:00",
+          "sourceLocator": "2013(平成25)年に現在の燕市庁舎に移転",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "追加調査不要。室内位置・入口精度は承認しない。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+      "name": "燕市役所 1階 夜間休日受付",
+      "decision": "accepted",
+      "coordinate": {
+        "lat": 37.685682306167095,
+        "lng": 138.8796280155071
+      },
+      "scope": "building",
+      "reason": "同じ配布原本が第5弾の休日窓口を市役所1階夜間休日受付と明示。2013年からの現庁舎継続使用資料とP05名称住所を照合。平日窓口から住所一致だけで横展開したものではない。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+        "locator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/826",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15213",
+            "P05_002": "1",
+            "P05_003": "燕市役所",
+            "P05_004": "燕市吉田西太田1934"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.8796280155071,
+              37.685682306167095
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt826\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">15213</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>1</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>燕市役所</ksj:Name>\r\n\t\t<ksj:address>燕市吉田西太田1934</ksj:address>\r\n\t",
+        "gmlLatLng": "37.68568231 138.87962802",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/tsubame-card.html",
+          "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+          "fetchedAt": "2026-11-05T05:53:55.035992+00:00",
+          "sourceLocator": "第5弾／土日祝・燕市役所1階夜間休日受付・吉田西太田1934",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/somu/1/23/information.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/tsubame-current-building.html",
+          "snapshotSHA256": "8ccfe875e64ace964ba1d651bdadd39ef9a2c4ebdb4a00c0a09761784b95e951",
+          "fetchedAt": "2026-11-05T05:57:32.876245+00:00",
+          "sourceLocator": "2013(平成25)年に現在の燕市庁舎に移転",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "追加調査不要。休日の関係状態・期限は既存値を維持。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "name": "荒川地区公民館",
+      "decision": "deferred",
+      "coordinate": {
+        "lat": 38.125599071376314,
+        "lng": 139.44451505446574
+      },
+      "scope": "not-approved",
+      "reason": "現行配布案内と2026年施設詳細は荒川地区公民館・羽ヶ榎104-25で一致し、P05数値も一致。ただし今回得た現行施設ページは建築年・2022年からの同一棟継続使用を示さない。移転記載がないことだけを否定証明に使わない。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+        "locator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/772",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15212",
+            "P05_002": "4",
+            "P05_003": "荒川地区公民館",
+            "P05_004": "村上市羽ヶ榎104-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.44451505446574,
+              38.125599071376314
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt772\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">15212</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>4</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>荒川地区公民館</ksj:Name>\r\n\t\t<ksj:address>村上市羽ヶ榎104-25</ksj:address>\r\n\t",
+        "gmlLatLng": "38.12559907 139.44451505",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/murakami-card.html",
+          "snapshotSHA256": "f08006f5fdf49497606847943d1667185d3fee0e2a9d36b2da7ac5e4a4099690",
+          "fetchedAt": "2026-11-05T05:53:55.063878+00:00",
+          "sourceLocator": "荒川地区のマンホールカード／荒川地区公民館・羽ケ榎104-25",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/arakawa-facility.html",
+          "snapshotSHA256": "2aea706d30272d56592eb01917132cde971d57c2d6973d00f6ff0808369522d9",
+          "fetchedAt": "2026-11-05T05:53:55.005226+00:00",
+          "sourceLocator": "荒川地区公民館所在地・施設紹介",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/arakawa-facility.html",
+          "snapshotSHA256": "2aea706d30272d56592eb01917132cde971d57c2d6973d00f6ff0808369522d9",
+          "fetchedAt": "2026-11-05T05:53:55.005226+00:00",
+          "sourceLocator": "所在地および施設利用案内",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "2022年と現行の棟配置が対応する施設台帳・改修履歴・建物図を追加。数値訂正は未提示。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+      "name": "千曲市上山田文化会館",
+      "decision": "deferred",
+      "coordinate": {
+        "lat": 36.47819438658133,
+        "lng": 138.14561077711286
+      },
+      "scope": "not-approved",
+      "reason": "Turkey!カードの配布先と施設案内は上山田温泉3-1-1の上山田文化会館で一致。文化課の現行施設ページも得たが、2022年棟との連続性を示す施設計画PDFの直接取得は404。検索要約の1979年等を原本取得成功と扱わない。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+        "locator": "P05-22_20_GML.zip!P05-22_20.geojson#/features/1529",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "20218",
+            "P05_002": "5",
+            "P05_003": "上山田文化会館",
+            "P05_004": "千曲市上山田温泉3-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.14561077711286,
+              36.47819438658133
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt1529\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">20218</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>5</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>上山田文化会館</ksj:Name>\r\n\t\t<ksj:address>千曲市上山田温泉3-1-1</ksj:address>\r\n\t",
+        "gmlLatLng": "36.47819439 138.14561078",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.chikuma.lg.jp/kanko_bunka_sports/event/all/4193.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-card.html",
+          "snapshotSHA256": "505a762127fc964244f2a66f93fecb9e6a887cd444cf02559b1f4516d1d533d9",
+          "fetchedAt": "2026-11-05T05:53:55.049741+00:00",
+          "sourceLocator": "Turkey!／上山田文化会館・上山田温泉三丁目1番地1",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://www.city.chikuma.lg.jp/kosodate_kyoiku/gakko_kyoikushisetsu/3209.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-facilities.html",
+          "snapshotSHA256": "a4123b7ae7269452db000ee3936c49523de89e1cfa50096f9b4dce6aa71ae8ab",
+          "fetchedAt": "2026-11-05T05:53:55.076995+00:00",
+          "sourceLocator": "上山田文化会館・上山田温泉3-1-1",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/2322.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-building.html",
+          "snapshotSHA256": "1386935a655e95d78bb6657bda1adf2ae7814de53f91ea262d9ab3724b440101",
+          "fetchedAt": "2026-11-05T05:54:29.561531+00:00",
+          "sourceLocator": "施設の一覧 上山田文化会館",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "現行の個別施設計画または建築・改修履歴の原本と配置図を照合し、P05棟との継続性を確認。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-oyabe-water-counter",
+      "name": "小矢部市役所上下水道課窓口",
+      "decision": "accepted",
+      "coordinate": {
+        "lat": 36.67552978156142,
+        "lng": 136.868657542783
+      },
+      "scope": "building",
+      "reason": "第17弾代替窓口を現行配布原本で確認。2026年庁舎案内図1階の上下水道課は同一の庁舎平面に入る。2026年9月修正の新庁舎計画は供用開始を2028年12月予定と明示し、現庁舎解体を新庁舎供用後に予定。将来新庁舎の位置へ2022年座標を転用しないという条件で現庁舎代表点を承認。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-oyabe-water-counter",
+        "locator": "P05-22_16_GML.zip!P05-22_16.geojson#/features/569",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "16209",
+            "P05_002": "1",
+            "P05_003": "小矢部市役所",
+            "P05_004": "富山県小矢部市本町1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.868657542783,
+              36.67552978156142
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt569\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">16209</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>1</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>小矢部市役所</ksj:Name>\r\n\t\t<ksj:address>富山県小矢部市本町1-1</ksj:address>\r\n\t",
+        "gmlLatLng": "36.67552978 136.86865754",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "e0de76b6d05dd266431b777dc56c2b52a2d445bd3edb0f857ce20b0f375d9425"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/kurashi/1002194/1002217/1002218.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-card.html",
+          "snapshotSHA256": "bb5ca30672f20ae82be9eed4a9170bb8841b0d947a41ae8865ccc69e3bca0b1c",
+          "fetchedAt": "2026-11-05T05:53:55.258570+00:00",
+          "sourceLocator": "第17弾／年末年始を除く定休日の市役所上下水道課窓口・本町1番1号",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1003256.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-layout.html",
+          "snapshotSHA256": "7b4fe637fa5f3068dc0d01738d231ea38cd45974c82c1c169e7e7734e3c8f9b0",
+          "fetchedAt": "2026-11-05T05:54:29.618619+00:00",
+          "sourceLocator": "2026-04-01更新、1階図の上下水道課",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/1f.png",
+          "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-1f.png",
+          "snapshotSHA256": "f09901b1c6e181e06f3f831407102422a8373a30db12ac53e57cdd328235ec38",
+          "fetchedAt": "2026-11-05T05:55:25.983078+00:00",
+          "sourceLocator": "1階右上の上下水道課5番窓口を画像目視",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/1007958.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-revised.html",
+          "snapshotSHA256": "14e4816ff93ca3c5958693eaa832a3b8bd9630ba491c8a287b5ad5543f5325d7",
+          "fetchedAt": "2026-11-05T05:54:29.618148+00:00",
+          "sourceLocator": "3事業スケジュール：新庁舎供用開始2028年12月見込み",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/007/958/jikkeigaiyouban01.pdf",
+          "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-summary.pdf",
+          "snapshotSHA256": "0e08c44c4375493c6f7af85939bd44dcd77394127dfd6621c6419db40d9982a5",
+          "fetchedAt": "2026-11-05T05:55:04.143798+00:00",
+          "sourceLocator": "実施設計概要版：新庁舎供用後の現庁舎解体工程",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "将来移転の確認課題を記録するが、relations.reviewUntil等は今回変更しない。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "name": "沼津市役所 総合案内",
+      "decision": "deferred",
+      "coordinate": {
+        "lat": 35.095646,
+        "lng": 138.863556
+      },
+      "scope": "not-approved",
+      "reason": "配布原本は本庁舎1階総合案内を明示し水道部庁舎と区別している。一方、現行フロア図は本庁舎別館も区別する。P05「沼津市役所」という名称だけで本庁舎側の棟まで確定せず、旧住所featureの採用撤回とは独立に保留。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/437",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22203",
+            "P05_002": "1",
+            "P05_003": "沼津市役所",
+            "P05_004": "沼津市御幸町16-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.863556,
+              35.095646
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt437\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">22203</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>1</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>沼津市役所</ksj:Name>\r\n\t\t<ksj:address>沼津市御幸町16-1</ksj:address>\r\n\t",
+        "gmlLatLng": "35.09564600 138.86355600",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+          "snapshotPath": "data/evidence/issue5/review-chubu/numazu-card.html",
+          "snapshotSHA256": "6b3b4f192cf269fd5c20efca9e959c748166f37081a6d7831d6682fa82d26a66",
+          "fetchedAt": "2026-11-05T05:53:54.903881+00:00",
+          "sourceLocator": "第1号／平日・本庁舎1階総合案内（水道部庁舎は別棟）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        },
+        {
+          "sourceUrl": "https://city.numazu.shizuoka.jp/shisei/office.htm",
+          "snapshotPath": "data/evidence/issue5/review-chubu/numazu-office.html",
+          "snapshotSHA256": "fe4bebb8ac4750b7d443b7763f7ca5920a863e30b6edccc50bcd48afe8c8bb26",
+          "fetchedAt": "2026-11-05T05:53:54.939737+00:00",
+          "sourceLocator": "市役所・御幸町16-1／庁舎案内",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm",
+          "snapshotPath": "data/evidence/issue5/review-chubu/numazu-layout.html",
+          "snapshotSHA256": "ee5516a29d1477aea5770fafc750ed8af1829941bb699271462e0f6e549ea16a",
+          "fetchedAt": "2026-11-05T05:54:29.377699+00:00",
+          "sourceLocator": "本庁舎1階、本庁舎別館",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "P05点が本庁舎外周内にあることを確認できる棟別配置図/GISと2022年からの継続使用資料を追加。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-iwata-water-counter",
+      "name": "磐田市環境水道部上下水道総務課（福田支所2階）",
+      "decision": "deferred",
+      "coordinate": {
+        "lat": 34.681536,
+        "lng": 137.881063
+      },
+      "scope": "not-approved",
+      "reason": "現行配布原本は福田400・福田支所2階を明示。市の現行施設ページも福田支所の住所と階構成を示す。ただし2022年建物と現行建物の同一性を立証する建築・改修履歴までは得ていない。観光協会IDの住所featureとは別件。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-iwata-water-counter",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/825",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22211",
+            "P05_002": "2",
+            "P05_003": "福田支所",
+            "P05_004": "磐田市福田400"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.881063,
+              34.681536
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt825\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">22211</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>2</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>福田支所</ksj:Name>\r\n\t\t<ksj:address>磐田市福田400</ksj:address>\r\n\t",
+        "gmlLatLng": "34.68153600 137.88106300",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/iwata-card.html",
+          "snapshotSHA256": "322ee553d6ce341a4ab6423466ef7628f7889f38ccbfc9d76e433c885a28f59f",
+          "fetchedAt": "2026-11-05T05:53:55.544728+00:00",
+          "sourceLocator": "休館日の配布／磐田市福田400・福田支所2階",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.city.iwata.shizuoka.jp/shiseijouhou/soshikiannai/choushaannai/1004456.html",
+          "snapshotPath": "data/evidence/issue5/review-chubu/iwata-building.html",
+          "snapshotSHA256": "ed631822d3aa2a834964840a1097ee5f989a253d89c5dd95f896394f990b743c",
+          "fetchedAt": "2026-11-05T05:53:55.210185+00:00",
+          "sourceLocator": "所在地・フロアマップ",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "建築年付き現行施設台帳などで2022年の福田支所棟が現存し配布課が入居することを確認。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    },
+    {
+      "facilityId": "facility:chubu-yoshida-water-counter",
+      "name": "吉田町役場2階上下水道課",
+      "decision": "deferred",
+      "coordinate": {
+        "lat": 34.77087,
+        "lng": 138.251943
+      },
+      "scope": "not-approved",
+      "reason": "現行配布原本は吉田町役場2階上下水道課と住吉87を明示。庁舎マップは現行建物の案内であるが2022年以降の建替え・別棟を解決する資料までは得ていない。",
+      "originalRecordVerification": {
+        "facilityId": "facility:chubu-yoshida-water-counter",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1837",
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22424",
+            "P05_002": "1",
+            "P05_003": "吉田町役場",
+            "P05_004": "吉田町住吉87"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.251943,
+              34.77087
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "gmlRecord": "\r\n\t\t<ksj:bounds xlink:href=\"#pt1837\"/>\r\n\t\t<ksj:administrativeCode codeSpace=\"administrativeAreaCode.xml\">22424</ksj:administrativeCode>\r\n\t\t<ksj:publicOfficeClassification public office>1</ksj:publicOfficeClassification public office>\r\n\t\t<ksj:Name>吉田町役場</ksj:Name>\r\n\t\t<ksj:address>吉田町住吉87</ksj:address>\r\n\t",
+        "gmlLatLng": "34.77087000 138.25194300",
+        "geojsonExact": true,
+        "gmlRoundedMatch": true,
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50"
+      },
+      "currentDistributionEvidence": [
+        {
+          "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+          "snapshotPath": "data/evidence/issue5/review-chubu/yoshida-card.html",
+          "snapshotSHA256": "4b82980717ad5ff731c9f32bb8987c2b4399ca1ec527ae03f37dbbd148fdec00",
+          "fetchedAt": "2026-11-05T05:53:55.654236+00:00",
+          "sourceLocator": "しらすの窓口定休日／吉田町役場2階上下水道課・住吉87",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "additionalEvidence": [
+        {
+          "sourceUrl": "https://www.town.yoshida.shizuoka.jp/2319.htm",
+          "snapshotPath": "data/evidence/issue5/review-chubu/yoshida-layout.html",
+          "snapshotSHA256": "7d0e9f354b36e698c8a7078dde9c35b7cfe860603f3ff2486166efa2102c4818",
+          "fetchedAt": "2026-11-05T05:54:29.644852+00:00",
+          "sourceLocator": "庁舎マップ各階案内",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai"
+        }
+      ],
+      "requiredEvidence": "2022年と現行の庁舎を結ぶ建築年・改修履歴付き施設台帳と配布課の入居を確認。",
+      "coordinateCorrection": null,
+      "relationAction": "unchanged"
+    }
+  ],
+  "correctionReviews": [
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "decision": "accepted",
+      "reason": "埋込ラベルは千福7-1 すそのセントラルパーク内という住所・敷地表記のみ。観光協会の名を持つPOIではなく、当該事務所建物との対応を証明しない。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+        "targetFile": "data/national/location-updates/chubu-west.json",
+        "selector": {
+          "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://www.susonokanko.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+          "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+        },
+        "new": {
+          "sourceUrl": "https://www.susonokanko.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+          "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。埋込ラベルは千福7-1 すそのセントラルパーク内という住所・敷地表記のみ。観光協会の名を持つPOIではなく、当該事務所建物との対応を証明しない。 座標は未承認。"
+        },
+        "reason": "埋込ラベルは千福7-1 すそのセントラルパーク内という住所・敷地表記のみ。観光協会の名を持つPOIではなく、当該事務所建物との対応を証明しない。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+            "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+          },
+          {
+            "sourceUrl": "https://www.susonokanko.jp/",
+            "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+            "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+            "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "decision": "accepted",
+      "reason": "埋込レコードは16-1 Miyukichoという住所のみ、種別Building。市役所施設名付きPOIでなく、本庁舎という特定建物の根拠に昇格できない。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+        "targetFile": "data/national/location-updates/chubu-west.json",
+        "selector": {
+          "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+          "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+        },
+        "new": {
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+          "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。埋込レコードは16-1 Miyukichoという住所のみ、種別Building。市役所施設名付きPOIでなく、本庁舎という特定建物の根拠に昇格できない。 座標は未承認。"
+        },
+        "reason": "埋込レコードは16-1 Miyukichoという住所のみ、種別Building。市役所施設名付きPOIでなく、本庁舎という特定建物の根拠に昇格できない。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+            "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+          },
+          {
+            "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+            "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+            "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+            "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "decision": "accepted",
+      "reason": "埋込は夕陽ケ丘6という住所のみ、種別建造物。施設名付きPOIというsourceLocator／verificationMethodの説明は成立しない。建物の施設同定が未解決。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+        "targetFile": "data/national/location-updates/chubu-west.json",
+        "selector": {
+          "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://www.skydome.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+          "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+        },
+        "new": {
+          "sourceUrl": "https://www.skydome.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+          "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。埋込は夕陽ケ丘6という住所のみ、種別建造物。施設名付きPOIというsourceLocator／verificationMethodの説明は成立しない。建物の施設同定が未解決。 座標は未承認。"
+        },
+        "reason": "埋込は夕陽ケ丘6という住所のみ、種別建造物。施設名付きPOIというsourceLocator／verificationMethodの説明は成立しない。建物の施設同定が未解決。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+            "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+          },
+          {
+            "sourceUrl": "https://www.skydome.jp/",
+            "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+            "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+            "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "decision": "accepted",
+      "reason": "原本initEmbed[21][3][0]は住所だけのレコードで[21][3][12]は建造物。施設名・観光協会POIの記載なし。公式の掲載住所が同じでも住所featureを配布建物へ承認しない。住所代表点か実建物形状に基づく点かも保存応答からは確定できない。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-west-b943f5c6151615096149",
+        "targetFile": "data/national/location-updates/chubu-west.json",
+        "selector": {
+          "facilityId": "facility:chubu-west-b943f5c6151615096149",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+          "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+        },
+        "new": {
+          "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+          "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。原本initEmbed[21][3][0]は住所だけのレコードで[21][3][12]は建造物。施設名・観光協会POIの記載なし。公式の掲載住所が同じでも住所featureを配布建物へ承認しない。住所代表点か実建物形状に基づく点かも保存応答からは確定できない。 座標は未承認。"
+        },
+        "reason": "原本initEmbed[21][3][0]は住所だけのレコードで[21][3][12]は建造物。施設名・観光協会POIの記載なし。公式の掲載住所が同じでも住所featureを配布建物へ承認しない。住所代表点か実建物形状に基づく点かも保存応答からは確定できない。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+            "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+          },
+          {
+            "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+            "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+            "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+            "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "decision": "accepted",
+      "reason": "公式運営者の現住所は八丁町52番地。台帳の八帖町字往還通52は訂正が必要。埋込名はまるや八丁味噌 本社であるが、配布窓口入居建物との対応も明示されないため現行行をそのまま承認しない。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+        "targetFile": "data/national/location-updates/chubu-west.json",
+        "selector": {
+          "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://www.8miso.co.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+          "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+        },
+        "new": {
+          "sourceUrl": "https://www.8miso.co.jp/",
+          "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+          "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+          "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。公式運営者の現住所は八丁町52番地。台帳の八帖町字往還通52は訂正が必要。埋込名はまるや八丁味噌 本社であるが、配布窓口入居建物との対応も明示されないため現行行をそのまま承認しない。 座標は未承認。"
+        },
+        "reason": "公式運営者の現住所は八丁町52番地。台帳の八帖町字往還通52は訂正が必要。埋込名はまるや八丁味噌 本社であるが、配布窓口入居建物との対応も明示されないため現行行をそのまま承認しない。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+            "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+          },
+          {
+            "sourceUrl": "https://www.8miso.co.jp/",
+            "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+            "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+            "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "decision": "accepted",
+      "reason": "GIS OBJECTID=23は「佐渡市役所」。市配布原本は本庁総合案内だが、根拠に挙げた市民センター一覧では同じ千種232の金井市民センターは「佐渡市役所第2庁舎1階」。旧市役所が現市民センターになったとの説明は誤り。GIS点が本庁舎を指す棟別裏付けが不足。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+        "targetFile": "data/national/location-updates/chubu-east-north.json",
+        "selector": {
+          "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+          "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+          "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+        },
+        "new": {
+          "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+          "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+          "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。GIS OBJECTID=23は「佐渡市役所」。市配布原本は本庁総合案内だが、根拠に挙げた市民センター一覧では同じ千種232の金井市民センターは「佐渡市役所第2庁舎1階」。旧市役所が現市民センターになったとの説明は誤り。GIS点が本庁舎を指す棟別裏付けが不足。 座標は未承認。"
+        },
+        "reason": "GIS OBJECTID=23は「佐渡市役所」。市配布原本は本庁総合案内だが、根拠に挙げた市民センター一覧では同じ千種232の金井市民センターは「佐渡市役所第2庁舎1階」。旧市役所が現市民センターになったとの説明は誤り。GIS点が本庁舎を指す棟別裏付けが不足。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/facility-point-scope.json",
+            "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+          },
+          {
+            "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+            "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+            "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+            "role": "primary-source"
+          },
+          {
+            "snapshotPath": "data/evidence/national/chubu-east/cd4647361ca91e1f6a70.html",
+            "snapshotSHA256": "ff37ebc3ede3d6f9a0eabf04ce7dd6acc723322da062404da892048dad70ea1c",
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+            "role": "primary-source"
+          },
+          {
+            "snapshotPath": "data/evidence/national/locations-chubu-east-north/84894a0ed2bff76b8514d658.html",
+            "snapshotSHA256": "eb2762bbfa6af435ccefb920f7142b42570eee5c30cce316fd89eef8d9cc5bde",
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+            "role": "primary-source"
+          },
+          {
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55002.html",
+            "snapshotPath": "data/evidence/issue5/chubu/sado-offices.html",
+            "snapshotSHA256": "43ac45a0c3565a902fd6c6bba0685df99234b5670ef106fbe10c851e67e437e4",
+            "fetchedAt": "2026-11-05T05:45:44.464921+00:00",
+            "sourceLocator": "金井市民センター／第2庁舎1階",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+          },
+          {
+            "sourceUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/41399.pdf",
+            "snapshotPath": "data/evidence/issue5/chubu/sado-new-office.pdf",
+            "snapshotSHA256": "4823555b34ffee2607598fec80e0df0c11118c99523fa63e5a6a8b36a6b2ab45",
+            "fetchedAt": "2026-11-05T05:45:44.827230+00:00",
+            "sourceLocator": "市報さど2023年11月号p.2／2023-11-06開庁・現庁舎となり",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "decision": "correction-required",
+      "reason": "GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+        "targetFile": "data/national/location-updates/chubu-east-north.json",
+        "selector": {
+          "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+          "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+          "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+        },
+        "new": {
+          "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+          "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+          "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。 座標は未承認。"
+        },
+        "reason": "GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/facility-point-scope.json",
+            "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+          },
+          {
+            "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+            "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+            "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+            "role": "primary-source"
+          },
+          {
+            "snapshotPath": "data/evidence/national/chubu-east/cd4647361ca91e1f6a70.html",
+            "snapshotSHA256": "ff37ebc3ede3d6f9a0eabf04ce7dd6acc723322da062404da892048dad70ea1c",
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+            "role": "primary-source"
+          },
+          {
+            "snapshotPath": "data/evidence/national/locations-chubu-east-north/84894a0ed2bff76b8514d658.html",
+            "snapshotSHA256": "eb2762bbfa6af435ccefb920f7142b42570eee5c30cce316fd89eef8d9cc5bde",
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+            "role": "primary-source"
+          },
+          {
+            "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55002.html",
+            "snapshotPath": "data/evidence/issue5/chubu/sado-offices.html",
+            "snapshotSHA256": "43ac45a0c3565a902fd6c6bba0685df99234b5670ef106fbe10c851e67e437e4",
+            "fetchedAt": "2026-11-05T05:45:44.464921+00:00",
+            "sourceLocator": "金井市民センター／第2庁舎1階",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+          },
+          {
+            "sourceUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/41399.pdf",
+            "snapshotPath": "data/evidence/issue5/chubu/sado-new-office.pdf",
+            "snapshotSHA256": "4823555b34ffee2607598fec80e0df0c11118c99523fa63e5a6a8b36a6b2ab45",
+            "fetchedAt": "2026-11-05T05:45:44.827230+00:00",
+            "sourceLocator": "市報さど2023年11月号p.2／2023-11-06開庁・現庁舎となり",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "全体scopeの断定をexactCorrectionsで修正後に採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+      "decision": "accepted",
+      "reason": "公社配布原本は「新潟浄化センター管理棟2階事務室」だが、明示リンクのfeatureは新潟浄化センター全体。管理棟の位置を識別する原典がない。「建物代表点」と断言した現evidenceは過大。",
+      "exactOldMatch": true,
+      "exactProposal": {
+        "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+        "targetFile": "data/national/location-updates/chubu-east-north.json",
+        "selector": {
+          "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+          "field": "evidence"
+        },
+        "old": {
+          "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+          "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+          "sourceLocator": "※googleマップで確認 の施設place !8m2!3d!4d",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+        },
+        "new": {
+          "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+          "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+          "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+          "sourceLocator": "※googleマップで確認 の施設place !8m2!3d!4d（数値の存在だけでは配布建物の同一性を証明しない）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "旧採用説明を撤回。公社配布原本は「新潟浄化センター管理棟2階事務室」だが、明示リンクのfeatureは新潟浄化センター全体。管理棟の位置を識別する原典がない。「建物代表点」と断言した現evidenceは過大。 座標は未承認。"
+        },
+        "reason": "公社配布原本は「新潟浄化センター管理棟2階事務室」だが、明示リンクのfeatureは新潟浄化センター全体。管理棟の位置を識別する原典がない。「建物代表点」と断言した現evidenceは過大。",
+        "evidence": [
+          {
+            "snapshotPath": "data/national/reviews/facility-point-scope.json",
+            "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+          },
+          {
+            "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+            "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+            "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+            "role": "primary-source"
+          },
+          {
+            "snapshotPath": "data/evidence/national/chubu-east/ef5ab05fce0ec98378ad.html",
+            "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+            "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+            "role": "primary-source"
+          }
+        ],
+        "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+      },
+      "reviewerNote": "旧位置の採用撤回を支持。新座標の承認を意味しない。"
+    }
+  ],
+  "exactCorrections": [
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/0/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/0/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/0/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/1/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/1/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/1/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/2/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/2/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/2/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/3/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/3/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/3/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/4/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/4/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/4/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/5/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/5/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/5/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/6/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/6/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/6/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/7/evidence/verificationMethod",
+      "old": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。住所ジオコード・viewport・蓋座標ではない。室内窓口測量は不要。",
+      "new": "AIがP05-22原本GeoJSONの名称・住所付き建物Pointを現行公式配布案内の対象建物と照合。EPSG:6668/JGD2011の原数値をlat/lngへ順序変更し、座標変換はしていない。本追補では住所ジオコーディングを行わず、P05の施設Pointを抽出した。P05自体の作成工程には住所ジオコーディングが含まれる。viewport・蓋座標ではない。室内窓口測量は不要。",
+      "reason": "カタログの作成方法との混同を防ぐ限定表現。座標変更なし。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/7/datasetEvidence/catalogEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIがP05カタログの基準年月・座標系・点形状・使用許諾条件・作成方法を照合。建物入居窓口の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/7/datasetEvidence/termsEvidence/verificationMethod",
+      "old": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。",
+      "new": "AIが2026-03-23施行PDL1.0と出典・加工表示義務、適用除外の記載を照合。施設同定の証拠ではない。",
+      "reason": "規約/カタログへの共通の施設名・入居建物照合という誤った方法記述を訂正。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/updates/4/identityReview/relocation",
+      "old": "取得した現行配布案内に当該建物からの移転表示なし。将来移転や同住所建替え不存在の保証ではない。",
+      "new": "現行庁舎1階に上下水道課。2026年9月修正の新庁舎計画では供用開始2028年12月予定、現庁舎解体は新庁舎供用後。2022年P05点は現庁舎に限定し、新庁舎へ継承しない。",
+      "reason": "新庁舎計画の原典を追加したため説明を具体化。関係期限は変更しない。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/corrections/6/reason",
+      "old": "GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。",
+      "new": "GIS OBJECTID=23の施設名は「佐渡市役所」で棟識別属性はない。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。",
+      "reason": "点featureから「全体」の幾何学的scopeを断定しない。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    },
+    {
+      "targetFile": "data/national/issue5/chubu.json",
+      "operation": "replace",
+      "path": "/corrections/6/new/verificationMethod",
+      "old": "旧採用説明を撤回。GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。 座標は未承認。",
+      "new": "旧採用説明を撤回。GIS OBJECTID=23の施設名は「佐渡市役所」で棟識別属性はない。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。 座標は未承認。",
+      "reason": "元の誤同定を撤回する趣旨は支持するが施設全体との断定は除去。",
+      "applyTo": "新規統合用コピーのみ。元候補・固定台帳を変更しない。"
+    }
+  ],
+  "additionalAddressCorrection": {
+    "targetFile": "data/work/issue5-baseline/ledger.json",
+    "selector": {
+      "id": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "collection": "places"
+    },
+    "field": "address",
+    "old": "愛知県岡崎市八帖町字往還通52",
+    "new": "愛知県岡崎市八丁町52番地",
+    "applyTo": "新規統合用コピーのみ。固定baselineは変更禁止。",
+    "coordinateAction": "保留維持"
+  },
+  "evidenceEditorialPolicy": "exactCorrectionsは根拠説明・監査方法の訂正。acceptedは追加した原典を含む建物座標判断であり、元候補全文の無修正承認ではない。",
+  "rights": {
+    "decision": "P05利用条件・出典加工表示は確認",
+    "sourceEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "snapshotPath": "data/evidence/issue5/review-chubu/p05-catalog.html",
+        "snapshotSHA256": "0f9272b4d1d7a6959d2a61198c85897db2155b6b9472debaf7ffa4b2eb122aa0",
+        "fetchedAt": "2026-11-05T05:53:55.530127+00:00",
+        "sourceLocator": "基準年月・使用許諾条件・作成方法",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "snapshotPath": "data/evidence/issue5/review-chubu/p05-terms.html",
+        "snapshotSHA256": "f8b7335060638881ede67f8bc245e39485d185721d5208c7da49c0e67b23a95c",
+        "fetchedAt": "2026-11-05T05:53:55.521550+00:00",
+        "sourceLocator": "2026-03-23施行、PDL1.0、1.1出典・加工表示",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai"
+      }
+    ],
+    "finding": "候補のdatasetEvidence.attributionとREADMEは出典URL・データ名・加工を表示し、国の作成物との誤表示を避けている。支援HTML全体へのPDLライセンス適用は主張しない。assemblerがこの監査メタデータを台帳へ転記することはないため統合時にも出典文書を保持する。"
+  },
+  "goEvidenceCompatibility": {
+    "decision": "pass",
+    "strictFields": [
+      "sourceUrl",
+      "snapshotPath",
+      "snapshotSHA256",
+      "sourceLocator",
+      "checkedAt",
+      "actorType",
+      "verificationMethod"
+    ],
+    "decodeProbe": {
+      "returncode": 0,
+      "stdout": "decodeLedger: OK\n",
+      "stderr": ""
+    },
+    "notes": "supportingEvidence内fetchedAt等は主evidenceに混ぜない。apply_locationsはcoordinate/evidenceのみ転記しdatasetEvidence, identityReview, supportingEvidence, scopeは台帳へ渡さない。"
+  },
+  "documentCodeDiscrepancies": [],
+  "documentCodeReview": "候補の主evidenceは7フィールドで実装と一致。今回読んだREADME・build.py・validate.py・assembler・Go厳密decodeに実際の文書/コード不一致は見つからなかった。READMEの再検証コマンドは候補成果物を書き直すため本レビューでは実行せず、独立した一時適用で検証した。",
+  "unresolvedScope": "既存130件は再調査済みに昇格しない。今回のdeferred5件も採用しない。3件を採用する場合、元の対象138件中残る135件が未承認。",
+  "relations": "固定ledgerのrelations全項目（状態・条件・期限含む）不変を一時適用で検証。",
+  "verificationFile": "data/evidence/issue5/review-chubu/verification.json",
+  "inputHashes": {
+    "data/national/issue5/chubu.json": "68e9c0ad0998a5ba0930634bfe11c7d80fc1589001465ad252c72f7a1a5650b5",
+    "data/evidence/issue5/chubu/README.md": "eccbc607da2b667b81dad678629209812f9195e64a1c35a7ac03115f75a7d367",
+    "data/work/issue5-baseline/ledger.json": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b",
+    "data/work/issue5-baseline/full.json": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150",
+    "data/work/issue5-baseline/manifest.json": "d77fef7c9f1f8c59fa591becc73d6d9cfd6f1de698ba0167b5e1f57b71dc9a9d",
+    "tools/national/assemble.py": "3a0fdd6a6c2ec9a280eb9b88bf5ebf2b77d49f4b042e3ce597db4f1dcb0333a0",
+    "cmd/builddata/ledger.go": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695"
+  }
+}

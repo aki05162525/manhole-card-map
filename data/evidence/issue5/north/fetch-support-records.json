@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://www.city.kitami.lg.jp/administration/detail.php?content=8822",
+    "fetchedAt": "2026-11-05T05:46:44.690192+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitami.lg.jp/administration/detail.php?content=8822",
+    "snapshotPath": "data/evidence/issue5/north/295ee642b0a5558a3d4a.html",
+    "snapshotSHA256": "e670aae7140670b1dab4255b9ae7cde264852447556c4ed1251997020b227c4f",
+    "bytes": 42468
+  },
+  {
+    "url": "https://www.city.fukushima-date.lg.jp/soshiki/30/index-2.html",
+    "fetchedAt": "2026-11-05T05:46:44.933654+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukushima-date.lg.jp/soshiki/30/index-2.html",
+    "snapshotPath": "data/evidence/issue5/north/83dcf852260664d31edf.html",
+    "snapshotSHA256": "0294de140cabe1487c4326d66cae0a5e29bb15d66679608a0998f6f38d0fe179",
+    "bytes": 21824
+  },
+  {
+    "url": "https://www.city.bibai.hokkaido.jp/uploaded/attachment/6449.pdf",
+    "fetchedAt": "2026-11-05T05:46:45.046849+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.bibai.hokkaido.jp/uploaded/attachment/6449.pdf",
+    "snapshotPath": "data/evidence/issue5/north/5372621a66628b06fea2.pdf",
+    "snapshotSHA256": "a159c75bddc5b336c31759e69f0b16b0dc87ac19c5ed42518223375a9eaa4975",
+    "bytes": 30355519
+  },
+  {
+    "url": "https://www.hakobura.jp/features/56",
+    "fetchedAt": "2026-11-05T05:46:46.738148+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hakobura.jp/features/56",
+    "snapshotPath": "data/evidence/issue5/north/d11ef2c7c8209b21b9ec.html",
+    "snapshotSHA256": "efe3502f5481c0354ad870ee1e5044d77db3b6fadad3ac9d8f3e6486b069f7f6",
+    "bytes": 75957
+  }
+]

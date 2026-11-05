@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "validatedAt": "2026-11-05T05:49:31.513275+00:00",
+  "actorType": "ai",
+  "targetCount": 192,
+  "updateCandidateCount": 4,
+  "unresolvedCount": 188,
+  "correctionCount": 1,
+  "allIdsUniqueAndCovered": true,
+  "allCardIdsInFull": true,
+  "coordinateOriginalValuesPresent": true,
+  "reusedHashesVerified": 125,
+  "unknownRetrievalTimes": [],
+  "inputs": [
+    {
+      "path": "data/work/issue5-baseline/ledger.json",
+      "sha256": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b"
+    },
+    {
+      "path": "data/work/issue5-baseline/full.json",
+      "sha256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150"
+    },
+    {
+      "path": "data/national/location-updates/kinki.json",
+      "sha256": "e37d441d645d5a2e190098fcb09a4428a6c921b2601d8a9bcc2a61f39201fb06"
+    },
+    {
+      "path": "data/national/regions/kinki.json",
+      "sha256": "21f4770c7f66c240cbef7f41959eecc2d731b0c9157d3a62c29014dae5dd4733"
+    },
+    {
+      "path": "data/national/tokyo-kinki-location-integration.json",
+      "sha256": "1b586e85db508f38a7e53da1e005a9c14a2304b9d20617cc3804dc0f9eeda1df"
+    },
+    {
+      "path": "data/evidence/national/locations-kinki/README.md",
+      "sha256": "08b098727c46ac50165172ee8f75484bb18a95fe3666a068c394e0d8153a00b8"
+    },
+    {
+      "path": "data/evidence/national/proposals-kinki/README.md",
+      "sha256": "32cfc801ffe40c8cd64aba288d62f633cfdc273ac5a9066aec3b79250b6f4702"
+    },
+    {
+      "path": "data/national/reviews/facility-point-scope.json",
+      "sha256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+    }
+  ],
+  "scope": "候補4施設の数値・同一建物確認、192件の排他分類。188件の位置確定や全URL再取得を意味しない。"
+}

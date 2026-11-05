@@ -1,0 +1,4826 @@
+[
+  {
+    "facilityId": "facility:kinki-00076aa000243841ea36",
+    "name": "奈良町南観光案内所",
+    "address": "奈良市井上町11番地",
+    "cardIds": [
+      "29-201-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://h2o.nara.nara.jp/info_924.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-62080a9ea83caeb01e2df84ccd307b29c2513cfd613ccbedfa6f430c6d7b2cf1.html",
+      "snapshotSHA256": "62080a9ea83caeb01e2df84ccd307b29c2513cfd613ccbedfa6f430c6d7b2cf1",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-201-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。奈良町南観光案内所繭・井上町11、在庫あり。requestsのTLSエラー後curl標準TLSで原本取得成功。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-05fa2fff7b3ec588550c",
+    "name": "甲賀地域市民センター",
+    "address": "滋賀県甲賀市甲賀町相模173-1",
+    "cardIds": [
+      "25-209-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.koka.lg.jp/24108.htm",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b.html",
+      "snapshotSHA256": "e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。旧甲賀町デザイン、甲賀地域市民センター、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-09d12f8315cc6ca090a4",
+    "name": "今井まちなみ交流センター「華甍」",
+    "address": "奈良県橿原市今井町2-3-5",
+    "cardIds": [
+      "29-205-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617.html",
+      "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。施設休館に伴う移転。旧華甍の関係のみ終了、新窓口はproposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-0ab43e23e56721ae344c",
+    "name": "ダムパークいばきた パークセンター",
+    "address": "大阪府茨木市大字生保53-1",
+    "cardIds": [
+      "27-211-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ibaraki.osaka.jp/kikou/kensetsu/gesuidosoumu/menu/46736.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6366a82474e9f6b472598cd568d023b22ec9cf0fab25f84cc506527a7784e02b.html",
+      "snapshotSHA256": "6366a82474e9f6b472598cd568d023b22ec9cf0fab25f84cc506527a7784e02b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-211-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第12弾おにクル1階・第25弾ダムパークインフォメーション、2025/9/10再開。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-0c8d6a57e95c37e282eb",
+    "name": "宇治市観光センター",
+    "address": "京都府宇治市宇治塔川2",
+    "cardIds": [
+      "26-204-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.uji.kyoto.jp/soshiki/12/6038.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cf2ff5ddbc0ef7da63f9c7487a40fab128253b77c885af8ba8aee4e30887dba4.html",
+      "snapshotSHA256": "cf2ff5ddbc0ef7da63f9c7487a40fab128253b77c885af8ba8aee4e30887dba4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。後継ページ2026/5/22、宇治塔川2の観光センターを同定。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+    "name": "稲美町役場地域整備部水道課",
+    "address": "兵庫県加古郡稲美町国岡1-1",
+    "cardIds": [
+      "28-381-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.hyogo-inami.lg.jp/0000007341.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-14d3a00d8caa5ff9995c4c6a706edb7b610cbb7e3d6e4ebb4872d2b52bfdc82b.html",
+      "snapshotSHA256": "14d3a00d8caa5ff9995c4c6a706edb7b610cbb7e3d6e4ebb4872d2b52bfdc82b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-381-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/1/13再開、平日8:30～17:15水道課窓口、休日配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-0f86b9f28ca3800b81c4",
+    "name": "芦屋市役所 北館地下1階警備室",
+    "address": "兵庫県芦屋市精道町7-6",
+    "cardIds": [
+      "28-206-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ashiya.lg.jp/gesuidou/manhoru-kado/8dan.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e3b106c621fbcf2f3ad024837be9a16b82e34f07d18099e2dfaf2ca68ec6acd4.html",
+      "snapshotSHA256": "e3b106c621fbcf2f3ad024837be9a16b82e34f07d18099e2dfaf2ca68ec6acd4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-206-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日東館1階下水道課、休日北館地下1階警備室、共に9～17:30。年末年始も警備室。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-0fcf12cda481cf26b84f",
+    "name": "姫路市観光案内所",
+    "address": "兵庫県姫路市駅前町210-2(JR姫路駅中央コンコース北西側)",
+    "cardIds": [
+      "28-201-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.himeji.lg.jp/kurashi/0000000319.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d1e5def6954629468b03103cac7f8035bd279a6fa3c4c9e3928c35c91ca11dda.html",
+      "snapshotSHA256": "d1e5def6954629468b03103cac7f8035bd279a6fa3c4c9e3928c35c91ca11dda",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-201-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/6/24公式案内で駅案内所8:30～18:30、12/29・30と設備点検日休業。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-11d5574411a4dcfe6dec",
+    "name": "大阪狭山市役所庁舎2階 水政策部下水道・水路グループ",
+    "address": "大阪府大阪狭山市狭山1-2384-1",
+    "cardIds": [
+      "27-231-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85.html",
+      "snapshotSHA256": "bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-231-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市公式は工事休館中もカード配布継続と明記。施設公式の2026/9開館展示と現行アクセスを追加確認。博物館内の受付詳細位置は未確定。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-129ffa1ab731e3dda85e",
+    "name": "長岡京市上下水道部下水道施設課",
+    "address": "長岡京市開田1-1-1 市役所分庁舎2",
+    "cardIds": [
+      "26-209-A001",
+      "26-209-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.nagaokakyo.lg.jp/0000007110.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bdd6739d175da717d65c681989555a448cf5375a1552e792dde267f8e4b37b52.html",
+      "snapshotSHA256": "bdd6739d175da717d65c681989555a448cf5375a1552e792dde267f8e4b37b52",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。たけのこ柄。現行問い合わせ窓口は本庁舎5階で、旧分庁舎2との移転関係は未解決。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1421f0ca70946971eeef",
+    "name": "河南町役場宿直室",
+    "address": "大阪府南河内郡河南町大字白木1359-6",
+    "cardIds": [
+      "27-382-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b.html",
+      "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-382-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階西27番都市環境課・休日1階西宿直室、9～17:30。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1435805d8cdc92f82308",
+    "name": "明石市立天文科学館",
+    "address": "兵庫県明石市人丸町2-6",
+    "cardIds": [
+      "28-203-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.akashi.lg.jp/gesuidou/g_seibi_ka/manhoru.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-06dbca824ff5dd6fda3c1292bc08a7b0af96c18da62877df30c15cdc5067e29b.html",
+      "snapshotSHA256": "06dbca824ff5dd6fda3c1292bc08a7b0af96c18da62877df30c15cdc5067e29b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行天文科学館での配布を同定。休館日はあかし案内所で配布するため追加窓口proposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-16fb4e440571f625f427",
+    "name": "カーミンの観光案内所",
+    "address": "兵庫県神崎郡神河町鍛治142番地の47",
+    "cardIds": [
+      "28-446-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kamikawa.hyogo.jp/0000002459.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-58743fd28acf39695f17c082b6600e8ce2d84180fa0a4c4476dbb6b792a1d1fc.html",
+      "snapshotSHA256": "58743fd28acf39695f17c082b6600e8ce2d84180fa0a4c4476dbb6b792a1d1fc",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-446-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。10/1移転後カーミン観光案内所を照合。旧長谷店は現行としない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-18407c7d342c050ce443",
+    "name": "道の駅 奥河内くろまろの郷",
+    "address": "大阪府河内長野市高向1218-1",
+    "cardIds": [
+      "27-216-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kawachinagano.lg.jp/site/gesui/47644.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5ad3e0cfc3b82e5056c22df7fb6ba02c6b1b01c3d2b158959e3389899e8e3037.html",
+      "snapshotSHA256": "5ad3e0cfc3b82e5056c22df7fb6ba02c6b1b01c3d2b158959e3389899e8e3037",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-216-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。くろまろの郷ビジターセンター9～17時、在庫あり。直売所の営業時間を流用しない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1a59dc2a1c6607a3c533",
+    "name": "丹波篠山市立歴史美術館",
+    "address": "兵庫県丹波篠山市呉服町53",
+    "cardIds": [
+      "28-221-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006.html",
+      "snapshotSHA256": "a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行日本語公式の9～17時を採用。旧GKP・観光英語版の8:30～17:15と相違。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1be70e72fc99db54a2c4",
+    "name": "守口市役所 総合案内",
+    "address": "大阪府守口市京阪本通2-5-5(1階)",
+    "cardIds": [
+      "27-209-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.moriguchi.osaka.jp/kakukanoannai/kankyougesuidoubu/gesuidokanrika/designed_maintainance_hole/487.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4a64130fe31a747465b8fea6a1a37d904aa0ac867830b172d09b6b46d0569904.html",
+      "snapshotSHA256": "4a64130fe31a747465b8fea6a1a37d904aa0ac867830b172d09b6b46d0569904",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日5階下水道課・休日1階総合案内、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+    "name": "柏原市市役所別館1階 下水工務課",
+    "address": "大阪府柏原市安堂町1-55",
+    "cardIds": [
+      "27-221-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+      "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A別館平日と本館図書休日、C堅下分館を照合。本文上部の旧市民文化センターより現行配布表を採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1e04fb99663d8a30e05e",
+    "name": "豊郷町観光案内所(豊郷小学校旧校舎群 酬徳記念館内)",
+    "address": "滋賀県犬上郡豊郷町大字石畑518",
+    "cardIds": [
+      "25-441-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.toyosato.shiga.jp/contents_detail.php?co=kak&frmId=1749",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e989cbae06fc5b3c1992230eaa21c6d3c43aaa574b1245b9871320abc40085f0.html",
+      "snapshotSHA256": "e989cbae06fc5b3c1992230eaa21c6d3c43aaa574b1245b9871320abc40085f0",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-441-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。町2025/9/30更新の休止告知。観光協会の終了表現と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-1f53e017c012bc0ed6af",
+    "name": "大和郡山市上下水道部 下水道推進課",
+    "address": "奈良県大和郡山市植槻町6-10(上下水道部庁舎2階)",
+    "cardIds": [
+      "29-203-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5.html",
+      "snapshotSHA256": "510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/4/1案内の組織名称・年末休業差異を反映。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-212883840c3bc7b55808",
+    "name": "公民館堅下分館(堅下合同会館)",
+    "address": "大阪府柏原市大県3丁目9-19",
+    "cardIds": [
+      "27-221-C001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+      "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-221-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A別館平日と本館図書休日、C堅下分館を照合。本文上部の旧市民文化センターより現行配布表を採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-216cded227809ea5a7c7",
+    "name": "まちづくりの館",
+    "address": "大阪府岸和田市本町8番8号",
+    "cardIds": [
+      "27-202-C001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kishiwada.lg.jp/page/56-manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69.html",
+      "snapshotSHA256": "31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-202-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第20弾は2026/7/1からまちづくりの館へ変更済み。現行legacyと対応。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-23e158dd32bc9d143679",
+    "name": "豊中市上下水道局 経営部 経営企画課(3F)",
+    "address": "大阪府豊中市北桜塚4-11-18",
+    "cardIds": [
+      "27-203-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.toyonaka.osaka.jp/jogesuido/okyakusama_joho/koho_keihatsu/oshirase/mhcard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-534f20301356fa84a929f9196d24ca593984d17dd60b705833966c0c66e95e00.html",
+      "snapshotSHA256": "534f20301356fa84a929f9196d24ca593984d17dd60b705833966c0c66e95e00",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日3階経営企画課・休日年末年始1階警備員室、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-2657ffe8de47bc2b6212",
+    "name": "箕面交通・観光案内所",
+    "address": "大阪府箕面市箕面1丁目1番1号 阪急箕面駅横",
+    "cardIds": [
+      "27-220-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.minoh.lg.jp/gesui/gesui13.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-75e92bd8bc9649bab18f3f86c36cb8aca49e8109136d06b2598752816c1c3557.html",
+      "snapshotSHA256": "75e92bd8bc9649bab18f3f86c36cb8aca49e8109136d06b2598752816c1c3557",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-220-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2024/1から交通観光案内所。11月全日9～17時、木曜休みを照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-267189d890c0c740b45b",
+    "name": "道の駅いながわ",
+    "address": "猪名川町万善字竹添70-1",
+    "cardIds": [
+      "28-301-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.inagawa.lg.jp/kurashi_tetsuzuki/jogesuido/5447.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-175b2cb0627fc90a64169412f2ef2d239ba816acb1bb2736462b7acfabb08709.html",
+      "snapshotSHA256": "175b2cb0627fc90a64169412f2ef2d239ba816acb1bb2736462b7acfabb08709",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-301-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/5/11公式の代替条件・年始休業を反映。在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-26dca137eb9b0e69e31f",
+    "name": "東水環境センター 東灘処理場",
+    "address": "兵庫県神戸市東灘区魚崎南町2-1-23",
+    "cardIds": [
+      "28-100-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4a89d8d5b81347fd1797b125258e382caf60650830a29828b5c866e287ebe919.html",
+      "snapshotSHA256": "4a89d8d5b81347fd1797b125258e382caf60650830a29828b5c866e287ebe919",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-100-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。東水環境センターは見学予約制、空港1階は7～23時、五色塚は9～16:30を各別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-28b6d0578b0f18d9c64f",
+    "name": "東近江市八日市駅前観光交流施設",
+    "address": "滋賀県東近江市八日市本町1番6号 シャリエ八日市駅前1階",
+    "cardIds": [
+      "25-213-B001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1009690.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6d971f1fcba3061f038e5d0b7f6a7bb8dca56bc5af4c4e8cb80022be995cef3a.html",
+      "snapshotSHA256": "6d971f1fcba3061f038e5d0b7f6a7bb8dca56bc5af4c4e8cb80022be995cef3a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-213-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。夏祭。2026/10/30更新で在庫あり、駅前観光交流施設10～17時。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-2a39f775dea712cf3776",
+    "name": "3階 下水道事業課",
+    "address": "大阪府摂津市三島一丁目1番10号",
+    "cardIds": [
+      "27-224-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e.html",
+      "snapshotSHA256": "c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-224-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。上下水道部庁舎の配布専用時刻。問い合わせ受付時間9～17:15と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-2c4debf723273279546a",
+    "name": "三木市上下水道部庁舎",
+    "address": "三木市福井字鷹尾1950-1",
+    "cardIds": [
+      "28-215-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-2e1afa71c908ef731e24",
+    "name": "一般社団法人 大和郡山市観光協会",
+    "address": "奈良県大和郡山市高田町92-16(市民交流館1階)",
+    "cardIds": [
+      "29-203-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5.html",
+      "snapshotSHA256": "510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/4/1案内の組織名称・年末休業差異を反映。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-2e26386ad29411013be5",
+    "name": "守口市役所 環境下水道部 下水道課",
+    "address": "大阪府守口市京阪本通2-5-5(5階南エリア)",
+    "cardIds": [
+      "27-209-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.moriguchi.osaka.jp/kakukanoannai/kankyougesuidoubu/gesuidokanrika/designed_maintainance_hole/487.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4a64130fe31a747465b8fea6a1a37d904aa0ac867830b172d09b6b46d0569904.html",
+      "snapshotSHA256": "4a64130fe31a747465b8fea6a1a37d904aa0ac867830b172d09b6b46d0569904",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日5階下水道課・休日1階総合案内、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-3046e0d385ffb38ae68d",
+    "name": "豊中市上下水道局 警備員室(1F)",
+    "address": "大阪府豊中市北桜塚4-11-18",
+    "cardIds": [
+      "27-203-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.toyonaka.osaka.jp/jogesuido/okyakusama_joho/koho_keihatsu/oshirase/mhcard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-534f20301356fa84a929f9196d24ca593984d17dd60b705833966c0c66e95e00.html",
+      "snapshotSHA256": "534f20301356fa84a929f9196d24ca593984d17dd60b705833966c0c66e95e00",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日3階経営企画課・休日年末年始1階警備員室、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-319bd8fbabbbf75f654d",
+    "name": "松原市役所宿直室(市役所1階)",
+    "address": "大阪府松原市阿保1-1-1",
+    "cardIds": [
+      "27-217-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32.html",
+      "snapshotSHA256": "9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-217-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日観光協会・土日祝役所1階宿直室、時間差あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-332ce8ce5ad5b6583d87",
+    "name": "道の駅 丹後王国「食のみやこ」インフォメーションセンター",
+    "address": "京都府京丹後市弥栄町鳥取123",
+    "cardIds": [
+      "26-212-A001",
+      "26-212-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyotango.lg.jp/top/soshiki/jogesuido/suido/gesuidou/manhole/21182.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025.html",
+      "snapshotSHA256": "b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-212-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A001は平日大宮庁舎2階と休日丹後王国。B001は2026/4/1丹後王国で再開。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-348d70ced83b49e4afc2",
+    "name": "大阪府臨海スポーツセンター管理事務所",
+    "address": "大阪府高石市高師浜丁6-1",
+    "cardIds": [
+      "27-225-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.takaishi.lg.jp/kakuka/doboku/jougesuidou_ka/gesuidou/Manhole_cover_card_of_takaishi_city.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d3f3ad9f95a192ca793601760f0b894fb4667ff18edfd459fc1980455519b6ba.html",
+      "snapshotSHA256": "d3f3ad9f95a192ca793601760f0b894fb4667ff18edfd459fc1980455519b6ba",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-225-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。臨海スポーツセンター管理事務所9～18時。地図が蓋案内なら施設座標として採用しない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-395deea0ac07ef85eee7",
+    "name": "京都市上下水道局総合庁舎 総合受付",
+    "address": "京都府京都市南区上鳥羽鉾立町11番地3",
+    "cardIds": [
+      "26-100-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4.html",
+      "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-100-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第2弾総合庁舎、第5弾太秦、第13弾疏水記念館を照合。A001土日祝は守衛室への変更が未抽出ならproposal。太秦住所の一町目町は一町田町の誤記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-3c9d0ae839584b7e4795",
+    "name": "伊賀流忍者体験施設 万川集海 二階 お土産店「万川堂」",
+    "address": "三重県伊賀市上野丸之内29",
+    "cardIds": [
+      "24-216-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.iga.lg.jp/0000004701.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-04f7e476a93bfa3193cea992f1e74320d9294c52178ac47a97cfb8e71a2c423e.html",
+      "snapshotSHA256": "04f7e476a93bfa3193cea992f1e74320d9294c52178ac47a97cfb8e71a2c423e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-216-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行万川集海2階万川堂、2026/9/1更新の在庫十分・9～18時案内を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-3da57efe618fef7b85f1",
+    "name": "鈴鹿市観光協会",
+    "address": "三重県鈴鹿市白子駅前17-12",
+    "cardIds": [
+      "24-207-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294.html",
+      "snapshotSHA256": "0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日上下水道局下水道工務課と休日観光協会を個別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-3ea825816afa0d502d04",
+    "name": "近江八幡市水道事業所上下水道施設課窓口",
+    "address": "近江八幡市桜宮町214-10",
+    "cardIds": [
+      "25-204-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.omihachiman.lg.jp/soshiki/suidou_sisetsu/gesuidouosirase/29246.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-22be2df0f56269eb2d6d1c3496ae389dca79e8a30035ca18caac35672977830c.html",
+      "snapshotSHA256": "22be2df0f56269eb2d6d1c3496ae389dca79e8a30035ca18caac35672977830c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。上下水道施設課窓口・昼休み・在庫ありを照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-401709fbed244ac9be6a",
+    "name": "岸和田駅前観光案内所",
+    "address": "岸和田市宮本町1番12号",
+    "cardIds": [
+      "27-202-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kishiwada.lg.jp/page/56-manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69.html",
+      "snapshotSHA256": "31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-202-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第7弾は駅前観光案内所。年末年始開始日を12/31から12/29へ訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-41556d52418231f02801",
+    "name": "彦根市上下水道料金お客様サービスセンター",
+    "address": "滋賀県彦根市元町4番2号(彦根市役所1階)",
+    "cardIds": [
+      "25-202-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hikone.lg.jp/kakuka/jogesuido/2/9/2219.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f.html",
+      "snapshotSHA256": "5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-202-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。標準蓋のサービスセンター。GKPの12/29を公式12/27へ訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-42204a9cd5d0be6d8f90",
+    "name": "舞鶴赤レンガパーク",
+    "address": "京都府舞鶴市字北吸1039-2",
+    "cardIds": [
+      "26-202-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.maizuru.kyoto.jp/kurashi/0000004329.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f.html",
+      "snapshotSHA256": "99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-202-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。五老ヶ岳からの眺め／全国第8弾を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-422d3a414af57035aff6",
+    "name": "ひこにゃんミュジアム",
+    "address": "滋賀県彦根市本町1-7-34",
+    "cardIds": [
+      "25-202-B001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hikone.lg.jp/kakuka/jogesuido/2/9/2219.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f.html",
+      "snapshotSHA256": "5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-202-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。ひこにゃんミュジアム、季節別配布時間を照合。年末年始の当年計画は別途更新。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4316f4367d52ae800b9a",
+    "name": "安中新田会所跡 旧植田家住宅",
+    "address": "大阪府八尾市植松1-1-25",
+    "cardIds": [
+      "27-212-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yao.osaka.jp/kurashi_tetsuzuki/sumai_kurashi_seikatsu/1002677/1002688/1002707/1002717.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f4412f162e10ee97be52a11032b93dbd8003cf5c11762ff71d625e401a2dafcd.html",
+      "snapshotSHA256": "f4412f162e10ee97be52a11032b93dbd8003cf5c11762ff71d625e401a2dafcd",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-212-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日市役所西館2階と休日旧植田家住宅。昼休み・入館16:30を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-443a928ce299052ac36e",
+    "name": "京丹波町上下水道課 畑川浄水場",
+    "address": "京都府船井郡京丹波町下山クラベシ41番地",
+    "cardIds": [
+      "26-407-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d.html",
+      "snapshotSHA256": "efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-407-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/16更新残950枚。平日畑川浄水場・休日役場時間外窓口を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-46333b4e1c368287ce1c",
+    "name": "琵琶湖疏水記念館",
+    "address": "京都府京都市左京区南禅寺草川町17",
+    "cardIds": [
+      "26-100-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4.html",
+      "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-100-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第2弾総合庁舎、第5弾太秦、第13弾疏水記念館を照合。A001土日祝は守衛室への変更が未抽出ならproposal。太秦住所の一町目町は一町田町の誤記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-46fa8e0a5edb51e6c29f",
+    "name": "東近江市水道事務所 上下水道総務課",
+    "address": "滋賀県東近江市川合寺町746",
+    "cardIds": [
+      "25-213-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1008976.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-de0e8c2f45beea510ad7bf8df422eefdec4ad64d33cb58c9b434a222cbaccb41.html",
+      "snapshotSHA256": "de0e8c2f45beea510ad7bf8df422eefdec4ad64d33cb58c9b434a222cbaccb41",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-213-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。びわこジャズ。平日水道事務所9～16時、休日守衛室10～16時。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-47c3135b0a3aad88bcce",
+    "name": "日本遺産龍田古道ビジターセンター インフォメーションカウンター",
+    "address": "奈良県生駒郡三郷町立野南3-11-35",
+    "cardIds": [
+      "29-343-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.sango.nara.jp/soshiki/20/2478.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a72d98adb5af94e102a8c098e295f6015f85240187a75a6197b5d5338f67dde3.html",
+      "snapshotSHA256": "a72d98adb5af94e102a8c098e295f6015f85240187a75a6197b5d5338f67dde3",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-343-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/5/2再開・変更後のビジターセンターと休館日ポンプ場2階を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4818019032b1e3aac845",
+    "name": "三木市観光協会",
+    "address": "三木市末広1丁目1-35",
+    "cardIds": [
+      "28-215-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4ac5ff61db71997a359d",
+    "name": "道の駅よかわ(山田錦の館)",
+    "address": "兵庫県三木市吉川町吉安222",
+    "cardIds": [
+      "28-215-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4cb8623bc35115d6fb38",
+    "name": "西脇市役所建設水道部施設管理課",
+    "address": "兵庫県西脇市下戸田128番地の1",
+    "cardIds": [
+      "28-213-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752.html",
+      "snapshotSHA256": "147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-213-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日終了時間を公式16:30へ訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4e5b0da0769b73d0b9e1",
+    "name": "工楽松右衛門旧宅",
+    "address": "兵庫県高砂市高砂町今津町532",
+    "cardIds": [
+      "28-216-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56.html",
+      "snapshotSHA256": "fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-216-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。工楽旧宅10～17時、施設見学者対象。市役所3階12番8:30～17:15も公式配布先、未抽出窓口proposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-4e667eb047afa3b26231",
+    "name": "市川町役場 下水道課",
+    "address": "兵庫県神崎郡市川町西川辺165-3",
+    "cardIds": [
+      "28-442-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.ichikawa.lg.jp/info/800",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376.html",
+      "snapshotSHA256": "aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-442-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9～17時、平日下水道課、休日当直室。年末年始も休日同様配布。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-507fc6c8fa978e4618f2",
+    "name": "四條畷市役所 都市整備部 下水道課",
+    "address": "大阪府四條畷市中野本町1-1",
+    "cardIds": [
+      "27-229-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.shijonawate.lg.jp/soshiki/20/3137.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ba98d4ce4d6d8828497bf5fc057e62c503040de79c9c72470d261d55a8e31495.html",
+      "snapshotSHA256": "ba98d4ce4d6d8828497bf5fc057e62c503040de79c9c72470d261d55a8e31495",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-229-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。下水道河川課の2026/10/5終了案内。全窓口に適用。市名四條綴は四條畷の誤記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-50fd7780197e359a9c8e",
+    "name": "伊丹市立観光物産ギャラリー",
+    "address": "兵庫県伊丹市東有岡1-6-2(JR伊丹駅構内)",
+    "cardIds": [
+      "28-207-B001",
+      "28-207-C001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-207-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。各カード配布表と在庫を照合。B休日とCの観光物産ギャラリーは2026/9/14移転、旧窓口と誤対応させない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5155c601bcf944c4cbf5",
+    "name": "阪南市役所地下1階守衛室",
+    "address": "大阪府阪南市尾崎町35-1",
+    "cardIds": [
+      "27-232-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98.html",
+      "snapshotSHA256": "cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-232-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。10/10在庫あり、平日9/1短縮後9～16:30。分室へのナビ案内は鳥取66で、代表点を座標承認しない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5198d8060e4644e9ac95",
+    "name": "河南町まち創造部都市環境課",
+    "address": "大阪府南河内郡河南町大字白木1359-6",
+    "cardIds": [
+      "27-382-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b.html",
+      "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-382-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階西27番都市環境課・休日1階西宿直室、9～17:30。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-52945aa1816499e04704",
+    "name": "アステ市民プラザ",
+    "address": "兵庫県川西市栄町25番1-601号 アステ川西6階",
+    "cardIds": [
+      "28-217-A001",
+      "28-217-B001",
+      "28-217-C001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e1634c2aace006e255d684e0ed3fb661022853a471ec1a958f00b6e120244147.html",
+      "snapshotSHA256": "e1634c2aace006e255d684e0ed3fb661022853a471ec1a958f00b6e120244147",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-217-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市公式の全種類一括休止を確認。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5541e22064b914088d81",
+    "name": "大阪市下水道科学館",
+    "address": "大阪府大阪市此花区高見1-2-53",
+    "cardIds": [
+      "27-100-C001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.osaka.lg.jp/kensetsu/page/0000431121.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d6e59f640a9d594f3e037d24bfc689fc79eb1220670c46c99157d609b32abbee.html",
+      "snapshotSHA256": "d6e59f640a9d594f3e037d24bfc689fc79eb1220670c46c99157d609b32abbee",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-100-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。大阪城はATC事務局受付、キン肉マンは科学館見学・アンケート必要、ロビンマスクは大阪観光案内所。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-560ec92fc5daae89d908",
+    "name": "能勢浄化センター ささゆりの丘",
+    "address": "大阪府豊能郡能勢町下田119-1",
+    "cardIds": [
+      "27-322-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.nose.osaka.jp/soshiki/toshiseibika/gesuidou/gesuidou/1242.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9aa080b1ba74361e8d66b1a9ab52f2bb505943de6b6812cb9187fe27406fefd3.html",
+      "snapshotSHA256": "9aa080b1ba74361e8d66b1a9ab52f2bb505943de6b6812cb9187fe27406fefd3",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-322-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。能勢浄化センター窓口、平日8:45～17時、土日祝・12/29～1/3休み。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5890eab6e8c133c75016",
+    "name": "吉野町観光案内所(近鉄吉野駅前)",
+    "address": "奈良県吉野郡吉野町吉野山41-3",
+    "cardIds": [
+      "29-441-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.yoshino.nara.jp/promotion/kankojoho/1679.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-20a318867d26ce37de13366c54e900b4662436fe1f73814fd2c43c015bfd39be.html",
+      "snapshotSHA256": "20a318867d26ce37de13366c54e900b4662436fe1f73814fd2c43c015bfd39be",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-441-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/5/22再開。GKPにない昼休み12:30～13:30を反映。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5c6786f83ef5b440d278",
+    "name": "庁舎正面入口のインターホンにて警備員にお申しつけ下さい",
+    "address": "大阪府南河内郡千早赤阪村大字水分180番地",
+    "cardIds": [
+      "27-383-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.vill.chihayaakasaka.osaka.jp/kakuka/sangyokensetsu/toshiseibi/gesuidou/7677.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4131e2d3eccc3e6ea3d26f030d0ef006479f6f37dff04d4ee92c896241581c2b.html",
+      "snapshotSHA256": "4131e2d3eccc3e6ea3d26f030d0ef006479f6f37dff04d4ee92c896241581c2b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-383-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日庁舎3階都市整備課・休日正面入口インターホン。代表点と窓口位置を区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5cade60bb6200407cec5",
+    "name": "芦屋市役所 東館1階下水道課",
+    "address": "兵庫県芦屋市精道町7-6",
+    "cardIds": [
+      "28-206-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ashiya.lg.jp/gesuidou/manhoru-kado/8dan.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e3b106c621fbcf2f3ad024837be9a16b82e34f07d18099e2dfaf2ca68ec6acd4.html",
+      "snapshotSHA256": "e3b106c621fbcf2f3ad024837be9a16b82e34f07d18099e2dfaf2ca68ec6acd4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-206-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日東館1階下水道課、休日北館地下1階警備室、共に9～17:30。年末年始も警備室。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+    "name": "京都府立洛西浄化センター公園 サービスセンター管理棟",
+    "address": "京都府長岡京市勝竜寺山崎作り20-5",
+    "cardIds": [
+      "26-000-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5e7c1c5de9b1fa9c91abad4f9c3672f15ffc48ce68d570bac5a82fda8eab1c39.html",
+      "snapshotSHA256": "5e7c1c5de9b1fa9c91abad4f9c3672f15ffc48ce68d570bac5a82fda8eab1c39",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-000-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。配布は公園内サービスセンター管理棟。カードホルダーの過去終了告知はカード自体の終了と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+    "name": "鈴鹿市上下水道局",
+    "address": "三重県鈴鹿市寺家町1170",
+    "cardIds": [
+      "24-207-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294.html",
+      "snapshotSHA256": "0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日上下水道局下水道工務課と休日観光協会を個別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-5ef4b8538c8df02b55f4",
+    "name": "大東市上下水道局 総務課",
+    "address": "大阪府大東市灰塚4-1-1",
+    "cardIds": [
+      "27-218-A001",
+      "27-218-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.daito.lg.jp/soshiki/39/40329.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0e0d7bbfc66aa7f19e673a345b734c98de9b0e2d1268ad488304eb6ccd4eb25d.html",
+      "snapshotSHA256": "0e0d7bbfc66aa7f19e673a345b734c98de9b0e2d1268ad488304eb6ccd4eb25d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-218-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。両カード9/28再開・10/26在庫あり。平日2階総務課と休日別棟宿直室。建物同一と扱わない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-608e56a7ed0f7036b2a5",
+    "name": "原田処理場(スカイランドHARADA管理事務所)",
+    "address": "大阪府豊中市原田西町1-1",
+    "cardIds": [
+      "27-000-A001",
+      "28-000-A001"
+    ],
+    "prefCodes": [
+      "27",
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.pref.osaka.lg.jp/gesui_jigyo/dezain/index.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-584314c2ec3ffb789ae34a56371818b88d3a1f008b769f9efcae3734dbce3dcd.html",
+      "snapshotSHA256": "584314c2ec3ffb789ae34a56371818b88d3a1f008b769f9efcae3734dbce3dcd",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-000-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。府公式の曜日別配布窓口を照合。年末年始具体日付は未記載。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6239a33fa7de3d368fe8",
+    "name": "伊丹市上下水道局 水道サービスステーション",
+    "address": "兵庫県伊丹市昆陽1丁目1番地2",
+    "cardIds": [
+      "28-207-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-207-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。各カード配布表と在庫を照合。B休日とCの観光物産ギャラリーは2026/9/14移転、旧窓口と誤対応させない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-639ab6c72f8fcd731d94",
+    "name": "観光案内所(IKOBA)",
+    "address": "奈良県生駒市北新町10-36 ベルテラスいこま3階",
+    "cardIds": [
+      "29-209-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ikoma.lg.jp/0000039835.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ea195db7dab1381ccb9710e803ff2f984488a1bbcc097b19b0dd6cd931fe767a.html",
+      "snapshotSHA256": "ea195db7dab1381ccb9710e803ff2f984488a1bbcc097b19b0dd6cd931fe767a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/13更新、IKOBAベルテラス3階9～18時。休業は施設告知参照。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-63a3b36410f47b4ebd8a",
+    "name": "醬油の郷 大正ロマン館",
+    "address": "兵庫県たつの市龍野町上霞城126",
+    "cardIds": [
+      "28-229-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tatsuno.lg.jp/kurashi-tetsuzuki/suido/4/2/4695.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c.html",
+      "snapshotSHA256": "cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-229-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。赤とんぼとまちやくんの窓口・時間・休業日を個別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-65aca194bc92a930cdd3",
+    "name": "市川町役場 当直室（東玄関呼出）",
+    "address": "兵庫県神崎郡市川町西川辺165-3",
+    "cardIds": [
+      "28-442-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.ichikawa.lg.jp/info/800",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376.html",
+      "snapshotSHA256": "aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-442-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9～17時、平日下水道課、休日当直室。年末年始も休日同様配布。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-65bebcfcae7710dc09bc",
+    "name": "高槻城公園芸術文化劇場 南館",
+    "address": "大阪府高槻市野見町6-8",
+    "cardIds": [
+      "27-207-C001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takatsuki.osaka.jp/soshiki/61/119897.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cd63209760db24f6216e6ae8fa6da17304549cdce0eb6bfa2755d8b9631a1f92.html",
+      "snapshotSHA256": "cd63209760db24f6216e6ae8fa6da17304549cdce0eb6bfa2755d8b9631a1f92",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-207-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。南館総合案内、住所は野見町6-8。2025/9/13再配布中。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-677fb9a18c933486a439",
+    "name": "大東市上下水道局 宿直室",
+    "address": "大阪府大東市灰塚4-1-1",
+    "cardIds": [
+      "27-218-A001",
+      "27-218-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.daito.lg.jp/soshiki/39/40329.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0e0d7bbfc66aa7f19e673a345b734c98de9b0e2d1268ad488304eb6ccd4eb25d.html",
+      "snapshotSHA256": "0e0d7bbfc66aa7f19e673a345b734c98de9b0e2d1268ad488304eb6ccd4eb25d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-218-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。両カード9/28再開・10/26在庫あり。平日2階総務課と休日別棟宿直室。建物同一と扱わない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-686caad0ba490d412755",
+    "name": "京丹波町役場",
+    "address": "京都府船井郡京丹波町蒲生蒲生野487番地1",
+    "cardIds": [
+      "26-407-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d.html",
+      "snapshotSHA256": "efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-407-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/16更新残950枚。平日畑川浄水場・休日役場時間外窓口を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6a897a8ec6265a54d22a",
+    "name": "三郷町下水道課(立野汚水中継ポンプ場2階)",
+    "address": "奈良県生駒郡三郷町立野南3-11-13",
+    "cardIds": [
+      "29-343-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.sango.nara.jp/soshiki/20/2478.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a72d98adb5af94e102a8c098e295f6015f85240187a75a6197b5d5338f67dde3.html",
+      "snapshotSHA256": "a72d98adb5af94e102a8c098e295f6015f85240187a75a6197b5d5338f67dde3",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-343-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/5/2再開・変更後のビジターセンターと休館日ポンプ場2階を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6ad3133f41924d1d4b10",
+    "name": "大津市水再生センター",
+    "address": "滋賀県大津市由美浜1-1",
+    "cardIds": [
+      "25-201-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/080/1901/g/manhole/1499746928377.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d.html",
+      "snapshotSHA256": "ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-201-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。水再生センター屋上公園管理人室。配布先・時間・12/29～1/3休を照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6ad97690b4f9910a096e",
+    "name": "藤井寺市立にぎわい・まなび交流館1階 ウエルカムラウンジ",
+    "address": "大阪府藤井寺市藤井寺3丁目1番20号",
+    "cardIds": [
+      "27-226-C001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a.html",
+      "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-226-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。アイセルシュラホール1階。GKP年始1/3までを1/4までへ。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6cb3e373ea87d4b96e9d",
+    "name": "大山崎ふるさとセンター2階",
+    "address": "京都府乙訓郡大山崎町字大山崎小字竜光3",
+    "cardIds": [
+      "26-303-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.oyamazaki.kyoto.jp/annai/jyogesuidoka/gesuidokakari/oshirase/4864.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4.html",
+      "snapshotSHA256": "c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-303-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。公式配布表によりGKP年末年始日付を訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6d8b89a29af144dceac1",
+    "name": "甲賀市ひと・まち街道交流館",
+    "address": "滋賀県甲賀市水口町八坂7番4号",
+    "cardIds": [
+      "25-209-B001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.koka.lg.jp/24108.htm",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b.html",
+      "snapshotSHA256": "e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-209-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。旧水口町デザイン、街道交流館、在庫残り少ない。GKP年末年始を当年日付へ。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6edf2f45e34026831b26",
+    "name": "旧岡田家住宅・酒蔵",
+    "address": "伊丹市宮ノ前2丁目5-20(市立伊丹ミュージアム)",
+    "cardIds": [
+      "28-207-D001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-207-D001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。各カード配布表と在庫を照合。B休日とCの観光物産ギャラリーは2026/9/14移転、旧窓口と誤対応させない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6ee4ee955755a6bfa7b7",
+    "name": "安満遺跡公園ボーネルンドパークセンター",
+    "address": "大阪府高槻市八丁畷町12番3号",
+    "cardIds": [
+      "27-207-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takatsuki.osaka.jp/soshiki/55/4015.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f.html",
+      "snapshotSHA256": "fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-207-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第3弾は平日7階・休日JR駅案内所、第8弾はボーネルンド内公園事務室。B旧リンク404を同市公式総合ページで補完。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6f7e572fc387b69390d7",
+    "name": "羽曳野市下水道総務課",
+    "address": "大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F",
+    "cardIds": [
+      "27-222-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-368929aedb9f0c023263f7ea4471c593d47fdee57d773fa3c4a64207f328144d.html",
+      "snapshotSHA256": "368929aedb9f0c023263f7ea4471c593d47fdee57d773fa3c4a64207f328144d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-222-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日役所は一致。休日古市駅前案内所は現行はびきのビジターセンターへ変更、住所・同一性追加調査。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-6f8549ee753cbea13b34",
+    "name": "四條畷市役所 宿直室",
+    "address": "大阪府四條畷市中野本町1-1",
+    "cardIds": [
+      "27-229-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.shijonawate.lg.jp/soshiki/20/3137.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ba98d4ce4d6d8828497bf5fc057e62c503040de79c9c72470d261d55a8e31495.html",
+      "snapshotSHA256": "ba98d4ce4d6d8828497bf5fc057e62c503040de79c9c72470d261d55a8e31495",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-229-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。下水道河川課の2026/10/5終了案内。全窓口に適用。市名四條綴は四條畷の誤記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-77dcfd9605bd83bd5b64",
+    "name": "門真市環境水道部 お客さまセンター",
+    "address": "大阪府門真市泉町7-23",
+    "cardIds": [
+      "27-223-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/15607.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6af5e38ec5a80c0f33719b3219a808fd122735af45b2788463f41a3a897f7f89.html",
+      "snapshotSHA256": "6af5e38ec5a80c0f33719b3219a808fd122735af45b2788463f41a3a897f7f89",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。砂子水路、平日泉町2階お客さまセンター・休日1階宿直室、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7899e1fbcdc39cc8f87a",
+    "name": "島本町立歴史文化資料館",
+    "address": "大阪府三島郡島本町桜井一丁目3番1号",
+    "cardIds": [
+      "27-301-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.shimamoto.lg.jp/site/suidou/36299.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-944346f1b56c19e17427ea49066cf843a39a1ea37e6c1d467f7596fea0ae971a.html",
+      "snapshotSHA256": "944346f1b56c19e17427ea49066cf843a39a1ea37e6c1d467f7596fea0ae971a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-301-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A第4弾2026/7/4終了、B第13弾2026/3終了。現行休止を全過去窓口に適用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-78cbd40384055357a1b0",
+    "name": "阪南市都市整備部下水道課(阪南市分室2階)",
+    "address": "大阪府阪南市鳥取74-1",
+    "cardIds": [
+      "27-232-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98.html",
+      "snapshotSHA256": "cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-232-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。10/10在庫あり、平日9/1短縮後9～16:30。分室へのナビ案内は鳥取66で、代表点を座標承認しない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-794bb4a12b5cb1072493",
+    "name": "栗東観光案内所",
+    "address": "滋賀県栗東市手原3丁目1-30(JR手原駅2階)",
+    "cardIds": [
+      "25-208-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60.html",
+      "snapshotSHA256": "5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-208-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。メジロとくりちゃんの配布場所・時間を個別照合。くりちゃんは2026/9/10に市役所へ変更し再開。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7a20fbceb66cb5ebb731",
+    "name": "にしわき経緯度地球科学館",
+    "address": "兵庫県西脇市上比延町334-2(テラ・ドーム)",
+    "cardIds": [
+      "28-213-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752.html",
+      "snapshotSHA256": "147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-213-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日終了時間を公式16:30へ訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7a7be1946c5a72e93e9f",
+    "name": "大津駅観光案内所",
+    "address": "滋賀県大津市春日町1-3 ビエラ大津",
+    "cardIds": [
+      "25-201-B001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.otsu.lg.jp/kigyo/about/koho/68041.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2ff14dc8360b2beb1ba2257600d7fbbcb8fbacf15cb0ccba702e7397f57dc49b.html",
+      "snapshotSHA256": "2ff14dc8360b2beb1ba2257600d7fbbcb8fbacf15cb0ccba702e7397f57dc49b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-201-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。ガンダムは大津駅観光案内所9～18時・在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7a95a5f3a5fbd7c93b60",
+    "name": "丹波篠山市役所 上下水道部 経営企画課",
+    "address": "兵庫県丹波篠山市北新町41(本庁舎)",
+    "cardIds": [
+      "28-221-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006.html",
+      "snapshotSHA256": "a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行日本語公式の9～17時を採用。旧GKP・観光英語版の8:30～17:15と相違。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7b408797f0748634ad5e",
+    "name": "大薮浄水場",
+    "address": "大阪府三島郡島本町広瀬3-12-10",
+    "cardIds": [
+      "27-301-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.shimamoto.lg.jp/site/suidou/36299.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-944346f1b56c19e17427ea49066cf843a39a1ea37e6c1d467f7596fea0ae971a.html",
+      "snapshotSHA256": "944346f1b56c19e17427ea49066cf843a39a1ea37e6c1d467f7596fea0ae971a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-301-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A第4弾2026/7/4終了、B第13弾2026/3終了。現行休止を全過去窓口に適用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7c94ba7a999f14ad29b9",
+    "name": "田尻町役場別館",
+    "address": "大阪府泉南郡田尻町嘉祥寺375番地1",
+    "cardIds": [
+      "27-362-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa.html",
+      "snapshotSHA256": "c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-362-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場別館は平日、公民館は土日（祝日除外）、両9～17時。観光協会も配布するが未抽出proposal、観光協会の営業時間9～15時と市案内9～17時が相違。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7ca7be428c056941e3f7",
+    "name": "熊取町駅前観光案内所 駅下にぎわい館",
+    "address": "大阪府泉南郡熊取町大久保中1-17-1",
+    "cardIds": [
+      "27-361-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kumatori.lg.jp/kurashi/jogesuido/gesuido/ippan/4023.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ee5ecfb06af9375bfdb5ac9b06a074954bbee1b07039b0cacbdfb9743a922200.html",
+      "snapshotSHA256": "ee5ecfb06af9375bfdb5ac9b06a074954bbee1b07039b0cacbdfb9743a922200",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-361-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場の終了17:30を17時に修正。駅下にぎわい館は休日限定ではなく水木金も配布。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7de3550870a2bc3e4aec",
+    "name": "田辺城資料館",
+    "address": "京都府舞鶴市字南田辺15-22",
+    "cardIds": [
+      "26-202-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.maizuru.kyoto.jp/kurashi/0000004329.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f.html",
+      "snapshotSHA256": "99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-202-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。田辺城趾／赤れんが倉庫の配布終了を確認。歴史的窓口の同定はGKP原文を併用し座標未承認。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-7fa9299caf5b50e9e66c",
+    "name": "神戸空港 1階総合案内所",
+    "address": "兵庫県神戸市中央区神戸空港1番",
+    "cardIds": [
+      "28-100-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kobe.lg.jp/a78445/kurashi/sumai/sewage/pr/manhole_card.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4a89d8d5b81347fd1797b125258e382caf60650830a29828b5c866e287ebe919.html",
+      "snapshotSHA256": "4a89d8d5b81347fd1797b125258e382caf60650830a29828b5c866e287ebe919",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-100-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。東水環境センターは見学予約制、空港1階は7～23時、五色塚は9～16:30を各別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-879b3bf5b89bc880cf5a",
+    "name": "京都市上下水道局 太秦庁舎 守衛室",
+    "address": "京都府京都市右京区太秦安井一町田町14",
+    "cardIds": [
+      "26-100-A002"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4.html",
+      "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-100-A002",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第2弾総合庁舎、第5弾太秦、第13弾疏水記念館を照合。A001土日祝は守衛室への変更が未抽出ならproposal。太秦住所の一町目町は一町田町の誤記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-8928b0e88e78dd57d386",
+    "name": "道の駅「愛彩ランド」",
+    "address": "大阪府岸和田市岸の丘町3-6-18",
+    "cardIds": [
+      "27-202-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kishiwada.lg.jp/page/56-manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69.html",
+      "snapshotSHA256": "31ef906a089639b74aac14b3c23c14bdeba4381eaa7c04da3f5c02d13897ef69",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-202-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第16弾は愛彩ランド、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-89b25c9cb369d4ce912e",
+    "name": "たつの市役所下水道管理課",
+    "address": "兵庫県たつの市龍野町富永1005-1",
+    "cardIds": [
+      "28-229-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tatsuno.lg.jp/kurashi-tetsuzuki/suido/4/2/4695.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c.html",
+      "snapshotSHA256": "cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-229-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。赤とんぼとまちやくんの窓口・時間・休業日を個別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-8aab8c6abec799b476b5",
+    "name": "観光交流施設きらめきファクトリー",
+    "address": "大阪府富田林市本町19-8",
+    "cardIds": [
+      "27-214-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tondabayashi.lg.jp/soshiki/49/2264.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bf0bc4b2fcb539af7cd73e0fd322e62322c939cc8bada5ed8f5b827c7d2510ca.html",
+      "snapshotSHA256": "bf0bc4b2fcb539af7cd73e0fd322e62322c939cc8bada5ed8f5b827c7d2510ca",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-214-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。リンク欠落を市公式で補完。2023/8/1以降きらめきファクトリー10～21時。合格祈願版終了と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-8ad7344fb642add50788",
+    "name": "守山市駅前総合案内所",
+    "address": "滋賀県守山市梅田町1-9",
+    "cardIds": [
+      "25-207-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.moriyama.lg.jp/kurashitetsuzuki/jougesuido/1001701/1008797.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-7a3f0296dfda143f5efe8688f3a05782ca4625e27c76af9d65b100b038689af4.html",
+      "snapshotSHA256": "7a3f0296dfda143f5efe8688f3a05782ca4625e27c76af9d65b100b038689af4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。駅前総合案内所のみ。市役所で配布なし。年末年始前後の時間変更に注意。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-8c975ae9df85aa9fea39",
+    "name": "東大阪市 下水道計画総務室",
+    "address": "大阪府東大阪市荒本北1-1-1(東大阪市役所13階)",
+    "cardIds": [
+      "27-227-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f.html",
+      "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-227-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日13階計画課は同定。休日22階展望ロビー9～23時が未抽出のためproposal、既存13階に休日を混同しない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9064b04ef5f779d726f7",
+    "name": "淡海環境プラザ",
+    "address": "滋賀県草津市矢橋字帰帆2108",
+    "cardIds": [
+      "25-000-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.ohmi.or.jp/plaza/manhole/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0375f944ad370ec22a45361b46478e45b6f7c921c90d46846488c41f6e8ff595.html",
+      "snapshotSHA256": "0375f944ad370ec22a45361b46478e45b6f7c921c90d46846488c41f6e8ff595",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-000-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。滋賀県流域分は在庫あり。カンボジア分の終了とは区別。プラザ1階窓口で9～16:30。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-90f4a477736e4cd5c43b",
+    "name": "久御山町役場事業環境部上下水道課(庁舎2階)",
+    "address": "京都府久世郡久御山町島田ミスノ38番地",
+    "cardIds": [
+      "26-322-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kumiyama.lg.jp/0000005678.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2.html",
+      "snapshotSHA256": "4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-322-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階上下水道課・休日1階宿直室。2024/8/8在庫終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-92bd636e0e5b9b58d5c8",
+    "name": "綾部市図書館",
+    "address": "京都府綾部市青野町西馬場下35-1",
+    "cardIds": [
+      "26-203-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ayabe.lg.jp/0000006318.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-de1f678bba835bb692c744e123ae4b4e2381984ffa3dba126550151332cebe35.html",
+      "snapshotSHA256": "de1f678bba835bb692c744e123ae4b4e2381984ffa3dba126550151332cebe35",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市の2026/5/11終了告知。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-958e879f17eafbb8e973",
+    "name": "泉南市観光協会観光案内所",
+    "address": "大阪府泉南市りんくう南浜4-201",
+    "cardIds": [
+      "27-228-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87.html",
+      "snapshotSHA256": "30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-228-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行サザンぴあ案内所10～16時、火水は別館2階9～17:30。旧リンクは行政評価ページ。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-97682f76cc0f5bafa521",
+    "name": "大山崎町役場 環境事業部 上下水道課窓口",
+    "address": "京都府乙訓郡大山崎町字円明寺小字夏目3",
+    "cardIds": [
+      "26-303-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.oyamazaki.kyoto.jp/annai/jyogesuidoka/gesuidokakari/oshirase/4864.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4.html",
+      "snapshotSHA256": "c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-303-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。公式配布表によりGKP年末年始日付を訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-981f92e7ecb53d46d9ca",
+    "name": "安乗岬園地休憩舎",
+    "address": "三重県志摩市阿児町安乗794-1",
+    "cardIds": [
+      "24-215-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.shima.mie.jp/kakuka/jogesuidobu/gesuidoka/gesuido/7166.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1.html",
+      "snapshotSHA256": "3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-215-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。配布場所1安乗岬園地休憩舎と2観光案内所。カフェ営業10時開始でもカードは9:30開始と施設公式も明記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+    "name": "柏原市役所本館2階 かしわらテラス図書スペース",
+    "address": "大阪府柏原市安堂町1-55",
+    "cardIds": [
+      "27-221-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+      "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A別館平日と本館図書休日、C堅下分館を照合。本文上部の旧市民文化センターより現行配布表を採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9ad8021637995f607dd7",
+    "name": "北野観光案内所",
+    "address": "神戸市中央区北野町3-10-20",
+    "cardIds": [
+      "28-100-D001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kobe.lg.jp/a38134/244842361763.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-037e9237fca6d933586390608e593cf5fef18d4163934c2c97cc0fbac6be5e52.html",
+      "snapshotSHA256": "037e9237fca6d933586390608e593cf5fef18d4163934c2c97cc0fbac6be5e52",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-100-D001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/8水道局記者資料と下水道局ページの第4弾配布中を確認。GKP年末年始短縮と異なり公式は休業。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9cebe66533eed96567b3",
+    "name": "亀山市上下水道部下水道課",
+    "address": "三重県亀山市関町木崎919番地1",
+    "cardIds": [
+      "24-210-B001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kameyama.mie.jp/docs/2017032800025/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6b93d02fc557287deca070b112720496bd842ee2eaaf83a4ab60c6a2c5d06326.html",
+      "snapshotSHA256": "6b93d02fc557287deca070b112720496bd842ee2eaaf83a4ab60c6a2c5d06326",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-210-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第2弾全体の在庫切れ・次回未定のため再開可能性のある休止とする。図書館と休館時窓口双方。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9d20fa57040c5342502f",
+    "name": "門真市役所宿直室(本館1階)",
+    "address": "大阪府門真市中町1-1",
+    "cardIds": [
+      "27-223-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5.html",
+      "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市制60周年のみ休止。砂子水路Aとは区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9f39963fd788d29d7a00",
+    "name": "加東市役所 商工観光課（3階）",
+    "address": "兵庫県加東市社50番地",
+    "cardIds": [
+      "28-228-A001",
+      "28-228-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/8693.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62.html",
+      "snapshotSHA256": "1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/5/27再開。協会終了17:15を17時へ訂正。市役所電話は0795-43-0530。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9f51e4ef0b602c7f03c4",
+    "name": "有田川町観光案内所",
+    "address": "和歌山県有田郡有田川町明王寺37-1",
+    "cardIds": [
+      "30-366-A001"
+    ],
+    "prefCodes": [
+      "30"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.aridagawa.lg.jp/top/kurashi/suido/1/5500.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-615da39dea93372aa957ecafba1bb2bca0bef95d2604c95a64529f9c77546f0e.html",
+      "snapshotSHA256": "615da39dea93372aa957ecafba1bb2bca0bef95d2604c95a64529f9c77546f0e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 30-366-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。藤並駅1階東口観光案内所8～17時、年末年始除く。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-9f543cc614431566426a",
+    "name": "田尻町立公民館",
+    "address": "大阪府泉南郡田尻町嘉祥寺1120番地2",
+    "cardIds": [
+      "27-362-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa.html",
+      "snapshotSHA256": "c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-362-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場別館は平日、公民館は土日（祝日除外）、両9～17時。観光協会も配布するが未抽出proposal、観光協会の営業時間9～15時と市案内9～17時が相違。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a0c0f50006d2757a8c8b",
+    "name": "道の駅 いずみ山愛の里",
+    "address": "大阪府和泉市仏並町398-1",
+    "cardIds": [
+      "27-219-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.osaka-izumi.lg.jp/kakukano/suidoubu/gesuiseibi/gyoumu/15179.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f436c503dc5db8946f88b1fb1fe388ec73f9943e5d08c5a2cda520f970a5d3d3.html",
+      "snapshotSHA256": "f436c503dc5db8946f88b1fb1fe388ec73f9943e5d08c5a2cda520f970a5d3d3",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-219-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。カワセミは観光おもてなし処、アートは道の駅サービスカウンター。周年台紙の期間限定を通常カードの終了日としない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a14e4d4fae9c3eaf9d08",
+    "name": "和泉市いずみの国 観光おもてなし処",
+    "address": "大阪府和泉市府中町1-19-9(JR和泉府中駅前)",
+    "cardIds": [
+      "27-219-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.osaka-izumi.lg.jp/kakukano/suidoubu/gesuiseibi/gyoumu/15179.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f436c503dc5db8946f88b1fb1fe388ec73f9943e5d08c5a2cda520f970a5d3d3.html",
+      "snapshotSHA256": "f436c503dc5db8946f88b1fb1fe388ec73f9943e5d08c5a2cda520f970a5d3d3",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-219-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。カワセミは観光おもてなし処、アートは道の駅サービスカウンター。周年台紙の期間限定を通常カードの終了日としない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a39de4697e0157ac0eb8",
+    "name": "茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ",
+    "address": "大阪府茨木市駅前三丁目9番45号",
+    "cardIds": [
+      "27-211-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ibaraki.osaka.jp/kikou/kensetsu/gesuidosoumu/menu/46736.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6366a82474e9f6b472598cd568d023b22ec9cf0fab25f84cc506527a7784e02b.html",
+      "snapshotSHA256": "6366a82474e9f6b472598cd568d023b22ec9cf0fab25f84cc506527a7784e02b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-211-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第12弾おにクル1階・第25弾ダムパークインフォメーション、2025/9/10再開。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a592e005b236f7218498",
+    "name": "たつの観光案内所",
+    "address": "兵庫県たつの市龍野町中村301-2(JR姫新線本龍野駅内",
+    "cardIds": [
+      "28-229-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tatsuno.lg.jp/kurashi-tetsuzuki/suido/4/2/4695.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c.html",
+      "snapshotSHA256": "cf042b56309000c0503eade72636a3a548fd8a2bbb90f7645b029b82b2cf509c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-229-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。赤とんぼとまちやくんの窓口・時間・休業日を個別照合。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a5abac7c12eb8a378220",
+    "name": "高槻市役所 下水河川企画課",
+    "address": "大阪府高槻市桃園町2番1号(本館7階)",
+    "cardIds": [
+      "27-207-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takatsuki.osaka.jp/soshiki/55/4015.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f.html",
+      "snapshotSHA256": "fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第3弾は平日7階・休日JR駅案内所、第8弾はボーネルンド内公園事務室。B旧リンク404を同市公式総合ページで補完。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a778ef6e6dd8552c4743",
+    "name": "門真市泉町浄水場 当直室",
+    "address": "大阪府門真市泉町7-23",
+    "cardIds": [
+      "27-223-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/15607.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6af5e38ec5a80c0f33719b3219a808fd122735af45b2788463f41a3a897f7f89.html",
+      "snapshotSHA256": "6af5e38ec5a80c0f33719b3219a808fd122735af45b2788463f41a3a897f7f89",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。砂子水路、平日泉町2階お客さまセンター・休日1階宿直室、在庫あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a85cfd517816a4d43b6b",
+    "name": "大津港サイクルステーション Bird Café",
+    "address": "滋賀県大津市浜大津5-1-7",
+    "cardIds": [
+      "25-201-C001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/025/1604/g/kanko/74138.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-03556e92ecc749a718b6d3750f6ac1f7c1176870d13095f73a120efcbee1b429.html",
+      "snapshotSHA256": "03556e92ecc749a718b6d3750f6ac1f7c1176870d13095f73a120efcbee1b429",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-201-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/8/24更新の成瀬カード休止。過去の配布案内とは区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-a923ab5decbf089ca723",
+    "name": "東員町役場 上下水道課",
+    "address": "三重県員弁郡東員町大字山田1600",
+    "cardIds": [
+      "24-324-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.toin.lg.jp/soshiki/1013/4/338.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e.html",
+      "snapshotSHA256": "d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-324-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/1更新の短縮後配布時間を反映。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-aa58d39ff7470acf878c",
+    "name": "上郡町上下水道課(上郡町水道管理事務所内)",
+    "address": "兵庫県赤穂郡上郡町與井380",
+    "cardIds": [
+      "28-481-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kamigori.hyogo.jp/soshiki/jogesuidoka/gyomuannai/gyoumu_gesui/2357.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6d6df89804a7b3864ccc7a8bb2bfca918de1fd658c3b364b3b7f6b7cf8742f58.html",
+      "snapshotSHA256": "6d6df89804a7b3864ccc7a8bb2bfca918de1fd658c3b364b3b7f6b7cf8742f58",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-481-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。案内所9:30～16:30、休館日上下水道課。代替窓口の配布時刻は公式に明記なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ab4d9df5429f29cc4208",
+    "name": "1階 お客さま窓口",
+    "address": "大阪府摂津市三島一丁目1番10号",
+    "cardIds": [
+      "27-224-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e.html",
+      "snapshotSHA256": "c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-224-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。上下水道部庁舎の配布専用時刻。問い合わせ受付時間9～17:15と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ab91f9a19111fa61686b",
+    "name": "宝塚市立文化芸術センター 1階受付",
+    "address": "兵庫県宝塚市武庫川町7-64",
+    "cardIds": [
+      "28-214-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://takarazuka-arts-center.jp/post-4608/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ee966b0a96b5da3f8704e576dd5313711b80caae2566f95658a7b6c4f216393e.html",
+      "snapshotSHA256": "ee966b0a96b5da3f8704e576dd5313711b80caae2566f95658a7b6c4f216393e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-214-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2024/2/26再開。市のカードページはアクセス拒否503で回避しない。施設公式により配布先のみ同定。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ab9f4dc49dbc88088817",
+    "name": "クリエートにしのみや(ららぽーと甲子園2F)",
+    "address": "兵庫県西宮市甲子園八番町1-100",
+    "cardIds": [
+      "28-204-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.nishi.or.jp/kurashi/suido/jogesuidokyoku/pr_event/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0274acd7941eb5e10fa899c167a8ac31d7eac824cbe206ae4cad65ddee64024a.html",
+      "snapshotSHA256": "0274acd7941eb5e10fa899c167a8ac31d7eac824cbe206ae4cad65ddee64024a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。クリエートにしのみや10～18時、火曜・年末年始・商業施設休館日休業。掲載地図は蓋地点のため座標不採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-abc816170980d4f8c6db",
+    "name": "加古川観光案内所",
+    "address": "加古川市加古川町篠原町503-2(JR加古川駅構内)",
+    "cardIds": [
+      "28-210-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://suidou-kakogawa.jp/learn/pr/media/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f510fafd666b600e03f0bcf3dffeeed29b4d63c1a744533f92c7b83a05d97359.html",
+      "snapshotSHA256": "f510fafd666b600e03f0bcf3dffeeed29b4d63c1a744533f92c7b83a05d97359",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-210-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。駅案内9:30～18時、12/29～1/3休業。住所の篠原町／溝之口の公式間相違を残し座標保留。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-aef2b45d74e197045af5",
+    "name": "橿原市観光交流センター「かしはらナビプラザ」1階",
+    "address": "奈良県橿原市内膳町1-6-8",
+    "cardIds": [
+      "29-205-C001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d.html",
+      "snapshotSHA256": "dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。Bは2026/4/1移転後のJAならけん2階資料室、Cはナビプラザ1階。配布時間は問合せ受付時間と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-akashi-information",
+    "name": "あかし案内所",
+    "address": "兵庫県明石市大明石町1丁目1-23 ピオレ明石西館",
+    "cardIds": [
+      "28-203-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.yokoso-akashi.jp/akashi_information",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4bb8b314619b294c959162f3938103d009316bbd71c52e05cad67b0e26709fb6.html",
+      "snapshotSHA256": "4bb8b314619b294c959162f3938103d009316bbd71c52e05cad67b0e26709fb6",
+      "sourceLocator": "所在地 兵庫県明石市大明石町1丁目1-23 ピオレ明石西館",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b26c4a7829f736426734",
+    "name": "道の駅レスティ唐古・鍵",
+    "address": "奈良県磯城郡田原本町大字唐古70-1",
+    "cardIds": [
+      "29-363-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.tawaramoto.nara.jp/kurashi/seikatsu/gesui/7689.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4d1609e15144056f4844496e5caa58e5dbba7a772bcbeca681512f1f17a1e272.html",
+      "snapshotSHA256": "4d1609e15144056f4844496e5caa58e5dbba7a772bcbeca681512f1f17a1e272",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-363-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。レスティ9～18時配布。遺構展示情報館9～16:30も配布先として掲載、未抽出ならproposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b3c184c7aed571b773cd",
+    "name": "「道の駅 海の京都 宮津」観光案内所",
+    "address": "京都府宮津市字浜町3007",
+    "cardIds": [
+      "26-000-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.pref.kyoto.jp/gesuido/manholemiyazu.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0c0316884d0b4b207d25658d7c9ca4417745cb149fa34ca5921d886481e59712.html",
+      "snapshotSHA256": "0c0316884d0b4b207d25658d7c9ca4417745cb149fa34ca5921d886481e59712",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-000-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。府の配布時間を採用。GKPの17:30・年中無休を訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b4ecd274f209e965389d",
+    "name": "加西市民会館",
+    "address": "兵庫県加西市北条町古坂1-1",
+    "cardIds": [
+      "28-220-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5.html",
+      "snapshotSHA256": "2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-220-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A平日付属棟2階上下水道課／休日市民会館、B北条町駅。双方在庫十分。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b527d66a23c68692a08e",
+    "name": "道の駅 菰野",
+    "address": "三重県三重郡菰野町菰野2256",
+    "cardIds": [
+      "24-341-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www2.town.komono.mie.jp/soshiki/14/1144.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-b1f28aa533c05d386b90badeb93f10708860de97f2f570beabf33b350bb327e0.html",
+      "snapshotSHA256": "b1f28aa533c05d386b90badeb93f10708860de97f2f570beabf33b350bb327e0",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-341-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/4/28午後再開。道の駅菰野ふるさと館窓口。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b6ae02f6302875f4ca7f",
+    "name": "加西市生活環境部 上下水道課",
+    "address": "兵庫県加西市北条町横尾1000",
+    "cardIds": [
+      "28-220-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5.html",
+      "snapshotSHA256": "2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-220-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A平日付属棟2階上下水道課／休日市民会館、B北条町駅。双方在庫十分。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-b743e30dfb2cafe88f80",
+    "name": "長岡京市観光案内所",
+    "address": "長岡京市天神一丁目1番2号",
+    "cardIds": [
+      "26-209-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.nagaokakyo.lg.jp/0000013143.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-77e9da2b8497244baa27022b38c8462e474a12b4b5eed85c8c8773b197a526e7.html",
+      "snapshotSHA256": "77e9da2b8497244baa27022b38c8462e474a12b4b5eed85c8c8773b197a526e7",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-209-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。50周年記念カード。過去の市役所分庁舎2と観光案内所双方を休止。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-bb8882bd51e63108b720",
+    "name": "東員町役場守衛室",
+    "address": "三重県員弁郡東員町大字山田1600",
+    "cardIds": [
+      "24-324-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.toin.lg.jp/soshiki/1013/4/338.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e.html",
+      "snapshotSHA256": "d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-324-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/1更新の短縮後配布時間を反映。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-bbd37716f9955e413e80",
+    "name": "京丹後市上下水道部経営総務課",
+    "address": "京都府京丹後市大宮町口大野226番地",
+    "cardIds": [
+      "26-212-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyotango.lg.jp/top/soshiki/jogesuido/suido/gesuidou/manhole/21182.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025.html",
+      "snapshotSHA256": "b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-212-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A001は平日大宮庁舎2階と休日丹後王国。B001は2026/4/1丹後王国で再開。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-bd50aa62d0cdf1746b04",
+    "name": "天理市立黒塚古墳展示館",
+    "address": "天理市柳本町1118番地2",
+    "cardIds": [
+      "29-204-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tenri.nara.jp/kakuka/kensetsubu/gesuidouka/14795.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-35c68d54a92c6157a48af315a1bf469be163633b128db8b295c5d516c7541c2f.html",
+      "snapshotSHA256": "35c68d54a92c6157a48af315a1bf469be163633b128db8b295c5d516c7541c2f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。黒塚古墳展示館、配布時間・休館日・GW祝日の臨時開館を照合。市役所配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-bd54ffa4ff05c5de2e21",
+    "name": "環境水道部経営総務課(本館2階)",
+    "address": "大阪府門真市中町1-1",
+    "cardIds": [
+      "27-223-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5.html",
+      "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市制60周年のみ休止。砂子水路Aとは区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-bdfebcf28c671b15f164",
+    "name": "岩出市観光案内所",
+    "address": "和歌山県岩出市清水386番地の11",
+    "cardIds": [
+      "30-209-A001"
+    ],
+    "prefCodes": [
+      "30"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.iwade.lg.jp/soshiki/17/8862.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d9fcbfd1c6c31a429aeeaa89d6ccf050040f93549386ccd47578dc2f1fa30a72.html",
+      "snapshotSHA256": "d9fcbfd1c6c31a429aeeaa89d6ccf050040f93549386ccd47578dc2f1fa30a72",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 30-209-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。観光案内所Bloomいわでの9～17時配布。カフェの7～21時と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c09001b28f3e7c1bf9f0",
+    "name": "亀岡市文化資料館",
+    "address": "亀岡市古世町中内坪1",
+    "cardIds": [
+      "26-206-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3966.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9859c34edef51b0f82368d6ab7cd137ebfb40d553293d0282644a10dae76ca24.html",
+      "snapshotSHA256": "9859c34edef51b0f82368d6ab7cd137ebfb40d553293d0282644a10dae76ca24",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-206-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。文化資料館のみ。年末年始を公式配布案内へ訂正。問い合わせ先を配布窓口にしない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c1f821f1bc9c44d7290e",
+    "name": "宇治田原町総合文化センター",
+    "address": "京都府綴喜郡宇治田原町大字岩山小字沼尻46番地1",
+    "cardIds": [
+      "26-344-A001",
+      "26-344-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/4328.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd.html",
+      "snapshotSHA256": "6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-344-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9/1再開・在庫あり。AとBとも2施設、抽出されていない関係はproposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c47b534e556537bd3103",
+    "name": "池田市上下水道部経営企画課",
+    "address": "池田市大和町1番10号",
+    "cardIds": [
+      "27-204-A001",
+      "27-204-B001",
+      "27-204-C001",
+      "27-204-D001",
+      "27-204-E001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active",
+      "unknown"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ikeda.osaka.jp/jogesuido/soshiki/keiei/gyomu/koho/1603072958047.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30.html",
+      "snapshotSHA256": "6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。カードIDと季節を公式本文で明示。火曜代替は上下水道庁舎2階9～17時、火曜祝日は翌日。季節外配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c5cb26a1af3a611b70b7",
+    "name": "吉川支所地域振興課",
+    "address": "兵庫県三木市吉川町大沢412",
+    "cardIds": [
+      "28-215-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c5d10ff37b683a499161",
+    "name": "(一社)加東市観光協会",
+    "address": "加東市河高4028",
+    "cardIds": [
+      "28-228-A001",
+      "28-228-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/8693.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62.html",
+      "snapshotSHA256": "1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/5/27再開。協会終了17:15を17時へ訂正。市役所電話は0795-43-0530。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c75fe5e57c94810e2724",
+    "name": "日本のへそ日時計の丘公園オートキャンプ場 管理棟",
+    "address": "兵庫県西脇市黒田庄町門柳871-14",
+    "cardIds": [
+      "28-213-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752.html",
+      "snapshotSHA256": "147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-213-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。日時計の丘公園オートキャンプ場管理棟9～17時、12/29～1/3休業。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c84376231b21f3e50397",
+    "name": "野洲市上下水道事業所事務室",
+    "address": "野洲市西河原2400番地",
+    "cardIds": [
+      "25-210-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766.html",
+      "snapshotSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-210-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現在取得できる市公式の終了告知。過去配布の平日・休日窓口両方を訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c8c261ef28a3887401ad",
+    "name": "御坊市役所1階 みやこ姫ロビー",
+    "address": "和歌山県御坊市薗350番地2",
+    "cardIds": [
+      "30-205-A001"
+    ],
+    "prefCodes": [
+      "30"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.gobo.lg.jp/kurasi/suido/gesuidou/koukyou/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1074bb3abffa6f13200d1f9ee6a4c5a7ab0eab88b7cd6a30b86222588251cc89.html",
+      "snapshotSHA256": "1074bb3abffa6f13200d1f9ee6a4c5a7ab0eab88b7cd6a30b86222588251cc89",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 30-205-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。みやこ姫ロビーと夜間休日窓口を区別。両方8:30～17:15、在庫余裕。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c8ea8d7650a6cc58c39e",
+    "name": "あじさいフローラみき",
+    "address": "兵庫県三木市福井字三木山",
+    "cardIds": [
+      "28-215-C001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-c98e214d42e9b107f4cd",
+    "name": "千早赤阪村役場都市整備課",
+    "address": "大阪府南河内郡千早赤阪村大字水分180番地",
+    "cardIds": [
+      "27-383-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.vill.chihayaakasaka.osaka.jp/kakuka/sangyokensetsu/toshiseibi/gesuidou/7677.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4131e2d3eccc3e6ea3d26f030d0ef006479f6f37dff04d4ee92c896241581c2b.html",
+      "snapshotSHA256": "4131e2d3eccc3e6ea3d26f030d0ef006479f6f37dff04d4ee92c896241581c2b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-383-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日庁舎3階都市整備課・休日正面入口インターホン。代表点と窓口位置を区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ca76c3b83b941d5c6531",
+    "name": "播磨町郷土資料館",
+    "address": "兵庫県加古郡播磨町大中1丁目1番2号",
+    "cardIds": [
+      "28-382-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.harima.lg.jp/jougesui/gesuido/kurashi/suido/gesuido/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c638413775e01fe7df7cc9eb1029ffd43ca455e87246ddfc0bfaeddd56512849.html",
+      "snapshotSHA256": "c638413775e01fe7df7cc9eb1029ffd43ca455e87246ddfc0bfaeddd56512849",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-382-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。配布時間は資料館開館時間と明示。在庫あり。県考古博物館と上下水道課では配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-cd9cf08aa448ddce137c",
+    "name": "池田市観光案内所",
+    "address": "大阪府池田市満寿美町2-7",
+    "cardIds": [
+      "27-204-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ikeda.osaka.jp/jogesuido/soshiki/keiei/gyomu/koho/1603072958047.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30.html",
+      "snapshotSHA256": "6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-204-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。カードIDと季節を公式本文で明示。火曜代替は上下水道庁舎2階9～17時、火曜祝日は翌日。季節外配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ce0f123ef5e185dce8c9",
+    "name": "宇治田原町 上下水道課",
+    "address": "京都府綴喜郡宇治田原町大字立川小字坂口18-1(宇治田原町役場2階)",
+    "cardIds": [
+      "26-344-A001",
+      "26-344-B001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/782.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea.html",
+      "snapshotSHA256": "666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-344-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。旧カードにも文化センター追加。既存対応にない窓口はproposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-ce0f4e60767ae89a271d",
+    "name": "北条町駅",
+    "address": "兵庫県加西市北条町北条駅前町28-2",
+    "cardIds": [
+      "28-220-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5.html",
+      "snapshotSHA256": "2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-220-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A平日付属棟2階上下水道課／休日市民会館、B北条町駅。双方在庫十分。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-cf81cd857b86209bc8c8",
+    "name": "志摩市観光協会",
+    "address": "三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階",
+    "cardIds": [
+      "24-215-A001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.shima.mie.jp/kakuka/jogesuidobu/gesuidoka/gesuido/7166.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1.html",
+      "snapshotSHA256": "3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-215-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。配布場所1安乗岬園地休憩舎と2観光案内所。カフェ営業10時開始でもカードは9:30開始と施設公式も明記。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d03efeeb5e2760ad5647",
+    "name": "丹波市観光協会 かいばら観光案内所",
+    "address": "兵庫県丹波市柏原町柏原3625",
+    "cardIds": [
+      "28-223-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.tamba.lg.jp/kurashi/jogesuido/gesuido/4883.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a785299b11da117322980d3c5ec26c587d0842142b6965eb4712b3ea398fdddb.html",
+      "snapshotSHA256": "a785299b11da117322980d3c5ec26c587d0842142b6965eb4712b3ea398fdddb",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-223-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。かいばら観光案内所10～16時、火曜（祝日なら翌日）、12/29～1/3休業。在庫1399枚2026/3/31。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d3beb94836fe72b63cfb",
+    "name": "亀岡市上下水道庁舎",
+    "address": "京都府亀岡市安町釜ケ前20番地",
+    "cardIds": [
+      "26-206-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3967.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-df4a9b7b0df7e0326dd5d29b2bf9aec0f38c9d9e02fb5f2f3055140c3e4116dc.html",
+      "snapshotSHA256": "df4a9b7b0df7e0326dd5d29b2bf9aec0f38c9d9e02fb5f2f3055140c3e4116dc",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-206-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。上下水道お客様センター。休日開始時刻9時を8:30へ訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d4a34c89914311188940",
+    "name": "JR高槻駅観光案内所(JR高槻駅中央改札階)",
+    "address": "大阪府高槻市白梅町1番1号",
+    "cardIds": [
+      "27-207-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takatsuki.osaka.jp/soshiki/55/4015.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f.html",
+      "snapshotSHA256": "fc187c6ea071836cda1e4457e7eee48a3861dc859cf6ac8b086b1934c769100f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第3弾は平日7階・休日JR駅案内所、第8弾はボーネルンド内公園事務室。B旧リンク404を同市公式総合ページで補完。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d6915f3dfb02605bc65a",
+    "name": "大阪池田ゲストインフォメーション",
+    "address": "大阪府池田市栄町1-1",
+    "cardIds": [
+      "27-204-B001",
+      "27-204-C001",
+      "27-204-D001",
+      "27-204-E001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active",
+      "unknown"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ikeda.osaka.jp/jogesuido/soshiki/keiei/gyomu/koho/1603072958047.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30.html",
+      "snapshotSHA256": "6e657426e5f9210b23fd51fc0cbc6fd593acb64b541b21bd1ae362c8a8876f30",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-204-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。カードIDと季節を公式本文で明示。火曜代替は上下水道庁舎2階9～17時、火曜祝日は翌日。季節外配布なし。11/5は季節外。毎年反復期間をschema1で安全に構造化できないためstatus unknown、原文保持。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d8ae994ed35d69a0dfb1",
+    "name": "パープルホール(藤井寺市立市民総合会館)1階地域サービス公社管理事務所",
+    "address": "大阪府藤井寺市北岡1丁目2番3号",
+    "cardIds": [
+      "27-226-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a.html",
+      "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-226-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。パープルホール1階地域サービス公社事務所。現行legacy同住所と一致。公式連絡先072-937-2321へ訂正可能。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-d9e13b21408adc9fb34c",
+    "name": "芦屋市立美術博物館",
+    "address": "兵庫県芦屋市伊勢町12-25",
+    "cardIds": [
+      "28-206-B001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.ashiya.lg.jp/gesuidou/manhoru-kado/12dan.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-be329a1df16944fc749440fa8d276b6643d0d469d982e1f59cbfeeddc19ac9c8.html",
+      "snapshotSHA256": "be329a1df16944fc749440fa8d276b6643d0d469d982e1f59cbfeeddc19ac9c8",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-206-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。美術博物館入館口前で配布、入館料不要。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-daaa4e44e2c541067679",
+    "name": "スワンホール",
+    "address": "兵庫県伊丹市昆陽池2丁目1",
+    "cardIds": [
+      "28-207-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。各カード配布表と在庫を照合。B休日とCの観光物産ギャラリーは2026/9/14移転、旧窓口と誤対応させない。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-dcd7f98f6661c1743631",
+    "name": "寝屋川流域下水道 鴻池水みらいセンター",
+    "address": "大阪府東大阪市北鴻池町1-18(管理棟)",
+    "cardIds": [
+      "27-000-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.pref.osaka.lg.jp/gesui_jigyo/dezain/index.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-584314c2ec3ffb789ae34a56371818b88d3a1f008b769f9efcae3734dbce3dcd.html",
+      "snapshotSHA256": "584314c2ec3ffb789ae34a56371818b88d3a1f008b769f9efcae3734dbce3dcd",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-000-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。府公式の曜日別配布窓口を照合。年末年始具体日付は未記載。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-e2d676f58090fbacb7f9",
+    "name": "松原市観光協会",
+    "address": "大阪府松原市阿保4-1-4",
+    "cardIds": [
+      "27-217-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32.html",
+      "snapshotSHA256": "9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-217-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日観光協会・土日祝役所1階宿直室、時間差あり。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-e35df20e918de7f20461",
+    "name": "道の駅草津 グリーンプラザからすま",
+    "address": "滋賀県草津市下物町1436番地",
+    "cardIds": [
+      "25-206-C001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f.html",
+      "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-206-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2種類目はくさつ夢本陣。3種類目は道の駅草津、2026/10/6配布再開、12/31～1/2配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-e5b8e80cdd4564099f87",
+    "name": "大阪府立狭山池博物館 受付",
+    "address": "大阪府大阪狭山市池尻中二丁目",
+    "cardIds": [
+      "27-231-A001",
+      "27-231-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85.html",
+      "snapshotSHA256": "bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-231-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市公式は工事休館中もカード配布継続と明記。施設公式の2026/9開館展示と現行アクセスを追加確認。博物館内の受付詳細位置は未確定。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-e8d26c0454d7822bc108",
+    "name": "久御山町役場宿直室",
+    "address": "京都府久世郡久御山町島田ミスノ38番地",
+    "cardIds": [
+      "26-322-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.kumiyama.lg.jp/0000005678.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2.html",
+      "snapshotSHA256": "4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-322-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階上下水道課・休日1階宿直室。2024/8/8在庫終了。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-eabe58611fd2c6d53a3e",
+    "name": "まちの駅かいづか",
+    "address": "大阪府貝塚市海塚一丁目1番1号",
+    "cardIds": [
+      "27-208-B001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kaizuka.lg.jp/kakuka/jogesuido/gesuisuisin/topics/manholucard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-90695179d63e62ae85adf326517d98b63bd545ed4fc6cf35c96ba34c9c2dcf51.html",
+      "snapshotSHA256": "90695179d63e62ae85adf326517d98b63bd545ed4fc6cf35c96ba34c9c2dcf51",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-208-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。第21弾、まちの駅かいづか。歴史館の古い案内より上下水道公式の休止を優先。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-eb17399090b3ca34093b",
+    "name": "御坊市役所1階 夜間休日窓口",
+    "address": "和歌山県御坊市薗350番地2",
+    "cardIds": [
+      "30-205-A001"
+    ],
+    "prefCodes": [
+      "30"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.gobo.lg.jp/kurasi/suido/gesuidou/koukyou/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1074bb3abffa6f13200d1f9ee6a4c5a7ab0eab88b7cd6a30b86222588251cc89.html",
+      "snapshotSHA256": "1074bb3abffa6f13200d1f9ee6a4c5a7ab0eab88b7cd6a30b86222588251cc89",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 30-205-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。みやこ姫ロビーと夜間休日窓口を区別。両方8:30～17:15、在庫余裕。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f1a04ff552a8ea4cdfb8",
+    "name": "はしもと広域観光案内所",
+    "address": "和歌山県橋本市古佐田1-5-9",
+    "cardIds": [
+      "30-203-A001"
+    ],
+    "prefCodes": [
+      "30"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hashimoto.lg.jp/guide/jougesuidoubu/gesuido/koukyougesuidou/12288.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2bdc6f4965296b6a0de7532b7913ef75654b3ad4ebd06f205d63c553bdd801af.html",
+      "snapshotSHA256": "2bdc6f4965296b6a0de7532b7913ef75654b3ad4ebd06f205d63c553bdd801af",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 30-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/10/10再開。公式最新の定休日を採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f2abb44db075f27dc0ef",
+    "name": "野洲市役所宿日直室",
+    "address": "野洲市小篠原2100番地1",
+    "cardIds": [
+      "25-210-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766.html",
+      "snapshotSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-210-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現在取得できる市公式の終了告知。過去配布の平日・休日窓口両方を訂正。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f44bd7e08bcfe2fc763c",
+    "name": "福崎町役場上下水道課",
+    "address": "兵庫県神崎郡福崎町南田原3116番地の1",
+    "cardIds": [
+      "28-443-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.town.fukusaki.hyogo.jp/0000002753.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-57f6a4c34899e09abb754f6f34afc77f617259d448fe35f170069f4342cfaa19.html",
+      "snapshotSHA256": "57f6a4c34899e09abb754f6f34afc77f617259d448fe35f170069f4342cfaa19",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-443-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場8:30～17:15土日祝も可。在庫700枚2026/10/21。フクちゃんプラザ・サキちゃんプラザの追加配布所はproposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f7118465cacf2eb7adc4",
+    "name": "草津宿街道交流館",
+    "address": "滋賀県草津市草津3-10-4",
+    "cardIds": [
+      "25-206-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f.html",
+      "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-206-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。1種類目の通常窓口を照合。市役所代替窓口は原典hoursのみ記載で、対応未抽出なら追加proposal。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f81835b8df6729a0f9f9",
+    "name": "赤れんが博物館",
+    "address": "京都府舞鶴市字浜2011",
+    "cardIds": [
+      "26-202-C001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "ended"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.maizuru.kyoto.jp/kurashi/0000004329.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f.html",
+      "snapshotSHA256": "99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-202-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。田辺城趾／赤れんが倉庫の配布終了を確認。歴史的窓口の同定はGKP原文を併用し座標未承認。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-f93d37dd46d29cf43095",
+    "name": "橿原市藤原京資料室",
+    "address": "奈良県橿原市縄手町178-1",
+    "cardIds": [
+      "29-205-B001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d.html",
+      "snapshotSHA256": "dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。Bは2026/4/1移転後のJAならけん2階資料室、Cはナビプラザ1階。配布時間は問合せ受付時間と区別。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-fb4b43b63da166b6b021",
+    "name": "枚方市観光案内所Syuku56",
+    "address": "大阪府枚方市岡東町19-1枚方モール1階",
+    "cardIds": [
+      "27-210-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.hirakata.osaka.jp/suidou/0000046700.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-8a862547e111c091968c866f30c2122c2f7051d0885684793addc3988721ed53.html",
+      "snapshotSHA256": "8a862547e111c091968c866f30c2122c2f7051d0885684793addc3988721ed53",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-210-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。リンク欠落を市公式検索で補完。Syuku56枚方モール1階10～19時。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-fdcc4880a8133de5de46",
+    "name": "くさつ夢本陣",
+    "address": "滋賀県草津市草津二丁目10-21",
+    "cardIds": [
+      "25-206-B001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "regional-location-unresolved",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f.html",
+      "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-206-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2種類目はくさつ夢本陣。3種類目は道の駅草津、2026/10/6配布再開、12/31～1/2配布なし。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-fukusaki-ekimae",
+    "name": "福崎町駅前観光交流センター（フクちゃんプラザ）",
+    "address": "兵庫県神崎郡福崎町福田302-11",
+    "cardIds": [
+      "28-443-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://fukusaki-fun.com/ekimae/access/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f2ff32d8eff7a49b31638f5a56fd62f343969bc6f59aecaaa19c61e67703a587.html",
+      "snapshotSHA256": "f2ff32d8eff7a49b31638f5a56fd62f343969bc6f59aecaaa19c61e67703a587",
+      "sourceLocator": "兵庫県神崎郡福崎町福田 302-11",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-fukusaki-tsujikawa",
+    "name": "福崎町辻川観光交流センター（サキちゃんプラザ）",
+    "address": "兵庫県神崎郡福崎町西田原1470-1",
+    "cardIds": [
+      "28-443-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "unknown"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://fukusaki-fun.com/tsujikawa/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-00e5b6e6f924e461b5b902b0fea0dd7d700cccfd821d57aee5cd5932596dfcda.html",
+      "snapshotSHA256": "00e5b6e6f924e461b5b902b0fea0dd7d700cccfd821d57aee5cd5932596dfcda",
+      "sourceLocator": "兵庫県神崎郡福崎町西田原 1470-1",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-habikino-visitor",
+    "name": "はびきのビジターセンター",
+    "address": "大阪府羽曳野市古市1-1-21",
+    "cardIds": [
+      "27-222-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.habikino.lg.jp/teiju/tanoshimu/12979.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4d14cf7609c4e565b78ff10d558e9100d500431b3e84b436f073859bba4629b7.html",
+      "snapshotSHA256": "4d14cf7609c4e565b78ff10d558e9100d500431b3e84b436f073859bba4629b7",
+      "sourceLocator": "住所 羽曳野市古市1-1-21",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-higashiosaka-lobby",
+    "name": "東大阪市役所22階 展望ロビー",
+    "address": "大阪府東大阪市荒本北一丁目1番1号",
+    "cardIds": [
+      "27-227-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f.html",
+      "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+      "sourceLocator": "東大阪市役所22階 展望ロビー",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-imai-machizukuri",
+    "name": "今井まちづくりセンター",
+    "address": "奈良県橿原市今井町3丁目8番8号",
+    "cardIds": [
+      "29-205-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617.html",
+      "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+      "sourceLocator": "「今井まちづくりセンター」（今井町3丁目8番8号）にてマンホールカードの配布を継続しております。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-itami-gallery-temporary",
+    "name": "伊丹市立観光物産ギャラリー 仮設店舗",
+    "address": "兵庫県伊丹市 旧伊丹市演劇ホール喫茶店跡（JR伊丹駅から約200m）",
+    "cardIds": [
+      "28-207-B001",
+      "28-207-C001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "それに伴い、マンホールカードにつきましても仮設店舗にて配布いたします。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-karako-information",
+    "name": "唐古・鍵遺跡史跡公園 遺構展示情報館",
+    "address": "奈良県磯城郡田原本町唐古50番地の2 唐古・鍵遺跡史跡公園内",
+    "cardIds": [
+      "29-363-A001"
+    ],
+    "prefCodes": [
+      "29"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.karako-kagi.com/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-336a2612a7516a02b7768501184d95ad6b57a24411f2258204dd868078fa0071.html",
+      "snapshotSHA256": "336a2612a7516a02b7768501184d95ad6b57a24411f2258204dd868078fa0071",
+      "sourceLocator": "奈良県磯城郡田原本町唐古50番地の2",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-katano-guard",
+    "name": "交野市上下水道部1階 警備員室窓口",
+    "address": "大阪府交野市私市2丁目24番1号",
+    "cardIds": [
+      "27-230-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "update-candidate",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.katano.osaka.jp/docs/2018053100033/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c.html",
+      "snapshotSHA256": "3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c",
+      "sourceLocator": "交野市上下水道部（旧水道局）1階 警備員室窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-kusatsu-cityhall",
+    "name": "草津市役所2階 上下水道総務課",
+    "address": "滋賀県草津市草津三丁目13番30号",
+    "cardIds": [
+      "25-206-A001"
+    ],
+    "prefCodes": [
+      "25"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f.html",
+      "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+      "sourceLocator": "市役所2階の上下水道総務課（滋賀県草津市草津三丁目13番30号、電話:077-561-2440）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-kyoto-guard",
+    "name": "京都市上下水道局総合庁舎 守衛室",
+    "address": "京都府京都市南区上鳥羽鉾立町11-3",
+    "cardIds": [
+      "26-100-A001"
+    ],
+    "prefCodes": [
+      "26"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4.html",
+      "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+      "sourceLocator": "※土日祝日は京都市上下水道局総合庁舎 守衛室にて配布しております。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-neyagawa-holiday",
+    "name": "寝屋川市上下水道局庁舎1階 窓口",
+    "address": "大阪府寝屋川市本町15番1号",
+    "cardIds": [
+      "27-215-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "suspended"
+    ],
+    "classification": "update-candidate",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/manholecard/1531978868131.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad.html",
+      "snapshotSHA256": "dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad",
+      "sourceLocator": "上下水道局庁舎1階 窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-sennan-annex",
+    "name": "泉南市役所別館2階 下水道課窓口",
+    "address": "大阪府泉南市樽井一丁目1番1号",
+    "cardIds": [
+      "27-228-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87.html",
+      "snapshotSHA256": "30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87",
+      "sourceLocator": "泉南市役所別館2階（泉南市都市整備部下水道課窓口）【営業時間は火曜日、水曜日の9時から17時30分】",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-tajiri-tourism",
+    "name": "田尻町観光協会 観光案内所",
+    "address": "大阪府泉南郡田尻町りんくうポート北1番",
+    "cardIds": [
+      "27-362-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "unknown"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://tajiri-tourism.com/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2205fc1ff201893d468242f3f75171f7a490020888bccb46ab613902ba69f7f0.html",
+      "snapshotSHA256": "2205fc1ff201893d468242f3f75171f7a490020888bccb46ab613902ba69f7f0",
+      "sourceLocator": "田尻町マンホールカードも絶賛配布中！",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-takasago-cityhall",
+    "name": "高砂市役所本庁舎3階12番窓口 上下水道部経営総務室",
+    "address": "兵庫県高砂市荒井町千鳥1丁目1番1号",
+    "cardIds": [
+      "28-216-A001"
+    ],
+    "prefCodes": [
+      "28"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "unresolved",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56.html",
+      "snapshotSHA256": "fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56",
+      "sourceLocator": "本庁舎3階12番窓口 上下水道部経営総務室",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-toyono-guard",
+    "name": "豊能町役場本庁舎1階 警備室窓口",
+    "address": "大阪府豊能郡豊能町余野414-1",
+    "cardIds": [
+      "27-321-A001"
+    ],
+    "prefCodes": [
+      "27"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "update-candidate",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.town.toyono.osaka.jp/kurashi/seikatsu-infura/gesuidou/page002821.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8.html",
+      "snapshotSHA256": "da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8",
+      "sourceLocator": "閉庁日 ：豊能町役場 本庁舎1階 警備室窓口",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  },
+  {
+    "facilityId": "facility:kinki-yokkaichi-holiday",
+    "name": "四日市市上下水道局 夜間休日窓口",
+    "address": "三重県四日市市堀木一丁目3-18",
+    "cardIds": [
+      "24-202-C001"
+    ],
+    "prefCodes": [
+      "24"
+    ],
+    "distributionStatuses": [
+      "active"
+    ],
+    "classification": "update-candidate",
+    "priorReview": "additional-proposal",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003.html",
+      "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+      "sourceLocator": "※土日・祝日は夜間休日窓口で配布します。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    }
+  }
+]

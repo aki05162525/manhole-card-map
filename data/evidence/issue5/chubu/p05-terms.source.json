@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+  "requestedAt": "2026-11-05T05:45:44.326817+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+  "contentType": "text/html; charset=UTF-8",
+  "fetchedAt": "2026-11-05T05:45:44.454259+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+  "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+  "bytes": 27978
+}

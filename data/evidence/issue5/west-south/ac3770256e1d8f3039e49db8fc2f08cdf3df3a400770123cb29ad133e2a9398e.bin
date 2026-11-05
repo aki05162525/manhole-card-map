@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <meta name="robots" content="all">
+    <title>神埼市マンホールカード配布のお知らせ｜神埼市</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="google-translate-customization" content="2f04182eb9294b51-f7671764c899e8a8-g3cbeee0197fb484b-19"></meta>
+    
+    <meta property="og:title" content="神埼市マンホールカード配布のお知らせ【神埼市】">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.city.kanzaki.saga.jp/main/7553.html">
+    <meta property="og:image" content="https://www.city.kanzaki.saga.jp/all_img/org/ogp_img.png">
+    <meta property="og:site_name" content="神埼市">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="../all_img/org/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../all_img/org/webclip.png">
+
+    <script type="text/javascript" src="../js/plugin/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../js/src/accessibility.js?ver=20230426"></script>
+    <script type="text/javascript" src="../js/plugin/jquery.cookie.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="all">
+    <link rel="stylesheet" type="text/css" href="../css/org.css?ver=20230721" media="all">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+<style type="text/css">
+/* ロゴデータ */
+#header #siteid h1,
+#header #siteid p a{
+	background-image: url('../logo_image/siteid.png');
+}
+</style>
+<link rel="stylesheet" type="text/css" href="//www.city.kanzaki.saga.jp//page_edit_style.css" />
+
+  </head>
+  
+  <body>
+    
+    
+  
+    <p class="visually-hidden">音声読み上げ用ナビゲーションです。</p>
+    <p class="visually-hidden"><a href="#wrap">本文へ移動します</a></p>
+    <p class="visually-hidden"><a href="#footer">ページ最後（フッター）へ移動します</a></p>
+    <p class="visually-hidden">音声読み上げ用ナビゲーションはここまでです。</p>
+  
+    <div id="bg" class="sub">
+      <a name="pagetop" id="pagetop"></a>
+      <div id="header_wrap">
+        <div id="header">
+          <div id="header_in">
+            <div id="siteid">
+              <div class="kanzaki_city"><p><a href="./1.html">神埼市</a></p></div>
+              <div class="catch_copy"><p>幸せつなごう かんざき</p></div>
+            </div><!--siteid-->
+
+            <div id="header_content">
+              <div id="h_nav">
+
+                <div id="font_size">
+                  <h2>文字サイズ</h2>
+                  <ul>
+                    <li class="middle"><button id="fzS" aria-label="文字サイズを標準の大きさに戻す">標準</button></li>
+                    <li class="big"><button id="fzM" aria-label="文字サイズを大きいサイズに変更">大</button></li>
+                    <li class="bigger"><button id="fzL" aria-label="文字サイズを最も大きいサイズに変更">特大</button></li>
+                  </ul>
+                </div>
+
+                <div id="bg_color">
+                  <h2>背景色</h2>
+                  <ul>
+                    <li id="BgColorWhite" class="white"><button aria-label="背景色を標準の色に戻す">白</button></li>
+                    <li id="BgColorBlue" class="blue"><button aria-label="背景色を青に変更する">青</button></li>
+                    <li id="BgColorBlack" class="black"><button aria-label="背景色を黒に変更する">黒</button></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div><!--header_content-->
+
+          </div><!--header_in-->
+        </div><!--header-->
+	
+    
+        <div id="sellang">
+          <div id="google_translate_element">
+            <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'de,en,es,fr,ko,ru,th,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          </div>
+        </div>
+        <!--sellang-->
+        
+      
+        <div id="search">
+          <div>
+            <h2>サイト内キーワード検索</h2>
+            <form id="cse-search-box" action="../search/result.html">
+              <input type="hidden" name="cx" value="20e97d51ca524488f">
+              <input type="hidden" name="ie" value="UTF-8">
+              <input type="text" name="q" size="31">
+              <input type="submit" name="sa" value="検索">
+            </form>
+            <script type="text/javascript" src="https://www.google.com/cse/brand?form=cse-search-box&lang=ja"></script>
+          </div>
+        </div><!--search-->
+      
+      
+      </div><!--header_wrap-->
+
+      <nav class="gmenu" aria-label="ヘッダーメニュー">
+        <ul><li><a href="./1.html"><span class="m_0">トップページ</span></a></li><li><a href="./2.html"><span class="m_1">くらしのガイド</span></a></li><li><a href="./3.html"><span class="m_2">観光・文化</span></a></li><li><a href="./4.html"><span class="m_3">事業者の方へ</span></a></li><li><a href="./5.html"><span class="m_4">市政・計画</span></a></li><li><a href="./25.html"><span class="m_5">市役所のご案内</span></a></li></ul>
+      </nav>                
+      <!--menu_1-->
+    
+      <!--スマホメニュー-->
+      <div id="sp_nav_area">
+        <div id="sp_nav_btn" class="tab_sp">
+          <ul>
+            <li id="sp_search_btn" class="sp"><img src="../all_img/org/sp_search_btn.png" alt="検索"></li>
+            <li id="sp_menu_btn" class="tab_sp"><img src="../all_img/org/sp_menu_btn.png" alt="メニュー"></li>
+          </ul>
+        </div><!--sp_nav_btn-->    
+
+        <div id="sp_menu_wrap">
+          <nav id="menu" class="drawer_menu tab_sp" aria-label="タブレット&スマホメニュー">
+            <div class="sub_menu">
+              <p>
+<a href="./7462.html"
+ ><span>平成29年</span></a>
+</p><ul>
+<li class="PageIndex_0"><a href="./8832.html"><span>市内の小中学校で卒業式が行われました</span></a></li>
+<li class="PageIndex_1"><a href="./8680.html"><span>豆やナッツ類は、3歳頃までは食べさせないようにしましょう！</span></a></li>
+<li class="PageIndex_2"><a href="./8828.html"><span>高取山公園に新しい遊具ができました</span></a></li>
+<li class="PageIndex_3"><a href="./8444.html"><span>高齢者のインフルエンザ予防接種　助成期間を延長します</span></a></li>
+<li class="PageIndex_4"><a href="./8030.html"><span>口唇口蓋裂児と保護者のつどい（佐賀中部保健福祉事務所）</span></a></li>
+<li class="PageIndex_5"><a href="./8028.html"><span>ヘルパンギーナの流行発生</span></a></li>
+<li class="PageIndex_6"><a href="./7976.html"><span>食中毒に注意しましょう</span></a></li>
+<li class="PageIndex_7"><a href="./7755.html"><span>乳児にハチミツを与えないでください</span></a></li>
+<li class="PageIndex_8"><a href="./7684.html"><span>ヘルスメイト養成教室受講生募集</span></a></li>
+<li class="PageIndex_9 sel"><a href="./7553.html"><span>神埼市マンホールカード配布のお知らせ</span></a></li>
+<li class="PageIndex_10"><a href="./6144.html"><span>筋力アップ養成塾　参加者募集</span></a></li>
+</ul>
+
+            </div>
+            <div class="main_menu">
+              <ul><li><a href="./1.html"><span class="m_0">トップページ</span></a></li><li><a href="./2.html"><span class="m_1">くらしのガイド</span></a></li><li><a href="./3.html"><span class="m_2">観光・文化</span></a></li><li><a href="./4.html"><span class="m_3">事業者の方へ</span></a></li><li><a href="./5.html"><span class="m_4">市政・計画</span></a></li><li><a href="./25.html"><span class="m_5">市役所のご案内</span></a></li></ul>
+            </div>
+          </nav>
+          <!--menu-->
+        </div><!--sp_menu_wrap-->
+      </div><!--sp_nav_area-->
+    
+
+      <main id="wrap">
+      
+        <div class="title"><h1>神埼市マンホールカード配布のお知らせ</h1></div>
+      
+        <nav id="pankuzu" aria-label="パンくずリストメニュー（現在のページの位置）">
+          <ul><li class="tp_0"><a href="./1.html"><span>トップページ</span></a></li><li class="tp_1"><a href="./11.html"><span>お知らせ（新着情報）</span></a></li><li class="tp_2"><a href="./7462.html"><span>平成29年</span></a></li><li class="tp_3"><span>神埼市マンホールカード配布のお知らせ</span></li></ul>
+
+        </nav><!--pankuzu-->
+     
+        <article id="wrap_in">
+          <div id="unit_flex">
+            <article id="unit_a">
+            <!-- BASIC_PARTS_SET -->
+              <!-- INDEX PAGE ITEM -->
+              
+              <div id="news_topics">
+                
+              </div><!--news_topics-->
+
+              <div id="contents_0">
+                <h2><span ms="" style="font-family:;">マンホールカードとは</span></h2>
+
+<p><img alt="41-210 佐賀県神埼市 A001_1704-00-001_表面A1用データ" src="/site_files/image/2017/201703/p1bb5cb75d9d1j2b130jo8mg7v4.jpg" style="width: 350px; height: 480px;" /><img alt="41-210 佐賀県神埼市 A001_1704-00-001_裏面A1用データ" src="/site_files/image/2017/201703/p1bb5ffqc5vji18dnulrivq7qg4.jpg" style="width: 350px; height: 480px;" /></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">マンホールカードは、下水道広報プラットホーム（GKP：G下水道、K広報、Pプラットホーム）企画監修で、全国各地のさまざまなデザイン性にあふれたマンホールの蓋を紹介する取り組みです。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">身近だけど目立たない、みなさんの足元で生活の一部を支えている下水道への理解を深めてもらい、情報共有や広報活動を通し、下水道の真の価値を伝えることを目的とし、神埼市でもマンホールカードを作成しました。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">カードのサイズは縦8．8センチ、横6．3センチの紙製。全国統一の様式で、表にマンホールの蓋の写真、裏にデザインの由来などが印刷されています。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">神埼市のマンホール蓋のデザインにつきましては、水の郷百選の指定を受け市の中心を南北に流れる城原川と、日本三百名山の脊振山、水車の里、九年庵を配置した観光PRも兼ねたマンホール蓋となっています。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">街歩きやカード収集も楽しんでください。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">※この取組は全国的に行われており、今回は第4弾の配布で累計170種類（145自治体）60万枚発行となります。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">全国の各自治体のカード配布方法、発行情報など、詳しくは <a href="http://www.gk-p.jp/mhcard.html" target="_blank">下水道広報プラットホーム</a>のページをご覧ください。</span></p>
+
+<h2><span ms="" style="font-family:;">マンホールカードの配布方法</span></h2>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">神埼市のマンホールカードは、神埼情報館に訪れることにより無料で入手できます。</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">カードは1人につき1枚のみ配布します。直接手渡ししますので窓口でお声かけください。また、マンホールカードは数に限りがありますのでお早めにお願いします。</span></p>
+
+<h3><span ms="" style="font-family:;">配布日時</span></h3>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">平成29年4月3日（月曜日）より配布</span></p>
+
+<h3><span ms="" style="font-family:;">配布時間</span></h3>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">９時０0分～17時００分</span><span ms="" style="color: rgb(51, 51, 51); font-family:;"> （年末１２／２９～１２／３１を除く）</span></p>
+
+<h3><span ms="" style="font-family:;">配布場所</span></h3>
+
+<p>神埼市神埼町鶴３４５６番地４</p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">神埼情報館</span><span ms="" style="color: rgb(51, 51, 51); font-family:;">　　</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">TEL：０９５２&minus;３７&minus;１７００</span></p>
+
+<p><span ms="" style="color: rgb(51, 51, 51); font-family:;">※郵送等による配布は行っておりません。直接配布場所にお越しいただくようお願いします。</span></p>
+
+              </div><!--contents_0-->
+
+                            <!-- /INDEX PAGE ITEM -->
+
+              
+              
+              
+              
+              
+              
+              <!--google_map_api_log-->
+
+                            <section id="ask_section">
+                <h3>問い合わせ</h3><address><strong>建設部　下水道課</strong><br /><br />電話:<span class="tellink">0952-37-0105</span></address>
+              </section>
+              
+              
+                            <section class="enquete">
+                <h2>アンケート</h2>
+                <div class="enqform"><form method="POST" name="enqform" action=""><input type="hidden" name="enq_id" value="1" /><input type="hidden" name="enq" value="1" /><fieldset><legend>このページの内容は分かりやすかったですか？</legend><p><input type="radio" name="sel[1]" value="1"onClick="SetVisible(true);" id="sel_1_1" __tabindex="1"/><label for="sel_1_1">分かりやすかった</label>&nbsp;&nbsp;<input type="radio" name="sel[1]" value="2"onClick="SetVisible(true);" id="sel_1_2" __tabindex="2"/><label for="sel_1_2">どちらとも言えない</label>&nbsp;&nbsp;<input type="radio" name="sel[1]" value="3"onClick="SetVisible(true);" id="sel_1_3" __tabindex="3"/><label for="sel_1_3">分かりにくかった</label>&nbsp;&nbsp;</p></fieldset><fieldset><legend>このページは見つけやすかったですか？</legend><p><input type="radio" name="sel[2]" value="1"onClick="SetVisible(true);" id="sel_2_1" __tabindex="6"/><label for="sel_2_1">見つけやすかった</label>&nbsp;&nbsp;<input type="radio" name="sel[2]" value="2"onClick="SetVisible(true);" id="sel_2_2" __tabindex="7"/><label for="sel_2_2">どちらとも言えない</label>&nbsp;&nbsp;<input type="radio" name="sel[2]" value="3"onClick="SetVisible(true);" id="sel_2_3" __tabindex="8"/><label for="sel_2_3">見つけにくかった</label>&nbsp;&nbsp;</p></fieldset><div class="form_button"><p><input type="submit" name="enqbtn" value="送信" __tabindex="12"disabled="true" /></p></div></form></div><script language="javascript">
+	function SetVisible(fFlag)
+	{
+		if (fFlag)
+		{
+			document.enqform.enqbtn.disabled = false;
+		}
+		else
+		{
+			document.enqform.enqbtn.disabled = true;
+		}
+	}
+</script>
+              </section>
+              
+              <!-- /BASIC_PARTS_SET -->
+             
+           </article><!--unit_a-->
+
+
+           <aside id="unit_b">
+             <nav class="menu_2">
+               <p>
+<a href="./7462.html"
+ ><span>平成29年</span></a>
+</p><ul>
+<li class="PageIndex_0"><a href="./8832.html"><span>市内の小中学校で卒業式が行われました</span></a></li>
+<li class="PageIndex_1"><a href="./8680.html"><span>豆やナッツ類は、3歳頃までは食べさせないようにしましょう！</span></a></li>
+<li class="PageIndex_2"><a href="./8828.html"><span>高取山公園に新しい遊具ができました</span></a></li>
+<li class="PageIndex_3"><a href="./8444.html"><span>高齢者のインフルエンザ予防接種　助成期間を延長します</span></a></li>
+<li class="PageIndex_4"><a href="./8030.html"><span>口唇口蓋裂児と保護者のつどい（佐賀中部保健福祉事務所）</span></a></li>
+<li class="PageIndex_5"><a href="./8028.html"><span>ヘルパンギーナの流行発生</span></a></li>
+<li class="PageIndex_6"><a href="./7976.html"><span>食中毒に注意しましょう</span></a></li>
+<li class="PageIndex_7"><a href="./7755.html"><span>乳児にハチミツを与えないでください</span></a></li>
+<li class="PageIndex_8"><a href="./7684.html"><span>ヘルスメイト養成教室受講生募集</span></a></li>
+<li class="PageIndex_9 sel"><a href="./7553.html"><span>神埼市マンホールカード配布のお知らせ</span></a></li>
+<li class="PageIndex_10"><a href="./6144.html"><span>筋力アップ養成塾　参加者募集</span></a></li>
+</ul>
+
+             </nav><!--menu_2-->
+
+             <div class="contents_3">
+               
+             </div><!--contents_3-->
+
+             <div class="contents_4">
+               
+             </div><!--contents_4-->
+           </aside><!--unit_b-->
+          </div><!--unit_flex-->
+
+        </article><!--wrap_in-->
+      
+        <div class="share_btn_wrap">
+
+          <p>このページをSNSでシェアする</p>
+
+          <div class="share_btn">
+
+            <div class="facebook">
+              <iframe loading="lazy" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.city.kanzaki.saga.jp/main/7553.html&width=150&layout=button&action=like&size=small&share=true&height=65&appId" title="facebookのシェアボタン" width="100%" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+
+            <div class="tw_li">
+              <div class="twitter">     
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://www.city.kanzaki.saga.jp/main/7553.html" data-show-count="false">ツイート</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+
+              <div class="line">
+                <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://www.city.kanzaki.saga.jp/main/7553.html" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+                <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+              </div>
+            </div>
+
+          </div><!--share_btn-->      
+        </div><!--share_btn_wrap（SNSシェアボタンエリア）-->
+      
+      
+      </main><!--wrap-->
+  
+      <div id="footer">
+
+        <nav class="fmenu" aria-label="フッターメニュー1">
+          <ul><li><a href="./2031.html"><span class="m_0">サイトマップ</span></a></li><li><a href="./53.html"><span class="m_1">サイトポリシー</span></a></li><li><a href="./54.html"><span class="m_2">プライバシーポリシー</span></a></li><li><a href="./55.html"><span class="m_3">ダウンロードについて</span></a></li><li><a href="./56.html"><span class="m_4">リンク集</span></a></li></ul>
+        </nav><!--<ul><li><a href="./2031.html"><span class="m_0">サイトマップ</span></a></li><li><a href="./53.html"><span class="m_1">サイトポリシー</span></a></li><li><a href="./54.html"><span class="m_2">プライバシーポリシー</span></a></li><li><a href="./55.html"><span class="m_3">ダウンロードについて</span></a></li><li><a href="./56.html"><span class="m_4">リンク集</span></a></li></ul>-->
+
+        <div class="footer_in">
+          <div class="footer_contents">
+
+            <div class="footer_left">
+              <p class="info_name"><a href="./1.html">神埼市役所</a></p>
+              <address>
+                〒842-8601　佐賀県神埼市神埼町鶴3542番地１<br>
+                TEL：0952-52-1111（代表）　<br class="br">FAX：0952-52-1120
+              </address>
+
+              <p class="info_text">開庁時間：8時30分〜17時15分（土・日・祝日・年末年始を除く）<br>※毎週火曜日は、市民課総合窓口は19時まで受付。（本庁のみ）</p>
+
+              <p class="map_illust"><img loading="lazy" src="../all_img/org/map_illust.png" alt="神埼市地図イラスト" width="280" height="185"></p>
+
+              <nav class="fmenu_02" aria-label="フッターメニュー2">
+                <ul><li><a href="./25.html"><span class="m_0">各課へのお問い合わせ</span></a></li><li><a href="https://denwa-relay-service.jp/web_inquiry/?token=KNlOz4wrjec3JQpkVvRAX1nhW8FUDT" target=_blank><span class="m_1">手話で電話する</span></a></li><li><a href="./442.html"><span class="m_2">アクセスマップ</span></a></li></ul>
+              </nav><!--<ul><li><a href="./25.html"><span class="m_0">各課へのお問い合わせ</span></a></li><li><a href="https://denwa-relay-service.jp/web_inquiry/?token=KNlOz4wrjec3JQpkVvRAX1nhW8FUDT" target=_blank><span class="m_1">手話で電話する</span></a></li><li><a href="./442.html"><span class="m_2">アクセスマップ</span></a></li></ul>-->
+            </div>
+
+            <p class="pagetop"><a href="#pagetop">トップへ戻る</a></p>
+          </div>
+        </div>
+
+        <p class="copy"><small>(C)Kanzaki City.All Rights Reserved.</small></p><!--copy-->
+
+      </div><!--footer-->  
+    
+    </div><!--bg-->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SW530QWMPJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SW530QWMPJ');
+</script>
+
+    
+    <script type="text/javascript" src="../js/src/org.js?ver=20230209"></script>
+    <script type="text/javascript" src="../js/src/sp_menu.js"></script>
+    
+  </body>
+  
+</html>

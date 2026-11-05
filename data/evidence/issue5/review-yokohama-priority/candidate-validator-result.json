@@ -1,0 +1,94 @@
+{
+  "validatedAt": "2026-11-05T06:00:10.884135+00:00",
+  "ok": true,
+  "sourceHashes": [
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-catalog.json",
+      "sha256": "da624a031b5f43b67ac5dc38183a9637d8bb2f47c45d789c9edccd079d4efac3",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/citygml-doc.html",
+      "sha256": "71338d86b7b8731801fdf530698b54ccad7e76350e0175ce0408ed37d1db33eb",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/mesh-catalog.json",
+      "sha256": "6a1d51e8d2ce7fcdf9a380c1bfc9ab27a45392cc6f489396a6e7b5c5cf2973db",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-policy.html",
+      "sha256": "79d1e76152057154fea195b773c3029deaffc656707b29574113270e48ed413b",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/53391459.gml.gz",
+      "sha256": "6cb6e43990077d94f50434732e1b0b65f4164dfb476211eaec865915cbe9bb20",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/53391469.gml.gz",
+      "sha256": "cdb6c7ea5bfe2f03b34dacee5a2e5a8b7fe5f0ebe28f23094a15d54ae8fde3ed",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/city-development.pdf",
+      "sha256": "ca7427c138d68f295fac72edf8b0e2acaebcef6f456a858ff6d51e5250ac528d",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-faq.html",
+      "sha256": "e21de51d0499696e1fd1a2b341f62bc34694c2392ce591deede5ef5e0d02da7b",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/city-tower-plan.pdf",
+      "sha256": "b799627891c2c6473cb03bc4798f6d50b1dda21c0564ef9720cbf71aed71c291",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/codelists.zip",
+      "sha256": "5c5a257c0aaf444d66d8a4415d815eef3efd8f120acb6ff0259e57fc018ddbfd",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/metadata.zip",
+      "sha256": "7a98b673cb6e7de5323a764382c6d19eceab5a2dd54786635c13a2fa86ba2c37",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/63cadd8ca921156a6fdf340b.raw",
+      "sha256": "4274dfc705d40e072218048d8de8685aa84f3e8768a7e0b337b6529cde6a67a1",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/ef94d27108d4e3a728e5278f.raw",
+      "sha256": "c690b9eb511a23ec2c70fbb40d9f73120ec3406dab8df7763e0ab10a8c29f6c9",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/808a81b865c35633746133b6.raw",
+      "sha256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+      "ok": true
+    }
+  ],
+  "evidenceKeys": [
+    "actorType",
+    "checkedAt",
+    "snapshotPath",
+    "snapshotSHA256",
+    "sourceLocator",
+    "sourceUrl",
+    "verificationMethod"
+  ],
+  "independentCentroid": {
+    "lat": 35.466612058450735,
+    "lng": 139.62232594269489
+  },
+  "centroidInside": true,
+  "roundedPointInside": true,
+  "CCBYMetadata": true,
+  "existingSouthKantoStillUnresolved": true,
+  "note": "機械検証は資料照合の意味・法的適用判断を自動保証しない。配置図目視の判断はREADME参照。"
+}

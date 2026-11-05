@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="468ad36a-8952-4755-8ede-bd76998408b3" data-blockingmode="auto" type="text/javascript"></script>
+
+<script>window.Promise || document.write('<script src="//www.promisejs.org/polyfills/promise-7.0.4.min.js"><\/script>');</script>
+
+<link rel="icon" href="/image/favicon.ico">
+<link rel="apple-touch-icon" href="/image/apple-touch-icon.png">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="canonical" href="https://yokohamastationcity.com/jr_yokohama_tower/" />
+  <meta name="description" content="JR横浜タワーの「施設概要」「アトリウム」「屋上広場（うみそらデッキ）」「観光案内所」「STATION SWITCH」に関する情報を掲載しています。" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yokohamastationcity.com/jr_yokohama_tower/" />
+  <meta property="og:title" content="JR横浜タワー｜Yokohama Station City" />
+  <meta property="og:description" content="JR横浜タワーの「施設概要」「アトリウム」「屋上広場（うみそらデッキ）」「観光案内所」「STATION SWITCH」に関する情報を掲載しています。" />
+  <meta property="og:image" content="https://yokohamastationcity.com/image/og.jpg" />
+
+  <title>JR横浜タワー｜Yokohama Station City</title>
+  <script src="/js/ga.js"></script>
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/each_jr_yokohama_tower.css" />
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/gsap.min.js"></script>
+  <script src="/js/slick.min.js"></script>
+  <script src="/js/ysc.js"></script>
+</head>
+
+<body my_currpage="yokohama_tower" id="page-animate">
+<div class="cover"></div>
+<div class="animation s-obj"></div>
+
+<div class="nav"><label class="menubtn" id="menubtn"><i class="n1"></i><i class="n2"></i><i class="n3">Menu</i></label>
+<nav>
+    <div class="inner">
+
+        <div class="abv">
+            <h1>
+                <p class="sitelogo"><a class="next-page" href="/" class="imageobj mouseon1">YOKOHAMA Station City</a></p>
+            </h1>
+        </div>
+
+        <div class="blw" id="mbox0">
+            <div class="menubox" id="menubox">
+                <ul>
+                    <li>
+                        <div class="nav01">
+                            <p><a class="next-page" href="/information/">JR横浜駅構内･周辺施設&nbsp;</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav01">
+                            <p><a class="next-page" href="/jr_yokohama_tower/">JR横浜タワー</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav01">
+                            <p><a class="next-page" href="/jr_yokohama_tsuruyacho_building/">JR横浜鶴屋町ビル</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav01">
+                            <p><a href="https://www.lumine.ne.jp/yokohama/" target="_blank">ルミネ横浜</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav02">
+                            <p><a class="next-page" href="/event/">Event & Information</a></p>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <div class="nav02">
+                            <p><a class="next-page" href="/news/">Information</a></p>
+                        </div>
+                    </li> -->
+                    <li>
+                        <div class="nav02">
+                            <p><a class="next-page" href="/yokohama_art_station/">YOKOHAMA ART STATION</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav02">
+                            <p><a class="next-page" href="/have_a_yokohama/">have a Yokohama</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav02">
+                            <p><a class="next-page" href="/eventspace/">イベントスペースをお探しの方へ</a></p>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="language">
+                    <li>
+                        <p><a class="next-page" href="/en/">English</a></p>
+                    </li>
+                    <li>
+                        <p><a class="next-page" href="/tc/">繁體中文</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+</div>
+<div id="wrap">
+
+<main>
+<div class="inr">
+
+<section class="information">
+  <div class="inner">
+    <i class="obj_01"></i>
+      <h2 class="normal">
+          <p><span>JR横浜タワー</span><i class="under_line"></i></p>
+      </h2>
+      <div class="itembox nav_anc">
+          <div class="buttonbox type4">
+			  <a class="btntype4" href="#guide">施設概要<i></i></a>
+			  <a class="btntype4" href="#atrium">アトリウム<i></i></a>
+			  <a class="btntype4" href="#information_office">観光案内所<i></i></a>
+			  <a class="btntype4 line2" href="#deck">屋上広場<br class="sp">「うみそらデッキ」<i></i></a>
+			  <a class="btntype4 line2" href="#switch">STATION <br class="sp">SWITCH<i></i></a>
+		  </div>
+      </div>
+  </div>
+</section>
+
+<section class="main">
+  <div class="inner">
+      <div class="itembox ecute">
+          <div class="pic">
+              <div class="inbox">
+                  <p><span class="imageobj">JR横浜タワー</span></p>
+              </div>
+          </div>
+          <div class="text">
+              <div class="inbox">
+                <p>JR横浜タワーは、商業施設やシネマコンプレックス、オフィスなどがあるJR横浜駅西口直結の複合施設です。<br>
+                「NEWoMan横浜」や「CIAL横浜」、「T・ジョイ横浜」のほか4層吹き抜けのアトリウムや横浜港やベイブリッジが一望できる12階屋上広場「うみそらデッキ」など待ち合わせや憩いの場となるオープンスペースも充実しています。また横浜を知り尽くしたスタッフがいる「観光案内所」や、働き方の変化に対応したワークスペース「STATION SWITCH」などもありさまざまなニーズに対応しています。<br>
+                場所：JR横浜駅西口</p>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+<section class="facility">
+  <div class="inner">
+      <div class="anc" id="guide"></div>
+      <i class="obj_02"></i>
+      <h3 class="normal">
+          <p><span>施設概要</span><i class="under_line_max"></i></p>
+      </h3>
+      <div class="itembox ecute">
+          <div class="pic">
+              <div class="inbox">
+				  <p><span class="imageobj guide">施設概要</span></p>
+			  </div>
+          </div>
+		  <div class="each btn">
+			  <div class="more">
+				  <div class="center">
+					  <a class="btntype3" href="/image/jr_yokohama_tower/img_guide_up.jpg" target="_blank">大きい施設概要を見る<i></i></a>
+				  </div>
+			  </div>
+		  </div>
+          <div class="more">
+            <div class="buttonbox">
+                <a class="btntype1" href="https://www.newoman.jp/yokohama/" target="_blank">NEWoMan横浜<i></i></a>
+                <a class="btntype1" href="https://www.cial.co.jp/yokohama/" target="_blank">CIAL横浜<i></i></a>
+                <a class="btntype1" href="https://tjoy.jp/t-joy_yokohama" target="_blank">T・JOY横浜<i></i></a>
+                <a class="btntype1" href="https://stationswitch.jp/" target="_blank">ワークスペース「STATIONSWITCH」<i></i></a>
+			</div>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="gate south_area">
+  <div class="itembox bg_gray detail_box">
+    <div class="inner">
+
+	        <div class="box detail_left"><div class="anc" id="atrium"></div>
+          <i class="obj_03"></i>
+          <i class="obj_04"></i>
+          <h3 class="normal">
+              <p><span>アトリウム</span><i class="under_line_max"></i></p>
+          </h3>
+        <div class="box detail_right">
+          <div class="pic">
+              <div class="inbox">
+                  <p><span class="imageobj one">アトリウム</span></p>
+              </div>
+          </div>
+        </div>
+          <div class="detail">
+              <div class="inbox txt">
+                <p>横浜駅の新しい顔となる、4層吹き抜けの明るく開放的な空間です。周辺施設への歩行者ネットワークの起点となり、様々な場所にアクセスできます。2階はトークショーなどのイベントが行える約100㎡の「ライブステージ」を整備しております。また、2階～4階はコンコースやステージ、駅に出入りする電車を見下ろせる“街のラウンジ”としてご利用いただけます。</p>
+              </div>
+          </div>
+
+        </div>
+
+	     <div class="box detail_left"><div class="anc" id="information_office"></div>
+          <h3 class="normal">
+              <p><span>観光案内所</span><i class="under_line_max"></i></p>
+          </h3>
+        <div class="box detail_right">
+          <div class="pic">
+              <div class="inbox">
+                  <p><span class="imageobj three">観光案内所</span></p>
+              </div>
+          </div>
+        </div>
+          <div class="detail">
+              <div class="inbox txt">
+                <p>観光案内所前にラウンジがあり、ゆったりとした環境で情報を集め、その場で行先を相談することができます。日本政府観光局（JNTO）の外国人観光案内所認定カテゴリー3に認定されており、常時スタッフによる英語対応が可能で、中韓にも対応します。無料Wi-Fiや書籍閲覧スペースもご利用いただけます。<br>場所：JR横浜タワー2階 アトリウム</p>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="box detail_left"><div class="anc" id="deck"></div>
+          <h3 class="normal">
+              <p><span>屋上広場「うみそらデッキ」</span><i class="under_line_max"></i></p>
+          </h3>
+        <div class="box detail_right">
+          <div class="pic">
+              <div class="inbox">
+                  <p><span class="imageobj two">屋上広場「うみそらデッキ」</span></p>
+              </div>
+          </div>
+        </div>
+          <div class="detail">
+              <div class="inbox txt">
+                <p>横浜港や横浜ベイブリッジを一望できる屋上広場です。桜をはじめ季節折々の木々や芝生があり、潮風を感じながら緑に囲まれる憩いの場としてご利用いただけます。<br>
+広場のアイコンとして「YOKOHAMA」の文字を象ったオブジェを設置しているほか、ベンチやテーブルなどもございます。※天候により屋上を閉鎖することがございます。<br>
+場所：JR横浜タワー12階</p>
+              </div>
+          </div>
+
+        </div>
+
+		<div class="box detail_left"><div class="anc" id="switch"></div>
+          <h3 class="normal">
+              <p><span>STATION SWITCH</span><i class="under_line_max"></i></p>
+          </h3>
+        <div class="box detail_right">
+          <div class="pic">
+              <div class="inbox">
+                  <p><span class="imageobj zero">STATION SWITCH</span></p>
+              </div>
+          </div>
+        </div>
+          <div class="detail">
+              <div class="inbox txt">
+                <p>ビジネスからプライベートまで“ユニバーサル”にご利用いただける会員制のワークスペースです。法人向けの個室、ソロワークに適したブース席や開放的な空間をご用意していますので、ビジネス利用でのONとOFF、プライベート利用のONとOFF、その日その時のシーンに合わせてご利用いただけます。<br>場所：JR横浜タワー12・13階</p>
+              </div>
+          </div>
+
+        </div>
+
+	  </div>
+  </div>
+</section>
+
+
+
+
+</div><!-- .inr // -->
+
+<div class="breadcrumb">
+<div class="inner">
+    <a href="/" class="next-page">TOP</a><span class="split"><i></i></span>
+    <a href="#" class="curr">JR横浜タワー</a>
+</div>
+</div>
+
+<footer>
+	<div class="inner">
+		<i class="obj obj_footer"></i>
+	    <div class="logo"><a class="next-page" href="/">YOKOHAMA Station City</a></div>
+	    <div class="menu">
+	        <a class="next-page" href="/townmanegiment/">YOKOHAMA Station City運営協議会について</a><i>/</i>
+	        <a class="next-page" href="/sitemap/">サイトマップ</a><i>/</i>
+	        <a class="next-page" href="/policy/">サイト利用について</a><i>/</i>
+	        <a class="next-page" href="/eventspace/">イベントスペースをお探しの方へ</a>
+	    </div>
+	</div>
+</footer>
+
+</main>
+
+<label id="pageTop">
+    <i>TOPへ戻る</i>
+</label>
+
+</div><!-- #wrap // -->
+<script src="/js/animation.js"></script>
+</body>
+
+</html>

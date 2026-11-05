@@ -1,0 +1,468 @@
+[
+  {
+    "facilityId": "facility:kanto-south-697024c210b4424f12ca",
+    "buildingIdentification": "市の現行原本は鶴ヶ峰駅南口からココロットに入り、エレベーターで4階へ向かう導線まで示す。P05の施設名はこのみなくるで、単なる駅名や住所点ではない。建物入居関係は成立するが、P05の出典・原座標系・加工内容の追補が必要。",
+    "coordinateOriginal": [
+      139.55003436557533,
+      35.47484467697792
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[239]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+        "snapshotSHA256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2",
+        "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/b765322fb37de6d96a17.html",
+        "snapshotSHA256": "46761d141aeeeeaea1a3d764a208907fb2a91992c31dea2a552b2c4d7cce1ea9",
+        "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/kurashi/kyodo_manabi/kyodo_shien/minakuru/annai/kihonjyohou.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/da8b254c6f1dd6751627.html",
+        "snapshotSHA256": "2e1ebfeea9330e570a8519be394ebb759cb9408d50a60470610bacfd3825a2c2",
+        "sourceUrl": "https://yokomusubi.city.yokohama.lg.jp/organizations/detail/58ce59fe-9fb4-45ac-937b-d49f9fa9d49b/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/99387cffcd72263e72f9.html",
+        "snapshotSHA256": "860f80194c8eeac28dea1a98e0c5a47c446daefec6b5d3e0a93cdb94c3a0591d",
+        "sourceUrl": "https://cocolot.cc/access/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-c28de78bc3ef2c56b069",
+    "buildingIdentification": "市現行施設案内は改札から南口方面へ直進し小田急マルシェ伊勢原2階と具体的な建物を示す。P05の市役所駅窓口センターという専用施設Pointを対応させられるが、出典表示とJGD2011・抽出方法の明示が必要。",
+    "coordinateOriginal": [
+      139.31351027970655,
+      35.396031339519574
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[1180]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/e266e0b832b067cffe19.html",
+        "snapshotSHA256": "46e731b7b735ba7f02b79e244a0602730a05037f3098f574a205202d4cf9f622",
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/aa1247c15fbfbec7ad33.html",
+        "snapshotSHA256": "0f9b78eacc4946bc5de4e953f9990ef0ec806dd2eee0f8e284055deebeb1b420",
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2019020600020/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/05f59e239293855a4127.html",
+        "snapshotSHA256": "d4040cdd35941562ee61a8c658e62755bbe8c2b5fb68293543b67b676245eef7",
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2019020600020/file_contents/142140_aed.csv",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/ff6bc414e6b7de5aca0a.html",
+        "snapshotSHA256": "7569e345921057802d5eba03b6d35e218c6a3d73fbcdb468cce941d16561b2ce",
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2019020600020/file_contents/142140_public_wireless_lan.csv",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/1961b0ff1739ccfa1384.html",
+        "snapshotSHA256": "e59b9205765cc772afc651d3071f9c676e08fa9a7fc70dee1ecddc176e5e8087",
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2019020600020/file_contents/142140_open_data_list.csv",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-c7ea6b482b25915147a4",
+    "buildingIdentification": "町配布原本は役場1階生活環境課窓口を明記。P05の役場Pointは部署と別の大規模公園等ではなく、1階窓口を含む役場建物の公開点として利用可能。ただし出典・原座標系・加工内容を明記してから採用。",
+    "coordinateOriginal": [
+      139.15664581966178,
+      35.326701516848516
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[1441]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+        "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/8be8e3f2f6f11dbae6c9.html",
+        "snapshotSHA256": "bd132e6af285152e4b063264fe99a20eb2bb79b9f900110e58a3bdea69f491d8",
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/map/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+    "buildingIdentification": "町配布原本は役場1階夜間休日窓口を明記。平日窓口と同じ役場建物の公開Pointを共有でき、室内窓口位置は不要。ただしP05出典・原座標系・加工内容の追補が必要。",
+    "coordinateOriginal": [
+      139.15664581966178,
+      35.326701516848516
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[1441]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+        "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/8be8e3f2f6f11dbae6c9.html",
+        "snapshotSHA256": "bd132e6af285152e4b063264fe99a20eb2bb79b9f900110e58a3bdea69f491d8",
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/map/",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+    "buildingIdentification": "村配布原本と庁舎案内415は役場1階環境上下水道課を明記し、同番地のせせらぎ館とは区別できる。P05の清川村役場Pointを建物案内に使えるが、出典・JGD2011・抽出加工の明示が必要。",
+    "coordinateOriginal": [
+      139.2763758732199,
+      35.48233019463441
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[1544]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+        "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/ca4fd7a80240df29175e.html",
+        "snapshotSHA256": "0b8b3d2abc4b6233dff7dddc705bf51545a38b7a2e25d4a372fd05aeed0f7fc9",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/Administration/kiyokawamura/access/727.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/33ca0c10d725aac93492.html",
+        "snapshotSHA256": "ba467a96a5faf96468639199cfa42b015c317ae66b8afcf800beb0905046fadb",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/kanri/index.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/999c37c582f816336b28.html",
+        "snapshotSHA256": "8750ca414f074c6060e99a5fbda9b4e093cb52fc9c8bd0efc4ed6bef8d9d2793",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/kanri/2462.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/5ede2d36419776d78041.html",
+        "snapshotSHA256": "364595d363b1be32bd023d15e6ec44eb0f805e7298557cb232d9d0543d2162a1",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/material/files/group/2/144029_evacuation_space.csv",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/f2910b29a9a24b69f326.html",
+        "snapshotSHA256": "08a479cc3e33b5c9f2db29a1aef27cae66e48ab0cd4d460a81f9a23d6c33721f",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/415.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-a9e505e27500c811b2a5",
+    "buildingIdentification": "村配布原本は清川村役場1階宿直室窓口。庁舎案内とP05役場Pointにより建物を案内できる。同番地のせせらぎ館を流用せず、P05出典・JGD2011・抽出加工の明示後に採用。",
+    "coordinateOriginal": [
+      139.2763758732199,
+      35.48233019463441
+    ],
+    "coordinateSystem": "EPSG:6668 (JGD2011), no transformation",
+    "sourceLocator": "P05-22_14.geojson features[1544]",
+    "license": "国土数値情報現行PDL1.0。出典・加工明記。",
+    "sources": [
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+        "snapshotSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_14_GML.zip",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+        "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/ca4fd7a80240df29175e.html",
+        "snapshotSHA256": "0b8b3d2abc4b6233dff7dddc705bf51545a38b7a2e25d4a372fd05aeed0f7fc9",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/Administration/kiyokawamura/access/727.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/33ca0c10d725aac93492.html",
+        "snapshotSHA256": "ba467a96a5faf96468639199cfa42b015c317ae66b8afcf800beb0905046fadb",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/kanri/index.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/999c37c582f816336b28.html",
+        "snapshotSHA256": "8750ca414f074c6060e99a5fbda9b4e093cb52fc9c8bd0efc4ed6bef8d9d2793",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/kanri/2462.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/5ede2d36419776d78041.html",
+        "snapshotSHA256": "364595d363b1be32bd023d15e6ec44eb0f805e7298557cb232d9d0543d2162a1",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/material/files/group/2/144029_evacuation_space.csv",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/f2910b29a9a24b69f326.html",
+        "snapshotSHA256": "08a479cc3e33b5c9f2db29a1aef27cae66e48ab0cd4d460a81f9a23d6c33721f",
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/soumu/415.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/28d45067bfd5191b2a49.html",
+        "snapshotSHA256": "3327f88a68fb082c43fa631adc719fd3689cd50db8bb5f435122e0c7a4b00a5f",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+        "snapshotSHA256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+        "role": "primary-source"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-urayasu-chisui",
+    "buildingIdentification": "市公式配布原本は治水課を市役所6階・猫実1-1-1と明記。施設原本の市役所目的地qと同じ市役所建物。旧道路整備課の現配布状態は承認しない。",
+    "coordinateOriginal": {
+      "lat": 35.653053,
+      "lng": 139.901982
+    },
+    "sources": [
+      {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+        "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+        "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+        "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+        "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+        "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+        "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/shisetsu/shikanren/shiyakusho/1005488.html",
+        "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/bb7a6698c08b1974e660.html",
+        "snapshotSHA256": "5f3a4e05085d7adb0fc24123af5c40e34fec24563794c209492405b073839e3e",
+        "sourceLocator": "浦安市役所／猫実1-1-1。施設詳細q。1階守衛室の建物代表点。旧道路整備課や新治水課の関係変更はしない。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式施設案内・公開施設地点データの名称住所を配布窓口と照合し、目的地・明示マーカー・施設Pointの数値を原典から確認。住所ジオコード、蓋座標、地図表示中心を使用していない。現地確認・人による確認ではない。"
+      }
+    ],
+    "coordinateSystem": "原典のlat/lng（明示測地系なし）。変換していない。",
+    "license": "既存採用済み公式施設原典の最小座標値を再利用。原本HTMLの一般転載許諾を主張しない。"
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-12",
+    "buildingIdentification": "市公式配布原本は綾瀬市役所5階を指定。早川550番地の市役所CSV行に対応。2026-11-24からの予定窓口であり、現在配布中への変更ではない。",
+    "coordinateOriginal": {
+      "lat": 35.437177,
+      "lng": 139.42616
+    },
+    "sources": [
+      {
+        "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/kanzaikeiyakuka/kanzaitanto/3/4714.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/baf8d3ea314b8e0d0575.html",
+        "snapshotSHA256": "03d417743f9bf0e1206ede0eed4b2939a958f0b33ddb89a83e233aa6cc169379",
+        "sourceLocator": "所在地／神奈川県綾瀬市早川550番地。5階は配布案内を参照",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html",
+        "snapshotSHA256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+        "sourceLocator": "綾瀬市役所5階／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.ayase.kanagawa.jp/material/files/group/8/koukyousisetu202202.csv",
+        "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/fc41631574ad348d5a03.html",
+        "snapshotSHA256": "22c3364344969865f6dc41d87f2754c792e7ad1597535b17824cc2224a9233cb",
+        "sourceLocator": "市公開「公共施設一覧」CSV seq=0 施設名=綾瀬市役所 所在地=神奈川県綾瀬市早川550番地、緯度/経度列。窓口の階は元配布案内と対応。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式施設・自治体の名称、所在地、配布窓口を公開地点原典と照合。建物/施設への地点であり、現地確認・人による確認・室内窓口の測量ではない。"
+      }
+    ],
+    "coordinateSystem": "原典のlat/lng（明示測地系なし）。変換していない。",
+    "license": "既存採用済み公式施設原典の最小座標値を再利用。原本HTMLの一般転載許諾を主張しない。"
+  },
+  {
+    "facilityId": "facility:kanto-south-d39f7191733284005f01",
+    "buildingIdentification": "観光協会accessは101号室と105号室をともに三鷹駅前協同ビルと明記し、両施設が入るビルの共通駐輪場も説明。観光案内所の建物代表点をBASEへ共有。室内窓口点ではない。",
+    "coordinateOriginal": {
+      "lat": 35.70208,
+      "lng": 139.562138
+    },
+    "sources": [
+      {
+        "sourceUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+        "snapshotPath": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html",
+        "snapshotSHA256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+        "sourceLocator": "13-204-B001／みたか観光BASE：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+        "snapshotPath": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html",
+        "snapshotSHA256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+        "sourceLocator": "13-204-B001／みたか観光BASE：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+      },
+      {
+        "sourceUrl": "https://tokyotouristinfo.com/detail/M0254",
+        "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3c4063e821f326a081e8.html",
+        "snapshotSHA256": "5e419ce6c26758f91366572b74d4b020683abde4e1d9797b09fe2e83a7db0b46",
+        "sourceLocator": "みたか観光案内所／東京都三鷹市下連雀3-24-3-101。https://www.google.com/maps/dir/?api=1&destination=35.702080,139.562138",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式施設の名称・住所と公開目的地点を照合。建物代表点で、階・室内窓口や現地・人による確認ではない。"
+      },
+      {
+        "sourceUrl": "https://kanko.mitaka.ne.jp/about/accsess.html",
+        "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/53cb5b3c54ec417d7cf5.html"
+      }
+    ],
+    "coordinateSystem": "原典のlat/lng（明示測地系なし）。変換していない。",
+    "license": "既存採用済み公式施設原典の最小座標値を再利用。原本HTMLの一般転載許諾を主張しない。"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+  "requestedAt": "2026-11-05T05:45:44.182857+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+  "contentType": "text/html",
+  "fetchedAt": "2026-11-05T05:45:44.423844+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/numazu-card.html",
+  "snapshotSHA256": "9f5224e35d9579f91c52e7d09484eb1db172d8062cd8cee16777a28a9bee366f",
+  "bytes": 9550
+}

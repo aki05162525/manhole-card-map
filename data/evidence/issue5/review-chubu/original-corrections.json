@@ -1,0 +1,407 @@
+[
+  {
+    "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+    "targetFile": "data/national/location-updates/chubu-west.json",
+    "selector": {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://www.susonokanko.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+      "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+    },
+    "new": {
+      "sourceUrl": "https://www.susonokanko.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+      "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。埋込ラベルは千福7-1 すそのセントラルパーク内という住所・敷地表記のみ。観光協会の名を持つPOIではなく、当該事務所建物との対応を証明しない。 座標は未承認。"
+    },
+    "reason": "埋込ラベルは千福7-1 すそのセントラルパーク内という住所・敷地表記のみ。観光協会の名を持つPOIではなく、当該事務所建物との対応を証明しない。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+        "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+      },
+      {
+        "sourceUrl": "https://www.susonokanko.jp/",
+        "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+        "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+        "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html SHA256 56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32 の initEmbed 内 named place record [\"0x60199b66b296ca0b:0xbe61fba54912ad7e\", \"〒410-1116 Shizuoka, Susono, Senpuku, 7-1 すそのセントラルパーク内\", [35.1849112, 138.9044733]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+    "targetFile": "data/national/location-updates/chubu-west.json",
+    "selector": {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+      "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+    },
+    "new": {
+      "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+      "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。埋込レコードは16-1 Miyukichoという住所のみ、種別Building。市役所施設名付きPOIでなく、本庁舎という特定建物の根拠に昇格できない。 座標は未承認。"
+    },
+    "reason": "埋込レコードは16-1 Miyukichoという住所のみ、種別Building。市役所施設名付きPOIでなく、本庁舎という特定建物の根拠に昇格できない。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+        "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+      },
+      {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+        "snapshotPath": "data/evidence/national/locations-chubu-west/24b83d2414b8a89210f1.html",
+        "snapshotSHA256": "3b74e11be544b144969f075cd18d9d64432ec63677cd41685ff81ee35570c77e",
+        "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/98fc06c76a814d6f8f48b419.html SHA256 c5eb2dee9b27f04fdfba58d21e0073e897d5e58eddc55d84ec1065d8a16741a2 の initEmbed 内 named place record [\"0x60198ff46be3d771:0x9362f23e42a59df7\", \"16-1 Miyukichō, Numazu, Shizuoka 410-0832\", [35.0957089, 138.8634373]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+    "targetFile": "data/national/location-updates/chubu-west.json",
+    "selector": {
+      "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://www.skydome.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+      "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+    },
+    "new": {
+      "sourceUrl": "https://www.skydome.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+      "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。埋込は夕陽ケ丘6という住所のみ、種別建造物。施設名付きPOIというsourceLocator／verificationMethodの説明は成立しない。建物の施設同定が未解決。 座標は未承認。"
+    },
+    "reason": "埋込は夕陽ケ丘6という住所のみ、種別建造物。施設名付きPOIというsourceLocator／verificationMethodの説明は成立しない。建物の施設同定が未解決。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+        "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+      },
+      {
+        "sourceUrl": "https://www.skydome.jp/",
+        "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+        "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+        "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html SHA256 90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702 の initEmbed 内 named place record [\"0x5ff80790b3b9ed5f:0x6fcd747042ab992\", \"〒506-1124 岐阜県飛騨市神岡町夕陽ケ丘６\", [36.3289526, 137.307188]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-west-b943f5c6151615096149",
+    "targetFile": "data/national/location-updates/chubu-west.json",
+    "selector": {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+      "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+    },
+    "new": {
+      "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+      "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。原本initEmbed[21][3][0]は住所だけのレコードで[21][3][12]は建造物。施設名・観光協会POIの記載なし。公式の掲載住所が同じでも住所featureを配布建物へ承認しない。住所代表点か実建物形状に基づく点かも保存応答からは確定できない。 座標は未承認。"
+    },
+    "reason": "原本initEmbed[21][3][0]は住所だけのレコードで[21][3][12]は建造物。施設名・観光協会POIの記載なし。公式の掲載住所が同じでも住所featureを配布建物へ承認しない。住所代表点か実建物形状に基づく点かも保存応答からは確定できない。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+        "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+      },
+      {
+        "sourceUrl": "https://kanko-iwata.jp/useful_information/access/",
+        "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+        "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+        "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html SHA256 af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d の initEmbed 内 named place record [\"0x601ae5d272f30fed:0x662cd37be99778c8\", \"〒438-0078 静岡県磐田市中泉１丁目１−５\", [34.7106602, 137.8520999]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+    "targetFile": "data/national/location-updates/chubu-west.json",
+    "selector": {
+      "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://www.8miso.co.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+      "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+    },
+    "new": {
+      "sourceUrl": "https://www.8miso.co.jp/",
+      "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+      "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+      "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。公式運営者の現住所は八丁町52番地。台帳の八帖町字往還通52は訂正が必要。埋込名はまるや八丁味噌 本社であるが、配布窓口入居建物との対応も明示されないため現行行をそのまま承認しない。 座標は未承認。"
+    },
+    "reason": "公式運営者の現住所は八丁町52番地。台帳の八帖町字往還通52は訂正が必要。埋込名はまるや八丁味噌 本社であるが、配布窓口入居建物との対応も明示されないため現行行をそのまま承認しない。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/chubu-west-locations.json",
+        "snapshotSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+      },
+      {
+        "sourceUrl": "https://www.8miso.co.jp/",
+        "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+        "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+        "sourceLocator": "公式施設案内のiframe（data-srcを含む）が指定する施設マーカー。対応原本 data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html SHA256 240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102 の initEmbed 内 named place record [\"0x6004bd4b4db7a621:0x96ae0b4e90287722\", \"〒444-0925 愛知県岡崎市八丁町52番地 まるや八丁味噌 本社\", [34.9570431, 137.1518423]]。iframe URLの !1m3 内 !2d/!3d（viewport）は不使用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式掲載の施設名・住所と、当該ページに埋め込まれた地図の名前・住所付き施設レコードを照合。外部地図を独自に施設検索・住所ジオコードした値ではない。 建物代表点であり、室内の正確な受付・階の位置や現地確認を意味しない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+    "targetFile": "data/national/location-updates/chubu-east-north.json",
+    "selector": {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+      "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+      "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+    },
+    "new": {
+      "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+      "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+      "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。GIS OBJECTID=23は「佐渡市役所」。市配布原本は本庁総合案内だが、根拠に挙げた市民センター一覧では同じ千種232の金井市民センターは「佐渡市役所第2庁舎1階」。旧市役所が現市民センターになったとの説明は誤り。GIS点が本庁舎を指す棟別裏付けが不足。 座標は未承認。"
+    },
+    "reason": "GIS OBJECTID=23は「佐渡市役所」。市配布原本は本庁総合案内だが、根拠に挙げた市民センター一覧では同じ千種232の金井市民センターは「佐渡市役所第2庁舎1階」。旧市役所が現市民センターになったとの説明は誤り。GIS点が本庁舎を指す棟別裏付けが不足。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/facility-point-scope.json",
+        "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+      },
+      {
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/chubu-east/cd4647361ca91e1f6a70.html",
+        "snapshotSHA256": "ff37ebc3ede3d6f9a0eabf04ce7dd6acc723322da062404da892048dad70ea1c",
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/84894a0ed2bff76b8514d658.html",
+        "snapshotSHA256": "eb2762bbfa6af435ccefb920f7142b42570eee5c30cce316fd89eef8d9cc5bde",
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+        "role": "primary-source"
+      },
+      {
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55002.html",
+        "snapshotPath": "data/evidence/issue5/chubu/sado-offices.html",
+        "snapshotSHA256": "43ac45a0c3565a902fd6c6bba0685df99234b5670ef106fbe10c851e67e437e4",
+        "fetchedAt": "2026-11-05T05:45:44.464921+00:00",
+        "sourceLocator": "金井市民センター／第2庁舎1階",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/41399.pdf",
+        "snapshotPath": "data/evidence/issue5/chubu/sado-new-office.pdf",
+        "snapshotSHA256": "4823555b34ffee2607598fec80e0df0c11118c99523fa63e5a6a8b36a6b2ab45",
+        "fetchedAt": "2026-11-05T05:45:44.827230+00:00",
+        "sourceLocator": "市報さど2023年11月号p.2／2023-11-06開庁・現庁舎となり",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+    "targetFile": "data/national/location-updates/chubu-east-north.json",
+    "selector": {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+      "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+      "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+    },
+    "new": {
+      "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+      "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+      "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。 座標は未承認。"
+    },
+    "reason": "GIS OBJECTID=23は佐渡市役所全体。配布原本は本庁の宿日直室だが、市民センター一覧の金井市民センターは同番地の第2庁舎。旧名称・電話番号を現市民センターと同定したという説明は成立しない。本庁舎と第2庁舎を区別する位置根拠が不足。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/facility-point-scope.json",
+        "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+      },
+      {
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/chubu-east/cd4647361ca91e1f6a70.html",
+        "snapshotSHA256": "ff37ebc3ede3d6f9a0eabf04ce7dd6acc723322da062404da892048dad70ea1c",
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/84894a0ed2bff76b8514d658.html",
+        "snapshotSHA256": "eb2762bbfa6af435ccefb920f7142b42570eee5c30cce316fd89eef8d9cc5bde",
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+        "role": "primary-source"
+      },
+      {
+        "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2028/55002.html",
+        "snapshotPath": "data/evidence/issue5/chubu/sado-offices.html",
+        "snapshotSHA256": "43ac45a0c3565a902fd6c6bba0685df99234b5670ef106fbe10c851e67e437e4",
+        "fetchedAt": "2026-11-05T05:45:44.464921+00:00",
+        "sourceLocator": "金井市民センター／第2庁舎1階",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/41399.pdf",
+        "snapshotPath": "data/evidence/issue5/chubu/sado-new-office.pdf",
+        "snapshotSHA256": "4823555b34ffee2607598fec80e0df0c11118c99523fa63e5a6a8b36a6b2ab45",
+        "fetchedAt": "2026-11-05T05:45:44.827230+00:00",
+        "sourceLocator": "市報さど2023年11月号p.2／2023-11-06開庁・現庁舎となり",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式原本の施設名・住所・入居建物と配布窓口を照合。室内測量ではない。"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  },
+  {
+    "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+    "targetFile": "data/national/location-updates/chubu-east-north.json",
+    "selector": {
+      "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+      "field": "evidence"
+    },
+    "old": {
+      "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+      "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+      "sourceLocator": "※googleマップで確認 の施設place !8m2!3d!4d",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+    },
+    "new": {
+      "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+      "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+      "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+      "sourceLocator": "※googleマップで確認 の施設place !8m2!3d!4d（数値の存在だけでは配布建物の同一性を証明しない）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "旧採用説明を撤回。公社配布原本は「新潟浄化センター管理棟2階事務室」だが、明示リンクのfeatureは新潟浄化センター全体。管理棟の位置を識別する原典がない。「建物代表点」と断言した現evidenceは過大。 座標は未承認。"
+    },
+    "reason": "公社配布原本は「新潟浄化センター管理棟2階事務室」だが、明示リンクのfeatureは新潟浄化センター全体。管理棟の位置を識別する原典がない。「建物代表点」と断言した現evidenceは過大。",
+    "evidence": [
+      {
+        "snapshotPath": "data/national/reviews/facility-point-scope.json",
+        "snapshotSHA256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+      },
+      {
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+        "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+        "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+        "role": "primary-source"
+      },
+      {
+        "snapshotPath": "data/evidence/national/chubu-east/ef5ab05fce0ec98378ad.html",
+        "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+        "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+        "role": "primary-source"
+      }
+    ],
+    "coordinateAction": "旧候補は採用しない。新updatesがある場合のみ独立した原典による別候補として親レビュー。"
+  }
+]

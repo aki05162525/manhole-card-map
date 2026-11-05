@@ -1,0 +1,38 @@
+[
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/2f.png",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-2f.png",
+    "snapshotSHA256": "91f69bd285430782923a09e7e1035e70460f732603b2bfb900683391d16cd45c",
+    "fetchedAt": "2026-11-05T05:54:59.844560+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/3f.png",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-3f.png",
+    "snapshotSHA256": "08140deca9cf2908d6cf87c419e070915f03d83f866be0055b5d3dde2f87ea7a",
+    "fetchedAt": "2026-11-05T05:55:00.121350+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/007/958/jikkeigaiyouban01.pdf",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-summary.pdf",
+    "snapshotSHA256": "0e08c44c4375493c6f7af85939bd44dcd77394127dfd6621c6419db40d9982a5",
+    "fetchedAt": "2026-11-05T05:55:04.143798+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/1f.png",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-1f.png",
+    "snapshotSHA256": "f09901b1c6e181e06f3f831407102422a8373a30db12ac53e57cdd328235ec38",
+    "fetchedAt": "2026-11-05T05:55:25.983078+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/4f.png",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-4f.png",
+    "snapshotSHA256": "d47a8d3f46c8caeff9fcb156880de9b4373242ab2a814146e0bc004dc49f5eba",
+    "fetchedAt": "2026-11-05T05:55:26.255907+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/_res/projects/default_project/_page_/001/003/256/5f.png",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-5f.png",
+    "snapshotSHA256": "209777d8eb4a7a00b6aba8ba77357fc275f242c421e5091e17f82a1191ae13b9",
+    "fetchedAt": "2026-11-05T05:55:26.511218+00:00"
+  }
+]

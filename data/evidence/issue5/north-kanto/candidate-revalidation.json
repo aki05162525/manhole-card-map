@@ -1,0 +1,225 @@
+[
+  {
+    "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+    "sourceCoordinate": {
+      "lat": 36.3052692,
+      "lng": 139.9794245
+    },
+    "coordinateLiteralPresent": true,
+    "buildingIdentity": "公式配布記事の平日下水道課・休日1階総合案内は同じ建物内との明示と本庁舎フロア案内を照合。",
+    "identityEvidence": [
+      {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "requestedAt": "2026-11-05T05:45:14.918641+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+        "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+        "bytes": 29758,
+        "headers": {
+          "Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "29758",
+          "Connection": "close",
+          "X-Frame-Options": "sameorigin",
+          "X-FRAME-OPTIONS": "sameorigin",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Cache": "REFRESH_MISS/S",
+          "Via": "JSTCDN",
+          "X-Amz-Cf-Pop": "NRT20-P9",
+          "X-Amz-Cf-Id": "W9_ZaDhy2G9uvq8CZMa10kHf7OvrwYyklPWWpWjEmVtsqDYfWJdfow==",
+          "X-Cache-Age": "0/-",
+          "X-Origin-Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Accept-Ranges": "bytes"
+        },
+        "fetchedAt": "2026-11-05T05:45:15.062910+00:00"
+      },
+      {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+        "requestedAt": "2026-11-05T05:45:14.919272+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/f1e9fc9e8025e9512ad0.html",
+        "snapshotSHA256": "bc27f0333834f6c530a8edc6aa72be7005b3a633ebdf133c008d0559c59ed931",
+        "bytes": 24960,
+        "headers": {
+          "Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "24960",
+          "Connection": "close",
+          "X-Frame-Options": "sameorigin",
+          "X-FRAME-OPTIONS": "sameorigin",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Cache": "REFRESH_MISS/S",
+          "Via": "JSTCDN",
+          "X-Amz-Cf-Pop": "NRT20-P9",
+          "X-Amz-Cf-Id": "QEfHddqAhBhrgZiVfWLbWcJCvZqp216vm7Qf5J4QisjmsNZNx4IEDw==",
+          "X-Cache-Age": "0/-",
+          "X-Origin-Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Accept-Ranges": "bytes"
+        },
+        "fetchedAt": "2026-11-05T05:45:15.063184+00:00"
+      }
+    ],
+    "relocationCheck": "現行公式配布先名称・住所と建物案内を照合。同じ住所だけを理由に別棟へ転用していない。",
+    "crsReview": "原本のGoogle Maps宛てlat/lngを無変換で採録。Google用地理緯度経度として整合するが、自治体は原測量の測地系・精度を明記していない。JGD/WGSの実測保証をしない。",
+    "licenseReview": "公式公開ページのリンク内数値という事実を抽出。Googleから地図・座標データを追加取得していない。原本HTMLの再配布許諾やCCライセンス取得を意味しない。筑西の著作権条件は4dc6346baede4109ac63.html。候補の採用と原本の公開可否は親で確認。"
+  },
+  {
+    "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+    "sourceCoordinate": {
+      "lat": 36.3052692,
+      "lng": 139.9794245
+    },
+    "coordinateLiteralPresent": true,
+    "buildingIdentity": "公式配布記事の平日下水道課・休日1階総合案内は同じ建物内との明示と本庁舎フロア案内を照合。",
+    "identityEvidence": [
+      {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "requestedAt": "2026-11-05T05:45:14.918641+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+        "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+        "bytes": 29758,
+        "headers": {
+          "Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "29758",
+          "Connection": "close",
+          "X-Frame-Options": "sameorigin",
+          "X-FRAME-OPTIONS": "sameorigin",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Cache": "REFRESH_MISS/S",
+          "Via": "JSTCDN",
+          "X-Amz-Cf-Pop": "NRT20-P9",
+          "X-Amz-Cf-Id": "W9_ZaDhy2G9uvq8CZMa10kHf7OvrwYyklPWWpWjEmVtsqDYfWJdfow==",
+          "X-Cache-Age": "0/-",
+          "X-Origin-Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Accept-Ranges": "bytes"
+        },
+        "fetchedAt": "2026-11-05T05:45:15.062910+00:00"
+      },
+      {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+        "requestedAt": "2026-11-05T05:45:14.919272+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/f1e9fc9e8025e9512ad0.html",
+        "snapshotSHA256": "bc27f0333834f6c530a8edc6aa72be7005b3a633ebdf133c008d0559c59ed931",
+        "bytes": 24960,
+        "headers": {
+          "Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "24960",
+          "Connection": "close",
+          "X-Frame-Options": "sameorigin",
+          "X-FRAME-OPTIONS": "sameorigin",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Cache": "REFRESH_MISS/S",
+          "Via": "JSTCDN",
+          "X-Amz-Cf-Pop": "NRT20-P9",
+          "X-Amz-Cf-Id": "QEfHddqAhBhrgZiVfWLbWcJCvZqp216vm7Qf5J4QisjmsNZNx4IEDw==",
+          "X-Cache-Age": "0/-",
+          "X-Origin-Date": "Thu, 05 Nov 2026 05:45:15 GMT",
+          "Accept-Ranges": "bytes"
+        },
+        "fetchedAt": "2026-11-05T05:45:15.063184+00:00"
+      }
+    ],
+    "relocationCheck": "現行公式配布先名称・住所と建物案内を照合。同じ住所だけを理由に別棟へ転用していない。",
+    "crsReview": "原本のGoogle Maps宛てlat/lngを無変換で採録。Google用地理緯度経度として整合するが、自治体は原測量の測地系・精度を明記していない。JGD/WGSの実測保証をしない。",
+    "licenseReview": "公式公開ページのリンク内数値という事実を抽出。Googleから地図・座標データを追加取得していない。原本HTMLの再配布許諾やCCライセンス取得を意味しない。筑西の著作権条件は4dc6346baede4109ac63.html。候補の採用と原本の公開可否は親で確認。"
+  },
+  {
+    "facilityId": "facility:kanto-north-sakuragawa-makabe-water",
+    "sourceCoordinate": {
+      "lat": 36.2783968826407,
+      "lng": 140.091696381569
+    },
+    "coordinateLiteralPresent": true,
+    "buildingIdentity": "現行カード配布記事は水道お客様センターを真壁庁舎2階と指定。施設案内の真壁庁舎の名称・飯塚911が一致し岩瀬・大和庁舎と区別。",
+    "identityEvidence": [
+      {
+        "sourceUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "requestedAt": "2026-11-05T05:45:44.150063+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/46cfe2892a6fb58a2c97.html",
+        "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff",
+        "bytes": 39747,
+        "headers": {
+          "Date": "Thu, 05 Nov 2026 05:45:44 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "39747",
+          "Connection": "close",
+          "X-Frame-Options": "sameorigin",
+          "X-FRAME-OPTIONS": "sameorigin",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Cache": "MISS/S",
+          "Via": "JSTCDN",
+          "X-Amz-Cf-Pop": "NRT20-P6",
+          "X-Amz-Cf-Id": "tkKdv95jNkZsLwq0q5ftCFomk1ob5DXoX79CV1YuE7UWjdg-XIJH9A==",
+          "X-Cache-Age": "0/-",
+          "X-Origin-Date": "Thu, 05 Nov 2026 05:45:44 GMT",
+          "Accept-Ranges": "bytes"
+        },
+        "fetchedAt": "2026-11-05T05:45:44.371633+00:00"
+      }
+    ],
+    "relocationCheck": "現行公式配布先名称・住所と建物案内を照合。同じ住所だけを理由に別棟へ転用していない。",
+    "crsReview": "原本のGoogle Maps宛てlat/lngを無変換で採録。Google用地理緯度経度として整合するが、自治体は原測量の測地系・精度を明記していない。JGD/WGSの実測保証をしない。",
+    "licenseReview": "公式公開ページのリンク内数値という事実を抽出。Googleから地図・座標データを追加取得していない。原本HTMLの再配布許諾やCCライセンス取得を意味しない。筑西の著作権条件は4dc6346baede4109ac63.html。候補の採用と原本の公開可否は親で確認。"
+  },
+  {
+    "facilityId": "facility:kanto-north-kawajima-water",
+    "sourceCoordinate": {
+      "lat": 35.9925196,
+      "lng": 139.4844419
+    },
+    "coordinateLiteralPresent": true,
+    "buildingIdentity": "現行配布本文は川島町役場1階上下水道課でも配布と明記。役場交通アクセスの下八ツ林870-1の目的地を照合。さまちかの923とは別建物。",
+    "identityEvidence": [
+      {
+        "sourceUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+        "requestedAt": "2026-11-05T05:45:44.151023+00:00",
+        "actorType": "ai",
+        "status": 200,
+        "finalUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+        "snapshotPath": "data/evidence/issue5/north-kanto/fbb24fac0b7e67537966.html",
+        "snapshotSHA256": "ef73e288e80befc81c3b4325c200c72bea81bffe5ea15d000d628b55b1b0384b",
+        "bytes": 62270,
+        "headers": {
+          "Cache-Control": "private",
+          "Content-Type": "text/html; charset=utf-8",
+          "Last-Modified": "Thu, 05 Nov 2026 05:45:44 GMT",
+          "Server": "i-SITE Webserver",
+          "X-FRAME-OPTIONS": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "X-XSS-Protection": "1; mode=block",
+          "Content-Security-Policy": "reflected-xss block",
+          "Strict-Transport-Security": "max-age=0; includeSubDomains",
+          "Set-Cookie": "ASP.NET_SessionId=rfcblbb1p0yjrkmdlr5tre1x; path=/; secure; HttpOnly; SameSite=Lax",
+          "X-Powered-By": "ASP.NET",
+          "Date": "Thu, 05 Nov 2026 05:45:43 GMT",
+          "Connection": "close",
+          "Content-Length": "62270"
+        },
+        "fetchedAt": "2026-11-05T05:45:44.501309+00:00"
+      }
+    ],
+    "relocationCheck": "現行公式配布先名称・住所と建物案内を照合。同じ住所だけを理由に別棟へ転用していない。",
+    "crsReview": "原本のGoogle Maps宛てlat/lngを無変換で採録。Google用地理緯度経度として整合するが、自治体は原測量の測地系・精度を明記していない。JGD/WGSの実測保証をしない。",
+    "licenseReview": "公式公開ページのリンク内数値という事実を抽出。Googleから地図・座標データを追加取得していない。原本HTMLの再配布許諾やCCライセンス取得を意味しない。筑西の著作権条件は4dc6346baede4109ac63.html。候補の採用と原本の公開可否は親で確認。"
+  }
+]

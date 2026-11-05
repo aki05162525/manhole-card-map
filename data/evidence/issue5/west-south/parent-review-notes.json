@@ -1,0 +1,39 @@
+[
+  {
+    "facilityId": "facility:kyushu-fec63a8962497abb940f",
+    "type": "official-hours-conflict",
+    "finding": "配布ページ7553は年末12/29–31を除く9–17時。施設ページ12136は月曜（祝日の場合翌日）、12/29–1/3休館。建物同定は一致するが配布曜日の優先根拠は不足。位置候補のみ、関係時間を変更しない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kanzaki.saga.jp/main/7553.html",
+        "snapshotPath": "data/evidence/issue5/west-south/ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e.bin",
+        "snapshotSHA256": "ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e",
+        "fetchedAt": "2026-11-05T05:47:11.649410+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.kanzaki.saga.jp/main/12136.html",
+        "snapshotPath": "data/evidence/issue5/west-south/02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d.bin",
+        "snapshotSHA256": "02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d",
+        "fetchedAt": "2026-11-05T05:48:01.882185+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-786085478c88a34b14cc",
+    "type": "multiple-dataset-points",
+    "finding": "P05本庁・隼人庁舎feature656と隼人市民サービスセンター657は数m差。平均せず名称が配布施設と一致する657の元数値を採用。同じ建物のフロア原本で照合。"
+  },
+  {
+    "facilityId": "facility:ws-88a6c5a846ae640758",
+    "type": "multiple-dataset-points",
+    "finding": "BODIK市役所33.512788,130.5239とP05点33.512835,130.523876は数m差。平均せず建物内位置仕様が確認できるP05の元数値を採用。太宰府Cの移転期間と通常代替の適用関係は追加しない。"
+  }
+]
