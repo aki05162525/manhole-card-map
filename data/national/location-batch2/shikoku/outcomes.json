@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "region": "shikoku",
+  "issue": 43,
+  "asOf": "2026-11-05",
+  "selectedCount": 8,
+  "adoptedCount": 0,
+  "heldCount": 8,
+  "excludedCount": 7,
+  "regionalUnlocatedBefore": 15,
+  "regionalUnlocatedAfter": 15,
+  "nationalUnlocatedBefore": 608,
+  "nationalUnlocatedAfter": 608,
+  "countsBasis": "同一manifestによるassemble。生成全体/公開ピン数ではない。",
+  "researchStartedAt": "2026-11-05T11:24:08.712570+00:00",
+  "researchFinishedAt": "2026-11-05T11:32:35.713263+00:00",
+  "wallSeconds": 507.001,
+  "timingScope": "selection保存後から研究結果初稿までの地域共有wall時間。検索・取得待ち・原本読解・外形計算を含む。各施設に重複加算せず、後続レビュー/PR時間を含まない。",
+  "rows": [
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "name": "旧吉野川浄化センター(愛称:アクアきらら月見ヶ丘)",
+      "decision": "held",
+      "adopted": false,
+      "stage": "identity-plan-found",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/1",
+      "retrievalKeys": [
+        "kyuyoshino-plan.pdf"
+      ],
+      "finding": "県の令和4年事後評価書PDF p11の一般平面図で⑨管理棟を目視確認。空港南側の処理施設群との区別に使える新資料。図面は全体計画で地理座標を持たず、現配布窓口を含む管理棟と数値外形の一意対応は未検証。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "図面番号⑨と現行施設案内・GSI外形の対応を確認し、計画棟と現存棟を区別する。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-4273f7af29262d7c74",
+      "name": "龍河洞観光センター",
+      "decision": "held",
+      "adopted": false,
+      "stage": "identity-plan-found",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/3",
+      "retrievalKeys": [
+        "ryugado-education.pdf"
+      ],
+      "finding": "教育旅行案内PDF p9（印刷p8）の龍河洞観光センター写真と模式図の指示線を確認。洞口・博物館・チケット販売所とは別の建物である。模式図は縮尺・方位・地理座標を持たず、建物外形を単独同定する数値資料として使わない。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "写真の入口建物を縮尺付き配置図または名称付き公共GISと対応させる。洞口やチケット販売所の点を使わない。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+      "name": "ウェルピア伊予",
+      "decision": "held",
+      "adopted": false,
+      "stage": "numeric-crosscheck-held",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/8",
+      "retrievalKeys": [
+        "iyo-aed.html",
+        "iyo-aed-tourism.csv",
+        "iyo-aed-social.csv",
+        "welpia-map.png",
+        "welpia.html"
+      ],
+      "finding": "市AED公開CSVの商工観光課・社会教育課2ファイルにウェルピアの名称行なし（全市CSV不存在を意味しない）。既存P05点とOG点を別原典のBldAに照合すると両方が北側タイルfeature 122に内包。56m差だけでは別棟とは断定できない。ただし同外形は境界で切れ、南側タイルと連続。公式鳥瞰図は模式的で本館/隣接部分との境界対応を独立確定できず採用保留。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "本館・展望塔・連絡部分を示す平面配置図で、2タイルにまたがる外形と本館を対応させる。P05数値とOG数値だけで外形を選ばない。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-ba24f603e6bac38d9e",
+      "name": "中讃流域下水道金倉川浄化センター",
+      "decision": "held",
+      "adopted": false,
+      "stage": "source-fetch-blocked",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/9",
+      "retrievalKeys": [
+        "kagawa-2025.pdf",
+        "kagawa-direct.pdf",
+        "kagawa-exact.pdf"
+      ],
+      "finding": "公社2025事業概要の検索索引に金倉川平面図を発見。原本URLの実取得は0 bytes、直接libsパスはGIFでPDFではなかった。索引を原本確認済みと扱わず管理棟の数値対応は停止。大束川の点を流用しない。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "公社事業概要の有効PDF原本を取得し、金倉川管理棟の図と数値外形を照合する。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-c7eae2022b55200128",
+      "name": "中讃流域下水道大束川浄化センター",
+      "decision": "held",
+      "adopted": false,
+      "stage": "source-fetch-blocked",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/10",
+      "retrievalKeys": [
+        "kagawa-2025.pdf",
+        "kagawa-direct.pdf",
+        "kagawa-exact.pdf"
+      ],
+      "finding": "公社事業概要という共通新資料を探索したが実取得は空応答/非PDF。旧調査の県再評価平面図は保持し、検索索引のみでその図面と数値位置を結び付けない。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "公社現行資料または既存県平面図を用いて大束川管理棟の地理対応を確認する。原本未取得を成功扱いしない。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "name": "月見ヶ丘海浜公園",
+      "decision": "held",
+      "adopted": false,
+      "stage": "identity-plan-found",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/11",
+      "retrievalKeys": [
+        "moon-r7.pdf",
+        "moon-r7-lg.pdf"
+      ],
+      "finding": "旧jpホストは証明書不一致、lg.jpからR7管理棟改修図面を取得。p7配置図・p9平面図の管理事務所を含む弧状建物を目視確認。新資料は具体的だが旧Yahoo公園点で検索した2タイルでは小規模な弧状外形が複数あり、管理棟全体と一意対応を確定していない。公園点を建物点へ転用せず保留。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "R7図B-01/B-03の方位・コテージ列・駐車場との配置を、より南西側を含むGSI外形へ対応させる。小規模弧状の別建物と区別する。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-f48988ec217d052e92",
+      "name": "マイントピア別子 本館1階チケット売り場",
+      "decision": "held",
+      "adopted": false,
+      "stage": "identity-plan-found",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/13",
+      "retrievalKeys": [
+        "besshi-kids.pdf",
+        "besshi-tebiki.pdf",
+        "besshi-exact.pdf",
+        "besshi-map.html",
+        "besshi-map.pdf"
+      ],
+      "finding": "検索索引のキッズパークPDFは実取得404。別ルートの現公式園内マップPDFを取得し、p1の本館と1階切符売場を確認。端出場本館を独立に識別する資料が増えたが数値外形との照合までは未実施。検索結果の座標やGoogle埋込中心を採用しない。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "取得済み公式map.pdfの本館外形・川・鉄道・駐車場の関係をGSI/PLATEAU数値外形と照合する。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "name": "イオンモール今治新都市1F インフォメーションカウンター",
+      "decision": "held",
+      "adopted": false,
+      "stage": "numeric-crosscheck-held",
+      "newMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。",
+      "priorRef": "data/national/issue7/shikoku.json#/unresolved/7",
+      "retrievalKeys": [
+        "aeon-corporate.html",
+        "aeon-access.html"
+      ],
+      "finding": "運営会社施設ページはメンテナンス応答。現モールアクセスは新ドメインへ転送され、地図はGoogle pb。探索用周辺タイルに複数の大きな商業建物外形があり、このタイル単独から1Fインフォメーションを含むモール本体を確定できない。Google中心を採用座標にしない。",
+      "stopReason": "現配布建物と再利用可能な数値原典の独立対応が採用基準まで確定していない。",
+      "resumeCondition": "モール公式の縮尺/方位付き配置図または独立公共データで本体と別棟を区別し、必要なら隣接タイルも照合する。",
+      "proposedCoordinate": null,
+      "lifecycleBinding": null,
+      "distributionChanged": false
+    }
+  ],
+  "candidateDecision": "座標採用提案0。診断用の既存2点とタイルは候補施設との対応未承認。",
+  "reviewStatus": "unavailable-quota",
+  "notDone": [
+    "現地確認",
+    "PLATEAU取得",
+    "8施設の全外形対応完了",
+    "Go/配信JSON再生成・ブラウザー確認（採用/アプリ変更なし）"
+  ]
+}
