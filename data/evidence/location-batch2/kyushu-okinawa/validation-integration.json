@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "nationalAuditSummary": {
+    "assigned": 810,
+    "regionalCandidates": 202,
+    "originalUnresolved": 608,
+    "currentAdopted": 220,
+    "currentRemaining": 590,
+    "candidateNotAdopted": 5,
+    "currentIntegrated": 220,
+    "adoptedLocationNotGenerated": 0,
+    "targetConfirmedLocations": 220,
+    "targetPins": 220,
+    "ledgerAdoptedMatches": 220,
+    "originalUnresolvedByReason": {
+      "address-conflict": 3,
+      "building-correspondence-unresolved": 1,
+      "building-not-identified": 18,
+      "coordinate-conflict": 11,
+      "coordinate-scope-unresolved": 3,
+      "excessive-indoor-precision-or-missing-building-point": 1,
+      "identity-or-address-mismatch": 3,
+      "insufficient-primary-coordinate": 11,
+      "insufficient-primary-coordinate-source": 47,
+      "missing-building-coordinate": 2,
+      "missing-primary-building-coordinate": 9,
+      "missing-primary-coordinate": 26,
+      "mixed-record": 1,
+      "multiple-buildings": 36,
+      "relocation": 4,
+      "relocation-or-building-identity": 3,
+      "relocation-or-multiple-buildings": 16,
+      "relocation-or-separate-building": 30,
+      "source-conditions-unverified": 6,
+      "wrong-facility": 2,
+      "原典不足": 249,
+      "名称住所不一致": 2,
+      "座標競合": 5,
+      "建物対象外の可能性": 1,
+      "現窓口同定未完": 1,
+      "移転・別棟": 15,
+      "移転・別棟・住所競合": 18,
+      "移転・旧新地点の対応未確定": 3,
+      "移転別棟": 64,
+      "複数棟・建物同定未完了": 17
+    },
+    "originalUnresolvedByInvestigationStatus": {
+      "fresh-primary-retrieval-partial-coordinate-investigation": 27,
+      "new-fetch-and-numeric-screening; building-identification-incomplete": 41,
+      "new-fetch-and-p05-screening-partial": 71,
+      "new-fetch-and-targeted-review": 16,
+      "new-investigation": 85,
+      "new-investigation-attempted; coordinate-unresolved": 38,
+      "new-investigation-partially-resolved": 1,
+      "new-investigation-performed-unresolved": 32,
+      "new-investigation-unresolved": 80,
+      "new-research-manual-unresolved": 35,
+      "new-source-investigation-unresolved": 59,
+      "new-web-fetch-and-p05-search; building-not-resolved": 88,
+      "追加確認実施・建物点未確定": 35
+    }
+  },
+  "nationalAuditSHA256": "83ff2bf0cee0e26dc1a34d3ce6b4755b1cac9602c066d7d98ff0fcd3ec81c6db",
+  "python": {
+    "tests": 117,
+    "exitCode": 0
+  },
+  "go": {
+    "command": "mise exec -- go test -count=1 ./...",
+    "exitCode": 0
+  },
+  "redGreen": {
+    "redExitCode": 1,
+    "redReason": "承認5IDがまだmanifest未選択で差分集合が空",
+    "greenExitCode": 0
+  },
+  "sharedChanges": [
+    "tools/national/manifest.jsonに九州沖縄5IDとbinding明示選択を追加"
+  ],
+  "newRegionalTest": "tools/national/test_location_batch2_kyushu_okinawa.py",
+  "historicalTestsChanged": false,
+  "browserUI": "UIコード変更なし。実detailsと本番facilityMapLinkを直接確認。ブラウザー画面/Google Maps外部画面は未操作。",
+  "sourceEvidenceUnchangedFromReviewedHead": true
+}

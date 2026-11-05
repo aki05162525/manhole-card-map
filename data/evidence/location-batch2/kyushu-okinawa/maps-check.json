@@ -1,0 +1,45 @@
+{
+  "method": "実生成detailsと本番facilityMapLinkを直接検査。ブラウザー・Google Maps外部画面は未操作。",
+  "results": [
+    {
+      "id": "facility:ws-f5ea517afaab927bb9",
+      "cardId": "46-534-A001",
+      "link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=27.338544%2C128.5738394",
+        "label": "配布施設をGoogle Mapsで表示（確定座標）"
+      }
+    },
+    {
+      "id": "facility:kyushu-0457cc860e34e1f5a582",
+      "cardId": "42-000-A001",
+      "link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=32.8452193%2C130.0523047",
+        "label": "配布施設をGoogle Mapsで表示（確定座標）"
+      }
+    },
+    {
+      "id": "facility:kyushu-7a9f8dae19665147953f",
+      "cardId": "46-530-A001",
+      "link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=27.726407%2C129.0186019",
+        "label": "配布施設をGoogle Mapsで表示（確定座標）"
+      }
+    },
+    {
+      "id": "facility:ws-61c944585418f01447",
+      "cardId": "46-530-A001",
+      "link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=27.726407%2C129.0186019",
+        "label": "配布施設をGoogle Mapsで表示（確定座標）"
+      }
+    },
+    {
+      "id": "facility:kyushu-5adca0ddeb2263d545e6",
+      "cardId": "47-213-A001",
+      "link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=26.3324282%2C127.8808337",
+        "label": "配布施設をGoogle Mapsで表示（確定座標）"
+      }
+    }
+  ]
+}

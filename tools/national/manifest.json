@@ -3861,6 +3861,31 @@
           "sha256": "b9d938c5e6ed585848ccf60943f3fe86b03f307f85a991ddd4933dc760609209"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/kyushu-okinawa/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:ws-f5ea517afaab927bb9",
+          "sha256": "c69cf1fa35bf74a6eb212af517e62b7bf58b0b142770fa62671606075bd9a0ac"
+        },
+        {
+          "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+          "sha256": "3079787109ee53f37a822da9bdacc5fb43eb884c4e225839a955f6d5daafeede"
+        },
+        {
+          "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+          "sha256": "5fad5d5d67c899b1e0f2896838b6a0740c7e7f1d5f600cc53a9080d2c82671e0"
+        },
+        {
+          "facilityId": "facility:ws-61c944585418f01447",
+          "sha256": "6ec69a625dd5b26ea4817790f60bbd6818e0bfd1d19be74f2be96d8fae48b0f3"
+        },
+        {
+          "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+          "sha256": "f390974bc822c3285a08239dae35278f1cc13d34a96c7cc8e0081c2b0b7de9c0"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3891,6 +3916,10 @@
     {
       "path": "data/national/location-batch2/kinki-east/location-lifecycle.json",
       "sha256": "b1dfde2c5a5d50b82dffe303b09e0208ae4dafbc4468daab2e84c76a4d9fd28d"
+    },
+    {
+      "path": "data/national/location-batch2/kyushu-okinawa/location-lifecycle.json",
+      "sha256": "db05d9ea9893c044eeb56296139440065dd367bafdf12de0660c831bfa94e6d8"
     }
   ]
 }

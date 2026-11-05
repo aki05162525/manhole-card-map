@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "coordinate": {
+        "lat": 27.338544,
+        "lng": 128.5738394
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+        "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+        "sourceLocator": "本プロジェクト派生記録 rows[0]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのchina。GSI PMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "coordinate": {
+        "lat": 32.8452193,
+        "lng": 130.0523047
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+        "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+        "sourceLocator": "本プロジェクト派生記録 rows[1]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのisahaya。GSI PMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "coordinate": {
+        "lat": 27.726407,
+        "lng": 129.0186019
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+        "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+        "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "coordinate": {
+        "lat": 27.726407,
+        "lng": 129.0186019
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+        "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+        "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "coordinate": {
+        "lat": 26.3324282,
+        "lng": 127.8808337
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+        "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+        "sourceLocator": "本プロジェクト派生記録 rows[3]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのuruma。GSI PMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    }
+  ]
+}
