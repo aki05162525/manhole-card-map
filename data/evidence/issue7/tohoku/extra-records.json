@@ -1,0 +1,296 @@
+[
+  {
+    "sourceUrl": "https://yamagatakanko.com/attractions/detail_2528.html",
+    "fetchedAt": "2026-11-05T06:31:28.219390+00:00",
+    "error": "HTTP Error 503: Service Temporarily Unavailable"
+  },
+  {
+    "sourceUrl": "https://yamagatakanko.com/attractions/detail_686.html",
+    "fetchedAt": "2026-11-05T06:31:28.220217+00:00",
+    "error": "HTTP Error 503: Service Temporarily Unavailable"
+  },
+  {
+    "sourceUrl": "https://yamagatakanko.com/attractions/detail_10286.html",
+    "fetchedAt": "2026-11-05T06:31:28.220763+00:00",
+    "error": "HTTP Error 503: Service Temporarily Unavailable"
+  },
+  {
+    "sourceUrl": "https://yamagatakanko.com/attractions/detail_2502.html",
+    "fetchedAt": "2026-11-05T06:31:28.221275+00:00",
+    "error": "HTTP Error 503: Service Temporarily Unavailable"
+  },
+  {
+    "sourceUrl": "https://yamagatakanko.com/attractions/detail_6659.html",
+    "fetchedAt": "2026-11-05T06:31:28.221851+00:00",
+    "error": "HTTP Error 503: Service Temporarily Unavailable"
+  },
+  {
+    "sourceUrl": "https://www.town.koori.fukushima.jp/site/kanko/1759.html",
+    "fetchedAt": "2026-11-05T06:31:28.222960+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.koori.fukushima.jp/site/kanko/1759.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/50a12c04f0f60bc0777444b7fc4c8b3219ebd09dc3c10a854b8872e6dc74a2a1.html",
+    "snapshotSHA256": "50a12c04f0f60bc0777444b7fc4c8b3219ebd09dc3c10a854b8872e6dc74a2a1",
+    "bytes": 11967,
+    "documentTitle": "旧伊達郡役所 - 桑折町観光情報 - 桑折町ホームページ（教育文化課）",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama.com/kokusai/facility.html",
+    "fetchedAt": "2026-11-05T06:31:28.465205+00:00",
+    "status": 200,
+    "finalUrl": "https://www.shichigahama.com/kokusai/facility.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/3bc08d33c08b6209f73edf90945ead5031da12c66fcd53e8dc7e4e8028cabb2c.html",
+    "snapshotSHA256": "3bc08d33c08b6209f73edf90945ead5031da12c66fcd53e8dc7e4e8028cabb2c",
+    "bytes": 40098,
+    "documentTitle": "施設のご紹介｜七ヶ浜国際村｜七ヶ浜町",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama-kokusaimura.com/facility",
+    "fetchedAt": "2026-11-05T06:31:28.465548+00:00",
+    "status": 200,
+    "finalUrl": "https://www.shichigahama-kokusaimura.com/facility",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/74b9dd534b0f592fd3d72df216afa2ecede3bdecc16bfd9dcc448638e29797d9.html",
+    "snapshotSHA256": "74b9dd534b0f592fd3d72df216afa2ecede3bdecc16bfd9dcc448638e29797d9",
+    "bytes": 23116,
+    "documentTitle": "施設案内（ストリートビュー）｜七ヶ浜国際村開館30周年記念特設サイト",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/1003286.html",
+    "fetchedAt": "2026-11-05T06:31:28.465688+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/1003286.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/1d9a1fc9f0ac1eed30499b54b9a5ad84b694aa3a278dbfd891a334a27e0a425a.html",
+    "snapshotSHA256": "1d9a1fc9f0ac1eed30499b54b9a5ad84b694aa3a278dbfd891a334a27e0a425a",
+    "bytes": 34719,
+    "documentTitle": "本庁舎本館案内図｜花巻市",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "fetchedAt": "2026-11-05T06:31:28.465966+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/9513ce06ec45a2868c6455f6b18238d91d39074b4cf1e75bb2a70de8834c88b2.html",
+    "snapshotSHA256": "9513ce06ec45a2868c6455f6b18238d91d39074b4cf1e75bb2a70de8834c88b2",
+    "bytes": 128341,
+    "documentTitle": "国土数値情報 | 市町村役場等及び公的集会施設データ",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "fetchedAt": "2026-11-05T06:31:28.466831+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/31abe03f6eeb7d50fd3c48461b12d70db73f88c708aad2f428a595ab3ce4b12f.html",
+    "snapshotSHA256": "31abe03f6eeb7d50fd3c48461b12d70db73f88c708aad2f428a595ab3ce4b12f",
+    "bytes": 27977,
+    "documentTitle": "利用規約",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://cdn.prod.website-files.com/64df12e8a3fa6068104d8eef/651d01e76c1c80e161deca8c_floor-map1.png",
+    "fetchedAt": "2026-11-05T06:32:47.776753+00:00",
+    "status": 200,
+    "finalUrl": "https://cdn.prod.website-files.com/64df12e8a3fa6068104d8eef/651d01e76c1c80e161deca8c_floor-map1.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/9346dfd80360d12490bcfd1aa2dee5c3163bad714458d2291ecd305e02f309bb.png",
+    "snapshotSHA256": "9346dfd80360d12490bcfd1aa2dee5c3163bad714458d2291ecd305e02f309bb",
+    "bytes": 276487,
+    "documentTitle": "",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.daisen.lg.jp/archive/contents-13664",
+    "fetchedAt": "2026-11-05T06:32:47.777446+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.daisen.lg.jp/archive/contents-13664",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/10220e99154befbf9868586fdecb0daa12cb80f1bff3f3a286819b2eb683b72c.html",
+    "snapshotSHA256": "10220e99154befbf9868586fdecb0daa12cb80f1bff3f3a286819b2eb683b72c",
+    "bytes": 139173,
+    "documentTitle": "花火伝統文化継承資料館 はなび・アム | 大仙市",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.akita.lg.jp/suido/okyakusama/1008313.html",
+    "fetchedAt": "2026-11-05T06:32:47.777905+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akita.lg.jp/suido/okyakusama/1008313.html",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/d17e72ee4aa964c715909d42332405a1cf43c400607b2d12a736bac1b6e27062.html",
+    "snapshotSHA256": "d17e72ee4aa964c715909d42332405a1cf43c400607b2d12a736bac1b6e27062",
+    "bytes": 26701,
+    "documentTitle": "組織・業務案内｜秋田市公式サイト",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.town.wakuya.miyagi.jp/sangyo/kanko/documents/r6sightseeing_restaurant.pdf",
+    "fetchedAt": "2026-11-05T06:32:47.778321+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.wakuya.miyagi.jp:443/404.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/fc78dd5a08d5c141fbc473c7cf306758c2a2a2e5e810f4bfd3a58ccb309011f9.html",
+    "snapshotSHA256": "fc78dd5a08d5c141fbc473c7cf306758c2a2a2e5e810f4bfd3a58ccb309011f9",
+    "bytes": 7849,
+    "documentTitle": "涌谷町／ご指定のページは見つかりませんでした",
+    "contentAssessment": "soft-error-page"
+  },
+  {
+    "sourceUrl": "https://miharukoma.com/eat/5678",
+    "fetchedAt": "2026-11-05T06:33:21.084715+00:00",
+    "status": 200,
+    "finalUrl": "https://miharukoma.com/eat/5678",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/f2542e1735cf0aa5a7c6dab78387d48a154813599bb0e5c05625dcd61ed64414.html",
+    "snapshotSHA256": "f2542e1735cf0aa5a7c6dab78387d48a154813599bb0e5c05625dcd61ed64414",
+    "bytes": 48664,
+    "documentTitle": "三春なかまち蔵「花かご」 | Find！三春 【みはる観光協会～福島県三春町】",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://miharukoma.com/wp-content/uploads/2021/03/machimeguri2021.pdf",
+    "fetchedAt": "2026-11-05T06:33:21.085568+00:00",
+    "status": 200,
+    "finalUrl": "https://miharukoma.com/wp-content/uploads/2021/03/machimeguri2021.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/3d6381de11552f38e98f55b570b166a65baea321f04cbad84271075a3fc54880.pdf",
+    "snapshotSHA256": "3d6381de11552f38e98f55b570b166a65baea321f04cbad84271075a3fc54880",
+    "bytes": 9737547,
+    "documentTitle": "",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://daisenkankou.com/introduction-daisen/grandpaul.html",
+    "fetchedAt": "2026-11-05T06:33:21.086248+00:00",
+    "status": 200,
+    "finalUrl": "https://daisenkankou.com/introduction-daisen/grandpaul.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/3de34d827ba121aaa4ca01d2523e69cf1c43292be4d9c9414d893557fcb5c6e7.html",
+    "snapshotSHA256": "3de34d827ba121aaa4ca01d2523e69cf1c43292be4d9c9414d893557fcb5c6e7",
+    "bytes": 21960,
+    "documentTitle": "グランポールのご案内｜ 大仙市観光物産協会 上がるっ！だいせん",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.akita-tourism.com/member/content/272",
+    "fetchedAt": "2026-11-05T06:33:21.086881+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akita-tourism.com/member/content/272",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/df4f4b4379abf3d2240aa780cd60afacfd027177c6f2ef103a12011efe5f4b9f.html",
+    "snapshotSHA256": "df4f4b4379abf3d2240aa780cd60afacfd027177c6f2ef103a12011efe5f4b9f",
+    "bytes": 25027,
+    "documentTitle": "あきた旅のサポートセンター | 一般社団法人 秋田県観光連盟",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.town.onagawa.miyagi.jp/03_00_02.html",
+    "fetchedAt": "2026-11-05T06:33:21.087636+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.onagawa.miyagi.jp/03_00_02.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/d1274ac4a3d1f457d91659d1e39c856d0b22f8068bd9bd1d28649a60c92bbc67.html",
+    "snapshotSHA256": "d1274ac4a3d1f457d91659d1e39c856d0b22f8068bd9bd1d28649a60c92bbc67",
+    "bytes": 52533,
+    "documentTitle": "観る・買う ｜ 女川町",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.tagajo.miyagi.jp/bunkakanko/kurashi/shisetsu/shisetsu/bunkazai/001.html",
+    "fetchedAt": "2026-11-05T06:33:21.088408+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tagajo.miyagi.jp/bunkakanko/kurashi/shisetsu/shisetsu/bunkazai/001.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/1460f3e3c6b607ae1ccf19fd2a57c43f7094666e8cf9481bbbc897f729956fed.html",
+    "snapshotSHA256": "1460f3e3c6b607ae1ccf19fd2a57c43f7094666e8cf9481bbbc897f729956fed",
+    "bytes": 19446,
+    "documentTitle": "多賀城市／史都多賀城観光案内所（JR仙石線）",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
+    "fetchedAt": "2026-11-05T06:33:51.315773+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/cdf54f380978e4d0d7782088f5037a549da00f5b76491227f5d0f84a14b219c0.html",
+    "snapshotSHA256": "cdf54f380978e4d0d7782088f5037a549da00f5b76491227f5d0f84a14b219c0",
+    "bytes": 50680,
+    "documentTitle": "総合交流センター（夢アリーナたかた）／陸前高田市ホームページ",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.reconstruction.go.jp/portal/chiiki/2018/20180507162445.html",
+    "fetchedAt": "2026-11-05T06:33:51.316591+00:00",
+    "status": 200,
+    "finalUrl": "https://www.reconstruction.go.jp/portal/chiiki/2018/20180507162445.html",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/a200b1192a0e59ec35d82dc36624964fb129be7c29701c7a4b91c44680e81faf.html",
+    "snapshotSHA256": "a200b1192a0e59ec35d82dc36624964fb129be7c29701c7a4b91c44680e81faf",
+    "bytes": 73655,
+    "documentTitle": "光る汗と輝く夢！健康づくりの拠点施設が完成－「夢アリーナたかた」開館－（岩手県陸前高田市）〔平成30年4月10日〕 | 復興庁",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.town.taiwa.miyagi.jp/section/reiki_int/reiki_honbun/s300RG00000249.html",
+    "fetchedAt": "2026-11-05T06:33:51.317133+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.taiwa.miyagi.jp/section/reiki_int/reiki_honbun/s300RG00000249.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/e127b49a0a5e6613ea79903e24af9cfcb79f44ab038c81955c5ab27c51dd9051.html",
+    "snapshotSHA256": "e127b49a0a5e6613ea79903e24af9cfcb79f44ab038c81955c5ab27c51dd9051",
+    "bytes": 84113,
+    "documentTitle": "大和町ふれあい文化創造センター条例",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.town.taiwa.miyagi.jp/soshiki/shogaigakushu/shogaigakushu/1090.html",
+    "fetchedAt": "2026-11-05T06:34:22.441886+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.taiwa.miyagi.jp/soshiki/shogaigakushu/shogaigakushu/1090.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/529ce66c0b71e40de4779db62a1e1698163b765401ac54590cf323fbeaef373e.html",
+    "snapshotSHA256": "529ce66c0b71e40de4779db62a1e1698163b765401ac54590cf323fbeaef373e",
+    "bytes": 57488,
+    "documentTitle": "関連施設／大和町",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama.com/comn/contact.html",
+    "fetchedAt": "2026-11-05T06:34:22.442605+00:00",
+    "status": 200,
+    "finalUrl": "https://www.shichigahama.com/comn/contact.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/3c05b140a2d6641df987e00466308712b2b88cf5e6f80b91c640bd5778057ca3.html",
+    "snapshotSHA256": "3c05b140a2d6641df987e00466308712b2b88cf5e6f80b91c640bd5778057ca3",
+    "bytes": 56600,
+    "documentTitle": "町役場問い合わせ先一覧｜うみ・ひと・まち 宮城県七ヶ浜町",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.city.aomori.aomori.jp/about/1007400.html",
+    "fetchedAt": "2026-11-05T06:35:34.228839+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.aomori.aomori.jp/about/1007400.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/tohoku/originals/b76290024a3071595bc5651339ffe901e92963c685a90a874b2b8098b13bb5e3.html",
+    "snapshotSHA256": "b76290024a3071595bc5651339ffe901e92963c685a90a874b2b8098b13bb5e3",
+    "bytes": 33872,
+    "documentTitle": "サイトポリシー │ 青森市",
+    "contentAssessment": "body-received-not-necessarily-relevant"
+  },
+  {
+    "sourceUrl": "https://www.town.koori.fukushima.jp/material/files/group/4/20210100.pdf",
+    "fetchedAt": "2026-11-05T06:39:05.240246+00:00",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

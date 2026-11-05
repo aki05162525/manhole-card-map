@@ -1,0 +1,641 @@
+<div id="ajax-box">
+  
+<script>
+//<![CDATA[
+$(function() {
+
+$(".resource-content .tab.list a").on("click", function() {
+  $(".resource-content .tab.list").addClass("current");
+  $(".resource-content .tab.map").removeClass("current");
+
+  $(".resource-content .resource-list").show();
+  $(".resource-content .resource-map").hide();
+  return false;
+});
+$(".resource-content .tab.map a").on("click", function() {
+  $(".resource-content .tab.list").removeClass("current");
+  $(".resource-content .tab.map").addClass("current");
+
+  $(".resource-content .resource-list").hide();
+  $(".resource-content .resource-map").show();
+
+  if (!$("#map-canvas-2031e518-9db3-436f-967b-082defb41f3c").hasClass("rendered")) {
+    var canvas = $("#map-canvas-2031e518-9db3-436f-967b-082defb41f3c")[0];
+    var opts = { markers: [{"name":"剣淵町役場","loc":[44.09582,142.361]},{"name":"剣淵町民センター","loc":[44.09598,142.36137]},{"name":"剣淵町健康福祉総合センター","loc":[44.10095,142.36062]},{"name":"剣淵町立診療所","loc":[44.10093,142.36192]},{"name":"剣淵町農業振興センター","loc":[44.09734,142.36282]},{"name":"剣淵小学校","loc":[44.09857,142.3534]},{"name":"剣淵中学校","loc":[44.10197,142.35134]},{"name":"剣淵高等学校","loc":[44.10225,142.36288]},{"name":"剣淵町保育所","loc":[44.09676,142.3559]},{"name":"剣淵町学童保育所","loc":[44.09938,142.35335]},{"name":"剣淵町絵本の館","loc":[44.1001,142.35884]},{"name":"剣淵町資料館","loc":[44.10038,142.35868]},{"name":"りんどう交流館","loc":[44.09716,142.36301]},{"name":"剣淵町B\u0026G体育館","loc":[44.1036,142.36498]},{"name":"剣淵町武道館","loc":[44.10128,142.36304]},{"name":"屋内ゲートボール場","loc":[44.10301,142.3649]},{"name":"食のふるさと館","loc":[44.10201,142.36394]},{"name":"加工研究センター","loc":[44.10218,142.364]},{"name":"平波球場","loc":[44.10221,142.36468]}] };
+    var map = new Openlayers_Map(canvas, opts);
+    map.resize();
+
+    $("#map-canvas-2031e518-9db3-436f-967b-082defb41f3c").addClass("rendered");
+  }
+  return false;
+});
+$(".resource-content .pagination a").on("click", function() {
+  var url = $(this).attr("href");
+  $.ajax({
+    url: url,
+    type: "GET",
+    success: function (data) {
+      $("#cboxLoadedContent").html(data);
+    },
+    error: function (data, status) {
+      $("#cboxLoadedContent").html("== Error ==");
+    }
+  });
+  return false;
+});
+
+});
+//]]>
+</script>
+<div class="resource-content">
+  <div class="resource-name">12公共施設一覧　様式.xlsx</div>
+    <div class="resource-sheets">
+      <nav class="pagination">
+            <span class="page current">公共施設一覧_フォーマット</span>
+            <span class="page"><a href="/opendata/dataset/1807/resource/4422/content.html?page=2">公共施設一覧_作成例</a></a></span>
+      </nav>
+    </div>
+
+  <nav class="tabs">
+    <ul>
+      <li class="tab list current">
+        <a href="#">一覧表示</a>
+      </li>
+      <li class="tab map">
+        <a href="#">地図表示</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="resource-list">
+    <table class="cells" summary="12公共施設一覧　様式.xlsx">
+      <tbody>
+        <tr>
+            <td>都道府県コード又は市区町村コード</td>
+            <td>NO</td>
+            <td>都道府県名</td>
+            <td>市区町村名</td>
+            <td>名称</td>
+            <td>名称_カナ</td>
+            <td>名称_通称</td>
+            <td>POIコード</td>
+            <td>住所</td>
+            <td>方書</td>
+            <td>緯度</td>
+            <td>経度</td>
+            <td>電話番号</td>
+            <td>内線番号</td>
+            <td>法人番号</td>
+            <td>団体名</td>
+            <td>利用可能曜日</td>
+            <td>開始時間</td>
+            <td>終了時間</td>
+            <td>利用可能時間特記事項</td>
+            <td>説明</td>
+            <td>バリアフリー情報</td>
+            <td>URL</td>
+            <td>備考</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000001</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町役場</td>
+            <td>ケンブチチョウヤクバ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町37番１号</td>
+            <td></td>
+            <td>44.09582</td>
+            <td>142.361</td>
+            <td>0165-34-2121</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>08:15:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000002</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町民センター</td>
+            <td>ケンブチチョウミンセンター</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町37番１号</td>
+            <td></td>
+            <td>44.09598</td>
+            <td>142.36137</td>
+            <td>0165-34-2121</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>08:15:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000003</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町健康福祉総合センター</td>
+            <td>ケンブチチョウケンコウフクシソウゴウセンター</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町28番１号</td>
+            <td></td>
+            <td>44.10095</td>
+            <td>142.36062</td>
+            <td>0165-34-3955</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>08:15:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000004</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町立診療所</td>
+            <td>ケンブチチョウリツシンリョウジョ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町28番１号</td>
+            <td></td>
+            <td>44.10093</td>
+            <td>142.36192</td>
+            <td>0165-34-2614</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>08:30:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000005</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町農業振興センター</td>
+            <td>ケンブチチョウノウギョウシンコウセンター</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町３番８号</td>
+            <td></td>
+            <td>44.09734</td>
+            <td>142.36282</td>
+            <td>0165-34-3311</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>08:15:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000006</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵小学校</td>
+            <td>ケンブチショウガッコウ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町西町23番１号</td>
+            <td></td>
+            <td>44.09857</td>
+            <td>142.3534</td>
+            <td>0165-34-2116</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000007</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵中学校</td>
+            <td>ケンブチチュウガッコウ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町西町20番１号</td>
+            <td></td>
+            <td>44.10197</td>
+            <td>142.35134</td>
+            <td>0165-34-2211</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000008</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵高等学校</td>
+            <td>ケンブチコウトウガッコウ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町22番１号</td>
+            <td></td>
+            <td>44.10225</td>
+            <td>142.36288</td>
+            <td>0165-34-2549</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000009</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町保育所</td>
+            <td>ケンブチホイクショ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町西町４番１号</td>
+            <td></td>
+            <td>44.09676</td>
+            <td>142.3559</td>
+            <td>0165-34-2644</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000010</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町学童保育所</td>
+            <td>ケンブチガクドウホイクショ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町西町23番２号</td>
+            <td></td>
+            <td>44.09938</td>
+            <td>142.35335</td>
+            <td>0165-34-2333</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000011</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町絵本の館</td>
+            <td>ケンブチチョウエホンノヤカタ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町緑町15番３号</td>
+            <td></td>
+            <td>44.1001</td>
+            <td>142.35884</td>
+            <td>0165-34-2624</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td>10:00:00</td>
+            <td>17:00:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000012</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町資料館</td>
+            <td>ケンブチチョウシリョウカン</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町緑町15番４号</td>
+            <td></td>
+            <td>44.10038</td>
+            <td>142.35868</td>
+            <td>0165-34-2235</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>隣接する絵本の館に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000013</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>りんどう交流館</td>
+            <td>リンドウコウリュウカン</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町19番１号</td>
+            <td></td>
+            <td>44.09716</td>
+            <td>142.36301</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000014</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町B&amp;G体育館</td>
+            <td>ケンブチチョウビーアンドジータイイクカン</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町21番１号</td>
+            <td></td>
+            <td>44.1036</td>
+            <td>142.36498</td>
+            <td>0165-34-2246</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000015</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>剣淵町武道館</td>
+            <td>ケンブチチョウブドウカン</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町16番１号</td>
+            <td></td>
+            <td>44.10128</td>
+            <td>142.36304</td>
+            <td>0165-34-2818</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000016</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>屋内ゲートボール場</td>
+            <td>オクナイゲートボールジョウ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町21番１号</td>
+            <td></td>
+            <td>44.10301</td>
+            <td>142.3649</td>
+            <td>0165-34-2675</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000017</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>食のふるさと館</td>
+            <td>ショクノフルサトカン</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町19番１号</td>
+            <td></td>
+            <td>44.10201</td>
+            <td>142.36394</td>
+            <td>0165-34-2622</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>農業振興センターに問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000018</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>加工研究センター</td>
+            <td>カコウケンキュウセンター</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町19番１号</td>
+            <td></td>
+            <td>44.10218</td>
+            <td>142.364</td>
+            <td>0165-34-2215</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>農業振興センターに問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000019</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>平波球場</td>
+            <td>ヒラナミキュウジョウ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町元町254番地</td>
+            <td></td>
+            <td>44.10221</td>
+            <td>142.36468</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+        <tr>
+            <td>014656</td>
+            <td>0000000020</td>
+            <td>北海道</td>
+            <td>剣淵町</td>
+            <td>多目的運動広場（テニスコート）</td>
+            <td>タモクテキウンドウヒロバ</td>
+            <td></td>
+            <td></td>
+            <td>剣淵町仲町19番１号</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>剣淵町</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>教育委員会に問い合わせ</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="resource-map" style="display: none;">
+    <div class="resource-content resource-map">
+      <div id="map-canvas-2031e518-9db3-436f-967b-082defb41f3c" class="map-canvas" style="width: 100%; height: 400px;"></div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<script>
+//<![CDATA[
+
+SS.renderInBox("#ajax-box");
+
+//]]>
+</script>

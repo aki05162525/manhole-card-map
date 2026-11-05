@@ -1,0 +1,11 @@
+{
+  "data/work/issue7-baseline/full.json": "c12ff18fa3bae89bfd04875d2e0656e90fe65fc24780a4882263432769ace130",
+  "data/work/issue7-baseline/assignments.json": "97d7c362e94fbf45ca3c86e093940c8b4140dbe2f31dbd7519a93852d179aeda",
+  "data/work/issue7-baseline/ledger.json": "a0e3fe82a4996e1041cb5434b7a24e90408a8c55c1f3f1d7e36e0e5e56b2c6c8",
+  "data/work/issue7-baseline/hashes.json": "41cf672ca07f87c2bb0cedc1de0f081eac9d864da32d032c650cc491b47788ad",
+  "data/national/issue5/north.json": "3929369ac8389efaa49ed747a73cc0ff061262c30520e7130a2b2864be60170e",
+  "data/national/issue5/reviews/north.json": "069f36f43a4b7fd3f7fc4f463cbb21b420437397b014c220d3bea88f5821f4f6",
+  "data/national/location-updates/north-hokkaido.json": "35f36f8f5803fdd51a8e8ca6c4855a1250c199ec574a616416b84852c9047bea",
+  "data/evidence/issue5/chubu/P05-22_GML.zip": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+  "data/evidence/national/locations-north-hokkaido/decide.py": "1d91e6461d210862bbc074da9ba0768bc580eb8ae2009e5601fbac979df49105"
+}

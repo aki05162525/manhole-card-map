@@ -1,0 +1,137 @@
+{
+  "verifiedAt": "2026-11-05T06:37:13.799735+00:00",
+  "targetCount": 43,
+  "candidates": 16,
+  "unresolved": 27,
+  "freshHttpAttempts": 86,
+  "http200": 84,
+  "failedRequests": [
+    "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.files/koiki.pdf",
+    "https://www.city.tomi.nagano.jp/category/soshiki/101437.html"
+  ],
+  "allIdsUniqueAndClassified": true,
+  "fixedInputsUnchanged": true,
+  "referencedHashesVerified": true,
+  "evidenceExactlyGoSevenFields": true,
+  "exactCorrectionsVerified": true,
+  "p05NumericChecks": [
+    {
+      "facilityId": "facility:chubu-east-229e5e47f9803908c4c6",
+      "geojsonExact": true,
+      "gmlLatLng": "35.49681645 138.75432588"
+    },
+    {
+      "facilityId": "facility:chubu-east-240805ae87211fec2017",
+      "geojsonExact": true,
+      "gmlLatLng": "35.55156499 138.90547146"
+    },
+    {
+      "facilityId": "facility:chubu-east-44d29ce20b77b1fda73b",
+      "geojsonExact": true,
+      "gmlLatLng": "36.53027711 138.11688115"
+    },
+    {
+      "facilityId": "facility:chubu-east-4cbef6338a9e2b8c48c2",
+      "geojsonExact": true,
+      "gmlLatLng": "36.12900021 137.86698629"
+    },
+    {
+      "facilityId": "facility:chubu-east-5a0a8e11ba49036a9c1e",
+      "geojsonExact": true,
+      "gmlLatLng": "36.47847749 138.14455238"
+    },
+    {
+      "facilityId": "facility:chubu-east-64b7118a7d922e54371d",
+      "geojsonExact": true,
+      "gmlLatLng": "36.69747711 138.31215113"
+    },
+    {
+      "facilityId": "facility:chubu-east-7d19c697816a714fd233",
+      "geojsonExact": true,
+      "gmlLatLng": "35.55147450 137.87903785"
+    },
+    {
+      "facilityId": "facility:chubu-east-97b67626e4aca3bcd172",
+      "geojsonExact": true,
+      "gmlLatLng": "36.32687366 138.42602488"
+    },
+    {
+      "facilityId": "facility:chubu-east-9861585483eb71552f50",
+      "geojsonExact": true,
+      "gmlLatLng": "36.69747711 138.31215113"
+    },
+    {
+      "facilityId": "facility:chubu-east-98dcd8cc70b2aab9ecb7",
+      "geojsonExact": true,
+      "gmlLatLng": "36.32687366 138.42602488"
+    },
+    {
+      "facilityId": "facility:chubu-east-acd40115c426144e6322",
+      "geojsonExact": true,
+      "gmlLatLng": "36.12900021 137.86698629"
+    },
+    {
+      "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+      "geojsonExact": true,
+      "gmlLatLng": "36.47819439 138.14561078"
+    },
+    {
+      "facilityId": "facility:chubu-east-ba9f34b2c65026c605a0",
+      "geojsonExact": true,
+      "gmlLatLng": "36.06700260 138.04955931"
+    },
+    {
+      "facilityId": "facility:chubu-east-c1dbcbef842ac7914747",
+      "geojsonExact": true,
+      "gmlLatLng": "35.55147450 137.87903785"
+    },
+    {
+      "facilityId": "facility:chubu-tomi-water-counter",
+      "geojsonExact": true,
+      "gmlLatLng": "36.35974344 138.33003184"
+    }
+  ],
+  "uedaOfficialMarkerNumericAndJavascriptCheck": true,
+  "limits": "建物同定は保存原典を読んだAI判断。数値・hash検証は建物外周測量や全市のGIS探索完了を意味しない。",
+  "currentSourceTextChecks": {
+    "https://www.town.fujikawaguchiko.lg.jp/ka/info.php?if_id=6910&ka_id=15": [
+      "生涯学習館",
+      "1754"
+    ],
+    "https://www.city.tsuru.yamanashi.jp/soshiki/somu/houseikouhou_t/1/1776.html": [
+      "配置課",
+      "上下水道課",
+      "上谷一丁目1番1号"
+    ],
+    "https://www.town.obuse.nagano.jp/docs/244999.html": [
+      "1491-2",
+      "宿日直室"
+    ],
+    "https://www.town.nagano-takamori.lg.jp/docs/12584.html": [
+      "2183-1",
+      "環境水道課",
+      "日直室"
+    ],
+    "https://www.city.komoro.lg.jp/official/kurashi_tetsuzuki/jogesuido/gesuido/12271.html": [
+      "市庁舎2階",
+      "市庁舎1階"
+    ],
+    "https://www.city.okaya.lg.jp/soshikikarasagasu/suidoka/483/15244.html": [
+      "幸町8-1",
+      "市役所庁舎4階"
+    ],
+    "https://www.city.tomi.nagano.jp/category/soshikiitiran/101437.html": [
+      "本庁舎西側",
+      "勤労者会館１階"
+    ],
+    "https://www.city.chikuma.lg.jp/soshiki/jogesuido/kanko/1/2041.html": [
+      "上山田文化会館",
+      "三丁目1番地1"
+    ],
+    "https://db.go-nagano.net/topics_detail6/id%3D3402": [
+      "総合観光会館",
+      "2-12-10"
+    ]
+  },
+  "competingP05RecordsVerified": true
+}

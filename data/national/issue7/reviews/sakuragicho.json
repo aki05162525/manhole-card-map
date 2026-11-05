@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "reviewer": "parent-ai",
+  "acceptedFacilityIds": [
+    "facility:kanto-south-7d5b518b29440ef8d976"
+  ],
+  "source": "data/national/issue7/sakuragicho-followup.json",
+  "decisions": [
+    {
+      "facilityId": "facility:kanto-south-7d5b518b29440ef8d976",
+      "decision": "accepted",
+      "scope": "building",
+      "reason": "施設名・電話・住所が対応する施設固有点。独立再評価の公式配置図照合と、親による写真/LOD0重ね合わせ確認に基づき、駅棟近傍の建物代表点として採用する。入口や窓口位置とはしない。外形外約5.44mと測地系明記なしの限界を保持する。",
+      "updateSHA256": "ccac337371c041af5ecf15b4f2beaea43a564c800abbe84206ccc4b5803c172a"
+    }
+  ],
+  "verification": {
+    "sourceHash": true,
+    "jsonLdIdentityAndCoordinate": true,
+    "photoOverlayInspected": true
+  },
+  "documentCodeDiscrepancies": [],
+  "integrationStatus": "adopted-in-manifest"
+}

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-11-05T06:38:51.054816+00:00",
+  "assigned": 27,
+  "candidates": 12,
+  "unresolved": 15,
+  "corrections": 2,
+  "coverage": "27/27; each exactly once",
+  "duplicateIDs": 0,
+  "immutableFilesVerified": 1151,
+  "referencedSnapshotsVerified": 135,
+  "newHTTPAttempts": 91,
+  "newUniqueURLs": 88,
+  "httpSuccess": 90,
+  "numericSourceChecks": "12/12",
+  "evidenceSchema": "7 exact fields",
+  "deterministicRegeneration": true,
+  "trackedChanges": []
+}

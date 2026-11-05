@@ -1,0 +1,162 @@
+[
+  {
+    "locator": "P05-22_43_GML.zip!P05-22_43.geojson#/features/38",
+    "geojsonSHA256": "7a0e3f9b687670b11f3c0bf27c9fc793a9d189749f43f12c11e9d4754c0e6b61",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "43101",
+        "P05_002": "5",
+        "P05_003": "青年会館",
+        "P05_004": "熊本市中央区出水2-7-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7366549,
+          32.78527552
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_43_GML.zip!P05-22_43.geojson#/features/40",
+    "geojsonSHA256": "7a0e3f9b687670b11f3c0bf27c9fc793a9d189749f43f12c11e9d4754c0e6b61",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "43101",
+        "P05_002": "5",
+        "P05_003": "総合体育館",
+        "P05_004": "熊本市中央区出水2-7-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7366229,
+          32.78524352
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_42_GML.zip!P05-22_42.geojson#/features/1500",
+    "geojsonSHA256": "3f7fcd08fc0aa4e8195a8c2f167bc6dbe41a56f466d3314c291ee87c333c5e5f",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "42321",
+        "P05_002": "1",
+        "P05_003": "東彼杵町役場",
+        "P05_004": "東彼杵町蔵本郷1850-6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9172,
+          33.037
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_42_GML.zip!P05-22_42.geojson#/features/1508",
+    "geojsonSHA256": "3f7fcd08fc0aa4e8195a8c2f167bc6dbe41a56f466d3314c291ee87c333c5e5f",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "42321",
+        "P05_002": "2",
+        "P05_003": "役場庁舎西館",
+        "P05_004": "東彼杵町蔵本郷1850-6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.917,
+          33.0372
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/626",
+    "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "1",
+        "P05_003": "霧島市役所",
+        "P05_004": "霧島市国分中央3-45-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.763136,
+          31.741035
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/630",
+    "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "5",
+        "P05_003": "国分シビックセンター",
+        "P05_004": "霧島市国分中央3-45-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.763524,
+          31.7407538
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/632",
+    "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "4",
+        "P05_003": "国分公民館",
+        "P05_004": "霧島市国分中央3-45-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7630829,
+          31.74084032
+        ]
+      }
+    }
+  },
+  {
+    "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/642",
+    "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "5",
+        "P05_003": "多目的ホール",
+        "P05_004": "霧島市国分中央3-45-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7630829,
+          31.74082032
+        ]
+      }
+    }
+  }
+]

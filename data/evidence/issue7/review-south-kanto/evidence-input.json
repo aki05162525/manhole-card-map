@@ -1,0 +1,74 @@
+[
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "sourceLocator": "P05-22_13_GML.zip > P05-22_13.geojson features[1642]; {\"P05_001\": \"13123\", \"P05_002\": \"1\", \"P05_003\": \"江戸川区役所\", \"P05_004\": \"江戸川区中央1-4-1\"}; geometry.coordinates=[経度,緯度]をlat/lngへ組替え。JGD2011 EPSG:6668原値、変換なし。国土交通省 国土数値情報 市町村役場等及び公的集会施設データ（2022年4月）。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが原ZIPの数値と現行公式の名称・住所・入居建物を照合。国土交通省公開施設点の建物代表点利用。入口・室内の実測や現地確認ではない。出典と抽出加工を表示。"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "sourceLocator": "P05-22_14_GML.zip > P05-22_14.geojson features[1159]; {\"P05_001\": \"14213\", \"P05_002\": \"5\", \"P05_003\": \"生涯学習センター\", \"P05_004\": \"大和市大和南1-8-1\"}; geometry.coordinates=[経度,緯度]をlat/lngへ組替え。JGD2011 EPSG:6668原値、変換なし。国土交通省 国土数値情報 市町村役場等及び公的集会施設データ（2022年4月）。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが原ZIPの数値と現行公式の名称・住所・入居建物を照合。国土交通省公開施設点の建物代表点利用。入口・室内の実測や現地確認ではない。出典と抽出加工を表示。"
+  },
+  {
+    "sourceUrl": "https://www.city.itabashi.tokyo.jp/_res/projects/default_project/_page_/001/035/617/131199_public_facility25.csv",
+    "snapshotPath": "data/evidence/issue7/south-kanto/8ad872cbf7eebae0db271544.raw",
+    "snapshotSHA256": "347578b4538e1aa782bb7e53c84cca0a75108f5689af9d50bbd46263354ae8d4",
+    "sourceLocator": "CSV ID=131199000010、名称=情報処理センター、所在地_連結表記=東京都板橋区板橋2-65-6、緯度/経度列。出典：板橋区「公共施設一覧」。CC BY 4.0（掲載ページで対象CSVに明示）、行抽出・字段組替え。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが新取得CSV原値を区現行庁舎案内の情報処理センター6階くらしと観光課と照合。建物代表点であり6階室内位置の測量ではない。原典に測地系明記なし、座標変換なし。"
+  },
+  {
+    "sourceUrl": "https://www.city.urayasu.lg.jp/shisetsu/shikanren/shiyakusho/1005488.html",
+    "snapshotPath": "data/evidence/issue7/south-kanto/bb7a6698c08b1974e6607a10.raw",
+    "snapshotSHA256": "e21d9d76ef2c13e7dc5135e39242408fb1ad992f562b810c25bdaa12d651b012",
+    "sourceLocator": "市役所施設詳細（猫実一丁目1番1号）の地図リンク q=35.653053,139.901982。公式HTML本文中の数値でありGoogle本体からの抽出ではない。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが市の施設詳細原本と固定入力の猫実1-1-1市役所6階を照合。同一庁舎の建物点のみ。旧道路整備課の現在の配布継承は認定せず既存relation/statusを維持。測地系明記なし、変換なし。"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/e146a011-4ebd-4785-83c0-52bb5e2ce26f",
+    "snapshotPath": "data/evidence/issue7/south-kanto/2fd39eb2e8c14f37566f0115.raw",
+    "snapshotSHA256": "47e8b83f5932a5c6759ab11ec40dce1b38e3d7e688c9fe176daaef776794f248",
+    "sourceLocator": "script[type=application/ld+json] @type=LocalBusiness, name=相模湖観光案内所; address.streetAddress=神奈川県相模原市緑区与瀬1183（相模湖駅前）; geo.latitude / geo.longitude。出典：公益社団法人日本観光振興協会 JAPAN47GO（自治体・観光協会共同運営）。2数値を抽出、原値の変換なし。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが個別施設GeoCoordinatesと市・運営者の現行名称・所在地・電話等を照合。Google地図本体から抽出せず、DB施設点を建物案内用に使用。原本全体の転載やDB一括再利用の許諾を認定したものではない。測地系明記なし。"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/1a08e49c-2ea2-4abc-8b17-767b1236c02d",
+    "snapshotPath": "data/evidence/issue7/south-kanto/594df656136ae6cb185a9b16.raw",
+    "snapshotSHA256": "17a71445a6e58c676d66f6d2de21c883b239d756c6c0c92bb77fa44659777803",
+    "sourceLocator": "script[type=application/ld+json] @type=LocalBusiness, name=三浦市観光インフォメーションセンター; address.streetAddress=神奈川県三浦市南下浦町上宮田1450-4; geo.latitude / geo.longitude。出典：公益社団法人日本観光振興協会 JAPAN47GO（自治体・観光協会共同運営）。2数値を抽出、原値の変換なし。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが個別施設GeoCoordinatesと市・運営者の現行名称・所在地・電話等を照合。Google地図本体から抽出せず、DB施設点を建物案内用に使用。原本全体の転載やDB一括再利用の許諾を認定したものではない。測地系明記なし。"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/4ef140be-042f-4b36-b9f1-2a0b0f45bf26",
+    "snapshotPath": "data/evidence/issue7/south-kanto/bc9e265d32a9b60738a3a58f.raw",
+    "snapshotSHA256": "f500d5a71b39b8590023d38d3e8d7e9224b9eea6adf726a30d4bda110611cc9b",
+    "sourceLocator": "script[type=application/ld+json] @type=LocalBusiness, name=茅ヶ崎市観光案内所; address.streetAddress=神奈川県茅ヶ崎市元町1-1; geo.latitude / geo.longitude。出典：公益社団法人日本観光振興協会 JAPAN47GO（自治体・観光協会共同運営）。2数値を抽出、原値の変換なし。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが個別施設GeoCoordinatesと市・運営者の現行名称・所在地・電話等を照合。Google地図本体から抽出せず、DB施設点を建物案内用に使用。原本全体の転載やDB一括再利用の許諾を認定したものではない。測地系明記なし。"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/a0fb6c4c-f3eb-4fd3-8b84-681c45b66e5a",
+    "snapshotPath": "data/evidence/issue7/south-kanto/9e1fa2f9b4f28dfb07c27fbf.raw",
+    "snapshotSHA256": "f9f530e88dc7b8915b0fcf5ca561c406d3d2f2cc3de877b222f23894ee32c88b",
+    "sourceLocator": "script[type=application/ld+json] LocalBusiness=秦野駅観光案内所; 大秦町1-1; telephone=0463-80-2303; geo.latitude/geo.longitude。出典：日本観光振興協会 JAPAN47GO。2数値を抽出し変換なし。",
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "AIが市配布案内・運営者の大秦町1-1小田急マルシェ秦野1階とDBの名称・住所・電話を照合。建物代表点であり入口・室内の測量ではない。原典に測地系明記なし。原本全文の公開許諾は認定しない。"
+  }
+]

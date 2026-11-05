@@ -1,0 +1,1354 @@
+[
+  {
+    "facilityId": "facility:cs-03ecde6c69b7676882",
+    "reason": "坂出市の塩業資料館公式案内を確認したが、住所と対応する数値目的地を得られなかった。",
+    "nextSource": {
+      "url": "https://www.city.sakaide.lg.jp/soshiki/tosiseibi/manholecard.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.sakaide.lg.jp/soshiki/tosiseibi/manholecard.html",
+        "snapshotPath": "data/evidence/issue5/west-south/37100fbec8d8c7ddd9924af33d472a0a3d5742ac9b903faf7d0c8051a3cc8f0b.html",
+        "snapshotSHA256": "37100fbec8d8c7ddd9924af33d472a0a3d5742ac9b903faf7d0c8051a3cc8f0b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-37100fbec8d8c7ddd992.html",
+        "fetchedAt": "2026-11-05T04:24:38.085727+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.sakaide.lg.jp/soshiki/bunkashinkou/engyou-musium.html",
+        "snapshotPath": "data/evidence/issue5/west-south/da6c0685f036870057c76d5aa5a7f940b0f63f0e4d3a254cc42b67354a23e729.html",
+        "snapshotSHA256": "da6c0685f036870057c76d5aa5a7f940b0f63f0e4d3a254cc42b67354a23e729",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-da6c0685f036870057c7.html",
+        "fetchedAt": "2026-11-05T04:24:42.567884+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-03ecde6c69b7676882"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-03ecde6c69b7676882"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-0a3fd9d830063e2ad7",
+    "reason": "2022年6月の新庁舎移転を確認。P05基準時点2022年4月の役場点を現栄町3-3-95へ無検証で流用せず、町施設マップのinitLat/Lngも表示中心なので保留。 今回再取得した新庁舎案内でも2022年移転を確認。P05基準2022年4月より後の移転であり、旧点の流用は不可。",
+    "nextSource": {
+      "url": "https://www.town.tadotsu.kagawa.jp/soshikikarasagasu/kensetsuka/gesuido/583.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/soshikikarasagasu/kensetsuka/gesuido/583.html",
+        "snapshotPath": "data/evidence/issue5/west-south/da07a3d05bbe8c7a170aec0ec97aa6e493417ea3408ade34872d8582aab7edf3.html",
+        "snapshotSHA256": "da07a3d05bbe8c7a170aec0ec97aa6e493417ea3408ade34872d8582aab7edf3",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-da07a3d05bbe8c7a170a.html",
+        "fetchedAt": "2026-11-05T04:24:42.487182+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/",
+        "snapshotPath": "data/evidence/issue5/west-south/655823437924d039c2514b809f9f9ae0bbbdbc237ef78f0a068299356107fc65.html",
+        "snapshotSHA256": "655823437924d039c2514b809f9f9ae0bbbdbc237ef78f0a068299356107fc65",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/43da500001c31dad3ab6.html",
+        "fetchedAt": "2026-11-05T04:50:48.835714+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+        "snapshotPath": "data/evidence/issue5/west-south/396d7971a6822ba93d26d425be33f010b652f9d1a2293523939150e9c3977de7.html",
+        "snapshotSHA256": "396d7971a6822ba93d26d425be33f010b652f9d1a2293523939150e9c3977de7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/f83c51f621bf72d20471.html",
+        "fetchedAt": "2026-11-05T04:56:44.328597+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/shisetsu_map.html",
+        "snapshotPath": "data/evidence/issue5/west-south/085ead0694cee76a7593ed39ee1816ca18f34ad7ad7fe3326732705f1da23745.html",
+        "snapshotSHA256": "085ead0694cee76a7593ed39ee1816ca18f34ad7ad7fe3326732705f1da23745",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/4c7c4926abca93591fce.html",
+        "fetchedAt": "2026-11-05T04:56:45.764233+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+        "snapshotPath": "data/evidence/issue5/west-south/e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2.bin",
+        "snapshotSHA256": "e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2",
+        "fetchedAt": "2026-11-05T05:46:24.037029+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-0a3fd9d830063e2ad7"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-0a3fd9d830063e2ad7"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-1da8c893b7e0da18dd",
+    "reason": "丸亀市下水道課の施設案内を調べたが、昭和町21-1の浄化センター建物点を確認できなかった。市役所とは別施設。",
+    "nextSource": {
+      "url": "https://www.city.marugame.lg.jp/page/1402.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.marugame.lg.jp/page/1402.html",
+        "snapshotPath": "data/evidence/issue5/west-south/849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313.html",
+        "snapshotSHA256": "849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-849286cb0f3b1c1437fb.html",
+        "fetchedAt": "2026-11-05T04:24:35.753396+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.marugame.lg.jp/soshiki/25/",
+        "snapshotPath": "data/evidence/issue5/west-south/dc54bedd630dd089f5abe58872284d8c2ee4d664f728560650c45c4c41544fc6.html",
+        "snapshotSHA256": "dc54bedd630dd089f5abe58872284d8c2ee4d664f728560650c45c4c41544fc6",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/fa7d7aec3acadf0a8d67.html",
+        "fetchedAt": "2026-11-05T04:50:50.429547+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-1da8c893b7e0da18dd"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-1da8c893b7e0da18dd"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-1fe04097ed447030ce",
+    "reason": "県の旧吉野川浄化センター紹介を取得したが、管理・配布建物を示す数値地点を確認できなかった。",
+    "nextSource": {
+      "url": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+        "snapshotPath": "data/evidence/issue5/west-south/4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7.html",
+        "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4c1ef4874e861cb4b420.html",
+        "fetchedAt": "2026-11-05T04:26:33.474155+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.pref.tokushima.lg.jp/ippannokata/kurashi/shizen/7205286/",
+        "snapshotPath": "data/evidence/issue5/west-south/be4bdf0cb24cdd561e79502a4ecf9dfb2be7326daee7713ba1c90e1cc5f96b53.html",
+        "snapshotSHA256": "be4bdf0cb24cdd561e79502a4ecf9dfb2be7326daee7713ba1c90e1cc5f96b53",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/6cad5564d3b4640bad96.html",
+        "fetchedAt": "2026-11-05T04:50:46.436058+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-1fe04097ed447030ce"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-1fe04097ed447030ce"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-256deac4b524a7a91a",
+    "reason": "県の高須浄化センター案内を確認したが、見学・配布建物の数値地点を得られなかった。",
+    "nextSource": {
+      "url": "https://www.pref.kochi.lg.jp/soshiki/171801/card.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.pref.kochi.lg.jp/soshiki/171801/card.html",
+        "snapshotPath": "data/evidence/issue5/west-south/013369c8935bca287f9f2fe96fc1d91a257eb73e743ec3b5b444ae974c3f4ed1.html",
+        "snapshotSHA256": "013369c8935bca287f9f2fe96fc1d91a257eb73e743ec3b5b444ae974c3f4ed1",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-013369c8935bca287f9f.html",
+        "fetchedAt": "2026-11-05T04:24:56.704656+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.pref.kochi.lg.jp/doc/2016061000215/",
+        "snapshotPath": "data/evidence/issue5/west-south/247cd7c0152eaaea348a83f2430a2f92e8c4247cce764de2cce01d566cf229e1.html",
+        "snapshotSHA256": "247cd7c0152eaaea348a83f2430a2f92e8c4247cce764de2cce01d566cf229e1",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/47f822dcef0410ea656e.html",
+        "fetchedAt": "2026-11-05T04:50:51.689758+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-256deac4b524a7a91a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-256deac4b524a7a91a"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-403952f78c6d18a261",
+    "reason": "同じ丸亀城内観光案内所の別facilityId。公式の城内地図はpb表示中心のみで、建物点として採用できない。",
+    "nextSource": {
+      "url": "https://www.city.marugame.lg.jp/page/1402.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.marugame.lg.jp/page/1402.html",
+        "snapshotPath": "data/evidence/issue5/west-south/849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313.html",
+        "snapshotSHA256": "849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-849286cb0f3b1c1437fb.html",
+        "fetchedAt": "2026-11-05T04:24:35.753396+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.love-marugame.jp/office",
+        "snapshotPath": "data/evidence/issue5/west-south/9d7e781ae7c7a0f70d84f54a07d7525b3cd517b208292cfabb6f92947cfca556.html",
+        "snapshotSHA256": "9d7e781ae7c7a0f70d84f54a07d7525b3cd517b208292cfabb6f92947cfca556",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9d7e781ae7c7a0f70d84.html",
+        "fetchedAt": "2026-11-05T04:24:32.130211+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-403952f78c6d18a261"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-403952f78c6d18a261"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-4273f7af29262d7c74",
+    "reason": "香美市の明示マーカーは「龍河洞」自体の地点で、龍河洞観光センター建物とは区別できないため採用しない。",
+    "nextSource": {
+      "url": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+        "snapshotPath": "data/evidence/issue5/west-south/2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0.pdf",
+        "snapshotSHA256": "2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-2d55fc017eb8c0a1ac19.pdf",
+        "fetchedAt": "2026-11-05T04:26:34.843835+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.kami.lg.jp/map/ryugado.html",
+        "snapshotPath": "data/evidence/issue5/west-south/b34c660aedabe6363418ca2b1a4d968e787da9f9f58c84b66af19ea0cfe382ee.html",
+        "snapshotSHA256": "b34c660aedabe6363418ca2b1a4d968e787da9f9f58c84b66af19ea0cfe382ee",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/0034d8502c901c21ac68.html",
+        "fetchedAt": "2026-11-05T04:50:52.491690+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.kami.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "snapshotPath": "data/evidence/issue5/west-south/702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429.html",
+        "snapshotSHA256": "702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/428ecea915c99f2a8108.html",
+        "fetchedAt": "2026-11-05T04:52:30.404545+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-4273f7af29262d7c74"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-4273f7af29262d7c74"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-51f8a875d8e4c4dd9f",
+    "reason": "公式アクセスの地図はpb表示中心。JSにはdata-lat/lngからMarkerを作る処理があるが当該ページの施設値を確認できないため不採用。",
+    "nextSource": {
+      "url": "https://www.city.toon.ehime.jp/soshiki/15/2003.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.toon.ehime.jp/soshiki/15/2003.html",
+        "snapshotPath": "data/evidence/issue5/west-south/7e7388629fed2e0f6a89db2b039827b81c108d9d8c31342c1d42d2e6a897537c.html",
+        "snapshotSHA256": "7e7388629fed2e0f6a89db2b039827b81c108d9d8c31342c1d42d2e6a897537c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-7e7388629fed2e0f6a89.html",
+        "fetchedAt": "2026-11-05T04:24:51.564561+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://art-village-toon.jp/access/",
+        "snapshotPath": "data/evidence/issue5/west-south/b071ee6c5098827491b828310db1f3ea0f1c44659cf5770bd9869e30595cd5bb.html",
+        "snapshotSHA256": "b071ee6c5098827491b828310db1f3ea0f1c44659cf5770bd9869e30595cd5bb",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/ba806ebbac4ec196ad2f.html",
+        "fetchedAt": "2026-11-05T04:50:51.404421+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://art-village-toon.jp/js/map.view.js",
+        "snapshotPath": "data/evidence/issue5/west-south/7e2fa0ece6972bb1b14dd221720c1da3eaa434536dbfe33ace7406741b69bf3d.html",
+        "snapshotSHA256": "7e2fa0ece6972bb1b14dd221720c1da3eaa434536dbfe33ace7406741b69bf3d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/fa6abe21d2c213b2a66f.html",
+        "fetchedAt": "2026-11-05T04:52:29.712391+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-51f8a875d8e4c4dd9f"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-51f8a875d8e4c4dd9f"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-53a83a0263666dddd1",
+    "reason": "海陽町観光協会公式を調べたが、当該事務所の明示数値目的地を確認できなかった。",
+    "nextSource": {
+      "url": "https://www.town.kaiyo.lg.jp/docs/2024071800015/",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.town.kaiyo.lg.jp/docs/2024071800015/",
+        "snapshotPath": "data/evidence/issue5/west-south/29856923d9a6d360545e8e756af3916f286cedded5252b00bd66249a5bf5656e.html",
+        "snapshotSHA256": "29856923d9a6d360545e8e756af3916f286cedded5252b00bd66249a5bf5656e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-29856923d9a6d360545e.html",
+        "fetchedAt": "2026-11-05T04:24:27.457832+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kaiyo-kankou.jp/",
+        "snapshotPath": "data/evidence/issue5/west-south/9a12528644878c00da7e8a0b437795aabc9873384a87eaab40ce491118850b62.html",
+        "snapshotSHA256": "9a12528644878c00da7e8a0b437795aabc9873384a87eaab40ce491118850b62",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9a12528644878c00da7e.html",
+        "fetchedAt": "2026-11-05T04:24:27.285187+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-53a83a0263666dddd1"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-53a83a0263666dddd1"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-5b94c854a92178a084",
+    "reason": "徳島市上下水道局の公式アクセスは複数施設のpb埋込。お客さまセンターの建物点を表示中心と区別して確定できなかった。",
+    "nextSource": {
+      "url": "https://www.city.tokushima.tokushima.jp/jogesuidokyoku/customer/pr/gesui-manhole.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.tokushima.tokushima.jp/jogesuidokyoku/customer/pr/gesui-manhole.html",
+        "snapshotPath": "data/evidence/issue5/west-south/03ff0b8762ec7b35eafbed3d5793181a8b7fca0b496d0e6d39c7202d47b04c68.html",
+        "snapshotSHA256": "03ff0b8762ec7b35eafbed3d5793181a8b7fca0b496d0e6d39c7202d47b04c68",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-03ff0b8762ec7b35eafb.html",
+        "fetchedAt": "2026-11-05T04:24:25.400401+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.tokushima.tokushima.jp/jogesuidokyoku/introduction/sosiki/access.html",
+        "snapshotPath": "data/evidence/issue5/west-south/5978a38e8c879b09863bc4708b33ce9d940debc83aedcaa9569fbb9b158e165e.html",
+        "snapshotSHA256": "5978a38e8c879b09863bc4708b33ce9d940debc83aedcaa9569fbb9b158e165e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/72503d04da6122ebdb21.html",
+        "fetchedAt": "2026-11-05T04:50:47.131252+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-5b94c854a92178a084"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-5b94c854a92178a084"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-5bd7b7e3810ea3b76e",
+    "reason": "高知市の海老ノ丸ポンプ場配布案内を確認したが、2階事務所のある建物を示す数値目的地を得られなかった。",
+    "nextSource": {
+      "url": "https://www.city.kochi.kochi.jp/soshiki/91/manhole-card.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kochi.kochi.jp/soshiki/91/manhole-card.html",
+        "snapshotPath": "data/evidence/issue5/west-south/3424eaf1e10d8f4bf66061f552fca9055e2e07d11e2ace93426a9c39e54bc560.html",
+        "snapshotSHA256": "3424eaf1e10d8f4bf66061f552fca9055e2e07d11e2ace93426a9c39e54bc560",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-3424eaf1e10d8f4bf660.html",
+        "fetchedAt": "2026-11-05T04:26:31.289044+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-5bd7b7e3810ea3b76e"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-5bd7b7e3810ea3b76e"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-5d99918e1ea4d0b991",
+    "reason": "須崎市観光協会の公式施設情報を取得したが、現事務所の数値地点を確認できなかった。",
+    "nextSource": {
+      "url": "https://www.city.susaki.lg.jp/life/detail.php?hdnKey=3990",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.susaki.lg.jp/life/detail.php?hdnKey=3990",
+        "snapshotPath": "data/evidence/issue5/west-south/f7743fed84a1ccb94bafd7fc2aab7b5c93203d79271129c6f72f1e35f160715c.html",
+        "snapshotSHA256": "f7743fed84a1ccb94bafd7fc2aab7b5c93203d79271129c6f72f1e35f160715c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-f7743fed84a1ccb94baf.html",
+        "fetchedAt": "2026-11-05T04:24:54.119698+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://sta2020.com/susaki_info/tourism/8789/",
+        "snapshotPath": "data/evidence/issue5/west-south/b2a961cc84e3d4f10a26f53a321fa4b6f064cae6a00657cee4f852209a814a48.html",
+        "snapshotSHA256": "b2a961cc84e3d4f10a26f53a321fa4b6f064cae6a00657cee4f852209a814a48",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/01ca2f3d0e10a88af259.html",
+        "fetchedAt": "2026-11-05T04:50:51.924587+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-5d99918e1ea4d0b991"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-5d99918e1ea4d0b991"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-66c4c4fbd8f914efac",
+    "reason": "モール公式アクセスはpb表示中心のみ。建物代表点としても独立した明示座標が確認できず、1階カウンター位置は推定しない。",
+    "nextSource": {
+      "url": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+        "snapshotPath": "data/evidence/issue5/west-south/13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a.html",
+        "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-13646e7f7ab2d18d537d.html",
+        "fetchedAt": "2026-11-05T04:26:35.277238+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://imabarishintoshi.aeonmall.jp/access",
+        "snapshotPath": "data/evidence/issue5/west-south/a8649309cef794b5f10a1c0a76aece7ebaf44c97c8a6dd1ece85b2174744f018.html",
+        "snapshotSHA256": "a8649309cef794b5f10a1c0a76aece7ebaf44c97c8a6dd1ece85b2174744f018",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3cc421011feffd87ab3f.html",
+        "fetchedAt": "2026-11-05T04:50:49.330048+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-66c4c4fbd8f914efac"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-66c4c4fbd8f914efac"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-93122d3bc481983632",
+    "reason": "宿直室は新庁舎内。移転前時点のP05と町マップの表示中心だけでは新建物を確定できず、2階建設課と同様に保留。 今回再取得した新庁舎案内でも2022年移転を確認。P05基準2022年4月より後の移転であり、旧点の流用は不可。",
+    "nextSource": {
+      "url": "https://www.town.tadotsu.kagawa.jp/soshikikarasagasu/kensetsuka/gesuido/583.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/soshikikarasagasu/kensetsuka/gesuido/583.html",
+        "snapshotPath": "data/evidence/issue5/west-south/da07a3d05bbe8c7a170aec0ec97aa6e493417ea3408ade34872d8582aab7edf3.html",
+        "snapshotSHA256": "da07a3d05bbe8c7a170aec0ec97aa6e493417ea3408ade34872d8582aab7edf3",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-da07a3d05bbe8c7a170a.html",
+        "fetchedAt": "2026-11-05T04:24:42.487182+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/",
+        "snapshotPath": "data/evidence/issue5/west-south/655823437924d039c2514b809f9f9ae0bbbdbc237ef78f0a068299356107fc65.html",
+        "snapshotSHA256": "655823437924d039c2514b809f9f9ae0bbbdbc237ef78f0a068299356107fc65",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/43da500001c31dad3ab6.html",
+        "fetchedAt": "2026-11-05T04:50:48.835714+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+        "snapshotPath": "data/evidence/issue5/west-south/396d7971a6822ba93d26d425be33f010b652f9d1a2293523939150e9c3977de7.html",
+        "snapshotSHA256": "396d7971a6822ba93d26d425be33f010b652f9d1a2293523939150e9c3977de7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/f83c51f621bf72d20471.html",
+        "fetchedAt": "2026-11-05T04:56:44.328597+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/shisetsu_map.html",
+        "snapshotPath": "data/evidence/issue5/west-south/085ead0694cee76a7593ed39ee1816ca18f34ad7ad7fe3326732705f1da23745.html",
+        "snapshotSHA256": "085ead0694cee76a7593ed39ee1816ca18f34ad7ad7fe3326732705f1da23745",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/4c7c4926abca93591fce.html",
+        "fetchedAt": "2026-11-05T04:56:45.764233+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.tadotsu.kagawa.jp/kakuka_tyousya/2370.html",
+        "snapshotPath": "data/evidence/issue5/west-south/e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2.bin",
+        "snapshotSHA256": "e999251be5f8625228090e7114e8a332761aa7ffcb2fb34e165a0377b1e66dd2",
+        "fetchedAt": "2026-11-05T05:46:24.037029+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-93122d3bc481983632"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-93122d3bc481983632"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+    "reason": "og:localityとog:latitude,og:longitudeはウェルピア伊予全体の位置メタデータ。複合宿泊・スポーツ施設のどの受付建物に対応するか未確認。",
+    "nextSource": {
+      "url": "https://www.city.iyo.lg.jp/gesuidou/mannho-ruka-do.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.iyo.lg.jp/gesuidou/mannho-ruka-do.html",
+        "snapshotPath": "data/evidence/issue5/west-south/2d5832ab2549b04121827337653e155f0c97b32c376cc85768eb22b042deb08c.html",
+        "snapshotSHA256": "2d5832ab2549b04121827337653e155f0c97b32c376cc85768eb22b042deb08c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-2d5832ab2549b0412182.html",
+        "fetchedAt": "2026-11-05T04:24:48.830072+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://welpiaiyo.jp/",
+        "snapshotPath": "data/evidence/issue5/west-south/7b8209db443b7108701bb807cc09958ba1337d3017f1166af62de2062dd37c70.html",
+        "snapshotSHA256": "7b8209db443b7108701bb807cc09958ba1337d3017f1166af62de2062dd37c70",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-7b8209db443b7108701b.html",
+        "fetchedAt": "2026-11-05T04:24:48.381494+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-966cf6f4a303ce7b1c"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-966cf6f4a303ce7b1c"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-966cf6f4a303ce7b1c"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ba24f603e6bac38d9e",
+    "reason": "香川県下水道公社の施設一覧を確認したが、金倉川浄化センターの配布建物を指定する数値地点は未確認。大束川の点は流用しない。",
+    "nextSource": {
+      "url": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+        "snapshotPath": "data/evidence/issue5/west-south/e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b.html",
+        "snapshotSHA256": "e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-e327c54d70131ef8be61.html",
+        "fetchedAt": "2026-11-05T04:26:32.571674+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/59/",
+        "snapshotPath": "data/evidence/issue5/west-south/eac345c6559b580d24ec8bf121dd35c59a5f9624f3e1b8f51b402348ac0e487d.html",
+        "snapshotSHA256": "eac345c6559b580d24ec8bf121dd35c59a5f9624f3e1b8f51b402348ac0e487d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3920f50b0c884c986d62.html",
+        "fetchedAt": "2026-11-05T04:50:47.415945+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ba24f603e6bac38d9e"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ba24f603e6bac38d9e"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-c39121867e5e6927e2",
+    "reason": "旧三浦邸のギャラリー公式案内の地図はpb表示中心のみ。旧邸建物の座標としての根拠が不足。",
+    "nextSource": {
+      "url": "https://www.city.susaki.lg.jp/life/detail.php?hdnKey=3990",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.susaki.lg.jp/life/detail.php?hdnKey=3990",
+        "snapshotPath": "data/evidence/issue5/west-south/f7743fed84a1ccb94bafd7fc2aab7b5c93203d79271129c6f72f1e35f160715c.html",
+        "snapshotSHA256": "f7743fed84a1ccb94bafd7fc2aab7b5c93203d79271129c6f72f1e35f160715c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-f7743fed84a1ccb94baf.html",
+        "fetchedAt": "2026-11-05T04:24:54.119698+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://machikado-gallery.com/about",
+        "snapshotPath": "data/evidence/issue5/west-south/f8153faeb7098d899ef9fd16a4fd777e9a3e95800e20c880851a971c7f2fddc7.html",
+        "snapshotSHA256": "f8153faeb7098d899ef9fd16a4fd777e9a3e95800e20c880851a971c7f2fddc7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/27d4a091e0a5ee6d4c37.html",
+        "fetchedAt": "2026-11-05T04:50:52.053433+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-c39121867e5e6927e2"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-c39121867e5e6927e2"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-c43792fd530ad920ed",
+    "reason": "ミュージアム公式アクセスのGoogle埋込は広い表示範囲の中心値で、建物地点と証明できない。",
+    "nextSource": {
+      "url": "https://www.city.niihama.lg.jp/site/waterandsewage-public/manhole-card.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.niihama.lg.jp/site/waterandsewage-public/manhole-card.html",
+        "snapshotPath": "data/evidence/issue5/west-south/39076a42f2d988abf020ef376d2d42fa42c4d21a09dfdd64af50e1b6877df204.html",
+        "snapshotSHA256": "39076a42f2d988abf020ef376d2d42fa42c4d21a09dfdd64af50e1b6877df204",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-39076a42f2d988abf020.html",
+        "fetchedAt": "2026-11-05T04:32:22.944684+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://akaganemuseum.jp/access",
+        "snapshotPath": "data/evidence/issue5/west-south/16fd20cc0b845f0266c9ada20fbdecb4408c08290bd232f728ba0fe50eecbe00.html",
+        "snapshotSHA256": "16fd20cc0b845f0266c9ada20fbdecb4408c08290bd232f728ba0fe50eecbe00",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/d1f4def713d1c6cff775.html",
+        "fetchedAt": "2026-11-05T04:50:50.221051+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-c43792fd530ad920ed"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-c43792fd530ad920ed"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-c7eae2022b55200128",
+    "reason": "香川県下水道公社の施設一覧を確認したが、大束川浄化センターの配布建物を示す数値地点は得られなかった。",
+    "nextSource": {
+      "url": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+        "snapshotPath": "data/evidence/issue5/west-south/e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b.html",
+        "snapshotSHA256": "e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-e327c54d70131ef8be61.html",
+        "fetchedAt": "2026-11-05T04:26:32.571674+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/59/",
+        "snapshotPath": "data/evidence/issue5/west-south/eac345c6559b580d24ec8bf121dd35c59a5f9624f3e1b8f51b402348ac0e487d.html",
+        "snapshotSHA256": "eac345c6559b580d24ec8bf121dd35c59a5f9624f3e1b8f51b402348ac0e487d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3920f50b0c884c986d62.html",
+        "fetchedAt": "2026-11-05T04:50:47.415945+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-c7eae2022b55200128"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-c7eae2022b55200128"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-c859f2f66b0d2b847c",
+    "reason": "月見ヶ丘海浜公園公式アクセスを調べたが、広い公園の代表点と配布建物を区別する数値根拠が不足。",
+    "nextSource": {
+      "url": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+        "snapshotPath": "data/evidence/issue5/west-south/4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7.html",
+        "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4c1ef4874e861cb4b420.html",
+        "fetchedAt": "2026-11-05T04:26:33.474155+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.tsukimigaoka.com/access/index.html",
+        "snapshotPath": "data/evidence/issue5/west-south/814e80327b96c238237e1fc3fdbfc4fd8d29b91bc083cfc05c6bc8462da39d0e.html",
+        "snapshotSHA256": "814e80327b96c238237e1fc3fdbfc4fd8d29b91bc083cfc05c6bc8462da39d0e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/8acdced71c18e4aeb9c0.html",
+        "fetchedAt": "2026-11-05T04:50:47.019943+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-c859f2f66b0d2b847c"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-c859f2f66b0d2b847c"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-d14ceddc7ade5a7e6a",
+    "reason": "道の駅一覧の美良布全体qと所在地1211は一致するが、韮生の里美良布直販店の建物を選ぶ根拠が不足。道の駅全体を店舗別棟の点にしない。",
+    "nextSource": {
+      "url": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+        "snapshotPath": "data/evidence/issue5/west-south/2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0.pdf",
+        "snapshotSHA256": "2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-2d55fc017eb8c0a1ac19.pdf",
+        "fetchedAt": "2026-11-05T04:26:34.843835+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.michi-no-eki.jp/stations/views/19679",
+        "snapshotPath": "data/evidence/issue5/west-south/5dc762c251059d0e0da1aeb78507910c284272a86ec7f63a0dee454874063394.html",
+        "snapshotSHA256": "5dc762c251059d0e0da1aeb78507910c284272a86ec7f63a0dee454874063394",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/a6dd746b42c25672582e.html",
+        "fetchedAt": "2026-11-05T04:50:53.024073+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-d14ceddc7ade5a7e6a"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-d14ceddc7ade5a7e6a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-d14ceddc7ade5a7e6a"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-dd7eb1d2869acfbc00",
+    "reason": "鳴門市うずしお観光協会公式を調べたが、事務所の建物の明示座標を得られなかった。観光情報センターの別地点は流用しない。",
+    "nextSource": {
+      "url": "https://www.city.naruto.tokushima.jp/kurashi/sumai/suido/gesuido/manholecard.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.naruto.tokushima.jp/kurashi/sumai/suido/gesuido/manholecard.html",
+        "snapshotPath": "data/evidence/issue5/west-south/d26fd04dec43dcb7ff56fa11e887cec38b84acbf8fbf5487256ecea98f2270c7.html",
+        "snapshotSHA256": "d26fd04dec43dcb7ff56fa11e887cec38b84acbf8fbf5487256ecea98f2270c7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-d26fd04dec43dcb7ff56.html",
+        "fetchedAt": "2026-11-05T04:24:36.449383+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.naruto-kankou.jp/",
+        "snapshotPath": "data/evidence/issue5/west-south/5e3bacbeff70d6d7951d60e19624f2fd874183151d51423f2dfd1d7c2b473d77.html",
+        "snapshotSHA256": "5e3bacbeff70d6d7951d60e19624f2fd874183151d51423f2dfd1d7c2b473d77",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-5e3bacbeff70d6d7951d.html",
+        "fetchedAt": "2026-11-05T04:24:28.383420+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-dd7eb1d2869acfbc00"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-dd7eb1d2869acfbc00"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-e908bad62bf5a18ac0",
+    "reason": "観光協会の城内案内所案内にはpb表示中心のみ。丸亀駅の観光案内所や城全体の代表点と区別できる明示座標が未確認。",
+    "nextSource": {
+      "url": "https://www.city.marugame.lg.jp/page/1402.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.marugame.lg.jp/page/1402.html",
+        "snapshotPath": "data/evidence/issue5/west-south/849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313.html",
+        "snapshotSHA256": "849286cb0f3b1c1437fb64d569587c4cb9ef048be062bcd153800e46669b3313",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-849286cb0f3b1c1437fb.html",
+        "fetchedAt": "2026-11-05T04:24:35.753396+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.love-marugame.jp/office",
+        "snapshotPath": "data/evidence/issue5/west-south/9d7e781ae7c7a0f70d84f54a07d7525b3cd517b208292cfabb6f92947cfca556.html",
+        "snapshotSHA256": "9d7e781ae7c7a0f70d84f54a07d7525b3cd517b208292cfabb6f92947cfca556",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9d7e781ae7c7a0f70d84.html",
+        "fetchedAt": "2026-11-05T04:24:32.130211+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-e908bad62bf5a18ac0"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-e908bad62bf5a18ac0"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ef53a3d23bf2f8f4f2",
+    "reason": "県バリアフリー観光施設詳細の地図qは施設名と住所文字列。かみんか建物の数値目的地は未取得で、住所代表点を作らない。",
+    "nextSource": {
+      "url": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+        "snapshotPath": "data/evidence/issue5/west-south/2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0.pdf",
+        "snapshotSHA256": "2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-2d55fc017eb8c0a1ac19.pdf",
+        "fetchedAt": "2026-11-05T04:26:34.843835+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://kochitourism-barrierfree.jp/det.php?i=423",
+        "snapshotPath": "data/evidence/issue5/west-south/5aecfcceba2b39742ae4f53bda1ccbd1e69af8ad88cf70cc1d154c3f43c2767f.html",
+        "snapshotSHA256": "5aecfcceba2b39742ae4f53bda1ccbd1e69af8ad88cf70cc1d154c3f43c2767f",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/f9d34c8016a15c22dc6d.html",
+        "fetchedAt": "2026-11-05T04:50:52.793044+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ef53a3d23bf2f8f4f2"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ef53a3d23bf2f8f4f2"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-f23124a8f6d7059054",
+    "reason": "観音寺市の大正橋プラザ施設詳細はpb表示中心を含む地図。場所リンクの@表示中心を地点座標として採用しない。",
+    "nextSource": {
+      "url": "https://www.city.kanonji.kagawa.jp/soshiki/26/18252.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kanonji.kagawa.jp/soshiki/26/18252.html",
+        "snapshotPath": "data/evidence/issue5/west-south/af60e3356dafdf4b8c5d78f09e66a9b9e407c0d77ad1fc151c9c36fdfe1c6c82.html",
+        "snapshotSHA256": "af60e3356dafdf4b8c5d78f09e66a9b9e407c0d77ad1fc151c9c36fdfe1c6c82",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-af60e3356dafdf4b8c5d.html",
+        "fetchedAt": "2026-11-05T04:24:38.968060+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.kanonji.kagawa.jp/soshiki/21/355.html",
+        "snapshotPath": "data/evidence/issue5/west-south/88e90bc9fdfc31fb1ceaf5c9e7256c931e5c4bdf228e3e45ff0c8ad0157ca376.html",
+        "snapshotSHA256": "88e90bc9fdfc31fb1ceaf5c9e7256c931e5c4bdf228e3e45ff0c8ad0157ca376",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/76b037414a02f10aa102.html",
+        "fetchedAt": "2026-11-05T04:50:48.427774+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-f23124a8f6d7059054"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-f23124a8f6d7059054"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-f48988ec217d052e92",
+    "reason": "端出場エリア（立川町707-3）と東平エリア（654-3）は識別でき、本館1階チケット売り場も同定できる。しかし観光ページの施設全体qから本館への対応は証明されていない。",
+    "nextSource": {
+      "url": "https://www.city.niihama.lg.jp/site/waterandsewage-public/manhole-card.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.niihama.lg.jp/site/waterandsewage-public/manhole-card.html",
+        "snapshotPath": "data/evidence/issue5/west-south/39076a42f2d988abf020ef376d2d42fa42c4d21a09dfdd64af50e1b6877df204.html",
+        "snapshotSHA256": "39076a42f2d988abf020ef376d2d42fa42c4d21a09dfdd64af50e1b6877df204",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-39076a42f2d988abf020.html",
+        "fetchedAt": "2026-11-05T04:32:22.944684+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.iyokannet.jp/spot/1710",
+        "snapshotPath": "data/evidence/issue5/west-south/3077e95c7aa84577c7eceb8c4085f729c0eb9f45c42ad2302ff1e59fb2b8db0e.html",
+        "snapshotSHA256": "3077e95c7aa84577c7eceb8c4085f729c0eb9f45c42ad2302ff1e59fb2b8db0e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/fa1c6fc4de1485b264a1.html",
+        "fetchedAt": "2026-11-05T04:52:32.873870+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://besshi.com/access/",
+        "snapshotPath": "data/evidence/issue5/west-south/a852b551189974c8acda1dada0ddce37e3c25afbfc31065584684cfcc0fd848b.html",
+        "snapshotSHA256": "a852b551189974c8acda1dada0ddce37e3c25afbfc31065584684cfcc0fd848b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/b8ecab1d777f2f198f2c.html",
+        "fetchedAt": "2026-11-05T04:50:50.272401+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-f48988ec217d052e92"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-f48988ec217d052e92"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-f48988ec217d052e92"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-9ff461d7f7a6c20c9b",
+    "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "nextSource": {
+      "url": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
+      "required": "現行配布先の建物名・棟を特定する公式施設GIS、フロア/配置案内、または建物単位の公開目的地点。既存失敗URLの反復ではなく不足する原典種別を追加。"
+    },
+    "checkedAt": "2026-11-05",
+    "actorType": "ai",
+    "verificationMethod": "固定baseline・旧位置追補・独立レビューの個別記録を再分類。新規Web確認の有無はauditを参照。未解決を調査済み確定点と扱わない。",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
+        "snapshotPath": "data/evidence/issue5/west-south/873b093b35f7afea1b58639f55e7947551ed5a1e46010832a54f8ebbc7516bc9.html",
+        "snapshotSHA256": "873b093b35f7afea1b58639f55e7947551ed5a1e46010832a54f8ebbc7516bc9",
+        "reusedFrom": "data/evidence/national/proposals-west-south/1d9283a166df0a413426.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "39-211-C001 / 道の駅やす 地域情報コーナー",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": []
+  }
+]

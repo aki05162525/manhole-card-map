@@ -1,0 +1,119 @@
+{
+  "success": true,
+  "assigned": 52,
+  "candidates": 17,
+  "unresolved": 35,
+  "allIdsUniqueAndClassified": true,
+  "fixedInputHashesUnchanged": true,
+  "goEvidenceFields": [
+    "actorType",
+    "checkedAt",
+    "snapshotPath",
+    "snapshotSHA256",
+    "sourceLocator",
+    "sourceUrl",
+    "verificationMethod"
+  ],
+  "newFetchAttempts": 110,
+  "newFetchResponses": 100,
+  "newFetchFailures": 10,
+  "referencedSnapshotHashesChecked": 198,
+  "numerics": [
+    {
+      "facilityId": "facility:chubu-iwata-water-counter",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt825"
+    },
+    {
+      "facilityId": "facility:chubu-minokamo-water-counter",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt667"
+    },
+    {
+      "facilityId": "facility:chubu-takayama-nakabashi",
+      "officialHtmlNumericExact": true
+    },
+    {
+      "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt887"
+    },
+    {
+      "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt969"
+    },
+    {
+      "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt1317"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+      "officialHtmlNumericExact": true
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt437"
+    },
+    {
+      "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt525"
+    },
+    {
+      "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "officialHtmlNumericExact": true
+    },
+    {
+      "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt880"
+    },
+    {
+      "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt1802"
+    },
+    {
+      "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt723"
+    },
+    {
+      "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt525"
+    },
+    {
+      "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt1807"
+    },
+    {
+      "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+      "officialHtmlNumericExact": true
+    },
+    {
+      "facilityId": "facility:chubu-yoshida-water-counter",
+      "geojsonExact": true,
+      "gmlLatLngWithin1e-7": true,
+      "gmlPoint": "pt1837"
+    }
+  ],
+  "exactCorrectionsChecked": 9,
+  "limits": "機械検査は建物同定の独立レビューや現地確認の代替ではない。新取得の成功は本文内容の正しさ・施設同定の承認を意味しない。"
+}

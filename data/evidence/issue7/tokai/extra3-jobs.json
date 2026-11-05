@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://www.city.seki.lg.jp/cmsfiles/contents/0000014/14044/1F_PLAN_HP_2018_OL.jpg",
+    "facilityIds": [
+      "facility:chubu-west-44c55ff47f14ec6d456e"
+    ]
+  },
+  {
+    "url": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html",
+    "facilityIds": [
+      "facility:chubu-west-b8c6ad4784789086f0d7"
+    ]
+  },
+  {
+    "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm",
+    "facilityIds": [
+      "facility:chubu-west-5c2eca0bf60a3cf39536"
+    ]
+  },
+  {
+    "url": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+    "facilityIds": [
+      "facility:chubu-west-3ae4954df5521d92e778"
+    ]
+  },
+  {
+    "url": "https://www.hidatakayama.or.jp/about/",
+    "facilityIds": [
+      "facility:chubu-takayama-nakabashi"
+    ]
+  },
+  {
+    "url": "https://www.hida-kankou.jp/privacy",
+    "facilityIds": [
+      "facility:chubu-west-8b10b99e9d58aaa58550"
+    ]
+  },
+  {
+    "url": "https://www.tokonamesanpo.jp/member/member_008.html",
+    "facilityIds": [
+      "facility:chubu-west-423fcab6c8f81568e652"
+    ]
+  }
+]

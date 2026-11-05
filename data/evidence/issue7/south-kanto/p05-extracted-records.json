@@ -1,0 +1,60 @@
+[
+  {
+    "facilityId": "facility:kanto-south-integration-09",
+    "zipPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "member": "P05-22_13_GML.zip",
+    "geojson": "P05-22_13.geojson",
+    "featureIndex": 1642,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "13123",
+        "P05_002": "1",
+        "P05_003": "江戸川区役所",
+        "P05_004": "江戸川区中央1-4-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.8683162270388,
+          35.70664778391733
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-53fcefb12220c8b3f170",
+    "zipPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "member": "P05-22_14_GML.zip",
+    "geojson": "P05-22_14.geojson",
+    "featureIndex": 1159,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14213",
+        "P05_002": "5",
+        "P05_003": "生涯学習センター",
+        "P05_004": "大和市大和南1-8-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.46525453634106,
+          35.46942621634651
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  }
+]

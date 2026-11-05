@@ -1,0 +1,9 @@
+{
+  "ledger.json": true,
+  "full.json": true,
+  "assignments.json": true,
+  "assignedUnique": 810,
+  "adopted": 198,
+  "notAdopted": 612,
+  "allRemainingDeepReviewed": false
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "facilityId": "facility:chubu-east-0c0f3438fa9b21563d94",
+    "sourceLocator": "P05-22_16_GML.zip!P05-22_16.geojson#/features/685",
+    "memberSHA256": "e0de76b6d05dd266431b777dc56c2b52a2d445bd3edb0f857ce20b0f375d9425",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "16321",
+        "P05_002": "5",
+        "P05_003": "舟橋会館",
+        "P05_004": "舟橋村海老江147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.30718163925533,
+          36.70185502391252
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+    "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/772",
+    "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "15212",
+        "P05_002": "4",
+        "P05_003": "荒川地区公民館",
+        "P05_004": "村上市羽ヶ榎104-25"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.44451505446574,
+          38.125599071376314
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-6f1cf560a94cdce2b66d",
+    "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/798",
+    "memberSHA256": "63d39a94b9f136055f47a2cc0d62aca99fdfaa9aa53c16778ea50a187d9e05c3",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "17384",
+        "P05_002": "1",
+        "P05_003": "志賀町役場",
+        "P05_004": "志賀町末吉千古1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.77801464236055,
+          37.00618581052139
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-cf23f7f3846328ad1c67",
+    "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/798",
+    "memberSHA256": "63d39a94b9f136055f47a2cc0d62aca99fdfaa9aa53c16778ea50a187d9e05c3",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "17384",
+        "P05_002": "1",
+        "P05_003": "志賀町役場",
+        "P05_004": "志賀町末吉千古1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.77801464236055,
+          37.00618581052139
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-ee483872ed2d67e3f0ab",
+    "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1540",
+    "memberSHA256": "2947b708a62770a91ff7c5f466463f2e93c5d30915e9dadc80d5f08632d163d3",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "15405",
+        "P05_002": "1",
+        "P05_003": "出雲崎町役場",
+        "P05_004": "出雲崎町大字川西140"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.70937012588254,
+          37.53071340123572
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-a97e4141d06f3d78c1ff",
+    "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/916",
+    "memberSHA256": "63d39a94b9f136055f47a2cc0d62aca99fdfaa9aa53c16778ea50a187d9e05c3",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "17463",
+        "P05_002": "4",
+        "P05_003": "宇出津公民館",
+        "P05_004": "能登町字宇出津ト字29-2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.14664642175237,
+          37.307930583904344
+        ]
+      }
+    }
+  },
+  {
+    "facilityId": "facility:chubu-east-b7d603f8e144e10c3bb0",
+    "sourceLocator": "P05-22_18_GML.zip!P05-22_18.geojson#/features/31",
+    "memberSHA256": "c4e339447009ad49b62e6136b0238ea2b354077ffc373d588e4d26017fd596a2",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "18201",
+        "P05_002": "2",
+        "P05_003": "企業局庁舎",
+        "P05_004": "福井市大手3-13-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.21844894858972,
+          36.06572760281307
+        ]
+      }
+    }
+  }
+]

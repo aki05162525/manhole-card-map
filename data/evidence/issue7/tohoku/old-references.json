@@ -1,0 +1,688 @@
+[
+  {
+    "sourceUrl": "https://www.city.tendo.yamagata.jp/lifeinfo/jougesuidou/onegai.html",
+    "snapshotPath": "data/evidence/national/north/45d6ce71bf23902b9f8b.html",
+    "snapshotSHA256": "0e4638058b4fdb693773a5d0cbf8a8470aa9590c028c649e8378793952f71fbe",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.natori-machidukuri.com/oshirase/plaza.html",
+    "snapshotPath": "data/evidence/national/north/94389fc057891769e4c9.html",
+    "snapshotSHA256": "7a82c490239ecbe2622158800c7987a5adf1a669800820e9fd9a5c3679aef5a9",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.natori.miyagi.jp/page/3988.html",
+    "snapshotPath": "data/evidence/national/north/ecdd7ea944bfe684de7c.html",
+    "snapshotSHA256": "20e9a0a08fe20b4797ec5ed6806b8277cd914213aefc87b3116fae82d0dadb38",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.town.ogawara.miyagi.jp/",
+    "snapshotPath": "data/evidence/national/north/ae08f22f28625455cfe0.html",
+    "snapshotSHA256": "11da10035e2d33b610839ff0bd7b563617894750e1ce4cfb789a4c7e77c6a7ac",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.ogawara.miyagi.jp/1265.htm",
+    "snapshotPath": "data/evidence/national/north/ed0751a7769db1fb912b.html",
+    "snapshotSHA256": "5674b6d38ec4bb483b88a48e4f184bcd831b56cff07341fe3d67af80cbac064c",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama.com/benricho/oshirase/suido3-020-12422.html",
+    "snapshotPath": "data/evidence/national/north/5b29f1a213af1609932b.html",
+    "snapshotSHA256": "2289f0eeb83cb1e8f6a7ee39c948d238e4d246b9c0f8f8e68874e90ed173f292",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.city.nanyo.yamagata.jp/manhole/",
+    "snapshotPath": "data/evidence/national/north/eeb23f78f0ffef3f7fa9.html",
+    "snapshotSHA256": "197209b48e98ce5127659d3568f4afc1fa004b113fb386559b5e3e97558b570c",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.oga.akita.jp/soshik/kigyokyoku/moreabout/gesuidou/6032.html",
+    "snapshotPath": "data/evidence/national/north/622fa04c5aef94db2696.html",
+    "snapshotSHA256": "d941ad12c0c74e8086e90ad262f151aac7a4e2b25f49c251b7344afeb6ed2b90",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/58a181075fecd4ab2c3e.html",
+    "snapshotSHA256": "165add30cd1d6708815bee595b63eefdaee95104958e467d2ea94ecc7f8f1997",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/bf215c4ae7095211c1c8.html",
+    "snapshotSHA256": "165add30cd1d6708815bee595b63eefdaee95104958e467d2ea94ecc7f8f1997",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/ba04e583ca18831fe200.html",
+    "snapshotSHA256": "8c1969e5e1137280e1f0833398ce22b08cc74ee3d45293e43739ecb42c696bed",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.miharu.fukushima.jp/uploaded/attachment/15102.pdf",
+    "snapshotPath": "data/evidence/national/proposals-north/e4c9d029a9ba2e1ada38.pdf",
+    "snapshotSHA256": "1c61ab51c3621b54849e0f68c196f37213f981a50a96eef40fa75086515b7e08",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.miharu.fukushima.jp/soshiki/10/manho-ruka-do.html",
+    "snapshotPath": "data/evidence/national/north/77b3f9651bb7d3222c99.html",
+    "snapshotSHA256": "c67dad5d3a94d274ec20379b6233cc5bc5ab64479264d9182baa22bbaf5d1703",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama.com/benricho/oshirase/suido3-020-8717.html",
+    "snapshotPath": "data/evidence/national/north/51bab74da4fb9c28ed41.html",
+    "snapshotSHA256": "d8e270a3bafd491719bd8d791a41a1e4b93d72369688f480979950f39225822e",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.rifu.miyagi.jp/gyosei/soshikikarasagasu/jougesuidou/keiei/1/3/1/4209.html",
+    "snapshotPath": "data/evidence/national/north/7ae8c12457136b592989.html",
+    "snapshotSHA256": "1fa78c4f4e91da1bc3935770d8ffd6f6dd48ea57c2dc34250e388667126cc842",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.minamisoma.lg.jp/portal/admin/kokyoshisetsu/5/4086.html",
+    "snapshotPath": "data/evidence/national/north/2ca4736133c6bb6b99eb.html",
+    "snapshotSHA256": "d6a5c92b00efed4917b35d1ce6d5c2f640adbfe0cdf3e642ec866738a7587a9a",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
+    "snapshotPath": "data/evidence/national/north/17789009429ac39d1659.html",
+    "snapshotSHA256": "cdf54f380978e4d0d7782088f5037a549da00f5b76491227f5d0f84a14b219c0",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/manholecard/9231.html",
+    "snapshotPath": "data/evidence/national/north/c44170db289621167b6d.html",
+    "snapshotSHA256": "16f3da857b65017882f42e824bddb97e43984587563961367dd92af5065f8286",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+    "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+    "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.town.tanagura.fukushima.jp",
+    "snapshotPath": "data/evidence/national/north/6298f0eb1312cde7600b.html",
+    "snapshotSHA256": "bec18ca8b13ad313f3560e266ab0b8a4b03add90594edc86af52a4f913be7af8",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.tanagura.fukushima.jp/jumin/jo-gesuido/page002568.html",
+    "snapshotPath": "data/evidence/national/north/fabbb46df0d5053e9463.html",
+    "snapshotSHA256": "cbae4924f54e500c90935467f0154df5e513adc20832564a279341cd81b60e1a",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+    "snapshotPath": "data/evidence/national/north/77cd260e5e4895e5cf2e.html",
+    "snapshotSHA256": "5460e8c9d33281fff32b64eacc6b6898fa6449bcd473cbb6c6e498e0490d82d7",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+    "snapshotPath": "data/evidence/national/north/c990fa3b78f89377580e.html",
+    "snapshotSHA256": "5460e8c9d33281fff32b64eacc6b6898fa6449bcd473cbb6c6e498e0490d82d7",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/2907.html",
+    "snapshotPath": "data/evidence/national/north/dfe42f1ee21d843532c9.html",
+    "snapshotSHA256": "4e81fc3944f7c9a6c4bc9706e3c21951a47f7bafc858a57491f08c6fc72b4e30",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://kaminoyama-spa.com/news/sightseeing/2633.html",
+    "snapshotPath": "data/evidence/national/north/98b2eeb964b0d298f84c.html",
+    "snapshotSHA256": "ae2bf1919deb75dd6f25ef557773d041461b91713fac0d0e54ebc395a4287480",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.y-ctc.jp/outline/outline/index.html",
+    "snapshotPath": "data/evidence/national/north/ee9a526ce9cf84c36a97.html",
+    "snapshotSHA256": "00936ab34013195b7f20f3516d09207a225375674c749b2bc3da9396357d2e4b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.morireki.jp/",
+    "snapshotPath": "data/evidence/national/north/75a14cc9935d2d3bf9db.html",
+    "snapshotSHA256": "f48ac71b677aa89ba137ca6243adf88e34063b35801679a5eca91567669380cd",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.morioka-water.jp/various/manhole.html",
+    "snapshotPath": "data/evidence/national/north/2cc3ccc52f1d45c68a5f.html",
+    "snapshotSHA256": "8f1bec6bcaa7c5bd2ce5df8bba4b72ab6467abf6078415d6d6e2e348c40ec030",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.pref.miyagi.jp/soshiki/senen-wwt/sisetusyoukai.html",
+    "snapshotPath": "data/evidence/national/north/23d716200c8fec940874.html",
+    "snapshotSHA256": "b6c7b1cff2222d979303ef9e502947e1dd63e67ff27fe46899cf261fe8ed0dd0",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.pref.miyagi.jp/soshiki/senen-wwt/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/2bb5aa3c5d0e054d1b48.html",
+    "snapshotSHA256": "13892560d3fb63e4026bb332c801c0dbe1f8b78745846f1e37c983a9aaeb018d",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://hirakawa-kankou.com",
+    "snapshotPath": "data/evidence/national/north/16b7a5d1c0c118db780c.html",
+    "snapshotSHA256": "045db8bc8d848ccb6f2576303d58c9ff245ca4da06e83c2a8368d8c873aa4999",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.hirakawa.lg.jp/kurashi/suidou/gesuidou/colormanhole.html",
+    "snapshotPath": "data/evidence/national/north/9ed9e1348e009355daf1.html",
+    "snapshotSHA256": "8e4f946c81a92e5962efb929a4ba2df494b0f72be2e2d2cc030af217ce527b21",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tagajo.miyagi.jp/bunkazai/bunkazai/itibukaihou.html",
+    "snapshotPath": "data/evidence/national/north/d03c7e77a7c6f4e15acc.html",
+    "snapshotSHA256": "95b40a4f6abfe2d470f838aec5589b9d365a200daa6d98e83de32a1de66c6582",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tagajo.miyagi.jp/ryokin/kurashi/suido/gesuido/card.html",
+    "snapshotPath": "data/evidence/national/north/2f444257031230ff2177.html",
+    "snapshotSHA256": "3df81e9fda311c7ff6cd957c50661a3d6f1971691750aa05a072e4d47655b833",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.tomiya-city.miyagi.jp/information/2024/04/041bee602c6de14f1635ba1fbeb3dc13533f8cc0.html",
+    "snapshotPath": "data/evidence/national/north/0f3e49bfa34eedac925c.html",
+    "snapshotSHA256": "13914156a0ecc6a878f0e5c9a0c96299011e4e0ee158705451df44d9c04972a0",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://naraha-tenjin.net/enjoy/rental",
+    "snapshotPath": "data/evidence/national/north/827a373810bf49923f3a.html",
+    "snapshotSHA256": "1f1a1d7a0912318be0cc2344314c525156fd1dad8e93e6d770887ba74f75b3d0",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.naraha.lg.jp/life/009648.html",
+    "snapshotPath": "data/evidence/national/north/2b235e00be0802cf9cbf.html",
+    "snapshotSHA256": "034eb6aa7018d278fc5198f0b795cbeeed1e9be41118ec6d91d2fc0769ef8c85",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.tenshouchi.com/",
+    "snapshotPath": "data/evidence/national/north/f27feff2f3791d6236e3.html",
+    "snapshotSHA256": "f563ca033acba43ead492a4de4298c507f069de023c814f9ffbc17f3f97996d5",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/gesuidoka/ijifukyugakari/26436.html",
+    "snapshotPath": "data/evidence/national/north/fe48cacf271a2dcf2010.html",
+    "snapshotSHA256": "c24bd9eaf8ab45cb04a82b063fd6130d379d5e8ff5ca2331d9d88aa835237456",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.miharu.fukushima.jp/soshiki/7/entry_1.html",
+    "snapshotPath": "data/evidence/national/proposals-north/be803826e6dd797d32e6.html",
+    "snapshotSHA256": "bd74caf7341e740f51962105c148a637152ccaa641242d7461a97ea3814dc84b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.sannohe.aomori.jp/index.html",
+    "snapshotPath": "data/evidence/national/north/91e8b792084a3f65c32d.html",
+    "snapshotSHA256": "9330bd64baf4c44e8551ecb4fc8ef178da503ad9775824280b737a227c79bdeb",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.sannohe.aomori.jp/soshiki/machidukuri/11pikinoneko/3909.html",
+    "snapshotPath": "data/evidence/national/north/873a53e5056a310786df.html",
+    "snapshotSHA256": "ce9d6064465a417dc5d32fcb3c037de3e898378f43a5f41405afe8c0f690b1c9",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.vill.yugawa.fukushima.jp/site/gyousei-top/info-about2.html",
+    "snapshotPath": "data/evidence/national/proposals-north/1177de5541c6b0dbc6d1.html",
+    "snapshotSHA256": "eddf1a9dc51d869ccdb339c5012566f4a08531e4c6b9080f107982d5abc240b8",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.vill.yugawa.fukushima.jp/site/kurashi-top/yugawa-manhole.html",
+    "snapshotPath": "data/evidence/national/north/e819c3b7736a9d414211.html",
+    "snapshotSHA256": "b3239e5fdebd873d9c5f7ce45f55a77a30e117b7c5cd66b5b45192a764275c27",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.shichigahama.com/",
+    "snapshotPath": "data/evidence/national/north/e7b067ff056f9fa79dd6.html",
+    "snapshotSHA256": "d0cd83c0f26ac70fb13cef3bf71d835f721f0cf1d75116269ace8421328f9cc8",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://hanabimuseum.jp/",
+    "snapshotPath": "data/evidence/national/north/28cdb9582e7c55da3788.html",
+    "snapshotSHA256": "1880908c392c65245443743da10326e62d5fd09dd935b4b0952a046742c0bd06",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.daisen.lg.jp/docs/2021092900038/",
+    "snapshotPath": "data/evidence/national/north/af3883b10143925ed9de.html",
+    "snapshotSHA256": "c9a127a308f625610237cc0c9fe507c18b5ad2719c72afdf1460abe84c8c7d0c",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.towada.lg.jp/kanko/spot/kankoubussan.html",
+    "snapshotPath": "data/evidence/national/proposals-north/32c6344170ce73ef54dd.html",
+    "snapshotSHA256": "0ce4ae20efa4480d19ecaba4e568492436ea2cd565418c466d16243ca7de9c35",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.towada.lg.jp/kurashi/seikatsu/suidou/manholecard.html",
+    "snapshotPath": "data/evidence/national/north/d42bbae2cd2f62d10564.html",
+    "snapshotSHA256": "8fd396d52188285bf73945ba60c0a202db3f760914c0f624dbdb773d901dbefc",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.koori.fukushima.jp/site/kanko/1759.html",
+    "snapshotPath": "data/evidence/national/north/ba4fa2ec7a3ec6e45dc9.html",
+    "snapshotSHA256": "50a12c04f0f60bc0777444b7fc4c8b3219ebd09dc3c10a854b8872e6dc74a2a1",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.koori.fukushima.jp/soshiki/6/1477.html",
+    "snapshotPath": "data/evidence/national/north/28c5aa66ccaf1908e89b.html",
+    "snapshotSHA256": "71e74d737dc030139f5c8022ee5000b61e5b99ecc6f380fde9c935f87408f133",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://s-tette.jp/",
+    "snapshotPath": "data/evidence/national/north/518a3c3b526302541aed.html",
+    "snapshotSHA256": "48a7ea34d1a4593ba3ed3243fc8cc95a6af19bbf3399e1479a6a676a002a0e82",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.sukagawa-jyogesuidojigyo.jp/user/notice/manhole_card/",
+    "snapshotPath": "data/evidence/national/north/f389174914f58f1db754.html",
+    "snapshotSHA256": "155f07f9ff250cbbe97107a21dd17c6c75d3743eafe47acdaaa56ed9549434a5",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.kankou.natori.miyagi.jp/tokusan/11870",
+    "snapshotPath": "data/evidence/national/north/1f6d773609430a30fa7f.html",
+    "snapshotSHA256": "58e2d760473aa2b727eb160f91d80120fdacdaf477caf41463254dc91c85554c",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.natori.miyagi.jp/page/22491.html",
+    "snapshotPath": "data/evidence/national/north/bbe1ea0153800701c9c7.html",
+    "snapshotSHA256": "85c21b23d1aaa3ec796e69c2c1cbc8d6e5506e1186b51d5c662f271c0ac165ab",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tono.iwate.jp/index.cfm/45,58494,249,482,html",
+    "snapshotPath": "data/evidence/national/north/6736d0abcbccf070b785.html",
+    "snapshotSHA256": "bf1b060083b5286b9576361771352dbc24b8a3a3163c8562d6825fb14152e384",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tono.iwate.jp/index.cfm/45,0,255,html",
+    "snapshotPath": "data/evidence/national/north/2f249f5e91d68da556d3.html",
+    "snapshotSHA256": "4c942c88b5923c93025f2b22634b808a91a8a3bd6ee0365f69d1b2e2ef2a833d",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://yomunosu-kuji.jp/",
+    "snapshotPath": "data/evidence/national/north/446f650b01cefab23574.html",
+    "snapshotSHA256": "dd04771b7fb83b33a25b657ca0194410f7f3855a6a1e4d6efac5cd0db4df2384",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.kuji.lg.jp/soshiki/jogesuidoseibi/1/1/3/1423.html",
+    "snapshotPath": "data/evidence/national/north/d724fd3b7ba2a14dd06a.html",
+    "snapshotSHA256": "f83faf3c3ab7075e140736537ef1be08c79618f4ee0ad732d1e9ae97eb72577b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.wakuya.miyagi.jp/kurashi/kyoiku/bunka-sports/documents/r06_toudaijiten.html",
+    "snapshotPath": "data/evidence/national/proposals-north/2e29066f31a30a850f87.html",
+    "snapshotSHA256": "e208543afd31cffbccd4f62fdcc55cba8fa82dd6f2eb6f0d9ba34a617bb2b37b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.wakuya.miyagi.jp/topics/h28manhole.html",
+    "snapshotPath": "data/evidence/national/north/56056c01834a23d984ab.html",
+    "snapshotSHA256": "ed419bf5c8f70296ffaa2937dd33f1ae8a862d27505d11957a33c1818198b556",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.aomori-nanbu.lg.jp/page/1832.html",
+    "snapshotPath": "data/evidence/national/north/8818db4c52bceb401efe.html",
+    "snapshotSHA256": "3b848580cc466709ccee06609395a7de22d24df6ede5aa62e93b64bcc682f262",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.aomori-nanbu.lg.jp/page/2052.html",
+    "snapshotPath": "data/evidence/national/north/64a6b94956193c8bcd43.html",
+    "snapshotSHA256": "d7b3d6f61601d47b53a7ff828ec2d760e8639ed25bf2b7cb3db87cc16c7db904",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://oasis385.jp",
+    "snapshotPath": "data/evidence/national/north/a108f49540ecb05a250a.html",
+    "snapshotSHA256": "bed7ef88483fb4596d5d0a6af6e8f3bbbb0680e779a765339b8548e93aa1d301",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3343/742.html",
+    "snapshotPath": "data/evidence/national/north/7b37c1fe648eabed869c.html",
+    "snapshotSHA256": "5fc786518280891641ce4f82c5ccb1bdb1df4fe15e2d308d0d55d82cfcdb6945",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.kahoku.yamagata.jp/soshiki/suido/gesuikoumu/799.html",
+    "snapshotPath": "data/evidence/national/north/93d36ca7df38f04af919.html",
+    "snapshotSHA256": "b27bc00e42fd60696fd95e3545aa2066338864dd95a53098bc7adaa7264c6f0a",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.nihonmatsu.lg.jp/kurashi_tetsuduki/suido_gesui/gesui/page000236.html",
+    "snapshotPath": "data/evidence/national/north/438b675bd90b22813ff5.html",
+    "snapshotSHA256": "725a3e4904685e85d94ef844528b8c580a5e37061ab3415f7fb31c0c95e8a04e",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://abukumado.com/",
+    "snapshotPath": "data/evidence/national/north/1f4880ec15fe7e176075.html",
+    "snapshotSHA256": "2aa71d09b24d06cf7a24fc159a781d062a9410f94b79a01fd0f0b7c23e64d8de",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tamura.lg.jp/soshiki/25/entry.html",
+    "snapshotPath": "data/evidence/national/north/ab2d3e93d28da3999b13.html",
+    "snapshotSHA256": "0e27fb1fec8796039db945338641bf847ed4bf533305ef171427ea31157c3380",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.tsuruokakanko.com",
+    "snapshotPath": "data/evidence/national/north/7e4bd940eee02dfb2078.html",
+    "snapshotSHA256": "265081f08fed16ad8075000ec69a8bd12d49d4dd7ef79a5ff6adff3a2255faeb",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.tsuruoka.lg.jp/kurashi/suido/gesuido/kohokatsudo/mannhorukado.html",
+    "snapshotPath": "data/evidence/national/north/c5b828625a2fea5e47fc.html",
+    "snapshotSHA256": "8471b3993a143325c39056cf5961be212646c2164f4e0b363bfb5bdf25b055ea",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.marugoto-nishigo.com/",
+    "snapshotPath": "data/evidence/national/north/6555ed3a09a21ac37f29.html",
+    "snapshotSHA256": "7d97a52318828cba1db95044ea5693fe4cf369ff3d728cfd6f4e93c6a9470ff2",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.vill.nishigo.fukushima.jp/kurashi_tetsuzuki/jogesuido/gesuido/1036.html",
+    "snapshotPath": "data/evidence/national/north/870712078a782718bf56.html",
+    "snapshotSHA256": "5bd467a9bab58c348e8678f94b9e23e5a6f784a489b10a218bcef1b00a7fe9fb",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://mogamiyoshiaki.jp/",
+    "snapshotPath": "data/evidence/national/north/c74daf41edcb17e1053d.html",
+    "snapshotSHA256": "45647f4304c4c2e089a048fdf656f401f8a53bd92ec90665d3bf6ca9a66b1aae",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.inawashiro.fukushima.jp/soshiki/9/1361.html",
+    "snapshotPath": "data/evidence/national/north/e200e374826d4a012a64.html",
+    "snapshotSHA256": "15b5d3b3c8c81e75ed2764577e07432afcb3e5e2a3216803ea8c4e01026f35b3",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.nanyato-bussan.jp/",
+    "snapshotPath": "data/evidence/national/north/7785b907be1ddfe41bd0.html",
+    "snapshotSHA256": "a7feb951c4509d561d4a58b6a173f52e10e7d12bbdd703764922cd4bd9889fb6",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.ninohe.lg.jp/info/3066",
+    "snapshotPath": "data/evidence/national/north/e9190326f3300536cda6.html",
+    "snapshotSHA256": "71929fc2165a7a679640a06171df1e63a3d38f94b871b3ff12b7ecca4cc1b8b8",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.pref.iwate.jp/kendozukuri/toshigesui/gesui/1036130/1022445.html",
+    "snapshotPath": "data/evidence/national/north/3342cb6e6e3ad6ecbf50.html",
+    "snapshotSHA256": "63429bd8339f7f6a52947e7ee13bbc2aa7aeb995b73f52b14fe902c77b490558",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.tomioka-town.jp/soshiki/toshiseibi/1623.html",
+    "snapshotPath": "data/evidence/national/north/92d3394ef72b5f568f4a.html",
+    "snapshotSHA256": "24402db8c1c40453a46f690d588f214db1a2a22beba6b30188bba6f04e571b58",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://michinoeki-tenno.jp",
+    "snapshotPath": "data/evidence/national/north/bb4f8ab2f3c3f142fc7d.html",
+    "snapshotSHA256": "488a36dc527a49784aee130443d820f2a36494722dc33d32a7b06184024801d4",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.katagami.lg.jp/soshiki/kensetsubu/jogesuido/shisetsukomu/5752.html",
+    "snapshotPath": "data/evidence/national/north/499bcc489b723d3c8cd9.html",
+    "snapshotSHA256": "7cdbb72e3f0e989a5c740a101565ebf9e40188fb00680206fc6bf093c0a7af6f",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://suidou.yamagata.yamagata.jp/",
+    "snapshotPath": "data/evidence/national/north/483fa62f5519d45c69fd.html",
+    "snapshotSHA256": "232994f3c14784eb2ec92accfebcfcffc8ac1cc07bb69892b7352e1213e8466b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.mangattan.jp/manga/",
+    "snapshotPath": "data/evidence/national/north/4478c9b6ac97914a2eb7.html",
+    "snapshotSHA256": "c6c8c19108344ae2b5fe6e1067469fc0e00c570eca05d3e76ed93a2da4347cd1",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.yamada.iwate.jp/docs/6751.html",
+    "snapshotPath": "data/evidence/national/north/798dad365073f257502b.html",
+    "snapshotSHA256": "a11ec30719f2ad637a640dc1b08a055b116f3a5b53d14a2c750a1599fd731f28",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.town.aizubange.fukushima.jp/",
+    "snapshotPath": "data/evidence/national/north/1b39c79d6b2a76d7c99f.html",
+    "snapshotSHA256": "f165865dcb828ca2bd7a6d47d372ffc95f7b515b1436bae8196abfaf943856ce",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.town.aizubange.fukushima.jp/soshiki/28/7745.html",
+    "snapshotPath": "data/evidence/national/north/c3e17f2771887d23f5bc.html",
+    "snapshotSHA256": "3b3185fcb195370907d26b7b1550b8577f5d442f1b38f97cd654fdbb0af0b217",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://shirakawa315.com/",
+    "snapshotPath": "data/evidence/national/north/19f05524c06998b6eb96.html",
+    "snapshotSHA256": "29b9dc6fdc95bcb935d92fe8ab02b78eb5dbc423323043858c323507ebbe102b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "http://www.city.shirakawa.fukushima.jp/page/page002897.html",
+    "snapshotPath": "data/evidence/national/north/d893c7503d35ff6bf4d8.html",
+    "snapshotSHA256": "47e28a0bae32f255eb84a95d0101a6f0259164c0768a6fa00afb38e6a2648665",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.aomori.aomori.jp/shisetsu/1005707/1005717.html",
+    "snapshotPath": "data/evidence/national/proposals-north/8cf6573e01002bc82db0.html",
+    "snapshotSHA256": "b15205e39cf4cca8975cef24387c3b6f387efa8da677b167356d30bb648b138f",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.aomori.aomori.jp/suido/gesuidou/1001920.html",
+    "snapshotPath": "data/evidence/national/north/4eaf52ed6e44a9048f0c.html",
+    "snapshotSHA256": "211042d59aa090389430ed82636cf8a1aea28f18a3fa5e3e9259db50d86d38ab",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://tohokudaiken-management.com/sendaikou-tagajo/",
+    "snapshotPath": "data/evidence/national/north/982c9b00d561887e3faf.html",
+    "snapshotSHA256": "249f6af9baa67b689d31e98919b7e2562287b411fbd7619a5d39cafa0c2c9407",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.taiwa.miyagi.jp/soshiki/jogesuido/shisetsuseibi/1110.html",
+    "snapshotPath": "data/evidence/national/north/5029d8cc6e4bd7065bd4.html",
+    "snapshotSHA256": "4e53ae3191d070e74e6b64f8fe6fd5420b6987ebc6dc23ceb4d0d1cfe753cd74",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.akita.lg.jp/suido/jigyo-shokai/1008331.html",
+    "snapshotPath": "data/evidence/national/north/f98675c915f85573db9c.html",
+    "snapshotSHA256": "13410f648f7849269a3920ff869111bc5ca5075dbc208ef36902bbbb352e883b",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/d861209afe0bb8cbb3d9.html",
+    "snapshotSHA256": "7fcf46f8e8109f1309e051483abd7abd75ef3bbf0ddcac60e7973ba41f0eab6f",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.onagawa.miyagi.jp/05_13_04_05.html",
+    "snapshotPath": "data/evidence/national/proposals-north/246fabda4666fb2d5c53.html",
+    "snapshotSHA256": "2d41baaa7c7f2bfa1eec047cde56f6ecb60320ad83eb2692fd7a1a718293789d",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.town.onagawa.miyagi.jp/mhcard.html",
+    "snapshotPath": "data/evidence/national/north/22498dc984b3da230cb7.html",
+    "snapshotSHA256": "dd84b305bb4799a6747ed83d6eb5557e4bff58c3ad4357471962186e73009bf9",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://www.tagakan.jp/detail.html?content=141",
+    "snapshotPath": "data/evidence/national/proposals-north/7c7025b975db1507658d.html",
+    "snapshotSHA256": "86370a7a46b6e2b75b16d41c7be7cb19aaa6ecf97ea73f865779b47b1cd265d5",
+    "fetchedAt": null,
+    "note": "証拠オブジェクトに取得日時がないため不明。checkedAtから推定しない。旧取得台帳があればそちらを参照。"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "metadataPath": "data/evidence/issue5/chubu/P05-22_GML.zip.source.json"
+  }
+]

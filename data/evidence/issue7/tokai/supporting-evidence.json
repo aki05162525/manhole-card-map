@@ -1,0 +1,1175 @@
+[
+  {
+    "facilityId": "facility:chubu-iwata-water-counter",
+    "identityReason": "現行配布案内が福田400の福田支所2階を明記。名称住所はP05と一致。既知の移転・別棟矛盾はなく、改修履歴の不存在証明は建物代表点に不要。",
+    "newSources": [
+      {
+        "url": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+        "facilityIds": [
+          "facility:chubu-iwata-water-counter",
+          "facility:chubu-west-b943f5c6151615096149"
+        ],
+        "startedAt": "2026-11-05T06:27:59.272217+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+        "snapshotPath": "data/evidence/issue7/tokai/bdfdefe3c6f22a457c32.html",
+        "snapshotSHA256": "adf0ec3ec5c76c0891313f103a9509b207fa701d5e0b68c8dc97ab6a266bc476",
+        "contentType": "text/html",
+        "bytes": 29189,
+        "fetchedAt": "2026-11-05T06:28:00.178741+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+      "snapshotPath": "data/evidence/national/chubu-west/bdfdefe3c6f22a457c32.html",
+      "snapshotSHA256": "83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e",
+      "sourceLocator": "22-211-A001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-minokamo-water-counter",
+    "identityReason": "現行市配布案内は美濃加茂市上下水道課（市役所分庁舎）、太田町1900と明示。P05も分庁舎の同名同住所で本庁舎ではない。",
+    "newSources": [
+      {
+        "url": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "facilityIds": [
+          "facility:chubu-minokamo-water-counter",
+          "facility:chubu-west-da2c46732042f07a4ce1"
+        ],
+        "startedAt": "2026-11-05T06:27:59.272706+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "snapshotPath": "data/evidence/issue7/tokai/21f980de953d19733592.html",
+        "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+        "contentType": "text/html",
+        "bytes": 21463,
+        "fetchedAt": "2026-11-05T06:27:59.721482+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+      "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+      "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+      "sourceLocator": "21-211-A001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-takayama-nakabashi",
+    "identityReason": "飛騨高山観光公式の中橋観光案内所ページは本町1-2を明記し、当該施設iframeのplace数値qとgConfが一致。Google本体応答の抽出ではなく公式HTMLが指定する施設目的地。",
+    "newSources": [
+      {
+        "url": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+        "facilityIds": [
+          "facility:chubu-takayama-nakabashi"
+        ],
+        "startedAt": "2026-11-05T06:27:59.273163+00:00",
+        "status": 200,
+        "finalUrl": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+        "snapshotPath": "data/evidence/issue7/tokai/f6bc175ab9f7279ed939.html",
+        "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 27055,
+        "fetchedAt": "2026-11-05T06:27:59.789867+00:00"
+      },
+      {
+        "url": "https://www.hidatakayama.or.jp/js/commonSpotMap.js",
+        "facilityIds": [
+          "facility:chubu-takayama-nakabashi"
+        ],
+        "startedAt": "2026-11-05T06:29:33.651467+00:00",
+        "status": 200,
+        "finalUrl": "https://www.hidatakayama.or.jp/js/commonSpotMap.js",
+        "snapshotPath": "data/evidence/issue7/tokai/b39bcaad6855c4f2f641.html",
+        "snapshotSHA256": "ff1e78064454f305782815ec5fcdfb96b2b735174411c5746e6ab2bfc19790d2",
+        "contentType": "application/javascript",
+        "bytes": 12185,
+        "fetchedAt": "2026-11-05T06:29:34.099099+00:00"
+      },
+      {
+        "url": "https://www.hidatakayama.or.jp/about/",
+        "facilityIds": [
+          "facility:chubu-takayama-nakabashi"
+        ],
+        "startedAt": "2026-11-05T06:31:50.111321+00:00",
+        "error": "HTTP Error 404: Not Found",
+        "fetchedAt": "2026-11-05T06:31:51.192545+00:00"
+      },
+      {
+        "url": "https://www.hidatakayama.or.jp/sitePolicy/",
+        "facilityIds": [
+          "facility:chubu-takayama-nakabashi"
+        ],
+        "startedAt": "2026-11-05T06:35:07.729758+00:00",
+        "status": 201,
+        "finalUrl": "https://www.hidatakayama.or.jp/sitePolicy/",
+        "snapshotPath": "data/evidence/issue7/tokai/d1b919ec668692177f76.html",
+        "snapshotSHA256": "2255ec45e4d6817a1469e5d39e0a7ada47c51130d18e13d8b6da404203819ac4",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 38713,
+        "fetchedAt": "2026-11-05T06:35:07.984697+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+      "snapshotPath": "data/evidence/national/proposals-chubu/f6bc175ab9f7279ed939.html",
+      "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "21-203-A001 / 中橋観光案内所 基本情報 所在地・営業時間・休業日",
+      "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+    "identityReason": "市施設案内2207.htmが市民センターは瑞穂市穂積公民館と瑞穂市体育館の複合施設と明示。別府1300-3のP05穂積公民館を同定。体育館内部や1階窓口の精密測位は主張しない。",
+    "newSources": [
+      {
+        "url": "https://www.city.mizuho.lg.jp/12757.htm",
+        "facilityIds": [
+          "facility:chubu-west-08f2e7d930fa90a462e3",
+          "facility:chubu-west-aa2f784642e8d8d09de7"
+        ],
+        "startedAt": "2026-11-05T06:27:59.276131+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/70b7463e46200328b402.html",
+        "snapshotSHA256": "c38c85a0cdad7211e59b69856911c7d762fbac0177e58598748e25b52abe2f56",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 54017,
+        "fetchedAt": "2026-11-05T06:27:59.721812+00:00"
+      },
+      {
+        "url": "https://www.city.mizuho.lg.jp/3326.htm",
+        "facilityIds": [
+          "facility:chubu-west-08f2e7d930fa90a462e3",
+          "facility:chubu-west-aa2f784642e8d8d09de7"
+        ],
+        "startedAt": "2026-11-05T06:27:59.276586+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.mizuho.lg.jp/3326.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/b0667f0b06a1b8c410cd.html",
+        "snapshotSHA256": "e619e11b2f1c8f3662c09cbd84cb37cd4cfc8725a31bbb9b7e2713e90931f3d5",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 61869,
+        "fetchedAt": "2026-11-05T06:27:59.832298+00:00"
+      },
+      {
+        "url": "https://www.city.mizuho.lg.jp/2207.htm",
+        "facilityIds": [
+          "facility:chubu-west-08f2e7d930fa90a462e3"
+        ],
+        "startedAt": "2026-11-05T06:27:59.278034+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.mizuho.lg.jp/2207.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/daaf0d81ff92399e414f.html",
+        "snapshotSHA256": "1624ed36bf95e2fdb424f16ee89d220fa47e03a2dd5f539e5571c10a38574c1e",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 44265,
+        "fetchedAt": "2026-11-05T06:27:59.730833+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+      "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+      "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+    "identityReason": "観光協会施設案内が刈谷駅前観光案内所の入居先を産業振興センター1F、相生町1-1-6と明示。P05産業振興センターの建物点を使用。観光協会HTMLの案内所目的地(34.99063742782774,137.01125979423523)とは約31m異なる。名称・住所と入居先が一致する一方、観光目的地の点を建物内部と判断する根拠はないため、建物外周内を位置検査対象とするP05収容建物点を優先。別数値を平均・付け替えせず記録する。",
+    "newSources": [
+      {
+        "url": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+        "facilityIds": [
+          "facility:chubu-west-13e9f9c24308f83ef3cd",
+          "facility:chubu-west-423fcab6c8f81568e652",
+          "facility:chubu-west-661449b87d5ae63962c2",
+          "facility:chubu-west-ecee06e2dfb98541610e"
+        ],
+        "startedAt": "2026-11-05T06:27:59.730864+00:00",
+        "status": 200,
+        "finalUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+        "snapshotPath": "data/evidence/issue7/tokai/0cbc6863108b3d6f11ce.html",
+        "snapshotSHA256": "cd6d75ab3edb78202a0d358ea4d6a24d3d38f69760136477ccfe4aa7670e7b86",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 994391,
+        "fetchedAt": "2026-11-05T06:28:00.868064+00:00"
+      },
+      {
+        "url": "https://www.kariya-guide.com/sightseeing/000107.html",
+        "facilityIds": [
+          "facility:chubu-west-13e9f9c24308f83ef3cd"
+        ],
+        "startedAt": "2026-11-05T06:29:33.469974+00:00",
+        "status": 200,
+        "finalUrl": "https://www.kariya-guide.com/sightseeing/000107.html",
+        "snapshotPath": "data/evidence/issue7/tokai/030e9c0b756eaa1cf077.html",
+        "snapshotSHA256": "98e36a97017dfef89468963f42a157acfec5390760d6e04bcd78e161449d6465",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 23288,
+        "fetchedAt": "2026-11-05T06:29:33.749695+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+      "snapshotPath": "data/evidence/national/chubu-west/gkp-current-design.html",
+      "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "23-210-A001 / 23-210-A001 刈谷駅前観光案内所の所在地と施設名",
+      "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+    "identityReason": "現行配布案内は池田町役場、町庁舎案内・所在地は六之井1468-1。P05同名同住所を建物代表点として同定。",
+    "newSources": [
+      {
+        "url": "https://www.town.gifu-ikeda.lg.jp/0000001112.html",
+        "facilityIds": [
+          "facility:chubu-west-27d3e9286d3414e0cb80"
+        ],
+        "startedAt": "2026-11-05T06:28:00.178798+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.gifu-ikeda.lg.jp/0000001112.html",
+        "snapshotPath": "data/evidence/issue7/tokai/689a8f5590d85ab5f9a8.html",
+        "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+        "contentType": "text/html",
+        "bytes": 25397,
+        "fetchedAt": "2026-11-05T06:28:01.106508+00:00"
+      },
+      {
+        "url": "https://www.town.gifu-ikeda.lg.jp/0000001139.html",
+        "facilityIds": [
+          "facility:chubu-west-27d3e9286d3414e0cb80"
+        ],
+        "startedAt": "2026-11-05T06:28:00.253161+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.gifu-ikeda.lg.jp/0000001139.html",
+        "snapshotPath": "data/evidence/issue7/tokai/1df63d0b9fe3f8c12a08.html",
+        "snapshotSHA256": "1bdf19f9f6a745c8ef6eeaba0a942d7741c04f391c71bda7addf0619e4286c96",
+        "contentType": "text/html",
+        "bytes": 20544,
+        "fetchedAt": "2026-11-05T06:28:01.103623+00:00"
+      },
+      {
+        "url": "https://www.town.gifu-ikeda.lg.jp/0000000042.html",
+        "facilityIds": [
+          "facility:chubu-west-27d3e9286d3414e0cb80"
+        ],
+        "startedAt": "2026-11-05T06:28:00.286562+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.gifu-ikeda.lg.jp/0000000042.html",
+        "snapshotPath": "data/evidence/issue7/tokai/a51e2b7e826fe8e1fcc1.html",
+        "snapshotSHA256": "1db865f59e354add08c847fae30f225ea87d6c989f4e624a2a23df160604d984",
+        "contentType": "text/html",
+        "bytes": 28089,
+        "fetchedAt": "2026-11-05T06:28:01.103280+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001112.html",
+      "snapshotPath": "data/evidence/national/chubu-west/689a8f5590d85ab5f9a8.html",
+      "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+      "sourceLocator": "池田町のマンホールカード配布について",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+    "identityReason": "県公開の沼津市AEDデータID 0000000030は水道部庁舎、御幸町2-20、1階自動ドア前、電話934-4851。現行市配布案内が水道部庁舎1階守衛室、電話一覧が同庁舎水道総務課庶務係934-4851を明示。同一建物を電話・名称・階で対応付け。台帳16-1は本庁住所なので訂正提案を分離。",
+    "newSources": [
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-5c2eca0bf60a3cf39536",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.311383+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+        "contentType": "text/html",
+        "bytes": 9550,
+        "fetchedAt": "2026-11-05T06:28:02.369683+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.328248+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 138408,
+        "fetchedAt": "2026-11-05T06:28:02.624754+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:02.213299+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+        "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+        "contentType": "text/html",
+        "bytes": 12766,
+        "fetchedAt": "2026-11-05T06:28:02.373123+00:00"
+      },
+      {
+        "url": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:29:33.666825+00:00",
+        "status": 200,
+        "finalUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+        "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+        "contentType": "text/html",
+        "bytes": 57323,
+        "fetchedAt": "2026-11-05T06:29:34.185989+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778"
+        ],
+        "startedAt": "2026-11-05T06:31:50.110933+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+        "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 16160,
+        "fetchedAt": "2026-11-05T06:31:50.279477+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:35:07.729112+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+        "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+        "contentType": "application/pdf",
+        "bytes": 183855,
+        "fetchedAt": "2026-11-05T06:35:07.885881+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+      "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+      "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+    "identityReason": "現行配布案内は本庁舎1階総合案内。P05沼津市役所御幸町16-1を、2026年の市役所施設案内と県公開AEDの同住所1階正面玄関横・3階医務室内の2点に照合。P05は両点付近の本庁舎、別住所2-20の水道部庁舎とは約100m離れており区別。今回取得した本庁舎1階図で総合案内は正面玄関側、別館とは区別されている。総合案内の室内位置としては主張しない。",
+    "newSources": [
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-5c2eca0bf60a3cf39536",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.311383+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+        "contentType": "text/html",
+        "bytes": 9550,
+        "fetchedAt": "2026-11-05T06:28:02.369683+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.328248+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 138408,
+        "fetchedAt": "2026-11-05T06:28:02.624754+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:02.213299+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+        "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+        "contentType": "text/html",
+        "bytes": 12766,
+        "fetchedAt": "2026-11-05T06:28:02.373123+00:00"
+      },
+      {
+        "url": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:29:33.666825+00:00",
+        "status": 200,
+        "finalUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+        "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+        "contentType": "text/html",
+        "bytes": 57323,
+        "fetchedAt": "2026-11-05T06:29:34.185989+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+        "facilityIds": [
+          "facility:chubu-west-5c2eca0bf60a3cf39536"
+        ],
+        "startedAt": "2026-11-05T06:29:34.099177+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/24b83d2414b8a89210f1.html",
+        "snapshotSHA256": "f97775aa1c150fa20740ae242d4a1198fb26c35f9ede6c684a12f51a810e57f6",
+        "contentType": "text/html",
+        "bytes": 15256,
+        "fetchedAt": "2026-11-05T06:29:34.271279+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm",
+        "facilityIds": [
+          "facility:chubu-west-5c2eca0bf60a3cf39536"
+        ],
+        "startedAt": "2026-11-05T06:30:35.995698+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/ffafe8f6cde99e31919f.html",
+        "snapshotSHA256": "73dbab8381d3ac6c8c617f166688e05d9bad19b4c13deed74413590b88922193",
+        "contentType": "text/html",
+        "bytes": 18173,
+        "fetchedAt": "2026-11-05T06:30:36.334069+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm",
+        "facilityIds": [
+          "facility:chubu-west-5c2eca0bf60a3cf39536"
+        ],
+        "startedAt": "2026-11-05T06:31:50.110606+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/461674246c693ff28338.html",
+        "snapshotSHA256": "2797f79042e3ffe7f8216648ba03313de113ca8c6679eb1e0bd977db11db53f2",
+        "contentType": "text/html",
+        "bytes": 14193,
+        "fetchedAt": "2026-11-05T06:31:50.308554+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778"
+        ],
+        "startedAt": "2026-11-05T06:31:50.110933+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+        "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 16160,
+        "fetchedAt": "2026-11-05T06:31:50.279477+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:35:07.729112+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+        "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+        "contentType": "application/pdf",
+        "bytes": 183855,
+        "fetchedAt": "2026-11-05T06:35:07.885881+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/images/1f.gif",
+        "facilityIds": [
+          "facility:chubu-west-5c2eca0bf60a3cf39536"
+        ],
+        "startedAt": "2026-11-05T06:35:07.730994+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/images/1f.gif",
+        "snapshotPath": "data/evidence/issue7/tokai/aa38a6dd6bfd53f55af8.html",
+        "snapshotSHA256": "aec4161ceef521c6db4ed8581b269301bd761329f1775b0b9708803b2fd2c08e",
+        "contentType": "image/gif",
+        "bytes": 32680,
+        "fetchedAt": "2026-11-05T06:35:07.867686+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+      "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+      "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+    "identityReason": "旧移転理由は誤読。元地域監査の22-207-C001 proposalsは寄って宮休業時の臨時配布。現在の逆さ富士配布案内は市役所1階当直室で、下水道課案内は弓沢町150の市役所5階。P05富士宮市役所を同定。",
+    "newSources": [
+      {
+        "url": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:28:03.453795+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p000487.html",
+        "snapshotPath": "data/evidence/issue7/tokai/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "23a8cdc40a34d5389f503712e403aa62383183fc94f13e5d1bc58db991d122a4",
+        "contentType": "text/html",
+        "bytes": 16563,
+        "fetchedAt": "2026-11-05T06:28:07.572716+00:00"
+      },
+      {
+        "url": "https://www.city.fujinomiya.lg.jp/info/p002518.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:28:03.510805+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/info/p002518.html",
+        "snapshotPath": "data/evidence/issue7/tokai/ae84d27f2a27ba2fc791.html",
+        "snapshotSHA256": "6a8747f07e7e8c26ded7eb1d9946b13bf72c08bdf013697b5eb127c3e4b9cbc6",
+        "contentType": "text/html",
+        "bytes": 12130,
+        "fetchedAt": "2026-11-05T06:28:04.178767+00:00"
+      },
+      {
+        "url": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:29:33.472485+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html",
+        "snapshotPath": "data/evidence/issue7/tokai/be077840b22eb8efade3.html",
+        "snapshotSHA256": "34a4de3140c7cdc22d374602b4bef28445647cca4d3e685837158c83f42db110",
+        "contentType": "text/html",
+        "bytes": 14879,
+        "fetchedAt": "2026-11-05T06:29:33.702699+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+      "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+      "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+      "sourceLocator": "逆さ富士／配布場所・配布時間",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+    "identityReason": "飛騨市観光公式モデルコース73のmarkerData label 4は名称「飛騨古川まちなか観光案内所」と緯度経度を直接持つ。市配布案内の壱之町8-3の案内所と同定。駅横の別案内所と区別。",
+    "newSources": [
+      {
+        "url": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "facilityIds": [
+          "facility:chubu-west-8b10b99e9d58aaa58550",
+          "facility:chubu-west-92032ce5cf770c2813c4"
+        ],
+        "startedAt": "2026-11-05T06:28:03.843993+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "snapshotPath": "data/evidence/issue7/tokai/d30b77eb8da1e0e2b8df.html",
+        "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+        "contentType": "text/html",
+        "bytes": 21188,
+        "fetchedAt": "2026-11-05T06:28:05.609434+00:00"
+      },
+      {
+        "url": "https://www.hida-kankou.jp/courses/73",
+        "facilityIds": [
+          "facility:chubu-west-8b10b99e9d58aaa58550"
+        ],
+        "startedAt": "2026-11-05T06:28:03.931227+00:00",
+        "status": 200,
+        "finalUrl": "https://www.hida-kankou.jp/courses/73",
+        "snapshotPath": "data/evidence/issue7/tokai/ab548fdcccd6faf9a553.html",
+        "snapshotSHA256": "a98a8b8dc08fc34105a400eb556216ace03d21b66738fe1a533937432060527d",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 96946,
+        "fetchedAt": "2026-11-05T06:28:05.977689+00:00"
+      },
+      {
+        "url": "https://www.city.hida.gifu.jp/soshiki/3/accsess.html",
+        "facilityIds": [
+          "facility:chubu-west-8b10b99e9d58aaa58550"
+        ],
+        "startedAt": "2026-11-05T06:28:03.970904+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.hida.gifu.jp/soshiki/3/accsess.html",
+        "snapshotPath": "data/evidence/issue7/tokai/f221fff7760089df9105.html",
+        "snapshotSHA256": "61623bbf861f1b257ec542e35add682973d67e53c9ddf5fa2d00257012835f34",
+        "contentType": "text/html",
+        "bytes": 17726,
+        "fetchedAt": "2026-11-05T06:28:05.591382+00:00"
+      },
+      {
+        "url": "https://www.hida-kankou.jp/privacy",
+        "facilityIds": [
+          "facility:chubu-west-8b10b99e9d58aaa58550"
+        ],
+        "startedAt": "2026-11-05T06:31:50.111761+00:00",
+        "status": 200,
+        "finalUrl": "https://www.hida-kankou.jp/",
+        "snapshotPath": "data/evidence/issue7/tokai/5765963b571a2ce68691.html",
+        "snapshotSHA256": "4b77180536621fa7bbd6ee6d915ea4b6a787230b5f7139df1691b7066fab6032",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 109564,
+        "fetchedAt": "2026-11-05T06:31:50.634398+00:00"
+      },
+      {
+        "url": "https://www.hida-kankou.jp/about-site",
+        "facilityIds": [
+          "facility:chubu-west-8b10b99e9d58aaa58550"
+        ],
+        "startedAt": "2026-11-05T06:35:07.730204+00:00",
+        "status": 200,
+        "finalUrl": "https://www.hida-kankou.jp/about-site",
+        "snapshotPath": "data/evidence/issue7/tokai/5dcf08d6151136fc2200.html",
+        "snapshotSHA256": "8106b428320bea82b2260301ec35a75ba60819caa0066ad24e25598dccf6dfc0",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 25567,
+        "fetchedAt": "2026-11-05T06:35:07.907316+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+      "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+      "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+      "sourceLocator": "古川町のマンホールカード／配布場所・時間",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+    "identityReason": "現行市配布案内は巣南庁舎下水道課、宮田300番地2。P05に同名同住所2点（879/880）が約4m離れて存在するが別棟名・異住所の競合ではなく、建物代表点精度では整合。正式市役所名の880を選択し平均は取らない。",
+    "newSources": [
+      {
+        "url": "https://www.city.mizuho.lg.jp/12757.htm",
+        "facilityIds": [
+          "facility:chubu-west-08f2e7d930fa90a462e3",
+          "facility:chubu-west-aa2f784642e8d8d09de7"
+        ],
+        "startedAt": "2026-11-05T06:27:59.276131+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/70b7463e46200328b402.html",
+        "snapshotSHA256": "c38c85a0cdad7211e59b69856911c7d762fbac0177e58598748e25b52abe2f56",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 54017,
+        "fetchedAt": "2026-11-05T06:27:59.721812+00:00"
+      },
+      {
+        "url": "https://www.city.mizuho.lg.jp/3326.htm",
+        "facilityIds": [
+          "facility:chubu-west-08f2e7d930fa90a462e3",
+          "facility:chubu-west-aa2f784642e8d8d09de7"
+        ],
+        "startedAt": "2026-11-05T06:27:59.276586+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.mizuho.lg.jp/3326.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/b0667f0b06a1b8c410cd.html",
+        "snapshotSHA256": "e619e11b2f1c8f3662c09cbd84cb37cd4cfc8725a31bbb9b7e2713e90931f3d5",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 61869,
+        "fetchedAt": "2026-11-05T06:27:59.832298+00:00"
+      },
+      {
+        "url": "https://www.city.mizuho.lg.jp/m/dd.aspx?AspxAutoDetectCookieSupport=1&menuid=2258",
+        "facilityIds": [
+          "facility:chubu-west-aa2f784642e8d8d09de7"
+        ],
+        "startedAt": "2026-11-05T06:28:04.178811+00:00",
+        "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound",
+        "fetchedAt": "2026-11-05T06:28:30.355410+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+      "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+      "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+    "identityReason": "町配布案内と指定管理者アクセスはウエルピアながいずみ健康づくりセンター、納米里549。P05健康づくりセンター同住所の建物点を同定。町役場の点とは区別。",
+    "newSources": [
+      {
+        "url": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:06.204814+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/issue7/tokai/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "18af16d1a718d299b204063584ca5b59fe35b608100414efb3dd486115d0f471",
+        "contentType": "text/html",
+        "bytes": 51962,
+        "fetchedAt": "2026-11-05T06:28:08.239359+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:07.417798+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/471237a79f01a04d41a2.html",
+        "snapshotSHA256": "48bd99aa424a2fc3ad4f6b3372687845712a616fabb6036a909cd0251ce16d94",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 26703,
+        "fetchedAt": "2026-11-05T06:28:09.402363+00:00"
+      },
+      {
+        "url": "https://www.town.nagaizumi.lg.jp/Facility/index.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:07.422903+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.nagaizumi.lg.jp/Facility/index.html",
+        "snapshotPath": "data/evidence/issue7/tokai/283ab2d44063ad7bec6a.html",
+        "snapshotSHA256": "8717d910d893d45bd4a2561fd2f58d3ab773a08a885accf0574f22d11af30cf2",
+        "contentType": "text/html",
+        "bytes": 49472,
+        "fetchedAt": "2026-11-05T06:28:08.213811+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+      "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+      "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+      "sourceLocator": "新カラーマンホールカード配布状況",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+    "identityReason": "市現行配布案内は富士市役所北口守衛室、永田町1丁目100番地。P05富士市役所の建物点を同定。県富士総合庁舎（本市場441-1）と区別し、北口の入口精密点は要求しない。今回取得した市庁舎1階図は北口に警備員室（夜間休日受付）を表示する。",
+    "newSources": [
+      {
+        "url": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "facilityIds": [
+          "facility:chubu-west-b8c6ad4784789086f0d7"
+        ],
+        "startedAt": "2026-11-05T06:28:07.572792+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/issue7/tokai/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "1f0ae5541cc6a436e1c2e308d3ea6f703e78a46033dee5bfb9b022eb8df589a4",
+        "contentType": "text/html",
+        "bytes": 48645,
+        "fetchedAt": "2026-11-05T06:28:09.311220+00:00"
+      },
+      {
+        "url": "https://www.city.fuji.shizuoka.jp/info/p005020.html",
+        "facilityIds": [
+          "facility:chubu-west-b8c6ad4784789086f0d7"
+        ],
+        "startedAt": "2026-11-05T06:28:08.017654+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fuji.shizuoka.jp/info/p005020.html",
+        "snapshotPath": "data/evidence/issue7/tokai/f8d73c522298a8d9d06c.html",
+        "snapshotSHA256": "5404dc30e506f733a33a557db116ca385605de7dce61d1db97f2a6587a9e1939",
+        "contentType": "text/html",
+        "bytes": 37076,
+        "fetchedAt": "2026-11-05T06:28:09.314043+00:00"
+      },
+      {
+        "url": "https://www.city.fuji.shizuoka.jp/shiseijoho/gaiyo/chosha/floorguide/index.html",
+        "facilityIds": [
+          "facility:chubu-west-b8c6ad4784789086f0d7"
+        ],
+        "startedAt": "2026-11-05T06:30:35.995327+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fuji.shizuoka.jp/shiseijoho/gaiyo/chosha/floorguide/index.html",
+        "snapshotPath": "data/evidence/issue7/tokai/b8fc94687d970e5e38d2.html",
+        "snapshotSHA256": "a3991ad26a9fd4edb59dc97e075334aad5f9c48b1089205a5b83a1b9b7aa4bb3",
+        "contentType": "text/html",
+        "bytes": 33408,
+        "fetchedAt": "2026-11-05T06:30:36.294979+00:00"
+      },
+      {
+        "url": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html",
+        "facilityIds": [
+          "facility:chubu-west-b8c6ad4784789086f0d7"
+        ],
+        "startedAt": "2026-11-05T06:31:50.110211+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html",
+        "snapshotPath": "data/evidence/issue7/tokai/9812881ba1b21bdb8a85.html",
+        "snapshotSHA256": "5eddb68162add531e846703db332e8d09663119d8b3b623cbe6fdd1d64934137",
+        "contentType": "text/html",
+        "bytes": 33633,
+        "fetchedAt": "2026-11-05T06:31:50.296234+00:00"
+      },
+      {
+        "url": "https://www.city.fuji.shizuoka.jp/images/4943/1f_s.jpg",
+        "facilityIds": [
+          "facility:chubu-west-b8c6ad4784789086f0d7"
+        ],
+        "startedAt": "2026-11-05T06:35:07.730632+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fuji.shizuoka.jp/images/4943/1f_s.jpg",
+        "snapshotPath": "data/evidence/issue7/tokai/88f983c8300051c05cb6.html",
+        "snapshotSHA256": "56470cb1aabc5f3a898c0e7652ba524545651014f7385e1eeb547dac52a1088a",
+        "contentType": "image/jpeg",
+        "bytes": 61988,
+        "fetchedAt": "2026-11-05T06:35:07.849650+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+      "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+      "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+      "sourceLocator": "赤富士と駿河湾の白波デザイン（A001）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+    "identityReason": "現行下水道課ページが弓沢町150（市役所5階）を明記し配布案内も一致。旧臨時庁舎移転理由を元proposalに遡って棄却。P05富士宮市役所を同定。",
+    "newSources": [
+      {
+        "url": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:28:03.453795+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p000487.html",
+        "snapshotPath": "data/evidence/issue7/tokai/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "23a8cdc40a34d5389f503712e403aa62383183fc94f13e5d1bc58db991d122a4",
+        "contentType": "text/html",
+        "bytes": 16563,
+        "fetchedAt": "2026-11-05T06:28:07.572716+00:00"
+      },
+      {
+        "url": "https://www.city.fujinomiya.lg.jp/info/p002518.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:28:03.510805+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/info/p002518.html",
+        "snapshotPath": "data/evidence/issue7/tokai/ae84d27f2a27ba2fc791.html",
+        "snapshotSHA256": "6a8747f07e7e8c26ded7eb1d9946b13bf72c08bdf013697b5eb127c3e4b9cbc6",
+        "contentType": "text/html",
+        "bytes": 12130,
+        "fetchedAt": "2026-11-05T06:28:04.178767+00:00"
+      },
+      {
+        "url": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html",
+        "facilityIds": [
+          "facility:chubu-west-5ea337a795edcf07581c",
+          "facility:chubu-west-e4875744d6ee2c5a0a4f"
+        ],
+        "startedAt": "2026-11-05T06:29:33.472485+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html",
+        "snapshotPath": "data/evidence/issue7/tokai/be077840b22eb8efade3.html",
+        "snapshotSHA256": "34a4de3140c7cdc22d374602b4bef28445647cca4d3e685837158c83f42db110",
+        "contentType": "text/html",
+        "bytes": 14879,
+        "fetchedAt": "2026-11-05T06:29:33.702699+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+      "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+      "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+      "sourceLocator": "逆さ富士／配布場所・配布時間",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+    "identityReason": "現行町配布案内は役場上下水道課、中土狩828。各課連絡先で上下水道課の本館2階を確認。P05長泉町役場の同名同住所点を本館代表点として対応付け。西館の課や窓口位置としては使用しない。",
+    "newSources": [
+      {
+        "url": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:06.204814+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/issue7/tokai/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "18af16d1a718d299b204063584ca5b59fe35b608100414efb3dd486115d0f471",
+        "contentType": "text/html",
+        "bytes": 51962,
+        "fetchedAt": "2026-11-05T06:28:08.239359+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:07.417798+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/471237a79f01a04d41a2.html",
+        "snapshotSHA256": "48bd99aa424a2fc3ad4f6b3372687845712a616fabb6036a909cd0251ce16d94",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 26703,
+        "fetchedAt": "2026-11-05T06:28:09.402363+00:00"
+      },
+      {
+        "url": "https://www.town.nagaizumi.lg.jp/Facility/index.html",
+        "facilityIds": [
+          "facility:chubu-west-b2f09c0252344a65be02",
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:28:07.422903+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.nagaizumi.lg.jp/Facility/index.html",
+        "snapshotPath": "data/evidence/issue7/tokai/283ab2d44063ad7bec6a.html",
+        "snapshotSHA256": "8717d910d893d45bd4a2561fd2f58d3ab773a08a885accf0574f22d11af30cf2",
+        "contentType": "text/html",
+        "bytes": 49472,
+        "fetchedAt": "2026-11-05T06:28:08.213811+00:00"
+      },
+      {
+        "url": "https://www.town.nagaizumi.lg.jp/contact/6480.html",
+        "facilityIds": [
+          "facility:chubu-west-f314eee8a2d1753372ca"
+        ],
+        "startedAt": "2026-11-05T06:29:33.470947+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.nagaizumi.lg.jp/contact/6480.html",
+        "snapshotPath": "data/evidence/issue7/tokai/e6e0c9743cee1aadf2e7.html",
+        "snapshotSHA256": "3d3026ede69b555be906c840d8782f5c6019f635a6d8889c213fe4a813f9850d",
+        "contentType": "text/html",
+        "bytes": 80214,
+        "fetchedAt": "2026-11-05T06:29:33.788802+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+      "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+      "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+      "sourceLocator": "マンホールカード配布状況／窓口開庁時間変更に伴う短縮",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+    "identityReason": "県公開AED ID 0000000030の水道部庁舎を現行配布案内の水道部庁舎2階水道総務課及び公式電話一覧934-4851と同定。住所は2-20を根拠とし台帳16-1の訂正提案を分離。AEDは1階自動ドア前の建物代表点としてのみ使用し2階窓口精密点とはしない。",
+    "newSources": [
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-5c2eca0bf60a3cf39536",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.311383+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+        "contentType": "text/html",
+        "bytes": 9550,
+        "fetchedAt": "2026-11-05T06:28:02.369683+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:01.328248+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 138408,
+        "fetchedAt": "2026-11-05T06:28:02.624754+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-ea050d1cbc4a2d578cde",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:28:02.213299+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+        "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+        "contentType": "text/html",
+        "bytes": 12766,
+        "fetchedAt": "2026-11-05T06:28:02.373123+00:00"
+      },
+      {
+        "url": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:29:33.666825+00:00",
+        "status": 200,
+        "finalUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+        "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+        "contentType": "text/html",
+        "bytes": 57323,
+        "fetchedAt": "2026-11-05T06:29:34.185989+00:00"
+      },
+      {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778"
+        ],
+        "startedAt": "2026-11-05T06:31:50.110933+00:00",
+        "status": 200,
+        "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+        "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+        "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 16160,
+        "fetchedAt": "2026-11-05T06:31:50.279477+00:00"
+      },
+      {
+        "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "facilityIds": [
+          "facility:chubu-west-3ae4954df5521d92e778",
+          "facility:chubu-west-f860c41765b78b59c083"
+        ],
+        "startedAt": "2026-11-05T06:35:07.729112+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+        "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+        "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+        "contentType": "application/pdf",
+        "bytes": 183855,
+        "fetchedAt": "2026-11-05T06:35:07.885881+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+      "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+      "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+    }
+  },
+  {
+    "facilityId": "facility:chubu-yoshida-water-counter",
+    "identityReason": "現行町配布案内はしらすの窓口定休日の代替が吉田町役場2階上下水道課、住吉87。P05同名同住所の建物点と照合。一般的な改修履歴証明だけを追加条件にしない。",
+    "newSources": [
+      {
+        "url": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+        "facilityIds": [
+          "facility:chubu-yoshida-water-counter"
+        ],
+        "startedAt": "2026-11-05T06:28:10.237257+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.yoshida.shizuoka.jp/6491.htm",
+        "snapshotPath": "data/evidence/issue7/tokai/3e4a7c50833d565690c7.html",
+        "snapshotSHA256": "ca8f5de91413a455d96df746010b79aea652dfb362ef8a3ff0b9fecd8550dba9",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 71943,
+        "fetchedAt": "2026-11-05T06:28:14.234448+00:00"
+      }
+    ],
+    "reusedDistributionEvidence": {
+      "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+      "snapshotPath": "data/evidence/national/chubu-west/3e4a7c50833d565690c7.html",
+      "snapshotSHA256": "246e9ccd2a71e6e2a7e27b29c1ecbcf2de1738aa3c81c0180658ddb52c076739",
+      "sourceLocator": "22-424-A001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+    }
+  }
+]

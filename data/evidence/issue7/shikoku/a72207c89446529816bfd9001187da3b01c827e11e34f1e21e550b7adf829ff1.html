@@ -1,0 +1,973 @@
+
+
+	// コース プルダウン作成
+	/*
+	var courseJson = [
+		{
+			"name":"コース名1",
+			"kind":"1",
+			"line" : "35.311297654020876:139.3135241402283,35.31111817451366:139.3142003286972,35.31027331757454:139.3147477711334,35.30933214344421:139.3148229635849,35.30808233172958:139.31392715107347,35.30854308791084:139.3129749895229,35.30838823377785:139.31230578969848,35.30751406984766:139.31176734190114,35.307291497712015:139.31326837595225,35.30765300345006:139.31431930038752,35.31027865328033:139.31595519713733,35.310076523218:139.31652644497012,35.310261806584855:139.31594970734466,35.311089872494996:139.3164391791463,35.312499775486835:139.3182181386037,35.31858435828818:139.3225327992444,35.31925432428296:139.3234992287621,35.31983442132291:139.3241111895536,35.3207284955382:139.32573681678468,35.32180143548133:139.32455943131117,35.32305571293574:139.32244724385396,35.32261490015964:139.316284224161"
+		}
+		,{
+			"name":"コース名2",
+			"kind":"2",
+			"line" : "35.311153196659774:139.31356705557255,35.31158219049272:139.31406094442752,35.31253209740274:139.31540223013303,35.312937012437494:139.31615870367432,35.313605660801144:139.31530580650713,35.313891834130956:139.31530851136586,35.31415967490904:139.31495044778717,35.314433669728494:139.314803602506,35.31459255370898:139.3145370608163,35.314623845282995:139.31434478137316,35.3150597118363:139.31403942934844,35.315242626893514:139.3132591164266,35.31681358930756:139.3123968911791,35.31819436083711:139.3146479875702,35.32079313150545:139.3135848532096,35.32039425885364:139.31022087330962"
+		}
+	];
+
+	var courseJson = [
+
+	];
+	*/
+
+
+
+	// 地図をスクロールなしで見れるようにする
+	$.fn.autoHeight = function() {
+		// 遊び
+		var mrgBtm = 20;
+		
+		var self = this;
+		
+		function browserResize() {
+			var winH = $(window).height();//表示領域の高さ
+			var bodyH = $("body").outerHeight({margin: true});//要素全体の高さ
+			
+			var selfH = self.outerHeight({margin: false});//contentsの高さ
+
+			
+			if(bodyH < winH) {
+				self.css('height', selfH+(winH-bodyH)-mrgBtm);
+			}
+			
+			
+			if(bodyH > winH) {
+			
+				self.css('height', selfH-(bodyH-winH)-mrgBtm);
+			}
+			
+		}
+		$(window).resize(function() {
+			browserResize();
+		});
+		browserResize();
+		
+	};
+
+
+	// 地図が全体で使えるようにする（スマホ）
+	$.fn.autoHeight2 = function() {
+		// 余裕を持たせるためのマージン
+		var mrgBtm = 50;
+		
+		var self = this;
+		
+		function browserResize() {
+			var tabH = $('.tabMod').outerHeight({margin: true});//表示領域の高さ
+			var winH = $(window).height();//表示領域の高さ
+			var bodyH = $("body").outerHeight({margin: true});//要素全体の高さ
+			
+			var selfH = self.outerHeight({margin: false});//contentsの高さ
+
+			
+			if(bodyH < winH) {
+				self.css('height', winH-tabH-mrgBtm);
+			}
+			
+			
+			if(bodyH > winH) {
+			
+				self.css('height', winH-tabH-mrgBtm);
+			}
+			
+		}
+		$(window).resize(function() {
+			browserResize();
+		});
+		browserResize();
+		
+	};
+
+	
+
+	// 地図が全体で使えるようにする（PC）
+	$.fn.autoHeight3 = function() {
+		// 余裕を持たせるためのマージン
+		var mrgBtm = 0;
+		
+		var self = this;
+		
+		function browserResize() {
+			var winH = $(window).height();//表示領域の高さ
+			self.css('height', winH);
+			
+		}
+		$(window).resize(function() {
+			browserResize();
+		});
+		browserResize();
+		
+	};
+
+	
+
+	// 地図はグローバル関数でもjquery領域でも起動できるため
+	var map;
+	
+	
+	// 道なりに線を引く
+	var routeGuides = [];
+	var routeGuide = function(lat, lng) {
+	
+		//既にあるラインは消す
+		for(var i=0; i < routeGuides.length; i++) {
+			routeGuides[i].setMap(null);
+		}
+		routeGuides = [];
+	
+		var toLatLng = new google.maps.LatLng(lat, lng);
+		navigator.geolocation.getCurrentPosition(function(pos) {
+			var fromLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+			routeGuide2(fromLatLng, toLatLng);
+		},
+		function(e) {
+		});
+		
+		var routeGuide2 = function(fromLatLng, toLatLng) {
+			new google.maps.DirectionsService().route({
+				origin: fromLatLng, 
+				destination: toLatLng,
+				travelMode: google.maps.DirectionsTravelMode.WALKING,
+				unitSystem: false
+			},  function(result, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					
+					// ラインのオプション
+					var polyLineOptions = {
+						strokeColor: "#0000FF"
+						,strokeWeight: 5
+						,strokeOpacity: "0.5" 
+					};
+
+					
+					var render = new google.maps.DirectionsRenderer({ map:map, suppressMarkers:true, polylineOptions: polyLineOptions });
+					routeGuides.push(render);
+					render.setDirections(result);
+				}
+			});
+		};
+	};
+
+
+
+$(function() {
+
+	var material = '//' + domain + '/theme/base/shisetsu_map/img_map/';
+	var materialPic = '//' + domain + '/theme/base/shisetsu_map/img_pic/';
+
+	var addTelLink = function(str) {
+		var char1 = new Array("１","２","３","４","５","６","７","８","９","０");
+		var char2 = new Array("1","2","3","4","5","6","7","8","9","0");
+		for(var i = 0; i < char1.length; i++) {
+			str = str.replace(new RegExp(char1[i], 'g'), char2[i]);
+		}
+		
+		str = str.replace(/([\d]{1,4})[\-－（]([\d]{1,4})[\-－）]([\d]{4})/, '<a href="tel:$1$2$3">$1-$2-$3</a>');
+		
+		return str;
+	}
+
+
+
+	// GPS追跡を設定、ID取得
+	// 参考：http://waox.main.jp/news/maps/v3/example/map_geo_tracking3.html
+	var getGpsID = function(map) {
+		var gpsID = navigator.geolocation.watchPosition(function(position) {
+				initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+				map.setCenter(initialLocation);
+
+				// 前回のマーカーを消す
+				for (i=0;i<routeMarkerAry.length;i++) {
+					routeMarkerAry[i].setMap(null);
+				}
+				routeMarkerAry = [];
+
+
+				//現在地マーカー作成 ここから
+				var image = new google.maps.MarkerImage(
+					material + 'bluedot_retina.png',
+					null, // size
+					null, // origin
+					new google.maps.Point( 8, 8 ), // anchor (move to center of marker)
+					new google.maps.Size( 17, 17 ) // scaled size (required for Retina display icon)
+				);
+
+
+				// 現在地マーカー
+				var marker = new google.maps.Marker({
+				flat: true,
+				optimized: false,
+					icon: image,
+					position:initialLocation,  //マーカ位置
+					map: map,  
+					title: '現在地',  //タイトル位置
+					draggable: false  //アイコンの移動の有効無効
+					//,animation: google.maps.Animation.DROP
+				});
+				
+				routeMarkerAry.push(marker);
+			}, 
+			function(err) {
+				//alert(err.message);
+			});
+
+		return gpsID;
+	}
+	
+	// GPS追跡をやめる
+	var deleteGpsID = function(gpsID) {
+		navigator.geolocation.clearWatch(gpsID);
+		
+		// 前回のマーカーを消す
+		for (i=0;i<routeMarkerAry.length;i++) {
+			routeMarkerAry[i].setMap(null);
+		}
+		routeMarkerAry = [];
+
+	}
+
+
+	// googlemap生成
+	function setGoogleMap(lat_, lng_, zoom_, id_) {
+		var latlng = new google.maps.LatLng(lat_, lng_);
+		var options = {  
+			zoom: zoom_,  
+			panControl: false,
+			overviewMapControl: false,
+			overviewMapControlOptions: {opened: true},
+			center: latlng,  
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		return new google.maps.Map(document.getElementById(id_), options);
+	}
+	
+
+
+	//マーカー作成
+	function createMarker(o) {
+		//マーカー作成
+		var marker = new google.maps.Marker({  
+			position: new google.maps.LatLng(o.lat, o.lng),  
+			map: map,   
+			title: o.title,
+			icon: material + "cat" + o.icon + "_l.gif"
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			for(var i=0; i < infoWindowAry.length; i++) {
+				infoWindowAry[i].close();
+				map.setCenter(new google.maps.LatLng(o.lat, o.lng));
+			}
+			o.infowindow.open(map,marker);
+		});
+		
+		google.maps.event.addListener(map, 'click', function(event) {
+			for(var i=0; i < infoWindowAry.length; i++) {
+				infoWindowAry[i].close();
+			}
+		});
+
+		infoWindowAry.push(o.infowindow);
+		return marker;
+	}
+
+	//吹き出し作成（スマホ）
+	function getInfoWindowSP(o) {
+		var addText = function(title, text, kind) {
+			if(text == '') {
+				return '';
+			}
+			
+			if(kind == 'url') {
+				html = html + '<strong>' + title + '：</strong>' + '<a href="' + text + '" target="_blank">詳細ページを開く</a><br>';
+			}
+			else if(kind == 'route') {
+				html = html + '<strong>' + title + '：</strong>' + '<a href="javascript:routeGuide(' + text + ')">ここに行く（徒歩）</a>';
+			}
+			else {
+				html = html + '<strong>' + title + '：</strong>' + text + '<br>';
+			}
+		};
+		
+		//吹き出しHTML作成
+		var html = '<div class="mapWinMod">';
+		
+
+		html = html + '<h2 class="title">' + o.title + '</h2>';
+		html = html + '<p class="text">';
+		addText('住所', o.addr, '');
+		addText('電話', addTelLink(o.tel), '');
+		//addText('ファックス', o.fax, '');
+		addText('関連リンク', o.link, 'url');
+		//addText('ルート案内', o.lat + ',' + o.lng, 'route');
+		html = html + '</p>';
+		
+		
+		html = html + '</div>';
+		var infowindow = new google.maps.InfoWindow({
+			content: html,
+			size: new google.maps.Size(50, 50)
+		});
+		
+		return infowindow;
+	}
+
+
+	//吹き出し作成（PC）
+	function getInfoWindowPC(o) {
+		var addText = function(title, text, kind) {
+			if(text == '') {
+				return '';
+			}
+			
+			if(kind == 'url') {
+				html = html + '<strong>' + title + '：</strong>' + '<a href="' + text + '" target="_blank">詳細ページを開く</a><br>';
+			}
+			else {
+				html = html + '<strong>' + title + '：</strong>' + text + '<br>';
+			}
+		};
+		
+		//吹き出しHTML作成
+		var html = '<div class="mapWinMod">';
+		
+		if(o.img != '') {
+			html = html + '<div class="col"><p class="L"><img src="' + materialPic + o.img + '" width="100"></p><div class="R">';
+		}
+
+		html = html + '<h2 class="title">' + o.title + '</h2>';
+		html = html + '<p class="text">';
+		addText('住所', o.addr, '');
+		addText('電話', o.tel, '');
+		addText('ファックス', o.fax, '');
+		addText('関連リンク', o.link, 'url');
+		html = html + '</p>';
+
+
+		if(o.img != '') {
+			html = html + '</div></div>';
+		}
+
+
+
+		html = html + '</div>';
+		var infowindow = new google.maps.InfoWindow({
+			content: html,
+			size: new google.maps.Size(50, 50)
+		});
+		
+		return infowindow;
+	}
+
+
+	// アイコン作成（スマホ）
+	function getMapIconsSP(ary) {
+		var icons = [];
+		$(ary).each(function(idx){
+			var o = {};
+			o.id = idx;
+			o.title = this.name;
+			o.addr = this.address;
+			o.catID = this.category_id;
+			o.icon = catID2IconID[this.category_id];
+			o.tel = this.tel;
+			o.fax = this.fax;
+			o.link = this.link;
+			o.img = this.img;
+			o.lat = this.lat;
+			o.lng = this.lng;
+			o.infowindow = getInfoWindowSP(o);
+			o.marker = createMarker(o);
+			icons.push(o);
+		});
+		return icons;
+	}
+
+
+	// アイコン作成（PC）
+	function getMapIconsPC(ary) {
+		var icons = [];
+		$(ary).each(function(idx){
+			var o = {};
+			o.id = idx;
+			o.title = this.name;
+			o.addr = this.address;
+			o.catID = this.category_id;
+			o.icon = catID2IconID[this.category_id];
+			o.tel = this.tel;
+			o.fax = this.fax;
+			o.link = this.link;
+			o.img = this.img;
+			o.lat = this.lat;
+			o.lng = this.lng;
+			o.infowindow = getInfoWindowPC(o);
+			o.marker = createMarker(o);
+			icons.push(o);
+		});
+		return icons;
+	}
+
+	// 地図にアイコンを埋め込む
+	function setMapIcons(catID, mapIcons) {
+		//アイコンを削除
+		$.each(mapIcons, function(idx_) {
+			this.marker.setMap(null);
+		});
+		
+		//該当のアイコンだけ表示
+		$.each(mapIcons, function(idx_) {
+			if(catID == this.catID || catID == '0') {
+				this.marker.setMap(map);
+			}
+		});
+	}
+
+	// 施設リスト作成（スマホ）
+	function setListSP(catID, mapIcons) {
+		// リストを空にする
+		listJ.find('li').remove();
+		
+		//該当の施設をリストに追加
+		$.each(mapIcons, function(idx) {
+			if(catID == this.catID || catID == '0') {
+				var o = this;
+				var li = $('<li><h2 class="title"></h2><p class="text"></p></li>');
+				listJ.append(li);
+				var titleJ = li.find('.title');
+				var textJ = li.find('.text');
+				var imgJ = li.find('.img');
+
+				titleJ.html(this.title);
+
+				var addText = function(title, text, kind) {
+					if ( text =="" ){
+						return;
+					}
+					
+					if(kind == 'url') {
+						textJ.append('<strong>' + title + '：<a href="' + text + '" target="_blank">詳細ページを開く</a><br>');
+					}
+					else {
+						textJ.append('<strong>' + title + '：</strong>' + text + '<br>');
+					}
+				};
+				
+				addText('住所', o.addr, '');
+				addText('電話', addTelLink(o.tel), '');
+				addText('ファックス', o.fax, '');
+				addText('関連リンク', o.link, 'url');
+			}
+		});
+	}
+
+
+	// 施設リスト作成（PC）
+	function setListPC(categories, catID, mapIcons) {
+		if(categories.length == 1) {
+			$('.mapCatMod').remove();
+			$('.gmapCom').attr('class', 'gmapCom2');
+			return;
+		}
+		
+		var category = categories[catID];
+		
+		
+		var catID = category.id;
+		var catName = category.name;
+	
+		// カテゴリ名セット
+		$('.mapCatMod .titleBg').html(catName);
+	
+		// リストを空にする
+		listJ.find('li').remove();
+		
+		//該当の施設をリストに追加
+		$.each(mapIcons, function(idx) {
+			if(catID == this.catID || catID == '0') {
+				var o = this;
+				var li = $('<li><a href="#"></a></li>');
+				listJ.append(li);
+				var aJ = li.find('a');
+				aJ.html(o.title);
+				aJ.addClass('cat' + this.icon);
+				
+				aJ.click(function() {
+					$.each(infoWindowAry, function(idx) {
+						var win = this;
+						win.close();
+						
+					});
+					o.infowindow.open(map,o.marker);
+					map.setCenter(new google.maps.LatLng(o.lat, o.lng));
+					return false;
+				});
+
+
+			}
+		});
+	}
+
+
+	// 一覧とタブ切替
+	function setupTabBtn(j, def) {
+		var showState = function(kind) {
+			if(kind == 'list') {
+				mapBoxJ.hide();
+				listJ.show();
+			}
+			if(kind == 'map') {
+				mapBoxJ.show();
+				listJ.hide();
+			}
+		};
+		
+		var lies = j.find('li');
+		lies.each(function() {
+			$(this).click(function() {
+				lies.removeClass('select');
+				var li = $(this);
+				var a = li.find('a');
+				var kind = a.attr('class');
+				showState(kind);
+				
+				li.addClass('select');
+				
+				return false;
+			});
+		});
+		
+		lies.removeClass('select');
+		j.find('.' + def).closest('li').addClass('select');
+		showState(def);
+	}
+
+
+	// コース専用アイコン取得
+	var getCourseMarker = function(iconObj) {
+		var pos = iconObj.pos;
+		var label = iconObj.label;
+		var title = iconObj.title;
+
+		var latlng = new google.maps.LatLng(pos[0], pos[1]);
+		var iconURL = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + label + "|ff7e73|000000";
+		var marker = new google.maps.Marker({
+			position: latlng,
+			map: map,
+			title: title,
+			icon: iconURL
+		});
+		
+		return marker;
+	}
+
+	// コースラインを引く
+	var courseIconAry = [];
+	// 再描画時に消すためのスコープ
+	var courseLine = new google.maps.Polyline();
+	var setupCourseLine = function(courseJson, id)  {
+		if(courseJson.length == 0) {
+			return;
+		}
+		
+		var lineStr = courseJson[id].line;
+		var kind = courseJson[id].kind;
+	
+		// ライン消す
+		courseLine.setMap(null);
+		
+		//アイコンを削除
+		for (var i = courseIconAry.length - 1; i >= 0; i--) {
+			courseIconAry[i].setMap(null);
+			courseIconAry.splice(i,1);
+		}
+		
+		var latlngAry = [];
+	
+		var lineAry = lineStr.split(',');
+		for(var i=0; i < lineAry.length; i++) {
+			var pointAry = lineAry[i].split(':');
+			var latlng = new google.maps.LatLng(pointAry[0], pointAry[1]);
+			latlngAry.push(latlng);
+		}
+		
+		// マーカーがなかったら終了
+		if(latlngAry.length == 0) {
+			return;
+		}
+		
+	
+		
+		
+		// 面
+		if(kind == '2') {
+			// ラインを作成 
+			var lineOpt = { 
+				path: latlngAry, 
+				strokeWeight: 5, 
+				strokeColor: "#ff0000", 
+				strokeOpacity: "0.5" ,
+				 fillColor: "#FF0000",
+				  fillOpacity: 0.35
+			};
+			courseLine = new google.maps.Polygon(lineOpt);
+		}
+		else {
+			// スタートアイコン
+			var sPos = latlngAry[0];
+			var sMarker = getCourseMarker({ "pos": [sPos.lat(), sPos.lng()], "label" : "S","title" : "スタート"  });
+			courseIconAry.push(sMarker);
+			
+			// ゴールアイコン
+			var ePos = latlngAry[latlngAry.length-1];
+			var eMarker = getCourseMarker({ "pos": [ePos.lat(), ePos.lng()], "label" : "G","title" : "ゴール"  });
+			courseIconAry.push(eMarker);
+
+
+			// ラインを作成 
+			var lineOpt = { 
+				path: latlngAry, 
+				strokeWeight: 5, 
+				strokeColor: "#ff0000", 
+				strokeOpacity: "0.5" 
+			};
+			courseLine = new google.maps.Polyline(lineOpt);
+		}
+		
+		courseLine.setMap(map);
+	}
+
+	// viewport動的追加
+	function addViewPort(){
+		var meta = document.createElement('meta');
+		with( meta ) {
+			name = "viewport";
+			content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+		}
+		
+		var head = document.getElementsByTagName('head');
+		head.item(0).appendChild(meta);
+	}
+
+
+	/********************
+			メイン
+	*********************/
+	// 吹き出しを消す用
+	var infoWindowAry = [];
+
+	
+	// カテゴリIDからアイコンIDを取得のための配列
+	var catID2IconID = {};
+	$(mapCategoryCsv.category).each(function(idx){
+		if(this.icon_id == '') {
+			this.icon_id = '99';
+		}
+		catID2IconID[this.id] = this.icon_id;
+	});
+	
+	var isSPTablet = function() {
+		//return true;//無理やりスマホ表示
+		if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+			return true;
+		}
+		return false;
+	};
+	if(isSPTablet()) {
+		$('#pc').remove();
+		addViewPort();
+		
+
+		// googleマップ作成
+		var mapID = 'sp-gmap';
+		map = setGoogleMap(initLat, initLng, initZoom, mapID);
+		var mapJ = $('#' + mapID);
+		mapJ.autoHeight2();
+		var mapBoxJ = $('.gmapMod');
+
+
+		// リストの大きさ制御
+		var listJ = $('.listMod');
+		listJ.autoHeight2();
+		
+
+		// googleマップアイコン作成
+		var mapIcons = getMapIconsSP(mapCategoryCsv.csv);
+		
+		// 初期のマップとリスト表示
+		setMapIcons('0', mapIcons);
+		setListSP('0', mapIcons);
+
+		
+		// 最初に表示する切替ボタン(list or map)
+		var def = 'map';
+		
+		// 切替タブボタン
+		setupTabBtn($('.tabMod'), def);
+
+		// コース作成
+		var setupCourse = function(courseJson) {
+			if(courseJson.length == 0) {
+				$('#course').remove();
+				return;
+			}
+			var courses = [];
+			var getCourse = function(o, id) {
+				var text = '<span class="titleCom">' + courseTitleSP + '：</span>' + o.name;
+				var value = id;
+				var o2 = {
+					text:text
+					,value:value
+					,selected: false
+				};
+
+				return o2;
+			};
+			$(courseJson).each(function(idx){
+				courses.push(getCourse(this, idx));
+			});
+			$('#course').ddslick({
+			    data:courses,
+			    width:"100%",
+			    selectText: "コースを選択ください",
+			    defaultSelectedIndex:0,
+			    imagePosition:"left",
+			    onSelected: function(selectedData){
+					setupCourseLine(courseJson, selectedData.selectedData.value);
+			        //console.log(selectedData.selectedData);
+			    }   
+			});
+		};
+		setupCourse(courseJson);
+
+
+		// カテゴリ プルダウン作成
+		var setupCategory = function() {
+			if(mapCategoryCsv.category.length == 0) {
+				$('#category').remove();
+				$('.tabMod').remove();
+				return;
+			}
+		
+			var categories = [];
+			
+			var getCategory = function(o) {
+				var text = o.name;
+				var value = o.id;
+				var img = '';
+				if(!(typeof o.icon != 'undefined' && o.icon == false)) {
+					img = material + "cat" + catID2IconID[o.id] + "_s.gif";
+				}
+				var o2 = {
+					text:text
+					,value:value
+					,selected: false
+				};
+				if(img != '') {
+					o2.imageSrc = img;
+				}
+				return o2;
+			};
+			// すべて
+			categories.push(getCategory({ name:"カテゴリ全表示", id:"0", icon:false  }));
+			$(mapCategoryCsv.category).each(function(idx){
+				categories.push(getCategory(this));
+			});
+			$('#category').ddslick({
+			    data:categories,
+			    width:"100%",
+			    selectText: "カテゴリで絞り込む",
+			    imagePosition:"left",
+			    onSelected: function(selectedData){
+					setMapIcons(selectedData.selectedData.value, mapIcons);
+					setListSP(selectedData.selectedData.value, mapIcons);
+			        //console.log(selectedData.selectedData);
+			    }   
+			});
+		};
+		setupCategory();
+
+		// コースとカテゴリがなかった場合のレイアウト調整
+		var layoutFix = function() {
+			var LJ = $('.colMod .L');
+			var RJ = $('.colMod .L');
+			
+			var course = false;
+			if($('#course').size() > 0) {
+				course = true;
+			}
+			
+			var category = false;
+			if($('#category').size() > 0) {
+				category = true;
+			}
+			
+			if(!course && !category) {
+				$('.headerNavMod').remove();
+			}
+			
+			if(course && !category) {
+				RJ.remove();
+				LJ.attr('class', 'L2');
+			}
+			
+			if(!course && category) {
+				LJ.remove();
+				RJ.attr('class', 'R2');
+			}
+		
+		}
+		layoutFix();
+
+		
+		
+		// 現在地表示
+		// ルートマーカー（前回の位置消す用）
+		var routeMarkerAry = [];
+		(function() {
+			var location = false;
+			var locationJ = $('.gmapMod .location');
+			var gpsID;
+			
+			var locationToggle = function() {
+				if(location) {
+					location = false;
+					locationJ.html('現在地表示');
+					deleteGpsID(gpsID);
+				}
+				else {
+					location = true;
+					locationJ.html('現在地非表示');
+					// 現在地追跡スタート
+					gpsID = getGpsID(map);
+
+				}
+			};
+			
+			locationJ.click(function() {
+				locationToggle();
+				return false;
+			});
+		})();
+
+	}
+	else {
+		$('#sp').remove();
+		
+		mapCategoryCsv.category.unshift({ id:'0', name:'全施設', icon_id:'00' });
+
+		
+		// googleマップ作成
+		var mapID = 'pc-gmap';
+		map = setGoogleMap(initLat, initLng, initZoom, mapID);
+		var mapJ = $('#' + mapID);
+		mapJ.autoHeight3();
+
+		// リストの大きさ制御
+		var listJ = $('.mapCatMod .list');
+		
+		// googleマップアイコン作成
+		var mapIcons = getMapIconsPC(mapCategoryCsv.csv);
+
+		// コースを書く
+		var setupCourse = function(courseJson, def) {
+			if(courseJson.length == 0) {
+				$('.courseMod').hide();
+				return;
+			}
+			var listJ = $('.courseMod .list');
+			$(courseJson).each(function(idx){
+				var liJ = $('<li><a href="#"></a>｜</li>');
+				listJ.append(liJ)
+				var aJ = liJ.find('a');
+				aJ.html(this.name);
+				aJ.click(function() {
+					setupCourseLine(courseJson, idx);
+				});
+			});
+			
+			// アクティブメニュ
+			var asJ = $('.courseMod .list a');
+			asJ.click(function() {
+				asJ.removeClass('itBg');
+				$(this).addClass('itBg');
+				return false;
+			});
+			asJ.eq(def).addClass('itBg');
+		};
+		setupCourse(courseJson, 0);
+		setupCourseLine(courseJson, 0);
+
+		// カテゴリ作成
+		var setupCategory = function(def) {
+			if(mapCategoryCsv.category.length == 1) {
+				$('.mapNavMod').hide();
+				return;
+			}
+			var listJ = $('.mapNavMod .list');
+			
+			//console.log(mapCategoryCsv.category);
+			
+			$(mapCategoryCsv.category).each(function(idx){
+				var category = this;
+				var liJ = $('<li><a href="#" class="mapNav"></a>｜</li>');
+				listJ.append(liJ);
+				var aJ = liJ.find('a');
+				aJ.addClass('cat' + this.icon_id);
+				aJ.html(this.name);
+				aJ.click(function() {
+					setMapIcons(category.id, mapIcons);
+					setListPC(mapCategoryCsv.category, idx, mapIcons);
+					return false;
+				});
+			});
+			
+			// アクティブメニュ
+			var asJ = $('.mapNavMod .list a');
+			asJ.click(function() {
+				asJ.removeClass('itBg');
+				$(this).addClass('itBg');
+				return false;
+			});
+			asJ.eq(def).addClass('itBg');
+		};
+		setupCategory(0);
+
+		// GETパラメータ取得
+		var getUrlVars = function() {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+		
+		setMapIcons('0', mapIcons);
+		setListPC(mapCategoryCsv.category, 0, mapIcons);
+		
+		// 初期のマップとリスト表示
+		var cat = getUrlVars()['cat'];
+		if(typeof cat != 'undefined') {
+			$('.mapNavMod .list a').eq(Number(cat)).click();
+		}
+
+
+
+		
+	}
+
+	
+});

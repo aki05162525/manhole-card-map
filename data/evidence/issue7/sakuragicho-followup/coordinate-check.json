@@ -1,0 +1,13 @@
+{
+  "sourceCRS": "EPSG:6697; horizontal EPSG:6668; calculation EPSG:6677",
+  "gmlId": "bldg_4149036a-f412-4dc8-a472-5a740921f2ed",
+  "japan47goCoordinate": {
+    "lat": 35.4511374,
+    "lng": 139.6312274
+  },
+  "distanceToLOD0M": 5.436679262743371,
+  "roofSurfaceCount": 183,
+  "roofPolygonCount": 183,
+  "allFootprintPosLists": 1,
+  "finding": "JAPAN47GO点は駅東側広場の外縁付近。公式構内図の案内所は南改札正面店舗列の西口側端。5.44mだけではこの左右対応を検証できない。"
+}

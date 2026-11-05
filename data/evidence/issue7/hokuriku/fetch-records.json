@@ -1,0 +1,686 @@
+[
+  {
+    "sourceUrl": "http://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+    "facilityIds": [
+      "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "facility:chubu-east-b7d603f8e144e10c3bb0"
+    ],
+    "startedAt": "2026-11-05T06:27:38.478699+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/e071e5b13a6c3f421442.html",
+    "snapshotSHA256": "358f654f425cf652605775933292221c064e8932dc33b554b37989b5d291cc0f",
+    "bytes": 31874,
+    "fetchedAt": "2026-11-05T06:27:39.184489+00:00"
+  },
+  {
+    "sourceUrl": "https://fuku-iro.jp/spot/detail_10033.html",
+    "facilityIds": [
+      "facility:chubu-east-08e3cd9cb85e36189dcd"
+    ],
+    "startedAt": "2026-11-05T06:27:38.479366+00:00",
+    "status": 200,
+    "finalUrl": "https://fuku-iro.jp/spot/detail_10033.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/83b08a1d0804cae84950.html",
+    "snapshotSHA256": "48b8f06559fd089b0633fd3f5813e13ad584e7ba9a59603368d9068f40c68b04",
+    "bytes": 38983,
+    "fetchedAt": "2026-11-05T06:27:39.327283+00:00"
+  },
+  {
+    "sourceUrl": "https://www.union.nakaniikawa.toyama.jp/_wp/wp-content/uploads/2025/12/manholecard.pdf",
+    "facilityIds": [
+      "facility:chubu-east-0c0f3438fa9b21563d94",
+      "facility:chubu-east-8d079ca91aebd481b02f"
+    ],
+    "startedAt": "2026-11-05T06:27:38.479871+00:00",
+    "status": 200,
+    "finalUrl": "https://www.union.nakaniikawa.toyama.jp/_wp/wp-content/uploads/2025/12/manholecard.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/issue7/hokuriku/256bf74970f5398b8e76.pdf",
+    "snapshotSHA256": "844e8919d0a32c1a3f0bace2830e8c01319d0929bdc702eddd8b6fc4b4785949",
+    "bytes": 368111,
+    "fetchedAt": "2026-11-05T06:27:39.121285+00:00"
+  },
+  {
+    "sourceUrl": "https://www.vill.funahashi.toyama.jp/facility_new/hall.html",
+    "facilityIds": [
+      "facility:chubu-east-0c0f3438fa9b21563d94"
+    ],
+    "startedAt": "2026-11-05T06:27:38.480865+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.funahashi.toyama.jp/facility_new/hall.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/dc105242cd9202e0b578.html",
+    "snapshotSHA256": "ce1ad8b8dd36a90796fe7dc7bdcadbdf8612dfc0d7b00879124c06cababa291f",
+    "bytes": 23788,
+    "fetchedAt": "2026-11-05T06:27:39.372784+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+    "facilityIds": [
+      "facility:chubu-east-1a2846e8da90dda974fe",
+      "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "facility:chubu-east-b2f8a6198b903eba94ee"
+    ],
+    "startedAt": "2026-11-05T06:27:38.482140+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/6ff6ab89c16107644d9c.html",
+    "snapshotSHA256": "f08006f5fdf49497606847943d1667185d3fee0e2a9d36b2da7ac5e4a4099690",
+    "bytes": 23512,
+    "fetchedAt": "2026-11-05T06:27:39.059484+00:00"
+  },
+  {
+    "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7003.html",
+    "facilityIds": [
+      "facility:chubu-east-1a2846e8da90dda974fe"
+    ],
+    "startedAt": "2026-11-05T06:27:38.482605+00:00",
+    "status": 200,
+    "finalUrl": "https://niigata-kankou.or.jp/spot/detail_7003.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/8181896782ad92e6868f.html",
+    "snapshotSHA256": "2cf5e22c9e858fb07eefb3a8127f99391e5af39a4bd84559b47e3adcc3dbcfda",
+    "bytes": 43644,
+    "fetchedAt": "2026-11-05T06:27:39.153631+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+    "facilityIds": [
+      "facility:chubu-east-1def973f29471b191a99"
+    ],
+    "startedAt": "2026-11-05T06:27:38.483145+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/4f8cda9db5ca74004eba.html",
+    "snapshotSHA256": "ff619f41523e703749a1053e8a5f5d161a411d2e3575fe0908e0b8c15a8762dd",
+    "bytes": 60093,
+    "fetchedAt": "2026-11-05T06:27:39.424296+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+    "facilityIds": [
+      "facility:chubu-east-23bfc837f9708f3a5bff",
+      "facility:chubu-east-3309d6639e95492f62ff"
+    ],
+    "startedAt": "2026-11-05T06:27:38.483603+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/soshiki/2021/60185.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/cd4647361ca91e1f6a70.html",
+    "snapshotSHA256": "ff37ebc3ede3d6f9a0eabf04ce7dd6acc723322da062404da892048dad70ea1c",
+    "bytes": 20235,
+    "fetchedAt": "2026-11-05T06:27:39.116887+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1031179.html",
+    "facilityIds": [
+      "facility:chubu-east-2a3c4c27a70d89172634"
+    ],
+    "startedAt": "2026-11-05T06:27:39.059514+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1031179.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/a7cf9469300f1e99e595.html",
+    "snapshotSHA256": "e2c249ca3c9ea170a877d327a28c425069108f97636e5b4905b93f5ed30e1cfc",
+    "bytes": 23056,
+    "fetchedAt": "2026-11-05T06:27:39.156432+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.kahoku.lg.jp/001/162/166/d000181.html",
+    "facilityIds": [
+      "facility:chubu-east-2c154ba68d0d6982682e"
+    ],
+    "startedAt": "2026-11-05T06:27:39.116915+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kahoku.lg.jp/001/162/166/d000181.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/010d06009f3ecd4486ab.html",
+    "snapshotSHA256": "a25cf7be86fc407677f6ea4aca709e1156951ace4343024c8fa724a156ac3f5c",
+    "bytes": 32054,
+    "fetchedAt": "2026-11-05T06:27:39.339612+00:00"
+  },
+  {
+    "sourceUrl": "https://kanko-kahoku.com/access/index.html",
+    "facilityIds": [
+      "facility:chubu-east-2c154ba68d0d6982682e"
+    ],
+    "startedAt": "2026-11-05T06:27:39.121310+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko-kahoku.com/access/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/f969a22db58ee078b5ec.html",
+    "snapshotSHA256": "87693d8a958e7da0c02652a32d5ecdd30e10638aca8dc2645a4289b4fd121501",
+    "bytes": 10556,
+    "fetchedAt": "2026-11-05T06:27:39.204558+00:00"
+  },
+  {
+    "sourceUrl": "http://www.town.izumozaki.niigata.jp/kurashi/suido/colormanhole.html",
+    "facilityIds": [
+      "facility:chubu-east-430d427a8a9917ec3c97",
+      "facility:chubu-east-ee483872ed2d67e3f0ab"
+    ],
+    "startedAt": "2026-11-05T06:27:39.153664+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.izumozaki.niigata.jp:443/kurashi/suido/colormanhole.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/fbc09d198310aaf52e6f.html",
+    "snapshotSHA256": "252486254b12cc2e8bf01e75edab5e07ba7ff73481ddaa0df38ccbfc46f2c233",
+    "bytes": 16134,
+    "fetchedAt": "2026-11-05T06:27:39.575048+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.anamizu.lg.jp/page/105862.html",
+    "facilityIds": [
+      "facility:chubu-east-4a230b7f47d938402297",
+      "facility:chubu-east-66796850ae3f8443ee9a"
+    ],
+    "startedAt": "2026-11-05T06:27:39.156452+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.anamizu.lg.jp/page/105862.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/796abe30693250aca70a.html",
+    "snapshotSHA256": "c5d9324aa5cfb6454a23e00e59de55d22eb97426163daf16503e15cd4fb67a5c",
+    "bytes": 21628,
+    "fetchedAt": "2026-11-05T06:27:39.468811+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.sanjo.niigata.jp/soshiki/kensetsubu/jogesuidoka/manhoru/4638.html",
+    "facilityIds": [
+      "facility:chubu-east-5435eb27542ce25ee75a"
+    ],
+    "startedAt": "2026-11-05T06:27:39.184550+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanjo.niigata.jp/soshiki/kensetsubu/jogesuidoka/manhoru/4638.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/87a609fc86f2a4af9226.html",
+    "snapshotSHA256": "440a6b534b80f6485e590058abac42845f7a4ef08e2ff528535fb5584d0b7fd8",
+    "bytes": 42612,
+    "fetchedAt": "2026-11-05T06:27:39.436542+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.itoigawa.lg.jp/site/gasusui/1506.html",
+    "facilityIds": [
+      "facility:chubu-east-63a2e5f9e47674402ad4"
+    ],
+    "startedAt": "2026-11-05T06:27:39.204589+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itoigawa.lg.jp/site/gasusui/1506.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/508b8a55caa2a343cf43.html",
+    "snapshotSHA256": "d6ec5724878691d6f8340cb434e874a2efc2386bebcbe39bc12acbb49f365cc1",
+    "bytes": 32938,
+    "fetchedAt": "2026-11-05T06:27:39.514908+00:00"
+  },
+  {
+    "sourceUrl": "https://www.kita-re.jp/access",
+    "facilityIds": [
+      "facility:chubu-east-63a2e5f9e47674402ad4"
+    ],
+    "startedAt": "2026-11-05T06:27:39.327329+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kita-re.jp/access",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/7a426fa11a83a2cdf1e6.html",
+    "snapshotSHA256": "c4211cf60d2e0d1db2807184653459ae15150d1abe3b3180024bb042b580eb49",
+    "bytes": 626768,
+    "fetchedAt": "2026-11-05T06:27:39.778786+00:00"
+  },
+  {
+    "sourceUrl": "https://www.hot-ishikawa.jp/notohaku/spot/detail_6141.html",
+    "facilityIds": [
+      "facility:chubu-east-66796850ae3f8443ee9a"
+    ],
+    "startedAt": "2026-11-05T06:27:39.339643+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hot-ishikawa.jp/notohaku/spot/detail_6141.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/e25d4a024fcf5cc9f097.html",
+    "snapshotSHA256": "39ddac1af351f8d9b1dab1a4c33224e116d99abc35c7955207bb804883ede717",
+    "bytes": 21141,
+    "fetchedAt": "2026-11-05T06:27:39.946995+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.tokamachi.lg.jp/soshiki/jogesuidokyoku/jogesuidoka/1/event/1531463972378.html",
+    "facilityIds": [
+      "facility:chubu-east-6ce3317916265907deb9",
+      "facility:chubu-east-a6e07b78b9b85940a9ea"
+    ],
+    "startedAt": "2026-11-05T06:27:39.372830+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokamachi.lg.jp/soshiki/jogesuidokyoku/jogesuidoka/1/event/1531463972378.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/bf8ddf5172a6d34f1e82.html",
+    "snapshotSHA256": "69367272452a217e1f3f76f3e1fc4bac9e8eedcd8372500ebfb2c37457942a3a",
+    "bytes": 53827,
+    "fetchedAt": "2026-11-05T06:27:39.769403+00:00"
+  },
+  {
+    "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_6950.html",
+    "facilityIds": [
+      "facility:chubu-east-6ce3317916265907deb9"
+    ],
+    "startedAt": "2026-11-05T06:27:39.424348+00:00",
+    "status": 200,
+    "finalUrl": "https://niigata-kankou.or.jp/spot/detail_6950.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/de8f9919e19c48f3c7de.html",
+    "snapshotSHA256": "04d631a19515c784e7daf684dcc9654a6d229e207865fcce0a40f704fb580580",
+    "bytes": 59017,
+    "fetchedAt": "2026-11-05T06:27:39.843753+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.shika.lg.jp/page/2242.html",
+    "facilityIds": [
+      "facility:chubu-east-6f1cf560a94cdce2b66d",
+      "facility:chubu-east-cf23f7f3846328ad1c67"
+    ],
+    "startedAt": "2026-11-05T06:27:39.436576+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shika.lg.jp/page/2242.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/09fc2bff5f7f444636ec.html",
+    "snapshotSHA256": "f020a809dfab844088f7520ca001b96d94afe249e8da0f77a3869b5266056077",
+    "bytes": 22396,
+    "fetchedAt": "2026-11-05T06:27:39.887363+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.shika.lg.jp/page/1249.html",
+    "facilityIds": [
+      "facility:chubu-east-6f1cf560a94cdce2b66d"
+    ],
+    "startedAt": "2026-11-05T06:27:39.468835+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shika.lg.jp/page/1249.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/b7f0cef0a7862fe1d25b.html",
+    "snapshotSHA256": "9232115ff552ad20a91c8f8f4eede3b5981fbb3634d942549988c130f527357c",
+    "bytes": 20456,
+    "fetchedAt": "2026-11-05T06:27:39.887541+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.katsuyama.fukui.jp/soshiki/17/324.html",
+    "facilityIds": [
+      "facility:chubu-east-8dd03483e4267e298b2c",
+      "facility:chubu-east-9b6d37f36d104bd85e7d"
+    ],
+    "startedAt": "2026-11-05T06:27:39.514959+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsuyama.fukui.jp/soshiki/17/324.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/cac9c88cae6b65e88e25.html",
+    "snapshotSHA256": "71abc3e39ddcaa82336701d28b420d4e2d879cde4f12509b32c416abe41f5b45",
+    "bytes": 22638,
+    "fetchedAt": "2026-11-05T06:27:39.963326+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.katsuyama.fukui.jp/site/mayor7/4088.html",
+    "facilityIds": [
+      "facility:chubu-east-8dd03483e4267e298b2c"
+    ],
+    "startedAt": "2026-11-05T06:27:39.575118+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsuyama.fukui.jp/site/mayor7/4088.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/071f01e97350c66cf6d1.html",
+    "snapshotSHA256": "128a9727b8f2531b226ad2e95e8f3f67a1ef51ea59d13dac756dfe43b94baddd",
+    "bytes": 23531,
+    "fetchedAt": "2026-11-05T06:27:40.023067+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.tsubame.niigata.jp/kurashi/joge/1/3772.html",
+    "facilityIds": [
+      "facility:chubu-east-91ee9dc1eec4e57f0c55",
+      "facility:chubu-east-b283747d4f21772ff09f"
+    ],
+    "startedAt": "2026-11-05T06:27:39.769432+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tsubame.niigata.jp/kurashi/joge/1/3772.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/ed1c95b98e968f664f8f.html",
+    "snapshotSHA256": "2d2140f87dd0db4a84f042fadb3f75e9c420b5008ae5a047e0a602525c8e5e7e",
+    "bytes": 58807,
+    "fetchedAt": "2026-11-05T06:27:39.886520+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/84122.html",
+    "facilityIds": [
+      "facility:chubu-east-9720552572da10795a23"
+    ],
+    "startedAt": "2026-11-05T06:27:39.778837+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/soshiki/2021/84122.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/ccf0efc9da389e727c99.html",
+    "snapshotSHA256": "121e3d9a8b1fdb7d3a58d187f1abf5b25f77d28c4fda5f6be760872c0c445b98",
+    "bytes": 20844,
+    "fetchedAt": "2026-11-05T06:27:39.965679+00:00"
+  },
+  {
+    "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "facilityIds": [
+      "facility:chubu-east-9720552572da10795a23",
+      "facility:chubu-east-d96a5cb4a1b2f5fc4173"
+    ],
+    "startedAt": "2026-11-05T06:27:39.843797+00:00",
+    "status": 200,
+    "finalUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "contentType": "application/json; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/52c67e7ed13f9097b13e.html",
+    "snapshotSHA256": "4a553a45cd93952a38343d48e8cf3175d0fdad5090c6aec75fa6aadb294d549c",
+    "bytes": 4087,
+    "fetchedAt": "2026-11-05T06:27:40.661808+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.takahama.fukui.jp/page/jyousuidou/p006274.html",
+    "facilityIds": [
+      "facility:chubu-east-9edbc9e5f93fa2bba0a9"
+    ],
+    "startedAt": "2026-11-05T06:27:39.886553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.takahama.fukui.jp/page/jyousuidou/p006274.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/373f3b6b4194c86762a1.html",
+    "snapshotSHA256": "29135da6927887cf4b02ae2f8a9ff8ef7b1bfe1cbb23efc50ae6ea57ab7ab9f6",
+    "bytes": 20308,
+    "fetchedAt": "2026-11-05T06:27:40.639048+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.takahama.fukui.jp/page/jyousuidou/p008136.html",
+    "facilityIds": [
+      "facility:chubu-east-9edbc9e5f93fa2bba0a9"
+    ],
+    "startedAt": "2026-11-05T06:27:39.887403+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.takahama.fukui.jp/page/jyousuidou/p008136.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/c48f8969a4008c1a3f16.html",
+    "snapshotSHA256": "0002ee8fdee10540663df2283c9b871e48a9e5c4ab9141542117797aa090ce45",
+    "bytes": 17265,
+    "fetchedAt": "2026-11-05T06:27:40.631790+00:00"
+  },
+  {
+    "sourceUrl": "http://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=22577",
+    "facilityIds": [
+      "facility:chubu-east-a038b0439fa5d98aaedd"
+    ],
+    "startedAt": "2026-11-05T06:27:39.887555+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=22577",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/11ca52ac0c8f262c6a7e.html",
+    "snapshotSHA256": "c074541203aba35ea7cd268e7642eb6db63613884be5596c9b88668af3d88c8f",
+    "bytes": 33947,
+    "fetchedAt": "2026-11-05T06:27:41.130483+00:00"
+  },
+  {
+    "sourceUrl": "https://shinminato.co.jp/access/",
+    "facilityIds": [
+      "facility:chubu-east-a038b0439fa5d98aaedd"
+    ],
+    "startedAt": "2026-11-05T06:27:39.947060+00:00",
+    "status": 200,
+    "finalUrl": "https://shinminato.co.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/82b20cfdb78b18603191.html",
+    "snapshotSHA256": "92619b275cb4ff5a45db795b0385301e246e4e181cfeea23493850991f9f5abf",
+    "bytes": 15092,
+    "fetchedAt": "2026-11-05T06:27:41.840511+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.niigata.lg.jp/kurashi/jyogesuido/gesui/oshirase/mhcard.html",
+    "facilityIds": [
+      "facility:chubu-east-a0e69430196f5ec5e2d8"
+    ],
+    "startedAt": "2026-11-05T06:27:39.963389+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.niigata.lg.jp/kurashi/jyogesuido/gesui/oshirase/mhcard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/e61493b4a6a3e534a823.html",
+    "snapshotSHA256": "8499e434657a2d0a2569dd954ecd3ce912f5c84a7b86c98e17ca563df9c4c524",
+    "bytes": 25839,
+    "fetchedAt": "2026-11-05T06:27:40.908559+00:00"
+  },
+  {
+    "sourceUrl": "https://machiminato.jp/access/",
+    "facilityIds": [
+      "facility:chubu-east-a0e69430196f5ec5e2d8"
+    ],
+    "startedAt": "2026-11-05T06:27:39.965702+00:00",
+    "status": 200,
+    "finalUrl": "https://machiminato.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/6c31c4537f80e92730a5.html",
+    "snapshotSHA256": "c61c94a1b19f25b7cc6d1792e17ff12a8d69cdd18934cc9b34ae7bbba7d4434d",
+    "bytes": 33236,
+    "fetchedAt": "2026-11-05T06:27:41.762855+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.ojiya.niigata.jp/soshiki/suido/manhoru-card.html",
+    "facilityIds": [
+      "facility:chubu-east-a74d74b8f71512ef2f93"
+    ],
+    "startedAt": "2026-11-05T06:27:40.023160+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ojiya.niigata.jp/soshiki/suido/manhoru-card.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/4a9557d191cec8288b65.html",
+    "snapshotSHA256": "557e9a11fc8682d0ffbd74ec423cd779b9083539837609b09128bf9a9ba27525",
+    "bytes": 22085,
+    "fetchedAt": "2026-11-05T06:27:40.969414+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.noto.lg.jp/kakuka/1006/gyomu/1/1/1528.html",
+    "facilityIds": [
+      "facility:chubu-east-a97e4141d06f3d78c1ff"
+    ],
+    "startedAt": "2026-11-05T06:27:40.631815+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.noto.lg.jp/kakuka/1006/gyomu/1/1/1528.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/439626a38bbb5ce43595.html",
+    "snapshotSHA256": "c324f0a080d08b2eb60259ae101016fd89b314bb1f1f86a8d1a7db51bc252cb6",
+    "bytes": 73115,
+    "fetchedAt": "2026-11-05T06:27:41.071872+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.noto.lg.jp/kanko-bunka-sports/shisetsu/1/3201.html",
+    "facilityIds": [
+      "facility:chubu-east-a97e4141d06f3d78c1ff"
+    ],
+    "startedAt": "2026-11-05T06:27:40.639075+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.noto.lg.jp/kanko-bunka-sports/shisetsu/1/3201.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/d16ce8403a0bd69b9eab.html",
+    "snapshotSHA256": "656e7456d73fabebe4c8f5fb20e3383d5f29093bf5d24c4cb14e5cb58eb7ffee",
+    "bytes": 69858,
+    "fetchedAt": "2026-11-05T06:27:41.068556+00:00"
+  },
+  {
+    "sourceUrl": "https://tsubame-kankou.jp/seeing-2/%E7%87%95%E5%B8%82%E5%88%86%E6%B0%B4%E8%89%AF%E5%AF%9B%E5%8F%B2%E6%96%99%E9%A4%A8/",
+    "facilityIds": [
+      "facility:chubu-east-b283747d4f21772ff09f"
+    ],
+    "startedAt": "2026-11-05T06:27:40.661861+00:00",
+    "status": 200,
+    "finalUrl": "https://tsubame-kankou.jp/seeing-2/%E7%87%95%E5%B8%82%E5%88%86%E6%B0%B4%E8%89%AF%E5%AF%9B%E5%8F%B2%E6%96%99%E9%A4%A8/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/96ac986aa7e86a195552.html",
+    "snapshotSHA256": "f2257ffe63656623282d31f0fc5b758eb075c029dff667fa5214f126078abeaf",
+    "bytes": 40048,
+    "fetchedAt": "2026-11-05T06:27:42.161867+00:00"
+  },
+  {
+    "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7002.html",
+    "facilityIds": [
+      "facility:chubu-east-b2f8a6198b903eba94ee"
+    ],
+    "startedAt": "2026-11-05T06:27:40.908587+00:00",
+    "status": 200,
+    "finalUrl": "https://niigata-kankou.or.jp/spot/detail_7002.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/d35346727751ed858b10.html",
+    "snapshotSHA256": "8991b337a6f1332fcc75252d5edc31f9f3dbb582187b46fed6a1b4018856a840",
+    "bytes": 43150,
+    "fetchedAt": "2026-11-05T06:27:41.087978+00:00"
+  },
+  {
+    "sourceUrl": "https://www.gk-p.jp/mhcard/",
+    "facilityIds": [
+      "facility:chubu-east-b7d939284218814b6bba"
+    ],
+    "startedAt": "2026-11-05T06:27:40.969456+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gk-p.jp/mhcard/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/83813738c2856b82cc49.html",
+    "snapshotSHA256": "61ad9716c9f1fe302713ea6e92e00999ece9bc5a106d518ffb90ee2da1670e3b",
+    "bytes": 37340,
+    "fetchedAt": "2026-11-05T06:27:41.334360+00:00"
+  },
+  {
+    "sourceUrl": "http://www2.wagmap.jp/nagaoka/gate/?lnk=215161D21221A",
+    "facilityIds": [
+      "facility:chubu-east-b7d939284218814b6bba"
+    ],
+    "startedAt": "2026-11-05T06:27:41.068586+00:00",
+    "status": 200,
+    "finalUrl": "http://www2.wagmap.jp/nagaoka/MAP?linkid=215161D21221A&gprj=3",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/70053de538c2c9cfbdcb.html",
+    "snapshotSHA256": "38740f812b60af9662f0bdb2af5eb2eb90fc76946ea5d6473d8fd4b2413da38f",
+    "bytes": 60967,
+    "fetchedAt": "2026-11-05T06:27:43.259402+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+    "facilityIds": [
+      "facility:chubu-east-bfa20e96abc2e1e893f9"
+    ],
+    "startedAt": "2026-11-05T06:27:41.071911+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/eb985402edb1445f1fc0.html",
+    "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+    "bytes": 46712,
+    "fetchedAt": "2026-11-05T06:27:41.589636+00:00"
+  },
+  {
+    "sourceUrl": "https://www.pref.ishikawa.lg.jp/seikatsuhaisui/gesui/manholekard.html",
+    "facilityIds": [
+      "facility:chubu-east-d003d24aec02be8d661e"
+    ],
+    "startedAt": "2026-11-05T06:27:41.088012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.ishikawa.lg.jp/seikatsuhaisui/gesui/manholekard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/6f833e3665a741d5c96f.html",
+    "snapshotSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+    "bytes": 27769,
+    "fetchedAt": "2026-11-05T06:27:41.787011+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.wajima.ishikawa.jp/article/2023020500013/",
+    "facilityIds": [
+      "facility:chubu-east-d003d24aec02be8d661e"
+    ],
+    "startedAt": "2026-11-05T06:27:41.130532+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.wajima.ishikawa.jp/article/2023020500013/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/8bab31b0649573811c7d.html",
+    "snapshotSHA256": "2488062719c5c3eeee9f5794dac294cbd53b6b5f1f110f223ac288f60471519a",
+    "bytes": 20087,
+    "fetchedAt": "2026-11-05T06:27:42.199733+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.sado.niigata.jp/soshiki/2021/76740.html",
+    "facilityIds": [
+      "facility:chubu-east-d96a5cb4a1b2f5fc4173"
+    ],
+    "startedAt": "2026-11-05T06:27:41.334392+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/soshiki/2021/76740.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/339063431fb068c8d839.html",
+    "snapshotSHA256": "fce1d210aa606fd8b874129686c7a040777f9b271e422c3ae29e02ca03a1c245",
+    "bytes": 21169,
+    "fetchedAt": "2026-11-05T06:27:42.224803+00:00"
+  },
+  {
+    "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+    "facilityIds": [
+      "facility:chubu-east-dade89399c684a92a0fa"
+    ],
+    "startedAt": "2026-11-05T06:27:41.589665+00:00",
+    "status": 200,
+    "finalUrl": "https://www.niigata-gesuikou.or.jp/manhole2017",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/ef5ab05fce0ec98378ad.html",
+    "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+    "bytes": 38830,
+    "fetchedAt": "2026-11-05T06:27:43.143804+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.izumozaki.niigata.jp/chosei/gyosei/access.html",
+    "facilityIds": [
+      "facility:chubu-east-ee483872ed2d67e3f0ab"
+    ],
+    "startedAt": "2026-11-05T06:27:41.762883+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.izumozaki.niigata.jp/chosei/gyosei/access.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/5f4d11dfabf764e1b8e1.html",
+    "snapshotSHA256": "7ebe6e5907d26850ab6fbc02297010ca937d5d0603ca06b1de48ac87ebd58d02",
+    "bytes": 13090,
+    "fetchedAt": "2026-11-05T06:27:42.197022+00:00"
+  },
+  {
+    "sourceUrl": "https://www.town.nakanoto.ishikawa.jp/soshiki/seikatsukankyou/1/1_2/5809.html",
+    "facilityIds": [
+      "facility:chubu-east-f0ae4d2d7ac7da968233"
+    ],
+    "startedAt": "2026-11-05T06:27:41.787045+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nakanoto.ishikawa.jp/soshiki/seikatsukankyou/1/1_2/5809.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/9c9b49004572c7acfdf4.html",
+    "snapshotSHA256": "f30bddfb6c59d094d3c360bcd4e7017e1d2694eed98dad158c0d25c679f4cd8b",
+    "bytes": 37716,
+    "fetchedAt": "2026-11-05T06:27:42.473774+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "facilityIds": [
+      "facility:chubu-east-ffaf8d907c2a31f69989"
+    ],
+    "startedAt": "2026-11-05T06:27:41.840575+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1011634.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/0cc678ca5c1973670046.html",
+    "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+    "bytes": 42125,
+    "fetchedAt": "2026-11-05T06:27:43.197341+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1017916.html",
+    "facilityIds": [
+      "facility:chubu-shibata-tourist-information"
+    ],
+    "startedAt": "2026-11-05T06:27:42.161932+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibata.lg.jp/kurashi/suido/gesuido/1012307/1017916.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/bf9cad6a19673b6f9ff9.html",
+    "snapshotSHA256": "54e21be8f4a76ec179ca387b586f9ce7dc40d70e7b7b8a52287102936db444f5",
+    "bytes": 23265,
+    "fetchedAt": "2026-11-05T06:27:42.484404+00:00"
+  }
+]

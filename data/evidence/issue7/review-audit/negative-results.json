@@ -1,0 +1,209 @@
+{
+  "sourceSHA256": {
+    "assemble.py": "3a0fdd6a6c2ec9a280eb9b88bf5ebf2b77d49f4b042e3ce597db4f1dcb0333a0",
+    "coverage.py": "508e8ab93ac882373cadcab1d321b04d4fa11798bd1290987c95a1d99d751818",
+    "issue7-audit.md": "3d26cbd885ccd18917d9f3a1aa2835cb186aa17dc3900af0d669cefd31f9f462",
+    "issue7_audit.py": "a27835f2bef94c43e795f0eb9dd23f95954dbc3748842be97a9de22cf87b8e04",
+    "test_issue7_audit.py": "236768cde201245537844acb48dec1a9e3cb43b54f54c06c97eaa356f0e02ad0"
+  },
+  "results": [
+    {
+      "case": "missing assignment classification",
+      "passed": true,
+      "detail": "unclassified IDs: ['facility:806']"
+    },
+    {
+      "case": "candidate and unresolved collision",
+      "passed": true,
+      "detail": "duplicate classification: facility:0"
+    },
+    {
+      "case": "cross region classification",
+      "passed": true,
+      "detail": "hokkaido: outside assignment facility:1"
+    },
+    {
+      "case": "duplicate baseline assignment",
+      "passed": true,
+      "detail": "duplicate assignment: facility:0"
+    },
+    {
+      "case": "hash covers noncoordinate metadata",
+      "passed": true,
+      "detail": "approved update changed: facility:0"
+    },
+    {
+      "case": "approval points to absent update",
+      "passed": true,
+      "detail": "approved update missing: facility:0"
+    },
+    {
+      "case": "duplicate selected ID",
+      "passed": true,
+      "detail": "duplicate approval: facility:0"
+    },
+    {
+      "case": "duplicate JSON key",
+      "passed": true,
+      "detail": "duplicate JSON key: schema"
+    },
+    {
+      "case": "NaN in selected coordinate",
+      "passed": true,
+      "detail": "invalid JSON number: NaN"
+    },
+    {
+      "case": "path traversal",
+      "passed": true,
+      "detail": "path outside repository: ../outside.json"
+    },
+    {
+      "case": "original candidate and followup remain distinct",
+      "passed": true,
+      "detail": {
+        "assigned": 810,
+        "regionalCandidates": 1,
+        "originalUnresolved": 809,
+        "currentAdopted": 1,
+        "currentRemaining": 809,
+        "candidateNotAdopted": 1,
+        "currentIntegrated": null,
+        "adoptedLocationNotGenerated": null,
+        "targetConfirmedLocations": null,
+        "targetPins": null,
+        "ledgerAdoptedMatches": null,
+        "originalUnresolvedByReason": {
+          "source": 809
+        },
+        "originalUnresolvedByInvestigationStatus": {
+          "partial": 809
+        }
+      }
+    },
+    {
+      "case": "all adopted does not imply generated or deeply investigated",
+      "passed": true,
+      "detail": {
+        "assigned": 810,
+        "regionalCandidates": 0,
+        "originalUnresolved": 810,
+        "currentAdopted": 810,
+        "currentRemaining": 0,
+        "candidateNotAdopted": 0,
+        "currentIntegrated": null,
+        "adoptedLocationNotGenerated": null,
+        "targetConfirmedLocations": null,
+        "targetPins": null,
+        "ledgerAdoptedMatches": null,
+        "originalUnresolvedByReason": {
+          "source": 810
+        },
+        "originalUnresolvedByInvestigationStatus": {
+          "partial": 810
+        }
+      }
+    },
+    {
+      "case": "stale full and ledger do not count as integrated",
+      "passed": true,
+      "detail": {
+        "currentAdopted": 1,
+        "currentIntegrated": 0,
+        "adoptedLocationNotGenerated": 1,
+        "targetConfirmedLocations": 1,
+        "ledgerAdoptedMatches": 0
+      }
+    },
+    {
+      "case": "unselected confirmed pin does not count as adoption",
+      "passed": true,
+      "detail": {
+        "currentIntegrated": 0,
+        "targetConfirmedLocations": 1,
+        "targetPins": 1,
+        "adoptedLocationNotGenerated": 1
+      }
+    },
+    {
+      "case": "matching candidate with reference pin is not confirmed",
+      "passed": true,
+      "detail": {
+        "currentIntegrated": 0,
+        "targetConfirmedLocations": 0,
+        "targetPins": 0
+      }
+    },
+    {
+      "case": "pin at stale coordinate",
+      "passed": true,
+      "detail": "pin coordinate mismatch: facility:0"
+    },
+    {
+      "case": "duplicate nonreference pins",
+      "passed": true,
+      "detail": "full place pins: duplicate ID facility:0"
+    },
+    {
+      "case": "boolean confirmed coordinate",
+      "passed": true,
+      "detail": "invalid coordinate lat: True"
+    },
+    {
+      "case": "duplicate ledger IDs",
+      "passed": true,
+      "detail": "ledger places: duplicate ID facility:0"
+    },
+    {
+      "case": "ledger alone does not imply generated full",
+      "passed": true,
+      "detail": {
+        "ledgerAdoptedMatches": 1,
+        "currentIntegrated": null,
+        "targetPins": null
+      }
+    },
+    {
+      "case": "OBSERVATION equal numeric int float ledger mismatch",
+      "passed": true,
+      "detail": {
+        "currentIntegrated": 1,
+        "ledgerAdoptedMatches": 0
+      }
+    },
+    {
+      "case": "OBSERVATION invalid nonconfirmed full coordinate accepted",
+      "passed": true,
+      "detail": {
+        "currentIntegrated": 0,
+        "targetConfirmedLocations": 0,
+        "targetPins": 0
+      }
+    },
+    {
+      "case": "coverage owns required pin generation contract",
+      "passed": true,
+      "detail": {
+        "issue7": {
+          "assigned": 810,
+          "regionalCandidates": 0,
+          "originalUnresolved": 810,
+          "currentAdopted": 1,
+          "currentRemaining": 809,
+          "candidateNotAdopted": 0,
+          "currentIntegrated": 1,
+          "adoptedLocationNotGenerated": 0,
+          "targetConfirmedLocations": 1,
+          "targetPins": 0,
+          "ledgerAdoptedMatches": 1,
+          "originalUnresolvedByReason": {
+            "source": 810
+          },
+          "originalUnresolvedByInvestigationStatus": {
+            "partial": 810
+          }
+        },
+        "coverage_rejection": "place pin contract mismatch: missing=[('01-test', 'facility:0')] extra=[]"
+      }
+    }
+  ]
+}

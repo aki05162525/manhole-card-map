@@ -1,0 +1,182 @@
+[
+  {
+    "facilityId": "facility:cs-03ecde6c69b7676882",
+    "kind": "marker",
+    "selector": "155",
+    "sourceUrl": "https://www.my-kagawa.jp/point/155",
+    "coordinate": {
+      "lat": 34.349374,
+      "lng": 133.895789
+    },
+    "buildingIdentification": "県観光協会の施設名付きmarker id=155を追加取得。市の配布施設名・大屋冨町1777-12と一致。資料館建物代表点として十分。"
+  },
+  {
+    "facilityId": "facility:cs-c43792fd530ad920ed",
+    "kind": "marker",
+    "selector": "4554",
+    "sourceUrl": "https://www.iyokannet.jp/spot/4554",
+    "coordinate": {
+      "lat": 33.94929869697385,
+      "lng": 133.2950899277057
+    },
+    "buildingIdentification": "県観光サイトのmuseum名付きmarker id=4554を追加取得。所在地坂井町2-8-1は市配布案内と一致。旧アクセスiframe中心とは別に明示markerから取得。配布状態は変更しない。"
+  },
+  {
+    "facilityId": "facility:cs-c39121867e5e6927e2",
+    "kind": "leaflet",
+    "selector": null,
+    "sourceUrl": "https://kochi-tabi.jp/search_spot.html?id=7528",
+    "coordinate": {
+      "lat": 33.389927,
+      "lng": 133.28955
+    },
+    "buildingIdentification": "県観光サイトの旧三浦邸名付きLeaflet markerを追加取得。市配布案内・ギャラリー公式の青木町1-16と一致。旧邸を利用した単独施設の代表点として採用候補。"
+  },
+  {
+    "facilityId": "facility:cs-5d99918e1ea4d0b991",
+    "kind": "leaflet",
+    "selector": null,
+    "sourceUrl": "https://kochi-tabi.jp/search_spot_food.html?id=7721",
+    "coordinate": {
+      "lat": 33.392376,
+      "lng": 133.29266
+    },
+    "buildingIdentification": "県観光サイトの協会名付きLeaflet markerを追加取得。原町1-9-11と電話番号が市の配布先に一致。駅は1-10-13で別。"
+  },
+  {
+    "facilityId": "facility:cs-53a83a0263666dddd1",
+    "kind": "xml",
+    "selector": null,
+    "sourceUrl": "https://maps.pref.tokushima.lg.jp/ud/search/feature_1253.xml",
+    "coordinate": {
+      "lat": 33.56909605964544,
+      "lng": 134.3072121680474
+    },
+    "buildingIdentification": "徳島県UD施設GISのfeature_1253.xmlを取得。観光ターミナル館の名称・住所と明示lat/lngを確認。観光協会公式の館内案内所の説明で同定し、隣接ホテルの温泉棟と区別。"
+  },
+  {
+    "facilityId": "facility:cs-403952f78c6d18a261",
+    "kind": "geo",
+    "selector": null,
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/9c66239c-6e1b-499c-9b34-033e2c562392",
+    "coordinate": {
+      "lat": 34.28722765,
+      "lng": 133.799755
+    },
+    "buildingIdentification": "市運営の島旅サイトの施設地点と日本観光振興協会GeoCoordinatesが約1m以内で一致。城内案内所を指し城全体や駅案内所と区別できる。同施設の別IDも保持。"
+  },
+  {
+    "facilityId": "facility:cs-e908bad62bf5a18ac0",
+    "kind": "geo",
+    "selector": null,
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/9c66239c-6e1b-499c-9b34-033e2c562392",
+    "coordinate": {
+      "lat": 34.28722765,
+      "lng": 133.799755
+    },
+    "buildingIdentification": "同一の丸亀城内観光案内所としてもう一方のIDと同じ根拠・点を使用。ID統合や配布関係変更は行わない。"
+  },
+  {
+    "facilityId": "facility:cs-f23124a8f6d7059054",
+    "kind": "geo",
+    "selector": null,
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/9fa8b273-ee7c-4374-9a8e-7af865fbaff9",
+    "coordinate": {
+      "lat": 34.1252618,
+      "lng": 133.6550127
+    },
+    "buildingIdentification": "日本観光振興協会の大正橋プラザGeoCoordinatesを追加取得。名称・1234-4・電話番号が市配布案内と一致し独立建物を同定。市iframe表示中心からは採らない。"
+  },
+  {
+    "facilityId": "facility:cs-d14ceddc7ade5a7e6a",
+    "kind": "citymarker",
+    "selector": null,
+    "sourceUrl": "https://www.city.kami.lg.jp/map/michinoeki20231209.html",
+    "coordinate": {
+      "lat": 33.64815721399279,
+      "lng": 133.78256921423335
+    },
+    "buildingIdentification": "市の2023年施設案内markerと県観光の直販店紹介markerが約4m以内で一致。直販店・食堂・集落活動センターを含む道の駅建物として同定し、周辺ホテルやミュージアムと区別。室内店舗位置は求めない。"
+  },
+  {
+    "facilityId": "facility:cs-0a3fd9d830063e2ad7",
+    "kind": "p05",
+    "member": "P05-22_37_GML.zip/P05-22_37.geojson",
+    "index": 709,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "37404",
+        "P05_002": "1",
+        "P05_003": "多度津町役場",
+        "P05_004": "多度津町栄町3-3-95"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.75852094,
+          34.27265014
+        ]
+      }
+    },
+    "coordinate": {
+      "lat": 34.27265014,
+      "lng": 133.75852094
+    },
+    "buildingIdentification": "P05原データは既に新庁舎住所。町施設CSVの新庁舎markerも約8m以内で一致。旧点とした既存理由を訂正提案。入口や2階室内位置を求めない。"
+  },
+  {
+    "facilityId": "facility:cs-93122d3bc481983632",
+    "kind": "p05",
+    "member": "P05-22_37_GML.zip/P05-22_37.geojson",
+    "index": 709,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "37404",
+        "P05_002": "1",
+        "P05_003": "多度津町役場",
+        "P05_004": "多度津町栄町3-3-95"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.75852094,
+          34.27265014
+        ]
+      }
+    },
+    "coordinate": {
+      "lat": 34.27265014,
+      "lng": 133.75852094
+    },
+    "buildingIdentification": "新庁舎内の宿直室。建設課と同一の新庁舎代表点を使用可能。P05原データは新住所、町CSVとも整合。"
+  },
+  {
+    "facilityId": "facility:cs-dd7eb1d2869acfbc00",
+    "kind": "p05",
+    "member": "P05-22_36_GML.zip/P05-22_36.geojson",
+    "index": 121,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "36202",
+        "P05_002": "5",
+        "P05_003": "うずしお会館",
+        "P05_004": "鳴門市撫養町南浜字東浜165-10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.60923,
+          34.17363
+        ]
+      }
+    },
+    "coordinate": {
+      "lat": 34.17363,
+      "lng": 134.60923
+    },
+    "buildingIdentification": "P05うずしお会館を新たに抽出。住所165-10と市配布ページのうずしお会館1Fが一致。観光協会施設紹介でもうずしお会館1階を確認。"
+  }
+]

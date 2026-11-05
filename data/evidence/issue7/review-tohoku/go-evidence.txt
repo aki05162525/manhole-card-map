@@ -1,0 +1,26 @@
+facility:north-01fecf0845daf7a823c4: <nil>
+facility:north-0346af6a6a974c32ffe9: <nil>
+facility:north-0552354f13f29fd4dac2: <nil>
+facility:north-1ed6b6009a4a902d1c70: <nil>
+facility:north-1eddfd8633b7db334e79: <nil>
+facility:north-274599ca91eb4abf4286: <nil>
+facility:north-2e8838dd867c746f89d7: <nil>
+facility:north-32b66f536b601fd5b88d: <nil>
+facility:north-6cd5f14630abb71aeb29: <nil>
+facility:north-8f5be68d467d61a4c641: <nil>
+facility:north-9a7e7549e41a5a778866: <nil>
+facility:north-9d11453eb99d4846f2ef: <nil>
+facility:north-9e5c81d3fcfe3dc21ea2: <nil>
+facility:north-a86e5bc10ccb3b8ad6ce: <nil>
+facility:north-c88406f5e69a26cba40e: <nil>
+facility:north-d0a8e558a26c68e5ba31: <nil>
+facility:north-e87fa72a02c9e04601f4: <nil>
+facility:north-ef70cf36b6909e9459a6: <nil>
+facility:north-f46ab0fab535cf852a33: <nil>
+facility:north-f8aec7769492a55dce23: <nil>
+facility:north-proposal-aizubange-info: <nil>
+facility:north-proposal-motomiya-guard: <nil>
+facility:north-proposal-nishigo-customer: <nil>
+facility:north-proposal-nishigo-guard: <nil>
+facility:north-proposal-rifu-information: <nil>
+25 original Evidence pass; 25 timestamp negative controls rejected

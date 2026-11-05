@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+  "assigned": 74,
+  "candidates": 9,
+  "unresolved": 65,
+  "corrections": 1,
+  "allIDsClassifiedExactlyOnce": true,
+  "allTargetsHaveNewHTTPAttempt": true,
+  "allTargetsHaveNewP05Analysis": true,
+  "newHTTPURLs": 131,
+  "newHTTPSuccess": 127,
+  "rawHashesVerified": true,
+  "reusedSnapshotsVerified": 219,
+  "P05NumericValuesExact": true,
+  "officialHTMLNumericExtractionVerified": true,
+  "exactCorrectionOldValuesMatch": true,
+  "evidenceSevenFieldsOnly": true,
+  "fixedInputsUnchanged": true,
+  "unresolvedCategories": {
+    "座標競合": 1,
+    "複数棟・建物同定未完了": 17,
+    "原典不足": 44,
+    "移転・旧新地点の対応未確定": 3
+  }
+}

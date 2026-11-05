@@ -1,0 +1,389 @@
+[
+  {
+    "facilityId": "facility:chubu-chuo-duty-counter",
+    "sourceUrl": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+    "snapshotPath": "data/evidence/national/chubu-east/0f5b73e12236a5635ef6.html",
+    "snapshotSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+    "fetchedAt": "2026-11-05T04:27:19.178713+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-229e5e47f9803908c4c6",
+    "sourceUrl": "https://www.town.fujikawaguchiko.lg.jp/ka/info.php?if_id=6910&ka_id=15",
+    "snapshotPath": "data/evidence/national/chubu-east/525f90b0fea507c53387.html",
+    "snapshotSHA256": "697991b02fb57898e38e2113efd4dcd69dc2d8597fd89c02d8ae9f8a88f9d1ab",
+    "fetchedAt": "2026-11-05T04:27:19.179776+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-240805ae87211fec2017",
+    "sourceUrl": "https://www.city.tsuru.yamanashi.jp/soshiki/jougesuidou/gesuidoukanri_t/13200.html",
+    "snapshotPath": "data/evidence/national/chubu-east/cd5ea4992542f2e765a5.html",
+    "snapshotSHA256": "a5f70e0c092a2f81dadace076b96e3493452068e2b1efe581869eb8f1946a633",
+    "fetchedAt": "2026-11-05T04:24:47.132789+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-2a3396e1e23757eda5c8",
+    "sourceUrl": "https://www.city.komagane.nagano.jp/gyosei/kurashi_tetsuzuki/jogesuido/gesuido/8559.html",
+    "snapshotPath": "data/evidence/national/chubu-east/9983c59e2ec957f6e9e4.html",
+    "snapshotSHA256": "2f0b086fd9c2c0adca07c21b8e68b0a96b821290225a6a20473a735158766140",
+    "fetchedAt": "2026-11-05T04:24:17.804655+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-2d58045893e23b11b5a2",
+    "sourceUrl": "https://www.city.minami-alps.yamanashi.jp/docs/9171.html",
+    "snapshotPath": "data/evidence/national/chubu-east/cd658e3369dcd1b205d7.html",
+    "snapshotSHA256": "c58dcb9277cbead5036ff1754e7a52ba55109f2024bfc7f41f3ee17cf72f57a6",
+    "fetchedAt": "2026-11-05T04:24:21.516393+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-36a5d6c92fa9483cf836",
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/mjogesui/109814.html",
+    "snapshotPath": "data/evidence/national/chubu-east/ff9e2665361a7d6cd113.html",
+    "snapshotSHA256": "04b0ecd266239658e9001bcaf58fcc8c4e764d5ab0b1ec9da360e8edcf1f77dc",
+    "fetchedAt": "2026-11-05T04:25:00.498336+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-3a6d16208a637eef3b69",
+    "sourceUrl": "https://www.city.matsumoto.nagano.jp/site/jougesuidou/1361.html",
+    "snapshotPath": "data/evidence/national/chubu-east/9edeedc46ba3acf0ea09.html",
+    "snapshotSHA256": "bf36ec7a7daa014d420a86512806ee1d6f031026326f78ae747115b9b40d3a08",
+    "fetchedAt": "2026-11-05T04:24:21.079565+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/99136654881533f5b5ba.html",
+    "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+    "fetchedAt": "2026-11-05T04:25:05.697419+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-44d29ce20b77b1fda73b",
+    "sourceUrl": "https://www.city.chikuma.lg.jp/soshiki/jogesuido/kanko/1/2041.html",
+    "snapshotPath": "data/evidence/national/chubu-east/66612e2cc7b2f242c4d4.html",
+    "snapshotSHA256": "b86df8ffd9bed75267665ff23ac07d8deefe33352236aaacfbad47d1d6e76ffc",
+    "fetchedAt": "2026-11-05T04:24:12.647647+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-4cbef6338a9e2b8c48c2",
+    "sourceUrl": "https://www.vill.asahi.nagano.jp/official/soshikikarasagasu/kensetsukankyoka/jogesuidotanto/1/1400.html",
+    "snapshotPath": "data/evidence/national/chubu-east/09f58fe4222036aa6376.html",
+    "snapshotSHA256": "6707c80d06877cc2f4902882b1dc255eb4c517a3da8e7a2564c26595ebba1256",
+    "fetchedAt": "2026-11-05T04:25:06.522245+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-4ddffced59c4adbf00e2",
+    "sourceUrl": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+    "snapshotPath": "data/evidence/national/chubu-east/0f5b73e12236a5635ef6.html",
+    "snapshotSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+    "fetchedAt": "2026-11-05T04:27:19.178713+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/99136654881533f5b5ba.html",
+    "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+    "fetchedAt": "2026-11-05T04:25:05.697419+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-53650b944db3a3fec634",
+    "sourceUrl": "http://www.city.omachi.nagano.jp/00015000/00015100/mc.html",
+    "snapshotPath": "data/evidence/national/chubu-east/8a17447483168ae68559.html",
+    "snapshotSHA256": "0a143a07be18d5d7758758a14b54be2db0c5a6efcd39e321885b267fc7dfef95",
+    "fetchedAt": "2026-11-05T04:23:21.298522+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+    "snapshotPath": "data/evidence/national/chubu-east/5e8aac588ad24d390f79.html",
+    "snapshotSHA256": "d37b4b6a0a5b8fd58d1167c9575a5f1b5cf06040fcc159f1979306f147ec2164",
+    "fetchedAt": "2026-11-05T04:25:03.294295+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-5a0a8e11ba49036a9c1e",
+    "sourceUrl": "https://www.city.chikuma.lg.jp/kanko_bunka_sports/event/all/4193.html",
+    "snapshotPath": "data/evidence/national/chubu-east/ce56dc8348b281080738.html",
+    "snapshotSHA256": "505a762127fc964244f2a66f93fecb9e6a887cd444cf02559b1f4516d1d533d9",
+    "fetchedAt": "2026-11-05T04:24:08.055785+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-64b7118a7d922e54371d",
+    "sourceUrl": "https://www.town.obuse.nagano.jp/docs/244999.html",
+    "snapshotPath": "data/evidence/national/chubu-east/04bec4e34e04075d9cb1.html",
+    "snapshotSHA256": "4a9dfa22d5dbbcab22bfd765119cb9e5ece7a63dc2e379201f2a6cb1e5e6e7a7",
+    "fetchedAt": "2026-11-05T04:25:05.848273+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-657ab5074e6540e1d4bd",
+    "sourceUrl": "https://www.city.otsuki.yamanashi.jp/kurashi/suido/2023-1124-0944-17.html",
+    "snapshotPath": "data/evidence/national/chubu-east/6d585395b65f60197837.html",
+    "snapshotSHA256": "43c38dc341971cf5df1612c79c00523cab2da6b67102524f4d565f8b79235fae",
+    "fetchedAt": "2026-11-05T04:24:33.520609+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-6759197c3df3f90f5bd7",
+    "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+    "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+    "fetchedAt": "2026-11-05T04:24:33.155089+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/gesuido/83031.html",
+    "snapshotPath": "data/evidence/national/chubu-east/fac4e64a9f1eabc471fd.html",
+    "snapshotSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+    "fetchedAt": "2026-11-05T04:24:58.841463+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-7d19c697816a714fd233",
+    "sourceUrl": "https://www.town.nagano-takamori.lg.jp/docs/12584.html",
+    "snapshotPath": "data/evidence/national/chubu-east/f9da3454081e73a55d1e.html",
+    "snapshotSHA256": "09ba000c79d981571fb3eda668857629b95ec89f40bd40f5b61cda57aaa7dc97",
+    "fetchedAt": "2026-11-05T04:25:03.800772+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-88bd10e490ce14378986",
+    "sourceUrl": "https://www.city.komoro.lg.jp/official/kurashi_tetsuzuki/jogesuido/gesuido/16123.html",
+    "snapshotPath": "data/evidence/national/chubu-east/b1ce2a97bd6513649d51.html",
+    "snapshotSHA256": "c3ac089d28173e7bf3478caad9d48ca14e8acc427c8e218187c4cd530adc1076",
+    "fetchedAt": "2026-11-05T04:24:28.352644+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-97b67626e4aca3bcd172",
+    "sourceUrl": "https://www.city.komoro.lg.jp/official/kurashi_tetsuzuki/jogesuido/gesuido/12271.html",
+    "snapshotPath": "data/evidence/national/chubu-east/852fb4e549f8e9a84df3.html",
+    "snapshotSHA256": "a6df451bfc7d9b98629503441ba010df549c23e40480b227e8bbddbabd1c3c43",
+    "fetchedAt": "2026-11-05T04:24:23.598656+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-9861585483eb71552f50",
+    "sourceUrl": "https://www.town.obuse.nagano.jp/docs/244999.html",
+    "snapshotPath": "data/evidence/national/chubu-east/04bec4e34e04075d9cb1.html",
+    "snapshotSHA256": "4a9dfa22d5dbbcab22bfd765119cb9e5ece7a63dc2e379201f2a6cb1e5e6e7a7",
+    "fetchedAt": "2026-11-05T04:25:05.848273+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-98dcd8cc70b2aab9ecb7",
+    "sourceUrl": "https://www.city.komoro.lg.jp/official/kurashi_tetsuzuki/jogesuido/gesuido/12271.html",
+    "snapshotPath": "data/evidence/national/chubu-east/852fb4e549f8e9a84df3.html",
+    "snapshotSHA256": "a6df451bfc7d9b98629503441ba010df549c23e40480b227e8bbddbabd1c3c43",
+    "fetchedAt": "2026-11-05T04:24:23.598656+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-9eaf0a9cbfef21e5e06b",
+    "sourceUrl": "https://www.town.karuizawa.lg.jp/page/14115.html",
+    "snapshotPath": "data/evidence/national/chubu-east/58913fe0d47e06a8d426.html",
+    "snapshotSHA256": "b8575d6b94cb3e509a129a58f92043515b9b5f8e67d2d27e1b2d40f5c5f3bb5c",
+    "fetchedAt": "2026-11-05T04:25:03.704489+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-9f0419b4ffe563b225bf",
+    "sourceUrl": "https://www.city.kai.yamanashi.jp/page/17190.html",
+    "snapshotPath": "data/evidence/national/chubu-east/877ff7a236e21d337b1c.html",
+    "snapshotSHA256": "66e637cfd1d20f1eaa04ac938cf06b2033da2f02d6d76c57b27062c4c2249082",
+    "fetchedAt": "2026-11-05T04:24:19.208246+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-acd40115c426144e6322",
+    "sourceUrl": "https://www.vill.asahi.nagano.jp/official/soshikikarasagasu/kensetsukankyoka/jogesuidotanto/1/1400.html",
+    "snapshotPath": "data/evidence/national/chubu-east/09f58fe4222036aa6376.html",
+    "snapshotSHA256": "6707c80d06877cc2f4902882b1dc255eb4c517a3da8e7a2564c26595ebba1256",
+    "fetchedAt": "2026-11-05T04:25:06.522245+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+    "sourceUrl": "https://www.city.chikuma.lg.jp/kanko_bunka_sports/event/all/4193.html",
+    "snapshotPath": "data/evidence/national/chubu-east/ce56dc8348b281080738.html",
+    "snapshotSHA256": "505a762127fc964244f2a66f93fecb9e6a887cd444cf02559b1f4516d1d533d9",
+    "fetchedAt": null,
+    "retrievalTimeStatus": "unknown-not-invented",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-b099923e5cee404cc0d6",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/azuminoryuiki/news/user/201811card.html",
+    "snapshotPath": "data/evidence/national/chubu-east/fd462d1a35c561484d52.html",
+    "snapshotSHA256": "b5d74872c2828ba62749510824133248085ec662eeca4e39e674de976c2f35b7",
+    "fetchedAt": "2026-11-05T04:33:20.644951+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-b932b3643a609b4015c6",
+    "sourceUrl": "https://www.city.suwa.lg.jp/soshiki/23/79232.html",
+    "snapshotPath": "data/evidence/national/chubu-east/578bc8707f4a313cfdde.html",
+    "snapshotSHA256": "b6c739807e5481445ba8bcf6c7607ad3685a1245a9b0e2cd84043ee55525d050",
+    "fetchedAt": "2026-11-05T04:27:45.494675+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-ba9f34b2c65026c605a0",
+    "sourceUrl": "https://www.city.okaya.lg.jp/soshikikarasagasu/suidoka/483/15244.html",
+    "snapshotPath": "data/evidence/national/chubu-east/3dc53bcb94b4842b5644.html",
+    "snapshotSHA256": "bee10f6aeb46f50991d0175af92f060c6c3175560b670db737938853d6f9e9ba",
+    "fetchedAt": "2026-11-05T04:24:30.596545+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-bc40e7c6ae878adb8be2",
+    "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+    "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+    "fetchedAt": "2026-11-05T04:24:33.155089+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-c1dbcbef842ac7914747",
+    "sourceUrl": "https://www.town.nagano-takamori.lg.jp/docs/12584.html",
+    "snapshotPath": "data/evidence/national/chubu-east/f9da3454081e73a55d1e.html",
+    "snapshotSHA256": "09ba000c79d981571fb3eda668857629b95ec89f40bd40f5b61cda57aaa7dc97",
+    "fetchedAt": "2026-11-05T04:25:03.800772+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-d11c6e34378a758c17ba",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+    "snapshotPath": "data/evidence/national/chubu-east/5e8aac588ad24d390f79.html",
+    "snapshotSHA256": "d37b4b6a0a5b8fd58d1167c9575a5f1b5cf06040fcc159f1979306f147ec2164",
+    "fetchedAt": "2026-11-05T04:25:03.294295+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-d3ff85125fb2a2bf4c25",
+    "sourceUrl": "https://www.city.iida.lg.jp/site/jougesuido/mhcard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/edf138454abce5dc4649.html",
+    "snapshotSHA256": "2521ab9dfd10d529fda67a407accbcf78c8687d7125902bc4a877bea74d17147",
+    "fetchedAt": "2026-11-05T04:24:15.870030+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-d6e64e42bdb03c8971c8",
+    "sourceUrl": "https://www.city.otsuki.yamanashi.jp/kurashi/suido/2023-1124-0944-17.html",
+    "snapshotPath": "data/evidence/national/chubu-east/6d585395b65f60197837.html",
+    "snapshotSHA256": "43c38dc341971cf5df1612c79c00523cab2da6b67102524f4d565f8b79235fae",
+    "fetchedAt": "2026-11-05T04:24:33.520609+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-db1572ffc242a3e6035a",
+    "sourceUrl": "https://www.city.nagano.nagano.jp/site/suido/470866.html",
+    "snapshotPath": "data/evidence/national/chubu-east/7b7bf4efe8bdcc5830c2.html",
+    "snapshotSHA256": "2edf1a3964171908435d93681bcbd4062029e5d72bb719f252033370e0069e88",
+    "fetchedAt": "2026-11-05T04:24:25.187265+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-e290fd0a9fdbd522539d",
+    "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+    "snapshotPath": "data/evidence/national/chubu-east/5e8aac588ad24d390f79.html",
+    "snapshotSHA256": "d37b4b6a0a5b8fd58d1167c9575a5f1b5cf06040fcc159f1979306f147ec2164",
+    "fetchedAt": "2026-11-05T04:25:03.294295+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-east-fbcfde49c371740c09fa",
+    "sourceUrl": "http://www.town.nagiso.nagano.jp/jyougesuidou/manho-ru.html",
+    "snapshotPath": "data/evidence/national/chubu-east/7b3a0c09ba24c1b1ea86.html",
+    "snapshotSHA256": "3ec9d60760c96bfe36f5e1aef3287c4add1f6e3f0ed25ea5a4288dc0e3791d5a",
+    "fetchedAt": "2026-11-05T04:23:40.346404+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-otsuki-daikokuya",
+    "sourceUrl": "https://www.city.otsuki.yamanashi.jp/kurashi/suido/2023-1124-0944-17.html",
+    "snapshotPath": "data/evidence/national/chubu-east/6d585395b65f60197837.html",
+    "snapshotSHA256": "43c38dc341971cf5df1612c79c00523cab2da6b67102524f4d565f8b79235fae",
+    "fetchedAt": "2026-11-05T04:24:33.520609+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-saku-terakoya",
+    "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.html",
+    "snapshotPath": "data/evidence/national/chubu-east/bb3bf55b8399058138dc.html",
+    "snapshotSHA256": "221c90f4d02c45d9ec91f8d75de3f8ad7373b369c481cec7c26c41eb6508871d",
+    "fetchedAt": "2026-11-05T04:24:33.155089+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-tomi-tourist-station",
+    "sourceUrl": "https://db.go-nagano.net/topics_detail6/id%3D12087",
+    "snapshotPath": "data/evidence/national/proposals-chubu/d23a7baa0527d95414e4.html",
+    "snapshotSHA256": "afb6ed48a154eaaff6e64176b59ce7a7a392865371f1d49e971f3b2db81ab916",
+    "fetchedAt": "2026-11-05T04:51:02.164767+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  },
+  {
+    "facilityId": "facility:chubu-tomi-water-counter",
+    "sourceUrl": "https://www.city.tomi.nagano.jp/file/155791.pdf",
+    "snapshotPath": "data/evidence/national/proposals-chubu/33923629bf9851dfaee7.pdf",
+    "snapshotSHA256": "bcf0037aea996bd777d0e0d6329ef51c58df6b050ed98775c86d4cb2f4df8ceb",
+    "fetchedAt": "2026-11-05T04:51:02.163944+00:00",
+    "retrievalTimeStatus": "recorded-in-prior-metadata",
+    "reuseStatus": "existing-repo-path-no-copy"
+  }
+]

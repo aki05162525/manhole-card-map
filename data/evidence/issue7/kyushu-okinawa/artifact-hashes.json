@@ -1,0 +1,634 @@
+[
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0066b8e1db1372fb1afe1562.html",
+    "sha256": "0066b8e1db1372fb1afe156220725c1755590738d06215a24f4ebf1848684c0c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0524c9cc4add7e0b545531e6.html",
+    "sha256": "0524c9cc4add7e0b545531e6d7f23b32f1a7c29be933dfd40092e4f1a083e94b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0630f45cd45f60cef274956b.html",
+    "sha256": "0630f45cd45f60cef274956be65cd9e0416dc692dd3ba7fbd08d0b817e83a74c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/076e517e088dabc3cd594567.html",
+    "sha256": "076e517e088dabc3cd59456797a1d62352b17271f3d2e38e2c33d4a45c313011"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/08304f51f1916ecfd92b9344.html",
+    "sha256": "08304f51f1916ecfd92b934470940a2f742e3d78f5eefcb7ea33a293fd9fdb8b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0a38ccc5a7ecf0aade04ba98-ocr.txt",
+    "sha256": "a8e097f8b5ea797bd1ec56f5a7a0f4443dc61a823a67fcd39c6860bf49a0ed86"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0a38ccc5a7ecf0aade04ba98.html",
+    "sha256": "0a38ccc5a7ecf0aade04ba98b859d1cc49403171152a5c3ca161da4706d20175"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/0bfe7d56b968ae4a7540e82b.html",
+    "sha256": "0bfe7d56b968ae4a7540e82bf06d36c3c6242c2affbd5407e0cc82f3951e4351"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/117db75d34aba1bb636e5bd8.html",
+    "sha256": "117db75d34aba1bb636e5bd8ef5bc92a321c7d2bc6eb2ea0dac150c944957ed3"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/11d626e9a3af3a418591d26b.pdf",
+    "sha256": "11d626e9a3af3a418591d26bd9c282aac121bf8b186abe6980f9a561b1ae4401"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/15156003084a7a0028dfe0f6.html",
+    "sha256": "15156003084a7a0028dfe0f663632dd454892c2e88f3437e74eed3be09b9c315"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/20a405df5550682510180d2a.html",
+    "sha256": "20a405df5550682510180d2a3a91c4daa5738a6c60bebe93a62fb4e2c6915e8b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/260cc2f13207e10dc6d558b2.html",
+    "sha256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/289abbc5a526f8c846cd0019.html",
+    "sha256": "289abbc5a526f8c846cd00194bc83ec089c4cdaf54c23fff44474a511f553965"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/31dd459c021ddcdbab8ebf94-ocr.txt",
+    "sha256": "6b274fd5c035f6504a3c5c9c7887b2d94b10236d544ff08dc18ecdfe6ce90176"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/31dd459c021ddcdbab8ebf94.html",
+    "sha256": "31dd459c021ddcdbab8ebf947bf7f5c9124340256014f389c51da3d73e432278"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/325804f7e232182e6d10f804.html",
+    "sha256": "325804f7e232182e6d10f804a0ff4f212bebede2af3a8e1411280d63cb0e328d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/327b5f210efe4f5822d8a09d.html",
+    "sha256": "327b5f210efe4f5822d8a09df742a681ff3b400b2f424a6610dcce64fd697338"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/35db090affaa9ca55b765efa.html",
+    "sha256": "35db090affaa9ca55b765efac739b7db4e956446991e10703e0d2377ed37a92b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/36909aef79ee6071273d4231.html",
+    "sha256": "36909aef79ee6071273d423115cb703f699d74496e87204479420f3c743bd403"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/37973db511fba9673558621e.html",
+    "sha256": "37973db511fba9673558621e3dfd9bdf9aa696e4995f2bcbae7aaf0a55590213"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/37ff6f0f1465120220a2b818.html",
+    "sha256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/3a18e7f126766d00f9a59193.html",
+    "sha256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/3d136974297e7c0a9dfdeb3f.html",
+    "sha256": "3d136974297e7c0a9dfdeb3fc51ef11333ca8db8743f7cc04c17cccd45ec958b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/3de54004e1f29cf0b35abece.html",
+    "sha256": "3de54004e1f29cf0b35abecec9c8f6bdfccbacd816a1b63762b21ed749c1f320"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/3df2ec5ce53631f82aad0e1e.html",
+    "sha256": "3df2ec5ce53631f82aad0e1e891dc07167018b40e374ede466af862c281aaaea"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/3ed620a45b57836d2ebac8ae.pdf",
+    "sha256": "3ed620a45b57836d2ebac8ae9835e6995f8407bb6c4f8f8b55c6312cbb5a5047"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/402c0825cb971b95d3f1f5f8.html",
+    "sha256": "402c0825cb971b95d3f1f5f8dbfe4672b533ceacb14356a97b8e724d3751e462"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/40330926f125596c123a8ceb.html",
+    "sha256": "40330926f125596c123a8ceb0b7ae9eccc99aad8a33df3dd6cef15a7d600ec2b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/43082f074807eb6fc6785d36-ocr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/43082f074807eb6fc6785d36.html",
+    "sha256": "43082f074807eb6fc6785d366caea3eca851d11ee7e862c61264790d9981142f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/431a8569407f8f21ca3b5bf0.html",
+    "sha256": "431a8569407f8f21ca3b5bf0a62c8631143fd15f7a0139cb7f96d61f98637440"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4358f0701f33575a3701e26b.html",
+    "sha256": "4358f0701f33575a3701e26b3695a7b43895df4d6d1cdbfb3832054265d1834f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/43bf5b53ec73c6d6135c5d0a.html",
+    "sha256": "43bf5b53ec73c6d6135c5d0a1943ec64c8459529222c38ac774681ff3c06eda7"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/47d55857174c7a7ceb74bb2c.html",
+    "sha256": "47d55857174c7a7ceb74bb2cdb93c479519f91db176f15234752e06999bd72e2"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/48546c856302f2db65623d97.html",
+    "sha256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4965e43b257e232291fd120f.html",
+    "sha256": "4965e43b257e232291fd120fdfb3930672d65fb5edb20daa6320b9dd894a3693"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4a22e1e5539bd41e52389f23.html",
+    "sha256": "4a22e1e5539bd41e52389f23a2ae0017089836f4215fab3f83c5f7fa92d8dbd4"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4a636091c14cc6a2bc42bbef.html",
+    "sha256": "4a636091c14cc6a2bc42bbef308a588d3c933f20b43ae8c16f67780cf25ed76d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4d494e92f0f5ad3b28b85baa.html",
+    "sha256": "4d494e92f0f5ad3b28b85baa38493070aab3aea9677f26846dfa33c45aff2851"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/4efbafb493d2d91dfd011599.html",
+    "sha256": "4efbafb493d2d91dfd0115991ab8036a635adc6e01f4725d8a18c54c5cf86563"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/511982aa6b69f8794afea29e.html",
+    "sha256": "511982aa6b69f8794afea29e7baca10cb7aa235872840a1eb0df051c02940ee4"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/5143e71c7e092b324c163508.html",
+    "sha256": "5143e71c7e092b324c163508ab42663a2670988aa2c2fb5a5e34aa251717f9cb"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/5151e7548080a1c334dfe7c0.html",
+    "sha256": "5151e7548080a1c334dfe7c0aa63e579138b73eea0d9ed1d8a101455982f30a1"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/51fe73b4488807bba0e40bfc-ocr.txt",
+    "sha256": "42f26c91414d0da4628c12b2e3d3f64c9e4038a196ff02af8799434c77ef5a14"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/51fe73b4488807bba0e40bfc.html",
+    "sha256": "51fe73b4488807bba0e40bfc3141e5cbb3f5a60ca88bbc9c6a6b693f287f51d5"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/52deb1a5e97008c86ef93511.html",
+    "sha256": "52deb1a5e97008c86ef9351102c0121b0fe21680f296bcacf5c1de161fdb67a9"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+    "sha256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/56d96688ff7b7b3411202bff.html",
+    "sha256": "56d96688ff7b7b3411202bff1ad4643cb411c6fb0b889300ab1d0d8ffb4c61e0"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/57b1e1b56f2cf6c4737e33d2.html",
+    "sha256": "57b1e1b56f2cf6c4737e33d2cedd79ecef36ca3fdb86d1a7bea6e051cecfd438"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/58071050f87e75dc6ef77a3e.html",
+    "sha256": "58071050f87e75dc6ef77a3e8a368f1214f44b9425e11c373fcd3c1cfe7b2030"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/5d5b95319032bbcd44c9cd43.html",
+    "sha256": "5d5b95319032bbcd44c9cd43d8193c940e1424ac882b1230ad4195eaad21786f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/607d3e3a9917fa843e962664.html",
+    "sha256": "607d3e3a9917fa843e96266404ddac9c6d50acebaf9c1655ee77e6a61c18b9a7"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/6566c0da32fbc30d2cb3b72f.html",
+    "sha256": "6566c0da32fbc30d2cb3b72f283b30fd0dfc1e0a3882461763829ddf6bcf020f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/6592094fcd74de778bd9e272.html",
+    "sha256": "6592094fcd74de778bd9e272bae291f9a7712dd1d1a70671e0eff2e4ae972030"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/66cd9e6acdfe245ee81b66b9-ocr.txt",
+    "sha256": "81ef9fd67dc2d9c30f3d7255f4036f75d77f4c774f9eb44d01354126e61f3b05"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/66cd9e6acdfe245ee81b66b9.html",
+    "sha256": "66cd9e6acdfe245ee81b66b96cc491a7b69b6220c0d35f1590f4d204de239a8a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+    "sha256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/68c028388320259c301b90ae.html",
+    "sha256": "68c028388320259c301b90aeca9016aa3db02a9b38f077e2e8d3365d2fbbc12f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/73084a197a274a58e608b6c3.html",
+    "sha256": "73084a197a274a58e608b6c38846fb95f6a9a06b4924463af01cdf9a9dd27116"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/74c5d817e781a5f9bf288c9b.html",
+    "sha256": "74c5d817e781a5f9bf288c9b78529cc67ab1674f3a98e9fb0c6682999ac28ef9"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/7731c6a27992dd955e79d57b.html",
+    "sha256": "7731c6a27992dd955e79d57b4222a42e5f296ab1ad5458ba219f358aa3bd294a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/7764641f3f9e8b475ec7ea54.html",
+    "sha256": "7764641f3f9e8b475ec7ea5471e24d5eacc9d047d359eef039b759304a812117"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/7e63332af55696d162e538f7.html",
+    "sha256": "7e63332af55696d162e538f710f7dc1826b45cc928a70a85c3a775c67dfec196"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/7ec621ee8f65ae8eb2901784.html",
+    "sha256": "7ec621ee8f65ae8eb2901784d17cd58283e2c2b92a6bbc859bae5e25076a59b9"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/814dc8cfcbb3f8152e05784b.html",
+    "sha256": "814dc8cfcbb3f8152e05784bb493e1c3b9bb53d1b925012e41374f30f168fd02"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/81bb60b63e285f51e2ba3ed4.html",
+    "sha256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8282fe362e54ace1216f3ee1.html",
+    "sha256": "8282fe362e54ace1216f3ee1b196c878b5b385783f02d318fc58f6c89d2988a6"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8443a8bfc7f3f42f93cd8562.html",
+    "sha256": "8443a8bfc7f3f42f93cd8562d868d49aa8496897578fb8e3f45bf06975c878af"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html",
+    "sha256": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/88b5f0737272da3aa7e8baf5.html",
+    "sha256": "88b5f0737272da3aa7e8baf5fc0c02c1a3e44c75dfca4740b540278b367f18c5"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8b96d3b3a5f50726098ff47a.html",
+    "sha256": "8b96d3b3a5f50726098ff47a7dba033dcf022c1df16e8c2128b2a7d2b5776825"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8d1610d5c2945687706c38ff.html",
+    "sha256": "8d1610d5c2945687706c38ff7c9f9d64dd91b5e5431929b7d6e5448b115255aa"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8e1c699389a6db8ca69d18ef.html",
+    "sha256": "8e1c699389a6db8ca69d18efd7c45c7ce094cab5248a2110d3c03dd7d1f66289"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/8fc069fb64d2aaedf881d0ea.pdf",
+    "sha256": "8fc069fb64d2aaedf881d0ea359ae754bd0b2849d1d3196924ab17129319ff06"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/94237e1a4ab882ba687e4614.html",
+    "sha256": "94237e1a4ab882ba687e46142174f834b3074b8f5866fa712c913f01856eedbc"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/95d3eae1d6205a1d6330e631.html",
+    "sha256": "95d3eae1d6205a1d6330e6316cf7958f9066b5c9871617eda03986219110426d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/992eeac7ce708ece842c4776.html",
+    "sha256": "992eeac7ce708ece842c4776d7393c52c0dcba08b37ce3013bdafce1cd10a2a0"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/9a87a7d0b542e1a19d4653b1.html",
+    "sha256": "9a87a7d0b542e1a19d4653b1606ef6865fe8657a3559779942af421754b5dfa9"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/9bda91c9f17d083cf8e0e1fc.html",
+    "sha256": "9bda91c9f17d083cf8e0e1fc3aeb7906f6949ba57d1c7e4298e976c799df11f3"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/9c8f88d0e9073b97581173c1.html",
+    "sha256": "9c8f88d0e9073b97581173c1317fdfbbbc6151efd3a95248c5c27ce389208239"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/9ce566188c36e58be5816f32.html",
+    "sha256": "9ce566188c36e58be5816f320e061a2a15d533bbc9efcad847fb67f7dbc7cc5a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/9ebfeb78de7a7403531f70f4.html",
+    "sha256": "9ebfeb78de7a7403531f70f407fbd4762f75a2a8d99936c3e98d38cd0f1717f2"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/README.md",
+    "sha256": "0585e68d30b0bac4fcd76f02ec46787339db4ae337a80853f8d8fb7a75ae9779"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/a14c47e01d5529405f6ce1da.html",
+    "sha256": "a14c47e01d5529405f6ce1da902b2dffddda280e2582473c9ba4301ebe314783"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/a53c628c3cf9fc8914e0b0ec.html",
+    "sha256": "a53c628c3cf9fc8914e0b0ec38310021cc24f9f3d30dab9dbc6257d9c80c3881"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/a63b2aa655e4d3cbc96f652a.html",
+    "sha256": "a63b2aa655e4d3cbc96f652aaa49ea4e0391423c43933912166170cbb106050c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/a6518e2093fd780b1ae87097.html",
+    "sha256": "a6518e2093fd780b1ae87097fa1feeb48d098e13c06bde908802c718c7b9e718"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/a69e9fd0cba8280082ff6e0d.html",
+    "sha256": "a69e9fd0cba8280082ff6e0ddbbfed41a68bdd2a66bec3562ce4418b5b804510"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ac02261283b060e9cd41aaa8.html",
+    "sha256": "ac02261283b060e9cd41aaa8dd3dfd2c1ec1267935148249408ef5e8b41d1566"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ae8b8fcc0d7fb564d7683026.html",
+    "sha256": "ae8b8fcc0d7fb564d768302618f9ecc7c72ea3bcc5bf420441770daa12a7fe8c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/b0dc607c0a8de15f5845bbb7.html",
+    "sha256": "b0dc607c0a8de15f5845bbb7cf2f8478ff8590217e4eeebee6fe859385556a76"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/b1c27b8c6e61486fb8feb3f0.html",
+    "sha256": "b1c27b8c6e61486fb8feb3f04a84fa91339dd86060acd83726955fe1677e5a86"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/baf9caa2ecae83731fca6a6f.html",
+    "sha256": "baf9caa2ecae83731fca6a6fc8a4128db722d3dc364a71342a7a6f511db02c98"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/bc507da7a62efcbb253e32ef.html",
+    "sha256": "bc507da7a62efcbb253e32ef751555026987ec2a0ea672a41a3973668af94a7b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/bcb4c2e0364baf2667634f2b.html",
+    "sha256": "bcb4c2e0364baf2667634f2b44afbad6e29bf8cc35bb902cf0dc68fe57d06fbe"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/bd0786ebc695d63736ff1838.html",
+    "sha256": "bd0786ebc695d63736ff183801e5ae68be70876cb5d4db1923ef72144fa8147e"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/bfeaa2d5267f1659142b1dcb.html",
+    "sha256": "bfeaa2d5267f1659142b1dcbd1f2b21028dd97629e28d154499f33d1b0cd75db"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/build.py",
+    "sha256": "3a2213247e5407ea4f5cbcdf4692b16ae9afe8dc01cf890272ae12bef15bda68"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/c5b40eeb9771b9ddc23dba4c-ocr.txt",
+    "sha256": "d75718f58f597de8a83c92ef83e65c283171499c7fbb050425113db986d7e23a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/c5b40eeb9771b9ddc23dba4c.html",
+    "sha256": "c5b40eeb9771b9ddc23dba4c3f35b42a03b4da2a2c78d6add1fac729d3e5f1cb"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/c82487ba584b3a30dcafd76d-ocr.txt",
+    "sha256": "3091ead019207caa7aee1a08a57d3aa277bac899343e424912454ab04b65d5cb"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/c82487ba584b3a30dcafd76d.html",
+    "sha256": "c82487ba584b3a30dcafd76de610e9cec83edaac87f05fc5c4895b65923d0e62"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ca14e657985c617b1b2546e5.html",
+    "sha256": "ca14e657985c617b1b2546e58cbe11dcead835e72a0f62b12849faeb0970414d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/cb024d35481546be7ce1bf59.html",
+    "sha256": "cb024d35481546be7ce1bf591aa4a4836cd301cca9d3900ce31b2fd9ac5f3dbf"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/cb40b5e54e19a5e4a2b3a7db.html",
+    "sha256": "cb40b5e54e19a5e4a2b3a7dbdb1a43b3ed451ecaf73141f8a1677e192ad1ef91"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/cc5fb1ec44029eefe6a2aebd.html",
+    "sha256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/coordinate-proof.json",
+    "sha256": "27b9f54be6f2574847e58fe451bf06257f86254866c910ab0fff7e95bca77599"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/d218b97ccb0659799bd7a8b3.html",
+    "sha256": "d218b97ccb0659799bd7a8b3e16b78bd8f188d551c8243699269a565dbba44c7"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/d5b2db33f270efd5e7a45cc9.html",
+    "sha256": "d5b2db33f270efd5e7a45cc9ef63aaa01e47742bc20773d42bae3dce16d05127"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/daf037a730652526782cf5f5.html",
+    "sha256": "daf037a730652526782cf5f576f74ab607d44e32bc5dd17d7937adc81bb5dd14"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/db8a0bb95053910aed3e502e.html",
+    "sha256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/dc29cf104a207acd78740705.html",
+    "sha256": "dc29cf104a207acd787407057678dc8e760e069b4aa81bf53e2335b55c346030"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/dc9ad86cb8686312fea1a43f.html",
+    "sha256": "dc9ad86cb8686312fea1a43f9c1d0a7536f566b7c21dbb2559807eda28a8724b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/deaf51599b4adaee97cfcca1.html",
+    "sha256": "deaf51599b4adaee97cfcca1eeec94697cb112608798d510fce9e463a8c5f298"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/dfbe313aa164f8252f1fa06e.html",
+    "sha256": "dfbe313aa164f8252f1fa06ef4a6e979f7c3f9c8942fb9ee6cdac9b0decd4b8d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/e19a6472df545ef23c4db0e3.html",
+    "sha256": "e19a6472df545ef23c4db0e374c9ece0ca7ffcc5e124ff4ff9b060425a2151aa"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/e2d977b5becf3ccff2eda216.html",
+    "sha256": "e2d977b5becf3ccff2eda2166d10e44b521c958acf9402a18384ea043106e21d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/e4a75d282d65c7021728979e.html",
+    "sha256": "e4a75d282d65c7021728979e5785dd3ed72c7e5a8751c134f070cd37e5ba1e07"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/e5300a3525bf78a44da99c39.html",
+    "sha256": "e5300a3525bf78a44da99c39501f333cacacc2f1353b4f8db4eb4bd4d7e36aaa"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/e7b0e44616d0b436ca8c1fe4.html",
+    "sha256": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ea264cfc3327f6589b930f07.html",
+    "sha256": "ea264cfc3327f6589b930f0710ff764a2d2df9ea5e8e46a3153261048f549966"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ee4f87d78bc7a9bb8f9ac591.html",
+    "sha256": "ee4f87d78bc7a9bb8f9ac591610efb91222749bf92d3a94e1d4599b9f65a5254"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/efc3ef4e28163845a1fda7ec.html",
+    "sha256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/evidence-probe.go",
+    "sha256": "5ff320aefb4aba493a48ae727e960fc2b8be7c448ed23df04f242a27ba2d6ccc"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/extra-fetches.json",
+    "sha256": "6fec52cb3ce741f104bc5317cb26b43afd868632d44e4f81460968e32d86965a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f098392800b2b7117905cae7.html",
+    "sha256": "f098392800b2b7117905cae7cbbd5e7ded5995fa035986db8304c4973e1f0238"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f2e06f4d07bc6607b45f3f69.html",
+    "sha256": "f2e06f4d07bc6607b45f3f697d29eb1c235099c441953dbc9f1a5d4b3c5c3309"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f4db022fc0b71548890b40b7.html",
+    "sha256": "f4db022fc0b71548890b40b7ddfc9bdf140ef61e1618a1244eceecaefa25d4ae"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f5982a053765eb1ed0949a08.html",
+    "sha256": "f5982a053765eb1ed0949a0811b283978390d55cc88d1705d962ee446b44eb83"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f61e475c3ef5143c60951603.html",
+    "sha256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f717276f7518f71891736f99.html",
+    "sha256": "f717276f7518f71891736f99f8e5271ee832e5c5a5f28777ca0bb73b52753e78"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f844ed05d26aa8dda8c6e917-ocr.txt",
+    "sha256": "bd9b8adea7849cd1375023537398a9a2ad09df8b17d548ef5cc556261a1d698e"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/f844ed05d26aa8dda8c6e917.html",
+    "sha256": "f844ed05d26aa8dda8c6e9175cb3189fdacaca24b4929831ea9d7d98bee38015"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fbc08f67f2a5e5246841aff7.html",
+    "sha256": "fbc08f67f2a5e5246841aff74d0636b3dfabdab426e2bdc0ec5533642cc63c50"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fc767ee98347c7ae2f638cf1.html",
+    "sha256": "fc767ee98347c7ae2f638cf11b2d00782418bc33b97f4b0c90676375e8259fd0"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fcaeb43c9fa41ad2ff143ee8-ocr.txt",
+    "sha256": "ea94b1a43254275573094c1800403003153487cd5c4eb6489ef1ad6e9ba93a6a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fcaeb43c9fa41ad2ff143ee8.html",
+    "sha256": "fcaeb43c9fa41ad2ff143ee84c95c153ce9c6b10c83abce5c1fedc156c4c634d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fd704b5c58fee72e60fbf7bd.html",
+    "sha256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/fetches.json",
+    "sha256": "7a7420f7bd9d920896456a54eb9cdb6c189631e5c7ff220697979519e9d62783"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/ffb15dfaeeb25d5e1cb07938.html",
+    "sha256": "ffb15dfaeeb25d5e1cb079383758227fe478408ef36f1904ecb5e98f69c04753"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/followup-extra.py",
+    "sha256": "3c1d711df6348b2cc147aa6df3964408874ca49558359306d9be213c86c8f292"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/followup-fetches.json",
+    "sha256": "19432eb595524d00de352bf7c325cb3bcd6caeebb6959d83cc130a8f69d802e4"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/followup.py",
+    "sha256": "a03bf6df96d1c99242dbd9ef98ee067fb4652c93882e7e89dd72b6781b1e9694"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/go-validation.txt",
+    "sha256": "ceca8900dac233bf2c00957f974876c9e48b47dc5079652facfdabd2e5ccdc09"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/input-hashes.json",
+    "sha256": "d20b019e93ae88f1f8acb996dbceacea468e772eb7472c5b117e98122910bd84"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/nakama-fetch.json",
+    "sha256": "71af141ac96af8182ec73b1df1c43d031fb9208831fbc2177b79029d931f2cae"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/nakama-images-fetches.json",
+    "sha256": "3cd618d00ee514f79490d91a151498b385225768fc393b3816d84c37120bab5d"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/nakama-images.py",
+    "sha256": "e2c0baaadc30f4b3ae1991bbac9456eb607d39d064c81d449e0d238dc55d36b1"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/p05-leads.json",
+    "sha256": "3f98e6b7607ff43a8fe6c26650f70e43dc1fa4a0ecef17582ae5d9e558b7f86f"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/research.py",
+    "sha256": "45ca0f4a8bd2558eb031c975d42ca20af504474bc1ad08198dbe2b7914df96e3"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/reused-snapshots.json",
+    "sha256": "b8f9293133cda28648e24258c7cd56732aedddc7e386825ae7d9d207b96b977a"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/source-conditions.json",
+    "sha256": "6504584560aada2b9669190997856ca1e57deef9e732278fe541e02471a4b1fa"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/sports-fetch.json",
+    "sha256": "f6ce4ef3c4ad26c493995e0691ba892d69c5b13f41d631668398c0e48fb49589"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/target-audit.json",
+    "sha256": "b14e8a98a3dbfcb7cb9672aa5aeda7a51695bdd4488314531b6894e6e364fcfc"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/validation.json",
+    "sha256": "86ab4f1b19626acba48bb084cb6ed7aceb68367c2658a8753e8af8a2f1fca615"
+  },
+  {
+    "path": "data/evidence/issue7/kyushu-okinawa/verify-go.py",
+    "sha256": "660e1b46b2a4dbdcd0d2815afaaa648fff312e58470b0c645876ee22f248b649"
+  },
+  {
+    "path": "data/national/issue7/kyushu-okinawa.json",
+    "sha256": "ac7f9f97054c2fb34e4476637bbcf07ac02731d164e46cba8b580f5dfa0a19d1"
+  }
+]

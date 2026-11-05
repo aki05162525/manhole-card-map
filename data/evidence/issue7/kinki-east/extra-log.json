@@ -1,0 +1,56 @@
+[
+  {
+    "sourceUrl": "https://museums.city.kameoka.kyoto.jp/",
+    "fetchedAt": "2026-11-05T06:30:53.306771+00:00",
+    "status": 200,
+    "finalUrl": "https://museums.city.kameoka.kyoto.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/9ecaf4ec637a0b262d10.html",
+    "snapshotSHA256": "98221b1d574c85e330168a91e36a99f08018d9c133f78afc176d23ac391f00a0"
+  },
+  {
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/",
+    "fetchedAt": "2026-11-05T06:30:53.307809+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/5ee551a9de2bed74a38f.html",
+    "snapshotSHA256": "5d864b06dc46b7f7076ae6860ca6bf710a0f8bf175579fa1860b29d7ffe3948d"
+  },
+  {
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/soshiki/49/",
+    "fetchedAt": "2026-11-05T06:30:53.308484+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kameoka.kyoto.jp/soshiki/49/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/aed865c1824116b2e830.html",
+    "snapshotSHA256": "87429bf573484d2a2a0fb40cac8b355fcd633427d1eff5555e5219dcc3852b81"
+  },
+  {
+    "sourceUrl": "https://www.city.maizuru.kyoto.jp/kurashi/0000009007.html",
+    "fetchedAt": "2026-11-05T06:30:53.308961+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.maizuru.kyoto.jp/kurashi/0000009007.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/c97c1f8190262617d674.html",
+    "snapshotSHA256": "ce0a1380ec73a1cc41e16ca49cfb5bd81a4bbcc3e2c39eca8cfbab1ff8fde160"
+  },
+  {
+    "sourceUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+    "fetchedAt": "2026-11-05T06:30:53.309354+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/5cc94781c6fe09f9f520.html",
+    "snapshotSHA256": "2fe021b4cf8db8f5f76eb1bb971f34b57d181325c590fe9258c08f105b9578fa"
+  },
+  {
+    "sourceUrl": "https://www.ohmi.or.jp/zaidan/access/",
+    "fetchedAt": "2026-11-05T06:30:53.310871+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ohmi.or.jp/zaidan/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/92454facb589de041581.html",
+    "snapshotSHA256": "c71d3cf8120066c67ba463c3fbf6aea471cc967883743f9dad9b11a6f7fcc7dd"
+  }
+]

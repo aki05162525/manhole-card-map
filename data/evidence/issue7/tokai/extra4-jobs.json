@@ -1,0 +1,33 @@
+[
+  {
+    "url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf",
+    "facilityIds": [
+      "facility:chubu-west-3ae4954df5521d92e778",
+      "facility:chubu-west-f860c41765b78b59c083"
+    ]
+  },
+  {
+    "url": "https://www.hidatakayama.or.jp/sitePolicy/",
+    "facilityIds": [
+      "facility:chubu-takayama-nakabashi"
+    ]
+  },
+  {
+    "url": "https://www.hida-kankou.jp/about-site",
+    "facilityIds": [
+      "facility:chubu-west-8b10b99e9d58aaa58550"
+    ]
+  },
+  {
+    "url": "https://www.city.fuji.shizuoka.jp/images/4943/1f_s.jpg",
+    "facilityIds": [
+      "facility:chubu-west-b8c6ad4784789086f0d7"
+    ]
+  },
+  {
+    "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/images/1f.gif",
+    "facilityIds": [
+      "facility:chubu-west-5c2eca0bf60a3cf39536"
+    ]
+  }
+]

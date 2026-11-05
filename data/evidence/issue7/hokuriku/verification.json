@@ -1,0 +1,78 @@
+{
+  "status": "pass",
+  "facilities": 40,
+  "updates": 8,
+  "unresolved": 32,
+  "gmlCrosschecks": [
+    {
+      "facilityId": "facility:chubu-east-0c0f3438fa9b21563d94",
+      "positionsLatLng": [
+        [
+          36.70185502,
+          137.30718164
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "positionsLatLng": [
+        [
+          38.12559907,
+          139.44451505
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-6f1cf560a94cdce2b66d",
+      "positionsLatLng": [
+        [
+          37.00618581,
+          136.77801464
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-cf23f7f3846328ad1c67",
+      "positionsLatLng": [
+        [
+          37.00618581,
+          136.77801464
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-ee483872ed2d67e3f0ab",
+      "positionsLatLng": [
+        [
+          37.5307134,
+          138.70937013
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-a97e4141d06f3d78c1ff",
+      "positionsLatLng": [
+        [
+          37.30793058,
+          137.14664642
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    },
+    {
+      "facilityId": "facility:chubu-east-b7d603f8e144e10c3bb0",
+      "positionsLatLng": [
+        [
+          36.0657276,
+          136.21844895
+        ]
+      ],
+      "toleranceDegrees": 1e-07
+    }
+  ]
+}

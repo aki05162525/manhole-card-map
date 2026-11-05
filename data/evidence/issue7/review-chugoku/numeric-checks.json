@@ -1,0 +1,372 @@
+[
+  {
+    "facilityId": "facility:cs-8dd78605b23dd55e25",
+    "name": "やかげ町家交流館",
+    "coordinate": {
+      "lat": 34.62377391,
+      "lng": 133.5892872
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "details": {
+      "feature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "33461",
+          "P05_002": "5",
+          "P05_003": "やかげ町家交流館",
+          "P05_004": "矢掛町矢掛2639"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            133.5892872,
+            34.62377391
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "innerZipSHA256": "4355791ad912869b1e5b96e26fb6fa732b4459d8284c7f426eb5386fcdeeadb0",
+      "geojsonSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+      "axisOrder": "GeoJSON [longitude, latitude]; JGD2011 EPSG:6668; no numeric transformation"
+    }
+  },
+  {
+    "facilityId": "facility:ws-ab79fd8795933123c5",
+    "name": "児島商工会議所",
+    "coordinate": {
+      "lat": 34.4630201,
+      "lng": 133.8051071
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "details": {
+      "feature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "33202",
+          "P05_002": "5",
+          "P05_003": "児島産業振興センター",
+          "P05_004": "倉敷市児島駅前1-37"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            133.8051071,
+            34.4630201
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "innerZipSHA256": "4355791ad912869b1e5b96e26fb6fa732b4459d8284c7f426eb5386fcdeeadb0",
+      "geojsonSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+      "axisOrder": "GeoJSON [longitude, latitude]; JGD2011 EPSG:6668; no numeric transformation"
+    }
+  },
+  {
+    "facilityId": "facility:ws-f0d5e530cedd97b88a",
+    "name": "児島産業振興センター",
+    "coordinate": {
+      "lat": 34.4630201,
+      "lng": 133.8051071
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "details": {
+      "feature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "33202",
+          "P05_002": "5",
+          "P05_003": "児島産業振興センター",
+          "P05_004": "倉敷市児島駅前1-37"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            133.8051071,
+            34.4630201
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "innerZipSHA256": "4355791ad912869b1e5b96e26fb6fa732b4459d8284c7f426eb5386fcdeeadb0",
+      "geojsonSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+      "axisOrder": "GeoJSON [longitude, latitude]; JGD2011 EPSG:6668; no numeric transformation"
+    }
+  },
+  {
+    "facilityId": "facility:cs-ddde663d81d83b2c0f",
+    "name": "下松スポーツ公園体育館管理事務所",
+    "coordinate": {
+      "lat": 34.02543449,
+      "lng": 131.8871072
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "details": {
+      "feature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "35207",
+          "P05_002": "5",
+          "P05_003": "下松スポーツ公園体育館",
+          "P05_004": "下松市大字河内140"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            131.8871072,
+            34.02543449
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "innerZipSHA256": "81b23050f2af055126fbbeac716a4cbb0e63b323b8e164432a17bc9ffacc979c",
+      "geojsonSHA256": "d34c8f6c580bc25e122b8fff57ba8594b85d347c12614ae4943136e1d11ff171",
+      "axisOrder": "GeoJSON [longitude, latitude]; JGD2011 EPSG:6668; no numeric transformation"
+    }
+  },
+  {
+    "facilityId": "facility:cs-795a18c5cddf2431eb",
+    "name": "東広島市観光案内所",
+    "coordinate": {
+      "lat": 34.43133011,
+      "lng": 132.7439247
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "ff175cd406f95b26fd074045e3e5f9e84ed105ec59ecf055826c097db37d9002",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "jsonld": {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "東広島市観光案内所",
+        "description": "西条駅の改札を出てすぐの観光案内所では、酒蔵通りのグルメスポットやおすすめのポイントも案内しています。観光のスタートにオススメの、東広島市全域のパンフレットを配布しています。また英語での対応も可能です。",
+        "address": "739-0011 JR西条駅：東広島市西条本町12-3、※駅の２階です",
+        "@id": "https://dive-hiroshima.com/explore/341/",
+        "telephone": "082-430-7701",
+        "photo": [
+          "https://hit-product-resources-public.s3.ap-northeast-1.amazonaws.com/images/341/nIjDTKzvfQ2oNMZusKB5/original.jpg"
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "34.43133011",
+          "longitude": "132.7439247"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=34.43133011,132.7439247"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:cs-424799903d1a9c1291",
+    "name": "旧柚木家住宅(西爽亭) きゅう ゆのきけ じゅうたく(さいそうてい)",
+    "coordinate": {
+      "lat": 34.541439,
+      "lng": 133.6715032
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "927ea97263770af036e16e36e8be3e2565aa1f201f8f9bcd1bb8af6001489c32",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "rawPair": [
+        "34.541439",
+        "133.6715032"
+      ],
+      "axisOrder": "q latitude,longitude; destination rather than ll viewport"
+    }
+  },
+  {
+    "facilityId": "facility:cs-0bd3389d5748cea3af",
+    "name": "道の駅あいお",
+    "coordinate": {
+      "lat": 34.0288046,
+      "lng": 131.45724640000003
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "02de51afcb975422cb348beb7f374dea89f2668e29a1402f0d5f190d5fcbe812",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "rawPair": [
+        "34.0288046",
+        "131.45724640000003"
+      ],
+      "axisOrder": "q latitude,longitude; destination rather than ll viewport"
+    }
+  },
+  {
+    "facilityId": "facility:cs-7940cff6f6fa056d34",
+    "name": "一般社団法人 新見市観光協会",
+    "coordinate": {
+      "lat": 34.9874706,
+      "lng": 133.4575158
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "f97897ef93cdc0c1059874d8950c2e374cb7ea8f8a1398085b2a2cc25f1d41c9",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "markerCode": "\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t<div id=\"p-gmap\"></div>\n\t\t\t\t<script>\n\t\t\t\t\tfunction initialize() {\n\t\t\t\t\t\tvar latlng = new google.maps.LatLng(34.9874706, 133.4575158);\n\t\t\t\t\t\tvar myOptions = {\n\t\t\t\t\t\t\tzoom: 12,\n\t\t\t\t\t\t\t/*拡大比率*/\n\t\t\t\t\t\t\tcenter: latlng,\n\t\t\t\t\t\t\t/*表示枠内の中心点*/\n\t\t\t\t\t\t\tmapTypeControlOptions: {\n\t\t\t\t\t\t\t\tmapTypeIds: ['sample']\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t/*表示タイプの指定*/\n\t\t\t\t\t\t\tscrollwheel: false\n\t\t\t\t\t\t};\n\t\t\t\t\t\tvar map = new google.maps.Map(document.getElementById('p-gmap'), myOptions);\n\t\t\t\t\t\t/*アイコン設定*/\n\t\t\t\t\t\tvar icon = new google.maps.MarkerImage('/img/icon_pin_spot.png',\n\t\t\t\t\t\t\tnew google.maps.Size(70, 85), /*アイコンサイズ設定*/\n\t\t\t\t\t\t\tnew google.maps.Point(0, 0) /*アイコン位置設定*/\n\t\t\t\t\t\t);\n\t\t\t\t\t\tvar markerOptions = {\n\t\t\t\t\t\t\tposition: latlng,\n\t\t\t\t\t\t\tmap: map,\n\t\t\t\t\t\t\ticon: icon,\n\t\t\t\t\t\t\ttitle: ''\n\t\t\t\t\t\t};\n\t\t\t\t\t\tvar marker = new google.maps.Marker(markerOptions);\n\t\t\t\t\t\t/*取得スタイルの貼り付け*/\n\t\t\t\t\t\tvar styleOptions = [{\n\t\t\t\t\t\t\t\"stylers\": [{\n\t\t\t\t\t\t\t\t\t\"saturation\": 0\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"lightness\": 0\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}];\n\t\t\t\t\t\tvar sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);\n\t\t\t\t\t\tmap.mapTypes.set('sample', sampleType);\n\t\t\t\t\t\tmap.setMapTypeId('sample');\n\t\t\t\t\t}\n\t\t\t\t\tgoogle.maps.event.addDomListener(window, 'load', initialize);\n\t\t\t\t</sc",
+      "axisOrder": "LatLng(latitude,longitude) assigned to marker.position"
+    }
+  },
+  {
+    "facilityId": "facility:cs-ec8a334a6855cf91c5",
+    "name": "米子市観光センター",
+    "coordinate": {
+      "lat": 35.45629,
+      "lng": 133.36178359999997
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "4c2d29930a464e1d1ad10ae6d4eb9409e46b36c895d1e02307aa3498796bfc8f",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "businessContext": "Model\":false,\"partialRouteMatchingAllowed\":true},\"searchWixCodeSdk\":{\"language\":\"ja\"},\"seo\":{\"context\":{\"siteName\":\"米子市観光センター\",\"siteUrl\":\"https:\\/\\/www.kaike-onsen.jp\",\"domain\":\"kaike-onsen.jp\",\"indexSite\":true,\"defaultUrl\":\"https:\\/\\/www.kaike-onsen.jp\\/about\",\"currLangIsOriginal\":true,\"siteOgImage\":\"https:\\/\\/static.wixstatic.com\\/media\\/17769e_a98c5021f5e847639151857b37264705%7Emv2.jpg\",\"homePageTitle\":\"米子市観光センター\",\"facebookAdminId\":\"kaike.t.s\",\"businessName\":\"米子市観光センター\",\"businesDescription\":\"米子市観光センターは皆生温泉の情報はもちろん、鳥取・島根（山陰）の楽しいスポットやイベントをご案内しています。またお土産販売、レンタサイクル、レンタルスペースなどの運営もしております。\",\"businesLocale\":\"ja-jp\",\"businessLocationCountry\":\"JP\",\"businessLocationFormatted\":\"日本、〒683-0001 鳥取県米子市皆生温泉３丁目１−１\",\"businesLocationsState\":\"鳥取県\",\"businessLocationCity\":\"米子市\",\"businessPostalCode\":\"683-0001\",\"businessLocationCoordinates\":{\"latitude\":35.45629,\"longitude\":133.36178359999997},\"currency\":\"JPY\",\"experiments\":{\"seoJsonLdJsonEscapes\":\"B\",\"specs.seo.EnableFaqSD\":\"false\",\"specs.seo.enableLangCheck\":\"true\",\"specs.seo.useChunkedSiteStructureForMembersArea\":\"true\"},\"platformAppsEx"
+    }
+  },
+  {
+    "facilityId": "facility:cs-f82ae05278a2614df9",
+    "name": "円形劇場くらよしフィギュアミュージアム",
+    "coordinate": {
+      "lat": 35.4292995,
+      "lng": 133.8152441
+    },
+    "matchesOriginal": true,
+    "evidenceSevenFields": true,
+    "snapshotSHA256": "b04fa14d2512173f299440673f20994bec60ec772adc7091e90f65f1ccba3c7e",
+    "details": {
+      "crs": "Web map latitude/longitude; original does not explicitly declare an EPSG code. No claimed survey accuracy or transformation.",
+      "allRouteWaypoints": [
+        [
+          "0x355683737e7afedd%3A0x7b98d1f1c0576dd8",
+          "RU5FT1Mg5rmv5Y6f44Kk44Oz44K_44O8IFNTICjmnbHnnJ_nlKPmpa0p44CB44CSNzE3LTA0MTMg5bKh5bGx55yM55yf5bqt5biC56a-5rSl77yT77yS77yZ4oiS77yR",
+          "35.1715878",
+          "133.73139"
+        ],
+        [
+          "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "44CSNjgyLTA4NjQg6bOl5Y-W55yM5YCJ5ZCJ5biC6Y2b5Ya255S677yR5LiB55uu77yS77yZ77yX77yR4oiS77ySIOWGhuW9ouWKh-WgtOOBj-OCieOCiOOBl-ODleOCo-OCruODpeOCouODn-ODpeODvOOCuOOCouODoA",
+          "35.4292995",
+          "133.8152441"
+        ],
+        [
+          "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "44CSNjgyLTA4NjQg6bOl5Y-W55yM5YCJ5ZCJ5biC6Y2b5Ya255S677yR5LiB55uu77yS77yZ77yX77yR4oiS77ySIOWGhuW9ouWKh-WgtOOBj-OCieOCiOOBl-ODleOCo-OCruODpeOCouODn-ODpeODvOOCuOOCouODoA",
+          "35.4292995",
+          "133.8152441"
+        ],
+        [
+          "0x3555deb8f2fdd539%3A0xdc91d6e238d706e2",
+          "5YCJ5ZCJ6aeF44CB44CSNjgyLTAwMjEg6bOl5Y-W55yM5YCJ5ZCJ5biC5LiK5LqV",
+          "35.4547518",
+          "133.8494794"
+        ],
+        [
+          "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "44CSNjgyLTA4NjQg6bOl5Y-W55yM5YCJ5ZCJ5biC6Y2b5Ya255S677yR5LiB55uu77yS77yZ77yX77yR4oiS77ySIOWGhuW9ouWKh-WgtOOBj-OCieOCiOOBl-ODleOCo-OCruODpeOCouODn-ODpeODvOOCuOOCouODoA",
+          "35.4292995",
+          "133.8152441"
+        ],
+        [
+          "0x3555db912ffcea63%3A0x134e59531f1dd66",
+          "5LiJ5pyd5rip5rOJ6Kaz5YWJ5ZWG5bel44K744Oz44K_44O85YmN44CB44CSNjgyLTAxMjMg6bOl5Y-W55yM5p2x5Lyv6YOh5LiJ5pyd55S65LiJ5pyd",
+          "35.4102378",
+          "133.8928829"
+        ],
+        [
+          "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "44CSNjgyLTA4NjQg6bOl5Y-W55yM5YCJ5ZCJ5biC6Y2b5Ya255S677yR5LiB55uu77yS77yZ77yX77yR4oiS77ySIOWGhuW9ouWKh-WgtOOBj-OCieOCiOOBl-ODleOCo-OCruODpeOCouODn-ODpeODvOOCuOOCouODoA",
+          "35.4292995",
+          "133.8152441"
+        ]
+      ],
+      "routes": [
+        {
+          "placeId": "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "label": "〒682-0864 鳥取県倉吉市鍛冶町１丁目２９７１−２ 円形劇場くらよしフィギュアミュージアム",
+          "latRaw": "35.4292995",
+          "lngRaw": "133.8152441"
+        },
+        {
+          "placeId": "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "label": "〒682-0864 鳥取県倉吉市鍛冶町１丁目２９７１−２ 円形劇場くらよしフィギュアミュージアム",
+          "latRaw": "35.4292995",
+          "lngRaw": "133.8152441"
+        },
+        {
+          "placeId": "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "label": "〒682-0864 鳥取県倉吉市鍛冶町１丁目２９７１−２ 円形劇場くらよしフィギュアミュージアム",
+          "latRaw": "35.4292995",
+          "lngRaw": "133.8152441"
+        },
+        {
+          "placeId": "0x3555d8f176031b45%3A0x89e576bab3ae34af",
+          "label": "〒682-0864 鳥取県倉吉市鍛冶町１丁目２９７１−２ 円形劇場くらよしフィギュアミュージアム",
+          "latRaw": "35.4292995",
+          "lngRaw": "133.8152441"
+        }
+      ],
+      "viewports": [
+        [
+          "13004.123689523016",
+          "133.8152589",
+          "35.429264"
+        ],
+        [
+          "13004.123689523016",
+          "133.8152589",
+          "35.429264"
+        ],
+        [
+          "208397.41171048084",
+          "133.60650557210198",
+          "35.30077413084166"
+        ],
+        [
+          "208552.8648123352",
+          "133.6740719147205",
+          "35.240367679178135"
+        ],
+        [
+          "10725.94247054391",
+          "133.81650201893996",
+          "35.434120281978124"
+        ],
+        [
+          "52019.36671722793",
+          "133.81149148425678",
+          "35.42481717432992"
+        ]
+      ],
+      "axisOrder": "route destination !3m2 !1d latitude !2d longitude; distinct from viewport !1m3"
+    }
+  }
+]

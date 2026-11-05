@@ -1,0 +1,399 @@
+[
+  {
+    "facilityId": "facility:kinki-09d12f8315cc6ca090a4",
+    "pref": "29",
+    "index": 281,
+    "expectedName": "今井まちなみ交流センター",
+    "identityReason": "旧華甍の建物自体を同定。現行配布先は今井まちづくりセンターであり、旧施設の関係・休館状態を変更しない。施設案内の今井町2-3-5とP05名称住所を照合。",
+    "sourceUrls": [
+      "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "https://www.city.kashihara.nara.jp/soshiki/1021/boshu/2/331.html",
+      "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+      "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-11d5574411a4dcfe6dec",
+    "pref": "27",
+    "index": 1952,
+    "expectedName": "大阪狭山市役所",
+    "identityReason": "配布案内が狭山一丁目2384番地の1の市役所庁舎2階を明記。休日の狭山池博物館には転用しない。",
+    "sourceUrls": [
+      "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+      "https://sayamaikehaku.osakasayama.osaka.jp/?page_id=49",
+      "https://sayamaikehaku.osakasayama.osaka.jp/wp/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-1421f0ca70946971eeef",
+    "pref": "27",
+    "index": 2163,
+    "expectedName": "河南町役場",
+    "identityReason": "公式配布案内の庁舎1階西側出入口の宿直室。平日2階と同一庁舎であり独立守衛棟ではない。",
+    "sourceUrls": [
+      "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-212883840c3bc7b55808",
+    "pref": "27",
+    "index": 1638,
+    "expectedName": "公民館堅下分館",
+    "identityReason": "現配布先は堅下合同会館内公民館堅下分館、大県3丁目9-19。P05にもその名称・住所が一致。同会館の他用途レコードとの差は約1mで同一複合建物の用途別点。",
+    "sourceUrls": [
+      "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "https://www.city.kashiwara.lg.jp/use.html",
+      "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+      "https://www.city.kashiwara.lg.jp/docs/2014062700202/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-2e1afa71c908ef731e24",
+    "pref": "29",
+    "index": 225,
+    "expectedName": "大和郡山市市民交流館",
+    "identityReason": "公式配布表が高田町92-16の市民交流館1階を指定。P05の市民交流館を採用し、植槻町の上下水道庁舎と区別。同名重複の202との差は約0.3m。",
+    "sourceUrls": [
+      "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+      "https://www.yk-kankou.jp/access.html",
+      "https://www.yk-kankou.jp/member.html",
+      "http://www.yk-kankou.jp/",
+      "https://www.yk-kankou.jp/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-319bd8fbabbbf75f654d",
+    "pref": "27",
+    "index": 1407,
+    "expectedName": "松原市役所",
+    "identityReason": "公式配布案内は土日祝に市役所1階宿直室。阿保1-1-1の役所建物点を採用。平日の観光協会阿保4-1-4には転用しない。",
+    "sourceUrls": [
+      "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+      "https://www.city.matsubara.lg.jp/docs/page2415.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-4cb8623bc35115d6fb38",
+    "pref": "28",
+    "index": 1148,
+    "expectedName": "西脇市役所",
+    "identityReason": "現配布案内が下戸田128-1の西脇市役所2階208窓口を明記。P05は移転前の郷瀬町ではなく現住所の役所。併設市民交流施設の用途別点を選ばず市役所レコードを採用。",
+    "sourceUrls": [
+      "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+      "https://www.city.nishiwaki.lg.jp/lifescenemokutekibetsudesagasu/facility_organization/index.html",
+      "https://www.city.nishiwaki.lg.jp/access/1355806026700.html",
+      "https://www.city.nishiwaki.lg.jp/access/index.html",
+      "https://www.city.nishiwaki.lg.jp/jyuyo_oshirase/31654.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-4e667eb047afa3b26231",
+    "pref": "28",
+    "index": 2150,
+    "expectedName": "市川町役場",
+    "identityReason": "公式配布案内が西川辺165-3の役場下水道課を指定。休日当直室も同じ庁舎東玄関から入ると明記。",
+    "sourceUrls": [
+      "https://www.town.ichikawa.lg.jp/info/800",
+      "https://www.town.ichikawa.lg.jp/menu/38",
+      "https://www.town.ichikawa.lg.jp/Info/135",
+      "https://www.town.ichikawa.lg.jp/info/135",
+      "https://www.town.ichikawa.lg.jp/accessranking"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-5155c601bcf944c4cbf5",
+    "pref": "27",
+    "index": 2005,
+    "expectedName": "阪南市役所",
+    "identityReason": "公式配布案内が尾崎町35-1の市役所地下1階守衛室を指定。平日の鳥取74-1の分室や道案内用の鳥取66とは区別。",
+    "sourceUrls": [
+      "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+      "http://www.city.hannan.lg.jp/",
+      "https://www.city.hannan.lg.jp/shisei/access/index.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-5198d8060e4644e9ac95",
+    "pref": "27",
+    "index": 2163,
+    "expectedName": "河南町役場",
+    "identityReason": "公式配布案内の庁舎2階西フロア27番窓口。白木1359-6でP05役場と一致。1階の休日窓口と同建物。",
+    "sourceUrls": [
+      "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-52945aa1816499e04704",
+    "pref": "28",
+    "index": 1351,
+    "expectedName": "中央図書館",
+    "identityReason": "市民プラザはアステ川西6階、中央図書館は同じアステ川西4・5階。施設運営者のフロア一覧と図書館公式施設案内で同一建物を確認。栄町25-1のP05中央図書館を建物代表点として使う。別施設である川西市役所・キセラ川西は不使用。",
+    "sourceUrls": [
+      "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+      "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
+      "https://www.city.kawanishi.hyogo.jp/_res/projects/default_project/_page_/001/003/009/ekuseru.xlsx",
+      "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1003005.html",
+      "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1008004.html",
+      "https://www.ip.licsre-saas.jp/kawanishi/useguide/facilities.html",
+      "https://www.astekawanishi.com/floor/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-65aca194bc92a930cdd3",
+    "pref": "28",
+    "index": 2150,
+    "expectedName": "市川町役場",
+    "identityReason": "公式配布案内は当直室を庁舎東玄関から呼出と明記。下水道課と同じ西川辺165-3の役場建物であり、独立した守衛棟を推測していない。",
+    "sourceUrls": [
+      "https://www.town.ichikawa.lg.jp/info/800",
+      "https://www.town.ichikawa.lg.jp/menu/38",
+      "https://www.town.ichikawa.lg.jp/Info/135",
+      "https://www.town.ichikawa.lg.jp/info/135",
+      "https://www.town.ichikawa.lg.jp/accessranking"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-7a95a5f3a5fbd7c93b60",
+    "pref": "28",
+    "index": 1513,
+    "expectedName": "丹波篠山市役所",
+    "identityReason": "公式配布案内は北新町41の本庁舎2階。P05市役所を選び、同番地のたんば田園交響ホールの別点は使わない。",
+    "sourceUrls": [
+      "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+      "https://www.city.tambasasayama.lg.jp/soshikikarasagasu/jogesuidoubu/keieikikakuka/2653.html",
+      "https://withsasayama.jp/civic-center",
+      "https://withsasayama.jp/history-museum/",
+      "https://www.city.tambasasayama.lg.jp/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-8c975ae9df85aa9fea39",
+    "pref": "27",
+    "index": 1838,
+    "expectedName": "東大阪市役所",
+    "identityReason": "公式配布案内は市役所13階、休日は22階。同一庁舎荒本北1-1-1のP05市役所点で十分。",
+    "sourceUrls": [
+      "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "https://www.city.higashiosaka.lg.jp/category/14-6-0-0-0-0-0-0-0-0.html",
+      "http://www.city.higashiosaka.lg.jp/0000005557.html",
+      "https://www.city.higashiosaka.lg.jp/category/12-0-0-0-0-0-0-0-0-0.html",
+      "https://www.city.higashiosaka.lg.jp/0000029899.html",
+      "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+    "pref": "27",
+    "index": 1610,
+    "expectedName": "柏原市役所",
+    "identityReason": "公式配布案内は本館2階かしわらテラス。2025年公式庁舎案内が本館2021年3月竣工と別館1995年竣工を区別。P05-2022の柏原市役所を本館として採用し別館の下水工務課へは流用しない。",
+    "sourceUrls": [
+      "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "https://www.city.kashiwara.lg.jp/use.html",
+      "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+      "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+      "http://www.city.kashiwara.osaka.jp/",
+      "https://www.city.kashiwara.lg.jp/docs/2025011400081/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9d20fa57040c5342502f",
+    "pref": "27",
+    "index": 1675,
+    "expectedName": "門真市役所",
+    "identityReason": "固定台帳と旧配布原本の本館1階宿直室。新取得公式ページは一時中止を掲示し、問い合わせは中町1-1の本館2階。建物所在地だけ補い既存配布状態を変えない。",
+    "sourceUrls": [
+      "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "https://www.city.kadoma.osaka.jp/index.html",
+      "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9f543cc614431566426a",
+    "pref": "27",
+    "index": 2106,
+    "expectedName": "公民館",
+    "identityReason": "公式配布案内は嘉祥寺1120番地2の田尻町立公民館、土日のみ。P05公民館の自治体コード27362・住所を照合。役場別館や観光案内所には使わない。",
+    "sourceUrls": [
+      "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+      "https://www.town.tajiri.osaka.jp/johowosagasu/shisetsuannai/index.html",
+      "https://www.town.tajiri.osaka.jp/gyoseijoho/shisetsu/tajirityoyakuba/access.html",
+      "https://www.town.tajiri.osaka.jp/taisetsu/5760.html",
+      "http://www.town.tajiri.osaka.jp"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-aef2b45d74e197045af5",
+    "pref": "29",
+    "index": 278,
+    "expectedName": "観光交流センター",
+    "identityReason": "内膳町1-6-8のかしはらナビプラザ。公式運営施設案内と配布案内を照合。P05観光交流センターを使用し、配布ページの藤原京マンホール蓋の数値qを使わない。同住所の観光センターレコードとの差は約1m。",
+    "sourceUrls": [
+      "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+      "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+      "https://kashihara-naviplaza.com/about/",
+      "http://www.kashihara-naviplaza.com/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-b4ecd274f209e965389d",
+    "pref": "28",
+    "index": 1455,
+    "expectedName": "加西市民会館",
+    "identityReason": "公式配布案内の休日窓口。施設運営者のアクセス・概要の北条町古坂1-1と一致。併設中央公民館の用途別点との差は約2m。別住所の役所付属棟には転用しない。",
+    "sourceUrls": [
+      "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+      "https://www.kasai-shimin.jp/access/",
+      "https://www.kasai-shimin.jp/about/outline/",
+      "https://www.kasai-shimin.jp/about/",
+      "https://www.kasai-shimin.jp/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-bd54ffa4ff05c5de2e21",
+    "pref": "27",
+    "index": 1675,
+    "expectedName": "門真市役所",
+    "identityReason": "固定台帳の本館2階。現行一時中止案内の問い合わせ先も経営総務課本館2階・中町1-1と明記。配布状態を変えず役所本館の建物点のみ補完。",
+    "sourceUrls": [
+      "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "https://www.city.kadoma.osaka.jp/index.html",
+      "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-c5cb26a1af3a611b70b7",
+    "pref": "28",
+    "index": 1247,
+    "expectedName": "吉川支所",
+    "identityReason": "公式配布案内が吉川町大沢412の吉川支所と明記。P05支所を選び、同番地の健康福祉センター点を選ばない。吉安222の山田錦の館とも別。",
+    "sourceUrls": [
+      "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "https://www.city.miki.lg.jp/soshiki/7/1232.html",
+      "https://www.city.miki.lg.jp/soshiki/0/1480.html",
+      "https://www.city.miki.lg.jp/soshiki/43/",
+      "https://www.city.miki.lg.jp/life/5/26/119/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-d8ae994ed35d69a0dfb1",
+    "pref": "27",
+    "index": 1804,
+    "expectedName": "市民総合会館本館パープルホール",
+    "identityReason": "配布ページがパープルホール本館1階事務所と北岡1-2-3を指定。P05も明示的に本館パープルホール。一般的な会館点・藤井寺市役所点からの推測ではない。",
+    "sourceUrls": [
+      "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+      "https://www.city-fujiidera-kosha.or.jp/shisetsu/",
+      "https://www.city-fujiidera-kosha.or.jp/",
+      "https://www.city-fujiidera-kosha.or.jp/access/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-daaa4e44e2c541067679",
+    "pref": "28",
+    "index": 947,
+    "expectedName": "スワンホール",
+    "identityReason": "水道局配布案内と市施設案内がスワンホール、昆陽池2-1を指定。P05の明示的なスワンホール点を選択。同住所の中央公民館レコード948は約480m離れているため使用しない。市施設案内は労働福祉会館・中央公民館等が同施設内と明記し名称同定を補強。",
+    "sourceUrls": [
+      "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "https://www.city.itami.lg.jp/shiseijoho/shiyakusho/index.html",
+      "https://goo.gl/maps/tYN6zSp81e8SioiQ7",
+      "https://www.city.itami.lg.jp/SISETU_KIKAN/HUKUSIJINKEN/1392084168786.html",
+      "https://nem-shiteikanri.jp/shisetsu/itami/"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-f44bd7e08bcfe2fc763c",
+    "pref": "28",
+    "index": 2162,
+    "expectedName": "福崎町役場",
+    "identityReason": "新取得配布ページに町役場上下水道課窓口を明記。南田原3116-1がP05役場と一致。フクちゃんプラザ・サキちゃんプラザの点には転用しない。",
+    "sourceUrls": [
+      "http://www.town.fukusaki.hyogo.jp/0000002753.html",
+      "http://www.town.fukusaki.hyogo.jp/0000000002.html",
+      "https://www.town.fukusaki.hyogo.jp/0000000002.html",
+      "http://www.town.fukusaki.hyogo.jp/0000000112.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-higashiosaka-lobby",
+    "pref": "27",
+    "index": 1838,
+    "expectedName": "東大阪市役所",
+    "identityReason": "公式配布案内で22階展望ロビーと13階下水道課を同じ東大阪市役所内と確認。P05市役所の名称住所一致。室内精密点は不要。",
+    "sourceUrls": [
+      "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-imai-machizukuri",
+    "pref": "29",
+    "index": 274,
+    "expectedName": "今井まちづくりセンター",
+    "identityReason": "新取得公式配布案内が2026年10月1日以降の配布先を今井町3丁目8番8号と明記。P05の当該まちづくりセンターそのものを採用。旧華甍の点は使わない。",
+    "sourceUrls": [
+      "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-6ad97690b4f9910a096e",
+    "pref": "27",
+    "index": 1806,
+    "expectedName": "生涯学習センター",
+    "identityReason": "公式観光拠点化案内はアイセルシュラホールを旧来の生涯学習センターと明記。2026年自習室案内の生涯学習課はシュラホール3階、配布窓口は同館1階。藤井寺3-1-20のP05生涯学習センターと同一建物であり、改装・用途名称変更を建替えと扱わない。",
+    "sourceUrls": [
+      "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19496.html",
+      "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+      "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
+      "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19441.html",
+      "https://www.city.fujiidera.lg.jp/soshiki/kyoikuiinkai/shogaigakushu/oshirase/18462.html",
+      "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/aicelsyurahallkankoukyotenka/index.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-takasago-cityhall",
+    "pref": "28",
+    "index": 1298,
+    "expectedName": "高砂市役所",
+    "identityReason": "公式2021年11月広報の本庁舎開庁と、現行配布案内の本庁舎3階12番窓口を照合。開庁後の2022年P05の高砂市役所を採用し西庁舎レコード1290は使わない。一般に改修履歴がない証明を求めず既知の建替え時期とデータ時点を確認。",
+    "sourceUrls": [
+      "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+      "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/yakusho_madoguchiannai/6596.html",
+      "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/koho_kocho/4/7/3/2/6216.html"
+    ],
+    "decision": "candidate-for-independent-review"
+  }
+]

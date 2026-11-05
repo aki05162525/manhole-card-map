@@ -1,0 +1,70 @@
+[
+  {
+    "sourceUrl": "https://www.city.shibukawa.lg.jp/shisetsu/000346/p003056.html",
+    "facilityIds": [],
+    "requestedAt": "2026-11-05T06:30:31.902848+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibukawa.lg.jp/shisetsu/000346/p003056.html",
+    "snapshotPath": "data/evidence/issue7/north-kanto/9ca93bc9bb8aa193b3f64d9e.html",
+    "snapshotSHA256": "10337c2b533a9bcf305384d08453c8309b515d82104c292d9153f8bb12ac29b6",
+    "bytes": 214250,
+    "contentType": "text/html",
+    "fetchedAt": "2026-11-05T06:30:31.977711+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.moriya.ibaraki.jp/shisei/profile/1004324/1004325/index.html",
+    "facilityIds": [
+      "facility:kanto-north-45e8eab7ba6d2bdde8e5"
+    ],
+    "requestedAt": "2026-11-05T06:30:31.977741+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.moriya.ibaraki.jp/shisei/profile/1004324/1004325/index.html",
+    "snapshotPath": "data/evidence/issue7/north-kanto/85444b19bb2a4e6b82924d6f.html",
+    "snapshotSHA256": "dc3992f2db102599a9d91b745ec688f4a5a1f6f158e0c426e6dc73ec2e92a22d",
+    "bytes": 26399,
+    "contentType": "text/html",
+    "fetchedAt": "2026-11-05T06:30:32.071613+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyama.tochigi.jp/data/doc/1772432999_doc_311_0.pdf",
+    "facilityIds": [
+      "facility:kanto-north-8c9c3d00b39e57cb61d7"
+    ],
+    "requestedAt": "2026-11-05T06:30:32.071643+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oyama.tochigi.jp/data/doc/1772432999_doc_311_0.pdf",
+    "snapshotPath": "data/evidence/issue7/north-kanto/26a542c2eb99255d703c6be7.pdf",
+    "snapshotSHA256": "334c7939be20c30b5eff741cf51687a64f6ae7bf5d30ff1b2d5cb092d2ad50ab",
+    "bytes": 1781118,
+    "contentType": "application/pdf",
+    "fetchedAt": "2026-11-05T06:30:32.330540+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.nasukarasuyama.lg.jp/page/page000546.html",
+    "facilityIds": [
+      "facility:kanto-north-186aaf0b34375b1f039d"
+    ],
+    "requestedAt": "2026-11-05T06:30:32.330570+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nasukarasuyama.lg.jp/page/page000546.html",
+    "snapshotPath": "data/evidence/issue7/north-kanto/333a899226a61d15c160322e.html",
+    "snapshotSHA256": "e0687d3df30d065e4650d1143eae6d678a9be18de5d623d1e7be34a8c33b99c2",
+    "bytes": 393,
+    "contentType": "text/html",
+    "fetchedAt": "2026-11-05T06:30:32.420522+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.ryugasaki.ibaraki.jp/kurashi/todokede/syuttyoujyo/2016050200152.html",
+    "facilityIds": [
+      "facility:kanto-north-e9c407539fac35ab201d"
+    ],
+    "requestedAt": "2026-11-05T06:34:32.072321+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ryugasaki.ibaraki.jp/kurashi/todokede/syuttyoujyo/2016050200152.html",
+    "snapshotPath": "data/evidence/issue7/north-kanto/dcee866347b9b0b3854617e7.html",
+    "snapshotSHA256": "1a50a6b84568bffbf66e31baabcc8c5b263b005271b1904c1d66dab6cac70e1a",
+    "bytes": 29012,
+    "contentType": "text/html",
+    "fetchedAt": "2026-11-05T06:34:32.333152+00:00"
+  }
+]

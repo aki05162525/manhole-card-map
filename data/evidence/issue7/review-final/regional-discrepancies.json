@@ -1,0 +1,231 @@
+[
+  {
+    "source": "data/national/issue7/reviews/chugoku.json",
+    "field": "documentCodeDiscrepancies",
+    "value": [
+      {
+        "document": "data/evidence/national/locations-chugoku-shikoku/README.md",
+        "code": "tools/national/assemble.py:repo_path",
+        "finding": "READMEは統合用・形式上の食い違いなしとするが旧追補101件のsnapshotPathが絶対パス。repo_pathは絶対パスを拒否。今回はrepo相対参照に従う。"
+      },
+      {
+        "document": "data/evidence/issue5/west-south/README.md",
+        "code": "cmd/builddata/ledger.go:Evidence / strict decoder",
+        "finding": "READMEは食い違いなしとするが旧訂正EvidenceにfetchedAtが含まれる。現行Evidenceは7フィールド、厳密デコードは未知フィールドを拒否。今回の15 Evidenceは7フィールドだけに従う。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/hokkaido.json",
+    "field": "documentCodeDiscrepancies",
+    "value": [
+      {
+        "id": "historical-1",
+        "kind": "documentation-overclaim",
+        "finding": "旧locations READMEは現名称住所の照合を説明する一方、decide.pyの旧H22/H25/H26データ処理は個別利用条件・CRSを記録せず採用する。公式施設索引の条件確認方針を満たす実装ではない。",
+        "paths": [
+          "data/evidence/national/locations-north-hokkaido/README.md",
+          "data/evidence/national/locations-north-hokkaido/decide.py",
+          "data/evidence/national/official-facility-index/README.md"
+        ],
+        "action": "旧点を承認済みとして引き継がず、今回の原典・条件で判断。旧成果は変更しない。"
+      },
+      {
+        "id": "historical-2",
+        "kind": "documentation-overclaim",
+        "finding": "旧READMEの建物内複数窓口の説明に対し、decide.pyは登別市役所総称点を第2庁舎にも、苫小牧市役所総称点を北庁舎にも候補化している。現配布本文は棟を区別。",
+        "action": "登別本庁舎だけ採用、第2庁舎・苫小牧北庁舎は保留。"
+      },
+      {
+        "id": "historical-3",
+        "kind": "generated-explanation-mismatch",
+        "finding": "旧decide.pyは釧路と留萌の共通verificationMethodに「るもいプラザ公式施設ページ」を含める。釧路の出典連鎖の個別説明になっていない。",
+        "action": "釧路へ留萌根拠を流用しない。留萌は今回の市HTML q原値を使用。"
+      },
+      {
+        "id": "historical-4",
+        "kind": "already-corrected-in-baseline",
+        "finding": "千歳の旧成果は経営管理課、現本文は総務課。固定baselineの施設nameは既に総務課総務係へ訂正済み。古いsourceLocatorは過去の取得時説明として残る。",
+        "action": "名称訂正は再提出しない。baseline・過去証拠は変更しない。"
+      },
+      {
+        "id": "P05-individual-vs-general",
+        "kind": "current-review-documentation-correction",
+        "finding": "元README第5項とpolicy.jsonのPDLに基づく説明は、P05-2022個別ページのCC_BY_4.0を適用根拠として保持していない。旧issue5のCC BY表記自体は原典と整合するため、一般PDL登場だけでコード誤りとはしない。",
+        "action": "exact old/new訂正案に従い、個別指定と現行一般規約を併記。"
+      },
+      {
+        "id": "Go-date-validation-gap",
+        "kind": "verification-coverage-gap",
+        "finding": "元verify.pyはEvidenceの7キー存在を検査するがcheckedAtの日付形式は検査しない。Go実装cmd/builddata/ledger.go:121はtime.Parse(\"2006-01-02\", e.CheckedAt)を必須にする。今回30件は日付のみで全て通過し、日時文字列負例は拒否された。",
+        "action": "本レビューのGo probe結果を契約検証に使用。候補checkedAtの訂正は不要。"
+      },
+      {
+        "id": "P05-specification-locator",
+        "kind": "documentation-source-mismatch",
+        "finding": "policy.jsonは建物外周内検査を8章と記すが、PDF原本は6章データ品質・本文12頁。8章はメタデータ。",
+        "action": "原本の6章を根拠に評価し、locatorのexact old/newを提出する。数値・建物同定は影響なし。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/kinki-east.json",
+    "field": "documentationCodeMismatches",
+    "value": [
+      {
+        "documentPath": "data/evidence/issue5/kinki/README.md",
+        "codePath": "data/evidence/issue5/kinki/build.py",
+        "documentClaim": "寝屋川はsuspended維持、末尾は文書とコードの食い違いを検出していないとする。",
+        "codeBehavior": "build.pyは旧台帳のEvidenceをコピーしてsourceLocatorへ追記するため、旧台帳の「終了状態の訂正を変えず旧配布施設」を残す。",
+        "followed": "コードの継承・追記動作を根拠とする。実行・修正はしない。",
+        "history": "旧issue5独立レビュー後のdata/national/issue5/kinki-reviewed.jsonでは修正済み。今回16候補には寝屋川を含まず、現候補の欠陥に数えない。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/kinki-west.json",
+    "field": "codeDocumentDiscrepancies",
+    "value": [
+      {
+        "document": "data/evidence/issue7/kinki-west/README.md",
+        "code": "data/evidence/issue7/kinki-west/build.py",
+        "claim": "既存取得メタデータの実取得時刻をreused-references.jsonに記録し、ないものはnull",
+        "actual": "汎用再利用ループはfetchedAtを無条件nullにする。p05-spec.pdf.source.jsonの実取得時刻が反映されない。",
+        "followed": "実コードのnull出力を事実として記録し、補正提案は別保存。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/kinki-west.json",
+    "field": "sourceDocumentDiscrepancies",
+    "value": [
+      "仕様書参照8章→6章。既存READMEの提案を確認しsources.jsonの同じ誤記も追加。",
+      "現行カタログ/一般PDLと旧個別CC BY指定の違いを明示する。"
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/koshin.json",
+    "field": "documentationCodeMismatches",
+    "value": [
+      {
+        "documentation": "data/evidence/issue7/koshin/README.md",
+        "code": "cmd/builddata/ledger.go:121",
+        "finding": "READMEは不一致なしとするが16候補のcheckedAtは日時、Goは日付だけを許可。7キーは合うが全件検証失敗。",
+        "resolution": "コードに従い2026-11-05へexact訂正。原本取得時刻fetchedAtは変更しない。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/kyushu-okinawa.json",
+    "field": "documentationCodeDiscrepancies",
+    "value": [
+      {
+        "document": "data/evidence/issue7/kyushu-okinawa/README.md",
+        "claim": "その他のコード仕様との不一致は見つかっていない / 厳密デコード10件で検証",
+        "code": "cmd/builddata/ledger.go:121",
+        "finding": "All 9 updates and 1 correction have timestamp checkedAt; actual validateEvidence accepts YYYY-MM-DD only. Existing verify-go.py extracts Evidence but never executes validateEvidence. Strict decoding success does not imply runtime validity.",
+        "resolution": "Follow code; 10 exact date corrections proposed. Existing outputs not modified."
+      },
+      {
+        "document": "data/evidence/issue5/west-south/README.md",
+        "claim": "ドキュメントと実装コードの食い違いはない",
+        "code": "cmd/builddata/ledger.go:17,88",
+        "finding": "Old west-south corrections[0..2].evidence contain fetchedAt outside current Evidence7; DisallowUnknownFields rejects it. Reconfirmed from raw JSON, as input README already noted.",
+        "resolution": "Follow Evidence7; no old artifacts modified."
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/north-kanto.json",
+    "field": "documentCodeDiscrepancies",
+    "value": [
+      {
+        "document": "data/evidence/issue5/north-kanto/README.md",
+        "claim": "文書と実装コードの食い違いは、今回読んだ範囲では発見していない",
+        "code": "data/evidence/issue5/north-kanto/assemble.py:39 / cmd/builddata/ledger.go:17",
+        "finding": "旧assemble.pyはEvidenceにfetchedAtを追加するがGo Evidenceは7フィールドで厳密デコード。今回はGoの7フィールドに従う。Issue7候補24件は一致。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/shikoku.json",
+    "field": "documentCodeDiscrepancies",
+    "value": [
+      {
+        "document": "data/evidence/issue5/west-south/README.md",
+        "code": "cmd/builddata/ledger.go:17",
+        "finding": "既知事項を再確認：旧READMEの不一致なしという説明に対し旧訂正3件のevidence.fetchedAtはGo Evidenceの7フィールドにない。今回候補12件と訂正2件はコードの7フィールドに一致。旧ファイルは未変更。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/south-kanto.json",
+    "field": "findings",
+    "value": [
+      {
+        "id": "D1",
+        "kind": "documentation-code-mismatch",
+        "files": [
+          "data/evidence/issue5/south-kanto/validate.py",
+          "data/evidence/issue5/south-kanto/validation.json",
+          "data/evidence/issue5/south-kanto/README.md"
+        ],
+        "finding": "旧validate.pyのchecksはJGD2011 CRS検証を列挙するが実装にCRS assertがない。コードに従い旧自動検証の範囲をFeature・数値一致までとする。issue7 validate.pyおよび本独立レビューはEPSG:6668を原ZIPでassertした。旧スクリプトは変更しない。"
+      },
+      {
+        "id": "D2",
+        "kind": "stale-documentation",
+        "facilityIds": [
+          "facility:kanto-south-697024c210b4424f12ca",
+          "facility:kanto-south-c28de78bc3ef2c56b069",
+          "facility:kanto-south-c7ea6b482b25915147a4",
+          "facility:kanto-south-b799e7b5b2b0681cf8ba",
+          "facility:kanto-south-2c9f62b5c1d339aebb8b",
+          "facility:kanto-south-a9e505e27500c811b2a5"
+        ],
+        "finding": "issue5 building-verificationの6件は追補待ちを記載するが、issue5 updatesには出典・CRS・加工説明が存在する。新たな採用阻害要因ではない。exact old/newはadditionalCorrectionsに保存。"
+      },
+      {
+        "id": "R1",
+        "kind": "review-correction",
+        "facilityId": "facility:kanto-south-281213c5dc294c44f2e5",
+        "finding": "「1階」と「改札出て左」は矛盾の証拠にならない。市・運営者・DBの施設対応は建物代表点には十分。元の7候補とは別に追加候補とEvidence7を保存し、旧理由訂正を修正する。"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/tohoku.json",
+    "field": "inheritedFindingsNotNewTohokuDiscrepancies",
+    "value": [
+      {
+        "number": 1,
+        "finding": "旧北海道README対decide.pyのH25/H26/H22出典制約・CRS不足"
+      },
+      {
+        "number": 2,
+        "finding": "旧北海道READMEの複数窓口説明では登別第2庁舎・苫小牧北庁舎の棟同定不足"
+      },
+      {
+        "number": 3,
+        "finding": "釧路2窓口に旧共通説明がるもいプラザ由来と読める文を付与"
+      },
+      {
+        "number": 4,
+        "finding": "千歳の旧台帳・施設案内の経営管理課対配布案内の総務課"
+      },
+      {
+        "number": 5,
+        "finding": "旧P05説明と現行一般PDLの表示差。個別2022 CC BY指定は引き続き保存すべきで、誤りとして消さない"
+      }
+    ]
+  },
+  {
+    "source": "data/national/issue7/reviews/tokai.json",
+    "field": "sourceRecordDiscrepancies",
+    "value": [
+      "富士宮の臨時配布を庁舎移転とした旧理由4か所と旧README1か所。",
+      "飛騨古川markerなしとした旧理由2か所。",
+      "沼津水道部2施設の台帳住所16-1とAED建物住所2-20。"
+    ]
+  }
+]

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <meta name="robots" content="index"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="description" content="武蔵境商店会連合会ホームページです"> 
+  <meta property="og:title" content="TOP│武蔵境商店会連合会"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:image" content="https://musashisakai-syouren.com/bdflashinfo/thumbnail-large.png"> 
+  <meta property="og:url" content="https://musashisakai-syouren.com/"> 
+  <meta property="og:site_name" content="武蔵境商店会連合会"> 
+  <meta property="og:description" content="武蔵境商店会連合会ホームページです"> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:image" content="https://musashisakai-syouren.com/bdflashinfo/thumbnail-large.png"> 
+  <meta name="note:card" content="summary_large_image"> 
+  <link rel="canonical" href="https://musashisakai-syouren.com/"> 
+  <title>TOP│武蔵境商店会連合会</title> 
+  <link rel="stylesheet" type="text/css" href="_module/styles/bind.css?v=17.0.8" id="bind-css"> 
+  <link rel="stylesheet" type="text/css" href="_dress/b13005/base.css?1793253215011"> 
+  <link rel="stylesheet" type="text/css" href="_dress/b130051Billboard/base.css?1793253215011"> 
+  <link rel="stylesheet" type="text/css" href="_dress/b130051Main2/base.css?1793253215011"> 
+  <link rel="stylesheet" type="text/css" href="_dress/b13005Globalmenu/base.css?1793253215011"> 
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"> 
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Stick:wght@400&amp;display=swap"> 
+  <link rel="stylesheet" type="text/css" href="index.css?1793253215018c0100" id="page-css"> 
+  <link rel="stylesheet" type="text/css" href="_csslinkbtn/btn-import.css?1793253214576" id="linkbtn-css"> 
+ </head> 
+ <body id="l-1" class="l-1 -dress_b13005 bd-webp" data-type="responsive" data-page-animation="none"> 
+  <div id="page" class="bg-window "> 
+   <div class="bg-document"> 
+    <noscript> 
+     <div id="js-off"> 
+      <img src="_module/images/noscript.gif" alt="Enable JavaScript in your browser. このウェブサイトはJavaScriptをオンにしてご覧下さい。"> 
+     </div> 
+    </noscript> 
+    <div id="a-header" data-float="false" class="a-header   cssskin-_area_header"> 
+     <header> 
+      <div class="site_frame"> 
+       <section> 
+        <div id="bk1189" class="b-plain c-space_normal c-sp-space_normal c-sp-padding_init bd-webp -dress_b13005Globalmenu cssskin-_block_header" data-bk-id="bk1189" data-shared="true" data-sharedname="_グローバルナビ"> 
+         <div class=" column -column1"> 
+          <nav> 
+           <div id="js-globalNavigation" data-slide-type="rightSlide" data-btn-position="rightTop_fixed"> 
+            <div class=" -menu_center"> 
+             <ul class="c-menu -menu_a menu-parts"> 
+              <li> <p class=" c-body"><span style="color:#000000;" class=" d-large_font"><a href="./" data-mypid="65" class=" c-current">武蔵境商店会連合会</a></span></p> </li> 
+              <li><a href="#news" data-mypid="65" class=" js-link_scroller">ニュース</a></li> 
+              <li><a href="#about" data-mypid="65" class=" js-link_scroller">境商連について</a></li> 
+              <li><a href="#shoplist" data-mypid="65" class=" js-link_scroller">商店会一覧</a></li> 
+              <li><a href="support.html" data-pid="561">お問い合わせ</a></li> 
+              <li><span class=" c-unlink">&nbsp;</span></li> 
+              <li><a href="https://x.com/musashisakai_sr"><span class="bindicon-twitter"></span></a></li> 
+              <li><span class=" c-unlink">&nbsp;</span></li> 
+              <li><a href="https://www.instagram.com/musashisakai_sr/"><span class="bindicon-instagram"></span></a></li> 
+              <li><span class=" c-unlink">&nbsp;</span></li> 
+             </ul> 
+            </div> 
+           </div> 
+           <div id="spNavigationTrigger" class=" c-sp_navigation_btn"></div> 
+          </nav> 
+         </div> 
+        </div> 
+       </section> 
+      </div> 
+     </header> 
+    </div> 
+    <div id="a-ghost_header" data-effect="fade" data-float="true" class="a-ghost_header js-ghost_mode  cssskin-_block_ghost_header"> 
+     <header> 
+      <div class="site_frame"> 
+       <section> 
+        <div id="bk1190" class="b-plain c-space_normal c-sp-space_normal c-sp-padding_init bd-webp -dress_b13005Globalmenu cssskin-_block_ghost_header" data-bk-id="bk1190" data-shared="true" data-sharedname="_グローバルナビ"> 
+         <div class=" column -column1"> 
+          <nav> 
+           <div class=" -menu_center"> 
+            <ul class="c-menu -menu_a menu-parts"> 
+             <li> <p class=" c-body"><span style="color:#000000;" class=" d-large_font"><a href="./" data-mypid="65" class=" c-current">武蔵境商店会連合会</a></span></p> </li> 
+             <li><a href="#news" data-mypid="65" class=" js-link_scroller">ニュース</a></li> 
+             <li><a href="#about" data-mypid="65" class=" js-link_scroller">境商連について</a></li> 
+             <li><a href="#shoplist" data-mypid="65" class=" js-link_scroller">商店会一覧</a></li> 
+             <li><a href="support.html" data-pid="561">お問い合わせ</a></li> 
+             <li><span class=" c-unlink">&nbsp;</span></li> 
+             <li><a href="https://x.com/musashisakai_sr"><span class="bindicon-twitter"></span></a></li> 
+             <li><span class=" c-unlink">&nbsp;</span></li> 
+             <li><a href="https://www.instagram.com/musashisakai_sr/"><span class="bindicon-instagram"></span></a></li> 
+             <li><span class=" c-unlink">&nbsp;</span></li> 
+            </ul> 
+           </div> 
+          </nav> 
+         </div> 
+        </div> 
+       </section> 
+      </div> 
+     </header> 
+    </div> 
+    <div id="a-billboard" class="a-billboard   -height100 -catch-center_center  cssskin-_area_billboard"> 
+     <div class="site_frame"> 
+      <section> 
+       <div id="bk7388" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal is-pc-hide cssskin-_block_billboard" data-bk-id="bk7388" data-shared="true" data-sharedname="sp_tittle"> 
+        <div class=" column -column1"> 
+         <div class=" c-body"> 
+          <div class="c-img   "> 
+           <a href="https://musashisakai-syouren.com"> 
+            <picture> 
+             <source type="image/webp" srcset="_src/4824/sign.webp?v=1793253214576"> 
+             <img src="_src/4824/sign.png?v=1793253214576" width="250" height="50" alt="" id="imgsrc4824_1" class=" c-no_adjust" loading="lazy"> 
+            </picture></a> 
+          </div> 
+          <br>&nbsp; 
+         </div> 
+        </div> 
+       </div> 
+       <div id="bk1188" class="b-plain c-sp-space_init cssskin-_block_billboard" data-bk-id="bk1188"> 
+        <div class=" column -column1"> 
+         <div class="c-none">
+           &nbsp; 
+         </div> 
+         <div class="c-none c-center"> 
+          <span class="js-slide s-slide-skitter_fade s-slide-auto s-slide-loop" data-interval="4000" data-duration="1500" data-width="1410" data-height="1000" data-sp-width="800" data-sp-height="1000" data-nav-type="none" data-nav-color="" data-dir-type="mouseover" data-dir-color="white" data-disp-comment="always" data-apply-area="0" data-use-background="0"> <span class="s-slide-img"> 
+            <picture> 
+             <source type="image/webp" srcset="_src/960/2774782_l.webp?v=1793253214576"> 
+             <img src="_src/960/2774782_l.jpg?v=1793253214576" width="4877" height="3658" alt="2774782_l.jpg" loading="lazy"> 
+            </picture><span class="slide-title"></span><span class="slide-body"></span> </span><span class="s-slide-img"> 
+            <picture> 
+             <source type="image/webp" srcset="_src/961/1183200_l_s.webp?v=1793253214576"> 
+             <img src="_src/961/1183200_l_s.jpg?v=1793253214576" width="1920" height="1272" alt="1183200_l_s.jpg" loading="lazy"> 
+            </picture><span class="slide-title"></span><span class="slide-body"></span> </span><span class="s-slide-img"> 
+            <picture> 
+             <source type="image/webp" srcset="_src/962/2278236_l_s.webp?v=1793253214576"> 
+             <img src="_src/962/2278236_l_s.jpg?v=1793253214576" width="1920" height="1440" alt="2278236_l_s.jpg" loading="lazy"> 
+            </picture><span class="slide-title"></span><span class="slide-body"></span> </span> </span> 
+         </div> 
+        </div> 
+       </div> 
+       <div id="bk6643" class="b-plain c-sp-space_init c-sp-padding_init bd-webp -dress_b130051Billboard cssskin-_block_billboard" data-bk-id="bk6643" data-follow-blocks="bk1188" data-sp-follow-blocks="bk1188"> 
+        <div class=" g-column -col2 -sp-col2" style="height:100%"> 
+         <div class=" column -column1"> 
+          <div class="c-none"> 
+           <div class="c-img   "> 
+            <picture> 
+             <source type="image/webp" srcset="_src/3799/img20240308234956869664.webp?v=1793253214576"> 
+             <img src="_src/3799/img20240308234956869664.png?v=1793253214576" width="1500" height="800" alt="" id="imgsrc3799_1" loading="lazy"> 
+            </picture> 
+           </div> 
+          </div> 
+          <div class="c-none">
+            &nbsp;&nbsp; 
+          </div> 
+          <p class="c-lead">　　武蔵野市の武蔵境の　　<span style="background-color:#ffffff; color:#000000;"></span><br>　　武蔵境商店会連合会は　　<br>　　7つの商店会があります。　　</p> 
+         </div> 
+         <div class=" column -column2 -column-lasts"> 
+          <h1 class=" c-page_title"> 
+           <div class="c-img   "> 
+            <picture> 
+             <source type="image/webp" srcset="_src/3801/img20240520094630109738.webp?v=1793253214576"> 
+             <img src="_src/3801/img20240520094630109738.png?v=1793253214576" width="536" height="1110" alt="" id="imgsrc3801_1" class=" c-no_adjust" loading="lazy"> 
+            </picture> 
+           </div></h1> 
+          <div class="c-none">
+            &nbsp; 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </section> 
+     </div> 
+    </div> 
+    <main> 
+     <div id="a-site_contents" class="a-site_contents  noskin"> 
+      <article> 
+       <div class="site_frame"> 
+        <div class="g-column"> 
+         <div id="a-main" class="a-main column -col12 "> 
+          <section> 
+           <div id="bk1339" class="b-plain c-space_normal c-sp-space_normal cssskin-_block_main init-block_animation" data-bk-id="bk1339" data-animated="bounceIn"> 
+            <div class=" column -column1" id="news"> 
+             <h2 class=" c-title c-center"> 
+              <div style="font-size:80%;" data-font-size-num="80%"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/3805/img20240520123102488523.webp?v=1793253214576"> 
+                 <img src="_src/3805/img20240520123102488523.png?v=1793253214576" width="342" height="168" alt="" id="imgsrc3805_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div></h2> 
+             <div class="c-lead c-center"> 
+              <span class=" c-center">お知らせとイベント情報</span> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk13044" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-sp3" data-bk-id="bk13044"> 
+            <div class=" column -column1"> 
+             <h4 class=" c-small_headline"><span style="color:#ff9900;" data-sitecolor-text="" class=" d-large_font">武蔵境秋のスクラッチキャンペーン</span><br><span><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">スクラッチカード配布期間</span></span><br><span><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">2026年11月1日(日)&nbsp; ～</span><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">15日(日)</span></span><br><span class=" d-small_font"><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">金券利用期間&nbsp;</span><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">2026年11月1日(日)&nbsp; ～30</span><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">日(月)</span></span></h4> 
+             <p class=" c-body">&nbsp;<br><span class=" d-large_font"><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">武蔵境では11月１日から秋のスクラッチキャンペーンを開催いたします。<br>1,000円の利用ごとにスクラッチカードを１枚プレゼントいたします。</span></span><span class=" d-large_font"></span><br><span style="color:#333333;" class=" d-large_font d-gothic"><span style="caret-color:#333333;"><span class=" d-bold">当たりのスクラッチカードは金券としてご利用いただけます。</span></span></span><br><span style="color:#333333;" class=" d-large_font d-gothic"><span style="caret-color:#333333;"><span class=" d-bold">ぜひ武蔵境でお買い物をお楽しみください。</span></span></span><br><span style="color:#333333;" class=" d-large_font d-gothic"><span style="caret-color:#333333;"><span class=" d-bold"><br><span><span class=" d-small_font">※おつりは出ません、現金との交換はできません。</span><br></span></span></span></span></p> 
+            </div> 
+           </div> 
+           <div id="bk13043" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk13043"> 
+            <div class=" g-column -col2 -sp-col1"> 
+             <div class=" column -column1"> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6832/musashisakai_scratch_campaign_autumn_b5chirashi_omote.webp?v=1793253214576"> 
+                 <img src="_src/6832/musashisakai_scratch_campaign_autumn_b5chirashi_omote.png?v=1793253214576" width="2508" height="3508" alt="" id="imgsrc6832_1" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6834/musashisakai_scratch_campaign_autumn_b5chirashi_ura.webp?v=1793253214576"> 
+                 <img src="_src/6834/musashisakai_scratch_campaign_autumn_b5chirashi_ura.png?v=1793253214576" width="2487" height="3541" alt="" id="imgsrc6834_1" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+             </div> 
+             <div class=" column -column1"></div> 
+            </div> 
+           </div> 
+           <div id="bk13103" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-sp_1" data-bk-id="bk13103"> 
+            <div class=" column -column1"> 
+             <hr class="c-hr"> 
+             <p class=" c-body">&nbsp;</p> 
+             <h4 class=" c-small_headline"><span class=" d-large_font">スイングロードフェスティバル</span></h4> 
+             <p class=" c-body"><span class=" d-large_font"><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">2026年10月25日(日) 11:00 ～14:00<br><span style="color:#ff00ff;" data-sitecolor-text="">イベントは終了いたしました。</span></span></span></p> 
+            </div> 
+           </div> 
+           <div id="bk13102" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk13102"> 
+            <div class=" column -column1"> 
+             <div class=" c-body"> 
+              <div class="c-img   "> 
+               <picture> 
+                <source type="image/webp" srcset="_src/6869/img20261020214727759788.webp?v=1793253214576"> 
+                <img src="_src/6869/img20261020214727759788.png?v=1793253214576" width="2000" height="1408" alt="" id="imgsrc6869_1" loading="lazy"> 
+               </picture> 
+              </div> 
+             </div> 
+             <hr class="c-hr"> 
+            </div> 
+           </div> 
+           <div id="bk13104" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-sp_1" data-bk-id="bk13104"> 
+            <div class=" column -column1"> 
+             <h4 class=" c-small_headline"><span class=" d-large_font">境南ハロウィンフェス2026</span><br><span class=" d-large_font"><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; color:#333333; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" class=" d-bold d-gothic c-start">2026年10月25日(日) 12:00 ～20:00</span></span></h4> 
+             <p class=" c-body"><span style="color:#ff00ff;" class=" d-large_font"><span style="caret-color:#333333; -webkit-text-stroke-width:0px; font-variant-caps:normal; white-space:normal; letter-spacing:normal; text-rendering:optimizelegibility; font-style:normal; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-transform:none; word-spacing:0px; text-indent:0px;" data-sitecolor-text="" class=" d-bold d-gothic c-start">イベントは終了いたしました。</span></span></p> 
+            </div> 
+           </div> 
+           <div id="bk13105" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk13105"> 
+            <div class=" g-column -col2 -sp-col1"> 
+             <div class=" column -column1"> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6871/chirashi.webp?v=1793253214576"> 
+                 <img src="_src/6871/chirashi.png?v=1793253214576" width="800" height="1119" alt="" id="imgsrc6871_1" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6873/chirashi2.webp?v=1793253214576"> 
+                 <img src="_src/6873/chirashi2.jpg?v=1793253214576" width="800" height="1139" alt="" id="imgsrc6873_1" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+             </div> 
+             <div class=" column -column1"></div> 
+            </div> 
+           </div> 
+           <div id="bk13045" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-sp_1" data-bk-id="bk13045"> 
+            <div class=" column -column1"> 
+             <p class=" c-body"><span style="background-color:#ffffff; color:#333333;" class=" d-large_font">武蔵境駅前に、ハロウィンの妖怪たちと一緒に楽しめる「奇妙な縁日」が出現！</span><br><span style="background-color:#ffffff; color:#333333;" class=" d-large_font">美味しいい食べ物や楽しい催しで、特別な一夜をお祭り騒ぎで盛り上げます。</span><br>&nbsp;<br><span style="background-color:#ffffff; color:#333333;" class=" d-large_font">【お問い合わせ　<span style="background-color:#ffffff; color:#333333;">境南協栄会】<br><br></span></span><br><span style="background-color:#ffffff; color:#333333;"><span style="background-color:#ffffff; color:#333333;"><a href="https://x.com/kyonankyoeikai?s=21&amp;t=oqW6tuWweuGVQLNvQ0z8QQ" class="btn-default">公式Xはこちら</a></span></span></p> 
+            </div> 
+           </div> 
+           <div id="bk13046" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk13046"> 
+            <div class=" column -column1"> 
+             <hr class="c-hr"> 
+            </div> 
+           </div> 
+           <div id="bk10692" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-sp_1" data-bk-id="bk10692"> 
+            <div class=" g-column -col4 -sp-col2"> 
+             <div class=" column -column1"> 
+              <h4 class=" c-small_headline"><span style="color:#37a870;">新規会員様紹介</span></h4> 
+              <div class="c-lead c-left"> 
+               <span>炭田屋　</span> 
+               <span>武蔵境店</span> 
+              </div> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <a href="https://musashisakai-syouren.com/skip/cn4/pg681.html"> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/6867/76121.webp?v=1793253214576"> 
+                  <img src="_src/6867/76121.jpg?v=1793253214576" width="1477" height="830" alt="" id="imgsrc6867_1" loading="lazy"> 
+                 </picture></a> 
+               </div> 
+               <br>&nbsp; 
+               <br> 
+               <span>すきっぷ通り</span> 
+               <br> 
+               <span>「炭田屋 武蔵境店」さん</span> 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br> 
+               <a href="https://musashisakai-syouren.com/skip/cn4/pg681.html" class="btn-default">詳しくはこちら</a> 
+              </div> 
+             </div> 
+             <div class=" column -column2"> 
+              <h4 class=" c-small_headline"><span style="color:#37a870;">新規会員様紹介</span></h4> 
+              <div class="c-lead c-left"> 
+               <span>晩酌Barオリーブ</span> 
+              </div> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <a href="https://musashisakai-syouren.com/shop2/cn3/pg679.html"> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/6863/73655_2.webp?v=1793253214576"> 
+                  <img src="_src/6863/73655_2.jpg?v=1793253214576" width="400" height="225" alt="" id="imgsrc6863_1" loading="lazy"> 
+                 </picture></a> 
+               </div> 
+               <br>&nbsp; 
+               <br> 
+               <span>境南協栄会</span> 
+               <br> 
+               <span>「晩酌Barオリーブ」さん</span> 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br> 
+               <a href="https://musashisakai-syouren.com/shop2/cn3/pg679.html" class="btn-default">詳しくはこちら</a> 
+              </div> 
+             </div> 
+             <div class=" column -column3"> 
+              <h4 class=" c-small_headline"><span style="color:#37a870;">新規会員様紹介</span></h4> 
+              <div class="c-lead c-left"> 
+               <span style="background-color:#ffffff; color:#1f1f1f;">OAK Craft Spice &amp; Beer</span> 
+              </div> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <a href="https://musashisakai-syouren.com/shop2/cn3/pg680.html"> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/6865/img_3708_2.webp?v=1793253214576"> 
+                  <img src="_src/6865/img_3708_2.jpg?v=1793253214576" width="1170" height="657" alt="" id="imgsrc6865_1" loading="lazy"> 
+                 </picture></a> 
+               </div> 
+               <br>&nbsp; 
+               <br> 
+               <span>境南協栄会</span> 
+               <br> 
+               <span>「<span style="background-color:#ffffff; color:#1f1f1f;">OAK Craft Spice &amp; Beer</span>」さん</span> 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br> 
+               <a href="https://musashisakai-syouren.com/shop2/cn3/pg680.html" class="btn-default">詳しくはこちら</a> 
+              </div> 
+             </div> 
+             <div class=" column -column4 -column-lasts"> 
+              <h4 class=" c-small_headline"><span style="color:#37a870;" class=" d-small_font">すきっぷ通りサマーセール</span></h4> 
+              <div class="c-lead c-left"> 
+               <span style="background-color:#ffffff; color:#000000;">すきっぷ通り商店街</span> 
+              </div> 
+              <div class=" c-body"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6825/img20250205122952061495.webp?v=1793253214576"> 
+                 <img src="_src/6825/img20250205122952061495.png?v=1793253214576" width="908" height="510" alt="" id="imgsrc6825_1" loading="lazy"> 
+                </picture> 
+               </div> 
+               <br>&nbsp; 
+               <br> 
+               <span>7/1~7/12</span> 
+               <br> 
+               <span>すきっぷ通り商店街で</span> 
+               <br> 
+               <span>サマーセール開催！</span> 
+               <br>&nbsp; 
+               <br>&nbsp; 
+               <br> 
+               <a href="pg678.html" data-pid="678" class="btn-default">詳しくはこちら</a> 
+               <br>&nbsp; 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk13042" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk13042"> 
+            <div class=" column -column1"> 
+             <hr class="c-hr"> 
+            </div> 
+           </div> 
+           <div id="bk12189" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal is-sp-hide cssskin-_block_main" data-bk-id="bk12189"> 
+            <div class=" column -column1"> 
+             <div class=" c-body"> 
+              <div class="c-img   "> 
+               <a href="https://musashisakai-syouren.com/event/SHIROBAKO/"> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/6260/img20241029080311503862.webp?v=1793253214576"> 
+                 <img src="_src/6260/img20241029080311503862.png?v=1793253214576" width="1080" height="300" alt="" id="imgsrc6260_1" loading="lazy"> 
+                </picture></a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk10965" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal is-pc-hide cssskin-_block_main" data-bk-id="bk10965"> 
+            <div class=" column -column1"> 
+             <div class=" c-body c-center"> 
+              <div class="c-img   "> 
+               <a href="https://musashisakai-syouren.com/event/SHIROBAKO/"> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/5287/img20241029080347559171.webp?v=1793253214576"> 
+                 <img src="_src/5287/img20241029080347559171.png?v=1793253214576" width="551" height="226" alt="" id="imgsrc5287_1" loading="lazy"> 
+                </picture></a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk12472" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal cssskin-_block_main" data-bk-id="bk12472"> 
+            <div class=" column -column1"> 
+             <hr class="c-hr"> 
+            </div> 
+           </div> 
+           <div id="bk1341" class="b-plain c-space_normal c-sp-space_normal cssskin-_block_main init-block_animation" data-bk-id="bk1341" data-animated="bounceIn"> 
+            <div class=" column -column1" id="about"> 
+             <h2 class=" c-title c-center"> 
+              <div class="c-img   "> 
+               <picture> 
+                <source type="image/webp" srcset="_src/3807/img20240520123208807829.webp?v=1793253214576"> 
+                <img src="_src/3807/img20240520123208807829.png?v=1793253214576" width="382" height="194" alt="" id="imgsrc3807_1" class=" c-no_adjust" loading="lazy"> 
+               </picture> 
+              </div></h2> 
+             <div class="c-lead c-center"> 
+              <span class=" c-center">武蔵境商店会連合会について</span> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk1340" class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_wide cssskin-_block_main" data-bk-id="bk1340"> 
+            <div class=" g-column -col2 -sp-col1"> 
+             <div class=" column -column1"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/715/img_0326s.webp?v=1793253214576"> 
+                 <img src="_src/715/img_0326s.jpg?v=1793253214576" width="1000" height="810" alt="" id="imgsrc715_1" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <h3 class="lead c-large_headline">ご挨拶</h3> 
+              <h4 class="lead c-small_headline">武蔵境商店会連合会会長<br><span style="background-color:#ffffff; color:#000000;">生駒　耕示</span></h4> 
+              <p class=" c-body"><span>皆様、こんにちは。</span><span><br></span><span>武蔵境商店会連合会のホームページをご覧いただき、誠にありがとうございます。</span><span>私たちの商店会は、武蔵野市西部に位置し、多様な店舗が集まる活気ある商業エリアとして、地域の皆さまに愛されてまいりました。日々の生活に必要な商品やサービスだけでなく、心温まる交流や楽しいイベントもご提供しております。</span><span>皆さまの笑顔や喜びの声が、私たちの最大の励みです。</span><span><br></span><span>このホームページでは、商店会加盟店の紹介やイベント情報、お得情報などをお届けしてまいります。ぜひ定期的にチェックしていただき、武蔵境でのお買い物やイベントを存分にお楽しみください。</span><span><br></span><span>今後も、地域の発展と共に歩み続け、皆さまに愛される商店会を目指してまいります。どうぞよろしくお願い申し上げます。</span><span><br></span><span>皆さまのお越しを心よりお待ちしております。</span></p> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk2800" class="b-plain cssskin-_block_main" data-bk-id="bk2800"> 
+            <div class=" column -column1"> 
+            </div> 
+           </div> 
+           <div id="bk2801" class="b-plain c-space_normal c-sp-space_normal cssskin-_block_main init-block_animation" data-bk-id="bk2801" data-animated="bounceIn"> 
+            <div class=" column -column1" id="shoplist"> 
+             <h2 class="lead c-title c-center"> 
+              <div class="c-img   "> 
+               <picture> 
+                <source type="image/webp" srcset="_src/3973/img20240526130838183178.webp?v=1793253214576"> 
+                <img src="_src/3973/img20240526130838183178.png?v=1793253214576" width="688" height="298" alt="" id="imgsrc3973_1" class=" c-no_adjust" loading="lazy"> 
+               </picture> 
+              </div></h2> 
+            </div> 
+           </div> 
+           <div id="bk1345" class="b-headlines c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal bd-webp -dress_b130051Main2 cssskin-_block_main" data-bk-id="bk1345"> 
+            <div class=" g-column -col2 -sp-col1 -no_spacing"> 
+             <div class=" column -column1"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/746/b13_005_1_service08.webp?v=1793253214576"> 
+                 <img src="_src/746/b13_005_1_service08.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc746_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+              <div class="c-lead c-center">
+                武蔵境駅前商店街協同組合 
+              </div> 
+              <p style="line-height: 1.5;" class=" c-body">JR武蔵境駅北口を出てすぐの商店会で、通称：すきっぷ通り商店街と呼ばれています。</p> 
+              <div style="line-height:1.5;" class=" c-body c-center"> 
+               <a href="https://musashisakai-syouren.com/skip/" class="btn-default">お店一覧はこちらから</a> 
+              </div> 
+              <p class=" c-body">&nbsp;</p> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img    js-mouse_overs"> 
+                <a href="cn4/pg81.html" data-pid="81"> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/748/img20240425083514811649.webp?v=1793253214576"> 
+                  <img src="_src/748/img20240425083514811649.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc748_1" class=" c-no_adjust" loading="lazy"> 
+                 </picture> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/3791/img20240425083514811649.webp?v=1793253214576"> 
+                  <img src="_src/3791/img20240425083514811649.jpg?v=1793253214576" alt="" id="imgsrc3791_2" class=" js-over_img c-no_adjust"> 
+                 </picture></a> 
+               </div> 
+              </div> 
+              <div class="c-lead c-center">
+                武蔵境みずき通り商栄会 
+              </div> 
+              <p style="line-height: 1.5;" class=" c-body"><span style="background-color:#ffffff; color:#000000;">新武蔵境通りから境二丁目第一交差点までの東西にのびる通称：みずき通りにある商店会です。</span></p> 
+              <div style="line-height:1.5;" class=" c-body c-center"> 
+               <span style="background-color:#ffffff; color:#000000;"><a href="cn4/pg81.html" data-pid="81" class="btn-default">お店一覧はこちらから</a></span> 
+              </div> 
+              <p class=" c-body">&nbsp;</p> 
+             </div> 
+             <div class=" column -column1"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/750/b13_005_1_service03.webp?v=1793253214576"> 
+                 <img src="_src/750/b13_005_1_service03.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc750_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+              <div class="c-lead c-center">
+                スイングロード商店会 
+              </div> 
+              <p style="line-height: 1.5;" class=" c-body"><span style="background-color:#ffffff; color:#000000;">武蔵境駅北口を出て左手のケヤキ並木がつづく広い通りに面した商店会で市の施設であるスイングホールがあります。</span></p> 
+              <div style="line-height:1.5;" class=" c-body c-center"> 
+               <a href="cn5/pg80.html" data-pid="80" class="btn-default">お店一覧はこちらから</a> 
+              </div> 
+              <div style="line-height:1.5;" class=" c-body c-center">
+                &nbsp; 
+              </div> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/3058/img20240311202024524431.webp?v=1793253214576"> 
+                 <img src="_src/3058/img20240311202024524431.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc3058_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+              <div class="c-lead c-center">
+                境南協栄会 
+              </div> 
+              <p class=" c-body"><span style="background-color:#ffffff; color:#000000;">JR武蔵境駅南口を出て西側に広がる商店街です（線路沿い、天文台通り沿い、境南町3丁目周辺）。</span></p> 
+              <div class=" c-body c-center"> 
+               <a href="https://musashisakai-syouren.com/shop2/" class="btn-default">お店一覧はこちらから</a> 
+              </div> 
+              <div class=" c-body c-center">
+                &nbsp; 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="bk1346" class="b-headlines c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal bd-webp -dress_b130051Main2 cssskin-_block_main" data-bk-id="bk1346"> 
+            <div class=" g-column -col2 -sp-col1 -no_spacing"> 
+             <div class=" column -column1"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <a href="cn7/courses.html" data-pid="67"> 
+                 <picture> 
+                  <source type="image/webp" srcset="_src/756/img20240311202024524431.webp?v=1793253214576"> 
+                  <img src="_src/756/img20240311202024524431.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc756_1" class=" c-no_adjust" loading="lazy"> 
+                 </picture></a> 
+               </div> 
+              </div> 
+              <p class="c-lead">緑盛会</p> 
+              <p style="line-height: 1.5;" class=" c-body"><span style="background-color:#ffffff; color:#000000;">武蔵境駅の南西、境南町3～5丁目周辺の商店会です。大型スーパーのグルメシティと個店が協力して地域住民の生活を支えています。</span></p> 
+              <div class=" c-body c-center"> 
+               <a href="cn7/courses.html" data-pid="67" class="btn-default">お店一覧はこちらから</a> 
+              </div> 
+              <div class=" c-body c-center">
+                &nbsp; 
+              </div> 
+             </div> 
+             <div class=" column -column2 -column-lasts"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/758/img20240313210042408098.webp?v=1793253214576"> 
+                 <img src="_src/758/img20240313210042408098.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc758_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+              <p class="c-lead">富士見通り商店会</p> 
+              <p style="line-height: 1.5;" class=" c-body"><span style="background-color:#ffffff; color:#000000;">武蔵境駅の南西、富士見通りに面した商店会（境南町4～5丁目周辺）で、現在、20会員（非商店含む）が加入しています。</span></p> 
+              <div style="line-height:1.5;" class=" c-body c-center"> 
+               <span style="background-color:#ffffff; color:#000000;"><a href="https://musashisakai-syouren.com/shop3/cn5/pg79.html" class="btn-default">お店一覧はこちらから</a></span> 
+              </div> 
+              <p class=" c-body">&nbsp;</p> 
+             </div> 
+             <div class=" column -column1"> 
+              <div class=" c-body c-center"> 
+               <div class="c-img   "> 
+                <picture> 
+                 <source type="image/webp" srcset="_src/760/b13_005_1_service02.webp?v=1793253214576"> 
+                 <img src="_src/760/b13_005_1_service02.jpg?v=1793253214576" width="500" height="281" alt="" id="imgsrc760_1" class=" c-no_adjust" loading="lazy"> 
+                </picture> 
+               </div> 
+              </div> 
+              <p class="c-lead">境南中央商店会</p> 
+              <p style="line-height: 1.5;" class=" c-body"><span style="background-color:#ffffff; color:#000000;">JR武蔵境駅の南、杵築大社や聖徳学園がある境南町2丁目周辺の商店会で、現在、39会員（非商店を含む）が加入し、大型店であるイトーヨーカドーとともに地域住民の方々の生活を支えています。</span><br><span style="background-color:#ffffff; color:#000000;"></span></p> 
+              <div class=" c-body c-center"> 
+               <a href="https://musashisakai-syouren.com/shop3/" class="btn-default">お店一覧はこちらから</a> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </section> 
+         </div> 
+        </div> 
+       </div> 
+      </article> 
+     </div> 
+    </main> 
+    <div id="a-footer" data-float="false" class="a-footer   cssskin-_area_footer"> 
+     <footer> 
+      <div class="site_frame"> 
+       <div id="bk1200" class="b-plain c-space_normal c-sp-space_normal cssskin-_block_footer" data-bk-id="bk1200" data-shared="true" data-sharedname="_コピーライト"> 
+        <div class=" column -column1"> 
+         <div class="c-credit c-center"> 
+          <span class=" c-center">Copyright 武蔵境商店会連合会. All Rights Reserved.</span> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </footer> 
+    </div> 
+    <div id="w-top-left" class="w-base w-top w-left"> 
+     <div id="bk1132" class="b-plain" data-bk-id="bk1132"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="w-top-right" class="w-base w-top w-right"> 
+     <div id="bk1133" class="b-plain" data-bk-id="bk1133"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="w-middle-left" class="w-base w-middle w-left"> 
+     <div id="bk1134" class="b-plain" data-bk-id="bk1134"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="w-middle-right" class="w-base w-middle w-right"> 
+     <div id="bk1135" class="b-plain" data-bk-id="bk1135"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="w-bottom-left" class="w-base w-bottom w-left"> 
+     <div id="bk1136" class="b-plain" data-bk-id="bk1136"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="w-bottom-right" class="w-base w-bottom w-right"> 
+     <div id="bk2782" class="b-plain" data-bk-id="bk2782"> 
+      <div class=" column -column1"> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script src="_module/lib/lib.js?v=17.0.8" defer></script> 
+  <script src="_module/scripts/bind.js?v=17.0.8" id="script-js" defer></script> 
+  <!--[if lt IE 9]><script src="_module/lib/html5shiv.min.js?v=17.0.8"></script><![endif]--> 
+  <!-- custom_tags_start --> 
+  <script defer type="text/javascript">
+</script> 
+  <!-- custom_tags_end -->  
+ </body>
+</html>

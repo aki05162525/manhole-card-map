@@ -1,0 +1,13 @@
+{
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/226291/106677.png",
+  "snapshotPath": "data/evidence/issue7/review-kyushu-okinawa/civic-gsi.png",
+  "snapshotSHA256": "e647c92381f3f0484f56259ed6db6de6d4775e0f76d54636558790d42f0c9660",
+  "fetchedAt": "2026-11-05T06:42:42.141061+00:00",
+  "z": 18,
+  "x": 226291,
+  "y": 106677,
+  "candidatePixel": [
+    23.634102039039135,
+    57.227033868432045
+  ]
+}

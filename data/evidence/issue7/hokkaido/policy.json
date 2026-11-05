@@ -1,0 +1,73 @@
+{
+  "P05": {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "description": "現行カタログは適用規約に基づくオープンデータ、JGD2011、2022年4月基準。現行規約PDL1.0に基づき出典と加工を表示する。旧版の個別非商用条件を上書きしない。",
+    "specificationPath": "data/evidence/issue5/review-chubu/p05-spec.pdf",
+    "specificationSHA256": "ec3af6525d07bc2116325dd3f81bea0e5e82e53afa0b88c2ec810425b5138a15",
+    "specificationLocator": "8章 データ品質評価：建物外周内の点の全数検査",
+    "attribution": "国土数値情報（市町村役場等及び公的集会施設2022）（国土交通省）をもとに施設を選択しlat/lngへ加工。"
+  },
+  "municipalData": {
+    "sourceUrl": "https://www.harp.lg.jp/opendata/terms.html",
+    "description": "自治体自身作成の公共施設一覧。ポータル一般規約とリソースの個別指定を区別。今回2レコードに旧国土数値情報由来の注記を見いださず。利用条件・数値事実利用・原本全体の再公開を同一視しない。特定EPSGを明記する資料は今回得られていない。",
+    "attribution": [
+      "富良野市 公共施設一覧.csv PF0000000001",
+      "剣淵町 12公共施設一覧 様式.xlsx ID0000000011"
+    ]
+  },
+  "officialHTML": {
+    "description": "市のHTMLに直接指定された建物markerを使う。Google/OSMの応答や背景地図を抽出・再配布していない。HTML全体・写真の利用許諾まで取得したという主張ではない。原本保存は監査用。"
+  },
+  "fetchedPolicySources": [
+    {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+      "fetchedAt": "2026-11-05T06:29:23.751614+00:00",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshotPath": "data/evidence/issue7/hokkaido/originals/de0a190dee70df384064bfe419bb366ca6dd4f630ff1a2e1031578fa201fe2c7.html",
+      "snapshotSHA256": "de0a190dee70df384064bfe419bb366ca6dd4f630ff1a2e1031578fa201fe2c7",
+      "bytes": 128344
+    },
+    {
+      "url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "fetchedAt": "2026-11-05T06:29:24.415032+00:00",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshotPath": "data/evidence/issue7/hokkaido/originals/c0ba91f10947af25ac807a3cdb4c21f7f300124dc0eac048f6f466c02472a9b4.html",
+      "snapshotSHA256": "c0ba91f10947af25ac807a3cdb4c21f7f300124dc0eac048f6f466c02472a9b4",
+      "bytes": 27978
+    },
+    {
+      "url": "https://www.harp.lg.jp/opendata/dataset/1807.html",
+      "fetchedAt": "2026-11-05T06:30:55.184626+00:00",
+      "status": 200,
+      "finalUrl": "https://www.harp.lg.jp/opendata/dataset/1807.html",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshotPath": "data/evidence/issue7/hokkaido/originals/603b4a586527c640aa22cbae61563ec476342742b64914168ca06c113a4cac77.html",
+      "snapshotSHA256": "603b4a586527c640aa22cbae61563ec476342742b64914168ca06c113a4cac77",
+      "bytes": 11944
+    },
+    {
+      "url": "https://www.harp.lg.jp/opendata/terms.html",
+      "fetchedAt": "2026-11-05T06:32:22.663972+00:00",
+      "status": 200,
+      "finalUrl": "https://www.harp.lg.jp/opendata/terms.html",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshotPath": "data/evidence/issue7/hokkaido/originals/f8ed6755d73ebd7147265cff4aac2cd0cef94ed2b203e31a46fec43b8896c118.html",
+      "snapshotSHA256": "f8ed6755d73ebd7147265cff4aac2cd0cef94ed2b203e31a46fec43b8896c118",
+      "bytes": 11686
+    },
+    {
+      "url": "https://www.harp.lg.jp/opendata/dataset/2235.html",
+      "fetchedAt": "2026-11-05T06:32:23.257261+00:00",
+      "status": 200,
+      "finalUrl": "https://www.harp.lg.jp/opendata/dataset/2235.html",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshotPath": "data/evidence/issue7/hokkaido/originals/46803595a931b7ffe6c8edf3fd180fabd579a1f64f9081195a046f8e848c25e4.html",
+      "snapshotSHA256": "46803595a931b7ffe6c8edf3fd180fabd579a1f64f9081195a046f8e848c25e4",
+      "bytes": 10692
+    }
+  ]
+}

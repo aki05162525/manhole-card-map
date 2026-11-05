@@ -1,0 +1,155 @@
+[
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3352.png",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "地下"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:52.925120+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3352.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/51fe73b4488807bba0e40bfc.html",
+    "snapshotSHA256": "51fe73b4488807bba0e40bfc3141e5cbb3f5a60ca88bbc9c6a6b693f287f51d5",
+    "fetchedAt": "2026-11-05T06:31:53.056578+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/51fe73b4488807bba0e40bfc-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3354.png",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "１階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:53.211714+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3354.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/43082f074807eb6fc6785d36.html",
+    "snapshotSHA256": "43082f074807eb6fc6785d366caea3eca851d11ee7e862c61264790d9981142f",
+    "fetchedAt": "2026-11-05T06:31:53.320353+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/43082f074807eb6fc6785d36-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3606.png",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "庁舎見取り図　本館２階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:53.413700+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3606.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/c82487ba584b3a30dcafd76d.html",
+    "snapshotSHA256": "c82487ba584b3a30dcafd76de610e9cec83edaac87f05fc5c4895b65923d0e62",
+    "fetchedAt": "2026-11-05T06:31:53.501934+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/c82487ba584b3a30dcafd76d-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3360.png",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "本館3階の画像"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:53.643658+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3360.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f844ed05d26aa8dda8c6e917.html",
+    "snapshotSHA256": "f844ed05d26aa8dda8c6e9175cb3189fdacaca24b4929831ea9d7d98bee38015",
+    "fetchedAt": "2026-11-05T06:31:53.778861+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/f844ed05d26aa8dda8c6e917-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/1484.jpg",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "本館4階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:53.917368+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1484.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66cd9e6acdfe245ee81b66b9.html",
+    "snapshotSHA256": "66cd9e6acdfe245ee81b66b96cc491a7b69b6220c0d35f1590f4d204de239a8a",
+    "fetchedAt": "2026-11-05T06:31:54.036074+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/66cd9e6acdfe245ee81b66b9-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/1485.jpg",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "別館1階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:54.148335+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1485.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fcaeb43c9fa41ad2ff143ee8.html",
+    "snapshotSHA256": "fcaeb43c9fa41ad2ff143ee84c95c153ce9c6b10c83abce5c1fedc156c4c634d",
+    "fetchedAt": "2026-11-05T06:31:54.280447+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/fcaeb43c9fa41ad2ff143ee8-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3356.png",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": " 別館２階の画像"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:54.379170+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3356.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/c5b40eeb9771b9ddc23dba4c.html",
+    "snapshotSHA256": "c5b40eeb9771b9ddc23dba4c3f35b42a03b4da2a2c78d6add1fac729d3e5f1cb",
+    "fetchedAt": "2026-11-05T06:31:54.469811+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/c5b40eeb9771b9ddc23dba4c-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/1487.jpg",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "別館3階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:54.592535+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1487.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/31dd459c021ddcdbab8ebf94.html",
+    "snapshotSHA256": "31dd459c021ddcdbab8ebf947bf7f5c9124340256014f389c51da3d73e432278",
+    "fetchedAt": "2026-11-05T06:31:54.676605+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/31dd459c021ddcdbab8ebf94-ocr.txt"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/uploaded/image/3609.jpg",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "庁舎見取り図　別館４階"
+      }
+    ],
+    "startedAt": "2026-11-05T06:31:54.786474+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3609.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0a38ccc5a7ecf0aade04ba98.html",
+    "snapshotSHA256": "0a38ccc5a7ecf0aade04ba98b859d1cc49403171152a5c3ca161da4706d20175",
+    "fetchedAt": "2026-11-05T06:31:54.847061+00:00",
+    "ocrPath": "data/evidence/issue7/kyushu-okinawa/0a38ccc5a7ecf0aade04ba98-ocr.txt"
+  }
+]

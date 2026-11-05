@@ -1,0 +1,883 @@
+[
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/42818ddfef3d6a5bf74aec9f3a17bafb3adc3ca6151c8d463848386fa6328bac.html",
+    "snapshotSHA256": "42818ddfef3d6a5bf74aec9f3a17bafb3adc3ca6151c8d463848386fa6328bac",
+    "fetchedAt": "2026-11-05T04:22:46.158524+00:00",
+    "sourceUrl": "http://www.city.noboribetsu.lg.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/2bde9354558a4687349981809b46c4b593ec732d7f068cf1f646cc40505951b5.html",
+    "snapshotSHA256": "2bde9354558a4687349981809b46c4b593ec732d7f068cf1f646cc40505951b5",
+    "fetchedAt": "2026-11-05T04:23:44.813061+00:00",
+    "sourceUrl": "https://www.city.noboribetsu.lg.jp/docs/2020040800031/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/39ec7a440fa81282be1ad0cd273c548828bcd50abad8da730091bce910fdd4dd.html",
+    "snapshotSHA256": "39ec7a440fa81282be1ad0cd273c548828bcd50abad8da730091bce910fdd4dd",
+    "fetchedAt": "2026-11-05T04:48:41.798480+00:00",
+    "sourceUrl": "https://www.city.noboribetsu.lg.jp/docs/2013031800141/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/e798bea8da037a0ffb9ebe663c90edd6dcad6c1aee14e4cf4f6cc3a5b8c57e8d.html",
+    "snapshotSHA256": "e798bea8da037a0ffb9ebe663c90edd6dcad6c1aee14e4cf4f6cc3a5b8c57e8d",
+    "fetchedAt": "2026-11-05T04:23:03.090897+00:00",
+    "sourceUrl": "http://www.town.wassamu.hokkaido.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/d3e81bf901f62e5927515056af051228ca7883b694ee0ff3b2a3f9689d6db9cc.html",
+    "snapshotSHA256": "d3e81bf901f62e5927515056af051228ca7883b694ee0ff3b2a3f9689d6db9cc",
+    "fetchedAt": "2026-11-05T04:34:29.911542+00:00",
+    "sourceUrl": "https://www.town.wassamu.hokkaido.jp/industrial-development/2018/12/03/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%81%af%e3%81%98%e3%82%81%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81%e4%b8%80%e9%83%a8%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42.html",
+    "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+    "fetchedAt": "2026-11-05T04:50:57.974506+00:00",
+    "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/81eaa3eaa6ad70aeccdf4be65f93139051ecaf0439681d9548ed29cd98121d33.html",
+    "snapshotSHA256": "81eaa3eaa6ad70aeccdf4be65f93139051ecaf0439681d9548ed29cd98121d33",
+    "fetchedAt": "2026-11-05T04:23:05.525882+00:00",
+    "sourceUrl": "https://betsukai.jp/kurashi/water/gesuidou/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/82d4010892a0cfd0c2f98e4ab8c2873629a01b2faf0e39866089a5ec72df41fd.html",
+    "snapshotSHA256": "82d4010892a0cfd0c2f98e4ab8c2873629a01b2faf0e39866089a5ec72df41fd",
+    "fetchedAt": "2026-11-05T04:26:08.990023+00:00",
+    "sourceUrl": "https://betsukai.jp/kurashi/water/gesuidou/mannho-rika-do/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/9d500a69b8c3132f457095613898d84dc8df664d06992db65746b188c7c77e23.html",
+    "snapshotSHA256": "9d500a69b8c3132f457095613898d84dc8df664d06992db65746b188c7c77e23",
+    "fetchedAt": "2026-11-05T04:53:36.279439+00:00",
+    "sourceUrl": "https://www.town.wassamu.hokkaido.jp/industrial-development/commerce-tourism/attractions/wassamu-foodandtouristinformation/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/52d218a969ef10bca370f6d99a63252f24cd2f4d35081b379bfd393977816303.html",
+    "snapshotSHA256": "52d218a969ef10bca370f6d99a63252f24cd2f4d35081b379bfd393977816303",
+    "fetchedAt": "2026-11-05T04:56:53.411195+00:00",
+    "sourceUrl": "https://www.town.wassamu.hokkaido.jp/affairs/city-building/guest-house-hidamari/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2.html",
+    "snapshotSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+    "fetchedAt": "2026-11-05T04:24:29.498786+00:00",
+    "sourceUrl": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/page_7.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/722a936a6b1ec3c477a2a698b468944cc8e5c5cb8b8235b22f91808a5da1e665.html",
+    "snapshotSHA256": "722a936a6b1ec3c477a2a698b468944cc8e5c5cb8b8235b22f91808a5da1e665",
+    "fetchedAt": "2026-11-05T04:53:36.069412+00:00",
+    "sourceUrl": "https://www.town.ashoro.hokkaido.jp/d1w_reiki/H343901010016/print.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4c8b7f76aa74a919bbe2c8c35a9210c0945a66e09453c3109ecf1d210b9d05d0.html",
+    "snapshotSHA256": "4c8b7f76aa74a919bbe2c8c35a9210c0945a66e09453c3109ecf1d210b9d05d0",
+    "fetchedAt": "2026-11-05T04:23:49.006427+00:00",
+    "sourceUrl": "https://www.city.sapporo.jp/gesui/manholecard.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/be8309fae023a005ccd9632667c37cf07ab653724b6bd6374f6785407c26e198.html",
+    "snapshotSHA256": "be8309fae023a005ccd9632667c37cf07ab653724b6bd6374f6785407c26e198",
+    "fetchedAt": "2026-11-05T04:23:17.571225+00:00",
+    "sourceUrl": "https://odori-park.jp/access/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/bf98150e701f7abae843a783233cec814b8d207ca891cf4ae5eb05fbd6de74ce.html",
+    "snapshotSHA256": "bf98150e701f7abae843a783233cec814b8d207ca891cf4ae5eb05fbd6de74ce",
+    "fetchedAt": "2026-11-05T04:54:20.000738+00:00",
+    "sourceUrl": "https://www.sapporo.travel/info/about/informationcenter/?lang=ja"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/2bbe2e462e749d2b67c0d41090d132d93f0d2ca8bb84f1b343ef23ed5ea986d9.html",
+    "snapshotSHA256": "2bbe2e462e749d2b67c0d41090d132d93f0d2ca8bb84f1b343ef23ed5ea986d9",
+    "fetchedAt": "2026-11-05T04:24:32.501376+00:00",
+    "sourceUrl": "https://www.town.shikaoi.lg.jp/sightseeing/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/2bcd1ce818f92c198bbb2186eb913d0c35ff95625bc24be37bcb110255ad226f.html",
+    "snapshotSHA256": "2bcd1ce818f92c198bbb2186eb913d0c35ff95625bc24be37bcb110255ad226f",
+    "fetchedAt": "2026-11-05T04:24:36.952105+00:00",
+    "sourceUrl": "https://www.town.shikaoi.lg.jp/sightseeing/shikaoi_futamasu/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/1b342b4b99e9b71b775f5ffc881507bffdd8861e5666209739cb2e0dfc6d4119.html",
+    "snapshotSHA256": "1b342b4b99e9b71b775f5ffc881507bffdd8861e5666209739cb2e0dfc6d4119",
+    "fetchedAt": "2026-11-05T04:24:25.298135+00:00",
+    "sourceUrl": "https://www.town.kamifurano.hokkaido.jp/index.php?id=3390",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/89334f61783663c5d786cf1483ff91a6d0160b0f0e55998623743a09bb31abf5.html",
+    "snapshotSHA256": "89334f61783663c5d786cf1483ff91a6d0160b0f0e55998623743a09bb31abf5",
+    "fetchedAt": "2026-11-05T04:23:20.643040+00:00",
+    "sourceUrl": "https://suido.city.eniwa.hokkaido.jp/business/sewer/manhole-card.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/0d772dd1aa5890a23be87f3d510fb38d15d0f078882e4d73eac173aebf374799.html",
+    "snapshotSHA256": "0d772dd1aa5890a23be87f3d510fb38d15d0f078882e4d73eac173aebf374799",
+    "fetchedAt": "2026-11-05T04:53:10.384792+00:00",
+    "sourceUrl": "https://hanafuru.jp/access.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/3070bc171524d4c37f2ddfb3a36af2735604a6b8ff63bb64eaab002c9121b317.html",
+    "snapshotSHA256": "3070bc171524d4c37f2ddfb3a36af2735604a6b8ff63bb64eaab002c9121b317",
+    "fetchedAt": "2026-11-05T04:53:11.484908+00:00",
+    "sourceUrl": "https://hanafuru.jp/contact.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/215dcb130abd62ab07dbcd17718d49c4d3952607debf46a59560102dc86ad162.html",
+    "snapshotSHA256": "215dcb130abd62ab07dbcd17718d49c4d3952607debf46a59560102dc86ad162",
+    "fetchedAt": "2026-11-05T04:24:23.500259+00:00",
+    "sourceUrl": "https://www.town.higashikagura.lg.jp/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/5f380493d99a268fc05b86962b8b02eab5f59d0c30e2bd3238bee7e389fc2046.html",
+    "snapshotSHA256": "5f380493d99a268fc05b86962b8b02eab5f59d0c30e2bd3238bee7e389fc2046",
+    "fetchedAt": "2026-11-05T04:32:05.029178+00:00",
+    "sourceUrl": "https://www.town.higashikagura.lg.jp/docs/12074.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/efa7346821eaa7bdd04ca117e673912f51c0667df3dd380a7158c1d65fce7f71.html",
+    "snapshotSHA256": "efa7346821eaa7bdd04ca117e673912f51c0667df3dd380a7158c1d65fce7f71",
+    "fetchedAt": "2026-11-05T04:53:10.385561+00:00",
+    "sourceUrl": "https://www.town.higashikagura.lg.jp/c2_kurashi/shisetsu/yakuba/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/177a34708b80f71e7737a49cac33aa1d8438d071e4073e0759c5cc25d9f006f1.html",
+    "snapshotSHA256": "177a34708b80f71e7737a49cac33aa1d8438d071e4073e0759c5cc25d9f006f1",
+    "fetchedAt": "2026-11-05T04:53:36.070654+00:00",
+    "sourceUrl": "https://www.town.higashikagura.lg.jp/docs/365.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/02ef9d9b29f7e7eb8d31b71f17ee98c6701a23f71aed69a6a54e6f2782ffbd03.html",
+    "snapshotSHA256": "02ef9d9b29f7e7eb8d31b71f17ee98c6701a23f71aed69a6a54e6f2782ffbd03",
+    "fetchedAt": "2026-11-05T04:48:36.361096+00:00",
+    "sourceUrl": "http://www.town.higashikagura.lg.jp/docs/678.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/397c151272967d635e6b9e8f86a2b5f7611b5252fa47ef2a820ec55246804306.html",
+    "snapshotSHA256": "397c151272967d635e6b9e8f86a2b5f7611b5252fa47ef2a820ec55246804306",
+    "fetchedAt": "2026-11-05T04:22:47.327839+00:00",
+    "sourceUrl": "http://www.city.wakkanai.hokkaido.jp/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13.html",
+    "snapshotSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+    "fetchedAt": "2026-11-05T04:23:54.726868+00:00",
+    "sourceUrl": "https://www.city.wakkanai.hokkaido.jp/kurashi/sumaisuido/gesui/mhcard.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/54824c8fbd37a0c131977475ff0781159eb0f5231b542265a60d0f6e7da061b7.html",
+    "snapshotSHA256": "54824c8fbd37a0c131977475ff0781159eb0f5231b542265a60d0f6e7da061b7",
+    "fetchedAt": "2026-11-05T04:48:41.868692+00:00",
+    "sourceUrl": "https://www.city.wakkanai.hokkaido.jp/floor.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/d43c335ba7f35ab46049ba5cd19c3b470ac39fc2c4d502086796be68d79aa471.html",
+    "snapshotSHA256": "d43c335ba7f35ab46049ba5cd19c3b470ac39fc2c4d502086796be68d79aa471",
+    "fetchedAt": "2026-11-05T04:55:41.029538+00:00",
+    "sourceUrl": "https://www.city.wakkanai.hokkaido.jp/sangyo/kanko/wfc/location.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/3e10370e71ece0f9f5a6a720f2ab3812f8ec6121f1c0248113d31187da6ea2ef.html",
+    "snapshotSHA256": "3e10370e71ece0f9f5a6a720f2ab3812f8ec6121f1c0248113d31187da6ea2ef",
+    "fetchedAt": "2026-11-05T04:48:40.768581+00:00",
+    "sourceUrl": "https://www.city.wakkanai.hokkaido.jp/access.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/28c5552ebe675217f39f02320d4827c15f31a8089284606a66bf597650308db8.html",
+    "snapshotSHA256": "28c5552ebe675217f39f02320d4827c15f31a8089284606a66bf597650308db8",
+    "fetchedAt": "2026-11-05T04:22:47.283523+00:00",
+    "sourceUrl": "http://www.city.tomakomai.hokkaido.jp/kurashi/jogesuido/sokatsu/card1.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f330bdff6ff84741e127abcd2b2dac81246763954233a8fbcb37b093337c3e30.html",
+    "snapshotSHA256": "f330bdff6ff84741e127abcd2b2dac81246763954233a8fbcb37b093337c3e30",
+    "fetchedAt": "2026-11-05T04:50:09.043772+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.2857910674142!2d141.6033163156435!3d42.634100925743304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7510c3cf973837%3A0x63eb268568e8fdc5!2z6Iur5bCP54mn5biC5b255omA!5e0!3m2!1sja!2sjp!4v1570002687633!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/23c5a41c0e4958e5479927872d1a18108a155c0b65785d75f13823f412526025.html",
+    "snapshotSHA256": "23c5a41c0e4958e5479927872d1a18108a155c0b65785d75f13823f412526025",
+    "fetchedAt": "2026-11-05T04:48:41.341163+00:00",
+    "sourceUrl": "https://www.city.tomakomai.hokkaido.jp/shisei/tomakomainitsuite/gaiyo/kotsu-access.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8bbc23c4a1422a377437bb900a7ec7fd9cbb964ec62acff2bf29d1eede13452a.html",
+    "snapshotSHA256": "8bbc23c4a1422a377437bb900a7ec7fd9cbb964ec62acff2bf29d1eede13452a",
+    "fetchedAt": "2026-11-05T04:24:01.009484+00:00",
+    "sourceUrl": "https://www.kamishihoro.jp/page/00000060"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f765ad0ca9ef77b3c995cef592d533bfb13adece32afdc4d56920b329bd38a34.html",
+    "snapshotSHA256": "f765ad0ca9ef77b3c995cef592d533bfb13adece32afdc4d56920b329bd38a34",
+    "fetchedAt": "2026-11-05T04:22:43.949404+00:00",
+    "sourceUrl": "http://www.city.furano.hokkaido.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/41f45f19da9018a8da899618455455128d8d07225136e9d5c1da30f225bf323d.html",
+    "snapshotSHA256": "41f45f19da9018a8da899618455455128d8d07225136e9d5c1da30f225bf323d",
+    "fetchedAt": "2026-11-05T04:26:10.283637+00:00",
+    "sourceUrl": "https://www.city.furano.hokkaido.jp/life/docs/2019111900022.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d.html",
+    "snapshotSHA256": "f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d",
+    "fetchedAt": "2026-11-05T04:50:59.074626+00:00",
+    "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/2235/resource/8288/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD%E4%B8%80%E8%A6%A7.csv",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/254cd4498d61d6f5a583.html",
+    "snapshotSHA256": "745391963bbcb6a7be3717e2bfad825f06537062ba0744ef634e90862174eeae",
+    "fetchedAt": null,
+    "sourceUrl": "https://www.city.furano.hokkaido.jp/life/docs/2020061000014.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/cd5fcd7bccd3bbcee2ec3e1078d16cf23df500a9e20e311dc905fefb035fb9a2.html",
+    "snapshotSHA256": "cd5fcd7bccd3bbcee2ec3e1078d16cf23df500a9e20e311dc905fefb035fb9a2",
+    "fetchedAt": "2026-11-05T04:22:46.200408+00:00",
+    "sourceUrl": "http://www.city.sapporo.jp/gesui/manholecard.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05.html",
+    "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+    "fetchedAt": "2026-11-05T04:51:00.174741+00:00",
+    "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f.html",
+    "snapshotSHA256": "71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f",
+    "fetchedAt": "2026-11-05T04:23:19.404091+00:00",
+    "sourceUrl": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/0dc4fcd8b39cab78569e24c02dca4743b0355de39b7feb56a0af2dec4398feba.html",
+    "snapshotSHA256": "0dc4fcd8b39cab78569e24c02dca4743b0355de39b7feb56a0af2dec4398feba",
+    "fetchedAt": "2026-11-05T04:23:56.140664+00:00",
+    "sourceUrl": "https://www.e-rumoi.jp/suidou/page26_00039.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a.html",
+    "snapshotSHA256": "cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a",
+    "fetchedAt": "2026-11-05T04:49:48.137730+00:00",
+    "sourceUrl": "https://goo.gl/maps/9N5kicx1tnbfZWJi6",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+    "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+    "fetchedAt": null,
+    "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/db2482ae1ca3b5149bdf9c47380f78caa74f61eca11cb685459c31f0b5f00500.html",
+    "snapshotSHA256": "db2482ae1ca3b5149bdf9c47380f78caa74f61eca11cb685459c31f0b5f00500",
+    "fetchedAt": "2026-11-05T04:23:02.218097+00:00",
+    "sourceUrl": "http://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be.html",
+    "snapshotSHA256": "f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be",
+    "fetchedAt": "2026-11-05T04:24:33.815758+00:00",
+    "sourceUrl": "https://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/21e1e799b9c4e7f0e6e32fb4c5020ec87893cf8f86b94baba9b14c3349b700f0.html",
+    "snapshotSHA256": "21e1e799b9c4e7f0e6e32fb4c5020ec87893cf8f86b94baba9b14c3349b700f0",
+    "fetchedAt": "2026-11-05T04:23:18.711995+00:00",
+    "sourceUrl": "https://rishiri-town.jp/%e8%a6%b3%e5%85%89%e3%83%bb%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%81%ae%e9%85%8d%e5%b8%83/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4c9e8f181f190c7fdf5dfbde8f26bbdd01fb8b6e2085190859ac857ef3efc64e.html",
+    "snapshotSHA256": "4c9e8f181f190c7fdf5dfbde8f26bbdd01fb8b6e2085190859ac857ef3efc64e",
+    "fetchedAt": "2026-11-05T04:22:48.246797+00:00",
+    "sourceUrl": "http://www.iwanai-kanko.org/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/404384b921394174d79fb7c3f01e92572919777e06f31f642b1e1ee961a1b4f2.html",
+    "snapshotSHA256": "404384b921394174d79fb7c3f01e92572919777e06f31f642b1e1ee961a1b4f2",
+    "fetchedAt": "2026-11-05T04:32:26.274551+00:00",
+    "sourceUrl": "https://www.town.iwanai.hokkaido.jp/%E3%81%8F%E3%82%89%E3%81%97%EF%BC%9A%E4%B8%8B%E6%B0%B4%E9%81%93%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/37636/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/c56521afb5873939094dee135e3253d7df48a536b8db7ec5c89b881742c97ee7.html",
+    "snapshotSHA256": "c56521afb5873939094dee135e3253d7df48a536b8db7ec5c89b881742c97ee7",
+    "fetchedAt": "2026-11-05T04:50:04.643170+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.7548387829156!2d140.51458783026763!3d42.983437729252174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0a97bf39299869%3A0xbe37fbb6a9e8b167!2z6YGT44Gu6aeF44GE44KP44Gq44GE44O744Ks44Kk44OJ44K744Oz44K_44O8IOOBn-OCieS4uOmkqA!5e0!3m2!1sja!2sjp!4v1619079332721!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/fd1b60c29e4a91e9cc987ff488a831fcbb10b36f14904a8aceb9e204d81811c7.html",
+    "snapshotSHA256": "fd1b60c29e4a91e9cc987ff488a831fcbb10b36f14904a8aceb9e204d81811c7",
+    "fetchedAt": "2026-11-05T04:49:08.663943+00:00",
+    "sourceUrl": "https://www.iwanai-kanko.jp/tourism/michinoeki/23.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/64fbb0cd4cf7c4ea2c7271e941bf4016a80377662cd2592007b98bdc08198291.html",
+    "snapshotSHA256": "64fbb0cd4cf7c4ea2c7271e941bf4016a80377662cd2592007b98bdc08198291",
+    "fetchedAt": "2026-11-05T04:24:15.005363+00:00",
+    "sourceUrl": "https://www.shintoku-town.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/04180c09b73c4d4c32c1288562441254cedb194973fc6204ea4fd9e4040f6f98.html",
+    "snapshotSHA256": "04180c09b73c4d4c32c1288562441254cedb194973fc6204ea4fd9e4040f6f98",
+    "fetchedAt": "2026-11-05T04:24:19.331269+00:00",
+    "sourceUrl": "https://www.shintoku-town.jp/kurashi-tetuduki/jyougesuidou/manholcard/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/a63ae45265a50c37e8fa513bb1d3de6b67c0d0d8ce3c88d7e0d6c287e329f1d6.html",
+    "snapshotSHA256": "a63ae45265a50c37e8fa513bb1d3de6b67c0d0d8ce3c88d7e0d6c287e329f1d6",
+    "fetchedAt": "2026-11-05T04:48:40.806899+00:00",
+    "sourceUrl": "https://www.e-rumoi.jp/shisei/rum_00025.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/cd8f61bef2c3a23be8b674fcb994a56cc579a2e95eb14bb6bb70717d3f7c2d6b.html",
+    "snapshotSHA256": "cd8f61bef2c3a23be8b674fcb994a56cc579a2e95eb14bb6bb70717d3f7c2d6b",
+    "fetchedAt": "2026-11-05T04:24:10.323354+00:00",
+    "sourceUrl": "https://www.rikubetsu.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/567c7b5ca2ef3cdc4f78b22cfec90e14c2f19cd74b4ca1f92698946eeda425f0.html",
+    "snapshotSHA256": "567c7b5ca2ef3cdc4f78b22cfec90e14c2f19cd74b4ca1f92698946eeda425f0",
+    "fetchedAt": "2026-11-05T04:24:14.133095+00:00",
+    "sourceUrl": "https://www.rikubetsu.jp/kurashi/suido/mannho-ruka-do/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/074cf3aaa15a46d76cf88f5fc7c06e3053c978fcdd92eed556b983882c127755.html",
+    "snapshotSHA256": "074cf3aaa15a46d76cf88f5fc7c06e3053c978fcdd92eed556b983882c127755",
+    "fetchedAt": "2026-11-05T04:22:42.418444+00:00",
+    "sourceUrl": "http://muro-kanko.com/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/78bf25baf9c42cc1830a85c0d3ee3ba5053f555d4337c4b8e97d06e497bd1e63.html",
+    "snapshotSHA256": "78bf25baf9c42cc1830a85c0d3ee3ba5053f555d4337c4b8e97d06e497bd1e63",
+    "fetchedAt": "2026-11-05T04:23:42.090820+00:00",
+    "sourceUrl": "https://www.city.muroran.lg.jp/life/?content=3147",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/66a1a75845645000586862183b2cec04fcb71b009c73e6c9b51eb1ddfb71e806.html",
+    "snapshotSHA256": "66a1a75845645000586862183b2cec04fcb71b009c73e6c9b51eb1ddfb71e806",
+    "fetchedAt": "2026-11-05T04:53:59.541813+00:00",
+    "sourceUrl": "https://muro-kanko.com/kyoukai.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/193f9298828c3b20481c1523f732114670addee19e92a92a6162700a4cc73e51.html",
+    "snapshotSHA256": "193f9298828c3b20481c1523f732114670addee19e92a92a6162700a4cc73e51",
+    "fetchedAt": "2026-11-05T04:48:37.279078+00:00",
+    "sourceUrl": "https://muro-kanko.com/access.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/bc48473ee37587e657ec1722392a1e4a144ca0df472ed3a02774f054e46f9a12.html",
+    "snapshotSHA256": "bc48473ee37587e657ec1722392a1e4a144ca0df472ed3a02774f054e46f9a12",
+    "fetchedAt": "2026-11-05T04:23:10.556486+00:00",
+    "sourceUrl": "https://hokutoinfo.com/tec/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8fb9dd6d6a671543239da74f75453d1f81a1401d3f5ed0b395eb7055a7face2e.html",
+    "snapshotSHA256": "8fb9dd6d6a671543239da74f75453d1f81a1401d3f5ed0b395eb7055a7face2e",
+    "fetchedAt": "2026-11-05T04:23:34.970738+00:00",
+    "sourceUrl": "https://www.city.hokuto.hokkaido.jp/docs/3413.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/91ca70fd55b9f11e1abc8e9bc7472f72cf0beab37694c40c4473c67f820e21ef.html",
+    "snapshotSHA256": "91ca70fd55b9f11e1abc8e9bc7472f72cf0beab37694c40c4473c67f820e21ef",
+    "fetchedAt": "2026-11-05T04:50:10.143893+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.4692974974996!2d140.64640435184373!3d41.904269179118074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef8f1320980bf%3A0x96e8eae1a271783b!2z5YyX5paX5biC6Kaz5YWJ5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1659598597438!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/a682477d65be9292427ca6b7fa8286dd76c1336c5ab04477aec68315da209b14.html",
+    "snapshotSHA256": "a682477d65be9292427ca6b7fa8286dd76c1336c5ab04477aec68315da209b14",
+    "fetchedAt": "2026-11-05T04:48:36.669745+00:00",
+    "sourceUrl": "https://hokutoinfo.com/access/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/d7fbb2f858983f4928180fc347c22dad4e49b0bf91c738808117e4b842dd7660.html",
+    "snapshotSHA256": "d7fbb2f858983f4928180fc347c22dad4e49b0bf91c738808117e4b842dd7660",
+    "fetchedAt": "2026-11-05T04:23:28.388775+00:00",
+    "sourceUrl": "https://www.city.asahikawa.hokkaido.jp/kankou/2400/d053770.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/9d7ac76dea7da70e341e8bd9625a5c837cc9c038e62a545884515e240705220f.html",
+    "snapshotSHA256": "9d7ac76dea7da70e341e8bd9625a5c837cc9c038e62a545884515e240705220f",
+    "fetchedAt": "2026-11-05T04:23:31.533758+00:00",
+    "sourceUrl": "https://www.city.asahikawa.hokkaido.jp/kurashi/440/441/4429/d059082.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/cb6357e580bfccd2772287e377146f1fa03a5757f34d7973875114e2c7fd28b7.html",
+    "snapshotSHA256": "cb6357e580bfccd2772287e377146f1fa03a5757f34d7973875114e2c7fd28b7",
+    "fetchedAt": "2026-11-05T04:55:53.112763+00:00",
+    "sourceUrl": "https://taisetsu-kamui.jp/transportation/13680",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/adbcaf9a698d9ebb73194aca8f59f8b92fc8c8b5634e7b38a2608397d55ffe4a.html",
+    "snapshotSHA256": "adbcaf9a698d9ebb73194aca8f59f8b92fc8c8b5634e7b38a2608397d55ffe4a",
+    "fetchedAt": "2026-11-05T04:24:06.347090+00:00",
+    "sourceUrl": "https://www.kamishihoro.jp/place/00000251"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/064f33d469c4c3878b803815347c5d66ce2a0fd324587f822cd36d2ed51a9209.html",
+    "snapshotSHA256": "064f33d469c4c3878b803815347c5d66ce2a0fd324587f822cd36d2ed51a9209",
+    "fetchedAt": "2026-11-05T04:51:30.235752+00:00",
+    "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/23227/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/bac0180e9ebc962ea3805eec6ebfd465668a2cd148f73d7d90636a23a929cafe.html",
+    "snapshotSHA256": "bac0180e9ebc962ea3805eec6ebfd465668a2cd148f73d7d90636a23a929cafe",
+    "fetchedAt": "2026-11-05T04:24:21.691544+00:00",
+    "sourceUrl": "https://www.town.ashoro.hokkaido.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/6525ece1e2ca8cb42446e7066ea6f36136890c635c05762a7fed81fd4631da13.html",
+    "snapshotSHA256": "6525ece1e2ca8cb42446e7066ea6f36136890c635c05762a7fed81fd4631da13",
+    "fetchedAt": "2026-11-05T04:23:04.776281+00:00",
+    "sourceUrl": "http://www.town.tohma.hokkaido.jp/all-about/03/03/1739",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/56f7f0158d4149bf9edabb75cf153219a5c05a2bf1d30e24929a988269ce97b5.html",
+    "snapshotSHA256": "56f7f0158d4149bf9edabb75cf153219a5c05a2bf1d30e24929a988269ce97b5",
+    "fetchedAt": "2026-11-05T04:23:13.773657+00:00",
+    "sourceUrl": "http://www.town.tohma.hokkaido.jp/all-about/04/01/1812",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/96b9beee975ccf95eab14731166a249ab54da13e63af7bd00a84d14a1b50b8d1.html",
+    "snapshotSHA256": "96b9beee975ccf95eab14731166a249ab54da13e63af7bd00a84d14a1b50b8d1",
+    "fetchedAt": "2026-11-05T04:55:14.104638+00:00",
+    "sourceUrl": "https://www.tomakomai-kanko.jp/aboutus.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/7791dcd6cbe5b6a422bb74b17c34874d2f9c0ad6076d2e8148702d13d7e3453f.html",
+    "snapshotSHA256": "7791dcd6cbe5b6a422bb74b17c34874d2f9c0ad6076d2e8148702d13d7e3453f",
+    "fetchedAt": "2026-11-05T04:56:53.410989+00:00",
+    "sourceUrl": "https://tomako-mice.jp/locations/tourist-info/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4f414781279e22bc27b9117461912dd266618d3bb67cb51b6bbc390bf3fd8353.html",
+    "snapshotSHA256": "4f414781279e22bc27b9117461912dd266618d3bb67cb51b6bbc390bf3fd8353",
+    "fetchedAt": "2026-11-05T04:55:41.030261+00:00",
+    "sourceUrl": "https://www.visit-hokkaido.jp/spot/detail_11269.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/aacb2c5a6b5270726ac0d7675640df9ff01432e173580c6651d7e50f6e42d6df.html",
+    "snapshotSHA256": "aacb2c5a6b5270726ac0d7675640df9ff01432e173580c6651d7e50f6e42d6df",
+    "fetchedAt": "2026-11-05T04:24:29.397375+00:00",
+    "sourceUrl": "https://www.town.naie.hokkaido.jp/kurashi/suidou/startmanhole/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f1f00a56bb2327fa4cf5d20f804bd68e7365e7152ab3fa266fb90aba9ca967ff.html",
+    "snapshotSHA256": "f1f00a56bb2327fa4cf5d20f804bd68e7365e7152ab3fa266fb90aba9ca967ff",
+    "fetchedAt": "2026-11-05T04:56:40.906253+00:00",
+    "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1881/resource/4991/014249_%E5%A5%88%E4%BA%95%E6%B1%9F%E7%94%BA_%E9%81%BF%E9%9B%A3%E6%89%80%E3%80%81%E9%81%BF%E9%9B%A3%E5%A0%B4%E6%89%80.csv",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/c015c2e79824033dabdf4451b1fe2c8f26a15c2fa87f0d87a2d67fc9ce67cb31.html",
+    "snapshotSHA256": "c015c2e79824033dabdf4451b1fe2c8f26a15c2fa87f0d87a2d67fc9ce67cb31",
+    "fetchedAt": "2026-11-05T04:22:44.703807+00:00",
+    "sourceUrl": "http://www.city.kitami.lg.jp/administration/life/detail.php?content=9605"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195.html",
+    "snapshotSHA256": "04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195",
+    "fetchedAt": "2026-11-05T04:26:12.101710+00:00",
+    "sourceUrl": "https://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/a954f71b622dc358715af21cc8236dffc2945a2d24038900b22b93b61c9c9a27.html",
+    "snapshotSHA256": "a954f71b622dc358715af21cc8236dffc2945a2d24038900b22b93b61c9c9a27",
+    "fetchedAt": "2026-11-05T04:49:08.661998+00:00",
+    "sourceUrl": "https://www.city.kitami.lg.jp/detail.php?content=8097"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701.html",
+    "snapshotSHA256": "8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701",
+    "fetchedAt": "2026-11-05T04:23:31.519046+00:00",
+    "sourceUrl": "https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4.html",
+    "snapshotSHA256": "3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4",
+    "fetchedAt": "2026-11-05T04:50:57.973223+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1463.2104522661236!2d141.65170769444282!3d42.82172206534851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7520a42f20602f%3A0x7f2252a1952ebaf2!2z5Y2D5q2z5biC5rC06YGT5bGA!5e0!3m2!1sja!2sus!4v1763704172360!5m2!1sja!2sus",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2.html",
+    "snapshotSHA256": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+    "fetchedAt": "2026-11-05T04:49:48.142290+00:00",
+    "sourceUrl": "https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/e61aa34e9400b0d316fcb10af05222965c21f7a2adc9da656b1788e1197d7294.html",
+    "snapshotSHA256": "e61aa34e9400b0d316fcb10af05222965c21f7a2adc9da656b1788e1197d7294",
+    "fetchedAt": "2026-11-05T04:24:21.611284+00:00",
+    "sourceUrl": "https://www.teshiotown.hokkaido.jp/?page_id=620",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/665c16cc349c0855b4d6d8b57a6c270ed5b803c5dfdcae5708563f1f01bdd0c6.html",
+    "snapshotSHA256": "665c16cc349c0855b4d6d8b57a6c270ed5b803c5dfdcae5708563f1f01bdd0c6",
+    "fetchedAt": "2026-11-05T04:23:01.717860+00:00",
+    "sourceUrl": "http://www.teshiotown.hokkaido.jp/?page_id=17381l",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357.html",
+    "snapshotSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+    "fetchedAt": "2026-11-05T04:24:16.842232+00:00",
+    "sourceUrl": "https://www.teshiotown.hokkaido.jp/?p=22908",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/47652ab3246399fb917bf03a8a4bd5f127666c9357f09e1ed68f15016cfe7ab1.html",
+    "snapshotSHA256": "47652ab3246399fb917bf03a8a4bd5f127666c9357f09e1ed68f15016cfe7ab1",
+    "fetchedAt": "2026-11-05T04:49:53.641869+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11309.346989686534!2d141.73653960227972!3d44.875795552465696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e3c46f311ffbb%3A0x55449db309918b60!2z44Gm44GX44GK5rip5rOJIOWkleaYoA!5e0!3m2!1sja!2sjp!4v1712301432342!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/edd23e9084b1fbdef3978cd92ab9b1eaa7b341be9f60ba5a5121ca232c7e5637.html",
+    "snapshotSHA256": "edd23e9084b1fbdef3978cd92ab9b1eaa7b341be9f60ba5a5121ca232c7e5637",
+    "fetchedAt": "2026-11-05T04:22:51.842934+00:00",
+    "sourceUrl": "http://www.teshiotown.hokkaido.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/bf2c1d64dd748ecf754c394ac7d3dca2019f5c263b712605df77be08ffb79701.html",
+    "snapshotSHA256": "bf2c1d64dd748ecf754c394ac7d3dca2019f5c263b712605df77be08ffb79701",
+    "fetchedAt": "2026-11-05T04:22:57.054268+00:00",
+    "sourceUrl": "http://www.teshiotown.hokkaido.jp/?p=20872"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/1d6343c917194ab1dce8ba9a76eaa16f191b670b399aa58b65778074693f5a9e.html",
+    "snapshotSHA256": "1d6343c917194ab1dce8ba9a76eaa16f191b670b399aa58b65778074693f5a9e",
+    "fetchedAt": "2026-11-05T04:50:00.242586+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2826.734679600265!2d141.7447941424157!3d44.88804811114499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e3c66efdc96cd%3A0xef22cd222d2399d4!2z5aSp5aGp55S65b255aC0!5e0!3m2!1sja!2sjp!4v1659061167813!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/f05cd7ca74eb1de6b570c53df6700485e5baea19592b2a81e62a6c0d25e7502e.html",
+    "snapshotSHA256": "f05cd7ca74eb1de6b570c53df6700485e5baea19592b2a81e62a6c0d25e7502e",
+    "fetchedAt": "2026-11-05T04:32:05.029082+00:00",
+    "sourceUrl": "https://www.town.furubira.lg.jp/life/detail.php?id=134",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/a8f04377cd5e70c287f1628ac69761d2a60361789d2a8c941122e945528b6c4d.html",
+    "snapshotSHA256": "a8f04377cd5e70c287f1628ac69761d2a60361789d2a8c941122e945528b6c4d",
+    "fetchedAt": "2026-11-05T04:53:59.545453+00:00",
+    "sourceUrl": "https://www.town.furubira.lg.jp/tourism/detail.php?id=86"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/2d04483cf787940925cc796eb4cd10e47a4691d83fc54e7fab5b27d3e736cbf8.html",
+    "snapshotSHA256": "2d04483cf787940925cc796eb4cd10e47a4691d83fc54e7fab5b27d3e736cbf8",
+    "fetchedAt": "2026-11-05T04:32:26.273395+00:00",
+    "sourceUrl": "https://www.town.kembuchi.hokkaido.jp/kurashi/%E4%BD%8F%E5%AE%85%E3%83%BB%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93/%E6%B0%B4%E9%81%93%E3%83%BB%E4%B8%8B%E6%B0%B4%E9%81%93/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/9334da20d6450dc06c8b34472e2a21516bff7067dc6bbe64b89dc144ba8789ec.html",
+    "snapshotSHA256": "9334da20d6450dc06c8b34472e2a21516bff7067dc6bbe64b89dc144ba8789ec",
+    "fetchedAt": "2026-11-05T04:24:17.842545+00:00",
+    "sourceUrl": "https://www.tokachigawa.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/b858ed4c263d40430455c906b9b7fc75d8a669c8b1879999635885e14a518d53.html",
+    "snapshotSHA256": "b858ed4c263d40430455c906b9b7fc75d8a669c8b1879999635885e14a518d53",
+    "fetchedAt": "2026-11-05T04:24:30.732642+00:00",
+    "sourceUrl": "https://www.town.otofuke.hokkaido.jp/kurashi/suido/sonota/mannnho-ruka-do.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/85d80788550432756e3631d5fe6af617cd89d09239df3fe17e65d7b9d53f80e7.html",
+    "snapshotSHA256": "85d80788550432756e3631d5fe6af617cd89d09239df3fe17e65d7b9d53f80e7",
+    "fetchedAt": "2026-11-05T04:48:41.764062+00:00",
+    "sourceUrl": "https://www.tokachigawa.jp/access.php",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/ffe733f615ab0a822524cb3439d65c38e03a1a8b9e33fc42a476f09aa04d8b2a.html",
+    "snapshotSHA256": "ffe733f615ab0a822524cb3439d65c38e03a1a8b9e33fc42a476f09aa04d8b2a",
+    "fetchedAt": "2026-11-05T04:23:57.282303+00:00",
+    "sourceUrl": "https://www.furano-cheese.jp/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/c4df2a021b5cd1eb8a3afaec847bbbe58a55195d15467890ceb3ad43695dcf71.html",
+    "snapshotSHA256": "c4df2a021b5cd1eb8a3afaec847bbbe58a55195d15467890ceb3ad43695dcf71",
+    "fetchedAt": "2026-11-05T04:26:08.982998+00:00",
+    "sourceUrl": "https://www.city.furano.hokkaido.jp/life/docs/2098100.html?cat=/life/kurashi/jogesuido/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/30092158184afdf8b1e5e11cf964b81d9fb4e50aba6b6509674649a9059cc23d.html",
+    "snapshotSHA256": "30092158184afdf8b1e5e11cf964b81d9fb4e50aba6b6509674649a9059cc23d",
+    "fetchedAt": "2026-11-05T04:55:41.029729+00:00",
+    "sourceUrl": "https://www.furanotourism.com/jp/spot/spot_D.php?id=69",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/c98426f6b7639d5ed1ded27f646c3c455af3b088fbf029f1139b8a6e0948ee23.html",
+    "snapshotSHA256": "c98426f6b7639d5ed1ded27f646c3c455af3b088fbf029f1139b8a6e0948ee23",
+    "fetchedAt": "2026-11-05T04:24:26.398088+00:00",
+    "sourceUrl": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/index.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/577594383873106a03e5ee52d7672453e9075e75cbbc35e0eaa33e0259ec5aa1.html",
+    "snapshotSHA256": "577594383873106a03e5ee52d7672453e9075e75cbbc35e0eaa33e0259ec5aa1",
+    "fetchedAt": "2026-11-05T04:22:42.413897+00:00",
+    "sourceUrl": "http://d51-station.com/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/042411ee72894ad089fb9c4b54c3881c9d6fcf850262e46b8ed03762784b21ed.html",
+    "snapshotSHA256": "042411ee72894ad089fb9c4b54c3881c9d6fcf850262e46b8ed03762784b21ed",
+    "fetchedAt": "2026-11-05T04:24:20.040823+00:00",
+    "sourceUrl": "https://www.town.abira.lg.jp/chiikishinko/manhole",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/6eeee94f77f0a43399c6ac354337a2d66980eabc383f825d824d19f6ef075661.html",
+    "snapshotSHA256": "6eeee94f77f0a43399c6ac354337a2d66980eabc383f825d824d19f6ef075661",
+    "fetchedAt": "2026-11-05T04:50:06.843468+00:00",
+    "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.847625792275!2d141.81659921498667!3d42.876060179155594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f74dcf3c961069f%3A0x7afb310cb93731eb!2z6YGT44Gu6aeF44GC44Gz44KJRDUx44K544OG44O844K344On44Oz!5e0!3m2!1sja!2sjp!4v1555300466647!5m2!1sja!2sjp",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/756ac09d43e11dd647d663e7941ad386cac2bba1f8d55312fe35c590d4fb05ce.html",
+    "snapshotSHA256": "756ac09d43e11dd647d663e7941ad386cac2bba1f8d55312fe35c590d4fb05ce",
+    "fetchedAt": "2026-11-05T04:48:36.363640+00:00",
+    "sourceUrl": "https://d51-station.com/access/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+    "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+    "fetchedAt": "2026-11-05T04:23:39.961694+00:00",
+    "sourceUrl": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384.html",
+    "snapshotSHA256": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+    "fetchedAt": "2026-11-05T04:26:09.529998+00:00",
+    "sourceUrl": "https://maps.app.goo.gl/StpyysamtXeQvhMx9",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0.html",
+    "snapshotSHA256": "d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0",
+    "fetchedAt": "2026-11-05T04:48:39.508729+00:00",
+    "sourceUrl": "https://www.city.kushiro.lg.jp/shisei/gaiyou/1006827/1006831.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4174dc66e81ce89d32c5d7b0f5853d2c3d4570ee83957ca4731fca4baf36f039.html",
+    "snapshotSHA256": "4174dc66e81ce89d32c5d7b0f5853d2c3d4570ee83957ca4731fca4baf36f039",
+    "fetchedAt": "2026-11-05T04:22:47.258493+00:00",
+    "sourceUrl": "http://www.city.nayoro.lg.jp/section/suidou/prkeql0000027w8z.html"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8ae5a48a61646c5354b5a3426d2eb58365f2718a726554914d6a5e1583ec968a.html",
+    "snapshotSHA256": "8ae5a48a61646c5354b5a3426d2eb58365f2718a726554914d6a5e1583ec968a",
+    "fetchedAt": "2026-11-05T04:53:36.067548+00:00",
+    "sourceUrl": "https://nayoro-kankou.com/top/inquiries/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8831dc5aa6a7ceb11f81394e065148712af302d06966ebe7928bdce46965f0ec.html",
+    "snapshotSHA256": "8831dc5aa6a7ceb11f81394e065148712af302d06966ebe7928bdce46965f0ec",
+    "fetchedAt": "2026-11-05T04:56:53.412875+00:00",
+    "sourceUrl": "https://yoro-na.com/about/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/846efe6b27dbe10ca8ceb72366faf21d56d556507978d055c2eba1045bef0cde.html",
+    "snapshotSHA256": "846efe6b27dbe10ca8ceb72366faf21d56d556507978d055c2eba1045bef0cde",
+    "fetchedAt": "2026-11-05T04:23:08.515856+00:00",
+    "sourceUrl": "https://go-to-ashibetsu.com/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/5f0215b5f1b38d575cbc21fa47554a902ba72d167530e5b9fe58a3312eb71e92.html",
+    "snapshotSHA256": "5f0215b5f1b38d575cbc21fa47554a902ba72d167530e5b9fe58a3312eb71e92",
+    "fetchedAt": "2026-11-05T04:23:30.433815+00:00",
+    "sourceUrl": "https://www.city.ashibetsu.hokkaido.jp/docs/5551.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/48e9fb36b5241b267ac458e706233ef95dfb1e91b0887561f6fc23d98793181d.html",
+    "snapshotSHA256": "48e9fb36b5241b267ac458e706233ef95dfb1e91b0887561f6fc23d98793181d",
+    "fetchedAt": "2026-11-05T04:51:29.135599+00:00",
+    "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/202/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/0af5e73e494f0450b3ef26be77111547c2db1b1f178429a413e3f36890536075.html",
+    "snapshotSHA256": "0af5e73e494f0450b3ef26be77111547c2db1b1f178429a413e3f36890536075",
+    "fetchedAt": "2026-11-05T04:22:42.414538+00:00",
+    "sourceUrl": "http://ehon-yakata.com/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/8f2616a17863a1c00d32e02c6195dca02d8c3a8827e96f879939213f97e29d22.html",
+    "snapshotSHA256": "8f2616a17863a1c00d32e02c6195dca02d8c3a8827e96f879939213f97e29d22",
+    "fetchedAt": "2026-11-05T04:53:36.066593+00:00",
+    "sourceUrl": "https://ehon-yakata.com/info/access/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/44bdd75ffedcef924b82d043d25ac872d55af7445274d0eb7e9098eeee35196a.html",
+    "snapshotSHA256": "44bdd75ffedcef924b82d043d25ac872d55af7445274d0eb7e9098eeee35196a",
+    "fetchedAt": "2026-11-05T04:50:18.220832+00:00",
+    "sourceUrl": "https://www.town.kembuchi.hokkaido.jp/siteseeing/facility/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/9a7d9885e01230416e474e561a622301f67b5ea8dcd6074e734cbf61d17df75b.html",
+    "snapshotSHA256": "9a7d9885e01230416e474e561a622301f67b5ea8dcd6074e734cbf61d17df75b",
+    "fetchedAt": "2026-11-05T04:23:20.943783+00:00",
+    "sourceUrl": "https://sunairu.jp/"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/51a1e4ba7fdd36cfed946f8b89bc421418083e7b8a692dfb75cb81905e29df00.html",
+    "snapshotSHA256": "51a1e4ba7fdd36cfed946f8b89bc421418083e7b8a692dfb75cb81905e29df00",
+    "fetchedAt": "2026-11-05T04:22:47.156912+00:00",
+    "sourceUrl": "http://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/suidou_gesuidou/2018-0719-1627-50.html",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/95956a52abc6d95392ec1b0d796c27809542e61f7d22f4de26b7b6d2d4763163.html",
+    "snapshotSHA256": "95956a52abc6d95392ec1b0d796c27809542e61f7d22f4de26b7b6d2d4763163",
+    "fetchedAt": "2026-11-05T04:49:08.658852+00:00",
+    "sourceUrl": "https://maps.app.goo.gl/FLoLRWuCvfnMRbLF8"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/a4dcb0e10ba2681af6c49875ddbe1fb7dffba6f5f78e0fbe2e1f3770df01d55c.html",
+    "snapshotSHA256": "a4dcb0e10ba2681af6c49875ddbe1fb7dffba6f5f78e0fbe2e1f3770df01d55c",
+    "fetchedAt": "2026-11-05T04:24:31.754803+00:00",
+    "sourceUrl": "https://www.town.minamifurano.hokkaido.jp/%e5%a4%a7%e5%a5%bd%e8%a9%95%ef%bc%81%e5%8d%97%e5%af%8c%e8%89%af%e9%87%8e%e7%94%ba%e3%81%ae%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e9%85%8d%e5%b8%83%e3%81%ab%e3%81%a4/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/north/originals/4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc.html",
+    "snapshotSHA256": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+    "fetchedAt": "2026-11-05T04:23:46.792180+00:00",
+    "sourceUrl": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+    "retrievalRecord": "data/evidence/issue5/north/original-records.json",
+    "savedAt": null
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "metadataPath": "data/evidence/issue5/chubu/P05-22_GML.zip.source.json",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  }
+]

@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ja" prefix="og: http://ogp.me/ns#"><!-- InstanceBegin template="/Templates/2nd_page.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width,user-scalable=yes,maximum-scale=1">
+<!-- InstanceBeginEditable name="meta" -->
+<meta name="keyword" content="茅ヶ崎市観光協会,ちがさきナビ,観光情報,茅ヶ崎市観光案内所,えぼし岩,サザンビーチ">
+<meta name="description" content="茅ヶ崎市観光案内所の最新情報は、茅ヶ崎市観光協会のウェブサイト（ちがさきナビ）をご覧ください。観光案内所は茅ヶ崎駅構内にあり、観光案内やイベント情報、観光パンフレット配布、レンタサイクルの他、茅ヶ崎土産、えぼし麻呂グッズ等も販売しています！！">
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>茅ヶ崎市観光案内所｜茅ヶ崎観光情報サイト「ちがさきナビ」茅ヶ崎市観光協会</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="ogp" -->
+<meta property="og:title" content="茅ヶ崎市観光案内所｜茅ヶ崎観光情報サイト「ちがさきナビ」茅ヶ崎市観光協会">
+<meta property="og:type" content="article">
+<meta property="og:description" content="茅ヶ崎市観光案内所の最新情報は、茅ヶ崎市観光協会のウェブサイト（ちがさきナビ）をご覧ください。観光案内所は茅ヶ崎駅構内にあり、観光案内やイベント情報、観光パンフレット配布、レンタサイクルの他、茅ヶ崎土産、えぼし麻呂グッズ等も販売しています！！">
+<meta property="og:url" content="https://www.chigasaki-kankou.org/information/index.html">
+<meta property="og:image" content="https://www.chigasaki-kankou.org/information/images/information_ogp.png">
+<meta property="og:site_name" content="茅ヶ崎市観光協会">
+<meta property="og:locale" content="ja_jp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@chigasakikankou">
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../style.css" type="text/css" media="all">
+<link rel="stylesheet" href="../text.css" type="text/css" media="all">
+<link rel="stylesheet" href="../class.css" type="text/css" media="all">
+<link rel="stylesheet" href="../table.css" type="text/css" media="all">
+<link rel="stylesheet" href="../nav.css" type="text/css" media="screen">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="../chigasaki_icon.jpg">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="../Scripts/smartRollover.js"></script>
+<script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="../Scripts/font-size.js"></script>
+<!--[if lt IE 9]>
+<style type="text/css">
+#sm_menu {
+  display:none;   /* IE9より下のバージョンでsmナビを非表示に */
+}
+</style>
+<![endif]-->
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJSB8PB');</script>
+<!-- End Google Tag Manager -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+
+<body class="body_2nd">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJSB8PB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<noscript>
+<p>このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。</p>
+</noscript>
+
+
+<!-- ================================ wrapper ================================ -->
+<div id="wrapper"><!-- #BeginLibraryItem "/Library/header.lbi" -->
+<!-- ================================ header ================================ -->
+	<div id="header" class="clearfix">
+   	  <div class="header_body">
+      	<div class="header_body_l"><!-- ヘッダー左側 -->
+      		<h1><a href="../"><img src="../images/site_logo.png" width="456" height="106" alt="茅ヶ崎市観光協会"></a></h1>
+      	</div>
+      
+      	<div class="header_body_r"><!-- ヘッダー右側 -->
+          <div class="header_body_search"><!-- 検索窓 -->
+			<form action="https://www.google.com/cse" id="cse-search-box">
+			  <input type="hidden" name="cx" value="015274145859067594336:lg85b8_xks4">
+			  <input type="hidden" name="ie" value="UTF-8">
+			  <input type="text" name="q" class="inputtext">
+			  <input name="google_btn" type="image" value="検索" alt="検索" src="../images/btn_search.gif" width="75" height="24">
+			</form>
+			<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&lang=ja"></script>
+          </div><!-- 検索窓 -->
+          
+       	  <div class="header_body_sns"><!-- SNSボタン -->
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.chigasaki-kankou.org/">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+				<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.chigasaki-kankou.org%2F&width=72&layout=button&action=like&size=small&show_faces=false&share=false&height=65&appId" width="72" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+       	  </div><!-- SNSボタン -->
+          
+          <div class="header_body_textsize"><!-- テキストサイズ -->
+            	<ul id="fontsize">
+                <li>文字サイズ</li>
+                <li><img src="../images/btn_small.gif" width="60" height="24" alt="縮小" class="change_btn"></li>
+                <li><img src="../images/btn_mid.gif" width="60" height="24" alt="標準" class="change_btn"></li>
+                <li><img src="../images/btn_lag.gif" width="60" height="24" alt="拡大" class="change_btn"></li>
+                </ul>
+          </div><!-- テキストサイズ -->
+          
+          <div class="header_body_menu"><!-- メニュー -->
+       	  <a href="../sitemap/index.html">サイトマップ</a> ｜ <a href="../contact">お問い合わせ</a>
+          </div><!-- メニュー -->
+      	</div><!-- ヘッダー右側 -->
+      </div>
+    </div>
+<!-- ================================ header ================================ --><!-- #EndLibraryItem --><!-- ================================ gnavi ================================ -->
+<div class="openbtn fadeDown" tabindex="0"><span></span><span></span><span></span></div>
+<nav id="nav">
+    <div id="nav-list" class="fadeUp">
+    <p><a href="../"><img src="../images/site_logo_sm.png" alt=""></a></p>
+    <ul>
+        <li class="pc_non"><a href="../" class="icon_home">ホーム</a></li>
+        <li class="has-child"><a href="../event/" class="icon_event">イベント</a>
+            <ul>
+                <li class="pc_non"><a href="../event/">イベント／トップ</a></li>
+                <li><a href="../event/echizen/">大岡越前祭</a></li>
+                <li><a href="../event/aloha/">アロハマーケット</a></li>
+                <li><a href="../event/shonan/">湘南祭</a></li>
+                <li><a href="../event/hamaori/">浜降祭</a></li>
+                <li><a href="../event/hanabi/">花火大会</a></li>
+            </ul>
+        </li>
+        <li class="has-child"><a href="../look/" class="icon_look">観る</a>
+            <ul>
+                <li class="pc_non"><a href="../look/">観る／トップ</a></li>
+                <li><a href="../look/garden/">庭園</a></li>
+                <li><a href="../look/temple/">寺院</a></li>
+                <li><a href="../look/famous/">名所</a></li>
+                <li><a href="../look/facility/">観光施設</a></li>
+                <li><a href="../look/art/">アート</a></li>
+            </ul>
+        </li>
+        <li class="has-child"><a href="../play/" class="icon_play">遊ぶ</a>
+            <ul>
+                <li class="pc_non"><a href="../play/">遊ぶ／トップ</a></li>
+                <li><a href="../play/picking/">味覚狩り</a></li>
+                <li><a href="../play/spa/">日帰り温泉</a></li>
+                <li><a href="../play/leisure/">マリンレジャー</a></li>
+                <li><a href="../play/beach/">海の家</a></li>
+                <li><a href="../play/boat/">周遊船</a></li>
+                <li><a href="../play/movie/">映画館</a></li>
+            </ul>
+        </li>
+        <li class="has-child"><a href="../eat/" class="icon_eat">食べる</a>
+            <ul>
+                <li class="pc_non"><a href="../eat/">食べる／トップ</a></li>
+                <li><a href="../eat/bar/">居酒屋・ダイニングバー</a></li>
+                <li><a href="../eat/restaurant/">レストラン</a></li>
+                <li><a href="../eat/noodles/">ラーメン・そば・うどん</a></li>
+                <li><a href="../eat/cafe/">カフェ</a></li>
+                <li><a href="../eat/other/">その他</a></li>
+            </ul>
+        </li>
+        <li class="has-child"><a href="../buy/" class="icon_buy">買う</a>
+            <ul>
+                <li class="pc_non"><a href="../buy/">買う／トップ</a></li>
+                <li><a href="../buy/sweets/">スイーツ・ベーカリー</a></li>
+                <li><a href="../buy/souvenir/">土産</a></li>
+                <li><a href="../buy/goods/">雑貨・アパレル</a></li>
+                <li><a href="../buy/other/">その他</a></li>
+            </ul>
+        </li>
+        <li><a href="../stay/" class="icon_stay">泊る</a></li>
+        <li class="has-child"><a href="../life/" class="icon_life">暮らす</a>
+            <ul>
+                <li class="pc_non"><a href="../life/">暮らす／トップ</a></li>
+                <li><a href="../life/estate/">建築・不動産</a></li>
+                <li><a href="../life/health/">健康</a></li>
+                <li><a href="../life/experience/">習い事・体験</a></li>
+                <li><a href="../life/traffic/">交通</a></li>
+            </ul>
+        </li>
+        <li class="pc_non"><a href="../contact/" class="icon_contact">お問い合わせ</a></li>
+        <li class="pc_non"><a href="../sitemap/" class="icon_sitemap">サイトマップ</a></li>
+    </ul>
+    </div>
+</nav>
+<div class="circle-bg"></div>
+
+<!-- ================================ gnavi ================================ -->
+
+    
+<!-- ================================ pankuzu ================================ -->
+	<div id="pankuzu">
+		<!-- InstanceBeginEditable name="2nd_pankuzu" -->
+		<div class="pankuzu_body">
+        	<p><a href="../">ホーム</a>&nbsp;＞&nbsp;茅ヶ崎市観光案内所</p>
+		</div>
+		<!-- InstanceEndEditable -->
+	</div>
+<!-- ================================ pankuzu ================================ -->
+    
+    
+<!-- ================================ topimage ================================ -->
+  <div id="topimage">
+		<div class="topimage_body">
+			<!-- InstanceBeginEditable name="topimage" -->
+        	<img src="images/topimage_information.jpg" width="960" height="240" alt="茅ヶ崎市観光案内所">
+            <!-- InstanceEndEditable -->
+		</div>
+</div>
+<!-- ================================ topimage ================================ -->
+    
+
+<!-- ================================ main ================================ -->
+<div id="main_wrapp">
+<div class="main_wrapp_body">
+    
+    
+<!-- ================================ contents ================================ -->
+    <div id="contents">
+	<!-- InstanceBeginEditable name="2nd_contents" -->
+	<div class="textbox_0">
+		<h2>茅ヶ崎市観光案内所</h2>
+        
+        <div class="align_center mg_b24"><img src="images/information_title_2.jpg" width="668" height="443" alt="茅ヶ崎市観光案内所とは"></div>
+      
+			<p>駅構内改札の南側にあり、観光案内やイベント情報のPR、各種パンフレットの配布などのほか、アンテナショップとして、茅ヶ崎土産や、サザンビーチグッズ、えぼし麻呂グッズなども販売しています。</p>
+			<p>茅ヶ崎にお越しの際はお気軽にお立ち寄りください。</p>
+		
+		<p class="bold">＜営業時間＞</p>
+			<ul class="mg_b24">
+        		<li>9：00～18：00</li>
+       		</ul>	
+		<p class="bold">＜定休日＞</p>
+			<ul class="mg_b24">
+        		<li>年末年始（12/29～1/3）</li>
+       		</ul>		
+            
+          <p class="mg_b24">また、観光に便利な「レンタサイクル」もございます。ご家族やお友達と一緒においしいパン屋・カフェめぐり、素敵な雑貨屋めぐりなど、自転車でゆっくり小道を走りながら大好きな茅ヶ崎を見つけてください！<br>
+<a href="rental-cycle/">レンタサイクルについて</a></p>
+		
+        <h3 class="normal">手荷物預かりサービス</h3><!-- 手荷物預かりサービス -->
+		
+		<p class="bold">＜利用時間＞</p>
+			<ul class="mg_b24">
+        		<li>9：00～17：00（年末年始12/29～1/3を除く）</li>
+       		</ul>
+		
+		<p class="bold">＜利用料金＞</p>
+        <div class="mg_lr16">
+            <table border="0" cellspacing="0" cellpadding="0" id="info_list">
+				<tr>
+					<th>サイズ（3辺合計）</th>
+					<th>金額</th>
+				</tr>
+				<tr>
+					<td class="align_center">～115cm以内</td>
+					<td width="265" class="align_center">600円</td>
+				</tr>
+				<tr>
+					<td class="align_center">115cm～200cm以内</td>
+					<td width="265" class="align_center">700円</td>
+				</tr>
+				<tr>
+					<td class="align_center">200cm～</td>
+					<td width="265" class="align_center">800円</td>
+				</tr>
+			</table>
+		</div>
+		
+<p class="mg_b24">詳しくは茅ヶ崎市観光案内所（TEL：0467-82-3986）までお問合せください。</p>
+
+
+        <h3 class="normal">茅ヶ崎駅構内案内図</h3><!-- 茅ヶ崎駅構内案内図 -->
+        
+        	<p>茅ヶ崎市観光案内所へは、改札を出て左へ進んだ横浜銀行ATMの隣りにございます。</p>
+        	<p>入口の上の「はてなマーク」が目印です。</p>
+
+        <div class="align_center mg_b24"><img src="images/information_map.gif" width="668" height="305" alt="茅ヶ崎駅構内案内図"></div>
+
+        <h4 class="line">茅ヶ崎観光案内所のご案内</h4>
+
+		<div class="mg_box"><!-- 上段 -->
+        	<div class="col_re_box"> <img src="images/information_photo01.jpg" width="212" height="159" alt="茅ヶ崎市観光案内所は横浜銀ATMの隣">
+              <p class="text">茅ヶ崎市観光案内所は横浜銀ATMの隣</p>
+            </div>
+            
+        	<div class="col_re_box2"> <img src="images/information_photo02.jpg" width="212" height="159" alt="入口の上のこの看板が目印">
+              <p class="text">入口の上のこの看板が目印</p>
+            </div>
+            
+        	<div class="col_re_box"> <img src="images/information_photo03.jpg" width="212" height="159" alt="店内には茅ヶ崎グッズが多数あり" class="mg_b10">
+              <p class="text">店内にはサザンビーチグッズを中心に茅ヶ崎グッズが多数あり、お土産にも最適です。</p>
+            </div>
+        </div>
+
+
+		<div class="mg_box"><!-- 下段 -->
+        	<div class="col_re_box"> <img src="images/information_photo04.jpg" width="212" height="159" alt="茅ヶ崎の観光パンフレットも多数" class="mg_b10">
+              <p class="text">茅ヶ崎の観光に関するパンフレットを取り揃えております。</p>
+            </div>
+            
+        	<div class="col_re_box2"> <img src="images/information_photo05.jpg" width="212" height="159" alt="えぼし麻呂グッズも扱っています" class="mg_b10">
+              <p class="text">えぼし麻呂グッズも扱っています。</p>
+            </div>
+            
+        	<div class="col_re_box"> <img src="images/information_photo06.jpg" width="212" height="159" alt="店内はハワイアン調のディスプレイ" class="mg_b10">
+              <p class="text">店内はハワイアン調のディスプレイで、落ち着いた雰囲気。</p>
+            </div>
+        </div>
+
+	</div><!-- textbox -->
+    <!-- InstanceEndEditable -->
+    </div>
+<!-- ================================ contents ================================ --><!-- #BeginLibraryItem "/Library/leftbox.lbi" -->
+<!-- ================================ leftbox ================================ -->
+    <div id="leftbox">
+    	<h3 class="h3_event">イベント一覧</h3>
+    	<ul class="ul_event">
+        	<li><a href="../event/echizen/index.html"><img src="../images/event_navi_echi_off.png" width="240" height="53" alt="大岡越前祭"></a></li>
+        	<li><a href="../event/aloha/index.html"><img src="../images/event_navi_aloha_off.png" width="240" height="53" alt="アロハマーケット"></a></li>
+			<li><a href="../event/shonan/index.html"><img src="../images/event_navi_shonan_off.png" width="240" height="53" alt="湘南祭"></a></li>
+        	<li><a href="../event/hamaori/index.html"><img src="../images/event_navi_hama_off.png" width="240" height="53" alt="浜降祭"></a></li>
+        	<li><a href="../event/hanabi/index.html"><img src="../images/event_navi_hana_off.png" width="240" height="53" alt="花火大会"></a></li>
+        	<!-- <li><a href="../event/index.html#event_calendar"><img src="../images/eventcalendar.png" width="24" height="24" alt="イベントカレンダー" class="v-align_m pd_r6">イベントカレンダーを見る</a></li> -->
+        </ul>
+        
+    	<h3 class="h3_more">茅ヶ崎をもっと楽しむ</h3>
+		<ul class="ul_more">
+        	<li><a href="../access/index.html"><img src="../images/more_navi_guide_off.png" width="240" height="53" alt="茅ヶ崎の交通ガイド"></a></li>
+        	<li><a href="../pamphlet/index.html"><img src="../images/more_navi_map_off.png" width="240" height="53" alt="観光マップ・パンフレット"></a></li>
+        	<li><a href="index.html"><img src="../images/more_navi_info_off.png" width="240" height="53" alt="茅ヶ崎市観光案内所"></a></li>
+        	<li><a href="../goods/index.html"><img src="../images/more_navi_goods_off.png" width="240" height="53" alt="茅ヶ崎オリジナルグッズ"></a></li>
+        	<li><a href="../faq/index.html"><img src="../images/more_navi_qa_off.png" width="240" height="53" alt="よくある質問"></a></li>
+        	<li><a href="../links/index.html"><img src="../images/more_navi_link_off.png" width="240" height="53" alt="リンク集"></a></li>
+        	<li><a href="../questionnaire"><img src="../images/more_navi_questio_off.png" width="240" height="53" alt="アンケート募集中"></a></li>
+        	<li><a href="../category/press/"><img src="../images/more_navi_press_off.png" width="240" height="53" alt="記者発表"></a></li>
+        </ul>
+        
+        <ul class="sns_bnr">
+        	<li><a href="https://twitter.com/chigasakikankou" target="_blank"><img src="../images/bnr_tw(x)_02.gif" width="69" height="70" alt="茅ヶ崎市観光協会X"></a></li>
+        	<li class="cntr2"><a href="https://www.facebook.com/pages/一般社団法人-茅ヶ崎市観光協会/411326172237983" target="_blank"><img src="../images/bnr_fb_02.gif" width="69" height="70" alt="茅ヶ崎市観光協会Facebook"></a></li>
+        	<li><a href="https://www.youtube.com/channel/UCydA3iDbXqKu8ZjN3-PidgQ" target="_blank"><img src="../images/bnr_yt_02.gif" width="69" height="70" alt="茅ヶ崎市観光協会YouTube"></a></li>
+        </ul>
+
+        <ul class="ul_bnr">
+        	<li><a href="https://www.instagram.com/chigasaki_kankou/" target="_blank"><img src="../images/re_insta2_off.png" width="240" height="70" alt="茅ヶ崎市観光協会インスタグラム"></a></li>
+        	<li><a href="../facility"><img src="../images/bnr_facility.jpg" width="240" height="70" alt="地域貢献施設"></a></li>
+        	<li><a href="../course/index.html"><img src="../images/bnr_2nd_re_course.png" width="240" height="70" alt="必見！！おすすめコース"></a></li>
+        	<li><a href="rental-cycle/index.html"><img src="../images/bnr_rentacycle.gif" width="240" height="70" alt="ちがさきレンタサイクル"></a></li>
+            <li><a href="../y_yukarinochi"><img src="../images/bnr_y_yukarinochi.gif" width="240" height="70" alt="源頼朝と茅ヶ崎ゆかりの地"></a></li>
+        	<li><a href="../eat/index.html"><img src="../images/bnr_2nd_re_eat.png" width="240" height="70" alt="海鮮料理"></a></li>
+        	<li><a href="../join/index.html"><img src="../images/bnr_chigasaki.gif" width="240" height="70" alt="茅ヶ崎市観光協会に入会しませんか"></a></li>
+        	<!--<li><a href="../kirameki/index.html"><img src="../images/bnr_kirameki.jpg" width="240" height="70" alt="まち・ひと・茅ヶ崎の煌き"></a></li>-->
+        	<li><a href="https://www.eboshimaro.com/" target="_blank"><img src="../images/bnr_maro.gif" width="240" height="70" alt="えぼし麻呂オフィシャルサイト"></a></li>
+        	<li class="last"><a href="https://job-gear.net/chigasakikankou/"><img src="../images/bnr_recruitment.jpg" width="240" height="70" alt="採用情報"></a></li>
+          </ul>
+    </div>
+<!-- ================================ leftbox ================================ --><!-- #EndLibraryItem --></div><!-- div class="main_wrapp_body" -->
+</div><!-- div id="main_wrapp" -->
+<!-- ================================ main ================================ -->
+
+
+<!-- ================================ page top ================================ -->
+<div id="page-top">
+	<p><a href="#wrapper">^</a></p>
+</div><!-- div id="page-top" -->
+<!-- ================================ page top ================================ --><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<!-- ================================ footer ================================ -->
+    <div id="footer" class="clearfix">
+    	<div class="footer_body">
+        	<div class="footer_body_l">
+            <a href="../"><img src="../images/footer_logo.png" width="293" height="82" alt="一般社団法人茅ヶ崎市観光協会"></a><br>
+        	〒253-0041 神奈川県茅ヶ崎市茅ヶ崎1-2-53<br>
+			TEL：0467-84-0377
+            </div>
+       	  	<div class="footer_body_r">
+            	<ul class="sp">
+                	<li><a href="../">ホーム</a></li>
+                	<li><a href="../event/index.html">イベント</a></li>
+                	<li><a href="../look/index.html">観る</a></li>
+                	<li><a href="../play/index.html">遊ぶ</a></li>
+                	<li><a href="../eat/index.html">食べる</a></li>
+                	<li><a href="../buy/index.html">買う</a></li>
+                	<li><a href="../stay/index.html">泊る</a></li>
+                	<li><a href="../life/index.html">暮らす</a></li>
+                </ul>
+            	<ul class="pc">
+                	<li><a href="../event/echizen/index.html">大岡越前祭</a></li>
+                	<li><a href="../event/aloha/index.html">アロハマーケット</a></li>
+                	<li><a href="../event/hamaori/index.html">浜降祭</a></li>
+                	<li><a href="../event/hanabi/index.html">花火大会</a></li>
+                	<!-- <li><a href="../event/index.html#event_calendar">イベントカレンダー</a></li> -->
+                	<li><a href="../course/index.html">必見！！おすすめコース</a></li>
+                </ul>
+            	<ul class="pc">
+                	<li><a href="../access/index.html">茅ヶ崎の交通ガイド</a></li>
+                	<li><a href="../pamphlet/index.html">観光マップ・パンフレット</a></li>
+                	<li><a href="index.html">茅ヶ崎市観光案内所</a></li>
+                	<li><a href="../goods/index.html">茅ヶ崎オリジナルグッズ</a></li>
+                	<li><a href="../faq/index.html">よくある質問</a></li>
+                	<li><a href="../links/index.html">リンク集</a></li>
+                	<li><a href="../questionnaire">アンケート募集中</a></li>
+                	<li><a href="../category/press">記者発表</a></li>
+                </ul>
+            	<ul class="sp">
+                	<li><a href="../sitemap/index.html">サイトマップ</a></li>
+                	<li><a href="../contact">お問い合わせ</a></li>
+                	<li><a href="../privacy/index.html">プライバシーポリシー</a></li>
+                	<li><a href="../site/index.html">当サイトについて</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer_cr">
+        	<div class="footer_cr_body">
+            	<div class="footer_cr_l">
+                茅ヶ崎市はハワイ州ホノルル市・郡の姉妹都市です
+                </div>
+            	<div class="footer_cr_r">
+                Copyright <script type="text/javascript">document.write((new Date()).getFullYear());</script> Chigasaki city Tourism Association All rgihts reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ================================ footer ================================ --><!-- #EndLibraryItem --></div>
+<!-- ================================ wrapper ================================ -->
+
+
+<script type="text/javascript" src="../Scripts/common.js"></script>
+</body>
+<!-- InstanceEnd --></html>

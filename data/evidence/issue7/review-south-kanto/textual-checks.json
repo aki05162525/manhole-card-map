@@ -1,0 +1,251 @@
+[
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/de250713c732b8b7213952fe.raw",
+    "snapshotSHA256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+    "checks": [
+      {
+        "literal": "中央1丁目4番1号",
+        "context": "\t  江戸川区SDGs推進部広報課窓口（江戸川区中央1丁目4番1号　江戸川区役所本庁舎3階1番） \n\t平日のみ：午前8時30分～午後5時 \n \n    注意事項    \n<ul class"
+      },
+      {
+        "literal": "本庁舎3階1番",
+        "context": " height=\"10\" src=\"/images/29870/list.jpg\" width=\"17\">江戸川区SDGs推進部広報課窓口（江戸川区中央1丁目4番1号　江戸川区役所本庁舎3階1番） \n\t平日のみ：午前8時30分～午後5時 \n \n    注意事項    \n \n\t<l"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/4b665ea245f22881fb7481da.raw",
+    "snapshotSHA256": "96c0b41aff7df89d85943ef78ab72688987af4338d867ffcf00e506b84d9b979",
+    "checks": [
+      {
+        "literal": "大和南1-8-1",
+        "context": "ame> \n アドレス \n  大和市イベント観光協会  \n〒242-0016　大和市大和南1-8-1　大和市文化創造拠点シリウス２階 \nTEL/046-260-5799　FAX/046-259-5317 \nE-mail/info@yamato-kankou.com \n     \n    \n   \n  \n</div"
+      },
+      {
+        "literal": "シリウス２階",
+        "context": "=\"style4a\">アドレス \n  大和市イベント観光協会  \n〒242-0016　大和市大和南1-8-1　大和市文化創造拠点シリウス２階 \nTEL/046-260-5799　FAX/046-259-5317 \nE-mail/info@yamato-kankou.com \n     \n    \n   \n  \n \n      \n  "
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/f692ab9c9d49a71a3ffb1f55.raw",
+    "snapshotSHA256": "2bab448295f1092de71bb89c4a7f7333aa8ff2723a5dcd59ed4c711c53506a4b",
+    "checks": [
+      {
+        "literal": "生涯学習センター",
+        "context": "lass=\"icnArw\"> 図書館   \n       生涯学習センター   \n       屋内こども広場   \n       シリウスに"
+      },
+      {
+        "literal": "地上6階",
+        "context": "            \n               階     数 \n               地上6階  地下1階 \n             \n           \n         \n       \n     \n   \n \n<!--========== //Section end ==="
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/0bda1b9601f5fd29519c2c00.raw",
+    "snapshotSHA256": "b545b716b239418f87c50ca24e2087158805d289bb50c36337ce619572f40613",
+    "checks": [
+      {
+        "literal": "シリウス内施設",
+        "context": "no\">\n   \n   \n\n   シリウス内施設（大和市イベント観光協会・FM YAMATO｜大和市文化創造拠点 \n\n   \n  <link rel=\"stylesheet\" ty"
+      },
+      {
+        "literal": "大和市イベント観光協会",
+        "context": "meta name=\"keywords\" content=\"\">\n   \n\n   シリウス内施設（大和市イベント観光協会・FM YAMATO｜大和市文化創造拠点 \n\n   \n  <link rel=\"stylesheet\" type=\"text/css"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/89496f7ca63f27d6b8dbfc25.raw",
+    "snapshotSHA256": "1f4eb2a22a44a6964dd10263cfc376989ce37c698996d331abf67b4162a753b9",
+    "checks": [
+      {
+        "literal": "生涯学習センター",
+        "context": ">\n\t\t\t 所在地 \n\t\t\t 電話番号 \n\t\t\t 指定管理者 \n\t\t\t 備考 \n\t\t \n\t\t \n\t\t\t 生涯学習センター \n\t\t\t 大和南1-8-1 \n\t\t\t 046-261-0491 \n\t\t\t やまとみらい \n\t\t\t   \n\t\t \n\t\t \n\t\t\t リンカングループ大和文化センター（北部文化・スポーツ・子"
+      },
+      {
+        "literal": "大和南1-8-1",
+        "context": " 電話番号 \n\t\t\t 指定管理者 \n\t\t\t 備考 \n\t\t \n\t\t \n\t\t\t 生涯学習センター \n\t\t\t 大和南1-8-1 \n\t\t\t 046-261-0491 \n\t\t\t やまとみらい \n\t\t\t   \n\t\t \n\t\t \n\t\t\t リンカングループ大和文化センター（北部文化・スポーツ・子育てセンター） \n\t\t\t 中"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/97b5019b491c876c35585b4b.raw",
+    "snapshotSHA256": "8d082afccd7128f1f96bc27c07cb03e59f4292fa08c31d61cf3bb69e8d795cc9",
+    "checks": [
+      {
+        "literal": "情報処理センター",
+        "context": "（東口） \n \n \n 南館地下1階 \n 駐車場 \n \n \n  \n 情報処理センター \n \n \n 場所 \n 部署名など \n \n \n 10階 \n IT推進課 \n \n \n 7階 \n<td"
+      },
+      {
+        "literal": "くらしと観光課",
+        "context": "0階 \n IT推進課 \n \n \n 7階 \n 消費者センター \n \n \n 6階 \n くらしと観光課 \n \n \n 5階 \n 産業振興課・産業振興公社 \n \n \n 4階 \n 区民相談室 \n \n \n 3階 \n 介護保険課（認定係） \n \n</"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/7f7f982e420ff4ead166a3e2.raw",
+    "snapshotSHA256": "caacf1e248e9e4ae8f657d83748a1c85fa94c65329f34046b2103a5656baeb27",
+    "checks": [
+      {
+        "literal": "クリエイティブ・コモンズ 表示 4.0",
+        "context": "a> \nこの 作品 は  クリエイティブ・コモンズ 表示 4.0 国際 ライセンス の下に提供されています。 \n 本ページで公開するオープンデータは、正確な情報となるよう努めていますが、不正確な情報の混在などによる利用者の損害など、一切の行為について板橋区はいかなる責任も負いません。 \n<ul class=\"objec"
+      },
+      {
+        "literal": "131199_public_facility25.csv",
+        "context": " \n \n<a href=\"../../../_res/projects/default_project/_page_/001/035/617/131199_public_facility25.csv\" onclick=\"gtag('event', '1035617',{'event_category':'オープンデータ','event_label':'公共施設一覧（自治体標準オープンデータセット） （CSV 104.9KB）■https://www.city.itabash"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/bb7a6698c08b1974e6607a10.raw",
+    "snapshotSHA256": "e21d9d76ef2c13e7dc5135e39242408fb1ad992f562b810c25bdaa12d651b012",
+    "checks": [
+      {
+        "literal": "猫実一丁目1番1号",
+        "context": "\" width=\"100\" height=\"30\">  \n \n \n \n 所在地 \n  〒279-8501　千葉県浦安市猫実一丁目1番1号  \n 電話番号 \n  047-351-1111  \n 窓口受付時間 \n  午前8時30分から午後5時（窓口によって受付時間は異なります）  \n 休館日 \n  土曜日"
+      },
+      {
+        "literal": "q=35.653053,139.901982",
+        "context": " \n \n 地図 \n \n  地図を表示する （外部リンク） <img src=\"../../../_template_/_site_/_default_/_res/images/parts/newwin1.gif\" alt"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/43d0d90ed2e17fb0c07c9099.raw",
+    "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+    "checks": [
+      {
+        "literal": "相模湖観光案内所",
+        "context": "pg\" alt=\"相模湖デザインのカードの画像\" width=\"300\" height=\"417\"> \n \n  配布場所  \n相模湖観光案内所 \n  \n  配布日時  \n通年（12月29日～1月3日の年末年始を除く）午前8時30分から午後5時 \n（なお、午前11時30分から12時30分は配布しておりません。） \n  在庫状"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/bfa950e585f243b7a433fcc6.raw",
+    "snapshotSHA256": "a9f2a6e0e02cc4b8b4a827a752f30be23defd2bb37aa0868bf98f9aa150bdce6",
+    "checks": [
+      {
+        "literal": "1450-4",
+        "context": "を目の前にした観光案内所です。観光客の方向けに、トイレの貸出も行っております。お気軽にご利用ください。 \n\n\n\n  \n\n\n\n 住所：神奈川県三浦市南下浦町上宮田1450-4 時間：9:00～17:30（年末年始休業） 休業日：無休（年末年始を除く） \n\n\n\n  \n\n\n\n  \n\n\n\n  \n\n\n\n 三浦海岸"
+      },
+      {
+        "literal": "1497",
+        "context": "い案内所です。英語対応スタッフ等により外国語対応にも努めています。また、みうらレンタサイクルの貸出、返却も受け付けています。 \n\n\n\n 住所：神奈川県三浦市南下浦町上宮田1497 時間：10月～3月 9:30～17:00、4月～9月 9:30～17:30　京急線三浦海岸駅構内改札外 休業日：無休（年末年始を除く） \n\n\n\n  \n\n\n\n<h3 class=\"wp-block-heading has-text-align-cent"
+      },
+      {
+        "literal": "046-888-0588",
+        "context": "いるほか、 三浦の観光に関するお問い合わせについて、電話、メールでも承っています。 \n\n\n\n ※宿泊施設に関するご相談は電話でご案内します。 \n\n\n\n TEL：046-888-0588　FAX：046-888-5914 （9:00～17:30、年末年始休業） メールアドレス：info@miura-info.ne.jp \n\n\n\n マンホールカードの配布については<a href=\"https://miura-info.ne.jp/acce"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/47fed0a2ffde2bdb5a94f0dc.raw",
+    "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+    "checks": [
+      {
+        "literal": "観光インフォメーションセンター",
+        "context": "p>\n\n\t\t\t （京浜急行線「三崎口駅」から京浜急行バス約15分、「三崎東岡」バス停下車徒歩3分） \n\t\t\t \n\t\t \n\t\t \n\t\t\t 三浦市観光インフォメーションセンター \n\t\t\t （平日/ 休日 ）9時00分から17時30分 \n\t\t\t 三浦市南下浦町上宮田1450-4 \n\t\t\t（京浜急行線「三浦海岸駅」徒歩約5分） \n\t\t \n\t\t \n\t\t\t 三浦海岸"
+      },
+      {
+        "literal": "1450-4",
+        "context": "浦市観光インフォメーションセンター \n\t\t\t （平日/ 休日 ）9時00分から17時30分 \n\t\t\t 三浦市南下浦町上宮田1450-4 \n\t\t\t（京浜急行線「三浦海岸駅」徒歩約5分） \n\t\t \n\t\t \n\t\t\t 三浦海岸駅前観光案内所 \n\t\t\t （平日/ 休日 ）9時30分から17時00分 \n\t\t\t 京浜急行線「三浦海"
+      },
+      {
+        "literal": "三浦海岸駅前観光案内所",
+        "context": "時30分 \n\t\t\t 三浦市南下浦町上宮田1450-4 \n\t\t\t（京浜急行線「三浦海岸駅」徒歩約5分） \n\t\t \n\t\t \n\t\t\t 三浦海岸駅前観光案内所 \n\t\t\t （平日/ 休日 ）9時30分から17時00分 \n\t\t\t 京浜急行線「三浦海岸駅」構内改札前 \n\t\t \n\t \n \n\n   \n            "
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/7bd28b0dd0868e118824999e.raw",
+    "snapshotSHA256": "fe767884fa1f7c01a625f390aec40c3a3359e4cfa472e431dd333943d072c392",
+    "checks": [
+      {
+        "literal": "0467-82-3986",
+        "context": "n_center\">800円 \n\t\t\t\t \n\t\t\t \n\t\t \n\t\t\n 詳しくは茅ヶ崎市観光案内所（TEL：0467-82-3986）までお問合せください。 \n\n\n         茅ヶ崎駅構内案内図  \n        \n        \t 茅ヶ崎市観光案内所へは、改札を出て左へ進んだ横浜銀行ATMの隣りにございます。<"
+      },
+      {
+        "literal": "改札を出て左",
+        "context": "      茅ヶ崎駅構内案内図  \n        \n        \t 茅ヶ崎市観光案内所へは、改札を出て左へ進んだ横浜銀行ATMの隣りにございます。 \n        \t 入口の上の「はてなマーク」が目印です。 \n\n         <img src=\"images/information_map.gif"
+      },
+      {
+        "literal": "ATM",
+        "context": "=\"normal\">茅ヶ崎駅構内案内図  \n        \n        \t 茅ヶ崎市観光案内所へは、改札を出て左へ進んだ横浜銀行ATMの隣りにございます。 \n        \t 入口の上の「はてなマーク」が目印です。 \n\n         <img src=\"images/information_map.gif\" width=\"66"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/720b1c2b2f378e5d4ce5b063.raw",
+    "snapshotSHA256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e",
+    "checks": [
+      {
+        "literal": "茅ヶ崎市観光案内所",
+        "context": "anchigasaki.com/\">道の駅「湘南ちがさき」公式ホームページ 　（外部リンク）     茅ヶ崎市観光案内所で配布しているカード \n 　茅ヶ崎の海と「烏帽子岩」を中心に、太陽とカモメ、漁船がデザインされたマンホール蓋をカードにしました。 \n 　このマンホール鉄蓋のデザインは1991年から使用され、1997年からはカードと同じカラーリングを施した蓋が設置されました。"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/23e9d350361e515c355cf3c3.raw",
+    "snapshotSHA256": "3d6db7baf63f8bac6a7a2d09c6b49ecba198526279e34e9e5cd7d5ebdeec9753",
+    "checks": [
+      {
+        "literal": "小田急マルシェ秦野1階",
+        "context": " \n \n \n  秦野駅観光案内所   \n 〒257-0034 神奈川県秦野市大秦町1-1 小田急マルシェ秦野1階　/ [TEL] 0463-80-2303 \n《開所時間》　平日　9:00-17:00　/　土・日・祝日　8:00-17:00 \n　※1/1、12/31は休み \n  \n \n\t\t\t\t \n\t\t\t\t<div class=\"sq"
+      },
+      {
+        "literal": "0463-80-2303",
+        "context": "g>秦野駅観光案内所   \n 〒257-0034 神奈川県秦野市大秦町1-1 小田急マルシェ秦野1階　/ [TEL] 0463-80-2303 \n《開所時間》　平日　9:00-17:00　/　土・日・祝日　8:00-17:00 \n　※1/1、12/31は休み \n  \n \n\t\t\t\t \n\t\t\t\t \n\t\t\t\t\t<div class=\""
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/21cc0a8cf326ce86f1f153a6.raw",
+    "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+    "checks": [
+      {
+        "literal": "秦野駅観光案内所",
+        "context": "an>  \n          \n\n             \n                \n  場所 秦野駅観光案内所  \n  時間 午前9時から午後5時  \n \n             \n          \n\n                その"
+      }
+    ]
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/south-kanto/96a65a45e58616eddb266a80.raw",
+    "snapshotSHA256": "53be603859cae63170b35978dd1e69b96ec6c9ce3ea2a436e37959b741bfabdc",
+    "checks": [
+      {
+        "literal": "有明水再生センター5階",
+        "context": "\"header_text\">\n \n\n  \n東京都江東区有明2-3-5有明水再生センター5階\n  \n\n \n \n \n \n \n\n \n 周辺エリア \n<div class=\"area_rcnt\""
+      },
+      {
+        "literal": "destination=",
+        "context": "pan>  \n\n\n\n\n   行き方を見る   \n\n\n \n\n \n \n \n \n<div cla"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kanto-south-integration-legacy-urayasu",
+    "alternativeP05": [
+      {
+        "featureIndex": 1079,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "12227",
+            "P05_002": "1",
+            "P05_003": "浦安市役所",
+            "P05_004": "浦安市猫実1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.90219094484743,
+              35.65398771555644
+            ]
+          }
+        }
+      }
+    ],
+    "resolution": "市施設詳細の現在の庁舎名・猫実一丁目1番1号に結び付いたq原値を採用する。P05と平均しない。旧道路整備課の現配布継承はこの座標選択から推認しない。"
+  }
+]

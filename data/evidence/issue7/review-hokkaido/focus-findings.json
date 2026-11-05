@@ -1,0 +1,55 @@
+{
+  "furano": {
+    "facilityIds": [
+      "facility:north-5146ae8cc4fb697aa46b"
+    ],
+    "finding": "2025-07-17はポータル作成/更新日。CSV PF0000000001の複合庁舎・弥生町1-1・43.342336,142.383447を2022-09-26新庁舎開庁記事と現総合窓口案内に接続。旧役場43.342024,142.383104および別行総合保健センター43.3426675,142.3820473は不使用。特定EPSGは原典未記載。"
+  },
+  "kembuchi": {
+    "facilityIds": [
+      "facility:north-f19c149e540fddcdc014"
+    ],
+    "finding": "XLSX B12=0000000011、E12=剣淵町絵本の館、I12=緑町15番3号、M12=0165-34-2624が現配布案内と一致。K12/L12を使用。隣接資料館はB13=0000000012・15番4号・44.10038,142.35868。ふりがなrPhを名称本体と混ぜずsharedStringsの直下tで読んだ。特定EPSGは原典未記載。"
+  },
+  "noboribetsu": {
+    "facilityIds": [
+      "facility:north-proposal-noboribetsu-duty",
+      "facility:north-03d0245a068dd82eaa37"
+    ],
+    "finding": "市庁舎案内のmarkerInfos[0] title=北海道登別市役所を中央町6-11本庁舎に対応させる。現配布案内の本庁舎1階宿直室は採用、第2庁舎2階は保留。center値および千歳町3-1-5のP05は流用しない。"
+  },
+  "teshio": {
+    "facilityIds": [
+      "facility:north-c2f6c2b5109a65d91a91",
+      "facility:north-fc46386371945051a55a"
+    ],
+    "finding": "配布本文1464-113とfooter1466-113の原文差は未解決の住所表記として保持。ただし双方の役場名、新栄通8丁目、電話01632-2-1001が一致し本文の2階建設課/1階当直室が同じ役場を指定。P05は町役場・新栄通8で一致。別棟・移転・異なる数値候補を示す差ではないため建物点採用を妨げない。住所修正を提案しない。"
+  },
+  "rumoi": {
+    "facilityIds": [
+      "facility:north-5e7ef2bf3873a0c566d6",
+      "facility:north-7d980545cacdb9317d51"
+    ],
+    "oldGoogleResponse": {
+      "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+      "coordinate": {
+        "lat": 43.9387173,
+        "lng": 141.6470101
+      },
+      "evidence": {
+        "sourceUrl": "https://goo.gl/maps/9N5kicx1tnbfZWJi6",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/5bcc6916c26c7d1623b6.html",
+        "snapshotSHA256": "cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a",
+        "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d43.9387173!4d141.6470101",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市公式配布案内／るもいプラザ公式施設ページが指定する施設名付き目的地。現在の住所に照合。表示中心を不採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/ （原地域snapshot data/evidence/national/north/0c7640db2ea8af858b25.html SHA256 71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f）。"
+      }
+    },
+    "currentHTMLCoordinate": {
+      "lat": 43.93876130596552,
+      "lng": 141.64699032117065
+    },
+    "finding": "旧短縮URL/Google応答値43.9387173,141.6470101と、新市HTML q=43.93876130596552,141.64699032117065は別の値・別原典。市HTMLを旧値の出典へ付け替えていない。カード配布節の留萌プラザ2F・開運町3-4-11に接続し分庁舎へは流用しない。背景地図・Google応答の再配布を承認しない。"
+  }
+}

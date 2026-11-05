@@ -1,0 +1,322 @@
+[
+  {
+    "facilityId": "facility:kyushu-015d01512ed3752919cd",
+    "kind": "P05",
+    "prefecture": "43",
+    "featureIndex": 40,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "43101",
+        "P05_002": "5",
+        "P05_003": "総合体育館",
+        "P05_004": "熊本市中央区出水2-7-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7366229,
+          32.78524352
+        ]
+      }
+    },
+    "memberSHA256": "7a0e3f9b687670b11f3c0bf27c9fc793a9d189749f43f12c11e9d4754c0e6b61",
+    "sourceLocator": "P05-22_43_GML.zip!P05-22_43.geojson#/features/40",
+    "identityFinding": "県施設案内・現運営者がナースパワーアリーナ＝熊本市総合体育館・青年会館、出水2-7-1と明記。P05総合体育館を採用。青年会館feature38は約4.7m差の併設機能点で、別敷地の施設ではない。受付室を測位した値ではない。",
+    "buildingSource": {
+      "sourceUrl": "https://kc-sks.jp/soutai/index.html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e7b0e44616d0b436ca8c1fe4.html",
+      "snapshotSHA256": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "県施設案内・現運営者がナースパワーアリーナ＝熊本市総合体育館・青年会館、出水2-7-1と明記。P05総合体育館を採用。青年会館feature38は約4.7m差の併設機能点で、別敷地の施設ではない。受付室を測位した値ではない。"
+    },
+    "currentSourceURLs": [
+      "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+      "https://sports.kumamoto.guide/facilities/detail/5c3aaaee-0a73-4d8f-8fcb-4a1699359441",
+      "https://kc-sks.jp/sougou/",
+      "https://kc-sks.jp/soutai/index.html"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-3be846e318561ee431e9",
+    "kind": "P05",
+    "prefecture": "40",
+    "featureIndex": 1590,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "40218",
+        "P05_002": "3",
+        "P05_003": "町民情報ステーション",
+        "P05_004": "那珂川市中原2-120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.436146431221,
+          33.5180701844527
+        ]
+      }
+    },
+    "memberSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+    "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590",
+    "identityFinding": "P05町民情報ステーションは中原2-120の情報拠点。現運営者は同番地の博多南駅前ビル1階ナカイチインフォメーションを明記。建物レベルで対応する駅前ビル点として採用。町民窓口と現在の窓口の位置一致までは主張しない。",
+    "buildingSource": {
+      "sourceUrl": "https://cototoba.com/floor/",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html",
+      "snapshotSHA256": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "P05町民情報ステーションは中原2-120の情報拠点。現運営者は同番地の博多南駅前ビル1階ナカイチインフォメーションを明記。建物レベルで対応する駅前ビル点として採用。町民窓口と現在の窓口の位置一致までは主張しない。"
+    },
+    "currentSourceURLs": [
+      "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+      "https://cototoba.com/access/",
+      "https://cototoba.com/floor/"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+    "kind": "P05",
+    "prefecture": "40",
+    "featureIndex": 1590,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "40218",
+        "P05_002": "3",
+        "P05_003": "町民情報ステーション",
+        "P05_004": "那珂川市中原2-120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.436146431221,
+          33.5180701844527
+        ]
+      }
+    },
+    "memberSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+    "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590",
+    "identityFinding": "同じ博多南駅前ビル・中原2-120の別facilityId。P05情報ステーションの建物点を両IDに使用するが、ID・関係の統合は行わない。現運営者の1Fインフォメーションと同定。",
+    "buildingSource": {
+      "sourceUrl": "https://cototoba.com/floor/",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html",
+      "snapshotSHA256": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "同じ博多南駅前ビル・中原2-120の別facilityId。P05情報ステーションの建物点を両IDに使用するが、ID・関係の統合は行わない。現運営者の1Fインフォメーションと同定。"
+    },
+    "currentSourceURLs": [
+      "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+      "https://cototoba.com/access/",
+      "https://cototoba.com/floor/"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+    "kind": "P05",
+    "prefecture": "42",
+    "featureIndex": 1500,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "42321",
+        "P05_002": "1",
+        "P05_003": "東彼杵町役場",
+        "P05_004": "東彼杵町蔵本郷1850-6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          129.9172,
+          33.037
+        ]
+      }
+    },
+    "memberSHA256": "3f7fcd08fc0aa4e8195a8c2f167bc6dbe41a56f466d3314c291ee87c333c5e5f",
+    "sourceLocator": "P05-22_42_GML.zip!P05-22_42.geojson#/features/1500",
+    "identityFinding": "役場庁舎案内の3階17番窓口が水道課。現配布先の蔵本郷1850-6本庁舎と一致。P05西館feature1508を混同せず本庁feature1500を採用。新庁舎計画だけを理由に現庁舎を否定しない。",
+    "buildingSource": {
+      "sourceUrl": "https://www.town.higashisonogi.lg.jp/gyoseijoho/annai/783.html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/511982aa6b69f8794afea29e.html",
+      "snapshotSHA256": "511982aa6b69f8794afea29e7baca10cb7aa235872840a1eb0df051c02940ee4",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "役場庁舎案内の3階17番窓口が水道課。現配布先の蔵本郷1850-6本庁舎と一致。P05西館feature1508を混同せず本庁feature1500を採用。新庁舎計画だけを理由に現庁舎を否定しない。"
+    },
+    "currentSourceURLs": [
+      "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+      "https://www.town.higashisonogi.lg.jp/index.html",
+      "https://www.town.higashisonogi.lg.jp/gyoseijoho/annai/783.html"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+    "kind": "P05",
+    "prefecture": "40",
+    "featureIndex": 1710,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "40221",
+        "P05_002": "5",
+        "P05_003": "地域活性化複合施設太宰府館",
+        "P05_004": "太宰府市宰府3-2-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.532575,
+          33.519857
+        ]
+      }
+    },
+    "memberSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+    "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1710",
+    "identityFinding": "宰府3-2-3の太宰府館そのものの建物点。2026-10-01～12-22は配布休止・別IDの駅内観光案内所へ臨時移転と再確認。既存suspended/reviewUntilを維持するため、旧館の建物位置を整備しても現配布先だとは主張しない。",
+    "buildingSource": {
+      "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/81bb60b63e285f51e2ba3ed4.html",
+      "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "宰府3-2-3の太宰府館そのものの建物点。2026-10-01～12-22は配布休止・別IDの駅内観光案内所へ臨時移転と再確認。既存suspended/reviewUntilを維持するため、旧館の建物位置を整備しても現配布先だとは主張しない。"
+    },
+    "currentSourceURLs": [
+      "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+    "kind": "P05",
+    "prefecture": "46",
+    "featureIndex": 630,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "5",
+        "P05_003": "国分シビックセンター",
+        "P05_004": "霧島市国分中央3-45-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.763524,
+          31.7407538
+        ]
+      }
+    },
+    "memberSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/630",
+    "identityFinding": "公式庁舎案内は1階総合窓口を記載。国分中央3-45-1の国分シビックセンターとP05固有施設を同定。公民館feature632や2017年の行政庁舎別館を総合窓口に代用しない。",
+    "buildingSource": {
+      "sourceUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/civiccenter.html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/74c5d817e781a5f9bf288c9b.html",
+      "snapshotSHA256": "74c5d817e781a5f9bf288c9b78529cc67ab1674f3a98e9fb0c6682999ac28ef9",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "公式庁舎案内は1階総合窓口を記載。国分中央3-45-1の国分シビックセンターとP05固有施設を同定。公民館feature632や2017年の行政庁舎別館を総合窓口に代用しない。"
+    },
+    "currentSourceURLs": [
+      "https://www.city-kirishima.jp/gesuidou/20180726.html",
+      "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/civiccenter.html",
+      "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/201704kokubu.html"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+    "kind": "P05",
+    "prefecture": "46",
+    "featureIndex": 756,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46220",
+        "P05_002": "1",
+        "P05_003": "南さつま市役所",
+        "P05_004": "南さつま市加世田川畑2648"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.323494,
+          31.41657
+        ]
+      }
+    },
+    "memberSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/756",
+    "identityFinding": "現庁舎配置表は南さつま市本庁2階に都市整備課を明記。加世田川畑2648の本庁舎と一致。あんぼう21・旧スタジオ21など別施設から区別できる。",
+    "buildingSource": {
+      "sourceUrl": "https://www.city.minamisatsuma.lg.jp/goshokai/gaiyo/e018900.html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4358f0701f33575a3701e26b.html",
+      "snapshotSHA256": "4358f0701f33575a3701e26b3695a7b43895df4d6d1cdbfb3832054265d1834f",
+      "sourceLocator": "施設名・住所・本文内の庁舎/フロア案内",
+      "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+      "actorType": "ai",
+      "verificationMethod": "現庁舎配置表は南さつま市本庁2階に都市整備課を明記。加世田川畑2648の本庁舎と一致。あんぼう21・旧スタジオ21など別施設から区別できる。"
+    },
+    "currentSourceURLs": [
+      "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+      "https://www.city.minamisatsuma.lg.jp/shisetsu/",
+      "https://www.city.minamisatsuma.lg.jp/goshokai/gaiyo/e018900.html"
+    ],
+    "license": "P05 individual CC BY 4.0; official HTML rights are independent",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00"
+  },
+  {
+    "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+    "kind": "official-DMS-marker",
+    "rawLabels": [
+      "33°15'08.8\"N 130°18'01.5\"E"
+    ],
+    "identityFinding": "公式アクセスiframeの!2z目的地ラベル（33°15'08.8\"N 130°18'01.5\"E）を復号し十進度化。!2d/!3d表示中心は不使用。公式施設案内main/9.htmlは1階佐賀工房バルーンミュージアム店を明記。",
+    "buildingSource": {
+      "url": "https://www.sagabai.com/balloon-museum/main/9.html",
+      "targets": [
+        {
+          "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+          "purpose": "additional-building-identification"
+        }
+      ],
+      "startedAt": "2026-11-05T06:29:45.878135+00:00",
+      "status": 200,
+      "finalUrl": "https://www.sagabai.com/balloon-museum/main/9.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e5300a3525bf78a44da99c39.html",
+      "snapshotSHA256": "e5300a3525bf78a44da99c39501f333cacacc2f1353b4f8db4eb4bd4d7e36aaa",
+      "fetchedAt": "2026-11-05T06:29:46.080250+00:00"
+    },
+    "sourceURL": "https://www.sagabai.com/balloon-museum/main/21.html",
+    "calculation": "lat = 33 + 15/60 + 8.8/3600; lng = 130 + 18/60 + 1.5/3600"
+  },
+  {
+    "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+    "kind": "official-coordinate-destination",
+    "sourceURL": "https://www.ibusuki.or.jp/tourism/view/cocco/",
+    "rawLatitude": "31.2320642",
+    "rawLongitude": "130.6442088",
+    "identityFinding": "公式観光案内の当該博物館詳細、十二町2290と施設専用地図を照合。iframe qに明示された数値目的地点31.2320642,130.6442088を採用。ll表示中心や住所のジオコードを抽出した値ではなく、公開者が施設アクセスに指定した点。"
+  }
+]

@@ -1,0 +1,477 @@
+// JavaScript Document
+
+
+var startMap = function () {
+	if(gConf.lat<1 || gConf.lng<1){
+		$("#gMapApi").hide();
+	}
+	var gSpot = [];
+	var gInitialBounds = null;
+	var gLimitBounds = {};
+	var gInit = false;
+	var gMap = new google.maps.Map(document.getElementById('gMap'), {
+		zoom: gConf.zoom,
+		center: new google.maps.LatLng(gConf.lat, gConf.lng),
+		scrollwheel: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+	
+	 google.maps.event.addListener(gMap, 'bounds_changed', function() {
+		 if(null==gInitialBounds){
+			gInitialBounds = gMap.getBounds();
+			load(gConf.count);
+		 }
+      });
+
+	var getLang = function () {
+		var dir = window.location.href.split("/");
+		baseUrl = dir[0] + '//' + dir[2];
+		if (dir[3]) {
+			switch (dir[3].toLowerCase()) {
+				case 'en':dir = 'en';break;
+				case 'cn':dir = 'cn';break;
+				case 'tw':dir = 'tw';break;
+				case 'th':dir = 'th';break;
+				case 'kr':	case'ko': dir = 'kr';break; //	bugfix
+				default:dir = 'ja';	break;
+			}
+			return dir;
+		}
+		return 'ja';
+	}
+
+	var lang={
+		ja:{
+			route:"ルート検索",detail:"詳細ページへ",
+			category:{
+				common:"周辺施設",history:"歴史・文化",nature:"自然・景観",spa:"温泉",leisure:"レジャー",activity:"体験・見学",souvenir:"みやげ",traffic:"交通・案内所"}
+		}
+	};
+
+	var icons = {
+		general: { //	0x0001 : 'pin-history',
+			0: {
+				label: 'common',
+				id: '0',
+			},
+			1: {
+				label: 'history',
+				id: '1',
+			},
+			6: {
+				label: 'nature',
+				id: '2'
+			},
+			10: {
+				label: 'spa',
+				id: '3'
+			},
+			14: {
+				label: 'leisure',
+				id: '4'
+			},
+			18: {
+				label: 'activity',
+				id: '5'
+			},
+			23: {
+				label: 'souvenir',
+				id: '6'
+			},
+			28: {
+				label: 'traffic',
+				id: '7'
+			},
+		},
+		multilanguage: { //	0x0001 : 'pin-history',
+			0: {
+				label: 'common',
+				id: '0',
+			},
+			1: {
+				label: 'history',
+				id: '1',
+			},
+			6: {
+				label: 'nature',
+				id: '2'
+			},
+			10: {
+				label: 'spa',
+				id: '3'
+			},
+			14: {
+				label: 'leisure',
+				id: '4'
+			},
+			18: {
+				label: 'activity',
+				id: '5'
+			},
+			23: {
+				label: 'souvenir',
+				id: '6'
+			},
+			28: {
+				label: 'traffic',
+				id: '7'
+			},
+		}
+
+	};
+	var iconsKey = {};
+	$.each(icons, function (index, val) {
+		iconsKey[index] = {};
+		$.each(icons[index], function (index2, val) {
+			iconsKey[index][val.id] = val.label;
+		});
+	});
+
+	//	auto conf
+	var isIe = function () {
+		var userAgent = window.navigator.userAgent.toLowerCase();
+		if (userAgent.match(/(msie|MSIE)/) || userAgent.match(/(T|t)rident/)) {
+			return userAgent.match(/((msie|MSIE)\s|rv:)([\d\.]+)/)[3];
+		}
+		return false;
+	}
+	var gExt = isIe() ? '.png' : '.svg';
+	var gLang = getLang();
+	var gLangMap = lang[gLang];
+	var gIsMl = 'ja'!=gLang;
+	var gMapType = gIsMl ? "multilanguage" : ($('#mapBox #cs1').length ? 'educational' : 'general');
+	var gIsEdu = 'educational' == gMapType;
+	var iconTags = function () {
+		//	<li><input type="checkbox" id="c1" class="areaCheck" checked="checked"><label for="c1"><i><svg><use xlink:href="#iconC1"></use></svg></i>歴史</label></li>
+	};
+	
+	
+	//	init gmap filter
+	if(!gIsEdu && 'ja'!=gLang){
+		var i=1;
+		iconIdMap = {};
+		$.each(iconsKey.multilanguage, function(key, value){
+			iconIdMap[value] = key;
+		})
+		$.each(gLangMap.category, function(index, value){
+			var id = iconIdMap[index];
+			$('#mapBox #'+id).parent().find('span').html(value);
+		})
+	}
+	
+	
+	var getCategoryKey = function (rec) {
+		// 言語間でカテゴリ統一
+		/*
+		if(gIsMl){
+			return icons['multilanguage'][rec.sptMapCategoryMl].label;
+		}
+		else if (rec.sptMapCategoryEdu) {
+			return icons['educational'][rec.sptMapCategoryEdu].label;
+		} else if (rec.sptMapCategoryEvt) {
+			return icons['general'][rec.sptMapCategoryEvt].label;
+		} else if (rec.sptMapCategory) {
+			//return icons['general'][rec.sptMapCategory].label;
+			return icons['general'][rec.sptMapCategory].id;
+		}
+		*/
+		if (rec.sptMapCategory) {
+			//return icons['general'][rec.sptMapCategory].label;
+			return icons['general'][rec.sptMapCategory].id;
+		}
+		return null;
+	}
+	var getIcon = function (rec) {
+		// 言語間でカテゴリ統一
+		/*
+		if(gIsMl){
+			return 'pin-' + getCategoryKey(rec) + gExt;
+		}
+		else if (rec.sptMapCategoryEdu) {
+			return 'pin-e-' + getCategoryKey(rec) + gExt;
+		} else {
+			//return 'pin-' + getCategoryKey(rec) + gExt;
+			return 'commonPin-' + getCategoryKey(rec) + gExt;
+		}
+		*/
+		return 'commonPinCategory-0' + getCategoryKey(rec) + gExt;
+	};
+
+	var setMarker = function (spotList , inUseInitialBounds) {
+		var len = gSpot.length;
+		for (var i = 0; i < len; i++) {
+			if(gSpot[i].infoWin){
+				delete gSpot[i].infoWin;
+				gSpot[i].marker.setMap(null);
+			}
+		}
+		
+		gSpot = [];
+		$.each(spotList, function (index, rec) {
+			// 言語間でカテゴリ統一
+			//if(!gIsMl || 0<rec.sptMapCategoryMl){	
+			//	gSpot.push(rec);
+			//}
+			/*
+			if(rec.sptMapCategory) {
+				gSpot.push(rec);
+			}
+			*/
+			gSpot.push(rec);
+		});
+		
+		len =  gSpot && gSpot.length ? gSpot.length:0;
+		//console.log("count:"+len);
+		if (len) {
+			var merkerIndex = 0;
+			var minLat = gSpot[0].sptLat;
+			var minLng = gSpot[0].sptLng;
+			var maxLat = gSpot[0].sptLat;
+			var maxLng = gSpot[0].sptLng;
+			
+			for (var i = 0; i < len; i++) {
+				
+				var merkerOpt = {
+					zIndex: 10,
+					position: new google.maps.LatLng(gSpot[i].sptLat, gSpot[i].sptLng),
+					title: gSpot[i].name
+				}
+				if (0 != i) {
+					var icon = getIcon(gSpot[i]);
+					if (icon) {
+						merkerOpt.icon = (gIsEdu ? '/images/' : '/images/') + icon;
+					} else {
+						merkerOpt.icon = '/lsc/api/gmapMarkerG2/?n=' + i;
+					}
+					merkerOpt.icon = new google.maps.MarkerImage(merkerOpt.icon,null,null,null,new google.maps.Size(50, 50));
+					merkerOpt.zIndex = 1;
+				}
+				var currMarker = new google.maps.Marker(merkerOpt);
+				
+				//console.log(gSpot[i]);
+				currMarker.lsc = gSpot[i];
+				currMarker.lsc.markerIndex = i;
+				currMarker.setMap(gMap);
+				gSpot[i].categoryKey = getCategoryKey(gSpot[i]);
+				gSpot[i].marker = currMarker;
+				// 情報ウインドウ
+				content = '';
+				content += '<div id="infoWin' + i + '" class="infoWin"><dl>';
+				content += '<dt>' + currMarker.lsc.sptName + '</dt>';
+				content += '<dd><img src="' + currMarker.lsc.src + '"></dd>';
+				if (0 != i) {
+					content += '<dd><a href="' + currMarker.lsc.href + '" target="_blank" class="linkBut">' + gLangMap.detail + '</a></dd>';
+				}
+				//content += '<dd><a href="https://www.google.co.jp/maps/dir//' + currMarker.lsc.sptLat + ',' + currMarker.lsc.sptLng + '/" target="_blank" class="linkBut">' + gLangMap.route + '</a></dd>';
+				content += '<dd><a href="https://www.google.co.jp/maps/dir/'+gConf.lat+','+gConf.lng+'/' + currMarker.lsc.sptLat + ',' + currMarker.lsc.sptLng + '/" target="_blank" class="linkBut">' + gLangMap.route + '</a></dd>';
+				content += '</dl></div>';
+				gSpot[i].infoWin  = new google.maps.InfoWindow({
+					content: content
+				});
+				google.maps.event.addListener(currMarker, 'click',
+					function () {
+						$.each(gSpot, function (index, val) {
+							val.infoWin.close();
+						});
+						this.lsc.infoWin.open(gMap, this);
+					}
+				);
+		
+				if (minLat >= gSpot[i].sptLat) {
+					minLat = gSpot[i].sptLat;
+				}
+				if (minLng >= gSpot[i].sptLng) {
+					minLng = gSpot[i].sptLng;
+				}
+				if (maxLat <= gSpot[i].sptLat) {
+					maxLat = gSpot[i].sptLat;
+				}
+				if (maxLng <= gSpot[i].sptLng) {
+					maxLng = gSpot[i].sptLng;
+				}
+			}
+				
+			if (maxLat > 0 && maxLng > 0) {
+				diffLat = maxLat - minLat;
+				diffLng = maxLng - minLng;
+				if (diffLat > 0 || diffLng > 0) {
+					latlng = new google.maps.LatLng(maxLat - (diffLat / 2), maxLng - (diffLng / 2));
+					gMap.setCenter(latlng);
+				}
+			}
+			gLimitBounds = {
+				east: maxLng,
+				north: maxLat,
+				south: minLat,
+				west: minLng
+			};
+			gMap.fitBounds((inUseInitialBounds) ? gInitialBounds:gLimitBounds, 10);
+		}
+			
+	}
+	
+	var limitMapBounds = function () {
+		var mapBounds = gMap.getBounds();
+		if (!mapBounds) {
+			return;
+		}
+		var bounds = gLimitBounds;
+		var north = mapBounds.getNorthEast().lat();
+		var east = mapBounds.getNorthEast().lng();
+		var south = mapBounds.getSouthWest().lat();
+		var west = mapBounds.getSouthWest().lng();
+
+		var lat = null,
+			lng = null;
+		
+		if (bounds.south > north) {
+			lat = bounds.south;
+		} else if (bounds.north < south) {
+			lat = bounds.north ;
+		}
+		if (bounds.west > east) {
+			lng = bounds.west;	
+		} else if (bounds.east < west) {
+			lng = bounds.east ;	
+		}
+		if (null !== lat || null !== lng) {
+			var mapCenter = gMap.getCenter();
+			if (null === lat) {
+				lat = mapCenter.lat();
+			}
+			if (null === lng) {
+				lng = mapCenter.lng();
+			}
+			gMap.panTo(new google.maps.LatLng({
+				lat: lat,
+				lng: lng
+			})); 
+		}
+	};
+	
+	/*
+	$('#gMap').append($('<button>').attr('type', 'button').addClass('resetMap').text('Reset'));
+	$('#gMap .resetMap').on('click', function () {
+		load();
+	});
+	*/
+
+	var mapProc = null;
+	gMap.addListener('center_changed', function () {
+		if (null !== mapProc) {
+			clearTimeout(mapProc);
+		}
+		mapProc = setTimeout(function () {
+			limitMapBounds();
+		}, 200);
+	});
+	
+	$('.checkSome').on('click', function () {
+		var count = $(this).attr('data-count');
+		if (!parseInt(count)) {
+			var check = 'all' == count;
+			$("#mapBox input.areaCheck[type='checkbox']").each(function () {
+				if ($(this).prop('checked')) {
+					if (!check) {
+						$(this).trigger('click');
+					}
+				} else {
+					if (check) {
+						$(this).trigger('click');
+					}
+				}
+			});
+		}
+		else{
+			$('.checkSome').removeClass('select');
+			$(this).addClass('select');
+			load(parseInt(count));
+		}
+	});
+
+	$("#detailMapCategory input[type='checkbox']").each(function(){
+		$(this).prop('checked',true)
+	});
+	$("#detailMapCategory input[type='checkbox']").on('click', function () {
+		//var key = iconsKey[gMapType][$(this).attr('id')];
+		var key = $(this).attr('id');
+		var status = $(this).prop('checked');
+		var len = gSpot.length;
+		
+		for (var i = 0; i < len; i++) {
+			if (key == 'c'+gSpot[i].categoryKey && !gSpot[i].self) {
+				gSpot[i].marker.setVisible(status);
+			}
+		}
+	});
+	
+	var loadProc = null;
+	var load = function (inCount) {
+		if (!inCount) {
+			inCount = gConf.count;
+		}
+		var useInitialBounds = gInit;
+		if(999==inCount){
+			useInitialBounds = true;
+			inCount =  gConf.count;
+		}
+		$.getJSON(
+			"/lsc/api/areaMap/load.php", {
+				id: gConf.id,
+				count: inCount,
+				bounds: (useInitialBounds?1:0),
+				edu: gIsEdu?1:0,
+				n:gInitialBounds.getNorthEast().lat(),
+				e:gInitialBounds.getNorthEast().lng(),
+				s:gInitialBounds.getSouthWest().lat(),
+				w:gInitialBounds.getSouthWest().lng(),
+				lang: getLang()
+			},
+			function (res) {
+				setMarker(res.spot,useInitialBounds);
+				gInit=true;
+			}
+		);
+	}
+}
+
+var initMap = function () {
+	
+}
+
+//var gmapInit = false;
+/*
+$('#detailMapLink a').on('click', function () {
+	if(!gmapInit){
+		$.getScript("https://maps.googleapis.com/maps/api/js?key="+mapKey+"&region="+mapRegion+"&language="+mapLang,function(){
+			startMap();
+			$('#gMapEmbed').hide();
+			$('#gMap').show();
+			$('#detailMapCategory').slideDown();
+			$('#detailMapCategory input').prop("checked",true);
+			$('#detailMapLink a').text("周辺スポットを閉じる");
+		});
+
+	} else {
+		if($('#gMapEmbed').is(':visible')){
+			$('#gMapEmbed').hide();
+			$('#gMap').show();
+			$('#detailMapCategory').show();
+			$('#detailMapLink a').text("周辺スポットを閉じる");
+		} else {
+			$('#gMap').hide();
+			$('#detailMapCategory').hide();
+			$('#gMapEmbed').show();
+			$('#detailMapLink a').text("周辺スポットを表示する");
+		}
+	}
+	gmapInit=true;
+});
+*/
+/*
+setTimeout(function(){
+	$("#mapMenu .linkBut").trigger('click');
+},1000);
+*/
+
+	

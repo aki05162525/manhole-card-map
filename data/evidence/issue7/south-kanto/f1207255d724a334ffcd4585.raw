@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!-- STRIGHT ONE Google Consent Mode Tag Start -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments);}
+gtag('set' , 'developer_id.dZTE2OD', true);
+
+/* IMPORTANT : Please change to the target site domain.*/
+const cmd = "toei-anim.co.jp"
+const matches = document.cookie.match(new RegExp(
+"(?:^|; )" + "cookie_consent_gcm_data".replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+));
+let val = null;
+if (matches) {
+cData = JSON.parse(decodeURIComponent(matches[1]));
+if (cmd === cData.cmd) {
+val = cData.gGcType
+}
+}
+if (!val) {
+const lData = localStorage.getItem('cookie_consent_gcm_data')
+if (lData) {
+const lCmdData = JSON.parse(decodeURIComponent(lData))[cmd]
+if (lCmdData) {
+val = lCmdData.gGcType
+}
+}
+}
+
+if (val) {
+gtag('consent', 'default', {
+'ad_storage': 'denied',
+'ad_user_data': 'denied',
+'ad_personalization': 'denied',
+'analytics_storage': 'denied',
+'functionality_storage': 'denied',
+'personalization_storage': 'denied',
+'security_storage': 'denied',
+'wait_for_update': 500
+});
+let updateVal = {};
+for (let i = 0; i < val.length; i++) {
+updateVal[val[i]] = 'granted';
+}
+if (Object.keys(updateVal).length !== 0) {
+gtag('consent', 'update', updateVal);
+}
+} else {
+/* IMPORTANT : gtag.js(default)    --- START --- */
+gtag('consent', 'default', {
+'ad_storage': 'denied',
+'ad_user_data': 'denied',
+'ad_personalization': 'denied',
+'analytics_storage': 'denied',
+'functionality_storage': 'denied',
+'personalization_storage': 'denied',
+'security_storage': 'granted',
+'wait_for_update': 500,
+'region': ['at','be','bg','hr','cy','cz','dk','ee','fi','fr','de','gr','hu','is','ie','it','lv','li','lt','lu','mt','nl','no','pl','pt','ro','sk','si','es','se','gb']
+});
+gtag('consent', 'default', {
+'ad_storage': 'granted',
+'ad_user_data': 'granted',
+'ad_personalization': 'granted',
+'analytics_storage': 'granted',
+'functionality_storage': 'granted',
+'personalization_storage': 'granted',
+'security_storage': 'granted',
+'wait_for_update': 500
+});
+/* --- END --- */
+}
+</script>
+<!-- STRIGHT ONE Google Consent Mode Tag End -->
+
+<!-- STRIGHT ONE Banner Script Start -->
+<script type="module" src="https://cdn01.stright.bizris.com/js/cookie_consent_setting.js?banner_type=banner" charset="UTF-8" data-site-id="SIT-03513aa1-6635-4916-8248-514f4f3baf0c"></script>
+<!-- STRIGHT ONE Banner Script End -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJ2XQ9ZS');</script>
+<!-- End Google Tag Manager -->
+
+<!-- gtm head -->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>アクセス｜東映アニメーションミュージアム</title>
+	<meta name="description" content="東映アニメーションミュージアムへのアクセス方法をご案内。駐車場・駐輪場はないため、公共交通機関の利用がお勧めです。">
+
+		<!-- meta -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" media="all" href="/assets/css/common.css">
+	<link rel="stylesheet" media="screen and (max-width: 767px)" href="/assets/css/sp.css">
+	<link rel="stylesheet" media="print, screen and (min-width: 768px)" href="/assets/css/pc.css">
+	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 970px)" href="/assets/css/tb.css">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://museum.toei-anim.co.jp/favicon.ico">
+	<link rel="icon" href="https://museum.toei-anim.co.jp/favicon.ico">
+	<link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="https://museum.toei-anim.co.jp/assets/img/common/apple-icon-152x152.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/common/android-icon-192x192.png">	<!-- sns -->
+	<meta property="og:site_name" content="東映アニメーションミュージアム">
+	<meta property="og:title" content="東映アニメーションミュージアム">
+	<meta property="og:description" content="東映アニメーションミュージアムへのアクセス方法をご案内。駐車場・駐輪場はないため、公共交通機関の利用がお勧めです。">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://museum.toei-anim.co.jp/access/">
+	<meta property="og:image" content="https://museum.toei-anim.co.jp/assets/img/common/ogp.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="東映アニメーションミュージアム">
+	<meta name="twitter:description" content="東映アニメーションミュージアムへのアクセス方法をご案内。駐車場・駐輪場はないため、公共交通機関の利用がお勧めです。">
+
+</head>
+
+<body id="access">
+<!-- gtm body -->
+	<div class="wrap">
+				<!-- header -->
+		<header>
+			<div id="header">
+				<div class="logo"><a href="/"><img src="/assets/img/common/logo.svg" alt="ロゴ"></a></div>
+				<nav>
+					<ul class="globalNavi">
+						<li><a href="/"><span>トップ</span></a></li>
+						<li><a href="/message/"><span>ごあいさつ</span></a></li>
+						<li><a href="/#information"><span>お知らせ</span></a></li>
+						<li><a href="/guide/"><span>ご利用案内</span></a></li>
+						<li><a href="/exhibition/"><span>展示</span></a></li>
+						<li><a href="/shop/"><span>ショップ</span></a></li>
+						<li><a href="/access/"><span>アクセス</span></a></li>
+					</ul>
+					<ul class="guideLink">
+						<li><a href="/#calendar" class="calendarLinkBtn">開館<br>カレンダー</a></li>
+						<li><a href="/guide/#forGroup" class="schoolLinkBtn">7名以上の<br>学校関係者さまへ</a></li>
+						<li><a href="/en/" class="langBtn"><img src="/assets/img/common/btn_lang_jp.svg" alt="jp"></a></li>
+					</ul>
+					<div id="toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<div class="mainImg">
+			<div class="innerSp100 lowerPage">
+				<h1 data-jp="アクセス">ACCESS</h1>
+				<figure><img src="/assets/img/access/pero_access.png" alt=""></figure>
+			</div>
+		</div>
+		
+		<!-- content -->
+		<div class="content">
+
+			<!-- main -->
+			<main>
+				<section id="prologue">
+					<div class="innerSp100">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6475.9278332241365!2d139.5859966944721!3d35.751691640258116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018efc3552c8307%3A0xee5f969e1ad151ac!2z5p2x5pig44Ki44OL44Oh44O844K344On44Oz44Of44Ol44O844K444Ki44Og!5e0!3m2!1sja!2sjp!4v1692323263657!5m2!1sja!2sjp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				</section>
+				<section id="howToAccess">
+					<div class="inner">
+						<div class="accessInfoWrap">
+							<h2 class="headingRedBdr"><span>住所</span></h2>
+							<p>〒178-8567　<br class="pcNone">東京都練馬区東大泉2-10-5</p>
+						</div>
+						<div class="accessInfoWrap">
+							<h2 class="headingRedBdr"><span>ミュージアムの入口はこちら</span></h2>
+							<figure><img src="/assets/img/access/img_access.jpg" alt="東映アニメーションミュージアム入口"></figure>
+						</div>
+						<div class="accessInfoWrap">
+							<h2 class="headingRedBdr"><span>アクセス方法</span></h2>
+							<div class="boxWrap Two">
+								<div class="whiteBox">
+									<dl class="headingRedBdr">
+										<dt>西武池袋線「大泉学園」駅北口より</dt>
+										<dd>
+											<ul class="accessInfoList">
+												<li class="iconWalk">徒歩約15分でお越しいただけます。</li>
+												<li class="iconBus">北口を出てすぐ右手にあるバス停、1番乗り場から、以下のいずれかのバスにご乗車ください。<br>
+													「東映撮影所前」で下車（約5分）<br>
+													<span>
+														●「和光市駅南口」行き<br>
+														●「長久保」行き
+													</span>
+												</li>
+												<li class="iconTaxi">北口から右手にタクシー乗り場がございます。</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="whiteBox">
+									<dl class="headingRedBdr">
+										<dt>西武池袋線「石神井公園」駅北口より</dt>
+										<dd>
+											<ul class="accessInfoList">
+												<li class="iconBus">1番乗り場から、以下のいずれかのバスにご乗車ください。<br>
+													「東映撮影所前」で下車（約10分）<br>
+													<span>
+														●「成増駅南口」行き<br>
+														●「成増駅経由練馬北町車庫」行き<br>
+														●「石神井循環」
+													</span>
+												</li>
+												<li class="iconTaxi">北口・南口各ロータリーにタクシー乗り場がございます。</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="iconCaution">
+								<p>恐れ入りますが、当施設には駐車場のご用意がございません。公共交通機関のご利用にご協力をお願いいたします。</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+		</div><!-- / .content -->
+
+		<div id="overLay"><!-- sp overlay --></div>
+
+				<!-- footer -->
+		<footer>
+			<div id="footer">
+				<div class="footerLogoArea">
+					<div class="footerLogoWrap">
+						<div class="footerLogo"><a href="/"><img src="/assets/img/common/footer_logo.svg" alt="ロゴ"></a></div>
+						<div class="footerAdress"><p>〒178-8567<br>東京都練馬区東大泉2-10-5</p></div>
+					</div>
+					<ul class="snsLink">
+						<li class="xLink"><a href="https://x.com/TA_museum" target="_blank"><img src="/assets/img/common/logo_x.svg" alt="X"></a></li>
+						<li class="youtubeLink"><a href="https://www.youtube.com/c/ToeiAnimation60th" target="_blank"><img src="/assets/img/common/logo_youtube.svg" alt="YOUTUBE"></a></li>
+					</ul>
+				</div>
+				<div class="footerCopy">
+					<p>&copy; 2025 TOEI ANIMATION Co.,Ltd. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+	</div><!-- / .wrap -->
+
+	<!-- script -->
+	<script src="/assets/js/jquery-3.7.0.min.js"></script>
+	<script src="/assets/js/common.js"></script>
+</body>
+</html>

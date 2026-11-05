@@ -1,0 +1,18 @@
+{
+  "candidateIDs": 12,
+  "uniqueBuildings": 10,
+  "hashAndNumericChecksPassed": true,
+  "evidence7FieldsPassed": true,
+  "exactOldReasonMatches": 2,
+  "protectedFilesChecked": 214,
+  "observedChangesOutsideReviewWriteScope": [
+    "data/national/issue7/tohoku.json"
+  ],
+  "reviewTargetAndBaselineUnchanged": true,
+  "changeAttribution": "担当外の東北JSONに同時作業によるとみられる変更を検出。本レビューの書込先は指定JSONとreview-shikokuのみ。全域不変とは主張しない。",
+  "allUnresolvedDeepInvestigated": false,
+  "reviewJSON": {
+    "snapshotPath": "data/national/issue7/reviews/shikoku.json",
+    "snapshotSHA256": "9bf4dd23b010f00a0a54be70662333ea2349281a3174dc45e606dfa54b51dc6f"
+  }
+}

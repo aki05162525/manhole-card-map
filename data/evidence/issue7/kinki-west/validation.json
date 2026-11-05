@@ -1,0 +1,29 @@
+{
+  "assigned": 134,
+  "updates": 28,
+  "unresolved": 106,
+  "corrections": 1,
+  "newFetchURLs": 393,
+  "successfulFetches": 378,
+  "failedFetches": 15,
+  "investigationStatuses": {
+    "new-research-manual-unresolved": 35,
+    "new-research-manual-candidate": 28,
+    "new-fetch-and-p05-screening-partial": 71
+  },
+  "allIdsClassifiedExactlyOnce": true,
+  "allNewSnapshotHashesVerified": true,
+  "oldDistributionHashesVerified": 81,
+  "p05ZipAndMemberHashesVerified": true,
+  "coordinatesReproducedFromOriginalFeatures": 28,
+  "fixedInputHashesUnchanged": {
+    "ledger.json": "a0e3fe82a4996e1041cb5434b7a24e90408a8c55c1f3f1d7e36e0e5e56b2c6c8",
+    "full.json": "c12ff18fa3bae89bfd04875d2e0656e90fe65fc24780a4882263432769ace130",
+    "assignments.json": "97d7c362e94fbf45ca3c86e093940c8b4140dbe2f31dbd7519a93852d179aeda"
+  },
+  "evidenceFieldsExactlySeven": true,
+  "googleMapContentUsed": false,
+  "distributionOrRelationChanges": false,
+  "codeDocumentDiscrepancies": [],
+  "sourceDocumentCorrections": 1
+}

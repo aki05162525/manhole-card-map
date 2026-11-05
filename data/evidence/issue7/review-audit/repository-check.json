@@ -1,0 +1,351 @@
+{
+  "inputFilesChangedDuringAudit": [],
+  "reviewedSourcesChanged": [],
+  "summary": {
+    "assigned": 810,
+    "regionalCandidates": 202,
+    "originalUnresolved": 608,
+    "currentAdopted": 198,
+    "currentRemaining": 612,
+    "candidateNotAdopted": 6,
+    "currentIntegrated": 0,
+    "adoptedLocationNotGenerated": 198,
+    "targetConfirmedLocations": 0,
+    "targetPins": 0,
+    "ledgerAdoptedMatches": 0,
+    "originalUnresolvedByReason": {
+      "address-conflict": 3,
+      "building-correspondence-unresolved": 1,
+      "building-not-identified": 18,
+      "coordinate-conflict": 11,
+      "coordinate-scope-unresolved": 3,
+      "excessive-indoor-precision-or-missing-building-point": 1,
+      "identity-or-address-mismatch": 3,
+      "insufficient-primary-coordinate": 11,
+      "insufficient-primary-coordinate-source": 47,
+      "missing-building-coordinate": 2,
+      "missing-primary-building-coordinate": 9,
+      "missing-primary-coordinate": 26,
+      "mixed-record": 1,
+      "multiple-buildings": 36,
+      "relocation": 4,
+      "relocation-or-building-identity": 3,
+      "relocation-or-multiple-buildings": 16,
+      "relocation-or-separate-building": 30,
+      "source-conditions-unverified": 6,
+      "wrong-facility": 2,
+      "原典不足": 249,
+      "名称住所不一致": 2,
+      "座標競合": 5,
+      "建物対象外の可能性": 1,
+      "現窓口同定未完": 1,
+      "移転・別棟": 15,
+      "移転・別棟・住所競合": 18,
+      "移転・旧新地点の対応未確定": 3,
+      "移転別棟": 64,
+      "複数棟・建物同定未完了": 17
+    },
+    "originalUnresolvedByInvestigationStatus": {
+      "fresh-primary-retrieval-partial-coordinate-investigation": 27,
+      "new-fetch-and-numeric-screening; building-identification-incomplete": 41,
+      "new-fetch-and-p05-screening-partial": 71,
+      "new-fetch-and-targeted-review": 16,
+      "new-investigation": 85,
+      "new-investigation-attempted; coordinate-unresolved": 38,
+      "new-investigation-partially-resolved": 1,
+      "new-investigation-performed-unresolved": 32,
+      "new-investigation-unresolved": 80,
+      "new-research-manual-unresolved": 35,
+      "new-source-investigation-unresolved": 59,
+      "new-web-fetch-and-p05-search; building-not-resolved": 88,
+      "追加確認実施・建物点未確定": 35
+    }
+  },
+  "regions": {
+    "hokkaido": {
+      "assigned": 68,
+      "regionalCandidates": 30,
+      "originalUnresolved": 38,
+      "currentAdopted": 30,
+      "currentRemaining": 38,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 30,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "address-conflict": 2,
+        "coordinate-conflict": 3,
+        "coordinate-scope-unresolved": 3,
+        "missing-primary-building-coordinate": 9,
+        "relocation-or-separate-building": 15,
+        "source-conditions-unverified": 6
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation": 38
+      }
+    },
+    "tohoku": {
+      "assigned": 84,
+      "regionalCandidates": 25,
+      "originalUnresolved": 59,
+      "currentAdopted": 25,
+      "currentRemaining": 59,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 25,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 41,
+        "移転・別棟・住所競合": 18
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-source-investigation-unresolved": 59
+      }
+    },
+    "north-kanto": {
+      "assigned": 112,
+      "regionalCandidates": 24,
+      "originalUnresolved": 88,
+      "currentAdopted": 21,
+      "currentRemaining": 91,
+      "candidateNotAdopted": 3,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 21,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "building-not-identified": 18,
+        "coordinate-conflict": 3,
+        "excessive-indoor-precision-or-missing-building-point": 1,
+        "identity-or-address-mismatch": 3,
+        "insufficient-primary-coordinate-source": 47,
+        "relocation-or-multiple-buildings": 16
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-web-fetch-and-p05-search; building-not-resolved": 88
+      }
+    },
+    "south-kanto": {
+      "assigned": 64,
+      "regionalCandidates": 7,
+      "originalUnresolved": 57,
+      "currentAdopted": 8,
+      "currentRemaining": 56,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 8,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 40,
+        "建物対象外の可能性": 1,
+        "移転別棟": 16
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-fetch-and-numeric-screening; building-identification-incomplete": 41,
+        "new-fetch-and-targeted-review": 16
+      }
+    },
+    "hokuriku": {
+      "assigned": 40,
+      "regionalCandidates": 8,
+      "originalUnresolved": 32,
+      "currentAdopted": 8,
+      "currentRemaining": 32,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 8,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "address-conflict": 1,
+        "coordinate-conflict": 2,
+        "missing-building-coordinate": 2,
+        "missing-primary-coordinate": 5,
+        "multiple-buildings": 19,
+        "relocation-or-building-identity": 3
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation-performed-unresolved": 32
+      }
+    },
+    "koshin": {
+      "assigned": 43,
+      "regionalCandidates": 16,
+      "originalUnresolved": 27,
+      "currentAdopted": 16,
+      "currentRemaining": 27,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 16,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "coordinate-conflict": 1,
+        "insufficient-primary-coordinate": 11,
+        "relocation-or-separate-building": 15
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "fresh-primary-retrieval-partial-coordinate-investigation": 27
+      }
+    },
+    "tokai": {
+      "assigned": 52,
+      "regionalCandidates": 17,
+      "originalUnresolved": 35,
+      "currentAdopted": 17,
+      "currentRemaining": 35,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 17,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 17,
+        "座標競合": 1,
+        "移転別棟": 17
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "追加確認実施・建物点未確定": 35
+      }
+    },
+    "kinki-east": {
+      "assigned": 54,
+      "regionalCandidates": 16,
+      "originalUnresolved": 38,
+      "currentAdopted": 16,
+      "currentRemaining": 38,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 16,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 23,
+        "移転・別棟": 15
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation-attempted; coordinate-unresolved": 38
+      }
+    },
+    "kinki-west": {
+      "assigned": 134,
+      "regionalCandidates": 28,
+      "originalUnresolved": 106,
+      "currentAdopted": 26,
+      "currentRemaining": 108,
+      "candidateNotAdopted": 2,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 26,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 78,
+        "名称住所不一致": 2,
+        "座標競合": 3,
+        "現窓口同定未完": 1,
+        "移転別棟": 22
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-fetch-and-p05-screening-partial": 71,
+        "new-research-manual-unresolved": 35
+      }
+    },
+    "chugoku": {
+      "assigned": 57,
+      "regionalCandidates": 10,
+      "originalUnresolved": 47,
+      "currentAdopted": 10,
+      "currentRemaining": 47,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 10,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "coordinate-conflict": 2,
+        "missing-primary-coordinate": 21,
+        "mixed-record": 1,
+        "multiple-buildings": 17,
+        "relocation": 4,
+        "wrong-facility": 2
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation": 47
+      }
+    },
+    "shikoku": {
+      "assigned": 27,
+      "regionalCandidates": 12,
+      "originalUnresolved": 15,
+      "currentAdopted": 12,
+      "currentRemaining": 15,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 12,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 6,
+        "移転別棟": 9
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation-unresolved": 15
+      }
+    },
+    "kyushu-okinawa": {
+      "assigned": 74,
+      "regionalCandidates": 9,
+      "originalUnresolved": 65,
+      "currentAdopted": 8,
+      "currentRemaining": 66,
+      "candidateNotAdopted": 1,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 8,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "原典不足": 44,
+        "座標競合": 1,
+        "移転・旧新地点の対応未確定": 3,
+        "複数棟・建物同定未完了": 17
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation-unresolved": 65
+      }
+    },
+    "sakuragicho": {
+      "assigned": 1,
+      "regionalCandidates": 0,
+      "originalUnresolved": 1,
+      "currentAdopted": 1,
+      "currentRemaining": 0,
+      "candidateNotAdopted": 0,
+      "currentIntegrated": 0,
+      "adoptedLocationNotGenerated": 1,
+      "targetConfirmedLocations": 0,
+      "targetPins": 0,
+      "ledgerAdoptedMatches": 0,
+      "originalUnresolvedByReason": {
+        "building-correspondence-unresolved": 1
+      },
+      "originalUnresolvedByInvestigationStatus": {
+        "new-investigation-partially-resolved": 1
+      }
+    }
+  }
+}

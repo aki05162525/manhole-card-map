@@ -1,0 +1,786 @@
+[
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "sourceMetadataPath": "data/evidence/issue5/chubu/P05-22_GML.zip.source.json",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "retrievalTimeStatus": "recorded-in-sidecar",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/ab548fdcccd6faf9a5538375.html",
+    "snapshotSHA256": "d908ebe07064a4209a0da48efc57b3104215fa104a71283c55c03434ceb3691a",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/3bb5f25c6a06af64e728.html",
+    "snapshotSHA256": "f1f5b0fa05b1e1e0e50c145d196115d42c135d7ec875bcb7e6035bff25800ed9",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/bdfdefe3c6f22a457c32.html",
+    "snapshotSHA256": "83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+    "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/proposals-chubu/f6bc175ab9f7279ed939.html",
+    "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/c3febb597e8b0cafbdd1.html",
+    "snapshotSHA256": "11dfc16fe9699cf76ef63438e740804b9d2bc7e7081c293d4db755abbcc0d117",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+    "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/d978205b437920cb5183.html",
+    "snapshotSHA256": "948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/gkp-current-design.html",
+    "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/3271176bd331a58e3358.html",
+    "snapshotSHA256": "6f12dbe837ffb9f4e978d37a51dafa8a0a19400c24225bbbce01c2d2f559b08e",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/689a8f5590d85ab5f9a8.html",
+    "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+    "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+    "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/971c86ba833f5fdaadae.html",
+    "snapshotSHA256": "9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/f025ceade1cf7f0fbcf1.html",
+    "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+    "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/c7331fde339a5043de92.html",
+    "snapshotSHA256": "4535755945294f4ac428a02b91ceb8fdd6fc1e4e8976cc47b63ad0d80d6ca7e2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/25e20c68afa8352a3312.html",
+    "snapshotSHA256": "e8d9b0a9890053226389f7188a8ae627831dbf59c9d79b174e46c1c6c5d8b0f0",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/519ea58f41b63e425fbd.html",
+    "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+    "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/53fc190289517f9154c3.html",
+    "snapshotSHA256": "466e849146c152eef2787b74f3ca1932a3a136390cde1cd392860c55a9d92f29",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/a85cae5a25d7eb573e96.html",
+    "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+    "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+    "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+    "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+    "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/e1bc9c32a6613d8e7bfa.html",
+    "snapshotSHA256": "bd892d60d410f6056c04575f3c7552aa733acc409143b5ac8509ed79bd7debd3",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/8433ec26de36764e31b3.html",
+    "snapshotSHA256": "c7a5e36a8ba5c0c02958e1b815f2ad00eb4e067b714097c4fb41c030f2238dcf",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+    "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+    "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/c54f705610e406880b3a.html",
+    "snapshotSHA256": "9c48a698c270fa925dd21256160df8aa958d9b400c53a290980c26ccbce82e45",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/bf46211ce6cbf7385759.html",
+    "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/8b979d860cd7fef39364.html",
+    "snapshotSHA256": "cbd1a4cbe3258417c7712958d3b0bf8ce35e56f336de923847535c303eeba02f",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/chubu-west/3e4a7c50833d565690c7.html",
+    "snapshotSHA256": "246e9ccd2a71e6e2a7e27b29c1ecbcf2de1738aa3c81c0180658ddb52c076739",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/numazu-card.html",
+    "snapshotSHA256": "9f5224e35d9579f91c52e7d09484eb1db172d8062cd8cee16777a28a9bee366f",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/numazu-office.html",
+    "snapshotSHA256": "69b095ea64e26f686f258a79b825ccb02bb43e21e3c0f258a6b29e336228630b",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+    "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+    "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/iwata-card.html",
+    "snapshotSHA256": "2e613c60c3c48a1ab8b07e166c071f2bdd13d2a96c8d6802bf3a51b25686c2b3",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/yoshida-card.html",
+    "snapshotSHA256": "da71f9378bae82878adfba1070e003d48c0701719021cbaa3b981673fc03435d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/f1f5b0fa05b1e1e0e50c145d196115d42c135d7ec875bcb7e6035bff25800ed9.html",
+    "snapshotSHA256": "f1f5b0fa05b1e1e0e50c145d196115d42c135d7ec875bcb7e6035bff25800ed9",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2.html",
+    "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8.html",
+    "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/11dfc16fe9699cf76ef63438e740804b9d2bc7e7081c293d4db755abbcc0d117.html",
+    "snapshotSHA256": "11dfc16fe9699cf76ef63438e740804b9d2bc7e7081c293d4db755abbcc0d117",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73.html",
+    "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7.html",
+    "snapshotSHA256": "948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc.html",
+    "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/6f12dbe837ffb9f4e978d37a51dafa8a0a19400c24225bbbce01c2d2f559b08e.html",
+    "snapshotSHA256": "6f12dbe837ffb9f4e978d37a51dafa8a0a19400c24225bbbce01c2d2f559b08e",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0.html",
+    "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/68edbed01b6e40ed1fa711c1.html",
+    "snapshotSHA256": "059a5c1158c82cabce28560415d11a5bbb2c189901b2dc111c6adfdfdaec7817",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1.html",
+    "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d.html",
+    "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576.html",
+    "snapshotSHA256": "9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132.html",
+    "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978.html",
+    "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/bfc5519bffe3eb33e36e97ed.html",
+    "snapshotSHA256": "35c8100dfdbe5389bb2aa565c1b1fb332f4803ffd9b5deabb5b416f858fb3e87",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/4535755945294f4ac428a02b91ceb8fdd6fc1e4e8976cc47b63ad0d80d6ca7e2.html",
+    "snapshotSHA256": "4535755945294f4ac428a02b91ceb8fdd6fc1e4e8976cc47b63ad0d80d6ca7e2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/7163ea1ec2aa35b86f0b.html",
+    "snapshotSHA256": "f4e2e600fd98779968cdc1b35053005288f1e91b663c991f79507380822497b1",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/a942c43e7b34c5ea2518a1cd.html",
+    "snapshotSHA256": "56cceb5e42b7e23a933a0c8341c631cd8bd6e135f0d57dacb6be1c7f9561cc32",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/e8d9b0a9890053226389f7188a8ae627831dbf59c9d79b174e46c1c6c5d8b0f0.html",
+    "snapshotSHA256": "e8d9b0a9890053226389f7188a8ae627831dbf59c9d79b174e46c1c6c5d8b0f0",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77.html",
+    "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/f7307d2d1fb758b210567a87.html",
+    "snapshotSHA256": "0420cfbe592ffb1e612bd7f24d500e611feaaf4f95eab53696efb65a9c3032dd",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/9a643c0de5e17c467073580e.html",
+    "snapshotSHA256": "3f2e798fee74e0001f9e6bb84fe953402436457bb80987049d1622f7ff526afa",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a.html",
+    "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/466e849146c152eef2787b74f3ca1932a3a136390cde1cd392860c55a9d92f29.html",
+    "snapshotSHA256": "466e849146c152eef2787b74f3ca1932a3a136390cde1cd392860c55a9d92f29",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/059f2d4867f39e2aa8aee6ff.html",
+    "snapshotSHA256": "b96a718cbbdbfbe3295e36f1be870924ed6b388c13d9b8018d884859e15597a2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/6ea00aecf173976d168e14f5.html",
+    "snapshotSHA256": "f2c7287bfca1975b0fc91f47e4b1d619f1ea102833d326bc967960e5c29d1fab",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2.html",
+    "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d.html",
+    "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/708527bcc5a726837bd7.html",
+    "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/5c4912ad71a913aab381f754.html",
+    "snapshotSHA256": "62639c1d95da7f19fbaa3d2bad8927efd41f7f5df5a76f254788dda07dcfce1c",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de.html",
+    "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889.html",
+    "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/385509c35a8afe6d1e4b.html",
+    "snapshotSHA256": "6404343efdda86016625c66ac4be09af83b4f96f5b4348a71641de9f23deae6f",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/de220302776541ef00818e01.html",
+    "snapshotSHA256": "90fce3d7883b462faa4a390c6774b5cbcabcb7105487f8e202726ba216134702",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/4238c16462ce949f9348f188.html",
+    "snapshotSHA256": "6b7c4f427b1cdb25f8cf49bca0486528a04dae4adea1632854c6442556cef5b0",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820.html",
+    "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/bd892d60d410f6056c04575f3c7552aa733acc409143b5ac8509ed79bd7debd3.html",
+    "snapshotSHA256": "bd892d60d410f6056c04575f3c7552aa733acc409143b5ac8509ed79bd7debd3",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/c7a5e36a8ba5c0c02958e1b815f2ad00eb4e067b714097c4fb41c030f2238dcf.html",
+    "snapshotSHA256": "c7a5e36a8ba5c0c02958e1b815f2ad00eb4e067b714097c4fb41c030f2238dcf",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b.html",
+    "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a.html",
+    "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/5e367acb7240f60f7279.html",
+    "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/6238bfae862fcfa92236e148.html",
+    "snapshotSHA256": "ff7bda4c156a9e1877a0ab63038afe50995c53a867bd10f3751274b88b4365da",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/b78402d095aa403c706a8e81.html",
+    "snapshotSHA256": "452316209624811d9e633f42d1163db351249bf176b60a7f76369213c5d150b9",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/f116fd91cb3fa3fd68d2489f.html",
+    "snapshotSHA256": "af23f6520406cd5b7d61d5d9487657c3a38baa35e2ffe8dee67fb7eb1bd2748d",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e.html",
+    "snapshotSHA256": "83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/54d81872c4dafc8080b0.html",
+    "snapshotSHA256": "119bb919a966af2a394651c0f4bd4aeec32b55b58894264dad8889b769268927",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/0c81e2f3aea3171414d4b99f.html",
+    "snapshotSHA256": "240c4d3196804ae674c76e695d8f2c8225a0f543f29760739fbf2aeebc275102",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/9c48a698c270fa925dd21256160df8aa958d9b400c53a290980c26ccbce82e45.html",
+    "snapshotSHA256": "9c48a698c270fa925dd21256160df8aa958d9b400c53a290980c26ccbce82e45",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/0c5ce4e7f70cc366031ba819.html",
+    "snapshotSHA256": "4ac09088cfe74fff6df101e0f658afe18e78b59de3c783b7eed7f26f6168c938",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/5730b604f7150bd071c9cc79.html",
+    "snapshotSHA256": "28219c2bfd6d7b66897a7e95bb78d4954b7ecc75a12fd96ddfdf31c7b3fe1938",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/bf46211ce6cbf7385759.html",
+    "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/b74bc37e14c936df82090697.html",
+    "snapshotSHA256": "135662ab024cbcb57f731ae87335dd5df6b614d6e1c0e567eb6a48b1a9b0592f",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599.html",
+    "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/21f980de953d19733592.html",
+    "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/national/locations-chubu-west/1d71d5dc66a36c4a788d93d0.html",
+    "snapshotSHA256": "46764881fa3f51ead679b4534af5426b2d45b366f65b982aeca89f26f7c04979",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/reused/cbd1a4cbe3258417c7712958d3b0bf8ce35e56f336de923847535c303eeba02f.html",
+    "snapshotSHA256": "cbd1a4cbe3258417c7712958d3b0bf8ce35e56f336de923847535c303eeba02f",
+    "sourceMetadataPath": null,
+    "fetchedAt": null,
+    "retrievalTimeStatus": "not-established-in-this-research",
+    "newlyFetched": false
+  }
+]

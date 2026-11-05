@@ -1,0 +1,194 @@
+{
+  "originalCount": 202,
+  "selectedCount": 198,
+  "deferred": [
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "name": "小山市役所 市役所4階 下水道施設課内"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町役場上下水道課"
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "name": "小山市役所 市役所1階 中央管理室(庁舎西側)"
+    },
+    {
+      "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+      "name": "柏原市役所本館2階 かしわらテラス図書スペース"
+    },
+    {
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "name": "スワンホール"
+    },
+    {
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "name": "国分シビックセンター1階総合窓口"
+    }
+  ],
+  "additional": [
+    {
+      "facilityId": "facility:kanto-south-281213c5dc294c44f2e5",
+      "name": "秦野駅観光案内所"
+    },
+    {
+      "facilityId": "facility:kanto-south-7d5b518b29440ef8d976",
+      "name": "桜木町駅観光案内所"
+    }
+  ],
+  "patches": [
+    {
+      "file": "data/overrides/regions/kyushu-okinawa.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:kyushu-475d355ad6294a2b61a8"
+      },
+      "field": "address",
+      "old": "沖和県国頭郡本部町字大浜881-1",
+      "new": "沖縄県国頭郡本部町字大浜881-1",
+      "evidence": {
+        "sourceUrl": "https://motobufs.jp/access/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+        "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94",
+        "sourceLocator": "施設アクセスの住所欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが運営者の住所表示と固定台帳を照合。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chubu-west.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:chubu-west-3ae4954df5521d92e778"
+      },
+      "field": "address",
+      "old": "静岡県沼津市御幸町16-1 水道部庁舎1階",
+      "new": "静岡県沼津市御幸町2-20 水道部庁舎1階",
+      "evidence": {
+        "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "sourceLocator": "ID=0000000030 水道部庁舎、電話934-4851。市電話一覧の水道総務課庶務係と同定。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "水道部庁舎の名称・電話とAED住所2-20が一致。本庁16-1を訂正。固定入力への適用は禁止。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chubu-west.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:chubu-west-f860c41765b78b59c083"
+      },
+      "field": "address",
+      "old": "静岡県沼津市御幸町16-1(水道部庁舎2階)",
+      "new": "静岡県沼津市御幸町2-20(水道部庁舎2階)",
+      "evidence": {
+        "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "sourceLocator": "ID=0000000030 水道部庁舎、電話934-4851。市電話一覧の水道総務課庶務係と同定。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "水道部庁舎の名称・電話とAED住所2-20が一致。本庁16-1を訂正。固定入力への適用は禁止。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chugoku-shikoku.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:cs-424799903d1a9c1291"
+      },
+      "field": "address",
+      "old": "岡山県倉敷市玉島3丁目8-25 / 岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階",
+      "new": "岡山県倉敷市玉島3丁目8-25",
+      "evidence": {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "sourceLocator": "カード別配布場所・所在地・電話欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが固定台帳のexact old値と市配布原本の施設別値を照合。提案のみ。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chugoku-shikoku.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:cs-424799903d1a9c1291"
+      },
+      "field": "phone",
+      "old": "086-522-0151 / 086-526-8446",
+      "new": "086-522-0151",
+      "evidence": {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "sourceLocator": "カード別配布場所・所在地・電話欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが固定台帳のexact old値と市配布原本の施設別値を照合。提案のみ。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chugoku-shikoku.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:cs-d79e170069f79cc7d2"
+      },
+      "field": "address",
+      "old": "岡山県倉敷市児島駅前1-107 / 岡山県倉敷市児島駅前1-37 2階",
+      "new": "岡山県倉敷市児島駅前1-107",
+      "evidence": {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "sourceLocator": "カード別配布場所・所在地・電話欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが固定台帳のexact old値と市配布原本の施設別値を照合。提案のみ。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/chugoku-shikoku.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:cs-d79e170069f79cc7d2"
+      },
+      "field": "phone",
+      "old": "086-472-1289 / 086-472-4450",
+      "new": "086-472-1289",
+      "evidence": {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "sourceLocator": "カード別配布場所・所在地・電話欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが固定台帳のexact old値と市配布原本の施設別値を照合。提案のみ。"
+      }
+    },
+    {
+      "file": "data/overrides/proposals/west-south.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:ws-811926f2652d6640dc"
+      },
+      "field": "phone",
+      "old": "",
+      "new": "086-526-8446",
+      "evidence": {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "sourceLocator": "カード別配布場所・所在地・電話欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが固定台帳のexact old値と市配布原本の施設別値を照合。提案のみ。"
+      }
+    }
+  ]
+}

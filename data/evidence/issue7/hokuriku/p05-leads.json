@@ -1,0 +1,678 @@
+[
+  {
+    "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-0c0f3438fa9b21563d94",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 16,
+        "index": 685,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "16321",
+            "P05_002": "5",
+            "P05_003": "舟橋会館",
+            "P05_004": "舟橋村海老江147"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.30718163925533,
+              36.70185502391252
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_16_GML.zip!P05-22_16.geojson#/features/685"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-1def973f29471b191a99",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 1235,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "1",
+            "P05_003": "佐渡市役所",
+            "P05_004": "佐渡市千種232"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.36814709390015,
+              38.01829995398106
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1235"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-2a3c4c27a70d89172634",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-2c154ba68d0d6982682e",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 17,
+        "index": 474,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "17209",
+            "P05_002": "1",
+            "P05_003": "かほく市役所",
+            "P05_004": "かほく市宇野気ニ81"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.70667244978443,
+              36.71997178764779
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/474"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 1235,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "1",
+            "P05_003": "佐渡市役所",
+            "P05_004": "佐渡市千種232"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.36814709390015,
+              38.01829995398106
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1235"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-430d427a8a9917ec3c97",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-4a230b7f47d938402297",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-5435eb27542ce25ee75a",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-63a2e5f9e47674402ad4",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-66796850ae3f8443ee9a",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-6ce3317916265907deb9",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-6f1cf560a94cdce2b66d",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 17,
+        "index": 798,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "17384",
+            "P05_002": "1",
+            "P05_003": "志賀町役場",
+            "P05_004": "志賀町末吉千古1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.77801464236055,
+              37.00618581052139
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/798"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-8d079ca91aebd481b02f",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-8dd03483e4267e298b2c",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-91ee9dc1eec4e57f0c55",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-9720552572da10795a23",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 1191,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐和田体育館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32305892066813,
+              37.99800792522793
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1191"
+      },
+      {
+        "pref": 15,
+        "index": 1193,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐渡離島開発総合センター",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32251691802279,
+              37.99812392540366
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1193"
+      },
+      {
+        "pref": 15,
+        "index": 1194,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐渡中央会館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.3225069179761,
+              37.99812392540416
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1194"
+      },
+      {
+        "pref": 15,
+        "index": 1215,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "3",
+            "P05_003": "佐和田行政サービスセンター",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32250171803022,
+              37.99804555530516
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1215"
+      },
+      {
+        "pref": 15,
+        "index": 1218,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "4",
+            "P05_003": "佐和田地区公民館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32248171793688,
+              37.9980455553062
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1218"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-9b6d37f36d104bd85e7d",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-9edbc9e5f93fa2bba0a9",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-a038b0439fa5d98aaedd",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-a0e69430196f5ec5e2d8",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-a6e07b78b9b85940a9ea",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-a74d74b8f71512ef2f93",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-a97e4141d06f3d78c1ff",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 17,
+        "index": 916,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "17463",
+            "P05_002": "4",
+            "P05_003": "宇出津公民館",
+            "P05_004": "能登町字宇出津ト字29-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.14664642175237,
+              37.307930583904344
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/916"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 772,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15212",
+            "P05_002": "4",
+            "P05_003": "荒川地区公民館",
+            "P05_004": "村上市羽ヶ榎104-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.44451505446574,
+              38.125599071376314
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/772"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-b283747d4f21772ff09f",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-b2f8a6198b903eba94ee",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-b7d603f8e144e10c3bb0",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 18,
+        "index": 31,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "18201",
+            "P05_002": "2",
+            "P05_003": "企業局庁舎",
+            "P05_004": "福井市大手3-13-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.21844894858972,
+              36.06572760281307
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_18_GML.zip!P05-22_18.geojson#/features/31"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-b7d939284218814b6bba",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 211,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15202",
+            "P05_002": "3",
+            "P05_003": "ながおか市民センター",
+            "P05_004": "長岡市大手通2-2-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.85011778119681,
+              37.448142298804356
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/211"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-bfa20e96abc2e1e893f9",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-cf23f7f3846328ad1c67",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 17,
+        "index": 798,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "17384",
+            "P05_002": "1",
+            "P05_003": "志賀町役場",
+            "P05_004": "志賀町末吉千古1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.77801464236055,
+              37.00618581052139
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_17_GML.zip!P05-22_17.geojson#/features/798"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-d96a5cb4a1b2f5fc4173",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 1191,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐和田体育館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32305892066813,
+              37.99800792522793
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1191"
+      },
+      {
+        "pref": 15,
+        "index": 1193,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐渡離島開発総合センター",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32251691802279,
+              37.99812392540366
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1193"
+      },
+      {
+        "pref": 15,
+        "index": 1194,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "5",
+            "P05_003": "佐渡中央会館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.3225069179761,
+              37.99812392540416
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1194"
+      },
+      {
+        "pref": 15,
+        "index": 1215,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "3",
+            "P05_003": "佐和田行政サービスセンター",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32250171803022,
+              37.99804555530516
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1215"
+      },
+      {
+        "pref": 15,
+        "index": 1218,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15224",
+            "P05_002": "4",
+            "P05_003": "佐和田地区公民館",
+            "P05_004": "佐渡市河原田本町394"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.32248171793688,
+              37.9980455553062
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1218"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-ee483872ed2d67e3f0ab",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 15,
+        "index": 1540,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "15405",
+            "P05_002": "1",
+            "P05_003": "出雲崎町役場",
+            "P05_004": "出雲崎町大字川西140"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.70937012588254,
+              37.53071340123572
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1540"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-east-f0ae4d2d7ac7da968233",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:chubu-east-ffaf8d907c2a31f69989",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": [
+      {
+        "pref": 16,
+        "index": 63,
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "16201",
+            "P05_002": "1",
+            "P05_003": "富山市役所",
+            "P05_004": "富山市新桜町7-38"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.21345350012425,
+              36.69598108126222
+            ]
+          }
+        },
+        "sourceLocator": "P05-22_16_GML.zip!P05-22_16.geojson#/features/63"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:chubu-shibata-tourist-information",
+    "method": "P05-22 prefectures 15–18: full feature scan, name containment or normalized address containment; leads only, not automatic approval",
+    "matches": []
+  }
+]

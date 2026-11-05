@@ -1,0 +1,498 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>サイトのご利用について | 高知県観光情報Webサイト「こうち旅ネット」</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" content="" />
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <!--<script async src="https://cse.google.com/cse.js?cx=af806b3e77931b8ce"></script>-->
+        <script src="/js/lightbox.js"></script>
+        <script src="/js/common.js?20260327"></script>
+        <link rel="stylesheet" href="/css/common.css?20260327" />
+        <link rel="stylesheet" href="/css/common-sp.css?20240621" media="screen and (max-width: 767px)"/>
+        <link rel="stylesheet" href="/css/lightbox.css" />
+        <link rel="stylesheet" href="/css/page-detail.css?20220506" />
+        
+        <style>
+            .sci__bf-block img{
+                width:45px;
+            }
+            .park_tab {
+                display: flex;
+                gap: 10px;
+            }
+            .park_tab > p {
+                font-size: 14px;
+                color: var(--main-col-b);
+                padding: 5px 10px;
+                border: 2px solid var(--main-col-b);
+                width: fit-content;
+                font-weight: bold;
+                border-radius: 5px;
+                background-color: #fff;
+                margin: 10px 0 0;
+            }
+            .park_tab + p + p,
+            .park_tab + p{
+                margin: 0;
+            }
+            </style>
+    </head>
+    <body class="yosakoinet-common">
+
+
+
+        <!-- 共通ヘッダーここから -->
+        
+        <header class="harimayabashi">
+            <div class="header__inner">
+                <div class="h-logo">
+                    <a href="/" class="logo_s">
+                        <div>
+                            <img src="/images/common/logo_all.png" />
+                        </div>
+                    </a>
+                </div>
+               
+                <div class="roof-sp">
+                    <div></div>
+                    <div class="menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="global-nav-wrapper">
+                    
+                    <div class="global-nav_v2">                        
+                        
+                        
+                        <div>
+                            <div class="m-title">
+                                <a href="/special_secondry_list.html">
+                                    <div class="m-title__inner">
+                                        <div class="m-title__icon"><img src="/images/common/ic_header-01.png"/></div>
+                                        <p>特集</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!--<img class="tip-beginner" src="/images/common/tip_beginner.png" /> 初めての方はここ！ -->
+                        </div>
+                        
+                        
+                        <div>
+                            <div class="m-title">
+                                <a href="/model_course_secondry_list.html">
+                                    <div class="m-title__inner">
+                                        <div class="m-title__icon"><img src="/images/common/ic_header-02.png"/></div>
+                                        <p>モデルコース</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        <div>
+                                
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-03.png"/></div>
+                                    <p>スポット検索</p>
+                                </div>                                
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="/search_spot_sightseeing.html"><p>観光</p></a></li>
+                                    <li><a href="/search_spot_activity.html"><p>体験</p></a></li>
+                                    <li><a href="/search_spot_food.html"><p>グルメ・名物</p></a></li>                                
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-04.png"/></div>
+                                    <p>イベント</p>
+                                </div>   
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><div><a href="/search_event.html"><p>開催予定のイベント検索</p></a></div></li>
+                                    
+                                    
+                                    <li><div><a href="https://kochi-tabi.jp/lp/local-festival/"><p>高知のよさこい地域の祭り</p></a></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-05.png"/></div>
+                                    <p>宿泊・旅の予約</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><div><a href="/search_spot_inn.html"><p>宿泊施設検索</p></a></div></li>
+                                    <li><div><a href="/search_activity_plan.html"><p>オンライン予約できる体験プラン</p></a></div></li>
+                                    <!-- <li><div><a href="/easy_reserve.html"><p>直前予約できる体験プラン</p></a></div></li> -->
+                                    <li><div><a href="/search_travel.html"><p>旅行会社の商品</p></a></div></li>
+                                    <li><div><a href="/search_tour.html"><p>旅行会社のサイトで探す</p></a></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-06.png"/></div>
+                                    <p>お役立ち情報</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">   
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="/ryoma-pass/"><p>龍馬パスポート</p></a></li>
+                                    <li><a href="/tabihiroba/"><p>こうち旅広場</p></a></li>   
+                                    <li><a href="/my-bus/" target="_blank"><p>MY遊バス</p></a></li>
+                                    <li><a href="/taxi/" target="_blank"><p>おもてなしタクシー</p></a></li>  
+                                    <li><a href="/tokutoku/"><p>周遊バス＆周遊きっぷ</p></a></li>
+                                    <li><a href="/pamphlet.html"><p>デジタルパンフレット</p></a></li>
+                                    <li><a href="/map_search.html"><p>現在地からマップで検索</p></a></li>
+                                    <li><a href="https://kochi-tabi.jp/sonaeru.html"><p>災害情報</p></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-07.png"/></div>
+                                    <p>アクセス</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">   
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="https://kochi-tabi.jp/access/"><p>高知へのアクセス</p></a></li>
+                                    <li><a href="https://kochi-tabi.jp/access/kennai.html"><p>県内アクセス</p></a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                   
+                    <ul class="sub-nav">
+                         
+                                <li class="g-search pc-only">
+                                    <form class="custom-form" action="/google_search_result.html">
+                                        <div class="gcse-search">
+                                            <input type="hidden" name="cx" value="f05dace2d9d55bd61" />
+                                            <input type="hidden" name="ie" value="UTF-8" />
+                                            <input type="text" class="search" name="q" placeholder="サイト内検索" autocomplete="off" />
+                                            <!--<input type="submit" value="検索" />-->
+                                            <input type="submit" value="" class="search-image-button" />
+                                        </div>
+                                    </form>
+                                </li>
+                                
+                        <li><a href="/corp/"><p>法人・メディアの方へ</p></a></li>
+<!--                        <li><a href="/corp/convention/"><p>MICE</p></a></li>
+                        <li><a href="/corp/sports/"><p>スポーツ合宿</p></a></li>
+                        <li><a href="/kochi-fc/" target="_blank"><p>フィルムコミッション</p></a></li>
+                        <li><a href="/corp/support_member/"><p>賛助会員</p></a></li>-->
+                    </ul>
+                    <div class="spLogos sp-only tb-only">
+                        <img src="/images/common/logo_kvca.png" />
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="nav-overlay"></div>
+        </header>
+
+
+        <!-- 共通ヘッダーここまで -->
+
+
+
+
+
+
+        <main>
+            <div class="breadcrumb">
+                <a href="/">トップページ</a>
+                &gt; サイトのご利用について
+            </div>
+            <form class="hidden-form">
+                <input type="hidden" name="id" value="30"/>
+                <input type="hidden" name="errorMessages" value=""/>
+            </form>
+
+
+            
+                <div class="related-pages">
+                    <ul>
+                        <li>【関連ページ】</li>
+                            <li>・<a href="/sonaeru.html">災害情報</a></li>
+                            
+                            <li>・<a href="/link.html">リンク集</a></li>
+                            
+                            <li>・<a href="/pamphlet.html">パンフレット（高知県観光コンベンション協会発行）</a></li>
+                            
+                            <li>・<a href="/search_tour.html">旅行会社のサイトで探す</a></li>
+                            
+                            <li>・<a href="/contact.html">お問い合わせ</a></li>
+                            
+                            <li>・<a href="/safety_provider.html">体験プログラムの安全な実施に向けた取組</a></li>
+                            
+                    </ul>
+                </div>
+                
+
+
+
+
+            <!-- 詳細情報ここから -->
+            <div class="main-block block-spot-detail page-main">
+
+                <h2 class="block-title has-related-pages"><div><strong>サイトのご利用について</strong></div></h2>
+
+                
+                <div class="original-contents">
+                    <h2>プライバシーポリシー</h2>
+
+<p>当ホームページでは、個人情報の重要性を尊重し、個人情報の保護に関する法令を遵守すると共に、個人情報の収集、利用及び管理については、次のように取り扱います。</p>
+
+<ul>
+  <li>個人情報とは</li>
+</ul>
+
+<p>「個人情報」とは、個人に関する情報（住所、氏名、電話番号、E-mailアドレス等）であり、特定の個人を識別できるものをいいます。（直接、個人を識別できるもののほか、他の情報と照合することで識別することができる情報も含みます。）</p>
+
+<ul>
+  <li>個人情報収集の制限</li>
+</ul>
+
+<p>当ホームページを通じて個人情報を収集する際は、利用者の意思による情報の提供を原則とします。個人情報の収集は、その収集目的を明確にし、その目的を達成するために必要な範囲内で行います。</p>
+
+<ul>
+  <li>個人情報の利用及び提供の制限</li>
+</ul>
+
+<p>個人情報は、収集目的の範囲内で利用します。また、個人情報は、利用者本人の同意がある場合など、法令や条例で定める場合を除き、収集目的以外で利用したり、第三者に提供したりすることはありません。</p>
+
+<ul>
+  <li>個人情報の管理</li>
+</ul>
+
+<p>皆様から収集した個人情報は、漏えい、滅失及びき損の防止、その他適切な管理のため必要な措置を講ずるように努めています。</p>
+
+<h2>Google Analytics（グーグル　アナリティクス）の利用について</h2>
+
+<ul>
+  <li>当ホームページでは、サイトの利用状況を把握するために<a href="https://developers.google.com/analytics/?hl=ja">Google Analytics</a>を利用しています。</li>
+  <li>Google Analyticsは、Cookie（クッキー）を利用して、個々のユーザを特定することなく、サイトの利用動向を収集し、収集された情報は、Google社のプライバシーポリシーに基づいて管理されます。
+  <div id="cke_pastebin" style="position: absolute; left: -1000px; top: 16px; width: 1px; height: 1px; overflow: hidden;">報は、Google社のプライバシーポリシーに基づいて管理されます。</div>
+
+  <div id="cke_pastebin" style="position: absolute; left: -1000px; top: 16px; width: 1px; height: 1px; overflow: hidden;">報は、Google社のプライバシーポリシーに基づいて管理されます。</div>
+
+  <div id="cke_pastebin" style="position: absolute; left: -1000px; top: 16px; width: 1px; height: 1px; overflow: hidden;">ザを特定することなく、サイトの利用動向を収集し、収集された情</div>
+
+  <div id="cke_pastebin" style="position: absolute; left: -1000px; top: 16px; width: 1px; height: 1px; overflow: hidden;">報は、Google社のプライバシーポリシーに基づいて管理されます。</div>
+  </li>
+  <li>Google Analyticsの<a href="https://marketingplatform.google.com/about/analytics/terms/jp/">利用規約はこちら</a>をご覧ください。</li>
+  <li>なお、Google Analyticsのサービス利用による損害については、公益財団法人　高知県観光コンベンション協会はいかなる責任も負いません。</li>
+</ul>
+
+<div id="cke_pastebin" style="position: absolute; left: -1000px; top: 8px; width: 1px; height: 1px; overflow: hidden;">Google Analyticsは、Cookie（クッキー）を利用して、個々のユーザを特定することなく、サイトの利用動向を収集し、収集された情報は、Google社のプライバシーポリシーに基づいて管理されます。</div>
+
+<h2>著作権について</h2>
+
+<p>当ホームページに掲載しているすべての情報（文・写真・イラストなど）およびホームページ全体は、著作権法により保護されています。これらの情報については、著作権法上認められる場合を除き、権利者の許可なく転載、複製・販売などを行うことはできません。</p>
+
+<h2>免責事項</h2>
+
+<p>当ホームページに掲載している情報の正確性には万全を期していますが、利用者が当ホームページの情報を用いて行う一切の行為について、公益財団法人高知県観光コンベンション協会はいかなる責任も負いません。<br>
+利用者が当ホームページ及びリンク先にアクセスしたために被った損害、損失に対して、(公益財団法人高知県観光コンベンション協会)はいかなる場合でも一切の責任を負いません。<br>
+当ホームページは、予告なしに内容を変更又は削除する場合があります。</p>
+
+<h2>リンクについて</h2>
+
+<p>「こうち旅ネット」は基本的にリンクフリーです。</p>
+
+<h3>ただし、以下のようなリンクは固くお断りいたします</h3>
+
+<ul>
+  <li>当ホームページをリンク元サイトの一部であるかのように表示すること（例：フレーム内での表示など）はしないでください。</li>
+  <li>違法なコンテンツを掲載したり、違法な活動に関与した、または関与した可能性のあるサイトからのリンク。</li>
+  <li>公序良俗に反する、あるいは未成年者にとって有害と認められるコンテンツを掲載した、または掲載した可能性のあるサイトからのリンク。</li>
+</ul>
+
+<p>以上のリンクの条件は、変更することがあります。この場合、既にリンクを張っている場合も最新の条件を順守していただきます。</p>
+
+<p><a class="img-box" href="/images/common/banner_245x50.png" rel="pic" style="background:#fff; display:inline-block;" target="_blank" title="こうち旅ネットバナー245"><img alt="こうち旅ネットバナー245" src="/images/common/banner_245x50.png"></a><br>
+245 x 50<br>
+<a class="img-box" href="/images/common/banner_369x120.png" rel="pic" style="background:#fff; display:inline-block;" target="_blank" title="こうち旅ネットバナー369"><img alt="こうち旅ネットバナー369" src="/images/common/banner_369x120.png"></a><br>
+369 x 120<br>
+<a class="img-box" href="/images/common/banner_728x90.png" rel="pic" style="background:#fff; display:inline-block;" target="_blank" title="こうち旅ネットバナー728"><img alt="こうち旅ネットバナー728" src="/images/common/banner_728x90.png"></a><br>
+728 x 90<br>
+<a class="img-box" href="/images/common/banner_970x250.png" rel="pic" style="background:#fff; display:inline-block;" target="_blank" title="こうち旅ネットバナー970"><img alt="こうち旅ネットバナー970" src="/images/common/banner_970x250.png"></a><br>
+970 x 250</p>
+
+<p>※上記のロゴをご使用になる場合はメールにてご連絡をお願いします。<br>
+E-mail：kochitabi@kvca.jp</p>
+
+                </div>
+                
+                <div class="original-contents">
+                    
+                </div>
+
+                
+                    <div class="modified-date">最終更新日 2026年03月16日</div>
+                    
+            </div>
+            <!-- 詳細情報ここまで -->
+
+
+
+
+
+
+        </main>
+
+
+
+
+        <!-- 共通フッターここから -->
+        
+        <footer>
+            <div class="roof">
+                <ul>
+                    <li>
+                        <a href="/corp/kvca/outline.html">法人情報</a>
+                        <!--<a href="/contact.html">お問い合わせ</a>-->
+                        <a href="/link.html">リンク集</a>
+                        <a href="/policy.html">このサイトについて</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-sns">
+                <div class="footer-sns__inner">
+                    
+                    <div class="footer-sns__title"><p>こうち旅ネット公式 SNS</p></div>
+                    <div class="footer-sns__btn">
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/kochi_tabi_net/"><img src="/images/common/ic_sns_instagram_w.png" alt="Instagram" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/kochi_tabi"><img src="/images/common/ic_sns_x_w.png" alt="X" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/kochitabi/"><img src="/images/common/ic_sns_facebook_w.png" alt="Facebook" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCzb9BUdyYHFA-N5FsDGTUSw"><img src="/images/common/ic_sns_youtube_w.png" alt="Youtube" />
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-main">
+                <ul>
+                    <li class="tosaterrace">
+                        <div>観光情報のご案内、パンフレットのご請求</div>
+                        <img src="/images/common/logo_tosaterrace_w.png?20251007" />
+                        <div>〒780-0056　高知県高知市北本町2-10-17</div>
+                        <div class="buttons">
+                            <a href="tel:088-879-6400"><img src="/images/common/btn_phone_to_tosaterrace.png?20251007" /></a>
+                            <a href="/contact_tosaterrace.html"><img src="/images/common/btn_mail_to_tosaterrace.png?20251007" /></a>
+                        </div>
+                        <div>営業時間：8:30〜18:00（年中無休）</div>
+                    </li>
+                    <li class="association">
+                        <div>「こうち旅ネット」、当協会に関するお問い合わせ</div>
+                        <img src="/images/common/logo_kvca_w.png" />
+                        <div>
+                                〒780-0056　高知県高知市北本町2-10-10
+                        </div>
+                        <div class="buttons">
+                            <a href="tel:088-823-1434"><img src="/images/common/btn_phone_to_kvca.png?20251007" /></a>
+                            <a href="/contact_kvca.html"><img src="/images/common/btn_mail_to_tosaterrace.png?20251007" /></a>
+                            
+                        </div>
+                        <div>FAX：088&#8203;-873&#8203;-6181</div>
+                        <div>営業時間：8:30〜17:15 （土・日・祝日・年末年始は除く）</div>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    このホームページに掲載している写真、情報などの無断転載を禁じます。<br />
+                    Copyright &copy; 2005 Kochi Visitors & Convention Association All rights reserved. Japan.
+                </div>
+            </div>
+        </footer>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!--全体用-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRX4F2QP1B"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33749396-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XRX4F2QP1B');
+          gtag('config', 'UA-33749396-1');
+        </script>
+        <!--<script defer src='https://tag-plus-bucket-for-distribution.s3.ap-northeast-1.amazonaws.com/service/OKNAeddXj7PsYZeN.js'></script>-->
+
+        <!--MicrosoftClarityタグ-->
+        <script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "p3ti7hnqua");
+        </script>
+
+        <!-- 共通フッターここまで -->
+    </body>
+</html>
+

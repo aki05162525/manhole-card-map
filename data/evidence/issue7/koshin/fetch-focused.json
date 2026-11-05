@@ -1,0 +1,78 @@
+[
+  {
+    "sourceUrl": "https://www.city.tomi.nagano.jp/category/soshikiitiran/101437.html",
+    "fetchedAt": "2026-11-05T06:29:26.817570+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tomi.nagano.jp/category/soshikiitiran/101437.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/aa39b93965ecd84ac5cf.html",
+    "snapshotSHA256": "74961c01e8ba1bdc921f9d00e18f0a9d21232bad61537920cfa3482f340deb88",
+    "bytes": 21186
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/ttiiki/42264.html",
+    "fetchedAt": "2026-11-05T06:29:26.850705+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/soshiki/ttiiki/42264.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/2a546872e576702ca01f.html",
+    "snapshotSHA256": "f5e7b4197f2b5b83d9795f8a4873d1eec6201bde21d774472ce6b50ebe36fd34",
+    "bytes": 31722
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "fetchedAt": "2026-11-05T06:29:26.820205+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "contentType": "application/javascript",
+    "snapshotPath": "data/evidence/issue7/koshin/91ff513aa1997f3d8402.html",
+    "snapshotSHA256": "702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429",
+    "bytes": 557
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/uedapr/132245.html",
+    "fetchedAt": "2026-11-05T06:29:26.854488+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/soshiki/uedapr/132245.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/91bce5e371c21c887c3d.html",
+    "snapshotSHA256": "0371cc18ee20b1bd6ba8485b4be1ea52bb97577abb8b37c765ae2eb130e41fe0",
+    "bytes": 27721
+  },
+  {
+    "sourceUrl": "https://www.tomikan.jp/",
+    "fetchedAt": "2026-11-05T06:29:27.046858+00:00",
+    "status": 200,
+    "finalUrl": "https://tomikan.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/6208cf528e0c2c2f5108.html",
+    "snapshotSHA256": "7104bfd361d62a0036ba9f9aee0e3f618fe894addbdd5cd7e43f87505c587412",
+    "bytes": 174322
+  },
+  {
+    "sourceUrl": "https://www.sakukankou.jp/sightseeing/hotpark-asashina/",
+    "fetchedAt": "2026-11-05T06:29:27.382193+00:00",
+    "status": 200,
+    "finalUrl": "https://www.sakukankou.jp/spot/1331/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/bd7f55bd52fd5cadafbf.html",
+    "snapshotSHA256": "03305f27277645c6530d356eea45ff4163add627ae7cd49dfca58204bee13fc1",
+    "bytes": 236833
+  },
+  {
+    "sourceUrl": "https://otsuki-kanko.info/category/content-page/view/2",
+    "fetchedAt": "2026-11-05T06:29:27.241313+00:00",
+    "status": 200,
+    "finalUrl": "https://otsuki-kanko.info/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/3f3723c01a2c9cf09399.html",
+    "snapshotSHA256": "39ca12355e90dd57d033fe0e67783d82ccf2e4027fb83b8c352973df60ac9e14",
+    "bytes": 49871
+  },
+  {
+    "sourceUrl": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.files/koiki.pdf",
+    "fetchedAt": "2026-11-05T06:29:27.140450+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "status": 404
+  }
+]
