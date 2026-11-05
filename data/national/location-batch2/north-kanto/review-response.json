@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "priorHead": "4a322d47644acbac8f9262f1c35bf9363ef073fb",
+  "geminiHistory": "review.json (quota failure retained)",
+  "replacementAuthorization": "ユーザーがClaude Opus代替レビューを明示許可。旧review.jsonの代替不使用は初回時点の履歴。",
+  "priorReviewThread": "thread:delegated-task:command%3Amcp%3A0ba9b7b9-2542-4035-a8b8-7e8d65fcb4ee%3Adelegate-task%3A2133bd4f-ad32-43ad-9b2f-51f34dc7231f",
+  "priorDecision": "重大指摘によりマージ保留",
+  "responses": [
+    {
+      "finding": "日立約200m競合未検証",
+      "response": "市報9頁/配布案内とGSI外形・道路水部を実照合。旧q/P05を原本から抽出してcontains比較。外形の重心を独立算出。",
+      "refs": [
+        "hitachi-conflict.json",
+        "geometry-inputs.json",
+        "derived-points.json"
+      ]
+    },
+    {
+      "finding": "羽生4棟を3棟と誤読、道路水部未比較",
+      "response": "保存9タイルから道路/水部を含め再描画。4棟と入口出口・水路・円形丘周回路の一致を記録。"
+    },
+    {
+      "finding": "熊谷/白岡の実比較不足",
+      "response": "原図と新取得外形を比較。熊谷は駅外形区分未確定、白岡は仮設棟区画に外形なし。肯定/否定根拠をoutcomes/comparison-factsへ記録。"
+    },
+    {
+      "finding": "Issue16既往保留とURL見落とし",
+      "response": "白岡outcomes/8と吉岡/3を引継ぎ。白岡を新手法による再開として明示し旧保留との重複を許可IDで検査。新規性検索を既往全テキストへ拡張。"
+    },
+    {
+      "finding": "未実施CSVをnewMethod実績と記載、矢板未確認",
+      "response": "選定時予定を保存し実施範囲を区別。矢板24999.pdfの4/5頁、運営者館内図・宿泊案内を取得し数値外形と比較。"
+    },
+    {
+      "finding": "CRS仕様根拠不足",
+      "response": "Vector定義と地理院タイル一次仕様を取得/hash保存。利用条件とは分離。"
+    },
+    {
+      "finding": "選定判断、発見時刻、計時範囲",
+      "response": "83件の除外を保持、ぱりっせ/入間判断を事後補足。URL別発見時刻は未記録と明示。345.762秒は初回限定、修正調査は別計測。"
+    },
+    {
+      "finding": "キャッシュ再実行失敗",
+      "response": "RED:保存済range再利用で空recordsのETagassert失敗を再現。既存provenance読込・hash検証・混在版拒否へ修正、GREEN:同キャッシュ再実行成功。"
+    },
+    {
+      "finding": "manifestUnchanged固定出力、旧README誤引用",
+      "response": "検証は実差分から判定、履歴manifestで旧契約を維持。旧READMEの正確な引用に訂正。"
+    }
+  ],
+  "status": "fixes-awaiting-new-independent-review"
+}

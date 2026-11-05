@@ -9,5 +9,6 @@
   "independentReviewCompleted": false,
   "findings": null,
   "response": "代替モデルを使用しない。採用0を維持しDraft PRとして親へ引き継ぐ。Gemini再レビューは未完。",
-  "adoptionApproved": false
+  "adoptionApproved": false,
+  "recordScope": "初回Gemini失敗時点の履歴。以後ユーザーがOpus代替を明示許可。review-response.json参照。"
 }

@@ -15,7 +15,6 @@
     "data/national/issue7/reviews/north-kanto.json": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515"
   },
   "population": 91,
-  "currentUnlocated": 91,
   "nationalUnlocated": 608,
   "selected": [
     {
@@ -26,13 +25,15 @@
       "firstPinCardIds": [
         "08-203-H001"
       ],
-      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公開施設CSV・公民館配置図で196m競合を再検討",
-      "newMethod": "公開施設CSV・公民館配置図で196m競合を再検討",
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公民館配置図で196m競合を再検討",
+      "newMethod": "公民館平面図を取得し、GSI外形・旧点との対応を検討（公開CSVは未実施）",
       "oldCoordinate": null,
       "identity": {
         "name": "土浦市立一中地区公民館",
         "address": "茨城県土浦市大手町13番9号"
-      }
+      },
+      "plannedMethodAtSelection": "公開施設CSV・公民館配置図で196m競合を再検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-14336e747375e6550de3",
@@ -48,7 +49,9 @@
       "identity": {
         "name": "まちの駅 新・鹿沼宿",
         "address": "栃木県鹿沼市仲町1604-1"
-      }
+      },
+      "plannedMethodAtSelection": "本館を明記する施設配置図と建物外形を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
@@ -58,13 +61,15 @@
       "firstPinCardIds": [
         "09-211-A001"
       ],
-      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と公開施設データを検討",
-      "newMethod": "宿泊棟の配置図と公開施設データを検討",
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と数値外形を検討",
+      "newMethod": "市の現配布アクセスPDF24999と運営者館内図をGSI外形と比較（公開施設CSVは未実施）",
       "oldCoordinate": null,
       "identity": {
         "name": "一般社団法人 矢板市観光協会",
         "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)"
-      }
+      },
+      "plannedMethodAtSelection": "宿泊棟の配置図と公開施設データを検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
@@ -74,13 +79,15 @@
       "firstPinCardIds": [
         "08-202-A001"
       ],
-      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と公開施設データで200m競合を再検討",
-      "newMethod": "新本庁舎配置図と公開施設データで200m競合を再検討",
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と数値外形で200m競合を再検討",
+      "newMethod": "市報9頁・現配布案内とGSI建物/道路/水部を照合し、旧q/P05競合を検査",
       "oldCoordinate": null,
       "identity": {
         "name": "日立市役所下水道課",
         "address": "茨城県日立市助川町1-1-1"
-      }
+      },
+      "plannedMethodAtSelection": "新本庁舎配置図と公開施設データで200m競合を再検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
@@ -96,7 +103,9 @@
       "identity": {
         "name": "熊谷駅観光案内所内",
         "address": "埼玉県熊谷市筑波2-115-1"
-      }
+      },
+      "plannedMethodAtSelection": "2025年移転後の駅構内図・配置図を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-c73669beeeb24f667599",
@@ -112,7 +121,9 @@
       "identity": {
         "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
         "address": "埼玉県羽生市大字三田ヶ谷1725"
-      }
+      },
+      "plannedMethodAtSelection": "園内配置図でムジナモ市場を分離",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
@@ -128,13 +139,17 @@
       "identity": {
         "name": "道の駅かわもと 深谷市物産館",
         "address": "埼玉県深谷市長在家1280-1"
-      }
+      },
+      "plannedMethodAtSelection": "物産館と直売所を分離する配置図を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     },
     {
       "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
       "name": "白岡市役所仮設本庁舎 商工観光課",
       "originalRef": "data/national/issue7/north-kanto.json#/unresolved/87",
-      "reviewRefs": [],
+      "reviewRefs": [
+        "data/national/issue16/group-a-outcomes.json#/outcomes/8"
+      ],
       "firstPinCardIds": [
         "11-246-A001"
       ],
@@ -144,7 +159,12 @@
       "identity": {
         "name": "白岡市役所仮設本庁舎 商工観光課",
         "address": "埼玉県白岡市千駄野432番地"
-      }
+      },
+      "plannedMethodAtSelection": "仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     }
-  ]
+  ],
+  "countBasis": "開始時点。仮統合後は地域89・全国606未位置。",
+  "selectionClarification": "初回に8IDを保存してから検索を開始。URL別の発見時刻は未記録。新規性と除外判断の補足はレビュー後に追記したもので、選定時に記録済みだったとは扱わない。",
+  "baselineUnlocated": 91
 }

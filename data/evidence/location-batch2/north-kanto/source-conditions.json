@@ -5,15 +5,20 @@
   "sourceVersion": "2026-07-01 per fixed README c0e37e155f7773a2940fb1c2ad3da01cc6a29c90; range Last-Modified 2026-09-17",
   "crs": "JGD2011 geographic source / Web Mercator tile lattice; extent 4096",
   "axisOrder": "tile x east / y south; z/x/y addressing",
-  "precision": "外形は一般化を含む試験データ。測量精度を保証しない。採用点なし。",
-  "processing": "pmtiles 3.4.1とmapbox-vector-tile 2.2.0でBldA外形をデコード、Pillowで3x3タイルの外形のみ描画。道路・地名レイヤーは未照合。代表点計算なし。",
+  "precision": "外形は一般化を含む試験データ。建物代表点。小数7桁は保存桁数で測量精度を保証しない。",
+  "processing": "revision-scan.py: pmtiles3.4.1/mapbox-vector-tile2.2.0。道路/水部/注記/外形を比較。derive.py: shapely2.2.0で重心、逆投影、丸め後内包。",
   "terms": "固定READMEは基本測量成果と位置付けない試験公開と明記。コンテンツ規約のPDL1.0・出典明示・加工表示を確認。ラスターの測量法条件を流用しない。",
   "termsRefs": [
     "data/evidence/location-batch2/north-kanto/retrievals.json#/records/18",
     "data/evidence/location-batch2/north-kanto/retrievals.json#/records/21",
     "data/evidence/location-batch2/north-kanto/retrievals.json#/records/22"
   ],
-  "attribution": "国土地理院最適化ベクトルタイルを加工して外形比較図を作成。国土地理院による施設点作成・承認ではない。",
-  "redistribution": "このPRはVector原本・比較画像もworkにのみ保持。一般HTML/PDF/写真の再配布許諾は未確認。Gitは自作の事実・取得hashと検証/取得コードのみ。",
-  "limitation": "北向き/縮尺なしの園内イラストと、名称・道路なし外形の配置類似だけではムジナモ市場を同定しない。再開は周辺道路・出入口・建物識別を独立に接続できる資料/手法。"
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工し建物代表点と比較図を作成。国土地理院による施設点作成・承認ではない。",
+  "redistribution": "PDL1.0に基づき採用候補のPBF2タイルのみGitに保存。一般HTML/PDF/写真と比較レンダーはworkのみ。",
+  "limitation": "試験公開で個別建物の更新日/位置精度の保証はない。JGD2011として逆投影し、WGS84への測地系変換は行わない。",
+  "crsRefs": [
+    "data/evidence/location-batch2/north-kanto/retrievals.json#/records/24",
+    "data/evidence/location-batch2/north-kanto/retrievals.json#/records/25"
+  ],
+  "crsReason": "最適化Vectorは地理院タイル仕様を採用。Vector定義も地理院タイル仕様に従う分割を明記し、地理院タイル仕様は国内JGD2011・メルカトル・ズーム格子を規定する。利用条件は別途最適化VectorのREADME/規約で確認。"
 }

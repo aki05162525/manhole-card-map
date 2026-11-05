@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "python": {
+    "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
+    "exitCode": 0,
+    "tests": 94
+  },
+  "go": {
+    "command": "mise exec -- go test -count=1 ./...",
+    "exitCode": 0,
+    "note": "exitCodeを直接確認。tailやパイプの終了コードを使用しない。"
+  },
+  "redGreen": [
+    "2件の採用差分テスト: manifest追加前3failure（座標Noneと差分空）→追加後2test成功",
+    "Vector既存キャッシュ: records空でETag assert failure→provenance復元修正で成功。check-cache.pyは再利用/欠落/改竄拒否を検査。"
+  ],
+  "researchVerify": {
+    "rawFilesChecked": 159,
+    "population": 91,
+    "selected": 8,
+    "integrated": 2,
+    "held": 6,
+    "nationalUnlocated": 606,
+    "allRelationsUnchanged": true
+  },
+  "generated": "generated-check.json",
+  "maps": "maps-check.json",
+  "audit": {
+    "path": "data/work/location-batch2/north-kanto/after-audit.json",
+    "sha256": "a8c06aa2d9ebb694db20216391fe2591e5a959e0c2893866d14b775ad58cdf62"
+  },
+  "limitations": [
+    "ブラウザー画面操作・外部Maps遷移・現地ナビは未検証。UIコード変更なし。",
+    "builddata初回はmunicheck不足で失敗。元hash付き既存原本をコピー後に前後両生成成功。",
+    "新規施設CSV探索は未実施。"
+  ]
+}

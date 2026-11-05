@@ -112,6 +112,10 @@ class AssemblyTests(unittest.TestCase):
     def test_review_selection_excludes_deferred_and_facility_scope(self):
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
+        # Keep this historical contract; batch2 deltas have regional tests.
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [p for p in manifest.get(key, [])
+                             if not p['path'].startswith('data/national/location-batch2/')]
         inputs, patches, updates = a.load_selection(root, manifest)
         self.assertEqual(len(patches), 113)  # Issue26 adds only address and evidence fields.
         self.assertEqual(len(updates), 844)  # Batch1: four independently reviewed facilities.
@@ -140,6 +144,10 @@ class AssemblyTests(unittest.TestCase):
         # opens that work file and needs no full.json/cards.json/raw inputs.
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
+        # Keep this historical contract; batch2 deltas have regional tests.
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [p for p in manifest.get(key, [])
+                             if not p['path'].startswith('data/national/location-batch2/')]
         # Keep the reviewed pre-Issue26 baseline intact. The next test proves
         # the exact address/evidence-only delta of the newly selected patch.
         manifest['patches'] = [p for p in manifest['patches']
@@ -204,6 +212,10 @@ class AssemblyTests(unittest.TestCase):
     def test_batch1_only_changes_reviewed_facilities_and_preserves_relations(self):
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
+        # Keep this historical contract; batch2 deltas have regional tests.
+        for key in ('locations', 'locationLifecycle'):
+            manifest[key] = [p for p in manifest.get(key, [])
+                             if not p['path'].startswith('data/national/location-batch2/')]
         historical = copy.deepcopy(manifest)
         historical['locations'] = [p for p in historical['locations']
                                   if p['path'] != 'data/national/location-batch1/locations-reviewed.json']

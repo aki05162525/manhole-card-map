@@ -67,5 +67,6 @@
       "sha256": "bc524e07b1296cfb2c92359480d890a103137d92aa7c5f749af7cbe816d2f51e"
     }
   ],
-  "adoptedCoordinate": null
+  "adoptedCoordinate": null,
+  "recordScope": "初回の外形のみ試行。後続revision-windows/comparison-facts/derived-pointsで道路水部照合・2点派生を実施。"
 }

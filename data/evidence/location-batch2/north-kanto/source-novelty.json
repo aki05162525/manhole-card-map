@@ -1,102 +1,473 @@
 {
-  "schema": 1,
-  "comparisonScope": "Issue5/7 north-kanto evidence JSON URLs only; no claim of exhaustive prior web history",
+  "schema": 2,
+  "scope": "git ls-files data/national data/evidenceの既往テキスト（JSON/HTML/MD/CSV/PY/TXT）、location-batch2除外。PDF本文内URLやignored rawは対象外。not foundは全世界での新発見を意味しない。",
+  "filesScanned": 13754,
   "rows": [
     {
       "id": "tsuchiura-facility",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.tsuchiura.lg.jp/kyoikuiinkai/shogaigakushu/kominkan/page003784.html",
+      "existingReferences": [
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/extra-log.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/extra-queue.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/facility-research.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/manifest.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/maps-report.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/review-summary.txt",
+        "data/evidence/national/official-facility-index/tsuchiura-ichichu.html.source.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/0"
     },
     {
       "id": "yaita-renewal",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/shironoyuopen.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/1"
     },
     {
       "id": "yaita-plan",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.yaita.tochigi.jp/uploaded/attachment/16945.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/2"
     },
     {
       "id": "kanuma-facility",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.jibunstyle-kanuma.tochigi.jp/0282/info-0000000629-0.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/3"
     },
     {
       "id": "kumagaya-plan",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.kumagaya.lg.jp/shicho/kaiken/r7/202602gatuteirei.files/2026020301001.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/4"
     },
     {
       "id": "hanyu-map",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://kiyasse.jp/wp-content/themes/kiyasse_hanyu/assets/pdf/kiyasse_map2024.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/5"
     },
     {
       "id": "shiraoka-bulletin",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.shiraoka.lg.jp/material/files/group/1/0801all.pdf",
+      "existingReferences": [
+        "data/evidence/issue16/group-a-retrievals.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/6"
     },
     {
       "id": "tsuchiura-current",
-      "urlPreviouslyRecorded": true
+      "sourceUrl": "https://www.city.tsuchiura.lg.jp/index.php?code=116",
+      "existingReferences": [
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/issue5/north-kanto/reused-originals.json",
+        "data/evidence/issue7/north-kanto/investigation.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/49c0672a81900fd60b65.html",
+        "data/evidence/national/official-facility-index/tsuchiura-ichichu-current.html.source.json",
+        "data/evidence/national/official-facility-index/tsuchiura-ichichu.html",
+        "data/national/issue5/north-kanto.json",
+        "data/national/location-updates/official-facility-index.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/7"
     },
     {
       "id": "hitachi-floor",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.hitachi.lg.jp/shisei/shiyakusho_annai/1003256.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/8"
     },
     {
       "id": "hitachi-layout",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.hitachi.lg.jp/_res/projects/default_project/_page_/001/016/524/20250505_zen.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/9"
     },
     {
       "id": "fukaya-facility",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.fukaya.saitama.jp/shisetsu/michinoeki/1499131548292.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/10"
     },
     {
       "id": "saitama-guide",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.pref.saitama.lg.jp/a1006/mitinoeki/mitinoekimap.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/11"
     },
     {
       "id": "shiraoka-construction",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/fasimane/9083.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/12"
     },
     {
       "id": "tsuchiura-plan",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.tsuchiura.lg.jp/data/doc/1219401294_doc_41.pdf",
+      "existingReferences": [
+        "data/evidence/issue5/north-kanto/reused-7d5cd84e9eacdd05e3c251d2.html",
+        "data/evidence/national/kanto-north/660f450089fbba4450f0.html",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cached-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/reused-660f450089fbba4450f0.html",
+        "data/evidence/national/official-facility-index/tsuchiura-ichichu-current.html"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/13"
     },
     {
       "id": "hitachi-plan",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.hitachi.lg.jp/_res/projects/default_project/_page_/001/003/256/chousya_annnai0804.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/14"
     },
     {
       "id": "fukaya-guide",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.pref.saitama.lg.jp/documents/4151/gb10.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/15"
     },
     {
       "id": "shiraoka-plan",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.city.shiraoka.lg.jp/material/files/group/44/bessi2annnai2.pdf",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/16"
     },
     {
       "id": "kanuma-operator",
-      "urlPreviouslyRecorded": true
+      "sourceUrl": "http://kanumajuku.com/",
+      "existingReferences": [
+        "data/evidence/issue5/chubu/reused/ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc.html",
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/issue5/north-kanto/reused-ad9d5072b1e99c7b44edd513.html",
+        "data/evidence/issue7/tokai/0cbc6863108b3d6f11ce.html",
+        "data/evidence/national/chubu-east/gkp-current-supplied.html",
+        "data/evidence/national/chubu-west/gkp-current-design.html",
+        "data/evidence/national/kanto-north/additional-urls.json",
+        "data/evidence/national/kanto-north/discovered-links.json",
+        "data/evidence/national/kanto-north/gkp-current-design.html",
+        "data/evidence/national/kanto-north/manifest.json",
+        "data/evidence/national/kanto-north/map-inspections.json",
+        "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+        "data/evidence/national/list-source/gkp-20261105.html",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/50a4220cd640df1d6c19.html",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cache-report.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cached-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/compact.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/facility-research.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/manifest.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/review-summary.txt",
+        "data/national/regions/kanto-north.json",
+        "data/national/reviews/kanto-north-itg-locations.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/17"
     },
     {
       "id": "gsi-readme",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/c0e37e155f7773a2940fb1c2ad3da01cc6a29c90/readme.md",
+      "existingReferences": [
+        "data/evidence/location-batch1/west/facility-facts.json",
+        "data/evidence/location-batch1/west/retrievals.json",
+        "data/national/location-batch1/review-west.json",
+        "data/national/location-batch1/west-outcomes.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/18"
     },
     {
       "id": "gsi-terms",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "existingReferences": [
+        "data/evidence/issue16/gsi-terms-retrieval.json",
+        "data/evidence/issue20/north/document-retrievals.json",
+        "data/evidence/issue7/sakuragicho-followup/gsi-photo-info.html",
+        "data/evidence/location-batch1/east/README.md",
+        "data/evidence/location-batch1/east/gsi-vector-readme.md",
+        "data/evidence/location-batch1/east/retrievals.json",
+        "data/evidence/location-batch1/gsi-terms-retrieval.json",
+        "data/evidence/location-batch1/west/facility-facts.json",
+        "data/evidence/location-batch1/west/retrievals.json",
+        "data/national/location-batch1/review-west.json",
+        "data/national/location-batch1/west-outcomes.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/19"
     },
     {
       "id": "kanuma-layout",
-      "urlPreviouslyRecorded": true
+      "sourceUrl": "http://kanumajuku.com/facility.html",
+      "existingReferences": [
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/national/kanto-north/additional-urls.json",
+        "data/evidence/national/kanto-north/discovered-links.json",
+        "data/evidence/national/kanto-north/manifest.json",
+        "data/evidence/national/kanto-north/map-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cache-report.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cached-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/compact.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/facility-research.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/manifest.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/review-summary.txt",
+        "data/national/regions/kanto-north.json",
+        "data/national/reviews/kanto-north-itg-locations.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/20"
     },
     {
       "id": "reused-gsi-content.html",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "existingReferences": [
+        "data/evidence/issue16/gsi-terms-retrieval.json",
+        "data/evidence/issue20/north/document-retrievals.json",
+        "data/evidence/issue7/sakuragicho-followup/gsi-photo-info.html",
+        "data/evidence/location-batch1/east/README.md",
+        "data/evidence/location-batch1/east/gsi-vector-readme.md",
+        "data/evidence/location-batch1/east/retrievals.json",
+        "data/evidence/location-batch1/gsi-terms-retrieval.json",
+        "data/evidence/location-batch1/west/facility-facts.json",
+        "data/evidence/location-batch1/west/retrievals.json",
+        "data/national/location-batch1/review-west.json",
+        "data/national/location-batch1/west-outcomes.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/21"
     },
     {
       "id": "reused-gsi-vector-spec.html",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "https://maps.gsi.go.jp/development/vt.html",
+      "existingReferences": [
+        "data/evidence/location-batch1/west/retrievals.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/22"
     },
     {
       "id": "kanuma-store-layout",
-      "urlPreviouslyRecorded": false
+      "sourceUrl": "http://kanumajuku.com/img/news/store_info.png",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/23"
+    },
+    {
+      "id": "gsi-tile-spec-revision",
+      "sourceUrl": "https://maps.gsi.go.jp/development/siyou.html",
+      "existingReferences": [
+        "data/evidence/location-batch1/east/gsi-vector-readme.md",
+        "data/evidence/location-batch1/east/retrievals.json",
+        "data/evidence/location-batch1/east/tracked-sources.json",
+        "data/evidence/location-batch1/west/facility-facts.json",
+        "data/evidence/location-batch1/west/retrievals.json",
+        "data/national/location-batch1/review-west.json",
+        "data/national/location-batch1/west-outcomes.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/24"
+    },
+    {
+      "id": "gsi-vector-definition",
+      "sourceUrl": "https://maps.gsi.go.jp/development/vt_expt.html",
+      "existingReferences": [],
+      "novelWithinScope": true,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/25"
+    },
+    {
+      "id": "yaita-access",
+      "sourceUrl": "https://www.city.yaita.tochigi.jp/uploaded/attachment/24999.pdf",
+      "existingReferences": [
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cache-report.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cached-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/discovery-log.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/discovery-queue.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/manifest.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/review-summary.txt",
+        "data/national/reviews/kanto-north-itg-locations.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/26"
+    },
+    {
+      "id": "yaita-operator",
+      "sourceUrl": "https://www.yaita-onsen-shironoyu.jp/",
+      "existingReferences": [
+        "data/evidence/national/review-kanto-north-itg-locations/9647850ea964f644a51d.html",
+        "data/evidence/national/review-kanto-north-itg-locations/additional-manifest.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/27"
+    },
+    {
+      "id": "yaita-floor-map",
+      "sourceUrl": "https://www.yaita-onsen-shironoyu.jp/_contents/wp-content/uploads/2024/04/kannai.jpg",
+      "existingReferences": [
+        "data/evidence/national/review-kanto-north-itg-locations/9647850ea964f644a51d.html"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/28"
+    },
+    {
+      "id": "yaita-facilities",
+      "sourceUrl": "https://www.yaita-onsen-shironoyu.jp/kannai",
+      "existingReferences": [
+        "data/evidence/national/review-kanto-north-itg-locations/9647850ea964f644a51d.html"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/29"
+    },
+    {
+      "id": "yaita-stay",
+      "sourceUrl": "https://www.yaita-onsen-shironoyu.jp/stay",
+      "existingReferences": [
+        "data/evidence/national/review-kanto-north-itg-locations/9647850ea964f644a51d.html"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/30"
+    },
+    {
+      "id": "hitachi-card-revision",
+      "sourceUrl": "https://www.city.hitachi.lg.jp/kigyo/koho_oshirase/1008759/1005112.html",
+      "existingReferences": [
+        "data/evidence/issue5/chubu/reused/ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc.html",
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/issue5/north-kanto/reused-ad9d5072b1e99c7b44edd513.html",
+        "data/evidence/issue5/north-kanto/reused-c97b385d1ca0f13bbfab0b93.html",
+        "data/evidence/issue5/north-kanto/reused-originals.json",
+        "data/evidence/issue7/north-kanto/fc7fc0646f708057e7a7ebb2.html",
+        "data/evidence/issue7/north-kanto/fetch-records.json",
+        "data/evidence/issue7/north-kanto/investigation.json",
+        "data/evidence/issue7/north-kanto/request-plan.json",
+        "data/evidence/issue7/review-audit/repository-audit.json",
+        "data/evidence/issue7/tokai/0cbc6863108b3d6f11ce.html",
+        "data/evidence/national/chubu-east/gkp-current-supplied.html",
+        "data/evidence/national/chubu-west/gkp-current-design.html",
+        "data/evidence/national/kanto-north/discovered-links.json",
+        "data/evidence/national/kanto-north/fc7fc0646f708057e7a7.html",
+        "data/evidence/national/kanto-north/gkp-current-design.html",
+        "data/evidence/national/kanto-north/manifest.json",
+        "data/evidence/national/kanto-north/map-inspections.json",
+        "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+        "data/evidence/national/list-source/gkp-20261105.html",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cache-report.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/cached-inspections.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/compact.txt",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/facility-research.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/manifest.json",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/reused-fc7fc0646f708057e7a7.html",
+        "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/review-summary.txt",
+        "data/evidence/national/official-facility-index/hitachi-card.html",
+        "data/evidence/national/official-facility-index/hitachi-card.html.source.json",
+        "data/evidence/national/review-kanto-north-itg-locations/relation-original-extracts.json",
+        "data/national/issue5/north-kanto.json",
+        "data/national/issue7/north-kanto.json",
+        "data/national/location-updates/kanto-north-ibaraki-tochigi-gunma.json",
+        "data/national/location-updates/official-facility-index.json",
+        "data/national/regions/kanto-north.json",
+        "data/national/reviews/kanto-north-itg-locations.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/31"
+    },
+    {
+      "id": "hanyu-card-revision",
+      "sourceUrl": "https://www.city.hanyu.lg.jp/docs/2017111000025/",
+      "existingReferences": [
+        "data/evidence/issue5/north-kanto/inventory.json",
+        "data/evidence/issue5/north-kanto/reused-a453994fd356a074dbbc80e0.html",
+        "data/evidence/issue5/north-kanto/reused-originals.json",
+        "data/evidence/issue7/north-kanto/8bb0d2464a8d47007d9fe9a3.html",
+        "data/evidence/issue7/north-kanto/fetch-records.json",
+        "data/evidence/issue7/north-kanto/investigation.json",
+        "data/evidence/national/kanto-north/8bb0d2464a8d47007d9f.html",
+        "data/evidence/national/kanto-north/manifest.json",
+        "data/evidence/national/locations-kanto-north-saitama/8bb0d2464a8d47007d9f.html",
+        "data/evidence/national/locations-kanto-north-saitama/manifest.json",
+        "data/national/issue5/north-kanto.json",
+        "data/national/regions/kanto-north.json"
+      ],
+      "novelWithinScope": false,
+      "discoveredAt": null,
+      "discoveryTimeStatus": "URL別の発見時刻は保存されていない。取得時刻を発見時刻に代用しない。",
+      "retrievalReference": "data/evidence/location-batch2/north-kanto/retrievals.json#/records/32"
     }
   ]
 }
