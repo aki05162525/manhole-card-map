@@ -33,3 +33,70 @@
 施設別の取得・読解・照合は[timing.jsonl](../../data/evidence/kanto-prefecture/tochigi/timing.jsonl)の実測区間。事前の共有調査、成果物作成、最終検証・PR作業は施設に後付け配賦していない。inventoryの機械処理時間は手動読解時間ではない。
 
 今回新たに確認した文書/コード不一致はなし。継承すべき既知差分として、旧Issue5北関東READMEの「食い違いなし」と旧Evidence生成処理の `fetchedAt` 追加は現Goの7項目契約に適合しない。今回は取得日時を調査メタデータへ分離した。北関東batch2のJGD2011適用判断とIssue57の未確定扱いは判断差として残し、今回自動承認しない。
+
+## 実行済み検証証跡
+
+対象研究commit: `2e0f3c8a10e3434ed2a1ff004c15e42022667806`。通常 `mise exec -- git commit` の終了コード0。フック原ログSHA256: `5f082db1959d84500e33ec2cd52a7e72962945c2b13ef111c48770109042e801`。入力hashはvalidation.json、commit後の変更は本節の文書追記のみ。
+
+`TestNationalAssemblyFailureGuards` が全国Python unittestを内部実行するため、成功したGo結果を継承し手動全suiteは重ねていない。成功時のPython個別出力はGoが抑制する。以下はフックログ全文（ANSI色とgitのファイル列挙は除外）。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯
+
+┃  go-test ❯
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	74.730s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.004s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 75.79 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (75.79 seconds)
+```
+
+同じcommitでrawを再decodeし、3外形のgeometry/重心/丸め前後内包を独立再計算した（uv + mapbox-vector-tile==2.2.0 + shapely、終了コード0）。index17の近似面積1714.02m²、index24は2.77m²、index25は1077.59m²。選定17/24/25にタイル境界接触なし。描画での同定と機械計算は別判断。
+
+```sh
+uv run --with mapbox-vector-tile==2.2.0 --with shapely python - <<'PY'
+import sys, json
+from pathlib import Path
+sys.path.insert(0, "tools/national")
+from research_common import decode_tile, rounded_coordinate
+from shapely.geometry import shape
+p = Path("data/evidence/kanto-prefecture/tochigi")
+d = decode_tile((p / "yaita-tile-16-58239-25555.pbf.gz").read_bytes())
+for c in json.loads((p / "yaita-geometry.json").read_text())["checks"]:
+    g = d["BldA"]["features"][c["index"]]["geometry"]
+    assert g == c["geometry"]
+    s = shape(g)
+    assert s.is_valid
+    xy = [s.centroid.x, s.centroid.y]
+    assert xy == c["centroidXY"]
+    assert rounded_coordinate(g, dict(z=16, x=58239, y=25555), xy) == c["calculation"]
+for f in json.loads((p / "yaita-boundary-check.json").read_text())["selectedFeatures"]:
+    assert not f["tileBoundaryTouched"] and not f["outerBoundaryTouched"]
+print("PASS")
+PY
+```
