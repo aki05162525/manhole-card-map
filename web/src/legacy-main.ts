@@ -1,3 +1,4 @@
+import { startOfflineUpdates } from "./offline-update";
 import "./legacy-style.css";
 import {
   cardsForIds,
@@ -232,24 +233,22 @@ function list(query = "") {
     ...options,
   );
 }
-async function offline() {
+function offline() {
   const el = document.querySelector("#offline")!;
-  try {
-    const registration = await navigator.serviceWorker.register("/sw.js");
-    await navigator.serviceWorker.ready;
-    const worker = registration.active || navigator.serviceWorker.controller;
-    if (!worker) throw Error("Service Worker が有効でない");
-    const channel = new MessageChannel();
-    channel.port1.onmessage = (e) => {
-      el.textContent = e.data.ready
-        ? `オフライン準備完了 / 保存データ：${data?.updated ?? "不明"}`
-        : "オフラインの準備は未完了";
-    };
-    worker.postMessage({ type: "status" }, [channel.port2]);
-  } catch {
-    el.textContent = "オフライン保存に失敗。通信が必要";
-  }
+  el.setAttribute("role", "status");
+  el.setAttribute("aria-live", "polite");
+  startOfflineUpdates((state) => {
+    el.replaceChildren(document.createTextNode(state.text));
+    if (state.action) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = state.actionLabel!;
+      button.onclick = state.action;
+      el.append(button);
+    }
+  });
 }
+offline();
 async function start() {
   const adapters = {
     a: () => import("./leaflet"),
@@ -332,13 +331,9 @@ async function start() {
   } catch (e) {
     metrics.errors.push(String(e));
     notice.textContent = `${description} 地図を読み込めませんでした。一覧・検索からカードを閲覧できます。`;
-  } finally {
-    // Keep SW downloads out of startup measurements; save lists on map failure too.
-    void offline();
   }
 }
 start().catch((e) => {
   metrics.errors.push(String(e));
   notice.textContent = `起動未完了：${e}`;
-  void offline();
 });
