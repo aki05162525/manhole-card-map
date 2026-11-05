@@ -168,13 +168,13 @@
   "selectionClarification": "初回に8IDを保存してから検索を開始。URL別の発見時刻は未記録。新規性と除外判断の補足はレビュー後に追記したもので、選定時に記録済みだったとは扱わない。",
   "baselineUnlocated": 91,
   "integrationBaseline": {
-    "mainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+    "mainCommit": "48bf7105758794794b2eba0edece5ec5431b9ed6",
     "nationalUnlocatedBefore": 601,
     "nationalUnlocatedAfter": 599,
     "regionUnlocatedBefore": 91,
     "regionUnlocatedAfter": 89,
     "initialNationalUnlocated": 608,
-    "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。"
+    "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。 北陸PR53（採用0・調査記録と3テスト追加）も保持。"
   },
   "integrationHistory": [
     {
@@ -194,6 +194,15 @@
       "regionUnlocatedAfter": 89,
       "initialNationalUnlocated": 608,
       "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+      "nationalUnlocatedBefore": 601,
+      "nationalUnlocatedAfter": 599,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。"
     }
   ]
 }
