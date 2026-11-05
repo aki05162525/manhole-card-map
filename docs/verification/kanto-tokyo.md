@@ -170,3 +170,43 @@ summary: (done in 74.67 seconds)
 - 総合レク：利用者は北西画地、道路交点南東、25台駐車場東隣、南が広場／相撲場と説明したが詳細図の直接URLなし。sports.htmlは施設名・住所・駐車場25台を確認できるだけで、道路名・方位・隣接関係・棟種・2025新築は独立裏付けなし。ページ更新日を建築年にしない。数値外形未収録と約10mの写像残差は未解消。
 
 利用者から、研究保存PRはマージ可能・位置採用は別保留という方針と、共通CRS調査でPMTiles入力CRS／事前変換の公式連鎖が不足するとの報告を受領。子によるマージは行わず、製品datum未確定を維持する。全24件の区分・候補座標・lifecycle・比較原記録・共有manifestは不変。[追補検証](../../data/evidence/kanto-prefecture/tokyo/integration/human-answer-verification-20261106.json)にhash、コマンド、終了コードを記録。群の原記録の「質問中」は当時の記録として保持し、現在の回答状態はトップレベルhuman-questionsを参照する。新しいコード／文書の不一致はない。
+
+### 回答追補の通常フック証跡
+
+検証対象commit `b39aa9c637344d12013c69baf5ecd2718ff0c3cd`。`mise exec -- git commit -m "research: record three Tokyo human reports without approving locations"` 終了コード0。入力別hashはhuman-answer-verification-20261106.jsonに保存し、commit後も一致を確認。通常フックの全国Python（Goテスト内部）・非cache Goが成功。手動全suiteの重複実行なし。以下の追記は文書のみで検証対象データを変更しない。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	73.245s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.006s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.008s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 73.84 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (73.84 seconds)
+```
