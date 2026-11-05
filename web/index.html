@@ -2,69 +2,20 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#174b49" />
-    <title>マンホールカード 地図の試作</title>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6f8f5" />
+    <meta
+      name="description"
+      content="マンホールカードを地図や自治体名から探し、配布施設の情報を確認できます。非公式の検証用アプリです。"
+    />
+    <title>マンホールカード — 地図で見つける、次の一枚</title>
   </head>
   <body>
-    <header>
-      <strong>マンホールカード 地図の試作</strong
-      ><span>非公式 / 未公開の検証用</span>
-    </header>
-    <nav>
-      <a href="?engine=c">C：簡略図（道路なし）</a>
-      <a href="?engine=a">A：地理院</a><a href="?engine=b">B：MapLibre</a
-      ><a href="?engine=d">D：診断・背景なし</a
-      ><button id="locate" disabled>現在地</button
-      ><button id="japan">日本全体</button>
-    </nav>
-    <div id="notice" role="status">読み込み中</div>
-    <main>
-      <div id="map" aria-label="カードの地図"></div>
-      <section id="detail" aria-label="カードの詳細" hidden></section>
-    </main>
-    <footer>
-      <div>
-        ● 蓋　■ 配布場所（未確定ピンのみ参考位置）　<span class="active"
-          >● 配布中</span
-        >　<span class="upcoming">● 開始前</span>　<span class="suspended"
-          >● 一時中止</span
-        >　<span class="ended">● 終了</span>　? 要確認
-      </div>
-      <label
-        >一覧から探す
-        <input
-          id="search"
-          placeholder="都道府県・自治体名・カード番号"
-          type="search" /></label
-      ><select id="cards" aria-label="カード一覧">
-        <option>準備中</option>
-      </select>
-      <div id="offline">オフラインの準備は未完了</div>
-      <details>
-        <summary>データの出典と注意</summary>
-        <p>在庫は未確認。訪問前に公式情報を確認する。</p>
-        <p>
-          カード情報：保存済みの GKP
-          一覧（画像は使用しない）。配布場所の確定状態は詳細に表示。参考位置は訪問先の確定座標ではない。
-        </p>
-        <p>
-          座標候補：<a
-            href="https://www.digital.go.jp/policies/base_registry_address"
-            >デジタル庁 ABR</a
-          >（PDL1.0）、<a
-            href="https://www.geospatial.jp/ckan/dataset/houmusyouchizu-riyoukiyaku"
-            >法務省 登記所備付地図データ</a
-          >。本リポジトリで abr-geocoder により加工。
-        </p>
-        <p>
-          自治体照合：<a
-            href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"
-            >国土交通省 N03 2026年版</a
-          >（CC BY 4.0）を本リポジトリで加工。位置の正しさを保証しない。
-        </p>
-      </details>
-    </footer>
+    <div id="root"></div>
+    <noscript>この地図を使うには JavaScript を有効にしてください。</noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

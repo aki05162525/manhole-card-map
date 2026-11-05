@@ -1,0 +1,71 @@
+lockfile_version: '1'
+apm_version: 0.35.0
+dependencies:
+- repo_url: anmolsaini16/mapcn
+  materialization_repo_url: AnmolSaini16/mapcn
+  name: mapcn
+  host: github.com
+  resolved_commit: 5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0
+  resolved_ref: 5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0
+  version: unknown
+  virtual_path: skills/mapcn
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/mapcn
+  - .agents/skills/mapcn/SKILL.md
+  - .agents/skills/mapcn/references/blocks.md
+  - .agents/skills/mapcn/references/components.md
+  - .agents/skills/mapcn/references/patterns.md
+  deployed_file_hashes:
+    .agents/skills/mapcn/SKILL.md: sha256:d4e095cf8f8d56411706d2551e01cca8f1f2b7800758af052ed241387212cee9
+    .agents/skills/mapcn/references/blocks.md: sha256:6c5b2dfb31ea67624a938720f57078ebdc1137209149563e5d490585da0d3bc2
+    .agents/skills/mapcn/references/components.md: sha256:1b1b168809fcc5c66748194411893baad02d41513cdea2eb8c082ef2ecffe9fa
+    .agents/skills/mapcn/references/patterns.md: sha256:6aedb3253c984e86a747c6fdcd18301d7426499052202ad648c4bfdbf979216f
+  content_hash: sha256:d8432776d630ab4ee33d55ccafca74d67421038653bc3969cf5de1e3b57438b4
+deployments:
+- kind: project-relative
+  target: codex
+  value: .agents/skills/mapcn
+  runtime: null
+  scope: project
+  owners:
+  - anmolsaini16/mapcn/skills/mapcn
+  active_owner: anmolsaini16/mapcn/skills/mapcn
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/mapcn/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - anmolsaini16/mapcn/skills/mapcn
+  active_owner: anmolsaini16/mapcn/skills/mapcn
+  content_hash: sha256:d4e095cf8f8d56411706d2551e01cca8f1f2b7800758af052ed241387212cee9
+- kind: project-relative
+  target: codex
+  value: .agents/skills/mapcn/references/blocks.md
+  runtime: null
+  scope: project
+  owners:
+  - anmolsaini16/mapcn/skills/mapcn
+  active_owner: anmolsaini16/mapcn/skills/mapcn
+  content_hash: sha256:6c5b2dfb31ea67624a938720f57078ebdc1137209149563e5d490585da0d3bc2
+- kind: project-relative
+  target: codex
+  value: .agents/skills/mapcn/references/components.md
+  runtime: null
+  scope: project
+  owners:
+  - anmolsaini16/mapcn/skills/mapcn
+  active_owner: anmolsaini16/mapcn/skills/mapcn
+  content_hash: sha256:1b1b168809fcc5c66748194411893baad02d41513cdea2eb8c082ef2ecffe9fa
+- kind: project-relative
+  target: codex
+  value: .agents/skills/mapcn/references/patterns.md
+  runtime: null
+  scope: project
+  owners:
+  - anmolsaini16/mapcn/skills/mapcn
+  active_owner: anmolsaini16/mapcn/skills/mapcn
+  content_hash: sha256:6aedb3253c984e86a747c6fdcd18301d7426499052202ad648c4bfdbf979216f

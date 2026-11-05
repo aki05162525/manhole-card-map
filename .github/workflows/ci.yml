@@ -46,6 +46,14 @@ jobs:
       - name: Browser checks with synthetic cards
         working-directory: web
         run: node scripts/browser-check.mjs
+      - name: Save browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-mapcn-${{ github.sha }}
+          path: web/results/mapcn-check-*.png
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Save build-only fixture (not for deployment)
         uses: actions/upload-artifact@v4
         with:

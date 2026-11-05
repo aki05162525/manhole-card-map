@@ -1,0 +1,205 @@
+{
+  "measuredAt": "2026-11-05T03:09:48.979Z",
+  "scope": "Real card data + live CARTO background; PC headless simulation, not phone acceptance",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "viewport": [
+      412,
+      823
+    ],
+    "deviceScaleFactor": 1.75,
+    "cpuSlowdown": 4,
+    "latencyMs": 150,
+    "downloadBitsPerSecond": 1600000,
+    "uploadBitsPerSecond": 750000,
+    "gpu": "headless Chromium with --enable-unsafe-swiftshader; no physical phone measurement"
+  },
+  "data": {
+    "cards": 1313,
+    "pins": 1309,
+    "sha256": "d2733fffb9cf2c86ce86fde6dbbe866ed8070542294ac4bd139f3fbb26050752"
+  },
+  "runs": [
+    {
+      "run": 1,
+      "cache": "cold",
+      "startupMs": 7250.300000011921,
+      "selectionMs": 193.5999999642372,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 7250.300000011921
+        },
+        {
+          "name": "data-load",
+          "duration": 2470.199999988079
+        },
+        {
+          "name": "map-render",
+          "duration": 3613
+        }
+      ],
+      "startupTransferredBytes": 626683
+    },
+    {
+      "run": 1,
+      "cache": "warm",
+      "startupMs": 2185.5,
+      "selectionMs": 112.10000002384186,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 2185.5
+        },
+        {
+          "name": "data-load",
+          "duration": 173.39999997615814
+        },
+        {
+          "name": "map-render",
+          "duration": 1829
+        }
+      ],
+      "startupTransferredBytes": 0
+    },
+    {
+      "run": 2,
+      "cache": "cold",
+      "startupMs": 7237.399999976158,
+      "selectionMs": 242.19999998807907,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 7237.399999976158
+        },
+        {
+          "name": "data-load",
+          "duration": 2390.599999964237
+        },
+        {
+          "name": "map-render",
+          "duration": 3744
+        }
+      ],
+      "startupTransferredBytes": 626653
+    },
+    {
+      "run": 2,
+      "cache": "warm",
+      "startupMs": 2354.699999988079,
+      "selectionMs": 130.79999995231628,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 2354.800000011921
+        },
+        {
+          "name": "data-load",
+          "duration": 184.19999998807907
+        },
+        {
+          "name": "map-render",
+          "duration": 1983.5
+        }
+      ],
+      "startupTransferredBytes": 0
+    },
+    {
+      "run": 3,
+      "cache": "cold",
+      "startupMs": 7284.300000011921,
+      "selectionMs": 227.19999998807907,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 7284.300000011921
+        },
+        {
+          "name": "data-load",
+          "duration": 2427.600000023842
+        },
+        {
+          "name": "map-render",
+          "duration": 3757
+        }
+      ],
+      "startupTransferredBytes": 626608
+    },
+    {
+      "run": 3,
+      "cache": "warm",
+      "startupMs": 2336.5,
+      "selectionMs": 121.10000002384186,
+      "errors": [],
+      "stages": [
+        {
+          "name": "startup",
+          "duration": 2336.5
+        },
+        {
+          "name": "data-load",
+          "duration": 171.0999999642372
+        },
+        {
+          "name": "map-render",
+          "duration": 1965.300000011921
+        }
+      ],
+      "startupTransferredBytes": 0
+    }
+  ],
+  "summary": {
+    "cold": {
+      "runs": 3,
+      "medianStartupMs": 7250.300000011921,
+      "medianSelectionMs": 227.19999998807907
+    },
+    "warm": {
+      "runs": 3,
+      "medianStartupMs": 2336.5,
+      "medianSelectionMs": 121.10000002384186
+    }
+  },
+  "interaction": {
+    "runs": 1,
+    "samples": 246,
+    "medianRafGapMs": 16.799999999999272,
+    "p95RafGapMs": 33.400000000000546,
+    "gapsOver50ms": 3,
+    "caveat": "rAF intervals over scripted pan/zoom including pauses, not measured rendered FPS or physical touch smoothness"
+  },
+  "buildSHA256": {
+    "index.html": "7bbfb032337102f77f3c6d68931ac1fc6fa1bd3e95a12e1a6a12603e1ea9ae24",
+    "maplibre-gl-worker.mjs": "1c69066368331aae63967ed24a9affcf962cf55fcc6d8f532a8b040f736dbcfa",
+    "maplibre-gl-shared.mjs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/app-DHWr-d3p.js": "641d1d6e85d9df6a67a369f162cecff070f7dccef38257db24f4a9f11be8e627",
+    "assets/blank-BHTx0jnJ.js": "17d220492cad5ca785c2f287f97e7887f065c1495dbdebf21e630f6aae77f17a",
+    "assets/card-map-BGaM3kNl.js": "b4d5be58098fa6c49f0d4bba773fdd2651d4c43a037a1656ff39b4e9d1879068",
+    "assets/leaflet-B7IagZa9.js": "1b3ca0ca0aae41af8eaa3f1676bc583e59de55f24f5130b63d5664754aad3d14",
+    "assets/leaflet-common-Cpn7E4Go.js": "c5db9723cc2b814849e6fdace4a93316d1c6df678a2a1551bec8bb5e43911157",
+    "assets/leaflet-common-JjN1qKoW.css": "774372e3d6ce37251935d6bc49a3e8335f0acca9c3f945c183410758258418d9",
+    "assets/legacy-CmoMUspJ.css": "7a07038640dff62a413e24fc6614196b0367d220f7bcb6651097ba071d22f6f9",
+    "assets/legacy-DJ0sCZI-.js": "5e9e5349386d5c1570c0e2617ba3a968cec41272bc60da3a94a0e8399eaa2161",
+    "assets/main-CvK5aFma.js": "239ed7e6f0e2871ca9b68924b4c81309e623e8d02ac91b5b678a254b0b589846",
+    "assets/main-DYAtk5KA.css": "c603bfb26eef4e8fb8357688d540b1347080c4b011d7ad64536f4c4bfaf3662c",
+    "assets/maplibre-BJLTcB5t.js": "e3aa5e818b6f52c16aadbbbeec321d4fc5a9e64807d95a7e93210c91f4338f43",
+    "assets/maplibre-gl-WyExkaQm.js": "464be8e65f9755d551a40c8376f165dec230d66dedbf09d569e20f7e40a2dba8",
+    "assets/maplibre-gl-qvkd0SPb.css": "280f62458bee97adaab9c817e977cc89e02cc34d07a3107ba4a545c17c41976d",
+    "assets/maplibre-gl-worker-BWso-Bu4.js": "85cce15680b9b7a722d6a5acc8b3674fe56c9cd8d9a34199b889e5e5fe43074f",
+    "assets/preload-helper-CFijIu3R.js": "784cb048aa04d8188d24deb308cbfe512ed7c99654873d93185bd5d3e70a8e2b",
+    "assets/rolldown-runtime-WkwZ5CU-.js": "2629f2ad3cb75a57d98de697127f5af7d777ef572bbcdfa6e3ce8f438cd4527e",
+    "assets/simplified-D0_9Co3o.js": "03a49ff1d4c80a8b17720c818f85a9005577d1d176a184b8a94a358fc56e501e",
+    "assets/types-Bs_Vhg8p.js": "6f93910f35e801a39b291adeff38b693923d210394814f7d2298f7b9f5da0984"
+  },
+  "notes": [
+    "Selection measures final click to list/detail paint after cluster drilldown, not whole navigation time.",
+    "SW saves all application chunks after map ready, including comparison chunks; this network work can overlap first interaction.",
+    "Live provider tiles/cache/content may change between runs; do not directly compare historical backgrounds as a controlled renderer benchmark.",
+    "Follow-up cleanup guard and panel positioning can change final build hashes; these hashes identify only the measured build."
+  ]
+}
