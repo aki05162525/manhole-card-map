@@ -1,0 +1,1132 @@
+{
+  "schema": 1,
+  "issue": 36,
+  "region": "south-kanto",
+  "startedAt": "2026-11-05T11:24:19.171357+00:00",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "asOf": "2026-11-05",
+  "populationDefinition": "Issue24 originalRef south-kanto ∩ batch1 baseline minus current assembled located IDs",
+  "nationalUnlocatedAtStart": 608,
+  "regionalPopulation": 56,
+  "regionalUnlocated": 56,
+  "alreadyAdoptedExcluded": [],
+  "selectedIds": [
+    "facility:kanto-south-38d7a5c180ebcf42c381",
+    "facility:kanto-south-5724e90e3e451f22eeef",
+    "facility:kanto-south-b3c83a3795c4697c100b",
+    "facility:kanto-south-caac2827c5303ba03047",
+    "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+    "facility:kanto-south-d4aaa6f664279d04fc85",
+    "facility:kanto-south-integration-01",
+    "facility:kanto-south-integration-05"
+  ],
+  "priorHoldIntersection": [],
+  "priorHoldNote": "Issue20/25/26/27およびbatch1 integration/followupsに本地域の重複なし。Issue7保留は各行newMethodを再開根拠とする。",
+  "classificationCounts": {
+    "active": 48,
+    "suspended": 4,
+    "needs-review": 1,
+    "ended-only": 1,
+    "mixed": 1,
+    "upcoming": 1
+  },
+  "inputSHA256": {
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue7/south-kanto.json": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+    "data/national/issue7/reviews/south-kanto.json": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+    "data/national/location-batch1/integration.json": "0932cd4daf333e549cfcffefb91cfb5692ed4500e334f8208f6d5adfbbd99732",
+    "data/national/location-batch1/followups.json": "49439a80e825cac9dc09c125a452a4bf7fa842151e5ec9ba3dbb3b50ac6bcb2d",
+    "data/national/issue20/selection.json": "b09b492082515175b44362c47ed3fe53a25e5f9934bc7db7d42f253419a8a3cc",
+    "data/national/issue25/investigation.json": "dbc09d81d7e68f4dd55f0575d98d16234510d83219969f62b1bee93b9f1fc0ba",
+    "data/national/issue26/outcomes.json": "ee4a53b8fec20b82ce2e348929580898bda65ae27be81f9a6f558c3c0bac41ac",
+    "data/national/issue27/outcomes.json": "efaba117ed85745039dd70808be3e6ff6a114d74b90070b2b2fb5e6704477d06",
+    "data/work/location-batch2/south-kanto/before-ledger.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "name": "袖ケ浦市役所 下水道課",
+      "address": "千葉県袖ケ浦市中袖4番地 (袖ケ浦終末処理場 管理棟2階)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/21"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-229-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "終末処理場の施設整備・配置図から管理棟と地理参照外形を対応"
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "name": "白井市役所 本庁舎1階守衛室",
+      "address": "千葉県白井市復1123番地",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/25"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-232-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "本庁舎/東庁舎の配置図を建物外形と対応"
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "name": "習志野市企業局工務部下水道課",
+      "address": "千葉県習志野市藤崎1-1-13(企業局新館3階)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/37"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-216-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "企業局新館の建設・配置資料から旧館との区別"
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "name": "白井市役所 都市建設部 上下水道課業務係",
+      "address": "千葉県白井市復1123番地",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/35",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/42"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-232-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "本庁舎/東庁舎の配置図を建物外形と対応"
+    },
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+      "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/38",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/45"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "14-150-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "既存周辺案内図の第1別館を試験Vector外形と照合"
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "name": "袖ケ浦市役所 守衛室",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1(袖ケ浦市役所 南庁舎1階)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/39",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/46"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-229-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "南庁舎整備資料と現在外形を照合"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "name": "八千代市上下水道局1階 お客様センター（工事）",
+      "address": "八千代市大和田新田312-5",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/48",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/55"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-221-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "新上下水道局庁舎の設計/竣工資料と地理参照外形を照合"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "name": "八千代市水道サービス（宿直対応）",
+      "address": "八千代市大和田新田312-5 上下水道局庁舎内",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/49",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/56"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-221-A001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "name": "袖ケ浦市観光協会",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1 南庁舎1階",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/50",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/57"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [
+        "12-229-A001"
+      ],
+      "selected": true,
+      "exclusionReason": null,
+      "selectionReason": "初ピン候補かつ移転/別棟による誤誘導を優先。旧数値検索から配置/整備資料による棟同定へ変更。",
+      "newMethod": "南庁舎整備資料と現在外形を照合"
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+      "address": "神奈川県三浦市城山町1-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/9"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "name": "八街市役所受付(第一庁舎一階)",
+      "address": "千葉県八街市八街ほ35番地29",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/31"
+      ],
+      "classification": "suspended",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "name": "柏市上下水道局3階総務課",
+      "address": "柏市千代田一丁目2番32号",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/43"
+      ],
+      "classification": "suspended",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "name": "三浦海岸駅前観光案内所",
+      "address": "三浦海岸駅改札前",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/52",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/59",
+        "data/national/issue7/reviews/south-kanto.json#/corrections/9"
+      ],
+      "classification": "active",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "name": "八千代市上下水道局1階給排水相談課窓口",
+      "address": "千葉県八千代市大和田新田312-5",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/55",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/62"
+      ],
+      "classification": "needs-review",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": null,
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "name": "株式会社八千代市水道サービス",
+      "address": "千葉県八千代市萱田町596-19(八千代市上下水道局敷地内)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/56",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/63"
+      ],
+      "classification": "ended-only",
+      "blockers": [
+        "relocation"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "終了のみの履歴関係であり今回の初ピン調査外。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "name": "かわさききたテラス(川崎市観光案内所)",
+      "address": "神奈川県川崎市川崎区駅前本町26-1(アトレ3階 かわさききたテラス内)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/35"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-130-A001",
+        "14-130-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "name": "Hintmation",
+      "address": "東京都北区赤羽台2丁目1-15 ヌーヴェル赤羽台15号棟1階",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/12"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-N101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "address": "東京都羽村市羽村4122",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/13"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-227-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "name": "赤羽スポーツの森公園競技場",
+      "address": "東京都北区赤羽西5-2-27",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/14"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-H101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "name": "川崎市入江崎水処理センター ワクワクアクア",
+      "address": "神奈川県川崎市川崎区塩浜3-17-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/15"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-130-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "name": "東京都虹の下水道館",
+      "address": "東京都江東区有明2-3-5(有明水再生センター5階)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/16",
+        "data/national/issue7/reviews/south-kanto.json#/corrections/7"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "name": "四之宮ふれあいセンター",
+      "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/18"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-203-A001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "name": "秋川渓谷瀬音の湯",
+      "address": "東京都あきる野市乙津565番地",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/22"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-228-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "name": "旧井上家住宅",
+      "address": "千葉県我孫子市相島新田1番地",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/23"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "12-222-A001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "name": "荒川知水資料館 amoa",
+      "address": "東京都北区志茂 5-41-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/24"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-J101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "name": "“渚の駅”たてやま",
+      "address": "千葉県館山市館山1564-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/26"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "12-205-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "name": "URまちとくらしのミュージアム",
+      "address": "東京都北区赤羽台1-4-50",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/28"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "00-102-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
+      "name": "CADAN大手町",
+      "address": "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング1階ぜにがめプレイス",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/29"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-A001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+      "address": "千葉県佐倉市臼井田2714",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/30"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "12-212-B001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "name": "フレア五日市",
+      "address": "東京都あきる野市舘谷台26番地1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/32"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-228-C001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "name": "アイルしながわ",
+      "address": "東京都品川区東品川2-3-2",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/33"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-S001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "name": "さがみはらアンテナショップsagamix",
+      "address": "神奈川県相模原市南区相模大野3-2-1ボーノ相模大野ショッピングセンター2F",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/36"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-150-D001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "name": "衣笠商店街サービスセンター",
+      "address": "神奈川県横須賀市衣笠栄町2丁目28",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/38"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-201-D001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "name": "しながわ観光協会",
+      "address": "東京都品川区大井1-14-1 大井1丁目共同ビル1階",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/39"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-E001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+      "name": "日本下水道事業団研修センター管理課",
+      "address": "埼玉県戸田市下笹目5141",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/40"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "00-101-A001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "name": "コネクトすみだ[まち処]",
+      "address": "墨田区向島1-23-9 E-03",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/41"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-L101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "address": "東京都荒川区荒川8-25-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/37",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/44"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-D101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-de8aff1633c63180b295",
+      "name": "東映アニメーションミュージアムショップ",
+      "address": "東京都練馬区東大泉2-10-5",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/40",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/47"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-E101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "name": "渋沢×北区 飛鳥山おみやげ館",
+      "address": "東京都北区西ケ原2-16飛鳥山公園管理事務所内",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/42",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/49"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-F101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "name": "衣笠商店街事務所",
+      "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/43",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/50"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "14-201-D001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "name": "滝山中央名店会(食祭館あまいけ2階)",
+      "address": "東京都東久留米市滝山4-1-40",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/45",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/52"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-222-C001"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "name": "荻外荘公園受付",
+      "address": "東京都杉並区荻窪2丁目43番36号",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/47",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/54"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [
+        "13-100-K101"
+      ],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "name": "葉山しおさい公園",
+      "address": "神奈川県三浦郡葉山町一色2123-1",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/7"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-04903f9b604f31b843df",
+      "name": "小金井市観光まちおこし協会",
+      "address": "小金井市本町1丁目18番14号 松島ビル103",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/8"
+      ],
+      "classification": "mixed",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "name": "丸吉玩具店",
+      "address": "東京都葛飾区立石1-21-2",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/10"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "name": "ハンドメイドファクトリー マカロン",
+      "address": "東京都葛飾区亀有3-35-3",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/11"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "name": "市川市観賞植物園",
+      "address": "千葉県市川市大町213番11外",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/19"
+      ],
+      "classification": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+      "address": "神奈川県秦野市上大槻190番地",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/20"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "name": "日野市環境共生部下水道課",
+      "address": "東京都日野市日野本町1-7-2-2階(日野市生活保健センターの向かいの建物)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/27"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-97a685101067226be52c",
+      "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
+      "address": "東京都武蔵野市境1-1-7",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/34"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
+      "name": "総合レクリエーション公園サービスセンター",
+      "address": "東京都江戸川区南葛西3丁目17番1号(ファミリースポーツ広場内)",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/41",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/48"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+      "address": "神奈川県伊勢原市神戸120",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/44",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/51"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "name": "道の駅みのりの郷東金",
+      "address": "千葉県東金市田間1300-3",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/46",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/53"
+      ],
+      "classification": "suspended",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "name": "ヴェルニー公園管理事務所",
+      "address": "神奈川県横須賀市汐入町1-1 ヴェルニー公園内",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/51",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/58"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-11",
+      "name": "オーエンス文化会館 第2駐車場",
+      "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/53",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/60"
+      ],
+      "classification": "upcoming",
+      "blockers": [
+        "building"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "name": "一般財団法人足立区観光交流協会",
+      "address": "東京都足立区中央本町1-17-1 足立区役所南館4階",
+      "originalRef": "data/national/issue7/south-kanto.json#/unresolved/54",
+      "reviewRefs": [
+        "data/national/issue7/reviews/south-kanto.json#/decisions/61"
+      ],
+      "classification": "active",
+      "blockers": [
+        "source"
+      ],
+      "firstPinCardIds": [],
+      "selected": false,
+      "exclusionReason": "今回8件の移転/別棟・初ピン群を先行。同住所でも同棟と認定せず、このIDの採用や調査完了を意味しない。",
+      "selectionReason": null,
+      "newMethod": null
+    }
+  ]
+}
