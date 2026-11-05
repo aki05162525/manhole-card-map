@@ -1,17 +1,17 @@
 {
   "schema": 1,
   "filesSHA256": {
-    "details.json": "a6b1a60723fb378ceeef5dc1628479f067aef0267f1ca923d0b9576deefb83eb",
-    "full.json": "e9c9d6495bdc3df3b794c210af456297c9cc5daa35183f45c139838fa52a056c",
-    "pins.json": "ce5f8c7a37fb27789712331ad3aa10d7606438080b86ea5f5075054cd55fce7d"
+    "details.json": "b712e17a91faa1a6a5af46f2b25919a432892b09e831af6887bece9611f72dce",
+    "full.json": "7e14065eb159e92c3a2962446e1c91034816d803a0b29a89ba5ecde57bae5f37",
+    "pins.json": "4a752d266e19f715c8ecb5cafc94790317e4201e08319344b4dd22571ce5bdb6"
   },
   "evaluatedAt": "2026-11-05",
   "listDate": "2026-10-21",
   "cards": 1313,
   "places": 1735,
   "relations": 1825,
-  "facilityPinsBefore": 979,
-  "facilityPinsAfter": 981,
+  "facilityPinsBefore": 981,
+  "facilityPinsAfter": 983,
   "existingPinsUnchanged": true,
   "fullDetailsPinsConsistent": true,
   "rows": [

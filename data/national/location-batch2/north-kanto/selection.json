@@ -164,16 +164,27 @@
       "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
     }
   ],
-  "countBasis": "開始時全国608。最新main607、北関東仮統合後605。地域は91→89。",
+  "countBasis": "第2弾開始時全国608。統合基準main605、北関東2件仮統合後603。地域91→89。",
   "selectionClarification": "初回に8IDを保存してから検索を開始。URL別の発見時刻は未記録。新規性と除外判断の補足はレビュー後に追記したもので、選定時に記録済みだったとは扱わない。",
   "baselineUnlocated": 91,
   "integrationBaseline": {
-    "mainCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
-    "nationalUnlocatedBefore": 607,
-    "nationalUnlocatedAfter": 605,
+    "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+    "nationalUnlocatedBefore": 605,
+    "nationalUnlocatedAfter": 603,
     "regionUnlocatedBefore": 91,
     "regionUnlocatedAfter": 89,
     "initialNationalUnlocated": 608,
-    "note": "北海道PR56の1採用/binding/地域テストを保持。北関東差分は自地域だけを除いたmanifestとの比較。"
-  }
+    "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+  },
+  "integrationHistory": [
+    {
+      "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+      "nationalUnlocatedBefore": 605,
+      "nationalUnlocatedAfter": 603,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+    }
+  ]
 }
