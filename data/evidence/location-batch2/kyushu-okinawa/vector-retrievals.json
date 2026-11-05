@@ -1,0 +1,57 @@
+[
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=0-126",
+    "retrievedAt": "2026-11-05T11:28:04.128660+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/kyushu-okinawa/pmtiles-0-127.bin",
+    "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+    "bytes": 127,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2503-6670",
+    "retrievedAt": "2026-11-05T11:28:04.276433+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/kyushu-okinawa/pmtiles-2503-4168.bin",
+    "sha256": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+    "bytes": 4168,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=127-2502",
+    "retrievedAt": "2026-11-05T11:28:04.385614+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/kyushu-okinawa/pmtiles-127-2376.bin",
+    "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+    "bytes": 2376,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=5469223-5478392",
+    "retrievedAt": "2026-11-05T11:28:04.461825+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/kyushu-okinawa/pmtiles-5469223-9170.bin",
+    "sha256": "be68dd74a28285657fa9f1fa4c2066b07df6cef86398107d878255aead9c783c",
+    "bytes": 9170,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=16595626934-16595641956",
+    "retrievedAt": "2026-11-05T11:28:04.539491+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/kyushu-okinawa/pmtiles-16595626934-15023.bin",
+    "sha256": "2902e72d9bcef1af62cb498021c694fc349cdf34278a4a85dba81ab613b0ad59",
+    "bytes": 15023,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  }
+]

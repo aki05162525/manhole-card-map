@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "region": "kyushu-okinawa",
+  "issue": 44,
+  "asOf": "2026-11-05",
+  "createdAt": "2026-11-05T11:24:17.448614+00:00",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/work/location-batch2/kyushu-okinawa/before.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525"
+  },
+  "selected": [
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/33"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-530-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "徳之島町役場建設課",
+      "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。",
+      "newMethod": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/57"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-530-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "徳之島町役場新庁舎1階宿直室",
+      "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。",
+      "newMethod": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。"
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/0"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "conflict"
+      ],
+      "name": "諫早物産ホール諫早観光物産コンベンション協会",
+      "previousReason": "新P05照合で物産ホールfeature419と諫早商工会館ビルfeature518を発見。現運営者hallページは物産ホール＝商工会館1階、高城町5-10と同定するが、二点は約38m離れる。どちらが建物内か外形照合未完了のため採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "物産ホールと商工会館のP05競合。商工会議所の建物案内・設計資料という別資料で建物対応を探す。",
+      "newMethod": "物産ホールと商工会館のP05競合。商工会議所の建物案内・設計資料という別資料で建物対応を探す。"
+    },
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/64",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/64"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "知名町役場上下水道課",
+      "previousReason": "現公式アクセスは知名1100。P05知名町役場feature1457は知名307の旧庁舎で不一致。追加取得した新アクセスのllは表示中心、qは役場名であり数値建物markerとは扱えない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "知名町の新旧庁舎混同を防ぐ。新庁舎整備事業の配置資料・竣工資料を探索する。",
+      "newMethod": "知名町の新旧庁舎混同を防ぐ。新庁舎整備事業の配置資料・竣工資料を探索する。"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/21"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-326-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "北谷町観光情報センター",
+      "previousReason": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）：観光協会公式施設詳細と県GISデータを照合。美浜16-3の観光情報センターの建物目的地座標を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。",
+      "newMethod": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。"
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/22"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-213-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+      "previousReason": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）：管理者の施設紹介・アクセスを追加確認。勝連城跡や歴史文化施設と観光ターミナル（南風原3807-2）を区別する建物目的地を未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "沖縄の初ピン、歴史文化施設との棟混同。観光ターミナルの指定管理資料・配置図を探索する。",
+      "newMethod": "沖縄の初ピン、歴史文化施設との棟混同。観光ターミナルの指定管理資料・配置図を探索する。"
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/28"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-209-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "名護市営市場",
+      "previousReason": "名護市営市場（沖縄県名護市城1-4-11）：市場公式アクセスと県GISデータを照合。城1-4-11の市営市場の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "沖縄の初ピン。名護市営市場の施設管理資料・階別図を新たに探しアクセス地図以外の対応を調べる。",
+      "newMethod": "沖縄の初ピン。名護市営市場の施設管理資料・階別図を新たに探しアクセス地図以外の対応を調べる。"
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/47",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/47"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-201-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
+      "previousReason": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)（沖縄県那覇市松尾2丁目10番1号）：市公式案内と県GIS施設データを照合。新しい第一牧志公設市場の建物内案内所について、旧市場・仮設市場と区別して採用できる点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selectionReason": "初ピンと旧・仮設市場への誤誘導リスク。新市場の施設図・再整備竣工資料を探す。",
+      "newMethod": "初ピンと旧・仮設市場への誤誘導リスク。新市場の施設図・再整備竣工資料を探す。"
+    }
+  ]
+}

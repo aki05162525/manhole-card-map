@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "region": "kyushu-okinawa",
+  "issue": 44,
+  "asOf": "2026-11-05",
+  "selected": 8,
+  "proposed": 0,
+  "adopted": 0,
+  "held": 8,
+  "reviewStatus": "unavailable-quota-exceeded",
+  "timing": {
+    "startedAt": "2026-11-05T11:24:17.448614+00:00",
+    "endedAt": "2026-11-05T11:30:43.053674+00:00",
+    "wallSeconds": 385.605,
+    "scope": "selection.json保存から一次資料探索・原本取得・図の読解・Vector探索終了まで。8ID共同の壁時計時間。事前読取、成果文書整形、検証、レビュー、PR操作は含めない。施設別へ重複配賦せず全国へ外挿しない。"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "name": "徳之島町役場建設課",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/33"
+      ],
+      "newMethod": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。",
+      "sourceIds": [
+        "tokunoshima-completion",
+        "tokunoshima-layout"
+      ],
+      "findings": "広報徳之島2023年8月号PDF p2の落成記事・現建物外観を新たに確認。別URLの庁舎案内は旧sintyousya.pdfと同一hashであり新資料ではない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "落成外観は現在の建物の識別を補助するが、地理参照外形との接続は未完。",
+      "resumeCondition": "落成写真と既存配置図を、版とCRSを確認した現建物外形に対応付ける。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "name": "徳之島町役場新庁舎1階宿直室",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/57"
+      ],
+      "newMethod": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。",
+      "sourceIds": [
+        "tokunoshima-completion",
+        "tokunoshima-layout"
+      ],
+      "findings": "建設課と共同で落成記事・外観を確認。宿直室のID・配布関係は別のまま。旧配置図の別URL再取得を新証拠に数えない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "新庁舎の建物代表点を確定していないため、住所共有だけで宿直室へ点を複製しない。",
+      "resumeCondition": "新庁舎建物の地理参照外形との対応を確定し、既存の宿直室関係と照合する。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "name": "諫早物産ホール諫早観光物産コンベンション協会",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/0"
+      ],
+      "newMethod": "物産ホールと商工会館のP05競合。商工会議所の建物案内・設計資料という別資料で建物対応を探す。",
+      "sourceIds": [
+        "isahaya-plan",
+        "isahaya-plan-current"
+      ],
+      "findings": "2021年版の旧URLは404。2025年10月版の市商工観光施設計画PDF p6（冊子p4）は、物産ホールを計画の対象から除外すると記載。将来の用途見直しの可能性は現在の移転確定ではない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "新計画から目的の個別施設図を得られず、P05の約38m競合を解消しない。",
+      "resumeCondition": "商工会館管理組合の現配置・敷地図、または現建物外形を独立同定できる資料を取得する。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "name": "知名町役場上下水道課",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/64",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/64"
+      ],
+      "newMethod": "知名町の新旧庁舎混同を防ぐ。新庁舎整備事業の配置資料・竣工資料を探索する。",
+      "sourceIds": [
+        "china-plan",
+        "china-pamphlet-page",
+        "china-pamphlet"
+      ],
+      "findings": "2024年新庁舎パンフレットPDF p3（印刷p3-4）の1階08番に上下水道課。p6（印刷p9-10）のドローン写真は中庭・道路・駐車場を区別し、2024-05-07業務開始を記載。2020基本計画は竣工証明に代用しない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "新庁舎への部署対応は前進。GSI 16/56174/27591の探索ヒントを内包するBldAは0だが、ヒントは市のGoogle表示中心にすぎず建物位置ではない。これでVectorに新庁舎が存在しないとは判定しない。",
+      "resumeCondition": "パンフレットp6の道路・中庭・駐車場の配置を隣接タイルを含む地理参照外形へ独立接続する。表示中心への最近傍スナップは禁止。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "name": "北谷町観光情報センター",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/21"
+      ],
+      "newMethod": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。",
+      "sourceIds": [
+        "chatan-ordinance",
+        "chatan-facility"
+      ],
+      "findings": "町条例第3条は美浜16番地3、第4条は観光案内施設・多目的施設等の構成を明示。町施設ページの添付は対応件数資料であり、今回確認したリンクには平面図がなかった。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "条例による住所・機能の確認は建物外形の同定には足りない。指定管理図面の探索は未達。",
+      "resumeCondition": "観光情報センター固有の施設図面・町公開GIS点を取得し、隣接施設と区別する。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/22"
+      ],
+      "newMethod": "沖縄の初ピン、歴史文化施設との棟混同。観光ターミナルの指定管理資料・配置図を探索する。",
+      "sourceIds": [
+        "uruma-plan",
+        "uruma-pfi",
+        "uruma-management",
+        "uruma-design",
+        "uruma-survey",
+        "uruma-design-list"
+      ],
+      "findings": "令和5年度管理仕様書p1は観光ターミナル建築面積約230㎡、歴史文化施設約1980㎡を区別。p2の区域付き航空写真は池・駐車場の間の小棟を観光ターミナルと明示。測量成果簿は323ページ、テキスト化できる網図は平成25年度。図面リストは図面そのものではない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "航空写真で棟区別は前進したが、斜め写真に地理参照はない。測量成果簿の既知点から現建物の外形へ接続する計算は行っていない。",
+      "resumeCondition": "2023管理区域図の小棟を現Vector/PLATEAU外形に接続するか、原測量のCRS・軸順・現建物との対応・利用条件を確認する。2013測量点を完成後の建物点へそのまま転用しない。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "name": "名護市営市場",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/28"
+      ],
+      "newMethod": "沖縄の初ピン。名護市営市場の施設管理資料・階別図を新たに探しアクセス地図以外の対応を調べる。",
+      "sourceIds": [
+        "nago-management",
+        "nago-index"
+      ],
+      "findings": "新たに指定管理業務仕様書を探索したが、検索で得たPDFと掲載ページは直接取得が404。検索エンジンの抽出文は原本bytesを取得できた証拠ではない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "新資料の原本を保存・検証できず、建物点の根拠にしない。",
+      "resumeCondition": "市の移転先URLまたは原本再公開を取得し、城1-4-11の市場の図面・CRS付き位置資料を確認する。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "name": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/47",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/47"
+      ],
+      "newMethod": "初ピンと旧・仮設市場への誤誘導リスク。新市場の施設図・再整備竣工資料を探す。",
+      "sourceIds": [
+        "makishi-floor",
+        "makishi-site",
+        "naha-current"
+      ],
+      "findings": "2024年1月名の公式フロア図PDFと市場サイトは503。市基本情報HTML（2026-11-04更新）は2023年新築・松尾2-10-1を記載。市ページは新市場の時期を補強するが案内所の階別図ではない。",
+      "status": "held",
+      "coordinate": null,
+      "stopCondition": "旧・仮設市場を除外する建物外形と案内所の接続は未完。サイト復旧待ち。",
+      "resumeCondition": "公式フロア図を原本取得し、1F案内所と現新築市場の外形対応を確認。旧市場・仮設市場の点を代用しない。",
+      "numericSource": null,
+      "crs": null,
+      "axisOrder": null,
+      "processing": "座標提案・変換・丸めなし。PDFテキスト抽出/必要ページの画像確認。知名町のみVectorの非採用探索はvector-exploration.json参照。",
+      "accuracy": "建物点未確定。入口・窓口精度は要求しない。",
+      "sourceVersion": "個別資料の版・ページはfindingsと取得記録参照。版不明は取得bytes時点。",
+      "sourceConditions": "一般HTML/PDFの再配布許諾未確認。原本はworkのみ。数値採用なし。"
+    }
+  ]
+}

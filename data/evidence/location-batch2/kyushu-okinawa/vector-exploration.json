@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "facilityId": "facility:ws-f5ea517afaab927bb9",
+  "status": "exploration-only-no-proposed-point",
+  "source": "国土地理院最適化ベクトルタイル",
+  "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "version": "2026-07-01（第1弾で保存した公式README）。今回RangeのETag/Last-Modifiedはvector-retrievals.json。個別建物整備日は未確認。",
+  "sourceCRS": "JGD2011 geographic / Web Mercator tile grid; WGS84測地系変換なし",
+  "tile": {
+    "z": 16,
+    "x": 56174,
+    "y": 27591,
+    "extent": 4096
+  },
+  "file": "china-exploration-tile.pbf.gz",
+  "sha256": "2902e72d9bcef1af62cb498021c694fc349cdf34278a4a85dba81ab613b0ad59",
+  "hint": {
+    "lat": 27.33740044383068,
+    "lng": 128.57580895404084,
+    "sourceRef": "data/evidence/issue7/kyushu-okinawa/fbc08f67f2a5e5246841aff7.html",
+    "meaning": "公式ページ内Google embed表示中心。タイル探索のみ。現建物座標・採用候補・独立同定根拠ではない。"
+  },
+  "buildings": 496,
+  "hintContainingBuildings": 0,
+  "selectedGeometry": null,
+  "derivedCoordinate": null,
+  "interpretation": "1タイルのみ確認。新庁舎未収録を証明しない。隣接タイル未比較。",
+  "termsRefs": [
+    "data/evidence/location-batch1/east/gsi-vector-readme.md",
+    "data/evidence/location-batch1/gsi-terms.html",
+    "data/evidence/location-batch1/gsi-terms-retrieval.json"
+  ],
+  "terms": "試験Vectorは基本測量成果と位置付けられていない。PDL1.0、出典/加工表示。ラスターの申請条件から類推しない。保存tileはPMTilesから無改変抽出、解析はgzip展開とBldA内包判定。国土地理院による施設点の承認ではない。"
+}
