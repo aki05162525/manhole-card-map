@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "providerInstanceId": "antigravity",
+  "model": "gemini-4-argon",
+  "role": "review",
+  "isolation": "shared",
+  "worktree": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-48bdaaba",
+  "requestedAt": "2026-11-05T11:32:33.055Z",
+  "failedAt": "2026-11-05T11:34:54.855Z",
+  "status": "failed-provider-quota",
+  "error": "Usage Limit Reached\n\nYou have reached your current quota for this period. Your limit will reset in 6 days, 21 hours.",
+  "taskId": "node:delegated-task:command%3Amcp%3A04b4214c-39c8-41be-8e56-dd8ed01fa431%3Adelegate-task%3A4399c305-eff3-4555-b109-af69327050e6",
+  "findings": null,
+  "approval": false,
+  "responseAtFailure": "代替モデルへ変更しない。採用0を維持し、未レビューのDraft PRとして親へ渡す。レビュー完了の要件は未達。",
+  "subsequentInstruction": "利用者がClaude Opus代替レビューを明示許可。初回Opusレビューの指摘を受け再調査中。失敗当時の無代替方針を現方針と扱わない。"
+}
