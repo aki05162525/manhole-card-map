@@ -54,9 +54,7 @@
       "rawOutput": "data/work/kanto-prefecture/tokyo/east/",
       "status": "research-completed; integration-verified; independent-review-pending",
       "validationScope": "original/hash/geometry only; no full suite, commits, shared manifest or further delegation",
-      "humanWait": [
-        "facility:kanto-south-cdc3bc3e1d850a2e973d"
-      ],
+      "humanWait": [],
       "provider": "claudeAgent",
       "model": "claude-opus-5-5",
       "taskId": "node:delegated-task:command%3Amcp%3A337b6ed9-6977-412a-8ee6-f1bf9e4a5447%3Adelegate-task%3Aa1f53efa-5ed7-4ff7-a81f-5549a5930fef",
@@ -83,9 +81,7 @@
       "rawOutput": "data/work/kanto-prefecture/tokyo/south/",
       "status": "research-completed; integration-verified; independent-review-pending",
       "validationScope": "original/hash/geometry only; no full suite, commits, shared manifest or further delegation",
-      "humanWait": [
-        "facility:kanto-south-dfd35978e81cbcc80123"
-      ],
+      "humanWait": [],
       "provider": "claudeAgent",
       "model": "claude-opus-5-5",
       "taskId": "node:delegated-task:command%3Amcp%3A337b6ed9-6977-412a-8ee6-f1bf9e4a5447%3Adelegate-task%3A481da84a-ea50-4d4b-94bc-f54b572249e2",
@@ -141,9 +137,7 @@
       "rawOutput": "data/work/kanto-prefecture/tokyo/outer/",
       "status": "research-completed; integration-verified; independent-review-pending",
       "validationScope": "original/hash/geometry only; no full suite, commits, shared manifest or further delegation",
-      "humanWait": [
-        "facility:kanto-south-1e2eb2c199aa90b834c0"
-      ],
+      "humanWait": [],
       "provider": "claudeAgent",
       "model": "claude-opus-5-5",
       "taskId": "node:delegated-task:command%3Amcp%3A337b6ed9-6977-412a-8ee6-f1bf9e4a5447%3Adelegate-task%3A5e1513a7-5eb1-4938-86c6-4cda8b8d9f9b",
