@@ -1,0 +1,23 @@
+[
+  {
+    "sourceUrl": "https://www.jebl.co.jp/building/yokohamatower/",
+    "fetchedAt": "2026-11-05T05:45:13.108193+00:00",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue5/south-kanto/63cadd8ca921156a6fdf340b.raw",
+    "snapshotSHA256": "4274dfc705d40e072218048d8de8685aa84f3e8768a7e0b337b6529cde6a67a1"
+  },
+  {
+    "sourceUrl": "https://yokohamastationcity.com/jr_yokohama_tower/",
+    "fetchedAt": "2026-11-05T05:45:13.755168+00:00",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue5/south-kanto/ef94d27108d4e3a728e5278f.raw",
+    "snapshotSHA256": "c690b9eb511a23ec2c70fbb40d9f73120ec3406dab8df7763e0ab10a8c29f6c9"
+  },
+  {
+    "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+    "fetchedAt": "2026-11-05T05:45:52.394481+00:00",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue5/south-kanto/808a81b865c35633746133b6.raw",
+    "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67"
+  }
+]

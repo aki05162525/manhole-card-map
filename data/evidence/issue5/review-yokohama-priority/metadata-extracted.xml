@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MD_Metadata xsi:schemaLocation="http://zgate.gsi.go.jp/ch/jmp/ http://zgate.gsi.go.jp/ch/jmp/JMP20.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://zgate.gsi.go.jp/ch/jmp/" xmlns:jmp20="http://zgate.gsi.go.jp/ch/jmp/">
+  <identificationInfo>
+    <MD_DataIdentification>
+      <citation>
+        <title>3D都市モデル_14100_city_2024_op</title>
+        <date>
+          <date>2025-10-30</date>
+          <dateType>001</dateType>
+        </date>
+      </citation>
+      <abstract>3D都市モデルとは、都市空間に存在する建物や街路といったオブジェクトに名称や用途、建設年といった都市活動情報を付与することで、都市空間そのものを再現する3D都市空間情報プラットフォームです。 様々な都市活動データが3D都市モデルに統合され、フィジカル空間とサイバー空間の高度な融合が実現します。これにより、都市計画立案の高度化や、都市活動のシミュレーション、分析等を行うことが可能となります。本データには、建築物、道路、地形、都市設備、植生、橋梁、区域区分、用途地域が含まれます。建物のLOD0は、都市計画基本図（1/2,500）の平面図形です。建物のLOD1は、LOD0の図形に、航空写真測量により取得した点群を使って、一律の高さ（中央値）を付与した立体図形です。建物のLOD２は、航空写真測量により取得した点群から、建物の立体的な形状を図化した立体図形です。建物、道路、都市設備、植生のLOD3は、車載写真レーザ測量、地上レーザ測量、LiderSLAM計測成果をもとに、建物、道路、都市設備、植生の立体的な形状を図化した立体図形です。建物のLOD4は、LiderSLAM計測成果をもとに、建物の立体的な形状を図化した立体図形です。また、建物には、属性として都市計画基礎調査の結果に基づき、建物利用情報等の属性を付与しています。ただし、原典資料の位置の正しさの違いや、作成された時期の違いにより、現状を正確に反映していない場合があることにご注意ください。</abstract>
+      <purpose>本データの主な利用目的は、1．都市に関わる様々な地理空間データを格納する基盤、2．都市計画・まちづくりにおけるタンジブルインターフェースを活用した住民参加型まちづくり等です。</purpose>
+      <status>001</status>
+      <pointOfContact>
+        <organisationName>国土交通省都市局</organisationName>
+        <contactInfo>
+          <phone>
+            <voice>03-5253-8397</voice>
+            <facsimile>03-5253-1586</facsimile>
+          </phone>
+          <address>
+            <deliveryPoint>霞が関2-1-3</deliveryPoint>
+            <city>千代田区</city>
+            <administrativeArea>東京都</administrativeArea>
+            <postalCode>100-8918</postalCode>
+            <country>jpn</country>
+          </address>
+          <onlineResource>
+            <linkage>www.mlit.go.jp/plateau/</linkage>
+            <description>国土交通省では、Project “PLATEAUプラトー” として、実世界（フィジカル空間）の都市を仮想的な世界（サイバー空間）に再現する3D都市モデルの整備を進めています。ウェブサイトでは、プロジェクトの進捗プロセスを継続的に発信していくと同時に、3D都市モデルをはじめとする各種データをオープンデータ化し、誰もが活用できるようになります。</description>
+          </onlineResource>
+        </contactInfo>
+        <role>010</role>
+      </pointOfContact>
+      <pointOfContact>
+        <organisationName>国際航業株式会社</organisationName>
+        <contactInfo>
+          <phone>
+            <voice>042-307-7424</voice>
+            <facsimile>042-330-1050</facsimile>
+          </phone>
+          <address>
+            <deliveryPoint>晴見町2-24-1</deliveryPoint>
+            <city>府中市</city>
+            <administrativeArea>東京都</administrativeArea>
+            <postalCode>183-0057</postalCode>
+            <country>jpn</country>
+          </address>
+          <onlineResource>
+            <linkage>www.kkc.co.jp/</linkage>
+            <description>国際航業株式会社ホームページ</description>
+          </onlineResource>
+        </contactInfo>
+        <role>006</role>
+      </pointOfContact>
+      <pointOfContact>
+        <organisationName>アジア航測株式会社</organisationName>
+        <contactInfo>
+          <phone>
+            <voice>044-969-7230</voice>
+            <facsimile>044-965-2596</facsimile>
+          </phone>
+          <address>
+            <deliveryPoint>麻生区万福寺1-2-2</deliveryPoint>
+            <city>川﨑市</city>
+            <administrativeArea>神奈川県</administrativeArea>
+            <postalCode>215-0004</postalCode>
+            <country>jpn</country>
+          </address>
+          <onlineResource>
+            <linkage>https://www.ajiko.co.jp/</linkage>
+          </onlineResource>
+        </contactInfo>
+        <role>006</role>
+      </pointOfContact>
+      <pointOfContact>
+        <organisationName>株式会社フォーラムエイト</organisationName>
+        <contactInfo>
+          <phone>
+            <voice>03-6894-1888</voice>
+            <facsimile>03-6894-3888</facsimile>
+          </phone>
+          <address>
+            <deliveryPoint>港南2-15-1品川インターシティA棟21F</deliveryPoint>
+            <city>港区</city>
+            <administrativeArea>東京都</administrativeArea>
+            <postalCode>108-6021</postalCode>
+            <country>jpn</country>
+          </address>
+          <onlineResource>
+            <linkage>https://www.forum8.co.jp/</linkage>
+            <description>株式会社フォーラムエイトホームページ</description>
+          </onlineResource>
+        </contactInfo>
+        <role>006</role>
+      </pointOfContact>
+      <resourceConstraints>
+        <MD_Constraints>
+          <useLimitation>Licensed under CC BY 4.0</useLimitation>
+        </MD_Constraints>
+      </resourceConstraints>
+      <descriptiveKeywords>
+        <MD_Keywords>
+          <keyword>横浜市</keyword>
+          <type>002</type>
+        </MD_Keywords>
+        <MD_Keywords>
+          <keyword>建築物</keyword>
+          <keyword>道路</keyword>
+          <keyword>地形</keyword>
+          <keyword>都市設備</keyword>
+          <keyword>植生</keyword>
+          <keyword>橋梁</keyword>
+          <keyword>区域区分</keyword>
+          <keyword>用途地域</keyword>
+          <type>005</type>
+        </MD_Keywords>
+        <MD_Keywords>
+          <keyword>LOD0</keyword>
+          <keyword>LOD1</keyword>
+          <keyword>LOD2</keyword>
+          <keyword>LOD2.0</keyword>
+          <keyword>LOD2.1</keyword>
+          <keyword>LOD3</keyword>
+          <keyword>LOD3.0</keyword>
+          <keyword>LOD3.2</keyword>
+          <keyword>LOD4.0</keyword>
+          <keyword>LOD4.1</keyword>
+          <type>005</type>
+        </MD_Keywords>
+        <MD_Keywords>
+          <keyword>洪水浸水想定</keyword>
+          <keyword>土砂災害警戒区域</keyword>
+          <keyword>津波浸水想定</keyword>
+          <keyword>高潮浸水想定</keyword>
+          <type>005</type>
+        </MD_Keywords>
+        <MD_Keywords>
+          <keyword>都市計画基本図</keyword>
+          <keyword>航空写真撮影成果</keyword>
+          <keyword>都市計画基礎調査</keyword>
+          <keyword>都市計画情報</keyword>
+          <keyword>車載写真レーザ測量成果</keyword>
+          <keyword>航空レーザ測量</keyword>
+          <keyword>点群データ（MMS＆手持ち）</keyword>
+          <keyword>LiderSLAM計測点群データ</keyword>
+          <type>005</type>
+        </MD_Keywords>
+      </descriptiveKeywords>
+      <spatialRepresentationType>001</spatialRepresentationType>
+      <spatialRepresentationType>004</spatialRepresentationType>
+      <spatialResolution>
+        <equivalentScale>
+          <denominator>2500</denominator>
+        </equivalentScale>
+      </spatialResolution>
+      <language>
+        <isoCode>jpn</isoCode>
+      </language>
+      <characterSet>004</characterSet>
+      <topicCategory>013</topicCategory>
+      <topicCategory>017</topicCategory>
+      <extent>
+        <description>LOD1（建築物・道路・土地利用・地形）の作成範囲は、横浜市全域の約435.71km2
+LOD2.0（建築物）の作成範囲は、ユースケース実証範囲・横浜インナーハーバーエリアの約19.75km2と横浜BUNTAI 1棟
+LOD3.0（建築物）の作成範囲は、ユースケース実証範囲の約1.15km2
+LOD3.2（建築物）の作成範囲は、関内駅周辺の約2.90kmとみなとみらい地区 7棟
+LOD4.0（建築物）の作成範囲は、相鉄線瀬谷駅自由通路 1棟
+LOD4.1（建築物）の作成範囲は、相鉄瀬谷ビル 1棟
+LOD3.0（道路）の作成範囲は、ユースケース実証範囲の約1.15km2
+LOD3.2（道路）の作成範囲は、関内駅周辺の約2.90kmと瀬谷駅北口駅前広場周辺の約0.30㎞
+LOD2.0（都市設備）の作成範囲は、横浜インナーハーバーエリアの風車・灯台・ランドマークの12箇所
+LOD3.0（都市設備）の作成範囲は、ユースケース実証範囲・関内駅周辺の約4.05km2と横浜インナーハーバーエリアの風車の羽 1個、桜木町駅周辺、ぴあアリーナMM周辺、パシフィコ横浜周辺の約2.33㎞と瀬谷駅北口駅前広場周辺の約0.15㎞
+LOD2.1（橋梁）の作成範囲は、横浜インナーハーバーエリアの約60.49km
+LOD3（橋梁）の作成範囲は、桜木町駅周辺、ぴあアリーナMM周辺、パシフィコ横浜周辺の約2.33㎞
+LOD2（植生）の作成範囲は、瀬谷駅北口駅前広場周辺の約0.15㎞
+LOD3（植生）の作成範囲は、ユースケース実証範囲の約1.15km2と関内駅周辺の約2.90㎞</description>
+        <geographicElement>
+          <EX_GeographicBoundingBox>
+            <extentTypeCode>1</extentTypeCode>
+            <extentReferenceSystem>
+              <authority>
+                <title>測量法施行令（昭和24年政令第322号）</title>
+                <date>
+                  <date>2025-4-1</date>
+                  <dateType>003</dateType>
+                </date>
+              </authority>
+              <code>JGD2024 / (B,L)</code>
+            </extentReferenceSystem>
+            <westBoundLongitude>139.275</westBoundLongitude>
+            <eastBoundLongitude>139.433</eastBoundLongitude>
+            <southBoundLatitude>35.184</southBoundLatitude>
+            <northBoundLatitude>35.353</northBoundLatitude>
+          </EX_GeographicBoundingBox>
+          <EX_GeographicDescription>
+            <extentTypeCode>1</extentTypeCode>
+            <geographicIdentifier>
+              <code>神奈川県横浜市</code>
+            </geographicIdentifier>
+          </EX_GeographicDescription>
+        </geographicElement>
+      </extent>
+    </MD_DataIdentification>
+  </identificationInfo>
+  <dataQualityInfo>
+    <DQ_DataQuality>
+      <scope>
+        <level>009</level>
+        <extent>
+          <geographicElement>
+            <EX_GeographicDescription>
+              <extentTypeCode>1</extentTypeCode>
+              <geographicIdentifier>
+                <code>神奈川県横浜市</code>
+              </geographicIdentifier>
+            </EX_GeographicDescription>
+          </geographicElement>
+        </extent>
+        <levelDescription>建築物、道路、地形、都市設備、植生、橋梁、都市計画決定情報</levelDescription>
+      </scope>
+      <lineage>
+        <LI_Lineage>
+          <statement>本データ製品がR5年度に3D都市モデル標準製品仕様書第3.3版に準拠し作成されたデータ製品を3D都市モデル標準製品仕様書第4.1版にバージョンアップした成果であるため、バージョンアップによって再度品質評価を実施する必要がある項目のみを対象としている。
+建築物LOD1は都市計画基本図、建築物LOD2.0は都市計画基本図と航空写真測量、建築物LOD3.0およびLOD3.2は都市計画基本図と航空写真測量、車載写真レーザ測量、点群データ（MMS＆手持ち）、建築物LOD4.0およびLOD4.1はLiderSLAM計測点群データを用いた測量より作成したデータ。
+道路LOD1は都市計画基本図、道路LOD3およびLOD3.2は車載写真レーザ測量と点群データ（MMS＆手持ち）、LiderSLAM計測点群データを用いた測量より作成したデータ。
+都市設備LOD2.0およびLOD3.0は、航空レーザ測量と車載写真レーザ測量、点群データ（MMS＆手持ち）、LiderSLAM計測点群データを用いた測量より作成したデータ。
+橋梁LOD2.1およびLOD3は、航空レーザ測量と点群データ（MMS＆手持ち）を用いた測量より作成したデータ。
+植生LOD2はLiderSLAM計測点群データ、植生LOD3は車載写真レーザ測量と点群データ（MMS＆手持ち）を用いた測量より作成したデータ。
+地形は、航空写真測量成果より作成したデータ。
+建築物の属性「計測高さ」は、航空写真測量成果より作成したデータ。</statement>
+        </LI_Lineage>
+      </lineage>
+      <report>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>001</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【C01】インスタンスに与えられた gml:id と同じ gml:id をもつ他のインスタンスがデータ製品内に存在しない。
+【C02】参照データと都市モデルに含まれる各地物のインスタンス数が等しい。
+【C03】参照データに存在しないのに地物インスタンスが存在する場合、あるいは参照データに存在するのに地物インスタンスが存在しない場合をエラーとする。1 個以上のエラーが存在するサブメッシュをエラーサブメッシュとする。誤率（％）＝エラーサブメッシュの数／100×100
+【C04】応用スキーマごとに定義された、各LOD において使用可能な地物型以外のインスタンスが含まれている場合にエラーとする。
+【C-bldg-01】データ製品内に、属性「uro:buildingID」が同一となるインスタンスがない。
+【C-bldg-02】参照データに含まれる IfcBuilding 及び IfcSpace のインスタンス数と、建築物モデル（LOD4）に含まれるbldg:Building 及び bldg:Room のインスタンス数が等しい。
+【C-bldg-03】建築物モデル（LOD4）に含まれる bldg:Window 及び bldg:Door のインスタンスと参照データに含まれるIfcWindow 及び IfcDoor のインスタンス数が等しい。
+【C-bldg-04】参照データに含まれる IfcBuildingElement 及びこの下位型のインスタンスと建築物モデル(LOD4)に含まれるbldg:IntBuildingInstallation のインスタンス数が等しい。</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>002</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【C02】参照データと都市モデルに含まれる各地物のインスタンス数が等しい。
+【C03】参照データに存在しないのに地物インスタンスが存在する場合、あるいは参照データに存在するのに地物インスタンスが存在しない場合をエラーとする。1 個以上のエラーが存在するサブメッシュをエラーサブメッシュとする。誤率（％）＝エラーサブメッシュの数／100×100
+【C05】拡張製品仕様書が作成対象とする主題属性及び関連役割のうち、必ず出力すべきインスタンスの漏れ。
+【C06】拡張製品仕様書で作成対象としている主題属性及び関連役割のインスタンスの漏れ。
+【C07】幾何オブジェクトの作成に使用する原典資料の種類の漏れ。
+【C08】幾何オブジェクトの作成に使用する公共測量成果の種類の漏れ。
+【C-bldg-02】参照データに含まれる IfcBuilding 及び IfcSpace のインスタンス数と、建築物モデル（LOD4）に含まれるbldg:Building 及び bldg:Room のインスタンス数が等しい。</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>005</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【L01】整形式（Well-Formed XML）になっていない箇所数。
+</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>004</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【L04】 指定されたコードリストに定義されていない値となっている箇所数
+【L05】都市モデルに指定された空間参照系の識別子が、製品仕様書で指定された識別子ではない。
+【L06】幾何オブジェクトインスタンスの座標値に含まれる、緯度、経度、標高が、この幾何オブジェクトインスタンスを含む都市モデル（core:CityModel）の空間範囲に含まれる。
+</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>006</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【L07】同一座標または頂点間での距離が近接閾値（0.01m）未満の頂点が連続する、またはgml:LineString 及びgml:LinearRing のインスタンスを構成する点が 2 点未満のインスタンスをエラーとする。
+【L08】単一インスタンスに始終点以外の「自己交差」または「自己接触」が存在する場合にエラーとする。
+【L09】全ての gml:Ring のインスタンスの始終点の座標が一致していない、「自己交差」、「自己接触」、または、始終点以外に重複する座標値が存在するインスタンスをエラーとする。
+【L10】座標列の向きが不正なインスタンスをエラーとする。外周は反時計回り、内周は時計回りが正しい。
+【L11】 gml:Polygon の境界を構成する全ての座標値が同一平⾯上になければならない。同一平⾯上にない座標値が存在するインスタンスをエラーとする。
+【L12】gml:Polygon の境界を構成する全ての座標値が同一平面とみなす許容誤差（0.03m）内に存在しなければならない。同一平面とみなす許容誤差内に存在しない座標値が存在するインスタンスをエラーとする。同一平面とみなす許容誤差は、作成に使用する原典資料や作成方法により異なるため、作業者が許容誤差案を作成し、監督員の確認を得てから品質評価を実施すること。
+【L13】gml:Polygon に内周が存在する場合に、以下に示す条件に 1 つ以上に合致する場合にエラーとする。1．内周が外周と交差している。2．内周と外周が接することにより、gml:Polygon が 2 つ以上に分割されている。3．内周同士が重なったり、包含関係にあったりする。
+【L14】gml:Solid を構成する全ての境界⾯が、以下の条件を満たしていない場合にエラーとする。1．境界面が自己交差していない。2．閉じている。3．全ての境界面の向きが立体の外側を向いている。4．境界面が立体を分断していてはならない。5．境界面が交差してはならない。
+【L15】 始点と終点が一致する 4 点の座標値から構成されていない場合に、エラーとする。
+【L16】gml:TriangulatedSurface の境界が閉じている場合にエラーとする。
+【L17】gml:CompositeCurveを構成する（最初のgml:LineStringを除いた）gml:LineStringの始点が、直前のgml:LineStringの終点の座標と一致していない場合にエラーとする。
+【L18】gml:CompositeSurfaceを構成するgml:Polygonが、以下の場合にエラーとする。・同じgml:CompositeSurfaceを構成する他のgml:Polygonと重なる。・同じgml:CompositeSurfaceを構成する他のgml:Polygonのいずれとも接していない。
+【L-bldg-01】エラーとなるインスタンスが 0 個の場合に合格。エラーとなる bldg:Building が 1 個以上の場合は不合格。
+【L-bldg-02】1 つの bldg:Building について、これを構成する bldg:BuildingPart が空間属性として保持する立体（gml:Solid）同士が離れていない。
+【L-bldg-03】bldg:_Opening の下位クラスのインスタンスが、これを集約する bldg:_BoundarySurface の下位クラスのインスタンスに包含されていない場合にエラーとする。
+【L-bldg-07】bldg:_Opening の下位クラスのインスタンスの空間属性（bldg:lod4MultiSurface）が、これを集約するbldg:_BoundarySurface の下位クラスのインスタンスの空間属性（bldg:lod4MultiSurface）と境界線を共有していない場合にエラーとする。
+【L-bldg-10】建築物（bldg:Building）の外形を構成する境界面は常に法線ベクトルが外向きであり、部屋（bldg:Building）を構成する境界面は、常に法線ベクトルが内向きである。
+【L-bldg-12】全ての bldg:Room、bldg:IntBuildingInstallation、bldg:BuildingFurniture の幾何オブジェクト（gml:Solid 又gml:MultiSurface）が、これを含む bldg:Building の幾何オブジェクト（gml:Solid 又は gml:MultiSurface）の内側に含まれていなければならない。
+【L-bldg-13】bldg:Roomを構成する境界面の辺と、これと接すべき隣接する境界面の辺との間に閾値（0.001m）以上の距離がある場合にエラーとする。
+【L-tran-01】延長方向に連続するインスタンスの空間属性（tran:lod2MultiSurface 及び tran:lod3MultiSurface）が、境界線を共有していない場合をエラーとする。
+【L-tran-02】同一の道路インスタンスに含まれる交通領域及び交通補助領域の空間属性（tran:lod2MultiSurface 及び
+tran:lod3MultiSurface）は、境界線を共有するか、又は、離れているかのいずれかであり、それ以外の場合にエラーとする。ただし、以下は例外とする。・中央帯と分離帯（分離帯は中央帯に含まれる場合がある。）・中央帯と側帯（側帯は中央帯に含まれる場合がある。）・路肩と側帯（側帯は路肩に含まれる場合がある。）
+【L-tran-03】tran:Road インスタンスに含まれる tran:TrafficArea インスタンス及び tran:AuxiliaryTrafficArea インスタンスの空間属性（tran:lod2MultiSurface 及び tran:lod3MultiSurface）に含まれる全ての MultiSurface を道路インスタンスが参照していない場合にエラーとする。</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>003</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【L02】妥当（Valid）な XML 文書になっていない箇所数。
+【L03】応用スキーマに定義していない地物型の出現箇所数。
+【L-bldg-04】bldg:Building の用途を示す属性が正しい階層構造を保っている。
+【L-bldg-05】bldg:Building の用途を示す属性が正しい階層構造を保っている。
+【L-bldg-06】bldg:Building 又は bldg:BuildingPart の bldg:lod2Solid 及び bldg:lod3Solid により記述される立体（gml:Solid）の境界面（gml:CompositeSurface）に含まれる多角形（gml:Polygon）は、bldg:boundedBy により参照する、bldg:RoofSurface, bldg:WallSurface, bldg:GroundSurface, bldg:OuterFloorSurface, bldg:OuterCeilingSurface, bldg:ClosureSurface 及びこれらが参照する開口部（bldg:Door, bldg:Window）により記述される面（gml:MultiSurface）に含まれる多角形（gml:Polygon）のいずれかでなければならない。
+【L-bldg-08】bldg:Building の bldg:lod4Solid 又は bldg:lod4MultiSurface を構成する gml:Polygon が、bldg:Building に含まれる bldg:_BoundarySurface の下位型、bldg:_Opening の下位型、又は bldg:BuildingInstallation のgml:Polygon のいずれかでなければならない。
+【L-bldg-09】bldg:Room の bldg:lod4Solid を構成する gml:Polygon が、bldg:Room に含まれる bldg:_BoundarySurface の下位型又は bldg:_Opening の下位型の gml:Polygon のいずれかでなければならない。
+【L-bldg-11】bldg:Room の bldg:lod4Solid により記述される立体又は bldg:lod4MultiSurface により記述される面の集まりである gml:Polygon が、bldg:Room が参照する境界面又は bldg:IntBuildingInstallation の境界面とな gml:Polgonがの反対の向きとなる。
+【L-frn-01】空間属性により保持または参照する幾何オブジェクトの型が、応用スキーマ文書で指定された幾何オブジェクト（gml:MultiSurface 又は gml:Solid）ではないインスタンスの個数。
+【L-frn-02】空間属性により保持又は参照する幾何オブジェクトの型が、応用スキーマ文書で指定された幾何オブジェクト（gml:Point, gml:MultiPoint, gml:MultiCurve又はgml:MultiSurface）ではないインスタンスの個数。</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>007</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>●地図情報レベル 2500 の場合の位置正確度
+【P01】データ集合内の位置の座標と、より正確度の高い参照データである点検測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+【P02】データ集合内の位置の座標と、より正確度の高い参照データである水準測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+●地図情報レベル 500 の場合の位置正確度
+【P05】データ集合内の位置の座標と、より正確度の高い参照データである点検測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+【P06】データ集合内の位置の座標と、より正確度の高い参照データである水準測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+●地図情報レベル 1000 の場合の位置正確度
+【P07】データ集合内の位置の座標と、より正確度の高い参照データである点検測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+【P08】データ集合内の位置の座標と、より正確度の高い参照データである水準測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+●GIS データの変換の場合
+【P03】「データ集合内の座標」と「原典資料の座標」との誤差の標準偏差を計算する。ただし、原典資料は地図情報レベル 2500 の要件を満たしているものとする。また、誤差の母平均は 0 とする。
+●既成図数値化の場合
+【P04】「データ集合内の水平位置の座標」と「データ取得時に使用した原典資料を用いて図化したデータ集合内の水平位置の座標」との誤差の標準偏差を計算する。ただし、原典資料は地図情報レベル 2500 の要件を満たしているものとする。また、誤差の母平均は 0 とする。
+●地形の位置正確度
+【P-dem-01】データ集合内の位置の座標と、より正確度の高い参照データである水準測量成果の座標との誤差の標準偏差を計算する。また、誤差の母平均は 0 とする。ただし、データ品質属性の「幾何属性作成方法」の値が「0（推定）」となるインスタンスは検査対象としない。
+</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>014</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【T01】インスタンスに設定された地物属性のうち、型が xs:string、gml:CodeType、xs:boolean、xs:datexs:gYear、gml:MeasureOrNullListType または、gml:StringOrRefType となる主題属性について、設定された値が参照データの属性値と一致しないインスタンスをエラーインスタンスとする。
+</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>015</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【T02】インスタンスに設定された地物属性のうち、型が xs:integer、xs:nonNegativeInteger、 xs:double、gml:MeasureType、gml:LengthType または gml:MeasureOrNullListType となる主題属性について、設定された値が参照データの属性値と一致しないインスタンスをエラーとする。</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+        <DQ_Element>
+          <evaluationMethodDescription>3D都市モデル標準製品仕様書第4.1版　データ品質　に従い実施。</evaluationMethodDescription>
+          <typeOfQualityEvaluation>013</typeOfQualityEvaluation>
+          <result>
+            <DQ_ConformanceResult>
+              <specification>
+                <title>神奈川県横浜市　3D都市モデル拡張製品仕様書</title>
+                <date>
+                  <date>2025-10-28</date>
+                  <dateType>003</dateType>
+                </date>
+              </specification>
+              <explanation>【T03】地物関連により参照される gml:id をもつインスタンスの型が、応用スキーマの中で指定された関連相手先の型と一致しない箇所の出現回数
+【T-bldg-01】建築物及び建築物部分を構成する境界⾯が、正しく区分されていないインスタンスをエラーとする。エラーが 1つ以上存在するサブメッシュをエラーサブメッシュとする。誤率（％）＝エラーサブメッシュの数／検査単位毎の全サブメッシュ数×100
+【T-bldg-02】bldg:lod2Geometry 又は bldg:lod3Geometry により保持または参照する幾何オブジェクトの型が、gml:MultiSurface または gml:Solid ではないインスタンスの個数。
+</explanation>
+              <pass>1</pass>
+            </DQ_ConformanceResult>
+          </result>
+        </DQ_Element>
+      </report>
+    </DQ_DataQuality>
+  </dataQualityInfo>
+  <distributionInfo>
+    <MD_Distribution>
+      <distributionFormat>
+        <MD_Format>
+          <name>CityGML</name>
+          <version>2.0</version>
+        </MD_Format>
+        <MD_Format>
+          <name>i-UR</name>
+          <version>3.1</version>
+        </MD_Format>
+      </distributionFormat>
+      <transferOptions>
+        <MD_DigitalTransferOptions>
+          <onLine>
+            <linkage>www.mlit.go.jp/plateau/</linkage>
+            <description>ProjectPLATEAU</description>
+          </onLine>
+        </MD_DigitalTransferOptions>
+        <MD_DigitalTransferOptions>
+          <onLine>
+            <linkage>https://front.geospatial.jp/</linkage>
+            <description>G空間情報センター</description>
+          </onLine>
+        </MD_DigitalTransferOptions>
+      </transferOptions>
+    </MD_Distribution>
+  </distributionInfo>
+  <referenceSystemInfo>
+    <MD_ReferenceSystem>
+      <referenceSystemIdentifier>
+        <authority>
+          <title>測量法施行令（昭和24年政令第322号）</title>
+          <date>
+            <date>2025-4-1</date>
+            <dateType>003</dateType>
+          </date>
+        </authority>
+        <code>JGD2024 / (B,L)</code>
+      </referenceSystemIdentifier>
+    </MD_ReferenceSystem>
+  </referenceSystemInfo>
+  <fileIdentifier>udx_14100_city_2024_op</fileIdentifier>
+  <language>
+    <isoCode>jpn</isoCode>
+  </language>
+  <characterSet>004</characterSet>
+  <parentIdentifier>udx_14100_city_2024_op</parentIdentifier>
+  <hierarchyLevel>005</hierarchyLevel>
+  <contact>
+    <organisationName>国土交通省都市局</organisationName>
+    <contactInfo>
+      <phone>
+        <voice>03-5253-8397</voice>
+        <facsimile>03-5253-1586</facsimile>
+      </phone>
+      <address>
+        <deliveryPoint>霞が関2-1-3</deliveryPoint>
+        <city>千代田区</city>
+        <administrativeArea>東京都</administrativeArea>
+        <postalCode>100-8918</postalCode>
+        <country>jpn</country>
+      </address>
+      <onlineResource>
+        <linkage>www.mlit.go.jp/plateau/</linkage>
+        <description>国土交通省では、Project “PLATEAUプラトー” として、実世界（フィジカル空間）の都市を仮想的な世界（サイバー空間）に再現する3D都市モデルの整備を進めています。ウェブサイトでは、プロジェクトの進捗プロセスを継続的に発信していくと同時に、3D都市モデルをはじめとする各種データをオープンデータ化し、誰もが活用できるようになります。</description>
+      </onlineResource>
+    </contactInfo>
+    <role>010</role>
+  </contact>
+  <dateStamp>2025-10-29</dateStamp>
+  <metadataStandardName>JMP</metadataStandardName>
+  <metadataStandardVersion>2.0</metadataStandardVersion>
+</MD_Metadata>

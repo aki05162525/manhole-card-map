@@ -1,0 +1,164 @@
+[
+  {
+    "sourceUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+    "requestedAt": "2026-11-05T05:53:54.675204+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tsubame.niigata.jp/soshiki/toshi_seibi/2/1/967.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/tsubame-card.html",
+    "snapshotSHA256": "8daf429a5697460af4ca179d8d58ee977c8b968ab3ee92a519c652aa5bc9fea8",
+    "bytes": 59117,
+    "fetchedAt": "2026-11-05T05:53:55.035992+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+    "requestedAt": "2026-11-05T05:53:54.676317+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/murakami-card.html",
+    "snapshotSHA256": "f08006f5fdf49497606847943d1667185d3fee0e2a9d36b2da7ac5e4a4099690",
+    "bytes": 23512,
+    "fetchedAt": "2026-11-05T05:53:55.063878+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+    "requestedAt": "2026-11-05T05:53:54.677054+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/arakawa-facility.html",
+    "snapshotSHA256": "2aea706d30272d56592eb01917132cde971d57c2d6973d00f6ff0808369522d9",
+    "bytes": 16821,
+    "fetchedAt": "2026-11-05T05:53:55.005226+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.chikuma.lg.jp/kanko_bunka_sports/event/all/4193.html",
+    "requestedAt": "2026-11-05T05:53:54.677576+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chikuma.lg.jp/kanko_bunka_sports/event/all/4193.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-card.html",
+    "snapshotSHA256": "505a762127fc964244f2a66f93fecb9e6a887cd444cf02559b1f4516d1d533d9",
+    "bytes": 51216,
+    "fetchedAt": "2026-11-05T05:53:55.049741+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.chikuma.lg.jp/kosodate_kyoiku/gakko_kyoikushisetsu/3209.html",
+    "requestedAt": "2026-11-05T05:53:54.679336+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chikuma.lg.jp/kosodate_kyoiku/gakko_kyoikushisetsu/3209.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/chikuma-facilities.html",
+    "snapshotSHA256": "a4123b7ae7269452db000ee3936c49523de89e1cfa50096f9b4dce6aa71ae8ab",
+    "bytes": 49573,
+    "fetchedAt": "2026-11-05T05:53:55.076995+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/kurashi/1002194/1002217/1002218.html",
+    "requestedAt": "2026-11-05T05:53:54.679962+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oyabe.toyama.jp/kurashi/1002194/1002217/1002218.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-card.html",
+    "snapshotSHA256": "bb5ca30672f20ae82be9eed4a9170bb8841b0d947a41ae8865ccc69e3bca0b1c",
+    "bytes": 36414,
+    "fetchedAt": "2026-11-05T05:53:55.258570+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+    "requestedAt": "2026-11-05T05:53:54.680509+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+    "snapshotPath": "data/evidence/issue5/review-chubu/numazu-card.html",
+    "snapshotSHA256": "6b3b4f192cf269fd5c20efca9e959c748166f37081a6d7831d6682fa82d26a66",
+    "bytes": 9551,
+    "fetchedAt": "2026-11-05T05:53:54.903881+00:00"
+  },
+  {
+    "sourceUrl": "https://city.numazu.shizuoka.jp/shisei/office.htm",
+    "requestedAt": "2026-11-05T05:53:54.680899+00:00",
+    "status": 200,
+    "finalUrl": "https://city.numazu.shizuoka.jp/shisei/office.htm",
+    "snapshotPath": "data/evidence/issue5/review-chubu/numazu-office.html",
+    "snapshotSHA256": "fe4bebb8ac4750b7d443b7763f7ca5920a863e30b6edccc50bcd48afe8c8bb26",
+    "bytes": 12656,
+    "fetchedAt": "2026-11-05T05:53:54.939737+00:00"
+  },
+  {
+    "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+    "requestedAt": "2026-11-05T05:53:54.903933+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/iwata-card.html",
+    "snapshotSHA256": "322ee553d6ce341a4ab6423466ef7628f7889f38ccbfc9d76e433c885a28f59f",
+    "bytes": 29056,
+    "fetchedAt": "2026-11-05T05:53:55.544728+00:00"
+  },
+  {
+    "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+    "requestedAt": "2026-11-05T05:53:54.939795+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yoshida.shizuoka.jp/6491.htm",
+    "snapshotPath": "data/evidence/issue5/review-chubu/yoshida-card.html",
+    "snapshotSHA256": "4b82980717ad5ff731c9f32bb8987c2b4399ca1ec527ae03f37dbbd148fdec00",
+    "bytes": 71868,
+    "fetchedAt": "2026-11-05T05:53:55.654236+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/1007837.html",
+    "requestedAt": "2026-11-05T05:53:55.005262+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/1007837.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-plan.html",
+    "snapshotSHA256": "553b14481474f1717228ffb8da7fbeec38103a9d99e879810fa4dc25783024ad",
+    "bytes": 36196,
+    "fetchedAt": "2026-11-05T05:53:55.270247+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/index.html",
+    "requestedAt": "2026-11-05T05:53:55.036113+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oyabe.toyama.jp/shiseijyouhou/1003255/1006300/index.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/oyabe-index.html",
+    "snapshotSHA256": "67e3a66b9e4f67a41929a552e0c6b2c9cfdfcb43c05e100148f266290a6a213e",
+    "bytes": 32786,
+    "fetchedAt": "2026-11-05T05:53:55.270347+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.iwata.shizuoka.jp/shiseijouhou/soshikiannai/choushaannai/1004456.html",
+    "requestedAt": "2026-11-05T05:53:55.049775+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iwata.shizuoka.jp/shiseijouhou/soshikiannai/choushaannai/1004456.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/iwata-building.html",
+    "snapshotSHA256": "ed631822d3aa2a834964840a1097ee5f989a253d89c5dd95f896394f990b743c",
+    "bytes": 27848,
+    "fetchedAt": "2026-11-05T05:53:55.210185+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.chikuma.lg.jp/material/files/group/7/r7kouteihyoumatome.pdf",
+    "requestedAt": "2026-11-05T05:53:55.063949+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "fetchedAt": "2026-11-05T05:53:55.279397+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.tsubame.niigata.jp/material/files/group/6/100522621.pdf",
+    "requestedAt": "2026-11-05T05:53:55.077091+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "fetchedAt": "2026-11-05T05:53:55.262253+00:00"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "requestedAt": "2026-11-05T05:53:55.210240+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/p05-catalog.html",
+    "snapshotSHA256": "0f9272b4d1d7a6959d2a61198c85897db2155b6b9472debaf7ffa4b2eb122aa0",
+    "bytes": 128344,
+    "fetchedAt": "2026-11-05T05:53:55.530127+00:00"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "requestedAt": "2026-11-05T05:53:55.258680+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "snapshotPath": "data/evidence/issue5/review-chubu/p05-terms.html",
+    "snapshotSHA256": "f8b7335060638881ede67f8bc245e39485d185721d5208c7da49c0e67b23a95c",
+    "bytes": 27978,
+    "fetchedAt": "2026-11-05T05:53:55.521550+00:00"
+  }
+]

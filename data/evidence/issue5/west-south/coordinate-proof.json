@@ -1,0 +1,284 @@
+[
+  {
+    "facilityId": "facility:kyushu-fec63a8962497abb940f",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "41210",
+        "P05_002": "5",
+        "P05_003": "神埼情報館",
+        "P05_004": "神埼市神埼町鶴3456-4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.3714071,
+          33.31209269
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_41.geojson",
+    "memberSHA256": "5422b7de9f991e509b8ecedd41df133a6c6786d251f61619d740faeb6ac14dad",
+    "featureIndex": 431,
+    "sourceLocator": "P05-22_41_GML.zip!P05-22_41.geojson#/features/431",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.kanzaki.saga.jp/main/7553.html",
+      "snapshotPath": "data/evidence/issue5/west-south/ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e.bin",
+      "snapshotSHA256": "ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e",
+      "fetchedAt": "2026-11-05T05:47:11.649410+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city.kanzaki.saga.jp/main/12136.html",
+      "snapshotPath": "data/evidence/issue5/west-south/02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d.bin",
+      "snapshotSHA256": "02f8217d8358a5027fc0d3423523875b81cdbc8e185612645ca61ad9afa1a46d",
+      "fetchedAt": "2026-11-05T05:48:01.882185+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "配布案内と施設概要の神埼情報館・神埼町鶴3456-4が一致。展示室等を含む当該建物のP05点。休館日の公式ページ間相違は別記。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  },
+  {
+    "facilityId": "facility:kyushu-e06ac5856a6e4bded47a",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "41207",
+        "P05_002": "5",
+        "P05_003": "新世紀センター",
+        "P05_004": "鹿島市大字納富分2643-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0980829,
+          33.10415926
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_41.geojson",
+    "memberSHA256": "5422b7de9f991e509b8ecedd41df133a6c6786d251f61619d740faeb6ac14dad",
+    "featureIndex": 361,
+    "sourceLocator": "P05-22_41_GML.zip!P05-22_41.geojson#/features/361",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+      "snapshotPath": "data/evidence/issue5/west-south/b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc.bin",
+      "snapshotSHA256": "b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc",
+      "fetchedAt": "2026-11-05T05:47:11.100223+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city.saga-kashima.lg.jp/main/21632.html",
+      "snapshotPath": "data/evidence/issue5/west-south/d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765.bin",
+      "snapshotSHA256": "d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765",
+      "fetchedAt": "2026-11-05T05:48:01.420714+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "公式施設案内は2016年8月竣工の新世紀センター（第二庁舎）を明示。市役所総称点でなく同建物のP05点。配布先はこの建物1階環境下水道課。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  },
+  {
+    "facilityId": "facility:kyushu-26485d92c27ac8317992",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "41207",
+        "P05_002": "5",
+        "P05_003": "新世紀センター",
+        "P05_004": "鹿島市大字納富分2643-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.0980829,
+          33.10415926
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_41.geojson",
+    "memberSHA256": "5422b7de9f991e509b8ecedd41df133a6c6786d251f61619d740faeb6ac14dad",
+    "featureIndex": 361,
+    "sourceLocator": "P05-22_41_GML.zip!P05-22_41.geojson#/features/361",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+      "snapshotPath": "data/evidence/issue5/west-south/b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc.bin",
+      "snapshotSHA256": "b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc",
+      "fetchedAt": "2026-11-05T05:47:11.100223+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city.saga-kashima.lg.jp/main/21632.html",
+      "snapshotPath": "data/evidence/issue5/west-south/d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765.bin",
+      "snapshotSHA256": "d9b88e7bc7159eae54916910738061f32fcfe751fe271fac24b31d1c4d759765",
+      "fetchedAt": "2026-11-05T05:48:01.420714+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "配布案内が休日の宿日直室を新世紀センター1階と明示。平日窓口と同じ第二庁舎建物のP05点。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  },
+  {
+    "facilityId": "facility:kyushu-786085478c88a34b14cc",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "3",
+        "P05_003": "隼人市民サービスセンター",
+        "P05_004": "霧島市隼人町内山田1-11-11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7369971,
+          31.74378359
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_46.geojson",
+    "memberSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "featureIndex": 657,
+    "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/657",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+      "snapshotPath": "data/evidence/issue5/west-south/12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7.bin",
+      "snapshotSHA256": "12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7",
+      "fetchedAt": "2026-11-05T05:47:36.975886+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/hayato.html",
+      "snapshotPath": "data/evidence/issue5/west-south/732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a.bin",
+      "snapshotSHA256": "732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a",
+      "fetchedAt": "2026-11-05T05:47:10.889292+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "配布案内の第22弾平日2階下水道工務課と現行フロア案内の隼人市民サービスセンター・内山田1-11-11を同定。すこやか保健センター（1-10-33）と区別。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  },
+  {
+    "facilityId": "facility:kyushu-837475cdb663a2c88d04",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "46218",
+        "P05_002": "3",
+        "P05_003": "隼人市民サービスセンター",
+        "P05_004": "霧島市隼人町内山田1-11-11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.7369971,
+          31.74378359
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_46.geojson",
+    "memberSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+    "featureIndex": 657,
+    "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/657",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+      "snapshotPath": "data/evidence/issue5/west-south/12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7.bin",
+      "snapshotSHA256": "12ac1a3429a68909c83845891f3861499044505705bfdea760edd8f6c06059c7",
+      "fetchedAt": "2026-11-05T05:47:36.975886+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/hayato.html",
+      "snapshotPath": "data/evidence/issue5/west-south/732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a.bin",
+      "snapshotSHA256": "732619af0b635c7a72f52c60c9e67e40d2011214a8b3c54cbc0c180838cc925a",
+      "fetchedAt": "2026-11-05T05:47:10.889292+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "第22弾休日1階お客様センター宿直室を同サービスセンター建物内と同定。第14弾の階不明の代替案内にこの階情報を流用しない。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  },
+  {
+    "facilityId": "facility:ws-88a6c5a846ae640758",
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "40221",
+        "P05_002": "1",
+        "P05_003": "太宰府市役所",
+        "P05_004": "太宰府市観世音寺1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.523876,
+          33.512835
+        ]
+      }
+    },
+    "memberPath": "data/evidence/issue5/west-south/P05-22_40.geojson",
+    "memberSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+    "featureIndex": 1691,
+    "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1691",
+    "distributionEvidence": {
+      "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+      "snapshotPath": "data/evidence/issue5/west-south/81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c.bin",
+      "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+      "fetchedAt": "2026-11-05T05:46:23.621144+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingEvidence": {
+      "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+      "snapshotPath": "data/evidence/issue5/west-south/81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c.bin",
+      "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+      "fetchedAt": "2026-11-05T05:46:23.621144+00:00",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+      "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+    },
+    "buildingIdentification": "現行公式配布案内の休館日代替は市役所1階総合案内。住所観世音寺1-1-1は同原本の市役所欄とP05市役所レコードに一致。太宰府館や駅内観光案内所の点ではない。既存A/B関係だけを維持。",
+    "crs": "EPSG:6668 / JGD2011; GeoJSON [longitude, latitude]",
+    "license": "国土交通省 国土数値情報P05-2022, CC BY 4.0; 座標抽出加工。国交省による承認を意味しない。",
+    "relocationReview": "2022-04基準。現行の名称・番地・建物案内と照合。閲覧した資料に当該建物からの移転告知なし。同住所での建替えの不存在を保証するものではない。"
+  }
+]

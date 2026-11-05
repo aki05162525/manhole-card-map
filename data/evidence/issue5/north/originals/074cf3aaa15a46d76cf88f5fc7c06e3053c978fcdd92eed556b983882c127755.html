@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="content-style-type" content="text/css">
+<meta name="description" content="">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="https://api.w.org/" href="wp-json/index.htm">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml">
+<link rel="canonical" href="index.htm">
+<link rel="stylesheet" type="text/css" media="all" href="wp-content/themes/muro-kanko/style.css">
+<link rel="stylesheet" id="wp-pagenavi-css" href="wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70" type="text/css" media="all">
+<style type="text/css" media="all">/*<![CDATA[ */
+img.wp-smiley,
+img.emoji {
+display: inline !important;
+border: none !important;
+box-shadow: none !important;
+height: 1em !important;
+width: 1em !important;
+margin: 0 .07em !important;
+vertical-align: -0.1em !important;
+background: none !important;
+padding: 0 !important;
+}
+/* ]]>*/</style>
+<script type="text/javascript">//<![CDATA[
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/muro-kanko.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.2"}};
+!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+//]]></script>
+
+	<script type="text/javascript" src="wp-content/themes/muro-kanko/script/jquery.js"></script>
+
+	<script src="ies2vwc.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" media="all" href="wp-content/themes/muro-kanko/style/slick.css">
+	<link rel="stylesheet" type="text/css" media="all" href="wp-content/themes/muro-kanko/style/slick-theme.css">
+	<script type="text/javascript" src="wp-content/themes/muro-kanko/script/slick.min.js"></script>
+	<style type="text/css">
+		.slider {
+			margin: 0 0 50px;
+		}
+		.slider img {
+			width: 100%;
+			height: auto;
+		}
+		.single-item {
+			max-width: 1200px;
+			margin: 0 auto 50px;
+			padding: 0;
+		}
+		.slick-prev::before, .slick-next::before {
+			font-size: 24px;
+		}
+		.lazy-item .slick-next,
+		.thumb-item-nav .slick-next,
+		.multiple-item .slick-next,
+		.center-item .slick-next {
+			right: 20px;
+			z-index: 99;
+		}
+		.lazy-item .slick-prev,
+		.thumb-item-nav .slick-prev,
+		.multiple-item .slick-prev,
+		.center-item .slick-prev {
+			left: 15px;
+			z-index: 100;
+		}
+		.single-item .slick-prev::before,
+		.single-item .slick-next::before {
+			color: #666;
+		}
+		.slick-dots {
+			bottom:-25px;
+		}
+		.multiple-item li {
+			margin: 0 5px;
+		}
+		.thumb-item {
+			max-width: 1200px;
+			margin: 0 auto 5px;
+			padding: 0;
+		}
+		.thumb-item-nav {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 0 0 5px;
+		}
+		.thumb-item-nav li{
+			margin: 5px 6px 5px 0;
+		}
+		.lazy-item {
+			width: 400px;
+			margin: 0 auto 50px;
+		}
+		.lazy-item li {
+			margin: 0 5px;
+		}
+	</style>
+	<script>
+		$(function() {
+			$('.thumb-item').slick({
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				fade: false,
+				autoplay: true,
+				autoplaySpeed: 4000,
+				pauseOnHover: false,
+				asNavFor: '.slider-nav'
+			});
+			$('.thumb-item-nav').slick({
+				infinite: true,
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				asNavFor: '.thumb-item',
+				focusOnSelect: true,
+				autoplay: true,
+				responsive: [{
+					breakpoint: 1024,
+					settings: {
+						centerMode: false,
+						slidesToShow: 4,
+					}
+				},{
+					breakpoint: 760,
+					settings: {
+						centerMode: false,
+						slidesToShow: 3,
+					}
+				}]
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" media="all" href="wp-content/themes/muro-kanko/fs.boxer.css">
+	<script type="text/javascript" src="wp-content/themes/muro-kanko/script/jquery.fs.boxer.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$(".boxer").boxer();
+		});
+	</script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-75853414-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<title>おっと！むろらん -[公式]室蘭観光情報サイト-</title>
+</head>
+
+<body class="no-js">
+<div id="wrapper">
+	<div id="header">
+		<div id="header-inner">
+			<p id="logo"><a href="index.htm"><img src="wp-content/themes/muro-kanko/image/index/logo.png" alt=""></a></p>
+			<div id="language">
+				<div id="language-inner">
+					<p>Language</p>
+					<ul>
+						<li><a href="english.html">English</a></li><!--
+						--><li><a href="korean.html">韓国語</a></li><!--
+						--><li><a href="chinese.html">簡体中文</a></li>
+					</ul>
+				</div>
+				<div id="lng_menu">
+					<ul id="lng_menu-inner">
+						<li><a href="english.html">English</a></li><!--
+						--><li><a href="korean.html">韓国語</a></li><!--
+						--><li><a href="chinese.html">簡体中文</a></li>
+					</ul>
+					<div id="lng_menu_underlay"></div>
+				</div>
+			</div>
+			<div id="h_menu">
+				<p id="h_menu_button">MENU</p>
+				<div id="h_menu-inner">
+					<ul>
+						<li><a href="see.html"><img src="wp-content/themes/muro-kanko/image/menu/view.jpg" alt="見る" class="roll"></a></li><!--
+						--><li><a href="play_learn.html"><img src="wp-content/themes/muro-kanko/image/menu/play_learn.jpg" alt="遊ぶ・学ぶ" class="roll"></a></li><!--
+						--><li><a href="eat-buy.html"><img src="wp-content/themes/muro-kanko/image/menu/eat_buy.jpg" alt="食べる・買う" class="roll"></a></li><!--
+						--><li><a href="stay.html"><img src="wp-content/themes/muro-kanko/image/menu/stay.jpg" alt="泊まる" class="roll"></a></li><!--
+						--><li><a href="event.html"><img src="wp-content/themes/muro-kanko/image/menu/event.jpg" alt="イベント" class="roll"></a></li><!--
+						--><li><a href="access.html"><img src="wp-content/themes/muro-kanko/image/menu/access.jpg" alt="アクセス" class="roll"></a></li>
+					</ul>
+				</div>
+				<div id="sp_menu">
+					<div id="sp_menu-inner">
+						<ul>
+							<li><a href="see.html">見る</a></li>
+							<li><a href="play_learn.html">遊ぶ・学ぶ</a></li>
+							<li><a href="eat-buy.html">食べる・買う</a></li>
+							<li><a href="stay.html">泊まる</a></li>
+							<li><a href="event.html">イベント</a></li>
+							<li><a href="access.html">アクセス</a></li>
+						</ul>
+					</div>
+					<div id="sp_menu_underlay"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="container-inner">
+<div id="contents">
+	<div id="main_img">
+		<ul class="slider thumb-item">
+			<li class="slick-slide"><a href="special/about.html"><img src="wp-content/themes/muro-kanko/image/index/main_img_03_pc.jpg" alt=""></a></li>
+			<li class="slick-slide"><a href="http://tori-fes.com"><img src="wp-content/themes/muro-kanko/image/index/main_img_06_pc.jpg?2019_0603" alt=""></a></li>
+			<li class="slick-slide"><a href="visit/hakuchoclimb.html"><img src="wp-content/themes/muro-kanko/image/index/main_img_10_pc.jpg" alt=""></a></li>
+			<li class="slick-slide"><a href="visit/fishing.html"><img src="wp-content/themes/muro-kanko/image/index/main_img_09_pc.jpg" alt=""></a></li>
+			<li class="slick-slide"><a href="see.html"><img src="wp-content/themes/muro-kanko/image/index/main_img_01_pc.jpg" alt=""></a></li>
+			<li class="slick-slide"><a href="eat-buy.html"><img src="wp-content/themes/muro-kanko/image/index/main_img_02_pc.jpg" alt=""></a></li>
+		</ul>
+		<ul class="slider thumb-item-nav">
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_03.jpg" alt=""></li>
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_06.jpg?2019_0603" alt=""></li>
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_10.jpg" alt=""></li>
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_09.jpg" alt=""></li>
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_01.jpg" alt=""></li>
+			<li><img src="wp-content/themes/muro-kanko/image/index/main_img_nav_02.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="contents-inner">
+		<div id="recommend">
+			<h2>おすすめ情報<span>Recomended</span></h2>
+			<ul>
+				<li>
+					<p class="recommend_img"><img src="wp-content/themes/muro-kanko/image/index/image_01.jpg" alt=""></p>
+					<h3><a href="see.html">室蘭の大自然</a></h3>
+					<p class="category_see">見る</p>
+				</li>
+				<li>
+					<p class="recommend_img"><img src="wp-content/themes/muro-kanko/image/index/image_02.jpg" alt=""></p>
+					<h3><a href="eat-buy.html">室蘭の個性派グルメ</a></h3>
+					<p class="category_eat-buy">食べる・買う</p>
+				</li>
+				<li>
+					<p class="recommend_img"><img src="wp-content/themes/muro-kanko/image/index/image_03.jpg" alt=""></p>
+					<h3><a href="yakei.html">室蘭の工場夜景</a></h3>
+					<p class="category_see">見る</p>
+				</li>
+			</ul>
+		</div>
+		<div class="block">
+			<div id="news">
+				<h2>お知らせ<span>Information</span></h2>
+				<ul id="news_list">
+									<li>
+						<div class="post_data top_post">
+							<p class="post_time">2026.09.28</p>
+							<input id="post-3475" class="acd-check" type="checkbox">
+							<label class="acd-label-a" for="post-3475"><p>【お知らせ】10月のイベント情報について</p></label>
+							<div class="acd-content-a post_contents">
+								<div class="left">
+									<p>10月9（金）～12日（月・祝）は各種イベントが盛りだくさん！</p>
+<p>ぜひ室蘭へお越しください。</p>
+<p>&nbsp;</p>
+<p>10月9日（金）「むろらんカルチャーナイト2026」<br>
+ ・旧室蘭駅舎<br>
+ 　通常19時閉館を20時まで開館時間延長</p>
+<p>・室蘭民報みんなの水族館（市立室蘭水族館）<br>
+ 　夜の水族館　18：00～20：00（最終入館19：00）（雨天中止）<br>
+ 　イルミネーションの装飾や、魚たちや海獣の夜の顔が見られます<br>
+ 　遊具は観覧車のみ稼働（１歳以上１名につき200円）</p>
+<p>　<a href="https://www.city.muroran.lg.jp/bbs/detail.html?content=3440" target="_blank">その他イベント情報はコチラ</a> </p>
+<p>　<a href="wp-content/uploads/2026/09/event_post_20260918_175703.jpg"></a></p>
+<p>&nbsp;</p>
+<p>10月10日（土）「炭鉄港3-DAYS」<br>
+ ・旧室蘭駅舎公園（ぽっぽらん公園）<br>
+ 　D51ミガキ隊　体験イベント10:00～12:00<br>
+ 　たたら製鉄　体験学習10:00～17:00<br>
+ 　※事前申し込み必要。汚れますので。捨てても良いような服装をおすすめします。<br>
+ 　 <a href="https://www.city.muroran.lg.jp/culture/?content=12650" target="_blank">イベント詳細や申込みはコチラ</a></p>
+<p>　<a href="wp-content/uploads/2026/09/content_20260914_171551.png"></a></p>
+<p>&nbsp;</p>
+<p>10月11日（日）・12日（月・祝）「今季もありがとう大感謝祭」</p>
+<p>・室蘭民報みんなの水族館（市立室蘭水族館）</p>
+<p>　9:30～先着100名様に記念品プレゼント。</p>
+<p>　その他、美味しい食べ物やグッズが当たる抽選会もあります。</p>
+<p>　有料入館者の方が対象となります（パスポート所持者を含みます）</p>								</div>
+								<div class="right">
+									<p class="post_img"><a href="wp-content/uploads/2026/09/event_post_20260918_175703.jpg"><img src="wp-content/uploads/2026/09/event_post_20260918_175703-s.jpg" alt="event_post_20260918_175703"></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+									<li>
+						<div class="post_data top_post">
+							<p class="post_time">2026.07.13</p>
+							<input id="post-3461" class="acd-check" type="checkbox">
+							<label class="acd-label-a" for="post-3461"><p>【お知らせ】道の駅内の喫茶（ソフトクリーム販売所）の臨時閉店について</p></label>
+							<div class="acd-content-a post_contents">
+								<div class="left">
+									<p></p>
+<p>&nbsp;</p>
+<p>いつも白鳥大橋記念館　カナスチールみたら室蘭をご利用いただきありがとうございます。</p>
+<p>&nbsp;</p>
+<p>下記日程で機材メンテンナンスを行うため、喫茶（ソフトクリーム販売所）の閉店時間を4時間前倒します。</p>
+<p>&nbsp;</p>
+<p>日程：2026年7月16日（木） 通常18:00のところ、14:00で閉店</p>
+<p>&nbsp;</p>
+<p>なお、道の駅は通常通り開館します。<br>
+ご利用のお客様には大変ご迷惑をおかけしますが、何卒ご理解の程よろしくお願いいたします。</p>
+<p>&nbsp;</p>								</div>
+								<div class="right">
+									<p class="post_img"><a href="wp-content/uploads/2026/07/2a831ec055ed4fee4e1d0936ea40500d.jpg"><img src="wp-content/uploads/2026/07/2a831ec055ed4fee4e1d0936ea40500d-s.jpg" alt="喫茶臨時閉店"></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+									<li>
+						<div class="post_data top_post">
+							<p class="post_time">2026.04.14</p>
+							<input id="post-3441" class="acd-check" type="checkbox">
+							<label class="acd-label-a" for="post-3441"><p>【お知らせ】道の駅みたら室蘭 飲食テナントの閉店時間変更について</p></label>
+							<div class="acd-content-a post_contents">
+								<div class="left">
+									<p></p>
+<p>いつも白鳥大橋記念館　カナスチールみたら室蘭をご利用いただきありがとうございます。</p>
+<p>「くじら食堂」「鉄の街珈琲」「鶏ざんまい」の3店舗について、下記の通り閉店時間を一部変更します。</p>
+<p>&nbsp;</p>
+<p>2026年4月18日(土)～10月31日（土）の土日祝日<br>
+ 営業時間　10:00～<span style="color: #ff0000;">17:00（LO 16:30）</span></p>
+<p>&nbsp;</p>
+<p>皆様にはご迷惑をおかけいたしますが、何卒ご理解のほど、よろしくお願いいたします。</p>
+<p>&nbsp;</p>								</div>
+								<div class="right">
+									<p class="post_img"><a href="wp-content/uploads/2026/04/fb15c5babefd9bacb9b4acf9de01188b.jpg"><img src="wp-content/uploads/2026/04/fb15c5babefd9bacb9b4acf9de01188b-s.jpg" alt="R08_くじら食堂、鉄の街珈琲、鶏ざんまい閉店時間変更"></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+									<li class="no_img">
+						<div class="post_data top_post">
+							<p class="post_time">2026.03.31</p>
+							<input id="post-3432" class="acd-check" type="checkbox">
+							<label class="acd-label-a" for="post-3432"><p>【お知らせ】令和8年度：夏季の営業時間について</p></label>
+							<div class="acd-content-a post_contents">
+								<div class="left">
+									<p>4月から旧室蘭駅舎と道の駅みたら室蘭は夏季の営業時間になります。<br>
+ 令和8年度の営業時間は下記の通りです。</p>
+<p>&nbsp;</p>
+<p><strong>■旧室蘭駅舎</strong><br>
+ 営業時間：午前8時～<span style="color: #ff0000;"><strong>午後</strong><strong>7</strong><strong>時</strong></span></p>
+<p>&nbsp;</p>
+<p><strong>■カナスチールみたら室蘭（道の駅みたら室蘭）</strong><br>
+ 開館時間：午前9時30分～午後7時 館内各店舗の営業時間は下記の通りです。</p>
+<p><strong>●売店・喫茶コーナー</strong><br>
+ 午前9時30分～<span style="color: #ff0000;"><strong>午後6時</strong></span></p>
+<p>&nbsp;</p>
+<p>●<strong>くじら食堂・鉄ノ街珈琲・鶏ざんまい</strong><br>
+ 平日：午前10時～<span style="color: #ff0000;"><strong>午後3時</strong></span>（ラストオーダー<span style="color: #ff0000;"><strong>午後2時30分</strong></span>）</p>
+<p>（2026年4月14日 閉店時間修正あり）<br>
+ 土日祝日：午前10時～<span style="color: #ff0000;"><strong>午後5時</strong></span>（ラストオーダー<span style="color: #ff0000;"><strong>午後4時30分</strong></span>）</p>
+<p>※メニューは「くじら食堂・鉄ノ街珈琲」ならびに「鶏ざんまい」公式Webサイトをご覧下さい。<br>
+ <a href="https://kujirasyokudou-tetsunomachicoffee.com/">https://kujirasyokudou-tetsunomachicoffee.com/</a>（くじら食堂・鉄ノ街珈琲）<br>
+ <a href="https://torizanmai-muroran.com/">https://torizanmai-muroran.com/</a>（鶏ざんまい）</p>
+<p>&nbsp;</p>
+<p><strong>■室蘭民報みんなの水族館（市立室蘭水族館）</strong><br>
+ 令和7年度の営業は<span style="color: #ff0000;"><strong>4月24日(金)</strong></span>から始まります。</p>
+<p>※シーバスパスポート2026は4月1日(水)から旧室蘭駅舎の窓口で販売開始します。24日からは水族館の入り口でもお求めいただけます。</p>
+<p>&nbsp;</p>
+<p><strong>夏季営業期間は4月1日～10月31日</strong>です。<br>
+ よろしくお願いいたします。</p>								</div>
+								<div class="right">
+																	</div>
+							</div>
+						</div>
+					</li>
+									<li>
+						<div class="post_data top_post">
+							<p class="post_time">2026.02.27</p>
+							<input id="post-3426" class="acd-check" type="checkbox">
+							<label class="acd-label-a" for="post-3426"><p>【お知らせ】「室蘭やきとり」が100年フードに認定されました！</p></label>
+							<div class="acd-content-a post_contents">
+								<div class="left">
+									<h2>この度、室蘭やきとりが文化庁の100年フードに認定されました！</h2>
+<p></p>
+<p>&nbsp;</p>
+<p>令和7年4月に「室蘭やきとりの会」（事務局：室蘭商工会議所）が発足し、その活動内容の一つに「室蘭やきとりの100年フード認定を目指す」というものが有りました。</p>
+<p>令和7年度の募集が令和7年11月から12月に掛けて行われ、同会が「室蘭やきとり」について応募したところ、この度「未来の100年フード部門 ～目指せ、100年！～」のメニューとして認定されました。</p>
+<p>&nbsp;</p>
+<p>■100 年フードの認定概要<br>
+ 文化庁では、今回応募のあった 46 件について、有識者委員会による審査を行った結果、認定基準を満たした 29 件を追加認定しました。今回の認定で329件の食文化が認定され、北海道では15件の食文化が認定されています。</p>
+<p>&nbsp;</p>
+<h2>■「100年フード」の概要について</h2>
+<p>文化庁では、多様な食文化の継承・振興への機運を醸成するため、地域で世代を超えて受け継がれてきた食文化を、100年続く食文化「100年フード」と名付け、文化庁とともに継承していく団体等の取組を支援しています。これまでに300件の食文化が認定され、認定後は、各種メディアで認定団体の活動が数多く取り上げられたり、ロゴマーク入りの商品が販売されるなど、100年フードの取組は全国に広がりを見せています。</p>
+<h3> </h3>
+<h3>文化庁Webサイト：<a href="https://www.bunka.go.jp/koho_hodo_oshirase/hodohappyo/94013401.html" target="_blank">「100年フード」及び「食文化ミュージアム」を認定しました</a><span class="small">（外部リンク）</span></h3>								</div>
+								<div class="right">
+									<p class="post_img"><a href="wp-content/uploads/2026/02/39e97c2deef84d76630ff00c972de98d.jpg"><img src="wp-content/uploads/2026/02/39e97c2deef84d76630ff00c972de98d-s.jpg" alt="室蘭やきとりイメージ01"></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+								</ul>
+				<p id="to_news_list"><a href="category/news.html">お知らせ一覧を見る</a></p>
+			</div>
+			<div id="etc">
+				<ul id="banner">
+					<li><a href="special/about.html"><img src="wp-content/themes/muro-kanko/image/index/banner_01.jpg" alt="室蘭について"></a></li>
+					<li><a href="special/aomori_ferry.html"><img src="wp-content/themes/muro-kanko/image/index/banner_11.jpg" alt="青森・室蘭フェリー"></a></li>
+					<li><a href="special/miyako_ferry.html"><img src="wp-content/themes/muro-kanko/image/index/banner_07.jpg?2020_0127" alt="宮古・室蘭フェリー"></a></li>
+					<li><a href="special/pamphlet.html"><img src="wp-content/themes/muro-kanko/image/index/banner_03.jpg" alt="パンフレットダウンロード"></a></li>
+										<li><a href="special/live_camera.html"><img src="wp-content/themes/muro-kanko/image/index/banner_05.jpg" alt="室蘭LIVEカメラ"></a></li>
+					<li><a href="http://westiburi.jp"><img src="wp-content/themes/muro-kanko/image/index/banner_06.jpg" alt="地球体感 西いぶり"></a></li>
+					<li><a href="visit/hakuchoclimb.html"><img src="wp-content/themes/muro-kanko/image/index/banner_10.jpg" alt="白鳥大橋主塔登頂クルーズ"></a></li>
+					<li><a href="visit/fishing.html"><img src="wp-content/themes/muro-kanko/image/index/banner_09.jpg" alt="室蘭de手ぶらフィッシング"></a></li>
+				</ul>
+				<div id="sun_moon">
+					<div id="sun_moon-inner">
+						<p id="sun_moon_title">日の出入り・月の出入り</p>
+						<p id="sun_moon_day"></p>
+						<p id="sun_rise"><img src="wp-content/themes/muro-kanko/image/index/sun_rise.jpg" alt="日の出"><span></span></p>
+						<p id="sun_set"><img src="wp-content/themes/muro-kanko/image/index/sun_set.jpg" alt="日の入り"><span></span></p>
+						<p id="moon_rise"><img src="wp-content/themes/muro-kanko/image/index/moon_rise.jpg" alt="月の出"><span></span></p>
+						<p id="moon_set"><img src="wp-content/themes/muro-kanko/image/index/moon_set.jpg" alt="月の入り"><span></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		</div><!-- #container-inner -->
+	</div><!-- #container -->
+	
+	<div id="footer">
+		<ul id="f_links">
+			<li><a href="kyoukai.html"><img src="wp-content/themes/muro-kanko/image/f_link_01.jpg" alt=""></a></li><!--
+			--><li><a href="http://www.city.muroran.lg.jp"><img src="wp-content/themes/muro-kanko/image/f_link_02.jpg" alt=""></a></li><!--
+			--><li><a href="http://www.murocci.or.jp"><img src="wp-content/themes/muro-kanko/image/f_link_03.jpg" alt=""></a></li>
+		</ul>
+		<div id="f_main">
+			<div id="f_main-inner">
+				<ul id="f_main_menu">
+					<!--<li><a href="http://muro-kanko.com/news/post-3426.html">サイトマップ</a></li>-->
+					<!--<li><a href="http://muro-kanko.com/news/post-3426.html">推奨環境</a></li>-->
+				</ul>
+				<ul id="f_main_menu_sp">
+					<li><a href="see.html">見る</a></li>
+					<li><a href="play_learn.html">遊ぶ・学ぶ</a></li>
+					<li><a href="eat-buy.html">食べる・買う</a></li>
+					<li><a href="stay.html">泊まる</a></li>
+					<li><a href="event.html">イベント</a></li>
+					<li><a href="access.html">アクセス</a></li>
+					<!--<li><a href="http://muro-kanko.com/news/post-3426.html">サイトマップ</a></li>-->
+					<!--<li><a href="http://muro-kanko.com/news/post-3426.html">推奨環境</a></li>-->
+				</ul>
+				<div id="address">
+					<p id="ad_contact">お問い合わせ</p><!--
+					--><p id="ad_muro-kanko">室蘭観光推進連絡会議</p><!--
+					--><p id="ad_delim">/</p><!--
+					--><p id="ad_data"><span>北海道室蘭市海岸町1丁目5番1号(一般社団法人室蘭観光協会内_)</span>TEL：0143-23-0102</p>
+				</div>
+			</div>
+		</div>
+<!--		<div id="f_social">
+			<div id="f_social-inner">
+				<ul>
+					<li><img src="http://muro-kanko.com/wp-content/themes/muro-kanko/image/twitter.jpg" alt="Twitter" /></li>
+					<li><img src="http://muro-kanko.com/wp-content/themes/muro-kanko/image/facebook.jpg" alt="Facebook" /></li>
+					<li><img src="http://muro-kanko.com/wp-content/themes/muro-kanko/image/line.jpg" alt="LINE" /></li>
+				</ul>
+			</div>
+		</div>-->
+	</div><!-- #footer -->
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js?ver=4.7.2'></script>
+
+<script type="text/javascript" src="wp-content/themes/muro-kanko/script/jquery.easing.js"></script>
+<script type="text/javascript" src="wp-content/themes/muro-kanko/script/translate.js"></script>
+<script type="text/javascript" src="wp-content/themes/muro-kanko/script/jquery.combine.js"></script>
+<script type="text/javascript" src="wp-content/themes/muro-kanko/script/jquery.changeImg.js"></script>
+<script type="text/javascript" src="wp-content/themes/muro-kanko/script/sun_moon.js"></script>
+
+</body>
+</html>

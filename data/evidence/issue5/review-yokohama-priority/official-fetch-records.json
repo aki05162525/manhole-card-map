@@ -1,0 +1,53 @@
+[
+  {
+    "sourceUrl": "https://www.mlit.go.jp/plateau/faq/",
+    "fetchedAt": "2026-11-05T06:01:19.442375+00:00",
+    "completedAt": "2026-11-05T06:01:19.640333+00:00",
+    "status": 200,
+    "finalUrl": "https://www.mlit.go.jp/plateau/faq/",
+    "sha256": "e21de51d0499696e1fd1a2b341f62bc34694c2392ce591deede5ef5e0d02da7b",
+    "bytes": 46697,
+    "urllibErrorBeforeCurlFallback": null,
+    "snapshotPath": "data/evidence/issue5/review-yokohama-priority/plateau-faq.html"
+  },
+  {
+    "sourceUrl": "https://www.mlit.go.jp/plateau/site-policy/",
+    "fetchedAt": "2026-11-05T06:01:19.442978+00:00",
+    "completedAt": "2026-11-05T06:01:19.579890+00:00",
+    "status": 200,
+    "finalUrl": "https://www.mlit.go.jp/plateau/site-policy/",
+    "sha256": "79d1e76152057154fea195b773c3029deaffc656707b29574113270e48ed413b",
+    "bytes": 31822,
+    "urllibErrorBeforeCurlFallback": null,
+    "snapshotPath": "data/evidence/issue5/review-yokohama-priority/plateau-policy.html"
+  },
+  {
+    "sourceUrl": "https://service.gsi.go.jp/onestop/navi/nav6-1/",
+    "fetchedAt": "2026-11-05T06:01:19.443466+00:00",
+    "completedAt": "2026-11-05T06:01:19.620709+00:00",
+    "status": 200,
+    "finalUrl": "https://service.gsi.go.jp/onestop/navi/nav6-1/",
+    "sha256": "5bbd1c21d7f72923cd13e4a2e4e9a60297d0b243b3f0313eb9162d64a1c01068",
+    "bytes": 8696,
+    "urllibErrorBeforeCurlFallback": null,
+    "snapshotPath": "data/evidence/issue5/review-yokohama-priority/gsi-public-survey.html"
+  },
+  {
+    "sourceUrl": "https://www.gsi.go.jp/LAW/2930-qa.html",
+    "fetchedAt": "2026-11-05T06:01:19.443971+00:00",
+    "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+    "curlError": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (35) OpenSSL/3.0.13: error:0A000152:SSL routines::unsafe legacy renegotiation disabled\n",
+    "saved": false
+  },
+  {
+    "sourceUrl": "https://assets.cms.plateau.reearth.io/assets/04/96d45a-a30b-4c9f-88c0-c1323b5a0f86/14100_yokohama-shi_city_2024_citygml_2_op/udx/bldg/53391459_bldg_6697_op.gml",
+    "fetchedAt": "2026-11-05T06:01:19.446020+00:00",
+    "completedAt": "2026-11-05T06:01:20.047771+00:00",
+    "status": 200,
+    "finalUrl": "https://assets.cms.plateau.reearth.io/assets/04/96d45a-a30b-4c9f-88c0-c1323b5a0f86/14100_yokohama-shi_city_2024_citygml_2_op/udx/bldg/53391459_bldg_6697_op.gml",
+    "sha256": "310b719c3059620dd5a32da4ae60faf31717c4c34527aa001c29210ab7b19bd1",
+    "bytes": 33939275,
+    "urllibErrorBeforeCurlFallback": null,
+    "matchesArchivedUncompressedOriginal": true
+  }
+]

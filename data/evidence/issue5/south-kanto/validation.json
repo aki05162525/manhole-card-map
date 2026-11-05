@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T05:49:37.128468+00:00",
+  "actorType": "ai",
+  "targetCount": 75,
+  "updates": 9,
+  "unresolved": 66,
+  "corrections": 7,
+  "hashedSources": 232,
+  "unknownRetrievalTimes": [
+    "data/evidence/national/kanto-south-integration/gkp-current-design.html"
+  ],
+  "checks": [
+    "relations.cardId prefecture assignment and full.json card IDs",
+    "75 IDs partition without overlap",
+    "baseline SHA256 unchanged",
+    "all referenced source bytes SHA256",
+    "exact old correction values",
+    "P05 original Feature values and JGD2011 CRS",
+    "CSV and official q/destination coordinate values",
+    "Mitaka same-building primary text",
+    "Yokohama selected entity marker, not viewport"
+  ],
+  "result": "passed",
+  "limitations": [
+    "原本を再利用した保留案件は全URLの新規fetchをしていない。",
+    "法的な再利用許諾を包括的に保証する検証ではない。",
+    "配布状態・有効日を座標追加で変更しない。"
+  ]
+}

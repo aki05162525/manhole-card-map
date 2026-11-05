@@ -1,0 +1,46 @@
+{
+  "targetCount": 192,
+  "updateCount": 4,
+  "unresolvedCount": 188,
+  "reusedHashesVerified": 125,
+  "coordinates": [
+    {
+      "facilityId": "facility:kinki-katano-guard",
+      "extracted": [
+        34.7739206,
+        135.6831364
+      ],
+      "cardId": "27-230-A001",
+      "status": "active"
+    },
+    {
+      "facilityId": "facility:kinki-neyagawa-holiday",
+      "extracted": [
+        34.765068,
+        135.62728879999997
+      ],
+      "cardId": "27-215-A001",
+      "status": "suspended"
+    },
+    {
+      "facilityId": "facility:kinki-toyono-guard",
+      "extracted": [
+        34.9188505,
+        135.4940959
+      ],
+      "cardId": "27-321-A001",
+      "status": "active"
+    },
+    {
+      "facilityId": "facility:kinki-yokkaichi-holiday",
+      "extracted": [
+        34.9723329,
+        136.6140131
+      ],
+      "cardId": "24-202-C001",
+      "status": "active"
+    }
+  ],
+  "kyotoOldExactMatch": true,
+  "kyotoCoordinateUnadopted": true
+}

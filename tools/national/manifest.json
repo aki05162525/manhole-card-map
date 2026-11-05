@@ -171,6 +171,27 @@
         0
       ],
       "sha256": "57c2253082525cb489dc9825148ae1e928ff7a4385e4f5d95287ce8b2d9f6ebe"
+    },
+    {
+      "path": "data/national/issue5/west-south-reviewed-patches.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "58948fa635eee63620ce913f935c10e33ee270e51b681320eed54fa89f1124f4"
+    },
+    {
+      "path": "data/national/issue5/north-reviewed-patches.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0
+      ],
+      "sha256": "bdfc8eacb898bc8883e267d9358313b7f343adcc03e8d2da69928c7493224a30"
     }
   ],
   "locations": [
@@ -2656,6 +2677,189 @@
         {
           "facilityId": "facility:kanto-north-3bd86f16d6d9017f5da2",
           "sha256": "e98896997c8e5227f541264df67768178b51ef5a3410528bb2226674adae24f4"
+        }
+      ]
+    },
+    {
+      "path": "data/evidence/issue5/review-north-kanto/proposed-location-updates.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+          "sha256": "503bdc592057899169b995853ae40f358627c5e46be64bc275662e9f7b076b27"
+        },
+        {
+          "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+          "sha256": "be3e823b9b03b5fd63e6e284095afdeddb33b6f1d07aca7e5d7c07101188ccc4"
+        },
+        {
+          "facilityId": "facility:kanto-north-sakuragawa-makabe-water",
+          "sha256": "02833506016a80476d733727ad1c0e641fd81775de4705b954e916077283a270"
+        },
+        {
+          "facilityId": "facility:kanto-north-kawajima-water",
+          "sha256": "9b8674f465321d7722d0c0691f37e640de8ffb2e7d1fb621546aabf3b0f390d9"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/south-kanto.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-697024c210b4424f12ca",
+          "sha256": "4e7c54e4e7eeef4687e91862c1ddaa617e07d8af03a35369e30688dd9826d811"
+        },
+        {
+          "facilityId": "facility:kanto-south-c28de78bc3ef2c56b069",
+          "sha256": "7aa6875097cd8107c11415ba6f6aff0d0c9d4c47c6e04e2cd66b9bceca41a5ff"
+        },
+        {
+          "facilityId": "facility:kanto-south-c7ea6b482b25915147a4",
+          "sha256": "6271b00e50b1dffc118bc31c22eb58ed11d477702990546dda4d74d013a3803a"
+        },
+        {
+          "facilityId": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+          "sha256": "2463974c34c2483f0420759ad9727b6f4d70941128fb4058bd9a275c9e756943"
+        },
+        {
+          "facilityId": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+          "sha256": "57a95f616fbe82b1d2ce8f2d6471113b2cddcc73d1e32230065d5198331b7262"
+        },
+        {
+          "facilityId": "facility:kanto-south-a9e505e27500c811b2a5",
+          "sha256": "af550262da69a4525814e6bdcb1a164fab4e55803b8597914c7062a1561aa275"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-urayasu-chisui",
+          "sha256": "392ad9793f68662521ab3cfcc5f99a9b243f81d715cbace9c82b0349fac92f92"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-12",
+          "sha256": "a679d13f29056f9c88acf374db79a9f13be5926e137bf2b4bf05fc570a051ca1"
+        },
+        {
+          "facilityId": "facility:kanto-south-d39f7191733284005f01",
+          "sha256": "f6c68f266b230d90e285f059a358ea4f18dba1f0a54ced34276d8b0d656d59a3"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/kinki-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-katano-guard",
+          "sha256": "d4ac79f1e26a327fca7b2c1f58cdc65d6cf8d2a67df48705df605d670b6070c0"
+        },
+        {
+          "facilityId": "facility:kinki-neyagawa-holiday",
+          "sha256": "daecc01b97b1d6beee026fde5d2a8ecaed4cd06dc03b7353ff89b318b9f5882c"
+        },
+        {
+          "facilityId": "facility:kinki-toyono-guard",
+          "sha256": "94346d9bf0928a041b8013323793277f32083e156bcd2225a31353bae4353d35"
+        },
+        {
+          "facilityId": "facility:kinki-yokkaichi-holiday",
+          "sha256": "488687bd6bb68bb35bf9a419d8a832b1d6d31a1cd4ac91eea38f90f89e0dad13"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/west-south.json",
+      "approved": [
+        {
+          "facilityId": "facility:kyushu-fec63a8962497abb940f",
+          "sha256": "73cd6b17bd171c41a8b5f20795fe676bd4781800ccdd53971dbefee395dcbb76"
+        },
+        {
+          "facilityId": "facility:kyushu-e06ac5856a6e4bded47a",
+          "sha256": "6957b2ed49ea6b4ae26749ec5ce303b25c18d4245e778d79c57f6a28e445aedd"
+        },
+        {
+          "facilityId": "facility:kyushu-26485d92c27ac8317992",
+          "sha256": "3493b661e0cbd7124315bf3646a084f723cc19bcee3a2eabe0afc30b70076984"
+        },
+        {
+          "facilityId": "facility:kyushu-786085478c88a34b14cc",
+          "sha256": "521264f0011158d3510b0e2cad9b6fbbecad99fa7ab7e499b0065dcc6721788d"
+        },
+        {
+          "facilityId": "facility:kyushu-837475cdb663a2c88d04",
+          "sha256": "2cbaa9b7129133c6e72f43fbff56945b06632b8d0836dd7a25d9c33346c701bd"
+        },
+        {
+          "facilityId": "facility:ws-88a6c5a846ae640758",
+          "sha256": "fc588ee861756f8d190bbf106be64ff13bd0e474c1ee6de50dd391a0a399d4cf"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/north-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-12b6e6080ef6e1e816a7",
+          "sha256": "4a02c781279e48cdeeaa4103b491c778240ad9119b87bbd437fd3a8efb1126ac"
+        },
+        {
+          "facilityId": "facility:north-3060a04659dcedce64b9",
+          "sha256": "84050a84656ce29c2cbca13bef873ad9261a86659becb865d03e5a2802aac679"
+        },
+        {
+          "facilityId": "facility:north-33d210dca3f1918726f9",
+          "sha256": "9310e395fc853ec10c6cec5a24848e8f9546a116a0be70eb1e539a11c0ba65b6"
+        },
+        {
+          "facilityId": "facility:north-343aa74f33ff03c6fa0a",
+          "sha256": "d3f2805e571819c47a10695975a941a7e7daabf7bba52f6faf41f57c80ae2151"
+        },
+        {
+          "facilityId": "facility:north-564d6cb018ca701ab673",
+          "sha256": "7fa8f8189064ad2e3d79961cd6b6d8dc975ac76bb8193a40b93ff34cdc3b745c"
+        },
+        {
+          "facilityId": "facility:north-716c305f4ea78c959505",
+          "sha256": "938c580ff8d156f592793c66ecbec305453aec7a35a8a49f619b4e29c1005ca9"
+        },
+        {
+          "facilityId": "facility:north-c5a98d056047559d8981",
+          "sha256": "b9b7d9018ff4b0699eac4cf5308728ede98499059c3a220016c73ae0428eb0df"
+        },
+        {
+          "facilityId": "facility:north-proposal-bibai-duty",
+          "sha256": "4e3d8807089268a38c6d2f92eacd5675f293ddb3d4d65b656a396aa6fd81a939"
+        },
+        {
+          "facilityId": "facility:north-proposal-ishidoriya-duty",
+          "sha256": "627c3e82e5e80cf0c22a19168f3c4b555dea6c0dabb1bdb6c4aad3eb2e002248"
+        },
+        {
+          "facilityId": "facility:north-proposal-ohasama-duty",
+          "sha256": "0b4bbbf59345a2d97769d8293d37d726057e6d414c2896ccb3b226dd9a2a3444"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/chubu-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+          "sha256": "bf513cd5686e495a99f76dac84f860e91884a7de519d715090dc82aeb0f24907"
+        },
+        {
+          "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+          "sha256": "6f98edb7cf3bd2cc1d72083f6513789ab29b98f950aeb62cb03815a1c846d725"
+        },
+        {
+          "facilityId": "facility:chubu-oyabe-water-counter",
+          "sha256": "1a7cb63f3a63e9dbb200a6a4ff7b79bcf32c0e232e0228a407056361c4c6091e"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue5/yokohama-priority.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-4ecb948da292cb16373b",
+          "sha256": "aad4c7908cfea1ea2f96023b5e665635d4a07a5ad985e0cfbe4b7387b39383e5"
         }
       ]
     }

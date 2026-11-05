@@ -1,0 +1,50 @@
+[
+  {
+    "path": "data/work/issue5-baseline/ledger.json",
+    "sha256": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b"
+  },
+  {
+    "path": "data/work/issue5-baseline/full.json",
+    "sha256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150"
+  },
+  {
+    "path": "data/national/location-updates/chugoku-shikoku.json",
+    "sha256": "f1653562142774c5b6d4b53b2b766010da2a77070ae95bc3991f0b3587cf6c07"
+  },
+  {
+    "path": "data/national/location-updates/kyushu-okinawa.json",
+    "sha256": "8d772f99ec505aec65b5ea159a603eab1b286fe4b0bdafbd2bc957e4d63e9488"
+  },
+  {
+    "path": "data/national/reviews/chugoku-saitama-locations.json",
+    "sha256": "0b153b16b39e7a15ac1d6ab638bfc9d78c0b871bb4bf41106d9e06e49f68cef7"
+  },
+  {
+    "path": "data/national/reviews/kyushu-okinawa-locations.json",
+    "sha256": "ac69b697388a15ffa81947a5a4f4ee99bda33f5b63c0810842820f8f204595e4"
+  },
+  {
+    "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+    "sha256": "d95151c8ec5298f7df6433053ef677e5ce0249e117aabae8b466ca12270490e8"
+  },
+  {
+    "path": "data/evidence/national/locations-kyushu-okinawa/unresolved-research.json",
+    "sha256": "c2c54784f9d2cf69366a21ae7f6ebac5152a81ea3267c44316c313d6e778a4b9"
+  },
+  {
+    "path": "data/national/regions/chugoku-shikoku.json",
+    "sha256": "0e8e4d08aaa6580c0e892134cb296a2e0279f3f7da5ca8232e8172359a182643"
+  },
+  {
+    "path": "data/national/regions/kyushu-okinawa.json",
+    "sha256": "97c7ab7d7556a812c9f0a5e3154980371cc959cc692179928c78323ccaa04d9d"
+  },
+  {
+    "path": "data/overrides/proposals/west-south.json",
+    "sha256": "b80446f0b2a788d76b724d0852ed5b720bd83e26b3578918f65eef0ce43bf5fb"
+  },
+  {
+    "path": "data/evidence/national/proposals-west-south/decisions.json",
+    "sha256": "c9fac3aee246b9234cbc7336509d64cfa36d4ab1af7da5b234d3fa31eda1d363"
+  }
+]

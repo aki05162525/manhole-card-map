@@ -1,0 +1,3 @@
+PASS: 10 Evidence objects strict decoded and validated with repository type/function
+Source: cmd/builddata/ledger.go (Evidence + validateEvidence copied verbatim into temporary harness).
+Scope: update evidence only; review envelopes and acquisition metadata are not Go Evidence.

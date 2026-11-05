@@ -1,0 +1,279 @@
+{
+  "checkedAt": "2026-11-05T06:00:10.884375+00:00",
+  "candidateSHA256": "8e04b3ca473e02c4808bc4500614795312d7f6a1a98cae26462b282e52c801d6",
+  "hashChecks": [
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-catalog.json",
+      "sha256": "da624a031b5f43b67ac5dc38183a9637d8bb2f47c45d789c9edccd079d4efac3",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/citygml-doc.html",
+      "sha256": "71338d86b7b8731801fdf530698b54ccad7e76350e0175ce0408ed37d1db33eb",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/mesh-catalog.json",
+      "sha256": "6a1d51e8d2ce7fcdf9a380c1bfc9ab27a45392cc6f489396a6e7b5c5cf2973db",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-policy.html",
+      "sha256": "79d1e76152057154fea195b773c3029deaffc656707b29574113270e48ed413b",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/53391459.gml.gz",
+      "sha256": "6cb6e43990077d94f50434732e1b0b65f4164dfb476211eaec865915cbe9bb20",
+      "ok": true,
+      "uncompressedSHA256": "310b719c3059620dd5a32da4ae60faf31717c4c34527aa001c29210ab7b19bd1"
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/53391469.gml.gz",
+      "sha256": "cdb6c7ea5bfe2f03b34dacee5a2e5a8b7fe5f0ebe28f23094a15d54ae8fde3ed",
+      "ok": true,
+      "uncompressedSHA256": "ba00b0be31c178d17c10401354cd5c5687f691fa48e24920acfd825d91c95179"
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/city-development.pdf",
+      "sha256": "ca7427c138d68f295fac72edf8b0e2acaebcef6f456a858ff6d51e5250ac528d",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/plateau-faq.html",
+      "sha256": "e21de51d0499696e1fd1a2b341f62bc34694c2392ce591deede5ef5e0d02da7b",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/city-tower-plan.pdf",
+      "sha256": "b799627891c2c6473cb03bc4798f6d50b1dda21c0564ef9720cbf71aed71c291",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/codelists.zip",
+      "sha256": "5c5a257c0aaf444d66d8a4415d815eef3efd8f120acb6ff0259e57fc018ddbfd",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/yokohama-priority/metadata.zip",
+      "sha256": "7a98b673cb6e7de5323a764382c6d19eceab5a2dd54786635c13a2fa86ba2c37",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/63cadd8ca921156a6fdf340b.raw",
+      "sha256": "4274dfc705d40e072218048d8de8685aa84f3e8768a7e0b337b6529cde6a67a1",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/ef94d27108d4e3a728e5278f.raw",
+      "sha256": "c690b9eb511a23ec2c70fbb40d9f73120ec3406dab8df7763e0ab10a8c29f6c9",
+      "ok": true
+    },
+    {
+      "path": "data/evidence/issue5/south-kanto/808a81b865c35633746133b6.raw",
+      "sha256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+      "ok": true
+    }
+  ],
+  "crs": {
+    "6697": {
+      "name": "JGD2011 + JGD2011 (vertical) height",
+      "axes": [
+        {
+          "name": "Geodetic latitude",
+          "direction": "north"
+        },
+        {
+          "name": "Geodetic longitude",
+          "direction": "east"
+        },
+        {
+          "name": "Gravity-related height",
+          "direction": "up"
+        }
+      ]
+    },
+    "6668": {
+      "name": "JGD2011",
+      "axes": [
+        {
+          "name": "Geodetic latitude",
+          "direction": "north"
+        },
+        {
+          "name": "Geodetic longitude",
+          "direction": "east"
+        }
+      ]
+    },
+    "6677": {
+      "name": "JGD2011 / Japan Plane Rectangular CS IX",
+      "axes": [
+        {
+          "name": "Northing",
+          "direction": "north"
+        },
+        {
+          "name": "Easting",
+          "direction": "east"
+        }
+      ]
+    }
+  },
+  "gmlEnvelope": {
+    "srsName": "http://www.opengis.net/def/crs/EPSG/0/6697",
+    "srsDimension": "3"
+  },
+  "attributes": {
+    "creationDate": "2024-03-22",
+    "measuredHeight": "132.9",
+    "surveyYear": "2020",
+    "description": "1",
+    "rank": "1",
+    "depth": "0.022",
+    "adminType": "2",
+    "scale": "2",
+    "duration": "0.0833",
+    "buildingID": "14100-bldg-120521",
+    "prefecture": "14",
+    "city": "14103",
+    "geometrySrcDescLod0": "000",
+    "geometrySrcDescLod1": "000",
+    "geometrySrcDescLod2": "000",
+    "geometrySrcDescLod3": "999",
+    "geometrySrcDescLod4": "999",
+    "thematicSrcDesc": "023",
+    "appearanceSrcDescLod2": "1",
+    "appearanceSrcDescLod3": "99",
+    "appearanceSrcDescLod4": "99",
+    "lodType": "2.0",
+    "lod1HeightType": "2",
+    "srcScaleLod0": "2",
+    "srcScaleLod1": "2",
+    "srcScaleLod2": "2",
+    "publicSurveySrcDescLod0": "003",
+    "publicSurveySrcDescLod1": "003",
+    "publicSurveySrcDescLod2": "003"
+  },
+  "originalVertices": [
+    [
+      35.46723333201773,
+      139.62285938936557,
+      0.0
+    ],
+    [
+      35.46706974522359,
+      139.62243055423883,
+      0.0
+    ],
+    [
+      35.46704999653808,
+      139.62239967724278,
+      0.0
+    ],
+    [
+      35.46613964841845,
+      139.62156226583443,
+      0.0
+    ],
+    [
+      35.465918716464984,
+      139.6219211197771,
+      0.0
+    ],
+    [
+      35.46592191618923,
+      139.62192406318275,
+      0.0
+    ],
+    [
+      35.46591300503657,
+      139.6219385357847,
+      0.0
+    ],
+    [
+      35.46658063791391,
+      139.62255267989963,
+      0.0
+    ],
+    [
+      35.4665320540113,
+      139.62263159188694,
+      0.0
+    ],
+    [
+      35.46661910243859,
+      139.62271166737548,
+      0.0
+    ],
+    [
+      35.466622063264246,
+      139.62270685787726,
+      0.0
+    ],
+    [
+      35.4667630349429,
+      139.62283995642548,
+      0.0
+    ],
+    [
+      35.46678339139715,
+      139.62280899917107,
+      0.0
+    ],
+    [
+      35.46710069966645,
+      139.6231008929719,
+      0.0
+    ],
+    [
+      35.4671333937857,
+      139.62309587385735,
+      0.0
+    ],
+    [
+      35.46722860620915,
+      139.6229308768789,
+      0.0
+    ],
+    [
+      35.46721291157276,
+      139.622892426117,
+      0.0
+    ],
+    [
+      35.46723333201773,
+      139.62285938936557,
+      0.0
+    ]
+  ],
+  "areaM2": 7265.7019784103795,
+  "centroid": {
+    "lat": 35.466612058450735,
+    "lng": 139.62232594269489
+  },
+  "rounded": {
+    "lat": 35.4666121,
+    "lng": 139.6223259
+  },
+  "inside": true,
+  "boundaryDistanceM": 18.544284716962835,
+  "lod1AltitudeRange": [
+    2.4,
+    62.9
+  ],
+  "lod2AltitudeRange": [
+    2.47851624,
+    135.36197894
+  ],
+  "highPartLatitudeRange": [
+    35.466630018851696,
+    35.46715408720745
+  ],
+  "versions": {
+    "pyproj": "3.8.0",
+    "proj": "9.8.1",
+    "shapely": "2.2.0"
+  },
+  "validatorNote": "Executed original validate.py in memory with only output path redirected; original sources unchanged"
+}

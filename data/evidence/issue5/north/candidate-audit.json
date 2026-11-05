@@ -1,0 +1,1114 @@
+{
+  "facility:north-5e7ef2bf3873a0c566d6": {
+    "method": "metadata-correction",
+    "buildingIdentity": "decide.pyの釧路/留萌を処理する共通ループで同じ説明を付けた誤り。公式ページ→短縮URL→最終URL→応答featureの接続は正しく、リンク誤適用ではない。地図応答には住所文字列がないため、住所は公式配布/施設本文から確認した。建物代表点は訂正後採用可能。",
+    "sourceCoordinate": {
+      "lat": 43.9387173,
+      "lng": 141.6470101
+    },
+    "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d43.9387173!4d141.6470101",
+    "evidence": [
+      {
+        "url": "https://goo.gl/maps/9N5kicx1tnbfZWJi6",
+        "finalUrl": "https://www.google.com/maps/place/%E3%82%8B%E3%82%82%E3%81%84%E3%83%97%E3%83%A9%E3%82%B6/@43.9387173,141.6448214,17z/data=!3m1!4b1!4m5!3m4!1s0x5f0c69ca0f6ddc23:0xfa412ae49b48e954!8m2!3d43.9387173!4d141.6470101?hl=ja&shorturl=1",
+        "snapshotPath": "data/evidence/issue5/north/originals/cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a.html",
+        "snapshotSHA256": "cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a",
+        "fetchedAt": "2026-11-05T04:49:48.137730+00:00"
+      },
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f.html",
+        "snapshotSHA256": "71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f",
+        "sourceUrl": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/",
+        "sourceLocator": "留萌プラザ2F まちなか賑わい広場 / 所在地・配布場所住所（留萌市開運町3丁目4番11号）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式ページの施設名称・住所と配布関係を照合。座標は別途目的地マーカー確認時のみ設定。"
+      },
+      {
+        "url": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/",
+        "snapshotPath": "data/evidence/issue5/north/originals/71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f.html",
+        "snapshotSHA256": "71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f",
+        "fetchedAt": "2026-11-05T04:23:19.404091+00:00"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/0dc4fcd8b39cab78569e24c02dca4743b0355de39b7feb56a0af2dec4398feba.html",
+        "snapshotSHA256": "0dc4fcd8b39cab78569e24c02dca4743b0355de39b7feb56a0af2dec4398feba",
+        "sourceUrl": "https://www.e-rumoi.jp/suidou/page26_00039.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（留萌市 01-212-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。市の年末年始12/29～1/3を優先。水曜役場の時刻は未掲載。"
+      }
+    ],
+    "licenseAndCrs": "公式の施設目的地リンク。Google地図の測地系を地図表示の緯度経度として扱い測量精度は主張しない。CC BYデータとは扱わない。第三者地図由来の利用条件を親が確認すること。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  },
+  "facility:north-adeda0700dac8487ca81": {
+    "method": "metadata-correction",
+    "buildingIdentity": "現行市配布案内は2階「総務課総務係窓口」だが台帳名は経営管理課。施設案内ページには旧経営管理課表記が残る。専用水道局庁舎・東雲町3-2-5の同建物位置は採用可能だが、現在の名称を照合済みとする説明には訂正が必要。",
+    "sourceCoordinate": {
+      "lat": 42.82172569999999,
+      "lng": 141.6519333
+    },
+    "sourceLocator": "埋め込み地図応答の施設feature 0x5f7520a42f20602f:0x7f2252a1952ebaf2 / 日本、〒066-0042 北海道千歳市東雲町３丁目２−５ 千歳市水道局",
+    "evidence": [
+      {
+        "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1463.2104522661236!2d141.65170769444282!3d42.82172206534851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7520a42f20602f%3A0x7f2252a1952ebaf2!2z5Y2D5q2z5biC5rC06YGT5bGA!5e0!3m2!1sja!2sus!4v1763704172360!5m2!1sja!2sus",
+        "finalUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1463.2104522661236!2d141.65170769444282!3d42.82172206534851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7520a42f20602f%3A0x7f2252a1952ebaf2!2z5Y2D5q2z5biC5rC06YGT5bGA!5e0!3m2!1sja!2sus!4v1763704172360!5m2!1sja!2sus",
+        "snapshotPath": "data/evidence/issue5/north/originals/3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4.html",
+        "snapshotSHA256": "3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4",
+        "fetchedAt": "2026-11-05T04:50:57.973223+00:00"
+      },
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701.html",
+        "snapshotSHA256": "8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701",
+        "sourceUrl": "https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F",
+        "sourceLocator": "千歳市水道局庁舎2F経営管理課総務係窓口 / 所在地・配布場所住所（北海道千歳市東雲町3丁目2番地5）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式ページの施設名称・住所と配布関係を照合。座標は別途目的地マーカー確認時のみ設定。"
+      },
+      {
+        "url": "https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2.html",
+        "snapshotSHA256": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+        "fetchedAt": "2026-11-05T04:49:48.142290+00:00"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701.html",
+        "snapshotSHA256": "8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701",
+        "sourceUrl": "https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（千歳市 01-224-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。平日2階総務課、休日1階管理員室。巡回時待機あり。"
+      }
+    ],
+    "licenseAndCrs": "公式の施設目的地リンク。Google地図の測地系を地図表示の緯度経度として扱い測量精度は主張しない。CC BYデータとは扱わない。第三者地図由来の利用条件を親が確認すること。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  },
+  "facility:north-da9719ed3ef3729f4673": {
+    "method": "metadata-correction",
+    "buildingIdentity": "decide.pyの釧路/留萌を処理する共通ループで同じ説明を付けた誤り。公式ページ→短縮URL→最終URL→応答featureの接続は正しく、リンク誤適用ではない。地図応答には住所文字列がないため、住所は公式配布/施設本文から確認した。建物代表点は訂正後採用可能。",
+    "sourceCoordinate": {
+      "lat": 42.978677,
+      "lng": 144.3831971
+    },
+    "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971",
+    "evidence": [
+      {
+        "url": "https://maps.app.goo.gl/StpyysamtXeQvhMx9",
+        "finalUrl": "https://www.google.com/maps/place/%E9%87%A7%E8%B7%AF%E5%B8%82%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93%E9%83%A8/@42.978677,144.3806222,17z/data=!3m1!5s0x5f723d42d2e9f8ef:0x4d254c6ac7c57363!4m7!3m6!1s0x5f723d42d2fd79d9:0x3e93dd818052b9a7!8m2!3d42.978677!4d144.3831971!15sChjph6fot6_luILkuIrkuIvmsLTpgZPpg6iSAQljaXR5X2hhbGzgAQA!16s%2Fg%2F1tkc1xsq?authuser=0&entry=tts",
+        "snapshotPath": "data/evidence/issue5/north/originals/d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384.html",
+        "snapshotSHA256": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+        "fetchedAt": "2026-11-05T04:26:09.529998+00:00"
+      },
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "sourceUrl": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "sourceLocator": "釧路市上下水道部 南大通庁舎経営企画課 / 所在地・配布場所住所（北海道釧路市南大通2-1-121）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式ページの施設名称・住所と配布関係を照合。座標は別途目的地マーカー確認時のみ設定。"
+      },
+      {
+        "url": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "fetchedAt": "2026-11-05T04:23:39.961694+00:00"
+      },
+      {
+        "url": "https://www.city.kushiro.lg.jp/shisei/gaiyou/1006827/1006831.html",
+        "finalUrl": "https://www.city.kushiro.lg.jp/shisei/gaiyou/1006827/1006831.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0.html",
+        "snapshotSHA256": "d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0",
+        "fetchedAt": "2026-11-05T04:48:39.508729+00:00"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "sourceUrl": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（釧路市 (A001) 01-206-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。南大通庁舎、平日経営企画課・休日守衛室9～17時。"
+      }
+    ],
+    "licenseAndCrs": "公式の施設目的地リンク。Google地図の測地系を地図表示の緯度経度として扱い測量精度は主張しない。CC BYデータとは扱わない。第三者地図由来の利用条件を親が確認すること。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  },
+  "facility:north-dddf18164e0a5e3df321": {
+    "method": "metadata-correction",
+    "buildingIdentity": "decide.pyの釧路/留萌を処理する共通ループで同じ説明を付けた誤り。公式ページ→短縮URL→最終URL→応答featureの接続は正しく、リンク誤適用ではない。地図応答には住所文字列がないため、住所は公式配布/施設本文から確認した。建物代表点は訂正後採用可能。",
+    "sourceCoordinate": {
+      "lat": 42.978677,
+      "lng": 144.3831971
+    },
+    "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971",
+    "evidence": [
+      {
+        "url": "https://maps.app.goo.gl/StpyysamtXeQvhMx9",
+        "finalUrl": "https://www.google.com/maps/place/%E9%87%A7%E8%B7%AF%E5%B8%82%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93%E9%83%A8/@42.978677,144.3806222,17z/data=!3m1!5s0x5f723d42d2e9f8ef:0x4d254c6ac7c57363!4m7!3m6!1s0x5f723d42d2fd79d9:0x3e93dd818052b9a7!8m2!3d42.978677!4d144.3831971!15sChjph6fot6_luILkuIrkuIvmsLTpgZPpg6iSAQljaXR5X2hhbGzgAQA!16s%2Fg%2F1tkc1xsq?authuser=0&entry=tts",
+        "snapshotPath": "data/evidence/issue5/north/originals/d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384.html",
+        "snapshotSHA256": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+        "fetchedAt": "2026-11-05T04:26:09.529998+00:00"
+      },
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "sourceUrl": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "sourceLocator": "釧路市上下水道部 南大通庁舎守衛室 / 所在地・配布場所住所（北海道釧路市南大通2-1-121）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式ページの施設名称・住所と配布関係を照合。座標は別途目的地マーカー確認時のみ設定。"
+      },
+      {
+        "url": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "fetchedAt": "2026-11-05T04:23:39.961694+00:00"
+      },
+      {
+        "url": "https://www.city.kushiro.lg.jp/shisei/gaiyou/1006827/1006831.html",
+        "finalUrl": "https://www.city.kushiro.lg.jp/shisei/gaiyou/1006827/1006831.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0.html",
+        "snapshotSHA256": "d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0",
+        "fetchedAt": "2026-11-05T04:48:39.508729+00:00"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13.html",
+        "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+        "sourceUrl": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（釧路市 (A001) 01-206-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。南大通庁舎、平日経営企画課・休日守衛室9～17時。"
+      }
+    ],
+    "licenseAndCrs": "公式の施設目的地リンク。Google地図の測地系を地図表示の緯度経度として扱い測量精度は主張しない。CC BYデータとは扱わない。第三者地図由来の利用条件を親が確認すること。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  },
+  "facility:north-12b6e6080ef6e1e816a7": {
+    "method": "P05-22",
+    "buildingIdentity": "市役所上下水道課窓口。現配布表の西3条南1-1-1とP05美唄市役所が一致。庁舎案内PDFの1階上下水道課を照合。",
+    "sourceCoordinate": {
+      "lat": 43.332951,
+      "lng": 141.853986
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "美唄市役所",
+      "address": "美唄市西3条南1-1-1",
+      "class": "1",
+      "municipalityCode": "01215",
+      "coordinate": {
+        "lat": 43.332951,
+        "lng": 141.853986,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/1237",
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01215",
+          "P05_002": "1",
+          "P05_003": "美唄市役所",
+          "P05_004": "美唄市西3条南1-1-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.853986,
+            43.332951
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "snapshotPath": "data/evidence/issue5/north/d00c7574bef7982e2b0f.html",
+        "snapshotSHA256": "c6fe9f963ac6a6e9327361cab8f345a4aa4d925b48c8d91f80e520071c758429",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/soshiki/18/",
+        "snapshotPath": "data/evidence/issue5/north/e65e0b60901eb792ad3f.html",
+        "snapshotSHA256": "b68f1f510b4b510e7697213def7e94202ab3da0b856e39c634ef9bf08092ebc5",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/uploaded/attachment/6449.pdf",
+        "snapshotPath": "data/evidence/issue5/north/5372621a66628b06fea2.pdf",
+        "snapshotSHA256": "a159c75bddc5b336c31759e69f0b16b0dc87ac19c5ed42518223375a9eaa4975",
+        "sourceLocator": "1階庁舎案内：上下水道課・当直室",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6.html",
+        "snapshotSHA256": "3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6",
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（美唄市 (A001) 01-215-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。9月7日再開。平日上下水道課・土日祝当直室、8:45～17:15。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-proposal-bibai-duty": {
+    "method": "P05-22",
+    "buildingIdentity": "配布表が同住所の市役所当直室を明記。庁舎案内PDFも1階当直室を示し、本庁舎建物の点を使用。",
+    "sourceCoordinate": {
+      "lat": 43.332951,
+      "lng": 141.853986
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "美唄市役所",
+      "address": "美唄市西3条南1-1-1",
+      "class": "1",
+      "municipalityCode": "01215",
+      "coordinate": {
+        "lat": 43.332951,
+        "lng": 141.853986,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/1237",
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01215",
+          "P05_002": "1",
+          "P05_003": "美唄市役所",
+          "P05_004": "美唄市西3条南1-1-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.853986,
+            43.332951
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "snapshotPath": "data/evidence/issue5/north/d00c7574bef7982e2b0f.html",
+        "snapshotSHA256": "c6fe9f963ac6a6e9327361cab8f345a4aa4d925b48c8d91f80e520071c758429",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/soshiki/18/",
+        "snapshotPath": "data/evidence/issue5/north/e65e0b60901eb792ad3f.html",
+        "snapshotSHA256": "b68f1f510b4b510e7697213def7e94202ab3da0b856e39c634ef9bf08092ebc5",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/uploaded/attachment/6449.pdf",
+        "snapshotPath": "data/evidence/issue5/north/5372621a66628b06fea2.pdf",
+        "snapshotSHA256": "a159c75bddc5b336c31759e69f0b16b0dc87ac19c5ed42518223375a9eaa4975",
+        "sourceLocator": "1階庁舎案内：上下水道課・当直室",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6.html",
+        "snapshotSHA256": "3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6",
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "sourceLocator": "美唄市役所当直室 / 配布場所・時間・休館条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文の配布場所・条件・対象カードを照合。現地・人確認ではない。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-3060a04659dcedce64b9": {
+    "method": "P05-22",
+    "buildingIdentity": "現配布案内は常呂総合支所内・当直室（正面玄関右横階段下）を明記。P05常呂総合支所・常呂323と接続。",
+    "sourceCoordinate": {
+      "lat": 44.120635,
+      "lng": 144.071197
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "常呂総合支所",
+      "address": "北見市常呂町字常呂323",
+      "class": "2",
+      "municipalityCode": "01208",
+      "coordinate": {
+        "lat": 44.120635,
+        "lng": 144.071197,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/941",
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01208",
+          "P05_002": "2",
+          "P05_003": "常呂総合支所",
+          "P05_004": "北見市常呂町字常呂323"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.071197,
+            44.120635
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+        "snapshotPath": "data/evidence/issue5/north/f17772d7b80f5bd76228.html",
+        "snapshotSHA256": "c449624ec6400ba6b3dcd7061aa0eb38ec52275a87e14e63ddad1d9318ade618",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/detail.php?content=8822",
+        "snapshotPath": "data/evidence/issue5/north/295ee642b0a5558a3d4a.html",
+        "snapshotSHA256": "e670aae7140670b1dab4255b9ae7cde264852447556c4ed1251997020b227c4f",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195.html",
+        "snapshotSHA256": "04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195",
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（北見市 （B001） 01-208-B001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。常呂総合支所・平日課窓口と休日当直室。年末年始配布なし。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-33d210dca3f1918726f9": {
+    "method": "P05-22",
+    "buildingIdentity": "現配布案内は常呂総合支所内の常呂上下水道課窓口。総合支所施設案内も常呂323でP05同一建物名と一致。",
+    "sourceCoordinate": {
+      "lat": 44.120635,
+      "lng": 144.071197
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "常呂総合支所",
+      "address": "北見市常呂町字常呂323",
+      "class": "2",
+      "municipalityCode": "01208",
+      "coordinate": {
+        "lat": 44.120635,
+        "lng": 144.071197,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/941",
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01208",
+          "P05_002": "2",
+          "P05_003": "常呂総合支所",
+          "P05_004": "北見市常呂町字常呂323"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.071197,
+            44.120635
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+        "snapshotPath": "data/evidence/issue5/north/f17772d7b80f5bd76228.html",
+        "snapshotSHA256": "c449624ec6400ba6b3dcd7061aa0eb38ec52275a87e14e63ddad1d9318ade618",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/detail.php?content=8822",
+        "snapshotPath": "data/evidence/issue5/north/295ee642b0a5558a3d4a.html",
+        "snapshotSHA256": "e670aae7140670b1dab4255b9ae7cde264852447556c4ed1251997020b227c4f",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195.html",
+        "snapshotSHA256": "04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195",
+        "sourceUrl": "https://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（北見市 （B001） 01-208-B001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。常呂総合支所・平日課窓口と休日当直室。年末年始配布なし。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-343aa74f33ff03c6fa0a": {
+    "method": "P05-22",
+    "buildingIdentity": "函館公式観光案内の地域交流まちづくりセンター1階カウンター、末広町4-19と現指定管理者の施設名住所を照合。P05の同センター点。",
+    "sourceCoordinate": {
+      "lat": 41.763785,
+      "lng": 140.716989
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "地域交流まちづくりセンター",
+      "address": "函館市末広町4-19",
+      "class": "3",
+      "municipalityCode": "01202",
+      "coordinate": {
+        "lat": 41.763785,
+        "lng": 140.716989,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/488",
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01202",
+          "P05_002": "3",
+          "P05_003": "地域交流まちづくりセンター",
+          "P05_004": "函館市末広町4-19"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.716989,
+            41.763785
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.hakobura.jp/features/56",
+        "snapshotPath": "data/evidence/issue5/north/d11ef2c7c8209b21b9ec.html",
+        "snapshotSHA256": "efe3502f5481c0354ad870ee1e5044d77db3b6fadad3ac9d8f3e6486b069f7f6",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://hakomachi.com/",
+        "snapshotPath": "data/evidence/issue5/north/39c348c9b3e56abe9586.html",
+        "snapshotSHA256": "a417d85e57abbd06197ee0e3a8488f9e2138fcf4255786ba53ef2931346c9e5e",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/7e240c36d8d7a3c814939f17fa13b5ed92ecd8ed6e899a8f91bba471952702a1.html",
+        "snapshotSHA256": "7e240c36d8d7a3c814939f17fa13b5ed92ecd8ed6e899a8f91bba471952702a1",
+        "sourceUrl": "https://www.hakobura.jp/features/56",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（函館市 01-202-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。函館市公式観光サイトで1階カウンター・末広町4-19を確認。配布時刻は本文未掲載。施設営業時間の流用を避け時刻未確定。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-c5a98d056047559d8981": {
+    "method": "P05-22",
+    "buildingIdentity": "特定環境保全公共下水道カードの湖南公民館・福良字家老9390-4が現配布本文と公民館案内で一致。P05同公民館点。駅前の蓋位置は不使用。",
+    "sourceCoordinate": {
+      "lat": 37.38924830726849,
+      "lng": 140.08991212644105
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "湖南公民館",
+      "address": "郡山市湖南町福良字家老9390-4",
+      "class": "4",
+      "municipalityCode": "07203",
+      "coordinate": {
+        "lat": 37.38924830726849,
+        "lng": 140.08991212644105,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/251",
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07203",
+          "P05_002": "4",
+          "P05_003": "湖南公民館",
+          "P05_004": "郡山市湖南町福良字家老9390-4"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.08991212644105,
+            37.38924830726849
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.koriyama.lg.jp/site/jougesuidou/5690.html",
+        "snapshotPath": "data/evidence/issue5/north/308eb02e7ed92485d9e3.html",
+        "snapshotSHA256": "8fd7c7b11006e386fdf02c60292e018276ba7fe33fde8d7aade5fa11660a8e48",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.koriyama.lg.jp/soshiki/185/index-2.html",
+        "snapshotPath": "data/evidence/issue5/north/dac57a5795ab80ac0058.html",
+        "snapshotSHA256": "a5a724360db186d5ae05d09f4bc4988d5f59b2fd71cb3b1f8ece862150d2eaac",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/8fd7c7b11006e386fdf02c60292e018276ba7fe33fde8d7aade5fa11660a8e48.html",
+        "snapshotSHA256": "8fd7c7b11006e386fdf02c60292e018276ba7fe33fde8d7aade5fa11660a8e48",
+        "sourceUrl": "https://www.city.koriyama.lg.jp/site/jougesuidou/5690.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（郡山市 （B001） 07-203-B001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。市配布案内9時開始。旧入力8:30開始を訂正。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-564d6cb018ca701ab673": {
+    "method": "P05-22",
+    "buildingIdentity": "現配布本文と梁川総合支所案内の青葉町1が一致。P05梁川総合支所点。市本庁舎の舟橋180は問い合わせ先であり不使用。",
+    "sourceCoordinate": {
+      "lat": 37.84552594347985,
+      "lng": 140.60138750245164
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "梁川総合支所",
+      "address": "伊達市梁川町青葉町1",
+      "class": "2",
+      "municipalityCode": "07213",
+      "coordinate": {
+        "lat": 37.84552594347985,
+        "lng": 140.60138750245164,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1344",
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07213",
+          "P05_002": "2",
+          "P05_003": "梁川総合支所",
+          "P05_004": "伊達市梁川町青葉町1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.60138750245164,
+            37.84552594347985
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "snapshotPath": "data/evidence/issue5/north/c98f0e032a9680935816.html",
+        "snapshotSHA256": "8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/30/index-2.html",
+        "snapshotPath": "data/evidence/issue5/north/83dcf852260664d31edf.html",
+        "snapshotSHA256": "0294de140cabe1487c4326d66cae0a5e29bb15d66679608a0998f6f38d0fe179",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014.html",
+        "snapshotSHA256": "8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014",
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（伊達市 07-213-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。平日支所／休日1階観光案内所、9～17時・年末年始除外・スタッフ不在あり。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-716c305f4ea78c959505": {
+    "method": "P05-22",
+    "buildingIdentity": "公式が観光案内所を梁川総合支所1階と明記。P05支所建物点を使用。名称の似た別の観光施設を採らない。",
+    "sourceCoordinate": {
+      "lat": 37.84552594347985,
+      "lng": 140.60138750245164
+    },
+    "datasetPoint": {
+      "dataset": "P05-22",
+      "name": "梁川総合支所",
+      "address": "伊達市梁川町青葉町1",
+      "class": "2",
+      "municipalityCode": "07213",
+      "coordinate": {
+        "lat": 37.84552594347985,
+        "lng": 140.60138750245164,
+        "crs": "EPSG:6668"
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1344",
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07213",
+          "P05_002": "2",
+          "P05_003": "梁川総合支所",
+          "P05_004": "伊達市梁川町青葉町1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.60138750245164,
+            37.84552594347985
+          ]
+        }
+      }
+    },
+    "evidence": [
+      {
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "snapshotPath": "data/evidence/issue5/north/c98f0e032a9680935816.html",
+        "snapshotSHA256": "8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014",
+        "sourceLocator": "配布場所・施設名・番地・対象窓口",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/30/index-2.html",
+        "snapshotPath": "data/evidence/issue5/north/83dcf852260664d31edf.html",
+        "snapshotSHA256": "0294de140cabe1487c4326d66cae0a5e29bb15d66679608a0998f6f38d0fe179",
+        "sourceLocator": "施設名・所在地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが取得した公式本文の配布先・住所・建物名を照合。現地確認ではない。"
+      }
+    ],
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014.html",
+        "snapshotSHA256": "8d9fad6fff9459c1ab74ad29db288d22eb88c2470552b6d36259235c15a8d014",
+        "sourceUrl": "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（伊達市 07-213-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。平日支所／休日1階観光案内所、9～17時・年末年始除外・スタッフ不在あり。"
+      }
+    ],
+    "datasetEvidence": [
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9.html",
+        "snapshotSHA256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1.html",
+        "snapshotSHA256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+      },
+      {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-P05-v3_0_1.pdf",
+        "snapshotPath": "data/evidence/issue5/north/originals/62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e.pdf",
+        "snapshotSHA256": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e"
+      },
+      {
+        "sourceUrl": "https://renkei2.gsi.go.jp/renkei/130326mapsh_gijutu/mapsheet_qa.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6.html",
+        "snapshotSHA256": "146dc84796d2a19e1e6270b72f125656e5f73fc27c74ee128eea58f3f28423d6"
+      }
+    ],
+    "license": "CC BY 4.0 / 国土交通省 国土数値情報（市町村役場等及び公的集会施設 2022）",
+    "crs": "EPSG:6668 / JGD2011",
+    "relocationReview": "現行公式案内で同一名称・住所の対象建物を確認。参照した現行案内に移転・別棟指定なし。無告知の同住所建替えまで保証しない。"
+  },
+  "facility:north-proposal-ishidoriya-duty": {
+    "method": "same-building-explicit",
+    "buildingIdentity": "公式配布表は石鳥谷総合支所1階警備員室・八幡第4地割161と明記。",
+    "sourceFacilityId": "facility:north-8da9db2c5cc58d40b221",
+    "sourceCoordinate": {
+      "lat": 39.484213,
+      "lng": 141.146988
+    },
+    "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.484213,141.146988",
+    "distributionEvidence": [
+      {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "花巻市石鳥谷総合支所1階警備員室 / 配布場所・時間・休館条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文の配布場所・条件・対象カードを照合。現地・人確認ではない。"
+      }
+    ],
+    "licenseAndCrs": "既存の公式施設マーカーを使用。第三者地図由来の場合はCC BYとは扱わない。地図表示用緯度経度で室内の実測を主張しない。"
+  },
+  "facility:north-proposal-ohasama-duty": {
+    "method": "same-building-explicit",
+    "buildingIdentity": "公式配布表は大迫総合支所1階警備員室・大迫第2地割51番地4と明記。",
+    "sourceFacilityId": "facility:north-008e2585ad57dd933bf1",
+    "sourceCoordinate": {
+      "lat": 39.469086,
+      "lng": 141.291325
+    },
+    "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.469086,141.291325",
+    "distributionEvidence": [
+      {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "花巻市大迫総合支所1階警備員室 / 配布場所・時間・休館条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文の配布場所・条件・対象カードを照合。現地・人確認ではない。"
+      }
+    ],
+    "licenseAndCrs": "既存の公式施設マーカーを使用。第三者地図由来の場合はCC BYとは扱わない。地図表示用緯度経度で室内の実測を主張しない。"
+  },
+  "facility:north-proposal-motomiya-guard": {
+    "method": "same-building-explicit",
+    "buildingIdentity": "公式配布案内は本宮市役所の休日警備員室、西側ATM裏入口と明記。別棟の記載なし。",
+    "sourceFacilityId": "facility:north-0028d3c0cf4b1c5c46ea",
+    "sourceCoordinate": {
+      "lat": 37.5131248,
+      "lng": 140.3936997
+    },
+    "sourceLocator": "公式案内 https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d37.5131248!4d140.3936997",
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/7fcf46f8e8109f1309e051483abd7abd75ef3bbf0ddcac60e7973ba41f0eab6f.html",
+        "snapshotSHA256": "7fcf46f8e8109f1309e051483abd7abd75ef3bbf0ddcac60e7973ba41f0eab6f",
+        "sourceUrl": "https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html",
+        "sourceLocator": "本宮市役所警備員室 / 配布場所・時間・休館条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文の配布場所・条件・対象カードを照合。現地・人確認ではない。"
+      }
+    ],
+    "licenseAndCrs": "既存の公式施設マーカーを使用。第三者地図由来の場合はCC BYとは扱わない。地図表示用緯度経度で室内の実測を主張しない。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  },
+  "facility:north-proposal-otaru-duty": {
+    "method": "same-building-explicit",
+    "buildingIdentity": "公式配布案内は水道局本庁舎の休日1階当直室と明記。市役所本館の点ではない。",
+    "sourceFacilityId": "facility:north-dc7b25bac2387c1d4172",
+    "sourceCoordinate": {
+      "lat": 43.1916988,
+      "lng": 140.9940904
+    },
+    "sourceLocator": "埋め込み地図応答の施設feature 0x5f0ae0567147720b:0xb38ad9a978422d45 / 〒047-0024 北海道小樽市花園２丁目１１−１５ 小樽市水道局",
+    "distributionEvidence": [
+      {
+        "snapshotPath": "data/evidence/issue5/north/originals/4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc.html",
+        "snapshotSHA256": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+        "sourceUrl": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+        "sourceLocator": "小樽市水道局本庁舎1階当直室 / 配布場所・時間・休館条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文の配布場所・条件・対象カードを照合。現地・人確認ではない。"
+      }
+    ],
+    "licenseAndCrs": "既存の公式施設マーカーを使用。第三者地図由来の場合はCC BYとは扱わない。地図表示用緯度経度で室内の実測を主張しない。",
+    "decision": "coordinate-identified-license-unresolved",
+    "licenseEvidence": {
+      "sourceUrl": "https://www.google.com/intl/en/help/terms_maps/",
+      "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+      "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "sourceLocator": "Restrictions on Use / copy the content; mapping-related dataset",
+      "verificationMethod": "Google Maps追加規約の複製・地図データセット関連制限を確認。公式リンクであることだけでは独立台帳への再利用許諾を証明しない。違法性は断定しない。"
+    }
+  }
+}

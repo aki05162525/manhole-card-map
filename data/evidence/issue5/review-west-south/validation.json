@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "facilityId": "facility:kyushu-fec63a8962497abb940f",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    },
+    {
+      "facilityId": "facility:kyushu-e06ac5856a6e4bded47a",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    },
+    {
+      "facilityId": "facility:kyushu-26485d92c27ac8317992",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    },
+    {
+      "facilityId": "facility:kyushu-786085478c88a34b14cc",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    },
+    {
+      "facilityId": "facility:kyushu-837475cdb663a2c88d04",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    },
+    {
+      "facilityId": "facility:ws-88a6c5a846ae640758",
+      "zipMemberMatches": true,
+      "rawCoordinateMatches": true,
+      "evidenceHashMatches": true,
+      "strictEvidenceFields": true
+    }
+  ],
+  "inputHashes": {
+    "data/national/issue5/west-south.json": "f627ab7b241490cf015508ae8a6c0c1b03c6d6600d5d038f9f1e44196481bba3",
+    "data/evidence/issue5/west-south/README.md": "526e3c8598c80c9969bd164dbf8a0b2aaa16e361291dd387db89fb096001a5ee",
+    "data/evidence/issue5/west-south/coordinate-proof.json": "fb1483899b6578f2319757fa48db163d6b352d674280504386ee4f6f97a6687b",
+    "data/work/issue5-baseline/ledger.json": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b",
+    "data/work/issue5-baseline/full.json": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150",
+    "cmd/builddata/ledger.go": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695",
+    "data/evidence/issue5/chubu/p05-terms.html": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42"
+  },
+  "exactCorrectionsOldValuesMatch": true,
+  "currentTermsSavedHashMatches": true,
+  "readOnlyInputsUnchanged": true
+}

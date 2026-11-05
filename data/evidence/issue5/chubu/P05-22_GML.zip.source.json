@@ -1,0 +1,14 @@
+{
+  "url": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+  "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+  "path": "data/evidence/issue5/chubu/P05-22_GML.zip",
+  "status": 200,
+  "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+  "contentType": "application/zip",
+  "lastModified": "Tue, 21 Jan 2025 07:17:19 GMT",
+  "bytes": 8366402,
+  "sha256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+  "reusedFrom": "data/work/official-facility-index/P05-22_GML.zip",
+  "actorType": "ai",
+  "checkedAt": "2026-11-05"
+}

@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T05:47:12.569150+00:00",
+  "actorType": "ai",
+  "targetCount": 116,
+  "candidateCount": 4,
+  "unresolvedCount": 112,
+  "correctionCount": 4,
+  "proposalFacilityCount": 7,
+  "allTargetIdsPartitionedExactlyOnce": true,
+  "allReferencedOriginalHashesMatch": true,
+  "reusedOriginalCount": 106,
+  "allCandidatesCoordinateLiteralsMatch": true,
+  "baselineAndInputHashes": [
+    {
+      "path": "data/work/issue5-baseline/ledger.json",
+      "sha256": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b"
+    },
+    {
+      "path": "data/work/issue5-baseline/full.json",
+      "sha256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150"
+    },
+    {
+      "path": "data/national/regions/kanto-north.json",
+      "sha256": "96b15507e936fd78df7e7e07ca8269c8cc4159e703e9abd9ba9edac4008eaf01"
+    },
+    {
+      "path": "data/overrides/proposals/kanto-north.json",
+      "sha256": "6e9b658ec50e2c5a5f6f218b49df2239956552ce9b1173823cf2155e768fa375"
+    },
+    {
+      "path": "data/national/patches/kanto-north.json",
+      "sha256": "71140047167d917dfcdeac7564d0266f6541a14021b562b139687cbec09fbd26"
+    },
+    {
+      "path": "data/national/reviews/kanto-north-itg-locations.json",
+      "sha256": "1cb951f70f5e10d0d864ee9399ba8be282db7aee01f435e3d544feae82ae533d"
+    },
+    {
+      "path": "data/national/reviews/chugoku-saitama-locations.json",
+      "sha256": "0b153b16b39e7a15ac1d6ab638bfc9d78c0b871bb4bf41106d9e06e49f68cef7"
+    },
+    {
+      "path": "data/national/reviews/facility-point-scope.json",
+      "sha256": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede"
+    },
+    {
+      "path": "data/national/location-updates/kanto-north-ibaraki-tochigi-gunma.json",
+      "sha256": "169264cad0fe331d549dc371bd15c38a56d68bede75c91bce4f76c4c1dee2d98"
+    },
+    {
+      "path": "data/national/location-updates/kanto-north-saitama.json",
+      "sha256": "de0ca3f46990df717be029be9066f8248782185edbe6ded86a3d43d33863d81a"
+    },
+    {
+      "path": "data/national/location-updates/official-facility-index.json",
+      "sha256": "4084814e28076ea2849f6f9fcb27d1ce56c75677c47d3ab46b2a71bc30dcd5b2"
+    },
+    {
+      "path": "data/evidence/national/kanto-north/README.md",
+      "sha256": "c7d71e5d6d9d10e270a5a70c68babc4a15f57022bb45d3f6ced7df2542fc73b6"
+    },
+    {
+      "path": "data/evidence/national/proposals-kanto-north/README.md",
+      "sha256": "7465c1995da13168cbc1a5857bde6a23b2938d968fa6971e6b023b41b04827d7"
+    },
+    {
+      "path": "data/evidence/national/locations-kanto-north-saitama/README.md",
+      "sha256": "9aef5b36808b86956780342cd6b9a51fa080762d644b4afce698ece9d986279b"
+    },
+    {
+      "path": "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/README.md",
+      "sha256": "9296829fc9979971a146ae196cde914e1c92cbf87920e23d5771b9b2ae620dd7"
+    }
+  ],
+  "documentCodeDiscrepancies": [],
+  "scopeLimitation": "全116件のID分類と旧根拠検査が完了。現行Web・建物点の確認完了は候補4件のみ。未確定112件は解決・全国座標確定を意味しない。",
+  "finalVerification": {
+    "at": "2026-11-05T05:48:36.344305+00:00",
+    "passed": true,
+    "checks": [
+      "116 IDの排他的完全分類",
+      "baseline/full/旧入力hash不変",
+      "再利用原本bytes/hash一致",
+      "新規取得原本hash一致",
+      "候補4件の原典リンク数値構造一致",
+      "訂正4件exact old一致",
+      "ORIGAMI/日立/土浦の保留維持"
+    ],
+    "reusedEvidenceWithRecordedAcquisitionTime": 99
+  }
+}

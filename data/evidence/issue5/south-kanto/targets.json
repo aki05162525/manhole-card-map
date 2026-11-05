@@ -1,0 +1,3301 @@
+[
+  {
+    "facility": {
+      "id": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "legacyIds": [
+        "place:040c3fa2cd62eb9cfd10"
+      ],
+      "name": "葉山しおさい公園",
+      "address": "神奈川県三浦郡葉山町一色2123-1",
+      "phone": "046-876-1140",
+      "evidence": {
+        "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+        "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+        "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+        "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-301-A001",
+        "placeId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "sourceHash": "e39f84c2b600863ed6c8eaa10603da38701bc76792ea08058eda19bece12a20a",
+        "hours": [
+          "平日役場8:30～17:00。休日しおさい公園8:30～17:00（入園16:30まで、月曜・祝日翌日・12月28日～1月3日休園）。"
+        ],
+        "status": "active",
+        "condition": "休日",
+        "evidence": {
+          "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+          "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+          "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+          "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-04903f9b604f31b843df",
+      "legacyIds": [
+        "place:04903f9b604f31b843df",
+        "place:070822e0ef07461b9c84"
+      ],
+      "name": "小金井市観光まちおこし協会",
+      "address": "小金井市本町1丁目18番14号 松島ビル103",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+        "snapshotPath": "data/evidence/national/kanto-south/ef2c37a216538aa13156.html",
+        "snapshotSHA256": "30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6",
+        "sourceLocator": "13-210-A001／小金井市第二庁舎4階 環境部下水道課窓口(令和8年8月17日配布再開)・小金井市観光まちおこし協会(令和8年8月22日配布再開)：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-210-A001",
+        "placeId": "facility:kanto-south-04903f9b604f31b843df",
+        "sourceHash": "5f6b694e58e4c11dacce3dbab9dc6eba72d2686a35376e759ab5669315c898da",
+        "hours": [
+          "平日市役所第二庁舎4階、土曜観光まちおこし協会とも9:00～12:00、13:00～16:00。日曜・祝日・12月29日～1月3日配布なし。"
+        ],
+        "status": "active",
+        "condition": "土曜(日曜、祝日は除く)",
+        "evidence": {
+          "sourceUrl": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+          "snapshotPath": "data/evidence/national/kanto-south/ef2c37a216538aa13156.html",
+          "snapshotSHA256": "30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6",
+          "sourceLocator": "13-210-A001／小金井市第二庁舎4階 環境部下水道課窓口(令和8年8月17日配布再開)・小金井市観光まちおこし協会(令和8年8月22日配布再開)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      },
+      {
+        "cardId": "13-210-B001",
+        "placeId": "facility:kanto-south-04903f9b604f31b843df",
+        "sourceHash": "50edf1e6d89dce274558b3894281df20cf2728d306a2004f358a8930e2e58b5e",
+        "hours": [
+          "予定枚数に達したため配布休止。再配布時期は公式で告知。"
+        ],
+        "status": "suspended",
+        "condition": "土曜日",
+        "evidence": {
+          "sourceUrl": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+          "snapshotPath": "data/evidence/national/kanto-south/30886eadbf1d6437c549.html",
+          "snapshotSHA256": "7d8f04c46009a4ade86d64e9279a36c05fc6988d339edae942a5daad2f39811b",
+          "sourceLocator": "13-210-B001／小金井市第二庁舎4階 下水道課窓口・小金井市観光まちおこし協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-0ded97a30e37e98782cb",
+      "legacyIds": [
+        "place:0ded97a30e37e98782cb"
+      ],
+      "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+      "address": "神奈川県三浦市城山町1-1",
+      "phone": "046-882-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+        "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+        "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+        "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-210-A001",
+        "placeId": "facility:kanto-south-0ded97a30e37e98782cb",
+        "sourceHash": "e1ba96b7a9c1d5a1c13727079aa1476cc27891631400cb894b5b57dbf4d2a7d3",
+        "hours": [
+          "市役所平日8:30～17:15。観光インフォメーションセンター平日・休日9:00～17:30。いずれも12月28日～1月3日配布なし。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+          "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-121e759343c948057983",
+      "legacyIds": [
+        "place:121e759343c948057983"
+      ],
+      "name": "相模湖観光案内所",
+      "address": "相模原市緑区与瀬1183",
+      "phone": "042-649-0661",
+      "evidence": {
+        "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+        "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+        "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+        "sourceLocator": "14-150-B001／相模湖観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-150-B001",
+        "placeId": "facility:kanto-south-121e759343c948057983",
+        "sourceHash": "48af0eab4850dc3500e13c67df4d189dfb5b00b528f466a62e8ef24652b6a58c",
+        "hours": [
+          "8:30～17:00（11:30～12:30は配布なし）。12月29日～1月3日除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+          "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "sourceLocator": "14-150-B001／相模湖観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "legacyIds": [
+        "place:13a98e4a6ad62274aac8"
+      ],
+      "name": "丸吉玩具店",
+      "address": "東京都葛飾区立石1-21-2",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+        "snapshotPath": "data/evidence/national/kanto-south/0505dbb97e8012746373.html",
+        "snapshotSHA256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+        "sourceLocator": "13-100-N001／丸吉玩具店：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-N001",
+        "placeId": "facility:kanto-south-13a98e4a6ad62274aac8",
+        "sourceHash": "736aa484e695914329b6819cfc25decfe126bdd2db52c7db99e17823ca1cef90",
+        "hours": [
+          "13:00～18:00。臨時休業時はテクノプラザかつしかでリカちゃんカードと同じ時間帯に代替配布。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+          "snapshotPath": "data/evidence/national/kanto-south/0505dbb97e8012746373.html",
+          "snapshotSHA256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+          "sourceLocator": "13-100-N001／丸吉玩具店：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-1611a2392fec34e2db1f",
+      "legacyIds": [
+        "place:1611a2392fec34e2db1f"
+      ],
+      "name": "ハンドメイドファクトリー マカロン",
+      "address": "東京都葛飾区亀有3-35-3",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+        "snapshotPath": "data/evidence/national/kanto-south/0505dbb97e8012746373.html",
+        "snapshotSHA256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+        "sourceLocator": "13-100-X001／亀有観光案内所(ゆうろーどサービスカウンター)・ハンドメイドファクトリー マカロン：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-X001",
+        "placeId": "facility:kanto-south-1611a2392fec34e2db1f",
+        "sourceHash": "91e3d96af542c8cdf1aba9e8711425d01f38d2c354ee8cc0312253664f1ac7b2",
+        "hours": [
+          "亀有案内所9:45～17:45。第3火曜（祝日なら翌日以降平日）定休時はマカロン11:00～18:00。"
+        ],
+        "status": "active",
+        "condition": "定休日",
+        "evidence": {
+          "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+          "snapshotPath": "data/evidence/national/kanto-south/0505dbb97e8012746373.html",
+          "snapshotSHA256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+          "sourceLocator": "13-100-X001／亀有観光案内所(ゆうろーどサービスカウンター)・ハンドメイドファクトリー マカロン：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "legacyIds": [
+        "place:1a3833b4bda5568eaddb"
+      ],
+      "name": "Hintmation",
+      "address": "東京都北区赤羽台2丁目1-15 ヌーヴェル赤羽台15号棟1階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+        "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+        "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+        "sourceLocator": "13-100-N101／Hintmation：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-N101",
+        "placeId": "facility:kanto-south-1a3833b4bda5568eaddb",
+        "sourceHash": "bf1a6e98ef9f6a681d97f51883a41ec0d990e52436d554a10d9e5da331559cd7",
+        "hours": [
+          "10:30～17:00。日曜・月曜・祝日休館。貸切等臨時休館あり。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+          "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+          "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+          "sourceLocator": "13-100-N101／Hintmation：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "legacyIds": [
+        "place:1e2eb2c199aa90b834c0"
+      ],
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "address": "東京都羽村市羽村4122",
+      "phone": "042-579-4041",
+      "evidence": {
+        "sourceUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+        "snapshotPath": "data/evidence/national/kanto-south/5374529443da774fef75.html",
+        "snapshotSHA256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339",
+        "sourceLocator": "13-227-B001／ヒノトントンZOO(羽村市動物公園)チケット売り場：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-227-B001",
+        "placeId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+        "sourceHash": "481e7be89a62c334b710297188521c25026f4a0f37da972afa7a01e51b304147",
+        "hours": [
+          "11～2月9:00～15:30、3～10月9:00～16:00。月曜（祝日は開園）・1月1日閉園、臨時休園あり。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+          "snapshotPath": "data/evidence/national/kanto-south/5374529443da774fef75.html",
+          "snapshotSHA256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339",
+          "sourceLocator": "13-227-B001／ヒノトントンZOO(羽村市動物公園)チケット売り場：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "legacyIds": [
+        "place:1fef933ed459e3c91a5d"
+      ],
+      "name": "赤羽スポーツの森公園競技場",
+      "address": "東京都北区赤羽西5-2-27",
+      "phone": "03-5948-9281",
+      "evidence": {
+        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+        "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+        "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+        "sourceLocator": "13-100-H101／赤羽スポーツの森公園競技場：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-H101",
+        "placeId": "facility:kanto-south-1fef933ed459e3c91a5d",
+        "sourceHash": "6d5d82e8eed2fdab317d7ae153abd82d362ac6516523deaab478eb5855ee60e9",
+        "hours": [
+          "9:00～18:00。第3火曜（祝日なら翌営業日）、年末年始休館。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+          "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+          "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+          "sourceLocator": "13-100-H101／赤羽スポーツの森公園競技場：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "legacyIds": [
+        "place:20ebba51b4a3684b8c98"
+      ],
+      "name": "川崎市入江崎水処理センター ワクワクアクア",
+      "address": "神奈川県川崎市川崎区塩浜3-17-1",
+      "phone": "044-287-5214",
+      "evidence": {
+        "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+        "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+        "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-130-B001",
+        "placeId": "facility:kanto-south-20ebba51b4a3684b8c98",
+        "sourceHash": "f03217b579ea3a42d2beed8165f2910484b53387e7bd4d62cb31a2fafbbf3252",
+        "hours": [
+          "平日ワクワクアクアは8:45～12:00、13:00～16:15（水曜・年末年始除く）。1週間前までに予約し見学した方のみ。土日祝はきたテラス9:00～19:00（平日は配布なし）。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+          "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-23883d07b60ef5d7bb0d",
+      "legacyIds": [
+        "place:23883d07b60ef5d7bb0d"
+      ],
+      "name": "東京都虹の下水道館",
+      "address": "東京都江東区有明2-3-5(有明水再生センター5階)",
+      "phone": "03-5564-2458",
+      "evidence": {
+        "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+        "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+        "snapshotSHA256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+        "sourceLocator": "13-100-B001／東京都虹の下水道館：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-B001",
+        "placeId": "facility:kanto-south-23883d07b60ef5d7bb0d",
+        "sourceHash": "8bf512b6ba85fa9480337112b6c88455b33eb49f768592412b4a0294a722ec70",
+        "hours": [
+          "9:30～16:30（入館16:00まで）。月曜（祝休日なら翌日）・12月29日～1月3日休み。夏休みは無休、9月10日・10月1日は開館。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "13-100-B001／当該カード画像の行・当該窓口の配布時間列",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "親が2026-11-05取得した現一覧の画像URLで当該行を特定し、全国観光PRコーナーと時間を再確認。自分での再GETではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-281213c5dc294c44f2e5",
+      "legacyIds": [
+        "place:281213c5dc294c44f2e5"
+      ],
+      "name": "秦野駅観光案内所",
+      "address": "神奈川県秦野市大秦町1(小田急線秦野駅改札出て左)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+        "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+        "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+        "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-211-A001",
+        "placeId": "facility:kanto-south-281213c5dc294c44f2e5",
+        "sourceHash": "3ac04aac4b07e0cd3c519f1224b3b42dc526fa6d711d26aa4ecc7453ba1a8211",
+        "hours": [
+          "平日・土曜日は浄水管理センター9:00～17:00、日曜・祝祭日は秦野駅観光案内所9:00～17:00。"
+        ],
+        "status": "active",
+        "condition": "日曜・祝日",
+        "evidence": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+          "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+          "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+      "legacyIds": [
+        "place:2c9f62b5c1d339aebb8b"
+      ],
+      "name": "清川村本庁舎1階 清川村環境上下水道課",
+      "address": "神奈川県愛甲郡清川村煤ヶ谷2216番地",
+      "phone": "046-288-3862",
+      "evidence": {
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+        "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+        "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+        "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-402-A001",
+        "placeId": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+        "sourceHash": "aeeb42250736ae916c145abb5c6b4e25c8541fae8f033b58b972b769f16a9c53",
+        "hours": [
+          "8:30～17:15。平日環境上下水道課、土日祝宿直室。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+          "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+          "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+          "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "legacyIds": [
+        "place:2eec15147b3a40fb17b7"
+      ],
+      "name": "四之宮ふれあいセンター",
+      "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+      "phone": "0463-54-6419",
+      "evidence": {
+        "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+        "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+        "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+        "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-203-A001",
+        "placeId": "facility:kanto-south-2eec15147b3a40fb17b7",
+        "sourceHash": "aa8baa860aad20a469178c25f98d0695e028ca9faa8e5f7ea2eea3771bc78c1d",
+        "hours": [
+          "9:30～17:00。月曜日、12月28日～1月4日除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+          "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+          "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "legacyIds": [
+        "place:34abbed67b76aca3d2d2"
+      ],
+      "name": "市川市観賞植物園",
+      "address": "千葉県市川市大町213番11外",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+        "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+        "snapshotSHA256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+        "sourceLocator": "12-203-B001／市川市観賞植物園：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-203-B001",
+        "placeId": "facility:kanto-south-34abbed67b76aca3d2d2",
+        "sourceHash": "8b08c93cbef1a85ce89336b3c2b81be5a2894a1a2af33513f2d24ca274d6c58e",
+        "hours": [
+          "在庫なし、配付再開未定。通常9:30～16:30、月曜日（祝日なら翌日）・年末年始休園。"
+        ],
+        "status": "suspended",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+          "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+          "snapshotSHA256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+          "sourceLocator": "12-203-B001／市川市観賞植物園：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-36fae9051046490c8149",
+      "legacyIds": [
+        "place:36fae9051046490c8149"
+      ],
+      "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+      "address": "神奈川県秦野市上大槻190番地",
+      "phone": "0463-81-4114",
+      "evidence": {
+        "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+        "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+        "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+        "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-211-A001",
+        "placeId": "facility:kanto-south-36fae9051046490c8149",
+        "sourceHash": "3ac04aac4b07e0cd3c519f1224b3b42dc526fa6d711d26aa4ecc7453ba1a8211",
+        "hours": [
+          "平日・土曜日は浄水管理センター9:00～17:00、日曜・祝祭日は秦野駅観光案内所9:00～17:00。"
+        ],
+        "status": "active",
+        "condition": "平日・土曜",
+        "evidence": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+          "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+          "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "legacyIds": [
+        "place:38d7a5c180ebcf42c381"
+      ],
+      "name": "袖ケ浦市役所 下水道課",
+      "address": "千葉県袖ケ浦市中袖4番地 (袖ケ浦終末処理場 管理棟2階)",
+      "phone": "0438-62-3651",
+      "evidence": {
+        "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html",
+        "snapshotSHA256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+        "sourceLocator": "12-229-A001／袖ケ浦市役所 下水道課・袖ケ浦市役所 守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-229-A001",
+        "placeId": "facility:kanto-south-38d7a5c180ebcf42c381",
+        "sourceHash": "d4a0210220f60c229e5184f5dd68f8e09f812d4a5f79b327163f97ee202eaab5",
+        "hours": [
+          "平日9:00～16:30（下水道課）、土日祝9:00～17:00（南庁舎1階守衛室、インターホン）。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html",
+          "snapshotSHA256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+          "sourceLocator": "12-229-A001／袖ケ浦市役所 下水道課・袖ケ浦市役所 守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "legacyIds": [
+        "place:3cf6f9f3a8305f07b8d8"
+      ],
+      "name": "秋川渓谷瀬音の湯",
+      "address": "東京都あきる野市乙津565番地",
+      "phone": "042-595-2614",
+      "evidence": {
+        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+        "snapshotPath": "data/evidence/national/kanto-south/48ddd4e793802422b489.html",
+        "snapshotSHA256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440",
+        "sourceLocator": "13-228-B001／秋川渓谷瀬音の湯：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-228-B001",
+        "placeId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+        "sourceHash": "deeb7ade2dd387ebef85fa70299d183a63fc97ee94d27874f8d96847efdbdd4e",
+        "hours": [
+          "直売所9:50～18:00。火曜休み（月により祝日等で変更あり）。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+          "snapshotPath": "data/evidence/national/kanto-south/48ddd4e793802422b489.html",
+          "snapshotSHA256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440",
+          "sourceLocator": "13-228-B001／秋川渓谷瀬音の湯：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-46630cd19483230497e8",
+      "legacyIds": [
+        "place:46630cd19483230497e8"
+      ],
+      "name": "旧井上家住宅",
+      "address": "千葉県我孫子市相島新田1番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+        "snapshotPath": "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html",
+        "snapshotSHA256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978",
+        "sourceLocator": "12-222-A001／旧井上家住宅：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-222-A001",
+        "placeId": "facility:kanto-south-46630cd19483230497e8",
+        "sourceHash": "12780840467612585cacd1e1598baa79ff5e8fbf738b8c50e676f2d8cc18fd67",
+        "hours": [
+          "5月1日～8月31日9:00～18:00、9月1日～4月30日9:00～16:00。入館は閉館30分前まで。月曜（祝日の場合は次の平日）・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "12-222-A001／当該カード画像の行・当該窓口の配布時間列",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "親が2026-11-05取得した現一覧の画像URLで当該行を特定し、全国観光PRコーナーと時間を再確認。自分での再GETではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-490affe5c4d10543f6b8",
+      "legacyIds": [
+        "place:490affe5c4d10543f6b8"
+      ],
+      "name": "三浦市観光インフォメーションセンター",
+      "address": "神奈川県三浦市南下浦町上宮田1450-4",
+      "phone": "046-888-0588",
+      "evidence": {
+        "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+        "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+        "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+        "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-210-A001",
+        "placeId": "facility:kanto-south-490affe5c4d10543f6b8",
+        "sourceHash": "e1ba96b7a9c1d5a1c13727079aa1476cc27891631400cb894b5b57dbf4d2a7d3",
+        "hours": [
+          "市役所平日8:30～17:15。観光インフォメーションセンター平日・休日9:00～17:30。いずれも12月28日～1月3日配布なし。"
+        ],
+        "status": "active",
+        "condition": "平日・休日",
+        "evidence": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+          "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-4ecb948da292cb16373b",
+      "legacyIds": [
+        "place:4ecb948da292cb16373b"
+      ],
+      "name": "横浜駅観光案内所",
+      "address": "神奈川県横浜市西区南幸1-1-1 JR横浜タワー2階",
+      "phone": "045-620-9926",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+        "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+        "sourceLocator": "14-100-A001／横浜駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-100-A001",
+        "placeId": "facility:kanto-south-4ecb948da292cb16373b",
+        "sourceHash": "2e638d63a25e86b056fea2eaa09feda9e8b0fdf4c0164088be75c04ed7c5a537",
+        "hours": [
+          "10:00～17:00（土日も配布）。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+          "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+          "sourceLocator": "14-100-A001／横浜駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-52e07f72613c21d30eeb",
+      "legacyIds": [
+        "place:52e07f72613c21d30eeb"
+      ],
+      "name": "荒川知水資料館 amoa",
+      "address": "東京都北区志茂 5-41-1",
+      "phone": "03-3903-1383",
+      "evidence": {
+        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+        "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+        "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+        "sourceLocator": "13-100-J101／荒川知水資料館 amoa：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-J101",
+        "placeId": "facility:kanto-south-52e07f72613c21d30eeb",
+        "sourceHash": "22007d2d2251888e1e92503ab669770b05e493231fb1c4800521fa44e3295498",
+        "hours": [
+          "平日9:30～16:00、土日祝10:00～16:00（3～10月は16:30まで）。入館は閉館30分前。月曜（祝日なら翌平日）・年末年始休館。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+          "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+          "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+          "sourceLocator": "13-100-J101／荒川知水資料館 amoa：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-53fcefb12220c8b3f170",
+      "legacyIds": [
+        "place:53fcefb12220c8b3f170"
+      ],
+      "name": "大和市イベント観光協会",
+      "address": "大和市大和南1-8-1 文化創造拠点シリウス2階",
+      "phone": "046-260-5799",
+      "evidence": {
+        "sourceUrl": "https://www.city.yamato.lg.jp/gyosei/soshik/17/keiei/gesuidouimeziappuzigyou/7111.html",
+        "snapshotPath": "data/evidence/national/kanto-south/9a64e5f26984e2977ec4.html",
+        "snapshotSHA256": "8a8fcbac3531b106c00faa9b7f55e9d1a7fcc1801d67ff4bb3a0af1d003dacda",
+        "sourceLocator": "14-213-A001／大和市イベント観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-213-A001",
+        "placeId": "facility:kanto-south-53fcefb12220c8b3f170",
+        "sourceHash": "aae81ee5ab3bd779112c6ed6e77acab056204209147acefc0e9f1780499ce1c3",
+        "hours": [
+          "10:00～12:00、13:00～16:00。月曜・祝日・12月29日～1月3日配布なし。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yamato.lg.jp/gyosei/soshik/17/keiei/gesuidouimeziappuzigyou/7111.html",
+          "snapshotPath": "data/evidence/national/kanto-south/9a64e5f26984e2977ec4.html",
+          "snapshotSHA256": "8a8fcbac3531b106c00faa9b7f55e9d1a7fcc1801d67ff4bb3a0af1d003dacda",
+          "sourceLocator": "14-213-A001／大和市イベント観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-5724e90e3e451f22eeef",
+      "legacyIds": [
+        "place:5724e90e3e451f22eeef"
+      ],
+      "name": "白井市役所 本庁舎1階守衛室",
+      "address": "千葉県白井市復1123番地",
+      "phone": "047-492-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html",
+        "snapshotSHA256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+        "sourceLocator": "12-232-A001／白井市役所 都市建設部 上下水道課業務係・白井市役所 本庁舎1階守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-232-A001",
+        "placeId": "facility:kanto-south-5724e90e3e451f22eeef",
+        "sourceHash": "1f84b545fbf25681464d407ae164b3c982b601058508fb0e4c16395470564ee6",
+        "hours": [
+          "9:00～16:30。平日東庁舎2階上下水道課、土日祝本庁舎1階守衛室。アンケート回答者に配布。"
+        ],
+        "status": "active",
+        "condition": "休日",
+        "evidence": {
+          "sourceUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html",
+          "snapshotSHA256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+          "sourceLocator": "12-232-A001／白井市役所 都市建設部 上下水道課業務係・白井市役所 本庁舎1階守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "legacyIds": [
+        "place:668322fd5a7c4bbcbf55"
+      ],
+      "name": "“渚の駅”たてやま",
+      "address": "千葉県館山市館山1564-1",
+      "phone": "0470-22-3606",
+      "evidence": {
+        "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+        "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+        "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+        "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-205-B001",
+        "placeId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+        "sourceHash": "3b9d5045301bf01f36f7183efb5421c551fb3987bcf1104793964fce8b4719da",
+        "hours": [
+          "9:00～16:45。月曜（祝日なら翌日）・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+          "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+          "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-687c3fe54c6f69bc669c",
+      "legacyIds": [
+        "place:687c3fe54c6f69bc669c"
+      ],
+      "name": "日野市環境共生部下水道課",
+      "address": "東京都日野市日野本町1-7-2-2階(日野市生活保健センターの向かいの建物)",
+      "phone": "042-514-8317",
+      "evidence": {
+        "sourceUrl": "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+        "snapshotPath": "data/evidence/national/kanto-south/161c69c0b13cf9c76265.html",
+        "snapshotSHA256": "9c75c0e249a426f4373872af7d9802a12965638c5115f5edad9d5cefbaa372d9",
+        "sourceLocator": "13-212-A001／日野市環境共生部下水道課・日野市立新選組のふるさと歴史館：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-212-A001",
+        "placeId": "facility:kanto-south-687c3fe54c6f69bc669c",
+        "sourceHash": "696cb2775846aadead1655a70a12615b91c8cae980112ed2d134ae498afdc8e3",
+        "hours": [
+          "平日下水道課8:30～17:00。土日休日歴史館9:30～16:30（年末年始・臨時休館日除く）。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+          "snapshotPath": "data/evidence/national/kanto-south/161c69c0b13cf9c76265.html",
+          "snapshotSHA256": "9c75c0e249a426f4373872af7d9802a12965638c5115f5edad9d5cefbaa372d9",
+          "sourceLocator": "13-212-A001／日野市環境共生部下水道課・日野市立新選組のふるさと歴史館：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-697024c210b4424f12ca",
+      "legacyIds": [
+        "place:697024c210b4424f12ca"
+      ],
+      "name": "旭区市民活動支援センター みなくる",
+      "address": "神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階",
+      "phone": "045-382-1000",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+        "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+        "snapshotSHA256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2",
+        "sourceLocator": "14-100-B001／横浜市旭区役所 地域振興課・旭区市民活動支援センター みなくる：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-100-B001",
+        "placeId": "facility:kanto-south-697024c210b4424f12ca",
+        "sourceHash": "f51c71f037e861707f288ed3e7918e3e817f6ebb27fbb274c58f22e052e2f0eb",
+        "hours": [
+          "区役所は平日8:45～17:00（祝日・年末年始除く）。みなくるは公式カード案内が指定する施設開館時間を参照。"
+        ],
+        "status": "active",
+        "condition": "平日・土日祝日",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+          "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+          "snapshotSHA256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2",
+          "sourceLocator": "14-100-B001／横浜市旭区役所 地域振興課・旭区市民活動支援センター みなくる：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "legacyIds": [
+        "place:6a2bb91437d927e8d76f"
+      ],
+      "name": "URまちとくらしのミュージアム",
+      "address": "東京都北区赤羽台1-4-50",
+      "phone": "03-3905-7550",
+      "evidence": {
+        "sourceUrl": "https://www.ur-net.go.jp/rd_portal/manhole/",
+        "snapshotPath": "data/evidence/national/kanto-south/b98facd32504334c4fb5.html",
+        "snapshotSHA256": "74a794c0f52a757db5e83ea8cbd1af2ecd7cbcae618ade8c691079ea3d17baaf",
+        "sourceLocator": "00-102-B001／URまちとくらしのミュージアム：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "00-102-B001",
+        "placeId": "facility:kanto-south-6a2bb91437d927e8d76f",
+        "sourceHash": "aa91d04e25aaf9f3bef109e7592a35985e08559344091102785f5200bab6038b",
+        "hours": [
+          "10:00～17:00。水曜・日曜・祝日休館、年末年始・臨時休業あり。ミュージアム見学には予約が必要。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.ur-net.go.jp/rd_portal/manhole/",
+          "snapshotPath": "data/evidence/national/kanto-south/b98facd32504334c4fb5.html",
+          "snapshotSHA256": "74a794c0f52a757db5e83ea8cbd1af2ecd7cbcae618ade8c691079ea3d17baaf",
+          "sourceLocator": "00-102-B001／URまちとくらしのミュージアム：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-790a0057852ab669a5b8",
+      "legacyIds": [
+        "place:790a0057852ab669a5b8"
+      ],
+      "name": "CADAN大手町",
+      "address": "東京都千代田区大手町2-6-3 TOKYO TORCH銭瓶町ビルディング1階ぜにがめプレイス",
+      "phone": "070-6464-1438",
+      "evidence": {
+        "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+        "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+        "snapshotSHA256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+        "sourceLocator": "13-100-A001／CADAN大手町：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-A001",
+        "placeId": "facility:kanto-south-790a0057852ab669a5b8",
+        "sourceHash": "0ed2781c7e77b7fdd100ad47c288747d6c9b4df92c68ccddbd078bfff5ca080a",
+        "hours": [
+          "12:00～19:00。日曜・月曜・祝日・年末年始を除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+          "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+          "snapshotSHA256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+          "sourceLocator": "13-100-A001／CADAN大手町：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-7a134ba2f20e70f69407",
+      "legacyIds": [
+        "place:7a134ba2f20e70f69407"
+      ],
+      "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+      "address": "千葉県佐倉市臼井田2714",
+      "phone": "043-486-8898",
+      "evidence": {
+        "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+        "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+        "snapshotSHA256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+        "sourceLocator": "12-212-B001／佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-212-B001",
+        "placeId": "facility:kanto-south-7a134ba2f20e70f69407",
+        "sourceHash": "7f49d80925b782f809085f1d452109e0f88a62866555ff3de3f233021e3825db",
+        "hours": [
+          "9:00～17:00（11～1月は16:00まで）。年末年始休業。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+          "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+          "snapshotSHA256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+          "sourceLocator": "12-212-B001／佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-7d5b518b29440ef8d976",
+      "legacyIds": [
+        "place:7d5b518b29440ef8d976"
+      ],
+      "name": "桜木町駅観光案内所",
+      "address": "横浜市中区桜木町1-1(JR桜木町駅 南改札正面)",
+      "phone": "045-211-0111",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+        "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+        "sourceLocator": "14-100-D001／桜木町駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-100-D001",
+        "placeId": "facility:kanto-south-7d5b518b29440ef8d976",
+        "sourceHash": "22ef490979568fb53971c61467c3ad875d20eda866b1efa97e5b787f2dc0a03e",
+        "hours": [
+          "10:00～17:00（土日も配布）。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+          "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+          "sourceLocator": "14-100-D001／桜木町駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "legacyIds": [
+        "place:7e3c5c2330870eee7f79"
+      ],
+      "name": "八街市役所受付(第一庁舎一階)",
+      "address": "千葉県八街市八街ほ35番地29",
+      "phone": "043-443-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+        "snapshotPath": "data/evidence/national/kanto-south/86586396e1e141a287d4.html",
+        "snapshotSHA256": "6ee0d392f9646996373aa2c0adf761db155b2f1653839038754fed943d73c70b",
+        "sourceLocator": "12-230-A001／八街市役所建設部下水道課(第三庁舎二階)・八街市役所受付(第一庁舎一階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-230-A001",
+        "placeId": "facility:kanto-south-7e3c5c2330870eee7f79",
+        "sourceHash": "e164965704ab704916c5a716cda07d7e3889aeb1b4f0a35dca3fd1e78b2df57d",
+        "hours": [
+          "2025年8月18日に予定枚数の配付終了。在庫なし、再配付時期未定。"
+        ],
+        "status": "suspended",
+        "condition": "土日祝日",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+          "snapshotPath": "data/evidence/national/kanto-south/86586396e1e141a287d4.html",
+          "snapshotSHA256": "6ee0d392f9646996373aa2c0adf761db155b2f1653839038754fed943d73c70b",
+          "sourceLocator": "12-230-A001／八街市役所建設部下水道課(第三庁舎二階)・八街市役所受付(第一庁舎一階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-8d82eff13732778fad69",
+      "legacyIds": [
+        "place:8d82eff13732778fad69"
+      ],
+      "name": "フレア五日市",
+      "address": "東京都あきる野市舘谷台26番地1",
+      "phone": "042-588-4200",
+      "evidence": {
+        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+        "snapshotPath": "data/evidence/national/kanto-south/48ddd4e793802422b489.html",
+        "snapshotSHA256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440",
+        "sourceLocator": "13-228-C001／フレア五日市：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-228-C001",
+        "placeId": "facility:kanto-south-8d82eff13732778fad69",
+        "sourceHash": "1c9a54d02239503f8851fa3fb080787b47ffc16b289cd17c9c7cf38e00829bdd",
+        "hours": [
+          "9:00～17:00。メンテナンス等による不定期休館あり。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+          "snapshotPath": "data/evidence/national/kanto-south/48ddd4e793802422b489.html",
+          "snapshotSHA256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440",
+          "sourceLocator": "13-228-C001／フレア五日市：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+      "legacyIds": [
+        "place:8eb0c39e8de39e13a0bf"
+      ],
+      "name": "アイルしながわ",
+      "address": "東京都品川区東品川2-3-2",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://isleshinagawa.com/archives/489",
+        "snapshotPath": "data/evidence/national/kanto-south/caefaec2a9106f48b571.html",
+        "snapshotSHA256": "fecfc028df36c9210a78112885273478fa614791ffefd660bdda2b40ee663e5e",
+        "sourceLocator": "13-100-S001／アイルしながわ：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-S001",
+        "placeId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+        "sourceHash": "e97d954958fe5b44da96d32754e31415cf469ddbacb7260df79b75bf6c8ca04d",
+        "hours": [
+          "平日13:00～18:00、土日祝9:00～18:00。2026年11～12月は月曜（祝日は翌火曜）休館、12月29日～1月3日休館。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://isleshinagawa.com/archives/489",
+          "snapshotPath": "data/evidence/national/kanto-south/caefaec2a9106f48b571.html",
+          "snapshotSHA256": "fecfc028df36c9210a78112885273478fa614791ffefd660bdda2b40ee663e5e",
+          "sourceLocator": "13-100-S001／アイルしながわ：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        },
+        "reviewUntil": "2026-12-28"
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-97a685101067226be52c",
+      "legacyIds": [
+        "place:97a685101067226be52c"
+      ],
+      "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
+      "address": "東京都武蔵野市境1-1-7",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+        "snapshotPath": "data/evidence/national/kanto-south/d1b500f617fd37fc4e2b.html",
+        "snapshotSHA256": "6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c",
+        "sourceLocator": "13-203-B001／武蔵野市立ひと・まち・情報創造館武蔵野プレイス・武蔵境駅北口QuOla内1階「DEAN&DELUCA」：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-203-B001",
+        "placeId": "facility:kanto-south-97a685101067226be52c",
+        "sourceHash": "e61367d4fe634d512723d353b62e984bf7a0859f170fc3b424e56853032bd67f",
+        "hours": [
+          "武蔵野プレイス9:30～22:00（水曜・12月29日～1月4日休館）。水曜と水曜祝日開館後の木曜振替休館はDEAN&DELUCA10:30～17:30（同店休業日・年末年始除く）。"
+        ],
+        "status": "active",
+        "condition": "休館日(水曜日)",
+        "evidence": {
+          "sourceUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+          "snapshotPath": "data/evidence/national/kanto-south/d1b500f617fd37fc4e2b.html",
+          "snapshotSHA256": "6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c",
+          "sourceLocator": "13-203-B001／武蔵野市立ひと・まち・情報創造館武蔵野プレイス・武蔵境駅北口QuOla内1階「DEAN&DELUCA」：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-a60af499924663813476",
+      "legacyIds": [
+        "place:a60af499924663813476",
+        "place:b504192ea2e346dd5657"
+      ],
+      "name": "かわさききたテラス(川崎市観光案内所)",
+      "address": "神奈川県川崎市川崎区駅前本町26-1(アトレ3階 かわさききたテラス内)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+        "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+        "sourceLocator": "14-130-A001／かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-130-A001",
+        "placeId": "facility:kanto-south-a60af499924663813476",
+        "sourceHash": "b57786b0206cee87cdbafa7314341ffdeb0b126209c23dff0e7f5a95998ebe72",
+        "hours": [
+          "平日9:00～20:00、土日祝9:00～19:00。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+          "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "sourceLocator": "14-130-A001／かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      },
+      {
+        "cardId": "14-130-B001",
+        "placeId": "facility:kanto-south-a60af499924663813476",
+        "sourceHash": "f03217b579ea3a42d2beed8165f2910484b53387e7bd4d62cb31a2fafbbf3252",
+        "hours": [
+          "平日ワクワクアクアは8:45～12:00、13:00～16:15（水曜・年末年始除く）。1週間前までに予約し見学した方のみ。土日祝はきたテラス9:00～19:00（平日は配布なし）。"
+        ],
+        "status": "active",
+        "condition": "土日・祝日",
+        "evidence": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+          "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "legacyIds": [
+        "place:a917541f326ca3f8f2d7"
+      ],
+      "name": "さがみはらアンテナショップsagamix",
+      "address": "神奈川県相模原市南区相模大野3-2-1ボーノ相模大野ショッピングセンター2F",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+        "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+        "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+        "sourceLocator": "14-150-D001／さがみはらアンテナショップsagamix：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-150-D001",
+        "placeId": "facility:kanto-south-a917541f326ca3f8f2d7",
+        "sourceHash": "de09de31dc9b7895dbbd82198defa07f9769dd77324a30c366bb18355826c0c8",
+        "hours": [
+          "10:00～21:00。施設休館日除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+          "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "sourceLocator": "14-150-D001／さがみはらアンテナショップsagamix：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-a9e505e27500c811b2a5",
+      "legacyIds": [
+        "place:a9e505e27500c811b2a5"
+      ],
+      "name": "清川村本庁舎1階 宿直室",
+      "address": "神奈川県愛甲郡清川村煤ヶ谷2216番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+        "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+        "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+        "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-402-A001",
+        "placeId": "facility:kanto-south-a9e505e27500c811b2a5",
+        "sourceHash": "aeeb42250736ae916c145abb5c6b4e25c8541fae8f033b58b972b769f16a9c53",
+        "hours": [
+          "8:30～17:15。平日環境上下水道課、土日祝宿直室。"
+        ],
+        "status": "active",
+        "condition": "休日",
+        "evidence": {
+          "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+          "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+          "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+          "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-af1b056736ebfd481a88",
+      "legacyIds": [
+        "place:af1b056736ebfd481a88"
+      ],
+      "name": "茅ヶ崎市観光案内所",
+      "address": "神奈川県茅ヶ崎市元町1-1",
+      "phone": "0467-82-3986",
+      "evidence": {
+        "sourceUrl": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+        "snapshotPath": "data/evidence/national/kanto-south/720b1c2b2f378e5d4ce5.html",
+        "snapshotSHA256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e",
+        "sourceLocator": "14-207-A001／茅ヶ崎市観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-207-A001",
+        "placeId": "facility:kanto-south-af1b056736ebfd481a88",
+        "sourceHash": "a3f6629c00d5a1f5eb0662c6a49b19d84cf041e58e2579167681f29c54d6151e",
+        "hours": [
+          "9:00～18:00。12月29日～1月3日休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+          "snapshotPath": "data/evidence/national/kanto-south/720b1c2b2f378e5d4ce5.html",
+          "snapshotSHA256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e",
+          "sourceLocator": "14-207-A001／茅ヶ崎市観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-b3c83a3795c4697c100b",
+      "legacyIds": [
+        "place:b3c83a3795c4697c100b"
+      ],
+      "name": "習志野市企業局工務部下水道課",
+      "address": "千葉県習志野市藤崎1-1-13(企業局新館3階)",
+      "phone": "047-477-5351",
+      "evidence": {
+        "sourceUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-south/362ccfc2c88ce7f336ff.html",
+        "snapshotSHA256": "e37eeca4660347b0b9c3b29273e28f5192c2d553497fce83ac16caa00d876f34",
+        "sourceLocator": "12-216-A001／習志野市企業局工務部下水道課：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-216-A001",
+        "placeId": "facility:kanto-south-b3c83a3795c4697c100b",
+        "sourceHash": "70572bd4226ac6228ba36fdc8bfbef5bf5422213d52c12df5170fb9715d20bc7",
+        "hours": [
+          "平日9:00～16:30、土日祝・年末年始除く。在庫僅少でなくなり次第一時中止。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-south/362ccfc2c88ce7f336ff.html",
+          "snapshotSHA256": "e37eeca4660347b0b9c3b29273e28f5192c2d553497fce83ac16caa00d876f34",
+          "sourceLocator": "12-216-A001／習志野市企業局工務部下水道課：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+      "legacyIds": [
+        "place:b799e7b5b2b0681cf8ba"
+      ],
+      "name": "大井町役場 夜間休日窓口",
+      "address": "神奈川県足柄上郡大井町金子1995",
+      "phone": "0465-85-5011",
+      "evidence": {
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+        "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+        "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+        "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-362-A001",
+        "placeId": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+        "sourceHash": "0b2f0af24ee8f6c5ee3072017a5222330d0ee027af854778e7ed751c57f6075a",
+        "hours": [
+          "8:30～17:15。12月29日～1月3日配布なし。平日生活環境課、土日祝夜間休日窓口。"
+        ],
+        "status": "active",
+        "condition": "休日",
+        "evidence": {
+          "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+          "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+          "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+          "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "legacyIds": [
+        "place:b8a0f5c7b930cf13dc47"
+      ],
+      "name": "衣笠商店街サービスセンター",
+      "address": "神奈川県横須賀市衣笠栄町2丁目28",
+      "phone": "046-853-8686",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+        "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+        "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-201-D001",
+        "placeId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+        "sourceHash": "056464f777b0485f8a6f9b6d96d681ed646b0acba893e4c0e2f286a52cfec5e0",
+        "hours": [
+          "10:00～12:00、13:00～15:00。月水金土サービスセンター、火木は事務所（祝日休業）。日曜・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "月・水・金・土",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-c28de78bc3ef2c56b069",
+      "legacyIds": [
+        "place:c28de78bc3ef2c56b069"
+      ],
+      "name": "伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階",
+      "address": "神奈川県伊勢原市 小田急マルシェ伊勢原2階（伊勢原駅改札から南口方面）",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+        "snapshotPath": "data/evidence/national/kanto-south/e266e0b832b067cffe19.html",
+        "snapshotSHA256": "46e731b7b735ba7f02b79e244a0602730a05037f3098f574a205202d4cf9f622",
+        "sourceLocator": "伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階／場所・住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式施設案内の所在地と配布案内の窓口を照合。座標は未確定。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-214-A001",
+        "placeId": "facility:kanto-south-c28de78bc3ef2c56b069",
+        "sourceHash": "1d6cdc6a06e2c99d4b3065b15833e955b850a1d572eda40474c3b10e311cd59b",
+        "hours": [
+          "平日8:30～12:00、13:00～17:00。土日祝は駅窓口センター9:30～17:00（火・木の祝日、年末年始除く）。"
+        ],
+        "status": "active",
+        "condition": "土日祝日",
+        "evidence": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+          "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+          "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-c2c0b9a15a98a189678c",
+      "legacyIds": [
+        "place:c2c0b9a15a98a189678c"
+      ],
+      "name": "しながわ観光協会",
+      "address": "東京都品川区大井1-14-1 大井1丁目共同ビル1階",
+      "phone": "03-5743-7642",
+      "evidence": {
+        "sourceUrl": "http://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+        "snapshotPath": "data/evidence/national/kanto-south/a9218c0e0886a86138e5.html",
+        "snapshotSHA256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9",
+        "sourceLocator": "13-100-E001／しながわ観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-E001",
+        "placeId": "facility:kanto-south-c2c0b9a15a98a189678c",
+        "sourceHash": "a36d2227f8ad05d499a1b9fc481061785e64d4b9422b16901e6c708dfd937c24",
+        "hours": [
+          "9:30～17:00。日曜・祝日休日・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "http://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+          "snapshotPath": "data/evidence/national/kanto-south/a9218c0e0886a86138e5.html",
+          "snapshotSHA256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9",
+          "sourceLocator": "13-100-E001／しながわ観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+      "legacyIds": [
+        "place:c5f3c43a0c2bf2667f5d"
+      ],
+      "name": "日本下水道事業団研修センター管理課",
+      "address": "埼玉県戸田市下笹目5141",
+      "phone": "048-421-2691",
+      "evidence": {
+        "sourceUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+        "snapshotPath": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html",
+        "snapshotSHA256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a",
+        "sourceLocator": "00-101-A001／日本下水道事業団研修センター管理課：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "00-101-A001",
+        "placeId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+        "sourceHash": "6ad6fa226b6f31312adaed26f13a81940a0fe093e434a12db0648c83f93770b9",
+        "hours": [
+          "平日10:00～12:00、13:00～16:00。土日祝13:00～15:00。年末年始・お盆期間配布なし。業務都合による急な中止はJS公式で確認。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+          "snapshotPath": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html",
+          "snapshotSHA256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a",
+          "sourceLocator": "00-101-A001／日本下水道事業団研修センター管理課：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "legacyIds": [
+        "place:c673e03f2340f9a5bfef"
+      ],
+      "name": "コネクトすみだ[まち処]",
+      "address": "墨田区向島1-23-9 E-03",
+      "phone": "03-6658-5481",
+      "evidence": {
+        "sourceUrl": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+        "snapshotPath": "data/evidence/national/kanto-south/16398dfb985e9fe39d5c.html",
+        "snapshotSHA256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428",
+        "sourceLocator": "13-100-L101／コネクトすみだ[まち処]：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-L101",
+        "placeId": "facility:kanto-south-c673e03f2340f9a5bfef",
+        "sourceHash": "5675599e946b49dbaf5c6a7052f2a1d6f438d386527584873646ec1e4f5e4e51",
+        "hours": [
+          "10:30～18:00。火曜・施設点検日休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "13-100-L101／当該カード画像の行・当該窓口の配布時間列",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "親が2026-11-05取得した現一覧の画像URLで当該行を特定し、全国観光PRコーナーと時間を再確認。自分での再GETではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-c7ea6b482b25915147a4",
+      "legacyIds": [
+        "place:c7ea6b482b25915147a4"
+      ],
+      "name": "大井町役場 生活環境課窓口",
+      "address": "神奈川県足柄上郡大井町金子1995",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+        "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+        "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+        "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-362-A001",
+        "placeId": "facility:kanto-south-c7ea6b482b25915147a4",
+        "sourceHash": "0b2f0af24ee8f6c5ee3072017a5222330d0ee027af854778e7ed751c57f6075a",
+        "hours": [
+          "8:30～17:15。12月29日～1月3日配布なし。平日生活環境課、土日祝夜間休日窓口。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+          "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+          "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+          "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-caac2827c5303ba03047",
+      "legacyIds": [
+        "place:caac2827c5303ba03047"
+      ],
+      "name": "白井市役所 都市建設部 上下水道課業務係",
+      "address": "千葉県白井市復1123番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html",
+        "snapshotSHA256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+        "sourceLocator": "12-232-A001／白井市役所 都市建設部 上下水道課業務係・白井市役所 本庁舎1階守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-232-A001",
+        "placeId": "facility:kanto-south-caac2827c5303ba03047",
+        "sourceHash": "1f84b545fbf25681464d407ae164b3c982b601058508fb0e4c16395470564ee6",
+        "hours": [
+          "9:00～16:30。平日東庁舎2階上下水道課、土日祝本庁舎1階守衛室。アンケート回答者に配布。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html",
+          "snapshotSHA256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+          "sourceLocator": "12-232-A001／白井市役所 都市建設部 上下水道課業務係・白井市役所 本庁舎1階守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-cb5698330ef87617cf42",
+      "legacyIds": [
+        "place:cb5698330ef87617cf42"
+      ],
+      "name": "柏市上下水道局3階総務課",
+      "address": "柏市千代田一丁目2番32号",
+      "phone": "04-7166-3181",
+      "evidence": {
+        "sourceUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-south/ef60a2706537908cb913.html",
+        "snapshotSHA256": "19a1f8f5285a608b5bb98b1d58f8f9ec76fd29df8980655af234e3ef6689f82e",
+        "sourceLocator": "12-217-A001／柏市上下水道局3階総務課・柏市観光案内所 まるっと柏：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-217-A001",
+        "placeId": "facility:kanto-south-cb5698330ef87617cf42",
+        "sourceHash": "e5bb8cd2624b97d5cf83eaf0803a476c50249f5bd0ed2bd215a7f3c9d44c416d",
+        "hours": [
+          "オナガは在庫なし、配布再開未定。平日上下水道局・土日祝まるっと柏の両窓口が対象。"
+        ],
+        "status": "suspended",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-south/ef60a2706537908cb913.html",
+          "snapshotSHA256": "19a1f8f5285a608b5bb98b1d58f8f9ec76fd29df8980655af234e3ef6689f82e",
+          "sourceLocator": "12-217-A001／柏市上下水道局3階総務課・柏市観光案内所 まるっと柏：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "legacyIds": [
+        "place:cdc3bc3e1d850a2e973d"
+      ],
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "address": "東京都荒川区荒川8-25-1",
+      "phone": "03-6458-3940",
+      "evidence": {
+        "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+        "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+        "snapshotSHA256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+        "sourceLocator": "13-100-D101／国指定重要文化財 旧三河島汚水処分場喞筒場施設：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-D101",
+        "placeId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+        "sourceHash": "4591842535e806f33c5f76389ded55c3e89b462ccd83b2042577d049eee9bbc9",
+        "hours": [
+          "9:00～16:00。火曜・金曜・年末年始を除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+          "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+          "snapshotSHA256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+          "sourceLocator": "13-100-D101／国指定重要文化財 旧三河島汚水処分場喞筒場施設：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-d39f7191733284005f01",
+      "legacyIds": [
+        "place:d39f7191733284005f01"
+      ],
+      "name": "みたか観光BASE",
+      "address": "東京都三鷹市下連雀3-24-3-105",
+      "phone": "0422-24-9177",
+      "evidence": {
+        "sourceUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+        "snapshotPath": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html",
+        "snapshotSHA256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+        "sourceLocator": "13-204-B001／みたか観光BASE：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-204-B001",
+        "placeId": "facility:kanto-south-d39f7191733284005f01",
+        "sourceHash": "d2ee0279893767b1ab418273fb19efd1abbcb87aeaced53b809a47ce1adb517c",
+        "hours": [
+          "9:00～18:00。火曜・年末年始休業。2026年11月10日～15日は臨時休業で配布なし。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+          "snapshotPath": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html",
+          "snapshotSHA256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+          "sourceLocator": "13-204-B001／みたか観光BASE：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        },
+        "reviewUntil": "2026-11-09"
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "legacyIds": [
+        "place:d3e8ff1b9fe8cdfa07d3"
+      ],
+      "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+      "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)",
+      "phone": "042-707-1840",
+      "evidence": {
+        "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+        "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+        "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+        "sourceLocator": "14-150-A001／相模原市役所 都市建設局 土木部 下水道経営課総務・計画班：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-150-A001",
+        "placeId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+        "sourceHash": "a63f9ade691461a98f184edee4f31087b547d1520fc1059f3904dc7cc0e18590",
+        "hours": [
+          "平日8:30～17:15。土日祝等・年末年始除く。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+          "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "sourceLocator": "14-150-A001／相模原市役所 都市建設局 土木部 下水道経営課総務・計画班：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "legacyIds": [
+        "place:d4aaa6f664279d04fc85"
+      ],
+      "name": "袖ケ浦市役所 守衛室",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1(袖ケ浦市役所 南庁舎1階)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+        "snapshotPath": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html",
+        "snapshotSHA256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+        "sourceLocator": "12-229-A001／袖ケ浦市役所 下水道課・袖ケ浦市役所 守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-229-A001",
+        "placeId": "facility:kanto-south-d4aaa6f664279d04fc85",
+        "sourceHash": "d4a0210220f60c229e5184f5dd68f8e09f812d4a5f79b327163f97ee202eaab5",
+        "hours": [
+          "平日9:00～16:30（下水道課）、土日祝9:00～17:00（南庁舎1階守衛室、インターホン）。"
+        ],
+        "status": "active",
+        "condition": "休日",
+        "evidence": {
+          "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html",
+          "snapshotSHA256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+          "sourceLocator": "12-229-A001／袖ケ浦市役所 下水道課・袖ケ浦市役所 守衛室：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-de8aff1633c63180b295",
+      "legacyIds": [
+        "place:de8aff1633c63180b295"
+      ],
+      "name": "東映アニメーションミュージアムショップ",
+      "address": "東京都練馬区東大泉2-10-5",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south/b9074f6b8a4fc4996bb3.html",
+        "snapshotSHA256": "8e9a4b346d3db8dd4f1cdea1e1271bfa6f846a6174a537e5e67e55e10cfefa9e",
+        "sourceLocator": "13-100-E101／東映アニメーションミュージアムショップ：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-E101",
+        "placeId": "facility:kanto-south-de8aff1633c63180b295",
+        "sourceHash": "9b0cc8330287cca365246b4848887c6b93fd7d2293215e367d9511668790e7f6",
+        "hours": [
+          "11:00～17:00。水曜・不定休あり。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/b9074f6b8a4fc4996bb3.html",
+          "snapshotSHA256": "8e9a4b346d3db8dd4f1cdea1e1271bfa6f846a6174a537e5e67e55e10cfefa9e",
+          "sourceLocator": "13-100-E101／東映アニメーションミュージアムショップ：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-dfd35978e81cbcc80123",
+      "legacyIds": [
+        "place:dfd35978e81cbcc80123"
+      ],
+      "name": "総合レクリエーション公園サービスセンター",
+      "address": "東京都江戸川区南葛西3丁目17番1号(ファミリースポーツ広場内)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south/de250713c732b8b72139.html",
+        "snapshotSHA256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+        "sourceLocator": "13-100-Y001／総合レクリエーション公園サービスセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-Y001",
+        "placeId": "facility:kanto-south-dfd35978e81cbcc80123",
+        "sourceHash": "bbe3524b928d301278c5194f558f9a2e312803ad85f13ca7ceafb0af8fa7c479",
+        "hours": [
+          "8:30～17:15（平日・土日祝休日）。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/de250713c732b8b72139.html",
+          "snapshotSHA256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+          "sourceLocator": "13-100-Y001／総合レクリエーション公園サービスセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-e0a282f09bea26f727bf",
+      "legacyIds": [
+        "place:e0a282f09bea26f727bf"
+      ],
+      "name": "渋沢×北区 飛鳥山おみやげ館",
+      "address": "東京都北区西ケ原2-16飛鳥山公園管理事務所内",
+      "phone": "080-4787-9842",
+      "evidence": {
+        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+        "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+        "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+        "sourceLocator": "13-100-F101／渋沢×北区 飛鳥山おみやげ館：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-F101",
+        "placeId": "facility:kanto-south-e0a282f09bea26f727bf",
+        "sourceHash": "888859f86461200c14651820a968ebf98004a71a4156527184aceeac56dde236",
+        "hours": [
+          "3～11月11:00～16:30（休日17:00）、12～2月11:00～16:00（休日16:30）。月曜（祝日なら翌平日）・年末年始休館。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+          "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+          "snapshotSHA256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+          "sourceLocator": "13-100-F101／渋沢×北区 飛鳥山おみやげ館：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-ec19477e52b814868f78",
+      "legacyIds": [
+        "place:ec19477e52b814868f78"
+      ],
+      "name": "衣笠商店街事務所",
+      "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+        "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+        "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-201-D001",
+        "placeId": "facility:kanto-south-ec19477e52b814868f78",
+        "sourceHash": "056464f777b0485f8a6f9b6d96d681ed646b0acba893e4c0e2f286a52cfec5e0",
+        "hours": [
+          "10:00～12:00、13:00～15:00。月水金土サービスセンター、火木は事務所（祝日休業）。日曜・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "火・木",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "legacyIds": [
+        "place:ee83b23f6b285cc3df5a"
+      ],
+      "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+      "address": "神奈川県伊勢原市神戸120",
+      "phone": "0463-92-3341",
+      "evidence": {
+        "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+        "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+        "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+        "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-214-A001",
+        "placeId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "sourceHash": "1d6cdc6a06e2c99d4b3065b15833e955b850a1d572eda40474c3b10e311cd59b",
+        "hours": [
+          "平日8:30～12:00、13:00～17:00。土日祝は駅窓口センター9:30～17:00（火・木の祝日、年末年始除く）。"
+        ],
+        "status": "active",
+        "condition": "平日",
+        "evidence": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+          "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+          "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "legacyIds": [
+        "place:f0ceef835d0bb3408c02"
+      ],
+      "name": "滝山中央名店会(食祭館あまいけ2階)",
+      "address": "東京都東久留米市滝山4-1-40",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+        "snapshotPath": "data/evidence/national/kanto-south/975cae4d2962aebe9c69.html",
+        "snapshotSHA256": "90c81cda70887878dc51cfb2e830adb288edd3692c2fd23861d7874778d0248a",
+        "sourceLocator": "13-222-C001／滝山中央名店会(食祭館あまいけ2階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-222-C001",
+        "placeId": "facility:kanto-south-f0ceef835d0bb3408c02",
+        "sourceHash": "df0b5efe2f08b02a2c6da08e572ffae2def12144c8ca5d4e2e66eb8b407ebc51",
+        "hours": [
+          "10:00～18:00。1月1～3日休業。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+          "snapshotPath": "data/evidence/national/kanto-south/975cae4d2962aebe9c69.html",
+          "snapshotSHA256": "90c81cda70887878dc51cfb2e830adb288edd3692c2fd23861d7874778d0248a",
+          "sourceLocator": "13-222-C001／滝山中央名店会(食祭館あまいけ2階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "legacyIds": [
+        "place:f4a2060d8b43f0ac3acb"
+      ],
+      "name": "道の駅みのりの郷東金",
+      "address": "千葉県東金市田間1300-3",
+      "phone": "0475-53-3615",
+      "evidence": {
+        "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+        "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+        "snapshotSHA256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+        "sourceLocator": "12-213-A001／道の駅みのりの郷東金：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-213-A001",
+        "placeId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+        "sourceHash": "16473621dd4cf9dbf5d1e8e471540093aaaa008b1792a78198e81b35ef296592",
+        "hours": [
+          "在庫なしで配布を一時中止。次回配布時期未定。"
+        ],
+        "status": "suspended",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+          "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+          "snapshotSHA256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+          "sourceLocator": "12-213-A001／道の駅みのりの郷東金：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+      "legacyIds": [
+        "place:f8ee4ebfc645aa7894ed"
+      ],
+      "name": "荻外荘公園受付",
+      "address": "東京都杉並区荻窪2丁目43番36号",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+        "snapshotPath": "data/evidence/national/kanto-south/a7310ca88f8d1c405464.html",
+        "snapshotSHA256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3",
+        "sourceLocator": "13-100-K101／荻外荘公園受付：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-K101",
+        "placeId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
+        "sourceHash": "cc3a712b7033967ee2d4c598c5cb5fedb74c0dc4443bd76844fbd36eaf4019de",
+        "hours": [
+          "9:00～17:00（最終入園16:30）。水曜・12月29日～1月1日休園。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+          "snapshotPath": "data/evidence/national/kanto-south/a7310ca88f8d1c405464.html",
+          "snapshotSHA256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3",
+          "sourceLocator": "13-100-K101／荻外荘公園受付：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-01",
+      "legacyIds": [],
+      "name": "八千代市上下水道局1階 お客様センター（工事）",
+      "address": "八千代市大和田新田312-5",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+        "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+        "sourceLocator": "八千代市上下水道局1階 お客様センター（工事）／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-221-A001",
+        "placeId": "facility:kanto-south-integration-01",
+        "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+        "hours": [
+          "平日8:30～17:00。12月29日～1月3日配布なし。"
+        ],
+        "condition": "平日8:30～17:00。12月29日～1月3日配布なし。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "八千代市上下水道局1階 お客様センター（工事）／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [
+            "place:20dd42a34f9be9a03e08"
+          ],
+          "raw": [
+            "【平日】八千代市上下水道局1階　お客様センター（工事）窓口"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-02",
+      "legacyIds": [],
+      "name": "八千代市水道サービス（宿直対応）",
+      "address": "八千代市大和田新田312-5 上下水道局庁舎内",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+        "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+        "sourceLocator": "八千代市水道サービス（宿直対応）／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-221-A001",
+        "placeId": "facility:kanto-south-integration-02",
+        "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+        "hours": [
+          "土日祝8:30～17:00。12月29日～1月3日配布なし。"
+        ],
+        "condition": "土日祝8:30～17:00。12月29日～1月3日配布なし。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "八千代市水道サービス（宿直対応）／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [
+            "place:9b56cb13cd1e7c1d014e"
+          ],
+          "raw": [
+            "【土曜日・日曜日・祝日】株式会社八千代市水道サービス（宿直対応）"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-05",
+      "legacyIds": [],
+      "name": "袖ケ浦市観光協会",
+      "address": "千葉県袖ケ浦市坂戸市場1番地1 南庁舎1階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/fe62d84da7ad4ab3c226.html",
+        "snapshotSHA256": "5ef4b181d740d89226cd27d32e141086b3faa7b1c0798d36193ca1937aa82277",
+        "sourceLocator": "袖ケ浦市観光協会／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-229-A001",
+        "placeId": "facility:kanto-south-integration-05",
+        "sourceHash": "d4a0210220f60c229e5184f5dd68f8e09f812d4a5f79b327163f97ee202eaab5",
+        "hours": [
+          "平日9:00～16:30。"
+        ],
+        "condition": "平日9:00～16:30。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/fe62d84da7ad4ab3c226.html",
+          "snapshotSHA256": "5ef4b181d740d89226cd27d32e141086b3faa7b1c0798d36193ca1937aa82277",
+          "sourceLocator": "袖ケ浦市観光協会／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "袖ケ浦市役所　南庁舎1階　袖ケ浦市観光協会（袖ケ浦市坂戸市場1番地1）"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-06",
+      "legacyIds": [],
+      "name": "板橋区くらしと観光課",
+      "address": "東京都板橋区板橋2-65-6 情報処理センター6階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/ffe01eb357e263ffbcb0.html",
+        "snapshotSHA256": "6c24fbb0b031dc81ad80b098ffa154d43e4c7b452b82ecd7f75220f064c66171",
+        "sourceLocator": "板橋区くらしと観光課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-I101",
+        "placeId": "facility:kanto-south-integration-06",
+        "sourceHash": "1696b32003ed733107d0e7b9e7bcc89d25ddfb91f98a7c65c1838243588c9f31",
+        "hours": [
+          "いたばし観光センター休館日（年末年始除く）9:00～17:00。"
+        ],
+        "condition": "いたばし観光センター休館日（年末年始除く）9:00～17:00。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/ffe01eb357e263ffbcb0.html",
+          "snapshotSHA256": "6c24fbb0b031dc81ad80b098ffa154d43e4c7b452b82ecd7f75220f064c66171",
+          "sourceLocator": "板橋区くらしと観光課／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "なお、休館日（年末年始を除く）は、板橋区くらしと観光課窓口で配布します。"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-08",
+      "legacyIds": [],
+      "name": "ヴェルニー公園管理事務所",
+      "address": "神奈川県横須賀市汐入町1-1 ヴェルニー公園内",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html",
+        "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+        "sourceLocator": "ヴェルニー公園管理事務所／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-201-C001",
+        "placeId": "facility:kanto-south-integration-08",
+        "sourceHash": "3d6ea77df75aab5e91250f0ed19fae6dc6dd69232fbf4a6772973b9371bb31f6",
+        "hours": [
+          "2026年10月26日～11月13日9:00～16:00。"
+        ],
+        "condition": "2026年10月26日～11月13日9:00～16:00。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "ヴェルニー公園管理事務所／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [
+            "place:6395cd4a64b6b5ba4d71"
+          ],
+          "raw": [
+            "注：令和8年10月26日（月曜日）～11月13日（金曜日）は下記の「ヴェルニー公園管理事務所」にて配布します。"
+          ]
+        },
+        "validFrom": "2026-10-26",
+        "validTo": "2026-11-13"
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-09",
+      "legacyIds": [],
+      "name": "江戸川区役所本庁舎3階 広報課",
+      "address": "東京都江戸川区中央1丁目4番1号 本庁舎3階1番",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/de250713c732b8b72139.html",
+        "snapshotSHA256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+        "sourceLocator": "江戸川区役所本庁舎3階 広報課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-Y001",
+        "placeId": "facility:kanto-south-integration-09",
+        "sourceHash": "bbe3524b928d301278c5194f558f9a2e312803ad85f13ca7ceafb0af8fa7c479",
+        "hours": [
+          "平日のみ8:30～17:00。"
+        ],
+        "condition": "平日のみ8:30～17:00。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/de250713c732b8b72139.html",
+          "snapshotSHA256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+          "sourceLocator": "江戸川区役所本庁舎3階 広報課／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "江戸川区SDGs推進部広報課窓口（江戸川区中央1丁目4番1号　江戸川区役所本庁舎3階1番）"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-10",
+      "legacyIds": [],
+      "name": "三浦海岸駅前観光案内所",
+      "address": "三浦海岸駅改札前",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html",
+        "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+        "sourceLocator": "三浦海岸駅前観光案内所／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-210-A001",
+        "placeId": "facility:kanto-south-integration-10",
+        "sourceHash": "e1ba96b7a9c1d5a1c13727079aa1476cc27891631400cb894b5b57dbf4d2a7d3",
+        "hours": [
+          "平日・休日9:30～17:00。12月28日～1月3日休み。"
+        ],
+        "condition": "平日・休日9:30～17:00。12月28日～1月3日休み。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html",
+          "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "sourceLocator": "三浦海岸駅前観光案内所／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "三浦海岸駅前観光案内所"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-11",
+      "legacyIds": [],
+      "name": "オーエンス文化会館 第2駐車場",
+      "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/8e0eb220dc912e75ebdc.html",
+        "snapshotSHA256": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298",
+        "sourceLocator": "施設詳細／所在地。第二駐車場南側の窓口指定は配布案内を参照",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-218-B001",
+        "placeId": "facility:kanto-south-integration-11",
+        "sourceHash": "e2b4238abdbceba26427ec96e0edfbe2a01680e5f3bd4d1203b836c22c32678d",
+        "hours": [
+          "2026年11月22日9:00～15:00予定。荒天中止の場合あり。在庫限り。"
+        ],
+        "condition": "2026年11月22日9:00～15:00予定。荒天中止の場合あり。在庫限り。",
+        "status": "upcoming",
+        "evidence": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html",
+          "snapshotSHA256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+          "sourceLocator": "オーエンス文化会館 第2駐車場／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "場所：オーエンス文化会館 第二駐車場（南側）（予定）"
+          ]
+        },
+        "validFrom": "2026-11-22",
+        "validTo": "2026-11-22",
+        "reviewUntil": "2026-11-21"
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-12",
+      "legacyIds": [],
+      "name": "綾瀬市役所5階",
+      "address": "神奈川県綾瀬市早川550番地 市役所5階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/kanzaikeiyakuka/kanzaitanto/3/4714.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/baf8d3ea314b8e0d0575.html",
+        "snapshotSHA256": "03d417743f9bf0e1206ede0eed4b2939a958f0b33ddb89a83e233aa6cc169379",
+        "sourceLocator": "所在地／神奈川県綾瀬市早川550番地。5階は配布案内を参照",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "14-218-B001",
+        "placeId": "facility:kanto-south-integration-12",
+        "sourceHash": "e2b4238abdbceba26427ec96e0edfbe2a01680e5f3bd4d1203b836c22c32678d",
+        "hours": [
+          "2026年11月24日以降9:00～16:00予定。在庫がある場合のみ。11月23日は配布なし。"
+        ],
+        "condition": "2026年11月24日以降9:00～16:00予定。在庫がある場合のみ。11月23日は配布なし。",
+        "status": "upcoming",
+        "evidence": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html",
+          "snapshotSHA256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+          "sourceLocator": "綾瀬市役所5階／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "★11月24日（火曜日）以降も在庫がある限り配布します。"
+          ]
+        },
+        "validFrom": "2026-11-24",
+        "reviewUntil": "2026-11-23"
+      }
+    ],
+    "classification": "update-candidate"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-adachi-tourism-association",
+      "legacyIds": [],
+      "name": "一般財団法人足立区観光交流協会",
+      "address": "東京都足立区中央本町1-17-1 足立区役所南館4階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.adachikanko.net/news/archives/56626",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/c987e1eac4594767b3d7.html",
+        "snapshotSHA256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a",
+        "sourceLocator": "はじめの一歩／配付場所2は一般財団法人足立区観光交流協会。産業振興課への配布時刻の転用不可",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "13-100-W001",
+        "placeId": "facility:kanto-south-integration-adachi-tourism-association",
+        "sourceHash": "f019de3ce835ecb0707a9e9d12e0b56766ad84a624cf975bd9130f57b29040b7",
+        "hours": [
+          "9:00～17:00。土日祝・12月29日～1月3日は閉庁。"
+        ],
+        "condition": "平日",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.adachikanko.net/news/archives/56626",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/c987e1eac4594767b3d7.html",
+          "snapshotSHA256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a",
+          "sourceLocator": "はじめの一歩／配付場所2は一般財団法人足立区観光交流協会。産業振興課への配布時刻の転用不可",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配付場所2の観光交流協会を独立登録。旧産業振興課はunknownで履歴保持。",
+          "previousPlaceIds": [
+            "place:f6f7e433db24d43ef210"
+          ],
+          "raw": [
+            "２　一般財団法人足立区観光交流協会（足立区中央本町1-17-1　足立区役所南館4階）"
+          ]
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-legacy-urayasu",
+      "legacyIds": [
+        "place:035a6ca5b25c2ca50a21"
+      ],
+      "name": "浦安市役所道路整備課(市役所6階)",
+      "address": "千葉県浦安市猫実1-1-1",
+      "phone": "047-351-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+        "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+        "sourceLocator": "第12弾・現配布窓口治水課。道路整備課との継承／終了日を明記していない",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-227-A001",
+        "placeId": "facility:kanto-south-integration-legacy-urayasu",
+        "sourceHash": "0b3e20d398c2441b2e08b7783f5fb3461737c3eae76ac36f4b666dae759c2a1b",
+        "hours": [
+          "現配布案内は治水課。旧道路整備課との窓口継承・終了日は未確認。"
+        ],
+        "status": "unknown",
+        "evidence": {
+          "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+          "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+          "sourceLocator": "第12弾・現配布窓口治水課。道路整備課との継承／終了日を明記していない",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "legacyIds": [
+        "place:20dd42a34f9be9a03e08"
+      ],
+      "name": "八千代市上下水道局1階給排水相談課窓口",
+      "address": "千葉県八千代市大和田新田312-5",
+      "phone": "047-483-6155",
+      "evidence": {
+        "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+        "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+        "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-221-A001",
+        "placeId": "facility:kanto-south-integration-legacy-yachiyo-0",
+        "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+        "hours": [
+          "現公式はお客様センター（工事）・大和田新田の宿直窓口でのみ配布と明記。旧窓口の終了日・部署継承は未確定。"
+        ],
+        "status": "unknown",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "legacyIds": [
+        "place:9b56cb13cd1e7c1d014e"
+      ],
+      "name": "株式会社八千代市水道サービス",
+      "address": "千葉県八千代市萱田町596-19(八千代市上下水道局敷地内)",
+      "phone": "047-485-6656",
+      "evidence": {
+        "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+        "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+        "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-221-A001",
+        "placeId": "facility:kanto-south-integration-legacy-yachiyo-1",
+        "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+        "hours": [
+          "萱田町596-19の旧配布先は終了。現公式は大和田新田312-5でのみ配布と明記。旧所在地の最終配布日は未確定。"
+        ],
+        "status": "ended",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      }
+    ],
+    "classification": "unresolved"
+  },
+  {
+    "facility": {
+      "id": "facility:kanto-south-integration-urayasu-chisui",
+      "legacyIds": [],
+      "name": "浦安市役所6階 治水課",
+      "address": "浦安市猫実1-1-1",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+        "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+        "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+        "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-227-A001",
+        "placeId": "facility:kanto-south-integration-urayasu-chisui",
+        "sourceHash": "0b3e20d398c2441b2e08b7783f5fb3461737c3eae76ac36f4b666dae759c2a1b",
+        "hours": [
+          "月～金9:00～17:00。祝日・年末年始除く。"
+        ],
+        "condition": "月～金9:00～17:00。祝日・年末年始除く。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+          "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+          "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [
+            "place:035a6ca5b25c2ca50a21"
+          ],
+          "raw": [
+            "治水課（市役所6階）"
+          ]
+        }
+      },
+      {
+        "cardId": "12-227-B001",
+        "placeId": "facility:kanto-south-integration-urayasu-chisui",
+        "sourceHash": "ba3c1b4fcfacb37a22bfc77d9fe784df1c46e94cb092e03907b82b81dd80edfa",
+        "hours": [
+          "月曜日・郷土博物館休館日9:00～17:00。祝日・年末年始除く。"
+        ],
+        "condition": "月曜日・郷土博物館休館日9:00～17:00。祝日・年末年始除く。",
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+          "snapshotSHA256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943",
+          "sourceLocator": "浦安市役所6階 治水課／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        },
+        "change": {
+          "kind": "addition",
+          "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+          "previousPlaceIds": [],
+          "raw": [
+            "配布日時：月曜日、郷土博物館休館日（祝日、年末年始を除く）午前9時から午後5時"
+          ]
+        }
+      }
+    ],
+    "classification": "update-candidate"
+  }
+]

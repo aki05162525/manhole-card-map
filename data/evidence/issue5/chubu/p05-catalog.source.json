@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+  "requestedAt": "2026-11-05T05:45:44.290791+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+  "contentType": "text/html; charset=UTF-8",
+  "fetchedAt": "2026-11-05T05:45:44.463528+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+  "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+  "bytes": 128344
+}

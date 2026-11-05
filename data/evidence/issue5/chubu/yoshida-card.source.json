@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+  "requestedAt": "2026-11-05T05:46:32.478123+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://www.town.yoshida.shizuoka.jp/6491.htm",
+  "contentType": "text/html; charset=utf-8",
+  "fetchedAt": "2026-11-05T05:46:32.860895+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/yoshida-card.html",
+  "snapshotSHA256": "da71f9378bae82878adfba1070e003d48c0701719021cbaa3b981673fc03435d",
+  "bytes": 71944
+}

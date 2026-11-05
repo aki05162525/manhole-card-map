@@ -1,0 +1,9 @@
+{
+  "url": "https://www.google.com/intl/en/help/terms_maps/",
+  "fetchedAt": "2026-11-05T05:51:41.664882+00:00",
+  "status": 200,
+  "finalUrl": "https://www.google.com/intl/en/help/terms_maps/",
+  "snapshotPath": "data/evidence/issue5/north/google-maps-terms.html",
+  "snapshotSHA256": "459f1e0abf755233efab618eb563094f55a91eba26807698628086ecff68445b",
+  "bytes": 45579
+}

@@ -1,0 +1,348 @@
+{
+  "passed": true,
+  "targetCount": 162,
+  "updateCount": 10,
+  "unresolvedCount": 152,
+  "googleDeferredIds": [
+    "facility:north-5e7ef2bf3873a0c566d6",
+    "facility:north-adeda0700dac8487ca81",
+    "facility:north-da9719ed3ef3729f4673",
+    "facility:north-dddf18164e0a5e3df321",
+    "facility:north-proposal-motomiya-guard",
+    "facility:north-proposal-otaru-duty"
+  ],
+  "otherUnresolvedCount": 146,
+  "correctionOldValuesMatched": 4,
+  "sourceHashesChecked": 359,
+  "evidenceFields": [
+    "actorType",
+    "checkedAt",
+    "snapshotPath",
+    "snapshotSHA256",
+    "sourceLocator",
+    "sourceUrl",
+    "verificationMethod"
+  ],
+  "goCheck": "PASS: 10 Evidence objects strict decoded and validated with repository type/function",
+  "rawChecks": [
+    {
+      "facilityId": "facility:north-12b6e6080ef6e1e816a7",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 43.332951,
+        "lng": 141.853986
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01215",
+          "P05_002": "1",
+          "P05_003": "美唄市役所",
+          "P05_004": "美唄市西3条南1-1-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.853986,
+            43.332951
+          ]
+        }
+      },
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/1237"
+    },
+    {
+      "facilityId": "facility:north-3060a04659dcedce64b9",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 44.120635,
+        "lng": 144.071197
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01208",
+          "P05_002": "2",
+          "P05_003": "常呂総合支所",
+          "P05_004": "北見市常呂町字常呂323"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.071197,
+            44.120635
+          ]
+        }
+      },
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/941"
+    },
+    {
+      "facilityId": "facility:north-33d210dca3f1918726f9",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 44.120635,
+        "lng": 144.071197
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01208",
+          "P05_002": "2",
+          "P05_003": "常呂総合支所",
+          "P05_004": "北見市常呂町字常呂323"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            144.071197,
+            44.120635
+          ]
+        }
+      },
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/941"
+    },
+    {
+      "facilityId": "facility:north-343aa74f33ff03c6fa0a",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 41.763785,
+        "lng": 140.716989
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01202",
+          "P05_002": "3",
+          "P05_003": "地域交流まちづくりセンター",
+          "P05_004": "函館市末広町4-19"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.716989,
+            41.763785
+          ]
+        }
+      },
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/488"
+    },
+    {
+      "facilityId": "facility:north-564d6cb018ca701ab673",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 37.84552594347985,
+        "lng": 140.60138750245164
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07213",
+          "P05_002": "2",
+          "P05_003": "梁川総合支所",
+          "P05_004": "伊達市梁川町青葉町1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.60138750245164,
+            37.84552594347985
+          ]
+        }
+      },
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1344"
+    },
+    {
+      "facilityId": "facility:north-716c305f4ea78c959505",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 37.84552594347985,
+        "lng": 140.60138750245164
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07213",
+          "P05_002": "2",
+          "P05_003": "梁川総合支所",
+          "P05_004": "伊達市梁川町青葉町1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.60138750245164,
+            37.84552594347985
+          ]
+        }
+      },
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1344"
+    },
+    {
+      "facilityId": "facility:north-c5a98d056047559d8981",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 37.38924830726849,
+        "lng": 140.08991212644105
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "07203",
+          "P05_002": "4",
+          "P05_003": "湖南公民館",
+          "P05_004": "郡山市湖南町福良字家老9390-4"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            140.08991212644105,
+            37.38924830726849
+          ]
+        }
+      },
+      "memberSHA256": "6ac3d90b7bc5638d1dba2dafa25f2157c1968af56d3e66ecbb5ff7a2817bca5c",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/251"
+    },
+    {
+      "facilityId": "facility:north-proposal-bibai-duty",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 43.332951,
+        "lng": 141.853986
+      },
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "01215",
+          "P05_002": "1",
+          "P05_003": "美唄市役所",
+          "P05_004": "美唄市西3条南1-1-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            141.853986,
+            43.332951
+          ]
+        }
+      },
+      "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/1237"
+    },
+    {
+      "facilityId": "facility:north-proposal-ishidoriya-duty",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 39.484213,
+        "lng": 141.146988
+      },
+      "rawMunicipalHref": "https://maps.google.com/maps?q=39.484213,141.146988",
+      "googleResponseUsed": false
+    },
+    {
+      "facilityId": "facility:north-proposal-ohasama-duty",
+      "evidenceExactFields": true,
+      "snapshotHashMatches": true,
+      "baselineUnlocated": true,
+      "coordinate": {
+        "lat": 39.469086,
+        "lng": 141.291325
+      },
+      "rawMunicipalHref": "https://maps.google.com/maps?q=39.469086,141.291325",
+      "googleResponseUsed": false
+    }
+  ],
+  "baselineFullSHA256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150",
+  "fullCounts": {
+    "cards": 1313,
+    "places": 1735,
+    "relations": 1825,
+    "pins": 2048
+  },
+  "limits": [
+    "146件の新規全件Web調査・建物同定は実施していない。",
+    "同日保存自治体原本の独立再読。今回の新規取得はP05規約・カタログ3URL。",
+    "Go検証は10 updatesのEvidence。監査用envelope/unresolved/correctionsはGo台帳へそのまま投入しない。"
+  ],
+  "baselineFullPlaceAndCardRelationsMatched": 10,
+  "originalInputsUnchanged": false,
+  "concurrentChanges": [
+    {
+      "path": "tools/national/manifest.json",
+      "beforeSHA256": "f25552a0f747f0fbca0021cde7d6114fc353f6dbed8e51a94b8e69e469342196",
+      "afterSHA256": "73998d7e03143beca3ecfdf94a7f9ebd218081d1a87af4611feeeca100342ae1",
+      "reviewerWroteThisPath": false
+    }
+  ],
+  "originalNorthAndBaselineAndCodeUnchanged": true
+}

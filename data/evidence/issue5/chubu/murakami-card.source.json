@@ -1,0 +1,12 @@
+{
+  "sourceUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+  "requestedAt": "2026-11-05T05:45:44.051170+00:00",
+  "actorType": "ai",
+  "status": 200,
+  "finalUrl": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+  "contentType": "text/html",
+  "fetchedAt": "2026-11-05T05:45:44.326578+00:00",
+  "snapshotPath": "data/evidence/issue5/chubu/murakami-card.html",
+  "snapshotSHA256": "f08006f5fdf49497606847943d1667185d3fee0e2a9d36b2da7ac5e4a4099690",
+  "bytes": 23512
+}

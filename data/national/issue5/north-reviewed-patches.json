@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "patches": [
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-adeda0700dac8487ca81"
+      },
+      "field": "name",
+      "old": "千歳市水道局庁舎2F経営管理課総務係窓口",
+      "new": "千歳市水道局庁舎2F総務課総務係窓口",
+      "evidence": {
+        "sourceUrl": "https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html",
+        "snapshotPath": "data/evidence/issue5/north/originals/3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2.html",
+        "snapshotSHA256": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+        "sourceLocator": "マンホールカード配布場所：千歳市水道局2階 総務課総務係",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "独立レビューで現配布本文と旧施設案内の名称差を照合し、配布本文の現部署名を採用。座標は採用しない。"
+      }
+    }
+  ]
+}
