@@ -1,0 +1,393 @@
+{
+  "schema": 1,
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "name": "沼田市観光案内所",
+      "status": "candidate-unapproved",
+      "checkedAt": "2026-11-06",
+      "inheritedCheckedAt": "2026-11-05",
+      "performedMethods": [
+        "既往remaining-indexに束ねられたIssue7/16/batch1/2の全該当参照を継承",
+        "現公式配布本文を独立読解",
+        "公式施設/図/写真の原本読解・方位/年代/頁範囲記録",
+        "隣接9タイルBldA/道路の実照合",
+        "元PBF SHA256確認と再decode、同一frame再構成、内包・面積再計算"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/north/numata-office-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/north/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/north/verification.json",
+        "data/evidence/kanto-prefecture/gunma/north/timing.json",
+        "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+      ],
+      "historyRefs": [
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "sourceSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "sourceSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "sourceSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "sourceSHA256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "sourceSHA256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/11",
+          "sourceSHA256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/26",
+          "sourceSHA256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        }
+      ],
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。",
+      "coordinateCandidate": {
+        "lat": 36.6474159,
+        "lng": 139.039408
+      },
+      "candidateAuthorized": false,
+      "manifestApplied": false,
+      "limitations": [
+        "個別GSI外形更新日と測量精度不明",
+        "図は模式図で寸法図ではない",
+        "独立レビュー・採用未承認"
+      ],
+      "distributionAssessment": "桜カード通常配布先。水曜はテラス4F/5F。現施設ページと配布ページの休業例外粒度に差がある。",
+      "operationAssessment": "現在の施設案内あり。位置候補から稼働状態を推定しない。",
+      "stockAssessment": "在庫の独立確認なし。配布案内や位置候補は在庫ありを意味しない。",
+      "priorObstacleResolution": "旧HTML数値点不足という保留に対し、公式図/写真と利用条件を記録したGSI建物外形の比較を新規実施。"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "name": "テラス沼田5階観光交流課",
+      "status": "candidate-unapproved",
+      "checkedAt": "2026-11-06",
+      "inheritedCheckedAt": "2026-11-05",
+      "performedMethods": [
+        "既往remaining-indexに束ねられたIssue7/16/batch1/2の全該当参照を継承",
+        "現公式配布本文を独立読解",
+        "公式施設/図/写真の原本読解・方位/年代/頁範囲記録",
+        "隣接9タイルBldA/道路の実照合",
+        "元PBF SHA256確認と再decode、同一frame再構成、内包・面積再計算"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/north/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/north/verification.json",
+        "data/evidence/kanto-prefecture/gunma/north/timing.json",
+        "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+      ],
+      "historyRefs": [
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "sourceSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "sourceSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "sourceSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "sourceSHA256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "sourceSHA256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/33",
+          "sourceSHA256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/33",
+          "sourceSHA256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        }
+      ],
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。",
+      "coordinateCandidate": {
+        "lat": 36.6439658,
+        "lng": 139.0427983
+      },
+      "candidateAuthorized": false,
+      "manifestApplied": false,
+      "limitations": [
+        "個別外形更新日/精度不明",
+        "現フロア画像に測量日なし",
+        "隣接タイルの80unitバッファが重複するため和集合、境界小差あり",
+        "入口/室内位置測量ではない",
+        "CRS製品固有根拠の独立レビュー待ち",
+        "未承認・manifest未反映"
+      ],
+      "distributionAssessment": "桜カード水曜日の代替窓口として現公式本文に記載。",
+      "operationAssessment": "現在の施設案内あり。位置候補から稼働状態を推定しない。",
+      "stockAssessment": "在庫の独立確認なし。配布案内や位置候補は在庫ありを意味しない。",
+      "priorObstacleResolution": "旧HTML数値点不足という保留に対し、公式図/写真と利用条件を記録したGSI建物外形の比較を新規実施。"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "name": "テラス沼田4階上下水道経営課",
+      "status": "candidate-unapproved",
+      "checkedAt": "2026-11-06",
+      "inheritedCheckedAt": "2026-11-05",
+      "performedMethods": [
+        "既往remaining-indexに束ねられたIssue7/16/batch1/2の全該当参照を継承",
+        "現公式配布本文を独立読解",
+        "公式施設/図/写真の原本読解・方位/年代/頁範囲記録",
+        "隣接9タイルBldA/道路の実照合",
+        "元PBF SHA256確認と再decode、同一frame再構成、内包・面積再計算"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/north/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/north/verification.json",
+        "data/evidence/kanto-prefecture/gunma/north/timing.json",
+        "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+      ],
+      "historyRefs": [
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "sourceSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "sourceSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "sourceSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "sourceSHA256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "sourceSHA256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/86",
+          "sourceSHA256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/69",
+          "sourceSHA256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        }
+      ],
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。",
+      "coordinateCandidate": {
+        "lat": 36.6439658,
+        "lng": 139.0427983
+      },
+      "candidateAuthorized": false,
+      "manifestApplied": false,
+      "limitations": [
+        "個別外形更新日/精度不明",
+        "現フロア画像に測量日なし",
+        "隣接タイルの80unitバッファが重複するため和集合、境界小差あり",
+        "入口/室内位置測量ではない",
+        "CRS製品固有根拠の独立レビュー待ち",
+        "未承認・manifest未反映"
+      ],
+      "distributionAssessment": "桜カード水曜日の代替窓口として現公式本文に記載。",
+      "operationAssessment": "現在の施設案内あり。位置候補から稼働状態を推定しない。",
+      "stockAssessment": "在庫の独立確認なし。配布案内や位置候補は在庫ありを意味しない。",
+      "priorObstacleResolution": "旧HTML数値点不足という保留に対し、公式図/写真と利用条件を記録したGSI建物外形の比較を新規実施。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "name": "しぶさん",
+      "status": "candidate-unapproved",
+      "checkedAt": "2026-11-06",
+      "inheritedCheckedAt": "2026-11-05",
+      "performedMethods": [
+        "既往remaining-indexに束ねられたIssue7/16/batch1/2の全該当参照を継承",
+        "現公式配布本文を独立読解",
+        "公式施設/図/写真の原本読解・方位/年代/頁範囲記録",
+        "隣接9タイルBldA/道路の実照合",
+        "元PBF SHA256確認と再decode、同一frame再構成、内包・面積再計算"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/north/shibusan-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/north/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/north/verification.json",
+        "data/evidence/kanto-prefecture/gunma/north/timing.json",
+        "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+      ],
+      "historyRefs": [
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "sourceSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "sourceSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "sourceSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "sourceSHA256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "sourceSHA256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/59",
+          "sourceSHA256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/51",
+          "sourceSHA256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        }
+      ],
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。",
+      "coordinateCandidate": {
+        "lat": 36.4910717,
+        "lng": 139.0082603
+      },
+      "candidateAuthorized": false,
+      "manifestApplied": false,
+      "limitations": [
+        "写真から建物寸法の測量はしていない",
+        "市プラザ地図位置は同定の補助で座標採用原典ではない",
+        "2024図はシェルター工事図、プラザの名称注記なし",
+        "個別外形更新日/精度不明、独立レビュー待ち"
+      ],
+      "distributionAssessment": "公式配布案内と運営団体/市施設案内が渋川1832-27駅前プラザ1Fで一致。",
+      "operationAssessment": "しぶさん/プラザの2026-10-20のみ休館告知は過去の単日休館で現在停止扱いしない。",
+      "stockAssessment": "在庫の独立確認なし。配布案内や位置候補は在庫ありを意味しない。",
+      "priorObstacleResolution": "旧HTML数値点不足という保留に対し、公式図/写真と利用条件を記録したGSI建物外形の比較を新規実施。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町上下水道課",
+      "status": "identity-conflict-hold",
+      "checkedAt": "2026-11-06",
+      "inheritedCheckedAt": "2026-11-05",
+      "performedMethods": [
+        "既往remaining-indexに束ねられたIssue7/16/batch1/2の全該当参照を継承",
+        "現公式配布本文を独立読解",
+        "公式施設/図/写真の原本読解・方位/年代/頁範囲記録",
+        "隣接9タイルBldA/道路の実照合",
+        "元PBF SHA256確認と再decode、同一frame再構成、内包・面積再計算"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/north/yoshioka-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/north/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/north/verification.json",
+        "data/evidence/kanto-prefecture/gunma/north/timing.json",
+        "data/evidence/kanto-prefecture/gunma/source-conditions.json"
+      ],
+      "historyRefs": [
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "sourceSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "sourceSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "sourceSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "sourceSHA256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "sourceSHA256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/issue7/north-kanto.json#/updates/14",
+          "sourceSHA256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/14",
+          "sourceSHA256": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/14/exactCandidateCorrection/old",
+          "sourceSHA256": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/exactOldNewCorrectionProposals/1/old",
+          "sourceSHA256": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515"
+        },
+        {
+          "ref": "data/national/issue16/group-a-outcomes.json#/outcomes/3",
+          "sourceSHA256": "374cb05e56e5e7a9311a9b6c7cd73ab6b071e7d8c649bafe3929729626bb8ef2"
+        },
+        {
+          "ref": "data/national/issue16/selection.json#/groups/2",
+          "sourceSHA256": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/85",
+          "sourceSHA256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/issue16/group-a-review.json#",
+          "sourceSHA256": "154a3417ff1836fbbd719a08e3468ccfde3c76844630bc5ef3699c3f82196b4a"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review-resolution.json#",
+          "sourceSHA256": "c872e34e12bfb6f9e810741468b3198ccfba22df4ed80370b06ee18880088e2d"
+        }
+      ],
+      "geometryStatus": "数値原典照合済・丸め前後内包・棟同定に利用者報告との未解消矛盾あり",
+      "nextAction": "親が東隣という利用者報告と公式2019南西図を照合し、現配置を解消。追加質問は親のみ。",
+      "coordinateCandidate": {
+        "lat": 36.4471275,
+        "lng": 139.0095542
+      },
+      "candidateAuthorized": false,
+      "manifestApplied": false,
+      "limitations": [
+        "2019図と現行ページ写真は整合するが利用者東隣報告との矛盾未解消",
+        "写真撮影日不明、2019以降の棟名称移動を断言できない",
+        "2133数値比較済だが位置提案採用対象へ入れない",
+        "個別外形更新日/精度不明"
+      ],
+      "distributionAssessment": "公式配布案内は平日コミュニティセンター1階上下水道課、休日文化センター。名称と対象棟を別判断。",
+      "operationAssessment": "現在の施設案内あり。位置候補から稼働状態を推定しない。",
+      "stockAssessment": "在庫の独立確認なし。配布案内や位置候補は在庫ありを意味しない。",
+      "priorObstacleResolution": "旧P05競合を解消する建物比較は実施したが利用者報告との矛盾により保留維持。"
+    }
+  ],
+  "scope": "northの固定5ID全件実調査。原本/数値照合は完了、位置採用未承認。吉岡の棟同定矛盾は未解消。",
+  "discrepancies": [
+    {
+      "path": "data/national/kanto-prefecture/gunma/locations-proposed.json",
+      "issue": "初回sourceLocatorが531、数値原本sourceFeatureIndexは535。north原PBF再decodeで535確認、親へ訂正依頼。"
+    }
+  ]
+}

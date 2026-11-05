@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "baselineAsOf": "2026-11-05",
+  "newIndependentObservationDate": "2026-11-06",
+  "manifestApplied": false,
+  "adoptionApproved": false,
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "status": "candidate-awaiting-independent-review",
+      "performedMethods": [
+        "既往Issue7/batch1/batch2と親remaining-index継承",
+        "現公式配布本文の再読",
+        "公式施設案内と画像の原本取得・読解",
+        "GSI最適化Vector9近傍tile取得・hash/版比較",
+        "数値外形と道路・隣棟比較",
+        "原本hashと候補数値の独立再計算スクリプト実行"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/south/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/sewage-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/inherited-records.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/timing.json",
+        "data/evidence/kanto-prefecture/gunma/south/validation.json"
+      ],
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。",
+      "coordinateCandidate": {
+        "lat": 36.2974974,
+        "lng": 139.1103192
+      },
+      "limitations": [
+        "基準台帳asOf2026-11-05を保持、新規独立観察は2026-11-06。",
+        "図の改訂日/製品の各建物測量日不詳。",
+        "配布継続・在庫・建物同定・座標採用は別。詳細は個別inspection。"
+      ],
+      "distributionFinding": "県央水質浄化センター管理棟の平日配布。休日公園は別施設。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "status": "human-reported-temporary-relocation-location-unresolved",
+      "performedMethods": [
+        "既往Issue7/batch1/batch2と親remaining-index継承",
+        "現公式配布本文の再読",
+        "公式施設案内と画像の原本取得・読解",
+        "GSI最適化Vector9近傍tile取得・hash/版比較",
+        "数値外形と道路・隣棟比較",
+        "原本hashと候補数値の独立再計算スクリプト実行",
+        "2026-11-06追加回答と町工事原本を再読、公式3領域で仮設棟資料を追加検索"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/south/park-inspection.json",
+        "data/evidence/kanto-prefecture/gunma/south/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/park-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/inherited-records.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/timing.json",
+        "data/evidence/kanto-prefecture/gunma/south/validation.json",
+        "data/national/kanto-prefecture/gunma/south/park-distribution-user-proposal.json"
+      ],
+      "geometryStatus": "旧棟仮説まで。仮設棟の外形/配置図未取得、旧棟非代用",
+      "nextAction": "移転回答は受領済み。仮設棟の正確な配置図/写真と実際の移設開始・終了日、カード配布の独立明記が未確認。旧管理棟を代用せず位置保留。",
+      "coordinateCandidate": null,
+      "limitations": [
+        "基準台帳asOf2026-11-05を保持、新規独立観察は2026-11-06。",
+        "図の改訂日/製品の各建物測量日不詳。",
+        "配布継続・在庫・建物同定・座標採用は別。詳細は個別inspection。"
+      ],
+      "distributionFinding": "休日カードの工事期間中移転は2026-11-06追加利用者回答受領。提示町URLは施設予約等の移転/予定工期のみ独立確認。カード対象・管理棟前・県表記理由は利用者説明として保持。",
+      "answerStatus": "received-location-unresolved"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "status": "candidate-awaiting-independent-review",
+      "performedMethods": [
+        "既往Issue7/batch1/batch2と親remaining-index継承",
+        "現公式配布本文の再読",
+        "公式施設案内と画像の原本取得・読解",
+        "GSI最適化Vector9近傍tile取得・hash/版比較",
+        "数値外形と道路・隣棟比較",
+        "原本hashと候補数値の独立再計算スクリプト実行"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/south/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/tamajuku-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/inherited-records.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/timing.json",
+        "data/evidence/kanto-prefecture/gunma/south/validation.json"
+      ],
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。",
+      "coordinateCandidate": {
+        "lat": 36.3082027,
+        "lng": 139.0943769
+      },
+      "limitations": [
+        "基準台帳asOf2026-11-05を保持、新規独立観察は2026-11-06。",
+        "図の改訂日/製品の各建物測量日不詳。",
+        "配布継続・在庫・建物同定・座標採用は別。詳細は個別inspection。"
+      ],
+      "distributionFinding": "町カード案内は休日総合案内、平日は水道庁舎。総合案内は道の駅一体棟内。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "status": "candidate-awaiting-independent-review",
+      "performedMethods": [
+        "既往Issue7/batch1/batch2と親remaining-index継承",
+        "現公式配布本文の再読",
+        "公式施設案内と画像の原本取得・読解",
+        "GSI最適化Vector9近傍tile取得・hash/版比較",
+        "数値外形と道路・隣棟比較",
+        "原本hashと候補数値の独立再計算スクリプト実行"
+      ],
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json",
+        "data/evidence/kanto-prefecture/gunma/south/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/laran-tiles.json",
+        "data/evidence/kanto-prefecture/gunma/inherited-records.json",
+        "data/evidence/kanto-prefecture/gunma/retrievals.json",
+        "data/evidence/kanto-prefecture/gunma/south/timing.json",
+        "data/evidence/kanto-prefecture/gunma/south/validation.json"
+      ],
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。",
+      "coordinateCandidate": {
+        "lat": 36.2721291,
+        "lng": 139.0724666
+      },
+      "limitations": [
+        "基準台帳asOf2026-11-05を保持、新規独立観察は2026-11-06。",
+        "図の改訂日/製品の各建物測量日不詳。",
+        "配布継続・在庫・建物同定・座標採用は別。詳細は個別inspection。"
+      ],
+      "distributionFinding": "市カード案内は観光案内所。運営者図17・本文で観光物産館内。"
+    }
+  ]
+}

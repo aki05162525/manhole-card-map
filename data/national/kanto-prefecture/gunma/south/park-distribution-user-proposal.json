@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+  "status": "user-reported-proposal-not-approved",
+  "adoptable": false,
+  "manifestApplied": false,
+  "baselineAsOf": "2026-11-05",
+  "receivedOn": "2026-11-06",
+  "oldPlaces": [
+    {
+      "id": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "legacyIds": [
+        "place:919f32c0b7299b9b3b94"
+      ],
+      "name": "玉村町総合運動公園 管理棟",
+      "address": "群馬県佐波郡玉村町宇貫481",
+      "phone": "0270-65-9530",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "10-000-A001 / 玉村町総合運動公園 管理棟 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    }
+  ],
+  "oldRelations": [
+    {
+      "cardId": "10-000-A001",
+      "placeId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "sourceHash": "4435fa2e327787b0cccbd2bb644d2b1daa87d123c89ee374130f240a749ff7cf",
+      "hours": [
+        "土日祝9:00～16:00",
+        "12/29～1/3休み。臨時休園は電話確認"
+      ],
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "http://www.pref.gunma.jp/07/p232_00001.html",
+        "snapshotPath": "data/evidence/national/kanto-north/a07e20312d59f398713b.html",
+        "snapshotSHA256": "4ce1f1bd4f14d22635db8bd23b222044cbd9db3f832f76d3bb28ec188370e17f",
+        "sourceLocator": "10-000-A001 / 玉村町総合運動公園 管理棟 / 配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+      }
+    }
+  ],
+  "oldValuesSource": "data/national/kanto-prefecture/gunma/inventory.json",
+  "oldValuesSourceSHA256": "c39df47c617f41f8f60b20de88f6d8ac338a0e82467049cd57a5fb830b778ef8",
+  "proposedDescription": "工事期間中の休日カード窓口は管理棟前の仮設プレハブ（利用者報告）",
+  "reportedPeriod": {
+    "fromMonth": "2026-08",
+    "throughMonth": "2027-02",
+    "exactStart": null,
+    "exactEnd": null,
+    "officialPeriodIsPlanned": true
+  },
+  "coordinate": null,
+  "unknowns": [
+    "仮設棟の正確な配置と数値外形",
+    "移設の実際の開始・終了日",
+    "カード移転を独立明記する一次資料",
+    "仮設棟を別施設IDとするか窓口注記とするかの親レビュー判断"
+  ],
+  "report": {
+    "receivedOn": "2026-11-06",
+    "reportedBy": "user via parent",
+    "sourceUrlSuppliedByUser": "https://www.town.tamamura.lg.jp/docs/2026060900041/",
+    "statement": "休日カードも2026年8月〜2027年2月工事期間は管理棟前の仮設プレハブ窓口へ移設。",
+    "additionalExplanation": "県の管理棟表記は基本呼称維持のため、という理由も利用者説明。一次資料でその理由を確認したとは扱わない。",
+    "independentSupport": "提示URL本文は公開2026-06-25、工事2026年8月〜2027年2月（予定・変更あり）、管理棟立入不可、施設予約等は仮設プレハブと明記。休日カード/管理棟前/基本呼称維持は本文に明記なし。"
+  },
+  "sourceRefs": [
+    "data/evidence/kanto-prefecture/gunma/south/park-inspection.json",
+    "data/evidence/kanto-prefecture/gunma/south/retrievals.json"
+  ],
+  "prohibition": "現旧管理棟の座標で仮設窓口を代用しない。これはschema配布関係更新として自動適用できるものではない。"
+}
