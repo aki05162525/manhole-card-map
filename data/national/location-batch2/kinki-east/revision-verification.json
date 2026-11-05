@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-11-05T12:20:14.957959+00:00",
+  "scope": "研究記録・候補。最終採用前。",
+  "packet": {
+    "population": 38,
+    "selected": 8,
+    "adopted": 0,
+    "held": 8,
+    "sources": 117,
+    "rawChecked": true,
+    "historicalRegisteredUnlocated": 608,
+    "currentRegisteredUnlocated": 608,
+    "regionalLedgerUnchanged": true
+  },
+  "redEvidence": [
+    "decision.heldIdsを空にしても旧verifyがexit0となった",
+    "候補latを0にしても修正前verifyがexit0となった"
+  ],
+  "checks": [
+    {
+      "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
+      "exitCode": 0,
+      "tests": 97,
+      "rawLog": "data/work/location-batch2/kinki-east/revision/python-tests.log",
+      "logSHA256": "2452396fc43799b450e7d2b45a019ec27f52a936d6b531fab5caa8372f7da9ae"
+    },
+    {
+      "command": "mise exec -- go test -count=1 ./...",
+      "exitCode": 0,
+      "exitCodeSource": "exec session completion; tailの終了コードではない",
+      "rawLog": "data/work/location-batch2/kinki-east/revision/go-tests.log",
+      "logSHA256": "193cf994378f62b51eaec4ca454876b1b297e42f1fc7bb5bc6ae088f5ef24689"
+    },
+    {
+      "command": "derive.py再計算とnumerical-comparisons.jsonのdiff",
+      "exitCode": 0,
+      "derivedSHA256": "e304add0b5bcbdd269db90f75a5cfaf321d57d16cc916ccdaf235fea59254c3d"
+    }
+  ],
+  "notRun": [
+    "採用binding/manifest/台帳差分実装",
+    "builddata全国実データ生成と監査・Maps確認",
+    "ブラウザー/UI検証"
+  ],
+  "sharedFilesChanged": [],
+  "testFileAdded": "tools/national/test_location_batch2_kinki_east.py"
+}

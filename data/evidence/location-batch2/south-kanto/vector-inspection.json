@@ -1,0 +1,429 @@
+{
+  "schema": 1,
+  "source": "国土地理院最適化ベクトルタイル",
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "dataVersion": "2026-07-01 per current readme; per-feature survey date unknown",
+  "license": "PDL1.0 / 国土地理院コンテンツ利用規約。試験公開であり基本測量成果と位置付けない。出典と加工を表示。",
+  "licenseRefs": [
+    "data/evidence/location-batch2/south-kanto/retrievals.json#/records/18",
+    "data/evidence/location-batch2/south-kanto/retrievals.json#/records/17"
+  ],
+  "crs": "地理院地図国内仕様 JGD2011、Web Mercatorタイル格子、tile-local X右/Y下、extent4096。緯度経度への変換は未実施。",
+  "processing": "PMTiles HTTP Rangeで必要な10タイルを抽出。gzip展開、mapbox-vector-tile 2.2.0 y_coord_down=TrueでBldAを描画し配置図と目視比較。住所ジオコード/Google座標の採用なし。searchSeedOnlyは調査者の粗い探索窓であり原典座標ではなく、含有から建物選択しない。",
+  "precision": "建物同定と測量精度未確定。代表点計算・内包検査・丸めを未実施。",
+  "selectedFeatures": [],
+  "tiles": [
+    {
+      "key": "sagamihara",
+      "tile": {
+        "z": 16,
+        "x": 58140,
+        "y": 25831
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/sagamihara-tile.pbf.gz",
+      "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+      "buildingCount": 362,
+      "extent": 4096,
+      "searchSeedOnly": [
+        35.5714,
+        139.3733
+      ],
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/sagamihara-tile.pbf.gz"
+    },
+    {
+      "key": "shiroi",
+      "tile": {
+        "z": 16,
+        "x": 58264,
+        "y": 25781
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+      "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+      "buildingCount": 222,
+      "extent": 4096,
+      "searchSeedOnly": [
+        35.7914,
+        140.056
+      ],
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz"
+    },
+    {
+      "key": "sodegaura",
+      "tile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-tile.pbf.gz",
+      "sha256": "8eb9784f0d6ebf81e3f3db6a8bc8dc72a43bc16cfc87d56abc40208374b5f8ee",
+      "buildingCount": 119,
+      "extent": 4096,
+      "searchSeedOnly": [
+        35.43,
+        139.954
+      ],
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/sodegaura-tile.pbf.gz"
+    },
+    {
+      "key": "yachiyo",
+      "tile": {
+        "z": 16,
+        "x": 58272,
+        "y": 25797
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/yachiyo-tile.pbf.gz",
+      "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+      "buildingCount": 781,
+      "extent": 4096,
+      "searchSeedOnly": [
+        35.7225,
+        140.099
+      ],
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/yachiyo-tile.pbf.gz"
+    },
+    {
+      "key": "shiroi-0-1",
+      "tile": {
+        "z": 16,
+        "x": 58264,
+        "y": 25782
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+      "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+      "buildingCount": 174,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz"
+    },
+    {
+      "key": "shiroi-1-0",
+      "tile": {
+        "z": 16,
+        "x": 58265,
+        "y": 25781
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-1-0-tile.pbf.gz",
+      "sha256": "9edee88d26e4eaa9bec71087afdd262526d73606b34df9fe699c1704170e5a1d",
+      "buildingCount": 83,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/shiroi-1-0-tile.pbf.gz"
+    },
+    {
+      "key": "shiroi-1-1",
+      "tile": {
+        "z": 16,
+        "x": 58265,
+        "y": 25782
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-1-1-tile.pbf.gz",
+      "sha256": "dbcc3196215c532f39564698fc172a573d52682197c5bb1fb50f176dd0efdc7c",
+      "buildingCount": 112,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/shiroi-1-1-tile.pbf.gz"
+    },
+    {
+      "key": "sodegaura-0-1",
+      "tile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25863
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-0-1-tile.pbf.gz",
+      "sha256": "fd2cd22f743ceb8f66297cb0555ba14e0b4cd879a2450bea2ab1ed9634b9743d",
+      "buildingCount": 373,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/sodegaura-0-1-tile.pbf.gz"
+    },
+    {
+      "key": "sodegaura-1-0",
+      "tile": {
+        "z": 16,
+        "x": 58246,
+        "y": 25862
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-1-0-tile.pbf.gz",
+      "sha256": "bf5085b34b9d4506448410209e16e8bd6cd9cc23ebe740cb7de9a6679db92b9b",
+      "buildingCount": 371,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/sodegaura-1-0-tile.pbf.gz"
+    },
+    {
+      "key": "sodegaura-1-1",
+      "tile": {
+        "z": 16,
+        "x": 58246,
+        "y": 25863
+      },
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-1-1-tile.pbf.gz",
+      "sha256": "6df694402154e65068231d0a9494bf8bf82e8564be2392135d9ac3bb8c89ea9a",
+      "buildingCount": 529,
+      "extent": 4096,
+      "snapshotPath": "data/evidence/location-batch2/south-kanto/sodegaura-1-1-tile.pbf.gz"
+    }
+  ],
+  "ranges": [
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=0-126",
+      "fetchedAt": "2026-11-05T11:26:39.286003+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-0-127.bin",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "bytes": 127,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=2503-6670",
+      "fetchedAt": "2026-11-05T11:26:39.492144+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-2503-4168.bin",
+      "sha256": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+      "bytes": 4168,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=0-126",
+      "fetchedAt": "2026-11-05T11:26:39.583923+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-0-127.bin",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "bytes": 127,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=127-2502",
+      "fetchedAt": "2026-11-05T11:26:39.735324+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-127-2376.bin",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "bytes": 2376,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=2295713-2304767",
+      "fetchedAt": "2026-11-05T11:26:39.842559+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-2295713-9055.bin",
+      "sha256": "d682d6117f909f6692c2e1e7fe24cb43dbd7958beb54611622718e0a4f77f20b",
+      "bytes": 9055,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10616842124-10616855830",
+      "fetchedAt": "2026-11-05T11:26:39.966322+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10616842124-13707.bin",
+      "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+      "bytes": 13707,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=0-126",
+      "fetchedAt": "2026-11-05T11:26:40.203564+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-0-127.bin",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "bytes": 127,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=127-2502",
+      "fetchedAt": "2026-11-05T11:26:40.404981+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-127-2376.bin",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "bytes": 2376,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=2267985-2276680",
+      "fetchedAt": "2026-11-05T11:26:41.576219+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-2267985-8696.bin",
+      "sha256": "9ca6dd53e258f2ab2e9a759159cf035e6f22fc8a7022def6807e6153f12b0240",
+      "bytes": 8696,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10480755063-10480765744",
+      "fetchedAt": "2026-11-05T11:26:41.712628+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480755063-10682.bin",
+      "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+      "bytes": 10682,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=0-126",
+      "fetchedAt": "2026-11-05T11:26:41.834577+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-0-127.bin",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "bytes": 127,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=127-2502",
+      "fetchedAt": "2026-11-05T11:26:41.976579+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-127-2376.bin",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "bytes": 2376,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=2242288-2250968",
+      "fetchedAt": "2026-11-05T11:26:42.074588+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-2242288-8681.bin",
+      "sha256": "bdc17525dd754911dec6d2ad1601878d1038b6d43db54c4f3a1bb495dac478de",
+      "bytes": 8681,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10381049361-10381056293",
+      "fetchedAt": "2026-11-05T11:26:42.173304+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10381049361-6933.bin",
+      "sha256": "8eb9784f0d6ebf81e3f3db6a8bc8dc72a43bc16cfc87d56abc40208374b5f8ee",
+      "bytes": 6933,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=0-126",
+      "fetchedAt": "2026-11-05T11:26:42.258509+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-0-127.bin",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "bytes": 127,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=127-2502",
+      "fetchedAt": "2026-11-05T11:26:42.334541+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-127-2376.bin",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "bytes": 2376,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=2276681-2285878",
+      "fetchedAt": "2026-11-05T11:26:42.430923+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-2276681-9198.bin",
+      "sha256": "725d392f061ffd5c5e84948b42e9fa7783b960579bf4aabae449d2c37da70c98",
+      "bytes": 9198,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10500631531-10500652300",
+      "fetchedAt": "2026-11-05T11:26:42.503353+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10500631531-20770.bin",
+      "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908",
+      "bytes": 20770,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10480765745-10480774505",
+      "fetchedAt": "2026-11-05T11:27:46.539910+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480765745-8761.bin",
+      "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+      "bytes": 8761,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10480716818-10480725998",
+      "fetchedAt": "2026-11-05T11:27:46.711927+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480716818-9181.bin",
+      "sha256": "9edee88d26e4eaa9bec71087afdd262526d73606b34df9fe699c1704170e5a1d",
+      "bytes": 9181,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10480774506-10480782437",
+      "fetchedAt": "2026-11-05T11:27:46.823400+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480774506-7932.bin",
+      "sha256": "dbcc3196215c532f39564698fc172a573d52682197c5bb1fb50f176dd0efdc7c",
+      "bytes": 7932,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10381056294-10381069160",
+      "fetchedAt": "2026-11-05T11:27:46.945217+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10381056294-12867.bin",
+      "sha256": "fd2cd22f743ceb8f66297cb0555ba14e0b4cd879a2450bea2ab1ed9634b9743d",
+      "bytes": 12867,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10380943961-10380957080",
+      "fetchedAt": "2026-11-05T11:27:47.048826+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10380943961-13120.bin",
+      "sha256": "bf5085b34b9d4506448410209e16e8bd6cd9cc23ebe740cb7de9a6679db92b9b",
+      "bytes": 13120,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=10380928571-10380943960",
+      "fetchedAt": "2026-11-05T11:27:47.167095+00:00",
+      "status": 206,
+      "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10380928571-15390.bin",
+      "sha256": "6df694402154e65068231d0a9494bf8bf82e8564be2392135d9ac3bb8c89ea9a",
+      "bytes": 15390,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "preparedBy": "hokkaido-research-agent",
+  "reviewedBy": "claudeAgent/claude-opus-5-5",
+  "reviewStatus": "accepted-after-documentation-corrections",
+  "reviewRecord": "data/national/location-batch2/hokkaido/review.json",
+  "updates": [
+    {
+      "facilityId": "facility:north-53b2b9df9a8da2705261",
+      "coordinate": {
+        "lat": 43.1170659,
+        "lng": 141.3425854
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/hokkaido/derived-candidate.json",
+        "snapshotSHA256": "d82d88ba73c67529534463ce75f364ff16aa4a996287bbabe331d6d509013f26",
+        "sourceLocator": "派生計算記録。PMTiles 2026-07-01版 BldA z16/x58498/y24051 の円弧状科学館外形。candidate-input.json/derive.pyと原タイルを同ディレクトリに保存。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "札幌市配布案内と令和4年5月の工事配置図1頁を照合。科学館円形棟の北側部分の円弧と直線辺をGSI外形476/13へ対応付け、別施設の貯留管施設185/186、融雪監視室187、雨水ポンプ施設189/190との配置で独立確認。GSI外形は科学館南東部を含まず、建物全体の完全な外周とは主張しない。点は名称付き科学館棟内。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。試験公開（基本測量成果以外）、PDL1.0。国内JGD2011のWeb Mercatorタイル格子の外形重心を逆投影しlat/lngへ小数7桁で出力、測地系変換なし。重心・丸め後とも外形内。建物代表点で入口/窓口の測量精度ではない。旧H25点は探索範囲のヒントのみで数値を転用しない。"
+      }
+    }
+  ]
+}

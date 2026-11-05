@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "region": "hokuriku",
+  "issue": 38,
+  "asOf": "2026-11-05",
+  "selectionCount": 8,
+  "numericLeadCount": 3,
+  "proposedAdoptionCount": 0,
+  "adoptedCount": 0,
+  "heldCount": 8,
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "name": "佐渡市役所本庁舎1F 総合案内窓口",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/3",
+      "newMethod": "新庁舎建設時の配置図・竣工資料とGSI試験Vectorの比較",
+      "status": "held",
+      "stage": "conditions-review",
+      "finding": "idx29は道路西側でbuffer端に達せず切断ではない。idx31北の矩形状部分と南の鉤形部分、細い渡廊下を竣工案内と照合。北を現第1庁舎に対応付け、総合案内を含む北部分の代表点を原PBFから導出、6小数丸め後内包も確認。旧P05は南の現第2庁舎を指すため不採用。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/1",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/2"
+      ],
+      "stopCondition": "建物内代表点は導出可能。optbv固有の測地系適用を一次仕様で確定できず、候補を採用入力へ昇格しない。",
+      "resumeCondition": "一般地理院タイルのJGD2011記載が当該optbvに適用される根拠を確認し、原本・棟同定・派生候補の独立レビュー後に採用判断。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/representativeStudies/0"
+    },
+    {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "name": "佐渡市役所本庁舎1F 宿日直室",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/5",
+      "newMethod": "新庁舎建設時の配置図・竣工資料とGSI試験Vectorの比較",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "idx29の切断・タイル結合待ちを撤回。idx31北/南は現第1/第2庁舎に対応するが、竣工図の夜間休日受付は渡廊下付近で、カード配布原本の宿日直室との同一性が確定しない。総合案内用に導出した北部分点を流用しない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/1",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/2"
+      ],
+      "stopCondition": "宿日直室と夜間休日受付が同一窓口か、どの棟に所属するかは未確定。",
+      "resumeCondition": "カード受取先の宿日直室を現第1/第2庁舎に対応付ける管理者資料と、optbvの測地系適用根拠を確認。入口や室内位置の測量は不要。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/representativeStudies/0"
+    },
+    {
+      "facilityId": "facility:chubu-east-9720552572da10795a23",
+      "name": "佐和田市民センター",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/15",
+      "newMethod": "公共施設個別計画・配置図で旧GIS競合を照合",
+      "status": "held",
+      "stage": "conflict-investigation",
+      "finding": "管理計画は会館の離島開発総合センターと旧圏民センターを区別。P05周辺のVector外形を取得したが、旧GISとの約500m競合を解消する棟名付き地理参照資料は得られない。法テラス移転仕様書の直接取得は404。 P05の離島開発総合センター・中央会館・行政サービスセンター・地区公民館の4点は全てidx253内と再計算した。包含だけでは複数の名称・用途や旧GIS競合を区別できない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/3",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/4"
+      ],
+      "stopCondition": "管理計画の棟名やP05点の包含だけでは、競合の正誤を決定できない。",
+      "resumeCondition": "現市民センター・中央会館・用途転用された旧圏民センターを識別する配置図と旧GIS点の対象説明を取得。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/sawataP05"
+    },
+    {
+      "facilityId": "facility:chubu-east-d96a5cb4a1b2f5fc4173",
+      "name": "佐渡中央会館",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/27",
+      "newMethod": "公共施設個別計画・配置図で旧GIS競合を照合",
+      "status": "held",
+      "stage": "conflict-investigation",
+      "finding": "管理計画は会館の離島開発総合センターと旧圏民センターを区別。P05周辺のVector外形を取得したが、旧GISとの約500m競合を解消する棟名付き地理参照資料は得られない。法テラス移転仕様書の直接取得は404。 P05の離島開発総合センター・中央会館・行政サービスセンター・地区公民館の4点は全てidx253内と再計算した。包含だけでは複数の名称・用途や旧GIS競合を区別できない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/3",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/4"
+      ],
+      "stopCondition": "管理計画の棟名やP05点の包含だけでは、競合の正誤を決定できない。",
+      "resumeCondition": "現市民センター・中央会館・用途転用された旧圏民センターを識別する配置図と旧GIS点の対象説明を取得。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/sawataP05"
+    },
+    {
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "name": "輪島市上下水道局 1階窓口",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/26",
+      "newMethod": "局庁舎の公共施設資料・配置図を探索",
+      "status": "held",
+      "stage": "conditions-review",
+      "finding": "別の市施設詳細にcenterと異なるmarkerInfos座標を発見。Vectorを探索したが、局庁舎の形・周辺配置を独立に識別する資料がない。CRS未記載markerの包含だけで外形を採用しない。 市の著作権説明は写真等の無断転載を禁じ、markerの再利用許諾や由来までは説明しない。施設詳細は2021年公開で、2024年震災後の配布棟の継続を今回裏付けていない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/9",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/11",
+        "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/2"
+      ],
+      "stopCondition": "マーカーのCRS/作成方法と建物同定の独立根拠が不足。 震災後現況とmarkerの二次利用条件も未確認。",
+      "resumeCondition": "局庁舎を示す配置図・外観と周辺配置、または施設マーカーのCRS/位置意味の一次説明を取得。 震災後の現配布先とmarker権利/由来を確認。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "name": "福井市一乗谷朝倉氏遺跡復原町並",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/0",
+      "newMethod": "復原町並の受付を示す配置図を探索",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "中心と東西南北の5タイルを取得して比較。公式パンフの川西岸・道路西側に延びる復原町並とidx3–10/13–19の列状外形を照合。運営者は事務所を南入口、売店をその隣と説明するが、南側idx11/12や列端idx10等をチケット売場と名付きで対応できない。未着手を理由にした保留ではない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/8",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/12",
+        "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/3",
+        "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/4",
+        "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/5",
+        "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/6"
+      ],
+      "stopCondition": "遺跡全体・Google埋込・駐車場を受付棟の点として代用しない。",
+      "resumeCondition": "比較した南側の複数外形のどれがカード配布するチケット売場を含む棟か示す配置資料を取得。建物内代表点で足り、入口測量は不要。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/fukui"
+    },
+    {
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "name": "道の駅朝日 朝日みどりの里物産会館",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/1",
+      "newMethod": "道の駅再整備資料で物産会館棟を照合",
+      "status": "held",
+      "stage": "conditions-review",
+      "finding": "中心と東西南北の5タイルを取得。基本計画の施設名付き航空写真と国道・多目的屋根広場・博物館・物産会館/食堂・南のトイレ・東の円形施設の配置を照合。idx116北を物産会館、南を食堂とする対応が得られ、北部分内重心と6小数丸め後内包を確認。計画の新販売棟は選ばない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/5",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/6",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/16"
+      ],
+      "stopCondition": "現運営者案内は既存物産会館と食堂の渡廊下を示すが記事本文は2020年由来、更新表示だけで再整備中の現況を確定しない。optbv固有CRS適用も未確定。",
+      "resumeCondition": "再整備中も既存物産会館が配布棟であることを現況資料で補強し、optbv測地系適用と派生点を独立レビューして採用判断。",
+      "coordinate": null,
+      "adoptionBinding": null,
+      "comparisonRef": "data/evidence/location-batch2/hokuriku/building-comparisons.json#/representativeStudies/1"
+    },
+    {
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "name": "雲龍山勝興寺",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/2",
+      "newMethod": "寺院境内配置図・受付建物資料を探索",
+      "status": "held",
+      "stage": "retrieved",
+      "finding": "寺院公式の伽藍配置図を取得・目視。文化財の総門・唐門等は区別できるが拝観受付の建物名対応がない。 数値外形比較には未着手であり、building-comparisonとは分類しない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/7",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/10"
+      ],
+      "stopCondition": "境内中心や本堂・総門を受付建物と見なさない。",
+      "resumeCondition": "拝観受付の棟を識別する管理者案内・配置資料を取得し、同じ建物の外形/施設点へ接続。",
+      "coordinate": null,
+      "adoptionBinding": null
+    }
+  ],
+  "revision": "Opus初回指摘後の原本・外形再照合。採用判断は別。"
+}

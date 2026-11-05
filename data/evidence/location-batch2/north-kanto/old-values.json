@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+        "legacyIds": [
+          "place:2e945c5e9faf1a16c8d7"
+        ],
+        "name": "日立市役所下水道課",
+        "address": "茨城県日立市助川町1-1-1",
+        "phone": "0294-22-3111",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "08-202-A001 / 日立市役所下水道課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldPlaceSHA256": "4f1d497de4f95de40b972682b3121f8798c41c09eeb2fc175a58fd44046680c6"
+    },
+    {
+      "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-north-c73669beeeb24f667599",
+        "legacyIds": [
+          "place:c73669beeeb24f667599"
+        ],
+        "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
+        "address": "埼玉県羽生市大字三田ヶ谷1725",
+        "phone": "048-565-5255",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-216-A001 / 羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldPlaceSHA256": "fee3f4bcd9e5c1f10731a4519b94f2139fd945ccf068b835803428c1e091b0c1"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "checks": [
+    "原本/PMTiles range SHA256",
+    "JSON pointer",
+    "地域全38 IDと8選定一致",
+    "全関係不変",
+    "台帳差分は科学館coordinate/evidence/locationReviewのみ",
+    "full/details一致",
+    "既存ピン全件不変・科学館1ピン追加",
+    "pins.detailsSHA256/manifest file hashes"
+  ],
+  "counts": {
+    "beforeNationalUnlocated": 608,
+    "afterNationalUnlocated": 607,
+    "beforePlacePins": 978,
+    "afterPlacePins": 979,
+    "regionalBeforeUnlocated": 38,
+    "regionalAfterUnlocated": 37
+  },
+  "inputs": {
+    "data/work/location-batch2/hokkaido/before-ledger.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525",
+    "data/work/location-batch2/hokkaido/after-ledger.json": "3ed7988270ba3b76f54ef6bf5477c0d55db0c931baec65341780df6d96eed9d4",
+    "data/work/location-batch2/hokkaido/before-generated/full.json": "83a46a83900160b8b21cfefdb18da5d8975d492487901bd38b10fdb1199a1cdd",
+    "data/work/location-batch2/hokkaido/after-generated/full.json": "b6b02c93c0a2f22df6656358a2be1697acf5b9d27ce9d77cd2f5a73027053773",
+    "data/work/location-batch2/hokkaido/after-generated/details.json": "40658b06071536057f289cf8bdb1bd172c5c420948c2677ba6f63620ebf6d436",
+    "data/work/location-batch2/hokkaido/after-generated/pins.json": "74d3b128d205bc5a0a2aa44013de69f2deb12bdf85b3b031fffae09c7da35121"
+  },
+  "reusedInputs": {
+    "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
+    "data/work/municheck.json": "03f018ae17ebb9b349afb6c618cb8b0314b1216170fbc474184b6bd0801a4b58",
+    "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
+    "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
+    "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d"
+  },
+  "reuseNote": "親rootの保存原本を同パスでコピー。再取得ではない。一覧取得日2026-10-21、review-list保存2026-11-05、as-of2026-11-05。",
+  "finalChecks": {
+    "pythonTests": 93,
+    "goTests": "pass -count=1",
+    "webBuild": "pass; existing large chunk warning",
+    "redTest": "追加前に科学館差分が空集合のため新地域テストが失敗、仮統合/最終採用後に成功。",
+    "logs": [
+      {
+        "path": "data/work/location-batch2/hokkaido/python-tests-reviewed.log",
+        "sha256": "5f6c3dce884e966a0da430f823ce612cf344aef2cf45d082538aebe8679c01d9"
+      },
+      {
+        "path": "data/work/location-batch2/hokkaido/go-tests-reviewed.log",
+        "sha256": "a0d8c907b13a8b4ae184774efd953e6a62087283788ec732a3ddf330f3aa7e21"
+      },
+      {
+        "path": "data/work/location-batch2/hokkaido/web-build-reviewed.log",
+        "sha256": "7ab5369cdc1f4a997aa1263ade5fbc6a05730fac6e89e2561d38932ea5387124"
+      },
+      {
+        "path": "data/work/location-batch2/hokkaido/browser-regression-reviewed.log",
+        "sha256": "883ef7719b31d2c4af4d188128c798bf824f6ddf51afabda18546f88ea9ace0a"
+      },
+      {
+        "path": "data/work/location-batch2/hokkaido/browser-target-reviewed.log",
+        "sha256": "a9632081a315759171d2aa9f3b3501514565b1d629cea8720d8c4d223f71a634"
+      }
+    ]
+  },
+  "reviewedAudit": {
+    "path": "data/work/location-batch2/hokkaido/reviewed-audit.json",
+    "sha256": "2ce6c21db06bf96f1591c167416625c44977a097fcfc03da4becd7e4a8ddb1b3"
+  }
+}

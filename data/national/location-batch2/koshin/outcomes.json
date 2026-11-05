@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "region": "koshin",
+  "asOf": "2026-11-05",
+  "counts": {
+    "selected": 8,
+    "proposed": 4,
+    "adopted": 4,
+    "held": 4,
+    "baselineRegionUnlocated": 27,
+    "baselineNationalLedgerUnlocated": 608,
+    "currentRegionUnlocated": 23,
+    "nationalLedgerUnlocatedBeforeRegionalAdoption": 605,
+    "currentNationalLedgerUnlocated": 601
+  },
+  "interpretation": "Opus独立再レビューで重大指摘0、4ID採用可を確認して採用確定。開始baseline608は履歴。北海道・近畿西採用済main統合後605から自地域4IDで601。",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "name": "中央市役所宿日直室",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
+      "previousFinding": "今回取得した宿日直案内PDFを画像で確認し、庁舎西側棟南端の入口まで同定。P05旧田富庁舎点がこの棟内か、南館との対応を未確認。入口精度ではなく棟対応が残る。",
+      "newMethod": "既存市宿日直航空写真とGSI外形/周辺棟を比較",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/0",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/1"
+      ],
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
+      "coordinate": {
+        "lat": 35.5999764,
+        "lng": 138.516776
+      },
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-2d58045893e23b11b5a2",
+      "name": "fumotto南アルプス「まちの案内所」",
+      "decision": "held",
+      "stage": "temporary-building",
+      "previousFinding": "市配布案内と観光協会告知を再取得。臨時駐車場内のまちの案内所で、南側FARM BASEは対象外と明記。トレーラーハウスの数値原典未取得。",
+      "newMethod": "施設全体マップと市閉所告知を確認",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/1",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/2"
+      ],
+      "stopCondition": "新しい全体案内図も対象トレーラーを識別しない。FARM BASEの案内所アイコンは対象外。",
+      "resumeCondition": "閉所前の臨時駐車場トレーラーを特定する配置・数値資料、閉所後の後継配布先告知を確認。2026-12-28を再確認日とする。",
+      "coordinate": null,
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-3a6d16208a637eef3b69",
+      "name": "松本市観光情報センター",
+      "decision": "held",
+      "stage": "numeric-semantics",
+      "previousFinding": "市配布案内・大手事務所案内を再取得。大手3-8-13の事務所1階まで確認。既存の駐車場地物と大手公民館3-8-1は別対象で転用しない。",
+      "newMethod": "松本市観光CSV・LinkData点とGSI外形を比較",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/3",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/4",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/5",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/6",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/4"
+      ],
+      "stopCondition": "外形比較済み。観光CSV点はBldA340を内包、LinkData点は全外形の外。CRS未記載点のcontainsだけでは大手事務所の棟同定にならない。",
+      "resumeCondition": "大手事務所を独立に特定する配置資料または施設点のCRS/作成方法を取得し、今回比較結果と照合。",
+      "coordinate": null,
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
+      "previousFinding": "県配布案内とふれあいまつり案内を再取得。管理本館1階の指定を確認したが処理場全体と管理棟を分離した数値原典なし。",
+      "newMethod": "県事務所年報p4全体配置図/p8平面図とGSI外形を比較",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/7",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/0"
+      ],
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
+      "coordinate": {
+        "lat": 36.0333033,
+        "lng": 138.0894658
+      },
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-4ddffced59c4adbf00e2",
+      "name": "中央市役所 上下水道課",
+      "decision": "held",
+      "stage": "building-correspondence",
+      "previousFinding": "配布本文は南館上下水道課。市役所アクセスと宿日直案内PDFも取得したが本館側の地図中心や視点を南館座標にしない。",
+      "newMethod": "市宿日直航空写真/GSI外形を比較し南館名称の対応を検討",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/0",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/3"
+      ],
+      "stopCondition": "航空写真と外形の比較は実施済み。南館の名称と上下水道課を特定の棟/区画へ対応させる記載が不足。宿日直と同住所のみで共有しない。",
+      "resumeCondition": "南館を明示する庁舎フロア/配置案内を既比較の外形へ対応させる。",
+      "coordinate": null,
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
+      "previousFinding": "県配布案内とまつり案内を再取得。管理本館1階ロビーは確認できるが管理棟の数値原典が未取得。受付・ロビーの室内差は保留理由ではない。",
+      "newMethod": "県事務所年報p4全体配置図/p8平面図とGSI外形を比較",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/7",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/0"
+      ],
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
+      "coordinate": {
+        "lat": 36.0333033,
+        "lng": 138.0894658
+      },
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
+      "previousFinding": "県配布案内と事務所アクセスを再取得。真島町川合1060-1のアクアパル管理本館が対象。別処理場クリーンピアや処理場敷地代表点は不採用。",
+      "newMethod": "長野市被災復旧資料p15配置図とGSI4タイルの建物/河川/池/公園を比較",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/8",
+        "data/evidence/location-batch2/koshin/building-comparison.json#/rows/2"
+      ],
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
+      "coordinate": {
+        "lat": 36.6108645,
+        "lng": 138.2214568
+      },
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    },
+    {
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "name": "ゆきむら夢工房",
+      "decision": "held",
+      "stage": "independent-building-identity",
+      "previousFinding": "市配布案内・ゆきむら夢工房施設案内を再取得。長6090-1の住所地図と隣接直売所の区別に必要な建物数値は未取得。",
+      "newMethod": "市観光CSV・国交省公開旧直売所活用資料とGSI診断（独立同定は未成立）",
+      "factRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/9",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/10",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/11"
+      ],
+      "stopCondition": "CSV点を内包するVector外形と重心計算は得たが、独立した棟同定がない。旧直売所が隣接することは新資料で確定。",
+      "resumeCondition": "サウンディング添付図面等で夢工房・旧直売所・JA直売所を配置上区別してから外形を選び直す。",
+      "coordinate": null,
+      "distributionChanged": false,
+      "scope": "building representative; room/entrance precision not required"
+    }
+  ]
+}

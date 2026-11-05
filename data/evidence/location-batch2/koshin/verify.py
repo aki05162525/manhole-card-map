@@ -1,0 +1,130 @@
+"""Validate the bounded research record; --with-work additionally checks local raw bytes.
+Run from repository root: mise exec -- python3 -B data/evidence/location-batch2/koshin/verify.py --with-work
+"""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT / 'tools/national'))
+from assemble import assemble
+
+
+def read(path):
+    return json.loads((ROOT / path).read_text())
+
+
+def digest(path):
+    return hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+
+
+def resolve(ref):
+    path, pointer = ref.split('#', 1)
+    obj = read(path)
+    for key in pointer.strip('/').split('/'):
+        obj = obj[int(key)] if isinstance(obj, list) else obj[key]
+    return obj
+
+
+def check_evidence_links(updates, derived, comparison):
+    points = {r['facilityId']: r for r in derived}
+    for row in updates:
+        point = points[row['facilityId']]
+        assert row['coordinate'] == point['coordinate'], row['facilityId']
+        assert point['pointWithinFootprint'] and point['roundedPointWithinFootprint']
+    for reused in comparison['reusedSources']:
+        for source in reused['sources']:
+            if source.get('snapshotPath'):
+                assert digest(source['snapshotPath']) == source['snapshotSHA256'], source['snapshotPath']
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--with-work', action='store_true')
+    args = parser.parse_args()
+    base = 'data/national/location-batch2/koshin/'
+    ev = 'data/evidence/location-batch2/koshin/'
+    selection = read(base + 'selection.json')
+    outcomes = read(base + 'outcomes.json')
+    for path, expected in selection['inputSHA256'].items():
+        if path != 'tools/national/manifest.json':
+            assert digest(path) == expected, path
+    manifest = read('tools/national/manifest.json')
+    historical = json.loads(json.dumps(manifest))
+    for key in ('locations', 'locationLifecycle'):
+        historical[key] = [r for r in historical.get(key, []) if not r['path'].startswith('data/national/location-batch2/')]
+    historical_bytes = (json.dumps(historical, ensure_ascii=False, indent=2) + '\n').encode()
+    assert hashlib.sha256(historical_bytes).hexdigest() == selection['inputSHA256']['tools/national/manifest.json']
+    snapshot = [r for r in read('data/national/issue24/priorities-snapshot.json')['rows']
+                if 'koshin.json#' in r['originalRef']]
+    baseline = set(read('data/national/location-batch1/baseline.json')['assembledUnlocatedIds'])
+    ledger, _ = assemble(ROOT, historical)
+    current, _ = assemble(ROOT, manifest)
+    current_places = {p['id']: p for p in current['places']}
+    updates = read(base + 'locations.json')['updates']
+    adopted = {r['facilityId'] for r in updates}
+    assert len(adopted) == 4
+    assert current['relations'] == ledger['relations']
+    places = {p['id']: p for p in ledger['places']}
+    ids = {r['facilityId'] for r in snapshot}
+    assert len(ids) == 27
+    assert ids == {r['facilityId'] for r in selection['coverage']}
+    assert ids <= baseline
+    assert all(not places[i].get('coordinate') for i in ids)
+    assert sum(not p.get('coordinate') for p in places.values()) == 608
+    selected = {r['facilityId'] for r in selection['selected']}
+    assert len(selected) == 8
+    assert selected == {r['facilityId'] for r in outcomes['rows']}
+    assert selected == {r['facilityId'] for r in selection['coverage'] if r['selected']}
+    assert selected == {r['facilityId'] for r in snapshot[:8]}
+    for row in selection['coverage']:
+        assert resolve(row['originalRef'])['facilityId'] == row['facilityId']
+        assert all(resolve(ref)['facilityId'] == row['facilityId'] for ref in row['reviewRefs'])
+        assert row['reason'] and row['previousFinding']
+    for row in outcomes['rows']:
+        if row['facilityId'] in adopted:
+            assert row['decision'] in ('proposed', 'adopted')
+            assert current_places[row['facilityId']]['coordinate'] == row['coordinate']
+        else:
+            assert row['decision'] == 'held' and row['coordinate'] is None
+            assert not current_places[row['facilityId']].get('coordinate')
+        assert row['stopCondition'] and row['resumeCondition'] and row['newMethod']
+        for ref in row['factRefs']:
+            resolve(ref)
+    proposals = read(base + 'proposals.json')
+    assert proposals['updates'] == updates
+    spec = read(ev + 'vector-inputs.json')
+    for row in spec['rows']:
+        assert digest(ev + row['file']) == row['sha256']
+        assert row['facilityId'] in selected
+    facts = read(ev + 'facts.json')
+    for row in facts['reuse']:
+        assert digest(row['path']) == row['sha256']
+    ueda = next(r for r in read(ev + 'retrievals.json')['rows'] if r['file'].endswith('/ueda-tourism.csv'))
+    assert digest(ev + 'ueda-tourism.csv') == ueda['sha256']
+    comparison = read(ev + 'building-comparison.json')
+    for path, expected in comparison['filesSHA256'].items():
+        assert digest(path) == expected
+    check_evidence_links(updates, read(ev + 'derived-points.json')['rows'], comparison)
+    raw_checks = 0
+    if args.with_work:
+        for row in read(ev + 'retrievals.json')['rows']:
+            if row.get('status') == 200:
+                assert digest(row['file']) == row['sha256'], row['file']
+                raw_checks += 1
+        for row in read(ev + 'vector-retrievals.json'):
+            assert digest(row['path']) == row['sha256']
+            raw_checks += 1
+        for row in facts['facts']:
+            assert digest(row['snapshotPath']) == row['snapshotSHA256']
+    print(json.dumps({'baselineRegionUnlocated': 27, 'selected': 8, 'held': 4,
+                      'adopted': len(adopted),
+                      'currentRegionUnlocated': sum(not current_places[i].get('coordinate') for i in ids),
+                      'currentNationalLedgerUnlocated': sum(not p.get('coordinate') for p in current_places.values()),
+                      'localRawHashChecks': raw_checks}, ensure_ascii=False))
+
+
+if __name__ == '__main__':
+    main()

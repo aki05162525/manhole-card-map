@@ -1,0 +1,846 @@
+[
+  {
+    "site": "suzuka",
+    "key": "19fe902c",
+    "tile": {
+      "z": 16,
+      "x": 57630,
+      "y": 25995,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/suzuka-16-57630-25995.pbf.gz",
+      "sha256": "338d6d97eb42976434570e5a68e50d56829a5d042934734fc78fe2a1e4ca0434",
+      "bytes": 12389,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/suzuka-16-57630-25995.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -9,
+            3019
+          ],
+          [
+            0,
+            3037
+          ],
+          [
+            100,
+            3243
+          ],
+          [
+            58,
+            3263
+          ],
+          [
+            34,
+            3275
+          ],
+          [
+            0,
+            3205
+          ],
+          [
+            -75,
+            3051
+          ],
+          [
+            -9,
+            3019
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 273.86,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      136.5710617,
+      34.832886
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "suzuka",
+    "key": "37fb3b43",
+    "tile": {
+      "z": 16,
+      "x": 57630,
+      "y": 25995,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/suzuka-16-57630-25995.pbf.gz",
+      "sha256": "338d6d97eb42976434570e5a68e50d56829a5d042934734fc78fe2a1e4ca0434",
+      "bytes": 12389,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/suzuka-16-57630-25995.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            155,
+            3329
+          ],
+          [
+            517,
+            3738
+          ],
+          [
+            407,
+            3836
+          ],
+          [
+            45,
+            3428
+          ],
+          [
+            94,
+            3384
+          ],
+          [
+            155,
+            3329
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 1207.3,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      136.5714216,
+      34.8324063
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "suzuka",
+    "key": "76954e17",
+    "tile": {
+      "z": 16,
+      "x": 57630,
+      "y": 25995,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/suzuka-16-57630-25995.pbf.gz",
+      "sha256": "338d6d97eb42976434570e5a68e50d56829a5d042934734fc78fe2a1e4ca0434",
+      "bytes": 12389,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/suzuka-16-57630-25995.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            634,
+            3429
+          ],
+          [
+            754,
+            3545
+          ],
+          [
+            614,
+            3691
+          ],
+          [
+            466,
+            3548
+          ],
+          [
+            475,
+            3539
+          ],
+          [
+            483,
+            3546
+          ],
+          [
+            542,
+            3484
+          ],
+          [
+            537,
+            3480
+          ],
+          [
+            571,
+            3444
+          ],
+          [
+            596,
+            3469
+          ],
+          [
+            634,
+            3429
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 574.94,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      136.5718673,
+      34.8324378
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "miyazu",
+    "key": "5ab4aae4",
+    "tile": {
+      "z": 16,
+      "x": 57379,
+      "y": 25838,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/miyazu-16-57379-25838.pbf.gz",
+      "sha256": "62987fed12a58928cfb8539f6a2220b1b67e68ac0b16d14c26902e0ce21da9cf",
+      "bytes": 11672,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/miyazu-16-57379-25838.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            708,
+            2201
+          ],
+          [
+            1192,
+            2373
+          ],
+          [
+            1187,
+            2388
+          ],
+          [
+            1225,
+            2401
+          ],
+          [
+            1145,
+            2625
+          ],
+          [
+            1102,
+            2610
+          ],
+          [
+            1097,
+            2625
+          ],
+          [
+            597,
+            2448
+          ],
+          [
+            607,
+            2418
+          ],
+          [
+            580,
+            2409
+          ],
+          [
+            649,
+            2213
+          ],
+          [
+            697,
+            2230
+          ],
+          [
+            708,
+            2201
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 2345.88,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.1934695,
+      35.5385329
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "miyazu",
+    "key": "9a7e2ec8",
+    "tile": {
+      "z": 16,
+      "x": 57379,
+      "y": 25838,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/miyazu-16-57379-25838.pbf.gz",
+      "sha256": "62987fed12a58928cfb8539f6a2220b1b67e68ac0b16d14c26902e0ce21da9cf",
+      "bytes": 11672,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/miyazu-16-57379-25838.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1332,
+            2626
+          ],
+          [
+            1379,
+            2642
+          ],
+          [
+            1326,
+            2797
+          ],
+          [
+            1280,
+            2781
+          ],
+          [
+            1332,
+            2626
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 118.51,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.1940435,
+      35.5382076
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "miyazu",
+    "key": "1aaa7df0",
+    "tile": {
+      "z": 16,
+      "x": 57379,
+      "y": 25838,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/miyazu-16-57379-25838.pbf.gz",
+      "sha256": "62987fed12a58928cfb8539f6a2220b1b67e68ac0b16d14c26902e0ce21da9cf",
+      "bytes": 11672,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/miyazu-16-57379-25838.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1601,
+            2567
+          ],
+          [
+            1702,
+            2602
+          ],
+          [
+            1656,
+            2736
+          ],
+          [
+            1556,
+            2702
+          ],
+          [
+            1601,
+            2567
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 222.17,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.1944451,
+      35.5382727
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "miyazu",
+    "key": "e67144b1",
+    "tile": {
+      "z": 16,
+      "x": 57379,
+      "y": 25838,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/miyazu-16-57379-25838.pbf.gz",
+      "sha256": "62987fed12a58928cfb8539f6a2220b1b67e68ac0b16d14c26902e0ce21da9cf",
+      "bytes": 11672,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/miyazu-16-57379-25838.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1537,
+            2739
+          ],
+          [
+            1648,
+            2777
+          ],
+          [
+            1600,
+            2919
+          ],
+          [
+            1489,
+            2881
+          ],
+          [
+            1537,
+            2739
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 258.97,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.1943643,
+      35.5380791
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "kyotamba",
+    "key": "4ff91d83",
+    "tile": {
+      "z": 16,
+      "x": 57420,
+      "y": 25920,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/kyotamba-16-57420-25920.pbf.gz",
+      "sha256": "1bf80e33cbc09b4c8913aa76631d5c8d87ef75d29b525f13420dd880619de728",
+      "bytes": 6721,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/kyotamba-16-57420-25920.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            415,
+            3510
+          ],
+          [
+            507,
+            3576
+          ],
+          [
+            439,
+            3672
+          ],
+          [
+            450,
+            3680
+          ],
+          [
+            417,
+            3725
+          ],
+          [
+            405,
+            3715
+          ],
+          [
+            353,
+            3787
+          ],
+          [
+            651,
+            4007
+          ],
+          [
+            638,
+            4025
+          ],
+          [
+            654,
+            4036
+          ],
+          [
+            549,
+            4176
+          ],
+          [
+            492,
+            4176
+          ],
+          [
+            483,
+            4169
+          ],
+          [
+            477,
+            4176
+          ],
+          [
+            376,
+            4176
+          ],
+          [
+            269,
+            4096
+          ],
+          [
+            84,
+            3957
+          ],
+          [
+            415,
+            3510
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 2578.43,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.4179795,
+      35.1695113
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "kyotamba",
+    "key": "2890fb14",
+    "tile": {
+      "z": 16,
+      "x": 57420,
+      "y": 25920,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/kyotamba-16-57420-25920.pbf.gz",
+      "sha256": "1bf80e33cbc09b4c8913aa76631d5c8d87ef75d29b525f13420dd880619de728",
+      "bytes": 6721,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/kyotamba-16-57420-25920.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1659,
+            3232
+          ],
+          [
+            1684,
+            3276
+          ],
+          [
+            1723,
+            3254
+          ],
+          [
+            1800,
+            3392
+          ],
+          [
+            1760,
+            3413
+          ],
+          [
+            1795,
+            3477
+          ],
+          [
+            1465,
+            3663
+          ],
+          [
+            1532,
+            3781
+          ],
+          [
+            1503,
+            3797
+          ],
+          [
+            1489,
+            3844
+          ],
+          [
+            1429,
+            3878
+          ],
+          [
+            1383,
+            3866
+          ],
+          [
+            1358,
+            3880
+          ],
+          [
+            1157,
+            3514
+          ],
+          [
+            1325,
+            3420
+          ],
+          [
+            1341,
+            3449
+          ],
+          [
+            1389,
+            3422
+          ],
+          [
+            1373,
+            3393
+          ],
+          [
+            1659,
+            3232
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 2936.07,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.4194617,
+      35.1699334
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "rakusai",
+    "key": "9c075aa8",
+    "tile": {
+      "z": 16,
+      "x": 57472,
+      "y": 25979,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/rakusai-16-57472-25979.pbf.gz",
+      "sha256": "9c08f38a3b088fea8cb09c45c3c6a26fb757fb7378f4bf475ae9c5fde92bc8e8",
+      "bytes": 11459,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/rakusai-16-57472-25979.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2978,
+            288
+          ],
+          [
+            3116,
+            319
+          ],
+          [
+            3105,
+            369
+          ],
+          [
+            3139,
+            376
+          ],
+          [
+            3131,
+            412
+          ],
+          [
+            3095,
+            404
+          ],
+          [
+            3083,
+            460
+          ],
+          [
+            2946,
+            429
+          ],
+          [
+            2978,
+            288
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 324.27,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.7071966,
+      34.9080456
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "rakusai",
+    "key": "c9f40153",
+    "tile": {
+      "z": 16,
+      "x": 57472,
+      "y": 25979,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/rakusai-16-57472-25979.pbf.gz",
+      "sha256": "9c08f38a3b088fea8cb09c45c3c6a26fb757fb7378f4bf475ae9c5fde92bc8e8",
+      "bytes": 11459,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/rakusai-16-57472-25979.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            3108,
+            420
+          ],
+          [
+            3182,
+            437
+          ],
+          [
+            3164,
+            515
+          ],
+          [
+            3090,
+            497
+          ],
+          [
+            3108,
+            420
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 90.47,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.7073308,
+      34.9079439
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  },
+  {
+    "site": "rakusai",
+    "key": "c7bd9f8f",
+    "tile": {
+      "z": 16,
+      "x": 57473,
+      "y": 25979,
+      "rawPath": "data/evidence/location-batch2/kinki-east/vector/rakusai-16-57473-25979.pbf.gz",
+      "sha256": "b07c4063ce2132af6de6521f98b31f07d1f5871c88ef5bd508c8c1c3aa411d33",
+      "bytes": 6190,
+      "originalWorkPath": "data/work/location-batch2/kinki-east/revision/rakusai-16-57473-25979.pbf.gz"
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            9,
+            321
+          ],
+          [
+            766,
+            499
+          ],
+          [
+            523,
+            1541
+          ],
+          [
+            0,
+            1418
+          ],
+          [
+            -80,
+            1399
+          ],
+          [
+            -80,
+            702
+          ],
+          [
+            0,
+            359
+          ],
+          [
+            9,
+            321
+          ]
+        ]
+      ]
+    },
+    "extent": 4096,
+    "geodesicAreaM2": 11641.17,
+    "pointMethod": "MVT平面面積重心",
+    "pointLngLat": [
+      135.7090116,
+      34.9074509
+    ],
+    "roundedInside": true,
+    "role": "比較用。採用済みを意味しない。"
+  }
+]

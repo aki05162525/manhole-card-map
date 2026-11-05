@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T11:29:01.309991+00:00",
+  "vector": {
+    "source": "国土地理院最適化ベクトルタイル",
+    "url": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+    "termsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "license": "PDL1.0（個別READMEによる国土地理院コンテンツ利用規約の指定）",
+    "status": "試験公開で基本測量成果と位置付けていない。ラスタの利用条件から推定していない。",
+    "credit": "国土地理院最適化ベクトルタイルを加工し、manhole-card-mapの調査担当が建物外形比較を作成。国土地理院による承認や作成物ではない。",
+    "allowedArtifacts": [
+      "atami-tile.pbf.gz",
+      "seki-tile.pbf.gz",
+      "数値比較・事実抽出"
+    ],
+    "termsSnapshotRef": "data/evidence/location-batch1/gsi-terms.html",
+    "termsSnapshotSHA256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "termsOriginalRetrievedAt": "2026-11-05T10:46:50.392397+00:00",
+    "termsReuse": "既存保存原本を参照。今回取得はTLS互換性エラー。Web取得本文でもPDL1.0/出典/加工条件を確認したが新しいraw取得成功とは記載しない。",
+    "readmeSnapshotRef": "data/evidence/location-batch1/east/gsi-vector-readme.md",
+    "readmeSnapshotSHA256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+    "readmeReuse": "第1弾保存原本を参照。今回のraw URL試行は失敗も含めretrievalsへ記録。GitHub Web本文で2026-07-01版を再確認。"
+  },
+  "generalDocuments": "一般HTML/PDF/写真は再配布許諾未確認。workのみ、Gitには取得hashと自作事実抽出。",
+  "sourceCRSRef": "data/evidence/location-batch1/east/gsi-tile-spec.html",
+  "sourceCRSSHA256": "1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa"
+}

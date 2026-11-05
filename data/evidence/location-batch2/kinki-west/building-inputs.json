@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "source": "国土地理院最適化ベクトルタイル",
+  "version": "2026-07-01",
+  "crs": "地理座標からWeb Mercatorのタイル格子へ符号化された数値。出力は逆Mercatorの緯度・経度、lat/lng順。測地系変換なし。",
+  "precision": "建物代表点。7桁は保存精度であり測量精度ではない。",
+  "rows": [
+    {
+      "label": "28-14:79",
+      "tile": {
+        "name": "inami",
+        "z": 16,
+        "x": 57328,
+        "y": 26014,
+        "path": "data/evidence/location-batch2/kinki-west/inami-16-57328-26014.pbf.gz",
+        "sha256": "7f5d30f376db06ffd2cea7e04c9cb75c564bae7694f80593499b0c054e4d2595"
+      },
+      "featureIndex": 79,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                1098,
+                1520
+              ],
+              [
+                1187,
+                1610
+              ],
+              [
+                1175,
+                1624
+              ],
+              [
+                1287,
+                1739
+              ],
+              [
+                1201,
+                1825
+              ],
+              [
+                1161,
+                1782
+              ],
+              [
+                1150,
+                1794
+              ],
+              [
+                1128,
+                1771
+              ],
+              [
+                1136,
+                1762
+              ],
+              [
+                1114,
+                1739
+              ],
+              [
+                899,
+                1948
+              ],
+              [
+                867,
+                1917
+              ],
+              [
+                859,
+                1925
+              ],
+              [
+                827,
+                1892
+              ],
+              [
+                818,
+                1899
+              ],
+              [
+                796,
+                1877
+              ],
+              [
+                769,
+                1902
+              ],
+              [
+                851,
+                1983
+              ],
+              [
+                883,
+                1986
+              ],
+              [
+                910,
+                1995
+              ],
+              [
+                940,
+                2014
+              ],
+              [
+                981,
+                2053
+              ],
+              [
+                941,
+                2091
+              ],
+              [
+                910,
+                2064
+              ],
+              [
+                875,
+                2046
+              ],
+              [
+                824,
+                2036
+              ],
+              [
+                785,
+                2037
+              ],
+              [
+                761,
+                2042
+              ],
+              [
+                595,
+                2206
+              ],
+              [
+                473,
+                2084
+              ],
+              [
+                678,
+                1873
+              ],
+              [
+                712,
+                1908
+              ],
+              [
+                776,
+                1850
+              ],
+              [
+                768,
+                1839
+              ],
+              [
+                785,
+                1822
+              ],
+              [
+                778,
+                1815
+              ],
+              [
+                823,
+                1768
+              ],
+              [
+                830,
+                1777
+              ],
+              [
+                965,
+                1652
+              ],
+              [
+                954,
+                1637
+              ],
+              [
+                1021,
+                1576
+              ],
+              [
+                1030,
+                1585
+              ],
+              [
+                1098,
+                1520
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature"
+      },
+      "extent": 4096,
+      "name": "inami",
+      "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+      "method": "identified-wing-centroid",
+      "wingVertexStart": 16,
+      "wingVertexEndInclusive": 31
+    },
+    {
+      "label": "58-52:55",
+      "tile": {
+        "name": "kashiwara",
+        "z": 16,
+        "x": 57458,
+        "y": 26052,
+        "path": "data/evidence/location-batch2/kinki-west/kashiwara-16-57458-26052.pbf.gz",
+        "sha256": "da6dd37e97c76dce4eb1f3bd06e0e3ac56edb07f6ff2135ab9bd008be6b50b00"
+      },
+      "featureIndex": 55,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                2517,
+                1041
+              ],
+              [
+                2666,
+                1377
+              ],
+              [
+                2537,
+                1435
+              ],
+              [
+                2388,
+                1099
+              ],
+              [
+                2517,
+                1041
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature"
+      },
+      "extent": 4096,
+      "name": "kashiwara",
+      "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+      "method": "footprint-centroid"
+    }
+  ]
+}
