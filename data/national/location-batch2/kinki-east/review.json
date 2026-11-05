@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "provider": "antigravity",
+  "model": "gemini-4-argon",
+  "status": "failed-quota",
+  "error": "You have reached your Antigravity quota for this period.",
+  "findings": null,
+  "response": "独立レビューは未実施。代替モデルは使用しない。採用0を維持しドラフトPRとして親へ引き継ぐ。",
+  "resumeCondition": "Antigravity利用枠回復後、新しいdelegate_taskで独立レビューを行う。"
+}
