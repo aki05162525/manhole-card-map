@@ -2,6 +2,7 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -13,7 +14,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  checks:
+  changes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      frontend: ${{ steps.scope.outputs.frontend }}
+      backend: ${{ steps.scope.outputs.backend }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test change selection and commit hooks
+        run: |
+          python3 -B -m unittest discover -s tools/ci -v
+          python3 -B -m unittest discover -s tools/dev -v
+      - name: Select affected suites
+        id: scope
+        run: python3 -B tools/ci/changes.py
+
+  backend:
+    needs: changes
+    if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -21,21 +40,44 @@ jobs:
       - uses: jdx/mise-action@v4
         with:
           version: 2026.10.17
-      - name: Python data assembly and coverage tests
-        run: python3 -B -m unittest discover -s tools/national -v
-      - name: Go tests
-        run: go test ./...
+          install_args: go
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: go-${{ runner.os }}-${{ hashFiles('mise.toml', 'go.sum') }}-${{ github.sha }}
+          restore-keys: go-${{ runner.os }}-${{ hashFiles('mise.toml', 'go.sum') }}-
+      # TestNationalAssemblyFailureGuards runs the entire Python suite.
+      # Bypass result caching because Python/data are external Go inputs.
+      - name: Go and Python tests
+        run: go test -count=1 ./...
+
+  frontend:
+    needs: changes
+    if: needs.changes.outputs.frontend == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.17
+          install_args: bun node
+      - uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('mise.toml', 'web/bun.lock') }}
       - name: Install frontend dependencies
         working-directory: web
         run: bun install --frozen-lockfile
+      - name: Commit hook integration with installed Lefthook
+        run: python3 -B -m unittest discover -s tools/dev -v
       - name: Lint and format
         working-directory: web
         run: |
           bun run lint
           bun run format:check
-      - name: Typecheck
-        working-directory: web
-        run: bun run typecheck
       - name: Vitest
         working-directory: web
         run: bun run test
@@ -68,3 +110,20 @@ jobs:
           path: web/dist-fixture/
           if-no-files-found: error
           retention-days: 7
+
+  # Preserve the existing required-check name, including documentation-only PRs.
+  checks:
+    if: always()
+    needs: [changes, backend, frontend]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require successful affected suites
+        env:
+          CHANGES: ${{ needs.changes.result }}
+          BACKEND: ${{ needs.backend.result }}
+          FRONTEND: ${{ needs.frontend.result }}
+        run: |
+          test "$CHANGES" = success
+          case "$BACKEND" in success|skipped) ;; *) exit 1 ;; esac
+          case "$FRONTEND" in success|skipped) ;; *) exit 1 ;; esac
