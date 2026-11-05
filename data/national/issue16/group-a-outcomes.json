@@ -1,0 +1,328 @@
+{
+  "schema": 1,
+  "startedAt": "2026-11-05T08:59:57.814649+00:00",
+  "endedAt": "2026-11-05T09:07:17.121302+00:00",
+  "elapsedSeconds": 439.306653,
+  "timeDefinition": "shared group-a wall time, includes selection followup, retrieval and waiting; not sum of per-building labor",
+  "updates": [],
+  "outcomes": [
+    {
+      "facilityId": "facility:north-proposal-akita-guard",
+      "groupId": "pilot-01",
+      "cardIds": [
+        "05-201-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "休日公式案内図を画像確認。本庁舎の北側風除室と別館を区別でき、同棟共有の根拠は前進。既採用課の39.7101367,140.0971719は公式AED一覧Googleリンク由来で再配信条件未解決。",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/53",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/0",
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/1",
+        "data/evidence/issue16/akita-guide-retrieval.json"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "同棟の独立数値原典又は当該Google取得方法の条件確認",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-c8c261ef28a3887401ad",
+      "groupId": "pilot-02",
+      "cardIds": [
+        "30-205-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "新庁舎実施設計の公式概要を取得。旧P05の再検索は行わず、設計資料経由を試した。配置図と公開建物外形の地理的対応・数値化は未完。",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/81",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/2"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "実施設計添付図を現建物外形と対応付ける。旧庁舎点は流用しない",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-eb17399090b3ca34093b",
+      "groupId": "pilot-02",
+      "cardIds": [
+        "30-205-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "新庁舎実施設計の公式概要を取得。旧P05の再検索は行わず、設計資料経由を試した。配置図と公開建物外形の地理的対応・数値化は未完。",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/95",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/2"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "実施設計添付図を現建物外形と対応付ける。旧庁舎点は流用しない",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "groupId": "pilot-03",
+      "cardIds": [
+        "10-345-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "県の市町村役場位置情報ページからCSVを新規取得。吉岡町下野田560行はあるが列は名称/郵便番号/所在地/TEL/URLのみで座標なし。近接P05二点の建物対応は解消しない。",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/14",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/3",
+        "data/evidence/issue16/gunma-csv-retrieval.json"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "現庁舎と隣接施設を区別する配置図と座標原典",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+      "groupId": "pilot-04",
+      "cardIds": [
+        "27-221-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "2019配置計画PDF物理4頁を画像確認し、本館・別館・テラス/駐車場の配置を区別。既P05本館候補34.579315,135.628642を標準地図z18へ射影したpixel(195.36,173.91)は取得タイルの建物外形内でない。近接P05点群を現本館へ承認する根拠が得られず保留。別館への流用も行わない。",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/10",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/4",
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/5",
+        "data/evidence/issue16/kashiwara-spatial-check.json",
+        "data/evidence/issue16/gsi-terms-retrieval.json"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "P05原座標をWebMercatorタイル式へ射影しPDF配置と目視比較。測地系変換なし。座標を移動/平均/スナップせず、地図から新点を抽出しない。",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "本館/別館それぞれの外形を独立同定する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+      "groupId": "pilot-04",
+      "cardIds": [
+        "27-221-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "2019配置計画PDF物理4頁を画像確認し、本館・別館・テラス/駐車場の配置を区別。既P05本館候補34.579315,135.628642を標準地図z18へ射影したpixel(195.36,173.91)は取得タイルの建物外形内でない。近接P05点群を現本館へ承認する根拠が得られず保留。別館への流用も行わない。",
+      "originalRef": "data/national/issue7/kinki-west.json#/updates/15",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/4",
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/5",
+        "data/evidence/issue16/kashiwara-spatial-check.json",
+        "data/evidence/issue16/gsi-terms-retrieval.json"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "P05原座標をWebMercatorタイル式へ射影しPDF配置と目視比較。測地系変換なし。座標を移動/平均/スナップせず、地図から新点を抽出しない。",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "本館/別館それぞれの外形を独立同定する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
+      "groupId": "pilot-05",
+      "cardIds": [
+        "05-206-A001"
+      ],
+      "status": "held",
+      "stage": "retrieval-failed",
+      "conclusion": "市の新しい地域紹介PDFを検索で発見したがHTTP404。検索抜粋だけでは原本取得成功・座標確認と扱わない。既知の近接二点を平均しない。",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/2",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/6"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "市の現行公開GIS又は施設固有点の出典を取得",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:cs-8b8fd2a944840cadfd",
+      "groupId": "pilot-06",
+      "cardIds": [
+        "33-445-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "町公園施設案内を取得し管理事務所を確認。公園全体の代表点から管理棟を同定する数値根拠は未確認。",
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/22",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/7"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "管理棟を明示する配置図と外形の対応",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "groupId": "pilot-07",
+      "cardIds": [
+        "11-246-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "広報2026年1月PDFを取得し仮設庁舎案内の掲載を確認。旧庁舎P05ではなく新配置を調べる手段は見つかったが外形への地理的対応は未完。",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/87",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/8"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "仮設棟配置図の画像確認と2025年以降の外形原典",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+      "groupId": "pilot-08",
+      "cardIds": [
+        "47-326-B001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "博物館公式aboutページで伊礼原遺跡と博物館の案内図リンクを確認。図のweb取得はtimeout。住所区域点を施設点に変更していない。",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/9",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/9"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "案内図を再取得し建物外形/数値原典と対応させる",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-1a59dc2a1c6607a3c533",
+      "groupId": "pilot-09",
+      "cardIds": [
+        "28-221-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "市公式観光サイトの施設個別紹介を新たに取得。施設名と呉服町53の対応は確認。施設固有座標/利用条件/建物対応の確認は未完。",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/8",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/10"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "個別紹介の地図の由来と公開建物外形を照合",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:cs-a5355105c733978fb2",
+      "groupId": "pilot-10",
+      "cardIds": [
+        "32-526-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "町の基本設計案内と2021年8月広報原本を取得。現庁舎完成の履歴が確認できる。旧浦郷534のP05は再利用せず、美田600-4の新棟数値原典が引き続き不足。",
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/27",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/11",
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/12"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "竣工後配置と新棟のGIS/外形を照合",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    },
+    {
+      "facilityId": "facility:cs-d96f3a22bac31657b3",
+      "groupId": "pilot-10",
+      "cardIds": [
+        "32-526-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "町の基本設計案内と2021年8月広報原本を取得。現庁舎完成の履歴が確認できる。旧浦郷534のP05は再利用せず、美田600-4の新棟数値原典が引き続き不足。",
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/36",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/11",
+        "data/evidence/issue16/group-a-retrievals.json#/retrievals/12"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+      "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+      "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+      "resumeCondition": "竣工後配置と新棟のGIS/外形を照合",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-a-review.json"
+    }
+  ],
+  "summary": {
+    "groups": 10,
+    "facilities": 13,
+    "proposedCoordinates": 0,
+    "held": 13,
+    "accepted": 0
+  },
+  "selectionSHA256": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6"
+}

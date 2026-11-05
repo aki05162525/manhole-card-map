@@ -53,7 +53,13 @@ export function visiblePins(
   if (!data) return [];
   const confirmed = new Set(
     data.places
-      .filter((place) => place.coordinate.status === "confirmed")
+      .filter(
+        (place) =>
+          place.coordinate.status === "confirmed" &&
+          (!place.locationReview ||
+            (place.locationReview.status === "confirmed" &&
+              place.locationReview.addressStatus === "valid")),
+      )
       .map((place) => place.id),
   );
   return data.pins.filter(

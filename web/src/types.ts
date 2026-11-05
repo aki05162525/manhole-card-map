@@ -38,6 +38,15 @@ export type Evidence = {
   actorType: string;
   verificationMethod: string;
 };
+export type LocationReview = {
+  status: "confirmed" | "needs-review" | "withdrawn";
+  addressStatus: "valid" | "needs-review";
+  reason: string;
+  decisionId?: string;
+  reviewedAt?: string;
+  reviewDue?: string;
+  sourceVersion?: string;
+};
 export type Data = {
   schema: number;
   updated: string;
@@ -49,6 +58,7 @@ export type Data = {
     address: string;
     phone: string;
     coordinate: Coord;
+    locationReview?: LocationReview;
     evidence?: Evidence;
   }[];
   relations: {

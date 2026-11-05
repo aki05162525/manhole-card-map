@@ -239,10 +239,30 @@ def assemble(root, manifest):
             if normalized != row['evidence']:
                 reject('ledger evidence checkedAt must already be a date')
     output, audit = apply_locations(merged, updates, root)
-    paths = manifest['inputs'] + [s['path'] for s in manifest['patches'] + manifest['locations']]
+    lifecycle_audit = None
+    selections = manifest.get('locationLifecycle', [])
+    if selections:
+        from location_lifecycle import apply as apply_lifecycle
+        documents = []
+        seen = set()
+        for selection in selections:
+            if set(selection) != {'path', 'sha256'} or selection['path'] in seen:
+                reject('invalid or duplicate lifecycle selection')
+            seen.add(selection['path'])
+            path = repo_path(root, selection['path'])
+            raw = path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != selection['sha256']:
+                reject('location lifecycle selection hash mismatch')
+            documents.append(json.loads(raw, object_pairs_hook=unique_object,
+                                        parse_constant=lambda value: reject(f'invalid number: {value}')))
+        output, lifecycle_audit = apply_lifecycle(root, output, updates, documents)
+    paths = manifest['inputs'] + [s['path'] for s in manifest['patches'] + manifest['locations'] + selections]
     hashes = {name: hashlib.sha256(repo_path(root, name).read_bytes()).hexdigest() for name in paths}
+    for selection in selections:
+        if hashes[selection['path']] != selection['sha256']:
+            reject('location lifecycle input changed during assembly')
     return output, dict(schema=1, inputSHA256=hashes, patchesApplied=len(patches),
-                        locationsApplied=len(updates), locations=audit)
+                        locationsApplied=len(updates), locations=audit, **({'locationLifecycle': lifecycle_audit} if lifecycle_audit is not None else {}))
 
 
 def main():

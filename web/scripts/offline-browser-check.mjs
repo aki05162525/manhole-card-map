@@ -145,6 +145,36 @@ async function consistent(page, site, { document = true } = {}) {
   assert.equal(saved.version, site.version);
   assert.equal(saved.ready, true);
   await storage(page);
+  if (site.locationExpected) await locationConsistent(page, site);
+}
+async function locationConsistent(page, site) {
+  await wait(page, () => window.locationReady === true);
+  const states = await page.evaluate(async () => ({
+    full: await window.readLocation("full"),
+    split: await window.readLocation("split"),
+    displayed: JSON.parse(
+      document.querySelector("#location-state").textContent,
+    ),
+    links: [...document.querySelectorAll("#location-links a")].map((a) => ({
+      id: a.dataset.facility,
+      href: a.href,
+    })),
+  }));
+  for (const mode of ["full", "split", "displayed"])
+    assert.deepEqual(
+      states[mode],
+      site.locationExpected,
+      `${site.label}: ${mode} location state`,
+    );
+  assert.deepEqual(
+    states.links.map(({ id, href }) => ({
+      id,
+      query: new URL(href).searchParams.get("query"),
+    })),
+    site.locationExpected.facilities
+      .filter((p) => p.query !== null)
+      .map(({ id, query }) => ({ id, query })),
+  );
 }
 async function openInitial(origin, site, profile) {
   deployment = site;
@@ -211,8 +241,32 @@ try {
   const entry = join(temporary, "client.ts");
   await writeFile(
     entry,
-    `import {startOfflineUpdates,workerStatus} from ${JSON.stringify(join(web, "src/offline-update.ts"))};
+    `import {facilityMapLink} from ${JSON.stringify(join(web, "src/ui.ts"))};
+import {matchingCards,visiblePins} from ${JSON.stringify(join(web, "src/explorer-state.ts"))};
+import {startOfflineUpdates,workerStatus} from ${JSON.stringify(join(web, "src/offline-update.ts"))};
 window.readStatus=workerStatus;
+window.readLocation=async(mode)=>{
+ const full=mode==='full'?await(await fetch('/data/full.json')).json():null;
+ const details=full||await(await fetch('/data/details.json')).json();
+ const pins=full||await(await fetch('/data/pins.json')).json();
+ if(!full&&details.updated!==pins.updated)throw Error('location split generation mismatch');
+ const data={...details,pins:pins.pins};
+ return {cardIds:data.cards.map(c=>c.id),pinIds:visiblePins(data,false).map(p=>p.id),
+  facilities:data.places.map(p=>{const relation=data.relations.find(r=>r.placeId===p.id);const link=facilityMapLink(p,relation);
+   return {id:p.id,status:p.locationReview?.status||p.coordinate.status,addressStatus:p.locationReview?.addressStatus||'valid',
+    coordinate:p.coordinate,query:link?new URL(link.href).searchParams.get('query'):null,
+    searchMatches:matchingCards(data.cards,p.name,data).map(c=>c.id)};})};
+};
+if(document.body.hasAttribute('data-locations')){
+ window.locationReady=false;
+ window.readLocation(location.pathname==='/legacy.html'?'split':'full').then(data=>{
+  document.querySelector('#location-state').textContent=JSON.stringify(data);
+  for(const p of data.facilities){if(p.query===null)continue;const a=document.createElement('a');a.dataset.facility=p.id;
+   a.href='https://www.google.com/maps/search/?'+new URLSearchParams({api:'1',query:p.query});a.textContent=p.id;
+   document.querySelector('#location-links').append(a);}
+  window.locationReady=true;
+ });
+}
 if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw.js'); else startOfflineUpdates(state=>{document.querySelector('#state').textContent=state.text; const button=document.querySelector('button');button.hidden=!state.action;button.textContent=state.actionLabel||'';button.onclick=state.action||null;});`,
   );
   execFileSync(
@@ -228,15 +282,15 @@ if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw
     { cwd: web, stdio: "pipe" },
   );
   const client = await readFile(join(temporary, "client.js"), "utf8");
-  function site(label, generator = generateServiceWorker) {
-    const data = {
+  function site(label, generator = generateServiceWorker, locations) {
+    const data = locations?.data || {
       schema: "issue8-synthetic",
       updated: label,
       cards: [{ id: `TEST-${label}`, name: `Synthetic ${label}` }],
       pins: [{ id: `pin-${label}`, lat: 35, lng: 139 }],
     };
     const json = (value) => JSON.stringify(value) + "\n";
-    const html = `<!doctype html><html lang="ja"><meta charset="utf-8"><title>Issue8 ${label}</title><body data-version="${label}" ${generator === legacyWorker ? "data-old" : ""}><p id="state"></p><button hidden></button><script src="/assets/app.js"></script></body></html>`;
+    const html = `<!doctype html><html lang="ja"><meta charset="utf-8"><title>Issue8 ${label}</title><body data-version="${label}" ${generator === legacyWorker ? "data-old" : ""} ${locations ? "data-locations" : ""}><pre id="location-state"></pre><div id="location-links"></div><p id="state"></p><button hidden></button><script src="/assets/app.js"></script></body></html>`;
     const files = {
       "/index.html": html,
       "/legacy.html": html.replace("<title>", "<title>Legacy "),
@@ -264,6 +318,7 @@ if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw
     const version = `prototype-issue8-${label}-${sha(Object.values(files).join("")).slice(0, 16)}`;
     return {
       label,
+      locationExpected: locations?.expected,
       files,
       manifest,
       version,
@@ -280,6 +335,7 @@ if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw
   const origin = `http://127.0.0.1:${server.address().port}`;
   console.log(
     JSON.stringify({
+      origin,
       node: process.version,
       baseline: git("rev-parse", legacyRef),
       head: git("rev-parse", "HEAD"),
@@ -383,6 +439,167 @@ if(document.body.hasAttribute('data-old')) navigator.serviceWorker.register('/sw
   await consistent(second, B);
   console.log(
     "PASS offline browser restart: both entrypoints, full/split, assets, persisted storage",
+  );
+  await stopContext();
+
+  // Location lifecycle changes actual full/split facility records and rendered
+  // Maps decisions; merely changing a generation label cannot pass these checks.
+  function locationFixture(label, revised) {
+    const ids = ["correct", "review", "withdraw", "address"];
+    const cards = ids.map((id) => ({
+      id: `TEST-${id}`,
+      pref: "試験県",
+      city: "試験市",
+    }));
+    const places = ids.map((id, index) => ({
+      id: `facility:${id}`,
+      name: `案内所${id}`,
+      address: `試験市 ${index}番`,
+      phone: "",
+      coordinate: {
+        status: "confirmed",
+        lat: 35 + index / 10,
+        lng: 139 + index / 10,
+        review: "旧版の確認",
+      },
+    }));
+    if (revised) {
+      places[0].coordinate = {
+        status: "confirmed",
+        lat: 36,
+        lng: 140,
+        review: "位置訂正の独立レビュー",
+      };
+      places[0].locationReview = {
+        status: "confirmed",
+        addressStatus: "valid",
+        reason: "位置訂正済み",
+      };
+      for (let index = 1; index < places.length; index++) {
+        places[index].coordinate = {
+          status: "unconfirmed",
+          review: "根拠変更",
+        };
+        places[index].locationReview = {
+          status: index === 1 ? "needs-review" : "withdrawn",
+          addressStatus: index === 3 ? "needs-review" : "valid",
+          reason: index === 3 ? "現住所の同定待ち" : "座標根拠を取り下げ再確認",
+        };
+      }
+    }
+    const pins = places
+      .filter((place) => place.coordinate.status === "confirmed")
+      .map((place) => ({
+        id: place.id,
+        cardIds: [`TEST-${place.id.split(":")[1]}`],
+        kind: "place",
+        status: "active",
+        lat: place.coordinate.lat,
+        lng: place.coordinate.lng,
+        reference: false,
+      }));
+    const data = {
+      schema: 1,
+      updated: label,
+      evaluatedAt: "2026-11-05",
+      cards,
+      places,
+      pins,
+      relations: ids.map((id) => ({
+        cardId: `TEST-${id}`,
+        placeId: `facility:${id}`,
+        review: "verified",
+        status: "active",
+      })),
+    };
+    // The expected navigation is declared independently of facilityMapLink.
+    const queries = revised
+      ? ["36,140", "案内所review 試験市 1番", "案内所withdraw 試験市 2番", null]
+      : ["35,139", "35.1,139.1", "35.2,139.2", "35.3,139.3"];
+    return {
+      data,
+      expected: {
+        cardIds: ids.map((id) => `TEST-${id}`),
+        pinIds: revised
+          ? ["facility:correct"]
+          : ids.map((id) => `facility:${id}`),
+        facilities: places.map((place, index) => ({
+          id: place.id,
+          status:
+            revised && index > 0
+              ? index === 1
+                ? "needs-review"
+                : "withdrawn"
+              : "confirmed",
+          addressStatus: revised && index === 3 ? "needs-review" : "valid",
+          coordinate: place.coordinate,
+          query: queries[index],
+          searchMatches: [`TEST-${ids[index]}`],
+        })),
+      },
+    };
+  }
+  const beforeLocation = site(
+    "locations-before",
+    generateServiceWorker,
+    locationFixture("locations-before", false),
+  );
+  const afterLocation = site(
+    "locations-after",
+    generateServiceWorker,
+    locationFixture("locations-after", true),
+  );
+  [page, second] = await openInitial(origin, beforeLocation, "locations");
+  for (const kind of ["hash", "http"]) {
+    await beginUpdate(page, afterLocation, {
+      kind,
+      path: "/data/details.json",
+    });
+    await wait(page, () => window.installResult === "redundant");
+    await consistent(page, beforeLocation);
+    await consistent(second, beforeLocation);
+    offline = true;
+    await context.setOffline(true);
+    await page.reload();
+    await consistent(page, beforeLocation);
+    await second.reload();
+    await consistent(second, beforeLocation);
+    await context.setOffline(false);
+    offline = false;
+    assert.equal(
+      await page.evaluate(
+        (version) => caches.has(version),
+        afterLocation.version,
+      ),
+      false,
+    );
+    console.log(
+      `PASS location ${kind} failure: old coordinates/links retained coherently; failed replacement not published`,
+    );
+  }
+  await beginUpdate(page, afterLocation);
+  await wait(page, () => window.installResult === "installed");
+  await consistent(page, beforeLocation);
+  await consistent(second, beforeLocation);
+  await clickUpdate(page, afterLocation);
+  await consistent(second, beforeLocation);
+  await second.reload();
+  await consistent(second, afterLocation);
+  console.log(
+    "PASS location correction/review/withdrawal: full/split, rendered Maps links, pins removed, cards searchable; second tab stays old until reload",
+  );
+  await stopContext();
+  offline = true;
+  await launch("locations");
+  await context.setOffline(true);
+  page = await context.newPage();
+  await page.goto(origin);
+  await consistent(page, afterLocation);
+  second = await context.newPage();
+  await second.goto(`${origin}/legacy.html`);
+  await consistent(second, afterLocation);
+  console.log(
+    "PASS location offline browser restart: corrected coordinates and withdrawn state persist; no old coordinate navigation",
   );
   await stopContext();
 

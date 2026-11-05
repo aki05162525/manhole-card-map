@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "id": "13-detail",
+      "url": "https://www.city.oyama.tochigi.jp/opendata.php?mode=detail&code=51",
+      "retrievedAt": "2026-11-05T09:08:37.403673+00:00",
+      "redistribution": "not-assessed; raw retained locally only",
+      "coordinateUse": "not approved",
+      "status": 200,
+      "finalURL": "https://www.city.oyama.tochigi.jp/opendata.php?mode=detail&code=51",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshot": "data/work/issue16-group-b/13-detail.html",
+      "sha256": "b0e6430f9dd9cc1bffe769200a7daff2e951b17149bad3de6b5d2294ff639e55",
+      "bytes": 13090,
+      "elapsedSeconds": 0.138
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "url": "https://toukei.pref.gunma.jp/zu240068/data/%E5%B8%82%E7%94%BA%E6%9D%91%E5%BD%B9%E5%A0%B4.csv",
+  "fetchedAt": "2026-11-05T09:02:32.335393+00:00",
+  "status": 200,
+  "snapshotPath": "data/work/issue16/group-a/gunma-townhalls.csv",
+  "snapshotSHA256": "3f16a8ae3fb49b8bae7598e3d07890aa0b72b09161d2046987b6830f14060d9c",
+  "redistribution": "local-only; license and CRS unconfirmed"
+}

@@ -44,12 +44,13 @@ type Card struct {
 	Municipality     json.RawMessage `json:"municipality"`
 }
 type Place struct {
-	ID         string     `json:"id"`
-	Name       string     `json:"name"`
-	Address    string     `json:"address"`
-	Phone      string     `json:"phone"`
-	Coordinate Coordinate `json:"coordinate"`
-	Evidence   *Evidence  `json:"evidence,omitempty"`
+	LocationReview *LocationReview `json:"locationReview,omitempty"`
+	ID             string          `json:"id"`
+	Name           string          `json:"name"`
+	Address        string          `json:"address"`
+	Phone          string          `json:"phone"`
+	Coordinate     Coordinate      `json:"coordinate"`
+	Evidence       *Evidence       `json:"evidence,omitempty"`
 }
 type Relation struct {
 	Change          *RelationChange `json:"change,omitempty"`
