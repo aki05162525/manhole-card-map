@@ -1,0 +1,92 @@
+[
+  {
+    "facilityId": "facility:kanto-north-02882996672a826c585c",
+    "action": "start",
+    "at": "2026-11-05T15:32:56.559096+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-02882996672a826c585c",
+    "action": "stop",
+    "at": "2026-11-05T15:35:23.089642+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "action": "start",
+    "at": "2026-11-05T15:35:23.136577+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "action": "stop",
+    "at": "2026-11-05T15:39:37.307056+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+    "action": "start",
+    "at": "2026-11-05T15:39:37.356838+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+    "action": "stop",
+    "at": "2026-11-05T15:40:52.663431+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+    "action": "start",
+    "at": "2026-11-05T15:40:52.705094+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+    "action": "stop",
+    "at": "2026-11-05T15:46:31.081502+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-02882996672a826c585c",
+    "action": "start-numeric-validation",
+    "at": "2026-11-05T15:48:17.980785+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-02882996672a826c585c",
+    "action": "stop-numeric-validation",
+    "at": "2026-11-05T15:48:18.062991+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "action": "start-numeric-validation",
+    "at": "2026-11-05T15:48:18.063173+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "action": "stop-numeric-validation",
+    "at": "2026-11-05T15:48:18.198060+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+    "action": "start-numeric-validation",
+    "at": "2026-11-05T15:48:18.198252+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+    "action": "stop-numeric-validation",
+    "at": "2026-11-05T15:48:18.262558+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+    "action": "start-numeric-validation",
+    "at": "2026-11-05T15:48:18.262766+00:00"
+  },
+  {
+    "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+    "action": "stop-numeric-validation",
+    "at": "2026-11-05T15:48:18.288513+00:00"
+  },
+  {
+    "facilityId": "shared-south-evidence-packaging",
+    "action": "start",
+    "at": "2026-11-05T15:49:09.209610+00:00"
+  },
+  {
+    "facilityId": "shared-south-evidence-packaging",
+    "action": "stop",
+    "at": "2026-11-05T15:54:31.841705+00:00"
+  }
+]

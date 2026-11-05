@@ -1,0 +1,152 @@
+{
+  "places": [
+    {
+      "id": "facility:kanto-north-18ff4d028e5a88922096",
+      "legacyIds": [
+        "place:18ff4d028e5a88922096"
+      ],
+      "name": "道の駅グランテラス筑西総合案内所",
+      "address": "茨城県筑西市川澄1850",
+      "phone": "0296-45-5055",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "08-227-B001 / 道の駅グランテラス筑西総合案内所 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "legacyIds": [
+        "place:2384f4b5d5bbd843bcbd"
+      ],
+      "name": "古河市観光案内所",
+      "address": "茨城県古河市東本町1丁目1 JR古河駅構内東側",
+      "phone": "0280-30-3434",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "08-204-A001 / 古河市観光案内所 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "legacyIds": [
+        "place:3db2ac917f07b1de03e4"
+      ],
+      "name": "道の駅常陸大宮~かわプラザ~",
+      "address": "茨城県常陸大宮市岩崎717-1",
+      "phone": "0295-58-5038",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "08-225-A001 / 道の駅常陸大宮~かわプラザ~ / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "legacyIds": [
+        "place:45e8eab7ba6d2bdde8e5"
+      ],
+      "name": "守谷市役所",
+      "address": "茨城県守谷市大柏950-1",
+      "phone": "0297-45-1111",
+      "evidence": {
+        "sourceUrl": "https://www.gk-p.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+        "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+        "sourceLocator": "08-224-A001 / 守谷市役所 / 配布場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "cardId": "08-204-A001",
+      "placeId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "sourceHash": "0870085e4cbf980f24e2aa96229254d5611b46ae89741a3e7ac2f3f3af861324",
+      "hours": [
+        "平日10:00～15:00、土日祝9:00～15:00",
+        "12/29～1/3は配布なし"
+      ],
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.ibaraki-koga.lg.jp/soshiki/gesui/1/19194.html",
+        "snapshotPath": "data/evidence/national/kanto-north/2a0ff40e3ec9e1758033.html",
+        "snapshotSHA256": "a4fc520a8f84fdfa694b6c9b548746febdca2cd9349e14e6a0a99026f409366f",
+        "sourceLocator": "08-204-A001 / 古河市観光案内所 / 配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+      }
+    },
+    {
+      "cardId": "08-224-A001",
+      "placeId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "sourceHash": "2244c527a57d404c8040650733ebce999b778d7357e7496f413ca9c347bbe5de",
+      "hours": [
+        "土日祝・年末年始8:30～17:15"
+      ],
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.moriya.ibaraki.jp/kurashi_tetsuzuki/suido/1002264/1002265.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8f602255364448b3b4f9.html",
+        "snapshotSHA256": "f12e9044f5806884eeedbcc69650630bc6ffd4691dd57035cc815a06d58666ea",
+        "sourceLocator": "08-224-A001 / 守谷市役所 / 配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。2026-11-02更新の市案内で平日時間を訂正。休日は市役所警備室。"
+      }
+    },
+    {
+      "cardId": "08-225-A001",
+      "placeId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "sourceHash": "c76a8062d49fa21e81916ef192aa7a086e85736e5c79926f1e7228c10390f7b0",
+      "hours": [
+        "在庫切れにより配布休止。再開未定"
+      ],
+      "status": "suspended",
+      "evidence": {
+        "sourceUrl": "https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/kurashi/suidou/gesuidou/page011190.html",
+        "snapshotPath": "data/evidence/national/kanto-north/91f7a05fec7b83dbfd1b.html",
+        "snapshotSHA256": "46ac9924f8e3965f17783a962fcadaf2d17ea67733a2dd80320afb38a06e5e08",
+        "sourceLocator": "08-225-A001 / 道の駅常陸大宮~かわプラザ~ / 配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+      }
+    },
+    {
+      "cardId": "08-227-B001",
+      "placeId": "facility:kanto-north-18ff4d028e5a88922096",
+      "sourceHash": "f93b7bebc296ffa44706eef1ff491c546f01da414e0cb69d9106f8397020a462",
+      "hours": [
+        "9:00～18:00",
+        "毎月第3水曜日・1/1休み"
+      ],
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/kankou/kankou-news/page012070.html",
+        "snapshotPath": "data/evidence/national/kanto-north/34713ac1c00cf43eb6e6.html",
+        "snapshotSHA256": "75c1d29d398975eb6d58433a05543b7ef5ac945ec34b4756d0d6ed93a1c1a20d",
+        "sourceLocator": "08-227-B001 / 道の駅グランテラス筑西総合案内所 / 配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+      }
+    }
+  ]
+}

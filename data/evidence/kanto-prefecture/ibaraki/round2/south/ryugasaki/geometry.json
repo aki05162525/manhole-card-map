@@ -1,0 +1,336 @@
+{
+  "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+  "selectedTile": {
+    "z": 16,
+    "x": 58279,
+    "y": 25750
+  },
+  "featureIndex": 393,
+  "baseTile": {
+    "z": 16,
+    "x": 58278,
+    "y": 25749
+  },
+  "extent": 4096,
+  "rawFeature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            1652,
+            3415
+          ],
+          [
+            1677,
+            3423
+          ],
+          [
+            1675,
+            3432
+          ],
+          [
+            1698,
+            3439
+          ],
+          [
+            1699,
+            3435
+          ],
+          [
+            1716,
+            3440
+          ],
+          [
+            1719,
+            3431
+          ],
+          [
+            1790,
+            3453
+          ],
+          [
+            1680,
+            3802
+          ],
+          [
+            1631,
+            3787
+          ],
+          [
+            1635,
+            3774
+          ],
+          [
+            1588,
+            3759
+          ],
+          [
+            1573,
+            3806
+          ],
+          [
+            1533,
+            3794
+          ],
+          [
+            1652,
+            3415
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 4
+    },
+    "id": 0,
+    "type": "Feature"
+  },
+  "combinedGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5748.0,
+          7511.0
+        ],
+        [
+          5773.0,
+          7519.0
+        ],
+        [
+          5771.0,
+          7528.0
+        ],
+        [
+          5794.0,
+          7535.0
+        ],
+        [
+          5795.0,
+          7531.0
+        ],
+        [
+          5812.0,
+          7536.0
+        ],
+        [
+          5815.0,
+          7527.0
+        ],
+        [
+          5886.0,
+          7549.0
+        ],
+        [
+          5776.0,
+          7898.0
+        ],
+        [
+          5727.0,
+          7883.0
+        ],
+        [
+          5731.0,
+          7870.0
+        ],
+        [
+          5684.0,
+          7855.0
+        ],
+        [
+          5669.0,
+          7902.0
+        ],
+        [
+          5629.0,
+          7890.0
+        ],
+        [
+          5748.0,
+          7511.0
+        ]
+      ]
+    ]
+  },
+  "fullBuildingGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5748.0,
+          7511.0
+        ],
+        [
+          5773.0,
+          7519.0
+        ],
+        [
+          5771.0,
+          7528.0
+        ],
+        [
+          5794.0,
+          7535.0
+        ],
+        [
+          5795.0,
+          7531.0
+        ],
+        [
+          5812.0,
+          7536.0
+        ],
+        [
+          5815.0,
+          7527.0
+        ],
+        [
+          5886.0,
+          7549.0
+        ],
+        [
+          5776.0,
+          7898.0
+        ],
+        [
+          5727.0,
+          7883.0
+        ],
+        [
+          5731.0,
+          7870.0
+        ],
+        [
+          5684.0,
+          7855.0
+        ],
+        [
+          5669.0,
+          7902.0
+        ],
+        [
+          5629.0,
+          7890.0
+        ],
+        [
+          5748.0,
+          7511.0
+        ]
+      ]
+    ]
+  },
+  "parts": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58279,
+        "y": 25750
+      },
+      "featureIndex": 393,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5748,
+              7511
+            ],
+            [
+              5773,
+              7519
+            ],
+            [
+              5771,
+              7528
+            ],
+            [
+              5794,
+              7535
+            ],
+            [
+              5795,
+              7531
+            ],
+            [
+              5812,
+              7536
+            ],
+            [
+              5815,
+              7527
+            ],
+            [
+              5886,
+              7549
+            ],
+            [
+              5776,
+              7898
+            ],
+            [
+              5727,
+              7883
+            ],
+            [
+              5731,
+              7870
+            ],
+            [
+              5684,
+              7855
+            ],
+            [
+              5669,
+              7902
+            ],
+            [
+              5629,
+              7890
+            ],
+            [
+              5748,
+              7511
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "pointXY": [
+    5760.1801162122065,
+    7707.337838224222
+  ],
+  "method": "polygon area centroid",
+  "selectedAreaTileUnits": 52461.5,
+  "fullAreaTileUnits": 52461.5,
+  "approximateFullAreaM2": 766.6512515232945,
+  "approximateRoundedBoundaryClearanceM": 8.512587692069458,
+  "bounds": [
+    5629.0,
+    7511.0,
+    5886.0,
+    7902.0
+  ],
+  "tileBoundaryTouched": false,
+  "outerWindowBoundaryTouched": false,
+  "tileClippingAssessment": "complete selected polygon within tile, all neighboring tiles retrieved and drawn",
+  "rounding": {
+    "coordinate": {
+      "lat": 35.929619,
+      "lng": 140.1383402
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      5760.151861488819,
+      7707.3652056753635
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "measurementPrecision": "7 decimal storage is not survey accuracy; approximate area uses local Web Mercator latitude scale",
+  "independentReview": "pending; no adoption approval"
+}

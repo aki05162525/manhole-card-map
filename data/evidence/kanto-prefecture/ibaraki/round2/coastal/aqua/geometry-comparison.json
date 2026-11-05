@@ -1,0 +1,665 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/ibaraki/source-conditions.json",
+  "observations": "公式2023フロア図全1頁、別版全2頁、2F/3F図、駐車場図を目視。西道路・北河口/橋・東海岸・南駐車場が一致。主棟は南北円形端部を持つBldA21、南のフードコート相当BldA4と道路西側BldA7を分離。チケット窓口のある主棟の内点を候補化。",
+  "geometries": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58362,
+        "y": 25659
+      },
+      "featureIndex": 21,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1566,
+              2833
+            ],
+            [
+              1603,
+              2883
+            ],
+            [
+              1542,
+              2931
+            ],
+            [
+              1558,
+              2960
+            ],
+            [
+              1566,
+              2989
+            ],
+            [
+              1569,
+              3019
+            ],
+            [
+              1567,
+              3049
+            ],
+            [
+              1559,
+              3078
+            ],
+            [
+              1545,
+              3105
+            ],
+            [
+              1527,
+              3130
+            ],
+            [
+              1505,
+              3150
+            ],
+            [
+              1442,
+              3141
+            ],
+            [
+              1380,
+              3596
+            ],
+            [
+              1436,
+              3628
+            ],
+            [
+              1448,
+              3607
+            ],
+            [
+              1463,
+              3589
+            ],
+            [
+              1500,
+              3561
+            ],
+            [
+              1521,
+              3552
+            ],
+            [
+              1565,
+              3543
+            ],
+            [
+              1611,
+              3548
+            ],
+            [
+              1633,
+              3555
+            ],
+            [
+              1653,
+              3566
+            ],
+            [
+              1688,
+              3595
+            ],
+            [
+              1702,
+              3614
+            ],
+            [
+              1720,
+              3656
+            ],
+            [
+              1725,
+              3678
+            ],
+            [
+              1726,
+              3701
+            ],
+            [
+              1713,
+              3766
+            ],
+            [
+              1706,
+              3784
+            ],
+            [
+              1685,
+              3819
+            ],
+            [
+              1673,
+              3833
+            ],
+            [
+              1652,
+              3985
+            ],
+            [
+              1383,
+              3948
+            ],
+            [
+              1398,
+              3835
+            ],
+            [
+              1349,
+              3828
+            ],
+            [
+              1348,
+              3835
+            ],
+            [
+              1256,
+              3822
+            ],
+            [
+              1265,
+              3757
+            ],
+            [
+              1172,
+              3744
+            ],
+            [
+              1187,
+              3633
+            ],
+            [
+              1145,
+              3627
+            ],
+            [
+              1142,
+              3651
+            ],
+            [
+              1046,
+              3638
+            ],
+            [
+              1057,
+              3557
+            ],
+            [
+              1031,
+              3554
+            ],
+            [
+              1051,
+              3407
+            ],
+            [
+              1076,
+              3411
+            ],
+            [
+              1088,
+              3329
+            ],
+            [
+              1063,
+              3325
+            ],
+            [
+              1083,
+              3182
+            ],
+            [
+              1050,
+              3178
+            ],
+            [
+              1070,
+              3035
+            ],
+            [
+              1099,
+              3039
+            ],
+            [
+              1104,
+              2997
+            ],
+            [
+              1096,
+              2995
+            ],
+            [
+              1093,
+              3006
+            ],
+            [
+              1085,
+              3013
+            ],
+            [
+              1075,
+              3016
+            ],
+            [
+              1064,
+              3013
+            ],
+            [
+              1056,
+              3006
+            ],
+            [
+              1053,
+              2996
+            ],
+            [
+              1055,
+              2985
+            ],
+            [
+              1062,
+              2977
+            ],
+            [
+              1072,
+              2973
+            ],
+            [
+              1083,
+              2974
+            ],
+            [
+              1092,
+              2981
+            ],
+            [
+              1102,
+              2982
+            ],
+            [
+              1103,
+              2975
+            ],
+            [
+              1247,
+              2995
+            ],
+            [
+              1255,
+              2966
+            ],
+            [
+              1268,
+              2939
+            ],
+            [
+              1285,
+              2914
+            ],
+            [
+              1307,
+              2893
+            ],
+            [
+              1332,
+              2877
+            ],
+            [
+              1360,
+              2865
+            ],
+            [
+              1389,
+              2859
+            ],
+            [
+              1419,
+              2858
+            ],
+            [
+              1449,
+              2863
+            ],
+            [
+              1478,
+              2874
+            ],
+            [
+              1566,
+              2833
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "24c087e19e50fb57d2418f29ac6b645617274dec8ced45191220571ed615c11c",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/16-58362-25659.pbf.gz",
+      "snapshotSHA256": "8988f17f23ea75b7e481cdaecad48ba8589cb83c001923741e87eb03f03260c6",
+      "areaApproxSquareMetres": 6363.609703126794,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        1031.0,
+        2833.0,
+        1726.0,
+        3985.0
+      ],
+      "crossesTileBoundary": false,
+      "selectedTileXY": [
+        1240.887000804074,
+        3409.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.3335703,
+          "lng": 140.5937052
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1240.9058099091053,
+          3409.0038860440254
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58362,
+        "y": 25660
+      },
+      "featureIndex": 4,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1492,
+              -80
+            ],
+            [
+              1490,
+              -61
+            ],
+            [
+              1602,
+              -45
+            ],
+            [
+              1595,
+              0
+            ],
+            [
+              1585,
+              79
+            ],
+            [
+              1600,
+              104
+            ],
+            [
+              1605,
+              124
+            ],
+            [
+              1605,
+              143
+            ],
+            [
+              1600,
+              162
+            ],
+            [
+              1591,
+              180
+            ],
+            [
+              1578,
+              195
+            ],
+            [
+              1563,
+              206
+            ],
+            [
+              1544,
+              214
+            ],
+            [
+              1506,
+              216
+            ],
+            [
+              1487,
+              210
+            ],
+            [
+              1470,
+              200
+            ],
+            [
+              1456,
+              186
+            ],
+            [
+              1443,
+              163
+            ],
+            [
+              1398,
+              156
+            ],
+            [
+              1403,
+              118
+            ],
+            [
+              1208,
+              91
+            ],
+            [
+              1220,
+              0
+            ],
+            [
+              1231,
+              -80
+            ],
+            [
+              1492,
+              -80
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "ae88ae44bf30a472de713bc540bddd2cdf0d0efb8d3e705a65d34f2789192de8",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/16-58362-25660.pbf.gz",
+      "snapshotSHA256": "11dca74fe173416a07fa269b64c2be289629fbfae99bef020c9cffefc4800da6",
+      "areaApproxSquareMetres": 1217.0632164337237,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        1208.0,
+        -80.0,
+        1605.0,
+        216.0
+      ],
+      "crossesTileBoundary": true,
+      "selectedTileXY": [
+        1402.3956043956046,
+        39.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.3327854,
+          "lng": 140.5939218
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1402.4144759178162,
+          39.51147562265396
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58362,
+        "y": 25659
+      },
+      "featureIndex": 7,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              171,
+              2716
+            ],
+            [
+              306,
+              2895
+            ],
+            [
+              391,
+              2831
+            ],
+            [
+              501,
+              2970
+            ],
+            [
+              479,
+              3145
+            ],
+            [
+              426,
+              3138
+            ],
+            [
+              411,
+              3258
+            ],
+            [
+              371,
+              3253
+            ],
+            [
+              351,
+              3406
+            ],
+            [
+              387,
+              3411
+            ],
+            [
+              380,
+              3469
+            ],
+            [
+              331,
+              3462
+            ],
+            [
+              330,
+              3472
+            ],
+            [
+              177,
+              3452
+            ],
+            [
+              177,
+              3446
+            ],
+            [
+              67,
+              3432
+            ],
+            [
+              91,
+              3245
+            ],
+            [
+              137,
+              3208
+            ],
+            [
+              148,
+              3120
+            ],
+            [
+              35,
+              2969
+            ],
+            [
+              111,
+              2911
+            ],
+            [
+              78,
+              2866
+            ],
+            [
+              114,
+              2839
+            ],
+            [
+              76,
+              2789
+            ],
+            [
+              171,
+              2716
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "358b82a3fb9ab60d80031f2fca9fd47cb13dae5c78060e79bbe582bc345ef92d",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/16-58362-25659.pbf.gz",
+      "snapshotSHA256": "8988f17f23ea75b7e481cdaecad48ba8589cb83c001923741e87eb03f03260c6",
+      "areaApproxSquareMetres": 3114.5595075196848,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        35.0,
+        2716.0,
+        501.0,
+        3472.0
+      ],
+      "crossesTileBoundary": false,
+      "selectedTileXY": [
+        291.7228003784295,
+        3045.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.3339636,
+          "lng": 140.5924322
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          291.68821132183075,
+          3044.9605738818645
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    }
+  ]
+}

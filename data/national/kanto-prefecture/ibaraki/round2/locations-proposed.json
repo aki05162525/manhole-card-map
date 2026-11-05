@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-18ff4d028e5a88922096",
+      "coordinate": {
+        "lat": 36.3228678,
+        "lng": 139.993867
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/parent/16-58253-25662.pbf.gz",
+        "snapshotSHA256": "8b7af0ca16c2eba867e10b7dc1fd0b23a428d17f731410c96ba079d28a8951c3",
+        "sourceLocator": "z16/58253/25662 BldA feature[4]; chikusei-geometry.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式other本文は総合案内・観光案内を雑貨・ベーカリー棟と明示。全体案内図1画像の北矢印、北の国道50号・東の県道207号、中央雑貨棟、西の大型直売棟、東のトイレ棟、南の円弧通路を数値外形と照合。BldA4は案内窓口の雑貨棟、BldA7トイレ・情報提供施設を除外。 建物代表点を逆投影し小数7桁丸め前後内包。製品CRS適用と独立レビューは未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "coordinate": {
+        "lat": 36.5971044,
+        "lng": 140.4101905
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/parent/16-58328-25600.pbf.gz",
+        "snapshotSHA256": "ba9062cffad68f04d511eda68eabc33284e33918d240199a331e42f13fa853f5",
+        "sourceLocator": "z16/58328/25600 BldA feature[100]; hitachiomiya-geometry.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設図と空撮1画像ずつ全体読解。北の久慈川、西の斜行国道118号、南東カーブ進入路が一致。長い本体棟BldA100、西別棟93トイレ、南東イベント屋根を区別。本体東端情報発信施設の休止前配布は利用者回答に依拠。 建物代表点を逆投影し小数7桁丸め前後内包。製品CRS適用と独立レビューは未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "coordinate": {
+        "lat": 35.9509455,
+        "lng": 139.9752617
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/16-58249-25746.pbf.gz",
+        "snapshotSHA256": "87bf457e141ca2ef99bb9672174421e38cc40d0dbfc3d05a39e7f47297028549",
+        "sourceLocator": "z16/58249/25746 BldA feature[111]; moriya-geometry.json; 2026-07-01版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式2026年1階図の議会棟/行政棟/中庭の並びを3x3外形に照合。南西議会棟部分の内部点を選びWeb Mercator格子から逆投影、小数7桁丸め後内包。一般タイル仕様のJGD2011適用はsource-conditions.jsonの根拠と限界を参照。入口測量ではない。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "coordinate": {
+        "lat": 36.0828552,
+        "lng": 140.1971356
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/kura/16-58290-25716.pbf.gz",
+        "snapshotSHA256": "8b94f0a7c7ff33eecbad44ce5963883b41574c8732eac131474b3a6e1a8c57c1",
+        "sourceLocator": "z16/58290/25716 BldA feature[86]; ichu-geometry.json; 2026-07版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布案内・公式資料と3x3建物外形を照合。利用者回答で配布棟を補完。詳細はround2/tsuchiura/outcomes.json。原本外形内部重心を逆投影・7桁丸め後内包。建物代表点、入口ではない。製品固有CRSの限界をsource-conditions.jsonから継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-0ebb925691ab4a56d116",
+      "coordinate": {
+        "lat": 36.0779188,
+        "lng": 140.2057252
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/station/16-58291-25717.pbf.gz",
+        "snapshotSHA256": "b93a61a4caa589ab1e5d8ed0b8c012451bcd4506a73c9e6a0283d5748e9b6910",
+        "sourceLocator": "z16/58291/25717 BldA feature[435]; station-geometry.json; 2026-07版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布案内・公式資料と3x3建物外形を照合。詳細はround2/tsuchiura/outcomes.json。原本外形内部重心を逆投影・7桁丸め後内包。建物代表点、入口ではない。製品固有CRSの限界をsource-conditions.jsonから継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+      "coordinate": {
+        "lat": 36.0659077,
+        "lng": 140.2159346
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/tennis/16-58293-25720.pbf.gz",
+        "snapshotSHA256": "8580e76a4dc75c1812055efea27c82b4ef570845bef3d640509b1354206315f7",
+        "sourceLocator": "z16/58293/25720 BldA feature[41]; tennis-geometry.json; 2026-07版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布案内・公式資料と3x3建物外形を照合。利用者回答で配布棟を補完。詳細はround2/tsuchiura/outcomes.json。原本外形内部重心を逆投影・7桁丸め後内包。建物代表点、入口ではない。製品固有CRSの限界をsource-conditions.jsonから継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+      "coordinate": {
+        "lat": 36.0825262,
+        "lng": 140.2001816
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/kura/16-58290-25716.pbf.gz",
+        "snapshotSHA256": "8b94f0a7c7ff33eecbad44ce5963883b41574c8732eac131474b3a6e1a8c57c1",
+        "sourceLocator": "z16/58290/25716 BldA feature[473]; kura-geometry.json; 2026-07版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布案内・公式資料と3x3建物外形を照合。利用者回答で配布棟を補完。詳細はround2/tsuchiura/outcomes.json。原本外形内部重心を逆投影・7桁丸め後内包。建物代表点、入口ではない。製品固有CRSの限界をsource-conditions.jsonから継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-c612c7c1c383a0ef7027",
+      "coordinate": {
+        "lat": 36.173769,
+        "lng": 140.189046
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58288-25695.pbf.gz",
+        "snapshotSHA256": "4a8a39c310aeb8af19c2cbe4e1107ff1169893a0ec707ff9c10f5aabd82ea361",
+        "sourceLocator": "z16/58288/25695 BldA feature[3]; yukiiri-geometry.json; 2026-07版。国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布案内・公式資料と3x3建物外形を照合。詳細はround2/tsuchiura/outcomes.json。原本外形内部重心を逆投影・7桁丸め後内包。建物代表点、入口ではない。製品固有CRSの限界をsource-conditions.jsonから継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "coordinate": {
+        "lat": 36.3707601,
+        "lng": 140.4761908
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/mito/16-58340-25651.pbf.gz",
+        "snapshotSHA256": "4f81ead2038431fe259a5f2ba5a2a6f4eb1c22f7ac2d4910401a61ea5a568099",
+        "sourceLocator": "z16/58340/25651 BldA feature[243]; round2/coastal/mito/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "観光協会の2021案内所MAP全画像と2024外観、現配布本文を読解。北口/南口、南北自由通路東側・改札北側という構造は確認。数値外形は主複合棟243と北東小外形247を比較したが、室位置をどちらの棟に包含するか決めるJR図のraw取得は失敗。単なる駅中心/別商業棟の代表点は作らない。 親転送の利用者回答はエクセル本館等と一体構造の駅舎本体2階屋内と確認し、デッキ独立小建屋を否定。243/247というIDは質問由来であり利用者の独立数値検証とは扱わない。本体棟243内の代表点を候補化する。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "coordinate": {
+        "lat": 36.3335703,
+        "lng": 140.5937052
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/16-58362-25659.pbf.gz",
+        "snapshotSHA256": "8988f17f23ea75b7e481cdaecad48ba8589cb83c001923741e87eb03f03260c6",
+        "sourceLocator": "z16/58362/25659 BldA feature[21]; round2/coastal/aqua/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式2023フロア図全1頁、別版全2頁、2F/3F図、駐車場図を目視。西道路・北河口/橋・東海岸・南駐車場が一致。主棟は南北円形端部を持つBldA21、南のフードコート相当BldA4と道路西側BldA7を分離。チケット窓口のある主棟の内点を候補化。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "coordinate": {
+        "lat": 36.3147799,
+        "lng": 140.5628627
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/umimachi/16-58356-25664.pbf.gz",
+        "snapshotSHA256": "26740b1c3541e7a2f829cfab7457be2c9d6b0a217266fcd53ab758069cce7aa5",
+        "sourceLocator": "z16/58356/25664 BldA feature[229]; round2/coastal/umimachi/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式2024施設周辺平面図全1頁の右=駅、左=町道、下=ロータリーを、県2021完成報告全2頁の航空写真で北/南/東へ対応付けた（図に北矢印なし）。GSI BldA229は駅棟228の南、町道北、ロータリー西。北寄りの細い部分は連続屋根と解し南の主矩形内点を選ぶ。公式室内矩形と屋根外形は同一輪郭ではない。 親から転送された利用者回答も駅南隣・東ロータリー・南町道の平屋棟と確認。報告と独立図面の判断を区別し、人手回答だけで採用承認しない。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "coordinate": {
+        "lat": 36.5914303,
+        "lng": 140.6614712
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+        "snapshotSHA256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+        "sourceLocator": "z16/58374/25601 BldA feature[246]; round2/coastal/hitachi/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市の2026貸出図全2頁を目視。西側中央口北側という市本文、中央口から東に延びる自由通路、北側の駅前バス広場に面する施設写真と数値棟246を照合。東側展望イベントホール/カフェを配布棟と混同しない。北の長棟245と自由通路288を別比較。貸出18㎡は一室の面積で棟全面積ではない。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "coordinate": {
+        "lat": 36.4563038,
+        "lng": 140.4877974
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/naka/16-58343-25632.pbf.gz",
+        "snapshotSHA256": "36950f62940da32b75f7a7acf6aae718b5cfe82e2bcc0d25a4c83e4decf19908",
+        "sourceLocator": "z16/58343/25632 BldA feature[23]; round2/coastal/naka/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式パンフ全2頁・施設本文・公式写真2枚・2025観光地図全1頁を目視。179.89㎡のL形家屋。市のmap.php座標は池内の公園代表点で不採用。北側小棟236は49.73㎡、東側L形23は260.10㎡だが園路/敷地境界との対応が確定しない。L形だけを理由に住宅を採らない。295頁の2019戦略PDFは全文検索し205頁のみ目視（206–209は生成のみ、全頁読解とは扱わない）。 親から転送された利用者回答は小池東側L形大型茅葺き本体棟と確認、西側別棟を否定。これは利用者報告であり独立取得ではない。数値BldA23のL形屋根約260㎡と公式床面積179.89㎡は軒の出/一部2階を含み同一量でない。利用者による位置同定と独立外形を合わせて候補化。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-02882996672a826c585c",
+      "coordinate": {
+        "lat": 36.0817314,
+        "lng": 140.1127918
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/bivi/16-58274-25716.pbf.gz",
+        "snapshotSHA256": "d9bed866f6130867aea110e7d17ce61e1400ac6dc941839013aa80f398856da9",
+        "sourceLocator": "z16/58274/25716 BldA feature[114]; data/evidence/kanto-prefecture/ibaraki/round2/south/bivi/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+      "coordinate": {
+        "lat": 35.9781444,
+        "lng": 140.1477435
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/ushiku/16-58281-25739.pbf.gz",
+        "snapshotSHA256": "f3f22382b166407b193afc8da495c5948e891a05a8046040510b240c1480f599",
+        "sourceLocator": "z16/58281/25739 BldA feature[275]; data/evidence/kanto-prefecture/ibaraki/round2/south/ushiku/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+      "coordinate": {
+        "lat": 35.929619,
+        "lng": 140.1383402
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/ryugasaki/16-58279-25750.pbf.gz",
+        "snapshotSHA256": "c0dd93616aa876b9381d78ed1719ab79777d89e192e79b4fcdd2b0e90361214e",
+        "sourceLocator": "z16/58279/25750 BldA feature[393]; data/evidence/kanto-prefecture/ibaraki/round2/south/ryugasaki/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+      "coordinate": {
+        "lat": 35.954806,
+        "lng": 140.6747925
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58377-25745.pbf.gz",
+        "snapshotSHA256": "7b76229c9170a08cfa9209defd15d99af3b50b23f6104359005994a530636459",
+        "sourceLocator": "z16/58377/25745 BldA feature[2]; data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+      }
+    }
+  ]
+}

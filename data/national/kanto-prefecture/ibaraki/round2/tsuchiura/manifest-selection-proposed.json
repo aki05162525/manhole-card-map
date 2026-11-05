@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "status": "NOT APPROVED; proposed selection only",
+  "locations": [
+    {
+      "path": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+          "sha256": "ab9605c0d06f10cd130cc5ebba7f684de904819a664a1aa477612ec635963e7f"
+        },
+        {
+          "facilityId": "facility:kanto-north-0ebb925691ab4a56d116",
+          "sha256": "0efd4b2b5c943ddf12cf1b1f567de996c1bd1490c1d30424bb5d997ad6a4c34f"
+        },
+        {
+          "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+          "sha256": "e7efb5aabe48ba5a10b6eccaa17a55cb711f888bf99e7c84fae07cc7ef6356bf"
+        },
+        {
+          "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+          "sha256": "49e283bb32fa51ed3128ac62084b3e3db53b56b0c243cf0744699e78088935dc"
+        },
+        {
+          "facilityId": "facility:kanto-north-c612c7c1c383a0ef7027",
+          "sha256": "4b5e7d4b64aa08283efb1aecfdfd2f9c73877af4cb2e44c8391450cb2e3c9c9c"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/location-lifecycle-proposed.json",
+      "sha256": "669697aee52e75072c04e46340eefff30fb7efbd6de5947f40e86d6cc59c5342"
+    }
+  ]
+}

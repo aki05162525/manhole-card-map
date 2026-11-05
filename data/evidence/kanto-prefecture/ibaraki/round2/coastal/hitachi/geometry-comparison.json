@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/ibaraki/source-conditions.json",
+  "observations": "市の2026貸出図全2頁を目視。西側中央口北側という市本文、中央口から東に延びる自由通路、北側の駅前バス広場に面する施設写真と数値棟246を照合。東側展望イベントホール/カフェを配布棟と混同しない。北の長棟245と自由通路288を別比較。貸出18㎡は一室の面積で棟全面積ではない。",
+  "geometries": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25601
+      },
+      "featureIndex": 246,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2599,
+              1806
+            ],
+            [
+              2699,
+              1844
+            ],
+            [
+              2638,
+              2000
+            ],
+            [
+              2539,
+              1961
+            ],
+            [
+              2599,
+              1806
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "0830494a2e99b92037d89c7594965bc7bbb0b7accac4831fb084b71987896c92",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+      "snapshotSHA256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+      "areaApproxSquareMetres": 255.772805820328,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        2539.0,
+        1806.0,
+        2699.0,
+        2000.0
+      ],
+      "crossesTileBoundary": false,
+      "selectedTileXY": [
+        2618.885080645161,
+        1902.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.5914303,
+          "lng": 140.6614712
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          2618.8977857232094,
+          1902.5262272655964
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25601
+      },
+      "featureIndex": 245,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2800,
+              1300
+            ],
+            [
+              2917,
+              1346
+            ],
+            [
+              2786,
+              1682
+            ],
+            [
+              2721,
+              1848
+            ],
+            [
+              2603,
+              1802
+            ],
+            [
+              2800,
+              1300
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "aaa827bdc285c80c45a279630bdb7fb716e0b6244792ecdb9ce2bbc518fe6cfc",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+      "snapshotSHA256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+      "areaApproxSquareMetres": 978.0367877503732,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        2603.0,
+        1300.0,
+        2917.0,
+        1848.0
+      ],
+      "crossesTileBoundary": false,
+      "selectedTileXY": [
+        2783.7599601593624,
+        1514.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.5918487,
+          "lng": 140.6616923
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          2783.7618950009346,
+          1513.9598845243454
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25601
+      },
+      "featureIndex": 288,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2514,
+              1955
+            ],
+            [
+              3677,
+              2411
+            ],
+            [
+              3599,
+              2612
+            ],
+            [
+              3543,
+              2590
+            ],
+            [
+              3590,
+              2469
+            ],
+            [
+              3317,
+              2362
+            ],
+            [
+              3255,
+              2511
+            ],
+            [
+              3221,
+              2498
+            ],
+            [
+              3280,
+              2348
+            ],
+            [
+              3270,
+              2344
+            ],
+            [
+              3043,
+              2927
+            ],
+            [
+              2879,
+              2862
+            ],
+            [
+              3107,
+              2277
+            ],
+            [
+              2484,
+              2033
+            ],
+            [
+              2514,
+              1955
+            ]
+          ]
+        ]
+      },
+      "geometrySHA256": "62e26d1d33f04eae30580c09403d065a835ea4108a4ecec0c9bbe592d6d8e033",
+      "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+      "snapshotSHA256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+      "areaApproxSquareMetres": 3302.4519596503524,
+      "areaMethod": "Web Mercator lattice area multiplied by cos(latitude)^2; approximate roof footprint, not official floor area",
+      "tileBounds": [
+        2484.0,
+        1955.0,
+        3677.0,
+        2927.0
+      ],
+      "crossesTileBoundary": false,
+      "selectedTileXY": [
+        3138.0463605576815,
+        2440.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.5908516,
+          "lng": 140.6621674
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          3138.022131472826,
+          2439.9590424895287
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "purpose": "comparison only; identity unapproved"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "commonSetup": "全県指示/検索一覧の確認は共有、施設へ配賦しない。",
+  "sessions": [
+    {
+      "facility": "aqua",
+      "startedAt": "2026-11-05T15:32:53.300488+00:00",
+      "endedAt": "2026-11-05T15:34:40.017643+00:00",
+      "elapsedSeconds": 106.717155
+    },
+    {
+      "facility": "umimachi",
+      "startedAt": "2026-11-05T15:34:40.062314+00:00",
+      "endedAt": "2026-11-05T15:37:27.831573+00:00",
+      "elapsedSeconds": 167.769259
+    },
+    {
+      "facility": "naka",
+      "startedAt": "2026-11-05T15:37:27.874083+00:00",
+      "endedAt": "2026-11-05T15:43:02.327619+00:00",
+      "elapsedSeconds": 334.453536
+    },
+    {
+      "facility": "mito",
+      "startedAt": "2026-11-05T15:43:02.376263+00:00",
+      "endedAt": "2026-11-05T15:43:54.100140+00:00",
+      "elapsedSeconds": 51.723877
+    },
+    {
+      "facility": "hitachi",
+      "startedAt": "2026-11-05T15:43:54.150774+00:00",
+      "endedAt": "2026-11-05T15:45:45.889526+00:00",
+      "elapsedSeconds": 111.738752
+    },
+    {
+      "facility": "mito",
+      "startedAt": "2026-11-05T15:45:45.935316+00:00",
+      "endedAt": "2026-11-05T15:46:08.014060+00:00",
+      "elapsedSeconds": 22.078744
+    },
+    {
+      "facility": "umimachi",
+      "startedAt": "2026-11-05T15:46:08.063340+00:00",
+      "endedAt": "2026-11-05T15:46:42.145962+00:00",
+      "elapsedSeconds": 34.082622
+    },
+    {
+      "facility": "aqua",
+      "startedAt": "2026-11-05T15:46:42.187004+00:00",
+      "endedAt": "2026-11-05T15:47:06.084202+00:00",
+      "elapsedSeconds": 23.897198
+    },
+    {
+      "facility": "naka",
+      "startedAt": "2026-11-05T15:47:06.125207+00:00",
+      "endedAt": "2026-11-05T15:47:32.185634+00:00",
+      "elapsedSeconds": 26.060427
+    },
+    {
+      "facility": "naka",
+      "startedAt": "2026-11-05T15:50:20.203240+00:00",
+      "endedAt": "2026-11-05T15:51:42.201180+00:00",
+      "elapsedSeconds": 81.99794
+    },
+    {
+      "facility": "mito",
+      "startedAt": "2026-11-05T15:52:58.039323+00:00",
+      "endedAt": "2026-11-05T15:53:14.409738+00:00",
+      "elapsedSeconds": 16.370415
+    }
+  ]
+}

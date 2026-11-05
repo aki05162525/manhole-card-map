@@ -1,0 +1,101 @@
+{
+  "center": {
+    "z": 16,
+    "x": 58288,
+    "y": 25695
+  },
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58287,
+        "y": 25694
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58287-25694.pbf.gz",
+      "sha256": "cf9efabb0efc0028e5dda7fdcbc0e13209cef33819ee41958d5e55ac1d9e801d",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58287-25694.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58288,
+        "y": 25694
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58288-25694.pbf.gz",
+      "sha256": "5de4f1defd7639b3f5049fc299c2ad630ddda595eb826fd4cba313b09461164f",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58288-25694.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58289,
+        "y": 25694
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58289-25694.pbf.gz",
+      "sha256": "c950b5cbdef06f80ce7143f5120bf880f407b16ad54b4840a494a77c188aa430",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58289-25694.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58287,
+        "y": 25695
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58287-25695.pbf.gz",
+      "sha256": "370599d59a4d650af05ba7d1da8f642341c589f19ad7a38f38e4334cbfb3714e",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58287-25695.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58288,
+        "y": 25695
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58288-25695.pbf.gz",
+      "sha256": "4a8a39c310aeb8af19c2cbe4e1107ff1169893a0ec707ff9c10f5aabd82ea361",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58288-25695.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58289,
+        "y": 25695
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58289-25695.pbf.gz",
+      "sha256": "2aecf3fc4fc20bba540c503ebc1dc73d79fb33120c459d12e7507ee83dc9d991",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58289-25695.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58287,
+        "y": 25696
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58287-25696.pbf.gz",
+      "sha256": "7dc9fb74bc11558cc1d07606ce24e0b5df526360586ae0fc6abf627d8a73009d",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58287-25696.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58288,
+        "y": 25696
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58288-25696.pbf.gz",
+      "sha256": "836c5fccd21a98f321e72bd201237f7ca9c12cb7eefc92d05b10dca1fdcf83db",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58288-25696.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58289,
+        "y": 25696
+      },
+      "path": "data/work/kanto-ibaraki/round2/tsuchiura/yukiiri/16-58289-25696.pbf.gz",
+      "sha256": "a97bc2c95435542646ea5390c5627b1dbcedb8cbea6112ab84f5a1f3f2de8ada",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri/16-58289-25696.pbf.gz"
+    }
+  ],
+  "source": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "selection": "coarse search window only; not a candidate point"
+}

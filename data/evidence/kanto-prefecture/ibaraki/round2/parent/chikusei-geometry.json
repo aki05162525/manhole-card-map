@@ -1,0 +1,78 @@
+{
+  "facility": "chikusei",
+  "tile": {
+    "z": 16,
+    "x": 58253,
+    "y": 25662
+  },
+  "layer": "BldA",
+  "featureIndex": 4,
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          434,
+          903
+        ],
+        [
+          482,
+          932
+        ],
+        [
+          530,
+          921
+        ],
+        [
+          572,
+          1095
+        ],
+        [
+          340,
+          1150
+        ],
+        [
+          299,
+          976
+        ],
+        [
+          347,
+          964
+        ],
+        [
+          377,
+          916
+        ],
+        [
+          434,
+          903
+        ]
+      ]
+    ]
+  },
+  "pointXY": [
+    433.1589067775069,
+    1026.6619301806882
+  ],
+  "calculation": {
+    "coordinate": {
+      "lat": 36.3228678,
+      "lng": 139.993867
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      433.1259676516056,
+      1026.664013966918
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "valid": true,
+  "areaApproxSquareMetres": 673.5316937714147,
+  "distanceToBoundaryMetres": 11.850515735023437,
+  "tileSHA256": "8b7af0ca16c2eba867e10b7dc1fd0b23a428d17f731410c96ba079d28a8951c3",
+  "selectionMethod": "independently identified building then centroid (interior point if centroid outside); not marker-driven",
+  "precision": "generalized building outline, 7 decimals storage not survey accuracy"
+}

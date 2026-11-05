@@ -1,0 +1,7 @@
+PASS primary retrieval hashes: 34 failed attempts retained: 1
+PASS 36 retained tile hashes and four coherent HTTP Range windows
+PASS five raw feature bindings, 7-digit rounded containment, no selected polygon touches tile boundary
+PASS old render4384 equals newly fetched BldA86 geometry
+PASS all five inherited histories, JSON pointers and verified original hashes
+PASS proposed ID/old-value/hash/lifecycle/explicit-selection bindings; shared manifest unchanged
+NOT RUN full suite, commit hooks, independent review, parent merge/assembly diff. Mechanical checks do not approve identity or CRS.

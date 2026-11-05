@@ -1,0 +1,101 @@
+{
+  "center": {
+    "z": 16,
+    "x": 58374,
+    "y": 25601
+  },
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58373,
+        "y": 25600
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58373-25600.pbf.gz",
+      "sha256": "87f8f9994fd25d3df95137219a23da5df4e3660bcc7ca310e2d331a30cb11e25",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58373-25600.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25600
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58374-25600.pbf.gz",
+      "sha256": "436f039e9ccf81de6e176d4f89001848c26a63f1761ac8a8503c783c2934f36b",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25600.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58375,
+        "y": 25600
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58375-25600.pbf.gz",
+      "sha256": "d3dc36132c9de108cb1f0e3c6e9558d2c10289b4b2a846ab6fda77c5a8b6693f",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58375-25600.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58373,
+        "y": 25601
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58373-25601.pbf.gz",
+      "sha256": "572225359e101b32eccb02a7fb6b1cbc32d702980095a010eb5373db5b7f1f06",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58373-25601.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25601
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+      "sha256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58375,
+        "y": 25601
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58375-25601.pbf.gz",
+      "sha256": "63d9f8ac0a4aae089d8657f3c0f0cc651728f3eebf35a97b17f7d4afe6b2f78a",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58375-25601.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58373,
+        "y": 25602
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58373-25602.pbf.gz",
+      "sha256": "be6c14daf4adf607c1d3ceddad08e966698b8b7d80dd3147693f3429b8cea79e",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58373-25602.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58374,
+        "y": 25602
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58374-25602.pbf.gz",
+      "sha256": "2315fa56ed3819ecb9a34e31ede0665d756e0931118bb1d8e8e3f997603181b2",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25602.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58375,
+        "y": 25602
+      },
+      "path": "data/work/kanto-ibaraki/round2/coastal/hitachi/16-58375-25602.pbf.gz",
+      "sha256": "47e1a3747d964d3dcc9dbd2248ded2fd9b833eef1e356614dd7f35ecb88d7e12",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58375-25602.pbf.gz"
+    }
+  ],
+  "source": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "selection": "coarse search window only; not a candidate point"
+}

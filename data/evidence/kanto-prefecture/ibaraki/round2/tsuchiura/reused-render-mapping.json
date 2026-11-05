@@ -1,0 +1,236 @@
+{
+  "originalPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-b8a6e353/data/work/location-batch2/north-kanto/tsuchiura-render-ids.json",
+  "originalSHA256": "bc742691d4bd2df670e0b5a821fa148358f46616674f7eb0f155d8b7dc2e3758",
+  "provenanceRef": "data/evidence/location-batch2/north-kanto/revision-windows.json (tsuchiura window); original batch2 render IDs are ephemeral, raw tile/index is durable",
+  "mapping": [
+    {
+      "renderId": 4384,
+      "feature": {
+        "layer": "BldA",
+        "tile": [
+          16,
+          58290,
+          25716
+        ],
+        "index": 86,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                515,
+                1482
+              ],
+              [
+                610,
+                1624
+              ],
+              [
+                384,
+                1777
+              ],
+              [
+                288,
+                1635
+              ],
+              [
+                515,
+                1482
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        }
+      }
+    },
+    {
+      "renderId": 4387,
+      "feature": {
+        "layer": "BldA",
+        "tile": [
+          16,
+          58290,
+          25716
+        ],
+        "index": 89,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                553,
+                721
+              ],
+              [
+                826,
+                1048
+              ],
+              [
+                822,
+                1051
+              ],
+              [
+                825,
+                1055
+              ],
+              [
+                724,
+                1140
+              ],
+              [
+                802,
+                1232
+              ],
+              [
+                881,
+                1165
+              ],
+              [
+                1088,
+                1413
+              ],
+              [
+                1082,
+                1418
+              ],
+              [
+                1084,
+                1421
+              ],
+              [
+                998,
+                1494
+              ],
+              [
+                994,
+                1490
+              ],
+              [
+                951,
+                1527
+              ],
+              [
+                958,
+                1535
+              ],
+              [
+                980,
+                1517
+              ],
+              [
+                1014,
+                1558
+              ],
+              [
+                981,
+                1586
+              ],
+              [
+                985,
+                1590
+              ],
+              [
+                898,
+                1664
+              ],
+              [
+                894,
+                1659
+              ],
+              [
+                887,
+                1665
+              ],
+              [
+                715,
+                1459
+              ],
+              [
+                719,
+                1456
+              ],
+              [
+                690,
+                1422
+              ],
+              [
+                688,
+                1424
+              ],
+              [
+                514,
+                1216
+              ],
+              [
+                518,
+                1214
+              ],
+              [
+                486,
+                1176
+              ],
+              [
+                498,
+                1166
+              ],
+              [
+                495,
+                1162
+              ],
+              [
+                433,
+                1215
+              ],
+              [
+                236,
+                979
+              ],
+              [
+                368,
+                868
+              ],
+              [
+                373,
+                874
+              ],
+              [
+                553,
+                721
+              ]
+            ],
+            [
+              [
+                856,
+                1347
+              ],
+              [
+                827,
+                1372
+              ],
+              [
+                909,
+                1472
+              ],
+              [
+                939,
+                1447
+              ],
+              [
+                856,
+                1347
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        }
+      }
+    }
+  ],
+  "correction": "4387 is 土浦小学校校舎, not 一中校舎. Official district plan p57 distinguishes 土浦小学校 and 土浦第一中学校; the hall is SW of elementary school."
+}
