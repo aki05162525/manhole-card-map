@@ -1,0 +1,626 @@
+{
+  "schema": 1,
+  "baseTile": {
+    "z": 16,
+    "x": 58121,
+    "y": 25635
+  },
+  "extent": 4096,
+  "sourceTiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58121,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25635.pbf",
+      "sha256": "da17d8bbc4626663275486709b13fa3536bba3a426a545d7bccd53ded09aec10"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25635.pbf",
+      "sha256": "84590d49c3fe1582c792795d6f924b70128184ccbf1245d8fc0671c3af185ccd"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58123,
+        "y": 25635
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25635.pbf",
+      "sha256": "aa01fd67d54c627ab9ed96d52984b5c414fd9ce28c87d670981b5f3e2590e948"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58121,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25636.pbf",
+      "sha256": "40cb26a1ee6ab6dd9d74cca1bb82035e8e5e7987111d2f59bdc95ee3b06d2996"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25636.pbf",
+      "sha256": "32dfc994cab3bbf7080b663832f707eec81d98149dfe02969983a2da6408c471"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58123,
+        "y": 25636
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25636.pbf",
+      "sha256": "061c649de4ee4008f97011d3f2dea333dfa1119e4e0d3d72b763168e40f84095"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58121,
+        "y": 25637
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58121-25637.pbf",
+      "sha256": "18c1608e32c0a3f2943837bd493facfd9accac4dcac0e634209775a3ac377d80"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25637
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58122-25637.pbf",
+      "sha256": "9f4988d2d539b0e001dd2f3b1df915ccae761265f9ad32651c1035c759d4baf8"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58123,
+        "y": 25637
+      },
+      "path": "data/evidence/kanto-prefecture/gunma/east/midori-16-58123-25637.pbf",
+      "sha256": "65b52c9061cb8084bedf76347cad7f4c139112edb45785b200f272a5b86fd9e2"
+    }
+  ],
+  "comparedFeatures": [
+    {
+      "combinedIndex": 3180,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4961,
+              6811
+            ],
+            [
+              5010,
+              6824
+            ],
+            [
+              5007,
+              6835
+            ],
+            [
+              5024,
+              6840
+            ],
+            [
+              5028,
+              6825
+            ],
+            [
+              5147,
+              6857
+            ],
+            [
+              5130,
+              6918
+            ],
+            [
+              5079,
+              6905
+            ],
+            [
+              4890,
+              6860
+            ],
+            [
+              4903,
+              6813
+            ],
+            [
+              4956,
+              6828
+            ],
+            [
+              4961,
+              6811
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 271,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3182,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4923,
+              6932
+            ],
+            [
+              5094,
+              6967
+            ],
+            [
+              5081,
+              7031
+            ],
+            [
+              4910,
+              6996
+            ],
+            [
+              4923,
+              6932
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 273,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3183,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4969,
+              7123
+            ],
+            [
+              5031,
+              7139
+            ],
+            [
+              5016,
+              7194
+            ],
+            [
+              4954,
+              7178
+            ],
+            [
+              4969,
+              7123
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 274,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3219,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4828,
+              7160
+            ],
+            [
+              5001,
+              7205
+            ],
+            [
+              4973,
+              7315
+            ],
+            [
+              4840,
+              7280
+            ],
+            [
+              4850,
+              7239
+            ],
+            [
+              4861,
+              7242
+            ],
+            [
+              4864,
+              7230
+            ],
+            [
+              4814,
+              7218
+            ],
+            [
+              4828,
+              7160
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 310,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3220,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4835,
+              7314
+            ],
+            [
+              4904,
+              7319
+            ],
+            [
+              4901,
+              7360
+            ],
+            [
+              4832,
+              7355
+            ],
+            [
+              4835,
+              7314
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 311,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3217,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4641,
+              7400
+            ],
+            [
+              4929,
+              7428
+            ],
+            [
+              4924,
+              7471
+            ],
+            [
+              4637,
+              7443
+            ],
+            [
+              4641,
+              7400
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 308,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3215,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4543,
+              7444
+            ],
+            [
+              4893,
+              7478
+            ],
+            [
+              4886,
+              7552
+            ],
+            [
+              4784,
+              7542
+            ],
+            [
+              4782,
+              7560
+            ],
+            [
+              4629,
+              7545
+            ],
+            [
+              4632,
+              7508
+            ],
+            [
+              4538,
+              7499
+            ],
+            [
+              4543,
+              7444
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 306,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    {
+      "combinedIndex": 3218,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4744,
+              7557
+            ],
+            [
+              4877,
+              7570
+            ],
+            [
+              4870,
+              7633
+            ],
+            [
+              4820,
+              7627
+            ],
+            [
+              4819,
+              7641
+            ],
+            [
+              4735,
+              7631
+            ],
+            [
+              4744,
+              7557
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 309,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    }
+  ],
+  "selectedCombinedIndices": [
+    3182
+  ],
+  "identityApproved": false,
+  "approval": "候補のみ・manifest未反映",
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/gunma/source-conditions.json",
+  "unionGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4923.0,
+          6932.0
+        ],
+        [
+          5094.0,
+          6967.0
+        ],
+        [
+          5081.0,
+          7031.0
+        ],
+        [
+          4910.0,
+          6996.0
+        ],
+        [
+          4923.0,
+          6932.0
+        ]
+      ]
+    ]
+  },
+  "pointMethod": "Shapely representative_point on union; no entrance/window positioning",
+  "pointXY": [
+    5002.0,
+    6981.5
+  ],
+  "coordinateCheck": {
+    "coordinate": {
+      "lat": 36.435848,
+      "lng": 139.2748967
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      5002.013937205076,
+      6981.497433573008
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "approximateAreaM2": 164.4412070036294,
+  "areaMethod": "tile polygon area * squared local WebMercator inverse scale; approximate, not surveyed",
+  "minimumRoundedBoundaryDistanceM": 3.9213027514082275,
+  "outerBoundaryTouched": false,
+  "sourceFragments": [
+    {
+      "combinedIndex": 3182,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4923,
+              6932
+            ],
+            [
+              5094,
+              6967
+            ],
+            [
+              5081,
+              7031
+            ],
+            [
+              4910,
+              6996
+            ],
+            [
+              4923,
+              6932
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": 0,
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58122,
+        "y": 25636
+      },
+      "sourceFeatureIndex": 273,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    }
+  ]
+}

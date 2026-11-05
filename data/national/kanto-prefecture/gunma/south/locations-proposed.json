@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "coordinate": {
+        "lat": 36.2974974,
+        "lng": 139.1103192
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json",
+        "snapshotSHA256": "439b60735b55f054d7113225c58a1eb11568451d541cbc07d25dc89617dabbf7",
+        "sourceLocator": "sewage-geometry.json sourceFragments/inspection; sewage-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "候補未承認。県公式配布本文と全体配置図全1頁、北矢印・滝川・女子大学・ポンプ棟と発電機棟を数値外形に比較。9近傍tile、buffer重複union、小数7桁前後内包。製品CRS限界はgeometry参照。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "coordinate": {
+        "lat": 36.3082027,
+        "lng": 139.0943769
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json",
+        "snapshotSHA256": "2be8a03493b96194e39a79d51419db8f118adbada5777eae0c724412664ec692",
+        "sourceLocator": "tamajuku-geometry.json sourceFragments/inspection; tamajuku-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "候補未承認。公式配布本文・施設図全体を道路・隣棟・外形凹凸と比較。9近傍tile、小数7桁前後内包。図面方位と製品CRS限界はgeometry参照。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "coordinate": {
+        "lat": 36.2721291,
+        "lng": 139.0724666
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json",
+        "snapshotSHA256": "6d80df11b08df5fd861a4201d8482000f852223f771b4e8d6a8561966aa0ca93",
+        "sourceLocator": "laran-geometry.json sourceFragments/inspection; laran-tiles.json 原tile/hash。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、PDL1.0。",
+        "checkedAt": "2026-11-06",
+        "actorType": "ai",
+        "verificationMethod": "候補未承認。公式配布本文・施設図全体を道路・隣棟・外形凹凸と比較。9近傍tile、小数7桁前後内包。図面方位と製品CRS限界はgeometry参照。"
+      }
+    }
+  ]
+}

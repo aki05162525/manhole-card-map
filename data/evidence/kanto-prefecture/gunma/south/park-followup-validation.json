@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "finishedAt": "2026-11-05T16:03:09.406799+00:00",
+  "command": "python data/work/kanto-prefecture/gunma/south/park-followup.py",
+  "exitCode": 0,
+  "checks": [
+    "町工事原本SHA256一致",
+    "本文に施設予約等仮設移転あり・カード文字なし",
+    "候補3件とlocations-proposed.json hash凍結一致",
+    "変更JSON parse成功"
+  ],
+  "frozenSHA256": {
+    "data/national/kanto-prefecture/gunma/south/locations-proposed.json": "3c1d29bebb04f97ee07cd9a3d002fe884556010de0a70564f295b04af1a5e739",
+    "data/evidence/kanto-prefecture/gunma/south/sewage-geometry.json": "439b60735b55f054d7113225c58a1eb11568451d541cbc07d25dc89617dabbf7",
+    "data/evidence/kanto-prefecture/gunma/south/tamajuku-geometry.json": "2be8a03493b96194e39a79d51419db8f118adbada5777eae0c724412664ec692",
+    "data/evidence/kanto-prefecture/gunma/south/laran-geometry.json": "6d80df11b08df5fd861a4201d8482000f852223f771b4e8d6a8561966aa0ca93"
+  },
+  "fullSuite": "未実行・調査記録のみ追加",
+  "changedSHA256": {
+    "data/evidence/kanto-prefecture/gunma/south/park-inspection.json": "c62590c2d7a7dd15c93c2ac4f65c2cc0fb2f9fd247556b3e91560a418d3279df",
+    "data/national/kanto-prefecture/gunma/south/outcomes.json": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62",
+    "data/national/kanto-prefecture/gunma/south/park-distribution-user-proposal.json": "5b35ea610db8c30167fc6c3dd391946c88fb3c015caaa3ce218816d023c23cf1"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T15:48:00.192300+00:00",
+  "command": "python3 one-off assert 5 unique outcomes,4 updates,sourceRefs exist,and all snapshotSHA256 match",
+  "exitCode": 0,
+  "facilityCount": 5,
+  "proposedLocationCount": 4,
+  "files": {
+    "data/national/kanto-prefecture/gunma/north/outcomes.json": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+    "data/national/kanto-prefecture/gunma/north/selection-proposed.json": "5dcbfa4d7aad1c534c40b98ed06b3abf8d6b9e1ee93445f53661d9cbb15e3a81",
+    "data/national/kanto-prefecture/gunma/north/locations-proposed.json": "1e48443699e82e99520e2ced2ed1a9082eacccfaf0f36a9603975dab05b13236",
+    "data/evidence/kanto-prefecture/gunma/north/yoshioka-geometry.json": "6c6ef199ca9afac9e57f823773a5aadc33956a5c0bb5a45910a42fc96ed29a9d",
+    "data/evidence/kanto-prefecture/gunma/north/numata-office-geometry.json": "743f83a5c4185a8c8f64c29ca12798c10f979c78c0a91be6dd1e2a0c84f05dbc",
+    "data/evidence/kanto-prefecture/gunma/north/terrace-geometry.json": "e88c78b9da822d79d38894836e1a6cb7b5996d842fc7c8e6e151a75f84119d85",
+    "data/evidence/kanto-prefecture/gunma/north/shibusan-geometry.json": "6c1b323f0125959549cd086791f4a53ea0642e224a8e71b050fa905f2455a86f"
+  },
+  "suiteRun": false,
+  "reason": "調査証拠のみ。県親が統合suiteを一括実行する。"
+}

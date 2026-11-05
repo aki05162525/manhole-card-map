@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-05T15:44:40.780809+00:00",
+  "result": "PASS",
+  "checks": [
+    "raw hash sewage-access",
+    "raw hash sewage-layout-page",
+    "raw hash sewage-plan",
+    "raw hash sewage-current-plan",
+    "raw hash sewage-access-map",
+    "raw hash park-about",
+    "raw hash tamajuku-about",
+    "raw hash laran-guide",
+    "raw hash laran-home",
+    "raw hash park-map",
+    "raw hash tamajuku-map",
+    "raw hash laran-map",
+    "raw hash park-plan",
+    "raw hash park-home",
+    "raw hash park-town",
+    "raw hash park-renovation",
+    "raw hash laran-tourism",
+    "raw hash laran-info",
+    "raw hash laran-facilitymap",
+    "raw hash laran-diagram",
+    "raw hash laran-facilitymap",
+    "sewage 9 raw tiles + decode + geometry + rounded containment",
+    "park 9 raw tiles + decode + geometry + rounded containment",
+    "tamajuku 9 raw tiles + decode + geometry + rounded containment",
+    "laran 9 raw tiles + decode + geometry + rounded containment"
+  ],
+  "scope": "原本hash/数値再デコード/候補geometry/丸め内包のみ。棟同定の独立承認や全suiteではない。"
+}

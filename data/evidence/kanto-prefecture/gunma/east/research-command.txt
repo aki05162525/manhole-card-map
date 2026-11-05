@@ -1,0 +1,9 @@
+import sys,json,time,datetime,hashlib,re
+from pathlib import Path
+sys.path.insert(0,'tools/national');from research_common import fetch_cached
+E=Path('data/evidence/kanto-prefecture/gunma/east');W=Path('data/work/kanto-prefecture/gunma/east')
+def write(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+def fetch(label,url):
+ p=E/'retrievals.json';rows=json.loads(p.read_text()) if p.exists() else [];start=time.monotonic();raw,m=fetch_cached(url,W/'cache','east-research-2026-11-05',timeout=25);rows.append(dict(label=label,elapsedSeconds=time.monotonic()-start,retrieval=m));write(p,rows);print(label,m.get('rawPath'),m['status'],flush=True);return raw,m
+if __name__=='__main__':
+ for label,url in zip(sys.argv[1::2],sys.argv[2::2]):fetch(label,url)

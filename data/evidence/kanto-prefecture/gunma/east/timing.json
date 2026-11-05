@@ -1,0 +1,50 @@
+[
+  {
+    "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+    "stage": "kiryu-primary-comparison",
+    "startedAt": "2026-11-05T15:32:18.146023+00:00",
+    "finishedAt": "2026-11-05T15:36:28.654964+00:00",
+    "elapsedWallSeconds": 250.508941,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  },
+  {
+    "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+    "stage": "maebashi-primary-comparison",
+    "startedAt": "2026-11-05T15:36:28.654979+00:00",
+    "finishedAt": "2026-11-05T15:38:08.807117+00:00",
+    "elapsedWallSeconds": 100.152138,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  },
+  {
+    "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+    "stage": "isesaki-primary-comparison",
+    "startedAt": "2026-11-05T15:38:08.807128+00:00",
+    "finishedAt": "2026-11-05T15:40:07.998940+00:00",
+    "elapsedWallSeconds": 119.191812,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  },
+  {
+    "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+    "stage": "midori-primary-comparison",
+    "startedAt": "2026-11-05T15:40:07.998950+00:00",
+    "finishedAt": "2026-11-05T15:46:00.713453+00:00",
+    "elapsedWallSeconds": 352.714503,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  },
+  {
+    "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+    "stage": "kiryu-orientation-verification",
+    "startedAt": "2026-11-05T15:46:00.713468+00:00",
+    "finishedAt": "2026-11-05T15:51:10.105584+00:00",
+    "elapsedWallSeconds": 309.392116,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  },
+  {
+    "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+    "stage": "midori-user-report-and-numeric-binding",
+    "startedAt": "2026-11-05T15:52:31.737390+00:00",
+    "finishedAt": "2026-11-05T15:53:20.419172+00:00",
+    "elapsedWallSeconds": 48.681782,
+    "measurementNote": "実時間区間。待ち/ツール/画像読解を含む。共通準備・県内統合・後の横断幾何計算を施設へ後付け配賦しない。"
+  }
+]

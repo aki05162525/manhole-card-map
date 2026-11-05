@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "facilities": {
+    "maebashi": {
+      "officialRead": "市配布原本をhash検証再読。2023-04-01より水道局から道の駅1階観光案内所に変更。配布継続と座標判断を分離。施設運営者HTML、2026.2パンフレット全2頁、HTMLリンクの施設図全1枚を視認。",
+      "pageScope": {
+        "maebashi-pdf": "2/2 pages visual; PDF title260203, metadata2026-02-22, printed2026.2",
+        "maebashi-map": "1/1 image visual; URI20250202 is filename only, no asserted survey date"
+      },
+      "orientation": "パンフレット2頁はNが左上、詳細施設図はNが右上。両者は90度異なる配置図。南西の上武道路R17、北東側外周カーブ、北西側第2駐車場を数値図の道路と照合。",
+      "buildingMatch": "パンフレットの観光案内所は農産物物販棟南西側・フードコート北東側の独立小矩形。詳細図21は物販16の左、マーケット広場の北西、フードコート/店舗4,5,6の北東。数値図5104が対応。5102=物販/温浴、5103=フードコート、5105=広場上の覆屋表現、5106=トイレ、5107=コンビニ、5108=ベーカリーを相互位置と形状で比較。",
+      "numericComparison": "5104は近傍9タイル中の中央タイルBldA index88。面積214.13㎡、四角形、タイル境界非接触。隣接施設を案内所として代用しない。数値面積の独立公式実測値は未取得。",
+      "stock": "市原本の在庫記載を配布継続/位置採否とは別扱い。今回在庫を再確認済として更新しない。",
+      "limitation": "建築図の実測寸法ではなく公式模式図と数値外形の対応推論。資料全体の縮尺精度、各GSI棟の更新日は不明。入口/室内窓口の測量ではない。",
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "checkedAt": "2026-11-06",
+      "baselineCheckedAt": "2026-11-05",
+      "evidenceKind": "独立原本取得/旧取得原本hash検証再読/視認による推論。利用者報告とは区別。",
+      "conditionsRef": "data/evidence/kanto-prefecture/gunma/source-conditions.json",
+      "numericalRef": "data/evidence/kanto-prefecture/gunma/east/maebashi-geometry.json",
+      "generalOriginals": "ignored data/workのみ。retrievals.jsonにURL/hash/取得日時。一般原本はGit再配布しない。"
+    },
+    "isesaki": {
+      "officialRead": "市カード本文をhash検証再読。伊勢崎駅前インフォメーションセンター休館日だけ上下水道局総務課で代替配布（土日祝年末年始不可、9-17）。庁舎案内と住所変更原本、全1外観写真、2020市報PDFを取得。",
+      "pageScope": {
+        "isesaki-map-pdf": "9 PDF pages text scanned; relevant page3 (printed4-5) visually inspected including north-arrow map. Other8 pages NOT visually inspected, no claim full visual reading.",
+        "isesaki-photo": "whole 307x230 image visual, low-resolution limitation"
+      },
+      "orientation": "2020市報3頁北矢印上。広瀬川西側、連取元町北交差点南東、上下水道局西の南北道路と南側横道路、川沿い道路の配置を9タイル道路図と比較。",
+      "buildingMatch": "庁舎写真の幅広い正面、中央南向き突出、右側翼を3856+4236の外形と比較。南に前庭/駐車場があり、西には別の小矩形3747と北西に3小棟3743-45。市専用ページのllは探索窓の補助のみ、採用点は同定した数値主棟内から新計算。西小棟3747はunionに含めない。",
+      "numericComparison": "主棟はz16 x58105/58106 y25664のBldA index493/index23に分かれ、bufferで重複する同一輪郭をunion。tile x境界を跨ぐが9タイル外側境界非接触。union781.40㎡。小棟/案内所/問合せ先の浄化センターは除外。",
+      "addressHistory": "2024-09-14区画整理による連取町1952から連取元町170-3の住所変更であり、建物移転と判断しない。現案内と旧写真が一致。",
+      "stock": "公式カード本文には在庫有り。ただし記載更新日2026-06-29、新規在庫実確認ではない。",
+      "limitation": "全9頁中8頁は文字走査のみ。公式案内図は敷地レベル、棟同定は低解像外観写真/道路と数値形状を併用した推論。建築面積の独立公式数値未取得。",
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "checkedAt": "2026-11-06",
+      "baselineCheckedAt": "2026-11-05",
+      "evidenceKind": "独立原本取得/旧取得原本hash検証再読/視認による推論。利用者報告とは区別。",
+      "conditionsRef": "data/evidence/kanto-prefecture/gunma/source-conditions.json",
+      "numericalRef": "data/evidence/kanto-prefecture/gunma/east/isesaki-geometry.json",
+      "generalOriginals": "ignored data/workのみ。retrievals.jsonにURL/hash/取得日時。一般原本はGit再配布しない。"
+    },
+    "kiryu": {
+      "officialRead": "カード配布本文、2026-05-15各階案内、現1F図、2026-04-06駐車場公開案内・単頁配置図、庁舎概要を読み、土日祝1F警備・宿日直室が2024竣工新庁舎の窓口であると確認。旧P05/施設qは採用しない。",
+      "pageScope": {
+        "kiryu-parking-pdf": "1/1 visual",
+        "kiryu-floor1": "1/1 visual",
+        "kiryu-design2": "5/5 visual (printed7-11), 2022-07-27 metadata; 2022設計なので2026実配置図/現階案内を優先"
+      },
+      "orientation": "駐車場図単頁は北矢印なし。追加実施設計7頁の真北は図右上、8-10頁もN右上。北上と仮定せず、南東新川橋通り、北東市道10252、北西市道10251、南西側文化会館を同定。市道と文化会館の対応で数値9タイルの市役所区域を照合。初期に図右を東と仮置きした推測は撤回。",
+      "buildingMatch": "現新庁舎は三角形頂点を切った六角形。1F通用口近傍に警備宿日直室。2022配置から同敷地北東側の新棟と、旧庁舎撤去後の駐車場を区別。数値図3139/3140/3147の矩形・凹型旧配置と、南西の三角形3116（別棟）を比較し、新庁舎六角形として一致するポリゴンを認めない。",
+      "numericComparison": "9枚全体を描画、周囲3道路・文化会館方向・旧棟配置を視認。比較した旧棟の面積/原タイル参照はkiryu-geometry.json。現概要建築面積3477.69㎡と2022計画3388.60㎡は時点が異なるので同一値に揃えない。旧形状から現在の建物代表点を生成しない。",
+      "stock": "配布関係/窓口稼働と当日在庫を別判断。現在の在庫確認を実施していない。",
+      "limitation": "optimal_bvmap 2026-07製品版でも個別建物の更新年月は不明。現新棟の外形未収録と判断する範囲は取得9タイルであり、他の測量原典の不存在を主張しない。新測量図/更新数値原典が次の解消条件。",
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "checkedAt": "2026-11-06",
+      "baselineCheckedAt": "2026-11-05",
+      "evidenceKind": "独立原本取得/旧取得原本hash検証再読/視認による推論。利用者報告とは区別。",
+      "conditionsRef": "data/evidence/kanto-prefecture/gunma/source-conditions.json",
+      "numericalRef": "data/evidence/kanto-prefecture/gunma/east/kiryu-geometry.json",
+      "generalOriginals": "ignored data/workのみ。retrievals.jsonにURL/hash/取得日時。一般原本はGit再配布しない。"
+    },
+    "midori": {
+      "officialRead": "市配布本文をhash検証再読し観光協会1034-5・9-16・年末年始休業を確認。施設自体の紹介ページは旧奥村酒造をリノベーションした建物と明示。現外観2点+室内3点、2024.3まちあるきマップ全2頁を取得し全画像・全頁を視認。",
+      "pageScope": {
+        "midori-map": "2/2 visual; printed2024.3, PDF metadata2024-06-23",
+        "midori-photo0..4": "5/5 visual; filename250617 is filename date, not independently verified photography date"
+      },
+      "orientation": "まちあるき図はN上、本町通り西側・コノドント館北側に協会ラベル。現外観は白黒2階切妻・正面左入口・隣に石壁と低い蔵。数値道路と博物館Annoの周辺を絞り、3219/3220/3183および南の3217/3215/3218を図示比較。",
+      "buildingMatch": "利用者回答後、コノドント館の北にある最初の東西道路と本町通りの交点直近北西の数値矩形3182へ対応付け。南の3183/3219や北隣3180を除外。公式外観の切妻二階建て・石壁/低い隣棟と矛盾しないが、外観単独の独立同定ではない。",
+      "numericComparison": "利用者報告の位置関係を取得済9タイルの道路/周囲棟に照合し3182を選択。中央タイルBldA sourceFeatureIndex273、約164.44㎡、タイル/外側境界非接触、代表点丸め後内包。数値詳細はmidori-geometry.json。",
+      "stock": "配布本文には具体的在庫数・当日在庫の証拠なし。協会営業と配布在庫を同一視しない。",
+      "limitation": "棟の地理的対応は利用者報告を含む。公式町歩き図のラベルや写真だけで独立に屋根を一意同定したとは扱わない。候補は未承認で独立レビューを要する。",
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "checkedAt": "2026-11-06",
+      "baselineCheckedAt": "2026-11-05",
+      "evidenceKind": "独立原本取得/旧取得原本hash検証再読/視認による推論。利用者報告とは区別。",
+      "conditionsRef": "data/evidence/kanto-prefecture/gunma/source-conditions.json",
+      "numericalRef": "data/evidence/kanto-prefecture/gunma/east/midori-geometry.json",
+      "generalOriginals": "ignored data/workのみ。retrievals.jsonにURL/hash/取得日時。一般原本はGit再配布しない。",
+      "initialUnresolvedFinding": "町歩き図ラベルは広域模式位置で指示線が個々の屋根へ到達せず、密集する正面小棟のうち3219等を一意に結びつけるには至らない。写真は棟の外観を示すが上からの輪郭・隣棟番地がなく確定できない。Google pb viewport/博物館ラベル点は採用しない。",
+      "humanReportRef": "data/evidence/kanto-prefecture/gunma/east/human-report-midori.json"
+    }
+  },
+  "commonLimits": [
+    "GSI製品CRSの根拠は親source-conditions.jsonの固定readme→地理院タイル仕様の解釈を継承。製品単独での測地系明記とは主張しない。",
+    "PDL1.0、試験公開、基本測量成果ではない。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。小数7桁は測量精度ではない。",
+    "全suite未実施: research-only child、親が県全体統合検証。"
+  ]
+}
