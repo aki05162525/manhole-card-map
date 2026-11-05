@@ -41,7 +41,9 @@ for (
       await page.waitForFunction(
         () => window.prototype?.metrics.ready > 0,
         null,
-        { timeout: 90000 },
+        {
+          timeout: 90000,
+        },
       );
       // 起動計測と同じく、ピンを1つ選んで閉じてから共通の操作列を実行する。
       const point = await page.evaluate(() =>

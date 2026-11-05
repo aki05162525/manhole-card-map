@@ -3,6 +3,49 @@
 外部公開しない検証用の画面である。
 操作方法と測定結果は [技術検証6](../docs/verification/06-map-prototype.md) を参照する。
 
+開発ツールはルートの `mise.toml` に固定する。Bun はパッケージ管理と
+スクリプト起動に使い、Vite・Vitest・既存の計測スクリプトは Node.js で動かす。
+
+```sh
+mise trust
+mise install
+cd web
+bun install --frozen-lockfile
+bun run hooks:install
+bun run lint
+bun run format:check
+bun run typecheck
+bun run test
+```
+
+mise をシェルで有効化していない場合は、各コマンドに `mise exec --` を付ける。
+依存関係は `web/bun.lock` に保存する。lefthook は明示的にインストールする。
+pre-commit でフロントの lint・format・型検査と Go テスト、pre-push で Vitest を実行する。
+整形は `bun run format`。Oxlint の標準 correctness ルールをエラーとして扱う。
+
+Vitest の対象は `src/**/*.test.ts` と `scripts/**/*.test.ts`。
+`bun run test:watch` で変更を監視する。フロントの挙動テストはまだないため、
+現在は `passWithNoTests: true` とし、0 件を成功扱いする。
+最初の機能を TDD で実装するときにこの設定を削除し、失敗するテストから始める。
+0 件の成功は機能検証の完了を意味しない。
+
+クリーン checkout で実データなしにビルド経路を確認するには、明示的に次を実行する。
+
+```sh
+bun run build:fixture
+```
+
+このモードだけは `dist-fixture/` に空の合成カードデータ、圧縮ファイル、
+Service Worker と `FIXTURE_ONLY.txt` を生成する。
+`public/` と通常ビルドの `dist/` は変更しない。
+背景地図・フォント・スプライトを含まないため、地図表示・操作・オフライン動作の
+検証には使えない。実データの代替や公開用成果物ではない。
+通常の `bun run build` は素材が欠けると失敗し、fixture にフォールバックしない。
+
+GitHub Actions は Go テスト、フロントの lint・format・型検査・Vitest と
+fixture ビルドを実行する。`web-build-fixture-<SHA>` を7日間保存するだけで、
+Pages 等へのデプロイは行わない。
+
 リポジトリのルートで保存済みデータから生成し、背景地図を準備する。
 GKP にアクセスする処理はない。
 
@@ -10,9 +53,9 @@ GKP にアクセスする処理はない。
 go run ./cmd/builddata
 bash web/scripts/fetch-map.sh
 cd web
-pnpm install --frozen-lockfile
-pnpm build
-pnpm preview
+bun install --frozen-lockfile
+bun run build
+bun run preview
 ```
 
 `http://127.0.0.1:4173/?engine=a` が Leaflet、`?engine=b` が MapLibre である。
@@ -25,8 +68,8 @@ pnpm preview
 借用住所、町字や丁目などの粗い座標、自治体不一致は参考位置にも含めない。
 
 ```sh
-pnpm typecheck
-pnpm sizes
+bun run typecheck
+bun run sizes
 node scripts/measure.mjs
 node scripts/lighthouse.mjs
 node scripts/interaction.mjs

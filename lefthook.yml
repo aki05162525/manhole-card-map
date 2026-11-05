@@ -1,0 +1,15 @@
+# Run from the repository root. Install explicitly with: cd web && bun run hooks:install
+lefthook: web/node_modules/.bin/lefthook
+pre-commit:
+  parallel: true
+  commands:
+    frontend:
+      root: web/
+      run: bun run lint && bun run format:check && bun run typecheck
+    go-test:
+      run: go test ./...
+pre-push:
+  commands:
+    frontend-test:
+      root: web/
+      run: bun run test

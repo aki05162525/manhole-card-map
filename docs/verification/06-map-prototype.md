@@ -23,7 +23,9 @@ Leaflet と地理院のラスタタイルを案A、MapLibre GL JS と自前配�
 | 背景の配信先 | 地理院のサーバー | ローカルサーバー。フォントとアイコンも同じオリジン |
 
 Vite 8.3.5 と TypeScript 7.0.2 を使い、UI フレームワークは使わない。
-依存関係は pnpm 10.33.2 と `web/pnpm-lock.yaml` で固定した。
+検証時の依存関係は pnpm 10.33.2 と `web/pnpm-lock.yaml` で固定した。
+現在の開発基盤は Bun と `web/bun.lock` に移行している。以下の計測記録は当時のもので、
+現行のセットアップ手順と CI 用 fixture の制限は [web/README.md](../../web/README.md) を参照する。
 A と B を動的に読み分け、初回の起動完了までに他方の描画ライブラリを要求しない。
 Service Worker の保存は起動完了後に始め、両方の画面を保存する。
 
