@@ -1,0 +1,25 @@
+import json,hashlib,sys,subprocess
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import rounded_coordinate
+E=Path('data/evidence/kanto-prefecture/kanagawa/north');checked=[]
+def check(p,h):
+ assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p
+ checked.append({'path':str(p),'sha256':h})
+for r in json.load(open(E/'retrievals.json'))['records']:
+ if r.get('sha256'):check(r['rawPath'],r['sha256'])
+for f in E.glob('*/tile-inputs.json'):
+ for r in json.load(open(f))['rows']:check(r['path'],r['sha256'])
+for f in list(E.glob('*/numeric.json'))+list(E.glob('*/exploratory-probe*.json')):
+ j=json.load(open(f));r=rounded_coordinate(j['sourceFeature']['geometry'],j['baseTile'],j['pointXY']);assert r['coordinate']==j['coordinate'] and r['mechanicalChecksPassed'];check(f,hashlib.sha256(f.read_bytes()).hexdigest())
+for f in E.rglob('*.json'):
+ j=json.load(open(f))
+ def walk(o):
+  if isinstance(o,dict):
+   if o.get('rawPath') and o.get('sha256'):check(o['rawPath'],o['sha256'])
+   for v in o.values():walk(v)
+  elif isinstance(o,list):
+   for v in o:walk(v)
+ if f.name!='validation.json':walk(j)
+print('PASS: raw/tile hashes and 5 original+rounded polygon containment; JSON parse')
+(E/'validation.json').write_text(json.dumps({'command':'mise exec -- uv run --with mapbox-vector-tile==2.2.0 python /tmp/kanagawa-north-validate.py','exitCode':0,'log':'PASS: raw/tile hashes and 5 original+rounded polygon containment; JSON parse','gitHead':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'inputHashes':checked,'scope':'research-only numerical verification; no full-suite or independent identity approval','asOf':'2026-11-05'},ensure_ascii=False,indent=2)+'\n')

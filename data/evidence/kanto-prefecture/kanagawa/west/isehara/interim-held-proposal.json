@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "approvedForIntegration": false,
+  "reason": "2026-11-06利用者回答との敷地方位不一致を未解消。数値再照合資料のみ。",
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "coordinate": {
+        "lat": 35.3872848,
+        "lng": 139.2971013
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+        "snapshotSHA256": "60f635a6f1bca5496bbdebddfb977d48caf26874703ec3482171f9b585ab210b",
+        "sourceLocator": "PMTiles z16/58126/25872 BldA[37]。data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.jsonの公式図/周囲との実比較。出典:国土地理院最適化Vector、加工:manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。XYZ逆投影、extent4096、ポリゴン妥当性と小数7桁丸め前後内包検査。製品固有CRS・同定・利用条件の独立レビューは未了。入口測量なし。"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "identity": {
+        "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "address": "神奈川県伊勢原市神戸120"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "coordinate": {
+          "lat": 35.3872848,
+          "lng": 139.2971013
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+          "snapshotSHA256": "60f635a6f1bca5496bbdebddfb977d48caf26874703ec3482171f9b585ab210b",
+          "sourceLocator": "PMTiles z16/58126/25872 BldA[37]。data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.jsonの公式図/周囲との実比較。出典:国土地理院最適化Vector、加工:manhole-card-map。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認調査候補。XYZ逆投影、extent4096、ポリゴン妥当性と小数7桁丸め前後内包検査。製品固有CRS・同定・利用条件の独立レビューは未了。入口測量なし。"
+        }
+      },
+      "adoptionSHA256": "9eb7901e29979b8933f77661c251dd2a352c55122e92196e76c48d519c39a0af",
+      "sourceVersion": "GSI optimal_bvmap PMTiles 2026-07-01; 未承認候補"
+    }
+  ],
+  "userFollowupRef": "data/evidence/kanto-prefecture/kanagawa/west/isehara/user-followup.json",
+  "superseded": true,
+  "finalDisposition": "敷地全体の北西/北東という相対呼称は未解消として採用根拠から除く。位置図の棟内記名と配布本文・形状/隣接/道路対応は直接評価でき、同等に一致する別棟を確認しなかったため、BldA37の未承認候補を維持。"
+}

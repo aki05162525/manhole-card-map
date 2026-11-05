@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "sourceProduct": "optimal_bvmap-v1 PMTiles",
+  "facts": [
+    "公式READMEを再取得し過去原本hash41a7a4d…と一致。PMTilesの2026-07-01と従来XYZの2023-10-01は別版。",
+    "READMEは地理院ラスタと同じ配信方式と明記し一般タイル仕様へリンク。一般仕様原本は国内JGD2011、Mercator/XYZを記載。",
+    "PMTiles metadataをheader指定offset2503,length4168から取り出した。metadataにcrsキーはなく、ヘッダも境界緯度経度とズーム等で測地系名の字段はない。",
+    "GSI標高改定ページをweb toolで読解。JGD2024への改称と水平方向の要素不変を説明する。直接urllib原本取得はSSL UNSAFE_LEGACY_RENEGOTIATION_DISABLEDで失敗し取得成功に数えない。"
+  ],
+  "inference": "製品README→地理院タイル仕様のリンクから同XYZ逆投影の使用を説明できるが、配信方式の一致だけで測地系の製品固有明記があるとはしない。JGD2024という名前だけで候補の水平座標を変換しない。",
+  "decision": "計算方式・版の同定は継続利用。製品固有CRS適用の承認は県外独立レビューに渡す。追加の同一調査を県内各子に反復要求しない。",
+  "references": [
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/annex-followup/retrievals.json",
+      "sha256": "0e227f1c04c57f3f6ad602eb968d89e76576a303a5ba27901abc38418c71d413"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/annex-followup/metadata-retrievals.json",
+      "sha256": "63fb174096a68c15976f4605716255ff252308653b94499d87a27049206d5a57"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/annex-followup/pmtiles-metadata.json",
+      "sha256": "dc4efdb58507c57142472807577c0de3758ecf0456bd5ad4cc4b1a9390429e8e"
+    }
+  ],
+  "webOnlySource": {
+    "url": "https://www.gsi.go.jp/sokuchikijun/hyoko2024rev.html",
+    "rawAcquired": false,
+    "usedForAdoption": false
+  },
+  "adoptionApproved": false
+}

@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58137,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58137-25876.pbf.gz",
+      "sha256": "8545c9e3ee6f22d4abb136979ca7de406ad142cff916a1b82b9314d6c0688c60"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58138,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25876.pbf.gz",
+      "sha256": "b03fa1040718c74b6bdf206c04a70d2c0081faeb87324384f48d8715d9614d5e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58139-25876.pbf.gz",
+      "sha256": "3f52b4f310fe0c69fb7f2d90ecd5301e179f906a67609b18dfa528257aff0bf2"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58137,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58137-25877.pbf.gz",
+      "sha256": "d1aa3cf2b124b0caae301cc020834ab60dd171202c30020134c3ddb55df6821f"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58138,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25877.pbf.gz",
+      "sha256": "9a3d0756aecb00db2d0ba6d77017c2d422d11c03141a0cd89144f82c7bb709c1"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58139-25877.pbf.gz",
+      "sha256": "8343defbdf24654a40ea3927dc28d4fbb08cf9ba43e3759c4b23341e6fda7550"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58137,
+        "y": 25878
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58137-25878.pbf.gz",
+      "sha256": "d54b22e8ee93dc6a58a60c2c5b5e8078ba637b366e1f16c2c21390333e2e4788"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58138,
+        "y": 25878
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58138-25878.pbf.gz",
+      "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25878
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya/tile-16-58139-25878.pbf.gz",
+      "sha256": "5bfb71390fb93977a7c4fa484f72ece21d657a9f639ce0010729e95336dfb931"
+    }
+  ],
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles"
+}

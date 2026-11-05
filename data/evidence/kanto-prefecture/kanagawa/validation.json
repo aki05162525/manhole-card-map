@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "baselineCommit": "4f5253b8973cb388deecff0bc051f36770e77579",
+  "inputSHA256": {
+    "data/evidence/kanto-prefecture/kanagawa/range-retrievals.json": "5a7165ff1b61f48f0e09d0534516bc7bc38c843d3f2b1146eaa85ff90bce66cd",
+    "data/evidence/kanto-prefecture/kanagawa/baseline.json": "b175065a1367c8c430f5eec0a69e95e6ecb4a1e8058cd382bb43ce8e8fd0028b",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25830.pbf.gz": "945763cd363afbbdf801007c71805deb431ce819401d3bd31fd1f7115cae4cd1",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-detail.svg": "d23ad6d49b17d1dfddfdc1459b60a80617676ac9bd1c992365db296c4ca3d4dd",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25832.pbf.gz": "573be3392d8715d78ee9ff47d70c0e2a1a48d41af848fe6dffaa8a0edbb7e79a",
+    "data/evidence/kanto-prefecture/kanagawa/rights.json": "0702e8c7e190d33146697eac84364623c2add23981bb80225600422a229b25ea",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25830.pbf.gz": "975e8acfe9c15744055851677b9bf8523929955448211248fef794494e2d2b55",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25830.pbf.gz": "ec598edf5b935b70aedffa2abd567d8928674422f5cc81759d2cecb8663915a7",
+    "data/evidence/kanto-prefecture/kanagawa/history-extract.json": "569f18733d6b402d90cf26eeed6a497ae4ed18475a2fee799ba961f71cb228d7",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-all.svg": "c02e1d3d6f88d1148de719e28828d024acb75592eff021851fd88a4a0091b145",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25831.pbf.gz": "d9d8520111e17967f8d7794f04b9624462c6c8c051bb69509b88f3c900a0fc61",
+    "data/evidence/kanto-prefecture/kanagawa/timing.json": "becb3d9407112124f829060ecc803b5153516672d65e2fca4ac7941cb98c7cff",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json": "5435e7f4f43fec017edb536b5be1ab65f75d7846dd028353c486ccafbeee0eb1",
+    "data/evidence/kanto-prefecture/kanagawa/retrievals.json": "0b6dfca7253e02964e5faf9f4ea13f5a35ef2daf8c4a055026725784d9db61cb",
+    "data/evidence/kanto-prefecture/kanagawa/detail-command.py.txt": "979e2e935887f8ec4817fdf6f573eb18f70849de26daaba21521488fc17cfa17",
+    "data/evidence/kanto-prefecture/kanagawa/green.log": "9082a62b0f3fc1546a7c2a6fcffed9c06e8de39063a9bb626ac8d92c9cd93f0f",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25832.pbf.gz": "49ed8d58525a8880aa0795cdda3f2cc318a99cca8933d4e772be01c39f02af94",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25831.pbf.gz": "84e931c7c74b35072f2c8d50b9a573d0b1c7900841272140c7ced7aee600a92e",
+    "data/evidence/kanto-prefecture/kanagawa/red.log": "c2ce98c72f97c075fdeabdf809ac812c748e6bed7647b02322bbcfcb073a5931",
+    "data/evidence/kanto-prefecture/kanagawa/inspection.json": "5a725af490bcb025a01b23052f91360cd6089dccfdfd6904ab89f61afbbc385f",
+    "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25832.pbf.gz": "226c7c63a7dcf3f423aed0f6276ecf9677fdd189b51e75c3a2ab2b801a36dff8",
+    "data/evidence/kanto-prefecture/kanagawa/acquisition-command.py.txt": "a6c17cdc30063673edf360256f9d74a4c5a02d63bb89b3a83d12b21c3fb45cab",
+    "data/evidence/kanto-prefecture/kanagawa/tile-inputs.json": "e8b7622255627e59fa2a09513d4f25f1295d3616fa3f558f0df2860310be602d",
+    "data/national/kanto-prefecture/kanagawa/outcomes.json": "1ce94f0ee1623e3ec96503a25b79d263933ec96075267d2dba868ca06f7240e8",
+    "data/national/kanto-prefecture/kanagawa/selection-proposed.json": "cfe0f86b86a3e99a825e1c2261b50cfa5d6d8f275c7f24a809c74992726df306",
+    "data/national/kanto-prefecture/kanagawa/lifecycle-proposed.json": "b532a89bc0cca2f1980bc2afd99555e96baceb1a0a1f6797f9d511cf75424b49",
+    "data/national/kanto-prefecture/kanagawa/scope.json": "1af356226fb26103e67f2171f7f9be845a89a84527f439f19ca9f828430b3c3b",
+    "data/national/kanto-prefecture/kanagawa/human-questions-proposed.json": "9e464440f0c2b04a8c7f3c121fcd2309fb72310fa1b6971f1e788b3c79ed2b9b",
+    "data/national/kanto-prefecture/kanagawa/locations-proposed.json": "d174f191d06781c946d04fa904782a0cab973d831517cfa41e53e954fd40d363",
+    "tools/national/test_kanto_kanagawa.py": "0b27b4951ad65ad03803b976606f203e540ca9b07f334782999569ccbfccca67",
+    "tools/national/research_common.py": "905384e54affc7325f08a302f4417483d3b5d277bf878eec8d78a7618b4a4adf",
+    "tools/national/assemble.py": "9bfbeff5ae3707696d2eecf23f85fab83cd3dc678ab32353b446dc6c02ead988",
+    "tools/national/location_lifecycle.py": "44f58e04eb28f7649b4a63a5fd7435e9d973ba8ffa484e71dde2b16dd63d1942"
+  },
+  "checks": [
+    {
+      "command": "python3 -B tools/national/assemble.py --out /tmp/kanagawa-ledger.json --audit-out /tmp/kanagawa-audit.json",
+      "exitCode": 0,
+      "resultRef": "baseline.json"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_kanto_kanagawa.py -v",
+      "phase": "RED before scope/proposal creation",
+      "exitCode": 1,
+      "log": "red.log"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_kanto_kanagawa.py -v",
+      "phase": "GREEN final code",
+      "exitCode": 0,
+      "log": "green.log"
+    }
+  ],
+  "fullSuite": "通常commitフックで実行。実行commit・終了コード・ログはdocs/verification/kanto-kanagawa.mdの後続追記に保存。",
+  "unverified": [
+    "独立レビュー",
+    "CRS適用承認",
+    "13施設の数値照合",
+    "全施設純作業時間",
+    "UI/ブラウザー（変更対象外）"
+  ]
+}

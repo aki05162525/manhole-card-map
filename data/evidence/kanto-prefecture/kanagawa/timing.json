@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "sessions": [
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "task": "保存原本とVectorの再照合",
+      "startedAt": "2026-11-05T14:46:17.130923+00:00",
+      "finishedAt": "2026-11-05T14:51:49.871950+00:00",
+      "elapsedSeconds": 332.741,
+      "scope": "施設照合開始から仮点記録までのwall clock。HTTP待ち中の全県棚卸しも含み、専有作業時間ではない。施設別純作業時間の要件は未達。"
+    }
+  ],
+  "unmeasured": "冒頭の共通指示・全対象棚卸しは施設別未計測。後付け配賦しない。"
+}

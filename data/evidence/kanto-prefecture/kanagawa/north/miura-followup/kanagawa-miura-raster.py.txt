@@ -1,0 +1,12 @@
+import json,sys
+from pathlib import Path
+from PIL import Image
+sys.path.insert(0,'tools/national');from research_common import fetch_cached
+E=Path('data/evidence/kanto-prefecture/kanagawa/north');W=Path('data/work/kanto-kanagawa/north');g=sys.argv[1]
+r=json.load(open(E/g/'tile-inputs.json'))['rows'];records=[];out=Image.new('RGB',(768,768),'white');xs=[v['tile']['x'] for v in r];ys=[v['tile']['y'] for v in r]
+for v in r:
+ t=v['tile'];url=f"https://cyberjapandata.gsi.go.jp/xyz/std/16/{t['x']}/{t['y']}.png";b,m=fetch_cached(url,W/'raster-cache','issue62-north-2026-11-05');records.append(m)
+ if b:
+  import io
+  out.paste(Image.open(io.BytesIO(b)),((t['x']-min(xs))*256,(t['y']-min(ys))*256))
+out.save(W/'miura-followup'/'std.png');(E/'miura-followup'/'raster-retrievals.json').write_text(json.dumps({'use':'visual orientation only; not adopted coordinate source','records':records},indent=2)+'\n')

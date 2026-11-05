@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-integration-10",
+  "reportedAt": "2026-11-06",
+  "asOf": "2026-11-05",
+  "actorType": "human",
+  "source": "user report relayed by prefecture parent",
+  "statement": "駅東側広場に面する高架下、改札の北東側区画。東向き改札を出て左、独立小屋でなく高架橋/駅舎構造物1F北東区画。",
+  "reportedSources": [
+    "https://miura-info.ne.jp/tourismassociation/",
+    "京急駅構内/駅前配置図（個別URL未提供）"
+  ],
+  "independentlyVerified": false,
+  "replacesQuestion": "north/outcomes 三浦海岸駅前観光案内所の高架下区画方位質問",
+  "adoptionApproved": false
+}

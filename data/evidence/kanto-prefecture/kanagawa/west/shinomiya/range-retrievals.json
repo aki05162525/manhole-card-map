@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=0-126"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.347647+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 0-126/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.392512+00:00",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+      "bytes": 127,
+      "elapsedSeconds": 0.045449
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=127-2502"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.392968+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 127-2502/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.438957+00:00",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+      "bytes": 2376,
+      "elapsedSeconds": 0.046225
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=2197604-2206941"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.440261+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 2197604-2206941/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.485370+00:00",
+      "sha256": "aa99772c3ef45dbb00604231daabda34974a7e2f1728c6185cdf7209ae9d15d5",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/aa99772c3ef45dbb00604231daabda34974a7e2f1728c6185cdf7209ae9d15d5.raw",
+      "bytes": 9338,
+      "elapsedSeconds": 0.045374
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289667329-10289675152"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.489863+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289667329-10289675152/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.572192+00:00",
+      "sha256": "8545c9e3ee6f22d4abb136979ca7de406ad142cff916a1b82b9314d6c0688c60",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/8545c9e3ee6f22d4abb136979ca7de406ad142cff916a1b82b9314d6c0688c60.raw",
+      "bytes": 7824,
+      "elapsedSeconds": 0.082612
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289622870-10289639607"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.577328+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289622870-10289639607/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.624723+00:00",
+      "sha256": "b03fa1040718c74b6bdf206c04a70d2c0081faeb87324384f48d8715d9614d5e",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/b03fa1040718c74b6bdf206c04a70d2c0081faeb87324384f48d8715d9614d5e.raw",
+      "bytes": 16738,
+      "elapsedSeconds": 0.047813
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289616238-10289622869"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.629884+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289616238-10289622869/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.678379+00:00",
+      "sha256": "3f52b4f310fe0c69fb7f2d90ecd5301e179f906a67609b18dfa528257aff0bf2",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/3f52b4f310fe0c69fb7f2d90ecd5301e179f906a67609b18dfa528257aff0bf2.raw",
+      "bytes": 6632,
+      "elapsedSeconds": 0.048761
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289650690-10289667328"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.683423+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289650690-10289667328/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.741779+00:00",
+      "sha256": "d1aa3cf2b124b0caae301cc020834ab60dd171202c30020134c3ddb55df6821f",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/d1aa3cf2b124b0caae301cc020834ab60dd171202c30020134c3ddb55df6821f.raw",
+      "bytes": 16639,
+      "elapsedSeconds": 0.058682
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289639608-10289650689"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.747191+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289639608-10289650689/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.801732+00:00",
+      "sha256": "9a3d0756aecb00db2d0ba6d77017c2d422d11c03141a0cd89144f82c7bb709c1",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/9a3d0756aecb00db2d0ba6d77017c2d422d11c03141a0cd89144f82c7bb709c1.raw",
+      "bytes": 11082,
+      "elapsedSeconds": 0.055015
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289611781-10289616237"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.806920+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289611781-10289616237/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.839680+00:00",
+      "sha256": "8343defbdf24654a40ea3927dc28d4fbb08cf9ba43e3759c4b23341e6fda7550",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/8343defbdf24654a40ea3927dc28d4fbb08cf9ba43e3759c4b23341e6fda7550.raw",
+      "bytes": 4457,
+      "elapsedSeconds": 0.033266
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289731539-10289751717"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.844959+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289731539-10289751717/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.905070+00:00",
+      "sha256": "d54b22e8ee93dc6a58a60c2c5b5e8078ba637b366e1f16c2c21390333e2e4788",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/d54b22e8ee93dc6a58a60c2c5b5e8078ba637b366e1f16c2c21390333e2e4788.raw",
+      "bytes": 20179,
+      "elapsedSeconds": 0.060431
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289597455-10289606724"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.909841+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289597455-10289606724/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:17.986644+00:00",
+      "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261.raw",
+      "bytes": 9270,
+      "elapsedSeconds": 0.077177
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10289606725-10289611780"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.991772+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10289606725-10289611780/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:25:18.050634+00:00",
+      "sha256": "5bfb71390fb93977a7c4fa484f72ece21d657a9f639ce0010729e95336dfb931",
+      "rawPath": "data/work/kanto-kanagawa/west/shinomiya/range-cache/5bfb71390fb93977a7c4fa484f72ece21d657a9f639ce0010729e95336dfb931.raw",
+      "bytes": 5056,
+      "elapsedSeconds": 0.059142
+    }
+  ]
+}

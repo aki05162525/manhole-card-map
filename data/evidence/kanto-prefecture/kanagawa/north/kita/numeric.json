@@ -1,0 +1,131 @@
+{
+  "coordinate": {
+    "lat": 35.5320363,
+    "lng": 139.6982029
+  },
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "roundedTileXY": [
+    5249.99400562048,
+    4270.025739341974
+  ],
+  "mechanicalChecksPassed": true,
+  "identityApproved": false,
+  "crsApproved": false,
+  "facilityId": "facility:kanto-south-a60af499924663813476",
+  "sourceFeature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            4867,
+            4016
+          ],
+          [
+            4938,
+            4085
+          ],
+          [
+            4990,
+            4032
+          ],
+          [
+            5056,
+            4096
+          ],
+          [
+            5209,
+            4244
+          ],
+          [
+            5265,
+            4185
+          ],
+          [
+            5331,
+            4254
+          ],
+          [
+            5278,
+            4309
+          ],
+          [
+            5202,
+            4409
+          ],
+          [
+            5127,
+            4337
+          ],
+          [
+            4681,
+            4804
+          ],
+          [
+            4355,
+            4489
+          ],
+          [
+            4732,
+            4096
+          ],
+          [
+            4751,
+            4077
+          ],
+          [
+            4765,
+            4090
+          ],
+          [
+            4828,
+            4025
+          ],
+          [
+            4841,
+            4037
+          ],
+          [
+            4861,
+            4016
+          ],
+          [
+            4867,
+            4016
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "id": "58199-25840-BldA-33",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 33,
+    "sourceTile": {
+      "z": 16,
+      "x": 58199,
+      "y": 25840
+    },
+    "sourceFeatureIndex": 33,
+    "tileBoundaryTouched": true,
+    "outerBoundaryTouched": false
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58198,
+    "y": 25839
+  },
+  "extent": 4096,
+  "pointXY": [
+    5250.0,
+    4270.0
+  ],
+  "geometryValid": true,
+  "approximateAreaSquareMetres": 5229.305750112661,
+  "processing": "mapbox-vector-tile==2.2.0 y_coord_down=True; manual interior point [5250,4270] in northeast protrusion matched to north-passage eastern-end maps; not station centroid; XYZ Web Mercator inverse; decimal7; area local cosine correction. Geodetic datum approval separate.",
+  "adoptionApproved": false
+}

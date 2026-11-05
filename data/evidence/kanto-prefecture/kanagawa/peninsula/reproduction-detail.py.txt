@@ -1,0 +1,13 @@
+import sys,json,re
+from pathlib import Path
+import cairosvg
+from shapely.geometry import shape
+sys.path.insert(0,'/tmp');from peninsula_tools import E,W
+sys.path.insert(0,'tools/national');from research_common import render_svg
+key=sys.argv[1];box=list(map(float,sys.argv[2:6]));c=json.load(open(W/(key+'-combined.json')));s=render_svg(c);s=re.sub(r'viewBox="[^"]+"','viewBox="'+' '.join(str(x) for x in box)+'"',s,count=1);labels=[]
+for f in c['features']:
+ if f['sourceLayer']!='BldA':continue
+ g=shape(f['geometry']);p=g.representative_point()
+ if box[0]<p.x<box[0]+box[2] and box[1]<p.y<box[1]+box[3]:
+  labels.append(f'<text x="{p.x}" y="{p.y}" font-size="20" fill="blue">{f["sourceTile"]["x"]-c["baseTile"]["x"]},{f["sourceTile"]["y"]-c["baseTile"]["y"]}:{f["layerFeatureIndex"]}</text>')
+s=s.replace('</svg>','\n'.join(labels)+'</svg>');(E/(key+'-detail.svg')).write_text(s);cairosvg.svg2png(bytestring=s.encode(),write_to=str(W/(key+'-detail.png')),output_width=1800,output_height=int(1800*box[3]/box[2]),background_color='white')

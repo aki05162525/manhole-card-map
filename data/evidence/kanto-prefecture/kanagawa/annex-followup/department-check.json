@@ -1,0 +1,26 @@
+{
+  "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+  "asOf": "2026-11-05",
+  "source": {
+    "schema": 1,
+    "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1034922.html",
+    "version": "issue62-followup-2026-11-05",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:29:31.805333+00:00",
+    "httpStatus": 200,
+    "etag": "\"c96c-65f88ece3d5d2\"",
+    "lastModified": "Thu, 05 Nov 2026 15:12:34 GMT",
+    "contentType": "text/html",
+    "contentRange": null,
+    "responseURL": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1034922.html",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:29:31.891512+00:00",
+    "sha256": "dde15a3bfbcec0c8936435709c249c64edbe2219a2c3863802db6b9b85f59b10",
+    "rawPath": "data/work/kanto-kanagawa/annex-followup/cache/dde15a3bfbcec0c8936435709c249c64edbe2219a2c3863802db6b9b85f59b10.raw",
+    "bytes": 51564,
+    "key": "sewer-department"
+  },
+  "finding": "下水道部の部課案内で下水道経営課と第1別館2階の所在を独立取得本文から再確認。配布窓口の棟は既存カード案内と一致。",
+  "failedAdditionalSource": "06_haitizu.pdfは直接HTTP404。web索引には1頁配置図と延床面積6141.15m²が残るが、原本bytes取得成功とせず、数値採用根拠に追加しない。延床面積を外形面積と比較しない。",
+  "coordinateEffect": "初回第1別館候補を維持。位置承認なし。"
+}

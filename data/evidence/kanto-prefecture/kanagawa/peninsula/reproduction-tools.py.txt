@@ -1,0 +1,35 @@
+import sys,json,time,hashlib,datetime,re
+from pathlib import Path
+from urllib.parse import urljoin
+from html.parser import HTMLParser
+ROOT=Path.cwd();E=ROOT/'data/evidence/kanto-prefecture/kanagawa/peninsula';W=ROOT/'data/work/kanto-kanagawa/peninsula';D=ROOT/'data/national/kanto-prefecture/kanagawa/peninsula'
+sys.path.insert(0,str(ROOT/'tools/national'));from research_common import fetch_cached
+
+def save(name,value): (E/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+def read(name,default):return json.loads((E/name).read_text()) if (E/name).exists() else default
+
+def start(ids,task):
+ d=read('timing.json',{'schema':1,'intervals':[]});assert not any('endedAt' not in x for x in d['intervals']);d['intervals'].append({'facilityIds':ids,'task':task,'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'monotonicStart':time.monotonic(),'scope':'exclusive wall interval; acquisition wait included; not allocated across IDs'});save('timing.json',d)
+def end():
+ d=read('timing.json',{});x=d['intervals'][-1];x['elapsedSeconds']=round(time.monotonic()-x.pop('monotonicStart'),3);x['endedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();save('timing.json',d)
+def fetch(url,name):
+ raw,r=fetch_cached(url,W/'cache','issue62-peninsula-2026-11-05');r['label']=name
+ for f in ('rawPath','responseRawPath'):
+  if r.get(f):r[f]=str(Path(r[f]).relative_to(ROOT))
+ d=read('retrievals.json',{'schema':1,'records':[]});d['records'].append(r);save('retrievals.json',d)
+ if raw:(W/name).write_bytes(raw)
+ print(name,r['status'],r.get('httpStatus'),r.get('sha256'))
+ return raw
+class HTML(HTMLParser):
+ def __init__(self):super().__init__();self.links=[];self.text=[];self.skip=0
+ def handle_starttag(self,t,a):
+  a=dict(a)
+  if t in ('script','style'):self.skip+=1
+  for k in ('href','src'):
+   if k in a:self.links.append(a[k])
+ def handle_endtag(self,t):
+  if t in ('script','style'):self.skip=max(0,self.skip-1)
+ def handle_data(self,d):
+  if not self.skip and d.strip():self.text.append(d.strip())
+def html(name):
+ h=HTML();h.feed((W/name).read_text());return h

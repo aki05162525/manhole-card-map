@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/035/697/kihonhousin.pdf",
+      "version": "issue62-2026-11-05",
+      "requestHeaders": {},
+      "attemptedAt": "2026-11-05T14:47:09.304012+00:00",
+      "httpStatus": 200,
+      "etag": "\"2ca5e3-655969a449ccb\"",
+      "lastModified": "Thu, 02 Jul 2026 01:19:41 GMT",
+      "contentType": "application/pdf",
+      "contentRange": null,
+      "responseURL": "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/035/697/kihonhousin.pdf",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:47:10.506490+00:00",
+      "sha256": "4495a9efc435b0981e3295845b0fd22765012e900737d5e7908f259b546e6724",
+      "rawPath": "data/work/kanto-kanagawa/cache/4495a9efc435b0981e3295845b0fd22765012e900737d5e7908f259b546e6724.raw",
+      "bytes": 2926051
+    }
+  ]
+}

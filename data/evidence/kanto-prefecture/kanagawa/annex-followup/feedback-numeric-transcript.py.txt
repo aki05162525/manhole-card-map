@@ -1,0 +1,16 @@
+import json,sys,hashlib,time,datetime
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import read_verified,decode_tile,rounded_coordinate,_translate
+cases=[('data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json','data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-tiles.json')]
+rows=[]
+for np,tp in cases:
+ start=time.monotonic();started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ n=json.loads(Path(np).read_text());t=json.loads(Path(tp).read_text());f=n.get('sourceFeature',n.get('feature',n.get('features',[None])[0]));tile=f['sourceTile'];tr=next(x for x in t['rows'] if x['tile']==tile)
+ layer=decode_tile(read_verified(tr['path'],tr['sha256']))['BldA'];g=layer['features'][f['layerFeatureIndex']]['geometry'];extent=layer['extent'];base=n['baseTile']
+ translated={'type':g['type'],'coordinates':_translate(g['coordinates'],(tile['x']-base['x'])*extent,(tile['y']-base['y'])*extent)}
+ assert translated==f['geometry'],np
+ r=rounded_coordinate(translated,base,n['pointXY'],extent=extent)
+ assert r['coordinate']==n['coordinate'] and r['mechanicalChecksPassed'],np
+ rows.append({'facilityId':n['facilityId'],'numericRef':np,'numericSHA256':hashlib.sha256(Path(np).read_bytes()).hexdigest(),'tileRef':tr,'rawGeometryMatches':True,'calculation':r,'startedAt':started,'elapsedSeconds':round(time.monotonic()-start,6),'scope':'県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。'})
+Path('data/evidence/kanto-prefecture/kanagawa/annex-followup/feedback-numeric-checks.json').write_text(json.dumps({'rows':rows},ensure_ascii=False,indent=2)+'\n');print(len(rows),'raw tile geometry and point checks passed')

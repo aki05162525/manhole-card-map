@@ -1,0 +1,319 @@
+{
+  "schema": 1,
+  "headAtValidation": "bf17dd6ff0928d28126d44afaa9ec0e1ab9a0802",
+  "command": "mise exec -- uv run --with mapbox-vector-tile==2.2.0 python /tmp/peninsula_verify.py",
+  "exitCode": 0,
+  "stdout": "PASS: originals/hash and tile gzip 65; 2 candidate inside points; 5 outcome references; JSON parse; all sessions closed",
+  "inputHashes": [
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7.raw",
+      "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/201e54549731e8f66263254f6649db99c0511dde4ef87403304e3b4dfe678343.raw",
+      "sha256": "201e54549731e8f66263254f6649db99c0511dde4ef87403304e3b4dfe678343"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/08f9a19a033fea8ce45c7547cac5a05324df689c9fa4ff3bc0c5346f9f2a57c1.raw",
+      "sha256": "08f9a19a033fea8ce45c7547cac5a05324df689c9fa4ff3bc0c5346f9f2a57c1"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/6970374ecd18829c1b2a8d7dffc521bd033fccbc446bc9e46cc8c207125ca148.raw",
+      "sha256": "6970374ecd18829c1b2a8d7dffc521bd033fccbc446bc9e46cc8c207125ca148"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/e2c6dd4e016d5645ff19813a1c9107c4b17d922fbf878b68ab9bec0ea4e4a0ab.raw",
+      "sha256": "e2c6dd4e016d5645ff19813a1c9107c4b17d922fbf878b68ab9bec0ea4e4a0ab"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/cef8e44f493dbd33a545bee2568abd2ab5ffef8e600e2adf588876886056214e.raw",
+      "sha256": "cef8e44f493dbd33a545bee2568abd2ab5ffef8e600e2adf588876886056214e"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084.raw",
+      "sha256": "c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/ffa2c1a28454ceb1ca4413ef6382fb4d51ae275f8066c8443c4069024a104269.raw",
+      "sha256": "ffa2c1a28454ceb1ca4413ef6382fb4d51ae275f8066c8443c4069024a104269"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03.raw",
+      "sha256": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/76ab2629f6a53edeaedf78cd875a8fb33e31be5728c3729ae828b792fd08dbad.raw",
+      "sha256": "76ab2629f6a53edeaedf78cd875a8fb33e31be5728c3729ae828b792fd08dbad"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/ff4bc5a5fe49f01c8568f84452418ed5e58a94601351eb5b5329240b08682af1.raw",
+      "sha256": "ff4bc5a5fe49f01c8568f84452418ed5e58a94601351eb5b5329240b08682af1"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/406cd65eb48c5aca0d1c7937331e15b1d34e432b2a789932e9523dddfa279432.raw",
+      "sha256": "406cd65eb48c5aca0d1c7937331e15b1d34e432b2a789932e9523dddfa279432"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/e23762e7d68423efb1dfb365d5687175232c4d84574c108f6cde80babae73776.raw",
+      "sha256": "e23762e7d68423efb1dfb365d5687175232c4d84574c108f6cde80babae73776"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/62786dc7d5eae58495c2da1735f3339d2535902c5248752f638c40faaa683247.raw",
+      "sha256": "62786dc7d5eae58495c2da1735f3339d2535902c5248752f638c40faaa683247"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818.raw",
+      "sha256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/f2b44a5d23040b9f5e794ebd441a8fcf66dd4856575132f409cf4403890d6fed.raw",
+      "sha256": "f2b44a5d23040b9f5e794ebd441a8fcf66dd4856575132f409cf4403890d6fed"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/9116e20541916b5f67019f496f565a2c862a38eacf60718c98bb843ec0b36e71.raw",
+      "sha256": "9116e20541916b5f67019f496f565a2c862a38eacf60718c98bb843ec0b36e71"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/d1d003a38b23a794c0626f4a693c758af52f2101863566783a9ef2d8ca39b6ad.raw",
+      "sha256": "d1d003a38b23a794c0626f4a693c758af52f2101863566783a9ef2d8ca39b6ad"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/9fd33e18951620043fcf78f300b586165c3f6452f5a7cf7feff417213073bc29.raw",
+      "sha256": "9fd33e18951620043fcf78f300b586165c3f6452f5a7cf7feff417213073bc29"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/ae4849f61a87c5ea3dab32cf4384681b9c1b4a2af0b4d9033eae3b2b97650a41.raw",
+      "sha256": "ae4849f61a87c5ea3dab32cf4384681b9c1b4a2af0b4d9033eae3b2b97650a41"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/d1d003a38b23a794c0626f4a693c758af52f2101863566783a9ef2d8ca39b6ad.raw",
+      "sha256": "d1d003a38b23a794c0626f4a693c758af52f2101863566783a9ef2d8ca39b6ad"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6.raw",
+      "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/2de1ce280cc382ebe7c830c71c0cb158198859f2d964968c4907c0127feb0c16.raw",
+      "sha256": "2de1ce280cc382ebe7c830c71c0cb158198859f2d964968c4907c0127feb0c16"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/40851404c7738588b0f3c07eec7ca814e3b0d01de0439fa2db16329d6080814b.raw",
+      "sha256": "40851404c7738588b0f3c07eec7ca814e3b0d01de0439fa2db16329d6080814b"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/1c12f81aac1395ed0ab1a950a70666da0135ed0f52dd131f17e0439065b97a56.raw",
+      "sha256": "1c12f81aac1395ed0ab1a950a70666da0135ed0f52dd131f17e0439065b97a56"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/9c03eec500c3e18edc54e9c2a646656da57729d40d8fea7a34a320dccafb110d.raw",
+      "sha256": "9c03eec500c3e18edc54e9c2a646656da57729d40d8fea7a34a320dccafb110d"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/ab188f749c892e9b6d709317f6b47c227bb3a00fca2581fc279104ef879a9899.raw",
+      "sha256": "ab188f749c892e9b6d709317f6b47c227bb3a00fca2581fc279104ef879a9899"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/b0b878488b93aa414a9649eaa0272d057c8f2afde576366b5d8804b2003c5504.raw",
+      "sha256": "b0b878488b93aa414a9649eaa0272d057c8f2afde576366b5d8804b2003c5504"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/peninsula/cache/1da840122ee444f59fbfc7a5b2f5c5d98b08e9d10eb9f9b44a42743204462472.raw",
+      "sha256": "1da840122ee444f59fbfc7a5b2f5c5d98b08e9d10eb9f9b44a42743204462472"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25899.pbf.gz",
+      "sha256": "0ca2482ac3f5a939d2d4b154f860ab70e67228b150126d279303c8f51873d6ee"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25900.pbf.gz",
+      "sha256": "88c9405dd049efa700f82f0fcbcadeae16d6bacbccb1b482fc8b5cc641160b8c"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58177-25901.pbf.gz",
+      "sha256": "04f0e74cebcddcb33d73077f93bfb87157a177079f8aaa3ddaa4d19d7056621d"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58178-25899.pbf.gz",
+      "sha256": "874c57cc7807b46cb2a9c427c37702964e04894488e5095a2fecc5b3a7821cac"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58178-25900.pbf.gz",
+      "sha256": "6731544f58548d2615ba09394643b09d036bd63c308b2f64aa4ddaa0ed6fc9b6"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58178-25901.pbf.gz",
+      "sha256": "17f9b2ee42c36e82433779201dc3d4c797f0db3c6d2376b71d0e4fb93ea65c5d"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58179-25899.pbf.gz",
+      "sha256": "caf911eab7199989ad37f9dc352cc878acb3cdeb31c4693c6527e0c97389e7c7"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58179-25900.pbf.gz",
+      "sha256": "5890f0d66c57dd3934868095b9521871b6b3cb4e784fa64a9a3ec22e1bff9b45"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-16-58179-25901.pbf.gz",
+      "sha256": "92be93589f0410d34ce681fa397eae53b4a0c40dba9d06039ea186c69ae01ba6"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25900.pbf.gz",
+      "sha256": "1941689598e6f1c7031adcd7ecdac737eb214ec29c4a3c2f2e66e0203d0f3e84"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25901.pbf.gz",
+      "sha256": "9c482d9a5ac9de7c2135cffd82417489a9c1a9a1336021b21532eb21be8482dd"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25902.pbf.gz",
+      "sha256": "ecc0c2f0a79a47b854a59c204d1a2246c3b5d35765efe8f60884f925e9766659"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25900.pbf.gz",
+      "sha256": "50d665ad7964981ed4469e49827df89dac97e036949860864ea94b126e6d22b6"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25901.pbf.gz",
+      "sha256": "ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25902.pbf.gz",
+      "sha256": "a0c55595a3e248bc1d466fc661bebaf4adf8d67a1053d584392eaba4d74d90a4"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25900.pbf.gz",
+      "sha256": "129a402692b66f92763127ed77c4dd1ede8ce24e1e9b606e6be3d5b234de6c4f"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25901.pbf.gz",
+      "sha256": "f32f38e8c58f7d4ce5b3973d450293fd9e788cdbaa884f9e2a323b8d2dc044f2"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25902.pbf.gz",
+      "sha256": "d9188760660d50706a5b0f9624d9674740b3b4a619c5fe8b4e564db3ba66b678"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25925.pbf.gz",
+      "sha256": "305bd85da7d17d0b7f96fd17d77ac799079784e8b808f443d998a52894c647ce"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25926.pbf.gz",
+      "sha256": "7ac8fc22c9dd97e17ee68cdf4a897ba8d0837611b856af434188a595d3dc4685"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25927.pbf.gz",
+      "sha256": "f1d4e934a56102e9c87d6fb84d8bf51155bf96d6a32fae084f96e5bd6167ad64"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25925.pbf.gz",
+      "sha256": "7d74af75f4f97b5b5fb063289b1d4fb21066c14922fa5758e286b63843e9e3d1"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+      "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25927.pbf.gz",
+      "sha256": "a3700e3776a635fc3c819d0a55e8fa211284e09fa5667fad9d1db7aacb833cdf"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25925.pbf.gz",
+      "sha256": "c0cd5d060acd56a178bff491b4735849022f024880fc813a148a1729e5708fff"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25926.pbf.gz",
+      "sha256": "aeff672cc1b8e1c7bd7836015c8e5eab7dec1c15b77ee46444124480b6030a8f"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25927.pbf.gz",
+      "sha256": "a416b64397021eafbc5cd5385c620c4252619cab0593895c27414b0e3d95fe69"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58190-25894.pbf.gz",
+      "sha256": "594cc59596b373e0d6158d59290d2edad8dc2db89528f8883100c815138c7ebf"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58190-25895.pbf.gz",
+      "sha256": "ff378fafb00998aeae86e6568f009197dd51eee25dc58bf8d24aa088baba7e8f"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58190-25896.pbf.gz",
+      "sha256": "5aa00009a92f0296b0f0fefe80a4386ed0ca8b9cad2c41d47fd2fb26b977bbf3"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25894.pbf.gz",
+      "sha256": "b30addd1f860b53b931f774f70040d085b13beb4dbd279c45eab69caa36f3d76"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+      "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25896.pbf.gz",
+      "sha256": "a3b4405ac1a5d9c60aab9419677dd493558178cceabc75a78900670e223990cb"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58192-25894.pbf.gz",
+      "sha256": "9e5eccc6c2a14b57a6005f1d9797f9e07484ec4c8b0d96ec648164e1366c175a"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58192-25895.pbf.gz",
+      "sha256": "7115074485fc0a59c329e651cdb8097c73427d8dc002b7cc8a5a239c57dc4cdb"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58192-25896.pbf.gz",
+      "sha256": "6834a6cc90ac0d41ba667d01280c035b65a0af8d4987058f546191c39a75aac6"
+    }
+  ],
+  "limitations": "No full suite or commit hook by child. Building identification is visual original reading, not proven by mechanical checks. Product CRS and independent approval pending.",
+  "earlierCheckFailure": {
+    "exitCode": 1,
+    "reason": "validation harness assumed comparison.features for kinugasa; actual saved schema uses rows; corrected to validate both recorded forms, no evidence/expected values changed"
+  },
+  "candidateBindingChecks": {
+    "exitCode": 0,
+    "checked": "2 IDs/identity exact against inherited baseline; old coordinate null; numeric source hash; canonical row hashes; lifecycle exact adoption; selection file hash",
+    "inputHashes": {
+      "data/national/kanto-prefecture/kanagawa/peninsula/baseline.json": "ad5d7a0773a66e3f935c3e7e7a949f061d0c2aaa0cbee5d491edd3af7b3b8b02",
+      "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json": "d4c1c3e3e2d6aed35ecca1b02a8e70c39a0c01db75e4b85f0989f51c01f156cf",
+      "data/national/kanto-prefecture/kanagawa/peninsula/selection-proposed.json": "73b300ede144ff572a45a33cfb49cb3db5d7a0de5e269efcfb6902b800c1007b",
+      "data/national/kanto-prefecture/kanagawa/peninsula/lifecycle-proposed.json": "93418af8be7d1da2b56bceaa458970d3a2f8f07b671263d92191eb53abb9ddb1",
+      "data/national/kanto-prefecture/kanagawa/peninsula/locations-proposed.json": "998b67c70bca11a54628e0c493d53145459cc6f39e2f7a895cbdcba5e4f7b497"
+    }
+  },
+  "integrationCorrection": {
+    "checkedAt": "2026-11-05T15:47:55.664578+00:00",
+    "exitCode": 0,
+    "checks": [
+      "5施設のperformedMethods非空",
+      "葉山質問本文/公式URL/解消点/未回答明示",
+      "衣笠2施設の理由分離"
+    ],
+    "inputHashes": {
+      "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json": "972e357304ce24f85c031ba5aeb412c2bb3fa47c158b5b11012ed35f54382488",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-observation.json": "91ceebaa6b6832274028ccc8c6630bef5d704d7348b91135c301c5a26f9c3481",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/README.md": "17215ddd97051e793c49239df911c1fc3348914ab3a19941fa09e5f23a38b9a1"
+    }
+  },
+  "officeAnswerFollowup": {
+    "exitCode": 0,
+    "checks": [
+      "7外形の代表点・小数7桁丸め後内包PASS",
+      "asOf2026-11-05保持、userReportedAt2026-11-06分離",
+      "候補追加なし、proposals/selection/lifecycle既存2候補維持",
+      "2-28センター別ID・候補なしを維持"
+    ],
+    "inputHashes": {
+      "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json": "e1a329c9f7c9b2fd59e3e940004fae372d4e6cd22343277624b23b438451df51",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json": "6add53ccfb9eda5442b297114e390db845b83f4232f0fdbd37d7000737d23a3e",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-user-report.json": "f8d63bd1c733fe7d97293cede7968df48d9b545875db392ff1fd69d29a784488",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/retrievals.json": "0ee2dcaecbbf13fde503a656a1b63ec5a50777e960349c8527368223a6502d94",
+      "data/evidence/kanto-prefecture/kanagawa/peninsula/timing.json": "b43e294814d2e3394b7e21db751850458fdac933da21e326c889341fbdb13c37",
+      "data/national/kanto-prefecture/kanagawa/peninsula/locations-proposed.json": "998b67c70bca11a54628e0c493d53145459cc6f39e2f7a895cbdcba5e4f7b497",
+      "data/national/kanto-prefecture/kanagawa/peninsula/lifecycle-proposed.json": "93418af8be7d1da2b56bceaa458970d3a2f8f07b671263d92191eb53abb9ddb1",
+      "data/national/kanto-prefecture/kanagawa/peninsula/selection-proposed.json": "73b300ede144ff572a45a33cfb49cb3db5d7a0de5e269efcfb6902b800c1007b"
+    }
+  }
+}

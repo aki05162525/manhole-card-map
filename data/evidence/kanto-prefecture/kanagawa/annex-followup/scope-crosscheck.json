@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "method": "全現relationsのcardId 14-所属と全未位置placesを結合。県名/市名の文字列検索から独立した照合。",
+  "manifestSHA256": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+  "matchedIds": [
+    "facility:kanto-south-040c3fa2cd62eb9cfd10",
+    "facility:kanto-south-0ded97a30e37e98782cb",
+    "facility:kanto-south-20ebba51b4a3684b8c98",
+    "facility:kanto-south-2eec15147b3a40fb17b7",
+    "facility:kanto-south-36fae9051046490c8149",
+    "facility:kanto-south-a60af499924663813476",
+    "facility:kanto-south-a917541f326ca3f8f2d7",
+    "facility:kanto-south-b8a0f5c7b930cf13dc47",
+    "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+    "facility:kanto-south-ec19477e52b814868f78",
+    "facility:kanto-south-ee83b23f6b285cc3df5a",
+    "facility:kanto-south-integration-08",
+    "facility:kanto-south-integration-10",
+    "facility:kanto-south-integration-11"
+  ],
+  "additionalIds": [],
+  "scopeOutsideCardPrefecture": [],
+  "limit": "台帳未収録カード/施設は対象外。カード所属は施設住所を自動証明しない。scopeの公式住所確認と併用。"
+}

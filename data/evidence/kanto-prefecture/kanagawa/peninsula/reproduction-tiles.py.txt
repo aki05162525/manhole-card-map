@@ -1,0 +1,36 @@
+import sys,json,math,hashlib,re
+from pathlib import Path
+import cairosvg
+from pmtiles.reader import Reader
+from shapely.geometry import shape
+sys.path.insert(0,'/tmp');from peninsula_tools import E,W,fetch_cached,save,read
+sys.path.insert(0,'tools/national');from research_common import adjacent_tiles,decode_tile,combine_tiles,render_svg
+key,lat,lng=sys.argv[1],float(sys.argv[2]),float(sys.argv[3]);URL='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles';records=[];cache={};generation=None
+
+def get_bytes(offset,length):
+ global generation
+ if (offset,length) in cache:return cache[offset,length]
+ raw,r=fetch_cached(URL,W/'range-cache','issue62-peninsula-2026-11-05',headers={'Range':f'bytes={offset}-{offset+length-1}'})
+ for f in ('rawPath','responseRawPath'):
+  if r.get(f):r[f]=str(Path(r[f]).relative_to(Path.cwd()))
+ records.append(r);save(key+'-range.json',{'records':records})
+ if raw is None:raise ValueError(r)
+ gen=(r['etag'],r['lastModified']);assert all(gen)
+ if generation is None:generation=gen
+ assert gen==generation
+ cache[offset,length]=raw;return raw
+reader=Reader(get_bytes);center={'z':16,'x':math.floor((lng+180)/360*2**16),'y':math.floor((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*2**16)}
+tiles=[];rows=[]
+for t in adjacent_tiles(center):
+ raw=reader.get(t['z'],t['x'],t['y']);assert raw
+ p=E/f"{key}-{t['z']}-{t['x']}-{t['y']}.pbf.gz";p.write_bytes(raw);dec=decode_tile(raw);fs=[]
+ for layer in ('BldA','RdCL','Cstline'):
+  if layer not in dec:continue
+  for i,f in enumerate(dec[layer]['features']):
+   if f['geometry']['type'] not in ('Polygon','MultiPolygon','LineString','MultiLineString'):continue
+   fs.append({**f,'sourceLayer':layer,'layerFeatureIndex':i,'id':f"{t['x']}-{t['y']}-{layer}-{i}"})
+ tiles.append({'tile':t,'extent':4096,'features':fs});rows.append({'tile':t,'path':str(p.relative_to(Path.cwd())),'sha256':hashlib.sha256(raw).hexdigest()})
+c=combine_tiles(tiles);(W/(key+'-combined.json')).write_text(json.dumps(c));s=render_svg(c);(E/(key+'-all.svg')).write_text(s)
+cairosvg.svg2png(bytestring=s.encode(),write_to=str(W/(key+'-all.png')),output_width=2000,output_height=2000,background_color='white')
+save(key+'-tiles.json',{'sourceURL':URL,'generation':generation,'rows':rows,'searchSeedOnly':[lat,lng],'seedNotAdopted':True,'sourceEdition':'PMTiles 2026-07-01 per product README; feature survey dates unknown','baseTile':c['baseTile'],'bounds':c['bounds'],'allFeatureCount':len(c['features']),'processing':'research_common decode/combine/render; mapbox-vector-tile 2.2.0 y_coord_down=True; BldA/RdCL/Cstline all geometries','identityApproved':False})
+print(key,center,len(c['features']))

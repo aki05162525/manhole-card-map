@@ -1,0 +1,110 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25900
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25900.pbf.gz",
+      "sha256": "1941689598e6f1c7031adcd7ecdac737eb214ec29c4a3c2f2e66e0203d0f3e84"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25900
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25900.pbf.gz",
+      "sha256": "50d665ad7964981ed4469e49827df89dac97e036949860864ea94b126e6d22b6"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58193,
+        "y": 25900
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25900.pbf.gz",
+      "sha256": "129a402692b66f92763127ed77c4dd1ede8ce24e1e9b606e6be3d5b234de6c4f"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25901
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25901.pbf.gz",
+      "sha256": "9c482d9a5ac9de7c2135cffd82417489a9c1a9a1336021b21532eb21be8482dd"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25901
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25901.pbf.gz",
+      "sha256": "ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58193,
+        "y": 25901
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25901.pbf.gz",
+      "sha256": "f32f38e8c58f7d4ce5b3973d450293fd9e788cdbaa884f9e2a323b8d2dc044f2"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25902
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58191-25902.pbf.gz",
+      "sha256": "ecc0c2f0a79a47b854a59c204d1a2246c3b5d35765efe8f60884f925e9766659"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25902
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58192-25902.pbf.gz",
+      "sha256": "a0c55595a3e248bc1d466fc661bebaf4adf8d67a1053d584392eaba4d74d90a4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58193,
+        "y": 25902
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-16-58193-25902.pbf.gz",
+      "sha256": "d9188760660d50706a5b0f9624d9674740b3b4a619c5fe8b4e564db3ba66b678"
+    }
+  ],
+  "searchSeedOnly": [
+    35.257,
+    139.662
+  ],
+  "seedNotAdopted": true,
+  "sourceEdition": "PMTiles 2026-07-01 per product README; feature survey dates unknown",
+  "baseTile": {
+    "z": 16,
+    "x": 58191,
+    "y": 25900
+  },
+  "bounds": [
+    0,
+    0,
+    12288,
+    12288
+  ],
+  "allFeatureCount": 9696,
+  "processing": "research_common decode/combine/render; mapbox-vector-tile 2.2.0 y_coord_down=True; BldA/RdCL/Cstline all geometries",
+  "identityApproved": false
+}

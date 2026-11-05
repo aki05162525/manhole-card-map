@@ -1,0 +1,12 @@
+import sys,json,re
+from pathlib import Path
+import cairosvg
+from shapely.geometry import shape
+sys.path.insert(0,'tools/national');from research_common import render_svg
+key=sys.argv[1];bounds=list(map(float,sys.argv[2:6]));E=Path('data/evidence/kanto-prefecture/kanagawa/north')/key;W=Path('data/work/kanto-kanagawa/north')/key;c=json.load(open(W/'combined.json'));s=render_svg(c);s=re.sub('viewBox="[^"]+"','viewBox="'+' '.join(map(str,bounds))+'"',s,count=1);labels=[]
+for f in c['features']:
+ if f['sourceLayer']!='BldA':continue
+ p=shape(f['geometry']).representative_point();x,y,w,h=bounds
+ if x<p.x<x+w and y<p.y<y+h:
+  labels.append(f'<text x="{p.x}" y="{p.y}" font-size="{w/75}" fill="blue">{f["sourceTile"]["x"]-c["baseTile"]["x"]},{f["sourceTile"]["y"]-c["baseTile"]["y"]}:{f["layerFeatureIndex"]}</text>')
+s=s.replace('</svg>','\n'.join(labels)+'</svg>');(E/'detail.svg').write_text(s);cairosvg.svg2png(bytestring=s.encode(),write_to=str(W/'detail.png'),output_width=1600,output_height=1600,background_color='white')

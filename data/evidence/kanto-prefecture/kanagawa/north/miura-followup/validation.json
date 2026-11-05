@@ -1,0 +1,159 @@
+{
+  "command": "mise exec -- uv run --with mapbox-vector-tile==2.2.0 python /tmp/kanagawa-miura-analysis.py; python /tmp/kanagawa-miura-record.py",
+  "exitCode": 0,
+  "log": "PASS original/tile hashes; 6 numerical polygon validity and positive approximate area; no candidate chosen",
+  "gitHead": "b6875cfbc10ae847b714685e910d906acff50905",
+  "inputHashes": [
+    {
+      "path": "data/work/kanto-kanagawa/north/miura-followup/cache/fb451e613ccc2243fdc15c0f4fba0199711153dc129a8ca4a35940364f9a39b4.raw",
+      "sha256": "fb451e613ccc2243fdc15c0f4fba0199711153dc129a8ca4a35940364f9a39b4"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/miura-followup/cache/89c6bdb5ff65b7ed25d2ae2afba87e964e1e4458e1bed3217e3c9e862a4cd5ec.raw",
+      "sha256": "89c6bdb5ff65b7ed25d2ae2afba87e964e1e4458e1bed3217e3c9e862a4cd5ec"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/miura-followup/cache/dad33374ddad7b4d023f78103ab755c8510811c5609bdf0722e5142435d6898b.raw",
+      "sha256": "dad33374ddad7b4d023f78103ab755c8510811c5609bdf0722e5142435d6898b"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/cache/a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6.raw",
+      "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/cache/14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4.raw",
+      "sha256": "14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/cache/7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20.raw",
+      "sha256": "7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/cache/7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18.raw",
+      "sha256": "7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/cache/612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9.raw",
+      "sha256": "612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/1e12e8389d1b452adf0d6ffe1dd5df86cdfaf1578d8c1ddc63a5a2db4e4a6987.raw",
+      "sha256": "1e12e8389d1b452adf0d6ffe1dd5df86cdfaf1578d8c1ddc63a5a2db4e4a6987"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/adc7d4045eafcc4f4d6abdebec851de342ebe620faf95639d2cf795a5510a1d5.raw",
+      "sha256": "adc7d4045eafcc4f4d6abdebec851de342ebe620faf95639d2cf795a5510a1d5"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/5241e992b5405daffa706290479e6c4f82a5df176212b9b1042c388c7e320cf4.raw",
+      "sha256": "5241e992b5405daffa706290479e6c4f82a5df176212b9b1042c388c7e320cf4"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/9deebc6e95c18c4c697fb0589d3feb8a4885cbcd98f86fb2b6b4ed91f53c820a.raw",
+      "sha256": "9deebc6e95c18c4c697fb0589d3feb8a4885cbcd98f86fb2b6b4ed91f53c820a"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/b5884ab011f6f1116737a051d0ad8d73ad689e0b135026271fc8188a3f36ce21.raw",
+      "sha256": "b5884ab011f6f1116737a051d0ad8d73ad689e0b135026271fc8188a3f36ce21"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/eff2d6325d686c9210f27707af829c3aa7936d82d881e516beb5ec3dc62fafe2.raw",
+      "sha256": "eff2d6325d686c9210f27707af829c3aa7936d82d881e516beb5ec3dc62fafe2"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/211c580699582787f5cf87455f11cc2224375a8dc4216755f18be2420a6de345.raw",
+      "sha256": "211c580699582787f5cf87455f11cc2224375a8dc4216755f18be2420a6de345"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/ff0f66cd4495a940ad6a59e1becd289afcc33d59711b197c3d31288df8d8f5fe.raw",
+      "sha256": "ff0f66cd4495a940ad6a59e1becd289afcc33d59711b197c3d31288df8d8f5fe"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/north/raster-cache/5ea8b68613c1b4df77404b02e8649949ccd7cc6cdc2b993bc13b076088eea70b.raw",
+      "sha256": "5ea8b68613c1b4df77404b02e8649949ccd7cc6cdc2b993bc13b076088eea70b"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58190,
+        "y": 25915
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58190-25915.pbf.gz",
+      "sha256": "81f5fbfa091eb80d837de0f7acdbf6a7b363a836c56cac221f5cf96acf8c3d42"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25915
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58191-25915.pbf.gz",
+      "sha256": "a41f9129823c8b328cb490f7e9e485cee7d13ae605de3351e50d61a8f46cc4b8"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25915
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58192-25915.pbf.gz",
+      "sha256": "6dccf671cf5081a833a9e25adfa60e185b5996b8d0698ce5075a8a9f4f1c0f49"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58190,
+        "y": 25916
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58190-25916.pbf.gz",
+      "sha256": "51b2823365a0b840c5e15191e2159cb7d2145acc56a630a8bb8f69887adee723"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25916
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58191-25916.pbf.gz",
+      "sha256": "6df5acf26f2e8c6060af99778259b3a8d18c458dac17f94c42e32ec18d1d3f1e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25916
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58192-25916.pbf.gz",
+      "sha256": "fd0fdf5c172536138beccd90a119dd73ae0c17eee79927ab00372ee292ea7b8e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58190,
+        "y": 25917
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58190-25917.pbf.gz",
+      "sha256": "a52e3494a150683245c46addd4a56b4237a195fc6470bf504419a17030675d4c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58191,
+        "y": 25917
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58191-25917.pbf.gz",
+      "sha256": "11a0710d31892b0f5ba35875dac3e47ac4f13fc4a3ac8172a7a9ad444253cf28"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58192,
+        "y": 25917
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura/tile-16-58192-25917.pbf.gz",
+      "sha256": "364ae4ee4b31d7790971d0f4d7a837ba0126e683fccbd24fb7ccc2e4dbae3f1c"
+    }
+  ],
+  "fullSuite": "not rerun; parent fe6e5f1a prior evidence retained",
+  "failedAttempt": "python /tmp/kanagawa-miura-raster.py without Pillow failed ModuleNotFoundError before mutation; rerun uv --with pillow succeeded"
+}

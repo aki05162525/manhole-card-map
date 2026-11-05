@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+  "asOf": "2026-11-05",
+  "userReportedAt": "2026-11-06",
+  "userReport": {
+    "text": "北西端、正門すぐ正面駐車場隣接の独立管理棟2階、休日は市役所駅窓口センター",
+    "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+    "attribution": "利用者回答を県親から受領。利用者が図面を別途添付したとは扱わない。",
+    "independentlyConfirmed": false
+  },
+  "recheckedSources": [
+    {
+      "key": "isehara-card-map.png",
+      "sha256": "2511737fb3c70f56f412e37e04579a8e4ae30dfb6aef6309e261f3d5d05c9521",
+      "scope": "画像全体再視読。北矢印なし、敷地境界ラベルなし、正門/駐車場の明示ラベルなし。棟内の施設名は読める。"
+    },
+    {
+      "key": "isehara-access.pdf",
+      "scope": "既読全1頁の北矢印ある広域図を再参照。入口は模式表現で建物全配置/境界の確認には不足。"
+    },
+    {
+      "key": "isehara-earthquake.pdf",
+      "scope": "既読11頁の北矢印ある全市域図を再参照。処理場領域表示はあるが管理棟個別同定の縮尺ではない。"
+    }
+  ],
+  "independentReading": "配布位置図の記名棟の東側下辺張出、西の南北長棟、北の小棟、道路との形状配置はBldA37に対応する。GSI北上図では候補37は隣接長棟33より東、小棟32より南にある。これは棟間の相対方位であり処理場全敷地の北東端を証明しない。",
+  "priorInferenceCorrection": "旧観察の敷地北東という語は画像内に見える棟群を敷地全体とみなした推論で過剰だった。確定表現を撤回。利用者報告の北西端へ単純置換もしない。",
+  "directionConflict": {
+    "priorAgent": "敷地北東（未承認推論、確定表現撤回）",
+    "user": "敷地北西端（利用者報告、独立未確認）",
+    "resolved": false,
+    "limitation": "処理場全敷地の境界と北矢印を同時に示し管理棟名を記す一次図を今回の資料集合では得ていない。正門と駐車場の位置もラベルでは独立確認できない。"
+  },
+  "decision": "敷地全体の北西/北東という相対呼称は未解消として採用根拠から除く。位置図の棟内記名と配布本文・形状/隣接/道路対応は直接評価でき、同等に一致する別棟を確認しなかったため、BldA37の未承認候補を維持。",
+  "nextAction": "県親と独立レビューが記名棟BldA37の同定・CRS・条件を判定。敷地北東/北西の断定はしない。新質問なし。",
+  "reviewApproved": false,
+  "interimDecision": "採用選択から保留。元数値/座標は再照合用候補資料として保持し、棟形一致の観察は撤回しない。",
+  "alternativeBuildingComparison": [
+    {
+      "feature": "BldA37",
+      "observation": "記名された横長棟。南側東寄りの張出、北に小棟32、西に長棟33、東側道路の曲折が位置図と一致。"
+    },
+    {
+      "feature": "BldA33",
+      "observation": "37の西側の縦長棟。長軸が37とほぼ直交し、記名棟の形と不一致。"
+    },
+    {
+      "feature": "BldA32",
+      "observation": "37の北側小棟。面積は37の約14%。位置図でも記名棟北側の別小棟。"
+    },
+    {
+      "feature": "BldA27",
+      "observation": "さらに西のほぼ正方形棟。縦横比約1.16、記名棟37の約2.38と不一致。"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "exitCode": 0,
+  "log": "PASS outcomes null/probe split and performedMethods4",
+  "inputs": [
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/outcomes.json",
+      "sha256": "316630acbfc612cbc141599eebd742917ae06bc544e06ff75aa3dcc81cb8bbb4"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/selection-proposed.json",
+      "sha256": "5333183012b58f83d0f4e61bc1f0457ae4f5bc6ea705cafddc85851a2ae07d9c"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/observation.json",
+      "sha256": "4f1b2af00a40fe02263eff0e276abec0ae552537a240851d5b723aa3d17f46db"
+    }
+  ],
+  "failedAttempt": {
+    "command": "/tmp/north-candidate.py iriezaki-west facility:kanto-south-20ebba51b4a3684b8c98 0 1 443",
+    "exitCode": 1,
+    "reason": "Shared /tmp basename had been replaced by Saitama agent script; ValueError before mutation. Restored this task saved transcript to task-specific /tmp/kanagawa-north-candidate.py and reran successfully."
+  },
+  "historicalOnly": true,
+  "supersededBy": "promotion-validation.json; southern probe now promoted after direction-normalized comparison; original northern probe remains rejected"
+}

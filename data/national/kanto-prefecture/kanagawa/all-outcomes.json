@@ -1,0 +1,1455 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "manifestUpdated": false,
+  "adoptionApproved": false,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "name": "葉山しおさい公園",
+      "asOf": "2026-11-05",
+      "userReportedAt": "2026-11-06",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.2637086,
+        "lng": 139.5785511
+      },
+      "performedMethods": [
+        "既取得町公式入口写真と公園概略図を全画像再読",
+        "訪問ブログの入口写真・入園券写真・現地案内板写真を原本取得、3画像全体を目視",
+        "案内板の正門/管理事務所・駐車場・博物館・海岸・県立美術館の配置とGSI9タイル全図/詳細図を再比較",
+        "既取得BldA125の数値geometry/点を再使用し丸め後内包再検査、面積・境界条件確認"
+      ],
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+      "userReportRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json",
+      "remainingReason": "第三者撮影案内板の版年不明・入口棟の背面輪郭未確認。製品CRS共通確認と原本/棟同定の独立レビュー未承認。",
+      "nextAction": "独立レビューで管理事務所と125の位置対応と資料年代の限界を評価し採否決定",
+      "humanQuestion": {
+        "status": "answered",
+        "additionalQuestionNeeded": false
+      },
+      "priorOutcomePreserved": true,
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/outcome.json",
+          "sha256": "48b3fdd051b1138aec57be247f13200246d7c5ec32b93c350910ca0dbf804cdb"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json",
+          "sha256": "8d73f4c31f21a39d6a65e38fe58bf315398eb52fdea026af431f388a815ea55b"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+          "sha256": "b2cc83e0d10534f6ac078d00690e1932af2765bfc6ebf0ea4533da6002ec2acf"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json",
+          "sha256": "d281e45b76c14049d39fe53c1103370a086b4e684e3570099d8751e5ccc2f7e6"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.1446872,
+        "lng": 139.6208024
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-point.json",
+      "sourceRefs": [
+        {
+          "label": "miura-card.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "status": "acquired",
+          "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6"
+        },
+        {
+          "label": "miura-access.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/digitalka/digitalka_joho/325.html",
+          "status": "acquired",
+          "sha256": "2de1ce280cc382ebe7c830c71c0cb158198859f2d964968c4907c0127feb0c16"
+        },
+        {
+          "label": "miura-facilities.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/digitalka/digitalka_joho/331.html",
+          "status": "acquired",
+          "sha256": "40851404c7738588b0f3c07eec7ca814e3b0d01de0439fa2db16329d6080814b"
+        },
+        {
+          "label": "miura-floor.pdf",
+          "url": "https://www.city.miura.kanagawa.jp/material/files/group/7/dai2bunkan.pdf",
+          "status": "acquired",
+          "sha256": "1c12f81aac1395ed0ab1a950a70666da0135ed0f52dd131f17e0439065b97a56"
+        },
+        {
+          "label": "miura-delay2025.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/gikaijimukyoku/3/tekisutoban_miurashigikaidayori/11237.html",
+          "status": "acquired",
+          "sha256": "9c03eec500c3e18edc54e9c2a646656da57729d40d8fea7a34a320dccafb110d"
+        },
+        {
+          "label": "miura-may2026.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/seisakuka/seisakuka_hisho/shichonoheya/pressrelease/202605/index.html",
+          "status": "acquired",
+          "sha256": "ab188f749c892e9b6d709317f6b47c227bb3a00fca2581fc279104ef879a9899"
+        },
+        {
+          "label": "miura-site.pdf",
+          "url": "https://www.city.miura.kanagawa.jp/material/files/group/7/hontyousya_syuuhen_annaizu.pdf",
+          "status": "acquired",
+          "sha256": "b0b878488b93aa414a9649eaa0272d057c8f2afde576366b5d8804b2003c5504"
+        },
+        {
+          "label": "miura-delay2026.html",
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/seisakuka/seisakuka_hisho/shichonoheya/pressrelease/202605/2026052201.html",
+          "status": "acquired",
+          "sha256": "1da840122ee444f59fbfc7a5b2f5c5d98b08e9d10eb9f9b44a42743204462472"
+        }
+      ],
+      "remainingReason": "県親CRS適用と独立棟同定レビュー未承認。移転予定の古さに起因した疑問は新発表で解消",
+      "nextAction": "原本・棟同定・製品CRS独立レビュー後に親が採否決定",
+      "humanQuestion": null,
+      "performedMethods": [
+        "現カード案内・アクセス・公共施設案内の原本取得読解",
+        "2025市議会だよりと2026-05-22工期再延長の原本読解",
+        "庁舎周辺案内図1/1頁・第2分館フロア図1/1頁を目視",
+        "PMTiles9タイル全描画・候補と周囲棟比較・丸め後内包計算"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json",
+          "sha256": "e1a329c9f7c9b2fd59e3e940004fae372d4e6cd22343277624b23b438451df51"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-observation.json",
+          "sha256": "64911d632cb22bb5bfffca2fe46a83f38d84a32b6ef35c14fef125b6192f859e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-point.json",
+          "sha256": "a6300bc59846d9363c4b4960937ef1f7ed704ca80c4b465033469f0044adff78"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "name": "入江崎ワクワクアクア",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.519306,
+        "lng": 139.7395574
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "kawasaki-card.html",
+          "url": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "sha256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:23:14.443364+00:00",
+          "attemptedAt": "2026-11-05T15:23:14.261097+00:00"
+        },
+        {
+          "key": "iriezaki.html",
+          "url": "https://www.city.kawasaki.jp/800/page/0000105394.html",
+          "sha256": "7fcb250a02b8a169a9259f815438018fcbe5a52e6a77f25962fd0938cd3d5e60",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/7fcb250a02b8a169a9259f815438018fcbe5a52e6a77f25962fd0938cd3d5e60.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:23:14.647196+00:00",
+          "attemptedAt": "2026-11-05T15:23:14.589793+00:00"
+        },
+        {
+          "key": "iriezaki.pdf",
+          "url": "https://www.city.kawasaki.jp/800/cmsfiles/contents/0000105/105394/iriezakipanhu.pdf",
+          "sha256": "8ac9648e9edb7411d3e5097a886958e1460a14cda2d6aef57061bea93138e824",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/8ac9648e9edb7411d3e5097a886958e1460a14cda2d6aef57061bea93138e824.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:23:21.831440+00:00",
+          "attemptedAt": "2026-11-05T15:23:21.743360+00:00"
+        },
+        {
+          "key": "iriezaki-plan.pdf",
+          "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000096/96966/0524suidou.pdf",
+          "sha256": "49f62ff3ea563425ed8a4be0ff30a86b8dfc61682bf88052f4ab1b7ff419c2ea",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/49f62ff3ea563425ed8a4be0ff30a86b8dfc61682bf88052f4ab1b7ff419c2ea.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:24:03.623817+00:00",
+          "attemptedAt": "2026-11-05T15:24:03.518435+00:00"
+        },
+        {
+          "key": "iriezaki-casbee.html",
+          "url": "https://www.city.kawasaki.jp/500/page/0000021163.html",
+          "sha256": "577dd9c8a6da541a31b246c5fcd64560406af631a35884e81538d4e9da297f43",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/577dd9c8a6da541a31b246c5fcd64560406af631a35884e81538d4e9da297f43.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:28:40.973747+00:00",
+          "attemptedAt": "2026-11-05T15:28:40.861935+00:00"
+        },
+        {
+          "key": "iriezaki-2019.html",
+          "url": "https://www.jiwet.or.jp/publicity/hashiwatashi/2020-03-16",
+          "sha256": "9efa5b910375fbdd680bd5900d831acea1b9bc8a11137b852e85f896fb73f3e4",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/9efa5b910375fbdd680bd5900d831acea1b9bc8a11137b852e85f896fb73f3e4.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:47:24.014750+00:00",
+          "attemptedAt": "2026-11-05T15:47:20.492675+00:00"
+        },
+        {
+          "key": "iriezaki-open2019.html",
+          "url": "https://www.city.kawasaki.jp/800/page/0000085356.html",
+          "sha256": "d64166cd731af876a8182e8fa462c2db0c30a56509ee4c719d129b9463ff35ed",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/d64166cd731af876a8182e8fa462c2db0c30a56509ee4c719d129b9463ff35ed.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:50:17.188755+00:00",
+          "attemptedAt": "2026-11-05T15:50:17.087133+00:00"
+        },
+        {
+          "key": "iriezaki-2026.pdf",
+          "url": "https://policies.env.go.jp/policy/roadmap/local_keikaku/jimu/files/tool/202603pvjirei.pdf",
+          "sha256": "7f64b452410fa4ce00988fc9b676cf6c2802f77162d59d3e13050ee7223f6d80",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/7f64b452410fa4ce00988fc9b676cf6c2802f77162d59d3e13050ee7223f6d80.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:48:57.502635+00:00",
+          "attemptedAt": "2026-11-05T15:48:57.160597+00:00"
+        }
+      ],
+      "remainingReason": "正式採用・製品固有CRS確認は県親担当。担当内の棟対応は未承認候補化に十分と判断。",
+      "nextAction": "県親の製品固有CRS確認と独立採用レビューへ渡す。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "市現配布HTML・施設見学HTMLを取得し原履歴hashと照合",
+        "現パンフ全2頁目視・2018資料全16頁文字抽出と一覧目視、p2/p3拡大",
+        "GSI PMTiles18タイル取得（東探索9、西探索9）、std9枚と道路・鉄道・隣接棟比較",
+        "CASBEE11041項目本文再抽出、2019開設の市公式・2020視察記録と年代照合",
+        "2026環境省PDF全45頁文字検索、p44/p45（印刷頁43/44）拡大目視、棟名付き航空図を照合",
+        "当初北側262㎡probeを棄却し南側BldA443約2184㎡を追加数値評価。採用候補にしない",
+        "時計回り60度の数値図を生成し2018p3/2026p45と複数棟の相対配置・突出部を目視照合。443を未承認候補化。"
+      ],
+      "exploratoryProbeRefs": [
+        "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/exploratory-probe-rejected-north.json",
+        "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/exploratory-probe-south.json"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/north/outcomes.json",
+          "sha256": "d6772b8c6c5de36e14557c2f356169a3fef5f052d6afc7b04d5cff8e7c0aeb1c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/observation.json",
+          "sha256": "d136bec8dd79a1297277a61e11df4610d63075c641390a0e0cbe5d3ab87fa792"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+          "sha256": "eb0c9c1c9dc1edcee5121486a3379769835483caef5448bb555054a0ed310465"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "name": "四之宮ふれあいセンター",
+      "status": "candidate_pending_review",
+      "candidateCoordinate": {
+        "lat": 35.3596009,
+        "lng": 139.3619751
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "shinomiya-card.html",
+          "url": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "sha256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "shinomiya.html",
+          "url": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page85_00001.html",
+          "sha256": "ea9c54913a86c2be62137d5ff57428603456886b8b6bb09e0eeda66ad67ee01a",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/ea9c54913a86c2be62137d5ff57428603456886b8b6bb09e0eeda66ad67ee01a.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "prefecture-bids.html",
+          "url": "https://www.pref.kanagawa.jp/docs/gh8/hanbaiki-syuryou.html",
+          "sha256": "2b8616136ae8c13490b6bcc54d382a1510dcd59cba08420fb9613890a65f2805",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/2b8616136ae8c13490b6bcc54d382a1510dcd59cba08420fb9613890a65f2805.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "shinomiya-layout-old.pdf",
+          "url": "https://www.pref.kanagawa.jp/documents/11317/3haitizu_10kendo.pdf",
+          "sha256": "90c2dcc89318fac05a184e406ed0e6ba07b55c0c5bd5e4954653a12b2395e798",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/90c2dcc89318fac05a184e406ed0e6ba07b55c0c5bd5e4954653a12b2395e798.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "shinomiya-layout-current.pdf",
+          "url": "https://www.pref.kanagawa.jp/documents/22563/01-02_haichizuv2_kendo3.pdf",
+          "sha256": "fedde13162636337002ad2faa96d1c9c02e492efccb440bef75918e046efb6fd",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/fedde13162636337002ad2faa96d1c9c02e492efccb440bef75918e046efb6fd.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "shinomiya-list-current.pdf",
+          "url": "https://www.pref.kanagawa.jp/documents/22563/01-01_ichiranhyou_kendo3.pdf",
+          "sha256": "dc367bfaaafcad2bf476c9793ebe46fa790a81b8b02243327cf83cc501d5a240",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/dc367bfaaafcad2bf476c9793ebe46fa790a81b8b02243327cf83cc501d5a240.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        }
+      ],
+      "remainingReason": "独立同定/製品CRS・条件レビュー未承認。manifest未反映。",
+      "nextAction": "県親の数値再計算と独立Codexレビュー後に明示選択を検討。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "official-distribution",
+        "inherited-history",
+        "official-diagram",
+        "GSI-BldA-RdCL"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/west/outcomes.json",
+          "sha256": "47fbd03d89c04110ad61e95608ddbe6ec555109b6b93471902bef3b041dffcb4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/observation.json",
+          "sha256": "f880f26cad2775f6b6963c9fbec360d3351bd0d75c74fe6502af4a938082d67d"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/numeric.json",
+          "sha256": "912dcd2ce0c162e80b402e74a442e10d167daf56fbc9a565a7b9aebc1ebdf446"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "name": "秦野市浄水管理センター",
+      "status": "candidate_pending_review",
+      "candidateCoordinate": {
+        "lat": 35.3648249,
+        "lng": 139.2430079
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "hadano-card.html",
+          "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "sha256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-access.html",
+          "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/4/3068.html",
+          "sha256": "519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-access.jpg",
+          "url": "https://www.city.hadano.kanagawa.jp/material/images/group/69/jomap.jpg",
+          "sha256": "84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-plan.pdf",
+          "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou03-2.pdf",
+          "sha256": "9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-council.html",
+          "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1065/3/2529.html",
+          "sha256": "6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-2025-layout.pdf",
+          "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou.pdf",
+          "sha256": "507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-disaster.pdf",
+          "url": "https://www.city.hadano.kanagawa.jp/material/files/group/17/shiryouhen.pdf",
+          "sha256": "a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "hadano-health.html",
+          "url": "https://www.city.hadano.kanagawa.jp/soshiki/6/1043/4/4/1397.html",
+          "sha256": "5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        }
+      ],
+      "remainingReason": "独立同定/製品CRS・条件レビュー未承認。manifest未反映。",
+      "nextAction": "県親の数値再計算と独立Codexレビュー後に明示選択を検討。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "official-distribution",
+        "inherited-history",
+        "official-diagram",
+        "GSI-BldA-RdCL"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/west/outcomes.json",
+          "sha256": "47fbd03d89c04110ad61e95608ddbe6ec555109b6b93471902bef3b041dffcb4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/observation.json",
+          "sha256": "acfaf8aabe42111ef004af3bc0556099868bd2b7ed3ce2326e8f1e4b1591ee7e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json",
+          "sha256": "152862848339d17e0281438882f6e9afc2f928492595f34de1552d19f1bb52ee"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "name": "かわさききたテラス",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.5320363,
+        "lng": 139.6982029
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/north/kita/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "kawasaki-card.html",
+          "url": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "sha256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:23:14.443364+00:00",
+          "attemptedAt": "2026-11-05T15:23:14.261097+00:00"
+        },
+        {
+          "key": "kita-shop.html",
+          "url": "https://www.atre.co.jp/kawasaki/shop/6814/",
+          "sha256": "31973d645ab4e480f0a0ad4c009503e165f66c5a5516fb2708596a8af531f481",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/31973d645ab4e480f0a0ad4c009503e165f66c5a5516fb2708596a8af531f481.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:31:32.029332+00:00",
+          "attemptedAt": "2026-11-05T15:31:31.797098+00:00"
+        },
+        {
+          "key": "kita-floor.html",
+          "url": "https://www.atre.co.jp/kawasaki/floorguide/29/125",
+          "sha256": "e7305b2379176bfa9c68bdeee5c0e7c58c8eb74b03688e03e921764129e02b88",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/e7305b2379176bfa9c68bdeee5c0e7c58c8eb74b03688e03e921764129e02b88.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:31:53.305039+00:00",
+          "attemptedAt": "2026-11-05T15:31:52.512189+00:00"
+        },
+        {
+          "key": "kita-floor.svg",
+          "url": "https://www.atre.co.jp/storage/img/floormap/tni1261001142358.svg",
+          "sha256": "3896ad394da1e629936e1643d1924dbbf86770dc47d43de397a195f9c48bdec9",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/3896ad394da1e629936e1643d1924dbbf86770dc47d43de397a195f9c48bdec9.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:32:31.943205+00:00",
+          "attemptedAt": "2026-11-05T15:32:30.956277+00:00"
+        },
+        {
+          "key": "kita-map.jpg",
+          "url": "https://www.city.kawasaki.jp/800/cmsfiles/contents/0000088/88344/kkt_map.jpg",
+          "sha256": "f2f53f67668dd5b53ebb85d58f1acac23e26a333209c47e1ffbdd8ca45ba6614",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/f2f53f67668dd5b53ebb85d58f1acac23e26a333209c47e1ffbdd8ca45ba6614.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:32:14.699128+00:00",
+          "attemptedAt": "2026-11-05T15:32:14.604224+00:00"
+        },
+        {
+          "key": "kita-new.pdf",
+          "url": "https://www.atre.co.jp/storage/pdf/newsrelease/485_kawasaki.pdf",
+          "sha256": "82f15e07f3b3cf52952d27390f3af6628af3455190892be59becd6a7f1e8b709",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/82f15e07f3b3cf52952d27390f3af6628af3455190892be59becd6a7f1e8b709.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:32:15.053256+00:00",
+          "attemptedAt": "2026-11-05T15:32:14.853890+00:00"
+        }
+      ],
+      "remainingReason": "北口増築部対応の独立同定と製品固有CRS承認が未了。",
+      "nextAction": "独立原本/外形同定と県共通CRS確認後に採否決定。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "市配布案内とアトレ店舗HTMLを取得・履歴hash照合",
+        "現3F SVG全体、市北口地図全体、2018開業資料p6を方向補正して比較",
+        "PMTiles9枚取得・BldA33北口突出部の手選択内部点を逆投影",
+        "小数7桁丸め前後の内包とタイルbuffer境界を検証"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/north/outcomes.json",
+          "sha256": "d6772b8c6c5de36e14557c2f356169a3fef5f052d6afc7b04d5cff8e7c0aeb1c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/observation.json",
+          "sha256": "b268b0d0c817ff81d2f60f1c616c94043d7ffc89375e1b6752452f4e21fd8acc"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json",
+          "sha256": "35a17e45419e255950062005ca794c332be002a30719fc61ec1ef5c2041b06bc"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "name": "sagamix",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.5311698,
+        "lng": 139.4350792
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "sagami-card.html",
+          "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "sha256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:00.024979+00:00",
+          "attemptedAt": "2026-11-05T15:34:58.789343+00:00"
+        },
+        {
+          "key": "bono2.html",
+          "url": "https://bono-sagamiono.jp/floorguide/?area=type1&floor=2f",
+          "sha256": "12afc12e946191506897b3ad383815415b07a9c161edf49c0631b439348aca55",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/12afc12e946191506897b3ad383815415b07a9c161edf49c0631b439348aca55.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:26.064755+00:00",
+          "attemptedAt": "2026-11-05T15:35:25.842703+00:00"
+        },
+        {
+          "key": "bono2-map.jpg",
+          "url": "https://bono-sagamiono.jp/uploads/images/resized/1012x0/bono/000002/000002/c394745b.jpg",
+          "sha256": "ca33171803b2338c9f7d1c35ce985254b77bd37ed217f059f233cf9e6afba1ef",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/ca33171803b2338c9f7d1c35ce985254b77bd37ed217f059f233cf9e6afba1ef.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:36.000718+00:00",
+          "attemptedAt": "2026-11-05T15:35:35.927448+00:00"
+        },
+        {
+          "key": "bono-access.html",
+          "url": "https://bono-sagamiono.jp/access/",
+          "sha256": "3be9628fe10e99782054c9cd89bce80ba840a3218aedcf4da74b767679639811",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/3be9628fe10e99782054c9cd89bce80ba840a3218aedcf4da74b767679639811.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:26.401261+00:00",
+          "attemptedAt": "2026-11-05T15:35:26.232367+00:00"
+        },
+        {
+          "key": "bono-access-map.png",
+          "url": "https://bono-sagamiono.jp/assets/images/access/img01.png",
+          "sha256": "322aac52bd931bbb7b4a2ee2412b853e77dd5b7447a8e4894decd2ad4ffcefae",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/322aac52bd931bbb7b4a2ee2412b853e77dd5b7447a8e4894decd2ad4ffcefae.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:36.236736+00:00",
+          "attemptedAt": "2026-11-05T15:35:36.162425+00:00"
+        },
+        {
+          "key": "sagamix.html",
+          "url": "https://bono-sagamiono.jp/floorguide/detail/?scd=000138",
+          "sha256": "5ee8c3dbff0fb77364e4c490664ccad681be2705ee3c8135f1daec9879b3b2d1",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/5ee8c3dbff0fb77364e4c490664ccad681be2705ee3c8135f1daec9879b3b2d1.raw",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:35:36.652045+00:00",
+          "attemptedAt": "2026-11-05T15:35:36.406871+00:00"
+        }
+      ],
+      "remainingReason": "製品固有CRSと独立建物同定の承認が未了。",
+      "nextAction": "独立原本/外形同定と県共通CRS確認後に採否決定。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "市配布案内・現店舗詳細・SC2Fの正しいフロアURLを取得",
+        "全2F図MAP24と北矢印ありアクセス図を目視、駐車場・北モール・南モールを分離",
+        "PMTiles9枚取得、BldA147のSC主体を道路/隣接棟と比較",
+        "代表点の逆投影、面積概算、小数7桁丸め前後内包検証"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/north/outcomes.json",
+          "sha256": "d6772b8c6c5de36e14557c2f356169a3fef5f052d6afc7b04d5cff8e7c0aeb1c"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/observation.json",
+          "sha256": "1247686791e2c8aacaaf6f9d621fb36b7a88bdf94dbfe80c46be38b1b6617489"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+          "sha256": "1ac6b373188d708c7248d7d62f94fc3bd81297c842165003c09ce8dfd80f9321"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+      "name": "衣笠商店街サービスセンター",
+      "status": "hold-small-booth-footprint",
+      "candidateCoordinate": null,
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+      "sourceRefs": [
+        {
+          "label": "yokosuka-cards.html",
+          "url": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "status": "acquired",
+          "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+        },
+        {
+          "label": "kinugasa-map.pdf",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/8_map2026_web.pdf",
+          "status": "acquired",
+          "sha256": "cef8e44f493dbd33a545bee2568abd2ab5ffef8e600e2adf588876886056214e"
+        },
+        {
+          "label": "kinugasa-service.html",
+          "url": "https://kinuten.com/?page_id=2263",
+          "status": "acquired",
+          "sha256": "c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084"
+        },
+        {
+          "label": "kinugasa-access.html",
+          "url": "https://kinuten.com/?page_id=13",
+          "status": "acquired",
+          "sha256": "ffa2c1a28454ceb1ca4413ef6382fb4d51ae275f8066c8443c4069024a104269"
+        },
+        {
+          "label": "kinugasa-photo.jpg",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "status": "acquired",
+          "sha256": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03"
+        },
+        {
+          "label": "kinugasa-photo2.jpg",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/2025_sc-1024x618.jpg",
+          "status": "acquired",
+          "sha256": "76ab2629f6a53edeaedf78cd875a8fb33e31be5728c3729ae828b792fd08dbad"
+        },
+        {
+          "label": "kinugasa-shops.html",
+          "url": "https://kinuten.com/?page_id=424",
+          "status": "acquired",
+          "sha256": "ff4bc5a5fe49f01c8568f84452418ed5e58a94601351eb5b5329240b08682af1"
+        },
+        {
+          "label": "himawari.html",
+          "url": "https://sinkyuuseikotuin-himawari.jp/kinu/",
+          "status": "acquired",
+          "sha256": "406cd65eb48c5aca0d1c7937331e15b1d34e432b2a789932e9523dddfa279432"
+        },
+        {
+          "label": "himawari-map.png",
+          "url": "https://sinkyuuseikotuin-himawari.jp/wp/wp-content/uploads/2026/08/map_Kinugasa_.png",
+          "status": "acquired",
+          "sha256": "e23762e7d68423efb1dfb365d5687175232c4d84574c108f6cde80babae73776"
+        },
+        {
+          "label": "himawari-photo.jpg",
+          "url": "https://sinkyuuseikotuin-himawari.jp/wp/wp-content/uploads/2022/11/gaikan02.jpg",
+          "status": "acquired",
+          "sha256": "62786dc7d5eae58495c2da1735f3339d2535902c5248752f638c40faaa683247"
+        }
+      ],
+      "remainingReason": "公式写真の小型独立ブースとGSI隣接外形524/525等の一致を確定できない。センター小ブースの数値外形又は建物を明示する公的Pointが必要。",
+      "nextAction": "センター小ブースに対応する外形又は建物明示Pointを追加確認し、交番・隣棟との混同なく再照合",
+      "humanQuestion": null,
+      "performedMethods": [
+        "市カード案内の月水金土センター条件と商店街サービス案内本文を照合",
+        "商店街公式地図PDF全2頁・公式ブース写真2枚を目視し、信金・交番・ブース・理容店の順序と独立小屋を確認",
+        "GSI PMTiles周辺9タイル全描画、交番AnnoとBldA523を照合し、隣接524/525・アーケード586の形状と面積を比較",
+        "比較外形の代表点・丸め後内包を計算、小屋と隣棟外形の一致は確定できず座標不採用"
+      ],
+      "stage": "researched_hold",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json",
+          "sha256": "e1a329c9f7c9b2fd59e3e940004fae372d4e6cd22343277624b23b438451df51"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json",
+          "sha256": "d8686679945f3d861cad4e5b9bef5afe6413272279138a1f5b3b8d648ee9ca6b"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-comparison.json",
+          "sha256": "3e5d61fb4174ab021648ce9f00f5f0f5a2701ab61c22e96e7c8e5862c447125f"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "name": "相模原市役所 下水道経営課（第1別館2階）",
+      "status": "candidate-awaiting-independent-review",
+      "candidateCoordinate": {
+        "lat": 35.5717352,
+        "lng": 139.3726981
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/annex-followup/policy-pages.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json",
+      "sourceRefs": [
+        "data/evidence/kanto-prefecture/kanagawa/annex-followup/department-check.json",
+        "data/evidence/kanto-prefecture/kanagawa/annex-followup/crs-followup.json",
+        "data/evidence/kanto-prefecture/kanagawa/inspection.json"
+      ],
+      "remainingReason": "製品固有CRS適用承認、県外独立レビュー未了。初回時間の施設別純作業時間未達は遡及補正しない。",
+      "nextAction": "原本/数値/候補bindingの独立レビューへ渡し承認後のみmanifestへ選択。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "公式配布案内と下水道部案内の棟指定照合",
+        "周辺案内図1頁/基本方針13頁全頁目視",
+        "9タイル全BldA/RdCL描画と周辺棟/道路対応",
+        "buffer断片union面積と丸め後内包再現",
+        "版・CRS仕様とPMTiles metadataの追加調査"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/annex-followup/outcomes.json",
+          "sha256": "0166fa7bb4bc72f30284df0cd6877522ef4f3fc9f2e5cfb5855441a6930e6047"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/annex-followup/policy-pages.json",
+          "sha256": "4283afbb5de71d30dc1df83dfa5c621fa00637a07c0d1b2db6677d9cc565a2de"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json",
+          "sha256": "5435e7f4f43fec017edb536b5be1ab65f75d7846dd028353c486ccafbeee0eb1"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+      "name": "衣笠商店街事務所",
+      "status": "hold-building-identity",
+      "candidateCoordinate": null,
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+      "sourceRefs": [
+        {
+          "label": "yokosuka-cards.html",
+          "url": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "status": "acquired",
+          "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+        },
+        {
+          "label": "kinugasa-map.pdf",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/8_map2026_web.pdf",
+          "status": "acquired",
+          "sha256": "cef8e44f493dbd33a545bee2568abd2ab5ffef8e600e2adf588876886056214e"
+        },
+        {
+          "label": "kinugasa-service.html",
+          "url": "https://kinuten.com/?page_id=2263",
+          "status": "acquired",
+          "sha256": "c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084"
+        },
+        {
+          "label": "kinugasa-access.html",
+          "url": "https://kinuten.com/?page_id=13",
+          "status": "acquired",
+          "sha256": "ffa2c1a28454ceb1ca4413ef6382fb4d51ae275f8066c8443c4069024a104269"
+        },
+        {
+          "label": "kinugasa-photo.jpg",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/2025_sc2-1024x615.jpg",
+          "status": "acquired",
+          "sha256": "9cdaf492d18e27696bd403931a5301017877524ebd1410494fb321595fb2ac03"
+        },
+        {
+          "label": "kinugasa-photo2.jpg",
+          "url": "https://kinuten.com/hp7/wp-content/uploads/2025_sc-1024x618.jpg",
+          "status": "acquired",
+          "sha256": "76ab2629f6a53edeaedf78cd875a8fb33e31be5728c3729ae828b792fd08dbad"
+        },
+        {
+          "label": "kinugasa-shops.html",
+          "url": "https://kinuten.com/?page_id=424",
+          "status": "acquired",
+          "sha256": "ff4bc5a5fe49f01c8568f84452418ed5e58a94601351eb5b5329240b08682af1"
+        },
+        {
+          "label": "himawari.html",
+          "url": "https://sinkyuuseikotuin-himawari.jp/kinu/",
+          "status": "acquired",
+          "sha256": "406cd65eb48c5aca0d1c7937331e15b1d34e432b2a789932e9523dddfa279432"
+        },
+        {
+          "label": "himawari-map.png",
+          "url": "https://sinkyuuseikotuin-himawari.jp/wp/wp-content/uploads/2026/08/map_Kinugasa_.png",
+          "status": "acquired",
+          "sha256": "e23762e7d68423efb1dfb365d5687175232c4d84574c108f6cde80babae73776"
+        },
+        {
+          "label": "himawari-photo.jpg",
+          "url": "https://sinkyuuseikotuin-himawari.jp/wp/wp-content/uploads/2022/11/gaikan02.jpg",
+          "status": "acquired",
+          "sha256": "62786dc7d5eae58495c2da1735f3339d2535902c5248752f638c40faaa683247"
+        },
+        {
+          "label": "kinugasa-seiyu.html",
+          "url": "https://www.seiyu.co.jp/shop/%E8%A5%BF%E5%8F%8B%E8%A1%A3%E7%AC%A0%E5%BA%97/",
+          "status": "failed",
+          "sha256": null
+        },
+        {
+          "label": "kinugasa-seiyu-photo.jpg",
+          "url": "https://www.seiyu.co.jp/assets/images/ad231c29a96f31f66033d97f2f2c426e_1.jpg",
+          "status": "failed",
+          "sha256": null
+        },
+        {
+          "label": "kinugasa-seiyu-retry.html",
+          "url": "https://www.seiyu.co.jp/shop/%E8%A5%BF%E5%8F%8B%E8%A1%A3%E7%AC%A0%E5%BA%97/?",
+          "status": "failed",
+          "sha256": null
+        },
+        {
+          "label": "kinugasa-contact.html",
+          "url": "https://kinuten.com/?page_id=931",
+          "status": "acquired",
+          "sha256": "4b93f8113577685bef0e217abacb18e3734db203230aeaefb64eb8b34250aabf"
+        }
+      ],
+      "remainingReason": "西友と事務所の同棟回答は受領済み。西友棟そのものを分離数値外形へ独立対応する境界根拠が未確定。",
+      "nextAction": "独立レビューで公式模式図と周辺外形の対応を再評価。対応不能なら西友棟境界を示す原資料取得後に再照合。利用者への追加質問なし。",
+      "humanQuestion": {
+        "status": "answered",
+        "userReportedAt": "2026-11-06",
+        "answer": "西友衣笠店と同一棟、衣笠栄町1-70",
+        "additionalQuestionNeeded": false
+      },
+      "performedMethods": [
+        "市カード案内の火木事務所条件・商栄会館3階住所を照合",
+        "商店街公式地図PDF全2頁の事務所引出線と西友・仲通りの配置を目視",
+        "同住所医院の運営者HTML・北矢印付き地図・外観写真を取得読解し、街区配置を比較。医院の商栄会館所属を記す市資料は直接取得404で未確認と区別",
+        "GSI PMTiles周辺9タイル全描画、BldA527/529等の分離外形と引出線を比較し面積・代表点内包を計算。商栄会館境界は未確定",
+        "既取得公式商店街2026mapの第2頁全図を再読、西友C-04と事務所引出線を再照合（前回は全2頁読解済み）",
+        "既取得商店街生鮮ページの西友C-04・電話番号を独立再読",
+        "西友公式店舗ページのweb取得本文で1-70と階別用途を確認。直接原本・店舗写真原本の取得は403。原本取得成功としない",
+        "GSI既取得9タイルのdetailを再読し、527/528/529/580/587/588/589の7外形を面積・内包再計算"
+      ],
+      "userReportedAt": "2026-11-06",
+      "userReportRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-user-report.json",
+      "priorObservationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-observation.json",
+      "stage": "researched_hold",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json",
+          "sha256": "e1a329c9f7c9b2fd59e3e940004fae372d4e6cd22343277624b23b438451df51"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-observation.json",
+          "sha256": "6add53ccfb9eda5442b297114e390db845b83f4232f0fdbd37d7000737d23a3e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/kinugasa-office-followup-comparison.json",
+          "sha256": "f302c9a1d2d49c3e03a805b426f8ff67fb6007832a31e5a43a1810ca1af7947d"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "name": "アクアクリーンセンター",
+      "status": "candidate_pending_review",
+      "candidateCoordinate": {
+        "lat": 35.3872848,
+        "lng": 139.2971013
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+      "sourceRefs": [
+        {
+          "key": "isehara-card.html",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "sha256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-access.html",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2009122800060/",
+          "sha256": "82c683e80a53dc8441156381d5f8744f1b93446ca3d5c45f33624266386ed371",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/82c683e80a53dc8441156381d5f8744f1b93446ca3d5c45f33624266386ed371.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-access.pdf",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2009122800060/file_contents/file_20257255102712_1.pdf",
+          "sha256": "3305e9a3e804408dca97ceebf5c4712e45d7d36bd82e7012437751b4b1308ef3",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/3305e9a3e804408dca97ceebf5c4712e45d7d36bd82e7012437751b4b1308ef3.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-card-map.png",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/file_contents/senterbashyo.png",
+          "sha256": "2511737fb3c70f56f412e37e04579a8e4ae30dfb6aef6309e261f3d5d05c9521",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/2511737fb3c70f56f412e37e04579a8e4ae30dfb6aef6309e261f3d5d05c9521.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-office-photo.jpg",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/file_contents/keieikasyasin.jpg",
+          "sha256": "012c3784c646dd2c15eaa068356707cb00caf780c318b52830a792cf05744ef8",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/012c3784c646dd2c15eaa068356707cb00caf780c318b52830a792cf05744ef8.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-facility.html",
+          "url": "https://www.city.isehara.kanagawa.jp/shisetsu/2023103100093/",
+          "sha256": "3542e2648ce1c081d2bb83fe2c8803638a5d5bd74e893f77909b8d7229955756",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/3542e2648ce1c081d2bb83fe2c8803638a5d5bd74e893f77909b8d7229955756.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-council.html",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2014021000015/",
+          "sha256": "9e4a124e3f1707e23f966bbee1b1f1c8cc3e883174fd9178097a164c707a0450",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/9e4a124e3f1707e23f966bbee1b1f1c8cc3e883174fd9178097a164c707a0450.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-council-current.pdf",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2014021000015/file_contents/R081kaigiroku.pdf",
+          "sha256": "54d3e4123bc43282640a2730ea01da3e4b5b6bd1cda3337fcb8e351788dd4cbf",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/54d3e4123bc43282640a2730ea01da3e4b5b6bd1cda3337fcb8e351788dd4cbf.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-earthquake.pdf",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2023030700090/file_contents/sougoujisinntaisaku_plan3.pdf",
+          "sha256": "09500bac39abaa0e69b46657c3b4c36c6dc0c070de7163801744a98cb3e6386d",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/09500bac39abaa0e69b46657c3b4c36c6dc0c070de7163801744a98cb3e6386d.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "isehara-tour-current.pdf",
+          "url": "https://www.city.isehara.kanagawa.jp/docs/2026100600061/file_contents/file_20261062163951_1.pdf",
+          "sha256": "887b79c00061cca65773d6b63eff564525bb0493ae3342561fef0bb0f7703e0b",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/887b79c00061cca65773d6b63eff564525bb0493ae3342561fef0bb0f7703e0b.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        }
+      ],
+      "remainingReason": "棟内記名と形状/隣接/道路によりBldA37を未承認候補として維持。利用者の敷地北西端と旧担当の北東推論は未解消のため両方位呼称を採用根拠から除外。独立レビュー/製品CRS・条件未承認。",
+      "nextAction": "県親と独立レビューが記名棟BldA37の同定・CRS・条件を判定。敷地北東/北西の断定はしない。新質問なし。",
+      "humanQuestion": null,
+      "userReportedAt": "2026-11-06",
+      "userFollowupRef": "data/evidence/kanto-prefecture/kanagawa/west/isehara/user-followup.json",
+      "selectionEligible": true,
+      "performedMethods": [
+        "official-distribution",
+        "inherited-history",
+        "official-diagram",
+        "GSI-BldA-RdCL",
+        "user-report-conflict-primary-map-reinspection"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/west/outcomes.json",
+          "sha256": "47fbd03d89c04110ad61e95608ddbe6ec555109b6b93471902bef3b041dffcb4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.json",
+          "sha256": "9333d061185bf6ca127d9675fe9b7e2c4ba41eadf72e52dd54a5b3fd973f7d57"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+          "sha256": "60f635a6f1bca5496bbdebddfb977d48caf26874703ec3482171f9b585ab210b"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "name": "ヴェルニー公園管理事務所",
+      "status": "candidate-unapproved",
+      "candidateCoordinate": {
+        "lat": 35.2844707,
+        "lng": 139.6572924
+      },
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-observation.json",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-point.json",
+      "sourceRefs": [
+        {
+          "label": "verny-guide.html",
+          "url": "https://www.kanagawaparks.com/verny/guide.html",
+          "status": "failed",
+          "sha256": null
+        },
+        {
+          "label": "yokosuka-cards.html",
+          "url": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "status": "acquired",
+          "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+        },
+        {
+          "label": "verny.html",
+          "url": "https://www.kanagawaparks.com/verny/",
+          "status": "acquired",
+          "sha256": "201e54549731e8f66263254f6649db99c0511dde4ef87403304e3b4dfe678343"
+        },
+        {
+          "label": "verny-facility.html",
+          "url": "https://www.kanagawaparks.com/verny/facility.html",
+          "status": "acquired",
+          "sha256": "08f9a19a033fea8ce45c7547cac5a05324df689c9fa4ff3bc0c5346f9f2a57c1"
+        },
+        {
+          "label": "verny-map.svg",
+          "url": "https://www.kanagawaparks.com/parks/verny/images/facility_map230710.svg",
+          "status": "acquired",
+          "sha256": "6970374ecd18829c1b2a8d7dffc521bd033fccbc446bc9e46cc8c207125ca148"
+        },
+        {
+          "label": "verny-work.pdf",
+          "url": "https://www.kanagawaparks.com/verny/files/pamphlet_terework_v3.pdf",
+          "status": "acquired",
+          "sha256": "e2c6dd4e016d5645ff19813a1c9107c4b17d922fbf878b68ab9bec0ea4e4a0ab"
+        }
+      ],
+      "remainingReason": [
+        "親の原本・建物同定独立レビュー",
+        "製品固有CRS適用承認"
+      ],
+      "nextAction": "原本・棟同定・製品CRS独立レビュー後に親が採否決定",
+      "humanQuestion": null,
+      "performedMethods": [
+        "市配布案内再取得・該当節読解",
+        "指定管理者施設案内・園内SVG取得全図読解",
+        "コルセールパンフPDF全2頁目視",
+        "PMTiles 9タイル全BldA/RdCL/Cstline描画と数値外形照合",
+        "候補代表点・面積・丸め前後内包検査"
+      ],
+      "stage": "candidate_unapproved",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/peninsula/outcomes.json",
+          "sha256": "e1a329c9f7c9b2fd59e3e940004fae372d4e6cd22343277624b23b438451df51"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-observation.json",
+          "sha256": "7210ceeb26b52327207368ba54ea4e8fc95776727e8d956bd6e55e19780ac705"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-point.json",
+          "sha256": "710b83c791f92a5baa33e38e78801b17b33e2651adc4b4311e6e968fca4139bd"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "name": "三浦海岸駅前観光案内所",
+      "candidateCoordinate": null,
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+      "sourceRefs": [
+        {
+          "schema": 1,
+          "url": "https://www.keikyu.co.jp/ride/kakueki/img/KK71_im01.png",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T16:02:59.843930+00:00",
+          "httpStatus": 403,
+          "responseHeaders": {
+            "Date": "Thu, 05 Nov 2026 16:02:59 GMT",
+            "Content-Type": "text/plain; charset=UTF-8",
+            "Content-Length": "17",
+            "Connection": "close",
+            "Cache-Control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+            "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+            "Referrer-Policy": "same-origin",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Server": "cloudflare",
+            "CF-RAY": "a55d16047c3caf25-NRT"
+          },
+          "responseURL": "https://www.keikyu.co.jp/ride/kakueki/img/KK71_im01.png",
+          "responseSHA256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+          "responseRawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c.raw",
+          "responseBytes": 17,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "finishedAt": "2026-11-05T16:02:59.930617+00:00",
+          "key": "plan.png"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.ecomo-rakuraku.jp/ja/station/Miurakaigan/",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T16:03:09.792207+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentRange": null,
+          "responseURL": "https://www.ecomo-rakuraku.jp/ja/station/Miurakaigan/",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T16:03:09.952828+00:00",
+          "sha256": "fb451e613ccc2243fdc15c0f4fba0199711153dc129a8ca4a35940364f9a39b4",
+          "rawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/fb451e613ccc2243fdc15c0f4fba0199711153dc129a8ca4a35940364f9a39b4.raw",
+          "bytes": 15292,
+          "key": "ecomo.html"
+        },
+        {
+          "schema": 1,
+          "url": "https://newcal.jp/wp-content/uploads/2025/07/%E4%B8%89%E6%B5%A6%E5%8D%8A%E5%B3%B6%E9%A7%85%E5%89%8D%E3%81%B2%E3%82%8D%E3%81%B0%E3%81%94%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85-.pdf",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T16:03:49.342752+00:00",
+          "httpStatus": 200,
+          "etag": "\"7116de619428fc03f5b786088fa0de43\"",
+          "lastModified": "Thu, 10 Jul 2025 04:31:53 GMT",
+          "contentType": "application/pdf",
+          "contentRange": null,
+          "responseURL": "https://newcal.jp/wp-content/uploads/2025/07/%E4%B8%89%E6%B5%A6%E5%8D%8A%E5%B3%B6%E9%A7%85%E5%89%8D%E3%81%B2%E3%82%8D%E3%81%B0%E3%81%94%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85-.pdf",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T16:03:49.572276+00:00",
+          "sha256": "89c6bdb5ff65b7ed25d2ae2afba87e964e1e4458e1bed3217e3c9e862a4cd5ec",
+          "rawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/89c6bdb5ff65b7ed25d2ae2afba87e964e1e4458e1bed3217e3c9e862a4cd5ec.raw",
+          "bytes": 455078,
+          "key": "plaza.pdf"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.keikyu.co.jp/assets/pdf/20240830HP_24074KO.pdf",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T16:03:49.731019+00:00",
+          "httpStatus": 403,
+          "responseHeaders": {
+            "Date": "Thu, 05 Nov 2026 16:03:49 GMT",
+            "Content-Type": "text/plain; charset=UTF-8",
+            "Content-Length": "17",
+            "Connection": "close",
+            "Cache-Control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+            "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+            "Referrer-Policy": "same-origin",
+            "X-Frame-Options": "SAMEORIGIN",
+            "Server": "cloudflare",
+            "CF-RAY": "a55d173c2be27635-NRT"
+          },
+          "responseURL": "https://www.keikyu.co.jp/assets/pdf/20240830HP_24074KO.pdf",
+          "responseSHA256": "2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c",
+          "responseRawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/2938e9f1284180959e33ab1718d0793a72ff6e4cdb8108c34dcd14e69446de5c.raw",
+          "responseBytes": 17,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 403: Forbidden",
+          "finishedAt": "2026-11-05T16:03:49.799998+00:00",
+          "key": "opening.pdf"
+        },
+        {
+          "schema": 1,
+          "url": "https://newcal.jp/column/miurakaigan-ekimaehiroba/",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T16:04:27.101624+00:00",
+          "httpStatus": 404,
+          "responseHeaders": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Content-Length": "4107",
+            "Connection": "close",
+            "Date": "Thu, 05 Nov 2026 16:04:27 GMT",
+            "ETag": "W/\"100b-PSUi/UD0J0D96SVZvEuHLvXKawc\"",
+            "Server": "nginx",
+            "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+            "Cross-Origin-Resource-Policy": "same-origin",
+            "Origin-Agent-Cluster": "?1",
+            "Referrer-Policy": "origin",
+            "X-Content-Type-Options": "nosniff",
+            "X-DNS-Prefetch-Control": "off",
+            "X-Download-Options": "noopen",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Permitted-Cross-Domain-Policies": "none",
+            "X-XSS-Protection": "0",
+            "X-Cache": "Error from cloudfront",
+            "Via": "1.1 238f87cf80263f9c43ff4cecc9810868.cloudfront.net (CloudFront)",
+            "X-Amz-Cf-Pop": "NRT20-P1",
+            "X-Amz-Cf-Id": "A60WJL-E-5R7dACLGyBxsJAub3njZuNDnhu0HpsRoNYACbj4GuIUrQ=="
+          },
+          "responseURL": "https://newcal.jp/column/miurakaigan-ekimaehiroba/",
+          "responseSHA256": "5293f3306c1c79952a0fa2b9c434c71f860949bb8f62f2371da0e9b4013d1169",
+          "responseRawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/5293f3306c1c79952a0fa2b9c434c71f860949bb8f62f2371da0e9b4013d1169.raw",
+          "responseBytes": 4107,
+          "status": "failed",
+          "error": "HTTPError: HTTP Error 404: Not Found",
+          "finishedAt": "2026-11-05T16:04:27.170014+00:00",
+          "key": "newcal.html"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.keikyu.co.jp/ride/kakueki/img/KK71_im01.png",
+          "version": "browser-header-retry",
+          "requestHeaders": {
+            "user-agent": "Mozilla/5.0",
+            "referer": "https://www.keikyu.co.jp/ride/kakueki/KK71.html"
+          },
+          "attemptedAt": "2026-11-05T16:04:27.323460+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": "Thu, 30 Mar 2023 00:47:30 GMT",
+          "contentType": "image/png",
+          "contentRange": null,
+          "responseURL": "https://www.keikyu.co.jp/ride/kakueki/img/KK71_im01.png",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T16:04:27.589965+00:00",
+          "sha256": "dad33374ddad7b4d023f78103ab755c8510811c5609bdf0722e5142435d6898b",
+          "rawPath": "data/work/kanto-kanagawa/north/miura-followup/cache/dad33374ddad7b4d023f78103ab755c8510811c5609bdf0722e5142435d6898b.raw",
+          "bytes": 96221,
+          "key": "plan-browser.png"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:40:01.834994+00:00",
+          "httpStatus": 200,
+          "etag": "\"6ac60d31-d7c5\"",
+          "lastModified": "Wed, 07 Oct 2026 09:13:21 GMT",
+          "contentType": "text/html",
+          "contentRange": null,
+          "responseURL": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:40:01.968366+00:00",
+          "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6.raw",
+          "bytes": 55237,
+          "key": "miura-card.html"
+        },
+        {
+          "schema": 1,
+          "url": "https://miura-info.ne.jp/tourismassociation/",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:40:02.067663+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentType": "text/html; charset=UTF-8",
+          "contentRange": null,
+          "responseURL": "https://miura-info.ne.jp/tourismassociation/",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:40:02.525243+00:00",
+          "sha256": "14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4.raw",
+          "bytes": 50419,
+          "key": "miura-tourism.html"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.miura-info.ne.jp/wp-content/uploads/2024/09/ekimae_-840x476-1.jpg",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:40:24.153778+00:00",
+          "httpStatus": 200,
+          "etag": "\"2b4da-62106cff207e5\"",
+          "lastModified": "Sun, 01 Sep 2024 03:56:42 GMT",
+          "contentType": "image/jpeg",
+          "contentRange": null,
+          "responseURL": "https://miura-info.ne.jp/wp-content/uploads/2024/09/ekimae_-840x476-1.jpg",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:40:24.509513+00:00",
+          "sha256": "7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20.raw",
+          "bytes": 177370,
+          "key": "miura-photo.jpg"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.city.miura.kanagawa.jp/material/images/group/5/012233_000001.jpg",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:41:32.424655+00:00",
+          "httpStatus": 200,
+          "etag": "\"63476d2e-a42b\"",
+          "lastModified": "Thu, 13 Oct 2022 01:43:10 GMT",
+          "contentType": "image/jpeg",
+          "contentRange": null,
+          "responseURL": "https://www.city.miura.kanagawa.jp/material/images/group/5/012233_000001.jpg",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:41:32.547880+00:00",
+          "sha256": "7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18.raw",
+          "bytes": 42027,
+          "key": "miura-city-photo.jpg"
+        },
+        {
+          "schema": 1,
+          "url": "https://miura-info.ne.jp/%E4%B8%89%E6%B5%A6%E6%B5%B7%E5%B2%B8%E9%A7%85%E5%89%8D%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%EF%BC%81/",
+          "version": "issue62-north-2026-11-05",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:41:49.637125+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": null,
+          "contentType": "text/html; charset=UTF-8",
+          "contentRange": null,
+          "responseURL": "https://miura-info.ne.jp/%E4%B8%89%E6%B5%A6%E6%B5%B7%E5%B2%B8%E9%A7%85%E5%89%8D%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%EF%BC%81/",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:41:50.161794+00:00",
+          "sha256": "612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9",
+          "rawPath": "data/work/kanto-kanagawa/north/cache/612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9.raw",
+          "bytes": 62903,
+          "key": "miura-open.html"
+        }
+      ],
+      "remainingReason": "回答で方位は解消。トレーラー/高架床版と分離ホーム屋根外形の包含対応は未解決。",
+      "nextAction": "駅前配置図の高架柱列を地理的な床版外周に結び付ける数値原典または地理参照付き施設図を追加照合する。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "2026-11-06利用者回答を原本読解と分離して記録",
+        "京急構内図通常取得403を再現し、User-Agent/Referer指定で200取得・hash記録",
+        "管理者newcalの2025制定配置図全4頁を取得・目視",
+        "既往公式写真5原本hashを再確認して再読解",
+        "9PMTiles既原本hashと6周辺polygonのvalidity/面積/境界を検証",
+        "GSI std9枚で線路と周辺道路の方向確認"
+      ],
+      "status": "held-structure-footprint-match",
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json",
+      "humanQuestionState": "answered",
+      "userReportRef": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json",
+      "stage": "researched_hold",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "userReportedAt": "2026-11-06",
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/north/miura-followup/outcomes.json",
+          "sha256": "707b971b065ac539870293b4760e460630f0c815ba281879fc322c5f29a5c82a"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json",
+          "sha256": "d64fecc78032cea32857a3be3e8f3357e646ad7eee0805f3bd468897356bc398"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+          "sha256": "753d75debe66aef8f413956a8f4dc75b3b2d3e0d897e12226acb1b6e64e8cb0e"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json",
+          "sha256": "b9402c18604aa211c193039438d24841b8e4206b110809e3c5b55bb5bdc706a9"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-11",
+      "name": "オーエンス文化会館 第2駐車場南側",
+      "status": "outdoor_site_boundary_not_in_building_layer",
+      "candidateCoordinate": null,
+      "observationRef": "data/evidence/kanto-prefecture/kanagawa/west/ayase/observation.json",
+      "numericRef": null,
+      "sourceRefs": [
+        {
+          "key": "ayase-card.html",
+          "url": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "sha256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "ayase-facility.html",
+          "url": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+          "sha256": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "ayase-operator.html",
+          "url": "https://www.ayase-bunka.com/",
+          "sha256": "88b7ba6d2c28707f05dddbebd603d8013e4e0413d70d4810e89bcf5f1b9617a1",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/88b7ba6d2c28707f05dddbebd603d8013e4e0413d70d4810e89bcf5f1b9617a1.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "ayase-access.html",
+          "url": "https://www.ayase-bunka.com/access/",
+          "sha256": "f32945b02083f0093602731d42a537b6753eee6988d5b47ecb532f3814bd12b2",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/f32945b02083f0093602731d42a537b6753eee6988d5b47ecb532f3814bd12b2.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "ayase-access.png",
+          "url": "https://www.ayase-bunka.com/src/images/other/access01.png",
+          "sha256": "aa6db6596c3ce69ea88c09565b54cc6db81b9a6a692ff0885da2698298bed8e4",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/aa6db6596c3ce69ea88c09565b54cc6db81b9a6a692ff0885da2698298bed8e4.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        },
+        {
+          "key": "ayase-parking.pdf",
+          "url": "https://www.ayase-bunka.com/src/pdf/dl_guide03_parking.pdf",
+          "sha256": "c630a8d3d831bda289edea553ea9d8398731bf248fef4147aac68020e8cb5273",
+          "rawPath": "data/work/kanto-kanagawa/west/cache/c630a8d3d831bda289edea553ea9d8398731bf248fef4147aac68020e8cb5273.raw",
+          "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+        }
+      ],
+      "remainingReason": "現配布先は屋外第2駐車場南側。比較対象BldA/RdCLに区画外周なし。本館点で代用不可。屋外イベント施設点の採用方針/数値原典が未解決。",
+      "nextAction": "県外親が屋外イベント点のscope方針を決定し、駐車場南区画の公的数値境界または公的施設点を調査する。本館scope=buildingを適用しない。",
+      "humanQuestion": null,
+      "performedMethods": [
+        "official-distribution",
+        "inherited-history",
+        "official-diagram",
+        "GSI-BldA-RdCL"
+      ],
+      "stage": "researched_hold",
+      "adoptionApproved": false,
+      "manifestUpdated": false,
+      "evidenceRefs": [
+        {
+          "path": "data/national/kanto-prefecture/kanagawa/west/outcomes.json",
+          "sha256": "47fbd03d89c04110ad61e95608ddbe6ec555109b6b93471902bef3b041dffcb4"
+        },
+        {
+          "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/observation.json",
+          "sha256": "273c4a39a2c818aa2f5da8f215df9f905dc84fcc6ed18e6d698b642b2aa1c222"
+        }
+      ]
+    }
+  ],
+  "priorValidationCommit": "fe6e5f1a945f0562277d604b103aaefda42ca979"
+}

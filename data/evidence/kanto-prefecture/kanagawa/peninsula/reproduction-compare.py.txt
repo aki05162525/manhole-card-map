@@ -1,0 +1,8 @@
+import sys,json,math
+from shapely.geometry import shape
+sys.path.insert(0,'/tmp');from peninsula_tools import *
+sys.path.insert(0,'tools/national');from research_common import rounded_coordinate
+key=sys.argv[1];c=json.loads((W/(key+'-combined.json')).read_text());rows=[]
+for ident in sys.argv[2:]:
+ f=next(f for f in c['features'] if f['id']==ident);g=shape(f['geometry']);p=g.representative_point();r=rounded_coordinate(f['geometry'],c['baseTile'],[p.x,p.y]);s=math.cos(math.radians(r['coordinate']['lat']))*2*math.pi*6378137/(2**16*4096);rows.append({'feature':f,'baseTile':c['baseTile'],'pointXY':[p.x,p.y],'calculationOnlyNotFacilityCandidate':True,'areaSquareMetresApprox':g.area*s*s,'numericChecks':r})
+save(key+'-comparison.json',{'purpose':'External shape comparison; points are calculation-only and NOT bound facility coordinates','features':rows})

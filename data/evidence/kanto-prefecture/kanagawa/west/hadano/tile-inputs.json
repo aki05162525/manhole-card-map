@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25875
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58114-25875.pbf.gz",
+      "sha256": "73547027d2363c66683dc02f1c8abf8b0081fdf8f907e29c2d2bb7d0411c585a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58115,
+        "y": 25875
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58115-25875.pbf.gz",
+      "sha256": "918872483388dcdc26b0542287fd529bc446c79522f2795341cc2f812cb6b96c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58116,
+        "y": 25875
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25875.pbf.gz",
+      "sha256": "9bf860d4e375fd3161b3703ef77199118520b56fb66ba66453fea525c69c2562"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58114-25876.pbf.gz",
+      "sha256": "0e7dfa14ad209e9fe4a1e9d4d320434b51adaf8264b3cc1c8bb00dba9a552328"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58115,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58115-25876.pbf.gz",
+      "sha256": "a55ce7818b0bd9816d314f9c2fd44dd3b5b91d13fafd89cda699b80394b9b634"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58116,
+        "y": 25876
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25876.pbf.gz",
+      "sha256": "5ad9bfeeb17e3e105e1beddbb287b78fe586c7dc60fb78184a976795b75dd44e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58114,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58114-25877.pbf.gz",
+      "sha256": "97a747408fbdf135541c74a2869bd7bf4386a174681057adee088c19209e7356"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58115,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58115-25877.pbf.gz",
+      "sha256": "296017bbac8761d73fa088eb069d08d83a93ac3367710b43fddbe445a0e38af6"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58116,
+        "y": 25877
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano/tile-16-58116-25877.pbf.gz",
+      "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5"
+    }
+  ],
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles"
+}

@@ -1,0 +1,27 @@
+{
+  "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+  "name": "葉山しおさい公園",
+  "asOf": "2026-11-05",
+  "userReportedAt": "2026-11-06",
+  "status": "candidate-unapproved",
+  "candidateCoordinate": {
+    "lat": 35.2637086,
+    "lng": 139.5785511
+  },
+  "performedMethods": [
+    "既取得町公式入口写真と公園概略図を全画像再読",
+    "訪問ブログの入口写真・入園券写真・現地案内板写真を原本取得、3画像全体を目視",
+    "案内板の正門/管理事務所・駐車場・博物館・海岸・県立美術館の配置とGSI9タイル全図/詳細図を再比較",
+    "既取得BldA125の数値geometry/点を再使用し丸め後内包再検査、面積・境界条件確認"
+  ],
+  "observationRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json",
+  "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+  "userReportRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json",
+  "remainingReason": "第三者撮影案内板の版年不明・入口棟の背面輪郭未確認。製品CRS共通確認と原本/棟同定の独立レビュー未承認。",
+  "nextAction": "独立レビューで管理事務所と125の位置対応と資料年代の限界を評価し採否決定",
+  "humanQuestion": {
+    "status": "answered",
+    "additionalQuestionNeeded": false
+  },
+  "priorOutcomePreserved": true
+}
