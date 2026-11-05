@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "nara": {
+    "logicalRecord": 223,
+    "source": {
+      "url": "https://www.city.nara.lg.jp/uploaded/attachment/200211.csv",
+      "path": "data/work/location-batch2/kinki-west/0facd5f774ba1bb9.csv",
+      "sha256": "5dc12c3fc149c5d0b129b76a728f0da708240814317307342ec5097d62a58678",
+      "fetchedAt": "2026-11-05T11:25:33.281681+00:00"
+    },
+    "fields": {
+      "名称": "奈良町南観光案内所『鹿の舟』",
+      "住所": "奈良県奈良市井上町11",
+      "緯度": "34.674053",
+      "経度": "135.830732",
+      "POIコード": "1001",
+      "POIコード内容": "観光案内所"
+    },
+    "license": "CC BY 2.1 JP; 奈良市公共施設一覧_20250901を抽出。カタログURL https://www.city.nara.lg.jp/soshiki/6/9651.html"
+  },
+  "moriguchi": {
+    "sheet": "sheet1",
+    "row": 36,
+    "source": {
+      "url": "https://www.city.moriguchi.osaka.jp/material/files/group/7/272094_public_facility.xlsx",
+      "path": "data/work/location-batch2/kinki-west/97543aeb336ddff2.xlsx",
+      "sha256": "5fa58e58223f9322d11fd6b3fc47d9d6ea652600e338c8d3a3d808a24a9bb143",
+      "fetchedAt": "2026-11-05T11:25:12.598514+00:00"
+    },
+    "fields": {
+      "E36": "市役所庁舎",
+      "I36": "大阪府大阪府守口市京阪本通2-5-5",
+      "K36": "34.734999999999999",
+      "L36": "135.56100000000001"
+    },
+    "license": "CC BY 4.0; 守口市公共施設一覧を抽出。 https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
+    "otherObservedFields": {
+      "T36": "会議室・別館ロビースペースの貸出時間の記載",
+      "U36": "会議室、別館ロビースペース貸し出し有り"
+    }
+  },
+  "moriguchiCommunityCenter": {
+    "source": {
+      "url": "https://www.city.moriguchi.osaka.jp/material/files/group/7/272094_public_facility.xlsx",
+      "path": "data/work/location-batch2/kinki-west/97543aeb336ddff2.xlsx",
+      "sha256": "5fa58e58223f9322d11fd6b3fc47d9d6ea652600e338c8d3a3d808a24a9bb143",
+      "fetchedAt": "2026-11-05T11:25:12.598514+00:00"
+    },
+    "sheet": "sheet1",
+    "row": 3,
+    "fields": {
+      "E3": "中部エリアコミュニティセンター",
+      "I3": "大阪府守口市京阪本通2丁目5番5号",
+      "K3": "34.735675999999998",
+      "L3": "135.56180499999999"
+    },
+    "note": "旧P05の34.736027,135.561523と別値。本館点として代用しない。"
+  }
+}
