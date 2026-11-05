@@ -17,9 +17,11 @@
 - 全国統合手順にあった未追跡/stage・commitの説明は、PR #21で既に現在の手順から除去済み。今回もmanifestが選択する入力・証拠の追跡状況を確認し、当時の記録を現在の前提にしないことを明記した。
 - [CI](../../.github/workflows/ci.yml)は全PRで一律にアプリ全体を実行する形ではなく、変更範囲から検証を選ぶ。backendは `go test -count=1 ./...` であり、旧文書の `go test ./...` と差があった。フロントの型検査はfixture buildに含まれる。
 
-## 緯度範囲の差
+## 緯度範囲の差（Issue18時点の履歴）
 
-範囲の用途を分けて現コードを確認した。
+以下はPR #23時点の調査記録。後続のIssue22でGo施設入力を±90へ統一した。現行契約と検証は[Issue22記録](issue22-coordinate-contract.md)を参照する。
+
+範囲の用途を分けて当時のコードを確認した。
 
 - [assemble.coordinate](../../tools/national/assemble.py)：施設座標の緯度±90、経度±180、有限数値のみ。
 - [Go applyPlaceLedger](../../cmd/builddata/ledger.go)：施設座標の緯度±85、経度±180。Pythonの受理範囲より狭い。
@@ -37,7 +39,7 @@ manifestから生成した台帳を `/tmp` へコピーし、座標がある最�
 
 ### 後続で決めること
 
-施設座標のPython/Go入力範囲をそろえ、地理座標の妥当性と表示viewport制約を分ける修正を、[後続Issue #22](https://github.com/aki05162525/manhole-card-map/issues/22)へ切り出した。範囲差は未修正。対象は施設座標の入力契約であり、蓋リンク・viewportまで無条件で同じ範囲へ変更する案ではない。
+施設座標のPython/Go入力範囲をそろえ、地理座標の妥当性と表示viewport制約を分ける修正を、[後続Issue #22](https://github.com/aki05162525/manhole-card-map/issues/22)へ切り出した。この記録時点では範囲差は未修正だった。対象は施設座標の入力契約であり、蓋リンク・viewportまで無条件で同じ範囲へ変更する案ではない。
 
 受入条件案：
 

@@ -86,3 +86,21 @@ describe("distribution-first map", () => {
     expect(matchingCards(cards, "大阪府", searchable)).toEqual([cards[1]]);
   });
 });
+
+it.each([85, 85.01, 85.051129, 86, 90, 90.01].flatMap((lat) => [lat, -lat]))(
+  "applies the saved viewport policy independently at latitude %s",
+  (lat) => {
+    const view = { lat, lng: 180, zoom: 5 };
+    expect(parseStoredView(JSON.stringify(view))).toEqual(
+      Math.abs(lat) <= 85 ? view : null,
+    );
+  },
+);
+it.each(["85", true, null, [], {}, Infinity, -Infinity, NaN])(
+  "rejects nonnumeric and nonfinite viewport latitude %j",
+  (lat) => {
+    expect(
+      parseStoredView(JSON.stringify({ lat, lng: 139, zoom: 5 })),
+    ).toBeNull();
+  },
+);
