@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+      "name": "hitachi",
+      "file": "data/evidence/location-batch2/north-kanto/hitachi-tile.pbf.gz",
+      "sha256": "b3e5069fb7abfbf8231534fe8164e35c35476dea3fab1d51fb8718b1bf67d514",
+      "tile": {
+        "z": 16,
+        "x": 58372,
+        "y": 25599
+      },
+      "extent": 4096,
+      "layer": "BldA",
+      "selectedGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2506,
+              2551
+            ],
+            [
+              2775,
+              2631
+            ],
+            [
+              2578,
+              3294
+            ],
+            [
+              2309,
+              3214
+            ],
+            [
+              2506,
+              2551
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "method": "centroid",
+      "expectedCoordinate": {
+        "lat": 36.5991526,
+        "lng": 140.6503817
+      },
+      "centroidWithin": true,
+      "roundedPointWithin": true,
+      "pointTileXY": [
+        2542.0,
+        2922.5
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+      "name": "hanyu",
+      "file": "data/evidence/location-batch2/north-kanto/hanyu-tile.pbf.gz",
+      "sha256": "309692bfa6a812500737671d2a3b649c0a43e38b170fb1d3cad8f334888c8863",
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25696
+      },
+      "extent": 4096,
+      "layer": "BldA",
+      "selectedGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2778,
+              1450
+            ],
+            [
+              2774,
+              1769
+            ],
+            [
+              2738,
+              1765
+            ],
+            [
+              2739,
+              1739
+            ],
+            [
+              2672,
+              1744
+            ],
+            [
+              2690,
+              1450
+            ],
+            [
+              2778,
+              1450
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "method": "centroid",
+      "expectedCoordinate": {
+        "lat": 36.1716201,
+        "lng": 139.6014386
+      },
+      "centroidWithin": true,
+      "roundedPointWithin": true,
+      "pointTileXY": [
+        2729.326854681452,
+        1604.3130591693587
+      ]
+    }
+  ]
+}

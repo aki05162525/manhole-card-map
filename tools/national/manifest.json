@@ -3835,6 +3835,19 @@
           "sha256": "852f954014ec973d5b96583dc906d12fb08ca9fdfcf0fe63134a03a042c4e27a"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/north-kanto/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+          "sha256": "284531a67ac3503b1e7950ede8d427f6f02635a614f743b3d73da542d34f1681"
+        },
+        {
+          "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+          "sha256": "d5d323a8aaf8492626bcfb77b071926c3a3b47797e6c64065ec1e0283f8ca0b8"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3857,6 +3870,10 @@
     {
       "path": "data/national/location-batch2/tohoku/location-lifecycle.json",
       "sha256": "267ca7b715ebaac172a02f7a48441ff8b15cba9d03b6b2b98c57af2d80153aa7"
+    },
+    {
+      "path": "data/national/location-batch2/north-kanto/location-lifecycle.json",
+      "sha256": "01491803ee4fd5a05c8941f6593b3f1fcd5a25af59880a5f3fc5d59560f7db71"
     }
   ]
 }

@@ -1,0 +1,325 @@
+{
+  "schema": 1,
+  "region": "north-kanto",
+  "issue": 35,
+  "asOf": "2026-11-05",
+  "startedAt": "2026-11-05T11:23:04.255122+00:00",
+  "researchEndedAt": "2026-11-05T11:28:50.016672+00:00",
+  "elapsedSeconds": 345.762,
+  "timeDefinition": "選定保存から成果確定までの地域共有壁時計時間。事前の資料読み・選定検討を含まない。 独立レビューとPR作業を除く。施設別に重複計上しない。",
+  "summary": {
+    "population": 91,
+    "selected": 8,
+    "proposed": 2,
+    "adopted": 2,
+    "held": 6,
+    "notSelected": 83
+  },
+  "updates": [
+    "data/national/location-batch2/north-kanto/locations.json#/updates/0",
+    "data/national/location-batch2/north-kanto/locations.json#/updates/1"
+  ],
+  "bindings": [
+    "data/national/location-batch2/north-kanto/location-lifecycle.json#/bindings/0",
+    "data/national/location-batch2/north-kanto/location-lifecycle.json#/bindings/1"
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "name": "土浦市立一中地区公民館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/1",
+      "firstPinCardIds": [
+        "08-203-H001"
+      ],
+      "newMethod": "公民館平面図を取得し、GSI外形・旧点との対応を検討（公開CSVは未実施）",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "公民館平面図の1階駐車場・2階事務室・3階集会室を確認し、GSI周辺外形を描画。学校の大外形4387と隣接する矩形4384等があり、方位・周辺道路のない室内平面図から公民館の外形を独立に選ぶ対応が不足。旧地図点をcontainsするだけでは採用しない。",
+      "sourceVersion": "施設平面図1頁。版の明記なし、HTTP Last-Modified 2016-06-16は測量日ではない。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/0",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/7",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/13"
+      ],
+      "stopCondition": "今回取得した資料だけでは現配布棟と再利用可能な数値原典を結べないため採用停止。",
+      "resumeCondition": "地理的に接続できる公民館周辺配置図、または競合する両点の原典・建物対応を取得する。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "name": "まちの駅 新・鹿沼宿",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/13",
+      "firstPinCardIds": [
+        "09-205-A001"
+      ],
+      "newMethod": "本館を明記する施設配置図と建物外形を検討",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "市と運営者の施設概要から本館案内処・物産館を区別。営業情報画像は2026年4月1日以降の本館/物産館の区分を示すが配置図ではなかった。運営者の数値地図はGoogle埋込であり抽出せず、本館の外形対応は未成立。",
+      "sourceVersion": "施設概要の本館/物産館見出し、営業情報画像。現市ページには2026年8月の営業変更もある。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/3",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/17",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/20",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/23"
+      ],
+      "stopCondition": "今回取得した資料だけでは現配布棟と再利用可能な数値原典を結べないため採用停止。",
+      "resumeCondition": "本館を名指す配置図と道路・外形の対応を取得する。Google埋込値や施設全体の旧マーカーを本館点として流用しない。",
+      "crs": null,
+      "axisOrder": null,
+      "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "name": "一般社団法人 矢板市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/16",
+      "firstPinCardIds": [
+        "09-211-A001"
+      ],
+      "newMethod": "市の現配布アクセスPDF24999と運営者館内図をGSI外形と比較（公開施設CSVは未実施）",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "市PDF24999の4頁は2026年10月26日以降に宿泊棟受付を通る経路、5頁は観光協会受付を示す。運営者館内図は宿泊棟と2号館を同じ並びに表示。数値外形では北の長棟892と南の長棟900・接続部899を確認したが、館内図に北・河川・道路の参照がなく、宿泊棟の並びを892へ割り当てる独立根拠が未確定。アクセスPDFのGoogle航空写真の座標は使用しない。16945.pdfの404のみを保留理由とした初回判断を訂正。",
+      "sourceVersion": "市アクセス24999.pdf（Last-Modified 2026-10-15）4/5頁、運営者2024/04/kannai.jpg。404原本取得記録も保持。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/1",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/2",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/26",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/27",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/28",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/29",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/30"
+      ],
+      "stopCondition": "宿泊棟/2号館の並びを北側外形892へ接続する独立した周辺配置根拠が不足。",
+      "resumeCondition": "宿泊棟を名指す地理的周辺配置（道路・川等）を取得し892/900の対応を確定する。入口・窓口測量は不要。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+      "name": "日立市役所下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/23",
+      "firstPinCardIds": [
+        "08-202-A001"
+      ],
+      "newMethod": "市報9頁・現配布案内とGSI建物/道路/水部を照合し、旧q/P05競合を検査",
+      "status": "adopted",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": {
+        "lat": 36.5991526,
+        "lng": 140.6503817
+      },
+      "adoptedCoordinate": {
+        "lat": 36.5991526,
+        "lng": 140.6503817
+      },
+      "conclusion": "市報9頁の北側道路、西側道路・水路、東側国道6号と、本庁舎/大屋根/ホールの順序をGSI外形に照合。本庁舎は西の矩形（BldA index241）、大屋根は東の穴を持つ外形274、ホールは275。現配布案内は本庁舎6階海側下水道課を指定。市HTML qは矩形内、P05は西側で外形外（hitachi-conflict.json）。qは比較専用で、座標は独立同定したGSI矩形の重心から派生。",
+      "sourceVersion": "chousya_annnai0804.pdf（Last-Modified 2026-03-27）。市報2025-05-05物理9頁を目視。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/8",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/14",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/9",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/31"
+      ],
+      "stopCondition": "現時点の採用停止条件はなし。将来、移転・建物同定/原典の否定根拠が判明した場合に再審査。",
+      "resumeCondition": "独立レビューで採用承認済み。将来の移転や原典訂正時にはlocationLifecycleと新根拠を伴って再評価する。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "name": "熊谷駅観光案内所内",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/46",
+      "firstPinCardIds": [
+        "11-202-B001"
+      ],
+      "newMethod": "2025年移転後の駅構内図・配置図を検討",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "2026年市資料の北口/南口、アズ本館/アズセカンド/Tiara、改札正面の観光案内所とGSI周辺を照合。北口広場と東側Tiara8003は対応する。数値外形7981はアズ本館と北側駅建物をまとめ西タイル5899へ続く。案内所は構内図の本館西側コンコースにあるが、7981と南の平台屋根7982のどの外形が案内所を含む駅舎の建物単位かはこの概略図だけで確定できない。旧点や商業棟全体重心は採用しない。",
+      "sourceVersion": "2026-02-24市発表PDF物理7頁（紙面5）。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/4"
+      ],
+      "stopCondition": "案内所を含む建物単位を、商業棟・平台屋根に分かれる数値外形へ一意に対応付けられない。",
+      "resumeCondition": "駅構内図の案内所を含む建物と、再利用可能な建物外形の対応を確認する。室内窓口の測量は不要。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+      "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/64",
+      "firstPinCardIds": [
+        "11-216-A001"
+      ],
+      "newMethod": "園内配置図でムジナモ市場を分離",
+      "status": "adopted",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": {
+        "lat": 36.1716201,
+        "lng": 139.6014386
+      },
+      "adoptedCoordinate": {
+        "lat": 36.1716201,
+        "lng": 139.6014386
+      },
+      "conclusion": "初回の「3棟」を訂正。園内図の4主要棟は、北西の斜めのバーガー棟1454、北東の事務所/体験棟1462、南西の縦長ムジナモ市場1456、東隣の横長加工棟1458に対応。西外周道路の北側入口/南側出口、中央を蛇行する水部、東側周回路と円形丘の配置も一致し、単なる形の類似や点containsでの選択ではない。現市配布案内も市場を指定。市場外形の重心を採用し丸め後内包を確認。",
+      "sourceVersion": "kiyasse_map2024.pdf 1頁、ファイル内名kiyasse_map202410。Vectorは2026-07-01データ（固定README）、HTTP Last-Modified 2026-09-17。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/5",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/18",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/21",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/22",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/32"
+      ],
+      "stopCondition": "現時点の採用停止条件はなし。将来、移転・建物同定/原典の否定根拠が判明した場合に再審査。",
+      "resumeCondition": "独立レビューで採用承認済み。将来の移転や原典訂正時にはlocationLifecycleと新根拠を伴って再評価する。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/83",
+      "firstPinCardIds": [
+        "11-218-C001"
+      ],
+      "newMethod": "物産館と直売所を分離する配置図を検討",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "市施設案内では物産館1280-1とJA直売所1279-2を区別。県ガイドは物産館内の写真と駅全体の略図を掲載するが、敷地内の2棟の位置を示さず、住所欄も駅全体1279-2。2026年10月移転後の配布先建物を外形に対応付ける根拠には不足。",
+      "sourceVersion": "市施設案内2026-08-31更新、県道の駅ガイドかわもと紙面10（PDF1頁）。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/10",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/11",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/15"
+      ],
+      "stopCondition": "今回取得した資料だけでは現配布棟と再利用可能な数値原典を結べないため採用停止。",
+      "resumeCondition": "物産館を名指す配置図を取得し、直売所との別棟対応と現配布案内を照合する。駅全体点を流用しない。",
+      "crs": null,
+      "axisOrder": null,
+      "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/87",
+      "firstPinCardIds": [
+        "11-246-A001"
+      ],
+      "newMethod": "仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "status": "held",
+      "stage": "new-primary-material-building-correspondence",
+      "candidateCoordinate": null,
+      "adoptedCoordinate": null,
+      "conclusion": "Issue16で既取得の広報28頁を再利用し、2026年版GSI外形/道路/水部と新たに照合。旧市役所3081、生涯学習センターこもれびの森3080、南側のはぴすしらおか3441と道路配置は対応する。広報が示す「はぴの東・来庁者駐車場の南」の仮設庁舎区画には一致する外形がない。東側の小外形3148/3149を大型仮設庁舎へ流用しない。版の日付は個別仮設棟の収録保証でなく、旧P05も非採用を維持。",
+      "sourceVersion": "広報2026年1月号（2025-12-25発行）物理28頁。設計業務の別紙2案内・配置図。",
+      "newEvidenceRefs": [
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/6",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/12",
+        "data/evidence/location-batch2/north-kanto/retrievals.json#/records/16"
+      ],
+      "stopCondition": "配置図から特定した仮設庁舎区画に対応する数値外形が未収録。",
+      "resumeCondition": "2025年12月開庁の仮設棟を収録する数値外形・施設点と広報配置図を照合する。旧本庁舎と区別できることが必要。",
+      "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
+      "axisOrder": "tile x east/y south; output lat/lng",
+      "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
+      "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
+    }
+  ],
+  "unverified": [
+    "現地・在庫・全施設の配布状況再確認",
+    "一般HTML/PDF/画像原本の再配布条件",
+    "未選定83件の追加調査",
+    "鹿沼/深谷の数値外形照合・公開施設CSV探索"
+  ],
+  "documentationDifferences": [
+    "旧issue5/north-kanto/README.mdは「今回読んだ範囲では発見していない」と記す。一方、旧assemble.pyはEvidenceへfetchedAtを加え、現Go Evidenceは7項目。初回の「不一致なし」という引用を訂正。旧コードは変更せず取得時刻は調査メタデータに分離。",
+    "初回の3棟/道路未照合/全件保留/manifest不変はinitial-outcomes.jsonと旧commitの履歴に限定。現成果は4棟照合・独立レビュー承認済み2採用。"
+  ],
+  "initialPass": {
+    "startedAt": "2026-11-05T11:23:04.255122+00:00",
+    "researchEndedAt": "2026-11-05T11:28:50.016672+00:00",
+    "elapsedSeconds": 345.762,
+    "timeDefinition": "選定保存から成果確定までの地域共有壁時計時間。事前の資料読み・選定検討を含まない。 独立レビューとPR作業を除く。施設別に重複計上しない。",
+    "record": "initial-outcomes.json (historical, superseded)"
+  },
+  "integrationStatus": "adopted-after-independent-review",
+  "baselineManifestSHA256": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+  "revisionMeasurement": {
+    "startedAt": "2026-11-05T11:52:31.936487+00:00",
+    "researchAndVerificationEndedAt": "2026-11-05T12:10:25.175555+00:00",
+    "elapsedSeconds": 1073.239,
+    "definition": "再開後の旧レビュー確認・原本再取得・数値外形照合・修正・検証を含む地域共有壁時計時間。これ以降の文書仕上げ/commit/PR/再レビュー待機は除く。施設別重複計上なし。"
+  },
+  "integrationBaseline": {
+    "mainCommit": "48bf7105758794794b2eba0edece5ec5431b9ed6",
+    "nationalUnlocatedBefore": 601,
+    "nationalUnlocatedAfter": 599,
+    "regionUnlocatedBefore": 91,
+    "regionUnlocatedAfter": 89,
+    "initialNationalUnlocated": 608,
+    "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。 北陸PR53（採用0・調査記録と3テスト追加）も保持。"
+  },
+  "integrationHistory": [
+    {
+      "mainCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+      "nationalUnlocatedBefore": 607,
+      "nationalUnlocatedAfter": 605,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56の1採用/binding/地域テストを保持。北関東差分は自地域だけを除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+      "nationalUnlocatedBefore": 605,
+      "nationalUnlocatedAfter": 603,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+      "nationalUnlocatedBefore": 601,
+      "nationalUnlocatedAfter": 599,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。"
+    }
+  ]
+}

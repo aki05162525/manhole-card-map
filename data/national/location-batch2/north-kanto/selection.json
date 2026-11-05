@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "region": "north-kanto",
+  "issue": 35,
+  "asOf": "2026-11-05",
+  "selectedAt": "2026-11-05T11:23:04.255122+00:00",
+  "measurementStart": "2026-11-05T11:23:04.255122+00:00",
+  "timeDefinition": "選定保存から成果確定までの地域共有壁時計時間。事前の資料読み・選定検討を含まない。",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/national/issue7/north-kanto.json": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb",
+    "data/national/issue7/reviews/north-kanto.json": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515"
+  },
+  "population": 91,
+  "nationalUnlocated": 608,
+  "selected": [
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "name": "土浦市立一中地区公民館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/1",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "08-203-H001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公民館配置図で196m競合を再検討",
+      "newMethod": "公民館平面図を取得し、GSI外形・旧点との対応を検討（公開CSVは未実施）",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "土浦市立一中地区公民館",
+        "address": "茨城県土浦市大手町13番9号"
+      },
+      "plannedMethodAtSelection": "公開施設CSV・公民館配置図で196m競合を再検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "name": "まちの駅 新・鹿沼宿",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/13",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "09-205-A001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。本館を明記する施設配置図と建物外形を検討",
+      "newMethod": "本館を明記する施設配置図と建物外形を検討",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "まちの駅 新・鹿沼宿",
+        "address": "栃木県鹿沼市仲町1604-1"
+      },
+      "plannedMethodAtSelection": "本館を明記する施設配置図と建物外形を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "name": "一般社団法人 矢板市観光協会",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/16",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "09-211-A001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と数値外形を検討",
+      "newMethod": "市の現配布アクセスPDF24999と運営者館内図をGSI外形と比較（公開施設CSVは未実施）",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "一般社団法人 矢板市観光協会",
+        "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)"
+      },
+      "plannedMethodAtSelection": "宿泊棟の配置図と公開施設データを検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+      "name": "日立市役所下水道課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/23",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "08-202-A001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と数値外形で200m競合を再検討",
+      "newMethod": "市報9頁・現配布案内とGSI建物/道路/水部を照合し、旧q/P05競合を検査",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "日立市役所下水道課",
+        "address": "茨城県日立市助川町1-1-1"
+      },
+      "plannedMethodAtSelection": "新本庁舎配置図と公開施設データで200m競合を再検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "name": "熊谷駅観光案内所内",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/46",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "11-202-B001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。2025年移転後の駅構内図・配置図を検討",
+      "newMethod": "2025年移転後の駅構内図・配置図を検討",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "熊谷駅観光案内所内",
+        "address": "埼玉県熊谷市筑波2-115-1"
+      },
+      "plannedMethodAtSelection": "2025年移転後の駅構内図・配置図を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+      "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/64",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "11-216-A001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。園内配置図でムジナモ市場を分離",
+      "newMethod": "園内配置図でムジナモ市場を分離",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "羽生市三田ヶ谷農林公園 キヤッセ羽生「ムジナモ市場」",
+        "address": "埼玉県羽生市大字三田ヶ谷1725"
+      },
+      "plannedMethodAtSelection": "園内配置図でムジナモ市場を分離",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/83",
+      "reviewRefs": [],
+      "firstPinCardIds": [
+        "11-218-C001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。物産館と直売所を分離する配置図を検討",
+      "newMethod": "物産館と直売所を分離する配置図を検討",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "道の駅かわもと 深谷市物産館",
+        "address": "埼玉県深谷市長在家1280-1"
+      },
+      "plannedMethodAtSelection": "物産館と直売所を分離する配置図を検討",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "originalRef": "data/national/issue7/north-kanto.json#/unresolved/87",
+      "reviewRefs": [
+        "data/national/issue16/group-a-outcomes.json#/outcomes/8"
+      ],
+      "firstPinCardIds": [
+        "11-246-A001"
+      ],
+      "selectionReason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "newMethod": "仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "oldCoordinate": null,
+      "identity": {
+        "name": "白岡市役所仮設本庁舎 商工観光課",
+        "address": "埼玉県白岡市千駄野432番地"
+      },
+      "plannedMethodAtSelection": "仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "methodStatus": "実施範囲はoutcomes.json。公開CSVを実績に含めない。"
+    }
+  ],
+  "countBasis": "第2弾開始時全国608。統合基準main601、北関東2件採用後599。地域91→89。",
+  "selectionClarification": "初回に8IDを保存してから検索を開始。URL別の発見時刻は未記録。新規性と除外判断の補足はレビュー後に追記したもので、選定時に記録済みだったとは扱わない。",
+  "baselineUnlocated": 91,
+  "integrationBaseline": {
+    "mainCommit": "48bf7105758794794b2eba0edece5ec5431b9ed6",
+    "nationalUnlocatedBefore": 601,
+    "nationalUnlocatedAfter": 599,
+    "regionUnlocatedBefore": 91,
+    "regionUnlocatedAfter": 89,
+    "initialNationalUnlocated": 608,
+    "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。 北陸PR53（採用0・調査記録と3テスト追加）も保持。"
+  },
+  "integrationHistory": [
+    {
+      "mainCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+      "nationalUnlocatedBefore": 607,
+      "nationalUnlocatedAfter": 605,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56の1採用/binding/地域テストを保持。北関東差分は自地域だけを除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+      "nationalUnlocatedBefore": 605,
+      "nationalUnlocatedAfter": 603,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+      "nationalUnlocatedBefore": 601,
+      "nationalUnlocatedAfter": 599,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。"
+    }
+  ]
+}
