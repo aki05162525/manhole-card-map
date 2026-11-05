@@ -56,9 +56,15 @@
     ]
   },
   "rereview": {
-    "status": "not-yet-requested",
+    "status": "failed-rate-limit",
     "provider": "claudeAgent",
     "model": "claude-opus-5-5",
-    "scope": "鈴鹿・洛西2候補の採否と全指摘対応、京丹波/宮津の残る保留が過剰かを含む。"
+    "scope": "鈴鹿・洛西2候補の採否と全指摘対応、京丹波/宮津の残る保留が過剰かを含む。",
+    "error": "Claude API rate limit reached. Try again later.",
+    "threadLink": "<t3-thread://v2/5b068c27-91af-430d-b651-8f84c867c2e5/thread:delegated-task:command%3Amcp%3Aba90d577-248e-4dec-b6c0-4c6502a43fb9%3Adelegate-task%3Ae8d1bbe6-fd76-451f-a098-acbd27a179dd>",
+    "findings": null,
+    "response": "再レビューは実行されていない。2候補は未承認・未採用。別モデルへ切り替えない。利用制限解除後、新しいdelegate_taskで再レビューが必要。",
+    "requestedHead": "ae217cf313e9872f3e38af3beb7d3f4b00ac6894",
+    "providerMessage": "You've hit your session limit · resets 11:50pm (Asia/Tokyo)"
   }
 }
