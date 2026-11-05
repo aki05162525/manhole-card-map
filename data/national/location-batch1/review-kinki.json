@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "preparedBy": "batch_kinki",
+  "reviewer": "batch_east",
+  "reviewedAt": "2026-11-05T10:54:42.972344+00:00",
+  "scope": "原本・数値・現配布施設・建物対応・利用条件の独立レビュー。manifest統合とGo/Python検証は親担当。",
+  "accepted": [
+    "facility:kinki-5541e22064b914088d81",
+    "facility:kinki-daaa4e44e2c541067679"
+  ],
+  "rejected": [],
+  "criticalFindings": [],
+  "minorFindings": [],
+  "reviews": [
+    {
+      "facilityId": "facility:kinki-5541e22064b914088d81",
+      "decision": "accepted",
+      "coordinate": {
+        "lat": 34.693530220001,
+        "lng": 135.462397900002
+      },
+      "evidence": [
+        "CSV原本SHA256 55db2bd505a2d3897caaec2213b38e51993291d8e92ff33a8a4023f40b69a633を再計算。csv.DictReaderでヘッダー除外index15を読み、施設名称 大阪市下水道科学館・高見1-2-53・電話6468-1156・運営者URLと緯度経度の完全一致を確認。",
+        "大阪市オープンデータ説明原本を読んで、1〜30番のJGD2011・X経度/Y緯度、CC-BY指定、文化観光が6番、数値が地図アイコン位置であることを確認。CC-BY版番号の推定はしない。",
+        "最新配布ページはキン肉マンカード配布先をミザック下水道科学館 OSAKA、高見1-2-53と明記。別の大阪城カード配布先と混同していない。",
+        "運営者アクセス図2枚を画像閲覧。北側の海老江下水処理場・北の道路・西交差点・東駐車場を照合し、GSI z18/229712/104106を画像閲覧。独立再計算pixel(181.2160698,152.5260702)は科学館の建物外形内。地図中心値ではない。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.osaka.lg.jp/toshikeikaku/page/0000250227.html",
+          "path": "data/work/location-batch1/kinki/c0332485f9143c9e.html",
+          "sha256": "162130a6d67c64caa1b0a53d62a1b3892b13945d06c523b300e0fc4eddbecdba",
+          "fetchedAt": "2026-11-05T10:39:27.092722+00:00"
+        },
+        {
+          "url": "https://www.city.osaka.lg.jp/kensetsu/page/0000431121.html",
+          "path": "data/work/location-batch1/kinki/bbc1eb00851d7c8c.html",
+          "sha256": "d6e59f640a9d594f3e037d24bfc689fc79eb1220670c46c99157d609b32abbee",
+          "fetchedAt": "2026-11-05T10:40:14.189937+00:00"
+        },
+        {
+          "url": "https://api.osaka-ssm.jp/wp-content/uploads/2022/06/e36115ba3918f66544825ada66e2407b.png",
+          "path": "data/work/location-batch1/kinki/0e44ed1eeca22c87.bin",
+          "sha256": "19c725fc9f983f78860496fa02a4d3652ce4d741baf6a8cf2dcbc132bfdef734",
+          "fetchedAt": "2026-11-05T10:43:56.829809+00:00"
+        },
+        {
+          "url": "https://api.osaka-ssm.jp/wp-content/uploads/2022/06/3ed09dae217a3099a797c321e38aee52.png",
+          "path": "data/work/location-batch1/kinki/cce8e04cf0132063.bin",
+          "sha256": "0652b486bab736a5cc30fdd2a71f3fd80c1f89b586cfbbe89c3dfb958c9a257e",
+          "fetchedAt": "2026-11-05T10:43:56.925221+00:00"
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/229712/104106.png",
+          "path": "data/work/location-batch1/kinki/osaka-gsi.png",
+          "sha256": "a3cfda0f5eb26945fe897e7e86ecc34d2e1ca99ffccdcd4462aa188ac6d39d07",
+          "fetchedAt": "2026-11-05T10:41:13.125294+00:00"
+        }
+      ],
+      "limits": [
+        "原CSVの小数桁数を測量精度と解釈しない。用途は建物代表点。",
+        "運営者画像・自治体HTMLの原本再配布は承認対象外。数値のCC-BY指定と分離。"
+      ]
+    },
+    {
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "decision": "accepted",
+      "coordinate": {
+        "lat": 34.786012,
+        "lng": 135.396727
+      },
+      "evidence": [
+        "既存deferredレビュー#/reviews/23を直接読んで、同住所の中央公民館948とスワンホール947の約482m競合を確認。",
+        "P05全国ZIP SHA256 3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdcと兵庫GeoJSON SHA256 1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614を再計算。947/948を直接読み出し、名前・住所・数値一致とCRS urn:ogc:def:crs:EPSG::6668を確認。変換なし。",
+        "XLSXをzip/XMLから独立展開。①基本情報シートExcel行97、E97中央公民館、H97昆陽池2丁目1番地、BD97に2020/4/1スワンホール1F移転。",
+        "市PDF物理23ページ印刷121をpdftotextで読み、461060で令和元年度大規模改修後、令和2年4月から中央公民館等との複合施設開館を確認。",
+        "市保健センターページは千僧1-1-1・市役所東側・旧中央公民館跡地と明記。P05誤差の発生経緯そのものは確定しない。",
+        "運営者アクセス画像およびGSI候補/競合2タイルを画像閲覧。947は国道171号北・昆陽池南東の現施設建物内、948は171号南の市役所側。WebMercator pixelを独立再計算して候補(113.6365113,82.5249272)、競合(75.2200363,217.2347405)一致。旧保留で不足した建物判別を解消。",
+        "水道局現配布ページにスワンホール配布先を確認。",
+        "P05個別CC BY 4.0、現一般規約PDL1.0、カタログ、仕様書の4原本hashを独立再計算し参照と一致。個別指定と現一般規約を分けた既存条件を維持。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.city.itami.lg.jp/material/files/group/65/R6shisetukarute.xlsx",
+          "path": "data/work/location-batch1/kinki/2a7d5c3fafd7faa2.bin",
+          "sha256": "5d140429497e107501444a18686ec655caaec973d1187070944d37b40e304f5a",
+          "fetchedAt": "2026-11-05T10:39:42.806491+00:00"
+        },
+        {
+          "url": "https://www.city.itami.lg.jp/material/files/group/2/taikou4.pdf",
+          "path": "data/work/location-batch1/kinki/7b3a92eb9704c566.pdf",
+          "sha256": "3248cf380a9ae850eb83779f2fc785b053262eb7dd7b2f6f4ba18fabb736bd9a",
+          "fetchedAt": "2026-11-05T10:45:02.042449+00:00"
+        },
+        {
+          "url": "https://www.city.itami.lg.jp/SOSIKI/KENKOFUKUSHI/KENKO_SEISAKU/SEZIN_KENKO/GAN_KENSIN/1389662507576.html",
+          "path": "data/work/location-batch1/kinki/9c4d3d84e9ba9488.html",
+          "sha256": "52444995da89ba21e1a4ddf454ab3ece73edc850f51caf5784d96945b328d0f8",
+          "fetchedAt": "2026-11-05T10:45:13.743265+00:00"
+        },
+        {
+          "url": "https://nem-shiteikanri.jp/shisetsu/itami/wp/wp-content/uploads/accessmap.jpg",
+          "path": "data/work/location-batch1/kinki/11dc4d12eb5876e7.bin",
+          "sha256": "7cb274d4f56a5eeeddee71399ecc949c5ae0c3c13548559c7dd79a6001e34ed8",
+          "fetchedAt": "2026-11-05T10:45:51.037301+00:00"
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/std/17/114832/52012.png",
+          "path": "data/work/location-batch1/kinki/swan-gsi.png",
+          "sha256": "f262321be131042a105e3ce97cf85790b4b4388a52ada4ceac9c92097fc9ae3d",
+          "fetchedAt": "2026-11-05T10:43:48.239102+00:00"
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/std/17/114834/52012.png",
+          "path": "data/work/location-batch1/kinki/old-central-gsi.png",
+          "sha256": "c659b9f0582e4131a930bad7c6cfb0bda8c78c88803a463a5a59a7e2b144ed4f",
+          "fetchedAt": "2026-11-05T10:45:51.684555+00:00"
+        },
+        {
+          "url": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+          "path": "data/work/location-batch1/kinki/45bb7c10149ccb81.html",
+          "sha256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+          "fetchedAt": "2026-11-05T10:40:13.909756+00:00"
+        }
+      ],
+      "conditionsRef": "data/evidence/issue7/review-kinki-west/source-conditions.json",
+      "limits": [
+        "948が旧公民館座標を残した経緯は未確認。採否根拠は現建物との位置関係であり経緯を断定しない。",
+        "入口・室内窓口精度は主張せず、在庫・配布状態の更新は本位置採否に含めない。"
+      ]
+    }
+  ],
+  "checks": {
+    "retrievalHashesVerified": 47,
+    "numericSnapshotsRehashed": true,
+    "pixelPositionsIndependentlyRecomputed": true,
+    "applicationTests": "not run; review-only"
+  },
+  "documentCodeDiscrepancies": []
+}
