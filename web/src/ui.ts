@@ -1,5 +1,6 @@
 import type { Card, Coord, Data } from "./types";
 export type MapLink = { href: string; label: string };
+// Maps destinations use geographic bounds, independent of the map camera policy.
 function confirmedQuery(coord: Coord): string | null {
   return coord.status === "confirmed" &&
     typeof coord.lat === "number" &&

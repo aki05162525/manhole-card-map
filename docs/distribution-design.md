@@ -81,4 +81,4 @@ Goで台帳の検証、原典変更、期間、施設別の終了、共有ピン
 
 現行CIは変更範囲に応じてGo/Pythonまたはフロントエンドの検証を選択する。フロント変更ではVitest・lint・format・型検査を含むfixtureビルド・Chromium・保存更新回帰を実行し、合成ビルドとブラウザー証跡を保存する。外部へのデプロイは行わない。
 
-採用基準の実例と未解決点は[Issue16試行記録](verification/issue16-pilot.md)に記録した。そこでの保留を本書の修正で採用へ変更しない。座標範囲など実装間の契約差と今回の確認範囲は[Issue18契約照合](verification/issue18-contracts.md)を参照する。
+採用基準の実例と未解決点は[Issue16試行記録](verification/issue16-pilot.md)に記録した。そこでの保留を本書の修正で採用へ変更しない。過去の実装間の契約差は[Issue18契約照合](verification/issue18-contracts.md)、修正後の座標範囲と用途別の契約は[Issue22記録](verification/issue22-coordinate-contract.md)を参照する。

@@ -239,7 +239,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if _, ok := canonical[p.ID]; ok {
 			return fmt.Errorf("duplicate facility: %s", p.ID)
 		}
-		if p.Coordinate != nil && (!finite(p.Coordinate.Lat) || !finite(p.Coordinate.Lng) || p.Coordinate.Lat < -85 || p.Coordinate.Lat > 85 || p.Coordinate.Lng < -180 || p.Coordinate.Lng > 180) {
+		if p.Coordinate != nil && !validGeographicCoordinate(p.Coordinate.Lat, p.Coordinate.Lng) {
 			return fmt.Errorf("invalid facility coordinate: %s", p.ID)
 		}
 		if err := validateLocationReview(p.LocationReview, p.Coordinate); err != nil {
@@ -440,13 +440,19 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 	return nil
 }
 func finite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
+
+// Geographic validity is separate from the map projection or saved viewport.
+// Do not clamp adopted coordinates to a renderer's Mercator latitude limit.
+func validGeographicCoordinate(lat, lng float64) bool {
+	return finite(lat) && finite(lng) && math.Abs(lat) <= 90 && math.Abs(lng) <= 180
+}
 func appendPlacePins(d *Data, references bool) {
 	for _, p := range d.Places {
 		confirmed := p.Coordinate.Status == "confirmed"
 		if !confirmed && !(references && p.Coordinate.Status == "candidate") {
 			continue
 		}
-		if p.Coordinate.Lat == nil || p.Coordinate.Lng == nil {
+		if p.Coordinate.Lat == nil || p.Coordinate.Lng == nil || !validGeographicCoordinate(*p.Coordinate.Lat, *p.Coordinate.Lng) {
 			continue
 		}
 		ids := map[string]bool{}

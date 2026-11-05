@@ -98,4 +98,4 @@ CIに必要なのは選択manifest、台帳・パッチ・位置追補、それ�
 
 `apply_locations`が通常台帳へ追補するのはcoordinateとevidenceで、原追補のscopeは構造化した精度フィールドとして配信されない。原追補やlocationLifecycleのadoption履歴には保持できるが、配信の `confirmed` は建物/入口の精度区分ではない。Goでは検証後の台帳に座標が残ればconfirmedとなり、位置履歴の保留・撤回では座標が除去される。
 
-Pythonの座標検査は緯度±90、Goの施設台帳検査は±85で、同じ範囲ではない。この文書変更でコードの許容範囲を広げたり統一したりはしていない。境界入力の再現・現行データへの影響・後続の処置は[Issue18契約照合](verification/issue18-contracts.md)に記録する。
+PythonとGoの施設座標検査は有限数値の緯度±90・経度±180で一致する。保存viewportの緯度±85は別の表示復元ポリシーであり、採用座標を切り詰めない。以前のGo±85との不一致は[Issue18契約照合](verification/issue18-contracts.md)に履歴として残し、修正・境界検証・現行データ不変の確認は[Issue22記録](verification/issue22-coordinate-contract.md)に記録する。
