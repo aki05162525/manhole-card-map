@@ -1,0 +1,6 @@
+{
+  "schema": 1,
+  "updates": [],
+  "bindings": [],
+  "note": "未承認の診断数値はfacts/vector-inputsのみ。manifestへ追加する採用提案なし。"
+}

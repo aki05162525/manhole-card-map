@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "status": "diagnostic-only-not-an-approved-building",
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
+  "version": "2026-07-01 per official readme; fetched 2026-11-05",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "file": "ueda-tile.pbf.gz",
+      "sha256": "6cd39fc2f6735eb52447a48daf7a58ceacec9515539ba60af8632ca28ae9345d",
+      "extent": 4096,
+      "tile": {
+        "z": 16,
+        "x": 57946,
+        "y": 25635,
+        "extent": 4096
+      },
+      "selectedGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              732,
+              2367
+            ],
+            [
+              767,
+              2428
+            ],
+            [
+              650,
+              2498
+            ],
+            [
+              676,
+              2543
+            ],
+            [
+              592,
+              2594
+            ],
+            [
+              607,
+              2619
+            ],
+            [
+              565,
+              2645
+            ],
+            [
+              549,
+              2619
+            ],
+            [
+              429,
+              2690
+            ],
+            [
+              396,
+              2638
+            ],
+            [
+              352,
+              2664
+            ],
+            [
+              317,
+              2604
+            ],
+            [
+              363,
+              2577
+            ],
+            [
+              352,
+              2558
+            ],
+            [
+              598,
+              2412
+            ],
+            [
+              613,
+              2437
+            ],
+            [
+              732,
+              2367
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "centroidWithin": true,
+      "method": "centroid",
+      "expectedCoordinate": {
+        "lat": 36.4406426,
+        "lng": 138.3076019
+      },
+      "selectionCaveat": "CSV seed containment only. Independent building identity NOT established; do not adopt."
+    }
+  ]
+}

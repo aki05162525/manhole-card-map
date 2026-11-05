@@ -1,0 +1,57 @@
+[
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=0-126",
+    "retrievedAt": "2026-11-05T11:26:37.991931+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/koshin/pmtiles-0-127.bin",
+    "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+    "bytes": 127,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2503-6670",
+    "retrievedAt": "2026-11-05T11:26:38.113609+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/koshin/pmtiles-2503-4168.bin",
+    "sha256": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+    "bytes": 4168,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=127-2502",
+    "retrievedAt": "2026-11-05T11:26:38.242785+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/koshin/pmtiles-127-2376.bin",
+    "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+    "bytes": 2376,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2001310-2009555",
+    "retrievedAt": "2026-11-05T11:26:38.422825+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/koshin/pmtiles-2001310-8246.bin",
+    "sha256": "5635e36d589bcfd1faa0357a6a4ca0af996878e083e12398ea71ad289be4b9f8",
+    "bytes": 8246,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=9678524402-9678534969",
+    "retrievedAt": "2026-11-05T11:26:38.575886+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/koshin/pmtiles-9678524402-10568.bin",
+    "sha256": "6cd39fc2f6735eb52447a48daf7a58ceacec9515539ba60af8632ca28ae9345d",
+    "bytes": 10568,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  }
+]

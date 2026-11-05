@@ -1,0 +1,665 @@
+{
+  "schema": 1,
+  "region": "koshin",
+  "issue": 37,
+  "selectedAt": "2026-11-05T11:24:15.436867+00:00",
+  "selectionTimingNote": "8IDと方法は最初の検索前に決定。保存スクリプトのplacesキー誤記を修正して初回検索直後に保存した。検索結果による選定変更なし。",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/national/issue7/koshin.json": "200dc71fa109d6d1624489bea874e133958f4065f9d81345590d660e2d81bb92",
+    "data/national/issue7/reviews/koshin.json": "bd47de13ad0175530fd0829f31f333276b91b45f2f00210b74f45550b0cf629e",
+    "data/national/location-batch1/integration.json": "0932cd4daf333e549cfcffefb91cfb5692ed4500e334f8208f6d5adfbbd99732",
+    "data/national/location-batch1/followups.json": "49439a80e825cac9dc09c125a452a4bf7fa842151e5ec9ba3dbb3b50ac6bcb2d"
+  },
+  "counts": {
+    "regionSnapshot": 27,
+    "regionUnlocated": 27,
+    "nationalLedgerUnlocated": 608,
+    "selected": 8
+  },
+  "selected": [
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "name": "中央市役所宿日直室",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/16"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-214-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "今回取得した宿日直案内PDFを画像で確認し、庁舎西側棟南端の入口まで同定。P05旧田富庁舎点がこの棟内か、南館との対応を未確認。入口精度ではなく棟対応が残る。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "中央市棟別公共施設計画と既存宿日直配置図を比較",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-2d58045893e23b11b5a2",
+      "name": "fumotto南アルプス「まちの案内所」",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/18"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-208-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内と観光協会告知を再取得。臨時駐車場内のまちの案内所で、南側FARM BASEは対象外と明記。トレーラーハウスの数値原典未取得。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "fumotto現行サイトマップ・臨時案内所の配置資料探索",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3a6d16208a637eef3b69",
+      "name": "松本市観光情報センター",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/19"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-202-A001"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "previousFinding": "市配布案内・大手事務所案内を再取得。大手3-8-13の事務所1階まで確認。既存の駐車場地物と大手公民館3-8-1は別対象で転用しない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "松本市公共施設オープンデータで大手事務所を独立検索",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/20"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内とふれあいまつり案内を再取得。管理本館1階の指定を確認したが処理場全体と管理棟を分離した数値原典なし。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "県公社の処理場配置図・施設概要から管理本館を独立特定",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-4ddffced59c4adbf00e2",
+      "name": "中央市役所 上下水道課",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/21"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-214-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "配布本文は南館上下水道課。市役所アクセスと宿日直案内PDFも取得したが本館側の地図中心や視点を南館座標にしない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "中央市棟別公共施設計画から南館を特定",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/22"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内とまつり案内を再取得。管理本館1階ロビーは確認できるが管理棟の数値原典が未取得。受付・ロビーの室内差は保留理由ではない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "県公社の処理場配置図・施設概要から管理本館を独立特定",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/24"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-C001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内と事務所アクセスを再取得。真島町川合1060-1のアクアパル管理本館が対象。別処理場クリーンピアや処理場敷地代表点は不採用。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "県公社のアクアパル施設配置図から管理本館を特定",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    },
+    {
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "name": "ゆきむら夢工房",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/27"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-203-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内・ゆきむら夢工房施設案内を再取得。長6090-1の住所地図と隣接直売所の区別に必要な建物数値は未取得。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。",
+      "newMethod": "上田市観光オープンデータ・公共施設計画で隣接直売所と区別",
+      "stopCondition": "現配布棟と数値原典を独立対応できなければ採用しない。",
+      "resumeCondition": "対象棟を識別できる配置図と再利用可能な測地系付き建物数値を取得できた時。"
+    }
+  ],
+  "coverage": [
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "name": "中央市役所宿日直室",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/16"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-214-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "今回取得した宿日直案内PDFを画像で確認し、庁舎西側棟南端の入口まで同定。P05旧田富庁舎点がこの棟内か、南館との対応を未確認。入口精度ではなく棟対応が残る。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-2d58045893e23b11b5a2",
+      "name": "fumotto南アルプス「まちの案内所」",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/18"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-208-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内と観光協会告知を再取得。臨時駐車場内のまちの案内所で、南側FARM BASEは対象外と明記。トレーラーハウスの数値原典未取得。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3a6d16208a637eef3b69",
+      "name": "松本市観光情報センター",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/19"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-202-A001"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "previousFinding": "市配布案内・大手事務所案内を再取得。大手3-8-13の事務所1階まで確認。既存の駐車場地物と大手公民館3-8-1は別対象で転用しない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/20"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内とふれあいまつり案内を再取得。管理本館1階の指定を確認したが処理場全体と管理棟を分離した数値原典なし。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-4ddffced59c4adbf00e2",
+      "name": "中央市役所 上下水道課",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/21"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "19-214-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "配布本文は南館上下水道課。市役所アクセスと宿日直案内PDFも取得したが本館側の地図中心や視点を南館座標にしない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/22"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内とまつり案内を再取得。管理本館1階ロビーは確認できるが管理棟の数値原典が未取得。受付・ロビーの室内差は保留理由ではない。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/24"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-C001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内と事務所アクセスを再取得。真島町川合1060-1のアクアパル管理本館が対象。別処理場クリーンピアや処理場敷地代表点は不採用。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "name": "ゆきむら夢工房",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/27"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-203-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内・ゆきむら夢工房施設案内を再取得。長6090-1の住所地図と隣接直売所の区別に必要な建物数値は未取得。",
+      "selected": true,
+      "reason": "初ピン候補かつ旧施設・別棟への誤誘導リスク。順位順の8件を選択。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b099923e5cee404cc0d6",
+      "name": "長野県犀川安曇野流域下水道事務所",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/31"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内・事務所概要を再取得。管理棟の指定まで確認できたが豊科田沢6709の処理場敷地から棟点を抽出する根拠なし。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-bc40e7c6ae878adb8be2",
+      "name": "道の駅 ほっとぱ~く・浅科",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/33"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-217-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布ページ・道の駅アクセス・追加観光協会施設ページを取得。あさしな亭と配布窓口の同棟関係は未検証。PDFのカード座標は蓋であり採用しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-d11c6e34378a758c17ba",
+      "name": "クリーンピア千曲管理本館 1階警備員室",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/34"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-E001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内とアクセスを再取得。赤沼2455の管理本館1階警備員室は確認。管理棟の数値原典が不足。室内警備員室の位置は要求しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-e290fd0a9fdbd522539d",
+      "name": "クリーンピア千曲管理本館 2階事務室",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/38"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-000-E001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "県配布案内・事務所アクセスを再取得。管理本館2階と確認。1階警備室と共通の建物点で足りるが棟数値原典未取得。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-657ab5074e6540e1d4bd",
+      "name": "大月市観光協会",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/25"
+      ],
+      "distribution": "suspended",
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市案内・観光協会アクセスと追加公式ページを取得。現公式フッターは猿橋55大黒屋1階で、旧大月1-1-33の施設へ流用不可。旧関係は維持。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-9eaf0a9cbfef21e5e06b",
+      "name": "軽井沢町都市施設さわやかハット事務所 2階",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/29"
+      ],
+      "distribution": "suspended",
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "町配布案内・振興公社施設案内を再取得。軽井沢駅北口西側から入るさわやかハット2階と確認。駅全域と対象建物を区別する数値原典なし。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-9f0419b4ffe563b225bf",
+      "name": "甲斐市役所 上下水道工務課窓口",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/30"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内・水道事務所施設ページを再取得。篠原2534-1の水道事務所は竜王庁舎南側別棟。竜王庁舎点やll表示中心を不採用。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-d6e64e42bdb03c8971c8",
+      "name": "大月市役所花咲庁舎地域整備課",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/36"
+      ],
+      "distribution": "suspended",
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "previousFinding": "市配布案内・庁舎案内図・アクセスを再取得。花咲1608-19の花咲庁舎を本庁舎と区別。対象棟の数値原典なし。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-2a3396e1e23757eda5c8",
+      "name": "駒ヶ根市駅市民サービスコーナー",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/17"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-210-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布ページと駅市民サービス案内を再取得。JR駒ヶ根駅構内を確認したが建物Pointなし。llのみの地図中心は採用せず、駅舎代表点が得られれば足りる。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-53650b944db3a3fec634",
+      "name": "大町市観光協会",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/23"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-212-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布案内と観光協会アクセスを再取得。大町3200・信濃大町駅構内の案内所を確認。交通アクセス図の概略位置から建物点は生成しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-88bd10e490ce14378986",
+      "name": "小諸市観光案内所",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/28"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-208-C001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布案内・観光協会の施設紹介とアクセスを再取得。小諸駅舎内を確認。室内窓口精度は不要だが駅舎の数値原典が未取得。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b932b3643a609b4015c6",
+      "name": "諏訪市観光案内所",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/32"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-206-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布案内と観光協会アクセスを再取得。JR上諏訪駅内諏訪1-1-18を確認。協会事務局や諏訪市全体の地図は代用しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-d3ff85125fb2a2bf4c25",
+      "name": "遠山郷土館和田城",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/35"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-205-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布案内・観光協会和田城記事・市立博物館分館紹介を再取得。南信濃和田1192と一致する数値markerを確認できず、本館埋込は転用しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-db1572ffc242a3e6035a",
+      "name": "長野市観光情報センター",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/37"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-201-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布ページ・県施設詳細・観光協会一覧を再取得。長野駅東西自由通路の入居確認まで。駅舎代表点で足りるがその数値原典が不足。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-fbcfde49c371740c09fa",
+      "name": "妻籠観光案内所",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/39"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [
+        "20-423-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "町配布案内・妻籠公式アクセスを再取得。吾妻2196-1の案内所と宿場全域の地図を区別。宿場エリア点は採用不可。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-6759197c3df3f90f5bd7",
+      "name": "岩村田商店街(十三くら)",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/26"
+      ],
+      "distribution": "needs-review",
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布案内・商店街公式を再取得。追加の市案内図PDFを画像確認し十三くら764-1と寺子屋758を区別。カード印刷の数値は蓋座標なので採用しない。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-otsuki-daikokuya",
+      "name": "大月市観光協会 猿橋大黒屋",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/40"
+      ],
+      "distribution": "suspended",
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布ページ・観光協会追加ページを取得。猿橋55大黒屋1階を確認したが公式建物数値markerなし。旧駅前窓口座標の流用不可。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-saku-terakoya",
+      "name": "寺子屋",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/41"
+      ],
+      "distribution": "needs-review",
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "市配布ページ・商店街ホームページ・市の案内図PDFを取得。PDF画像で岩村田758を確認、十三くら764-1と区別。数値はカードの蓋座標のため不採用。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    },
+    {
+      "facilityId": "facility:chubu-tomi-tourist-station",
+      "name": "東御市観光情報ステーション",
+      "originalRef": "data/national/issue7/koshin.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/koshin.json#/reviews/42"
+      ],
+      "distribution": "active",
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "previousFinding": "県観光施設ページと観光協会公式ホームページを取得。田中279・田中駅の情報ステーションを確認したが駅建物数値原典なし。",
+      "selected": false,
+      "reason": "今回8件の限定調査外。既存保留を維持。順位上位の別棟・競合リスクを先行し、重要性なしとはしない。"
+    }
+  ]
+}
