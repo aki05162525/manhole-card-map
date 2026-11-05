@@ -14,7 +14,7 @@
       ],
       "holdRef": null,
       "selected": true,
-      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公開施設CSV・公民館配置図で196m競合を再検討"
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。公民館配置図で196m競合を再検討"
     },
     {
       "facilityId": "facility:kanto-north-14336e747375e6550de3",
@@ -44,7 +44,7 @@
       ],
       "holdRef": null,
       "selected": true,
-      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と公開施設データを検討"
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。宿泊棟の配置図と数値外形を検討"
     },
     {
       "facilityId": "facility:kanto-north-2dc5fe988e3e972a5140",
@@ -59,7 +59,7 @@
       ],
       "holdRef": null,
       "selected": false,
-      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+      "reason": "移転後の複合施設内展示室で建物対応の追加資料が必要。今回は競合2件、直近移転、主要棟を比較できる公園等8件を選び、この展示室は未着手とした（判断の事後明文化）。"
     },
     {
       "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
@@ -74,7 +74,7 @@
       ],
       "holdRef": null,
       "selected": true,
-      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と公開施設データで200m競合を再検討"
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。新本庁舎配置図と数値外形で200m競合を再検討"
     },
     {
       "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
@@ -89,7 +89,7 @@
       ],
       "holdRef": null,
       "selected": false,
-      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+      "reason": "同一自治体の複数窓口は建物/関係を合わせた調査が必要。今回は自治体の異なる8施設へ割り当て、入間の2窓口を未着手で残した（判断の事後明文化）。"
     },
     {
       "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
@@ -134,7 +134,7 @@
       ],
       "holdRef": null,
       "selected": false,
-      "reason": "別施設の建物対応を優先する今回8件の範囲外。重要性なし・調査完了を意味しない。"
+      "reason": "同一自治体の複数窓口は建物/関係を合わせた調査が必要。今回は自治体の異なる8施設へ割り当て、入間の2窓口を未着手で残した（判断の事後明文化）。"
     },
     {
       "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
@@ -162,9 +162,10 @@
       "firstPinCardIds": [
         "11-246-A001"
       ],
-      "holdRef": null,
+      "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/8",
       "selected": true,
-      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。仮設本庁舎配置図・工事資料で旧庁舎と分離"
+      "reason": "初ピン候補かつ旧点/別棟への誤誘導を防ぐため。仮設本庁舎配置図・工事資料で旧庁舎と分離",
+      "reopening": "既取得広報の画像と新取得GSI2026年版の外形・道路を照合。旧再開条件の画像確認/新外形調査を実施し、仮設棟外形未収録で継続保留。"
     },
     {
       "facilityId": "facility:kanto-north-067336979043529fa019",
@@ -1233,9 +1234,9 @@
       "distribution": "active",
       "blockers": [],
       "firstPinCardIds": [],
-      "holdRef": null,
+      "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/3",
       "selected": false,
-      "reason": "Issue7独立レビューの役場/コミュニティセンター約3m競合を維持。今回その再開資料を選定していない。"
+      "reason": "Issue16の配置図と座標原典による現庁舎/隣接施設区別の再開条件が未充足。県役場CSVの再検索は行わない。"
     },
     {
       "facilityId": "facility:kanto-north-c5f25d696949a267388f",
@@ -1321,9 +1322,17 @@
       "data/national/issue26/outcomes.json",
       "data/national/issue27/outcomes.json",
       "data/national/location-batch1/integration.json",
-      "data/national/location-batch1/followups.json"
+      "data/national/location-batch1/followups.json",
+      "data/national/issue16/group-a-outcomes.json"
     ],
     "selectedOverlap": [],
-    "note": "小山2窓口の#20保留は維持。吉岡の#7レビュー保留も今回再開せず。"
+    "note": "小山2窓口の#20保留は維持。吉岡の#7レビュー保留も今回再開せず。",
+    "allowedReopened": [
+      {
+        "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+        "holdRef": "data/national/issue16/group-a-outcomes.json#/outcomes/8",
+        "newMethod": "Issue16で既取得の広報28頁を再利用し、2026年版GSI外形/道路/水部と新たに照合。旧市役所3081、生涯学習センターこもれびの森3080、南側のはぴすしらおか3441と道路配置は対応する。広報が示す「はぴの東・来庁者駐車場の南」の仮設庁舎区画には一致する外形がない。東側の小外形3148/3149を大型仮設庁舎へ流用しない。版の日付は個別仮設棟の収録保証でなく、旧P05も非採用を維持。"
+      }
+    ]
   }
 }
