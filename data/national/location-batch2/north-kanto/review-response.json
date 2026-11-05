@@ -48,7 +48,7 @@
       "response": "検証は実差分から判定、履歴manifestで旧契約を維持。旧READMEの正確な引用に訂正。"
     }
   ],
-  "status": "re-review-unavailable-rate-limit",
+  "status": "awaiting-antigravity-opus-re-review",
   "reReviewAttempt": {
     "provider": "claudeAgent",
     "model": "claude-opus-5-5",
@@ -59,5 +59,6 @@
     "resultReceivedAt": "2026-11-05T12:20:09.544767+00:00",
     "independentReviewCompleted": false,
     "adoptionApproved": false
-  }
+  },
+  "additionalAuthorization": "ユーザーがClaude制限時のAntigravity Claude Opus切替を明示許可。前回試行は失敗で終了し実行中レビューなし。"
 }
