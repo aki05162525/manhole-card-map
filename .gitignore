@@ -9,3 +9,7 @@
 /web/results/
 /web/dist-fixture/
 /web/coverage/
+
+# APM dependencies
+apm_modules/
+/.agents/skills/mapcn/

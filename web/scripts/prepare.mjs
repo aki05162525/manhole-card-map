@@ -19,6 +19,35 @@ if (
 const fixture = args[0] === "--fixture";
 const comparison = args[0] === "--comparison";
 const output = fixture ? "dist-fixture" : "dist";
+await cp(
+  new URL("../MAPCN_LICENSE.txt", import.meta.url),
+  `${output}/MAPCN_LICENSE.txt`,
+);
+// Keep MapLibre's module worker and its relative shared import on our origin.
+const workers = ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"];
+for (const name of workers) {
+  await cp(
+    new URL(`../node_modules/maplibre-gl/dist/${name}`, import.meta.url),
+    `${output}/${name}`,
+  );
+}
+if (fixture) {
+  await writeFile(
+    `${output}/map-style.json`,
+    JSON.stringify({
+      version: 8,
+      name: "Synthetic CI background (not a real basemap)",
+      sources: {},
+      layers: [
+        {
+          id: "background",
+          type: "background",
+          paint: { "background-color": "#e8eeee" },
+        },
+      ],
+    }),
+  );
+}
 if (fixture) {
   // Synthetic cards for CI/browser tests, never real facilities or card data.
   // Never write to public/ or the real-data dist/ directory.
@@ -46,7 +75,7 @@ if (fixture) {
     updated: data.updated,
     fixture: true,
     purpose:
-      "CI/browser synthetic cards with simplified background; not for deployment",
+      "CI/browser synthetic cards with a local blank style; legacy simplified background included; not for deployment",
     files,
     inputs: {},
     referencePlaces: false,
@@ -75,6 +104,9 @@ await mkdir(`${output}/background`, { recursive: true });
 for (const f of backgroundFiles) await cp(`public${f}`, output + f);
 const files = [
   "/index.html",
+  "/legacy.html",
+  "/MAPCN_LICENSE.txt",
+  ...workers.map((name) => "/" + name),
   ...(await readdir(`${output}/assets`)).map((f) => "/assets/" + f),
   "/data/full.json",
   "/data/details.json",
@@ -91,7 +123,7 @@ await writeFile(
   `const CACHE=${JSON.stringify(version)},FILES=${JSON.stringify(files)};
 self.addEventListener('install',e=>e.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(FILES);await self.skipWaiting()})()));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('prototype-')&&key!==CACHE)await caches.delete(key);await self.clients.claim()})()));
-self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.origin!==location.origin)return;if(e.request.mode==='navigate'){e.respondWith(caches.open(CACHE).then(c=>c.match('/index.html')).then(r=>r||fetch(e.request)));return}if(FILES.includes(u.pathname))e.respondWith(caches.open(CACHE).then(c=>c.match(u.pathname)).then(r=>r||fetch(e.request)))});
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.origin!==location.origin)return;if(e.request.mode==='navigate'&&['/','/index.html','/legacy.html'].includes(u.pathname)){e.respondWith(caches.open(CACHE).then(c=>c.match(u.pathname==='/legacy.html'?'/legacy.html':'/index.html')).then(r=>r||fetch(e.request)));return}if(FILES.includes(u.pathname))e.respondWith(caches.open(CACHE).then(c=>c.match(u.pathname)).then(r=>r||fetch(e.request)))});
 self.addEventListener('message',e=>{if(e.data.type==='status')e.waitUntil((async()=>{const c=await caches.open(CACHE);const ready=(await Promise.all(FILES.map(f=>c.match(f)))).every(Boolean);e.ports[0].postMessage({ready,version:CACHE})})())});
 `,
 );

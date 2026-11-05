@@ -104,25 +104,38 @@ for (const mode of modes)
         );
         let tap = null;
         if (observed.metrics?.ready) {
-          const point = await page.evaluate(() =>
-            window.prototype.adapter.tapPoint(),
-          );
-          if (point) {
+          // mapcn clusters expand before opening a card list. Measure the final
+          // selection click separately, rather than mistaking zooming for a detail.
+          for (
+            let attempt = 0;
+            attempt < (engine === "mapcn" ? 10 : 1);
+            attempt++
+          ) {
+            const point = await page.evaluate(() =>
+              window.prototype.adapter.tapPoint(),
+            );
+            if (!point) break;
             const box = await page.locator("#map").boundingBox();
             await page.mouse.click(box.x + point.x, box.y + point.y);
-            await page.waitForFunction(
-              () => window.prototype.metrics.taps.length > 0,
-              null,
-              {
-                timeout: 10000,
-              },
-            );
-            tap = await page.evaluate(() =>
-              window.prototype.metrics.taps.at(-1),
-            );
-            await page
-              .getByRole("button", { name: "閉じる", exact: true })
-              .click();
+            const opened = await page
+              .waitForFunction(
+                () => window.prototype.metrics.taps.length > 0,
+                null,
+                { timeout: engine === "mapcn" ? 1500 : 10000 },
+              )
+              .then(
+                () => true,
+                () => false,
+              );
+            if (opened) {
+              tap = await page.evaluate(() =>
+                window.prototype.metrics.taps.at(-1),
+              );
+              await page
+                .getByRole("button", { name: "閉じる", exact: true })
+                .click();
+              break;
+            }
           }
         }
         const completed = new Promise((resolve) =>

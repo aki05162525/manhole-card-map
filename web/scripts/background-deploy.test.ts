@@ -10,6 +10,7 @@ it("deploys and compresses background separately from the SW guarantee", async (
     await mkdir(join(temp, "dist-fixture/assets"), { recursive: true });
     await mkdir(join(temp, "public/background"), { recursive: true });
     await writeFile(join(temp, "dist-fixture/index.html"), "fixture");
+    await writeFile(join(temp, "dist-fixture/legacy.html"), "legacy");
     await writeFile(
       join(temp, "public/background/japan.geojson"),
       '{"type":"FeatureCollection","features":[]}',
@@ -30,9 +31,29 @@ it("deploys and compresses background separately from the SW guarantee", async (
       (await readFile(join(temp, "dist-fixture/background/japan.geojson.gz")))
         .length,
     ).toBeGreaterThan(0);
+    const sw = await readFile(join(temp, "dist-fixture/sw.js"), "utf8");
+    expect(sw).not.toContain("/background/");
+    expect(sw).toContain("/legacy.html");
+    expect(sw).toContain("/maplibre-gl-worker.mjs");
+    expect(sw).toContain("/maplibre-gl-shared.mjs");
+    expect(sw).not.toContain("/map-style.json");
+    const style = JSON.parse(
+      await readFile(join(temp, "dist-fixture/map-style.json"), "utf8"),
+    );
+    expect(style.version).toBe(8);
+    expect(style.sources).toEqual({});
+    expect(JSON.stringify(style)).not.toMatch(/https?:/);
     expect(
-      await readFile(join(temp, "dist-fixture/sw.js"), "utf8"),
-    ).not.toContain("/background/");
+      (await readFile(join(temp, "dist-fixture/maplibre-gl-worker.mjs")))
+        .length,
+    ).toBeGreaterThan(100);
+    expect(
+      await readFile(join(temp, "dist-fixture/maplibre-gl-shared.mjs")),
+    ).toEqual(
+      await readFile(
+        resolve("node_modules/maplibre-gl/dist/maplibre-gl-shared.mjs"),
+      ),
+    );
   } finally {
     await rm(temp, { recursive: true, force: true });
   }
