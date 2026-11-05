@@ -88,7 +88,12 @@ def main():
             assert sha(ROOT / r['path']) == r['sha256'], r['path']
     sys.path.insert(0, str(ROOT / 'tools/national'))
     import assemble
-    before, _ = assemble.assemble(ROOT, historical)
+    baseline, _ = assemble.assemble(ROOT, historical)
+    regional_before = copy.deepcopy(manifest)
+    for key in ('locations', 'locationLifecycle'):
+        regional_before[key] = [r for r in regional_before.get(key, [])
+                                if not r['path'].startswith('data/national/location-batch2/tohoku/')]
+    before, _ = assemble.assemble(ROOT, regional_before)
     ledger, _ = assemble.assemble(ROOT, manifest)
     old = {p['id']: p for p in before['places']}
     places = {p['id']: p for p in ledger['places']}
@@ -107,12 +112,13 @@ def main():
             assert row['binding'] and places[fid]['coordinate'] == next(u['coordinate'] for u in updates if u['facilityId'] == fid)
     assert sum(r['status'] == 'held' for r in o['rows']) == o['heldCount']
     assert sum(r['status'] == 'adopted' for r in o['rows']) == o['adoptedCount']
-    assert sum(not p.get('coordinate') for p in old.values()) == o['nationalUnlocatedBefore']
-    assert sum(not p.get('coordinate') for p in places.values()) == o['nationalUnlocatedAfter']
+    assert sum(not p.get('coordinate') for p in baseline['places']) == o['nationalUnlocatedBefore']
+    assert sum(not p.get('coordinate') for p in old.values()) - sum(not p.get('coordinate') for p in places.values()) == len(updated)
     assert sum(not places[i].get('coordinate') for i in ids) == o['regionalUnlocatedAfter']
     print(json.dumps({'status': 'pass', 'regionalPopulation': len(ids), 'selected': len(selected),
                       'integrated': len(updated), 'adopted': o['adoptedCount'], 'held': o['heldCount'],
-                      'rawChecked': args.raw}, indent=2))
+                      'rawChecked': args.raw,
+                      'currentNationalUnlocated': sum(not p.get('coordinate') for p in places.values())}, indent=2))
 
 
 if __name__ == '__main__':

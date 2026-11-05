@@ -46,7 +46,22 @@
     }
   ],
   "reReview": {
-    "status": "pending-new-delegation",
-    "adoptionApproved": false
+    "status": "completed-with-conditional-acceptance",
+    "reviewedHead": "77ef285d8972bac293cc3a644a22c545447a91fe",
+    "threadId": "thread:delegated-task:command%3Amcp%3A04b4214c-39c8-41be-8e56-dd8ed01fa431%3Adelegate-task%3A8fa8f797-d163-44f5-bdd7-66dd446ebe91",
+    "yamada": "accepted",
+    "hanamaki": "conditional; record correction required before acceptance",
+    "adoptionApproved": false,
+    "responses": [
+      "重大1: 新館1階警備と両ページ本庁舎表記を原本で再確認しfacts/比較/文書に反証として追加。直接の棟断定資料なしの限界も記載。",
+      "軽微2/3: 上辺方向へ回転して独立再計算。1.445/.343、398開始.658-.659、脚.397/.278。誤った地階・階差説明撤回、398東端/1階比率差も記録。",
+      "軽微4/5: 山田番地差と両棟外の旧点、注記・P05の包含を再計算。棟判別に使えない限界を明記。",
+      "軽微6/7: research6検査とverifyを全国unittest発見対象へ接続。北海道統合で旧verifyのREDを確認、東北だけ除いた現manifestとの差分に修正。開始基準hash検査は履歴として残す。",
+      "軽微8: 山田のみ採用へ同期。花巻は重大指摘修正の最終確認前でproposedを維持。",
+      "軽微9: 本館newMethodを館内図比較へ訂正、山田README参照追加、計測コマンド追加。"
+    ]
+  },
+  "finalReview": {
+    "status": "pending-new-delegation"
   }
 }

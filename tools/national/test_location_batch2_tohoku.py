@@ -1,3 +1,6 @@
+import importlib.util
+import sys
+from unittest.mock import patch
 import copy
 import json
 import hashlib
@@ -12,7 +15,18 @@ EXPECTED = {
     'facility:north-e2dfc05c8b1db51fc65b': {'lat': 39.478372, 'lng': 141.9535192},
 }
 
+# Make the research regression cases part of the standard CI discovery.
+_spec = importlib.util.spec_from_file_location('tohoku_research_tests',
+    ROOT / 'data/evidence/location-batch2/tohoku/test_verify.py')
+_research = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_research)
+ResearchValidationTest = _research.ResearchValidationTest
+
 class TohokuLocationBatch2Test(unittest.TestCase):
+    def test_research_records_and_regional_integration(self):
+        with patch.object(sys, 'argv', ['verify.py']):
+            _research.module.main()
+
     def test_two_buildings_and_only_their_position_fields_change(self):
         manifest = a.read_json(ROOT / 'tools/national/manifest.json')
         historical = copy.deepcopy(manifest)

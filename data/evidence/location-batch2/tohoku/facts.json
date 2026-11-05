@@ -29,9 +29,9 @@
       "snapshotSHA256": "eff732d40776c3fc00d3b01d8528c49853f8318055e2af85727945a813f8f268",
       "retrievedAt": "2026-11-05T11:23:54.173825+00:00",
       "rawPath": "data/work/location-batch2/tohoku/hanamaki-new.pdf",
-      "sourceLocator": "物理1頁・2階図",
+      "sourceLocator": "物理1頁・1階警備/2階下水道課",
       "sourceVersion": "掲載ページは2025-04-01現在",
-      "finding": "細長い矩形の新館2階に下水道課を表示。本館との地理的位置関係はこの図だけでは確定しない。",
+      "finding": "細長い矩形の新館2階に下水道課を表示。本館との地理的位置関係はこの図だけでは確定しない。 1階左上に「警備」があり、施設名「警備員室」と語が重なる反証。新館図には「守衛室」表記がない。本館図の「守衛室・宿直室」と配布案内の表現を合わせて本館と読むが、市の直接的な棟断定資料は未確認。",
       "redistribution": "fact extraction only; raw not included in Git"
     },
     {
@@ -152,7 +152,7 @@
       "rawPath": "data/work/location-batch2/tohoku/hanamaki-main.html",
       "sourceLocator": "本館案内図・冒頭とPDFリンク",
       "sourceVersion": "2026-04-01現在/ページ更新2026-06-01",
-      "finding": "本館各階の案内とr8-honkanannaizu.pdfを掲載する。新館案内は別ページ。",
+      "finding": "本館各階の案内とr8-honkanannaizu.pdfを掲載する。新館案内は別ページ。 両ページとも題名に「本庁舎」を含むため、その語だけでは本館と判別できない。",
       "redistribution": "fact extraction only; raw not included in Git"
     },
     {
@@ -163,7 +163,7 @@
       "rawPath": "data/work/location-batch2/tohoku/hanamaki-new.html",
       "sourceLocator": "新館案内図・2階とPDFリンク",
       "sourceVersion": "2025-04-01現在/ページ更新2025-05-08",
-      "finding": "下水道課を新館2階に掲載し、r7shinkan.pdfにリンクする。",
+      "finding": "下水道課を新館2階に掲載し、r7shinkan.pdfにリンクする。 両ページとも題名に「本庁舎」を含むため、その語だけでは本館と判別できない。",
       "redistribution": "fact extraction only; raw not included in Git"
     },
     {

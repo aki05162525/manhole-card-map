@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "name": "atami",
+      "searchSeedTileXY": [
+        828.7420416176319,
+        1324.023569509387
+      ],
+      "containingFeatures": [],
+      "adoptionDecision": "held",
+      "note": "Contains is only a numerical comparison, not independent building identification."
+    },
+    {
+      "name": "seki",
+      "searchSeedTileXY": [
+        581.8120840191841,
+        625.8243980407715
+      ],
+      "containingFeatures": [
+        {
+          "featureIndex": 21,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  326,
+                  381
+                ],
+                [
+                  907,
+                  442
+                ],
+                [
+                  891,
+                  596
+                ],
+                [
+                  752,
+                  581
+                ],
+                [
+                  751,
+                  597
+                ],
+                [
+                  765,
+                  628
+                ],
+                [
+                  766,
+                  645
+                ],
+                [
+                  758,
+                  665
+                ],
+                [
+                  741,
+                  687
+                ],
+                [
+                  740,
+                  699
+                ],
+                [
+                  816,
+                  707
+                ],
+                [
+                  817,
+                  689
+                ],
+                [
+                  937,
+                  701
+                ],
+                [
+                  920,
+                  874
+                ],
+                [
+                  443,
+                  824
+                ],
+                [
+                  447,
+                  785
+                ],
+                [
+                  442,
+                  784
+                ],
+                [
+                  445,
+                  749
+                ],
+                [
+                  440,
+                  748
+                ],
+                [
+                  448,
+                  673
+                ],
+                [
+                  414,
+                  669
+                ],
+                [
+                  427,
+                  549
+                ],
+                [
+                  308,
+                  536
+                ],
+                [
+                  310,
+                  520
+                ],
+                [
+                  290,
+                  518
+                ],
+                [
+                  303,
+                  394
+                ],
+                [
+                  324,
+                  397
+                ],
+                [
+                  326,
+                  381
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "vt_code": 3102,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "adoptionDecision": "held",
+      "note": "Contains is only a numerical comparison, not independent building identification."
+    }
+  ]
+}
