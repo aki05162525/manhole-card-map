@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "issue": 25,
+  "baselineCommit": "b17fb66b",
+  "inputPath": "data/overrides/regions/kinki.json",
+  "inputSHA256": "d1aa57ee76aca69596d24d17f608befbf276b3a0cbfb3c768bf17856dc4801df",
+  "reviewStatus": "pending-independent-review",
+  "relations": [
+    {
+      "cardId": "28-228-A001",
+      "facilityId": "facility:kinki-c5d10ff37b683a499161",
+      "sourceLocator": "data/overrides/regions/kinki.json#/relations/218",
+      "exactCurrent": {
+        "cardId": "28-228-A001",
+        "placeId": "facility:kinki-c5d10ff37b683a499161",
+        "sourceHash": "348468b439406cfdf2cb08546f8b437798559ab57b48b8d078e7ec12ff0bf092",
+        "hours": [
+          "月火木金土日8:30～17:00、年末年始休業"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/8693.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/23675c70b69e2887a2a3.html",
+          "snapshotSHA256": "1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-A001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/5/27再開。協会終了17:15を17時へ訂正。市役所電話は0795-43-0530。"
+        }
+      },
+      "assembledMatchesInput": true,
+      "cityEvidenceId": "city-a",
+      "operatorEvidenceId": "operator-change",
+      "assessment": "retain-current-relation",
+      "reason": "市本文の曜日別配布先・時間と台帳hoursが一致。運営者の2025-04-01告知も両施設を支持。終了扱いにする根拠なし。"
+    },
+    {
+      "cardId": "28-228-A001",
+      "facilityId": "facility:kinki-9f39963fd788d29d7a00",
+      "sourceLocator": "data/overrides/regions/kinki.json#/relations/219",
+      "exactCurrent": {
+        "cardId": "28-228-A001",
+        "placeId": "facility:kinki-9f39963fd788d29d7a00",
+        "sourceHash": "348468b439406cfdf2cb08546f8b437798559ab57b48b8d078e7ec12ff0bf092",
+        "hours": [
+          "水曜8:30～17:15、祝日・年末年始休業"
+        ],
+        "status": "active",
+        "condition": "加東市観光協会の休業日(主に水曜)",
+        "evidence": {
+          "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/8693.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/23675c70b69e2887a2a3.html",
+          "snapshotSHA256": "1241a553b1efefc74dd472cd3bed3bc7e57e3479cb3a01287877e452d3f16a62",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-A001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/5/27再開。協会終了17:15を17時へ訂正。市役所電話は0795-43-0530。"
+        }
+      },
+      "assembledMatchesInput": true,
+      "cityEvidenceId": "city-a",
+      "operatorEvidenceId": "operator-change",
+      "assessment": "retain-current-relation",
+      "reason": "市本文の曜日別配布先・時間と台帳hoursが一致。運営者の2025-04-01告知も両施設を支持。終了扱いにする根拠なし。"
+    },
+    {
+      "cardId": "28-228-B001",
+      "facilityId": "facility:kinki-c5d10ff37b683a499161",
+      "sourceLocator": "data/overrides/regions/kinki.json#/relations/220",
+      "exactCurrent": {
+        "cardId": "28-228-B001",
+        "placeId": "facility:kinki-c5d10ff37b683a499161",
+        "sourceHash": "01993796ed883e90d882722c6509914a532188da01a1cdca2151a13fc3303a2c",
+        "hours": [
+          "月火木金土日8:30～17:00、年末年始休業"
+        ],
+        "status": "active",
+        "condition": "月・火・木・金・土・日",
+        "evidence": {
+          "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/14157.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/ca808e568c55e70ab0f2.html",
+          "snapshotSHA256": "828e838460ce0d857f4bd6bb61a98b55281065492d18570c39c4ce9518c1a636",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-B001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。観光協会8:30～17時（水曜休）、水曜は商工観光課8:30～17:15（祝日休）。各年末年始休業。"
+        }
+      },
+      "assembledMatchesInput": true,
+      "cityEvidenceId": "city-b",
+      "operatorEvidenceId": "operator-change",
+      "assessment": "retain-current-relation",
+      "reason": "市本文の曜日別配布先・時間と台帳hoursが一致。運営者の2025-04-01告知も両施設を支持。終了扱いにする根拠なし。"
+    },
+    {
+      "cardId": "28-228-B001",
+      "facilityId": "facility:kinki-9f39963fd788d29d7a00",
+      "sourceLocator": "data/overrides/regions/kinki.json#/relations/221",
+      "exactCurrent": {
+        "cardId": "28-228-B001",
+        "placeId": "facility:kinki-9f39963fd788d29d7a00",
+        "sourceHash": "01993796ed883e90d882722c6509914a532188da01a1cdca2151a13fc3303a2c",
+        "hours": [
+          "水曜8:30～17:15、祝日・年末年始休業"
+        ],
+        "status": "active",
+        "condition": "水曜日",
+        "evidence": {
+          "sourceUrl": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/news/14157.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/ca808e568c55e70ab0f2.html",
+          "snapshotSHA256": "828e838460ce0d857f4bd6bb61a98b55281065492d18570c39c4ce9518c1a636",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-228-B001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。観光協会8:30～17時（水曜休）、水曜は商工観光課8:30～17:15（祝日休）。各年末年始休業。"
+        }
+      },
+      "assembledMatchesInput": true,
+      "cityEvidenceId": "city-b",
+      "operatorEvidenceId": "operator-change",
+      "assessment": "retain-current-relation",
+      "reason": "市本文の曜日別配布先・時間と台帳hoursが一致。運営者の2025-04-01告知も両施設を支持。終了扱いにする根拠なし。"
+    }
+  ],
+  "proposedPatches": [],
+  "locationCandidates": [],
+  "unresolvedConditions": [
+    "市のカード配布本文は観光協会8:30開始、運営者の一般営業時間は9:00開始。用途差の可能性がありカード対応可否を別に確認する。",
+    "観光協会の一般休館は水曜が祝日の場合翌日。市のカード本文は水曜/他曜日の分担と市役所祝日休を記載。祝日水曜・振替木曜のカード窓口は断定しない。"
+  ],
+  "coordinate": {
+    "crs": null,
+    "precision": null,
+    "processing": "none",
+    "useTerms": "not-applicable; no coordinates proposed"
+  }
+}

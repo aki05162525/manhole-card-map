@@ -51,7 +51,7 @@ SouthKantoの`sourceFile=data/work/national-input/places.json`だけは、明示
 
 位置証拠の`checkedAt`がタイムゾーン付きtimestampなら、その表記の暦日へ正規化する。元の位置追補ファイルを変更せず、任意の監査出力にも`originalEvidence`としてtimestampをそのまま保存する。置換前の施設証拠は`previousEvidence`に記録する。タイムゾーンのないtimestampは失敗する。監査出力には入力ファイルhashと適用件数も含む。
 
-親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。現在のCIはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。
+親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。基準照合テストはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。Issue26以降もこの履歴digestを保持し、新しい住所パッチを除いたmanifestで旧基準を照合する。別テストで新パッチが石巻1施設の住所・証拠だけを変更し、他の施設・全関係を保持することを検査する。
 
 ```text
 d89e788b0998fd625ea3d2b06e4cae6ff85c1c30f1526bc18c6bd8908702a5ff
@@ -71,7 +71,7 @@ CIに必要なのは選択manifest、台帳・パッチ・位置追補、それ�
 
 ## 見つかった記述の差
 
-- 初期依頼文の「完成済みパッチ7ファイル」に対し、当時の列挙と実ファイルは6つで、初期実装は6ファイル97操作だった。Issue5開始前は家康館の再確認期限パッチを加えた7ファイル98操作。Issue5完了時は9ファイル103操作。現在はIssue7を含め11ファイル111操作。
+- 初期依頼文の「完成済みパッチ7ファイル」に対し、当時の列挙と実ファイルは6つで、初期実装は6ファイル97操作だった。Issue5開始前は家康館の再確認期限パッチを加えた7ファイル98操作。Issue5完了時は9ファイル103操作。Issue18照合時点はIssue7を含め11ファイル111操作。Issue26の住所・証拠2フィールド追補後は12ファイル113操作。
 - `data/evidence/national/proposals-chubu/README.md`が指摘する、初期地域記録の「入力外のため新規関係を登録できない」は現在のGoの`change.kind=addition`対応と一致しない。現在のコードに従い、レビュー済みproposalを統合する。
 - 千葉位置追補の`checkedAt`はtimestampだが、既存GoのEvidence検証は日付のみを受け付ける。元証拠を保持して出力を日付へ正規化した。
 - 変更前のfragmentsテストは未補正のpilot＋全地域を直接mergeしており、各追補READMEの「exact patchを先に適用する」手順と一致していなかった。厳密mergeを維持したまま適用順序を修正した。
@@ -99,3 +99,7 @@ CIに必要なのは選択manifest、台帳・パッチ・位置追補、それ�
 `apply_locations`が通常台帳へ追補するのはcoordinateとevidenceで、原追補のscopeは構造化した精度フィールドとして配信されない。原追補やlocationLifecycleのadoption履歴には保持できるが、配信の `confirmed` は建物/入口の精度区分ではない。Goでは検証後の台帳に座標が残ればconfirmedとなり、位置履歴の保留・撤回では座標が除去される。
 
 PythonとGoの施設座標検査は有限数値の緯度±90・経度±180で一致する。保存viewportの緯度±85は別の表示復元ポリシーであり、採用座標を切り詰めない。以前のGo±85との不一致は[Issue18契約照合](verification/issue18-contracts.md)に履歴として残し、修正・境界検証・現行データ不変の確認は[Issue22記録](verification/issue22-coordinate-contract.md)に記録する。
+
+## Issue26 住居番号の訂正
+
+石巻市かわまち交流センターは2022年の住居番号変更で11番21から11番12号になった。現配布案内には旧番地が残るため、原文とカード別関係を保持し、施設の住所と根拠だけをexact field patchで追補した。1階表記は配布案内に基づき維持する。新しい座標は採用していない。詳細と実生成差分は[Issue25〜27統合記録](verification/issues25-27-integration.md)を参照する。

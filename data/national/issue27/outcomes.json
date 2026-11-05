@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "issue": 27,
+  "startedAt": "2026-11-05T10:10:23.915534+00:00",
+  "finishedAt": "2026-11-05T10:15:11.639070+00:00",
+  "wallSeconds": 287.724,
+  "timingScope": "Issue27着手から成果JSON作成まで。資料閲覧、検索、LibreOffice環境取得/レンダリング待ちを含むwall clock。独立レビューと後続統合は含めない。",
+  "interruptions": [],
+  "facilities": [
+    {
+      "status": "held",
+      "independentReview": "pending",
+      "cardIds": [
+        "27-218-A001",
+        "27-218-B001"
+      ],
+      "actorType": "ai",
+      "checkedBy": "Codex source_research",
+      "stage": "building-comparison",
+      "evidenceRefs": [
+        "data/evidence/issue27/retrievals.json#/records/1",
+        "data/evidence/issue27/retrievals.json#/records/5",
+        "data/evidence/issue27/retrievals.json#/records/0",
+        "data/evidence/issue27/retrievals.json#/records/3",
+        "data/evidence/issue27/docx-analysis.json"
+      ],
+      "coordinateApproval": false,
+      "precisionRequired": "現配布先建物を含む建物代表点。入口・室内測量は不要。",
+      "stopCondition": "DOCXは概略アクセス図、施設mapは局単位のmarkerであり複数棟の対応と出典条件を埋められない。同一資料の数値再検索を続けない。",
+      "resumeCondition": [
+        "現局庁舎・宿直建物の位置が判別できる棟配置図/公的施設GIS/現況写真など新根拠を得る",
+        "その根拠を地理参照外形または直接座標に接続し、各施設が同じ建物か別建物かを確認",
+        "採る方法に対応したCRS・加工方法・座標利用条件を個別確認する"
+      ],
+      "facilityId": "facility:kinki-5ef4b8538c8df02b55f4",
+      "name": "大東市上下水道局 総務課",
+      "finding": "公式配布本文は局庁舎2階。発電設備記事は局庁舎を灰塚配水場管理棟と呼ぶ。市計画は管理棟・別館・渡り廊下を区別する。公開markerが管理棟を表すことは未確定。",
+      "buildingIdentity": "局庁舎2階の所属は確認。地理参照外形への管理棟の対応は未確定。"
+    },
+    {
+      "status": "held",
+      "independentReview": "pending",
+      "cardIds": [
+        "27-218-A001",
+        "27-218-B001"
+      ],
+      "actorType": "ai",
+      "checkedBy": "Codex source_research",
+      "stage": "building-comparison",
+      "evidenceRefs": [
+        "data/evidence/issue27/retrievals.json#/records/1",
+        "data/evidence/issue27/retrievals.json#/records/5",
+        "data/evidence/issue27/retrievals.json#/records/0",
+        "data/evidence/issue27/retrievals.json#/records/3",
+        "data/evidence/issue27/docx-analysis.json"
+      ],
+      "coordinateApproval": false,
+      "precisionRequired": "現配布先建物を含む建物代表点。入口・室内測量は不要。",
+      "stopCondition": "DOCXは概略アクセス図、施設mapは局単位のmarkerであり複数棟の対応と出典条件を埋められない。同一資料の数値再検索を続けない。",
+      "resumeCondition": [
+        "現局庁舎・宿直建物の位置が判別できる棟配置図/公的施設GIS/現況写真など新根拠を得る",
+        "その根拠を地理参照外形または直接座標に接続し、各施設が同じ建物か別建物かを確認",
+        "採る方法に対応したCRS・加工方法・座標利用条件を個別確認する"
+      ],
+      "facilityId": "facility:kinki-677fb9a18c933486a439",
+      "name": "大東市上下水道局 宿直室",
+      "finding": "公式配布本文が正門を入ってすぐ左手にある建物と明記。総務課との同棟共有を認定せず別棟の可能性として扱う。計画中の別館が宿直室と同一とも認定していない。",
+      "buildingIdentity": "入口からの相対位置は判明。どの地理参照外形が宿直室の建物か未確定。"
+    }
+  ],
+  "updates": [],
+  "investigativeCoordinate": {
+    "value": {
+      "lat": 34.702918,
+      "lng": 135.614634
+    },
+    "status": "unapproved-source-lead-only",
+    "evidenceRefs": [
+      "data/evidence/issue27/retrievals.json#/records/0",
+      "data/evidence/issue27/retrievals.json#/records/3",
+      "data/evidence/issue27/retrievals.json#/records/9"
+    ],
+    "sourceName": "大東市公式施設地図303 + shisetsu-detail-googlemap.js",
+    "version": "HTML更新2021-07-15。座標作成版不明。JS取得時内容。",
+    "processing": "initlat/initlongの数値を転記、変換なし。JSはmap centerとmarker position双方に同値を渡す。単なるviewport中心ではない。",
+    "crs": "原典に測地系・精度・作成方法の明記なし。Google JS APIに渡す事実は測地系の原典保証やGoogle生成由来の証明ではない。",
+    "buildingComparison": "GSI z18/229823/104098上の画素約144.08,71.98に投影すると細長い外形内部に見える。ただしその外形の管理棟/別館/宿直室への対応未確定。地図整備年月も不明。",
+    "useConditions": "市一般著作権案内は確認したが、当該marker数値の個別ライセンス・作成由来は未確認。Google表示利用を理由にGoogle由来と断定しない。一般著作権文だけで事実情報の利用を一律禁止とも判断しない。",
+    "redistribution": "今回の新規HTML/JS/計画PDF/タイル/レンダリングはdata/workのみ。旧DOCX原本は既存保存場所を変更せず参照。最小の事実要約とURL/hashを追跡。"
+  },
+  "sourceConditions": {
+    "municipal": "data/evidence/issue27/retrievals.json#/records/7",
+    "gsi": "data/evidence/issue27/retrievals.json#/records/11",
+    "gsiDecision": "標準地図のリアルタイム表示の申請不要を固定代表点の抽出・公開へ拡張していない。今回は代表点を抽出/採用しない。",
+    "cost": "公式資料とタイル取得は課金/認証なし。描画ソフト取得と人手の棟同定に時間を要した。測量手続/追加原典調査の費用は未評価。"
+  },
+  "findingsComparedWithPrior": [
+    "既保存DOCXが概略図であり同棟証明にならないと画像まで確認した",
+    "正門左手の建物の説明は旧保存40329にも存在。新たに追加された公式記述とは主張しない",
+    "公式marker数値を新たに特定しJSで意味を確認したが採用しない",
+    "新規個別施設計画に複数棟が明記され、同住所一括共有を防止した"
+  ],
+  "preserved": [
+    "元調査",
+    "台帳",
+    "manifest",
+    "配布関係",
+    "カード",
+    "位置未確定状態"
+  ],
+  "notDone": [
+    "位置採用",
+    "外部問い合わせ",
+    "現地確認",
+    "Google側APIによる追加座標取得",
+    "個別座標の利用条件確定",
+    "独立レビュー"
+  ]
+}
