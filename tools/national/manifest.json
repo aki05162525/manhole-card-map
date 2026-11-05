@@ -3824,6 +3824,19 @@
       ]
     },
     {
+      "path": "data/national/location-batch2/tohoku/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-db757b448c8db73422a5",
+          "sha256": "f95fe21689d059c6b8e3147c4ceec78d945d4905f1f9f13f174b207777c5533a"
+        },
+        {
+          "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+          "sha256": "852f954014ec973d5b96583dc906d12fb08ca9fdfcf0fe63134a03a042c4e27a"
+        }
+      ]
+    },
+    {
       "path": "data/national/location-batch2/north-kanto/locations.json",
       "approved": [
         {
@@ -3853,6 +3866,10 @@
     {
       "path": "data/national/location-batch2/koshin/location-lifecycle.json",
       "sha256": "977c399607acae00dcbe867b57f7b345d7e40cf92e3f500386438d1cbabec7ef"
+    },
+    {
+      "path": "data/national/location-batch2/tohoku/location-lifecycle.json",
+      "sha256": "267ca7b715ebaac172a02f7a48441ff8b15cba9d03b6b2b98c57af2d80153aa7"
     },
     {
       "path": "data/national/location-batch2/north-kanto/location-lifecycle.json",
