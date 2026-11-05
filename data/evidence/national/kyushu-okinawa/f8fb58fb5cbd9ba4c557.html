@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang=ja id=fsc>
+<head>
+<meta charset=UTF-8>
+<meta name=keywords content="">
+<meta name=description content="熊本県宇城市の公式ウェブサイトです。宇城市の紹介、組織案内、観光・イベント情報、計画・財政状況等の情報を提供しています。">
+<meta property=og:url content="https://www.city.uki.kumamoto.jp/">
+<meta property=og:type content=article>
+<meta property=og:title content="宇城市：ホーム">
+<meta property=og:description content="熊本県宇城市の公式ウェブサイトです。宇城市の紹介、組織案内、観光・イベント情報、計画・財政状況等の情報を提供しています。">
+<meta property=og:site_name content="宇城市公式ホームページ">
+<meta property=og:image content="/assets/img/ogimage.png">
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv=X-UA-Compatible content="IE=Edge">
+<link rel=icon href="/assets/img/favicon.ico">
+<title>ホーム / 宇城市</title>
+<link rel=stylesheet href="/assets/css/destyle.css" media=all>
+<link rel=stylesheet href="/assets/css/slick-theme.css">
+<link rel=stylesheet href="/assets/css/slick.css">
+<link rel=stylesheet href="/assets/css/splide-core.min.css">
+<link rel=stylesheet href="/assets/css/color0.css" media=all id=bgcss>
+<link rel=stylesheet href="/assets/css/style1-common.css" media=all>
+<link rel=stylesheet href="/assets/css/style1-tobira.css" media=all>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/js.cookie.min.js"></script>
+<script src="/assets/js/fsc.js"></script>
+<script src="/assets/js/bg_select.js"></script>
+<script src="/assets/js/splide.min.js"></script>
+<script src="/assets/js/splide-extension-intersection.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+<script>
+    //読み込みが完了してからページを表示する
+    window.onload = function () {
+      $('body#onlord').css('visibility','visible');
+    }
+  </script>
+<script>
+    // CSS変数 IE 対応
+    $(function(){
+      const ua = navigator.userAgent;
+      if(ua.indexOf('Trident') !== -1) {
+        //IE 11のときの挙動をここに書く
+        cssVars({
+          rootElement: document
+        });
+      }
+    });
+  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16977304-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-16977304-1');
+  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TR05DX7DZB"></script>
+<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+	  gtag('config', 'G-TR05DX7DZB');
+	</script>
+<script>
+		(function(){
+			// 判定キー（ファイルURLに含まれる文字列） : [material_id, material_category, material_name]
+			var MATERIALS = {
+				'e=def73f88d58d2768914327b86488479e': ['uki_00_kihonlogo_jpg', 'logo', 'がんばろう（基本ロゴ）'],
+				'e=93226cb5749913a71ba8f19c20ebad61': ['uki_00_kihonlogo_png', 'logo', 'がんばろう（基本ロゴ）'],
+				'e=c576944b9549baa37478e407b31dfebf': ['uki_01_katte_jpg', 'logo', '買って応援'],
+				'e=afe5dde22bb2ac8d8cf88a86c9883524': ['uki_01_katte_png', 'logo', '買って応援'],
+				'e=595ca463feaadcd031426873a4547d5b': ['uki_01_kite_jpg', 'logo', '来て応援'],
+				'e=74b0b7e6f1b3a50b3821e16216e82fa8': ['uki_01_kite_png', 'logo', '来て応援'],
+				'e=31821fe47c99b40ac44e953801e6c8a6': ['uki_01_nonde_jpg', 'logo', '飲んで応援'],
+				'e=8335b5f7b119c07920b6db87c6b7030d': ['uki_01_nonde_png', 'logo', '飲んで応援'],
+				'e=10d8b9ba59084bc382ba4fde3818e850': ['uki_01_tabete_jpg', 'logo', '食べて応援'],
+				'e=1522c7b52db1f4bce603706045248293': ['uki_01_tabete_png', 'logo', '食べて応援'],
+				'e=f22d6ea8ab0c2daf2f90c99950cbee0e': ['uki_01_tabi_jpg', 'logo', '旅して応援'],
+				'e=e2bec623ee1b5a81a000492645707756': ['uki_01_tabi_png', 'logo', '旅して応援']
+			};
+			document.addEventListener('click', function(e){
+				var a = e.target.closest ? e.target.closest('a') : null;
+				if (!a || !a.href || typeof gtag !== 'function') return;
+				for (var k in MATERIALS) {
+					if (a.href.indexOf(k) !== -1) {
+						var m = MATERIALS[k];
+						gtag('event', 'material_download', {
+							municipality: 'uki',
+							material_id: m[0],
+							material_category: m[1],
+							material_name: m[2],
+							file_extension: m[0].split('_').pop(),
+							link_url: a.href,
+							link_text: (a.innerText || '').trim()
+						});
+						break;
+					}
+				}
+			});
+		})();
+	</script>
+</head>
+<body>
+<div id=wrapper class=tobira>
+<header>
+<h1 class=sitelogo>
+<a href="/index.php"><img class=symbol-uki src="/assets/img/icon/Uki_logo.png" width=300 alt="宇城市"></a>
+</h1>
+</header>
+<main id=main>
+<div id=tobiraslider class="mainvisual splide" role=group aria-label="宇城市の観光地の写真">
+<div class=slider-ctrl>
+<div class=splide__arrows>
+<button class="splide__arrow splide__arrow--prev slider-prev" aria-label="前に戻る">Previous</button>
+<button class="splide__arrow splide__arrow--next slider-next" aria-label="次に進む">Next</button>
+</div>
+<ul class=splide__pagination></ul>
+<button class="splide__toggle sliderBtn" type=button>
+<span class="splide__toggle__play startBtn">再生</span>
+<span class="splide__toggle__pause stopBtn">停止</span>
+</button>
+</div>
+<div class="tobiraimg-ctr splide__track">
+<ul class="tobiraimage splide__list">
+<li class="tobiraslider-item splide__slide js-img-bg thumb">
+<picture>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img01_pc.webp" type="image/webp" width=1920 height=1280>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img01_pc.jpg" width=1920 height=1280>
+<source srcset="/assets/img/tobira/top_img01_mbl.webp" type="image/webp" width=1024 height=440>
+<img src="/assets/img/tobira/top_img01_mbl.jpg" alt="三角西港の写真" width=1024 height=440>
+</picture>
+</li>
+<li class="tobiraslider-item splide__slide js-img-bg thumb">
+<picture>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img02_pc.webp" type="image/webp" width=1920 height=1280>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img02_pc.jpg" width=1920 height=1280>
+<source srcset="/assets/img/tobira/top_img02_mbl.webp" type="image/webp" width=1024 height=440>
+<img src="/assets/img/tobira/top_img02_mbl.jpg" alt="金桁温泉の写真" width=1024 height=440>
+</picture>
+</li>
+<li class="tobiraslider-item splide__slide js-img-bg thumb">
+<picture>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img03_pc.webp" type="image/webp" width=1920 height=1280>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img03_pc.jpg" width=1920 height=1280>
+<source srcset="/assets/img/tobira/top_img03_mbl.webp" type="image/webp" width=1024 height=440>
+<img src="/assets/img/tobira/top_img03_mbl.jpg" alt="不知火・海の火まつり 花火大会の写真" width=1024 height=440>
+</picture>
+</li>
+<li class="tobiraslider-item splide__slide js-img-bg thumb">
+<picture>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img04_pc.webp" type="image/webp" width=1920 height=1280>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img04_pc.jpg" width=1920 height=1280>
+<source srcset="/assets/img/tobira/top_img04_mbl.webp" type="image/webp" width=1024 height=440>
+<img src="/assets/img/tobira/top_img04_mbl.jpg" alt="大見石畳公園の写真" width=1024 height=440>
+</picture>
+</li>
+<li class="tobiraslider-item splide__slide js-img-bg thumb">
+<picture>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img05_pc.webp" type="image/webp" width=1920 height=1280>
+<source media="(min-width: 1024px)" srcset="/assets/img/tobira/top_img05_pc.jpg" width=1920 height=1280>
+<source srcset="/assets/img/tobira/top_img05_mbl.webp" type="image/webp" width=1024 height=440>
+<img src="/assets/img/tobira/top_img05_mbl.jpg" alt="小川町の棚田の写真" width=1024 height=440>
+</picture>
+</li>
+</ul>
+</div>
+</div>
+<div class=EMG-info-ctr>
+<div class=EMG-info-area>
+<div class=EMG-header>
+<h2 class=EMG-info-title>緊急情報</h2>
+</div>
+<ul class=EMG-cont>
+<li>
+<a href="/toppage/kinkyu/2606699">
+<p class=EMGdate>2026年11月4日</p>
+<p class=EMGtitle>令和8年熊本地震　関連情報　（11月5日8時30分更新）</p>
+</a>
+</li>
+</ul>
+<p class=EMG-more><a href="/toppage/kinkyu"><span class=more-symbol>&#x25B6;</span>&nbsp;一覧へ</a></p>
+</div>
+</div>
+<div class=saigaitaio-tobira>
+<a href="/toppage/kinkyu/2606668">
+<p><span>窓口業務については</span><span>現在災害対応を優先しています</span></p>
+<p class=saigaitaio-tobira-more>詳しくはこちら</p>
+</a>
+</div>
+<div class=search-wrapper>
+<div class=searchInner>
+<form action="/search" name=sitesearch class="sitesearch search-ctr">
+<input class=placeholder placeholder="入力例：転入　手続き" aria-label=Search name=q tabindex=0>
+<button name=submit tabindex=0 type=submit><img src="/assets/img/icon/icon_search.png" width=24 alt="検索"></button>
+</form>
+</div>
+<section class=search-keywordlist>
+<h2>よく利用されるキーワード</h2>
+<ul class=keywordlist>
+<li class=keyword><a href="/search?q=8月10日の大雨に関する情報">8月10日の大雨に関する情報</a></li>
+<li class=keyword><a href="/search?q=住民票">住民票</a></li>
+<li class=keyword><a href="/search?q=印鑑登録・証明">印鑑登録・証明</a></li>
+<li class=keyword><a href="/search?q=ごみの出し方">ごみの出し方</a></li>
+</ul>
+</section>
+</div>
+<nav class=entrance-area>
+<ul class=entrance-list>
+<li class=ent-admin>
+<a href="/index.php">
+<span class=ent-img><img src="/assets/img/icon/ent_admin_img_l.png" width=110 alt=""></span>
+<span class=ent-title>行政・くらし</span>
+</a>
+</li>
+<li class=ent-ukinisum>
+<a href="/ukinisum/">
+<span class=ent-img><img src="/assets/img/icon/ent_ukinisum_img.png" width=80 alt=""></span>
+<span class=ent-title><img src="/assets/img/icon/ukinisum_logo.jpg" alt="UKINISUMロゴ" width=200></span>
+<span class=ent-comment>移住定住・空き家空き地バンク</span>
+</a>
+</li>
+<li class=ent-furusato>
+<a href="/toppage/furusato/2023809">
+<span class=ent-img><img src="/assets/img/icon/ent_furusato_img.png" width=80 alt=""></span>
+<span class=ent-title>ふるさと納税</span>
+</a>
+</li>
+<li class=ent-ukitrip>
+<a href="https://ukitrip.city.uki.kumamoto.jp/">
+<span class=ent-img><img src="/assets/img/icon/ent_ukitrip_img.png" width=80 alt=""></span>
+<span class=ent-title><img src="/assets/img/icon/ukitrip_logo.png" alt="Uki tripロゴ" width=160></span>
+<span class=ent-comment>観光情報・特産品</span>
+</a>
+</li>
+</ul>
+</nav>
+</main>
+<footer>
+<div class=footer-area>
+<section class=footer-cont>
+<h2 class=f-sitelogo>
+<span class=name1>宇城市役所</span>
+</h2>
+<address>
+<p class=add-cont>&#12306;869-0592<br> 熊本県宇城市松橋町大野85番地</p>
+<p class=add-cont>電話番号：<a href=tel:0964321111>(0964)32-1111(代) </a></p>
+<p class=add-cont>ファックス番号：(0964)32-0110</p>
+<p class="add-cont access">
+<a href="/toppage/gaiyo/shokai/2020525">
+<img src="/assets/img/icon/location_on.png" width=24 alt=""><span>宇城市へのアクセス</span>
+</a>
+</p>
+</address>
+</section>
+<div class=sns-links-area>
+<ul class=sns-links-list>
+<li class=sns-links><a href="https://page.line.me/dhi0608d?openQrModal=true"><img src="/assets/img/icon/icon_LINE.png" alt="宇城市公式ライン" width=300></a></li>
+<li class=sns-links><a href="https://www.instagram.com/uki_smile/?hl=ja"><img src="/assets/img/icon/icon_Instagram.png" alt="宇城市公式インスタグラム" width=300></a></li>
+<li class=sns-links><a href="https://www.youtube.com/channel/UCfJF9For8OvG7mdxISRyw2A"><img src="/assets/img/icon/icon_youtube.png" alt="宇城市公式ユーチューブ" width=300></a></li>
+</ul>
+</div>
+<p class=copyright>&#169;&#32;UKI&nbsp;CITY&nbsp;All&nbsp;Rights&nbsp;Reserved.</p>
+</div>
+</footer>
+<script>
+	$( function(){ $.ajax( { type:"POST", url:"/cdnac.php", data:{ "mode":"page", "id":"1", "cat_id":"", "art_id":"", "type":"" } } ); } );
+</script>
+<script>
+	$(".placeholder,button[name=submit]").attr("tabindex","0");
+</script>
+</div>
+<script>
+    $(window).on('load', function()
+    {
+          })
+
+    $(window).on('unload', function()
+    {
+          })
+    //-->
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
+<script src="/assets/js/common.js"></script>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=47613788" async></script></body>
+</html>

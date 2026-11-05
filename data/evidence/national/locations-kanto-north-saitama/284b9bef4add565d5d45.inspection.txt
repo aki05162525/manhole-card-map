@@ -1,0 +1,26 @@
+URL https://www.pref.saitama.lg.jp/shisetsu/shakai/012.html
+TEXT 古利根川水循環センター - 埼玉県 このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 彩の国 埼玉県 Foreign Language 文字サイズ・色合い変更 音声読み上げ ふりがなON 組織から 探す 情報を探す キーワードから探す 注目キーワード 閉じる メニュー 閉じる トップページ くらし・環境 健康・福祉 しごと・産業 文化・教育 県政情報・統計 緊急・防災 緊急情報を開く 緊急情報 閉じる 現在、緊急情報はありません。 トップページ > 県の施設 > 社会科見学ができる施設 > 古利根川水循環センター 施設案内 県の施設 博物館・美術館・水族館・動物園 図書館等 体験・ふれあい施設 公園・スポーツ・プール 県民活動施設 健康づくり・福祉保養施設 仕事・創業 病院 社会科見学ができる施設 その他 ここから本文です。 ページ番号：49005 掲載日：2022年3月31日 古利根川水循環センター 古利根川水循環センターは、久喜終末処理場として昭和49年7月から下水処理を開始し、昭和58年に埼玉県に移管されました。平成18年4月に一般公募により名称変更し、現在は6つの中継ポンプ場が稼動し、久喜市・加須市（一部）の下水を処理しています。 施設情報 所在地 〒346-0014 久喜市吉羽772番地の1 アクセス方法 JR・東武伊勢崎線久喜駅から徒歩約20分 電話 0480-22-3819 ファックス 0480-22-6727 開館時間 電話：8時30分から17時15分 見学：9時00分から16時00分 休館日 土曜日、日曜日、祝日、年末年始（12月29日から1月3日） ※見学、電話案内等 メールアドレス 古利根川水循環センター ホームページ 古利根川水循環センター その他 古利根川水循環センターは、埼玉県からの委託を受け、公益財団法人埼玉県下水道公社（古利根川支社）が維持管理等を行っています。 施設見学の所要時間は、概ね60分から90分です。（ご希望の見学時間があれば直接ご相談ください。） 施設の稼働状況等により、見学日程の変更をお願いすることがあります。 地図 地図を開く（別ウィンドウが開きます） 関連リンク 荒川北部下水道事務所 下水道管理課 埼玉県下水道公社 より良いウェブサイトにするためにみなさまのご意見をお聞かせください このページの情報は役に立ちましたか？ 1：役に立った 2：ふつう 3：役に立たなかった このページの情報は見つけやすかったですか？ 1：見つけやすかった 2：ふつう 3：見つけにくかった 送信 ページの先頭へ戻る サイトマップ ウェブアクセシビリティ プライバシーポリシー・免責事項 著作権・リンクについて 関係機関リンク集 埼玉県庁 県庁へのアクセス 〒330-9301 埼玉県さいたま市浦和区高砂三丁目15番1号 電話番号：048-824-2111（代表） 法人番号：1000020110001 「コバトン」&「さいたまっち」 Copyright © Saitama Prefecture. All rights reserved.
+MAP
+<div class="box_gmap_link"><h2>地図</h2><div id="tmp_gmap_link"><ul><li><a href="https://maps.google.com/maps?q=36.0584353,139.690423" target="_blank">地図を開く（別ウィンドウが開きます）</a></li></ul></div></div>
+
+LINKS
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/jquery.js
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/setting.js
+ https://www.pref.saitama.lg.jp/shared/system/js/furigana/ysruby.js
+ https://f1-as.readspeaker.com/script/5686/webReader/webReader.js?pids=wr&forceAdapter=ioshtml5&disable=translation,lookup&dload=DocReader.AutoAdd
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/init.js
+県の施設 https://www.pref.saitama.lg.jp/shisetsu/index.html
+社会科見学ができる施設 https://www.pref.saitama.lg.jp/shisetsu/shakai/index.html
+県の施設 https://www.pref.saitama.lg.jp/shisetsu/index.html
+体験・ふれあい施設 https://www.pref.saitama.lg.jp/shisetsu/taiken/index.html
+県民活動施設 https://www.pref.saitama.lg.jp/shisetsu/kenminkatsudo/index.html
+健康づくり・福祉保養施設 https://www.pref.saitama.lg.jp/shisetsu/kenkofukushi/index.html
+社会科見学ができる施設 https://www.pref.saitama.lg.jp/shisetsu/shakai/index.html
+古利根川水循環センター mailto:furutonegawa@saitama-swg.or.jp
+古利根川水循環センター http://www.saitama-swg.or.jp/furutone_hp/index.html
+地図を開く（別ウィンドウが開きます） https://maps.google.com/maps?q=36.0584353,139.690423
+県庁へのアクセス https://www.pref.saitama.lg.jp/kense/gaiyo/access.html
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/function.js
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/main.js
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/sib.js
+ https://www.pref.saitama.lg.jp/shared/site_rn/js/yjtag.js

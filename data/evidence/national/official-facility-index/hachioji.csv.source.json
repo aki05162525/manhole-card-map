@@ -1,0 +1,11 @@
+{
+  "url": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934_d/fil/132012_public_facility.csv",
+  "fetchedAt": "2026-11-05T04:46:40.577076+00:00",
+  "path": "data/evidence/national/official-facility-index/hachioji.csv",
+  "status": 200,
+  "finalUrl": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934_d/fil/132012_public_facility.csv",
+  "contentType": "text/csv",
+  "lastModified": "Fri, 30 Oct 2026 17:22:03 GMT",
+  "bytes": 247601,
+  "sha256": "d5333fb68f49e27db37de266e822847eab708ef118b06d7c74da70a4e93e922a"
+}

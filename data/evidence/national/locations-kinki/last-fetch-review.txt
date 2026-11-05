@@ -1,0 +1,16 @@
+125 https://www.town.nose.osaka.jp/soshiki/soumuka/jinkensoumu/gaiyou/11263.html 200
+MAP []
+125 https://www.town.nose.osaka.jp/soshiki/soumuka/jinkensoumu/chosei/10468.html 200
+MAP []
+143 https://www.city.sumoto.lg.jp/map/10001.html 200
+MAP [('サイトマップ', '/sitemap.html'), ('地図の読み込みに関する問題が発生したとき', 'https://support.google.com/maps/answer/3096703?hl=ja&ref_topic=3311560')]
+144 https://www.city.sumoto.lg.jp/map/10001.html 200
+MAP [('サイトマップ', '/sitemap.html'), ('地図の読み込みに関する問題が発生したとき', 'https://support.google.com/maps/answer/3096703?hl=ja&ref_topic=3311560')]
+142 https://www.nishi.or.jp/bunka/kanko/jouhouhasshin/create_nishinomiya.html 200
+MAP [('サイトマップ', '/sitemap.html')]
+142 https://mitsui-shopping-park.com/lalaport/koshien/shopguide/701517.html 200
+MAP []
+183 https://www.kamikawa-navi.jp/guide/spot/780 200
+MAP [('', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5492.155923492505!2d134.74182315383297!3d35.065352404429355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35553efe9d466755%3A0xf477094c9fef695e!2z56We5rKz55S66Kaz5YWJ5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1524561301412')]
+99 https://www.city.kashiwara.lg.jp/docs/2022030100022/ 200
+MAP []

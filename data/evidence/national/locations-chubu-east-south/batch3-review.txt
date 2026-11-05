@@ -1,0 +1,357 @@
+
+URL https://www.city.chino.lg.jp/ssi/js/shisetsu-detail-googlemap.js STATUS 200 FILE data/evidence/national/locations-chubu-east-south/5a8a5988157dda126d876e2b.html
+TEXT // GoogleMap Obj
+var map;
+
+// GoogleMap 初期設定
+function init() {
+	try{
+		var myLatlng = new google.maps.LatLng(initlat, initlong);
+		var options = {
+			zoom: 15,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById("map_canvas_detail"), options);
+		var markerOpts = {
+			position : myLatlng,
+			map : map,
+			icon: 'https://www.google.com/mapfiles/marker.png'
+		};
+		var marker = new google.maps.Marker(markerOpts);
+	}catch( e ){}
+}
+
+setTimeout("init()",2000);
+
+URL https://www.city.kai.yamanashi.jp/map/9312.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/c1245f60606917be44af105e.html
+SCRIPT 
+// 緯度
+var initlat = '35.66079337231275';
+// 経度
+var initlong = '138.51524307272317';
+
+TEXT 竜王図書館 - 甲斐市公式ウェブサイト ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。 本文へ Foreign Language 文字サイズ 標準 拡大 背景色 白 黒 青 もしものときに 情報を探す 閉じる くらしの情報 子育て・教育 健康・福祉 観光・文化 スポーツ しごと・産業 市政情報 閲覧補助 閉じる メニュー 閉じる 検索 閉じる トップへ キーワード検索 検索対象 すべて ページ PDF 注目ワード 物価高騰対策
+ごみ収集日
+ふるさと納税 さがし方別 地図 でさがす カレンダー でさがす 組織 でさがす 相談 でさがす よくある質問 でさがす 動画 でさがす ライフシーン 妊娠・出産 入園 入学 引っ越し 結婚・離婚 けが・病気 高齢・介護 おくやみ 目的でさがす 助成・支援 申請・届出・ 証明書 統計情報 記者発表資料 サービス・手続き 申請・手続きナビ ゴミ出し検索 検索 閉じる 現在地 トップページ > 地図でさがす > 市政情報 > 地図からさがす > 図書館 > 竜王図書館 現在地 トップページ > 地図でさがす > 市政情報 > 地図からさがす > すべてのマップ > 竜王図書館 本文 竜王図書館 ページID：0009312 更新日：2026年2月24日更新 印刷ページ表示 郵便番号 400-0192 所在地 甲斐市篠原2610番地12 電話番号 055-278-0811 地図 地図の読み込みに関する問題が発生したとき ＜外部リンク＞ 地図が表示されないときは 閲覧数が多い場合、Googleの利用制限により、地図が正常に表示されないことがございます。 そのため、時間を空けてから再度アクセスをお試しいただくか、お急ぎの方は大変恐れ入りますが、地図サイトや地図アプリにて検索いただきますようお願いいたします。 見つからないときは よくある質問と回答 トップへ 甲斐市役所 法人番号3000020192104 〒400-0192 山梨県甲斐市篠原2610番地 電話：055-276-2111 開庁日：月曜日から金曜日（祝日、12月29日から1月3日を除く）
+開庁時間：午前8時30分から午後5時15分 市役所のご案内 サイトマップ お問い合わせ 例規集 ＜外部リンク＞ このサイトについて 外部リンク集 Copyright © Kai City All Rights Reserved. 甲斐市の おすすめ ＜外部リンク＞ とじる
+LINK 地図 でさがす https://www.city.kai.yamanashi.jp/map/list/list200.html
+LINK 地図でさがす https://www.city.kai.yamanashi.jp/map/
+LINK 地図からさがす https://www.city.kai.yamanashi.jp/life/6/39/
+LINK 地図でさがす https://www.city.kai.yamanashi.jp/map/
+LINK 地図からさがす https://www.city.kai.yamanashi.jp/life/6/39/
+LINK 地図の読み込みに関する問題が発生したとき https://support.google.com/maps/answer/3096703?hl=ja&ref_topic=3311560
+LINK 市役所のご案内 https://www.city.kai.yamanashi.jp/map/list/list201.html
+LINK サイトマップ https://www.city.kai.yamanashi.jp/sitemap.html
+
+URL https://www.city.kai.yamanashi.jp/map/9310.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/d781cf919ac838b14ca94959.html
+SCRIPT 
+// 緯度
+var initlat = '35.68618341364616';
+// 経度
+var initlong = '138.48735549970885';
+
+TEXT 双葉図書館 - 甲斐市公式ウェブサイト ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。 本文へ Foreign Language 文字サイズ 標準 拡大 背景色 白 黒 青 もしものときに 情報を探す 閉じる くらしの情報 子育て・教育 健康・福祉 観光・文化 スポーツ しごと・産業 市政情報 閲覧補助 閉じる メニュー 閉じる 検索 閉じる トップへ キーワード検索 検索対象 すべて ページ PDF 注目ワード 物価高騰対策
+ごみ収集日
+ふるさと納税 さがし方別 地図 でさがす カレンダー でさがす 組織 でさがす 相談 でさがす よくある質問 でさがす 動画 でさがす ライフシーン 妊娠・出産 入園 入学 引っ越し 結婚・離婚 けが・病気 高齢・介護 おくやみ 目的でさがす 助成・支援 申請・届出・ 証明書 統計情報 記者発表資料 サービス・手続き 申請・手続きナビ ゴミ出し検索 検索 閉じる 現在地 トップページ > 地図でさがす > 市政情報 > 地図からさがす > 図書館 > 双葉図書館 現在地 トップページ > 地図でさがす > 市政情報 > 地図からさがす > すべてのマップ > 双葉図書館 本文 双葉図書館 ページID：0009310 更新日：2026年2月24日更新 印刷ページ表示 郵便番号 400-0105 所在地 甲斐市下今井230番地 電話番号 0551-20-3669 地図 地図の読み込みに関する問題が発生したとき ＜外部リンク＞ 地図が表示されないときは 閲覧数が多い場合、Googleの利用制限により、地図が正常に表示されないことがございます。 そのため、時間を空けてから再度アクセスをお試しいただくか、お急ぎの方は大変恐れ入りますが、地図サイトや地図アプリにて検索いただきますようお願いいたします。 見つからないときは よくある質問と回答 トップへ 甲斐市役所 法人番号3000020192104 〒400-0192 山梨県甲斐市篠原2610番地 電話：055-276-2111 開庁日：月曜日から金曜日（祝日、12月29日から1月3日を除く）
+開庁時間：午前8時30分から午後5時15分 市役所のご案内 サイトマップ お問い合わせ 例規集 ＜外部リンク＞ このサイトについて 外部リンク集 Copyright © Kai City All Rights Reserved. 甲斐市の おすすめ ＜外部リンク＞ とじる
+LINK 地図 でさがす https://www.city.kai.yamanashi.jp/map/list/list200.html
+LINK 地図でさがす https://www.city.kai.yamanashi.jp/map/
+LINK 地図からさがす https://www.city.kai.yamanashi.jp/life/6/39/
+LINK 地図でさがす https://www.city.kai.yamanashi.jp/map/
+LINK 地図からさがす https://www.city.kai.yamanashi.jp/life/6/39/
+LINK 地図の読み込みに関する問題が発生したとき https://support.google.com/maps/answer/3096703?hl=ja&ref_topic=3311560
+LINK 市役所のご案内 https://www.city.kai.yamanashi.jp/map/list/list201.html
+LINK サイトマップ https://www.city.kai.yamanashi.jp/sitemap.html
+
+URL https://www.city.uenohara.yamanashi.jp/map/list.php?ctg01_id=30 STATUS 200 FILE data/evidence/national/locations-chubu-east-south/af3446277e8823d8b1032a67.html
+SCRIPT 
+<!--
+
+// GoogleMap Obj
+var map;
+
+// 緯度
+var initlat = 35.63013561753507;
+// 経度
+var initlong = 139.10932361367378;
+
+// GoogleMap 初期設定
+function init() {
+	var myLatlng = new google.maps.LatLng(initlat, initlong);
+	var options = {
+		zoom: 15,
+		center: myLatlng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	map = new google.maps.Map(document.getElementById("map_canvas"), options);
+
+	// マーカーの設置
+	setMarker();
+}
+
+// GoogleMapマーカー
+var markers = new Array();
+var setMarkers = [
+[35.70221424224933,139.0224811696204,'<div style="width : 100%;height : 100px;">上野原市役所西原出張所（地図でさがす）<br><br>上野原市西原3947<br>電話番号：0554-68-2002<br><a href="/map/6463.html">詳しい情報はこちらから</a></div>'],
+[35.57026896317029,139.07874381194634,'<div style="width : 100%;height : 100px;">上野原市役所秋山支所（地図でさがす）<br><br>上野原市秋山7131<br>電話番号：0554-56-2111<br><a href="/map/6462.html">詳しい情報はこちらから</a></div>'],
+[35.63655037317127,139.06386954078346,'<div style="width : 100%;height : 100px;">上野原市役所甲東出張所（地図でさがす）<br><br>上野原市野田尻334-1<br>電話番号：0554-66-2005<br><a href="/map/6461.html">詳しい情報はこちらから</a></div>'],
+[35.67188913658499,139.08907505100476,'<div style="width : 100%;height : 100px;">上野原市役所棡原出張所（地図でさがす）<br><br>上野原市棡原2367-9<br>電話番号：0554-67-2002<br><a href="/map/6460.html">詳しい情報はこちらから</a></div>'],
+[35.614609556935406,139.08193872077524,'<div style="width : 100%;height : 100px;">上野原市役所巌出張所（地図でさがす）<br><br>上野原市四方津940-2<br>電話番号：0554-62-4105<br><a href="/map/6459.html">詳しい情報はこちらから</a></div>'],
+[35.62212547703189,139.05978928270605,'<div style="width : 100%;height : 100px;">上野原市役所大目出張所（地図でさがす）<br><br>上野原市大野1261<br>電話番号：0554-66-2002<br><a href="/map/6458.html">詳しい情報はこちらから</a></div>'],
+[35.63003533357661,139.1086208763158,'<div style="width : 100%;height : 125px;">上野原市役所（地図でさがす）<br><br>上野原市上野原3832番地<br>電話番号：0554-62-3111（代表）<br>ファックス：0554-62-5333（代表）<br><a href="/map/6457.html">詳しい情報はこちらから</a></div>']
+];
+
+function setMarker(){
+	for(i=0;i < setMarkers.length　;i++){
+		var alf = i + 1;
+		var image = '/img/markers/marker' + alf + '.png';
+		var marker = makeMarker(new google.maps.LatLng(setMarkers[i][0], setMarkers[i][1]) , setMarkers[i][2] ,image);
+		markers.push(marker);
+	}
+}
+
+var currentWindow = null;
+
+function makeMarker(latlng, text ,image){
+	var infoWndOpts = {
+		content : text
+	};
+	var infoWnd = new google.maps.InfoWindow(infoWndOpts);
+	var markerOpts = {
+		position : latlng,
+		map : map,
+		icon: image
+	};
+	var marker = new google.maps.Marker(markerOpts);
+	google.maps.event.addListener(marker, "click", function(){
+		if (currentWindow) {
+			currentWindow.close();
+		}
+		infoWnd.open(map, marker);
+		map.panTo(marker.getPosition());
+		currentWindow = infoWnd;
+	});
+	return marker;
+}
+
+function clickLinkEvent(key){
+	google.maps.event.trigger(markers[key],'click');
+}
+
+-->
+
+TEXT 地図でさがす - 上野原市公式ホームページ ページの先頭です。 メニューを飛ばして本文へ メニュー 閉じる 閉じる 閉じる JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。 本文へ はじめての方へ Foreign language やさしい日本語 もとに戻す ふりがな もとに戻す 音声読み上げ とじる とじる 背景色変更 白 青 黒 文字サイズ 標準 拡大 キーワード検索 Googleカスタム検索 検索対象 すべて ページ PDF ページID検索 ページID検索とは？ 注目ワード スマホ市役所
+マイナンバー
+コンビニ交付
+ライブカメラ
+防災
+観光
+子育て
+学校
+教育
+移住
+窓口
+ふるさと納税
+SNS
+ホームタウン
+窓口混雑状況 さがし方別 分類でさがす 組織でさがす 地図でさがす カレンダー よくある質問 生活シーンからさがす 妊娠・出産 子育て 就職・退職 結婚・離婚 引っ越し・住まい 健康・医療 高齢・介護 おくやみ 目的からさがす 施設情報 申請手続き オープンデータ 入札・契約 ごみ・リサイクル 相談窓口 市政へのご意見 例規集 ＜外部リンク＞ くらし・手続き 防災・消防 福祉・子育て 教育・文化 産業・入札 市政情報 現在地 トップページ > 地図でさがす 本文 地図でさがす 施設一覧 1.上野原市役所西原出張所（地図でさがす） 2.上野原市役所秋山支所（地図でさがす） 3.上野原市役所甲東出張所（地図でさがす） 4.上野原市役所棡原出張所（地図でさがす） 5.上野原市役所巌出張所（地図でさがす） 6.上野原市役所大目出張所（地図でさがす） 7.上野原市役所（地図でさがす） 地図が表示されないときは 閲覧数が多い場合、Googleの利用制限により、地図が正常に表示されないことがございます。 そのため、時間を空けてから再度アクセスをお試しいただくか、お急ぎの方は大変恐れ入りますが、地図サイトや地図アプリにて検索いただきますようお願いいたします。 施設案内 本庁・支所・出張所 上野原市総合福祉センターふじみ 病院施設 学校・教育機関 保育所・認定こども園 図書館施設 警察施設 消防施設 スポーツ施設 体験・学習施設 葬斎場 上野原市役所 法人番号2000020192121 〒409-0192　山梨県上野原市上野原3832 Tel：0554-62-3111(代表) Fax：0554-62-5333 開庁日／月曜日から金曜日(祝日、年末年始を除く) 開庁時間／午前8時30分から午後5時15分 上野原市公式SNSの一覧 組織一覧 サイトマップ サイトポリシー 例規集 お問い合わせ Copyright © Uenohara-City. All Rights Reserved. 上野原市のおすすめ
+LINK 地図でさがす https://www.city.uenohara.yamanashi.jp/map/
+LINK 1.上野原市役所西原出張所（地図でさがす） javascript:clickLinkEvent(0)
+LINK 2.上野原市役所秋山支所（地図でさがす） javascript:clickLinkEvent(1)
+LINK 3.上野原市役所甲東出張所（地図でさがす） javascript:clickLinkEvent(2)
+LINK 4.上野原市役所棡原出張所（地図でさがす） javascript:clickLinkEvent(3)
+LINK 5.上野原市役所巌出張所（地図でさがす） javascript:clickLinkEvent(4)
+LINK 6.上野原市役所大目出張所（地図でさがす） javascript:clickLinkEvent(5)
+LINK 7.上野原市役所（地図でさがす） javascript:clickLinkEvent(6)
+LINK サイトマップ https://www.city.uenohara.yamanashi.jp/sitemap.html
+
+URL https://www.town.karuizawa.lg.jp/map/m6730.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/93fa6320b33347b416e7f1e4.html
+SCRIPT 
+// 緯度
+var initlat = '36.341413059633894';
+// 経度
+var initlong = '138.54747715529595';
+
+TEXT 追分宿郷土館 - 軽井沢町公式ホームページ ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 おすすめ 検索 メニュー このページの先頭へ For Foreigners 閲覧補助 本文へ For Foreigners 音声読み上げ とじる やさしい日本語 もとに戻す 閲覧補助 文字サイズ 標準 拡大 背景色変更 白 黒 青 とじる キーワード検索 情報をさがす とじる くらし ・手続き 健康 ・福祉 子育て ・教育 事業者向け情報 観光 町政情報 キーワード 検索 検索対象 すべて ページ PDF ページID 検索 ページID 検索とは？ 注目ワード 申請書
+ふるさと納税
+防災情報
+救急医療
+大賀ホール
+浅間山
+避難場所
+高原野菜 一般 子育て 高齢者 オンライン申請 申請・届出・証明書 ごみ出し検索 軽井沢町くらしマップ 募集・採用情報 施設案内 手続き・相談 もしものときは… 一覧をみる 妊娠・出産 子育て支援 ひとり親家庭 保育園・児童館 乳幼児健診・予防接種 学校・教育 青少年育成 文化財など ここらぼ 一覧をみる オンライン申請 申請・届出・証明書 後期高齢者医療保険 高齢者福祉 手続き・相談 一覧をみる 組織でさがす 地図でさがす イベントカレンダー よくある質問 別荘所有・検討中の皆さんへ 現在地 トップページ > 地図でさがす > 町政情報 > 施設案内 > 文化施設 > 追分宿郷土館 本文 追分宿郷土館 ページID：0006730 更新日：2025年3月24日更新 印刷ページ表示 郵便番号 389-0115 所在地 長野県北佐久郡軽井沢町追分1155-8 電話番号 0267-45-1466 地図 地図の読み込みに関する問題が発生したとき ＜外部リンク＞ 見つからないときは よくある質問と回答 法人番号8000020203211 〒389-0192  長野県北佐久郡軽井沢町大字長倉2381番地1 Tel：0267-45-8111（代表） Fax：0267-46-3165 開庁日時： 月曜日から金曜日の午前8時30分から午後5時15分 （土曜日、日曜日、祝日、年末年始を除く） 組織別連絡先一覧 個人情報の取り扱いについて ウェブアクセシビリティ方針 サイトマップ Copyright © Town of Karuizawa All Rights Reserved. とじる
+LINK 地図でさがす https://www.town.karuizawa.lg.jp/map/
+LINK 地図でさがす https://www.town.karuizawa.lg.jp/map/
+LINK 地図の読み込みに関する問題が発生したとき https://support.google.com/maps/answer/3096703?hl=ja&ref_topic=3311560
+LINK サイトマップ https://www.town.karuizawa.lg.jp/sitemap.html
+
+URL https://www.town.karuizawa.lg.jp/page/1304.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/f092d0d67c4ebcd180a364db.html
+TEXT 地域交流施設くつかけテラス - 軽井沢町公式ホームページ（観光経済課） ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 おすすめ 検索 メニュー このページの先頭へ For Foreigners 閲覧補助 本文へ For Foreigners 音声読み上げ とじる やさしい日本語 もとに戻す 閲覧補助 文字サイズ 標準 拡大 背景色変更 白 黒 青 とじる キーワード検索 情報をさがす とじる くらし ・手続き 健康 ・福祉 子育て ・教育 事業者向け情報 観光 町政情報 キーワード 検索 検索対象 すべて ページ PDF ページID 検索 ページID 検索とは？ 注目ワード 申請書
+ふるさと納税
+防災情報
+救急医療
+大賀ホール
+浅間山
+避難場所
+高原野菜 一般 子育て 高齢者 オンライン申請 申請・届出・証明書 ごみ出し検索 軽井沢町くらしマップ 募集・採用情報 施設案内 手続き・相談 もしものときは… 一覧をみる 妊娠・出産 子育て支援 ひとり親家庭 保育園・児童館 乳幼児健診・予防接種 学校・教育 青少年育成 文化財など ここらぼ 一覧をみる オンライン申請 申請・届出・証明書 後期高齢者医療保険 高齢者福祉 手続き・相談 一覧をみる 組織でさがす 地図でさがす イベントカレンダー よくある質問 別荘所有・検討中の皆さんへ 現在地 トップページ > 組織でさがす > 町長部局 > 観光経済課 > 地域交流施設くつかけテラス 本文 地域交流施設くつかけテラス ページID：0001304 更新日：2025年1月20日更新 印刷ページ表示 平成25年4月1日にオープンしました交流施設は、町がしなの鉄道・中軽井沢駅前に建設。地域交流施設の愛称は、一帯の古い地名「沓掛（くつかけ）」にちなんだ「くつかけテラス」沓掛は、「軽井沢」と同じく旧中山道の宿場名。図書館のほか同町で店を開きたい人を対象にしたチャレンジショップ、観光案内所などがあります。 表1 所在地 北佐久郡軽井沢町大字長倉3037番地18 Tel 0267-41-0743 開館時間 休館日 アクセス 自動車利用：碓氷軽井沢ICから14km 30分 鉄道利用：しなの鉄道中軽井沢駅徒歩　1分 設備 トイレ、有料駐車場あり 備考 くつかけテラスホームページ ＜外部リンク＞ このページに関するお問い合わせ先 町長部局 観光経済課 代表 〒389-0192 長野県北佐久郡軽井沢町大字長倉2381番地1 Tel：0267-45-8579 Fax：0267-46-3165 メールでのお問い合わせはこちら このページを見ている人は こんなページも見ています AI（人工知能）は こんなページをおすすめします 見つからないときは よくある質問と回答 法人番号8000020203211 〒389-0192  長野県北佐久郡軽井沢町大字長倉2381番地1 Tel：0267-45-8111（代表） Fax：0267-46-3165 開庁日時： 月曜日から金曜日の午前8時30分から午後5時15分 （土曜日、日曜日、祝日、年末年始を除く） 組織別連絡先一覧 個人情報の取り扱いについて ウェブアクセシビリティ方針 サイトマップ Copyright © Town of Karuizawa All Rights Reserved. とじる
+LINK 地図でさがす https://www.town.karuizawa.lg.jp/map/
+LINK サイトマップ https://www.town.karuizawa.lg.jp/sitemap.html
+
+URL https://www.city.nakano.nagano.jp/docs/2014011500334/ STATUS 200 FILE data/evidence/national/locations-chubu-east-south/ca45c41f9216d31a48e2973a.html
+SCRIPT 
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,ko,zh-CN,zh-TW,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+
+SCRIPT 
+    {"source":"osm","center":{"lat":36.7420248,"lng":138.3694664},"zoom":14,"markerInfos":[{"name":0,"title":"中野市役所","lat":36.74202174109418,"lng":138.3695049164817,"popup":true,"icon":""}]}
+  
+TEXT 中野市役所 | 長野県中野市 本文へ移動 中野市 「故郷」のふるさと 背景色 白 青 黒 文字の大きさ 大 中 小 ふりがなをつける よみあげる 防災・緊急時情報 暮らしの情報 行政情報 産業・ビジネス 観光情報 中野市について TOP カテゴリ 分野 中野市について 市役所・支所のご案内 TOP カテゴリ 分野 中野市について アクセスマップ TOP カテゴリ 分野 中野市について 施設案内 市役所・支所 TOP 組織 総務部 庶務課 秘書広報係 中野市役所 公開日
+          2014年3月10日 更新日
+          2018年11月1日 所在地 〒383-8614 中野市三好町一丁目3番19号 電話番号 0269-22-2111(代表) 地図 お問い合わせ 総務部　庶務課　秘書広報係 TEL： 0269-22-2111  (212,400) E-Mail： shomu@city.nakano.nagano.jp 暮らしのシーンから探す 妊娠・出産 子育て 入学・学校 成人・仕事・結婚 住まい・引っ越し ごみ・環境 文化・生涯学習・スポーツ 高齢者・介護・障がい者 健康・福祉・医療 お悔やみ 戸籍・住民票 税金・保険・年金 アクセシビリティ 著作権・リンク 個人情報取扱 中野市公式HPに関するお問い合わせ サイトマップ 広告掲載募集 中野市役所 〒383-8614　長野県中野市三好町一丁目3番19号　電話0269-22-2111（代表） 豊田庁舎（市民課豊田窓口係） 〒389-2192　長野県中野市大字豊津2508番地　電話0269-38-3111 Copyright © Nakano City 2013. All Rights Reserved. ページの先頭へ
+LINK アクセスマップ https://www.city.nakano.nagano.jp/categories/bunya/nakano/map/
+LINK サイトマップ https://www.city.nakano.nagano.jp/sitemap.html
+
+URL https://www.inacity.jp/shisetsu/shiyakusho_shisho/inashiyakusho.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/ecb6680287960a295aa905a8.html
+TEXT 伊那市役所（本庁舎）:伊那市公式ホームページ 伊那市ホームページではJavaScriptを使用しています。JavaScriptの使用を有効にしていない場合は、一部の機能が正確に動作しない恐れがあります。 お手数ですがJavaScriptの使用を有効にしてください。 このページの先頭です このページの本文へ移動 音声読み上げ・文字拡大 Multilingual メニュー 伊那市から望む中央アルプス くらしの情報 届出・証明 マイナンバー（個人番号制度） ごみ・資源物 環境 景観 ペット・動物 消費生活 交通・時刻表・駐車場 税金 保険・年金 水道・下水道・浄化槽 道路・河川 スポーツ 補助・支援制度 相談 生涯学習・文化 住まい 火葬場・市営霊園 施設案内 子育て・教育 こども家庭センター（子育てサポート課） お知らせ 妊娠・出産・不妊治療 育児支援 健康 子育てに関する費用サポート 保育園・幼稚園・認定こども園 学校教育 教育委員会 PR情報 長野県一の子育てサポート 医療・健康・福祉 お知らせ 休日緊急当番医・歯科・薬局 医療・健康 助成 高齢者福祉 障害者福祉 戦没者遺族 市政情報 市政情報のお知らせ 市の組織（部署別） 総合計画 各種計画プラン等資料庫 審議会等会議録 財政・予算・債権管理 監査 南アルプスの利活用 伊那市の政策・施策 職員採用情報 職員・人事・計画 人権・男女共同参画・多文化共生 情報公開 まちづくり 協働のまちづくり 統計 各種募集 行政改革 市町村合併に関すること 入札・契約情報 市有地等の公売 インターネット公有財産売却 定住自立圏 選挙 産業・農林業 お知らせ 企業誘致情報 工業振興（制度のご案内、産学官の連携） 商業振興（制度等のご案内） 空き店舗情報 雇う・働く・学ぶ 農林業 起業・創業 市の紹介 お知らせ 伊那市の紹介 伊那市の名誉市民・大使 自治会 シティプロモーション 地域の教科書 伊那市から望む南アルプス、中央アルプス ブランディング トップページ 施設案内 市役所・総合支所・支所・市民サービスコーナー 伊那市役所（本庁舎） 伊那市役所（本庁舎） ページID：236503046 更新日：2025年12月18日 所在地 長野県伊那市下新田3050番地 電話 0265-78-4111（代表） ファックス 0265-74-1250（代表） 伊那市役所へのアクセス 伊那市役所周辺地図（googleMapが開きます）（外部サイト） 交通のご案内 業務時間 午前8時30分から午後5時15分まで 休業日 土曜日・日曜日・祝日・12月29日から1月3日まで 来庁者駐車場のご案内 西側駐車場　194台 うち身障者用　8台 中央駐車場（時計塔下、懸垂幕搭下）　15台 うち身障者用　3台、多目的駐車場　2台 東側駐車場　65台 うち身障者用　2台、高齢運転者優先駐車場マーク（紅葉マーク）　2台 各階のご案内 1階 市民課、生活環境課、消費生活センター、健康推進課、こども政策課、社会福祉課、スポーツ課、税務課、会計課、契約課、上下水道料金センター 2階 情報政策推進課、商工振興課、産業立地推進課、観光課、観光協会、建設課、管理課、都市整備課、伊駒アルプスロード推進課、水道業務課、水道整備課、議会事務局、監査・公平・固定資産評価委員会事務局 3階 農政課、農地集約課、農業委員会事務局、50年の森林推進課、学校教育課、教育環境整備課、生涯学習課 4階 総務課、秘書広報課、企画政策課、地域創造課、危機管理課 5階 財政課、徴収対策室、選挙管理委員会事務局 関連ファイルダウンロード 本庁舎駐車場案内（PDF：91KB） 本庁舎案内（PDF：277KB） PDF形式のファイルを開くには、Adobe Acrobat Readerが必要です。 お持ちでない方は、Adobe社から無償でダウンロードできます。 お問い合わせ 伊那市役所　総務部　総務課　庶務係 電話：0265-78-4111（内線2111 2112） ファクス：0265-74-1250 メールアドレス： sou@inacity.jp 市役所・総合支所・支所・市民サービスコーナー 窓口案内・受付時間 市民サービスコーナーをご利用ください 伊那市役所（本庁舎） 高遠町総合支所 長谷総合支所 富県支所 美篶支所 手良支所 東春近支所 西箕輪支所 西春近支所 市民サービスコーナー 伊那市へ移住を お考えの方はこちら よくある質問 お気に入り 編集 Javascriptが無効になっているため、本機能はご利用になれません。 このページを登録する 情報が見つからないときは このサイトについて プライバシーポリシー 窓口案内・受付時間 市の組織 ソーシャルメディア サイトマップ 伊那市役所 法人番号9000020202096 〒396-8617　長野県伊那市下新田3050番地 代表電話：0265-78-4111 伊那市から望む南アルプス 伊那市から望む南アルプス・中央アルプス ©Ina City. PC版表示 スマートフォン版表示
+LINK 交通・時刻表・駐車場 https://www.inacity.jp/kurashi/kotsu_jikokuhyo/index.html
+LINK 伊那市役所周辺地図（googleMapが開きます）（外部サイト） https://www.google.co.jp/maps/place/%E4%BC%8A%E9%82%A3%E5%B8%82%E5%BD%B9%E6%89%80/@35.8388335,137.9208763,13z/data=!4m8!1m2!2m1!1z5LyK6YKj5biC5b255omA!3m4!1s0x0:0x38ef45131d25373d!8m2!3d35.8274607!4d137.9539919
+LINK 交通のご案内 https://www.inacity.jp/shinoshokai/ina_shokai/ina_access.html
+LINK 本庁舎駐車場案内（PDF：91KB） https://www.inacity.jp/shisetsu/shiyakusho_shisho/inashiyakusho.files/201505121639tyusyajyo.pdf
+LINK 本庁舎案内（PDF：277KB） https://www.inacity.jp/shisetsu/shiyakusho_shisho/inashiyakusho.files/5070401honntyousya.pdf
+LINK サイトマップ https://www.inacity.jp/sitemap.html
+
+URL https://www.city.azumino.nagano.jp/site/jumin-koseki/10789.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/aecb545a73120abb7334e1ed.html
+TEXT 休日開庁・窓口時間延長のご案内 - 住民・戸籍・印鑑・仮ナンバー - 安曇野市公式ホームページ（市民課） ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 Foreign language 閲覧補助 メニュー 本文へ Foreign language やさしい日本語 もとに戻す 音声読み上げ 閉じる 閲覧補助 ルビふり あり なし 文字サイズ 標準 拡大 背景色変更 白 黒 青 とじる くらし 行政情報 くらし・行政情報トップページ くらし 戸籍・税金 環境・ペット 開発・道路・水道 市政情報 入札・契約情報 広聴・パブリックコメント 空家対策 とじる 子育て・教育 子育て・教育トップページ 妊娠・出産 子育て支援 幼児教育・保育 学校・教育 生涯学習 とじる 健康・福祉 ・医療 健康・福祉・医療トップページ 保健・医療 シニア・介護 福祉・障がい者支援 国保・後期高齢者医療 予防接種 生活支援・助け合い とじる 文化・スポーツ 文化・スポーツトップページ スポーツ 体育施設 芸術・文化 図書館 交流学習センター 美術館・博物館・文書館・記念館 とじる しごと・産業 しごと・産業トップページ 観光行政情報 雇用・労働 企業支援（商業・工業） 商工業振興事業補助金 農林水産業 農業再生協議会 とじる イベント 休日夜間診療 くらし 行政情報 子育て・教育 健康・福祉・医療 文化・スポーツ しごと・産業 イベント 休日夜間診療 現在地 トップページ > 分類でさがす > くらし・行政情報 > 市役所・施設案内 > 市役所・支所 > 住民・戸籍・印鑑・仮ナンバー > 休日開庁・窓口時間延長のご案内 住民・戸籍・印鑑・仮ナンバー 住民・戸籍・印鑑・仮ナンバーメニュー 本文 休日開庁・窓口時間延長のご案内 ページID：0063018 更新日：2026年6月10日更新 印刷ページ表示 安曇野市役所では一部の窓口業務について、受付時間の延長および休日受付を行っています。 ※詳細は事前にお問い合わせください。 特別休日窓口 転入・転出などの手続きが集中する時期や、定期の休日窓口がシステムの保守点検等により中止となる場合などに、特別休日窓口を開設する場合があります。 特別休日窓口を開設する場合には、広報あづみの、下記のとおり市ホームページで事前にお知らせいたします。 特別休日窓口開催場所 開催未定 特別休日窓口開催日 開催未定 時間延長・休日窓口 場所 安曇野市役所本庁舎1階 住所：長野県安曇野市豊科6000番地（ 安曇野市役所本庁舎への地図 ＜外部リンク＞ ） 日時 時間延長・休日窓口　実施予定日時 平日時間延長（第2火曜日） 午後5時15分から午後8時まで 休日窓口（第4日曜日） 午前8時30分から正午まで 令和8年4月 14日（火曜日） 26日（日曜日） 令和8年5月 12日（火曜日） 24日（日曜日） 令和8年6月 9日（火曜日） 28日（日曜日） 令和8年7月 14日（火曜日） 26日（日曜日） 令和8年8月 なし 23日（日曜日） 令和8年9月 8日（火曜日） 27日（日曜日） 令和8年10月 13日（火曜日） 25日（日曜日） 令和8年11月 10日（火曜日） なし（22日がシステム保守点検日） 令和8年12月 8日（火曜日） 27日（日曜日） 令和9年1月 12日（火曜日） 24日（日曜日） 令和9年2月 9日（火曜日） 28日（日曜日） 令和9年3月 9日（火曜日） 28日（日曜日） [平日]時間延長窓口 毎月第2火曜日 午後5時15分から午後8時まで ※祝日・お盆期間（8月13日から16日まで）・年末年始を除く。 [休日]窓口 毎月第4日曜日　午前8時30分から正午まで ※年末年始・システムの保守点検日を除く。 取り扱い業務（令和6年4月1日から変わりました） 取扱業務内容表（令和6年4月1日以降） 区分 業務内容 庁舎窓口番号 お問い合わせ先 住民情報関係 住民票の写し及び住民票記載事項証明書の交付（※） 印鑑登録に関すること。 戸籍に関する証明書の交付（※） 戸籍の附票の写し及び身分証明書の交付 戸籍に関する届出 （他市町村へ確認を要する場合にあっては受領のみに限る。） 埋葬許可証又は火葬許可証の発行に関すること。 住民の異動に関する届出 （在留カード及び特別永住者証明書に関する手続を要する届出、 他市町村へ確認を要する届出は除く。） 個人番号カードに関すること。（ 事前予約制 ＜外部リンク＞ ） （※）広域交付など、即日交付できない場合があります。 2番窓口 市民課 市民担当（直通） ​0263-71-2489 生活関係 ごみの出し方に関する情報提供 （ごみカレンダーと手引の交付に限ります。） 2番窓口 国民健康保険及び 後期高齢者医療関係 国民健康保険資格取得及び喪失届の受付 国民健康保険資格確認書、高齢受給者証及び 後期高齢者医療資格確認書の再交付申請の受付 国民健康保険限度額及び標準負担額減額認定申請の受付 国民健康保険及び後期高齢者医療の療養費支給申請の受付 国民健康保険精密健康診断費用助成申請及び 後期高齢者医療人間ドック等費用助成申請の受付 国民健康保険高額療養費支給申請の受付 （領収書添付の場合に限る。） 後期高齢者医療高額療養費支給申請の受付 国民健康保険税納税通知書及び 後期高齢者医療保険料納入通知書の再交付 国民健康保険税及び後期高齢者医療保険料口座登録の手続 10番窓口 国保年金課 国保年金担当（直通） （国保資格） 0263-71-2029 （後期） 0263-71-2475 福祉医療関係 福祉医療費受給資格等変更・喪失届の受付 福祉医療費給付金支給申請の受付 14番窓口 福祉課 福祉政策担当（直通） 0263-71-2253 ※取り扱いできない業務もありますので、来庁前にお問い合わせください。 休日・夜間受付 ​上記以外の閉庁時間帯の受け付け窓口は下記のとおりです。 場所 夜間・休日受付（本庁舎1階西側） 住所：長野県安曇野市豊科6000番地（ 市役所本庁舎地図 ＜外部リンク＞ ） 主な取り扱い業務 死亡届、出生届、婚姻届などの受け付け、埋葬・火葬許可証の発行など。 皆さまのご意見をお聞かせください お求めの情報が十分掲載されていましたか？ 十分だった 普通 情報が足りなかった ページの構成や内容、表現は分かりやすかったですか？ 分かりやすかった 普通 分かりにくかった この情報をすぐに見つけられましたか？ すぐに見つけられた 普通 時間がかかった このページに関するお問い合わせ先 市民課 市民担当 長野県安曇野市豊科6000番地　本庁舎1階1〜9番窓口 Tel：0263-71-2489 Fax：0263-71-2503 メールでのお問い合わせはこちら 住民異動届（転居・転出・転入等） 転居届（安曇野市内で引っ越すとき） 転出届（他市区町村へ引っ越すとき） 転入届（他の市区町村から安曇野市へ引っ越したとき） 窓口案内・休日窓口 住民票旧氏併記 戸籍届出 お子さんが生まれたとき（出生届） 結婚するとき（婚姻届） 離婚するとき（離婚届） 亡くなったとき（死亡届） 印鑑登録 印鑑登録の申請 印鑑登録証明書の交付 証明書（戸籍・住民票・印鑑） 証明書等の交付申請書ダウンロード 住民票の写し交付請求 戸籍謄本・抄本の交付請求 郵送による戸籍・住民票の交付請求 戸籍証明書等の広域交付 証明書コンビニ交付サービス コンビニ交付の機器メンテナンス情報 キャッシュレス決済 マイナンバー・電子証明書 出張申請窓口 マイナンバーの確認方法 マイナンバーカードの申請・受取 申請・受取時の本人確認書類 マイナンバーカードを紛失したとき マイナンバーカードの住所・氏名変更 電子証明書の発行・更新 暗証番号の再設定（初期化） コンビニ等で署名用暗証番号の再設定（初期化） 自動車臨時運航許可（仮ナンバー） 自動車臨時運航許可申請等について このページを見ている人は こんなページも見ています AI（人工知能）は こんなページをおすすめします 見つからないときは よくある質問と回答 Fresh! Azumino! ＜外部リンク＞ ＜外部リンク＞ とじる 検索 防災 情報をさがす 文章・キーワード検索 ページID検索 ページID検索とは? サイト内文書検索 ※検索結果の概要文が生成AIで作成されます。 ページID 検索 よく検索されるキーワード ツキノワグマ 三股登山口バス 外国籍市民相談窓口 あづみん・のるーとLINE予約 さがし方別 組織でさがす よくある質問で さがす カレンダーで さがす SDGsでさがす ライフシーンからさがす 妊娠・出産 子育て・教育 就職・退職 引っ越し 結婚・離婚 高齢・介護 おくやみ 障がい者支援 ・生活支援 ピックアップ 窓口待ち時間 ＜外部リンク＞ ごみ 公共交通 ライブカメラ ＜外部リンク＞ ＜外部リンク＞ 安曇野市公式SNS一覧 とじる 法人番号6000020202207 〒399-8281　長野県安曇野市豊科6000番地 Tel：0263-71-2000 Fax：0263-71-5000 組織一覧 市へのアクセス メールでのお問い合わせ サイトマップ 著作権・免責事項 個人情報保護 アクセシビリティ Copyright Azumino City. All Rights Reserved.
+LINK 安曇野市役所本庁舎への地図 http://www.machi-info.jp/machikado/azumino_city/index.jsp?lon=137.90859052169418&lat=36.30070260067114&scale=5000&mode=10&imagetype=2&layer=00270050&layer=00270050
+LINK 市役所本庁舎地図 http://www.machi-info.jp/machikado/azumino_city/index.jsp?lon=137.90859052169418&lat=36.30070260067114&scale=5000&mode=10&imagetype=2&layer=00270050&layer=00270050
+LINK 公共交通 https://www.city.azumino.nagano.jp/site/kokyokotsu/
+LINK 市へのアクセス https://www.city.azumino.nagano.jp/soshiki/7/10793.html
+LINK サイトマップ https://www.city.azumino.nagano.jp/sitemap.html
+LINK アクセシビリティ https://www.city.azumino.nagano.jp/site/userguide/accessibility.html
+
+URL https://www.town.obuse.nagano.jp/site/bunshokan/ STATUS 200 FILE data/evidence/national/locations-chubu-east-south/fe6d65b2b04cc042df0473ba.html
+SCRIPT 
+//<![CDATA[
+
+  SS.config = {"site_url":"/","kana_url":"/kana/","translate_url":"/translate/","theme":{"white":{"css_path":null,"name":"白","font_color":null,"background_color":null},"yellow":{"css_path":null,"name":"黄","font_color":"#000000","background_color":"#ffff00"},"blue":{"css_path":null,"name":"青","font_color":"#ffffff","background_color":"#0044cc"},"black":{"css_path":null,"name":"黒","font_color":"#ffffff","background_color":"#000000"}},"recommend":{"receiver_url":"https://www.town.obuse.nagano.jp/recommend/index.json","params":{"path":"/site/bunshokan/index.html","target_class":"Cms::Page","target_id":2684}}};
+
+//]]>
+
+TEXT 小布施町文書館 -  小布施町 本文へスキップ language 閲覧支援機能 くらし・手続き 健康・福祉 子育て・教育 産業・仕事 施設案内 町政情報 language くらし・行政 くらし・手続き 健康・福祉 子育て・教育 産業・仕事 施設案内 町政情報 〒381-0297 長野県上高井郡小布施町小布施1491-2 [アクセスマップ] TEL 026-247-3111 FAX 026-247-3113 ASSIST 閲覧支援 文字サイズ 小さく 標準 大きく ふりがな ふりがなをつける ふりがなをはずす 背景色 白 黄 青 黒 閉じる 小布施町文書館 新着情報 文書館だより第22号（2026年7月5日） 令和8年度企画展示「北斎館開館50周年記念ポスター展」（2026年4月9日） 「北斎館開館50周年記念　文書館講演会」開催のお知らせ（2026年4月6日） 令和6年度　町制施行70周年記念展示「史料に見る町制施行と合併」（2024年4月23日） 小布施町文書館は、町内に現存する古文書や、歴史資料である公文書等を永久に保存し、活用していくための施設として、平成25年4月24日に開館しました。 古い歴史を持つ小布施町は、これまで個性豊かな発展を遂げてきました。町の成り立ちを明らかにし、それを後世に確実に伝えていくことが文書館の役割です。そして、先人の歩みから学び、新たなまちづくりへつなげていくことが、「歴史と文化の町」小布施町文書館の使命と考えます。 開館時間 午前9時～午後5時（閲覧申請は午後4時30分まで） 休館日 毎週日曜日、月曜日 国民の祝日に関する法律に規定する休日 12月29日～1月3日 資料整理日 お問い合わせ 〒381-0297 上高井郡小布施町大字小布施1491-2  小布施町役場3階 Tel  026-214-9114（文書館直通電話番号、休館日は留守番電話になります） Fax  026-247-3113（役場と同じため用紙に「文書館宛て」と明記をお願いします） カテゴリー 文化施設 小布施町文書館 小布施文書館記事 ご利用案内 新着情報 お知らせ 文書館だより ホーム キーワード検索 目的から探す チャットボットに質問する 知りたい情報を検索 閉じる 目的から探す 引越し・住まい 就職・仕事 結婚・離婚 出産・妊娠 子育て 高齢・介護 おくやみ 施設案内 行事・イベント 閉じる チャットボットに質問する 閉じる 先頭に戻る 〒381-0297 長野県上高井郡小布施町小布施1491-2 [アクセスマップ] TEL 026-247-3111 FAX 026-247-3113 お問い合わせ/まちへのご意見 プライバシーポリシー サイトポリシー アクセシビリティ 組織案内 Copyright © Obuse Town. All rights reserved.
+LINK [アクセスマップ] https://www.town.obuse.nagano.jp/access.html
+LINK [アクセスマップ] https://www.town.obuse.nagano.jp/access.html
+LINK アクセシビリティ https://www.town.obuse.nagano.jp/accessibility.html
+
+URL https://www.city.ueda.nagano.jp/soshiki/17-2.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/7cf16a0d5a860ebcf26a179f.html
+TEXT 武石地域自治センター - 上田市ホームページ ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 メニュー 閉じる 情報をさがす 閉じる カレンダーでさがす 本文へ Foreign language やさしい日本語 もとに戻す 音声読み上げ とじる ふりがな ふりがななし 文字サイズ・背景色変更 文字サイズ 標準 拡大 背景色変更 白 黒 青 閉じる キーワード 検索 検索 生活・防災 健康・福祉・子育て 観光・文化・スポーツ 産業・建設 市政情報 現在地 トップページ > 組織でさがす > 武石地域自治センター 本文 武石地域自治センター ページID：D000017 新着情報 2026年11月4日更新 物品、印刷物　公開見積合せ(武石地域振興課分) 2026年10月30日更新 【公募型プロポーザル方式】遊歩道案内看板設置工事（巣栗渓谷）について 2026年10月20日更新 武石地域交流「秋色フェス」～ともしびの里文化祭同時開催～のお知らせ 2026年7月16日更新 武石地域全域公園化構想 2026年4月1日更新 上田市武石地域空き店舗等活用支援事業補助金 2026年4月1日更新 上田市過疎地域持続的発展計画（令和8年度～令和12年度） 2026年3月18日更新 【武石地域にお住まいの方限定】武石温泉うつくしの湯　無料入浴券配付事業 2026年3月18日更新 信州武石余里一里花桃の里 2026年1月9日更新 ～地域と人を照らすともしび～冬灯会 2025年12月8日更新 上田市過疎地域持続的発展計画（令和4年度～令和7年度） 2025年11月4日更新 【事業終了済】武石地域交流秋まつりを開催します 2025年4月25日更新 上田市武石スマートシティ実証プロジェクト事業 2024年9月9日更新 武石地域総合センター整備事業 2024年9月5日更新 ［事業終了済］美ヶ原高原DE天空ティラさんぽを開催します 2024年1月16日更新 （終了しました）上田市武石温泉うつくしの湯における意見募集 2023年8月23日更新 上田市岳の湯温泉雲渓荘の在り方に関するサウンディング型市場調査 2023年1月23日更新 美ヶ原台上ふるさと名産センター周辺整備に関するサウンディング型市場調査の実施について 2022年12月26日更新 焼山沢登山道 2022年12月19日更新 巣栗渓谷 2022年9月10日更新 募集終了【公募型プロポーザル方式】令和４年度上田市武石スマートシティ実証プロジェクト事業業務委託 2022年1月31日更新 自治会提出書類様式 2021年12月15日更新 武石の郷フォトギャラリー 2021年4月1日更新 令和2年度武石地域協議会 2020年3月31日更新 平成31年度（令和元年度）武石地域協議会武石地域協議会 2019年12月12日更新 フォトギャラリー武石の夏 2019年12月12日更新 フォトギャラリー武石の春 2019年12月12日更新 フォトギャラリー武石の冬 2019年12月12日更新 フォトギャラリー武石の秋 新着情報のRSS お知らせ 2026年10月20日更新 武石地域交流「秋色フェス」～ともしびの里文化祭同時開催～のお知らせ 2026年3月18日更新 【武石地域にお住まいの方限定】武石温泉うつくしの湯　無料入浴券配付事業 2025年11月4日更新 【事業終了済】武石地域交流秋まつりを開催します 2025年4月25日更新 上田市武石スマートシティ実証プロジェクト事業 2023年1月23日更新 美ヶ原台上ふるさと名産センター周辺整備に関するサウンディング型市場調査の実施について 2022年9月10日更新 募集終了【公募型プロポーザル方式】令和４年度上田市武石スマートシティ実証プロジェクト事業業務委託 上田市過疎地域持続的発展計画 2026年4月1日更新 上田市武石地域空き店舗等活用支援事業補助金 2026年4月1日更新 上田市過疎地域持続的発展計画（令和8年度～令和12年度） 2025年12月8日更新 上田市過疎地域持続的発展計画（令和4年度～令和7年度） 2024年6月10日更新 過疎地域における固定資産税の課税免除について 人生100年時代づくり・地方創生ソフト事業 2026年1月9日更新 ～地域と人を照らすともしび～冬灯会 2024年9月5日更新 ［事業終了済］美ヶ原高原DE天空ティラさんぽを開催します 2024年7月26日更新 令和6年度人生100年時代づくり・地方創生ソフト事業について 2024年7月22日更新 令和4年度人生100年時代づくり・地方創生ソフト事業について 武石地域総合センター整備事業 2026年10月1日更新 武石地域総合センター 2024年9月9日更新 武石地域総合センター整備事業 2020年10月8日更新 一般競争入札のお知らせ(プロパンガス供給単価契約) 自治会 2022年1月31日更新 自治会提出書類様式 武石地域協議会 2026年10月19日更新 武石地域協議会 2026年4月23日更新 令和7年度武石地域協議会 2025年4月11日更新 令和6年度武石地域協議会 2024年5月10日更新 令和5年度武石地域協議会 2023年4月26日更新 令和4年度武石地域協議会 2022年3月1日更新 令和3年度武石地域協議会 2021年4月1日更新 令和2年度武石地域協議会 2020年3月31日更新 平成31年度（令和元年度）武石地域協議会武石地域協議会 武石地域全域公園化構想 2026年7月16日更新 武石地域全域公園化構想 地域自治センターだより「武石」 2026年9月16日更新 地域自治センターだより「武石」 2026年1月16日更新 地域自治センターだより「武石」令和7年バックナンバー 2025年3月21日更新 地域自治センターだより「武石」令和6年バックナンバー 2024年5月17日更新 地域自治センターだより「武石」バックナンバー 2023年11月27日更新 地域自治センターだより「武石」令和5年バックナンバー 2022年11月18日更新 地域自治センターだより「武石」令和4年バックナンバー 2021年11月16日更新 地域自治センターだより「武石」令和3年バックナンバー 2021年1月14日更新 地域自治センターだより「武石」令和2年バックナンバー 物品、印刷物、公開見積合せ 2026年11月4日更新 物品、印刷物　公開見積合せ(武石地域振興課分) 武石の郷フォトギャラリー 2021年12月15日更新 武石の郷フォトギャラリー 2019年12月12日更新 フォトギャラリー武石の夏 2019年12月12日更新 フォトギャラリー武石の春 2019年12月12日更新 フォトギャラリー武石の冬 2019年12月12日更新 フォトギャラリー武石の秋 おすすめ情報 2026年6月3日更新 武石温泉うつくしの湯 2026年3月24日更新 武石番所ヶ原スキー場（たけしばんしょがはらすきーじょう） 2026年3月18日更新 信州武石余里一里花桃の里 2025年2月27日更新 武石大布施の彼岸桜 2022年12月19日更新 巣栗渓谷 イベント情報 2026年7月24日更新 第45回武石夏祭り 産業観光課からのお知らせ 2026年10月30日更新 【公募型プロポーザル方式】遊歩道案内看板設置工事（巣栗渓谷）について 2025年12月12日更新 武石番所ヶ原スキー場　各種スキー検定 2024年4月18日更新 武石福寿草群生地 2024年4月18日更新 武石あじさい公園 2024年1月16日更新 （終了しました）上田市武石温泉うつくしの湯における意見募集 2023年8月23日更新 上田市岳の湯温泉雲渓荘の在り方に関するサウンディング型市場調査 2022年12月26日更新 焼山沢登山道 武石地域振興課 主な業務内容 【地域政策担当】 武石地域の地域政策の企画立案、調整及び推進 所管地域における陳情書、要望書等の処理の調整 所管地域の広報及び広聴 所管地域の住民組織 所管地域の地域交流都市 所管地域の国際交流 武石地域自治センターの事務の調整 所管地域の地域協議会 【庶務担当】 地域自治センターの庶務及び事務管理並びに本庁との連絡調整 地域自治センター庁舎の管理及び営繕 地域自治センター所管の庁用車の運行及び管理 地域自治センター所管の物品購入等の入札及び契約 所管地域の財産区 地域自治センター庁舎の情報システム 所管地域の消防団、水防、消防施設、消防用設備及び水利 所管地域の自主防災組織 所管地域の財産の管理 選挙事務 主管課等として処理する事務 武石地域総合センターの建設 連絡先 長野県上田市下武石742番地 Tel：0268-85-2824 （ 地域政策担当 ） Tel：0268-85-2824 （ 庶務担当 ） Fax：0268-85-2313 メールでのお問い合わせ 武石市民サービス課 主な業務内容 【市民窓口担当】 戸籍、住民基本台帳、印鑑登録、証明書の交付、市税に係る届出、国民健康保険の各種申請、国民年金の各種申請、後期高齢者医療制度の各種申請、所管地域の人権施策、男女共同参画社会、女性団体　など 【生活環境担当】 所管地域の市民生活の相談、防犯、交通安全、交通災害共済、公害、環境の保全、自然保護、合併浄化槽、一般廃棄物の収集、運搬及び処分、ごみの減量化及び再資源化、市営住宅　など 【福祉担当】 所管地域の民生委員及び児童委員、災害援護、福祉施設、子育て支援施設、旧軍人、軍属その他の遺族並びに戦傷病者及び戦没者の援護、生活保護、生活困窮者の自立支援、障害者福祉、福祉医療、保育所の入所及び退所手続、児童及び母子福祉、子育て支援　など 【高齢者支援担当】 介護保険、高齢者福祉　など 【地域健康支援担当】 保健衛生に係る相談及び各種申請　など 連絡先 長野県上田市下武石742番地 Tel：0268-85-2827 （ 市民窓口担当 ） Tel：0268-85-2068 （ 福祉担当 ） Tel：0268-85-2312 （ 生活環境担当 ） Tel：0268-85-2119 （ 高齢者支援担当 ） Tel：0268-85-2067 （ 地域健康支援担当 ） Tel：0268-85-3308 （ 武石診療所 ） Fax：0268-85-2313 メールでのお問い合わせ 武石健康センター 主な業務内容 武石診療所との連絡調整 依田窪医療福祉事務組合 連絡先 長野県上田市下武石742番地 Tel：0268-85-2067 （ 代表 ） Fax：0268-85-2313 武石診療所 主な業務内容 外来診療、リハビリテーション（消炎鎮痛処置のみ）、特定健診、予防接種、往診、訪問診療、訪問看護 連絡先 長野県上田市下武石771番地1 Tel：0268-85-3308 （ 代表 ） Fax：0268-85-2090 メールでのお問い合わせ 武石産業観光課 主な業務内容 【商工観光担当】 所管地域の商工業の振興 所管地域の企業及び工場の誘致及び振興 所管地域の商店街等振興整備事業 所管地域の経営相談及び職業安定 所管地域の雇用対策及び労働福祉 所管地域の観光振興 所管地域の温泉地及び温泉利用施設の整備 所管地域の観光事業及び観光資源の調査研究 地域住民祭 【農林振興担当】 所管地域の農業、水産業及び畜産業の振興 所管地域の農村振興 所管地域の家畜の防疫衛生、有害鳥獣及び病害虫の防除及び駆除並びに鳥獣保護及び狩猟 所管地域の森林保護及び緑化推進 所管地域の農業振興施設 連絡先 長野県上田市下武石742番地 Tel：0268-85-2828 （ 商工観光担当 ） Tel：0268-85-2828 （ 農林振興担当 ） Fax：0268-85-2313 メールでのお問い合わせ 部局 市長直轄組織 政策企画部 総務部 財政部 市民まちづくり推進部 環境部 福祉部 健康こども未来部 産業振興部 文化スポーツ観光部 都市建設部 消防部 上田地域自治センター 丸子地域自治センター 真田地域自治センター 武石地域自治センター 武石地域振興課 武石市民サービス課 武石健康センター 武石診療所 武石産業観光課 会計管理者組織 上下水道局 上田市議会 教育委員会 公民館 図書館 博物館 選挙管理委員会 監査委員 農業委員会 情報を さがす 閉じる 情報をさがす Search キーワードでさがす 検索対象 すべて ページ PDF ページIDでさがす ページIDとは 注目ワード 本庁舎正面駐車場ライブカメラ ＜外部リンク＞ 窓口混雑状況 ＜外部リンク＞ 自治会配布文書 消費生活 相談窓口 さがし方別 分類でさがす 組織でさがす マップでさがす カレンダーでさがす よくある質問 くらしの情報からさがす ごみ分別・ 出し方 公共交通 住民票・ 印鑑証明 手当・助成 ・補助金 入札・ 契約 施設予約 ライフシーンからさがす 結婚・ 離婚 妊娠・ 出産 子育て 入園・ 入学 引越し 就職・ 退職 高齢者・ 介護 おくやみ 一覧を見る ご利用ガイド 個人情報の取扱い リンク・著作権・免責事項 アクセシビリティ サイトマップ 法人番号:2000020202037 〒386-8601　長野県上田市大手一丁目11番16号 電話：0268-22-4100(代表) 休日：土曜日、日曜日、祝日、年末年始(12月29日から1月3日) アクセス お問い合わせ Copyright © Ueda City. All rights reserved.
+LINK 本庁舎正面駐車場ライブカメラ https://live.ucv.co.jp/parking.html?tyu
+LINK マップでさがす https://www.city.ueda.nagano.jp/map/
+LINK 公共交通 https://www.city.ueda.nagano.jp/soshiki/kotu/1748.html
+LINK サイトマップ https://www.city.ueda.nagano.jp/sitemap.html
+LINK アクセス https://www.city.ueda.nagano.jp/soshiki/uedapr/5600.html
+
+URL https://goo.gl/maps/DGZmXhPDPNxAEMZT8 STATUS 200 FILE data/evidence/national/locations-chubu-east-south/1e4097279085dd84705634d3.html
+SCRIPT (function(){var kEI='iwrsavjvFO_h2roPsoDwkQQ';window.APP_OPTIONS=[null,"20261102.0",null,["/search?tbm\u003dmap\u0026authuser\u003d0\u0026hl\u003dja\u0026gl\u003djp","/s?tbm\u003dmap\u0026gs_ri\u003dmaps\u0026suggest\u003dp\u0026authuser\u003d0\u0026hl\u003dja\u0026gl\u003djp","/maps/preview/directions?authuser\u003d0\u0026hl\u003dja\u0026gl\u003djp",null,null,null,[["/maps/vt"],802,["/maps/vt/stream"],null,0,null,1016,"/maps/vt",null,null,"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
+SCRIPT (function(){'use strict';var g=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a},q=function(a){a=["object"==typeof globalThis&&globalThis,
+a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");},r=q(this),t=function(a,b){if(b)a:{var c=r;
+a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&g(c,a,{configurable:!0,writable:!0,value:b})}},w=function(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];
+return b},x=typeof Object.assign=="function"?Object.assign:function(a,b){if(a==null)throw new TypeError("No nullish arg");
+a=Object(a);for(var c=1;c<arguments.length;c++){var d=arguments[c];if(d)for(var e in d)Object.prototype.hasOwnProperty.call(d,e)&&(a[e]=d[e])}return a};
+t("Object.assign",function(a){return a||x});
+t("Array.prototype.find",function(a){return a?a:function(b,c){a:{var d=this;d instanceof String&&(d=String(d));for(var e=d.length,h=0;h<e;h++){var f=d[h];if(b.call(c,f,h,d)){b=f;break a}}b=void 0}return b}});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var y=this||self,z=function(a,b,c){a=a.split(".");c=c||y;for(var d;a.length&&(d=a.shift());)a.length||b===void 0?c[d]&&c[d]!==Object.prototype[d]?c=c[d]:c=c[d]={}:c[d]=b};var A=/(?:@|\()([^:]*(:\/)?[^:]*(:\d+\/)?[^:]*?):(wasm-function\[)?/,B=/at ([^ ]+:wasm-function)\[/;function C(a,b){var c=0;a.forEach(function(d){c+=d.length});
+b.forEach(function(d){c+=d.length});
+return 3*(a.length+b.length)+c*1.1}
+;var D={C:40,B:1700};function E(a){if(a.veTypeId!=null)return a.veTypeId;switch(a.errorType){case 9:return 220406;case 8:case 11:case 15:return 220407;default:return 11562}}
+;function G(){this.h=this.i=6E4}
+;var aa=function(a){this.m=a;this.j=null;this.h=this.i=0;this.l=new G},ba=function(a){var b=Date.now();
+if(a.h===0)return a.h=b,!0;var c=a.h,d=a.l.i;a.j&&clearTimeout(a.j);a.j=setTimeout(a.m,2*d);if(c=b>c+d)a.h=b,a=a.l,a.h=Math.min(36E5,a.h*2),a.i=Math.min(36E5,a.h+0);return c};var H=function(){this.h={}};
+H.prototype.get=function(a){return this.h[I(a)]};
+H.prototype.set=function(a,b){this.h[I(a)]=b};
+function I(a){if(a==null)return" ";for(;a.charAt(a.length-1)===":";)a=a.slice(0,a.length-1);a=a.split(":");return a[a.length-1].trim()}
+;function J(){var a=y.navigator;return a&&(a=a.userAgent)?a:""}
+function K(a){return J().indexOf(a)!=-1}
+;function L(){return K("Firefox")||K("FxiOS")}
+function M(){return K("Safari")&&!(O()||K("Coast")||K("Opera")||K("Edge")||K("Edg/")||K("OPR")||L()||K("Silk")||K("Android"))}
+function O(){return(K("Chrome")||K("CriOS"))&&!K("Edge")||K("Silk")}
+function ca(a){var b={};a.forEach(function(c){b[c[0]]=c[1]});
+return function(c){return b[c.find(function(d){return d in b})]||""}}
+function da(a){var b=J();if(a==="Internet Explorer"){if(K("Trident")||K("MSIE"))if((a=/rv: *([\d\.]*)/.exec(b))&&a[1])b=a[1];else{a="";var c=/MSIE +([\d\.]+)/.exec(b);if(c&&c[1])if(b=/Trident\/(\d.\d)/.exec(b),c[1]=="7.0")if(b&&b[1])switch(b[1]){case "4.0":a="8.0";break;case "5.0":a="9.0";break;case "6.0":a="10.0";break;case "7.0":a="11.0"}else a="7.0";else a=c[1];b=a}else b="";return b}var d=RegExp("([A-Z][\\w ]+)/([^\\s]+)\\s*(?:\\((.*?)\\))?","g");c=[];for(var e;e=d.exec(b);)c.push([e[1],e[2],
+e[3]||void 0]);b=ca(c);switch(a){case "Opera":if(K("Opera"))return b(["Version","Opera"]);if(K("OPR"))return b(["OPR"]);break;case "Microsoft Edge":if(K("Edge"))return b(["Edge"]);if(K("Edg/"))return b(["Edg"]);break;case "Chromium":if(O())return b(["Chrome","CriOS","HeadlessChrome"])}return a==="Firefox"&&L()||a==="Safari"&&M()||a==="Android Browser"&&K("Android")&&!(O()||L()||K("Opera")||K("Silk"))||a==="Silk"&&K("Silk")?(b=c[2])&&b[1]||"":""}
+function R(a){a=da(a);if(a==="")return NaN;a=a.split(".");return a.length===0?NaN:Number(a[0])}
+;var T=function(){var a=typeof DEV_MODE==="undefined"?!1:DEV_MODE,b=typeof LOGGING_ENDPOINT==="undefined"?"/maps/preview/log204":LOGGING_ENDPOINT,c=typeof JS_VERSION==="undefined"?null:JS_VERSION,d=ea(),e=typeof PRODUCT_ID==="undefined"?81:PRODUCT_ID,h=this;var f=f===void 0?y.location&&y.location.hostname:f;this.D=a;this.jsVersion=c;this.A=d;this.hostname=f;this.h=null;this.o=!1;this.u=this.j=null;this.i=new H;this.m=new H;this.l=b;this.v=e;var k=y.onerror;y.onerror=function(){var p=w.apply(0,arguments);
+k&&k.apply(null,p);var m=p[0],l=p[1],n=p[2];p=p[4];p instanceof Error?S(h,p,l,n):S(h,m,l,n)}};
+T.prototype.listen=function(a){this.h=a};
+T.prototype.log=function(a,b){if(a.name==="cancel")return a;S(this,a,void 0,void 0,U(b));return a};
+var fa=function(a,b){var c=a.i.get(b);c||(c=new aa(function(){delete a.i.h[I(b)]}),a.i.set(b,c));
+c.i++;return c},ja=function(a,b,c,d,e,h,f){var k,p=(k=f)==null?void 0:k.errorType;
+f||(f={});if(c){var 
+SCRIPT @font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cYrLiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cQrKiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cdTKiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cYrKiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cbjKiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cVTNiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+@font-face {
+  font-family: 'Google Symbols';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(//fonts.gstatic.com/l/font?kit=HhzMU5Ak9u-oMExPeInvcuEmPosC9zyteYEFU68cPrjdKM1XLPTxlGmzczpgWvF1d8Yp7AudBnt3CPar1JFWjoLAUv3G-tSNljixIIGUsC62cW3NiAkeTCeuheHrVTPjquE3GizYx21WOPHfOXTZWQ_9__ry60vgeVBTC39F928n4vxWsibIMkfa6qugj2GQULGhgPHOoOXGojs_XSRQNC_RQbnBAcGlRG4-4ZlGWnOnJgeIqt4qjO82pYlJe6PhRBr4v0X8ZbWUzWxeobEu9zhIbEw4_vWe6eEK7NNB1CBwznVqCWgwDJ640G4rBuNLboYdAXvVhYr3kjXZU8Na_guw1nIVXJ4dTHHduKvvl1zKuGi7gbr4OOAhPi3oLTQcb26AynFLLsZF1q2h1zqufY--AlXwPdydzr5EKAd0QdJGMdlFMLDCvCTpTlx3znIN4bStECDBvUTXr7L2GT2ZxRY5acQ&skey=f8ec4d50247dc1c1&v=v469) format('truetype');
+}
+
+.google-symbols {
+  font-family: 'Google Symbols';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+ 
+TEXT Google マップ When you have eliminated the JavaScript , whatever remains must be an empty page. JavaScript を有効にして Google マップを表示します。
+LINK JavaScript を有効にして Google マップを表示します。 https://support.google.com/maps/?hl=ja&authuser=0&p=no_javascript

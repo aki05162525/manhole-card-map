@@ -1,0 +1,3396 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDP+Gothic:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- タイトル（検索にも表示される重要部分） -->
+  <title>一般社団法人石狩観光協会 | Ishikari Tourism Association</title>
+
+  <!-- Googleフォント読み込み -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- =========================================
+       CSS（ページ全体のデザイン）
+       ========================================= -->
+  <style>
+    :root{
+      /* ブランドカラー変数：色変更が楽 */
+      --brand:#0b6e4f;
+      --accent:#f2a84a;
+      --max-width:1100px;
+}
+		
+/* 全体で利用するフォント*/
+body {
+  font-family: "Noto Sans JP", system-ui, -apple-system,
+               Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+/* ヘッダー全幅　横並び　横スクロール削除 */
+.topbar .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 横スクロール削除 */
+.container.topbar {
+  max-width: none;
+  width: 100vw;
+}
+/* ヘッダー全体 横幅いっぱいに広げる */
+header.topbar {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.9); /* スクロール時に半透明にする */
+}
+
+/* 中身を横並び */
+header.topbar .inner {
+  max-width: 1400px;
+  margin: 0 24px;
+  padding: 16px 10px; /* 上下（前）左右（後）余白 */
+
+  display: grid;
+  grid-template-columns: auto auto auto;  /* ヘッダーを3フレーム(1fr) */
+  align-items: center;
+  gap: 16px;
+}
+
+/* 翻訳見た目 */
+.translate-box {
+  justify-self: end;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.goog-te-gadget select {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+/* 翻訳ミニアイコン */
+/* 翻訳全体 */
+.translate-wrap {
+  display: flex;
+  flex-direction: column; /* 上下並び */
+  align-items: center;
+  gap: 6px;               /* 国旗と翻訳の間隔 */
+}
+
+/* 国旗アイコン */
+.lang-flags {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-flags img {
+  width: 22px;        /* ミニサイズ */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* hover */
+.lang-flags img:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+/* 翻訳スマホ */
+@media (max-width: 900px) {
+  .translate-box {
+    display: none;
+  }
+}
+
+/* ロゴ */
+.logo {
+  justify-self: start;
+}
+
+.logo img {
+  height: 48px;
+  display: block;
+}
+body {
+  overflow-x: hidden;
+}
+.logo img {
+  height: 48px; /* 44〜56px が最適 */
+}
+
+/* メニュー中央固定 */
+header.topbar nav {
+  display: flex;
+  margin-left: 40px; /* ← ロゴとホームの間隔 */
+  gap: 13px;  /* メニューの間隔 */
+}
+
+header.topbar nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* Google翻訳 */
+#google_translate_element {
+  font-size: 0.85rem;
+}
+
+.goog-te-gadget {
+  color: #333;
+}
+/* 翻訳見た目 */
+.goog-te-gadget select {
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+/* 翻訳を右端 */
+.translate-box {
+  justify-self: end;   /* ← 右端 */
+  margin-left: 15px;   /* 検索との間隔 */
+  white-space: nowrap;
+}
+
+/* Google翻訳終わり */
+
+
+/* スマホメニュー */
+@media (max-width: 900px) {
+  header.topbar nav,
+  .search-form {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+/* ヘッダー半透明 */
+header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255,255,255,1);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+header.topbar.is-scrolled {
+  background: rgba(255,255,255,0.75); /* 半透明 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+/* ナビ hover 復活 */
+header.topbar nav a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+header.topbar nav a:hover {
+  color: #37BFD0; /* 石狩カラーなど */
+}
+header.topbar.is-scrolled nav a {
+  color: #222;
+}
+
+header.topbar.is-scrolled nav a:hover {
+  color: #37BFD0;
+}
+
+/* ヘッダー修正終わり */
+
+/* 風景スライダー */
+.header-hero img {
+  width: 100%;        /* 画面幅に合わせる */
+  height: auto;       /* 高さは自動調整 */
+  display: block;     /* 余白を消す */
+}
+	  
+.header-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  transform: translateX(100%); /* 左の外 */
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
+}
+
+/* 表示中 */
+.header-slider img.is-active {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.header-slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.header-slider .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.header-slider .slide.is-active {
+  opacity: 1;
+}
+
+.header-slider .slide {
+  transform: scale(1.04);
+  transition:
+    opacity 2.5s cubic-bezier(0.4, 0.0, 0.2, 1),
+    transform 10s ease;
+}
+
+.header-slider .slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* かぶせる文字 */
+.header-text {
+  position: absolute;
+  inset: 0;             /* 上下左右0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 縦中央 */
+  align-items: center;     /* 横中央 */
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;  /* 明朝系 */
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+/* 文字の見やすさUP（おすすめ） */
+.header-text h1 {
+  font-size: 2.3rem;　/* fontサイズ */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 13px; /* ← タイトルとサブタイトルの間 */
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.header-text p {
+  margin-top: 0px;
+  font-size: 1.8rem; /* サブコピーfontサイズ */
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* 風景スライダー終わり */
+
+.site-header {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* container制限解除 */
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+}
+.logo {
+  margin-right: auto; /* ロゴを左に、ナビを右へ */
+}
+.container {
+  max-width: none;
+  padding-left: 0;
+}
+
+
+/* フッター全体を全幅にする */
+#footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff; /* 背景色は必要に応じて変更 */
+}
+
+/* フッター内コンテナも全幅に */
+#footer .inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.footer-bottom {
+  max-width: var(--max-width);  /* 同じく幅を中央寄せ */
+  margin: 30px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.85rem;
+  color: #fff;
+  text-align: center;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+	  
+/* スマホ対応 */
+@media (max-width: 768px) {
+  #footer .inner {
+    flex-direction: column;
+  }
+
+  .footer_col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+/* フッターここまで */
+	  
+/* YOUTUBE・さけ太郎X・石狩大百貨 */
+/* YouTube & バナー */
+.media-section {
+  background: #e6f4f7;  /* 枠全体の背景色 */
+  padding: 80px 0;  /* 上下の余白 */
+}
+
+.media-inner {
+  max-width: 1200px;  /* 最大幅 */
+  margin: 0 auto;  /* 中央寄せ */
+  padding: 0 20px;  /* 左右2カラムレイアウト */
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;  /* 左youtube・右バナー */
+  gap: 32px;  /* カード同士の間隔 */
+}
+
+.media-card {
+  background: #e6f4f7;  /* 背景色 */
+  border-radius: 16px;  /* 角を丸くする */
+  padding: 20px;  /* 中身と枠の余白 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.media-title {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;  /* 明朝系 */
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+/* バナー上下分割 */
+.media-card.banner {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  background: #e6f4f7;  /* 背景色 */
+  gap: 10px;              /* 上下の余白（調整可） */
+}
+
+/* 上下共通 */
+.media-card.banner img {
+  width: 100%;  /* 枠いっぱいに画像を表示 */
+  height: 100%;
+  object-fit: cover;  /* 縦横比を保ってトリミング */
+  display: block;  /* 余計な隙間防止 */
+  border-radius: 8px;
+}
+
+/* バナー高さ指定（比率調整） */
+.banner-top,
+.banner-bottom {
+  height: 140px; /* ← ここで上下それぞれの高さを調整 */
+}
+
+/* バナー上下均等 */
+.banner-top,
+.banner-bottom {
+  flex: 1;
+}
+
+/* バナー上：幅いっぱい */
+.media-card.banner {
+  padding: 0;              /* 余白を消す */
+  overflow: hidden;        /* はみ出し防止 */
+}
+
+.media-card.banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;       /* 枠いっぱいに表示 */
+}
+/* バナー共通 hover */
+.media-card.banner a {
+  display: block;
+  height: 100%;
+}
+
+.media-card.banner img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* hover時 */
+.media-card.banner a:hover img {
+  transform: scale(1.05);        /* 少し拡大 */
+  filter: brightness(1.08);      /* 明るく */
+}
+
+/* hoverスマホ無効 */
+@media (hover: none) {
+  .media-card.banner:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .media-card.banner a:hover img {
+    transform: none;
+    filter: none;
+  }
+}
+
+
+/* YouTube比率維持 */
+.youtube-wrap {
+  position: relative;
+  padding-top: 45.25%; /* 16:9 */
+}
+
+.youtube-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+/* YouTubeカード */
+.media-card.youtube {
+  width: 100%;  /* iframe幅いっぱい */
+  height: 410px;   /* 高さ */
+}
+/* YouTube見出しの色 */
+.media-card.youtube .media-title {
+  color: #fff;   /* 赤（YouTubeっぽい） */
+}
+
+/* アスペクト比を維持 */
+.media-card.youtube {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+/* iframeを親いっぱいに */
+.media-card.youtube iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* バナー */
+.media-card.banner img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* バナー上（枠いっぱい） */
+.banner-top {
+  width: 100%;
+  height: 140px;          /* お好みで調整 */
+  overflow: hidden;       /* はみ出し防止 */
+}
+
+.banner-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 枠いっぱいに表示 */
+  display: block;
+}
+
+/* スマホ */
+@media (max-width: 900px) {
+  .media-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* YOUTUBEここまで */
+	  
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3枚並べる */
+  gap: 10px;
+}
+
+.img-grid img {
+  width: 100%;
+}
+
+.img-row img {
+  margin-right: 10px;  /* ← ここで画像の間隔を調整 */
+  width: auto;         /* 必要なら */
+  height: auto;        /* 必要なら */
+}
+
+/* SNS「現地から最新情報をお届け」専用 */
+/* SNS全体 */
+#sns .sns-grid {
+  display: flex;
+  gap: 24px;              /* ← 横の余白を統一 */
+  justify-content: center;
+  align-items: stretch;  /* ← 高さの基準も揃える */
+}
+
+
+/* SNS・ライブカメラ共通の幅 */
+#sns .sns-item {
+  width: 320px;
+}
+
+#sns-old h2 {
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN",
+               "Hiragino Mincho ProN", "MS P明朝", serif;
+  text-align: center;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+#sns-old h2 {
+  font-size: 2.4rem;
+}
+/* SNS枠背景 */
+#sns-bg {
+  background-image: url("images/sns_bg05.jpg"); /* sns 背景1920×600-900px */
+  padding: 60px 0;
+}
+
+#sns {
+  padding: 0 20px;
+}
+/* SNS 道の駅ライブカメラ追加 */
+.sns-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sns-item {
+  width: 320px;
+}
+
+.live-camera img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+/* 天気アイコン */
+#weather-icon {
+  width: 40px;
+  height: 40px;
+}
+  
+@media (max-width: 768px) {
+  #sns .sns-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* SNS 道の駅ライブカメラ追加ここまで */
+
+/* 厚田エリア・livecamera・キャンプ場 */
+/* セクション全体 */
+.livecam-section {
+  font-size: 1.2rem;     /* ← fontサイズ */
+  color: #37BFD0;　　　　　/* ← fontカラー */
+  letter-spacing: 0.05em;　
+  padding-top: 20px;     /* ← 上余白 */
+  padding-bottom: 60px;  /* ← 下余白 */
+}
+
+.livecam-section h2 {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  margin-bottom: 30px;
+}
+
+.livecam-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.livecam-card {
+  background: #37BFD0;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.livecam-card h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+}
+
+.livecam-card img,
+.livecam-card iframe {
+  width: 100%;
+  height: 230px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: none;
+}
+/* 厚田インスタ余白 */
+.livecam-card h3 {
+  margin-top: 8px;   /* ← 好きな数値に */
+}
+/* インスタ見出しカラー */
+.livecam-card h3 {
+  color: #fff;
+}
+
+
+/* バナーだけ少し強調 */
+.livecam-card.banner img {
+  height: 380px;
+}
+
+.livecam-label {
+  padding: 12px 0;
+  text-align: center;
+  font-family: "BIZ UDPゴシック", sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* ===== livecamera フォント・配置 ===== */
+.livecam-special {
+  background: #000;
+  text-align: center;
+  padding: 6px 13px;
+  font-size: 1.0rem;
+  font-family: "BIZ UDP Gothic", sans-serif;
+  color: #fff;
+}
+
+/* 日付 */
+.livecam-special .livecam-date {
+  text-align: center;
+  padding: 6px 0;
+  font-size: 1.1rem;
+  background: #000;
+}
+
+/* 時間・温度エリア */
+.livecam-special .livecam-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #000;
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+/* 各枠 */
+.livecam-special .livecam-box {
+  text-align: center;
+  padding: 4px 0;
+  font-size: 1rem;
+}
+
+/* 区切り線 */
+.livecam-special .livecam-box.time {
+  border-right: 1px solid rgba(255,255,255,0.25);
+}
+
+/* 温度・天気アイコン*/
+.livecam-box.temp {
+  display: flex;
+  align-items: center;      /* ← 縦位置を揃える */
+  justify-content: center;  /* ← 横方向中央寄せ */
+  gap: 10px;                /* ← アイコンと温度の間隔 */
+  color: #fff;              /* 白文字 */
+  font-family: "BIZ UDPゴシック", sans-serif;
+}
+
+#weather-icon {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* livecamera時計 */
+#livecam-time {
+  font-size: 1.1rem;   /* ← お好みで */
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+/* livecamera温度 */
+#livecam-temp {
+  font-size: 1.0rem;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  #weather-icon {
+    width: 28px;
+    height: 28px;
+  }
+  #livecam-temp {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* バナーカード全体 */
+.livecam-card.banner {
+  padding: 0;            /* 余白を消す */
+  overflow: hidden;      /* はみ出し防止 */
+}
+
+/* 見出し */
+.livecam-card.banner h3 {
+  padding: 12px;
+  margin: 0;
+  text-align: center;
+  background: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+/* 画像を枠いっぱいに */
+.livecam-card.banner a {
+  display: block;
+  width: 100%;
+  height: 385px;         /* 他カードと高さを揃える */
+}
+
+.livecam-card.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* 枠いっぱい＋比率維持 */
+  display: block;
+}
+
+
+/* スマホ対応 */
+@media (max-width: 900px) {
+  .livecam-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*　厚田livecameraここまで　*/
+	  
+.home-heading1 {
+  text-align: center;
+  margin-bottom: 30px; /* タブとの間隔を調整 */
+}
+
+.home-heading1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*　石狩市デジタルマップ　*/ 
+.map-tabnav {
+  display: flex;
+  justify-content: center; /* 横中央 */
+  gap: 20px;               /* ボタン間の余白 */
+  margin-bottom: 30px; /* MAP間の余白 */
+}
+
+.map-tabnav__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* ★ space-between をやめる */
+  gap: 16px;                 /* 文字とアイコンの間隔 */
+  text-align: center;
+}
+
+.map-tabnav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.map-tabnav__btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 300px;
+  padding: 20px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease;
+}
+/*　iconサイズ　*/
+.map-pin {
+  width: 50px;     /* ← 好きなサイズに変更 */
+  height: auto;    /* 縦横比を維持 */
+}
+
+
+/* =========================
+   地図タブ：初期表示カラー
+   ========================= */
+
+/* 石狩エリア（イエロー） */
+.map-tabnav__btn.--ishikari {
+  background-color: #FFC233;
+  color: #fff;
+}
+
+/* 厚田エリア（グリーン） */
+.map-tabnav__btn.--atsuta {
+  background-color: #C6D39A;
+  color: #fff;
+}
+
+/* 浜益エリア（ピンク） */
+.map-tabnav__btn.--hamamasu {
+  background-color: #E3C4D9;
+  color: #fff;
+}
+
+/* デジタルマップアイコンhover */
+.map-tabnav__btn.--ishikari:hover {
+  background-color: #f5b400;
+}
+
+.map-tabnav__btn.--atsuta:hover {
+  background-color: #b7c98a;
+}
+
+.map-tabnav__btn.--hamamasu:hover {
+  background-color: #d3b0c8;
+}
+
+
+/* デジタルマップアイコンFONTサイズ */
+.map-tabnav__btn {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.map-tabnav__btn small {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+/* font種類 */
+.map-tabnav__btn span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* テキストは左揃え */
+}
+
+.map-tabnav__btn i {
+  margin-left: 16px;
+  font-size: 22px;
+}
+
+.map-tabnav__btn b {
+  font-size: 22px;
+}
+
+.map-tabnav__btn small {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-center a {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* アクティブ強調 */
+.map-tabnav__btn.active {
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ============================
+   バナーリンク集デザイン
+   ============================ */
+.link-collection {
+  width: 100%;
+  background: #fff;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+}
+
+.link-collection-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.link-collection h2 {
+  font-size: 45px; 
+  margin-bottom: 20px;
+  font-family: 
+    "Noto Serif JP",
+    "游明朝",
+    "Yu Mincho",
+    "ヒラギノ明朝 ProN",
+    "Hiragino Mincho ProN",
+    "MS P明朝",
+    serif;                     /* LINKフォント（明朝系） */
+  color: #767676;
+  text-align: center;
+}
+
+.banner-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ← ここで4列固定 */
+  gap: 20px; /* バナーの間隔 */
+  justify-items: center;
+}
+
+.banner-list img {
+  width: 265px;    /* バナー固定サイズ */
+  height: 80px;
+  object-fit: contain;
+  padding: 0px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* LINKバナー：通常 */
+.banner-list img {
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+/* hover時：枠線だけ変更 */
+.banner-list a:hover img {
+  border-color: #00aad9; /* ブランドカラー */
+}
+
+
+.banner-list a:hover img {
+  transform: scale(1.03);
+}
+
+.banner-list a {
+  cursor: pointer;
+}
+
+/* 画像自体にもなめらかさを追加（任意） */
+.banner-list img {
+  transition: transform 0.3s ease;
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: var(--max-width);  /* = main と同じ 1100px */
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  width: 100% !important;       /* スライド幅を main と一致させる */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+    /* レイアウトの基本設定 */
+    *{box-sizing:border-box}
+    body{margin:0;color:#222;line-height:1.6}
+
+    /* ヘッダー（固定） */
+header{
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: none;   /* ← 追加 or 変更 */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* ナビゲーションボタン */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-family:
+    "Yu Gothic",
+    "游ゴシック体",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif; /* <>のフォント */
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  display: flex;               /* ★追加 */
+  align-items: center;         /* ★縦中央 */
+  justify-content: center;     /* ★横中央 */
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  padding: 0;                  /* ★余白リセット */
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* インジケーター */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  background: #fff;
+}
+
+/* Xタイムラインサイズ */
+.info-image{
+    width:320px;      /* お好みで280～350px程度 */
+    margin:0 auto;
+}
+
+.info-image blockquote{
+    width:100% !important;
+}
+
+
+/* 赤字にする */
+.text-red {
+  color: #d60000; /* 少し落ち着いた赤 */
+  font-weight: 600; /* 目立たせたい場合 */
+}
+	  
+/* 青字にする */
+.text-blue {
+  color: #1600DD; /* 少し落ち着いた青 */
+  font-weight: 600; /* 目立たせたい場合 */
+}
+
+/* トップ：スライド直下の全幅背景 */
+.top-bg {
+  width: 100%;
+  background-image: url("images/top_back.png");
+  background-repeat: repeat;          /* 和柄なら repeat 推奨 */
+  background-size: auto;              /* 画像サイズそのまま */
+  background-position: center top;
+  padding: 70px 0 70px;                /* 上下の余白 */
+}
+
+/* 縦書きキャッチコピー */
+.top-visual {
+  position: relative; /* 基準 */
+  width: 100%;
+}
+
+.top-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.top-vertical-text {
+  height: 60vh;
+  max-height: 600px;
+  min-height: 330px;
+}
+	  
+/* トップ：縦書き本文 */
+.top-vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Noto Serif JP","游明朝","Yu Mincho",serif;
+  font-size: 1.1rem;
+  line-height: 2.1;
+  letter-spacing: 0.15em;
+  color: rgba(0,0,0,0.75);
+  pointer-events: none;
+}
+
+.top-vertical-text span {
+  opacity: 0;
+  transform: translateY(6px);
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.top-vertical-text span.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* スマホでは非表示 */
+@media (max-width: 768px) {
+  .top-text {
+    display: none;
+  }
+}
+
+/* スマホ微調整 */
+@media (max-width: 640px) {
+  .top-bg {
+    padding: 40px 0 60px;
+  }
+}
+
+/* information */
+.top-visual {
+  position: relative;
+}
+
+/* カーソルhover */
+.beachmap-link:hover {
+  cursor: pointer;
+}
+	  
+.beachmap-link::after {
+  content: "拡大表示";
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.beachmap-link {
+  position: relative;
+}
+
+.beachmap-link:hover::after {
+  opacity: 1;
+}
+
+/* リンク全体 */
+.beachmap-link {
+  display: block;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+/* 画像アニメーション */
+.beachmap-link img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover時 */
+.beachmap-link:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* Information 全体 */
+/* 左 */
+.info-title {
+  font-family: "Noto Serif JP", serif;
+  font-size: 2.6rem; /* Information */
+  margin: 0;
+}
+	  
+.info-sub {
+  margin-top: 10px; /* 新着ニュース */
+  color: #777;
+}
+
+.info-more {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 22px;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.8rem;　/* 新着ニュースをもっと見る　〉 */
+}
+
+/* Information 新着ニュース */
+.info-area {
+  display: flex;
+  align-items: center;   /* 上下中央 */
+  gap: 40px;             /* 左右の余白（任意） */
+}
+	  
+/* 右 */
+.info-item {
+  padding: 22px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.info-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.info-meta time {
+  color: #666;
+}
+
+.tag {
+  border: 1px solid #ccc;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+}
+
+.tag.attention {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.tag.new {
+  color: #c00;
+  border-color: #c00;
+}
+
+.info-item h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .info-area {
+    flex-direction: column;
+  }
+}
+
+  .info-title {
+    font-size: 2.2rem;
+  }
+}
+
+.info-area {
+  margin: 50px 0; /* 上下80px */
+}
+	  
+.info-item:hover {
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+.info-image img {  /* 新着情報infoエリア画像サイズ */
+  width: 240px;
+  height: 240px;
+}
+
+.info-body {  /* infoエリア 文章右に画像 */
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.info-text {
+  flex: 1; /* infoエリア テキスト広め 比率 */ 
+}
+
+.info-image img {
+  width: 240px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+	  
+@media (max-width: 768px) {   /* スマホ */
+  .info-body {
+    flex-direction: column;
+  }
+
+  .info-image img {
+    width: 100%;
+  }
+}
+
+/* event スライド・背景を全幅にする */
+.event-full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-top: 10px;     /* ← 上余白 */
+  padding-bottom: 60px;  /* ← 下余白 */
+  background: #f7f7f7;   /* 背景色 or 画像 */
+}
+
+/* 中身は中央寄せ */
+.event-inner {
+  max-width: 1100px;     /* サイトの基本幅 */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.event-card img {
+  width: 100%;
+  height: 160px;   /* ← ここで画像の高さを変更 */
+  object-fit: cover;
+}
+
+.event-text {
+  padding: 14px;
+}
+/* カルーセル */
+.event-carousel {
+  overflow: hidden;
+}
+
+.event-track {
+  display: flex;
+  gap: 24px;
+  transition: transform .6s ease;
+}
+
+@media (max-width: 1200px) {
+  .event-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .event-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.event-row {
+  display: flex;
+  justify-content: center; /* 画面中央 */
+  gap: 24px;               /* カード間の余白 */
+  margin: 0 auto;
+  flex-wrap: wrap;         /* 画面が狭い時は折り返し */
+}
+
+/* カード幅を固定（上品に） */
+.event-card {
+  width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+
+/* 5枚表示 */
+.event-card {
+  flex: 0 0 calc((100vw - 200px) / 5);
+  max-width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+/* タブレット */
+@media (max-width: 1200px) {
+  .event-card { flex: 0 0 33%; }
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  .event-card { flex: 0 0 85%; }
+}
+
+/* dots */
+.event-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+.event-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+}
+.event-dots button.active {
+  background: #333;
+}
+
+#event-title {
+  text-align: center; /* 中央寄せ */
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho",
+               "ヒラギノ明朝 ProN", "Hiragino Mincho ProN",
+               "MS 明朝", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  margin: 60px 0 40px;
+}
+/* eventスライド(終) */
+
+/* ===== 観光スポット スライダー ===== */
+/* スライダー全体の外枠 */
+/* 横方向だけ隠す・下にインジゲーターを表示する */
+.spot-slider { 
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden; 
+  overflow-x: hidden; /* 横方向 */
+  overflow-y: visible; /* インジゲーター */
+  padding-bottom: 40px; /* ← インジゲーター用の余白スペース */
+}
+
+.spot-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5; /* ← ★追加 */
+}
+
+.spot-indicator span {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+}
+
+.spot-indicator span.active {
+  background: #333;
+  transform: scale(1.3);
+}
+
+/* 実際に横に動くレール */
+.spot-track {
+  display: flex;  /* カードを横並びにする */
+  gap: 24px;  /* カード同士の間隔 */
+  transition: transform 0.6s ease;  /* 滑らかに印刷する */
+}
+	  
+/* 1枚1枚のカード */
+.spot-card {
+  min-width: 320px;  /* カードの横幅 */
+  border-radius: 12px;  /* 角を丸くする */
+  overflow: hidden;  /* 画像を角丸からはみ出さないようにする */
+  background: #fff;  /* カードの背景 */
+}
+
+/* 画像だけの高さ */
+.spot-card img {
+  width: 100%;  /* カード幅いっぱい */
+  height: 220px;      /* ← 画像の高さ固定 */
+  object-fit: cover;  /* 縦横比を保ったままトリミング */
+  display: block;  /* 画像下の謎の余白を消す */
+}
+
+/* 画像以外（文字エリア） */
+.spot-text {
+  padding: 12px 14px;  /* タイトル・説明文の余白 */
+  height: auto;       /* 文字量に応じて自然に高さが変わる */
+}
+
+
+/* インジケーター */
+.spot-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+/* 丸いドットを作る */
+.spot-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.spot-indicator span.active {
+  background: #333;
+}
+	  
+.spot-slider {
+  overflow-x: hidden;
+  overflow-y: visible; /* ← 追加 */
+}
+/* spotスライダー追加分 */
+.spot-slider {
+  overflow: hidden;
+}
+
+.spot-track {
+  display: flex;
+  gap: 24px;
+}
+
+/* 主な観光スポット「カルーセルボタン」 */
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.event-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.s {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0)
+  );
+  color: #fff;
+}
+
+.spot-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.spot-card p {
+  margin: 3px 0 0;
+  font-size: 0.9rem;
+}
+
+/* spots-titleフォント位置 */
+#spots-title {
+  text-align: center;
+  font-family: "Noto Serif JP", "游明朝", "Yu Mincho",
+               "ヒラギノ明朝 ProN", "Hiragino Mincho ProN",
+               "MS 明朝", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+  margin: 60px 0 40px;
+}
+
+/* 各種申請・お申込み */
+.contact-area {
+  width: 100vw; /*画面幅基準*/
+  margin-left: calc(50% - 50vw); /* container制限を解除・背景だけ全幅 */
+  background-image: url("images/contact/back_image03.jpg");　/* 背景画像指定 */
+  background-size: cover; /* 画像比率維持 */
+  background-position: center; /* 画像の中央を基準 */
+  background-repeat: no-repeat; /* 画像をタイル状に繰り返さない */
+  padding: 180px 0; /* 上下余白 */
+}
+/* 背景は全幅 */
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.contact-area::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.0);
+}
+
+.contact-area {
+  position: relative;
+}
+.contact-area * {
+  position: relative;
+  color: #000;
+}
+/* 申請エリアfontのhover */
+.contact-card {
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-card:hover h3,
+.contact-card:hover p {
+  color: #37BFD0;
+}
+	  
+#contact-title {
+  text-align: center;
+  margin-bottom: 32px; /* cardとの間隔 */
+  color: #fff;      /* fontカラー */
+  font-size: 2.6rem; /*fontサイズ*/
+  text-shadow: 
+    0 1px 3px rgba(0,0,0,0.35),
+    0 4px 12px rgba(0,0,0,0.15); /* シャドー */
+  font-family: "Noto Serif JP", serif;
+}
+
+.contact-area h2 {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .contact-area {
+    padding: 50px 0;
+  }
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.contact-card img {
+  width: 100%;          /* カード幅に合わせる */
+  height: 200px;        /* ← 高さはここで調整 */
+  object-fit: cover;    /* はみ出さずにトリミング */
+  border-radius: 8px;
+}
+
+.contact-card h3 {
+  font-size: 1.05rem;
+  margin: 16px;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  margin: 0 16px 20px;
+  color: #666;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+	  
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 各種申請・申込ここまで */
+
+
+    /* 共通コンテナ */
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 16px;
+    }
+
+    /* ヘッダー上部のロゴ＋メニュー */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{height:44px}
+
+    /* PCナビゲーション */
+    nav{
+      display:flex;
+      gap:16px;
+    }
+    nav a{
+      text-decoration:none;
+      color:#333;
+      padding:8px;
+      border-radius:6px;
+    }
+
+    /* モバイルメニュー表示ボタン（スマホ時に表示） */
+    .menu-btn{display:none}
+
+    /* ==============================
+       HERO（トップ画像＋キャッチ）
+       ============================== */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      align-items:center;
+      gap:18px;
+      padding:28px 0;
+      background:linear-gradient(180deg, rgba(11,110,79,0.08), rgba(0,0,0,0));
+    }
+    .hero-inner{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .eyebrow{
+      color:var(--brand);
+      font-weight:700;
+    }
+    .hero h1{
+      margin:0;
+      font-size:clamp(1.6rem,3.6vw,2.6rem);
+    }
+    .hero p{
+      margin:0;
+      color:#444;
+    }
+
+    /* CTAボタン */
+    .cta{
+      display:inline-block;
+      margin-top:8px;
+      padding:10px 16px;
+      background:var(--brand);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+    }
+
+    /* ==============================
+       グリッド（カード3列）
+       ============================== */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin:26px 0;
+    }
+    .card{
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(10,10,10,0.04);
+      padding:16px;
+    }
+
+    /* イベントセクション用 */
+    .events .card{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+/* Access レイアウト */
+.access {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* 左側テキスト */
+.access-info {
+  flex: 0 0 320px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* 右側画像 */
+.access-image {
+  flex: 1;
+}
+
+.access-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: none;  /* [シャドーを入れる場合]0 8px 24px rgba(0,0,0,0.08) */
+}
+
+@media (max-width: 640px) {
+  .access {
+    flex-direction: column;
+  }
+
+  .access-info {
+    width: 100%;
+  }
+
+  .access-image img {
+    max-width: 100%;
+  }
+}
+
+ /* Access 見出しデザイン */
+#access-title {
+  text-align: center;          /* 中央寄せ */
+  font-size: 3rem;             /* 文字を大きく */
+  font-family: 
+    "Noto Serif JP",
+    "游明朝",
+    "Yu Mincho",
+    "ヒラギノ明朝 ProN",
+    "Hiragino Mincho ProN",
+    "MS P明朝",
+    serif;                     /* 明朝系 */
+  font-weight: 500;
+  color: #767676;
+  letter-spacing: 0.05em;      /* 少し余白を出して上品に */
+  margin-bottom: 40px;         /* 下との余白 */
+}
+	  
+@media (max-width: 640px) {
+  #access-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* 通常のリンク */
+a {
+  color: inherit;          /* 親要素の文字色を使う（青にしない） */
+  text-decoration: none;   /* 下線を消す */
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+/* ポインターを乗せた時 */
+a:hover {
+  color: #00aad9;          /* サイトのキーカラーに */
+  text-decoration: underline;
+}
+
+/* 全体を横並び */
+.demand-transport {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* 左：ロゴ＋説明（縦並び） */
+.demand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 260px;
+  text-decoration: none;
+  color: #333;
+}
+
+.demand-info img {
+  width: 180px;
+  height: auto;
+}
+
+.demand-info p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* 右：チラシ */
+.demand-flyer {
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.demand-flyer img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+}
+
+.demand-flyer span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .demand-transport {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ルートイメージ */
+.route-image {
+  margin: 12px 0 20px;
+}
+
+.route-image img {
+  width: 100%;
+  max-width: 420px;   /* 大きすぎ防止（不要なら削除OK） */
+  height: auto;
+  display: block;
+}
+
+
+  
+/* フッター */
+    footer{
+      border-top:1px solid #eee;
+      padding:18px 0;
+      color:#666;
+      margin-top:28px;
+      text-align:center;
+      font-size:0.95rem;
+    }
+
+.footer {
+  background: #f5f5f5;
+  padding: 40px 20px;
+}
+
+.footer-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 32px;
+  text-align: center;
+}
+
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .footer-nav ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav ul {
+    grid-template-columns: 1fr;
+  }
+}
+/* フッター終わり */
+
+    /* ==============================
+       レスポンシブ（スマホ対応）
+       ============================== */
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      nav{display:none} /* PCメニュー隠す */
+      .menu-btn{display:block} /* ハンバーガー表示 */
+    }
+
+    @media(max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .access{flex-direction:column}
+      .logo img{height:38px}
+    }
+
+    /* よく使う補助クラス */
+    .muted{color:#666;font-size:0.95rem}
+    .small{font-size:0.9rem}
+	  
+	  nav a {
+  color: #000;             /* 通常 */
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+nav a:hover {
+  color: #0D7BE7;          /* ← ポインター時の色 */
+}
+  </style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v17.0">
+</script>
+
+  <!-- ======================================
+       ヘッダー（ロゴ・ナビ・スマホボタン）
+       ====================================== -->
+  <header class="topbar">
+    <div class="inner">
+
+      <!-- ロゴ部分 -->
+      <div class="logo">
+        <img src="images/header_rogo.png" alt="石狩観光協会ロゴ">
+        <div>
+          <div style="font-weight:700"></div>
+          <div class="muted small"></div>
+        </div>
+      </div>
+
+      <!-- PCナビゲーション -->
+      <nav aria-label="メインメニュー">
+        <a href="index.html" style="font-weight:bold;">ホーム</a>
+		<a href="#top" style="font-weight:bold;">新着情報</a>
+        <a href="#event-full" style="font-weight:bold;">イベント</a>
+		<a href="#spots" style="font-weight:bold;">観光スポット</a>
+		<a href="#media" style="font-weight:bold;">動画</a>
+		<a href="#sns-old" style="font-weight:bold;">SNS</a>
+		<a href="#map" style="font-weight:bold;">MAP</a>
+		<a href="#access" style="font-weight:bold;">アクセス</a>
+        <a href="#contact" style="font-weight:bold;">申込等</a>
+		<a href="#link" style="font-weight:bold;">LINK</a>
+      </nav>
+		<div class="translate-wrap">
+
+        <!-- 国旗アイコン -->
+          <div class="lang-flags">
+            <img src="images/flag-japan.png" alt="ja">
+            <img src="images/flag-usa.png" alt="en">
+            <img src="images/flag-china.png" alt="zh-ch">
+            <img src="images/flag-korea.png" alt="ko">
+          </div>
+		<!-- Google翻訳 -->
+		<div id="google_translate_element"></div>
+       </div>
+      <!-- スマホ用ハンバーガーメニュー -->
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+</header>
+	
+<div class="header-slider">
+  <img id="slideA" class="slide is-active" src="images/header_image_01.jpg" alt="">
+  <img id="slideB" class="slide" src="images/header_image_02.jpg" alt="">
+
+  <button class="slider-btn prev">‹</button>
+  <button class="slider-btn next">›</button>
+
+  <div class="slider-dots" id="slider-dots"></div>
+
+<!-- かぶせる文字 -->
+  <div class="header-text">      
+        <h1>鮭の歴史と自然が息づくまち　石狩</h1>
+        <p>Ishikari Tourism</p>
+  </div>
+
+</div>
+
+
+
+  <!-- ======================================
+       MAIN（ページ本体）
+       ====================================== -->
+<!-- ★ 全幅背景エリア -->
+<section class="top-bg">
+  <main class="container" id="top_ishikari">
+<div class="top-visual">
+  <p class="top-vertical-text" id="verticalText"
+     data-text="石狩市は、鮭料理「石狩鍋」発祥の地として知られ、
+古くから鮭とともに歩んできたまちです。
+「紅葉山４９号遺跡」からは、縄文時代の鮭に関わる
+貴重な遺物が出土しており、石狩の歴史と文化の深さ
+を今に伝えています。
+札幌市に隣接する石狩市は、２００５年に旧厚田村・
+旧浜益村と合併し、南北約８０ｋｍにわたる広大な
+エリアを有しています。
+暑寒別天売国定公園をはじめとする豊かな自然に恵ま
+れ、「はまなすの丘公園」ではハマナスをはじめ
+約１８０種の海浜植物が季節ごとに楽しめます。
+また、北海道第１号の「恋人の聖地」に認定された
+「厚田展望台」や、ハート型モニュメントが印象的な
+浜益「ふるさと公園」など、個性あふれる観光スポット
+が市内各地に点在しています。">
+  </p>
+</div>
+
+
+  </main>
+</section>
+	
+<main class="container" id="top">
+	  
+  
+<!-- HEROエリア -->
+  <section class="top">
+  <div class="container">
+
+    <div class="info-area">
+
+      <!-- 左カラム -->
+      <div class="info-left">
+        <h2 class="info-title">Information</h2>
+        <p class="info-sub">新着ニュース</p>
+
+        <a href="information.html" class="info-more">
+          新着ニュースをもっと見る 〉
+        </a>
+      </div>
+
+      <!-- 右カラム -->
+      <div class="info-right">
+
+       <a href="ishikari_lighthouse/ishikari_lighthouse2026.pdf"  target="_blank" class="info-link">
+        <article class="info-item">
+          <div class="info-meta">
+            <time>2026.10.29thu</time>
+            <span class="tag new">NEW</span>
+            <span class="tag">お知らせ</span>
+          </div>
+          <h3>石狩灯台ライトアップDAY【令和8年11月1日（日）】</h3>
+	   
+      <div class="info-body">
+        <div class="info-text">
+          <p>石狩灯台の一般公開（13:00～15:00）や、日没後のライトアップ（16:30頃～18:00）をお楽しみいただけます。<br>
+			  そして、石狩灯台お兄さんが降臨！！
+			  ヴィジターセンター内でライブを開催し、新曲「お兄summer!!!」の披露も予定されています。<br>
+			  さらに、石狩翔陽高校生徒による切り絵ランタン作品展示も開催。16:00～17:45頃には、灯りがともる幻想的な作品をご覧いただけます。</p>
+			<p><span class="text-red">※安全のため、雨天・荒天時は中止となります。<br>
+				※見学は5～6名ずつの完全入れ替え制（約10分）です。<br>
+				※見学希望者多数の場合は、受付を終了する場合があります。<br>
+				※灯台内部の階段は大変急（ほぼ梯子）です。足元に十分ご注意ください。<br>　頂上まで登らず、1階部分のみの見学も可能です。<br>
+				※動きやすい服装でお越しください。スカート・ヒール等はご遠慮ください。<br>
+				※小学生未満のお子様はご参加いただけません。<br>　また小学生のお子様は必ず保護者同伴でご参加ください。<br>
+				 　小学生以上のお子様でも、安全が確保ができないと判断した場合は参加を<br>　ご遠慮いただく場合がございます。<br>
+				※安全のため、足腰に不安のある方のご参加もご遠慮いただいております。<br>
+				※階段やテラスでは、手荷物が落下しないようご注意ください。</span></p>
+        </div>
+		  
+        <div class="info-image">
+		  <a href="ishikari_lighthouse/ishikari_lighthouse2026.pdf" target="_blank" class="beachmap-link">
+          <img src="ishikari_lighthouse/ishikari_lighthouse2026.jpg" alt="石狩灯台ライトアップ"></a>
+        </div>
+      </div>
+        </article></a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </main>
+
+<main class="container" id="event">
+
+
+<section id="event-full" class="event-full">
+	<h2 id="event-title">イベント案内</h2>
+  <div class="event-row">
+
+    <a href="ishikari_lighthouse/ishikari_lighthouse.pdf" target="_blanc" class="event-link">
+	<article class="event-card">
+	  <img src="images/event/ishikari_lighthouse_s.jpg" alt="石狩灯台ライトアップ">
+      <div class="event-text">
+        <time>2026.10.29thu</time>
+        <span class="tag">お知らせ</span>
+		<span class="tag new">NEW</span>
+        <h3>石狩灯台ライトアップDAY</h3>
+        <p>今年度最後の一般公開を<span class="text-red">11月1日</span>に開催します。
+			  普段見る事ができない灯台内部の一般公開、ライトアップは日没～18時迄。石狩灯台の妖精「石狩灯台お兄さん」によるライブを行いますので、ぜひお越しください。</p>
+      </div>
+	</article>
+		</a>
+
+	<!--<a href="festival_hamanasu_day.html" class="event-link">
+    <article class="event-card">
+      <img src="hamanasu_day/kite_fes02.jpg" alt="石狩本町 灯台とハマナスDAY">
+      <div class="event-text">
+        <time>2026.06.07sun</time>
+		<span class="tag">イベント</span>
+        <h3>石狩本町 灯台とハマナスDAY2026</h3>
+        <p>ハマナスが見ごろとなる時期(６月)に本町地区でカイトフェスティバルやはまなすフェスティバル、
+			石狩灯台一般公開等のイベントを同時開催します！</p>
+      </div>
+    </article>
+	</a>-->
+
+	<a href="festival_glay_flower.html" class="event-link">
+    <article class="event-card">
+	  <img src="images/event/glay_flower.jpg" alt="GLAY FLOWER COMMUNICATION">
+      <div class="event-text">
+        <time>2026.06.21sun</time>
+        <span class="tag">イベント</span>
+        <h3>GLAY FLOWER COMMNICATION 花壇造り</h3>
+        <p>2001年に石狩市で開催されたGLAY EXPOの思い出の地にて、GLAYメモリアルモニュメント前の花壇づくりを通し、 
+			ファンの皆さまで大切に守り続けていこうというコンセプトのもと、2002年から実施しております。</p>
+      </div>
+	</article>
+	</a>
+
+	<a href="festival_hamamasu.html" class="event-link">
+    <article class="event-card">
+	  <img src="images/event/hamamasu_fes_s.JPG" alt="浜益ふるさと祭り">
+      <div class="event-text">
+        <time>2026.09.20sun</time>
+        <span class="tag attention">祭り</span>
+		<span class="tag new">NEW</span>
+        <h3>浜益ふるさと祭り</h3>
+        <p>サケをはじめ、浜益自慢の農水畜産物が一同に集合し販売されます。ティラノレース、ビンゴ大会、プレゼント付もちまきなど、イベントも開催します。</p>
+      </div>
+	</article>
+	</a>
+
+	<a href="festival_atsuta.html" class="event-link">
+    <article class="event-card">
+	  <img src="images/event/atsuta_fes_s.JPG" alt="厚田ふるさとあきあじ祭り">
+      <div class="event-text">
+        <time>2026.09.23wed</time>
+		<span class="tag attention">祭り</span>
+		<span class="tag new">NEW</span>
+        <h3>厚田ふるさとあきあじ祭り</h3><span class="text-red">※時化・不漁により内容が変更となる可能性がございます</span>
+        <p>海の幸、山の幸などの厚田のふるさとの味を堪能できるお祭りです。直売をはじめ、
+		  「アキアジ重さ当てクイズ」「クジ付き餅まき」なども開催され、 近隣のまちからもたくさんの人が訪れます。</p>
+      </div>
+	</article>
+	</a>
+    
+	<a href="festival_ishikari.html" class="event-link">
+	<article class="event-card">
+	  <img src="images/event/ishikarisalmon_fes_s.JPG" alt="石狩さけまつり">
+      <div class="event-text">
+        <time>2026.09.26sat-27sun</time>
+        <span class="tag attention">祭り</span>
+		<span class="tag new">NEW</span>
+        <h3>石狩さけまつり</h3><span class="text-red">※時化・不漁により内容が変更となる可能性がございます</span>
+        <p>昭和31年に始まった「鮭の故郷」石狩の一大イベントで、石狩の前浜で獲れた新鮮で格安な
+		   生鮭販売や千人鍋で作る「石狩鍋」、そして豪快な「鮭の掴み取り」は石狩が生んだ名物行事で大変人気です。</p>
+      </div>
+	</article>
+	</a>
+    
+</div>
+	
+</section>
+
+	
+</main>
+	
+<main class="container" id="tourism">
+<!-- 観光スポット -->
+    <section id="spots" aria-labelledby="spots-title">
+      <h2 id="spots-title">主な観光スポット</h2>
+<div class="spot-slider">
+	
+<!-- 前へ / 次へ -->
+  <button class="carousel-btn prev" aria-label="前へ">‹</button>
+  <button class="carousel-btn next" aria-label="次へ">›</button>
+	
+<!-- スライド本体 -->
+<div class="spot-track">
+<div class="spot-card">
+  <a href="flower.html" class="spot-card">
+    <img src="images/tourism/cs01_mizubasho.jpg" alt="水芭蕉">
+    <div class="spot-text">
+      <h3>マクンベツ湿原「水芭蕉」</h3>
+      <p>
+        石狩川河口上流のマクンベツ湿原では、4月中旬にまだ葉をつけていない
+        ハンノキの木立の間に、白く可憐なミズバショウの群生が広がります。
+        平成19年3月、河岸まで直線的に伸びる延長400メートル、幅1メートルの
+        木道が完成。野鳥のさえずりとともに間際での鑑賞が可能です。
+      </p>
+    </div>
+  </a>
+</div>
+
+<div class="spot-card">
+  <a href="flower.html#flower-detail_hamanasu" class="spot-card">
+  <img src="images/tourism/cs02_hamanasu.jpg" alt="はまなすの丘公園">
+  <div class="spot-text">
+    <h3>はまなすの丘公園</h3>
+    <p>日本海と石狩川の交わりに形成された1,500㎡におよぶ砂しに広がる「はまなすの丘公園」。
+約46ヘクタールの公園には180種に及ぶ海浜植物が自生し、このうち16.5ヘクタールは石狩市海浜植物保護地区に指定されています。</p>
+  </div>
+ </a>
+</div>
+<div class="spot-card">
+  <a href="ishikari_beach.html" class="spot-card">
+  <img src="images/tourism/cs03_asobeach.JPG" alt="あそびーち石狩【石狩浜海水浴場】">
+  <div class="spot-text">
+    <h3>あそびーち石狩【石狩浜海水浴場】</h3>
+    <p>札幌市から車で約40分。本町地区にある石狩浜海水浴場（あそびーち石狩）は、年間約20万人もの海水浴客が訪れ、道内屈指の人気を誇る海水浴場です。
+	   約800ｍにもおよぶ海岸線には、キャンプエリアが設置され、トイレ、手洗い場も完備しています。</p>
+  </div>
+  </a>
+</div>
+    <div class="spot-card">
+	<a href="ishikarinabe.html" class="spot-card">
+	<img src="images/tourism/cs04_ishikarinabe.jpg" alt="石狩鍋">
+    <div class="spot-text">
+    <h3>石狩鍋</h3>
+    <p>その名も知れた「石狩鍋」、北海道の郷土料理としておなじみで、石狩市がその発祥の地です。 サケの身のぶつ切りに、中骨などの「あら」を入れ、野菜は、甘みを引き出すためにキャベツやタマネギを使い、豆腐、ツキコンニャクなどの具材が入り味噌を加え、最後に魚の臭みや味噌臭さを抑え、うま味を引き出すために山椒をかけるのが本場の「石狩鍋」。</p>
+    </div>
+	</a>
+</div>
+    <div class="spot-card">
+	<a href="morning_market.html" class="spot-card">
+	<img src="images/tourism/cs05_asaichi.JPG" alt="朝市【石狩・厚田・浜益】">
+    <div class="spot-text">
+    <h3>朝市【石狩・厚田・浜益】</h3>
+    <p>前浜でその日に水揚げされた新鮮な魚介類を浜値で直売しています。
+	   ※時化などの状況により開催しない場合もありますので、お問い合わせされることが確実です。</p>
+	</div>
+	</a>
+</div>
+    <div class="spot-card">
+	<a href="http://aikaze.co.jp/" target="_blank" class="spot-card">
+	<img src="images/tourism/cs06_michinoeki.JPG" alt="道の駅石狩あいろーど厚田">
+    <div class="spot-text">
+    <h3>道の駅石狩 あいろーど厚田</h3>
+    <p>国道231号沿いに初めてできた全国でも珍しい3階建の道の駅。
+	   最上階のデッキフロアからは、雄大な日本海や厚田の街なみを眺めることができます。</p>
+    </div>
+	</a>
+</div>
+
+</div>
+
+  <!-- ★ インジケーターは必ずここ -->
+  <div class="spot-indicator">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+    </section>
+	  
+<!-- 主な観光スポット の直後に追加するブロック -->
+<div>
+	<div style="width:1100px; margin:40px auto 60px auto;">
+
+  </div>
+</div>
+	
+</main>
+<!-- ================================
+   YouTube & バナー
+================================ -->
+<section id="media" class="media-section">
+  <div class="media-inner">
+
+    <!-- YouTube -->
+    <div class="media-card youtube">
+      <h2 class="media-title">【石狩市公式動画】YouTube「石狩お宝探訪」</h2>
+      <div class="youtube-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/DsKAyse-uUE"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- バナー -->
+<div class="media-card banner">
+
+  <div class="banner-top">
+    <a href="https://x.com/sake_taro" target="_blank" rel="noopener">
+      <img src="images/sns/saketaro_x.jpg" alt="さけ太郎 X">
+    </a>
+  </div>
+
+  <div class="banner-bottom">
+    <a href="https://store.shopping.yahoo.co.jp/ishikari-department/" target="_blank">
+      <img src="images/sns/ishikari_department.jpg" alt="石狩観光協会通販サイト「石狩大百貨」">
+    </a>
+  </div>
+
+</div>
+
+  </div>
+</section>
+<section id="sns-bg">
+ <main class="container" id="sns">
+        <!-- Facebook・Instagram埋め込み（SNS） -->
+
+    <!-- ======================================
+     SNS（旧レイアウト：左右2カラム）
+     ====================================== -->
+<section id="sns-old" style="margin-top:40px;">
+	<h2>現地から最新情報をお届け</h2>
+  <div class="container" style="display:flex; gap:30px; justify-content:center;">
+
+    <!-- Facebook カラム -->
+    <div style="width:515px;">
+      <table border="0" width="515" cellpadding="0" cellspacing="0">
+        <tbody>
+
+          <tr></tr>
+          <tr>
+            <td height="450" valign="top">
+              <div class="fb-page"
+                data-href="https://www.facebook.com/ishikari.tourismassociation/"
+                data-show-posts="true"
+                data-width="515"
+                data-height="515	"
+                data-small-header="true"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-show-facepile="true">
+                <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="https://www.facebook.com/ishikari.tourismassociation/">
+                    <a href="https://www.facebook.com/ishikari.tourismassociation/">石狩 観光協会</a>
+                  </blockquote>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Instagram カラム -->
+    <div style="width:515px; text-align:left;">
+      <table border="0" width="515" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr> </tr>
+          <tr></tr>
+          <tr>
+            <td>
+              <!-- SnapWidget -->
+              <iframe 
+                src="https://snapwidget.com/embed/869320" 
+                class="snapwidget-widget" 
+                allowtransparency="true" 
+                frameborder="0" 
+                scrolling="no" 
+                style="border:none; overflow:hidden; width:515px; height:515px">
+              </iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	  
+   </div>
+  </section>
+ </main>
+</section>
+   
+<!-- ======================================
+   厚田livecamera・インスタ・厚田キャンプ場
+ ====================================== -->
+<main class="container" id="livecamera">
+ <!-- 厚田livecamera・厚田キャンプ場-->
+<section id="events" class="events livecam-section" aria-labelledby="events-title">
+
+  <h2 id="events-title" class="section-title">
+    ATSUTA NOW!
+  </h2>
+
+  <div class="livecam-grid">
+<!-- ライブカメラ -->
+    <div class="livecam-card livecam-special">
+      <div class="livecam-label">道の駅石狩 LIVE CAMERA</div>
+      <div class="livecam-image">
+        <img
+          id="video_camera_image"
+          src="https://aikaze.co.jp/data/php/camera_relay.php"
+          alt="道の駅石狩あいろーど厚田Livecamera">
+      </div>
+         <div class="livecam-date" id="livecam-date"></div>
+  <div class="livecam-footer">
+    <div class="livecam-box time">
+      <span id="livecam-time"></span>
+    </div>
+    <div class="livecam-box temp">
+	  <img id="weather-icon" alt="天気アイコン">
+      <span id="livecam-temp">--°</span>
+    </div>
+  </div>
+    </div>
+    <!-- Instagram -->
+    <div class="livecam-card">
+      <h3>厚田 Instagram</h3>
+        <!-- SnapWidget -->
+        <iframe src="https://snapwidget.com/embed/1121818" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:312px; height:312px" title="Posts from Instagram">
+		</iframe>
+    </div>
+<!-- バナー -->
+<div class="livecam-card banner">
+  <a href="https://atsutacamp.snack.chillnn.com/"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="images/livecamera/atsuta_camp.jpg" alt="厚田キャンプ場">
+  </a>
+</div>
+  </div>
+</section>
+</main>
+
+    <section id="map" class="home-section map-section">
+      <div>
+        <h2 class="home-heading1">
+  <picture>
+    <source media="(max-width:640px)" srcset="assets/img/map-title_sp.png">
+    <img src="images/degirtalmap-title.jpg"
+         alt="石狩のデジタルマップでスポットを探す"
+         width="772" height="128">
+  </picture>
+</h2>
+		  
+<div class="nav map-tabnav">
+  <button class="map-tabnav__btn --ishikari active"
+          onclick="changeMap('ishikari', this)">
+  <span>
+    <b>石狩エリア</b>
+    <small>Ishikari Area</small>
+  </span>
+</button>
+
+  <button class="map-tabnav__btn --atsuta"
+          onclick="changeMap('atsuta', this)">
+    <span>
+      <b>厚田エリア</b>
+      <small>Atsuta Area</small>
+    </span>
+  </button>
+
+  <button class="map-tabnav__btn --hamamasu"
+          onclick="changeMap('hamamasu', this)">
+    <span>
+      <b>浜益エリア</b>
+      <small>Hamamasu Area</small>
+    </span>
+  </button>
+</div>
+
+
+
+<div class="map-wrapper">
+  <iframe
+    id="digitalMap"
+    src="https://platinumaps.jp/maps/ishikari-city/@43.241796,141.350125,11-10z"
+    allow="geolocation"
+    style="border:0; background:#fafafa; width:100%; height:610px;"
+    loading="lazy">
+  </iframe>
+</div>
+          </div>
+          
+	  <div>
+        <div class="text-center mb-3">
+          <a href="https://platinumaps.jp/d/ishikari-city/" target="_blank" rel="noopener" class="text-decoration-underline fw-bold">全画面表示はこちらから</a>
+        </div>
+      </div>
+    </section>
+	
+<main class="container" id="access-contact">
+    <!-- アクセス -->
+    <section id="access" aria-labelledby="access-title">
+  <h2 id="access-title">Access</h2>
+
+  <div class="access">
+
+    <!-- 左：住所・連絡先 -->
+    <div class="access-info">
+      <p class="muted">
+        <strong>一般社団法人石狩観光協会</strong><br>
+        〒061-3377 北海道石狩市親船町107番地<br>
+		石狩市観光センター内<br>
+		TEL：<a href="0133624611">0133-62-4611</a>
+      </p>
+    
+	  <p class="muted">
+        車：札樽自動車道「札幌北IC」から車で約40分<br>
+		
+      </p>
+
+<!-- ルートイメージ -->
+<div class="route-image">
+  <img src="images/route_ishikari.png" alt="札幌方面から石狩までのアクセスルート">
+</div>
+
+<!-- デマンド交通案内 -->
+<div class="demand-transport">
+
+  <!-- 左：ロゴ＋説明文 -->
+  <a href="https://www.city.ishikari.hokkaido.jp/kurashi/doro/1001842/1002334.html" target="_blank" rel="noopener" class="demand-info">
+    <img src="images/demand_itsumo.png" alt="デマンド交通 いつも">
+    <p>
+      石狩市では予約制の
+      <strong>デマンド交通</strong>が利用できます。<br>
+      詳しくはこちら
+    </p>
+  </a>
+
+  <!-- 右：チラシ -->
+  <a href="images/demand_hontyouhanakawa.pdf"
+     target="_blank" rel="noopener"
+     class="demand-flyer">
+    <img src="images/demand_flier.jpg" alt="デマンド交通 チラシ">
+    <span>【チラシを見る［PDF］】</span>
+  </a>
+
+</div>
+
+	  </div>
+
+    <!-- 右：アクセス画像 -->
+    <div class="access-image">
+      <img src="images/ishikari_city.png" alt="石狩市位置図">
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- お問い合わせフォーム -->
+   <section id="contact" aria-labelledby="contact-title" class="contact-area">
+  <h2 id="contact-title">各種申請・お申し込み</h2>
+
+  <div class="contact-cards">
+
+    <a href="about_us.html" class="contact-card">
+      <img src="images/contact/about_us.jpg" alt="概要・入会案内">
+      <h3>石狩観光協会[概要]/[入会届]</h3>
+      <p>一般社団法人石狩観光協会「概要」及び「入会のご案内」</p>
+    </a>
+
+    <a href="pamphlet.html" class="contact-card">
+      <img src="images/contact/pamphlet_50selection.jpg" alt="パンフレット申込">
+      <h3>パンフレット申込</h3>
+      <p>観光パンフレットの送付を承ります。</p>
+    </a>
+
+    <a href="saketaro.html" class="contact-card">
+      <img src="images/contact/saketaro_sakeko.jpg" alt="キャラクター使用申請">
+      <h3>キャラクター使用申請</h3>
+      <p>公式キャラクター使用に関する申請。</p>
+    </a>
+
+    <a href="rakuzankyo.html" class="contact-card">
+      <img src="images/contact/rakuzankyo.JPG" alt="楽山居予約">
+      <h3>楽山居 予約申請</h3>
+      <p>施設利用のご予約申請書はこちら。</p>
+    </a>
+
+    <a href="meishi.html" class="contact-card">
+      <img src="images/contact/business_card.jpg" alt="名刺申込み">
+      <h3>名刺申込</h3>
+      <p>石狩市観光名刺の作成申込書。</p>
+    </a>
+	  
+	<a href="factory_tour.html" class="contact-card">
+      <img src="images/contact/factory_tour.jpg" alt="工場見学">
+      <h3>工場見学</h3>
+      <p>石狩市内で工場見学をさせてくれる場所をご紹介します。いずれも事前に予約が必要です。</p>
+    </a>
+	  
+	<a href="jibikiami.html" class="contact-card">
+      <img src="images/contact/jibikiami.jpg" alt="地引網体験">
+      <h3>地引網体験</h3>
+      <p>江戸時代から伝わる伝統漁法「地引網」を石狩浜で体験することができます。</p>
+    </a>
+
+	<a href="sake_tsuri.html" class="contact-card">
+      <img src="images/contact/sake_tsuri.jpg" alt="浜益川サケ有効利用調査">
+      <h3>令和8年度 浜益川サケ有効利用調査[申込]</h3>
+      <p>全国から釣り人が集う、国内でも珍しい大物狙いのサーモンフィッシングです。</p>
+    </a>
+
+  </div>
+</section>
+
+ <section id="link" class="link-collection">
+	
+  <div class="link-collection-inner">
+    <h2>LINK</h2>
+
+    <div class="banner-list">
+
+      <a href="https://www.city.ishikari.hokkaido.jp/" target="_blank">
+        <img src="images/banner/b_ishikari_city.gif" alt="石狩市役所">
+      </a>
+
+      <a href="https://www.ishikari-cci.or.jp/" target="_blank">
+        <img src="images/banner/b_ishikari_cci.gif" alt="石狩商工会議所">
+      </a>
+
+      <a href="https://www.ishikari-kita.com/" target="_blank">
+        <img src="images/banner/b_ishikari_kita.gif" alt="石狩北商工会">
+      </a>
+
+      <a href="http://www.ishikari-shakyo.org/" target="_blank">
+        <img src="images/banner/b_ishikari_shakyo.gif" alt="石狩市社会福祉協議会">
+      </a>
+
+      <a href="https://ishikari-sport.or.jp/" target="_blank">
+        <img src="images/banner/b_ishikari_sports.gif" alt="石狩市スポーツ協会">
+      </a>
+
+      <a href="http://aikaze.co.jp/" target="_blank">
+        <img src="images/banner/b_i_road.gif" alt="道の駅石狩あいろーど厚田">
+      </a>
+
+      <a href="https://www.ishikari-library-unet.ocn.ne.jp/TOSHOW/asp/index.aspx" target="_blank">
+        <img src="images/banner/b_ishikari_library.gif" alt="石狩市民図書館">
+      </a>
+
+      <a href="https://www.ja-sapporo.or.jp/agriculture/store/torenosato/" target="_blank">
+        <img src="images/banner/b_torenosato.gif" alt="JAさっぽろ地物市場とれのさと">
+      </a>
+
+      <a href="http://www.npoiia.jp/" target="_blank">
+        <img src="images/banner/b_ishikari_ia.gif" alt="石狩国際交流協会">
+      </a>
+
+      <a href="https://webc.sjc.ne.jp/ishikari/index" target="_blank">
+        <img src="images/banner/b_ishikari_silver.gif" alt="石狩市シルバー人材センター">
+      </a>
+
+      <a href="https://www.city.ishikari.hokkaido.jp/museum/index.html" target="_blank">
+        <img src="images/banner/b_ishikari_kaze_museum.gif" alt="石狩砂丘の風資料館">
+      </a>
+
+      <a href="https://www.i-eris.tv/" target="_blank">
+        <img src="images/banner/b_eris_ishikari.gif" alt="えりすいしかりネットテレビ">
+      </a>
+
+      <a href="http://www.hamamasu.jp/" target="_blank">
+        <img src="images/banner/b_hamamasu_tourism.gif" alt="浜益観光まちづくり推進協議会">
+      </a>
+
+      <a href="https://ishikarihamanasu.jimdofree.com/" target="_blank">
+        <img src="images/banner/b_hamanasusaisei.gif" alt="はまなす再生プロジェクト">
+      </a>
+
+      <a href="https://www.act-sp.org/ishikariidol/" target="_blank">
+        <img src="images/banner/b_ishikari_idol.gif" alt="石狩アイドルプロジェクト">
+      </a>
+
+    </div>
+ </div>
+</section>
+		
+</main>
+<!-- フッター -->
+<footer class="footer">
+
+<div class="footer-inner">
+<!-- ① 協会情報 -->
+<div>
+<img src="images/footer_rogo.png" width="293" height="44" alt=""/>
+<p>〒061-3377<br>
+  北海道石狩市親船町107番地 石狩市観光センター内<br>
+  TEL：<a href="TEL:0133624611">0133-62-4611</a> / FAX:0133-62-4624<br>
+  E-mail：<a href="mailto:unjouya@muse.ocn.ne.jp">unjouya@muse.ocn.ne.jp</a></p>
+<div class="img-row">
+  <a href="https://www.facebook.com/ishikari.tourismassociation/"><img src="images/footer_facebook.png" alt="石狩観光協会Facebook"></a> <a href="https://www.instagram.com/ishikari_photo"><img src="images/footer_insta.png" alt="石狩観光協会Instagram"></a> <a href="https://x.com/sake_taro"><img src="images/footer_x.png" alt="石狩観光協会X"></a> </div>
+
+<p>© ISHIKARI Tourism Association All Rights Reserved.</p>
+</div>
+
+
+<!-- ② メニュー -->
+<div>
+<h3>Categori</h3>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="#top">新着情報</a></li>
+      <li><a href="#event-full">イベント</a></li>
+      <li><a href="#spots">観光スポット</a></li>
+      <li><a href="#media">公式動画</a></li>
+      <li><a href="#sns-old">SNS</a></li>
+      <li><a href="#map">MAP</a></li>
+      <li><a href="#access">アクセス</a></li>
+      <li><a href="#contact">各種申込</a></li>
+      <li><a href="#link">LINK</a></li>
+    </ul>
+</div>
+
+<!-- ③ メニュー -->
+<div>
+<h3>Application/Experience</h3>
+<ul>
+      <li><a href="pamphlet.html">パンフレット申込</a></li>
+      <li><a href="saketaro.html">キャラクター使用申請</a></li>
+      <li><a href="rakuzankyo.html">楽山居予約申請</a></li>
+      <li><a href="meishi.html">名刺申込</a></li>
+      <li><a href="factory_tour.html">工場見学</a></li>
+      <li><a href="jibikiami.html">地引網体験</a></li>
+</ul>
+</div>
+
+<!-- ④ SNS -->
+<div>
+<h3>SNS</h3>
+<ul>
+<li><a href="https://www.facebook.com/ishikari.tourismassociation/" target="_blank">石狩観光協会Facebook</a></li>
+<li><a href="https://www.instagram.com/ishikari_photo" target="_blank">石狩観光協会Instagram</a></li>
+<li><a href="https://www.instagram.com/asobeach" target="_blank">あそびーち石狩Instagram</a></li>
+<li><a href="https://www.instagram.com/atsutakaihinpool" target="_blank">厚田海浜プールInstagram</a></li>
+<li><a href="https://www.instagram.com/hamamasupirika" target="_blank">はまますピリカ・ビーチInstagram</a></li>
+<li><a href="https://www.instagram.com/flower_ishikari" target="_blank">開花情報Instagram</a></li>
+<li><a href="https://x.com/sake_taro" target="_blank">さけ太郎 X</a></li>
+<li><a href="https://x.com/asobeach_now" target="_blank">あそびーち石狩 X</a></li>
+</ul>
+</div>
+
+
+</div>
+</footer>
+
+
+<style>
+/* フッター全体を全幅＆青背景に */
+.footer {
+width: 100%;
+background: #767676; /* 青 */
+color: #fff;
+padding: 20px 0 30px 0;
+}
+
+
+/* 内側のコンテンツ幅を制限（スライド画像と同幅に） */
+.footer-inner {
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px 20px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 40px;
+text-align: left;
+}
+
+
+.footer h3 {
+margin-bottom: 10px;
+font-size: 18px;
+}
+
+
+.footer ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+
+.footer ul li {
+margin-bottom: 6px;
+}
+
+
+.footer ul li a {
+color: #fff;
+text-decoration: none;
+}
+
+
+.footer ul li a:hover {
+text-decoration: underline;
+}
+
+
+</style>
+  
+
+  <!-- ======================================
+       JavaScript（スマホメニュー制御）
+       ====================================== -->
+  <script>
+    // メニューボタンクリックで開閉
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('nav');
+
+    btn?.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+
+      // 開閉状態の切り替え
+      btn.setAttribute('aria-expanded', String(!open));
+
+      // メニュー展開
+      if(!open){
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.right = '16px';
+        nav.style.top = '64px';
+        nav.style.background = '#fff';
+        nav.style.padding = '12px';
+        nav.style.boxShadow = '0 6px 18px rgba(0,0,0,0.08)';
+        nav.style.borderRadius = '8px';
+      } 
+
+      // 閉じるとき
+      else {
+        nav.style.display = '';
+        nav.style.position = '';
+        nav.style.boxShadow = '';
+      }
+    });
+  </script>
+
+<script>
+const images = [
+  "images/header_image_01.jpg",
+  "images/header_image_02.jpg",
+  "images/header_image_03.jpg",
+  "images/header_image_04.jpg",
+  "images/header_image_05.jpg",
+  "images/header_image_06.jpg",
+  "images/header_image_07.jpg",
+  "images/header_image_08.jpg"
+];
+
+let index = 0;
+let current = "A";
+
+const slideA = document.getElementById("slideA");
+const slideB = document.getElementById("slideB");
+const prevBtn = document.querySelector(".slider-btn.prev");
+const nextBtn = document.querySelector(".slider-btn.next");
+const dotsContainer = document.getElementById("slider-dots");
+
+let timer;
+
+/* インジケーター生成 */
+images.forEach((_, i) => {
+  const dot = document.createElement("button");
+  if (i === 0) dot.classList.add("active");
+  dot.onclick = () => moveTo(i);
+  dotsContainer.appendChild(dot);
+});
+const dots = dotsContainer.querySelectorAll("button");
+
+function updateDots() {
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function moveTo(i) {
+  if (i === index) return;
+
+  const nextIndex = i;
+  const show = current === "A" ? slideB : slideA;
+  const hide = current === "A" ? slideA : slideB;
+
+  show.src = images[nextIndex];
+  show.classList.add("is-active");
+  hide.classList.remove("is-active");
+
+  index = nextIndex;
+  current = current === "A" ? "B" : "A";
+  updateDots();
+  resetTimer();
+}
+
+function next() {
+  moveTo((index + 1) % images.length);
+}
+
+function prev() {
+  moveTo((index - 1 + images.length) % images.length);
+}
+
+prevBtn.onclick = prev;
+nextBtn.onclick = next;
+
+function startTimer() {
+  timer = setInterval(next, 10000);
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  startTimer();
+}
+
+/* 石狩市デジタルMAP */
+slideA.src = images[0];
+slideA.classList.add("is-active");
+startTimer();
+</script>
+
+<script>
+const mapUrls = {
+  ishikari: "https://platinumaps.jp/maps/ishikari-city/@43.241796,141.350125,11-10z",
+  atsuta:   "https://platinumaps.jp/maps/ishikari-city/@43.401131,141.434457,11-10z",
+  hamamasu: "https://platinumaps.jp/maps/ishikari-city/@43.604046,141.383095,11-10z"
+};
+
+function changeMap(area, btn) {
+  document.getElementById("digitalMap").src = mapUrls[area];
+
+  document.querySelectorAll(".map-tabnav__btn").forEach(b => {
+    b.classList.remove("active");
+  });
+
+  btn.classList.add("active");
+}
+
+</script>
+	
+<script>
+/* スライド下石狩管内MAP文字 */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("verticalText");
+  const text = el.dataset.text;
+  el.textContent = "";
+
+  const chars = [...text];
+  chars.forEach(char => {
+    const span = document.createElement("span");
+    span.textContent = char === "\n" ? "\n" : char;
+    el.appendChild(span);
+  });
+
+  const spans = el.querySelectorAll("span");
+  let i = 0;
+
+  function showChar() {
+    if (i >= spans.length) return; // ← ループしない
+    spans[i].classList.add("show");
+    i++;
+    setTimeout(showChar, 35); // ← 表示スピード（小さいほど速い）
+  }
+
+  showChar();
+});
+</script>
+
+<script>
+/* 石狩市三大秋祭り等イベント紹介 */
+new Swiper('.event-swiper', {
+  loop: true,
+  spaceBetween: 24,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1200: {
+      slidesPerView: 5
+    }
+  }
+});
+</script>
+
+<script>
+/* spotcardスライド+インジケーター */
+document.addEventListener('DOMContentLoaded', () => {
+
+  const track = document.querySelector('.spot-track');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const indicators = document.querySelectorAll('.spot-indicator span');
+
+  let cards = document.querySelectorAll('.spot-card');
+
+  // クローン作成
+  const firstClone = cards[0].cloneNode(true);
+  const lastClone = cards[cards.length - 1].cloneNode(true);
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, cards[0]);
+
+  const allCards = document.querySelectorAll('.spot-card');
+
+  let index = 1;
+
+  function getCardWidth(){
+    const gap = parseInt(getComputedStyle(track).gap) || 0;
+    return allCards[0].offsetWidth + gap;
+  }
+
+  track.style.transform = `translateX(${-getCardWidth() * index}px)`;
+
+  function slide(){
+    track.style.transition = 'transform 0.6s ease';
+    track.style.transform = `translateX(${-getCardWidth() * index}px)`;
+    updateIndicator();
+  }
+
+  nextBtn.addEventListener('click', ()=>{
+    index++;
+    slide();
+  });
+
+  prevBtn.addEventListener('click', ()=>{
+    index--;
+    slide();
+  });
+
+  track.addEventListener('transitionend', ()=>{
+    if(index === allCards.length-1){
+      track.style.transition='none';
+      index = 1;
+      track.style.transform = `translateX(${-getCardWidth()*index}px)`;
+    }
+    if(index === 0){
+      track.style.transition='none';
+      index = allCards.length-2;
+      track.style.transform = `translateX(${-getCardWidth()*index}px)`;
+    }
+  });
+
+  function updateIndicator(){
+    indicators.forEach(i=>i.classList.remove('active'));
+
+    let realIndex = index-1;
+    if(realIndex<0) realIndex = indicators.length-1;
+    if(realIndex>=indicators.length) realIndex = 0;
+
+    indicators[realIndex].classList.add('active');
+  }
+
+  window.addEventListener('resize', ()=>{
+    track.style.transition='none';
+    track.style.transform = `translateX(${-getCardWidth()*index}px)`;
+  });
+
+});
+</script>
+
+
+<script>
+/* SNSライブカメラ */
+const video_element = document.getElementById('video_camera_image');
+
+const image_reload = function() {
+  video_element.src =
+    'https://aikaze.co.jp/data/php/camera_relay.php?t='
+    + Math.random();
+}
+
+setInterval(image_reload, 1000);
+</script>
+
+<script>
+/* 厚田livecamera時計・温度 */
+function updateDateTime() {
+  const now = new Date();
+
+  // 日付（例：2026.01.13 Tue）
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const dateText =
+    now.getFullYear() + '.' +
+    String(now.getMonth() + 1).padStart(2, '0') + '.' +
+    String(now.getDate()).padStart(2, '0') + ' ' +
+    days[now.getDay()];
+
+  // 時刻（例：pm 02:26）
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12 || 12;
+
+  const timeText = `${ampm} ${String(hours).padStart(2, '0')}:${minutes}`;
+
+  document.getElementById('livecam-date').textContent = dateText;
+  document.getElementById('livecam-time').textContent = timeText;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+<script>
+const API_KEY = "b5055d0ce1a2e9ffa9ce63bd06eb1365";
+const url = `https://api.openweathermap.org/data/2.5/weather?q=Ishikari,jp&units=metric&lang=ja&appid=${API_KEY}`;
+
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("livecam-temp").textContent =
+      Math.round(data.main.temp) + "℃";
+
+    const icon = data.weather[0].icon;
+    document.getElementById("weather-icon").src =
+      `https://openweathermap.org/img/wn/${icon}.png`;
+  });
+</script>
+
+
+<script>
+  document.getElementById("livecam-temp").textContent = "23℃";
+</script>
+
+<script>
+/* ヘッダー半透明 */
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".topbar");
+    if (window.scrollY > 50) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  });
+</script>
+
+<script type="text/javascript">
+/* Google翻訳script */
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'ja',
+      includedLanguages: 'en,zh-CN,zh-TW,ko',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+	document.querySelectorAll('.lang-flags img').forEach(flag => {
+  flag.addEventListener('click', () => {
+    const lang = flag.alt; // en, zh-CN など
+    document.querySelector('.goog-te-combo').value = lang;
+    document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
+  });
+});
+
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+</body>
+
+</html>

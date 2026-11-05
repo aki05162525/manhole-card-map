@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>亀山市立図書館 | 亀山市</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/_themes/asset/slick/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="/_themes/asset/slick/slick.css"/>
+
+<link rel="alternate stylesheet" href="/_themes/asset/colors/white.css" title="white" />
+<link rel="alternate stylesheet" href="/_themes/asset/colors/blue.css" title="blue" />
+<link rel="alternate stylesheet" href="/_themes/asset/colors/black.css" title="black" />
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/_themes/js/jquery-migrate.min.js"></script>
+
+<script src="/_themes/js/common.js"></script>
+
+<script src="/_themes/js/jquery.cookie.js"></script>
+<script src="/_themes/asset/js/navigation.js"></script>
+
+<script>
+$(function() {
+Navigation.initialize({
+theme : { '#themeBlack' : 'black', '#themeBlue': 'blue', '#themeWhite' : 'white' },
+fontSize: { '#fontMiddleNew': '10px', '#fontLargeNew' : '12px' },
+notice : '#headerBody',
+ruby : '#navigationRuby',
+talk : '#navigationTalk',
+player : '#navigationTalkPlayer'
+});
+
+  $('a.rubyOn').text('ふりがなをはずす');
+  $('#navigationTalk').on('click',function(e){
+    e.preventDefault();
+    if($(this).hasClass("active")){
+      $(this).text('よみあげる');
+    } else {
+      $(this).text('よみあげ中');
+    }
+    $(this).toggleClass('active');
+  });
+});
+</script>
+<link rel="stylesheet" href="/_themes/asset/css/lib-style.css" />
+    
+<link rel="stylesheet" href="/_common/assets/vendor-e7d78e8a.css" />
+<script src="/_common/assets/vendor-191fcd61.js"></script>
+<link rel="stylesheet" href="/_common/assets/common-2305d2b7.css" />
+<script src="/_common/assets/common-fd377dbb.js"></script>
+<link rel="stylesheet" href="/_common/assets/public-4b7c3c44.css" />
+<script src="/_common/assets/public-f5bd4790.js"></script>
+
+  
+</head>
+<body id="page-library-index" class="dir-library">
+    	<header class="container">
+		<div class="row">
+			<h1 class="col-12 col-md-3"><a href="/"><img src="/_themes/asset/images/logo.png" alt="亀山市"></a></h1>
+			<span id="blockskip"><a href="#top">このページの本文へ移動</a></span>
+			<div class="col-12 col-md d-flex align-items-center justify-content-end">
+				<div class="row">
+					<div class="col-auto d-none d-md-block">
+						<a class="hbtn dd" data-toggle="collapse" href="#vsupport" role="button" aria-expanded="false" aria-controls="vsupport">閲覧支援</a>
+					</div>
+					<div class="col-auto d-none d-md-block">
+						<a class="hbtn dd" data-toggle="collapse" href="#flang" role="button" aria-expanded="false" aria-controls="flang">Foreign Language</a>
+					</div>
+					<div class="col-auto d-sm-none">
+						<div class="hamburger-menu">
+							<input type="checkbox" id="menu-btn-check">
+							<label for="menu-btn-check" class="menu-btn"><span></span></label>
+							<div class="menu-content">
+								<nav class="container">
+									<h2>Foreign Language</h2>
+									<ul class="row px-5">
+										<li class="col-6"><a href="/docs/2014112303322/en.html">English</a></li>
+										<li class="col-6"><a href="/docs/2014112303339/es.html">Español</a></li>
+										<li class="col-6"><a href="/docs/2014112303360/po.html">Português</a></li>
+										<li class="col-6"><a href="/docs/2014112303315/cn.html">中国語</a></li>
+										<li class="col-12"><a href="/docs/2018111900018/">やさしいにほんご</a></li>
+									</ul>
+								</nav>
+					        	</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="col-12 d-flex align-items-center justify-content-end">
+				<div class="row">
+					<div class="collapse col-auto" id="vsupport"><span id="navigationTalkPlayer"></span>
+						<div>
+							<div class="txtsize">
+								<i class="fas fa-font"></i>文字の大きさ
+								<div class="btn-group btn-toolbar" role="toolbar" aria-label="Toolbar">
+									<a class="btn" href="#fontMiddleNew" id="fontMiddleNew" title="標準の文字サイズに戻す">標準</a>
+									<a class="btn txtl" href="#fontLargeNew" id="fontLargeNew" title="文字のサイズを大きくする">拡大</a>
+								</div>
+							</div>
+							<div class="bgcolor">
+								<i class="fas fa-fill-drip"></i>背景色
+								<div class="btn-group btn-toolbar" role="toolbar" aria-label="Toolbar">
+									<a class="btn black" href="#themeBlack" id="themeBlack" title="背景色を黒にする">黒</a>
+									<a class="btn blue" href="#themeBlue" id="themeBlue" title="背景色を青にする">青</a>
+									<a class="btn white" href="#themeWhite" id="themeWhite" title="背景色を白にする">白</a>
+								</div>
+							</div>
+							<div class="voice"><i class="fas fa-book-reader"></i><a href="#navigationRuby" id="navigationRuby">ふりがなをつける</a></div>
+							<div class="voice"><i class="fas fa-volume-up"></i><a href="#navigationTalk" id="navigationTalk">音声読み上げ</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 d-flex align-items-center justify-content-end">
+				<div class="row">
+					<div class="collapse col-auto" id="flang">
+						<div><i class="fas fa-globe-asia"></i>Language <div class="bg"><a href="/docs/2014112303322/en.html">English</a>　<a href="/docs/2014112303339/es.html"> Español</a>　<a href="/docs/2014112303360/po.html">Português</a>　<a href="/docs/2014112303315/cn.html">中国語</a>　<a href="/docs/2018111900018/">やさしいにほんご</a></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+<a id="top"></a>
+
+	<section id="contets">
+		<article class="container">
+			<div class="row">
+				
+				<div class="col-12 col-lg-3 order-2 order-lg-1">
+					<aside>
+						<h1 class="forpc"><img src="/_themes/asset/library/images/title-side.png" alt="亀山市立図書館"></h1>
+
+						<div class="bana">
+							<a href="https://www.lics-saas.nexs-service.jp/kameyama/webopac/index.do" class="full" target="_blank"><i class="fas fa-search"></i><span>蔵書検索</span></a>
+						</div>
+						<div class="bana">
+							<a href="/library/article/2015080600024/" class="full"><i class="fas fa-file-signature"></i><span>申込書<br class="d-none d-lg-block d-xl-none">ダウンロード</span></a>
+						</div>
+						<div class="bana">
+							<a href="/library/event/" class="full"><i class="far fa-calendar-alt"></i><span>イベント<br class="d-none d-lg-block d-xl-none">カレンダー</span></a>
+						</div>
+<div id="close">
+						<h2>休館日カレンダー</h2>
+<div id="calendar" class="piece">
+						<h3>亀山市立図書館</h3>
+
+<div id="gyoCalKameyama" class="piece"
+     data-controller="biz-calendar--public--piece--calendars"
+     data-serial-id="cms_pieces-51">
+  <div class="pieceContainer">
+    <div class="pieceBody">
+          <section class="month november">
+      <h2>11月</h2>
+      <table>
+    <thead class="wdays">
+      <tr>
+        <th scope="col" class="wday sun">日</th>
+        <th scope="col" class="wday mon">月</th>
+        <th scope="col" class="wday tue">火</th>
+        <th scope="col" class="wday wed">水</th>
+        <th scope="col" class="wday thu">木</th>
+        <th scope="col" class="wday fri">金</th>
+        <th scope="col" class="wday sat">土</th>
+      </tr>
+    </thead>
+    <tbody class="days">
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">1</p>
+          </td>
+          <td class="day mon">
+            <p class="date">2</p>
+          </td>
+          <td class="day tue">
+            <p class="date">3</p>
+          </td>
+          <td class="day wed closeday">
+            <p class="date">4</p>
+          </td>
+          <td class="day thu">
+            <p class="date">5</p>
+          </td>
+          <td class="day fri">
+            <p class="date">6</p>
+          </td>
+          <td class="day sat">
+            <p class="date">7</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">8</p>
+          </td>
+          <td class="day mon">
+            <p class="date">9</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">10</p>
+          </td>
+          <td class="day wed">
+            <p class="date">11</p>
+          </td>
+          <td class="day thu">
+            <p class="date">12</p>
+          </td>
+          <td class="day fri">
+            <p class="date">13</p>
+          </td>
+          <td class="day sat">
+            <p class="date">14</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">15</p>
+          </td>
+          <td class="day mon">
+            <p class="date">16</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">17</p>
+          </td>
+          <td class="day wed">
+            <p class="date">18</p>
+          </td>
+          <td class="day thu">
+            <p class="date">19</p>
+          </td>
+          <td class="day fri">
+            <p class="date">20</p>
+          </td>
+          <td class="day sat">
+            <p class="date">21</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">22</p>
+          </td>
+          <td class="day mon">
+            <p class="date">23</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">24</p>
+          </td>
+          <td class="day wed">
+            <p class="date">25</p>
+          </td>
+          <td class="day thu">
+            <p class="date">26</p>
+          </td>
+          <td class="day fri closeday">
+            <p class="date">27</p>
+          </td>
+          <td class="day sat">
+            <p class="date">28</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">29</p>
+          </td>
+          <td class="day mon">
+            <p class="date">30</p>
+          </td>
+          <td class="day tue nextMonth closeday">
+            <p class="date">1</p>
+          </td>
+          <td class="day wed nextMonth">
+            <p class="date">2</p>
+          </td>
+          <td class="day thu nextMonth">
+            <p class="date">3</p>
+          </td>
+          <td class="day fri nextMonth">
+            <p class="date">4</p>
+          </td>
+          <td class="day sat nextMonth">
+            <p class="date">5</p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+
+    </section>
+    <section class="month december">
+      <h2>12月</h2>
+      <table>
+    <thead class="wdays">
+      <tr>
+        <th scope="col" class="wday sun">日</th>
+        <th scope="col" class="wday mon">月</th>
+        <th scope="col" class="wday tue">火</th>
+        <th scope="col" class="wday wed">水</th>
+        <th scope="col" class="wday thu">木</th>
+        <th scope="col" class="wday fri">金</th>
+        <th scope="col" class="wday sat">土</th>
+      </tr>
+    </thead>
+    <tbody class="days">
+      <tr class="week">
+          <td class="day sun prevMonth">
+            <p class="date">29</p>
+          </td>
+          <td class="day mon prevMonth">
+            <p class="date">30</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">1</p>
+          </td>
+          <td class="day wed">
+            <p class="date">2</p>
+          </td>
+          <td class="day thu">
+            <p class="date">3</p>
+          </td>
+          <td class="day fri">
+            <p class="date">4</p>
+          </td>
+          <td class="day sat">
+            <p class="date">5</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">6</p>
+          </td>
+          <td class="day mon">
+            <p class="date">7</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">8</p>
+          </td>
+          <td class="day wed">
+            <p class="date">9</p>
+          </td>
+          <td class="day thu">
+            <p class="date">10</p>
+          </td>
+          <td class="day fri">
+            <p class="date">11</p>
+          </td>
+          <td class="day sat">
+            <p class="date">12</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">13</p>
+          </td>
+          <td class="day mon">
+            <p class="date">14</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">15</p>
+          </td>
+          <td class="day wed">
+            <p class="date">16</p>
+          </td>
+          <td class="day thu">
+            <p class="date">17</p>
+          </td>
+          <td class="day fri">
+            <p class="date">18</p>
+          </td>
+          <td class="day sat">
+            <p class="date">19</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">20</p>
+          </td>
+          <td class="day mon">
+            <p class="date">21</p>
+          </td>
+          <td class="day tue closeday">
+            <p class="date">22</p>
+          </td>
+          <td class="day wed">
+            <p class="date">23</p>
+          </td>
+          <td class="day thu">
+            <p class="date">24</p>
+          </td>
+          <td class="day fri closeday">
+            <p class="date">25</p>
+          </td>
+          <td class="day sat">
+            <p class="date">26</p>
+          </td>
+      </tr>
+      <tr class="week">
+          <td class="day sun">
+            <p class="date">27</p>
+          </td>
+          <td class="day mon">
+            <p class="date">28</p>
+          </td>
+          <td class="day tue closeday closeday">
+            <p class="date">29</p>
+          </td>
+          <td class="day wed closeday">
+            <p class="date">30</p>
+          </td>
+          <td class="day thu closeday">
+            <p class="date">31</p>
+          </td>
+          <td class="day fri nextMonth closeday">
+            <p class="date">1</p>
+          </td>
+          <td class="day sat nextMonth closeday">
+            <p class="date">2</p>
+          </td>
+      </tr>
+  </tbody>
+</table>
+
+    </section>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="example"><i class="fas fa-square"></i>休館日</div>					
+<!-- end .piece --></div>
+</div>
+
+						<nav>
+							<a href="/library/article/2014122100256/" class="btn">亀山っ子読書推進プラン</a>
+                                                        <a href="/library/article/2014122100225/" class="btn">図書館ができるまで</a>
+							<a href="/library/article/2021062900013/" class="btn">ちいさなお話</a>
+							<a href="/library/article/2020043000100/" class="btn">リンク集</a>
+						</nav>
+
+						<div class="bana">
+							<a href="http://www.library.pref.mie.lg.jp/?active_action=v3search_view_main_init&block_id=127&tab_num=2" target="_blank"><img src="/_themes/asset/library/images/bana-milai.png" alt="三重県内横断検索"></a>
+						</div>
+					</aside>
+				</div>
+
+				<div class="post col-12 col-lg-9 order-1 order-lg-2">
+						<h1 class="forsp"><img src="/_themes/asset/library/images/title-side.png" alt="亀山市立図書館"></h1>
+
+					<div class="mainv">
+						<div><img src="/_themes/asset/library/images/slide1.jpg" alt="図書館の外観"></div>
+						<div><img src="/_themes/asset/library/images/slide2.jpg" alt="館内"></div>
+						<div><img src="/_themes/asset/library/images/slide3.jpg" alt="児童室"></div>
+						<div><img src="/_themes/asset/library/images/slide4.jpg" alt="新しい図書館"></div>
+					</div>
+	<section id="topics" class="container">
+		<div class="row">
+			<div class="col-12 px-0">
+				<div class="gsearch">
+					<form id="cse-search-box" action="https://google.com/cse">
+					<input type="hidden" name="cx" value="011627259443317743218:iqbhzaoske4" />
+					<input type="hidden" name="ie" value="UTF-8" />
+					<input id="gform" type="text" name="q" placeholder="&#xf002;サイト内検索" />
+					<input id="gbtn" type="submit" name="sa" value="検索">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div id="toptab" class="piece"
+     data-controller="gp-category--public--piece--recent-tabs"
+     data-serial-id="cms_pieces-76">
+  <div class="pieceContainer">
+    <div class="pieceBody">
+      <nav class="tabs" data-gp-category--public--piece--recent-tabs-target="tab">
+  <ul>
+      <li class="top-news current"><a href="#top-news">お知らせ</a></li>
+      <li class="top-osusume"><a href="#top-osusume">おすすめ本・新着本</a></li>
+  </ul>
+</nav>
+
+<div class="wrapper">
+  <div class="content" data-gp-category--public--piece--recent-tabs-target="content">
+      <ul id="top-news" class="top-news">
+          <li>
+            <span class="title_link"><a href="/library/article/2026102300013/">入札公告（令和8年10月28日）亀山市立図書館運営業務委託（公募型プロポーザル）</a></span>（<span class="update_date">2026 年10月29 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026102500017/">図書館イベント（11月）</a></span>（<span class="update_date">2026 年10月28 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026100800034/"> キャンドルナイトコンサートVOL.2　～絵本と音楽でめぐる物語の世界～</a></span>（<span class="update_date">2026 年10月28 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026102200030/">電子図書館サービスの再開に関するお知らせ</a></span>（<span class="update_date">2026 年10月27 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026102200023/">ｗeb座席予約システムの再開に関するお知らせ</a></span>（<span class="update_date">2026 年10月27 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026093000015/">講演会「図書館は、誰かの『困った』から始まる～本と人をつなぎ、地域をつなぐ図書館へ～」</a></span>（<span class="update_date">2026 年10月05 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2026091800051/">読書交流会～本でつながる時間～</a></span>（<span class="update_date">2026 年09月28 日</span>）
+          </li>
+      </ul>
+      <ul id="top-osusume" class="top-osusume" style="display: none;">
+          <li>
+            <span class="title_link"><a href="/library/article/2022062200011/">図書館のおすすめ本（令和4年7～8月）</a></span>（<span class="update_date">2022 年07月06 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2022042900016/">図書館のおすすめ本（令和4年5～6月）</a></span>（<span class="update_date">2022 年05月06 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2022040600017/">図書館のおすすめ本（令和4年3～4月）</a></span>（<span class="update_date">2022 年04月21 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2022010700235/">図書館のおすすめ本（令和4年1～2月）</a></span>（<span class="update_date">2022 年01月11 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2021121900060/">図書館のおすすめ本（令和3年11～12月）</a></span>（<span class="update_date">2021 年12月20 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2021091800018/">図書館のおすすめ本（令和3年9～10月）</a></span>（<span class="update_date">2021 年09月21 日</span>）
+          </li>
+          <li>
+            <span class="title_link"><a href="/library/article/2021081200057/">図書館のおすすめ本（令和3年7～8月）</a></span>（<span class="update_date">2021 年08月23 日</span>）
+          </li>
+      </ul>
+  </div>
+
+  <div class="links" data-gp-category--public--piece--recent-tabs-target="link">
+      <div class="top-news">
+          <ul class="feed">
+            <li><a title="RSSフィードを取得" class="feedRss" href="/categories/lib/news/index.rss">RSS</a></li>
+            <li><a title="Atomフィードを取得" class="feedAtom" href="/categories/lib/news/index.atom">Atom</a></li>
+          </ul>
+          <div class="more"><a href="/categories/lib/news/more.html">一覧はこちら</a></div>
+      </div>
+      <div class="top-osusume" style="display: none;">
+          <ul class="feed">
+            <li><a title="RSSフィードを取得" class="feedRss" href="/categories/lib/book/index.rss">RSS</a></li>
+            <li><a title="Atomフィードを取得" class="feedAtom" href="/categories/lib/book/index.atom">Atom</a></li>
+          </ul>
+          <div class="more"><a href="/categories/lib/book/more.html">一覧はこちら</a></div>
+      </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+					<div class="row centernav">
+						<dvi class="box col-12 col-lg-6 mb-5">
+							<div class="lg box1">
+								<ul>
+									<li>利用案内
+										<ul>
+											<li><a href="/library/article/2023020700031/">利用者登録(変更・更新)</a></li>
+											<li><a href="/library/article/2023020700048/">本を借りる・返す</a></li>
+											<li><a href="/library/article/2023011900013/">各種サービス</a></li>
+											<li><a href="/library/article/2023012500069/">施設案内</a></li>											
+											<li><a href="/library/article/2023020700024/">駐車場</a></li>
+										</ul></li>
+								</ul>
+							</div>
+						</dvi>
+						<div class="box col-12 col-lg-6 mb-5">
+							<div class="mb-3 box6">
+								<ul>
+									<li><a href="https://www.lics-saas.nexs-service.jp/kameyama/webopac/index.do" target="_blank">蔵書検索・予約</a></li>
+								</ul>
+							</div>
+							<div class="mb-3 box2">
+								<ul>
+									<li><a href="https://www.lics-saas.nexs-service.jp/kameyama/webopac/usermenu.do" target="_blank">利用照会</a></li>
+								</ul>
+							</div>
+							<div class="mb-3 box7">
+								<ul>
+									<li><a href="https://ebwebreserve.tackport.co.jp/eboothweb_kmym/areainfo/login" target="_blank">座席予約</a></li>
+								</ul>
+							</div>
+							<div class="mb-3 box3">
+								<ul>
+									<li><a href="/library/article/2014122100232/">こどものページ</a></li>
+								</ul>
+							</div>
+							<div class="box5">
+								<a href="https://web.d-library.jp/kameyama/g0101/top/" target="_blank"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="access row">
+						<div class="col-12">
+							<h2 class="time">図書館の開館時間・場所</h2>
+　　　　　　　　　　　　　　　　　　　　<p><strong>開館時間</strong>　　午前9時～午後8時
+　　　　　　　　　　　　　　　　　　　　<br>※1階展示交流エリアと地下駐車場は午後9時まで。
+　　　　　　　　　　　　　　　　　　　　<br>※図書館閉館後および休館日は、正面玄関および地下駐車場出入口をご利用ください。
+                                               　　　<p><strong>場所</strong>　　　　〒519-0155　亀山市御幸町318番地1                                               　　　
+　　　　　　　　　　　　　　　　　　　  <p><strong>休館日</strong>　　　火曜日（祝日の場合は翌日）、第4金曜日、年末年始、図書特別整理期間<br>　　　　　　<a href="https://www.lics-saas.nexs-service.jp/kameyama/webopac/library.do" target="_blank">詳しい休館日はこちら</a>
+　　　　　　　　　　　　　　　　　　<p><strong>専用駐車場利用時間</strong><br>　地下駐車場：開館日の午前9時～午後9時（有料）<br>　周辺専用駐車場：開館日の午前9時～午後8時<br>　<a href="https://www.google.com/maps/place/%E4%BA%80%E5%B1%B1%E5%B8%82%E7%AB%8B%E5%9B%B3%E6%9B%B8%E9%A4%A8%E5%B0%82%E7%94%A8%E9%A7%90%E8%BB%8A%E5%A0%B4(P2)/@34.8510031,136.4480992,18z/data=!4m9!1m2!2m1!1z5LqA5bGx5biC56uL5Zuz5pu46aSo44CA6aeQ6LuK5aC0!3m5!1s0x6003f55856e53e25:0xec6c7982cd35b138!8m2!3d34.8510031!4d136.4492461!15sCiHkuoDlsbHluILnq4vlm7Pmm7jppKjjgIDpp5Dou4rloLSSARRwdWJsaWNfcGFya2luZ19zcGFjZeABAA" target="_blank">詳しい地図はこちら</a></p>
+						</div>
+
+<div class="contentPage" data-serial-id="cms_nodes-234">
+  <div class="body">
+    
+  </div>
+  
+  
+</div>
+
+
+　　　　　　　　　　　　　 　<div class="row support">
+　　　　　　　　　　　　　　 <div class="col-12">
+							<h3>このページについてのお問い合わせ先</h3>
+							<p>亀山市立図書館　〒519-0155　三重県亀山市御幸町318番地1　<a href="https://www.google.com/maps/place/%E4%BA%80%E5%B1%B1%E5%B8%82%E7%AB%8B%E5%9B%B3%E6%9B%B8%E9%A4%A8/@34.8508094,136.448325,17z/data=!3m1!4b1!4m5!3m4!1s0x6003f40658ff923d:0x31fb63b977eafa7e!8m2!3d34.8508094!4d136.4505137" target="_blank">詳しい地図はこちら</a><br>
+								TEL：0595-82-0542　FAX：0595-82-0554　E-mail:<a href="mailto:wakaba02@zc.ztv.ne.jp">wakaba02@zc.ztv.ne.jp</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+	<footer class="container-fluid">
+		<div class="container cityinfo">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<div class="row">
+						<div class="col-12 col-lg-7">
+							<img src="/_themes/asset/images/footer-logo.png" alt="亀山市">
+							<span class="hojinnumber uk-text-bottom">法人番号：9000020242101</span>
+							<p>〒519-0195 三重県亀山市本丸町577番地<br><a href="/shisei/2014112311174/renraku.html">各部・課の問い合わせ先はこちら</a></p>
+						</div>
+						<div class="btns">
+							<div class="row">
+								<a href="/docs/2021032500083/" class="abtn">アクセス</a>
+								<a href="/shisei/2014112311167/" class="abtn">部局案内</a>
+							</div>
+						</div>
+					</div>
+					<h2>開庁時間</h2>
+					<p class="open">月曜日から金曜日の午前8時30分から午後5時15分まで(祝日・休日・12月29日から1月3日を除く)<br>※一部の業務においては、<a href="/docs/2020020700016/">日曜窓口</a>（8時30分から正午まで）を行っています。</p>
+				</div>
+				<div class="col px-0 text-right">
+					<img src="/_themes/asset/images/footer-map.png" alt="亀山市の地図">
+				</div>
+				<div class="col px-0 align-self-end data">
+<dl class="row">
+<caption>亀山市の人口・世帯数</caption>
+<dt class="col-6 px-0">総人口：</dt>
+<dd class="col-6 px-0">48,823人</dd>
+<dt class="col-6 px-0">世帯数：</dt>
+<dd class="col-6 px-0">22,860世帯</dd>
+<dt class="col-6 px-0">男性：</dt>
+<dd class="col-6 px-0">24,691人</dd>
+<dt class="col-6 px-0">女性：</dt>
+<dd class="col-6 px-0">24,132人</dd>
+</dl>
+<span>（令和8年11月1日現在）</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<footer id="copyright" class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="footnav col-12 col-md-7">
+					<a href="/sitemap.html"><i class="fas fa-arrow-alt-circle-right"></i>サイトマップ</a><a href="/docs/2014110900509/"><i class="fas fa-arrow-alt-circle-right"></i>個人情報の取扱い</a><a href="/docs/2014110900493/"><i class="fas fa-arrow-alt-circle-right"></i>サイトポリシー</a><a href="/docs/2014112312850/"><i class="fas fa-arrow-alt-circle-right"></i>リンク集</a>
+				</div>
+				<div class="copy col-12 col-md-5 text-right">
+					<p>Copyright (c) 2021 Kameyama City AllRights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/_themes/asset/slick/slick.min.js"></script>
+
+<script src="/_themes/asset/js/main.js"></script>
+<script src="/_common/js/bowser.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RFVW26ZXL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RFVW26ZXL8');
+</script>
+
+
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=1645376070" async></script></body>
+</html>

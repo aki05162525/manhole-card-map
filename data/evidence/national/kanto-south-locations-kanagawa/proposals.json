@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "proposals": [
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "kind": "relocation-review-required",
+      "cardId": "14-210-A001",
+      "note": "公式配布案内は旧第2分館を指す一方、公式2024年公表に令和8年4月移転計画あり。実施・新しい配布窓口が未確定。旧facilityの座標や配布関係は変更しない。",
+      "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/seisakuka/seisakuka_hisho/shichonoheya/pressrelease/202403/2024030401.html",
+      "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/62e69fb0574a163b1490.html",
+      "snapshotSHA256": "b571efe5a1eafd6d4a25e83037913d927467566155f740efbe33f8b854527e36",
+      "actorType": "ai",
+      "verificationMethod": "AIによる公式文書間の記載照合。現地確認ではない。"
+    }
+  ]
+}

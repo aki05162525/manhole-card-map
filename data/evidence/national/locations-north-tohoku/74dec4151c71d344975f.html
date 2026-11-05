@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0, initial-scale=no">
+<title>YO-TASHI - 川内村公式ホームページ</title>
+<link rel="stylesheet" href="skin/common/css/global.css" type="text/css" media="all">
+<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script>
+var gmConfig = {
+	lat: 37.32951296847928,
+	lng: 140.8215844631195,
+	zoom: 15,
+	lang: 'ja',
+	ID: 'gmap',
+	sensor: true,
+	streetView: true,
+	directions: true,
+	marker: {
+		'title': 'YO-TASHI'
+	},
+	iw: {
+		'content': '<div class="mapInfoWindow"><div class="mapInfoWindowTitle">YO-TASHI</div><div class="mapInfoWindowContents"><p>クリーニング屋さん、ファミリーマートさん、薬局、食堂などが入っています。</p><p>フリーwi-fiが利用できます。</p><p><a href=\"https://www.kawauchimura.jp/page/page000185.html\" target=\"_blank\">詳しくはこちら</a><span class=\"icon_blank\">（新しいウインドウで開きます）</span></p></div></div>'
+	}
+}
+
+google.maps.event.addDomListener(window, 'load', mapsLoaded);
+
+var marker,map,latlng,infoWin;
+var currentLatlng = nearLatlng = '';
+var direction_html = {};
+var getCurrentFlag = 0;
+
+function mapsLoaded() {
+	latlng = new google.maps.LatLng(gmConfig.lat, gmConfig.lng);
+	var myOptions = {
+		zoom: gmConfig.zoom,
+		center: latlng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		streetViewControl:gmConfig.streetView
+	};
+
+	map = new google.maps.Map(document.getElementById(gmConfig.ID), myOptions);
+
+	// 現在地取得
+	var positionOptions = {
+		enableHighAccuracy: true
+	};
+	var geo = navigator.geolocation || google.gears.factory.create('beta.geolocation');
+	if( geo ) {
+		geo.getCurrentPosition(
+			function(position) {
+				currentLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				getCurrentFlag = 1;
+				document.getElementById('startloc').setAttribute('placeholder', '現在地');
+				document.getElementById('btnNearMap').style.display = 'block';
+			},
+			function(error) { 
+				switch( error.code ) { 
+					case 1:
+						//alert('位置情報の利用が許可されていません');
+						break;
+					case 2:
+						alert('デバイスの位置が判定できません');
+						break;
+					case 3:
+						alert('タイムアウトしました');
+						break;
+				}
+			},
+			positionOptions
+		);
+	} else { 
+		alert('このブラウザでは位置取得が出来ません。');
+	}
+	marker = new google.maps.Marker({
+		position: latlng,
+		map: map,
+		title: gmConfig.marker.title
+	});
+
+	if( gmConfig.directions ) {
+		setDirections();
+		map_direction();
+	}
+
+	infoWin = new google.maps.InfoWindow({
+		content: gmConfig.iw.content + ((gmConfig.directions) ? direction_html.to : '')
+	});
+	infoWin.open(map,marker);
+
+	google.maps.event.addListener(marker, 'click', function() {
+		if( infoWin ) infoWin.close();
+		infoWin = new google.maps.InfoWindow({
+			content: gmConfig.iw.content + ((gmConfig.directions) ? direction_html.to : '')
+		});
+		infoWin.open(map,marker);
+	});
+}
+
+/*///////////////////// GDirections /////////////////////////////*/
+function map_direction() {
+	direction_html["to"] = '<div id="routeContentBox"><div id="routeTitle">ルート案内</div>' +
+	   '<form action="javascript:getDirections()">' +
+	   '<div class="selectRows"><label for="startloc">出発地:</label><input type="text" name="startloc" id="startloc" value=""><input value="検索" type="submit"></div>' +
+	   '<div class="selectRows"><label><input type="radio" name="mode" id="walk">徒歩</label> <label><input type="radio" name="mode" id="drive" checked="checked">車</label></div>' +
+	   '<div class="selectRows"><label><input type="checkbox" name="highways" id="highways">高速道路を避ける</label></div>' +
+	   '<div class="selectRows"><label><input type="checkbox" id="tollroads">有料道路を避ける</label></div>' +
+	   '<div class="selectRows"><input type="hidden" id="endloc" value="' + latlng.lat() + ',' + latlng.lng() + '"/></div>' +
+	   '</form>' +
+	   '<div id="btnNearMap"><a href="#" onclick="javascript:getNearMapList();">あなたの近くの施設を見る</a></div>';
+
+	direction_html["normal"] = '<div><a href="javascript:tohere()">ルート案内</a></div>';
+}
+
+function getNearMapList() {
+	if( !getCurrentFlag ) {
+		return;
+	}
+	var mapLatlng = 0;
+	var ul = document.createElement('ul');
+	ul.style.margin = 0;
+	ul.style.padding = 0;
+	mapLatlng = new google.maps.LatLng(37.3378802, 140.80928170000004);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '川内村役場';
+		a.href = 'map.php?code=1';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.337691, 140.809345);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '川内村役場';
+		a.href = 'map.php?code=3';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.3371522289046, 140.808621346951);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '川内村コミュニティセンター';
+		a.href = 'map.php?code=4';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.33200853855045, 140.83792635801728);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '複合福祉施設ゆふね';
+		a.href = 'map.php?code=5';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.343481435149336, 140.8031415939331);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '川内小学校';
+		a.href = 'map.php?code=6';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.33089073729708, 140.814471244812);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '川内中学校';
+		a.href = 'map.php?code=7';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.3396781465938, 140.80174899098);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '天山文庫';
+		a.href = 'map.php?code=9';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.35937886691822, 140.82082271575928);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = 'いわなの郷';
+		a.href = 'map.php?code=10';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.33612858749173, 140.80957889556885);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = 'あれ・これ市場';
+		a.href = 'map.php?code=11';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.32951296847928, 140.8215844631195);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = 'YO-TASHI';
+		a.href = 'map.php?code=12';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	mapLatlng = new google.maps.LatLng(37.358296223278984, 140.82243346411894);
+	distance = google.maps.geometry.spherical.computeDistanceBetween(currentLatlng, mapLatlng);
+	if( distance.toFixed(0) <= 1000 ) {
+		var li = document.createElement('li');
+		var a = document.createElement('a');
+		li.style.borderBottom = 'solid 1px #CCC';
+		li.style.padding = '5px 0';
+		a.innerHTML = '土砂搬入場所';
+		a.href = 'map.php?code=18';
+		a.setAttribute('target', '_blank');
+		ul.appendChild(li);
+		li.appendChild(a);
+	}
+	document.getElementById('routeContentBox').appendChild(ul);
+}
+
+// functions that open the directions forms
+function tohere() {
+	if(infoWin) infoWin.close();
+	infoWin = new google.maps.InfoWindow({
+		content: gmConfig.iw.content + direction_html.to
+	});
+	infoWin.open(map,marker);
+}
+
+// Directions
+function setDirections() {
+	var gmap = document.getElementById("gmap");
+	var directionsDiv = document.getElementById("directions");
+	//close button
+	closeDirection = document.createElement('div');
+	closeDirection.innerHTML = '×';
+	closeDirection.id = 'closeDirection';
+	closeDirection.style.border = 'solid 1px #000';
+	closeDirection.style.display = 'none';
+	closeDirection.style.cursor = 'pointer';
+	directionsDiv.appendChild(closeDirection);
+	
+	closeDirection.onclick = function() {
+		this.style.display = (this.style.display == 'none') ? 'block' : 'none';
+		
+		directionsDisplay.setMap(null);
+		directionsDisplay.setPanel(null);
+		directionsDisplay = new google.maps.DirectionsRenderer();
+		directionsDisplay.setMap(map);
+		directionsDisplay.setPanel(directionsDiv); 
+		directionsDiv.style.display = 'none';
+		gmap.style.width = '100%';
+		gmap.style.height = '100%';
+		
+		if (infoWin) infoWin.close();
+		map.setCenter(latlng);
+	};
+
+	directionsService = new google.maps.DirectionsService();
+	directionsDisplay = new google.maps.DirectionsRenderer();
+	directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(directionsDiv);
+}
+
+function getDirections() {
+	var opts = {};
+	var mode = google.maps.DirectionsTravelMode.DRIVING;
+	var gmap = document.getElementById("gmap");
+	var directionsDiv = document.getElementById("directions");
+	
+	opts.locale = 'ja';
+	
+	// 徒歩
+	if( document.getElementById('walk').checked ) {
+	   mode = google.maps.DirectionsTravelMode.WALKING;
+	}
+
+	// 自転車
+	//if( document.getElementById("bicycling").checked ) {
+	//	mode = google.maps.DirectionsTravelMode.BICYCLING;
+	//}
+	
+	// 車
+	if( document.getElementById('drive').checked ) {
+	   mode = google.maps.DirectionsTravelMode.DRIVING;
+	}
+	
+	// 高速
+	if( document.getElementById('highways').checked ) {
+		var highways = true;
+	} else {
+		var highways = false;
+	}
+	
+	// 有料道路
+	if( document.getElementById('tollroads').checked ) {
+		var tolls = true;
+	} else {
+		var tolls = false;
+	}
+	
+	// ==== set the start and end locations ====
+	if( (document.getElementById('startloc').value == '') && (currentLatlng != '') && getCurrentFlag ) {
+		var startloc = currentLatlng;
+	} else {
+		var startloc = document.getElementById('startloc').value;
+	}
+	var endloc = document.getElementById('endloc').value;
+
+	var request = {
+		origin: startloc, 
+		destination: endloc,
+		travelMode: mode,
+		avoidHighways: highways,
+		avoidTolls: tolls
+	};
+	
+    directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			closeDirection.style.display = 'block';
+			directionsDiv.style.display = 'block';
+			directionsDiv.style.width = "25%";
+			directionsDiv.style.height = "100%";
+			gmap.style.width = "75%";
+			gmap.style.height = "100%";
+			directionsDisplay.setDirections(response);
+		} else {
+			var error_msg = "";
+	      	switch( status ) {
+	      		case "INVALID_REQUEST":
+	      			error_msg = "リクエストが無効です。";
+	      			break;
+	      		case "MAX_WAYPOINTS_EXCEEDED":
+	      			error_msg = "経由地点が8を超えました。";
+	      			break;
+	      		case "NOT_FOUND":
+	      			error_msg = "場所が見つかりません。";
+	      			break;
+	      		case "OVER_QUERY_LIMIT":
+	      			error_msg = "リクエストの制限回数を超えました。";
+	      			break;
+	      		case "REQUEST_DENIED":
+	      			error_msg = "ルート検索は使用できません。";
+	      			break;
+	      		case "ZERO_RESULTS":
+	      			error_msg = "ルートが見つかりません。";
+	      			break;
+	      		case "UNKNOWN_ERROR":
+	      			error_msg = "サーバエラー。リトライしてください。";
+	      			break;
+	      	}
+		  	alert(error_msg);
+		}
+    });
+}
+</script>
+<style type="text/css">
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Arial, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+}
+#mapContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#gmap {
+	width: 100%;
+	height: 100%;
+}
+#directions {
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: auto;
+	display: none;
+	border: solid 1px #333;
+}
+#closeDirection {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#mapContainer .adp-placemark {
+	margin-top: 0;
+}
+#routeContentBox {
+}
+#routeTitle {
+	margin: 5px 0;
+	font-weight: bold;
+	text-align: center;
+}
+.adp.classic {
+	background: #FFF;
+}
+.adp-directions {
+	width: 100%;
+	font-size: 88%;
+}
+.adp-directions .adp-substep {
+	padding: 0.5em 0.3em 0.5em 0.5em;
+}
+.adp-step, .adp-text {
+	padding: 0 10% 0 0;
+	width: 90%;
+}
+#closeDirection {
+	padding: 0.2em 0.6em;
+	background: #C03;
+	border: solid 1px #B0B0B0;
+	display: block;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+}
+#startloc {
+	margin: 0 5px;
+	width: 220px;
+}
+.adp-legal {
+	font-size: 88%;
+	text-align: center;
+}
+.selectRows {
+	margin: 5px 0;
+}
+#btnNearMap {
+	display: none;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+#btnNearMap a {
+	display: block;
+	padding: 5px 0;
+	background: #000;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+}
+#btnNearMap a:hover {
+	background: #C03;
+}
+</style>
+</head>
+<body>
+<div id="mapContainer">
+	<div id="gmap"></div>
+	<div id="directions"></div>
+</div>
+</body>
+</html>

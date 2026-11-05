@@ -1,0 +1,87 @@
+[
+  {
+    "path": "data/work/national-input/full.json",
+    "sha256": "6068da023f3bd4cb1e292b3e43877411a1505356e4377bbf02a255a89afb1987",
+    "bytes": 2855532
+  },
+  {
+    "path": "data/overrides/regions/chubu-east.json",
+    "sha256": "05e288475d1b3b5a9a69e3cddc3f6f01fb17e3024a5039728e77af08e414762d",
+    "bytes": 376657
+  },
+  {
+    "path": "data/overrides/regions/chubu-west.json",
+    "sha256": "e87f5940ff145e3af61b470fd3d048d8048a7ae14d0744ee3d92188ce926a223",
+    "bytes": 179822
+  },
+  {
+    "path": "data/overrides/regions/chugoku-shikoku.json",
+    "sha256": "449d3bc8244629d9ecfe24fe35823c1f82b0a757024e7ba274b7a8285281d91e",
+    "bytes": 387045
+  },
+  {
+    "path": "data/overrides/regions/kanto-north.json",
+    "sha256": "c3e88a7814f56ec16bb09d426cdc608f35415990bae2fa93243490e523dbd4ba",
+    "bytes": 408445
+  },
+  {
+    "path": "data/overrides/regions/kanto-south.json",
+    "sha256": "c88c6dbde122c1eb940ab14f3ad3f3ce6bc59573dd4eeddf53384102f52e9f51",
+    "bytes": 475675
+  },
+  {
+    "path": "data/overrides/regions/kinki.json",
+    "sha256": "d1aa57ee76aca69596d24d17f608befbf276b3a0cbfb3c768bf17856dc4801df",
+    "bytes": 502956
+  },
+  {
+    "path": "data/overrides/regions/kyushu-okinawa.json",
+    "sha256": "9dba12a76bcde4169f159547ac300e82a88d0525749535efcf0a7f3573b3b983",
+    "bytes": 308048
+  },
+  {
+    "path": "data/overrides/regions/north.json",
+    "sha256": "802f2d8cec2f2ae7279f616326a1ec095f8875d7d7081fb1d465fc408fdcb3b3",
+    "bytes": 472012
+  },
+  {
+    "path": "data/national/regions/chubu-east.json",
+    "sha256": "484320507a6ad512694ff78d3d84d87143917f84c58e1e0e9adf8a5eaa220740",
+    "bytes": 835597
+  },
+  {
+    "path": "data/national/regions/chubu-west.json",
+    "sha256": "d8738b52115cae0bd7d892670a728ffd31589f11beb02e2ac5f94b497c6cb32e",
+    "bytes": 952120
+  },
+  {
+    "path": "data/national/regions/chugoku-shikoku.json",
+    "sha256": "0e8e4d08aaa6580c0e892134cb296a2e0279f3f7da5ca8232e8172359a182643",
+    "bytes": 595823
+  },
+  {
+    "path": "data/national/regions/kanto-north.json",
+    "sha256": "96b15507e936fd78df7e7e07ca8269c8cc4159e703e9abd9ba9edac4008eaf01",
+    "bytes": 1516047
+  },
+  {
+    "path": "data/national/regions/kanto-south.json",
+    "sha256": "3cdefd39857d6740f8e98f8cd2f88abf4b1e1bb771e8c8b70e819b0d67dc7148",
+    "bytes": 926172
+  },
+  {
+    "path": "data/national/regions/kinki.json",
+    "sha256": "21f4770c7f66c240cbef7f41959eecc2d731b0c9157d3a62c29014dae5dd4733",
+    "bytes": 606136
+  },
+  {
+    "path": "data/national/regions/kyushu-okinawa.json",
+    "sha256": "97c7ab7d7556a812c9f0a5e3154980371cc959cc692179928c78323ccaa04d9d",
+    "bytes": 700102
+  },
+  {
+    "path": "data/national/regions/north.json",
+    "sha256": "904cc79d1f885809849bc4b260c8429c4e1931b0ce62a1b22530de916b533619",
+    "bytes": 1135661
+  }
+]

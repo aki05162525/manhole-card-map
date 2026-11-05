@@ -1,0 +1,645 @@
+{
+  "schema": 1,
+  "region": "kyushu-okinawa",
+  "candidates": [
+    {
+      "cardId": "40-204-A001",
+      "legacyPlaceId": "place:861982c750b61a713dec",
+      "name": "直方市役所下水道課",
+      "address": "福岡県直方市殿町7-1",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市の3URLはTLS証明書チェーン検証失敗。検索結果でカード案内の存在は確認したが原本bytesを取得できず、施設別配布時間・配布目的地座標の承認を保留。 直方市役所下水道課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/",
+          "fetchedAt": "2026-11-05T04:24:12.516314+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/shisei/_1242/_2793/_12358.html",
+          "fetchedAt": "2026-11-05T04:24:21.202673+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/kurashi/_1201/_1332/_17114.html",
+          "fetchedAt": "2026-11-05T04:24:16.772692+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "40-204-A001",
+      "legacyPlaceId": "place:5dd735939e866fb2d3b8",
+      "name": "多世代交流スペースここっちゃ(交流エリア)",
+      "address": "福岡県直方市古町5-35",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市の3URLはTLS証明書チェーン検証失敗。検索結果でカード案内の存在は確認したが原本bytesを取得できず、施設別配布時間・配布目的地座標の承認を保留。 多世代交流スペースここっちゃ(交流エリア)：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/",
+          "fetchedAt": "2026-11-05T04:24:12.516314+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/shisei/_1242/_2793/_12358.html",
+          "fetchedAt": "2026-11-05T04:24:21.202673+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nogata.fukuoka.jp/kurashi/_1201/_1332/_17114.html",
+          "fetchedAt": "2026-11-05T04:24:16.772692+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "40-211-A001",
+      "legacyPlaceId": "place:74bd451bf58bb08d373c",
+      "name": "筑後市役所上下水道課",
+      "address": "福岡県筑後市大字山ノ井898番地",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市トップ・カード専用ページともHTTP503。県の配布先一覧PDFが検索で見つかったが古い資料であり、現在の中央公民館祝日・月曜条件と在庫の確証に使わない。原本再取得が必要。 筑後市役所上下水道課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.chikugo.lg.jp",
+          "fetchedAt": "2026-11-05T04:23:45.119037+00:00",
+          "status": 503,
+          "finalUrl": "https://www.city.chikugo.lg.jp",
+          "error": "HTTP Error 503: Service Temporarily Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/13d6e845df8f7f90a9b2.html",
+          "snapshotSHA256": "070449e95d4e4f717fd3e53d7eb44e94b07a44ccb6fe19fdbe97ee59dc411d20",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+          "fetchedAt": "2026-11-05T04:23:50.051384+00:00",
+          "status": 503,
+          "finalUrl": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+          "error": "HTTP Error 503: Service Temporarily Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/3c7220b159d7de8cbeba.html",
+          "snapshotSHA256": "c2d80e2ce9432cfca48977ac996844cbb0997afe6465edf2b7ab43cd6be688e5",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "40-211-A001",
+      "legacyPlaceId": "place:6fc2c6654cdd12ac8372",
+      "name": "筑後市中央公民館(愛称:サンコア)",
+      "address": "福岡県筑後市大字山ノ井898番地",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市トップ・カード専用ページともHTTP503。県の配布先一覧PDFが検索で見つかったが古い資料であり、現在の中央公民館祝日・月曜条件と在庫の確証に使わない。原本再取得が必要。 筑後市中央公民館(愛称:サンコア)：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.chikugo.lg.jp",
+          "fetchedAt": "2026-11-05T04:23:45.119037+00:00",
+          "status": 503,
+          "finalUrl": "https://www.city.chikugo.lg.jp",
+          "error": "HTTP Error 503: Service Temporarily Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/13d6e845df8f7f90a9b2.html",
+          "snapshotSHA256": "070449e95d4e4f717fd3e53d7eb44e94b07a44ccb6fe19fdbe97ee59dc411d20",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+          "fetchedAt": "2026-11-05T04:23:50.051384+00:00",
+          "status": 503,
+          "finalUrl": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+          "error": "HTTP Error 503: Service Temporarily Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/3c7220b159d7de8cbeba.html",
+          "snapshotSHA256": "c2d80e2ce9432cfca48977ac996844cbb0997afe6465edf2b7ab43cd6be688e5",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "41-346-A001",
+      "legacyPlaceId": "place:02795eba1f21a31b52ed",
+      "name": "みやき町庁舎 1F 北茂安総合窓口課",
+      "address": "佐賀県三養基郡みやき町大字東尾737-5",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町トップとカード案内はHTTP503。代替検索では非公式収集記事のみ。北茂安総合窓口課・警備員室の現在条件と目的地座標を公式原本で確認できない。 みやき町庁舎 1F 北茂安総合窓口課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.town.miyaki.lg.jp/index.html",
+          "fetchedAt": "2026-11-05T04:24:42.415522+00:00",
+          "status": 503,
+          "finalUrl": "https://www.town.miyaki.lg.jp/index.html",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/a8bdc527249d91b883e2.html",
+          "snapshotSHA256": "7b2c51c42bf4e07ce7f5d83fd24b3e102d67542bb1e6bfb8af5d8c1d6ebf4be4",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+          "fetchedAt": "2026-11-05T04:24:45.387505+00:00",
+          "status": 503,
+          "finalUrl": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/c01627343c5811773997.html",
+          "snapshotSHA256": "8c1621f8f1073c520d9c0c6810524d2d6a50575537d99bf7be83f7b105b26ab6",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "41-346-A001",
+      "legacyPlaceId": "place:5f3e26917f2ca40529b8",
+      "name": "みやき町庁舎 1F 警備員室",
+      "address": "佐賀県三養基郡みやき町大字東尾737-5",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町トップとカード案内はHTTP503。代替検索では非公式収集記事のみ。北茂安総合窓口課・警備員室の現在条件と目的地座標を公式原本で確認できない。 みやき町庁舎 1F 警備員室：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.town.miyaki.lg.jp/index.html",
+          "fetchedAt": "2026-11-05T04:24:42.415522+00:00",
+          "status": 503,
+          "finalUrl": "https://www.town.miyaki.lg.jp/index.html",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/a8bdc527249d91b883e2.html",
+          "snapshotSHA256": "7b2c51c42bf4e07ce7f5d83fd24b3e102d67542bb1e6bfb8af5d8c1d6ebf4be4",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+          "fetchedAt": "2026-11-05T04:24:45.387505+00:00",
+          "status": 503,
+          "finalUrl": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/c01627343c5811773997.html",
+          "snapshotSHA256": "8c1621f8f1073c520d9c0c6810524d2d6a50575537d99bf7be83f7b105b26ab6",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "41-424-A001",
+      "legacyPlaceId": "place:6a8e02e078d80a8562db",
+      "name": "江北町役場 基盤整備課",
+      "address": "佐賀県杵島郡江北町大字山口1651-1",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町トップと2017年広報8月PDFを取得。広報は当時の環境課で配布開始と記載し、現在入力の基盤整備課・宿直室の曜日別配布の確証にならない。新しい町公式記事を特定できず保留。 江北町役場 基盤整備課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.town.kouhoku.saga.jp/",
+          "fetchedAt": "2026-11-05T04:23:19.806606+00:00",
+          "status": 200,
+          "finalUrl": "https://www.town.kouhoku.saga.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/a7ce5e4ea6e919f5d376.html",
+          "snapshotSHA256": "b58ce0adcd14bfdcda1d380fbb3afc18c82b1bf3c8409cb224be5475af8f2454",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+          "fetchedAt": "2026-11-05T04:29:07.751435+00:00",
+          "status": 200,
+          "finalUrl": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+          "contentType": "application/pdf",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/9fea7caeeba44699a152.pdf",
+          "snapshotSHA256": "97272730b092137194010ad40c649977410e608815e26c4ce14f2daa5dbf6c7d",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "41-424-A001",
+      "legacyPlaceId": "place:b5b675ae24534f1db135",
+      "name": "江北町役場 役場宿直室窓口",
+      "address": "佐賀県杵島郡江北町大字山口1651-1",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町トップと2017年広報8月PDFを取得。広報は当時の環境課で配布開始と記載し、現在入力の基盤整備課・宿直室の曜日別配布の確証にならない。新しい町公式記事を特定できず保留。 江北町役場 役場宿直室窓口：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.town.kouhoku.saga.jp/",
+          "fetchedAt": "2026-11-05T04:23:19.806606+00:00",
+          "status": 200,
+          "finalUrl": "https://www.town.kouhoku.saga.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/a7ce5e4ea6e919f5d376.html",
+          "snapshotSHA256": "b58ce0adcd14bfdcda1d380fbb3afc18c82b1bf3c8409cb224be5475af8f2454",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+          "fetchedAt": "2026-11-05T04:29:07.751435+00:00",
+          "status": 200,
+          "finalUrl": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+          "contentType": "application/pdf",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/9fea7caeeba44699a152.pdf",
+          "snapshotSHA256": "97272730b092137194010ad40c649977410e608815e26c4ce14f2daa5dbf6c7d",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "42-201-A001",
+      "legacyPlaceId": "place:c0723779f88632a34294",
+      "name": "長崎市南山手地区町並み保存センター",
+      "address": "長崎県長崎市南山手町4-33",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "旧施設URLは移転・新施設紹介ページ218を取得したがカード配布条件なし。検索で見つかった市カード旧記事と市水道読本PDFはHTTP404。施設の開館時間を配布時間に流用せず保留。 長崎市南山手地区町並み保存センター：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.city.nagasaki.lg.jp/sisetsu/5120000/p011066.html",
+          "fetchedAt": "2026-11-05T04:22:59.588185+00:00",
+          "status": 404,
+          "finalUrl": "https://www.city.nagasaki.lg.jp/page/2837.html",
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/5de1919df9cce0d418a6.html",
+          "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nagasaki.lg.jp/page/1355.html",
+          "fetchedAt": "2026-11-05T04:29:07.749900+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.nagasaki.lg.jp/page/1355.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/b9241502fa99e6c0791c.html",
+          "snapshotSHA256": "bb472c7013572d52b31010ec6f72c81b0b89345e56a3d65e5047ef378c0a145a",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.nagasaki.lg.jp/shimin/150000/158000/p043297.html",
+          "fetchedAt": "2026-11-05T04:37:04.216330+00:00",
+          "status": 404,
+          "finalUrl": "https://www.city.nagasaki.lg.jp/shimin/150000/158000/p043297.html",
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/a96b2cfe5cfb6b5657cc.html",
+          "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://www.city.nagasaki.lg.jp/shimin/150000/157000/p031371_d/fil/minnwaka.pdf",
+          "fetchedAt": "2026-11-05T04:37:05.520889+00:00",
+          "status": 404,
+          "finalUrl": "https://www.city.nagasaki.lg.jp/shimin/150000/157000/p031371_d/fil/minnwaka.pdf",
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/d3713b0c718929246545.html",
+          "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "candidate-building-point",
+      "locationReason": "長崎市CSVの南山手８番館（南山手地区町並み保存センター）、南山手町4-33と一致。建物位置のみの候補。カード配布関係の未確認を解消しない。",
+      "coordinate": {
+        "lat": 32.735075,
+        "lng": 129.869128
+      },
+      "evidence": {
+        "sourceUrl": "https://data.bodik.jp/dataset/04f5b2b4-29bf-4bec-b24e-f9adc8218e3b/resource/8e1fed1e-5259-45a5-a352-91ebfba74070/download/422011_public_facility2.csv",
+        "snapshotPath": "data/evidence/national/locations-kyushu-okinawa/d8b7faa1ca5675eb4f97b7a2.html",
+        "snapshotSHA256": "02186f2c328105d70e509e8b6a246b6918627d43f79c19f406e59d4c12dbf3d5",
+        "sourceLocator": "CSV論理レコード272 / 南山手８番館（南山手地区町並み保存センター） / 緯度・経度",
+        "checkedAt": "2026-11-05T05:06:26.612612+00:00",
+        "actorType": "ai",
+        "verificationMethod": "市公開CSVの施設名と現在入力住所を照合。建物代表点であり室内窓口ではない。配布確定には使わない。"
+      }
+    },
+    {
+      "cardId": "42-204-A001",
+      "legacyPlaceId": "place:5f5e964b2a5e7455760d",
+      "name": "諫早市物産ホール((一社)諫早観光物産コンベンション協会)",
+      "address": "長崎県諫早市高城町5-10(諫早商工会館1階:無料駐車場無し)",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市の2023年カード案内235は取得でき施設名・基本時間は照合できたが、現GKPの水曜祝日翌日休館・代替窓口土日祝休みとの例外が一致しない。新しい公式根拠による訂正といえないため関係を保留。 諫早市物産ホール((一社)諫早観光物産コンベンション協会)：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.isahaya-kankou.com/",
+          "fetchedAt": "2026-11-05T04:23:09.848320+00:00",
+          "status": 200,
+          "finalUrl": "https://www.isahaya-kankou.com/",
+          "contentType": "text/html; charset=UTF-8",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/2b678fcae42d50c62238.html",
+          "snapshotSHA256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+          "fetchedAt": "2026-11-05T04:31:17.362674+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+          "contentType": "text/html; charset=UTF-8",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/991d1da8b0cdd1913fc4.html",
+          "snapshotSHA256": "c052ff23159d7724740ace0370bd1a18c392d977a777293895bbd91ea780c065",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "42-204-A001",
+      "legacyPlaceId": "place:8cc818c77ec643e5fec1",
+      "name": "諫早市役所別館2F 下水道課",
+      "address": "長崎県諫早市東小路町7-1",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "市の2023年カード案内235は取得でき施設名・基本時間は照合できたが、現GKPの水曜祝日翌日休館・代替窓口土日祝休みとの例外が一致しない。新しい公式根拠による訂正といえないため関係を保留。 諫早市役所別館2F 下水道課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.isahaya-kankou.com/",
+          "fetchedAt": "2026-11-05T04:23:09.848320+00:00",
+          "status": 200,
+          "finalUrl": "https://www.isahaya-kankou.com/",
+          "contentType": "text/html; charset=UTF-8",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/2b678fcae42d50c62238.html",
+          "snapshotSHA256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+          "fetchedAt": "2026-11-05T04:31:17.362674+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+          "contentType": "text/html; charset=UTF-8",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/991d1da8b0cdd1913fc4.html",
+          "snapshotSHA256": "c052ff23159d7724740ace0370bd1a18c392d977a777293895bbd91ea780c065",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "42-210-A001",
+      "legacyPlaceId": "place:c3c1ef7f9743324de881",
+      "name": "壱岐市役所 観光課",
+      "address": "長崎県壱岐市郷ノ浦町本村触570番地 壱岐振興局別館2階",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "公式4498（更新2022-04-08）は開庁日562番地3階・閉庁日1階。GKP入力は570番地壱岐振興局別館2階・閉庁日地下1階で食い違う。古い公式情報を新移転と断定せず同定保留。 壱岐市役所 観光課：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.iki.nagasaki.jp/",
+          "fetchedAt": "2026-11-05T04:23:54.045080+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.iki.nagasaki.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/e8a8d82609561dfcc6f7.html",
+          "snapshotSHA256": "1ed42ac3aa5fbaec1d9a56b02e2b05a8fe4a3cfb2c3918004e8aefa898aca389",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+          "fetchedAt": "2026-11-05T04:29:07.749047+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/2061c45a50d7f657c42a.html",
+          "snapshotSHA256": "d36cbf63573efa4f3e6020e30498439a8e6de87a4e5828a967fa5b55f53120e0",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "42-210-A001",
+      "legacyPlaceId": "place:2e06b4b253985e232f9c",
+      "name": "壱岐市役所郷ノ浦庁舎 窓口",
+      "address": "長崎県壱岐市郷ノ浦町本村触562(地下1階)",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "公式4498（更新2022-04-08）は開庁日562番地3階・閉庁日1階。GKP入力は570番地壱岐振興局別館2階・閉庁日地下1階で食い違う。古い公式情報を新移転と断定せず同定保留。 壱岐市役所郷ノ浦庁舎 窓口：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "https://www.city.iki.nagasaki.jp/",
+          "fetchedAt": "2026-11-05T04:23:54.045080+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.iki.nagasaki.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/e8a8d82609561dfcc6f7.html",
+          "snapshotSHA256": "1ed42ac3aa5fbaec1d9a56b02e2b05a8fe4a3cfb2c3918004e8aefa898aca389",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+          "fetchedAt": "2026-11-05T04:29:07.749047+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/2061c45a50d7f657c42a.html",
+          "snapshotSHA256": "d36cbf63573efa4f3e6020e30498439a8e6de87a4e5828a967fa5b55f53120e0",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "43-202-A001",
+      "legacyPlaceId": "place:68d7cd44f476538be0a8",
+      "name": "八代市水処理センター",
+      "address": "八代市新港町3-1(管理棟2階)",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "入力の7227は現行では水処理センター見学案内（2017年）でカード記載なし。第2弾公式記事は第1弾も従来どおり配布と記載するが、第1弾固有の曜日・時間・管理棟窓口の指定を確認できない。第2弾の時間を流用しない。 八代市水処理センター：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "fetchedAt": "2026-11-05T04:23:10.897987+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/c0dbc6547e853636c3e1.html",
+          "snapshotSHA256": "99a758ce8ad8c08387ae6ce8867ef6619302f4a0c3cc5b206350faab7d5cb2bf",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "http://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+          "fetchedAt": "2026-11-05T04:23:06.990697+00:00",
+          "status": 200,
+          "finalUrl": "http://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/deeefcaa54588659d493.html",
+          "snapshotSHA256": "207f23a78f4cf9897ccf17bdfecf1d4f7c9f917905946a8ef9a96274d11f63b0",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "fetchedAt": "2026-11-05T04:24:24.236846+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/c132c9e2fca773b952cd.html",
+          "snapshotSHA256": "f564d5aa994bd2289033ac0b7e7f82089635356debf220420b80d9f287e456c9",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "43-205-A001",
+      "legacyPlaceId": "place:ff324a723b35bf60a9d1",
+      "name": "道の駅 木のおもちゃ館 きらら",
+      "address": "熊本県水俣市月浦54-162",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "入力の上下水道局はHTTP403。国交省道の駅ページを取得したがカード条件なし。別の公式変更記事は検索で確認できるがTLSホスト名不一致で原本取得不可。アクセス制限・証明書検証を回避せず保留。 道の駅 木のおもちゃ館 きらら：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+          "fetchedAt": "2026-11-05T04:23:17.097267+00:00",
+          "status": 200,
+          "finalUrl": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/457af0d5fc8b2f6d7d13.html",
+          "snapshotSHA256": "677b8ea604396b9ca049d1aef0e6233f4f587ccf5956fb184fa43d677902beef",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "http://www.minamata-waterworks.jp",
+          "fetchedAt": "2026-11-05T04:23:11.048501+00:00",
+          "status": 403,
+          "finalUrl": "http://www.minamata-waterworks.jp",
+          "error": "HTTP Error 403: Forbidden",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/6975fed5a2226429b4f2.html",
+          "snapshotSHA256": "339089c4d8a66ae3d9393dfd1d57caa5cfe04fcea15eeff8ff79faf2c60325ad",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://minamata-waterworks.jp/mannhorukadohennko.html",
+          "fetchedAt": "2026-11-05T04:37:04.215732+00:00",
+          "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'minamata-waterworks.jp'. (_ssl.c:1082)>",
+          "result": "取得失敗・承認根拠には不使用"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "43-531-A001",
+      "legacyPlaceId": "place:40e2ab42067863141663",
+      "name": "富岡港船客待合所",
+      "address": "熊本県天草郡苓北町富岡2711-47",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町公式トップは取得成功したが行政・観光入口のみでカード記載なし。公式限定検索でも富岡港船客待合所と観光案内所のカード条件を確認できる記事を特定できず、現GKP以上の照合は未完了。 富岡港船客待合所：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://reihoku-kumamoto.jp/",
+          "fetchedAt": "2026-11-05T04:22:48.829080+00:00",
+          "status": 200,
+          "finalUrl": "https://reihoku-kumamoto.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/e9185133556a45cb43e9.html",
+          "snapshotSHA256": "35cb20f27d1e84d168e2ddcba145b32ef81837d4c5fdba805e07d529713aa5f9",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "43-531-A001",
+      "legacyPlaceId": "place:6617f4096c8cbff660d0",
+      "name": "苓北町観光案内所",
+      "address": "熊本県天草郡苓北町上津深江4535-1",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "町公式トップは取得成功したが行政・観光入口のみでカード記載なし。公式限定検索でも富岡港船客待合所と観光案内所のカード条件を確認できる記事を特定できず、現GKP以上の照合は未完了。 苓北町観光案内所：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://reihoku-kumamoto.jp/",
+          "fetchedAt": "2026-11-05T04:22:48.829080+00:00",
+          "status": 200,
+          "finalUrl": "https://reihoku-kumamoto.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/e9185133556a45cb43e9.html",
+          "snapshotSHA256": "35cb20f27d1e84d168e2ddcba145b32ef81837d4c5fdba805e07d529713aa5f9",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    },
+    {
+      "cardId": "45-206-A001",
+      "legacyPlaceId": "place:4538f13d7049b55a47f9",
+      "name": "日向市役所上下水道局下水道課(別館 健康管理センター1階)",
+      "address": "宮崎県日向市本町10-5",
+      "distributionState": "unconfirmed",
+      "adoptAsDistribution": false,
+      "originalReason": "観光協会2023案内は平日8:30～17:15、現GKP8:45～16:30と相違。平日関係は保留、休日窓口のみ採用。 日向市役所上下水道局下水道課(別館 健康管理センター1階)：配布施設の目的地座標を示す公式地図リンク・位置構造化データの確認未完了。蓋座標と地図表示中心は採用しない。",
+      "attempts": [
+        {
+          "url": "http://www.hyugacity.jp/display.php?slist=0024",
+          "fetchedAt": "2026-11-05T04:23:09.355612+00:00",
+          "status": 503,
+          "finalUrl": "https://www.hyugacity.jp/display.php?slist=0024",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/6d02cc7fbf092c8b1d10.html",
+          "snapshotSHA256": "0f5c3b283382605178eec68f74a43aad2152c8f785609294f27850adde4ff060",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://hyuga.or.jp/",
+          "fetchedAt": "2026-11-05T04:23:25.969429+00:00",
+          "status": 200,
+          "finalUrl": "https://hyuga.or.jp/",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/9f99bd7c476c6b6e7e51.html",
+          "snapshotSHA256": "30014069c160834968c671328685a997f72551cad8559ea3f58b1c3bbe5773c6",
+          "result": "原本取得（下記判断参照）"
+        },
+        {
+          "url": "https://www.hyugacity.jp/display.php?cont=230124152347",
+          "fetchedAt": "2026-11-05T04:24:24.444916+00:00",
+          "status": 503,
+          "finalUrl": "https://www.hyugacity.jp/display.php?cont=230124152347",
+          "error": "HTTP Error 503: Service Unavailable",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/d387d32c863e438520df.html",
+          "snapshotSHA256": "0f5c3b283382605178eec68f74a43aad2152c8f785609294f27850adde4ff060",
+          "result": "取得失敗・承認根拠には不使用"
+        },
+        {
+          "url": "https://hyuga.or.jp/contents/archives/859",
+          "fetchedAt": "2026-11-05T04:31:17.363705+00:00",
+          "status": 200,
+          "finalUrl": "https://hyuga.or.jp/contents/archives/859",
+          "contentType": "text/html; charset=UTF-8",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/5936e58f9097bf79b494.html",
+          "snapshotSHA256": "58f50db365fb06fd54af29635d563e9c44a62c6b8eb969c27f916a7c8d5b7f6c",
+          "result": "原本取得（下記判断参照）"
+        }
+      ],
+      "locationState": "unconfirmed",
+      "locationReason": "取得済み自治体公共施設CSV群の施設名・住所を照合したが、この入力施設（別館・窓口含む）の採用可能な目的地を確保できない。配布関係の保留は維持。"
+    }
+  ]
+}

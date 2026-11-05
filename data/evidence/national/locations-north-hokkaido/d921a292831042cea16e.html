@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<title>芦別市観光総合ガイド「星の降る里あしべつ」</title>
+<meta name="keywords" content="HOME,北海道,芦別市,観光,ドライブ,グルメ,景色,旅行" />
+<meta name="description" content="まさに降るような満天の星空。のどかで美しい四季の風景。甘く濃厚なおいしさの野菜やフルーツに、ここだけのご当地グルメ。北海道の真ん中にある芦別市は、道内観光の拠点や寄り道ドライブなど、いろいろな楽しみにあふれたまちです。当サイトでは芦別の観光情報を中心に人やモノの魅力までも、深く幅広くお伝えします。" />
+
+<meta property="og:site_name" content="芦別市観光総合ガイド「星の降る里あしべつ」">
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="芦別市観光総合ガイド「星の降る里あしべつ」" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="まさに降るような満天の星空。のどかで美しい四季の風景。甘く濃厚なおいしさの野菜やフルーツに、ここだけのご当地グルメ。北海道の真ん中にある芦別市は、道内観光の拠点や寄り道ドライブなど、いろいろな楽しみにあふれたまちです。当サイトでは芦別の観光情報を中心に人やモノの魅力までも、深く幅広くお伝えします。" />
+<meta property="og:url" content="http://go-to-ashibetsu.com/" />
+<meta property="og:image" content="http://go-to-ashibetsu.com/dcms_media/image/facebook_ogp.jpg">
+
+<link rel="stylesheet" href="/dcms_media/css/utility.css">
+<link rel="stylesheet" href="/dcms_media/css/common.css">
+<link rel="stylesheet" href="/dcms_media/css/common_tablet.css">
+<link rel="stylesheet" href="/dcms_media/css/common_smartphone.css">
+<link rel="stylesheet" href="/dcms_media/css/top.css">
+<link rel="stylesheet" href="/dcms_media/css/top_tablet.css">
+<link rel="stylesheet" href="/dcms_media/css/top_smartphone.css">
+<link rel="stylesheet" href="/dcms_media/css/jquery.flexslider.css" />
+<link rel="stylesheet" href="/dcms_media/other/sp_custom.css" />
+
+<!-- rss スクロール -->
+<link rel="stylesheet" href="/dcms_media/css/jquery.jscrollpane.css" />
+
+<!-- カテゴリーメニュー -->
+<link rel="stylesheet" href="/dcms_media/css/cate_menu.css">
+<!-- <link rel="stylesheet" href="/dcms_media/css/cate_menu02.css"> -->
+
+<!-- スマホ スライドメニュー -->
+<link rel="stylesheet" href="/dcms_media/css/drawer.css" />
+
+<!-- google font -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
+<script src="/dcms_media/js/jquery-1.11.1.min.js"></script>
+<script src="/dcms_media/js/slidemenu.js"></script>
+<script src="/dcms_media/js/scrolltopcontrol.js"></script>
+<script src="/dcms_media/js/jquery.matchHeight-min.js"></script>
+<script src="/dcms_media/js/jquery.biggerlink.min.js"></script>
+<script src="/dcms_media/js/jquery.flexslider-min.js"></script>
+<script src="/dcms_media/js/instagramLite.js"></script>
+
+<!-- rss スクロール -->
+<script src="/dcms_media/js/jquery.jscrollpane.min.js"></script>
+
+<!-- スマホ スライドメニュー -->
+<script src="/dcms_media/js/drawer.min.js"></script>
+<script src="/dcms_media/js/iscroll.js"></script>
+
+<!-- 文字サイズ変更ボタン -->
+<script src="/dcms_media/js/jquery.textresizer.js"></script>
+
+<!-- instagram -->
+<script src="/dcms_media/js/instagramfeed.js"></script>
+<script src="/dcms_media/js/instafeed.min.js"></script>
+
+<script>
+var lh = "";
+    lh = location.href;
+    if (lh.match(/dcmsadm/)){
+    } else {
+
+$(document).ready(function(){
+    //mainimage
+    $('.flexslider').flexslider({
+        animation: "fade",
+        slideDirection: "horizontal",
+        slideshow: true,  //自動再生
+        slideshowSpeed: 4000,
+        animationDuration: 2000,
+        directionNav: false,
+        controlNav: true,
+    });
+    //matchHeight
+    $('.txtH').matchHeight();
+
+      //biggerlink
+	$('.biggerlink').biggerlink();
+
+//sp navi drawer
+$(window).on('resize load',function(){
+    var win = $(window).width();
+    if(win < 690){
+      $('.drawer').drawer();
+    }
+});
+
+  //textresizer
+  $("ul#resizer a").textresizer({
+	 target: "#contents" ,
+	 type: "fontSize",
+	 sizes: [ "100%", "110%"],
+	 selectedIndex: 0
+	});
+
+	//color change accordion
+    $(function(){
+        $(".color_change_title").on("click", function() {
+            $(this).next().slideToggle();
+			$(this).toggleClass("active");
+        });
+    });
+    $('.instagram_out').instagramLite({
+        clientID: '0a33ef7c4a984495b0efc28a81630564',
+        username: 'ashibetsu'
+    });
+
+});
+}
+</script>
+
+<script type="text/javascript">
+if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+$(document).ready(function(){
+	$('.scroll').jScrollPane();
+});
+}
+</script>
+
+
+<!-- 背景色変更 -->
+<link  rel="stylesheet" href="/dcms_media/css/back_white.css" id="haikei">
+<script src="/dcms_media/js/jquery.cookie.js"></script>
+<script src="/dcms_media/js/color_change.js"></script>
+
+<!-- トップページレイアウト変更201910 -->
+<link  rel="stylesheet" href="/dcms_media/other/top_201910.css">
+<script defer src="https://trace.bluemonkey.jp/trace.js"></script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M8MVD7J');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8MVD7J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</head>
+
+<body id="common" class="drawer drawer--right">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="wrapper">
+<div id="container">
+<div id="header_wrapper"><header><h1 id="logo"><a href="/index.html"><img src="/dcms_media/image/logo.png" alt="星の降る里あしべつ" /></a></h1>
+
+<div id="header_right">
+<ul id="headnav">
+<li class="lang"><a href="/multilingual">Language</a></li>
+</ul>
+
+<div class="color_change_box">
+<div class="color_change_title">
+<p>色合いの変更</p>
+</div>
+<ul id="btn_color">
+<li class="swit"><a href="javascript:void(0)">背景白/文字黒</a></li>
+<li class="swit"><a href="javascript:void(0)">背景黒/文字白</a></li>
+<li class="swit"><a href="javascript:void(0)">背景黄/文字黒</a></li>
+<li class="swit"><a href="javascript:void(0)">背景青/文字黄</a></li>
+</ul>
+</div>
+
+<div class="txt_resize_box clearfix">
+<p>文字サイズ変更</p>
+<ul id="resizer" class="clearfix">
+<li class="medium head_btn"><a href="javascript:void(0);">中</a></li>
+<li class="large head_btn"><a href="javascript:void(0);">大</a></li>
+</ul>
+</div>
+<div id="globalnav">
+<div id="gnav_btn"><a href="#">MENU</a></div>
+<nav id="globalnav_in">
+<ul>
+<li class="globalnav01"><a href="/about">芦別について</a></li>
+<li class="globalnav02"><a href="/access">アクセス</a></li>
+<li class="globalnav03">
+<a href="http://www.tenki.jp/forecast/1/2/1500/1216.html" target="_blank">
+
+天気</a></li>
+</ul>
+</nav></div>
+<div class="search_area">
+<div class="header_search"><form id="fSearch" action="/media/search" method="post"><input class="search_textbox" name="schKeyword" onfocus="if(this.value=='キーワード検索') this.value=''" onblur="if(this.value=='') this.value='キーワード検索'" value="キーワード検索" type="text" /> <input class="search_submit" type="submit" value=" Search" /></form></div>
+</div>
+<ul class="top_sns_btn">
+<li><a href="https://www.facebook.com/gotoashibetsu/" target="_blank"><img src="/dcms_media/image/icon_facebook.png" width="" height=""></a></li>
+<li><a href="https://www.instagram.com/tourism_ashibetsucity/" target="_blank"><img src="/dcms_media/image/icon_instagram.png" width="" height=""></a></li>
+</ul>
+
+<!--sp st-->
+<div id="spnavi"><button class="drawer-toggle drawer-hamburger" type="button"> <span class="drawer-hamburger-icon">ボタン</span><span class="dbtxt">MENU</span></button>
+<div class="drawer-nav">
+<div id="drawer_in"><nav>
+<ul class="cate_list">
+<li><a href="/about">芦別について</a></li>
+<li><a href="/good">芦別のいいところ</a></li>
+<li><a href="/access">アクセス</a></li>
+<li><a href="http://www.tenki.jp/forecast/1/2/1500/1216.html" target="_blank">天気</a></li>
+<li><a href="/media">おすすめ情報</a></li>
+<li><a href="/starry_sky">星空スポット</a></li>
+<li><a href="/modelcourse">モデルコース</a></li>
+<li><a href="/gatatan">芦別名物「ガタタン」ってなに？</a></li>
+<li><a href="/movie">あしべつMOVIE</a></li>
+<li><a href="/pamphlet">パンフレット</a></li>
+<li><a href="/support">ふるさと納税・村民制度</a></li>
+<li><a href="/about_site">このサイトについて</a></li>
+<li><a href="/contact">ご意見・お問い合わせ</a></li>
+</ul>
+</nav></div>
+</div>
+</div>
+<!--sp end--></div></header></div>
+<div id="main_box">
+<div class="scroll_sp" style="display: none;">
+<div class="cate_menu_area_sp clearfix">
+<ul>
+<li class="cate01"><a href="/media/category/see">みる</a></li>
+<li class="cate02"><a href="/media/category/play">遊ぶ・体験</a></li>
+<li class="cate03"><a href="/media/category/event">イベント</a></li>
+<li class="cate04"><a href="/media/category/eat">食べる<br />ガタタン</a></li>
+<li class="cate05"><a href="/media/category/souvenir">お土産</a></li>
+<li class="cate06"><a href="/media/category/spa">宿泊</a></li>
+</ul>
+</div>
+</div>
+<div class="flexslider">
+<ul class="slides"><!-- スライダーブロック -->
+<!-- スライダー単体（コメントなし）　ここから -->
+<li><img src="/dcms_media/image/mainimage001_bg.jpg" alt="星の降る里、芦別" /></li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダー単体　ここから -->
+<li class="mainimage01"><img src="/dcms_media/image/mainimage01_bg.jpg" alt="新城峠" />
+<div class="main_txt_area">
+<div class="t_cell">
+<h2 class="main_txt_l">四季の色、鮮やかに</h2>
+<p class="main_txt_s">新城峠</p>
+</div>
+</div>
+</li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダー単体　ここから -->
+<li class="mainimage02"><img src="/dcms_media/image/mainimage02_bg.jpg" alt="ガタタン" />
+<div class="main_txt_area">
+<div class="t_cell">
+<h2 class="main_txt_l">伝統の味は、今もやさしい</h2>
+<p class="main_txt_s">ガタタン</p>
+</div>
+</div>
+</li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダー単体　ここから -->
+<li class="mainimage03"><img src="/dcms_media/image/mainimage03_bg.jpg" alt="健夏山笠" />
+<div class="main_txt_area">
+<div class="t_cell">
+<h2 class="main_txt_l">燃えるように暑い、芦別の夏</h2>
+<p class="main_txt_s">健夏山笠（星の降る里・芦別健夏まつり）</p>
+</div>
+</div>
+</li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダー単体　ここから -->
+<li class="mainimage04"><img src="/dcms_media/image/mainimage04_bg.jpg" alt="ふらり出かける、桜の丘 旭ヶ丘公園" />
+<div class="main_txt_area">
+<div class="t_cell">
+<h2 class="main_txt_l">ふらり出かける、桜の丘</h2>
+<p class="main_txt_s">旭ヶ丘公園</p>
+</div>
+</div>
+</li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダー単体　ここから -->
+<li class="mainimage05"><img src="https://go-to-ashibetsu.com/dcms_media/image/copy_edit-20.jpg" alt="紅葉、映える　三段滝" />
+<div class="main_txt_area">
+<div class="t_cell">
+<h2 class="main_txt_l">紅葉、映える</h2>
+<p class="main_txt_s">三段滝</p>
+</div>
+</div>
+</li>
+<!-- スライダー単体　ここまで -->
+
+<!-- スライダーブロック --></ul>
+</div>
+</div>
+<div class="cate_menu_area clearfix">
+<ul class="ca-menu">
+<li class="cate01"><a href="/media/category/see"><span class="ca-icon"><img src="/dcms_media/image/cate_icon01.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">みる</p>
+</div>
+</li>
+<li class="cate02"><a href="/media/category/play"><span class="ca-icon"><img src="/dcms_media/image/cate_icon02.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">遊ぶ・体験</p>
+</div>
+</li>
+<li class="cate03"><a href="/media/category/event"><span class="ca-icon"><img src="/dcms_media/image/cate_icon03.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">イベント</p>
+</div>
+</li>
+<li class="cate04"><a href="/eat_gatatan"><span class="ca-icon"><img src="/dcms_media/image/cate_icon04.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">グルメ</p>
+</div>
+</li>
+<li class="cate05"><a href="/media/category/souvenir"><span class="ca-icon"><img src="/dcms_media/image/cate_icon05.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">お土産</p>
+</div>
+</li>
+<li class="cate06"><a href="/media/category/spa"><span class="ca-icon"><img src="/dcms_media/image/cate_icon06.png" alt="" width="" height="" /></span></a>
+<div class="ca-content">
+<p class="ca-main">宿泊</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+
+
+<div id="contents" class="clearfix">
+
+<div id="contents_left">
+
+<!-- ブロック貼り付けエリア -->
+<div id="dcms_layoutPageBlockPasteArea">
+<!-- ブロック -->
+<div id="dcms_layoutPageBlock">
+<div id="top_box01">
+<div class="top_box01_left">
+<h3 id="h2sk4l95s1epce7k12jx3xd1j4nxza">おすすめ情報</h3>
+<a href="#h2sk4l95s1epce7k12jx3xd1j4nxza">
+
+    
+        <div class="blog_section01">
+
+
+    <a href="https://go-to-ashibetsu.com/media/2026/04/15/18">
+        <div class="blog_article01">
+
+
+        <div class="cover">
+                <a href="https://go-to-ashibetsu.com/media/2026/04/15/18"><img src="https://go-to-ashibetsu.com/dcms_media/image/DSC00504.JPG" width="" height="" /></a>
+        </div>
+
+
+<div class="blog_info01">
+                                            遊ぶ・体験                            
+        </div>
+
+            <h4 class="blog_subtitle02">
+                旭ヶ丘公園　施設・動物            </h4>
+
+
+        </div>
+        </a>
+    </div>
+    
+
+</a>
+<div class="btn_more txt_c"><a href="/media/tag/recommend">もっと見る</a></div>
+</div>
+<div class="top_box01_right">
+<h3>お知らせ</h3>
+<div class="scroll"><dl>
+<dt class="rss_date">2026/11/04</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】道の駅スタープラザ芦別🍁11月～3月の営業時間・休業日のお知らせ🦌</a></dd>
+<dd class="rss_contents">11月より営業時間と休業日が変更になります。 ご来館の際はご確認をお願いいたします。<br>
+〇道の駅スタープラザ芦別 観光物産センター<br>
+・定休日：毎週 木曜日<br>
+※木曜日が祝祭日の場合は営業し、翌日（金曜日）が休業日となります。<br>
+・年末年始休館日：12月31日 ～ 1月3日<br>
+〇加工室<br>
+・休業日：毎週 日曜日・木曜日・祝祭日<br>
+※加工室の休業日が祝祭日にあたる場合、その翌日も休業となります。<br>
+⏰営業時間（11月～3月）<br>
+・レストラン：10:00～14:30 および 15:30～ 17:00<br>
+・売店：9:30 ～ 17:00<br>
+・加工室：9:00 ～ 16:00<br>
+〜ご注意〜<br>
+※物産センター休業日（毎週木曜日など）は、ピッツァ芦別もご利用いただけません。<br>
+※道の駅星型公衆トイレは、休館日・営業時間外でもご利用いただけます。<br>
+※都合により、上記休業日や営業時間が変更になる場合がございます。ご来館の前に、お電話にてお問い合わせいただけると確実です。<br>
+<br>
+■問い合わせ先<br>
+道の駅スタープラザ芦別（芦別市北4条東1丁目1番地）<br>
+TEL／0124-23-1437<br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/09/02</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【イベント情報】スターウォッチングinたきさと 2026 開催のお知らせ</a></dd>
+<dd class="rss_contents">秋の夜空を見上げてみませんか？<br>
+今年のスターウォッチングは９月に開催します。<br>
+📅 日時　2026年9月12日（土）19:00開始<br>
+📍 場所　滝里湖オートキャンプ場<br>
+※現地集合・現地解散となります。<br>
+💰 参加費　無料（事前申し込み不要！）<br>
+<br>
+1️⃣滝里ダムの紹介（約10分）<br>
+2️⃣ わかりやすい！星の解説 <br>
+3️⃣ 星空観察＆望遠鏡体験 <br>
+（※雨天時は投影による星空解説を行います）<br>
+
+～天の川にかかる夏の大三角やアルビレオを見つけよう！～ <br>
+天気が良ければ設置された望遠鏡でじっくり天体観測！<br>
+もし星空が見えなくても、プロジェクターで星空を投影して解説するので、雨でもバッチリ楽しめます！<br>
+<br>
+申し込み不要・参加無料なので、ぜひお気軽にお越しください<br>
+<br>
+⚠️ 参加にあたってのお願い<br>
+・自己責任でのご参加をお願いいたします。<br>
+・中学生以下のお子様は保護者同伴でお越しください。<br>
+・雨天決行です！（※悪天候などにより急遽中止する場合がありますのでご了承ください。）<br>
+<br>
+💡 あったら便利な持ち物・おすすめ服装<br>
+・夜は冷え込む場合があります。羽織るもの（防寒着）があると安心です。<br>
+・足元を照らす懐中電灯があると便利です。<br>
+<br>
+🚗 駐車場：あり<br>
+<br>
+🏛️ 主催・お問い合わせ<br>
+一般社団法人芦別観光協会<br>
+📞 TEL：０１２４－２７－７７００<br>
+［共催］国土交通省北海道開発局札幌開発建設部空知川河川事務所滝里ダム管理支所<br>
+［後援］芦別市、芦別市教育委員会<br>
+<br>
+みなさまのお越しを心よりお待ちしております！<br>
+<br>
+<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%A6%E3%82%A9%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0HP%E7%94%A8.png" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/08/14</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】「第50回 豊穣祈願 農業まつり」開催のご案内</a></dd>
+<dd class="rss_contents">星の降る里・芦別の豊かな実りを祝う一大イベント、「第50回 豊穣祈願 農業まつり」が今年も開催されます！<br>
+記念すべき第50回を迎える今回は、地元芦別産の新鮮な農産物（メロン、かぼちゃ、馬鈴薯など）の展示即売会をはじめ、豪華な無料配布やご家族で楽しめる参加型イベントが目白押しです。<br>
+<br>
+開催概要<br>
+日時: 2026年8月22日（土） 9:00〜16:00 ※雨天決行<br>
+会場: 北大通【お祭りの広場】<br>
+主催: 芦別市農業まつり実行委員会<br>
+<br>
+見どころピックアップ<br>
+大盤振る舞いの無料配布: 防災備蓄品アルファ米（9:05〜）、芦別産お米セット（10:00〜）、芦別産はくちょうもち米（15:30〜）をそれぞれ先着で無料配布いたします。<br>
+<br>
+笑顔あふれる参加型イベント: 各生産組合による来場者参加型ゲーム（13:30〜）や、当たり付お菓子まきイベント（14:30〜）など、景品がもらえる企画をご用意しています。<br>
+<br>
+充実のキッチンカー: ザンギ、ピザ、たこ焼き、ハンバーガー、スイーツなど、多彩なグルメが楽しめるキッチンカーが大集合します。<br>
+<br>
+イベントのタイムスケジュール詳細、キッチンカーの出店リスト、会場へのアクセス等の詳細につきましては、以下の専用ページ、および公開中のポスター画像をご覧ください。<br>
+
+🔗 ▶︎<a href="https://go-to-ashibetsu.com/media/2026/08/14/111"target="_blank" rel="noopener noreferrer"><font color=#0000ff><u>「第50回 豊穣祈願 農業まつり」イベント詳細ページはこちら</u></font></a><br>
+※上記リンクをクリックすると、当サイト内の詳しい説明ページへ移動します。<br>
+<br>
+ご家族やご友人をお誘い合わせの上、ぜひ芦別の秋の味覚とお祭りをお楽しみください！皆様のご来場を心よりお待ちしております。<br>
+<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/agricultural_fes_pos2026.jpg" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/08/10</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】観光地づくり加速化補助事業のお知らせ（北海道宿泊税活用事業）</a></dd>
+<dd class="rss_contents">北海道では、「観光地づくり加速化補助事業」を８月３日より募集を開始しました。<br>
+<br>
+宿泊事業者や観光関連事業者、観光協会等を補助対象者とし、設備導入・備品購入を対象経費とした補助事業(北海道宿泊税を活用)を実施しておりますのでご活用ください。<br>
+<br>
+【宿泊事業者】<br>
+旅館業法第3条第1項の規定により旅館業(下宿営業を除く)の許可を受けた者のうち「旅館・ホテル・簡易宿所営業」を営む者。<br>
+※直接北海道へ申請となります。<br>
+<a href="https://www.destilab.pref.hokkaido.lg.jp" target="_blank" rel="noopener noreferrer">
+  観光地づくり加速化補助事業ホームページ</a>をご覧ください。<br>
+<br>
+【観光関連事業者・観光協会等】<br>
+■申請の際に市町村および観光協会等が策定した整備計画が必要となります。<br>
+<a href="https://go-to-ashibetsu.com/dcms_media/other/%E8%A6%B3%E5%85%89%E5%9C%B0%E3%81%A5%E3%81%8F%E3%82%8A%E6%95%B4%E5%82%99%E8%A8%88%E7%94%BB%EF%BC%88%E7%AC%AC5%E5%8F%B7%E6%A7%98%E5%BC%8F%EF%BC%89.xlsx" download="観光地づくり整備計画(第5号様式).xlsx">
+ ・ 観光地づくり整備計画(第5号様式) (XLSX 22.4KB)<br>
+</a>
+<a href="https://go-to-ashibetsu.com/dcms_media/other/%E8%A6%B3%E5%85%89%E5%9C%B0%E3%81%A5%E3%81%8F%E3%82%8A%E6%95%B4%E5%82%99%E8%A8%88%E7%94%BB%E5%88%A5%E7%B4%99%EF%BC%88%E7%AC%AC5%E5%8F%B7%E6%A7%98%E5%BC%8F%E5%88%A5%E7%B4%99%EF%BC%89.xlsx" download="観光地づくり整備計画(第5号様式別紙).xlsx">
+・ 観光地づくり整備計画別紙(第5号様式別紙)  (XLSX 22.4KB)<br>
+</a>
+上記、様式に必要事項をご記入し芦別市 経済建設部 商工観光課 観光振興係又は、芦別観光協会へご提出してください。<br>
+<br>
+■ご提出期限　　令和8年9月4日(金)正午必着<br>
+※ご提出いただいた資料をもとに市と観光協会にて整備計画を策定する期間が必要となるため、上記のとおり提出期限を設けさせていただきました。<br>
+<br>
+■ご提出先（e-mail）<br>
+芦別市 経済建設部 商工観光課 観光振興係：<a href="mailto:kankou@city.ashibetsu.hokkaido.jp?subject=観光地づくり事業についてのお問い合わせ">kankou@city.ashibetsu.hokkaido.jp</a>
+<br>
+一般社団法人芦別観光協会：<a href="mailto:kankouibento@ashibetsukankou.com?subject=観光地づくり事業についてのお問い合わせ">kankouibento@ashibetsukankou.com</a>
+<br>
+<br>
+<p>
+  その他の様式や補助金の詳細内容、お問い合わせにつきましては、<a href="https://www.destilab.pref.hokkaido.lg.jp" target="_blank" rel="noopener noreferrer">観光地づくり加速化補助事業ホームページ</a>をご覧ください。
+</p>
+<br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/08/10</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】笑いの名人が芦別に大集結！「宝くじふるさとワクワク劇場 in 芦別」開催のご案内</a></dd>
+<dd class="rss_contents">芦別市民会館に、テレビでおなじみのお笑い芸人たちがやってきます！<br>
+「宝くじふるさとワクワク劇場 in 芦別」が、9月27日（日）に開催決定いたしました。<br>
+<br>
+第1部の「お笑いオンステージ」では、タカアンドトシ、村上ショージ、林家三平をはじめとする豪華キャストが集結し、爆笑の渦を巻き起こします！<br>
+第2部は、吉田ヒロら吉本新喜劇メンバーと、なんと芦別の地元のみなさんが夢の共演を果たす「ほのぼのコメディ劇場」です。<br>
+<br>
+★緊急募集！吉本新喜劇メンバーと共演しませんか？★<br>
+第2部に出演する地元キャストを「公開オーディション」で決定します！<br>
+オーディションの申込締切は8月17日（月）と目前に迫っておりますので、ご興味のある方はぜひお急ぎください。（※8月23日の公開オーディションは観覧自由です）<br>
+<br>
+ご家族やご友人と一緒に、芦別で大いに笑ってリフレッシュしませんか？<br>
+前売り券は、当協会（芦別市観光協会）窓口などにて絶賛発売中です。宝くじの助成による特別料金となっておりますので、ぜひお早めにお買い求めください！<br>
+<br>
+皆様のご来場を心よりお待ちしております。<br>
+<br>
+【公演概要】<br>
+■日時：2026年9月27日（日）<br>
+開場 13:00 / 開演 14:00 （終演予定 16:30）<br>
+■会場：芦別市民会館<br>
+■入場料：2,000円（全席指定・消費税込）<br>
+※当日券は2,500円となります。<br>
+※宝くじ助成による特別料金です。<br>
+※3才以上有料（3才未満のお子様の膝上鑑賞は無料）<br>
+<br>
+【出演予定】<br>
+＜第1部＞ お笑いオンステージ<br>
+タカアンドトシ、村上ショージ、林家三平、アイデンティティ、スリムクラブ<br>
+＜第2部＞ ほのぼのコメディ劇場<br>
+吉田ヒロ（吉本新喜劇メンバー） ほか続々登場！<br>
+<br>
+【地元出演者 公開オーディション】<br>
+吉本新喜劇メンバーと共演するチャンス！<br>
+■オーディション日時：2026年8月23日（日）14:00～（観覧自由）<br>
+■場所：芦別市民会館<br>
+■申込締切：2026年8月17日（月）<br>
+■オーディション進行/当日司会：スカイサーキット<br>
+■申込方法：チラシ掲載のQRコード（申込フォーム）またはお電話にて<br>
+<br>
+【チケット販売所】
+・芦別観光協会<br>
+・芦別市民会館<br>
+・株式会社一の薬局<br>
+・芦別商工会議所<br>
+・ローソンチケット（Lコード：13333）<br>
+※前売り券が完売の場合は、当日券の販売はありません。<br>
+<br>
+【お問い合わせ】<br>
+芦別市民会館（TEL: 0124-22-3110）<br>
+<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/ExcitingTheater_promotion.jpg" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/07/20</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】第10回 キラキラ☆フェスタあしべつ2026</a></dd>
+<dd class="rss_contents">芦別の夏の夜空を鮮やかに彩る一大イベント、「第10回 キラキラ☆フェスタあしべつ2026」の開催が決定いたしました！
+ご家族やご友人とお誘い合わせのうえ、ぜひご来場ください。<br>
+<br>
+■開催概要<br>
+開催日時：2026年8月1日（土）17:00〜20:30<br>
+会場： 国設芦別スキー場<br>
+開催条件： 雨天決行（荒天の場合は中止となります）<br>
+<br>
+■ご来場にあたっての重要なお知らせ<br>
+安全なイベント運営のため、ご来場の皆様には以下の点についてご協力とご理解をお願いいたします。<br>
+交通・駐車場について<br>
+イベント専用バスの運行はございません。<br>
+会場内および付近に駐車スペースはありません。<br>
+お車でお越しの方は、臨時駐車場（300台収容・会場まで徒歩約15分）をご利用ください。<br>
+<br>
+■入場制限について<br>
+会場内の混雑状況（人数の状況）により、安全確保のため入場を制限させていただく場合がございます。<br>
+あらかじめご了承ください。<br>
+<br>
+主催・お問い合わせ先<br>
+キラキラ☆フェスタあしべつ実行委員会<br>
+電話番号：0124-22-3444<br>
+<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/kirakira_poster2026.jpg" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/07/12</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【重要】7月18日(土) 健夏山笠に伴う大規模な交通規制・歩行者横断禁止のお知らせ</a></dd>
+<dd class="rss_contents">「第54回 星の降る里・芦別 健夏まつり」の開催に伴い、1日目の7月18日（土）は「健夏山笠」が運行されます。<br>
+これに伴い、山笠コースおよび周辺道路にて以下の通り交通規制（車両通行禁止等）を実施いたします。<br>
+安全な山笠運行と事故防止のため、皆様の多大なるご理解とご協力をお願い申し上げます。<br>
+<br>
+🚨交通規制の主な内容<br>
+規制時間： 17:00 〜 健夏山笠行事終了まで<br>
+車両の通行止め： 規制エリア内は、17:00から行事終了まで車両通行止めとなります。許可車両以外の進入は道路交通法違反（罰則対象）となることがありますのでご注意ください。<br>
+<br>
+🚷歩行者の皆様へ：横断・観覧に関する重要なお願い<br>
+歩行者の方にも大変厳しい規制がかかります。お出かけの際はご注意ください。<br>
+横断可能な場所： 歩行者の国道横断は、マップ上の「🚶（人が歩くマーク）」がある場所のみ可能です。<br>
+【要注意】全面横断禁止： 17:50 から 山笠3基の通過が完了するまでの間は、全面横断禁止となります。この時間帯は一切の道路横断ができません。<br>
+観覧・横断の禁止エリア： 17:50から終了まで、一部に「横断禁止エリア」や「観覧禁止エリア」が設けられます。<br>
+<br>
+⚠️ その他の注意事項<br>
+当日は必ず、警察および警備員の指示に従ってください。<br>
+交通状況により、規制内容が変更または延長になることがあります。<br>
+会場周辺での許可のないドローン飛行は禁止です。<br>
+<br>
+規制エリアの詳細な位置や、歩行者の横断可能箇所・禁止箇所については、必ず以下の交通規制図をご確認ください。<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/54_kenka_koutsukisei.jpg" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/07/10</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】芦別の夏が熱く燃える！「第54回 星の降る里・芦別 健夏まつり」開催！</a></dd>
+<dd class="rss_contents">皆様、いよいよ芦別が1年で最も熱くなる季節がやってきました！<br>
+7月18日（土）と19日（日）の2日間にわたり、「第54回 星の降る里・芦別 健夏（けんか）まつり」を開催いたします。<br>
+今年の健夏まつりも、大迫力の熱気と笑顔あふれるイベントが盛りだくさんです。ぜひ皆様お誘い合わせのうえ、会場へお越しください！<br>
+<br>
+🏮【1日目】7月18日（土）〜 芦別の夏がここから始まる 〜<br>
+目玉はなんといっても、熱気あふれる男衆が巨大な山笠を担いで北の大地を駆け抜ける「健夏山笠」です！<br>
+17:59からスタートする「追い山」では、勇壮な姿と「オイサ！オイサ！」の力強い掛け声が響き渡り、圧倒されること間違いなしです。<br>
+※健夏まつりの開会式は16:00より行われます。<br>
+<br>
+🏮【2日目】7月19日（日）〜 観て、食べて、踊って楽しむ 〜<br>
+駅前通りや露店会場周辺で、ご家族みんなで楽しめる多彩なイベントを開催します！<br>
+ご家族で体験！： 滝川警察署の広報ブースや、芦別消防団による「放水するぞぉ！」、お財布に優しく無料で遊べる「こども縁日」（10:00〜12:00）など、お子様がワクワクする企画をご用意。<br>
+<br>
+ステージイベント： 芦別のフラガールたちの華やかなダンス、大迫力の「大道芸パフォーマンス Performer RUI」、そして「芦別市民吹奏楽団演奏」が会場を盛り上げます。<br>
+<br>
+一体感に感動！健夏おどり：12:45からの「第8回さくらんぼ種飛ばし（※当日こども縁日ブースにて受付）」で白熱した後は、15:30からいよいよ「健夏おどり」がスタート！お馴染みの「あしべつ節」に合わせて、市民が一体となって踊り歩く姿は必見です。芦別の夏を彩る熱気あふれる舞を、ぜひ会場でご覧ください！<br>
+<br>
+また、19日（日）限定で「露店会場」（10:00〜16:30）がオープンします！美味しいお祭りグルメを片手に、芦別の夏を存分にお楽しみください。<br>
+詳細なタイムスケジュール、露店の出店情報、および会場・駐車場マップについては、以下のポスターと行事日程表、またはおまつり特設ページをご覧ください。<br>
+👇 おまつりの詳細・交通規制等のご確認はこちら！<br>
+<a href="https://go-to-ashibetsu.com/news/kenkafes_pecialpage.html"target="_blank" rel="noopener noreferrer"><font color=#0000ff><u>第54回 健夏まつり特設ページへ</u></font></a><br>
+ <br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/54_kenkamatsuri.jpg" alt="" width="100%" /><br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/54_kenka_fes.jpg" alt="" width="100%" /><br>
+<br>
+皆様のご来場を心よりお待ちしております！</dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/06/08</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】「あしべつスター☆マラニック2026」の申込受付が始まります！</a></dd>
+<dd class="rss_contents">今年も「あしべつスター☆マラニック」を次の日程で開催いたします！<br>
+ランナーの皆さまに全力で楽しんでいただけるよう、現在着々と準備を進めております。<br>
+初めての方も、毎年ご参加いただいている方も、皆さまのエントリーを心よりお待ちしております！<br>
+<br>
+●開催日時<br>
+令和8年8月30日（日）<br>
+●開催場所<br>
+なまこ山陸上競技場<br>
+●申込期間<br>
+令和8年6月8日（月）～ 7月31日（金）<br>
+※定員になり次第、受付を締め切らせていただきます。お早めにお申し込みください。<br>
+●詳細・お申し込み<br>
+参加料やコース、その他詳細については、下記の観光総合ガイドホームページをご覧ください。<br>
+公式詳細ページ：<a href="https://go-to-ashibetsu.com/media/2026/05/01/235"target="_blank" rel="noopener noreferrer"><font color=#0000ff><u>あしべつスター☆マラニック2026</u></font></a><br> <br>
+【申込・お問い合わせ先】<br>
+あしべつスター☆マラニック実行委員会事務局<br>
+☎ 0124-23-1437<br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/05/14</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news/kenkafes_pecialpage.html">【出店者募集】「星の降る里・芦別健夏まつり」の出店者を募集します。</a></dd>
+<dd class="rss_contents">芦別の夏を熱く彩る一大イベント「星の降る里・芦別健夏まつり」が今年も開催されます。<br>
+つきましては、お祭りを一緒に盛り上げていただける出店者の皆様を広く募集いたします。<br>
+地元の美味しいグルメや自慢の逸品を、多くの来場者の皆様へ提供してみませんか？<br>
+皆様からのたくさんのご応募をお待ちしております。<br>
+<br>
+■募集要項・お申し込み方法<br>
+出店に関する詳細は下記のリンクよりご確認ください。<br>
+<a href="https://go-to-ashibetsu.com/news/VendorRecruitment.html"target="_blank" rel="noopener noreferrer"><font color=#0000ff><u>『星の降る里・芦別健夏まつり』出店者の募集ページ</u></font></a><br>
+<br>
+■申込締切<br>
+令和8年6月7日（日） 必着<br>
+<br>
+■お問い合わせ・お申し込み先<br>
+星の降る里・芦別健夏まつり実行委員会 事務局<br>
+（一般社団法人 芦別観光協会内）<br>
+電話：0124-27-7700<br>
+（受付時間：9時〜17時）<br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/04/29</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【イベント情報】第21回 芦別林産フェスティバル 元気森森まつり開催のお知らせ</a></dd>
+<dd class="rss_contents">新緑の候、芦別市の豊かな自然を満喫できる恒例イベント「第21回 芦別林産フェスティバル 元気森森まつり」が開催されます。<br>
+今年は会場を「カナディアンワールド」に移し、さらにパワーアップした内容でお届けします！<br>
+<br>
+目玉となる優勝賞金10万円のアウトドア対決をはじめ、高性能林業機械のデモンストレーション、お子様に大人気のアウトドア体験など、大人から子供まで楽しめるプログラムが満載です。<br>
+ご家族・ご友人とお誘い合わせの上、ぜひご来場ください。<br>
+<br>
+【開催概要】<br>
+日時：令和8年5月16日（土） 10:00 〜 17:00<br>
+場所：カナディアンワールド 特設会場（芦別市黄金町731番地）<br>
+主な内容：<br>
+ステージイベント：市民吹奏楽団演奏、チェンソーアート、抽選会 ほか<br>
+体験・展示ブース：丸太切り体験、マイ箸作り、木の魚釣り大会 ほか<br>
+特別企画：3人チーム対抗アウトドア対決（当日エントリー可・優勝賞金10万円）<br>
+物販・飲食：採れたて山菜販売、各種飲食ブース、縁日コーナー<br>
+<br>
+お問い合わせ：元気森森まつり実行委員会事務局（なかそらち森林組合内）<br>
+TEL：0124-22-3270<br>
+皆様のお越しを心よりお待ちしております。<br>
+<br>
+<img src="https://go-to-ashibetsu.com/dcms_media/image/posta_genkimorimori_2026.jpg" alt="" width="100%" /><br></dd>
+</dl>
+<dl>
+<dt class="rss_date">2026/04/29</dt>
+<dd class="rss_title"><a href="https://go-to-ashibetsu.com/news.html">【お知らせ】2026年 芦別市内景勝地・観光施設オープン情報</a></dd>
+<dd class="rss_contents">春の訪れとともに、市内の各景勝地や観光施設が順次オープンいたします。<br>
+現在の開園・開放予定日は以下の通りです。<br>
+<br>
+■ 4月15日（水）オープン<br>
+・旭ヶ丘公園<br>
+・三段滝（トイレ利用可能）<br>
+・黄金水松（トイレ利用可能）<br>
+■ 4月17日（金）オープン<br>
+・上金剛山展望台ゲート<br>
+■ 4月24日（金）オープン<br>
+・旧三井芦別鉄道 炭山川橋梁展望広場ゲート<br>
+■ 4月25日（土）オープン<br>
+・カナディアンワールド<br>
+■ 4月29日（水）オープン<br>
+・夫婦滝<br>
+<br>
+【ご利用にあたっての注意事項】<br>
+・天候や積雪状況により、日程が前後する場合がございます。あらかじめご了承ください。<br></dd>
+</dl>
+</div>
+<div class="btn_more txt_c"><a href="/news">もっと見る</a></div>
+</div>
+</div>
+<div id="top_box02">
+<div id="top_box02_in">
+<div class="insta_logo"><img title="芦別観光協会公式Instagram" src="dcms_media/image/common/insta_logo.png" alt="芦別観光協会公式Instagram" width="68" height="68" data-popupalt-original-title="null" /></div>
+<h3>写真でみる芦別</h3>
+<p class="insta_account"><img src="dcms_media/image/common/icon_target.png" alt="芦別観光協会公式Instagram" /><a href="https://www.instagram.com/tourism_ashibetsucity/" target="_blank" rel="noopener">芦別観光協会公式Instagram</a></p>
+<div class="box2">
+<div class="m20 clearfix"><div class="instagramfeed"></div></div>
+<div class="btn_more txt_c"><a href="https://www.instagram.com/tourism_ashibetsucity/" target="_blank" rel="noopener">オフィシャルの投稿を見る</a></div>
+<div class="insta_comment_btn">
+<p class="insta_lead">Instagramに芦別の写真を投稿しよう！</p>
+<p>ハッシュタグ #みんなの芦別　をつけて投稿してね</p>
+<div class="btn_more mt10 m10"><a href="https://www.instagram.com/explore/tags/みんなの芦別/" target="_blank" rel="noopener">みんなの投稿を見る</a></div>
+<p class="social_guide"><a href="/snsguide">ソーシャルメディア活用ガイドライン</a></p>
+</div>
+</div>
+</div>
+<div id="top_box02_fb"><div class="fb-page" data-href="https://www.facebook.com/gotoashibetsu/" data-tabs="timeline" data-width="350" data-height="460" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div></div>
+</div>
+<div id="top_box03">
+<div class="top_box03_left">
+<h3>モデルコース</h3>
+<p>芦別の観光スポットを楽しく回るコースをご紹介。</p>
+<p>エリアやテーマ別に、お好みのプランを見つけてください。</p>
+<ul class="btn_more_list">
+<li><a href="/modelcourse">モデルコースを見る</a></li>
+</ul>
+</div>
+<div class="top_box03_right">
+<h3>星空スポット</h3>
+<p>「星の降る里・芦別」をキャッチフレーズにするわたしたちの街。</p>
+<p>降るように美しい星空を見渡せるおすすめスポットをご紹介します。</p>
+<ul class="btn_more_list">
+<li><a href="/starry_sky">星空スポットを見る</a></li>
+</ul>
+</div>
+</div>
+<div id="top_box04">
+<div class="top_box04_left">
+<div class="top_box04_left_in">
+<h3><span class="txt_oblique">あしべつMOVIE</span></h3>
+<iframe allowfullscreen="allowfullscreen" frameborder="0" height="225" src="//www.youtube.com/embed/-mvQuUGzxCs" width="400"></iframe>
+<div class="btn_more txt_c"><a href="/movie.html">もっと見る</a></div>
+</div>
+</div>
+<div class="top_box04_right2">
+<div class="top_box04_2column"><a href="https://go-to-ashibetsu.com/pamphlet.html"><img src="/dcms_media/image/top_box04_right_top_bg_pamphlet.jpg" alt="パンフレット" /></a> <a href="/media/category/event"><img src="/dcms_media/image/top_box04_right_top_bg_event.jpg" alt="イベントカレンダー" /></a></div>
+<div class="top_box04_right_bottom biggerlink">
+<h3>あしべつを応援したい！</h3>
+<p class="subtitle">ふるさと納税・村民制度</p>
+<p>あしべつに縁のある方、訪れて好きになってくれた方、<span class="pc_br">そしてこのホームページで興味を持ってくれた方。</span></p>
+<p>そんな「あしべつファン」のみなさまに、あしべつを<span class="pc_br">応援していただく方法があります。</span></p>
+<div class="btn_support"><a href="/support"><img src="/dcms_media/image/common/btn_support.png" alt="矢印" width="28" height="28" /></a></div>
+</div>
+</div>
+</div>
+<div id="top_box05">
+<div class="top_box05_left top_box05_3column">
+<div class="top_box05_in">
+<div class="top_box05_txt">
+<h3>星の降る里・芦別健夏まつり　　<span class="font_s">ほしのふるさと・あしべつけんかまつり</span></h3>
+<p class="font_m m15_sph">北の山笠、芦別の夏を駆け抜ける！<br />芦別の夏を彩る、健夏おどり！</p>
+<p class="m10_sph font_s">「”健”康に”夏”を過ごす」という思いから<br />「健夏まつり」と名図けられたこのお祭りは<br />今や芦別を代表するお祭りとなっている。</p>
+<div class="btn_more txt_c"><a href="https://go-to-ashibetsu.com/news/kenkafes_pecialpage.html">もっと見る</a></div>
+</div>
+</div>
+</div>
+<div class="top_box05_right top_box05_3column">
+<div class="top_box05_in">
+<div class="top_box05_txt">
+<h3>芦別名物<br />ガタタンってなに？</h3>
+<img title="芦別名物「ガタタン」ってなに？" src="/dcms_media/image/top_box05_human_img.png" alt="芦別名物ガタタンってなに？" width="219" height="215" data-popupalt-original-title="null" />
+<div class="btn_more txt_c"><a href="/gatatan">もっと見る</a></div>
+</div>
+</div>
+</div>
+<div class="top_box05_right02 top_box05_3column">
+<div class="top_box05_in">
+<div class="top_box05_txt">
+<h3>芦別温泉　<span class="font_s">あしべつおんせん</span></h3>
+<p class="font_m m15_sph">別名「化粧の湯」<br />入浴後には肌がすべすべ</p>
+<p class="m10_sph font_s">北海道で唯一、環境省から「国民保健温泉地」として指定されています。</p>
+<div class="btn_more txt_c"><a href="https://go-to-ashibetsu.com/media/2021/02/01/162">もっと見る</a></div>
+</div>
+</div>
+</div>
+</div>
+<div id="top_box06">
+<div id="top_box06_in">
+<div class="top_box06_txt">
+<h3>芦別のいいところ</h3>
+<p><span class="sp_br">芦別は、豊かな自然に恵まれた、のんびりしたまち。</span><br /> <span class="sp_br">今もここにしかない食べ物や飲み物があって、野菜はなんでもおいしくて。</span><br /> <span class="sp_br">そういえば、なぜかお祭りで「餅まき」が始まるのも、ここだけかも？</span><br /> <span class="sp_br class=">そんなゆるーい心地よさは、ここに暮らす人々が作り出してきました。</span></p>
+<p>　</p>
+<p class="m20">おもしろくて温かい。<br />そんな人たちが住んでいる「芦別市」。</p>
+<div class="btn_more"><a href="/good">もっと見る</a></div>
+</div>
+</div>
+</div>
+<ul id="banner">
+<li class="txtH"><a title="星の降る里あしべつ　北海道芦別市" href="http://www.city.ashibetsu.hokkaido.jp/" target="_blank" rel="noopener"><img title="星の降る里あしべつ　北海道芦別市" src="/dcms_media/image/ashibetsu_banner.jpg" alt="星の降る里あしべつ　北海道芦別市" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="芦別温泉スターライトホテル" href="https://ofurocafe-seiyukan.com/" target="_blank" rel="noopener"><img title="芦別温泉スターライトホテル" src="/dcms_media/image/starlight_banner.jpg" alt="芦別温泉スターライトホテル" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="大橋さくらんぼ園" href="http://www.oh-cherry.com/" target="_blank" rel="noopener"><img title="大橋さくらんぼ園" src="/dcms_media/image/oocherry_banner.jpg" alt="大橋さくらんぼ園" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a href="https://www.nakanishi-cherry.com/" target="_blank" rel="noopener"><img title="中西サクランボ園" src="/dcms_media/image/nakanishicherry_banner.jpg" alt="中西サクランボ園" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="心躍る旅、道北" href="https://do-hoku.com" target="_blank" rel="noopener"><img title="心躍る旅、道北" src="https://go-to-ashibetsu.com/dcms_media/image/douhoku_rink.jpeg" alt="心躍る旅、道北" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="そらち・デ・ビュー" href="http://sorachi-de-view.com/" target="_blank" rel="noopener"><img title="そらち・デ・ビュー" src="/dcms_media/image/sorachidebyu_banner.jpg" alt="そらち・デ・ビュー" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="Good Day 北海道" href="http://www.visit-hokkaido.jp/" target="_blank" rel="noopener"><img title="Good Day 北海道" src="/dcms_media/image/goodday_banner.jpg" alt="Good Day 北海道" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="旅して体験！北海道" href="http://www.hokkaido-taiken.jp/" target="_blank" rel="noopener"><img title="旅して体験！北海道" src="/dcms_media/image/tabishitehokkaidoi_banner.jpg" alt="旅して体験！北海道" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="全国「道の駅」連絡会" href="http://www.michi-no-eki.jp/" target="_blank" rel="noopener"><img title="全国「道の駅」連絡会" src="/dcms_media/image/michinoeki_banner.jpg" alt="全国「道の駅」連絡会" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+<li class="txtH"><a title="炭鉄港ポータブルサイト" href="https://3city.net" target="_blank" rel="noopener"><img title="北の道ナビ「距離と時間検索」" src="https://go-to-ashibetsu.com/dcms_media/image/%E7%82%AD%E9%89%84%E6%B8%AF%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%88%E3%83%90%E3%83%8A%E3%83%BC.jpg" alt="炭鉄港ポータブルサイト" width="175" height="75" data-popupalt-original-title="null" /></a></li>
+</ul>
+<div class="txt_c m60" style="margin-top: -30px;">
+<div class="btn_more"><a href="/link.html">関連リンク</a></div>
+</div>
+
+</div>
+<!-- // ブロック -->
+</div>
+<!-- // ブロック貼り付けエリア -->
+
+</div><!--contents_left_end-->
+
+<div id="contents_right">
+<!--###_DCMS_COMMON:RIGHTNAVI_###-->
+</div><!--contents_righ_end-->
+
+</div><!--contents_end-->
+
+
+
+</div><!--container_end-->
+
+<footer>
+<div id="footer_top" class="clearfix">
+<div class="footnav_cate">
+<h3>CATEGORY</h3>
+<ul>
+<li><a href="/media/category/see">みる</a></li>
+<li><a href="/media/category/play">遊ぶ・体験</a></li>
+<li><a href="/media/category/event">イベント</a></li>
+<li><a href="/eat_gatatan">グルメ＆ガタタン</a></li>
+<li><a href="/media/category/souvenir">お土産</a></li>
+<li><a href="/media/category/spa">温泉・宿泊</a></li>
+</ul>
+</div>
+<ul class="footnav">
+<li><a href="/about">芦別について</a></li>
+<li><a href="/good">芦別のいいところ</a></li>
+<li><a href="/access">アクセス</a></li>
+<li><a href="/starry_sky">星空スポット</a></li>
+<li><a href="/modelcourse">モデルコース</a></li>
+<li><a href="/gatatan">芦別名物ガタタンってなに？</a></li>
+<li><a href="/pamphlet">パンフレット</a></li>
+<li><a href="/movie">あしべつMOVIE</a></li>
+<li><a href="/support">ふるさと納税・村民制度</a></li>
+<li><a href="/about_site">このサイトについて</a></li>
+<li><a href="/contact">ご意見・お問い合わせ</a></li>
+</ul>
+<div id="footer_right">
+<div class="m10"><div class="fb-page" data-href="https://www.facebook.com/gotoashibetsu/" data-tabs="timeline" data-width="350" data-height="220" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+
+<!--div class="fb-page" data-href="https://www.facebook.com/%E3%82%AD%E3%83%A9%E3%82%AD%E3%83%A9%E8%8A%A6%E5%88%A5%E5%8C%97%E6%B5%B7%E9%81%93-492417617457338/" data-tabs="timeline" data-width="350" data-height="220" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+<blockquote class="fb-xfbml-parse-ignore" cite="https://www.facebook.com/%E3%82%AD%E3%83%A9%E3%82%AD%E3%83%A9%E8%8A%A6%E5%88%A5%E5%8C%97%E6%B5%B7%E9%81%93-492417617457338/"><a href="https://www.facebook.com/%E3%82%AD%E3%83%A9%E3%82%AD%E3%83%A9%E8%8A%A6%E5%88%A5%E5%8C%97%E6%B5%B7%E9%81%93-492417617457338/">キラキラ芦別＠北海道</a></blockquote>
+</div--></div>
+<div id="footer_insta">
+<div id="footer_insta_in"><a href="https://www.instagram.com/tourism_ashibetsucity/" target="_blank" rel="noopener">芦別観光協会公式Instagram</a></div>
+</div>
+<div id="transparts"><div id="google_translate_element"> </div>
+<script type="text/javascript">// <![CDATA[
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,ko,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+// ]]></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script></div>
+</div>
+<div id="footer_left"><a href="/index.html"><img title="星の降る里あしべつ" src="/dcms_media/image/logo.png" alt="星の降る里あしべつ" width="232" height="81" data-popupalt-original-title="null" /></a>
+<div class="address">
+<p>一般社団法人芦別観光協会<br />〒075-0014　芦別市北4条東1丁目1番地3<br />（星の降る里百年記念館内）</p>
+<p>TEL：0124-27-7700／FAX：0124-27-7735</p>
+<p>Email：<a href="mailto:kankouibento@ashibetsukankou.com">kankouibento@ashibetsukankou.com</a></p>
+<p>9:00～17:00<br />（年末年始の12月31日～1月3日は休業）</p>
+</div>
+</div>
+</div>
+<div id="footer_bottom">
+<div id="footer_bottom_in" class="clearfix">
+<ul class="footnav_b clearfix">
+<li><a href="/privacy.html">プライバシーポリシー</a></li>
+<li><a href="/sitemap.html">サイトマップ</a></li>
+</ul>
+<small id="copyright">© Ashibetsu City All Rights Reserved.</small></div>
+</div>
+</footer>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "P05-22",
+    "publisher": "国土交通省",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+    "snapshot": "p05.html",
+    "scope": "全国47都道府県",
+    "referenceDate": "2022-04",
+    "publication": "2023年に2022年版へ更新",
+    "license": "CC BY 4.0",
+    "crs": "JGD2011 / (B,L), GeoJSON EPSG:6668",
+    "classes": {
+      "1": "本庁",
+      "2": "支所・出張所・連絡所",
+      "3": "その他行政サービス施設",
+      "4": "公立公民館",
+      "5": "集会施設"
+    },
+    "pointMeaning": "製品仕様書8章に地理院地図との重ね合わせによる建物外周内の全数検査を規定。入口・受付・階位置ではない。",
+    "decision": "取得・全国候補照合を実装。現行公式施設名/住所確認した3施設のみupdatesへ。",
+    "risks": [
+      "2022年以降の移転・建替え",
+      "同一敷地の別棟",
+      "観光案内所・商店・民間施設等の多くは対象外",
+      "原典に街区ジオコードを含むが製品では地図補正・建物検査。既存住所ジオコーダーとは別データ",
+      "茨城GMLのpublicOfficeClassification要素に空白を含む不正なタグあり。GeoJSONで処理し元GMLのPoint部分で軸順を検査"
+    ],
+    "provenance": {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+      "fetchedAt": "2026-11-05T04:46:40.023978+00:00",
+      "path": "data/evidence/national/official-facility-index/p05.html",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": null,
+      "bytes": 148663,
+      "sha256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+    },
+    "sourceLocator": "データ概要 / 基準年月・作成年度 / 使用許諾 / 座標系 / 作成方法"
+  },
+  {
+    "id": "P02-2006",
+    "publisher": "国土交通省",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P02-2006.html",
+    "snapshot": "p02.html",
+    "scope": "全国公共施設",
+    "referenceDate": "2006年度",
+    "license": "非商用",
+    "crs": "JGD2000 / (B,L)",
+    "classes": [
+      "官公署",
+      "学校",
+      "病院",
+      "郵便局",
+      "社会福祉施設ほか"
+    ],
+    "pointMeaning": "数値地図25000（地名・公共施設）原典の点。建物現況は保証しない。",
+    "decision": "データ未取得・不採用。20年前かつ非商用条件。P05のCC BYと混同しない。",
+    "provenance": {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P02-2006.html",
+      "fetchedAt": "2026-11-05T04:46:40.025294+00:00",
+      "path": "data/evidence/national/official-facility-index/p02.html",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P02-2006.html",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": null,
+      "bytes": 137944,
+      "sha256": "dc556a0c1ce34bce9e2558366cade441ee16d16659ab1c75761fe97dd890f42a"
+    },
+    "sourceLocator": "データ概要 / 基準年月・作成年度 / 使用許諾 / 座標系 / 作成方法"
+  },
+  {
+    "id": "P27-2013",
+    "publisher": "国土交通省",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P27.html",
+    "snapshot": "p27.html",
+    "scope": "全国文化施設",
+    "referenceDate": "2013年度",
+    "license": "非商用",
+    "crs": "JGD2000 / (B,L)",
+    "classes": [
+      "美術館",
+      "資料館",
+      "博物館",
+      "図書館",
+      "水族館ほか"
+    ],
+    "pointMeaning": "原典の施設範囲内に含まれる点を検査。住所から位置参照情報等を使う作成工程。",
+    "decision": "データ未取得・不採用。13年前かつ非商用条件。",
+    "provenance": {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P27.html",
+      "fetchedAt": "2026-11-05T04:46:40.025712+00:00",
+      "path": "data/evidence/national/official-facility-index/p27.html",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P27.html",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": null,
+      "bytes": 92171,
+      "sha256": "2662c3c74ec27c47193f1e56001d899148f1c7f5c38f0595a6e50da5335eda4b"
+    },
+    "sourceLocator": "データ概要 / 基準年月・作成年度 / 使用許諾 / 座標系 / 作成方法"
+  },
+  {
+    "id": "P28-2022",
+    "publisher": "国土交通省",
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P28-2022.html",
+    "snapshot": "p28.html",
+    "scope": "全国国・都道府県機関（文化施設・学校・警察等を除く）",
+    "referenceDate": "2022年度",
+    "license": "非商用",
+    "crs": "JGD2011 / (B,L)",
+    "classes": [
+      "国機関",
+      "都道府県機関",
+      "保健所"
+    ],
+    "pointMeaning": "施設範囲内に含まれることを原典重ね合わせ検査。",
+    "decision": "データ未取得・不採用。非商用条件で汎用台帳への採用に不適。市町村役場用のP05とは別。",
+    "provenance": {
+      "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P28-2022.html",
+      "fetchedAt": "2026-11-05T04:46:40.026878+00:00",
+      "path": "data/evidence/national/official-facility-index/p28.html",
+      "status": 200,
+      "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P28-2022.html",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": null,
+      "bytes": 146421,
+      "sha256": "dfb4d8cf513947195e94e23ead0a6d8471f1bafb0d9c39140da222cb7a96546e"
+    },
+    "sourceLocator": "データ概要 / 基準年月・作成年度 / 使用許諾 / 座標系 / 作成方法"
+  },
+  {
+    "id": "municipal-standard",
+    "publisher": "デジタル庁",
+    "url": "https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+    "snapshot": "digital-standard.html",
+    "scope": "各自治体が利用する共通項目定義。全国地点集約ファイルではない",
+    "referenceDate": "2023-03-31に推奨データセットから移行",
+    "license": "実データは提供自治体ごとの条件を確認",
+    "crs": "実データの仕様を確認",
+    "classes": [
+      "公共施設一覧ほか"
+    ],
+    "pointMeaning": "共通項目の緯度経度が存在するだけで、建物測量精度やジオコードではないことを保証しない。",
+    "decision": "CSVアダプタを八王子市実データで実証。全国一括の代替にはならない。",
+    "provenance": {
+      "url": "https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+      "fetchedAt": "2026-11-05T04:46:40.570276+00:00",
+      "path": "data/evidence/national/official-facility-index/digital-standard.html",
+      "status": 200,
+      "finalUrl": "https://www.digital.go.jp/resources/open_data/municipal-standard-data-set-test",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": "Wed, 04 Nov 2026 15:09:43 GMT",
+      "bytes": 60012,
+      "sha256": "8d775466df431406218eccd1f308abac75d5a0f11257ce12e71c5ad2ed2d93e5"
+    },
+    "sourceLocator": "本文 / 公開データ・更新日・利用条件"
+  },
+  {
+    "id": "hachioji-standard",
+    "publisher": "八王子市",
+    "url": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934.html",
+    "snapshot": "hachioji.html",
+    "download": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934_d/fil/132012_public_facility.csv",
+    "scope": "八王子市公共施設",
+    "referenceDate": "ページ更新2025-08-20。CSV個別地点の観測/更新日は未記載",
+    "license": "CC BY 4.0",
+    "crs": "CSV・公開ページに明記なし",
+    "classes": "POIコード欄あり（空欄レコードあり）",
+    "pointMeaning": "緯度経度があるが建物代表点か住所代表点か不明",
+    "decision": "609地点を取得して照合。対象未確定施設との名称+住所一致0件。郷土資料館の同名別自治体を除外。CSVだけでconfirmedにしない。",
+    "provenance": {
+      "url": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934.html",
+      "fetchedAt": "2026-11-05T04:46:40.576836+00:00",
+      "path": "data/evidence/national/official-facility-index/hachioji.html",
+      "status": 200,
+      "finalUrl": "https://www.city.hachioji.tokyo.jp/contents/open/002/p035934.html",
+      "contentType": "text/html",
+      "lastModified": "Fri, 30 Oct 2026 17:22:05 GMT",
+      "bytes": 21563,
+      "sha256": "fa2eb240b2d3ba5d029b73d8fdd084ccef2e2e8663134947c552cbbe46e0c63a"
+    },
+    "sourceLocator": "本文 / 公開データ・更新日・利用条件"
+  },
+  {
+    "id": "hokkaido-227",
+    "publisher": "北海道",
+    "url": "https://www.harp.lg.jp/opendata/dataset/227.html",
+    "snapshot": "hokkaido.html",
+    "scope": "道内施設。旧国土数値情報と7市町村等のオープンデータ混載",
+    "referenceDate": "作成2018-10-01。閲覧時カタログ更新2026-11-05だが本文は2010〜2015年原典を列記",
+    "license": "国土数値情報由来分等の個別条件確認が必要・全件一括CC BYとは認定しない",
+    "crs": "緯度経度10進数。本文で測地系の一律指定なし",
+    "classes": "公共/医療/福祉/学校/文化/郵便局/避難施設ほか",
+    "pointMeaning": "由来別の施設点。現存しない施設や新設未収録を提供元自身が注意",
+    "decision": "カタログのみ取得。古いP05を含み新全国P05より更新性が劣る。混合ライセンス/原典年の点検をせず確定に利用しない。",
+    "provenance": {
+      "url": "https://www.harp.lg.jp/opendata/dataset/227.html",
+      "fetchedAt": "2026-11-05T04:46:40.588769+00:00",
+      "path": "data/evidence/national/official-facility-index/hokkaido.html",
+      "status": 200,
+      "finalUrl": "https://www.harp.lg.jp/opendata/dataset/227.html",
+      "contentType": "text/html; charset=UTF-8",
+      "lastModified": "Wed, 04 Nov 2026 15:45:25 GMT",
+      "bytes": 19827,
+      "sha256": "aeb6ac3cfb1312847b448acca5859bd5417a49431fc81b55795c9a993d8a5fab"
+    },
+    "sourceLocator": "本文 / 公開データ・更新日・利用条件"
+  }
+]

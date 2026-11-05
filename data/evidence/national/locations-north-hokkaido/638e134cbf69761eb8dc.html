@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>北海道上富良野町公式サイトトップページ</title>
+<meta name="author" content="北海道上富良野町">
+<meta name="description" content="北海道上富良野（かみふらの）町の公式サイトのトップページ">
+<link rel="canonical" href="https://www.town.kamifurano.hokkaido.jp/">
+<link rel="manifest" href="/manifest.webmanifest?t=2403092100">
+<link rel="icon" href="/favicon.ico?t=2402230900" sizes="any">
+<link rel="icon" href="/icon.svg?t=2402230900" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?t=2402230900">
+<link rel="stylesheet" href="/css/layout_v2.css?t=2403010700" media="screen,tv,print">
+<style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    }
+
+    .hero-container {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-text {
+      text-align: center;
+      color: white;
+      max-width: 1024px;
+      z-index: 1;
+      opacity: 0.0;
+      transition: all 2.0s linear 0.7s;
+    }
+
+    .show {
+      opacity: 1.0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(140, 72, 179, 1.0);
+    }
+
+    h1 > br {
+      display: none;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(140, 72, 179, 1.0);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      width: 9em;
+      margin-bottom: 10px;
+      background-color: #ff6347;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #ff4500;
+    }
+
+    #officialsite-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      margin: 10px;
+    }
+
+    #officialsite-logo img {
+      display: block;
+      width: 100%;
+      filter: drop-shadow(2px 2px 2px rgba(140, 72, 179, 1.0));
+    }
+
+    #fixed-counter {
+      position: fixed;
+      bottom: 0px; /* 下からの距離を調整 */
+      right: 0px; /* 右からの距離を調整 */
+      padding: 5px;
+    }
+
+    #fixed-videonote {
+      position: fixed;
+      bottom: 0px; /* 下からの距離を調整 */
+      left: 0px; /* 左からの距離を調整 */
+      padding: 5px;
+      color: white;
+    }
+
+    @media screen and (max-width: 767px){
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 > br {
+        display: block;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }    
+    
+      .cta-btn {
+        width: 7em;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }      
+
+      #officialsite-logo {
+       width: 50%;
+      }
+
+      #fixed-counter {
+        opacity: 0;
+      }
+    } 
+
+    @media screen and (max-height: 576px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 > br {
+        display: none;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }    
+    
+      .cta-btn {
+        width: 7em;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }      
+      
+      #officialsite-logo {
+       width: 200px;
+      }
+
+      #fixed-counter {
+        display: none;
+      }   
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-container">
+    <video id="videoPlayer" class="hero-video" muted playsinline preload="auto" poster="/video/videoposter.jpg">
+      <source src="/video/video01.mp4" type="video/mp4">
+      お使いのブラウザは HTML5 の video 要素をサポートしていません。
+    </video>
+
+    <div id="hero-title" class="hero-text show">
+      <h1>北海道上富良野町<br>公式サイト</h1>
+      <p>以下のサイトにお進みください。</p>
+      <a href="https://kamifulife.jp/" class="cta-btn">移住ポータル</a>
+      <a href="https://www.kamifurano.jp/" class="cta-btn">観光情報</a>
+      <a href="/furusatoouen/" class="cta-btn">ふるさと納税</a>
+      <a href="/index.php?id=110" class="cta-btn">町行政情報</a>
+    </div>
+  </div>
+  <div id="officialsite-logo">
+    <img src="/images/officialsite_logo.png" alt="Kamifurano Town Official Site">
+  </div>
+  <div id="fixed-videonote">この背景動画は、「上富良野開基120年記念映像」から転載しています。</div>
+  <div id="fixed-counter"><img src="/mycount/mycount.php?id=1" alt=""></div>
+<script>
+(function() {
+  const videoPlayer = document.getElementById('videoPlayer');
+  const heroTitle = document.getElementById('hero-title');
+  const videoSources = [
+    '/video/video01.mp4',
+    '/video/video02.mp4',
+    '/video/video03.mp4',
+    '/video/video04.mp4',
+    '/video/video05.mp4',
+    '/video/video06.mp4',
+    '/video/video07.mp4',
+    '/video/video08.mp4',
+    '/video/video09.mp4'
+  ];
+  let currentIndex = 0;
+  const preloadedVideos = [];
+
+  /**
+   * 次の動画をプリロードする
+   */
+  function preloadNextVideo() {
+    const nextIndex = (currentIndex + 1) % videoSources.length;
+    if (!preloadedVideos[nextIndex]) {
+      const v = document.createElement('video');
+      v.src = videoSources[nextIndex];
+      v.preload = 'auto';
+      preloadedVideos[nextIndex] = v;
+    }
+  }
+
+  /**
+   * 次の動画を再生する
+   */
+  function playNextVideo() {
+    currentIndex = (currentIndex + 1) % videoSources.length;
+    videoPlayer.src = videoSources[currentIndex];
+    videoPlayer.load(); // ソース変更後に明示的にロード
+  }
+
+  // 動画再生に関するイベント設定
+  videoPlayer.addEventListener('loadeddata', () => {
+    videoPlayer.play().catch(error => {
+      console.warn('Autoplay was prevented. Waiting for user interaction.', error);
+    });
+    preloadNextVideo();
+  });
+
+  videoPlayer.addEventListener('ended', playNextVideo);
+
+  // 初期化: ヒーロータイトルの非表示化（CSS Transition用）
+  if (heroTitle) {
+    heroTitle.classList.remove('show');
+  }
+
+  // ページ読み込み完了時の処理
+  window.addEventListener('load', () => {
+    if (heroTitle) {
+      heroTitle.classList.add('show');
+    }
+  });
+
+  // 最初の動画をセットして開始
+  videoPlayer.src = videoSources[currentIndex];
+  videoPlayer.load();
+})();
+</script>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=986067920" async></script></body>
+</html>

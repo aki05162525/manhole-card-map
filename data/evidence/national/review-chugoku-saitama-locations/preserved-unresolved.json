@@ -1,0 +1,82 @@
+[
+  {
+    "facilityId": "facility:cs-7851aeb9671340371a",
+    "name": "(一社)津和野町観光協会",
+    "address": "島根県鹿足郡津和野町後田イ71-2",
+    "status": "deferred",
+    "reason": "公式所在地は津和野駅内・後田イ66-1で、元台帳の後田イ71-2と相違。移転・住所変更の採否を別担当へ引き継ぐため地点を保留。",
+    "attempts": [
+      {
+        "url": "https://tsuwano-kanko.net/manholecard/",
+        "result": "HTTP 200。元の公式配布案内を再利用し施設名・住所を確認。"
+      },
+      {
+        "url": "https://tsuwano-kanko.net/category1/loca/",
+        "result": "HTTP 200。公式所在地は津和野駅内・後田イ66-1で、元台帳の後田イ71-2と相違。移転・住所変更の採否を別担当へ引き継ぐため地点を保留。"
+      }
+    ],
+    "scope": "original-unresolved; excluded from 156-update counts"
+  },
+  {
+    "facilityId": "facility:cs-85f80ce977bcdf56d4",
+    "name": "瀬戸内市役所長船支所窓口",
+    "address": "岡山県瀬戸内市長船町土師291",
+    "status": "deferred",
+    "reason": "現施設ページは長船町土師288-1・明示マーカー34.69969459401827,134.10324919623656。元台帳/P05の土師291とは相違し、移転採否を保留して旧点も新点も未適用。",
+    "attempts": [
+      {
+        "url": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "result": "HTTP 200。元の公式配布案内を再利用し施設名・住所を確認。"
+      },
+      {
+        "url": "https://www.city.setouchi.lg.jp/map/405.html",
+        "result": "HTTP 200。現施設ページは長船町土師288-1・明示マーカー34.69969459401827,134.10324919623656。元台帳/P05の土師291とは相違し、移転採否を保留して旧点も新点も未適用。"
+      },
+      {
+        "url": "https://www.city.setouchi.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "result": "HTTP 200。現施設ページは長船町土師288-1・明示マーカー34.69969459401827,134.10324919623656。元台帳/P05の土師291とは相違し、移転採否を保留して旧点も新点も未適用。"
+      }
+    ],
+    "scope": "original-unresolved; excluded from 156-update counts"
+  },
+  {
+    "facilityId": "facility:cs-795a18c5cddf2431eb",
+    "name": "東広島市観光案内所",
+    "address": "東広島市西条町西条475番地2 JR西条駅2階",
+    "status": "deferred",
+    "reason": "県観光施設情報は西条本町12-3、元台帳は西条町西条475-2。ともに駅2階でも住所の同一性・変更時期を確定できずGeoCoordinatesの適用を保留。",
+    "attempts": [
+      {
+        "url": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+        "result": "HTTP 200。元の公式配布案内を再利用し施設名・住所を確認。"
+      },
+      {
+        "url": "https://dive-hiroshima.com/explore/341/",
+        "result": "HTTP 200。県観光施設情報は西条本町12-3、元台帳は西条町西条475-2。ともに駅2階でも住所の同一性・変更時期を確定できずGeoCoordinatesの適用を保留。"
+      }
+    ],
+    "scope": "original-unresolved; excluded from 156-update counts"
+  },
+  {
+    "facilityId": "facility:cs-4418dd72a69888d0bf",
+    "name": "神楽門前湯治村 旅籠千両萬両1階 総合案内所",
+    "address": "安芸高田市美土里町本郷4627",
+    "status": "deferred",
+    "reason": "公式アクセス本文は本郷１４６２７、元台帳は本郷4627。さらにmap_dataの点は湯治村全体で旅籠千両萬両の建物と確定できないため保留。",
+    "attempts": [
+      {
+        "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/c120/",
+        "result": "HTTP 200。元の公式配布案内を再利用し施設名・住所を確認。"
+      },
+      {
+        "url": "https://toujimura.com/access/",
+        "result": "HTTP 200。公式アクセス本文は本郷１４６２７、元台帳は本郷4627。さらにmap_dataの点は湯治村全体で旅籠千両萬両の建物と確定できないため保留。"
+      },
+      {
+        "url": "https://toujimura.com/cmn/js/map.js",
+        "result": "HTTP 200。公式アクセス本文は本郷１４６２７、元台帳は本郷4627。さらにmap_dataの点は湯治村全体で旅籠千両萬両の建物と確定できないため保留。"
+      }
+    ],
+    "scope": "original-unresolved; excluded from 156-update counts"
+  }
+]

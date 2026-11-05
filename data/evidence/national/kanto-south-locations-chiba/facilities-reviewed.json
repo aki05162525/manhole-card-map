@@ -1,0 +1,338 @@
+[
+  {
+    "index": 0,
+    "facilityId": "facility:kanto-south-434d06f8e1ac118768c6",
+    "name": "千葉県立現代産業科学館",
+    "address": "千葉県市川市鬼高1-1-3",
+    "decision": "update"
+  },
+  {
+    "index": 1,
+    "facilityId": "facility:kanto-south-f1977e8bec2e0741eb7a",
+    "name": "千葉市観光情報センター",
+    "address": "千葉市中央区新千葉1-1-1",
+    "decision": "update"
+  },
+  {
+    "index": 2,
+    "facilityId": "facility:kanto-south-71d09ab6a07cc4a8b6dc",
+    "name": "千葉市幕張観光情報センター",
+    "address": "千葉市美浜区ひび野2-110 JR海浜幕張駅構内",
+    "decision": "update"
+  },
+  {
+    "index": 3,
+    "facilityId": "facility:kanto-south-f24a23e101bc8126c5ab",
+    "name": "BOTANICA MUSEUM",
+    "address": "千葉県千葉市美浜区高浜7-2-4(稲毛海浜公園内)",
+    "decision": "update"
+  },
+  {
+    "index": 4,
+    "facilityId": "facility:kanto-south-f6cc840d0f8474dc4bcc",
+    "name": "銚子観光案内所",
+    "address": "千葉県銚子市西芝町1438(JR銚子駅構内)",
+    "decision": "update"
+  },
+  {
+    "index": 5,
+    "facilityId": "facility:kanto-south-3c1ba2230d51216ac3f8",
+    "name": "いちかわ観光物産インフォメーション",
+    "address": "千葉県市川市八幡2-4-8",
+    "decision": "update"
+  },
+  {
+    "index": 6,
+    "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+    "name": "市川市観賞植物園",
+    "address": "千葉県市川市大町213番11外",
+    "decision": "update"
+  },
+  {
+    "index": 7,
+    "facilityId": "facility:kanto-south-75430889450e4d9ed8f5",
+    "name": "市川市行徳図書館2階",
+    "address": "千葉県市川市末広1丁目1番31号",
+    "decision": "update"
+  },
+  {
+    "index": 8,
+    "facilityId": "facility:kanto-south-bc67ec96b8f1849be22c",
+    "name": "市川市中央図書館",
+    "address": "千葉県市川市鬼高1丁目1番4号 生涯学習センター内",
+    "decision": "update"
+  },
+  {
+    "index": 9,
+    "facilityId": "facility:kanto-south-32e8bfebf4fc242a8dcf",
+    "name": "船橋市建設局 下水道部下水道河川計画課(本庁舎5階)",
+    "address": "千葉県船橋市湊町2-10-25",
+    "decision": "update"
+  },
+  {
+    "index": 10,
+    "facilityId": "facility:kanto-south-0f9a240ee29ea2aa7708",
+    "name": "船橋市観光協会",
+    "address": "千葉県船橋市若松2-2-1 ららテラスTOKYO-BAY 2階",
+    "decision": "update"
+  },
+  {
+    "index": 11,
+    "facilityId": "facility:kanto-south-9e8031999683c14ed161",
+    "name": "館山駅東口観光案内所",
+    "address": "千葉県館山市北条1879-2",
+    "decision": "update"
+  },
+  {
+    "index": 12,
+    "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+    "name": "“渚の駅”たてやま",
+    "address": "千葉県館山市館山1564-1",
+    "decision": "update"
+  },
+  {
+    "index": 13,
+    "facilityId": "facility:kanto-south-e293e4d951d5381201cf",
+    "name": "たてチャリサイクリングステーション(館山駅西口観光案内所)",
+    "address": "千葉県館山市北条1879-2",
+    "decision": "update"
+  },
+  {
+    "index": 14,
+    "facilityId": "facility:kanto-south-75276881c57bc5a91c4b",
+    "name": "木更津市観光案内所",
+    "address": "千葉県木更津市富士見1丁目2番1号",
+    "decision": "update"
+  },
+  {
+    "index": 15,
+    "facilityId": "facility:kanto-south-2ea5db5e19391f94bf44",
+    "name": "松戸観光案内所",
+    "address": "千葉県松戸市本町7-3",
+    "decision": "update"
+  },
+  {
+    "index": 16,
+    "facilityId": "facility:kanto-south-ac596737d583f306f762",
+    "name": "松戸市文化ホール",
+    "address": "千葉県松戸市松戸1307番地の1松戸ビルヂング4階",
+    "decision": "update"
+  },
+  {
+    "index": 17,
+    "facilityId": "facility:kanto-south-b0e430199b8f53c15e59",
+    "name": "野田市役所土木部下水道課",
+    "address": "千葉県野田市鶴奉7番地の1",
+    "decision": "update"
+  },
+  {
+    "index": 18,
+    "facilityId": "facility:kanto-south-474b1d31d234c7f00e5b",
+    "name": "野田市役所守衛室",
+    "address": "千葉県野田市鶴奉7番地の1",
+    "decision": "update"
+  },
+  {
+    "index": 19,
+    "facilityId": "facility:kanto-south-c0a84a5e3eaee4def921",
+    "name": "千葉県立関宿城博物館",
+    "address": "千葉県野田市関宿三軒家143-4",
+    "decision": "update"
+  },
+  {
+    "index": 20,
+    "facilityId": "facility:kanto-south-acee1bbe27386b0c95c0",
+    "name": "佐倉市立美術館",
+    "address": "千葉県佐倉市新町210",
+    "decision": "update"
+  },
+  {
+    "index": 21,
+    "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+    "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+    "address": "千葉県佐倉市臼井田2714",
+    "decision": "unresolved"
+  },
+  {
+    "index": 22,
+    "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+    "name": "道の駅みのりの郷東金",
+    "address": "千葉県東金市田間1300-3",
+    "decision": "update"
+  },
+  {
+    "index": 23,
+    "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+    "name": "習志野市企業局工務部下水道課",
+    "address": "千葉県習志野市藤崎1-1-13(企業局新館3階)",
+    "decision": "unresolved"
+  },
+  {
+    "index": 24,
+    "facilityId": "facility:kanto-south-2b43b756ed5b44200522",
+    "name": "習志野市谷津干潟自然観察センター",
+    "address": "千葉県習志野市秋津5丁目1番1号",
+    "decision": "update"
+  },
+  {
+    "index": 25,
+    "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+    "name": "柏市上下水道局3階総務課",
+    "address": "柏市千代田一丁目2番32号",
+    "decision": "unresolved"
+  },
+  {
+    "index": 26,
+    "facilityId": "facility:kanto-south-309b952c40d174e0bb1a",
+    "name": "柏市観光案内所 まるっと柏",
+    "address": "柏市柏1-1-11ファミリかしわ3階",
+    "decision": "update"
+  },
+  {
+    "index": 27,
+    "facilityId": "facility:kanto-south-903e9e78c940451e5e87",
+    "name": "流山おおたかの森駅前観光情報センター(スターツおおたかの森ホール2階)",
+    "address": "流山市おおたかの森北1-2-1",
+    "decision": "update"
+  },
+  {
+    "index": 28,
+    "facilityId": "facility:kanto-south-46630cd19483230497e8",
+    "name": "旧井上家住宅",
+    "address": "千葉県我孫子市相島新田1番地",
+    "decision": "update"
+  },
+  {
+    "index": 29,
+    "facilityId": "facility:kanto-south-32a447ca643c228424e3",
+    "name": "我孫子インフォメーションセンター 『アビシルベ』",
+    "address": "千葉県我孫子市本町2丁目1番10号",
+    "decision": "update"
+  },
+  {
+    "index": 30,
+    "facilityId": "facility:kanto-south-39d0e0fa09ce7c6ce8cb",
+    "name": "鎌ケ谷市役所 都市建設部 下水道課",
+    "address": "千葉県鎌ケ谷市新鎌ケ谷2-6-1(鎌ケ谷市役所4階)",
+    "decision": "update"
+  },
+  {
+    "index": 31,
+    "facilityId": "facility:kanto-south-0e037fa4d13a1aae2ab0",
+    "name": "鎌ケ谷市郷土資料館",
+    "address": "千葉県鎌ケ谷市中央1-8-31",
+    "decision": "update"
+  },
+  {
+    "index": 32,
+    "facilityId": "facility:kanto-south-11b09628dba123927a22",
+    "name": "浦安市役所守衛室(市役所1階)",
+    "address": "千葉県浦安市猫実1-1-1",
+    "decision": "update"
+  },
+  {
+    "index": 33,
+    "facilityId": "facility:kanto-south-f0504cdad81f081b813b",
+    "name": "浦安市郷土博物館",
+    "address": "千葉県浦安市猫実一丁目2番7号",
+    "decision": "update"
+  },
+  {
+    "index": 34,
+    "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+    "name": "袖ケ浦市役所 下水道課",
+    "address": "千葉県袖ケ浦市中袖4番地 (袖ケ浦終末処理場 管理棟2階)",
+    "decision": "unresolved"
+  },
+  {
+    "index": 35,
+    "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+    "name": "袖ケ浦市役所 守衛室",
+    "address": "千葉県袖ケ浦市坂戸市場1番地1(袖ケ浦市役所 南庁舎1階)",
+    "decision": "unresolved"
+  },
+  {
+    "index": 36,
+    "facilityId": "facility:kanto-south-9edad8e9c00cca0fbc57",
+    "name": "八街市役所建設部下水道課(第三庁舎二階)",
+    "address": "千葉県八街市八街ほ35番地29",
+    "decision": "update"
+  },
+  {
+    "index": 37,
+    "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+    "name": "八街市役所受付(第一庁舎一階)",
+    "address": "千葉県八街市八街ほ35番地29",
+    "decision": "unresolved"
+  },
+  {
+    "index": 38,
+    "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+    "name": "白井市役所 都市建設部 上下水道課業務係",
+    "address": "千葉県白井市復1123番地",
+    "decision": "unresolved"
+  },
+  {
+    "index": 39,
+    "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+    "name": "白井市役所 本庁舎1階守衛室",
+    "address": "千葉県白井市復1123番地",
+    "decision": "unresolved"
+  },
+  {
+    "index": 40,
+    "facilityId": "facility:kanto-south-bf9fd102d44cf399038b",
+    "name": "大網白里市中央公民館",
+    "address": "千葉県大網白里市大網121番地2",
+    "decision": "update"
+  },
+  {
+    "index": 41,
+    "facilityId": "facility:kanto-south-d6d930875b0fe6fa8778",
+    "name": "芝山町役場まちづくり課環境下水道係",
+    "address": "千葉県山武郡芝山町小池992",
+    "decision": "update"
+  },
+  {
+    "index": 42,
+    "facilityId": "facility:kanto-south-09f0c0ad01a25c51b881",
+    "name": "道の駅 風和里しばやま",
+    "address": "千葉県芝山町小池2568",
+    "decision": "update"
+  },
+  {
+    "index": 43,
+    "facilityId": "facility:kanto-south-49f184b038d50f83eecf",
+    "name": "長生村役場下水環境課",
+    "address": "千葉県長生郡長生村本郷1番地77",
+    "decision": "update"
+  },
+  {
+    "index": 44,
+    "facilityId": "facility:kanto-south-7cf06b9ee678ec26993e",
+    "name": "長生村文化会館",
+    "address": "千葉県長生郡長生村岩沼2119番地",
+    "decision": "update"
+  },
+  {
+    "index": 45,
+    "facilityId": "facility:kanto-south-a7e3fae9a816dc1003bd",
+    "name": "長生村保健センター",
+    "address": "千葉県長生郡長生村本郷1番地77",
+    "decision": "update"
+  },
+  {
+    "index": 46,
+    "facilityId": "facility:kanto-south-c6dd15ddad2ac84e7905",
+    "name": "長生村交流センター",
+    "address": "千葉県長生郡長生村岩沼874番地1",
+    "decision": "update"
+  },
+  {
+    "index": 47,
+    "facilityId": "facility:kanto-south-7693ac6feda7e8abe4c5",
+    "name": "長生村役場産業課",
+    "address": "千葉県長生郡長生村本郷1番地77",
+    "decision": "update"
+  }
+]

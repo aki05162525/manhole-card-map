@@ -115,3 +115,23 @@ it("renders no card details until a dense/shared group chooses one, and back res
   expect(detailCard([group[0]!])).toBe(group[0]);
   expect(detailCard([])).toBeUndefined();
 });
+
+it("does not navigate to obsolete reviewed facilities after their source changes", () => {
+  const stale = {
+    review: "needs-review",
+    evidence: { sourceUrl: "https://example.gov.jp" },
+  } as Data["relations"][number];
+  expect(facilityMapLink(place, stale)).toBeNull();
+  expect(
+    facilityMapLink(place, { review: "verified" } as Data["relations"][number]),
+  ).not.toBeNull();
+  const unreviewed = {
+    ...place,
+    coordinate: { ...coordinate, status: "unconfirmed" },
+  };
+  expect(
+    facilityMapLink(unreviewed, {
+      review: "needs-review",
+    } as Data["relations"][number])?.label,
+  ).toContain("施設名・住所で検索");
+});

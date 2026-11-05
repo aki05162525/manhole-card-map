@@ -1,0 +1,2593 @@
+[
+  {
+    "url": "http://fujisawa-ukiyoekan.net/",
+    "fetchedAt": "2026-11-05T04:22:47.595119+00:00",
+    "status": 200,
+    "finalUrl": "http://fujisawa-ukiyoekan.net/f/home/",
+    "snapshotPath": "data/evidence/national/kanto-south/6ac32a0a3deee14819c9.html",
+    "sha256": "720e3cbc492f876c583908208c6622bb60de38eeec79ab7a0b7afc4b031dbd70"
+  },
+  {
+    "url": "http://kanko.mitaka.ne.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.595955+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/e48639fc6bdd46794ec9.html",
+    "sha256": "45c3fd1b7b9a9bd94e61c6ff12b1ad6d89d287d89a49e0687df683ff29a9fc39"
+  },
+  {
+    "url": "http://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "fetchedAt": "2026-11-05T04:22:51.796885+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "snapshotPath": "data/evidence/national/kanto-south/9fd34a8f364664eb996b.html",
+    "sha256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29"
+  },
+  {
+    "url": "http://kawasakishuku.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.596804+00:00",
+    "status": 200,
+    "finalUrl": "https://kawasakishuku.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/41aece23230cb0bb3c63.html",
+    "sha256": "408cb375ac36052ccfd7623e2cd3141a127e218653d0552e8bb015a10ab5d500"
+  },
+  {
+    "url": "http://kodaira-furusatomura.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.598737+00:00",
+    "status": 200,
+    "finalUrl": "http://kodaira-furusatomura.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/314ae725908e1b283767.html",
+    "sha256": "aca64a8ba4d3ff68794499499fbfb2c82530fd8f2d9272442fcd2c604d42f113"
+  },
+  {
+    "url": "http://ota-cafe.com",
+    "fetchedAt": "2026-11-05T04:22:47.599635+00:00",
+    "status": 200,
+    "finalUrl": "http://ota-cafe.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/e363a2ad7551b2c39c08.html",
+    "sha256": "4ea16727ff47c8fe73860b5b53384c248889c28a171833227f1e211e76097aa3"
+  },
+  {
+    "url": "http://takiyama.in.coocan.jp/takichu-top.html",
+    "fetchedAt": "2026-11-05T04:22:47.600562+00:00",
+    "status": 200,
+    "finalUrl": "https://takiyama.in.coocan.jp/takichu-top.html",
+    "snapshotPath": "data/evidence/national/kanto-south/87a69fa0b836a917508e.html",
+    "sha256": "c220e75000bfc5cabc696972d3011298777a9dfa8e3ce5b740504e87ff6ce8b2"
+  },
+  {
+    "url": "http://techno-plaza.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.601282+00:00",
+    "status": 200,
+    "finalUrl": "https://techno-plaza.jp:443/",
+    "snapshotPath": "data/evidence/national/kanto-south/7a50f7347449f04a70bc.html",
+    "sha256": "7f832898ab251bdb21b74c7edcd9284529ba89cb901dcc9967946d7af06dd31e"
+  },
+  {
+    "url": "http://www.akishima-kanko.org/information/",
+    "fetchedAt": "2026-11-05T04:22:47.602154+00:00",
+    "status": 200,
+    "finalUrl": "https://akishima-kanko.org/information/",
+    "snapshotPath": "data/evidence/national/kanto-south/9d795d5e07dff76d7ef0.html",
+    "sha256": "a2c420ad48a71cc13e2649c7e11babb5c21f704237dd0dc5aed2e43894a646a9"
+  },
+  {
+    "url": "http://www.chibacity-ta.or.jp/spots/ctic",
+    "fetchedAt": "2026-11-05T04:22:47.610001+00:00",
+    "status": 200,
+    "finalUrl": "http://www.chibacity-ta.or.jp/spots/ctic/",
+    "snapshotPath": "data/evidence/national/kanto-south/5cbb0ed17c55a98ca66d.html",
+    "sha256": "1193bea9160013cce7b1a96606f0fe90c318ffa58381a4237286becc46805a30"
+  },
+  {
+    "url": "http://www.chosei-bunkahall.jp/index.html",
+    "fetchedAt": "2026-11-05T04:22:48.992318+00:00",
+    "status": 200,
+    "finalUrl": "http://www.chosei-bunkahall.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/85b229409b9045e36082.html",
+    "sha256": "98d36f8fd375618f8fe4718324eb367b1f62ed340d266533a46677bda536c85d"
+  },
+  {
+    "url": "http://www.choshikanko.com/",
+    "fetchedAt": "2026-11-05T04:22:49.117619+00:00",
+    "status": 200,
+    "finalUrl": "https://www.choshikanko.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/1b3d7e1e3d638cfaeef7.html",
+    "sha256": "c73f0602f5edef6ff87da7a472c278590a45ba7e9e0c6b73bf9d4cb3d5c0bf5d"
+  },
+  {
+    "url": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "fetchedAt": "2026-11-05T04:22:49.374505+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html",
+    "sha256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978"
+  },
+  {
+    "url": "http://www.city.abiko.chiba.jp/kurashi/suidou/josuidou/kurashi/manho-ruka-do.html",
+    "fetchedAt": "2026-11-05T04:22:55.236760+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/josuidou/kurashi/manho-ruka-do.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c20fcb1a35761a655d8b.html",
+    "sha256": "555498214c1eefcee8faa95eb433b730f57f1f789bbb91b87228fde224830bb3"
+  },
+  {
+    "url": "http://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:22:50.379136+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/0a9c3525679900aac386.html",
+    "sha256": "123db06ddccd6b9e45a8a85a71857ba034b9b3aecaa3c8623c0e2ff3a389b0a7"
+  },
+  {
+    "url": "http://www.city.chofu.tokyo.jp/www/contents/1176118954796/index.html",
+    "fetchedAt": "2026-11-05T04:22:50.415249+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/010040/p003004.html",
+    "snapshotPath": "data/evidence/national/kanto-south/15ed6ed8d7a4c2536b90.html",
+    "sha256": "c6c04ab26dea9944983c780fade4c8bdb96e65ae7464aa41cc6ac515b9da7450"
+  },
+  {
+    "url": "http://www.city.chofu.tokyo.jp/www/contents/1561008038752/index.html",
+    "fetchedAt": "2026-11-05T04:22:55.094226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/070040/p042056.html",
+    "snapshotPath": "data/evidence/national/kanto-south/28a53782ecada0ad6b0f.html",
+    "sha256": "359e8a0bd24713e1985418c88be76886bac0caa0fc261b5e993275412c1cc0f2"
+  },
+  {
+    "url": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "fetchedAt": "2026-11-05T04:22:50.807216+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "snapshotPath": "data/evidence/national/kanto-south/144bdfc541406a61f7b0.html",
+    "sha256": "d380886e706b48070a4fc2458bc4489daca7f7cbbd5663b3a30698c03a1bb874"
+  },
+  {
+    "url": "http://www.city.fujisawa.kanagawa.jp/gesui-so/manholecard.html",
+    "fetchedAt": "2026-11-05T04:22:51.031505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/aaec0851bc725b19b8d1.html",
+    "sha256": "556355b55feda4882b8f5041e78314f95a83e8e48e361295f384bd2803b1fe5c"
+  },
+  {
+    "url": "http://www.city.funabashi.lg.jp/soshiki/110000/110400/110409/",
+    "fetchedAt": "2026-11-05T04:22:53.234025+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.funabashi.lg.jp/soshiki/110000/110400/110409/",
+    "snapshotPath": "data/evidence/national/kanto-south/57b368872ad3e21aedf6.html",
+    "sha256": "9a264ffd3432eeea76dc19d0493c544bcc37e286b63abc1d3599c3dc3212a1dd"
+  },
+  {
+    "url": "http://www.city.hachioji.tokyo.jp/kurashi/life/002/002/002/p006812.html",
+    "fetchedAt": "2026-11-05T04:22:53.609241+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hachioji.tokyo.jp/kurashi/life/002/002/002/p006812.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8852431354afbf1a9439.html",
+    "sha256": "eecba6f91daae041188977f8007e1920dd16a8cb27ee9ced6ad763169ae5e266"
+  },
+  {
+    "url": "http://www.city.hadano.kanagawa.jp",
+    "fetchedAt": "2026-11-05T04:22:53.646630+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hadano.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/a068cfa792824cfce176.html",
+    "sha256": "83a08ba12f672424ecf33efc627bcd12ec960742c7af9cf6828db3758dd4ffe3"
+  },
+  {
+    "url": "http://www.city.hamura.tokyo.jp/0000010587.html",
+    "fetchedAt": "2026-11-05T04:22:53.719938+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f2c99863a400fe3b8169.html",
+    "sha256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339"
+  },
+  {
+    "url": "http://www.city.higashiyamato.lg.jp/index.cfm/34,100936,350,html",
+    "fetchedAt": "2026-11-05T04:22:54.095593+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/kurashi/midokoro/1003873/1007191/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/379724258fafbd151090.html",
+    "sha256": "a56aac130721fb502c501d35563833cabca93e8560118498f56a5025dcc1c8a0"
+  },
+  {
+    "url": "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "fetchedAt": "2026-11-05T04:22:54.231722+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "snapshotPath": "data/evidence/national/kanto-south/161c69c0b13cf9c76265.html",
+    "sha256": "9c75c0e249a426f4373872af7d9802a12965638c5115f5edad9d5cefbaa372d9"
+  },
+  {
+    "url": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+    "fetchedAt": "2026-11-05T04:22:54.633553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/2993.html",
+    "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+    "sha256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc"
+  },
+  {
+    "url": "http://www.city.isehara.kanagawa.jp/",
+    "fetchedAt": "2026-11-05T04:22:55.240599+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.isehara.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/3713e3b0867115d86ebb.html",
+    "sha256": "bbb712b6f8ef9358023ce252ea01a689768d9858b343d4e367e2ff25e564a269"
+  },
+  {
+    "url": "http://www.city.kamagaya.chiba.jp/",
+    "fetchedAt": "2026-11-05T04:22:56.221994+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kamagaya.chiba.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/3524d9b0157ab1aa0c50.html",
+    "sha256": "e1ffda40d36aab1041c2f171ae8a82afccf1d7c47a1ae467d538c636e63325b9"
+  },
+  {
+    "url": "http://www.city.koganei.lg.jp/",
+    "fetchedAt": "2026-11-05T04:22:56.300796+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/0de535c548bcb49da51e.html",
+    "sha256": "9af175e887e589d4cdd3ccc34b530bce24b8b71abe908759896766f630b222ee"
+  },
+  {
+    "url": "http://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "fetchedAt": "2026-11-05T04:22:56.386505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a4323bab76d937b81ad2.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6"
+  },
+  {
+    "url": "http://www.city.komae.tokyo.jp/",
+    "fetchedAt": "2026-11-05T04:22:56.635663+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.komae.tokyo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/19fbf5a4ffbf59c54b58.html",
+    "sha256": "afa92989ca79a8e21d1f8e3d2d981a55b971e395791abaf3a0c31897fe7253fb"
+  },
+  {
+    "url": "http://www.city.komae.tokyo.jp/index.cfm/41,0,313,2003,html",
+    "fetchedAt": "2026-11-05T04:22:59.274084+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.komae.tokyo.jp/index.cfm/41,0,313,2003,html",
+    "snapshotPath": "data/evidence/national/kanto-south/d1aade5d0b44c2122203.html",
+    "sha256": "4b4ba2064a22de24a2420c8ccb11d95ea941a469a70f9e626210a884526f06e3"
+  },
+  {
+    "url": "http://www.city.komae.tokyo.jp/index.cfm/41,90728,313,2003,html",
+    "fetchedAt": "2026-11-05T04:23:05.183473+00:00",
+    "status": 403,
+    "finalUrl": "http://www.city.komae.tokyo.jp/index.cfm/41,90728,313,2003,html",
+    "snapshotPath": "data/evidence/national/kanto-south/c76b0da6e55b1c2a547d.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb"
+  },
+  {
+    "url": "http://www.city.kunitachi.tokyo.jp/soshiki/Dept06/Div04/Sec03/oshirase/1574389345899.html",
+    "fetchedAt": "2026-11-05T04:22:57.460402+00:00",
+    "status": 404,
+    "finalUrl": "http://www.city.kunitachi.tokyo.jp/soshiki/Dept06/Div04/Sec03/oshirase/1574389345899.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c0512364f15a3a74ea31.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb"
+  },
+  {
+    "url": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "fetchedAt": "2026-11-05T04:22:57.907173+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "snapshotPath": "data/evidence/national/kanto-south/51e6639da51eebf6b734.html",
+    "sha256": "e2a315d1a7ffe2ef61e457803fc4a35db26d05de2d411365907b386822179981"
+  },
+  {
+    "url": "http://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/atarasiimanhorukado.html",
+    "fetchedAt": "2026-11-05T04:22:58.056682+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/atarasiimanhorukado.html",
+    "snapshotPath": "data/evidence/national/kanto-south/4396f7c97a77fe6764e4.html",
+    "sha256": "f2c0e861c43ca38f9fd24de654ea2f12cebfe73a45facb8c2f9098f8212a8413"
+  },
+  {
+    "url": "http://www.city.miura.kanagawa.jp/",
+    "fetchedAt": "2026-11-05T04:22:58.272764+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miura.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/b8922f8296b165a8599d.html",
+    "sha256": "9189485ecdefb2e4b8133c632b5d9fcd5fea82b252688482713dfa11bbc4d941"
+  },
+  {
+    "url": "http://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "fetchedAt": "2026-11-05T04:22:58.274404+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f6783d9fc4d4b688344a.html",
+    "sha256": "eb7f2ded897f3abbac145b74baaa8fb7bfe0beb6482d75b4c4f39dcaf5be2a29"
+  },
+  {
+    "url": "http://www.city.noda.chiba.jp/kurashi/kankyo/gesui/index.html",
+    "fetchedAt": "2026-11-05T04:23:07.239130+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/kurashi/kankyo/gesui/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/77c6e95208de3c88de04.html",
+    "sha256": "ed2461df9df1b217f068c9cb43d29cb9e4ea490b15ca2be67a7e73ae9c8d605c"
+  },
+  {
+    "url": "http://www.city.sagamihara.kanagawa.jp/",
+    "fetchedAt": "2026-11-05T04:22:59.141001+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sagamihara.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/2f23aaa8e9bb5e4b9fa2.html",
+    "sha256": "d1116c9acee3cf0d6b7c650b11d98ed8bd3b34080af7c4143a8632d8e3418eea"
+  },
+  {
+    "url": "http://www.city.sakura.lg.jp/0000029624.html",
+    "fetchedAt": "2026-11-05T04:22:59.706057+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/12475.html",
+    "snapshotPath": "data/evidence/national/kanto-south/833c8a3c4daa60b13500.html",
+    "sha256": "2c5c0fac15189b517df4d77881a977197173f3f40f70a049cca6028221476058"
+  },
+  {
+    "url": "http://www.city.sakura.lg.jp/sakura/museum/",
+    "fetchedAt": "2026-11-05T04:23:04.776663+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/section/museum/",
+    "snapshotPath": "data/evidence/national/kanto-south/7ca93406c0d2e4fb97fd.html",
+    "sha256": "93ca865265c1026adf534ceb29a8cedd06d86145f1b21e9a2cde0c8dc350e17a"
+  },
+  {
+    "url": "http://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+    "fetchedAt": "2026-11-05T04:23:01.036942+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/kankyo/doro/1009598/1004577.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a9218c0e0886a86138e5.html",
+    "sha256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9"
+  },
+  {
+    "url": "http://www.city.shiroi.chiba.jp/",
+    "fetchedAt": "2026-11-05T04:23:01.106255+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/1561b780102b38575604.html",
+    "sha256": "f3009df2ff096e7558314d5fec4753c834febd16b7526505ef3810f636c3b62a"
+  },
+  {
+    "url": "http://www.city.sodegaura.lg.jp/",
+    "fetchedAt": "2026-11-05T04:23:02.066973+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/c0bfb351c8b36ba23558.html",
+    "sha256": "2629c25ce0c2bfef2b638f51feb40989731540d130c5a8ec2e7e43ecbe6ed58b"
+  },
+  {
+    "url": "http://www.city.tama.lg.jp/0000005579.html",
+    "fetchedAt": "2026-11-05T04:23:02.903912+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bde0de9d214e63bf5eb7.html",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a"
+  },
+  {
+    "url": "http://www.city.urayasu.lg.jp/index.html",
+    "fetchedAt": "2026-11-05T04:23:03.777419+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/14f019703c6d96926371.html",
+    "sha256": "8d85e8b99c890b9b49b021599602956f772651755f02cd4c67f586bfe44ee77d"
+  },
+  {
+    "url": "http://www.kankou-fuchu.com/",
+    "fetchedAt": "2026-11-05T04:23:04.183802+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-fuchu.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/95b28f4fd15926e6a371.html",
+    "sha256": "9a81af154783ab6d821a402df5ed5311b747412db4a5e8e1b4ea7b855c4fca67"
+  },
+  {
+    "url": "http://www.kazusa-sarashina.com/",
+    "fetchedAt": "2026-11-05T04:23:04.863357+00:00",
+    "status": 200,
+    "finalUrl": "http://www.kazusa-sarashina.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/b98c786ea6bcabe28985.html",
+    "sha256": "69dc293a530bd632301484d33bf0e91adfabb1472c3410fb2c1afecde968ff00"
+  },
+  {
+    "url": "http://www.kisarazu.gr.jp/",
+    "fetchedAt": "2026-11-05T04:23:05.912807+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kisarazu.gr.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/4952ec141a899c8beb49.html",
+    "sha256": "4933c29dc9a43e3f3c33411d151c684d5b01ad5c5824b4ef6e23da6e00804859"
+  },
+  {
+    "url": "http://www.mizuhokyodo.jp/",
+    "fetchedAt": "2026-11-05T04:23:06.239599+00:00",
+    "status": 200,
+    "finalUrl": "https://mizuhokyodo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/9a091686eda15cefc4d7.html",
+    "sha256": "d45b99880091a2aa10ce3865c1db8441951211d65f44b3480ce3b64f959228ab"
+  },
+  {
+    "url": "http://www.nijinogesuidoukan.jp/",
+    "fetchedAt": "2026-11-05T04:23:06.729619+00:00",
+    "error": "HTTPSConnectionPool(host='www.nijinogesuidoukan.jp', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)')))"
+  },
+  {
+    "url": "http://www.seotonoyu.jp/",
+    "fetchedAt": "2026-11-05T04:23:07.371504+00:00",
+    "status": 200,
+    "finalUrl": "http://www.seotonoyu.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/f31c115ff87dd186e77e.html",
+    "sha256": "2419baa3e41ff2fc1a6e372b2c1fa8f10622fe2afc443ce780f26ba92d099ea8"
+  },
+  {
+    "url": "http://www.t-net.ne.jp/~hamura-z/",
+    "fetchedAt": "2026-11-05T04:23:08.875592+00:00",
+    "status": 200,
+    "finalUrl": "https://hamurazoo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/f2314a8e2b682e51214b.html",
+    "sha256": "b3662334a68642331297897a8d5c7a15c9998c723f2ab99db7e82504565f5198"
+  },
+  {
+    "url": "http://www.town.aikawa.kanagawa.jp/",
+    "fetchedAt": "2026-11-05T04:23:09.350596+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.aikawa.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/96f2e82c6bc7d61f5341.html",
+    "sha256": "c482d4d2af64632c202939af8ff6f95c6387543b3a948f9adc60f1bbf18c8d3b"
+  },
+  {
+    "url": "http://www.town.yamakita.kanagawa.jp/0000006183.html",
+    "fetchedAt": "2026-11-05T04:23:10.288683+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yamakita.kanagawa.jp/0000006183.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c1d217a5a8f8d331f89d.html",
+    "sha256": "7a3f7b7cad66b505b3d25dbb064a187099656dfd3fdfb6ba1edbfe2e2d400627"
+  },
+  {
+    "url": "http://www.welcome.city.yokohama.jp/ja/tourism/tic/",
+    "fetchedAt": "2026-11-05T04:23:10.289888+00:00",
+    "status": 307,
+    "finalUrl": "http://www.welcome.city.yokohama.jp/ja/tourism/tic/",
+    "snapshotPath": "data/evidence/national/kanto-south/fb6010efc19b94b647ee.html",
+    "sha256": "e44049221c60a5dc0025c739ea34a742145d38fbc78a7b6be262d00808e29aca"
+  },
+  {
+    "url": "http://www.youroad.com/index.html",
+    "fetchedAt": "2026-11-05T04:23:10.719528+00:00",
+    "status": 200,
+    "finalUrl": "https://www.youroad.com/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/250631ca2e0455fc1470.html",
+    "sha256": "6fc17b6f9cd41f4a569ae0762c9acbefbad6cfb8ea1bd7597ad2afe595a37388"
+  },
+  {
+    "url": "http://www.yss24.co.jp/company/",
+    "fetchedAt": "2026-11-05T04:23:11.151276+00:00",
+    "status": 200,
+    "finalUrl": "http://www.yss24.co.jp/company/",
+    "snapshotPath": "data/evidence/national/kanto-south/20fd0e026cd2d5a14c5d.html",
+    "sha256": "4909f42a4eca44fc9d60fef468a31f0c46f300b39369d1a4420f57dd691c147e"
+  },
+  {
+    "url": "http://www2.chiba-muse.or.jp/SEKIYADO/",
+    "fetchedAt": "2026-11-05T04:23:12.724518+00:00",
+    "status": 200,
+    "finalUrl": "http://www2.chiba-muse.or.jp/SEKIYADO/",
+    "snapshotPath": "data/evidence/national/kanto-south/6d6fb2ff8ae853b48746.html",
+    "sha256": "bbbc86b9c73004e711b5579f50a5302ff5afa3e211d1e364902b2e1f158b88d3"
+  },
+  {
+    "url": "http://www2.chiba-muse.or.jp/www/SCIENCE/index.html",
+    "fetchedAt": "2026-11-05T04:23:15.515545+00:00",
+    "status": 404,
+    "finalUrl": "http://www2.chiba-muse.or.jp/www/SCIENCE/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7cc645eebf08e0c79eb9.html",
+    "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880"
+  },
+  {
+    "url": "https://akabane-sports.com/facilities/forest-park",
+    "fetchedAt": "2026-11-05T04:23:13.357193+00:00",
+    "status": 200,
+    "finalUrl": "https://akabane-sports.com/facilities/forest-park",
+    "snapshotPath": "data/evidence/national/kanto-south/ef64773df1e0959cbb3f.html",
+    "sha256": "d4127701090623d61b4f78eea988c1b8a797de6f7fba133b00c8241343be94df"
+  },
+  {
+    "url": "https://akabanemuseum.ur-net.go.jp/",
+    "fetchedAt": "2026-11-05T04:23:14.009448+00:00",
+    "status": 200,
+    "finalUrl": "https://akabanemuseum.ur-net.go.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/721889198c31d30b620d.html",
+    "sha256": "3530c85769561079f529fceceab8c8abcf609284d0fb4247253a589d842e2dad"
+  },
+  {
+    "url": "https://chosei-koryu.com/",
+    "fetchedAt": "2026-11-05T04:23:14.515617+00:00",
+    "status": 200,
+    "finalUrl": "https://chosei-koryu.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/5d5a20c70c52df990bbc.html",
+    "sha256": "8cb6f9a17cf7f8e1b7e34b68861598d367c7fad9f511c482db9c057ca4c2407e"
+  },
+  {
+    "url": "https://ecorma-hall.jp/",
+    "fetchedAt": "2026-11-05T04:23:15.066744+00:00",
+    "status": 200,
+    "finalUrl": "https://ecorma-hall.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/1771696c145a9334f5fb.html",
+    "sha256": "f22a5aa9f73863ab86e6c2b98538b51a8c4ba7b75b80325e6348df3a9428a75a"
+  },
+  {
+    "url": "https://fujisawashuku-kouryukan.com/",
+    "fetchedAt": "2026-11-05T04:23:15.164251+00:00",
+    "status": 200,
+    "finalUrl": "https://fujisawashuku-kouryukan.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/b90509c701d54faf3a91.html",
+    "sha256": "9faefb45d6fea2703495ee07ab939e2ff568831f2e1120615a978602b07a2a66"
+  },
+  {
+    "url": "https://funakan.or.jp/page-750278/",
+    "fetchedAt": "2026-11-05T04:23:16.092714+00:00",
+    "status": 200,
+    "finalUrl": "https://funakan.or.jp/page-750278/",
+    "snapshotPath": "data/evidence/national/kanto-south/bf0131ae8a998cd21920.html",
+    "sha256": "5871bbc78a3ac242a66aa2bfbb72df602bea2eabcd4ca7a7c64e0206161f50ee"
+  },
+  {
+    "url": "https://inagi-kanko.jp/",
+    "fetchedAt": "2026-11-05T04:23:16.579507+00:00",
+    "status": 200,
+    "finalUrl": "https://inagi-kanko.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/48a55f260e8b918a44b6.html",
+    "sha256": "522ba694ccaea652b8033570fc446797d03a47b8c6ec1c5d3b57cf35ed6369f9"
+  },
+  {
+    "url": "https://infoandcafesquare.jp/",
+    "fetchedAt": "2026-11-05T04:23:17.353773+00:00",
+    "status": 200,
+    "finalUrl": "https://infoandcafesquare.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/73e21a7a940891630206.html",
+    "sha256": "958a902e5040a3469f77ae0090adcb74a5b9c7c7f2d4b8a38383edcf1e9728c3"
+  },
+  {
+    "url": "https://isleshinagawa.com/",
+    "fetchedAt": "2026-11-05T04:23:17.546734+00:00",
+    "status": 200,
+    "finalUrl": "https://isleshinagawa.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/b7669ddb745fd04ccfd6.html",
+    "sha256": "cc84a34827355afa64d412e3216f4c5cef989de960d0238effbc92c7d92bcdc4"
+  },
+  {
+    "url": "https://kanko.mitaka.ne.jp/",
+    "fetchedAt": "2026-11-05T04:23:18.212687+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/00edca57860d7d1de8da.html",
+    "sha256": "45c3fd1b7b9a9bd94e61c6ff12b1ad6d89d287d89a49e0687df683ff29a9fc39"
+  },
+  {
+    "url": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "fetchedAt": "2026-11-05T04:23:22.268788+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "snapshotPath": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html",
+    "sha256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29"
+  },
+  {
+    "url": "https://karigurashi.net/journal/manhole-card/",
+    "fetchedAt": "2026-11-05T04:23:18.638388+00:00",
+    "status": 200,
+    "finalUrl": "https://uchi-machi-danchi.ur-net.go.jp/article/manhole-card/",
+    "snapshotPath": "data/evidence/national/kanto-south/a430de2157bc0745ce71.html",
+    "sha256": "1e728bb792f054ae59ea26a83a58c50f3b579255d23a13972dad78fdb189ee78"
+  },
+  {
+    "url": "https://kinuten.com/?page_id=2263",
+    "fetchedAt": "2026-11-05T04:23:19.068701+00:00",
+    "status": 200,
+    "finalUrl": "https://kinuten.com/?page_id=2263",
+    "snapshotPath": "data/evidence/national/kanto-south/90a8b23cf4566dda8ea3.html",
+    "sha256": "c006e2895cc96ef9a58477a4fc4861060cea4affe9100c539e91f77ca8714084"
+  },
+  {
+    "url": "https://kitabunka.or.jp/tabata/",
+    "fetchedAt": "2026-11-05T04:23:19.756463+00:00",
+    "status": 200,
+    "finalUrl": "https://kitabunka.or.jp/tabata/",
+    "snapshotPath": "data/evidence/national/kanto-south/a6fc6a657065a95a63cb.html",
+    "sha256": "7a3531f88d7cb7e93ac7c9492614277da57f3d0b2647b05f3f79d6b48dfbd242"
+  },
+  {
+    "url": "https://kuzaidan.or.jp/province/",
+    "fetchedAt": "2026-11-05T04:23:20.276250+00:00",
+    "status": 200,
+    "finalUrl": "https://kuzaidan.or.jp/province/",
+    "snapshotPath": "data/evidence/national/kanto-south/7075b74195aec225da40.html",
+    "sha256": "b18695608af4660b060416dec827ac62d3043d4da67828c7aff7d920bb4a2c29"
+  },
+  {
+    "url": "https://m-shonanchigasaki.com/",
+    "fetchedAt": "2026-11-05T04:23:20.698159+00:00",
+    "status": 200,
+    "finalUrl": "https://m-shonanchigasaki.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/78fe51114bb6ec268d75.html",
+    "sha256": "3820021fae7ec73983e977166a16a90dd1c3ea88dbdfd24db91fa47e32949214"
+  },
+  {
+    "url": "https://machida-guide.or.jp/?p=we-page-top-2",
+    "fetchedAt": "2026-11-05T04:23:21.270042+00:00",
+    "status": 200,
+    "finalUrl": "https://machida-guide.or.jp/?p=we-page-top-2",
+    "snapshotPath": "data/evidence/national/kanto-south/8a33ca95948afaf1acb6.html",
+    "sha256": "0803a1419c63261e238b99ff899a3d5fb2e2a4ff9a671be8687f0735c6d763c2"
+  },
+  {
+    "url": "https://machitenna.com/",
+    "fetchedAt": "2026-11-05T04:23:22.951295+00:00",
+    "status": 200,
+    "finalUrl": "https://machitenna.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/bf3eb032b6dfa13c139a.html",
+    "sha256": "9f10500ea4a92ff65211cc93fc97fa8171a71f50e494727943449645f30e546f"
+  },
+  {
+    "url": "https://map.coopdeli.coop/mirai/shop.php?shop_id=30250212",
+    "fetchedAt": "2026-11-05T04:23:23.098564+00:00",
+    "status": 200,
+    "finalUrl": "https://map.coopdeli.coop/mirai/tokyo/shop/takakura.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b6027071027c4d4554df.html",
+    "sha256": "fd70b26ae4174841cb1429bdba3cbbdc68003316f912b4b3e0b1f5d4be9d7967"
+  },
+  {
+    "url": "https://minorinosato-togane.com/",
+    "fetchedAt": "2026-11-05T04:23:23.545788+00:00",
+    "status": 200,
+    "finalUrl": "https://minorinosato-togane.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/ba74c647a9d1186cdd3f.html",
+    "sha256": "3910afbfad8db340cbc466c427d0c6a1c4da35b3b5e751c24a6ac5bb752b6731"
+  },
+  {
+    "url": "https://musashino-kanko.com/",
+    "fetchedAt": "2026-11-05T04:23:23.745791+00:00",
+    "status": 200,
+    "finalUrl": "https://musashino-kanko.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/99681c55dc4b51764eb2.html",
+    "sha256": "f9fbd83506ffcf636a2dde79152a187d46e86eae8bd679b51ee3e756147428d7"
+  },
+  {
+    "url": "https://museum.toei-anim.co.jp/",
+    "fetchedAt": "2026-11-05T04:23:24.041339+00:00",
+    "status": 200,
+    "finalUrl": "https://museum.toei-anim.co.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/df607dc212b99e1f12ec.html",
+    "sha256": "f34205703cd5bf3c2eddda2165991be44e1ec06ef478cd8569bd835d5d63e85c"
+  },
+  {
+    "url": "https://odawaracastle.com/",
+    "fetchedAt": "2026-11-05T04:23:24.245452+00:00",
+    "status": 200,
+    "finalUrl": "https://odawaracastle.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/7cb946d9394d0b164f25.html",
+    "sha256": "79ec2597ed6808f403bfbf799d73300cb9923cca20d478976c68954eb9f6e704"
+  },
+  {
+    "url": "https://sam.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:25.121419+00:00",
+    "status": 200,
+    "finalUrl": "https://sam.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/951df9713eb385ed0b52.html",
+    "sha256": "14aea1606c2710172bf37b6b632b85058f6bddcf3ed7ad01f5d5343fbb79b3ac"
+  },
+  {
+    "url": "https://shibusawakitaku.tokyo/omiyage/",
+    "fetchedAt": "2026-11-05T04:23:25.870321+00:00",
+    "status": 200,
+    "finalUrl": "https://shibusawakitaku.tokyo/omiyage/",
+    "snapshotPath": "data/evidence/national/kanto-south/f0d3e7609c40ff931903.html",
+    "sha256": "8d86c67cd02866511587099e14c7afccc173542a74983594f15d17d9b3adbf7e"
+  },
+  {
+    "url": "https://shinagawa-kanko.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:26.576406+00:00",
+    "status": 200,
+    "finalUrl": "https://shinagawa-kanko.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/78d85c3b2748be2c9b53.html",
+    "sha256": "52b365b0c8b5480a45b3cadb0d3fdcb6f16e635b61b1791303d740ff7092b3a0"
+  },
+  {
+    "url": "https://sunsetbeachpark.jp/activity/botanicamuseum/",
+    "fetchedAt": "2026-11-05T04:23:26.636644+00:00",
+    "status": 200,
+    "finalUrl": "https://sunsetbeachpark.jp/activity/botanicamuseum/",
+    "snapshotPath": "data/evidence/national/kanto-south/5601df8bf5c1286dd062.html",
+    "sha256": "420b2a9d7b7b21467e501de46e3a59e0690f50e0bd1be644f2813d204f3f4a19"
+  },
+  {
+    "url": "https://t-navi.city.taito.lg.jp/news/?itemid=253&dispmid=459",
+    "fetchedAt": "2026-11-05T04:23:26.648794+00:00",
+    "status": 200,
+    "finalUrl": "https://t-navi.city.taito.lg.jp/notices?itemid=253&dispmid=459",
+    "snapshotPath": "data/evidence/national/kanto-south/ef1527400e6922e7aad5.html",
+    "sha256": "2a93aacde078c86b203a6a930d10d88c264f9367044c9e756cc6000a27d3a5d6"
+  },
+  {
+    "url": "https://tama-glc.jp/",
+    "fetchedAt": "2026-11-05T04:23:26.810636+00:00",
+    "status": 200,
+    "finalUrl": "https://tama-glc.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/5d082bfb2612c41cc1f9.html",
+    "sha256": "85271a8dae6ce73694c9b9969686fe2254d1230c40a93ac63b0ce60fa56ec24a"
+  },
+  {
+    "url": "https://tateyamacity.com/",
+    "fetchedAt": "2026-11-05T04:23:26.828302+00:00",
+    "status": 200,
+    "finalUrl": "https://tateyamacity.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/e547328c6185b1a8890b.html",
+    "sha256": "a10fcf25603d59efed753045be79ba0cf99ecf7d05cff874d7d34d71a04c7b9a"
+  },
+  {
+    "url": "https://thibaudier-yokosuka.com/",
+    "fetchedAt": "2026-11-05T04:23:27.403779+00:00",
+    "status": 200,
+    "finalUrl": "https://thibaudier-yokosuka.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/1d8e745874e5830e64a3.html",
+    "sha256": "0e6383ff7c33e9f508ee9d94e9010eab2932dfec1d3895a163383fc562144895"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0319",
+    "fetchedAt": "2026-11-05T04:23:28.116579+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0319",
+    "snapshotPath": "data/evidence/national/kanto-south/b04da52d557163472a80.html",
+    "sha256": "73e560f74491c6aba70cc6fd36a5e4a3b4c3b7d8b29e632b54ca67f20f855cad"
+  },
+  {
+    "url": "https://visit-chiyoda.tokyo/",
+    "fetchedAt": "2026-11-05T04:23:28.295424+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-chiyoda.tokyo/",
+    "snapshotPath": "data/evidence/national/kanto-south/fbcd69a10dc431ec9e93.html",
+    "sha256": "573ca6dee304881066568a13b10ade636e34f9003ac6f14067fac47ff321ec40"
+  },
+  {
+    "url": "https://visit-minato-city.tokyo/ja-jp/places/2774",
+    "fetchedAt": "2026-11-05T04:23:28.541012+00:00",
+    "status": 404,
+    "finalUrl": "https://visit-minato-city.tokyo/ja-jp/places/2774",
+    "snapshotPath": "data/evidence/national/kanto-south/3963819ea56e95b7c7c0.html",
+    "sha256": "588a7f0f8c5c74ae6c0b1e6efac711d62f5469b69ca1a85855275cc1f8e52252"
+  },
+  {
+    "url": "https://visit-sumida.jp/connect/",
+    "fetchedAt": "2026-11-05T04:23:28.834312+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-sumida.jp/connect/",
+    "snapshotPath": "data/evidence/national/kanto-south/3194d065309db261369b.html",
+    "sha256": "9f02435dc1bbc5f92d63298d87948b8351ee461689ac384a876c1253ffe8b47d"
+  },
+  {
+    "url": "https://visit-sumida.jp/spot/6196",
+    "fetchedAt": "2026-11-05T04:23:32.873355+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-sumida.jp/spot/6196/",
+    "snapshotPath": "data/evidence/national/kanto-south/7ad2e5096083d417ce7b.html",
+    "sha256": "2ccea981102cdcf5982c8f4b94b7c90fd66dafa4d1aab59821dbb41c8a81b6ba"
+  },
+  {
+    "url": "https://www.abikoinfo.jp/",
+    "fetchedAt": "2026-11-05T04:23:29.507027+00:00",
+    "status": 200,
+    "finalUrl": "https://www.abikoinfo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/6e8f1f9d1c86a40df1ca.html",
+    "sha256": "bd46596762a9c0b911bd5be2253cb09a1ec8b8a51de9e980f0422bee821c4086"
+  },
+  {
+    "url": "https://www.akishimaensis.jp",
+    "fetchedAt": "2026-11-05T04:23:29.978507+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akishimaensis.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/6cfbe655fffdee7f77b3.html",
+    "sha256": "a3f67ec85c67da274cab76c2eedd19ac7f83b81360fa4547e2ae21015bcbbb6c"
+  },
+  {
+    "url": "https://www.ara-amoa.com/",
+    "fetchedAt": "2026-11-05T04:23:30.044320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ara-amoa.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/4a21533699b24f196d58.html",
+    "sha256": "9a97a62e5c91cbb2f9b1cf7d0fd8eb677c9dcfb570d34ad256381f66127b6ea0"
+  },
+  {
+    "url": "https://www.chigasaki-kankou.org/information/",
+    "fetchedAt": "2026-11-05T04:23:30.876616+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chigasaki-kankou.org/information/",
+    "snapshotPath": "data/evidence/national/kanto-south/7bd28b0dd0868e118824.html",
+    "sha256": "fe767884fa1f7c01a625f390aec40c3a3359e4cfa472e431dd333943d072c392"
+  },
+  {
+    "url": "https://www.city.abiko.chiba.jp/event/shiseki_bunkazai/inoueke/index.html",
+    "fetchedAt": "2026-11-05T04:23:31.487963+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.abiko.chiba.jp/event/shiseki_bunkazai/inoueke/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7bb94ed548433285fe5a.html",
+    "sha256": "06b2e047cc078585e1d823cfc4e5bf4406c6c95167079dc498a78221ddfca659"
+  },
+  {
+    "url": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:23:31.792085+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/961bfb847190fa8e7091.html",
+    "sha256": "123db06ddccd6b9e45a8a85a71857ba034b9b3aecaa3c8623c0e2ff3a389b0a7"
+  },
+  {
+    "url": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+    "fetchedAt": "2026-11-05T04:23:31.874543+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+    "snapshotPath": "data/evidence/national/kanto-south/48ddd4e793802422b489.html",
+    "sha256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440"
+  },
+  {
+    "url": "https://www.city.akishima.lg.jp/s087/010/010/010/140/010/20190319120320.html",
+    "fetchedAt": "2026-11-05T04:23:31.895583+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akishima.lg.jp/kurashi/sumai/1001689/1001744/1001746.html",
+    "snapshotPath": "data/evidence/national/kanto-south/23ff8f349f998d0cbb63.html",
+    "sha256": "903aaf0f7a0f155e2ecf4caf67acc04591ad85443f604e91dbb80f97996d251a"
+  },
+  {
+    "url": "https://www.city.akishima.lg.jp/s087/010/010/010/140/020/20190319120320.html",
+    "fetchedAt": "2026-11-05T04:23:34.946860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akishima.lg.jp/kurashi/sumai/1001689/1001744/1001745.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cf7472645f78461b085b.html",
+    "sha256": "d9eb88d8e90b7e7f06a41287f6eca8adf96d2287ba87c23f97d4129efe0d47f7"
+  },
+  {
+    "url": "https://www.city.atsugi.kanagawa.jp/atsugicitymuseum/index.html",
+    "fetchedAt": "2026-11-05T04:23:32.383641+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.atsugi.kanagawa.jp/atsugicitymuseum/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ce5219a2d42edca997ac.html",
+    "sha256": "abb2f90ca15baf385dff3c6ec80c8e01bdc11a191c468ab39b76916bcd4910fc"
+  },
+  {
+    "url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/gesuido/6/2/12503.html",
+    "fetchedAt": "2026-11-05T04:23:35.303635+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/gesuido/6/2/12503.html",
+    "snapshotPath": "data/evidence/national/kanto-south/10ef24435df8c17e3f45.html",
+    "sha256": "1e3130f7a91931f8e16aeca488d5122de0f41c2afc38e72bb85283759fa07bcf"
+  },
+  {
+    "url": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/2/11043.html",
+    "fetchedAt": "2026-11-05T04:23:41.271939+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/online/4/1/2/11043.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ed68db7ab133ae55b90f.html",
+    "sha256": "83ccf890de1748594ad6f0b2ffe36718e967982a44012697b69c41e391ca8b46"
+  },
+  {
+    "url": "https://www.city.atsugi.kanagawa.jp/soshiki/gesuidoshisetsuka/index.html",
+    "fetchedAt": "2026-11-05T04:23:44.261536+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.atsugi.kanagawa.jp/soshiki/gesuidoshisetsuka/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/e1ecced0897beba81b51.html",
+    "sha256": "ec8c93182e140b2c00617d899095f65ad634871f15b9e61a00b5fe2711ebd4ea"
+  },
+  {
+    "url": "https://www.city.ayase.kanagawa.jp/soshiki/gesuidoka/shimimmuke/24488.html",
+    "fetchedAt": "2026-11-05T04:23:34.304182+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ayase.kanagawa.jp/soshiki/gesuidoka/shimimmuke/24488.html",
+    "snapshotPath": "data/evidence/national/kanto-south/177b7be8a969e57e0d41.html",
+    "sha256": "76e8a7d3f0d84fc40857da42d4efef7ade4a874173afb27c1da9bfa02a73c79e"
+  },
+  {
+    "url": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+    "fetchedAt": "2026-11-05T04:23:37.242839+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/1df2d178605a4cc60f3f.html",
+    "sha256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8"
+  },
+  {
+    "url": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "fetchedAt": "2026-11-05T04:23:35.285093+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c6aca8b3332e789f1680.html",
+    "sha256": "0022bbdcc947d5ac025e47c452fab90029e07f396708282c9515034e16c35b4e"
+  },
+  {
+    "url": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+    "fetchedAt": "2026-11-05T04:23:36.243953+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+    "snapshotPath": "data/evidence/national/kanto-south/720b1c2b2f378e5d4ce5.html",
+    "sha256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e"
+  },
+  {
+    "url": "https://www.city.chiyoda.lg.jp/koho/shigoto/sangyo/sonota/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:36.824364+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiyoda.lg.jp/koho/shigoto/sangyo/sonota/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/25ab05d360a50e2b6794.html",
+    "sha256": "f58f227b5c90b47f543a251adffead219979d9a9c1869600dd0a2caa1e4012b4"
+  },
+  {
+    "url": "https://www.city.chofu.lg.jp/040070/p026079.html",
+    "fetchedAt": "2026-11-05T04:23:37.744577+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/040070/p026079.html",
+    "snapshotPath": "data/evidence/national/kanto-south/dceb63e12481a030ce8d.html",
+    "sha256": "d8a1fcbffee1bb7322a730894eac623d2eb5adb7962a025381734fd88e4c979e"
+  },
+  {
+    "url": "https://www.city.chofu.lg.jp/070040/p042106.html",
+    "fetchedAt": "2026-11-05T04:23:42.251832+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/070040/p042106.html",
+    "snapshotPath": "data/evidence/national/kanto-south/3e949030f62e7d3c5b69.html",
+    "sha256": "6cbae56429a11db92c351b443d587a4a13959dd703c775baaed72225fff87af2"
+  },
+  {
+    "url": "https://www.city.choshi.chiba.jp/suidou/page180024.html",
+    "fetchedAt": "2026-11-05T04:23:38.511861+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.choshi.chiba.jp/suidou/page180024.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ddb8106bcd9c7c723198.html",
+    "sha256": "1115ee9013bc33b7b9e63ee42afbebe02dabb967c2b2be86d15ebb65b81c4256"
+  },
+  {
+    "url": "https://www.city.ebina.kanagawa.jp/guide/sumai/gesui/1017802/1013343.html",
+    "fetchedAt": "2026-11-05T04:23:38.866912+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ebina.kanagawa.jp/guide/sumai/gesui/1017802/1013343.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5ef08993635d5335b7c6.html",
+    "sha256": "14a3507b7f54c634248a5ca1e3e2e4035e06f23727deab09be6e5553435ebc19"
+  },
+  {
+    "url": "https://www.city.ebina.kanagawa.jp/shisei/profile/tankyusha/onko/1000654.html",
+    "fetchedAt": "2026-11-05T04:23:43.436595+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ebina.kanagawa.jp/shisei/profile/tankyusha/onko/1000654.html",
+    "snapshotPath": "data/evidence/national/kanto-south/948622b2b27de8b7ca5f.html",
+    "sha256": "34f6894a0ec51abfb961e6fba8f40a403ff0afc93439ad68bdb340ddfc8243af"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:40.272937+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/de250713c732b8b72139.html",
+    "sha256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/index.html",
+    "fetchedAt": "2026-11-05T04:23:43.093303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8170369d8b319ead512d.html",
+    "sha256": "7674d72f0c2f6c079845bf8470cea1d7c7fdddec2470f7bd0b136618d3eefcc3"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e059/toshikeikaku/sonota/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:48.988322+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e059/toshikeikaku/sonota/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/09268cbb7b53ad0db9cc.html",
+    "sha256": "b276d755861b4ad79f2beea2af72c1985e96dd4496fbf0a505c0975daa70b87e"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
+    "fetchedAt": "2026-11-05T04:23:54.999380+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7267fea775b55c7621f1.html",
+    "sha256": "ceb49dcba08841775acc5056186d52cb225456fad43b7a4094e74f3e97ab5a3c"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e_bunkazai/bunkazai/shiryoshitsu/index.html",
+    "fetchedAt": "2026-11-05T04:24:05.014391+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e_bunkazai/bunkazai/shiryoshitsu/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ea60d5036bb049102729.html",
+    "sha256": "54edba0f10e67afd4ca123e55e4ff56d7a2a9d4604dcab873bf8f8762ae9d796"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:42.390042+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/e024d5413271fa7771f2.html",
+    "sha256": "860092f50b0cc8714552a595982ec635ca0aaba38a466e72fc68d560eb01e15e"
+  },
+  {
+    "url": "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html",
+    "fetchedAt": "2026-11-05T04:23:42.437233+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ff3e9464bbf9c7d91d5d.html",
+    "sha256": "556355b55feda4882b8f5041e78314f95a83e8e48e361295f384bd2803b1fe5c"
+  },
+  {
+    "url": "https://www.city.fussa.tokyo.jp/index.html",
+    "fetchedAt": "2026-11-05T04:23:43.263084+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fussa.tokyo.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bb29da16f11d2d358855.html",
+    "sha256": "0bf8b5b16e0ee0038303dd6404b8d72924cdc76b865297896b2878a72fe08deb"
+  },
+  {
+    "url": "https://www.city.fussa.tokyo.jp/life/city/1017110/1017111.html",
+    "fetchedAt": "2026-11-05T04:23:46.365836+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fussa.tokyo.jp/life/city/1017110/1017111.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ee6afdb1f5e90f4a9731.html",
+    "sha256": "041e28f7ecfd96f50e17875e3859252f38680308eba0b04b9a222d13e6c4774c"
+  },
+  {
+    "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+    "fetchedAt": "2026-11-05T04:23:45.366464+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+    "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+    "sha256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "fetchedAt": "2026-11-05T04:23:46.191771+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5374529443da774fef75.html",
+    "sha256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+    "fetchedAt": "2026-11-05T04:23:46.489469+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+    "snapshotPath": "data/evidence/national/kanto-south/975cae4d2962aebe9c69.html",
+    "sha256": "90c81cda70887878dc51cfb2e830adb288edd3692c2fd23861d7874778d0248a"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/shisetsu/sports/1002049.html",
+    "fetchedAt": "2026-11-05T04:23:57.579057+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/shisetsu/sports/1002049.html",
+    "snapshotPath": "data/evidence/national/kanto-south/6963f1d1a880288e9348.html",
+    "sha256": "efcc96bd6d500a9847471f662b5e8c58c379590390775565551edc2b7cc33457"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/index.cfm/35,0,366,html",
+    "fetchedAt": "2026-11-05T04:23:47.322262+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/bunkasports/museum/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/0591633ac9ba69b25f40.html",
+    "sha256": "737b6e6d6a0ccf2be5c546ea34e3d966ba46b484b9c5bfcc8c5773383429dfd0"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "fetchedAt": "2026-11-05T04:23:47.500542+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "snapshotPath": "data/evidence/national/kanto-south/accbc5cca53e0b1f77b7.html",
+    "sha256": "9c75c0e249a426f4373872af7d9802a12965638c5115f5edad9d5cefbaa372d9"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shinsenr/",
+    "fetchedAt": "2026-11-05T04:23:52.346733+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shinsenr/",
+    "snapshotPath": "data/evidence/national/kanto-south/4576bf4ce61d92d5d4f4.html",
+    "sha256": "c190fb8c54a2c9e3da837f0e6fde0fd78717d72f930e9081c0495c061a53110e"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shisetsu/shiyakusho/shiyakusho/shisho/index.html",
+    "fetchedAt": "2026-11-05T04:23:57.665782+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shisetsu/shiyakusho/shiyakusho/shisho/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/e5af2fd05573decba725.html",
+    "sha256": "ac27293a4397a94238188e6717665fc38dc5a1490ba98618c02a6dae1cb45e18"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shisetsu/toshokan/toshokan/1005864.html",
+    "fetchedAt": "2026-11-05T04:24:02.099555+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shisetsu/toshokan/toshokan/1005864.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a65056753a02894e8f48.html",
+    "sha256": "5f37c1be466f5b685c5614bafca86b93c316ce5d018a5678c3cc096fac86f9b3"
+  },
+  {
+    "url": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+    "fetchedAt": "2026-11-05T04:23:51.281605+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+    "sha256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8"
+  },
+  {
+    "url": "https://www.city.ichihara.chiba.jp/kurashi/suido/gesuido/oshirase/manholecard_ichihara.html",
+    "fetchedAt": "2026-11-05T04:23:51.347289+00:00",
+    "status": 403,
+    "finalUrl": "https://www.city.ichihara.chiba.jp/kurashi/suido/gesuido/oshirase/manholecard_ichihara.html",
+    "snapshotPath": "data/evidence/national/kanto-south/16a30cf04a26adbf7819.html",
+    "sha256": "902542f61e41c9a65a054e2aa5882ce6b0d4805d943ac540fabe3eeaa980f91f"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/cul02/1111000017.html",
+    "fetchedAt": "2026-11-05T04:23:54.000191+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/2304.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cfa500565ca385c6424e.html",
+    "sha256": "941b1e8b8c67976196de2d15160a503adef591bbd58feda9abfe9b18f9eaebeb"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+    "fetchedAt": "2026-11-05T04:23:59.240690+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/2993.html",
+    "snapshotPath": "data/evidence/national/kanto-south/88b23d9dfaba7ad39571.html",
+    "sha256": "d38c06009a6d86328e1fb098503a5959aefb3316042d414271138ed648907d26"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/library/guide/1002.html",
+    "fetchedAt": "2026-11-05T04:24:02.462613+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/library/7444.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ceb5ef2cc115a78f7b0e.html",
+    "sha256": "a9d917a6a2a570ad5eb553712e6bb6e0712941dedc03de51a53c209f62ccc8f6"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/library/guide/1014.html",
+    "fetchedAt": "2026-11-05T04:24:07.349424+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/library/3129.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f446be271dcdc445f73f.html",
+    "sha256": "cf9cdd0d34c679b2e005d31c367c74e457ec09bfb1287f961fa61ae2e23e4bd2"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/zoo/shokubutuen.html",
+    "fetchedAt": "2026-11-05T04:24:12.067860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/zoo/6813.html",
+    "snapshotPath": "data/evidence/national/kanto-south/605de9e5a67e07852ff5.html",
+    "sha256": "fb8367744703571655a7ec0cb65da242da5c3e87c29d667de74e8555c9be15a0"
+  },
+  {
+    "url": "https://www.city.inagi.tokyo.jp/kanko/miryoku/1010492/1013753/1010317.html",
+    "fetchedAt": "2026-11-05T04:23:58.241303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.inagi.tokyo.jp/kanko/miryoku/1010492/1013753/1010317.html",
+    "snapshotPath": "data/evidence/national/kanto-south/9500c3eab3bdc6109bcf.html",
+    "sha256": "a6a34a4a798daf8a5cc0291a7ac6c0ee2249ab7a09caba937b31274cf472f5e7"
+  },
+  {
+    "url": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+    "fetchedAt": "2026-11-05T04:24:01.100144+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+    "snapshotPath": "data/evidence/national/kanto-south/e266e0b832b067cffe19.html",
+    "sha256": "46e731b7b735ba7f02b79e244a0602730a05037f3098f574a205202d4cf9f622"
+  },
+  {
+    "url": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+    "fetchedAt": "2026-11-05T04:24:15.331606+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+    "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+    "sha256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
+    "fetchedAt": "2026-11-05T04:24:02.450012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5463dfd325828d08056b.html",
+    "sha256": "2af61d95471fd86f3db334d323ede5f2c1a4c7a615584b3101437399f5c0be66"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "fetchedAt": "2026-11-05T04:24:08.521017+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ffe01eb357e263ffbcb0.html",
+    "sha256": "6c24fbb0b031dc81ad80b098ffa154d43e4c7b452b82ecd7f75220f064c66171"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
+    "fetchedAt": "2026-11-05T04:24:13.090161+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c2dc090d2ba22cd4ad16.html",
+    "sha256": "89bfefe443709da69a07cf23f12ed4edc4fc367d69b1f34318a62024cd4340b6"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/kurashi-tetsuzuki/gesuidou/oshirase/mhcard.html",
+    "fetchedAt": "2026-11-05T04:24:05.218494+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/kurashi-tetsuzuki/gesuidou/oshirase/mhcard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/aa7891a08d8d0a475eb6.html",
+    "sha256": "ab50f295c06bb1572183201b1a24f9c37317bc37d5546e8d13ddf9bfc92a8777"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
+    "fetchedAt": "2026-11-05T04:24:06.350000+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/shoko/shiseijoho/about_kashiwa/tourism/annaijo/annaijo.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b9a392c1a3edb9442a24.html",
+    "sha256": "6280287868e24783e12b2fc31b58e705f152628e767008068dbe99745dd91c1f"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/berubaramc.html",
+    "fetchedAt": "2026-11-05T04:24:10.836075+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/berubaramc.html",
+    "snapshotPath": "data/evidence/national/kanto-south/e552da255c8ef3106236.html",
+    "sha256": "2188841b0a68a8bbdc700c5c0822eb0ba7af2b4237e266eac6430ceb045ed5cf"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:13.536343+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ef60a2706537908cb913.html",
+    "sha256": "19a1f8f5285a608b5bb98b1d58f8f9ec76fd29df8980655af234e3ef6689f82e"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026016.html",
+    "fetchedAt": "2026-11-05T04:24:07.521496+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026016.html",
+    "snapshotPath": "data/evidence/national/kanto-south/70bb1df40163704afa20.html",
+    "sha256": "ee04adc38b1bc86870b8c521fc41b67d36b6d260efb4628206c09d14249b32ee"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026544.html",
+    "fetchedAt": "2026-11-05T04:24:12.069259+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026544.html",
+    "snapshotPath": "data/evidence/national/kanto-south/de612cf391ae9469e089.html",
+    "sha256": "c1a7481696736d343706f6ff04be7d2766cd12133041a6c630723704067f8b18"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1030204/1027603.html",
+    "fetchedAt": "2026-11-05T04:24:16.186043+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1030204/1027603.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b11350f4f827e65ce7bc.html",
+    "sha256": "983f377874abcda10fec84b9471b358ef9a315b47a537f272f6443525141465b"
+  },
+  {
+    "url": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+    "fetchedAt": "2026-11-05T04:24:11.069815+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+    "sha256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5"
+  },
+  {
+    "url": "https://www.city.kawasaki.jp/800/page/0000105394.html",
+    "fetchedAt": "2026-11-05T04:24:15.284934+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawasaki.jp/800/page/0000105394.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f63e82cca8e8d5515163.html",
+    "sha256": "7fcb250a02b8a169a9259f815438018fcbe5a52e6a77f25962fd0938cd3d5e60"
+  },
+  {
+    "url": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/1/3320.html",
+    "fetchedAt": "2026-11-05T04:24:12.536891+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/1/3320.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8a8e1b6c07e059d4adc4.html",
+    "sha256": "8dbe3292b366cd6261407da8a8c69cf28a90633199c83fe7672f7b4a94d1b4d0"
+  },
+  {
+    "url": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/5/1684.html",
+    "fetchedAt": "2026-11-05T04:24:15.271850+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/5/1684.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8c60199483d5dca53f2f.html",
+    "sha256": "474e7a231f8d2bf68f60fad789687443a4231889e33cd642ab283a66bf4fda28"
+  },
+  {
+    "url": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+    "fetchedAt": "2026-11-05T04:24:14.285598+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+    "snapshotPath": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html",
+    "sha256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/kurashi/suidougesuidou/gesuidou/1015242/1015263/1009709.html",
+    "fetchedAt": "2026-11-05T04:24:14.332178+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/kurashi/suidougesuidou/gesuidou/1015242/1015263/1009709.html",
+    "snapshotPath": "data/evidence/national/kanto-south/0e60973d5328e55fa26b.html",
+    "sha256": "3186cbcc835215d2d830e3eb756ffd274aee11063874ffe4b98aa8cd650aff0c"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
+    "fetchedAt": "2026-11-05T04:24:18.802155+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a7742b94fb760d41f1be.html",
+    "sha256": "a9a773adc7d8fda3185f34d0764e7d42d6922adb173114c8fd233c1d9f798281"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
+    "fetchedAt": "2026-11-05T04:24:21.504499+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
+    "snapshotPath": "data/evidence/national/kanto-south/47678629e0f40d6dc21f.html",
+    "sha256": "2ba2e49e668ad607d5bb52d9218391db19a57076eaeb27d470726bf73fd9fe86"
+  },
+  {
+    "url": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
+    "fetchedAt": "2026-11-05T04:24:15.231264+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
+    "snapshotPath": "data/evidence/national/kanto-south/d4387c754bbdcc15efb5.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb"
+  },
+  {
+    "url": "https://www.city.kodaira.tokyo.jp/kurashi/080/080429.html",
+    "fetchedAt": "2026-11-05T04:24:19.757260+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.kodaira.tokyo.jp/kurashi/080/080429.html",
+    "snapshotPath": "data/evidence/national/kanto-south/28edd89448cd37f73dcd.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/",
+    "fetchedAt": "2026-11-05T04:24:17.203417+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/bd19719780908ad4dbbd.html",
+    "sha256": "9af175e887e589d4cdd3ccc34b530bce24b8b71abe908759896766f630b222ee"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+    "fetchedAt": "2026-11-05T04:24:19.944679+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+    "snapshotPath": "data/evidence/national/kanto-south/30886eadbf1d6437c549.html",
+    "sha256": "7d8f04c46009a4ade86d64e9279a36c05fc6988d339edae942a5daad2f39811b"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+    "fetchedAt": "2026-11-05T04:24:24.614114+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/kurashi/478/keihatuzigyou/mcardhaihu.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ef2c37a216538aa13156.html",
+    "sha256": "30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "fetchedAt": "2026-11-05T04:24:17.800000+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b73e9e60b4baaa583160.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
+    "fetchedAt": "2026-11-05T04:24:22.038599+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
+    "snapshotPath": "data/evidence/national/kanto-south/971277fbd94634931be6.html",
+    "sha256": "167138c091fb7542786dd035de5b3d4a5ba67b4e80d5692764d59fbdc5b4b8c7"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/1003818.html",
+    "fetchedAt": "2026-11-05T04:24:27.600367+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/1003818.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a6efe82487b564e05c48.html",
+    "sha256": "a136d497eaa25732b6baab8d39c801cb2ffb5af084f642c78908de8699ad692d"
+  },
+  {
+    "url": "https://www.city.machida.tokyo.jp/kurashi/suido/grsui/gesuidoujigyou/manholehutadesign.html",
+    "fetchedAt": "2026-11-05T04:24:18.945249+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.machida.tokyo.jp/kurashi/suido/grsui/gesuidoujigyou/manholehutadesign.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b381ca043aa412118edb.html",
+    "sha256": "6cc38461ad811f80c40c269d1377f904470c81637a8d9cad7b10a225e0e9a9d6"
+  },
+  {
+    "url": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/matsudo_manhole_card.html",
+    "fetchedAt": "2026-11-05T04:24:19.328400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/matsudo_manhole_card.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fafc715273a977af4ea6.html",
+    "sha256": "26b8ca98d5c9b69fb50f5cbe36e39ed745111e28fc56b1ab1d4dc8d0ea77b253"
+  },
+  {
+    "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
+    "fetchedAt": "2026-11-05T04:24:23.869154+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a3602a25cae7778d7be6.html",
+    "sha256": "43e335ad2c672387590495f13b066a99b192e3ecf8478cc9ecc49b08b74db3d8"
+  },
+  {
+    "url": "https://www.city.minato.tokyo.jp/citypromotion/manhole.html",
+    "fetchedAt": "2026-11-05T04:24:20.688330+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minato.tokyo.jp/citypromotion/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/3edd60cf33e695e02329.html",
+    "sha256": "eba5271baf5f9995232a70ea05e39e09a09821ce00e0684a038bb2ff9a5b09cf"
+  },
+  {
+    "url": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+    "fetchedAt": "2026-11-05T04:24:21.039711+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+    "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+    "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6"
+  },
+  {
+    "url": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/bus_churin_chusha_kotsuanzen/mubus/1052084.html",
+    "fetchedAt": "2026-11-05T04:24:22.486042+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/bus_churin_chusha_kotsuanzen/mubus/1052084.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c057d20b7df5984b63a8.html",
+    "sha256": "b26c53d1cae27e618d506a3be5f1c8342bb6b14895bdc1dc189c477b91409d24"
+  },
+  {
+    "url": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+    "fetchedAt": "2026-11-05T04:24:25.350040+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+    "snapshotPath": "data/evidence/national/kanto-south/d1b500f617fd37fc4e2b.html",
+    "sha256": "6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c"
+  },
+  {
+    "url": "https://www.city.nagareyama.chiba.jp/life/1001972/1002077/1020210.html",
+    "fetchedAt": "2026-11-05T04:24:22.870278+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagareyama.chiba.jp/life/1001972/1002077/1020210.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f314fdd9d92c58c0165a.html",
+    "sha256": "2945f1ebe3e29261d61b9dd4dc5cbe4c699fc810b883f8f0d4dbf0092224d9bc"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/index.html",
+    "fetchedAt": "2026-11-05T04:24:23.615303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cead085ac0934bb61db8.html",
+    "sha256": "8a2336788c4579c17e1c19aad6ad72cb659e04ddc7c6bb63246830c3205af72a"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:28.275019+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/362ccfc2c88ce7f336ff.html",
+    "sha256": "e37eeca4660347b0b9c3b29273e28f5192c2d553497fce83ac16caa00d876f34"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/soshiki/gesuido/gyoumuannai_gesui/M_card_H290831.html",
+    "fetchedAt": "2026-11-05T04:24:30.828223+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.narashino.lg.jp/soshiki/gesuido/gyoumuannai_gesui/M_card_H290831.html",
+    "snapshotPath": "data/evidence/national/kanto-south/62d8d223454e8c549b8f.html",
+    "sha256": "9da0273e20c850b1ce80b631387a60c1dc6ac6179ffb9ab3f724505aa4e10498"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "fetchedAt": "2026-11-05T04:24:36.416969+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "snapshotPath": "data/evidence/national/kanto-south/2bff9f3010726a801591.html",
+    "sha256": "0bca2f3652486cd58d25351e75dd2c166869367139bf7f8aa59ca0ac12f7a7ff"
+  },
+  {
+    "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:25.934213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b9074f6b8a4fc4996bb3.html",
+    "sha256": "8e9a4b346d3db8dd4f1cdea1e1271bfa6f846a6174a537e5e67e55e10cfefa9e"
+  },
+  {
+    "url": "https://www.city.nishitokyo.lg.jp/enjoy/ekimae_hassin/08manhoru.html",
+    "fetchedAt": "2026-11-05T04:24:26.420622+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nishitokyo.lg.jp/enjoy/ekimae_hassin/08manhoru.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5ff2b0b8faf063bcadca.html",
+    "sha256": "81523b631f103b63b120f8cd656fb667e7d30704fadb8b5a5e2723f7a0787ca9"
+  },
+  {
+    "url": "https://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "fetchedAt": "2026-11-05T04:24:26.600878+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f1a08ae69efeebb73e50.html",
+    "sha256": "e69713114bad37e7e2e835f414841f840d64afbf30b5f41472614eb4d430cadb"
+  },
+  {
+    "url": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/1001045.html",
+    "fetchedAt": "2026-11-05T04:24:31.020507+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/1001045.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cfe026259a450b7fd035.html",
+    "sha256": "42aeb3bee28ee4b0c36f5e25f8bb6b03105ac7ab910e00e26f22a39fe6e0b81f"
+  },
+  {
+    "url": "https://www.city.oamishirasato.lg.jp/0000005447.html",
+    "fetchedAt": "2026-11-05T04:24:27.275558+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oamishirasato.lg.jp/0000005447.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cb2be5203aaa3ecd835e.html",
+    "sha256": "461473acb1072b0e69f047626a37b6c5a9c82773286f6854d322bba55cf02487"
+  },
+  {
+    "url": "https://www.city.oamishirasato.lg.jp/0000013090.html",
+    "fetchedAt": "2026-11-05T04:24:31.499580+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oamishirasato.lg.jp/0000013090.html",
+    "snapshotPath": "data/evidence/national/kanto-south/226072b1ba2ea2bbb0b5.html",
+    "sha256": "18b82fef232316afff7526ae90ca0a56d8fa789184cc4eb5d19035c0bf9efdf6"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/field/c-planning/sewer/topics/p24794.html",
+    "fetchedAt": "2026-11-05T04:24:28.294656+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/field/c-planning/sewer/topics/p24794.html",
+    "snapshotPath": "data/evidence/national/kanto-south/23fc14b60621e8f66f7e.html",
+    "sha256": "097de9148395d730b7ed9379b9649c42d8e78e747b72cd66c166d20d09144296"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/field/lifelong/culture/historical_structure/p25874.html",
+    "fetchedAt": "2026-11-05T04:24:33.338387+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/field/lifelong/culture/historical_structure/p25874.html",
+    "snapshotPath": "data/evidence/national/kanto-south/92f52f6a1e8a435231ed.html",
+    "sha256": "49678bbffeaa9095761ac490236ab7af0eb4eb38911ab9748361a179bfc39e45"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
+    "fetchedAt": "2026-11-05T04:24:37.900994+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/field/c-planning/sewer/topics/p24794.html",
+    "snapshotPath": "data/evidence/national/kanto-south/922e3bd0e6e0048efdcf.html",
+    "sha256": "097de9148395d730b7ed9379b9649c42d8e78e747b72cd66c166d20d09144296"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/kanko/machimeguri/p29912.html",
+    "fetchedAt": "2026-11-05T04:24:40.619638+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/kanko/machimeguri/p29912.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c8291775252d937d3f26.html",
+    "sha256": "e20d5adc6dbf071382634760ad92df833d576e807e4bf73c2777b3eb5d7ddb1c"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/kanko/topics/p38849.html",
+    "fetchedAt": "2026-11-05T04:24:44.183318+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/kanko/topics/p38849.html",
+    "snapshotPath": "data/evidence/national/kanto-south/2e0c723ac8b24153955c.html",
+    "sha256": "91d8f5543540cc52a7c5598d39620da745ddd880babf8ae939ae0d0889652766"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/municipality/industry/urban/nariwai.html",
+    "fetchedAt": "2026-11-05T04:24:46.755907+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/field/industry/urban/nariwai.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7d3b214ef63ae3f30edf.html",
+    "sha256": "5fd5250559b741a2e0dd3901dfe216aa08fe7a740975792fd300acc83e5a404f"
+  },
+  {
+    "url": "https://www.city.ome.tokyo.jp/soshiki/25/72544.html",
+    "fetchedAt": "2026-11-05T04:24:32.339713+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ome.tokyo.jp/soshiki/25/72544.html",
+    "snapshotPath": "data/evidence/national/kanto-south/35d4c8de9207f57ea436.html",
+    "sha256": "6d6b8540420786ffb1d763a32591f557972da7bb81fb2724baabdbf1c6e6d003"
+  },
+  {
+    "url": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "fetchedAt": "2026-11-05T04:24:32.630698+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b402be524f3a0e7c47ec.html",
+    "sha256": "59bf82fcd32d4d26c4e651a9b485b44f611c2c8fdc69c2595e9392b5dfd2ba07"
+  },
+  {
+    "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1009956.html",
+    "fetchedAt": "2026-11-05T04:24:33.109227+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026709/1000105/1025057/1009956.html",
+    "snapshotPath": "data/evidence/national/kanto-south/617f509c12fca820aa22.html",
+    "sha256": "c0775850aea3a9992dae4ab86b0db93a7cb24697ccbe210f91ec3efd643ab191"
+  },
+  {
+    "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+    "fetchedAt": "2026-11-05T04:24:36.896395+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+    "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+    "sha256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68"
+  },
+  {
+    "url": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+    "fetchedAt": "2026-11-05T04:24:35.418860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+    "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+    "sha256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475"
+  },
+  {
+    "url": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/3/5/15384.html",
+    "fetchedAt": "2026-11-05T04:24:40.109545+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/soshiki/koenryokuchika/3/5/15384.html",
+    "snapshotPath": "data/evidence/national/kanto-south/be3242971a8d4eca3d9e.html",
+    "sha256": "baa7b1130692aa07bd60864d12fa8fcb00e906eb598d82088af40928a965bb9b"
+  },
+  {
+    "url": "https://www.city.setagaya.lg.jp/mokuji/shigoto/005/d00184306.html",
+    "fetchedAt": "2026-11-05T04:24:36.837812+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setagaya.lg.jp/03647/4990.html",
+    "snapshotPath": "data/evidence/national/kanto-south/09067d49293714a15729.html",
+    "sha256": "673db0c2cf262a4e6cf2bedc04a9e7a4738119e73372211e99bd3f2a4c55c593"
+  },
+  {
+    "url": "https://www.city.shibuya.tokyo.jp/bunka/bunkazai/midokoro/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:36.901628+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibuya.tokyo.jp/bunka/bunkazai/midokoro/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/364d1cbcd2aa28b5ca3b.html",
+    "sha256": "75e7237ecfec9e81abf629a70fcd39927b09b07d70742c5baf7f794d05edb076"
+  },
+  {
+    "url": "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+    "fetchedAt": "2026-11-05T04:24:38.668789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/kankyo/doro/1009598/1004577.html",
+    "snapshotPath": "data/evidence/national/kanto-south/31a1659e1ceba0c3d6b5.html",
+    "sha256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9"
+  },
+  {
+    "url": "https://www.city.shinjuku.lg.jp/kanko/bunka02_000001_00015.html",
+    "fetchedAt": "2026-11-05T04:24:39.110704+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinjuku.lg.jp/kanko/bunka02_000001_00015.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8be13df66d6cf421d6a9.html",
+    "sha256": "032e14fc87d4475fda8d4d31dce0ec208aaed4206c850c56da904fcf18a53918"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+    "fetchedAt": "2026-11-05T04:24:39.620492+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html",
+    "sha256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "fetchedAt": "2026-11-05T04:24:40.144515+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html",
+    "sha256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+    "fetchedAt": "2026-11-05T04:24:40.259115+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s033/10628.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a7310ca88f8d1c405464.html",
+    "sha256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/shisetsu/kouen/02/ogikubo/1054100.html",
+    "fetchedAt": "2026-11-05T04:24:43.992128+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s100/shisetsu/14628.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cc000aab05e264c430a4.html",
+    "sha256": "4c8d9bbc520e13e69b49e895fb778b2881f7924fd7c371c4d0bec5c0dd3149df"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/shisetsu/sangyo/shoko/1007450.html",
+    "fetchedAt": "2026-11-05T04:24:45.707021+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s033/shisetsu/14967.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bb8ed5d8f95be7c783e6.html",
+    "sha256": "9b546cd0a4f65834b17584098396bc7bc9fefe49453c1280c60ba64c0eb84793"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/suginamishoukai/shirumanabu/namisuke/1057047.html",
+    "fetchedAt": "2026-11-05T04:24:48.151012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s033/10628.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b2b24595bfcb4ce4233c.html",
+    "sha256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3"
+  },
+  {
+    "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "fetchedAt": "2026-11-05T04:24:41.930990+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "snapshotPath": "data/evidence/national/kanto-south/16398dfb985e9fe39d5c.html",
+    "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/",
+    "fetchedAt": "2026-11-05T04:24:42.331341+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/769645338ee55554e8ac.html",
+    "sha256": "ac4d899d23d5d61d92eaa0c652ee6222bcb379c33a1d3156587ef23aac73905b"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/1020609/1025815.html",
+    "fetchedAt": "2026-11-05T04:24:45.036183+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/1020609/1025815.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ad2ff5643956759ab788.html",
+    "sha256": "a6ed19d20f0c1a334f5ae104b17700b6997f6c7b0f93bdd9942f2e2689253bcb"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/gesuido/index.html",
+    "fetchedAt": "2026-11-05T04:24:47.330310+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/065e1a176c1f56f06daa.html",
+    "sha256": "5c38ba97e2d63148bdbe66425662240c97eb6ad98d81799073413bc53815afb3"
+  },
+  {
+    "url": "https://www.city.tama.lg.jp/0000005579.html",
+    "fetchedAt": "2026-11-05T04:24:43.084455+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "snapshotPath": "data/evidence/national/kanto-south/ed40e445a51fae24c7b6.html",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a"
+  },
+  {
+    "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
+    "fetchedAt": "2026-11-05T04:24:45.429497+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003181.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f7afc37e8f9cee8d1662.html",
+    "sha256": "514e6a2c63e39c20954a0bcc768e7cc80477345adbd34726114d4a64ae527e64"
+  },
+  {
+    "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003182.html",
+    "fetchedAt": "2026-11-05T04:24:47.970701+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003182.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fca57984c3c2583b73a9.html",
+    "sha256": "626b47731f5cea1d7cf42336f30c9400e7eb9a1da483cda14fc130c5d4e60060"
+  },
+  {
+    "url": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+    "fetchedAt": "2026-11-05T04:24:44.430722+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+    "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+    "sha256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f"
+  },
+  {
+    "url": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+    "fetchedAt": "2026-11-05T04:24:47.121818+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bfb21396c72844b8d1a6.html",
+    "sha256": "c481cf8ad97820d7ca5fa58b74ba8f11919a68f6b571f6c83d0760087c792911"
+  },
+  {
+    "url": "https://www.city.togane.chiba.jp/0000013032.html",
+    "fetchedAt": "2026-11-05T04:24:45.757104+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+    "sha256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d"
+  },
+  {
+    "url": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:46.122413+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f44eb6494fd48bd47f82.html",
+    "sha256": "1bef9ee90e640b76aa7db3c1f4006312749bbb46b584e4f7f244b1e07b2afc7c"
+  },
+  {
+    "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/index.html",
+    "fetchedAt": "2026-11-05T04:24:48.847344+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/67f24d9b626fac9d851b.html",
+    "sha256": "978dec3d57250aec0f2ca7239081df30b642f633e3add47e46b9ef4eee556f36"
+  },
+  {
+    "url": "https://www.city.toshima.lg.jp/424/2002212017.html",
+    "fetchedAt": "2026-11-05T04:24:46.971310+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toshima.lg.jp/424/2002212017.html",
+    "snapshotPath": "data/evidence/national/kanto-south/d1f22e455e5e5c0c46e0.html",
+    "sha256": "5be1ab6c5b05cf542d4c2bbd873e040a8b80e4a00a5574e0dfb1e3ee3750320f"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/kanko/kyodo/index.html",
+    "fetchedAt": "2026-11-05T04:24:47.146417+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/kanko/kyodo/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/99ee60770ceb215b7cd8.html",
+    "sha256": "c47b42dbd13280d22d2fe318f9d1fbca70d48f9bd4d65835f55491dc03f8d18e"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "fetchedAt": "2026-11-05T04:24:49.848837+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7ef9dd743444ec4fb475.html",
+    "sha256": "34d016ee01def56c0ca98b45d4128709b45a2e031f7da206a3835333af15516c"
+  },
+  {
+    "url": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+    "fetchedAt": "2026-11-05T04:24:47.845865+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+    "snapshotPath": "data/evidence/national/kanto-south/86586396e1e141a287d4.html",
+    "sha256": "6ee0d392f9646996373aa2c0adf761db155b2f1653839038754fed943d73c70b"
+  },
+  {
+    "url": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+    "fetchedAt": "2026-11-05T04:24:48.043976+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5b07ce3775aadf21039e.html",
+    "sha256": "8ad2b0b8ac153ada817d554d4cdfa73020dcd0845756f65dbc5ca49d10e61632"
+  },
+  {
+    "url": "https://www.city.yachiyo.lg.jp/soshiki/93/",
+    "fetchedAt": "2026-11-05T04:24:50.033462+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachiyo.lg.jp/soshiki/93/",
+    "snapshotPath": "data/evidence/national/kanto-south/750ca236d3601bf9b8d3.html",
+    "sha256": "956cf91dab4e668eefc5b80088d22cc6aea82952fd39d721e7f69110c3becb1c"
+  },
+  {
+    "url": "https://www.city.yamato.lg.jp/gyosei/soshik/17/keiei/gesuidouimeziappuzigyou/7111.html",
+    "fetchedAt": "2026-11-05T04:24:48.158684+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yamato.lg.jp/gyosei/soshik/17/keiei/gesuidouimeziappuzigyou/7111.html",
+    "snapshotPath": "data/evidence/national/kanto-south/9a64e5f26984e2977ec4.html",
+    "sha256": "8a8fcbac3531b106c00faa9b7f55e9d1a7fcc1801d67ff4bb3a0af1d003dacda"
+  },
+  {
+    "url": "https://www.city.yokohama.lg.jp/asahi/kurashi/kyodo_manabi/kyodo_shien/minakuru/annai/kihonjyohou.html",
+    "fetchedAt": "2026-11-05T04:24:48.490165+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokohama.lg.jp/asahi/kurashi/kyodo_manabi/kyodo_shien/minakuru/annai/kihonjyohou.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b765322fb37de6d96a17.html",
+    "sha256": "46761d141aeeeeaea1a3d764a208907fb2a91992c31dea2a552b2c4d7cce1ea9"
+  },
+  {
+    "url": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+    "fetchedAt": "2026-11-05T04:24:50.333676+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+    "sha256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2"
+  },
+  {
+    "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:51.739848+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+    "sha256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67"
+  },
+  {
+    "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:53.961997+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/9df4b4957bcdc85772b0.html",
+    "sha256": "f451efcfeb597506b09cfc5b7dcf7062101295503742207447a9345fd7e11419"
+  },
+  {
+    "url": "https://www.city.yokosuka.kanagawa.jp/2752/sisetu/fc00000087.html",
+    "fetchedAt": "2026-11-05T04:24:49.034556+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokosuka.kanagawa.jp/2752/sisetu/fc00000087.html",
+    "snapshotPath": "data/evidence/national/kanto-south/e57da128ea0db25a69ac.html",
+    "sha256": "39cae57867deaa5bb8110ba76b8c313c0c6b118c6fccb9ca31dc41a469a5f57f"
+  },
+  {
+    "url": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+    "fetchedAt": "2026-11-05T04:24:50.802452+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+    "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+  },
+  {
+    "url": "https://www.city.zama.kanagawa.jp/kurashi/suidou/gesuidou/oshirase/1002425.html",
+    "fetchedAt": "2026-11-05T04:24:49.108687+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.zama.kanagawa.jp/kurashi/suidou/gesuidou/oshirase/1002425.html",
+    "snapshotPath": "data/evidence/national/kanto-south/74a42548bafebab14bfe.html",
+    "sha256": "698a4545949b0f97ecc3c237e7d78a1689097e25f5e9127876a79e1333eef3db"
+  },
+  {
+    "url": "https://www.city.zushi.kanagawa.jp/index.html",
+    "fetchedAt": "2026-11-05T04:24:49.334295+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.zushi.kanagawa.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/1aee7cfbf648f119283e.html",
+    "sha256": "51eb50f396978ce3dd8bc19a3f708235c6ab6db618f60e3fef32c324810d6312"
+  },
+  {
+    "url": "https://www.city.zushi.kanagawa.jp/kurashi/suido/1001970/1001982/1010948.html",
+    "fetchedAt": "2026-11-05T04:24:51.163494+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.zushi.kanagawa.jp/kurashi/suido/1001970/1001982/1010948.html",
+    "snapshotPath": "data/evidence/national/kanto-south/1729e3627fea544f2bb5.html",
+    "sha256": "80d9df4a4ecef7aee87ea014725d282678fbb239864878ed8f030c6e093b3536"
+  },
+  {
+    "url": "https://www.cocoyoko.net/access/information.html",
+    "fetchedAt": "2026-11-05T04:24:49.810654+00:00",
+    "status": 200,
+    "finalUrl": "https://www.cocoyoko.net/access/information.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f76311e8abfcba478017.html",
+    "sha256": "754908ea4305094217a78c5a43a7a3d21cb75e41f90a8f6d76fa60b5a7eda290"
+  },
+  {
+    "url": "https://www.e-sagamihara.com/information-center/",
+    "fetchedAt": "2026-11-05T04:24:50.090824+00:00",
+    "status": 403,
+    "finalUrl": "https://www.e-sagamihara.com/information-center/",
+    "snapshotPath": "data/evidence/national/kanto-south/9d096f03fa6890fc8d6d.html",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "url": "https://www.e-sagamihara.com/topics/topics-971/",
+    "fetchedAt": "2026-11-05T04:24:51.755811+00:00",
+    "status": 403,
+    "finalUrl": "https://www.e-sagamihara.com/topics/topics-971/",
+    "snapshotPath": "data/evidence/national/kanto-south/b349f113e69f22a55dc6.html",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/about/gaiyou/ryuiki50",
+    "fetchedAt": "2026-11-05T04:24:50.658952+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/about/gaiyou/ryuiki50",
+    "snapshotPath": "data/evidence/national/kanto-south/139d31f7dc0eb2880cb7.html",
+    "sha256": "f782c1038d8484cd073b4e08df66aafbb459b692091d4569e3c39e7b93606ed2"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.305701+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "snapshotPath": "data/evidence/national/kanto-south/b9892beadacfd66a1a31.html",
+    "sha256": "acb5705c2a46613e2dc7644ed699855da15ef82b6729074aa1d38ced8444db3d"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "fetchedAt": "2026-11-05T04:24:54.378116+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "snapshotPath": "data/evidence/national/kanto-south/66e7104a9a54e4562068.html",
+    "sha256": "0d1ae58b61aa5f796212037f913de34899384dfd6731b8ed522b0dc5ee80a47c"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/plan/japanese-prefectural-tourism-promotion-corner/index.html",
+    "fetchedAt": "2026-11-05T04:24:50.757125+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/plan/japanese-prefectural-tourism-promotion-corner/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/123f90b55835ede1b14f.html",
+    "sha256": "53c01e2990e4f4ec68d9392ebbeb328b3c4ce6ea30a3f8a4b0b927e9b70f7d1c"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.235277+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/959ed30231e3dcbe1a0a.html",
+    "sha256": "42a7cab99bcb9fafc7705731dcb4beb640cf8a15185e867c646b287c71d16540"
+  },
+  {
+    "url": "https://www.hayama-kankou.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.256418+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hayama-kankou.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/0659f44fb2130bca46b3.html",
+    "sha256": "16e768977c7571eac4be6f9884dad83b0096ee9ece735d0845f23c27957f97d1"
+  },
+  {
+    "url": "https://www.higashikurume-lll.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.306301+00:00",
+    "status": 200,
+    "finalUrl": "https://www.higashikurume-lll.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/1427068acf5185938e13.html",
+    "sha256": "0f81ea1005b0228ebf142915a91aee77d79cb1ca0a02e72220317a95a72b9f58"
+  },
+  {
+    "url": "https://www.hinodekanko.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.380188+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hinodekanko.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/c98c17120a04f57dd4f3.html",
+    "sha256": "b9f88129d0df35f4cd9890ff68ee37487daa57c7c30dff94521587aff191b3f9"
+  },
+  {
+    "url": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
+    "fetchedAt": "2026-11-05T04:24:51.513240+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
+    "snapshotPath": "data/evidence/national/kanto-south/4f452bfdf56b6b0b0cfd.html",
+    "sha256": "8743310759e6b28c123a43b4c541fe058011d38e514e5994a063b5ce02efaa5b"
+  },
+  {
+    "url": "https://www.jswa.go.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.652390+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/70a2dc129a22da850611.html",
+    "sha256": "dc3d9ea7fa584077a7a6c046659d7be0e1e97b89ec995ec6cd9ec6252d4309e3"
+  },
+  {
+    "url": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+    "fetchedAt": "2026-11-05T04:24:53.263458+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html",
+    "sha256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a"
+  },
+  {
+    "url": "https://www.kanagawaparks.com/verny/access.html",
+    "fetchedAt": "2026-11-05T04:24:52.264050+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanagawaparks.com/verny/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south/84852f0863d1188ecc1c.html",
+    "sha256": "6f76f8418764420ecc786cf9f79d62e451a5426db81ad2965c2af0b2d0f54af2"
+  },
+  {
+    "url": "https://www.kanko-setagaya.jp/?p=we-page-entry&spot=265539&nav=none",
+    "fetchedAt": "2026-11-05T04:24:52.745400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-setagaya.jp:443/sightseeing/",
+    "snapshotPath": "data/evidence/national/kanto-south/bd14b1c5cd270c2a8e4f.html",
+    "sha256": "1104fc16d8b0d2aeb86e2b23f1a1601f75dc124f375e5d87d96245c01e67b32f"
+  },
+  {
+    "url": "https://www.kanko-shinjuku.jp/office/-/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.845303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-shinjuku.jp/areainfo/-/office.html",
+    "snapshotPath": "data/evidence/national/kanto-south/9df030d3419f1218598a.html",
+    "sha256": "ea4d428008791a0e45c8919bea884c37d47929003622a78bb0c6e71d28448ccb"
+  },
+  {
+    "url": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "fetchedAt": "2026-11-05T04:24:52.964180+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "snapshotPath": "data/evidence/national/kanto-south/cd50cd9ac45c8e481c10.html",
+    "sha256": "5cc71ab5d265c2cb2b01108607614dbd1334478265ebbdd5f998051d40f0b36b"
+  },
+  {
+    "url": "https://www.kokubunji-izumihall.jp/",
+    "fetchedAt": "2026-11-05T04:24:53.042618+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kokubunji-izumihall.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/612af23dbf257fbfdb80.html",
+    "sha256": "e62e6a14d4ca839c2b5c727b0996e4db3b881cf2e5e096d3b1ec4cb4700127e3"
+  },
+  {
+    "url": "https://www.kurumiru-fussa-omotenashi.com",
+    "fetchedAt": "2026-11-05T04:24:53.090712+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurumiru-fussa-omotenashi.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/bb171c9a39edbcca548a.html",
+    "sha256": "6686f608c1812e3525b43cd9efd90a46cc7e06edc7f59bb6083c84f65dbd47c1"
+  },
+  {
+    "url": "https://www.matsudo-kankou.jp/",
+    "fetchedAt": "2026-11-05T04:24:53.304333+00:00",
+    "status": 200,
+    "finalUrl": "https://www.matsudo-kankou.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/4e01e28e7812754b2315.html",
+    "sha256": "ac4094c4b22aa26f45870ad19ed518dbd562c8712e3e435290972799a59e1cee"
+  },
+  {
+    "url": "https://www.musashino.or.jp/place/",
+    "fetchedAt": "2026-11-05T04:24:53.383142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.musashino.or.jp/place/",
+    "snapshotPath": "data/evidence/national/kanto-south/d788585a363783d56173.html",
+    "sha256": "748f07754641de98ed5270416581e405236f9a5c6fda633447f5f9ccb465c700"
+  },
+  {
+    "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+    "fetchedAt": "2026-11-05T04:24:53.385873+00:00",
+    "status": 200,
+    "finalUrl": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+    "snapshotPath": "data/evidence/national/kanto-south/506b49e9c041c49c5e74.html",
+    "sha256": "0f93dc5eb6c9827dea267da6a7e69ad0fbfc3303d1430597d4de810ade8f8b69"
+  },
+  {
+    "url": "https://www.nijinogesuidoukan.jp/",
+    "fetchedAt": "2026-11-05T04:24:54.033087+00:00",
+    "error": "HTTPSConnectionPool(host='www.nijinogesuidoukan.jp', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)')))"
+  },
+  {
+    "url": "https://www.ogasawaramura.com/",
+    "fetchedAt": "2026-11-05T04:24:54.179213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ogasawaramura.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/e28cb593eab0beb90b37.html",
+    "sha256": "3a1368fcdeb0e136054d162f497686c894286a11863ac913eb27fb157639c230"
+  },
+  {
+    "url": "https://www.omekanko.gr.jp/",
+    "fetchedAt": "2026-11-05T04:24:54.378317+00:00",
+    "status": 200,
+    "finalUrl": "https://www.omekanko.gr.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/a77d152aba70e87ebb62.html",
+    "sha256": "e81a802542e71536304023f0a91a0cd5d47aa8d9331579febecab9700129bf1a"
+  },
+  {
+    "url": "https://www.pref.chiba.lg.jp/gesui/jigyou/150manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:54.510553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.chiba.lg.jp/gesui/jigyou/150manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/370e66742e4e51047358.html",
+    "sha256": "ccc6419264c453083e689c04656f3a8cbbcbfbb3f00eb2c9eccf141a9d7553ae"
+  },
+  {
+    "url": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
+    "fetchedAt": "2026-11-05T04:24:54.636259+00:00",
+    "status": 200,
+    "finalUrl": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
+    "snapshotPath": "data/evidence/national/kanto-south/df19685b39d318180c40.html",
+    "sha256": "e0b1bfd7fff41601354e7f5668f5764647eb83b6083f0856d3661af07b4fe744"
+  },
+  {
+    "url": "https://www.tokyo-park.or.jp/park/ukima/index.html",
+    "fetchedAt": "2026-11-05T04:24:54.743694+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokyo-park.or.jp/park/ukima/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f5e839340f05146f9a18.html",
+    "sha256": "196ffd202578ee63ad249777c130a2dbd897358d39411274e98714f1ea4d5d62"
+  },
+  {
+    "url": "https://www.toshima-mirai.or.jp/center/a_kumin/",
+    "fetchedAt": "2026-11-05T04:24:54.786603+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshima-mirai.or.jp/center/a_kumin/",
+    "snapshotPath": "data/evidence/national/kanto-south/410ca30120f99f62569d.html",
+    "sha256": "f51a3ecf7922ba77aa4ebcd3052879313a0df00ddcdc05ef43f003742f501b70"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/",
+    "fetchedAt": "2026-11-05T04:24:55.011640+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/169178eb0f114b88dd91.html",
+    "sha256": "f809efd009281c19c4416c3b7f61ec40eb104d60ddd672f82807484cdc8e9d62"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/information/20251125_manhoru.html",
+    "fetchedAt": "2026-11-05T04:24:56.755794+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/information/20251125_manhoru.html",
+    "snapshotPath": "data/evidence/national/kanto-south/4d9985bb4af40b5b8441.html",
+    "sha256": "f64f44bc92cff65026596aeaa962dc9309b845a506d551c5d0e56391e6688fce"
+  },
+  {
+    "url": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+    "fetchedAt": "2026-11-05T04:24:55.260176+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+    "sha256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818"
+  },
+  {
+    "url": "https://www.town.hayama.lg.jp/soshiki/gesui/index.html",
+    "fetchedAt": "2026-11-05T04:24:57.005313+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7042cbb049fb0ff30e4e.html",
+    "sha256": "14250ed7268aedc0d89b7189020ecfa1ceac8e062cf30238ed5189803037a938"
+  },
+  {
+    "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/1/1540.html",
+    "fetchedAt": "2026-11-05T04:24:58.768213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/1/1540.html",
+    "snapshotPath": "data/evidence/national/kanto-south/b5568039b6067ad5cd6d.html",
+    "sha256": "b03372f9c190e6788a6ffe314230d52ea63f7900b75e026431f516663cecb863"
+  },
+  {
+    "url": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html",
+    "fetchedAt": "2026-11-05T04:25:00.182768+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hayama.lg.jp/soshiki/shougaigakushuu/2/2/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/9c07e67bd22432541a50.html",
+    "sha256": "79a42a746f32ea0f0c83c9b881fe01a9051c5da26658785771913aca7eac5540"
+  },
+  {
+    "url": "https://www.town.hinode.tokyo.jp/",
+    "fetchedAt": "2026-11-05T04:24:55.673556+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hinode.tokyo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/62f6e161d95bab85a588.html",
+    "sha256": "37c05b41bec0616996a7dba4e23ca68fda5676382603cba826742bb9aaa74895"
+  },
+  {
+    "url": "https://www.town.hinode.tokyo.jp/0000004462.html",
+    "fetchedAt": "2026-11-05T04:24:57.243486+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hinode.tokyo.jp/0000004462.html",
+    "snapshotPath": "data/evidence/national/kanto-south/56bed7cbb594a5621e9b.html",
+    "sha256": "bf0ea3aef060aa58fc080bc217b39aaa55df72a0bc05c5c9f58d39c70e94e586"
+  },
+  {
+    "url": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+    "fetchedAt": "2026-11-05T04:24:55.908950+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+    "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+    "sha256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4"
+  },
+  {
+    "url": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/index.html",
+    "fetchedAt": "2026-11-05T04:24:57.194648+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/91a9f00a6c09655ddc88.html",
+    "sha256": "438e617abfe06c010c1c9d8aa8e8e405680c308bc4e0d81e2975253d358bdef3"
+  },
+  {
+    "url": "https://www.town.mizuho.tokyo.jp/kankyo/002/001/p005171.html",
+    "fetchedAt": "2026-11-05T04:24:56.195139+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.mizuho.tokyo.jp/kankyo/002/001/p005171.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c55739b55e49182f3201.html",
+    "sha256": "749b8350fa34817466d14c2dc2f99c854527d98f73a73635bf77457715f44a95"
+  },
+  {
+    "url": "https://www.town.nakai.kanagawa.jp/index.html",
+    "fetchedAt": "2026-11-05T04:24:56.244173+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nakai.kanagawa.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/00f6eab930eb14938096.html",
+    "sha256": "939459de55fdc24a22e65bb70ea0f931f7971dc9f6581313d7165ed10de870fd"
+  },
+  {
+    "url": "https://www.town.nakai.kanagawa.jp/kurashi_tetsuzuki/jogesuido/gesuido_jokaso/1223.html",
+    "fetchedAt": "2026-11-05T04:24:58.265320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nakai.kanagawa.jp/kurashi_tetsuzuki/jogesuido/gesuido_jokaso/1223.html",
+    "snapshotPath": "data/evidence/national/kanto-south/2db1daf7ba3da4f553a0.html",
+    "sha256": "7e74300b02ffc2b57710da5c98ebb8d8d333c40f47e058f481807f3a22db8767"
+  },
+  {
+    "url": "https://www.town.oi.kanagawa.jp/",
+    "fetchedAt": "2026-11-05T04:24:56.975010+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.oi.kanagawa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/93aff03ca694558f3897.html",
+    "sha256": "01f739f19a3b68ab4ef5878ced2a289f1a1f01bc93bfcfbf8656fd5340156ada"
+  },
+  {
+    "url": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+    "fetchedAt": "2026-11-05T04:24:59.131134+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+    "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+    "sha256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e"
+  },
+  {
+    "url": "https://www.town.shibayama.lg.jp",
+    "fetchedAt": "2026-11-05T04:24:57.535066+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shibayama.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south/a451c5805b6ee98af00c.html",
+    "sha256": "93d5e69fee00d61849d174f3f1a18ba40c346896869ba7ee06263494f8741c7f"
+  },
+  {
+    "url": "https://www.town.shibayama.lg.jp/0000006287.html",
+    "fetchedAt": "2026-11-05T04:24:59.310965+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shibayama.lg.jp/0000006287.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5c9f9d4985a747c0739c.html",
+    "sha256": "20baf01e2aa9f06b91f3974073d405ff66648e86134bf27154d345918df67ff8"
+  },
+  {
+    "url": "https://www.tsurutsuru-onsen.com/",
+    "fetchedAt": "2026-11-05T04:24:58.131932+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tsurutsuru-onsen.com/",
+    "snapshotPath": "data/evidence/national/kanto-south/811c12d7dba0f9bdf749.html",
+    "sha256": "1ac9602459ce5a47ecee05f8ad70f1a0e6926fe6651df0d46f141160dd5b602d"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
+    "fetchedAt": "2026-11-05T04:24:58.311603+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
+    "snapshotPath": "data/evidence/national/kanto-south/30a5084b78bafc024d01.html",
+    "sha256": "7c0b7a5be0d5273f362f57cea6e1e17d1533cf14b1019c83a73702b79dddae5d"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
+    "fetchedAt": "2026-11-05T04:24:59.918119+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
+    "snapshotPath": "data/evidence/national/kanto-south/8478a78a726ecbc56c25.html",
+    "sha256": "108f452f7538a5d42afc038e7409b117ae26a51b6f9145497f56973df531cde5"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/rd_portal/manhole/",
+    "fetchedAt": "2026-11-05T04:25:01.617096+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/rd_portal/manhole/",
+    "snapshotPath": "data/evidence/national/kanto-south/b98facd32504334c4fb5.html",
+    "sha256": "74a794c0f52a757db5e83ea8cbd1af2ecd7cbcae618ade8c691079ea3d17baaf"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/0000002173.html",
+    "fetchedAt": "2026-11-05T04:24:58.919226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/0000002173.html",
+    "snapshotPath": "data/evidence/national/kanto-south/c68fdca91f7fe79d179f.html",
+    "sha256": "cff3e5daeb4ce4bd0c15a8eeedb0df49253bd6d2be2113e7e5100aedbed09399"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
+    "fetchedAt": "2026-11-05T04:25:00.258174+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/soshiki/16-7-0-0-0_1.html",
+    "snapshotPath": "data/evidence/national/kanto-south/3c2d203eae2058f6a74f.html",
+    "sha256": "88017f9d75e2be240f6a95113597e830986b2bd18bc2e60f1446ff6e0a197832"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/soshiki/6-0-0-0-0_1.html",
+    "fetchedAt": "2026-11-05T04:25:02.027066+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/soshiki/6-0-0-0-0_1.html",
+    "snapshotPath": "data/evidence/national/kanto-south/fb2e1cd66b5e79798ce7.html",
+    "sha256": "a69a31439b748c0b17f76f8aa51bea071cdf37ba2c89e327e0a2572060bd4389"
+  },
+  {
+    "url": "https://www.vill.hinohara.tokyo.jp/0000001479.html",
+    "fetchedAt": "2026-11-05T04:24:59.258709+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.hinohara.tokyo.jp/0000001479.html",
+    "snapshotPath": "data/evidence/national/kanto-south/0f2b0ab84b7a41d8b437.html",
+    "sha256": "f6542600612a7b9c1604bf16f82463ebcd3a0a9462f88f9e9ad95628f35aeb1a"
+  },
+  {
+    "url": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/",
+    "fetchedAt": "2026-11-05T04:24:59.615188+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/",
+    "snapshotPath": "data/evidence/national/kanto-south/8c90ee1ef72e28def038.html",
+    "sha256": "f5b81fdc73b77d0d3ef69d3c82d7e651a8b3ae9deb8b336b868379224560e70b"
+  },
+  {
+    "url": "https://www.welcome.city.yokohama.jp/tic/",
+    "fetchedAt": "2026-11-05T04:24:59.945542+00:00",
+    "status": 307,
+    "finalUrl": "https://www.welcome.city.yokohama.jp/tic/",
+    "snapshotPath": "data/evidence/national/kanto-south/0c68ee1e5b3b2b23bd32.html",
+    "sha256": "17f93a72d1ae2926255b95686b48ae0408b42700f94c2d420f86e5d83356ef0d"
+  },
+  {
+    "url": "https://www.yamakita.net/",
+    "fetchedAt": "2026-11-05T04:25:00.058997+00:00",
+    "status": 200,
+    "finalUrl": "https://www.yamakita.net/",
+    "snapshotPath": "data/evidence/national/kanto-south/eab46341b42ef80af271.html",
+    "sha256": "76fa8b2aad93173f3409b6c04779cec689582dea3e0510081b4aa36b23d7f9ed"
+  },
+  {
+    "url": "https://b.hatena.ne.jp/entry/https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:26:56.816098+00:00",
+    "status": 200,
+    "finalUrl": "https://b.hatena.ne.jp/site/www.city.adachi.tokyo.jp/#bookmark_url=https%3A%2F%2Fwww.city.adachi.tokyo.jp%2Fs-shinko%2Fdesignmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/f8df678c3b08ff707697.html",
+    "sha256": "8660997a20876c12f5487e680215ce452fdbc9e0074205c84feee7985ee458cb",
+    "discoveredAnchor": ""
+  },
+  {
+    "url": "http://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "fetchedAt": "2026-11-05T04:26:56.816571+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south/210e0a417b5f895b1e90.html",
+    "sha256": "860092f50b0cc8714552a595982ec635ca0aaba38a466e72fc68d560eb01e15e",
+    "discoveredAnchor": "【片町文化センターでの配布を再開】「ちはやふる」のマンホールカードを配布"
+  },
+  {
+    "url": "https://isleshinagawa.com/archives/489",
+    "fetchedAt": "2026-11-05T04:26:56.816869+00:00",
+    "status": 200,
+    "finalUrl": "https://isleshinagawa.com/archives/489",
+    "snapshotPath": "data/evidence/national/kanto-south/caefaec2a9106f48b571.html",
+    "sha256": "fecfc028df36c9210a78112885273478fa614791ffefd660bdda2b40ee663e5e",
+    "discoveredAnchor": "2026.11.01 マンホールカード、東京都品川区(S001)の配布について※休館日：11月〜12月休館日変更、年末年始（12/29~翌年1/3)"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "fetchedAt": "2026-11-05T04:26:56.817432+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "snapshotPath": "data/evidence/national/kanto-south/0505dbb97e8012746373.html",
+    "sha256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+    "discoveredAnchor": "マンホールカードの配布について"
+  },
+  {
+    "url": "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2021/10/29/09.html",
+    "fetchedAt": "2026-11-05T04:26:56.819796+00:00",
+    "status": 200,
+    "finalUrl": "https://www.spt.metro.tokyo.lg.jp/tosei/hodohappyo/press/2021/10/29/09.html",
+    "snapshotPath": "data/evidence/national/kanto-south/15ff5eb753f13bc3780d.html",
+    "sha256": "e76b22572c8e5d547a474189aad196c0b03ca581036a2b4d5b5ce4e3cd951437",
+    "discoveredAnchor": "「TOKYOデザインマンホールデジタルラリー」の開催及び 「マンホールカード特別版」第2弾15種の配布について｜東京都 （外部リンク）"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/index.html",
+    "fetchedAt": "2026-11-05T04:26:56.821616+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5a1155057359ebfd9d57.html",
+    "sha256": "e09b25406168654b0ba462edfc0e5792d8fd357750ec3c6a3dcb544a91c5f712",
+    "discoveredAnchor": "マンホールカード"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/gesuidomanholezure.html",
+    "fetchedAt": "2026-11-05T04:26:58.099754+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/gesuidomanholezure.html",
+    "snapshotPath": "data/evidence/national/kanto-south/03723dc495c4fba8b4f1.html",
+    "sha256": "34347480d31766d5ddd4c962dd9c200c0c7b8bb177999abaf6a76f709c903085",
+    "discoveredAnchor": "下水道のマンホール蓋の「ずれ」を発見したら、至急連絡ください！"
+  },
+  {
+    "url": "https://zoomsight.social.or.jp/?url=https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "fetchedAt": "2026-11-05T04:26:57.017776+00:00",
+    "status": 200,
+    "finalUrl": "https://www4.zoomsight-sv2.jp/SOC/ja/controller/index.html#https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south/a151da15b32ad0c0c00b.html",
+    "sha256": "a5cff68bc1b8a9b95c13a6da0aabca8c12030f2b3b21d66d3cc5d1d1efe3e512",
+    "discoveredAnchor": "閲覧支援"
+  },
+  {
+    "url": "https://www.city.funabashi.lg.jp/machi/gesui/003/p046506.html",
+    "fetchedAt": "2026-11-05T04:29:42.465111+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.funabashi.lg.jp/machi/gesui/003/p046506.html",
+    "snapshotPath": "data/evidence/national/kanto-south/8174bc5e8014aca63151.html",
+    "sha256": "430c93b78a0d267c6317451c4bcb641a936dbd7c4fb022ef30cf6c9f08e50b35"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/information/topics/2026/04/20260401_manholecard",
+    "fetchedAt": "2026-11-05T04:29:42.465625+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/information/topics/2026/04/20260401_manholecard",
+    "snapshotPath": "data/evidence/national/kanto-south/1cde6ebc673fa1a41975.html",
+    "sha256": "b677d08e82769be7e37317279941585cfa3986fdf199764229f6087c0f125a8a"
+  },
+  {
+    "url": "https://www.town.aikawa.kanagawa.jp/soshiki/kensetsu/gesuido/gyomu/info/1522738459733.html",
+    "fetchedAt": "2026-11-05T04:29:42.466082+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.aikawa.kanagawa.jp/soshiki/kensetsu/gesuido/gyomu/info/1522738459733.html",
+    "snapshotPath": "data/evidence/national/kanto-south/886d358f56d17cb5bf2f.html",
+    "sha256": "c180434926cf0d0733d8cdd36ada318740a811e74d93a33b130fb3bcc7129c18"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/index.html",
+    "fetchedAt": "2026-11-05T04:29:42.468058+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south/5872b781e0b85f2adea4.html",
+    "sha256": "0f4d0e8423d4736a6809f51de9ca7b4156ec65b3523f59a856bb4094fdb43f15"
+  },
+  {
+    "url": "https://kodaira-sewer.jp/manhole-card",
+    "fetchedAt": "2026-11-05T04:29:42.469404+00:00",
+    "status": 200,
+    "finalUrl": "https://kodaira-sewer.jp/manhole-card",
+    "snapshotPath": "data/evidence/national/kanto-south/647fdc80318b91688e53.html",
+    "sha256": "ba92f531c829f614347306548136e85c92c4d84d7cb8ee1452be877efa308fd2"
+  },
+  {
+    "url": "https://www.adachikanko.net/news/archives/56626",
+    "fetchedAt": "2026-11-05T04:29:42.467687+00:00",
+    "status": 200,
+    "finalUrl": "https://www.adachikanko.net/news/archives/56626",
+    "snapshotPath": "data/evidence/national/kanto-south/c987e1eac4594767b3d7.html",
+    "sha256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/news/9924.html",
+    "fetchedAt": "2026-11-05T04:32:45.841169+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/news/9924.html",
+    "snapshotPath": "data/evidence/national/kanto-south/84bcd6c9acdb160604d8.html",
+    "sha256": "810021f1c867a04447ba62532e33c376a398e899da19d9d967a51addc502294d"
+  },
+  {
+    "url": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89/",
+    "fetchedAt": "2026-11-05T04:32:45.841835+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89/",
+    "snapshotPath": "data/evidence/national/kanto-south/6f59fe296d2c6172a4c9.html",
+    "sha256": "2b564430cc3546def67f5b280a9dc4ca8e5fdbb336fcf3e6c93a181db15ec9b6"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/aboutus/publication/web-urpress72/ur-information.html",
+    "fetchedAt": "2026-11-05T04:32:45.842952+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/aboutus/publication/web-urpress72/ur-information.html",
+    "snapshotPath": "data/evidence/national/kanto-south/2cc4f6d7b5d38bb291da.html",
+    "sha256": "3a456a1945792a8ed64e0f32b4064e841330816effa5564db76db4c6b181958e"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/kurashi/jogesuido/6/5190.html",
+    "fetchedAt": "2026-11-05T04:33:38.845641+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/kurashi/jogesuido/6/5190.html",
+    "snapshotPath": "data/evidence/national/kanto-south/3cc91fb26c36638065ec.html",
+    "sha256": "a3cabcb19894f63f2a9d14aad52a61add0abd1ec98fb77b64b38f7b17ce22993"
+  },
+  {
+    "url": "https://www.city.komae.tokyo.jp/index.cfm/41%2C90728%2C313%2C2003%2Chtml",
+    "fetchedAt": "2026-11-05T04:33:38.846266+00:00",
+    "status": 403,
+    "finalUrl": "https://www.city.komae.tokyo.jp/index.cfm/41%2C90728%2C313%2C2003%2Chtml",
+    "snapshotPath": "data/evidence/national/kanto-south/b3a57370b704c694950e.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb"
+  },
+  {
+    "url": "https://www.nijinogesuidoukan.jp/news/2977/",
+    "fetchedAt": "2026-11-05T04:33:38.848001+00:00",
+    "error": "HTTPSConnectionPool(host='www.nijinogesuidoukan.jp', port=443): Max retries exceeded with url: /news/2977/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)')))"
+  },
+  {
+    "url": "https://t-navi.city.taito.lg.jp/spot/1118",
+    "fetchedAt": "2026-11-05T04:33:38.849054+00:00",
+    "status": 200,
+    "finalUrl": "https://t-navi.city.taito.lg.jp/spot/1118",
+    "snapshotPath": "data/evidence/national/kanto-south/6fadd99676d4ef574a6c.html",
+    "sha256": "018af889408793b62a46f3dac198db290ed92157d680a3f74385c2bc3d814721"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/manholecard",
+    "fetchedAt": "2026-11-05T04:33:38.849631+00:00",
+    "status": 404,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/manholecard",
+    "snapshotPath": "data/evidence/national/kanto-south/510ca388e33f52a769e1.html",
+    "sha256": "b0af69d31343f44d9c7460a199a3d150a0667e9b89bd965e6106cbc256dd0e52"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "fetchedAt": "2026-11-05T04:33:56.016768+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "snapshotPath": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html",
+    "sha256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a"
+  },
+  {
+    "url": "https://www.city.ichihara.chiba.jp/articleList?articleId=6023800dece4651c88c192ff&articleListContentsType=related",
+    "fetchedAt": "2026-11-05T04:33:56.017140+00:00",
+    "status": 403,
+    "finalUrl": "https://www.city.ichihara.chiba.jp/articleList?articleId=6023800dece4651c88c192ff&articleListContentsType=related",
+    "snapshotPath": "data/evidence/national/kanto-south/3e172314033ffc7b1552.html",
+    "sha256": "a6de89620716242da2d71c51d073214be8e3302b3a1f5bf0484611d48ff39ade"
+  }
+]

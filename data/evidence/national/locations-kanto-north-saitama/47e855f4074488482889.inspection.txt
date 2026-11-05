@@ -1,0 +1,17 @@
+URL https://www.saitama-support.jp/map/search/detail/16974
+TEXT 子育てマップ | 埼玉県 結婚・妊娠・出産・子育て応援公式サイト このコンテンツはJavaScriptに最適化されています。JavaScriptが無効になっている場合は、有効にしてください。 English 简体中文 繁體中文 한국어 サイト内検索 Languages English 简体中文 繁體中文 한국어 ホーム 子育てマップ 検索結果 子育てマップ 入間市役所 基本情報 区分 公共施設 店舗・施設名 入間市役所 主たる事業 市役所 住所 〒358-8511 入間市豊岡1-16-1 電話 04-2964-1111 FAX 04-2965-0232 URL メール 営業時間 8:30～17:15 定休日 土・日・祝日、年末年始 赤ちゃんの駅 設備 [おむつ交換] ○ 
+    [授乳] ○ 
+    [その他]
+            キッズコーナー 箇所数 3 設置場所 【おむつ交換+授乳】1階　市民ホール他(搾乳できます) 特徴 2階こども支援課にキッズコーナーがあります。 PR 埼玉県福祉部こども政策課 〒330-9301　さいたま市浦和区高砂3丁目15番1号 TEL：048-830-3343　FAX：048-830-4784 このサイトについて 個人情報保護について リンク集 Copyright © 2014 Saitama Prefecture, All rights reserved.
+MAP
+    var latlng=new google.maps.LatLng(35.83576805, 139.3910569);
+
+LINKS
+ https://www.saitama-support.jp/assets/js/jquery.js
+ https://api.vdsapi.ne.jp/tools/engine/1.0/vds?key=syttsdvs5ys84k0888ok8occgck840c
+ https://www.saitama-support.jp/assets/js/respond.js
+ https://www.saitama-support.jp/assets/js/init.js
+ https://www.saitama-support.jp/assets/js/ga.js
+ https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
+ https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
+ https://maps.google.com/maps/api/js?language=ja&key=AIzaSyBjFAEVu4VFWbxXUSMcPo1SiKZycqzO9NI

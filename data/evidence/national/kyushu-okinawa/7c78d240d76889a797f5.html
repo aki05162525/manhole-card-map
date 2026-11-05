@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja" hreflang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#" class="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CKSH1W3V7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7CKSH1W3V7');
+    </script>
+  	<!-- meta -->
+    <!-- LINE Tag Base Code -->
+    <!-- Do Not Modify -->
+    <script>
+    (function(g,d,o){
+      g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+      var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+      var s=d.createElement('script');s.async=1;
+      s.src=o||h+'/n/line_tag/public/release/v1/lt.js';
+      var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+        })(window, document);
+    _lt('init', {
+      customerType: 'lap',
+      tagId: '89e5d3cc-24e1-4115-9480-9ebd84a5d7df'
+    });
+    _lt('send', 'pv', ['89e5d3cc-24e1-4115-9480-9ebd84a5d7df']);
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+          src="https://tr.line.me/tag.gif?c_t=lap&t_id=89e5d3cc-24e1-4115-9480-9ebd84a5d7df&e=pv&noscript=1" />
+    </noscript>
+    <!-- End LINE Tag Base Code -->
+  	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, minimum-scale=1.0, initial-scale=1.0">
+  	<title>久留米シティプラザ | KURUME CITY PLAZA</title>
+  	<meta name="description" content="久留米シティプラザは、素晴らしいコンサートやお芝居・絵や彫刻を楽しんだり、時間を忘れて練習に励んだり、存分に使っていただきたい施設です">
+		<meta name="keywords" content="久留米シティプラザ,福岡,久留米,施設,コンサート,芝居">
+  	<link rel="stylesheet" href="/static/css/style.css?v=20250417101144" media="all">
+  	<link rel="shortcut icon" href="/static/images/favicon.png" >
+
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content='久留米シティプラザ' />
+    <meta property="og:site_name" content="久留米シティプラザ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://kurumecityplaza.jp/" />
+    <meta property="og:description" content="久留米シティプラザは、素晴らしいコンサートやお芝居・絵や彫刻を楽しんだり、時間を忘れて練習に励んだり、存分に使っていただきたい施設です" />
+    <meta property="og:image" content="http://kurumecityplaza.jp/static/images/og.jpg" />
+
+  	<!-- script -->
+  	<!--[if lt IE 9]>
+  		<script src="/static/js/html5shiv-printshiv.js"></script>
+  		<script src="/static/js/respond.min.js"></script>
+  	<![endif]-->
+  	<noscript><style>.wrap{opacity:1;}</style></noscript>
+  	<!--[if gt IE 8]><!-->
+  	<script src="/static/js/jquery-1.11.0.min.js?v=20170306"></script>
+  	<script src="/static/js/jquery.sliderPro.min.js?v=20170306"></script>
+  	<script src="/static/js/kcp.js?v=20170306"></script>
+    <script src="/static/js/table.js?v=20170306"></script>
+    <script src="/static/js/jquery.imgprotect.js?v=20170908"></script>
+		<script src="/static/js/vendor.js"></script>
+		<script src="/static/js/main.js"></script>
+
+  	
+  		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+<script type="text/javascript">
+
+jQuery(function($){
+
+			var year = new Date().getFullYear();
+			var month = ("0" + (new Date().getMonth() + 1)).slice(-2);
+
+			var dfd = $.ajax({
+				type: 'GET',
+			  url: '/events/api.json?date=' + year + month + '01',
+				dataType: 'json',
+				async: false,
+			});
+
+			// debugger
+			dfd.done(function(response) {
+				DATA = response;
+			});
+
+	    $("#datepicker").datepicker({
+				dateFormat: 'yy-mm-dd',
+				yearSuffix: '年',
+				showMonthAfterYear: true,
+				monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+				dayNames: ['日', '月', '火', '水', '木', '金', '土'],
+				dayNamesMin: ['日', '月', '火', '水', '木', '金', '土'],
+				onSelect: function(dateText, inst) {
+						location_href = location.origin +  "/events_date?set=" + dateText;
+						window.location.href = location_href
+        },
+				onChangeMonthYear: function(year, month, obj) {
+
+					month = (("0"+month).slice(-2));
+
+					var dfd = $.ajax({
+						type: 'GET',
+					  url: '/events/api.json?date=' + year + month + '01',
+						dataType: 'json',
+						async: false,
+					});
+
+					// debugger
+					dfd.done(function(response) {
+						DATA = response;
+					});
+
+				},
+        beforeShowDay: function(date_obj) {
+
+						var year = date_obj.getFullYear();
+						var month = ("0" + (date_obj.getMonth() + 1)).slice(-2);
+						var date = ("0" + date_obj.getDate()).slice(-2);
+						current_day = year +'-'+ month +'-'+ date;
+						matchings_flg = false
+						_.each(DATA, function (v, i) {
+							if (v.day == current_day) {
+								if (v.count > 0) {
+									matchings_flg = true;
+								}else{
+									matchings_flg = false;
+								}
+							}
+						});
+						return [matchings_flg, ''];
+	        }
+	    });
+
+});
+
+</script>
+
+
+    <script>
+      jQuery(function($){
+        $('.event_info_image img, .event_text img').imgProtect();
+        $('.list_image_box').imgProtect()
+
+        $('.image_protect_item').on('click', function (e) {
+          if (0 < $(this).next('div:has(a)').length) {
+            location.href = $(this).next('div').find('a').attr('href');
+          }
+        })
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64472671-1', 'auto');
+      ga('send', 'pageview');
+
+
+    </script>
+
+  </head>
+  <body>
+      <div class="wrap">
+	<header>
+		<h1 class="logo_main">
+			<a class="mq_only_pc" href="/"><img src="/static/images/common/logo_main.png" alt="" width="900" height="95"><span>久留米シティプラザ</span></a>
+			<a class="mq_only_mobile" href="/"><img src="/static/images/common/logo_main_sp.png" alt=""><span>久留米シティプラザ</span></a>
+		</h1>
+	</header>
+</div>
+      <div class="wrap_anim_y">
+        <div class="wrap_anim_m">
+          <div class="wrap_anim_c">
+            <div class="wrap">
+              
+              <div class="nav_index fl_06 clearfix">
+	<ul class="mq_only_pc">
+		<li><a class="fs12 bold" href="/pages/facilities/">施設案内</a></li>
+		<li><a class="fs12 bold" href="/pages/rental/">施設を借りる</a></li>
+		<li><a class="fs12 bold" href="/events?q%5Barea_id_in%5D%5B%5D=1">イベント情報</a></li>
+		<li><a class="fs12 bold" href="/news/root_news/">お知らせ</a></li>
+		<li><a class="fs12 bold" href="/pages/access/">アクセス</a></li>
+	</ul>
+	<p><a class="fs12 bold" href="/en/">ENGLISH</a></p>
+</div>
+
+<div class="content">
+	  <div id="slide" class="slider-pro">
+    <div class="sp-slides">
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/blogs/archive/detail/1161/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/387/28aaca0d31.jpg" alt="10周年迎えた後" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8322/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/403/5f82bb739d.jpg" alt="久留米たまがる大道芸2026" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8427/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/402/a7428371b0.jpg" alt="シンデレラ" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8048/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/398/76170a65ab.jpg" alt="人類館" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8455/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/404/8edaea2124.jpg" alt="めくるめく能1" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8301/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/400/bfa5ee5e16.jpg" alt="NHK交響楽団 久留米公演" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8634/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/405/d87e41daad.JPG" alt="花緑2027" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/events/8382/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/399/24f7235707.jpg" alt="FNL2026" />
+        </a>
+      </div>
+      <div class="sp-slide">
+        <a href="https://kurumecityplaza.jp/blogs/archive/detail/1203/">
+          <img class="sp-image" src="/static/images/common/blank.gif" data-src="/uploads/sprite/main_image/image/388/b749b7199e.jpg" alt="ラインナップ2026" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+    	<script type="text/javascript">
+	    jQuery(function($) {
+	        if (location.pathname.match(/events\/history/)) {} else if (location.pathname.match(/events/)) {
+	            $('li.nav_main_02').addClass('select');
+	        }
+	        if (location.pathname.match(/histories/)) {
+	            $('li.nav_main_03').addClass('select');
+	        }
+	    });
+	</script>
+
+	<div class="nav_main clearfix">
+	    <ul>
+	        <li class="nav_main_01">
+	            <div class="mobile_nav_trigger">
+	                <span></span>
+	                <span></span>
+	                <span></span>
+	                <p>MENU</p>
+	            </div>
+	            <a class="mq_only_pc" href="javascript:void(0);">
+	                <span class="webfont fs30"></span>メニュー<span class="nav_main_01_arrow">▼</span>
+	            </a>
+	            <ul style="width: 100%;">
+	                <li class="mq_only_mobile"><a href="/">トップページ</a></li>
+	                <li><a href="/pages/about/">久留米シティプラザとは</a></li>
+	                <li><a href="/pages/facilities/">施設案内（360度パノラマビュー）</a></li>
+					<li><a href="/pages/access/">アクセス</a></li>
+					<li><a href="/pages/rental/">施設を借りる<br>（図面、資料、書類ダウンロード）</a></li>
+					<li><a href="/pages/notification/">施設写真使用・撮影の届出</a></li>
+					<li><a href="/pages/salesinfo/">チケット発売情報</a></li>
+	                <li><a href="/blogs/archive/detail/1132/">これまでの取組</a></li>
+					<li><a href="/blogs/support/">シティプラザ応援プロジェクト</a></li>
+	                <li><a href="/news/root_news/">お知らせ</a></li>
+	            </ul>
+	        </li>
+
+	        <li class="nav_main_02"><a href="/events?q%5Barea_id_in%5D%5B%5D=1"><span class="webfont fs30"></span>イベントをさがす</a></li>
+	        <li class="nav_main_03"><a href="/pages/buy_ticket/"><span class="webfont fs30"></span>チケットを買う</a></li>
+	        <li class="nav_main_04">
+	            <script async src="https://cse.google.com/cse.js?cx=010775273171099175202:leliorgkswf"></script>
+	            <div class="gcse-search"></div>
+	        </li>
+	    </ul>
+	</div>
+
+	<div class="snsContent">
+	    <ul>
+	        <li>
+	            <a href="https://kurumecityplaza.jp/news/news_info/detail/514/" target="_blank">
+	                <img src="/static/images/sns/line.png" alt="" class="snsContent__line">
+	            </a>
+	        </li>
+	        <li>
+	            <a href="https://www.youtube.com/channel/UC1RH2CX3QACmPJrgdeP9Ubw" target="_blank">
+	                <img src="/static/images/sns/youtube.png" alt="" class="snsContent__youtube">
+	            </a>
+	        </li>
+	        <li>
+	            <a href="https://www.facebook.com/KurumeCityPlaza/" target="_blank">
+	                <img src="/static/images/sns/facebook.png" alt="" class="snsContent__facebook">
+	            </a>
+	        </li>
+	        <li>
+	            <a href="https://www.instagram.com/kurumecityplaza_official/" target="_blank">
+	                <img src="/static/images/sns/instagram.png" alt="" class="snsContent__instagram">
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+
+
+
+  <div class="content">
+
+			<div class="news">
+				<h2 class="fs12"><span class="webfont fs30"></span><a href="/news/root_news/">お知らせ一覧</a></h2>
+				<ul>
+					<li>
+						<span>2026年10月25日<span><br />
+						<a href="/news/news_info/detail/1236/">【空き状況公開】2027年5月会議室・スタジオ・和室と2027年12月各ホール・展示室・六角堂広場</a>
+					</li>
+					<li>
+						<span>2026年10月19日<span><br />
+						<a href="/news/news_info/detail/1235/">令和８年度久留米シティプラザイルミネーション設置等業務委託の入札結果について</a>
+					</li>
+					<li>
+						<span>2026年09月28日<span><br />
+						<a href="/news/news_info/detail/1232/">令和８年度  久留米シティプラザイルミネーション設置等業務委託に関する条件付一般競争入札の実施について</a>
+					</li>
+				</ul>
+			</div>
+
+					<div class="calendar clearfix">
+						<div class="calendar_left">
+
+								<div class="today_list">
+									<h2>2026年11月05日 今日の催し</h2>
+									<dl class="dl_todaylist">
+													<dt><a href="/events/8789/">学習室（本日開設なし）</a></dt>
+															<dd>
+																<ul>
+																			<li>
+																			</li>
+																</ul>
+															</dd>
+									</dl>
+								</div>
+													<div class="hall_schedule">
+						<div class="hall_schedule_l">
+						<!-- <h3>＊久留米シティプラザ情報誌・イベントスケジュール</h3> -->
+						<ul class="clearfix">
+							<li><a href="/pages/rental/" target="_blank">施設予約</a></li>
+							<li><a href="/pages/notification/" target="_blank">施設写真使用・撮影の届出</a></li>
+							<li class="last"><a href="/blogs/study_room/detail/889/" target="_blank">学習室</a></li>
+							<li><a href="/blogs/machipla_blog/" target="_blank">広報誌</a></li>
+							<li><a href="/static/pdf/202611_schedule.pdf" target="_blank">イベントカレンダー</a></li>
+							<li><a href="https://kurumecityplaza.jp/blogs/archive/detail/1132/" target="_blank">これまでの取組</a></li>
+						</ul>
+						</div>
+					</div>
+
+
+
+
+						</div>
+		        <div class="event_calendar">
+		         	<div id="datepicker"/></div>
+						<p>
+    ※クリックすると、その日の催しが表示されます。<br>
+    ※主催者の意向によって情報を掲載していない場合があります。<br>
+    ※11月16日（月）、17日（火）は休館日です。
+</p>
+		        </div>
+					</div>
+
+  </div>
+
+</div>
+
+<div class="event_ranking">
+
+	<h2 class="fs12"><span class="webfont fs30">Trend</span>注目の公演・催し</h2>
+
+
+    <div class="event_ranking_kcp clearfix">
+      <h3 class="fs12 bold">[ 久留米シティプラザ ]</h3>
+        <div class="ranking_sec clearfix ranking_01">
+  <a href="/events/8581/"><img width="100" height="100" src="/uploads/event/image/8581/thumb_b014567191.png" alt="Thumb b014567191" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8581/">六角堂広場「まちなかピアノ」</a></a></h4>
+    2026年10月19日(月)～
+</div>
+        <div class="ranking_sec clearfix ranking_02">
+  <a href="/events/8322/"><img width="100" height="100" src="/uploads/event/image/8322/thumb_4ce39f2c2c.jpg" alt="Thumb 4ce39f2c2c" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8322/">第11回 久留米たまがる大道芸2026</a></a></h4>
+    2026年11月14日(土)～
+</div>
+        <div class="ranking_sec clearfix ranking_03">
+  <a href="/events/8696/"><img width="100" height="100" src="/uploads/event/image/8696/thumb_11f464d60e.png" alt="Thumb 11f464d60e" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8696/">まちなかオープンステージ</a></a></h4>
+    2026年11月27日(金)
+</div>
+        <div class="ranking_sec clearfix ranking_04">
+  <a href="/events/8427/"><img width="100" height="100" src="/uploads/event/image/8427/thumb_34ebd2ddb0.jpg" alt="Thumb 34ebd2ddb0" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8427/">カンパニーデラシネラ『シンデレラ』</a></a></h4>
+    2026年11月28日(土)
+</div>
+        <div class="ranking_sec clearfix ranking_05">
+  <a href="/events/8048/"><img width="100" height="100" src="/uploads/event/image/8048/thumb_824774d3e1.jpg" alt="Thumb 824774d3e1" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8048/">AKN PROJECT　喜劇「人類館」</a></a></h4>
+    2026年12月12日(土)～
+</div>
+        <div class="ranking_sec clearfix ranking_06">
+  <a href="/events/8682/"><img width="100" height="100" src="/uploads/event/image/8682/thumb_79d83daa62.JPG" alt="Thumb 79d83daa62" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8682/">【出演者募集】「みんなのステージ発表会2027」</a></a></h4>
+    2026年12月24日(木)
+</div>
+        <div class="ranking_sec clearfix ranking_07">
+  <a href="/events/8490/"><img width="100" height="100" src="/uploads/event/image/8490/thumb_5bc8dbf7ed.jpg" alt="Thumb 5bc8dbf7ed" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8490/">「久留米第九2026」</a></a></h4>
+    2026年12月27日(日)
+</div>
+        <div class="ranking_sec clearfix ranking_08">
+  <a href="/events/8455/"><img width="100" height="100" src="/uploads/event/image/8455/thumb_b2ec36f92e.jpg" alt="Thumb b2ec36f92e" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8455/">めくるめく能楽 vol.1 『喜多流』</a></a></h4>
+    2027年1月16日(土)
+</div>
+        <div class="ranking_sec clearfix ranking_09">
+  <a href="/events/8301/"><img width="100" height="100" src="/uploads/event/image/8301/thumb_40ce862558.jpg" alt="Thumb 40ce862558" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8301/">NHK交響楽団 久留米公演</a></a></h4>
+    2027年2月1日(月)
+</div>
+        <div class="ranking_sec clearfix ranking_10">
+  <a href="/events/8634/"><img width="100" height="100" src="/uploads/event/image/8634/thumb_f8b87a28c5.jpg" alt="Thumb f8b87a28c5" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8634/">第十回 久留米座 花緑会</a></a></h4>
+    2027年2月13日(土)
+</div>
+        <div class="ranking_sec clearfix ranking_11">
+  <a href="/events/8673/"><img width="100" height="100" src="/uploads/event/image/8673/thumb_e3f6fe1019.JPG" alt="Thumb e3f6fe1019" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8673/">手歌ワークショップ 参加者募集＜小学1年生～18歳程度対象＞</a></a></h4>
+    2027年2月14日(日)～
+</div>
+        <div class="ranking_sec clearfix ranking_12">
+  <a href="/events/8382/"><img width="100" height="100" src="/uploads/event/image/8382/thumb_fae877175c.jpg" alt="Thumb fae877175c" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8382/">ミュージカル『ファインディング・ネバーランド』</a></a></h4>
+    2027年2月26日(金)～
+</div>
+
+			<p class="link_more_ranking"><a href="/events?q%5Barea_id_in%5D%5B%5D=1">もっと見る</a></p>
+    </div>
+
+
+    <hr class="mq_only_pc">
+    <div class="event_ranking_etc clearfix">
+      <h3 class="fs12 bold">[ その他の施設 ]</h3>
+        <div class="ranking_sec clearfix ranking_01">
+  <a href="/events/8526/"><img width="100" height="100" src="/uploads/event/image/8526/thumb_bddf809ec3.jpg" alt="Thumb bddf809ec3" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8526/">こどもオペラ「星の王子さま」</a></a></h4>
+    2026年11月21日(土)
+</div>
+        <div class="ranking_sec clearfix ranking_02">
+  <a href="/events/8685/"><img width="100" height="100" src="/uploads/event/image/8685/thumb_88ef9b3111.jpg" alt="Thumb 88ef9b3111" /></a>
+  
+  <h4 class="fs12 bold"><a href="/events/8685/">創作劇「風のまつり唄～龍神揺籃～」</a></a></h4>
+    2026年12月6日(日)
+</div>
+      <p class="link_more_ranking"><a href="/events?q%5Barea_id_in%5D%5B%5D=2&amp;q%5Barea_id_in%5D%5B%5D=3&amp;q%5Barea_id_in%5D%5B%5D=4&amp;q%5Barea_id_in%5D%5B%5D=5&amp;q%5Barea_id_in%5D%5B%5D=6&amp;q%5Barea_id_in%5D%5B%5D=7&amp;q%5Barea_id_in%5D%5B%5D=8&amp;q%5Barea_id_in%5D%5B%5D=9&amp;q%5Barea_id_in%5D%5B%5D=10&amp;q%5Barea_id_in%5D%5B%5D=11&amp;q%5Barea_id_in%5D%5B%5D=12&amp;q%5Barea_id_in%5D%5B%5D=13">もっと見る</a></p>
+    </div>
+
+</div>
+
+<div class="bnr_index clearfix"><ul><li><a target="_blank" title="久留米市" href="https://www.city.kurume.fukuoka.jp/"><img alt="久留米市" src="/static/images/index/bnr_kurume.png" /></a></li><li><a target="_blank" title="久留米シティプラザ facebookページ" href="https://www.facebook.com/KurumeCityPlaza/"><img alt="久留米シティプラザ facebookページ" src="/static/images/index/bnr_facebook.png" /></a></li><li><a target="_blank" title="久留米シティプラザ 公式インスタグラム" href="https://www.instagram.com/kurumecityplaza_official"><img width="172" alt="久留米シティプラザ 公式インスタグラム" src="/static/images/index/bnr_instagram.png" /></a></li><li><a target="_blank" title="久留米シティプラザ応援プロジェクト" href="https://kurumecityplaza.jp/blogs/support/detail/597/"><img width="172" alt="久留米シティプラザ応援プロジェクト" src="/static/images/index/bnr_support.png" /></a></li></ul><ul><li><a target="_blank" title="石橋文化センター" href="https://www.ishibashi-bunka.jp/"><img alt="石橋文化センター" src="/static/images/index/bnr_ishibashi.png" /></a></li><li><a target="_blank" title="石橋文化センター情報サテライト" href="https://www.ishibashi-bunka.jp/satellite/"><img alt="石橋文化センター情報サテライト" src="/static/images/index/bnr_iccsatellite.png" /></a></li><li><a target="_blank" title="久留米観光コンベンション国際交流協会公式ホームページ" href="https://welcome-kurume.com/"><img width="172" height="35" alt="久留米観光コンベンション国際交流協会公式ホームページ" src="/static/images/index/kurume17235.png" /></a></li><li><a target="_blank" title="株式会社ハイマート久留米" href="http://www.highmart-kurume.co.jp/highmart/index.html"><img alt="株式会社ハイマート久留米" src="/static/images/index/HM-kcpwebbanner.png" /></a></li></ul></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+  <footer>
+    <p id="pagetop"><img src="/static/images/common/pagetop.png" height="30" width="25" alt=""></p>
+    <div class="footer_inner">
+      <a href="/" class="logo_footer mq_only_pc"><img src="/static/images/common/logo_footer.png" height="56"
+          width="220" alt="久留米シティプラザ | KURUME CITY PLAZA" /></a>
+      <ul class="nav_footer clearfix">
+        <li><a class="fs12 bold" href="/pages/sitepolicy/">セキュリティポリシー</a></li>
+        <li><a class="fs12 bold" href="/pages/privacypolicy/">プライバシーポリシー</a></li>
+        <li><a class="fs12 bold" href="/pages/inquiry/">お問合せ</a></li>
+        <li><a class="fs12 bold" href="/pages/sitemap/">サイトマップ</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+  </body>
+</html>

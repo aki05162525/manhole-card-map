@@ -1,0 +1,492 @@
+
+### facility:north-0028d3c0cf4b1c5c46ea 本宮市役所建設部上下水道課 福島県本宮市本宮字万世212番地
+http://www.city.motomiya.lg.jp/soshiki/23/mhcard.html
+data/evidence/national/locations-north-tohoku/abbe63289249612344c9.html
+
+http://www.city.motomiya.lg.jp/soshiki/23/mhcard.html
+data/evidence/national/locations-north-tohoku/1a3cdb39222936e83ea0.html
+
+
+### facility:north-008e2585ad57dd933bf1 花巻市役所大迫総合支所 花巻市大迫町大迫2-51-4
+
+### facility:north-00eec84a6b9497eb716d 天童市上下水道事業所 山形県天童市老野森1-3-25
+
+### facility:north-01b573a6b665b555cceb 福島市観光案内所(JR福島駅西口2階) 福島市栄町1-1
+https://www.f-kankou.jp/access
+data/evidence/national/locations-north-tohoku/795bd56809070953b91b.html
+
+https://www.f-kankou.jp/access
+data/evidence/national/locations-north-tohoku/b54c954d3fed1b7b6fff.html
+
+
+### facility:north-01fecf0845daf7a823c4 ウイングプラザ(名取駅コミュニティプラザ) 宮城県名取市手倉田字八幡287-15
+
+### facility:north-0346af6a6a974c32ffe9 大河原町役場 守衛室 宮城県柴田郡大河原町字新南19
+
+### facility:north-0552354f13f29fd4dac2 七ヶ浜国際村 宮城県宮城郡七ヶ浜町花渕浜字大山1-1
+
+### facility:north-08feca071946b5c7f130 ショッピングセンターYO-TASHI内【けろりん堂】 福島県双葉郡川内村大字下川内字宮ノ下25-1
+
+### facility:north-09f2e5c7a2fcc63960a7 二本松市観光案内所 福島県二本松市本町2-262(JR二本松駅構内)
+https://www.nihonmatsu-kanko.jp/?p=141
+data/evidence/national/locations-north-tohoku/65bcb26cff7464f2f7f7.html
+[["0x602076813764f639:0x7f133e9ef08357eb","〒964-0917 福島県二本松市本町２丁目２６２ 二本松駅",[37.5896026,140.4354267]
+https://www.nihonmatsu-kanko.jp/?p=141
+data/evidence/national/locations-north-tohoku/42288f7cb8e7ea8efcfa.html
+[["0x6020765176713031:0x2251687b46d6d937","福島県安達駅 二本松市油井字古屋敷５",[37.6116946,140.4660738]
+https://www.nihonmatsu-kanko.jp/?p=141
+data/evidence/national/locations-north-tohoku/1c77a5cd63e6177fd430.html
+[["0x602074144f46304f:0x5680fb6bf411c49","福島県杉田駅 二本松市杉田町1丁目",[37.5632312,140.4138119]
+
+### facility:north-0c0323c5b324c75fe4bf 亘理町役場 警備員室 宮城県亘理郡亘理町字悠里1
+https://www.town.watari.miyagi.jp/town/detail.php?content=249
+data/evidence/national/locations-north-tohoku/881c9c49d1ddb454b9d8.html
+[["0x5f8a171a6f7d86a3:0x8db2be7f38d60939","〒989-2352 宮城県亘理郡亘理町悠里１ 亘理町役場",[38.0441935,140.8674846]
+
+### facility:north-11cb3780a2ba6c9b5f16 南陽市上下水道課 水道庁舎 山形県南陽市三間通466-15
+
+### facility:north-13d3abdab08eed66e1df 北の防人大湊 安渡館 青森県むつ市桜木町3番1号
+https://www.city.mutsu.lg.jp/government/shisetsu/kankou/andokan.html
+data/evidence/national/locations-north-tohoku/8b6fd3a0dc332ed71f77.html
+[["0x5f9c1551e46454c3:0x377dee4ab7b43fe5","〒035-0094 青森県むつ市桜木町３−１ 北の防人大湊 安渡館",[41.2565737,141.139131]
+
+### facility:north-13fd80e5a9a93ae2a4a2 「道の駅おが」男鹿市複合観光施設オガーレ 秋田県男鹿市船川港船川字新浜町1-19
+
+### facility:north-179dd18bf52ef959bb92 福島県あだたら清流センター 福島県二本松市榎戸2-96
+
+### facility:north-193fb1924670d9fff764 いのちをつなぐ未来館 岩手県釜石市鵜住居町4丁目901
+https://unosumai-tomosu.jp/access/
+data/evidence/national/locations-north-tohoku/8baf8dd2ff3ebfe5cf75.html
+[["0x5f860b092668c287:0x1eaa653fab804d24","4-chōme-72-1 Unosumaichō, Kamaishi, Iwate 026-0301",[39.3272871,141.8874931]
+
+### facility:north-194cafa26eb4fcdf4b86 道の駅寒河江チェリーランド(総合観光案内所内) 山形県寒河江市大字八鍬字川原919-6
+https://www.cherryland.co.jp/access.html
+data/evidence/national/locations-north-tohoku/34f4359a812a0c23186b.html
+[["0x5f8bc3ca18ccf2f7:0xf1076879d20114ba","〒990-0523 山形県寒河江市八鍬道の駅寒河江 チェリーランド 川原 919−8",[38.3988169,140.2713015]
+
+### facility:north-19dc8bef8474660264cc 道の駅米沢 山形県米沢市川井1039-1
+
+### facility:north-19ecb545c27c83547196 警備員室 会津若松市東栄町3番46号
+
+### facility:north-1badf82c402f42e5a4ae 本宮市中央公民館 福島県本宮市本宮字矢来39-1
+
+### facility:north-1bc636d6db8bb6f12c37 東松島市役所 鳴瀬庁舎2階 都市整備課窓口 宮城県東松島市小野字 新宮前5番地
+
+### facility:north-1ed6b6009a4a902d1c70 七ヶ浜国際村 宮城県宮城郡七ヶ浜町花渕浜字大山1-1
+
+### facility:north-1eddfd8633b7db334e79 利府町役場町民交流館「ペア・パル利府」 宮城県宮城郡利府町利府字新並松4番地
+
+### facility:north-24b1f4f58ce76b63f140 大衡村役場守衛室 宮城県黒川郡大衡村大衡字平林62番地
+
+### facility:north-274599ca91eb4abf4286 小高区役所市民総合サービス課窓口 福島県南相馬市小高区本町2-78
+
+### facility:north-2c0b313f9da729088cbf 総合案内 会津若松市東栄町3番46号
+
+### facility:north-2e8838dd867c746f89d7 陸前高田市総合交流センター(夢アリーナたかた) 岩手県陸前高田市高田町字太田5番地
+
+### facility:north-302d2544c978ef46ca8e 花巻市役所 建設部 下水道課 岩手県花巻市花城町9-30(市役所新館2階)
+
+### facility:north-316f74dcf4ce051f7441 舟形町観光物産センターめがみ 山形県最上郡舟形町舟形391-2(舟形駅構内)
+
+### facility:north-32b66f536b601fd5b88d 棚倉町役場日直窓口 福島県東白川郡棚倉町大字棚倉字中居野33
+
+### facility:north-3443a4a6d08de5680f46 石巻市かわまち交流センター 宮城県石巻市中央二丁目11番21 1階
+
+### facility:north-347c81450b1564d1ed0e 東松島商工会 東松島市矢本字河戸7番地
+
+### facility:north-350b2ed34ef3f0dbcb82 道の駅たろう たろう潮里ステーション 岩手県宮古市田老二丁目5-1
+
+### facility:north-3879ad45b7374f0d8691 国見町役場 福島県伊達郡国見町大字藤田字一丁田二1番地7
+
+### facility:north-3a3d893fa312fdeb2154 ひきめの里直売所 岩手県宮古市蟇目13-3-1
+
+### facility:north-3ac2ebbfacc3e3d481e0 かみのやま温泉観光案内所(JRかみのやま温泉駅前) 山形県上山市矢来1-2-1
+
+### facility:north-3b24e49b4ed434e5e3f4 ビッグルーフ滝沢 岩手県滝沢市下鵜飼1-15
+https://bigroof.jp/
+data/evidence/national/locations-north-tohoku/077b7ec5d0729754ae5b.html
+[["0x5f85772802eaaaab:0xa5a1231525502fd0","〒020-0665 岩手県滝沢市下鵜飼１−１５ ビッグルーフ滝沢",[39.7337977,141.0785187]
+https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193
+data/evidence/national/locations-north-tohoku/b4dfd6463f6952b565dd.html
+[["0x5f85772829a7d357:0xdc87ef9c783b014f","〒020-0692 岩手県滝沢市中鵜飼５５ 滝沢市役所",[39.7345958,141.0770086]
+
+### facility:north-435218ddfd78ae1f7e95 山形浄化センター 山形県天童市大字大町字西原1915((公財)山形県建設技術センター 下水道事業所)
+https://y-ctc.jp/drainage/handling/index.html
+data/evidence/national/locations-north-tohoku/59efb58f9b2672c30951.html
+
+https://y-ctc.jp/drainage/handling/index.html
+data/evidence/national/locations-north-tohoku/3a803e8084a6515eaf9b.html
+
+https://y-ctc.jp/drainage/handling/index.html
+data/evidence/national/locations-north-tohoku/2fd5ea40d2bda4309782.html
+
+https://y-ctc.jp/drainage/handling/index.html
+data/evidence/national/locations-north-tohoku/2fd5afd040d2f6fc7312.html
+
+
+### facility:north-44552fc11faced8ea5c7 道の駅 おおさと 宮城県黒川郡大郷町中村字北浦51番地6
+https://oosato-rs.co.jp/
+data/evidence/national/locations-north-tohoku/0f107d55876e8246ecdc.html
+[["0x5f899d902aeb13d7:0xa4bc2cdcdfc503e8","〒981-3521 宮城県黒川郡大郷町中村字北浦５１−６ 道の駅 おおさと",[38.4241304,140.9928811]
+https://oosato-rs.co.jp/access
+data/evidence/national/locations-north-tohoku/06889039ffd0308d4a38.html
+[["0x5f899d902aeb13d7:0xa4bc2cdcdfc503e8","〒981-3521 宮城県黒川郡大郷町中村字北浦５１−６ 道の駅 おおさと",[38.4241304,140.9928811]
+
+### facility:north-44cd1a51e4ccdee8fa08 天童市将棋資料館 山形県天童市本町一丁目1番1号
+https://bussan-tendo.gr.jp/museum/
+data/evidence/national/locations-north-tohoku/133919dfac97a8618360.html
+
+
+### facility:north-4738b1eb26eade31744a もりおか歴史文化館 岩手県盛岡市内丸1-50
+
+### facility:north-48441a52e5b152a63160 県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内 岩沼市下野郷字赤江川1-3
+
+### facility:north-4a005163a65259f5de9d 釜石観光案内所 岩手県釜石市鈴子町22-1 シープラザ釜石1階
+https://kamaishi-kankou.jp/kyoukai/
+data/evidence/national/locations-north-tohoku/75e9300072ee6956658a.html
+[["0x5f860e9693630b69:0x4f5f3241a986ba15","〒026-0031 岩手県釜石市鈴子町２２−１ シープラザ釜石 １階 シープラザ釜石",[39.273644,141.871476]
+
+### facility:north-4d8f1c0ac3abdf1a8996 平川市ふるさとセンター 青森県平川市猿賀石林94
+https://www.city.hirakawa.lg.jp/jouhou/shoukai/shihenoaccess.html
+data/evidence/national/locations-north-tohoku/8bd9dbc9b3bc15282476.html
+[["0x5f9b03078d010e7f:0x2e74ae9f62aeacee","〒036-0104 青森県平川市柏木町藤山２５−６ 平川市役所",[40.5837485,140.567128]
+
+### facility:north-5081ff289295375aef3a 多賀城跡ガイダンス施設(中央公園内) 宮城県多賀城市市川字立石3番地の2
+
+### facility:north-50bd2705ce19839d9aa4 ビッグルーフ滝沢 岩手県滝沢市下鵜飼1-15
+https://bigroof.jp/
+data/evidence/national/locations-north-tohoku/077b7ec5d0729754ae5b.html
+[["0x5f85772802eaaaab:0xa5a1231525502fd0","〒020-0665 岩手県滝沢市下鵜飼１−１５ ビッグルーフ滝沢",[39.7337977,141.0785187]
+https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193
+data/evidence/national/locations-north-tohoku/b4dfd6463f6952b565dd.html
+[["0x5f85772829a7d357:0xdc87ef9c783b014f","〒020-0692 岩手県滝沢市中鵜飼５５ 滝沢市役所",[39.7345958,141.0770086]
+
+### facility:north-5611b5433e71129c00ed 富谷宿観光交流ステーションとみやど 宮城県富谷市富谷新町111
+https://www.tomiya-city.miyagi.jp/access.html
+data/evidence/national/locations-north-tohoku/eae43330bda9e13d02a5.html
+[["0x5f897871480233df:0xb965597d4d026071","〒981-3392 宮城県富谷市富谷坂松田３０",[38.3999043,140.8953201]
+
+### facility:north-564d6cb018ca701ab673 伊達市役所梁川総合支所 伊達市梁川町青葉町1
+https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html
+data/evidence/national/locations-north-tohoku/a7ca0d8941920afc11c2.html
+[["0x5f8a6351bdc78e9b:0x87d548f583e39afd","〒960-0756 福島県伊達市梁川町青葉町１−１ 伊達市役所 梁川総合支所",[37.845512,140.601273]
+
+### facility:north-582273d007a043014c2e 喜多方市役所宿日直室(本庁舎) 福島県喜多方市字御清水東7244-2
+
+### facility:north-59ddb2e28afd8231a1b0 郡山市磐梯熱海観光物産館 福島県郡山市熱海町熱海二丁目15-1
+https://www.bandaiatami.or.jp/spot/kanko-bussankan
+data/evidence/national/locations-north-tohoku/da1f286d9e6066bbf87f.html
+[["0x60200d7da68a4155:0x388aaac038e93af8","〒963-1309 福島県郡山市熱海町熱海２丁目１５−１ 郡山市磐梯熱海観光物産館",[37.4810734,140.272044]
+https://www.bandaiatami.or.jp/access/
+data/evidence/national/locations-north-tohoku/a53c7c5b7e88c461ae74.html
+[["0x60200c1b5f77ea47:0x766fa394c407c035","〒963-1309 福島県郡山市熱海町熱海４丁目４０６ 磐梯熱海温泉観光協会",[37.48084619999999,140.2708767]
+
+### facility:north-5be89b09e4439e0d2776 楢葉町サイクリングターミナル 福島県双葉郡楢葉町大字北田字上ノ原27-29
+http://naraha-tenjin.net/access
+data/evidence/national/locations-north-tohoku/8567325163678ae1b150.html
+[["0x60212002db019e55:0x8e9e9f404e7894fb","Uenohara-27-29 Kitada, Naraha, Futaba District, Fukushima 979-0604, Japan",[37.2688944,141.014289]
+
+### facility:north-5ccd4b2b6fb81a78cfac 展勝地レストハウス 岩手県北上市立花14地割21-1
+
+### facility:north-5d54d1ea7c7f1aa99f92 東松島市震災復興伝承館 宮城県東松島市野蒜北余景56-36
+
+### facility:north-623ff6e946d0fb4564ad 立佞武多の館 青森県五所川原市大町506-10
+http://www.city.goshogawara.lg.jp/kurashi/machi/gesui/manholecard.html
+data/evidence/national/locations-north-tohoku/16c69f8c4559f319922b.html
+[["0x5f9bbbb9e3c10fff:0x18ca8e9423388cab","〒037-0054 青森県五所川原市上平井町９７ 立佞武多の館 駐車場",[40.8111869,140.4440548]
+http://www.city.goshogawara.lg.jp/kurashi/machi/gesui/manholecard.html
+data/evidence/national/locations-north-tohoku/df61ac05d21b39afb670.html
+
+http://www.city.goshogawara.lg.jp/kurashi/machi/gesui/manholecard.html
+data/evidence/national/locations-north-tohoku/7b41d1734727894665e7.html
+
+https://www.tachineputa.jp/parking-lot
+data/evidence/national/locations-north-tohoku/e81e3167e01efea0717e.html
+[["0x5f9bbb23e6da4a6f:0x6b043e0d09435942","〒037-0054 青森県五所川原市上平井町 上平井町駐車場",[40.8115441,140.444599]
+https://www.tachineputa.jp/parking-lot
+data/evidence/national/locations-north-tohoku/ab5f14495a8c3c6d2917.html
+[["0x5f9bbaccac46429d:0xb77d677a7b0eafd4","〒037-0063 青森県五所川原市大町５０６−１０ 立佞武多の館",[40.8109502,140.4433349]
+
+### facility:north-63a164e620a05ec05186 福島市アクティブシニアセンター・アオウゼ 福島県福島市曽根田町1-18 MAXふくしま4階
+https://f-aoz.jp/access.html
+data/evidence/national/locations-north-tohoku/9c2e1710dd506c9353ed.html
+[["0x5f8a85c4361601b5:0x4e88f33a1b4d035c","AOZ, 4階 1-18 Sonedacho, Fukushima, 960-8051",[37.7589129,140.4601332]
+
+### facility:north-6bd64447ab6d66c731f3 つながるBASE 福島県石川郡浅川町大字浅川字本町西裏47番地3
+https://www.town.asakawa.fukushima.jp/information/news/002270.html
+data/evidence/national/locations-north-tohoku/457b600351e5d4846b75.html
+[["0x60204b005babb4b9:0x4fe9184f3fb108fb","〒963-6204 福島県石川郡浅川町浅川本町西裏４７−３ つながるBASE イベントスペース",[37.0789137,140.4150762]
+https://www.town.asakawa.fukushima.jp/outline/access
+data/evidence/national/locations-north-tohoku/8bb1b7e210f3abb00187.html
+[["0x60204b7aa5b03a13:0xe2e322c8f084129d","福島県石川郡浅川町",[37.0817162,140.4126585]
+
+### facility:north-6cd5f14630abb71aeb29 三戸町役場建設課 青森県三戸郡三戸町大字在府小路町43
+
+### facility:north-6d2445989dfed98c8a60 宮城県伊豆沼・内沼サンクチュアリセンター 宮城県栗原市若柳字上畑岡敷味17-2
+http://izunuma.org/
+data/evidence/national/locations-north-tohoku/6176048262ad4b6eb24e.html
+[["0x5f89192e16f5fccf:0x1bad54657152d3cc","〒989-5504 宮城県栗原市若柳上畑岡敷味１７−２ 宮城県伊豆沼・内沼サンクチュアリセンター鳥館",[38.7237926,141.0947011]
+
+### facility:north-716c305f4ea78c959505 伊達市観光案内所 福島県伊達市梁川町青葉町1(伊達市役所梁川総合支所1階)
+https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html
+data/evidence/national/locations-north-tohoku/a7ca0d8941920afc11c2.html
+[["0x5f8a6351bdc78e9b:0x87d548f583e39afd","〒960-0756 福島県伊達市梁川町青葉町１−１ 伊達市役所 梁川総合支所",[37.845512,140.601273]
+
+### facility:north-745e8c6d308975a88c9f パルクアベニュー・カワトク 岩手県盛岡市菜園一丁目10-1
+https://www.kawatoku.com/kwtkweb/access/
+data/evidence/national/locations-north-tohoku/eaba49bbc9049d57711a.html
+[["0x5f85762fa9c7d865:0x16e5dfd9c003c654","〒020-8655 岩手県盛岡市菜園１丁目１０−１ パルクアベニュー・カワトク",[39.7008766,141.1469172]
+
+### facility:north-79a76f9fa4f60b40d34e 花巻市東和総合支所 地域振興課 岩手県花巻市東和町土沢8区60番地
+
+### facility:north-7cc7af2506f3a22c04bc 天童市森林情報館「もり〜な天童」(道の駅天童温泉内) 天童市鍬ノ町二丁目3番41号
+https://bussan-tendo.gr.jp/morina/
+data/evidence/national/locations-north-tohoku/133919dfac97a8618360.html
+
+
+### facility:north-7de6f0064c1c2676fc92 七ヶ浜町上下水道事業所 宮城県宮城郡七ヶ浜町東宮浜字丑谷辺5-1
+
+### facility:north-7e8db3d9c7245b172fcf 花火伝統文化継承資料館はなび・アム 秋田県大仙市大曲大町7-19
+
+### facility:north-7eb77b28c7c995212291 亘理町立郷土資料館 宮城県亘理郡亘理町字西郷140
+https://www.town.watari.miyagi.jp/museum/
+data/evidence/national/locations-north-tohoku/fccc345e5efa52d9d7c1.html
+[["0x5f8a1735126662fd:0xaf11eb9c598cef37","〒989-2351 宮城県亘理郡亘理町西郷１４０ 亘理町立郷土資料館",[38.0401634,140.8617414]
+
+### facility:north-86c1b0e124a1aaee8f5b 道の駅種山ケ原ぽらん 岩手県気仙郡住田町世田米字子飼沢30-39
+https://poran.sumita-gayagaya.jp/access.html
+data/evidence/national/locations-north-tohoku/29de3d5afffa6baa263c.html
+[["0x5f88ad31dba7eaf9:0x1aad4d256035927b","Road Station Taneyama KeHara Polan, Kogaizawa-30-39 Setamai, 住田町 Sumita, Kesen District, Iwate 029-2311",[39.1798365,141.3958808]
+
+### facility:north-8945d69757f54183600d 旧伊達郡役所 福島県伊達郡桑折町字陣屋12
+
+### facility:north-8b03c57c18a982eede60 釜石魚河岸にぎわい館「魚河岸テラス」 岩手県釜石市魚河岸3番3
+https://uogashi-terrace.jp/
+data/evidence/national/locations-north-tohoku/c21feb72120d16f0b72b.html
+[["0x5f860fc911da130f:0x9aa49d65ab12a3f5","〒026-0012 岩手県釜石市魚河岸3−３−３ UOGASHI Terrace",[39.2743364,141.8897363]
+
+### facility:north-8da9db2c5cc58d40b221 花巻市役所石鳥谷総合支所 岩手県花巻市石鳥谷町八幡4-161
+
+### facility:north-8eb3631ec33a618cdbd0 白石城歴史探訪ミュージアム 宮城県白石市益岡町1-16
+https://www.shiro-f.jp/shiroishijo/info/access
+data/evidence/national/locations-north-tohoku/870c2ffe2cb1488f704f.html
+[["0x5f8a421b74ff8635:0x15b00f93cc22b5c8","〒989-0251 宮城県白石市益岡町１−１６ 白石城歴史探訪ミュージアム",[38.0029009,140.6178868]
+
+### facility:north-8eefa9955eb3fbb09d0a 道の駅あきた港セリオン 秋田県秋田市土崎港西1-9-1
+
+### facility:north-8f5be68d467d61a4c641 須賀川市民交流センター tette 福島県須賀川市中町4-1
+https://s-tette.jp/
+data/evidence/national/locations-north-tohoku/3960f88de2aa645de1c6.html
+[["0x60204044b0c0e1d7:0x6d9db29cdad7500","4-1 Nakamachi, Sukagawa, Fukushima 962-0845",[37.2886382,140.3752044]
+https://s-tette.jp/about/005278.html
+data/evidence/national/locations-north-tohoku/842f34e751e5b830ca45.html
+[["0x602040459080c3e3:0x862038bf41e7e094","Parking lot, 163 Kamikitamachi, Sukagawa, Fukushima 962-0841",[37.2926785,140.3785929]
+https://s-tette.jp/about/005278.html
+data/evidence/national/locations-north-tohoku/1b40b69b9dfa10e952d4.html
+[["0x6020400b5f700bdd:0xfb6c279bf02849e7","Sukagawa City Hall, 135 Hachimanmachi, Sukagawa, Fukushima 962-8601",[37.2869152,140.3724836]
+
+### facility:north-990598f970c19e7cc119 名取市観光物産協会 ナトリサン 宮城県名取市杜せきのした5丁目3-1(イオンモール名取1F)
+https://www.kankou.natori.miyagi.jp/access/
+data/evidence/national/locations-north-tohoku/30755bbcb40033f954d9.html
+[["0x5f8a223764f65d65:0x747b92955e8e4344","〒981-1201 宮城県名取市下増田南原",[38.1418076,140.9248221]
+https://www.kankou.natori.miyagi.jp/access/
+data/evidence/national/locations-north-tohoku/a3dde9d4677f8a946d44.html
+[["0x5f8a24089f36d053:0x6fc99133b647ad82","〒981-1224 宮城県名取市増田２丁目５−１",[38.1732114,140.882848]
+
+### facility:north-99097cae19efc7e963e9 福島県県北浄化センター 福島県伊達郡国見町大字徳江字上悪戸46番地1
+https://www.pref.fukushima.lg.jp/site/infra/joukacenter.html
+data/evidence/national/locations-north-tohoku/a65e68fa0f92f1933d36.html
+[["0x5f8a63802d1191a7:0x2ee8eed05a53f053","〒969-1741 福島県伊達郡国見町徳江上悪戸４６−１ 公益財団法人福島県下水道公社 県北浄化センター",[37.8665585,140.5760432]
+
+### facility:north-99f5bfd0796498565ecf 道の駅みやもり内 めがねばし直売所 岩手県遠野市宮守町下宮守30地割37番地1
+
+### facility:north-9a7e7549e41a5a778866 大河原町役場 上下水道課 宮城県柴田郡大河原町字新南19
+
+### facility:north-9c181bfdd8eb24f43c7c 新庄ふるさと歴史センター 山形県新庄市堀端町4番74号
+
+### facility:north-9cb13f2a84717327940e 花巻市東和総合支所 警備員室 花巻市東和町土沢8区60番地
+
+### facility:north-9d11453eb99d4846f2ef 駅前観光交流センターYOMUNOSU 岩手県久慈市中央3丁目58
+https://yomunosu-kuji.jp/
+data/evidence/national/locations-north-tohoku/be987f50b166e9890c7e.html
+[["0x5f8494f48967f563:0xf9db67df1ddb0213","〒028-0061 岩手県久慈市中央３丁目５８",[40.1894366,141.7705795]
+https://yomunosu-kuji.jp/about
+data/evidence/national/locations-north-tohoku/1cc06a50cef8d522ebb2.html
+[["0x5f8494f48967f563:0xf9db67df1ddb0213","〒028-0061 岩手県久慈市中央３丁目５８",[40.1894366,141.7705795]
+
+### facility:north-9e5c81d3fcfe3dc21ea2 南部公民館 青森県三戸郡南部町大字沖田面字沖中51番地2
+
+### facility:north-9fb3f3914564b68ff0f1 大石田町役場時間外受付窓口 山形県北村山郡大石田町緑町1番地
+
+### facility:north-a12e04a3808b0cb41d78 道の駅・みなとオアシスみやこ 岩手県宮古市臨港通1-20
+https://oasis385.jp/access/
+data/evidence/national/locations-north-tohoku/9bbb0e83f400b46cc98b.html
+[["0x5f85cb63f0d5efff:0xed5d2f5aa2cab505","〒027-0004 岩手県宮古市臨港通１−２０",[39.6389594,141.9701476]
+
+### facility:north-a1f3958ce7c75fbdc3c9 湯川村役場窓口 福島県河沼郡湯川村大字清水田字長瀞18
+https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/info-about3.html
+data/evidence/national/locations-north-tohoku/bb6e6058534e21ef0795.html
+[["0x5f8ab29220c53733:0x73037a403b08b4cd","〒969-3544 福島県河沼郡湯川村清水田長瀞18番地 湯川村役場",[37.5652465,139.8868865]
+
+### facility:north-a26da1198276fe05dc91 名取市観光物産協会陣中仙台国際空港店2階 宮城県名取市下増田字南原無番地
+https://www.kankou.natori.miyagi.jp/gourmet/9619
+data/evidence/national/locations-north-tohoku/47c4ac000ce1761373ee.html
+[["0x5f8a22392b53cef3:0x743d603cdd250da9","〒981-1201 宮城県名取市下増田南原 陣中 仙台 空港店",[38.1379901,140.9295402]
+https://www.kankou.natori.miyagi.jp/access/
+data/evidence/national/locations-north-tohoku/30755bbcb40033f954d9.html
+[["0x5f8a223764f65d65:0x747b92955e8e4344","〒981-1201 宮城県名取市下増田南原",[38.1418076,140.9248221]
+https://www.kankou.natori.miyagi.jp/access/
+data/evidence/national/locations-north-tohoku/a3dde9d4677f8a946d44.html
+[["0x5f8a24089f36d053:0x6fc99133b647ad82","〒981-1224 宮城県名取市増田２丁目５−１",[38.1732114,140.882848]
+
+### facility:north-a39e6cbbf8058f8af909 せんだいメディアテーク 宮城県仙台市青葉区春日町2-1
+http://www.smt.jp/info/access/
+data/evidence/national/locations-north-tohoku/4987547ec2a78c17241b.html
+[["0x5f8a28304e9a0c13:0xad57691298a3abb1","Sendai Mediatheque, 1F 2-1 Kasugamachi, Aoba Ward, Sendai, Miyagi 980-0821",[38.26536979999999,140.8656816]
+
+### facility:north-a4e073898b8f0e283b69 紅花資料館 物産館 山形県西村山郡河北町谷地戊1143
+
+### facility:north-a4f6eb49ec47671cbd67 二本松市歴史観光施設【にほんまつ観光城報館】 2階事務室 福島県二本松市郭内三丁目303番地5
+
+### facility:north-a86e5bc10ccb3b8ad6ce 棚倉町役場上下水道課 福島県東白川郡棚倉町大字棚倉字中居野33
+
+### facility:north-aa2c61d62d30e0fb71ce 大衡村役場1階都市建設課 宮城県黒川郡大衡村大衡字平林62番地
+
+### facility:north-aa6be60dea56f90d4540 岩手県滝沢市施設課 岩手県滝沢市中鵜飼55
+https://bigroof.jp/
+data/evidence/national/locations-north-tohoku/077b7ec5d0729754ae5b.html
+[["0x5f85772802eaaaab:0xa5a1231525502fd0","〒020-0665 岩手県滝沢市下鵜飼１−１５ ビッグルーフ滝沢",[39.7337977,141.0785187]
+https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193
+data/evidence/national/locations-north-tohoku/b4dfd6463f6952b565dd.html
+[["0x5f85772829a7d357:0xdc87ef9c783b014f","〒020-0692 岩手県滝沢市中鵜飼５５ 滝沢市役所",[39.7345958,141.0770086]
+
+### facility:north-afaf0dc914bdd8a3350b 亘理町上下水道課 宮城県亘理郡亘理町字悠里1
+https://www.town.watari.miyagi.jp/town/detail.php?content=249
+data/evidence/national/locations-north-tohoku/881c9c49d1ddb454b9d8.html
+[["0x5f8a171a6f7d86a3:0x8db2be7f38d60939","〒989-2352 宮城県亘理郡亘理町悠里１ 亘理町役場",[38.0441935,140.8674846]
+
+### facility:north-b7cdc35a4d554c330b73 秋田市上下水道局 下水道整備課 秋田県秋田市川尻みよし町14-8
+
+### facility:north-b7edce2dc5b3a72fc7b6 東松島市震災復興伝承館 宮城県東松島市野蒜字北余景56-36
+
+### facility:north-bbae254c6bb6fd0bb1d2 東松島市奥松島観光物産交流センター 宮城県東松島市野蒜ケ丘一丁目15番地1
+
+### facility:north-bc29b3337dcd89019149 喜多方市役所下水道課 福島県喜多方市字御清水東7244-2
+
+### facility:north-bc3537ee12c196975af6 赤湯温泉観光センター・ゆーなびからころ館 南陽市赤湯754-2
+https://karakorokan.jp/
+data/evidence/national/locations-north-tohoku/37ae5bf9d8107035eefa.html
+
+
+### facility:north-bd9ab14ef699fe922568 あぶくま洞管理事務所 福島県田村市滝根町菅谷字東釜山1
+http://abukumado.com/
+data/evidence/national/locations-north-tohoku/b6a55b2bae6a9f2f8792.html
+[["0x602058a21cca3957:0xca76f06930f7c026","〒963-3601 福島県田村市滝根町菅谷東釜山１",[37.344312,140.6739495]
+https://abukumado.com/abukuma-access
+data/evidence/national/locations-north-tohoku/ac4dc17b4e1b8319a0ac.html
+[["0x602058a21cca3957:0xca76f06930f7c026","〒963-3601 福島県田村市滝根町菅谷東釜山１",[37.344312,140.6739495]
+
+### facility:north-be6517568d294904a50f 須賀川特撮アーカイブセンター 福島県須賀川市柱田字中地前22番地
+
+### facility:north-c5a98d056047559d8981 湖南公民館 郡山市湖南町福良字家老9390-4
+https://www.city.koriyama.lg.jp/soshiki/185/
+data/evidence/national/locations-north-tohoku/1cd8839183ecb43295bd.html
+
+
+### facility:north-c5af4cc6d180d9fcc389 道の駅やまがた蔵王 山形県山形市表蔵王79番地1
+https://www.m-yzao.com/
+data/evidence/national/locations-north-tohoku/9aada23e7d61c7c65515.html
+[["0x5f8bb5ea9b7ca3ff:0x3338e386a70ab1de","〒990-2307 山形県山形市表蔵王７９−１ 道の駅やまがた蔵王",[38.1894465,140.3120848]
+
+### facility:north-c6369b8cb837062027e8 弘前市緑の相談所 青森県弘前市下白銀町1-1
+http://www.hirosakipark.or.jp/green/index.html
+data/evidence/national/locations-north-tohoku/3d75d0d149718b2ad693.html
+[["0x5f9b01c717de6455:0x11140d676bc8d50c","〒036-8356 Aomori, Hirosaki, Shimoshiroganecho, １−1 Hirosaki City Gardening Information Center, 弘前公園内",[40.6093972,140.4675947]
+
+### facility:north-c6fd19116fcd6dda5605 東根市観光物産協会 山形県東根市さくらんぼ駅前1-1-1(さくらんぼ東根駅1階)
+https://www.higashine.com/about-us/access
+data/evidence/national/locations-north-tohoku/5af99f8fae25d974ff09.html
+[["0x5f8bdc92baff57af:0x71239cfe7b1701ce","Higashine City Tourism \u0026 Products Association, 1-chome-1-1 Sakuranbo Ekimae, Higashine, Yamagata 999-3720",[38.4281945,140.3810108]
+
+### facility:north-c7e2a990fa708c49f784 道の駅国見 あつかしの郷 福島県伊達郡国見町大字藤田字日渡二18-1
+https://www.town.kunimi.fukushima.jp/soshiki/1/220.html
+data/evidence/national/locations-north-tohoku/139d3622a6d10f5bf76f.html
+[["0x5f8a63f236199693:0x1782d84996225b9b","Kunimi Town Hall, Itchoda2-１-7 Fujita, Kunimi, Date District, Fukushima 969-1792",[37.8766623,140.5490827]
+https://www.michinoeki923.com/access/
+data/evidence/national/locations-north-tohoku/8374631b06d0268058a2.html
+[["0x5f8a63ecc58da599:0x67e6b36ec4f10009","〒969-1761 福島県伊達郡国見町藤田日渡二18−１ 道の駅 国見 あつかしの郷",[37.8727314,140.5467713]
+
+### facility:north-c88406f5e69a26cba40e 鶴岡市観光案内所 鶴岡市末広町3-1 マリカ東館1F(FOODEVER内)
+
+### facility:north-cb4f28d184cbcaebe0e8 西郷村農産物産館「まるごと西郷館」 西郷村大字熊倉字折口原146番地
+
+### facility:north-cb721e0f3b2d5b718e5b 万葉・おおひら館 宮城県黒川郡大衡村大衡字鐙沢12番地2
+http://ohirakan.com/
+data/evidence/national/locations-north-tohoku/40ecc85e856ea2ada8a4.html
+[["0x5f8a282c4258bc11:0xf3e20ec3a0a92c5d","〒981-3602 宮城県黒川郡大衡村大衡万葉・おおひら館 字鐙沢１２－２",[38.4694642,140.890015]
+
+### facility:north-cea3d24711de81888293 最上義光歴史館 山形県山形市大手町1-53
+
+### facility:north-d0a8e558a26c68e5ba31 猪苗代町役場上下水道課窓口 福島県耶麻郡猪苗代町字城南100
+
+### facility:north-d15dcb12c82352e878da なにゃーと物産センター(二戸広域観光物産センター1F) 岩手県二戸市石切所字森合68番地
+https://nanyato-sisetu.com/
+data/evidence/national/locations-north-tohoku/c2eba16041bcfa191867.html
+[["0x5f84d1db2889452b:0xc272c29f4fe889c8","〒028-6103 岩手県二戸市石切所森合６８−５４−７ 1F カシオペアメッセなにゃーと なにゃーと 物産センター",[40.2610448,141.2859048]
+
+### facility:north-d1803897b2520241710e いわて・盛岡広域観光センター 岩手県盛岡市盛岡駅前通1-48 盛岡駅舎2階
+
+### facility:north-d421e2e7d68b7de7cbf7 とみおかアーカイブ・ミュージアム 福島県双葉郡富岡町大字本岡字王塚760-1
+
+### facility:north-d4710ea1e4076fe4151b SkyPlazaMISAWA(スカイプラザミサワ) 青森県三沢市中央町2丁目8-34
+https://skyplazamisawa.jp
+data/evidence/national/locations-north-tohoku/c355b350f811092df653.html
+[["0x5f9b5f3b8d95c5cb:0xb039823ff04106f8","〒033-0001 青森県三沢市中央町２丁目８−３４ スカイプラザミサワ",[40.6851084,141.3651624]
+
+### facility:north-d708d48e0d4d4cae8869 てんのうグリーンマーケット(道の駅てんのう) 秋田県潟上市天王字江川上谷地109-2
+
+### facility:north-d7b1c87c38351fa33362 山形市上下水道施設管理センター 2階 経営企画課窓口 山形県山形市南石関27
+
+### facility:north-db757b448c8db73422a5 花巻市役所本庁舎警備員室(本庁舎1階守衛室) 岩手県花巻市花城町9-30 本庁舎1階守衛室
+
+### facility:north-dc305b23b24f12a28bb6 石ノ森萬画館 宮城県石巻市中瀬2番7号 / 石巻市中央二丁目11番17
+
+### facility:north-e10360ea122bf45ffded 道の駅さんのへ 青森県三戸郡三戸町大字川守田字西張渡39-1
+
+### facility:north-e2dfc05c8b1db51fc65b 道の駅やまだ「おいすた」 岩手県下閉伊郡山田町山田第5地割66番地1
+https://yamada-oisuta.jp/
+data/evidence/national/locations-north-tohoku/ea39df31d49404a12436.html
+[["0x5f85dbdcdaed3c4d:0xf947b4d27752505c","〒028-1321 岩手県下閉伊郡山田町山田第２地割１１１−２ 道の駅やまだ - おいすた -",[39.478015,141.9533868]
+
+### facility:north-e2eaf547357696dfe333 須賀川市風流のはじめ館 福島県須賀川市本町81番地4
+
+### facility:north-e7f17b2f34d16c6a3929 白沢公民館 福島県本宮市白岩字堤崎500
+
+### facility:north-e87fa72a02c9e04601f4 会津坂下町役場 建設課 上下水道班 福島県河沼郡会津坂下町字市中三番甲3662
+
+### facility:north-ef70cf36b6909e9459a6 猪苗代町役場宿日直室 福島県耶麻郡猪苗代町字城南100
+
+### facility:north-f03c9220b38ca2acc708 公益財団法人 白河観光物産協会 福島県白河市郭内1-2(しらかわ観光ステーション内)
+
+### facility:north-f22830b4e35c8f477dae 多賀城市埋蔵文化財調査センター展示室(多賀城市文化センター内) 宮城県多賀城市中央2-27-1
+https://tagajo-bunka.jp/access/
+data/evidence/national/locations-north-tohoku/999db633f668962867f8.html
+[["0x5f8985f470d2674b:0xa86318f4dd820b","〒985-0873 宮城県多賀城市中央２丁目２７−１ 多賀城市文化センター",[38.2953724,141.0049869]
+
+### facility:north-f393ea45974a92d49fc5 鶴岡市下水道部 山形県鶴岡市のぞみ町2-10
+
+### facility:north-f65a0dfe19389a4988bf 仙台港多賀城地区緩衝緑地 管理事務所 宮城県多賀城市大代1丁目16-1
+https://tohokudaiken-management.com/sendaikou-tagajo/access/
+data/evidence/national/locations-north-tohoku/d1160312c0b3263cbc33.html
+[["0x5f898f6eea1f5c29:0xff91a7f57aabf6a4","〒985-0832 Miyagi, Tagajo City, Oshiro, 1 Chome−16−1 駐車場 仙台港多賀城地区緩衝緑地 中央地区",[38.2893339,141.0317778]
+
+### facility:north-f74bc0daeadf52ba9070 南部町いちょうホール 青森県三戸郡南部町大字平字広場28番地1
+
+### facility:north-f8aec7769492a55dce23 大和町ふれあい文化創造センター 宮城県黒川郡大和町吉岡南二丁目4-14
+https://mahoroba-taiwa.jp/access.html
+data/evidence/national/locations-north-tohoku/ae7c846c5e7797fa5fdf.html
+[["0x5f89776727f3d7db:0x69d800a96230e35c","〒981-3626 Miyagi, Kurokawa District, Taiwa, Yoshiokaminami, 2-chōme−４−14",[38.4420623,140.8810618]
+
+### facility:north-fc06d0f8dda64e3166de 道の駅「村田」(村田町物産交流センター) 柴田郡村田町大字村田字北塩内41
+
+### facility:north-fdc5e98d94931a4b1517 道の駅おりつめ 産直施設オドデ館 岩手県九戸郡九戸村大字山屋2-28-1

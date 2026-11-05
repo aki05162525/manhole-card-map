@@ -1,0 +1,922 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="サザンスカイタワー八王子,JR八王子駅南口直結,商業施設,ショッピング,ショッピングセンター" />
+<title>サザンスカイタワー八王子 -JR八王子駅南口直結のショッピングセンター-</title>
+<meta name="description" content="JR八王子駅南口直結の「サザンスカイタワー八王子」公式サイト" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(function() {
+ //クリックしたときのファンクションをまとめて指定
+ $('.tab3 li').click(function() {
+
+  //.index()を使いクリックされたタブが何番目かを調べ、
+  //indexという変数に代入します。
+  var index = $('.tab3 li').index(this);
+
+  //コンテンツを一度すべて非表示にし、
+  $('.flocon li').css('display','none');
+
+  //クリックされたタブと同じ順番のコンテンツを表示します。
+  $('.flocon li').eq(index).css('display','block');
+
+  //一度タブについているクラスselectを消し、
+  $('.tab3 li').removeClass('select');
+
+  //クリックされたタブのみにクラスselectをつけます。
+  $(this).addClass('select')
+ });
+});
+</script>
+<script>
+$(function(){
+
+ //分割したい個数を入力
+ var division = 8;
+
+ //要素の数を数える
+ var divlength = $('#boxmenu .litem').length;
+ //分割数で割る
+ dlsizePerResult = divlength / division;
+ //分割数 刻みで後ろにmorelinkを追加する
+ for(i=1;i<=dlsizePerResult;i++){
+  $('#boxmenu .litem').eq(division*i-1)
+                .after('<div class="btn-wrap link'+i+'">▼もっと見る</div>');
+ }
+ //最初のli（分割数）と、morelinkを残して他を非表示
+ $('#boxmenu .litem,.btn-wrap').hide();
+ for(j=0;j<division;j++){
+  $('#boxmenu .litem').eq(j).show();
+ }
+ $('.btn-wrap.link1').show();
+
+ //morelinkにクリック時の動作
+ $('.btn-wrap').click(function(){
+  //何個目のmorelinkがクリックされたかをカウント
+  index = $(this).index('.btn-wrap');
+  //(クリックされたindex +2) * 分割数 = 表示数
+  for(k=0;k<(index+2)*division;k++){
+   $('#boxmenu .litem').eq(k).show();
+  }
+
+  //一旦全てのmorelink削除
+  $('.btn-wrap').hide();
+  //次のmorelink(index+1)を表示
+  $('.btn-wrap').eq(index+2).show();
+
+ });
+
+});
+</script>
+<script>
+jQuery(function($){
+/*-----------------------------------
+      item 2個ずつ表示
+-----------------------------------*/
+  var item = $('#js-listItem').children('li');
+  var btn = $('#js-listItem-more');
+  var className = "is-hidden";
+
+  var itemsList = function () {
+    //表示されているliの個数を取得
+    var items = $(item).filter(':visible').length;
+
+    //ボタンの表示・非表示
+    if (items > 4) { //リストが2個より多い時
+      $(btn).show();
+    } else { //リストが2個未満の時
+      $(btn).hide();
+    }
+
+    //リスト2個までを表示
+    (function () {
+      var addCount = 0;
+
+      $(item).each(function () {
+        if (addCount === 4) {
+          $(this).addClass(className);
+          return;
+        }
+        if (!$(this).hasClass(className)) {
+          addCount++;
+        }
+      });
+    }());
+  }
+
+  itemsList();
+
+  //もっと見るボタンをクリックで2個ずつ表示
+  (function () {
+    $(btn).on('click', function () {
+      var hiddenLength = $('#js-listItem').children('li.is-hidden').length; //非表示のリスト数
+
+      if (hiddenLength === 0) {
+        return; //非表示のものが無ければ何もしない
+      }
+
+      var moreCount = 0;
+      $('#js-listItem').children('li.is-hidden').each(function () {
+        if (moreCount === 4) {
+          return; //2個ずつ表示（2個まで表示したら処理をやめる）
+        }
+
+        if ($(this).hasClass(className)) {
+          var hiddenLength = $('#js-listItem').children('li.is-hidden').length; //非表示のリスト数
+          $(this).removeClass(className);
+          moreCount++;
+        }
+
+        //全部表示したらボタン削除
+        if (hiddenLength === 1) {
+          $(btn).hide();
+        }
+      });
+    });
+  }());
+
+});
+</script>
+<script src="https://maps.google.com/maps/api/js?v=3&key=AIzaSyC78Y6oYLZnunmdkqU8HLLy9HWnFxjly0s"></script>
+<script>
+function initialize() {
+    var latlng = new google.maps.LatLng(35.654748, 139.337959);
+        map = new google.maps.Map(document.getElementById('gmap'), {
+            center: latlng,
+            zoom: 17,
+    styles: [{
+        featureType: 'all',
+        elementType: 'all',
+        stylers: [{
+            hue: '#007fff' //16進数のRGB値を記載
+        }, {
+            saturation: 92 //-100〜100の値を記載
+        }, {
+            lightness: 0 //-100〜100の値を記載
+        }, {
+            gamma: 0.96 //0.01〜10.0の値を記載
+        }]
+    }]
+         }),
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng( 35.654748, 139.337959 ) ,
+            map: map,
+   icon: {
+  url: '/renew/images/mapicon2.png',
+  scaledSize: new google.maps.Size(180, 60)
+ },
+        });
+}
+</script>
+<meta name="viewport" content="width=device-width">
+<link href="/renew/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+<link href="/renew/style.css?ver=4" rel="stylesheet" type="text/css" />
+<link href="/renew/style_s.css?ver=3" rel="stylesheet" type="text/css" media="only screen and (max-width:480px)">
+<script type="text/javascript" src="/renew/js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.ard').bxSlider({
+                auto: true,
+    speed:1000,
+    pause: 6000,
+    mode: 'fade'
+            });
+        });
+</script>
+<script>
+      $(document).ready(function(){
+        setTimeout(function() {
+    $(".message").delay(0).animate({ 'top': '10%', opacity: 1 },800);
+    $(".message").delay(3500).fadeOut(500);
+        }, 1500);
+      });
+</script>
+<style type="text/css">
+
+
+
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZT78TFF9P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZT78TFF9P');
+</script>
+</head>
+
+<body onload="initialize();">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.1&appId=1711773939101134&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="main_area">
+   <div class="message"><img src="/renew/images/catch.png" width="802" height="163" alt="リニューアル" /></div>
+<ul class="ard">
+				<li><img src="/renew/images/nslide1.jpg" alt="" width="100%"/></li>
+  <li><img src="/renew/images/bn15th.jpg" alt="" width="100%"/></li>
+<li><img src="/renew/images/nslide32.jpg" alt="" width="100%"/></li>
+</ul>
+</div>
+<header id="header_top">
+<div id="header_area">
+<div id="logo_area"><a href="/"><img src="/renew/images/slogo.png" width="250" height="40" alt=""/></a></div>
+<nav id="globalnavigation">
+         <ul class="m5">
+          <li class="home"><a href="/"><img src="/renew/images/btn1_off.png" alt="ホーム" width="40" height="30" /></a></li>
+          <li><a href="/eventcampaign/"><img src="/renew/images/btn2_off.png" alt="ホーム" width="143" height="30" /></a></li>
+        <li><a href="/shopnews/"><img src="/renew/images/btn3_off.png" alt="ショップガイド" width="106" height="30" /></a></li>
+                <li><a href="/gourmet/"><img src="/renew/images/btn4_off.png" alt="フロアガイド" width="91" height="30" /></a></li>
+                <li><a href="/floor_3f/"><img src="/renew/images/btn5_off.png" alt="施設一覧" width="80" height="30" /></a></li>
+                 <li class="acs"><a href="/access/"><img src="/renew/images/btn6_off.png" alt="交通アクセス" width="80" height="30" /></a></li>
+         </ul>
+        </nav>
+
+   <div id="nav_side"><div class="pc_content m20">
+   <form method="get" action="https://sst8.jp/" ><input type="text" value="" name="s" class="s" style="width:140px; height: 24px;" />
+   <input type="submit" class="searchsubmit" value="検索"></form></div><div class="sm_content" align="right"><a href="/"><img src="/renew/images/icon_home.png" width="40" height="40" alt="ホーム" /></a></div></div>
+  </div>
+  </header>
+<article id="container">
+<div class="sm_icon_area">
+<div class="sm_icon1 sm_border1"><a href="/eventcampaign/"><img src="/renew/images/btn_sm_1.png" width="180" height="60" alt="イベント＆キャンペーン" /></a></div>
+<div class="sm_icon2 sm_border1"><a href="/shopnews/"><img src="/renew/images/btn_sm_3.png" width="180" height="60" alt="ショップニュース" /></a></div>
+<div class="sm_icon1 sm_border2"><a href="/gourmet/"><img src="/renew/images/btn_sm_2.png" width="180" height="60" alt="ショップガイド" /></a></div>
+<div class="sm_icon1 sm_border3"><a href="/floor_3f/"><img src="/renew/images/btn_sm_4.png" width="180" height="60" alt="フロアガイド" /></a></div>
+<div class="sm_icon2 sm_border3"><a href="/access/"><img src="/renew/images/btn_sm_5.png" width="180" height="60" alt="交通アクセス" /></a></div>
+<div class="sm_icon1"><a href="https://www.facebook.com/sst8.jp/" target="_blank"><img src="/renew/images/btn_sm_6.png" width="180" height="60" alt="フェイスブック" /></a></div>
+</div>
+<section class="content">
+<h2 align="center">サザンスカイタワー八王子</h2>
+<p align="center" class="m15">サザンスカイタワー八王子は、八王子のショッピングセンターとして、<br>
+地域や近隣の皆様とともにあゆんでいきたいと考えております。</p>
+
+<div class="sm_content">
+<h2 align="center">サイト内検索</h2>
+<form method="get" action="https://sst8.jp/" class="m20">
+<input type="text" value="" name="s" class="s" style="width:220px; height:30px; margin-bottom:20px;" />　　<input type="button" class="searchsubmit" value="検索" onClick="document.location='/searchtest/';" style="width:60px; height:30px; margin-bottom:20px;" />
+</form>
+<div class="underline"></div>
+ </div>
+<h3 class="maintitle shopnews m25">ショップニュース</h3>
+<ul class="list_c4" id="boxmenu">
+
+  <li class="litem">
+  <div class="new_icon"></div>  <!-- サムネイルの書き出しここから -->
+            <div class="thumbarea"><a href="/shop/alps/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/11/2026_11月-厳選品・単品ポイント_連結_page-0001-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [スーパーアルプス] 2026.11.5更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/alps/">11月の超厳選品！</a>
+      </div>
+    </li>
+      
+  <li class="litem">
+  <div class="new_icon"></div>  <!-- サムネイルの書き出しここから -->
+            <div class="thumbarea"><a href="/shop/alps/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/11/お買得・Edyカレンダー連結-6_page-000111-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [スーパーアルプス] 2026.11.2更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/alps/">11月のお買得カレンダー！</a>
+      </div>
+    </li>
+      
+     
+     
+     
+     
+     
+     
+  <li class="litem">
+    <!-- サムネイルの書き出しここから -->
+            <div class="thumbarea"><a href="/shop/subway/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/09/写真-2026-09-30-10-32-31-1-258x174.png" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [サブウェイ] 2026.9.30更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/subway/">秋の音する「ザクタル。」登場！</a>
+      </div>
+    </li>
+      
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+<!-- サムネイルの書き出しここから -->
+            <li class="litem">
+              <div class="thumbarea"><a href="/shop/rinya/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/06/八王子酒造サムネ-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+<div class="news_subtitle">
+      [そば酒房　凜や] 2026.6.18更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/rinya/">八王子酒造の日本酒を特別なサーバーで🍶</a>
+      </div>
+</li>
+        
+     
+     
+     
+     
+     
+     
+     
+<!-- サムネイルの書き出しここから -->
+            <li class="litem">
+              <div class="thumbarea"><a href="/shop/rinya/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/04/20260408163150_page-0001-1-1-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+<div class="news_subtitle">
+      [そば酒房　凜や] 2026.4.8更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/rinya/">宴会コースのご案内！🍻</a>
+      </div>
+</li>
+        
+     
+     
+     
+     
+     
+     
+     
+     
+<!-- サムネイルの書き出しここから -->
+            <li class="litem">
+              <div class="thumbarea"><a href="/shop/rinya/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/02/iwanoi_26_02-1-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+<div class="news_subtitle">
+      [そば酒房　凜や] 2026.2.10更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/rinya/">三つ星受賞の日本酒をお楽しみいただけます！</a>
+      </div>
+</li>
+        
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+<!-- サムネイルの書き出しここから -->
+            <li class="litem">
+              <div class="thumbarea"><a href="/shop/rinya/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2025/03/rin-th-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" srcset="https://sst8.jp/wp/wp-content/uploads/2025/03/rin-th-258x174.jpg 258w, https://sst8.jp/wp/wp-content/uploads/2025/03/rin-th-260x176.jpg 260w, https://sst8.jp/wp/wp-content/uploads/2025/03/rin-th.jpg 500w" sizes="auto, (max-width: 258px) 100vw, 258px" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+<div class="news_subtitle">
+      [そば酒房　凜や] 2025.3.12更新
+      </div>
+    <div class="news_title">
+    <a href="/shop/rinya/">自社製麺 生蕎麦　店頭販売中！</a>
+      </div>
+</li>
+        
+     
+     
+     
+     
+     
+     </ul>
+
+</section>
+
+ <section class="content">
+     <div class="btn_nav_icon"><a href="http://sst8.jp/shopnews/">ショップニュース一覧へ</a></div>
+</section>
+
+<section class="content m20">
+<h3 class="maintitle event">イベント＆キャンペーン</h3>
+<ul class="list_c4" id="js-listItem">
+  <li class="litem2">
+  <div class="new_icon"></div>  <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/christmasline2026/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/11/ポスターs-1-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [イベント] 2026.11.4更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/christmasline2026/">11月のLINEくじは「クリスマス特別号」</a>
+      </div>
+        </li>
+      <li class="litem2">
+    <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/%e3%82%b9%e3%83%bc%e3%83%91%e3%83%bc%e3%82%a2%e3%83%ab%e3%83%97%e3%82%b9-%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88%e3%82%ab%e3%83%bc%e3%83%89%e3%81%94%e6%8f%90%e7%a4%ba%e3%81%a7%e3%81%8a%e5%be%97%ef%bc%81/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/04/アルプス販促HPサムネ-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" srcset="https://sst8.jp/wp/wp-content/uploads/2026/04/アルプス販促HPサムネ-258x174.jpg 258w, https://sst8.jp/wp/wp-content/uploads/2026/04/アルプス販促HPサムネ-260x176.jpg 260w, https://sst8.jp/wp/wp-content/uploads/2026/04/アルプス販促HPサムネ.jpg 400w" sizes="auto, (max-width: 258px) 100vw, 258px" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [キャンペーン] 2026.7.1更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/%e3%82%b9%e3%83%bc%e3%83%91%e3%83%bc%e3%82%a2%e3%83%ab%e3%83%97%e3%82%b9-%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88%e3%82%ab%e3%83%bc%e3%83%89%e3%81%94%e6%8f%90%e7%a4%ba%e3%81%a7%e3%81%8a%e5%be%97%ef%bc%81/">スーパーアルプス ポイントカードご提示でお得！🪪✨</a>
+      </div>
+        </li>
+      <li class="litem2">
+    <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/jcom%e3%83%9b%e3%83%bc%e3%83%ab%e5%85%ab%e7%8e%8b%e5%ad%90%e9%81%8e%e5%8e%bb%e3%81%ae%e5%85%ac%e6%bc%94%e3%83%9d%e3%82%b9%e3%82%bf%e3%83%bc%e5%b1%95-%e6%9b%b4%e6%96%b0%e3%81%ae%e3%81%8a%e7%9f%a5/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2026/05/写真-2026-05-01-15-45-39-1-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [お知らせ] 2026.5.1更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/jcom%e3%83%9b%e3%83%bc%e3%83%ab%e5%85%ab%e7%8e%8b%e5%ad%90%e9%81%8e%e5%8e%bb%e3%81%ae%e5%85%ac%e6%bc%94%e3%83%9d%e3%82%b9%e3%82%bf%e3%83%bc%e5%b1%95-%e6%9b%b4%e6%96%b0%e3%81%ae%e3%81%8a%e7%9f%a5/">J:COMホール八王子過去の公演ポスター展を更新しました！</a>
+      </div>
+        </li>
+      <li class="litem2">
+    <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/%e6%af%8e%e6%9c%88%ef%bc%99%e6%97%a5%e3%80%80%e3%82%b5%e3%82%b6%e3%83%b3line%e9%99%90%e5%ae%9a%e3%81%8f%e3%81%98%e9%85%8d%e4%bf%a1%e4%b8%ad%ef%bc%81%ef%bc%81%e3%80%80/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2024/07/lineth-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" srcset="https://sst8.jp/wp/wp-content/uploads/2024/07/lineth-258x174.jpg 258w, https://sst8.jp/wp/wp-content/uploads/2024/07/lineth-260x176.jpg 260w, https://sst8.jp/wp/wp-content/uploads/2024/07/lineth.jpg 400w" sizes="auto, (max-width: 258px) 100vw, 258px" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [イベント] 2026.4.1更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/%e6%af%8e%e6%9c%88%ef%bc%99%e6%97%a5%e3%80%80%e3%82%b5%e3%82%b6%e3%83%b3line%e9%99%90%e5%ae%9a%e3%81%8f%e3%81%98%e9%85%8d%e4%bf%a1%e4%b8%ad%ef%bc%81%ef%bc%81%e3%80%80/">毎月９日 サザンLINE限定くじ配信中！！　</a>
+      </div>
+        </li>
+      <li class="litem2">
+    <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%b0%e3%83%a9%e3%83%a0%e3%82%92%e9%96%8b%e8%a8%ad%e3%81%97%e3%81%be%e3%81%97%e3%81%9f/"><img width="258" height="174" src="https://sst8.jp/wp/wp-content/uploads/2022/04/abd2c804c766933a688e89c7c4806517-1-258x174.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [お知らせ] 2026.4.1更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%82%b0%e3%83%a9%e3%83%a0%e3%82%92%e9%96%8b%e8%a8%ad%e3%81%97%e3%81%be%e3%81%97%e3%81%9f/">インスタグラムフォロワー募集中！</a>
+      </div>
+        </li>
+      <li class="litem2">
+    <!-- サムネイルの書き出しここから -->
+                        <div class="thumbarea"><a href="https://sst8.jp/event/%e5%ba%97%e8%88%97%e3%82%b9%e3%82%bf%e3%83%83%e3%83%95%e5%8b%9f%e9%9b%86%e4%b8%ad/"><img width="213" height="174" src="https://sst8.jp/wp/wp-content/uploads/2017/08/staffbosyu-245x200.jpg" class="attachment-thumb_photo size-thumb_photo" alt="" decoding="async" loading="lazy" srcset="https://sst8.jp/wp/wp-content/uploads/2017/08/staffbosyu-245x200.jpg 245w, https://sst8.jp/wp/wp-content/uploads/2017/08/staffbosyu.jpg 735w" sizes="auto, (max-width: 213px) 100vw, 213px" /></a></div>
+<!-- サムネイルの書き出しここまで -->
+    <div class="news_subtitle">
+      [スタッフ募集] 2026.4.1更新
+      </div>
+    <div class="news_title">
+    <a href="https://sst8.jp/event/%e5%ba%97%e8%88%97%e3%82%b9%e3%82%bf%e3%83%83%e3%83%95%e5%8b%9f%e9%9b%86%e4%b8%ad/">店舗スタッフ募集中！</a>
+      </div>
+        </li>
+    </ul>
+
+</section>
+<div id="js-listItem-more" class="btn btn-wrap2">もっとみる　▼</div>
+ <section class="content">
+     <div id="js-listItem-more" class="btn_nav_icon"><a href="http://sst8.jp/eventcampaign/">イベント情報一覧へ</a></div>
+</section>
+
+<div class="information_area">
+<h2 class="submain_title">INFORMATIONS<br>
+<span class="submain_subtitle">- お知らせ - </span></h2>
+<section class="content">
+    <div class="informationbox">
+  <div class="information_left">
+    2026/11/04  </div>
+  <div class="information_right">
+    <p>【防災センター内 電話設備更新工事に伴う不通時間のお知らせ】</p>
+<p>電話設備更新工事に伴い、防災センターへの電話が不通となります。<br />
+11月13日（金）8:00～10:00の間の約1時間程度<br />
+ご利用の皆様にはご不便、ご迷惑をおかけいたしますが、何卒ご理解賜りますようお願い申し上げます。</p>
+  </div>
+ </div>
+      <div class="informationbox">
+  <div class="information_left">
+    2026/10/01  </div>
+  <div class="information_right">
+    <blockquote><p>【はま寿司 営業時間変更のお知らせ】</p></blockquote>
+<p>営業時間が10:00～23:30 → <strong>10:00～24:00 </strong>に変更となります。<br />
+皆様のご来店をお待ちしております。</p>
+  </div>
+ </div>
+      <div class="informationbox">
+  <div class="information_left">
+    2026/08/12  </div>
+  <div class="information_right">
+    <blockquote><p>【サブウェイ 営業時間変更のお知らせ】</p></blockquote>
+<p>日曜･祝日の営業時間が10:00～19:00 → 9:00～21:00 に変更となり、<br />
+今後は<strong>曜日･祝日にかかわらず9:00～21:00の営業</strong>となります。</p>
+<p>皆様のご来店をお待ちしております。</p>
+  </div>
+ </div>
+      </section><!-- / .content -->
+</div>
+
+<section class="content">
+<h3 class="maintitle shopguide">ショップガイド</h3>
+ <div class="floorguidebox">
+<div align="center"><img src="/renew/images/title_search_cate.png" alt="フロアからさがす" width="182" height="40"/></div>
+<ul class="tn_search">
+        <li><a href="/gourmet/"><img src="/renew/images/cate1_off.png" width="116" height="26" alt="グルメ＆カフェ" /></a></li>
+         <li><a href="/shopping/"><img src="/renew/images/cate2_off.png" width="104" height="26" alt="ショッピング" /></a></li>
+         <li><a href="/service/"><img src="/renew/images/cate3_off.png" width="76" height="26" alt="サービス" /></a></li>
+         <li><a href="/clinic/"><img src="/renew/images/cate4_off.png" width="88" height="26" alt="クリニック" /></a></li>
+         <li><a href="/public/"><img src="/renew/images/cate5_off.png" width="104" height="26" alt="公共サービス" /></a></li>
+    </ul>    	<ul class="tab3">
+         <li class="select">4F</li>
+         <li>3F</li>
+         <li>2F</li>
+         <li>1F</li>
+        </ul>
+    </div>
+    <ul class="flocon">
+    <li><div align="center"><img src="/renew/images/stitle_floor.png" alt=""/></div>
+    <table border="0" cellpadding="6" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f1new.png" usemap="#ImageMap" alt="1Fフロア"/>
+      <map name="ImageMap">
+  <area shape="rect" coords="325,93,346,125" href="/shop/subway/" alt="サブウェイ">
+  <area shape="rect" coords="204,162,225,196" href="/shop/heartful/" alt="ハートフルファーマシー">
+  <area shape="poly" coords="227,67,227,138,206,138,207,160,227,160,227,194,322,193,322,94,291,94,291,83,261,83,260,66,227,67,227,67" href="/shop/kitahara/" alt="北原ライフサポートクリニック">
+  <area shape="poly" coords="294,205,344,206,344,288,310,288,309,245,293,245,293,205,293,205" href="/shop/kumazawa/" alt="くまざわ書店">
+  <area shape="poly" coords="293,292,344,292,344,304,329,318,293,318,293,291,293,291" href="/shop/seven/" alt="セブンイレブン">
+  <area shape="rect" coords="173,251,270,319" href="/shop/tamasin/" alt="多摩信用金庫">
+</map></td>
+      <td class="pc_content"><img src="/renew/images/top_f2-2025new.png" alt="2Fフロア" usemap="#ImageMap2"/>
+      <map name="ImageMap2">
+  <area shape="poly" coords="324,92,325,202,133,201,134,273,115,273,115,225,70,226,63,110,93,108,93,82,291,81,291,93,324,92,324,92" href="/shop/alps/" alt="スーパーアルプス">
+  <area shape="rect" coords="309,237,346,266" href="/shop/starbucks/" alt="スターバックスコーヒー">
+  <area shape="poly" coords="295,267,295,318,330,318,344,303,344,268,294,266,306,255" href="/shop/tomos/" alt="トモズ">
+</map></td>
+    </tr>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f3-2026-5.png" usemap="#ImageMap3" alt="3Fフロア"/>
+      <map name="ImageMap3">
+  <area shape="poly" coords="110,67,110,92,133,92,133,193,88,193,88,80,77,80,78,68,110,68,110,68" href="/shop/kenclinic/" alt="八王子腎クリニック">
+  <area shape="poly" coords="204,93,290,93,290,110,265,139,205,139,204,93,341,43" href="/shop/apollogarden/" alt="アポロガーデン">
+  <area shape="poly" coords="322,69,322,83,313,84,315,96,343,96,343,81,329,68,322,68,343,72" href="/shop/hokennomadoguchi/" alt="ほけんの窓口">
+  <area shape="rect" coords="313,109,324,129" href="/shop/urunavi/" alt="売るナビ">
+  <area shape="rect" coords="159,154,210,201" href="/shop/seria/" alt="Seria">
+  <area shape="poly" coords="224,153,224,198,274,198,274,167,263,153,224,153,230,161" href="/shop/seria/" alt="Seria">
+  <area shape="rect" coords="289,181,344,208" href="/shop/rinya/" alt="凛や">
+  <area shape="rect" coords="289,209,344,227" href="/shop/grandeceo/" alt="グラン・デセオ">
+  <area shape="rect" coords="289,255,344,277" href="/shop/hidakaya/" alt="日高屋">
+  <area shape="poly" coords="271,295,342,295,342,309,328,323,271,324,271,295,271,295" href="/shop/saizeriya/" alt="サイゼリヤ">
+  <area shape="rect" coords="158,269,191,303" href="/shop/soreiyu/" alt="ソレイユ歯科">
+  <area shape="poly" coords="131,256,131,297,136,297,138,302,155,302,156,264,177,264,178,255,131,255,131,255" href="/shop/kyoritusogo/" alt="共立総合整骨院">
+  
+      <area shape="rect" coords="213,281,270,324" href="/shop/hamazushi/" alt="はま寿司">
+      <area shape="rect" coords="312,131,323,165" href="/shop/nitsewing/">
+      </map></td>
+      <td><img src="/renew/images/top_f4newr.png" usemap="#ImageMap4" alt="4Fフロア"/>
+      <map name="ImageMap4">
+  <area shape="poly" coords="47,64,59,234,255,234,256,210,312,210,312,108,285,109,285,92,266,91,266,77,291,76,290,63,48,64" href="/shop/jcomhall/" alt="JCOMホール八王子">
+  <area shape="rect" coords="104,238,347,332" href="/shop/siyakusyo/" alt="八王子市役所八王子駅南口総合事務所">
+</map></td>
+    </tr>
+  </tbody>
+</table>
+<div class="omise_list">
+            <div class="omise_box">1：<a href="https://sst8.jp/shop/jcomhall/">J:COMホール八王子</a></div>
+              <div class="omise_box">2：<a href="https://sst8.jp/shop/siyakusyo/">八王子市役所 八王子駅南口総合事務所</a></div>
+                                                                                              </div>
+ </li>
+ <li style="display:none;"><div align="center"><img src="/renew/images/stitle_floor.png" alt=""/></div><table border="0" cellpadding="6" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f1new.png" usemap="#ImageMap11" alt="1Fフロア"/>
+      <map name="ImageMap11">
+  <area shape="rect" coords="325,93,346,125" href="/shop/subway/" alt="サブウェイ">
+  <area shape="rect" coords="204,162,225,196" href="/shop/heartful/" alt="ハートフルファーマシー">
+  <area shape="poly" coords="227,67,227,138,206,138,207,160,227,160,227,194,322,193,322,94,291,94,291,83,261,83,260,66,227,67,227,67" href="/shop/kitahara/" alt="北原ライフサポートクリニック">
+  <area shape="poly" coords="294,205,344,206,344,288,310,288,309,245,293,245,293,205,293,205" href="/shop/kumazawa/" alt="くまざわ書店">
+  <area shape="poly" coords="293,292,344,292,344,304,329,318,293,318,293,291,293,291" href="/shop/seven/" alt="セブンイレブン">
+  <area shape="rect" coords="173,251,270,319" href="/shop/tamasin/" alt="多摩信用金庫">
+</map>
+      </td>
+      <td class="pc_content"><img src="/renew/images/top_f2-2025new.png" usemap="#ImageMap22" alt="2Fフロア"/>
+      <map name="ImageMap22">
+  <area shape="poly" coords="324,92,325,202,133,201,134,273,115,273,115,225,70,226,63,110,93,108,93,82,291,81,291,93,324,92,324,92" href="/shop/alps/" alt="スーパーアルプス">
+  <area shape="rect" coords="309,237,346,266" href="/shop/starbucks/" alt="スターバックスコーヒー">
+  <area shape="poly" coords="295,267,295,318,330,318,344,303,344,268,294,266,306,255" href="/shop/tomos/" alt="トモズ">
+
+</map>
+      </td>
+    </tr>
+    <tr>
+    <td><img src="/renew/images/top_f3-2026-5r.png" usemap="#ImageMap33" alt="3Fフロア"/>
+      <map name="ImageMap33">
+  <area shape="poly" coords="110,67,110,92,133,92,133,193,88,193,88,80,77,80,78,68,110,68,110,68" href="/shop/kenclinic/" alt="八王子腎クリニック">
+  <area shape="poly" coords="204,93,290,93,290,110,265,139,205,139,204,93,341,43" href="/shop/apollogarden/" alt="アポロガーデン">
+ <area shape="poly" coords="322,69,322,83,313,84,315,96,343,96,343,81,329,68,322,68,343,72" href="/shop/hokennomadoguchi/" alt="ほけんの窓口">
+  <area shape="rect" coords="313,109,324,129" href="/shop/urunavi/" alt="売るナビ">
+  <area shape="rect" coords="159,154,210,201" href="/shop/seria/" alt="Seria">
+  <area shape="poly" coords="224,153,224,198,274,198,274,167,263,153,224,153,230,161" href="/shop/seria/" alt="Seria">
+  <area shape="rect" coords="289,181,344,208" href="/shop/rinya/" alt="凛や">
+  <area shape="rect" coords="289,209,344,227" href="/shop/grandeceo/" alt="グラン・デセオ">
+  <area shape="rect" coords="289,255,344,277" href="/shop/hidakaya/" alt="日高屋">
+  <area shape="poly" coords="271,295,342,295,342,309,328,323,271,324,271,295,271,295" href="/shop/saizeriya/" alt="サイゼリヤ">
+  <area shape="rect" coords="158,269,191,303" href="/shop/soreiyu/" alt="ソレイユ歯科">
+  <area shape="poly" coords="131,256,131,297,136,297,138,302,155,302,156,264,177,264,178,255,131,255,131,255" href="/shop/kyoritusogo/" alt="共立総合整骨院">
+  
+  <area shape="rect" coords="213,281,270,324" href="/shop/hamazushi/" alt="はま寿司">
+    <area shape="rect" coords="312,131,323,165" href="/shop/nitsewing/">
+      </map>
+      </td>
+      <td valign="top" class="pc_content"><img src="/renew/images/top_f4new.png" usemap="#ImageMap44" alt="4Fフロア"/>
+      <map name="ImageMap44">
+  <area shape="poly" coords="46,64,58,234,254,234,255,210,311,210,311,108,284,109,284,92,265,91,265,77,290,76,289,63,47,64" href="/shop/jcomhall/" alt="JCOMホール八王子">
+  <area shape="rect" coords="104,238,347,332" href="/shop/siyakusyo/" alt="八王子市役所八王子駅南口総合事務所"></map>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <div class="omise_list">
+                                                                                                                                                                                                <div class="omise_box">1：<a href="https://sst8.jp/shop/hokennomadoguchi/">ほけんの窓口</a></div>
+                                      <div class="omise_box">2：<a href="https://sst8.jp/shop/rinya/">そば酒房　凜や</a></div>
+                                      <div class="omise_box">3：<a href="https://sst8.jp/shop/grandeceo/">グラン・デセオ</a></div>
+                                      <div class="omise_box">5：<a href="https://sst8.jp/shop/hidakaya/">日高屋</a></div>
+                                      <div class="omise_box">6：<a href="https://sst8.jp/shop/saizeriya/">サイゼリヤ</a></div>
+                                      <div class="omise_box">7：<a href="https://sst8.jp/shop/hamazushi/">はま寿司 サザンスカイタワー八王子店</a></div>
+                                      <div class="omise_box">8：<a href="https://sst8.jp/shop/soreiyu/">八王子ソレイユ 歯科クリニック</a></div>
+                                      <div class="omise_box">9：<a href="https://sst8.jp/shop/kyoritusogo/">共立総合整骨院</a></div>
+                                      <div class="omise_box">10：<a href="https://sst8.jp/shop/kenclinic/">医療法人社団 八王子腎クリニック</a></div>
+                                      <div class="omise_box">12：<a href="https://sst8.jp/shop/apollogarden/">アポロガーデン</a></div>
+                                      <div class="omise_box">13：<a href="https://sst8.jp/shop/seria/">Seria</a></div>
+                                      <div class="omise_box">14：<a href="https://sst8.jp/shop/urunavi/">売るナビ</a></div>
+                                      <div class="omise_box">：<a href="https://sst8.jp/shop/nitsewing/">佐藤貴美枝 ニットソーイングクラブ</a></div>
+              </div>
+ </li>
+ <li style="display:none;"><div align="center"><img src="/renew/images/stitle_floor.png" alt=""/></div><table border="0" cellpadding="6" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f1new.png" usemap="#ImageMap111" alt="1Fフロア"/>
+      <map name="ImageMap111">
+  <area shape="rect" coords="325,93,346,125" href="/shop/subway/" alt="サブウェイ">
+  <area shape="rect" coords="204,162,225,196" href="/shop/heartful/" alt="ハートフルファーマシー">
+  <area shape="poly" coords="227,67,227,138,206,138,207,160,227,160,227,194,322,193,322,94,291,94,291,83,261,83,260,66,227,67,227,67" href="/shop/kitahara/" alt="北原ライフサポートクリニック">
+  <area shape="poly" coords="294,205,344,206,344,288,310,288,309,245,293,245,293,205,293,205" href="/shop/kumazawa/" alt="くまざわ書店">
+  <area shape="poly" coords="293,292,344,292,344,304,329,318,293,318,293,291,293,291" href="/shop/seven/" alt="セブンイレブン">
+  <area shape="rect" coords="173,251,270,319" href="/shop/tamasin/" alt="多摩信用金庫">
+</map>
+      </td>
+      <td><img src="/renew/images/top_f2-2025newr.png" usemap="#ImageMap222" alt="2Fフロア"/>
+      <map name="ImageMap222">
+  <area shape="poly" coords="324,92,325,202,133,201,134,273,115,273,115,225,70,226,63,110,93,108,93,82,291,81,291,93,324,92,324,92" href="/shop/alps/" alt="スーパーアルプス">
+  <area shape="rect" coords="309,237,346,266" href="/shop/starbucks/" alt="スターバックスコーヒー">
+  <area shape="poly" coords="295,267,295,318,330,318,344,303,344,268,294,266,306,255" href="/shop/tomos/" alt="トモズ">
+
+</map>
+      </td>
+    </tr>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f3-2026-5.png" usemap="#ImageMap333" alt="3Fフロア"/>
+      <map name="ImageMap333">
+  <area shape="poly" coords="110,67,110,92,133,92,133,193,88,193,88,80,77,80,78,68,110,68,110,68" href="/shop/kenclinic/" alt="八王子腎クリニック">
+  <area shape="poly" coords="204,93,290,93,290,110,265,139,205,139,204,93,341,43" href="/shop/apollogarden/" alt="アポロガーデン">
+ <area shape="poly" coords="322,69,322,83,313,84,315,96,343,96,343,81,329,68,322,68,343,72" href="/shop/hokennomadoguchi/" alt="ほけんの窓口">
+  <area shape="rect" coords="313,109,324,129" href="/shop/urunavi/" alt="売るナビ">
+  <area shape="rect" coords="159,154,210,201" href="/shop/seria/" alt="Seria">
+  <area shape="poly" coords="224,153,224,198,274,198,274,167,263,153,224,153,230,161" href="/shop/seria/" alt="Seria">
+  <area shape="rect" coords="289,181,344,208" href="/shop/rinya/" alt="凛や">
+  <area shape="rect" coords="289,209,344,227" href="/shop/grandeceo/" alt="グラン・デセオ">
+  <area shape="rect" coords="289,255,344,277" href="/shop/hidakaya/" alt="日高屋">
+  <area shape="poly" coords="271,295,342,295,342,309,328,323,271,324,271,295,271,295" href="/shop/saizeriya/" alt="サイゼリヤ">
+  <area shape="rect" coords="158,269,191,303" href="/shop/soreiyu/" alt="ソレイユ歯科">
+  <area shape="poly" coords="131,256,131,297,136,297,138,302,155,302,156,264,177,264,178,255,131,255,131,255" href="/shop/kyoritusogo/" alt="共立総合整骨院">
+  
+  <area shape="rect" coords="213,281,270,324" href="/shop/hamazushi/" alt="はま寿司">
+    <area shape="rect" coords="312,131,323,165" href="/shop/nitsewing/">
+      </map>
+      </td>
+      <td class="pc_content"><img src="/renew/images/top_f4new.png" usemap="#ImageMap444" alt="4Fフロア"/>
+      <map name="ImageMap444">
+  <area shape="poly" coords="46,64,58,234,254,234,255,210,311,210,311,108,284,109,284,92,265,91,265,77,290,76,289,63,47,64" href="/shop/jcomhall/" alt="JCOMホール八王子">
+  <area shape="rect" coords="104,238,347,332" href="/shop/siyakusyo/" alt="八王子市役所八王子駅南口総合事務所">
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <div class="omise_list">
+                          <div class="omise_box">1：<a href="https://sst8.jp/shop/alps/">スーパーアルプス</a></div>
+      <div class="omise_box">2：<a href="https://sst8.jp/shop/tomos/">トモズ</a></div>
+      <div class="omise_box">3：<a href="https://sst8.jp/shop/starbucks/">スターバックス コーヒー</a></div>
+                            </div>
+ </li>
+ <li style="display:none;"><div align="center"><img src="/renew/images/stitle_floor.png" alt=""/></div><table border="0" cellpadding="6" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><img src="/renew/images/top_f1newr.png" usemap="#ImageMap1111" alt="1Fフロア"/>
+      <map name="ImageMap1111">
+  <area shape="rect" coords="325,93,346,125" href="/shop/subway/" alt="サブウェイ">
+  <area shape="rect" coords="204,162,225,196" href="/shop/heartful/" alt="ハートフルファーマシー">
+  <area shape="poly" coords="227,67,227,138,206,138,207,160,227,160,227,194,322,193,322,94,291,94,291,83,261,83,260,66,227,67,227,67" href="/shop/kitahara/" alt="北原ライフサポートクリニック">
+  <area shape="poly" coords="294,205,344,206,344,288,310,288,309,245,293,245,293,205,293,205" href="/shop/kumazawa/" alt="くまざわ書店">
+  <area shape="poly" coords="293,292,344,292,344,304,329,318,293,318,293,291,293,291" href="/shop/seven/" alt="セブンイレブン">
+  <area shape="rect" coords="173,251,270,319" href="/shop/tamasin/" alt="多摩信用金庫">
+</map>
+      </td>
+      <td class="pc_content"><img src="/renew/images/top_f2-2025new.png" usemap="#ImageMap2222" alt="2Fフロア"/>
+      <map name="ImageMap2222">
+  <area shape="poly" coords="324,92,325,202,133,201,134,273,115,273,115,225,70,226,63,110,93,108,93,82,291,81,291,93,324,92,324,92" href="/shop/alps/" alt="スーパーアルプス">
+  <area shape="rect" coords="309,237,346,266" href="/shop/starbucks/" alt="スターバックスコーヒー">
+  <area shape="poly" coords="295,267,295,318,330,318,344,303,344,268,294,266,306,255" href="/shop/tomos/" alt="トモズ">
+ 
+</map>
+      </td>
+    </tr>
+    <tr>
+      <td class="pc_content"><img src="/renew/images/top_f3-2026-5.png" usemap="#ImageMap3333" alt="3Fフロア"/>
+      <map name="ImageMap3333">
+  <area shape="poly" coords="110,67,110,92,133,92,133,193,88,193,88,80,77,80,78,68,110,68,110,68" href="/shop/kenclinic/" alt="八王子腎クリニック">
+  <area shape="poly" coords="204,93,290,93,290,110,265,139,205,139,204,93,341,43" href="/shop/apollogarden/" alt="アポロガーデン">
+ <area shape="poly" coords="322,69,322,83,313,84,315,96,343,96,343,81,329,68,322,68,343,72" href="/shop/hokennomadoguchi/" alt="ほけんの窓口">
+  <area shape="rect" coords="313,109,324,129" href="/shop/urunavi/" alt="売るナビ">
+  <area shape="rect" coords="159,154,210,201" href="/shop/seria/" alt="Seria">
+  <area shape="poly" coords="224,153,224,198,274,198,274,167,263,153,224,153,230,161" href="/shop/seria/" alt="Seria">
+  <area shape="rect" coords="289,181,344,208" href="/shop/rinya/" alt="凛や">
+  <area shape="rect" coords="289,209,344,227" href="/shop/grandeceo/" alt="グラン・デセオ">
+  <area shape="rect" coords="289,255,344,277" href="/shop/hidakaya/" alt="日高屋">
+  <area shape="poly" coords="271,295,342,295,342,309,328,323,271,324,271,295,271,295" href="/shop/saizeriya/" alt="サイゼリヤ">
+  <area shape="rect" coords="158,269,191,303" href="/shop/soreiyu/" alt="ソレイユ歯科">
+  <area shape="poly" coords="131,256,131,297,136,297,138,302,155,302,156,264,177,264,178,255,131,255,131,255" href="/shop/kyoritusogo/" alt="共立総合整骨院">
+  
+  <area shape="rect" coords="213,281,270,324" href="/shop/hamazushi/" alt="はま寿司">
+    <area shape="rect" coords="312,131,323,165" href="/shop/nitsewing/">
+      </map>
+      </td>
+      <td class="pc_content"><img src="/renew/images/top_f4new.png" usemap="#ImageMap4444" alt="4Fフロア"/>
+      <map name="ImageMap4444">
+  <area shape="poly" coords="46,64,58,234,254,234,255,210,311,210,311,108,284,109,284,92,265,91,265,77,290,76,289,63,47,64" href="/shop/jcomhall/" alt="JCOMホール八王子">
+  <area shape="rect" coords="104,238,347,332" href="/shop/siyakusyo/" alt="八王子市役所八王子駅南口総合事務所">
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <div class="omise_list">
+          <div class="omise_box">1：<a href="https://sst8.jp/shop/subway/">サブウェイ</a></div>
+          <div class="omise_box">2：<a href="https://sst8.jp/shop/kumazawa/">くまざわ書店</a></div>
+      <div class="omise_box">3：<a href="https://sst8.jp/shop/seven/">セブン-イレブン</a></div>
+      <div class="omise_box">4：<a href="https://sst8.jp/shop/kitahara/">北原ライフサポートクリニック</a></div>
+      <div class="omise_box">5：<a href="https://sst8.jp/shop/heartful/">ハートフルファーマシー</a></div>
+      <div class="omise_box">6：<a href="https://sst8.jp/shop/tamasin/">多摩信用金庫 / たましんすまいるプラザ</a></div>
+                                  </div>
+ </li>
+    </ul>
+</section>
+
+<div class="footer_banner_area">
+<section class="content">
+<div class="footer_banner"><a href="/staff/"><img src="/renew/images/banner_rec.png" width="255" alt=""/></a></div>
+<div class="footer_banner2"><a href="/shophour/"><img src="/renew/images/banner_shop.png" width="255" alt=""/></a></div>
+<div class="footer_banner2"><a href="/access/#cyu"><img src="/renew/images/banner_parking.png"width="255"  alt=""/></a></div>
+<div class="footer_banner2"><a href="/shoppingticket/"><img src="/renew/images/banner-shop2.png" width="255" alt=""/></a></div>
+</section>
+</div>
+<section class="content">
+<div class="box_c2A"><a href="/renew/images/line2025.webp" target="_blank"><img src="/renew/images/banner_line8.jpg" class="pc_content" width="530" height="230" alt=""/></a>
+<div class="line_banner_area">
+<h4>LINE公式アカウント友だち追加募集中！</h4>
+<p>LINE@メンバー限定特典満載で、
+月1回、おトクな情報をお届けします！<div align="center"><img src="/renew/images/smkuji.png" alt=""/></div>
+毎月9日に配信されるメルマガ抽選で、<span class="yellow"><strong>250名様に</strong></span>サザンクーポン300円分<span class="yellow"><strong>プレゼント！</strong></span></p>
+▼下記のボタンより友だち追加！▼
+<div style="background-color:#ffffff; padding: 10px;" align="center";>
+<a href="https://line.me/R/ti/p/%40wsh7508y"><img width="150" border="0" alt="友だち追加" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png"></a></div>
+
+</div>
+</div>
+    <div class="box_c2A"><a href="/renew/images/alps2026-2.webp" target="_blank"><img src="/renew/images/alpsbn2026.png" width="530" height="230" alt=""/></a></div>
+
+</section>
+</article>
+
+<div class="clearfloat"></div>
+
+<div id="ftarea">
+<div id="f1"><img src="/renew/images/fleft_logo.jpg" class="m20">
+ <div class="f1_detail">
+  <div class="detail_1">
+   <p>〒192-0904 東京都八王子市子安町4丁目7-1<br>
+TEL:042-623-2720</p></div>
+  <div class="detail_2">
+   <a href="https://www.facebook.com/sst8.jp" target="_blank"><img src="/renew/images/sst-fb.png" alt="facebook"/></a><a href="https://www.instagram.com/sazansky8/" target="_blank"><img src="/renew/images/sst-is.png" alt="instagram" class="ml20"/></a><a href="https://line.me/R/ti/p/%40wsh7508y" target="_blank"><img src="/renew/images/sst-line" alt="line" class="ml20"/></a></div>
+ </div>
+ </div>
+<div id="gmap"></div>
+</div>
+<div class="footer_link">
+
+    <section class="content">
+
+    <div class="footer_box_left">
+        <h5>- ショップガイド</h5>
+        <ul class="footer_list_left">
+<li><a href="/gourmet/">&gt; グルメ＆カフェ</a></li>
+<li><a href="/shopping/">&gt; ショッピング</a></li>
+<li><a href="/service/">&gt; サービス</a></li>
+<li><a href="/clinic/">&gt; クリニック</a></li>
+<li><a href="/public/">&gt; 公共サービス</a></li>
+        </ul>
+    </div>
+
+    <div class="footer_box_left">
+        <h5>- フロアガイド</h5>
+        <ul class="footer_list_left">
+<li><a href="/floor_1f/">&gt; 1階 -1st floor-</a></li>
+<li><a href="/floor_2f/">&gt; 2階 -2nd floor-</a></li>
+<li><a href="/floor_3f/">&gt; 3階 -3rd floor-</a></li>
+<li><a href="/floor_4f/">&gt; 4階 -4th floor-</a></li>
+      </ul>
+    </div>
+    <div class="footer_box_left">
+      <h5>- ニュース</h5>
+        <ul class="footer_list_left">
+<li><a href="/eventcampaign/">&gt; イベント＆キャンペーン</a></li>
+<li><a href="/shopnews/">&gt; ショップニュース</a></li>
+        </ul>
+    </div>
+
+    <div class="footer_box_left">
+        <h5>- インフォメーション</h5>
+        <ul class="footer_list_left">
+<li><a href="/access/">&gt; 交通アクセス</a></li>
+<li><a href="/shophour/">&gt; 営業時間のご案内</a></li>
+<li><a href="/access/#cyu">&gt; 駐車場のご案内</a></li>
+        </ul>
+        <ul class="footer_list_left">
+<li><a href="/staff/">&gt; スタッフ募集</a></li>
+<li><a href="/sitemap/">&gt; サイトマップ</a></li>
+<li><a href="/privacy/">&gt; プライバシーポリシー</a></li>
+<li><a href="/about/">&gt; サザンスカイタワー八王子について</a></li>
+        </ul>
+    </div>
+
+ </section></div>
+<footer>
+2019© Southern Sky Tower Hachioji. All rights reserved.</footer>
+
+<map name="Map">
+  <area shape="poly" coords="202,266,224,254,251,266,227,280" href="/shop/starbucks/" alt="スターバックスコーヒー">
+</map>
+
+<map name="Map2">
+  <area shape="rect" coords="183,147,302,196" href="#">
+</map>
+</body>
+</html>

@@ -1,0 +1,467 @@
+/*
+ * jQuery GoogleMaps Plugin
+ *
+ * Copyright (c) 2011 TORU KOKUBUN (http://d-s-b.jp/)
+ * Licensed under MIT Lisence:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license
+ *
+ * Last Modified: 2012-05-17
+ * version: 1.03
+ *
+ * This program checked the oparation on jQuery 1.7.x
+ * 
+ */
+
+/*
+ * modified by KISTEM 
+ */
+
+var m_infoNum = new Array("0","0");
+var g_infoNum = new Array("0","0");
+
+var selected_mapno = "";
+var selected_category = "";
+
+var category_jump_window_flag = true;
+
+if(location.search.length > 1) {
+    var get = new Object();
+    var ret = location.search.substr(1).split("&");
+    
+    for(var i = 0; i < ret.length; i++) {
+        var r = ret[i].split("=");
+        get[r[0]] = r[1];
+    }
+    g_infoNum[0] = get['target'].split("-")[0];
+    g_infoNum[1] = get['target'].split("-")[1];
+    
+    if(typeof(get['mapno']) != 'undefined') {
+        selected_mapno = get['mapno'];
+    } 
+    if(typeof(get['cacd']) != 'undefined') {
+        selected_category = get['cacd'];
+    }
+} else {
+    g_infoNum[0] = "0";
+    g_infoNum[1] = "0";
+}
+////// 
+
+
+(function($){
+    $.fn.GoogleMaps = function( options ) {
+        var opts = $.extend( {}, $.fn.GoogleMaps.defaults, options );
+        
+        return this.each(function(){
+            var $self = this;
+            var latlng;
+            var mapOpts;
+            var map_canvas;
+            var markers = [];
+            var singleMarkerMode = ( !opts.file ) ? true : false;
+            var file = opts.file;
+            var dataType = ( opts.data_type ) ? opts.data_type : 'xml';
+            var infoWindowMode = ( opts.info_window == 1 || !singleMarkerMode ) ? true : false;
+            var html = ( singleMarkerMode ) ? opts.info_content : '';
+            var linkMode = ( opts.link_target ) ? true : false;
+            var linkTarget = opts.link_target;
+            var listMode = ( opts.list_target ) ? true : false;
+            var listTarget = opts.list_target;
+            var list_html;
+            var iconType = ( opts.icon_type ) ? opts.icon_type : '';
+            var icons = opts.icons;
+            var loadFlg = ( opts.loadFlg ) ? true : false;
+
+            // カテゴリ指定で飛んでくる場合
+            if(loadFlg && selected_category != "") {
+                file = '../xml/' + selected_category + '.xml';
+            }
+
+            // カテゴリに飛んだ時に吹き出しを出さないフラグ
+            if(loadFlg && selected_category != "" && typeof(get['mapno']) == 'undefined') {
+                category_jump_window_flag = false;
+            }
+ 
+            // 初期化
+            init();
+            
+            // JSON or XML 
+            function init(){
+                if( singleMarkerMode ) {
+                    GoogleMapsLoad();
+                } else {
+                    if( dataType == 'xml' ){
+                        XMLAjaxLoad();
+                    } else if( dataType == 'json' ) {
+                        JSONPAjaxLoad();
+                    }
+                }
+            }
+                
+            // Google Maps Load
+            function GoogleMapsLoad(){
+                latlng = new google.maps.LatLng( opts.lat, opts.lng );
+                
+                mapOpts = {
+                    center: latlng,
+                    zoom: opts.zoom,
+                    mapTypeControl: true,
+                    mapTypeId: opts.map_type_id
+                }
+                
+                map_canvas = new google.maps.Map( $self, mapOpts );
+                
+                // Single Marker Mode
+                if( singleMarkerMode ){ CreateMarker( map_canvas, latlng, iconType, html ); }
+
+                if(loadFlg){ // ロード時のプルダウンメニュー表示
+                    var xml_selecter_obj = document.getElementById("menu");
+	    				for(s_index=1;s_index
+'
+                                  + '
+'
+                                  + custom_icon_number + '．' + title
+                                  + '
+'
+                                  + '
+';*/
+                        /*list_html = '
+'
+                                  + '
+'+ custom_icon_number + '
+'
+                                  + '
+'
+                                  + '
+'+ title + '
+'
+                                  + '
+'
+                                  + '
+';*/
+                        list_html = '
+'
+                                  + title + '
+';
+                        $( listTarget ).on('change',function(){
+                            var selected_children = $( listTarget + ' option:selected');
+                            s_cacd = selected_children.attr("cacd");
+                            s_mapno = selected_children.attr("mapno");
+                            clickLinkElement( $(this).prop("selectedIndex"), s_cacd, s_mapno );
+                            return false;
+                        });
+                        $( listTarget ).append( list_html );
+                        /*$( listTarget + ' option:eq('+ cnt + ')' ).click(function(){
+                            s_cacd = $(this).attr("cacd");
+                            s_mapno = $(this).attr("mapno");
+                            clickLinkElement( cnt, s_cacd, s_mapno );
+                            return false;
+                        });*/
+                    }
+                }
+                
+                // Combination Trigger
+                function clickLinkElement( cnt, s_cacd, s_mapno ){
+                    m_infoNum[0] = document.getElementById("menu").selectedIndex;
+                    m_infoNum[1] = cnt;
+                    selected_category = s_cacd;
+                    selected_mapno = s_mapno;
+                    google.maps.event.trigger( markers[ cnt ], "click" );
+                }
+                
+                // XML File Load
+                function XMLAjaxLoad() {
+                    $.ajax({
+                        url: file,
+                        dataType: 'xml',
+                        cache: false,
+                        success: function( data ) {
+                            // Map Init
+                            GoogleMapsLoad();
+                            
+                            // For Bounds
+                            var bounds = new google.maps.LatLngBounds();
+
+                            var s_lat;
+                            var s_lng;
+                            var map_zoon;
+                            var setSLA_flag = false;
+                            $( "StartLookAt", data ).each(function(i){
+                                s_lat = $( this ).find( 'latitude' ).text();
+                                s_lng = $( this ).find( 'longitude' ).text();
+                                map_zoom = $( this ).find( 'mapzoom' ).text();
+
+                                m_infoNum[0] = "0";
+                                m_infoNum[1] = "0";
+                            });
+                            if(s_lat != "" && s_lng != "") {
+                                s_latlng = new google.maps.LatLng(s_lat,s_lng);
+                                setSLA_flag = true;
+                            }
+                            var hitlatlng = null;
+                            var markcnt = 0;
+                            // Loaded Data PreSetting
+                            $( "Placemark", data ).each(function(i){
+                                mlatlng = new google.maps.LatLng(
+                                    parseFloat( $( this ).find( 'latitude' ).text() ),
+                                    parseFloat( $( this ).find( 'longitude' ).text() )
+                                );
+                                if(selected_mapno == $( this ).find( 'mapno' ).text()) {
+                                    hitlatlng = mlatlng;
+                                }
+                                markcnt++;
+                            });
+                            
+                            // Loaded Data Setting
+                            $( "Placemark", data ).each(function(i){
+                                
+                                // Set Properties
+                                latlng = new google.maps.LatLng(
+                                    parseFloat( $( this ).find( 'latitude' ).text() ),
+                                    parseFloat( $( this ).find( 'longitude' ).text() )
+                                );
+                                var name = $( this ).find( 'name' ).text();
+                                var description = $( this ).find( 'description' ).text();
+                                var url = $( this ).find( 'url' ).text();
+                                var custom_icon = $( this ).find( 'icon' ).text();
+                                var custom_icon_number = $( this ).find( 'number' ).text();
+
+                                var extInfo = new Object();
+                                extInfo['cacd'] = $( this ).find( 'pcategory' ).text();
+                                extInfo['mapno'] = $( this ).find( 'mapno' ).text();
+                                extInfo['icon_type'] = $( this ).find( 'icontype' ).text();
+                                extInfo['balloon_img'] = $( this ).find('balloonimg').text();
+                                extInfo['point_zoom'] = $( this ).find('zoom').text();
+ 
+                                // Set Info Window HTML
+                                if(extInfo['balloon_img'] != "") { var balloon_style = "-img"; } else { var balloon_style = ""; }
+                                var html  = '
+'
+                                          + '
+' 
+                                          + custom_icon_number + '．' + name 
+                                          + '
+';
+
+                                // 吹き出し画像の表示
+                                if(extInfo['balloon_img'] != "") {
+                                    html += '
+';
+                                    html += '
+';
+                                }
+
+                                html += description;
+
+                                if(extInfo['balloon_img'] != "") {
+                                    html += '
+';
+                                    html += '
+';
+                                }
+                                html += '
+';
+                                
+                                CreateMarker( map_canvas, latlng, custom_icon, html, name, url, i, custom_icon_number, extInfo);
+                                if(selected_mapno == "") { 
+                                    if(setSLA_flag) {
+                                        map_canvas.setCenter(s_latlng);
+                                    } else {
+                                        bounds.extend( latlng );
+                                        if(markcnt > 1) {
+                                            map_canvas.fitBounds( bounds );
+                                        }
+                                        map_canvas.setCenter( bounds.getCenter() );
+                                    }
+                                    map_canvas.setZoom(parseInt(map_zoom));
+                                }
+                            });
+                        }
+                    });
+                }
+                
+                // JSONP File Load
+                function JSONPAjaxLoad() {
+                    $.getJSON( file + "&callback=?", function( json ) {
+                        // Map Init
+                        GoogleMapsLoad();
+                        
+                        // For Bounds
+                        var bounds = new google.maps.LatLngBounds();
+                        
+                        // Loaded Data Setting
+                        $.each( json.placemarks, function(i){
+                            var $obj = json.placemarks[i];
+                            
+                            // Set Properties
+                            latlng = new google.maps.LatLng(
+                                parseFloat( $obj.lookat['latitude'] ),
+                                parseFloat( $obj.lookat["longitude"] )
+                            );
+                            var name = $obj.name;
+                            var description = $obj.description;
+                            var url = $obj.url;
+                            var custom_icon = $obj.icon;
+                            
+                            // Set Info Window HTML
+                            var html  = '
+';
+                                html += '
+' + name + '
+';
+                                html += description;
+                                html += '
+';
+                            
+                            // Create Marker
+                            CreateMarker( map_canvas, latlng, custom_icon, html, name, url, i );
+                            
+                            // Fit Baunds
+                            bounds.extend( latlng );
+                            map_canvas.fitBounds( bounds );
+                            map_canvas.setCenter( bounds.getCenter() );
+                        })
+                    });
+                }
+                
+        });
+        
+    };
+
+    var info = new google.maps.InfoWindow();
+    
+    /* -------------------------------------------------------------------------
+    
+        set default options
+    
+    -------------------------------------------------------------------------- */
+    $.fn.GoogleMaps.defaults = {
+
+        // POSITION / ZOOM LEVEL
+        lat: 37.400529,
+        lng: 140.359743,
+        zoom: 15,
+        
+        // MAP TYPE
+        map_type_control: false,
+        map_type_id: google.maps.MapTypeId.ROADMAP,
+        
+        // PLACEMAKERS File PATH & Data Type
+        file: null,
+        data_type: null,
+        
+        // INFORMATION WINDOW
+        info_window: 0,
+        info_content: null,
+        info_window_class: 'info-data',
+        info_window_heading_level: 1,
+        
+        // LINK TARGET ELEMENT
+        link_target: null,
+        list_target: null,
+        
+        icon_type: null,
+        
+        // ICON / SHADOW IMG SETTING
+        icons :{
+            redDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/red-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            blueDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/blue-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            greenDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/green-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            ltblueDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/ltblue-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            yellowDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/yellow-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            purpleDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/purple-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            pinkDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/pink-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            },
+            orangeDot: {
+                markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/orange-dot.png',
+                markerSize: new google.maps.Size( 32, 32 ),
+                markerOrigin: new google.maps.Point( 0, 0 ),
+                markerAnchor: new google.maps.Point( 16, 32 ),
+                markerScaleSize: new google.maps.Size( 32, 32 ),
+                shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+                shadowSize: new google.maps.Size( 59, 32 ),
+                shadowOrigin: new google.maps.Point( 0, 0 ),
+                shadowAnchor: new google.maps.Point( 16, 32 ),
+                shadowScaleSize: new google.maps.Size( 59, 32 )
+            }
+        }
+    };
+    
+})(jQuery);

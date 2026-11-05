@@ -1,0 +1,255 @@
+
+URL https://kutsukake-terrace.info/access.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/b116dbc902666184f3089a74.html
+SCRIPT 
+var imHeader_imMenuObject_02_settings = {
+	'menuId': 'imHeader_imMenuObject_02',
+	'responsiveMenuEffect': 'push',
+	'responsiveMenuLevelOpenEvent': 'mouseover',
+	'animationDuration': 1000,
+}
+x5engine.boot.push(function(){x5engine.initMenu(imHeader_imMenuObject_02_settings)});
+$(function () {
+    $('#imHeader_imMenuObject_02_container ul li').not('.imMnMnSeparator').each(function () {
+        $(this).on('mouseenter', function (evt) {
+            if (!evt.originalEvent) {
+                evt.stopImmediatePropagation();
+                evt.preventDefault();
+                return;
+            }
+        });
+    });
+});
+$(function () {$('#imHeader_imMenuObject_02_container ul li').not('.imMnMnSeparator').each(function () {    var $this = $(this), timeout = 0;    $this.on('mouseenter', function () {        if($(this).parents('#imHeader_imMenuObject_02_container-menu-opened').length > 0) return;         clearTimeout(timeout);        setTimeout(function () { $this.children('ul, .multiple-column').stop(false, false).fadeIn(); }, 250);    }).on('mouseleave', function () {        if($(this).parents('#imHeader_imMenuObject_02_container-menu-opened').length > 0) return;         timeout = setTimeout(function () { $this.children('ul, .multiple-column').stop(false, false).fadeOut(); }, 250);    });});});
+$(function () {$('#imHeader_imMenuObject_02_container > ul > li').not('.imMnMnSeparator').each(function () {    var $this = $(this), timeout = 0;    $this.on('mouseenter', function () {        clearTimeout(timeout);        var overElem = $this.children('.sweeper');        if(overElem.length == 0)            overElem = $this.children('.label-wrapper').clone().appendTo($this).wrap('<div class="sweeper"></div>').addClass('label-wrapper-over').parent();        setTimeout(function(){overElem.addClass('animated');}, 10);    }).on('mouseleave', function () {        var overElem = $this.children('.sweeper');        overElem.removeClass('animated');        timeout = setTimeout(function(){overElem.remove();}, 500);    });});});
+
+TEXT アクセス - 　くつかけテラス（中軽井沢駅・中軽井沢図書館）公式サイト コンテンツに移動します アクセス - 　くつかけテラス（中軽井沢駅・中軽井沢図書館）公式サイト 「くつかけテラス」・「軽井沢図書館」 メニューをスキップ × TOP 施設案内 アクセス 軽井沢図書館 軽井沢町HP 商店・企業 ご案内地図 中軽井沢駅と併設です。 Copyright © 2007 Kutsukake Terrace. All Rights Reserved. コンテンツに戻る このWebサイトを使用するには、JavaScript を有効にする必要があります。
+LINK アクセス https://kutsukake-terrace.info/access.html
+LINK  https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25708.35101391534!2d138.592603!3d36.347603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e8ddca2cb86a6e0!2z5Lit6Lu95LqV5rKi6aeF!5e0!3m2!1sja!2sjp!4v1674685647740!5m2!1sja!2sjp
+
+URL https://www.city.nakano.nagano.jp/docs/opendata/ STATUS 200 FILE data/evidence/national/locations-chubu-east-south/c9dfbef39f1452c412370c6e.html
+SCRIPT 
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,ko,zh-CN,zh-TW,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+
+TEXT 中野市オープンデータ一覧 | 長野県中野市 本文へ移動 中野市 「故郷」のふるさと 背景色 白 青 黒 文字の大きさ 大 中 小 ふりがなをつける よみあげる 防災・緊急時情報 暮らしの情報 行政情報 産業・ビジネス 観光情報 中野市について TOP カテゴリ 区分 お知らせ TOP カテゴリ 区分 手続き TOP カテゴリ 分野 行政情報 情報公開 TOP カテゴリ 分野 行政情報 政策・施策 TOP カテゴリ 分野 中野市について 中野市の統計 TOP 組織 総務部 企画財政課 DX推進係 中野市オープンデータ一覧 公開日
+          2015年8月31日 更新日
+          2021年7月1日 中野市はオープンデータを推進します 中野市は、市が保有する情報を 積極的にオープンデータとして公開し、行政サービス向上や地域情報化を推進していきたいと考えています。そこで、本ページにおいてオープンデータとして各種情報を掲載いたします。 今後は、個人情報といった公開ができない情報を除き、市民の皆さんや民間企業等が自由に加工・編集等ご利用いただけるよう二次利用が可能なデータ形式で公開を進め、掲載情報を充実させてまいります。 オープンデータの利用にあたって 本ページ(URLが http://www.city.nakano.nagano.jp/docs/opendata/ で始まるページ)に掲載するデータ及びリンク先の当市のデータのご利用には、中野市オープンデータ利用規約の遵守をお願いします。なお、データのご利用をいただくことで利用規約に同意したものとみなします。また、利用規約の内容は予告なしに変更することがありますので、ご利用の際は利用規約の最新の内容をご確認ください。 中野市オープンデータ利用規約 本ページに掲載するデータについては、 クリエイティブ・コモンズ 表示 4.0 国際 ライセンス の下に提供されています。 新たに、オープンデータとしての情報の作成・公開をご希望される場合は、下記のフォームからお知らせください。 できる限り正しいデータを公開したいと考えていますので、間違い等を発見した場合についても、下記のフォームからお知らせください。 中野市オープンデータ提案フォーム（ながの電子申請） ※以下のQRコードからもアクセス可能 データ一覧 住基人口集計 年度 4月時点集計 月別の集計 （12か月分） データ掲載日 平成17年度 XLS：49KB ZIP：166KB 平成27年8月31日 平成18年度 XLS：69KB ZIP：219KB 平成27年8月31日 平成19年度 XLS：71KB ZIP：211KB 平成27年8月31日 平成20年度 XLS：67KB ZIP：210KB 平成27年8月31日 平成21年度 XLS：68KB ZIP：214KB 平成27年8月31日 平成22年度 XLS：68KB ZIP：214KB 平成27年8月31日 平成23年度 XLS：70KB ZIP：238KB 平成27年8月31日 平成24年度 XLS：70KB ZIP：244KB 平成27年8月31日 平成25年度 XLS：77KB ZIP：245KB 平成27年8月31日 平成26年度 XLS：77KB ZIP：245KB 平成27年8月31日 平成27年度 XLS：78KB ZIP：248KB 平成28年5月16日 平成28年度 XLS：78KB ZIP：244KB 平成29年9月1日 平成29年度 XLS：78KB ZIP：248KB 平成30年9月1日 平成30年度 XLS：78KB ZIP：249KB 平成31年4月1日 平成31年度（令和元年度） XLS：78KB ZIP：249KB 令和2年4月1日 令和2年度 XLS：78KB ZIP：250KB 令和3年4月1日 令和3年度 XLS：78.5KB ZIP：262KB 令和5年4月25日 令和4年度 XLS：98.5KB ZIP：262KB 令和5年4月25日 令和5年度 XLS：98.5KB ZIP：255KB 令和6年6月7日 令和6年度 XLS：98.5KB ZIP：257KB 令和6年6月7日 令和7年度 XLS：98.5KB ZIP：231KB 令和7年6月24日 令和８年度 XLS：73.5KB ー 令和8年6月5日 ※令和7年11月分から標準システムの移行により、住所別人口シートがなくなりましたので、ご承知おきください。 公衆無線LANアクセスポイント一覧 Excel版 CSV版 データ掲載日 データ更新日 XLSX：14KB CSV：4.33KB 平成31年2月1日 令和3年7月1日 ※内閣官房 情報通信技術（IT）総合戦略室が示す「推奨データセットデータ項目定義書」フォーマット標準例に準拠しています。 公衆無線LANの利用方法等については、 こちら をご確認ください。 位置情報 データ名 データダウンロード （テキスト/Excel/RDF） 地図表示 （GoogleMap上） データ掲載日 市内教育機関 （学校・公民館・図書館・博物館） LINK 地図表示 平成27年8月31日 市内保育所等 （児童クラブ、保育園、幼稚園） LINK 地図表示 平成27年8月31日 市内避難収容場所 （指定緊急避難場所） LINK 地図表 示 平成27年8月31日 市内 避難収容場所 （指定避難所） LINK 地図表 示 平成27年8月31日 市内避難収容場所 （一時避難所） LINK 地図表 示 平成27年8月31日 ※データのダウンロード及び地図上への表示は、LinkData（外部サイト）においてご確認いただけます。 広報なかの 広報なかの(PDF版)に掲載されている情報は、オープンデータとして利用できます。ただし、紙面内の文字、文章、表のみとし、写真、図については、オープンデータの対象外とさせていただきます。 広報なかのバックナンバーのページをご覧ください。 お問い合わせ 総務部　企画財政課　DX推進係 TEL： 0269-22-2111(217,402) E-Mail： dx@city.nakano.nagano.jp 暮らしのシーンから探す 妊娠・出産 子育て 入学・学校 成人・仕事・結婚 住まい・引っ越し ごみ・環境 文化・生涯学習・スポーツ 高齢者・介護・障がい者 健康・福祉・医療 お悔やみ 戸籍・住民票 税金・保険・年金 アクセシビリティ 著作権・リンク 個人情報取扱 中野市公式HPに関するお問い合わせ サイトマップ 広告掲載募集 中野市役所 〒383-8614　長野県中野市三好町一丁目3番19号　電話0269-22-2111（代表） 豊田庁舎（市民課豊田窓口係） 〒389-2192　長野県中野市大字豊津2508番地　電話0269-38-3111 Copyright © Nakano City 2013. All Rights Reserved. ページの先頭へ
+LINK LINK http://linkdata.org/work/rdf1s3484i/shinshu_nakano_map.kyoiku.html?key=#work_information
+LINK 地図表示 http://citydata.jp/%E9%95%B7%E9%87%8E%E7%9C%8C/%E4%B8%AD%E9%87%8E%E5%B8%82/%E4%B8%AD%E9%87%8E%E5%B8%82%E5%86%85%E3%81%AE%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD%E4%BD%8D%E7%BD%AE/rdf1s3484i/shinshu_nakano_map.kyoiku.html
+LINK LINK http://linkdata.org/work/rdf1s3484i/shinshu_nakano_map.hoiku.html?key=#work_information
+LINK 地図表示 http://citydata.jp/%E9%95%B7%E9%87%8E%E7%9C%8C/%E4%B8%AD%E9%87%8E%E5%B8%82/%E4%B8%AD%E9%87%8E%E5%B8%82%E5%86%85%E3%81%AE%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD%E4%BD%8D%E7%BD%AE/rdf1s3484i/shinshu_nakano_map.hoiku.html
+LINK LINK http://linkdata.org/work/rdf1s3483i/shinshu_nakano_map_hinan.kinkyu.html?key=#work_information
+LINK 地図表 示 http://citydata.jp/%E9%95%B7%E9%87%8E%E7%9C%8C/%E4%B8%AD%E9%87%8E%E5%B8%82/%E4%B8%AD%E9%87%8E%E5%B8%82%E5%86%85%E3%81%AE%E9%81%BF%E9%9B%A3%E5%8F%8E%E5%AE%B9%E5%A0%B4%E6%89%80/rdf1s3483i/shinshu_nakano_map_hinan.kinkyu.html
+LINK LINK http://linkdata.org/work/rdf1s3483i/shinshu_nakano_map_hinan.shitei.html?key=#work_information
+LINK 地図表 示 http://citydata.jp/%E9%95%B7%E9%87%8E%E7%9C%8C/%E4%B8%AD%E9%87%8E%E5%B8%82/%E4%B8%AD%E9%87%8E%E5%B8%82%E5%86%85%E3%81%AE%E9%81%BF%E9%9B%A3%E5%8F%8E%E5%AE%B9%E5%A0%B4%E6%89%80/rdf1s3483i/shinshu_nakano_map_hinan.shitei.html
+LINK LINK http://linkdata.org/work/rdf1s3483i/shinshu_nakano_map_hinan.ichiji.html?key=#work_information
+LINK 地図表 示 http://citydata.jp/%E9%95%B7%E9%87%8E%E7%9C%8C/%E4%B8%AD%E9%87%8E%E5%B8%82/%E4%B8%AD%E9%87%8E%E5%B8%82%E5%86%85%E3%81%AE%E9%81%BF%E9%9B%A3%E5%8F%8E%E5%AE%B9%E5%A0%B4%E6%89%80/rdf1s3483i/shinshu_nakano_map_hinan.ichiji.html
+LINK サイトマップ https://www.city.nakano.nagano.jp/sitemap.html
+
+URL https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/935530f3afa836190c50229c.html
+TEXT ふれあいまつり このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 長野県Nagano Prefecture 音声読み上げ ふりがなをつける 文字サイズ・色合い変更 Foreign Language お問い合わせ 検索 防災・安全 暮らし・環境 健康・医療・福祉 教育・子育て 仕事・産業・観光 社会基盤 県政情報・統計 アクセス メニュー 検索 閉じる 閉じる キーワードから探す 検索の使い方 よく検索されるキーワード よく検索されるキーワード 目的から探す 目的から探す 閉じる 閉じる ホーム > 諏訪湖流域下水道事務所 > ふれあいまつり ここから本文です。 諏訪湖流域下水道事務所 クリーンレイク諏訪ふれあいまつり 2026クリーンレイク諏訪ふれあいまつり 「2026クリーンレイク諏訪ふれあいまつり」を開催します。 9月10日は「下水道の日」として制定されており、下水道の役割や大切さを広く知ってもらう機会となっています。 本イベントは、普段あまり意識されることのない下水道の仕組みや役割について、楽しく学べる体験を通じて、住民の皆さまにより深く理解していただくことを目的に下水道終末処理場を一般開放します。 下水道に関するイベントを多数準備しております。皆様のご来場をお待ちしています。 開催案内のチラシのダウンロードはこちら（PDF：1,748KB） 日時　9月12日土曜日　10時00分～15時00分（小雨決行・荒雨時中止） 場所　クリーンレイク諏訪（諏訪市大字豊田字湖畔1866-1） ＊入場無料、予約不要です。 アルクマがやってくる!! 信州をクマなく歩きまくり、信州の魅力を世の中にクマなく広めている「アル クマ」が「2026クリーンレイク諏訪ふれあいまつり」に遊びに来てくれます。当日はアルクマグッズがもらえるイベントも盛りたくさん、ぜひ足を運んでみてください。また、当日はご当地マスコットたちも登場しますのでお楽しみに。 （クリアファイル、ステッカー、ウェットティッシュ） 使用済みマンホール蓋の売却のご案内 下水道への理解を深めてもらう事を目的とし、長年使われてきた鋳鉄製の使用済みマンホー ル蓋(諏訪湖流域下水道オリジナルデザイン)を売却します。 購入を希望される方は、本案内および「マンホール蓋購入申込書」をご確認のうえ、お申込みください。個人・法人を問わずお申込み可能です。 なお、枚数は 10枚 （ 3,000円／枚(税込) ）とし、ふれあいまつり会場で申込みが可能です。 売却は先着順 となります。 詳しくは、下記ご案内及び購入申込書のご確認ください。 ・ 使用済みマンホール蓋の売却のご案内（PDF：174KB） ・ マンホール蓋購入申込書（PDF：117KB） 各種イベント イベントの詳細は随時更新しています。 処理場見学 （3コースから選べます） ▶水処理コース（30分程度） ▶汚泥処理コース（45分程度） ▶冒険・展望コース（60分程度） スタンプラリー・クイズラリー ▶「体験する」をテーマに、体験毎にスタンプが押せます。スタンプを全部あつめると、いいことあるかも！ ▶ブースにあるクイズに答えて景品交換所に行こう！ 展示（屋外） ▶建設機械の展示・体験 ▶下水道管工事の工法紹介 展示（室内） ▶「下水道」に関するパネル や 「諏訪湖の浄化対策」に関するパネルなどを展示 ▶子ども向けビデオも上映しています！ ステージイベント ▶「書道パフォーマンス」や「ダンスパフォーマンス」 実験や観察（微生物観察など） ▶「顕微鏡でのプランクトン観察」や「水の実験」などができます！ ▶「諏訪湖のヒシ」を使った工作もできる！（作った作品は持ち帰れます） マンホール蓋の展示 ▶諏訪湖流域下水道 及び 関連公共下水道の蓋を関連市町村のご協力のもと、大集合します！ ▶他にも、県内他自治体のマンホール蓋展示もあります（信州マンホール蓋展） マンホールカードの配布 ▶諏訪湖流域下水道 及び 関連公共下水道のマンホールカードを関連市町村と協力し、配布します！ ▶「スワキング」デザインふたの新マンホールカード配布が始まります！ マンホール蓋の売却 ▶実際に使用していた蓋を、先着順にて売却します！ キッチンカーによる軽食等の販売 ▶お腹が空いたら、キッチンカーへGO！ お楽しみ ▶ダンボール箱を組合わせた迷路が出現！ 主催　2026クリーンレイク諏訪　ふれあいまつり実行委員会 2025クリーンレイク諏訪ふれあいまつり 「2025クリーンレイク諏訪ふれあいまつり」を開催しました。 ふれあいまつり（PDF：1,820KB） 2024クリーンレイク諏訪ふれあいまつり 「2024クリーンレイク諏訪ふれあいまつり」を開催しました。 ふれあいまつり（PDF：586KB） PDF形式のファイルをご覧いただく場合には、Adobe Acrobat Readerが必要です。Adobe Acrobat Readerをお持ちでない方は、バナーのリンク先から無料ダウンロードしてください。 サイトマップ 長野県庁 法人番号1000020200000 〒380-8570 長野県長野市大字南長野字幅下692-2 電話：026-232-0111（代表） このサイトの考え方 ウェブアクセシビリティ方針 個人情報について サイトマップ リンク集 リンクについて 県庁フロア・アクセス案内 お問い合わせ ページの先頭へ戻る Copyright © Nagano Prefecture. All Rights Reserved.
+LINK アクセス https://www.pref.nagano.lg.jp/zaikatsu/kensei/gaiyo/chousha/floor/index.html
+LINK サイトマップ https://www.pref.nagano.lg.jp/sitemap/010306010.html
+LINK ウェブアクセシビリティ方針 https://www.pref.nagano.lg.jp/accessibility/index.html
+LINK サイトマップ https://www.pref.nagano.lg.jp/sitemap.html
+LINK 県庁フロア・アクセス案内 https://www.pref.nagano.lg.jp/zaikatsu/kensei/gaiyo/chousha/floor/index.html
+
+URL https://www.go-nagano.net/food-and-drink/id21871 STATUS 200 FILE data/evidence/national/locations-chubu-east-south/d4d442b8becf6c22a89d38c4.html
+SCRIPT 
+try{
+_rcmdjp._displayRecommend({
+code: '179395944367',
+type: 'pv',
+template: 'tracking'
+});
+} catch(err) {}
+
+SCRIPT 
+      try{
+        _rcmdjp._displayRecommend({
+          code: '179395944367',
+          type: 'pv',
+          template: 'hs-go-nagano'
+        });
+      } catch(err) {}
+    
+SCRIPT !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+TEXT 新しいジブン発見旅－櫻井麻美さんのニチコレ（日日是好日）第31話　「酒のまち・佐久で体験する　角打ちの世界」 | Go! NAGANO 長野県公式観光サイト ニュースレター 検索 検索 SNS Facebook X LINE Language 日本語 English 中文（简体） 中文（繁體） 한글 ภาษาไทย bahasa Indonesia トリップアイデア エリアガイド トラベルインフォ イベント情報 観光スポット HOME 食 新しいジブン発見旅－櫻井麻美さんのニチコレ（日日是好日）第31話　「酒のまち・佐久で体験する　角打ちの世界」 新しいジブン発見旅－櫻井麻美さんのニチコレ（日日是好日）第31話　「酒のまち・佐久で体験する　角打ちの世界」 地域：佐久エリア , 日本酒・酒蔵 宿場町のまちかどにある角打ちで、行き交う人を眺めながら日本酒を味わう。いにしえより続く酒や人との一期一会は、旅をよりおもしろいものにする。 更新日： 2024年10月08日 ここへ来て、日本酒が気になる 振り返れば若い頃は、もったいない酒の飲み方をしてきたと思う。ゆっくりと酒を味わうことなく、ただ日頃の憂さを晴らし、騒ぎ散らすために酒を飲む。そんな風にばかり酒を飲んでいた自分が、今となっては恥ずかしい。消したい過去もたくさんある。今改めて、大変失礼なことをしたと、酒に謝りたいくらいだ。その反動からか、歳を重ねてからは、酒から遠ざかっていた。若い頃に充分飲んだし、そんな風に騒ぎ散らすことが恥ずかしい年齢になってきたからだ。 しかし、長野に移住してきてから、俄然、日本酒が気になり始めた。全国でも二番目だというほど、長野県には酒蔵がとても多い。スーパーにたくさんの銘柄が並んでいることにも、カルチャーショックを受けた。普通のスーパーに、こんなに大きな日本酒コーナーが設けられているなんて！（ちなみに、きのこコーナーの大きさとその多様な種類にも同様に驚かされた。）それだけ、長野にいると日本酒がとても身近なのだ。 少しずつ、気になる銘柄を試すようになり、お気に入りのものも増えた。しかし、その奥深い世界の深淵は底知れない。まだ「日本酒が好き」と、公然と口に出すのも憚られる。ただ私は、日本酒が好きではあるけれど、日本酒知識人のように蘊蓄を蓄えたいわけではない。好きな酒と、もっと出会ってみたいだけなのだ。スーパーでは誰かに質問することもできないし、酒蔵に行くのは少し敷居が高い気もする。もっと気軽に日本酒と出会える場所はないだろうか。 そのように悶々としていた頃、私は運命的な出会いを果たしてしまった。角打ち。角打ち？　私はその時、看板のその文字を二度見した。ここにあった。私が求めていたものは。商店街の中ほどで、私はひとり、心の中で小躍りをせざるを得なかったのだった。 熱狂の夜に見つけた　まちかどの角打ち『十三くら』 商店街の中程にある『十三くら』。駅からも歩いて来られるのが良い まだオープンしたてだが、レトロな景色にすでに溶け込んでいる 店内は日本酒が陳列された棚とカウンター。落ち着く大きさ 酒屋や酒蔵の証、杉玉も堂々店内に吊るされている 佐久エリアの酒蔵のメイン銘柄が揃えられている 中山道の江戸から22番目の宿場、佐久市にある岩村田。左右にアーケードの屋根がある岩村田商店街は、少しレトロな雰囲気が心地よくて、個人的にもよく訪れる場所だ。その日は祇園祭で、どこからともなく大勢の人たちが商店街に集まり、歩行者天国になった車道で神輿が暴れていた。人々に混じってその夏の熱狂に酔いしれていた時、ふと見慣れない店を見つけた。それが角打ちの店、『十三くら』だった。 角打ちという言葉には、日本酒に詳しそうな年配の男性がいく場所という、すごく個人的な偏見を持っていた。しかし、その時の店内には30〜40代くらいの女性達が所狭しとカウンターや陳列棚の前に立っていた。その景色に、私は釘付けになった。なんだ、ここは！すぐさま店内に入りたかったのだが、未成年を連れて祭りに来ていたので、泣く泣くその日は諦めた。 祭りの熱は冷めたが、角打ちへの思いは日に日に熱くなる。幾度となくあの店を思い出しては、いつ行こうかと計画をしていた。営業日や営業時間もSNSでチェックしまくった。そしてついに、機は熟した。祭りからひと月以上過ぎた頃、満を持して店に再訪したのだ。 平日。学生達が帰路に着き始めるその頃、いつもは車で通る道を歩く。祭りの時とは違い、のんびりとした空気が漂う商店街。すぐに見えてきた看板に、顔が緩む。ガラスのドア越しに店内を覗くと、入り口に並べられたたくさんの一升瓶に西日が輝いている。美しい。日本酒が好きなのは、そもそも瓶が好きだからなのかもしれない。 「いらっしゃいませ。」 笑顔で迎え入れられ、挨拶を交わす。そのオープンな雰囲気に、確信する。ここは、居心地が良い店に違いない。奥には、たくさん並ぶ日本酒たちとカウンター。私は抑えきれないわくわくと、角打ちデビューを果たす誇らしい気持ちと共に、中へと足を踏み入れた。 酒のまちで、お気に入りの一杯に出会う おちょこを片手に何を飲むか迷うのも幸せな時間 レンタルおちょこもあるので初めての人も安心 おすすめしてもらったこちらをいただくことに！ カウンターから振り返ればおつまみコーナー おちょこ代を合わせても1000円以下！気軽な立ち飲みを楽しめる 佐久エリアのクラフトビールも取り扱っている 何を隠そう、佐久エリアは13もの酒蔵を擁する酒のまちである。その全ての酒蔵のメイン銘柄を揃えているのが『十三くら』だ。つまり、佐久の日本酒入門にもってこいの店ということだ。営業時間は15時半から18時半と夕方3時間ほど。飲み会前の待ち合わせや0次会、仕事終わりに一杯といった使い方にちょうど良い。居酒屋とは違い、早い時間に気軽にさくっと飲めるのも、私好みだ。明るいうちから飲む酒ほど、うまいものはない。 角打ちが初めての私。まず始めにシステムを教えてもらうことにした。 そもそも角打ちとは、酒屋の店内で酒を飲むことや、そのように酒を飲むことができる店のことを指す。多くは立ち飲みスタイルで、『十三くら』もそれを踏襲している。陳列棚や冷蔵庫にある商品を購入し、カウンターで立ち飲みする。飲食店とは違うので、基本的には全てセルフサービスだ。もちろん酒屋として、購入のみでも利用できる。 立ち飲みをするには、最初におちょこを購入する。お試しのレンタルおちょこもあるので、初めての人にも安心だ。早速おちょこを片手に持つ。が、冷蔵庫を前に何を頼もうか、迷ってしまう。せっかくだから、新しいお気に入りを見つけたい。 「日本酒ビギナーなんですけど、何かおすすめってありますか？」 勇気を出して店員さんに質問すると、にっこりとした笑顔でこちらを振り向く。そして、普段どんなものを飲みますか？とすぐさま聞かれる。うれしい。こういう会話を私は求めていたのだ。 よく買うお気に入りの酒蔵や銘柄を告げると、なるほど……ではこちらがいいかもしれません！と彼女はいくつかの銘柄を示してくれた。それぞれの特徴や味の方向性を、軽やかに話してくれる。すごい。かっこいい。聞けば、旅行に行った先々で、酒蔵巡りをしているのだという。なんて楽しそうな旅なのだろう。彼女に全てを委ね、では、それで、とおすすめされたものをいただくことにした。 冷蔵庫から出してもらった、初めて飲む銘柄の酒。一口飲むと、柔らかなその香りがふんわりと鼻に抜けていく。おいしい。まだ見ぬ酒をまた一つ、知ることができた喜びが溢れる。好みにぴったりだと彼女に告げると、実は佐久には女性的なお酒が多いんですよ、と言う。私の好みは、芳醇とか、まろやかとか、そういう表し方をされるもの。（これも、彼女に教えてもらった。）佐久にはきっとまだまだ好きな酒があるのだろうと思うと、もっといろんな銘柄を飲んでみたいし、日本酒に関するいろんなことを知りたい気持ちになった。 その時、ああ、と納得した。別に蘊蓄を垂れたいわけではない。けれど、こうやって好きなものを探しているうちに、知識がどんどんと自分の中に積み重なり、気づけば日本酒の深みにはまっていくのだろう。こういう、おいしい、とか、楽しい、とか、知りたいという動機になる純粋な体験がここには溢れている。私の中の角打ちに対するイメージも、この頃にはすっかりと変わっていたのだった。 人と、酒に、出会う場所 旧中山道を行き交う人を眺めながら、続く伝統の酒を味わおう おつまみも追加で購入し、おちょこを片手にカウンター越しの会話を楽しむ。気張らずに、リラックスできる店の雰囲気に、ついつい喋りすぎてしまった。しかしこれも、一人で店に行くことの醍醐味だろう。 「ここへ来た人が、いろんな店を教えてくれるんですよ。」 店員さんも、人懐っこく笑う。この辺りの地元民がよく行く店はどこか、あそこのあれは絶品だった、あれは自分好みではなかった、インターネットには載っていないそういう情報交換ができるのは、酒場ならではだ。 どんどんと話が発展して、なぜか最終的には隣町の動物園には何の動物がいたか、の話になった。二人ともうろ覚えだったので、獰猛なやつがいたような気がするが、それが何かどうしても確信が持てない。虎じゃない？いや、ライオンじゃない？虎の方が強そうじゃない？いや、百獣の王はライオンでしょう。そんな堂々巡りの会話に、久しぶりに大笑いした。 気づけば西日はだいぶ傾き、空が赤くなり始めている。カウンターからは、帰路に着く人々が歩いている様子がよく見える。宿場町だったこの場所では、当時も同じように人が行き交っていた。そして彼らもきっと、同じように酒や一期一会を楽しんでいたのだろう。そう思うと、おちょこに揺れるこの透明な液体は、どうしても特別なもののように思える。日本酒は、歴史・文化・風土・伝統が全て詰まった作品なのだ。 「また来ます。」 そう告げて店を後にし、夕暮れのまちへ歩き出す。電車がちょうど来たのだろう、駅の方からは学生たちが歩いてくる。彼らが勉学に励んでいる間に酒を飲んでいた自分に対して、少しばかりの罪悪感を抱かなくもなかったが、それもまた、大人になるということなのだ。そう自分に言い聞かせ、酒臭さに気づかれぬよう息を止めながら、でも胸を張ってすれ違うのだった。 取材・撮影・文：櫻井 麻美 『十三くら』 https://www.instagram.com/kakuuchi_13kura ＜著者プロフィール＞ 櫻井 麻美（Asami Sakurai） ライター、ヨガ講師、たまにイラストレーター 世界一周したのちに日本各地の農家を渡り歩いた経験から、旅をするように人生を生きることをめざす。2019年に東京から長野に移住。「あそび」と「しごと」をまぜ合わせながら、日々を過ごす。 https://www.instagram.com/tabisuru_keshiki あわせて読みたい 古い映画館からしか、得られない体験がある『長野相生座・ロキシー』 懐かしくて新しい「量り売り」で、健やかな買い物を始めよう 閲覧に基づくおすすめ記事 GoNAGANO NEWS LETTER ニュースレターで 旬の情報をお届け！ 長野県観光機構では、長野県公式観光サイト「Go NAGANO」のおすすめコンテンツ、その他長野県内のイベント情報等をご紹介する観光メールマガジン「Go NAGANO Newsletter」を発行しています。お得な情報や隠れたおすすめスポット情報などもありますので、是非ご登録ください。（写真：希望湖 ©斑尾高原観光協会） ニュースレターを受け取る メールマガジンの案内 個人情報について 利用規約 観光のお問い合わせは Go NAGANO 観光ナビゲートセンターへ 0120-20-1588 サイト運営者 一般社団法人 長野県観光機構 Copyright © Nagano Prefecture & Nagano Tourism Organization 2007 MENU トリップアイデア エリアガイド トラベルインフォ イベント情報 観光スポット ニュースレター
+
+URL https://www.vill.asahi.nagano.jp/official/soshikikarasagasu/somuka/somutanto/5/index.html STATUS 200 FILE data/evidence/national/locations-chubu-east-south/df8288cf3da60f5f9a6d23b3.html
+SCRIPT 
+$(function() {
+  $('.headerNaviDynBlock').each(function() {
+    var block = $(this);
+    var list = block.find('.headerNaviDynList');
+    block.css('display', 'none');
+
+    var url = block.attr('url');
+    if (!url) {
+      url = block.attr('data-url');
+      if (!url) {
+        return;
+      }
+    }
+
+    $.getJSON(url, function(json) {
+      var templateOrig = block.find('.headerNaviPageTemplate');
+      if (templateOrig.length == 0) {
+        return;
+      }
+      var template = templateOrig.clone().removeClass('headerNaviPageTemplate').addClass('pageEntity').css('display', '');
+      block.find('.pageEntity').remove();
+      var count = 0;
+      for (var j=0; j<json.length; j++) {
+        var item = json[j];
+        if (item.is_category_index && item.child_pages_count == 0) {
+          continue;
+        }
+        var entity = template.clone();
+        entity.find('.pageLink').attr('href', item.url).text(item.page_name);
+        entity.find('.pageDescription').text(item.description);
+        list.append(entity);
+        count++;
+      }
+      if (count > 0) {
+        block.css('display', '');
+      }
+      templateOrig.remove();
+    });
+  });
+});
+
+SCRIPT 
+  function cmsDynDateFormat(date, format) {
+    var jpWeek = ['日', '月', '火', '水', '木', '金', '土'];
+    return format.replace('%Y', date.getFullYear()).replace('%m', ('0' + (date.getMonth() + 1)).slice(-2)).replace('%d', ('0' + date.getDate()).slice(-2)).replace('%a', jpWeek[date.getDay()])
+        .replace('%H', ('0' + date.getHours()).slice(-2)).replace('%M', ('0' + date.getMinutes()).slice(-2)).replace('%S', ('0' + date.getSeconds()).slice(-2));
+  }
+  function cmsDynExecuteGetPageList() {
+    var outerBlocks = $('.pageListDynBlock');
+    outerBlocks.each(function() {
+      var block = $(this);
+      block.find('.pageListExists').css('display', 'none');
+      block.find('.pageListNotExists').css('display', 'none');
+
+      var url = block.attr('data-url');
+
+      var cond = {};
+
+      cond.limit = parseInt(block.attr('data-limit'));
+      cond.showIndex = parseInt(block.attr('data-show-index'));
+      cond.showMobile = parseInt(block.attr('data-show-mobile'));
+      dateBegin = block.attr('data-date-begin');
+      dateSpan = block.attr('data-date-span');
+
+      cond.curPageNo = block.attr('data-current-page-no');
+      cond.dirClass = block.attr('data-dir-class');
+      cond.pageClass = block.attr('data-page-class');
+
+      cond.timeBegin = 0;
+      if (dateBegin) {
+        cond.timeBegin = new Date(dateBegin);
+      } else if (dateSpan) {
+        cond.timeBegin = Date.now() - dateSpan * 86400000;
+      }
+      var recentSpan = block.attr('data-recent-span');
+      cond.recentBegin = 0;
+      if (recentSpan) {
+        cond.recentBegin = Date.now() - recentSpan * 86400000;
+      }
+      cond.dateFormat = block.attr('data-date-format');
+      if (!cond.dateFormat) {
+        cond.dateFormat = '%Y/%m/%d %H:%M:%S';
+      }
+      cond.joinGrue = block.attr('data-join-grue');
+      if (!cond.joinGrue) {
+        cond.joinGrue = ' , ';
+      }
+      cond.eventDateFormat = block.attr('data-event-date-format');
+      if (!cond.eventDateFormat) {
+        cond.eventDateFormat = cond.dateFormat;
+      }
+      cond.eventType = block.attr('data-event-type');
+      cond.eventField = block.attr('data-event-field');
+      cond.eventArea = block.attr('data-event-area');
+      eventDateSpan = block.attr('data-event-date-span');
+      cond.eventTimeEnd = 0;
+      if (eventDateSpan) {
+        cond.eventTimeEnd = Date.now() + eventDateSpan * 86400000;
+      }
+
+      // タグ
+      cond.tagDisplay = block.attr('data-show-tags');
+      cond.tagPosition = block.attr('data-tags-position');
+      cond.tagFilterTargets = block.attr('data-tag-filter-targets');
+
+      $.getJSON(url, function(json) {
+        cmsDynApplyPageListJson(block, json, cond);
+      }).fail(function(jqxhr, textStatus, error) {
+        block.css('display', 'none');
+      });
+    });
+  }
+  function cmsDynApplyPageListJson(block, json, cond) {
+    var now = Date.now();
+    var list = block.find('.pageListBlock');
+    var template = list.find('.pageEntity:first').clone();
+    list.find('.pageEntity').remove();
+
+    var count = 0;
+
+    for (var i = 0; i < json.length; i++) {
+      var item = json[i];
+      var itemDate = new Date(item.publish_datetime);
+
+      if (!cond.showIndex && item.is_category_index) {
+        continue;
+      }
+      if (!cond.showMobile && item.is_keitai_page) {
+        continue;
+      }
+      if (cond.timeBegin && itemDate.getTime() < cond.timeBegin) {
+        continue;
+      }
+
+      // タグによる絞込み
+      if ('tag' in item && item.tag && cond.tagFilterTargets != null) {
+        var filteringNos = (!isNaN(cond.tagFilterTargets)) ? [cond.tagFilterTargets] : cond.tagFilterTargets.split(/,|\s/);
+        var isTarget = false;
+        item.tag.forEach(function(tagItem, idx) {
+          if (filteringNos.indexOf(tagItem.tag_no + "") >= 0) {
+            isTarget = true;
+          }
+        });
+        if (!isTarget) {
+          continue;
+        }
+      }
+
+      var entity = template.clone();
+      if ('event' in item && item['event']) {
+        var pageEvent = item['event'];
+        if (cond.eventType && cond.eventType != pageEvent.event_type_name) {
+          continue;
+        }
+        if (cond.eventField && $.inArray(cond.eventField, pageEvent.event_fields) < 0) {
+          continue;
+        }
+        if (cond.eventArea && $.inArray(cond.eventArea, pageEvent.event_area) < 0) {
+          continue;
+        }
+
+        var eventDateString = '';
+        if (cond.eventTimeEnd) {
+          if (pageEvent.event_date_type_id == 0) {
+            var startDatetime = pageEvent.event_start_datetime ? new Date(pageEvent.event_start_datetime) : false;
+            var endDatetime = pageEvent.event_end_datetime ? new Date(pageEvent.event_end_datetime) : false;
+            if (startDatetime && endDatetime) {
+              if (startDatetime.getTime() > cond.eventTimeEnd || endDatetime.getTime() <= now) {
+                continue;
+              }
+              eventDateString = cmsDynDateFormat(startDatetime, cond.eventDateFormat) + '～' + cmsDynDateFormat(endDatetime, cond.eve
+TEXT 施設ガイド／朝日村公式ウェブサイト スマートフォン版を表示 本文へ 文字サイズ 背景色変更 Select Language English 中文（繁体） 中文（簡体） 한국어 Deutsch Go Select your language 検索 キーワード検索 ページID検索 検索 組織から探す 検索メニューを閉じる 特設サイト一覧 特設サイト一覧を閉じる くらし・手続き くらし・手続き 事業者・ 農林商工業者の方へ 事業者・ 農林商工業者の方へ 医療・健康・福祉・介護 医療・健康・福祉・介護 子育て・教育 子育て・教育 村政情報 村政情報 キーワード検索 ページID検索 検索 組織から探す くらし・手続き くらし・手続きを開く 事業者・ 農林商工業者の方へ 事業者・農林商工業者の方へを開く 医療・健康・福祉・介護 医療・健康・福祉・介護を開く 子育て・教育 子育て・教育を開く 村政情報 村政情報を開く 文字サイズ 背景色変更 Select Language English 中文（繁体） 中文（簡体） 한국어 Deutsch Go Select your language PC版で表示する メニューを閉じる 特設サイト一覧を閉じる 重要なお知らせ 重要なお知らせ一覧を見る 現在のページ ホーム 行政サイト 組織から探す 総務課 総務防災係 施設ガイド あしあと あしあとを消去する 施設ガイド ページID : 91 公共施設紹介 公共施設連絡先一覧 マスク着用の考え方について 総務防災係 長野県朝日村 法人番号 4000020204510 〒390-1188 長野県東筑摩郡朝日村大字古見1555番地1 電話番号： 0263-99-2001 ファクス番号：0263-99-2745 開庁時間：午前8時30分から午後5時15分 開庁日：月曜日から金曜日（土曜日・日曜日・祝日・年末年始を除く） アクセス お問い合わせ サイトマップ 個人情報の取り扱いについて 著作権・リンクについて アクセシビリティへの取り組み ご利用にあたって Copyright (c) 2025 Asahi Village. All Rights Reserved.
+LINK アクセス https://www.vill.asahi.nagano.jp/official/sonseijoho/asahimuranoshokai/612.html
+LINK サイトマップ https://www.vill.asahi.nagano.jp/sitemap.html

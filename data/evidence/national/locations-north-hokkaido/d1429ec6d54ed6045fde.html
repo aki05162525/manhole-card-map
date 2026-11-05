@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8" />
+<title>東神楽観光マップ -  東神楽町</title>
+<link rel="stylesheet" href="/assets/cms/public.css" media="all" />
+<link rel="stylesheet" href="/assets/jplayer.css" media="all" />
+<script src="/assets/cms/compat.js"></script>
+<script src="/assets/cms/public.js"></script>
+<script src="/assets/jplayer.js"></script>
+  <link rel="stylesheet" href="/assets/js/openlayers/ol.css" media="all" />
+  <script src="/assets/js/openlayers/ol.js"></script>
+<script>
+//<![CDATA[
+
+  SS.config = {"site_url":"/","kana_url":"/kana/","translate_url":"/translate/","theme":{},"recommend":{"receiver_url":"https://www.town.higashikagura.lg.jp/.s1/recommend/history/receiver.json","params":{"path":"/map1/map.html","target_class":"Facility::Node::Search","target_id":1117}}};
+
+//]]>
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="shortcut icon" href="/common/images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="152x152" href="/common/images/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/common/images/apple-touch-icon-180x180.png" />
+
+<link rel="stylesheet" href="/common/css/base.css" >
+<link rel="stylesheet" href="/common/css/map.css" >
+<link href="/common/css/color1.css" rel="stylesheet" media="print">
+<link href="/common/css/color1.css" rel="stylesheet" id="color_css" title="ツールボタン選択中配色" media="screen">
+<link href="/common/css/color1.css" rel="alternate stylesheet" id="color1" title="01白背景" media="screen">
+<link href="/common/css/color2.css" rel="alternate stylesheet" id="color2" title="02黒背景" media="screen">
+<script src="/common/js/common.js"></script>
+
+
+<meta property="article:author" content="https://www.facebook.com/Higashikagura/" />
+<meta property="article:publisher" content="https://www.facebook.com/Higashikagura/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.town.higashikagura.lg.jp/map1/" />
+<meta property="og:site_name" content="東神楽町" />
+<meta property="og:title" content="東神楽観光マップ -  東神楽町" />
+<meta property="og:image" content="http://www.town.higashikagura.lg.jp/common/images/ogp.jpg" />
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NFRhYxKkZFi5Gc9DDMkoNnCcbVmlfpa2pqhgA__wGmDrm5tIG4rn9j2kqK7DmON9M-5NrYGLkWv5xyuwXXWuGw" />
+</head>
+
+<body id="body--map1-map" class="body--map1">
+<!-- skip-voice -->
+<ul id="topGide" class="speech">
+	<li><a href="#contents">本文へ</a></li>
+	<li><a href="#menu">メニューへ</a></li>
+</ul>
+<header id="pageHead">
+<div id="toolBar">
+		<div class="container">
+			<nav id="tool">
+				<h2>設定</h2>
+				<div class="t_translate">
+					<div id="google_translate_element"></div>
+                  <div class="t_search">
+					<form action="//www.google.com/cse" id="cse-search-box">
+						<input type="hidden" name="cx" value="003378641208217947661:tbupgn3sobq" />
+						<input type="hidden" name="ie" value="UTF-8" />
+						<input name="q" id="q" type="text"  />
+						<button  type="submit" name="sa" id="sa" >検索</button>
+					</form>
+				</div>				
+
+				</div>
+				<div id="ssTools"><span id="ss-kana">ふりがなをつける</span><span id="ss-voice">読み上げる</span> 
+				</div>
+				<button class="close">閉じる</button>
+			</nav>
+			<hr class="clear">
+		</div>
+	</div>
+<a class="ss-part" data-href="/disaster/disaster.part.json">防災・災害情報</a>
+<div id="headBox">
+		<button id="btnMenu" class="toggleSp" data-panel="sMenu">Menu</button>
+		<button id="btnSetting"  class="toggleSp" data-panel="tool">btnSetting</button>
+		<h1><a href="/index.html">北海道 東神楽町 Hokkaido Higashikagura town</a></h1>
+		<nav id="menu">
+			<h2 class="speech">メニュー</h2>
+			<ul class="tMenu">
+				<li><a href="/c1_town/">町政情報</a></li>
+				<li><a href="/c2_kurashi/">暮らしの情報</a></li>
+				<li><a href="/c3_kanko/">イベント・観光</a></li>
+				<li><a href="/inquiry/">町長へのメール</a></li>
+				<li><a href="/c4_bosai/">防災情報</a></li>
+               <li><a href="/contact/">問い合わせ</a></li>
+			</ul>
+			<div id="sMenu">				
+				<button class="close">閉じる</button>
+			</div>
+		</nav>
+	</div>
+	<hr class="clear">
+</header>
+<div id="contents" class="col1 map"> 
+  <div class="crumbs">
+    <div class="crumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span class="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"><a itemprop="item" href="/">トップ</a></span><meta itemprop="position" content="1"></span><span class="separator">&rsaquo;</span><span class="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">東神楽観光マップ</span><meta itemprop="position" content="2"></span>
+    </div>
+</div>
+
+<!-- end-skip-voice -->
+	<main role="main" >
+		<header id="contentHead">
+			<h2>東神楽観光マップ</h2>
+		</header>
+		<div class="container mainText">
+      <!-- layout_yield --><script src="/assets/colorbox.js" defer="defer"></script>
+<link rel="stylesheet" href="/assets/colorbox.css" media="all" />
+<script>
+//<![CDATA[
+SS.ready(function() {
+var opts = {"readonly":true,"markers":[{"name":"","loc":[142.449961,43.697516],"text":"","id":1163,"html":"\u003cdiv class=\"marker-info\" data-id=\"1163\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003eB\u0026G海洋センター（プール）\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目4番2号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/b-g_pool/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.41132,43.722374],"text":"","id":1153,"html":"\u003cdiv class=\"marker-info\" data-id=\"1153\" data-cate-id=\"1133\"\u003e\n\u003cp class=\"name\"\u003eENEOS ひじり野サービスステーション\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eガソリンスタンド\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町ひじり野北1条4丁目5番3号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/eneos-ss/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1133]},{"name":"","loc":[142.447916,43.700489],"text":"","id":1172,"html":"\u003cdiv class=\"marker-info\" data-id=\"1172\" data-cate-id=\"1129\"\u003e\n\u003cp class=\"name\"\u003eこぐまグループ旭川ラーメン東神楽店\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレストラン・食事処\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西3丁目1番1号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/koguma-groupe_higashikagura/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1129]},{"name":"","loc":[142.454589,43.697053],"text":"","id":1187,"html":"\u003cdiv class=\"marker-info\" data-id=\"1187\" data-cate-id=\"\"\u003e\n\u003cp class=\"name\"\u003eちどりハイヤー株式会社\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条東1丁目1番6号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/chidori/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[]},{"name":"","loc":[142.54089079999994,43.67117249999997],"text":"","id":1143,"html":"\u003cdiv class=\"marker-info\" data-id=\"1143\" data-cate-id=\"1134\"\u003e\n\u003cp class=\"name\"\u003eひがしかぐら森林公園\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e撮影ポイント\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町25号40番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/forest-park/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1134]},{"name":"","loc":[142.540886,43.671174],"text":"","id":1162,"html":"\u003cdiv class=\"marker-info\" data-id=\"1162\" data-cate-id=\"\"\u003e\n\u003cp class=\"name\"\u003eひがしかぐら森林公園パークゴルフ場\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町25号40番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/forest-park_parkgolf01/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[]},{"name":"","loc":[142.415037,43.720448],"text":"","id":1167,"html":"\u003cdiv class=\"marker-info\" data-id=\"1167\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003eひじり野公園パークゴルフコース\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町ひじり野北1条2丁目1番\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/hijirino-park_parkgolf/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.417274,43.719443],"text":"","id":1189,"html":"\u003cdiv class=\"marker-info\" data-id=\"1189\" data-cate-id=\"1119\"\u003e\n\u003cp class=\"name\"\u003eふれあい交流館\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e文化施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町ひじり野北1条1丁目1番6号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/fureai-information-center/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1119]},{"name":"","loc":[142.457011,43.67274],"text":"","id":1146,"html":"\u003cdiv class=\"marker-info\" data-id=\"1146\" data-cate-id=\"1129\"\u003e\n\u003cp class=\"name\"\u003eアイス工房田村ファーム clover\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレストラン・食事処\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町東2線16号97番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/tamurafarm_clover/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1129]},{"name":"","loc":[142.454026,43.670928],"text":"","id":1145,"html":"\u003cdiv class=\"marker-info\" data-id=\"1145\" data-cate-id=\"1123\"\u003e\n\u003cp class=\"name\"\u003eエアポート・リラ\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eおみやげ、食料品\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町東2線16号98番地 旭川空港ビル2階\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/airport_lila/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1123]},{"name":"","loc":[142.452903,43.696897],"text":"","id":1182,"html":"\u003cdiv class=\"marker-info\" data-id=\"1182\" data-cate-id=\"1124\"\u003e\n\u003cp class=\"name\"\u003eスナック シャノアール\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e居酒屋、スナック\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目2番3号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/chat-noir/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1124]},{"name":"","loc":[142.410729,43.72201],"text":"","id":1149,"html":"\u003cdiv class=\"marker-info\" data-id=\"1149\" data-cate-id=\"1137\"\u003e\n\u003cp class=\"name\"\u003eセイコマートひじり野店\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町ひじり野南1条4丁目8番3号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/seicomart_hijirino/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1137]},{"name":"1号店","loc":[142.460747,43.677735],"text":"北海道上川郡東神楽町南13号左支線奥2番地","id":1177,"html":"\u003cdiv class=\"marker-info\" data-id=\"1177\" data-cate-id=\"1130\"\u003e\n\u003cp class=\"name\"\u003eドライフラワーギャラリーぶどうのつる\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e家具、クラフト、陶芸\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南13号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/grapevine/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1130]},{"name":"2号店","loc":[142.460384,43.681115],"text":"北海道上川郡東神楽町南13号左2区画外2","id":1177,"html":"\u003cdiv class=\"marker-info\" data-id=\"1177\" data-cate-id=\"1130\"\u003e\n\u003cp class=\"name\"\u003eドライフラワーギャラリーぶどうのつる\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e家具、クラフト、陶芸\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南13号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/grapevine/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1130]},{"name":"","loc":[142.493915,43.690118],"text":"","id":1150,"html":"\u003cdiv class=\"marker-info\" data-id=\"1150\" data-cate-id=\"1121\"\u003e\n\u003cp class=\"name\"\u003eフレッシュ農園くぼ\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e観光・体験施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町18号南5番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/freshfarm_kumo/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1121]},{"name":"","loc":[142.454664,43.697548],"text":"","id":1151,"html":"\u003cdiv class=\"marker-info\" data-id=\"1151\" data-cate-id=\"1133\"\u003e\n\u003cp class=\"name\"\u003eホクレンサービスステーション東神楽セルフ\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eガソリンスタンド\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条東1丁目1番27号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/hokuren-ss/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1133]},{"name":"","loc":[142.451944,43.698015],"text":"","id":1152,"html":"\u003cdiv class=\"marker-info\" data-id=\"1152\" data-cate-id=\"1133\"\u003e\n\u003cp class=\"name\"\u003e丸紅エネルギーやぎぬまスタンド\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eガソリンスタンド\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目1番20号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/cosmooil/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1133]},{"name":"","loc":[142.448495,43.696277],"text":"","id":1193,"html":"\u003cdiv class=\"marker-info\" data-id=\"1193\" data-cate-id=\"1119\"\u003e\n\u003cp class=\"name\"\u003e交流プラザつつじ館\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e文化施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南2条西1丁目1番6号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/plaza-tsutsuji/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1119]},{"name":"","loc":[142.453838,43.671357],"text":"","id":1186,"html":"\u003cdiv class=\"marker-info\" data-id=\"1186\" data-cate-id=\"1122\"\u003e\n\u003cp class=\"name\"\u003e北海道エアポート株式会社旭川空港事業所\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e交通機関\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町東2線16号98番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/aapb/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1122]},{"name":"","loc":[142.507096,43.650796],"text":"","id":1180,"html":"\u003cdiv class=\"marker-info\" data-id=\"1180\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e大雪山カントリークラブ\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町東3線21号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/taisetsuzan-country-club/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.447454,43.703476],"text":"","id":1148,"html":"\u003cdiv class=\"marker-info\" data-id=\"1148\" data-cate-id=\"1137\"\u003e\n\u003cp class=\"name\"\u003e山下食品株式会社東神楽工場\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西3丁目2番15号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/yamagen/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1137]},{"name":"","loc":[142.452556,43.697228],"text":"","id":1156,"html":"\u003cdiv class=\"marker-info\" data-id=\"1156\" data-cate-id=\"1137\"\u003e\n\u003cp class=\"name\"\u003e川合新聞店\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目2番38号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/kawai-newsagent/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1137]},{"name":"","loc":[142.454396,43.695054],"text":"","id":1166,"html":"\u003cdiv class=\"marker-info\" data-id=\"1166\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e弓道場\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条東1丁目2番\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/archery/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.533344,43.675272],"text":"","id":1173,"html":"\u003cdiv class=\"marker-info\" data-id=\"1173\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e忠別川サイクリングロード\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町4号からひがしかぐら森林公園\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/chubetsugawa_cyclingroad/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.463188,43.702368],"text":"","id":1159,"html":"\u003cdiv class=\"marker-info\" data-id=\"1159\" data-cate-id=\"\"\u003e\n\u003cp class=\"name\"\u003e忠別川河川敷パークゴルフ場\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/chubetsugawa_parkgolf/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[]},{"name":"","loc":[142.4494826,43.6821413],"text":"","id":1179,"html":"\u003cdiv class=\"marker-info\" data-id=\"1179\" data-cate-id=\"1121\"\u003e\n\u003cp class=\"name\"\u003e有限会社しんむら農園\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e観光・体験施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南13号右1\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/shinmura-farm/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1121]},{"name":"","loc":[142.430503,43.700486],"text":"","id":1175,"html":"\u003cdiv class=\"marker-info\" data-id=\"1175\" data-cate-id=\"1130\"\u003e\n\u003cp class=\"name\"\u003e木つつき（小菅民芸）\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e家具、クラフト、陶芸\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町9号南11番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/kitsutsuki/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1130]},{"name":"","loc":[142.450523,43.696718],"text":"","id":1192,"html":"\u003cdiv class=\"marker-info\" data-id=\"1192\" data-cate-id=\"1119\"\u003e\n\u003cp class=\"name\"\u003e東神楽町図書館\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e文化施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目3番10号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/memorial-hall_library/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1119]},{"name":"","loc":[142.448817,43.699915],"text":"","id":1194,"html":"\u003cdiv class=\"marker-info\" data-id=\"1194\" data-cate-id=\"1138\"\u003e\n\u003cp class=\"name\"\u003e東神楽町観光協会\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e公共施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西2丁目10番30号（商工会事務局内）\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/tourist-association/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1138]},{"name":"","loc":[142.453269,43.69741],"text":"","id":1155,"html":"\u003cdiv class=\"marker-info\" data-id=\"1155\" data-cate-id=\"1138\"\u003e\n\u003cp class=\"name\"\u003e東神楽郵便局\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e公共施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西1丁目1番1号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/japanpost/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1138]},{"name":"","loc":[142.512246,43.669579],"text":"","id":1178,"html":"\u003cdiv class=\"marker-info\" data-id=\"1178\" data-cate-id=\"\"\u003e\n\u003cp class=\"name\"\u003e株式会社 匠工芸\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条通24番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/takumikohgei/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[]},{"name":"","loc":[142.452839,43.698118],"text":"","id":1154,"html":"\u003cdiv class=\"marker-info\" data-id=\"1154\" data-cate-id=\"1137\"\u003e\n\u003cp class=\"name\"\u003e株式会社スタディオやまざき\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西1丁目1番10号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/studio-yamazaki/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1137]},{"name":"","loc":[142.453804,43.671407],"text":"","id":1174,"html":"\u003cdiv class=\"marker-info\" data-id=\"1174\" data-cate-id=\"1127\"\u003e\n\u003cp class=\"name\"\u003e株式会社トヨタレンタリース旭川\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレンタカー\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町2線16号10番地162\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/toyotarenta_akj/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1127]},{"loc":[142.543413,43.67101699999998],"id":1144,"html":"\u003cdiv class=\"marker-info\" data-id=\"1144\" data-cate-id=\"1125\"\u003e\n\u003cp class=\"name\"\u003e森のゆ 花神楽\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e温泉・宿泊施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町25号北1番地\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/hanakagura/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1125]},{"name":"","loc":[142.445586,43.700584],"text":"","id":1157,"html":"\u003cdiv class=\"marker-info\" data-id=\"1157\" data-cate-id=\"1137\"\u003e\n\u003cp class=\"name\"\u003e渡部秀二写真事務所\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西3丁目3番13号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/watanabe_photo/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1137]},{"name":"","loc":[142.452604,43.697623],"text":"","id":1170,"html":"\u003cdiv class=\"marker-info\" data-id=\"1170\" data-cate-id=\"1129\"\u003e\n\u003cp class=\"name\"\u003e焼肉 高麗苑\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレストラン・食事処\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目1番26号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/yakiniku-kouraien/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1129]},{"name":"","loc":[142.45401,43.6981],"text":"","id":1147,"html":"\u003cdiv class=\"marker-info\" data-id=\"1147\" data-cate-id=\"1123\"\u003e\n\u003cp class=\"name\"\u003e生活協同組合コープさっぽろ ひがしかぐら店\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e店舗\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西1丁目2番1号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/hokurenshop_higashikagura/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1123,1137]},{"name":"","loc":[142.449892,43.697065],"text":"","id":1164,"html":"\u003cdiv class=\"marker-info\" data-id=\"1164\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e総合体育館\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条西1丁目4番1号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/gymnasium/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.452647,43.698403],"text":"","id":1188,"html":"\u003cdiv class=\"marker-info\" data-id=\"1188\" data-cate-id=\"1138\"\u003e\n\u003cp class=\"name\"\u003e総合福祉会館\u003c/p\u003e\n\u003cp class=\"form-name\"\u003e公共施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西1丁目1番13号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/welfare-center/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1138]},{"name":"","loc":[142.453977,43.695696],"text":"","id":1158,"html":"\u003cdiv class=\"marker-info\" data-id=\"1158\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e義経公園グラウンド\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条東1丁目2番\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/yoshitsune-park_ground/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.453977,43.695696],"text":"","id":1165,"html":"\u003cdiv class=\"marker-info\" data-id=\"1165\" data-cate-id=\"1132\"\u003e\n\u003cp class=\"name\"\u003e義経公園テニスコート\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eスポーツ施設\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町南1条東1丁目2番\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/yoshitsune-park_tennis/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1132]},{"name":"","loc":[142.451993,43.698659],"text":"","id":1171,"html":"\u003cdiv class=\"marker-info\" data-id=\"1171\" data-cate-id=\"1129\"\u003e\n\u003cp class=\"name\"\u003e茶楽食堂\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレストラン・食事処\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町北1条西1丁目8番1号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/saraku-syokudo/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1129]},{"name":"","loc":[142.485548,43.662549],"text":"","id":1169,"html":"\u003cdiv class=\"marker-info\" data-id=\"1169\" data-cate-id=\"1129\"\u003e\n\u003cp class=\"name\"\u003e蕎麦 蓬\u003c/p\u003e\n\u003cp class=\"form-name\"\u003eレストラン・食事処\u003c/p\u003e\n\u003cp class=\"address\"\u003e北海道上川郡東神楽町東3線20号\u003c/p\u003e\n\u003cp class=\"show\"\u003e\u003ca href=\"/map1/list/sobayomogi/\"\u003e詳細を見る\u003c/a\u003e\u003c/p\u003e\n\u003c/div\u003e","category":[1129]}],"layers":[{"name":"OpenStreetMap","source":"OSM","url":"https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png","projection":"EPSG:3857"}]};
+Openlayers_Facility_Search.render("#map-canvas", opts);
+});
+//]]>
+</script>
+<dl class="condition">
+  <dt class="keyword">キーワード</dt>
+  <dd></dd>
+  <dt class="category">種類</dt>
+  <dd></dd>
+  <dt class="service">用途</dt>
+  <dd></dd>
+  <dt class="location">地域</dt>
+  <dd></dd>
+</dl>
+<nav class="settings">
+  <a class="ajax-box" href="#">検索条件を変更する</a>
+</nav>
+
+<section class="result">
+  <h2>
+    検索結果
+    <span class="number">42</span>件
+  </h2>
+</section>
+<nav class="tabs">
+  <ul>
+    <li class="tab map current">
+      <a href="./map.html?category_ids%5B%5D=&amp;keyword=&amp;location_ids%5B%5D=&amp;service_ids%5B%5D=">地図表示</a>
+    </li>
+    <li class="tab list">
+      <a href="./result.html?category_ids%5B%5D=&amp;keyword=&amp;location_ids%5B%5D=&amp;service_ids%5B%5D=">一覧表示</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div id="map-sidebar" style="height: 400px;">
+  <div class="column" data-id="1163" data-cate-id="1132">
+<p class="name"><a href="/map1/list/b-g_pool/">B&G海洋センター（プール）</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目4番2号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1153" data-cate-id="1133">
+<p class="name"><a href="/map1/list/eneos-ss/">ENEOS ひじり野サービスステーション</a></p>
+<p class="form-name">ガソリンスタンド</p>
+<p class="address">北海道上川郡東神楽町ひじり野北1条4丁目5番3号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1172" data-cate-id="1129">
+<p class="name"><a href="/map1/list/koguma-groupe_higashikagura/">こぐまグループ旭川ラーメン東神楽店</a></p>
+<p class="form-name">レストラン・食事処</p>
+<p class="address">北海道上川郡東神楽町南1条西3丁目1番1号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1187" data-cate-id="">
+<p class="name"><a href="/map1/list/chidori/">ちどりハイヤー株式会社</a></p>
+<p class="address">北海道上川郡東神楽町南1条東1丁目1番6号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1143" data-cate-id="1134">
+<p class="name"><a href="/map1/list/forest-park/">ひがしかぐら森林公園</a></p>
+<p class="form-name">撮影ポイント</p>
+<p class="address">北海道上川郡東神楽町25号40番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1162" data-cate-id="">
+<p class="name"><a href="/map1/list/forest-park_parkgolf01/">ひがしかぐら森林公園パークゴルフ場</a></p>
+<p class="address">北海道上川郡東神楽町25号40番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1167" data-cate-id="1132">
+<p class="name"><a href="/map1/list/hijirino-park_parkgolf/">ひじり野公園パークゴルフコース</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町ひじり野北1条2丁目1番</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1189" data-cate-id="1119">
+<p class="name"><a href="/map1/list/fureai-information-center/">ふれあい交流館</a></p>
+<p class="form-name">文化施設</p>
+<p class="address">北海道上川郡東神楽町ひじり野北1条1丁目1番6号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1146" data-cate-id="1129">
+<p class="name"><a href="/map1/list/tamurafarm_clover/">アイス工房田村ファーム clover</a></p>
+<p class="form-name">レストラン・食事処</p>
+<p class="address">北海道上川郡東神楽町東2線16号97番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1145" data-cate-id="1123">
+<p class="name"><a href="/map1/list/airport_lila/">エアポート・リラ</a></p>
+<p class="form-name">おみやげ、食料品</p>
+<p class="address">北海道上川郡東神楽町東2線16号98番地 旭川空港ビル2階</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1182" data-cate-id="1124">
+<p class="name"><a href="/map1/list/chat-noir/">スナック シャノアール</a></p>
+<p class="form-name">居酒屋、スナック</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目2番3号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1149" data-cate-id="1137">
+<p class="name"><a href="/map1/list/seicomart_hijirino/">セイコマートひじり野店</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町ひじり野南1条4丁目8番3号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1177" data-cate-id="1130">
+<p class="name"><a href="/map1/list/grapevine/">ドライフラワーギャラリーぶどうのつる</a></p>
+<p class="form-name">家具、クラフト、陶芸</p>
+<p class="address">北海道上川郡東神楽町南13号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1150" data-cate-id="1121">
+<p class="name"><a href="/map1/list/freshfarm_kumo/">フレッシュ農園くぼ</a></p>
+<p class="form-name">観光・体験施設</p>
+<p class="address">北海道上川郡東神楽町18号南5番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1151" data-cate-id="1133">
+<p class="name"><a href="/map1/list/hokuren-ss/">ホクレンサービスステーション東神楽セルフ</a></p>
+<p class="form-name">ガソリンスタンド</p>
+<p class="address">北海道上川郡東神楽町北1条東1丁目1番27号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1152" data-cate-id="1133">
+<p class="name"><a href="/map1/list/cosmooil/">丸紅エネルギーやぎぬまスタンド</a></p>
+<p class="form-name">ガソリンスタンド</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目1番20号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1193" data-cate-id="1119">
+<p class="name"><a href="/map1/list/plaza-tsutsuji/">交流プラザつつじ館</a></p>
+<p class="form-name">文化施設</p>
+<p class="address">北海道上川郡東神楽町南2条西1丁目1番6号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1186" data-cate-id="1122">
+<p class="name"><a href="/map1/list/aapb/">北海道エアポート株式会社旭川空港事業所</a></p>
+<p class="form-name">交通機関</p>
+<p class="address">北海道上川郡東神楽町東2線16号98番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1180" data-cate-id="1132">
+<p class="name"><a href="/map1/list/taisetsuzan-country-club/">大雪山カントリークラブ</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町東3線21号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1148" data-cate-id="1137">
+<p class="name"><a href="/map1/list/yamagen/">山下食品株式会社東神楽工場</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町北1条西3丁目2番15号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1156" data-cate-id="1137">
+<p class="name"><a href="/map1/list/kawai-newsagent/">川合新聞店</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目2番38号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1166" data-cate-id="1132">
+<p class="name"><a href="/map1/list/archery/">弓道場</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町南1条東1丁目2番</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1173" data-cate-id="1132">
+<p class="name"><a href="/map1/list/chubetsugawa_cyclingroad/">忠別川サイクリングロード</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町4号からひがしかぐら森林公園</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1159" data-cate-id="">
+<p class="name"><a href="/map1/list/chubetsugawa_parkgolf/">忠別川河川敷パークゴルフ場</a></p>
+<p class="address">北海道上川郡東神楽町</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1179" data-cate-id="1121">
+<p class="name"><a href="/map1/list/shinmura-farm/">有限会社しんむら農園</a></p>
+<p class="form-name">観光・体験施設</p>
+<p class="address">北海道上川郡東神楽町南13号右1</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1175" data-cate-id="1130">
+<p class="name"><a href="/map1/list/kitsutsuki/">木つつき（小菅民芸）</a></p>
+<p class="form-name">家具、クラフト、陶芸</p>
+<p class="address">北海道上川郡東神楽町9号南11番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1192" data-cate-id="1119">
+<p class="name"><a href="/map1/list/memorial-hall_library/">東神楽町図書館</a></p>
+<p class="form-name">文化施設</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目3番10号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1194" data-cate-id="1138">
+<p class="name"><a href="/map1/list/tourist-association/">東神楽町観光協会</a></p>
+<p class="form-name">公共施設</p>
+<p class="address">北海道上川郡東神楽町南1条西2丁目10番30号（商工会事務局内）</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1155" data-cate-id="1138">
+<p class="name"><a href="/map1/list/japanpost/">東神楽郵便局</a></p>
+<p class="form-name">公共施設</p>
+<p class="address">北海道上川郡東神楽町北1条西1丁目1番1号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1178" data-cate-id="">
+<p class="name"><a href="/map1/list/takumikohgei/">株式会社 匠工芸</a></p>
+<p class="address">北海道上川郡東神楽町南1条通24番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1154" data-cate-id="1137">
+<p class="name"><a href="/map1/list/studio-yamazaki/">株式会社スタディオやまざき</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町北1条西1丁目1番10号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1174" data-cate-id="1127">
+<p class="name"><a href="/map1/list/toyotarenta_akj/">株式会社トヨタレンタリース旭川</a></p>
+<p class="form-name">レンタカー</p>
+<p class="address">北海道上川郡東神楽町2線16号10番地162</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1144" data-cate-id="1125">
+<p class="name"><a href="/map1/list/hanakagura/">森のゆ 花神楽</a></p>
+<p class="form-name">温泉・宿泊施設</p>
+<p class="address">北海道上川郡東神楽町25号北1番地</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1157" data-cate-id="1137">
+<p class="name"><a href="/map1/list/watanabe_photo/">渡部秀二写真事務所</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町南1条西3丁目3番13号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1170" data-cate-id="1129">
+<p class="name"><a href="/map1/list/yakiniku-kouraien/">焼肉 高麗苑</a></p>
+<p class="form-name">レストラン・食事処</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目1番26号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1147" data-cate-id="1123">
+<p class="name"><a href="/map1/list/hokurenshop_higashikagura/">生活協同組合コープさっぽろ ひがしかぐら店</a></p>
+<p class="form-name">店舗</p>
+<p class="address">北海道上川郡東神楽町北1条西1丁目2番1号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1164" data-cate-id="1132">
+<p class="name"><a href="/map1/list/gymnasium/">総合体育館</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町南1条西1丁目4番1号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1188" data-cate-id="1138">
+<p class="name"><a href="/map1/list/welfare-center/">総合福祉会館</a></p>
+<p class="form-name">公共施設</p>
+<p class="address">北海道上川郡東神楽町北1条西1丁目1番13号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1158" data-cate-id="1132">
+<p class="name"><a href="/map1/list/yoshitsune-park_ground/">義経公園グラウンド</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町南1条東1丁目2番</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1165" data-cate-id="1132">
+<p class="name"><a href="/map1/list/yoshitsune-park_tennis/">義経公園テニスコート</a></p>
+<p class="form-name">スポーツ施設</p>
+<p class="address">北海道上川郡東神楽町南1条東1丁目2番</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1171" data-cate-id="1129">
+<p class="name"><a href="/map1/list/saraku-syokudo/">茶楽食堂</a></p>
+<p class="form-name">レストラン・食事処</p>
+<p class="address">北海道上川郡東神楽町北1条西1丁目8番1号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div><div class="column" data-id="1169" data-cate-id="1129">
+<p class="name"><a href="/map1/list/sobayomogi/">蕎麦 蓬</a></p>
+<p class="form-name">レストラン・食事処</p>
+<p class="address">北海道上川郡東神楽町東3線20号</p>
+<p><a href="#" class="click-marker">地図上で確認</a></p>
+</div>
+</div>
+
+<div id="map-canvas" style="width: 100%; height: 400px;"></div>
+
+<nav class="filters">
+    <ul>
+        <li class="bunka">
+          <a class="clicked" data-id="1119" href="#">文化施設</a>
+        </li>
+        <li class="kankoutaiken">
+          <a class="clicked" data-id="1121" href="#">観光・体験施設</a>
+        </li>
+        <li class="koutsu">
+          <a class="clicked" data-id="1122" href="#">交通機関</a>
+        </li>
+        <li class="omiyage">
+          <a class="clicked" data-id="1123" href="#">おみやげ、食料品</a>
+        </li>
+        <li class="izakayasnack">
+          <a class="clicked" data-id="1124" href="#">居酒屋、スナック</a>
+        </li>
+        <li class="onsen">
+          <a class="clicked" data-id="1125" href="#">温泉・宿泊施設</a>
+        </li>
+        <li class="rentacar">
+          <a class="clicked" data-id="1127" href="#">レンタカー</a>
+        </li>
+        <li class="restran">
+          <a class="clicked" data-id="1129" href="#">レストラン・食事処</a>
+        </li>
+        <li class="craft">
+          <a class="clicked" data-id="1130" href="#">家具、クラフト、陶芸</a>
+        </li>
+        <li class="sport">
+          <a class="clicked" data-id="1132" href="#">スポーツ施設</a>
+        </li>
+        <li class="ss">
+          <a class="clicked" data-id="1133" href="#">ガソリンスタンド</a>
+        </li>
+        <li class="view">
+          <a class="clicked" data-id="1134" href="#">撮影ポイント</a>
+        </li>
+        <li class="shop">
+          <a class="clicked" data-id="1137" href="#">店舗</a>
+        </li>
+        <li class="facility">
+          <a class="clicked" data-id="1138" href="#">公共施設</a>
+        </li>
+    </ul>
+</nav>
+
+
+
+<div class="hide" style="display: none;">
+  <div class="colorbox-dialog">
+    <script>
+//<![CDATA[
+SS.ready(function() {
+
+
+  $(".reset").on("click", function () {
+    $(".prop").prop("checked", false);
+    $(".keyword").val("");
+    return false;
+  });
+
+
+});
+//]]>
+</script>
+<form enctype="multipart/form-data" action="./map.html" accept-charset="UTF-8" method="get">
+  <fieldset class="keyword">
+  <legend>キーワード</legend>
+  <div class="keyword">
+  <input type="text" name="keyword" id="keyword" value="" class="keyword" placeholder="キーワード" title="キーワード" />
+</div>
+
+</fieldset>
+
+<fieldset class="category">
+  <legend>施設の種類を選択</legend>
+  <div class="category">
+  <input type="hidden" name="category_ids[]" value="" autocomplete="off" />
+    <div class="bunka">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1119" value="1119" class="prop" />
+      <label for=q_category_ids_1119>文化施設</label>
+    </div>
+    <div class="kyoudo">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1120" value="1120" class="prop" />
+      <label for=q_category_ids_1120>郷土芸能</label>
+    </div>
+    <div class="kankoutaiken">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1121" value="1121" class="prop" />
+      <label for=q_category_ids_1121>観光・体験施設</label>
+    </div>
+    <div class="koutsu">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1122" value="1122" class="prop" />
+      <label for=q_category_ids_1122>交通機関</label>
+    </div>
+    <div class="omiyage">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1123" value="1123" class="prop" />
+      <label for=q_category_ids_1123>おみやげ、食料品</label>
+    </div>
+    <div class="izakayasnack">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1124" value="1124" class="prop" />
+      <label for=q_category_ids_1124>居酒屋、スナック</label>
+    </div>
+    <div class="onsen">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1125" value="1125" class="prop" />
+      <label for=q_category_ids_1125>温泉・宿泊施設</label>
+    </div>
+    <div class="post">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1126" value="1126" class="prop" />
+      <label for=q_category_ids_1126>郵便局</label>
+    </div>
+    <div class="rentacar">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1127" value="1127" class="prop" />
+      <label for=q_category_ids_1127>レンタカー</label>
+    </div>
+    <div class="rentacycle">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1128" value="1128" class="prop" />
+      <label for=q_category_ids_1128>レンタサイクル</label>
+    </div>
+    <div class="restran">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1129" value="1129" class="prop" />
+      <label for=q_category_ids_1129>レストラン・食事処</label>
+    </div>
+    <div class="craft">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1130" value="1130" class="prop" />
+      <label for=q_category_ids_1130>家具、クラフト、陶芸</label>
+    </div>
+    <div class="information">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1131" value="1131" class="prop" />
+      <label for=q_category_ids_1131>観光案内</label>
+    </div>
+    <div class="sport">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1132" value="1132" class="prop" />
+      <label for=q_category_ids_1132>スポーツ施設</label>
+    </div>
+    <div class="ss">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1133" value="1133" class="prop" />
+      <label for=q_category_ids_1133>ガソリンスタンド</label>
+    </div>
+    <div class="view">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1134" value="1134" class="prop" />
+      <label for=q_category_ids_1134>撮影ポイント</label>
+    </div>
+    <div class="shrine">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1135" value="1135" class="prop" />
+      <label for=q_category_ids_1135>神社</label>
+    </div>
+    <div class="temple">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1136" value="1136" class="prop" />
+      <label for=q_category_ids_1136>寺</label>
+    </div>
+    <div class="shop">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1137" value="1137" class="prop" />
+      <label for=q_category_ids_1137>店舗</label>
+    </div>
+    <div class="facility">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1138" value="1138" class="prop" />
+      <label for=q_category_ids_1138>公共施設</label>
+    </div>
+    <div class="toilet">
+      <input type="checkbox" name="category_ids[]" id="q_category_ids_1139" value="1139" class="prop" />
+      <label for=q_category_ids_1139>トイレ</label>
+    </div>
+</div>
+
+</fieldset>
+
+<fieldset class="service">
+  <legend>施設の用途を選択</legend>
+  <div class="service">
+  <input type="hidden" name="service_ids[]" value="" autocomplete="off" />
+</div>
+
+</fieldset>
+
+<fieldset class="location">
+  <legend>施設の地域を選択</legend>
+  <div class="location">
+  <input type="hidden" name="location_ids[]" value="" autocomplete="off" />
+</div>
+
+</fieldset>
+
+  <footer class="send">
+    <input type="submit" value="この条件で検索する" data-disable-with="この条件で検索する" />
+    <input type="submit" value="検索条件をリセットする" class="reset" data-disable-with="検索条件をリセットする" />
+  </footer>
+</form>
+  </div>
+</div>
+
+<script>
+//<![CDATA[
+SS.ready(function() {
+
+var $dialog = $(".colorbox-dialog");
+$(".ajax-box").on("click", function () {
+  $.colorbox({
+    inline: true,
+    href: $dialog,
+    maxWidth: "80%",
+    maxHeight: "80%"
+  });
+  return false;
+});
+
+});
+//]]>
+</script><!-- /layout_yield -->
+      </div>
+  </main>
+
+  
+  <div class="crumbs">
+    <div class="crumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span class="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name"><a itemprop="item" href="/">トップ</a></span><meta itemprop="position" content="1"></span><span class="separator">&rsaquo;</span><span class="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">東神楽観光マップ</span><meta itemprop="position" content="2"></span>
+    </div>
+</div>
+
+<!-- end-skip-voice -->
+</div>
+
+<!-- skip-voice -->
+<footer id="pageFoot">
+	<hr class="clear">
+	<div id="upLink"><a href="#pageHead">ページのトップへ</a></div>
+	<nav id="footerBar">
+		<div  class="container">
+			<ul class="fInfo">
+              <li><a href="/contact/">お問い合わせ</a></li>
+              <li><a href="/sitemap/">サイトマップ</a></li>
+              <li><a href="/docs/722.html">著作権について</a></li>
+              <li><a href="/docs/721.html">免責事項</a></li>
+              <li><a href="/docs/720.html">東神楽町リンクサイト利用規約</a></li>
+              <li><a href="/docs/5245.html">ウェブアクセシビリティ方針</a></li>
+              <li><a href="/docs/723.html">リンク集</a></li>	
+          </ul>
+			<p class="rss"><a href="/topics/rss.xml">新着RSS</a></p>
+		</div>
+	</nav>
+	<div id="fotBox">
+		<div class="container">
+			<dl>
+				<dt>東神楽町役場</dt>
+				<dd>
+					<ul class="guide">
+						<li class="sect"><a href="http://www.town.higashikagura.lg.jp/docs/365.html">役場窓口のご案内</a></li>
+                      	<li class="map"><a href="http://www.town.higashikagura.lg.jp/docs/678.html">アクセス</a></li>
+					</ul>
+					<ul class="office">
+						<li class="post">郵便番号：071-1592</li>
+						<li class="add">北海道上川郡東神楽町南1条西1丁目3番2号</li>
+						<li class="tel">代表電話：0166-83-2111</li>
+						<li class="fax">ファックス：0166-83-4180</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<small class="copyright">&copy;2010　HIGASHIKAGURA Town</small> </div>
+</footer>
+<hr class="clear">
+<ul id="bottomGide" class="speech">
+	<li><a href="#pageHead">ページのトップへ</a></li>
+	<li><a href="#contents">本文へ</a></li>
+	<li><a href="#menu">メニューへ</a></li>
+</ul>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8145987-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-8145987-3');
+</script>
+<!-- end-skip-voice -->
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=3&cb=1661845147" async></script></body>
+
+</html>

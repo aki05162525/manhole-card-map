@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="子育てマップ,埼玉県,結婚,妊娠,出産,子育て">
+<meta name="description" content="子育てマップのページ、埼玉県 結婚・妊娠・出産・子育て応援公式サイト">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/css/universal.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/elements.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/components.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/tablet.css" rel="stylesheet" type="text/css" media="screen and (min-width:601px) and (max-width:768px)">
+<link href="/assets/css/mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width: 600px) and (max-width:768px)">
+
+<!--[if lt IE 9]><script src="/assets/js/html5shiv.js"></script><![endif]-->
+
+<script src="/assets/js/jquery.js"></script>
+<script  src="https://api.vdsapi.ne.jp/tools/engine/1.0/vds?key=syttsdvs5ys84k0888ok8occgck840c" async="async"></script>
+<script src="/assets/js/respond.js" ></script>
+<script src="/assets/js/init.js" ></script>
+<script src="/assets/js/ga.js" ></script>
+
+
+<title>子育てマップ | 埼玉県 結婚・妊娠・出産・子育て応援公式サイト</title>
+
+<style>
+    ul.list_src_service div.checkbox{
+        float:left;
+        margin-right:30px;
+    }
+    div.checkbox input{
+        margin-right:5px;
+    }
+   div.info-pdfs li{
+/*     font-size:0.9em; */
+    }
+    div.info-pdfs p{
+    font-weight:bold;
+    }
+</style>
+
+<script >
+function getLocation(){
+    if (navigator.geolocation) {
+        // 現在の位置情報取得を実施
+        navigator.geolocation.getCurrentPosition(
+        // 位置情報取得成功時
+        function (pos) {
+                var lat = pos.coords.latitude;
+                var lng = pos.coords.longitude;
+                $("#lat").val(lat);
+                $("#lng").val(lng);
+
+                $('#mainForm').attr('action', '/map/search/gps').submit();
+
+        },
+        // 位置情報取得失敗時
+        function (pos) { alert("位置情報が取得できませんでした");}
+         );
+    } else {
+        window.alert("本ブラウザではGeolocationが使えません");
+    }
+}
+</script>
+</head>
+<body class="body_map">
+<noscript>
+<p>このコンテンツはJavaScriptに最適化されています。JavaScriptが無効になっている場合は、有効にしてください。</p>
+</noscript>
+<header id="header">
+
+<div class="unit_header cf">
+
+<div class="area_logo">
+<h1 class="logo">
+  <a href="https://www.saitama-support.jp"><img src="/assets/imgs/common/header/logo.gif" alt="埼玉県少子化対策総合サイト 埼玉県 結婚・妊娠・出産・子育て応援公式サイト" width="330" height="80"></a></h1>
+<p class="slogan"><img src="/assets/imgs/common/header/slogan.gif" alt="埼玉県では、恋愛・結婚から妊娠・出産・子育てまで人生のライフステージを応援します！" width="330" height="50"></p>
+<!-- / .area_logo --></div>
+
+
+<div class="area_utility cf">
+<div class="unit_utility cf">
+
+<dl class="font" id="font">
+<dt class="fleft"><img src="/assets/imgs/common/header/t_font.gif" alt="文字サイズ" width="70" height="20"></dt>
+<dd class="ovh">
+<ul class="cf">
+<li class="fontS"><img src="/assets/imgs/common/header/b_style_s.gif" alt="小" width="21" height="20" /></li>
+<li class="fontM"><img src="/assets/imgs/common/header/b_style_m.gif" alt="中" width="20" height="20" /></li>
+<li class="fontL last"><img src="/assets/imgs/common/header/b_style_l.gif" alt="大" width="20" height="20" /></li>
+</ul>
+</dd>
+</dl>
+<dl class="switch">
+<dt class="fleft"><img src="/assets/imgs/common/header/t_swicth.gif" alt="背景色" width="40" height="20"></dt>
+<dd class="ovh">
+<ul class="cf" id="switcher">
+<li id="type1"><img src="/assets/imgs/common/header/b_style_black.gif" alt="黒" width="20" height="20"></li>
+<li id="type2"><img src="/assets/imgs/common/header/b_style_blue.gif" alt="青" width="20" height="20"></li>
+<li id="type3" class="last"><img src="/assets/imgs/common/header/b_style_white.gif" alt="白" width="21" height="20"></li>
+</ul>
+</dd>
+</dl>
+
+<div id="toggle_tl"><a href="#" class="tablink"></a></div>
+<div id="translation">
+<ul class="trans">
+<li><a href="#googtrans(ja|en)" class="lang-select" data-lang="en">English</a></li>
+<li><a href="#googtrans(ja|zh-CN)" class="lang-select" data-lang="zh-CN">简体中文</a></li>
+<li><a href="#googtrans(ja|zh-TW)" class="lang-select" data-lang="zh-CN">繁體中文</a></li>
+<li><a href="#googtrans(ja|ko)" class="lang-select" data-lang="ko">한국어</a></li>
+</ul>
+</div>
+
+<div id="toggle_search"><a href="#" class="tablink"></a></div>
+<dl class="cf search spui" id="search">
+<dt class="fleft"><img src="/assets/imgs/common/header/t_search.gif" alt="キーワードでホームページ内を検索" width="78" height="20"></dt>
+<dd class="fright">
+<form action="https://www.google.com/cse" id="cse-search-box">
+<fieldset>
+<legend>サイト内検索</legend>
+<input type="hidden" name="cx" value="010840800043881765903:8plnhr68sxa" />
+<input type="hidden" name="ie" value="UTF-8" />
+<input type="text" name="q" size="20" class="txt" />
+<input type="image" src="/assets/imgs/common/header/b_search.gif" alt="検索" />
+</fieldset>
+</form>
+</dd>
+</dl>
+<!-- / .unit_utility cf --></div>
+<div class="unit_utility cf">
+
+<ul class="unav">
+<li><a id="vdsBtn" href="#"><img src="/assets/imgs/common/header/un_reader.gif" alt="音声読み上げ" width="110" height="20"></a></li>
+<li><a href="/sitemap"><img src="/assets/imgs/common/header/un_sitemap.gif" alt="サイトマップ" width="100" height="20"></a></li>
+
+<li>
+<button type="button" class="e_head_lang">Languages</button>
+<ul class="dropmenu">
+
+<li><a href="#googtrans(ja|en)" class="lang-select" data-lang="en">English</a></li>
+<li><a href="#googtrans(ja|zh-CN)" class="lang-select" data-lang="zh-CN">简体中文</a></li>
+<li><a href="#googtrans(ja|zh-TW)" class="lang-select" data-lang="zh-CN">繁體中文</a></li>
+<li><a href="#googtrans(ja|ko)" class="lang-select" data-lang="ko">한국어</a></li>
+</ul>
+</li>
+
+</ul>
+<!-- / .unit_utility cf --></div>
+<!-- / .area_utility --></div>
+<!-- / .unit_header --></div>
+
+<div id="toggle"><a href="#" class="tablink"></a></div>
+<ul class="gnav cf spui" id="menu">
+<li class="gn_home"><a href="/"><img src="/assets/imgs/common/header/gn_home.gif" alt="ホーム" width="95" height="40"></a></li>
+<li class="gn_married"><a href="/married"><img src="/assets/imgs/common/header/gn_married.gif" alt="結婚／婚活" width="125" height="40"></a></li>
+<li class="gn_want"><a href="/want"><img src="/assets/imgs/common/header/gn_want.gif" alt="子どもが欲しい" width="150" height="40"></a></li>
+<li class="gn_pregnant"><a href="/pregnant"><img src="/assets/imgs/common/header/gn_pregnant.gif" alt="妊娠・出産したら" width="170" height="40"></a></li>
+<li class="gn_nav"><a href="/nav"><img src="/assets/imgs/common/header/gn_nav.gif" alt="子育てナビ" width="120" height="40"></a></li>
+  <li class="gn_map"><a href="/map/"><img src="/assets/imgs/common/header/gn_map.gif" alt="子育てマップ" width="130" height="40"></a></li>
+<li class="gn_support"><a href="/support"><img src="/assets/imgs/common/header/gn_support.gif" alt="子育て支援団体" width="170" height="40"></a></li>
+</ul>
+<!--/header --></header>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+<script>
+$('.lang-select').click(function() {
+  var lang = $(this).attr('data-lang');
+  window.location = $(this).attr('href');
+  Cookies.set('lang',lang);
+  location.reload(true);
+});
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ja',
+      layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="wrapper">
+<div id="contents" role="main" class="cf">
+
+<ol class="cf crumb">
+<li><a href="/">ホーム</a></li>
+<li><a href='/map/'>子育てマップ</a></li>
+<li class="current">検索結果</li>
+</ol>
+
+
+
+
+
+
+
+<div id="maincol">
+
+
+<h2 class="ttl">子育てマップ</h2>
+<div class="area_src_gps area_mod panel_go">
+<h3 class="ttl_src"><a href="javascript:void(0);" onclick='getLocation();'><strong>現在地から</strong>で探す</a><span class="panel_nav"></span></h3>
+</div>
+<form method="get" accept-charset="utf-8" id="mainForm" inputDefaults="  " action="/map/search/index#map"><input type='hidden' name='lat' id='lat' />
+<input type='hidden' name='lng' id='lng' />
+
+<div class="area_src_kwd panel ">
+<h3 class="ttl_src panel_ttl"><button type="button" class="panel_ttl_button"><strong>キーワード</strong>で探す<span class="panel_nav"></span></button></h3>
+<!-- <h3 class="ttl_src panel_ttl"><strong>キーワード</strong>で探す<span class="panel_nav"></span></h3> -->
+<div class="body panel_body">
+
+<dl class="list_src_form cf">
+<dt>キーワード</dt>
+<dd>
+
+<input type="input" name="keyword" class="inp_t" value="市野川水循環"/><button type="submit">
+<img src="/assets/imgs/map/btn_src.gif" alt="検索する" class="input_btn ovr" >
+</button>
+<!-- <input type="image" src="/assets/imgs/map/btn_src.gif" alt="" class="input_btn ovr"> -->
+</dd>
+</dl>
+
+<p>複数のキーワードを空白で区切って指定できます。全てのキーワードを含んでいるものが検索されます。<br>
+カタカナは全角で入力してください。</p>
+</div></div>
+
+
+
+<div class="area_src_purpose area_mod panel  panel_hidden">
+<!-- <h3 class="ttl_src panel_ttl"><strong>目的別</strong>で探す<span class="panel_nav"></span></h3> -->
+<h3 class="ttl_src panel_ttl"><button type="button" class="panel_ttl_button"><strong>目的別</strong>で探す<span class="panel_nav"></span></button></h3>
+    
+
+<div class="panel_body">
+<ul class="list_src_purpose list_src_purpose_first cf">
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_shop.png" alt=""></span>
+<input type="checkbox" name="feature[]" value="1" id="ContentFeature1">パパ・ママ応援ショップ</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_babyst.png" alt=""></span>
+<input type="checkbox" name="feature[]" value="2" id="ContentFeature2">赤ちゃんの駅</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_mamaref.png" alt=""></span>
+<input type="checkbox" name="feature[]" value="3" id="ContentFeature3">ママ・パパ・リフレッシュ協力店</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_largefamily.png" alt=""></span>
+<input type="checkbox" name="feature[]" value="4" id="ContentFeature4">多子世帯応援ショップ</label>
+</li>
+
+<!-- 保育所、幼稚園 -->
+
+</ul>
+
+<div class="bl_MapBnr">
+<p>令和2年9月30日から、保育所、幼稚園、認定こども園、小規模保育事業者、家庭的保育事業者、居宅訪問型保育事業者、事業所内保育事業者の検索はこちら</p>
+<figure class="el_MapBnr"><a href="https://www.wam.go.jp/kokodesearch/" target="_blank"><img src="/assets/imgs/map/banner2.png" alt="こども・こそだての情報は「ここdeサーチ」で！"></a></figure>
+</div>
+<h3 class="ttl_sub">パパ・ママ応援ショップ、多子世帯応援ショップ、赤ちゃんの駅、ママ・パパ・リフレッシュ協力店
+の区分</h3>
+<ul class="list_src_purpose cf">
+
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_05.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="1" id="ContentCategory1">買物</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_06.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="2" id="ContentCategory2">飲食</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_07.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="3" id="ContentCategory3">宿泊</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_08.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="4" id="ContentCategory4">遊び</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_09.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="5" id="ContentCategory5">金融</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_10.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="6" id="ContentCategory6">自動車</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_11.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="7" id="ContentCategory7">理容・美容</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_12.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="8" id="ContentCategory8">写真</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_13.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="9" id="ContentCategory9">自転車</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_25.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="20" id="ContentCategory20">住宅</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_26.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="21" id="ContentCategory21">教育・習い事</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_14.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="10" id="ContentCategory10">公園</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_15.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="11" id="ContentCategory11">公共施設</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_16.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="12" id="ContentCategory12">公共交通機関</label>
+</li>
+<li>
+<label>
+<span><img src="/assets/imgs/map/icon/b_purpose_17.png" alt=""></span>
+<input type="checkbox" name="category_id[]" value="13" id="ContentCategory13">その他</label>
+</li>
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="area_src_area area_mod panel  panel_hidden">
+<h3 class="ttl_src panel_ttl"><button type="button" class="panel_ttl_button"><strong>エリア</strong>で探す<span class="panel_nav"></span></button></h3>
+<!-- <h3 class="ttl_src panel_ttl"><strong>エリア</strong>で探す<span class="panel_nav"></span></h3> -->
+
+<div class="panel_body">
+<dl class="list_src_area cf area01" >
+<dt>さいたま市</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="1" id="ContentArea1"><span class="check_focus">さいたま市西区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="2" id="ContentArea2"><span class="check_focus">さいたま市北区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="3" id="ContentArea3"><span class="check_focus">さいたま市大宮区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="4" id="ContentArea4"><span class="check_focus">さいたま市見沼区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="5" id="ContentArea5"><span class="check_focus">さいたま市中央区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="6" id="ContentArea6"><span class="check_focus">さいたま市桜区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="7" id="ContentArea7"><span class="check_focus">さいたま市浦和区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="8" id="ContentArea8"><span class="check_focus">さいたま市南区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="9" id="ContentArea9"><span class="check_focus">さいたま市緑区</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="10" id="ContentArea10"><span class="check_focus">さいたま市岩槻区</span></label></li>
+ 
+</ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area02" >
+<dt>秩父地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="11" id="ContentArea11"><span class="check_focus">秩父市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="12" id="ContentArea12"><span class="check_focus">横瀬町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="13" id="ContentArea13"><span class="check_focus">皆野町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="14" id="ContentArea14"><span class="check_focus">長瀞町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="15" id="ContentArea15"><span class="check_focus">小鹿野町</span></label></li>
+ 
+</ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area03" >
+<dt>北部地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="16" id="ContentArea16"><span class="check_focus">熊谷市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="17" id="ContentArea17"><span class="check_focus">美里町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="18" id="ContentArea18"><span class="check_focus">本庄市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="19" id="ContentArea19"><span class="check_focus">神川町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="20" id="ContentArea20"><span class="check_focus">深谷市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="21" id="ContentArea21"><span class="check_focus">上里町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="22" id="ContentArea22"><span class="check_focus">寄居町</span></label></li>
+ </ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area04" >
+<dt>東部地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="23" id="ContentArea23"><span class="check_focus">春日部市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="24" id="ContentArea24"><span class="check_focus">草加市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="25" id="ContentArea25"><span class="check_focus">越谷市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="26" id="ContentArea26"><span class="check_focus">八潮市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="27" id="ContentArea27"><span class="check_focus">三郷市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="28" id="ContentArea28"><span class="check_focus">松伏町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="29" id="ContentArea29"><span class="check_focus">吉川市</span></label></li>
+ </ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area05" >
+<dt>利根地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="30" id="ContentArea30"><span class="check_focus">行田市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="31" id="ContentArea31"><span class="check_focus">加須市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="32" id="ContentArea32"><span class="check_focus">羽生市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="33" id="ContentArea33"><span class="check_focus">宮代町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="34" id="ContentArea34"><span class="check_focus">白岡市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="35" id="ContentArea35"><span class="check_focus">久喜市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="36" id="ContentArea36"><span class="check_focus">杉戸町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="37" id="ContentArea37"><span class="check_focus">蓮田市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="38" id="ContentArea38"><span class="check_focus">幸手市</span></label></li>
+ </ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area06" >
+<dt>県央地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="39" id="ContentArea39"><span class="check_focus">川口市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="40" id="ContentArea40"><span class="check_focus">鴻巣市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="41" id="ContentArea41"><span class="check_focus">上尾市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="42" id="ContentArea42"><span class="check_focus">蕨市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="43" id="ContentArea43"><span class="check_focus">戸田市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="44" id="ContentArea44"><span class="check_focus">桶川市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="45" id="ContentArea45"><span class="check_focus">北本市</span></label></li>
+    <li><label><input type="checkbox" name="area_id[]" value="46" id="ContentArea46"><span class="check_focus">伊奈町</span></label></li>
+</ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area07" >
+<dt>南西部地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="47" id="ContentArea47"><span class="check_focus">ふじみ野市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="48" id="ContentArea48"><span class="check_focus">富士見市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="49" id="ContentArea49"><span class="check_focus">志木市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="50" id="ContentArea50"><span class="check_focus">新座市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="51" id="ContentArea51"><span class="check_focus">和光市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="52" id="ContentArea52"><span class="check_focus">朝霞市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="53" id="ContentArea53"><span class="check_focus">三芳町</span></label></li>
+ </ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area08" >
+<dt>西部地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="54" id="ContentArea54"><span class="check_focus">川越市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="55" id="ContentArea55"><span class="check_focus">所沢市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="56" id="ContentArea56"><span class="check_focus">毛呂山町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="57" id="ContentArea57"><span class="check_focus">飯能市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="58" id="ContentArea58"><span class="check_focus">越生町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="59" id="ContentArea59"><span class="check_focus">狭山市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="60" id="ContentArea60"><span class="check_focus">入間市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="61" id="ContentArea61"><span class="check_focus">坂戸市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="62" id="ContentArea62"><span class="check_focus">鶴ヶ島市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="63" id="ContentArea63"><span class="check_focus">日高市</span></label></li>
+ 
+</ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area09" >
+<dt>比企地域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="64" id="ContentArea64"><span class="check_focus">東松山市</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="65" id="ContentArea65"><span class="check_focus">滑川町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="66" id="ContentArea66"><span class="check_focus">嵐山町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="67" id="ContentArea67"><span class="check_focus">小川町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="68" id="ContentArea68"><span class="check_focus">ときがわ町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="69" id="ContentArea69"><span class="check_focus">川島町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="70" id="ContentArea70"><span class="check_focus">吉見町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="71" id="ContentArea71"><span class="check_focus">鳩山町</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="72" id="ContentArea72"><span class="check_focus">東秩父村</span></label></li>
+ 
+</ul>
+</dd>
+</dl>
+
+
+<dl class="list_src_area cf area11" >
+<dt>県内全域</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="73" id="ContentArea73"><span class="check_focus">全市町村</span></label></li>
+ </ul>
+</dd>
+</dl>
+<dl class="list_src_area cf area13" >
+<dt>県外</dt>
+<dd>
+<ul>
+    <li><label><input type="checkbox" name="area_id[]" value="74" id="ContentArea74"><span class="check_focus">千葉県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="75" id="ContentArea75"><span class="check_focus">東京都</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="76" id="ContentArea76"><span class="check_focus">神奈川県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="77" id="ContentArea77"><span class="check_focus">茨城県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="78" id="ContentArea78"><span class="check_focus">栃木県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="79" id="ContentArea79"><span class="check_focus">群馬県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="80" id="ContentArea80"><span class="check_focus">新潟県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="81" id="ContentArea81"><span class="check_focus">静岡県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="82" id="ContentArea82"><span class="check_focus">福島県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="83" id="ContentArea83"><span class="check_focus">宮城県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="84" id="ContentArea84"><span class="check_focus">長野県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="85" id="ContentArea85"><span class="check_focus">愛知県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="86" id="ContentArea86"><span class="check_focus">北海道</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="87" id="ContentArea87"><span class="check_focus">青森県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="88" id="ContentArea88"><span class="check_focus">岩手県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="89" id="ContentArea89"><span class="check_focus">秋田県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="90" id="ContentArea90"><span class="check_focus">山形県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="95" id="ContentArea95"><span class="check_focus">富山県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="96" id="ContentArea96"><span class="check_focus">石川県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="97" id="ContentArea97"><span class="check_focus">福井県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="98" id="ContentArea98"><span class="check_focus">山梨県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="99" id="ContentArea99"><span class="check_focus">岐阜県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="100" id="ContentArea100"><span class="check_focus">三重県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="101" id="ContentArea101"><span class="check_focus">滋賀県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="102" id="ContentArea102"><span class="check_focus">京都府</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="103" id="ContentArea103"><span class="check_focus">大阪府</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="104" id="ContentArea104"><span class="check_focus">兵庫県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="105" id="ContentArea105"><span class="check_focus">奈良県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="106" id="ContentArea106"><span class="check_focus">和歌山県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="107" id="ContentArea107"><span class="check_focus">鳥取県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="108" id="ContentArea108"><span class="check_focus">島根県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="109" id="ContentArea109"><span class="check_focus">岡山県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="110" id="ContentArea110"><span class="check_focus">広島県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="111" id="ContentArea111"><span class="check_focus">山口県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="112" id="ContentArea112"><span class="check_focus">徳島県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="113" id="ContentArea113"><span class="check_focus">香川県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="114" id="ContentArea114"><span class="check_focus">愛媛県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="115" id="ContentArea115"><span class="check_focus">高知県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="116" id="ContentArea116"><span class="check_focus">福岡県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="117" id="ContentArea117"><span class="check_focus">佐賀県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="118" id="ContentArea118"><span class="check_focus">長崎県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="119" id="ContentArea119"><span class="check_focus">熊本県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="120" id="ContentArea120"><span class="check_focus">大分県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="121" id="ContentArea121"><span class="check_focus">宮崎県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="122" id="ContentArea122"><span class="check_focus">鹿児島県</span></label></li>
+     <li><label><input type="checkbox" name="area_id[]" value="123" id="ContentArea123"><span class="check_focus">沖縄県</span></label></li>
+ 
+</ul>
+</dd>
+</dl>
+
+</div></div>
+
+
+
+
+
+
+<script>
+function toggleChainstore(chainstoreId){
+    $("tr[data-ch='" + chainstoreId + "']").toggle();
+}
+</script>
+<p class="txtc btn_src_above mb40"><button type="submit"><img src="/assets/imgs/map/btn_src_above.gif" alt="上記の条件で検索する" class="input_btn"></button></p>
+</form><a name='map'></a>
+
+
+<a name="search_result"></a>
+<div class="area_result">
+<p class="txt_count">
+0件中　0～0件</p>
+
+<div class="area_result_desktop" >
+<table class="table_result">
+<thead>
+<tr>
+<th>施設名</th>
+<th>区分</th>
+<th>住所</th>
+<th>電話番号</th>
+
+</tr>
+</thead>
+<tbody>
+
+
+
+
+</tbody>
+</table>
+
+<style>
+ul.pagination li{
+    display:inline-block;
+    padding:.5em 1em;
+    border: 1px solid #ccc;
+}
+ul.pagination li.active{
+    background-color: #ddd;
+}
+</style>
+<script>
+$(function(){
+    $("a.page-link").click(function(){
+        location.href=$(this).prop('href');
+        return true;
+    });
+});
+</script>
+
+
+
+</div>
+
+
+</div>
+
+<div id="subcol">
+
+
+
+
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+<footer id="footer">
+<div class="unit_footer cf">
+<dl class="address">
+<dt>埼玉県福祉部こども政策課</dt>
+<dd>〒330-9301　さいたま市浦和区高砂3丁目15番1号<br>
+TEL：048-830-3343　FAX：048-830-4784</dd>
+</dl>
+<ul class="fnav">
+    <li><a href="/about">このサイトについて</a></li>
+  <li><a href="/privacy">個人情報保護について</a></li>
+  <li><a href="/link">リンク集</a></li>
+</ul>
+<p class="page_top"><a href="#header"><img src="/assets/imgs/common/footer/b_pagetop.gif" alt="ページの先頭へ" width="115" height="100"></a></p>
+<!-- / .unit_footer --></div>
+<p class="copy">Copyright &copy; 2014 Saitama Prefecture, All rights reserved.</p>
+<!--/footer --></footer>
+
+</body>
+</html>	

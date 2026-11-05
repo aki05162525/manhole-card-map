@@ -1,0 +1,602 @@
+[
+  {
+    "officialUrl": "http://www.city.azumino.nagano.jp/soshiki/39/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.3451112335424!2d137.90359291527602!3d36.30393708005384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d6d46b62d70bf%3A0xca0caa1b79c6e996!2z44CSMzk5LTgyMDUg6ZW36YeO55yM5a6J5puH6YeO5biC6LGK56eR77yW77yQ77yQ77yQ!5e0!3m2!1sja!2sjp!4v1453511487083",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/4f1e13b451486abdc1f52e7e.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "http://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.07211801629327,138.08479327596896&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/ed0c40f6941f6d0eeacb84da.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "http://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.074964,138.089644&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/af18e549f518910cb824c1fb.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "http://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.07562161860838,138.089438223915&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/00a9f3e113db5f728fc8f3fb.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "http://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.081369,138.080955&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/89d5bf504d6c6e157c3eea22.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://healthyterrace-saku.jp/",
+    "mapUrl": "https://maps.google.com/maps?q=%E9%95%B7%E9%87%8E%E7%9C%8C%E4%BD%90%E4%B9%85%E5%B8%82%E4%BC%B4%E9%87%8E7%E7%95%AA%E5%9C%B01&t=m&z=10&output=embed&iwloc=near",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/a217e8afefbf6f758455163b.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://hotpark-asashina.com/page-3.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.246319589013!2d138.40198131558157!3d36.257798380063896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dca7be52f82bb%3A0x6c360a13755e0130!2z44Os44K544OI44Op44OzIOOBguOBleOBl-OBquS6rQ!5e0!3m2!1sja!2sjp!4v1585726449767!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/522acc987ecc3f818e1dd3d0.html",
+    "markers": [
+      [
+        "0x601dca7be52f82bb:0x6c360a13755e0130",
+        "〒384-2104 長野県佐久市甲２１７７ 道の駅ほっとぱ~く・浅科 レストラン あさしな亭",
+        "36.2577315",
+        "138.4043318",
+        "7797430883528343856"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://kai.library2.city.kai.yamanashi.jp/lib_futaba.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.6403523910685!2d138.48508634985382!3d35.68585663723045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c09f193185a3f%3A0x8fab7029f95da2fc!2z5Y-M6JGJ55S65Zuz5pu46aSoIOS6i-WLmeWupA!5e0!3m2!1sja!2sjp!4v1538424592210",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/9a624059dc34c0b9b4cbe4d0.html",
+    "markers": [
+      [
+        "0x601c09f193185a3f:0x8fab7029f95da2fc",
+        "Futaba Library, 230 Shimoimai, Kai, Yamanashi 400-0105",
+        "35.6858523",
+        "138.4872804",
+        "10352491494020850428"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://kankou-minamiminowa.nagano.jp/ajikoubou/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.471133143187!2d137.94174672684707!3d35.88647527252179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601cfa97a22eab7f%3A0xff543093c6158168!2z5aSn6Iqd6auY5Y6fIOWRs-W3peaIvw!5e0!3m2!1sja!2sjp!4v1733798745944!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/a80407488cb167b5d54f7dfc.html",
+    "markers": [
+      [
+        "0x601cfa97a22eab7f:0xff543093c6158168",
+        "〒399-4511 長野県上伊那郡南箕輪村2358番地5 道の駅 大芝高原 味工房",
+        "35.8864454",
+        "137.9444392",
+        "18398383788956942696"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://kofu-kameyaza.com/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3241.5864097547837!2d138.5691679!3d35.6625603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bf900780501f3%3A0x34c0026b67335928!2z55Sy5bqc5biC5q205Y-y5paH5YyW5Lqk5rWB5pa96KitIOOBk-OBhuOBteS6gOWxi-W6pw!5e0!3m2!1sja!2sjp!4v1744718203607!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/f23c58a2a66497331f1b220c.html",
+    "markers": [
+      [
+        "0x601bf900780501f3:0x34c0026b67335928",
+        "〒400-0031 山梨県甲府市丸の内１丁目１１−５ 甲府市歴史文化交流施設 こうふ亀屋座",
+        "35.6635947",
+        "138.5711372",
+        "3801040745816873256"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://kofu-kameyaza.com/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3241.5864097547837!2d138.5691679!3d35.6625603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bf900780501f3%3A0x34c0026b67335928!2z55Sy5bqc5biC5q205Y-y5paH5YyW5Lqk5rWB5pa96KitIOOBk-OBhuOBteS6gOWxi-W6pw!5e0!3m2!1sja!2sjp!4v1744718203607!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/f23c58a2a66497331f1b220c.html",
+    "markers": [
+      [
+        "0x601bf900780501f3:0x34c0026b67335928",
+        "〒400-0031 山梨県甲府市丸の内１丁目１１−５ 甲府市歴史文化交流施設 こうふ亀屋座",
+        "35.6635947",
+        "138.5711372",
+        "3801040745816873256"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://komoroplaza.com/?page_id=368",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12857.497648968547!2d138.4258056!3d36.3274746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dc9b10d1217b5%3A0x19bc79f54a363617!2z5biC56uL5bCP6Ku45Zuz5pu46aSo!5e0!3m2!1sja!2sjp!4v1687396271198!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/6e587f8de9248f4908e39811.html",
+    "markers": [
+      [
+        "0x601dc9b10d1217b5:0x19bc79f54a363617",
+        "〒384-0025 長野県小諸市相生町３丁目３−３ こもろプラザ １階 市立小諸図書館",
+        "36.3270559",
+        "138.4254713",
+        "1854491240988816919"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://komoroplaza.com/?page_id=368",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12857.497648968547!2d138.4258056!3d36.3274746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dc9b10d1217b5%3A0x19bc79f54a363617!2z5biC56uL5bCP6Ku45Zuz5pu46aSo!5e0!3m2!1sja!2sjp!4v1687396271198!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/6e587f8de9248f4908e39811.html",
+    "markers": [
+      [
+        "0x601dc9b10d1217b5:0x19bc79f54a363617",
+        "〒384-0025 長野県小諸市相生町３丁目３−３ こもろプラザ １階 市立小諸図書館",
+        "36.3270559",
+        "138.4254713",
+        "1854491240988816919"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://kutsukake-terrace.info/access.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25708.35101391534!2d138.592603!3d36.347603!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e8ddca2cb86a6e0!2z5Lit6Lu95LqV5rKi6aeF!5e0!3m2!1sja!2sjp!4v1674685647740!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/0610877f6e3fe7751ee83dea.html",
+    "markers": [
+      [
+        "0x601dd249773606f3:0x8e8ddca2cb86a6e0",
+        "〒389-0111 長野県北佐久郡軽井沢町長倉中軽井沢駅",
+        "36.3476028",
+        "138.5926031",
+        "10272108916859381472"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://libnet.city.kofu.yamanashi.jp/lib/accessmap/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7104050453777!2d138.57938131525827!3d35.659505980199384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bf9be522217ed%3A0x13c11f72e9093e0f!2z55Sy5bqc5biC56uL5Zuz5pu46aSo!5e0!3m2!1sja!2sjp!4v1581035843952!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/c8cc877b76835839ce818ba9.html",
+    "markers": [
+      [
+        "0x601bf9be522217ed:0x13c11f72e9093e0f",
+        "〒400-0861 山梨県甲府市城東１丁目１２−３３ 甲府市立図書館",
+        "35.6595013",
+        "138.5815757",
+        "1423453535622217231"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://suwakko-land.com/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12905.416410023183!2d138.090763!3d36.036063000000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfbc814d1367c4d40!2z44GZ44KP44Gj44GT44Op44Oz44OJ!5e0!3m2!1sja!2sus!4v1563835794791!5m2!1sja!2sus",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/e63bafff9cf6a0b68e8aaf6e.html",
+    "markers": [
+      [
+        "0x601c55902e874325:0xfbc814d1367c4d40",
+        "日本、〒392-0016 長野県諏訪市豊田７３２ すわっこランド",
+        "36.036075",
+        "138.090762",
+        "18142773987656879424"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://tsumago.jp/access",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123473.60585372774!2d137.54580005682325!3d35.587251348285925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601cb7e4a598bb33%3A0x87bc2c35315036f6!2z5aa757Gg5a6_!5e0!3m2!1sja!2sjp!4v1608710890002!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/fe8d0dc79f6b07b59e4e0809.html",
+    "markers": [
+      [
+        "0x601cb7e4a598bb33:0x87bc2c35315036f6",
+        "〒399-5302 長野県木曽郡南木曽町吾妻２１９６−１ 妻籠宿",
+        "35.5775876",
+        "137.5956667",
+        "9780741097714104054"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://ueda-kanko.or.jp/spot/kankoukaikan/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3211.2575916310984!2d138.24515486527878!3d36.40296258003238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dbd284f0521cb%3A0xd03687173d3591f3!2z5LiK55Sw5biC6Kaz5YWJ5Lya6aSo!5e0!3m2!1sja!2sjp!4v1684132080674!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/9ab0856a46434f8e0d9a709b.html",
+    "markers": [
+      [
+        "0x601dbd284f0521cb:0xd03687173d3591f3",
+        "〒386-0024 長野県上田市大手２丁目８−４ 上田市観光会館 1F 上田市観光会館",
+        "36.402972",
+        "138.2473196",
+        "15003327742512304627"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.azumino.nagano.jp/soshiki/32/67732.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.854254531793!2d137.880249315277!3d36.34008198004582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d6dccb59e3e6f%3A0xacccd96af2717337!2z5a6J5puH6YeO5biC6Kaz5YWJ5oOF5aCx44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1610934921354!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/b32f5bfefc9b22bfbc21a5c6.html",
+    "markers": [
+      [
+        "0x601d6dccb59e3e6f:0xacccd96af2717337",
+        "〒399-8303 長野県安曇野市穂高５９５２−３ 安曇野市観光情報センター",
+        "36.3400871",
+        "137.8824135",
+        "12451566123129860919"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.azumino.nagano.jp/soshiki/7/10784.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3215.3452637807245!2d137.90355571527593!3d36.303933380053856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d6d46cc822a79%3A0xf20dc02cb69fab42!2z5a6J5puH6YeO5biC5b255omA!5e0!3m2!1sja!2sjp!4v1456654355702",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/75cd663cacd24cbb94b45ca4.html",
+    "markers": [
+      [
+        "0x601d6d46cc822a79:0xf20dc02cb69fab42",
+        "Azumino City Office, 6000 Toyoshina, Azumino, Nagano 399-8205",
+        "36.3038571",
+        "137.9058003",
+        "17441808230150810434"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.chino.lg.jp/soshiki/suidou/799.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5295.047234661264!2d138.15014567903714!3d35.993733298658896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c5751bc1e6f13%3A0xf954f6373c8ac9c7!2sKayanoshi+Information+Centre!5e0!3m2!1sen!2smm!4v1545299722621",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/fffeafe536c191a904d1a0f5.html",
+    "markers": [
+      [
+        "0x601c5751bc1e6f13:0xf954f6373c8ac9c7",
+        "Chino Tourist Information Center, モンエイトビル ２F 3506 Chino, Nagano 391-0001, Japan",
+        "35.9943241",
+        "138.1521133",
+        "17966255530587113927"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1363.9833670114078!2d138.51683593153456!3d35.60016930721042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bf1273763687b%3A0x60b2a1d6247e6c02!2z5Lit5aSu5biC5b255omA!5e0!3m2!1sja!2sjp!4v1597826141001!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/3a8b066f0501af283c93fec1.html",
+    "markers": [
+      [
+        "0x601bf1273763687b:0x60b2a1d6247e6c02",
+        "〒409-3892 山梨県中央市臼井阿原３０１番地１ 中央市役所",
+        "35.5997053",
+        "138.51687",
+        "6967809514602916866"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!4v1597803770499!6m8!1m7!1sCAoSLEFGMVFpcE1qbk9OOUM2Wi1wWDE5QVducWxMUmptV3lzV1RNczlPSkRYS0Rz!2m2!1d35.599870516977!2d138.51677394083!3f95.49878973149528!4f-8.434884350770076!5f0.7820865974627469",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/767be69e56e0aecdb0d3c9d3.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.iida.lg.jp/soshiki/160/time.html",
+    "mapUrl": "https://maps.google.co.jp/maps?ie=UTF8&q=%E9%A3%AF%E7%94%B0%E5%B8%82%E5%BD%B9%E6%89%80&hq=%E9%A3%AF%E7%94%B0%E5%B8%82%E5%BD%B9%E6%89%80&t=m&brcurrent=3,0x601c99bfd48b837b:0x3f5dfa2208996320,0&cid=11001742809594364674&ll=35.514701,137.821823&spn=0.003057,0.00456&z=17&iwloc=A&output=embed",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/b896d155d68f7ec2c78959e7.html",
+    "markers": [
+      [
+        "0x601c99be37b61621:0x98ae0acbac148302",
+        "Iida City Office, 2534 Okubocho, Iida, Nagano 395-8501",
+        "35.5148057",
+        "137.8218293",
+        "11001742809594364674"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.iiyama.nagano.jp/soshiki/jyougesuidou/gesuidou/info/mh_card2.htm",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12769.924219940183!2d138.36533355!3d36.854902700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff61924d44b122d%3A0x45674e49185271d4!2z6auY5qmL44G-44KG44G_5Lq65b2i6aSo!5e0!3m2!1sja!2sjp!4v1698143511989!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/c1f9ae584241834536de96ca.html",
+    "markers": [
+      [
+        "0x5ff61924d44b122d:0x45674e49185271d4",
+        "〒389-2253 長野県飯山市飯山愛宕町２９４１−１ 高橋まゆみ人形館",
+        "36.8561488",
+        "138.3626721",
+        "5001051987065860564"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.matsumoto.nagano.jp/soshiki/3/5902.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.11803849735!2d137.96738211496032!3d36.23662648006855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d0e8f962d2253%3A0xce836252155150a3!2z44CSMzkwLTA4NzQg6ZW36YeO55yM5p2-5pys5biC5aSn5omL77yT5LiB55uu77yY4oiS77yR77yTIOadvuacrOW4guW9ueaJgOWkp-aJi-S6i-WLmeaJgA!5e0!3m2!1sja!2sjp!4v1648790487651!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/2c86f710966ff77e77c2acb7.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.okaya.lg.jp/section/BarrierFree/syousai/232.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.961276600322!2d138.04728891422644!3d36.07004858010545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d002f4abe752f%3A0x1755b2406f1238dc!2z5bKh6LC36JqV57O45Y2a54mp6aSo!5e0!3m2!1sja!2sjp!4v1548295063668",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/18c172830dba41550d7deb31.html",
+    "markers": [
+      [
+        "0x601d0028b0c2dd45:0xea27e71c2fb56bd1",
+        "Okaya Silk Museum (Silk Fact Okaya), 1 Chome-4-8 Goda, Okaya, Nagano 394-0021",
+        "36.0699832",
+        "138.04948",
+        "16872708637212371921"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.ueda.nagano.jp/soshiki/ssangyo/2828.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3209.7001428083963!2d138.30537761527975!3d36.440632780024224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dbdc362473a5f%3A0xb222c0320665ef29!2z44CSMzg2LTIyMDEg6ZW36YeO55yM5LiK55Sw5biC55yf55Sw55S66ZW355-z6Iif77yW77yQ77yZ77yQ4oiS77yR!5e0!3m2!1sja!2sjp!4v1582694769684!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/b1f4b1995d42a34e3c0bfebe.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.city.ueda.nagano.jp/soshiki/tkyoiku/1974.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3216.041456580235!2d138.2277763152754!3d36.287043980057454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601da557f1cf5805%3A0xb100f86dfe6f4768!2z5LiK55Sw5biCIOatpuefs-OBqOOCguOBl-OBs-WNmueJqemkqA!5e0!3m2!1sja!2sjp!4v1592380111630!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/d98fdd05cb9c6806bb03391e.html",
+    "markers": [
+      [
+        "0x601da557f1cf5805:0xb100f86dfe6f4768",
+        "〒386-0503 長野県上田市下武石１９０２−４ 上田市 武石ともしび博物館",
+        "36.2870324",
+        "138.2299836",
+        "12754467296017074024"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.iida-museum.org/guidance/related-facility/tohyama/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3247.68720313119!2d137.830457!3d35.512012000000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb29d96f3e8539f1a!2z6aOv55Sw5biC576O6KGT5Y2a54mp6aSo!5e0!3m2!1sja!2sjp!4v1407895432660",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/80a3d9e250a2272ae6937b9e.html",
+    "markers": [
+      [
+        "0x601c999a80159ad9:0xb29d96f3e8539f1a",
+        "Iida City Museum, 2 Chome-655-7 Otemachi, Iida, Nagano 395-0034",
+        "35.5119811",
+        "137.8305148",
+        "12870609284413759258"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/miharashinoyu/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.6263317832827!2d137.91575831560317!3d35.88267298014778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ce54a0c41cbed%3A0xc89c4af0c4ed584b!2z44G_44Gv44KJ44GX44Gu5rmv!5e0!3m2!1sja!2sjp!4v1519228357717",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/181e0c82114e17b6530be60b.html",
+    "markers": [
+      [
+        "0x601ce54a0c41cbed:0xc89c4af0c4ed584b",
+        "Miharashi Hot Spring, 3480-1 Nishiminowa, Ina, Nagano 396-0041",
+        "35.8826429",
+        "137.9180867",
+        "14455511301908944971"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/miharashinoyu/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.6263317832827!2d137.91575831560317!3d35.88267298014778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ce54a0c41cbed%3A0xc89c4af0c4ed584b!2z44G_44Gv44KJ44GX44Gu5rmv!5e0!3m2!1sja!2sjp!4v1519228357717",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/181e0c82114e17b6530be60b.html",
+    "markers": [
+      [
+        "0x601ce54a0c41cbed:0xc89c4af0c4ed584b",
+        "Miharashi Hot Spring, 3480-1 Nishiminowa, Ina, Nagano 396-0041",
+        "35.8826429",
+        "137.9180867",
+        "14455511301908944971"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/panya/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51769.72591074015!2d138.04889927850334!3d35.80955888016459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c5ff4ccb67277%3A0xed7ffd53e658711e!2z6YGT44Gu6aeFIOWNl-OCouODq-ODl-OCueOCgOOCiSDjg5Hjg7PjgoQ!5e0!3m2!1sja!2sjp!4v1524013884630",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/94bc87f112360b0cc500f9ff.html",
+    "markers": [
+      [
+        "0x601c5ff4ccb67277:0xed7ffd53e658711e",
+        "Southern Alps Village Hase, 1400 Hasehiji, Ina, Nagano 396-0401",
+        "35.8103146",
+        "138.0834104",
+        "17113675645819842846"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/panya/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51769.72591074015!2d138.04889927850334!3d35.80955888016459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c5ff4ccb67277%3A0xed7ffd53e658711e!2z6YGT44Gu6aeFIOWNl-OCouODq-ODl-OCueOCgOOCiSDjg5Hjg7PjgoQ!5e0!3m2!1sja!2sjp!4v1524013884630",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/94bc87f112360b0cc500f9ff.html",
+    "markers": [
+      [
+        "0x601c5ff4ccb67277:0xed7ffd53e658711e",
+        "Southern Alps Village Hase, 1400 Hasehiji, Ina, Nagano 396-0401",
+        "35.8103146",
+        "138.0834104",
+        "17113675645819842846"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/panya/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51769.72591074015!2d138.04889927850334!3d35.80955888016459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c5ff4ccb67277%3A0xed7ffd53e658711e!2z6YGT44Gu6aeFIOWNl-OCouODq-ODl-OCueOCgOOCiSDjg5Hjg7PjgoQ!5e0!3m2!1sja!2sjp!4v1524013884630",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/94bc87f112360b0cc500f9ff.html",
+    "markers": [
+      [
+        "0x601c5ff4ccb67277:0xed7ffd53e658711e",
+        "Southern Alps Village Hase, 1400 Hasehiji, Ina, Nagano 396-0401",
+        "35.8103146",
+        "138.0834104",
+        "17113675645819842846"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ina-city-kankou.co.jp/sakurahotel/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.915556891198!2d138.06328911560183!3d35.82654748016073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601cf59982017195%3A0xf6b19ff56d3fee7c!2z6auY6YGg44GV44GP44KJ44Ob44OG44Or!5e0!3m2!1sja!2sjp!4v1519037520082",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/c8d1a4ee1a1c72e6bb2ba456.html",
+    "markers": [
+      [
+        "0x601cf59982017195:0xf6b19ff56d3fee7c",
+        "Takato Sakura Hotel, 217 Takatomachi Katsuma, Ina, Nagano 396-0214",
+        "35.8267008",
+        "138.0653693",
+        "17776165080656768636"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.ningyoukan.net/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12769.71603498655!2d138.3626721!3d36.8561488!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x45674e49185271d4!2z6auY5qmL44G-44KG44G_5Lq65b2i6aSo!5e0!3m2!1sja!2sjp!4v1612353509752!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/5dac68dc724ca6cb44eea9d8.html",
+    "markers": [
+      [
+        "0x5ff61924d44b122d:0x45674e49185271d4",
+        "〒389-2253 長野県飯山市飯山愛宕町２９４１−１ 高橋まゆみ人形館",
+        "36.8561488",
+        "138.3626721",
+        "5001051987065860564"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.shingenmuseum.com/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963.4573278442764!2d138.57763887769218!3d35.68509593030106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bf984d6cc3c39%3A0xa873dd92aeb3b7a1!2z55Sy5bqc5biC5q2m55Sw5rCP6aSo6Leh5q205Y-y6aSo!5e0!3m2!1sja!2sjp!4v1784896233150!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/f0c9fb824764a2437cd84d3c.html",
+    "markers": [
+      [
+        "0x601bf984d6cc3c39:0xa873dd92aeb3b7a1",
+        "〒400-0015 山梨県甲府市大手３丁目１−１４ 甲府市武田氏館跡歴史館",
+        "35.6852795",
+        "138.5769552",
+        "12138289042759595937"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.suwakanko.jp/access/",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206490.3743345173!2d137.977188632232!3d36.03464725909015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c55cc640541df%3A0xeda76322bde62046!2z6ZW36YeO55yM6KuP6Kiq5biC!5e0!3m2!1sja!2sjp!4v1552305074787",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/59aa792f3dc5ddf929f82887.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.obuse.nagano.jp/access.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399.89197522121816!2d138.31856210149573!3d36.695274440434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d8958a09e913d%3A0x649c6dadb5bc06a5!2z55S65Za25qOu44Gu6aeQ6LuK5aC0!5e0!3m2!1sja!2sjp!4v1646200682844!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/1cd97b97d00b9b19531761d7.html",
+    "markers": [
+      [
+        "0x601d8958a09e913d:0x649c6dadb5bc06a5",
+        "〒381-0201 長野県上高井郡小布施町小布施157−３ 町営森の駐車場",
+        "36.6952957",
+        "138.3189407",
+        "7249790093005424293"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.obuse.nagano.jp/access.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d282.7673816954824!2d138.32208230751095!3d36.6949877924822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe132b7e1d45af611!2z55S65Za25p2-5p2R6aeQ6LuK5aC0!5e0!3m2!1sja!2sjp!4v1646200968535!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/3e4309c8e3d3b813c2bb05ae.html",
+    "markers": [
+      [
+        "0x601d8bfb14bf4e9f:0xe132b7e1d45af611",
+        "〒381-0209 長野県上高井郡小布施町中松３６ 町営松村駐車場",
+        "36.6949161",
+        "138.322328",
+        "16227234587927574033"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.obuse.nagano.jp/access.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25590.361385932432!2d138.29794041791567!3d36.70345961797559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d896166e1f5b5%3A0x1bee4e1b26b1ccc0!2z6ZW36YeO55yM5LiK6auY5LqV6YOh5bCP5biD5pa955S6!5e0!3m2!1sja!2sjp!4v1538127046895",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/6993ddf0ee75ec1c0d37245b.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.07211801629327,138.08479327596896&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/ed0c40f6941f6d0eeacb84da.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.074964,138.089644&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/af18e549f518910cb824c1fb.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.07562161860838,138.089438223915&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/00a9f3e113db5f728fc8f3fb.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.town.shimosuwa.lg.jp/www/contents/1615253324806/index.html",
+    "mapUrl": "https://maps.google.co.jp/maps?q=36.081369,138.080955&output=embed&t=m&z=16&hl=ja&iwloc=B",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/89d5bf504d6c6e157c3eea22.html",
+    "markers": [],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.vill.chikuhoku.lg.jp/docs/377.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14418.117032121521!2d138.00790232738493!3d36.40265140300075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d741b4748c9c3%3A0xb074bcb998328b14!2z562R5YyX5p2R5b255aC0!5e0!3m2!1sja!2sjp!4v1486533074968",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/57434394541c83fd8d1473f0.html",
+    "markers": [
+      [
+        "0x601d741b4748c9c3:0xb074bcb998328b14",
+        "Chikuhoku Village Hall, 4195 Nishijo, Chikuhoku, Higashichikuma District, Nagano 399-7501",
+        "36.4026052",
+        "138.0119321",
+        "12714995153282173716"
+      ]
+    ],
+    "status": 200
+  },
+  {
+    "officialUrl": "https://www.vill.chikuhoku.lg.jp/docs/377.html",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3209.332396197345!2d138.06688346074478!3d36.44952261627274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601d7617b53a4e6b%3A0xe312860d2c969f36!2z562R5YyX5p2R5pWZ6IKy5aeU5ZOh5Lya!5e0!3m2!1sja!2sjp!4v1739760908972!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/locations-chubu-east-south/fff22dfcea8bfa449e81f05e.html",
+    "markers": [
+      [
+        "0x601d7617b53a4e6b:0xe312860d2c969f36",
+        "〒399-7711 長野県東筑摩郡筑北村坂井５６８７−２ 筑北村教育委員会",
+        "36.4496823",
+        "138.0683104",
+        "16362287787331198774"
+      ]
+    ],
+    "status": 200
+  }
+]

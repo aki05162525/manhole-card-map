@@ -1,0 +1,17 @@
+URL https://www.saitama-support.jp/map/search/detail/39795
+TEXT 子育てマップ | 埼玉県 結婚・妊娠・出産・子育て応援公式サイト このコンテンツはJavaScriptに最適化されています。JavaScriptが無効になっている場合は、有効にしてください。 English 简体中文 繁體中文 한국어 サイト内検索 Languages English 简体中文 繁體中文 한국어 ホーム 子育てマップ 検索結果 子育てマップ ふじみ野ステラ・ウェスト 基本情報 区分 公共施設 店舗・施設名 ふじみ野ステラ・ウェスト 主たる事業 施設貸出し 住所 〒356-0058 ふじみ野市大井中央2-1-8 電話 049-261-0648 FAX 049-261-0696 URL https://f-bunka.jp/stella-west/ メール stella-west@f-bunka.jp 営業時間 9:00～22:00 定休日 第2月曜日 赤ちゃんの駅 設備 [おむつ交換] ○ 
+    [授乳] ○ 
+    [その他]
+            チャイルドホールド 箇所数 14 設置場所 【おむつ交換+授乳】キッズルーム内(2階)(搾乳できます) 【おむつ交換】男・女・多目的トイレ(2階3階4階) 特徴 2～4階トイレにベビーベッドとチャイルドホールドを設置。 キッズルームにはベビーベッドのほか、安心して授乳できる椅子とスペースを用意。 PR 埼玉県福祉部こども政策課 〒330-9301　さいたま市浦和区高砂3丁目15番1号 TEL：048-830-3343　FAX：048-830-4784 このサイトについて 個人情報保護について リンク集 Copyright © 2014 Saitama Prefecture, All rights reserved.
+MAP
+    var latlng=new google.maps.LatLng(35.85883129, 139.5073506);
+
+LINKS
+ https://www.saitama-support.jp/assets/js/jquery.js
+ https://api.vdsapi.ne.jp/tools/engine/1.0/vds?key=syttsdvs5ys84k0888ok8occgck840c
+ https://www.saitama-support.jp/assets/js/respond.js
+ https://www.saitama-support.jp/assets/js/init.js
+ https://www.saitama-support.jp/assets/js/ga.js
+ https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
+ https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit
+ https://maps.google.com/maps/api/js?language=ja&key=AIzaSyBjFAEVu4VFWbxXUSMcPo1SiKZycqzO9NI

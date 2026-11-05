@@ -1,0 +1,25 @@
+URL https://www.city.toda.saitama.jp/soshiki/411/access-niizominami.html
+TEXT 新曽南庁舎　アクセスマップ - 戸田市公式サイト（総務課） ページの先頭です。 メニューを飛ばして本文へ 当サイトはJavaScriptを使用したコンテンツや機能を提供しています。ご利用の際はJavaScriptを有効にしてください。 閲覧支援 Language 日本語 ENGLISH 中文 中文繁体 한국어 Portugues Tiếng Việt 閉じる 検索・メニュー キーワードから探す 注目ワード # ごみ分別表 # tocoバス # 保育施設状況 # 戸田市人口 分類から探す くらしの情報 子育て・教育 健康・医療・福祉 観光・文化・スポーツ 事業者の方へ 市政情報 クイックなび 出産・育児 入園・入学 結婚・離婚 ごみ・リサイクル 引っ越し・住まい 働く 病気・けが おくやみ 介護・高齢 Foreign Language 日本語 ENGLISH 中文 中文繁体 한국어 Portugues Tiếng Việt 閲覧支援 イベントカレンダー 組織から探す 新着情報 このサイトが初めての方へ サイトマップ お問い合わせ 生成AI応答サービス 閉じる くらしの情報 子育て・教育 健康・医療・福祉 観光・文化・スポーツ 事業者の方へ 市政情報 現在のページ 戸田市トップページ > 組織からさがす > 総務課 > 新曽南庁舎　アクセスマップ 本文 新曽南庁舎　アクセスマップ 更新日：2025年7月29日更新 title="新曽南庁舎地図"&gt; 窓口 1階、2階：さくらパル、国際交流協会 新曽南多世代交流館「さくらパル」(1階、2階)：048-229-1061 公益財団法人戸田市国際交流協会(2階)：048-434-5690 3階：デジタル戦略室 デジタル戦略室デジタル戦略担当：048-229-3278 デジタル戦略室情報管理担当：048-229-3278 デジタル戦略室統計担当：048-229-3478 4階：水安全部(水道料金、下水道使用料の支払窓口があります)、戸田市新曽地域包括支援センター 総務課：048-229-4606 水道施設課：048-229-4638 下水道施設課：048-229-4673 河川課：048-229-4801 (注釈)上下水道料金支払、開栓、閉栓に関すること：048-229-4318 (注釈)給水装置に関すること：048-229-4336 戸田市新曽地域包括支援センター：048-446-6767 交通 電車でお越しの方 JR埼京線「戸田公園駅」下車、徒歩12分 国際興業バスでお越しの方 路線（戸52下笹目行）「浅間橋」停留所下車、徒歩2分 tocoバス（西循環）でお越しの方 「浅間橋」停留所下車、徒歩2分 皆さまのご意見をお聞かせください お求めの情報が十分掲載されていましたか？ 十分だった 普通 情報が足りなかった ページの構成や内容、表現は分かりやすかったですか？ 分かりやすかった 普通 分かりにくかった この情報をすぐに見つけられましたか？ すぐに見つけられた 普通 時間がかかった （注釈1）いただいたご意見は、より分かりやすく役に立つホームページとするために参考にさせていただきますので、ご協力をお願いします。 （注釈2）ブラウザでCookie（クッキー）が使用できる設定になっていない、または、ブラウザがCookie（クッキー）に対応していない場合はご利用頂けません。 このページに関するお問い合わせ先 総務課 〒335-0026 埼玉県戸田市新曽南3丁目1番5号　新曽南庁舎4階 新曽南庁舎アクセスマップ 電話：048-229-4606 ファクス：048-444-1609 お問い合わせはこちらから ページの先頭へ戻る 職員採用情報 戸田市情報ポータルサイトについて ウェブアクセシビリティ 個人情報の取扱いについて 免責事項 著作権について リンク集 住所：〒335-8588 埼玉県戸田市上戸田1丁目18番1号 電話：048-441-1800　ファクス：048-433-2200 開庁時間：午前8時30分から午後5時15分まで（土曜日、日曜日、祝日、休日、年末年始を除く） （注釈）一部、開庁時間が異なる組織、施設があります。 市役所へのアクセス 組織から探す Copyright Toda City All Rights Reserved.
+MAP
+<div class="detail_html"><iframe frameborder="0" height="480" marginheight="0" marginwidth="0" name="mapPrevframe" scrolling="no" src="https://e-toda.kukanjoho.jp/webgis/?ms=default&amp;ll=35.80667447049311,139.66961206961832&amp;z=16&amp;t=roadmap&amp;mp=101-1&amp;nv=1&amp;spd=0&amp;sv=1&amp;cs=1&amp;mw=1&amp;dg=1&amp;ib=1&amp;pin=1&amp;bt=0&amp;tg=1" style="border: 1px solid rgb(0, 0, 0); border-image: none;" title="新曽南庁舎アクセスマップ" width="970">title="新曽南庁舎地図"&gt;</iframe></div><div class="detail_free"><h2>窓口</h2>
+
+LINKS
+ https://www.city.toda.saitama.jp/ssi/js/escapeurl.js
+ https://www.city.toda.saitama.jp/ssi/js/jquery.js
+ https://www.city.toda.saitama.jp/ssi/js/jquery-migrate.js
+ https://www.city.toda.saitama.jp/ssi/js/common.js
+ https://www.city.toda.saitama.jp/ssi/js/search-trend.js
+ https://www.city.toda.saitama.jp/ssi/js/s-google.js
+ https://www.city.toda.saitama.jp/ssi/js/search-open-page-id.js
+ https://www.city.toda.saitama.jp/ssi/js/last-page-parts-load-1.js
+ https://www.city.toda.saitama.jp/ssi/js/common-top.js
+ https://www.city.toda.saitama.jp/ssi/js/blank.js
+ https://www.city.toda.saitama.jp/ssi/js/ewbc.js
+ https://msta.j-server.com/MSTA/LUC2AITODA/js/msta.js
+ https://www.google.com/coop/cse/brand?form=cse-search-box
+ https://www.google.com/coop/cse/brand?form=cse-search-box_nav
+# 保育施設状況 https://www.city.toda.saitama.jp/site/dacco/hoikuen-06akijoukyo.html
+新曽南庁舎アクセスマップ https://www.city.toda.saitama.jp/soshiki/411/access-niizominami.html
+市役所へのアクセス https://www.city.toda.saitama.jp/soshiki/173/access-todacity.html
+ https://www.city.toda.saitama.jp/ssi/js/ai-recommend-lib.js
+ https://www.city.toda.saitama.jp/ssi/js/ai-recommend.js

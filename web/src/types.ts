@@ -29,9 +29,19 @@ export type Card = {
   acquired: string;
   override?: { checkedAt: string; evidence: string; reviewer: string };
 };
+export type Evidence = {
+  sourceUrl: string;
+  snapshotPath: string;
+  snapshotSHA256: string;
+  sourceLocator: string;
+  checkedAt: string;
+  actorType: string;
+  verificationMethod: string;
+};
 export type Data = {
   schema: number;
   updated: string;
+  evaluatedAt?: string;
   cards: Card[];
   places: {
     id: string;
@@ -39,6 +49,7 @@ export type Data = {
     address: string;
     phone: string;
     coordinate: Coord;
+    evidence?: Evidence;
   }[];
   relations: {
     cardId: string;
@@ -46,6 +57,13 @@ export type Data = {
     condition: string;
     periodRaw: string;
     alternativeRaw: string;
+    hours?: string[];
+    status?: Status;
+    validFrom?: string;
+    validTo?: string;
+    reviewUntil?: string;
+    review?: "verified" | "needs-review";
+    evidence?: Evidence;
   }[];
   pins: Pin[];
 };

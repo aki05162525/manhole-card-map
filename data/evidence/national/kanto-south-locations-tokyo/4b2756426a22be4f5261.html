@@ -1,0 +1,520 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	
+	<meta name="keywords" content="みずほ,資料,展示,ギャラリー">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5M97H5FM');</script>
+<!-- End Google Tag Manager -->
+	<link rel="shortcut icon" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/common/keyaki_favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/webclip.png" />
+	<link rel="stylesheet" type="text/css" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/common.css">
+	<link rel="stylesheet" type="text/css" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/slick.css">
+	<link rel="stylesheet" type="text/css" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/slick-theme.css">
+	<link href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/meanmenu.css" rel="stylesheet">
+	<link href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/hover-min.css" rel="stylesheet">
+	<link href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/css/modaal.css" rel="stylesheet">
+	<link href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/style.css" rel="stylesheet">
+	<link href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/style_keyakikan-renewal.css" rel="stylesheet" type="text/css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/footerFixed.js"></script>
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/jquery.cookie_option.js"></script>
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/jquery.matchHeight-min.js"></script>
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/modaal.js"></script>
+	<script>
+		$(function() {
+			$('.matchheight').matchHeight();
+		});
+	</script>
+	<script src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/js/slick.min.js"></script>
+	<script type="text/javascript">
+		// ---------- pop ----------
+		$('.img-pop').modaal({
+			type: 'image',
+			background: '#000'
+		});
+
+		$(function() {
+			let tabs = $(".post-tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
+			$(".post-tab").on("click", function() { // tabをクリックしたらイベント発火
+				$(".tab-active").removeClass("tab-active"); // activeクラスを消す
+				$(this).addClass("tab-active"); // クリックした箇所にactiveクラスを追加
+				const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
+				$(".tab-content").removeClass("tab-show").eq(index).addClass("tab-show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
+			})
+		})
+
+
+
+		// ---------- slickslide ----------
+		$(function() {
+			$('.top_slider').slick({
+				arrows: true,
+				fade: true,
+				infinite: true,
+				dots: true,
+				slidesToShow: 1,
+				autoplaySpeed: 4000,
+				speed: 1000,
+				autoplay: false
+			});
+		});
+		// ---------- gnav ----------
+		$(function() {
+			$('.toggle').click(function() {
+				$(this).toggleClass("active");
+				if ($(this).hasClass('active')) {
+					$('.global_nav').addClass('active');
+				} else {
+					$('.global_nav').removeClass('active');
+				}
+			});
+		});
+		// ---------- /gnav ----------
+		// ---------- スムーズスクロール ----------
+		$(function() {
+			$('a[href^="#"]').click(function() {
+				var speed = 500;
+				var href = $(this).attr("href");
+				var target = $(href == "#" || href == "" ? 'html' : href);
+				var position = target.offset().top;
+				$("html, body").animate({
+					scrollTop: position
+				}, speed, "swing");
+				return false;
+			});
+		});
+		// ---------- pagetop ----------
+		$(function() {
+			var topBtn = $('.pagetop');
+			topBtn.hide();
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 100) {
+					topBtn.fadeIn();
+				} else {
+					topBtn.fadeOut();
+				}
+			});
+			topBtn.click(function() {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 500);
+				return false;
+			});
+		});
+		// ---------- タブ ----------
+		$(function() {
+			$('#tab-contents div[id != "tab1"]').hide();
+			// タブをクリックすると
+			$("#faq ul li a").click(function() {
+				// 一度全てのコンテンツを非表示にする
+				$("#tab-contents div").hide();
+				// 次に選択されたコンテンツを再表示する
+				$($(this).attr("href")).show();
+				// 現在のcurrentクラスを削除
+				$(".current").removeClass("current");
+				// 選択されたタブ（自分自身）にcurrentクラスを追加
+				$(this).addClass("current");
+				return false;
+			});
+		});
+		// ---------- /タブ ----------
+		// ---------- アコーディオン ----------
+		$(function() {
+			$('.accordion dd').hide();
+			$('.accordion dt').click(function() {
+				$(this).toggleClass("ac");
+				$(this).next(".accordion dd").slideToggle();
+			});
+		});
+		// ---------- /アコーディオン ----------
+		// ---------- tel SPのみ ----------
+		/*$(function() {
+			var device = navigator.userAgent;
+			if ((device.indexOf('iPhone') > 0 && device.indexOf('iPad') == -1) || device.indexOf('Android') > 0) {
+				$(".tel").wrap('<a href="tel:0663091133"></a>');
+			}
+		});*/
+		// ---------- /tel ----------
+		// ---------- モーダル ----------
+		$(function() {
+			$(".modalOpen").click(function() {
+				var navClass = $(this).attr("class"),
+					href = $(this).attr("href");
+				$(href).fadeIn();
+				$(this).addClass("open");
+				return false;
+			});
+			$(".modalClose, .overLay").click(function() {
+				$(this).parents(".modal").fadeOut();
+				$(".modalOpen").removeClass("open");
+				return false;
+			});
+		});
+		// ---------- /モーダル ----------
+		// ---------- 下層タイトル文字列変換 ----------
+		$(function() {
+			var h1 = $("#page_ttl h1 .lang_e").text();
+			var result = h1.replace("_", "\t");
+			$("#page_ttl h1 .lang_e").text(result);
+		});
+		// ---------- /下層タイトル文字列変換 ----------
+		// ---------- languageページ遷移 ----------
+		$(function() {
+			// プルダウン変更時に遷移
+			$('.language_select select').change(function() {
+				if ($(this).val() != '') {
+					window.location.href = $(this).val();
+				}
+			});
+		});
+		// ---------- languageページ遷移 ----------
+	</script>
+	<!---->
+	<script>
+		jQuery(function($) {
+			$('p.event_name').each(function() {
+				var $target = $(this);
+
+				// オリジナルの文章を取得する
+				var html = $target.html();
+
+				// 対象の要素を、高さにautoを指定し非表示で複製する
+				var $clone = $target.clone();
+				$clone
+					.css({
+						display: 'none',
+						position: 'absolute',
+						overflow: 'visible'
+					})
+					.width($target.width())
+					.height('auto');
+
+				// DOMを一旦追加
+				$target.after($clone);
+
+				// 指定した高さになるまで、1文字ずつ消去していく
+				while ((html.length > 0) && ($clone.height() > $target.height())) {
+					html = html.substr(0, html.length - 1);
+					$clone.html(html + '...');
+				}
+
+				// 文章を入れ替えて、複製した要素を削除する
+				$target.html($clone.html());
+				$clone.remove();
+			});
+		});
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700" rel="stylesheet">
+		<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+		<!-- All in One SEO 4.2.7.1 - aioseo.com -->
+		<title>アクセス - 瑞穂町郷土資料館 けやき館 - 瑞穂の歴史を知る興味深い資料の数々</title>
+		<meta name="description" content="瑞穂町の歴史や文化、自然について楽しく学ぶことができ、観光等の情報を発信する新たな資料館です。展示ギャラリーや体験学習室などの施設貸出も行っており、町民の作品の展示・発表や体験事業などの文化活動の場としても、ご利用いただけます。" />
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://mizuhokyodo.jp/access/" />
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.2.7.1 " />
+		<meta property="og:locale" content="ja_JP" />
+		<meta property="og:site_name" content="瑞穂町郷土資料館　けやき館 - 瑞穂の歴史を知る興味深い資料の数々 - 瑞穂町の歴史・文化・自然を楽しく学べる資料館" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="アクセス - 瑞穂町郷土資料館 けやき館 - 瑞穂の歴史を知る興味深い資料の数々" />
+		<meta property="og:description" content="瑞穂町の歴史や文化、自然について楽しく学ぶことができ、観光等の情報を発信する新たな資料館です。展示ギャラリーや体験学習室などの施設貸出も行っており、町民の作品の展示・発表や体験事業などの文化活動の場としても、ご利用いただけます。" />
+		<meta property="og:url" content="https://mizuhokyodo.jp/access/" />
+		<meta property="article:published_time" content="2025-02-03T01:19:55+00:00" />
+		<meta property="article:modified_time" content="2025-02-24T02:38:01+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="アクセス - 瑞穂町郷土資料館 けやき館 - 瑞穂の歴史を知る興味深い資料の数々" />
+		<meta name="twitter:description" content="瑞穂町の歴史や文化、自然について楽しく学ぶことができ、観光等の情報を発信する新たな資料館です。展示ギャラリーや体験学習室などの施設貸出も行っており、町民の作品の展示・発表や体験事業などの文化活動の場としても、ご利用いただけます。" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/mizuhokyodo.jp\/access\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/mizuhokyodo.jp\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/mizuhokyodo.jp\/","name":"\u30db\u30fc\u30e0","description":"\u745e\u7a42\u753a\u90f7\u571f\u8cc7\u6599\u9928\u306f\u3001\u8015\u5fc3\u9928\uff08\u793e\u4f1a\u6559\u80b2\u65bd\u8a2d\uff09\u306b\u96a3\u63a5\u3059\u308b\u5834\u6240\u306b\u3001\u5e73\u621026\u5e74\uff082014\uff0911\u6708\u306b\u958b\u9928\u3057\u307e\u3057\u305f\u3002\u745e\u7a42\u753a\u306e\u6b74\u53f2\u3084\u6587\u5316\u3001\u81ea\u7136\u306b\u3064\u3044\u3066\u697d\u3057\u304f\u5b66\u3076\u3053\u3068\u304c\u3067\u304d\u3001\u89b3\u5149\u7b49\u306e\u60c5\u5831\u3092\u767a\u4fe1\u3059\u308b\u65b0\u305f\u306a\u8cc7\u6599\u9928\u3067\u3059\u3002\u5c55\u793a\u30ae\u30e3\u30e9\u30ea\u30fc\u3084\u4f53\u9a13\u5b66\u7fd2\u5ba4\u306a\u3069\u306e\u65bd\u8a2d\u8cb8\u51fa\u3082\u884c\u3063\u3066\u304a\u308a\u3001\u753a\u6c11\u306e\u4f5c\u54c1\u306e\u5c55\u793a\u30fb\u767a\u8868\u3084\u4f53\u9a13\u4e8b\u696d\u306a\u3069\u306e\u6587\u5316\u6d3b\u52d5\u306e\u5834\u3068\u3057\u3066\u3082\u3001\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u3002","url":"https:\/\/mizuhokyodo.jp\/"},"nextItem":"https:\/\/mizuhokyodo.jp\/access\/#listItem"},{"@type":"ListItem","@id":"https:\/\/mizuhokyodo.jp\/access\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/mizuhokyodo.jp\/access\/","name":"\u30a2\u30af\u30bb\u30b9","description":"\u745e\u7a42\u753a\u306e\u6b74\u53f2\u3084\u6587\u5316\u3001\u81ea\u7136\u306b\u3064\u3044\u3066\u697d\u3057\u304f\u5b66\u3076\u3053\u3068\u304c\u3067\u304d\u3001\u89b3\u5149\u7b49\u306e\u60c5\u5831\u3092\u767a\u4fe1\u3059\u308b\u65b0\u305f\u306a\u8cc7\u6599\u9928\u3067\u3059\u3002\u5c55\u793a\u30ae\u30e3\u30e9\u30ea\u30fc\u3084\u4f53\u9a13\u5b66\u7fd2\u5ba4\u306a\u3069\u306e\u65bd\u8a2d\u8cb8\u51fa\u3082\u884c\u3063\u3066\u304a\u308a\u3001\u753a\u6c11\u306e\u4f5c\u54c1\u306e\u5c55\u793a\u30fb\u767a\u8868\u3084\u4f53\u9a13\u4e8b\u696d\u306a\u3069\u306e\u6587\u5316\u6d3b\u52d5\u306e\u5834\u3068\u3057\u3066\u3082\u3001\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u3002","url":"https:\/\/mizuhokyodo.jp\/access\/"},"previousItem":"https:\/\/mizuhokyodo.jp\/#listItem"}]},{"@type":"Organization","@id":"https:\/\/mizuhokyodo.jp\/#organization","name":"\u8015\u5fc3\u9928","url":"https:\/\/mizuhokyodo.jp\/"},{"@type":"WebPage","@id":"https:\/\/mizuhokyodo.jp\/access\/#webpage","url":"https:\/\/mizuhokyodo.jp\/access\/","name":"\u30a2\u30af\u30bb\u30b9 - \u745e\u7a42\u753a\u90f7\u571f\u8cc7\u6599\u9928 \u3051\u3084\u304d\u9928 - \u745e\u7a42\u306e\u6b74\u53f2\u3092\u77e5\u308b\u8208\u5473\u6df1\u3044\u8cc7\u6599\u306e\u6570\u3005","description":"\u745e\u7a42\u753a\u306e\u6b74\u53f2\u3084\u6587\u5316\u3001\u81ea\u7136\u306b\u3064\u3044\u3066\u697d\u3057\u304f\u5b66\u3076\u3053\u3068\u304c\u3067\u304d\u3001\u89b3\u5149\u7b49\u306e\u60c5\u5831\u3092\u767a\u4fe1\u3059\u308b\u65b0\u305f\u306a\u8cc7\u6599\u9928\u3067\u3059\u3002\u5c55\u793a\u30ae\u30e3\u30e9\u30ea\u30fc\u3084\u4f53\u9a13\u5b66\u7fd2\u5ba4\u306a\u3069\u306e\u65bd\u8a2d\u8cb8\u51fa\u3082\u884c\u3063\u3066\u304a\u308a\u3001\u753a\u6c11\u306e\u4f5c\u54c1\u306e\u5c55\u793a\u30fb\u767a\u8868\u3084\u4f53\u9a13\u4e8b\u696d\u306a\u3069\u306e\u6587\u5316\u6d3b\u52d5\u306e\u5834\u3068\u3057\u3066\u3082\u3001\u3054\u5229\u7528\u3044\u305f\u3060\u3051\u307e\u3059\u3002","inLanguage":"ja","isPartOf":{"@id":"https:\/\/mizuhokyodo.jp\/#website"},"breadcrumb":{"@id":"https:\/\/mizuhokyodo.jp\/access\/#breadcrumblist"},"datePublished":"2025-02-03T01:19:55+09:00","dateModified":"2025-02-24T02:38:01+09:00"},{"@type":"WebSite","@id":"https:\/\/mizuhokyodo.jp\/#website","url":"https:\/\/mizuhokyodo.jp\/","name":"\u8015\u5fc3\u9928","description":"\u745e\u7a42\u753a\u306e\u6b74\u53f2\u30fb\u6587\u5316\u30fb\u81ea\u7136\u3092\u697d\u3057\u304f\u5b66\u3079\u308b\u8cc7\u6599\u9928","inLanguage":"ja","publisher":{"@id":"https:\/\/mizuhokyodo.jp\/#organization"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+	<script>
+		var ajaxUrl = 'https://mizuhokyodo.jp/wp-admin/admin-ajax.php';
+	</script>
+<link rel='stylesheet' id='wp-block-library-css' href='https://mizuhokyodo.jp/wp-includes/css/dist/block-library/style.min.css?ver=6.7.11' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='wp-pagenavi-css' href='https://mizuhokyodo.jp/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css' href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&#038;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css' href='https://mizuhokyodo.jp/wp-content/plugins/easy-fancybox/fancybox/1.3.28/jquery.fancybox.min.css?ver=6.7.11' type='text/css' media='screen' />
+<style id='fancybox-inline-css' type='text/css'>
+.fancybox-hidden{display:none}#fancybox-content .fancybox-hidden,#fancybox-tmp .fancybox-hidden{display:revert}
+</style>
+<script type="text/javascript" src="https://mizuhokyodo.jp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://mizuhokyodo.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+</head>
+
+<body class="page-template-default page page-id-2819 access">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5M97H5FM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div id="wrapper">
+		<header id="header" class="cf">
+			<div class="header_inner">
+				<div class="logo_block">
+											<div class="logo">
+								
+							<a class="logo_link" href="https://mizuhokyodo.jp/">
+								<p class="logo_text">瑞穂町郷土資料館</p>
+								<img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/logo_keyakikan.png" alt="瑞穂町郷土資料館 けやき館">
+							</a>
+		
+													</div>
+										<div class="logo_text-block">
+						<a class="logo_text-block-tel" href="tel:042-568-0634">Tel：042-568-0634</a>
+						<p class="logo_text-block-info">開館時間　9:00~17:00</p>
+						<p class="logo_text-block-info">休館日　第3月曜日（祝日の場合は翌日）、<br class="sp-only">年末年始、臨時休館日</p>
+					</div>
+				</div>
+				<div class="pc_nav cf">
+					<nav>
+						<ul class="cf">
+							<li id="menu-item-1081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1081"><a href="https://mizuhokyodo.jp/guide/">施設案内</a></li>
+<li id="menu-item-1074" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1074"><a href="https://mizuhokyodo.jp/use/">利用方法</a></li>
+<li id="menu-item-2829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2829"><a href="https://mizuhokyodo.jp/permanent/">常設展示</a></li>
+<li id="menu-item-8577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8577"><a href="https://mizuhokyodo.jp/exhibition/">企画展</a></li>
+<li id="menu-item-2832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2832"><a href="https://mizuhokyodo.jp/events/">イベント・講座</a></li>
+						</ul>
+					</nav>
+					<!-- <div class="set_box">
+						<div class="bottom_box cf">
+							<ul class="sns cf">
+								<li><a href="https://www.facebook.com/miuzuhoactio" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_facebook.png" alt="facebook"></a></li>
+								<li><a href="https://www.instagram.com/koshinkan_actio/" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_instagram.png" alt="Instagram"></a></li>
+							</ul>
+						</div>
+					</div> -->
+				</div>		
+			</div>
+			<div class="sp_nav">
+				<div class="toggle"> 
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<nav class="global_nav">
+					<ul class="cf pc_menu">
+						<li id="menu-item-8292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8292"><a href="https://mizuhokyodo.jp/books/">刊行物のご案内</a></li>
+<li id="menu-item-8291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8291"><a href="https://mizuhokyodo.jp/culture/">瑞穂町文化財めぐり</a></li>
+<li id="menu-item-8294" class="menu-item menu-item-type-post_type_archive menu-item-object-blog menu-item-8294"><a href="https://mizuhokyodo.jp/blog/">ブログ</a></li>
+<li id="menu-item-8293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8293"><a href="https://mizuhokyodo.jp/information/">お知らせ</a></li>
+<li id="menu-item-8290" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2819 current_page_item menu-item-8290"><a href="https://mizuhokyodo.jp/access/" aria-current="page">アクセス</a></li>
+<li id="menu-item-8289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8289"><a href="https://mizuhokyodo.jp/links/">リンク</a></li>
+<li id="menu-item-8288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8288"><a href="https://mizuhokyodo.jp/contact/">お問い合わせ</a></li>
+						<li>
+							<ul class="sns cf">
+								<li><a href="https://www.facebook.com/miuzuhoactio" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_facebook.png" alt="facebook"></a></li>
+								<li><a href="https://www.instagram.com/keyakikan?igsh=MW85MGt6dHU4eXczag==" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_instagram.png" alt="Instagram"></a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="cf sp_menu">
+						<li id="menu-item-8281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8281"><a href="https://mizuhokyodo.jp/guide/">施設案内</a></li>
+<li id="menu-item-8282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8282"><a href="https://mizuhokyodo.jp/use/">利用方法</a></li>
+<li id="menu-item-8280" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8280"><a href="https://mizuhokyodo.jp/permanent/">常設展示</a></li>
+<li id="menu-item-8579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8579"><a href="https://mizuhokyodo.jp/exhibition/">企画展</a></li>
+<li id="menu-item-8283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8283"><a href="https://mizuhokyodo.jp/events/">イベント・講座</a></li>
+<li id="menu-item-8279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8279"><a href="https://mizuhokyodo.jp/books/">刊行物のご案内</a></li>
+<li id="menu-item-8278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8278"><a href="https://mizuhokyodo.jp/culture/">瑞穂町文化財めぐり</a></li>
+<li id="menu-item-8287" class="menu-item menu-item-type-post_type_archive menu-item-object-blog menu-item-8287"><a href="https://mizuhokyodo.jp/blog/">ブログ</a></li>
+<li id="menu-item-8285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8285"><a href="https://mizuhokyodo.jp/information/">お知らせ</a></li>
+<li id="menu-item-8277" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2819 current_page_item menu-item-8277"><a href="https://mizuhokyodo.jp/access/" aria-current="page">アクセス</a></li>
+<li id="menu-item-8276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8276"><a href="https://mizuhokyodo.jp/links/">リンク</a></li>
+<li id="menu-item-8275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8275"><a href="https://mizuhokyodo.jp/contact/">お問い合わせ</a></li>
+						<li>
+							<ul class="sns cf">
+								<li><a href="https://www.facebook.com/miuzuhoactio" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_facebook.png" alt="facebook"></a></li>
+								<li><a href="https://www.instagram.com/keyakikan?igsh=MW85MGt6dHU4eXczag==" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/icon_instagram.png" alt="Instagram"></a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div id="container">
+<div id="page_ttl">
+	<div class="contents_inner">
+		<h1>
+			<span class="lang_e">
+								access			</span>
+			<span class="lang_j">
+				アクセス			</span>
+		</h1>
+	</div>
+</div>
+<!-- /#page-ttl -->
+<div class="breadcrumb">
+	<div class="contents_inner">
+		<!-- Breadcrumb NavXT 7.1.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="瑞穂町郷土資料館　けやき館 - 瑞穂の歴史を知る興味深い資料の数々へ移動" href="https://mizuhokyodo.jp" class="home"><span property="name">ホーム</span></a><meta property="position" content="1"></span> &gt; アクセス	</div>
+</div>
+
+
+<section id="access" class="contents_section">
+	<div class="contents_inner">
+		<div class="map_column">
+			<div class="map_column_inner"><a class="img-pop" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/access.jpg"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/access.jpg" alt="アクセスMAP" /></a></div>
+			<div class="map_column_inner"><a class="img-pop" href="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/access_map.png"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/access_map.png" alt="ロードMAP" /></a></div>
+		</div>
+		<div id="map1" class="modal">
+			<div class="overLay"></div>
+			<figure><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/access.jpg" alt="アクセスMAP" /></figure>
+			<div class="inner"></div>
+		</div>
+		<div id="map2" class="modal">
+			<div class="overLay"></div>
+			<figure><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/lower-access/access_map.png" alt="ロードMAP" /></figure>
+			<div class="inner"></div>
+		</div>
+		<p class="btn_l tac"><a href="https://maps.app.goo.gl/wFARoCGfUAY5zTdM8" target="_blank" rel="noopener noreferrer">Googleマップで見る</a></p>
+
+		<div class="route_list cf">
+			<article class="border-double">
+				<h2>お車をご利用の場合<br class="sp-only">※駐車場約40台</h2>
+				<div class="txt matchheight">
+					<div>
+						<b>八王子・福生方面より</b>
+						<div class="text">国道16号「富士山」<br class="sp-only">交差点を右折<span class="num">300</span>ｍ右側</div>
+					</div>
+					<div>
+						<b>川越方面より</b>
+						<div>国道16号「富士山」<br class="sp-only">交差点を左折<span class="num">300</span>ｍ右側</div>
+					</div>
+					<div>
+						<b>新宿方面より</b>
+						<div>青梅街道と国道16号 <br class="sp-only">交差地点の信号を右折、<br>国道16号「富士山」<br class="sp-only">交差点を右折<span class="num">300</span>m右側</div>
+					</div>
+					<div>
+						<b>青梅方面より</b>
+						<div>青梅街道と国道16号 <br class="sp-only">交差地点の信号を左折、<br>国道16号「富士山」<br class="sp-only">交差点を右折<span class="num">300</span>m右側</div>
+					</div>
+					<p>現在、カーナビで瑞穂町郷土資料館を電話番号検索すると、旧郷土資料館（瑞穂町石畑1962番地）に案内されてしまいます。カーナビで検索される際には、現住所（瑞穂町駒形富士山316-5）での検索をお願いします。</p>
+				</div>
+			</article>
+			<article class="border-double">
+				<h2>電車をご利用の場合</h2>
+				<div class="route_list-right-txt">
+					JR八高線「箱根ケ崎」駅下車 東口より
+					<div align="center">徒歩<span class="num">20</span>分　タクシー<span class="num">5</span>分</div>
+				</div>
+				<div class="route_list-right-txt">
+					<h2>バスをご利用の場合</h2>
+					<p class="route_list-right-description">立川バス・西武バス・都営バス「箱根ケ崎駅」　下車徒歩20分</p>
+					<p class="route_list-right-description">瑞穂町コミュニティバス<br class="sp-only">「元狭山コース」</p>
+					<div align="center">
+						東口発 所要時間 約
+						<br class="pc-none">6分　駒形富士山バス停下車すぐ
+						<!--<br class="pc-none" />西口発 所要時間 約<span class="num">15</span>分-->
+						<a style="text-decoration: underline;" href="https://www.town.mizuho.tokyo.jp/kankyo/004/010/p008514.html" target="_blank" rel="noopener">瑞穂町コミュニティバスの詳細はこちら</a>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+
+	
+	<footer id="footer" class="footer">
+		<section id="link_area">
+			<div class="contents_inner">
+			<ul class="cf footer__banner">
+				<li><a href="http://www.koshinkan.jp/" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/common/koushinkan_banner.png" alt="耕心館"></a></li>
+				<li><a href="https://www.ittenbee-tokyomizuho.jp/" target="_blank"><img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/common/mizuho-kanko_banner.png" alt="瑞穂町観光情報サイト"></a></li>
+			</ul>
+			</div>
+		</section>
+		<section id="footer_area">
+			<div class="contents_inner cf">
+			<div class="ft_left">
+				<a class="logo_link" href="https://mizuhokyodo.jp/">
+					<p class="logo_text">瑞穂町郷土資料館</p>
+					<img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/common/keyakikan_footer-logo.png" alt="瑞穂町郷土資料館　けやき館">
+				</a>
+				<p>東京都西多摩郡瑞穂町大字駒形富士山316番地5<br>
+				Tel：<span>042-568-0634</span>/ Fax：<span>042-568-0639</span>
+				</p>
+			</div>
+			<div class="ft_right">
+				<ul class="ft_nav cf">
+				<li id="menu-item-1741" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a href="https://mizuhokyodo.jp/guide/">施設案内</a></li>
+<li id="menu-item-1742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1742"><a href="https://mizuhokyodo.jp/use/">利用方法</a></li>
+<li id="menu-item-2842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2842"><a href="https://mizuhokyodo.jp/permanent/">常設展示</a></li>
+<li id="menu-item-8578" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8578"><a href="https://mizuhokyodo.jp/exhibition/">企画展</a></li>
+<li id="menu-item-1776" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1776"><a href="https://mizuhokyodo.jp/events/">イベント・講座</a></li>
+<li id="menu-item-2845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2845"><a href="https://mizuhokyodo.jp/books/">刊行物のご案内</a></li>
+<li id="menu-item-2846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2846"><a href="https://mizuhokyodo.jp/culture/">瑞穂町文化財めぐり</a></li>
+<li id="menu-item-1744" class="menu-item menu-item-type-post_type_archive menu-item-object-blog menu-item-1744"><a href="https://mizuhokyodo.jp/blog/">ブログ</a></li>
+<li id="menu-item-1927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1927"><a href="https://mizuhokyodo.jp/information/">お知らせ</a></li>
+<li id="menu-item-2851" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2819 current_page_item menu-item-2851"><a href="https://mizuhokyodo.jp/access/" aria-current="page">アクセス</a></li>
+<li id="menu-item-2847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2847"><a href="https://mizuhokyodo.jp/links/">リンク</a></li>
+<li id="menu-item-2848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2848"><a href="https://mizuhokyodo.jp/contact/">お問い合わせ</a></li>
+				</ul>
+				<ul class="ft_subnav cf">
+				<li id="menu-item-1774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1774"><a href="https://mizuhokyodo.jp/manager_system/">指定管理者制度</a></li>
+<li id="menu-item-1773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1773"><a href="https://mizuhokyodo.jp/privacy_policy/">個人情報保護方針</a></li>
+<li id="menu-item-2849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2849"><a href="https://mizuhokyodo.jp/policy/">サイトポリシー</a></li>
+				</ul>
+				<p class="copyright clear">この施設は、防衛省から「特定防衛施設周辺整備調整交付金」を受けて整備及び管理運営を行っています。<br>瑞穂町の指定を受け、瑞穂町郷土資料館の指定管理者としてアクティオ株式会社が運営・管理しています。<br>Copyright&nbsp;&copy;&nbsp;2025&nbsp;Mizuho-machi&nbsp;Kyodo&nbsp;Shiryokan.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+			</div>
+			</div>
+		</section>
+	</footer>
+	<div class="pagetop_btn">
+		<a href="#wrapper" class="pagetop">
+			<img src="https://mizuhokyodo.jp/wp-content/themes/koshinkan/img/pagetop.svg" alt="pagetop">
+		</a>
+	</div>
+
+	</div>
+	<!-- /#container -->
+	</div>
+	<!-- /#wrapper -->
+
+
+	<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/plugins/easy-fancybox/fancybox/1.3.28/jquery.fancybox.min.js?ver=6.7.11" id="jquery-fancybox-js"></script>
+<script type="text/javascript" id="jquery-fancybox-js-after">
+/* <![CDATA[ */
+var fb_timeout, fb_opts={'overlayShow':true,'hideOnOverlayClick':true,'showCloseButton':true,'margin':20,'centerOnScroll':false,'enableEscapeButton':true,'autoScale':true };
+if(typeof easy_fancybox_handler==='undefined'){
+var easy_fancybox_handler=function(){
+jQuery([".nolightbox","a.wp-block-fileesc_html__button","a.pin-it-button","a[href*='pinterest.com\/pin\/create']","a[href*='facebook.com\/share']","a[href*='twitter.com\/share']"].join(',')).addClass('nofancybox');
+jQuery('a.fancybox-close').on('click',function(e){e.preventDefault();jQuery.fancybox.close()});
+/* IMG */
+var fb_IMG_select=jQuery('a[href*=".jpg" i]:not(.nofancybox,li.nofancybox>a),area[href*=".jpg" i]:not(.nofancybox),a[href*=".png" i]:not(.nofancybox,li.nofancybox>a),area[href*=".png" i]:not(.nofancybox),a[href*=".webp" i]:not(.nofancybox,li.nofancybox>a),area[href*=".webp" i]:not(.nofancybox)');
+fb_IMG_select.addClass('fancybox image');
+var fb_IMG_sections=jQuery('.gallery,.wp-block-gallery,.tiled-gallery,.wp-block-jetpack-tiled-gallery');
+fb_IMG_sections.each(function(){jQuery(this).find(fb_IMG_select).attr('rel','gallery-'+fb_IMG_sections.index(this));});
+jQuery('a.fancybox,area.fancybox,.fancybox>a').each(function(){jQuery(this).fancybox(jQuery.extend({},fb_opts,{'transitionIn':'elastic','transitionOut':'elastic','opacity':false,'hideOnContentClick':false,'titleShow':true,'titlePosition':'over','titleFromAlt':true,'showNavArrows':true,'enableKeyboardNav':true,'cyclic':false}))});
+};};
+var easy_fancybox_auto=function(){setTimeout(function(){jQuery('a#fancybox-auto,#fancybox-auto>a').first().trigger('click')},1000);};
+jQuery(easy_fancybox_handler);jQuery(document).on('post-load',easy_fancybox_handler);
+jQuery(easy_fancybox_auto);
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://mizuhokyodo.jp/wp-content/plugins/easy-fancybox/vendor/jquery.easing.min.js?ver=1.4.1" id="jquery-easing-js"></script>
+
+	</body>
+
+	</html>

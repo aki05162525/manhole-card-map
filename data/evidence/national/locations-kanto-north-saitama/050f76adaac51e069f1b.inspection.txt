@@ -1,0 +1,19 @@
+URL https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html
+TEXT 蓮田市／蓮田駅西口行政センター このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 蓮田市 「四季かおる　つながり　安心　活きるまち」 検索について 文字サイズ・色合い変更 Foreign Language メニュー 検索 暮らし・防災 子育て 健康・福祉 教育・文化・スポーツ まち・環境 産業・ビジネス 市政情報 文字サイズ・色合い変更 Foreign Language 閉じる 閉じる 暮らし・ 防災 子育て 健康・福祉 教育・文化・ スポーツ まち・環境 産業・ ビジネス 市政情報 ホーム > 暮らし・防災 > 蓮田駅西口行政センター 暮らし・防災 戸籍・住民登録 パスポート 税金 保険・年金 ごみ 動物 消費生活 市民活動・自治会活動 人権・男女共同参画 選挙 平和事業 市民相談 通報・緊急連絡 防災 消防 防犯 東日本大震災関連 放射線に関するお知らせ 違反対象物の公表制度 蓮田駅西口行政センター ここから本文です。 更新日：2021年1月29日 蓮田駅西口行政センター 蓮田駅西口行政センター会議室などの貸出施設の利用について 行政サービスコーナー（行政窓口）について 蓮田駅西口行政センターで公衆無線LAN（フリーWi-Fi）が利用できます 蓮田駅西口行政センターの会議室を「自習室」として開放しています 簡易ベッドのある多機能トイレをご用意しています 蓮田駅西口行政センターのご案内 蓮田駅西口行政センターの施設利用時間について 蓮田駅西口行政センター臨時休業日について ページ先頭へ戻る 市役所案内 市役所へのアクセス お問い合わせ サイトマップ 携帯サイト このサイトについて RSS利用案内 個人情報保護方針 ウェブアクセシビリティ方針 蓮田市役所 〒349-0193 埼玉県蓮田市大字黒浜2799番地1 電話：048-768-3111（代表） 法人番号：5000020112381 開庁時間：午前8時30分から午後5時15分まで 閉庁日：土曜日、日曜日、祝日、年末年始 Copyright © Hasuda City. All rights reserved.
+MAP
+
+LINKS
+ https://www.city.hasuda.saitama.jp/shared/site_rn/js/jquery.js
+ https://www.city.hasuda.saitama.jp/shared/site_rn/js/setting.js
+ https://www.city.hasuda.saitama.jp/shared/js/ga.js
+ https://www.city.hasuda.saitama.jp/shared/site_rn/js/init.js
+蓮田駅西口行政センター https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html
+蓮田駅西口行政センター会議室などの貸出施設の利用について https://www.city.hasuda.saitama.jp/nishic/sisetuyoyakunituite.html
+蓮田駅西口行政センターで公衆無線LAN（フリーWi-Fi）が利用できます https://www.city.hasuda.saitama.jp/nishic/wifi.html
+蓮田駅西口行政センターの会議室を「自習室」として開放しています https://www.city.hasuda.saitama.jp/nishic/jishushitsu.html
+蓮田駅西口行政センターのご案内 https://www.city.hasuda.saitama.jp/nishic/sisetuannai.html
+蓮田駅西口行政センターの施設利用時間について https://www.city.hasuda.saitama.jp/nishic/kaisyobi.html
+蓮田駅西口行政センター臨時休業日について https://www.city.hasuda.saitama.jp/nishic/rinjikyusho_2024.html
+市役所へのアクセス https://www.city.hasuda.saitama.jp/access/index.html
+ https://www.city.hasuda.saitama.jp/shared/site_rn/js/function.js
+ https://www.city.hasuda.saitama.jp/shared/site_rn/js/main.js

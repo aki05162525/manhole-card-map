@@ -115,7 +115,7 @@ function renderCard(c: Card) {
         `${p.address} ${p.phone}\n${r.condition}\n${r.periodRaw || ""}\n${r.alternativeRaw || ""}\n${p.coordinate.status === "candidate" ? "参考位置（未確定）" : p.coordinate.status === "confirmed" ? "位置確定" : "地図の位置は未確定"}`,
       ),
     );
-    appendLink(facilityMapLink(p));
+    appendLink(facilityMapLink(p, r));
   }
   if (!relations.length)
     detail.append(

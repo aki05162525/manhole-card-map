@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta property="og:title" content="生涯学習施設"><meta property="og:type" content="website"><meta property="og:image" content="http://www.city.hamura.tokyo.jp/design_img/og_image.png"><meta property="og:url" content="https://www.city.hamura.tokyo.jp/map/map1/map3.html"><meta property="og:site_name" content="羽村市公式サイト"><meta property="og:keywords" content="羽村,羽,村,玉川上水,玉川兄弟,橋本,弘山,ひろたか,はむら,hamura,羽村の堰"><meta property="og:description" content="羽村市公式サイト。「まちに広がる笑顔と活気 もっと！くらしやすいまち はむら」玉川上水のスタート地点「羽村の堰」のある、花と水の美しいまちです。"><title>生涯学習施設</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCK5PVVMCG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FCK5PVVMCG');
+  gtag('config', 'UA-59884618-1');
+</script>
+<link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen,print"><link rel="stylesheet" type="text/css" href="../../css/map.css" media="screen,print"><!--[if IE 7]><link rel="stylesheet" type="text/css" href="../../css/ie70.css" media="screen,print"><![endif]--><!--[if IE 8]><link rel="stylesheet" type="text/css" href="../../css/ie80.css" media="screen,print"><![endif]--><!--[if IE 9]><link rel="stylesheet" type="text/css" href="../../css/ie90.css" media="screen,print"><![endif]--><link rel="stylesheet" type="text/css" href="../../css/print.css" media="print"><link rel="shortcut icon" href="../../design_img/favicon.ico"><!-- JqueryをGoogleから読み込み --><script type="text/javascript" src="../../js/jquery-1.12.4.min.js"></script><script type="text/javascript" src="//www.google.com/jsapi"></script><script type="text/javascript" src="//maps.google.com/maps/api/js?v=3&amp;key=AIzaSyBL3yOQS7FMxdvSbJMo9of_uIrOai0PdEA"></script><script type="text/javascript" src="../js/jquery.GoogleMaps2.js"></script><script type="text/javascript" src="../../js/toolbox.js"></script><script src="https://tsutaeru.cloud/assets/snippet/js/tsutaeru.js?api_key=8838feb3-8f74-40e8-857b-b153442ea432&button=easy,ruby,polly&base=tsutaeru01"></script><script type="text/javascript">
+      <!--
+        var loadSelNum = 0;    
+        function fncSetMarker(sel,lFlg){
+          var target = "";
+          if ( lFlg != 0 && g_infoNum[0] != 0){
+            var objSelect = document.getElementById('menu');
+            var m = objSelect.length;
+            var i = 0;
+            for(i=0;m>i;i++){
+              if( i == g_infoNum[0]){
+                target = objSelect.options[i].value;
+                break;
+              }
+            }
+          }
+          else {
+            target = sel.value;
+          }
+          $('#list').children().remove();
+          $(function(){
+            $('#ksgmap').GoogleMaps({
+              // シングルマーカー関連
+              zoom:15,                                      // ズームレベル
+              info_window: 0,                               // 情報ウィンドウの表示（0, 1）
+              info_content: null,                           // 情報ウィンドウのコンテンツ（HTMLタグ）
+    
+              // マルチマーカー関連
+              data_type: 'xml',
+              file: '../xml/' + target,                      // XMLファイルのパス（記述例：'./sample.xml'）
+              info_window_class: 'info-data',               // 情報ウィンドウのclass名
+              info_window_heading_level: 3,                 // 情報ウィンドウ内タイトルの見出しレベル（1?6）
+              list_target: '#list',                         // 連動リストを表示させるul要素のセレクタ（記述例：'ul#list'）
+      
+              // マップタイプ関連
+              map_type_control: false,                      // MapTypeコントロール（Boolean）
+              map_type_id: google.maps.MapTypeId.ROADMAP,   // MapTypeID
+      
+              // アイコン関連
+              icon_type: null,                              // アイコンタイプ（アイコン一覧は、icons: {}で指定）
+    //          icons :{}                                   // アイコンタイプの一覧（以下、デフォルト値）
+   
+              // ロードフラグ
+              loadFlg: lFlg
+            });
+          });
+          if(lFlg)    document.getElementById("menu").selectedIndex = loadSelNum;
+        }
+        function subMailSendMap()
+        {
+          selfurl = location.href.split("?")[0];
+          selfurl = selfurl.split("#")[0];
+          get_infoNum = "target="+m_infoNum[0] + "-" + m_infoNum[1] + "&cacd=" + selected_category + "&mapno=" + selected_mapno;
+      
+          location.href = "mailto:?body=" + escape( selfurl+"?"+get_infoNum );
+      
+        }
+      
+        function subResetParameter()
+        {
+          selected_category = "";
+          selected_mapno = "";
+        }
+
+        function chg_map(){
+          var browser =  document.getElementById("m01").value;
+          var url = "https://www.city.hamura.tokyo.jp/map/map1/"+browser;
+          location.href = url;
+        }
+      //-->
+      </script></head><body id="body" class="inbody map" onload="fncSetMarker(document.getElementById('menu').options[loadSelNum],1);"><a id="pagetop" class="anchor" tabindex="-1"><img src="../../images/clearspacer.gif" alt="ページの先頭です" width="1" height="1"></a><div class="all"><div class="design"><!-- ▼▼▼▼▼ヘッダ▼▼▼▼▼ --><header class="main_header"><div><p class="skip"><a href="#HONBUN">共通メニューなどをスキップして本文へ</a></p><div class="h_main"><div class="head_in"><p class="h1"><a href="/"><img src="/design_img/head_id.png" alt="羽村市"></a></p><p class="h1_catch"><a href="https://www.city.hamura.tokyo.jp/prsite/"><img src="/css/img/hamura_pr.png" alt="はむらってこんなまち"></a></p><div class="h_top"><div><ul class="h_toplist01"><li><a href="https://www.city.hamura.tokyo.jp/sitemap.html">サイトマップ</a></li><li><a href="https://www.city.hamura.tokyo.jp/site_policy/0000000005.html">Foreign language</a></li><li><script>_tsutaeru.speech.button()</script></li><li class="tsutaeru01-button-easy"><a class="tsutaeru01-button tsutaeru01-button-easy" id="tsutaeru01-li-easy" href="javascript:void(0);">やさしい日本語</a></li><li class="tsutaeru01-button-ruby"><a class="tsutaeru01-button tsutaeru01-button-ruby" id="tsutaeru01-li-ruby" href="javascript:void(0);">ひらがなをつける</a></li></ul><ul class="h_toplist01"><li><div class="font_size"><p class="font_tit">文字サイズ</p><ul class="font_list"><li><a href="javascript:textSizeReset();">標準</a></li><li><a href="javascript:textSizeUp();"><strong>拡大</strong></a></li></ul></div></li></ul></div><div class="src_box"><form action="https://www.google.com/search" id="cse-search-box" name="cse-search-box"><input type="hidden" name="cx" value=""><input type="hidden" name="ie" value="UTF-8"><input type="text" name="q" class="q" title="検索キーワード"><button class="input_line" id="search_button" type="submit">検索</button><input type="hidden" name="sitesearch" value="www.city.hamura.tokyo.jp"><input type="hidden" name="domains" value="www.city.hamura.tokyo.jp"></form></div></div><noscript><p class="noscript"><strong>文字サイズ変更機能を利用するにはJavaScript（アクティブスクリプト）を有効にしてください。JavaScript（アクティブスクリプ>ト） を無効のまま文字サイズを変更する場合には、ご利用のブラウザの表示メニューから文字サイズを変更してください。</strong></p></noscript></div></div><p class="skip_sp"><a href="#HONBUN">スマートフォン表示用の情報をスキップ</a></p><p id="menu_button"><a class="simple-menu" href="#sidr"><span class="icon_ham"></span><strong class="menu_text">メニュー</strong></a></p><div id="sidr" style="display:none;"><p class="close"><a class="simple-menu" href="#sidr">閉じる</a></p><div class="side_sitenavi"><ul class="sidr_navi"><li><a href="https://www.city.hamura.tokyo.jp/"><strong>トップ</strong></a></li><li><a href="https://www.city.hamura.tokyo.jp/category/1-0-0-0-0-0-0-0-0-0.html"><strong>暮らしの情報</strong></a></li><li><a href="https://www.city.hamura.tokyo.jp/category/3-0-0-0-0-0-0-0-0-0.html"><strong>市政情報</strong></a></li><li><a href="https://www.city.hamura.tokyo.jp/category/2-0-0-0-0-0-0-0-0-0.html"><strong>観光・イベント</strong></a></li><li><a href="https://www.city.hamura.tokyo.jp/category/5-0-0-0-0-0-0-0-0-0.html"><strong>事業者の方へ</strong></a></li><li><a href="https://www.city.hamura.tokyo.jp/category/4-0-0-0-0-0-0-0-0-0.html"><strong>施設案内</strong></a></li></ul><ul class="sidr_navi_sub"><li><a href="/sitemap.html">サイトマップ</a></li><li><a href="/site_policy/0000000005.html">Foreign language</a></li></ul></div><div class="side_shien"><div class="sidr_navi03"><div class="sidr_navi03_sub"><script>_tsutaeru.speech.button()</script></div></div><ul class="sidr_navi03"><li class="tsutaeru01-button-easy"><a class="tsutaeru01-button tsutaeru01-button-easy" id="tsutaeru02-li-easy" href="javascript:void(0);">やさしい日本語</a></li><li class="tsutaeru01-button-ruby"><a class="tsutaeru01-button tsutaeru01-button-ruby" id="tsutaeru02-li-ruby" href="javascript:void(0);">ひらがなをつける</a></li></ul></div><div class="src_box"><form action="https://www.google.com/search" id="cse-search-box-sp" name="cse-search-box-sp"><input type="hidden" name="cx" value=""><input type="hidden" name="ie" value="UTF-8"><input type="text" name="q" class="q" title="検索キーワード"><button class="input_line" id="search_button_sp" name="search_button" type="submit">検索</button><input type="hidden" name="sitesearch" value="www.city.hamura.tokyo.jp"><input type="hidden" name="domains" value="www.city.hamura.tokyo.jp"></form></div><p class="close"><a class="simple-menu" href="#sidr">閉じる</a></p></div><!-- ▼▼グローバルメニュー▼▼ --><nav class="g_navi"><ul class="g_navi_in clearfix"><li ><a href="https://www.city.hamura.tokyo.jp/"><span><img src="/cmsfiles/menu_img/menu-29.png" alt=""></span><strong>トップ</strong></a></li><li ><a href="https://www.city.hamura.tokyo.jp/category/1-0-0-0-0-0-0-0-0-0.html"><span><img src="/cmsfiles/menu_img/menu-45.png" alt=""></span><strong>暮らしの情報</strong></a></li><li ><a href="https://www.city.hamura.tokyo.jp/category/3-0-0-0-0-0-0-0-0-0.html"><span><img src="/cmsfiles/menu_img/menu-46.png" alt=""></span><strong>市政情報</strong></a></li><li ><a href="https://www.city.hamura.tokyo.jp/category/2-0-0-0-0-0-0-0-0-0.html"><span><img src="/cmsfiles/menu_img/menu-47.png" alt=""></span><strong>観光・イベント</strong></a></li><li ><a href="https://www.city.hamura.tokyo.jp/category/5-0-0-0-0-0-0-0-0-0.html"><span><img src="/cmsfiles/menu_img/menu-48.png" alt=""></span><strong>事業者の方へ</strong></a></li><li ><a href="https://www.city.hamura.tokyo.jp/category/4-0-0-0-0-0-0-0-0-0.html"><span><img src="/cmsfiles/menu_img/menu-49.png" alt=""></span><strong>施設案内</strong></a></li></ul></nav><!-- ▲▲グローバルメニュー▲▲ --></div></header><a id="HONBUN" class="anchor" tabindex="-1"><img src="/images/clearspacer.gif" alt="" width="1" height="1"></a><img src="/module/access_log.cgi?html=map/map1/map3" style="display:none" alt=""><!-- ▲▲▲▲▲ヘッダ▲▲▲▲▲ --><!-- ▼▼▼▼▼メイン▼▼▼▼▼ --><div class="pankuzu"><div class="pankuzu_lower"><p class="pankuzu_tit">現在位置</p><ul><li><a href="https://www.city.hamura.tokyo.jp/">ホーム</a></li></ul></div></div><div class="footstep"><div class="footstep_lower"><p class="footstep_tit">あしあと</p><ul id="pankuzu2"></ul></div></div><div class="main_naka_h1"><h1>生涯学習施設</h1></div><div class="main_naka"><div class="page_left"><!-- 固定リンクの場合<li><a href="#"><img src="images/mapnavi_fac_.gif" width="97" height="40" alt="公共施設" /></a></li><li><a href="#"><img src="images/mapnavi_kid.gif" width="97" height="40" alt="子育て" /></a></li><li><a href="#"><img src="images/mapnavi_tec.gif" width="97" height="40" alt="教育" /></a></li><li><a href="#"><img src="images/mapnavi_spo.gif" width="97" height="40" alt="スポーツ" /></a></li><li><a href="#"><img src="images/mapnavi_hls.gif" width="97" height="40" alt="健康・福祉" /></a></li><li><a href="#"><img src="images/mapnavi_lif.gif" width="97" height="40" alt="くらし" /></a></li><li><a href="#"><img src="images/mapnavi_oth.gif" width="97" height="40" alt="その他" /></a></li><li><a href="#"><img src="images/mapnavi_fac.gif" width="97" height="40" alt="公共施設" /></a></li><li><a href="#"><img src="images/mapnavi_kid.gif" width="97" height="40" alt="子育て" /></a></li><li><a href="#"><img src="images/mapnavi_tec.gif" width="97" height="40" alt="教育" /></a></li>--><form id="map_cat" action=""><nav><h2><label for="m01">1.分類を選択</label></h2><p><select name="m01" id="m01" onchange="chg_map();"><option value="map2.html">市役所</option><option value="map3.html" selected="selected">生涯学習施設</option><option value="map4.html">暮らし</option><option value="map5.html">保健・医療機関</option><option value="map6.html">公園保養施設</option><option value="map7.html">保育所幼稚園</option><option value="map8.html">児童館学童クラブ</option><option value="map9.html">学校教育</option><option value="map10.html">福祉施設</option><option value="map11.html">安心安全</option><option value="map12.html">観光</option></select></p></nav></form><form id="map_jun" action=""><nav class="#categoryNavi_box"><h2><label for="m02">2.施設ジャンルを選択</label></h2><p id="categoryNavi"><select name="menu" id="menu"  onchange="subResetParameter();fncSetMarker(this,0);"><option value="14.xml">文化施設</option><option value="15.xml">スポーツ施設</option></select></p></nav></form><form id="map_fac" action=""><nav class="#itemNavi_box"><h2><label for="m03">3.施設を選択</label></h2><p><select id="list" style="overflow-x: hidden; overflow-y: scroll;"></select></p></nav></form></div><div id="ksgmap"><div id="ksgmap--map-message"><noscript>マップをご利用になるには、JavaScript が有効になっている必要があります。</noscript></div></div></div><p class="senturl"><button type="button" onclick="subMailSendMap();">メールでページURLを送信</button></p><div class="nomapinfo"> <span class="mapInfo-point"></span><input id="mapInfo-url" type="text"></div><!-- ▲▲▲▲▲メイン▲▲▲▲▲ --><!-- ▼▼▼▼▼フッタ▼▼▼▼▼ --><!-- ▼▼▼▼▼フッタ▼▼▼▼▼ --><footer class="main_footer"><div class="online_strage_a" id="online_strage_a"></div><div id="online_memo_name" style="display:none">メモ</div><div id="online_memo_msg" style="display:none">{$onlinememomsg}</div><div id="online_memo_usage" style="display:none">メモの使い方</div><div id="mypage_name" style="display:none">マイページ</div><div id="mypage_msg" style="display:none">このページをチェックする</div><div id="mypage_usage" style="display:none">編集</div><div id="online_strage_edit_url" style="display:none">https://www.city.hamura.tokyo.jp/site_policy/0000000007.html</div><div id="online_strage_usage_url" style="display:none"></div><div id="online_strage_site_title" style="display:none">羽村市</div><div class="foot_modori"><p class="modoriin"><a href="#pagetop"><img src="/css/img/pagetop.png" alt="ページの先頭にもどる"></a></p></div><div class="foot_wrap"><div class="foot"><div class="foot_id"><p class="address"><strong>羽村市役所&nbsp;</strong></p><p class="address">〒205-8601&nbsp;<br class="br_sp">東京都羽村市緑ヶ丘5丁目2番地1&nbsp;</p><p class="address">電話：<br class="br_sp"><a href="tel:042-555-1111（代表）">042-555-1111（代表）</a>&nbsp;</p><p class="address">ファクス：<br class="br_sp">042-554-2921&nbsp;</p><p class="address">法人番号：<br class="br_sp">1000020132276</p><p class="address">開庁時間&nbsp;<br class="br_sp">祝日と年末年始を除く 午前8時30分から午後5時15分（受付は午後5時まで）<br>　　　　　　※令和4年1月から毎月第2・第4土曜日の午前８時30分から正午まで一部の窓口を開庁し、それ以外の土曜日と日曜日は閉庁します。</p></div><ul class="foot_link"><li><a href="https://www.city.hamura.tokyo.jp/site_policy/0000000002.html">個人情報の取り扱いについて</a></li><li><a href="https://www.city.hamura.tokyo.jp/site_policy/0000000008.html">ウェブアクセシビリティ方針</a></li><li><a href="https://www.city.hamura.tokyo.jp/site_policy/0000000003.html">羽村市公式サイトについて</a></li><li><a href="https://www.city.hamura.tokyo.jp/site_policy/0000000006.html">リンク集</a></li><li><a href="https://www.city.hamura.tokyo.jp/0000015040.html">お問い合せ</a></li><li><a href="http://www.city.hamura.tokyo.jp/0000006902.html">休日の市役所窓口開庁について</a></li></ul></div><div class="foot_copy"><p class="foot_copyin" lang="en" xml:lang="en">Copyright (C) Hamura City. All Rights Reserved.</p></div></div></footer><!-- ▲▲▲▲▲フッタ▲▲▲▲▲ -->
+<!-- ▲▲▲▲▲フッタ▲▲▲▲▲ --></div></div><script type="text/javascript" src="../../js/jquery.sidr.js"></script><script type="text/javascript" src="../../js/common.js"></script></body></html>

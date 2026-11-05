@@ -1,0 +1,630 @@
+[
+  {
+    "url": "http://kisela-kp.jp/",
+    "coordinates": [
+      [
+        "34.8344176",
+        "135.4174528"
+      ],
+      [
+        "34.8347312",
+        "135.4189483"
+      ]
+    ],
+    "label": "Google Mapを開く",
+    "context": "Google Mapを開く",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°50'05.0\"N+135°25'08.2\"E/@34.834731,135.4178537,18z/data=!3m1!4b1!4m14!1m7!3m6!1s0x6000f721d172a7f5:0xb95f006c6d8442a7!2z44CSNjY2LTAwMTcg5YW15bqr55yM5bed6KW_5biC54Gr5omT77yR5LiB55uu!3b1!8m2!3d34.8344176!4d135.4174528!3m5!1s0x0:0x0!7e2!8m2!3d34.8347312!4d135.4189483"
+  },
+  {
+    "url": "http://www.city.izumisano.lg.jp/kakuka/seikatsu/shoko/menu/izumisanomachidokoro.html",
+    "coordinates": [
+      [
+        "34.41002",
+        "135.317486"
+      ]
+    ],
+    "label": "大きな地図で見る（GoogleMapページへ）",
+    "context": "大きな地図で見る（GoogleMapページへ）",
+    "mapUrl": "http://maps.google.co.jp/?ie=UTF8&q=34.41002,135.317486&ll=34.41002,135.317486&z=17"
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5769279",
+        "136.5350085"
+      ]
+    ],
+    "label": "松阪駅観光情報センター",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.com/maps/place/松阪駅観光情報センター/@34.5769279,136.5324336,17z/data=!3m2!4b1!5s0x60046adfe7f16665:0x5a8b4d7aa675d908!4m6!3m5!1s0x151ffeddb848640d:0x57c5cc610b4373d4!8m2!3d34.5769279!4d136.5350085!16s/g/11b6bcz5j1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw=="
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5779628",
+        "136.5211148"
+      ]
+    ],
+    "label": "松阪市文化財センター はにわ館",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市文化財センター「はにわ館」/@34.5779628,136.5185399,17z/data=!3m1!4b1!4m6!3m5!1s0x60046b2c2f9cdca9:0x4b6f7e06fa60dca5!8m2!3d34.5779628!4d136.5211148!16s/g/1tfwk96y?hl=ja&entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw=="
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.6425599",
+        "136.5090894"
+      ]
+    ],
+    "label": "松浦武四郎記念館",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松浦武四郎記念館/@34.6425599,136.5065145,17z/data=!3m1!4b1!4m6!3m5!1s0x600413f24aa7d227:0x4f6d848828ac1ef!8m2!3d34.6425599!4d136.5090894!16s/g/11f6drts2y?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoJLDEwMjExMjMzSAFQAw=="
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5432421",
+        "136.570138"
+      ]
+    ],
+    "label": "松阪市総合運動公園",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市総合運動公園管理事務所・会議室/@34.5432421,136.5675631,17z/data=!3m1!4b1!4m6!3m5!1s0x600441dc621d1d95:0x6680c6e28e44cc6e!8m2!3d34.5432421!4d136.570138!16s/g/11vdh67c22?hl=ja&entry=ttu"
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5782771",
+        "136.5296201"
+      ]
+    ],
+    "label": "豪商のまち松阪 観光交流センター",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/豪商のまち松阪+観光交流センター/@34.5782771,136.5270452,17z/data=!3m1!4b1!4m6!3m5!1s0x60046b0eeca78d03:0x35df630ff1f81dbe!8m2!3d34.5782771!4d136.5296201!16s/g/11fjzx3lx7?hl=ja&entry=ttu"
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5777673",
+        "136.5284113"
+      ]
+    ],
+    "label": "松阪市上下水道部 上下水道総務課",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市+第三分館/@34.5777673,136.5258364,17z/data=!3m2!4b1!5s0x60046b26f8efd6ff:0x363ad28dce56ee24!4m6!3m5!1s0x60046b712aad7cd1:0x73520844545737fb!8m2!3d34.5777673!4d136.5284113!16s/g/11fmldhf52?hl=ja&entry=ttu"
+  },
+  {
+    "url": "http://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5779721",
+        "136.5275999"
+      ]
+    ],
+    "label": "松阪市役所 当直室",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市役所+夜間休日用/@34.5779721,136.525025,16z/data=!3m2!4b1!5s0x60046ad3f2b79b57:0xf95ac108df99c56a!4m6!3m5!1s0x60046b2643158b25:0x3e5d431369fd3ff!8m2!3d34.5779721!4d136.5275999!16s/g/1vhly3pg?hl=ja&entry=ttu"
+  },
+  {
+    "url": "http://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/index.html",
+    "coordinates": [
+      [
+        "34.765068",
+        "135.62728879999997"
+      ]
+    ],
+    "label": "大きな地図を見る（GoogleMapページへ）",
+    "context": "大きな地図を見る（GoogleMapページへ）",
+    "mapUrl": "https://maps.google.co.jp/maps?q=34.765068,135.62728879999997&ll=34.7650365,135.6273161&z=17"
+  },
+  {
+    "url": "http://www.city.takaishi.lg.jp/kakuka/doboku/jougesuidou_ka/gesuidou/Manhole_cover_card_of_takaishi_city.html",
+    "coordinates": [
+      [
+        "34.5287542",
+        "135.4289877"
+      ]
+    ],
+    "label": "大きな地図で見る（GoogleMapページへ）",
+    "context": "大きな地図で見る（GoogleMapページへ）",
+    "mapUrl": "http://maps.google.co.jp/?ie=UTF8&q=34.5287542,135.4289877&ll=34.5287542,135.4289877&z=17"
+  },
+  {
+    "url": "http://www.city.wakayama.wakayama.jp/suido/1033947/1034215/1034046.html",
+    "coordinates": [
+      [
+        "34.229083",
+        "135.170225"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.229083,135.170225"
+  },
+  {
+    "url": "http://www.sakai-rishonomori.com/",
+    "coordinates": [
+      [
+        "34.5759702",
+        "135.4702879"
+      ]
+    ],
+    "label": "",
+    "context": "",
+    "mapUrl": "https://www.google.com/maps/embed/v1/place?key=AIzaSyDF_jTVkna-RDIsZMV_3UYBTWDoq2HTFkI&q=34.5759702,135.4702879&zoom=14"
+  },
+  {
+    "url": "http://www.town.tawaramoto.nara.jp/kurashi/seikatsu/gesui/7689.html",
+    "coordinates": [
+      [
+        "34.553214",
+        "135.790125"
+      ]
+    ],
+    "label": "大きな地図を見る（GoogleMapページへ）",
+    "context": "大きな地図を見る（GoogleMapページへ）",
+    "mapUrl": "https://maps.google.co.jp/maps?q=34.553214,135.790125&ll=34.553214,135.790125&z=18"
+  },
+  {
+    "url": "https://osaka-info.jp/spot/tourist-information-osaka/",
+    "coordinates": [
+      [
+        "34.702714",
+        "135.495965"
+      ]
+    ],
+    "label": "",
+    "context": "",
+    "mapUrl": "https://maps.google.com/maps?output=embed&q=34.702714, 135.495965"
+  },
+  {
+    "url": "https://amasui.org/shoukai/shisetsu/2000610/2000611.html",
+    "coordinates": [
+      [
+        "34.733535",
+        "135.411649"
+      ]
+    ],
+    "label": "上下水道庁舎の地図を表示する （外部リンク）",
+    "context": "上下水道庁舎の地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.733535,135.411649"
+  },
+  {
+    "url": "https://taishi-kankou.jp/michinoeki/",
+    "coordinates": [
+      [
+        "34.5167667",
+        "135.6584763"
+      ]
+    ],
+    "label": "GoogleMapを開く",
+    "context": "営業時間 9：00～17：00 定休日 年末年始　※公衆トイレ・駐車場は24時間利用可能。 所在地 〒583-0992 大阪府南河内郡太子町大字山田2254-3 連絡先 TEL：0721-98-0760 駐車場 大型：2台　普通車：29（身障者用2）台 GoogleMapを開く",
+    "mapUrl": "https://www.google.co.jp/maps/place/道の駅+近つ飛鳥の里・太子/@34.5167885,135.6584015,15z/data=!4m5!3m4!1s0x0:0xf762038b64ed5119!8m2!3d34.5167667!4d135.6584763"
+  },
+  {
+    "url": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1008976.html",
+    "coordinates": [
+      [
+        "35.114278",
+        "136.194833"
+      ]
+    ],
+    "label": "デザインマンホール設置場所 （外部リンク）",
+    "context": "デザインマンホール設置場所 （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=35.114278,136.194833"
+  },
+  {
+    "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002840.html",
+    "coordinates": [
+      [
+        "34.49113219232689",
+        "136.70943625195983"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.49113219232689,136.70943625195983"
+  },
+  {
+    "url": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1009690.html",
+    "coordinates": [
+      [
+        "35.113944",
+        "136.200639"
+      ]
+    ],
+    "label": "デザインマンホール設置場所 （外部リンク）",
+    "context": "デザインマンホール設置場所 （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=35.113944,136.200639"
+  },
+  {
+    "url": "https://www.city.ise.mie.jp//kankou/invitation/baggage/1002847.html",
+    "coordinates": [
+      [
+        "34.50616181620674",
+        "136.77728821907405"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.50616181620674,136.77728821907405"
+  },
+  {
+    "url": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1010221.html",
+    "coordinates": [
+      [
+        "35.114056",
+        "136.199750"
+      ]
+    ],
+    "label": "デザインマンホール（帰郷）設置場所 （外部リンク）",
+    "context": "デザインマンホール（帰郷）設置場所 （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=35.114056,136.199750"
+  },
+  {
+    "url": "https://www.city.higashiomi.shiga.jp/lib/about/1007560/1007574.html",
+    "coordinates": [
+      [
+        "35.05934258623012",
+        "136.18152358371688"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=35.05934258623012,136.18152358371688"
+  },
+  {
+    "url": "https://www.city.kaizuka.lg.jp/bunkazai/bunkazaidata/bunkazai/kuni_sitei/tourokubunkazai/rekisitenjikan.html",
+    "coordinates": [
+      [
+        "34.441853",
+        "135.37008"
+      ]
+    ],
+    "label": "大きな地図を見る（GoogleMapページへ）",
+    "context": "大きな地図を見る（GoogleMapページへ）",
+    "mapUrl": "https://maps.google.co.jp/maps?q=34.441853,135.37008&ll=34.441853,135.37008&z=16"
+  },
+  {
+    "url": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+    "coordinates": [
+      [
+        "34.483515934939",
+        "135.79351413922"
+      ]
+    ],
+    "label": "マンホール「よみがえる藤原京」設置場所の大きな地図を見る（GoogleMapページへ）",
+    "context": "マンホール「よみがえる藤原京」設置場所の大きな地図を見る（GoogleMapページへ）",
+    "mapUrl": "https://maps.google.co.jp/maps?q=34.483515934939,135.79351413922&ll=34.483515934939,135.79351413922&z=19"
+  },
+  {
+    "url": "https://www.city.kameyama.mie.jp/library/",
+    "coordinates": [
+      [
+        "34.8510031",
+        "136.4492461"
+      ]
+    ],
+    "label": "詳しい地図はこちら",
+    "context": "専用駐車場利用時間 地下駐車場：開館日の午前9時～午後9時（有料） 周辺専用駐車場：開館日の午前9時～午後8時 詳しい地図はこちら",
+    "mapUrl": "https://www.google.com/maps/place/亀山市立図書館専用駐車場(P2)/@34.8510031,136.4480992,18z/data=!4m9!1m2!2m1!1z5LqA5bGx5biC56uL5Zuz5pu46aSo44CA6aeQ6LuK5aC0!3m5!1s0x6003f55856e53e25:0xec6c7982cd35b138!8m2!3d34.8510031!4d136.4492461!15sCiHkuoDlsbHluILnq4vlm7Pmm7jppKjjgIDpp5Dou4rloLSSARRwdWJsaWNfcGFya2luZ19zcGFjZeABAA"
+  },
+  {
+    "url": "https://www.city.kameyama.mie.jp/library/",
+    "coordinates": [
+      [
+        "34.8508094",
+        "136.4505137"
+      ]
+    ],
+    "label": "詳しい地図はこちら",
+    "context": "亀山市立図書館　〒519-0155　三重県亀山市御幸町318番地1 詳しい地図はこちら TEL：0595-82-0542　FAX：0595-82-0554　E-mail: wakaba02@zc.ztv.ne.jp",
+    "mapUrl": "https://www.google.com/maps/place/亀山市立図書館/@34.8508094,136.448325,17z/data=!3m1!4b1!4m5!3m4!1s0x6003f40658ff923d:0x31fb63b977eafa7e!8m2!3d34.8508094!4d136.4505137"
+  },
+  {
+    "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002871/1002872.html",
+    "coordinates": [
+      [
+        "34.830591",
+        "135.417223"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.830591,135.417223"
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5769279",
+        "136.5350085"
+      ]
+    ],
+    "label": "松阪駅観光情報センター",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.com/maps/place/松阪駅観光情報センター/@34.5769279,136.5324336,17z/data=!3m2!4b1!5s0x60046adfe7f16665:0x5a8b4d7aa675d908!4m6!3m5!1s0x151ffeddb848640d:0x57c5cc610b4373d4!8m2!3d34.5769279!4d136.5350085!16s/g/11b6bcz5j1?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw=="
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5779628",
+        "136.5211148"
+      ]
+    ],
+    "label": "松阪市文化財センター はにわ館",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市文化財センター「はにわ館」/@34.5779628,136.5185399,17z/data=!3m1!4b1!4m6!3m5!1s0x60046b2c2f9cdca9:0x4b6f7e06fa60dca5!8m2!3d34.5779628!4d136.5211148!16s/g/1tfwk96y?hl=ja&entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw=="
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.6425599",
+        "136.5090894"
+      ]
+    ],
+    "label": "松浦武四郎記念館",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松浦武四郎記念館/@34.6425599,136.5065145,17z/data=!3m1!4b1!4m6!3m5!1s0x600413f24aa7d227:0x4f6d848828ac1ef!8m2!3d34.6425599!4d136.5090894!16s/g/11f6drts2y?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoJLDEwMjExMjMzSAFQAw=="
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5432421",
+        "136.570138"
+      ]
+    ],
+    "label": "松阪市総合運動公園",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市総合運動公園管理事務所・会議室/@34.5432421,136.5675631,17z/data=!3m1!4b1!4m6!3m5!1s0x600441dc621d1d95:0x6680c6e28e44cc6e!8m2!3d34.5432421!4d136.570138!16s/g/11vdh67c22?hl=ja&entry=ttu"
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5782771",
+        "136.5296201"
+      ]
+    ],
+    "label": "豪商のまち松阪 観光交流センター",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/豪商のまち松阪+観光交流センター/@34.5782771,136.5270452,17z/data=!3m1!4b1!4m6!3m5!1s0x60046b0eeca78d03:0x35df630ff1f81dbe!8m2!3d34.5782771!4d136.5296201!16s/g/11fjzx3lx7?hl=ja&entry=ttu"
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5777673",
+        "136.5284113"
+      ]
+    ],
+    "label": "松阪市上下水道部 上下水道総務課",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市+第三分館/@34.5777673,136.5258364,17z/data=!3m2!4b1!5s0x60046b26f8efd6ff:0x363ad28dce56ee24!4m6!3m5!1s0x60046b712aad7cd1:0x73520844545737fb!8m2!3d34.5777673!4d136.5284113!16s/g/11fmldhf52?hl=ja&entry=ttu"
+  },
+  {
+    "url": "https://www.city.matsusaka.mie.jp/site/jyougesuidou/soumu4.html",
+    "coordinates": [
+      [
+        "34.5779721",
+        "136.5275999"
+      ]
+    ],
+    "label": "松阪市役所 当直室",
+    "context": "クリックするとGoogleマップが開きます。 松阪駅観光情報センター 松阪市文化財センター はにわ館 松浦武四郎記念館 松阪市総合運動公園 豪商のまち松阪 観光交流センター 松阪市上下水道部 上下水道総務課 松阪市役所 当直室",
+    "mapUrl": "https://www.google.co.jp/maps/place/松阪市役所+夜間休日用/@34.5779721,136.525025,16z/data=!3m2!4b1!5s0x60046ad3f2b79b57:0xf95ac108df99c56a!4m6!3m5!1s0x60046b2643158b25:0x3e5d431369fd3ff!8m2!3d34.5779721!4d136.5275999!16s/g/1vhly3pg?hl=ja&entry=ttu"
+  },
+  {
+    "url": "https://www.city.muko.kyoto.jp/soshiki/30/14790.html",
+    "coordinates": [
+      [
+        "34.94929",
+        "135.69947"
+      ]
+    ],
+    "label": "大きな地図で見る（Googlemapページへ）",
+    "context": "大きな地図で見る（Googlemapページへ） ＜外部リンク＞",
+    "mapUrl": "https://maps.google.co.jp/?ie=UTF8&q=34.94929,135.69947&ll=34.94929,135.69947&z=17"
+  },
+  {
+    "url": "https://www.city.suita.osaka.jp/shisei/shisetsu/1019117/1020468.html",
+    "coordinates": [
+      [
+        "34.793251",
+        "135.508197"
+      ]
+    ],
+    "label": "地図を表示する （外部リンク）",
+    "context": "地図を表示する （外部リンク）",
+    "mapUrl": "https://maps.google.com/maps?q=34.793251,135.508197"
+  },
+  {
+    "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/inagawa_harada/index.html",
+    "coordinates": [
+      [
+        "34.7696697",
+        "135.4492378"
+      ]
+    ],
+    "label": "",
+    "context": "原田処理場全景地図はJavaScriptを使用しています。提供サイトで確認してください。",
+    "mapUrl": "https://maps.google.co.jp/maps/embed/v1/place?center=34.7696697,135.4492378&zoom=15&language=ja&region=JP&q=34.7696697,135.4492378&key=AIzaSyCuG8iKxvMWJ7F9HQe98VC6iBcmhME0xtw"
+  },
+  {
+    "url": "https://www.city.toyonaka.osaka.jp/shisetsu/suidou/skyland_harada/",
+    "coordinates": [
+      [
+        "34.7743582",
+        "135.444163"
+      ]
+    ],
+    "label": "",
+    "context": "スカイランドHARADA地図はJavaScriptを使用しています。提供サイトで確認してください。",
+    "mapUrl": "https://maps.google.co.jp/maps/embed/v1/place?center=34.7743582,135.444163&zoom=13&language=ja&region=JP&q=34.7743582,135.444163&key=AIzaSyCuG8iKxvMWJ7F9HQe98VC6iBcmhME0xtw"
+  },
+  {
+    "url": "https://www.kankou-yawata.org/access.html",
+    "coordinates": [
+      [
+        "34.8844557",
+        "135.7007962"
+      ]
+    ],
+    "label": "Google Mapで見る",
+    "context": "Google Mapで見る",
+    "mapUrl": "https://www.google.com/maps/place/一般社団法人+八幡市観光協会/@34.8842827,135.697763,16.5z/data=!4m5!3m4!1s0x600104cb9424a041:0xb2776a6199a3ec1d!8m2!3d34.8844557!4d135.7007962"
+  },
+  {
+    "url": "https://www.kankou-yawata.org/access.html",
+    "coordinates": [
+      [
+        "34.886087",
+        "135.700731"
+      ]
+    ],
+    "label": "Google Mapで見る",
+    "context": "Google Mapで見る",
+    "mapUrl": "https://www.google.com/maps/place/八幡市営駐車場/@34.8861288,135.6987691,17z/data=!4m5!3m4!1s0x600104cc118166f1:0xd971434620506a6a!8m2!3d34.886087!4d135.700731"
+  },
+  {
+    "url": "https://www.nishi.or.jp/kurashi/suido/jogesuidokyoku/pr_event/manholecard.html",
+    "coordinates": [
+      [
+        "34.7226389",
+        "135.3624444"
+      ]
+    ],
+    "label": "位置情報（外部サイト）",
+    "context": "・西宮市甲子園高潮町4番（ 位置情報（外部サイト） ） ・西宮市枝川町20番（ 位置情報（外部サイト） ）",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°43'21.5\"N+135°21'44.8\"E/@34.72264,135.3618972,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d34.7226389!4d135.3624444"
+  },
+  {
+    "url": "https://www.nishi.or.jp/kurashi/suido/jogesuidokyoku/pr_event/manholecard.html",
+    "coordinates": [
+      [
+        "34.7091111",
+        "135.3608056"
+      ]
+    ],
+    "label": "位置情報（外部サイト）",
+    "context": "・西宮市甲子園高潮町4番（ 位置情報（外部サイト） ） ・西宮市枝川町20番（ 位置情報（外部サイト） ）",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°42'32.8\"N+135°21'38.9\"E/@34.7091122,135.3602584,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d34.7091111!4d135.3608056"
+  },
+  {
+    "url": "https://www.kankomie.or.jp/spot/3194",
+    "coordinates": [
+      [
+        "34.852336",
+        "136.393208"
+      ]
+    ],
+    "label": "",
+    "context": "",
+    "mapUrl": "https://maps.google.co.jp/maps?output=embed&t=m&hl=ja&z=13&q=34.852336,136.393208"
+  },
+  {
+    "url": "https://www.kankomie.or.jp/spot/3194",
+    "coordinates": [
+      [
+        "34.852336",
+        "136.393208"
+      ]
+    ],
+    "label": "行き方を調べる",
+    "context": "行き方を調べる",
+    "mapUrl": "https://www.google.com/maps/dir/?api=1&destination=34.852336,136.393208"
+  },
+  {
+    "url": "https://www.town.shimamoto.lg.jp/site/suidou/1969.html",
+    "coordinates": [
+      [
+        "34.883797",
+        "135.672843"
+      ]
+    ],
+    "label": "大きな地図で見る（GoogleMapページへ）",
+    "context": "大きな地図で見る（GoogleMapページへ） ＜外部リンク＞",
+    "mapUrl": "http://maps.google.co.jp/?ie=UTF8&q=34.883797,135.672843&ll=34.883797,135.672843&z=17"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+    "coordinates": [
+      [
+        "34.9723329",
+        "136.6140131"
+      ]
+    ],
+    "label": "こちら",
+    "context": "四日市市上下水道局2階 総務課（四日市市堀木一丁目3-18） ※土日・祝日は夜間休日窓口で配布します。　地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/四日市市上下水道局+管理部総務課総務係/@34.9723894,136.6127705,18z/data=!4m5!3m4!1s0x0:0x406212661c98a2cd!8m2!3d34.9723329!4d136.6140131?hl=ja&shorturl=1"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+    "coordinates": [
+      [
+        "34.9663611",
+        "136.6185"
+      ]
+    ],
+    "label": "こちら",
+    "context": "近鉄四日市駅高架下　（位置座標）34°57’58.9″N 136°37’06.6″E （安島一丁目1-1付近） 地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°57'58.9\"N+136°37'06.6\"E/@34.9663655,136.6182264,20z/data=!4m5!3m4!1s0x0:0x0!8m2!3d34.9663611!4d136.6185?hl=ja&shorturl=1"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/toukaidou/",
+    "coordinates": [
+      [
+        "34.9679452",
+        "136.6154833"
+      ]
+    ],
+    "label": "こちら",
+    "context": "そらんぽ四日市1階総合受付（四日市市安島一丁目3-16）　地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/そらんぽ四日市/@34.9679496,136.6132946,17z/data=!3m1!4b1!4m5!3m4!1s0x60038ef399808bb5:0x996d53425e196882!8m2!3d34.9679452!4d136.6154833?hl=ja&shorturl=1"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/toukaidou/",
+    "coordinates": [
+      [
+        "34.9668611",
+        "136.6214722"
+      ]
+    ],
+    "label": "こちら",
+    "context": "四日市1番街商店街アーケード内　（位置座標）34°58’00.7″N 136°37’17.3″E （近鉄四日市駅北口ふれあいモールから東へ約300m、諏訪栄町3-8付近） 地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°58'00.7\"N+136°37'17.3\"E/@34.9668611,136.6192835,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xe4cee251eee92a75!8m2!3d34.9668611!4d136.6214722?hl=ja"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/yuukoutoshi/",
+    "coordinates": [
+      [
+        "34.966525",
+        "136.6184198"
+      ]
+    ],
+    "label": "こちら",
+    "context": "お休み処四十三茶屋　観光案内所 （四日市市安島一丁目1-56　四日市物産観光ホール内）　地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/四日市物産観光ホール/@34.9667931,136.6180067,19z/data=!3m1!5s0x60038ef1948e0cc5:0x486cece400bb5cd0!4m5!3m4!1s0x60038ef1eb88640b:0x7cfec95f4779537!8m2!3d34.966525!4d136.6184198?hl=ja&shorturl=1"
+  },
+  {
+    "url": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/yuukoutoshi/",
+    "coordinates": [
+      [
+        "34.9663611",
+        "136.6186389"
+      ]
+    ],
+    "label": "こちら",
+    "context": "近鉄四日市駅高架下　（位置座標）34°57’58.9″N 136°37’07.1″E （安島一丁目1-1付近） 地図は こちら",
+    "mapUrl": "https://www.google.co.jp/maps/place/34°57'58.9\"N+136°37'07.1\"E/@34.9663622,136.6180917,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d34.9663611!4d136.6186389?hl=ja&shorturl=1"
+  }
+]

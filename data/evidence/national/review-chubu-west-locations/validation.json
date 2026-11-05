@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "updates": 44,
+  "accepted": 29,
+  "deferred": 10,
+  "correction-required": 5,
+  "candidatesDeferred": 16,
+  "hashVerifiedSnapshots": 108,
+  "supportingLinks": 25,
+  "inputHashesUnchangedAtValidation": true,
+  "futureClosureStatusPreserved": true,
+  "reviewFileSHA256": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903"
+}

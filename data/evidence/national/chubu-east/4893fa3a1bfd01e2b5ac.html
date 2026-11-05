@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「ガンダムマンホール」の「マンホールカード」行きまーす！ | 甲府市上下水道局</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+        <script>
+            /* [共通] 既存サイトの配色をTailwindのカラー名として定義 */
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            kofu: {
+                                text:  '#696969', /* 本文の文字色 */
+                                link:  '#172a88', /* リンク色 */
+                                h2:    '#008ace', /* H2の文字色 */
+                                line:  '#009de1', /* H2の罫線・アクセント */
+                                h1:    '#dfebf5', /* H1の背景(上) */
+                                foot:  '#777777', /* フッタの文字色 */
+                                red:   '#e74c3c'  /* 注意書きの赤字 */
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', 'Meiryo', 'sans-serif']
+                        }
+                    }
+                }
+            }
+        </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-[#f3f9fd] font-sans text-kofu-text antialiased">
+
+<!-- 外枠: PCでは最大954px(既存と同じ)、スマホでは画面幅いっぱい -->
+<div id="page-border" class="mx-auto flex min-h-screen w-full max-w-[954px] flex-col bg-white shadow-[0_0_10px_rgba(0,110,190,0.18)] supports-[height:100dvh]:min-h-[100dvh]">
+
+    <header id="p_header" class="flex flex-col gap-3 px-3 pb-3 pt-3 sm:flex-row sm:items-start sm:justify-between sm:bg-[url('/images/logo_back.png')] sm:bg-cover sm:bg-center sm:bg-no-repeat sm:px-4">
+
+    <!-- ロゴ: スマホは最大280px、PC(sm以上)は画像の元サイズ -->
+    <div class="logo mx-auto w-full max-w-[280px] sm:mx-0 sm:w-auto sm:max-w-none pt-3">
+        <a id="top"></a>
+        <a href="../">
+            <picture>
+                <!-- PCサイズ（768px以上）で読み込む画像 -->
+                <source media="(min-width: 768px)" srcset="../images/logo.png" />
+
+                <!-- スマホサイズで読み込む画像（デフォルト） -->
+                <img src="../images/sp_logo.png" alt="上下水道局ロゴ" class="w-full h-auto object-cover"/>
+            </picture>
+        </a>
+    </div>
+
+    <!-- 右側: ショートカット(PCのみ) + 検索
+         スマホ: w-full で1行を使い切るので、ロゴの下に折り返して全幅で表示
+         PC(sm〜): 右寄せ。幅が足りない時は右端のまま下に折り返す -->
+    <div class="flex w-full flex-col gap-2 sm:ml-auto sm:w-auto sm:items-end">
+
+        <ul class="hidden text-sm sm:flex">
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../various_procedures.html" class="no-underline hover:no-underline">Various Procedures</a></li>
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../inquiry/mform.html" class="no-underline hover:no-underline">お問い合わせ</a></li>
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../sitemap.html" class="no-underline hover:no-underline">サイトマップ</a></li>
+        </ul>
+
+            </div>
+</header>
+        
+
+<nav id="p_menu" aria-label="メインメニュー" class="bg-[linear-gradient(to_bottom,#106cb3_0%,#005899_18%,#006db0_37%,#0789ca_65%,#18a6d9_100%)]">
+
+    <!-- ハンバーガーボタン（スマホのみ） -->
+    <button id="menu_toggle" type="button" aria-expanded="false" aria-controls="menu_list" aria-label="メニューを開く"
+            class="flex w-full items-center justify-end px-4 py-3 text-white sm:hidden">
+        <span aria-hidden="true" class="flex h-5 w-6 flex-col justify-between">
+            <span class="block h-0.5 w-full bg-white"></span>
+            <span class="block h-0.5 w-full bg-white"></span>
+            <span class="block h-0.5 w-full bg-white"></span>
+        </span>
+    </button>
+
+    <!-- メニュー本体
+         スマホ: 画面右から出るドロワー(fixed) / sm以上: 従来どおり5列 -->
+    <ul id="menu_list" data-open="false"
+        class="invisible fixed inset-y-0 right-0 z-50 flex w-[80%] max-w-xs translate-x-full flex-col overflow-y-auto bg-[#006db0] pt-14 shadow-2xl
+               transition-[transform,visibility] duration-300 ease-out
+               data-[open=true]:visible data-[open=true]:translate-x-0
+               sm:visible sm:static sm:grid sm:w-auto sm:max-w-none sm:translate-x-0 sm:grid-cols-5 sm:overflow-visible sm:bg-transparent sm:pt-0 sm:shadow-none">
+
+        <!-- 閉じるボタン（スマホのみ） -->
+        <li class="absolute right-2 top-2 sm:hidden">
+            <button id="menu_close" type="button" aria-label="メニューを閉じる"
+                    class="flex h-10 w-10 items-center justify-center text-white">
+                <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="M5 5l14 14M19 5L5 19"/>
+                </svg>
+            </button>
+        </li>
+
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../general/procedure/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">各種手続き</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../general/charge/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">上下水道料金のご案内</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../questions/" aria-current="page" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">よくある質問</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../trader" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">工事事業者・指定店</a></li>
+        <li class="border-y border-white/40 sm:border-y-0"><a href="../news/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center  bg-white/25 ">お知らせ</a></li>
+    </ul>
+
+    <!-- 背景の暗幕（タップで閉じる） -->
+    <div id="menu_overlay" data-open="false" aria-hidden="true"
+         class="pointer-events-none fixed inset-0 z-40 bg-black/50 opacity-0 transition-opacity duration-300
+                data-[open=true]:pointer-events-auto data-[open=true]:opacity-100 sm:hidden"></div>
+</nav>
+
+
+    <script>
+        (function () {
+            var btn     = document.getElementById('menu_toggle');
+            var list    = document.getElementById('menu_list');
+            var overlay = document.getElementById('menu_overlay');
+            var closeBt = document.getElementById('menu_close');
+            var mq      = window.matchMedia('(min-width: 640px)');   // Tailwindの sm
+            if (!btn || !list || !overlay) return;
+
+            function isOpen() { return list.dataset.open === 'true'; }
+
+            function setOpen(open, moveFocus) {
+                list.dataset.open    = String(open);
+                overlay.dataset.open = String(open);
+                btn.setAttribute('aria-expanded', String(open));
+                btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+                document.documentElement.classList.toggle('overflow-hidden', open);  // 背面のスクロール固定
+                if (moveFocus) { (open ? closeBt : btn).focus(); }
+            }
+
+            btn.addEventListener('click',     function () { setOpen(!isOpen(), true); });
+            closeBt.addEventListener('click', function () { setOpen(false, true); });
+            overlay.addEventListener('click', function () { setOpen(false, true); });
+
+            // メニュー内リンクをタップしたら閉じる（ページ内リンク対策）
+            list.addEventListener('click', function (e) {
+                if (e.target.closest('a')) setOpen(false, false);
+            });
+
+            // Escキーで閉じる
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && isOpen()) setOpen(false, true);
+            });
+
+            // 画面幅がPCサイズになったら状態をリセット（スクロール固定が残るのを防ぐ）
+            mq.addEventListener('change', function (e) {
+                if (e.matches && isOpen()) setOpen(false, false);
+            });
+        })();
+    </script>
+
+
+
+            <nav id="p_breadcrumbs" aria-label="パンくずリスト" class="px-3 py-3 text-sm sm:px-4">
+    <ol class="flex flex-wrap items-center gap-x-1 gap-y-1">
+        <li><a href="../" class="text-kofu-link hover:underline">HOME</a></li>
+                    <li aria-hidden="true">&gt;&gt;</li>
+                                                <li>
+                        <a href="..//news/">
+                            お知らせ                        </a>
+                    </li>
+                                                                        <li aria-hidden="true">&gt;&gt;</li>
+                <li aria-current="page">「ガンダムマンホール」の「マンホールカード」行きまーす！</li>
+                    
+    </ol>
+</nav>
+
+    
+    <main id="p_body" class="flex-1 px-3 pb-10 sm:px-4">
+
+                    <div id="p_contents" class="page p-5">
+            <p class="text-right mb-2">更新日：2026年1月5日</p>
+        <h1>「ガンダムマンホール」の「マンホールカード」行きまーす！</h1>
+    <div>
+        <div class="contents_body">
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">バンダイナムコグループが企画する「ガンダムマンホールプロジェクト」より甲府市に寄贈された「ガンダムマンホール」のマンホールカードの配布が決定しました。<span style="color:null;">12月19日（金）10時から「こうふ亀屋座」にて配布開始となりま<span style="background-color:null;">した。</span></span></font></span></span></span></p>
+
+<p style="margin-bottom: 0cm;">　<img alt="" src="http://www.water.kofu.yamanashi.jp/data/images/gandammanholecard/gundamcard1.jpg" style="width:324px; height:210px" /><span style="background:transparent"><span style="line-height:100%"><font color="#000000"><font face="BIZ UDゴシック"><font style="font-size:18pt"><font size="5"><b> 　 </b></font></font></font></font></span></span></p>
+
+<hr />
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#ffffff"><span style="font-size:20px"><span style="background:transparent"><span style="line-height:100%"><span style="background:#d8d8d8"><font face="BIZ UDPゴシック"><span style="background-color:#27ae60">配布場所・配布時間等</span></font></span></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック"><b>〇配布場所：こうふ亀屋座（甲府市丸の内１丁目１１番５号）</b></font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック"><b>　　　 　　</b></font><u><font face="BIZ UDPゴシック"><a href="http://kofu-kameyaza.com/"><span style="color:#3498db;">甲府市歴史文化交流施設　こうふ亀屋座　ホームページ（外</span></a></font></u></span></span></span><a href="http://kofu-kameyaza.com/"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><u><font face="BIZ UDPゴシック">部リンク）</font></u></span></span></span></span></a></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%">　　　　　 ※<font face="BIZ UDPゴシック">配布場所へのお問い合わせはご遠慮ください。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック"><b>〇配布開始日：令和７年１２月１９日（金）</b></font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇配布時間：１０時００分から１７時００分まで</font></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇休館日：毎週火曜日（祝日の場合はその翌平日）　　</font></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　　　　 年末年始（12月29日から1月3日まで）</font></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%">　　　　 ※<font face="BIZ UDPゴシック">休館日の配布はありません。ご確認のうえお越しください。</font></span></span></span></span></strong></p>
+
+<hr />
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="font-size:20px"><span style="color:#ffffff"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック"><span style="background-color:#27ae60">マンホールカードとは？</span></font></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">マンホールカードとは、下水道広報プラットフォーム（GKP）</font><font face="BIZ UDPゴシック">が企画・監修するマンホール蓋のコレクションアイテムで、マンホール蓋を管理する団体と</font><font face="BIZ UDPゴシック">GKPが共同で作成するカード型のパンフレットです。</font></span></span></span></p>
+
+<hr />
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="color:#ffffff"><span style="font-size:20px"><span style="background:transparent"><span style="line-height:100%"><span style="background:#d8d8d8"><font face="BIZ UDPゴシック"><span style="background-color:#c0392b">配布にあたっての注意点</span></font></span></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇配布はアンケートにご協力いただいたお一人につき１枚です。同一人物への複数枚の配布はお断りしています。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　※代理者等による他者分など同一人物への複数枚の配布はお断りしています。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇郵送、予約、取り置きなどはできません。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇転売等はご遠慮ください。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇マンホールカードの配布において、次のような事象が報告されています。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　・配布場所近辺の人に「マンホールカードを貰ってきて欲しい」と声をかける。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　・配布を受けた後、服装を変えて再度取得しようとする。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　 上記を注意した配布担当者を大声で威嚇するなど、周囲の方、職員並びに担当者に不快感や迷惑を与える事象が発生した場合、</font></span></span></span><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">カードの配布を中止し、警察に通報します。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇本マンホールカードの在庫は、初回同一ロットで10,000</font><font face="BIZ UDPゴシック">枚以上を用意しております。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　混雑を避け、スムーズな配布を実施するため、分散来場や公共交通機関の利用のご協力をお願い申し上げます。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><u><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇お車でお越しの際は、「こうふ亀屋座」駐車場（３６台・有料）や近隣の有料駐車場をご利用ください。</font></span></span></span></span></u></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><u><span style="color:#c0392b;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　なお、割引処理等の実施はございません。</font></span></span></span></span></u>　</p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">〇ルールを守ってマンホールカードをお楽しみください。</font></span></span></span></p>
+
+<hr />
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="font-size:20px"><span style="color:#ffffff"><span style="background:transparent"><span style="line-height:100%"><span style="background:#d8d8d8"><font face="BIZ UDPゴシック"><span style="background-color:#27ae60">お問い合わせ</span></font></span></span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">マンホールカードについてのお問い合わせは、</font><strong><font color="#ff0000"><u><font face="BIZ UDPゴシック">甲府市上下水道局 経営企画課まで</font></u></font></strong><font face="BIZ UDPゴシック">お問い合わせください。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font><strong><font color="#ff0000"><u><font face="BIZ UDPゴシック">お問い合わせ受付時間は、平日の８時３０分から17時１５分まで</font></u></font></strong><font face="BIZ UDPゴシック">です。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font><u><font face="BIZ UDPゴシック">甲府市上下水道局 経営企画課　 電話番号：055-228-3319</font></u></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%">　※<font face="BIZ UDPゴシック">配布場所「こうふ亀屋座」への電話等によるお問い合わせはご遠慮ください。</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"> </p>
+
+<p style="margin-bottom:0cm; text-align:justify"><strong><span style="font-size:20px"><span style="color:#ffffff"><span style="background:transparent"><span style="line-height:100%"><span style="background:#d8d8d8"><font face="BIZ UDPゴシック"><span style="background-color:#27ae60">関連リンク</span></font></span> </span></span></span></span></strong></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">・甲府市の「デザインマンホール」について</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font></span></span></span><a href="https://www.water.kofu.yamanashi.jp/news/20250207135506.html"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font color="#8eaadb"><u><font face="BIZ UDPゴシック">「</font></u></font><span style="color:#3498db;"><u><font face="BIZ UDPゴシック">ガンダムマンホール」を設置します</font></u></span></span></span></span></a>　</p>
+
+<p style="margin-bottom:0cm; text-align:justify">　<a href="https://www.water.kofu.yamanashi.jp/general/manhole/20250218144311.html"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><u><font face="BIZ UDPゴシック">甲府市のマンホール蓋について（令和７年２月時点）</font></u></span></span></span></span></a></p>
+
+<p style="margin-bottom:0cm; text-align:justify"> </p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">・甲府市の「マンホールカード」について</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify">　<a href="https://www.water.kofu.yamanashi.jp/general/manhole/20200713163129.html"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><u><font face="BIZ UDPゴシック">「マンホールカード」の配布に関して【配布場所・配布時間・定休日等】（令和５年６月時点）</font></u></span></span></span></span></a></p>
+
+<p style="margin-bottom:0cm; text-align:justify"> </p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">・下水道広報プラットホーム（ＧＫＰ）について</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font></span></span></span><a href="https://www.gk-p.jp/"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><u><font face="BIZ UDPゴシック">下水道広報プラットホーム（外部リンク）</font></u></span></span></span></span></a></p>
+
+<p style="margin-bottom:0cm; text-align:justify"> </p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">・「ガンダムマンホールプロジェクト」について</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font></span></span></span><a href="https://www.g-manhole.net/"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><u><font face="BIZ UDPゴシック">「ガンダムマンホールプロジェクト」公式サイト（外部リンク）</font></u></span></span></span></span></a></p>
+
+<p style="margin-bottom:0cm; text-align:justify"> </p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">・ガンダムオフィシャルウェブサイトについて</font></span></span></span></p>
+
+<p style="margin-bottom:0cm; text-align:justify"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="BIZ UDPゴシック">　</font></span></span></span><a href="https://gundam-official.com/"><span style="color:#3498db;"><span style="font-size:16px"><span style="background:transparent"><span style="line-height:100%"><font face="游明朝, serif"><font face="BIZ UDPゴシック, serif"><u>GUNDAM Official Website</u></font><u><font face="BIZ UDPゴシック">（外部リンク）</font></u></font></span></span></span></span></a></p>
+</div>
+
+    </div>
+
+    </div>
+        
+    </main>
+
+    <!-- ======================================================================
+     [7] フッタ  [共通]
+     上段: 3つのボタン(スマホは縦並び、PCは横並び) / 下段: 連絡先・業務時間
+     ====================================================================== -->
+<footer id="p_footer" class="bg-[linear-gradient(to_bottom,#eee_0%,#fff_60%)] text-[13px] text-[#777]">
+
+    <!-- 上段バー：PCは画像ボタン横並び、スマホは縦積み -->
+    <div class="upper border-y border-[#ccc] sm:h-[35px] sm:border-t-0 sm:bg-[url('./images/footer_back.png')] sm:bg-[position:0_2px] sm:bg-no-repeat">
+        <ul class="flex flex-col sm:flex-row sm:items-start">
+            <li class="border-b border-[#ccc] sm:mt-[5px] sm:border-b-0 sm:border-r sm:border-white sm:shadow-[1px_0_#999]">
+                <a href="../" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../images/footer_btn1.png" alt="上下水道局ホーム" width="155" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+            <li class="border-b border-[#ccc] sm:mt-[5px] sm:border-b-0 sm:border-r sm:border-white sm:shadow-[1px_0_#999]">
+                <a href="http://www.city.kofu.yamanashi.jp" target="_blank" rel="noopener" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../images/footer_btn2.png" alt="甲府市ホームページ" width="142" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+            <li class="sm:ml-auto sm:mt-[5px]">
+                <a href="#top" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../images/footer_btn3.png" alt="このページの先頭へ" width="142" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="lower px-3 py-5 text-[13px] leading-relaxed text-kofu-foot sm:px-4">
+        <h4 class="font-bold"><span class="text-kofu-line">■</span> お問い合わせ先</h4>
+        <p class="mt-2">
+            甲府市上下水道局　〒400-0046 甲府市下石田2-23-1<br class="sm:hidden">
+            <span class="sm:ml-2">Tel:<a href="tel:0552283311" class="text-kofu-link underline">055-228-3311</a></span>
+            <span class="sm:ml-2">Fax:055-237-4331</span>
+            <a href="../general/facility/kofufacility.html" class="ml-2 text-kofu-link hover:underline">▶庁舎のご案内</a>
+        </p>
+        <p>
+            業務時間：月曜〜金曜日の午前8時30分〜午後5時15分迄（祝日、12月29日〜1月3日を除く）
+            <a href="../general/dialin/index.html" class="ml-2 text-kofu-link hover:underline">▶各課ご連絡先</a>
+        </p>
+        <p>道路漏水など緊急の場合は、業務時間外でもご連絡をお願いします。</p>
+        <p class="pt-2 text-xs">Copyright(C)2003 KOFU CITY WATERWORKS AND SEWERAGE BUREAU</p>
+    </div>
+</footer>
+
+
+</div>
+
+
+
+
+<style type="text/tailwindcss">
+    @layer components {
+        /* H1: ページタイトル（#p_body 内） */
+        #p_body h1 {
+            @apply mb-6 flex items-center gap-2 border-t-[3px] border-b border-[#036eb8] bg-gradient-to-b from-kofu-h1 to-white px-3 py-3 text-lg font-bold text-[#606060] sm:text-xl;
+        }
+        #p_body h1::before {
+            content: '▶';
+            @apply text-xs text-kofu-line;
+        }
+
+        /* H2: 本文中の見出し（.contents_body 内） */
+        #p_contents h2 {
+            @apply flex items-center gap-2 border-t border-x border-b-4 border-kofu-line border-b-[#afccea] px-3 py-3 text-base font-bold text-kofu-h2 sm:text-lg;
+        }
+        #p_contents h2::before {
+            content: '▶';
+            @apply text-xs text-kofu-line;
+        }
+
+        #p_contents a{
+            @apply text-kofu-link underline;
+
+            &:hover {
+                @apply underline text-[#024a7d];
+            }
+        }
+
+        #p_contents .exhibition {
+            & h2{
+                @apply flex items-center gap-2 border border-[#b5305f] border-b-[5px] border-b-[#d9a0b5] bg-white px-3 py-3 text-base font-bold text-[#b5305f];
+            }
+            & h2::before {
+                content: '▶';
+                @apply text-xs text-kofu-line text-[#b5305f];
+            }
+        }
+
+        #p_contents .corporation {
+            & h2{
+                @apply flex items-center gap-2 border border-[#9aaa2c] border-b-[5px] border-b-[#c6d889] bg-white px-3 py-3 text-base font-bold text-[#3ea636];
+            }
+            & h2::before {
+                content: '▶';
+                @apply text-xs text-kofu-line text-[#9aaa2c];
+            }
+        }
+
+        #p_contents .general {
+            & h2{
+                @apply flex items-center gap-2 border border-[#036eb8] border-b-[5px] border-b-[#afccea] bg-white px-3 py-3 text-base font-bold text-[#0a6fa8];
+            }
+            & button {
+                &.tab-btn {
+                    @apply min-w-[7rem] flex-1 sm:flex-none sm:min-w-[10rem] border border-[#0096d6] border-b-0 px-4 py-3 text-sm font-bold sm:text-base
+                    bg-gradient-to-b from-white to-[#d8ebf7] text-[#0a6fa8]
+                    aria-[selected=false]:from-[#f4f4f4] aria-[selected=false]:to-[#e4e4e4]
+                    aria-[selected=false]:border-[#b8d4e6] aria-[selected=false]:text-[#999];
+                }
+            }
+
+        }
+
+        #p_contents .trader{
+            & h2{
+                @apply flex items-center justify-center gap-2 border-0  px-3 py-3 text-sm font-bold text-[#fff];
+            }
+            & h2::before {
+                content: '';
+            }
+        }
+
+        #p_contents .sitemap {
+
+            & h2{
+                @apply text-xs text-kofu-line border-t-0 border-x-0 border-b border-b-[#2f2849] sm:text-base text-[#2f2849] px-0;
+            }
+
+            & h2::before {
+                content:'';
+            }
+
+            & h3{
+                @apply text-xs text-[#606060] sm:text-sm;
+            }
+
+            & h4{
+
+            }
+
+            & ul{
+                @apply my-3 text-xs sm:text-sm;
+
+                & li{
+                    @apply my-2;
+                }
+
+                &.depth-3 {
+                    @apply ml-[1.5em];
+                }
+
+                &.depth-4 {
+                    @apply ml-[3em];
+                }
+            }
+        }
+
+
+    }
+</style>
+
+
+</body>
+</html>

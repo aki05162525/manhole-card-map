@@ -1,0 +1,7 @@
+{
+  "partition": "48/48 unique and exhaustive",
+  "sourceEvidenceHashes": "all matched",
+  "correctionOldValues": "all exact matched",
+  "sourceAndParentHash": "unchanged since review record",
+  "semanticApproval": "Only 37 accepted; hash success is not semantic approval"
+}

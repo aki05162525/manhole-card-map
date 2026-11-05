@@ -1,0 +1,11 @@
+{
+  "url": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+  "fetchedAt": "2026-11-05T04:53:01.160735+00:00",
+  "path": "data/evidence/national/official-facility-index/p05-license.html",
+  "status": 200,
+  "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+  "contentType": "text/html; charset=UTF-8",
+  "lastModified": null,
+  "bytes": 62475,
+  "sha256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+}

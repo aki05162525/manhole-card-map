@@ -1,0 +1,108 @@
+{
+  "checkedAt": "2026-11-05",
+  "method": "既存の印字番号採用記録との突合。今回の画像再読・新たな人の確認ではない。",
+  "sourcePath": "data/overrides/cards.json",
+  "sourceSHA256": "b473a558e8170e195a81dbf89e4f39361afd0ae61ceaac213d61faeb17f9069e",
+  "rows": [
+    {
+      "cardId": "01-303-A002",
+      "image": "01-303-A-01.jpg",
+      "derivedCandidate": "01-303-A001",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名 A-01 から作った候補 A001 は誤り。印字は A002。"
+    },
+    {
+      "cardId": "03-000-A001",
+      "image": "03-000-A-02.jpg",
+      "derivedCandidate": "03-000-A002",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名 A-02 から作った候補 A002 は誤り。印字は A001。"
+    },
+    {
+      "cardId": "04-442-A001",
+      "image": "04-422-A-01.jpg",
+      "derivedCandidate": "04-422-A001",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "human",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "Claude（AI）が目視で読んだ値を、人がカード画像と見比べて確認",
+      "reason": "印字は 04-442-A001。一覧の自治体は大郷町、画像名と候補は 04-422。要件に従い印字を ID に採用し、所属自治体は一覧の情報として別に持つ。"
+    },
+    {
+      "cardId": "11-010-A001",
+      "image": "11-010-A101.jpg",
+      "derivedCandidate": "11-010-A101",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名 A101 から作った候補 A101 は誤り。印字は A001。"
+    },
+    {
+      "cardId": "13-000-A001",
+      "image": "13-000-A01-3.jpg",
+      "derivedCandidate": "",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名の形が特殊で候補を作れなかった。印字から確定。"
+    },
+    {
+      "cardId": "15-205-D001",
+      "image": "15-202-D-01.jpg",
+      "derivedCandidate": "15-202-D001",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "human",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "Claude（AI）が目視で読んだ値を、人がカード画像と見比べて確認",
+      "reason": "印字は 15-205-D001（15-205 は柏崎市のコード）。一覧の自治体は長岡市、候補は 15-202-D001。要件に従い印字を ID に採用し、所属自治体は一覧の情報として別に持つ。自治体からの距離の検査は、印字の番号で柏崎市のカードと比べたことによる。"
+    },
+    {
+      "cardId": "20-452-A001",
+      "image": "20-452-A.jpg",
+      "derivedCandidate": "",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名の形が特殊で候補を作れなかった。印字から確定。座標の見本に使った画像。"
+    },
+    {
+      "cardId": "23-234-A001",
+      "image": "23-234A.jpg",
+      "derivedCandidate": "",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名の形が特殊で候補を作れなかった。印字から確定。"
+    },
+    {
+      "cardId": "28-221-A001",
+      "image": "28-221-A-02.jpg",
+      "derivedCandidate": "28-221-A002",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像が 869x1166 で周りに余白があり、自動では読めない。目視で読んだ。画像名 A-02 から作った候補 A002 は誤り。"
+    },
+    {
+      "cardId": "28-481-A001",
+      "image": "28-481-A-02.jpg",
+      "derivedCandidate": "28-481-A002",
+      "resolution": "existing-printed-id-override",
+      "originalReviewer": "claude",
+      "originalCheckedAt": "2026-10-21",
+      "evidence": "カード画像の印字を拡大し、Claude（AI）が目視で確認。人による確認は未実施",
+      "reason": "画像名 A-02 から作った候補 A002 は誤り。印字は A001。"
+    }
+  ]
+}

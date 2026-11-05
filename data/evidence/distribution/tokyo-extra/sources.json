@@ -1,0 +1,38 @@
+[
+  {
+    "path": "data/evidence/distribution/tokyo-extra/tama-cards.html",
+    "url": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "retrievedAt": "2026-11-05T04:02:22.313259+00:00",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a"
+  },
+  {
+    "path": "data/evidence/distribution/tokyo-extra/tama-nagayama.html",
+    "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003181.html",
+    "retrievedAt": "2026-11-05T04:02:22.313303+00:00",
+    "sha256": "514e6a2c63e39c20954a0bcc768e7cc80477345adbd34726114d4a64ae527e64"
+  },
+  {
+    "path": "data/evidence/distribution/tokyo-extra/tama-sekido.html",
+    "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003182.html",
+    "retrievedAt": "2026-11-05T04:02:22.313334+00:00",
+    "sha256": "626b47731f5cea1d7cf42336f30c9400e7eb9a1da483cda14fc130c5d4e60060"
+  },
+  {
+    "path": "data/evidence/distribution/tokyo-extra/tama-green.html",
+    "url": "https://www.city.tama.lg.jp/map/kouen/1007988.html",
+    "retrievedAt": "2026-11-05T04:02:22.313362+00:00",
+    "sha256": "3999d153c3b5772d0c7c14e3a6c4c0acbb0be310a1cdfe415fee24a7fc78abc0"
+  },
+  {
+    "path": "data/evidence/distribution/tokyo-extra/kokubunji-cards.html",
+    "url": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "retrievedAt": "2026-11-05T04:02:22.313387+00:00",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6"
+  },
+  {
+    "path": "data/evidence/distribution/tokyo-extra/kokubunji-hikari.html",
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/1003818.html",
+    "retrievedAt": "2026-11-05T04:02:22.313423+00:00",
+    "sha256": "a136d497eaa25732b6baab8d39c801cb2ffb5af084f642c78908de8699ad692d"
+  }
+]

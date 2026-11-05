@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-05T05:04:44.558169+00:00",
+  "targets": 206,
+  "updates": 31,
+  "unresolved": 175,
+  "allTargetsExactlyOnce": true,
+  "allFacilityIdsInOriginalFragment": true,
+  "allTargetsReferencedByAdoptedRelations": true,
+  "allManifestSnapshotHashesMatch": true,
+  "allAdoptedNumbersPresentInPrimaryBytes": true,
+  "manifestEntries": 902
+}

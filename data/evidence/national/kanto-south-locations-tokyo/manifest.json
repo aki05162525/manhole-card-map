@@ -1,0 +1,3266 @@
+[
+  {
+    "url": "https://museum.toei-anim.co.jp/?id=access",
+    "fetchedAt": "2026-11-05T04:43:57.144984+00:00",
+    "status": 200,
+    "finalUrl": "https://museum.toei-anim.co.jp/?id=access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8d2041335d03d9536036.html",
+    "sha256": "655a5c758c7cddacdbd313b2bd5cbf2bf8f61d96a68f3d7aa2a5e9af115b7cb6"
+  },
+  {
+    "url": "https://www.city.minato.tokyo.jp/kankouseisakutan/tic/information.html",
+    "fetchedAt": "2026-11-05T04:43:57.146700+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minato.tokyo.jp/kankouseisakutan/tic/information.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3087619acb3bd1f92e80.html",
+    "sha256": "160a421573631bf65edde4ab9870365e17bfbad69442f4412eae7d180aaa156a"
+  },
+  {
+    "url": "https://akabanemuseum.ur-net.go.jp/information/",
+    "fetchedAt": "2026-11-05T04:43:57.138094+00:00",
+    "status": 200,
+    "finalUrl": "https://akabanemuseum.ur-net.go.jp/information/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/921f10f61a9df8ef9b6e.html",
+    "sha256": "1962ef9b9b7c9342532a52c78c392e31dff047fba68596310698903278cd2ff7"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/kusei/chosha/1043016/1043099/1042899.html",
+    "fetchedAt": "2026-11-05T04:43:57.146339+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/kusei/chosha/1043016/1043099/1042899.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/58982b6784cde6f6d1c6.html",
+    "sha256": "7b378ea44c2965d9fc31a47ed623e0fb5f5eb35b613ac1daf183773ecd4be357"
+  },
+  {
+    "url": "https://shinagawa-kanko.or.jp/access/",
+    "fetchedAt": "2026-11-05T04:43:57.139819+00:00",
+    "status": 200,
+    "finalUrl": "https://shinagawa-kanko.or.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/edaab5a2e9fe7bf4ebe8.html",
+    "sha256": "f83b7eed87d64a7a43a5abc7ba7906904a17ef7e2da3054398ebb989d1561a3c"
+  },
+  {
+    "url": "https://www.city.shinagawa.tokyo.jp/shisetsu/kuyakushogikai/1007885/1009682.html",
+    "fetchedAt": "2026-11-05T04:43:57.143135+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/shisetsu/kuyakushogikai/1007885/1009682.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e6ae7c0536d63191af89.html",
+    "sha256": "aa15c6d3271f7513785b3f5a23942ce061fba30e10bea04ab15c36fff1f98730"
+  },
+  {
+    "url": "https://www.facebook.com/shinagawakanko/",
+    "fetchedAt": "2026-11-05T04:43:57.139970+00:00",
+    "status": 200,
+    "finalUrl": "https://www.facebook.com/shinagawakanko/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d51319998fb1fab811ba.html",
+    "sha256": "b4ed1ef38c1e166d0aa12495e2a14e41de69e8db3fcd5e2f68ee453ba8639966"
+  },
+  {
+    "url": "https://akabane-sports.com",
+    "fetchedAt": "2026-11-05T04:43:57.147656+00:00",
+    "status": 200,
+    "finalUrl": "https://akabane-sports.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a012e1f1e750270eae6a.html",
+    "sha256": "e6a820ea2774e4f8f264f3a4a65d2c44cc09362076714c4c70923bba77ceb646"
+  },
+  {
+    "url": "https://www.city.chiyoda.lg.jp/koho/kuse/gaiyo/access.html",
+    "fetchedAt": "2026-11-05T04:43:57.673481+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiyoda.lg.jp/koho/kuse/gaiyo/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/dcddc71df69539c98312.html",
+    "sha256": "946e4cd3307a3b9aa67481f2848c8f14d41bafab197f4e15db127b06c5dc23ee"
+  },
+  {
+    "url": "https://www.city.sumida.lg.jp/sisetu_info/kuyakusyo/sumidakuyakusyo.html",
+    "fetchedAt": "2026-11-05T04:43:57.414259+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sumida.lg.jp/sisetu_info/kuyakusyo/sumidakuyakusyo.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/82b0bce10a449652720d.html",
+    "sha256": "e4ef6d32f155773f2b14df8b0268584bbd778eaa9b50811cbe26ec4af289accd"
+  },
+  {
+    "url": "https://visit-chiyoda.tokyo/information_office/",
+    "fetchedAt": "2026-11-05T04:43:57.572384+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-chiyoda.tokyo/information_office/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cc2d545c91db4efec1e5.html",
+    "sha256": "ae0da7b32be305e287c663e96cb539da99b6c9cf88093bf8218cb52e36258a57"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/guide.html",
+    "fetchedAt": "2026-11-05T04:43:57.741515+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/guide.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/df2ccf3bde008d90c421.html",
+    "sha256": "20f1b004f478b6cdd2b642bc4f544fac1deb3165e597f0288c04d40b5544d198"
+  },
+  {
+    "url": "https://www.tokyo-park.or.jp/park/ukima/facility/",
+    "fetchedAt": "2026-11-05T04:43:57.472058+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokyo-park.or.jp/park/ukima/facility/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cd157424d3785f3d17ed.html",
+    "sha256": "a4dd5ca0407efd0dba34a7073637b968265746c4084704c8db286cc50a0cb74d"
+  },
+  {
+    "url": "https://www.city.tokyo-nakano.lg.jp/shisetsu/bunka/hole/rekishi.html",
+    "fetchedAt": "2026-11-05T04:43:57.943745+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokyo-nakano.lg.jp/shisetsu/bunka/hole/rekishi.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e2fa13ffc80d1044fa54.html",
+    "sha256": "ca3a33d33007271135b182208a8b0dc68ffb2034707954e1ecb9d8192512b14f"
+  },
+  {
+    "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/kankoannaijo.html",
+    "fetchedAt": "2026-11-05T04:43:57.959571+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/kankoannaijo.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0f7834a127a28baea89d.html",
+    "sha256": "78fbdad5507139a3a2336214bdd049887156579f6d0f06197dc10f7db90a8afd"
+  },
+  {
+    "url": "https://www.ara-amoa.com/アクセス/",
+    "fetchedAt": "2026-11-05T04:43:57.330006+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ara-amoa.com/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d9668dd31120af8470dd.html",
+    "sha256": "64280d201e991fb1637e5c3e92c6ec459b72d46a9d26c5df564da72ed4a01349"
+  },
+  {
+    "url": "https://techno-plaza.jp:443/contacts/index.html",
+    "fetchedAt": "2026-11-05T04:43:58.120090+00:00",
+    "status": 200,
+    "finalUrl": "https://techno-plaza.jp:443/contacts/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/52fedb82f9eb539a8ece.html",
+    "sha256": "a22be242fac0ff11bfff074f4a0028b98519e5a97fea062773c52ac59603305a"
+  },
+  {
+    "url": "https://www.kanko-shinjuku.jp/areainfo/-/access.html",
+    "fetchedAt": "2026-11-05T04:43:58.122135+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-shinjuku.jp/areainfo/-/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/765280158da8eaae280c.html",
+    "sha256": "4f871fc89bf7ce1d33b2443b3e0b080b254f285dc19aa1499bcb45aab4b3495b"
+  },
+  {
+    "url": "https://www.city.shinjuku.lg.jp/shisetsu/index05.html",
+    "fetchedAt": "2026-11-05T04:43:58.151057+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinjuku.lg.jp/shisetsu/index05.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2eb7be089a06b03d0d86.html",
+    "sha256": "10e7c33f5260ceed4b62dc1c31799a0d823c9d0ef1920de60a1542c1db5340b5"
+  },
+  {
+    "url": "https://museum.toei-anim.co.jp/access/",
+    "fetchedAt": "2026-11-05T04:43:58.429470+00:00",
+    "status": 200,
+    "finalUrl": "https://museum.toei-anim.co.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f1207255d724a334ffcd.html",
+    "sha256": "47a0f03b4695d5d58509bfc2eb614afdea0c5f1162c87827fe7b85d0a3402f04"
+  },
+  {
+    "url": "https://www.city.ota.tokyo.jp/seikatsu/manabu/hakubutsukan/R8_kyoudohakubutsukan_annai.html",
+    "fetchedAt": "2026-11-05T04:43:58.358955+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ota.tokyo.jp/seikatsu/manabu/hakubutsukan/R8_kyoudohakubutsukan_annai.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b4bdeceba8e1d574677c.html",
+    "sha256": "96ec8a8480e51e654f5cb61aa1f6f18092dbc9b7e07388a5f5d75dbdb48621d7"
+  },
+  {
+    "url": "https://www.kanko-setagaya.jp:443/access/",
+    "fetchedAt": "2026-11-05T04:43:58.570198+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-setagaya.jp:443/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a9470d66ca70c3e92752.html",
+    "sha256": "c3a477c609c4c89e9d729e397f390fe50b2ef3a6e2e7473b2b776383b4d3278d"
+  },
+  {
+    "url": "https://visit-sumida.jp/about/access/",
+    "fetchedAt": "2026-11-05T04:43:57.377551+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-sumida.jp/about/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d33e1d3564fe79eb57ec.html",
+    "sha256": "0032ad814deae253b2743d38606d78bce1c4e795500e20137adb0fc8ed7e63c4"
+  },
+  {
+    "url": "https://www.city.setagaya.lg.jp/shisetsu/index.html",
+    "fetchedAt": "2026-11-05T04:43:58.659651+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setagaya.lg.jp/shisetsu/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0d68f3683278492fdd51.html",
+    "sha256": "97e40eeed5028914045c4f037ca97a47702112194eb441d88e685e6701aee778"
+  },
+  {
+    "url": "https://www.kanko-setagaya.jp/?p=we-page-entry&amp;spot=265539&amp;type=news&amp;nav=none",
+    "fetchedAt": "2026-11-05T04:43:58.757399+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-setagaya.jp/?p=we-page-entry&amp;spot=265539&amp;type=news&amp;nav=none",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/83e84002718a448d895d.html",
+    "sha256": "4c05135ede3d080174668c8323cbf85866413987b0f5352d0029c9f0176aaed5"
+  },
+  {
+    "url": "https://akabane-sports.com/access",
+    "fetchedAt": "2026-11-05T04:43:58.840910+00:00",
+    "status": 200,
+    "finalUrl": "https://akabane-sports.com/access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/26ea8da5c4823af66e88.html",
+    "sha256": "f832235f868388f881b9b018d99b6fa873118a66f4a77d42c71285a26fe63440"
+  },
+  {
+    "url": "https://www.city.sumida.lg.jp/sisetu_info/siryou/kanko_kyokai.html",
+    "fetchedAt": "2026-11-05T04:43:59.025398+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sumida.lg.jp/sisetu_info/siryou/kanko_kyokai.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3079ff92a21864162183.html",
+    "sha256": "18282716fca252208ecd250b7ec8c273a012ac12910aa6c635042c9f0ccaa169"
+  },
+  {
+    "url": "https://visit-chiyoda.tokyo/access/",
+    "fetchedAt": "2026-11-05T04:43:59.040417+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-chiyoda.tokyo/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c972307fafcc6662212b.html",
+    "sha256": "ebc44ea72153dedecae1c0417d836b8574abc57a33eb4b38d6340ebabe13c208"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_koiwa_urban/guide.html",
+    "fetchedAt": "2026-11-05T04:43:59.043003+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_koiwa_urban/guide.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3649374b04e64e216f5e.html",
+    "sha256": "082fee007edd156c46f66af49a108a75386f330bc2216bdaab5a7e2957bad3d9"
+  },
+  {
+    "url": "https://www.city.shibuya.tokyo.jp/shisetsu/kuyakusho/kuyakusho/shintyousha.html",
+    "fetchedAt": "2026-11-05T04:43:58.861135+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibuya.tokyo.jp/shisetsu/kuyakusho/kuyakusho/shintyousha.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/447299646fdd733cb628.html",
+    "sha256": "0542ad59ecf1d1ba4425c52fa767e15d2cf28a7d66a0a461c6418cde1e8dd5f7"
+  },
+  {
+    "url": "https://www.city.toshima.lg.jp/chosha/access.html",
+    "fetchedAt": "2026-11-05T04:43:59.157333+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toshima.lg.jp/chosha/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/51616a353b9a656312a1.html",
+    "sha256": "1bb859ecfa43c384dfeede1e3e28f87281d00c9fccebb8dd54c7acae8a487387"
+  },
+  {
+    "url": "https://sam.or.jp/access",
+    "fetchedAt": "2026-11-05T04:43:58.918300+00:00",
+    "status": 200,
+    "finalUrl": "https://sam.or.jp/access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/12cb51985c282165f97a.html",
+    "sha256": "226233eea4779f58ee130172cfe26e58bc78424b4c75cb63aedbf71da4b2e42c"
+  },
+  {
+    "url": "https://toshima-civic-center.jp/",
+    "fetchedAt": "2026-11-05T04:43:59.077797+00:00",
+    "status": 200,
+    "finalUrl": "https://toshima-civic-center.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/36658276b87dc51eada3.html",
+    "sha256": "684ca7f9b8beda65ce6a0fd9bd412001a2f1d93877f68906d13154ef4c7e4345"
+  },
+  {
+    "url": "https://www.city.adachi.tokyo.jp/access.html",
+    "fetchedAt": "2026-11-05T04:43:59.199238+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/906a47267c09171f5812.html",
+    "sha256": "7e7297e3de7e6f2b172e61e525d69e5e3eff002c1ecdc08adf9e4398d5e8ccd0"
+  },
+  {
+    "url": "https://www.adachikanko.net/about/access",
+    "fetchedAt": "2026-11-05T04:43:59.255542+00:00",
+    "status": 200,
+    "finalUrl": "https://www.adachikanko.net/about/access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/253c0fb95cad36b063aa.html",
+    "sha256": "4df46bbd93a74d6ec1a8f78fecf24ffb6256835de38517af322dbe3f1584dd21"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/akusesuotoiawase/index.html",
+    "fetchedAt": "2026-11-05T04:43:59.299687+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/akusesuotoiawase/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e29f7389eebe2f696359.html",
+    "sha256": "3ca6160c226e1f8adc63e79ed3d2cba31a54cee60499dbc4e3c9f1f6c050b2ee"
+  },
+  {
+    "url": "http://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "fetchedAt": "2026-11-05T04:43:59.174269+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/74e6f158e9a3dad37228.html",
+    "sha256": "5cc71ab5d265c2cb2b01108607614dbd1334478265ebbdd5f998051d40f0b36b"
+  },
+  {
+    "url": "https://www.youroad.com/shoutengai-access.html",
+    "fetchedAt": "2026-11-05T04:43:59.279982+00:00",
+    "status": 200,
+    "finalUrl": "https://www.youroad.com/shoutengai-access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e47263acd46aba6b3a36.html",
+    "sha256": "a108010b88ad0e7c2db30d7a907c1d291e78ff3b198e0d971f414b1da0d0e7aa"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/bosai/bohan/1008439/1028484.html",
+    "fetchedAt": "2026-11-05T04:43:59.414633+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/bosai/bohan/1008439/1028484.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/734423a85fefc39561be.html",
+    "sha256": "593a1f72354a2b475575dc8899950a0013e2df894b24a5f74210ef40a17f349c"
+  },
+  {
+    "url": "https://www.city.ota.tokyo.jp/shisetsu/kuyakusho/index.html",
+    "fetchedAt": "2026-11-05T04:43:59.669071+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ota.tokyo.jp/shisetsu/kuyakusho/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/dd5effa2023b7ecd5285.html",
+    "sha256": "8706aa13fd6c3b29b8fbbc3f9d70a0bf19f1319263d7faf399f27384cffd6b59"
+  },
+  {
+    "url": "https://www.city.shinjuku.lg.jp/kanko/shisetu_1.html",
+    "fetchedAt": "2026-11-05T04:43:59.458352+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinjuku.lg.jp/kanko/shisetu_1.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/bc9eb24c3bc21e562e73.html",
+    "sha256": "cc87f442de5bf24e7d85689d26b8875420a2c7712bb6756ae502aa45a8fe785a"
+  },
+  {
+    "url": "https://mangapark.jp/guide/access/",
+    "fetchedAt": "2026-11-05T04:43:59.531169+00:00",
+    "status": 200,
+    "finalUrl": "https://mangapark.jp/guide/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ac8c6ceb6c188adf97c1.html",
+    "sha256": "770dfd7cbfaef5806ba02edfb7d2d1ea72ddfddae284784d440f92b365531f4e"
+  },
+  {
+    "url": "https://www.musashino.or.jp/place/1001617/1001943.html",
+    "fetchedAt": "2026-11-05T04:43:59.911213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.musashino.or.jp/place/1001617/1001943.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/1dc0399c1df33e372c52.html",
+    "sha256": "9612d7426bb2045b68a3cdf2f9b39cd3d2bee0abad5aeb293516da5be213beaa"
+  },
+  {
+    "url": "https://kanko.mitaka.ne.jp/about/accsess.html",
+    "fetchedAt": "2026-11-05T04:44:00.011199+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/about/accsess.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/53cb5b3c54ec417d7cf5.html",
+    "sha256": "d2377f0c2df569e2fc87bb0d5f79cc1f5e06a1b16b5403b253825af3d3f83028"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e037/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_shinozaki/guide.html",
+    "fetchedAt": "2026-11-05T04:44:00.297945+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e037/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_shinozaki/guide.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ad94c729a22c4b2287ac.html",
+    "sha256": "be3cd3c9d1546afc110137fde2cfd0981674171d4acd78a2f60cc1bc0439221f"
+  },
+  {
+    "url": "https://www.city.adachi.tokyo.jp/chosha/shisetsu/kuyakusho/001.html",
+    "fetchedAt": "2026-11-05T04:44:00.409142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/chosha/shisetsu/kuyakusho/001.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/92e09a0da3d374bef792.html",
+    "sha256": "d88cf6d9a1b45795e2ddc79b8982aff57ff26489a93144431a2dccedf95dcb3e"
+  },
+  {
+    "url": "https://www.facebook.com/musashinokanko/",
+    "fetchedAt": "2026-11-05T04:43:59.889531+00:00",
+    "status": 200,
+    "finalUrl": "https://www.facebook.com/musashinokanko/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5f5910c5c1f9913ff1b9.html",
+    "sha256": "4214d75cde6e64db385205eeee0f9e760dbe5626cf0954df4a3889dc49006098"
+  },
+  {
+    "url": "https://www.omekanko.gr.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:00.359279+00:00",
+    "status": 200,
+    "finalUrl": "https://www.omekanko.gr.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d329ae6c8a90f6a227b2.html",
+    "sha256": "42e07d07a2a6bd53fc33d7424c5c9d593ef2e25c0b6717a8eaa2c526819e72e6"
+  },
+  {
+    "url": "https://www.city.ome.tokyo.jp/map/14255.html",
+    "fetchedAt": "2026-11-05T04:44:00.544392+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ome.tokyo.jp/map/14255.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b191f4f1689c0dda0254.html",
+    "sha256": "21b2e5aab810c6498419451b651ec6c565daeaed03a16ced13f7340f26748ebf"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/akusesuotoiawase/location/index.html",
+    "fetchedAt": "2026-11-05T04:44:00.567800+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/akusesuotoiawase/location/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f4e1750fe95d3e073459.html",
+    "sha256": "4b9cb76dcf295f3d7eaf03599328f81dfa5b5d0ac8c766cbfc176fee22cc05f3"
+  },
+  {
+    "url": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/index.html",
+    "fetchedAt": "2026-11-05T04:44:00.661802+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/50751f77dd58e9839b85.html",
+    "sha256": "08a87ae243427d0d2b584ac6f7a4b67e8f3877ea84c7a082f26d6807291b1a72"
+  },
+  {
+    "url": "https://musashino-kanko.com/outline/officeinfo/",
+    "fetchedAt": "2026-11-05T04:43:59.825216+00:00",
+    "status": 200,
+    "finalUrl": "https://musashino-kanko.com/outline/officeinfo/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d8945177d935d2bb00a4.html",
+    "sha256": "9835ec16391ace2993bbba142cc4731f7497e28912c71aa6918795847c165b11"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/shisei/gaiyo/1005931/index.html",
+    "fetchedAt": "2026-11-05T04:44:00.924619+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/shisei/gaiyo/1005931/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e68b116517965528c759.html",
+    "sha256": "ce91bd6d58c83cd6112cb274b18c532f3d221bcfb89b59d7a3102914834f212c"
+  },
+  {
+    "url": "https://goo.gl/maps/PxLyXkenFLvUuiyU8",
+    "fetchedAt": "2026-11-05T04:44:00.181910+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%BF%E3%81%9F%E3%81%8B%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80/@35.7016179,139.5595354,17z/data=!4m5!3m4!1s0x0:0x87a5ee44218358fe!8m2!3d35.7020757!4d139.562139?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d8881e90907522a02b64.html",
+    "sha256": "04a8c982838cca711932f26fe522962ba9b99555447450886a014920200832f9"
+  },
+  {
+    "url": "http://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/plaza/access.html",
+    "fetchedAt": "2026-11-05T04:44:01.043630+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.machida.tokyo.jp/bunka/bunka_geijutsu/cul/plaza/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ac89defb4d2b8160c157.html",
+    "sha256": "2ba64719801a29b40296d853662da8aff1ea363f5b21eb637ddcdd562a3fe2b9"
+  },
+  {
+    "url": "https://www.musashino.or.jp/place/index.html",
+    "fetchedAt": "2026-11-05T04:44:01.110688+00:00",
+    "status": 200,
+    "finalUrl": "https://www.musashino.or.jp/place/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/edcf29c3eda2509efc65.html",
+    "sha256": "748f07754641de98ed5270416581e405236f9a5c6fda633447f5f9ccb465c700"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e004/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/kuyakusho/access.html",
+    "fetchedAt": "2026-11-05T04:44:01.458572+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e004/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/kuyakusho/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/16bfd161f7ef96d1ef1e.html",
+    "sha256": "96bfccfde3d77f9a3104649b840d5afd24f074109f3ef2a1f1d2e822f9efd50b"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/other/map.html",
+    "fetchedAt": "2026-11-05T04:44:01.575810+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/other/map.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ead4208238d1c73f7e0d.html",
+    "sha256": "c7c9ad07b19b2f0b6747fb0e4f503c467a919a0be01dd92f30b9e72379fbc1f9"
+  },
+  {
+    "url": "https://machida-guide.or.jp/access-machida/",
+    "fetchedAt": "2026-11-05T04:44:01.191144+00:00",
+    "status": 200,
+    "finalUrl": "https://machida-guide.or.jp/access-machida/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/9a6bb57384283ac6e15c.html",
+    "sha256": "6ae25831c2b8d04e2bc6f91c55d85c66c021adea689fd0287369ec9765fb9fef"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shinsenr/1022769/index.html",
+    "fetchedAt": "2026-11-05T04:44:01.900933+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shinsenr/1022769/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/81ec9476c05a6deeb11e.html",
+    "sha256": "d83e61354721c2fa7b3753671dd36e77e9600548d9ee539394e829a6d82cdfed"
+  },
+  {
+    "url": "https://www.omekanko.gr.jp/association/facility/",
+    "fetchedAt": "2026-11-05T04:44:01.760653+00:00",
+    "status": 200,
+    "finalUrl": "https://www.omekanko.gr.jp/association/facility/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/dcf23f3d823db7567dcb.html",
+    "sha256": "29d8615b8ce10e980222122e91b02a44d3a7458131c595bd99b66b7a6ff759d4"
+  },
+  {
+    "url": "http://www.city.fuchu.tokyo.jp/shisetu/chosha/honcho.html",
+    "fetchedAt": "2026-11-05T04:44:01.918490+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.fuchu.tokyo.jp/shisetu/chosha/honcho.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/11c9f8d6b6900e0c4d4e.html",
+    "sha256": "411e2927e5fdfd712c786c6044cc23f9a3c9cefbbe2b3cf97e745464a5b83e84"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/hall/1017572.html",
+    "fetchedAt": "2026-11-05T04:44:02.045877+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/hall/1017572.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/700bd5fcede95501fb26.html",
+    "sha256": "05811bdd6cdf55b247e665417156de8a2e9086ffc2ef800246cdbd18d9d8d431"
+  },
+  {
+    "url": "https://www.kokubunji-izumihall.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:02.071657+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kokubunji-izumihall.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0ad5ce0d2162e6c04200.html",
+    "sha256": "61fd73954b67cd1b0ae1474e06d78c7a323a3b7a040e5d1867b2a8ab871097c5"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/kanko/shogai/1003065/1003069.html",
+    "fetchedAt": "2026-11-05T04:44:02.142127+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/kanko/shogai/1003065/1003069.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2ab808938f52a18f999f.html",
+    "sha256": "4a2cb7af9ce335710ba21922f078ef35510e83c30c0c2452ea10bd6ed8b5d295"
+  },
+  {
+    "url": "https://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "fetchedAt": "2026-11-05T04:44:02.290952+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5c9527d403fe170d353a.html",
+    "sha256": "e2a315d1a7ffe2ef61e457803fc4a35db26d05de2d411365907b386822179981"
+  },
+  {
+    "url": "https://www.kurumiru-fussa-omotenashi.com/access.html",
+    "fetchedAt": "2026-11-05T04:44:02.468405+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurumiru-fussa-omotenashi.com/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3d6f555022794b55aefe.html",
+    "sha256": "6f3979a1f483218450e7416d33e202aec9d850690c8c793dbf6a09760c6e2055"
+  },
+  {
+    "url": "https://kodaira-sewer.jp",
+    "fetchedAt": "2026-11-05T04:44:01.747522+00:00",
+    "status": 200,
+    "finalUrl": "https://kodaira-sewer.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/359ff3d99dd3f85b4a7a.html",
+    "sha256": "68b3509aa8b91c701a1b8dbcee2af3babacb11e1809a4799b7a9607db891c4c9"
+  },
+  {
+    "url": "https://www.city.fussa.tokyo.jp/map/shiyakusho/1001595.html",
+    "fetchedAt": "2026-11-05T04:44:02.840433+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fussa.tokyo.jp/map/shiyakusho/1001595.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2eedd1a4117834e85feb.html",
+    "sha256": "0602fcd084d153f1f5b8893b8a3538c7a5ba50090790fc3edbc5aa6901ebf505"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/bunkasports/museum/1006042/1006047.html",
+    "fetchedAt": "2026-11-05T04:44:02.997792+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/bunkasports/museum/1006042/1006047.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/fbd076dafbcc5c30f795.html",
+    "sha256": "909aaa3451ac86c76d756236cd03b1ed37c7098fbceaf10fc33334e83eb4c1f8"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shinsenr/index.html",
+    "fetchedAt": "2026-11-05T04:44:03.126229+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shinsenr/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/608a6b85c9fd2b2c2282.html",
+    "sha256": "c190fb8c54a2c9e3da837f0e6fde0fd78717d72f930e9081c0495c061a53110e"
+  },
+  {
+    "url": "https://kuzaidan.or.jp/province/access/",
+    "fetchedAt": "2026-11-05T04:44:02.164933+00:00",
+    "status": 200,
+    "finalUrl": "https://kuzaidan.or.jp/province/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d5634939dd2cb512e634.html",
+    "sha256": "6bd689574cea1210bc90a2273b9d380e0b4208af24328f42772c7a82f8ad8419"
+  },
+  {
+    "url": "https://machida-guide.or.jp/gallery/",
+    "fetchedAt": "2026-11-05T04:44:03.000266+00:00",
+    "status": 200,
+    "finalUrl": "https://machida-guide.or.jp/gallery/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c98f0bdb1b8c939c7133.html",
+    "sha256": "e74cf7da49069771ce23c77504a6583b880d7faefe6652c65988eb878dd684d8"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/shisei/profile/youkoso/1000068.html",
+    "fetchedAt": "2026-11-05T04:44:03.473363+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/shisei/profile/youkoso/1000068.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7fc2e28df0b4d8430751.html",
+    "sha256": "32f7a8a9ff0fdb1695a0df95a2d9a9fe723245463689773993ac813bbebb0684"
+  },
+  {
+    "url": "https://www.higashikurume-lll.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:03.475062+00:00",
+    "status": 200,
+    "finalUrl": "https://www.higashikurume-lll.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/00f3f934b36f11fcb781.html",
+    "sha256": "eff931eb4aba2b1ea329c37cb7a5d022c81c6eaeebe286b4e5758b6ca65cb0bb"
+  },
+  {
+    "url": "https://www.city.inagi.tokyo.jp/shisetsu/shiyakusho/1004833.html",
+    "fetchedAt": "2026-11-05T04:44:03.706678+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.inagi.tokyo.jp/shisetsu/shiyakusho/1004833.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/6d8e73c3640c3be6635f.html",
+    "sha256": "19394e51028c0de36f6e839542ea7b64dadc9cf93386ac4c2ef2e881f6ded562"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/0000005474.html",
+    "fetchedAt": "2026-11-05T04:44:03.734101+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000005474.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5d0f1701d204ba2e76c6.html",
+    "sha256": "171fca02d79995582dcb07356213eb0969e6eb5967f72257bfe228712a00ff7c"
+  },
+  {
+    "url": "https://hamurazoo.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:04.007091+00:00",
+    "status": 200,
+    "finalUrl": "https://hamurazoo.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/301fcd2a5dd033f460f3.html",
+    "sha256": "530d2131d82344d70a5f35e9975c63eaebe9d566283e5adab1a70ee94d5fe2e4"
+  },
+  {
+    "url": "http://www.seotonoyu.jp/access",
+    "fetchedAt": "2026-11-05T04:44:04.084085+00:00",
+    "status": 200,
+    "finalUrl": "http://www.seotonoyu.jp/access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7bee3b5a0e1b9f53f646.html",
+    "sha256": "9083d3dbd609df7e77194776f36f0ac14226bbba2ad3a22f509f926719c9cae3"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/shisetsu/sisetu/1001180.html",
+    "fetchedAt": "2026-11-05T04:44:03.192317+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/shisetsu/sisetu/1001180.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d733fa34ca7066c6d0b4.html",
+    "sha256": "f689a28503a9b3603bb766d21023caab9a1bebd46ccb353e21dca0280e76f111"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "fetchedAt": "2026-11-05T04:44:03.171442+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/dc4af597d5a6cc058d08.html",
+    "sha256": "d380886e706b48070a4fc2458bc4489daca7f7cbbd5663b3a30698c03a1bb874"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/1004211.html",
+    "fetchedAt": "2026-11-05T04:44:04.291226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/1004211.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/30203d7c80f20f36030d.html",
+    "sha256": "87711f5e5106f6932f0134cdf6c6e6f3f426d56dbc7b48161eef45f33042c2e0"
+  },
+  {
+    "url": "https://www.town.hinode.tokyo.jp/0000000213.html",
+    "fetchedAt": "2026-11-05T04:44:04.410714+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hinode.tokyo.jp/0000000213.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/bdac1ddd2a949fc9aef1.html",
+    "sha256": "2546fcd91ee1eb57c25bc9fbef0e3b7f6c01c42a3a2911b74bcdc65003756441"
+  },
+  {
+    "url": "https://mizuhokyodo.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:04.206552+00:00",
+    "status": 200,
+    "finalUrl": "https://mizuhokyodo.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4b2756426a22be4f5261.html",
+    "sha256": "19d71e59b056e9e8c0fd6030d34aa1b7cca34124e3070d228134e62848e1145a"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/shisetsu/shakai/1002046.html",
+    "fetchedAt": "2026-11-05T04:44:04.805873+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/shisetsu/shakai/1002046.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b005c8553fd606287b61.html",
+    "sha256": "c0d5238d8bf18c87020114192d732abdb7ae441bb4b203996bf63997a536c5f3"
+  },
+  {
+    "url": "https://www.hinodekanko.jp/アクセス-問合せ/",
+    "fetchedAt": "2026-11-05T04:44:04.444639+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hinodekanko.jp/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9-%E5%95%8F%E5%90%88%E3%81%9B/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b48645245e024495bbe2.html",
+    "sha256": "3ebb117fc251c3e1647e07592775c9e8591337231ff48acd56f5a90c8df028b7"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/0000005481.html",
+    "fetchedAt": "2026-11-05T04:44:05.106345+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000005481.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c79b15329fa8a7c5138f.html",
+    "sha256": "529f551d0ffd8511087e8658b74d1f488201f95b10619c1d16c5804737a0bde0"
+  },
+  {
+    "url": "https://kuzaidan.or.jp/province/news/%e3%83%a1%e3%83%bc%e3%83%ab%e3%83%9e%e3%82%ac%e3%82%b8%e3%83%b3%e9%85%8d%e4%bf%a1%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%b8%e3%81%ae%e4%b8%8d%e6%ad%a3%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%ab-3/",
+    "fetchedAt": "2026-11-05T04:44:04.574439+00:00",
+    "status": 200,
+    "finalUrl": "https://kuzaidan.or.jp/province/news/%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9E%E3%82%AC%E3%82%B8%E3%83%B3%E9%85%8D%E4%BF%A1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB-3/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/9a57342537b020c0a1d1.html",
+    "sha256": "fd2c70572a8f40a9ea97742c26cf2273d143aacbf99f2ba1f926de2028028464"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/shisetu/chosha/honcho.html",
+    "fetchedAt": "2026-11-05T04:44:05.509561+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/shisetu/chosha/honcho.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/60c851194873b825739b.html",
+    "sha256": "411e2927e5fdfd712c786c6044cc23f9a3c9cefbbe2b3cf97e745464a5b83e84"
+  },
+  {
+    "url": "http://www.tsurutsuru-onsen.com/?page_id=54",
+    "fetchedAt": "2026-11-05T04:44:04.593740+00:00",
+    "status": 200,
+    "finalUrl": "http://www.tsurutsuru-onsen.com/?page_id=54",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/80411fbbbc5b6c8e256c.html",
+    "sha256": "0b086a23ef29eefff6cfe13a2549d825071d30e642fa03b11b19f3e6dbd38d7c"
+  },
+  {
+    "url": "https://mizuhokyodo.jp/access",
+    "fetchedAt": "2026-11-05T04:44:05.701425+00:00",
+    "status": 200,
+    "finalUrl": "https://mizuhokyodo.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d1acbd6377f7c73b3888.html",
+    "sha256": "19d71e59b056e9e8c0fd6030d34aa1b7cca34124e3070d228134e62848e1145a"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/kanko/shisetsu/kankojyohoucenter.html",
+    "fetchedAt": "2026-11-05T04:44:06.798510+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/kanko/shisetsu/kankojyohoucenter.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e7d4da9b73db96b0b819.html",
+    "sha256": "26ac2dbcd49e8033789752b22ef21f0eb7e491dfd1536c75b7b847d18422365b"
+  },
+  {
+    "url": "https://kuzaidan.or.jp/province/news/%e3%83%a1%e3%83%bc%e3%83%ab%e3%83%9e%e3%82%ac%e3%82%b8%e3%83%b3%e9%85%8d%e4%bf%a1%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%b8%e3%81%ae%e4%b8%8d%e6%ad%a3%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%81%ab-2/",
+    "fetchedAt": "2026-11-05T04:44:06.449879+00:00",
+    "status": 200,
+    "finalUrl": "https://kuzaidan.or.jp/province/news/%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9E%E3%82%AC%E3%82%B8%E3%83%B3%E9%85%8D%E4%BF%A1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB-2/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ff379724d6e09d3e9ac3.html",
+    "sha256": "aa6cb95f875e29228c5e02838d74cfda47d907e49b93d52de2348b1a32cb91a6"
+  },
+  {
+    "url": "https://www.vill.ogasawara.tokyo.jp/access/",
+    "fetchedAt": "2026-11-05T04:44:04.601974+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.ogasawara.tokyo.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d216679b6b331b12e0fd.html",
+    "sha256": "98a926bb96fe6e0d48fcb73ff0fb5b5125bcae4992b5dbf1937a0ea7d28b2198"
+  },
+  {
+    "url": "https://www.jswa.go.jp/kensyu/access/",
+    "fetchedAt": "2026-11-05T04:44:49.620500+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/kensyu/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d13a3e712e46ff3bb5b2.html",
+    "sha256": "f8c22349f437d984a8a0d34a31defae85b586d2321e89d9a1e3f03a611977cfd"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/J0007",
+    "fetchedAt": "2026-11-05T04:44:49.621284+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/J0007",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ef111e5b4e623bc92f2e.html",
+    "sha256": "ba535ef69f5d7dfc2de036a183aea7dd9dac29583d6ec48c6d6f83d0ec83b103"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/J0004",
+    "fetchedAt": "2026-11-05T04:44:51.886873+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/J0004",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a13551297bb0ce75b752.html",
+    "sha256": "0a5a8f7ca484b13c55d908f7f76fccfa9c06a0b8f49fe207309e4aaeac7a21ab"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0051",
+    "fetchedAt": "2026-11-05T04:44:53.103355+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0051",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a0c7b38a62ca25e321f2.html",
+    "sha256": "04db52ee9562699bb70909e4f7f7bc7b3c95d83cdf62d34ae157eabe3445a7bd"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0119",
+    "fetchedAt": "2026-11-05T04:44:54.374904+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0119",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5974088ab335616d3f9b.html",
+    "sha256": "e3d7eb4767617a36ea48f7e9dd027dba2698208d0d44ab2ffe03a022647e26b2"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search",
+    "fetchedAt": "2026-11-05T04:44:55.611824+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cf8b66c6129006abc2ef.html",
+    "sha256": "66905dd216405ba85120bbfe07385af6b8fdc6d28baf4d0b1a067438ae8f02ad"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/50",
+    "fetchedAt": "2026-11-05T04:44:57.925839+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/50",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d876e81d022102cdea9f.html",
+    "sha256": "73eade45aad649f7e20daa6a4a7abe2ddfcedeb4f52d4e2423fec09eafd658d4"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/100",
+    "fetchedAt": "2026-11-05T04:44:59.290133+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/100",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8236578ee73e91899c69.html",
+    "sha256": "d9c199bb1c030611d0babdc3c00d411fd98ea66cd2a3c925298267875f6db08c"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/150",
+    "fetchedAt": "2026-11-05T04:45:00.626701+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/150",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/fc977161a35952e9d31b.html",
+    "sha256": "1da274ef934a64fa7ca506fa6c66e01807646fb796b7732dfe4ed35a96d12fba"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/200",
+    "fetchedAt": "2026-11-05T04:45:01.883568+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/200",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a54289e287fd25767314.html",
+    "sha256": "7f0fd974edb34826a634258e331fe8c04860d9bb2cc5419c3cc7b772b3d9d45d"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/250",
+    "fetchedAt": "2026-11-05T04:45:04.189209+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/250",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c8b3356f0d59f39df227.html",
+    "sha256": "d757f9f9975c67d92b734533a49c9034912a0a17d4ce52f0f1bb71b314bcf397"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/300",
+    "fetchedAt": "2026-11-05T04:45:05.450326+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/300",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/090e44fe29fb59d6df25.html",
+    "sha256": "aed78a41de7971fbc497a6fec0453a43d9f6ab2d038aa729860ebeb953e85a58"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/350",
+    "fetchedAt": "2026-11-05T04:45:06.726510+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/350",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8d67a00b502e9be85d2e.html",
+    "sha256": "b73dea774e0cfa44a3699c22a6fea3df8b3b0d2cec3874e3732f29a7533750dc"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/400",
+    "fetchedAt": "2026-11-05T04:45:08.079974+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/400",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/72602d305d68f1a638c8.html",
+    "sha256": "4bf3d564001d3ee1670ff301bbdd986c20d6a79c1c943df3d28ced6e82c7ed10"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/450",
+    "fetchedAt": "2026-11-05T04:45:09.353235+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/450",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/70502ebf97fbe2ec2b6f.html",
+    "sha256": "c6e562c8859c07396ecc4c6aeb2811e9860f897b84ce7ebad5e1cea4a1e8369a"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/500",
+    "fetchedAt": "2026-11-05T04:45:10.618416+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/500",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5842bf8a822ed0b27e7e.html",
+    "sha256": "da271d82327af2d8e1361042f4bb85b052b1e0084fec75b5d698de729e7cdaab"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/20",
+    "fetchedAt": "2026-11-05T04:45:44.174516+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/20",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/88e5cde82c3151255c5d.html",
+    "sha256": "364f18038eae9fdd2a1bbdd5535aece69ee80a1302e5f8036bcfea7244bb3bca"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/40",
+    "fetchedAt": "2026-11-05T04:45:45.680239+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/40",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/12f44083c9e4ec183962.html",
+    "sha256": "100ee075ab6cc8f0bf4bfa9cf75cd33bb111fed724e26fa0aede2b151870900b"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/60",
+    "fetchedAt": "2026-11-05T04:45:47.186149+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/60",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4309aa5d8e32bdba5c6a.html",
+    "sha256": "be4613ae1a9ccba347c25d46756ddb91818c080a38f6e802e6a5fe6313c0a44e"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/80",
+    "fetchedAt": "2026-11-05T04:45:48.535901+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/80",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/63804819580773236f64.html",
+    "sha256": "8113425e358cc70ee9a19960b5be91da0e2e6c611e29448ce72174f2d2e70952"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/120",
+    "fetchedAt": "2026-11-05T04:45:49.815066+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/120",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d5d606f048575c2545d9.html",
+    "sha256": "2c0e6de49a8c906310c75f75122ca6859099491e290c39c515cab45ee0ed373d"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/140",
+    "fetchedAt": "2026-11-05T04:45:54.108849+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/140",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/68622f655f8e3d7deda5.html",
+    "sha256": "5ca4316977c88dc0c2b780b97c06d260da31d21a8bcfeba0fae14b62a14624cb"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/160",
+    "fetchedAt": "2026-11-05T04:45:55.365670+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/160",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/effe9ef17ca950fd47fc.html",
+    "sha256": "afb5971e52b6cf385f1784a6b399659f177efe7c5f23cca95dd3c8765a3ff84b"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/180",
+    "fetchedAt": "2026-11-05T04:45:56.632248+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/180",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ed2685972c272d77d7b8.html",
+    "sha256": "f534ffc6174fbd4d2fca1333ea5a4f0bd72678561ba2c84c4c5e932b48590a40"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/220",
+    "fetchedAt": "2026-11-05T04:45:58.928803+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/220",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4e11444bde603445a76d.html",
+    "sha256": "78a0774194207fc014c15091b528ca68cc19f72b00a1ec46780a4f76d46c8670"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/240",
+    "fetchedAt": "2026-11-05T04:46:00.223390+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/240",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/119c65cbcf043bb79f96.html",
+    "sha256": "112035489c41f2e0e48e1e4819cd54e8719f852609fa17c3e9e9bda15f3aa44b"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/260",
+    "fetchedAt": "2026-11-05T04:46:01.502331+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/260",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/780f2e3ded36ec8f946a.html",
+    "sha256": "28eb6202f9fbb88d26d4fbc20da11b535bc3fa856e1585ccd3092f351820fc92"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/280",
+    "fetchedAt": "2026-11-05T04:46:02.794899+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/280",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/818e550d33d6e1478239.html",
+    "sha256": "483d63310e1759f3f7d330d4a0947a3be7e9b45e0102b2b5bdb5e393613cb068"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/320",
+    "fetchedAt": "2026-11-05T04:46:04.147659+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/320",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0d0e9ab9d9dfec9a3b4c.html",
+    "sha256": "08f6dd03d36a56d0e4b78f12e3f4be7bc633b2ca6662336a7b7f22a0972933c7"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/340",
+    "fetchedAt": "2026-11-05T04:46:05.411437+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/340",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f84a1c200febeb8d986a.html",
+    "sha256": "36375ff4436a55ddf4469b1e8f1581645b8f99350d6bb07a5545628f6499808a"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/360",
+    "fetchedAt": "2026-11-05T04:46:06.682801+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/360",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/504972743af7af805221.html",
+    "sha256": "03ead406ef123d96120bf34911320bc81c03593fd0ed9cebbe7ea96d9259b9a3"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/380",
+    "fetchedAt": "2026-11-05T04:46:08.992742+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/380",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/808d67d44c867ed18194.html",
+    "sha256": "76d042c1c52c1c519897711f57573da128b1e203ae39c30376f9339c4fae9053"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/420",
+    "fetchedAt": "2026-11-05T04:46:10.256450+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/420",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/caa420eb672141d201b7.html",
+    "sha256": "cfd4dd46e3ae0ae4eda5ce14f18f417ecd7bf0ae6ed645fe2064a07f9a0872df"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/440",
+    "fetchedAt": "2026-11-05T04:46:11.529372+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/440",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/1d1721b88eccbb4b86a4.html",
+    "sha256": "0011cc49258738a1ce8c4e10478266bcc310210eb293345046769c5e2e591268"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/460",
+    "fetchedAt": "2026-11-05T04:46:12.813146+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/460",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/916a3d182cf07b591b43.html",
+    "sha256": "d465e85aff1bb49498abf5822c9670e5401c48651fe131300658e8efd8d88037"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/search/480",
+    "fetchedAt": "2026-11-05T04:46:14.086760+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/search/480",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a27e5cb5c12eaf1e91d5.html",
+    "sha256": "5503e16f4b116e60044491a5ef2b8bdf4379a7138fa2111b305b80de1c181003"
+  },
+  {
+    "url": "https://www.city.shibuya.tokyo.jp/shisetsu/bunka-shisetsu/bunka-shisetsu/sk4_sendagaya.html",
+    "fetchedAt": "2026-11-05T04:46:04.248438+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibuya.tokyo.jp/shisetsu/bunka-shisetsu/bunka-shisetsu/sk4_sendagaya.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/60b57221f6192083acac.html",
+    "sha256": "9c449232ffb5bb0c3f03fd72ed743023874a04c230f95214d4a5400fd6663943",
+    "timestampNote": "原本書込完了時刻。並行manifest競合から原本mtimeで復元。取得成功はextra-candidates.txtに記録。"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/shisetsu/1019988/1008299.html",
+    "fetchedAt": "2026-11-05T04:46:03.728142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/shisetsu/1019988/1008299.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8f0021d6176bb9b7caa9.html",
+    "sha256": "8f0ad1810f15ccc18d3baa42359131ec780c9229c9a43ec7ecf5e9459647cbfd",
+    "timestampNote": "原本書込完了時刻。並行manifest競合から原本mtimeで復元。取得成功はextra-candidates.txtに記録。"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/shisetsu/city/1006827.html",
+    "fetchedAt": "2026-11-05T04:46:03.656633+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/shisetsu/city/1006827.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e6da17423c928cd0788b.html",
+    "sha256": "99c3f2811e5294e269e4f3536780f62f3bc51c334da842bbb8d8bacfa2d8edce",
+    "timestampNote": "原本書込完了時刻。並行manifest競合から原本mtimeで復元。取得成功はextra-candidates.txtに記録。"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/shisetsu/shikanren/hall/1002036.html",
+    "fetchedAt": "2026-11-05T04:46:03.604950+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/shisetsu/shikanren/hall/1002036.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4751daaca1136c1fc0eb.html",
+    "sha256": "511240098d58b8cf4bd91a4b99330d3a4757f92f3059dd519ff3b745292b01f1",
+    "timestampNote": "原本書込完了時刻。並行manifest競合から原本mtimeで復元。取得成功はextra-candidates.txtに記録。"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0049",
+    "fetchedAt": "2026-11-05T04:46:34.917774+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0049",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b3e72821a38711f0d66e.html",
+    "sha256": "99653ee2935de90be46b3f22633422072416429aa3b32779185d042d421a93b0"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0019",
+    "fetchedAt": "2026-11-05T04:46:36.150677+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0019",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/6865ffcbb1aec893bdc5.html",
+    "sha256": "dc58e91414126f9881abaf42b5ce6a67b63c750e9210f9748748fab387229fd3"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0061",
+    "fetchedAt": "2026-11-05T04:46:37.536942+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0061",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/08d9ffd28590bf509574.html",
+    "sha256": "5110622908b6bd9e9681aa3d4295406cac31fbd63059786166f9ab5f6afc88b6"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0028",
+    "fetchedAt": "2026-11-05T04:46:39.031374+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0028",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cc96f62480eccfb8c731.html",
+    "sha256": "d63e151e33180e7e985dcf128c07eb78c602d92ce45d2dbe9e19696e1c90b41e"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0227",
+    "fetchedAt": "2026-11-05T04:46:40.231211+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0227",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/00839d68e2dafb3bb842.html",
+    "sha256": "f18ac69f7f76b3e387c1452aa806f171b776c4f0ed0cf652f2add2318f38d6ee"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0032",
+    "fetchedAt": "2026-11-05T04:46:41.726382+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0032",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/859e3e756515362bed45.html",
+    "sha256": "547a5a574bf14310577d55b618a8e5c1fe7b9cdb419936087948df03aa03fe33"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0301",
+    "fetchedAt": "2026-11-05T04:46:43.008103+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0301",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d52a973248ccc6fc4e54.html",
+    "sha256": "efbb4083d4f69cb7502aa90ba669ea37e48cbf34d83ca0b928400151595c5291"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0120",
+    "fetchedAt": "2026-11-05T04:46:44.221222+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0120",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f546aedec7f3be7b1d58.html",
+    "sha256": "1fdc751afd4ebce5ab10a6bb66cd8f1e056c96b69662a11da7bc67eddf3c8b95"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/shiyakusyo.html",
+    "fetchedAt": "2026-11-05T04:46:44.334012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/shiyakusyo/shiyakusyo.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cfd4f18333b104c6fa12.html",
+    "sha256": "35aaa4d35aaebced48dcdf942a2ddebeea4a1276b3562c2b03b270abda2f89fd"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/1007209.html",
+    "fetchedAt": "2026-11-05T04:46:44.438126+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/shisei/shiyakusho/1007209.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/69111286abe4dc436816.html",
+    "sha256": "236a17de0f2c0c9126919c8a98fcfb24ada3e9105935a1255ac8086bf7f31e05"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0614",
+    "fetchedAt": "2026-11-05T04:46:45.432099+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0614",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/de93cc572191a0c2de3b.html",
+    "sha256": "7b468bf6067b5b81e596ce9fe2bb7a615d5644a5f214eebb4e94d76c5c5b50b8"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0254",
+    "fetchedAt": "2026-11-05T04:46:46.682604+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0254",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3c4063e821f326a081e8.html",
+    "sha256": "5e419ce6c26758f91366572b74d4b020683abde4e1d9797b09fe2e83a7db0b46"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0047",
+    "fetchedAt": "2026-11-05T04:46:47.900552+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0047",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7b0701a5c7a72f90248e.html",
+    "sha256": "97c5c4128e79b3380ddc15d90add1ed9b16f3244514c30796ae23c4b12be9c0a"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0070",
+    "fetchedAt": "2026-11-05T04:46:49.112347+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0070",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e4bdfebe22947584ccc7.html",
+    "sha256": "b77edd87da038b5425c3184a08ad5643a7dcae95ff3d5b0699effd8bf10dd34c"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0059",
+    "fetchedAt": "2026-11-05T04:46:50.323095+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0059",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/bf2d76d7cfd6fcc540c2.html",
+    "sha256": "261d6e4611134fdd5153598562f800f4995949f377454155446c85fffeed01cc"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0009",
+    "fetchedAt": "2026-11-05T04:46:51.583086+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0009",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/3fafe0d5ac9040f2d9d5.html",
+    "sha256": "40f0f2fd69fb54b6c439039441017ea39cdfe2f5ac00ecc3b031788556421c17"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0023",
+    "fetchedAt": "2026-11-05T04:46:52.807430+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0023",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/6ae570c5821284776274.html",
+    "sha256": "c3ff24d339fd8f014c871fdfd806db559afe924903baf54d3dbf88900e68fb41"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e004/kuseijoho/opendata/map_data.html",
+    "fetchedAt": "2026-11-05T04:47:27.244416+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e004/kuseijoho/opendata/map_data.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f8b8a8ca65ce4f23075c.html",
+    "sha256": "3bbadf36da1113a2fc743064399fb5e4050f73cab856398e3daf7fbcf4a74bfa"
+  },
+  {
+    "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv",
+    "fetchedAt": "2026-11-05T04:47:27.363060+00:00",
+    "status": 200,
+    "finalUrl": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b4cbe7b2608a852b9b3a.html",
+    "sha256": "dc6cc97a78d613ae4beab1dfbbd56280a3652d67f5f49ba31c39a5579d22483d"
+  },
+  {
+    "url": "https://hinanmap.gsi.go.jp/hinanjocp/hinanbasho/koukaidate.html",
+    "fetchedAt": "2026-11-05T04:47:28.931635+00:00",
+    "status": 200,
+    "finalUrl": "https://hinanmap.gsi.go.jp/hinanjocp/hinanbasho/koukaidate.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d3321af81d7ec39cf03f.html",
+    "sha256": "e50e62fd03b746dd832b46e73ed3573e035b85d4fe7a498902f261210860ee61"
+  },
+  {
+    "url": "https://magazine.metro.tokyo.lg.jp/libraries/view/211",
+    "fetchedAt": "2026-11-05T04:48:04.688427+00:00",
+    "status": 200,
+    "finalUrl": "https://magazine.metro.tokyo.lg.jp/libraries/view/211",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/aa3ee3b9dfcc65b438be.html",
+    "sha256": "a686cb183251673897fdfbde03db796164c2e70b059c7fec61abfaa57197c823"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/documents/4408/20251211_bunka.csv",
+    "fetchedAt": "2026-11-05T04:48:04.691733+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/documents/4408/20251211_bunka.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0fd108fddec56a5ba156.html",
+    "sha256": "a15edb6086d7d086b9d9c1daef382c7934d089bc5dcb8a9708813abecd0c3d2f"
+  },
+  {
+    "url": "https://www.city.kita.lg.jp/children-edu/adult-learning/1010206/1010227/1010228.html",
+    "fetchedAt": "2026-11-05T04:48:04.689408+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kita.lg.jp/children-edu/adult-learning/1010206/1010227/1010228.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/1aa23be6472268bcfa22.html",
+    "sha256": "436ea79afd29f883429bd8a16935ffe4902b1a2773624c39485f6a81a4801f9a"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/kouen/1005196/1004238.html",
+    "fetchedAt": "2026-11-05T04:48:04.691534+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/kouen/1005196/1004238.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b4458af6373128ffd64e.html",
+    "sha256": "dc0135b1bc7ab7520d8937a28bd2c80af1218061bd03dd2bdaffddec768d4b05"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shisetsu/aed/1005977.html",
+    "fetchedAt": "2026-11-05T04:48:04.692142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shisetsu/aed/1005977.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d98d88710a4e95353ea6.html",
+    "sha256": "36eff852974db3cb1d343390706b31fdabc1e5fd1823ebaa40940b968f291441"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/documents/4408/20251211_reku.csv",
+    "fetchedAt": "2026-11-05T04:48:05.994280+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/documents/4408/20251211_reku.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c9c1c5eba1cbd850be38.html",
+    "sha256": "2236a761dc921be7d838f1b03a66bf89bd493e8dbd45d06e35294b4fe04879b8"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/hall/1003837.html",
+    "fetchedAt": "2026-11-05T04:48:06.122212+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/hall/1003837.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/746ba694fee3ab9f211c.html",
+    "sha256": "6732ff64dc6fa06824f03913f645ca313d44ed7f6f709bcaf162cca23237ee96"
+  },
+  {
+    "url": "https://cadan.org/cadan-otemachi/access/",
+    "fetchedAt": "2026-11-05T04:48:31.795606+00:00",
+    "status": 500,
+    "finalUrl": "https://cadan.org/cadan-otemachi/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2be5ae862085c8586197.html",
+    "sha256": "ef5cc4926e43f52cd707499f3721eb8c134884bb8e254e83488ec91abc5c4944"
+  },
+  {
+    "url": "https://www.katsushika-kanko.com/blog/1784.html",
+    "fetchedAt": "2026-11-05T04:48:31.796737+00:00",
+    "status": 200,
+    "finalUrl": "https://www.katsushika-kanko.com/blog/1784.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cd11d50d05d5fea4354f.html",
+    "sha256": "9b20287963a47057183ed577c18f39069f792c6975d18f88ef50c3af5da915b5"
+  },
+  {
+    "url": "https://www.city.kita.lg.jp/culture-tourism-sports/sports/1010385/1010387/1010391.html",
+    "fetchedAt": "2026-11-05T04:48:31.796846+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/sports/1010385/1010387/1010391.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/0683689ea23ffb7ea0b5.html",
+    "sha256": "bd292f3d5b2b1c35ce7e0404cf485febb03d27c417b71083e38a5f4fb1ceb5a3"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/spot/633/index.html",
+    "fetchedAt": "2026-11-05T04:48:31.797098+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/spot/633/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/96a65a45e58616eddb26.html",
+    "sha256": "53be603859cae63170b35978dd1e69b96ec6c9ce3ea2a436e37959b741bfabdc"
+  },
+  {
+    "url": "https://shinagawa-kanko.or.jp/tourist-information/",
+    "fetchedAt": "2026-11-05T04:48:31.796381+00:00",
+    "status": 200,
+    "finalUrl": "https://shinagawa-kanko.or.jp/tourist-information/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/47e3e66959221d836e42.html",
+    "sha256": "3116a645ce64a24da533f85d82413c587e044ecf199d083bf3e5159ba29d6dcf"
+  },
+  {
+    "url": "https://machihon.tokyo/bookstore/317/",
+    "fetchedAt": "2026-11-05T04:48:31.795949+00:00",
+    "status": 200,
+    "finalUrl": "https://machihon.tokyo/bookstore/317/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c262bee816001c5b7d18.html",
+    "sha256": "05037e8679d0007bf426a09765825cdd9ebaa80c0c518739cfed9c9764ed4894"
+  },
+  {
+    "url": "https://www.city.kita.lg.jp/city-information/facilities/1015927/1018349/1015939.html",
+    "fetchedAt": "2026-11-05T04:48:33.174618+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kita.lg.jp/city-information/facilities/1015927/1018349/1015939.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4028fc4af280381299bd.html",
+    "sha256": "57b2fd0f18c5ef66340caf6291de342f745883d1dac2fbf5475efef2f8f7a6d4"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/spot/1072/index.html",
+    "fetchedAt": "2026-11-05T04:48:33.191737+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/spot/1072/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/efde0088021f5491b5ff.html",
+    "sha256": "fe2869cac4005b23bfdf0b36681e6c938876a2c27dbfb9986b09b2a37d7df864"
+  },
+  {
+    "url": "https://maps.app.goo.gl/GXeNykrRWNA8NNZR6",
+    "fetchedAt": "2026-11-05T04:49:38.845648+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%85%AB%E9%87%8D%E6%B4%B2/@35.6789385,139.7679088,17.25z/data=!4m7!3m6!1s0x60188bb49d2367c1:0x27daefea8a6e4415!8m2!3d35.6799765!4d139.7703912!15sCifmnbHkuqzoprPlhYnmg4XloLHjgrvjg7Pjgr_jg7zlhavph43mtLKSARp0b3VyaXN0X2luZm9ybWF0aW9uX2NlbnRlcuABAA!16s%2Fg%2F11npbm952v?entry=tts&g_ep=EgoyMDI2MDUyNi4wIPu8ASoASAFQAw%3D%3D&skid=91d97a66-23d9-4e56-8db0-4ba966d06f18",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f87020d41fd98954eb37.html",
+    "sha256": "0af4825efd8c05000b8a55f2cac8aa5cd2bc72800b737cf999f969e1914e23c1"
+  },
+  {
+    "url": "https://goo.gl/maps/Mq7k9DRst8f6uyvg8",
+    "fetchedAt": "2026-11-05T04:49:38.844425+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81/@35.6891891,139.6894594,17z/data=!3m2!4b1!5s0x60188cd498eb5371:0x46cb7b987c5bc5b7!4m6!3m5!1s0x60188cd4b71a37a1:0x2f40ba2529e02585!8m2!3d35.6891848!4d139.6916481!16s%2Fg%2F1thx8m5c?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7e7e578192d8518d3974.html",
+    "sha256": "543f641877b40ba3d15e96035e0abc8992560c8d5ded629d1ef1114736ac79aa"
+  },
+  {
+    "url": "https://goo.gl/maps/kyZpz6xFTPohpjaj6",
+    "fetchedAt": "2026-11-05T04:49:41.110163+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E3%83%90%E3%82%B9%E3%82%BF%E6%96%B0%E5%AE%BF/@35.6884234,139.6985092,17z/data=!3m2!4b1!5s0x60188cd07d64cd1d:0x9b0fa706bee9333d!4m6!3m5!1s0x60188cd0134164cb:0x4b4e8291b0e5f974!8m2!3d35.6884191!4d139.7006979!16s%2Fg%2F11c0xsq356?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b5ddf619416ead5cb70d.html",
+    "sha256": "9ac4853b6cdd8df3a6c115dad1309e3d8ddadcc132fdb8b979127e80d45d485a"
+  },
+  {
+    "url": "https://goo.gl/maps/HwkmengcZcDihdE16",
+    "fetchedAt": "2026-11-05T04:49:42.700421+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF/@35.5448587,139.7662006,17z/data=!3m2!4b1!5s0x601861543aa7b83b:0xf7467448f7375a83!4m6!3m5!1s0x60186154208658bd:0x8efa777780cafbda!8m2!3d35.5448544!4d139.7683893!16s%2Fg%2F1thvy7mf?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/82e918ec34ef695a6ed1.html",
+    "sha256": "a6c08500613eebee2262dabc43313e8a35afdcd2ffd6a72040f7e900539ebd57"
+  },
+  {
+    "url": "https://goo.gl/maps/PvmJuUArFEbSpJvg6",
+    "fetchedAt": "2026-11-05T04:49:44.272480+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E4%BA%AC%E6%88%90%E4%B8%8A%E9%87%8E/@35.7111418,139.7716534,17z/data=!3m2!4b1!5s0x60188e9ee7ed7ea7:0x3257cebc08ffd60!4m6!3m5!1s0x60188ffdaa0dc00b:0xa07553b3ad4f2a35!8m2!3d35.7111375!4d139.7738421!16s%2Fg%2F11h0mmrkzj?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7d7102192c5a31fb5cf2.html",
+    "sha256": "eaa3f33e6f92daa842aba57e96d99a67caf13f18c87ca9703ccf76610f35418a"
+  },
+  {
+    "url": "https://goo.gl/maps/nYqkH3ekArCKikcf7",
+    "fetchedAt": "2026-11-05T04:49:45.810365+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC+%E5%A4%9A%E6%91%A9/@35.6976836,139.4113158,17z/data=!3m2!4b1!5s0x6018e17afe990237:0x6974a12abb7908c0!4m6!3m5!1s0x6018e17a5639f8cd:0x3672edcf3cc8c1c8!8m2!3d35.6976793!4d139.4135045!16s%2Fg%2F11g8v0_1sm?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/fcd76863cee7639ae5f1.html",
+    "sha256": "2b7fef3fb05759b7b968fec454d1fcab005cbe048100f0c068a2ac93b9e90f39"
+  },
+  {
+    "url": "https://goo.gl/maps/iAmjPFKZeSxTu8kBA",
+    "fetchedAt": "2026-11-05T04:49:48.174382+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%AA%E3%82%AB%E3%81%A1%E3%82%83%E3%82%93%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7500267,139.8493186,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f486ebce005:0xd65f693a7af38a17!8m2!3d35.7500224!4d139.8515073?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/1ac208d8db3fb42720a3.html",
+    "sha256": "0ed803550949f8a1d3364ccefa47bc8282ce6d76b806b8b65bb4b143e25df445"
+  },
+  {
+    "url": "https://goo.gl/maps/reFz9rbzuxzyeqGV7",
+    "fetchedAt": "2026-11-05T04:49:49.934626+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%AA%E3%82%AB%E3%81%A1%E3%82%83%E3%82%93%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7445564,139.8523747,17z/data=!4m5!3m4!1s0x60188ff140021839:0x2ef15423e8138cc2!8m2!3d35.7445521!4d139.8545634?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a6ff66afae71e04b58b9.html",
+    "sha256": "d2cd1fb98e8d2cb65f3644a6af10d1c3e267e74703e83721250c6a81511e7754"
+  },
+  {
+    "url": "https://goo.gl/maps/yywwLLuGw6CnDbd29",
+    "fetchedAt": "2026-11-05T04:49:52.164098+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%AA%E3%82%AB%E3%81%A1%E3%82%83%E3%82%93%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7397496,139.8465055,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f0f296721e5:0x508959dc8207fc2c!8m2!3d35.7397453!4d139.8486942?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e7825262b456ddd41f45.html",
+    "sha256": "72c2ed781be3229ce0d4f627bad13c36bf13e215992a13ed5ed2798fc8c7133e"
+  },
+  {
+    "url": "https://goo.gl/maps/wAvmNtji7AoAJYkZ6",
+    "fetchedAt": "2026-11-05T04:49:54.683792+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%88%E3%83%9F%E3%82%AB%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7448303,139.8528972,17z/data=!3m1!4b1!4m5!3m4!1s0x6018859655c4695b:0xc8cb4c40a7db5197!8m2!3d35.744826!4d139.8550859?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/10e54149d220baa26f76.html",
+    "sha256": "f50a82a0f44068ce342dcbc127c846c8791134f0b15d1fc7331ce661a8bcb95f"
+  },
+  {
+    "url": "https://goo.gl/maps/iKqEXjFZimx5czyv8",
+    "fetchedAt": "2026-11-05T04:49:56.859020+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%88%E3%83%9F%E3%82%AB%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7448518,139.8463311,15z/data=!4m5!3m4!1s0x60188f2785bff985:0x8c29834c0d43ff71!8m2!3d35.7409226!4d139.8497994?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e1b334622a1d41018dd8.html",
+    "sha256": "9cdfc31d4928056a9a47bcbd42de17f0d88b6503eec7f7c6d7996c215026ddad"
+  },
+  {
+    "url": "https://goo.gl/maps/Dxa25wzzu6bSUERN7",
+    "fetchedAt": "2026-11-05T04:49:59.044235+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E3%83%88%E3%83%9F%E3%82%AB%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB/@35.7396204,139.8463927,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f7f5f80fb1d:0xaffd28dba597d27f!8m2!3d35.7396161!4d139.8485814?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/83ecf0c517b0d2c6011a.html",
+    "sha256": "81bcd8c3bbbee33c92ca34ebbee3c9716844e736707d468860f9ae5533448d9d"
+  },
+  {
+    "url": "https://goo.gl/maps/sbLGhcX56KM2",
+    "fetchedAt": "2026-11-05T04:50:00.592386+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%BF%E6%A9%8B%E5%8C%BA%E5%BD%B9%E6%89%80/@35.7683967,139.6384959,13z/data=!4m5!3m4!1s0x601892be615699d7:0x3284674059c6034!8m2!3d35.7512398!4d139.7093048?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/6e263720a77bc626ef9f.html",
+    "sha256": "18ee45f18d719636dcf183688710deef155030be780e229f49befacacce80ca3"
+  },
+  {
+    "url": "http://goo.gl/maps/T6IHl",
+    "fetchedAt": "2026-11-05T04:50:02.298738+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps?q=%E6%B5%AE%E9%96%93%E5%85%AC%E5%9C%92&ie=UTF8&ll=35.794432,139.693209&spn=0.004856,0.017638&fb=1&gl=jp&hq=%E6%B5%AE%E9%96%93%E5%85%AC%E5%9C%92&hnear=%E6%B5%AE%E9%96%93%E5%85%AC%E5%9C%92&cid=0,0,6359435785798986045&t=m&brcurrent=3,0x6018ecacbfdb8769:0xb5d496f162839a02,0&layer=c&cbll=35.794432,139.693209&panoid=2n1bhopBtUfkCqE6g6HXFQ&cbp=13,186.68,,0,3.28&z=16",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/361c633967598190e7e6.html",
+    "sha256": "b59deb9d306236ded03771eee5bb7c1c3ff5ecee726768647bea98d67245f873"
+  },
+  {
+    "url": "https://goo.gl/maps/hGN48AMkje12",
+    "fetchedAt": "2026-11-05T04:50:05.104477+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/dir/%E5%8D%83%E8%91%89%E7%9C%8C%E6%88%90%E7%94%B0%E5%B8%82%E4%B8%89%E9%87%8C%E5%A1%9A%E5%BE%A1%E6%96%99%E7%89%A7%E5%A0%B4%EF%BC%91%E2%88%92%EF%BC%91%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%E9%A7%85/%E3%80%92150-0002+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%8B%E8%B0%B7%E5%8C%BA%E6%B8%8B%E8%B0%B7%EF%BC%92%E4%B8%81%E7%9B%AE+%E6%B8%8B%E8%B0%B7%E9%A7%85/@35.709073,139.761755,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6022f30b63561e0b:0xcdee756ffd7f6c6c!2m2!1d140.3865037!2d35.7658422!1m5!1m1!1s0x60188b563b00109f:0x337328def1e2ab26!2m2!1d139.7016358!2d35.6580339?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/fe3879159b3e8145fa11.html",
+    "sha256": "6e6da0e2d31b7c1d65831940d957bb50b71d3fa07662c3e72ada5a031393704c"
+  },
+  {
+    "url": "https://goo.gl/maps/wnt87F54m9z",
+    "fetchedAt": "2026-11-05T04:50:07.174708+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/dir/%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF%E3%80%81%E3%80%92144-0041+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E7%BE%BD%E7%94%B0%E7%A9%BA%E6%B8%AF/%E6%9D%B1%E4%BA%AC%E9%A7%85%EF%BC%88%E6%9D%B1%E4%BA%AC%EF%BC%89/@35.6125639,139.6817926,12z/data=!3m1!4b1!4m15!4m14!1m5!1m1!1s0x6018640ba43192e3:0xd32c3a9d146f8df!2m2!1d139.7798386!2d35.5493932!1m5!1m1!1s0x60188bfbd89f700b:0x277c49ba34ed38!2m2!1d139.7671248!2d35.6812362!3e3!5i31?hl=ja&authuser=1&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/02f3458ebf2f5f5d736a.html",
+    "sha256": "ed1b92cf103aa3f92e773bca1e433a3669f2967d5910bc7520dea195cff38125"
+  },
+  {
+    "url": "https://goo.gl/maps/twZuPCCkryPn8SXy9",
+    "fetchedAt": "2026-11-05T04:50:09.195446+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E5%85%A8%E5%9B%BD%E8%A6%B3%E5%85%89PR%E3%82%B3%E3%83%BC%E3%83%8A%E3%83%BC/@35.6894906,139.6895165,17z/data=!3m2!4b1!5s0x60188cd498eb5371:0xdc3b9291c8ce664!4m6!3m5!1s0x60188cd4b71a37a1:0xa0dc52cf3bf09c7a!8m2!3d35.6894863!4d139.6917052!16s%2Fg%2F11bbw_g1y7?hl=ja&coh=164777&entry=tt&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2f8005535ff528eff9ec.html",
+    "sha256": "4e73cbc4f78b20d226a5d72fa7886e7f36f37dc0efd3ffbe283f1187e9e2946e"
+  },
+  {
+    "url": "http://goo.gl/maps/qqm9O",
+    "fetchedAt": "2026-11-05T04:50:11.339991+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%89%E4%B8%A6%E5%8C%BA%E4%B8%8A%E8%8D%BB3-29-5&hl=ja&ie=UTF8&ll=35.710211,139.610192&spn=0.007344,0.007585&sll=36.5626,136.362305&sspn=56.419123,42.363281&brcurrent=3,0x6018ee09d0de4699:0x8b0587eea17e50e0,0&hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%89%E4%B8%A6%E5%8C%BA%E4%B8%8A%E8%8D%BB%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%99%E2%88%92%EF%BC%95&t=m&z=17&iwloc=A",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/82e726f4da922058956b.html",
+    "sha256": "c31248b8d361a96088ff51005dcf5082040676e003329ec199d37779109b66ea"
+  },
+  {
+    "url": "http://goo.gl/maps/kkQUL",
+    "fetchedAt": "2026-11-05T04:50:13.816070+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps?q=%E6%9D%89%E4%B8%A6%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0&hl=ja&ie=UTF8&sll=36.5626,136.362305&sspn=58.827795,107.753906&brcurrent=3,0x6018ee09d0de4699:0x8b0587eea17e50e0,0&t=m&z=17",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b1f7ac57bffce6cf3fee.html",
+    "sha256": "fc1b54984d02b9fbff815ba15192a899503e8484c79092ce07c62e9898af9b95"
+  },
+  {
+    "url": "https://goo.gl/maps/pHJeY1wSaFJDC5QBA",
+    "fetchedAt": "2026-11-05T04:50:16.420720+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E8%B6%B3%E7%AB%8B%E5%8C%BA%E5%BD%B9%E6%89%80/@35.7729445,139.7938385,13.75z/data=!4m5!3m4!1s0x601891d7e196f6cd:0xa296beca8ea1ee48!8m2!3d35.7750057!4d139.8044243?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/33bdad8dc3a5154d16af.html",
+    "sha256": "ffe98085411923ccd54d4e3bb5fd70b790f3743ddccd8924b998b0ffe714860f"
+  },
+  {
+    "url": "https://goo.gl/maps/n3sEbgHqeSgnZvgP8",
+    "fetchedAt": "2026-11-05T04:50:18.416941+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E4%B8%A1%E6%B4%A5%EF%BC%89/@35.7676806,139.8466002,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f9f351d13a3:0x73bdf9783bdc49b0!8m2!3d35.7676806!4d139.8487889?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/cc90d4c1426832f3571c.html",
+    "sha256": "b63e8320711ad9b0e52cc47745b2092f07b34374005d9df7032fc68054339975"
+  },
+  {
+    "url": "https://goo.gl/maps/3akBZwpSkeRgZAqr7",
+    "fetchedAt": "2026-11-05T04:50:20.435860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E4%B8%AD%E5%B7%9D%EF%BC%89/@35.7669775,139.8459714,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f1aae1a42ff:0xe62e0854a4066a29!8m2!3d35.7669775!4d139.8481601?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f78e8502cf307831443e.html",
+    "sha256": "9bf385148e1917a22198fd0da99f1a6f76c89c5781fc0e64555958391f48ebe6"
+  },
+  {
+    "url": "https://goo.gl/maps/xFhgXibq7HHzC1ii8",
+    "fetchedAt": "2026-11-05T04:50:22.466127+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E9%BA%97%E5%AD%90%EF%BC%89/@35.7659484,139.8454142,17z/data=!3m1!4b1!4m5!3m4!1s0x60188fa3c2348105:0x33ce64b9c4fecb71!8m2!3d35.7659484!4d139.8476029?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d21c825afd591873b2f5.html",
+    "sha256": "268cdb35343338b874a898624bd9cb68e561afa9a5005caa6fe234d5cd599852"
+  },
+  {
+    "url": "https://maps.app.goo.gl/nZxwGnBsD3iCK11cA",
+    "fetchedAt": "2026-11-05T04:50:22.963852+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E4%B8%80%E8%88%AC%E7%A4%BE%E5%9B%A3%E6%B3%95%E4%BA%BA+%E6%AD%A6%E8%94%B5%E9%87%8E%E5%B8%82%E8%A6%B3%E5%85%89%E6%A9%9F%E6%A7%8B/@35.7051872,139.5794725,19z/data=!3m1!5s0x6018ee4620c2ec45:0xf31b66ae670a0fb8!4m6!3m5!1s0x6018ee489fbd739f:0xaaa4218c7c383252!8m2!3d35.7056954!4d139.579063!16s%2Fg%2F11b6qhztjh?entry=tts&g_ep=EgoyMDI1MTIwMi4wIPu8ASoASAFQAw%3D%3D&skid=e9bd942d-3f20-4da1-956d-4ea51c4269d9",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/b6c0e67fc128beeb7de7.html",
+    "sha256": "084263d71b0be629a9aec0cd1f6a182dd3eacf8f14c3f7f793ddfa347d41d679"
+  },
+  {
+    "url": "https://goo.gl/maps/PxFUQrFp1XcKkjPL6",
+    "fetchedAt": "2026-11-05T04:50:24.062233+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E6%9C%AC%E7%94%B0%EF%BC%89/@35.7671983,139.8455456,17z/data=!3m1!4b1!4m5!3m4!1s0x60188ff30cdf0369:0x9afedf31a50b3f8c!8m2!3d35.7671983!4d139.8477396?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/25fdcf0ae68188bebefd.html",
+    "sha256": "e0a9b73d8f0f9df8f6315833128611965ec3babdd0dd24829b4b74ff2bcbba5e"
+  },
+  {
+    "url": "https://goo.gl/maps/zmcqGKnjKKhDvXnZ7",
+    "fetchedAt": "2026-11-05T04:50:25.809944+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E9%BA%BB%E9%87%8C%E6%84%9B%EF%BC%89/@35.767465,139.8432271,17z/data=!3m1!4b1!4m5!3m4!1s0x60188fe75f4e276d:0xa5948946f44f887!8m2!3d35.767465!4d139.8454211?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c33cf13b695260518a6e.html",
+    "sha256": "e437b594144c4ea8bbadb9eb290c9165604b2854a052938303dd0538ba82ecc2"
+  },
+  {
+    "url": "https://goo.gl/maps/WH52wqq41GYkPQWL8",
+    "fetchedAt": "2026-11-05T04:50:27.416505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A1%E4%BA%80%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%88%E5%A4%A7%E5%8E%9F%E9%83%A8%E9%95%B7%EF%BC%89/@35.7641118,139.846614,17z/data=!3m1!4b1!4m5!3m4!1s0x60188f6992183b89:0xa60bb629e03a0a65!8m2!3d35.7641118!4d139.848808?hl=ja&shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/166b18d6ae034a3c22b9.html",
+    "sha256": "0723f06f0d9884e94e7ae1dd072450b75f589e6e64f020dbd8b56d0234512c05"
+  },
+  {
+    "url": "https://maps.app.goo.gl/wFARoCGfUAY5zTdM8",
+    "fetchedAt": "2026-11-05T04:50:28.351941+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E7%91%9E%E7%A9%82%E7%94%BA%E9%83%B7%E5%9C%9F%E8%B3%87%E6%96%99%E9%A4%A8+%E3%81%91%E3%82%84%E3%81%8D%E9%A4%A8/@35.7804481,139.3495189,17z/data=!3m1!4b1!4m6!3m5!1s0x1526987a8ca6a6d3:0x2163470171c132d1!8m2!3d35.7804481!4d139.3520938!16s%2Fg%2F11ckz8p0lf?entry=tts&g_ep=EgoyMDI1MDIxMi4wIPu8ASoASAFQAw%3D%3D",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2371ac76e4786640630c.html",
+    "sha256": "fb765317ac917fdb297f0512f8d746a328d1d3f3142d003a335299bc4e521c06"
+  },
+  {
+    "url": "http://goo.gl/maps/J2bSA",
+    "fetchedAt": "2026-11-05T04:50:29.447836+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%AB%8B%E5%B7%9D%E5%B8%82%E9%8C%A6%E7%94%BA3%E4%B8%81%E7%9B%AE2%E7%95%AA26%E5%8F%B7&hl=ja&ie=UTF8&sll=34.728949,138.455511&sspn=62.828326,83.671875&brcurrent=3,0x6018e16245c9b22b:0xee378e86083533ce,0,0x6018e1626817477b:0x289f1482054d279c&hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%AB%8B%E5%B7%9D%E5%B8%82%E9%8C%A6%E7%94%BA%EF%BC%93%E4%B8%81%E7%9B%AE%EF%BC%92%E2%88%92%EF%BC%92%EF%BC%96&t=m&z=17",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d101894475faaacf9a6c.html",
+    "sha256": "f5311c5d7557263fed71b91236da2afcf5da070be71bad0b5db80f42e2860e7c"
+  },
+  {
+    "url": "https://goo.gl/maps/TZ2BUoacCupvFFJ16",
+    "fetchedAt": "2026-11-05T04:50:31.932327+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E9%9D%92%E6%A2%85%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80/@35.7902792,139.2581476,15z/data=!4m5!3m4!1s0x0:0xe8869c01371de27d!8m2!3d35.7902792!4d139.2581476?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/20912931f2f593c6ee42.html",
+    "sha256": "2f3a5a39d180e5fb0c6a15558319c622728365ffada116a0ece68d54cdd51c7b"
+  },
+  {
+    "url": "https://goo.gl/maps/Pr7n3wcxR7ueB7qy6",
+    "fetchedAt": "2026-11-05T04:50:33.561031+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/place/%E5%BE%A1%E5%B2%B3%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC/@35.8013889,139.1832239,15z/data=!4m5!3m4!1s0x0:0xfab3f47b94ada030!8m2!3d35.8013889!4d139.1832239?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/d5a594e3744bf38bda3d.html",
+    "sha256": "e4c2a28d1d4f423b409fca8792fef4ac562f9eac7e96c9d61ad778b8642d51cb"
+  },
+  {
+    "url": "https://goo.gl/maps/HNLeK",
+    "fetchedAt": "2026-11-05T04:50:35.534467+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%82%E3%81%8D%E3%82%8B%E9%87%8E%E5%B8%82%E4%B9%99%E6%B4%A5%EF%BC%95%EF%BC%96%EF%BC%95/@35.7271628,139.1878381,17z/data=!3m1!4b1!4m2!3m1!1s0x60193cbf4ccbcdbf:0xa92b86237c8566d7",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/fc0863dfd6576496f10a.html",
+    "sha256": "261091a0ac06f03ce606d8694abcd728eb958d18dfd93c04ab06e7ffdbe28d8b"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/shisetsu/1008075/1008295.html",
+    "fetchedAt": "2026-11-05T04:51:00.399490+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/shisetsu/1008075/1008295.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/9ef57cc6e0f6340e1d82.html",
+    "sha256": "62e9ee6ef8afd37cb74168adf47d8942a8f8040ff7a4ee8333f65fef52443bfa"
+  },
+  {
+    "url": "https://www.city.shinagawa.tokyo.jp/shisetsu/bunkasportsshisetsu/1008222/1008231.html",
+    "fetchedAt": "2026-11-05T04:51:00.401061+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/shisetsu/bunkasportsshisetsu/1008222/1008231.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/bd4e68bd6c24a3bb1c07.html",
+    "sha256": "37ab41b326320b356235e62f11e239965b62e9b0e5d93515d3254f4d9da5fe95"
+  },
+  {
+    "url": "https://www.city.ome.tokyo.jp/map/list/list169.html",
+    "fetchedAt": "2026-11-05T04:51:00.400454+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ome.tokyo.jp/map/list/list169.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/18fd7dd269a78537d85b.html",
+    "sha256": "1405cec4f012cde42b9e77c13176691dc35209e499fd570345eebe7d70e6e3a9"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/map/map1/map3.html?target=0-6&cacd=14&mapno=10",
+    "fetchedAt": "2026-11-05T04:51:00.400723+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/map/map1/map3.html?target=0-6&cacd=14&mapno=10",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/18488352f00accda2fd7.html",
+    "sha256": "50cd47c76a81af89163f557141e830fa9359f057ab86ab502cbdf9d5c9e7246b"
+  },
+  {
+    "url": "https://isleshinagawa.com/about",
+    "fetchedAt": "2026-11-05T04:51:00.400562+00:00",
+    "status": 200,
+    "finalUrl": "https://isleshinagawa.com/about",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c87a572b3ec606457561.html",
+    "sha256": "c75cd1ccb3a26b5c6279d5b36586cdee8182fec3c6153659e7cc67666b354040"
+  },
+  {
+    "url": "https://www.city.akiruno.tokyo.jp/kanko/0000018064.html",
+    "fetchedAt": "2026-11-05T04:51:00.401250+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000018064.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/5c686221fb5675adb07d.html",
+    "sha256": "f54e02cbeec53d67db2e1fee6a5944c77235eb52e054277d1b5bb2726562dfdd"
+  },
+  {
+    "url": "https://akiruno.town-info.com/irodori/",
+    "fetchedAt": "2026-11-05T04:51:00.400817+00:00",
+    "status": 200,
+    "finalUrl": "https://akiruno.town-info.com/irodori/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/ec0e98668b244f08a201.html",
+    "sha256": "93c867a1fd1807edf03d30d4029a2579ce1c466e347bad03ece03e16fd217d54"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0558",
+    "fetchedAt": "2026-11-05T04:51:00.573839+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0558",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/bf3d913b3647fa09a0dc.html",
+    "sha256": "fe3d39bed0701f235334a08fe1f764ba5779c7fe49cc29637b4f5b022880ae8c"
+  },
+  {
+    "url": "https://t-mirai.com/access/",
+    "fetchedAt": "2026-11-05T04:51:00.400307+00:00",
+    "status": 200,
+    "finalUrl": "https://t-mirai.com/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/f1a25a54a355329faa14.html",
+    "sha256": "47576e495aaee75f6428b9ba6588eaace73bf7d0befc9b2df2ac1169a034c0af"
+  },
+  {
+    "url": "https://kazumanoyu.net/wp/",
+    "fetchedAt": "2026-11-05T04:51:00.692272+00:00",
+    "status": 200,
+    "finalUrl": "https://kazumanoyu.net/wp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a9fc3e76bbc497946be8.html",
+    "sha256": "42f0083a6bc5661a01e6b9f12c394a43ea23f89065f90006eacc8c4f9eebda33"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/institution/1030225/1030226/1006815.html",
+    "fetchedAt": "2026-11-05T04:53:32.016986+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/institution/1030225/1030226/1006815.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/49439297da6afd1fc0f7.html",
+    "sha256": "eb67b485cc9b3b25e6fcae44bdf63e4e76c035155fc038667f0302078877e957"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/map/xml/14.xml",
+    "fetchedAt": "2026-11-05T04:53:32.017458+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/map/xml/14.xml",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/db172af88b6ca737fd2b.html",
+    "sha256": "f06538a788eaccaf6e5e101ebd80ed38727d11a9a26749a6f6cc169b33efa00a"
+  },
+  {
+    "url": "https://adachi-ic.net/",
+    "fetchedAt": "2026-11-05T04:53:32.017725+00:00",
+    "status": 403,
+    "finalUrl": "https://adachi-ic.net/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2f0ac6fc85d1159f964b.html",
+    "sha256": "f00a8ff5625da21255b80afe2773c7705d5e2aec37e58ec2fa203b09323a8115"
+  },
+  {
+    "url": "https://kazumanoyu.net/?page_id=30",
+    "fetchedAt": "2026-11-05T04:53:32.017565+00:00",
+    "status": 200,
+    "finalUrl": "https://kazumanoyu.net/?page_id=30",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/aa47472a6946c3fb1892.html",
+    "sha256": "159807a085a2d3a473eb9d1c4a42eccdab5c6bc72a3c4d3c40f3cf1f138f4188"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0045",
+    "fetchedAt": "2026-11-05T04:54:30.926859+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0045",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e2957918768eebeb128d.html",
+    "sha256": "ef04e0fa790ab21e46eee62d4720a9c77d4f56119ed2ecfe841762e3bca5d65e"
+  },
+  {
+    "url": "https://www.deandeluca.co.jp/shop/pages/stores.aspx",
+    "fetchedAt": "2026-11-05T04:54:30.927827+00:00",
+    "status": 200,
+    "finalUrl": "https://www.deandeluca.co.jp/shop/pages/stores.aspx",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/9aea109ddbc3aea8c2d8.html",
+    "sha256": "e6dc06ad5fcc456321b5e46d58173e790d0d623083b2af0f376b13317da96924"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept08/Div03/Sec01/shisetsu/0098/1463551618027.html",
+    "fetchedAt": "2026-11-05T04:54:30.927684+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept08/Div03/Sec01/shisetsu/0098/1463551618027.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/28f2a6d48febd04c801e.html",
+    "sha256": "1afa74d61c0d0bc94828238a3c9572fcc61e0b1474151e450937ed954fcc46da"
+  },
+  {
+    "url": "https://koganei-kanko.jp/contact/",
+    "fetchedAt": "2026-11-05T04:54:30.927550+00:00",
+    "status": 200,
+    "finalUrl": "https://koganei-kanko.jp/contact/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/50d4d0d1a341a8301ea4.html",
+    "sha256": "b28d72c1a2f31759b9e722111c39d32134a91f5ad2e8aa7b2d53d19e4b978b2b"
+  },
+  {
+    "url": "https://www.tokyo-mizumachi.jp/",
+    "fetchedAt": "2026-11-05T04:55:11.616376+00:00",
+    "status": 503,
+    "finalUrl": "https://www.tokyo-mizumachi.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/738dd888f77f2722d538.html",
+    "sha256": "aac79741dbb2fa1f43362be66be5c97f8013b39223497967c48b6657ab344d02"
+  },
+  {
+    "url": "https://h-kurume.shop-info.com/takiyamachuo/",
+    "fetchedAt": "2026-11-05T04:55:11.617793+00:00",
+    "status": 200,
+    "finalUrl": "https://h-kurume.shop-info.com/takiyamachuo/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/1e63cbb6140df185f8b1.html",
+    "sha256": "0bd85d4cfbf4e055e4df28ab44231aa70c8c214d6f3b699dd2c393e22cd63fb9"
+  },
+  {
+    "url": "https://takiyama.in.coocan.jp/access.html",
+    "fetchedAt": "2026-11-05T04:55:11.617565+00:00",
+    "status": 200,
+    "finalUrl": "https://takiyama.in.coocan.jp/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/200789d0ee26afe5fde7.html",
+    "sha256": "478c76267216da608b3b4c809e26da0860519ad1ef8b976062b0c2481a5c6920"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept05/Div01/Sec02/gyomu/shisetsu/1648170816329.html",
+    "fetchedAt": "2026-11-05T04:55:11.617468+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept05/Div01/Sec02/gyomu/shisetsu/1648170816329.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/62f5c73f62c5a9c88c70.html",
+    "sha256": "d405f6d89e6fc95ce2017e99be58026d66e077f5aafbb4fead3d3e4604fa243a"
+  },
+  {
+    "url": "https://sst8.jp/",
+    "fetchedAt": "2026-11-05T04:55:11.616751+00:00",
+    "status": 200,
+    "finalUrl": "https://sst8.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/7f8cd856d78217871fba.html",
+    "sha256": "56b3b386e0d2a6be8cf36c1386edf5a9f237914886cd228963a5c74e405a82e2"
+  },
+  {
+    "url": "https://kodaira-sewer.jp/overview",
+    "fetchedAt": "2026-11-05T04:55:11.617200+00:00",
+    "status": 200,
+    "finalUrl": "https://kodaira-sewer.jp/overview",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/442a7ddc2d5f2fa8219d.html",
+    "sha256": "0266cdbfdb610b8cb34fd621fa4cf45456c5b51d939ea828a1e78c9027211936"
+  },
+  {
+    "url": "https://udx.jp/",
+    "fetchedAt": "2026-11-05T04:55:11.617033+00:00",
+    "status": 200,
+    "finalUrl": "https://udx.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/52c20fa0e77fe050f15a.html",
+    "sha256": "1f495d8cda2d828567a6a3429df336061e01594fd6914aaeba673ff5d04ba538"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/machi/machizukuri/3/6093.html",
+    "fetchedAt": "2026-11-05T04:55:13.273916+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/machi/machizukuri/3/6093.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/2a976c9b4b2232a10d28.html",
+    "sha256": "2534d79d67f22acd961f7c5dbeb97c86a0c5d3636072ad7b1b8461e77866fc1b"
+  },
+  {
+    "url": "https://www.city.machida.tokyo.jp/shisei/opendata/shisetsu/public_facility.html",
+    "fetchedAt": "2026-11-05T04:55:41.614575+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.machida.tokyo.jp/shisei/opendata/shisetsu/public_facility.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/066fe7eed625d887be3b.html",
+    "sha256": "e73f7803d0fea4d18b5a12eafa2f66bae025024bc968b9bcae923c1f49ad1a6b"
+  },
+  {
+    "url": "https://www.opendata.metro.tokyo.lg.jp/koganei/01_koukyoushisetsu.csv",
+    "fetchedAt": "2026-11-05T04:55:41.810585+00:00",
+    "status": 200,
+    "finalUrl": "https://www.opendata.metro.tokyo.lg.jp/koganei/01_koukyoushisetsu.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4a90ed8bada7c435e899.html",
+    "sha256": "9c3381278f977b1966624a788b408362044aadd22e29a86d709eff12f547c4c4"
+  },
+  {
+    "url": "https://www.akiruno-film.jp/location_information/building/akiruno-city-hall/",
+    "fetchedAt": "2026-11-05T04:55:41.929511+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akiruno-film.jp/location_information/building/akiruno-city-hall/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e9ded76d7bcc23c29a2f.html",
+    "sha256": "d5223ad1a44e753a3f5a1afed371ec864f3cfcd755ec0222b5b565468c3eba8d"
+  },
+  {
+    "url": "https://www.kokuminhogo.go.jp/pdf/hinan_tokyo.pdf",
+    "fetchedAt": "2026-11-05T04:55:42.053886+00:00",
+    "status": 404,
+    "finalUrl": "https://www.kokuminhogo.go.jp/pdf/hinan_tokyo.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/6c92e5b58a32de51a89a.html",
+    "sha256": "21aba9423f062cca9b863bf4ddf0e5cb85bb1f183928f32e4840da030a319922"
+  },
+  {
+    "url": "https://www.city.machida.tokyo.jp/shisei/opendata/shisetsu/public_facility.files/132098_public_facility.csv",
+    "fetchedAt": "2026-11-05T04:58:47.092638+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.machida.tokyo.jp/shisei/opendata/shisetsu/public_facility.files/132098_public_facility.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a09e3584d8e5f1b84007.html",
+    "sha256": "a902a5cf428e5a144a2748e13cbdf6a4dcb073043fba4106d4dd6b367e9e837b"
+  },
+  {
+    "url": "https://www.city.akiruno.tokyo.jp/0000015465.html",
+    "fetchedAt": "2026-11-05T04:58:47.242016+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akiruno.tokyo.jp/0000015465.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/4560de79ba7721debdf1.html",
+    "sha256": "e36c1505e54b2ff73bc7a18a0aba612605ac28c85d0824f6fa081a36e976925c"
+  },
+  {
+    "url": "https://www.digitalservice.metro.tokyo.lg.jp/business/tokyo-data-highway/5gasset/assetdb",
+    "fetchedAt": "2026-11-05T04:58:47.456577+00:00",
+    "status": 200,
+    "finalUrl": "https://www.digitalservice.metro.tokyo.lg.jp/business/tokyo-data-highway/5gasset/assetdb",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/00427b85cdefb79435fc.html",
+    "sha256": "c27967897067772ff3dc5e94621be8dc9d27d5d8fe30e2b0549e43cbe4983d8d"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/map/js/jquery.GoogleMaps2.js",
+    "fetchedAt": "2026-11-05T04:58:48.034024+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/map/js/jquery.GoogleMaps2.js",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8aa8f4f37b06c2754ee7.html",
+    "sha256": "33e7824f40d2070c9b34a075346ba1d7e6a46e6a641d9b205377c4d456db82d6"
+  },
+  {
+    "url": "https://sst8.jp/access/",
+    "fetchedAt": "2026-11-05T04:58:48.170535+00:00",
+    "status": 200,
+    "finalUrl": "https://sst8.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/c7e227a70b00b6ab3823.html",
+    "sha256": "addbed5f31632cf7936cfd06d83bc99b77eb6ccf1f6737b02a3e9ed9517f946a"
+  },
+  {
+    "url": "https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000015/15465/132284_public_facility2022-2.csv",
+    "fetchedAt": "2026-11-05T04:59:02.195508+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akiruno.tokyo.jp/cmsfiles/contents/0000015/15465/132284_public_facility2022-2.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8eb16478f9c0f344e7dc.html",
+    "sha256": "25ba8c24d301a8ad0d85e319bd6a8f59efa5e7cf38e4123e5a10dea40b2a93ab"
+  },
+  {
+    "url": "https://www.digitalservice.metro.tokyo.lg.jp/documents/d/digitalservice/toitsudb_202609",
+    "fetchedAt": "2026-11-05T04:59:13.517858+00:00",
+    "status": 200,
+    "finalUrl": "https://www.digitalservice.metro.tokyo.lg.jp/documents/d/digitalservice/toitsudb_202609",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/e35be573a50ff117ea78.html",
+    "sha256": "450678369279f4d281711fba3fbd66819c48f8f0b6d5c1fc8651a686a24f3381"
+  },
+  {
+    "url": "https://www.jswa.go.jp/company/50th-anniversary/pdf/access.pdf",
+    "fetchedAt": "2026-11-05T05:00:37.158960+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/company/50th-anniversary/pdf/access.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/a610ca1d5b92b9754c05.html",
+    "sha256": "5e648bed6ec2ce6668e66747997573938b0afa749db0a580c0599dba847886c1"
+  },
+  {
+    "url": "https://maps.google.com/?cid=13715612929119723605",
+    "fetchedAt": "2026-11-05T05:00:37.360834+00:00",
+    "status": 429,
+    "finalUrl": "https://www.google.com/sorry/index?continue=https://maps.google.com/%3Fcid%3D13715612929119723605&q=EgQ8VBiRGPWasNcGIi2yLOzg4IatA1JA9sE3ut4NRkocYjfBQlREx9KjqnUrz4yAdjwgI5l_4kW-tjUyAnJSWgFDYPbv7vKx8qnbDA",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/74f4f75e10c264fa6987.html",
+    "sha256": "5782442f982613adb81939bfc746f99201061bd9e8bd444c7fd20e6f9ed16548"
+  },
+  {
+    "url": "https://www.google.com/maps?cid=14117040149767843057",
+    "fetchedAt": "2026-11-05T05:00:37.996317+00:00",
+    "status": 429,
+    "finalUrl": "https://www.google.com/sorry/index?continue=https://www.google.com/maps%3Fcid%3D14117040149767843057&q=EgQ8VBiRGPaasNcGIjAUhjhuyingViaBFb-kMvaxs6zTKPZpTEIiFcb-9KCVEV1GSO_qHCWLll77LKIIHuwyAnJSWgFDYJHUwpq9rYLGCA",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/18423bc5746d39c3d315.html",
+    "sha256": "228207499d44e1c9fdb8f16f56da9f87fb210569797528ae57dbf2a4925c7c2f"
+  },
+  {
+    "url": "https://udx.jp/access/",
+    "fetchedAt": "2026-11-05T05:00:38.550872+00:00",
+    "status": 200,
+    "finalUrl": "https://udx.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/976b2d707700ced73bbd.html",
+    "sha256": "3dc22c7fb30cf748265a36268fd920d82063b3dccfaaa0d44f45ff6c7e402f3f"
+  },
+  {
+    "url": "https://musashisakai-syouren.com/",
+    "fetchedAt": "2026-11-05T05:00:38.878158+00:00",
+    "status": 200,
+    "finalUrl": "https://musashisakai-syouren.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/8aa5156808e114548d1f.html",
+    "sha256": "4ca9fb25e0371e1c102d9cb0e42c4a994faceeca070fe6ede74e4b4d5b239f9e"
+  },
+  {
+    "url": "http://kanko.mitaka.ne.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.595955+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-e48639fc6bdd46794ec9.html",
+    "sha256": "45c3fd1b7b9a9bd94e61c6ff12b1ad6d89d287d89a49e0687df683ff29a9fc39",
+    "reusedFrom": "data/evidence/national/kanto-south/e48639fc6bdd46794ec9.html"
+  },
+  {
+    "url": "http://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "fetchedAt": "2026-11-05T04:22:51.796885+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-9fd34a8f364664eb996b.html",
+    "sha256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+    "reusedFrom": "data/evidence/national/kanto-south/9fd34a8f364664eb996b.html"
+  },
+  {
+    "url": "http://ota-cafe.com",
+    "fetchedAt": "2026-11-05T04:22:47.599635+00:00",
+    "status": 200,
+    "finalUrl": "http://ota-cafe.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-e363a2ad7551b2c39c08.html",
+    "sha256": "4ea16727ff47c8fe73860b5b53384c248889c28a171833227f1e211e76097aa3",
+    "reusedFrom": "data/evidence/national/kanto-south/e363a2ad7551b2c39c08.html"
+  },
+  {
+    "url": "http://takiyama.in.coocan.jp/takichu-top.html",
+    "fetchedAt": "2026-11-05T04:22:47.600562+00:00",
+    "status": 200,
+    "finalUrl": "https://takiyama.in.coocan.jp/takichu-top.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-87a69fa0b836a917508e.html",
+    "sha256": "c220e75000bfc5cabc696972d3011298777a9dfa8e3ce5b740504e87ff6ce8b2",
+    "reusedFrom": "data/evidence/national/kanto-south/87a69fa0b836a917508e.html"
+  },
+  {
+    "url": "http://techno-plaza.jp/",
+    "fetchedAt": "2026-11-05T04:22:47.601282+00:00",
+    "status": 200,
+    "finalUrl": "https://techno-plaza.jp:443/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-7a50f7347449f04a70bc.html",
+    "sha256": "7f832898ab251bdb21b74c7edcd9284529ba89cb901dcc9967946d7af06dd31e",
+    "reusedFrom": "data/evidence/national/kanto-south/7a50f7347449f04a70bc.html"
+  },
+  {
+    "url": "http://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:22:50.379136+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0a9c3525679900aac386.html",
+    "sha256": "123db06ddccd6b9e45a8a85a71857ba034b9b3aecaa3c8623c0e2ff3a389b0a7",
+    "reusedFrom": "data/evidence/national/kanto-south/0a9c3525679900aac386.html"
+  },
+  {
+    "url": "http://www.city.chofu.tokyo.jp/www/contents/1176118954796/index.html",
+    "fetchedAt": "2026-11-05T04:22:50.415249+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/010040/p003004.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-15ed6ed8d7a4c2536b90.html",
+    "sha256": "c6c04ab26dea9944983c780fade4c8bdb96e65ae7464aa41cc6ac515b9da7450",
+    "reusedFrom": "data/evidence/national/kanto-south/15ed6ed8d7a4c2536b90.html"
+  },
+  {
+    "url": "http://www.city.chofu.tokyo.jp/www/contents/1561008038752/index.html",
+    "fetchedAt": "2026-11-05T04:22:55.094226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chofu.lg.jp/070040/p042056.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-28a53782ecada0ad6b0f.html",
+    "sha256": "359e8a0bd24713e1985418c88be76886bac0caa0fc261b5e993275412c1cc0f2",
+    "reusedFrom": "data/evidence/national/kanto-south/28a53782ecada0ad6b0f.html"
+  },
+  {
+    "url": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "fetchedAt": "2026-11-05T04:22:50.807216+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.fuchu.tokyo.jp/shisetu/komyunite/senta/katamachi.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-144bdfc541406a61f7b0.html",
+    "sha256": "d380886e706b48070a4fc2458bc4489daca7f7cbbd5663b3a30698c03a1bb874",
+    "reusedFrom": "data/evidence/national/kanto-south/144bdfc541406a61f7b0.html"
+  },
+  {
+    "url": "http://www.city.hachioji.tokyo.jp/kurashi/life/002/002/002/p006812.html",
+    "fetchedAt": "2026-11-05T04:22:53.609241+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hachioji.tokyo.jp/kurashi/life/002/002/002/p006812.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8852431354afbf1a9439.html",
+    "sha256": "eecba6f91daae041188977f8007e1920dd16a8cb27ee9ced6ad763169ae5e266",
+    "reusedFrom": "data/evidence/national/kanto-south/8852431354afbf1a9439.html"
+  },
+  {
+    "url": "http://www.city.hamura.tokyo.jp/0000010587.html",
+    "fetchedAt": "2026-11-05T04:22:53.719938+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f2c99863a400fe3b8169.html",
+    "sha256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339",
+    "reusedFrom": "data/evidence/national/kanto-south/f2c99863a400fe3b8169.html"
+  },
+  {
+    "url": "http://www.city.higashiyamato.lg.jp/index.cfm/34,100936,350,html",
+    "fetchedAt": "2026-11-05T04:22:54.095593+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/kurashi/midokoro/1003873/1007191/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-379724258fafbd151090.html",
+    "sha256": "a56aac130721fb502c501d35563833cabca93e8560118498f56a5025dcc1c8a0",
+    "reusedFrom": "data/evidence/national/kanto-south/379724258fafbd151090.html"
+  },
+  {
+    "url": "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "fetchedAt": "2026-11-05T04:22:54.231722+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-161c69c0b13cf9c76265.html",
+    "sha256": "9c75c0e249a426f4373872af7d9802a12965638c5115f5edad9d5cefbaa372d9",
+    "reusedFrom": "data/evidence/national/kanto-south/161c69c0b13cf9c76265.html"
+  },
+  {
+    "url": "http://www.city.koganei.lg.jp/",
+    "fetchedAt": "2026-11-05T04:22:56.300796+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0de535c548bcb49da51e.html",
+    "sha256": "9af175e887e589d4cdd3ccc34b530bce24b8b71abe908759896766f630b222ee",
+    "reusedFrom": "data/evidence/national/kanto-south/0de535c548bcb49da51e.html"
+  },
+  {
+    "url": "http://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "fetchedAt": "2026-11-05T04:22:56.386505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a4323bab76d937b81ad2.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6",
+    "reusedFrom": "data/evidence/national/kanto-south/a4323bab76d937b81ad2.html"
+  },
+  {
+    "url": "http://www.city.kunitachi.tokyo.jp/soshiki/Dept06/Div04/Sec03/oshirase/1574389345899.html",
+    "fetchedAt": "2026-11-05T04:22:57.460402+00:00",
+    "status": 404,
+    "finalUrl": "http://www.city.kunitachi.tokyo.jp/soshiki/Dept06/Div04/Sec03/oshirase/1574389345899.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c0512364f15a3a74ea31.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb",
+    "reusedFrom": "data/evidence/national/kanto-south/c0512364f15a3a74ea31.html"
+  },
+  {
+    "url": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "fetchedAt": "2026-11-05T04:22:57.907173+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.machida.tokyo.jp/shisei/shiyakusyo/mainoffice/officeguide.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-51e6639da51eebf6b734.html",
+    "sha256": "e2a315d1a7ffe2ef61e457803fc4a35db26d05de2d411365907b386822179981",
+    "reusedFrom": "data/evidence/national/kanto-south/51e6639da51eebf6b734.html"
+  },
+  {
+    "url": "http://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+    "fetchedAt": "2026-11-05T04:23:01.036942+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/kankyo/doro/1009598/1004577.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a9218c0e0886a86138e5.html",
+    "sha256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9",
+    "reusedFrom": "data/evidence/national/kanto-south/a9218c0e0886a86138e5.html"
+  },
+  {
+    "url": "http://www.city.tama.lg.jp/0000005579.html",
+    "fetchedAt": "2026-11-05T04:23:02.903912+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bde0de9d214e63bf5eb7.html",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a",
+    "reusedFrom": "data/evidence/national/kanto-south/bde0de9d214e63bf5eb7.html"
+  },
+  {
+    "url": "http://www.kankou-fuchu.com/",
+    "fetchedAt": "2026-11-05T04:23:04.183802+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-fuchu.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-95b28f4fd15926e6a371.html",
+    "sha256": "9a81af154783ab6d821a402df5ed5311b747412db4a5e8e1b4ea7b855c4fca67",
+    "reusedFrom": "data/evidence/national/kanto-south/95b28f4fd15926e6a371.html"
+  },
+  {
+    "url": "http://www.mizuhokyodo.jp/",
+    "fetchedAt": "2026-11-05T04:23:06.239599+00:00",
+    "status": 200,
+    "finalUrl": "https://mizuhokyodo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-9a091686eda15cefc4d7.html",
+    "sha256": "d45b99880091a2aa10ce3865c1db8441951211d65f44b3480ce3b64f959228ab",
+    "reusedFrom": "data/evidence/national/kanto-south/9a091686eda15cefc4d7.html"
+  },
+  {
+    "url": "http://www.seotonoyu.jp/",
+    "fetchedAt": "2026-11-05T04:23:07.371504+00:00",
+    "status": 200,
+    "finalUrl": "http://www.seotonoyu.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f31c115ff87dd186e77e.html",
+    "sha256": "2419baa3e41ff2fc1a6e372b2c1fa8f10622fe2afc443ce780f26ba92d099ea8",
+    "reusedFrom": "data/evidence/national/kanto-south/f31c115ff87dd186e77e.html"
+  },
+  {
+    "url": "http://www.t-net.ne.jp/~hamura-z/",
+    "fetchedAt": "2026-11-05T04:23:08.875592+00:00",
+    "status": 200,
+    "finalUrl": "https://hamurazoo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f2314a8e2b682e51214b.html",
+    "sha256": "b3662334a68642331297897a8d5c7a15c9998c723f2ab99db7e82504565f5198",
+    "reusedFrom": "data/evidence/national/kanto-south/f2314a8e2b682e51214b.html"
+  },
+  {
+    "url": "http://www.youroad.com/index.html",
+    "fetchedAt": "2026-11-05T04:23:10.719528+00:00",
+    "status": 200,
+    "finalUrl": "https://www.youroad.com/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-250631ca2e0455fc1470.html",
+    "sha256": "6fc17b6f9cd41f4a569ae0762c9acbefbad6cfb8ea1bd7597ad2afe595a37388",
+    "reusedFrom": "data/evidence/national/kanto-south/250631ca2e0455fc1470.html"
+  },
+  {
+    "url": "https://akabane-sports.com/facilities/forest-park",
+    "fetchedAt": "2026-11-05T04:23:13.357193+00:00",
+    "status": 200,
+    "finalUrl": "https://akabane-sports.com/facilities/forest-park",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ef64773df1e0959cbb3f.html",
+    "sha256": "d4127701090623d61b4f78eea988c1b8a797de6f7fba133b00c8241343be94df",
+    "reusedFrom": "data/evidence/national/kanto-south/ef64773df1e0959cbb3f.html"
+  },
+  {
+    "url": "https://akabanemuseum.ur-net.go.jp/",
+    "fetchedAt": "2026-11-05T04:23:14.009448+00:00",
+    "status": 200,
+    "finalUrl": "https://akabanemuseum.ur-net.go.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-721889198c31d30b620d.html",
+    "sha256": "3530c85769561079f529fceceab8c8abcf609284d0fb4247253a589d842e2dad",
+    "reusedFrom": "data/evidence/national/kanto-south/721889198c31d30b620d.html"
+  },
+  {
+    "url": "https://inagi-kanko.jp/",
+    "fetchedAt": "2026-11-05T04:23:16.579507+00:00",
+    "status": 200,
+    "finalUrl": "https://inagi-kanko.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-48a55f260e8b918a44b6.html",
+    "sha256": "522ba694ccaea652b8033570fc446797d03a47b8c6ec1c5d3b57cf35ed6369f9",
+    "reusedFrom": "data/evidence/national/kanto-south/48a55f260e8b918a44b6.html"
+  },
+  {
+    "url": "https://infoandcafesquare.jp/",
+    "fetchedAt": "2026-11-05T04:23:17.353773+00:00",
+    "status": 200,
+    "finalUrl": "https://infoandcafesquare.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-73e21a7a940891630206.html",
+    "sha256": "958a902e5040a3469f77ae0090adcb74a5b9c7c7f2d4b8a38383edcf1e9728c3",
+    "reusedFrom": "data/evidence/national/kanto-south/73e21a7a940891630206.html"
+  },
+  {
+    "url": "https://isleshinagawa.com/",
+    "fetchedAt": "2026-11-05T04:23:17.546734+00:00",
+    "status": 200,
+    "finalUrl": "https://isleshinagawa.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b7669ddb745fd04ccfd6.html",
+    "sha256": "cc84a34827355afa64d412e3216f4c5cef989de960d0238effbc92c7d92bcdc4",
+    "reusedFrom": "data/evidence/national/kanto-south/b7669ddb745fd04ccfd6.html"
+  },
+  {
+    "url": "https://isleshinagawa.com/archives/489",
+    "fetchedAt": "2026-11-05T04:26:56.816869+00:00",
+    "status": 200,
+    "finalUrl": "https://isleshinagawa.com/archives/489",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-caefaec2a9106f48b571.html",
+    "sha256": "fecfc028df36c9210a78112885273478fa614791ffefd660bdda2b40ee663e5e",
+    "discoveredAnchor": "2026.11.01 マンホールカード、東京都品川区(S001)の配布について※休館日：11月〜12月休館日変更、年末年始（12/29~翌年1/3)",
+    "reusedFrom": "data/evidence/national/kanto-south/caefaec2a9106f48b571.html"
+  },
+  {
+    "url": "https://kanko.mitaka.ne.jp/",
+    "fetchedAt": "2026-11-05T04:23:18.212687+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-00edca57860d7d1de8da.html",
+    "sha256": "45c3fd1b7b9a9bd94e61c6ff12b1ad6d89d287d89a49e0687df683ff29a9fc39",
+    "reusedFrom": "data/evidence/national/kanto-south/00edca57860d7d1de8da.html"
+  },
+  {
+    "url": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "fetchedAt": "2026-11-05T04:23:22.268788+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko.mitaka.ne.jp/docs/2021092900021/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-1541a833e8ebe469c1a8.html",
+    "sha256": "269f99b352a2af6bf7e49160e33ed2ff4d3ced8f824832a97c4c5bd3633d0f29",
+    "reusedFrom": "data/evidence/national/kanto-south/1541a833e8ebe469c1a8.html"
+  },
+  {
+    "url": "https://karigurashi.net/journal/manhole-card/",
+    "fetchedAt": "2026-11-05T04:23:18.638388+00:00",
+    "status": 200,
+    "finalUrl": "https://uchi-machi-danchi.ur-net.go.jp/article/manhole-card/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a430de2157bc0745ce71.html",
+    "sha256": "1e728bb792f054ae59ea26a83a58c50f3b579255d23a13972dad78fdb189ee78",
+    "reusedFrom": "data/evidence/national/kanto-south/a430de2157bc0745ce71.html"
+  },
+  {
+    "url": "https://kitabunka.or.jp/tabata/",
+    "fetchedAt": "2026-11-05T04:23:19.756463+00:00",
+    "status": 200,
+    "finalUrl": "https://kitabunka.or.jp/tabata/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a6fc6a657065a95a63cb.html",
+    "sha256": "7a3531f88d7cb7e93ac7c9492614277da57f3d0b2647b05f3f79d6b48dfbd242",
+    "reusedFrom": "data/evidence/national/kanto-south/a6fc6a657065a95a63cb.html"
+  },
+  {
+    "url": "https://kodaira-sewer.jp/manhole-card",
+    "fetchedAt": "2026-11-05T04:29:42.469404+00:00",
+    "status": 200,
+    "finalUrl": "https://kodaira-sewer.jp/manhole-card",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-647fdc80318b91688e53.html",
+    "sha256": "ba92f531c829f614347306548136e85c92c4d84d7cb8ee1452be877efa308fd2",
+    "reusedFrom": "data/evidence/national/kanto-south/647fdc80318b91688e53.html"
+  },
+  {
+    "url": "https://kuzaidan.or.jp/province/",
+    "fetchedAt": "2026-11-05T04:23:20.276250+00:00",
+    "status": 200,
+    "finalUrl": "https://kuzaidan.or.jp/province/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-7075b74195aec225da40.html",
+    "sha256": "b18695608af4660b060416dec827ac62d3043d4da67828c7aff7d920bb4a2c29",
+    "reusedFrom": "data/evidence/national/kanto-south/7075b74195aec225da40.html"
+  },
+  {
+    "url": "https://machida-guide.or.jp/?p=we-page-top-2",
+    "fetchedAt": "2026-11-05T04:23:21.270042+00:00",
+    "status": 200,
+    "finalUrl": "https://machida-guide.or.jp/?p=we-page-top-2",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8a33ca95948afaf1acb6.html",
+    "sha256": "0803a1419c63261e238b99ff899a3d5fb2e2a4ff9a671be8687f0735c6d763c2",
+    "reusedFrom": "data/evidence/national/kanto-south/8a33ca95948afaf1acb6.html"
+  },
+  {
+    "url": "https://machitenna.com/",
+    "fetchedAt": "2026-11-05T04:23:22.951295+00:00",
+    "status": 200,
+    "finalUrl": "https://machitenna.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bf3eb032b6dfa13c139a.html",
+    "sha256": "9f10500ea4a92ff65211cc93fc97fa8171a71f50e494727943449645f30e546f",
+    "reusedFrom": "data/evidence/national/kanto-south/bf3eb032b6dfa13c139a.html"
+  },
+  {
+    "url": "https://map.coopdeli.coop/mirai/shop.php?shop_id=30250212",
+    "fetchedAt": "2026-11-05T04:23:23.098564+00:00",
+    "status": 200,
+    "finalUrl": "https://map.coopdeli.coop/mirai/tokyo/shop/takakura.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b6027071027c4d4554df.html",
+    "sha256": "fd70b26ae4174841cb1429bdba3cbbdc68003316f912b4b3e0b1f5d4be9d7967",
+    "reusedFrom": "data/evidence/national/kanto-south/b6027071027c4d4554df.html"
+  },
+  {
+    "url": "https://musashino-kanko.com/",
+    "fetchedAt": "2026-11-05T04:23:23.745791+00:00",
+    "status": 200,
+    "finalUrl": "https://musashino-kanko.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-99681c55dc4b51764eb2.html",
+    "sha256": "f9fbd83506ffcf636a2dde79152a187d46e86eae8bd679b51ee3e756147428d7",
+    "reusedFrom": "data/evidence/national/kanto-south/99681c55dc4b51764eb2.html"
+  },
+  {
+    "url": "https://museum.toei-anim.co.jp/",
+    "fetchedAt": "2026-11-05T04:23:24.041339+00:00",
+    "status": 200,
+    "finalUrl": "https://museum.toei-anim.co.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-df607dc212b99e1f12ec.html",
+    "sha256": "f34205703cd5bf3c2eddda2165991be44e1ec06ef478cd8569bd835d5d63e85c",
+    "reusedFrom": "data/evidence/national/kanto-south/df607dc212b99e1f12ec.html"
+  },
+  {
+    "url": "https://sam.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:25.121419+00:00",
+    "status": 200,
+    "finalUrl": "https://sam.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-951df9713eb385ed0b52.html",
+    "sha256": "14aea1606c2710172bf37b6b632b85058f6bddcf3ed7ad01f5d5343fbb79b3ac",
+    "reusedFrom": "data/evidence/national/kanto-south/951df9713eb385ed0b52.html"
+  },
+  {
+    "url": "https://shibusawakitaku.tokyo/omiyage/",
+    "fetchedAt": "2026-11-05T04:23:25.870321+00:00",
+    "status": 200,
+    "finalUrl": "https://shibusawakitaku.tokyo/omiyage/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f0d3e7609c40ff931903.html",
+    "sha256": "8d86c67cd02866511587099e14c7afccc173542a74983594f15d17d9b3adbf7e",
+    "reusedFrom": "data/evidence/national/kanto-south/f0d3e7609c40ff931903.html"
+  },
+  {
+    "url": "https://shinagawa-kanko.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:26.576406+00:00",
+    "status": 200,
+    "finalUrl": "https://shinagawa-kanko.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-78d85c3b2748be2c9b53.html",
+    "sha256": "52b365b0c8b5480a45b3cadb0d3fdcb6f16e635b61b1791303d740ff7092b3a0",
+    "reusedFrom": "data/evidence/national/kanto-south/78d85c3b2748be2c9b53.html"
+  },
+  {
+    "url": "https://tokyotouristinfo.com/detail/M0319",
+    "fetchedAt": "2026-11-05T04:23:28.116579+00:00",
+    "status": 200,
+    "finalUrl": "https://tokyotouristinfo.com/detail/M0319",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b04da52d557163472a80.html",
+    "sha256": "73e560f74491c6aba70cc6fd36a5e4a3b4c3b7d8b29e632b54ca67f20f855cad",
+    "reusedFrom": "data/evidence/national/kanto-south/b04da52d557163472a80.html"
+  },
+  {
+    "url": "https://visit-chiyoda.tokyo/",
+    "fetchedAt": "2026-11-05T04:23:28.295424+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-chiyoda.tokyo/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-fbcd69a10dc431ec9e93.html",
+    "sha256": "573ca6dee304881066568a13b10ade636e34f9003ac6f14067fac47ff321ec40",
+    "reusedFrom": "data/evidence/national/kanto-south/fbcd69a10dc431ec9e93.html"
+  },
+  {
+    "url": "https://visit-minato-city.tokyo/ja-jp/places/2774",
+    "fetchedAt": "2026-11-05T04:23:28.541012+00:00",
+    "status": 404,
+    "finalUrl": "https://visit-minato-city.tokyo/ja-jp/places/2774",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-3963819ea56e95b7c7c0.html",
+    "sha256": "588a7f0f8c5c74ae6c0b1e6efac711d62f5469b69ca1a85855275cc1f8e52252",
+    "reusedFrom": "data/evidence/national/kanto-south/3963819ea56e95b7c7c0.html"
+  },
+  {
+    "url": "https://visit-sumida.jp/connect/",
+    "fetchedAt": "2026-11-05T04:23:28.834312+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-sumida.jp/connect/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-3194d065309db261369b.html",
+    "sha256": "9f02435dc1bbc5f92d63298d87948b8351ee461689ac384a876c1253ffe8b47d",
+    "reusedFrom": "data/evidence/national/kanto-south/3194d065309db261369b.html"
+  },
+  {
+    "url": "https://visit-sumida.jp/spot/6196",
+    "fetchedAt": "2026-11-05T04:23:32.873355+00:00",
+    "status": 200,
+    "finalUrl": "https://visit-sumida.jp/spot/6196/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-7ad2e5096083d417ce7b.html",
+    "sha256": "2ccea981102cdcf5982c8f4b94b7c90fd66dafa4d1aab59821dbb41c8a81b6ba",
+    "reusedFrom": "data/evidence/national/kanto-south/7ad2e5096083d417ce7b.html"
+  },
+  {
+    "url": "https://www.adachikanko.net/news/archives/56626",
+    "fetchedAt": "2026-11-05T04:29:42.467687+00:00",
+    "status": 200,
+    "finalUrl": "https://www.adachikanko.net/news/archives/56626",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c987e1eac4594767b3d7.html",
+    "sha256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a",
+    "reusedFrom": "data/evidence/national/kanto-south/c987e1eac4594767b3d7.html"
+  },
+  {
+    "url": "https://www.ara-amoa.com/",
+    "fetchedAt": "2026-11-05T04:23:30.044320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ara-amoa.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-4a21533699b24f196d58.html",
+    "sha256": "9a97a62e5c91cbb2f9b1cf7d0fd8eb677c9dcfb570d34ad256381f66127b6ea0",
+    "reusedFrom": "data/evidence/national/kanto-south/4a21533699b24f196d58.html"
+  },
+  {
+    "url": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:23:31.792085+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-961bfb847190fa8e7091.html",
+    "sha256": "123db06ddccd6b9e45a8a85a71857ba034b9b3aecaa3c8623c0e2ff3a389b0a7",
+    "reusedFrom": "data/evidence/national/kanto-south/961bfb847190fa8e7091.html"
+  },
+  {
+    "url": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+    "fetchedAt": "2026-11-05T04:23:31.874543+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-48ddd4e793802422b489.html",
+    "sha256": "02916e78b34dc6711be3cdf5a9045868a82c0b201c38cb33ed5d8df8a42cd440",
+    "reusedFrom": "data/evidence/national/kanto-south/48ddd4e793802422b489.html"
+  },
+  {
+    "url": "https://www.city.chiyoda.lg.jp/koho/shigoto/sangyo/sonota/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:36.824364+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiyoda.lg.jp/koho/shigoto/sangyo/sonota/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-25ab05d360a50e2b6794.html",
+    "sha256": "f58f227b5c90b47f543a251adffead219979d9a9c1869600dd0a2caa1e4012b4",
+    "reusedFrom": "data/evidence/national/kanto-south/25ab05d360a50e2b6794.html"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:40.272937+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-de250713c732b8b72139.html",
+    "sha256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560",
+    "reusedFrom": "data/evidence/national/kanto-south/de250713c732b8b72139.html"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/index.html",
+    "fetchedAt": "2026-11-05T04:23:43.093303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e035/kuseijoho/gaiyo/shisetsuguide/bunya/bunkachiiki/c_kitakoiwa_co/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8170369d8b319ead512d.html",
+    "sha256": "7674d72f0c2f6c079845bf8470cea1d7c7fdddec2470f7bd0b136618d3eefcc3",
+    "reusedFrom": "data/evidence/national/kanto-south/8170369d8b319ead512d.html"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e059/toshikeikaku/sonota/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:48.988322+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e059/toshikeikaku/sonota/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-09268cbb7b53ad0db9cc.html",
+    "sha256": "b276d755861b4ad79f2beea2af72c1985e96dd4496fbf0a505c0975daa70b87e",
+    "reusedFrom": "data/evidence/national/kanto-south/09268cbb7b53ad0db9cc.html"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
+    "fetchedAt": "2026-11-05T04:23:54.999380+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e066/kuseijoho/gaiyo/shisetsuguide/bunya/koendobutsuen/c_recreation/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-7267fea775b55c7621f1.html",
+    "sha256": "ceb49dcba08841775acc5056186d52cb225456fad43b7a4094e74f3e97ab5a3c",
+    "reusedFrom": "data/evidence/national/kanto-south/7267fea775b55c7621f1.html"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e_bunkazai/bunkazai/shiryoshitsu/index.html",
+    "fetchedAt": "2026-11-05T04:24:05.014391+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e_bunkazai/bunkazai/shiryoshitsu/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ea60d5036bb049102729.html",
+    "sha256": "54edba0f10e67afd4ca123e55e4ff56d7a2a9d4604dcab873bf8f8762ae9d796",
+    "reusedFrom": "data/evidence/national/kanto-south/ea60d5036bb049102729.html"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "fetchedAt": "2026-11-05T04:23:42.390042+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-e024d5413271fa7771f2.html",
+    "sha256": "860092f50b0cc8714552a595982ec635ca0aaba38a466e72fc68d560eb01e15e",
+    "reusedFrom": "data/evidence/national/kanto-south/e024d5413271fa7771f2.html"
+  },
+  {
+    "url": "https://www.city.fussa.tokyo.jp/index.html",
+    "fetchedAt": "2026-11-05T04:23:43.263084+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fussa.tokyo.jp/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bb29da16f11d2d358855.html",
+    "sha256": "0bf8b5b16e0ee0038303dd6404b8d72924cdc76b865297896b2878a72fe08deb",
+    "reusedFrom": "data/evidence/national/kanto-south/bb29da16f11d2d358855.html"
+  },
+  {
+    "url": "https://www.city.fussa.tokyo.jp/life/city/1017110/1017111.html",
+    "fetchedAt": "2026-11-05T04:23:46.365836+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fussa.tokyo.jp/life/city/1017110/1017111.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ee6afdb1f5e90f4a9731.html",
+    "sha256": "041e28f7ecfd96f50e17875e3859252f38680308eba0b04b9a222d13e6c4774c",
+    "reusedFrom": "data/evidence/national/kanto-south/ee6afdb1f5e90f4a9731.html"
+  },
+  {
+    "url": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "fetchedAt": "2026-11-05T04:23:46.191771+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-5374529443da774fef75.html",
+    "sha256": "0ab460844a8a9772386cb9df8ab461c301e99175baea2deb3233d95453997339",
+    "reusedFrom": "data/evidence/national/kanto-south/5374529443da774fef75.html"
+  },
+  {
+    "url": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+    "fetchedAt": "2026-11-05T04:23:46.489469+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-975cae4d2962aebe9c69.html",
+    "sha256": "90c81cda70887878dc51cfb2e830adb288edd3692c2fd23861d7874778d0248a",
+    "reusedFrom": "data/evidence/national/kanto-south/975cae4d2962aebe9c69.html"
+  },
+  {
+    "url": "https://www.city.higashiyamato.lg.jp/index.cfm/35,0,366,html",
+    "fetchedAt": "2026-11-05T04:23:47.322262+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashiyamato.lg.jp/bunkasports/museum/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0591633ac9ba69b25f40.html",
+    "sha256": "737b6e6d6a0ccf2be5c546ea34e3d966ba46b484b9c5bfcc8c5773383429dfd0",
+    "reusedFrom": "data/evidence/national/kanto-south/0591633ac9ba69b25f40.html"
+  },
+  {
+    "url": "https://www.city.hino.lg.jp/shinsenr/",
+    "fetchedAt": "2026-11-05T04:23:52.346733+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hino.lg.jp/shinsenr/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-4576bf4ce61d92d5d4f4.html",
+    "sha256": "c190fb8c54a2c9e3da837f0e6fde0fd78717d72f930e9081c0495c061a53110e",
+    "reusedFrom": "data/evidence/national/kanto-south/4576bf4ce61d92d5d4f4.html"
+  },
+  {
+    "url": "https://www.city.inagi.tokyo.jp/kanko/miryoku/1010492/1013753/1010317.html",
+    "fetchedAt": "2026-11-05T04:23:58.241303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.inagi.tokyo.jp/kanko/miryoku/1010492/1013753/1010317.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-9500c3eab3bdc6109bcf.html",
+    "sha256": "a6a34a4a798daf8a5cc0291a7ac6c0ee2249ab7a09caba937b31274cf472f5e7",
+    "reusedFrom": "data/evidence/national/kanto-south/9500c3eab3bdc6109bcf.html"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
+    "fetchedAt": "2026-11-05T04:24:02.450012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1006728.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-5463dfd325828d08056b.html",
+    "sha256": "2af61d95471fd86f3db334d323ede5f2c1a4c7a615584b3101437399f5c0be66",
+    "reusedFrom": "data/evidence/national/kanto-south/5463dfd325828d08056b.html"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "fetchedAt": "2026-11-05T04:24:08.521017+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ffe01eb357e263ffbcb0.html",
+    "sha256": "6c24fbb0b031dc81ad80b098ffa154d43e4c7b452b82ecd7f75220f064c66171",
+    "reusedFrom": "data/evidence/national/kanto-south/ffe01eb357e263ffbcb0.html"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
+    "fetchedAt": "2026-11-05T04:24:13.090161+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/kusei/soshiki/sangyokeizai/1006922.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c2dc090d2ba22cd4ad16.html",
+    "sha256": "89bfefe443709da69a07cf23f12ed4edc4fc367d69b1f34318a62024cd4340b6",
+    "reusedFrom": "data/evidence/national/kanto-south/c2dc090d2ba22cd4ad16.html"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026016.html",
+    "fetchedAt": "2026-11-05T04:24:07.521496+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026016.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-70bb1df40163704afa20.html",
+    "sha256": "ee04adc38b1bc86870b8c521fc41b67d36b6d260efb4628206c09d14249b32ee",
+    "reusedFrom": "data/evidence/national/kanto-south/70bb1df40163704afa20.html"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026544.html",
+    "fetchedAt": "2026-11-05T04:24:12.069259+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1026544.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-de612cf391ae9469e089.html",
+    "sha256": "c1a7481696736d343706f6ff04be7d2766cd12133041a6c630723704067f8b18",
+    "reusedFrom": "data/evidence/national/kanto-south/de612cf391ae9469e089.html"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "fetchedAt": "2026-11-05T04:26:56.817432+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0505dbb97e8012746373.html",
+    "sha256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881",
+    "discoveredAnchor": "マンホールカードの配布について",
+    "reusedFrom": "data/evidence/national/kanto-south/0505dbb97e8012746373.html"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1030204/1027603.html",
+    "fetchedAt": "2026-11-05T04:24:16.186043+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1030204/1027603.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b11350f4f827e65ce7bc.html",
+    "sha256": "983f377874abcda10fec84b9471b358ef9a315b47a537f272f6443525141465b",
+    "reusedFrom": "data/evidence/national/kanto-south/b11350f4f827e65ce7bc.html"
+  },
+  {
+    "url": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+    "fetchedAt": "2026-11-05T04:24:14.285598+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-87e9a821323a0cc4e473.html",
+    "sha256": "5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+    "reusedFrom": "data/evidence/national/kanto-south/87e9a821323a0cc4e473.html"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/kurashi/suidougesuidou/gesuidou/1015242/1015263/1009709.html",
+    "fetchedAt": "2026-11-05T04:24:14.332178+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/kurashi/suidougesuidou/gesuidou/1015242/1015263/1009709.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0e60973d5328e55fa26b.html",
+    "sha256": "3186cbcc835215d2d830e3eb756ffd274aee11063874ffe4b98aa8cd650aff0c",
+    "reusedFrom": "data/evidence/national/kanto-south/0e60973d5328e55fa26b.html"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
+    "fetchedAt": "2026-11-05T04:24:18.802155+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/shisetsu/syogaigakusyu/1001192.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a7742b94fb760d41f1be.html",
+    "sha256": "a9a773adc7d8fda3185f34d0764e7d42d6922adb173114c8fd233c1d9f798281",
+    "reusedFrom": "data/evidence/national/kanto-south/a7742b94fb760d41f1be.html"
+  },
+  {
+    "url": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
+    "fetchedAt": "2026-11-05T04:24:21.504499+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kiyose.lg.jp/siseijouhou/sosikisigoto/kakukagoannai/1005112.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-47678629e0f40d6dc21f.html",
+    "sha256": "2ba2e49e668ad607d5bb52d9218391db19a57076eaeb27d470726bf73fd9fe86",
+    "reusedFrom": "data/evidence/national/kanto-south/47678629e0f40d6dc21f.html"
+  },
+  {
+    "url": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
+    "fetchedAt": "2026-11-05T04:24:15.231264+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.kodaira.tokyo.jp/kurashi/070/070022.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-d4387c754bbdcc15efb5.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb",
+    "reusedFrom": "data/evidence/national/kanto-south/d4387c754bbdcc15efb5.html"
+  },
+  {
+    "url": "https://www.city.kodaira.tokyo.jp/kurashi/080/080429.html",
+    "fetchedAt": "2026-11-05T04:24:19.757260+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.kodaira.tokyo.jp/kurashi/080/080429.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-28edd89448cd37f73dcd.html",
+    "sha256": "1aaba2d1cbd1ba6a5ea4a79dc76ae32aa4f85718656e3c66930858067ab41adb",
+    "reusedFrom": "data/evidence/national/kanto-south/28edd89448cd37f73dcd.html"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/",
+    "fetchedAt": "2026-11-05T04:24:17.203417+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bd19719780908ad4dbbd.html",
+    "sha256": "9af175e887e589d4cdd3ccc34b530bce24b8b71abe908759896766f630b222ee",
+    "reusedFrom": "data/evidence/national/kanto-south/bd19719780908ad4dbbd.html"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+    "fetchedAt": "2026-11-05T04:24:19.944679+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/kurashi/478/keihatuzigyou/mannho-ruka-dotokube.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-30886eadbf1d6437c549.html",
+    "sha256": "7d8f04c46009a4ade86d64e9279a36c05fc6988d339edae942a5daad2f39811b",
+    "reusedFrom": "data/evidence/national/kanto-south/30886eadbf1d6437c549.html"
+  },
+  {
+    "url": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
+    "fetchedAt": "2026-11-05T04:24:24.614114+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koganei.lg.jp/kurashi/478/keihatuzigyou/mcardhaihu.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ef2c37a216538aa13156.html",
+    "sha256": "30630d4766e0de9efb2c2ee6b53058190156f27931a63bb3bebf118d9359c5b6",
+    "reusedFrom": "data/evidence/national/kanto-south/ef2c37a216538aa13156.html"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "fetchedAt": "2026-11-05T04:24:17.800000+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b73e9e60b4baaa583160.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6",
+    "reusedFrom": "data/evidence/national/kanto-south/b73e9e60b4baaa583160.html"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/kurashi/jogesuido/6/5190.html",
+    "fetchedAt": "2026-11-05T04:33:38.845641+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/kurashi/jogesuido/6/5190.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-3cc91fb26c36638065ec.html",
+    "sha256": "a3cabcb19894f63f2a9d14aad52a61add0abd1ec98fb77b64b38f7b17ce22993",
+    "reusedFrom": "data/evidence/national/kanto-south/3cc91fb26c36638065ec.html"
+  },
+  {
+    "url": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/news/9924.html",
+    "fetchedAt": "2026-11-05T04:32:45.841169+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kunitachi.tokyo.jp/kyukunitachiekisha_specialsite/news/9924.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-84bcd6c9acdb160604d8.html",
+    "sha256": "810021f1c867a04447ba62532e33c376a398e899da19d9d967a51addc502294d",
+    "reusedFrom": "data/evidence/national/kanto-south/84bcd6c9acdb160604d8.html"
+  },
+  {
+    "url": "https://www.city.machida.tokyo.jp/kurashi/suido/grsui/gesuidoujigyou/manholehutadesign.html",
+    "fetchedAt": "2026-11-05T04:24:18.945249+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.machida.tokyo.jp/kurashi/suido/grsui/gesuidoujigyou/manholehutadesign.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b381ca043aa412118edb.html",
+    "sha256": "6cc38461ad811f80c40c269d1377f904470c81637a8d9cad7b10a225e0e9a9d6",
+    "reusedFrom": "data/evidence/national/kanto-south/b381ca043aa412118edb.html"
+  },
+  {
+    "url": "https://www.city.minato.tokyo.jp/citypromotion/manhole.html",
+    "fetchedAt": "2026-11-05T04:24:20.688330+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minato.tokyo.jp/citypromotion/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-3edd60cf33e695e02329.html",
+    "sha256": "eba5271baf5f9995232a70ea05e39e09a09821ce00e0684a038bb2ff9a5b09cf",
+    "reusedFrom": "data/evidence/national/kanto-south/3edd60cf33e695e02329.html"
+  },
+  {
+    "url": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+    "fetchedAt": "2026-11-05T04:24:25.350040+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-d1b500f617fd37fc4e2b.html",
+    "sha256": "6f1c3c93ee0fb11b6d0ee93653f3e4e2be1324895e6e94f2feb855675908733c",
+    "reusedFrom": "data/evidence/national/kanto-south/d1b500f617fd37fc4e2b.html"
+  },
+  {
+    "url": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:25.934213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b9074f6b8a4fc4996bb3.html",
+    "sha256": "8e9a4b346d3db8dd4f1cdea1e1271bfa6f846a6174a537e5e67e55e10cfefa9e",
+    "reusedFrom": "data/evidence/national/kanto-south/b9074f6b8a4fc4996bb3.html"
+  },
+  {
+    "url": "https://www.city.nishitokyo.lg.jp/enjoy/ekimae_hassin/08manhoru.html",
+    "fetchedAt": "2026-11-05T04:24:26.420622+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nishitokyo.lg.jp/enjoy/ekimae_hassin/08manhoru.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-5ff2b0b8faf063bcadca.html",
+    "sha256": "81523b631f103b63b120f8cd656fb667e7d30704fadb8b5a5e2723f7a0787ca9",
+    "reusedFrom": "data/evidence/national/kanto-south/5ff2b0b8faf063bcadca.html"
+  },
+  {
+    "url": "https://www.city.ome.tokyo.jp/soshiki/25/72544.html",
+    "fetchedAt": "2026-11-05T04:24:32.339713+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ome.tokyo.jp/soshiki/25/72544.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-35d4c8de9207f57ea436.html",
+    "sha256": "6d6b8540420786ffb1d763a32591f557972da7bb81fb2724baabdbf1c6e6d003",
+    "reusedFrom": "data/evidence/national/kanto-south/35d4c8de9207f57ea436.html"
+  },
+  {
+    "url": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "fetchedAt": "2026-11-05T04:24:32.630698+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b402be524f3a0e7c47ec.html",
+    "sha256": "59bf82fcd32d4d26c4e651a9b485b44f611c2c8fdc69c2595e9392b5dfd2ba07",
+    "reusedFrom": "data/evidence/national/kanto-south/b402be524f3a0e7c47ec.html"
+  },
+  {
+    "url": "https://www.city.setagaya.lg.jp/mokuji/shigoto/005/d00184306.html",
+    "fetchedAt": "2026-11-05T04:24:36.837812+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setagaya.lg.jp/03647/4990.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-09067d49293714a15729.html",
+    "sha256": "673db0c2cf262a4e6cf2bedc04a9e7a4738119e73372211e99bd3f2a4c55c593",
+    "reusedFrom": "data/evidence/national/kanto-south/09067d49293714a15729.html"
+  },
+  {
+    "url": "https://www.city.shibuya.tokyo.jp/bunka/bunkazai/midokoro/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:36.901628+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibuya.tokyo.jp/bunka/bunkazai/midokoro/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-364d1cbcd2aa28b5ca3b.html",
+    "sha256": "75e7237ecfec9e81abf629a70fcd39927b09b07d70742c5baf7f794d05edb076",
+    "reusedFrom": "data/evidence/national/kanto-south/364d1cbcd2aa28b5ca3b.html"
+  },
+  {
+    "url": "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
+    "fetchedAt": "2026-11-05T04:24:38.668789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinagawa.tokyo.jp/kankyo/doro/1009598/1004577.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-31a1659e1ceba0c3d6b5.html",
+    "sha256": "35333061d108d83e225f58740544a08ca3acd8593091dec098cc7e8b9dc645b9",
+    "reusedFrom": "data/evidence/national/kanto-south/31a1659e1ceba0c3d6b5.html"
+  },
+  {
+    "url": "https://www.city.shinjuku.lg.jp/kanko/bunka02_000001_00015.html",
+    "fetchedAt": "2026-11-05T04:24:39.110704+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shinjuku.lg.jp/kanko/bunka02_000001_00015.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8be13df66d6cf421d6a9.html",
+    "sha256": "032e14fc87d4475fda8d4d31dce0ec208aaed4206c850c56da904fcf18a53918",
+    "reusedFrom": "data/evidence/national/kanto-south/8be13df66d6cf421d6a9.html"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
+    "fetchedAt": "2026-11-05T04:24:40.259115+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s033/10628.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a7310ca88f8d1c405464.html",
+    "sha256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3",
+    "reusedFrom": "data/evidence/national/kanto-south/a7310ca88f8d1c405464.html"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/shisetsu/kouen/02/ogikubo/1054100.html",
+    "fetchedAt": "2026-11-05T04:24:43.992128+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s100/shisetsu/14628.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-cc000aab05e264c430a4.html",
+    "sha256": "4c8d9bbc520e13e69b49e895fb778b2881f7924fd7c371c4d0bec5c0dd3149df",
+    "reusedFrom": "data/evidence/national/kanto-south/cc000aab05e264c430a4.html"
+  },
+  {
+    "url": "https://www.city.suginami.tokyo.jp/suginamishoukai/shirumanabu/namisuke/1057047.html",
+    "fetchedAt": "2026-11-05T04:24:48.151012+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.suginami.tokyo.jp/s033/10628.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b2b24595bfcb4ce4233c.html",
+    "sha256": "749f79308eb49fabe5ca8edfb9745146d95c043f691a8934446475ca5d8db2c3",
+    "reusedFrom": "data/evidence/national/kanto-south/b2b24595bfcb4ce4233c.html"
+  },
+  {
+    "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "fetchedAt": "2026-11-05T04:24:41.930990+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-16398dfb985e9fe39d5c.html",
+    "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428",
+    "reusedFrom": "data/evidence/national/kanto-south/16398dfb985e9fe39d5c.html"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/",
+    "fetchedAt": "2026-11-05T04:24:42.331341+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-769645338ee55554e8ac.html",
+    "sha256": "ac4d899d23d5d61d92eaa0c652ee6222bcb379c33a1d3156587ef23aac73905b",
+    "reusedFrom": "data/evidence/national/kanto-south/769645338ee55554e8ac.html"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/1020609/1025815.html",
+    "fetchedAt": "2026-11-05T04:24:45.036183+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/1020609/1025815.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ad2ff5643956759ab788.html",
+    "sha256": "a6ed19d20f0c1a334f5ae104b17700b6997f6c7b0f93bdd9942f2e2689253bcb",
+    "reusedFrom": "data/evidence/national/kanto-south/ad2ff5643956759ab788.html"
+  },
+  {
+    "url": "https://www.city.tachikawa.lg.jp/kurashi/suido/gesuido/index.html",
+    "fetchedAt": "2026-11-05T04:24:47.330310+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tachikawa.lg.jp/kurashi/suido/1002266/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-065e1a176c1f56f06daa.html",
+    "sha256": "5c38ba97e2d63148bdbe66425662240c97eb6ad98d81799073413bc53815afb3",
+    "reusedFrom": "data/evidence/national/kanto-south/065e1a176c1f56f06daa.html"
+  },
+  {
+    "url": "https://www.city.tama.lg.jp/0000005579.html",
+    "fetchedAt": "2026-11-05T04:24:43.084455+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-ed40e445a51fae24c7b6.html",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a",
+    "reusedFrom": "data/evidence/national/kanto-south/ed40e445a51fae24c7b6.html"
+  },
+  {
+    "url": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/annai/1003181.html",
+    "fetchedAt": "2026-11-05T04:24:45.429497+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003181.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f7afc37e8f9cee8d1662.html",
+    "sha256": "514e6a2c63e39c20954a0bcc768e7cc80477345adbd34726114d4a64ae527e64",
+    "reusedFrom": "data/evidence/national/kanto-south/f7afc37e8f9cee8d1662.html"
+  },
+  {
+    "url": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/designmanhole.html",
+    "fetchedAt": "2026-11-05T04:24:46.122413+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokyo-nakano.lg.jp/kanko/city-promotion/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f44eb6494fd48bd47f82.html",
+    "sha256": "1bef9ee90e640b76aa7db3c1f4006312749bbb46b584e4f7f244b1e07b2afc7c",
+    "reusedFrom": "data/evidence/national/kanto-south/f44eb6494fd48bd47f82.html"
+  },
+  {
+    "url": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/index.html",
+    "fetchedAt": "2026-11-05T04:24:48.847344+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokyo-nakano.lg.jp/kurashi/bunka/manabu/rekishiminzoku/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-67f24d9b626fac9d851b.html",
+    "sha256": "978dec3d57250aec0f2ca7239081df30b642f633e3add47e46b9ef4eee556f36",
+    "reusedFrom": "data/evidence/national/kanto-south/67f24d9b626fac9d851b.html"
+  },
+  {
+    "url": "https://www.city.toshima.lg.jp/424/2002212017.html",
+    "fetchedAt": "2026-11-05T04:24:46.971310+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toshima.lg.jp/424/2002212017.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-d1f22e455e5e5c0c46e0.html",
+    "sha256": "5be1ab6c5b05cf542d4c2bbd873e040a8b80e4a00a5574e0dfb1e3ee3750320f",
+    "reusedFrom": "data/evidence/national/kanto-south/d1f22e455e5e5c0c46e0.html"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/about/gaiyou/ryuiki50",
+    "fetchedAt": "2026-11-05T04:24:50.658952+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/about/gaiyou/ryuiki50",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-139d31f7dc0eb2880cb7.html",
+    "sha256": "f782c1038d8484cd073b4e08df66aafbb459b692091d4569e3c39e7b93606ed2",
+    "reusedFrom": "data/evidence/national/kanto-south/139d31f7dc0eb2880cb7.html"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.305701+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b9892beadacfd66a1a31.html",
+    "sha256": "acb5705c2a46613e2dc7644ed699855da15ef82b6729074aa1d38ced8444db3d",
+    "reusedFrom": "data/evidence/national/kanto-south/b9892beadacfd66a1a31.html"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/information/topics/2026/04/20260401_manholecard",
+    "fetchedAt": "2026-11-05T04:29:42.465625+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/information/topics/2026/04/20260401_manholecard",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-1cde6ebc673fa1a41975.html",
+    "sha256": "b677d08e82769be7e37317279941585cfa3986fdf199764229f6087c0f125a8a",
+    "reusedFrom": "data/evidence/national/kanto-south/1cde6ebc673fa1a41975.html"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "fetchedAt": "2026-11-05T04:24:54.378116+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kengaku/guide/s-mikawa",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-66e7104a9a54e4562068.html",
+    "sha256": "0d1ae58b61aa5f796212037f913de34899384dfd6731b8ed522b0dc5ee80a47c",
+    "reusedFrom": "data/evidence/national/kanto-south/66e7104a9a54e4562068.html"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "fetchedAt": "2026-11-05T04:33:56.016768+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-4d3030a484eafc8163f5.html",
+    "sha256": "1ba88cb305931f2db5ebd191a714e558ea993ef93f010b9af243999931f6bd1a",
+    "reusedFrom": "data/evidence/national/kanto-south/4d3030a484eafc8163f5.html"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/plan/japanese-prefectural-tourism-promotion-corner/index.html",
+    "fetchedAt": "2026-11-05T04:24:50.757125+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/plan/japanese-prefectural-tourism-promotion-corner/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-123f90b55835ede1b14f.html",
+    "sha256": "53c01e2990e4f4ec68d9392ebbeb328b3c4ce6ea30a3f8a4b0b927e9b70f7d1c",
+    "reusedFrom": "data/evidence/national/kanto-south/123f90b55835ede1b14f.html"
+  },
+  {
+    "url": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.235277+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gotokyo.org/jp/plan/tourist-info-center/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-959ed30231e3dcbe1a0a.html",
+    "sha256": "42a7cab99bcb9fafc7705731dcb4beb640cf8a15185e867c646b287c71d16540",
+    "reusedFrom": "data/evidence/national/kanto-south/959ed30231e3dcbe1a0a.html"
+  },
+  {
+    "url": "https://www.higashikurume-lll.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.306301+00:00",
+    "status": 200,
+    "finalUrl": "https://www.higashikurume-lll.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-1427068acf5185938e13.html",
+    "sha256": "0f81ea1005b0228ebf142915a91aee77d79cb1ca0a02e72220317a95a72b9f58",
+    "reusedFrom": "data/evidence/national/kanto-south/1427068acf5185938e13.html"
+  },
+  {
+    "url": "https://www.hinodekanko.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.380188+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hinodekanko.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c98c17120a04f57dd4f3.html",
+    "sha256": "b9f88129d0df35f4cd9890ff68ee37487daa57c7c30dff94521587aff191b3f9",
+    "reusedFrom": "data/evidence/national/kanto-south/c98c17120a04f57dd4f3.html"
+  },
+  {
+    "url": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
+    "fetchedAt": "2026-11-05T04:24:51.513240+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ja-nishitokyo.or.jp/archives/store_post/shop_greencenter",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-4f452bfdf56b6b0b0cfd.html",
+    "sha256": "8743310759e6b28c123a43b4c541fe058011d38e514e5994a063b5ce02efaa5b",
+    "reusedFrom": "data/evidence/national/kanto-south/4f452bfdf56b6b0b0cfd.html"
+  },
+  {
+    "url": "https://www.jswa.go.jp/",
+    "fetchedAt": "2026-11-05T04:24:51.652390+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-70a2dc129a22da850611.html",
+    "sha256": "dc3d9ea7fa584077a7a6c046659d7be0e1e97b89ec995ec6cd9ec6252d4309e3",
+    "reusedFrom": "data/evidence/national/kanto-south/70a2dc129a22da850611.html"
+  },
+  {
+    "url": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+    "fetchedAt": "2026-11-05T04:24:53.263458+00:00",
+    "status": 200,
+    "finalUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c9a598507cc9e9ff2ea8.html",
+    "sha256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a",
+    "reusedFrom": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html"
+  },
+  {
+    "url": "https://www.kanko-setagaya.jp/?p=we-page-entry&spot=265539&nav=none",
+    "fetchedAt": "2026-11-05T04:24:52.745400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-setagaya.jp:443/sightseeing/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bd14b1c5cd270c2a8e4f.html",
+    "sha256": "1104fc16d8b0d2aeb86e2b23f1a1601f75dc124f375e5d87d96245c01e67b32f",
+    "reusedFrom": "data/evidence/national/kanto-south/bd14b1c5cd270c2a8e4f.html"
+  },
+  {
+    "url": "https://www.kanko-shinjuku.jp/office/-/index.html",
+    "fetchedAt": "2026-11-05T04:24:52.845303+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kanko-shinjuku.jp/areainfo/-/office.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-9df030d3419f1218598a.html",
+    "sha256": "ea4d428008791a0e45c8919bea884c37d47929003622a78bb0c6e71d28448ccb",
+    "reusedFrom": "data/evidence/national/kanto-south/9df030d3419f1218598a.html"
+  },
+  {
+    "url": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "fetchedAt": "2026-11-05T04:24:52.964180+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kita-bunka.com/si/si02-akabane/si02-1.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-cd50cd9ac45c8e481c10.html",
+    "sha256": "5cc71ab5d265c2cb2b01108607614dbd1334478265ebbdd5f998051d40f0b36b",
+    "reusedFrom": "data/evidence/national/kanto-south/cd50cd9ac45c8e481c10.html"
+  },
+  {
+    "url": "https://www.kokubunji-izumihall.jp/",
+    "fetchedAt": "2026-11-05T04:24:53.042618+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kokubunji-izumihall.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-612af23dbf257fbfdb80.html",
+    "sha256": "e62e6a14d4ca839c2b5c727b0996e4db3b881cf2e5e096d3b1ec4cb4700127e3",
+    "reusedFrom": "data/evidence/national/kanto-south/612af23dbf257fbfdb80.html"
+  },
+  {
+    "url": "https://www.kurumiru-fussa-omotenashi.com",
+    "fetchedAt": "2026-11-05T04:24:53.090712+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurumiru-fussa-omotenashi.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-bb171c9a39edbcca548a.html",
+    "sha256": "6686f608c1812e3525b43cd9efd90a46cc7e06edc7f59bb6083c84f65dbd47c1",
+    "reusedFrom": "data/evidence/national/kanto-south/bb171c9a39edbcca548a.html"
+  },
+  {
+    "url": "https://www.musashino.or.jp/place/",
+    "fetchedAt": "2026-11-05T04:24:53.383142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.musashino.or.jp/place/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-d788585a363783d56173.html",
+    "sha256": "748f07754641de98ed5270416581e405236f9a5c6fda633447f5f9ccb465c700",
+    "reusedFrom": "data/evidence/national/kanto-south/d788585a363783d56173.html"
+  },
+  {
+    "url": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+    "fetchedAt": "2026-11-05T04:24:53.385873+00:00",
+    "status": 200,
+    "finalUrl": "https://www.nerimakanko.jp/news/detail.php?notice_id=N000000021",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-506b49e9c041c49c5e74.html",
+    "sha256": "0f93dc5eb6c9827dea267da6a7e69ad0fbfc3303d1430597d4de810ade8f8b69",
+    "reusedFrom": "data/evidence/national/kanto-south/506b49e9c041c49c5e74.html"
+  },
+  {
+    "url": "https://www.ogasawaramura.com/",
+    "fetchedAt": "2026-11-05T04:24:54.179213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ogasawaramura.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-e28cb593eab0beb90b37.html",
+    "sha256": "3a1368fcdeb0e136054d162f497686c894286a11863ac913eb27fb157639c230",
+    "reusedFrom": "data/evidence/national/kanto-south/e28cb593eab0beb90b37.html"
+  },
+  {
+    "url": "https://www.omekanko.gr.jp/",
+    "fetchedAt": "2026-11-05T04:24:54.378317+00:00",
+    "status": 200,
+    "finalUrl": "https://www.omekanko.gr.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-a77d152aba70e87ebb62.html",
+    "sha256": "e81a802542e71536304023f0a91a0cd5d47aa8d9331579febecab9700129bf1a",
+    "reusedFrom": "data/evidence/national/kanto-south/a77d152aba70e87ebb62.html"
+  },
+  {
+    "url": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
+    "fetchedAt": "2026-11-05T04:24:54.636259+00:00",
+    "status": 200,
+    "finalUrl": "https://www.s-seiun.co.jp/shisetsu/higashikurume/shisetsu/plaza.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-df19685b39d318180c40.html",
+    "sha256": "e0b1bfd7fff41601354e7f5668f5764647eb83b6083f0856d3661af07b4fe744",
+    "reusedFrom": "data/evidence/national/kanto-south/df19685b39d318180c40.html"
+  },
+  {
+    "url": "https://www.tokyo-park.or.jp/park/ukima/index.html",
+    "fetchedAt": "2026-11-05T04:24:54.743694+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokyo-park.or.jp/park/ukima/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-f5e839340f05146f9a18.html",
+    "sha256": "196ffd202578ee63ad249777c130a2dbd897358d39411274e98714f1ea4d5d62",
+    "reusedFrom": "data/evidence/national/kanto-south/f5e839340f05146f9a18.html"
+  },
+  {
+    "url": "https://www.toshima-mirai.or.jp/center/a_kumin/",
+    "fetchedAt": "2026-11-05T04:24:54.786603+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshima-mirai.or.jp/center/a_kumin/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-410ca30120f99f62569d.html",
+    "sha256": "f51a3ecf7922ba77aa4ebcd3052879313a0df00ddcdc05ef43f003742f501b70",
+    "reusedFrom": "data/evidence/national/kanto-south/410ca30120f99f62569d.html"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/",
+    "fetchedAt": "2026-11-05T04:24:55.011640+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-169178eb0f114b88dd91.html",
+    "sha256": "f809efd009281c19c4416c3b7f61ec40eb104d60ddd672f82807484cdc8e9d62",
+    "reusedFrom": "data/evidence/national/kanto-south/169178eb0f114b88dd91.html"
+  },
+  {
+    "url": "https://www.toshizukuri.or.jp/information/20251125_manhoru.html",
+    "fetchedAt": "2026-11-05T04:24:56.755794+00:00",
+    "status": 200,
+    "finalUrl": "https://www.toshizukuri.or.jp/information/20251125_manhoru.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-4d9985bb4af40b5b8441.html",
+    "sha256": "f64f44bc92cff65026596aeaa962dc9309b845a506d551c5d0e56391e6688fce",
+    "reusedFrom": "data/evidence/national/kanto-south/4d9985bb4af40b5b8441.html"
+  },
+  {
+    "url": "https://www.town.hinode.tokyo.jp/",
+    "fetchedAt": "2026-11-05T04:24:55.673556+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hinode.tokyo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-62f6e161d95bab85a588.html",
+    "sha256": "37c05b41bec0616996a7dba4e23ca68fda5676382603cba826742bb9aaa74895",
+    "reusedFrom": "data/evidence/national/kanto-south/62f6e161d95bab85a588.html"
+  },
+  {
+    "url": "https://www.town.hinode.tokyo.jp/0000004462.html",
+    "fetchedAt": "2026-11-05T04:24:57.243486+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hinode.tokyo.jp/0000004462.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-56bed7cbb594a5621e9b.html",
+    "sha256": "bf0ea3aef060aa58fc080bc217b39aaa55df72a0bc05c5c9f58d39c70e94e586",
+    "reusedFrom": "data/evidence/national/kanto-south/56bed7cbb594a5621e9b.html"
+  },
+  {
+    "url": "https://www.town.mizuho.tokyo.jp/kankyo/002/001/p005171.html",
+    "fetchedAt": "2026-11-05T04:24:56.195139+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.mizuho.tokyo.jp/kankyo/002/001/p005171.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-c55739b55e49182f3201.html",
+    "sha256": "749b8350fa34817466d14c2dc2f99c854527d98f73a73635bf77457715f44a95",
+    "reusedFrom": "data/evidence/national/kanto-south/c55739b55e49182f3201.html"
+  },
+  {
+    "url": "https://www.tsurutsuru-onsen.com/",
+    "fetchedAt": "2026-11-05T04:24:58.131932+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tsurutsuru-onsen.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-811c12d7dba0f9bdf749.html",
+    "sha256": "1ac9602459ce5a47ecee05f8ad70f1a0e6926fe6651df0d46f141160dd5b602d",
+    "reusedFrom": "data/evidence/national/kanto-south/811c12d7dba0f9bdf749.html"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/aboutus/publication/web-urpress72/ur-information.html",
+    "fetchedAt": "2026-11-05T04:32:45.842952+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/aboutus/publication/web-urpress72/ur-information.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-2cc4f6d7b5d38bb291da.html",
+    "sha256": "3a456a1945792a8ed64e0f32b4064e841330816effa5564db76db4c6b181958e",
+    "reusedFrom": "data/evidence/national/kanto-south/2cc4f6d7b5d38bb291da.html"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
+    "fetchedAt": "2026-11-05T04:24:58.311603+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/chintai/kansai/osaka/counter/senri/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-30a5084b78bafc024d01.html",
+    "sha256": "7c0b7a5be0d5273f362f57cea6e1e17d1533cf14b1019c83a73702b79dddae5d",
+    "reusedFrom": "data/evidence/national/kanto-south/30a5084b78bafc024d01.html"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
+    "fetchedAt": "2026-11-05T04:24:59.918119+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/east/action/akabanedai/index.html?channel=main&msockid=2d65f8d82fc266cd3f5ded012eec6723",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8478a78a726ecbc56c25.html",
+    "sha256": "108f452f7538a5d42afc038e7409b117ae26a51b6f9145497f56973df531cde5",
+    "reusedFrom": "data/evidence/national/kanto-south/8478a78a726ecbc56c25.html"
+  },
+  {
+    "url": "https://www.ur-net.go.jp/rd_portal/manhole/",
+    "fetchedAt": "2026-11-05T04:25:01.617096+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ur-net.go.jp/rd_portal/manhole/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-b98facd32504334c4fb5.html",
+    "sha256": "74a794c0f52a757db5e83ea8cbd1af2ecd7cbcae618ade8c691079ea3d17baaf",
+    "reusedFrom": "data/evidence/national/kanto-south/b98facd32504334c4fb5.html"
+  },
+  {
+    "url": "https://www.vill.hinohara.tokyo.jp/0000001479.html",
+    "fetchedAt": "2026-11-05T04:24:59.258709+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.hinohara.tokyo.jp/0000001479.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-0f2b0ab84b7a41d8b437.html",
+    "sha256": "f6542600612a7b9c1604bf16f82463ebcd3a0a9462f88f9e9ad95628f35aeb1a",
+    "reusedFrom": "data/evidence/national/kanto-south/0f2b0ab84b7a41d8b437.html"
+  },
+  {
+    "url": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/",
+    "fetchedAt": "2026-11-05T04:24:59.615188+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-8c90ee1ef72e28def038.html",
+    "sha256": "f5b81fdc73b77d0d3ef69d3c82d7e651a8b3ae9deb8b336b868379224560e70b",
+    "reusedFrom": "data/evidence/national/kanto-south/8c90ee1ef72e28def038.html"
+  },
+  {
+    "url": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89/",
+    "fetchedAt": "2026-11-05T04:32:45.841835+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.ogasawara.tokyo.jp/kensetsu_suidou/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-tokyo/reused-6f59fe296d2c6172a4c9.html",
+    "sha256": "2b564430cc3546def67f5b280a9dc4ca8e5fdbb336fcf3e6c93a181db15ec9b6",
+    "reusedFrom": "data/evidence/national/kanto-south/6f59fe296d2c6172a4c9.html"
+  }
+]

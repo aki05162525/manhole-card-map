@@ -1,0 +1,140 @@
+// 最近チェックしたページ
+$(function () {
+
+    const recommendRecentlyAccess = (function () {
+        const m = {
+            pageId: 0,
+            recent_views_name: '',
+            recent_views: null
+        };
+
+        m.initialize = function () {
+            // パーツが無ければ描画しない
+            if ($(".recommend-recently-access").length > 0) {
+                m.pageId = 0;
+                if ($("input[name=T_PageId]").length > 0) {
+                    m.pageId = $("input[name=T_PageId]").val() ?? 0;
+                }
+                if ($("input[name=T_IdCnt]").length > 0) {
+                    m.pageId = $("input[name=T_IdCnt]").val().split(",")[0] ?? 0;
+                }
+                let subTopId = $("input[name=T_IdSubTop]").val() || 0;
+                m.recent_views_name = 'recent_views' + subTopId;
+                m.recent_views = JSON.parse(localStorage.getItem(m.recent_views_name))
+                if (m.recent_views == null) {
+                    m.recent_views = [];
+                }
+
+                let isPage = $("input[name=T_IsPage]").val() ?? false;
+                if (isPage) {
+                    saveRecentHistory();
+                }
+
+                displayRecentHistory();
+            }
+        }
+
+        function displayRecentHistory() {
+            m.recent_views.reverse();
+            let target_class = $('.recommend-recently-access').find('.recommend-box').data('list-class');
+            let recommend_box = $('.recommend-recently-access').find('.recommend-box');
+            if (recommend_box.children().length > 0) {
+                return;
+            }
+
+            if (m.recent_views.length == 0 ||
+                (m.recent_views.length == 1 && location.href == m.recent_views[0].url) ||
+                (m.recent_views.length > 1 && typeof m.recent_views[0].title == 'undefined')
+            ) {
+                let text = $("<p></p>", {
+                    text: '最近チェックしたページはありません。'
+                })
+                recommend_box.append(text);
+            } else {
+                let un_order_list = $("<ul></ul>", {
+                    class: target_class,
+                });
+                recommend_box.append(un_order_list);
+
+                for (var i = 0; i < m.recent_views.length; i++) {
+                    if (!m.recent_views[i].title) { // 空のタイトルは描画しない
+                        continue;
+                    }
+
+                    // 現在と同じページは表示しない
+                    if (location.href == m.recent_views[i].url || typeof m.recent_views[i].title == 'undefined' || m.recent_views[i].id == m.pageId) {
+                        continue;
+                    }
+
+                    var anchor = $('<a></a>', {
+                        href: m.recent_views[i].url,
+                        text: m.recent_views[i].title
+                    });
+                    var className = 'odd';
+                    if ((i + 1) % 2 === 0) {
+                        className = 'even';
+                    }
+                    var list_item = $('<li></li>', {
+                        class: 'unit unit' + i + ' ' + className,
+                    }).html(anchor);
+                    recommend_box.find('ul').append(list_item);
+                }
+            }
+        }
+
+        function saveRecentHistory() {
+            let id404 = $("input[name=T_Id404]").val();
+            let is404 = m.pageId == 0 || m.pageId === id404;
+            let static = $("input[name=T_IsStatic]").val();
+            let update_recent_views = [];
+
+            let url = location.href;
+            if (static) {
+                url = document.querySelector("link[rel='canonical']").getAttribute("href");
+            }
+
+            if (!$("input[name=T_Title]").val()) {
+                return;
+            }
+
+            let now_view = {
+                id: m.pageId,
+                title: $("input[name=T_Title]").val(),
+                url: url,
+                time: new Date(),
+            };
+
+            if (now_view) {
+                for (let i = 0; i < m.recent_views.length; i++) {
+                    let diffDay = (new Date() - new Date(m.recent_views[i].time)) / 1000 / 60 / 60 / 24; // 日付差分
+
+                    if (diffDay > 7) { // 7日より前は削除
+                        continue;
+                    }
+
+                    if (is404 && m.recent_views[i].url === now_view.url) { // 過去にアクセスしたページが404なら削除する
+                        continue;
+                    }
+
+                    if (m.recent_views[i].id !== now_view.id) {
+                        update_recent_views.push(m.recent_views[i]);
+                    }
+                }
+                if (!is404) {
+                    update_recent_views.push(now_view);
+                }
+            } else {
+                update_recent_views = m.recent_views;
+            }
+
+            if (update_recent_views.length > 11) {
+                update_recent_views.shift();
+            }
+            localStorage.setItem(m.recent_views_name, JSON.stringify(update_recent_views));
+        }
+
+        return m;
+    })();
+
+    recommendRecentlyAccess.initialize();
+});

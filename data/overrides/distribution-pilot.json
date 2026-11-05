@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05",
+  "scope": "30カードの公式情報を調査。13カードに位置確認済み窓口、別の6カードに終了・休止の根拠付き訂正あり。11カードは採用待ち。多摩Aの平日窓口と逗子の休日時間は部分確認。小田原Aは共有施設の位置あり、平日窓口の位置未確認。",
+  "cards": [
+    {
+      "cardId": "11-100-A001",
+      "city": "さいたま市 (A001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.saitama.lg.jp/001/006/003/009/001/p046951.html"
+      ]
+    },
+    {
+      "cardId": "11-100-B001",
+      "city": "さいたま市 (B001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.saitama.lg.jp/001/006/003/009/001/p046951.html"
+      ]
+    },
+    {
+      "cardId": "14-201-B001",
+      "city": "横須賀市 (B001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html"
+      ]
+    },
+    {
+      "cardId": "14-201-A001",
+      "city": "横須賀市 (A001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html"
+      ]
+    },
+    {
+      "cardId": "14-206-B001",
+      "city": "小田原市 (B001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html"
+      ]
+    },
+    {
+      "cardId": "14-206-C001",
+      "city": "小田原市 (C001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html"
+      ]
+    },
+    {
+      "cardId": "14-206-F001",
+      "city": "小田原市 (F001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/lifelong/culture/historical_structure/p25874.html"
+      ]
+    },
+    {
+      "cardId": "14-208-A001",
+      "city": "逗子市",
+      "state": "partial",
+      "reason": "平日・休日の窓口と建物位置は採用済み。休日の受付時間は公式案内に独立した明記がなく未確定。",
+      "sourceUrls": [
+        "https://www.city.zushi.kanagawa.jp/kurashi/suido/1001970/1001982/1010948.html"
+      ]
+    },
+    {
+      "cardId": "13-224-A001",
+      "city": "多摩市 （A001）",
+      "state": "partial",
+      "reason": "休日の永山公民館のみ採用済み。平日の市役所窓口は位置確認待ち。",
+      "sourceUrls": [
+        "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html"
+      ]
+    },
+    {
+      "cardId": "13-224-B001",
+      "city": "多摩市 （B001）",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html"
+      ]
+    },
+    {
+      "cardId": "13-224-C001",
+      "city": "多摩市 （C001）",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html"
+      ]
+    },
+    {
+      "cardId": "13-224-D001",
+      "city": "多摩市 (D001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html"
+      ]
+    },
+    {
+      "cardId": "13-214-D001",
+      "city": "国分寺市 (D001)",
+      "state": "verified",
+      "reason": "配布案内と施設地図リンクをAI照合。現地未確認。",
+      "sourceUrls": [
+        "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html"
+      ]
+    },
+    {
+      "cardId": "14-201-C001",
+      "city": "横須賀市 (C001)",
+      "state": "pending",
+      "reason": "2026-10-26〜11-13はヴェルニー公園管理事務所へ一時移転。旧施設位置を現在の配布先として承認しない。代替窓口の明示座標未確認。",
+      "sourceUrls": [
+        "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokosuka.html"
+    },
+    {
+      "cardId": "14-201-D001",
+      "city": "横須賀市 (D001)",
+      "state": "pending",
+      "reason": "通常窓口と休業時窓口を原文で確認。各窓口の明示座標と条件対応が未完了。",
+      "sourceUrls": [
+        "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokosuka.html"
+    },
+    {
+      "cardId": "14-130-A001",
+      "city": "川崎市 (A001)",
+      "state": "pending",
+      "reason": "公式配布先・時間を確認。きたテラスの施設座標の根拠が未確認。",
+      "sourceUrls": [
+        "https://www.city.kawasaki.jp/800/page/0000088344.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/kawasaki.html"
+    },
+    {
+      "cardId": "14-130-B001",
+      "city": "川崎市 (B001)",
+      "state": "pending",
+      "reason": "平日予約見学と土日祝の別施設配布。窓口別の施設座標の根拠が未確認。",
+      "sourceUrls": [
+        "https://www.city.kawasaki.jp/800/page/0000088344.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/kawasaki.html"
+    },
+    {
+      "cardId": "14-130-C001",
+      "city": "川崎市 (C001)",
+      "state": "pending",
+      "reason": "公式配布先・休館条件を確認。施設案内に採用可能な明示座標を見つけられず。",
+      "sourceUrls": [
+        "https://www.city.kawasaki.jp/800/page/0000088344.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/kawasaki.html"
+    },
+    {
+      "cardId": "14-100-A001",
+      "city": "横浜市 （A001）",
+      "state": "pending",
+      "reason": "横浜駅観光案内所、10〜17時を確認。施設の明示座標が未確認。",
+      "sourceUrls": [
+        "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokohama-card.html"
+    },
+    {
+      "cardId": "14-100-B001",
+      "city": "横浜市 （B001）",
+      "state": "pending",
+      "reason": "区役所とみなくるの2窓口を確認。窓口ごとの明示座標とみなくる配布時間が未確認。",
+      "sourceUrls": [
+        "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokohama-asahi.html"
+    },
+    {
+      "cardId": "14-100-C001",
+      "city": "横浜市 （C001）",
+      "state": "pending",
+      "reason": "旧だいちゃん版は蓋移設・座標変更後のカードへ更新。旧カード終了の扱いとD001との対応を要確認。",
+      "sourceUrls": [
+        "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokohama-card.html"
+    },
+    {
+      "cardId": "14-100-D001",
+      "city": "横浜市 （D001）",
+      "state": "pending",
+      "reason": "桜木町駅観光案内所、10〜17時を確認。施設の明示座標が未確認。",
+      "sourceUrls": [
+        "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/yokohama-card.html"
+    },
+    {
+      "cardId": "14-205-A001",
+      "city": "藤沢市 (A001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。休止期限後は自動再開せず要再確認。",
+      "sourceUrls": [
+        "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/fujisawa-card.html"
+    },
+    {
+      "cardId": "14-205-B001",
+      "city": "藤沢市 (B001)",
+      "state": "pending",
+      "reason": "ふじさわ宿交流館配布を確認。施設ページ埋込地図の表示中心とマーカー位置を区別できず座標採用を保留。",
+      "sourceUrls": [
+        "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/fujisawa-card.html"
+    },
+    {
+      "cardId": "14-206-A001",
+      "city": "小田原市 (A001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-card.html"
+    },
+    {
+      "cardId": "14-206-D001",
+      "city": "小田原市 (D001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-card.html"
+    },
+    {
+      "cardId": "14-206-E001",
+      "city": "小田原市 (E001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。",
+      "sourceUrls": [
+        "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-card.html"
+    },
+    {
+      "cardId": "14-301-B001",
+      "city": "葉山町(B001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。",
+      "sourceUrls": [
+        "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/hayama-card.html"
+    },
+    {
+      "cardId": "14-301-C001",
+      "city": "葉山町 (C001)",
+      "state": "status-reviewed",
+      "reason": "配布終了・休止を原典から採用済み。座標未確認の窓口はピン表示しない。",
+      "sourceUrls": [
+        "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/hayama-card.html"
+    },
+    {
+      "cardId": "14-207-B001",
+      "city": "茅ヶ崎市 (B001)",
+      "state": "pending",
+      "reason": "道の駅湘南ちがさきの配布案内を確認。施設の明示座標が未確認。",
+      "sourceUrls": [
+        "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html"
+      ],
+      "snapshotPath": "data/evidence/distribution-20261105/chigasaki-card.html"
+    }
+  ]
+}

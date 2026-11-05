@@ -1,0 +1,45 @@
+// JavaScript Document
+"use strict";
+
+$(function(){
+	$('#grs').on("submit",function(e){
+		if($('#setc').val().length) {
+			$('#saddr').val($('#setc').val());
+		} else {
+			if($('input[name="start"]:checked').length) {
+				if($('input[name="start"]:checked').data('lat') && $('input[name="start"]:checked').data('lng')) {
+					$('#saddr').val($('input[name="start"]:checked').data('lat')+','+$('input[name="start"]:checked').data('lng'));
+				} else {
+					$('#saddr').val($('input[name="start"]:checked').val());	
+				}
+			}
+		}
+		if($('#detc').val().length) {
+			$('#daddr').val($('#detc').val());
+		} else {
+			if($('input[name="end"]:checked').length) {
+				if($('input[name="end"]:checked').data('lat') && $('input[name="end"]:checked').data('lng')) {
+					$('#daddr').val($('input[name="end"]:checked').data('lat')+','+$('input[name="end"]:checked').data('lng'));
+				} else {
+					$('#daddr').val($('input[name="end"]:checked').val());
+				}
+			}
+		}
+		/*
+		if($('input[name="start"]:checked').length) {
+			if($('input[name="start"]:checked').data('lat') && $('input[name="start"]:checked').data('lng')) {
+				$('#saddr').val($('input[name="start"]:checked').data('lat')+','+$('input[name="start"]:checked').data('lng'));
+			} else {
+				$('#saddr').val($('input[name="start"]:checked').val());	
+			}
+		}
+		if($('input[name="end"]:checked').length) {
+			if($('input[name="end"]:checked').data('lat') && $('input[name="end"]:checked').data('lng')) {
+				$('#daddr').val($('input[name="end"]:checked').data('lat')+','+$('input[name="end"]:checked').data('lng'));
+			} else {
+				$('#daddr').val($('input[name="end"]:checked').val());
+			}
+		}
+		*/
+	});
+});

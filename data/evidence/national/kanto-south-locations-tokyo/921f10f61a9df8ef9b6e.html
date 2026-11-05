@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QEN4ZLNMX0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QEN4ZLNMX0');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Language" content="ja">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>見学のご案内 ｜ URまちとくらしのミュージアム｜UR都市機構</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/viewport-extra@2.0.1/dist/iife/viewport-extra.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // タブレット端末かどうかを判定
+    var ua = navigator.userAgent
+    var isSmartPhone = ua.indexOf('iPhone') > -1 ||
+        (ua.indexOf('Android') > -1 && ua.indexOf('Mobile') > -1)
+    var isTablet = !isSmartPhone && (
+        ua.indexOf('iPad') > -1 ||
+        (ua.indexOf('Macintosh') > -1 && 'ontouchend' in document) ||
+        ua.indexOf('Android') > -1
+    )
+    // タブレット端末でのみ最小幅を設定
+    if (isTablet) ViewportExtra.setContent({ minWidth: 1100 })
+})
+</script>
+
+<!--曜日別表示非表示-->
+<script>
+function Settoday(){
+  var today = new Date() ;
+  var weekday = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ] ;  
+  document.getElementById(weekday[today.getDay()]).style.display="block";
+}
+</script>
+
+<!--開館休館切替-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+ if($('.dayname td div').hasClass('today holiday-all')){
+  $('.onoff').addClass('off');
+  $('.onoff').html('<h2 class="headerbtm_museumreserve_pc"><img src="https://akabanemuseum.ur-net.go.jp/img/common/ticketBTM_Close_pc.svg" alt=""></h2><h2 class="headerbtm_museumreserve_sp"><img src="https://akabanemuseum.ur-net.go.jp/img/common/ticketBTM_Close_sp.svg" alt=""></h2>');
+ }else{
+  $('.onoff').addClass('on');
+  $('.onoff').html('<h2 class="headerbtm_museumreserve_pc"><img src="https://akabanemuseum.ur-net.go.jp/img/common/ticketBTM_Open_pc.svg" alt=""></h2><h2 class="headerbtm_museumreserve_sp"><img src="https://akabanemuseum.ur-net.go.jp/img/common/ticketBTM_Open_sp.svg" alt=""></h2>');
+ }
+});
+</script>
+
+
+<!--OGP-->
+<meta property="og:title" content="見学のご案内 ｜ URまちとくらしのミュージアム｜UR都市機構" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://akabanemuseum.ur-net.go.jp/" />
+<meta property="og:image" content="https://akabanemuseum.ur-net.go.jp/img/OGP.jpg" />
+<meta property="og:site_name" content="URまちとくらしのミュージアム｜UR都市機構" />
+<meta property="og:description" content="公団・UR都市機構は、1955年からずっと、新たなくらし方を探求してきました。「URまちとくらしのミュージアム」は、その過去・現在・未来を、体験しながら一望します。">
+<!--OGP-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="見学のご案内 ｜ URまちとくらしのミュージアム｜UR都市機構">
+<meta name="twitter:description" content="公団・UR都市機構は、1955年からずっと、新たなくらし方を探求してきました。「URまちとくらしのミュージアム」は、その過去・現在・未来を、体験しながら一望します。">
+<meta name="twitter:image" content="https://akabanemuseum.ur-net.go.jp/img/OGP.jpg" />
+<!--FONT--> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- アイコン指定(iOS/Android込) -->
+<link rel="shortcut" href="favicon.ico">
+<link rel="icon" type="image/png" href="https://akabanemuseum.ur-net.go.jp/img/favicon_180.png" sizes="16x16">
+<link rel="apple-touch-icon" sizes="180x180" href="https://akabanemuseum.ur-net.go.jp/img/SP_180.png">
+<link rel="apple-touch-icon" sizes="192x192" href="https://akabanemuseum.ur-net.go.jp/img/SP_192.png">
+
+<!--SCC-->
+<link rel="stylesheet" type="text/css" href="https://akabanemuseum.ur-net.go.jp/css/reset.css">
+<link rel="stylesheet" type="text/css" href="https://akabanemuseum.ur-net.go.jp/css/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="https://akabanemuseum.ur-net.go.jp/css/slick.css">
+<link rel="stylesheet" type="text/css" href="https://akabanemuseum.ur-net.go.jp/css/style.css?v1.08">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://akabanemuseum.ur-net.go.jp/css/toppopup.css?v1.09">
+
+
+<!--iOS対応--> 
+<script type="text/javascript">
+// forked from tonkotsuboy's "Mobile Safariで最初にスクロールした時に発火されるリサイズイベント" http://jsdo.it/tonkotsuboy/cyeC
+// ウインドウの横幅を保持
+var currentWidth = window.innerWidth;
+window.addEventListener("resize", function() {
+	if (currentWidth == window.innerWidth) {
+		// ウインドウ横幅が変わっていないため処理をキャンセル。
+		return;
+	}
+	// ウインドウ横幅が変わったのでリサイズと見なす。
+	// 横幅を更新
+	currentWidth = window.innerWidth;
+});
+</script>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://akabanemuseum.ur-net.go.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fakabanemuseum.ur-net.go.jp%2Finformation%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://akabanemuseum.ur-net.go.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fakabanemuseum.ur-net.go.jp%2Finformation%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='xo-event-calendar-css' href='https://akabanemuseum.ur-net.go.jp/urmgcms/wp-content/plugins/xo-event-calendar/css/xo-event-calendar.css?ver=3.2.10' media='all' />
+<link rel='stylesheet' id='xo-event-calendar-event-calendar-css' href='https://akabanemuseum.ur-net.go.jp/urmgcms/wp-content/plugins/xo-event-calendar/build/event-calendar/style-index.css?ver=3.2.10' media='all' />
+<link rel="https://api.w.org/" href="https://akabanemuseum.ur-net.go.jp/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://akabanemuseum.ur-net.go.jp/wp-json/wp/v2/pages/24" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://akabanemuseum.ur-net.go.jp/urmgcms/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<link rel="canonical" href="https://akabanemuseum.ur-net.go.jp/information/" />
+<link rel='shortlink' href='https://akabanemuseum.ur-net.go.jp/?p=24' />
+</head>
+  <body id="wrap" onload="Settoday();">
+<header>
+<!---------------------------- popup チケット ---------------------------->
+<div id="popup" class="popup">
+<div class="popup-inner">
+<p class="popup_read00">外部サイトに移動します。</p>
+<p class="popup_read01">ここから先はグッドフェローズが管理しているサイトへ移動します。<br>
+ここから先は当ミュージアムが管理するサイトではありません。<br>
+外部ウェブサイトのご利用にあたっては、各ウェブサイトの利用条件、個人情報保護方針等をご確認の上ご利用ください。<br>
+ご不明な点は、各ウェブサイトの運営会社に直接お問い合わせください。</p>
+<p class="popup_read02"><a href="https://webket.jp/pc/ticket/index?fc=00439&ac=8001" target="_blank">https://webket.jp/pc/ticket/index?fc=00439&ac=8001</a></p>
+</div>
+<div id="bg-black" class="bg-black"></div>
+</div>
+<!---------------------------- popup チケット ---------------------------->
+
+<!---------------------------- popup　インスタ ---------------------------->
+<div id="popup_is" class="popup_is">
+  <div class="popup-inner">
+    <p class="popup_read00">外部サイトに移動します。</p>
+    <p class="popup_read01">ここから先は外部ウェブサイトへ移動します。<br>
+    ここから先は当ミュージアムが管理するサイトではありません。<br>
+    外部ウェブサイトのご利用にあたっては、各ウェブサイトの利用条件、個人情報保護方針等をご確認の上ご利用ください。<br>
+    ご不明な点は、各ウェブサイトの運営会社に直接お問い合わせください。</p>
+    <p class="popup_read02"><a href="https://www.instagram.com/ur_museum/" target="_blank">https://www.instagram.com/ur_museum/</a></p>
+  </div>
+  <div id="bg-blackis" class="bg-black"></div>
+</div>
+<!---------------------------- popup インスタ ---------------------------->
+
+<div id="show-btn" class="btn btn-primary onoff"></div>
+
+<div class="btn btn-primary" data-popup-target="popup_is">
+<p class="headerbtm_instagram_pc">
+<img src="/img/common/footer_instagram_wh_pc.svg" alt="ＵＲまちとくらしのミュージアム インスタグラム"/>
+</p>
+</div>
+
+
+<section id="header">
+<div class="header_pc">
+<h1 class="header_museumlogo"><a href="https://akabanemuseum.ur-net.go.jp/"><img src="https://akabanemuseum.ur-net.go.jp/img/common/header_museumlogo.svg" alt="URまちとくらしのミュージアム"/></a></h1>
+<div class="globalOpenMenuPc">
+<ul class="pcmenu00">
+<li><a href="https://akabanemuseum.ur-net.go.jp/museumguide/">ミュージアムガイド</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/">見学のご案内</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/#access">アクセス</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/contact/">お問い合わせ</a></li>
+<li class="newslink"><a href="https://akabanemuseum.ur-net.go.jp/news/">お知らせ</a></li>
+</ul>
+</div>
+<div class="hamburger_pc"> <span></span> <span></span> <span></span></div>
+<nav class="globalMenuPc">
+<ul class="pcmenu01">
+<li><a href="https://akabanemuseum.ur-net.go.jp/">トップページ</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/museumguide/">ミュージアムガイド</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/events/">イベント</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/news/">お知らせ</a></li>
+</ul>
+<ul class="pcmenu02">
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/">見学のご案内</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/#access">アクセス</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/contact/">お問い合わせ（よくあるご質問）</a></li>
+<li id="show-link01">来館予約</li>
+</ul>
+<ul class="pcmenu03">
+<li><a href="https://akabanemuseum.ur-net.go.jp/wedsitenote/">本ウェブサイトご利用にあたって</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/privacypolicy/">プライバシーポリシー</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/sitemap/">サイトマップ</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/pdf/URmuseum_Flyer.pdf" target="_blank">チラシ(PDF)</a></li>
+</ul>
+</nav>
+</div>
+<div class="header_sp">
+<div class="hamburger_sp"> <span></span> <span></span> <span></span></div>
+<nav class="globalMenuSp">
+<ul>
+<li><a href="https://akabanemuseum.ur-net.go.jp/">トップページ</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/museumguide/">ミュージアムガイド</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/events/">イベント</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/news/">お知らせ</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/">見学のご案内</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/information/#access">アクセス</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/contact/">お問い合わせ（よくあるご質問）</a></li>
+<li id="https://akabanemuseum.ur-net.go.jp/show-link02">来館予約</li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/wedsitenote/">本ウェブサイトご利用にあたって</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/privacypolicy/">プライバシーポリシー</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/sitemap/">サイトマップ</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/pdf/URmuseum_Flyer.pdf" target="_blank">チラシ(PDF)</a></li>
+<li>
+<div class="btn btn-primary" data-popup-target="popup_is">
+<p class="spmenu_is"><img src="/img/common/footer_instagram_wh_sp.svg" alt=""/></p>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</section>
+</header>
+
+
+<!-------------------------------------------------------------------------------------------------------> 
+<section id="information">
+<div class="sub_back03">
+<div class="information">
+<h1 class="sp_headerlogo"><a href="https://akabanemuseum.ur-net.go.jp/"><img src="https://akabanemuseum.ur-net.go.jp/img/common/header_museumlogo.svg" alt="URまちとくらしのミュージアム"/></a></h1>
+
+<div class="information_title_wrap">
+<div class="subconts_title">
+<h3>Information</h3>
+<p class="bar bars_information">&nbsp;</p>
+<p class="titles">見学のご案内</p>
+</div>
+
+</div>
+
+<div class="contact_wrap021">
+<h4>開館時間・休館日</h4>
+<div class="information_wrap021">
+
+<table border="0" cellpadding="0" cellspacing="0" class="information_wrap01tt">
+<tr>
+<th>開館時間</th>
+<td>9:45～17:00</td>
+</tr>
+<tr>
+<th>見学方法</th>
+<td>事前予約制のツアー見学のみ。<br>
+10:00～／13:00～／15:00～（各回90分程度）<br>
+各回5分前より受付いたします。</td>
+</tr>
+<tr>
+<th>定員</th>
+<td>各回20名</td>
+</tr>
+<tr>
+<th>休館日</th>
+<td>水曜日・日曜日・祝日（年末年始・臨時休館あり）</td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+
+<div class="contact_wrap024">
+<h4>入場料・予約</h4>
+<div class="information_wrap021">
+<p class="information_catch01">入場無料</p>
+<p class="information_read02">※予約受付期間　<br class="br01">見学2か月前の1日から前日まで。<br>
+2025年12月19日（金）開催分より、当日予約ができます。</p>
+<p class="information_read02">※団体予約はお問い合わせフォームからご連絡ください。見学6か月前からお受けします。<br>
+＜団体予約の対象＞ <br class="br01">保育園・幼稚園・認定こども園、<br class="br01">小・中学校、特別支援学校、高等学校、<br class="br01">中等教育学校、<br class="br02">高等専門学校、大学、<br class="br01">短期大学、専門学校</p>
+<p class="information_read03">※来館予約サイトについては、株式会社グッドフェローズが管理しているサイトです。（2025.12.1現在）</p>
+
+
+<div class="informationBtm01">
+<div class="informationBtm00wrap" id="show-link03">来館予約をする</div>
+<div class="informationBtm02wrap"><a href="contact/">お問い合わせフォーム</a></div>
+</div>
+
+
+</div>
+</div>
+
+<div class="contact_wrap024">
+<h4>来館時の注意事項</h4>
+<div class="information_wrap021">
+<p class="information_read02">・事前予約制のツアー見学です。（約90分/日本語対応のみ）</p>
+<p class="information_read02">・ツアーでご案内する館内エリアは保存のため土足禁止とさせていただきます。シューズカバーを配布いたしますので、着用の上、ご参加いただきます。</p>
+<p class="information_read02">・ツアー中は途中休憩がございません。階段や館内を歩いて移動いただきますため、動きやすい履物をお勧めいたします。</p>
+<p class="information_read02">・ヒールの高い靴や細い靴は、復元住戸内の床面を傷める恐れがございますため、ご遠慮くださいますようお願いいたします。</p>
+<p class="information_read03">・その他、よくあるご質問は<a href="contact/">こちら</a>をご覧ください。</p>
+
+
+
+</div>
+</div>
+
+<div class="contact_wrap024">
+<h4>開館カレンダー</h4>
+
+<div class="information_wrap021">
+
+<div  id="xo-event-calendar-1" class="xo-event-calendar" ><div class="calendars xo-months" ><div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-10',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2026年 11月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">1</div></td><td><div >2</div></td><td><div class="holiday-all" style="background-color: #dddddd;">3</div></td><td><div class="holiday-all" style="background-color: #dddddd;">4</div></td><td><div class="today" >5</div></td><td><div >6</div></td><td><div >7</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-event" style="background-color: #f39531;">8</div></td><td><div >9</div></td><td><div >10</div></td><td><div class="holiday-all" style="background-color: #dddddd;">11</div></td><td><div >12</div></td><td><div >13</div></td><td><div >14</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">15</div></td><td><div >16</div></td><td><div >17</div></td><td><div class="holiday-all" style="background-color: #dddddd;">18</div></td><td><div >19</div></td><td><div >20</div></td><td><div >21</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">22</div></td><td><div class="holiday-all" style="background-color: #dddddd;">23</div></td><td><div >24</div></td><td><div class="holiday-all" style="background-color: #dddddd;">25</div></td><td><div >26</div></td><td><div >27</div></td><td><div >28</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">29</div></td><td><div >30</div></td><td><div class="other-month" >1</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">2</div></td><td><div class="other-month" >3</div></td><td><div class="other-month" >4</div></td><td><div class="other-month" >5</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+<div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-11',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2026年 12月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="other-month holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="other-month" >30</div></td><td><div >1</div></td><td><div class="holiday-all" style="background-color: #dddddd;">2</div></td><td><div >3</div></td><td><div >4</div></td><td><div >5</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">6</div></td><td><div >7</div></td><td><div >8</div></td><td><div class="holiday-all" style="background-color: #dddddd;">9</div></td><td><div >10</div></td><td><div >11</div></td><td><div >12</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">13</div></td><td><div >14</div></td><td><div >15</div></td><td><div class="holiday-all" style="background-color: #dddddd;">16</div></td><td><div >17</div></td><td><div >18</div></td><td><div >19</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">20</div></td><td><div >21</div></td><td><div >22</div></td><td><div class="holiday-all" style="background-color: #dddddd;">23</div></td><td><div >24</div></td><td><div >25</div></td><td><div >26</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">27</div></td><td><div >28</div></td><td><div class="holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="holiday-all" style="background-color: #dddddd;">30</div></td><td><div class="holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">1</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">2</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+<div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2027年 1月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="other-month holiday-all" style="background-color: #dddddd;">27</div></td><td><div class="other-month" >28</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">30</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="holiday-all" style="background-color: #dddddd;">1</div></td><td><div class="holiday-all" style="background-color: #dddddd;">2</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">3</div></td><td><div >4</div></td><td><div >5</div></td><td><div class="holiday-all" style="background-color: #dddddd;">6</div></td><td><div >7</div></td><td><div >8</div></td><td><div >9</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">10</div></td><td><div class="holiday-all" style="background-color: #dddddd;">11</div></td><td><div >12</div></td><td><div class="holiday-all" style="background-color: #dddddd;">13</div></td><td><div >14</div></td><td><div >15</div></td><td><div >16</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">17</div></td><td><div >18</div></td><td><div >19</div></td><td><div class="holiday-all" style="background-color: #dddddd;">20</div></td><td><div >21</div></td><td><div >22</div></td><td><div >23</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">24</div></td><td><div >25</div></td><td><div >26</div></td><td><div class="holiday-all" style="background-color: #dddddd;">27</div></td><td><div >28</div></td><td><div >29</div></td><td><div >30</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="other-month" >1</div></td><td><div class="other-month" >2</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">3</div></td><td><div class="other-month" >4</div></td><td><div class="other-month" >5</div></td><td><div class="other-month" >6</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+</div><div class="holiday-titles" ><p class="holiday-title"><span style="background-color: #dddddd;"></span>休館日</p><p class="holiday-title"><span style="background-color: #f39531;"></span>特別営業</p></div><div class="loading-animation"></div></div>
+
+
+<p class="calcnote01">※グレーは休館日です。</p>
+<p class="calcnote02">※オレンジはイベントや特別公開等により、ツアー実施時間や回数が変更になります。詳細はお知らせをご覧ください。</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="contact_wrap024" id="access">
+<h4>アクセス</h4>
+<div class="information_wrap021">
+
+
+<div class="information_wrap022">
+<div class="information_map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.9435532073903!2d139.7159701!3d35.7767629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601893ee885a295d%3A0xae5fb738df9bb914!2z77y177yy44G-44Gh44Go44GP44KJ44GX44Gu44Of44Ol44O844K444Ki44Og!5e0!3m2!1sja!2sjp!4v1773639983230!5m2!1sja!2sjp" width="650" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div class="information_accessnote">
+<p class="accessnote">〒115-0053<br>
+東京都北区赤羽台１丁目4−50<br>
+(ヌーヴェル赤羽台(旧赤羽台団地)内)<br>
+URまちとくらしのミュージアム</p>
+<p class="information_read011">電　話：<span class="tel-link">03-3905-7550</span><br>(休館日を除く10:00～17:00)</p>
+<hr class="style-one">
+<p class="accessnote">駐車場・駐輪場はございません。<br>
+電車またはバスなどの公共交通<br>
+機関をご利用ください。</p>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="contact_wrap024">
+<h4>お問い合わせ</h4>
+<div class="information_wrap021">
+<p class="information_read011">よくあるご質問を用意させていただきました。お問い合わせの前にご利用ください。</p>
+
+
+<div class="informationBtm02">
+<div class="informationBtm02wrap"><a href="https://akabanemuseum.ur-net.go.jp/contact/">お問い合わせフォームはこちら</a></div>
+</div>
+
+</div>
+</div>
+
+<!-------------------------------------------------------------------->
+<!-- #BeginLibraryItem "/Library/museumguideBTM.lbi" -->
+<div class="museuminforwrap01">
+<div class="museuminforbtm01"><a href="https://akabanemuseum.ur-net.go.jp/museumguide/">ミュージアムガイド</a></div>
+<div class="museuminforbtm02"><a href="https://akabanemuseum.ur-net.go.jp/information/">見学のご案内</a></div>
+</div><!-- #EndLibraryItem --></div>
+</div>
+</section> 
+
+
+<!------------------------------------------------------------------------------------------------------->
+
+<div style="display: none;">
+<div  id="xo-event-calendar-1" class="xo-event-calendar" ><div class="calendars xo-months" ><div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-10',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2026年 11月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">1</div></td><td><div >2</div></td><td><div class="holiday-all" style="background-color: #dddddd;">3</div></td><td><div class="holiday-all" style="background-color: #dddddd;">4</div></td><td><div class="today" >5</div></td><td><div >6</div></td><td><div >7</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-event" style="background-color: #f39531;">8</div></td><td><div >9</div></td><td><div >10</div></td><td><div class="holiday-all" style="background-color: #dddddd;">11</div></td><td><div >12</div></td><td><div >13</div></td><td><div >14</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">15</div></td><td><div >16</div></td><td><div >17</div></td><td><div class="holiday-all" style="background-color: #dddddd;">18</div></td><td><div >19</div></td><td><div >20</div></td><td><div >21</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">22</div></td><td><div class="holiday-all" style="background-color: #dddddd;">23</div></td><td><div >24</div></td><td><div class="holiday-all" style="background-color: #dddddd;">25</div></td><td><div >26</div></td><td><div >27</div></td><td><div >28</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">29</div></td><td><div >30</div></td><td><div class="other-month" >1</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">2</div></td><td><div class="other-month" >3</div></td><td><div class="other-month" >4</div></td><td><div class="other-month" >5</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+<div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-11',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2026年 12月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="other-month holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="other-month" >30</div></td><td><div >1</div></td><td><div class="holiday-all" style="background-color: #dddddd;">2</div></td><td><div >3</div></td><td><div >4</div></td><td><div >5</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">6</div></td><td><div >7</div></td><td><div >8</div></td><td><div class="holiday-all" style="background-color: #dddddd;">9</div></td><td><div >10</div></td><td><div >11</div></td><td><div >12</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">13</div></td><td><div >14</div></td><td><div >15</div></td><td><div class="holiday-all" style="background-color: #dddddd;">16</div></td><td><div >17</div></td><td><div >18</div></td><td><div >19</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">20</div></td><td><div >21</div></td><td><div >22</div></td><td><div class="holiday-all" style="background-color: #dddddd;">23</div></td><td><div >24</div></td><td><div >25</div></td><td><div >26</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">27</div></td><td><div >28</div></td><td><div class="holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="holiday-all" style="background-color: #dddddd;">30</div></td><td><div class="holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">1</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">2</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+<div class="calendar xo-month-wrap"><table class="xo-month"><caption><div class="month-header"><button type="button" class="month-prev" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-prev">PREV</span></button><span class="calendar-caption">2027年 1月</span><button type="button" class="month-next" onclick="this.disabled = true; xo_event_calendar_month(this,'2026-12',1,'','all,event',-1,12,0,3,1,'',1,1,'2026-11'); return false;"><span class="nav-next">NEXT</span></button></div></caption><thead><tr><th class="sunday">日</th><th class="monday">月</th><th class="tuesday">火</th><th class="wednesday">水</th><th class="thursday">木</th><th class="friday">金</th><th class="saturday">土</th></tr></thead><tbody><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="other-month holiday-all" style="background-color: #dddddd;">27</div></td><td><div class="other-month" >28</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">29</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">30</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="holiday-all" style="background-color: #dddddd;">1</div></td><td><div class="holiday-all" style="background-color: #dddddd;">2</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">3</div></td><td><div >4</div></td><td><div >5</div></td><td><div class="holiday-all" style="background-color: #dddddd;">6</div></td><td><div >7</div></td><td><div >8</div></td><td><div >9</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">10</div></td><td><div class="holiday-all" style="background-color: #dddddd;">11</div></td><td><div >12</div></td><td><div class="holiday-all" style="background-color: #dddddd;">13</div></td><td><div >14</div></td><td><div >15</div></td><td><div >16</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">17</div></td><td><div >18</div></td><td><div >19</div></td><td><div class="holiday-all" style="background-color: #dddddd;">20</div></td><td><div >21</div></td><td><div >22</div></td><td><div >23</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">24</div></td><td><div >25</div></td><td><div >26</div></td><td><div class="holiday-all" style="background-color: #dddddd;">27</div></td><td><div >28</div></td><td><div >29</div></td><td><div >30</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr><tr><td colspan="7" class="month-week"><table class="month-dayname"><tbody><tr class="dayname"><td><div class="holiday-all" style="background-color: #dddddd;">31</div></td><td><div class="other-month" >1</div></td><td><div class="other-month" >2</div></td><td><div class="other-month holiday-all" style="background-color: #dddddd;">3</div></td><td><div class="other-month" >4</div></td><td><div class="other-month" >5</div></td><td><div class="other-month" >6</div></td></tr></tbody></table><div class="month-dayname-space"></div><table class="month-event-space"><tbody><tr><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr></tbody></table></td></tr></tbody></table></div>
+</div><div class="holiday-titles" ><p class="holiday-title"><span style="background-color: #dddddd;"></span>休館日</p><p class="holiday-title"><span style="background-color: #f39531;"></span>特別営業</p></div><div class="loading-animation"></div></div>
+</div>
+
+<!------------------------------------------------------------------------------------------------------->
+<footer>
+<section id="footer">
+<div class="footer_urlogo_sub">
+
+<div class="footer_urlogowrap">
+
+<h1 class="urlogo"><a href="https://www.ur-net.go.jp/" target="_blank"><img src="/img/common/footer_urlogo.svg" class="switch" alt="ＵＲ都市機構"/></a></h1>
+</div>
+
+</div>
+<div class="footer_copyrightwrap">
+<p id="pageTopButtonlink"><a href="#wrap"><img src="https://akabanemuseum.ur-net.go.jp/img/common/goto_top_pc.svg" alt="TOP"/></a></p>
+<div class="footer_copyright">
+<div class="f_copyright">
+<div class="fmenu_instagram">
+
+<div class="btn btn-primary" data-popup-target="popup_is">
+<p class="instagram"><img src="/img/common/footer_instagram_bl_pc.svg" alt="ＵＲまちとくらしのミュージアム インスタグラム"/></p>
+</div>
+
+</div>
+<div class="fmenu_left">
+<ul>
+<li><a href="https://akabanemuseum.ur-net.go.jp/wedsitenote/">本ウェブサイトご利用にあたって</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/privacypolicy/">プライバシーポリシー</a></li>
+<li><a href="https://akabanemuseum.ur-net.go.jp/sitemap/">サイトマップ</a></li>
+</ul>
+</div>
+<div class="fmenu_right">
+<p class="">&copy;Urban Renaissance Agency All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script> 
+<script src="https://akabanemuseum.ur-net.go.jp/js/common.js"></script>
+<script src="https://akabanemuseum.ur-net.go.jp/js/css_browser_selector.js"></script>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/urmgcms/wp-*.php","/urmgcms/wp-admin/*","/urmgcms/wp-content/uploads/*","/urmgcms/wp-content/*","/urmgcms/wp-content/plugins/*","/urmgcms/wp-content/themes/machitokurashi/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="xo-event-calendar-ajax-js-extra">
+var xo_event_calendar_object = {"ajax_url":"https://akabanemuseum.ur-net.go.jp/urmgcms/wp-admin/admin-ajax.php","action":"xo_event_calendar_month"};
+var xo_simple_calendar_object = {"ajax_url":"https://akabanemuseum.ur-net.go.jp/urmgcms/wp-admin/admin-ajax.php","action":"xo_simple_calendar_month"};
+//# sourceURL=xo-event-calendar-ajax-js-extra
+</script>
+<script id="xo-event-calendar-ajax-js" src="https://akabanemuseum.ur-net.go.jp/urmgcms/wp-content/plugins/xo-event-calendar/js/ajax.js?ver=3.2.10"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://akabanemuseum.ur-net.go.jp/urmgcms/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://akabanemuseum.ur-net.go.jp/urmgcms/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>
