@@ -2,6 +2,32 @@
   "schema": 1,
   "bindings": [
     {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "identity": {
+        "name": "葉山しおさい公園",
+        "address": "神奈川県三浦郡葉山町一色2123-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "coordinate": {
+          "lat": 35.2637086,
+          "lng": 139.5785511
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+          "snapshotSHA256": "b2cc83e0d10534f6ac078d00690e1932af2765bfc6ebf0ea4533da6002ec2acf",
+          "sourceLocator": "PMTiles2026-07-01 z16/58177/25899 BldA125; hayama-followup/observation.json参照。利用者報告と町公式入口写真/第三者撮影案内板を分離して比較。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認追加候補。基準日維持、利用者回答日2026-11-06を別記。extent4096、7桁丸め後内包確認。第三者案内板の図版年代・入口棟背面輪郭は未確認。"
+        }
+      },
+      "adoptionSHA256": "317efdf97aa586feb096847e01cdcfdd45a50ada950ddd2514e91360620785c8",
+      "sourceVersion": "GSI optimal_bvmap PMTiles2026-07-01; unapproved"
+    },
+    {
       "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
       "identity": {
         "name": "三浦市役所第2分館2階上下水道部下水道課窓口",

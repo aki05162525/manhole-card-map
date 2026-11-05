@@ -8,10 +8,13 @@
       "officialUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
       "question": "休日のヨットデザインカードは、公園入口の入園受付棟で受け取れますか。",
       "resolves": "博物館AED点を公園窓口に流用せず、現配布棟を絞る。",
-      "status": "sent-to-parent-after-independent-research",
+      "status": "answered-user-report-recompared",
       "previousAnswer": "issue57キューに該当IDなし",
       "noMunicipalContact": true,
-      "answerReceived": false
+      "answerReceived": true,
+      "userReportedAt": "2026-11-06",
+      "answerRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json",
+      "resolutionRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json"
     },
     {
       "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
@@ -59,9 +62,12 @@
       "question": "公式写真の案内所は駅東側広場に面した高架下、改札の北東側にある区画ですか？",
       "resolves": "写真撮影方位と数値外形対応。施設/入口の測量は不要。",
       "sentToParent": true,
-      "status": "sent-to-parent-after-independent-research",
-      "answerReceived": false,
-      "noMunicipalContact": true
+      "status": "answered-user-report-structural-footprint-unresolved",
+      "answerReceived": true,
+      "noMunicipalContact": true,
+      "userReportedAt": "2026-11-06",
+      "answerRef": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json",
+      "resolutionRef": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json"
     }
   ],
   "historyRef": "human-questions-proposed.json"

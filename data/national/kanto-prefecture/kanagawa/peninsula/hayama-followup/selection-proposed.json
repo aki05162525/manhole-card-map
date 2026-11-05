@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "approvedForIntegration": false,
+  "reason": "追加候補案のみ、既検証9候補入力を変更しない。manifest未反映。",
+  "locations": {
+    "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/locations-proposed.json",
+    "approved": [
+      {
+        "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "sha256": "317efdf97aa586feb096847e01cdcfdd45a50ada950ddd2514e91360620785c8"
+      }
+    ]
+  },
+  "locationLifecycle": {
+    "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/lifecycle-proposed.json",
+    "sha256": "da05f89e05a0df70078f7b421ea99bcaab48bd4ee74db7b612b2e5771e88dc69"
+  }
+}

@@ -6,6 +6,10 @@
     "path": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
     "approved": [
       {
+        "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "sha256": "317efdf97aa586feb096847e01cdcfdd45a50ada950ddd2514e91360620785c8"
+      },
+      {
         "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
         "sha256": "4e641bdd7a5b3d06200f3631f0b3f37c4b0a1718a2382eb1cb13c6ee4a38fb60"
       },
@@ -45,6 +49,6 @@
   },
   "locationLifecycle": {
     "path": "data/national/kanto-prefecture/kanagawa/lifecycle-all-proposed.json",
-    "sha256": "806a7f5f45ac46b298832a906ca73a83306044a10aca0b6ec9e60a7ac10ed112"
+    "sha256": "7650de50e3c8479288b9cbd891b0d97cfaa456024be1be2d9144a30108c53bfe"
   }
 }
