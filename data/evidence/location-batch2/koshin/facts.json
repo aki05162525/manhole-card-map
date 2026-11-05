@@ -76,9 +76,9 @@
       "snapshotPath": "data/work/location-batch2/koshin/suwa-plan.pdf",
       "snapshotSHA256": "a336be16862821f10c5a3172619785bc969564ba2ddd87fd840b7a7ebd370c91",
       "fetchedAt": "2026-11-05T11:24:47.659590+00:00",
-      "locator": "physical page 8 / printed page 167; page 9 colophon",
+      "locator": "physical page 4 (令和5年3月末現在、北矢印/50m/管理本館・電気棟/A系/B系); page 8 (printed 167); page 9 colophon",
       "version": "令和4年度 諏訪湖流域下水道維持管理年報",
-      "fact": "1階の電気室側とホール側を通路が結ぶ平面図。夜間休日受付とホールは同じ管理本館内。方位・敷地内配置・地理参照数値はこの図から確定できない。",
+      "fact": "p4に全体配置図があり、方位と50mスケールを確認。管理本館・電気棟は連絡部で接続し、A系北西側に位置する。p8の2翼と連絡部、ホール・夜間休日受付の配置と整合。初版でp4を見落とし追加取得待ちとした記録を訂正。",
       "redistribution": "原本はworkのみ。事実抽出をGitへ記録。"
     },
     {
@@ -88,7 +88,7 @@
       "fetchedAt": "2026-11-05T11:24:47.659984+00:00",
       "locator": "physical page 15 アクアパル千曲の被害",
       "version": "令和元年東日本台風復旧資料。発行年月は今回未確定。現配置保証ではない。",
-      "fact": "管理本館をポンプ棟と区別。管理本館は図上で車庫の右、ポンプ棟の左上、汚泥処理棟の下。千曲川・正門・アクアパル橋との配置を確認。現行Vectorとの同定は今回未実施。",
+      "fact": "管理本館は図上で車庫の右、ポンプ棟の左上、汚泥処理棟の下。周囲の千曲川・正門・自然ふれあい公園・橋（アクア小橋と判読）を確認し今回Vectorと照合。初版のアクアパル橋という転記を訂正。",
       "redistribution": "原本はworkのみ。事実抽出をGitへ記録。"
     },
     {
@@ -99,7 +99,8 @@
       "locator": "NO=65 ゆきむら夢工房; CP932",
       "version": "市カタログ2026-10-03更新",
       "fact": "lat=36.44057454 lng=138.3074724。真田町長6090-1。CRS/点の作成方法/建物内精度は未記載。",
-      "redistribution": "原本はworkのみ。事実抽出をGitへ記録。"
+      "redistribution": "CC BY4.0を上田市カタログ本文で確認。原bytesはdata/evidence/location-batch2/koshin/ueda-tourism.csvへGit収録。リンク先の利用規約PDF自体は未取得。",
+      "trackedSnapshotPath": "data/evidence/location-batch2/koshin/ueda-tourism.csv"
     },
     {
       "sourceUrl": "https://www.mlit.go.jp/sogoseisaku/kanminrenkei/content/001767607.pdf",

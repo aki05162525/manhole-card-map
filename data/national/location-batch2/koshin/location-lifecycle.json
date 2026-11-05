@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "identity": {
+        "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+        "address": "長野県諏訪市大字豊田字湖畔1866-1"
+      },
+      "adoption": {
+        "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+        "coordinate": {
+          "lat": 36.0333033,
+          "lng": 138.0894658
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
+          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-3c366372adb1d9e39b13; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
+        }
+      },
+      "adoptionSHA256": "e2d9e0317338ce94aae7ca0dc429e894bb0efcaaafe1e07e777eef8c3051187d",
+      "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "identity": {
+        "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+        "address": "長野県諏訪市大字豊田字湖畔1866-1"
+      },
+      "adoption": {
+        "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+        "coordinate": {
+          "lat": 36.0333033,
+          "lng": 138.0894658
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
+          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-511d795c4d0bff516838; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
+        }
+      },
+      "adoptionSHA256": "e73e78a09db4309463ea06b97c727637960df9f5cdf36c83a9d9bd9c0078474d",
+      "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
+    },
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "identity": {
+        "name": "中央市役所宿日直室",
+        "address": "山梨県中央市臼井阿原301-1"
+      },
+      "adoption": {
+        "facilityId": "facility:chubu-chuo-duty-counter",
+        "coordinate": {
+          "lat": 35.5999764,
+          "lng": 138.516776
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
+          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "sourceLocator": "rows[1]; vector-inputs.json / derived-points.json facilityId=facility:chubu-chuo-duty-counter; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。外形重心が外なので建物内代表点を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
+        }
+      },
+      "adoptionSHA256": "bf03fc42d340fa2c5a6df0743d8f7c512e49a657740430fc4cf40c770008a8bf",
+      "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "identity": {
+        "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
+        "address": "長野県長野市真島町川合1060-1"
+      },
+      "adoption": {
+        "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+        "coordinate": {
+          "lat": 36.6108645,
+          "lng": 138.2214568
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
+          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "sourceLocator": "rows[2]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-59b4cce2285148bd4dfd; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
+        }
+      },
+      "adoptionSHA256": "2e0c21fafc2d92d7a1bc3a8d3fb6e27bceff1741dc69828245f0417444bcb59c",
+      "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

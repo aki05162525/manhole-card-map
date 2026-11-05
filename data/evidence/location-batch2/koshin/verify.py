@@ -37,11 +37,24 @@ def main():
     selection = read(base + 'selection.json')
     outcomes = read(base + 'outcomes.json')
     for path, expected in selection['inputSHA256'].items():
-        assert digest(path) == expected, path
+        if path != 'tools/national/manifest.json':
+            assert digest(path) == expected, path
+    manifest = read('tools/national/manifest.json')
+    historical = json.loads(json.dumps(manifest))
+    for key in ('locations', 'locationLifecycle'):
+        historical[key] = [r for r in historical.get(key, []) if not r['path'].startswith(base)]
+    historical_bytes = (json.dumps(historical, ensure_ascii=False, indent=2) + '\n').encode()
+    assert hashlib.sha256(historical_bytes).hexdigest() == selection['inputSHA256']['tools/national/manifest.json']
     snapshot = [r for r in read('data/national/issue24/priorities-snapshot.json')['rows']
                 if 'koshin.json#' in r['originalRef']]
     baseline = set(read('data/national/location-batch1/baseline.json')['assembledUnlocatedIds'])
-    ledger, _ = assemble(ROOT, read('tools/national/manifest.json'))
+    ledger, _ = assemble(ROOT, historical)
+    current, _ = assemble(ROOT, manifest)
+    current_places = {p['id']: p for p in current['places']}
+    updates = read(base + 'locations.json')['updates']
+    adopted = {r['facilityId'] for r in updates}
+    assert len(adopted) == 4
+    assert current['relations'] == ledger['relations']
     places = {p['id']: p for p in ledger['places']}
     ids = {r['facilityId'] for r in snapshot}
     assert len(ids) == 27
@@ -59,12 +72,17 @@ def main():
         assert all(resolve(ref)['facilityId'] == row['facilityId'] for ref in row['reviewRefs'])
         assert row['reason'] and row['previousFinding']
     for row in outcomes['rows']:
-        assert row['decision'] == 'held' and row['coordinate'] is None
+        if row['facilityId'] in adopted:
+            assert row['decision'] in ('proposed', 'adopted')
+            assert current_places[row['facilityId']]['coordinate'] == row['coordinate']
+        else:
+            assert row['decision'] == 'held' and row['coordinate'] is None
+            assert not current_places[row['facilityId']].get('coordinate')
         assert row['stopCondition'] and row['resumeCondition'] and row['newMethod']
         for ref in row['factRefs']:
             resolve(ref)
     proposals = read(base + 'proposals.json')
-    assert proposals['updates'] == proposals['bindings'] == []
+    assert proposals['updates'] == updates
     spec = read(ev + 'vector-inputs.json')
     for row in spec['rows']:
         assert digest(ev + row['file']) == row['sha256']
@@ -74,6 +92,9 @@ def main():
         assert digest(row['path']) == row['sha256']
     ueda = next(r for r in read(ev + 'retrievals.json')['rows'] if r['file'].endswith('/ueda-tourism.csv'))
     assert digest(ev + 'ueda-tourism.csv') == ueda['sha256']
+    comparison = read(ev + 'building-comparison.json')
+    for path, expected in comparison['filesSHA256'].items():
+        assert digest(path) == expected
     raw_checks = 0
     if args.with_work:
         for row in read(ev + 'retrievals.json')['rows']:
@@ -85,8 +106,8 @@ def main():
             raw_checks += 1
         for row in facts['facts']:
             assert digest(row['snapshotPath']) == row['snapshotSHA256']
-    print(json.dumps({'regionUnlocated': 27, 'selected': 8, 'held': 8,
-                      'adopted': 0, 'nationalLedgerUnlocated': 608,
+    print(json.dumps({'baselineRegionUnlocated': 27, 'selected': 8, 'held': 4,
+                      'integratedProposals': 4, 'currentRegionUnlocated': 23, 'currentNationalLedgerUnlocated': 604,
                       'localRawHashChecks': raw_checks}, ensure_ascii=False))
 
 

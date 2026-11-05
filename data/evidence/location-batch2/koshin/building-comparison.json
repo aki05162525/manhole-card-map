@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "preparedAt": "2026-11-05T11:54:24.261728+00:00",
+  "source": "国土地理院最適化ベクトルタイルを加工して作成。PDL1.0、試験公開（基本測量成果以外）。2026-07-01版。",
+  "filesSHA256": {
+    "data/evidence/location-batch2/koshin/suwa-tile.pbf.gz": "8a169696ff275b61590177812161e67a4a2ee7319e5b89d1a8e1debc7658d39e",
+    "data/evidence/location-batch2/koshin/chuo-tile.pbf.gz": "c6a20078fc3c04dc25f405e09278a345ff2b97e143475419dead385440d26e33",
+    "data/evidence/location-batch2/koshin/chikuma-sw-tile.pbf.gz": "8af198570c637c1698ee8cd047f9c76b10a543da8e1d173f9d836c3a60c026ac",
+    "data/evidence/location-batch2/koshin/chikuma-nw-tile.pbf.gz": "1ab1adea587f38b1124abec2a135bde35f49aa140104c4f1490e9dec837ad0be",
+    "data/evidence/location-batch2/koshin/chikuma-ne-tile.pbf.gz": "41863b87e7682a671256d700af91145ef4ae81cd13dafa1dd3cde01808c3d6d0",
+    "data/evidence/location-batch2/koshin/chikuma-se-tile.pbf.gz": "3fb1047a1de5e7a5101c04aa28a940f19f613e3f9e4eb3626cf1c8e6bda78c6a",
+    "data/evidence/location-batch2/koshin/matsumoto-tile.pbf.gz": "64abae1324f070715c20f2348db1226d027c8d8c7806a164a227b0ba24a9a42c"
+  },
+  "rows": [
+    {
+      "facilityIds": [
+        "facility:chubu-east-3c366372adb1d9e39b13",
+        "facility:chubu-east-511d795c4d0bff516838"
+      ],
+      "tile": {
+        "z": 16,
+        "x": 57906,
+        "y": 25727
+      },
+      "featureIndex": 23,
+      "sourceRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/7"
+      ],
+      "comparison": [
+        "p4の北矢印で図の向きを合わせ、諏訪湖岸道路側にある管理本館と東側の電気棟、両者の細い接続部をBldA23の北西翼・南東翼・連絡部へ対応させた。",
+        "p8のホール側の幅広い翼・電気室側の長方形翼・階段/EVを含む連絡部と、外形の大きさ/凹凸/接続の順序を確認。",
+        "p4の管理本館南側A系とその東側B系をBldA31/60の大きな処理施設外形へ対応。反対側の沈砂池/ポンプ室、湖岸道路と河川の配置も整合。単なる住所点内包を選択根拠にしない。"
+      ],
+      "scope": "管理本館と電気棟の連続した建物外形の代表点。室内ホール・受付の位置そのものではない。",
+      "decision": "proposed",
+      "approxAreaSquareMeters": 1376.4207
+    },
+    {
+      "facilityIds": [
+        "facility:chubu-chuo-duty-counter"
+      ],
+      "tile": {
+        "z": 16,
+        "x": 57984,
+        "y": 25824
+      },
+      "featureIndex": 35,
+      "sourceRefs": [
+        "data/evidence/issue7/koshin/ebe465ad401bef43dae0.pdf"
+      ],
+      "comparison": [
+        "方位付き航空写真の西側の縦長棟と南側の横長棟のL字接続がBldA35に対応。黄色の宿日直入口は西側棟南端にあり、同じ連続外形に属する。",
+        "中庭駐車場東の細長い2棟がBldA38/42、南の小棟が29、内側の小さな付属棟が36に対応。北の交差点と道路、北側の曲面のある建物22/33も航空写真と整合。",
+        "P05旧田富点を経由しない。L字重心は中庭側で外形外。Shapely representative_pointを用い西翼内の代表点を算出し、丸め後内包も確認。"
+      ],
+      "scope": "宿日直室を含む建物代表点。入口精度ではない。",
+      "decision": "proposed",
+      "approxAreaSquareMeters": 3629.3489
+    },
+    {
+      "facilityIds": [
+        "facility:chubu-east-59b4cce2285148bd4dfd"
+      ],
+      "tile": {
+        "z": 16,
+        "x": 57930,
+        "y": 25597
+      },
+      "featureIndex": 10,
+      "sourceRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/8"
+      ],
+      "comparison": [
+        "市資料p15の管理本館は両短辺に丸みを持つ独立棟。BldA10の角丸外形に対応し、図を約135度時計回りに回すと周囲の配置が整合する。",
+        "管理本館の隣の車庫に相当する矩形群、反対側のポンプ棟/汚泥処理棟群、さらに南西の大きな沈殿池・反応槽（BldA4/8/19）が同じ順序。",
+        "図の公園・池・アクア小橋は建物の北西〜北側、千曲川は南東側、川沿いの道路/堤防と水路があり、4タイルの連続表示と整合する。",
+        "SWタイルの外形は北辺を9単位越すがバッファ内に全周が収まる。隣のNW153でも同じ北端頂点を確認。NW側はy=4176で切れるため、切断されたNW外形を使わず完全形のSW10を選択。"
+      ],
+      "scope": "管理本館建物代表点。処理場全体やポンプ棟の代表点ではない。",
+      "decision": "proposed",
+      "approxAreaSquareMeters": 1841.4939
+    },
+    {
+      "facilityIds": [
+        "facility:chubu-east-4ddffced59c4adbf00e2"
+      ],
+      "tile": {
+        "z": 16,
+        "x": 57984,
+        "y": 25824
+      },
+      "featureIndex": null,
+      "sourceRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/0",
+        "data/evidence/issue7/koshin/ebe465ad401bef43dae0.pdf"
+      ],
+      "comparison": [
+        "航空写真とL字棟・東の細長い棟を比較済み。宿日直の矢印はあるが、写真に南館というラベルはなく、本館南館を合算した施設計画もどの部分が南館かを特定しない。",
+        "南館という名称だけからL字の南側を割り当てない。比較未実施ではなく、上下水道課の入居棟との名称対応が未解決。"
+      ],
+      "decision": "held"
+    },
+    {
+      "facilityIds": [
+        "facility:chubu-east-3a6d16208a637eef3b69"
+      ],
+      "tile": {
+        "z": 16,
+        "x": 57884,
+        "y": 25681,
+        "extent": 4096
+      },
+      "sourceRefs": [
+        "data/evidence/location-batch2/koshin/facts.json#/facts/3",
+        "data/evidence/location-batch2/koshin/facts.json#/facts/4",
+        "data/evidence/location-batch2/koshin/matsumoto-comparison.json"
+      ],
+      "comparison": [
+        "観光CSV点はBldA340（約437㎡）を内包。LinkData点はすべてのBldAの外、約4.4㎡の小棟337から約0.217m。独立に計算してレビュー診断を再現した。",
+        "2点ともCRS/作成方法未確認で、観光CSVのcontainsだけでは340を大手事務所と同定できない。差は数値丸めでは説明できないが、出典の誤りを確定したわけではない。建物配置を示す独立資料が残る。"
+      ],
+      "decision": "held"
+    }
+  ],
+  "reusedSources": [
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "previousFinding": "今回取得した宿日直案内PDFを画像で確認し、庁舎西側棟南端の入口まで同定。P05旧田富庁舎点がこの棟内か、南館との対応を未確認。入口精度ではなく棟対応が残る。",
+      "sources": [
+        {
+          "sourceUrl": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+          "fetchedAt": "2026-11-05T06:27:44.259996+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/0f5b73e12236a5635ef6.html",
+          "snapshotSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+          "bytes": 58620,
+          "kind": "fresh-http"
+        },
+        {
+          "sourceUrl": "https://www.city.chuo.yamanashi.jp/material/files/group/24/MHCsyukunittyokusituannaiPDF.pdf",
+          "fetchedAt": "2026-11-05T06:30:44.052726+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.chuo.yamanashi.jp/material/files/group/24/MHCsyukunittyokusituannaiPDF.pdf",
+          "contentType": "application/pdf",
+          "snapshotPath": "data/evidence/issue7/koshin/ebe465ad401bef43dae0.pdf",
+          "snapshotSHA256": "8d85108520e46684b11a3eeac258ac09e9644d6ae4b1841e29f147e503978f34",
+          "bytes": 615645,
+          "kind": "fresh-http"
+        }
+      ],
+      "note": "Issue7保存原本の再読込。今回の新取得と扱わない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "previousFinding": "県配布案内とふれあいまつり案内を再取得。管理本館1階の指定を確認したが処理場全体と管理棟を分離した数値原典なし。",
+      "sources": [
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "fetchedAt": "2026-11-05T06:27:43.043448+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/99136654881533f5b5ba.html",
+          "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+          "bytes": 23409,
+          "kind": "fresh-http"
+        },
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+          "fetchedAt": "2026-11-05T06:28:08.145096+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/935530f3afa836190c50.html",
+          "snapshotSHA256": "93fdad52a06c17ecf318a4f34215385ba30b38ff3d206b4dd7dca0426c2203d0",
+          "bytes": 18048,
+          "kind": "fresh-http"
+        }
+      ],
+      "note": "Issue7保存原本の再読込。今回の新取得と扱わない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "previousFinding": "県配布案内とまつり案内を再取得。管理本館1階ロビーは確認できるが管理棟の数値原典が未取得。受付・ロビーの室内差は保留理由ではない。",
+      "sources": [
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "fetchedAt": "2026-11-05T06:27:43.043448+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/99136654881533f5b5ba.html",
+          "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+          "bytes": 23409,
+          "kind": "fresh-http"
+        },
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+          "fetchedAt": "2026-11-05T06:28:08.145096+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/935530f3afa836190c50.html",
+          "snapshotSHA256": "93fdad52a06c17ecf318a4f34215385ba30b38ff3d206b4dd7dca0426c2203d0",
+          "bytes": 18048,
+          "kind": "fresh-http"
+        }
+      ],
+      "note": "Issue7保存原本の再読込。今回の新取得と扱わない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "previousFinding": "県配布案内と事務所アクセスを再取得。真島町川合1060-1のアクアパル管理本館が対象。別処理場クリーンピアや処理場敷地代表点は不採用。",
+      "sources": [
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+          "fetchedAt": "2026-11-05T06:27:43.144597+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/5e8aac588ad24d390f79.html",
+          "snapshotSHA256": "d37b4b6a0a5b8fd58d1167c9575a5f1b5cf06040fcc159f1979306f147ec2164",
+          "bytes": 15223,
+          "kind": "fresh-http"
+        },
+        {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/jimusho/map.html",
+          "fetchedAt": "2026-11-05T06:28:10.783449+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/jimusho/map.html",
+          "contentType": "text/html",
+          "snapshotPath": "data/evidence/issue7/koshin/a8c4efb3f76a2379750d.html",
+          "snapshotSHA256": "4ba0a9c8f8c8b3a38bb199f3f6ff20d7187736faff195eee23cf434fb0203a77",
+          "bytes": 16371,
+          "kind": "fresh-http"
+        }
+      ],
+      "note": "Issue7保存原本の再読込。今回の新取得と扱わない。"
+    }
+  ],
+  "reviewerHints": "旧レビューのタイル番号は探索ヒント。数値・外形を自worktreeでPMTilesから取得し再計算/判読。旧レビュー概算は採用根拠にしない。",
+  "boundaryCheck": [
+    {
+      "featureIndex": 153,
+      "bounds": [
+        1809.0,
+        -9.0,
+        2055.0,
+        80.0
+      ],
+      "overlapAreaTileUnits": 14457.846153846152,
+      "sameGeometry": false,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1892,
+              4087
+            ],
+            [
+              1921,
+              4088
+            ],
+            [
+              1963,
+              4096
+            ],
+            [
+              1986,
+              4105
+            ],
+            [
+              2020,
+              4129
+            ],
+            [
+              2034,
+              4143
+            ],
+            [
+              2055,
+              4176
+            ],
+            [
+              1809,
+              4176
+            ],
+            [
+              1883,
+              4096
+            ],
+            [
+              1892,
+              4087
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

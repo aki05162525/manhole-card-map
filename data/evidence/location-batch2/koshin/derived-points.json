@@ -8,9 +8,82 @@
         "lng": 138.3076019
       },
       "method": "centroid",
+      "seedWithinFootprint": true,
       "pointTileXY": [
         534.7389168138387,
         2537.5688793415748
+      ],
+      "centroidWithinFootprint": true,
+      "pointWithinFootprint": true,
+      "roundedPointWithinFootprint": true,
+      "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
+      "precision": "Building representative; source generalization/identification uncertainty not surveyed. Seven decimal places are serialization precision, not measured accuracy."
+    },
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "coordinate": {
+        "lat": 36.0333033,
+        "lng": 138.0894658
+      },
+      "method": "centroid",
+      "seedWithinFootprint": null,
+      "pointTileXY": [
+        1720.6421649344436,
+        2278.125168324765
+      ],
+      "centroidWithinFootprint": true,
+      "pointWithinFootprint": true,
+      "roundedPointWithinFootprint": true,
+      "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
+      "precision": "Building representative; source generalization/identification uncertainty not surveyed. Seven decimal places are serialization precision, not measured accuracy."
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "coordinate": {
+        "lat": 36.0333033,
+        "lng": 138.0894658
+      },
+      "method": "centroid",
+      "seedWithinFootprint": null,
+      "pointTileXY": [
+        1720.6421649344436,
+        2278.125168324765
+      ],
+      "centroidWithinFootprint": true,
+      "pointWithinFootprint": true,
+      "roundedPointWithinFootprint": true,
+      "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
+      "precision": "Building representative; source generalization/identification uncertainty not surveyed. Seven decimal places are serialization precision, not measured accuracy."
+    },
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "coordinate": {
+        "lat": 35.5999764,
+        "lng": 138.516776
+      },
+      "method": "representative_point",
+      "seedWithinFootprint": null,
+      "pointTileXY": [
+        858.2292585821081,
+        3432.0
+      ],
+      "centroidWithinFootprint": false,
+      "pointWithinFootprint": true,
+      "roundedPointWithinFootprint": true,
+      "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
+      "precision": "Building representative; source generalization/identification uncertainty not surveyed. Seven decimal places are serialization precision, not measured accuracy."
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "coordinate": {
+        "lat": 36.6108645,
+        "lng": 138.2214568
+      },
+      "method": "centroid",
+      "seedWithinFootprint": null,
+      "pointTileXY": [
+        1836.2547105927736,
+        235.8174836199916
       ],
       "centroidWithinFootprint": true,
       "pointWithinFootprint": true,

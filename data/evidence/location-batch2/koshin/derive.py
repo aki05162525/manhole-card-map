@@ -1,6 +1,7 @@
-"""Reproduce one unapproved diagnostic point; does not approve them or change the manifest.
+"""Reproduce proposed building points and the unapproved CSV diagnostic; does not approve them or change the manifest.
 uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 python data/evidence/location-batch2/koshin/derive.py
 """
+import csv
 import gzip
 import hashlib
 import json
@@ -35,6 +36,16 @@ for row in spec['rows']:
     assert polygon.contains(point)
     z, x, y = (row['tile'][key] for key in ('z', 'x', 'y'))
     extent = layer['extent']
+    seed_within = None
+    if 'seedCoordinate' in row:
+        seed = row['seedCoordinate']
+        with (D / 'ueda-tourism.csv').open(encoding='cp932', newline='') as csv_file:
+            csv_row = next(r for r in csv.DictReader(csv_file) if r['NO'] == '65')
+        assert seed == {'lat': float(csv_row['緯  度']), 'lng': float(csv_row['経  度'])}
+        seed_x = ((seed['lng'] + 180) / 360 * 2**z - x) * extent
+        seed_y = ((1 - math.asinh(math.tan(math.radians(seed['lat']))) / math.pi) / 2 * 2**z - y) * extent
+        seed_within = polygon.contains(Point(seed_x, seed_y))
+        assert seed_within, 'CSV seed is outside the diagnostic footprint'
     lng = (x + point.x / extent) / 2**z * 360 - 180
     lat = math.degrees(math.atan(math.sinh(math.pi * (1 - 2 * (y + point.y / extent) / 2**z))))
     coordinate = {'lat': round(lat, 7), 'lng': round(lng, 7)}
@@ -43,7 +54,7 @@ for row in spec['rows']:
     round_y = ((1 - math.asinh(math.tan(math.radians(coordinate['lat']))) / math.pi) / 2 * 2**z - y) * extent
     assert polygon.contains(Point(round_x, round_y))
     results.append({'facilityId': row['facilityId'], 'coordinate': coordinate,
-                    'method': row['method'], 'pointTileXY': [point.x, point.y],
+                    'method': row['method'], 'seedWithinFootprint': seed_within, 'pointTileXY': [point.x, point.y],
                     'centroidWithinFootprint': centroid_within, 'pointWithinFootprint': True,
                     'roundedPointWithinFootprint': True, 'sourceCRS': spec['sourceCRS'],
                     'precision': 'Building representative; source generalization/identification uncertainty not surveyed. Seven decimal places are serialization precision, not measured accuracy.'})

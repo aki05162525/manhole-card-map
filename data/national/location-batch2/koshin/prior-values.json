@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "baseHead": "229a4c419f76b5b527d527911da217a6cfaddf16",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
+      "old": {
+        "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
+        "address": "長野県諏訪市大字豊田字湖畔1866-1",
+        "phone": "0266-58-2955",
+        "id": "facility:chubu-east-3c366372adb1d9e39b13",
+        "legacyIds": [
+          "place:3c366372adb1d9e39b13"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "snapshotPath": "data/evidence/national/chubu-east/99136654881533f5b5ba.html",
+          "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+          "sourceLocator": "20-000-A001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+        }
+      },
+      "oldSHA256": "062197d056a47af36ea297f7c2855f162c093c8f5e410ab24eb9d60449d06e9d"
+    },
+    {
+      "facilityId": "facility:chubu-east-511d795c4d0bff516838",
+      "old": {
+        "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
+        "address": "長野県諏訪市大字豊田字湖畔1866-1",
+        "phone": "",
+        "id": "facility:chubu-east-511d795c4d0bff516838",
+        "legacyIds": [
+          "place:511d795c4d0bff516838"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/topics/manholecard.html",
+          "snapshotPath": "data/evidence/national/chubu-east/99136654881533f5b5ba.html",
+          "snapshotSHA256": "bd0d1f40be255bf6e2d736e873ca18f35a938d94ba943b19a7d4c57c2461b269",
+          "sourceLocator": "20-000-A001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+        }
+      },
+      "oldSHA256": "27e2e252bfadfe22dc320cf4e47f140cefbe61cd77eedca1ae51a93aefa9bddd"
+    },
+    {
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "old": {
+        "id": "facility:chubu-chuo-duty-counter",
+        "legacyIds": [],
+        "name": "中央市役所宿日直室",
+        "address": "山梨県中央市臼井阿原301-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+          "snapshotPath": "data/evidence/national/chubu-east/0f5b73e12236a5635ef6.html",
+          "snapshotSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+          "sourceLocator": "19-214-A001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式原本を読み、当該カードの配布窓口・条件・現在状態と2026-11-05現在GKP行を照合。人手・現地確認ではない。"
+        }
+      },
+      "oldSHA256": "bceb4e42739c3dc1ae5e89442c705d5a82e6b5b1bc4a42b57365661eefa67675"
+    },
+    {
+      "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
+      "old": {
+        "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
+        "address": "長野県長野市真島町川合1060-1",
+        "phone": "026-283-4170",
+        "id": "facility:chubu-east-59b4cce2285148bd4dfd",
+        "legacyIds": [
+          "place:59b4cce2285148bd4dfd"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/news/mannholkadohaifu.html",
+          "snapshotPath": "data/evidence/national/chubu-east/5e8aac588ad24d390f79.html",
+          "snapshotSHA256": "d37b4b6a0a5b8fd58d1167c9575a5f1b5cf06040fcc159f1979306f147ec2164",
+          "sourceLocator": "20-000-C001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内を読み、基礎入力のカードと各窓口の名称・住所・配布条件を照合。人・現地確認ではない。"
+        }
+      },
+      "oldSHA256": "4751c4bf46715f03123cd6699b771fbee4d6c03ee6a41c4ef29fe34850b82bdb"
+    }
+  ]
+}

@@ -101,13 +101,15 @@
       "file": "data/work/location-batch2/koshin/ueda-tourism.csv",
       "sourceUrl": "https://www.city.ueda.nagano.jp/uploaded/attachment/86227.csv",
       "fetchedAt": "2026-11-05T11:25:18.769777+00:00",
-      "redistribution": "未確認。原本はignored workのみ。",
+      "redistribution": "CC BY4.0を上田市カタログ本文で確認。原bytesはdata/evidence/location-batch2/koshin/ueda-tourism.csvへGit収録。リンク先の利用規約PDF自体は未取得。",
       "status": 200,
       "finalUrl": "https://www.city.ueda.nagano.jp/uploaded/attachment/86227.csv",
       "contentType": "text/csv",
       "sha256": "f4331dc657ff4e101e17ec67d7986202f3b3bdd88913baaf5ac11b3d6e01bc51",
       "bytes": 40694,
-      "elapsedSeconds": 0.236
+      "elapsedSeconds": 0.236,
+      "trackedSnapshotPath": "data/evidence/location-batch2/koshin/ueda-tourism.csv",
+      "licenseEvidence": "data/evidence/location-batch2/koshin/facts.json#/facts/9"
     },
     {
       "file": "data/work/location-batch2/koshin/matsumoto-catalog.html",
