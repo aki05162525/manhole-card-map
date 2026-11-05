@@ -16,10 +16,10 @@ jobs:
   reproducibility:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      APM_CACHE_DIR: ${{ runner.temp }}/apm-cache
     steps:
       - uses: actions/checkout@v4
+      - name: Use an isolated APM cache
+        run: echo "APM_CACHE_DIR=$RUNNER_TEMP/apm-cache" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
