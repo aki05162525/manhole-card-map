@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "method": "PDF: pdftoppm -scale-to 1200/1400/1600; GIF: Pillow RGB PNG; SVG: CairoSVG output_width=1400. SVG背景の透明部分は閲覧背景に依存。図の地理参照・加工座標は作成していない。",
+  "files": [
+    {
+      "path": "data/work/location-batch2/kinki-east/8799000e683400ee-view.png",
+      "sha256": "82c5f7eeaa8b49ce7e937075443e219f245642d5ec214510a010a738ca845269"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/567fb4cf7b649b96-view.png",
+      "sha256": "352616837a11a56b543de6310ad9c24643e004e9764d1621d56b4dd5b0edd2fc"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/3e4bb06a9a3c6657-view.png",
+      "sha256": "78481cad1b1dfe69b4245bc001517430b0efb27b5a5839165ba640f7e59b74ac"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/rakusai.png",
+      "sha256": "b6b172a8648d796a2448af20df4035eca2da5ccec2acbbdbfccd25c0d3558fc3"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/miyazu.png",
+      "sha256": "e65383d578034f7fe9cbf0993692a22e10aa098458d17b84ec4e91f84ef79bc8"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/kyotamba-plan.png",
+      "sha256": "712d822f0ca2f6aa540e03316edf162b7b93e2d22114857b6795afd1673366ea"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/suzuka-main.png",
+      "sha256": "f5bc6bc20681b93b977001e8af55f6cb09355399dc65df04c83927b7fce3ca8d"
+    },
+    {
+      "path": "data/work/location-batch2/kinki-east/anori-project.png",
+      "sha256": "dce0b1d19110c66e2ab5800c5627d485b12b34721a95ee0f560593e771a41fc1"
+    }
+  ]
+}
