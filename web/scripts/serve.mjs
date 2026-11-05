@@ -4,7 +4,8 @@ import { readFile, stat } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 import { resolve, extname } from "node:path";
 import { brotliCompressSync, gzipSync } from "node:zlib";
-const root = resolve("dist");
+const root = resolve(process.env.SERVE_DIR || "dist");
+const port = Number(process.env.PORT || 4173);
 const compressed = new Map();
 createServer(async (req, res) => {
   try {
@@ -31,6 +32,7 @@ createServer(async (req, res) => {
         ".js": "text/javascript",
         ".css": "text/css",
         ".json": "application/json",
+        ".geojson": "application/geo+json",
         ".pbf": "application/x-protobuf",
         ".png": "image/png",
         ".pmtiles": "application/octet-stream",
@@ -91,6 +93,6 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404).end("Not found");
   }
-}).listen(4173, "127.0.0.1", () =>
-  console.log("http://127.0.0.1:4173 （ローカル専用）"),
+}).listen(port, "127.0.0.1", () =>
+  console.log(`http://127.0.0.1:${port} （ローカル専用: ${root}）`),
 );

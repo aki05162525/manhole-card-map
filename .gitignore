@@ -7,3 +7,5 @@
 /web/public/fonts/
 /web/public/sprites/
 /web/results/
+/web/dist-fixture/
+/web/coverage/

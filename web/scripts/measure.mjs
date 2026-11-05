@@ -4,7 +4,8 @@ const executablePath = process.env.CHROME || "/usr/bin/google-chrome";
 const count = Number(process.env.RUNS || 5),
   modes = (process.env.MODES || "full,split").split(","),
   engines = (process.env.ENGINES || "a,b").split(",");
-await mkdir("results", { recursive: true });
+const resultDir = process.env.RESULTS_DIR || "results";
+await mkdir(resultDir, { recursive: true });
 const results = [];
 for (const mode of modes)
   for (let run = 1; run <= count; run++)
@@ -74,7 +75,10 @@ for (const mode of modes)
         });
         await page.goto(
           `http://127.0.0.1:4173/?engine=${engine}&data=${mode}&benchmark`,
-          { waitUntil: "domcontentloaded", timeout: 90000 },
+          {
+            waitUntil: "domcontentloaded",
+            timeout: 90000,
+          },
         );
         try {
           await page.waitForFunction(
@@ -91,6 +95,9 @@ for (const mode of modes)
           metrics: window.prototype?.metrics,
           origin: performance.timeOrigin,
           ua: navigator.userAgent,
+          stages: performance
+            .getEntriesByType("measure")
+            .map(({ name, duration }) => ({ name, duration })),
         }));
         const startupResources = [...resources.values()].filter(
           (r) => r.wall <= observed.origin + (observed.metrics?.ready || 0),
@@ -106,12 +113,16 @@ for (const mode of modes)
             await page.waitForFunction(
               () => window.prototype.metrics.taps.length > 0,
               null,
-              { timeout: 10000 },
+              {
+                timeout: 10000,
+              },
             );
             tap = await page.evaluate(() =>
               window.prototype.metrics.taps.at(-1),
             );
-            await page.locator("#detail button").click();
+            await page
+              .getByRole("button", { name: "閉じる", exact: true })
+              .click();
           }
         }
         const completed = new Promise((resolve) =>
@@ -126,7 +137,7 @@ for (const mode of modes)
           if (part.eof) break;
         }
         await cdp.send("IO.close", { handle: stream });
-        await writeFile(`results/${traceName}.trace.json`, trace);
+        await writeFile(`${resultDir}/${traceName}.trace.json`, trace);
         const row = {
           engine,
           mode,
@@ -150,7 +161,10 @@ for (const mode of modes)
           "errors",
           errors.length,
         );
-        await writeFile("results/cdp.json", JSON.stringify(results, null, 2));
+        await writeFile(
+          `${resultDir}/cdp.json`,
+          JSON.stringify(results, null, 2),
+        );
         await page.waitForFunction(
           () =>
             document.querySelector("#offline").textContent.includes("準備完了"),
@@ -189,12 +203,17 @@ for (const mode of modes)
             if (part.eof) break;
           }
           await cdp.send("IO.close", { handle: stream });
-          await writeFile(`results/interaction-${engine}-1.trace.json`, trace);
           await writeFile(
-            `results/frames-${engine}-1.json`,
+            `${resultDir}/interaction-${engine}-1.trace.json`,
+            trace,
+          );
+          await writeFile(
+            `${resultDir}/frames-${engine}-1.json`,
             JSON.stringify(frames),
           );
-          await page.screenshot({ path: `results/interaction-${engine}.png` });
+          await page.screenshot({
+            path: `${resultDir}/interaction-${engine}.png`,
+          });
         }
         page.off("pageerror", error);
       }
@@ -208,7 +227,7 @@ for (const mode of modes)
         await page.locator("#cards").selectOption({ index: 1 });
         await page.locator("#detail h2").waitFor();
         await writeFile(
-          `results/offline-${engine}.json`,
+          `${resultDir}/offline-${engine}.json`,
           JSON.stringify({
             options: await page.locator("#cards option").count(),
             detail: await page.locator("#detail").innerText(),
