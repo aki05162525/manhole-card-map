@@ -1,0 +1,66 @@
+{
+  "cards": 1313,
+  "places": 1735,
+  "relations": 1825,
+  "placePinsBefore": 981,
+  "placePinsAfter": 985,
+  "lidPins": 1309,
+  "changedPlaceIDs": [
+    "facility:chubu-chuo-duty-counter",
+    "facility:chubu-east-3c366372adb1d9e39b13",
+    "facility:chubu-east-511d795c4d0bff516838",
+    "facility:chubu-east-59b4cce2285148bd4dfd"
+  ],
+  "generationHashes": {
+    "details.json": "3cc8d50ecb5d84f5540640b7e35ce9a32b0bec4a7e76ef1e2568d86f7afc6ddd",
+    "full.json": "394060336735e135a73499d61c980872d5cab7ad4f3a1c2ef07b250c868f9bf2",
+    "pins.json": "8ef2c75f423575a059bbac21f6d26e7032c39777001accc56dd2c0630a91fadd"
+  },
+  "inputHashes": {
+    "data/evidence/national/list-source/gkp-20261105.html": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+    "data/overrides/cards.json": "b473a558e8170e195a81dbf89e4f39361afd0ae61ceaac213d61faeb17f9069e",
+    "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
+    "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
+    "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
+    "data/work/location-batch2/koshin/final-ledger.json": "ad8a3ff390a4257f6b0f703a3c86f0ad2cba9878929323d23492d1228e34c7f5",
+    "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
+    "docs/verification/05-findings.json": "d017aa64da312b51b4ac3568f9ee714dddad3e8305e2042e2cb71347c1068d20"
+  },
+  "checks": [
+    "all existing pins unchanged",
+    "only four places coordinate/evidence/locationReview changed",
+    "cards and relations unchanged",
+    "full/details consistent",
+    "pins generation hashes valid"
+  ],
+  "reusedInputs": "親worktreeの保存一覧・municheck入力をcopy2で再利用。元hashをbuilddataで検証、新取得と扱わない。",
+  "asOf": "2026-11-05",
+  "listingDate": "2026-10-21",
+  "comparisonBaseline": "最新mainから自地域4IDだけを加えた差分。他地域採用/bindingは両側に保持。",
+  "historicalStartingUnlocated": 608,
+  "tests": {
+    "python": "97 passed; python3 -B -m unittest discover -s tools/national -v",
+    "go": "passed; go test -count=1 ./...",
+    "redGreen": [
+      "exact four updates before integration",
+      "Suwa group identity change withholds both",
+      "coordinate and reused-source hash mismatch rejection"
+    ]
+  },
+  "maps": [
+    "facility:chubu-east-3c366372adb1d9e39b13 20-000-A001 https://www.google.com/maps/search/?api=1&query=36.0333033%2C138.0894658",
+    "facility:chubu-east-3c366372adb1d9e39b13 20-000-F001 https://www.google.com/maps/search/?api=1&query=36.0333033%2C138.0894658",
+    "facility:chubu-east-511d795c4d0bff516838 20-000-A001 https://www.google.com/maps/search/?api=1&query=36.0333033%2C138.0894658",
+    "facility:chubu-east-511d795c4d0bff516838 20-000-F001 https://www.google.com/maps/search/?api=1&query=36.0333033%2C138.0894658",
+    "facility:chubu-chuo-duty-counter 19-214-A001 https://www.google.com/maps/search/?api=1&query=35.5999764%2C138.516776",
+    "facility:chubu-east-59b4cce2285148bd4dfd 20-000-C001 https://www.google.com/maps/search/?api=1&query=36.6108645%2C138.2214568"
+  ],
+  "integratedMain": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+  "nationalLedgerUnlocatedBeforeRegionalAdoption": 605,
+  "nationalAudit": {
+    "assembledUnlocated": 601,
+    "generatedUnlocated": 750,
+    "missingGeneratedAdoptedIds": [],
+    "missingGeneratedPinIds": []
+  }
+}

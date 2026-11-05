@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-c73669beeeb24f667599",
+  "purpose": "広域の外形比較のみ。粗い探索窓中心は採用座標でも建物同定根拠でもない。contains選択・代表点計算をしない。",
+  "tiles": [
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25695,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58180-25695.pbf.gz",
+      "sha256": "0dcc35feed75af402497131aa46b4ef176ed462d0dfaa71d420f058402cd0278"
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25696,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58180-25696.pbf.gz",
+      "sha256": "be04fac7ab948870bc56edf3e5764fc102911ddeac27130a8e80374ad7ac7959"
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25697,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58180-25697.pbf.gz",
+      "sha256": "e81879f7656c743b9e051aa0396918c0ffed1757e6b9b86b63766dcf21d9b2ad"
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25695,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58181-25695.pbf.gz",
+      "sha256": "8bb84349eb678e1a79b5180ad5f63feaa3395e19647f95ba06a8201e6e33ccc0"
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25696,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58181-25696.pbf.gz",
+      "sha256": "309692bfa6a812500737671d2a3b649c0a43e38b170fb1d3cad8f334888c8863"
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25697,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58181-25697.pbf.gz",
+      "sha256": "c73416585a1776f317efb955ae514bf5b46c331d4f860005f1e1f25b05e6c0d3"
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25695,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58182-25695.pbf.gz",
+      "sha256": "fdd86207ba36bc951c5f1fd3e19ca782f7156610cee181f3d6240b20e377ae3e"
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25696,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58182-25696.pbf.gz",
+      "sha256": "f88d448507187ad4c01fd67fa71955c98ad3187b749aa944766381a6ed3ab958"
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25697,
+      "path": "data/work/location-batch2/north-kanto/vector-16-58182-25697.pbf.gz",
+      "sha256": "bc524e07b1296cfb2c92359480d890a103137d92aa7c5f749af7cbe816d2f51e"
+    }
+  ],
+  "adoptedCoordinate": null,
+  "recordScope": "初回の外形のみ試行。後続revision-windows/comparison-facts/derived-pointsで道路水部照合・2点派生を実施。"
+}

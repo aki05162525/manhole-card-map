@@ -2,14 +2,16 @@
 
 2026-11-05、基準 `f66b7e994ef250fadee78f396d22fdfc40ba6a83`、独立worktreeで実施。Issue24 snapshotのoriginalRefがIssue7四国を指す15施設をbatch1 baseline・開始時assembleと照合した。既採用による追加除外0。調査前の[selection.json](../../data/national/location-batch2/shikoku/selection.json)に全15件の分類、8選定の理由、7件の今回除外理由を保持する。第1弾integration/followups、Issue20/25/26/27の保留IDと選定IDは重複なし。旧原本・旧調査は保持した。
 
-## 結果と採用候補
+## 最終採用結果
 
-選定8、**採用候補を仮統合2・保留6・今回対象外7**。独立再レビュー前であり承認・マージ済みではない。開始時の全国608・地域15は台帳内未位置集合。旧headで今回2件のみを仮統合したassembleは全国606・地域13。その後北海道PR56を含むmain `ccc473e4bdbc9ecc1165e86bc783f144fea33395`（全国607）を取り込み、その段階では全国605・地域13。さらに近畿西PR45込みのmain `65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41`（全国605）も統合し、現在は全国603・地域13。開始時608と現在値は別集合。生成全体の施設数や公開ピン数と混同しない。
+選定8、**採用確定2・保留6・今回対象外7**。Gemini Flash (`gemini-3.8-flash`) はレビューhead `fbdeee1fbc8de1e1f09841d8b2e15df4f6d8ffd2` の原本・建物同定・数値計算・bindingを独立確認し、2件を承認、6保留を支持した。[最終採用記録](../../data/national/location-batch2/shikoku/adoption-decision.json)と[レビュー全文](../../data/national/location-batch2/shikoku/gemini-final-review.json)を保存。旧Argon/Opus失敗・指摘履歴も保持する。
+
+最新統合基準はmain `93904c720fc2b279db26ff3a9329fcf2855c2311`、全国未位置595。四国2件を追加して**全国593・地域13**となる。全国608は初回開始集合、605は近畿西統合段階の過去基準であり現在値ではない。北海道・近畿西・甲信・東北・北関東・近畿東の採用、北陸等の調査成果をすべて保持した。地域差分は現manifestから四国の選択/bindingだけを除いて比較し、他地域の採用件数に依存しない。
 
 | 施設・ID末尾 | 実照合の結果 | 判断・停止/再開条件 |
 | --- | --- | --- |
-| 旧吉野川 `1fe04097ed447030ce` | 保存県PDF p11凡例⑧送風機棟の南が⑨管理棟。GSI moon#25/#26の南北配置と、⑨/#26の南中央突出、⑧/#25の北突出、処理施設群との配置を比較。既存公式案内は管理棟で受付と明記。R8パンフレットp2は⑨送風機棟/⑩管理棟で番号体系が違うが、同じ南北配置と南中央突出を確認 | 管理棟代表点を提案。送風機棟・処理場全体中心を除外 |
-| イオン `66c4c4fbd8f914efac` | 保存会社HTMLは正常。公式20261006フロア図p1で1Fインフォメーションを含む連続主棟を確認。床図上=南東・下=北西・左=北東・右=南西として、AEON STYLE=北東端、郵便局119/H&Mの折れ=南西端、MIMOSA翼=北西突出、中庭と北西別棟群の相対配置を2×2タイル結合外形に照合 | 主棟代表点を提案。最初のタイルの別棟#43やGoogle中心を除外 |
+| 旧吉野川 `1fe04097ed447030ce` | 保存県PDF p11凡例⑧送風機棟の南が⑨管理棟。GSI moon#25/#26の南北配置と、⑨/#26の南中央突出、⑧/#25の北突出、処理施設群との配置を比較。既存公式案内は管理棟で受付と明記。R8パンフレットp2は⑨送風機棟/⑩管理棟で番号体系が違うが、同じ南北配置と南中央突出を確認 | 管理棟代表点を採用。送風機棟・処理場全体中心を除外 |
+| イオン `66c4c4fbd8f914efac` | 保存会社HTMLは正常。公式20261006フロア図p1で1Fインフォメーションを含む連続主棟を確認。床図上=南東・下=北西・左=北東・右=南西として、AEON STYLE=北東端、郵便局119/H&Mの折れ=南西端、MIMOSA翼=北西突出、中庭と北西別棟群の相対配置を2×2タイル結合外形に照合 | 主棟代表点を採用。最初のタイルの別棟#43やGoogle中心を除外 |
 | 月見ヶ丘 `c859f2f66b0d2b847c` | 作図y上限3600による自分の切断を解消しmoon-west#27全体を描画。R7 B-01/B-03の方位、扇形、南研修室突出、コテージ列・西駐車場・南小構造物と照合 | 管理棟の同定はできた。公園側の現カード配布がこの建物内か一次資料で未確定。建物との配布関係を確認できれば再開 |
 | ウェルピア `966cf6f4a303ce7b1c` | 11部署CSV中、初回2件に加え都市整備課382108_aed_06.csvを実取得。4行目は名称一致、緯度33770121、経度132.717617、住所1791番地1、設置位置「事務所」 | 緯度範囲外、台帳1761との住所差、CRS未宣言、OGとの独立性未確定。小数点を補正採用しない。市の訂正/作成根拠または独立配置図で再開。11CSV全調査済みとはしない |
 | 龍河洞 `4273f7af29262d7c74` | 教育旅行案内p9の写真・指示線で観光センターを洞口/博物館/チケット販売所と区別 | 模式図には縮尺/方位/座標がなく数値外形との独立対応は未完了。名称付きGISまたは配置図で再開 |
@@ -19,7 +21,7 @@
 
 各IDの全文、参照タイル、取得キー、停止/再開条件は[outcomes.json](../../data/national/location-batch2/shikoku/outcomes.json)。写真・平面図を発見しただけで採用したものではない。入口・室内窓口の測量は要求せず、第1弾と同じ建物代表点基準を使った。
 
-[locations.json](../../data/national/location-batch2/shikoku/locations.json)の2候補は次の通り。manifestでIDと行hashを明示し、[location-lifecycle.json](../../data/national/location-batch2/shikoku/location-lifecycle.json)で施設identity・採用行とhashをbindingした。レビューで重大な疑義が残れば取り下げる。
+[locations.json](../../data/national/location-batch2/shikoku/locations.json)の2採用は次の通り。manifestでIDと行hashを明示し、[location-lifecycle.json](../../data/national/location-batch2/shikoku/location-lifecycle.json)で施設identity・採用行とhashをbindingした。最終承認後も移転等の新情報はlocationLifecycleに従って再審査する。
 
 | 施設 | 数値原典 | 緯度・経度（7桁丸め） | 面積概算 |
 | --- | --- | --- | --- |
@@ -38,7 +40,7 @@
 
 初回地域共有wall時間507.001秒は過去計測として保持。再調査は553.707秒。開始/終了・対象範囲はoutcomes.reassessmentTimingに別記した。追加取得から照合・仮統合記録までであり、先行レビュー読解と後続テスト/再レビューは含まない。施設別への重複加算・全国への外挿はしない。
 
-## 検証
+## fbdeee1fまでの検証履歴
 
 新地域テストを先に追加し、2施設がまだ変化していないため失敗するREDを確認後、仮統合でGREENを確認。元8行全体はbefore-rows.jsonに保持し、他施設・全関係は完全不変、2施設のcoordinate/evidence/locationReviewのみが変わることを検査した。
 
@@ -52,9 +54,9 @@
 
 フックはスキップしない。現地、在庫、残件の全外形同定、PLATEAU、外部Google画面の挙動は未確認。UIコード変更なし。共有変更はmanifestの自地域2選択/binding。test_assemble.py競合はmainのbatch1_manifest helper/3箇所をそのまま採用し、mainとの差は0。北海道採用・binding・地域テストは保持。844件や固定digestを更新せず、location-batch2配下の選択とbindingを除いた歴史的基準で旧契約・batch1差分を保つ。地域固有テストは実manifestの差分を検査する。
 
-## レビューと訂正事項
+## レビュー履歴と訂正事項
 
-Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json](../../data/national/location-batch2/shikoku/review.json)に保持する。その後ユーザーがClaude Opus代替を明示許可。初回Opusは重大6件を指摘し、旧headのマージは保留。[初回レビュー全文](../../data/national/location-batch2/shikoku/opus-review-initial.json)を保存した。2回目Opusは初回重大6件解消と2点の同定/座標を支持したが、イオンの方位記述1件をchanges requestedとした。床図と外形を再読して訂正し、依存hash→採用行→manifest→binding→manifestの連鎖を更新。座標/外形は不変。新規の限定再レビューを起動したが `Claude API rate limit reached. Try again later.` により失敗。レビュー実施・承認とは扱わずDraftを維持する。修正headは76832f552666d401a9e85b6de38764bef8fac37c。利用枠回復後の新規限定レビューが残る。
+Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json](../../data/national/location-batch2/shikoku/review.json)に保持する。その後ユーザーがClaude Opus代替を明示許可。初回Opusは重大6件を指摘し、旧headのマージは保留。[初回レビュー全文](../../data/national/location-batch2/shikoku/opus-review-initial.json)を保存した。2回目Opusは初回重大6件解消と2点の同定/座標を支持したが、イオンの方位記述1件をchanges requestedとした。床図と外形を再読して訂正し、依存hash→採用行→manifest→binding→manifestの連鎖を更新。座標/外形は不変。新規の限定再レビューを起動したが `Claude API rate limit reached. Try again later.` により失敗。レビュー実施・承認とは扱わずDraftを維持する。修正headは76832f552666d401a9e85b6de38764bef8fac37c。この時点では利用枠回復後の新規限定レビュー待ちだった。後のGemini Flashレビューで解消した。
 
 今回訂正した不一致は以下。旧原本や履歴を削除して隠していない。
 
@@ -68,9 +70,9 @@ Gemini 4 ArgonはAntigravity quotaにより失敗した。履歴を[review.json]
 8. 既存道の駅やすのselection.firstPinCardIdsはnull、優先度snapshotは[]。原データを勝手に同一化せず、どちらも今回firstPin採用候補ではないと扱う。初回の「不一致なし」報告を撤回。
 9. 共有docs/national-assembly.mdの履歴テスト説明はIssue26/batch1除外までだが、コードはbatch2選択/bindingも除外する。同文書の位置追補844件・1ファイル4bindingも現manifest（最新統合後849件・4ファイル9binding）とは一致しない。共有文書は親の統合対象としてここに差を明記する。
 
-PR54本文も今回の2候補/6保留と検証・レビュー状況へ更新する。CI監視・マージは親担当。
+PR54本文は採用2/保留6と最終検証・承認状況へ更新する。CI監視・マージは親担当。
 
-## 2回目レビュー後の訂正とmain統合
+## 2回目レビュー後の訂正とmain統合の履歴
 
 - 旧イオン記述はAEON STYLEを南西、郵便局を北東と読める誤りだった。床図の上は南東、AEON STYLEは北東、郵便局/H&M側の折れは南西。幅広さを同定根拠から除き、MIMOSA翼と北西別棟/中庭の対応を明記した。選択外形と代表点は不変。
 - CC-BYの版未指定という旧記述は保存市利用案内の4.0 International表示と不一致。データページの簡略表示と分けて訂正。
@@ -80,4 +82,18 @@ PR54本文も今回の2候補/6保留と検証・レビュー状況へ更新す�
 - workのafter-generatedは旧試行だったため、旧版をpre-integration-generatedへ保存し、after-generatedを現生成物へ揃えた。正の世代hashは更新したgenerated-validation.jsonとweb/public/data。
 - main統合は北海道1件を保存。地域差分の比較元も「現manifestから四国だけ除外」へ再生成し、全国開始608→北海道反映607→四国反映605を区別。原selectionと初回before-ledgerは保持。
 
-最新main65e7b2f7（近畿西PR45）も取り込み、北海道/近畿西の採用・binding・地域テストを保持。比較元は両地域を含み四国だけ除外したmanifest。Python96件成功、生成施設ピン981→983、全国未位置605→603。最初のGo試行はmanifest競合解消処理と並行起動してしまい未解消JSONを読み失敗したため、その試行を成功扱いせず、解消完了後に全Goテストを再実行した（go-latest-retry.log）。詳細/Mapsのブラウザー確認は北海道統合段階の世代であり、その後の近畿西統合では四国2点・既存ピン不変と最新JSON/hashを比較した。外部Google画面は未確認。最新main統合自体も独立レビュー未実施で、前回API制限による最終レビュー待ちは継続。
+最新main65e7b2f7（近畿西PR45）も取り込み、北海道/近畿西の採用・binding・地域テストを保持。比較元は両地域を含み四国だけ除外したmanifest。Python96件成功、生成施設ピン981→983、全国未位置605→603。最初のGo試行はmanifest競合解消処理と並行起動してしまい未解消JSONを読み失敗したため、その試行を成功扱いせず、解消完了後に全Goテストを再実行した（go-latest-retry.log）。詳細/Mapsのブラウザー確認は北海道統合段階の世代であり、その後の近畿西統合では四国2点・既存ピン不変と最新JSON/hashを比較した。外部Google画面は未確認。この段階ではAPI制限で最終レビュー待ちだったが、後のGemini Flashレビューで承認された。
+
+## 最終承認の扱いとCRSの限界
+
+原調査vector-inputs.jsonとreassessment-calculations.json内の仮統合/未承認表記は作成時点の履歴として固定し、現在の状態はadoption-decision.json・outcomes.json・review.jsonへ分離した。最終承認で座標・原典・同定根拠・採用行hash・bindingを変更していない。
+
+レビュー全文の「WGS84直接変換、ズレなし」は測地学的な保証として採用しない。実処理は原典JGD2011/Web Mercator XYZ格子の逆投影であり、測地系変換は未実施。測量精度やWGS84との無誤差一致を保証せず、一般化された建物外形の代表点という既存の限界を維持する。承認報告を新しい数値原典にしない。
+
+共有docs/national-assembly.mdのbatch2除外説明と旧844位置/4binding記載は現manifestと不一致。ユーザー指定どおり親の別作業に残し、このPRでは編集しない。その他の誤記訂正・資料番号差・firstPin null対[]・verify保証限界は上記の全件記録を維持。
+
+## 承認確定・93904c72統合後の最終検証
+
+Python全国118件成功、Go `-count=1 ./...`終了コード0、verify --rawとderive成功。保存一覧20261021、review-list20261105、as-of2026-11-05で現manifestを再生成し全国/Issue7監査。全国未位置595→593、地域15→13、カード1313・施設1735・関係1825不変、施設ピン991→993・蓋1309不変。四国以外の全施設・全関係・既存ピン不変、firstPin36-000-A001/38-202-C001。full/details/pinsとmanifest filehash・detailsSHA256一致。
+
+web build成功後、最新世代のfull/split両方式で2カードの施設名・配布場所ボタン・Maps代表点座標を確認し、自worktreeの4293サーバーを終了。browser-validation.jsonには対象fullSHA256を記録。原調査/旧生成物は履歴として保持し、after-generated/after-ledgerはこの最終世代へ更新。CI確認・マージは親担当でwatch/mergeを実施しない。PRは承認確定と検証結果を反映してReadyへ移行する。

@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "providerInstanceId": "antigravity",
+  "model": "gemini-3.8-flash",
+  "role": "review",
+  "status": "completed-approved",
+  "reviewedHead": "e2b73a59f91cee61efccbeba89efeb2542f917af",
+  "completedAt": "2026-11-05T12:39:54.553Z",
+  "threadId": "thread:delegated-task:command%3Amcp%3A0ba9b7b9-2542-4035-a8b8-7e8d65fcb4ee%3Adelegate-task%3Af30aafb7-9e35-44d6-b047-535e80294fb8",
+  "readToEnd": true,
+  "criticalFindings": [],
+  "approvedFacilityIds": [
+    "facility:north-db757b448c8db73422a5",
+    "facility:north-e2dfc05c8b1db51fc65b"
+  ],
+  "conclusion": "山田・花巻本館とも採用承認。Opusの花巻条件（新館警備の反証、回転比率・脚幅・398差の記録、階差説明撤回、旧点の限界、CI接続）は全解消。",
+  "verified": [
+    "保存HTML/PDF/画像の読解、花巻本館/新館の表記と反証",
+    "derive/measure_shapes/measure_alignment再計算、丸め内包、CRS/版/権利",
+    "verify --raw、全102件unittest",
+    "山田の位置行/evidence/hash不変、全台帳2IDの許可位置fields差分と関係不変"
+  ],
+  "limitations": [
+    "市の直接的な本館断定資料と直接照会は未確認。配布案内/図の用語の組合せによる推論を保持。",
+    "脚幅、398張出し端、1階図比率の形状差は残るが代表点は共通横棒内。",
+    "建物内部の窓口/入口測量、現地確認、ブラウザー外部Maps遷移は未実施。"
+  ],
+  "advisoryResponses": [
+    "locations.reviewStatusとoutcomes採用2/花巻adoptedを同期。",
+    "building-comparisons.investigatorDecisionは提案時点の履歴を保持し、この別記録で承認追跡。",
+    "docs/national-assembly.md:56のbatch2履歴除外説明不足は親が整理。本PRでは編集しない。",
+    "main甲信とのmanifest追記競合は両地域を保持して解消し統合後全検証を再実行。"
+  ]
+}

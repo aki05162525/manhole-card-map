@@ -1,0 +1,123 @@
+[
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=0-126",
+    "retrievedAt": "2026-11-05T11:24:17.980722+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-0-127.bin",
+    "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+    "bytes": 127,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2503-6670",
+    "retrievedAt": "2026-11-05T11:24:18.152625+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-2503-4168.bin",
+    "sha256": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+    "bytes": 4168,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=127-2502",
+    "retrievedAt": "2026-11-05T11:24:18.277859+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-127-2376.bin",
+    "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+    "bytes": 2376,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=3216301-3224818",
+    "retrievedAt": "2026-11-05T11:24:18.370473+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-3216301-8518.bin",
+    "sha256": "23bdfe2c25b515085c709c3a7455fc1bc2ee737e0e83ca9d478c6b46d97a730b",
+    "bytes": 8518,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=12800791379-12800804879",
+    "retrievedAt": "2026-11-05T11:24:18.451123+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-12800791379-13501.bin",
+    "sha256": "831713e3fccf46a2d64205d718010bfcf64c2a79048e70e45c203e093de205dc",
+    "bytes": 13501,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=2828505-2837733",
+    "retrievedAt": "2026-11-05T11:24:18.543924+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-2828505-9229.bin",
+    "sha256": "24b1e167f82522cc6dcdf58fe09464af7e520498be610eb79974e15b1f8b54e2",
+    "bytes": 9229,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=12044470720-12044480066",
+    "retrievedAt": "2026-11-05T11:24:18.623826+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-12044470720-9347.bin",
+    "sha256": "0781518545c910860ba1cc091bd866b3ce19afa3857c81f1f987572c78f30342",
+    "bytes": 9347,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=3131322-3139031",
+    "retrievedAt": "2026-11-05T11:24:18.770088+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-3131322-7710.bin",
+    "sha256": "a22da345f135ea90e8262eb032513f20a1f2fa42b0e1f763604cfcef7299cb50",
+    "bytes": 7710,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=12611994381-12612015453",
+    "retrievedAt": "2026-11-05T11:24:18.887259+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-12611994381-21073.bin",
+    "sha256": "98d61fe5552b318aff58e0474b0207ecedee1709ce9d01d7798f38533019d055",
+    "bytes": 21073,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=3099013-3107928",
+    "retrievedAt": "2026-11-05T11:48:46.037474+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-3099013-8916.bin",
+    "sha256": "4573469a6135df3347890c7e8b44a4b57973ce0898bdcff12c41afab78cd73c4",
+    "bytes": 8916,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  },
+  {
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "range": "bytes=12543435193-12543444697",
+    "retrievedAt": "2026-11-05T11:48:46.165017+00:00",
+    "status": 206,
+    "path": "data/work/location-batch2/tohoku/pmtiles-12543435193-9505.bin",
+    "sha256": "fe4fa95a6068dff123f9d62fbbac863cda4d4448886c1f0425a01923bdfda0e1",
+    "bytes": 9505,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+  }
+]

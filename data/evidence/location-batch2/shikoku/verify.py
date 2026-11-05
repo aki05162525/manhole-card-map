@@ -35,7 +35,10 @@ assert {r['facilityId'] for r in outcomes['rows']} == selected
 adopted = {r['facilityId'] for r in outcomes['rows'] if r['adopted']}
 assert len(adopted) == outcomes['adoptedCount'] == 2
 assert outcomes['heldCount'] == 6
-assert all(r['resumeCondition'] and r['stopReason'] and 'numericParts' in r for r in outcomes['rows'])
+assert all(r['resumeCondition'] and 'numericParts' in r for r in outcomes['rows'])
+assert all(r['stopReason'] for r in outcomes['rows'] if not r['adopted'])
+assert read(N / 'review.json')['approved'] is True
+assert read(N / 'adoption-decision.json')['updates'] == read(N / 'locations.json')['updates']
 assert all(r['proposedCoordinate'] is None and r['lifecycleBinding'] is None
            for r in outcomes['rows'] if not r['adopted'])
 for path, expected_hash in selection['inputSHA256'].items():
@@ -92,5 +95,5 @@ for ref in facts['reusedEvidence']:
     assert digest(ROOT / ref['snapshotPath']) == ref['snapshotSHA256']
 subprocess.run([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tools/national',
                 '-p', 'test_location_batch2_shikoku.py', '-v'], cwd=ROOT, check=True)
-print('PASS: population 15, selected 8, provisional adoption 2, held 6, excluded 7; hashes and exact delta')
-print('LIMIT: hashes/references and ledger invariants do not prove visual building identity or current distribution; independent review required')
+print('PASS: population 15, selected 8, reviewed adoption 2, held 6, excluded 7; hashes and exact delta')
+print('LIMIT: hashes/references and ledger invariants do not prove visual building identity or current distribution; identity independently reviewed separately; no surveying accuracy guarantee')

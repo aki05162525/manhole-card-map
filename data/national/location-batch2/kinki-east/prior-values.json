@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "baselineCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+  "baselineUnlocated": 601,
+  "rows": [
+    {
+      "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+      "previousPlace": {
+        "id": "facility:kinki-5d739ed0da591dafd1d2",
+        "legacyIds": [
+          "place:5d739ed0da591dafd1d2"
+        ],
+        "name": "鈴鹿市上下水道局",
+        "address": "三重県鈴鹿市寺家町1170",
+        "phone": "059-368-1662",
+        "evidence": {
+          "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/ca4fd1d3ae3fcce6d165.html",
+          "snapshotSHA256": "0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-207-A001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日上下水道局下水道工務課と休日観光協会を個別照合。"
+        }
+      },
+      "previousPlaceSHA256": "479227c008f746fd0523d3757e0de94148a0f135f096757996f759134f43fc44",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/15",
+      "originalRow": {
+        "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+        "reasonCategory": "移転・別棟",
+        "reason": "現施設案内1004339にq=34.83245028345209,136.57138018655976がある。一方、案内は本館・別館を区別し、配布元の下水道工務課は本館1階。qが本館を示すかは未確認なので自動採用しない。",
+        "nextSource": {
+          "url": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+          "task": "公式庁舎配置図または建物外形でqと本館を対応。"
+        },
+        "investigationStatus": "new-investigation-attempted; coordinate-unresolved",
+        "attempts": [
+          {
+            "kind": "new-http-retrieval",
+            "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+            "fetchedAt": "2026-11-05T06:27:41.085303+00:00",
+            "result": "HTTP 200",
+            "snapshotPath": "data/evidence/issue7/kinki-east/sources/ca4fd1d3ae3fcce6d165.html",
+            "snapshotSHA256": "34a769f3ca60f5ff74978dbd63a84db94af2d9a135cdfe583526dafd74fa59ea",
+            "finalUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html"
+          },
+          {
+            "kind": "new-http-retrieval",
+            "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002338/index.html",
+            "fetchedAt": "2026-11-05T06:29:37.660069+00:00",
+            "result": "HTTP 200",
+            "snapshotPath": "data/evidence/issue7/kinki-east/sources/faa583fb6bde805772fd.html",
+            "snapshotSHA256": "946bd2d2409221e3e581efa1cdc1734f25375cf60b37ff228ba28d1968f88ad4",
+            "finalUrl": "https://www.city.suzuka.lg.jp/suido/1002338/index.html"
+          },
+          {
+            "kind": "new-http-retrieval",
+            "sourceUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+            "fetchedAt": "2026-11-05T06:30:53.309354+00:00",
+            "result": "HTTP 200",
+            "snapshotPath": "data/evidence/issue7/kinki-east/sources/5cc94781c6fe09f9f520.html",
+            "snapshotSHA256": "2fe021b4cf8db8f5f76eb1bb971f34b57d181325c590fe9258c08f105b9578fa",
+            "finalUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html"
+          },
+          {
+            "kind": "new-p05-search-of-reused-original",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "result": "全国ZIP内24/25/26の全レコードを名称・住所で新規探索。選択/除外の個別理由はfindingとp05Candidates。原本の再ダウンロードではない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "8a2e71ebd2bc2193f1145b636a1da312cf7aa64bd34d1c46d37861dab0c357e9",
+      "candidateRowSHA256": "0ff7c332f858de6be596c8b09423126d0e5a2f77bc83edae458d5d73b350037a"
+    },
+    {
+      "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+      "previousPlace": {
+        "id": "facility:kinki-5d377b6a926c0d1e6fa1",
+        "legacyIds": [
+          "place:5d377b6a926c0d1e6fa1"
+        ],
+        "name": "京都府立洛西浄化センター公園 サービスセンター管理棟",
+        "address": "京都府長岡京市勝竜寺山崎作り20-5",
+        "phone": "075-951-9161",
+        "evidence": {
+          "sourceUrl": "http://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+          "snapshotPath": "data/evidence/national/kinki/snapshots/d5dc15411149c83d83de.html",
+          "snapshotSHA256": "5e7c1c5de9b1fa9c91abad4f9c3672f15ffc48ce68d570bac5a82fda8eab1c39",
+          "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-000-B001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。配布は公園内サービスセンター管理棟。カードホルダーの過去終了告知はカード自体の終了と区別。"
+        }
+      },
+      "previousPlaceSHA256": "257ae6442287bdb5c99955555886d62287a9f0e855c604414b5232b36b81b52b",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/14",
+      "originalRow": {
+        "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+        "reasonCategory": "移転・別棟",
+        "reason": "府配布元は公園内サービスセンター管理棟を明示。公園運営サイトを追加取得したが当該棟の数値点は得られず。",
+        "nextSource": {
+          "url": "http://www.jade.dti.ne.jp/~rjpark/index.html",
+          "task": "サービスセンター管理棟の配置図と建物外形。"
+        },
+        "investigationStatus": "new-investigation-attempted; coordinate-unresolved",
+        "attempts": [
+          {
+            "kind": "new-http-retrieval",
+            "sourceUrl": "https://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+            "fetchedAt": "2026-11-05T06:27:41.194323+00:00",
+            "result": "HTTP 200",
+            "snapshotPath": "data/evidence/issue7/kinki-east/sources/fd84ddcba7574a11a148.html",
+            "snapshotSHA256": "fd86bdc1761ad9bd1c7d13103f37ab7c613973dd1169f64498af22866e7deb73",
+            "finalUrl": "https://www.pref.kyoto.jp/gesuido/manholekaturagawa.html"
+          },
+          {
+            "kind": "new-http-retrieval",
+            "sourceUrl": "http://www.jade.dti.ne.jp/~rjpark/index.html",
+            "fetchedAt": "2026-11-05T06:29:36.360988+00:00",
+            "result": "HTTP 200",
+            "snapshotPath": "data/evidence/issue7/kinki-east/sources/3437896710a483da8fe1.html",
+            "snapshotSHA256": "3323583927e8de6efdb5c369973f9445a7184c0c54ec66b49de70417a9ff5256",
+            "finalUrl": "http://www.jade.dti.ne.jp/~rjpark/index.html"
+          },
+          {
+            "kind": "new-p05-search-of-reused-original",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "result": "全国ZIP内24/25/26の全レコードを名称・住所で新規探索。選択/除外の個別理由はfindingとp05Candidates。原本の再ダウンロードではない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "a0afdbd0ad4f4192ac290281a298e7c8ce535e4af0d0137366587f5fdd2d52a0",
+      "candidateRowSHA256": "c7c2db1ac131008bdb106b1e5ba70b5bddef0531400dd6af57cdd97ed0dd0c5e"
+    }
+  ]
+}
