@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-06",
+  "baselineDate": "2026-11-05",
+  "adoptionApproved": false,
+  "manifestApplied": false,
+  "researchStage": "all-assigned-reports-received; parent evidence audit recorded separately",
+  "counts": {
+    "targets": 13,
+    "assigned": 13,
+    "reportsReceived": 13,
+    "candidatesForIndependentReview": 10,
+    "notSelectedForAdoptionReview": 3,
+    "adopted": 0
+  },
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "name": "群馬県県土整備部 下水道総合事務所",
+      "owner": "/root/gunma_south",
+      "outcomePath": "data/national/kanto-prefecture/gunma/south/outcomes.json",
+      "outcomeSHA256": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62",
+      "status": "candidate-awaiting-independent-review",
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "name": "玉村町総合運動公園 管理棟",
+      "owner": "/root/gunma_south",
+      "outcomePath": "data/national/kanto-prefecture/gunma/south/outcomes.json",
+      "outcomeSHA256": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62",
+      "status": "human-reported-temporary-relocation-location-unresolved",
+      "geometryStatus": "旧棟仮説まで。仮設棟の外形/配置図未取得、旧棟非代用",
+      "candidateSelectedForReview": false,
+      "nextAction": "移転回答は受領済み。仮設棟の正確な配置図/写真と実際の移設開始・終了日、カード配布の独立明記が未確認。旧管理棟を代用せず位置保留。"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "name": "道の駅 玉村宿(総合案内)",
+      "owner": "/root/gunma_south",
+      "outcomePath": "data/national/kanto-prefecture/gunma/south/outcomes.json",
+      "outcomeSHA256": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62",
+      "status": "candidate-awaiting-independent-review",
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "name": "道の駅ららん藤岡 藤岡市観光案内所",
+      "owner": "/root/gunma_south",
+      "outcomePath": "data/national/kanto-prefecture/gunma/south/outcomes.json",
+      "outcomeSHA256": "8acf317d1db45f147b17a778bb89f0a447b784ad20286d18bc4cbdca8fdabc62",
+      "status": "candidate-awaiting-independent-review",
+      "geometryStatus": "数値外形照合済み・丸め前後内包・未承認",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の独立レビュー、CRS解釈と原本同定の再読後に明示選択。共有manifest未反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "name": "伊勢崎市上下水道局総務課",
+      "owner": "/root/gunma_east",
+      "outcomePath": "data/national/kanto-prefecture/gunma/east/outcomes.json",
+      "outcomeSHA256": "4055dde03e6c07227a9286c3a8ea0101ac218d410cf113fb3db3a3cf418fa7ca",
+      "status": "candidate-unapproved",
+      "geometryStatus": "主棟はz16 x58105/58106 y25664のBldA index493/index23に分かれ、bufferで重複する同一輪郭をunion。tile x境界を跨ぐが9タイル外側境界非接触。union781.40㎡。小棟/案内所/問合せ先の浄化センターは除外。",
+      "candidateSelectedForReview": true,
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "name": "道の駅「まえばし赤城」観光案内所",
+      "owner": "/root/gunma_east",
+      "outcomePath": "data/national/kanto-prefecture/gunma/east/outcomes.json",
+      "outcomeSHA256": "4055dde03e6c07227a9286c3a8ea0101ac218d410cf113fb3db3a3cf418fa7ca",
+      "status": "candidate-unapproved",
+      "geometryStatus": "5104は近傍9タイル中の中央タイルBldA index88。面積214.13㎡、四角形、タイル境界非接触。隣接施設を案内所として代用しない。数値面積の独立公式実測値は未取得。",
+      "candidateSelectedForReview": true,
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "name": "桐生市役所本庁舎1階警備・宿日直室",
+      "owner": "/root/gunma_east",
+      "outcomePath": "data/national/kanto-prefecture/gunma/east/outcomes.json",
+      "outcomeSHA256": "4055dde03e6c07227a9286c3a8ea0101ac218d410cf113fb3db3a3cf418fa7ca",
+      "status": "footprint-not-current",
+      "geometryStatus": "9枚全体を描画、周囲3道路・文化会館方向・旧棟配置を視認。比較した旧棟の面積/原タイル参照はkiryu-geometry.json。現概要建築面積3477.69㎡と2022計画3388.60㎡は時点が異なるので同一値に揃えない。旧形状から現在の建物代表点を生成しない。",
+      "candidateSelectedForReview": false,
+      "nextAction": "新庁舎の更新数値外形または測量図を取得して照合"
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "name": "一般社団法人みどり市観光協会",
+      "owner": "/root/gunma_east",
+      "outcomePath": "data/national/kanto-prefecture/gunma/east/outcomes.json",
+      "outcomeSHA256": "4055dde03e6c07227a9286c3a8ea0101ac218d410cf113fb3db3a3cf418fa7ca",
+      "status": "candidate-unapproved",
+      "geometryStatus": "利用者報告の位置関係を取得済9タイルの道路/周囲棟に照合し3182を選択。中央タイルBldA sourceFeatureIndex273、約164.44㎡、タイル/外側境界非接触、代表点丸め後内包。数値詳細はmidori-geometry.json。",
+      "candidateSelectedForReview": true,
+      "nextAction": "独立レビューで棟同定/CRS解釈を確認後に親が明示選択案を統合"
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "name": "沼田市観光案内所",
+      "owner": "/root/gunma_north",
+      "outcomePath": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "outcomeSHA256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+      "status": "candidate-unapproved",
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "name": "沼田市役所観光交流課(テラス沼田5階)",
+      "owner": "/root/gunma_north",
+      "outcomePath": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "outcomeSHA256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+      "status": "candidate-unapproved",
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "name": "テラス沼田4階 上下水道経営課",
+      "owner": "/root/gunma_north",
+      "outcomePath": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "outcomeSHA256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+      "status": "candidate-unapproved",
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "name": "渋川地区名産品センター(しぶさん)",
+      "owner": "/root/gunma_north",
+      "outcomePath": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "outcomeSHA256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+      "status": "candidate-unapproved",
+      "geometryStatus": "数値原典照合済・丸め前後内包・独立採用レビュー待ち",
+      "candidateSelectedForReview": true,
+      "nextAction": "親の全県統合検証と独立Codexレビュー。承認後のみmanifest反映。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町役場上下水道課",
+      "owner": "/root/gunma_north",
+      "outcomePath": "data/national/kanto-prefecture/gunma/north/outcomes.json",
+      "outcomeSHA256": "fe51c5e07360426b096e57068073c535028af0ed015ed3aebc7c0cac18f97624",
+      "status": "identity-conflict-hold",
+      "geometryStatus": "数値原典照合済・丸め前後内包・棟同定に利用者報告との未解消矛盾あり",
+      "candidateSelectedForReview": false,
+      "nextAction": "親が東隣という利用者報告と公式2019南西図を照合し、現配置を解消。追加質問は親のみ。"
+    }
+  ]
+}

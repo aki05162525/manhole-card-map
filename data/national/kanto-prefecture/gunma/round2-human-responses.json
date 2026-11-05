@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "baselineDate": "2026-11-05",
+  "responses": [
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "receivedAt": "2026-11-05T15:41:50.227446+00:00",
+      "informationType": "user-report; not independently confirmed",
+      "question": "配布先のコミュニティセンターは役場本庁舎の東隣の棟か",
+      "responseVerbatim": "吉岡町役場の敷地配置において、吉岡町コミュニティセンターは役場本庁舎の東隣の棟（敷地内東側）に位置しており、その認識で合っています。\n\nマンホールカードの休日配布場所等として案内されている同施設は、役場庁舎（南側・中央寄り）に対して東側に隣接して建つ施設（群馬県北群馬郡吉岡町大字下野田560番地、敷地内配置）です。",
+      "sourceURLProvidedInAnswer": null,
+      "independentEvidenceConflict": "担当northが2019公式ガイドH-4で2コミュニティを役場南西、東を3保健センターと読解。原本比較継続。回答を位置採用に直結しない。",
+      "distributionConditionConflict": "回答は休日配布と記すが現公式本文は平日コミュニティセンター/休日文化センター。配布関係は変更しない。",
+      "resolved": false
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "receivedAt": "2026-11-05T15:43:55.427340+00:00",
+      "informationType": "user-report; independent confirmation pending",
+      "claimedAsOf": "2026-11-05",
+      "responseVerbatim": "はい、仮設プレハブへ移っています。   玉村町総合運動公園で休日等に配布されている群馬県流域下水道のマンホールカードについて、管理棟が長寿命化改修工事（2026年8月〜2027年2月予定）に伴い全館立入禁止となっている期間中は、窓口業務全般（利用受付・カード配布等）が管理棟前に設置された仮設プレハブ事務所に移転して運用されています。   県側の案内ページが「玉村町総合運動公園 管理棟」表記のままとなっているのは、施設名称としての主表記を維持しているためであり、現地実務としては案内どおり仮設プレハブ側の窓口で受け渡しが行われています。数値外形や訪問先ノードとしては、本設管理棟の閉鎖および仮設棟側への窓口移転と整理して問題ありません",
+      "sourceURLProvidedInAnswer": null,
+      "subsequentParentInstruction": "利用者へ質問済み、回答待ち。予約窓口移転をカード配布先移転へ自動適用しない。",
+      "assessment": "直前の回答は利用者報告として保存するが、後続指示と独立原本未確認を踏まえカード関係変更を行わない。県本文の管理棟表記と町の予約窓口移転告知を別証拠として扱う。",
+      "resolved": false
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "receivedAt": "2026-11-05T15:50:29.495891+00:00",
+      "informationType": "user-report; geometry correspondence pending verification",
+      "question": "旧奥村酒造の観光協会棟は、本町通り西側で、コノドント館から北へ最初の東西道路を渡ったすぐ北西の棟ですか",
+      "officialURL": "https://16106midori.jp/spot/shopping/41/",
+      "responseVerbatim": "そのの認識で合っています",
+      "sourceURLProvidedInAnswer": null,
+      "resolved": true,
+      "resolution": "利用者報告をeastが数値外形3182と照合。未承認候補、公式独立同定とはしない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "receivedAt": "2026-11-05T16:02:00.673908+00:00",
+      "reportedAt": "2026-11-06",
+      "informationType": "user-report; card relocation not explicit in cited official text",
+      "report": "休日カード配布も2026年8月〜2027年2月予定の工事期間は管理棟前の仮設プレハブ事務所へ移設。",
+      "sourceURLProvidedInAnswer": "https://www.town.tamamura.lg.jp/docs/2026060900041/",
+      "interpretationFromUserOnly": "県の管理棟表記は基本呼称維持のため。一次資料確認済みとはしない。",
+      "supersedesPendingResponse": true,
+      "resolved": false,
+      "remaining": "仮設棟の数値外形/配置を未同定。一次資料のカード移転明記と区別して関係修正案を保留。"
+    }
+  ]
+}

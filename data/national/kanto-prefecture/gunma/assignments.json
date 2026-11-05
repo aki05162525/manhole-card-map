@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "assignedAt": "2026-11-05T15:32:28.524280+00:00",
+  "baselineDate": "2026-11-05",
+  "instruction": "Complete real investigation of all 13 IDs. Initial small PR is not completion. Parent integrates once and retains shared manifest unchanged.",
+  "groups": [
+    {
+      "owner": "/root/gunma_south",
+      "facilityIds": [
+        "facility:kanto-north-077b4a952fc91c118d81",
+        "facility:kanto-north-919f32c0b7299b9b3b94",
+        "facility:kanto-north-aa5b7eddea78f8da3c18",
+        "facility:kanto-north-fe061728a9f12b2742a6"
+      ],
+      "nationalOutput": "data/national/kanto-prefecture/gunma/south/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/gunma/south/",
+      "verification": "original bytes/hash, manual building comparison, numerical checks; no full suites",
+      "status": "investigation_report_frozen; adoption_unapproved",
+      "redelegationAllowed": false
+    },
+    {
+      "owner": "/root/gunma_east",
+      "facilityIds": [
+        "facility:kanto-north-4e9eed89a1068c1af785",
+        "facility:kanto-north-63e44d207a832584afa1",
+        "facility:kanto-north-88ee40433ca2bfde9534",
+        "facility:kanto-north-cbf9ce5973ddb256d849"
+      ],
+      "nationalOutput": "data/national/kanto-prefecture/gunma/east/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/gunma/east/",
+      "verification": "original bytes/hash, manual building comparison, numerical checks; no full suites",
+      "status": "investigation_report_frozen; adoption_unapproved",
+      "redelegationAllowed": false
+    },
+    {
+      "owner": "/root/gunma_north",
+      "facilityIds": [
+        "facility:kanto-north-105ca48451844bf76784",
+        "facility:kanto-north-5084d7132f37de70e96a",
+        "facility:kanto-north-numata-water-4f",
+        "facility:kanto-north-ba807cb8ac627a6b50e6",
+        "facility:kanto-north-c0a593ee1ebbefef4ded"
+      ],
+      "nationalOutput": "data/national/kanto-prefecture/gunma/north/",
+      "evidenceOutput": "data/evidence/kanto-prefecture/gunma/north/",
+      "verification": "original bytes/hash, manual building comparison, numerical checks; no full suites",
+      "status": "investigation_report_frozen; adoption_unapproved",
+      "redelegationAllowed": false
+    }
+  ],
+  "humanPendingRef": "round2-human-responses.json",
+  "integrationOwner": "/root",
+  "independentReview": "external parent to arrange; implementation children do not approve adoption",
+  "reportsReceivedAt": "2026-11-05T16:04:38.446003+00:00"
+}

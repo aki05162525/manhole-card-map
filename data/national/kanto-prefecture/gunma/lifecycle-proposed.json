@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "identity": {
+        "name": "沼田市役所観光交流課(テラス沼田5階)",
+        "address": "群馬県沼田市下之町888番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+        "coordinate": {
+          "lat": 36.6439658,
+          "lng": 139.0427983
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/numata-geometry.json",
+          "snapshotSHA256": "92356b49cf01aab0b0152b5e3f852dbb467e63f780daa19a001c819d4812c7da",
+          "sourceLocator": "numata-geometry.json: sourceFragments z16/58079/25589 BldA index535 + z16/58080/25589 index9; unionGeometry. 国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "候補・採用未承認。市配布本文・2019パンフレット2頁・現施設本文・4階5階図と外形、南駐車場・歩廊・周囲道路を比較。製品固定readmeと地理院タイル仕様の国内JGD2011/Web Mercator格子を参照、測地系変換なし。隣接断片union重心、小数7桁丸め前後内包。建物代表点で室内/入口測量ではない。詳細・限界はinspection.json。"
+        }
+      },
+      "adoptionSHA256": "197f8968b0073943c631a8af7eb51824188da462d12392544c61361f1f634abb",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; candidate checked 2026-11-05; unapproved"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "identity": {
+        "name": "テラス沼田4階 上下水道経営課",
+        "address": "群馬県沼田市下之町888番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-numata-water-4f",
+        "coordinate": {
+          "lat": 36.6439658,
+          "lng": 139.0427983
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/gunma/numata-geometry.json",
+          "snapshotSHA256": "92356b49cf01aab0b0152b5e3f852dbb467e63f780daa19a001c819d4812c7da",
+          "sourceLocator": "numata-geometry.json: sourceFragments z16/58079/25589 BldA index535 + z16/58080/25589 index9; unionGeometry. 国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "候補・採用未承認。市配布本文・2019パンフレット2頁・現施設本文・4階5階図と外形、南駐車場・歩廊・周囲道路を比較。製品固定readmeと地理院タイル仕様の国内JGD2011/Web Mercator格子を参照、測地系変換なし。隣接断片union重心、小数7桁丸め前後内包。建物代表点で室内/入口測量ではない。詳細・限界はinspection.json。"
+        }
+      },
+      "adoptionSHA256": "03de6f22183f98031e2518b372d15ce5c11d31ed160137137b6b2637efdaa997",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; candidate checked 2026-11-05; unapproved"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

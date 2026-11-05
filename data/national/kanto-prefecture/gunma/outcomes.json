@@ -1,0 +1,722 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "complete": false,
+  "manifestApplied": false,
+  "adoptionApproved": false,
+  "counts": {
+    "targets": 13,
+    "distributionSourcesChecked": 13,
+    "geometryComparedFacilityIds": 3,
+    "candidateFacilityIds": 2,
+    "buildingCorrespondenceUnresolved": 1,
+    "geometryNotStarted": 10,
+    "adopted": 0
+  },
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-077b4a952fc91c118d81",
+      "name": "群馬県県土整備部 下水道総合事務所",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/0",
+      "distributionFinding": "県央水質浄化センター（下水道総合事務所）管理棟、上之手1846-1。平日配布。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/7",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/23",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "県21101アクセス案内の管理棟配置を数値外形と比較。処理槽・他管理施設と区別する。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/0",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-105ca48451844bf76784",
+      "name": "沼田市観光案内所",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/1",
+      "distributionFinding": "西倉内町2889-3の観光案内所。水曜はテラス沼田の別2窓口。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/11",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/26",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "観光協会施設案内の外観・配置図を取得し西倉内町の案内所外形を比較。テラス沼田の点は流用しない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/1",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-4e9eed89a1068c1af785",
+      "name": "伊勢崎市上下水道局総務課",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/2",
+      "distributionFinding": "連取元町170-3、駅前案内所休所日の上下水道局総務課。土日祝年末年始は除く。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/31",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/80",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "局専用案内の図面と連取元町の外形を比較。記事末尾の茂呂南町5097は問い合わせ下水道施設課で別住所。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/2",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-5084d7132f37de70e96a",
+      "name": "沼田市役所観光交流課(テラス沼田5階)",
+      "status": "candidate-pending-independent-review",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/3",
+      "distributionFinding": "水曜日、テラス沼田5階観光交流課。4階代替窓口も同記事に明記。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/33",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/33",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "2タイル断片のunion・南駐車場/歩廊と本体同定を独立レビュー。",
+      "geometryWorkPerformed": true,
+      "stopReason": "独立レビュー待ち",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/3",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-63e44d207a832584afa1",
+      "name": "道の駅「まえばし赤城」観光案内所",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/4",
+      "distributionFinding": "2023-04-01よりまえばし赤城1階観光案内所。旧水道局での配布停止。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/35",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/35",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "市記事から施設案内へ進み観光案内所棟を園内図と外形で比較。旧局は候補にしない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/4",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+      "name": "桐生市役所本庁舎1階警備・宿日直室",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/5",
+      "distributionFinding": "第16弾の休日窓口は本庁舎1階宿直室。平日美原町2-5水道局は別施設。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/40",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/13",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "2026年4月市報8頁の新庁舎・駐車場配置とGSI外形を比較。旧庁舎P05を使用しない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/5",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-919f32c0b7299b9b3b94",
+      "name": "玉村町総合運動公園 管理棟",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/6",
+      "distributionFinding": "宇貫481の公園管理棟、土日祝配布。臨時休園は別条件。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/43",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/43",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "公園配置図の管理棟と運動施設を外形・道路で比較。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/6",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-aa5b7eddea78f8da3c18",
+      "name": "道の駅 玉村宿(総合案内)",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/7",
+      "distributionFinding": "上新田604-1、土日祝の玉村宿総合案内。平日は上新田1116-3水道庁舎。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/55",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/83",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "総合案内が入る棟の園内案内と外形を比較。敷地全体のGoogle表示中心を使わない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/7",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ba807cb8ac627a6b50e6",
+      "name": "渋川地区名産品センター(しぶさん)",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/8",
+      "distributionFinding": "渋川駅前プラザ1階しぶさん、渋川1832-27。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/59",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/51",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "プラザの建物図・外観と駅前道路・数値外形を比較。住所検索点は採用しない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/8",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-c0a593ee1ebbefef4ded",
+      "name": "吉岡町役場上下水道課",
+      "status": "building-correspondence-unresolved",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/9",
+      "distributionFinding": "下野田560コミュニティセンター1階上下水道課事務室内。本庁舎入口の蓋レプリカとは別。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/updates/14",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/14",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/14/exactCandidateCorrection/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/exactOldNewCorrectionProposals/1/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/group-a-outcomes.json#/outcomes/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/selection.json#/groups/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/85",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/group-a-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review-resolution.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "本庁舎東隣の外形2513がコミュニティセンターか、棟名付き配置図または人手回答で確認し数値再比較。",
+      "geometryWorkPerformed": true,
+      "stopReason": "資料読解と外形比較を実施したがコミュニティセンター棟対応未確定",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/9",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cbf9ce5973ddb256d849",
+      "name": "一般社団法人みどり市観光協会",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/10",
+      "distributionFinding": "大間々1034-5の観光協会。駐車はコノドント館を案内。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/67",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/56",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "観光協会紹介の外観・道路・コノドント館との相対位置を外形と比較。駐車先の棟で代用しない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/10",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-fe061728a9f12b2742a6",
+      "name": "道の駅ららん藤岡 藤岡市観光案内所",
+      "status": "geometry-comparison-not-started",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/11",
+      "distributionFinding": "中1131-8ららん藤岡内藤岡市観光案内所。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/85",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/68",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "公式園内図から観光案内所棟を選び外形・広場・隣接棟と比較。施設全体点を流用しない。",
+      "geometryWorkPerformed": false,
+      "stopReason": "今回小分けPRの数値外形比較には未着手。資料不足・取得失敗と分類しない。",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/11",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    },
+    {
+      "facilityId": "facility:kanto-north-numata-water-4f",
+      "name": "テラス沼田4階 上下水道経営課",
+      "status": "candidate-pending-independent-review",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "humanReport": null,
+      "distributionSourceRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/12",
+      "distributionFinding": "水曜日、テラス沼田4階上下水道経営課。5階とは別IDを保持。",
+      "distributionStatus": "公式本文で当該配布先・曜日案内を確認。現地稼働未確認。台帳status変更なし。",
+      "stockStatus": "当日在庫未確認。ウェブ在庫記載から即時受取可とは推定しない。",
+      "coordinateAdopted": false,
+      "priorHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/86",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/69",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "nextAction": "5階と共通建物の候補。同棟確認・数値計算のレビュー後に2IDを明示選択。",
+      "geometryWorkPerformed": true,
+      "stopReason": "独立レビュー待ち",
+      "timingRef": "data/evidence/kanto-prefecture/gunma/retrievals.json#/12",
+      "manualTimingLimitation": "配布本文の初回一括読解はID別秒数未計測。後付け配賦しない。詳細照合の共有区間はmanual-timing.json。"
+    }
+  ]
+}
