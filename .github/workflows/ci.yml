@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.10.17
+      - name: Go tests
+        run: go test ./...
+      - name: Install frontend dependencies
+        working-directory: web
+        run: bun install --frozen-lockfile
+      - name: Lint and format
+        working-directory: web
+        run: |
+          bun run lint
+          bun run format:check
+      - name: Typecheck
+        working-directory: web
+        run: bun run typecheck
+      - name: Vitest
+        working-directory: web
+        run: bun run test
+      - name: Build with explicit synthetic fixtures
+        working-directory: web
+        run: bun run build:fixture
+      - name: Install browser for integration checks
+        working-directory: web
+        run: bunx --no-install playwright install --with-deps chromium
+      - name: Browser checks with synthetic cards
+        working-directory: web
+        run: node scripts/browser-check.mjs
+      - name: Save build-only fixture (not for deployment)
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build-fixture-${{ github.sha }}
+          path: web/dist-fixture/
+          if-no-files-found: error
+          retention-days: 7

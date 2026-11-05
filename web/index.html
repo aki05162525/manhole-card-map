@@ -12,8 +12,11 @@
       ><span>非公式 / 未公開の検証用</span>
     </header>
     <nav>
-      <a href="?engine=a">A：Leaflet</a><a href="?engine=b">B：MapLibre</a
-      ><button id="locate">現在地</button><button id="japan">日本全体</button>
+      <a href="?engine=c">C：簡略図（道路なし）</a>
+      <a href="?engine=a">A：地理院</a><a href="?engine=b">B：MapLibre</a
+      ><a href="?engine=d">D：診断・背景なし</a
+      ><button id="locate" disabled>現在地</button
+      ><button id="japan">日本全体</button>
     </nav>
     <div id="notice" role="status">読み込み中</div>
     <main>
@@ -22,7 +25,8 @@
     </main>
     <footer>
       <div>
-        ● 蓋　■ 配布場所（参考位置）　<span class="active">● 配布中</span
+        ● 蓋　■ 配布場所（未確定ピンのみ参考位置）　<span class="active"
+          >● 配布中</span
         >　<span class="upcoming">● 開始前</span>　<span class="suspended"
           >● 一時中止</span
         >　<span class="ended">● 終了</span>　? 要確認
@@ -31,7 +35,7 @@
         >一覧から探す
         <input
           id="search"
-          placeholder="自治体名またはカード番号"
+          placeholder="都道府県・自治体名・カード番号"
           type="search" /></label
       ><select id="cards" aria-label="カード一覧">
         <option>準備中</option>
@@ -42,7 +46,7 @@
         <p>在庫は未確認。訪問前に公式情報を確認する。</p>
         <p>
           カード情報：保存済みの GKP
-          一覧（画像は使用しない）。配布場所は5都道府県だけを検証した参考位置で、公開用の確定座標ではない。
+          一覧（画像は使用しない）。配布場所の確定状態は詳細に表示。参考位置は訪問先の確定座標ではない。
         </p>
         <p>
           座標候補：<a
