@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:north-db757b448c8db73422a5",
+      "identity": {
+        "name": "花巻市役所本庁舎警備員室(本庁舎1階守衛室)",
+        "address": "岩手県花巻市花城町9-30 本庁舎1階守衛室"
+      },
+      "adoption": {
+        "facilityId": "facility:north-db757b448c8db73422a5",
+        "coordinate": {
+          "lat": 39.3885493,
+          "lng": 141.1168429
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/location-batch2/tohoku/hanamaki-tile.pbf.gz",
+          "snapshotSHA256": "98d61fe5552b318aff58e0474b0207ecedee1709ce9d01d7798f38533019d055",
+          "sourceLocator": "XYZ 16/58457/24955; BldA zero-based feature index 396; extent4096 y-down. Supporting facts: data/evidence/location-batch2/tohoku/building-comparisons.json; facts.json.",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "市の現配布案内と本館PDFの守衛室を接続。本館L字の向き/横棒厚比と、南側張出しの位置を396/398と比較。案内図の脚幅との差は残るが代表点は共通横棒内。398を合体せず396本体を採用。 国土地理院最適化ベクトルタイル（2026-07-01版）を加工。試験公開・基本測量成果ではない。GSI規約PDL1.0、出典/加工表示、第三者権利留保を確認。JGD2011経緯度、XYZメルカトル格子を逆投影しlat/lngへ。測地系変換なし。重心と小数7桁丸め後の外形内包を検査。建物代表点で入口/室内の測量精度は主張しない。 新館1階の「警備」と本館1階の「守衛室・宿直室」を区別。配布案内の「新館2階」と「本庁舎1階守衛室」の書き分けから本館と判断するが直接の棟断定資料は未確認。脚幅差は階差と説明せず、398端の不一致も比較記録に残す。"
+        }
+      },
+      "adoptionSHA256": "f95fe21689d059c6b8e3147c4ceec78d945d4905f1f9f13f174b207777c5533a",
+      "sourceVersion": "GSI optimal_bvmap-v1 2026-07-01; fetched 2026-11-05"
+    },
+    {
+      "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+      "identity": {
+        "name": "道の駅やまだ「おいすた」",
+        "address": "岩手県下閉伊郡山田町山田第5地割66番地1"
+      },
+      "adoption": {
+        "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+        "coordinate": {
+          "lat": 39.478372,
+          "lng": 141.9535192
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/location-batch2/tohoku/yamada-tile.pbf.gz",
+          "snapshotSHA256": "fe4fa95a6068dff123f9d62fbbac863cda4d4448886c1f0425a01923bdfda0e1",
+          "sourceLocator": "XYZ 16/58609/24934; BldA zero-based feature index 127; extent4096 y-down. Supporting facts: data/evidence/location-batch2/tohoku/building-comparisons.json; facts.json.",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "町の現配布案内は情報棟を明記。2023開業PDFの北矢印・周辺3方向の道路・販売棟と情報棟の相対配置および情報棟東側切欠きを126/127と照合し127を選択。販売棟126は採用しない。 国土地理院最適化ベクトルタイル（2026-07-01版）を加工。試験公開・基本測量成果ではない。GSI規約PDL1.0、出典/加工表示、第三者権利留保を確認。JGD2011経緯度、XYZメルカトル格子を逆投影しlat/lngへ。測地系変換なし。重心と小数7桁丸め後の外形内包を検査。建物代表点で入口/室内の測量精度は主張しない。"
+        }
+      },
+      "adoptionSHA256": "852f954014ec973d5b96583dc906d12fb08ca9fdfcf0fe63134a03a042c4e27a",
+      "sourceVersion": "GSI optimal_bvmap-v1 2026-07-01; fetched 2026-11-05"
+    }
+  ],
+  "events": [],
+  "groups": []
+}
