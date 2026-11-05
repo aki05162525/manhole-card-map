@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "id": "13-search",
+      "url": "https://www.city.oyama.tochigi.jp/opendata.php?mode=search&od_keyword=%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD",
+      "retrievedAt": "2026-11-05T09:08:04.580214+00:00",
+      "redistribution": "not-assessed; raw retained locally only",
+      "coordinateUse": "not approved",
+      "status": 200,
+      "finalURL": "https://www.city.oyama.tochigi.jp/opendata.php?mode=search&od_keyword=%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD",
+      "contentType": "text/html; charset=UTF-8",
+      "snapshot": "data/work/issue16-group-b/13-search.html",
+      "sha256": "8ded4d3909d57cb0a4c5c58295c84f9569aba8087c3cbbd7f5c9f740ba408cc1",
+      "bytes": 13005,
+      "elapsedSeconds": 0.23
+    },
+    {
+      "id": "20-floorplan",
+      "url": "https://fukkoichiba.hokkaido.jp/media/1f.png",
+      "retrievedAt": "2026-11-05T09:08:04.580724+00:00",
+      "redistribution": "not-assessed; raw retained locally only",
+      "coordinateUse": "not approved",
+      "status": 200,
+      "finalURL": "https://fukkoichiba.hokkaido.jp/media/1f.png",
+      "contentType": "image/png",
+      "snapshot": "data/work/issue16-group-b/20-floorplan.html",
+      "sha256": "e4082bfbece4802f1d03dc68868058e5780d1dd1fed13a1544249c7f2efd8b7a",
+      "bytes": 18894,
+      "elapsedSeconds": 0.111
+    }
+  ]
+}

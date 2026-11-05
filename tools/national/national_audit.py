@@ -85,7 +85,7 @@ def audit(root, manifest='tools/national/manifest.json', full=None, ledger=None,
 
     m = document(manifest)
     # Read all selection inputs before assembling, then ensure no file changed.
-    for path in m['inputs'] + [r['path'] for r in m['patches'] + m['locations']]:
+    for path in m['inputs'] + [r['path'] for r in m['patches'] + m['locations'] + m.get('locationLifecycle', [])]:
         document(path)
     assembled, assembly_audit = assemble.assemble(root, m)
     places = index(assembled['places'], 'id', 'assembled places')
@@ -266,7 +266,10 @@ def audit(root, manifest='tools/national/manifest.json', full=None, ledger=None,
         matching_relations = bool(current_rs and all(any(g['cardId'] == r['cardId'] and relation_matches(r, g) for g in rs) for r in current_rs) and all(any(r['cardId'] == g['cardId'] for r in current_rs) for g in rs)) if generated else None
         ended = bool(generated and matching_relations and rs and all(r.get('review') == 'verified' and r.get('status') == 'ended' for r in rs))
         conditions = f.get('sourceConditions', 'not-evaluated')
+        location_review = places.get(fid, {}).get('locationReview')
         signals = []
+        if location_review and location_review['status'] == 'needs-review':
+            signals.append('location-identity-needs-review')
         if adopted:
             if 'relocation' in blockers or 'conflict' in blockers:
                 signals.append('identity-or-coordinate-conflict')
@@ -303,7 +306,7 @@ def audit(root, manifest='tools/national/manifest.json', full=None, ledger=None,
                         exception=f.get('priorityException'), estimatedMinutes=f.get('estimatedMinutes'))
         row = dict(facilityId=fid, name=p.get('name'), address=p.get('address'), fixedAssignment=fid in owners,
                    region=owners.get(fid), locationStatus='adopted' if adopted else 'unlocated',
-                   selection=selected.get(fid), currentCoordinate=co,
+                   selection=selected.get(fid), currentCoordinate=co, locationReview=location_review,
                    provenance=dict(original=history, facilityEvidence=p.get('evidence'),
                                    relationEvidence=[r.get('evidence') for r in rs], followupRef=f'{followups}#/facilities/{list(follow).index(fid)}' if fid in follow else None),
                    generated=g,
@@ -362,6 +365,7 @@ def audit(root, manifest='tools/national/manifest.json', full=None, ledger=None,
                               generatedUnlocated=sum(p.get('coordinate', {}).get('status') != 'confirmed' for p in generated_places.values()) if generated else None,
                               assembledUnlocated=sum('coordinate' not in p for p in places.values()),
                               outsideFixedSelectedIds=sorted(set(selected)-set(owners)-old),
+                              lifecycleWithheldIds=sorted(p['id'] for p in places.values() if p.get('locationReview', {}).get('status') in ('needs-review','withdrawn')),
                               missingGeneratedAdoptedIds=[r['facilityId'] for r in rows if r['currentCoordinate'] and generated and not r['generated']['matchesAdopted']] if generated else None,
                               missingGeneratedPinIds=sorted(r['facilityId'] for r in rows if generated and r['generated']['missingExpectedPin']) if generated else None,
                               excludedEndedIds=sorted(r['facilityId'] for r in rows if r['workStatus'] == 'excluded-ended')),
@@ -373,6 +377,7 @@ def audit(root, manifest='tools/national/manifest.json', full=None, ledger=None,
                 sharedInvestigationCandidates=dict(sameAddress=[dict(address=k, facilityIds=v) for k, v in sorted(address_groups.items()) if len(v)>1],
                                                    sameCoordinate=[dict(coordinate=dict(lat=k[0], lng=k[1]), facilityIds=v) for k, v in sorted(coordinate_groups.items()) if len(v)>1]),
                 reconfirmationQueue=recheck, facilities=rows,
+                locationLifecycle=assembly_audit.get('locationLifecycle'),
                 coverage=dict(duplicateGeneratedRelations=duplicate_generated if generated else None, reviewFiles=[p.relative_to(root).as_posix() for p in review_paths],
                               followups=followups, originalReasons=REASONS,
                               evidenceValidation='assemble validates approved ledger/location evidence bytes; inputSHA256 lists JSON inputs and explicit listing source, not every archived evidence file.',
