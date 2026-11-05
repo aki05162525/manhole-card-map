@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "gsi": {
+    "source": "国土地理院最適化ベクトルタイル",
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "2026-07-01（公式readme）",
+    "readme": {
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "path": "data/work/location-batch2/kinki-west/74f09277e6fd7b71.md",
+      "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+      "fetchedAt": "2026-11-05T11:28:00.800174+00:00"
+    },
+    "termsRef": "data/evidence/location-batch1/gsi-terms-retrieval.json",
+    "termsPath": "data/evidence/location-batch1/gsi-terms.html",
+    "termsSHA256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
+    "termsRetrieval": "第1弾取得2026-11-05T10:46:50.392397+00:00を再利用。今回のurllib取得はTLSエラー。新取得と扱わない。",
+    "license": "PDL1.0。試験Vectorは基本測量成果に位置付けない。出典・加工を表示し、国土地理院による施設同定/承認としない。",
+    "processing": "PMTilesから2タイルを切り出し、BldA外形へ仮の施設点を投影して内包のみを検査。建物選定・重心導出なし。",
+    "crs": "Web Mercatorタイル格子。lat/lngを球面Mercatorへ投影。奈良CSVは原則WGS1984、守口CSV個別CRS不明。測地系差を補正していないため診断のみ。",
+    "accuracy": "タイル一般化と施設点の位置意味の不確かさが残る。現地精度を保証しない。"
+  },
+  "otherRaw": "一般HTML/PDF/画像/Excelは再配布条件を個別確定していないためworkのみ。Gitには自作事実抽出、hashとGSIの必要2タイルのみ。"
+}

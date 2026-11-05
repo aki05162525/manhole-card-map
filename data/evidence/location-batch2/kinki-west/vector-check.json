@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "name": "nara",
+      "seed": {
+        "lat": 34.674053,
+        "lng": 135.830732
+      },
+      "tile": {
+        "z": 16,
+        "x": 57495,
+        "y": 26030
+      },
+      "extent": 4096,
+      "path": "data/evidence/location-batch2/kinki-west/nara-tile.pbf.gz",
+      "sha256": "9ddf9dca5922eeb46ca5879c0caaa3196f4a435a67407bc4bee745b2a039b2c9",
+      "containsCount": 1,
+      "containingFeatures": [
+        {
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  834,
+                  3874
+                ],
+                [
+                  873,
+                  3876
+                ],
+                [
+                  872,
+                  3897
+                ],
+                [
+                  891,
+                  3897
+                ],
+                [
+                  891,
+                  3875
+                ],
+                [
+                  989,
+                  3877
+                ],
+                [
+                  987,
+                  3934
+                ],
+                [
+                  956,
+                  3935
+                ],
+                [
+                  957,
+                  3976
+                ],
+                [
+                  932,
+                  3974
+                ],
+                [
+                  931,
+                  3982
+                ],
+                [
+                  828,
+                  3981
+                ],
+                [
+                  829,
+                  3955
+                ],
+                [
+                  836,
+                  3955
+                ],
+                [
+                  837,
+                  3918
+                ],
+                [
+                  831,
+                  3918
+                ],
+                [
+                  834,
+                  3874
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          },
+          "id": 0,
+          "type": "Feature"
+        }
+      ],
+      "decision": "not-approved",
+      "note": "内包は棟同定を意味しない。CSVのCRS/対象棟の独立照合なしで代表点に変換しない。"
+    },
+    {
+      "name": "moriguchi",
+      "seed": {
+        "lat": 34.735,
+        "lng": 135.561
+      },
+      "tile": {
+        "z": 16,
+        "x": 57446,
+        "y": 26017
+      },
+      "extent": 4096,
+      "path": "data/evidence/location-batch2/kinki-west/moriguchi-tile.pbf.gz",
+      "sha256": "79dd683f8d52a1e8d5e8189e0e5b736af6833955f50c17233b3009b70bdc4531",
+      "containsCount": 0,
+      "containingFeatures": [],
+      "decision": "not-approved",
+      "note": "内包は棟同定を意味しない。CSVのCRS/対象棟の独立照合なしで代表点に変換しない。"
+    }
+  ]
+}

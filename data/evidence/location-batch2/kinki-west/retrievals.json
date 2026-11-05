@@ -1,0 +1,218 @@
+[
+  {
+    "url": "https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
+    "fetchedAt": "2026-11-05T11:25:04.208802+00:00",
+    "path": "data/work/location-batch2/kinki-west/88ac3ed757b07805.html",
+    "sha256": "c7603d3b3b41254bb6e767a5c4037445b63b92228bb762a1df21f313fcb0c78d",
+    "status": 200,
+    "finalUrl": "https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
+    "contentType": "text/html",
+    "lastModified": "Thu, 01 Oct 2026 09:15:29 GMT",
+    "elapsedSeconds": 0.178
+  },
+  {
+    "url": "https://www.city.nara.lg.jp/soshiki/6/9651.html",
+    "fetchedAt": "2026-11-05T11:25:04.386647+00:00",
+    "path": "data/work/location-batch2/kinki-west/36bb09f9492cf08d.html",
+    "sha256": "0dd4704924919ba64f8a375e723ca27415486a7026f2e22d4937747f014fa6af",
+    "status": 200,
+    "finalUrl": "https://www.city.nara.lg.jp/soshiki/6/9651.html",
+    "contentType": "text/html",
+    "lastModified": "Wed, 04 Nov 2026 16:06:50 GMT",
+    "elapsedSeconds": 0.128
+  },
+  {
+    "url": "https://www.city.ashiya.lg.jp/jouhou/opendata.html",
+    "fetchedAt": "2026-11-05T11:25:04.515377+00:00",
+    "path": "data/work/location-batch2/kinki-west/46e01253fb8ca04e.html",
+    "sha256": "6e763558310d101053da315cd50241098375b56b5f10fef9663cf9dc2d285a31",
+    "status": 200,
+    "finalUrl": "https://www.city.ashiya.lg.jp/jouhou/opendata.html",
+    "contentType": "text/html",
+    "lastModified": "Thu, 20 Aug 2026 11:00:05 GMT",
+    "elapsedSeconds": 0.149
+  },
+  {
+    "url": "https://www.city.kashiwara.lg.jp/category/bunya/shisei/jyohokokai/more%40docs_4%40c_articles.p8.html",
+    "fetchedAt": "2026-11-05T11:25:04.664456+00:00",
+    "path": "data/work/location-batch2/kinki-west/5e500fb769597159.html",
+    "sha256": "f5c524a9567ffa7c9931d81136469bf34a5a51314080c5ea29e4883c41ff2ba1",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwara.lg.jp/category/bunya/shisei/jyohokokai/more%40docs_4%40c_articles.p8.html",
+    "contentType": "text/html",
+    "lastModified": "Wed, 04 Nov 2026 08:00:19 GMT",
+    "elapsedSeconds": 0.141
+  },
+  {
+    "url": "https://www.town.hyogo-inami.lg.jp/cmsfiles/contents/0000007/7432/R08youkou.pdf",
+    "fetchedAt": "2026-11-05T11:25:04.805254+00:00",
+    "path": "data/work/location-batch2/kinki-west/a68af60195e82951.pdf",
+    "sha256": "f9cf34dd70fcce02f9fbbe95f9f0a82f7f64d581a0bc47598e91f74e2952ff5e",
+    "status": 200,
+    "finalUrl": "https://www.town.hyogo-inami.lg.jp/cmsfiles/contents/0000007/7432/R08youkou.pdf",
+    "contentType": "application/pdf",
+    "lastModified": "Thu, 15 Jan 2026 05:39:17 GMT",
+    "elapsedSeconds": 0.255
+  },
+  {
+    "url": "https://www.city.moriguchi.osaka.jp/material/files/group/7/272094_public_facility.xlsx",
+    "fetchedAt": "2026-11-05T11:25:12.598514+00:00",
+    "path": "data/work/location-batch2/kinki-west/97543aeb336ddff2.xlsx",
+    "sha256": "5fa58e58223f9322d11fd6b3fc47d9d6ea652600e338c8d3a3d808a24a9bb143",
+    "status": 200,
+    "finalUrl": "https://www.city.moriguchi.osaka.jp/material/files/group/7/272094_public_facility.xlsx",
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "lastModified": "Wed, 25 Feb 2026 06:59:11 GMT",
+    "elapsedSeconds": 0.204
+  },
+  {
+    "url": "https://www.city.nara.lg.jp/soshiki/6/9554.html",
+    "fetchedAt": "2026-11-05T11:25:12.802667+00:00",
+    "path": "data/work/location-batch2/kinki-west/8bed215092f32a5c.html",
+    "sha256": "e84c5289d816d081c153ba7af994f01b417669ed42a84e8e8181b12e7e802d0d",
+    "status": 200,
+    "finalUrl": "https://www.city.nara.lg.jp/soshiki/6/9554.html",
+    "contentType": "text/html",
+    "lastModified": "Wed, 04 Nov 2026 16:05:59 GMT",
+    "elapsedSeconds": 0.158
+  },
+  {
+    "url": "https://www.city.ashiya.lg.jp/gyousei/koukyousisetu/sisetukarute.html",
+    "fetchedAt": "2026-11-05T11:25:12.961118+00:00",
+    "path": "data/work/location-batch2/kinki-west/2ab03fb925513899.html",
+    "sha256": "fa05085e41d5bce0521e97f8dd554850581af99678224fd1cbff07f611f8c05d",
+    "status": 200,
+    "finalUrl": "https://www.city.ashiya.lg.jp/gyousei/koukyousisetu/sisetukarute.html",
+    "contentType": "text/html",
+    "lastModified": "Tue, 26 May 2026 05:00:02 GMT",
+    "elapsedSeconds": 0.138
+  },
+  {
+    "url": "https://odcs.bodik.jp/272213/",
+    "fetchedAt": "2026-11-05T11:25:13.099606+00:00",
+    "path": "data/work/location-batch2/kinki-west/5e105187fb7e061f.html",
+    "sha256": "af09a6ffb6ad41c3105eab9a4c4292c0cc8d6ae1791a787e641d3d0779fc65a6",
+    "status": 200,
+    "finalUrl": "https://odcs.bodik.jp/272213/",
+    "contentType": "text/html; charset=UTF-8",
+    "lastModified": null,
+    "elapsedSeconds": 0.926
+  },
+  {
+    "url": "https://www.city.nara.lg.jp/uploaded/attachment/200211.csv",
+    "fetchedAt": "2026-11-05T11:25:33.281681+00:00",
+    "path": "data/work/location-batch2/kinki-west/0facd5f774ba1bb9.csv",
+    "sha256": "5dc12c3fc149c5d0b129b76a728f0da708240814317307342ec5097d62a58678",
+    "status": 200,
+    "finalUrl": "https://www.city.nara.lg.jp/uploaded/attachment/200211.csv",
+    "contentType": "text/csv",
+    "lastModified": "Mon, 01 Sep 2025 08:16:04 GMT",
+    "elapsedSeconds": 0.165
+  },
+  {
+    "url": "https://www.city.ashiya.lg.jp/gyousei/koukyousisetu/documents/r6_facility_record.pdf",
+    "fetchedAt": "2026-11-05T11:25:33.447304+00:00",
+    "path": "data/work/location-batch2/kinki-west/43c4059ec7f65d6e.pdf",
+    "sha256": "3b0e02a04fe1b76a9906f3ae0b799ced29b3abdca4d6c077eab0d1f40850204c",
+    "status": 200,
+    "finalUrl": "https://www.city.ashiya.lg.jp/gyousei/koukyousisetu/documents/r6_facility_record.pdf",
+    "contentType": "application/pdf",
+    "lastModified": "Tue, 26 May 2026 05:00:02 GMT",
+    "elapsedSeconds": 0.333
+  },
+  {
+    "url": "https://dampark-ibakita.com/park-map",
+    "fetchedAt": "2026-11-05T11:25:33.780699+00:00",
+    "path": "data/work/location-batch2/kinki-west/9dce5eba9b8dd160.html",
+    "sha256": "4e2baa8cf9b9c279eb1e2e10491bc4bb38e81e0c2a5af2bfab5ecf94aa3b84d7",
+    "status": 200,
+    "finalUrl": "https://dampark-ibakita.com/park-map",
+    "contentType": "text/html; charset=UTF-8",
+    "lastModified": null,
+    "elapsedSeconds": 3.35
+  },
+  {
+    "url": "https://data.bodik.jp/api/3/action/package_search?q=organization:272213&rows=100",
+    "fetchedAt": "2026-11-05T11:25:49.213435+00:00",
+    "path": "data/work/location-batch2/kinki-west/0fa28326bfa91727.html",
+    "sha256": "4e16f52cde9f7dee82245efbc20f6267d8b2ab10f69fa593610e76260564e3d4",
+    "status": 200,
+    "finalUrl": "https://data.bodik.jp/api/3/action/package_search?q=organization:272213&rows=100",
+    "contentType": "application/json;charset=utf-8",
+    "lastModified": null,
+    "elapsedSeconds": 0.144
+  },
+  {
+    "url": "https://www.city.kashiwara.lg.jp/_files/00404600/chosha_kihonsekkei_gaiyouban.pdf",
+    "fetchedAt": "2026-11-05T11:26:15.282880+00:00",
+    "path": "data/work/location-batch2/kinki-west/1f1118c16427289a.pdf",
+    "sha256": "a53208676adcc748ef4a60f635685578c2a2b5e4831721bdaefe3ee63b0ae790",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwara.lg.jp/_files/00404600/chosha_kihonsekkei_gaiyouban.pdf",
+    "contentType": "application/pdf",
+    "lastModified": "Tue, 18 Feb 2025 00:59:44 GMT",
+    "elapsedSeconds": 1.045
+  },
+  {
+    "url": "https://dampark-ibakita.com/wp-content/uploads/2026/08/map02.png",
+    "fetchedAt": "2026-11-05T11:26:16.327718+00:00",
+    "path": "data/work/location-batch2/kinki-west/98487fdc5104556e.png",
+    "sha256": "96b3ff380b9525da1d11ae2c3d584c95423d8b5f2589c288d44cdb1b3385b8b2",
+    "status": 200,
+    "finalUrl": "https://dampark-ibakita.com/wp-content/uploads/2026/08/map02.png",
+    "contentType": "image/png",
+    "lastModified": "Wed, 05 Aug 2026 06:13:45 GMT",
+    "elapsedSeconds": 3.298
+  },
+  {
+    "url": "https://www.kuruminoki.co.jp/shikanofune/mayu/",
+    "fetchedAt": "2026-11-05T11:26:19.625751+00:00",
+    "path": "data/work/location-batch2/kinki-west/b35e1bf496aba52c.html",
+    "sha256": "0061071c00e0be89c5e0a86cd2feecf063e4d7bc1c794973773e167b7bf5ea43",
+    "status": 200,
+    "finalUrl": "https://www.kuruminoki.co.jp/shikanofune/mayu/",
+    "contentType": "text/html; charset=UTF-8",
+    "lastModified": null,
+    "elapsedSeconds": 0.146
+  },
+  {
+    "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/master/README.md",
+    "fetchedAt": "2026-11-05T11:26:51.854671+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "elapsedSeconds": 0.335
+  },
+  {
+    "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+    "fetchedAt": "2026-11-05T11:26:52.190378+00:00",
+    "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+    "elapsedSeconds": 0.31
+  },
+  {
+    "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/README.md",
+    "fetchedAt": "2026-11-05T11:27:21.436901+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "elapsedSeconds": 0.282
+  },
+  {
+    "url": "https://dampark-ibakita.com/wp-content/uploads/2026/04/HPmap.png",
+    "fetchedAt": "2026-11-05T11:27:21.718770+00:00",
+    "path": "data/work/location-batch2/kinki-west/f73b7a25b690d52e.png",
+    "sha256": "f53603f942a981023d534c920d84725f3a299dba60c60d8809ece2ef159a7258",
+    "status": 200,
+    "finalUrl": "https://dampark-ibakita.com/wp-content/uploads/2026/04/HPmap.png",
+    "contentType": "image/png",
+    "lastModified": "Tue, 28 Apr 2026 02:46:59 GMT",
+    "elapsedSeconds": 1.226
+  },
+  {
+    "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+    "fetchedAt": "2026-11-05T11:28:00.800174+00:00",
+    "path": "data/work/location-batch2/kinki-west/74f09277e6fd7b71.md",
+    "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+    "status": 200,
+    "finalUrl": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+    "contentType": "text/plain; charset=utf-8",
+    "lastModified": null,
+    "elapsedSeconds": 0.095
+  }
+]
