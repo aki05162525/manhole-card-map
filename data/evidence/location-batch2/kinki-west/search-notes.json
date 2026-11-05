@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-11-05T11:55:55.022775+00:00",
+  "provenance": "初回会話のweb検索呼出しと取得記録を再点検して追補。検索時刻/応答hashを後から捏造しない。",
+  "rows": [
+    {
+      "topic": "大阪府ダムパーク",
+      "query": "site:pref.osaka.lg.jp ダムパーク パークセンター 配置図",
+      "status": "search-only-no-prefecture-body-retrieval",
+      "result": "府のダムカード案内等が結果に出たが、府資料本文を取得/精査した記録はない。次に運営者園内図へ進んだ。"
+    },
+    {
+      "topic": "奈良文化財GIS",
+      "status": "planned-not-executed",
+      "result": "selectionの文化財GISは予定。実際は市オープンデータカタログ→公共施設CSVを調べた。文化財GIS自体の探索/取得完了を主張しない。"
+    },
+    {
+      "topic": "芦屋共通CSV",
+      "status": "not-found-in-inspected-page",
+      "source": "https://www.city.ashiya.lg.jp/jouhou/opendata.html",
+      "result": "公開ページで当該CSVは見つからず施設カルテに進んだ。全市データの不存在ではない。"
+    }
+  ]
+}

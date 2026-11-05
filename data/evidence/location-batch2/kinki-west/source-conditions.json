@@ -15,9 +15,10 @@
     "termsSHA256": "5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e",
     "termsRetrieval": "第1弾取得2026-11-05T10:46:50.392397+00:00を再利用。今回のurllib取得はTLSエラー。新取得と扱わない。",
     "license": "PDL1.0。試験Vectorは基本測量成果に位置付けない。出典・加工を表示し、国土地理院による施設同定/承認としない。",
-    "processing": "PMTilesから2タイルを切り出し、BldA外形へ仮の施設点を投影して内包のみを検査。建物選定・重心導出なし。",
-    "crs": "Web Mercatorタイル格子。lat/lngを球面Mercatorへ投影。奈良CSVは原則WGS1984、守口CSV個別CRS不明。測地系差を補正していないため診断のみ。",
-    "accuracy": "タイル一般化と施設点の位置意味の不確かさが残る。現地精度を保証しない。"
+    "processing": "初回2タイルは奈良/守口の内包診断。追加8タイルは稲美/柏原の周辺道路・建物配置照合。柏原は矩形全体、稲美は公式図で特定した新館側の既存頂点部分を閉じた部分外形の重心を逆Mercator変換。穴/外部にならず、7桁丸め後も元外形と選択部分内。derive-buildings.pyで再現。",
+    "crs": "Web Mercatorタイル格子、extent4096、左上原点、x東/y南。地理座標へ逆Mercator変換しlat/lng順で保存、測地系変換なし。CSVは候補2点の数値原典ではない。奈良CSV原則WGS1984、守口CSV個別CRS不明のため当該診断は採用に用いない。",
+    "accuracy": "縮尺相応の一般化を含む建物代表点。7桁は保存精度であり測量精度ではない。現地・入口精度は保証しない。",
+    "additionalRetrievalRef": "data/evidence/location-batch2/kinki-west/footprint-retrievals.json"
   },
-  "otherRaw": "一般HTML/PDF/画像/Excelは再配布条件を個別確定していないためworkのみ。Gitには自作事実抽出、hashとGSIの必要2タイルのみ。"
+  "otherRaw": "一般HTML/PDF/画像/Excelの新規原本は再配布条件を個別確定していないためworkのみ。既存Git原本は保持。Git追加は事実抽出、hash、再現スクリプトおよびPDL1.0のGSI必要10タイル。"
 }

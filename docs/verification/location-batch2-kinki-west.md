@@ -1,57 +1,69 @@
 # 位置調査第2弾・近畿西（Issue42）
 
-2026-11-05、基準コミット `f66b7e994ef250fadee78f396d22fdfc40ba6a83`。8施設を選定し、新しい一次資料と別手法を調査した。**採用0、保留8**。manifest、位置binding、台帳、全配布関係、アプリ、共有文書・共有テストは変更していない。限定調査の完了であり、未位置の解消を意味しない。
+2026-11-05、基準コミット `f66b7e994ef250fadee78f396d22fdfc40ba6a83`。選定8施設の初回調査は採用0・保留8だったが、Opusの指摘を受けて稲美・柏原のGSI外形を実際に取得・照合した。現在は**採用提案2、保留6、独立再レビュー待ち**。2件をmanifestに仮統合して検証しており、レビュー承認はまだ得ていない。初回判断は[initial-outcomes.json](../../data/national/location-batch2/kinki-west/initial-outcomes.json)に保持する。
 
 ## 母集団と選定
 
-[selection.json](../../data/national/location-batch2/kinki-west/selection.json)を新資料の取得前に保存した。Issue24 snapshotの `originalRef` が `issue7/kinki-west.json` またはそのreviewsに属する108IDを第1弾baselineと照合。現manifestをassembleすると、既採用の大阪市下水道科学館・スワンホール2IDを除く106IDが未位置だった。全国台帳未位置608は開始時の現manifestの集計であり、生成全体や採用後の推計ではない。
+[selection.json](../../data/national/location-batch2/kinki-west/selection.json)は初回資料取得前に保存した。Issue24のoriginalRefが近畿西に属する108IDを第1弾baselineと照合。既採用の大阪市下水道科学館・スワンホールを除く開始時地域未位置は106。全国未位置608も開始時台帳の値であり、今回の仮統合後は地域104・全国606である。
 
-[coverage.json](../../data/national/location-batch2/kinki-west/coverage.json)は108件すべての原調査、レビュー、配布分類、firstPin候補、blocker、除外理由を保持する。今回選定8、既採用2、第1弾保留3、Issue25/27保留4、終了のみ1、今回範囲外90。終了のみと在庫切れ・配布休止を混同しない。Issue20の保留6件は地域外。第1弾integration/followupsの伊丹仮設店舗・旧岡田家・明石と、加東2・大東2の保留は新資料なしに再開していない。
+[coverage.json](../../data/national/location-batch2/kinki-west/coverage.json)に全108件の原調査・レビュー・分類・除外理由を保持する。選定8、既採用2、第1弾保留3、Issue25/27保留4、終了のみ1、今回範囲外90。第1弾integration/followupsの伊丹仮設店舗・旧岡田家・明石、加東2・大東2の保留は再開していない。Issue20保留6件は地域外。終了のみと在庫切れを区別する。
 
-8件は初ピン候補かつ移転・別棟または座標競合のある施設。守口2・芦屋2の共通資料取得は同棟認定ではない。配布状態とfirstPinは保存済み2026-11-05評価の分類であり、本調査で在庫を再確認した意味ではない。地域全施設への成功率や作業時間の外挿はしない。
+8件はfirstPinかつ移転・別棟または座標競合に該当する20件からの**作業者判断による有意抽出**で、網羅的・定量的な順位付けではない。同条件の対象外12IDはcoverageのsameCriteriaExcludedIdsに列挙し、後付けのスコアや劣後理由を作らない。共通資料の守口2・芦屋2を同棟認定したわけではない。配布状態は保存済み2026-11-05評価で、現時点の在庫再確認ではない。
 
-## 調査結果
+## 2施設の外形照合と採用提案
 
-完全なID、出典URL・取得時刻・hash・原本パス、版、座標系、加工、停止・再開条件は[outcomes.json](../../data/national/location-batch2/kinki-west/outcomes.json)の8行を参照。
+[building-correspondence.json](../../data/evidence/location-batch2/kinki-west/building-correspondence.json)に現配布原典、図の版・物理頁、取得日・hash、旧台帳行hash、照合項目を記録。[building-inputs.json](../../data/evidence/location-batch2/kinki-west/building-inputs.json)が元タイル・feature・頂点を固定し、[derive-buildings.py](../../data/evidence/location-batch2/kinki-west/derive-buildings.py)が計算を再現する。レビューに記載された概算点を入力にしていない。旧P05点は取得範囲を絞る探索用に限る。
 
-| 施設 | 新資料・到達点 | 停止理由と再開条件 |
+| 施設・ID | 独立した建物同定 | 代表点 lat, lng |
 | --- | --- | --- |
-| 奈良町南観光案内所 | 市施設CSV 2025-09-01の論理レコード223に34.674053, 135.830732。運営者は繭を旧振興館の活用と説明。 | CSVは鹿の舟の複合施設説明。Vector内包1だけでは繭と断定できない。繭・竈・囀を区別する現配置と外形の対応、個別CRSの例外の有無を確認する。 |
-| ダムパークいばきた パークセンター | 府の計画資料探索から運営者の2026年園内図へ進み、駐車場東側・ドッグラン南側の1番を確認。ダム管理所とは別。 | 絵図を数値外形へ接続できていない。周辺道路・駐車場・建物配置を独立照合する。 |
-| 稲美町役場水道課 | 2026年度採用要項の物理6頁に、本館・新館・いきがい創造センターの区別と配置。 | 数値原典との接続が未完。新館外形・連絡部・道路を照合する。本館P05点で代用しない。 |
-| 芦屋市役所 北館警備室 | 令和6年度カルテ物理8頁の施設101で北館を構成棟として明記。 | 本庁舎全体の写真や住所から北館外形を確定しない。北館配置図と数値外形を照合する。 |
-| 守口市役所 総合案内 | 2026-02-25の施設Excel行36は34.735, 135.561。旧P05と同じ丸め値。 | 仮の経緯度投影ではBldA内包0。改訂点または現庁舎と数値外形の対応が必要。 |
-| 柏原市役所別館 下水工務課 | 市が案内するBODIK全件APIは人口データ1セット。2019基本設計物理4頁は別館・渡り廊下・新庁舎を区別。 | 計画図を現況とみなせず、別館の数値原典も未取得。完成後の配置資料と別館外形を照合する。 |
-| 守口市役所 下水道課 | 同じExcelを共有調査。旧調査の5階南エリアの窓口情報を保持。 | 総合案内と同様。別用途のコミュニティセンター点を流用しない。 |
-| 芦屋市役所 東館下水道課 | カルテ物理9頁の施設102は2015年の東館・水道部部分を明記。住所は精道町8番28号。 | 台帳/旧配布案内の7-6と異なる。役所代表住所との使い分けを未確認のため訂正しない。東館配置・数値原典と住所の根拠を追加確認する。 |
+| 稲美町役場地域整備部水道課 `facility:kinki-0df3699f1debe84ccd2a` | 2026採用要項物理6頁は北が上、2023庁舎案内の敷地図は北が右上。新館が本館南西、いきがい創造センター南東、県道北側という配置、長軸・南東曲線部・東側細長い構造物をGSIに照合。2023案内に新館2階水道課。 | 34.748402, 134.9130319 |
+| 柏原市市役所別館1階 下水工務課 `facility:kinki-1ca68b2dbec83466c8f0` | 2019基本設計物理4頁の北（左上）を合わせ、本館→連絡部→南東の矩形別館、西側国道25号/大和川、東側JR沿い帯状空間、北のリビエールホールを照合。2025市案内が別館・所在地を明記し、配布原典も別館1階。 | 34.5775854, 135.6296097 |
 
-奈良の数値は市CSV、守口の数値は市Excelからの観察値であり、採用提案ではない。[numeric-observations.json](../../data/evidence/location-batch2/kinki-west/numeric-observations.json)に列・行と出典を保持する。奈良市カタログのCRSは原則WGS1984（一部除く）、守口の個別CRSは未確認。測地系未確認の点を含む外形を、独立した建物同定の根拠にしない。重心・建物内代表点は導出していないため、代表点の丸め後内包検査は適用外。
+稲美はBldA z16/57328/26014 feature79で本館と新館が連続する。公式図で特定した新館側の元頂点16〜31を用い、細い接続部の端点間を閉じた部分外形の重心を採った。柏原はz16/57458/26052 feature55の矩形全体の重心。両者とも有効な外形で、重心が外部や穴に出ず、7桁丸め後も元外形と選択部分の内部にある。独立した棟同定を経ずCSV点の内包だけで外形を選んだものではない。入口測量や1995年別館の追加存続証明は採用条件にしない。
+
+候補の根拠と最終承認は別記録。[locations.json](../../data/national/location-batch2/kinki-west/locations.json)と[location-lifecycle.json](../../data/national/location-batch2/kinki-west/location-lifecycle.json)を明示選択した仮統合である。変更を許すのは2施設のcoordinate/evidence/locationReviewのみ。名前・住所・全配布関係・他施設・既存ピンを保持する。
+
+## 残る6件と初回記録の訂正
+
+詳細な出典、到達段階、停止・再開条件は[outcomes.json](../../data/national/location-batch2/kinki-west/outcomes.json)。実際に外形照合したのは上の2件だけであり、残る6件をbuilding-comparison完了とは扱わない。
+
+| 施設 | 到達点・残件 |
+| --- | --- |
+| 奈良町南観光案内所 | CSVの名称・観光案内所POI・旧ならまち振興館の説明は強い施設対応。Vector内包1は確認したが、繭の棟同定を独立に完了していない。再開は「配置図とGSIを照合しCSVを数値原典にしない」または「CSV点の位置意味とCRS/精度を確認」の別経路。双方を必須にはしない。文化財GIS探索は計画のみで未実施。 |
+| ダムパークいばきた パークセンター | map02は**図の左が北**。1番は駐車場南、ドッグラン西〜北西。初回の東/南を原本で訂正した。外形との照合は未実施。大阪府資料は検索のみで本文取得成功とはしない。 |
+| 芦屋市役所 北館警備室 | 施設カルテ101が北館を区別するが、外形照合は未実施。市公開ページで共通CSVを発見していない。市GIS紹介とポータルを追加取得したが、個別地物・数値座標・GIS利用規約は未確認。 |
+| 芦屋市役所 東館下水道課 | カルテ102は東館・水道部を区別。カルテ住所8-28と台帳7-6の使い分け未確認のため住所を訂正しない。北館と同様GISの個別確認・外形照合が残る。 |
+| 守口市役所 総合案内 | Excel行36の34.735,135.561はBldA内包0。行36 T/U列の別館1階エントランスロビー等の記述も抽出した。市役所主棟/別館と施設点の意味を区別する必要がある。 |
+| 守口市役所 下水道課 | 同じExcel。行3の中部エリアコミュニティセンター34.735676,135.561805は旧P05の34.736027,135.561523と異なるが、別用途の点を流用しない。庁舎外形との独立照合は未実施。 |
+
+[search-notes.json](../../data/evidence/location-batch2/kinki-west/search-notes.json)は検索のみ・未実施・限定ページでの未発見を区別する。記録のない検索時刻や応答hashを後から作らない。[numeric-observations.json](../../data/evidence/location-batch2/kinki-west/numeric-observations.json)に原典行・列を保持する。
 
 ## 原本・利用条件・時間
 
-[取得記録](../../data/evidence/location-batch2/kinki-west/retrievals.json)は失敗も保持。一般HTML/PDF/写真/Excel全文は `data/work/location-batch2/kinki-west/` にのみ保存し、Gitには事実抽出・取得hashを置く。奈良市CC BY 2.1 JP、守口市CC BY 4.0の掲載表示を確認し、事実抽出に出典を付した。原本の再配布と位置情報の採否は別判断。
+一般HTML/PDF/写真/Excelの新規原本は再配布条件未確認のためworkのみ。Gitは事実抽出・取得hash・再現処理とPDL1.0の必要タイルを追加し、既存原本を削除しない。[取得記録](../../data/evidence/location-batch2/kinki-west/retrievals.json)はTLSエラー/404等の失敗も保持する。奈良のCC BY 2.1 JP、守口のCC BY 4.0表示は原本と利用目的を分けて扱う。
 
-試験Vectorは国土地理院の現PMTiles（readme上2026-07-01版）から奈良・守口の2タイルだけを保存。[Range取得記録](../../data/evidence/location-batch2/kinki-west/vector-retrievals.json)のETag・Last-Modifiedは全応答で一致。国土地理院最適化ベクトルタイルを加工した内包診断であり、国土地理院による施設点の作成・承認ではない。基本測量成果と位置付けない試験公開で、ラスターと同じ利用条件とは推定していない。PDL1.0と出典・加工表示は[source-conditions.json](../../data/evidence/location-batch2/kinki-west/source-conditions.json)に記録。今回の規約原本取得はTLSエラーのため、第1弾保存済み規約の元取得日時とhashを維持して再利用した。readme取得の大文字ファイル名404も記録している。
+国土地理院最適化ベクトルタイルPMTilesはreadme上2026-07-01版。初回奈良・守口2タイルと今回稲美・柏原周辺8タイルを保存した。後者のRange取得は全件同一ETag・Last-Modifiedで、[footprint-retrievals.json](../../data/evidence/location-batch2/kinki-west/footprint-retrievals.json)に記録。Web Mercator格子extent4096・左上原点x東/y南から逆変換しlat/lngで保存、測地系変換なし。7桁は測量精度を表さない。[source-conditions.json](../../data/evidence/location-batch2/kinki-west/source-conditions.json)にPDL1.0・出典/加工表示を記録。基本測量成果に位置付けない試験公開で、ラスターと同条件とは推定しない。規約は第1弾取得日時/hashを維持して再利用し、新取得と偽らない。国土地理院による施設点の作成・承認ではない。
 
-[timing.json](../../data/national/location-batch2/kinki-west/timing.json)は選定保存から結果記録まで315.054秒の地域共通wall clock。資料取得待ち・図の実見・共有資料読解を含む。事前の既存資料読解、後続の検証・レビュー・PR作成は含まず、施設別に按分も重複加算もしない。
+初回[timing.json](../../data/national/location-batch2/kinki-west/timing.json)の315.054秒は初回調査だけの地域共通wall clock。追加調査の[revision-timing.json](../../data/national/location-batch2/kinki-west/revision-timing.json)を別記し、施設別へ按分・重複加算しない。
 
-## 検証と未確認範囲
+## 検証
+
+新しい地域差分テストを仮統合前に実行し、座標なしで期待2点に一致せず失敗するREDを確認。仮統合後GREEN。unittest discoverが認識する `test_location_batch2_kinki_west.py` とし、ハイフン名では収集されなかったため修正した。全Python93件・Go非cache成功。共有変更はmanifestとtest_assemble.pyのみで、後者の履歴3テストをbatch2選択/bindingを除くmanifestへ限定。既存844やdigestは書き換えていない。
 
 ```sh
 mise exec -- python3 -B data/evidence/location-batch2/kinki-west/verify.py --raw
+mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 python -B data/evidence/location-batch2/kinki-west/derive-buildings.py
 mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 python -B data/evidence/location-batch2/kinki-west/verify-vector.py
-mise exec -- python3 -B tools/national/assemble.py --out data/work/location-batch2/kinki-west/after.json
-cmp data/work/location-batch2/kinki-west/before.json data/work/location-batch2/kinki-west/after.json
+mise exec -- python3 -B -m unittest discover -s tools/national -v
+mise exec -- go test -count=1 ./...
 ```
 
-地域母集団・baseline・選定8ID・原記録/レビューJSON pointer・入力hash・原本hash、採用ゼロを検査。Vector計算は保存タイルだけから再現し奈良1/守口0を確認。研究前後のassemble出力はbytes単位で一致し、座標・証拠・全関係の変更はない。`verify.py`はこの基準manifestに対する調査スナップショット検証であり、後続地域採用後の件数基準ではない。
+原本45hash、全108ID・原記録/レビューpointer、元行hash・旧値・binding・提案/証拠hashを検査。代表点の再計算は保存JSONとbyte一致。元の内包診断も奈良1/守口0を再現した。初回の追跡外スクリプトはhistoryに履歴として保存し、現在の処理はfetch-sources.py/fetch-footprints.py/render-footprints.py/derive-buildings.py/verify*.pyで追跡する。historyの初回結果作成処理で現在の成果を上書きしない。
 
-採用/製品コード変更はないため、独立したアプリ全体のPython/Go/UIテスト、Go builddata、full/details/pins再生成、ブラウザー/Maps到達確認は実施していない。現地、入口・室内窓口、現時点の在庫、全国の最新配布状態も未確認。サーバー起動なし。既存テスト期待値・digestは変更していない。
+assemble→Go builddataは保存一覧20261021・review-list20261105・as-of2026-11-05で前後生成。builddata初回は既存municheckがないため失敗し、親rootの既存raw/checks関連原本をhashを保ってローカルコピー後に成功。[build-inputs.json](../../data/evidence/location-batch2/kinki-west/build-inputs.json)に再利用を記録した。全国監査も実行。1313カード・1735場所・1825関係、配布施設ピン978→980、蓋ピン1309不変。full/details/pinsの世代hash、分割とfullの一致、既存ピン全件不変、追加2件の詳細座標を[verify-generated.py](../../data/evidence/location-batch2/kinki-west/verify-generated.py)で検査し、[generated-check.json](../../data/evidence/location-batch2/kinki-west/generated-check.json)に保存。実detailsとUIのfacilityMapLink関数を使って2件の関係別Maps queryを[check-maps.ts](../../data/evidence/location-batch2/kinki-west/check-maps.ts)で確認した。ブラウザー操作やGoogle Maps先の現地表示は未確認、サーバー起動なし。
 
-今回の範囲で文書と実装の動作上の不一致は見つからなかった。原典間の差は芦屋東館住所と守口数値点の精度問題として上記に保持する。過去の保留を現時点の採用や新しい移転と読み替えない。
+文書とコードの差は、初回文書の「全行building-comparison」「採用0でmanifest不変」と追加実装後の状態を上記の通り訂正した。既存履歴テストの件数を現manifestの件数と読まない。アプリUI変更なし、入口/室内測量・現地在庫・未選定施設の追加調査は未確認。
 
 ## 独立レビュー
 
-Gemini 4 Argon（Antigravity）へこのworktreeの原本・新資料差分・全件分類・非採用と検証を独立レビュー依頼したが、利用枠超過で失敗した。返答は `You have reached your Antigravity quota for this period.`。レビュー結果・承認は得られておらず、別モデルで代替していない。[review.json](../../data/national/location-batch2/kinki-west/review.json)に記録。PRはレビュー未完了のdraftとして引き渡し、Gemini利用再開後に独立レビューが必要。採用ゼロのため未承認候補の統合はない。
-
-commit時は既存pre-commitフックを有効にし、data配下の変更に対して指定される `go test -count=1 ./...` を省略せず実行する。上記の研究限定検証とは別の必須フックである。
+Gemini 4 Argonはquotaで失敗し、承認を得ていない履歴を[review.json](../../data/national/location-batch2/kinki-west/review.json)に残す。その後ユーザーがOpus代替を許可。初回Opusの重大3件と任意指摘への対応は[opus-review-response.json](../../data/national/location-batch2/kinki-west/opus-review-response.json)に別記する。新規Claude Opus 5.5の独立再レビューを依頼するまで提案2件の最終採用は保留。CI監視・マージは親が担当する。

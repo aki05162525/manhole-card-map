@@ -2,9 +2,9 @@
   "schema": 1,
   "region": "kinki-west",
   "selectedCount": 8,
-  "candidateForAdoptionCount": 0,
+  "candidateForAdoptionCount": 2,
   "adoptedCount": 0,
-  "heldCount": 8,
+  "heldCount": 6,
   "rows": [
     {
       "facilityId": "facility:kinki-00076aa000243841ea36",
@@ -12,7 +12,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/0",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/0",
       "newMethod": "奈良市の公開文化財GIS・施設CSVを新規探索し、鹿の舟「繭」の建物識別情報を探す。既存運営者アクセスの再取得やP05再検索はしない。",
-      "finding": "施設CSVで数値原典を取得。2025-09-01版の論理レコード223は鹿の舟全体を説明しており、繭だけの点という定義はない。運営者の繭ページは旧ならまち振興館を活用した棟と確認できるが、CSV点の当該棟への対応は未完。Vector内包1件を独立同定の代用にしない。",
+      "finding": "奈良市施設CSVの名称は奈良町南観光案内所『鹿の舟』、POIは観光案内所、説明にも旧ならまち振興館とあり、施設としての対応は強い。点はVector外形1件に内包する。一方、複数棟のうち繭の外形への独立接続は未完。内包だけを棟同定としない。文化財GIS探索は計画に書いたが実施記録はなく、実施済みとは扱わない。",
       "sourceRecords": [
         {
           "url": "https://www.city.nara.lg.jp/soshiki/6/9651.html",
@@ -49,9 +49,9 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "numeric-containment-diagnosis",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "繭と他棟を区別する現配置図を数値外形へ接続するか、CSV作成者による点の対象棟・CRS例外の有無の明示。",
+      "resumeCondition": "経路A: 繭・他棟を区別する公式配置図を利用条件の確認できるGSI外形へ独立接続し、CSVを数値原典に使わず建物代表点を算出。経路B: CSVの点が繭を対象とする定義と、当該行のCRS/精度の明示を確認して市施設点を採用検討。AとBはいずれかでよく両方を必須にしない。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     },
@@ -61,7 +61,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/1",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/1",
       "newMethod": "大阪府のダムパーク公園計画・配置図からパークセンター棟を特定する別資料を探索する。2022年P05や公園中心を用いない。",
-      "finding": "府資料探索では直接使える数値原典に至らず、運営者の2026年園内図2枚へ進んだ。HPmapの1番は駐車場1/大型車駐車場の東側、ドッグラン南側の建物。map02はダム管理所とパークセンターを分離している。絵図に地理参照数値はなく、まだVector外形へ独立接続していない。",
+      "finding": "初回は府サイトをweb検索したが府資料本文は未取得。検索から運営者の2026年園内図2枚へ進んだ。map02の方位記号では左が北で、HPmapは同じ施設配置の向きと推定できる。パークセンターは駐車場の南、ドッグランの西〜北西。初回の東/南という記述を訂正する。棟外形との実比較はまだ行っていない。",
       "sourceRecords": [
         {
           "url": "https://dampark-ibakita.com/park-map",
@@ -89,9 +89,9 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "drawing-inspected-footprint-not-compared",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "園内図の駐車場・ドッグラン・道路配置を現行の地理参照付き建物外形と照合。公園中心や安威川ダム管理所は代用しない。",
+      "resumeCondition": "訂正した方位に従い、園内図の道路・駐車場・ドッグランと現行GSI外形を実比較する。ダム管理所や公園中心は代用しない。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     },
@@ -101,7 +101,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/2",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/2",
       "newMethod": "町の庁舎耐震・施設管理資料を探索し、新館の配置と数値外形への対応を確認する。旧アクセス図だけの再取得はしない。",
-      "finding": "2026年度採用要項PDF物理6頁の配置図を実見。本館の南西、新館の北西にいきがい創造センターを配置し、本館/新館を明示。2023年旧案内の再取得だけではない。ただし地理参照数値がなく、新館外形を数値原典へ結び付けていない。",
+      "finding": "Opus指摘後にGSI PMTilesを取得し、方位・形状・連絡部・周辺配置を公式配置図と実際に比較した。2023庁舎案内図で新館2階水道課を確認。連続外形から新館側の元頂点16..31を閉じた部分外形の重心を求めた。元外形・選択部分への内包と丸め後内包を検証。",
       "sourceRecords": [
         {
           "url": "https://www.town.hyogo-inami.lg.jp/cmsfiles/contents/0000007/7432/R08youkou.pdf",
@@ -110,18 +110,22 @@
           "fetchedAt": "2026-11-05T11:25:04.805254+00:00"
         }
       ],
-      "sourceVersion": "2026年度; 物理6頁",
+      "sourceVersion": "GSI PMTiles 2026-07-01; 公式図はbuilding-correspondence sources参照",
       "numericObservation": null,
-      "coordinate": null,
-      "crsAndAxes": "配置図。方位Nあり、CRS・数値座標・測量精度なし。",
-      "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
+      "coordinate": {
+        "lat": 34.748402,
+        "lng": 134.9130319
+      },
+      "crsAndAxes": "GSI試験VectorのWeb Mercator格子、x東/y南。逆投影でlat/lng順。測地系変換なし。",
+      "processing": "identified-wing-centroid; derive-buildings.pyで逆投影、小数7桁、丸め後内包。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
-      "decision": "held",
-      "stage": "building-comparison",
-      "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "新館の形・本館との連絡部・南側道路をGSI/自治体外形へ独立照合。既存P05本館候補を新館に転用しない。",
+      "decision": "proposed-pending-independent-review",
+      "stage": "building-compared",
+      "stopCondition": "独立再レビューで棟対応・計算・bindingの問題が残る場合は採用しない。",
+      "resumeCondition": "Opus独立再レビューで現配布棟との対応と加工を点検し、問題があれば根拠に沿って修正。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
-      "timingRef": "data/national/location-batch2/kinki-west/timing.json"
+      "timingRef": "data/national/location-batch2/kinki-west/timing.json",
+      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/0"
     },
     {
       "facilityId": "facility:kinki-0f86b9f28ca3800b81c4",
@@ -129,7 +133,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/3",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/3",
       "newMethod": "芦屋市オープンデータの公共施設一覧を探索し北館・東館の区別と座標仕様を確認する。単一役所点を共有しない。",
-      "finding": "令和6年度施設カルテ物理8頁の施設101は本庁舎の構成として北館・南館を別記し北館地下1階を確認できる。写真は本庁舎全体であり北館だけの外形/数値点を提供しない。",
+      "finding": "令和6年度施設カルテ物理8頁の施設101は本庁舎の構成として北館・南館を別記し北館地下1階を確認できる。写真は本庁舎全体であり北館だけの外形/数値点を提供しない。 初回に予定した共通公共施設CSVは取得した市オープンデータページでは見つけていない（市全体に存在しないとは断定しない）。芦屋市地図情報の公式導線と施設情報マップの存在を追記し、個別棟レコードと利用規約は未確認として保持。",
       "sourceRecords": [
         {
           "url": "https://www.city.ashiya.lg.jp/jouhou/opendata.html",
@@ -157,9 +161,9 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "facility-document-reviewed-footprint-not-compared",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "北館を明示した配置図と地理参照外形を照合。施設101全体の代表点を流用しない。",
+      "resumeCondition": "北館を明示した配置図と地理参照外形を照合。施設101全体の代表点を流用しない。 公式導線 https://www.city.ashiya.lg.jp/jouhou/tizujouhou.html → https://ashiyaportal.langisweb.com/ の施設情報マップで対象棟、CRS、座標の意味、利用条件を確認する。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     },
@@ -169,7 +173,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/4",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/9",
       "newMethod": "守口市公開施設CSV・新庁舎資料を探索し現庁舎と競合P05点を区別する。丸めたP05点は再提案しない。",
-      "finding": "2026-02-25版の公共施設Excel sheet1行36は市役所庁舎K36=34.735 L36=135.561。旧P05の丸め値と同じであり独立した高精度改善ではない。VectorのBldAで内包0。行3の中部エリアコミュニティセンターは別用途なので置換しない。",
+      "finding": "2026-02-25版の公共施設Excel sheet1行36は市役所庁舎K36=34.735 L36=135.561。旧P05の丸め値と同じであり独立した高精度改善ではない。VectorのBldAで内包0。行3の中部エリアコミュニティセンターは別用途なので置換しない。 新Excel行3は34.735676,135.561805で旧P05の34.736027,135.561523と異なる。行36のT/U列に別館ロビー貸出の記載もあり、施設点が本館/別館を区別しているか未確定。",
       "sourceRecords": [
         {
           "url": "https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
@@ -194,9 +198,9 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "numeric-containment-diagnosis",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "現市役所本館を識別する配置資料と数値外形、またはCRS/精度/対象建物が明示された改訂施設点。",
+      "resumeCondition": "現市役所本館を識別する配置資料と数値外形、またはCRS/精度/対象建物が明示された改訂施設点。 行36の別館ロビー記載も考慮し本館・別館・中部エリアコミュニティセンターの棟対応を確認する。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     },
@@ -206,7 +210,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/5",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/10",
       "newMethod": "柏原市公開施設データ・庁舎配置資料を探索し別館の独立した建物情報を探す。本館点を転用しない。",
-      "finding": "柏原市公式が案内するBODIKの自治体272213全件APIは1データセット（人口・世帯/統計区ポリゴン）で施設点は得られなかった。2019基本設計PDF物理4頁は新庁舎の南側に別館、間に渡り廊下を示す。完成後の変更を検証できていない計画図を現外形と同一視しない。",
+      "finding": "Opus指摘後にGSI PMTilesを取得し、方位・形状・連絡部・周辺配置を公式配置図と実際に比較した。現庁舎案内と現配布先は安堂町1番55号の別館と一致。南東側別館の矩形全体から重心を求めた。1995年棟の存続確認を追加の停止条件にしない。元外形・選択部分への内包と丸め後内包を検証。",
       "sourceRecords": [
         {
           "url": "https://www.city.kashiwara.lg.jp/category/bunya/shisei/jyohokokai/more%40docs_4%40c_articles.p8.html",
@@ -233,18 +237,22 @@
           "fetchedAt": "2026-11-05T11:26:15.282880+00:00"
         }
       ],
-      "sourceVersion": "基本設計2019-03-22; 物理4頁（印刷03頁）",
+      "sourceVersion": "GSI PMTiles 2026-07-01; 公式図はbuilding-correspondence sources参照",
       "numericObservation": null,
-      "coordinate": null,
-      "crsAndAxes": "計画図の方位・縮尺あり、地理参照座標/CRSなし。",
-      "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
+      "coordinate": {
+        "lat": 34.5775854,
+        "lng": 135.6296097
+      },
+      "crsAndAxes": "GSI試験VectorのWeb Mercator格子、x東/y南。逆投影でlat/lng順。測地系変換なし。",
+      "processing": "footprint-centroid; derive-buildings.pyで逆投影、小数7桁、丸め後内包。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
-      "decision": "held",
-      "stage": "building-comparison",
-      "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "現別館の配置・建物存続を確認した資料と、別館の地理参照外形を照合。2019計画の本館や統計区中心を代用しない。",
+      "decision": "proposed-pending-independent-review",
+      "stage": "building-compared",
+      "stopCondition": "独立再レビューで棟対応・計算・bindingの問題が残る場合は採用しない。",
+      "resumeCondition": "Opus独立再レビューで現配布棟との対応と加工を点検し、問題があれば根拠に沿って修正。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
-      "timingRef": "data/national/location-batch2/kinki-west/timing.json"
+      "timingRef": "data/national/location-batch2/kinki-west/timing.json",
+      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/1"
     },
     {
       "facilityId": "facility:kinki-2e26386ad29411013be5",
@@ -252,7 +260,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/6",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/19",
       "newMethod": "守口市共通資料で5階南エリアを含む庁舎の同定を行う。総合案内と住所一致だけで同棟認定せず各IDを保持。",
-      "finding": "守口市共通Excelの庁舎点は総合案内と同じ丸め値で、Vector内包0。既存調査の5階南エリアという現窓口情報を保持するが、行3コミュニティセンター点で市役所本館を代用しない。",
+      "finding": "守口市共通Excelの庁舎点は総合案内と同じ丸め値で、Vector内包0。既存調査の5階南エリアという現窓口情報を保持するが、行3コミュニティセンター点で市役所本館を代用しない。 新Excel行3は34.735676,135.561805で旧P05の34.736027,135.561523と異なる。行36のT/U列に別館ロビー貸出の記載もあり、施設点が本館/別館を区別しているか未確定。",
       "sourceRecords": [
         {
           "url": "https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
@@ -277,9 +285,9 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "numeric-containment-diagnosis",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "総合案内と同じ現本館を含むことを別資料で確かめ、CRS付き数値外形と照合。各施設IDは保持。",
+      "resumeCondition": "総合案内と同じ現本館を含むことを別資料で確かめ、CRS付き数値外形と照合。各施設IDは保持。 行36の別館ロビー記載も考慮し本館・別館・中部エリアコミュニティセンターの棟対応を確認する。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     },
@@ -289,7 +297,7 @@
       "selectionRef": "data/national/location-batch2/kinki-west/selection.json#/rows/7",
       "previousRef": "data/national/issue7/kinki-west.json#/unresolved/34",
       "newMethod": "芦屋市共通CSVで東館を個別識別できるか検証する。北館との座標共用はしない。",
-      "finding": "施設カルテ物理9頁の施設102は本庁舎東館と水道部部分を示し、北館と別の2015年建物。所在地は精道町8番28号で台帳の7-6と異なる。ただし配布案内の役所代表住所と建物住所の違いの可能性が残るためexact patchは提案せず原記録を保持。数値点は得られず。",
+      "finding": "施設カルテ物理9頁の施設102は本庁舎東館と水道部部分を示し、北館と別の2015年建物。所在地は精道町8番28号で台帳の7-6と異なる。ただし配布案内の役所代表住所と建物住所の違いの可能性が残るためexact patchは提案せず原記録を保持。数値点は得られず。 初回に予定した共通公共施設CSVは取得した市オープンデータページでは見つけていない（市全体に存在しないとは断定しない）。芦屋市地図情報の公式導線と施設情報マップの存在を追記し、個別棟レコードと利用規約は未確認として保持。",
       "sourceRecords": [
         {
           "url": "https://www.city.ashiya.lg.jp/jouhou/opendata.html",
@@ -317,11 +325,14 @@
       "processing": "原資料の該当行/頁の事実抽出。数値原典2種のみVector内包診断。代表点の採用・丸め加工なし。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
       "decision": "held",
-      "stage": "building-comparison",
+      "stage": "facility-document-reviewed-footprint-not-compared",
       "stopCondition": "上記findingの未解決条件が残るため座標を採用しない。",
-      "resumeCondition": "現配布案内の7-6とカルテ8番28号の関係を照合し、東館を特定する配置図と数値外形を取得。住所一致で北館点を共有しない。",
+      "resumeCondition": "現配布案内の7-6とカルテ8番28号の関係を照合し、東館を特定する配置図と数値外形を取得。住所一致で北館点を共有しない。 公式導線 https://www.city.ashiya.lg.jp/jouhou/tizujouhou.html → https://ashiyaportal.langisweb.com/ の施設情報マップで対象棟、CRS、座標の意味、利用条件を確認する。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     }
-  ]
+  ],
+  "provisionalManifestCount": 2,
+  "finalDecision": "pending-opus-rereview",
+  "initialSnapshotRef": "data/national/location-batch2/kinki-west/initial-outcomes.json"
 }

@@ -33,6 +33,27 @@
       "K36": "34.734999999999999",
       "L36": "135.56100000000001"
     },
-    "license": "CC BY 4.0; 守口市公共施設一覧を抽出。 https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html"
+    "license": "CC BY 4.0; 守口市公共施設一覧を抽出。 https://www.city.moriguchi.osaka.jp/gyoseijoho/moriguchishinogaiyo/2/8771.html",
+    "otherObservedFields": {
+      "T36": "会議室・別館ロビースペースの貸出時間の記載",
+      "U36": "会議室、別館ロビースペース貸し出し有り"
+    }
+  },
+  "moriguchiCommunityCenter": {
+    "source": {
+      "url": "https://www.city.moriguchi.osaka.jp/material/files/group/7/272094_public_facility.xlsx",
+      "path": "data/work/location-batch2/kinki-west/97543aeb336ddff2.xlsx",
+      "sha256": "5fa58e58223f9322d11fd6b3fc47d9d6ea652600e338c8d3a3d808a24a9bb143",
+      "fetchedAt": "2026-11-05T11:25:12.598514+00:00"
+    },
+    "sheet": "sheet1",
+    "row": 3,
+    "fields": {
+      "E3": "中部エリアコミュニティセンター",
+      "I3": "大阪府守口市京阪本通2丁目5番5号",
+      "K3": "34.735675999999998",
+      "L3": "135.56180499999999"
+    },
+    "note": "旧P05の34.736027,135.561523と別値。本館点として代用しない。"
   }
 }
