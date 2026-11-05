@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "id": "catalog",
+      "url": "https://opendata.pref.shizuoka.jp/dataset/10787.html",
+      "retrievedAt": "2026-11-05T09:27:15.841261+00:00",
+      "contentType": "text/html; charset=UTF-8",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/catalog.txt",
+      "sha256": "eee296a60f4c9bb0720592cc2f71bd12bb3f045fc80b5ceff00b0a43bf9c4929",
+      "bytes": 14830
+    },
+    {
+      "id": "csv",
+      "url": "https://opendata.pref.shizuoka.jp/dataset/10787/resource/82483/223441_tourism.csv",
+      "retrievedAt": "2026-11-05T09:27:15.841922+00:00",
+      "contentType": "text/csv",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/csv.txt",
+      "sha256": "5f77065d7196805c8f108e62d7898fc3c0c985060ce5ca17f81b7e1ae32238ab",
+      "bytes": 5988
+    },
+    {
+      "id": "conditions",
+      "url": "https://opendata.pref.shizuoka.jp/privacy.html",
+      "retrievedAt": "2026-11-05T09:27:15.842489+00:00",
+      "contentType": "text/html; charset=UTF-8",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/conditions.txt",
+      "sha256": "e5c50c628c5cd4b6f115646ccb6fd96a17e16dbb78f510183597a180813e42aa",
+      "bytes": 17626
+    },
+    {
+      "id": "handbook",
+      "url": "https://opendata.pref.shizuoka.jp/fs/6/9/3/8/0/_/_______________.pdf",
+      "retrievedAt": "2026-11-05T09:27:15.843056+00:00",
+      "contentType": "application/pdf",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/handbook.pdf",
+      "sha256": "33b66342a49589f60cd8f313222e8cc0c910108ece45eb6ffd6d6ac90b0c76d1",
+      "bytes": 3252189
+    },
+    {
+      "id": "current-distribution",
+      "url": "https://www.fuji-oyama.jp/page/1248.html",
+      "retrievedAt": "2026-11-05T09:27:15.844957+00:00",
+      "contentType": "text/html",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/current-distribution.txt",
+      "sha256": "8b9e991e5947c385a10ff76e1f2fd82aa9d79b54fe15cd61a19cd6ed84096cf0",
+      "bytes": 28748
+    },
+    {
+      "id": "current-facility",
+      "url": "https://fujioyama.co.jp/facility.html",
+      "retrievedAt": "2026-11-05T09:27:15.846562+00:00",
+      "contentType": "text/html; charset=UTF-8",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/current-facility.txt",
+      "sha256": "2d7bfa2d25310fc5ab684268fe9fa3e332fba1fab505a961c161ddb035260003",
+      "bytes": 12599
+    },
+    {
+      "id": "current-access",
+      "url": "https://fujioyama.co.jp/access.html",
+      "retrievedAt": "2026-11-05T09:27:15.964483+00:00",
+      "contentType": "text/html; charset=UTF-8",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/current-access.txt",
+      "sha256": "aea098f67deea182677ec5746e78dd5bc851dbca30041b3f9c8a1d329066ecf9",
+      "bytes": 8998
+    },
+    {
+      "id": "gsi-use",
+      "url": "https://www.gsi.go.jp/LAW/2930-sample.html",
+      "retrievedAt": "2026-11-05T09:27:15.974471+00:00",
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>"
+    },
+    {
+      "id": "public-catalog",
+      "url": "https://opendata.pref.shizuoka.jp/dataset/fuji-1076.html",
+      "retrievedAt": "2026-11-05T09:27:16.065255+00:00",
+      "contentType": "text/html; charset=UTF-8",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/public-catalog.txt",
+      "sha256": "b8338916b98e65b5894e35bfabd283f886fd7818dd3cc600aead6895d815fb94",
+      "bytes": 15945
+    }
+  ]
+}

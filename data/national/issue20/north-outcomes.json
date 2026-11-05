@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "issue": 20,
+  "startedAt": "2026-11-05T09:26:06.539047+00:00",
+  "finishedAt": "2026-11-05T09:30:56.252426+00:00",
+  "wallSeconds": 289.713,
+  "timingScope": "北側2群のこの実行のwall clock（ネットワーク待ち・中間記録を含む）。過去issue16の調査時間を含めない。",
+  "interruptions": [],
+  "groups": [
+    {
+      "status": "held",
+      "independentReview": "Gemini 4 Argon reviewed evidence and hold decision; no adoption approval",
+      "updates": [],
+      "checkedBy": "Codex / source_research (AI investigator, not adoption reviewer)",
+      "precision": "建物代表点で足りる。入口・室内位置は要求しない",
+      "cost": "資料・タイルは認証や課金なしで取得。人手による配置図照合と測量成果利用条件の確認が必要。継続運用の更新工数・申請要否は未確定。",
+      "rawRedistribution": "自治体図面・規約原本・タイルは非配布data/workのみ。原本再配布条件と派生座標の利用条件を別々に扱う。",
+      "selectionId": "pilot-01",
+      "facilityIds": [
+        "facility:north-proposal-akita-guard"
+      ],
+      "finding": "公式休日案内の本庁舎・連絡部・風除室とGSI建物外形の比較へ進んだ。旧Googleリンク座標の流用はしていない。",
+      "evidenceRefs": [
+        "data/evidence/issue16/akita-guide-retrieval.json",
+        "data/evidence/issue20/north/tile-retrievals.json#/records/0",
+        "data/evidence/issue20/north/tile-retrievals.json#/records/1",
+        "data/evidence/issue20/north/document-retrievals.json#/records/1"
+      ],
+      "method": {
+        "description": "休日案内の北矢印（右向き）を基準に方位を合わせ、標準図 z18/233087/99517 の上部の大小2翼と連絡部、敷地南東側道路を比較。大きい翼内部の代表点を取る手法を検討。Google由来点はタイル取得範囲のlocatorに限り使用。",
+        "result": "同棟の形状対応は有望で、保留判断の独立レビューは完了。画像上の点を経緯度へ変換・採用する工程には進めていない。",
+        "crs": "XYZ EPSG:3857 タイル。採用経緯度なし。",
+        "sourceVersion": "GSI std取得時内容（整備年月不明）；公式休日図は既保存hashで固定（版表示不明）"
+      },
+      "blockers": [
+        "標準図を材料に固定座標データを作成・公開する際の測量法使用手続、出典/加工表示を確定していない",
+        "同棟対応・代表点抽出と精度の独立レビュー未了",
+        "地物の整備年月未確認"
+      ],
+      "stopReason": "同じGoogleリンクや休日図の検索反復では条件問題が解消しない。新規手法として形状比較まで記録し、条件確定前の数値出力を止めた。",
+      "resumeWhen": [
+        "標準図からの代表点抽出についてGSI利用手続の対象/申請不要根拠または必要手続を確定",
+        "同棟対応の独立確認後、建物内の代表画素を固定し逆Web Mercator変換・誤差を記録"
+      ],
+      "regressionRisk": "既採用の通常窓口のGoogle由来点は変更しない。休日窓口を未確認座標で追加しない。",
+      "reviewRef": "data/national/issue20/review.json"
+    },
+    {
+      "status": "held",
+      "independentReview": "Gemini 4 Argon reviewed evidence and hold decision; no adoption approval",
+      "updates": [],
+      "checkedBy": "Codex / source_research (AI investigator, not adoption reviewer)",
+      "precision": "建物代表点で足りる。入口・室内位置は要求しない",
+      "cost": "資料・タイルは認証や課金なしで取得。人手による配置図照合と測量成果利用条件の確認が必要。継続運用の更新工数・申請要否は未確定。",
+      "rawRedistribution": "自治体図面・規約原本・タイルは非配布data/workのみ。原本再配布条件と派生座標の利用条件を別々に扱う。",
+      "selectionId": "pilot-11",
+      "facilityIds": [
+        "facility:north-4855b77907547ff0f2c6",
+        "facility:north-e5fc22bb4348acd7bcdb"
+      ],
+      "finding": "新たに2025-10-14供用開始時点の市公式「新庁舎のご紹介」を取得。2023計画から完成時資料へ進み、配置図の新庁舎敷地と旧庁舎跡地の区別を再確認した。",
+      "evidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/1",
+        "data/evidence/issue20/north/introduction-retrieval.json",
+        "data/evidence/issue20/north/document-retrievals.json#/records/3",
+        "data/evidence/issue20/north/tile-retrievals.json#/records/3",
+        "data/evidence/issue20/north/tile-retrievals.json#/records/4"
+      ],
+      "method": {
+        "description": "供用開始版PDFの物理p4（紙面3）を1500pxで描画し、2023配置計画と比較。北側の駅前通り/郵便局、新庁舎、南側駐車場、旧庁舎側の将来駐車場を識別。近傍GSI標準図z18の地物と対照。",
+        "result": "新庁舎の建物と敷地の関係を供用時資料で確認できた。取得した標準図では新庁舎外形に確実に一致する輪郭を同定できず、座標登録の基準にできない。標準図が旧版だと断定したわけではない。",
+        "crs": "公式配置図の地理参照CRSなし。取得タイルEPSG:3857。位置合わせ済みGISデータは未取得。",
+        "sourceVersion": "公式紹介PDF表紙に令和7年10月14日供用開始時点と明記。標準図の地物整備年月は不明"
+      },
+      "blockers": [
+        "供用時配置図と地理参照された現建物外形を一対一で照合できていない",
+        "タイル版不明。旧P05/旧庁舎点を新庁舎へ流用不可",
+        "標準図から派生座標公開する場合の手続適用未確定"
+      ],
+      "stopReason": "完成時資料まで更新したが地理参照の橋渡しが不足。同一PDF再取得・旧庁舎点再検索は繰り返さない。",
+      "resumeWhen": [
+        "2025-10以降の撮影/整備時期が確認できる公開写真・GIS建物外形または市の直接代表座標を入手",
+        "公式供用時配置図と郵便局・駅前通り等の複数基準を照合し新庁舎内の点であることを独立確認",
+        "座標利用と原本再配布条件を個別に確認"
+      ],
+      "regressionRisk": "2窓口は両方保持。同棟を理由とした未検証点の二重採用を避ける。",
+      "reviewRef": "data/national/issue20/review.json"
+    }
+  ],
+  "updates": [],
+  "summary": {
+    "groups": 2,
+    "facilities": 3,
+    "proposedUpdates": 0,
+    "heldGroups": 2
+  },
+  "sourceRules": "GSI標準図 z5–18 は基本測量成果。リアルタイム表示の出典記載のみでの利用と、保存した代表点データへの加工を混同しない。利用可否をAIが承認していない。",
+  "notDone": [
+    "測量法手続適用の最終判定",
+    "原本の外部再配布",
+    "座標採用・manifest変更",
+    "現地測量",
+    "採用する数値座標・加工法の独立レビュー（本調査の保留判断レビューは完了）"
+  ],
+  "selectionSHA256": "b09b492082515175b44362c47ed3fe53a25e5f9934bc7db7d42f253419a8a3cc",
+  "timingEvidenceRef": "data/evidence/issue20/north/start.json"
+}

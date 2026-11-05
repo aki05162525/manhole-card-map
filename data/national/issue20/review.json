@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "reviewer": "Gemini 4 Argon / antigravity",
+  "completedAt": "2026-11-05T09:38:19.331Z",
+  "scope": "85b0777d基準の未コミット文書・issue20調査記録とローカル原本。後述の親による軽微な参照・検証記録修正は再委任していない。",
+  "blockers": 0,
+  "optionalFindings": [
+    {
+      "id": "Optional-1",
+      "finding": "成果JSONの構造・計時キーの不統一、専用回帰テスト未追加、north選定hash欠落との指摘",
+      "resolution": "親が再確認しnorthのselectionSHA256は既に存在し実hashと一致。欠落指摘は不採用。群単位と施設単位の記録構造は保持し、共通スキーマ・専用回帰テストは後続更新時に検討。今回の被覆・参照・hashは実行検査済み。"
+    },
+    {
+      "id": "Optional-2",
+      "finding": "north/start.jsonへの参照がない",
+      "resolution": "north-outcomes.jsonにtimingEvidenceRefを追加し時刻一致を確認。"
+    },
+    {
+      "id": "Optional-3",
+      "finding": "稚内2026年1月広報の不使用扱いを維持する",
+      "resolution": "開庁根拠に使えなかった取得記録を保持し、evidenceRefsには含めない。変更不要。"
+    }
+  ],
+  "parentConclusion": "文書修正と追加調査記録をPR化。全6施設の保留を維持し採用承認はしない。Closes #18 / Refs #20。",
+  "limitations": [
+    "AIレビューは現地確認・法的許諾判断・提供者によるCRS証明の代用ではない",
+    "将来の数値抽出・採用は根拠を揃えた別レビューが必要"
+  ]
+}
