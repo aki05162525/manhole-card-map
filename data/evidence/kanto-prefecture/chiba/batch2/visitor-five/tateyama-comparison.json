@@ -1,0 +1,247 @@
+{
+  "group": "tateyama",
+  "name": "渚の駅たてやま（渚の博物館分館側）",
+  "distribution": "市の2026-09-15更新配布案内は渚の駅たてやま/さかなクンカード在庫あり。利用者2026-11-06回答と独立取得した街画コムは渚の博物館受付。公式配布本文の建物名細分は未確認、二次資料を一次の断定へ置換しない。",
+  "sourceReading": "2023-12改訂個別施設計画PDFは19頁。全文を抽出し施設概要と図面の所在を確認、画像読解は物理18頁（交付金表）・19頁（印刷p16施設図面）を実施。他頁の全画像読解は未実施。図面北矢印は左上、東側前面道路と北側海岸境界。パンフ2頁は全頁画像読解、1F/2F案内と写真を確認。300381042/300381043は別URL同一hashで二独立原図とは数えない。",
+  "comparison": "公式図で①博物館分館、②収蔵庫棟、③デッキトイレ、④水族館、⑤商業棟を区別。GSIの大きいBldA-1は博物館・収蔵庫を含む連結外形、南西隣BldA-0のデッキ側は選ばない。公式図①の道路寄り北東翼に対応する明示点[7450,7950]を選択。連結外形約1941㎡は2階建分館延床1533.50㎡そのものではなく収蔵庫等の接続を含むため不一致とは断定しない。",
+  "limitation": "1階受付カウンターの室内測量はしていない。選点は図の分館側建物代表点。一次資料は渚の駅まで、博物館配布の細分は利用者+二次資料。独立レビュー/製品CRS未承認。",
+  "identityAssessment": "official-building-layout with user/secondary counter identification; reviewer pending",
+  "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+  "asOf": "2026-11-05",
+  "newHumanReportDate": "2026-11-06",
+  "sourceRecords": [
+    {
+      "key": "tateyama-card.html",
+      "url": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:33:54.918113+00:00",
+      "sha256": "edd64f8af2dd5bb86aea46130edb2ac71159411b89854105e4b6d33409055600",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-facility.html",
+      "url": "https://www.city.tateyama.chiba.jp/minato/page100034.html",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:47:26.881669+00:00",
+      "sha256": "37ec04452a4d21d22cdb44e616a4b0d601b98fafb727be4ab5f93d9b6afe3fce",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-user-source.html",
+      "url": "https://machi-ga.com/mcard/number00803.html",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:47:13.068778+00:00",
+      "sha256": "80394839ee4ab86198b2921a95f459443f06f6a404ffa15e9ab01866d631e2a4",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-building-plan.pdf",
+      "url": "https://www.city.tateyama.chiba.jp/files/300380282.pdf",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:47:27.588626+00:00",
+      "sha256": "ef5b92189530b4ae1702fc0148273ebaba64e2478fb60022e13eb8574de08a77",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-brochure.pdf",
+      "url": "https://www.city.tateyama.chiba.jp/files/300381042.pdf",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:48:11.455245+00:00",
+      "sha256": "878fbceb025b4e8dd5c8707a54656153016076594283216c5260542695f6a924",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-site-map.pdf",
+      "url": "https://www.city.tateyama.chiba.jp/files/300381043.pdf",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:48:12.781970+00:00",
+      "sha256": "878fbceb025b4e8dd5c8707a54656153016076594283216c5260542695f6a924",
+      "status": "acquired",
+      "cachePath": null
+    },
+    {
+      "key": "tateyama-tourism.html",
+      "url": "https://maruchiba.jp/spot/detail_10427.html",
+      "requestedUrl": null,
+      "fetchedAt": "2026-11-05T15:48:13.254238+00:00",
+      "sha256": "a4d6fb60368c4617c8e23648a44cf3d83bd8e529564a229aa204c668b94f2b80",
+      "status": "acquired",
+      "cachePath": null
+    }
+  ],
+  "baseline": {
+    "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+    "place": {
+      "id": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "legacyIds": [
+        "place:668322fd5a7c4bbcbf55"
+      ],
+      "name": "“渚の駅”たてやま",
+      "address": "千葉県館山市館山1564-1",
+      "phone": "0470-22-3606",
+      "evidence": {
+        "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+        "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+        "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+        "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-205-B001",
+        "placeId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+        "sourceHash": "3b9d5045301bf01f36f7183efb5421c551fb3987bcf1104793964fce8b4719da",
+        "hours": [
+          "9:00～16:45。月曜（祝日なら翌日）・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+          "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+          "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/19",
+    "oldEvidence": {
+      "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+      "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+      "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+      "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  "baselinePlaceSHA256": "b113327510a14aafa6a9defffd9cec9575885e53891b018a6f0ed94990d6185c",
+  "baselineRelationsSHA256": "aa99934fa542bdf293cad726083a056dc24ba38a1413f68ae8f294a90a62d54a",
+  "expectedOldCoordinate": null,
+  "relationPatchProposed": false,
+  "researchStatus": "candidate-held",
+  "manifestApplied": false,
+  "adoptionApproved": false,
+  "crsApproved": false,
+  "calculation": {
+    "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7169,
+              7733
+            ],
+            [
+              7380,
+              7890
+            ],
+            [
+              7410,
+              7849
+            ],
+            [
+              7625,
+              8008
+            ],
+            [
+              7513,
+              8160
+            ],
+            [
+              7334,
+              8027
+            ],
+            [
+              7320,
+              8046
+            ],
+            [
+              7359,
+              8075
+            ],
+            [
+              7303,
+              8150
+            ],
+            [
+              6994,
+              7919
+            ],
+            [
+              7050,
+              7843
+            ],
+            [
+              7075,
+              7861
+            ],
+            [
+              7169,
+              7733
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": "58227-25960-BldA-1",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 1,
+      "sourceTile": {
+        "z": 16,
+        "x": 58227,
+        "y": 25960
+      },
+      "sourceFeatureIndex": 1,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "frame": {
+      "z": 16,
+      "x": 58226,
+      "y": 25959
+    },
+    "pointXY": [
+      7450.0,
+      7950.0
+    ],
+    "method": "explicit interior point",
+    "result": {
+      "coordinate": {
+        "lat": 34.9897695,
+        "lng": 139.8549619
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        7449.9763587117195,
+        7949.958881080151
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "areaM2Approx": 1941.1443491009566,
+    "boundaryDistanceMApprox": 7.023138274100517,
+    "independentRoundedContainment": true,
+    "coordinateCaveat": "XYZ inverse Mercator arithmetic; product datum applicability pending; no datum transformation; no survey accuracy assertion",
+    "adoptionApproval": false
+  }
+}

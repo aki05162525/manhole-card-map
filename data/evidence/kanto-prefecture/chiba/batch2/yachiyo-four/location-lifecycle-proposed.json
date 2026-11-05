@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "identity": {
+        "name": "八千代市上下水道局1階 お客様センター（工事）",
+        "address": "八千代市大和田新田312-5"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-integration-01",
+        "coordinate": {
+          "lat": 35.7226457,
+          "lng": 140.0989668
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+          "snapshotSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+          "sourceLocator": "physical40 A-20 retained west block; BldA58272-25797-116; east extension missing",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式2022移転記事/2023現況図と周辺棟/道路を比較。既存西側ブロック面積重心のXYZ逆Mercator仮点、小数7桁内包。増築全体外形一致を主張しない。製品CRS/同定独立レビュー/位置採用未承認。"
+        }
+      },
+      "adoptionSHA256": "d29845041c32c066f3662db49e492b5a33e56b09a3d1d1e5ecff9c7ccbb96448",
+      "sourceVersion": "2023 design; 2022 relocation; PMTiles generation in tile-inputs.json; README2026-07-01"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "identity": {
+        "name": "八千代市水道サービス（宿直対応）",
+        "address": "八千代市大和田新田312-5 上下水道局庁舎内"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-integration-02",
+        "coordinate": {
+          "lat": 35.7226457,
+          "lng": 140.0989668
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+          "snapshotSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+          "sourceLocator": "physical40 A-20 retained west block; BldA58272-25797-116; east extension missing",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式2022移転記事/2023現況図と周辺棟/道路を比較。既存西側ブロック面積重心のXYZ逆Mercator仮点、小数7桁内包。増築全体外形一致を主張しない。製品CRS/同定独立レビュー/位置採用未承認。"
+        }
+      },
+      "adoptionSHA256": "b7575d4abfd52f1183de5125e411cc0b3aa85cfdf05bf5138f418658fc33d9a3",
+      "sourceVersion": "2023 design; 2022 relocation; PMTiles generation in tile-inputs.json; README2026-07-01"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "identity": {
+        "name": "八千代市上下水道局1階給排水相談課窓口",
+        "address": "千葉県八千代市大和田新田312-5"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+        "coordinate": {
+          "lat": 35.7226457,
+          "lng": 140.0989668
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+          "snapshotSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+          "sourceLocator": "physical40 A-20 retained west block; BldA58272-25797-116; east extension missing",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式2022移転記事/2023現況図と周辺棟/道路を比較。既存西側ブロック面積重心のXYZ逆Mercator仮点、小数7桁内包。増築全体外形一致を主張しない。製品CRS/同定独立レビュー/位置採用未承認。"
+        }
+      },
+      "adoptionSHA256": "b3373bd6fe1d4ec4c23beaff8878422e4e2ed11d8e0cb42e0bbf8ae71c54c675",
+      "sourceVersion": "2023 design; 2022 relocation; PMTiles generation in tile-inputs.json; README2026-07-01"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

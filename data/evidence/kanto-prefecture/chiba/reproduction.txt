@@ -1,0 +1,85 @@
+一回限りの調査コマンド記録。既存research_common/assemble APIを使用。新規製品コードではない。
+
+# Acquisition (run only in a fresh output directory; no immutable overwrite)
+mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with pmtiles==3.4.1 --with cairosvg==2.8.2 python - <<'PY'
+import sys,json,math,hashlib
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached,adjacent_tiles,decode_tile,combine_tiles,render_svg
+from pmtiles.reader import Reader
+import cairosvg
+E=Path('data/evidence/kanto-prefecture/chiba');W=Path('data/work/kanto-prefecture/chiba');records=[];cache={};generation=None
+url='https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles'
+def get_bytes(offset,length):
+ global generation
+ if (offset,length) in cache:return cache[offset,length]
+ raw,r=fetch_cached(url,W/'ranges','chiba-narashino-2026-11-05',headers={'Range':f'bytes={offset}-{offset+length-1}'})
+ for f in ('rawPath','responseRawPath'):
+  if r.get(f):r[f]=str(Path(r[f]).relative_to(Path.cwd()))
+ records.append(r);(E/'range-retrievals.json').write_text(json.dumps({'records':records},indent=2)+'\n')
+ if raw is None:raise ValueError(r['error'])
+ current=(r['etag'],r['lastModified'])
+ assert all(current)
+ if generation is None:generation=current
+ assert generation==current
+ cache[offset,length]=raw;return raw
+reader=Reader(get_bytes);lat,lng=35.687,140.031
+center={'z':16,'x':math.floor((lng+180)/360*65536),'y':math.floor((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*65536)}
+rows=[];tiles=[]
+for tile in adjacent_tiles(center):
+ raw=reader.get(tile['z'],tile['x'],tile['y']);assert raw
+ p=E/f"narashino-{tile['z']}-{tile['x']}-{tile['y']}.pbf.gz";p.write_bytes(raw)
+ rows.append({'tile':tile,'path':str(p),'sha256':hashlib.sha256(raw).hexdigest()})
+ decoded=decode_tile(raw);features=[]
+ for name in ('BldA','RdCL'):
+  layer=decoded.get(name)
+  if layer:
+   for i,f in enumerate(layer['features']):features.append({**f,'id':f"{tile['x']}-{tile['y']}-{name}-{i}",'sourceLayer':name,'layerFeatureIndex':i})
+ tiles.append({'tile':tile,'extent':4096,'features':features})
+combined=combine_tiles(tiles);(W/'narashino-combined.json').write_text(json.dumps(combined))
+svg=render_svg(combined);(E/'narashino-all.svg').write_text(svg)
+report={'sourceURL':url,'generation':generation,'seed':{'lat':lat,'lng':lng,'purpose':'coarse search window only; derived from official access-page outbound map, not adopted coordinate'},'tiles':rows,'render':'narashino-all.svg','credit':'国土地理院最適化ベクトルタイルを加工。棟同定・位置採用未承認。','processing':'pmtiles Reader; mapbox-vector-tile 2.2.0 y_coord_down=True; all BldA/RdCL; research_common combine_tiles/render_svg; no area filter'}
+(E/'tile-inputs.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+x=(lng+180)/360*65536;y=(1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*65536
+base=combined['baseTile'];cx=(x-base['x'])*4096;cy=(y-base['y'])*4096
+import re
+focus=re.sub(r'viewBox="[^"]+"',f'viewBox="{cx-1800} {cy-1800} 3600 3600"',svg)
+cairosvg.svg2png(bytestring=focus.encode(),write_to=str(W/'narashino-focus.png'),output_width=1600,output_height=1600)
+print(json.dumps({'center':center,'base':base,'focusCenter':[cx,cy],'tiles':len(rows),'features':len(combined['features'])}))
+
+PY
+
+# Offline schema/hash/full-ledger comparison
+python3 -B - <<'PY'
+import json,sys,hashlib,copy
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from assemble import assemble
+from location_lifecycle import digest
+root=Path.cwd();E=Path('data/evidence/kanto-prefecture/chiba');N=Path('data/national/kanto-prefecture/chiba')
+manifest=json.load(open('tools/national/manifest.json'));before,_=assemble(root,manifest);after,_=assemble(root,manifest);assert before==after
+scope=json.load(open(N/'scope.json'));assert len(scope['rows'])==17
+for p,h in json.load(open(E/'history.json'))['inputSHA256'].items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p
+for r in json.load(open(E/'tile-inputs.json'))['tiles']:assert hashlib.sha256(Path(r['path']).read_bytes()).hexdigest()==r['sha256']
+for r in scope['rows']:
+ assert next(p for p in before['places'] if p['id']==r['facilityId'])==r['currentPlace']
+ assert [p for p in before['relations'] if p['placeId']==r['facilityId']]==r['currentRelations']
+ assert not r['adoptionApproval']
+proposal=json.load(open(N/'selection-proposed.json'));fragment=proposal['afterIndependentApprovalOnly'];m=copy.deepcopy(manifest)
+for k in ['locations','locationLifecycle']:m[k]+=fragment[k]
+# In-memory selection is only a schema/diff simulation, not an approval.
+simulated,audit=assemble(root,m);fid=proposal['candidateOnly'][0]['facilityId'];changed=[]
+assert before['relations']==simulated['relations'];assert len(before['places'])==len(simulated['places'])
+for a,b in zip(before['places'],simulated['places']):
+ if a!=b:
+  changed.append(a['id']);assert a['id']==fid
+  assert {k:v for k,v in a.items() if k not in ('coordinate','evidence','locationReview')}=={k:v for k,v in b.items() if k not in ('coordinate','evidence','locationReview')}
+assert changed==[fid]
+bad=copy.deepcopy(m);bad['locations'][-1]['approved'][0]['sha256']='0'*64
+try:assemble(root,bad)
+except ValueError as e:
+ assert 'approved location changed' in str(e);print('negative hash guard:',str(e))
+else:raise AssertionError('hash mismatch accepted')
+print(json.dumps({'scopeCount':17,'nationalUnlocated':sum(not p.get('coordinate') for p in after['places']),'currentFullLedgerChanged':False,'simulatedChangedIds':changed,'simulatedRelationsChanged':False,'bindingValidated':True,'manifestModified':False,'adoptionApproved':False},ensure_ascii=False))
+
+PY

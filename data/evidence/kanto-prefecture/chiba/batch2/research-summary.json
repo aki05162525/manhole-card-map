@@ -1,0 +1,350 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "supplementaryUserReportDate": "2026-11-06",
+  "scopeCount": 17,
+  "researchPerformedCount": 17,
+  "candidateCount": 13,
+  "adoptedCount": 0,
+  "manifestApplied": false,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "name": "市川市観賞植物園",
+      "performed": "公式1F入口受付図と園内・空撮図を数値へ照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/ichikawa-comparison.json",
+      "evidenceSHA256": "010862443f1e4e58ee8543182cb2b98b04dc5d7e543065aa736fd4ff92e1c0af",
+      "coordinateCandidate": {
+        "lat": 35.7684807,
+        "lng": 139.970305
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "suspended"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "name": "袖ケ浦市役所 下水道課",
+      "performed": "管理棟/濃縮棟/脱水棟/正門の配置と数値外形を照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/plant-outcome.json",
+      "evidenceSHA256": "dd5d603a9ef1a40d12180459e4c2e526058a48cef7ad963ddd2e5744be7a6a75",
+      "coordinateCandidate": {
+        "lat": 35.4547787,
+        "lng": 139.9849371
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "name": "旧井上家住宅",
+      "performed": "事務所用途・公式方位説明・写真・2026二次訪問記録を旧漉場候補へ照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue-corrected-seed-comparison.json",
+      "evidenceSHA256": "4a9230c839f760fa08fddb488672e182dd0e2385faab32899a90cc213b3b32a3",
+      "coordinateCandidate": {
+        "lat": 35.8549108,
+        "lng": 140.1212952
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "旧漉場ラベル付き測量図未取得。利用者回答と独立二次資料を含む棟対応推論のレビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "name": "白井市役所 本庁舎1階守衛室",
+      "performed": "竣工配置と現1F守衛室図から本庁舎側内部点を照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-outcomes.json",
+      "evidenceSHA256": "0daecd60c6c17511ea6a08f52345415145dc9648e425da4a0fe1453c99cef595",
+      "coordinateCandidate": {
+        "lat": 35.7912199,
+        "lng": 140.0557896
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "name": "“渚の駅”たてやま",
+      "performed": "公式施設図で博物館分館側を数値形状へ照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/tateyama-comparison.json",
+      "evidenceSHA256": "5b57ccdae0700acf37614feab9bbaaadcec2efca9c5bd506f6a4beb893827da1",
+      "coordinateCandidate": {
+        "lat": 34.9897695,
+        "lng": 139.8549619
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS。利用者提示二次資料と市資料を区別",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+      "performed": "公式2025計画図の既存棟・現写真・道路を数値へ照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/sakura-comparison.json",
+      "evidenceSHA256": "b85a3a3f1b53f68a15e2dba5a7cd6feae34055c5dd35698d9ae88707bde3092a",
+      "coordinateCandidate": {
+        "lat": 35.7404292,
+        "lng": 140.2026433
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "name": "八街市役所受付(第一庁舎一階)",
+      "performed": "公式構内図/写真と第1庁舎・周囲棟・ロータリーを数値へ照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/yachimata-outcome.json",
+      "evidenceSHA256": "5d39d9e78af34de41b86f0c8c758671ba27af23b8d164799791314d50e879e9b",
+      "coordinateCandidate": {
+        "lat": 35.6658654,
+        "lng": 140.3179892
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "suspended"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "name": "習志野市企業局工務部下水道課",
+      "performed": "2013公式配置図・現配布本文・新館数値外形を照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/../narashino-comparison.json",
+      "evidenceSHA256": "c32d87560414879f0c6090f313659ce3ad49bbe10bf7b22307f6f0570f9ede38",
+      "coordinateCandidate": {
+        "lat": 35.6869668,
+        "lng": 140.0313095
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "親は棟比較レビュー完了と報告。製品固有CRSと採用判断待ち",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "parent reports reviewed for Narashino only",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "name": "白井市役所 都市建設部 上下水道課業務係",
+      "performed": "竣工配置と現2F上下水道課図から東庁舎側内部点を照合",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-outcomes.json",
+      "evidenceSHA256": "0daecd60c6c17511ea6a08f52345415145dc9648e425da4a0fe1453c99cef595",
+      "coordinateCandidate": {
+        "lat": 35.7914483,
+        "lng": 140.0565407
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "name": "柏市上下水道局3階総務課",
+      "performed": "2021完成写真・旧配置・設計面積と数値を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-outcome.json",
+      "evidenceSHA256": "66011259ce5e760e03212d8f5303d57a3e3b022f45ca06f437988ba8b1d01758",
+      "coordinateCandidate": {
+        "lat": 35.856396,
+        "lng": 139.9751978
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "正式平面図による補強/面積差14.6%の評価、独立同定レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "suspended"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "name": "袖ケ浦市役所 守衛室",
+      "performed": "現南庁舎完成資料と旧2013配置・数値を比較。数値は旧棟に一致",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json",
+      "evidenceSHA256": "0fbef81ca06a500912e3091560ba451895149962e04c0c0f5c435e3bb3e91249",
+      "coordinateCandidate": null,
+      "researchStatus": "comparison-performed-specific-hold",
+      "remaining": "現南庁舎を収録する利用可能な数値原典。旧棟の点は代用不可",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "name": "道の駅みのりの郷東金",
+      "performed": "2024-11-29緑花木市場レジ案内・現休止案内・航空/区域図/レジ写真・数値を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/togane-comparison.json",
+      "evidenceSHA256": "8647acb3b9a00b9c2964ce10da538404b69e4915e72c6b243c774f13edb023a6",
+      "coordinateCandidate": null,
+      "researchStatus": "comparison-performed-specific-hold",
+      "remaining": "レジのある棟の対応未確定。東金マルシェの点で代用不可",
+      "distributionStatusUnchanged": [
+        "suspended"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "name": "八千代市上下水道局1階 お客様センター（工事）",
+      "performed": "移転資料・2023現況図から西側既存ブロックと数値を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+      "evidenceSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+      "coordinateCandidate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "東増築部外形未反映。既存部代表点の妥当性レビュー、製品CRS、カード配布時間質問",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "name": "八千代市水道サービス（宿直対応）",
+      "performed": "現宿直配布本文・移転図・既存西側外形を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+      "evidenceSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+      "coordinateCandidate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "東増築部外形未反映。既存部代表点の妥当性レビュー、製品CRS",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "name": "袖ケ浦市観光協会",
+      "performed": "現南庁舎完成資料と旧2013配置・数値を比較。数値は旧棟に一致",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-outcome.json",
+      "evidenceSHA256": "0fbef81ca06a500912e3091560ba451895149962e04c0c0f5c435e3bb3e91249",
+      "coordinateCandidate": null,
+      "researchStatus": "comparison-performed-specific-hold",
+      "remaining": "現南庁舎を収録する利用可能な数値原典。旧棟の点は代用不可",
+      "distributionStatusUnchanged": [
+        "active"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "name": "八千代市上下水道局1階給排水相談課窓口",
+      "performed": "台帳の大和田新田312-5住所と移転後1F給排水相談課図・既存部を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+      "evidenceSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+      "coordinateCandidate": {
+        "lat": 35.7226457,
+        "lng": 140.0989668
+      },
+      "researchStatus": "candidate-unapproved",
+      "remaining": "名称/関係unknown維持。現住所の棟代表案のレビュー、東増築部未反映、製品CRS",
+      "distributionStatusUnchanged": [
+        "unknown"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "name": "株式会社八千代市水道サービス",
+      "performed": "2020配布表・2022移転・2023解体地図と旧敷地の外形を比較",
+      "evidencePath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/comparison.json",
+      "evidenceSHA256": "3562cb7e5e722379cdb39f6e43ce4be5617f938e05ad526d1be476347a77b5f4",
+      "coordinateCandidate": null,
+      "researchStatus": "comparison-performed-specific-hold",
+      "remaining": "旧596-19サービス窓口が本館か別棟か未確定。現庁舎点代用不可",
+      "distributionStatusUnchanged": [
+        "ended"
+      ],
+      "stock": "not independently confirmed available",
+      "buildingIdentityApproval": "independent review pending",
+      "crsApproval": false,
+      "adoptionApproval": false
+    }
+  ],
+  "interpretation": "全件の調査実施記録が揃った意味。全件採用・棟同定承認・CRS解決・Issue全受入達成を意味しない。",
+  "codeDocDiscrepancies": [
+    "既往の袖ケ浦88692_225349_misc.pdfは庁舎案内図と記述されるが実物は直通電話表。共有コードの新規不一致は発見なし。"
+  ],
+  "sourceDifferences": [
+    "八千代カード配布時間と一般窓口の試行時間",
+    "八千代東増築部/袖ケ浦現南庁舎の数値外形世代差",
+    "柏設計建築面積と数値近似外形面積の差14.6%",
+    "旧井上家市文化財ページの地図中心は現施設棟配置と不整合、探索点を訂正して再取得"
+  ]
+}

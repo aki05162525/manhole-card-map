@@ -1,0 +1,26 @@
+[
+  {
+    "facilityIds": [
+      "facility:kanto-south-integration-01",
+      "facility:kanto-south-integration-02",
+      "facility:kanto-south-integration-legacy-yachiyo-0",
+      "facility:kanto-south-integration-legacy-yachiyo-1"
+    ],
+    "activity": "shared source/history acquisition and date separation",
+    "startedAt": "2026-11-05T15:33:17.986532+00:00",
+    "finishedAt": "2026-11-05T15:39:29.562213+00:00",
+    "allocation": "shared, not allocated per facility"
+  },
+  {
+    "facilityIds": [
+      "facility:kanto-south-integration-01",
+      "facility:kanto-south-integration-02",
+      "facility:kanto-south-integration-legacy-yachiyo-0",
+      "facility:kanto-south-integration-legacy-yachiyo-1"
+    ],
+    "activity": "building diagram and numeric outline comparison; legacy source investigation",
+    "startedAt": "2026-11-05T15:39:29.562213+00:00",
+    "finishedAt": "2026-11-05T15:49:11.917379+00:00",
+    "allocation": "shared, not allocated per facility"
+  }
+]

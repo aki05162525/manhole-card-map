@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "pointXY": [
+        1550,
+        3970
+      ],
+      "result": {
+        "coordinate": {
+          "lat": 35.7912199,
+          "lng": 140.0557896
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1549.9631001651287,
+          3969.985662519932
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "distanceFromPolygonBoundaryMetersApprox": 11.42579332367394,
+      "independentShapelyRoundedWithin": true
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "pointXY": [
+        2110,
+        3760
+      ],
+      "result": {
+        "coordinate": {
+          "lat": 35.7914483,
+          "lng": 140.0565407
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          2110.0238529741764,
+          3760.02831274271
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "distanceFromPolygonBoundaryMetersApprox": 12.470029245669588,
+      "independentShapelyRoundedWithin": true
+    }
+  ],
+  "unionBuildingAreaM2Approx": 3179.2379503086627,
+  "scaleMetersPerTileUnit": 0.12109769264583549,
+  "areaFormula": "Web Mercator local ground approximation at 35.7914 degrees; union excludes walkway41",
+  "sourceFeatures": [
+    "58264-25781-BldA-112",
+    "58264-25782-BldA-20"
+  ],
+  "note": "112/20タイル片のunionは外形面積比較用。庁舎別分割を確定したものではない。PDL1.0/GSI加工、採用未承認。"
+}

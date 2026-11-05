@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "sessions": [
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "activity": "2013公式配置図の独立取得・数値外形照合",
+      "startedAt": "2026-11-05T14:46:19.148004+00:00",
+      "finishedAt": "2026-11-05T14:51:26.615249+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.282026+00:00",
+      "finishedAt": "2026-11-05T14:52:18.284291+00:00",
+      "elapsedSeconds": 0.002259480010252446
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.284300+00:00",
+      "finishedAt": "2026-11-05T14:52:18.286306+00:00",
+      "elapsedSeconds": 0.00200971303274855
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.286313+00:00",
+      "finishedAt": "2026-11-05T14:52:18.287986+00:00",
+      "elapsedSeconds": 0.001675624051131308
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.287990+00:00",
+      "finishedAt": "2026-11-05T14:52:18.290142+00:00",
+      "elapsedSeconds": 0.0021543389884755015
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.290146+00:00",
+      "finishedAt": "2026-11-05T14:52:18.291940+00:00",
+      "elapsedSeconds": 0.0017967550083994865
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.291945+00:00",
+      "finishedAt": "2026-11-05T14:52:18.293706+00:00",
+      "elapsedSeconds": 0.0017641130252741277
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.293712+00:00",
+      "finishedAt": "2026-11-05T14:52:18.295373+00:00",
+      "elapsedSeconds": 0.0016635010251775384
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.295377+00:00",
+      "finishedAt": "2026-11-05T14:52:18.297197+00:00",
+      "elapsedSeconds": 0.0018217620090581477
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.297201+00:00",
+      "finishedAt": "2026-11-05T14:52:18.299287+00:00",
+      "elapsedSeconds": 0.0020875909831374884
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.299291+00:00",
+      "finishedAt": "2026-11-05T14:52:18.301000+00:00",
+      "elapsedSeconds": 0.0017117519746534526
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.301005+00:00",
+      "finishedAt": "2026-11-05T14:52:18.302770+00:00",
+      "elapsedSeconds": 0.001767489011399448
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.302775+00:00",
+      "finishedAt": "2026-11-05T14:52:18.304498+00:00",
+      "elapsedSeconds": 0.0017258190200664103
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.304503+00:00",
+      "finishedAt": "2026-11-05T14:52:18.306314+00:00",
+      "elapsedSeconds": 0.0018137269653379917
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.306319+00:00",
+      "finishedAt": "2026-11-05T14:52:18.307973+00:00",
+      "elapsedSeconds": 0.0016559860086999834
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.307978+00:00",
+      "finishedAt": "2026-11-05T14:52:18.309772+00:00",
+      "elapsedSeconds": 0.0017977169482037425
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.309777+00:00",
+      "finishedAt": "2026-11-05T14:52:18.311411+00:00",
+      "elapsedSeconds": 0.0016359069850295782
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "activity": "machine-only history pointers and ledger evidence hash validation; not human reading time",
+      "startedAt": "2026-11-05T14:52:18.311415+00:00",
+      "finishedAt": "2026-11-05T14:52:18.313069+00:00",
+      "elapsedSeconds": 0.0016562460223212838
+    }
+  ],
+  "note": "開始前の共通手順・履歴読解時間は施設へ遡及配賦しない。"
+}

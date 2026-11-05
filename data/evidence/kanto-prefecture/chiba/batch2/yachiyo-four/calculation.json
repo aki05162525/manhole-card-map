@@ -1,0 +1,83 @@
+{
+  "coordinate": {
+    "lat": 35.7226457,
+    "lng": 140.0989668
+  },
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "roundedTileXY": [
+    5073.216907918453,
+    5539.756471812725
+  ],
+  "mechanicalChecksPassed": true,
+  "identityApproved": false,
+  "crsApproved": false,
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5079,
+            5400
+          ],
+          [
+            5191,
+            5466
+          ],
+          [
+            5058,
+            5686
+          ],
+          [
+            4993,
+            5645
+          ],
+          [
+            5005,
+            5627
+          ],
+          [
+            4960,
+            5605
+          ],
+          [
+            5079,
+            5400
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": "58272-25797-BldA-116",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 116,
+    "sourceTile": {
+      "z": 16,
+      "x": 58272,
+      "y": 25797
+    },
+    "sourceFeatureIndex": 116,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "combinedBaseTile": {
+    "z": 16,
+    "x": 58271,
+    "y": 25796
+  },
+  "centroidTileXY": [
+    5073.192472099389,
+    5539.770314803117
+  ],
+  "areaTileUnits2": 31660.0,
+  "approxAreaM2": 465.0859156767506,
+  "areaMethod": "local spherical Mercator ground scale at centroid; approximate, not surveyed",
+  "combinedSHA256": "18d521cb6285be674177b0ce43e695e107ee642edb9cb6aaa939703417d1699f",
+  "identityStatus": "research inference: retained west block of enlarged present water office; east extension absent from BldA",
+  "adoptionApproved": false
+}

@@ -1,0 +1,81 @@
+{
+  "questions": [
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "question": "マンホールカードも2026-08-03以降は9:00〜16:30ですか、それともカードのみ8:30〜17:00ですか？",
+      "resolves": "一般窓口の試行時間変更がカード配布に適用されるか",
+      "sources": [
+        {
+          "schema": 1,
+          "url": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "version": "yachiyo-four-2026-11-06",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:33:38.701650+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": "Thu, 05 Nov 2026 15:01:54 GMT",
+          "contentType": "text/html",
+          "contentRange": null,
+          "responseURL": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:33:38.970547+00:00",
+          "sha256": "a99277a80e9b1cd91fa1c9c9f8ffa0f9a48f6d70970828ca18069da03d6d0fb7",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/cache/a99277a80e9b1cd91fa1c9c9f8ffa0f9a48f6d70970828ca18069da03d6d0fb7.raw",
+          "bytes": 30642,
+          "key": "card.html"
+        },
+        {
+          "schema": 1,
+          "url": "https://www.city.yachiyo.lg.jp/site/jougesui/5026.html",
+          "version": "yachiyo-four-2026-11-06",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:33:52.608832+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": "Thu, 05 Nov 2026 15:01:54 GMT",
+          "contentType": "text/html",
+          "contentRange": null,
+          "responseURL": "https://www.city.yachiyo.lg.jp/site/jougesui/5026.html",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:33:52.848882+00:00",
+          "sha256": "8dad96d6706e0f8fcc81ea2ae7268a1dc4afec676e54b1986fa95b4534d09820",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/cache/8dad96d6706e0f8fcc81ea2ae7268a1dc4afec676e54b1986fa95b4534d09820.raw",
+          "bytes": 31780,
+          "key": "office.html"
+        }
+      ],
+      "status": "reported-to-parent-for-deduplication-and-presentation; no direct outreach; unanswered in this thread",
+      "name": "八千代市上下水道局1階 お客様センター（工事）"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "question": "2022年移転前の萱田町596-19の水道サービスのカード窓口は、旧上下水道局の本館内でしたか、それとも敷地内の別棟でしたか？",
+      "source": [
+        {
+          "schema": 1,
+          "url": "https://www.city.yachiyo.lg.jp/uploaded/attachment/18029.pdf",
+          "version": "yachiyo-four-2026-11-06",
+          "requestHeaders": {},
+          "attemptedAt": "2026-11-05T15:39:29.753200+00:00",
+          "httpStatus": 200,
+          "etag": null,
+          "lastModified": "Tue, 07 Mar 2023 15:30:21 GMT",
+          "contentType": "application/pdf",
+          "contentRange": null,
+          "responseURL": "https://www.city.yachiyo.lg.jp/uploaded/attachment/18029.pdf",
+          "status": "acquired",
+          "fetchedAt": "2026-11-05T15:39:30.452856+00:00",
+          "sha256": "e2473c3fed11ffbb4cc99539c6b5a2dceb5a047d4dce5917a41098ca0e92eb40",
+          "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/cache/e2473c3fed11ffbb4cc99539c6b5a2dceb5a047d4dce5917a41098ca0e92eb40.raw",
+          "bytes": 1683673,
+          "key": "legacy-news.pdf"
+        }
+      ],
+      "resolves": "old service building vs old main building ambiguity",
+      "status": "reported-to-parent-for-deduplication-and-presentation; no direct outreach; unanswered in this thread",
+      "name": "株式会社八千代市水道サービス（旧萱田町596-19）"
+    }
+  ],
+  "answeredEarlier": "data/evidence/kanto-prefecture/chiba/batch2/user-answers-20261106.json",
+  "policy": "回答済み3件は再質問しない。棟照合の未解決は利用者回答を無効とする意味ではない。"
+}

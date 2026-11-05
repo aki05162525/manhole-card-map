@@ -1,0 +1,240 @@
+{
+  "asOf": "2026-11-05",
+  "actorType": "ai",
+  "method": "independent saved-original reading and arithmetic; no field survey or user observation",
+  "approval": "UNAPPROVED; manifest untouched",
+  "buildingIdentity": {
+    "status": "research candidate; independent review pending",
+    "featureId": "58272-25797-BldA-116",
+    "interpretation": "2023現況図の上下水道局の西側既存ブロックに対応。東側増築ブロックと連結部はGSI外形にない。全体外形一致とは主張しない。",
+    "evidence": [
+      "19983.pdf printed 2022-10-15 p3: 第2別館増改築・2022-11-14移転・1F給排水相談課/水道サービス/料金窓口",
+      "21678.pdf physical40 資料A-20: 現況図に上下水道局の2ブロックを表示",
+      "21678.pdf physical5 資料03: future new city hall north/northwest; existing water office separate",
+      "21678.pdf physical41-44: phases1-3/completed keep water office as existing in-use building, separate from new city hall and demolition of municipal old/new wings",
+      "21678.pdf physical50/105 current utilities drawings repeat two-block footprint and western-road service connection; physical79 current systems names water-service office and overnight duty"
+    ],
+    "surroundings": "N-up vector: water office west/southwest of L-shaped former main hall (153); 別館159 north of east wing; 福祉センター163 east; 倉庫121 south of water office; 多目的棟174 farther south. Road west/southwest borders water office; east road separates old 萱田町 site. Future city hall and parking occupy north/northwest, not candidate.",
+    "orientation": "2022/2023 newsletter locator N up; 2023 design N points upper-left (~30 degrees from page-up), unlike vector N up. Compare after accounting for diagram rotation.",
+    "extentMismatch": "BldA116 has narrow aspect, southwest notch corresponding to retained half of physical40; east expansion and new warehouse not fully reflected. PMTiles publication generation is not individual building survey epoch.",
+    "buildingRepPoint": "area centroid of retained west block; not entrance or room coordinate. Whether retained block evidence suffices for adoption requires independent review."
+  },
+  "pages": {
+    "design": {
+      "physicalTotal": 107,
+      "textSearchedAllPages": true,
+      "visuallyRead": [
+        5,
+        19,
+        20,
+        40,
+        41,
+        42,
+        43,
+        44,
+        50,
+        79,
+        105
+      ],
+      "otherRelevantTextHits": [],
+      "notClaimed": "remaining96 pages not visually reviewed; whole-document visual coverage incomplete",
+      "followupRef": "page-followup.json"
+    },
+    "waterNews": {
+      "physicalTotal": 1,
+      "visuallyRead": [
+        1
+      ],
+      "printedPage": 3
+    },
+    "legacyNews": {
+      "physicalTotal": 2,
+      "visuallyRead": [
+        1,
+        2
+      ],
+      "cardTablePage": 2
+    },
+    "demolitionNews": {
+      "physicalTotal": 2,
+      "textReadAllPages": true,
+      "visuallyRead": [
+        1,
+        2
+      ],
+      "notVisuallyRead": []
+    }
+  },
+  "coverage": {
+    "tiles": [
+      {
+        "tile": {
+          "z": 16,
+          "x": 58271,
+          "y": 25796
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25796.pbf.gz",
+        "sha256": "1008d28c16e1a70406e812e3ec2dd503ebfb9ce283ab0bec81b335ffb286172b"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58272,
+          "y": 25796
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25796.pbf.gz",
+        "sha256": "95dc09697cceb6f29530d497cada406af9cde3acf4c09c5787406f999b2216bc"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58273,
+          "y": 25796
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25796.pbf.gz",
+        "sha256": "e3a66fcfc9acafdafd3bd3cb41f9ecfb477f1c9f4636b091c84ae21ab445c10c"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58271,
+          "y": 25797
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25797.pbf.gz",
+        "sha256": "1c7ba0c0bdd5d0111f4ce28ba6ede1e133a3370ec2824b5ae22e90ce004af22d"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58272,
+          "y": 25797
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+        "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58273,
+          "y": 25797
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25797.pbf.gz",
+        "sha256": "55e2adbca6ad68261fa385f14061ce15cc5c7051c890adc389798acd2b740b32"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58271,
+          "y": 25798
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25798.pbf.gz",
+        "sha256": "1bc21f039204f778fa4c61560aaed95fa62abc1143def12f0e373beeedc9bc1e"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58272,
+          "y": 25798
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25798.pbf.gz",
+        "sha256": "6f55dd59a0e99b81ccf4e344e140005fd0d49fea1981ddce30e4ffce277b983c"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58273,
+          "y": 25798
+        },
+        "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25798.pbf.gz",
+        "sha256": "aa052208f4a4b070f3b95c8637ad99fb042d8e1e464d0ae2dd5bd97dd5562fbf"
+      }
+    ],
+    "fullDrawing": "all.svg (every acquired BldA/RdCL, buffered extent retained)",
+    "focusedDrawing": "current-comparison.svg crop4500,4800,2200,2200; entire polygons retained then viewport crop",
+    "candidateTouchesTileOrAcquisitionBoundary": false,
+    "candidateGeometry": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5079,
+              5400
+            ],
+            [
+              5191,
+              5466
+            ],
+            [
+              5058,
+              5686
+            ],
+            [
+              4993,
+              5645
+            ],
+            [
+              5005,
+              5627
+            ],
+            [
+              4960,
+              5605
+            ],
+            [
+              5079,
+              5400
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58272-25797-BldA-116",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 116,
+      "sourceTile": {
+        "z": 16,
+        "x": 58272,
+        "y": 25797
+      },
+      "sourceFeatureIndex": 116,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "tileEdition": [
+      "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "Thu, 17 Sep 2026 07:32:00 GMT"
+    ],
+    "areaApproxM2": 465.0859156767506
+  },
+  "crs": {
+    "generalSpecification": "一般地理院タイル仕様は国内JGD2011とMercatorを記載。",
+    "productLink": "optimal_bvmap READMEは地理院ラスタと同じタイル配信方式へリンクするが、独立した本製品の測地系文言は今回保存READMEにない。",
+    "calculation": "XYZ z16 extent4096 x右/y下で緯度経度を計算。小数7桁は計算丸めで測量精度の保証ではない。",
+    "approval": "未承認。地域間の過去判断差を解消したとは扱わない。"
+  },
+  "numericRef": "calculation.json",
+  "oldSite": {
+    "status": "researched; service-building identity unresolved",
+    "sources": [
+      "18029.pdf (2020-03-01) p2 separate weekday596-5 and weekend596-19 addresses",
+      "19983.pdf locator old main east of city-hall road",
+      "22991.pdf (2023-06-01) p2 old main demolition by endDecember planned"
+    ],
+    "comparison": "Nine-tile east.svg includes old site and nearby detached footprints. Locator identifies old main office only; not enough to bind 596-19 service company to main or annex. No polygon selected, no historical coordinate substituted.",
+    "absenceClaim": false,
+    "remaining": "historical labelled company building plan/photo or user confirmation main vs annex, then independent footprint identification"
+  },
+  "distribution": {
+    "current01": "current card page explicit weekday distribution, hours question pending",
+    "current02": "current card page explicit weekend/holiday distribution inside same water office",
+    "legacy0": "new-office floor sketch names 給排水相談課. Ledger address312-5 binds to moved building; current relation unknown retained. Department abolition plan does not establish card relation cessation date.",
+    "legacy1": "ledger ended retained; historical 2020 table independently verifies separate596-19 location; last card date unknown"
+  },
+  "stock": "no real-time inventory checked; distribution-active is not stock availability",
+  "codeDocDiscrepancies": []
+}

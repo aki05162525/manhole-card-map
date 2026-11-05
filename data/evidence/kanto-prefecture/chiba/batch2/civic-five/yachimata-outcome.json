@@ -1,0 +1,17 @@
+{
+  "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+  "asOf": "2026-11-05",
+  "distribution": "公式本文は2025-08-18予定枚数終了、再配付時期未定。以下の配布先は配布時情報と明記。既存suspendedを維持する候補。",
+  "sourceReading": {
+    "plan": "公式アクセス図8817.jpg全図を読解。左広域図に北矢印、右拡大図は北を上とした配置と整合。ただし拡大図に独立方位/縮尺/制作年なし。",
+    "photo": "公式カード頁8658.JPG第1庁舎1階受付写真の正面柱廊、右手高層棟。",
+    "numericMatch": "58312-25810-BldA-22は南側ロータリー直北、北西21は総合保健福祉センター、北東244は第3庁舎。南への張出部と北側張出部、正面進入路とロータリーの関係が公式構内図と整合。東隣30を第1庁舎として採用しない。",
+    "extent": "9タイル全体描画、対象周辺1300x1300座標単位拡大を追加。対象polygonはtile/outer boundary接触なし。",
+    "limits": "公式構内図は概略で東隣30の表現が白抜き、図版作成年と棟測量年月不明。数値面積1134.42m2は測量値でなくMercator緯度補正近似、公式建築面積の独立照合は未達。"
+  },
+  "calculation": "yachimata-calculation.json",
+  "candidateStatus": "棟同定候補、独立レビュー未承認",
+  "crsStatus": "製品固有datum根拠未解決、親のCRS記録参照",
+  "adoptionApproval": false,
+  "questions": []
+}

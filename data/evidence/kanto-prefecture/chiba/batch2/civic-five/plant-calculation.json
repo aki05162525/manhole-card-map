@@ -1,0 +1,82 @@
+{
+  "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            10273,
+            5245
+          ],
+          [
+            10345,
+            5399
+          ],
+          [
+            10211,
+            5462
+          ],
+          [
+            10044,
+            5541
+          ],
+          [
+            9972,
+            5387
+          ],
+          [
+            10273,
+            5245
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": "58251-25857-BldA-16",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 16,
+    "sourceTile": {
+      "z": 16,
+      "x": 58251,
+      "y": 25857
+    },
+    "sourceFeatureIndex": 16,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "frame": {
+    "z": 16,
+    "x": 58249,
+    "y": 25856
+  },
+  "extent": 4096,
+  "centroidXY": [
+    10158.476147527213,
+    5392.957276293722
+  ],
+  "areaM2Approx": 836.2311988731781,
+  "areaMeaning": "latitude-scaled Mercator footprint area approximation, not surveyed area",
+  "validPolygon": true,
+  "result": {
+    "coordinate": {
+      "lat": 35.4547787,
+      "lng": 139.9849371
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      10158.509916186333,
+      5393.001186221838
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "independentShapelyRoundedWithin": true,
+  "adoptionApproval": false
+}

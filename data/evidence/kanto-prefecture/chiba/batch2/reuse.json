@@ -1,0 +1,135 @@
+[
+  {
+    "original": {
+      "key": "shiroi-construction.html",
+      "url": "https://www.city.shiroi.chiba.jp/soshiki/somu/s04/zai001/keikaku/kke005/1460442818177.html",
+      "fetchedAt": "2026-11-05T11:25:01.822713+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-construction.html",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.shiroi.chiba.jp/soshiki/somu/s04/zai001/keikaku/kke005/1460442818177.html",
+      "sha256": "f6f65d1e8ddccc5a4642c4a33b78b8789ebe0897b26353b77474430b6fc346a9",
+      "bytes": 106257,
+      "contentType": "text/html",
+      "lastModified": "Fri, 30 Oct 2026 03:47:00 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/shiroi-construction.html",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/shiroi-construction.html",
+    "reusedAt": "2026-11-05T15:12:45.241351+00:00",
+    "sha256": "f6f65d1e8ddccc5a4642c4a33b78b8789ebe0897b26353b77474430b6fc346a9"
+  },
+  {
+    "original": {
+      "key": "sodegaura-names.html",
+      "url": "https://www.city.sodegaura.lg.jp/soshiki/public-facility-management/tyousyaseibikouzi-tatemonomeisyou.html",
+      "fetchedAt": "2026-11-05T11:25:01.823567+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-names.html",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.sodegaura.lg.jp/soshiki/public-facility-management/tyousyaseibikouzi-tatemonomeisyou.html",
+      "sha256": "41f8430e2daf47a6971d93ad2a42b66368828915d30b70299d1ee4fbfaf0c435",
+      "bytes": 29333,
+      "contentType": "text/html",
+      "lastModified": "Wed, 04 Nov 2026 20:00:28 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/sodegaura-names.html",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/sodegaura-names.html",
+    "reusedAt": "2026-11-05T15:12:45.241903+00:00",
+    "sha256": "41f8430e2daf47a6971d93ad2a42b66368828915d30b70299d1ee4fbfaf0c435"
+  },
+  {
+    "original": {
+      "key": "sodegaura-design.pdf",
+      "url": "https://www.city.sodegaura.lg.jp/uploaded/attachment/24931.pdf",
+      "fetchedAt": "2026-11-05T11:25:01.824790+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-design.pdf",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.sodegaura.lg.jp/uploaded/attachment/24931.pdf",
+      "sha256": "c79530cf1730bec7de7da062230684d17badea8c24279c9b08d552b81282eb1d",
+      "bytes": 4201281,
+      "contentType": "application/pdf",
+      "lastModified": "Tue, 31 Mar 2026 12:15:26 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/sodegaura-design.pdf",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/sodegaura-design.pdf",
+    "reusedAt": "2026-11-05T15:12:45.251460+00:00",
+    "sha256": "c79530cf1730bec7de7da062230684d17badea8c24279c9b08d552b81282eb1d"
+  },
+  {
+    "original": {
+      "key": "yachiyo-design.pdf",
+      "url": "https://www.city.yachiyo.lg.jp/uploaded/attachment/21678.pdf",
+      "fetchedAt": "2026-11-05T11:25:02.265880+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/yachiyo-design.pdf",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.yachiyo.lg.jp/uploaded/attachment/21678.pdf",
+      "sha256": "e262304e073398c22c71b0ff10b0668e6407f5de620f3122d987b699f77c6e5a",
+      "bytes": 40753138,
+      "contentType": "application/pdf",
+      "lastModified": "Mon, 10 Apr 2023 03:00:27 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-design.pdf",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/yachiyo-design.pdf",
+    "reusedAt": "2026-11-05T15:12:45.353784+00:00",
+    "sha256": "e262304e073398c22c71b0ff10b0668e6407f5de620f3122d987b699f77c6e5a"
+  },
+  {
+    "original": {
+      "key": "shiroi-pamphlet.pdf",
+      "url": "https://www.city.shiroi.chiba.jp/material/files/group/23/panhu2.pdf",
+      "fetchedAt": "2026-11-05T11:25:47.302351+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-pamphlet.pdf",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.shiroi.chiba.jp/material/files/group/23/panhu2.pdf",
+      "sha256": "dd8ff290d43e313552f231e526c133c874146ef6218728ec0ce50ba61a5df673",
+      "bytes": 7970794,
+      "contentType": "application/pdf",
+      "lastModified": "Thu, 29 Oct 2020 14:47:19 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/shiroi-pamphlet.pdf",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/shiroi-pamphlet.pdf",
+    "reusedAt": "2026-11-05T15:12:45.408814+00:00",
+    "sha256": "dd8ff290d43e313552f231e526c133c874146ef6218728ec0ce50ba61a5df673"
+  },
+  {
+    "original": {
+      "key": "shiroi-drawings.pdf",
+      "url": "https://www.city.shiroi.chiba.jp/material/files/group/23/zumenn.pdf",
+      "fetchedAt": "2026-11-05T11:25:47.303011+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/shiroi-drawings.pdf",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.shiroi.chiba.jp/material/files/group/23/zumenn.pdf",
+      "sha256": "84f10083428d8b4bfa9a22f5a82608210e4a52820b4f2a0ea52a23f7f023825d",
+      "bytes": 2091117,
+      "contentType": "application/pdf",
+      "lastModified": "Thu, 29 Oct 2020 14:47:20 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/shiroi-drawings.pdf",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/shiroi-drawings.pdf",
+    "reusedAt": "2026-11-05T15:12:45.417529+00:00",
+    "sha256": "84f10083428d8b4bfa9a22f5a82608210e4a52820b4f2a0ea52a23f7f023825d"
+  },
+  {
+    "original": {
+      "key": "sodegaura-plant-old.pdf",
+      "url": "https://www.city.sodegaura.lg.jp/uploaded/attachment/33055.pdf",
+      "fetchedAt": "2026-11-05T11:25:47.303384+00:00",
+      "rawPath": "data/work/location-batch2/south-kanto/sodegaura-plant-old.pdf",
+      "redistribution": "未確認のため原本はignored workのみ",
+      "status": 200,
+      "finalURL": "https://www.city.sodegaura.lg.jp/uploaded/attachment/33055.pdf",
+      "sha256": "e8f8c1b4fef52c585c8a6ee51e035cfab1af01df8020c693451732a58ff48901",
+      "bytes": 735000,
+      "contentType": "application/pdf",
+      "lastModified": "Tue, 24 Mar 2026 01:54:47 GMT"
+    },
+    "reusePath": "data/work/kanto-prefecture/chiba/next-batch/sodegaura-plant-old.pdf",
+    "reuseFrom": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-f2a50f75/data/work/location-batch2/south-kanto/sodegaura-plant-old.pdf",
+    "reusedAt": "2026-11-05T15:12:45.421041+00:00",
+    "sha256": "e8f8c1b4fef52c585c8a6ee51e035cfab1af01df8020c693451732a58ff48901"
+  }
+]

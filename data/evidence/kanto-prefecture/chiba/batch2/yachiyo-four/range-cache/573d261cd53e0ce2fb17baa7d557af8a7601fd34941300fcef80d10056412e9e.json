@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "version": "yachiyo-four-2026-11-06",
+  "requestHeaders": {
+    "range": "bytes=10500652301-10500685022"
+  },
+  "attemptedAt": "2026-11-05T15:35:21.801392+00:00",
+  "httpStatus": 206,
+  "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+  "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+  "contentType": "binary/octet-stream",
+  "contentRange": "bytes 10500652301-10500685022/16900763181",
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:35:21.843304+00:00",
+  "sha256": "6f55dd59a0e99b81ccf4e344e140005fd0d49fea1981ddce30e4ffce277b983c",
+  "rawPath": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/range-cache/6f55dd59a0e99b81ccf4e344e140005fd0d49fea1981ddce30e4ffce277b983c.raw",
+  "bytes": 32722,
+  "originalRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/range-cache/6f55dd59a0e99b81ccf4e344e140005fd0d49fea1981ddce30e4ffce277b983c.raw"
+}

@@ -1,0 +1,37 @@
+{
+  "commit": "05f1bbeec3bf825e41d344ca1317af5c18c3b0aa",
+  "validatedAt": "2026-11-05T15:49:11.917379+00:00",
+  "inputsSHA256": {
+    "calculate.py": "191b8b1506554d7465762b9e389f276c5e41af3bab3a1d0fcb62e85f04abdcbc",
+    "package.py": "483f117d3533b542ac658538fb30bce25afb90285e2dc2251aad8656daff23d8",
+    "verify.py": "eaa86ec4a75a17164c7c793c935a77110aba14135b8e30efab8ddc092cf134f8",
+    "combined.json": "18d521cb6285be674177b0ce43e695e107ee642edb9cb6aaa939703417d1699f",
+    "comparison.json": "4f9a8688a1804c56d802259ede5c7e44d90489c34321796b8878ffe0c6584435",
+    "locations-proposed.json": "ea5b1afde21641407b7b0023bdb6a7e1d500b05d55c72a128efc5c75284d11c1",
+    "location-lifecycle-proposed.json": "6f322edd4fbe08619077b5d4497eb925a7f48b6e7e80c479c470644eb17c5dd4",
+    "old-values.json": "b82cc3f071daa1e565d9d85e0484c50c53ca48fd530c9a855fd9f83fb034aa13",
+    "tile-inputs.json": "cf2c2a3be707d47d824ad0fa1ac5802282ddf378c85ddf8b9cf32549d92e529c",
+    "inherited.json": "a001b69614c4cbd3ba55f27f4e2fdbcf5c751bfff3cdfbe30da25a881a0b899e"
+  },
+  "commands": [
+    {
+      "command": "python3 data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/calculate.py",
+      "exitCode": 0,
+      "log": "calculation.log"
+    },
+    {
+      "command": "python3 data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/verify.py",
+      "exitCode": 0,
+      "log": "verification.log"
+    }
+  ],
+  "historicalFailedAttempt": {
+    "exitCode": 1,
+    "reason": "bound adoption disappeared without withdrawal: facility:kanto-south-integration-01",
+    "cause": "research validation harness passed pre-location ledger to lifecycle apply; corrected to simulate assemble applying locations in memory first"
+  },
+  "fullSuite": "not run by child; parent integrated verification",
+  "identityReview": "pending",
+  "CRSReview": "pending",
+  "manifestChanged": false
+}

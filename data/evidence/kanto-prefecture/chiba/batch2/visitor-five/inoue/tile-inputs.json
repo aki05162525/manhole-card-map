@@ -1,0 +1,112 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "seed": [
+    35.863614,
+    140.123837
+  ],
+  "seedRole": "search window only; not adopted coordinate",
+  "inputs": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58275,
+        "y": 25764
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58275-25764.pbf.gz",
+      "sha256": "72e2925b44549364599ad22c7ccbc4e9706e0e1cf7da388de3fc8b49836a4d06",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58275-25764.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58276,
+        "y": 25764
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58276-25764.pbf.gz",
+      "sha256": "177e4c74f50d3d32182343b1af79b46ec14b9851842bc25d5391cda292b61167",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58276-25764.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58277,
+        "y": 25764
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58277-25764.pbf.gz",
+      "sha256": "3803bae83049404b978ed6befef3ebe979118d2c17202038a81fc21fbd10e66c",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58277-25764.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58275,
+        "y": 25765
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58275-25765.pbf.gz",
+      "sha256": "612c62503cf498ca5914c48b176d10257fa5f13ccc12a50acc798d9a23ff9ed4",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58275-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58276,
+        "y": 25765
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58276-25765.pbf.gz",
+      "sha256": "79a3c6f9cd7b3e7e58b36f76b16646d640ea7767678d64742256781e730d652a",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58276-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58277,
+        "y": 25765
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58277-25765.pbf.gz",
+      "sha256": "41316128ca1496261122b54a609c3dab4b001d8d6e181393cbb94dee22feab74",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58277-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58275,
+        "y": 25766
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58275-25766.pbf.gz",
+      "sha256": "b54b4fbc0b88af4737618ab2617b3168028a8afe2bf346715cd2cbc1420ddbfc",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58275-25766.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58276,
+        "y": 25766
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58276-25766.pbf.gz",
+      "sha256": "822bf3e88696fd9750243198c3a1d625ae3ff16921caece3e211825a0e3328bd",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58276-25766.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58277,
+        "y": 25766
+      },
+      "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/inoue/16-58277-25766.pbf.gz",
+      "sha256": "6e22e694a4de3b3cd6fce888e257ba5298186c1568053cbdf7177e6436f4a107",
+      "exportedPath": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/inoue/16-58277-25766.pbf.gz"
+    }
+  ],
+  "focusBox": [
+    5983.782124072313,
+    5773.250582993031,
+    2500,
+    2500
+  ],
+  "credit": "国土地理院最適化ベクトルタイルを加工。PDL1.0。製品CRS適用/棟同定/採用未承認。",
+  "processing": "mapbox-vector-tile==2.2.0 y_coord_down=True, research_common combine_tiles/render_svg, all BldA/RdCL; no area filtering in render"
+}

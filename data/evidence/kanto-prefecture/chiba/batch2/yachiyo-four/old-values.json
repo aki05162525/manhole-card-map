@@ -1,0 +1,198 @@
+{
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "previousPlace": {
+        "id": "facility:kanto-south-integration-01",
+        "legacyIds": [],
+        "name": "八千代市上下水道局1階 お客様センター（工事）",
+        "address": "八千代市大和田新田312-5",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "八千代市上下水道局1階 お客様センター（工事）／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "b39f0087cf25c9861cf368056b2a36b1fdd85dd3c794848c7fd64937cc3ee8e1",
+      "previousRelations": [
+        {
+          "cardId": "12-221-A001",
+          "placeId": "facility:kanto-south-integration-01",
+          "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+          "hours": [
+            "平日8:30～17:00。12月29日～1月3日配布なし。"
+          ],
+          "condition": "平日8:30～17:00。12月29日～1月3日配布なし。",
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+            "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+            "sourceLocator": "八千代市上下水道局1階 お客様センター（工事）／配布場所・配布条件／追加窓口の条件を再確認",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+            "previousPlaceIds": [
+              "place:20dd42a34f9be9a03e08"
+            ],
+            "raw": [
+              "【平日】八千代市上下水道局1階　お客様センター（工事）窓口"
+            ]
+          }
+        }
+      ],
+      "previousRelationsSHA256": "b00cc319aed88577f93fdc7abfdcbb43d911ee0f051ea0e3dbbe227a322e67e0",
+      "previousCoordinate": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "previousPlace": {
+        "id": "facility:kanto-south-integration-02",
+        "legacyIds": [],
+        "name": "八千代市水道サービス（宿直対応）",
+        "address": "八千代市大和田新田312-5 上下水道局庁舎内",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "八千代市水道サービス（宿直対応）／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "36fb3641adbe166ba0ba891080f43340d9b6ea96eb77929cdd923b5b8f147551",
+      "previousRelations": [
+        {
+          "cardId": "12-221-A001",
+          "placeId": "facility:kanto-south-integration-02",
+          "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+          "hours": [
+            "土日祝8:30～17:00。12月29日～1月3日配布なし。"
+          ],
+          "condition": "土日祝8:30～17:00。12月29日～1月3日配布なし。",
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+            "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+            "sourceLocator": "八千代市水道サービス（宿直対応）／配布場所・配布条件／追加窓口の条件を再確認",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+            "previousPlaceIds": [
+              "place:9b56cb13cd1e7c1d014e"
+            ],
+            "raw": [
+              "【土曜日・日曜日・祝日】株式会社八千代市水道サービス（宿直対応）"
+            ]
+          }
+        }
+      ],
+      "previousRelationsSHA256": "f9da2b3d7dbca24f7763b43c1e76844456d2ad4f939ab598e45648dc8a01300c",
+      "previousCoordinate": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "previousPlace": {
+        "id": "facility:kanto-south-integration-legacy-yachiyo-0",
+        "legacyIds": [
+          "place:20dd42a34f9be9a03e08"
+        ],
+        "name": "八千代市上下水道局1階給排水相談課窓口",
+        "address": "千葉県八千代市大和田新田312-5",
+        "phone": "047-483-6155",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "24b6876c9f1cbbb8c809fd312bcc1c778c351339f641c7e2354c83e41ad012f9",
+      "previousRelations": [
+        {
+          "cardId": "12-221-A001",
+          "placeId": "facility:kanto-south-integration-legacy-yachiyo-0",
+          "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+          "hours": [
+            "現公式はお客様センター（工事）・大和田新田の宿直窓口でのみ配布と明記。旧窓口の終了日・部署継承は未確定。"
+          ],
+          "status": "unknown",
+          "evidence": {
+            "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+            "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+            "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          }
+        }
+      ],
+      "previousRelationsSHA256": "87a61451db710304cc96a4827a773dc7d3cec767a2f4d3a26d5f6e8a78437a9c",
+      "previousCoordinate": null
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "previousPlace": {
+        "id": "facility:kanto-south-integration-legacy-yachiyo-1",
+        "legacyIds": [
+          "place:9b56cb13cd1e7c1d014e"
+        ],
+        "name": "株式会社八千代市水道サービス",
+        "address": "千葉県八千代市萱田町596-19(八千代市上下水道局敷地内)",
+        "phone": "047-485-6656",
+        "evidence": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+          "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+          "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "2c403525c555fab650fda24b3c54179800e255311c0b1519ea6fd729b4ae4592",
+      "previousRelations": [
+        {
+          "cardId": "12-221-A001",
+          "placeId": "facility:kanto-south-integration-legacy-yachiyo-1",
+          "sourceHash": "31f84d85a475e054655b4a71dd18a7463d8607bc6b705eb5e72d509bd014bb66",
+          "hours": [
+            "萱田町596-19の旧配布先は終了。現公式は大和田新田312-5でのみ配布と明記。旧所在地の最終配布日は未確定。"
+          ],
+          "status": "ended",
+          "evidence": {
+            "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+            "snapshotSHA256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+            "sourceLocator": "配布について／上記配布場所でのみ配布しています（旧窓口の非継続判断）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          }
+        }
+      ],
+      "previousRelationsSHA256": "c45c87dfda22fb65abfa031c54f89c6ef5201479dc3c0aaeb20e7b5ba811dde5",
+      "previousCoordinate": null
+    }
+  ]
+}

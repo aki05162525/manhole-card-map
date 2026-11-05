@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "timing": {
+    "startedAt": "2026-11-05T16:00:53.113047+00:00",
+    "sharedFacilityIds": [
+      "facility:kanto-south-integration-01",
+      "facility:kanto-south-integration-02",
+      "facility:kanto-south-integration-legacy-yachiyo-0",
+      "facility:kanto-south-integration-legacy-yachiyo-1"
+    ],
+    "activity": "related-page visual followup, shared not allocated",
+    "finishedAt": "2026-11-05T16:02:28.127087+00:00"
+  },
+  "method": "saved originals only, rendered1900px design/1600px newsletter; visually inspected entire page at overview resolution and relevant labels; no new network acquisition",
+  "designPDF": {
+    "path": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-design.pdf",
+    "sha256": "e262304e073398c22c71b0ff10b0668e6407f5de620f3122d987b699f77c6e5a",
+    "physicalTotal": 107,
+    "newVisualPages": [
+      {
+        "page": 19,
+        "note": "資料17 時刻日影図。新庁舎とは別の南側上下水道局を複数高さの西東ブロックで表現。西側4.3/8.0、東側8.35/10.5の高さ表記は建物の高さで、外形寸法ではない。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-19.png",
+        "imageSHA256": "c4359e7e8066c8fce5e57f115db74b11c46652a7a833c6e61d6a5c75adcb4da4"
+      },
+      {
+        "page": 20,
+        "note": "資料18 等時間日影図。19頁と同配置で上下水道局を存置。外形を反証する移設表示なし。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-20.png",
+        "imageSHA256": "9d950fb4fd16b561094a00605db14865ed3e75f447cf9bb80ede4220c5609ac2"
+      },
+      {
+        "page": 41,
+        "note": "資料A-21 仮設計画1期。新庁舎建設中と上下水道局の使用中既存建物を凡例色で明確に区別。2ブロックと連結部を維持。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-41.png",
+        "imageSHA256": "0ca179c623f95ec771bfa661d607952b669ea2b0ead28cc398008d5a97f46fdc"
+      },
+      {
+        "page": 42,
+        "note": "資料A-22 2期。市役所新館・旧館を解体対象としてハッチ、上下水道局は使用中既存建物のまま。水道局を解体対象と読む根拠なし。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-42.png",
+        "imageSHA256": "576a5593aa5fef79de8419730426a45fb562ce0e8e68a4b35da006f5deea2f03"
+      },
+      {
+        "page": 43,
+        "note": "資料A-23 3期外構。上下水道局2ブロックが存置され、南の倉庫・多目的棟も別棟。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-43.png",
+        "imageSHA256": "5ec976bdd84e2942f63d2789bfbb3756cbff9ff14679f7b749904161ed47c44b"
+      },
+      {
+        "page": 44,
+        "note": "資料A-24 全体整備完了。新庁舎と上下水道局の別棟関係、上下水道局の2ブロック＋連結部を維持。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-44.png",
+        "imageSHA256": "3bd925a5c688f0e14ed15775a87974edc551b60b8c47fb96cfda47f0ff432dda"
+      },
+      {
+        "page": 50,
+        "note": "資料E-01 強電インフラ フェーズ0現況。上下水道局が2ブロックで表現され、東側屋上の受変電/発電機を記載。L字市役所棟とは別の設備系統。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-50.png",
+        "imageSHA256": "1007335101eaf168333748e1f3dbcd149916f544b67ad190d8815c2e71a168d1"
+      },
+      {
+        "page": 79,
+        "note": "資料E-30 各設備管理体系 STEP1現況。上下水道局の受付インターホンに宿直と執務室（水道サービス）の表記。庁舎内サービス/宿直の独立補強だが部屋の地理位置を示さない。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-79.png",
+        "imageSHA256": "e048ab512cbcfa9c17fb40935df623478d1bccace0500214c815c7ab0510af46"
+      },
+      {
+        "page": 105,
+        "note": "資料M-18 衛生インフラ フェーズ0現況。上下水道局の2ブロック外形、南側倉庫と多目的棟を区別。上下水道庁舎は西側市道から給水引込みと記載し西側道路対応を補強。",
+        "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/design-105.png",
+        "imageSHA256": "14212cc2aaf9fa5008475e5e1dfd1fc77fd49bb124c4ac973f15b289bdd6b2b7"
+      }
+    ]
+  },
+  "demolitionNewsletter": {
+    "physicalPage": 1,
+    "note": "2023-06-01第35号。水道週間、水質、給水車/給水タンク、濁り補償案内。頁全体に旧サービス棟を特定する配置図なし。末尾住所は移転後312-5。旧所在地終了判断・旧棟未同定を変更しない。",
+    "ignoredImage": "data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/followup-pages/demolition-1.png",
+    "imageSHA256": "8ac1b3904faed632d5b6f9930f1bfa205a698611bf934d135bd5950a6abf6b47"
+  },
+  "result": "existing west-block interpretation reinforced, no contradictory relocation or demolition of current water office found in these pages. Candidate coordinate and CRS hold unchanged.",
+  "limits": "107頁全頁の画像精読完了ではない。関連text hit9頁をoverviewで補完。図の増築外形と数値外形の差は残る。"
+}
