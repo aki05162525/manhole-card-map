@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "identity": {
+        "name": "一般社団法人 矢板市観光協会",
+        "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+        "coordinate": {
+          "lat": 36.7937641,
+          "lng": 139.9177585
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/tochigi/yaita-tile-16-58239-25555.pbf.gz",
+          "snapshotSHA256": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd",
+          "sourceLocator": "z16/58239/25555 BldA index17（旧flattenedIndex892）; yaita-geometry.json。国土地理院最適化ベクトルタイルを加工。未承認候補。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式配布案内PDF全5頁・館内図と川/橋/駐車場/南側浴場の配置を照合。北側外形の重心をXYZ Web Mercator逆投影、7桁丸め内包を確認。国内JGD2011とする旧解釈の適用は独立レビュー待ち。測地系変換なし。宿泊棟/2号館の一体外形としての妥当性は要レビュー。建物代表点、測量精度保証なし。"
+        }
+      },
+      "adoptionSHA256": "67168b375dd9a8dbb6ffbfe06ad41fdab476d3545d47190edda1f88ea585401f",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; unapproved research proposal 2026-11-05"
+    }
+  ],
+  "events": [],
+  "groups": []
+}
