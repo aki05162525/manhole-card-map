@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "origin": "http://127.0.0.1:4183",
+  "results": [
+    {
+      "mode": "full",
+      "facility": "札幌市下水道科学館",
+      "maps": "https://www.google.com/maps/search/?api=1&query=43.1170659%2C141.3425854",
+      "detailShown": true
+    },
+    {
+      "mode": "split",
+      "facility": "札幌市下水道科学館",
+      "maps": "https://www.google.com/maps/search/?api=1&query=43.1170659%2C141.3425854",
+      "detailShown": true
+    }
+  ],
+  "limits": "外部Mapsの到達地点・実地・スマホ性能・SW旧新版更新は未検証。",
+  "regression": {
+    "cases": 10,
+    "allPassed": true,
+    "chromium": "156.0.8078.4",
+    "log": "data/work/location-batch2/hokkaido/browser-regression-reviewed.log",
+    "logSHA256": "883ef7719b31d2c4af4d188128c798bf824f6ddf51afabda18546f88ea9ace0a"
+  },
+  "serverStopped": true
+}
