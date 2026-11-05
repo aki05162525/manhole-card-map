@@ -236,5 +236,6 @@
       "snapshotSHA256": "be0aaa777dfbd3de4a1a15a07fa8cc6b2b10a29f35291cc809824e62af28fd0c",
       "bytes": 71302
     }
-  ]
+  ],
+  "timestampSemantics": "各fetchedAtは要求開始時刻。初回は完了時刻を記録しておらず推定しない。追加recheck記録はrequestStartedAtとcompletedAtを区別。"
 }

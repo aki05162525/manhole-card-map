@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。施設の同定・代表点は国土地理院の承認を意味しない。",
+  "version": "README: 2026-07-01; PMTiles metadata: 26-07",
+  "crs": "原典JGD2011。z16 MVT extent4096 y-down格子を逆WebMercator、経度/緯度をEPSG:6668として局所AEQD GRS80へ変換。WGS84への測地系変換なし。出力JSONはlat,lng。",
+  "accuracy": "地図の建物代表点。個別建物の整備日・実測精度は不明。小数7桁は丸めの再現用でcm精度を意味しない。入口・窓口測量ではない。",
+  "license": "試験Vectorは基本測量成果ではない。GSI利用規約PDL1.0、出典・加工表示。一般資料の原本再配布許諾と分離。",
+  "rows": [
+    {
+      "area": "china",
+      "status": "proposed-review-pending",
+      "sourcePieces": [
+        {
+          "file": "recheck-16-56174-27590.pbf.gz",
+          "featureIndex": 6,
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "metricCRS": "+proj=aeqd +lat_0=27.3382439 +lon_0=128.5741889 +ellps=GRS80 +units=m +no_defs +type=crs",
+      "areaM2": 1513.47,
+      "method": "centroid",
+      "centroidWithin": true,
+      "coordinate": {
+        "lat": 27.338544,
+        "lng": 128.5738394
+      },
+      "roundedPointWithin": true,
+      "roundedBoundaryDistanceMeters": 13.682
+    },
+    {
+      "area": "isahaya",
+      "status": "proposed-review-pending",
+      "sourcePieces": [
+        {
+          "file": "recheck-16-56443-26431.pbf.gz",
+          "featureIndex": 70,
+          "properties": {
+            "vt_code": 3102,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "metricCRS": "+proj=aeqd +lat_0=32.84505 +lon_0=130.05262 +ellps=GRS80 +units=m +no_defs +type=crs",
+      "areaM2": 2256.242,
+      "method": "centroid",
+      "centroidWithin": true,
+      "coordinate": {
+        "lat": 32.8452193,
+        "lng": 130.0523047
+      },
+      "roundedPointWithin": true,
+      "roundedBoundaryDistanceMeters": 2.702
+    },
+    {
+      "area": "tokunoshima",
+      "status": "proposed-review-pending",
+      "sourcePieces": [
+        {
+          "file": "recheck-16-56255-27511.pbf.gz",
+          "featureIndex": 33,
+          "properties": {
+            "vt_code": 3102,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "metricCRS": "+proj=aeqd +lat_0=27.726621 +lon_0=129.018504 +ellps=GRS80 +units=m +no_defs +type=crs",
+      "areaM2": 425.146,
+      "method": "centroid",
+      "centroidWithin": true,
+      "coordinate": {
+        "lat": 27.726407,
+        "lng": 129.0186019
+      },
+      "roundedPointWithin": true,
+      "roundedBoundaryDistanceMeters": 7.064
+    },
+    {
+      "area": "uruma",
+      "status": "proposed-review-pending",
+      "sourcePieces": [
+        {
+          "file": "recheck-16-56047-27796.pbf.gz",
+          "featureIndex": 15,
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          }
+        },
+        {
+          "file": "recheck-16-56048-27796.pbf.gz",
+          "featureIndex": 1,
+          "properties": {
+            "vt_code": 3101,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "metricCRS": "+proj=aeqd +lat_0=26.33246 +lon_0=127.88086 +ellps=GRS80 +units=m +no_defs +type=crs",
+      "areaM2": 233.504,
+      "method": "centroid",
+      "centroidWithin": true,
+      "coordinate": {
+        "lat": 26.3324282,
+        "lng": 127.8808337
+      },
+      "roundedPointWithin": true,
+      "roundedBoundaryDistanceMeters": 2.296
+    },
+    {
+      "area": "naha",
+      "status": "held-outline-mismatch",
+      "sourcePieces": [
+        {
+          "file": "recheck-16-56012-27819.pbf.gz",
+          "featureIndex": 903,
+          "properties": {
+            "vt_code": 3102,
+            "vt_lvorder": 0
+          }
+        },
+        {
+          "file": "recheck-16-56012-27820.pbf.gz",
+          "featureIndex": 678,
+          "properties": {
+            "vt_code": 3102,
+            "vt_lvorder": 0
+          }
+        }
+      ],
+      "metricCRS": "+proj=aeqd +lat_0=26.214598091319942 +lon_0=127.68830062453567 +ellps=GRS80 +units=m +no_defs +type=crs",
+      "areaM2": 1378.136,
+      "method": "centroid",
+      "centroidWithin": true,
+      "coordinate": {
+        "lat": 26.2145628,
+        "lng": 127.6882504
+      },
+      "roundedPointWithin": true,
+      "roundedBoundaryDistanceMeters": 12.997
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T12:08:49.685616+00:00",
+  "basis": "第1弾と同じ現配布先を含む建物代表点。現関係を改変せず、同住所内包のみでは同定しない。",
+  "rows": [
+    {
+      "area": "tokunoshima",
+      "facilityIds": [
+        "facility:kyushu-7a9f8dae19665147953f",
+        "facility:ws-61c944585418f01447"
+      ],
+      "sourceIds": [
+        "tokunoshima-layout",
+        "tokunoshima-completion",
+        "gsi-featurecodes"
+      ],
+      "positiveEvidence": "Issue16から継承した2022年10月11日開庁案内p1を現外形へ実照合。図は北矢印なし。海と海沿い道路を東に合わせると、図の右が北、左が南になる。新庁舎は旧庁舎跡の南、消防署の北、海沿い道路の西。Vectorでは旧P05点の南にBldA33/42の複合外形、さらに南に消防署に対応する棟、東に道路・海が並び、敷地の配置が一致する。図の新庁舎内には宿直室も明示。建設課の現在関係は既存の確認済み原調査を継承。",
+      "negativeEvidenceAndLimits": "P05 feature1373は連結外形から10.607m外であり採用しない。連結1537.150㎡のうち3111は普通無壁舎。庁舎点は3102堅ろう建物feature33（425.146㎡）だけから導出し、無壁舎の面積を庁舎建築面積とは扱わない。配置図は模式図で縮尺比較不可。各階外形差と建物種別を区別する。",
+      "decision": "proposed-review-pending",
+      "numericRef": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json#/rows/2"
+    },
+    {
+      "area": "isahaya",
+      "facilityIds": [
+        "facility:kyushu-0457cc860e34e1f5a582"
+      ],
+      "sourceIds": [
+        "isahaya-plan-current",
+        "isahaya-cci",
+        "isahaya-event-map",
+        "isahaya-floor-page",
+        "isahaya-floor-plan"
+      ],
+      "positiveEvidence": "商工会議所アクセスページで商工会館高城町5-10を確認。観光協会自身の2023年イベントちらしp1右下は会場を市役所の北、本明川の南、東側道路の西に置く。GSIの2256.242㎡の外形はこの街区にあり、商工会議所3F貸会議室図の片側が曲線となる非対称な形とも整合する。3F図には北矢印がなく、回転と階ごとの差を許容した補助照合であり単独の方位証明ではない。",
+      "negativeEvidenceAndLimits": "P05 feature419物産ホールは内包、518諫早商工会館ビルは5.808m外。二点とも同住所という理由で採用せず、上記独立案内資料の街区と形状から同定したGSI外形を使用する。中心の穴は維持し、重心と丸め後点は穴の外・建物内を検査。旧計画URLの2021版という表示は原本404で裏付けなし。",
+      "decision": "proposed-review-pending",
+      "numericRef": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json#/rows/1"
+    },
+    {
+      "area": "china",
+      "facilityIds": [
+        "facility:ws-f5ea517afaab927bb9"
+      ],
+      "sourceIds": [
+        "china-pamphlet",
+        "china-pamphlet-page"
+      ],
+      "positiveEvidence": "2024パンフレットp3は1階08番上下水道課。p6空撮と表を北隣16/56174/27590および周囲8タイルに照合。横長庁舎の北に車庫A、西に車庫B、南に車寄せ、周回道路と南側駐車場が対応する。表の建築面積は庁舎1553.06、車庫A193.09、B167.19、車寄せ63.02㎡。数値外形は順に1513.470、181.519、155.217、59.533㎡。",
+      "negativeEvidenceAndLimits": "外形と建築面積の定義・軒・地図簡略化により面積差は残る（約2.5〜7.2%）。面積だけでなく四棟の方位と道路形状で接続した。初回の南タイル1枚では不足。空撮の屋根形状を中庭と断定した旧記述は撤回。表示中心を施設点・最近傍選択根拠にしない。",
+      "decision": "proposed-review-pending",
+      "numericRef": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json#/rows/0"
+    },
+    {
+      "area": "uruma",
+      "facilityIds": [
+        "facility:kyushu-5adca0ddeb2263d545e6"
+      ],
+      "sourceIds": [
+        "uruma-management"
+      ],
+      "positiveEvidence": "令和5年度管理仕様書p1-2の観光ターミナル約230㎡、歴史文化施設約1980㎡、区域付き空撮を照合。2タイルを結合した小棟233.504㎡が大きい歴史文化施設の東、池の西、駐車場との間にある。空撮に見える大施設・小棟・池と背後の平行な建物群の配置が数値外形と対応し、歴史文化施設の大棟と取り違えていない。",
+      "negativeEvidenceAndLimits": "空撮は斜めで地理参照なし。面積一致だけを根拠にせず周辺の組合せで同定。歴史文化施設側は別体外形1567.944+335.040㎡で管理建築面積とは厳密一致しない。2013測量資料・レビュー概算を数値原典には使用しない。",
+      "decision": "proposed-review-pending",
+      "numericRef": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json#/rows/3"
+    },
+    {
+      "area": "naha",
+      "facilityIds": [
+        "facility:kyushu-e4fe20203350934b0e63"
+      ],
+      "sourceIds": [
+        "naha-current",
+        "naha-construction",
+        "naha-layout"
+      ],
+      "positiveEvidence": "市工事概要の2022年9月名PDF p1を新取得。配置図で新市場計画地は市場本通り沿い、仮設市場は北西の別区画。2タイル結合外形1378.136㎡は計画地と南東の欠け、周辺道路に概ね対応する。公式qは探索ヒントだけに使用。2026-11-04市ページは2023年新築と現住所を確認。",
+      "negativeEvidenceAndLimits": "工事概要の新築建築面積1545.21㎡とは約10.8%差。新築1F図の角切り方向とVectorの北西角の折れを同一形状と確定できない。階別図や窓口位置の不足ではなく、Vectorが新築後の外形かという不確定が残る。旧市場同一敷地の外形を新築と誤認する可能性を排除できないため候補採用しない。新築の外観・竣工配置とこの折れの差を説明できる資料、又は新築を明示する別の数値外形で再開。",
+      "decision": "held",
+      "numericRef": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json#/rows/4"
+    }
+  ]
+}
