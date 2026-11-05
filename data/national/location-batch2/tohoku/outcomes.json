@@ -14,8 +14,8 @@
   "regionalUnlocatedBefore": 59,
   "regionalUnlocatedAfter": 57,
   "nationalUnlocatedBefore": 608,
-  "nationalUnlocatedAfter": 605,
-  "countScope": "開始基準608は保持。北海道PR56後のmain未位置607に東北2点（山田採用/花巻仮統合）を加え605。東北は59→57。",
+  "nationalUnlocatedAfter": 603,
+  "countScope": "開始基準608は保持。北海道/近畿西採用後のmain未位置605に東北2点（山田採用/花巻仮統合）を加え603。東北は59→57。",
   "manifestChanged": true,
   "rows": [
     {
@@ -224,6 +224,6 @@
   "revisionResearchRecordedAt": "2026-11-05T11:54:39.163619+00:00",
   "revisionElapsedSeconds": 945.583,
   "revisionTimingScope": "地域共有wall-clock: 初回Opus指摘読解後の追加調査開始から再レビュー前検証・記録まで。初回447.217秒と別計測、施設ごとに重複加算しない。再レビュー/PR更新は含まない。",
-  "nationalUnlocatedBeforeRegionalIntegration": 607,
-  "integrationMainCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395"
+  "nationalUnlocatedBeforeRegionalIntegration": 605,
+  "integrationMainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41"
 }

@@ -4,7 +4,7 @@
 
 [selection.json](../../data/national/location-batch2/tohoku/selection.json) を新規調査前に保存した。初ピン候補と移転・別棟の懸念を優先して8施設を選定し、残る50施設は今回後順、秋田市守衛室1施設はIssue20の既存保留を維持した。[全59IDの分類と除外理由](../../data/national/location-batch2/tohoku/coverage.json)、[分類集計](../../data/national/location-batch2/tohoku/classification.json)を参照。配布分類53 active・2 suspended・4 needs-reviewは保存snapshotの分類で、全件を新たにWeb確認した意味ではない。
 
-結果は **8施設調査、代表点算出3、採用1（山田）、条件付き提案1（花巻本館・記録修正後の確認待ち）、保留6**。Opusは山田を採用可、花巻を記録修正条件付きと判定した。花巻の仮統合はDraft内に保持する。main `ccc473e4` の北海道採用/binding/地域テストを保持して統合した。現在mainの未位置607に東北2点を統合すると605、地域は59→57。開始時の全国608とは別の実測値。全台帳の東北差分は2施設のcoordinate/evidence/locationReviewだけ、全関係と北海道を含む既存ピンは不変。
+結果は **8施設調査、代表点算出3、採用1（山田）、条件付き提案1（花巻本館・記録修正後の確認待ち）、保留6**。Opusは山田を採用可、花巻を記録修正条件付きと判定した。花巻の仮統合はDraft内に保持する。main `65e7b2f7` の北海道・近畿西採用/binding/地域テストを保持して統合した。現在mainの未位置605に東北2点を統合すると603、地域は59→57。開始時の全国608とは別の実測値。全台帳の東北差分は2施設のcoordinate/evidence/locationReviewだけ、全関係と北海道・近畿西を含む既存ピンは不変。
 
 | 施設 | 追加調査結果と停止・再開条件 |
 | --- | --- |
@@ -44,9 +44,9 @@ bindingと位置追補は `data/national/location-batch2/tohoku/`。元行の旧
 
 ## 検証と独立レビュー
 
-- 意味検査6件と対象2施設の差分テストをRED→GREEN。統合後Python全国全101件（研究回帰6件とverifyをCI対象に追加）、Go `go test -count=1 ./...` 全件成功。Go終了コードを直接確認し、tailの終了コードで代用していない。
+- 意味検査6件と対象2施設の差分テストをRED→GREEN。統合後Python全国全102件（研究回帰6件とverifyをCI対象に追加）、Go `go test -count=1 ./...` 全件成功。Go終了コードを直接確認し、tailの終了コードで代用していない。
 - `verify.py --raw` で原本・Range hash、59ID/8結果/6保留、事実参照、比較段階、全台帳差分を検査。`derive.py` と `measure_shapes.py` 再実行は保存JSONとbyte一致。重心・丸め後の内包を検査。
-- assemble→Go builddata→全国監査を実施。一覧20261021、review-list20261105、as-of2026-11-05。1313カード/1735施設/1825関係、北海道統合後の施設ピン979→981。full/details/pinsと世代hash、既存ピン全件不変を確認。[検証記録](../../data/evidence/location-batch2/tohoku/validation.json)。生成入力は親の保存原本をhash一致で再利用し、新取得ではない。
+- assemble→Go builddata→全国監査を実施。一覧20261021、review-list20261105、as-of2026-11-05。1313カード/1735施設/1825関係、北海道・近畿西統合後の施設ピン981→983。full/details/pinsと世代hash、既存ピン全件不変を確認。[検証記録](../../data/evidence/location-batch2/tohoku/validation.json)。生成入力は親の保存原本をhash一致で再利用し、新取得ではない。
 - 実full.jsonの2施設についてCardDetailを静的描画し名称・Maps座標queryを検査（Vitest成功）。外部Google Mapsの遷移・地図画面のブラウザー操作は未実施。UIコードは変更していない。
 - Geminiは枠上限で失敗し、承認はない。[原文と履歴](../../data/national/location-batch2/tohoku/review.json)を保持。利用者が後からClaude Opus代替を許可した。初回Opusの重大指摘と今回の対応は[別記録](../../data/national/location-batch2/tohoku/opus-review.json)。再レビューは山田を承認し花巻の記録修正を要求。反証・数値・CI接続を修正し、花巻のみ最終確認待ち。
 - 共通変更はmanifestの東北2行/binding。`test_assemble.py` の履歴manifest切出しは北海道と同じ意味だったためmain版へ統一し、mainとの差分はない。844位置等の旧期待値/digestは変更せず、4歴史テストでbatch2を除く。東北差分は `test_location_batch2_tohoku.py` で実manifestを検査。共有進捗文書は編集しない。
