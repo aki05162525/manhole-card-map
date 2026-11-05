@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "identity": {
+        "name": "水戸観光案内所",
+        "address": "茨城県水戸市宮町1-1-1(JR東日本常磐線水戸駅改札口脇)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+        "coordinate": {
+          "lat": 36.3707601,
+          "lng": 140.4761908
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/mito/16-58340-25651.pbf.gz",
+          "snapshotSHA256": "4f81ead2038431fe259a5f2ba5a2a6f4eb1c22f7ac2d4910401a61ea5a568099",
+          "sourceLocator": "z16/58340/25651 BldA feature[243]; round2/coastal/mito/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "観光協会の2021案内所MAP全画像と2024外観、現配布本文を読解。北口/南口、南北自由通路東側・改札北側という構造は確認。数値外形は主複合棟243と北東小外形247を比較したが、室位置をどちらの棟に包含するか決めるJR図のraw取得は失敗。単なる駅中心/別商業棟の代表点は作らない。 親転送の利用者回答はエクセル本館等と一体構造の駅舎本体2階屋内と確認し、デッキ独立小建屋を否定。243/247というIDは質問由来であり利用者の独立数値検証とは扱わない。本体棟243内の代表点を候補化する。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "a95c490b77d3576ba11f9f118c982aae79feb17b0f69f19af0916060d22b85ec",
+      "sourceVersion": "GSI optimal_bvmap-v1; fixed README 2026-07-01; HTTP ETag and Last-Modified retained in facility vector-retrievals; candidate only"
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "identity": {
+        "name": "アクアワールド茨城県大洗水族館入口チケット窓口",
+        "address": "茨城県東茨城郡大洗町磯浜町8252-3"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+        "coordinate": {
+          "lat": 36.3335703,
+          "lng": 140.5937052
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/16-58362-25659.pbf.gz",
+          "snapshotSHA256": "8988f17f23ea75b7e481cdaecad48ba8589cb83c001923741e87eb03f03260c6",
+          "sourceLocator": "z16/58362/25659 BldA feature[21]; round2/coastal/aqua/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式2023フロア図全1頁、別版全2頁、2F/3F図、駐車場図を目視。西道路・北河口/橋・東海岸・南駐車場が一致。主棟は南北円形端部を持つBldA21、南のフードコート相当BldA4と道路西側BldA7を分離。チケット窓口のある主棟の内点を候補化。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "fafb02f7309b9925a7f0a033a0e33c9054d172e7838558287351c409b8b4fbd9",
+      "sourceVersion": "GSI optimal_bvmap-v1; fixed README 2026-07-01; HTTP ETag and Last-Modified retained in facility vector-retrievals; candidate only"
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "identity": {
+        "name": "大洗町観光情報交流センター「うみまちテラス」",
+        "address": "茨城県東茨城郡大洗町桜道301"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+        "coordinate": {
+          "lat": 36.3147799,
+          "lng": 140.5628627
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/umimachi/16-58356-25664.pbf.gz",
+          "snapshotSHA256": "26740b1c3541e7a2f829cfab7457be2c9d6b0a217266fcd53ab758069cce7aa5",
+          "sourceLocator": "z16/58356/25664 BldA feature[229]; round2/coastal/umimachi/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式2024施設周辺平面図全1頁の右=駅、左=町道、下=ロータリーを、県2021完成報告全2頁の航空写真で北/南/東へ対応付けた（図に北矢印なし）。GSI BldA229は駅棟228の南、町道北、ロータリー西。北寄りの細い部分は連続屋根と解し南の主矩形内点を選ぶ。公式室内矩形と屋根外形は同一輪郭ではない。 親から転送された利用者回答も駅南隣・東ロータリー・南町道の平屋棟と確認。報告と独立図面の判断を区別し、人手回答だけで採用承認しない。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "9ef92fb34a2eaed8096dd64dcb6073bece821c9a6b88194f4cfda1ad08328789",
+      "sourceVersion": "GSI optimal_bvmap-v1; fixed README 2026-07-01; HTTP ETag and Last-Modified retained in facility vector-retrievals; candidate only"
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "identity": {
+        "name": "ぷらっとひたち(日立駅情報交流プラザ)",
+        "address": "茨城県日立市幸町1-1-2(日立駅中央口北側)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+        "coordinate": {
+          "lat": 36.5914303,
+          "lng": 140.6614712
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/16-58374-25601.pbf.gz",
+          "snapshotSHA256": "422e47c0b50ff22dd978fdccec2757912547383e43bfe1d0b8a7b2f671914f9c",
+          "sourceLocator": "z16/58374/25601 BldA feature[246]; round2/coastal/hitachi/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "市の2026貸出図全2頁を目視。西側中央口北側という市本文、中央口から東に延びる自由通路、北側の駅前バス広場に面する施設写真と数値棟246を照合。東側展望イベントホール/カフェを配布棟と混同しない。北の長棟245と自由通路288を別比較。貸出18㎡は一室の面積で棟全面積ではない。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "63908cba98d3514189ed579dc760362c5e49017531a4cba0c42e024a340cfc9f",
+      "sourceVersion": "GSI optimal_bvmap-v1; fixed README 2026-07-01; HTTP ETag and Last-Modified retained in facility vector-retrievals; candidate only"
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "identity": {
+        "name": "那珂市曲がり屋",
+        "address": "茨城県那珂市菅谷4520-1(一ノ関ため池親水公園)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+        "coordinate": {
+          "lat": 36.4563038,
+          "lng": 140.4877974
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/naka/16-58343-25632.pbf.gz",
+          "snapshotSHA256": "36950f62940da32b75f7a7acf6aae718b5cfe82e2bcc0d25a4c83e4decf19908",
+          "sourceLocator": "z16/58343/25632 BldA feature[23]; round2/coastal/naka/geometry-comparison.json; 国土地理院最適化ベクトルタイルを加工して作成。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式パンフ全2頁・施設本文・公式写真2枚・2025観光地図全1頁を目視。179.89㎡のL形家屋。市のmap.php座標は池内の公園代表点で不採用。北側小棟236は49.73㎡、東側L形23は260.10㎡だが園路/敷地境界との対応が確定しない。L形だけを理由に住宅を採らない。295頁の2019戦略PDFは全文検索し205頁のみ目視（206–209は生成のみ、全頁読解とは扱わない）。 親から転送された利用者回答は小池東側L形大型茅葺き本体棟と確認、西側別棟を否定。これは利用者報告であり独立取得ではない。数値BldA23のL形屋根約260㎡と公式床面積179.89㎡は軒の出/一部2階を含み同一量でない。利用者による位置同定と独立外形を合わせて候補化。代表点をXYZ格子から逆投影し小数7桁丸め後内包。製品固有CRSの限界は県source-conditions.jsonを継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "1a50bc8d384d903def71acff80bbddd6c06f850d0883b79cbb592c97f01f9913",
+      "sourceVersion": "GSI optimal_bvmap-v1; fixed README 2026-07-01; HTTP ETag and Last-Modified retained in facility vector-retrievals; candidate only"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

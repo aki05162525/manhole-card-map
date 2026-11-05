@@ -1,0 +1,299 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "summary": {
+    "targets": 18,
+    "actuallyInvestigated": 18,
+    "candidates": 17,
+    "buildingCorrespondenceUnresolved": 1,
+    "unstarted": 0,
+    "adopted": 0
+  },
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "name": "水戸観光案内所",
+      "group": "coastal",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.3707601,
+        "lng": 140.4761908
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/coastal/outcomes.json facilityId=facility:kanto-north-009640d63f2fbbd2a23d",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/mito/geometry-comparison.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+      "name": "土浦市立一中地区公民館",
+      "group": "tsuchiura",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.0828552,
+        "lng": 140.1971356
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/outcomes.json facilityId=facility:kanto-north-00d6ef3c990590c41abf",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/ichu-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "name": "アクアワールド茨城県大洗水族館入口チケット窓口",
+      "group": "coastal",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.3335703,
+        "lng": 140.5937052
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/coastal/outcomes.json facilityId=facility:kanto-north-00f47f5cf9124efaa36e",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/aqua/geometry-comparison.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-02882996672a826c585c",
+      "name": "つくば駅前観光案内所",
+      "group": "south",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.0817314,
+        "lng": 140.1127918
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/south/outcomes.json facilityId=facility:kanto-north-02882996672a826c585c",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/south/bivi/geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ebb925691ab4a56d116",
+      "name": "土浦市観光案内所",
+      "group": "tsuchiura",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.0779188,
+        "lng": 140.2057252
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/outcomes.json facilityId=facility:kanto-north-0ebb925691ab4a56d116",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/station-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-18ff4d028e5a88922096",
+      "name": "道の駅グランテラス筑西総合案内所",
+      "group": "parent",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.3228678,
+        "lng": 139.993867
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/parent/outcomes.json facilityId=facility:kanto-north-18ff4d028e5a88922096",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/parent/chikusei-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+      "name": "牛久シャトーショップ",
+      "group": "south",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 35.9781444,
+        "lng": 140.1477435
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/south/outcomes.json facilityId=facility:kanto-north-1fd6ee704dfe58bb5411",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/south/ushiku/geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "name": "古河市観光案内所",
+      "group": "parent",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": null,
+      "result": "building-correspondence-unresolved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/parent/outcomes.json facilityId=facility:kanto-north-2384f4b5d5bbd843bcbd",
+      "geometryRef": null,
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "JR原本403。高架下本体という回答済み。ホーム屋根と駅舎本体外形の対応確認が残る。"
+    },
+    {
+      "facilityId": "facility:kanto-north-3db2ac917f07b1de03e4",
+      "name": "道の駅常陸大宮~かわプラザ~",
+      "group": "parent",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.5971044,
+        "lng": 140.4101905
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/parent/outcomes.json facilityId=facility:kanto-north-3db2ac917f07b1de03e4",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/parent/hitachiomiya-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "name": "守谷市役所",
+      "group": "parent",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 35.9509455,
+        "lng": 139.9752617
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/parent/outcomes.json facilityId=facility:kanto-north-45e8eab7ba6d2bdde8e5",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/moriya-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-678eaa691f037721b1d4",
+      "name": "霞ケ浦総合公園テニスコート管理事務所",
+      "group": "tsuchiura",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.0659077,
+        "lng": 140.2159346
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/outcomes.json facilityId=facility:kanto-north-678eaa691f037721b1d4",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/tennis-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+      "name": "土浦市観光協会",
+      "group": "tsuchiura",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.0825262,
+        "lng": 140.2001816
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/outcomes.json facilityId=facility:kanto-north-8b808446dd99e8fe8f0e",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/kura-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "name": "大洗町観光情報交流センター「うみまちテラス」",
+      "group": "coastal",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.3147799,
+        "lng": 140.5628627
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/coastal/outcomes.json facilityId=facility:kanto-north-92eba9de67b549c59c91",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/umimachi/geometry-comparison.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "name": "ぷらっとひたち(日立駅情報交流プラザ)",
+      "group": "coastal",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.5914303,
+        "lng": 140.6614712
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/coastal/outcomes.json facilityId=facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/hitachi/geometry-comparison.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+      "name": "鹿島アントラーズクラブハウス店",
+      "group": "south",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 35.954806,
+        "lng": 140.6747925
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/south/outcomes.json facilityId=facility:kanto-north-a0cee7df87e79f814924",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-c612c7c1c383a0ef7027",
+      "name": "雪入ふれあいの里公園(ネイチャーセンター)",
+      "group": "tsuchiura",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.173769,
+        "lng": 140.189046
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/tsuchiura/outcomes.json facilityId=facility:kanto-north-c612c7c1c383a0ef7027",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/yukiiri-geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "name": "那珂市曲がり屋",
+      "group": "coastal",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 36.4563038,
+        "lng": 140.4877974
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/coastal/outcomes.json facilityId=facility:kanto-north-eda89f6600b8d5aa745d",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/naka/geometry-comparison.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    },
+    {
+      "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+      "name": "龍ケ崎市観光物産センター",
+      "group": "south",
+      "performed": "official-distribution-history-primary-building-numerical-comparison",
+      "candidateCoordinate": {
+        "lat": 35.929619,
+        "lng": 140.1383402
+      },
+      "result": "candidate-unapproved",
+      "detailRef": "data/national/kanto-prefecture/ibaraki/round2/south/outcomes.json facilityId=facility:kanto-north-fb8539f44aa2bc8487c0",
+      "geometryRef": "data/evidence/kanto-prefecture/ibaraki/round2/south/ryugasaki/geometry.json",
+      "adoptionApproved": false,
+      "manifestApplied": false,
+      "remaining": "independent building/CRS review"
+    }
+  ]
+}
