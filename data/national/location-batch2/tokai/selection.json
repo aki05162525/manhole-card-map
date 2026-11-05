@@ -1,0 +1,1085 @@
+{
+  "schema": 1,
+  "region": "tokai",
+  "issue": 39,
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "startedAt": "2026-11-05T11:24:06.662384+00:00",
+  "asOf": "2026-11-05",
+  "populationCount": 35,
+  "unlocatedCount": 35,
+  "selectedCount": 8,
+  "nationalStartUnlocatedCount": 608,
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/national/issue7/tokai.json": "9f76fc1819df28ce9ab89cda741c43c1ee089fb5102c5f2501e3fd098317ae55",
+    "data/national/issue7/reviews/tokai.json": "3099cfbc0c39a30e980f2df067c96fadf599ef3d06817dc7ee6afa4a053ad3c8",
+    "data/work/location-batch2/tokai/before-ledger.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "name": "カクキュー八丁味噌の郷",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/21"
+      ],
+      "firstPinCardIds": [
+        "23-202-D001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 運営者の見学施設図・売店説明から本社/史料館/配布棟を区別",
+      "previousReason": "観光公式配布ページと施設詳細を再取得。施設詳細には複数の地点・施設が含まれ、本社/史料館/売店のどの建物で配布するか未解決。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "name": "熱海市役所 下水道課(上下水道・温泉料金センター)",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/22"
+      ],
+      "firstPinCardIds": [
+        "22-205-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 市庁舎整備・配置資料で第一/第二庁舎を区別",
+      "previousReason": "現行配布案内は第二庁舎1階。一般市役所施設ページの数値qは中央町1-1の庁舎代表で第二庁舎との対応を確定できず、P05第一庁舎候補を流用しない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "name": "新居関所史料館",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/24"
+      ],
+      "firstPinCardIds": [
+        "22-221-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市配布先は新居関所史料館1227-5。観光協会埋込は新居関所の住所featureであり史料館棟の点にはしない。",
+      "followup": {
+        "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "現配布棟を明記し周辺配置へ独立接続できる資料、または施設点のCRS・精度・対象建物定義を取得。",
+        "stopCondition": "派生計算の再現は成功したが、CSVヒント以外の根拠で現配布棟と外形を区別できないため採用しない。",
+        "resumeCondition": "現配布棟を明記し周辺配置へ独立接続できる資料、または施設点のCRS・精度・対象建物定義を取得。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/0",
+          "data/national/location-batch1/review-east.json#/rows/0"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "name": "小山町観光協会(道の駅ふじおやま内)",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/25"
+      ],
+      "firstPinCardIds": [
+        "22-344-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "Issue20保留。CRS/作成方法または独立棟対応の新資料待ち",
+      "previousReason": "町配布案内と県の観光施設データを再取得。県の点は道の駅ふじおやま名で、観光案内所が入る棟との対応は今回未確定。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-44c55ff47f14ec6d456e",
+      "name": "関市役所基盤整備部 下水道課",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/28"
+      ],
+      "firstPinCardIds": [
+        "21-205-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 北庁舎の施設計画・棟別図の探索（既存P05再検索はしない）",
+      "previousReason": "現行配布先北庁舎2階を確認。新たに有効な市ドメインの庁舎案内図ページを取得できたがP05一般市役所点と北庁舎の数値対応は未解決。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-51ec8a66f05dedab114b",
+      "name": "郡上八幡駅 観光案内所",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/29"
+      ],
+      "firstPinCardIds": [
+        "21-219-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市配布案内と運営者駅舎カフェaccessを再取得。駅全体の埋込しか得られず駅舎建物を数値で区別できなかった。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "name": "掛川城公園(掛川城券売所)",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/30"
+      ],
+      "firstPinCardIds": [
+        "22-213-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "配布先は掛川城券売所と再確認。市庁舎案内はこの窓口の座標根拠にならず、城公園の点を流用しない。",
+      "followup": {
+        "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "現券売所位置を区別する配置図・施設仕様図を取得。",
+        "stopCondition": "敷地一括座標の反復しかなく現券売所外形を特定できない。",
+        "resumeCondition": "現券売所位置を区別する配置図・施設仕様図を取得。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/1"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-5c6fb9ffe9787f7dcf8b",
+      "name": "道の駅古今伝授の里やまと",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/32"
+      ],
+      "firstPinCardIds": [
+        "21-219-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市の配布先と運営者ホームを再取得。温泉・物産等の複数施設があり道の駅全体の埋込だけでは配布棟を特定できない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-92b7b359d5ae1c55761b",
+      "name": "関市役所北庁舎 守衛室",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/37"
+      ],
+      "firstPinCardIds": [
+        "21-205-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 北庁舎1階守衛室の同棟根拠を2階窓口と共同調査",
+      "previousReason": "北庁舎1階守衛室を現行配布案内で再確認。北庁舎2階と同じ棟でよいが一般P05市役所点との対応が未確認。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+      "name": "熱海市役所 警備員室 熱海市役所第1庁舎1階",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/42"
+      ],
+      "firstPinCardIds": [
+        "22-205-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 第一庁舎警備員室と第二庁舎の区別を共同調査",
+      "previousReason": "現行市配布案内と市役所詳細は取得。第一庁舎1階警備員室とP05一般市役所点の棟対応は第二庁舎との区別資料不足で保留。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "name": "まるや八丁味噌",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/44"
+      ],
+      "firstPinCardIds": [
+        "23-202-F001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "観光公式配布ページとまるや運営者トップを新規取得。配布紹介は旧住所表記、運営者は八丁町52番地。本社markerが配布棟かは未確定。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/45"
+      ],
+      "firstPinCardIds": [
+        "22-219-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市配布案内・市観光詳細・道の駅公式を再取得。市の旧MyMaps埋込は表示中心しか得られず2階事務局棟の数値にはできない。",
+      "followup": {
+        "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "2階観光協会の所在棟を示すフロア/配置図と原典座標を照合。",
+        "stopCondition": "道の駅内の数値と事務局の建物対応が未確定。",
+        "resumeCondition": "2階観光協会の所在棟を示すフロア/配置図と原典座標を照合。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/2"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-cee0813d2aeb67ba5ec9",
+      "name": "道の駅 美並物産館",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/46"
+      ],
+      "firstPinCardIds": [
+        "21-219-D001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市配布案内と道の駅美並公式accessを再取得。物産館名は配布先にあるが地図は道の駅全体で棟との対応未確認。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-5e018b80beeddee90a38",
+      "name": "海津市役所上下水道課",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/33"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "現行市配布案内と庁舎案内を再取得。上下水道課の西館という旧記録を棄却する資料なし。P05一般市役所点を西館へ流用しない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/34"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "conflict"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市配布ページ403に対し運営者園内図・トップを取得。P05樹空の森と富士山交流センターは約126m異なる。ビジターセンターとの地理的対応は未確定。",
+      "followup": {
+        "facilityId": "facility:chubu-west-6174b986d89b31577298",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "ビジターセンターの棟とVector外形が照合できる現配置図・建物資料。",
+        "stopCondition": "得られた数値の建物内性が満たされず、対象ビジターセンターの数値対応が未完。",
+        "resumeCondition": "ビジターセンターの棟とVector外形が照合できる現配置図・建物資料。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/3"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-9967da81268c03d26284",
+      "name": "道の駅ひだ朝日村",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/38"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "高山市の配布案内と岐阜観光公式施設ページを再取得。後者は数値qを持つが道の駅内配布棟との対応を今回確認できない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "name": "岳南排水路管理組合総務課業務係",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/47"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "旧URLが現行サイトへ転送され取得成功。配布は庁舎2階事務室と確認。ポンプ場名付き埋込のviewportは庁舎座標にはしない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-da2c46732042f07a4ce1",
+      "name": "あじさいエコパーク（蜂屋川クリーンセンター）",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/48"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市の現行配布案内を取得。あじさいエコパークの配布棟指定は引き続き本文にない。分庁舎点は別IDへ限定。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "name": "石廊崎オーシャンパーク",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/17"
+      ],
+      "firstPinCardIds": [
+        "22-304-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "町の現行案内で年末年始の石廊崎546-5を再確認。運営者アクセスはTLS hostname mismatchで取得不能。公園名だけでは休憩棟を選べない。",
+      "followup": {
+        "facilityId": "facility:chubu-irozaki-ocean-park",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "取得可能な町の現配置図や指定管理資料で休憩棟への配布関係を照合。",
+        "stopCondition": "休憩棟と実配布窓口・数値外形の接続が未確認。",
+        "resumeCondition": "取得可能な町の現配置図や指定管理資料で休憩棟への配布関係を照合。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/4"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-tarui-tourist-information",
+      "name": "垂井町観光案内所",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/18"
+      ],
+      "firstPinCardIds": [
+        "21-361-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 駅北口整備・案内所建築資料を探索",
+      "previousReason": "町の現行案内は1812-10の駅北口案内所を明記するが数値建物点は掲載しない。P05に対象案内所の確実な一致なし。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "name": "焼津市観光協会",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/20"
+      ],
+      "firstPinCardIds": [
+        "22-212-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市の配布案内と観光協会aboutを再取得し栄町1-2-14を確認。今回取得HTMLに建物を特定した数値なし。Google制限先は再訪しない。",
+      "followup": {
+        "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "現配布棟を明記し周辺配置へ独立接続できる資料、または施設点のCRS・精度・対象建物定義を取得。",
+        "stopCondition": "派生計算の再現は成功したが、CSVヒント以外の根拠で現配布棟と外形を区別できないため採用しない。",
+        "resumeCondition": "現配布棟を明記し周辺配置へ独立接続できる資料、または施設点のCRS・精度・対象建物定義を取得。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/5",
+          "data/national/location-batch1/review-east.json#/rows/1"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "name": "浜松市観光インフォメーションセンター",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/23"
+      ],
+      "firstPinCardIds": [
+        "22-130-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "県Wi-Fiの施設名付き点を再取得したが砂山町265-16と固定台帳265-13の差が残る。駅内建物の対応を示す資料を今回得られなかった。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-423fcab6c8f81568e652",
+      "name": "とこなめ観光案内所",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/26"
+      ],
+      "firstPinCardIds": [
+        "23-216-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市の陶磁器会館施設詳細は403。別のやきもの散歩道公式案内を追加取得して住所・施設を調査。市ページへの制限回避は行わない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "name": "裾野市観光協会",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/27"
+      ],
+      "firstPinCardIds": [
+        "22-220-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "現行市案内は中央公園内の千福7-1で、llは表示中心。観光協会公式は403。公園住所を事務所棟の点と言い換えない。",
+      "followup": {
+        "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+        "stage": "numeric-search",
+        "blockers": [
+          "source"
+        ],
+        "nextAction": "中央公園管理事務所/観光協会を識別する配置図または施設点。",
+        "stopCondition": "新しい建物対応のない旧観光データは使わない。",
+        "resumeCondition": "中央公園管理事務所/観光協会を識別する配置図または施設点。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/6"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "name": "道の駅 潮見坂",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/31"
+      ],
+      "firstPinCardIds": [
+        "22-221-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市施設案内は名称qと表示中心ll。売店・レストラン・足湯があり当該配布建物の数値を確認できず。",
+      "followup": {
+        "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "カード受け渡し棟の明示と施設配置図を取得。",
+        "stopCondition": "駅全体点と駅長室点のどちらが現配布棟を代表するか確定できない。",
+        "resumeCondition": "カード受け渡し棟の明示と施設配置図を取得。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/7"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-661449b87d5ae63962c2",
+      "name": "登窯広場展示工房館",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/35"
+      ],
+      "firstPinCardIds": [
+        "23-216-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "現行GKPで登窯広場展示工房館を確認しP05を検索したが、名称住所付き一致点が得られない。今回施設個別ページの追加取得までは未実施。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "name": "道の駅スカイドーム神岡",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/36"
+      ],
+      "firstPinCardIds": [
+        "21-217-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市配布案内とskydome公式を新規取得。公式埋込は依然住所ラベルで建物外形由来か不明。旧Google抽出を採用しない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-ac91b1a9ed9a8365efe6",
+      "name": "中津川市ひと・まちテラス1階 総合案内窓口",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/39"
+      ],
+      "firstPinCardIds": [
+        "21-206-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 2023年開館の新施設の施設計画・建築資料を探索",
+      "previousReason": "現行市配布案内と既存アクセスの再調査で新町2-34の施設を確認。現建物とP05の旧施設との同一性が未確認のため、旧施設点に対応させない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "name": "南伊豆町観光協会",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/40"
+      ],
+      "firstPinCardIds": [
+        "22-304-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "町の配布案内は下賀茂の道の駅内観光協会。今回の原本にはこの建物を特定する数値なし。別施設オーシャンパークとは分離。",
+      "followup": {
+        "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "観光協会入居棟を特定できる道の駅配置図とCRS付き位置資料。",
+        "stopCondition": "道の駅点と観光協会入居棟の対応を確定できない。",
+        "resumeCondition": "観光協会入居棟を特定できる道の駅配置図とCRS付き位置資料。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/8"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-b128731fef6309f26ed0",
+      "name": "愛西市観光協会",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/41"
+      ],
+      "firstPinCardIds": [
+        "23-232-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "現行の配布原典取得を試みた。既知の403を突破せず、森川町井桁西25-1にある観光協会の建物座標原典は今回確保できていない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "name": "沼津観光案内所",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/49"
+      ],
+      "firstPinCardIds": [
+        "22-203-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "第1弾の停止条件を維持。新資料の具体化前に同手法を再実行しない",
+      "previousReason": "市配布案内とアントレテナントページを再取得し2階入居確認。駅ビル建物の数値原典を得られず。",
+      "followup": {
+        "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "アントレの有効な配置図/階案内と駅ビルのVector外形を照合。",
+        "stopCondition": "対象外フロアガイドと取得不能資料しかなく駅ビル棟への接続が未完。",
+        "resumeCondition": "アントレの有効な配置図/階案内と駅ビルのVector外形を照合。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/east-outcomes.json#/rows/9"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:chubu-west-ec4b19393f5d955232db",
+      "name": "愛知県下水道科学館",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/50"
+      ],
+      "firstPinCardIds": [
+        "23-000-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": true,
+      "reason": "今回選定: 県施設資料・館内配置資料を探索",
+      "previousReason": "科学館配布・利用案内を再取得して住所を確認。取得HTMLから対象建物の数値を確定できず、他市の科学館点は不使用。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-ecee06e2dfb98541610e",
+      "name": "大府市健康にぎわいステーション KURUTOおおぶ",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/51"
+      ],
+      "firstPinCardIds": [
+        "23-223-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "GKP現行行を取得。県観光の施設詳細はタイムアウトで取得できず、JR大府駅構内という記載だけでは当該建物点を確定できない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "name": "伊東市観光案内所(伊東駅構内)",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/19"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "現行案内の地図URLは施設名qとll表示中心のまま。観光公式アクセスにも対象建物の数値は得られなかった。駅構内という情報だけでllを採用しない。",
+      "followup": null
+    },
+    {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "name": "磐田市観光協会",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/tokai.json#/decisions/43"
+      ],
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "adoptedAtStart": false,
+      "selected": false,
+      "reason": "今回8件の範囲外。既存原典不足/棟対応の停止条件を維持し、新施設資料取得時に再選定",
+      "previousReason": "市配布案内と観光協会accessを再取得。埋込は中泉1-1-5の住所featureであり建物点の生成根拠は不明。福田支所の点を流用しない。",
+      "followup": null
+    }
+  ]
+}

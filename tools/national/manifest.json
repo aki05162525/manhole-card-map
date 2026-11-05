@@ -3781,23 +3781,32 @@
       ]
     },
     {
+      "path": "data/national/location-batch2/hokkaido/locations-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-53b2b9df9a8da2705261",
+          "sha256": "3cfbf0c459d2c9401660f524d5a1b93a5238c47825b4d74c3cf0a66713e293e7"
+        }
+      ]
+    },
+    {
       "path": "data/national/location-batch2/koshin/locations.json",
       "approved": [
         {
           "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
-          "sha256": "e2d9e0317338ce94aae7ca0dc429e894bb0efcaaafe1e07e777eef8c3051187d"
+          "sha256": "a5d61c3d86c2a27116d796444fd327fff3a1f1cc9e0bc39324695e107e791253"
         },
         {
           "facilityId": "facility:chubu-east-511d795c4d0bff516838",
-          "sha256": "e73e78a09db4309463ea06b97c727637960df9f5cdf36c83a9d9bd9c0078474d"
+          "sha256": "f3fdfe76a0d6037fe2cca57c06a83fb1147c5c42d724d61deab92c7724cac472"
         },
         {
           "facilityId": "facility:chubu-chuo-duty-counter",
-          "sha256": "bf03fc42d340fa2c5a6df0743d8f7c512e49a657740430fc4cf40c770008a8bf"
+          "sha256": "28c2dbc6710ebcb0cd613b4f15dd35d092edd3db4a1ad9ca0676ae687b935f41"
         },
         {
           "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
-          "sha256": "2e0c21fafc2d92d7a1bc3a8d3fb6e27bceff1741dc69828245f0417444bcb59c"
+          "sha256": "a289bf3803cbfbf2efd53ef198597cd791b81a89aa61dcfb6e02928a1557943d"
         }
       ]
     }
@@ -3808,8 +3817,12 @@
       "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
     },
     {
+      "path": "data/national/location-batch2/hokkaido/location-lifecycle.json",
+      "sha256": "5ab69d1935b65fdda07368cb581110efbfadc266eb3f592055dc8baf87e40cb2"
+    },
+    {
       "path": "data/national/location-batch2/koshin/location-lifecycle.json",
-      "sha256": "355f22f80c0fba439ae399fc6b1ac7892a83291387f60db3609616c99018c0c6"
+      "sha256": "977c399607acae00dcbe867b57f7b345d7e40cf92e3f500386438d1cbabec7ef"
     }
   ]
 }

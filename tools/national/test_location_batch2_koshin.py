@@ -59,3 +59,36 @@ class KoshinBatch2Tests(unittest.TestCase):
         for path, expected in selection['inputSHA256'].items():
             if path != 'tools/national/manifest.json':
                 self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), expected)
+
+    def test_suwa_identity_change_withholds_both_building_members(self):
+        import location_lifecycle
+        manifest = a.read_json(ROOT / 'tools/national/manifest.json')
+        ledger, _ = a.assemble(ROOT, manifest)
+        doc = a.read_json(ROOT / (PREFIX + 'location-lifecycle.json'))
+        rows = a.read_json(ROOT / (PREFIX + 'locations.json'))['updates']
+        suwa = {'facility:chubu-east-3c366372adb1d9e39b13',
+                'facility:chubu-east-511d795c4d0bff516838'}
+        next(p for p in ledger['places'] if p['id'] == sorted(suwa)[0])['name'] += ' changed'
+        after, _ = location_lifecycle.apply(ROOT, ledger, rows, [doc])
+        for p in after['places']:
+            if p['id'] in suwa:
+                self.assertNotIn('coordinate', p)
+                self.assertEqual(p['locationReview']['status'], 'needs-review')
+
+    def test_evidence_links_reject_coordinate_and_reused_hash_mismatch(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('koshin_verify', ROOT / 'data/evidence/location-batch2/koshin/verify.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        updates = a.read_json(ROOT / (PREFIX + 'locations.json'))['updates']
+        derived = a.read_json(ROOT / 'data/evidence/location-batch2/koshin/derived-points.json')['rows']
+        comparison = a.read_json(ROOT / 'data/evidence/location-batch2/koshin/building-comparison.json')
+        module.check_evidence_links(updates, derived, comparison)
+        bad = copy.deepcopy(derived)
+        next(r for r in bad if r['facilityId'] in ADOPTED)['coordinate']['lat'] += 1
+        with self.assertRaises(AssertionError):
+            module.check_evidence_links(updates, bad, comparison)
+        bad = copy.deepcopy(comparison)
+        bad['reusedSources'][0]['sources'][0]['snapshotSHA256'] = '0' * 64
+        with self.assertRaises(AssertionError):
+            module.check_evidence_links(updates, derived, bad)
