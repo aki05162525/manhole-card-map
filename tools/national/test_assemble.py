@@ -75,6 +75,30 @@ class AssemblyTests(unittest.TestCase):
             with self.subTest(coord=coord), self.assertRaises(ValueError):
                 a.apply_locations(self.ledger, [dict(self.update, coordinate=coord)], self.root)
 
+    def test_geographic_boundaries_match_go_contract_without_clamping(self):
+        for magnitude in (85, 85.01, 85.051129, 86, 90, 90.01):
+            for sign in (-1, 1):
+                value = {'lat': sign * magnitude, 'lng': 180}
+                with self.subTest(coordinate=value):
+                    if magnitude > 90:
+                        with self.assertRaises(ValueError):
+                            a.coordinate(value)
+                    else:
+                        original = dict(value)
+                        a.coordinate(value)
+                        self.assertEqual(value, original)
+        for longitude in (-180, 180):
+            a.coordinate({'lat': 90, 'lng': longitude})
+        for longitude in (-180.01, 180.01):
+            with self.assertRaises(ValueError):
+                a.coordinate({'lat': 0, 'lng': longitude})
+        for bad in (False, '35', None, float('nan'), float('inf'), -float('inf')):
+            for axis in ('lat', 'lng'):
+                value = {'lat': 35, 'lng': 139}
+                value[axis] = bad
+                with self.subTest(coordinate=value), self.assertRaises(ValueError):
+                    a.coordinate(value)
+
     def test_timestamp_and_hash(self):
         ev = dict(self.ev, checkedAt='2026-11-05T04:55:42.409507+00:00')
         out, audit = a.apply_locations(self.ledger, [dict(self.update, evidence=ev)], self.root)

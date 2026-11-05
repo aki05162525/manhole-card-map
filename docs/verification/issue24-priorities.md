@@ -1,0 +1,133 @@
+# Issue24 位置未確定施設の分類と初回対象案
+
+2026-11-05、現manifestから台帳と実fullを再生成した。台帳1,586施設のうち位置未確定は612施設、位置確定は974施設。固定Issue7残件612IDと今回の台帳未位置612IDは完全一致した。Issue24冒頭の件数から増減は0。ただしIssue24起票時の独立したIDスナップショットはなく、件数一致だけから過去ID集合の不変までは証明しない。
+
+生成fullは1,735施設で、位置未確定は761施設ある。差の149施設は台帳にない`place:` IDで、関係150行はすべて`needs-review` / `unknown`。612は画面の全未確定数ではない。[台帳外一覧](../../data/national/issue24/outside-ledger.json)に別母集団として保存し、[関係・同一性監査の後続案](../../data/national/issue24/outside-ledger-issue-draft.md)を用意した。149施設のIssueは今回は作成せず、次の提案として保持する。自動説明の「座標取得対象外または住所なし」から個別原因を推測していない。
+
+## 入力と再生成
+
+元一覧は`data/raw/gkp-list-20261021.html`（取得基準2026-10-21）、確認一覧は`data/evidence/national/list-source/gkp-20261105.html`、生成評価日は2026-11-05。新たなWeb取得はしていない。保存原本の鮮度を現在確認し直したものではない。入力hashと612IDは[generation.json](../../data/national/issue24/generation.json)。全国監査の`listingSource=null`は印刷カードID対応表を指定していないためで、生成時の一覧HTML未指定を意味しない。
+
+ルートから実行する。既存出力がある場合は出力先と後続参照を別の未使用パスへ替える。
+
+```sh
+mkdir -p data/work/issue24
+python3 -B tools/national/assemble.py --out data/work/issue24/ledger.json --audit-out data/work/issue24/assembly.json
+mise exec -- go run ./cmd/builddata -places data/work/issue24/ledger.json -list data/raw/gkp-list-20261021.html -date 2026-10-21 -review-list data/evidence/national/list-source/gkp-20261105.html -as-of 2026-11-05 -out data/work/issue24/generated
+python3 -B tools/national/national_audit.py --full data/work/issue24/generated/full.json --ledger data/work/issue24/ledger.json --as-of 2026-11-05 --out data/work/issue24/national-audit.json
+python3 -B tools/national/location_priorities.py --audit data/work/issue24/national-audit.json --full data/work/issue24/generated/full.json --hold-selection data/national/issue20/selection.json --hold-outcomes data/national/issue20/north-outcomes.json --hold-outcomes data/national/issue20/oyama-outcomes.json --hold-outcomes data/national/issue20/fujioyama-outcomes.json --out data/work/issue24/location-priorities-final.json
+```
+
+分類結果から追跡用スナップショットを作る手順（既存ファイルには上書きしない）:
+
+```sh
+python3 -B - <<'PYEXPORT'
+import json, hashlib
+from pathlib import Path
+
+def export(source, decisions):
+    report = json.loads(source.read_text())
+    selection = json.loads(decisions.read_text())
+    decision_rows = selection['rows']
+    selected = {row['facilityId']: row for row in decision_rows}
+    facilities = report['facilities']
+    ids = [row['facilityId'] for row in facilities]
+    if (len(set(ids)) != len(ids) or len(selected) != len(decision_rows)
+            or set(ids) != set(selected)):
+        raise ValueError('classification and selection IDs must match exactly without duplicates')
+    rows = []
+    for rank, facility in enumerate(facilities, 1):
+        investigation = facility['investigation']
+        hold = facility['hold']
+        decision = selected[facility['facilityId']]
+        rows.append(dict(
+            facilityId=facility['facilityId'], automaticRank=rank,
+            priority=facility['priority'], distribution=facility['distribution'],
+            firstPinCardIds=facility['firstPinCardIds'],
+            originalRef=facility['provenance'].get('original', {}).get('ref'),
+            reviewRefs=[row['ref'] for row in investigation['reviews']],
+            blockers=investigation['blockers'], normalizedStage=investigation['stage'],
+            currentStage=facility['currentInvestigationStage'],
+            holdRef=hold['outcomeRef'] if hold else None,
+            stopCondition=hold['stopCondition'] if hold else investigation['stopCondition'],
+            resumeCondition=hold['resumeCondition'] if hold else investigation['resumeCondition'],
+            sharedGroupIds=facility['sharedGroupIds'], selection=decision['selection'],
+            selectionReason=decision['reason'], reevaluateWhen=decision['reevaluateWhen']))
+    return dict(schema=1, asOf=report['dates']['asOf'], source=str(source),
+                sourceSHA256=hashlib.sha256(source.read_bytes()).hexdigest(),
+                definitions=report['definitions'], summary=report['summary'],
+                inputSHA256=report['inputSHA256'],
+                sharedInvestigationCandidates=report['sharedInvestigationCandidates'], rows=rows)
+
+
+source = Path('data/work/issue24/location-priorities-final.json')
+decisions = Path('data/national/issue24/selection-decisions.json')
+result = export(source, decisions)
+with Path('/tmp/issue24-priorities-snapshot.json').open('x') as stream:
+    stream.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+PYEXPORT
+cmp data/national/issue24/priorities-snapshot.json /tmp/issue24-priorities-snapshot.json
+```
+
+出力パスを変えて再生成した場合、sourceのパスとその入力hash参照も変わるため、同じパスでの再現と区別する。exportは分類と手動選定のID欠落・重複を拒否する。
+
+巨大full・全国監査・原文付き分類結果はignored `data/work`に置く。[分類スナップショット](../../data/national/issue24/priorities-snapshot.json)は612IDごとに分類、順位、原記録/レビュー参照、停止再開条件、選定理由を残す。CLI原出力のhashも持ち、原文コピーは省く。選定判断は[初回提案](../../data/national/issue24/initial-selection-proposal.json)と[全件選定記録](../../data/national/issue24/selection-decisions.json)に分離した。自動順位は採用承認でも手動の初回選定でもない。
+
+## 分類結果
+
+対象は台帳未位置612施設。施設単位の排他的分類は次のとおり。
+
+| 分類 | 施設数 |
+| --- | ---: |
+| 配布中 | 546 |
+| 開始予定 | 1 |
+| 休止 | 41 |
+| 終了のみ | 9 |
+| 状態混在 | 2 |
+| 未確認・再確認待ち | 13 |
+
+施設に結び付く生成関係は655行。配布中580、開始予定1、休止47、終了10、不明17。複数カード・窓口・期間別関係を保持しており、関係行数を施設数と呼ばない。終了のみ9施設は現関係との一致を確認して優先度を下げるが、固定母集団から除かない。
+
+現関係と生成関係が一致する施設について、verifiedかつactive/upcomingで既存の非reference配布ピンがないカードは重複除外377枚。13施設は関係の未確認等があるため初ピン数を未評価とし、全国の確定総数は`null`のまま。377は既知範囲の候補で、調査の成功率、在庫、当日の受取可否ではない。
+
+共同調査候補は同住所31群、同名称3群。同棟認定や施設ID統合ではなく、群間の重複もあり得る。原理由の分類は原典不足344、移転等152、建物対応77、座標競合16、名称住所11、条件6、理由分類なし6。複数blocker対応なので一般には相互排他的とは限らないが、今回の原理由には複数ラベルはなかった。理由分類なしを不足なしと解釈しない。
+
+全国監査の正規化stageは612件とも`not-evaluated`。これは正規化追補がないことを表し、過去調査が未実施という意味ではない。原調査とレビューを参照したままにする。#20の追補stageがある3施設は別のcurrentStageで保持し、北側3施設の詳細な到達内容はstageを推測せずholdRefの原文に残す。利用者要望と地域空白は全件未評価で、自動補完していない。
+
+## 初回の3群5施設
+
+親が3群5施設を調査対象として確認した。座標・配布関係の採用は承認していない。各ID・原記録pointer・作業手段・停止再開条件は初回提案に固定している。
+
+| 順 | 群 | 施設数 | 初ピン候補カード | 次の作業 |
+| --- | --- | ---: | ---: | --- |
+| 1 | 加東市役所／観光協会 | 2 | 2 | カード別の現配布関係の食い違いを解く |
+| 2 | 石巻かわまち交流センター | 1 | 2 | 11番21／11番12の住所差と建物対応を確認 |
+| 3 | 大東市上下水道局平日／宿直 | 2 | 2 | 未精査の添付・アクセス図から棟対応を調べる |
+
+群をまたぐ候補カードも重複せず6枚。現窓口との不一致を先に扱い、次に共同調査手法を試す規模に限定した。新資料がすでに存在するとの保証はしていない。大東の取得済みDOCXも局の図とは未確認で、別の市役所本庁舎資料なら除外する。
+
+自動順位1位の伊丹仮設店舗を初回へ入れなかった理由を例外として記録した。危険度が低いと判断したのではなく、今回は関係競合・番地競合・共同調査の3種類を先行する。3群のいずれかが完了/停止した時点で次の候補として最初に再審査し、仮設店舗の終了・再移転・利用者報告があれば待たずに再評価する。
+
+#20の4群6施設は、今回その再開条件を満たす新根拠がないため初回選定から外した。612集合には保持し、施設別の停止再開条件を分類スナップショットへ取り込んだ。同じCSVや配置図の再検索を新しい調査予定にしない。
+
+未選定607施設には全件で除外理由と再評価条件を付けた。終了のみ9、#20保留6、その他592。その他は重要性なしや調査済みを意味せず、新根拠・配布関係変更・利用者報告・初回群の完了/停止を契機に優先度を見直す。明示的な誤誘導の新報告は初回完了を待たない。
+
+作成済み後続Issue（ローカル案は作成時の補助記録）:
+
+- [加東 #25](https://github.com/aki05162525/manhole-card-map/issues/25)
+- [石巻 #26](https://github.com/aki05162525/manhole-card-map/issues/26)
+- [大東 #27](https://github.com/aki05162525/manhole-card-map/issues/27)
+
+## 検証と未確認
+
+実assemble→Go生成→全国監査→分類CLIを実行し、台帳未位置・固定残件・分類出力・全件選定記録の612ID完全一致と重複なしを検査。初回5IDはこの集合に属し、#20保留6IDと交わらない。台帳外149IDとの重複もない。分類件数・原本hash・既存JSON pointerを照合した。exportは選定1ID欠落で拒否すること、完全入力で612行のスナップショットを全フィールド一致で再現することを確認した。
+
+今回の作業では現地、新規Web資料、個別施設の位置採用、manifest・台帳変更、UI非表示は行っていない。後続案の調査・条件確認と独立レビューは未実施。CLIの自動分類と建物同定の承認は別である。
+
+文書上の注意として、Issue24の「612施設」は台帳集合限定で、生成全施設の未位置761とは異なる。また起票件数だけでは過去ID差分を証明できないため、今回からIDスナップショットを保存する。現在コードとの実装契約の食い違いは、この調査範囲では新たに見つかっていない。
+
+## 統合検証と独立レビュー
+
+親によるPython全89テスト、Go全体、フロントlint・整形・型検査・Vitest138テスト・fixtureビルド・Chromium回帰テストは成功。生成full/details/pinsのhashはIssue22前後照合とも一致した。親が1,111件のユニークJSON pointerと45件の相対文書リンクを解決し、文書のexportでバイト一致を確認した。
+
+Gemini 4 Argonの独立レビューは重大指摘0件・任意改善2件。fullのパス表記一致の制約を文書で補足し、未追跡の作業キャッシュを整理した。[レビュー対応記録](../../data/national/issue24/review.json)を参照。

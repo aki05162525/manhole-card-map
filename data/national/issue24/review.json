@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "reviewer": "Gemini 4 Argon / antigravity",
+  "recordedAt": "2026-11-05T10:04:51.693910+00:00",
+  "scope": "97ac50e7基準のfeat/coordinate-contract-priorities未コミット変更とissue24成果物。親がレビュー後に軽微な文書補足・キャッシュ削除を行った。",
+  "blockers": 0,
+  "optionalFindings": [
+    {
+      "id": 1,
+      "finding": "監査と分類CLIのfullパス表記が異なると同じファイルでも拒否される",
+      "resolution": "監査の入力文字列とhashを一致させる既存契約を維持。docs/location-priorities.mdに./付き表記差も拒否すると具体的に追記。パス正規化は今回行わない。"
+    },
+    {
+      "id": 2,
+      "finding": "未追跡__pycache__/export_snapshot.cpython-314.pycが残存",
+      "resolution": "今回作業由来の当該キャッシュを削除。Git追跡対象に混入なし。"
+    }
+  ],
+  "parentAdditionalChange": "Issue22再現コマンドに既定値と同じ一覧原本・取得日を明示し再現条件を固定。",
+  "parentValidation": {
+    "pythonTests": 89,
+    "go": "go test -count=1 ./... passed",
+    "frontendTests": 138,
+    "frontendChecks": [
+      "lint",
+      "format:check",
+      "typecheck",
+      "build:fixture",
+      "test:browser"
+    ],
+    "uniqueJSONPointers": 1111,
+    "relativeDocumentLinks": 45,
+    "snapshotExport": "byte-identical",
+    "realGeneration": "ledger/full/details/pins byte-identical before/after"
+  },
+  "conclusion": "Issue22とIssue24の完了対象としてPR作成。座標・配布関係の新規採用なし。後続調査は25/26/27。"
+}

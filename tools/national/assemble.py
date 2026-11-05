@@ -61,6 +61,7 @@ def evidence(root, ev):
 
 
 def coordinate(value):
+    """Validate geographic numbers, independent of map projection/viewport limits."""
     if not isinstance(value, dict) or set(value) != {'lat', 'lng'}:
         reject('coordinate requires exactly lat and lng')
     for key, limit in [('lat', 90), ('lng', 180)]:

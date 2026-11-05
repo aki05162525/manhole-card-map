@@ -181,3 +181,38 @@ it("keeps reconfirmed coordinates available when only a future review is due", (
   })!;
   expect(new URL(link.href).searchParams.get("query")).toBe("35,139");
 });
+
+it.each([85, 85.01, 85.051129, 86, 90].flatMap((lat) => [lat, -lat]))(
+  "keeps geographic latitude %s unchanged in facility and lid links",
+  (lat) => {
+    for (const lng of [-180, 0, 180]) {
+      const coord = { ...coordinate, lat, lng };
+      for (const link of [
+        facilityMapLink({ ...place, coordinate: coord }),
+        lidMapLink(coord),
+      ]) {
+        expect(new URL(link!.href).searchParams.get("query")).toBe(
+          `${lat},${lng}`,
+        );
+      }
+    }
+  },
+);
+it.each([90.01, -90.01, Infinity, -Infinity, NaN, "35", null, true, {}, []])(
+  "does not treat invalid or coerced coordinate %j as a destination",
+  (value) => {
+    for (const axis of ["lat", "lng"] as const) {
+      const invalid =
+        typeof value === "number" && Number.isFinite(value)
+          ? axis === "lng"
+            ? Math.sign(value) * 180.01
+            : value
+          : value;
+      const coord = { ...coordinate, [axis]: invalid } as unknown as Coord;
+      expect(lidMapLink(coord)).toBeNull();
+      expect(facilityMapLink({ ...place, coordinate: coord })!.label).toContain(
+        "施設名・住所で検索",
+      );
+    }
+  },
+);
