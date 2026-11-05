@@ -119,7 +119,7 @@
       "inventoryRow": 4,
       "result": "numerical-candidate-weak-identity",
       "remaining": "外形2872とTICKET小棟の対応、外形2877と写真の不一致、製品測地系、独立レビュー",
-      "nextAction": "現地写真か公式の入口平面図で窓口棟を確認し2872を採るか判断する。独立レビューと測地系判断の後に親がmanifestへ統合する",
+      "nextAction": "同じ質問は再送しない。既往comparisonと今回の回答照合を独立レビューへ引き継ぎ、直接資料が得られた場合に棟対応を再検証する。",
       "statusNote": "在庫表記は市ページ更新2026-06-04時点。現在在庫は未保証",
       "candidateCoordinate": {
         "lat": 35.7659906,
@@ -132,7 +132,9 @@
       "group": "outer",
       "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/0",
       "groupOutcomeSHA256": "2e9dbb04083a66fb3d6771bed6eaa78636029ef68221ead17a88e2de3eb5fb96",
-      "integrationClass": "footprint-internal-candidate-unapproved"
+      "integrationClass": "footprint-internal-candidate-unapproved",
+      "humanAnswerRef": "data/national/kanto-prefecture/tokyo/human-questions.json",
+      "remainingReason": "利用者回答を受領。外形2872=TICKET小棟の直接裏付けは未確認、屋根外形の可能性と周辺外形不一致も残る。入園不要は未確認。"
     },
     {
       "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
@@ -436,8 +438,8 @@
       },
       "adoptionApproval": false,
       "manifestApplied": false,
-      "remainingReason": "見学受付と旧事務棟の同一性が推論。",
-      "nextAction": "人手一問で受付棟を確定。独立レビュー。測地系判断。",
+      "remainingReason": "利用者回答を受領。旧事務棟との同一性の裏付け、1F・方位・外観は独立資料未確認。従来候補の再計算・承認はしない。",
+      "nextAction": "同じ質問は再送しない。既往comparisonと今回の回答照合を独立レビューへ引き継ぎ、直接資料が得られた場合に棟対応を再検証する。",
       "evidence": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
       "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
       "existingProposal": null,
@@ -445,7 +447,8 @@
       "group": "east",
       "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/3",
       "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
-      "integrationClass": "footprint-internal-candidate-unapproved"
+      "integrationClass": "footprint-internal-candidate-unapproved",
+      "humanAnswerRef": "data/national/kanto-prefecture/tokyo/human-questions.json"
     },
     {
       "facilityId": "facility:kanto-south-de8aff1633c63180b295",
@@ -483,8 +486,8 @@
       "buildingIdentity": "設計図 p11 の西端「屋内ひろば・管理事務所」が現サービスセンター新棟と判断(区発表の円形屋根・屋内ひろばと図の円形外周が一致、公式写真あり)。ただし公式の棟名対応は「管理棟(屋内ひろば)」→サービスセンターの推論。",
       "footprint": "数値外形なし。z16 2026-07-01製品のBldAは街区西端の該当範囲に小片3311(19㎡)/3312(21㎡)のみで、写像した壁箱内に頂点0。GSI seamlessphoto z18・ort とも旧配置(テニスコート・円形施設)で新棟が写らない。OSM map APIの当該範囲にも該当buildingなし。現製品では「新棟未収録」を実比較で確認。",
       "remainingMismatch": "旧棟3562/3532を代用しない(区設計で移行、東側は相撲場等の別施設の可能性)。Edogawa公式地図リンクと p7 地図の数値は旧日本測地系と仮定すると本街区に一致するが仮定は未検証で数値は不使用。promo頁は03-3675-5030を「富士公園サービスセンター」と記載し他頁と異なる(旧表記の可能性、未確定)。",
-      "remainingReason": "数値外形・現況写真に新棟未収録",
-      "nextAction": "人手一問で現況棟の代表点を確定(humanQuestions参照)。または新版外形/空中写真の更新後に p11 との照合を再実施。設計点は検証点残差約10m・棟半幅11〜15mのため採用候補にしない。",
+      "remainingReason": "利用者回答を受領。配置図直URLなし。位置関係は未検証の手掛かり。数値外形未収録と写像残差約10mの問題は未解消。",
+      "nextAction": "同じ質問は再送しない。既往comparisonと今回の回答照合を独立レビューへ引き継ぎ、直接資料が得られた場合に棟対応を再検証する。",
       "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
       "adoptionApproval": false,
       "relationChanges": false,
@@ -492,7 +495,8 @@
       "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/4",
       "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
       "manifestApplied": false,
-      "integrationClass": "no-reliable-point"
+      "integrationClass": "no-reliable-point",
+      "humanAnswerRef": "data/national/kanto-prefecture/tokyo/human-questions.json"
     },
     {
       "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
