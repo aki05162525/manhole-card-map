@@ -1,0 +1,22 @@
+{
+  "command": "research_index.py --baseline 11b7e4ee --as-of 2026-11-05 --followup pilot-outcomes --followup pilot-review-corrections --human-queue human-confirmation-queue; inline all-input-hashes/group-pointers/five-held-followups validation",
+  "exitCode": 0,
+  "summary": {
+    "unlocated": 588,
+    "adoptedExcluded": 998,
+    "duplicateFacilityIds": 0,
+    "classificationCandidateCounts": {
+      "building-unresolved": 28,
+      "comparison-not-performed": 4,
+      "conditions-unverified": 10,
+      "execution-not-recorded": 527,
+      "footprint-absent": 2,
+      "retrieval-failed": 16,
+      "source-insufficient": 7
+    }
+  },
+  "answeredRemainingIDs": 39,
+  "pilotLatestHeld": 5,
+  "indexSHA256": "094c568165004c98650d42fc9c3ec349b3bdbcec72c0d9ce7555b4c3c14f34a5",
+  "inputHashCount": 232
+}

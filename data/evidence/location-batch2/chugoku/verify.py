@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT / 'tools/national'))
-from assemble import assemble
+from research_baseline import check_research_only
 
 
 def read(path):
@@ -38,7 +38,8 @@ def main():
         for component in pointer.split('/'):
             value = value[int(component)] if isinstance(value, list) else value[component]
         assert value['facilityId'] == r['facilityId']
-    ledger, _ = assemble(ROOT, read('tools/national/manifest.json'))
+    ledger, current, integration = check_research_only(
+        ROOT, 'chugoku', selection, 'data/work/location-batch2/chugoku/before.json')
     places = {r['id']: r for r in ledger['places']}
     unlocated = {fid for fid, r in places.items() if not r.get('coordinate')}
     assert len(unlocated) == 608
@@ -61,7 +62,7 @@ def main():
         text = (ROOT / path).read_text()
         assert not any(fid in text for fid in selected), path
     for path, expected in selection['inputSHA256'].items():
-        if path.startswith('data/work/') and not args.raw:
+        if path == 'tools/national/manifest.json' or (path.startswith('data/work/') and not args.raw):
             continue
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, path
     if args.raw:
@@ -74,7 +75,7 @@ def main():
                 assert source.get('error') and 'snapshotPath' not in source
     print(json.dumps({'population': len(population), 'selected': len(selected),
                       'held': 8, 'adopted': 0, 'sources': len(sources),
-                      'rawHashesVerified': args.raw}, ensure_ascii=False))
+                      'rawHashesVerified': args.raw, **integration}, ensure_ascii=False))
 
 
 if __name__ == '__main__':

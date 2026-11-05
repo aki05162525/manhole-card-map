@@ -1,0 +1,50 @@
+[
+  {
+    "command": [
+      "python3",
+      "-B",
+      "data/evidence/issue57/pilot/acquire.py"
+    ],
+    "expectedExitCode": 1,
+    "exitCode": 1,
+    "beforeSHA256": "94f4855a823f62d1afc9358fc1324b590bf27c60d8cb6684518101539c8c2ae9",
+    "afterSHA256": "94f4855a823f62d1afc9358fc1324b590bf27c60d8cb6684518101539c8c2ae9",
+    "output": "Recorded pilot acquisition exists; use a new evidence directory for another attempt.\n"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "pmtiles==3.7.0",
+      "--with",
+      "mapbox-vector-tile==2.2.0",
+      "--with",
+      "cairosvg==2.8.2",
+      "python",
+      "-B",
+      "data/evidence/issue57/pilot/tiles.py"
+    ],
+    "expectedExitCode": 1,
+    "exitCode": 1,
+    "beforeSHA256": "0d29f80b928eae53b19509f9eadf78ead9910b0f996c4a23f42821f01e17c081",
+    "afterSHA256": "0d29f80b928eae53b19509f9eadf78ead9910b0f996c4a23f42821f01e17c081",
+    "output": "Recorded pilot exists; verify offline or use a new evidence directory.\n"
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--with",
+      "shapely==2.1.2",
+      "python",
+      "-B",
+      "data/evidence/issue57/pilot/calculate.py"
+    ],
+    "expectedExitCode": 1,
+    "exitCode": 1,
+    "beforeSHA256": "81837dc9fab8fd1289772182a24fb7306ab1d688d5c776264f22f8ba4a00759c",
+    "afterSHA256": "81837dc9fab8fd1289772182a24fb7306ab1d688d5c776264f22f8ba4a00759c",
+    "output": "Recorded pilot exists; verify offline or use a new evidence directory.\n"
+  }
+]

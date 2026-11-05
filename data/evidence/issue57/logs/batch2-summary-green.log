@@ -1,0 +1,8 @@
+test_extracted_body_has_identical_ast (test_check_batch2_summary.Batch2SummaryTests.test_extracted_body_has_identical_ast) ... ok
+test_frozen_baseline_bytes_are_unchanged (test_check_batch2_summary.Batch2SummaryTests.test_frozen_baseline_bytes_are_unchanged) ... ok
+test_old_and_extracted_checks_print_identical_results (test_check_batch2_summary.Batch2SummaryTests.test_old_and_extracted_checks_print_identical_results) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.017s
+
+OK

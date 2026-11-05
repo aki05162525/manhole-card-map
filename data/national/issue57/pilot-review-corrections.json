@@ -1,0 +1,341 @@
+{
+  "schema": 1,
+  "originalSHA256": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+  "reviewRef": "data/evidence/issue57/codex-final-review.json",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "name": "白井市役所 本庁舎1階守衛室",
+      "group": "shiroi",
+      "decision": "held",
+      "priorResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/1",
+      "priorStopCondition": "配置図とBldA外形の目視比較まで。連結部を含む外形から本庁舎だけの領域を確定できておらず、建物対応を承認しない。404の案内図の検索本文を原本の代替にしない。",
+      "priorResumeCondition": "新築棟=現本庁舎という整備履歴を保ち、周辺道路・保健福祉センターとの配置を根拠にBldAの対象範囲と現守衛室所在棟を独立照合する。",
+      "newEvidenceAndMethod": "全頁/隣接タイル/全外形・道路を照合。中津川では未取得だった外形を取得。",
+      "stopCategories": [
+        "building-unresolved",
+        "crs-or-terms-unverified"
+      ],
+      "stopCondition": "2016年図面の新築棟は市の整備記事で本庁舎と接続できる。北方位記号に合わせると道路の屈曲、南側保健福祉センター、東側別棟の配置がBldA112/南隣20周辺と整合する。BldA112は東庁舎側も含む一体外形で、南端は隣接タイルに続く。新築棟領域の仮点だけを計算し、棟境界の独立確認前なので採用しない。",
+      "resumeCondition": "配置図1頁、1階図3頁と現行棟名を独立照合し、新築棟部分を確認する。",
+      "adoptedCoordinate": null,
+      "candidateCalculationRef": "data/evidence/issue57/pilot/calculations.json#/rows/0",
+      "observation": {
+        "schema": 1,
+        "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+        "plannedMethods": [
+          "公式原本再取得と全頁確認",
+          "既存タイルhash確認・全外形道路描画",
+          "中津川と不足隣接タイル取得",
+          "方位・周辺道路・棟対応の自己判断を独立レビューへ渡す"
+        ],
+        "performedMethods": [
+          "公式HTML/図面原本取得",
+          "公式図の全頁/全体確認",
+          "全BldA/RdCL結合描画",
+          "方位・道路・隣接棟の目視比較"
+        ],
+        "acquisition": {
+          "status": "acquired",
+          "records": [
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/0",
+              "key": "shiroi-construction.html"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/1",
+              "key": "shiroi-drawings.pdf"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/9",
+              "key": "shiroi-distribution.html"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/10",
+              "key": "shiroi-offices.html"
+            }
+          ]
+        },
+        "pages": {
+          "total": 9,
+          "checked": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sourceKey": "shiroi-drawings.pdf",
+          "additionalWholeImageKeys": [],
+          "scope": "PDF物理全頁または単一画像全体。HTMLは対象本文を確認。ナビゲーション内の全リンク先確認ではない。"
+        },
+        "orientation": {
+          "status": "confirmed",
+          "evidence": [
+            "zumenn.pdf 物理1頁の北記号（2〜5頁にも記載）。図面の上方向そのものは北ではない。"
+          ]
+        },
+        "coverage": {
+          "tiles": [
+            {
+              "z": 16,
+              "x": 58264,
+              "y": 25781
+            },
+            {
+              "z": 16,
+              "x": 58264,
+              "y": 25782
+            },
+            {
+              "z": 16,
+              "x": 58265,
+              "y": 25781
+            },
+            {
+              "z": 16,
+              "x": 58265,
+              "y": 25782
+            }
+          ],
+          "boundaryClipping": "source tile boundaries retained; all neighbours in acquired set checked; target-specific interpretation below",
+          "renderPath": "data/evidence/issue57/pilot/shiroi-all.svg",
+          "layerCounts": {
+            "BldA": 591,
+            "RdCL": 381
+          },
+          "tileBoundaryTouched": 232,
+          "outerBoundaryTouched": 148,
+          "targetBoundaryNote": "庁舎外形112はy=4096境界をまたぐ。南隣20に同一形状の続きあり。未取得外縁ではない。"
+        },
+        "buildingIdentity": {
+          "status": "insufficient",
+          "evidence": [
+            "2016年図面の新築棟は市の整備記事で本庁舎と接続できる。北方位記号に合わせると道路の屈曲、南側保健福祉センター、東側別棟の配置がBldA112/南隣20周辺と整合する。BldA112は東庁舎側も含む一体外形で、南端は隣接タイルに続く。新築棟領域の仮点だけを計算し、棟境界の独立確認前なので採用しない。"
+          ],
+          "identityApproved": false
+        },
+        "surroundings": {
+          "status": "confirmed",
+          "evidence": [
+            "2016年図面の新築棟は市の整備記事で本庁舎と接続できる。北方位記号に合わせると道路の屈曲、南側保健福祉センター、東側別棟の配置がBldA112/南隣20周辺と整合する。BldA112は東庁舎側も含む一体外形で、南端は隣接タイルに続く。新築棟領域の仮点だけを計算し、棟境界の独立確認前なので採用しない。"
+          ],
+          "scope": "自己照合。独立レビュー前。"
+        },
+        "crs": {
+          "status": "insufficient",
+          "product": "GSI optimal_bvmap-v1 PMTiles",
+          "evidence": [
+            "data/evidence/issue57/pilot/rights.json#/crs"
+          ],
+          "note": "XYZ/Mercator計算と製品の測地系採用根拠を分離。一般仕様へのリンクだけで新しい採用承認を付けない。"
+        },
+        "licence": {
+          "status": "confirmed",
+          "evidence": [
+            "data/evidence/issue57/pilot/rights.json"
+          ],
+          "scope": "GSIタイルと加工外形。自治体PDF/HTML/画像の原本全文再配布は未確認のためwork限定。"
+        },
+        "mechanicalChecks": {
+          "status": "passed",
+          "evidence": [
+            "data/evidence/issue57/pilot/calculations.json#/rows/0"
+          ],
+          "scope": "候補領域の内包/丸め後内包。施設・棟同定を証明しない。"
+        },
+        "review": {
+          "status": "pending",
+          "reviewer": null,
+          "evidence": []
+        }
+      },
+      "timingRefs": [
+        "data/evidence/issue57/pilot/timing.json#/groups/shiroi",
+        "data/evidence/issue57/pilot/timing.json#/shared"
+      ],
+      "reinvestigation": {
+        "occurred": true,
+        "reason": "旧保留を保持したまま、未実施範囲/方位/タイル境界を具体的な新手順で再照合。新たなレビュー差戻しによる再調査ではない。"
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      },
+      "supersedesRef": "data/national/issue57/pilot-outcomes.json#/rows/3",
+      "correctionReason": "独立Codex原本読解で物理6・7頁の北記号を確認できなかった。物理1〜5頁へ根拠範囲を限定。原記録は保持。"
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "name": "白井市役所 都市建設部 上下水道課業務係",
+      "group": "shiroi",
+      "decision": "held",
+      "priorResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/3",
+      "priorStopCondition": "BldAの対象部分と減築改修棟の対応を承認するまで到達せず。共通住所・市役所P05点だけでは本庁舎と東庁舎を分離できない。",
+      "priorResumeCondition": "現東庁舎の輪郭・連結部と周辺道路を配置図と地理参照外形で照合し、東庁舎内代表点を再現検査する。",
+      "newEvidenceAndMethod": "全頁/隣接タイル/全外形・道路を照合。中津川では未取得だった外形を取得。",
+      "stopCategories": [
+        "building-unresolved",
+        "crs-or-terms-unverified"
+      ],
+      "stopCondition": "市の整備記事は減築改修棟を東庁舎と明示する。9頁全部を確認し、1頁の配置図と4頁の2階図で新築棟との接続を確認した。BldA112の東側部分が対応候補だが、形状全体を東庁舎として採用しない。東側仮点の内包は計算上成功。",
+      "resumeCondition": "配置図の減築改修棟範囲をBldA112東側へ独立対応付けする。",
+      "adoptedCoordinate": null,
+      "candidateCalculationRef": "data/evidence/issue57/pilot/calculations.json#/rows/1",
+      "observation": {
+        "schema": 1,
+        "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+        "plannedMethods": [
+          "公式原本再取得と全頁確認",
+          "既存タイルhash確認・全外形道路描画",
+          "中津川と不足隣接タイル取得",
+          "方位・周辺道路・棟対応の自己判断を独立レビューへ渡す"
+        ],
+        "performedMethods": [
+          "公式HTML/図面原本取得",
+          "公式図の全頁/全体確認",
+          "全BldA/RdCL結合描画",
+          "方位・道路・隣接棟の目視比較"
+        ],
+        "acquisition": {
+          "status": "acquired",
+          "records": [
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/0",
+              "key": "shiroi-construction.html"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/1",
+              "key": "shiroi-drawings.pdf"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/9",
+              "key": "shiroi-distribution.html"
+            },
+            {
+              "ref": "data/evidence/issue57/pilot/retrievals.json#/records/10",
+              "key": "shiroi-offices.html"
+            }
+          ]
+        },
+        "pages": {
+          "total": 9,
+          "checked": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sourceKey": "shiroi-drawings.pdf",
+          "additionalWholeImageKeys": [],
+          "scope": "PDF物理全頁または単一画像全体。HTMLは対象本文を確認。ナビゲーション内の全リンク先確認ではない。"
+        },
+        "orientation": {
+          "status": "confirmed",
+          "evidence": [
+            "zumenn.pdf 物理1頁の北記号（2〜5頁にも記載）。図面の上方向そのものは北ではない。"
+          ]
+        },
+        "coverage": {
+          "tiles": [
+            {
+              "z": 16,
+              "x": 58264,
+              "y": 25781
+            },
+            {
+              "z": 16,
+              "x": 58264,
+              "y": 25782
+            },
+            {
+              "z": 16,
+              "x": 58265,
+              "y": 25781
+            },
+            {
+              "z": 16,
+              "x": 58265,
+              "y": 25782
+            }
+          ],
+          "boundaryClipping": "source tile boundaries retained; all neighbours in acquired set checked; target-specific interpretation below",
+          "renderPath": "data/evidence/issue57/pilot/shiroi-all.svg",
+          "layerCounts": {
+            "BldA": 591,
+            "RdCL": 381
+          },
+          "tileBoundaryTouched": 232,
+          "outerBoundaryTouched": 148,
+          "targetBoundaryNote": "庁舎外形112はy=4096境界をまたぐ。南隣20に同一形状の続きあり。未取得外縁ではない。"
+        },
+        "buildingIdentity": {
+          "status": "insufficient",
+          "evidence": [
+            "市の整備記事は減築改修棟を東庁舎と明示する。9頁全部を確認し、1頁の配置図と4頁の2階図で新築棟との接続を確認した。BldA112の東側部分が対応候補だが、形状全体を東庁舎として採用しない。東側仮点の内包は計算上成功。"
+          ],
+          "identityApproved": false
+        },
+        "surroundings": {
+          "status": "confirmed",
+          "evidence": [
+            "市の整備記事は減築改修棟を東庁舎と明示する。9頁全部を確認し、1頁の配置図と4頁の2階図で新築棟との接続を確認した。BldA112の東側部分が対応候補だが、形状全体を東庁舎として採用しない。東側仮点の内包は計算上成功。"
+          ],
+          "scope": "自己照合。独立レビュー前。"
+        },
+        "crs": {
+          "status": "insufficient",
+          "product": "GSI optimal_bvmap-v1 PMTiles",
+          "evidence": [
+            "data/evidence/issue57/pilot/rights.json#/crs"
+          ],
+          "note": "XYZ/Mercator計算と製品の測地系採用根拠を分離。一般仕様へのリンクだけで新しい採用承認を付けない。"
+        },
+        "licence": {
+          "status": "confirmed",
+          "evidence": [
+            "data/evidence/issue57/pilot/rights.json"
+          ],
+          "scope": "GSIタイルと加工外形。自治体PDF/HTML/画像の原本全文再配布は未確認のためwork限定。"
+        },
+        "mechanicalChecks": {
+          "status": "passed",
+          "evidence": [
+            "data/evidence/issue57/pilot/calculations.json#/rows/1"
+          ],
+          "scope": "候補領域の内包/丸め後内包。施設・棟同定を証明しない。"
+        },
+        "review": {
+          "status": "pending",
+          "reviewer": null,
+          "evidence": []
+        }
+      },
+      "timingRefs": [
+        "data/evidence/issue57/pilot/timing.json#/groups/shiroi",
+        "data/evidence/issue57/pilot/timing.json#/shared"
+      ],
+      "reinvestigation": {
+        "occurred": true,
+        "reason": "旧保留を保持したまま、未実施範囲/方位/タイル境界を具体的な新手順で再照合。新たなレビュー差戻しによる再調査ではない。"
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      },
+      "supersedesRef": "data/national/issue57/pilot-outcomes.json#/rows/4",
+      "correctionReason": "独立Codex原本読解で物理6・7頁の北記号を確認できなかった。物理1〜5頁へ根拠範囲を限定。原記録は保持。"
+    }
+  ]
+}

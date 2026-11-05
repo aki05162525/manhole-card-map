@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "scope": [
+    "human-confirmation-queue.json",
+    "human-responses.json",
+    "source-crosscheck.json"
+  ],
+  "result": "passed",
+  "checks": [
+    "34 distinct response IDs",
+    "40 grouped facility IDs",
+    "pending empty",
+    "all checkedAt 2026-11-05",
+    "first eight URLs remain unprovided",
+    "no adoption approval",
+    "all matched saved snapshot SHA256 values agree"
+  ],
+  "command": "python3 -B data/evidence/issue57/human/verify.py",
+  "exitCode": 0,
+  "limitations": [
+    "No new HTTP retrieval",
+    "User-viewed bytes/pages not independently established",
+    "No coordinate, status, or relation changes"
+  ],
+  "stdout": "PASS: 34 response groups / 40 unique facility IDs / 0 pending / 0 location approvals; matched saved SHA256 verified"
+}

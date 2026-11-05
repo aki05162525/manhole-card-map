@@ -1,0 +1,21 @@
+test_check_batch2_summary (unittest.loader._FailedTest.test_check_batch2_summary) ... ERROR
+
+======================================================================
+ERROR: test_check_batch2_summary (unittest.loader._FailedTest.test_check_batch2_summary)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_check_batch2_summary
+Traceback (most recent call last):
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/tools/national/test_check_batch2_summary.py", line 13, in <module>
+    import check_batch2_summary as summary
+ModuleNotFoundError: No module named 'check_batch2_summary'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

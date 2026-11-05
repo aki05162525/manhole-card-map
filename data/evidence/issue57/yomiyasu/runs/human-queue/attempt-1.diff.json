@@ -1,0 +1,137 @@
+{
+ "format": "yomiyasu-diff",
+ "format_version": 2,
+ "tool_version": "2.5.0",
+ "status": "no_change",
+ "changed": false,
+ "candidate_count": 0,
+ "meaning_risk_count": 0,
+ "fail_on_meaning_risk_count": 0,
+ "not_judged": [
+  "meaning_equivalence",
+  "reader_comprehension"
+ ],
+ "context": {
+  "doc_type": "manual",
+  "reader": "expert"
+ },
+ "meaning_risks": [],
+ "markers": [],
+ "new_words": [],
+ "lost_words": [],
+ "structure": [],
+ "spans": [],
+ "logic": [
+  {
+   "kind": "\u6587\u982d\u306e\u6307\u793a\u8a9e",
+   "sentence": "\u3053\u306e\u672a\u5224\u8aad\u3060\u3051\u3067\u65e2\u63a1\u7528\u5bbf\u65e5\u76f4\u5ba4\u3092\u53d6\u308a\u4e0b\u3052\u305f\u308a\u5357\u9928\u3068\u540c\u68df\u306b\u3057\u306a\u3044\u3002"
+  }
+ ],
+ "bold": [],
+ "endings": {
+  "stance": "\u8aac\u660e",
+  "changes": [],
+  "flags": [],
+  "orig_flags": []
+ },
+ "type_changes": [],
+ "full_diff": {
+  "encoding_notes": [],
+  "final_newline": {
+   "old": true,
+   "new": true
+  },
+  "limits_applied": [],
+  "hunks": []
+ },
+ "stiffness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "metrics": {
+   "old": {
+    "sentences": 28,
+    "chars": 796,
+    "avg_sentence_length": 28.43,
+    "kanji_ratio": 53.58,
+    "kanji": 397,
+    "nominalizations": 0,
+    "nominalization_names": {},
+    "no_chains": 0
+   },
+   "new": {
+    "sentences": 28,
+    "chars": 796,
+    "avg_sentence_length": 28.43,
+    "kanji_ratio": 53.58,
+    "kanji": 397,
+    "nominalizations": 0,
+    "nominalization_names": {},
+    "no_chains": 0
+   }
+  },
+  "list": "references/lists/nominalization.txt",
+  "list_problem": null
+ },
+ "tone": {
+  "level": "info",
+  "candidate_count": 0,
+  "candidates": [],
+  "counts": {
+   "old": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 0,
+    "heading_chars": 24
+   },
+   "new": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 0,
+    "heading_chars": 24
+   }
+  },
+  "list": "references/lists/intensifiers.txt",
+  "list_problem": null
+ },
+ "feeling": {
+  "list": "references/lists/feelings.txt",
+  "list_problem": null
+ },
+ "hedges": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "list": "references/lists/hedges.txt",
+  "list_problem": null
+ },
+ "immutable": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "meaning_risk_count": 0
+ },
+ "politeness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "applicable": false,
+  "threshold": 0.2,
+  "metrics": null
+ },
+ "register": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "threshold": {
+   "min_sentences": 3,
+   "min_ratio": 0.5
+  },
+  "skipped_by": null
+ },
+ "added_actors": [],
+ "heading_shapes": [],
+ "comma_increase": null
+}

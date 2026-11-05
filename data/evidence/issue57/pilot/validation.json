@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "head": "523d30113e602daa91e7db69916df248bcdf52a1",
+  "state": "uncommitted pilot files",
+  "scope": "data/evidence/issue57/pilot and data/national/issue57/pilot-*.json",
+  "runs": [
+    {
+      "command": "python3 -B -m unittest discover -s data/evidence/issue57/pilot -p test_verify.py -v",
+      "phase": "RED",
+      "exitCode": 1,
+      "log": "data/evidence/issue57/pilot/logs/red-validation.log"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s data/evidence/issue57/pilot -p test_verify.py -v",
+      "phase": "GREEN",
+      "exitCode": 0,
+      "log": "data/evidence/issue57/pilot/logs/green-validation.log"
+    },
+    {
+      "command": "uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.1.2 python -B data/evidence/issue57/pilot/verify.py --raw",
+      "phase": "GREEN",
+      "exitCode": 0,
+      "log": "data/evidence/issue57/pilot/logs/verify-raw.log"
+    }
+  ],
+  "reviewApproval": false,
+  "notRun": [
+    "full Python/Go (parent integration)",
+    "browser/UI",
+    "adoption/full/split/Maps generation (no adopted data)"
+  ],
+  "filesSHA256": {
+    "data/evidence/issue57/pilot/acquire.py": "aad4371d0aa69211c95be22057a3246d85de60e152964a247a6792d275b7d3bd",
+    "data/evidence/issue57/pilot/calculate.py": "6e865f5767b459516b1aa72481bad4ee4fc68db928e0044f380fcae632bf4cfe",
+    "data/evidence/issue57/pilot/test_verify.py": "bb49b7fe75eb53d23cb23e640fd5433ea841621446b610a2873dcdc3feb83de5",
+    "data/evidence/issue57/pilot/tiles.py": "9e93f4481bc6cad1c2cab469324bebc5e3129103be6a7ddf8196e7696eb8dd2b",
+    "data/evidence/issue57/pilot/verify.py": "f8085fcc6b566f17e48f85859c2c79d621a30b8cb74e15d51bf47522b20a1153",
+    "data/evidence/issue57/pilot/logs/green-validation.log": "d2d8caf7ab3e893a588cba2cd1309e32825f6ac21735563765536202b9851ec7",
+    "data/evidence/issue57/pilot/logs/red-validation.log": "5761268657a790f41b44342adf8983bbf7537a8a5ac509e8a4b2b74c78d4d43f",
+    "data/evidence/issue57/pilot/logs/tiles.log": "feca5aa4e4c1d3ee05b7a80d44947083e6e7d18f7f6221099ba3de1ce2f7d5dc",
+    "data/evidence/issue57/pilot/logs/verify-raw.log": "e0f5c030c6b799bff134e237fe6f5ecdb26d4369315c2f8b5f8fe0b95c7ffd27"
+  },
+  "evidenceRecordedAt": "2026-11-05T13:51:42.574611+00:00",
+  "recordedInputsSHA256": {
+    "data/evidence/issue57/pilot/calculations.json": "81837dc9fab8fd1289772182a24fb7306ab1d688d5c776264f22f8ba4a00759c",
+    "data/evidence/issue57/pilot/history-preservation-check.json": "4f347fd5eb0de9699d4f76de4d497aed4984931f7a45ea7e42f5d53b1fa479bd",
+    "data/evidence/issue57/pilot/inspection.json": "b9d0f216e6efbfbd83d11d33cb5545e6151acfcc94944af7cdc01eb852abb412",
+    "data/evidence/issue57/pilot/provenance-comparison.json": "1d8e257d44e1d26b1bce613123e1241313cadfa0058c9b56ff7fef1ae86d0a25",
+    "data/evidence/issue57/pilot/range-retrievals.json": "7873bc126b06ec05b4bdaa5ee1da45d62a1d9cd20f7e18bb98c0c6340acfae94",
+    "data/evidence/issue57/pilot/retrievals.json": "94f4855a823f62d1afc9358fc1324b590bf27c60d8cb6684518101539c8c2ae9",
+    "data/evidence/issue57/pilot/rights.json": "e88fb2aee4005204399a16152122f9d780b861f05656a747713cd5c8f6d97903",
+    "data/evidence/issue57/pilot/tile-inputs.json": "0d29f80b928eae53b19509f9eadf78ead9910b0f996c4a23f42821f01e17c081",
+    "data/evidence/issue57/pilot/timing.json": "14111b9a849b35e14b1dc15fb4d3edaf6bbd8844f469818d780babe4b6f9a3dc",
+    "data/national/issue57/pilot-human-queue.json": "3f8c2228bb38216a39ddef77d321980d881add07a712b8709fdfe3252d266e80",
+    "data/national/issue57/pilot-outcomes.json": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+    "data/national/issue57/pilot-selection.json": "6325f9436b6bf0c77b82915efaa7fe4d86f96cfa2aa2f432046d8f9cb3d2df40"
+  },
+  "evidenceScopeNote": "This manifest captures final pilot records after additive rights/inspection/timing/provenance documentation; test logs above are the measured runs. No full-suite repeat."
+}

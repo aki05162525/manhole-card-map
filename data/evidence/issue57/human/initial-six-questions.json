@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "population": "588未位置から人手の棟名・現配布先確認で進展する6施設を優先。網羅調査ではない。",
+  "pending": [
+    {
+      "priority": 1,
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "name": "輪島市上下水道局 1階窓口",
+      "cardIds": [
+        "17-204-A001",
+        "17-204-B001"
+      ],
+      "question": "現在のカード配布先は上下水道局の従来の庁舎1階のままですか、それとも別の場所に変わっていますか？",
+      "officialConfirmationURL": "https://www.city.wajima.ishikawa.jp/categories/bunya/shisetsu/shiyakusho/",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/4",
+      "currentUnknown": "震災後も従来の配布先か未確認。",
+      "resolvedByAnswer": "震災後の現配布先・移転有無を確認できる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    },
+    {
+      "priority": 2,
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "name": "道の駅朝日 朝日みどりの里物産会館",
+      "cardIds": [
+        "15-212-D001"
+      ],
+      "question": "再整備工事中の現在も、カードは食堂と渡り廊下でつながる既存の物産会館で受け取れますか？",
+      "officialConfirmationURL": "https://asahimidori.com/access-guide/store/",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/6",
+      "currentUnknown": "再整備中の現配布棟が未確認。",
+      "resolvedByAnswer": "計画上の新棟と現在の配布棟を区別できる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    },
+    {
+      "priority": 3,
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "name": "佐渡市役所本庁舎1F 宿日直室",
+      "cardIds": [
+        "15-224-B001"
+      ],
+      "question": "休日にカードを受け取る宿日直室は、現在の第1庁舎と第2庁舎のどちらにありますか？",
+      "officialConfirmationURL": "https://www.city.sado.niigata.jp/site/bousaikyotenchousha/60451.html",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/1",
+      "currentUnknown": "休日窓口の所属棟が未確定。",
+      "resolvedByAnswer": "総合案内と休日窓口の同棟・別棟を確認できる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    },
+    {
+      "priority": 4,
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "name": "雲龍山勝興寺",
+      "cardIds": [
+        "16-202-B001"
+      ],
+      "question": "カードを配布する拝観受付は、伽藍図のどの建物ですか？",
+      "officialConfirmationURL": "https://www.shoukouji.jp/garan.html",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/7",
+      "currentUnknown": "伽藍図に拝観受付の棟名がない。",
+      "resolvedByAnswer": "受付を本堂・総門・境内中心と取り違えずに棟を選べる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    },
+    {
+      "priority": 5,
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "name": "福井市一乗谷朝倉氏遺跡復原町並",
+      "cardIds": [
+        "18-201-B001"
+      ],
+      "question": "カードを配布するチケット売場は、南入口の事務所・その隣の売店・別の建物のどれですか？",
+      "officialConfirmationURL": "https://ichijo-dani.com/site/townscape",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/5",
+      "currentUnknown": "南側の売場・事務所・売店と個別建物の対応が未確定。",
+      "resolvedByAnswer": "南側の複数建物のうち配布窓口を含む棟を絞れる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    },
+    {
+      "priority": 6,
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "name": "習志野市企業局工務部下水道課",
+      "cardIds": [
+        "12-216-A001"
+      ],
+      "question": "現在カードを受け取る新館は、藤崎1丁目1-13の敷地で本館・別館に対してどこにある建物ですか？",
+      "officialConfirmationURL": "https://www.city.narashino.lg.jp/kigyoukyoku/jigyosha/26529.html",
+      "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+      "evidenceRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+      "currentUnknown": "現在の本館・新館・別館の配置が未確定。",
+      "resolvedByAnswer": "将来の新局舎建設予定地と現新館を区別できる。",
+      "status": "awaiting-human-confirmation",
+      "answer": null,
+      "answerSourceURL": null,
+      "answerCheckedAt": null,
+      "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+    }
+  ],
+  "answeredRef": "data/national/issue57/pilot-human-queue.json",
+  "answerPolicy": "回答は確認日と実際に参照したURLを記録。URL未提示はnull。利用者報告と取得原本を別記し、採用承認へ昇格しない。",
+  "noAutomaticContact": true
+}

@@ -1,0 +1,9 @@
+test_arithmetic_does_not_authorize_adoption (test_verify.PilotValidationTest.test_arithmetic_does_not_authorize_adoption) ... ok
+test_duplicate_outcomes_cannot_hide_missing_facility (test_verify.PilotValidationTest.test_duplicate_outcomes_cannot_hide_missing_facility) ... ok
+test_mixed_range_generations_rejected (test_verify.PilotValidationTest.test_mixed_range_generations_rejected) ... ok
+test_unchanged_holds_cover_selection (test_verify.PilotValidationTest.test_unchanged_holds_cover_selection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

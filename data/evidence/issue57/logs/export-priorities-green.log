@@ -1,0 +1,8 @@
+test_cli_never_overwrites_existing_output (test_export_priorities.ExportPrioritiesTests.test_cli_never_overwrites_existing_output) ... ok
+test_matches_legacy_snippet_byte_for_byte (test_export_priorities.ExportPrioritiesTests.test_matches_legacy_snippet_byte_for_byte) ... ok
+test_missing_extra_or_duplicate_ids_are_rejected_without_output (test_export_priorities.ExportPrioritiesTests.test_missing_extra_or_duplicate_ids_are_rejected_without_output) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.257s
+
+OK

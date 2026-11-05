@@ -1,0 +1,56 @@
+{
+  "baseCommit": "523d30113e602daa91e7db69916df248bcdf52a1",
+  "scope": [
+    "tools/national/export_priorities.py",
+    "tools/national/test_export_priorities.py",
+    "docs/verification/issue24-priorities.md",
+    "tools/national/check_batch2_summary.py",
+    "tools/national/test_check_batch2_summary.py",
+    "docs/verification/location-batch2.md"
+  ],
+  "fileSHA256": {
+    "tools/national/export_priorities.py": "3b7084fab508ab66cbf2ce9b71e3349e81c67920f5584baa6449a9435f731662",
+    "tools/national/test_export_priorities.py": "506f42f14c4ce5b9ccadee969ef9a0dab548c0b330aad20271b2fb8491a4743b",
+    "docs/verification/issue24-priorities.md": "6e5908c1dc49540644ec8a08bc62bef681239fc3a8709e21e58cee74e8837d5f",
+    "tools/national/check_batch2_summary.py": "34aa86ae98f02c0aea82f94fdcafb77380484d0903390b10d81212a55800ffdf",
+    "tools/national/test_check_batch2_summary.py": "f24f5edcd1c2d8993f857f289bc5da0d5ec7b237f24160412bada2c59a1f23ec",
+    "docs/verification/location-batch2.md": "97a88b241c2b1d89390f1bb08ddc950c240c67894da449eae60a1c61f4ad3ee4"
+  },
+  "runs": [
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_export_priorities.py -v",
+      "exitCode": 1,
+      "log": "data/work/issue57/checks/export-priorities-red.log",
+      "logSHA256": "e4b06e99307c67789f080aa71d5fe1d612e0780be85f6d9471ca6c6137a9132c"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_export_priorities.py -v",
+      "exitCode": 0,
+      "log": "data/work/issue57/checks/export-priorities-green.log",
+      "logSHA256": "ce83b7c7bf169efa0f94f4a75c423df599031f64bb5c35cd549ed4cc3702dd4b"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_check_batch2_summary.py -v",
+      "exitCode": 1,
+      "log": "data/work/issue57/checks/batch2-summary-red.log",
+      "logSHA256": "85514ae1e181863ad5a9e0b32808320e58c8f7a0bf87331461dfc1c94d0c8d60"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_check_batch2_summary.py -v",
+      "exitCode": 0,
+      "log": "data/work/issue57/checks/batch2-summary-green.log",
+      "logSHA256": "7a7c12cddc7cde361d778bdc0efada67d706573dff730c572f9185c68e1fd1b5"
+    },
+    {
+      "command": "python3 -B tools/national/check_batch2_summary.py",
+      "exitCode": 0,
+      "log": "data/work/issue57/checks/batch2-summary-live.log",
+      "logSHA256": "43d90a533ca20acba54bb28ff79321df5c355701bfec587dc23739caf8d3c682"
+    }
+  ],
+  "limits": [
+    "Issue24 original work input unavailable: real 612-row reproduction not rerun.",
+    "Targeted tests only; full Python and Go suites are parent responsibility.",
+    "Documentation pending parent yomiyasu run/verify."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "reviewer": "Codex native independent reviewer /root/codex_retry_review",
+  "baseCommit": "523d30113e602daa91e7db69916df248bcdf52a1",
+  "reviewedState": "uncommitted files identified by SHA256; final generated index, human queue, final docs and hook results excluded",
+  "startedAt": "2026-11-05T14:10:49+00:00",
+  "finishedAt": "2026-11-05T14:14:34.234784+00:00",
+  "wallSeconds": 225.234784,
+  "timeScope": "core code review and shared five-facility source/numeric review; not separately allocated to each ID",
+  "decision": "approved-for-research-only-scope-with-disclosed-limitations",
+  "adoptionApproval": false,
+  "issue57AcceptanceComplete": false,
+  "filesSHA256": {
+    "tools/national/research_common.py": "905384e54affc7325f08a302f4417483d3b5d277bf878eec8d78a7618b4a4adf",
+    "tools/national/research_index.py": "cd25b07ba52c206d809714aaf317cdde82efa5fb96386a61210d7b7d2d8aabcc",
+    "tools/national/research_baseline.py": "aabfdb346481e2638d5236010415f01127d7ee4e8e847ab8fa8e36073bdeba8d",
+    "tools/national/export_priorities.py": "3b7084fab508ab66cbf2ce9b71e3349e81c67920f5584baa6449a9435f731662",
+    "tools/national/check_batch2_summary.py": "34aa86ae98f02c0aea82f94fdcafb77380484d0903390b10d81212a55800ffdf",
+    "data/national/issue57/pilot-outcomes.json": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+    "data/national/issue57/pilot-selection.json": "6325f9436b6bf0c77b82915efaa7fe4d86f96cfa2aa2f432046d8f9cb3d2df40",
+    "data/evidence/issue57/pilot/calculations.json": "81837dc9fab8fd1289772182a24fb7306ab1d688d5c776264f22f8ba4a00759c",
+    "data/evidence/issue57/pilot/inspection.json": "b9d0f216e6efbfbd83d11d33cb5545e6151acfcc94944af7cdc01eb852abb412",
+    "data/evidence/issue57/pilot/timing.json": "14111b9a849b35e14b1dc15fb4d3edaf6bbd8844f469818d780babe4b6f9a3dc",
+    "data/evidence/issue57/pilot/rights.json": "e88fb2aee4005204399a16152122f9d780b861f05656a747713cd5c8f6d97903",
+    "data/evidence/location-batch2/south-kanto/verify.py": "e75e23f81d186e28717f3d94b5c7b2e6ac1ea3cc4d045e75d18336592a5752ac",
+    "data/evidence/location-batch2/tokai/verify.py": "ec8a0f021d57608393833ddab4c7f2670e4bf518f32c68314867565e248653c4",
+    "data/evidence/location-batch2/chugoku/verify.py": "44d1db9b573e717cd6b13362349dac684b596dac66d7e1d8cd02cb36cb2bcba0"
+  },
+  "findings": [
+    {
+      "severity": "low",
+      "path": "data/national/issue57/pilot-outcomes.json",
+      "field": "shiroi observations orientation.evidence",
+      "detail": "物理1〜7頁の北記号との記載に対し、今回画像確認で北記号を明確に確認できたのは1〜5頁。6・7頁で北記号は確認できない。",
+      "requestedChange": "物理1頁の北記号（2〜5頁にも記載）など確認できた範囲へ訂正し旧記録との差を追補する。",
+      "status": "reported-to-integrator"
+    }
+  ],
+  "acceptanceGaps": [
+    {
+      "item": "施設ごとの作業時間",
+      "detail": "取得/描画はグループ単位、計算はID別、手動読図は共有137秒で施設別未計測。欠測を後付け配賦で埋めず未達を記載する。"
+    },
+    {
+      "item": "全残件の停止分類と具体的次作業",
+      "detail": "検索候補と原文参照を構築した初版索引。追加分類待ち/要評価が残る。588件すべてを実査確定した停止分類として扱わない。"
+    }
+  ],
+  "implementationReview": {
+    "blockingDefectsFound": [],
+    "reviewed": [
+      "HTTPError応答body/status/headers保存と取得/再利用日時分離",
+      "隣接タイル座標整列・全Polygon/穴/道路描画・buffer表示・外縁と継目の区別",
+      "丸め前後内包と棟同定/CRS承認分離",
+      "歴史manifest/ledger hashと現在地域inputs/patches/locations/lifecycle寄与の分離",
+      "地域レビューscope・issue25〜27最新結果・明示followup・人手回答参照添付",
+      "Issue24/第2弾長い再現コードのCLI抽出と対象テスト証跡"
+    ],
+    "limits": [
+      "分類regexは確定判断ではない",
+      "Polygon validityは呼出側/独立幾何検査の責任",
+      "タイル結合は幾何unionではない",
+      "最終人手キューと再生成索引は編集中につき対象外"
+    ]
+  },
+  "sourceReview": {
+    "sourceBytesHashed": 12,
+    "tileBytesHashed": 22,
+    "shiroi": {
+      "checkedPhysicalPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "imageResolution": "既保存1200px画像。細部寸法の測量・全文転記なし。",
+      "findings": "配置図北記号、道路屈曲、南側保健福祉センターと接続、東西の連結棟を確認。整備記事本文で新築棟=本庁舎、減築改修棟=東庁舎を確認。BldA112/南隣の一体外形と整合する候補だが棟ごとの地理参照境界の承認なし。",
+      "decision": "held"
+    },
+    "atami": {
+      "checkedWholeImages": [
+        "atami-layout.jpg",
+        "atami-focus.png"
+      ],
+      "findings": "第一/第二/第三庁舎と消防、福祉、駐車場、道路の相対配置を確認。北記号/縮尺なし。BldA83は第二庁舎候補、93は第一+消防の候補として合理的だが数値棟同定の確定には至らない。配布HTMLは2026-07-01変更、第二1階平日と第一1階休日を確認。",
+      "decision": "held"
+    },
+    "nakatsugawa": {
+      "checkedWholeImages": [
+        "nakatsugawa-location.png",
+        "nakatsugawa-layout.jpg",
+        "nakatsugawa-focus.png"
+      ],
+      "findings": "北記号、駅/郵便局/商業施設/道路と公園、1階総合案内を確認。地理参照外形と新棟との確定対応なし。外形未収録と断定しない。",
+      "decision": "held"
+    },
+    "rights": "保存READMEと一般仕様への参照は製品固有CRS承認と分離されている。自治体全文原本はwork限定。現位置採用なしなのでCRS保留を尊重する。"
+  },
+  "independentNumericCheck": {
+    "command": "uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.1.2 python -B (inline independent script)",
+    "exitCode": 0,
+    "method": "raw PBF gzipを直接decodeし指定BldA indexを抽出、Shapely translateで基準タイルへ移動。research_commonはimportしない。逆Mercatorはatan(exp)式、再投影はlog(tan(pi/4+lat/2))式。7桁座標と丸め前後Shapely containsを照合。",
+    "results": [
+      {
+        "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+        "lat": 35.7912199,
+        "lng": 140.0557896,
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedBoundaryDistanceTileUnits": 94.40145944204417
+      },
+      {
+        "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+        "lat": 35.7914483,
+        "lng": 140.0565407,
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedBoundaryDistanceTileUnits": 103.02307438202348
+      },
+      {
+        "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+        "lat": 35.0965763,
+        "lng": 139.0713036,
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedBoundaryDistanceTileUnits": 61.645904899178895
+      },
+      {
+        "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+        "lat": 35.096393,
+        "lng": 139.0716201,
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedBoundaryDistanceTileUnits": 81.06501535370646
+      }
+    ],
+    "notProven": [
+      "建物identity",
+      "測地系",
+      "位置採用"
+    ]
+  },
+  "testEvidenceReviewed": [
+    "data/evidence/issue57/logs/*red*.log",
+    "data/evidence/issue57/logs/*green*.log",
+    "data/evidence/issue57/logs/index-human-queue-validation.json",
+    "data/evidence/issue57/pilot/validation.json"
+  ],
+  "suiteRerun": false,
+  "pendingIntegration": [
+    "最終commitフックの非キャッシュGoと内包全Python結果を統合担当が確認",
+    "最終索引/キュー/文書のhash・参照整合",
+    "yomiyasu verify結果",
+    "低severity記録訂正の追補"
+  ],
+  "previousReviewFailure": "以前のcodex_final_reviewはcapacity失敗。今回のレビューで成功した範囲のみ承認し、その失敗を承認扱いにしない。"
+}

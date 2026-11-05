@@ -1,0 +1,461 @@
+{
+ "format": "yomiyasu-diff",
+ "format_version": 2,
+ "tool_version": "2.5.0",
+ "status": "has_candidates",
+ "changed": true,
+ "candidate_count": 6,
+ "meaning_risk_count": 1,
+ "fail_on_meaning_risk_count": 0,
+ "not_judged": [
+  "meaning_equivalence",
+  "reader_comprehension"
+ ],
+ "context": {
+  "doc_type": "manual",
+  "reader": "expert"
+ },
+ "meaning_risks": [
+  {
+   "kind": "protected",
+   "subkind": "code",
+   "old_line": 43,
+   "new_line": 45,
+   "old": "python3 -B - <<'PY'",
+   "new": "python3 -B tools/national/check_batch2_summary.py",
+   "detail": {
+    "block": "code"
+   },
+   "basis": null
+  }
+ ],
+ "markers": [],
+ "new_words": [
+  "AST",
+  "hash",
+  "tools/national/check_batch2_summary.py",
+  "\u30b3\u30de\u30f3\u30c9",
+  "\u4ee5\u4e0b",
+  "\u4fdd\u5b58\u539f\u672c",
+  "\u51e6\u7406\u672c\u4f53",
+  "\u51fa\u529b\u4e00\u81f4",
+  "\u5408\u6210\u5165\u529b",
+  "\u5c02\u7528",
+  "\u5f3e\u96c6\u8a08\u6642",
+  "\u6587\u66f8\u5185",
+  "\u65e7\u51e6\u7406",
+  "\u691c\u8a3c\u7bc4\u56f2",
+  "\u73fe\u5728",
+  "\u76e3\u67fb"
+ ],
+ "lost_words": [
+  "PY",
+  "Path.cwd",
+  "a.assemble",
+  "a.load_selection",
+  "a.read_json",
+  "accepted",
+  "adopted",
+  "adopted.extend",
+  "after",
+  "after.keys",
+  "after.values",
+  "allowed",
+  "and",
+  "assert",
+  "base",
+  "before",
+  "before.keys",
+  "before.values",
+  "bindings",
+  "changed",
+  "confirmed",
+  "d.get",
+  "decision",
+  "else",
+  "events",
+  "facilityId",
+  "for",
+  "from",
+  "glob",
+  "groups",
+  "ids",
+  "import",
+  "isinstance",
+  "items",
+  "json.loads",
+  "lambda",
+  "len",
+  "lifecycle",
+  "manifest_at",
+  "name",
+  "new",
+  "not",
+  "old",
+  "patches",
+  "path.parent.name",
+  "path.with_name",
+  "pathlib",
+  "picks",
+  "places",
+  "print",
+  "r.get",
+  "ref",
+  "relations",
+  "rows",
+  "selected",
+  "selected.extend",
+  "selectedIds",
+  "selected_ids",
+  "selection.get",
+  "set",
+  "show",
+  "sorted",
+  "status",
+  "str",
+  "subprocess",
+  "subprocess.check_output",
+  "sys",
+  "sys.path.insert",
+  "tools/national/manifest.json",
+  "\u30c1\u30a7\u30c3\u30af\u30a2\u30a6\u30c8"
+ ],
+ "structure": [
+  "\u6bb5\u843d\u3092\u307e\u3068\u3081\u305f\uff08104 \u2192 42\uff09\u3002\u307e\u3068\u3081\u305f\u6bb5\u843d\u306e\u8a71\u984c\u304c1\u3064\u304b\u898b\u308b",
+  "\u6587\u306e\u6570\u304c\u5909\u308f\u3063\u305f\uff08176 \u2192 117\uff09"
+ ],
+ "spans": [
+  {
+   "added": "\u5165\u529b\u3092\u4f7f\u3046\u3002\u3053\u308c\u306f\u73fe\u5728\u306emanifest\u5168\u4f53\u3092\u76e3\u67fb\u3059\u308b\u30b3\u30de\u30f3\u30c9\u3067\u306f\u306a\u3044\u3002\n\nIssue57\u3067\u6587\u66f8\u5185\u306e\u691c\u67fb\u30b3\u30fc\u30c9\u3092\u5c02\u7528CLI\u3078\u79fb\u3057\u305f\u3002\u65e7\u51e6\u7406\u306fGit\u5c65\u6b74\u306b\u4fdd\u6301\u3057\u3001\u51e6\u7406\u672c\u4f53\u306eAST\u4e00\u81f4\u3001\u5408\u6210\u5165\u529b\u3067\u306e\u51fa\u529b\u4e00\u81f4\u3001\u958b\u59cbmanifest\u306e\u4fdd\u5b58\u539f\u672chash\u4e0d\u5909\u3092\u30c6\u30b9",
+   "was": "\u30c1\u30a7\u30c3\u30af\u30a2\u30a6",
+   "kinds": [],
+   "new_words": [
+    "\u73fe\u5728",
+    "\u76e3\u67fb",
+    "\u30b3\u30de\u30f3\u30c9",
+    "\u6587\u66f8\u5185",
+    "\u5c02\u7528",
+    "\u65e7\u51e6\u7406",
+    "\u51e6\u7406\u672c\u4f53",
+    "AST",
+    "\u5408\u6210\u5165\u529b",
+    "\u51fa\u529b\u4e00\u81f4",
+    "\u4fdd\u5b58\u539f\u672c",
+    "hash"
+   ],
+   "where": "\u308b\u3002\u5f8c\u65e5\u306e\u5165\u529b\u66f4\u65b0\u6642\u306f\u56fa\u5b9a\u30b3\u30df\u30c3\u30c8\u306e\uff3b\u5165\u529b\u3092\u4f7f\u3046\u3002\u3053\u308c\u306f\u73fe\u5728\u306emanifest\u5168\u4f53\u3092\u76e3\u67fb\u3059\u308b\u30b3\u30de\u30f3\u30c9\u3067\u306f\u306a\u3044\u3002\n\nIssue57\u3067\u6587\u66f8\u5185\u306e\u691c\u67fb\u30b3\u30fc\u30c9\u3092\u5c02\u7528CLI\u3078\u79fb\u3057\u305f\u3002\u65e7\u51e6\u7406\u306fGit\u5c65\u6b74\u306b\u4fdd\u6301\u3057\u3001\u51e6\u7406\u672c\u4f53\u306eAST\u4e00\u81f4\u3001\u5408\u6210\u5165\u529b\u3067\u306e\u51fa\u529b\u4e00\u81f4\u3001\u958b\u59cbmanifest\u306e\u4fdd\u5b58\u539f\u672chash\u4e0d\u5909\u3092\u30c6\u30b9\uff3d\u30c8\u3059\u308b\u3002\u4ee5\u4e0b\u306e\u78ba\u8a8d\u7d50\u679c\u3068\u691c\u8a3c\u7bc4\u56f2\u306f\u7b2c"
+  },
+  {
+   "added": "\u3059\u308b\u3002\u4ee5\u4e0b\u306e\u78ba\u8a8d\u7d50\u679c\u3068\u691c\u8a3c\u7bc4\u56f2\u306f\u7b2c2\u5f3e\u96c6\u8a08\u6642\u306e\u8a18\u9332",
+   "was": "",
+   "kinds": [],
+   "new_words": [
+    "\u4ee5\u4e0b",
+    "\u691c\u8a3c\u7bc4\u56f2",
+    "\u5f3e\u96c6\u8a08\u6642"
+   ],
+   "where": "est\u306e\u4fdd\u5b58\u539f\u672chash\u4e0d\u5909\u3092\u30c6\u30b9\u30c8\uff3b\u3059\u308b\u3002\u4ee5\u4e0b\u306e\u78ba\u8a8d\u7d50\u679c\u3068\u691c\u8a3c\u7bc4\u56f2\u306f\u7b2c2\u5f3e\u96c6\u8a08\u6642\u306e\u8a18\u9332\uff3d\u3067\u3042\u308b\u3002\n\n```sh\npython"
+  },
+  {
+   "added": "ry.",
+   "was": "nifest = manifest_at(final)\n_, ",
+   "kinds": [],
+   "new_words": [
+    "ry."
+   ],
+   "where": "check_batch2_summa\uff3bry.\uff3dpy\n```\n\n\u78ba\u8a8d\u7d50\u679c\uff1a\u65bd\u8a2dID\u306e"
+  }
+ ],
+ "logic": [
+  {
+   "kind": "\u6587\u982d\u306e\u6307\u793a\u8a9e",
+   "sentence": "\u3053\u308c\u306f\u73fe\u5728\u306emanifest\u5168\u4f53\u3092\u76e3\u67fb\u3059\u308b\u30b3\u30de\u30f3\u30c9\u3067\u306f\u306a\u3044\u3002"
+  }
+ ],
+ "bold": [],
+ "endings": {
+  "stance": "\u8aac\u660e",
+  "changes": [],
+  "flags": [],
+  "orig_flags": []
+ },
+ "type_changes": [],
+ "full_diff": {
+  "encoding_notes": [],
+  "final_newline": {
+   "old": true,
+   "new": true
+  },
+  "limits_applied": [],
+  "hunks": [
+   {
+    "index": 1,
+    "tag": "replace",
+    "old_start": 40,
+    "old_end": 40,
+    "new_start": 40,
+    "new_end": 42,
+    "old_blocks": [
+     "paragraph"
+    ],
+    "new_blocks": [
+     "paragraph",
+     "blank"
+    ],
+    "whitespace_only": false,
+    "notes": [],
+    "moved_to": null,
+    "moved_from": null,
+    "old_lines": [
+     "\u6b21\u306e\u691c\u67fb\u306f\u5165\u529b\u30fb\u30b3\u30fc\u30c9\u3092\u5909\u66f4\u305b\u305a\u3001\u5730\u57df\u63a1\u5426\u3068\u63a1\u752820ID\u30fb\u540d\u79f0\u3092\u51fa\u529b\u3059\u308b\u3002\u5f8c\u65e5\u306e\u5165\u529b\u66f4\u65b0\u6642\u306f\u56fa\u5b9a\u30b3\u30df\u30c3\u30c8\u306e\u30c1\u30a7\u30c3\u30af\u30a2\u30a6\u30c8\u3067\u5b9f\u884c\u3059\u308b\u3002"
+    ],
+    "new_lines": [
+     "\u6b21\u306e\u691c\u67fb\u306f\u5165\u529b\u30fb\u30b3\u30fc\u30c9\u3092\u5909\u66f4\u305b\u305a\u3001\u5730\u57df\u63a1\u5426\u3068\u63a1\u752820ID\u30fb\u540d\u79f0\u3092\u51fa\u529b\u3059\u308b\u3002\u958b\u59cb\u30fb\u6700\u7d42\u30b3\u30df\u30c3\u30c8\u306eGit\u5c65\u6b74\u3068\u3001\u305d\u306e\u6642\u70b9\u306e\u5165\u529b\u3092\u5fc5\u8981\u3068\u3059\u308b\u3002\u5f8c\u65e5\u306e\u5165\u529b\u66f4\u65b0\u6642\u306f\u56fa\u5b9a\u30b3\u30df\u30c3\u30c8\u306e\u5165\u529b\u3092\u4f7f\u3046\u3002\u3053\u308c\u306f\u73fe\u5728\u306emanifest\u5168\u4f53\u3092\u76e3\u67fb\u3059\u308b\u30b3\u30de\u30f3\u30c9\u3067\u306f\u306a\u3044\u3002",
+     "",
+     "Issue57\u3067\u6587\u66f8\u5185\u306e\u691c\u67fb\u30b3\u30fc\u30c9\u3092\u5c02\u7528CLI\u3078\u79fb\u3057\u305f\u3002\u65e7\u51e6\u7406\u306fGit\u5c65\u6b74\u306b\u4fdd\u6301\u3057\u3001\u51e6\u7406\u672c\u4f53\u306eAST\u4e00\u81f4\u3001\u5408\u6210\u5165\u529b\u3067\u306e\u51fa\u529b\u4e00\u81f4\u3001\u958b\u59cbmanifest\u306e\u4fdd\u5b58\u539f\u672chash\u4e0d\u5909\u3092\u30c6\u30b9\u30c8\u3059\u308b\u3002\u4ee5\u4e0b\u306e\u78ba\u8a8d\u7d50\u679c\u3068\u691c\u8a3c\u7bc4\u56f2\u306f\u7b2c2\u5f3e\u96c6\u8a08\u6642\u306e\u8a18\u9332\u3067\u3042\u308b\u3002"
+    ],
+    "segments": [
+     [
+      "=",
+      "\u6b21\u306e\u691c\u67fb\u306f\u5165\u529b\u30fb\u30b3\u30fc\u30c9\u3092\u5909\u66f4\u305b\u305a\u3001\u5730\u57df\u63a1\u5426\u3068\u63a1\u752820ID\u30fb\u540d\u79f0\u3092\u51fa\u529b\u3059\u308b\u3002"
+     ],
+     [
+      "+",
+      "\u958b\u59cb\u30fb\u6700\u7d42\u30b3\u30df\u30c3\u30c8\u306eGit\u5c65\u6b74\u3068\u3001\u305d\u306e\u6642\u70b9\u306e\u5165\u529b\u3092\u5fc5\u8981\u3068\u3059\u308b\u3002"
+     ],
+     [
+      "=",
+      "\u5f8c\u65e5\u306e\u5165\u529b\u66f4\u65b0\u6642\u306f\u56fa\u5b9a\u30b3\u30df\u30c3\u30c8\u306e"
+     ],
+     [
+      "-",
+      "\u30c1\u30a7\u30c3\u30af\u30a2\u30a6"
+     ],
+     [
+      "+",
+      "\u5165\u529b\u3092\u4f7f\u3046\u3002\u3053\u308c\u306f\u73fe\u5728\u306emanifest\u5168\u4f53\u3092\u76e3\u67fb\u3059\u308b\u30b3\u30de\u30f3\u30c9\u3067\u306f\u306a\u3044\u3002\n\nIssue57\u3067\u6587\u66f8\u5185\u306e\u691c\u67fb\u30b3\u30fc\u30c9\u3092\u5c02\u7528CLI\u3078\u79fb\u3057\u305f\u3002\u65e7\u51e6\u7406\u306fGit\u5c65\u6b74\u306b\u4fdd\u6301\u3057\u3001\u51e6\u7406\u672c\u4f53\u306eAST\u4e00\u81f4\u3001\u5408\u6210\u5165\u529b\u3067\u306e\u51fa\u529b\u4e00\u81f4\u3001\u958b\u59cbmanifest\u306e\u4fdd\u5b58\u539f\u672chash\u4e0d\u5909\u3092\u30c6\u30b9"
+     ],
+     [
+      "=",
+      "\u30c8"
+     ],
+     [
+      "+",
+      "\u3059\u308b\u3002\u4ee5\u4e0b\u306e\u78ba\u8a8d\u7d50\u679c\u3068\u691c\u8a3c\u7bc4\u56f2\u306f\u7b2c2\u5f3e\u96c6\u8a08\u6642\u306e\u8a18\u9332"
+     ],
+     [
+      "=",
+      "\u3067"
+     ],
+     [
+      "-",
+      "\u5b9f\u884c\u3059"
+     ],
+     [
+      "+",
+      "\u3042"
+     ],
+     [
+      "=",
+      "\u308b\u3002"
+     ]
+    ],
+    "segments_omitted": null
+   },
+   {
+    "index": 2,
+    "tag": "replace",
+    "old_start": 43,
+    "old_end": 108,
+    "new_start": 45,
+    "new_end": 45,
+    "old_blocks": [
+     "code"
+    ],
+    "new_blocks": [
+     "code"
+    ],
+    "whitespace_only": false,
+    "notes": [],
+    "moved_to": null,
+    "moved_from": null,
+    "old_lines": [
+     "python3 -B - <<'PY'",
+     "import json",
+     "import subprocess",
+     "import sys",
+     "from pathlib import Path",
+     "",
+     "sys.path.insert(0, 'tools/national')",
+     "import assemble as a",
+     "",
+     "root = Path.cwd()",
+     "base = 'f66b7e994ef250fadee78f396d22fdfc40ba6a83'",
+     "final = '11b7e4ee271a3622f794e09e33d3fd6730be3e2b'",
+     "manifest_at = lambda ref: json.loads(subprocess.check_output(",
+     "    ['git', 'show', ref + ':tools/national/manifest.json']))",
+     "old, _ = a.assemble(root, manifest_at(base))",
+     "new, audit = a.assemble(root, manifest_at(final))",
+     "before = {p['id']: p for p in old['places']}",
+     "after = {p['id']: p for p in new['places']}",
+     "assert len(before) == len(old['places']) == len(after) == len(new['places']) == 1586",
+     "assert before.keys() == after.keys() and old['relations'] == new['relations']",
+     "assert len(new['relations']) == 1670",
+     "changed = {i for i in before if before[i] != after[i]}",
+     "allowed = {'coordinate', 'evidence', 'locationReview'}",
+     "for i in changed:",
+     "    assert 'coordinate' not in before[i]",
+     "    assert after[i]['locationReview']['status'] == 'confirmed'",
+     "    assert {k: v for k, v in before[i].items() if k not in allowed} == {",
+     "        k: v for k, v in after[i].items() if k not in allowed}",
+     "assert all(before[i] == after[i] for i in before if 'coordinate' in before[i])",
+     "selected, adopted = [], []",
+     "for path in sorted((root / 'data/national/location-batch2').glob('*/outcomes.json')):",
+     "    rows = a.read_json(path)['rows']",
+     "    ids = [r['facilityId'] for r in rows]",
+     "    selection = a.read_json(path.with_name('selection.json'))",
+     "    picks = selection.get('selectedIds', selection.get('selected', selection.get('rows')))",
+     "    if path.parent.name == 'kinki-east':",
+     "        picks = [r for r in picks if r['selection'] == 'selected']",
+     "    if path.parent.name == 'tokai':",
+     "        picks = [r for r in picks if r['selected']]",
+     "    selected_ids = [r if isinstance(r, str) else r['facilityId'] for r in picks]",
+     "    assert len(ids) == len(selected_ids) == 8 and set(ids) == set(selected_ids)",
+     "    accepted = {r['facilityId'] for r in rows",
+     "                if r.get('decision', r.get('status')) == 'adopted'}",
+     "    assert accepted == set(ids) & changed",
+     "    selected.extend(ids)",
+     "    adopted.extend(accepted)",
+     "    print(path.parent.name, '\u9078\u5b9a', len(ids), '\u63a1\u7528', len(accepted), '\u4fdd\u7559', 8-len(accepted))",
+     "assert len(selected) == len(set(selected)) == 96",
+     "assert len(adopted) == len(changed) == 20 and set(adopted) == changed",
+     "assert all('coordinate' not in before[i] for i in selected)",
+     "assert all('coordinate' not in after[i] for i in set(selected) - changed)",
+     "assert sum('coordinate' not in p for p in before.values()) == 608",
+     "assert sum('coordinate' not in p for p in after.values()) == 588",
+     "manifest = manifest_at(final)",
+     "_, patches, updates = a.load_selection(root, manifest)",
+     "assert len(updates) == len({r['facilityId'] for r in updates}) == 864",
+     "assert len(manifest['patches']) == 12 and len(patches) == 113",
+     "lifecycle = [a.read_json(root / s['path']) for s in manifest['locationLifecycle']]",
+     "bindings = [b for d in lifecycle for b in d['bindings']]",
+     "assert len(lifecycle) == 9 and len(bindings) == len({b['facilityId'] for b in bindings}) == 24",
+     "assert sum(len(d.get('groups', [])) for d in lifecycle) == 2",
+     "assert sum(len(d.get('events', [])) for d in lifecycle) == 0",
+     "print('\u53f0\u5e331586\u65bd\u8a2d/1670\u95a2\u4fc2\u3001\u672a\u4f4d\u7f6e608\u2192588\u3001\u9078\u5b9a96/\u63a1\u752820/\u4fdd\u755976\u3001\u672a\u9078\u5b9a512')",
+     "for i in sorted(changed):",
+     "    print(i, after[i]['name'])",
+     "PY"
+    ],
+    "new_lines": [
+     "python3 -B tools/national/check_batch2_summary.py"
+    ],
+    "segments": [
+     [
+      "-",
+      "python3 -B - <<'PY'\nimport json\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nsys.path.insert(0, 'tools/national')\nimport assemble as a\n\nroot = Path.cwd()\nbase = 'f66b7e994ef250fadee78f396d22fdfc40ba6a83'\nfinal = '11b7e4ee271a3622f794e09e33d3fd6730be3e2b'\nmanifest_at = lambda ref: json.loads(subprocess.check_output(\n    ['git', 'show', ref + ':tools/national/manifest.json']))\nold, _ = a.assemble(root, manifest_at(base))\nnew, audit = a.assemble(root, manifest_at(final))\nbefore = {p['id']: p for p in old['places']}\nafter = {p['id']: p for p in new['places']}\nassert len(before) == len(old['places']) == len(after) == len(new['places']) == 1586\nassert before.keys() == after.keys() and old['relations'] == new['relations']\nassert len(new['relations']) == 1670\nchanged = {i for i in before if before[i] != after[i]}\nallowed = {'coordinate', 'evidence', 'locationReview'}\nfor i in changed:\n    assert 'coordinate' not in before[i]\n    assert after[i]['locationReview']['status'] == 'confirmed'\n    assert {k: v for k, v in before[i].items() if k not in allowed} == {\n        k: v for k, v in after[i].items() if k not in allowed}\nassert all(before[i] == after[i] for i in before if 'coordinate' in before[i])\nselected, adopted = [], []\nfor path in sorted((root / 'data/national/location-batch2').glob('*/outcomes.json')):\n    rows = a.read_json(path)['rows']\n    ids = [r['facilityId'] for r in rows]\n    selection = a.read_json(path.with_name('selection.json'))\n    picks = selection.get('selectedIds', selection.get('selected', selection.get('rows')))\n    if path.parent.name == 'kinki-east':\n        picks = [r for r in picks if r['selection'] == 'selected']\n    if path.parent.name == 'tokai':\n        picks = [r for r in picks if r['selected']]\n    selected_ids = [r if isinstance(r, str) else r['facilityId'] for r in picks]\n    assert len(ids) == len(selected_ids) == 8 and set(ids) == set(selected_ids)\n    accepted = {r['facilityId'] for r in rows\n                if r.get('decision', r.get('status')) == 'adopted'}\n    assert accepted == set(ids) & changed\n    selected.extend(ids)\n    adopted.extend(accepted)\n    print(path.parent.name, '\u9078\u5b9a', len(ids), '\u63a1\u7528', len(accepted), '\u4fdd\u7559', 8-len(accepted))\nassert len(selected) == len(set(selected)) == 96\nassert len(adopted) == len(changed) == 20 and set(adopted) == changed\nassert all('coordinate' not in before[i] for i in selected)\nassert all('coordinate' not in after[i] for i in set(selected) - changed)\nassert sum('coordinate' not in p for p in before.values()) == 608\nassert sum('coordinate' not in p for p in after.values()) == 588\nmanifest = manifest_at(final)\n_, patches, updates = a.load_selection(root, manifest)\nassert len(updates) == len({r['facilityId'] for r in updates}) == 864\nassert len(manifest['patches']) == 12 and len(patches) == 113\nlifecycle = [a.read_json(root / s['path']) for s in manifest['locationLifecycle']]\nbindings = [b for d in lifecycle for b in d['bindings']]\nassert len(lifecycle) == 9 and len(bindings) == len({b['facilityId'] for b in bindings}) == 24\nassert sum(len(d.get('groups', [])) for d in lifecycle) == 2\nassert sum(len(d.get('events', [])) for d in lifecycle) == 0\nprint('\u53f0\u5e331586\u65bd\u8a2d/1670\u95a2\u4fc2\u3001\u672a\u4f4d\u7f6e608\u2192588\u3001\u9078\u5b9a96/\u63a1\u752820/\u4fdd\u755976\u3001\u672a\u9078\u5b9a512')\nfor i in sorted(changed):\n    print(i, after[i]['name'])\nPY"
+     ],
+     [
+      "+",
+      "python3 -B tools/national/check_batch2_summary.py"
+     ]
+    ],
+    "segments_omitted": null
+   }
+  ]
+ },
+ "stiffness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "metrics": {
+   "old": {
+    "sentences": 61,
+    "chars": 2399,
+    "avg_sentence_length": 39.33,
+    "kanji_ratio": 40.27,
+    "kanji": 904,
+    "nominalizations": 1,
+    "nominalization_names": {
+     "\u3092\u5b9f\u65bd": 1
+    },
+    "no_chains": 1
+   },
+   "new": {
+    "sentences": 66,
+    "chars": 2571,
+    "avg_sentence_length": 38.95,
+    "kanji_ratio": 40.59,
+    "kanji": 977,
+    "nominalizations": 1,
+    "nominalization_names": {
+     "\u3092\u5b9f\u65bd": 1
+    },
+    "no_chains": 1
+   }
+  },
+  "list": "references/lists/nominalization.txt",
+  "list_problem": null
+ },
+ "tone": {
+  "level": "info",
+  "candidate_count": 0,
+  "candidates": [],
+  "counts": {
+   "old": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 1,
+    "heading_chars": 64
+   },
+   "new": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 1,
+    "heading_chars": 64
+   }
+  },
+  "list": "references/lists/intensifiers.txt",
+  "list_problem": null
+ },
+ "feeling": {
+  "list": "references/lists/feelings.txt",
+  "list_problem": null
+ },
+ "hedges": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "list": "references/lists/hedges.txt",
+  "list_problem": null
+ },
+ "immutable": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "meaning_risk_count": 0
+ },
+ "politeness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "applicable": false,
+  "threshold": 0.2,
+  "metrics": null
+ },
+ "register": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "threshold": {
+   "min_sentences": 3,
+   "min_ratio": 0.5
+  },
+  "skipped_by": null
+ },
+ "added_actors": [],
+ "heading_shapes": [],
+ "comma_increase": null
+}
