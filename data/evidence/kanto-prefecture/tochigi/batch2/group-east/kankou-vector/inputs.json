@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25634.pbf.gz",
+    "sha256": "b3fd55d1256a31c265698fcefbadb29c3a52ffe7472aee135efe2ac1e5afb7a6",
+    "tile": {
+      "z": 16,
+      "x": 58236,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25634.pbf.gz",
+    "sha256": "cb43303c089cdadd2a3c94dbe16b7bffaae01330b049c0baa575587a40707ef8",
+    "tile": {
+      "z": 16,
+      "x": 58237,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25634.pbf.gz",
+    "sha256": "0f91041b988d62e9b4326347a602f4fcacac57d070ed11fcd6368b46a4570120",
+    "tile": {
+      "z": 16,
+      "x": 58238,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25635.pbf.gz",
+    "sha256": "cf7f53e4d927b820e2507adfbc8a446d54b42f649de3eebe73a7f8979138e72e",
+    "tile": {
+      "z": 16,
+      "x": 58236,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25635.pbf.gz",
+    "sha256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7",
+    "tile": {
+      "z": 16,
+      "x": 58237,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25635.pbf.gz",
+    "sha256": "3bf7c62ad662b4ff1d14ffc27f84172ffd36a7c1da3a83da95ee3028f2c381cc",
+    "tile": {
+      "z": 16,
+      "x": 58238,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58236-25636.pbf.gz",
+    "sha256": "29f65fc49810541fb3d2dc033ae96ba1a4140cf17544680ea5d81af62025cf05",
+    "tile": {
+      "z": 16,
+      "x": 58236,
+      "y": 25636
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25636.pbf.gz",
+    "sha256": "e40949425e21c59e42178dd2198eb72eda32952477c1fd793063acabfe5e279a",
+    "tile": {
+      "z": 16,
+      "x": 58237,
+      "y": 25636
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58238-25636.pbf.gz",
+    "sha256": "5edb37b32f90ca7ff836157b74aa5f7ae305129af21064d569751f7edecaeb75",
+    "tile": {
+      "z": 16,
+      "x": 58238,
+      "y": 25636
+    }
+  }
+]

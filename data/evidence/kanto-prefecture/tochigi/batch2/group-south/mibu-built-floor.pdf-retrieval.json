@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "url": "https://www.town.mibu.tochigi.jp/docs/2022042700012/file_contents/floor.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:24:23.581460+00:00",
+  "httpStatus": 404,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Thu, 05 Nov 2026 15:24:23 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "X-Request-Id": "89bc2188-1a18-4e71-b2d9-1850e2ec2120",
+    "X-Runtime": "0.013640",
+    "Age": "0",
+    "Via": "https/1.1 sv16-osk03-jp (ApacheTrafficServer-second [uScMsSf pSeN:t cCMp sS]), http/1.1 sv02-osk03-jp (ApacheTrafficServer-first [uScMsSf pSeN:t cCMpSs ])",
+    "X-WebAccel-Origin-Status": "404",
+    "X-Cache": "MISS"
+  },
+  "responseURL": "https://www.town.mibu.tochigi.jp/docs/2022042700012/file_contents/floor.pdf",
+  "responseSHA256": "c60527363ec07f2b3cd305c8c201c829125ef80837b871e63051ec85f453bb22",
+  "responseRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-south/cache/c60527363ec07f2b3cd305c8c201c829125ef80837b871e63051ec85f453bb22.raw",
+  "responseBytes": 795,
+  "status": "failed",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "finishedAt": "2026-11-05T15:24:23.745027+00:00",
+  "scopeName": "mibu-built-floor.pdf",
+  "elapsedSeconds": 0.16426551702897996,
+  "timingScope": "HTTP取得のみ"
+}

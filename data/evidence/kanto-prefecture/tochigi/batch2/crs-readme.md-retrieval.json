@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:36:18.061244+00:00",
+  "httpStatus": 200,
+  "etag": "\"3094e429306301cd723a0a5ff3a758bce602e82c442cac3565442bdd47d85980\"",
+  "lastModified": null,
+  "contentType": "text/plain; charset=utf-8",
+  "contentRange": null,
+  "responseURL": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:36:18.318692+00:00",
+  "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223.raw",
+  "bytes": 8296,
+  "scopeName": "crs-readme.md",
+  "elapsedSeconds": 0.25774199899751693,
+  "timingScope": "HTTP取得のみ"
+}

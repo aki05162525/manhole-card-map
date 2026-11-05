@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "coordinate": {
+        "lat": 36.5641555,
+        "lng": 139.7463639
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/kanuma-vector/58208-25607.pbf.gz",
+        "snapshotSHA256": "2273d3123195ac231b254196f963b41c419ce691e723001d7e0fb97c667bbdce",
+        "sourceLocator": "z16/58208/25607 BldA193; kanuma-followup/observation.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化Vectorを加工。2011公式配置/パース、現公式本館写真、撮影期間原本が示す2024年4-5月航空写真と193本館/191物産/490トイレ/南駐車場を照合。建物代表点XYZ逆投影7桁丸め内包。製品固有CRS・独立採用未承認。"
+      }
+    }
+  ]
+}

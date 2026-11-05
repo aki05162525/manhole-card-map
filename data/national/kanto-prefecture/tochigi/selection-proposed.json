@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "adoptionApproval": false,
+  "integrationStatus": "not-selected-in-shared-manifest",
+  "locations": [
+    {
+      "path": "data/national/kanto-prefecture/tochigi/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+          "sha256": "67168b375dd9a8dbb6ffbfe06ad41fdab476d3545d47190edda1f88ea585401f"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/national/kanto-prefecture/tochigi/location-lifecycle-proposed.json",
+      "sha256": "1d40a1c4eb713a8008030ce93c6c2c1f1be8cbf9b0c1331e7563c110a140c207"
+    }
+  ]
+}

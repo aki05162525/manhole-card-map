@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.kanuma.tochigi.jp/0282/info-0000000629-0.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:04:01.994136+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.kanuma.tochigi.jp/0282/info-0000000629-0.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:04:02.102044+00:00",
+  "sha256": "bb3bd86bab23e739c89478ab9582fdf1f8acd6e797436110f8ffb0f8c1ab6fdb",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/bb3bd86bab23e739c89478ab9582fdf1f8acd6e797436110f8ffb0f8c1ab6fdb.raw",
+  "bytes": 104182,
+  "scopeName": "kanuma-city.html",
+  "elapsedSeconds": 0.10832863696850836,
+  "timingScope": "HTTP取得のみ"
+}

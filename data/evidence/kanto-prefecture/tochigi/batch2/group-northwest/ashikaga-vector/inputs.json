@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58153-25658.pbf.gz",
+    "sha256": "9c9771d0ee06720a5d108535bb72466b5de76abb97d7a57d76e5c7df9e779574",
+    "tile": {
+      "z": 16,
+      "x": 58153,
+      "y": 25658
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58154-25658.pbf.gz",
+    "sha256": "808e60df7b8e6c1881ca45f215118a5084bf9e10545be813c027823cd2fdc89e",
+    "tile": {
+      "z": 16,
+      "x": 58154,
+      "y": 25658
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58155-25658.pbf.gz",
+    "sha256": "6f09006f02d302edee1eef501ba9cee74220ad123dbd40e2188f3cb6f101c129",
+    "tile": {
+      "z": 16,
+      "x": 58155,
+      "y": 25658
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58153-25659.pbf.gz",
+    "sha256": "0f31c03062392b07c09407632acc1464991c5cdd2c1c21588cedae2b954882e5",
+    "tile": {
+      "z": 16,
+      "x": 58153,
+      "y": 25659
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58154-25659.pbf.gz",
+    "sha256": "5476590e8e125acc341aa7dbee4281ce1890556f3bdf5886c6e7634b46bd3e37",
+    "tile": {
+      "z": 16,
+      "x": 58154,
+      "y": 25659
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58155-25659.pbf.gz",
+    "sha256": "8fbe1da6fa1d32776ce126c184a474ecc13860c2c40566c627afee17fd1aa013",
+    "tile": {
+      "z": 16,
+      "x": 58155,
+      "y": 25659
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58153-25660.pbf.gz",
+    "sha256": "25c5b0a992d5750ccd566ef27ca698a1c2a8cfe0ff6b050390b1b4467331cc4e",
+    "tile": {
+      "z": 16,
+      "x": 58153,
+      "y": 25660
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58154-25660.pbf.gz",
+    "sha256": "fa6b89ccea4e7c2f9c89398dbcd5ba167f348eebf75c501ab90859d18de69dbe",
+    "tile": {
+      "z": 16,
+      "x": 58154,
+      "y": 25660
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/ashikaga-vector/58155-25660.pbf.gz",
+    "sha256": "d2eb099dd7872ef85270d67f114910e560324796e6108cf87e3e02ab575e5f0e",
+    "tile": {
+      "z": 16,
+      "x": 58155,
+      "y": 25660
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.ashikaga.tochigi.jp/manage/contents/upload/633fd6d0e503c.gif",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:36:25.480168+00:00",
+  "httpStatus": 200,
+  "etag": "\"b716-5ea6cdb875400\"",
+  "lastModified": "Fri, 07 Oct 2022 07:35:44 GMT",
+  "contentType": "image/gif",
+  "contentRange": null,
+  "responseURL": "https://www.city.ashikaga.tochigi.jp/manage/contents/upload/633fd6d0e503c.gif",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:36:25.560454+00:00",
+  "sha256": "437011b20a2e27037d3504e42e430076d85653a332a73869662fb6c755802ae4",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/437011b20a2e27037d3504e42e430076d85653a332a73869662fb6c755802ae4.raw",
+  "bytes": 46870,
+  "scopeName": "taiheiki-real-exterior.gif",
+  "elapsedSeconds": 0.08109687402611598,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,22 @@
+{
+  "head": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "checks": [
+    "input hashes",
+    "proposal-binding-selection hashes",
+    "rounded point containment",
+    "full footprint within photography-date polygon",
+    "tile/outer boundary false",
+    "frozen prior inputs unchanged",
+    "git tracked tree clean"
+  ],
+  "exitCode": 0,
+  "notRun": [
+    "fullsuite",
+    "tracked verify.py"
+  ],
+  "notApproved": [
+    "product CRS",
+    "independent building adoption"
+  ],
+  "checkedAt": "2026-11-05T15:46:44.720507+00:00"
+}

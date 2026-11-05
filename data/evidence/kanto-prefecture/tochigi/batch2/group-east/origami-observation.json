@@ -1,0 +1,74 @@
+{
+  "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+  "checkedAt": "2026-11-05",
+  "sources": [
+    "sources-inherited.json",
+    "origami-facility.html",
+    "origami-design-www.html",
+    "origami-basic.pdf",
+    "origami-card.pdf",
+    "origami-guide.pdf"
+  ],
+  "pages": {
+    "origami-basic.pdf": {
+      "total": 10,
+      "visuallyRead": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "edition": "令和4年3月基本設計"
+    },
+    "origami-card.pdf": {
+      "total": 1,
+      "visuallyRead": [
+        1
+      ]
+    },
+    "origami-guide.pdf": {
+      "total": 36,
+      "textSearchAll": true,
+      "visuallyRead": [
+        1,
+        2,
+        3
+      ],
+      "edition": "2025年9月広報",
+      "unreadVisual": "4-36"
+    }
+  },
+  "buildingIdentity": {
+    "status": "candidate-confirmed-local",
+    "finding": "現在ORIGAMI棟は上三川いきいきプラザの南。町道4-215東、2-24西、南は2-125。配布記事付属図と2025広報平面は北側子育て支援と南ホールを含む同一棟。",
+    "orientation": "配布添付図は北が右。基本設計PDF5/6/8は北がほぼ左(少し下)、東が上。2025広報図は北記号なし、設計/完成後配置図と照合して解釈。",
+    "area": "基本設計建築面積2692㎡/延床2318㎡(計画値、竣工実測ではない)。",
+    "excluded": [
+      "北の上三川いきいきプラザ",
+      "道路のデザインマンホール蓋点",
+      "旧中央公民館・町役場"
+    ]
+  },
+  "numeric": {
+    "directory": "origami-vector",
+    "tileCount": 9,
+    "renderWidthM": 600,
+    "actualComparison": "周辺道路格子、北のいきいきプラザ中庭を持つ大棟BldA81/82等、南の住宅群を比較。ORIGAMIがある北棟南道路から次の南道路までの区画はBldA空白。今回版で対象建物の外形未収録と判断。",
+    "boundary": "対象区域は中央タイル58237/25636内、9タイル描画外端ではなく範囲内。",
+    "candidate": null,
+    "rounding": "外形未収録のため未実施。",
+    "productCRS": "当該版の製品固有根拠保留。"
+  },
+  "distribution": "公式配布台帳のsuspended維持。位置判定と別判断。",
+  "nextAction": "竣工後の建物外形を含む別版・別の数値原本を探索する。建物名を人に再質問する必要なし。",
+  "adopted": false,
+  "acquisitionFailures": [
+    "town.kaminokawa.lg.jp non-www design URL failed。www版取得成功。"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.tochigi.lg.jp/uploaded/attachment/71903.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:50:55.673995+00:00",
+  "httpStatus": 200,
+  "etag": "\"a24f9-65b6c3408c7b4\"",
+  "lastModified": "Mon, 14 Sep 2026 07:15:47 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.tochigi.lg.jp/uploaded/attachment/71903.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:50:55.790679+00:00",
+  "sha256": "ec0df60dbbb1550512368ce53f51b919c0813f76788f00cdc97c44437173efd2",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/ec0df60dbbb1550512368ce53f51b919c0813f76788f00cdc97c44437173efd2.raw",
+  "bytes": 664825,
+  "scopeName": "tochigi-karte-current.pdf",
+  "elapsedSeconds": 0.11695891799172387,
+  "timingScope": "HTTP取得のみ"
+}

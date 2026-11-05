@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.tochigi.lg.jp/uploaded/attachment/60613.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:42:39.543374+00:00",
+  "httpStatus": 200,
+  "etag": "\"13142a-631a4af7412c6\"",
+  "lastModified": "Mon, 31 Mar 2025 15:00:48 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.tochigi.lg.jp/uploaded/attachment/60613.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:42:39.704398+00:00",
+  "sha256": "8daf66dc44138392a032bc3e0331f54fa19b82ff10729d51cd4dbbd83c8c5f28",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/8daf66dc44138392a032bc3e0331f54fa19b82ff10729d51cd4dbbd83c8c5f28.raw",
+  "bytes": 1250346,
+  "scopeName": "tochigi-sansaku.pdf",
+  "elapsedSeconds": 0.1614559789886698,
+  "timingScope": "HTTP取得のみ"
+}

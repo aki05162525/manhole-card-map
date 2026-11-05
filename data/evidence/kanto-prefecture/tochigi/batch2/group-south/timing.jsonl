@@ -1,0 +1,5 @@
+{"phase": "shared setup and instruction reading", "endedAt": "2026-11-05T15:23:52.963315+00:00", "duration": "not measured; no retrospective allocation"}
+{"phase": "mibu-two-facilities", "startedAt": "2026-11-05T15:23:52.963383+00:00", "endedAt": "2026-11-05T15:25:46.859460+00:00", "elapsedSeconds": 113.896077, "note": "壬生2窓口共同。冒頭に小山旧retrievals読解も含み厳密分離なし。施設別配賦しない。"}
+{"phase": "oyama-two-cityhall-facilities", "startedAt": "2026-11-05T15:25:46.859460+00:00", "endedAt": "2026-11-05T15:27:49.971935+00:00", "elapsedSeconds": 123.112475}
+{"phase": "shikisaikan", "startedAt": "2026-11-05T15:27:49.971935+00:00", "endedAt": "2026-11-05T15:33:00.841099+00:00", "elapsedSeconds": 310.869164, "note": "思季彩館実査＋南群履歴読み込み＋壬生旧nextSource追加取得を含む共有終盤。後付け施設配賦なし。"}
+{"startedAt": "2026-11-05T15:33:44.927990+00:00", "phase": "shikisaikan post-answer aerial/footprint matching", "endedAt": "2026-11-05T15:35:45.977880+00:00", "elapsedSeconds": 121.04989}

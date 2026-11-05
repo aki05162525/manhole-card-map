@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/std/17/116308/51320.png",
+  "version": "std-labels-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:36:24.349349+00:00",
+  "httpStatus": 200,
+  "etag": "\"aae423c3b5ed4c2bacb32f419b225431\"",
+  "lastModified": "Thu, 28 Aug 2025 21:12:02 GMT",
+  "contentType": "image/png",
+  "contentRange": null,
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/std/17/116308/51320.png",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:36:24.511255+00:00",
+  "sha256": "3f5e86752dbe43c3fdd7807e5c2f39e2ced2bc82d782481c4596e887ad0a4e8a",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/3f5e86752dbe43c3fdd7807e5c2f39e2ced2bc82d782481c4596e887ad0a4e8a.raw",
+  "bytes": 9068
+}

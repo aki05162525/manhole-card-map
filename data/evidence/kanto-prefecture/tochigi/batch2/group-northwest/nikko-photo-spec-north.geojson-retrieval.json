@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1817/798.geojson",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T16:04:42.960436+00:00",
+  "httpStatus": 200,
+  "etag": "\"1918558ffa2a1fe61159dc21f36cb83f\"",
+  "lastModified": "Wed, 07 Jan 2026 02:03:35 GMT",
+  "contentType": "application/octet-stream",
+  "contentRange": null,
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto_spec/11/1817/798.geojson",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T16:04:43.096995+00:00",
+  "sha256": "68e3681f547c0263783edbe08a8e4fd4731263142f38f251460dfd89001d9c9c",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/68e3681f547c0263783edbe08a8e4fd4731263142f38f251460dfd89001d9c9c.raw",
+  "bytes": 9710,
+  "scopeName": "nikko-photo-spec-north.geojson",
+  "elapsedSeconds": 0.13740657304879278,
+  "timingScope": "HTTP取得のみ"
+}

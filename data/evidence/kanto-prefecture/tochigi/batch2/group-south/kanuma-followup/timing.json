@@ -1,0 +1,7 @@
+{
+  "startedAt": "2026-11-05T15:39:33.573409+00:00",
+  "phase": "Kanuma independent facility reassignment",
+  "endedAt": "2026-11-05T15:46:04.388096+00:00",
+  "elapsedSeconds": 390.814687,
+  "scope": "Kanuma source reading/date metadata fetch/overlay/comparison/proposal only; parent messages included, no facility apportionment"
+}

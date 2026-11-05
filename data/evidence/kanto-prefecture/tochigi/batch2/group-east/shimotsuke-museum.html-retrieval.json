@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.shimotsuke.lg.jp/0390/info-0000000253-3.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:28:22.751159+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.shimotsuke.lg.jp/0390/info-0000000253-3.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:28:22.946720+00:00",
+  "sha256": "f891fc98bd077d56e70a6d309eaaabb818a0a5f609867ba6e7fe383f85b76772",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/f891fc98bd077d56e70a6d309eaaabb818a0a5f609867ba6e7fe383f85b76772.raw",
+  "bytes": 105256,
+  "scopeName": "shimotsuke-museum.html",
+  "elapsedSeconds": 0.19584327499615029,
+  "timingScope": "HTTP取得のみ"
+}

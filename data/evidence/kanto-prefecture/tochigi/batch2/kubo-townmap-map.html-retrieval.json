@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.kubokinen.net/moka-map/map/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:40:06.795549+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://www.kubokinen.net/moka-map/map/",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:40:06.916311+00:00",
+  "sha256": "780f6eb43035fb56c5ebfef73c3727b0d11fbf1ef9943011a17726e2901f4728",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/780f6eb43035fb56c5ebfef73c3727b0d11fbf1ef9943011a17726e2901f4728.raw",
+  "bytes": 4557,
+  "scopeName": "kubo-townmap-map.html",
+  "elapsedSeconds": 0.12114977499004453,
+  "timingScope": "HTTP取得のみ"
+}

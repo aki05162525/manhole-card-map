@@ -1,0 +1,623 @@
+[
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5298,
+              4245
+            ],
+            [
+              5335,
+              4290
+            ],
+            [
+              5267,
+              4347
+            ],
+            [
+              5230,
+              4303
+            ],
+            [
+              5298,
+              4245
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:167",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 453,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.443164,
+        "lng": 140.0113568
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5282.466074168682,
+        4296.502376765013
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5341,
+              4317
+            ],
+            [
+              5414,
+              4363
+            ],
+            [
+              5361,
+              4449
+            ],
+            [
+              5287,
+              4402
+            ],
+            [
+              5341,
+              4317
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:171",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 457,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4430712,
+        "lng": 140.0114483
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5350.693419218063,
+        4382.520095393062
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5477,
+              4151
+            ],
+            [
+              5513,
+              4192
+            ],
+            [
+              5505,
+              4200
+            ],
+            [
+              5511,
+              4207
+            ],
+            [
+              5436,
+              4273
+            ],
+            [
+              5393,
+              4225
+            ],
+            [
+              5477,
+              4151
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:173",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 459,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4432508,
+        "lng": 140.0115842
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5452.027803897858,
+        4216.046055436134
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5622,
+              4045
+            ],
+            [
+              5627,
+              4049
+            ],
+            [
+              5695,
+              4096
+            ],
+            [
+              5743,
+              4129
+            ],
+            [
+              5730,
+              4154
+            ],
+            [
+              5739,
+              4158
+            ],
+            [
+              5718,
+              4198
+            ],
+            [
+              5701,
+              4188
+            ],
+            [
+              5684,
+              4191
+            ],
+            [
+              5658,
+              4179
+            ],
+            [
+              5638,
+              4161
+            ],
+            [
+              5630,
+              4144
+            ],
+            [
+              5603,
+              4126
+            ],
+            [
+              5553,
+              4191
+            ],
+            [
+              5486,
+              4145
+            ],
+            [
+              5552,
+              4096
+            ],
+            [
+              5622,
+              4045
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:174",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 460,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4433641,
+        "lng": 140.0118152
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5624.273888140917,
+        4111.026320889592
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5580,
+              4237
+            ],
+            [
+              5627,
+              4264
+            ],
+            [
+              5671,
+              4290
+            ],
+            [
+              5623,
+              4372
+            ],
+            [
+              5607,
+              4362
+            ],
+            [
+              5606,
+              4364
+            ],
+            [
+              5594,
+              4357
+            ],
+            [
+              5592,
+              4360
+            ],
+            [
+              5571,
+              4348
+            ],
+            [
+              5575,
+              4342
+            ],
+            [
+              5533,
+              4318
+            ],
+            [
+              5580,
+              4237
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:175",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 461,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4431559,
+        "lng": 140.0117853
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5601.978832244873,
+        4304.010392934084
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5424,
+              4350
+            ],
+            [
+              5457,
+              4370
+            ],
+            [
+              5460,
+              4366
+            ],
+            [
+              5518,
+              4401
+            ],
+            [
+              5453,
+              4508
+            ],
+            [
+              5363,
+              4453
+            ],
+            [
+              5424,
+              4350
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:176",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 462,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.4430232,
+        "lng": 140.0115685
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5440.321035385132,
+        4427.011978462338
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  },
+  {
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5472,
+              4555
+            ],
+            [
+              5519,
+              4583
+            ],
+            [
+              5504,
+              4609
+            ],
+            [
+              5497,
+              4621
+            ],
+            [
+              5450,
+              4594
+            ],
+            [
+              5472,
+              4555
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58256/25635:BldA:177",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58256,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 463,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.442849,
+        "lng": 140.0116277
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5484.46375477314,
+        4588.480206206441
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "photoSources": [
+      {
+        "index": 4,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2022年4月～5月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCoverage": true
+      }
+    ]
+  }
+]

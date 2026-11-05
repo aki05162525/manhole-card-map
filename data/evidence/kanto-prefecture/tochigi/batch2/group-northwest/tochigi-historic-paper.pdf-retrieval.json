@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.jstage.jst.go.jp/article/oyama/43/0/43_1/_pdf/-char/ja",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T16:01:42.202394+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "application/pdf;charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://www.jstage.jst.go.jp/article/oyama/43/0/43_1/_pdf/-char/ja",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T16:01:42.699220+00:00",
+  "sha256": "955af1c218f5abe22d02d3d4d6b7ce7736837e89bd45f916bf7ffad27a8ecc47",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/955af1c218f5abe22d02d3d4d6b7ce7736837e89bd45f916bf7ffad27a8ecc47.raw",
+  "bytes": 2842773,
+  "scopeName": "tochigi-historic-paper.pdf",
+  "elapsedSeconds": 0.4978451060014777,
+  "timingScope": "HTTP取得のみ"
+}

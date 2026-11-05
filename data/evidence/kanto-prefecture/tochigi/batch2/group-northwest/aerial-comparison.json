@@ -1,0 +1,336 @@
+[
+  {
+    "fullDateCoverage": true,
+    "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5428,
+              4901
+            ],
+            [
+              5525,
+              4957
+            ],
+            [
+              5383,
+              5209
+            ],
+            [
+              5291,
+              5159
+            ],
+            [
+              5428,
+              4901
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58197/25571:BldA:186",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58197,
+        "y": 25571
+      },
+      "sourceFeatureIndex": 469,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "baseTile": {
+      "z": 16,
+      "x": 58196,
+      "y": 25570
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.7246428,
+        "lng": 139.6874263
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        5406.37863022089,
+        5057.956814616919
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "pointXY": [
+      5406.3595422665185,
+      5058.0
+    ],
+    "areaApproxM2": 450.9010592810978,
+    "photography": [
+      {
+        "index": 2,
+        "properties": {
+          "データソース": "電子国土基本図（オルソ画像）",
+          "撮影年月": "2024年4月～5月",
+          "_color": "#ffff00",
+          "_opacity": 0,
+          "_fillColor": "#ffff00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCovered": true
+      }
+    ],
+    "aerialDirectory": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/imaichi-vector-aerial",
+    "comparisonTime": "2026-11-05T16:04:43.291035+00:00",
+    "adoptionApproval": false
+  },
+  {
+    "fullDateCoverage": true,
+    "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7283,
+              5508
+            ],
+            [
+              7408,
+              5523
+            ],
+            [
+              7402,
+              5575
+            ],
+            [
+              7277,
+              5560
+            ],
+            [
+              7283,
+              5508
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58205/25649:BldA:471",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58205,
+        "y": 25649
+      },
+      "sourceFeatureIndex": 727,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    },
+    "baseTile": {
+      "z": 16,
+      "x": 58204,
+      "y": 25648
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.3799297,
+        "lng": 139.7339682
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        7342.534601390362,
+        5541.504341647029
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "pointXY": [
+      7342.5,
+      5541.5
+    ],
+    "areaApproxM2": 95.20384319418903,
+    "photography": [
+      {
+        "index": 0,
+        "properties": {
+          "データソース": "電子国土基本図（オルソ画像）",
+          "撮影年月": "2022年3月",
+          "_color": "#ffff00",
+          "_opacity": 0,
+          "_fillColor": "#ffff00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCovered": true
+      }
+    ],
+    "aerialDirectory": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/tochigi-vector-aerial",
+    "comparisonTime": "2026-11-05T16:04:43.340915+00:00",
+    "adoptionApproval": false
+  },
+  {
+    "fullDateCoverage": true,
+    "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+    "feature": {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              5062,
+              4076
+            ],
+            [
+              5083,
+              4096
+            ],
+            [
+              5255,
+              4258
+            ],
+            [
+              5176,
+              4343
+            ],
+            [
+              5080,
+              4253
+            ],
+            [
+              5025,
+              4312
+            ],
+            [
+              5054,
+              4340
+            ],
+            [
+              5025,
+              4371
+            ],
+            [
+              5043,
+              4388
+            ],
+            [
+              4978,
+              4456
+            ],
+            [
+              5009,
+              4485
+            ],
+            [
+              4903,
+              4487
+            ],
+            [
+              4863,
+              4508
+            ],
+            [
+              4738,
+              4388
+            ],
+            [
+              5001,
+              4106
+            ],
+            [
+              5018,
+              4122
+            ],
+            [
+              5042,
+              4096
+            ],
+            [
+              5062,
+              4076
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58163/25568:BldA:7",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58163,
+        "y": 25568
+      },
+      "sourceFeatureIndex": 45,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false
+    },
+    "baseTile": {
+      "z": 16,
+      "x": 58162,
+      "y": 25567
+    },
+    "calculation": {
+      "coordinate": {
+        "lat": 36.738681,
+        "lng": 139.5000361
+      },
+      "unroundedWithin": true,
+      "roundedWithin": true,
+      "roundedTileXY": [
+        4942.118110984564,
+        4285.001770526171
+      ],
+      "mechanicalChecksPassed": true,
+      "identityApproved": false,
+      "crsApproved": false
+    },
+    "pointXY": [
+      4942.114887606684,
+      4285.0
+    ],
+    "areaApproxM2": 1412.4957129152951,
+    "photography": [
+      {
+        "index": 1,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2019年4月～2020年12月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCovered": false
+      },
+      {
+        "index": 9,
+        "properties": {
+          "データソース": "簡易空中写真",
+          "撮影年月": "2019年4月～2020年12月",
+          "_color": "#ffbf00",
+          "_opacity": 0,
+          "_fillColor": "#ffbf00",
+          "_fillOpacity": 0.5
+        },
+        "fullFootprintCovered": false
+      }
+    ],
+    "aerialDirectory": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east-aerial",
+    "comparisonTime": "2026-11-05T16:04:43.358811+00:00",
+    "adoptionApproval": false
+  }
+]

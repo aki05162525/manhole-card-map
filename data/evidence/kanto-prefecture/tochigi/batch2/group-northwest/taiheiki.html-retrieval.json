@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.ashikaga-kankou.jp/spot/taiheikikan",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:25:26.444216+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=utf-8",
+  "contentRange": null,
+  "responseURL": "https://www.ashikaga-kankou.jp/spot/taiheikikan",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:25:26.896133+00:00",
+  "sha256": "03e40052852c8942744277cbabc9c8249460261483186939cca0b5d09202ea3a",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/03e40052852c8942744277cbabc9c8249460261483186939cca0b5d09202ea3a.raw",
+  "bytes": 99887,
+  "scopeName": "taiheiki.html",
+  "elapsedSeconds": 0.4523365630302578,
+  "timingScope": "HTTP取得のみ"
+}

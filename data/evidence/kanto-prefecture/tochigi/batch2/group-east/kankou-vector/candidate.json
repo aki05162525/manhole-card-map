@@ -1,0 +1,105 @@
+{
+  "sourceCombinedSHA256": "1c591eca773cd2cce8ef413fe582b6ceda9cadfeb95923ae0f2e76a7330a01ed",
+  "features": [
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6135,
+              7841
+            ],
+            [
+              6135,
+              7921
+            ],
+            [
+              6076,
+              7921
+            ],
+            [
+              6075,
+              7841
+            ],
+            [
+              6135,
+              7841
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58237/25635:BldA:190",
+      "type": "Feature",
+      "layer": "BldA",
+      "sourceTile": {
+        "z": 16,
+        "x": 58237,
+        "y": 25635
+      },
+      "sourceFeatureIndex": 541,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false
+    }
+  ],
+  "unionGeometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          6135.0,
+          7841.0
+        ],
+        [
+          6135.0,
+          7921.0
+        ],
+        [
+          6076.0,
+          7921.0
+        ],
+        [
+          6075.0,
+          7841.0
+        ],
+        [
+          6135.0,
+          7841.0
+        ]
+      ]
+    ]
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58236,
+    "y": 25634
+  },
+  "candidatePointMethod": "shapely representative_point",
+  "geometryType": "Polygon",
+  "areaApproxM2": 68.66133696499516,
+  "boundsApproxWidthHeightM": [
+    7.206160020595804,
+    9.608213360794405
+  ],
+  "mechanical": {
+    "coordinate": {
+      "lat": 36.4392968,
+      "lng": 139.9080901
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      6105.233562737703,
+      7880.981162309647
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "licenceApproved": false,
+  "adopted": false
+}

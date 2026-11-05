@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+      "coordinate": {
+        "lat": 36.3858296,
+        "lng": 139.8107103
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-vector/58219-25648.pbf.gz",
+        "snapshotSHA256": "39e124fbabad5496d4c26908ee041020306f7706fab0a85bffd074af29c280b2",
+        "sourceLocator": "58219/25647:BldA:91, 58219/25648:BldA:38; data/work/kanto-prefecture/tochigi/next-batch/group-east/shimotsuke-observation.json; 国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・建物資料・9tile数値外形を照合し建物代表点を7桁丸め後内包検査。観察と未読頁範囲は添付observation参照。XYZ逆投影を仮適用した機械的候補で、当該PMTiles版の製品固有CRS一次根拠不足により位置採用未承認。同定も独立レビュー待ち。測量精度保証なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "coordinate": {
+        "lat": 36.4392968,
+        "lng": 139.9080901
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-vector/58237-25635.pbf.gz",
+        "snapshotSHA256": "2cbe6d8744750e6aae624dc97f44a7bff0933a672bc85c383f38f2e3cd214cc7",
+        "sourceLocator": "58237/25635:BldA:190; data/work/kanto-prefecture/tochigi/next-batch/group-east/kankou-observation.json; 国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・建物資料・9tile数値外形を照合し建物代表点を7桁丸め後内包検査。観察と未読頁範囲は添付observation参照。XYZ逆投影を仮適用した機械的候補で、当該PMTiles版の製品固有CRS一次根拠不足により位置採用未承認。同定も独立レビュー待ち。測量精度保証なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "coordinate": {
+        "lat": 36.414858,
+        "lng": 139.8645022
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-vector/58229-25641.pbf.gz",
+        "snapshotSHA256": "ba4cc7e71f67295fdf922b5861739e43f0a6894ea20561b642212d4d05c7f22a",
+        "sourceLocator": "58229/25641:BldA:108; data/work/kanto-prefecture/tochigi/next-batch/group-east/kenou-observation.json; 国土地理院最適化ベクトルタイルを加工。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・建物資料・9tile数値外形を照合し建物代表点を7桁丸め後内包検査。観察と未読頁範囲は添付observation参照。XYZ逆投影を仮適用した機械的候補で、当該PMTiles版の製品固有CRS一次根拠不足により位置採用未承認。同定も独立レビュー待ち。測量精度保証なし。"
+      }
+    }
+  ]
+}

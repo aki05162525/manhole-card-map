@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:25:26.439473+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:25:28.150186+00:00",
+  "sha256": "2934bfea7a54b4975e51c0db37eab66e61a6c0768dfc7220655ecf3766a5bc8e",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/2934bfea7a54b4975e51c0db37eab66e61a6c0768dfc7220655ecf3766a5bc8e.raw",
+  "bytes": 97666,
+  "scopeName": "yugakukan.html",
+  "elapsedSeconds": 1.7115009899716824,
+  "timingScope": "HTTP取得のみ"
+}

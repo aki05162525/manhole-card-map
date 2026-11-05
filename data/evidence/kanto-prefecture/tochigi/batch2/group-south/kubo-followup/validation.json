@@ -1,0 +1,21 @@
+{
+  "exitCode": 0,
+  "head": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "checks": [
+    "10 acquired raw hashes",
+    "input hashes",
+    "same candidate coordinate",
+    "rounded point within",
+    "full footprint covered by photography-date polygon",
+    "frozen inputs unchanged"
+  ],
+  "notRun": [
+    "fullsuite",
+    "tracked verify.py"
+  ],
+  "notApproved": [
+    "building adoption",
+    "product-specific CRS"
+  ],
+  "checkedAt": "2026-11-05T16:02:03.577252+00:00"
+}

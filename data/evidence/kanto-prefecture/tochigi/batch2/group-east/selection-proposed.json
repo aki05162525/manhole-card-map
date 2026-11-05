@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "adoptionApproval": false,
+  "integrationStatus": "not-selected-in-shared-manifest",
+  "locations": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+          "sha256": "20e688beb1510bb6e5b6a1754a0a67b9c2b8bb53b205d73e356cd7419f5f45f7"
+        },
+        {
+          "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+          "sha256": "324741e8e35912a55113443a5831fc6775a9079738d2f773db909e908bd79826"
+        },
+        {
+          "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+          "sha256": "a9be099d00e4b3d4939de58a902688e81787c94981e9f8e33870801847117dd1"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-east/location-lifecycle-proposed.json",
+      "sha256": "8252f28c927cbf88c8a0a8f23ef37fd5449c98f307d182d3fbf0e22b4e3884df"
+    }
+  ]
+}

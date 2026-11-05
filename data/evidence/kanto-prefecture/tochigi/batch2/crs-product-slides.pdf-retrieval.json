@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://maps.gsi.go.jp/pn/meeting_partners/data/20221206/03_%E6%9C%80%E9%81%A9%E5%8C%96%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E7%89%B9%E5%BE%B4.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:36:41.609461+00:00",
+  "httpStatus": 200,
+  "etag": "\"f484314a85aa55b59ceb237aeb577ea5\"",
+  "lastModified": "Fri, 07 Mar 2025 09:28:40 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://maps.gsi.go.jp/pn/meeting_partners/data/20221206/03_%E6%9C%80%E9%81%A9%E5%8C%96%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E7%89%B9%E5%BE%B4.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:36:41.853555+00:00",
+  "sha256": "70043dbb978dce4ef564ce2a4ada2467844f009ff8000678a3366e771368a22e",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/70043dbb978dce4ef564ce2a4ada2467844f009ff8000678a3366e771368a22e.raw",
+  "bytes": 3027141,
+  "scopeName": "crs-product-slides.pdf",
+  "elapsedSeconds": 0.24452185299014673,
+  "timingScope": "HTTP取得のみ"
+}

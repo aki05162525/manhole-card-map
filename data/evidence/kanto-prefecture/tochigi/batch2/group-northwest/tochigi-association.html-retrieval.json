@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "url": "https://www.tochigi-kankou.or.jp/association",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:40:23.746611+00:00",
+  "httpStatus": 404,
+  "responseHeaders": {
+    "Date": "Thu, 05 Nov 2026 15:40:23 GMT",
+    "Server": "Apache",
+    "Vary": "Accept-Encoding,Cookie",
+    "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+    "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+    "Link": "<https://www.tochigi-kankou.or.jp/wp-json/>; rel=\"https://api.w.org/\"",
+    "X-Content-Type-Options": "nosniff",
+    "Content-Security-Policy": "frame-ancestors 'self';",
+    "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Connection": "close",
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "text/html; charset=UTF-8"
+  },
+  "responseURL": "https://www.tochigi-kankou.or.jp/association",
+  "responseSHA256": "4efad269436d008223ccca0393814cde05c4883365250b99897caa6554f5e7d4",
+  "responseRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/4efad269436d008223ccca0393814cde05c4883365250b99897caa6554f5e7d4.raw",
+  "responseBytes": 39652,
+  "status": "failed",
+  "error": "HTTPError: HTTP Error 404: Not Found",
+  "finishedAt": "2026-11-05T15:40:23.882750+00:00",
+  "scopeName": "tochigi-association.html",
+  "elapsedSeconds": 0.13655033597024158,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "adoptionApproval": false,
+  "integrationStatus": "not-selected-in-shared-manifest",
+  "locations": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/kanuma-followup/locations-proposed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-14336e747375e6550de3",
+          "sha256": "cad3ee973584e981aa0d1de6ba3215ae55581cb8a360c621d9690ccba4ebd4a7"
+        }
+      ]
+    }
+  ],
+  "locationLifecycle": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/group-south/kanuma-followup/location-lifecycle-proposed.json",
+      "sha256": "8aa1ddfb7c72211d0a2fed53d9ccf2d0024d498c403d7b976b078dfd95591f46"
+    }
+  ]
+}

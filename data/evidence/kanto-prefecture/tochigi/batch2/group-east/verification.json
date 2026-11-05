@@ -1,0 +1,13 @@
+{
+  "head": "22d1f325f51990234d9bb3abf3b1c41feb049f81",
+  "command": "uv run --with shapely --with mapbox-vector-tile==2.2.0 python data/work/kanto-prefecture/tochigi/next-batch/group-east/check_east.py",
+  "exitCode": 0,
+  "log": "PASS 45 raw tiles and decoded combined geometries; range cache hashes/version; 3 rounded points; binding/selection hashes; 5 outcomes. CRS/building identity NOT approved.",
+  "scriptSHA256": "ca5ad4c49c6cb10df869d43ea4bf33f48159f7921481a145464e7da49aa7a850",
+  "inputs": "input-index.json",
+  "additionalCommand": "uv run --with shapely python data/work/kanto-prefecture/tochigi/next-batch/group-east/finalize.py",
+  "additionalChecks": "10航空取得raw hash・撮影期polygon包含assert成功",
+  "fullSuiteRun": false,
+  "verifyPyRun": false,
+  "notes": "文書/研究専用ignored出力。suiteなし。原本同定を数値検証の成功で代替しない。既存全suite証跡は親が継承。"
+}

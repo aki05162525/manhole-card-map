@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.kubokinen.net/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:20:31.831847+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://www.kubokinen.net/",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:20:32.007235+00:00",
+  "sha256": "c8f240bd7b18865e96765fdff3a4c40341d9f8208793201ad4426102dbee94e0",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/c8f240bd7b18865e96765fdff3a4c40341d9f8208793201ad4426102dbee94e0.raw",
+  "bytes": 13324,
+  "scopeName": "kubo-root.html",
+  "elapsedSeconds": 0.17566058202646673,
+  "timingScope": "HTTP取得のみ"
+}

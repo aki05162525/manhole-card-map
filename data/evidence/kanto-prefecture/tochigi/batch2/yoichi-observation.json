@@ -1,0 +1,26 @@
+{
+  "facilityId": "facility:kanto-north-e30071f0e179e2492a48",
+  "asOf": "2026-11-05",
+  "startedAt": "2026-11-05T15:25:07.452793+00:00",
+  "endedAt": "2026-11-05T15:29:09.271004+00:00",
+  "elapsedSeconds": 241.818211,
+  "timingNote": "Yoichi図面/数値照合。冒頭のCRS検索とSeimeikan訂正記録/担当通信が混在するため純施設時間ではない。後付配賦しない。",
+  "distributionSource": "既存公式市案内eb5414701da69c3315d8.htmlは2026-09-02公開、加工・物産館を明記。09-210-A001と観光交流センター別カードを区別。",
+  "buildingSource": "yoichi-map.webp 番号2。番号1情報館と番号3農産物直売館を除外。画像URL2026/03だが図中作成年代明記なし。",
+  "orientation": "模式図に北矢印なし。道路461に面する駐車場、背面道路、最奥円形伝承館から南東へ連なる扇形列と末端トイレが数値外形と対応。図の上を北と決め打ちせず、数値north-upの北西→南東配置と照合。",
+  "pagesViewed": "公式一枚図と物産館/情報館内観画像。写真は内観のみで外形根拠にはしない。",
+  "numericEvidence": "yoichi-vector/candidate.json; detail.png260mとlocal.png1000m、全9tile全形all.svg",
+  "candidate": {
+    "lat": 36.8624944,
+    "lng": 140.0877401
+  },
+  "identityConclusion": "加工・物産館はBldA31北ローブが候補。南ローブは情報館で同一数値外形にまとめられている。屋根の概略図と数値外形の差は残し、独立レビュー前。",
+  "areaLimit": "公式図に面積/寸法なく絶対面積の公式比較は未実施。数値面積のみ計算。",
+  "lifecycle": "active原台帳維持。12月〜3月2週月曜休館条件あり。在庫の有無を座標から推定しない。",
+  "remaining": [
+    "製品固有CRS一次根拠",
+    "独立棟同定レビュー"
+  ],
+  "adoptionApproved": false,
+  "manifestUpdated": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002760.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:35:29.391333+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002760.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:35:31.022617+00:00",
+  "sha256": "98f6522c4cfde12888fb1bf6f9427459bf5888715d2e449eaa8812818932d73e",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/98f6522c4cfde12888fb1bf6f9427459bf5888715d2e449eaa8812818932d73e.raw",
+  "bytes": 94741,
+  "scopeName": "taiheiki-city.html",
+  "elapsedSeconds": 1.6316283940104768,
+  "timingScope": "HTTP取得のみ"
+}

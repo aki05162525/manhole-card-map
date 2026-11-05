@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://kaminokawa-kankou.net/2016/09/10/%E3%82%80%E3%81%8B%E3%81%97%E3%81%AA%E3%81%A4%E3%81%8B%E3%81%97%E9%A4%A8/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:38:29.395669+00:00",
+  "httpStatus": 200,
+  "etag": null,
+  "lastModified": null,
+  "contentType": "text/html; charset=UTF-8",
+  "contentRange": null,
+  "responseURL": "https://kaminokawa-kankou.net/2016/09/10/%E3%82%80%E3%81%8B%E3%81%97%E3%81%AA%E3%81%A4%E3%81%8B%E3%81%97%E9%A4%A8/",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:38:29.915380+00:00",
+  "sha256": "69a20248556fd31c9074cdc009bd1aab136e6ae93c32a2eee9fc7165b7b1d8f4",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/69a20248556fd31c9074cdc009bd1aab136e6ae93c32a2eee9fc7165b7b1d8f4.raw",
+  "bytes": 54393,
+  "scopeName": "kankou-museum.html",
+  "elapsedSeconds": 0.5201598679996096,
+  "timingScope": "HTTP取得のみ"
+}

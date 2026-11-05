@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.oyama.tochigi.jp/data/doc/1689045046_doc_9_0.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:25:47.603237+00:00",
+  "httpStatus": 200,
+  "etag": "W/\"56e9a-64c51261744a8\"",
+  "lastModified": "Fri, 06 Mar 2026 01:41:15 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.city.oyama.tochigi.jp/data/doc/1689045046_doc_9_0.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:25:47.761984+00:00",
+  "sha256": "b7621a17d62c4620d03f7b2f07396e1ff7e43390759f0d3e5d5104c9fc249f1c",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-south/cache/b7621a17d62c4620d03f7b2f07396e1ff7e43390759f0d3e5d5104c9fc249f1c.raw",
+  "bytes": 355994,
+  "scopeName": "oyama-cards-map.pdf",
+  "elapsedSeconds": 0.15898925001965836,
+  "timingScope": "HTTP取得のみ"
+}

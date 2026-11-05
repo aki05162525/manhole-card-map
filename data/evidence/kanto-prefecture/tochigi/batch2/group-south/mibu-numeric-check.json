@@ -1,0 +1,181 @@
+{
+  "ids": [
+    "facility:kanto-north-067336979043529fa019",
+    "facility:kanto-north-da24aa34d750c88eacd3"
+  ],
+  "inputs": [
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/mibu-vector/comparison.json",
+      "sha256": "dcccff8d17e2281a6958618d90db5ae552762dc132bdcdffe8b9fa6cdafc1033"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/mibu-final.pdf",
+      "sha256": "43241fb909329ad895e0e4a898aa0cfe7744144e58a5c5b3b95b34adf4f4dd69"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/067336979043529fa019-0.txt",
+      "sha256": "7021dd8b6b7202621cb5040834b75d0a68448945216ea2121480dd570311c426"
+    },
+    {
+      "path": "data/work/kanto-prefecture/tochigi/next-batch/067336979043529fa019-1.txt",
+      "sha256": "3a9081fba1ea82bc04d0a7da7d4ae1cc3a538ec66b74d3b3782aab1307040b27"
+    }
+  ],
+  "parts": [
+    37,
+    52,
+    53
+  ],
+  "union": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            2098.0,
+            1151.0
+          ],
+          [
+            2332.0,
+            1237.0
+          ],
+          [
+            2377.0,
+            1111.0
+          ],
+          [
+            2082.0,
+            1003.0
+          ],
+          [
+            2070.0,
+            1035.0
+          ],
+          [
+            2131.0,
+            1058.0
+          ],
+          [
+            2098.0,
+            1151.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            1571.0,
+            1001.0
+          ],
+          [
+            1516.0,
+            1153.0
+          ],
+          [
+            2300.0,
+            1439.0
+          ],
+          [
+            2369.0,
+            1251.0
+          ],
+          [
+            2097.0,
+            1152.0
+          ],
+          [
+            2131.0,
+            1058.0
+          ],
+          [
+            1660.0,
+            886.0
+          ],
+          [
+            1613.0,
+            1016.0
+          ],
+          [
+            1571.0,
+            1001.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            2399.0,
+            1476.0
+          ],
+          [
+            2415.0,
+            1431.0
+          ],
+          [
+            2428.0,
+            1436.0
+          ],
+          [
+            2472.0,
+            1314.0
+          ],
+          [
+            2361.0,
+            1273.0
+          ],
+          [
+            2301.0,
+            1440.0
+          ],
+          [
+            2399.0,
+            1476.0
+          ]
+        ]
+      ]
+    ]
+  },
+  "unionValid": true,
+  "unionType": "MultiPolygon",
+  "pairs": [
+    {
+      "a": 37,
+      "b": 52,
+      "distanceTileUnits": 0.0,
+      "intersectionType": "Point",
+      "intersectionLength": 0.0
+    },
+    {
+      "a": 37,
+      "b": 53,
+      "distanceTileUnits": 0.0699083054841403,
+      "intersectionType": "Polygon",
+      "intersectionLength": 0.0
+    },
+    {
+      "a": 52,
+      "b": 53,
+      "distanceTileUnits": 46.22769732530488,
+      "intersectionType": "Polygon",
+      "intersectionLength": 0.0
+    }
+  ],
+  "candidate": {
+    "coordinate": {
+      "lat": 36.4420835,
+      "lng": 139.8146166
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      1942.3402393758297,
+      1202.0277371406555
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "areaApproxM2": 3914.6847756023594,
+  "adoptionApproval": false,
+  "productCRS": "unconfirmed"
+}

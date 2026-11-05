@@ -1,0 +1,52 @@
+{
+  "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+  "checkedAt": "2026-11-05",
+  "sourceRefs": [
+    "../sano-news.pdf",
+    "../sano-human-response-2.json",
+    "../sano-current.html",
+    "sano-access.html"
+  ],
+  "independentReading": {
+    "pdfPages": 8,
+    "visuallyRead": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "edition": "広報さの令和7年4月号",
+    "buildingPhotos": [
+      "PDF6印刷7矢印が校舎グラウンド側の小型暗色棟を指定。ウッドデッキとカフェ壁の写真。",
+      "PDF7印刷8上部集合写真背後にもTeaRoom外観。"
+    ],
+    "orientation": "写真に北記号なし。市アクセス図中心は36.358244,139.59225。GSI道路・西側河川・校舎南側グラウンドから南面と推定、方位推論を独立に明示。",
+    "area": "公式写真に数値面積なし"
+  },
+  "distribution": "2026-11-04更新市公式はTeaRoom配布、在庫あり。12/11-1/12冬休止は未来予定であり基準日11/05現在はactive。体育館は別の立入禁止棟。",
+  "numericWork": {
+    "directory": "sano-vector",
+    "tileCount": 9,
+    "renderWidthsM": [
+      700,
+      230
+    ],
+    "selectedCandidate": null,
+    "examinedFeatureIds": [
+      "58179/25654:BldA:228",
+      "58180/25654:BldA:2",
+      "58180/25654:BldA:9"
+    ],
+    "finding": "写真の小型棟とデッキは校舎南面東寄り。主校舎はタイル境界で228/2に分割。東南側の小外形9との対応、または未収録かは未確定。旧校舎一体外形をTeaRoom代表点に代用しない。",
+    "remaining": "高解像度の写真と小外形9形状寸法・位置の照合。建物同定不成立なので丸め点は未計算。",
+    "productCRS": "未承認。一般仕様から当該PMTiles版への適用を推測しない。"
+  },
+  "adopted": false,
+  "humanQuestionNeededNow": false,
+  "aerialFollowup": "sano-aerial/comparison.json",
+  "numericConclusion": "BldA9は除外。旧校舎南面東寄りのTeaRoom相当位置にBldA未収録。2023航空/2025広報の年代差あり、未収録対象の完全同一性は限界。"
+}

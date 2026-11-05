@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.pref.tochigi.lg.jp/h60/system/desaki/desaki/images/1248154639463.jpg",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:45:09.908392+00:00",
+  "httpStatus": 200,
+  "etag": "\"6677\"",
+  "lastModified": "Sun, 31 Jan 2021 14:43:55 GMT",
+  "contentType": "image/jpeg",
+  "contentRange": null,
+  "responseURL": "https://www.pref.tochigi.lg.jp/h60/system/desaki/desaki/images/1248154639463.jpg",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:45:10.015113+00:00",
+  "sha256": "47f0958c553a0f3d772cf78c08b1759ca5d39db8b8a23b407d1bd0a31cd246da",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/47f0958c553a0f3d772cf78c08b1759ca5d39db8b8a23b407d1bd0a31cd246da.raw",
+  "bytes": 26231,
+  "scopeName": "kenou-admin.jpg",
+  "elapsedSeconds": 0.1078345529967919,
+  "timingScope": "HTTP取得のみ"
+}

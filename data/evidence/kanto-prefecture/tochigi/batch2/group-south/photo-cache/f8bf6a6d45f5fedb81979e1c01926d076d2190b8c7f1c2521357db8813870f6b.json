@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232874/102658.jpg",
+  "version": "2026-11-05-south-photo",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:33:45.505595+00:00",
+  "httpStatus": 200,
+  "etag": "\"81a98d7da7fbfc0bd5f11160f0b9467f\"",
+  "lastModified": "Tue, 12 Aug 2025 12:38:51 GMT",
+  "contentType": "image/jpeg",
+  "contentRange": null,
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232874/102658.jpg",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:33:45.670791+00:00",
+  "sha256": "3c2acc2940d20632009141da326fe869abc47ed1277d14169af531adbfcfe5d5",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-south/photo-cache/3c2acc2940d20632009141da326fe869abc47ed1277d14169af531adbfcfe5d5.raw",
+  "bytes": 17546
+}

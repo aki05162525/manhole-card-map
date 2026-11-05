@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58255-25634.pbf.gz",
+    "sha256": "62a9a8ef2e9a0bf461f96494ad66d9cb7fdca270fee02ce64caa3b909ecd27e2",
+    "tile": {
+      "z": 16,
+      "x": 58255,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58256-25634.pbf.gz",
+    "sha256": "8f22c87051a7d0862bd14e87a2797c69aca5c5ff2833067daed3dc9d7cfcb8dc",
+    "tile": {
+      "z": 16,
+      "x": 58256,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58257-25634.pbf.gz",
+    "sha256": "99d65f07428fef42140c0cecae6c7cfa351cf1bc9f79f78b57ac1ab57b942702",
+    "tile": {
+      "z": 16,
+      "x": 58257,
+      "y": 25634
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58255-25635.pbf.gz",
+    "sha256": "acc8d34f912e00a76dd70b700bd8213e3f2a69daac5fb0edea11f52eac6d4cb8",
+    "tile": {
+      "z": 16,
+      "x": 58255,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58256-25635.pbf.gz",
+    "sha256": "210f8d14784d8e07ae6987821cc193071647415a411b7887b75ff73f2bea60ad",
+    "tile": {
+      "z": 16,
+      "x": 58256,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58257-25635.pbf.gz",
+    "sha256": "fd2d48f7c19f90e87ffb373e8e86f3e6376c9f495ab7cec4081d58d434da22d3",
+    "tile": {
+      "z": 16,
+      "x": 58257,
+      "y": 25635
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58255-25636.pbf.gz",
+    "sha256": "d11feb453ada699e1926a8535387f2ac2607e79e0930c70a215867721ef3e72d",
+    "tile": {
+      "z": 16,
+      "x": 58255,
+      "y": 25636
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58256-25636.pbf.gz",
+    "sha256": "c7c9979b767994ee6ccbd1a48a904cfad86f09dde2a5c514d0843e3e46170a86",
+    "tile": {
+      "z": 16,
+      "x": 58256,
+      "y": 25636
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/kubo-vector/58257-25636.pbf.gz",
+    "sha256": "31963b36082a3165ee1f43e94c4b1cf1f8d7d915a9b54367a4158fd289b4e612",
+    "tile": {
+      "z": 16,
+      "x": 58257,
+      "y": 25636
+    }
+  }
+]

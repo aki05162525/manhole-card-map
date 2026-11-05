@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "url": "https://www.tochigi-city-kura-navi.jp/info/",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:25:26.441944+00:00",
+  "httpStatus": 503,
+  "responseHeaders": {
+    "Date": "Thu, 05 Nov 2026 15:25:26 GMT",
+    "Server": "Apache",
+    "Retry-After": "3600",
+    "Last-Modified": "Thu, 22 Oct 2026 01:27:07 GMT",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "2819",
+    "Connection": "close",
+    "Content-Type": "text/html"
+  },
+  "responseURL": "https://www.tochigi-city-kura-navi.jp/info/",
+  "responseSHA256": "709fbf247fc5ea4e1115d594b30f4a0f8fb4572447b2762cc8ac9d3e76e29fa9",
+  "responseRawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/709fbf247fc5ea4e1115d594b30f4a0f8fb4572447b2762cc8ac9d3e76e29fa9.raw",
+  "responseBytes": 2819,
+  "status": "failed",
+  "error": "HTTPError: HTTP Error 503: Service Unavailable",
+  "finishedAt": "2026-11-05T15:25:26.566351+00:00",
+  "scopeName": "tochigi-info.html",
+  "elapsedSeconds": 0.12468035600613803,
+  "timingScope": "HTTP取得のみ"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.pref.tochigi.lg.jp/b06/zaikatu/documents/20261013141616.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:29:35.304525+00:00",
+  "httpStatus": 200,
+  "etag": "\"523e1\"",
+  "lastModified": "Tue, 20 Oct 2026 04:35:51 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.pref.tochigi.lg.jp/b06/zaikatu/documents/20261013141616.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:29:35.452647+00:00",
+  "sha256": "b4560588686bbacebccff2315372ec85446347d5b60e5c1e114e90d2f13fef0f",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/b4560588686bbacebccff2315372ec85446347d5b60e5c1e114e90d2f13fef0f.raw",
+  "bytes": 336865,
+  "scopeName": "nikko-karte-current.pdf",
+  "elapsedSeconds": 0.14850462996400893,
+  "timingScope": "HTTP取得のみ"
+}

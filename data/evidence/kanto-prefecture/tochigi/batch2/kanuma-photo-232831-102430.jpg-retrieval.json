@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232831/102430.jpg",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:33:27.762036+00:00",
+  "httpStatus": 200,
+  "etag": "\"3a233d81f76e136b9a82dea2b191627f\"",
+  "lastModified": "Tue, 16 Jun 2026 12:09:02 GMT",
+  "contentType": "image/jpeg",
+  "contentRange": null,
+  "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232831/102430.jpg",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:33:27.924988+00:00",
+  "sha256": "1999615d9bb0c7689e866414b910c94f1769922b64e3ea856b3b36d059e42635",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/1999615d9bb0c7689e866414b910c94f1769922b64e3ea856b3b36d059e42635.raw",
+  "bytes": 13888,
+  "scopeName": "kanuma-photo-232831-102430.jpg",
+  "elapsedSeconds": 0.16339833004167303,
+  "timingScope": "HTTP取得のみ"
+}

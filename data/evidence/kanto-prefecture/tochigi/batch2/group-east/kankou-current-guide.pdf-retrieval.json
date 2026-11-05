@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/615fcaf66e7cf.pdf",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:52:30.479753+00:00",
+  "httpStatus": 200,
+  "etag": "\"989601-5cdcfeeb72eee\"",
+  "lastModified": "Fri, 08 Oct 2021 04:37:10 GMT",
+  "contentType": "application/pdf",
+  "contentRange": null,
+  "responseURL": "https://www.town.kaminokawa.lg.jp/manage/contents/upload/615fcaf66e7cf.pdf",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:52:30.792772+00:00",
+  "sha256": "4137f461869e499e612e3236fb5a90641aa9667b4fb1ecd835e37981403a3291",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-east/cache/4137f461869e499e612e3236fb5a90641aa9667b4fb1ecd835e37981403a3291.raw",
+  "bytes": 9999873,
+  "scopeName": "kankou-current-guide.pdf",
+  "elapsedSeconds": 0.31341656402219087,
+  "timingScope": "HTTP取得のみ"
+}

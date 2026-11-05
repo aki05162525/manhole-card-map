@@ -1,0 +1,10 @@
+{"event": "start", "facility": "071cd7f65ad7c1a06c54", "at": "2026-11-05T15:24:29.898943+00:00", "phase": "Sano\u539f\u672c\u3068\u6570\u5024\u7167\u5408"}
+{"event": "pause", "facility": "071cd7f65ad7c1a06c54", "at": "2026-11-05T15:28:07.262350+00:00", "phase": "\u4f50\u91ce\u6bd4\u8f03\u3092\u4fdd\u5b58\u3057\u6b21\u65bd\u8a2d\u3078"}
+{"event": "start", "facility": "a95e49dc07df945f06e9", "at": "2026-11-05T15:28:07.262439+00:00", "phase": "\u4e0b\u91ce\u8cc7\u6599\u9928\u8cc7\u6599\u53d6\u5f97"}
+{"event": "pause", "facility": "a95e49dc07df945f06e9", "at": "2026-11-05T15:32:38.864531+00:00", "phase": "\u68df\u6bd4\u8f03/\u5019\u88dc\u8a08\u7b97\u307e\u3067\u4fdd\u5b58"}
+{"event": "start", "facility": "ab5de7e90313a0f18ac5", "at": "2026-11-05T15:32:38.864531+00:00", "phase": "ORIGAMI\u539f\u672c\u53d6\u5f97\u3068\u7167\u5408"}
+{"event": "pause", "facility": "ab5de7e90313a0f18ac5", "at": "2026-11-05T15:36:40.807951+00:00", "phase": "\u539f\u672c\u6bd4\u8f03\u3057\u5f53\u8a72\u7248\u672a\u53ce\u9332\u3092\u8a18\u9332"}
+{"event": "start", "facility": "f1b47f3c916256fbbc00", "at": "2026-11-05T15:36:40.807951+00:00", "phase": "\u4e0a\u4e09\u5ddd\u89b3\u5149\u5354\u4f1a\u539f\u672c\u53d6\u5f97"}
+{"event": "pause", "facility": "f1b47f3c916256fbbc00", "at": "2026-11-05T15:41:52.816488+00:00", "phase": "\u68df\u914d\u7f6e\u306e\u4eba\u624b\u8cea\u554f\u3092\u89aa\u3078\u9001\u4fe1\u3001\u4ed6\u65bd\u8a2d\u3078"}
+{"event": "start", "facility": "e59ebd8f60bb60f5aab7", "at": "2026-11-05T15:41:52.816488+00:00", "phase": "\u770c\u592e\u6d44\u5316\u30bb\u30f3\u30bf\u30fc\u539f\u672c\u3068\u6570\u5024\u7167\u5408"}
+{"event": "pause", "facility": "e59ebd8f60bb60f5aab7", "at": "2026-11-05T15:56:26.743649+00:00", "phase": "数値比較終了。後半は上三川の利用者回答/追加原本照合が割込み。個別切替時刻未記録のため、この区間全体を県央専用時間として集計不可。後付け配賦しない。"}

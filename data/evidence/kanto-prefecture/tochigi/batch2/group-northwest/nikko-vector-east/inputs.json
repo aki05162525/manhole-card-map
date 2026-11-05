@@ -1,0 +1,83 @@
+[
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58162-25567.pbf.gz",
+    "sha256": "d5b2c56af297d135e3d0debb8005b9448706c95b1fd9f002b4a24d55b13eef23",
+    "tile": {
+      "z": 16,
+      "x": 58162,
+      "y": 25567
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58163-25567.pbf.gz",
+    "sha256": "ea180f25b0f0b76786bac698b74d50337aefff2034a1df217ebd180d65547bb7",
+    "tile": {
+      "z": 16,
+      "x": 58163,
+      "y": 25567
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58164-25567.pbf.gz",
+    "sha256": "b9dc1f90fd5af899363425b38c0c9d370f7b7fd133277afce8b3022acfb1f9fe",
+    "tile": {
+      "z": 16,
+      "x": 58164,
+      "y": 25567
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58162-25568.pbf.gz",
+    "sha256": "7893cd11aabc78b7dc245bdc6d6812ccab31ae9240b3c7c62d08e8bf6f39c4f1",
+    "tile": {
+      "z": 16,
+      "x": 58162,
+      "y": 25568
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58163-25568.pbf.gz",
+    "sha256": "82af29efa11a6db70bf86bbb310252ec0f1dcd3e8f42d1c15a720256150c71ce",
+    "tile": {
+      "z": 16,
+      "x": 58163,
+      "y": 25568
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58164-25568.pbf.gz",
+    "sha256": "30430610a3dd3f6a6f2bbfcf2ec3247b6cc300de8ecc386f0014e6ad835a083b",
+    "tile": {
+      "z": 16,
+      "x": 58164,
+      "y": 25568
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58162-25569.pbf.gz",
+    "sha256": "40f1b4330afeab0c6a9d139e4158ac97d8a6b09fcdb20df6e0244ce6b71cc7db",
+    "tile": {
+      "z": 16,
+      "x": 58162,
+      "y": 25569
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58163-25569.pbf.gz",
+    "sha256": "c3d2d52a754322edc3eabdf832a4c78a115fccf67a46c65d879ffa1f6d75fbbf",
+    "tile": {
+      "z": 16,
+      "x": 58163,
+      "y": 25569
+    }
+  },
+  {
+    "path": "data/work/kanto-prefecture/tochigi/next-batch/group-northwest/nikko-vector-east/58164-25569.pbf.gz",
+    "sha256": "6d39de7a6e2b5b5804cb58b02ca657a5a99a66fd41b5a043aaab18a14b7ab107",
+    "tile": {
+      "z": 16,
+      "x": 58164,
+      "y": 25569
+    }
+  }
+]

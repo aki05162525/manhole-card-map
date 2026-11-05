@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.city.utsunomiya.lg.jp/event/rekishi/1035012/1016836.html",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:45:41.366143+00:00",
+  "httpStatus": 200,
+  "etag": "\"8404-65f88e882a084\"",
+  "lastModified": "Thu, 05 Nov 2026 15:11:21 GMT",
+  "contentType": "text/html",
+  "contentRange": null,
+  "responseURL": "https://www.city.utsunomiya.lg.jp/event/rekishi/1035012/1016836.html",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:45:41.449568+00:00",
+  "sha256": "405c570fee35208aa5cbaf09ad463cd12ef306126ca04dfa0039a13ac1fad91c",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/cache/405c570fee35208aa5cbaf09ad463cd12ef306126ca04dfa0039a13ac1fad91c.raw",
+  "bytes": 33796,
+  "scopeName": "seimeikan-current-city.html",
+  "elapsedSeconds": 0.08371141203679144,
+  "timingScope": "HTTP取得のみ"
+}

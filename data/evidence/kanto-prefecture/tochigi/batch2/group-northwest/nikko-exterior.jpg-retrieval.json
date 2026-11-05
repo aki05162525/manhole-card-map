@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "url": "https://www.nikko-nsm.co.jp/nnm/images/catch_visual.jpg",
+  "version": "next-batch-2026-11-05",
+  "requestHeaders": {},
+  "attemptedAt": "2026-11-05T15:26:26.746186+00:00",
+  "httpStatus": 200,
+  "etag": "\"1e608-580cf3b001500\"",
+  "lastModified": "Fri, 01 Feb 2019 06:27:00 GMT",
+  "contentType": "image/jpeg",
+  "contentRange": null,
+  "responseURL": "https://www.nikko-nsm.co.jp/nnm/images/catch_visual.jpg",
+  "status": "acquired",
+  "fetchedAt": "2026-11-05T15:26:26.882721+00:00",
+  "sha256": "54d86eacd3abb940d94b2251c46411b26ff645b0ac3bd9c9f176fd17c7b96256",
+  "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-293805d3/data/work/kanto-prefecture/tochigi/next-batch/group-northwest/cache/54d86eacd3abb940d94b2251c46411b26ff645b0ac3bd9c9f176fd17c7b96256.raw",
+  "bytes": 124424,
+  "scopeName": "nikko-exterior.jpg",
+  "elapsedSeconds": 0.13678766298107803,
+  "timingScope": "HTTP取得のみ"
+}
