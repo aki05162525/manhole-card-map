@@ -62,7 +62,9 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 ## オフラインと比較画面
 
-保存完了後はカード一覧・詳細とリンクの表示をオフラインで使える。背景・タイル・背景フォントの保存は保証しない。Google マップを開くには通信が必要。保存状態は「この地図について」に表示する。
+保存完了後はカード一覧・詳細とリンクの表示をオフラインで使える。背景・タイル・背景フォントの保存は保証しない。Google マップを開くには通信が必要。保存状態と更新操作は検索パネルに表示する。新版は全ファイルのハッシュ検証後に更新ボタンを表示し、再読み込みで切り替える。保存失敗時は旧版を維持する。初回の保存後も、検証済みの版で開くには再読み込みが必要。旧キャッシュの自動回収は未対応。
+
+更新回帰は `node scripts/offline-browser-check.mjs`（CIでも実行）、実データの操作確認はローカルサーバー起動後に `node scripts/real-data-browser-check.mjs` で実行する。詳細は [更新設計](../docs/verification/issue8-update-design.md) を参照。
 
 前回の比較画面は `/legacy.html?engine=c`。A は地理院、B は自己配信 PMTiles、C は自前簡略背景、D は背景なしの診断用。従来の `/?engine=a|b|c|d` は比較画面へ移動する。B だけは追加素材が必要で、`bash web/scripts/fetch-map.sh` と `bun run build:comparison` を使う。
 

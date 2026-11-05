@@ -1,3 +1,4 @@
+import { startOfflineUpdates, type OfflineState } from "./offline-update";
 import {
   Component,
   Suspense,
@@ -102,7 +103,7 @@ function ExternalLink({ link }: { link: MapLink | null }) {
   ) : null;
 }
 
-function CardDetail({
+export function CardDetail({
   card,
   data,
   onShowLid,
@@ -217,7 +218,7 @@ function CardDetail({
       )}
       <details className="source-notes">
         <summary>取得した配布情報の原文</summary>
-        <p>{card.placeText.join("\n")}</p>
+        <p>{(card.placeText || []).join("\n")}</p>
         <p>{(card.hours || []).join("\n")}</p>
       </details>
       <h3 className="journey-heading">2. 蓋を見に行く・撮影する</h3>
@@ -330,7 +331,9 @@ export default function App() {
     "loading",
   );
   const [message, setMessage] = useState("");
-  const [offline, setOffline] = useState("オフラインの準備は未完了");
+  const [offline, setOffline] = useState<OfflineState>({
+    text: "オフラインの準備は未完了",
+  });
   const [dataError, setDataError] = useState(false);
   const detailRef = useRef<HTMLElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -423,36 +426,7 @@ export default function App() {
     });
   }, []);
 
-  useEffect(() => {
-    if (!data || mapState === "loading") return;
-    let cancelled = false;
-    let channel: MessageChannel | undefined;
-    (async () => {
-      if (!("serviceWorker" in navigator))
-        throw new Error("Service Worker unavailable");
-      const registration = await navigator.serviceWorker.register("/sw.js");
-      await navigator.serviceWorker.ready;
-      if (cancelled) return;
-      const worker = registration.active || navigator.serviceWorker.controller;
-      if (!worker) throw new Error("Service Worker inactive");
-      channel = new MessageChannel();
-      channel.port1.onmessage = (event) => {
-        if (!cancelled)
-          setOffline(
-            event.data.ready
-              ? `オフライン準備完了 / 保存データ：${data.updated}`
-              : "オフラインの準備は未完了",
-          );
-      };
-      worker.postMessage({ type: "status" }, [channel.port2]);
-    })().catch(() => {
-      if (!cancelled) setOffline("オフライン保存に失敗。通信が必要です");
-    });
-    return () => {
-      cancelled = true;
-      channel?.port1.close();
-    };
-  }, [data, mapState]);
+  useEffect(() => startOfflineUpdates(setOffline), []);
 
   const show = useCallback(
     (ids: string[], selectedId?: string, started = performance.now()) => {
@@ -659,9 +633,16 @@ export default function App() {
             再読み込み
           </button>
         )}
+        <div id="offline" role="status" aria-live="polite">
+          {offline.text}
+          {offline.action && (
+            <button type="button" onClick={offline.action}>
+              {offline.actionLabel}
+            </button>
+          )}
+        </div>
         <details className="about-panel">
           <summary>この地図について</summary>
-          <div id="offline">{offline}</div>
           <SourceNotes />
         </details>
       </section>
