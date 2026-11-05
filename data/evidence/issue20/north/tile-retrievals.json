@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "name": "akita",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/233087/99517.png",
+      "fetchedAt": "2026-11-05T09:26:21.786860+00:00",
+      "snapshotPath": "data/work/issue20/north/akita-0-0.png",
+      "snapshotSHA256": "1927e0d572b73dbbd78c4c4655b03b38b3ebf5574f2e691d2399d2f46c9f98ba",
+      "tile": [
+        18,
+        233087,
+        99517
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 39.7101367,
+        "lng": 140.0971719
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    },
+    {
+      "name": "akita",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/233087/99516.png",
+      "fetchedAt": "2026-11-05T09:26:21.893270+00:00",
+      "snapshotPath": "data/work/issue20/north/akita-0--1.png",
+      "snapshotSHA256": "14a1023d730d32c5d7b6fd264ff9d83716df6048c60156f31698f3547842b6d7",
+      "tile": [
+        18,
+        233087,
+        99516
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 39.7101367,
+        "lng": 140.0971719
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    },
+    {
+      "name": "akita",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/233086/99517.png",
+      "fetchedAt": "2026-11-05T09:26:22.026642+00:00",
+      "snapshotPath": "data/work/issue20/north/akita--1-0.png",
+      "snapshotSHA256": "40a26ede47bdb4b812aaf622896b0b4fe3da188f26b2a5d20ea86789fee558e1",
+      "tile": [
+        18,
+        233086,
+        99517
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 39.7101367,
+        "lng": 140.0971719
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    },
+    {
+      "name": "wakkanai",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/234235/93870.png",
+      "fetchedAt": "2026-11-05T09:26:22.119974+00:00",
+      "snapshotPath": "data/work/issue20/north/wakkanai-0-0.png",
+      "snapshotSHA256": "bd62b0e16f221bcec84158a937eec44e91686c214d1b30f7cda693e0d8f9a59d",
+      "tile": [
+        18,
+        234235,
+        93870
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 45.415691,
+        "lng": 141.673105
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    },
+    {
+      "name": "wakkanai",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/234235/93869.png",
+      "fetchedAt": "2026-11-05T09:26:22.240318+00:00",
+      "snapshotPath": "data/work/issue20/north/wakkanai-0--1.png",
+      "snapshotSHA256": "19daa289617b5734244bf6062087709778c8fbf81ae783eeb5025f989f2ea8d0",
+      "tile": [
+        18,
+        234235,
+        93869
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 45.415691,
+        "lng": 141.673105
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    },
+    {
+      "name": "wakkanai",
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/std/18/234234/93870.png",
+      "fetchedAt": "2026-11-05T09:26:22.390346+00:00",
+      "snapshotPath": "data/work/issue20/north/wakkanai--1-0.png",
+      "snapshotSHA256": "ead565808e1dc8f2f39a07398f676ef39372b9ff1db8b4c75179a5ba16da271a",
+      "tile": [
+        18,
+        234234,
+        93870
+      ],
+      "retrievalLocatorOnly": {
+        "lat": 45.415691,
+        "lng": 141.673105
+      },
+      "note": "locator is not proposed coordinate; local-only image, tile vintage unknown",
+      "status": 200,
+      "method": "Python urllib HTTPS GET",
+      "version": "取得時のstdタイル。地物の整備年月・版は未確認",
+      "crs": "XYZ Web Mercator tile addressing (EPSG:3857); 地物の原測量座標系/測量時期は未確認",
+      "coordinateUse": "基本測量成果の標準地図。固定代表点の抽出と公開について測量法手続適用を確認するまで保留",
+      "redistribution": "raw tiles local-only; this repository contains retrieval metadata only"
+    }
+  ]
+}

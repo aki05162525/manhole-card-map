@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "id": "public-csv",
+      "url": "https://opendata.pref.shizuoka.jp/dataset/fuji-1076/resource/47757/223441_public_facility.csv",
+      "retrievedAt": "2026-11-05T09:28:18.487635+00:00",
+      "contentType": "text/csv",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/public-csv",
+      "sha256": "f16fad57c1ce034631818ed4943b6e4d13364dfc55d2bf034352ef2df3ab0602",
+      "bytes": 31625
+    },
+    {
+      "id": "current-floor",
+      "url": "https://fujioyama.co.jp/img/facility/floor.gif?201804",
+      "retrievedAt": "2026-11-05T09:28:18.773295+00:00",
+      "contentType": "image/gif",
+      "status": 200,
+      "snapshot": "data/work/issue20/fujioyama/current-floor",
+      "sha256": "975a157d231c3e4cc6dec087630cf1ac07eec478fd8a871724f4bdd4b51d9722",
+      "bytes": 22268
+    }
+  ]
+}

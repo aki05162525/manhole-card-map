@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "id": "gsi-qa",
+      "url": "https://www.gsi.go.jp/LAW/2930-qa.html",
+      "fetchedAt": "2026-11-05T09:28:57.614940+00:00",
+      "method": "Python urllib HTTPS GET",
+      "locator": "Q1-19、基本測量成果からの座標取得と使用手続",
+      "redistribution": "raw not redistributed; local ignored work directory only",
+      "version": "文書の発行表示以外の改訂版は未確認",
+      "status": "failed",
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+      "snapshotSHA256": null,
+      "webVerification": "公式URLをweb.openで別途閲覧。HTTP原本hash未取得"
+    },
+    {
+      "id": "gsi-tiles",
+      "url": "https://maps.gsi.go.jp/development/ichiran.html",
+      "fetchedAt": "2026-11-05T09:29:00.978393+00:00",
+      "method": "Python urllib HTTPS GET",
+      "locator": "標準地図 z5–18 は基本測量成果。リアルタイム表示の申請不要と保存した座標抽出を区別",
+      "redistribution": "raw not redistributed; local ignored work directory only",
+      "version": "文書の発行表示以外の改訂版は未確認",
+      "status": 200,
+      "finalURL": "https://maps.gsi.go.jp/development/ichiran.html",
+      "snapshotPath": "data/work/issue20/north/gsi-tiles.html",
+      "snapshotSHA256": "925b6d8371b112486360567ecf8e7aab964fd55526bf027ab32f1ef16e047b5b",
+      "bytes": 464296
+    },
+    {
+      "id": "gsi-terms",
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "fetchedAt": "2026-11-05T09:29:01.051882+00:00",
+      "method": "Python urllib HTTPS GET",
+      "locator": "出典、加工、第三者権利、測量法の適用",
+      "redistribution": "raw not redistributed; local ignored work directory only",
+      "version": "文書の発行表示以外の改訂版は未確認",
+      "status": "failed",
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+      "snapshotSHA256": null,
+      "webVerification": "公式URLをweb.openで別途閲覧。HTTP原本hash未取得"
+    },
+    {
+      "id": "wakkanai-2025",
+      "url": "https://www.city.wakkanai.hokkaido.jp/files/kouhou/pdf/2923_71016027.pdf",
+      "fetchedAt": "2026-11-05T09:29:02.358616+00:00",
+      "method": "Python urllib HTTPS GET",
+      "locator": "広報わっかない2025年9月号。新庁舎2025年6月竣工",
+      "redistribution": "raw not redistributed; local ignored work directory only",
+      "version": "文書の発行表示以外の改訂版は未確認",
+      "status": 200,
+      "finalURL": "https://www.city.wakkanai.hokkaido.jp/files/kouhou/pdf/2923_71016027.pdf",
+      "snapshotPath": "data/work/issue20/north/wakkanai-2025.pdf",
+      "snapshotSHA256": "22a7debbca4462b5d0a7993ae236feccc3fbed9a7cee872b6a87f52de48ca0d7",
+      "bytes": 1569872
+    },
+    {
+      "id": "wakkanai-opening",
+      "url": "https://www.city.wakkanai.hokkaido.jp/files/kouhou/pdf/2994_09506404.pdf",
+      "fetchedAt": "2026-11-05T09:29:02.711672+00:00",
+      "method": "Python urllib HTTPS GET",
+      "locator": "広報わっかない2026年1月号。検索候補として取得したが、開庁を裏付ける本文箇所を確認できず根拠には不使用",
+      "redistribution": "raw not redistributed; local ignored work directory only",
+      "version": "文書の発行表示以外の改訂版は未確認",
+      "status": 200,
+      "finalURL": "https://www.city.wakkanai.hokkaido.jp/files/kouhou/pdf/2994_09506404.pdf",
+      "snapshotPath": "data/work/issue20/north/wakkanai-opening.pdf",
+      "snapshotSHA256": "89e53f2908c8cda263217fc2376b6458de451756862ada466b91ea8beb0b2c71",
+      "bytes": 8283749
+    }
+  ]
+}

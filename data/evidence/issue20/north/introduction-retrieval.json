@@ -1,0 +1,9 @@
+{
+  "url": "https://www.city.wakkanai.hokkaido.jp/files/00019700/00019743/%E6%96%B0%E5%BA%81%E8%88%8E%E3%81%94%E7%B4%B9%E4%BB%8B.pdf",
+  "fetchedAt": "2026-11-05T09:29:22.725170+00:00",
+  "status": 200,
+  "method": "urllib HTTPS GET",
+  "snapshotPath": "data/work/issue20/north/wakkanai-introduction.pdf",
+  "snapshotSHA256": "146534d4eead0e214c6b3c5d0cdbe8d32aa34afe10c27200442ea61f6ca29eb4",
+  "redistribution": "local only; permission not assessed"
+}

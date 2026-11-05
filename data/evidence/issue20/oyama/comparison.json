@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "source": "data/national/issue7/north-kanto.json#/updates/9/coordinate",
+  "coordinate": {
+    "lat": 36.31480355277252,
+    "lng": 139.8001132323054
+  },
+  "tile": "data/evidence/issue20/oyama/retrievals.json#/records/13",
+  "tileURL": "https://cyberjapandata.gsi.go.jp/xyz/std/18/232871/102656.png",
+  "projection": "Web Mercator slippy tile z=18; x=(lon+180)/360*2^z; y=(1-asinh(tan(lat*pi/180))/pi)/2*2^z; pixel=fraction*256",
+  "tileXY": [
+    232871,
+    102656
+  ],
+  "pixelXY": [
+    85.96136495471,
+    74.40004997700453
+  ],
+  "observation": "原候補点は取得タイル内の橙色庁舎外形の外側。外形がタイル端へ続くため全外形は未取得。",
+  "limits": "タイル作成基準日不明。地図一般化・CRS差・更新差を検証していないため、これだけで旧庁舎点と断定しない。新代表点は作成していない。"
+}

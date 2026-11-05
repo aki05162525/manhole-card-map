@@ -9,7 +9,7 @@ python3 -B tools/national/assemble.py \
   --out /tmp/national-assembled.json \
   --audit-out /tmp/national-assembly-audit.json
 python3 -B -m unittest discover -s tools/national -v
-go test -count=1 ./...
+mise exec -- go test -count=1 ./...
 ```
 
 `--out`を省略すると標準出力。親ディレクトリは既存のものを指定する。入力検査が失敗すると非ゼロ終了し、台帳出力に進まない。`data/work`を除く`data`配下への出力は拒否する。`--root`でリポジトリroot、`--manifest`でroot相対の選択manifestを指定できる。
@@ -22,9 +22,10 @@ go test -count=1 ./...
 2. 入力のメモリ上のコピーへexactパッチを適用する。対象行は一意、旧値は完全一致が必要。フィールドの不在とnullを区別し、重複・同一行への全体置換とフィールド置換の重複も拒否する。
 3. 施設ID、関係のcardId/placeIdが同じ行は、全内容が一致するときだけ重複排除する。異なる値、legacy alias衝突、存在しない施設を参照する関係は失敗する。
 4. 全施設・関係の証拠bytesのSHA256、URL・確認主体・確認日などを検査する。
-5. 統合後にだけ承認済み位置840件を追補する。未存在施設、重複座標パッチ、既存coordinateの上書きを拒否する。lat/lngは両方必須の有限数値で、文字列・真偽値・null・範囲外を拒否する。座標追補の証拠SHA256も検査する。
+5. 統合後にだけmanifestで承認された位置を追補する。未存在施設、重複座標パッチ、既存coordinateの上書きを拒否する。lat/lngは両方必須の有限数値で、文字列・真偽値・null・範囲外を拒否する。座標追補の証拠SHA256も検査する。
+6. 任意の `locationLifecycle` を選択している場合は、ファイルhash・採用時binding・判断履歴の前state hashを検査し、再承認・訂正・取り下げを最後に適用する。identity不一致は個別のneeds-reviewとして座標を省略し、hash不一致等の整合性違反は引き続き失敗させる。詳細は[位置ライフサイクル](location-lifecycle.md)。
 
-パッチは次の11ファイル・111操作を選択している。
+2026-11-05のIssue18照合時点では、manifestは位置追補840件、次の11パッチファイル・111操作を選択している。`locationLifecycle`選択は0件で、機能実装と全国既存位置への導入は別である。以後の件数はmanifestと監査の再実行で確認する。
 
 | ファイル | 操作数 | 選択 |
 | --- | ---: | --- |
@@ -60,9 +61,11 @@ d89e788b0998fd625ea3d2b06e4cae6ff85c1c30f1526bc18c6bd8908702a5ff
 
 ## CIと残る範囲
 
-`cmd/builddata/fragments_test.go`がPython統合コマンドと単体テストを実行する。既存のGoによる厳密デコード、mergeLedgers、全関係の施設参照、relationStatus、全証拠hash検査を維持する。`.github/workflows/ci.yml`の`go test ./...`から実行される。CIの`ubuntu-latest`が提供する`python3`を使い、欠落時はskipせず失敗する。GoのテストキャッシュがPythonの編集を検知しない場合があるため、ローカル再検証には`-count=1`を使う。
+`cmd/builddata/fragments_test.go`がPython統合コマンドと単体テストを実行する。既存のGoによる厳密デコード、mergeLedgers、全関係の施設参照、relationStatus、全証拠hash検査を維持する。`.github/workflows/ci.yml`がバックエンド変更と判定した場合の`go test -count=1 ./...`から実行される。CIの`ubuntu-latest`が提供する`python3`を使い、欠落時はskipせず失敗する。GoのテストキャッシュがPythonの編集を検知しない場合があるため、ローカル再検証には`-count=1`を使う。
 
 CIに必要なのは選択manifest、台帳・パッチ・位置追補、それらの採用証拠が参照する保存原本、テストが読むfacility-point-scopeレビューJSON、置換前pilotの証拠。新規採用時は、CIに必要な選択ファイルと参照証拠を同じ変更に収録する。
+
+初回統合時の「親作業中の新規ファイルが未追跡」「本作業はstage・commitをしない」という説明は当時の作業記録だった。該当入力・証拠は既にGit管理され、PR #21時点で現在の手順から除去済み。追跡状況は今回も確認した。今後の変更にも未追跡という前提を持ち越さない。
 
 カードの原本への存在確認、sourceHashと最新原本の照合、`change.previousPlaceIds`が旧カード関係に属するかの確認は、既存builddataの全国rawを使う検証に残る。previousPlaceIdsは未採用の旧place IDも合法に含むので、承認済み施設一覧への参照として誤って拒否しない。raw無しの本処理は台帳の施設参照と保存証拠を確認するもので、全国の未解決調査が完了したことを意味しない。
 
@@ -90,3 +93,9 @@ CIに必要なのは選択manifest、台帳・パッチ・位置追補、それ�
 ## 採用後の位置変更
 
 位置採用元を消さず、manifestの `locationLifecycle` で再承認・訂正・撤回を追補できる。状態・hash・操作手順・未管理既存位置の限界は[位置ライフサイクル](location-lifecycle.md)を参照。
+
+## 位置精度と生成契約
+
+`apply_locations`が通常台帳へ追補するのはcoordinateとevidenceで、原追補のscopeは構造化した精度フィールドとして配信されない。原追補やlocationLifecycleのadoption履歴には保持できるが、配信の `confirmed` は建物/入口の精度区分ではない。Goでは検証後の台帳に座標が残ればconfirmedとなり、位置履歴の保留・撤回では座標が除去される。
+
+Pythonの座標検査は緯度±90、Goの施設台帳検査は±85で、同じ範囲ではない。この文書変更でコードの許容範囲を広げたり統一したりはしていない。境界入力の再現・現行データへの影響・後続の処置は[Issue18契約照合](verification/issue18-contracts.md)に記録する。
