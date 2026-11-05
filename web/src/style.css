@@ -21,6 +21,7 @@ header span {
   font-size: 11px;
 }
 nav {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -75,8 +76,25 @@ main:has(#detail:not([hidden])) #map {
   margin: 5px 0;
   white-space: pre-line;
 }
-#detail button {
-  float: right;
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+#detail select {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+}
+#detail a {
+  display: block;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+:focus-visible {
+  outline: 3px solid #2678df;
+  outline-offset: 2px;
 }
 footer {
   padding: 8px 12px;
