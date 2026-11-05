@@ -46,12 +46,19 @@ def main():
     assert len(selected) == len(selection['selected']) == 8
     assert selected == {r['facilityId'] for r in coverage if r['selection'] == 'selected'}
     for path, sha in selection['inputSHA256'].items():
-        assert digest(ROOT / path) == sha, path
+        source = E / 'baseline-manifest.json' if path == 'tools/national/manifest.json' else ROOT / path
+        assert digest(source) == sha, path
     manifest_before = digest(ROOT / 'tools/national/manifest.json')
     ledger = json.loads(subprocess.check_output(
         ['python3', '-B', 'tools/national/assemble.py'], cwd=ROOT))
     facilities = {r['id']: r for r in ledger['places']}
-    assert sum(not r.get('coordinate') for r in facilities.values()) == 608
+    baseline_ledger = json.loads(subprocess.check_output(
+        ['python3', '-B', 'tools/national/assemble.py', '--manifest',
+         'data/evidence/location-batch2/hokuriku/baseline-manifest.json'], cwd=ROOT))
+    baseline_facilities = {r['id']: r for r in baseline_ledger['places']}
+    assert sum(not r.get('coordinate') for r in baseline_facilities.values()) == 608
+    assert all(facilities[i] == baseline_facilities[i] for i in expected)
+    current_unlocated = sum(not r.get('coordinate') for r in facilities.values())
     assert all(not facilities[i].get('coordinate') for i in expected)
     for row in coverage:
         assert row['reason'] and row['previousFinding']
@@ -62,21 +69,27 @@ def main():
     assert {r['facilityId'] for r in outcomes['rows']} == selected
     assert len(outcomes['rows']) == 8 and outcomes['adoptedCount'] == 0
     assert outcomes['heldCount'] == 8 and outcomes['proposedAdoptionCount'] == 0
+    import sys
+    sys.path.insert(0, str(ROOT / 'tools/national'))
+    from national_audit import STAGES
     for row in outcomes['rows']:
+        assert row['stage'] in STAGES
         assert row['status'] == 'held' and row['coordinate'] is None
         assert row['adoptionBinding'] is None and row['stopCondition'] and row['resumeCondition']
         assert resolve(row['previousRef'])['facilityId'] == row['facilityId']
         for ref in row['sourceRefs']:
             resolve(ref)
+        if 'comparisonRef' in row:
+            resolve(row['comparisonRef'])
     for row in read(E / 'facts.json')['rows']:
         assert resolve(row['retrievalRef'])['id'] == row['sourceId']
     candidates = read(D / 'candidates.json')['rows']
-    assert len(candidates) == outcomes['numericLeadCount'] == 1
+    assert len(candidates) == outcomes['numericLeadCount'] == 3
     for row in candidates:
         assert row['facilityId'] in selected and row['decision'] == 'held'
         resolve(row['sourceRef'])
     checked = 0
-    for file in ['retrievals.json', 'vector-retrievals.json']:
+    for file in ['retrievals.json', 'vector-retrievals.json', 'recheck-retrievals.json', 'recheck-vector-retrievals.json']:
         for row in read(E / file):
             if row.get('error'):
                 continue
@@ -85,7 +98,7 @@ def main():
                 assert digest(path) == row['sha256'], path
                 assert path.stat().st_size == row['bytes'], path
                 checked += 1
-    for row in read(E / 'vector-observations.json')['rows']:
+    for row in read(E / 'vector-observations.json')['rows'] + read(E / 'recheck-vector-inputs.json')['rows']:
         path = ROOT / row['path']
         assert digest(path) == row['sha256'] and path.stat().st_size == row['bytes']
         assert row['candidateCoordinate'] is None
@@ -95,10 +108,13 @@ def main():
         text = (ROOT / source['path']).read_text()
         assert '37.38892691992177' in text and '136.9041497718089' in text
         before = read(ROOT / 'data/work/location-batch2/hokuriku/before-ledger.json')
-        assert ledger == before
+        assert baseline_ledger == before
+        # This branch has no adopted pins; other regions may change the live ledger.
+        if manifest_before == selection['inputSHA256']['tools/national/manifest.json']:
+            assert ledger == before
     assert digest(ROOT / 'tools/national/manifest.json') == manifest_before
     print(json.dumps({'population':32, 'selected':8, 'held':8, 'adopted':0,
-                      'nationalUnlocated':608, 'verifiedFiles':checked,
+                      'baselineNationalUnlocated':608, 'currentNationalUnlocated':current_unlocated, 'verifiedFiles':checked,
                       'rawChecked':args.raw, 'manifestUnchanged':True}))
 
 

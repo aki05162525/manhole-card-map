@@ -4,8 +4,8 @@
     {
       "sourceId": "sado-construction",
       "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
-      "locator": "本文「完成」「その他」",
-      "finding": "2024年3月改修完了、5月7日業務完全移行。新庁舎を第1庁舎、従来建物を第2庁舎と区別。",
+      "locator": "本文「完成」「お知らせ」",
+      "finding": "新庁舎=現第1庁舎、旧本庁舎=改修後の現第2庁舎。2024年5月2日に業務終了した従前の「第2庁舎」は現第2庁舎とは別。工事写真の「旧第2庁舎側」を現第2庁舎の方角としない。5月7日業務完全移行。",
       "sourceVersion": "2024年2–3月工事進捗"
     },
     {
@@ -18,8 +18,8 @@
     {
       "sourceId": "sado-guide",
       "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
-      "locator": "PDF物理2頁・4頁",
-      "finding": "第1庁舎と第2庁舎の平面形が異なり渡廊下で接続。旧本庁舎を第2庁舎へ改修した経緯を明記。",
+      "locator": "PDF物理2–4頁",
+      "finding": "物理2頁の第1庁舎1階1849.88㎡、物理3頁の現第2庁舎1階1075.76㎡。物理4頁の矩形状の第1庁舎と鉤形の第2庁舎は細い渡廊下で接続。総合案内は第1庁舎。夜間休日受付表示とカード配布の宿日直室との同一性は未確定。",
       "sourceVersion": "令和6年5月"
     },
     {
@@ -105,6 +105,62 @@
       "locator": "公開の位置づけ・PMTiles版更新情報",
       "finding": "2026年7月1日時点のPMTiles。試験公開で基本測量成果ではない。GSI規約に従い出典を表示する。",
       "sourceVersion": "2026-07-01データ、取得2026-11-05"
+    },
+    {
+      "sourceId": "wajima-facilities",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/9",
+      "locator": "施設/市役所分類の一覧リンク",
+      "finding": "上下水道局庁舎への詳細リンクを確認。分類一覧そのものは座標の一次数値でなく、個別施設詳細の取得へ使用。",
+      "sourceVersion": "取得時点HTML"
+    },
+    {
+      "sourceId": "optbv-dataspec",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/0",
+      "locator": "2022-09-06/2022-10-06更新の表",
+      "finding": "2頁の地物・属性表。座標系/JGD2011の明記は見つからない。一般タイル仕様だけからoptbv固有の測地系を断定していた表現を訂正。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "optbv-attribute",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/1",
+      "locator": "属性説明書",
+      "finding": "属性・分類説明を確認。測地系の明記は見つからない。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "wajima-copyright",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/2",
+      "locator": "HTML著作権について",
+      "finding": "写真等の権利は市/提供者に属し、引用等を除く無断転載を禁じる。marker座標に適用する具体的許諾・由来の説明は未確認。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "fukui-brochure",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/3",
+      "locator": "PDF物理5頁(本文7–8頁)、物理6頁(本文9–10頁)",
+      "finding": "川西岸の道路西側に復原町並を描く。列状建物群の位置関係をVectorと比較できるが、チケット売場の棟名対応はない。博物館は別施設。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "fukui-operator",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/4",
+      "locator": "HTML運営者トップ",
+      "finding": "朝倉氏遺跡保存協会の復原町並・便利ガイドへ接続。座標採用根拠にはしない。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "fukui-townplan",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/5",
+      "locator": "HTML本文・写真一覧",
+      "finding": "復原家屋の写真はあるが、受付棟名と外形を結ぶ配置資料ではない。記事・写真の転載禁止を確認、原本workのみ。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
+    },
+    {
+      "sourceId": "fukui-guide",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/recheck-retrievals.json#/6",
+      "locator": "HTML事務所/売店",
+      "finding": "事務所は復原町並の南側入口、売店は南入場口の隣。建物群のどの外形かは記載なし。",
+      "sourceVersion": "取得原本hashで固定。明記のない発行日は推定しない。"
     }
   ]
 }

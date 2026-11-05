@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; MVT local x right/y down",
+  "sourceCRS": "XYZ Web Mercator格子、MVT x右/y下。一般タイル仕様はJGD2011だがoptbv固有適用は未確定（追補参照）。",
   "source": "国土地理院最適化ベクトルタイル",
-  "method": "PMTiles v1 Range取得、z16 BldAを全描画。未同定外形からの座標派生はしない。",
+  "method": "初回3タイルの取得記録。派生代表点の再照合はbuilding-comparisons.jsonへ分離。",
   "rows": [
     {
       "id": "sado",
@@ -66,5 +66,5 @@
     }
   ],
   "sourceVersion": "2026-07-01 per official readme; retrieval 2026-11-05",
-  "sourceAccuracy": "元図の編集・一般化を含む。現地測量精度未確認。座標派生・丸め・代表点計算は未実施。"
+  "sourceAccuracy": "元図の編集・一般化、更新遅延、現地精度未確認。初回は派生なし、再照合では2部分の代表点を数値検討（未採用）。"
 }
