@@ -1,0 +1,6 @@
+P05-22_GML.zip!P05-22_08_GML.zip!P05-22_08.xml lines 5623-5627 (raw excerpt)
+		<ksj:bounds xlink:href="#pt0"/>
+		<ksj:administrativeCode codeSpace="administrativeAreaCode.xml">08201</ksj:administrativeCode>
+		<ksj:publicOfficeClassification public office>5</ksj:publicOfficeClassification public office>
+		<ksj:Name>常澄健康管理トレーニングセンター</ksj:Name>
+		<ksj:address>水戸市塩崎町1200</ksj:address>

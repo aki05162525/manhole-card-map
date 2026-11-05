@@ -1,0 +1,1023 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>海洋堂Space Factoryなんこく | 観光スポット検索 | 高知県観光情報Webサイト「こうち旅ネット」</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" content="「海洋堂Space Factoryなんこく」の詳細情報は、高知県観光情報Webサイト「こうち旅ネット」でご確認ください。ものづくりの人材育成や観光を目的に2021年にオープンした施設。
+１階の工場では、ここでしか見られない海洋堂のソフビフィギュ..." />
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <!--<script async src="https://cse.google.com/cse.js?cx=af806b3e77931b8ce"></script>-->
+        <script src="js/lightbox.js"></script>
+        <script src="js/common.js?1793854252024"></script>
+        <script src="js/toastr.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- CMS（adm/SpotEdit.jsp）のプレビューからも同じ初期化処理を呼び出せるよう、別ファイルに切り出している -->
+        <script src="js/spot-detail-photos.js?20261001"></script>
+        <link rel="stylesheet" href="css/toastr.min.css"/>
+        <link rel="stylesheet" href="css/common.css?20260901">
+        <link rel="stylesheet" href="css/common-sp.css?20260624" media="screen and (max-width: 767px)"/>
+        <link rel="stylesheet" href="css/lightbox.css">
+        <link rel="stylesheet" href="css/spot-detail.css?20260928-3">
+        <!--<link rel="stylesheet" href="css/spot-detail-sp.css" media="screen and (max-width: 767px)"/>-->
+        <link rel="stylesheet" href="css/adm_ck-temp.css">
+        <style>
+            .yosakoinet-common .main-block .block-title::before{
+                content: none;
+            }
+        </style>
+        
+        
+        
+        
+        
+        
+        <link href="/css/leaflet_1-9-4.css" rel="stylesheet" />
+        <script src="/js/leaflet_1-9-4.js"></script>
+        <link rel="stylesheet" href="/css/leaflet-gesture-handling.min.css" />
+<script src="/js/leaflet-gesture-handling.min.js"></script>
+
+   
+   
+   
+   
+   
+    </head>
+    <body class="yosakoinet-common yosakoinet-common__spot">
+
+
+
+        <!-- 共通ヘッダーここから -->
+        
+        <header class="harimayabashi">
+            <div class="header__inner">
+                <div class="h-logo">
+                    <a href="/" class="logo_s">
+                        <div>
+                            <img src="/images/common/logo_all.png" />
+                        </div>
+                    </a>
+                </div>
+               
+                <div class="roof-sp">
+                    <div></div>
+                    <div class="menu-btn">
+                        <span></span>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="global-nav-wrapper">
+                    
+                    <div class="global-nav_v2">                        
+                        
+                        
+                        <div>
+                            <div class="m-title">
+                                <a href="/special_secondry_list.html">
+                                    <div class="m-title__inner">
+                                        <div class="m-title__icon"><img src="/images/common/ic_header-01.png"/></div>
+                                        <p>特集</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!--<img class="tip-beginner" src="/images/common/tip_beginner.png" /> 初めての方はここ！ -->
+                        </div>
+                        
+                        
+                        <div>
+                            <div class="m-title">
+                                <a href="/model_course_secondry_list.html">
+                                    <div class="m-title__inner">
+                                        <div class="m-title__icon"><img src="/images/common/ic_header-02.png"/></div>
+                                        <p>モデルコース</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        <div>
+                                
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-03.png"/></div>
+                                    <p>スポット検索</p>
+                                </div>                                
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="/search_spot_sightseeing.html"><p>観光</p></a></li>
+                                    <li><a href="/search_spot_activity.html"><p>体験</p></a></li>
+                                    <li><a href="/search_spot_food.html"><p>グルメ・名物</p></a></li>                                
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-04.png"/></div>
+                                    <p>イベント</p>
+                                </div>   
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><div><a href="/search_event.html"><p>開催予定のイベント検索</p></a></div></li>
+                                    
+                                    
+                                    <li><div><a href="https://kochi-tabi.jp/lp/local-festival/"><p>高知のよさこい地域の祭り</p></a></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-05.png"/></div>
+                                    <p>宿泊・旅の予約</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">
+                                <ul class="submenu_v2__list">                                    
+                                    <li><div><a href="/search_spot_inn.html"><p>宿泊施設検索</p></a></div></li>
+                                    <li><div><a href="/search_activity_plan.html"><p>オンライン予約できる体験プラン</p></a></div></li>
+                                    <!-- <li><div><a href="/easy_reserve.html"><p>直前予約できる体験プラン</p></a></div></li> -->
+                                    <li><div><a href="/search_travel.html"><p>旅行会社の商品</p></a></div></li>
+                                    <li><div><a href="/search_tour.html"><p>旅行会社のサイトで探す</p></a></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-06.png"/></div>
+                                    <p>お役立ち情報</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">   
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="/ryoma-pass/"><p>龍馬パスポート</p></a></li>
+                                    <li><a href="/tabihiroba/"><p>こうち旅広場</p></a></li>   
+                                    <li><a href="/my-bus/" target="_blank"><p>MY遊バス</p></a></li>
+                                    <li><a href="/taxi/" target="_blank"><p>おもてなしタクシー</p></a></li>  
+                                    <li><a href="/tokutoku/"><p>周遊バス＆周遊きっぷ</p></a></li>
+                                    <li><a href="/pamphlet.html"><p>デジタルパンフレット</p></a></li>
+                                    <li><a href="/map_search.html"><p>現在地からマップで検索</p></a></li>
+                                    <li><a href="https://kochi-tabi.jp/sonaeru.html"><p>災害情報</p></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <!--<img src="/images/common/navi_menu2r.png" />-->
+                            <div class="m-title">
+                                <div class="m-title__inner">
+                                    <div class="m-title__icon"><img src="/images/common/ic_header-07.png"/></div>
+                                    <p>アクセス</p>
+                                </div>
+                            </div>
+                            <div class="submenu_v2">   
+                                <ul class="submenu_v2__list">                                    
+                                    <li><a href="https://kochi-tabi.jp/access/"><p>高知へのアクセス</p></a></li>
+                                    <li><a href="https://kochi-tabi.jp/access/kennai.html"><p>県内アクセス</p></a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                   
+                    <ul class="sub-nav">
+                         
+                                <li class="g-search pc-only">
+                                    <form class="custom-form" action="/google_search_result.html">
+                                        <div class="gcse-search">
+                                            <input type="hidden" name="cx" value="f05dace2d9d55bd61" />
+                                            <input type="hidden" name="ie" value="UTF-8" />
+                                            <input type="text" class="search" name="q" placeholder="サイト内検索" autocomplete="off" />
+                                            <!--<input type="submit" value="検索" />-->
+                                            <input type="submit" value="" class="search-image-button" />
+                                        </div>
+                                    </form>
+                                </li>
+                                
+                        <li><a href="/corp/"><p>法人・メディアの方へ</p></a></li>
+<!--                        <li><a href="/corp/convention/"><p>MICE</p></a></li>
+                        <li><a href="/corp/sports/"><p>スポーツ合宿</p></a></li>
+                        <li><a href="/kochi-fc/" target="_blank"><p>フィルムコミッション</p></a></li>
+                        <li><a href="/corp/support_member/"><p>賛助会員</p></a></li>-->
+                    </ul>
+                    <div class="spLogos sp-only tb-only">
+                        <img src="/images/common/logo_kvca.png" />
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="nav-overlay"></div>
+        </header>
+
+
+        <!-- 共通ヘッダーここまで -->
+
+
+
+
+
+
+        <main>
+            
+            <div class="breadcrumb">
+                <a href="/">トップページ</a>
+                
+                    &gt; <a href="/search_spot_sightseeing.html">観光スポット検索</a>
+                    
+                &gt; 海洋堂Space Factoryなんこく
+            </div>
+            <form class="hidden-form">
+                <input type="hidden" name="nrecid" value="15822"/>
+                <input type="hidden" name="errorMessages" value=""/>
+            </form>
+
+
+
+
+
+
+            <!-- 詳細情報ここから -->
+            <div class="main-block block-spot-detail">
+                
+                <div class="spot-title__block">                    
+                    <div class="spot-title">
+                        <h1><strong>海洋堂Space Factoryなんこく</strong></h1>
+                        <div class="spot-title__kana"><p>かいようどうすぺーすふぁくとりーなんこく</p></div>
+                    </div>
+                    
+                    <div class="btn--ryoa">
+                        <a href="#ryoma-block">
+                            <img class="pc-only" src="/images/spot/detail/btn_ryoma.png"/>
+                            <img class="sp-only" src="/images/spot/detail/btn_ryoma-sp.png"/>                            
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="spot-tag">
+                    
+                                <div>
+                                    <p>#アミューズメント</p>
+                                </div>
+                                
+                                <div>
+                                    <p>#作品ゆかりの地</p>
+                                </div>
+                                
+                                <div>
+                                    <p>#施設見学</p>
+                                </div>
+                                
+                    
+                </div>
+
+                
+                <div class="photos ">
+                    
+                        <div>
+                            <a class="photo-main" data-title="南国市観光協会提供" data-lightbox="15822" data-caption="南国市観光協会提供" href="/img/spot_15822/1400_1721888424525.jpg">
+                                <img src="/img/spot_15822/1400_1721888424525.jpg" />
+                                
+                                    <span class="caption">&copy; 南国市観光協会提供</span>
+                            </a>
+                            
+                            
+                        </div>
+                    
+                            
+                                <div>
+                                    <a class="photo-main photo-sub" data-title="南国市観光協会提供" data-lightbox="15822" data-caption="南国市観光協会提供" href="/img/spot_15822/1400_1721888437245.jpg">
+                                        <img src="\img\spot_15822/1400_1721888437245.jpg"  />
+                                            <span class="caption">&copy; 南国市観光協会提供</span>
+                                    </a>
+                                    
+                                    
+                                </div>
+                                
+                                <div>
+                                    <a class="photo-main photo-sub" data-title="南国市観光協会提供" data-lightbox="15822" data-caption="南国市観光協会提供" href="/img/spot_15822/1400_1721888441728.jpg">
+                                        <img src="\img\spot_15822/1400_1721888441728.jpg"  />
+                                            <span class="caption">&copy; 南国市観光協会提供</span>
+                                    </a>
+                                    
+                                    
+                                </div>
+                                
+                    
+                </div>
+
+                
+
+
+                
+                    <div class="spot-outline">
+                        <div class="catchcopy">宇宙船のような外観！</div>
+                        <hr />
+                        <div class="description">ものづくりの人材育成や観光を目的に2021年にオープンした施設。<br>１階の工場では、ここでしか見られない海洋堂のソフビフィギュアが生まれる瞬間が見学できます。<br>生命をテーマにした4mを超える大きなモニュメントや、「古代・現在・未来」の巨大なジオラマの展示を見ることができます。<br>フィギュアの色塗りやジオラマづくりといったものづくり体験もできます。</div>
+                    </div>
+                    
+                
+                    <div class="original-contents">
+                        <p>ものづくり体験は<a href="https://kochi-tabi.jp/search_spot_activity.html?id=15827"> こちら</a></p>
+
+                    </div>
+                    <!--<div class="original-contents-delim"></div>Wysiwygがある場合のみ-->
+                    
+                
+
+                
+                
+                <div class="spot__content">     
+                    <div class="s-content">
+                        <div class="sc__title"><p>基本情報</p></div>
+                        <div class="sc__list">
+                            <ul>
+                                <li>
+                                    <div><p>名称</p></div>
+                                    <div>
+                                        <p><strong>海洋堂Space Factoryなんこく</strong></p>
+                                        <p>(かいようどうすぺーすふぁくとりーなんこく)</p>
+                                    </div>
+                                </li>
+                                
+                                    <li>
+                                        <div><p>営業時間</p></div>
+                                        <div>
+                                            <p>10:00-18：00</p>
+                                        </div>
+                                    </li>
+                                
+                                <li>
+                                    <div><p>料金</p></div>
+                                    <div>
+                                        <p>2026年3月28日～<br>入館無料（一部有料）<br><br>【1階工場見学通路】<br>大人：700円、小・中学生：300円<br>障害者手帳をお持ちの方と介助者1名：半額<br><br>プレミアムフィギュア付大人：1,000円、小・中学生：600円</p>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div><p>休日</p></div>
+                                    <div>
+                                        
+                                        <div class="tc-block tc-block--regular">
+                                            
+                                            <p class="tc-main">火曜（祝日の場合、翌日）</p>
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                
+                                    
+                                
+                                <li class="sc__item bf">
+                                    <div class="bf__title">
+                                        <p>バリアフリー設備</p>
+
+                                    </div>
+                                    <div class="sci__bf">
+                                        
+                                        <div class="sci__bf-block">
+
+                                            
+                                                       <div class="sci__bf-icon" title="障害者用駐車場"><img src="/images/common/bf_pict/pict_1101.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="スロープ有"><img src="/images/common/bf_pict/pict_1103.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="エレベーター"><img src="/images/common/bf_pict/pict_1106.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="点字ブロック"><img src="/images/common/bf_pict/pict_2102.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="ほじょ犬"><img src="/images/common/bf_pict/pict_2105.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="筆談対応"><img src="/images/common/bf_pict/pict_2106.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="車いす対応トイレ"><img src="/images/common/bf_pict/pict_3101.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="オストメイト"><img src="/images/common/bf_pict/pict_3102.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="ベビーチェア"><img src="/images/common/bf_pict/pict_3104.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="授乳室"><img src="/images/common/bf_pict/pict_3105.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="洋式便器"><img src="/images/common/bf_pict/pict_3106.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="車いす貸出"><img src="/images/common/bf_pict/pict_4102.png" /></div>
+                                                           
+                                                       <div class="sci__bf-icon" title="AED"><img src="/images/common/bf_pict/pict_5101.png" /></div>
+                                                           
+                                        </div>
+                                        <!--<div class="sci__bf-btn"><div class="sci__bf-btn--img"><img src="/images/spot/detail/btn_bf-more.png" /></div><p>もっと見る</p></div>-->
+                                        <div class="sci__bf-btn"><div class="sci__bf-btn--img"><img src="/images/spot/detail/btn_bf-more.png" /></div><p>表示を増やす</p></div>
+                                        <div class="btn-more">
+                                            <a href="https://kochitourism-barrierfree.jp/det.php?i=273" target="_blank">
+                                                <div>
+                                                    <p>設備を詳しく見る</p>
+                                                    <div class="bf__deco-arrow"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                        <script>
+                                            var iconCount = $(".sci__bf-icon").length;
+                                            var limit = ($(window).width() <= 768) ? 6 : 9;  // スマホなら6、PCなら9
+
+                                            if (iconCount > limit) {
+                                                $(".sci__bf-btn").addClass("active");
+                                            }
+
+                                            
+                                            // もっと見るボタンクリック
+                                            $(".sci__bf-btn").click(function(){
+                                                $(".sci__bf-icon").addClass("active");
+                                                $(".sci__bf-block").addClass("active");
+                                                $(this).addClass("hidden");
+                                            });
+                                        </script>
+                                </li>
+                                
+                                <li>
+                                    <div><p>お問い合わせ</p></div>
+                                    <div>
+                                        
+                                        <p>海洋堂Space Factoryなんこく<br>電話番号：088-864-6777
+                                        
+                                        
+                                        </p>
+                                    </div>
+                                </li>
+                                
+                                    
+                                    
+                                    
+                                <li class="sc__item">
+                                    <!--<div><p>URL</p></div>-->
+                                    <div><p>公式HP</p></div>
+                                    <div class="sci__url-block">                                        
+                                        
+                                            <div class="sc__item--url">
+                                              <a target="_blank" href="https://kaiyodo-sfn.jp/" style="text-decoration: none;">
+                                                    <!--<div class="icon-home""></div>-->
+                                                    <!--<div><img src="/images/common/ic_sns_hp.png" /></div>-->
+                                                    
+                                                    <div>海洋堂Space Factoryなんこく公式サイト</div>
+                                                </a>
+                                            </div>
+                                        
+                                        
+                                    </div>
+                                </li>
+                                
+                                
+                                    
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="s-content">
+                        
+                        <div class="sc__title"><p>アクセス</p></div>
+                        
+                        <div class="sc__list">
+                            <ul  >
+                                <li>
+                                    
+                                    <div><p>所在地</p></div>
+                                    <div>
+                                        <p>南国市大そね甲1623-3</p>
+                                    </div>
+                                </li>
+                                
+                                <li>                                    
+                                    <div><p>駐車場</p></div>
+                                    <div>
+                                        
+                                        <div class="park_tab">
+                                            <p>あり</p>
+                                            
+                                            <p>無料</p>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                    
+
+                                
+                                <li>
+                                    <div><p>交通アクセス</p></div>
+                                    <div class="sc__access-block">
+                                        
+                                        <div class="sc__access-item">
+                                            <span class="access-badge access-badge--car">車</span>
+                                            <p>高知自動車道・南国ICから車で約10分<br>高知龍馬空港から車で約10分</p>
+                                        </div>
+                                        
+                                        
+                                        <div class="sc__access-item">
+                                            <span class="access-badge access-badge--train">鉄道</span>
+                                            <p>JR後免駅より徒歩10分</p>
+                                        </div>
+                                        
+                                        
+                                        
+                                        <div class="sc__access-item">
+                                            <span class="access-badge access-badge--tram">路面電車</span>
+                                            <p>御免東町停留所から徒歩2分</p>
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                
+
+                                <!-- 
+                                <li>
+                                    
+                                    <div><p>交通アクセス</p></div>
+                                    <div>
+                                        <p>
+                                        高知自動車道・南国ICから車で約10分<br>高知龍馬空港から車で約10分<br />鉄道：JR後免駅より徒歩10分<br />路面電車：御免東町停留所から徒歩2分
+                                            
+                                        </p>
+                                      
+                                    </div>
+                                </li>
+                                     -->
+
+                            </ul>
+                            
+                            </div>
+                            
+
+                                    <div class="block-parallel">
+                                        <div id="mapid"></div>
+                                        <div class="disp-anl">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=33.57501,133.64832&zoom=18" target="_blank"><p>Googleマップで表示</p></a>
+                                           
+                                        </div>
+
+                                        <script>
+                                            var map = L.map('mapid', {
+                                               center: [33.57501, 133.64832],
+                                               zoom: 9,
+                                               gestureHandling: true
+                                             });
+//                                             map.scrollWheelZoom.enable(); 
+
+                                           // OpenStreetMap から地図画像を読み込む
+
+                                            var tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+                                                   attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                                                   maxZoom: 19
+                                                });
+                                           tileLayer.addTo(map);
+
+                                           var blue2Icon = L.icon({
+                                                iconUrl: '/js/images/marker-icon-b2.png',
+                                                iconRetinaUrl: '/js/images/marker-icon-b2.png',
+                                                shadowUrl: '/js/images/marker-shadow.png',
+                                                // marker-icon-b2.png の実寸は 25×36px
+                                                // iconAnchor: アイコン左上原点から「地図座標に重ねるピクセル位置」を指定
+                                                // [12, 36] = 下端中央（ピンの先端）を座標に合わせる ※[11,0]はアイコン上端が座標になりズームアウト時に南方向へずれる原因だった
+                                                iconSize:    [25, 36],
+                                                iconAnchor:  [12, 36],
+                                                // marker-shadow.png の実寸は 41×41px
+                                                // [11, 41] = 下端（y=41）を座標に合わせる → margin-top: -41px でピン先端にシャドウ先端が重なる ※[11,4]はmargin-top:-4pxになり37pxずれていた
+                                                shadowAnchor: [11, 41],
+                                                // ポップアップをピン先端の真上に表示
+                                                popupAnchor: [1, -36],
+                                            });
+
+                                           // マーカー画像の場所を指定する
+                                           L.marker([33.57501, 133.64832], {icon:blue2Icon}).bindPopup('<a href="https://www.google.com/maps/search/?api=1&query=33.57501,133.64832" target="_blank">海洋堂Space Factoryなんこく</a>', {autoClose:false})
+                                       .addTo(map)
+                                       .openPopup();
+                                       // ページ完全ロード後にコンテナ位置を再計算（グリッドレイアウト確定前にL.map()が実行されるためズレる）
+                                    //    window.addEventListener('load', function() {
+                                    //        map.invalidateSize();
+                                    //    });
+                                       // 1200px以下: ヘッダーがtop:-60pxで隠れるとドキュメントフローが変わりタイルがズレるため、transitionend後に補正
+                                    //    if (window.matchMedia('(max-width: 1200px)').matches) {
+                                    //        document.querySelector('.yosakoinet-common header').addEventListener('transitionend', function() {
+                                    //            map.invalidateSize();
+                                    //        });
+                                    //    }
+                                        </script>
+                                    </div>
+                                    
+                            
+                                <div class="g-map-link">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=33.57501,133.64832" target="_blank">
+                                        <div class="g-map-link__block">                                    
+                                            <div class="g-map-link--icon">
+                                                
+                                            </div>
+                                            
+                                            <p>Google マップで見る</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+                   
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+                
+                
+                
+                    <div class="block-ryoma-passport">
+                        <div id="ryoma-block"></div>
+                        <!--<div class="ryoma-passport-delim"></div>-->
+                        <div class="rp__title">
+                            <div class="pc-only"><img src="/images/spot/detail/title_ryoma.png" loading="lazy" /></div>
+                            <div class="sp-only"><img src="/images/spot/detail/title_ryoma-sp.png" loading="lazy" /></div>
+                        </div>
+
+                        
+                            <h3>
+                                海洋堂Space Factoryなんこく
+                                <span class="kana">かいようどうすぺーすふぁくとりーなんこく（なんこくしものづくりさぽーとせんたー）</span>
+                            </h3>
+                            
+                            <div class="rp__list">
+                                
+                                <div class="rp__image" style="">
+                                    
+                                    <img src="/img/spot_15822/1400_1721888424525.jpg" />
+                                    
+                                </div>
+                                
+                                
+                                <dl>
+                                    <dt>龍馬パスポート区分</dt>
+                                    <dd>
+                                        道の駅等
+                                        
+                                    </dd>
+                                    <dt>スタンプ押印対象</dt>
+                                    <dd>
+                                        500円以上の物産の購入
+                                    </dd>
+                                    <dd class="colspan">
+                                        特典<br />
+                                        <table>
+                                            <tr>
+                                                <th>青</th>
+                                                <th>赤</th>
+                                                <th>ブロンズ</th>
+                                                <th>シルバー</th>
+                                                <th>ゴールド</th>
+                                            </tr>
+                                            <tr>
+                                                    <td colspan="2">オリジナルグッズ1個をプレゼント</td>
+                                                <td colspan="3">オリジナルグッズ2個をプレゼント</td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </dd>
+                                    <dt>問い合わせ先</dt>
+                                    <dd>
+                                        〒783-0004 南国市大埇甲1623-3<br />
+                                        Tel: 088-864-6777 / Fax: 088-864-6766<br />
+                                        Mail: 
+                                    </dd>
+                                        <dt>営業時間（予約時間）</dt>
+                                        <dd>
+                                            10:00～18:00
+                                            <br />
+                                        </dd>
+                                        
+                                        <dt>定休日</dt>
+                                        <dd>火*</dd>
+                                        
+                                </dl>
+                            </div>
+                        
+                            <h3>
+                                ものづくり体験（海洋堂Space Factoryなんこく）
+                                <span class="kana">ものづくりたいけん（かいようどうすぺーすファクトリーなんこく）</span>
+                            </h3>
+                            
+                                <div class="notice">※体験プログラムは、事前予約が必要な場合や利用にあたっての注意事項がある場合もありますので、各施設のホームページ等でご確認ください。</div><!--定型文（体験プログラムと宿泊施設）-->
+                                
+                            <div class="rp__list">
+                                
+                                <div class="rp__image" style="visibility:hidden; height: 0;">
+                                    
+                                </div>
+                                
+                                
+                                <dl>
+                                    <dt>龍馬パスポート区分</dt>
+                                    <dd>
+                                        体験プログラム
+                                        
+                                    </dd>
+                                    <dt>スタンプ押印対象</dt>
+                                    <dd>
+                                        対象プログラムの体験
+                                    </dd>
+                                    <dd class="colspan">
+                                        特典<br />
+                                        <table>
+                                            <tr>
+                                                <th>青</th>
+                                                <th>赤</th>
+                                                <th>ブロンズ</th>
+                                                <th>シルバー</th>
+                                                <th>ゴールド</th>
+                                            </tr>
+                                            <tr>
+                                                    <td colspan="2">オリジナルグッズ1個をプレゼント</td>
+                                                <td colspan="3">オリジナルグッズ2個をプレゼント</td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </dd>
+                                    <dt>問い合わせ先</dt>
+                                    <dd>
+                                        〒783-0006 南国市大埇甲1623-3<br />
+                                        Tel: 088-864-6777 / Fax: 088-864-6766<br />
+                                        Mail: 
+                                    </dd>
+                                        <dt>営業時間（予約時間）</dt>
+                                        <dd>
+                                            （予約受付）10:00～18:00
+                                            <br />
+                                        </dd>
+                                        
+                                        <dt>定休日</dt>
+                                        <dd>火*</dd>
+                                        
+                                </dl>
+                            </div>
+                        
+                    </div>
+
+                    
+                    <div class="rp__about-link">
+                        
+                        <a href="/ryoma-pass/" target="_blank"><img src="/images/spot/detail/title_ryoma_toha.png" loading="lazy" /><span class="rp__about-link-icon"></span></a>
+                    </div>
+                    
+                    
+               
+                <!-- LINE -->
+                <div class="line-block">
+                    
+                    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="PROD" data-url="https://developers.line.biz/ja/docs/line-social-plugins/install-guide/using-line-share-buttons/#http-request" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+                    <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                    <script>
+                    $('.line-it-button').attr('data-url', window.location.href);
+
+                    </script>
+
+                        
+                       
+                </div>
+                <!-- LINE ここまで -->
+                
+                
+                
+                    <div class="modified-date">更新日 2026年03月26日</div>
+                    
+                
+                <!-- 詳細情報ここまで -->
+            </div>
+            <!-- 近隣 -->
+            <div class="visinity">
+                <div class="visinity__title"><p>近隣の観光スポット</p></div>
+                
+                <ul class="visinity__list">
+                    
+                            <li class="visinity__item">
+                                <a href="/search_spot_sightseeing.html?id=15827">
+                                    <div class="vi">
+                                        <div class="vi__image">
+                                            <img src="/img/spot_15827/1400_1749516530201.jpg" alt="ものづくり体験（海洋堂Space Factoryなんこく） " />
+                                        </div>
+
+                                        <div class="vi__text-block">
+                                            <div class="vi__title"><p>ものづくり体験（海洋堂Space Factoryなんこく） </p></div>
+                                           <div class="vi__description"><p>ワークショップとして、〝やなせライオン〟や〝恐竜〟の「フィギュア色塗り体験」や、ジオラマ用フィギュアを1つ選び様々な素材で装飾して、世界に1つだけの「ジオラマ作り体験」などがあります。
+また、海洋堂Space...</P></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                            <li class="visinity__item">
+                                <a href="/search_spot_sightseeing.html?id=8243">
+                                    <div class="vi">
+                                        <div class="vi__image">
+                                            <img src="/img/spot_8243/1400_1755136078578.jpg" alt="a la plancha 幸" />
+                                        </div>
+
+                                        <div class="vi__text-block">
+                                            <div class="vi__title"><p>a la plancha 幸</p></div>
+                                           <div class="vi__description"><p>南国市後免駅の近くにある、本格派ステーキが味わえるお店。オススメは一度食べたらやみつきになる事間違いなしのシェフご自慢のカレー。
+上質な黒毛和牛や仁井田米のお米にこだわり、県内産食材を贅沢にアレンジ ...</P></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                            <li class="visinity__item">
+                                <a href="/search_spot_sightseeing.html?id=7843">
+                                    <div class="vi">
+                                        <div class="vi__image">
+                                            <img src="/img/spot_7843/1400_1755136140619.jpg" alt="養老乃瀧　後免店" />
+                                        </div>
+
+                                        <div class="vi__text-block">
+                                            <div class="vi__title"><p>養老乃瀧　後免店</p></div>
+                                           <div class="vi__description"><p>愛されて50余年の居酒屋老舗ブランドで幅広いお客様から親しまれています。席はカウンター・テーブル・掘ごたつ・座敷が用意されており、友人・会社の仲間・ご家族連れ・宴会等で気軽にご利用いただけます。オスス ...</P></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                            <li class="visinity__item">
+                                <a href="/search_spot_sightseeing.html?id=16525">
+                                    <div class="vi">
+                                        <div class="vi__image">
+                                            <img src="/img/spot_0/1400_1770099241002.jpeg" alt="やなせたかしロード（後免町商店街）" />
+                                        </div>
+
+                                        <div class="vi__text-block">
+                                            <div class="vi__title"><p>やなせたかしロード（後免町商店街）</p></div>
+                                           <div class="vi__description"><p>アンパンマンの作者・やなせたかしさんが少年時代を過ごした南国市後免町。
+2009年、やなせさんの支援を受けてアンパンマンやばいきんまんをはじめとする計７体の石像が後免町商店街に設置され、「やなせたかしロー...</P></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        
+                </ul>
+                
+            </div>
+            <!-- 近隣ここまで -->
+
+
+
+
+
+
+        </main>
+
+
+
+
+        <!-- 共通フッターここから -->
+        
+        <footer>
+            <div class="roof">
+                <ul>
+                    <li>
+                        <a href="/corp/kvca/outline.html">法人情報</a>
+                        <!--<a href="/contact.html">お問い合わせ</a>-->
+                        <a href="/link.html">リンク集</a>
+                        <a href="/policy.html">このサイトについて</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-sns">
+                <div class="footer-sns__inner">
+                    
+                    <div class="footer-sns__title"><p>こうち旅ネット公式 SNS</p></div>
+                    <div class="footer-sns__btn">
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/kochi_tabi_net/"><img src="/images/common/ic_sns_instagram_w.png" alt="Instagram" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://twitter.com/kochi_tabi"><img src="/images/common/ic_sns_x_w.png" alt="X" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/kochitabi/"><img src="/images/common/ic_sns_facebook_w.png" alt="Facebook" />
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCzb9BUdyYHFA-N5FsDGTUSw"><img src="/images/common/ic_sns_youtube_w.png" alt="Youtube" />
+                                    
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-main">
+                <ul>
+                    <li class="tosaterrace">
+                        <div>観光情報のご案内、パンフレットのご請求</div>
+                        <img src="/images/common/logo_tosaterrace_w.png?20251007" />
+                        <div>〒780-0056　高知県高知市北本町2-10-17</div>
+                        <div class="buttons">
+                            <a href="tel:088-879-6400"><img src="/images/common/btn_phone_to_tosaterrace.png?20251007" /></a>
+                            <a href="/contact_tosaterrace.html"><img src="/images/common/btn_mail_to_tosaterrace.png?20251007" /></a>
+                        </div>
+                        <div>営業時間：8:30〜18:00（年中無休）</div>
+                    </li>
+                    <li class="association">
+                        <div>「こうち旅ネット」、当協会に関するお問い合わせ</div>
+                        <img src="/images/common/logo_kvca_w.png" />
+                        <div>
+                                〒780-0056　高知県高知市北本町2-10-10
+                        </div>
+                        <div class="buttons">
+                            <a href="tel:088-823-1434"><img src="/images/common/btn_phone_to_kvca.png?20251007" /></a>
+                            <a href="/contact_kvca.html"><img src="/images/common/btn_mail_to_tosaterrace.png?20251007" /></a>
+                            
+                        </div>
+                        <div>FAX：088&#8203;-873&#8203;-6181</div>
+                        <div>営業時間：8:30〜17:15 （土・日・祝日・年末年始は除く）</div>
+                    </li>
+                </ul>
+                <div class="copyright">
+                    このホームページに掲載している写真、情報などの無断転載を禁じます。<br />
+                    Copyright &copy; 2005 Kochi Visitors & Convention Association All rights reserved. Japan.
+                </div>
+            </div>
+        </footer>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!--全体用-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRX4F2QP1B"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33749396-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-XRX4F2QP1B');
+          gtag('config', 'UA-33749396-1');
+        </script>
+        <!--<script defer src='https://tag-plus-bucket-for-distribution.s3.ap-northeast-1.amazonaws.com/service/OKNAeddXj7PsYZeN.js'></script>-->
+
+        <!--MicrosoftClarityタグ-->
+        <script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "p3ti7hnqua");
+        </script>
+
+        <!-- 共通フッターここまで -->
+
+        <script>
+        // 実際の初期化処理はjs/spot-detail-photos.js（CMSプレビューとも共有）に切り出している
+        document.addEventListener('DOMContentLoaded', function () {
+            initSpotDetailPhotoGallery(document);
+        });
+        </script>
+    </body>
+</html>
+

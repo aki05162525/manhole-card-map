@@ -1,0 +1,20 @@
+URL https://www.city.hidaka.lg.jp/soshiki/toshiseibi/toshikeikaku/keikakusuishinkigyoyuchijyuutakuseisaku/tosikeikaku/keikaku/1931.html
+TEXT 汚水処理場等／日高市ホームページ 本文へ移動 Select Language 文字サイズ変更 背景色変更 Select Language 組織から探す 施設を探す イベントを探す よくあるご質問 お問い合わせ メニューを閉じる 現在の位置 ホーム 組織から探す 都市整備部 都市計画課 計画推進・企業誘致担当 都市計画 日高市で定められている都市計画 汚水処理場等 汚水処理場等 汚水処理場 都市計画名称 入間西部衛生組合清掃センター 告示 昭和48年10月4日 日高町告示第30号 位置 大字上鹿山地内 面積 約1.1ヘクタール 処理能力 1日あたり197キロリットル 都市計画名称 高麗団地汚水処理センター 告示 昭和50年11月7日 日高町告示第39号 位置 大字久保（現在、武蔵台一丁目）地内 面積 約0.6ヘクタール 処理能力 1日あたり7794キロリットル ごみ処理場 都市計画名称 日高町清掃センター 告示 昭和47年5月8日 日高町告示第14号 位置 大字上鹿山地内 面積 約0.6ヘクタール 処理能力 1日あたり60トン ごみ焼却ごみ処理場 都市計画名称 日高町西清掃センター 告示 平成2年5月1日 日高町告示第36号 位置 大字高麗本郷地内 面積 約1.42ヘクタール 処理能力 ごみ焼却1日あたり80トン、ごみ処理1日あたり10トン 下水処理場 都市計画名称 日高市浄化センター 告示 昭和56年10月1日 日高町告示第47号 位置 大字高萩地内 面積 約6.68ヘクタール 処理能力 1日あたり最大9400立方メートル 日高市の都市計画へ この記事に関するお問い合わせ先 都市計画課 計画推進・企業誘致担当（本庁舎 3階） 郵便番号：350-1292 日高市大字南平沢1020番地 電話：042-989-2111（代表） ファックス：042-989-2316 更新日：2022年04月19日 日高市で定められている都市計画 便利なサービス 医療機関検索 ごみの分け方検索 申請手続きナビ 施設ガイドマップ 電子申請 申請・届け出様式ダウンロード 市からのお知らせ 新着 お知らせ イベント 募集 〒350-1292 埼玉県日高市大字南平沢1020番地 電話:042-989-2111(代表) ファックス:042-989-2316 窓口受付時間 午前9時から午後4時30分まで 地方公共団体コード112429 市役所案内（時間外窓口） このサイトについて プライバシーポリシー リンク集 サイトマップ お問い合わせ (C) 2017 Hidaka City 〒350-1292 埼玉県日高市大字南平沢1020番地 電話:042-989-2111(代表) ファックス:042-989-2316 窓口受付時間 午前9時から午後4時30分まで 地方公共団体コード112429 市役所案内（時間外窓口） このサイトについて プライバシーポリシー リンク集 サイトマップ お問い合わせ (C) 2017 Hidaka City
+MAP
+
+LINKS
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery.js
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery_cookie.js
+ https://www.city.hidaka.lg.jp/theme/base/js/common_lib.js
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery.easing.1.3.js
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery.bxslider.js
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery_dropmenu.js
+ https://www.city.hidaka.lg.jp/theme/base/js/common.js
+ https://www.google.com/jsapi
+ https://www.city.hidaka.lg.jp/theme/base/js/jquery.socialbutton-1.9.1.js
+ https://www.city.hidaka.lg.jp/theme/base/js/mutual_switching/mutual_switching.js
+ https://f1-as.readspeaker.com/script/6301/ReadSpeaker.js?pids=embhl
+ https://www.city.hidaka.lg.jp/theme/base/js/sub.js
+施設を探す https://www.city.hidaka.lg.jp/benrinasabisu/map.html
+施設ガイドマップ https://www.city.hidaka.lg.jp/benrinasabisu/map.html
+ https://www.city.hidaka.lg.jp/theme/base/js/external.js

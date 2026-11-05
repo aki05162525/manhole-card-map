@@ -1,0 +1,231 @@
+[
+  {
+    "url": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "retrievedAt": "2026-11-05T04:44:05.757518+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/bda1203ac1e2f6dc8f96.html",
+    "sha256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978"
+  },
+  {
+    "url": "http://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "retrievedAt": "2026-11-05T04:44:05.757911+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/a4323bab76d937b81ad2.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6"
+  },
+  {
+    "url": "http://www.city.tama.lg.jp/0000005579.html",
+    "retrievedAt": "2026-11-05T04:44:05.758360+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tama.lg.jp/kurashi/suido/gesuidou/oshirase/1002460.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/bde0de9d214e63bf5eb7.html",
+    "sha256": "802bcd1c4e1b8ba376240c70a3e8eb6639fc64b66c8a1ebc2457e0a9cedb673a"
+  },
+  {
+    "url": "https://kodaira-sewer.jp/manhole-card",
+    "retrievedAt": "2026-11-05T04:44:05.999082+00:00",
+    "status": 200,
+    "finalUrl": "https://kodaira-sewer.jp/manhole-card",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/647fdc80318b91688e53.html",
+    "sha256": "429c0a5279adee1feb5b050f7d3636500b702574f985a0d37bdde42a6869ee68"
+  },
+  {
+    "url": "https://www.city.akishima.lg.jp/s087/010/010/010/140/010/20190319120320.html",
+    "retrievedAt": "2026-11-05T04:44:06.042387+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.akishima.lg.jp/kurashi/sumai/1001689/1001744/1001746.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/23ff8f349f998d0cbb63.html",
+    "sha256": "903aaf0f7a0f155e2ecf4caf67acc04591ad85443f604e91dbb80f97996d251a"
+  },
+  {
+    "url": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+    "retrievedAt": "2026-11-05T04:44:06.172957+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/8e0eb220dc912e75ebdc.html",
+    "sha256": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298"
+  },
+  {
+    "url": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+    "retrievedAt": "2026-11-05T04:44:06.197808+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html",
+    "sha256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8"
+  },
+  {
+    "url": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "retrievedAt": "2026-11-05T04:44:06.241042+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/c6aca8b3332e789f1680.html",
+    "sha256": "0022bbdcc947d5ac025e47c452fab90029e07f396708282c9515034e16c35b4e"
+  },
+  {
+    "url": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "retrievedAt": "2026-11-05T04:44:06.294128+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/de250713c732b8b72139.html",
+    "sha256": "44691b3716058b200882f114a920aea7583c2636b9f8809fa859b5af0a30b560"
+  },
+  {
+    "url": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "retrievedAt": "2026-11-05T04:44:06.304897+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.tokyo.jp/kanko/manga_anime/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/e024d5413271fa7771f2.html",
+    "sha256": "860092f50b0cc8714552a595982ec635ca0aaba38a466e72fc68d560eb01e15e"
+  },
+  {
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "retrievedAt": "2026-11-05T04:44:06.414364+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.itabashi.tokyo.jp/bunka/kanko/1050986.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/ffe01eb357e263ffbcb0.html",
+    "sha256": "6c24fbb0b031dc81ad80b098ffa154d43e4c7b452b82ecd7f75220f064c66171"
+  },
+  {
+    "url": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "retrievedAt": "2026-11-05T04:44:06.462195+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/0505dbb97e8012746373.html",
+    "sha256": "7837f30c26a751590be292c578add4ef8c67df9eee756ca5eea9f48988f2f881"
+  },
+  {
+    "url": "https://www.city.kokubunji.tokyo.jp/kurashi/koutsuu/jougesuido/1017218.html",
+    "retrievedAt": "2026-11-05T04:44:06.561146+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kokubunji.tokyo.jp/kurashi/seikatsu/jougesuido/1017218.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/b73e9e60b4baaa583160.html",
+    "sha256": "f4a98075423a55451ba8b3b8a65bf728907188d5b5e0570e2527a76cbad73ac6"
+  },
+  {
+    "url": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+    "retrievedAt": "2026-11-05T04:44:06.775343+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html",
+    "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6"
+  },
+  {
+    "url": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
+    "retrievedAt": "2026-11-05T04:44:06.793644+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.odawara.kanagawa.jp/field/c-planning/sewer/topics/p24794.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/922e3bd0e6e0048efdcf.html",
+    "sha256": "097de9148395d730b7ed9379b9649c42d8e78e747b72cd66c166d20d09144296"
+  },
+  {
+    "url": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "retrievedAt": "2026-11-05T04:44:06.801312+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ota.tokyo.jp/kanko/topics/hanepyon_manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/b402be524f3a0e7c47ec.html",
+    "sha256": "59bf82fcd32d4d26c4e651a9b485b44f611c2c8fdc69c2595e9392b5dfd2ba07"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "retrievedAt": "2026-11-05T04:44:06.959759+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/fe62d84da7ad4ab3c226.html",
+    "sha256": "5ef4b181d740d89226cd27d32e141086b3faa7b1c0798d36193ca1937aa82277"
+  },
+  {
+    "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "retrievedAt": "2026-11-05T04:44:06.991601+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/16398dfb985e9fe39d5c.html",
+    "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/shisei/soshiki/1022197/1022263/1022270.html",
+    "retrievedAt": "2026-11-05T04:44:07.053654+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/shisei/soshiki/1022197/1022263/1022270.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/46f1c0da5f3bc6c0e4cd.html",
+    "sha256": "5c90cf7aef61c5f0f0d4915f66e5f09ff195e8601b9de7a9e57ef87681f54441"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "retrievedAt": "2026-11-05T04:44:07.119571+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/7ef9dd743444ec4fb475.html",
+    "sha256": "138e7f49bb7c6a11b2d95b14c19784de4aeab0cab048ffec51472cd3269b2943"
+  },
+  {
+    "url": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+    "retrievedAt": "2026-11-05T04:44:07.167233+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html",
+    "sha256": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329"
+  },
+  {
+    "url": "https://www.city.yachiyo.lg.jp/uploaded/attachment/19983.pdf",
+    "retrievedAt": "2026-11-05T04:44:07.307257+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachiyo.lg.jp/uploaded/attachment/19983.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/84e519da81f6d3c752c7.pdf",
+    "sha256": "db0b9fe4b4958014e6f683bf4c1c6b8c36bc5572fc3a342d76a54f4fdb42fbbe"
+  },
+  {
+    "url": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+    "retrievedAt": "2026-11-05T04:44:07.320863+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html",
+    "sha256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7"
+  },
+  {
+    "url": "https://www.city.zushi.kanagawa.jp/kurashi/suido/1001970/1001982/1010948.html",
+    "retrievedAt": "2026-11-05T04:44:07.434994+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.zushi.kanagawa.jp/kurashi/suido/1001970/1001982/1010948.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/1729e3627fea544f2bb5.html",
+    "sha256": "80d9df4a4ecef7aee87ea014725d282678fbb239864878ed8f030c6e093b3536"
+  },
+  {
+    "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "retrievedAt": "2026-11-05T04:44:07.554999+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/4d3030a484eafc8163f5.html",
+    "sha256": "1cab5da973c8a8b62230834914dcb7d25015f5fb1cc3ed0315e901fb772bccb5"
+  },
+  {
+    "url": "https://www.city.ayase.kanagawa.jp/soshiki/kanzaikeiyakuka/kanzaitanto/3/4714.html",
+    "retrievedAt": "2026-11-05T04:45:31.336935+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ayase.kanagawa.jp/soshiki/kanzaikeiyakuka/kanzaitanto/3/4714.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/baf8d3ea314b8e0d0575.html",
+    "sha256": "03d417743f9bf0e1206ede0eed4b2939a958f0b33ddb89a83e233aa6cc169379"
+  },
+  {
+    "url": "https://www.nijinogesuidoukan.jp/news/2922/",
+    "retrievedAt": "2026-11-05T04:45:31.474464+00:00",
+    "error": "HTTPSConnectionPool(host='www.nijinogesuidoukan.jp', port=443): Max retries exceeded with url: /news/2922/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)')))"
+  },
+  {
+    "url": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "retrievedAt": "2026-11-05T04:45:31.558418+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.adachi.tokyo.jp/s-shinko/designmanhole.html",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/961bfb847190fa8e7091.html",
+    "sha256": "123db06ddccd6b9e45a8a85a71857ba034b9b3aecaa3c8623c0e2ff3a389b0a7"
+  },
+  {
+    "url": "https://www.adachikanko.net/news/archives/56626",
+    "retrievedAt": "2026-11-05T04:45:31.689107+00:00",
+    "status": 200,
+    "finalUrl": "https://www.adachikanko.net/news/archives/56626",
+    "snapshotPath": "data/evidence/national/kanto-south-integration/c987e1eac4594767b3d7.html",
+    "sha256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a"
+  }
+]

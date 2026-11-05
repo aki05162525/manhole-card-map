@@ -1,0 +1,181 @@
+http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html
+マンホールカードの配布について - 岳南排水路管理組合
+data/evidence/national/chubu-west/bf46211ce6cbf7385759.html
+[('138.7019056', '35.1529031', '!2d138.7019056!3d35.1529031')]
+http://waterlab.nagoya/
+メタウォーター下水道科学館なごや　名古屋市下水道科学館
+data/evidence/national/chubu-west/4e20151fe5ab14083743.html
+[('136.90087691554555', '35.19214266424593', '!2d136.90087691554555!3d35.19214266424593')]
+http://www.city.fujieda.shizuoka.jp/i/kyodomuse/
+郷土博物館・文学館／藤枝市ホームページ
+data/evidence/national/chubu-west/8d386c63f8da43059212.html
+[('138.2567431', '34.8762009', '!2d138.2567431!3d34.8762009')]
+http://www.city.kakegawa.shizuoka.jp/life/kouen/shisetsu/eikikitaeria/kakegawajo.html
+掛川城公園 -  掛川市
+data/evidence/national/chubu-west/05399c2967ea111eb4f6.html
+['var opts = {"readonly":true,"markers":[{"name":"掛川城公園","loc":[138.014245,34.775442],"text":"","image":null}],"layers":[{"name":"国土地理院地図","source":"XYZ","url":"https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png","projection":"EPSG:3857"}],"showGoogleMapsSearch":true};']
+http://www.komaki-kanko.jp/
+小牧市観光協会 | Home
+data/evidence/national/chubu-west/027af4544c48820542b3.html
+[('136.92734319773842', '35.289406960364396', '!2d136.92734319773842!3d35.289406960364396')]
+http://www.setomachi.com/setotourist/
+瀬戸観光案内所
+data/evidence/national/chubu-west/0b03ecb0ce23c45d8a00.html
+[('137.09540915177817', '35.22533868020656', '!2d137.09540915177817!3d35.22533868020656')]
+http://www.takahama-kawara-museum.com/index.html
+高浜市やきものの里 かわら美術館・図書館（ミュージアム）｜愛知県
+data/evidence/national/chubu-west/42b0e9288a9f25f86585.html
+[('136.97938748274046', '34.9236130358916', '!2d136.97938748274046!3d34.9236130358916')]
+http://www.town.yoshida.shizuoka.jp/6491.htm
+マンホールカード【よし吉イラスト】/ようこそ吉田町へ
+data/evidence/national/chubu-west/3e4a7c50833d565690c7.html
+[('138.2481761717077', '34.77800232337429', '!2d138.2481761717077!3d34.77800232337429'), ('138.25013517608284', '34.77138719068261', '!2d138.25013517608284!3d34.77138719068261')]
+http://www.visit-shizuoka.com/useful_info/
+観光案内所｜【公式】静岡市観光ナビ - 静岡市の旅行情報
+data/evidence/national/chubu-west/717c7be9986b449c5fb0.html
+['<li data-marker-count="1" data-marker-image="/lsc/upfile/individual/0000/0055/55_1_m.jpg" data-marker-lat="34.9720171" data-marker-link="" data-marker-linktitle="もっと見る" data-marker-lng="138.3881055" data-marker-routetitle="ルート検索" data-marker-title="静岡市総合観光案内所">静岡市総合観光案内所</li>', '<li data-marker-count="2" data-marker-image="/lsc/upfile/individual/0000/0056/56_1_m.jpg" data-marker-lat="34.9718949" data-marker-link="" data-marker-linktitle="もっと見る" data-marker-lng="138.3888709" data-marker-routetitle="ルート検索" data-marker-title="静岡駅観光案内所">静岡駅観光案内所</li>', '<li data-marker-count="3" data-marker-image="/lsc/upfile/individual/0000/0057/57_1_m.jpg" data-marker-lat="35.0240934" data-marker-link="" data-marker-linktitle="もっと見る" data-marker-lng="138.488312" data-marker-routetitle="ルート検索" data-marker-title="清水駅前観光案内所">清水駅前観光案内所</li>', '<li data-marker-count="4" data-marker-image="/lsc/upfile/individual/0000/0058/58_1_m.jpg" data-marker-lat="34.9953569" data-marker-link="" data-marker-linktitle="もっと見る" data-marker-lng="138.5227482" data-marker-routetitle="ルート検索" data-marker-title="静岡市三保松原文化創造センター「みほしるべ」">静岡市三保松原文化創造センター「みほしるべ」</li>']
+https://fmkanvol.com/
+富士宮市観光ガイドボランティアの会 | 富士宮へようこそ
+data/evidence/national/chubu-west/b8c254985fc3bb7092a1.html
+[('138.60974272920757', '35.22522239876895', '!2d138.60974272920757!3d35.22522239876895')]
+https://hayabusamuseum.town.yaotsu.lg.jp/
+岐阜県八百津町情報発信施設　ハヤブサ・ミュージアム
+data/evidence/national/chubu-west/7b689c455850259de6a1.html
+[('137.1661172118347', '35.472389241303325', '!2d137.1661172118347!3d35.472389241303325'), '        "latitude": 35.472389,', '        "longitude": 137.166117']
+https://itospa.com/feature/tokaikan/
+伊東温泉観光・文化施設　東海館（旧木造建築の旅館）｜伊豆・伊東観光ガイド - 伊東の観光・旅行情報サイト
+data/evidence/national/chubu-west/9ebbc082169c1e2e2477.html
+[('34.9716499', '139.09707219999996', 'q=34.9716499,139.09707219999996')]
+https://nakatsugawa.town/tokusankan/
+
+              にぎわい特産館 |             中津川観光協会公式Webサイト    
+data/evidence/national/chubu-west/399436532c5760c6391a.html
+['      var marker0 = new google.maps.Marker({title: "No Title", icon: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi.png", position: new google.maps.LatLng(35.501217, 137.50384099999997), map: map});']
+https://okazaki-kanko.jp/feature/rune/top
+カワイイに出会える街オカザキ｜「Roots of Kawaii」内藤ルネ特集！｜特集｜岡崎おでかけナビ - 岡崎市観光協会公式サイト
+data/evidence/national/chubu-west/7e3dd3bbbf9ff82b767a.html
+['    var spot_map_latitude = "34.92565859969893";', '    var spot_map_longitude = "137.15725871163946";', '        ,latitude: "34.95727428"', '        ,longitude: "137.1597791"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/31/trim/4/3?v=052e39840e02d5eefc41cf28854b817b20ba643a" alt="岡崎城公園"></div>\t\t<h4 class="dialog-title">\t\t岡崎城公園\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.95727428&amp;longitude=137.1597791&amp;name=%E5%B2%A1%E5%B4%8E%E5%9F%8E%E5%85%AC%E5%9C%92"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/1"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.914731"', '        ,longitude: "137.166"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/457/trim/4/3?v=fe64d4ba854cebecb1058f5bf299c26450a52598" alt="【一時閉園】南公園"></div>\t\t<h4 class="dialog-title">\t\t【一時閉園】南公園\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.914731&amp;longitude=137.166&amp;name=%E3%80%90%E4%B8%80%E6%99%82%E9%96%89%E5%9C%92%E3%80%91%E5%8D%97%E5%85%AC%E5%9C%92"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/89"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "35.029466"', '        ,longitude: "137.194792"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/860/trim/4/3?v=741179ee4c9d9704f9ccb62f125b6dd0a70de572" alt="奥殿陣屋"></div>\t\t<h4 class="dialog-title">\t\t奥殿陣屋\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.029466&amp;longitude=137.194792&amp;name=%E5%A5%A5%E6%AE%BF%E9%99%A3%E5%B1%8B"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/205"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.947591"', '        ,longitude: "137.212131"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/684/trim/4/3?v=a9b7682c0fa4ffddc7ab2e06ace1566112fb6919" alt="岡崎中央総合公園"></div>\t\t<h4 class="dialog-title">\t\t岡崎中央総合公園\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.947591&amp;longitude=137.212131&amp;name=%E5%B2%A1%E5%B4%8E%E4%B8%AD%E5%A4%AE%E7%B7%8F%E5%90%88%E5%85%AC%E5%9C%92"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/150"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.914424"', '        ,longitude: "137.216811"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/2011/trim/4/3?v=45def8194e43b8d9fb9be556277db599d38ceb89" alt="道の駅「藤川宿」"></div>\t\t<h4 class="dialog-title">\t\t道の駅「藤川宿」\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.914424&amp;longitude=137.216811&amp;name=%E9%81%93%E3%81%AE%E9%A7%85%E3%80%8C%E8%97%A4%E5%B7%9D%E5%AE%BF%E3%80%8D"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/566"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.9625747"', '        ,longitude: "137.1684083"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/5366/trim/4/3?v=af207500bbd22c41b30df9e465f5ff7b53682848" alt="岡崎市民会館"></div>\t\t<h4 class="dialog-title">\t\t岡崎市民会館\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.9625747&amp;longitude=137.1684083&amp;name=%E5%B2%A1%E5%B4%8E%E5%B8%82%E6%B0%91%E4%BC%9A%E9%A4%A8"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/2667"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.947157"', '        ,longitude: "137.1766076"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/5376/trim/4/3?v=27b5bbb2109f0849e7b6886e2b37167f8e23c3aa" alt="竜美丘会館"></div>\t\t<h4 class="dialog-title">\t\t竜美丘会館\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.947157&amp;longitude=137.1766076&amp;name=%E7%AB%9C%E7%BE%8E%E4%B8%98%E4%BC%9A%E9%A4%A8"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/2668"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.947157"', '        ,longitude: "137.1766076"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/5376/trim/4/3?v=27b5bbb2109f0849e7b6886e2b37167f8e23c3aa" alt="竜美丘会館"></div>\t\t<h4 class="dialog-title">\t\t竜美丘会館\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.947157&amp;longitude=137.1766076&amp;name=%E7%AB%9C%E7%BE%8E%E4%B8%98%E4%BC%9A%E9%A4%A8"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/2668"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.926922"', '        ,longitude: "137.213773"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/1402/trim/4/3?v=6d962c30cbbd98ff8b84cc60c2471f52a3d42a3e" alt="おかざき世界子ども美術博物館"></div>\t\t<h4 class="dialog-title">\t\tおかざき世界子ども美術博物館\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.926922&amp;longitude=137.213773&amp;name=%E3%81%8A%E3%81%8B%E3%81%96%E3%81%8D%E4%B8%96%E7%95%8C%E5%AD%90%E3%81%A9%E3%82%82%E7%BE%8E%E8%A1%93%E5%8D%9A%E7%89%A9%E9%A4%A8"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/point/426"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.937846"', '        ,longitude: "137.16445399999998"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/7323/trim/4/3?v=cdc0e9947f97ca6658f54bd87464d8c314eaddd5" alt="イオンモール岡崎「内藤ルネ展」"></div>\t\t<h4 class="dialog-title">\t\tイオンモール岡崎「内藤ルネ展」\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.937846&amp;longitude=137.16445399999998&amp;name=%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E5%B2%A1%E5%B4%8E%E3%80%8C%E5%86%85%E8%97%A4%E3%83%AB%E3%83%8D%E5%B1%95%E3%80%8D"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/event/3071"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "35.03414255845324"', '        ,longitude: "137.22225400048833"', '                  ,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/2975/trim/4/3?v=ed82e456e46f54f78b8e9fbf72c2daea9a7ae8c9" alt="NEOPASA岡崎"></div>\t\t<h4 class="dialog-title">\t\tNEOPASA岡崎\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.03414255845324&amp;longitude=137.22225400048833&amp;name=NEOPASA%E5%B2%A1%E5%B4%8E"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/gourmet/1061"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '        ,latitude: "34.95881749148409"', '        ,longitude: "137.16633668161467"', '                  ,content: \'<div class="google-marker-dialog">\t\t<h4 class="dialog-title">\t\t籠田観光案内所\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=34.95881749148409&amp;longitude=137.16633668161467&amp;name=%E7%B1%A0%E7%94%B0%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t</div></div>\'']
+https://www.8miso.co.jp/
+株式会社 まるや八丁味噌
+data/evidence/national/chubu-west/54d81872c4dafc8080b0.html
+[('137.15129532845353', '34.95674554315197', '!2d137.15129532845353!3d34.95674554315197')]
+https://www.aeontown.co.jp/fujiminami/
+イオンタウン富士南
+data/evidence/national/chubu-west/78050b21a6a10aae8472.html
+[('138.6756481', '35.1402074', '!2d138.6756481!3d35.1402074')]
+https://www.ansyobunka.jp/
+安祥文化のさと|愛知県安城市の歴史や美術を楽しく学べる複合施設
+data/evidence/national/chubu-west/ecd951e3f35885f21dbb.html
+[('137.09574947631916', '34.94519757005403', '!2d137.09574947631916!3d34.94519757005403')]
+https://www.city.tajimi.lg.jp/kurashi_tetsuduzuki/jougesuido/1005578/1009966.html
+マンホールカード配布情報｜多治見市公式ホームページ
+data/evidence/national/chubu-west/405c0bfe61c17444de40.html
+[('35.336', '137.1198333', '!3d35.336!4d137.1198333')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001406.html
+施設案内　丹生川支所｜高山市
+data/evidence/national/chubu-west/76f1130da813914a63fc.html
+[('36.1702251', '137.3099247', 'q=36.1702251,137.3099247')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html
+施設案内　清見支所｜高山市
+data/evidence/national/chubu-west/5b96d5d048069ff4267b.html
+[('36.1286413', '137.18676919999996', 'q=36.1286413,137.18676919999996')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001408.html
+施設案内　荘川支所｜高山市
+data/evidence/national/chubu-west/ace1825a08c3fc89a418.html
+[('36.03270550000001', '136.95621800000004', 'q=36.03270550000001,136.95621800000004')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001409.html
+施設案内　一之宮支所｜高山市
+data/evidence/national/chubu-west/2ab434bc4b9a27de6d0c.html
+[('36.08336', '137.23936979999996', 'q=36.08336,137.23936979999996')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html
+施設案内　久々野支所｜高山市
+data/evidence/national/chubu-west/c97ba2a8e27f8f1fd70d.html
+[('36.0484488', '137.27522290000002', 'q=36.0484488,137.27522290000002')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001413.html
+施設案内　国府支所｜高山市
+data/evidence/national/chubu-west/b8d82996abfbe1d13f1a.html
+[('36.2113368', '137.21493940000005', 'q=36.2113368,137.21493940000005')]
+https://www.city.takayama.lg.jp/shisetsu/1004141/1004416/1004417.html
+施設案内　朝日支所｜高山市
+data/evidence/national/chubu-west/d5b430faef4d87801794.html
+[('36.0888864', '137.34705039999994', 'q=36.0888864,137.34705039999994')]
+https://www.clacity.jp/
+TOP - クラシティ
+data/evidence/national/chubu-west/07c2a92b8fd3bd8d1774.html
+[('136.92687', '34.893685', '!2d136.92687!3d34.893685')]
+https://www.skydome.jp/
+岐阜県飛騨市にある道の駅「スカイドーム神岡」
+data/evidence/national/chubu-west/385509c35a8afe6d1e4b.html
+[('137.30575102835303', '36.328948483178024', '!2d137.30575102835303!3d36.328948483178024')]
+https://www.tokoname-kankou.net/info/tourist/
+とこなめ観光案内所（常滑市陶磁器会館） | 愛知県常滑市の観光サイト「とこなめ観光ナビ」
+data/evidence/national/chubu-west/57f08aa400ee3dd22fc3.html
+[('136.83734769046023', '34.89067480307081', '!2d136.83734769046023!3d34.89067480307081')]
+https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html
+マンホールカード配布・カラーマンホール蓋設置場所について／長泉町
+data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html
+[('138.89957513327062', '35.13933710152209', '!2d138.89957513327062!3d35.13933710152209'), ('138.89747626956103', '35.13686209502639', '!2d138.89747626956103!3d35.13686209502639'), ('138.89588726956097', '35.13748309501803', '!2d138.89588726956097!3d35.13748309501803'), ('138.895710269561', '35.139323094993195', '!2d138.895710269561!3d35.139323094993195'), ('138.89485271335354', '35.130103956190766', '!2d138.89485271335354!3d35.130103956190766'), ('138.90261353861695', '35.12875918686861', '!2d138.90261353861695!3d35.12875918686861'), ('138.90330029766588', '35.12899194639759', '!2d138.90330029766588!3d35.12899194639759')]
+https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html
+マンホールカードの配布について｜熱海市公式ウェブサイト
+data/evidence/national/chubu-west/5e367acb7240f60f7279.html
+[('139.07387994872607', '35.09343903723663', '!2d139.07387994872607!3d35.09343903723663'), ('139.07066926951353', '35.096566095569905', '!2d139.07066926951353!3d35.096566095569905'), ('139.07059299331206', '35.09633851844754', '!2d139.07059299331206!3d35.09633851844754')]
+https://okazaki-kanko.jp/news/4278
+3月22日（日）から、ルネふたのマンホールカードを配布します！｜新着情報｜岡崎おでかけナビ - 岡崎市観光協会公式サイト
+data/evidence/national/chubu-west/6f6ae6dadb924f565ac9.html
+[('34.95893179999999', '137.1662133', 'q=34.95893179999999,137.1662133'), '\t\t\t\t\t\t\t\t\t\t,latitude: "34.95893179999999"', '\t\t\t\t\t\t\t\t\t\t,longitude: "137.1662133"']
+https://okazaki-kanko.jp/news/5394
+12月17日（木）から紫の内藤ルネマンホールカードを配布します！｜新着情報｜岡崎おでかけナビ - 岡崎市観光協会公式サイト
+data/evidence/national/chubu-west/fb12ca8383dc0a8b8c39.html
+[('34.9144788', '137.2172286', 'q=34.9144788,137.2172286'), '\t\t\t\t\t\t\t\t\t\t,latitude: "34.9144788"', '\t\t\t\t\t\t\t\t\t\t,longitude: "137.2172286"']
+https://www.city.atami.lg.jp/shisetsu/shiyakusho/1001957.html
+施設案内　熱海市役所｜熱海市公式ウェブサイト
+data/evidence/national/chubu-west/732d180382bc037ac30a.html
+[('35.0960577257795', '139.0715464', 'q=35.0960577257795,139.0715464')]
+https://www.city.fujieda.shizuoka.jp/homepage/10558.html
+交通アクセス／藤枝市ホームページ
+data/evidence/national/chubu-west/304223b25f7f90042516.html
+[('34.867354555611', '138.25754055715', 'q=34.867354555611,138.25754055715'), '<img alt="地図の画像(交通アクセス)" src="https://maps.googleapis.com/maps/api/staticmap?zoom=16&amp;size=499x299&amp;maptype=roadmap&amp;markers=color:red|34.867354555611,138.25754055715&amp;sensor=false&amp;format=jpg-baseline&amp;key=AIzaSyDgem6QxyYZZWIO3rM43syZdBOag2LJzG0&amp;signature=zFeBfBxHnY-Ok5WzX0oLXEPLdWk="/>']
+https://www.city.gujo.gifu.jp/admin/detail/7021.html
+郡上市の位置・アクセス | 郡上市 Gujo City
+data/evidence/national/chubu-west/884cc86adcb7b1d07e49.html
+[('136.7252389690706', '35.91704640323938', '!2d136.7252389690706!3d35.91704640323938')]
+https://www.city.hamamatsu.shizuoka.jp/maps/c-saigagake.html
+犀ヶ崖資料館／浜松市
+data/evidence/national/chubu-west/2923b17a56c4e6d54c97.html
+[('34.719410', '137.718708', 'q=34.719410,137.718708')]
+https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm
+沼津市役所／沼津市
+data/evidence/national/chubu-west/24b83d2414b8a89210f1.html
+[('138.8547167032898', '35.09563666937432', '!2d138.8547167032898!3d35.09563666937432')]
+https://www.sorahaku.net/guide/access/
+交通アクセス｜【空宙博】岐阜かかみがはら航空宇宙博物館公式ウェブサイト
+data/evidence/national/chubu-west/08a96edafc30514c0913.html
+[('136.8615158', '35.3877827', '!2d136.8615158!3d35.3877827')]
+https://www.sourifureai.com/outline/
+施設概要 | 知多市佐布里緑と花のふれあい公園
+data/evidence/national/chubu-west/6300f58e86882b2b30ac.html
+[('136.89005120000002', '34.966919', '!2d136.89005120000002!3d34.966919'), ('136.9004327', '34.966599099999996', '!2d136.9004327!3d34.966599099999996')]
+https://www.chita-kanko.com/spot/detail/83/
+梅の館 | 遊ぶ・体験 | 【公式】知多市観光ガイド
+data/evidence/national/chubu-west/642bd0821c6f44036e9a.html
+[('136.890051', '34.966919', '!2d136.890051!3d34.966919')]
+https://www.gamagori.jp/spot/788
+蒲郡市観光協会公式サイト「がまごおり、ナビ」 » 海辺の文学記念館
+data/evidence/national/chubu-west/8125cd50db3c3db349dd.html
+[('137.2327177161173', '34.81497658040536', '!2d137.2327177161173!3d34.81497658040536')]
+https://www.kankokoryu-chiryu.com/
+知立市観光交流センター
+data/evidence/national/chubu-west/4052c2d6aaf63e04a9f1.html
+[('137.0407291682702', '35.00720485988929', '!2d137.0407291682702!3d35.00720485988929')]
+https://www.city.takayama.lg.jp/shisetsu/1004139/1000028/1003902.html
+施設案内　新穂高センター｜高山市
+data/evidence/national/chubu-west/8f74eaff44bf880402ad.html
+[('36.284497', '137.574447', 'q=36.284497,137.574447')]
+https://okazaki-kanko.jp/okutono-jinya
+奥殿陣屋｜岡崎おでかけナビ - 岡崎市観光協会公式サイト
+data/evidence/national/chubu-west/f57372b981e657819623.html
+['\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.028983"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.19489499999997"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/872/trim.500/3/2?v=7b260ba39acaed239477531f3c4864871a379186" alt="金鳳亭"></div>\t\t<h4 class="dialog-title">\t\t金鳳亭\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.028983&amp;longitude=137.19489499999997&amp;name=%E9%87%91%E9%B3%B3%E4%BA%AD"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/206"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.02923225108067"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.19489536441802"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/882/trim.500/3/2?v=3d20ad126924c3396f12e343b11c85a111a806d6" alt="書院"></div>\t\t<h4 class="dialog-title">\t\t書院\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.02923225108067&amp;longitude=137.19489536441802&amp;name=%E6%9B%B8%E9%99%A2"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/207"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.02814621447679"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.19522155092622"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/891/trim.500/3/2?v=3789b31a63b4daa324d1541ebbd33bbeff78c7e3" alt="歴代藩主の廟所"></div>\t\t<h4 class="dialog-title">\t\t歴代藩主の廟所\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.02814621447679&amp;longitude=137.19522155092622&amp;name=%E6%AD%B4%E4%BB%A3%E8%97%A9%E4%B8%BB%E3%81%AE%E5%BB%9F%E6%89%80"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/208"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.02913613463614"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.195027364418"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/893/trim.500/3/2?v=1be1396b7ea124fd262c8d6f8f2d2097d33065c2" alt="蓬莱の庭"></div>\t\t<h4 class="dialog-title">\t\t蓬莱の庭\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.02913613463614&amp;longitude=137.195027364418&amp;name=%E8%93%AC%E8%8E%B1%E3%81%AE%E5%BA%AD"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/209"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.029301"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.195249"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/901/trim.500/3/2?v=bda6980b7d22c069bf7ed2dde00198703681f2fb" alt="玄々斎生誕碑"></div>\t\t<h4 class="dialog-title">\t\t玄々斎生誕碑\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.029301&amp;longitude=137.195249&amp;name=%E7%8E%84%E3%80%85%E6%96%8E%E7%94%9F%E8%AA%95%E7%A2%91"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/210"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.029491429243315"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.19516436441802"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/905/trim.500/3/2?v=24a1557d82832e964579fc46b7be32d216ca0adb" alt="資料展示室"></div>\t\t<h4 class="dialog-title">\t\t資料展示室\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.029491429243315&amp;longitude=137.19516436441802&amp;name=%E8%B3%87%E6%96%99%E5%B1%95%E7%A4%BA%E5%AE%A4"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/211"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.029142"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.194597"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/908/trim.500/3/2?v=2839e3edaf6dc56735785fe1ffa32b15b0fca9fc" alt="花火資料室"></div>\t\t<h4 class="dialog-title">\t\t花火資料室\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.029142&amp;longitude=137.194597&amp;name=%E8%8A%B1%E7%81%AB%E8%B3%87%E6%96%99%E5%AE%A4"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/212"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.029793"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.193679"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/922/trim.500/3/2?v=adb666c335cde6dc0c3dbb5d6da6e097eec399bf" alt="花ぞの苑"></div>\t\t<h4 class="dialog-title">\t\t花ぞの苑\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.029793&amp;longitude=137.193679&amp;name=%E8%8A%B1%E3%81%9E%E3%81%AE%E8%8B%91"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/213"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.02859410501413"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.19624689283754"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/928/trim.500/3/2?v=71ade696a097e0618510ef7b096792deaf4bed50" alt="村積山（登山道入り口）"></div>\t\t<h4 class="dialog-title">\t\t村積山（登山道入り口）\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.02859410501413&amp;longitude=137.19624689283754&amp;name=%E6%9D%91%E7%A9%8D%E5%B1%B1%EF%BC%88%E7%99%BB%E5%B1%B1%E9%81%93%E5%85%A5%E3%82%8A%E5%8F%A3%EF%BC%89"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/214"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'', '\t\t\t\t\t\t\t\t\t\t\t,latitude: "35.02962"', '\t\t\t\t\t\t\t\t\t\t\t,longitude: "137.1948"', '\t\t\t\t\t\t\t\t\t\t\t,content: \'<div class="google-marker-dialog">\t\t\t<div class="dialog-photo"><img src="/image/rendering/attraction_image/936/trim.500/3/2?v=031620c5841fac1e741a3a3715da059afb0ef14f" alt="野菜売店"></div>\t\t<h4 class="dialog-title">\t\t野菜売店\t\t\t</h4>\t<div class="dialog-buttons clearfix">\t\t\t\t\t<div class="dialog-button route">\t\t\t\t<a\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\ttarget="_blank"\t\t\t\t\trel="external nofollow"\t\t\t\t\thref="/gmap?latitude=35.02962&amp;longitude=137.1948&amp;name=%E9%87%8E%E8%8F%9C%E5%A3%B2%E5%BA%97"\t\t\t\t\t>ここへのルート</a>\t\t\t</div>\t\t\t\t\t\t\t<div class="dialog-button detail">\t\t\t\t<a\t\t\t\t\thref="/okutono-jinya/guide/216"\t\t\t\t\t\t\t\t\t\tclass="btn btn-block btn-sm btn-gray"\t\t\t\t\t>詳細を見る</a>\t\t\t</div>\t\t\t</div></div>\'']
+https://www.city.mishima.shizuoka.jp/soshiki/53/
+下水道課 - 三島市公式ホームページ
+data/evidence/national/chubu-west/7f8e440506d583609d1f.html
+[('138.9164397658694', '35.11971250350778', '!2d138.9164397658694!3d35.11971250350778')]

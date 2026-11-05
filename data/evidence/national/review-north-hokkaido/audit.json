@@ -1,0 +1,1407 @@
+{
+  "updates": 72,
+  "unresolved": 19,
+  "manifestEntries": 319,
+  "snapshotsChecked": 317,
+  "targetEvidenceHashesChecked": 91,
+  "mapProvenanceChainsChecked": 26,
+  "inputSHA256": {
+    "data/national/location-updates/north-hokkaido.json": "35f36f8f5803fdd51a8e8ca6c4855a1250c199ec574a616416b84852c9047bea",
+    "data/evidence/national/locations-north-hokkaido/95216dc93034a773ae6d.html": "70ee992308fd6424b6aad8c60da2c4f37b7f527d37c32602a5e0fd7fe38294d5",
+    "data/evidence/national/locations-north-hokkaido/731f8cd7630f272fbe15.html": "3f09fb5cbd4c0696a846eeaa2df964ef7eab662eb8d70e20deaceefe57839c84",
+    "data/evidence/national/locations-north-hokkaido/2d5eda1b2a98a63b80de.html": "2bcd1ce818f92c198bbb2186eb913d0c35ff95625bc24be37bcb110255ad226f",
+    "data/evidence/national/locations-north-hokkaido/ca78e2158e4051d3e450.html": "f79bd6a72e5cedfb9d260e96b217bfaa1cc962fa33eabc09a5349490f9d71907",
+    "data/evidence/national/locations-north-hokkaido/dda530baba4ea33f905f.html": "f542ca09c468b99addeec72c3fb4920e6bfc46317478ef7208a9a1ad90047277",
+    "data/evidence/national/locations-north-hokkaido/0e4814058205bbde7296.html": "cd5fcd7bccd3bbcee2ec3e1078d16cf23df500a9e20e311dc905fefb035fb9a2",
+    "data/evidence/national/locations-north-hokkaido/384fb954dd22075eed37.html": "665c16cc349c0855b4d6d8b57a6c270ed5b803c5dfdcae5708563f1f01bdd0c6",
+    "data/evidence/national/locations-north-hokkaido/65559aa9039992f3b90b.html": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+    "data/evidence/national/locations-north-hokkaido/1d47b79fb5ca809067a8.html": "9d5e124efe7ad5ef64f0f1574dfa4a7be90b21e52d7b972a697d959b3ebfc3cd",
+    "data/evidence/national/locations-north-hokkaido/f42b91b9152b636799f2.html": "64fbb0cd4cf7c4ea2c7271e941bf4016a80377662cd2592007b98bdc08198291",
+    "data/evidence/national/locations-north-hokkaido/920fb820d7c82561bf9b.html": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+    "data/evidence/national/locations-north-hokkaido/dfb7e9ea47743d8b2050.html": "9d7ac76dea7da70e341e8bd9625a5c837cc9c038e62a545884515e240705220f",
+    "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+    "data/evidence/national/locations-north-hokkaido/f35a00eb3a2cea206c2a.html": "a63ae45265a50c37e8fa513bb1d3de6b67c0d0d8ce3c88d7e0d6c287e329f1d6",
+    "data/evidence/national/locations-north-hokkaido/4639a1d3d2f6b9d9d6c4.html": "2db1132497d6c37f1544505bcf4ea9379d8762ae965de59538763f0ed77642ab",
+    "data/evidence/national/locations-north-hokkaido/8b304ef7c5a088bb9596.html": "f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d",
+    "data/evidence/national/locations-north-hokkaido/9f7b71e47476cac644a3.html": "f0c60398a91b594b81869ff56c12435913e7b1af8acccb4d63b7d931dbdce247",
+    "data/evidence/national/locations-north-hokkaido/df35f0042dff9b707dde.html": "3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4",
+    "data/evidence/national/locations-north-hokkaido/8e4b5c3f657b92c227d4.html": "e798bea8da037a0ffb9ebe663c90edd6dcad6c1aee14e4cf4f6cc3a5b8c57e8d",
+    "data/evidence/national/locations-north-hokkaido/281b52ddb6fe39d420b5.html": "f6457a981f0ae07041eac346f32d081bb38ad4e9de7adcc336b203fe23494bc0",
+    "data/evidence/national/locations-north-hokkaido/f51f60807b64bb28f7aa.html": "c405c7218974e6b1968b70bbb6961b14702046cd311174ba05f4b7c64c544372",
+    "data/evidence/national/locations-north-hokkaido/008ca8b41a4f9e5c6791.html": "d3e81bf901f62e5927515056af051228ca7883b694ee0ff3b2a3f9689d6db9cc",
+    "data/evidence/national/locations-north-hokkaido/5a2c6ac94a58477f6fd4.html": "7feec9aa7ab1d45de9489ac33dcdd1018d112d50e7f23573262b0c9c494362ba",
+    "data/evidence/national/locations-north-hokkaido/7bf04f6ad5f2cfe48b2c.html": "c83e1b9fe75b53835d0b4dbebc16cf3aaac91e9d2330d2864650bcace13f58ee",
+    "data/evidence/national/locations-north-hokkaido/cde0ce2288aaae43dfa4.html": "89334f61783663c5d786cf1483ff91a6d0160b0f0e55998623743a09bb31abf5",
+    "data/evidence/national/locations-north-hokkaido/22c8713c75f1215a695c.html": "769866510534b64553808a031e17ba6ee2f65dc5123c987883a1c9324044705f",
+    "data/evidence/national/locations-north-hokkaido/1624a4c8698d3758d864.html": "3d539ee4ce64339622296aa834aad895cf1f6213c0b25cc723fce5b8880d1550",
+    "data/evidence/national/locations-north-hokkaido/verify.py": "fe45632a98fdecb88801adc2c8c1cfd63246e8ca65dda5e587f578e6b325c8ab",
+    "data/evidence/national/locations-north-hokkaido/6b9d861efd2e79990765.html": "ffe733f615ab0a822524cb3439d65c38e03a1a8b9e33fc42a476f09aa04d8b2a",
+    "data/evidence/national/locations-north-hokkaido/5d3ee4ea1a208147a1c3.html": "4c9e8f181f190c7fdf5dfbde8f26bbdd01fb8b6e2085190859ac857ef3efc64e",
+    "data/evidence/national/locations-north-hokkaido/76def146db224596294e.html": "41f45f19da9018a8da899618455455128d8d07225136e9d5c1da30f225bf323d",
+    "data/evidence/national/locations-north-hokkaido/decide.py": "1d91e6461d210862bbc074da9ba0768bc580eb8ae2009e5601fbac979df49105",
+    "data/evidence/national/locations-north-hokkaido/8eaf40255ac4cd854ec5.html": "56f7f0158d4149bf9edabb75cf153219a5c05a2bf1d30e24929a988269ce97b5",
+    "data/evidence/national/locations-north-hokkaido/afff1ac2576ed89fc9c2.html": "08bf39b028dbc6b08caab078155403fb8f700e0feaba43610d9b0273df4effa1",
+    "data/evidence/national/locations-north-hokkaido/479de5ee7a8e8ffa9797.html": "7dccf9ddca91a3653e3c93e73adfcf037365024a3b8ac526b2aa56695a5582df",
+    "data/evidence/national/locations-north-hokkaido/aad7642ead3d00539302.html": "d11d1058bff4b164fcedf826a70539ec4aacb1eea69f6d048ec6e333685557d0",
+    "data/evidence/national/locations-north-hokkaido/eb8b84d0c9de36be8a8d.html": "3f09fb5cbd4c0696a846eeaa2df964ef7eab662eb8d70e20deaceefe57839c84",
+    "data/evidence/national/locations-north-hokkaido/103358ba1046cfd2b99b.html": "b0f280f12706de7da79ea397e65746e893b0a4a9537ed047ed7c5e3cc09ea754",
+    "data/evidence/national/locations-north-hokkaido/63a7229af9f5c974908c.html": "95956a52abc6d95392ec1b0d796c27809542e61f7d22f4de26b7b6d2d4763163",
+    "data/evidence/national/locations-north-hokkaido/af20855306d1ca89563f.html": "f362664e307fdceadc913bb904a380b25c0f4e51553b75fa91677fe96486cf46",
+    "data/evidence/national/locations-north-hokkaido/173634c8271c22795242.html": "8eb6312078684ca5aa132f1d3c13547c3f56c4a4bf6085708cf150ab38f424bf",
+    "data/evidence/national/locations-north-hokkaido/acb82530d57a86fa76f8.html": "93be33033fd2518259e3b460970e3f9086571ac7e73c41eb27e47dae224ea19e",
+    "data/evidence/national/locations-north-hokkaido/92cf45684d120fe8b4cc.html": "fc25467861aaefc67467f6faec6fa748c24ce4cc0772361e7ea7a840aa492009",
+    "data/evidence/national/locations-north-hokkaido/provenance.py": "5709d91dc8df3991fb1583712012202e1421835a48d6955edd7f7492bd40d1c8",
+    "data/evidence/national/locations-north-hokkaido/research.py": "b0c4c4f62c9518a602d0bd70618b3001a745b37b342a27035bf87ec3ce3722cb",
+    "data/evidence/national/locations-north-hokkaido/4e157ed0b6f8bf96c778.html": "8b9321174083b32cbab63604842226c76fc403911071f24ea83fe1c71aa0faae",
+    "data/evidence/national/locations-north-hokkaido/56d4f9fabb4e23e32fff.html": "c79ed715d683912a35d20e29406f3d169e307b7ebd4c4a1e2ca6d8d89c692a1d",
+    "data/evidence/national/locations-north-hokkaido/a647e657ade92696100f.html": "4aef72d659b977abeae77cc8f4844e6f71949063f9ab4fec454e3e4a6ee7c5ef",
+    "data/evidence/national/locations-north-hokkaido/ddd005d976708bd520d0.html": "48ff39a156b0fa21827bfeb9349b6d34c3f0c8cba1775aae69fdda938a36c7fe",
+    "data/evidence/national/locations-north-hokkaido/decisions.json": "8ff9b23aeeebe9b1ae4be38ce699d9050dbdec484e441a949100d56ad1048975",
+    "data/evidence/national/locations-north-hokkaido/3c3a7feb8e0958fdc16d.html": "defaff069e9242ae5dc035967a7f4447740c644a16821df5e43d45464e1961ef",
+    "data/evidence/national/locations-north-hokkaido/99276ceaddf7060352ca.html": "9a7d9885e01230416e474e561a622301f67b5ea8dcd6074e734cbf61d17df75b",
+    "data/evidence/national/locations-north-hokkaido/20fc5620b114b6bef840.html": "177a34708b80f71e7737a49cac33aa1d8438d071e4073e0759c5cc25d9f006f1",
+    "data/evidence/national/locations-north-hokkaido/8881acc2df1cbb10f59f.html": "e990cbc546c2ba75c37b915e176ae0c30523978ba81bc22456a8e2fb3d12c444",
+    "data/evidence/national/locations-north-hokkaido/f2942e3ca05a599f2255.html": "da35561cb3f9e9bc8d445088dd185eaf0dd3a299913da805186994d464432c8e",
+    "data/evidence/national/locations-north-hokkaido/e4ae60bf7f64d0402396.html": "9646968ff6672acde4d435d96537f1e95730e359b91c15d2cbb81b3f7c2703cf",
+    "data/evidence/national/locations-north-hokkaido/f2068910fcb0690bb167.html": "b95e427a241b357f36e4289846fce80db970dd031c44225d2f65869b8cac096b",
+    "data/evidence/national/locations-north-hokkaido/9302a1eb1aa2b83c9b3a.html": "4b98710dbeb23843a772fab8372e94eaaca1835f9cb8020f9d6a4f5cf65ab693",
+    "data/evidence/national/locations-north-hokkaido/aba098ea912881a1ae6c.html": "6eeee94f77f0a43399c6ac354337a2d66980eabc383f825d824d19f6ef075661",
+    "data/evidence/national/locations-north-hokkaido/ea7df1919aea0c85e7a2.html": "02893a24c0ecb3be12b7cd8a5bd5d30fac75c58e911fcfd41a103a40b0b0e2d6",
+    "data/evidence/national/locations-north-hokkaido/a806f20e75fc6798c577.html": "c0f55700cbc97ab8ec452b66c508087ff98153b97a407ef8f7b01453fd856c33",
+    "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+    "data/evidence/national/locations-north-hokkaido/2f211d4fc3515c14b657.html": "e1ce245060fb8705232483e9ac44cb864439d599d683db98982b0e7fb85618b1",
+    "data/evidence/national/locations-north-hokkaido/3e964baf07dcbc47a128.html": "c0f28497aeba82b740fd22bbd1f02c4bfa9f198b8a7a6be9e345a6927fbdb6e0",
+    "data/evidence/national/locations-north-hokkaido/a09dac92dfff01d69cc9.html": "174bc0abcd93442c0bf2feb0b73c8d8892fdb4d2c2cd562fc51294c3cbdc1c54",
+    "data/evidence/national/locations-north-hokkaido/2ce06df7e02bebec53ad.html": "01b477df02c4863ad41753b495966c7071448a6a7aa838fdc3f7e78943a45776",
+    "data/evidence/national/locations-north-hokkaido/b4838813958d16ec0c4a.html": "12572bc7bc0ae81935f1b20c001cacedad294d57699b2b3681938ad267ea4d8a",
+    "data/evidence/national/locations-north-hokkaido/8f5a8e458425d41bbab3.html": "09f5b22d28383d89ac5a03d84a19b6edcc0edcc832d5a23d7b44c735b3b967dc",
+    "data/evidence/national/locations-north-hokkaido/5be022b0ee589ee97a14.html": "0c87a72ae5f9993a3f5e79ef8a87aa973ff82fd943d71b34675f56f121112248",
+    "data/evidence/national/locations-north-hokkaido/1b063b391145c59e54f0.html": "4f414781279e22bc27b9117461912dd266618d3bb67cb51b6bbc390bf3fd8353",
+    "data/evidence/national/locations-north-hokkaido/a5c9d596de4b471edc47.html": "9d500a69b8c3132f457095613898d84dc8df664d06992db65746b188c7c77e23",
+    "data/evidence/national/locations-north-hokkaido/c0f92075afb25f9326bc.html": "cd0d97da28fa0ae77884c005dda72fd7cf5c8fb9b3f5157b688a9de1946d905c",
+    "data/evidence/national/locations-north-hokkaido/e681c226584f95bc1855.html": "76bc7cc165b9f61a0c11e539984093367db65fd2c938b8134416ca39e2a8bb2e",
+    "data/evidence/national/locations-north-hokkaido/4499e1e680efec80480b.html": "7851bdbc8d992e4e6b986f6e1ce83e5586e497f2b92e4e627ecc2fe448cc4263",
+    "data/evidence/national/locations-north-hokkaido/c3ce801f7d8e2107daa3.html": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+    "data/evidence/national/locations-north-hokkaido/build.py": "c1eb565649c61697ec11da0a23b06a52c22358d41dacd4e71034d60716a84f47",
+    "data/evidence/national/locations-north-hokkaido/f8e7da96a82deef011e0.html": "f330bdff6ff84741e127abcd2b2dac81246763954233a8fbcb37b093337c3e30",
+    "data/evidence/national/locations-north-hokkaido/9a70653355440fb6b3e9.html": "cd8f61bef2c3a23be8b674fcb994a56cc579a2e95eb14bb6bb70717d3f7c2d6b",
+    "data/evidence/national/locations-north-hokkaido/5da48809e18e8ecbf021.html": "0341b6cfedcf450a7415fb6fcdd9fb1055c168c8e2c2837f31a9b0250ae6af69",
+    "data/evidence/national/locations-north-hokkaido/6199c4b148281e542f3d.html": "d79553502652b10267239c87c1ce7259eb77d6f3176f64fc774db7747781f28d",
+    "data/evidence/national/locations-north-hokkaido/8371f626decb61bac08b.html": "0af5e73e494f0450b3ef26be77111547c2db1b1f178429a413e3f36890536075",
+    "data/evidence/national/locations-north-hokkaido/05d937085fba40facc7e.html": "a954f71b622dc358715af21cc8236dffc2945a2d24038900b22b93b61c9c9a27",
+    "data/evidence/national/locations-north-hokkaido/2a8170ddc40140b967ea.html": "b9e263816ac3fb981995ea8592d126d4c2e429368d3ddf07d6c09d7b79e8b6ba",
+    "data/evidence/national/locations-north-hokkaido/validation.json": "6c3cda2ab514273d5f583048fa45c0748aabd7fc6fb75d23de959ebc88542fbf",
+    "data/evidence/national/locations-north-hokkaido/6712da8317dbc7438cfc.html": "0dc4fcd8b39cab78569e24c02dca4743b0355de39b7feb56a0af2dec4398feba",
+    "data/evidence/national/locations-north-hokkaido/accf6c97d75e4897ebe6.html": "edd23e9084b1fbdef3978cd92ab9b1eaa7b341be9f60ba5a5121ca232c7e5637",
+    "data/evidence/national/locations-north-hokkaido/8e9f10129363f004c58a.html": "c565dbaeeb1ceee4bad17ee91de37297b5e558f28172eedb1a2cec6fe6ff1c12",
+    "data/evidence/national/locations-north-hokkaido/a03a4191d32c7e58dbd8.html": "40d6ebe0c14a50c4ad907eac77d0d9e8c82080e76f12b63bd6359949203bbaa2",
+    "data/evidence/national/locations-north-hokkaido/fa47d7c578728270881e.html": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+    "data/evidence/national/locations-north-hokkaido/c435cfb3480ed3432139.html": "af9d7e6dfecec8f503a5ba465799e70dc2356f3fd13d2d3543699b2a86288096",
+    "data/evidence/national/locations-north-hokkaido/2976a2ce60abf894ed37.html": "8858c30b8c13539acd9b3e721fd04357201bbc69eda793d81c2b49584f503e70",
+    "data/evidence/national/locations-north-hokkaido/b558e81b856c778e4297.html": "dd69abe6073552c8e2dc58ab5af72abfb42c8f1538025897933a32ca7ed32a85",
+    "data/evidence/national/locations-north-hokkaido/b82e827dc1c9c6f38126.html": "5f0215b5f1b38d575cbc21fa47554a902ba72d167530e5b9fe58a3312eb71e92",
+    "data/evidence/national/locations-north-hokkaido/d75ab90df351b1c82e03.html": "61233e07e33435e9373621e87e212595a8a5e59e6cd7cbf2296bef97e8e07180",
+    "data/evidence/national/locations-north-hokkaido/4bae97392c29d3de730f.html": "e54b4e9c363e8b3c3fb1d6d0b3ab685143b4012e28a0ebfe722f25b16f0cbab6",
+    "data/evidence/national/locations-north-hokkaido/24c772f955e23adcaf25.html": "8ddf25c212f03ae9d4a739005c37468f0cd33d7ab5008b694fa69ba1b8c1cbef",
+    "data/evidence/national/locations-north-hokkaido/dadc86952a87dca89cb3.html": "25dc73df2cae7dcce56abecb97e50266fc2dfeba4ad8177d070dd8d89a062fee",
+    "data/evidence/national/locations-north-hokkaido/e17fb6a3781c5086e49b.html": "7f54da4c908cfb34399e5011a817b8c0f4bf72c645ab894eb1cc1506e4c7ffd5",
+    "data/evidence/national/locations-north-hokkaido/1156e27c8e1e1119dd63.html": "40969f176dc5a9e9d96e38f389acf024bbcca6daf8497ea28e15114160f50386",
+    "data/evidence/national/locations-north-hokkaido/8ae75c9e1ecdb3fb6a27.html": "93200502d0d57c848463db824d03c3f2c4081f8d0a7160d7a5160b6090a9470e",
+    "data/evidence/national/locations-north-hokkaido/bbd1ff7665373506b218.html": "8a8ef2ff4131e83af867ca2194a95f664dc7007e0c1cc268a1749a9c8a7f903d",
+    "data/evidence/national/locations-north-hokkaido/584e495198ebd0f81392.html": "6694f16ff4266ecaa5e3ae61c1b2a21a29621bc675d3f60d546f39a426f97a29",
+    "data/evidence/national/locations-north-hokkaido/01fc9a144e0e190d84e4.html": "81eaa3eaa6ad70aeccdf4be65f93139051ecaf0439681d9548ed29cd98121d33",
+    "data/evidence/national/locations-north-hokkaido/644a6812f55432083364.html": "d7fbb2f858983f4928180fc347c22dad4e49b0bf91c738808117e4b842dd7660",
+    "data/evidence/national/locations-north-hokkaido/64eb047597cb10e9f77d.html": "50327b3773716c0c4520127dd87e79b1d5e456a7c8266a81d558e37481d60294",
+    "data/evidence/national/locations-north-hokkaido/de35e8e0dec6c9e3d1f6.html": "ace7cfe453ef7b5027338741d5eb9a485b4f948a42962a8ea6ac35f353d05f91",
+    "data/evidence/national/locations-north-hokkaido/7061ee70c54ddee9ec36.html": "a65285dde2b500b705bd0be1812ebd30a890367a79a36a7cc9f5b10a56562e88",
+    "data/evidence/national/locations-north-hokkaido/stations-urls.json": "7034a7c5ff7055be4718530259e8383b530385a73eb8c15945307fc2e560b73c",
+    "data/evidence/national/locations-north-hokkaido/44074af416e8f0ee4fd0.html": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+    "data/evidence/national/locations-north-hokkaido/README.md": "477256a22cdf85b3d61d76ef7a7d2e16e360fa6d307c796cc1284adb547ef726",
+    "data/evidence/national/locations-north-hokkaido/e5bfc14ece08331b8696.html": "72b42c42bf7febe088ff7ed136452ca878da529c3f688652f514479156d4bcc3",
+    "data/evidence/national/locations-north-hokkaido/3fbb5ed8f592bba01341.html": "5030b8ea6294277c2f29ffd0ad662bbf9f5618ec676655a3ef55379d76787ae4",
+    "data/evidence/national/locations-north-hokkaido/29dd1798520d4b7ab637.html": "f9ece8279f2c2a8994b6b5f36997e8ca0c79e3554175ba6b2d39c1b019f8e4f3",
+    "data/evidence/national/locations-north-hokkaido/d77e4df40c32f13e21b8.html": "f1f00a56bb2327fa4cf5d20f804bd68e7365e7152ab3fa266fb90aba9ca967ff",
+    "data/evidence/national/locations-north-hokkaido/9a1a4b12adece8180c63.html": "22e88e321d9f976994182b97773df30a0eae6c2db890a8e00f24e69a6a600909",
+    "data/evidence/national/locations-north-hokkaido/abb6dd1f56a7c4f32ce3.html": "99f222e4325b1ee7b39ee5bfe0ab5b43444c972d056720f3b3cca121a2ac5eb1",
+    "data/evidence/national/locations-north-hokkaido/097290f7b0fe898aafcc.html": "ec2815665e93e7dba001df644f85afe82072ddec04a32dc8126239b8181afc92",
+    "data/evidence/national/locations-north-hokkaido/098721eac80c141433ea.html": "fd1b60c29e4a91e9cc987ff488a831fcbb10b36f14904a8aceb9e204d81811c7",
+    "data/evidence/national/locations-north-hokkaido/33a695a439eb99d77234.html": "39ec7a440fa81282be1ad0cd273c548828bcd50abad8da730091bce910fdd4dd",
+    "data/evidence/national/locations-north-hokkaido/6ea003424819b70d4526.html": "49266924d7f22521a687fd1b988f85773a55070a46755a769df21a4a9014236e",
+    "data/evidence/national/locations-north-hokkaido/295ee642b0a5558a3d4a.html": "cf4faa93e49b629aa89d1ed85633fa1c3286fce34903c0b8b17d0fe34d11f64f",
+    "data/evidence/national/locations-north-hokkaido/86e51b62c05d09811956.html": "577594383873106a03e5ee52d7672453e9075e75cbbc35e0eaa33e0259ec5aa1",
+    "data/evidence/national/locations-north-hokkaido/8363eba393810a6ff971.html": "0d772dd1aa5890a23be87f3d510fb38d15d0f078882e4d73eac173aebf374799",
+    "data/evidence/national/locations-north-hokkaido/e3fc53e5e835a6bc99ae.html": "54824c8fbd37a0c131977475ff0781159eb0f5231b542265a60d0f6e7da061b7",
+    "data/evidence/national/locations-north-hokkaido/77fa865f18457149394a.html": "f06729229670415afbc8dc9d77bb2db7b52059859d1a2157806c0befc3f6fbdf",
+    "data/evidence/national/locations-north-hokkaido/e5debc49fb9510a5691e.html": "ab63f8ca818d1f6388d75e3ecf466787a4b766d592bf3457a1ee7c269481b351",
+    "data/evidence/national/locations-north-hokkaido/2e5c7e8c46abe8d9839c.html": "671fbbdea014cfc558e04fd82bef460b6e59223cb641d79b16acaec6c1ea5973",
+    "data/evidence/national/locations-north-hokkaido/d7a209d8c66322871f43.html": "d7a3754e5064fb53bce0441a2784f9e74f1a1a5dca3bb9162b5128a161037d40",
+    "data/evidence/national/locations-north-hokkaido/a115a9f0ef6b631757ff.html": "9334da20d6450dc06c8b34472e2a21516bff7067dc6bbe64b89dc144ba8789ec",
+    "data/evidence/national/locations-north-hokkaido/0c7640db2ea8af858b25.html": "71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f",
+    "data/evidence/national/locations-north-hokkaido/cb5edf7837c9c0c38dc4.html": "a74b3cda1e7f4ecbd989ce39b90364f3d658388049f8f5fe95da76d32b765b7e",
+    "data/evidence/national/locations-north-hokkaido/3db097295d3167289dcb.html": "8e0781093f725065baa373857aca5f84936b65a3ceb34e038ecd13e46fca7d7e",
+    "data/evidence/national/locations-north-hokkaido/d69ff3d5f1051a01bd53.html": "c06d0122e981d5e0ae6a11205f6220b281e42362b40df5bf35ca87941bae2766",
+    "data/evidence/national/locations-north-hokkaido/c9f8fbfb8326b240243b.html": "aacb2c5a6b5270726ac0d7675640df9ff01432e173580c6651d7e50f6e42d6df",
+    "data/evidence/national/locations-north-hokkaido/5fd1a2f1f1e431f4fc0d.html": "e61aa34e9400b0d316fcb10af05222965c21f7a2adc9da656b1788e1197d7294",
+    "data/evidence/national/locations-north-hokkaido/314645142c41660ba162.html": "215dcb130abd62ab07dbcd17718d49c4d3952607debf46a59560102dc86ad162",
+    "data/evidence/national/locations-north-hokkaido/283a55ead38b50c89d51.html": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+    "data/evidence/national/locations-north-hokkaido/7b34d95a71fe5bc926c8.html": "941f32af1c918bbf549402c09c0e581132181acbefe33cf82e58216d2785c352",
+    "data/evidence/national/locations-north-hokkaido/c2f82a6a450d9eb484e9.html": "3fd08dcfdd6578d715c9fae30ee1d5f56b37064bfae9c8e4be4a1aee2e6d5c84",
+    "data/evidence/national/locations-north-hokkaido/c0f1991e01cbbb6f70e3.html": "2f95a122be27d19e2fd5bf08ceb0178f25a2ef323b05439f9418367b6759fa5c",
+    "data/evidence/national/locations-north-hokkaido/9308b690de225ea37ef4.html": "567c7b5ca2ef3cdc4f78b22cfec90e14c2f19cd74b4ca1f92698946eeda425f0",
+    "data/evidence/national/locations-north-hokkaido/extra-urls.json": "83ad54cf20e37515b41508540a823695c746196e2ecdb8aade74011c17cc5944",
+    "data/evidence/national/locations-north-hokkaido/c31dc9d2b1b55aee9af8.html": "c5ba60a09d14f2107de37b7829ffead311aa6dac59a1b27535dd38ba068e8190",
+    "data/evidence/national/locations-north-hokkaido/3a04f8287a023774592b.html": "941f32af1c918bbf549402c09c0e581132181acbefe33cf82e58216d2785c352",
+    "data/evidence/national/locations-north-hokkaido/c623b884dbb1df26069a.html": "b0e06d69f6565d22b05b16a460390b41fe084d890b1ffd1d4eedec3a4a5a393c",
+    "data/evidence/national/locations-north-hokkaido/ef0f04353bf642355381.html": "583b739a9478785694bd52aee47f2ffbc8186151ca4e7f3b9fbbb55d650915f3",
+    "data/evidence/national/locations-north-hokkaido/9f928b49cbf77db02c7b.html": "85d80788550432756e3631d5fe6af617cd89d09239df3fe17e65d7b9d53f80e7",
+    "data/evidence/national/locations-north-hokkaido/map-features.json": "b690df7b56313b4bc0540d7a2138952abcfe4998c8d884e3765d180dde889260",
+    "data/evidence/national/locations-north-hokkaido/f76c33b6efc2964f333a.html": "28c5552ebe675217f39f02320d4827c15f31a8089284606a66bf597650308db8",
+    "data/evidence/national/locations-north-hokkaido/8de2c220779cb6d1bcaf.html": "6c8e997a416ca26bd05e2e7656ae16dd0931107c780b12ef729dd59f999c6d22",
+    "data/evidence/national/locations-north-hokkaido/facility-review.json": "ceb00c5829771252ef01a37b6c16bbd1424c40b6295be9f3462da7986ff8395a",
+    "data/evidence/national/locations-north-hokkaido/1adff71640cbefbab22e.html": "5b716d606ede4c46c9f536ef298c26c8a19d12d7c8a639122a94a7d45ebadb4a",
+    "data/evidence/national/locations-north-hokkaido/819d7056d7aa473ec866.html": "8ecc65dc79d60a7055a57b53269715a980d80d11e7d1d4056b367ae997d901d3",
+    "data/evidence/national/locations-north-hokkaido/100cb00ba996681f9407.html": "ff903d898d5ac909d4d571e6958f58faa13a85cfdab594523c2af5382334d376",
+    "data/evidence/national/locations-north-hokkaido/4638dad4d5d729ca8702.html": "9ffff75918402142b0daef807aa9b603717dad50e92fc10eeb656b906001be08",
+    "data/evidence/national/locations-north-hokkaido/0c6d9da300693ca12aa1.html": "690504e9e4bd4f085e7ceb2e76292e19629706806739c122d3919d58558b0750",
+    "data/evidence/national/locations-north-hokkaido/7d1df694cf9daf6f9cee.html": "42818ddfef3d6a5bf74aec9f3a17bafb3adc3ca6151c8d463848386fa6328bac",
+    "data/evidence/national/locations-north-hokkaido/19cc01ef3c3c46202295.html": "23c5a41c0e4958e5479927872d1a18108a155c0b65785d75f13823f412526025",
+    "data/evidence/national/locations-north-hokkaido/4df7e9128bf0c1c19e5a.html": "8831dc5aa6a7ceb11f81394e065148712af302d06966ebe7928bdce46965f0ec",
+    "data/evidence/national/locations-north-hokkaido/1d7d473883322740458a.html": "404384b921394174d79fb7c3f01e92572919777e06f31f642b1e1ee961a1b4f2",
+    "data/evidence/national/locations-north-hokkaido/1c410c9d68e72fc741cb.html": "44bdd75ffedcef924b82d043d25ac872d55af7445274d0eb7e9098eeee35196a",
+    "data/evidence/national/locations-north-hokkaido/2d7edf7054161e5555a1.html": "f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be",
+    "data/evidence/national/locations-north-hokkaido/2c78104fb9201a15e078.html": "4b20070fbaac30893eef9031e2dc4793a977df04241978b8b822002e941aa0b2",
+    "data/evidence/national/locations-north-hokkaido/03c00d718142218ea7fb.html": "9f52832b9a450fc5a052ca08ae89b83ce8dcb10141099f038b5deca9b23f6cf3",
+    "data/evidence/national/locations-north-hokkaido/026ecedb363b59fa9db8.html": "921b9ab48100c246b4b9d86e8d1ddf6e2e349c4ae501885d1b0eade49ffcbe8f",
+    "data/evidence/national/locations-north-hokkaido/2b4937bc705f29257c6a.html": "f5fb863baf7187dc052c8e52f7e951fa8bff76751aae59338ff7df7ee7cab23a",
+    "data/evidence/national/locations-north-hokkaido/e537e19592e031b38f35.html": "376d7acc5496f30a0a680afc1e0ce2fdc10125dacd243c34d579a672f14f76e3",
+    "data/evidence/national/locations-north-hokkaido/9119236764c52e68c9c6.html": "f4a6924f2419840af39e9b24d7f394b58b2e15df74fb36118352c2234263edcb",
+    "data/evidence/national/locations-north-hokkaido/90a2519b76573734d179.html": "10e2295b7874b73100c9482f02509606de6e7a997e12ab27446f5585b5ad9b8a",
+    "data/evidence/national/locations-north-hokkaido/804e7cfd3002336d8cfa.html": "a70f068a59837fca23b178b2b5461a99eb109a3aea529dc1e2f34f160409362b",
+    "data/evidence/national/locations-north-hokkaido/3d0e760b191099785499.html": "002574dcc8faeaf9eda2505c4924bd2adbf5ac880c009eb088f7b239a78f3b4e",
+    "data/evidence/national/locations-north-hokkaido/3e5c32c0a9101f16320c.html": "c98426f6b7639d5ed1ded27f646c3c455af3b088fbf029f1139b8a6e0948ee23",
+    "data/evidence/national/locations-north-hokkaido/a00dd41639910d81a803.html": "6373a0206151feb561410730479a1ac1f267f91b3af8616434a89043ecd427f0",
+    "data/evidence/national/locations-north-hokkaido/d1429ec6d54ed6045fde.html": "50ddb45d48ae7349b6d26a3ab25ba511fe89a43c27bdd44cea95c74ea3adff2e",
+    "data/evidence/national/locations-north-hokkaido/177842aeb9a82c3dc1fc.html": "cf72a35b8f5fc302d0bc8646518f749f8af56ac4083e82702efe1791913ecd8a",
+    "data/evidence/national/locations-north-hokkaido/d107671da4b57c1b927e.html": "f05cd7ca74eb1de6b570c53df6700485e5baea19592b2a81e62a6c0d25e7502e",
+    "data/evidence/national/locations-north-hokkaido/c0acec4662e9ef30c925.html": "69b7a179e72b0411612ae77bcfef5668cb70a280e7b8831577812f93631b68bd",
+    "data/evidence/national/locations-north-hokkaido/437bd5cc1cb525bb3301.html": "10e2295b7874b73100c9482f02509606de6e7a997e12ab27446f5585b5ad9b8a",
+    "data/evidence/national/locations-north-hokkaido/923c64226e0f58551289.html": "83c532d86ddbaeb72c58a2feb15a68d0879eac868d992541a4b76e59a41845ac",
+    "data/evidence/national/locations-north-hokkaido/d4960fcf61d4a2dacfc2.html": "a417d85e57abbd06197ee0e3a8488f9e2138fcf4255786ba53ef2931346c9e5e",
+    "data/evidence/national/locations-north-hokkaido/f17772d7b80f5bd76228.html": "04b0093f4a76be4efe81435e755dd617f3dcd2b31e2125055fe184455dd08195",
+    "data/evidence/national/locations-north-hokkaido/18d004ed10145ae991b4.html": "2c58ad936f4dc88d4d187a1d890730e51aa8faf366dfe8b3c4c256a7c5526696",
+    "data/evidence/national/locations-north-hokkaido/ef622427d80183dbec2e.html": "21e1e799b9c4e7f0e6e32fb4c5020ec87893cf8f86b94baba9b14c3349b700f0",
+    "data/evidence/national/locations-north-hokkaido/ae1405fa92ef0157eccb.html": "50f568619e6947c391e33f99f2e0838a20ecbd44af5346a86558635a4fea4968",
+    "data/evidence/national/locations-north-hokkaido/e3740834c97c50daecea.html": "fe2d2a4b01f7d660b1e395dca287740d822d882287cf2117e4c7afb7d378ba64",
+    "data/evidence/national/locations-north-hokkaido/more-urls.json": "ef4d4f7fef9a7f7d378faeb6114944a1fa222fcc1f4b089fc6f53ef240d02b11",
+    "data/evidence/national/locations-north-hokkaido/a33c63d0774b414bf1e6.html": "cae22cb73c537aca5e6bd461b46f92e788d224cb1b4e03eb00d0bef2ab147301",
+    "data/evidence/national/locations-north-hokkaido/638e134cbf69761eb8dc.html": "4cd35a331c568a5072e101c8554060c8e82b4ff752a710cbdda87fefc9361882",
+    "data/evidence/national/locations-north-hokkaido/a3b8ffcf6cbaedff68bf.html": "c56521afb5873939094dee135e3253d7df48a536b8db7ec5c89b881742c97ee7",
+    "data/evidence/national/locations-north-hokkaido/access-urls.json": "41db0fb98dda2a9f9d81c1104aa2f1b5cb1a9a4ccc878015bd50b4de45afe176",
+    "data/evidence/national/locations-north-hokkaido/77828481921e90b056ab.html": "c9a635fe13225d63d2f5b1c9b7027b052c658a95b0d5ded66359473417ebcf15",
+    "data/evidence/national/locations-north-hokkaido/55359feb506395a3c75a.html": "66a1a75845645000586862183b2cec04fcb71b009c73e6c9b51eb1ddfb71e806",
+    "data/evidence/national/locations-north-hokkaido/5bcc6916c26c7d1623b6.html": "cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a",
+    "data/evidence/national/locations-north-hokkaido/ca4bf14d0509fc47429b.html": "06dba1824a6705f3177388f3ba77b94bce9430d8bd11f5809c09eea807395383",
+    "data/evidence/national/locations-north-hokkaido/1cbb1e24d6181b4cb7e1.html": "5a3f9d37358c3e4464a1d0b9ed749f35079c742f1bba72430c4147021d07544f",
+    "data/evidence/national/locations-north-hokkaido/public-facilities.json": "621f5f4919ee8ba7ab39997968a7438894d280204b038dda239ab158abab4cb5",
+    "data/evidence/national/locations-north-hokkaido/accf777010320aff33ec.html": "122b528a14d6e73ccd443c2073385d6634f9d60652c2eab1ed951685f49c30fc",
+    "data/evidence/national/locations-north-hokkaido/a085d792539775f257ce.html": "f946786ffc7b983aa4c0b99ab89664d1cc9f2b2bb756488a461440c33fcfb051",
+    "data/evidence/national/locations-north-hokkaido/52f112e97a6a910853b9.html": "c4df2a021b5cd1eb8a3afaec847bbbe58a55195d15467890ceb3ad43695dcf71",
+    "data/evidence/national/locations-north-hokkaido/7988ab3a7775e90a7ffd.html": "57afe45ef49e96db02f315cc6cf1a534f6e71801c6bac2a96ba6e40704d32274",
+    "data/evidence/national/locations-north-hokkaido/8f23d9aef678cacc7862.html": "7c851915b7811de544cc9e2d609f1292a54bc63b7bc568f0c63ecda7c079b316",
+    "data/evidence/national/locations-north-hokkaido/bea4feea639a0a42f99b.html": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+    "data/evidence/national/locations-north-hokkaido/ba5ba9ad45435736e708.html": "0fe181668936105d1ed5bcb6dfea099f71b4f01dcc3580f787ae4c4ad847fad2",
+    "data/evidence/national/locations-north-hokkaido/f2a3aecaf5a6ce8f0fe2.html": "bac0180e9ebc962ea3805eec6ebfd465668a2cd148f73d7d90636a23a929cafe",
+    "data/evidence/national/locations-north-hokkaido/a3411088c7f54465ea25.html": "f806c4c0921852057f1e61e524a65ae60641d23b9c79d066064be66b1af93971",
+    "data/evidence/national/locations-north-hokkaido/c32520c8956a9eb070dd.html": "af9d7e6dfecec8f503a5ba465799e70dc2356f3fd13d2d3543699b2a86288096",
+    "data/evidence/national/locations-north-hokkaido/9ab2b03d8827b6f60be3.html": "ffb9d044fa43f182883053956043e3e3252a10b3b36dd2b28dc96b582d252301",
+    "data/evidence/national/locations-north-hokkaido/f5e859e12d329fe91be1.html": "2d04483cf787940925cc796eb4cd10e47a4691d83fc54e7fab5b27d3e736cbf8",
+    "data/evidence/national/locations-north-hokkaido/230c5368ac97be0901c6.html": "043724b4890c9f651786df0bfc173a74cd1e432dc62ef732980cdd12c412383d",
+    "data/evidence/national/locations-north-hokkaido/d11ef2c7c8209b21b9ec.html": "7e240c36d8d7a3c814939f17fa13b5ed92ecd8ed6e899a8f91bba471952702a1",
+    "data/evidence/national/locations-north-hokkaido/followup-urls.json": "abbdd20cd4c3887a26828b2a454a7286b341ad1c36da69718df5488eb479ed11",
+    "data/evidence/national/locations-north-hokkaido/585c02601002ed2a8888.html": "60c7565516656512a548ba929ac4cf2676d457ac851c7063c90f2b540701db54",
+    "data/evidence/national/locations-north-hokkaido/4ebd52573a4fd121c741.html": "722a936a6b1ec3c477a2a698b468944cc8e5c5cb8b8235b22f91808a5da1e665",
+    "data/evidence/national/locations-north-hokkaido/4e68bfc02d3889e98f46.html": "2bbe2e462e749d2b67c0d41090d132d93f0d2ca8bb84f1b343ef23ed5ea986d9",
+    "data/evidence/national/locations-north-hokkaido/d921a292831042cea16e.html": "846efe6b27dbe10ca8ceb72366faf21d56d556507978d055c2eba1045bef0cde",
+    "data/evidence/national/locations-north-hokkaido/0e119013c79fc7299637.html": "5a61d1d5198a8e765f7cc8f68e4608a8a81c569666e4f2394470be25058d2845",
+    "data/evidence/national/locations-north-hokkaido/d3fdf2c2d7645d59b1e9.html": "1b342b4b99e9b71b775f5ffc881507bffdd8861e5666209739cb2e0dfc6d4119",
+    "data/evidence/national/locations-north-hokkaido/1cda2cc615872af49883.html": "e837dbaa50844f7bc69b35d2394527b3744c907774ff5a831d7c5b35f8a79f1c",
+    "data/evidence/national/locations-north-hokkaido/42b0450ed3dd9e8c10da.html": "17080e814e890c63897ca220dbb9f1eda7eb548d1620b1c1ddf43bf49e6c48eb",
+    "data/evidence/national/locations-north-hokkaido/b24b7603d6eb66dbe2cb.html": "d97c5cf29ee66ccdef84bc5a3a99e778a49c0461be49f9c32f698ebcfb7f165a",
+    "data/evidence/national/locations-north-hokkaido/9f4fbe1a9ab3c167f0c0.html": "8f490e576a2e0e8711c6e3c932f05805e78060d26d6be07d295f016e2aa98103",
+    "data/evidence/national/locations-north-hokkaido/8c1ade7923e5be6ae739.html": "8bbc23c4a1422a377437bb900a7ec7fd9cbb964ec62acff2bf29d1eede13452a",
+    "data/evidence/national/locations-north-hokkaido/bef206aec49faf215608.html": "397c151272967d635e6b9e8f86a2b5f7611b5252fa47ef2a820ec55246804306",
+    "data/evidence/national/locations-north-hokkaido/6a0444a16542c09fa97e.html": "bf2c1d64dd748ecf754c394ac7d3dca2019f5c263b712605df77be08ffb79701",
+    "data/evidence/national/locations-north-hokkaido/e701478d17d182da4a43.html": "dc3f563a3d82c925c9990bef4dc8c017dffd8f61b72b50a2bdc2c114dcd56986",
+    "data/evidence/national/locations-north-hokkaido/ecabae188fe26752ea84.html": "60a7846918c584bc1c48a2135bc13746e6c6b17d0cdefa4019809af4153bc7cb",
+    "data/evidence/national/locations-north-hokkaido/f14ea543346e0ccea42d.html": "b38a1cb1506e6567570577c9ce874eb1a8b4557542d7279cae2cbf5edd02ce18",
+    "data/evidence/national/locations-north-hokkaido/4e44019fa20d5e2b23fb.html": "ff2efba007627d325e32faa6cc40a6054542f1ec87ca6b1664c5f9cdaaca06a8",
+    "data/evidence/national/locations-north-hokkaido/640392d9fa3177528fc3.html": "3070bc171524d4c37f2ddfb3a36af2735604a6b8ff63bb64eaab002c9121b317",
+    "data/evidence/national/locations-north-hokkaido/fa0e95990826081c6b86.html": "7c7e486dacc6b4b4877e084fbe731c1c3e649bc9e062be9577ae6663d6291e73",
+    "data/evidence/national/locations-north-hokkaido/a60a2dbc3fc9684cf33c.html": "a682477d65be9292427ca6b7fa8286dd76c1336c5ab04477aec68315da209b14",
+    "data/evidence/national/locations-north-hokkaido/9f170e7bc624c774a64f.html": "db75f9d6a3efdb2f019fb9db2dae799aee40503248e0a09ad8907004484bcd07",
+    "data/evidence/national/locations-north-hokkaido/b5d49e3629ebf8ec337b.html": "2de08428ad471732cae1595746c9b5d748c68cbe0c14091726e6f05b2d43dc13",
+    "data/evidence/national/locations-north-hokkaido/6f48fb64277a262ecec2.html": "5f380493d99a268fc05b86962b8b02eab5f59d0c30e2bd3238bee7e389fc2046",
+    "data/evidence/national/locations-north-hokkaido/ff930945910db7b27554.html": "82d4010892a0cfd0c2f98e4ab8c2873629a01b2faf0e39866089a5ec72df41fd",
+    "data/evidence/national/locations-north-hokkaido/59fc75c4eb8894b07c13.html": "e09a0a3c57ef02385585f0203ddf67fa0ba79cbba50f793f7b0c8cdee96d2926",
+    "data/evidence/national/locations-north-hokkaido/843ce94b6d1c2682b4d9.html": "6557f7ff415c892b77215030e71ac41aab08e00389fbc20b73de1041abc5d2a2",
+    "data/evidence/national/locations-north-hokkaido/8ab613a0d76259f39fdf.html": "96b9beee975ccf95eab14731166a249ab54da13e63af7bd00a84d14a1b50b8d1",
+    "data/evidence/national/locations-north-hokkaido/6fe72cc49d7a293e40e9.html": "c91f289b9b6d83af5ebb75e0b4062dc9456f93ebda457adb5b2fd3aabd7e8685",
+    "data/evidence/national/locations-north-hokkaido/23be8aefdabc528d5b4a.html": "e5f91badfe842de8241e85bd8da37e86523be8ae7c62843ea261445f0b40aff4",
+    "data/evidence/national/locations-north-hokkaido/161c30a1c0bcb62d750f.html": "5207cde3c49beb5dc6072b8c286584315e32378acba7fb75b82f78e16929669c",
+    "data/evidence/national/locations-north-hokkaido/f8680f0cd4a05e2f9902.html": "48e9fb36b5241b267ac458e706233ef95dfb1e91b0887561f6fc23d98793181d",
+    "data/evidence/national/locations-north-hokkaido/last-urls.json": "0d59c4b5ed3567a3f1d7b40cd214a657deb5373b2d6a5417042d3c3d20ae3567",
+    "data/evidence/national/locations-north-hokkaido/96db294074cc7ae657b4.html": "84c01ca7fe315698c8997c35f2983fe5d903680a2de8b9a002df3b00e1196fe3",
+    "data/evidence/national/locations-north-hokkaido/b4a1c1fdd0e6967e9405.html": "bc0a68cd55800ec7c815cf973fb5da838b6f72448d3a8266476b019b4e5d8bad",
+    "data/evidence/national/locations-north-hokkaido/d00c7574bef7982e2b0f.html": "3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6",
+    "data/evidence/national/locations-north-hokkaido/0d234604d9b6f8a3730d.html": "be8309fae023a005ccd9632667c37cf07ab653724b6bd6374f6785407c26e198",
+    "data/evidence/national/locations-north-hokkaido/51d6cc21412cbaa896fa.html": "0575363f2734e2412d2cc0ec9ffff713372c7e06c5b56ed468293bf2a981fa37",
+    "data/evidence/national/locations-north-hokkaido/manifest.json": "76498fc2372a2476495c737bbb00f55f3fe84e8694918a769c1dccae52876e0e",
+    "data/evidence/national/locations-north-hokkaido/85819292e7e88f6fa7fd.html": "02ef9d9b29f7e7eb8d31b71f17ee98c6701a23f71aed69a6a54e6f2782ffbd03",
+    "data/evidence/national/locations-north-hokkaido/data-urls.json": "d7c1b64c6534f42d1f6ede4b3ec8074d080793e9ad268da1f48fb9cbc539bd44",
+    "data/evidence/national/locations-north-hokkaido/04d149cd4b5e02ba6126.html": "042411ee72894ad089fb9c4b54c3881c9d6fcf850262e46b8ed03762784b21ed",
+    "data/evidence/national/locations-north-hokkaido/8c09749769111004ef27.html": "8f5d80fcd4148b2be205b74c2e0a6391b41299e6489a86e9a62123d668b91580",
+    "data/evidence/national/locations-north-hokkaido/d8f56f63185a96df0609.html": "8de6b8e2b90d6303168de839deb99072a098c254c8e839672c2ddb1d8ab1100a",
+    "data/evidence/national/locations-north-hokkaido/ecea8aedd3f373f51b31.html": "91ca70fd55b9f11e1abc8e9bc7472f72cf0beab37694c40c4473c67f820e21ef",
+    "data/evidence/national/locations-north-hokkaido/b56eaaad7bdf9135a6c6.html": "2ef50c356fae17ba09405a77ccbea71b430b928878b6291636ca5a3f3b20f404",
+    "data/evidence/national/locations-north-hokkaido/530bbb7a2058d7f8218c.html": "47652ab3246399fb917bf03a8a4bd5f127666c9357f09e1ed68f15016cfe7ab1",
+    "data/evidence/national/locations-north-hokkaido/ed963685706af98df10e.html": "b9363b3a9cc6c3b30a15e8626a5e48fe6ae9fe39134fab854986316cbb4d6c68",
+    "data/evidence/national/locations-north-hokkaido/a3048d7ce9bdcd328573.html": "1d6343c917194ab1dce8ba9a76eaa16f191b670b399aa58b65778074693f5a9e",
+    "data/evidence/national/locations-north-hokkaido/3980ed326ac01968a23d.html": "8f2616a17863a1c00d32e02c6195dca02d8c3a8827e96f879939213f97e29d22",
+    "data/evidence/national/locations-north-hokkaido/29e8bba60f5b7a3c88b3.html": "82bbde6430a36ed0a7532df608bc327d162c83ccdad7dd40a2ba9fd5c3863351",
+    "data/evidence/national/locations-north-hokkaido/9b76758996167b99abcd.html": "d43c335ba7f35ab46049ba5cd19c3b470ac39fc2c4d502086796be68d79aa471",
+    "data/evidence/national/locations-north-hokkaido/468529eea5b20fc1cfc9.html": "42f31da10e428ac995ef1366f375ca0a5180ed523d0c5767ea5e7ed941afab39",
+    "data/evidence/national/locations-north-hokkaido/e8454599846f4bd92de0.html": "44def935250a0a61cb546ec74618ee6541cb2a3e4132bb4612b9ddfd90136f78",
+    "data/evidence/national/locations-north-hokkaido/989dddb988f33baa2f4e.html": "04180c09b73c4d4c32c1288562441254cedb194973fc6204ea4fd9e4040f6f98",
+    "data/evidence/national/locations-north-hokkaido/c92d2d1eea676c390114.html": "51a1e4ba7fdd36cfed946f8b89bc421418083e7b8a692dfb75cb81905e29df00",
+    "data/evidence/national/locations-north-hokkaido/targets.json": "ace9407b0a8a092fb56cff111b0316110d464d945f4f3f5b16c969b2b464a0e0",
+    "data/evidence/national/locations-north-hokkaido/8a522b600cef688a7569.html": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+    "data/evidence/national/locations-north-hokkaido/1fcb0e50fa360491f100.html": "ad6efacd5c8ffcdb54eaa73e0a6587e5fc53305d050fc396970f57017db28737",
+    "data/evidence/national/locations-north-hokkaido/29133a5fc3ec9dc578f3.html": "c015c2e79824033dabdf4451b1fe2c8f26a15c2fa87f0d87a2d67fc9ce67cb31",
+    "data/evidence/national/locations-north-hokkaido/227b0a11f114273f0b7c.html": "52d218a969ef10bca370f6d99a63252f24cd2f4d35081b379bfd393977816303",
+    "data/evidence/national/locations-north-hokkaido/beac840f4d7b10db16c5.html": "ec0c2d1f6a3d2523379f8decd0a2bceab3fded3f40b81ac5d2f8fc7ecf85643d",
+    "data/evidence/national/locations-north-hokkaido/927edbbbb2b7b1efe3e2.html": "0575363f2734e2412d2cc0ec9ffff713372c7e06c5b56ed468293bf2a981fa37",
+    "data/evidence/national/locations-north-hokkaido/5916dd1c85f4bc169851.html": "e97c6994810d548c5b75bb9b62f4c4713aa88d4e7df39cae3c16ea7035f101af",
+    "data/evidence/national/locations-north-hokkaido/3eec0149f167087239ae.html": "ed7d28f279acc4dcd459020f80dcc4c80f8c810f3e9023a7c34062fc6be6055a",
+    "data/evidence/national/locations-north-hokkaido/6d3ae44dab18bce5e66f.html": "8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701",
+    "data/evidence/national/locations-north-hokkaido/0669b505be83d55cefc0.html": "a2115259dad4a930322293ffa7867910fde205d42bcc0a229d7f5f2b06280134",
+    "data/evidence/national/locations-north-hokkaido/9adcab770d748d5b393b.html": "bc48473ee37587e657ec1722392a1e4a144ca0df472ed3a02774f054e46f9a12",
+    "data/evidence/national/locations-north-hokkaido/provenance.json": "ae1d965c7c93acdb30be547993e81a7b4d9b95f129c741a59f34dece73efdb0f",
+    "data/evidence/national/locations-north-hokkaido/3235212edf554b26c33d.html": "756ac09d43e11dd647d663e7941ad386cac2bba1f8d55312fe35c590d4fb05ce",
+    "data/evidence/national/locations-north-hokkaido/a3ce7f49efdaacfc483b.html": "7771e4d5d7f46bfb9428121faa6891bd96dc0a179f42998bfde37a78adcbb447",
+    "data/evidence/national/locations-north-hokkaido/9048a784243e90a8d7ad.html": "4174dc66e81ce89d32c5d7b0f5853d2c3d4570ee83957ca4731fca4baf36f039",
+    "data/evidence/national/locations-north-hokkaido/4df32a9c24f2aaddf2d6.html": "a3ca236a1668de6d3b0e891027683d4b5237d588a2e63fd0bc78d16bf0f13d60",
+    "data/evidence/national/locations-north-hokkaido/4dfdac7e9c86f4c26274.html": "4c8b7f76aa74a919bbe2c8c35a9210c0945a66e09453c3109ecf1d210b9d05d0",
+    "data/evidence/national/locations-north-hokkaido/44d84b4f8e1496e3a53d.html": "193f9298828c3b20481c1523f732114670addee19e92a92a6162700a4cc73e51",
+    "data/evidence/national/locations-north-hokkaido/8d5d5ab7f08e3bc7e528.html": "ead45904cf91e5b55f775574f30a1b9ae1dca0add108f3f43164ab0e5e43001c",
+    "data/evidence/national/locations-north-hokkaido/3ed4beb8779d54ea8964.html": "cbb5aee62a7a85b841f42927d4dfe6e47f44bb9162e40a0193701cab3c7fa537",
+    "data/evidence/national/locations-north-hokkaido/2c39481cc137c9bcba53.html": "efa7346821eaa7bdd04ca117e673912f51c0667df3dd380a7158c1d65fce7f71",
+    "data/evidence/national/locations-north-hokkaido/4ae8de3b15a27e136585.html": "ceacffeaf8c2c49974dc1e34ac7910748c1c5129749c0cbeb7d78d3db031d8ba",
+    "data/evidence/national/locations-north-hokkaido/inspection.json": "f459014d25d593e970aa0521c42163e86ee352d38eff69a8e9bfa94b42d87ea8",
+    "data/evidence/national/locations-north-hokkaido/cd16d315006781d37d6a.html": "535cef8bec93d90579a9669fd948e4ecd388d2ef00bb58a63f50bb252060363b",
+    "data/evidence/national/locations-north-hokkaido/aa42863815da6dfd5ffe.html": "3e10370e71ece0f9f5a6a720f2ab3812f8ec6121f1c0248113d31187da6ea2ef",
+    "data/evidence/national/locations-north-hokkaido/54a6e853bb9d8682137b.html": "58de7696b6369c96c41978d1122f4cc4bcfb16fa10d1a0269e02c8b4d9bf6422",
+    "data/evidence/national/locations-north-hokkaido/30bbffab74bae8d417d5.html": "70e60ee56539dee93108d7fd9b8221033e6439bc8a424b85d452133f339a0049",
+    "data/evidence/national/locations-north-hokkaido/5f676387e28e2baa7ec1.html": "aac80f4b63d0a6696687bd1a5a52aa02ddf877cb81213df2e60c84d9463d3418",
+    "data/evidence/national/locations-north-hokkaido/3830810ed0e5243a2cc3.html": "78bf25baf9c42cc1830a85c0d3ee3ba5053f555d4337c4b8e97d06e497bd1e63",
+    "data/evidence/national/locations-north-hokkaido/a8b23f536d177c33a212.html": "6525ece1e2ca8cb42446e7066ea6f36136890c635c05762a7fed81fd4631da13",
+    "data/evidence/national/locations-north-hokkaido/b4933192e1e5ac0fbcca.html": "064f33d469c4c3878b803815347c5d66ce2a0fd324587f822cd36d2ed51a9209",
+    "data/evidence/national/locations-north-hokkaido/b44f5daa5d616247dd55.html": "42cdd8d05f53f8a712296cb1a26b65311056663ba693df98b4e8b2255a7d9e95",
+    "data/evidence/national/locations-north-hokkaido/c64b81014fab92ed6a67.html": "db399657531d734776fc245f4b1846d0913d86763a85f7a9c35312ea3574cef8",
+    "data/evidence/national/locations-north-hokkaido/87979051559bb2fdd71b.html": "b63e6e47824197241f27f352128529108cff0e64c2ab38631e63441951b80b5a",
+    "data/evidence/national/locations-north-hokkaido/c4c0d235eb2cd135b99a.html": "7791dcd6cbe5b6a422bb74b17c34874d2f9c0ad6076d2e8148702d13d7e3453f",
+    "data/evidence/national/locations-north-hokkaido/684866bdc6a0eb94291f.html": "559931d4fae70018a1bf78c65fea4d5611767d54eb571a2d171158a12935021d",
+    "data/evidence/national/locations-north-hokkaido/b62d6b2a0a0b1ee042d1.html": "cb6357e580bfccd2772287e377146f1fa03a5757f34d7973875114e2c7fd28b7",
+    "data/evidence/national/locations-north-hokkaido/198aa14efccb85c882f9.html": "b858ed4c263d40430455c906b9b7fc75d8a669c8b1879999635885e14a518d53",
+    "data/evidence/national/locations-north-hokkaido/03511dedb6022a7b65e8.html": "75c7a1a2ed124b697b861513015290fdebc25675c19b9bb8418c1d5347baca43",
+    "data/evidence/national/locations-north-hokkaido/e6c6477a5dc01b265858.html": "8ae5a48a61646c5354b5a3426d2eb58365f2718a726554914d6a5e1583ec968a",
+    "data/evidence/national/locations-north-hokkaido/f443a3cead9cb003247b.html": "87441e743046c6d47ab9284f6b8e1f31781e5912b7fc463a682ed8ab466843d6",
+    "data/evidence/national/locations-north-hokkaido/0bb2fd5fe94ecda5fb52.html": "c5e3d200e28b0b2de62f41e16bed3ed9c087bb58a69bc92478b82c8bf3147cef",
+    "data/evidence/national/locations-north-hokkaido/a3855c2d46f01e664f85.html": "206896a3a722d65a68c660f36463ae475fee97a9b0be258296d460918bbc729c",
+    "data/evidence/national/locations-north-hokkaido/607ff7122ed99e904d00.html": "8795afba48589db1e6cfbb320691a3d5b40d3090586b66d1c16e9a1157bea465",
+    "data/evidence/national/locations-north-hokkaido/49db1769e212e50afe9c.html": "2636b67cd10b653fc90773bfea33a8dcb198162e776fad843683fbf0a0a208bd",
+    "data/evidence/national/locations-north-hokkaido/8f46b373f1be05848b1a.html": "847a98d2dbe7e22fad05a3ec2daedc71740148bcfc0cd373d5cb4befbcaa1ff1",
+    "data/evidence/national/locations-north-hokkaido/b450b98eaaa1ea9422ac.html": "adbcaf9a698d9ebb73194aca8f59f8b92fc8c8b5634e7b38a2608397d55ffe4a",
+    "data/evidence/national/locations-north-hokkaido/95dabc0214f15626ca29.html": "6f9ff529b78184474a82f84ff8502c637fd501cfbd3ccc62075eb07152be37d8",
+    "data/evidence/national/locations-north-hokkaido/091d38a6264f02e64408.html": "60118ac24749684b022b6cd4699e3faaad1e39fe6ed063eb4da6a6165a0062b2",
+    "data/evidence/national/locations-north-hokkaido/4f931ab64c4f36a82152.html": "c6acfc5e86a1c1fd437e7f5cb4117e5fa4f3823e29cad1d9719c72326478d006",
+    "data/evidence/national/locations-north-hokkaido/map-urls.json": "e07f63a57d3355a2f4336cfa79c56e280a4dbc097070a36911bb06fff9598b27",
+    "data/evidence/national/locations-north-hokkaido/d03d99d4f0c03e2d1e56.html": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+    "data/evidence/national/locations-north-hokkaido/33ed187a2e73cc4197e0.html": "094e54beb851bda72870fb8d587b6da37ba0ef74119e6cdebce595f8ff76e02a",
+    "data/evidence/national/locations-north-hokkaido/571deeff365d5d3f4405.html": "316d86ca975d62b77fa229db2ec3dfaa440e40cbe461d4c08ccf88e3ec0da060",
+    "data/evidence/national/locations-north-hokkaido/8d966b55518d644888ba.html": "f765ad0ca9ef77b3c995cef592d533bfb13adece32afdc4d56920b329bd38a34",
+    "data/evidence/national/locations-north-hokkaido/074b19353a237bea79c8.html": "941d0b4aa0684dfbbdb9733e58a0773e531addc6f4873b77608b4223803191b7",
+    "data/evidence/national/locations-north-hokkaido/b21d5f97866c495a809a.html": "bf98150e701f7abae843a783233cec814b8d207ca891cf4ae5eb05fbd6de74ce",
+    "data/evidence/national/locations-north-hokkaido/49241cdfcf311f81f8cf.html": "4c2ecb94f310d921b99899b6233e64d11789e0b1f57f8669479a4b956bc226ef",
+    "data/evidence/national/locations-north-hokkaido/70448a059ce9e4e63753.html": "074cf3aaa15a46d76cf88f5fc7c06e3053c978fcdd92eed556b983882c127755",
+    "data/evidence/national/locations-north-hokkaido/9a587063e4795623233e.html": "8831dc5aa6a7ceb11f81394e065148712af302d06966ebe7928bdce46965f0ec",
+    "data/evidence/national/locations-north-hokkaido/8673d7246bf5652cfa2c.html": "db2482ae1ca3b5149bdf9c47380f78caa74f61eca11cb685459c31f0b5f00500",
+    "data/evidence/national/locations-north-hokkaido/ff16aa70065a7daf8d66.html": "22ac2a8a2b8f62b078bc48c657467c93b9b14b66e81e572ba33f9b6ce831f552",
+    "data/evidence/national/locations-north-hokkaido/dc3ac5e2730ab4b99935.html": "457441f01e1f2a5b2927da7d0f11b075706238b30ba702f38bf5d523d89fb1e7",
+    "data/evidence/national/locations-north-hokkaido/d3571f57f6c1023b7568.html": "62a2dc786f0ee64c8a683402aa40aa3d6379b2e962d98e31b309362707ad1223",
+    "data/evidence/national/locations-north-hokkaido/763021f5ee24edfca67e.html": "2bde9354558a4687349981809b46c4b593ec732d7f068cf1f646cc40505951b5",
+    "data/evidence/national/locations-north-hokkaido/256e6d63783a50af45ad.html": "d9c4c6a6f8221a23ca8b17b113d7901cd9a9af9db235aae971ea2c68fe039847",
+    "data/evidence/national/locations-north-hokkaido/7fada69b6efff7f8ef2f.html": "8fb9dd6d6a671543239da74f75453d1f81a1401d3f5ed0b395eb7055a7face2e",
+    "data/evidence/national/locations-north-hokkaido/d78ca359e270e1ab5055.html": "30092158184afdf8b1e5e11cf964b81d9fb4e50aba6b6509674649a9059cc23d",
+    "data/evidence/national/locations-north-hokkaido/37eccb4739092ecb7621.html": "a8f04377cd5e70c287f1628ac69761d2a60361789d2a8c941122e945528b6c4d",
+    "data/evidence/national/locations-north-hokkaido/dbb71f2e7bc3947172c2.html": "7504af506800ab7c443fe19fd91c81e8a94f253bc730697d6baff49fe11b3c7a",
+    "data/evidence/national/locations-north-hokkaido/4acf1c69685f8978a5c2.html": "905cda0a327d9066361b60e43a2974a5aa43fbf4f65b69fc878684ec6f1ae12b",
+    "data/evidence/national/locations-north-hokkaido/e6846e5f2d8908aeea3b.html": "a709ef218d9fbfbabb0eb2b9e536986e627ba79e1afc0f824959bb02ce45e1e4",
+    "data/evidence/national/locations-north-hokkaido/aab743e7ae65f45988f2.html": "f4ac4404490e6775883fa4eb0684fe7a3ddda7253675ea78b8c06633269a77ae",
+    "data/evidence/national/locations-north-hokkaido/__pycache__/research.cpython-313.pyc": "39b0c76c3147721263b6bcfadea9648596d7718fb0210aaf937c82b3fd1f751e"
+  },
+  "checks": [
+    {
+      "facilityId": "facility:north-03d0245a068dd82eaa37",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "markerInfos: title=北海道登別市役所"
+    },
+    {
+      "facilityId": "facility:north-0c29dde3d5fc2a368725",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1464 市役所=和寒町役場 住所=字西町１２０",
+      "rawCsvRows": [
+        {
+          "コード": "1464",
+          "市町村名": "和寒町",
+          "市役所": "和寒町役場",
+          "住所": "字西町１２０",
+          "緯度": "44.023119",
+          "経度": "142.413383"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-12b6e6080ef6e1e816a7",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1215 市役所=美唄市役所 住所=西３条南１－１－１",
+      "rawCsvRows": [
+        {
+          "コード": "1215",
+          "市町村名": "美唄市",
+          "市役所": "美唄市役所",
+          "住所": "西３条南１－１－１",
+          "緯度": "43.332951",
+          "経度": "141.853986"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-1b80feaf8e6924df20c4",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "HUB HOKKAIDO SELECT SHOP のGoogle Mapsリンク !8m2!3d42.9892477!4d141.5511668"
+    },
+    {
+      "facilityId": "facility:north-20e8f811524b0ce7d3f5",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1691 市役所=別海町役場 住所=別海常盤町２８０",
+      "rawCsvRows": [
+        {
+          "コード": "1691",
+          "市町村名": "別海町",
+          "市役所": "別海町役場",
+          "住所": "別海常盤町２８０",
+          "緯度": "43.39399",
+          "経度": "145.117341"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-226fa24434ce9b26d323",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.takikawa.lg.jp/page/2703.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/4df32a9c24f2aaddf2d6.html",
+          "snapshotSHA256": "a3ca236a1668de6d3b0e891027683d4b5237d588a2e63fd0bc78d16bf0f13d60",
+          "fetchedAt": "2026-11-05T04:23:50.973139+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0c98d7aad314bb:0x52e4dd4ff9ff3b80 / 〒073-0031 北海道滝川市栄町４丁目９−１ たきかわ観光国際スクエア"
+    },
+    {
+      "facilityId": "facility:north-3060a04659dcedce64b9",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設名=常呂総合支所 住所_出典元=北見市常呂町字常呂323",
+      "rawCsvRows": [
+        {
+          "施設名": "常呂総合支所",
+          "市町村名": "北見市",
+          "緯度": "44.12064",
+          "経度": "144.0712",
+          "住所_出典元": "北見市常呂町字常呂323",
+          "検索用住所": "北海道北見市常呂町字常呂323",
+          "ビル等": "",
+          "データ区分": "市区町村役場",
+          "出典": "国土数値情報市区町村役場データH26",
+          "原典資料名": ""
+        },
+        {
+          "施設名": "常呂町西町生活改善センター",
+          "市町村名": "北見市",
+          "緯度": "44.12064",
+          "経度": "144.0712",
+          "住所_出典元": "常呂町字土佐３３番地１",
+          "検索用住所": "北海道北見市常呂町字土佐33-1",
+          "ビル等": "",
+          "データ区分": "役場及び公的集会施設",
+          "出典": "国土数値情報市町村役場等及び公的集会施設データH22",
+          "原典資料名": ""
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-3170be48b7ec799e21bb",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1464 市役所=和寒町役場 住所=字西町１２０",
+      "rawCsvRows": [
+        {
+          "コード": "1464",
+          "市町村名": "和寒町",
+          "市役所": "和寒町役場",
+          "住所": "字西町１２０",
+          "緯度": "44.023119",
+          "経度": "142.413383"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-337a40d0c1a094f1643d",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1634 市役所=鹿追町役場 住所=東町１－１５－１",
+      "rawCsvRows": [
+        {
+          "コード": "1634",
+          "市町村名": "鹿追町",
+          "市役所": "鹿追町役場",
+          "住所": "東町１－１５－１",
+          "緯度": "43.098876",
+          "経度": "142.989028"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-33d210dca3f1918726f9",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設名=常呂総合支所 住所_出典元=北見市常呂町字常呂323",
+      "rawCsvRows": [
+        {
+          "施設名": "常呂総合支所",
+          "市町村名": "北見市",
+          "緯度": "44.12064",
+          "経度": "144.0712",
+          "住所_出典元": "北見市常呂町字常呂323",
+          "検索用住所": "北海道北見市常呂町字常呂323",
+          "ビル等": "",
+          "データ区分": "市区町村役場",
+          "出典": "国土数値情報市区町村役場データH26",
+          "原典資料名": ""
+        },
+        {
+          "施設名": "常呂町西町生活改善センター",
+          "市町村名": "北見市",
+          "緯度": "44.12064",
+          "経度": "144.0712",
+          "住所_出典元": "常呂町字土佐３３番地１",
+          "検索用住所": "北海道北見市常呂町字土佐33-1",
+          "ビル等": "",
+          "データ区分": "役場及び公的集会施設",
+          "出典": "国土数値情報市町村役場等及び公的集会施設データH22",
+          "原典資料名": ""
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-343aa74f33ff03c6fa0a",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設名=地域交流まちづくりセンター 住所_出典元=末広町4番19号",
+      "rawCsvRows": [
+        {
+          "施設名": "地域交流まちづくりセンター",
+          "市町村名": "函館市",
+          "緯度": "41.76379",
+          "経度": "140.71699",
+          "住所_出典元": "末広町4番19号",
+          "検索用住所": "北海道函館市末広町4-19",
+          "ビル等": "",
+          "データ区分": "役場及び公的集会施設",
+          "出典": "国土数値情報市町村役場等及び公的集会施設データH22",
+          "原典資料名": ""
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-3992dcf75c3cb9b680a4",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1460 市役所=上富良野町役場 住所=大町２－２－１１",
+      "rawCsvRows": [
+        {
+          "コード": "1460",
+          "市町村名": "上富良野町",
+          "市役所": "上富良野町役場",
+          "住所": "大町２－２－１１",
+          "緯度": "43.455614",
+          "経度": "142.467112"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-45c2fe1219e88b833457",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "mapp.data.push: pois[].point; title=道の駅 みそぎの郷 きこない"
+    },
+    {
+      "facilityId": "facility:north-4a3e61d50e9a48491365",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.tomakomai.hokkaido.jp/shisei/tomakomainitsuite/gaiyo/kotsu-access.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/19cc01ef3c3c46202295.html",
+          "snapshotSHA256": "23c5a41c0e4958e5479927872d1a18108a155c0b65785d75f13823f412526025",
+          "fetchedAt": "2026-11-05T04:48:41.341163+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f7510c3cf973837:0x63eb268568e8fdc5 / 〒053-8722 北海道苫小牧市旭町４丁目５−６ 苫小牧市役所"
+    },
+    {
+      "facilityId": "facility:north-4c87540ad5304f8a47b5",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1633 市役所=上士幌町役場 住所=字上士幌東３線２３８",
+      "rawCsvRows": [
+        {
+          "コード": "1633",
+          "市町村名": "上士幌町",
+          "市役所": "上士幌町役場",
+          "住所": "字上士幌東３線２３８",
+          "緯度": "43.232615",
+          "経度": "143.296243"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-5146ae8cc4fb697aa46b",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV ID=PF0000000001 名称=富良野市複合庁舎 所在地=富良野市弥生町1番1号",
+      "rawCsvRows": [
+        {
+          "全国地方公共団体コード": "12297",
+          "ID": "PF0000000001",
+          "地方公共団体名": "北海道富良野市",
+          "名称": "富良野市複合庁舎",
+          "名称_カナ": "フラノシフクゴウチョウシャ",
+          "名称_英字": "Furano City Complex Government Building",
+          "施設区分": "市施設",
+          "POIコード": "1302",
+          "所在地_連結表記": "富良野市弥生町1番1号",
+          "所在地_都道府県": "北海道",
+          "所在地_市区町村": "富良野市",
+          "所在地_町字": "弥生町",
+          "所在地_番地以下": "1番1号",
+          "緯度": "43.342336",
+          "経度": "142.383447",
+          "郵便番号": "768555"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-52202833e562b25efc5c",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://obikan.jp/post_spot/1501/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/4499e1e680efec80480b.html",
+          "snapshotSHA256": "7851bdbc8d992e4e6b986f6e1ce83e5586e497f2b92e4e627ecc2fe448cc4263",
+          "fetchedAt": "2026-11-05T04:53:36.067847+00:00"
+        }
+      ],
+      "sourceLocator": "地図応答の施設feature 0x5f739941b5c87583:0x3cc6fce2691f12b / 〒080-0012 北海道帯広市西２条南１２丁目 エスタ帯広 東館 2階 とかち観光情報センター"
+    },
+    {
+      "facilityId": "facility:north-53b2b9df9a8da2705261",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設名=札幌市下水道科学館 住所_出典元=麻生町8",
+      "rawCsvRows": [
+        {
+          "施設名": "札幌市下水道科学館",
+          "市町村名": "札幌市",
+          "緯度": "43.11707",
+          "経度": "141.34264",
+          "住所_出典元": "麻生町8",
+          "検索用住所": "北海道札幌市北区麻生町8",
+          "ビル等": "",
+          "データ区分": "文化施設",
+          "出典": "国土数値情報文化施設データH25",
+          "原典資料名": ""
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-5933f197216885e6d064",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.5830367!4d142.9597327"
+    },
+    {
+      "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/0c7640db2ea8af858b25.html",
+          "snapshotSHA256": "71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f",
+          "fetchedAt": "2026-11-05T04:23:19.404091+00:00"
+        }
+      ],
+      "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d43.9387173!4d141.6470101"
+    },
+    {
+      "facilityId": "facility:north-6104f556e2024abcb15f",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1516 市役所=豊富町役場 住所=大通６丁目",
+      "rawCsvRows": [
+        {
+          "コード": "1516",
+          "市町村名": "豊富町",
+          "市役所": "豊富町役場",
+          "住所": "大通６丁目",
+          "緯度": "45.102847",
+          "経度": "141.777508"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-62ad6ad3369746b37621",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る !8m2!3d44.0690342!4d144.9906951"
+    },
+    {
+      "facilityId": "facility:north-63f1d610c5add80db10e",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1518 市役所=利尻町役場 住所=沓形字緑町１４－１",
+      "rawCsvRows": [
+        {
+          "コード": "1518",
+          "市町村名": "利尻町",
+          "市役所": "利尻町役場",
+          "住所": "沓形字緑町１４－１",
+          "緯度": "45.187041",
+          "経度": "141.139597"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-6497f09097adeb769acf",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "var opts markers: name=AKABIRAベース loc=[142.037424,43.579387]"
+    },
+    {
+      "facilityId": "facility:north-65717121aad1d7580861",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.iwanai-kanko.jp/tourism/michinoeki/23.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/098721eac80c141433ea.html",
+          "snapshotSHA256": "fd1b60c29e4a91e9cc987ff488a831fcbb10b36f14904a8aceb9e204d81811c7",
+          "fetchedAt": "2026-11-05T04:49:08.663943+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0a97bf392a3ee1:0x19b0a18a41c64aaf / 〒045-0003 北海道岩内郡岩内町万代47−４ 道の駅 いわない"
+    },
+    {
+      "facilityId": "facility:north-7539fb5b206d87a17ef5",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://center-i.jp/access/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/24c772f955e23adcaf25.html",
+          "snapshotSHA256": "8ddf25c212f03ae9d4a739005c37468f0cd33d7ab5008b694fa69ba1b8c1cbef",
+          "fetchedAt": "2026-11-05T04:48:36.363523+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b2d8bbee0b4d9:0x54a9d1d3a9bdd2ca / 〒069-0824 北海道江別市東野幌本町６−４３ 江別市民活動センター・あい"
+    },
+    {
+      "facilityId": "facility:north-76934d7112fde654b326",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1635 市役所=新得町役場 住所=３条南４－２６",
+      "rawCsvRows": [
+        {
+          "コード": "1635",
+          "市町村名": "新得町",
+          "市役所": "新得町役場",
+          "住所": "３条南４－２６",
+          "緯度": "43.079741",
+          "経度": "142.838822"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-784f83101a1fba71ca5c",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.1775367!4d141.4488237"
+    },
+    {
+      "facilityId": "facility:north-7e52de8e6f50eeba0d74",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1691 市役所=別海町役場 住所=別海常盤町２８０",
+      "rawCsvRows": [
+        {
+          "コード": "1691",
+          "市町村名": "別海町",
+          "市役所": "別海町役場",
+          "住所": "別海常盤町２８０",
+          "緯度": "43.39399",
+          "経度": "145.117341"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-7fde83cc219f8104cc65",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1648 市役所=陸別町役場 住所=字陸別東１条３－１",
+      "rawCsvRows": [
+        {
+          "コード": "1648",
+          "市町村名": "陸別町",
+          "市役所": "陸別町役場",
+          "住所": "字陸別東１条３－１",
+          "緯度": "43.468914",
+          "経度": "143.747305"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-80c28f27f6f95e930a9b",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1460 市役所=上富良野町役場 住所=大町２－２－１１",
+      "rawCsvRows": [
+        {
+          "コード": "1460",
+          "市町村名": "上富良野町",
+          "市役所": "上富良野町役場",
+          "住所": "大町２－２－１１",
+          "緯度": "43.455614",
+          "経度": "142.467112"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-81922f5137bfd85952f9",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.ebri-nopporo.com/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/7988ab3a7775e90a7ffd.html",
+          "snapshotSHA256": "57afe45ef49e96db02f315cc6cf1a534f6e71801c6bac2a96ba6e40704d32274",
+          "fetchedAt": "2026-11-05T04:53:36.068543+00:00"
+        }
+      ],
+      "sourceLocator": "地図応答の施設feature 0x5f0b3275fb6283bf:0x738352c5645b4b13 / ËBRI, ３-3 Higashinopporocho, Ebetsu, Hokkaido 069-0821"
+    },
+    {
+      "facilityId": "facility:north-8b10bcb76cb93263b696",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://hokutoinfo.com/access/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/a60a2dbc3fc9684cf33c.html",
+          "snapshotSHA256": "a682477d65be9292427ca6b7fa8286dd76c1336c5ab04477aec68315da209b14",
+          "fetchedAt": "2026-11-05T04:48:36.669745+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f9ef8f1320980bf:0x96e8eae1a271783b / 〒041-1242 北海道北斗市市渡１丁目１−１ 北斗市観光交流センター"
+    },
+    {
+      "facilityId": "facility:north-8b9eb37cc57d1790a6ab",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "JSON-LD TransitSystem description=旭川観光物産情報センター address=宮下通８丁目３番１号 JR旭川駅東コンコース前 geo latitude/longitude およびhasMap"
+    },
+    {
+      "facilityId": "facility:north-94e8fd249c24448254ec",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1516 市役所=豊富町役場 住所=大通６丁目",
+      "rawCsvRows": [
+        {
+          "コード": "1516",
+          "市町村名": "豊富町",
+          "市役所": "豊富町役場",
+          "住所": "大通６丁目",
+          "緯度": "45.102847",
+          "経度": "141.777508"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-95253bf986d2693881d7",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/65559aa9039992f3b90b.html",
+          "snapshotSHA256": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+          "fetchedAt": "2026-11-05T04:49:48.142290+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f7520a42f20602f:0x7f2252a1952ebaf2 / 日本、〒066-0042 北海道千歳市東雲町３丁目２−５ 千歳市水道局"
+    },
+    {
+      "facilityId": "facility:north-95977999d1143637e813",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "エルフィンパーク市民サービスコーナー のリンク !8m2!3d42.978986!4d141.563174"
+    },
+    {
+      "facilityId": "facility:north-9a1bae888266745fcbc3",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "施設名付き地図のstaticmap markers=43.243740737075925,141.3511178586446 およびリンク q=同値"
+    },
+    {
+      "facilityId": "facility:north-9d5628a68e45a5cf6deb",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+      "rawCsvRows": [
+        {
+          "コード": "1647",
+          "市町村名": "足寄町",
+          "市役所": "足寄町役場",
+          "住所": "北１条４－４８－１",
+          "緯度": "43.244786",
+          "経度": "143.55393"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-9f828ae51e79cb1346e4",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1454 市役所=当麻町役場 住所=３条東２丁目１１－１",
+      "rawCsvRows": [
+        {
+          "コード": "1454",
+          "市町村名": "当麻町",
+          "市役所": "当麻町役場",
+          "住所": "３条東２丁目１１－１",
+          "緯度": "43.828201",
+          "経度": "142.508388"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-9ff5ca81c48605ed790a",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://toyotomi-kanko.net/豊富町観光情報センター/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/4e157ed0b6f8bf96c778.html",
+          "snapshotSHA256": "8b9321174083b32cbab63604842226c76fc403911071f24ea83fe1c71aa0faae",
+          "fetchedAt": "2026-11-05T04:53:11.483404+00:00"
+        }
+      ],
+      "sourceLocator": "地図応答の施設feature 0x5f0e2a3c5f4154fd:0xce35880bf4f340b4 / Toyotomi Town Tourist Information Center, Toyotomiekimaedori, Toyotomi, Teshio District, Hokkaido 098-4138"
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "施設詳細の埋め込み地図 q=45.408652,141.676545 および経路到着地 /dir//45.408652,141.676545/"
+    },
+    {
+      "facilityId": "facility:north-a44b8aa1c55ed7aae9ec",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設ID=00000500 名称=奈井江町交流プラザみなクル 住所=奈井江町字奈井江町74(本町1区)",
+      "rawCsvRows": [
+        {
+          "市町村コード": "014249",
+          "施設ID": "00000500",
+          "都道府県": "北海道",
+          "市町村": "奈井江町",
+          "名称": "奈井江町交流プラザみなクル",
+          "名称_カナ": "ないえちょうこうりゅうぷらざみなくる",
+          "対象となる町会・自治会": "奈井江町/本町1区",
+          "住所": "奈井江町字奈井江町74(本町1区)",
+          "方書": "",
+          "緯度": "43.425154",
+          "経度": "141.888901",
+          "電話番号": "0125-74-5574",
+          "FAX番号": "0125-65-2155",
+          "想定収容人数(人)": "80",
+          "標高": "",
+          "指定緊急避難場所": "○",
+          "指定避難所": "○",
+          "福祉避難所": "×",
+          "臨時避難所": "×",
+          "その他避難所": "×",
+          "災害種別_洪水": "○",
+          "災害種別_崖崩れ、土石流及び地滑り": "×",
+          "災害種別_高潮": "×",
+          "災害種別_地震": "○",
+          "災害種別_津波": "×",
+          "災害種別_大規模な火事": "×",
+          "災害種別_内水氾濫": "×",
+          "災害種別_火山現象": "×",
+          "災害種別_その他": "×",
+          "URL": "",
+          "備考": "",
+          "作成年月日": "R03-04-01"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-a5487e1f89df95c0f69d",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://aikaze.co.jp/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/ed963685706af98df10e.html",
+          "snapshotSHA256": "b9363b3a9cc6c3b30a15e8626a5e48fe6ae9fe39134fab854986316cbb4d6c68",
+          "fetchedAt": "2026-11-05T04:41:47.213920+00:00"
+        },
+        {
+          "url": "https://aikaze.co.jp/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/3fbb5ed8f592bba01341.html",
+          "snapshotSHA256": "5030b8ea6294277c2f29ffd0ad662bbf9f5618ec676655a3ef55379d76787ae4",
+          "fetchedAt": "2026-11-05T04:48:36.361873+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b6b82dc884f5b:0x1dec92bdc4997e4a / 〒061-3601 北海道石狩市厚田９８−２ 道の駅 石狩あいろーど厚田"
+    },
+    {
+      "facilityId": "facility:north-a5e747e17e489df9e8b0",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.2873853!4d142.4137849"
+    },
+    {
+      "facilityId": "facility:north-adeda0700dac8487ca81",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/65559aa9039992f3b90b.html",
+          "snapshotSHA256": "3605de35f717b7faca87ea6c2c93dff5c2f13db68327fdfe2ef4076399b23ed2",
+          "fetchedAt": "2026-11-05T04:49:48.142290+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f7520a42f20602f:0x7f2252a1952ebaf2 / 日本、〒066-0042 北海道千歳市東雲町３丁目２−５ 千歳市水道局"
+    },
+    {
+      "facilityId": "facility:north-adf76c586ebea80020ba",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.kankyo.sl-plaza.jp/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/f51f60807b64bb28f7aa.html",
+          "snapshotSHA256": "c405c7218974e6b1968b70bbb6961b14702046cd311174ba05f4b7c64c544372",
+          "fetchedAt": "2026-11-05T04:24:03.461352+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b290b765d2cb9:0x92fb31b5c3ca80e7 / 〒060-0808 北海道札幌市北区北８条西３丁目２８ 札幌エルプラザ"
+    },
+    {
+      "facilityId": "facility:north-b3895bc1edbab7205d85",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV 施設名=天塩町ファミリースポーツセンター 住所_出典元=字川口5702-1",
+      "rawCsvRows": [
+        {
+          "施設名": "天塩町ファミリースポーツセンター",
+          "市町村名": "天塩町",
+          "緯度": "44.88511",
+          "経度": "141.75092",
+          "住所_出典元": "字川口5702-1",
+          "検索用住所": "北海道天塩郡天塩町字川口5702-1",
+          "ビル等": "",
+          "データ区分": "文化施設",
+          "出典": "国土数値情報文化施設データH25",
+          "原典資料名": ""
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-b52f5b5eb1fe0a290167",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.kaminokuni.com/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/6ea003424819b70d4526.html",
+          "snapshotSHA256": "49266924d7f22521a687fd1b988f85773a55070a46755a769df21a4a9014236e",
+          "fetchedAt": "2026-11-05T04:24:00.102555+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f9f20b37ac0747b:0x59ec14c67310e4be / 〒049-0602 北海道檜山郡上ノ国町原歌３ 道の駅 上ノ国もんじゅ"
+    },
+    {
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.teshiotown.hokkaido.jp/?p=22908",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/fa47d7c578728270881e.html",
+          "snapshotSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+          "fetchedAt": "2026-11-05T04:24:16.842232+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c46f311ffbb:0x55449db309918b60 / 〒098-3300 北海道天塩郡天塩町サラキシ5807番地4 てしお温泉 夕映"
+    },
+    {
+      "facilityId": "facility:north-bf6e16a11cb13e5f9622",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.town.toyotomi.hokkaido.jp/section/chominka/a7cug6000000128e.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/af20855306d1ca89563f.html",
+          "snapshotSHA256": "f362664e307fdceadc913bb904a380b25c0f4e51553b75fa91677fe96486cf46",
+          "fetchedAt": "2026-11-05T04:54:20.001146+00:00"
+        }
+      ],
+      "sourceLocator": "地図応答の施設feature 0x5f0e2a22ef4f357f:0x45c4209423f181b1 / Municipal permanent resident support center Furattokita., 6 Chome Toyotomi Higashi 1 Jo, Toyotomi, Teshio District, Hokkaido 098-4121"
+    },
+    {
+      "facilityId": "facility:north-c2f6c2b5109a65d91a91",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://www.teshiotown.hokkaido.jp/?p=20872",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/6a0444a16542c09fa97e.html",
+          "snapshotSHA256": "bf2c1d64dd748ecf754c394ac7d3dca2019f5c263b712605df77be08ffb79701",
+          "fetchedAt": "2026-11-05T04:22:57.054268+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c66efdc96cd:0xef22cd222d2399d4 / 〒098-3398 北海道天塩郡天塩町新栄通８丁目 天塩町役場"
+    },
+    {
+      "facilityId": "facility:north-c755555d3ee86913edcf",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1465 市役所=剣淵町役場 住所=仲町３７－１",
+      "rawCsvRows": [
+        {
+          "コード": "1465",
+          "市町村名": "剣淵町",
+          "市役所": "剣淵町役場",
+          "住所": "仲町３７－１",
+          "緯度": "44.095746",
+          "経度": "142.361007"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-c8ab3d989862cda67eba",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://www.town.tohma.hokkaido.jp/all-about/04/01/1812",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/8eaf40255ac4cd854ec5.html",
+          "snapshotSHA256": "56f7f0158d4149bf9edabb75cf153219a5c05a2bf1d30e24929a988269ce97b5",
+          "fetchedAt": "2026-11-05T04:23:13.773657+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0ce1ed6e33f4bf:0x6b58daafebb5cf1f / 〒078-1324 北海道上川郡当麻町４条南３丁目１−４１ 当麻町 郷土資料館 ここから"
+    },
+    {
+      "facilityId": "facility:north-c9c5016d77e51377f615",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "経路iframe到着地 ガーデンスパ十勝川温泉 !3m2!1d42.9333615!2d143.3009616"
+    },
+    {
+      "facilityId": "facility:north-ca408ccc1bcbc950bdd6",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1635 市役所=新得町役場 住所=３条南４－２６",
+      "rawCsvRows": [
+        {
+          "コード": "1635",
+          "市町村名": "新得町",
+          "市役所": "新得町役場",
+          "住所": "３条南４－２６",
+          "緯度": "43.079741",
+          "経度": "142.838822"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-cb479f7bbce2788c803e",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "住所欄MAP href: q=43.32069218366,142.37707933331296"
+    },
+    {
+      "facilityId": "facility:north-cdee3e1ed7285d1301f2",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+      "rawCsvRows": [
+        {
+          "コード": "1647",
+          "市町村名": "足寄町",
+          "市役所": "足寄町役場",
+          "住所": "北１条４－４８－１",
+          "緯度": "43.244786",
+          "経度": "143.55393"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-d4f4c5138f1edd1b3b74",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://toyotomi-kanko.net/%e6%b9%af%e3%81%ae%e6%9d%9c%e3%81%bd%e3%81%a3%e3%81%91/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/5da48809e18e8ecbf021.html",
+          "snapshotSHA256": "0341b6cfedcf450a7415fb6fcdd9fb1055c168c8e2c2837f31a9b0250ae6af69",
+          "fetchedAt": "2026-11-05T04:53:10.383254+00:00"
+        }
+      ],
+      "sourceLocator": "地図応答の施設feature 0x5f0e29ccae4e29db:0xb7b49d196a05ef06 / Yunomori POKKE, Hot Spring, Toyotomi, Teshio District, Hokkaido 098-4132"
+    },
+    {
+      "facilityId": "facility:north-d68cb955eb8fb28297a6",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.shibetsutown.jp/culture/?content=229",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/0bb2fd5fe94ecda5fb52.html",
+          "snapshotSHA256": "c5e3d200e28b0b2de62f41e16bed3ed9c087bb58a69bc92478b82c8bf3147cef",
+          "fetchedAt": "2026-11-05T04:48:41.629890+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f6dab0f723b8dc5:0xc8e9d9aeb68fb9ff / 〒086-1651 北海道標津郡標津町南１条西５丁目５−３ 標津町 生涯学習センター あすぱる"
+    },
+    {
+      "facilityId": "facility:north-da208a6abd2abdb93a0a",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://d51-station.com/access/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/3235212edf554b26c33d.html",
+          "snapshotSHA256": "756ac09d43e11dd647d663e7941ad386cac2bba1f8d55312fe35c590d4fb05ce",
+          "fetchedAt": "2026-11-05T04:48:36.363640+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f74dcf3c961069f:0x7afb310cb93731eb / 〒059-1921 北海道勇払郡安平町追分柏が丘４９−１ 道の駅 あびらD51ステーション"
+    },
+    {
+      "facilityId": "facility:north-da9719ed3ef3729f4673",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/c3ce801f7d8e2107daa3.html",
+          "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+          "fetchedAt": "2026-11-05T04:23:39.961694+00:00"
+        }
+      ],
+      "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971"
+    },
+    {
+      "facilityId": "facility:north-dc7b25bac2387c1d4172",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/bea4feea639a0a42f99b.html",
+          "snapshotSHA256": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+          "fetchedAt": "2026-11-05T04:23:46.792180+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0ae0567147720b:0xb38ad9a978422d45 / 〒047-0024 北海道小樽市花園２丁目１１−１５ 小樽市水道局"
+    },
+    {
+      "facilityId": "facility:north-dddf18164e0a5e3df321",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/c3ce801f7d8e2107daa3.html",
+          "snapshotSHA256": "33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13",
+          "fetchedAt": "2026-11-05T04:23:39.961694+00:00"
+        }
+      ],
+      "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971"
+    },
+    {
+      "facilityId": "facility:north-df2e2fa9738be3f1981a",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1648 市役所=陸別町役場 住所=字陸別東１条３－１",
+      "rawCsvRows": [
+        {
+          "コード": "1648",
+          "市町村名": "陸別町",
+          "市役所": "陸別町役場",
+          "住所": "字陸別東１条３－１",
+          "緯度": "43.468914",
+          "経度": "143.747305"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-e02254fac40d4417b6a8",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.6995109!4d142.0707377"
+    },
+    {
+      "facilityId": "facility:north-ec1d5acd6800362be7ec",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.5251379!4d142.1894311"
+    },
+    {
+      "facilityId": "facility:north-f51a0f3cd3ce0a372cb6",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+      "rawCsvRows": [
+        {
+          "コード": "1647",
+          "市町村名": "足寄町",
+          "市役所": "足寄町役場",
+          "住所": "北１条４－４８－１",
+          "緯度": "43.244786",
+          "経度": "143.55393"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-f7c2ea84a43d097526df",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "https://machi-shibetsu.securesite.jp/michinoeki/",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/e17fb6a3781c5086e49b.html",
+          "snapshotSHA256": "7f54da4c908cfb34399e5011a817b8c0f4bf72c645ab894eb1cc1506e4c7ffd5",
+          "fetchedAt": "2026-11-05T04:23:13.047217+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0da507a86a22d5:0xf0106a7cbd869305 / 〒095-0019 北海道士別市大通東５丁目４４０−２３ 道の駅 羊のまち 侍・しべつ"
+    },
+    {
+      "facilityId": "facility:north-faff1c6ba07862131750",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.1968187!4d143.0909312"
+    },
+    {
+      "facilityId": "facility:north-fb4350ebefff5d4630de",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [],
+      "sourceLocator": "経路iframeの到着地 花ロードえにわ !3m2!1d42.8972354!2d141.5856753"
+    },
+    {
+      "facilityId": "facility:north-fc46386371945051a55a",
+      "sourceHashVerified": true,
+      "coordinatePairInSameFragment": true,
+      "officialLinkSources": [
+        {
+          "url": "http://www.teshiotown.hokkaido.jp/?p=20872",
+          "snapshotPath": "data/evidence/national/locations-north-hokkaido/6a0444a16542c09fa97e.html",
+          "snapshotSHA256": "bf2c1d64dd748ecf754c394ac7d3dca2019f5c263b712605df77be08ffb79701",
+          "fetchedAt": "2026-11-05T04:22:57.054268+00:00"
+        }
+      ],
+      "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c66efdc96cd:0xef22cd222d2399d4 / 〒098-3398 北海道天塩郡天塩町新栄通８丁目 天塩町役場"
+    }
+  ],
+  "scope": "hash/URL/numeric/CSV structural checks only; semantic judgments in review JSON"
+}

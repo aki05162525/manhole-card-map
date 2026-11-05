@@ -1,0 +1,178 @@
+https://www.city.tsuchiura.lg.jp/map.php?code=192 ["in: 0; padding: 0; }\r\n</style>\n<script>\r\n//<![CDATA[\r\n\tgoogle.maps.event.addDomListener(window, 'load', function() {\r\n\t\tvar myOptions = {\r\n\t\t\tzoom: 15,\r\n\t\t\tcenter: new google.maps.LatLng(36.085568541112, 140.19899010658),\r\n\t\t\tmapTypeId: google.maps.MapTypeId.ROADMAP,\r\n\t\t\tscaleControl: true\r\n\t\t};\r\n\r\n\t\t// マップの生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById('map'), myOptions);\r\n\r\n\t\t// マーカ", "padding: 0; }\r\n</style>\n<script>\r\n//<![CDATA[\r\n\tgoogle.maps.event.addDomListener(window, 'load', function() {\r\n\t\tvar myOptions = {\r\n\t\t\tzoom: 15,\r\n\t\t\tcenter: new google.maps.LatLng(36.085568541112, 140.19899010658),\r\n\t\t\tmapTypeId: google.maps.MapTypeId.ROADMAP,\r\n\t\t\tscaleControl: true\r\n\t\t};\r\n\r\n\t\t// マップの生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById('map'), myOptions);\r\n\r\n\t\t// マーカーの生成\r\n\t\tvar mark", "style>\n<script>\r\n//<![CDATA[\r\n\tgoogle.maps.event.addDomListener(window, 'load', function() {\r\n\t\tvar myOptions = {\r\n\t\t\tzoom: 15,\r\n\t\t\tcenter: new google.maps.LatLng(36.085568541112, 140.19899010658),\r\n\t\t\tmapTypeId: google.maps.MapTypeId.ROADMAP,\r\n\t\t\tscaleControl: true\r\n\t\t};\r\n\r\n\t\t// マップの生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById('map'), myOptions);\r\n\r\n\t\t// マーカーの生成\r\n\t\tvar marker = new google.m", 'MAP,\r\n\t\t\tscaleControl: true\r\n\t\t};\r\n\r\n\t\t// マップの生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById(\'map\'), myOptions);\r\n\r\n\t\t// マーカーの生成\r\n\t\tvar marker = new google.maps.Marker({\r\n\t\t\tposition: new google.maps.LatLng(36.0855685411119, 140.198990106583),\r\n\t\t\tmap: mapCanvas\r\n\t\t});\r\n\r\n\t\t// 吹き出し表示処理\r\n\t\tvar infoWin = new google.maps.InfoWindow({\r\n\t\t\tcontent: \'<div class="mapInfoWindow"><div class="ma', '// マップの生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById(\'map\'), myOptions);\r\n\r\n\t\t// マーカーの生成\r\n\t\tvar marker = new google.maps.Marker({\r\n\t\t\tposition: new google.maps.LatLng(36.0855685411119, 140.198990106583),\r\n\t\t\tmap: mapCanvas\r\n\t\t});\r\n\r\n\t\t// 吹き出し表示処理\r\n\t\tvar infoWin = new google.maps.InfoWindow({\r\n\t\t\tcontent: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">土浦市亀城プラザ</div><div c', '生成\r\n\t\tvar mapCanvas = new google.maps.Map(document.getElementById(\'map\'), myOptions);\r\n\r\n\t\t// マーカーの生成\r\n\t\tvar marker = new google.maps.Marker({\r\n\t\t\tposition: new google.maps.LatLng(36.0855685411119, 140.198990106583),\r\n\t\t\tmap: mapCanvas\r\n\t\t});\r\n\r\n\t\t// 吹き出し表示処理\r\n\t\tvar infoWin = new google.maps.InfoWindow({\r\n\t\t\tcontent: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">土浦市亀城プラザ</div><div class="mapInfoWind']
+https://www.city.hokota.lg.jp/map.php?type=0 ['="map.php?type=0&amp;category=24">公売物件</a></li>\n<li><a href="map.php?type=0&amp;category=29">通行止め等</a></li>\n</ul>\n</div>\n<div id="contentsMap">\n<script>\r\nvar spotList = [{latlng: [36.159221413680946, 140.51573753356934], name: \'鉾田市立中央公民館\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市立中央公民館</div><div class="mapInfoWindowContents"></div><div class="mapRouteLink"><a href="https://www.city', ';category=24">公売物件</a></li>\n<li><a href="map.php?type=0&amp;category=29">通行止め等</a></li>\n</ul>\n</div>\n<div id="contentsMap">\n<script>\r\nvar spotList = [{latlng: [36.159221413680946, 140.51573753356934], name: \'鉾田市立中央公民館\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市立中央公民館</div><div class="mapInfoWindowContents"></div><div class="mapRouteLink"><a href="https://www.city.hokota.lg.jp/map_ro', '"mapInfoWindowContents"></div><div class="mapRouteLink"><a href="https://www.city.hokota.lg.jp/map_route.php?code=321" target="_blank">ルート案内(Googleマップ)</a></div></div>\'},{latlng: [36.15863887503428, 140.51653146743774], name: \'鉾田市役所\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市役所</div><div class="mapInfoWindowContents"><p>【住所】鉾田市鉾田1444番地1<br />【電話番号】0291-33-2111</p></div><div class="', 'nts"></div><div class="mapRouteLink"><a href="https://www.city.hokota.lg.jp/map_route.php?code=321" target="_blank">ルート案内(Googleマップ)</a></div></div>\'},{latlng: [36.15863887503428, 140.51653146743774], name: \'鉾田市役所\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市役所</div><div class="mapInfoWindowContents"><p>【住所】鉾田市鉾田1444番地1<br />【電話番号】0291-33-2111</p></div><div class="mapRouteLink"><a hre', 'r />【電話番号】0291-33-2111</p></div><div class="mapRouteLink"><a href="https://www.city.hokota.lg.jp/map_route.php?code=4" target="_blank">ルート案内(Googleマップ)</a></div></div>\'},{latlng: [36.2309139, 140.53499369999997], name: \'鉾田市旭総合支所\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市旭総合支所</div><div class="mapInfoWindowContents"><p>【住所】鉾田市造谷605番地3<br />【電話番号】0291-37-1111</p></div><div cl', '91-33-2111</p></div><div class="mapRouteLink"><a href="https://www.city.hokota.lg.jp/map_route.php?code=4" target="_blank">ルート案内(Googleマップ)</a></div></div>\'},{latlng: [36.2309139, 140.53499369999997], name: \'鉾田市旭総合支所\', view_info: \'<div class="mapInfoWindow"><div class="mapInfoWindowTitle">鉾田市旭総合支所</div><div class="mapInfoWindowContents"><p>【住所】鉾田市造谷605番地3<br />【電話番号】0291-37-1111</p></div><div class="mapRouteLink"><']
+https://www.city.naka.lg.jp/map.php?code=42 <!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>一の関ため池親水公園 - 那珂市公式ホームページ</title>
+<link href="skin/common/css/global.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="skin/common/js/leaflet/leaflet.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="skin/common/js/leaflet/leaflet.js"></script>
+<script src="skin/common/js/leaflet/leaflet.sprite.js"></script>
+<script src="skin/common/js/leaflet/colorfilter.js"></script>
+<style>
+html, body { height: 100%; margin: 0; padding: 0; }
+.markerColor { filter: hue-rotate(150deg); }
+</style>
+<script>
+var mapCanvas;
+var markerIconOption = {
+	iconUrl: 'skin/common/js/leaflet/images/marker-icon.png',
+	iconRetinaUrl: 'skin/common/js/leaflet/images/marker-icon-2x.png',
+	shadowUrl: 'skin/common/js/leaflet/images/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	tooltipAnchor: [16, -28],
+	shadowSize: [41, 41],
+	className: 'markerColor'
+}
+var latlng = [36.4554451623657, 140.487048625946];
+
+function initialize() {
+	// 地図表示
+	mapCanvas = L.map('mapCanvas', {
+		center: [36.455445162366, 140.48704862595],
+		zoom: 15,
+		zoomControl: true
+	});
+
+	var tileLayer = L.tileLayer.colorFilter(
+		'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		{
+			attribution: '© <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>',
+		}
+	).addTo(mapCanvas);
+
+	mapCanvas.attributionControl.setPosition('bottomright').setPrefix('<a href="https://leafletjs.com" target="_blank">Leaflet</a>');
+	mapCanvas.zoomControl.setPosition('bottomright');
+
+	// ポップアップ表示
+	var popup = L.popup({
+		maxWidth: '100%',
+		autoClose: false,
+		content: '<div class="mapInfoWindow"><div class="mapInfoWindowTitle">一の関ため池親水公園</div><div class="mapInfoWindowContents"></div><div class="mapRouteLink"><a href="https://www.city.naka.lg.jp/map_route.php?code=42" target="_blank">ルート案内(Googleマップ)</a></div></div>'
+	});
+
+	// マーカーアイコン
+	var icon = L.icon(markerIconOption);
+
+	// マーカー配置
+	var marker = L.marker(latlng, {icon: icon}).addTo(mapCanvas).bindPopup(popup).openPopup();
+}
+
+window.onload = initialize;
+</script>
+</head>
+<body>
+<div id="mapCanvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
+
+https://www.city.tsuchiura.lg.jp/map.php?code=42 <!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="initial-scale=1.0, initial-scale=no" name="viewport"/>
+<title>土浦市役所　本庁舎 - 土浦市公式ホームページ</title>
+<link href="skin/common/css/global.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4swKtkrOmbbPb2EMuKbYVScIuicancsk"></script>
+<style>
+html, body { height: 100%; margin: 0; padding: 0; }
+</style>
+<script>
+//<![CDATA[
+	google.maps.event.addDomListener(window, 'load', function() {
+		var myOptions = {
+			zoom: 15,
+			center: new google.maps.LatLng(36.078187531179, 140.20461201668),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scaleControl: true
+		};
+
+		// マップの生成
+		var mapCanvas = new google.maps.Map(document.getElementById('map'), myOptions);
+
+		// マーカーの生成
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(36.078187531179, 140.204612016678),
+			map: mapCanvas
+		});
+
+		// 吹き出し表示処理
+		var infoWin = new google.maps.InfoWindow({
+			content: '<div class="mapInfoWindow"><div class="mapInfoWindowTitle">土浦市役所　本庁舎</div><div class="mapInfoWindowContents"><p>土浦市大和町9番1号<br>【TEL】<a href=\"tel:0298261111\">０２９－８２６－１１１１</a></p></div><div class="mapRouteLink"><a href="https://www.city.tsuchiura.lg.jp/map_route.php?code=42" target="_blank">ルート案内</a></div></div>',
+			cornerRadius: 12
+		});
+		infoWin.open(mapCanvas, marker);
+
+		// クリック時に吹き出し表示
+		google.maps.event.addListener(marker, 'click', function() {
+			infoWin.open(mapCanvas, marker);
+		});
+	});
+//]]>
+</script>
+</head>
+<body>
+<div id="map" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
+
+https://www.city.tsuchiura.lg.jp/map.php?code=204 <!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="initial-scale=1.0, initial-scale=no" name="viewport"/>
+<title>霞ヶ浦総合公園　テニスコート - 土浦市公式ホームページ</title>
+<link href="skin/common/css/global.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4swKtkrOmbbPb2EMuKbYVScIuicancsk"></script>
+<style>
+html, body { height: 100%; margin: 0; padding: 0; }
+</style>
+<script>
+//<![CDATA[
+	google.maps.event.addDomListener(window, 'load', function() {
+		var myOptions = {
+			zoom: 15,
+			center: new google.maps.LatLng(36.065942847972, 140.21590411663),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scaleControl: true
+		};
+
+		// マップの生成
+		var mapCanvas = new google.maps.Map(document.getElementById('map'), myOptions);
+
+		// マーカーの生成
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(36.0659428479717, 140.215904116631),
+			map: mapCanvas
+		});
+
+		// 吹き出し表示処理
+		var infoWin = new google.maps.InfoWindow({
+			content: '<div class="mapInfoWindow"><div class="mapInfoWindowTitle">霞ヶ浦総合公園　テニスコート</div><div class="mapInfoWindowContents">土浦市大岩田５８０<br>【ＴＥＬ】０２９－８２４－０８８０ <P></P><FONT face=\"Courier New\"></FONT></div><div class="mapRouteLink"><a href="https://www.city.tsuchiura.lg.jp/map_route.php?code=204" target="_blank">ルート案内</a></div></div>',
+			cornerRadius: 12
+		});
+		infoWin.open(mapCanvas, marker);
+
+		// クリック時に吹き出し表示
+		google.maps.event.addListener(marker, 'click', function() {
+			infoWin.open(mapCanvas, marker);
+		});
+	});
+//]]>
+</script>
+</head>
+<body>
+<div id="map" style="width: 100%; height: 100%;"></div>
+</body>
+</html>
+

@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "key": "west-south",
+  "patches": [
+    {
+      "target": "data/overrides/regions/chugoku-shikoku.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "38-202-B001",
+        "placeId": "facility:cs-dc0172a4864a2800ca"
+      },
+      "old": {
+        "cardId": "38-202-B001",
+        "placeId": "facility:cs-dc0172a4864a2800ca",
+        "sourceHash": "fdaad0552c3f0f38e070290473748524715346d3a3a67610516a2b188d2d8c8d",
+        "hours": [
+          "在庫切れで配布一時中止。再開は2027年度以降の予定。"
+        ],
+        "status": "suspended",
+        "evidence": {
+          "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+          "snapshotPath": "data/evidence/national/chugoku-shikoku/7bb3156c0f05ccde08b4.html",
+          "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+          "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／今治駅前観光インフォメーションセンター／38-202-B001",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+        }
+      },
+      "new": {
+        "cardId": "38-202-B001",
+        "placeId": "facility:cs-dc0172a4864a2800ca",
+        "sourceHash": "df56de6273d9ba8e05179255e5636e9eee1f3b215a9f864d8e0a8d76617630fc",
+        "hours": [
+          "在庫切れにより配布一時中止。再開は2027年度以降の予定（再開日未確定）。通常3～11月8:00～19:00、12～2月8:00～18:00。"
+        ],
+        "status": "suspended",
+        "evidence": {
+          "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+          "snapshotPath": "data/evidence/national/proposals-west-south/7bb3156c0f05ccde08b4.html",
+          "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+          "sourceLocator": "38-202-B001 / 第24弾合併20周年記念 / 在庫切れ・2027年度以降再開予定",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "reason": "現GKPのStock変更と市公式第24弾の在庫切れを再確認。休止を維持し最新sourceHashに承認。再開予定年度をactive開始日にはしない。",
+      "evidence": {
+        "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+        "snapshotPath": "data/evidence/national/proposals-west-south/7bb3156c0f05ccde08b4.html",
+        "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+        "sourceLocator": "38-202-B001 / 第24弾合併20周年記念 / 在庫切れ・2027年度以降再開予定",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+      }
+    },
+    {
+      "target": "data/overrides/regions/kyushu-okinawa.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22"
+      },
+      "old": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "c17c593911dcc0cd90527bf82964cf26ca07eceeab8503a3915d850a69d3f58c",
+        "hours": [
+          "平日8:30～17:15。年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-A001 / マンホールカード配布場所・配布日時 / 福岡県庁1階 総合案内窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。県公式の17:15を採用。GKPの17:45と相違。"
+        }
+      },
+      "new": {
+        "cardId": "40-000-A001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "c17c593911dcc0cd90527bf82964cf26ca07eceeab8503a3915d850a69d3f58c",
+        "hours": [
+          "平日8:30開始。県公式（2025-04-28更新）17:15終了、現GKP17:45終了で不一致。年末年始休み。要確認。"
+        ],
+        "status": "unknown",
+        "condition": "配布窓口と曜日は一致。現GKPより県公式が新しいとは確認できないため、終了時刻を確定しない。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-A001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "reason": "古い県公式を単純優先した終了時刻承認をunknownへ訂正。休日御笠川窓口は相違がないため変更しない。",
+      "evidence": {
+        "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+        "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+        "sourceLocator": "40-000-A001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+      }
+    },
+    {
+      "target": "data/overrides/regions/kyushu-okinawa.json",
+      "collection": "relations",
+      "key": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22"
+      },
+      "old": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "f1c9166721838e19ebc877e38aacf93ed68ee7e16a5c1a85ce9a4ec52295c0fd",
+        "hours": [
+          "平日8:30～17:15。年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-B001 / マンホールカード配布場所・配布日時 / 福岡県庁1階 総合案内窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。県公式の17:15を採用。GKPの17:45と相違。"
+        }
+      },
+      "new": {
+        "cardId": "40-000-B001",
+        "placeId": "facility:kyushu-e6d975c9fff0b4acfc22",
+        "sourceHash": "f1c9166721838e19ebc877e38aacf93ed68ee7e16a5c1a85ce9a4ec52295c0fd",
+        "hours": [
+          "平日8:30開始。県公式（2025-04-28更新）17:15終了、現GKP17:45終了で不一致。年末年始休み。要確認。"
+        ],
+        "status": "unknown",
+        "condition": "配布窓口と曜日は一致。現GKPより県公式が新しいとは確認できないため、終了時刻を確定しない。",
+        "evidence": {
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+          "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+          "sourceLocator": "40-000-B001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "reason": "古い県公式を単純優先した終了時刻承認をunknownへ訂正。休日御笠川窓口は相違がないため変更しない。",
+      "evidence": {
+        "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+        "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+        "sourceLocator": "40-000-B001 / 県庁総合案内の終了時刻17:15 / 現GKP17:45と相違",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+      }
+    }
+  ]
+}

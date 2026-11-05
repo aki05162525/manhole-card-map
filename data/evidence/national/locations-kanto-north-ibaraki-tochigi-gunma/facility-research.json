@@ -1,0 +1,2708 @@
+{
+  "facility:kanto-north-00f47f5cf9124efaa36e": {
+    "index": 0,
+    "name": "アクアワールド茨城県大洗水族館入口チケット窓口",
+    "address": "茨城県東茨城郡大洗町磯浜町8252-3",
+    "attempts": [
+      {
+        "url": "https://www.aquaworld-oarai.com",
+        "result": "取得記録: 200。「【公式】アクアワールド茨城県大洗水族館 | 関東最大規模の海の総合ミュージアム」を確認。施設ごとの判定: 県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.pref.ibaraki.jp/doboku/gesui/kikaku/manholecard/aquaworld_manholecard.html",
+        "result": "取得記録: 200。「アクアワールド・大洗をテーマにしたマンホールカードを配布します！／茨城県」を確認。施設ごとの判定: 県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.aquaworld-oarai.com/guide/access-car/",
+        "result": "取得記録: 200。「交通アクセス：お車でお越しの方 | アクアワールド茨城県大洗水族館【公式】」を確認。施設ごとの判定: 県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.aquaworld-oarai.com/guide/access-train/",
+        "result": "取得記録: 200。「交通アクセス：電車でお越しの方 | アクアワールド茨城県大洗水族館【公式】」を確認。施設ごとの判定: 県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.pref.ibaraki.jp/bugai/koho/kenmin/info/divishion/index6.html",
+        "result": "取得記録: 200。「県庁舎へのアクセス／茨城県」を確認。施設ごとの判定: 県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-009640d63f2fbbd2a23d": {
+    "index": 1,
+    "name": "水戸観光案内所",
+    "address": "茨城県水戸市宮町1-1-1(JR東日本常磐線水戸駅改札口脇)",
+    "attempts": [
+      {
+        "url": "http://www.mitokoumon.com/",
+        "result": "取得記録: 200。「水戸市の観光情報サイト「水戸旅」【公式】水戸観光コンベンション協会」を確認。施設ごとの判定: 水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.mito.lg.jp/page/122030.html",
+        "result": "取得記録: 200。「マンホールカード配布のご案内（下水道計画課） - 水戸市ホームページ」を確認。施設ごとの判定: 水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+      },
+      {
+        "url": "https://mitokoumon.com/access/",
+        "result": "取得記録: 200。「アクセス情報 «  水戸市の観光情報サイト「水戸旅」【公式】水戸観光コンベンション協会」を確認。施設ごとの判定: 水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.mito.lg.jp/page/4371.html",
+        "result": "取得記録: 200。「水戸市役所本庁舎への交通アクセスと駐車場案内（水戸市役所） - 水戸市ホームページ」を確認。施設ごとの判定: 水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+      },
+      {
+        "url": "https://mitokoumon.com/about/tourist_information_center/",
+        "result": "取得記録: 200。「水戸観光案内所 «  水戸市の観光情報サイト「水戸旅」【公式】水戸観光コンベンション協会」を確認。施設ごとの判定: 水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-2b7f825239f662031410": {
+    "index": 2,
+    "name": "水戸芸術館",
+    "address": "茨城県水戸市五軒町1-6-8",
+    "attempts": [
+      {
+        "url": "https://www.arttowermito.or.jp/",
+        "result": "取得記録: 200。「水戸芸術館」を確認。施設ごとの判定: 芸術館公式アクセスのGoogleリンクは施設名検索qと表示中心を含むが、数値q・destination・独立marker指定ではない。五軒町1-6-8への明示位置を抽出できなかった。"
+      },
+      {
+        "url": "https://www.city.mito.lg.jp/page/122030.html",
+        "result": "取得記録: 200。「マンホールカード配布のご案内（下水道計画課） - 水戸市ホームページ」を確認。施設ごとの判定: 芸術館公式アクセスのGoogleリンクは施設名検索qと表示中心を含むが、数値q・destination・独立marker指定ではない。五軒町1-6-8への明示位置を抽出できなかった。"
+      },
+      {
+        "url": "https://www.city.mito.lg.jp/page/4371.html",
+        "result": "取得記録: 200。「水戸市役所本庁舎への交通アクセスと駐車場案内（水戸市役所） - 水戸市ホームページ」を確認。施設ごとの判定: 芸術館公式アクセスのGoogleリンクは施設名検索qと表示中心を含むが、数値q・destination・独立marker指定ではない。五軒町1-6-8への明示位置を抽出できなかった。"
+      },
+      {
+        "url": "https://www.arttowermito.or.jp/access/",
+        "result": "取得記録: 200。「アクセス・来館情報 ｜ 水戸芸術館」を確認。施設ごとの判定: 芸術館公式アクセスのGoogleリンクは施設名検索qと表示中心を含むが、数値q・destination・独立marker指定ではない。五軒町1-6-8への明示位置を抽出できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-2e945c5e9faf1a16c8d7": {
+    "index": 3,
+    "name": "日立市役所下水道課",
+    "address": "茨城県日立市助川町1-1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.hitachi.lg.jp/kigyo/",
+        "result": "取得記録: 200。「日立市企業局（水道・下水道）｜日立市公式ウェブサイト」を確認。"
+      },
+      {
+        "url": "http://www.kankou-hitachi.jp/",
+        "result": "取得記録: 200。「トップページ | 日立市観光物産協会公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.hitachi.lg.jp/kigyo/koho_oshirase/1008759/1005112.html",
+        "result": "取得記録: 200。「マンホールカードを配布しています。｜日立市公式ウェブサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.hitachi.lg.jp/shisetsu/shikanrenshisetsu/1005730/1005731.html",
+        "result": "取得記録: 200。「日立市役所｜日立市公式ウェブサイト」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-9e5838ad85ddd56ff5a1": {
+    "index": 4,
+    "name": "ぷらっとひたち(日立駅情報交流プラザ)",
+    "address": "茨城県日立市幸町1-1-2(日立駅中央口北側)",
+    "attempts": [
+      {
+        "url": "https://www.city.hitachi.lg.jp/kigyo/",
+        "result": "取得記録: 200。「日立市企業局（水道・下水道）｜日立市公式ウェブサイト」を確認。施設ごとの判定: 市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。"
+      },
+      {
+        "url": "http://www.kankou-hitachi.jp/",
+        "result": "取得記録: 200。「トップページ | 日立市観光物産協会公式ホームページ」を確認。施設ごとの判定: 市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。"
+      },
+      {
+        "url": "https://www.city.hitachi.lg.jp/kigyo/koho_oshirase/1008759/1005112.html",
+        "result": "取得記録: 200。「マンホールカードを配布しています。｜日立市公式ウェブサイト」を確認。施設ごとの判定: 市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。"
+      },
+      {
+        "url": "https://www.city.hitachi.lg.jp/machizukuri_kankyo/toshikyotenseibi/1002775/1002777.html",
+        "result": "取得記録: 200。「日立駅情報交流プラザのご案内｜日立市公式ウェブサイト」を確認。施設ごとの判定: 市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-8b808446dd99e8fe8f0e": {
+    "index": 5,
+    "name": "土浦市観光協会",
+    "address": "茨城県土浦市中央1-3-16",
+    "attempts": [
+      {
+        "url": "http://www.tsuchiura-kankou.jp/",
+        "result": "取得記録: 200。「土浦市観光協会 | オフィシャルサイト」を確認。施設ごとの判定: 観光協会公式の地域アクセスは広域My Maps。問い合わせページの協会地図は埋め込みviewportであり、中央1-3-16のマーカー座標として確定できない。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。施設ごとの判定: 観光協会公式の地域アクセスは広域My Maps。問い合わせページの協会地図は埋め込みviewportであり、中央1-3-16のマーカー座標として確定できない。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。施設ごとの判定: 観光協会公式の地域アクセスは広域My Maps。問い合わせページの協会地図は埋め込みviewportであり、中央1-3-16のマーカー座標として確定できない。"
+      },
+      {
+        "url": "https://www.tsuchiura-kankou.jp/about_tsuchiura_city/",
+        "result": "取得記録: 200。「土浦市のこと | 土浦市観光協会」を確認。施設ごとの判定: 観光協会公式の地域アクセスは広域My Maps。問い合わせページの協会地図は埋め込みviewportであり、中央1-3-16のマーカー座標として確定できない。"
+      }
+    ]
+  },
+  "facility:kanto-north-39510f00feb32132cad4": {
+    "index": 6,
+    "name": "土浦市役所 シティプロモーション課",
+    "address": "茨城県土浦市大和町9-1 3階",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/sp/",
+        "result": "取得記録: 200。「土浦市 | Tsuchiura City  | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page001349.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/shisei/shinosyokai/chiri/page001349.html",
+        "result": "取得記録: 200。「市（土浦市役所　本庁舎）へのアクセス | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=869",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=42",
+        "result": "取得記録: 200。「土浦市役所　本庁舎 - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-faf51dac26851d419cf5": {
+    "index": 7,
+    "name": "観光情報物産センターきらら館",
+    "address": "茨城県土浦市大和町9-1 1階",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/sp/",
+        "result": "取得記録: 200。「土浦市 | Tsuchiura City  | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page001349.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/shisei/shinosyokai/chiri/page001349.html",
+        "result": "取得記録: 200。「市（土浦市役所　本庁舎）へのアクセス | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=869",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=42",
+        "result": "取得記録: 200。「土浦市役所　本庁舎 - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-9c16a5e9f705a6c0aeda": {
+    "index": 8,
+    "name": "土浦市立博物館",
+    "address": "茨城県土浦市中央一丁目15-18",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/dir000378.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiurashiritsuhakubutsukan/page000876.html",
+        "result": "取得記録: 200。「交通のご案内（博物館） | 土浦市立博物館 | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiurashiritsuhakubutsukan/",
+        "result": "取得記録: 200。「土浦市立博物館 | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=171",
+        "result": "取得記録: 200。「土浦市立博物館 - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-23dde6cb0149f066fca4": {
+    "index": 9,
+    "name": "土浦市民ギャラリー",
+    "address": "茨城県土浦市大和町1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/dir010472.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiurashimingallery/tanosimu/page010358.html",
+        "result": "取得記録: 200。「アクセス | 土浦市民ギャラリー」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiurashimingallery/",
+        "result": "取得記録: 200。「土浦市民ギャラリー | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=1447",
+        "result": "取得記録: 200。「土浦市民ギャラリー - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-f3021637145ad631f7d9": {
+    "index": 10,
+    "name": "土浦市亀城プラザ",
+    "address": "茨城県土浦市中央二丁目16-4",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/dir000578.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiura-kijo-plaza/shisetsuannai/",
+        "result": "取得記録: 200。「施設案内 | 土浦市亀城プラザ | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page001099.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/tsuchiura-kijo-plaza/page001099.html",
+        "result": "取得記録: 200。「交通アクセス | 土浦市亀城プラザ | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=192",
+        "result": "取得記録: 200。「土浦市亀城プラザ - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-678eaa691f037721b1d4": {
+    "index": 11,
+    "name": "霞ケ浦総合公園テニスコート管理事務所",
+    "address": "茨城県土浦市大岩田580",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。施設ごとの判定: 公式水郷テニスコート利用案内とmap.php?code=204を確認。点は「霞ヶ浦総合公園 テニスコート」の代表点で、管理事務所建物を示すとは確認できず保留。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。施設ごとの判定: 公式水郷テニスコート利用案内とmap.php?code=204を確認。点は「霞ヶ浦総合公園 テニスコート」の代表点で、管理事務所建物を示すとは確認できず保留。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/suigotennis-court/page001070.html",
+        "result": "取得記録: 200。「利用のご案内 | 水郷テニスコート | 土浦市公式ホームページ」を確認。施設ごとの判定: 公式水郷テニスコート利用案内とmap.php?code=204を確認。点は「霞ヶ浦総合公園 テニスコート」の代表点で、管理事務所建物を示すとは確認できず保留。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=204",
+        "result": "取得記録: 200。「霞ヶ浦総合公園　テニスコート - 土浦市公式ホームページ」を確認。施設ごとの判定: 公式水郷テニスコート利用案内とmap.php?code=204を確認。点は「霞ヶ浦総合公園 テニスコート」の代表点で、管理事務所建物を示すとは確認できず保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-0ebb925691ab4a56d116": {
+    "index": 12,
+    "name": "土浦市観光案内所",
+    "address": "茨城県土浦市有明町1-30",
+    "attempts": [
+      {
+        "url": "https://www.tsuchiura-kankou.jp/inquiry/",
+        "result": "取得記録: 200。「お問い合わせ | 土浦市観光協会」を確認。施設ごとの判定: 観光協会問い合わせページの有明町1-30案内所の埋め込みを確認。数値はpbの表示範囲中心で、中央1-3-16の協会事務所と分けて案内所の点を確定できない。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page019560.html",
+        "result": "取得記録: 200。施設ごとの判定: 観光協会問い合わせページの有明町1-30案内所の埋め込みを確認。数値はpbの表示範囲中心で、中央1-3-16の協会事務所と分けて案内所の点を確定できない。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。施設ごとの判定: 観光協会問い合わせページの有明町1-30案内所の埋め込みを確認。数値はpbの表示範囲中心で、中央1-3-16の協会事務所と分けて案内所の点を確定できない。"
+      },
+      {
+        "url": "https://www.tsuchiura-kankou.jp/about_tsuchiura_city/",
+        "result": "取得記録: 200。「土浦市のこと | 土浦市観光協会」を確認。施設ごとの判定: 観光協会問い合わせページの有明町1-30案内所の埋め込みを確認。数値はpbの表示範囲中心で、中央1-3-16の協会事務所と分けて案内所の点を確定できない。"
+      }
+    ]
+  },
+  "facility:kanto-north-00d6ef3c990590c41abf": {
+    "index": 13,
+    "name": "土浦市立一中地区公民館",
+    "address": "茨城県土浦市大手町13番9号",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kurashi-tetsuzuki/kokyoshisetsu/bunka-shogaigakushunoshisetsu/chikukominkan/page000116.html",
+        "result": "取得記録: 200。「一中地区公民館（一中地区コミュニティセンター） | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kurashi-tetsuzuki/suido-kokyogesuido/kokyogesuido/page019560.html",
+        "result": "取得記録: 200。「土浦市のデザインマンホールおよびマンホールカードについて | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page001349.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kyoikuiinkai/shogaigakushu/kominkan/page003784.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=1",
+        "result": "取得記録: 200。「一中地区公民館 - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-1230b4e67b9b5decbe87": {
+    "index": 14,
+    "name": "霞ケ浦文化体育会館",
+    "address": "茨城県土浦市大岩田1051番地",
+    "attempts": [
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kasumigaurataiikukaikan/index.html",
+        "result": "取得記録: 200。「霞ヶ浦文化体育会館（水郷体育館） | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kurashi-tetsuzuki/suido-kokyogesuido/kokyogesuido/page019560.html",
+        "result": "取得記録: 200。「土浦市のデザインマンホールおよびマンホールカードについて | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/data/doc/1759973228_doc_32_0.pdf",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/page/page001349.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/kasumigaurataiikukaikan/page001053.html",
+        "result": "取得記録: 200。「施設紹介 | 霞ヶ浦文化体育会館（水郷体育館） | 土浦市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tsuchiura.lg.jp/map.php?code=206",
+        "result": "取得記録: 200。「霞ヶ浦総合公園　霞ヶ浦文化体育会館 - 土浦市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-2384f4b5d5bbd843bcbd": {
+    "index": 15,
+    "name": "古河市観光案内所",
+    "address": "茨城県古河市東本町1丁目1 JR古河駅構内東側",
+    "attempts": [
+      {
+        "url": "https://www.kogakanko.jp/",
+        "result": "取得記録: 200。「こがナビ｜古河市観光協会 | 歴史と華のある都市（まち）関東ド・マンナカの古河市観光協会オフィシャルサイトです。」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      },
+      {
+        "url": "https://www.city.ibaraki-koga.lg.jp/soshiki/gesui/1/19194.html",
+        "result": "取得記録: 200。「マンホールカード配布中／古河市公式ホームページ」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      },
+      {
+        "url": "https://www.kogakanko.jp/access",
+        "result": "取得記録: 200。「アクセス・宿泊施設 | こがナビ｜古河市観光協会」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      },
+      {
+        "url": "https://www.city.ibaraki-koga.lg.jp/soshiki/zaisankatsuyo/4/1800.html",
+        "result": "取得記録: 200。「総和庁舎へのアクセス／古河市公式ホームページ」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      },
+      {
+        "url": "https://www.city.ibaraki-koga.lg.jp/soshiki/zaisankatsuyo/4/1801.html",
+        "result": "取得記録: 200。「古河庁舎へのアクセス／古河市公式ホームページ」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      },
+      {
+        "url": "https://www.kogakanko.jp/news/観光案内所（古河駅）の休業について",
+        "result": "取得記録: 200。「古河市観光案内所 | こがナビ｜古河市観光協会」を確認。施設ごとの判定: 観光協会の「古河市観光案内所」紹介とアクセスを確認。Google地図は古河駅の施設名検索であり、駅構内東側案内所に対応する明示座標は得られなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-c5b7e1ec0325eed3fb6c": {
+    "index": 16,
+    "name": "まち蔵藍",
+    "address": "茨城県石岡市国府3-5-6",
+    "attempts": [
+      {
+        "url": "http://www.ishioka-kankou.com/page/page000008.html",
+        "result": "取得記録: 200。「丁子屋(まち蔵 藍) | 【公式】茨城県 石岡市観光協会」を確認。"
+      },
+      {
+        "url": "http://www.city.ishioka.lg.jp/page/dir004744.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.ishioka.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido/page004217.html",
+        "result": "取得記録: 200。「石岡市マンホールカード（石岡地区 幌獅子）が誕生しました！ | 石岡市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.ibarakiguide.jp/spot.php?code=1307&mode=detail",
+        "result": "取得記録: 200。「まち蔵 藍 | 観光いばらき公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ishioka.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 石岡市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ishioka.lg.jp/map.php?code=276",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-95dce59d2f6568dc1ae8": {
+    "index": 17,
+    "name": "結城市都市建設部下水道課",
+    "address": "結城市中央町二丁目3番地(庁舎3階)",
+    "attempts": [
+      {
+        "url": "http://www.city.yuki.lg.jp/page/page000264.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.yuki.lg.jp/page/page005290.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.yuki.lg.jp/kurashi-tetsuzuki/suidou-gesuidou/gesuidou/page005290.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 結城市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.yuki.lg.jp/shisei/choushaannai/index.html",
+        "result": "取得記録: 200。「庁舎案内 | 結城市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.yuki.lg.jp/machizukurikyoudouka/about/page002404.html",
+        "result": "取得記録: 200。「アクセス | 結城市まちづくり協働課」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-ae50151eefa7485f5bed": {
+    "index": 18,
+    "name": "龍ケ崎市 下水道課",
+    "address": "茨城県龍ケ崎市3710番地",
+    "attempts": [
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/kurashi/seikatsu/suido/oshirase/ryugasaki-mhc.html",
+        "result": "取得記録: 200。「マンホールカードを配布しています！｜龍ケ崎市公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/index.html",
+        "result": "取得記録: 200。「市の概要・アクセス｜龍ケ崎市公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/access.html",
+        "result": "取得記録: 200。「龍ケ崎市の位置・アクセス｜龍ケ崎市公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/choshaannai.html",
+        "result": "取得記録: 200。「龍ケ崎市役所のご案内｜龍ケ崎市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-e9c407539fac35ab201d": {
+    "index": 19,
+    "name": "龍ケ崎市 市民窓口ステーション",
+    "address": "茨城県龍ケ崎市小柴5丁目1番地2サプラ2階",
+    "attempts": [
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/kurashi/seikatsu/suido/oshirase/ryugasaki-mhc.html",
+        "result": "取得記録: 200。「マンホールカードを配布しています！｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 市民窓口ステーションの専用紹介ページで小柴5-1-2サプラ2階を確認したが、窓口またはサプラ建物の明示座標は確認できなかった。3710番地の市役所点とは別。"
+      },
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/index.html",
+        "result": "取得記録: 200。「市の概要・アクセス｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 市民窓口ステーションの専用紹介ページで小柴5-1-2サプラ2階を確認したが、窓口またはサプラ建物の明示座標は確認できなかった。3710番地の市役所点とは別。"
+      },
+      {
+        "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/access.html",
+        "result": "取得記録: 200。「龍ケ崎市の位置・アクセス｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 市民窓口ステーションの専用紹介ページで小柴5-1-2サプラ2階を確認したが、窓口またはサプラ建物の明示座標は確認できなかった。3710番地の市役所点とは別。"
+      },
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/kurashi/todokede/syuttyoujyo/2016050200152.html",
+        "result": "取得記録: 200。「市民窓口ステーション｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 市民窓口ステーションの専用紹介ページで小柴5-1-2サプラ2階を確認したが、窓口またはサプラ建物の明示座標は確認できなかった。3710番地の市役所点とは別。"
+      }
+    ]
+  },
+  "facility:kanto-north-fb8539f44aa2bc8487c0": {
+    "index": 20,
+    "name": "龍ケ崎市観光物産センター",
+    "address": "茨城県龍ケ崎市佐貫町645-1 関鉄佐貫ビル2 1階南側",
+    "attempts": [
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/kanko/kankokyokai/more-ryugasaki/2013081500794.html",
+        "result": "取得記録: 200。「龍ケ崎市観光物産センター｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 観光物産センター専用紹介・観光協会交通案内を確認。佐貫町645-1の関鉄佐貫ビル2に対応する数値地図指定を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/kurashi/seikatsu/suido/oshirase/ryugasaki-mhc.html",
+        "result": "取得記録: 200。「マンホールカードを配布しています！｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 観光物産センター専用紹介・観光協会交通案内を確認。佐貫町645-1の関鉄佐貫ビル2に対応する数値地図指定を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/kanko/kankokyokai/information/access/access.html",
+        "result": "取得記録: 200。「龍ケ崎市へのアクセス｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 観光物産センター専用紹介・観光協会交通案内を確認。佐貫町645-1の関鉄佐貫ビル2に対応する数値地図指定を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/index.html",
+        "result": "取得記録: 200。「市の概要・アクセス｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 観光物産センター専用紹介・観光協会交通案内を確認。佐貫町645-1の関鉄佐貫ビル2に対応する数値地図指定を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/access.html",
+        "result": "取得記録: 200。「龍ケ崎市の位置・アクセス｜龍ケ崎市公式ホームページ」を確認。施設ごとの判定: 観光物産センター専用紹介・観光協会交通案内を確認。佐貫町645-1の関鉄佐貫ビル2に対応する数値地図指定を確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-645241e64a5c79700db5": {
+    "index": 21,
+    "name": "下妻市立図書館",
+    "address": "茨城県下妻市砂沼新田35-1",
+    "attempts": [
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/shogaigakushu-bunka-sports/library/",
+        "result": "取得記録: 200。「下妻市立図書館 | 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/kurashi-tetsuzuki/suido-gesuido/gesuido-user/page003728.html",
+        "result": "取得記録: 200。「マンホールカードに関するお知らせ | 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/map.php?code=264",
+        "result": "取得記録: 200。「下妻市庁舎 - 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/sisetsu/page008204.html",
+        "result": "取得記録: 200。「図書館・博物館 | 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/map.php?code=7",
+        "result": "取得記録: 200。「下妻市立図書館 - 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/map.php?code=15",
+        "result": "取得記録: 200。「ふるさと博物館 - 下妻市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuma.lg.jp/map.php?code=6",
+        "result": "取得記録: 200。「砂沼浄水場（上下水道課） - 下妻市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-f602a401dc3ad4f44cea": {
+    "index": 22,
+    "name": "高萩市役所都市建設課(庁舎2階)",
+    "address": "茨城県高萩市本町1-100-1",
+    "attempts": [
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/index.html",
+        "result": "取得記録: 200。「トップページ | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/kurashi/sumai/suidou/gesuidou/page004960.html",
+        "result": "取得記録: 200。「高萩市マンホールカード | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/furusato/page008437.html",
+        "result": "取得記録: 200。「ふるさと納税ポータルサイト「ふるさとチョイス」における不正アクセスについて（注意喚起）【10/30更新】 | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 高萩市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-6e8b88be44736521572e": {
+    "index": 23,
+    "name": "高萩市役所総合受付(庁舎1階)",
+    "address": "茨城県高萩市本町1-100-1",
+    "attempts": [
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/index.html",
+        "result": "取得記録: 200。「トップページ | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/kurashi/sumai/suidou/gesuidou/page004960.html",
+        "result": "取得記録: 200。「高萩市マンホールカード | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/furusato/page008437.html",
+        "result": "取得記録: 200。「ふるさと納税ポータルサイト「ふるさとチョイス」における不正アクセスについて（注意喚起）【10/30更新】 | 高萩市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.takahagi.ibaraki.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 高萩市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-25dc369fdbc22580ba80": {
+    "index": 24,
+    "name": "北茨城市役所総合受付",
+    "address": "茨城県北茨城市磯原町磯原1630番地",
+    "attempts": [
+      {
+        "url": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+        "result": "取得記録: 200。「マンホールカードの配布について | 北茨城市」を確認。施設ごとの判定: 市役所案内docs/2023032900016/と配布記事を確認。磯原1630の庁舎所在地はあるが、取得HTML中に施設の数値qやマーカーがなかった。"
+      },
+      {
+        "url": "https://www.city.kitaibaraki.lg.jp/docs/2023032900016/",
+        "result": "取得記録: 200。「市役所案内 | 北茨城市」を確認。施設ごとの判定: 市役所案内docs/2023032900016/と配布記事を確認。磯原1630の庁舎所在地はあるが、取得HTML中に施設の数値qやマーカーがなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-73f40ac43cb2acd57ac6": {
+    "index": 25,
+    "name": "取手市役所取手支所取手駅前窓口",
+    "address": "茨城県取手市新町1-9-1(リボンとりでビル3階)",
+    "attempts": [
+      {
+        "url": "https://www.city.toride.ibaraki.jp/",
+        "result": "取得記録: 200。「取手市公式ホームページ」を確認。施設ごとの判定: リボンとりで公式のアクセス案内まで確認。新町1-9-1の3階窓口に使える建物の明示座標を確認できず、取手本庁舎は転用しない。"
+      },
+      {
+        "url": "http://www.t-gesui.hs.plala.or.jp/gesuidoukouhoukatudounituite.html",
+        "result": "取得記録: 200。「下水道広報活動について | 取手地方広域下水道組合」を確認。施設ごとの判定: リボンとりで公式のアクセス案内まで確認。新町1-9-1の3階窓口に使える建物の明示座標を確認できず、取手本庁舎は転用しない。"
+      },
+      {
+        "url": "https://www.city.toride.ibaraki.jp/kokuho/kurashi/kenko/oshirase/huseiakusesu.html",
+        "result": "取得記録: 200。「取手市／健診予約システム「AITEL」における不正アクセスに伴うパスワード変更のお願い」を確認。施設ごとの判定: リボンとりで公式のアクセス案内まで確認。新町1-9-1の3階窓口に使える建物の明示座標を確認できず、取手本庁舎は転用しない。"
+      },
+      {
+        "url": "https://www.ribon-toride.com/index.html",
+        "result": "取得記録: 200。「TOP | リボンとりで」を確認。施設ごとの判定: リボンとりで公式のアクセス案内まで確認。新町1-9-1の3階窓口に使える建物の明示座標を確認できず、取手本庁舎は転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-d0b8900fb590b1bd3ddd": {
+    "index": 26,
+    "name": "牛久市役所分庁舎1階 下水道課",
+    "address": "茨城県牛久市中央3丁目15番地1",
+    "attempts": [
+      {
+        "url": "https://www.city.ushiku.lg.jp/page/page012939.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/kurashi-tetsuduki/seikatsu/jogesuido/gesuido/page012939.html",
+        "result": "取得記録: 200。「マンホールカード配布状況について | 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「施設ガイドマップ | 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/map.php?code=187",
+        "result": "取得記録: 200。「牛久市役所　分庁舎 - 牛久市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-20f856c938901d95a12d": {
+    "index": 27,
+    "name": "エスカード牛久2階 いばらき自慢",
+    "address": "茨城県牛久市牛久町280",
+    "attempts": [
+      {
+        "url": "https://www.city.ushiku.lg.jp/page/page012939.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/kurashi-tetsuduki/seikatsu/jogesuido/gesuido/page012939.html",
+        "result": "取得記録: 200。「マンホールカード配布状況について | 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://escado.jp/ibarakijiman/",
+        "result": "取得記録: 200。「いばらき自慢 | エスカード牛久 | JR常磐線牛久駅西口前にある、ショッピング&テナントビル」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/kanko-bunka-sports/culture/shogaigakushu-center/page000344.html",
+        "result": "取得記録: 200。「エスカード生涯学習センター・エスカードホール | 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/map.php?code=126",
+        "result": "取得記録: 200。「牛久市エスカード生涯学習センター - 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/map.php?code=187",
+        "result": "取得記録: 200。「牛久市役所　分庁舎 - 牛久市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「施設ガイドマップ | 牛久市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-1fd6ee704dfe58bb5411": {
+    "index": 28,
+    "name": "牛久シャトーショップ",
+    "address": "茨城県牛久市中央三丁目20番地1",
+    "attempts": [
+      {
+        "url": "https://ushiku-chateau.com/",
+        "result": "取得記録: 200。「【公式】牛久シャトー ｜牛久シャトー株式会社」を確認。施設ごとの判定: 牛久シャトー公式アクセスの埋め込み座標は表示範囲中心。敷地内のショップ棟とワイン資料館等を区別したマーカー座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/city-promotion/ushiku-kohotaishi-room/collabo/ushiku-city/page014847.html",
+        "result": "取得記録: 200。「マンホールカード | 牛久市公式ホームページ」を確認。施設ごとの判定: 牛久シャトー公式アクセスの埋め込み座標は表示範囲中心。敷地内のショップ棟とワイン資料館等を区別したマーカー座標を確認できなかった。"
+      },
+      {
+        "url": "https://ushiku-chateau.com/access/",
+        "result": "取得記録: 200。「アクセス | 【公式】牛久シャトー」を確認。施設ごとの判定: 牛久シャトー公式アクセスの埋め込み座標は表示範囲中心。敷地内のショップ棟とワイン資料館等を区別したマーカー座標を確認できなかった。"
+      },
+      {
+        "url": "https://ushiku-chateau.com/access",
+        "result": "取得記録: 200。「アクセス | 【公式】牛久シャトー」を確認。施設ごとの判定: 牛久シャトー公式アクセスの埋め込み座標は表示範囲中心。敷地内のショップ棟とワイン資料館等を区別したマーカー座標を確認できなかった。"
+      },
+      {
+        "url": "https://www.city.ushiku.lg.jp/page/page008014.html",
+        "result": "取得記録: 200。施設ごとの判定: 牛久シャトー公式アクセスの埋め込み座標は表示範囲中心。敷地内のショップ棟とワイン資料館等を区別したマーカー座標を確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-1bfeb40ad99d60b3f386": {
+    "index": 29,
+    "name": "つくば市役所1階水道お客様センター",
+    "address": "茨城県つくば市研究学園1丁目1番地1",
+    "attempts": [
+      {
+        "url": "https://www.city.tsukuba.lg.jp/kurashi/kankyo/suido/1000923/koho/1005888.html",
+        "result": "取得記録: 200。「下水道事業の広報と啓発／つくば市公式ウェブサイト」を確認。施設ごとの判定: つくば市役所への交通アクセス専用ページを確認。研究学園1-1-1の案内から数値マーカーを抽出できず、水道お客様センターに使える建物点は未確定。"
+      },
+      {
+        "url": "https://www.city.tsukuba.lg.jp/kurashi/kotsu/1003898/index.html",
+        "result": "取得記録: 200。「交通アクセス／つくば市公式ウェブサイト」を確認。施設ごとの判定: つくば市役所への交通アクセス専用ページを確認。研究学園1-1-1の案内から数値マーカーを抽出できず、水道お客様センターに使える建物点は未確定。"
+      },
+      {
+        "url": "https://www.city.tsukuba.lg.jp/soshikikarasagasu/toshikeikakubusogokotsuseisakuka/gyomuannai/2/3/1003899.html",
+        "result": "取得記録: 200。「つくば市役所への交通アクセス／つくば市公式ウェブサイト」を確認。施設ごとの判定: つくば市役所への交通アクセス専用ページを確認。研究学園1-1-1の案内から数値マーカーを抽出できず、水道お客様センターに使える建物点は未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-02882996672a826c585c": {
+    "index": 30,
+    "name": "つくば駅前観光案内所",
+    "address": "茨城県つくば市吾妻一丁目8-10",
+    "attempts": [
+      {
+        "url": "https://ttca.jp/%e8%a6%b3%e5%85%89%e6%a1%88%e5%86%85%e6%89%80/%e3%81%a4%e3%81%8f%e3%81%b0%e7%b7%8f%e5%90%88%e3%82%a4%e3%83%b3%e3%83%95%e3%82%a9%e3%83%a1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bcbivi%e3%81%a4%e3%81%8f%e3%81%b0/",
+        "result": "取得記録: 200。「つくば駅前観光案内所(BiViつくば内) | 観光案内所 | 一般社団法人つくば観光コンベンション協会」を確認。施設ごとの判定: 市のつくば駅前観光案内所紹介と観光協会BiVi紹介を照合。吾妻1-8-10の明示位置はなく、協会広域アクセス地図のつくば市表示中心は除外。"
+      },
+      {
+        "url": "https://www.city.tsukuba.lg.jp/shisei/torikumi/jitensha/1019408.html",
+        "result": "取得記録: 200。「『弱虫ペダル』デザインマンホールを設置しています！／つくば市公式ウェブサイト」を確認。施設ごとの判定: 市のつくば駅前観光案内所紹介と観光協会BiVi紹介を照合。吾妻1-8-10の明示位置はなく、協会広域アクセス地図のつくば市表示中心は除外。"
+      },
+      {
+        "url": "https://ttca.jp/%e4%ba%a4%e9%80%9a%e6%a1%88%e5%86%85/",
+        "result": "取得記録: 200。「アクセス・交通案内 | 一般社団法人つくば観光コンベンション協会」を確認。施設ごとの判定: 市のつくば駅前観光案内所紹介と観光協会BiVi紹介を照合。吾妻1-8-10の明示位置はなく、協会広域アクセス地図のつくば市表示中心は除外。"
+      },
+      {
+        "url": "https://www.city.tsukuba.lg.jp/kurashi/kotsu/1003898/index.html",
+        "result": "取得記録: 200。「交通アクセス／つくば市公式ウェブサイト」を確認。施設ごとの判定: 市のつくば駅前観光案内所紹介と観光協会BiVi紹介を照合。吾妻1-8-10の明示位置はなく、協会広域アクセス地図のつくば市表示中心は除外。"
+      },
+      {
+        "url": "https://www.city.tsukuba.lg.jp/tourism/facilities/19367.html",
+        "result": "取得記録: 200。「つくば駅前観光案内所／つくば市公式ウェブサイト」を確認。施設ごとの判定: 市のつくば駅前観光案内所紹介と観光協会BiVi紹介を照合。吾妻1-8-10の明示位置はなく、協会広域アクセス地図のつくば市表示中心は除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-a0cee7df87e79f814924": {
+    "index": 31,
+    "name": "鹿島アントラーズオフィシャルショップ・クラブハウス店",
+    "address": "茨城県鹿嶋市粟生東山2887",
+    "attempts": [
+      {
+        "url": "http://www.so-net.ne.jp/antlers/fanzone/shop.html",
+        "result": "取得記録: 200。「公式サイトURL変更のお知らせ」を確認。施設ごとの判定: クラブ公式の新アクセス案内まで確認。クラブハウスはMy Maps参照で、同ページのつくば・NIPPON STEEL施設の埋め込み数値は別施設のため除外。粟生東山2887のショップ建物点は未確定。"
+      },
+      {
+        "url": "https://city.kashima.ibaraki.jp/soshiki/54/3262.html",
+        "result": "取得記録: 200。「鹿嶋市マンホールカードを配布しています！ - 鹿嶋市ホームページ」を確認。施設ごとの判定: クラブ公式の新アクセス案内まで確認。クラブハウスはMy Maps参照で、同ページのつくば・NIPPON STEEL施設の埋め込み数値は別施設のため除外。粟生東山2887のショップ建物点は未確定。"
+      },
+      {
+        "url": "https://www.antlers.co.jp/pages/guide-stadium-access-old",
+        "result": "取得記録: 200。「試合にはどう行けばいいの？（旧）」を確認。施設ごとの判定: クラブ公式の新アクセス案内まで確認。クラブハウスはMy Maps参照で、同ページのつくば・NIPPON STEEL施設の埋め込み数値は別施設のため除外。粟生東山2887のショップ建物点は未確定。"
+      },
+      {
+        "url": "https://www.antlers.co.jp/pages/club-access-old",
+        "result": "取得記録: 200。「クラブアクセス（旧）」を確認。施設ごとの判定: クラブ公式の新アクセス案内まで確認。クラブハウスはMy Maps参照で、同ページのつくば・NIPPON STEEL施設の埋め込み数値は別施設のため除外。粟生東山2887のショップ建物点は未確定。"
+      },
+      {
+        "url": "https://www.antlers.co.jp/pages/club-access",
+        "result": "取得記録: 200。「クラブアクセス」を確認。施設ごとの判定: クラブ公式の新アクセス案内まで確認。クラブハウスはMy Maps参照で、同ページのつくば・NIPPON STEEL施設の埋め込み数値は別施設のため除外。粟生東山2887のショップ建物点は未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-45e8eab7ba6d2bdde8e5": {
+    "index": 32,
+    "name": "守谷市役所",
+    "address": "茨城県守谷市大柏950-1",
+    "attempts": [
+      {
+        "url": "http://www.city.moriya.ibaraki.jp/",
+        "result": "取得記録: 200。「守谷市公式サイト｜Moriya City」を確認。施設ごとの判定: 市役所アクセスの公式短縮地図リンクが429。再試行・回避なし。現配布記事の百合ケ丘2-2734-1のqは問い合わせ先の上下水道事務所であり、大柏950-1の配布場所市役所へ転用しない。移転根拠ではない。"
+      },
+      {
+        "url": "https://www.city.moriya.ibaraki.jp/kurashi_tetsuzuki/suido/1002264/1002265.html",
+        "result": "取得記録: 200。「守谷市マンホールカードを配布しています｜守谷市公式サイト｜Moriya City」を確認。施設ごとの判定: 市役所アクセスの公式短縮地図リンクが429。再試行・回避なし。現配布記事の百合ケ丘2-2734-1のqは問い合わせ先の上下水道事務所であり、大柏950-1の配布場所市役所へ転用しない。移転根拠ではない。"
+      },
+      {
+        "url": "https://www.city.moriya.ibaraki.jp/shisei/profile/1004324/1004327.html",
+        "result": "取得記録: 200。「市役所へのアクセス｜守谷市公式サイト｜Moriya City」を確認。施設ごとの判定: 市役所アクセスの公式短縮地図リンクが429。再試行・回避なし。現配布記事の百合ケ丘2-2734-1のqは問い合わせ先の上下水道事務所であり、大柏950-1の配布場所市役所へ転用しない。移転根拠ではない。"
+      },
+      {
+        "url": "https://maps.app.goo.gl/fotNWyVe5LJo6TAY6",
+        "result": "取得記録: 429。「https://www.google.com/maps/place/%E5%AE%88%E8%B0%B7%E5%B8%82%E5%BD%B9%E6%89%80/@35.9511939,139.9751926,106m/data=!3m1!1e3!4m6!3m5!1s0x60189effadc81a4d:0x8ebe767f239b7e04!8m2!3d35.9514134!4d139.9755125!16s%2Fg%2F1224bsrw?entry=tts&g_ep=EgoyMDI2MTAxOC4wIPu8ASoASAFQAw%3D%3D&skid=5359736f-8563-4417-b1f2-c3a46d04b24c」を確認。施設ごとの判定: 市役所アクセスの公式短縮地図リンクが429。再試行・回避なし。現配布記事の百合ケ丘2-2734-1のqは問い合わせ先の上下水道事務所であり、大柏950-1の配布場所市役所へ転用しない。移転根拠ではない。"
+      }
+    ]
+  },
+  "facility:kanto-north-3db2ac917f07b1de03e4": {
+    "index": 33,
+    "name": "道の駅常陸大宮~かわプラザ~",
+    "address": "茨城県常陸大宮市岩崎717-1",
+    "attempts": [
+      {
+        "url": "https://www.michieki-hitachiomiya.jp/",
+        "result": "取得記録: 200。「道の駅常陸大宮～かわプラザ～」を確認。施設ごとの判定: かわプラザ公式アクセスまで確認。Google埋め込みpbの数値は表示中心であり、岩崎717-1の建物マーカーではない。配布休止の条件は本追補では変更しない。"
+      },
+      {
+        "url": "https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/kurashi/suidou/gesuidou/page011190.html",
+        "result": "取得記録: 200。「マンホールカードの配布を休止しています | 常陸大宮市公式ホームページ」を確認。施設ごとの判定: かわプラザ公式アクセスまで確認。Google埋め込みpbの数値は表示中心であり、岩崎717-1の建物マーカーではない。配布休止の条件は本追補では変更しない。"
+      },
+      {
+        "url": "https://www.michieki-hitachiomiya.jp/access/",
+        "result": "取得記録: 200。「アクセス | 道の駅常陸大宮～かわプラザ～」を確認。施設ごとの判定: かわプラザ公式アクセスまで確認。Google埋め込みpbの数値は表示中心であり、岩崎717-1の建物マーカーではない。配布休止の条件は本追補では変更しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-eda89f6600b8d5aa745d": {
+    "index": 34,
+    "name": "那珂市曲がり屋",
+    "address": "茨城県那珂市菅谷4520-1(一ノ関ため池親水公園)",
+    "attempts": [
+      {
+        "url": "http://www.city.naka.lg.jp/page/page000512.html",
+        "result": "取得記録: 200。施設ごとの判定: 曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+      },
+      {
+        "url": "http://www.city.naka.lg.jp/page/dir000357.html",
+        "result": "取得記録: 200。施設ごとの判定: 曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+      },
+      {
+        "url": "https://www.city.naka.lg.jp/kurashi-tetsuduki/suidou-gesuidou/gesuidou/news/page005032.html",
+        "result": "取得記録: 200。「那珂市「マンホールカード」配布 | 那珂市公式ホームページ」を確認。施設ごとの判定: 曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+      },
+      {
+        "url": "https://www.city.naka.lg.jp/event-kankou/kankou-spot/page000512.html",
+        "result": "取得記録: 200。「那珂市曲がり屋 | 那珂市公式ホームページ」を確認。施設ごとの判定: 曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+      },
+      {
+        "url": "https://www.city.naka.lg.jp/map.php?code=42",
+        "result": "取得記録: 200。「一の関ため池親水公園 - 那珂市公式ホームページ」を確認。施設ごとの判定: 曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-95b25d7d3d1f8e92606f": {
+    "index": 35,
+    "name": "筑西市役所上下水道部下水道課",
+    "address": "茨城県筑西市丙360番地",
+    "attempts": [
+      {
+        "url": "https://www.city.chikusei.lg.jp",
+        "result": "取得記録: 200。「トップページ | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/page/page006377.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/gyousei/furusato-tax/furusato-tax/page014222.html",
+        "result": "取得記録: 200。「「さとふる」メール配信サービスにおける不正アクセスによる一部情報漏えいについて | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/map.php?code=6",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-943e6a0012c75808a6ab": {
+    "index": 36,
+    "name": "筑西市役所1階総合案内",
+    "address": "茨城県筑西市丙360番地",
+    "attempts": [
+      {
+        "url": "https://www.city.chikusei.lg.jp",
+        "result": "取得記録: 200。「トップページ | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/page/page006377.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/gyousei/furusato-tax/furusato-tax/page014222.html",
+        "result": "取得記録: 200。「「さとふる」メール配信サービスにおける不正アクセスによる一部情報漏えいについて | 筑西市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/map.php?code=6",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-18ff4d028e5a88922096": {
+    "index": 37,
+    "name": "道の駅グランテラス筑西総合案内所",
+    "address": "茨城県筑西市川澄1850",
+    "attempts": [
+      {
+        "url": "https://granterrace-chikusei.com/",
+        "result": "取得記録: 200。「グランテラス筑西 – 茨城県筑西市の道の駅  国道50号線バイパス沿い」を確認。施設ごとの判定: グランテラス筑西の公式アクセスで敷地案内を調査。埋め込みの表示中心や道の駅全体の点から総合案内所の建物を特定できなかった。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/kankou/kankou-news/page012070.html",
+        "result": "取得記録: 200。「「ふたマス!!!!!!」渡辺みのりマンホールカードの配布が決定!! | 筑西市公式ホームページ」を確認。施設ごとの判定: グランテラス筑西の公式アクセスで敷地案内を調査。埋め込みの表示中心や道の駅全体の点から総合案内所の建物を特定できなかった。"
+      },
+      {
+        "url": "https://granterrace-chikusei.com/access/",
+        "result": "取得記録: 200。「アクセスマップ – グランテラス筑西」を確認。施設ごとの判定: グランテラス筑西の公式アクセスで敷地案内を調査。埋め込みの表示中心や道の駅全体の点から総合案内所の建物を特定できなかった。"
+      },
+      {
+        "url": "https://maps.app.goo.gl/YJHpsAM6xA6A7K8j8",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/36%C2%B018'17.7%22N+139%C2%B058'43.2%22E/@36.3046937,139.9786394,73m/data=!3m1!1e3!4m4!3m3!8m2!3d36.3049167!4d139.9786667!5m1!1e4?entry=tts&g_ep=EgoyMDI1MDcwNi4wIPu8ASoASAFQAw%3D%3D&skid=54f8d4be-7fa1-497b-a3c2-95539fa71f6c」を確認。施設ごとの判定: グランテラス筑西の公式アクセスで敷地案内を調査。埋め込みの表示中心や道の駅全体の点から総合案内所の建物を特定できなかった。"
+      },
+      {
+        "url": "https://www.city.chikusei.lg.jp/map.php?code=6",
+        "result": "取得記録: 200。「Google マップ」を確認。施設ごとの判定: グランテラス筑西の公式アクセスで敷地案内を調査。埋め込みの表示中心や道の駅全体の点から総合案内所の建物を特定できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-c612c7c1c383a0ef7027": {
+    "index": 38,
+    "name": "雪入ふれあいの里公園(ネイチャーセンター)",
+    "address": "茨城県かすみがうら市雪入452-2",
+    "attempts": [
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page002376.html",
+        "result": "取得記録: 200。「かすみがうら市交流センター（畔の駅 コハン） | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      },
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page015174.html",
+        "result": "取得記録: 200。「かすみがうら市のデザインマンホールについて | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      },
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page015869.html",
+        "result": "取得記録: 200。「マンホールカードについて（配布状況） | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      },
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page000555.html",
+        "result": "取得記録: 200。「千代田庁舎 | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      },
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page000557.html",
+        "result": "取得記録: 200。「霞ヶ浦庁舎 | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      },
+      {
+        "url": "https://www.city.kasumigaura.lg.jp/page/page014375.html",
+        "result": "取得記録: 200。「雪入ふれあいの里公園・三ツ石森林公園 | かすみがうら市公式ホームページ」を確認。施設ごとの判定: 市の公園紹介page014375.htmlに数値qがあるが対象名は雪入ふれあいの里公園全体。雪入452-2のネイチャーセンター建物を示すか確定できず保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-8b00e897a44b95f4f883": {
+    "index": 39,
+    "name": "桜川市役所真壁庁舎",
+    "address": "茨城県桜川市真壁町飯塚911番地",
+    "attempts": [
+      {
+        "url": "http://www.city.sakuragawa.lg.jp/page/dir000068.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "http://www.city.sakuragawa.lg.jp/page/page006330.html",
+        "result": "取得記録: 200。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "result": "取得記録: 200。「桜川市マンホールカードの配布について | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=3",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/shisei/profile/page008866.html",
+        "result": "取得記録: 200。「市へのアクセス | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/kurashi/shisetsu/page000346.html",
+        "result": "取得記録: 200。「市役所庁舎 | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=1",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/A2Z3bMEFzu3rKe2eA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/8CKHt4ynYnqriNoi8",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/5cqr8YUB2ib3JKZdA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-f9fd315ed4076acc8b78": {
+    "index": 40,
+    "name": "桜川市役所大和庁舎総合窓口課",
+    "address": "茨城県桜川市羽田1023番地",
+    "attempts": [
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/shisei/soshiki/tyousha_annai/page000147.html",
+        "result": "取得記録: 200。「大和庁舎 | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "result": "取得記録: 200。「桜川市マンホールカードの配布について | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/A2Z3bMEFzu3rKe2eA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/8CKHt4ynYnqriNoi8",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=3",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/shisei/profile/page008866.html",
+        "result": "取得記録: 200。「市へのアクセス | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=1",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/5cqr8YUB2ib3JKZdA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 桜川市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-e9151ee383d91a7a7f2e": {
+    "index": 41,
+    "name": "桜川市役所大和庁舎日直窓口",
+    "address": "茨城県桜川市羽田1023番地",
+    "attempts": [
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/shisei/soshiki/tyousha_annai/page000147.html",
+        "result": "取得記録: 200。「大和庁舎 | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "result": "取得記録: 200。「桜川市マンホールカードの配布について | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/A2Z3bMEFzu3rKe2eA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/8CKHt4ynYnqriNoi8",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=3",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/shisei/profile/page008866.html",
+        "result": "取得記録: 200。「市へのアクセス | 桜川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?code=1",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/5cqr8YUB2ib3JKZdA",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 桜川市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-a2c53ffd48e2697dd556": {
+    "index": 42,
+    "name": "天王崎観光交流センター「コテラス」",
+    "address": "茨城県行方市麻生419-1(白帆の湯あそう温泉内)",
+    "attempts": [
+      {
+        "url": "http://shirahonoyu.com/",
+        "result": "取得記録: 200。「茨城県の温泉なら、あそう温泉 白帆の湯」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "http://www.city.namegata.ibaraki.jp/page/page006477.html",
+        "result": "取得記録: 200。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://www.city.namegata.ibaraki.jp/seikatsu/sumai-toshi/suidou-gesuidou/gesui/page006477.html",
+        "result": "取得記録: 200。「行方市マンホールカードについて | 行方市公式ホームページ」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://shirahonoyu.com/",
+        "result": "取得記録: 200。「茨城県の温泉なら、あそう温泉 白帆の湯」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://goo.gl/maps/RAm3ySV7k7k",
+        "result": "取得記録: 429。「https://www.google.com/maps/place/%E3%81%82%E3%81%9D%E3%81%86%E6%B8%A9%E6%B3%89%E7%99%BD%E5%B8%86%E3%81%AE%E6%B9%AF/@35.9872596,140.4748861,18.5z/data=!4m13!1m7!3m6!1s0x60225a4a57771dc5:0x90d0f7a333184fa4!2z5pel5pysLCDjgJIzMTEtMzgzMiDojKjln47nnIzooYzmlrnluILpurvnlJ_vvJTvvJLvvJHiiJLvvJM!3b1!8m2!3d35.9872516!4d140.4748792!3m4!1s0x0:0x9a0d69f3e80284ed!8m2!3d35.987182!4d140.4751081?hl=ja&shorturl=1」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://www.city.namegata.ibaraki.jp/map.php?code=281",
+        "result": "取得記録: 200。「天王崎観光交流センター（コテラス） - 行方市公式ホームページ」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://www.city.namegata.ibaraki.jp/map.php?code=3",
+        "result": "取得記録: 200。「行方市役所　玉造庁舎 - 行方市公式ホームページ」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://goo.gl/maps/zCYMd72jNgGGVWQNA",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/%E8%A1%8C%E6%96%B9%E5%B8%82+%E9%BA%BB%E7%94%9F%E5%BA%81%E8%88%8E/@35.9905813,140.4867483,17z/data=!3m1!4b1!4m5!3m4!1s0x60225a3f680f667f:0x8e07ebe796186843!8m2!3d35.990577!4d140.488937?hl=ja&shorturl=1」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://goo.gl/maps/7rSEeEZQ6krVj9L97",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/%E8%A1%8C%E6%96%B9%E5%B8%82+%E5%8C%97%E6%B5%A6%E5%BA%81%E8%88%8E/@36.0845363,140.5303733,17z/data=!3m1!4b1!4m5!3m4!1s0x60224f95a4c1b065:0x99f3c780da2c23ea!8m2!3d36.084532!4d140.532562?hl=ja&shorturl=1」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      },
+      {
+        "url": "https://goo.gl/maps/o6pdPy5r2Mzw22jb6",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/%E8%A1%8C%E6%96%B9%E5%B8%82%E5%BD%B9%E6%89%80+%E7%8E%89%E9%80%A0%E5%BA%81%E8%88%8E/@36.1048563,140.4127923,17z/data=!3m1!4b1!4m5!3m4!1s0x6022414154160a35:0xdf61ab89e116a5cb!8m2!3d36.104852!4d140.414981?hl=ja&shorturl=1」を確認。施設ごとの判定: 市配布案内・白帆の湯公式アクセスを確認。コテラス麻生419-1と温泉案内の麻生421-3の建物同一性が未確定。短縮地図は429であり、隣接温泉の点を流用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-dbeb70cbdad1ea010c60": {
+    "index": 43,
+    "name": "鉾田市役所本庁舎1F市民課窓口",
+    "address": "茨城県鉾田市鉾田1444番地1",
+    "attempts": [
+      {
+        "url": "https://www.city.hokota.lg.jp/",
+        "result": "取得記録: 200。「トップページ | 鉾田市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.hokota.lg.jp/page/page002265.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 鉾田市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.hokota.lg.jp/page/page000494.html",
+        "result": "取得記録: 200。「鉾田市役所 | 鉾田市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.hokota.lg.jp/map.php?type=0",
+        "result": "取得記録: 200。「公共施設ガイドマップ | 鉾田市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-92eba9de67b549c59c91": {
+    "index": 44,
+    "name": "大洗町観光情報交流センター「うみまちテラス」",
+    "address": "茨城県東茨城郡大洗町桜道301",
+    "attempts": [
+      {
+        "url": "https://www.oarai-info.jp/page/page000533.html",
+        "result": "取得記録: 200。「大洗町観光情報交流センター「うみまちテラス」 | 【公式】大洗観光協会」を確認。施設ごとの判定: 大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。"
+      },
+      {
+        "url": "https://www.town.oarai.lg.jp/cat1/suidou/gesui/17000/",
+        "result": "取得記録: 200。「マンホールカード | 大洗町公式ホームページ」を確認。施設ごとの判定: 大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。"
+      },
+      {
+        "url": "https://www.oarai-info.jp/access/",
+        "result": "取得記録: 200。「アクセス | 【公式】大洗観光協会」を確認。施設ごとの判定: 大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。"
+      },
+      {
+        "url": "https://goo.gl/maps/BDoNMYPaHbpgfJ468",
+        "result": "取得記録: 429。「https://www.google.com/maps/place/%E5%A4%A7%E6%B4%97%E7%94%BA%E5%BD%B9%E5%A0%B4/@36.3133309,140.5725759,17z/data=!3m1!4b1!4m5!3m4!1s0x60223138bd0713d9:0x29edeaf3ec13e03c!8m2!3d36.3133266!4d140.5747646?shorturl=1」を確認。施設ごとの判定: 大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-38b3769061a96e82585a": {
+    "index": 45,
+    "name": "五霞町役場 建設水道課",
+    "address": "茨城県猿島郡五霞町大字小福田1162番地1(庁舎2階)",
+    "attempts": [
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/kurashi/kurashi-tetsuzuki/lifeline/jogesuidou/gesuidou/page005210.html",
+        "result": "取得記録: 200。「ごかりんのマンホールカードを配布しています！ | 五霞町公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/",
+        "result": "取得記録: 200。「交通アクセス | 五霞町公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/page000528.html",
+        "result": "取得記録: 200。「五霞町役場への交通手段 | 五霞町公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-b0446b56ab7495ff2ff5": {
+    "index": 46,
+    "name": "五霞町役場 日直",
+    "address": "茨城県猿島郡五霞町大字小福田1162番地1",
+    "attempts": [
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/kurashi/kurashi-tetsuzuki/lifeline/jogesuidou/gesuidou/page005210.html",
+        "result": "取得記録: 200。「ごかりんのマンホールカードを配布しています！ | 五霞町公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/",
+        "result": "取得記録: 200。「交通アクセス | 五霞町公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/page000528.html",
+        "result": "取得記録: 200。「五霞町役場への交通手段 | 五霞町公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-e59ebd8f60bb60f5aab7": {
+    "index": 47,
+    "name": "栃木県下水道管理事務所",
+    "address": "栃木県河内郡上三川町多功1159",
+    "attempts": [
+      {
+        "url": "https://www.pref.tochigi.lg.jp/h60/index.html",
+        "result": "取得記録: 200。「栃木県／下水道管理事務所」を確認。施設ごとの判定: 県施設マップの下水道管理事務所専用ページまで確認。多功1159の地図は短縮URLのみで、HTMLには数値マーカーがない。短縮地図ホストで429が続いたため追加解決を試みず未確定。"
+      },
+      {
+        "url": "http://kaminokawa-kankou.org/",
+        "result": "取得記録: 200。「404 Not Found」を確認。施設ごとの判定: 県施設マップの下水道管理事務所専用ページまで確認。多功1159の地図は短縮URLのみで、HTMLには数値マーカーがない。短縮地図ホストで429が続いたため追加解決を試みず未確定。"
+      },
+      {
+        "url": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+        "result": "取得記録: 200。「栃木県／栃木県流域下水道のマンホールカードの配布について」を確認。施設ごとの判定: 県施設マップの下水道管理事務所専用ページまで確認。多功1159の地図は短縮URLのみで、HTMLには数値マーカーがない。短縮地図ホストで429が続いたため追加解決を試みず未確定。"
+      },
+      {
+        "url": "https://www.pref.tochigi.lg.jp/b06/system/gaido/annai/access.html",
+        "result": "取得記録: 200。「栃木県／県庁舎へのアクセス（交通案内・駐車場）」を確認。施設ごとの判定: 県施設マップの下水道管理事務所専用ページまで確認。多功1159の地図は短縮URLのみで、HTMLには数値マーカーがない。短縮地図ホストで429が続いたため追加解決を試みず未確定。"
+      },
+      {
+        "url": "https://www.pref.tochigi.lg.jp/h60/shisetsu/shakaikiban/005.html",
+        "result": "取得記録: 200。「栃木県／下水道管理事務所」を確認。施設ごとの判定: 県施設マップの下水道管理事務所専用ページまで確認。多功1159の地図は短縮URLのみで、HTMLには数値マーカーがない。短縮地図ホストで429が続いたため追加解決を試みず未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-f1b47f3c916256fbbc00": {
+    "index": 48,
+    "name": "上三川町観光協会",
+    "address": "栃木県河内郡上三川町しらさぎ1-3-5(むかしなつかし館内)",
+    "attempts": [
+      {
+        "url": "https://www.pref.tochigi.lg.jp/h60/index.html",
+        "result": "取得記録: 200。「栃木県／下水道管理事務所」を確認。施設ごとの判定: 県観光公式の上三川町観光協会紹介を追加確認。しらさぎ1-3-5のむかしなつかし館に一致する明示マーカーを抽出できず、ORIGAMIプラザと区別して保留。"
+      },
+      {
+        "url": "http://kaminokawa-kankou.org/",
+        "result": "取得記録: 200。「404 Not Found」を確認。施設ごとの判定: 県観光公式の上三川町観光協会紹介を追加確認。しらさぎ1-3-5のむかしなつかし館に一致する明示マーカーを抽出できず、ORIGAMIプラザと区別して保留。"
+      },
+      {
+        "url": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+        "result": "取得記録: 200。「栃木県／栃木県流域下水道のマンホールカードの配布について」を確認。施設ごとの判定: 県観光公式の上三川町観光協会紹介を追加確認。しらさぎ1-3-5のむかしなつかし館に一致する明示マーカーを抽出できず、ORIGAMIプラザと区別して保留。"
+      },
+      {
+        "url": "https://www.pref.tochigi.lg.jp/b06/system/gaido/annai/access.html",
+        "result": "取得記録: 200。「栃木県／県庁舎へのアクセス（交通案内・駐車場）」を確認。施設ごとの判定: 県観光公式の上三川町観光協会紹介を追加確認。しらさぎ1-3-5のむかしなつかし館に一致する明示マーカーを抽出できず、ORIGAMIプラザと区別して保留。"
+      },
+      {
+        "url": "https://www.tochigiji.or.jp/spot/s3100",
+        "result": "取得記録: 503。施設ごとの判定: 県観光公式の上三川町観光協会紹介を追加確認。しらさぎ1-3-5のむかしなつかし館に一致する明示マーカーを抽出できず、ORIGAMIプラザと区別して保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-67107257814c51043efa": {
+    "index": 49,
+    "name": "2階 経営企画課",
+    "address": "栃木県宇都宮市河原町1-41",
+    "attempts": [
+      {
+        "url": "http://www.city.utsunomiya.tochigi.jp/josuido/index.html",
+        "result": "取得記録: 200。「上下水道局｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+        "result": "取得記録: 200。「「マンホールカード」の配布をしております｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/faq/jyogesuidou/suidou/1001541.html",
+        "result": "取得記録: 200。「よくある質問　上下水道局の所在地・開庁時間を知りたい。｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://catalog.city.utsunomiya.tochigi.jp/dataset/?groups=koukyou-shisetsu",
+        "result": "取得記録: 200。「データセット - 宇都宮市オープンデータカタログ」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/josuido/1002777.html",
+        "result": "取得記録: 200。「上下水道局庁舎へのアクセス｜宇都宮市公式Webサイト」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-8f59caf41dafdd2208d2": {
+    "index": 50,
+    "name": "1階 警備員室",
+    "address": "栃木県宇都宮市河原町1-41",
+    "attempts": [
+      {
+        "url": "http://www.city.utsunomiya.tochigi.jp/josuido/index.html",
+        "result": "取得記録: 200。「上下水道局｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+        "result": "取得記録: 200。「「マンホールカード」の配布をしております｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/faq/jyogesuidou/suidou/1001541.html",
+        "result": "取得記録: 200。「よくある質問　上下水道局の所在地・開庁時間を知りたい。｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://catalog.city.utsunomiya.tochigi.jp/dataset/?groups=koukyou-shisetsu",
+        "result": "取得記録: 200。「データセット - 宇都宮市オープンデータカタログ」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/josuido/1002777.html",
+        "result": "取得記録: 200。「上下水道局庁舎へのアクセス｜宇都宮市公式Webサイト」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-6d41773baa79f72fcdd6": {
+    "index": 51,
+    "name": "宇都宮市観光案内所",
+    "address": "栃木県宇都宮市川向町1-23",
+    "attempts": [
+      {
+        "url": "http://www.utsunomiya-cvb.org/9168.html",
+        "result": "取得記録: 201。「宇都宮市マンホールカード配布中｜旅の特集｜【公式】宇都宮観光ナビ - 栃木県宇都宮のおでかけ・旅行情報」を確認。"
+      },
+      {
+        "url": "https://www.utsunomiya-cvb.org/feature/card",
+        "result": "取得記録: 201。「宇都宮市マンホールカード配布中｜旅の特集｜【公式】宇都宮観光ナビ - 栃木県宇都宮のおでかけ・旅行情報」を確認。"
+      },
+      {
+        "url": "https://www.utsunomiya-cvb.org/access/index.html",
+        "result": "取得記録: 200。「宇都宮へのアクセス｜【公式】宇都宮観光ナビ - 栃木県宇都宮のおでかけ・旅行情報」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-4490b60c4f44436c575b": {
+    "index": 52,
+    "name": "交通未来都市うつのみやオープンスクエア",
+    "address": "栃木県宇都宮市駅前通り1丁目4-6 トナリエ宇都宮 3階",
+    "attempts": [
+      {
+        "url": "https://u-movenext.net/open-square/",
+        "result": "取得記録: 503。「メンテナンス中」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/kurashi/kotsu/lrt/1028855/1036491.html",
+        "result": "取得記録: 200。「「ライトラインデザインマンホールカード」の配布を再開しました｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/shisei/gaiyo/access/1007516.html",
+        "result": "取得記録: 200。「宇都宮市役所案内図｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "http://www.utsunomiya-cvb.org/9168.html",
+        "result": "取得記録: 201。「宇都宮市マンホールカード配布中｜旅の特集｜【公式】宇都宮観光ナビ - 栃木県宇都宮のおでかけ・旅行情報」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-1da3e0a44b58e0f3372a": {
+    "index": 53,
+    "name": "宇都宮市役所文化都市推進課",
+    "address": "栃木県宇都宮市旭1-1-5",
+    "attempts": [
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/shisei/kikou/soshiki/1035660.html",
+        "result": "取得記録: 200。「文化都市推進課｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/citypromotion/kanko/meisho/jyiousi/1007289.html",
+        "result": "取得記録: 200。「宇都宮城址公園清明館｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/event/bunka/hyakunin/1007440.html",
+        "result": "取得記録: 200。「百人一首のまちづくり｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/shisei/gaiyo/access/1007516.html",
+        "result": "取得記録: 200。「宇都宮市役所案内図｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "http://www.utsunomiya-cvb.org/9168.html",
+        "result": "取得記録: 201。「宇都宮市マンホールカード配布中｜旅の特集｜【公式】宇都宮観光ナビ - 栃木県宇都宮のおでかけ・旅行情報」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-0ddcdc066bc44685ab0b": {
+    "index": 54,
+    "name": "宇都宮城址公園清明館",
+    "address": "栃木県宇都宮市本丸町1-15",
+    "attempts": [
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/shisei/kikou/soshiki/1035660.html",
+        "result": "取得記録: 200。「文化都市推進課｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/citypromotion/kanko/meisho/jyiousi/1007289.html",
+        "result": "取得記録: 200。「宇都宮城址公園清明館｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/event/bunka/hyakunin/1007440.html",
+        "result": "取得記録: 200。「百人一首のまちづくり｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/shisei/gaiyo/access/1007516.html",
+        "result": "取得記録: 200。「宇都宮市役所案内図｜宇都宮市公式Webサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.utsunomiya.lg.jp/event/rekishi/1035012/1016836.html",
+        "result": "取得記録: 200。「宇都宮城址公園　清明館　施設情報｜宇都宮市公式Webサイト」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-060fbafce589ea4ae65d": {
+    "index": 55,
+    "name": "太平記館",
+    "address": "栃木県足利市伊勢町3-6-4(足利市観光協会駐車場内)",
+    "attempts": [
+      {
+        "url": "https://www.ashikaga-kankou.jp/",
+        "result": "取得記録: 200。「足たび公式サイト | 足利市観光協会 | 学び舎のまち足利」を確認。施設ごとの判定: 市公式の太平記館紹介のGoogle qは伊勢町3-6-4という住所文字列。数値llは表示中心であり、住所ジオコードを位置確定に採用しない。"
+      },
+      {
+        "url": "http://www.city.ashikaga.tochigi.jp/site/jougesuidou/manholecard-short.html",
+        "result": "取得記録: 200。「足利市のマンホールカード | 足利市 公式ホームページ」を確認。施設ごとの判定: 市公式の太平記館紹介のGoogle qは伊勢町3-6-4という住所文字列。数値llは表示中心であり、住所ジオコードを位置確定に採用しない。"
+      },
+      {
+        "url": "https://www.ashikaga-kankou.jp/access/details/id=334",
+        "result": "取得記録: 200。「足利へのアクセス | 足利市観光協会 | 学び舎のまち足利」を確認。施設ごとの判定: 市公式の太平記館紹介のGoogle qは伊勢町3-6-4という住所文字列。数値llは表示中心であり、住所ジオコードを位置確定に採用しない。"
+      },
+      {
+        "url": "https://www.ashikaga-kankou.jp/access/",
+        "result": "取得記録: 200。「足利へのアクセス | 足利市観光協会 | 学び舎のまち足利」を確認。施設ごとの判定: 市公式の太平記館紹介のGoogle qは伊勢町3-6-4という住所文字列。数値llは表示中心であり、住所ジオコードを位置確定に採用しない。"
+      },
+      {
+        "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002760.html",
+        "result": "取得記録: 200。「太平記館（足利市観光協会） | 足利市 公式ホームページ」を確認。施設ごとの判定: 市公式の太平記館紹介のGoogle qは伊勢町3-6-4という住所文字列。数値llは表示中心であり、住所ジオコードを位置確定に採用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-a7d0e450dcc7ad3eca6e": {
+    "index": 56,
+    "name": "足利まちなか遊学館",
+    "address": "栃木県足利市通1-2673-1",
+    "attempts": [
+      {
+        "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
+        "result": "取得記録: 200。「足利まちなか遊学館（足利のわかりやすい歴史館） | 足利市 公式ホームページ」を確認。施設ごとの判定: 市公式の遊学館紹介のqは通一丁目2673という住所文字列。ll=36.33433,139.452931は表示中心のため、建物マーカーとせず保留。"
+      },
+      {
+        "url": "http://www.city.ashikaga.tochigi.jp/site/jougesuidou/manholecard-short.html",
+        "result": "取得記録: 200。「足利市のマンホールカード | 足利市 公式ホームページ」を確認。施設ごとの判定: 市公式の遊学館紹介のqは通一丁目2673という住所文字列。ll=36.33433,139.452931は表示中心のため、建物マーカーとせず保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-861c082f98ee56059de9": {
+    "index": 57,
+    "name": "一般社団法人栃木市観光協会",
+    "address": "栃木県栃木市倭町14-1",
+    "attempts": [
+      {
+        "url": "https://www.tochigi-kankou.or.jp/",
+        "result": "取得記録: 200。「栃木市観光協会」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      },
+      {
+        "url": "https://www.city.tochigi.lg.jp/site/suidou/6987.html",
+        "result": "取得記録: 200。「栃木市のマンホールカードを配布しています - 栃木市ホームページ」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      },
+      {
+        "url": "https://www.tochigi-kankou.or.jp/access",
+        "result": "取得記録: 200。「アクセス方法 – 栃木市観光協会」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      },
+      {
+        "url": "https://www.city.tochigi.lg.jp/soshiki/13/1841.html",
+        "result": "取得記録: 200。「栃木市役所本庁舎へのアクセス - 栃木市ホームページ」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      },
+      {
+        "url": "https://www.tochigi-city-kura-navi.jp/spot/page.php?id=82",
+        "result": "取得記録: 503。「メンテナンスのお知らせ」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      },
+      {
+        "url": "https://www.tochigi-kankou.or.jp/information/contact",
+        "result": "取得記録: 200。「お問い合わせ – 栃木市観光協会」を確認。施設ごとの判定: 観光協会問い合わせ・アクセスを確認したが倭町14-1の数値指定がない。市観光施設紹介id82は503メンテナンス。市役所の別建物地図は除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-d7702132db50cd3bea9d": {
+    "index": 58,
+    "name": "佐野市観光物産会館",
+    "address": "栃木県佐野市金井上町2519",
+    "attempts": [
+      {
+        "url": "https://sano-kankokk.jp/?page_id=75",
+        "result": "取得記録: 200。「買う | 佐野市観光協会」を確認。施設ごとの判定: 物産会館独自公式サイトのアクセスを確認。pbは表示範囲中心で、Google Mapは短縮URLのみ。短縮地図ホスト429のため追加解決せず、金井上町2519の明示位置は未確定。"
+      },
+      {
+        "url": "https://www.city.sano.lg.jp/sp/suidokyoku/customer/01/4330.html",
+        "result": "取得記録: 200。「マンホールカードの配布について／佐野市」を確認。施設ごとの判定: 物産会館独自公式サイトのアクセスを確認。pbは表示範囲中心で、Google Mapは短縮URLのみ。短縮地図ホスト429のため追加解決せず、金井上町2519の明示位置は未確定。"
+      },
+      {
+        "url": "https://sano-kankokk.jp/?page_id=100",
+        "result": "取得記録: 200。「アクセス | 佐野市観光協会」を確認。施設ごとの判定: 物産会館独自公式サイトのアクセスを確認。pbは表示範囲中心で、Google Mapは短縮URLのみ。短縮地図ホスト429のため追加解決せず、金井上町2519の明示位置は未確定。"
+      },
+      {
+        "url": "https://bussan.sano-kankokk.jp/",
+        "result": "取得記録: 200。「佐野市観光物産会館 - ホーム」を確認。施設ごとの判定: 物産会館独自公式サイトのアクセスを確認。pbは表示範囲中心で、Google Mapは短縮URLのみ。短縮地図ホスト429のため追加解決せず、金井上町2519の明示位置は未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-071cd7f65ad7c1a06c54": {
+    "index": 59,
+    "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+    "address": "栃木県佐野市栃本町300番地1",
+    "attempts": [
+      {
+        "url": "https://www.cricket.or.jp/",
+        "result": "取得記録: 429。「Vercel Security Checkpoint」を確認。施設ごとの判定: 市アクセス案内と県スポーツコミッション施設紹介まで確認。競技場全体の施設名検索とMy Mapsであり、栃本町300-1のTearoom建物を特定できない。運営協会サイトは429。"
+      },
+      {
+        "url": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+        "result": "取得記録: 200。「マンホールカード（TVアニメ「黒執事 -寄宿学校編-」コラボデザイン）を配布します／佐野市」を確認。施設ごとの判定: 市アクセス案内と県スポーツコミッション施設紹介まで確認。競技場全体の施設名検索とMy Mapsであり、栃本町300-1のTearoom建物を特定できない。運営協会サイトは429。"
+      },
+      {
+        "url": "https://www.city.sano.lg.jp/sp/cricket/28022.html",
+        "result": "取得記録: 200。「アクセス／佐野市」を確認。施設ごとの判定: 市アクセス案内と県スポーツコミッション施設紹介まで確認。競技場全体の施設名検索とMy Mapsであり、栃本町300-1のTearoom建物を特定できない。運営協会サイトは429。"
+      },
+      {
+        "url": "https://tochigi-pref-sports-commission.com/sports-facility/s-666/",
+        "result": "取得記録: 200。「佐野市国際クリケット場  |  栃木県スポーツコミッション」を確認。施設ごとの判定: 市アクセス案内と県スポーツコミッション施設紹介まで確認。競技場全体の施設名検索とMy Mapsであり、栃本町300-1のTearoom建物を特定できない。運営協会サイトは429。"
+      }
+    ]
+  },
+  "facility:kanto-north-14336e747375e6550de3": {
+    "index": 60,
+    "name": "まちの駅 新・鹿沼宿",
+    "address": "栃木県鹿沼市仲町1604-1",
+    "attempts": [
+      {
+        "url": "http://kanumajuku.com/",
+        "result": "取得記録: 200。「HOME｜まちの駅 新・鹿沼宿」を確認。"
+      },
+      {
+        "url": "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+        "result": "取得記録: 200。「鹿沼市マンホールカードの配布について | 鹿沼市 公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://kanumajuku.com/facility.html",
+        "result": "取得記録: 200。「施設情報｜まちの駅 新・鹿沼宿」を確認。"
+      },
+      {
+        "url": "https://goo.gl/maps/UiKY7Ma7xYd6aMJq6",
+        "result": "取得記録: 200。「Google マップ」を確認。"
+      },
+      {
+        "url": "https://kanuma-kanko.jp/purpose/まちの駅-新・鹿沼宿/",
+        "result": "取得記録: 200。「まちの駅 新・鹿沼宿 - 鹿沼市観光情報サイト「鹿沼日和」」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-2c4fa5aeef25f7b88864": {
+    "index": 61,
+    "name": "日光市観光協会 今市支部",
+    "address": "栃木県日光市今市717-1",
+    "attempts": [
+      {
+        "url": "http://www.nikko-kankou.org",
+        "result": "取得記録: 200。「【公式】日光市の観光サイト　日光旅ナビ」を確認。施設ごとの判定: ニコニコ本陣公式アクセスも確認したが道の駅本体は今市719-1。対象今市717-1の観光協会今市支部と同じ建物とは確認できず、道の駅の表示中心を流用しない。"
+      },
+      {
+        "url": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+        "result": "取得記録: 200。「マンホールカードの配布／日光市公式ホームページ」を確認。施設ごとの判定: ニコニコ本陣公式アクセスも確認したが道の駅本体は今市719-1。対象今市717-1の観光協会今市支部と同じ建物とは確認できず、道の駅の表示中心を流用しない。"
+      },
+      {
+        "url": "https://www.nikko-kankou.org/public/access",
+        "result": "取得記録: 200。「アクセス　｜【公式】日光市の観光サイト　日光旅ナビ」を確認。施設ごとの判定: ニコニコ本陣公式アクセスも確認したが道の駅本体は今市719-1。対象今市717-1の観光協会今市支部と同じ建物とは確認できず、道の駅の表示中心を流用しない。"
+      },
+      {
+        "url": "https://www.city.nikko.lg.jp/city_nikko/shisetsu/1/1/index.html",
+        "result": "取得記録: 200。「日光市へのアクセスマップ／日光市公式ホームページ」を確認。施設ごとの判定: ニコニコ本陣公式アクセスも確認したが道の駅本体は今市719-1。対象今市717-1の観光協会今市支部と同じ建物とは確認できず、道の駅の表示中心を流用しない。"
+      },
+      {
+        "url": "https://nikko-honjin.jp/access/",
+        "result": "取得記録: 200。「営業時間・アクセス | 栃木県産のお土産・特産品なら道の駅日光 日光街道ニコニコ本陣へ」を確認。施設ごとの判定: ニコニコ本陣公式アクセスも確認したが道の駅本体は今市719-1。対象今市717-1の観光協会今市支部と同じ建物とは確認できず、道の駅の表示中心を流用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-13edf2a6bfc4d92522b0": {
+    "index": 62,
+    "name": "栃木県立日光自然博物館(奥日光インフォメーションセンター)",
+    "address": "栃木県日光市中宮祠2480-1",
+    "attempts": [
+      {
+        "url": "https://www.nikko-nsm.co.jp/",
+        "result": "取得記録: 200。「日光自然博物館」を確認。施設ごとの判定: 自然博物館公式アクセスの地図はMy Maps埋め込みIDのみ。中宮祠2480-1の博物館に対応する座標データを取得HTMLから抽出できなかった。"
+      },
+      {
+        "url": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+        "result": "取得記録: 200。「マンホールカードの配布／日光市公式ホームページ」を確認。施設ごとの判定: 自然博物館公式アクセスの地図はMy Maps埋め込みIDのみ。中宮祠2480-1の博物館に対応する座標データを取得HTMLから抽出できなかった。"
+      },
+      {
+        "url": "https://www.city.nikko.lg.jp/city_nikko/shisetsu/1/1/index.html",
+        "result": "取得記録: 200。「日光市へのアクセスマップ／日光市公式ホームページ」を確認。施設ごとの判定: 自然博物館公式アクセスの地図はMy Maps埋め込みIDのみ。中宮祠2480-1の博物館に対応する座標データを取得HTMLから抽出できなかった。"
+      },
+      {
+        "url": "https://www.nikko-nsm.co.jp/access.html",
+        "result": "取得記録: 200。「アクセス｜日光自然博物館」を確認。施設ごとの判定: 自然博物館公式アクセスの地図はMy Maps埋め込みIDのみ。中宮祠2480-1の博物館に対応する座標データを取得HTMLから抽出できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-8c9c3d00b39e57cb61d7": {
+    "index": 63,
+    "name": "小山市役所 市役所4階 下水道施設課内",
+    "address": "栃木県小山市中央町1-1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.oyama.tochigi.jp/",
+        "result": "取得記録: 200。「トップページ | 小山市公式ホームページ」を確認。施設ごとの判定: 市役所アクセスの現在庁舎の埋め込みを確認。pb数値は表示範囲中心であり、中央町1-1-1のMarker.positionとして確認できなかった。"
+      },
+      {
+        "url": "https://www.city.oyama.tochigi.jp/soshiki/46/242777.html",
+        "result": "取得記録: 200。「小山市のマンホールカードを配布しています | 小山市公式ホームページ」を確認。施設ごとの判定: 市役所アクセスの現在庁舎の埋め込みを確認。pb数値は表示範囲中心であり、中央町1-1-1のMarker.positionとして確認できなかった。"
+      },
+      {
+        "url": "https://www.city.oyama.tochigi.jp/shisei/gaiyo/introduction/page001690.html",
+        "result": "取得記録: 200。「小山市役所へのアクセス | 小山市公式ホームページ」を確認。施設ごとの判定: 市役所アクセスの現在庁舎の埋め込みを確認。pb数値は表示範囲中心であり、中央町1-1-1のMarker.positionとして確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-caa883741cf60ee761be": {
+    "index": 64,
+    "name": "小山市役所 市役所1階 中央管理室(庁舎西側)",
+    "address": "栃木県小山市中央町1-1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.oyama.tochigi.jp/",
+        "result": "取得記録: 200。「トップページ | 小山市公式ホームページ」を確認。施設ごとの判定: 4階窓口と同一庁舎の公式アクセスを照合したが、独立したマーカー座標がなくpb表示中心のみ。1階西側中央管理室の点として採用しない。"
+      },
+      {
+        "url": "https://www.city.oyama.tochigi.jp/soshiki/46/242777.html",
+        "result": "取得記録: 200。「小山市のマンホールカードを配布しています | 小山市公式ホームページ」を確認。施設ごとの判定: 4階窓口と同一庁舎の公式アクセスを照合したが、独立したマーカー座標がなくpb表示中心のみ。1階西側中央管理室の点として採用しない。"
+      },
+      {
+        "url": "https://www.city.oyama.tochigi.jp/shisei/gaiyo/introduction/page001690.html",
+        "result": "取得記録: 200。「小山市役所へのアクセス | 小山市公式ホームページ」を確認。施設ごとの判定: 4階窓口と同一庁舎の公式アクセスを照合したが、独立したマーカー座標がなくpb表示中心のみ。1階西側中央管理室の点として採用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-cfbbd4559bc94f487c62": {
+    "index": 65,
+    "name": "小山市まちの駅思季彩館",
+    "address": "栃木県小山市中央町3-5-3",
+    "attempts": [
+      {
+        "url": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/etc/page006531.html",
+        "result": "取得記録: 200。「小山市まちの駅 思季彩館 | 小山市公式ホームページ」を確認。施設ごとの判定: 市公式思季彩館紹介の中央町3-5-3の地図を確認。pb表示範囲中心の数値以外に目的地点の明示座標がなく未確定。"
+      },
+      {
+        "url": "https://www.city.oyama.tochigi.jp/kurashi/suido-gesuido/gesuido/page010516.html",
+        "result": "取得記録: 200。「小山市のマンホールカード第2弾の配布が決定しました！ | 小山市公式ホームページ」を確認。施設ごとの判定: 市公式思季彩館紹介の中央町3-5-3の地図を確認。pb表示範囲中心の数値以外に目的地点の明示座標がなく未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-2783364591474d8e2902": {
+    "index": 66,
+    "name": "久保記念観光文化交流館",
+    "address": "栃木県真岡市荒町1105番地1",
+    "attempts": [
+      {
+        "url": "http://www.kubokinen.net/",
+        "result": "取得記録: 200。「久保記念観光文化交流館公式サイト [栃木県真岡市荒町／旧久保邸]」を確認。施設ごとの判定: 交流館公式アクセスの短縮Googleリンクは429。pb座標は表示中心であり、荒町1105-1の建物点に採用しない。市の配布終了記事は位置補完とは別の条件見直し事項。"
+      },
+      {
+        "url": "https://www.city.moka.lg.jp/kakuka/gesuido/gyomu/jogesuido/9271.html",
+        "result": "取得記録: 200。「【配布を終了しました】観光の記念に。日本一のいちごのまちのマンホールカード／真岡市公式ホームページ」を確認。施設ごとの判定: 交流館公式アクセスの短縮Googleリンクは429。pb座標は表示中心であり、荒町1105-1の建物点に採用しない。市の配布終了記事は位置補完とは別の条件見直し事項。"
+      },
+      {
+        "url": "https://www.kubokinen.net/",
+        "result": "取得記録: 200。「久保記念観光文化交流館公式サイト [栃木県真岡市荒町／旧久保邸]」を確認。施設ごとの判定: 交流館公式アクセスの短縮Googleリンクは429。pb座標は表示中心であり、荒町1105-1の建物点に採用しない。市の配布終了記事は位置補完とは別の条件見直し事項。"
+      },
+      {
+        "url": "https://www.city.moka.lg.jp/shisei/gaiyo/2/index.html",
+        "result": "取得記録: 200。「交通アクセス／真岡市公式ホームページ」を確認。施設ごとの判定: 交流館公式アクセスの短縮Googleリンクは429。pb座標は表示中心であり、荒町1105-1の建物点に採用しない。市の配布終了記事は位置補完とは別の条件見直し事項。"
+      },
+      {
+        "url": "https://goo.gl/maps/qTZ2l",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/%E4%B9%85%E4%BF%9D%E8%A8%98%E5%BF%B5%E8%A6%B3%E5%85%89%E6%96%87%E5%8C%96%E4%BA%A4%E6%B5%81%E9%A4%A8/@36.44306,140.011461,15z/data=!4m2!3m1!1s0x0:0xc83cd9893230344f」を確認。施設ごとの判定: 交流館公式アクセスの短縮Googleリンクは429。pb座標は表示中心であり、荒町1105-1の建物点に採用しない。市の配布終了記事は位置補完とは別の条件見直し事項。"
+      }
+    ]
+  },
+  "facility:kanto-north-e30071f0e179e2492a48": {
+    "index": 67,
+    "name": "道の駅 那須与一の郷 物産館",
+    "address": "栃木県大田原市南金丸1584-6",
+    "attempts": [
+      {
+        "url": "https://www.city.ohtawara.tochigi.jp/docs/2022111000029/",
+        "result": "取得記録: 200。「マンホールカードの配布場所 | 大田原市」を確認。施設ごとの判定: 道の駅公式交通アクセスを確認。埋め込み数値は表示中心で、南金丸1584-6敷地内の物産館のマーカーは独立して確認できなかった。"
+      },
+      {
+        "url": "https://www.nasuno-yoichi.jp/parking/",
+        "result": "取得記録: 200。「交通アクセス - 道の駅那須与一の郷」を確認。施設ごとの判定: 道の駅公式交通アクセスを確認。埋め込み数値は表示中心で、南金丸1584-6敷地内の物産館のマーカーは独立して確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-1c3ab1ee8ca76b7c99e0": {
+    "index": 68,
+    "name": "一般社団法人 矢板市観光協会",
+    "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)",
+    "attempts": [
+      {
+        "url": "https://www.yaita-kankou.com/",
+        "result": "取得記録: 200。「矢板市観光協会」を確認。"
+      },
+      {
+        "url": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+        "result": "取得記録: 200。「【第28弾】矢板市マンホールカードの再配布について - 栃木県矢板市公式ウェブサイト」を確認。"
+      },
+      {
+        "url": "https://www.yaita-kankou.com/access/",
+        "result": "取得記録: 200。「アクセス - 矢板市観光協会」を確認。"
+      },
+      {
+        "url": "https://www.yaita-kankou.com/access",
+        "result": "取得記録: 200。「アクセス - 矢板市観光協会」を確認。"
+      },
+      {
+        "url": "https://www.city.yaita.tochigi.jp/map/map-shironoyuonsencenter.html",
+        "result": "取得記録: 200。「城の湯温泉センター - 栃木県矢板市公式ウェブサイト」を確認。"
+      },
+      {
+        "url": "https://www.city.yaita.tochigi.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "result": "取得記録: 200。"
+      }
+    ]
+  },
+  "facility:kanto-north-fdb8db5be17ae5e5d52a": {
+    "index": 69,
+    "name": "さくら市役所 卯の里庁舎",
+    "address": "栃木県さくら市氏家2190-7",
+    "attempts": [
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/index.html",
+        "result": "取得記録: 200。「さくら市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/life/000016/000133/000543/p003072.html",
+        "result": "取得記録: 200。「マンホールカード | さくら市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/government/000051/000301/p000101.html",
+        "result": "取得記録: 200。「アクセスマップ | さくら市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/government/000051/000301/index.html",
+        "result": "取得記録: 200。「庁舎案内 | さくら市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-4276a35dc1985599c530": {
+    "index": 70,
+    "name": "さくら市役所 当直室",
+    "address": "栃木県さくら市氏家2771",
+    "attempts": [
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/index.html",
+        "result": "取得記録: 200。「さくら市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/life/000016/000133/000543/p003072.html",
+        "result": "取得記録: 200。「マンホールカード | さくら市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.tochigi-sakura.lg.jp/government/000051/000301/p000101.html",
+        "result": "取得記録: 200。「アクセスマップ | さくら市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-ffe180a6b3c0c8434319": {
+    "index": 71,
+    "name": "那須烏山市役所烏山庁舎(まちづくり課)",
+    "address": "栃木県那須烏山市中央1-1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/",
+        "result": "取得記録: 200。「トップページ／那須烏山市公式ホームページ」を確認。施設ごとの判定: 市公式の烏山庁舎専用紹介page000546.htmlまで確認。中央1-1-1の案内に数値q・施設マーカーがなく、まちづくり課の建物点は未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/kurashi/public-transport-road/jr-karasuyama-line/news/page005906.html",
+        "result": "取得記録: 200。「【JR烏山線】マンホールカードについて（在庫切れ）／那須烏山市公式ホームページ」を確認。施設ごとの判定: 市公式の烏山庁舎専用紹介page000546.htmlまで確認。中央1-1-1の案内に数値q・施設マーカーがなく、まちづくり課の建物点は未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/city-administration/city-hall/",
+        "result": "取得記録: 200。「庁舎案内／那須烏山市公式ホームページ」を確認。施設ごとの判定: 市公式の烏山庁舎専用紹介page000546.htmlまで確認。中央1-1-1の案内に数値q・施設マーカーがなく、まちづくり課の建物点は未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/city-administration/city-hall/page000546.html",
+        "result": "取得記録: 200。「烏山庁舎／那須烏山市公式ホームページ」を確認。施設ごとの判定: 市公式の烏山庁舎専用紹介page000546.htmlまで確認。中央1-1-1の案内に数値q・施設マーカーがなく、まちづくり課の建物点は未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-186aaf0b34375b1f039d": {
+    "index": 72,
+    "name": "那須烏山市役所烏山庁舎(日直室)",
+    "address": "栃木県那須烏山市中央1-1-1",
+    "attempts": [
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/",
+        "result": "取得記録: 200。「トップページ／那須烏山市公式ホームページ」を確認。施設ごとの判定: 同じ烏山庁舎専用紹介を日直室の所在地と照合。中央1-1-1の数値マーカーがなく、休日窓口の建物位置も未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/kurashi/public-transport-road/jr-karasuyama-line/news/page005906.html",
+        "result": "取得記録: 200。「【JR烏山線】マンホールカードについて（在庫切れ）／那須烏山市公式ホームページ」を確認。施設ごとの判定: 同じ烏山庁舎専用紹介を日直室の所在地と照合。中央1-1-1の数値マーカーがなく、休日窓口の建物位置も未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/city-administration/city-hall/",
+        "result": "取得記録: 200。「庁舎案内／那須烏山市公式ホームページ」を確認。施設ごとの判定: 同じ烏山庁舎専用紹介を日直室の所在地と照合。中央1-1-1の数値マーカーがなく、休日窓口の建物位置も未確定。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/city-administration/city-hall/page000546.html",
+        "result": "取得記録: 200。「烏山庁舎／那須烏山市公式ホームページ」を確認。施設ごとの判定: 同じ烏山庁舎専用紹介を日直室の所在地と照合。中央1-1-1の数値マーカーがなく、休日窓口の建物位置も未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-b9794de4ce6f43340943": {
+    "index": 73,
+    "name": "山あげ会館(那須烏山市観光協会)",
+    "address": "栃木県那須烏山市金井2-5-26",
+    "attempts": [
+      {
+        "url": "https://www.nasukarasuyama.com",
+        "result": "取得記録: 200。「一般社団法人 那須烏山市観光協会」を確認。施設ごとの判定: 観光協会の交通アクセス地図は市域と広域道路経路。金井2-5-26の山あげ会館に対する目的地点座標とは確認できず広域中心を除外。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/page/page005906.html",
+        "result": "取得記録: 200。施設ごとの判定: 観光協会の交通アクセス地図は市域と広域道路経路。金井2-5-26の山あげ会館に対する目的地点座標とは確認できず広域中心を除外。"
+      },
+      {
+        "url": "https://www.city.nasukarasuyama.lg.jp/kurashi/public-transport-road/jr-karasuyama-line/news/page005906.html",
+        "result": "取得記録: 200。「【JR烏山線】マンホールカードについて（在庫切れ）／那須烏山市公式ホームページ」を確認。施設ごとの判定: 観光協会の交通アクセス地図は市域と広域道路経路。金井2-5-26の山あげ会館に対する目的地点座標とは確認できず広域中心を除外。"
+      },
+      {
+        "url": "https://www.nasukarasuyama.com/access/",
+        "result": "取得記録: 200。「アクセス｜一般社団法人 那須烏山市観光協会」を確認。施設ごとの判定: 観光協会の交通アクセス地図は市域と広域道路経路。金井2-5-26の山あげ会館に対する目的地点座標とは確認できず広域中心を除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-ca990651d2ec419b60ab": {
+    "index": 74,
+    "name": "グリムの森「グリムの館」",
+    "address": "栃木県下野市下古山747",
+    "attempts": [
+      {
+        "url": "https://www.grimm-no.net/",
+        "result": "取得記録: 200。「グリムの森「グリムの館」公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.grimm-no.net/news/2018/08/01/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89-%E9%85%8D%E4%BB%98%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99/",
+        "result": "取得記録: 200。「マンホールカード について | グリムニュース」を確認。"
+      },
+      {
+        "url": "https://www.grimm-no.net/03_access_index.html",
+        "result": "取得記録: 200。「グリムの森「グリムの館」公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuke.lg.jp/0385/info-0000000210-3.html",
+        "result": "取得記録: 200。「グリムの森「グリムの館」施設案内 | 下野市 市政トップページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-d891168d3b11c5775e7c": {
+    "index": 75,
+    "name": "下野薬師寺歴史館",
+    "address": "栃木県下野市薬師寺1636",
+    "attempts": [
+      {
+        "url": "https://www.shimotsuke-bunkazai.com/institution.php",
+        "result": "取得記録: 503。「メンテナンスのお知らせ」を確認。"
+      },
+      {
+        "url": "https://www.shimotsuke-bunkazai.com/topics.php?id=449",
+        "result": "取得記録: 503。「メンテナンスのお知らせ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuke.lg.jp/0918/info-0000010551-3.html",
+        "result": "取得記録: 200。「※在庫切れのため、配布停止中。【青龍マンホール蓋】マンホールカードが完成しました！ | 下野市 市政トップページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuke.lg.jp/2029/info-0000000644-3.html",
+        "result": "取得記録: 200。「下野薬師寺歴史館案内 | 下野市 市政トップページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shimotsuke.lg.jp/0390/info-0000000643-3.html",
+        "result": "取得記録: 200。「下野薬師寺歴史館(地図案内） | 下野市 市政トップページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-a95e49dc07df945f06e9": {
+    "index": 76,
+    "name": "しもつけ風土記の丘資料館",
+    "address": "栃木県下野市国分寺993",
+    "attempts": [
+      {
+        "url": "https://www.shimotsuke-bunkazai.com/institution.php",
+        "result": "取得記録: 503。「メンテナンスのお知らせ」を確認。施設ごとの判定: 栃木県フィルムコミッションの資料館紹介を確認。q=国分寺993の住所検索とll表示中心のみ。文化財サイトは503で、建物の独立座標を得られなかった。"
+      },
+      {
+        "url": "https://www.shimotsuke-bunkazai.com/topics.php?id=449",
+        "result": "取得記録: 503。「メンテナンスのお知らせ」を確認。施設ごとの判定: 栃木県フィルムコミッションの資料館紹介を確認。q=国分寺993の住所検索とll表示中心のみ。文化財サイトは503で、建物の独立座標を得られなかった。"
+      },
+      {
+        "url": "https://www.city.shimotsuke.lg.jp/0918/info-0000010551-3.html",
+        "result": "取得記録: 200。「※在庫切れのため、配布停止中。【青龍マンホール蓋】マンホールカードが完成しました！ | 下野市 市政トップページ」を確認。施設ごとの判定: 栃木県フィルムコミッションの資料館紹介を確認。q=国分寺993の住所検索とll表示中心のみ。文化財サイトは503で、建物の独立座標を得られなかった。"
+      },
+      {
+        "url": "https://www.tochigi-film.jp/navi/result.php?lid=75",
+        "result": "取得記録: 200。「しもつけ風土記の丘資料館｜ロケナビ検索｜栃木県フィルムコミッション」を確認。施設ごとの判定: 栃木県フィルムコミッションの資料館紹介を確認。q=国分寺993の住所検索とll表示中心のみ。文化財サイトは503で、建物の独立座標を得られなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-ab5de7e90313a0f18ac5": {
+    "index": 77,
+    "name": "上三川町ORIGAMIプラザ",
+    "address": "栃木県河内郡上三川町大字上三川4173番地1",
+    "attempts": [
+      {
+        "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+        "result": "取得記録: 200。「利用案内（窓口で予約する方はこちら） | 上三川町公式ホームページ｜ORIGAMIのまち」を確認。"
+      },
+      {
+        "url": "https://www.town.kaminokawa.lg.jp/0092/info-0000003312-0.html",
+        "result": "取得記録: 200。「上三川町初デザインマンホールふたが完成しました | 上三川町公式ホームページ｜ORIGAMIのまち」を確認。"
+      },
+      {
+        "url": "https://www.agrinet.pref.tochigi.lg.jp/tochigi-nouson-meguri/archives/spot_all_season/origaminomachi_kaminokawa",
+        "result": "取得記録: 200。「上三川町ORIGAMIプラザ | とちぎの農村めぐり特集 | 栃木県農政部農村振興課」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-da24aa34d750c88eacd3": {
+    "index": 78,
+    "name": "壬生町役場下水道課",
+    "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+    "attempts": [
+      {
+        "url": "https://www.town.mibu.tochigi.jp/",
+        "result": "取得記録: 200。「壬生町公式WEBサイト」を確認。施設ごとの判定: 町の庁舎アクセスで壬生甲3841-1の新庁舎を確認。地図pbの数値は表示中心のみ。旧庁舎の位置や住所代表点を採用しない。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2021041300025/",
+        "result": "取得記録: 200。「マンホールカード（二の丸門）の配布について | 壬生町公式WEBサイト」を確認。施設ごとの判定: 町の庁舎アクセスで壬生甲3841-1の新庁舎を確認。地図pbの数値は表示中心のみ。旧庁舎の位置や住所代表点を採用しない。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2026110400033/",
+        "result": "取得記録: 200。「壬生町スマート申請システムで利用している外部メール送信サービスへの不正アクセス及び個人情報の漏えいのおそれについて | 壬生町公式WEBサイト」を確認。施設ごとの判定: 町の庁舎アクセスで壬生甲3841-1の新庁舎を確認。地図pbの数値は表示中心のみ。旧庁舎の位置や住所代表点を採用しない。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2023102000042/",
+        "result": "取得記録: 200。「「ガンダムマンホール」のカード配布についてのお知らせ | 壬生町公式WEBサイト」を確認。施設ごとの判定: 町の庁舎アクセスで壬生甲3841-1の新庁舎を確認。地図pbの数値は表示中心のみ。旧庁舎の位置や住所代表点を採用しない。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2014120400082/",
+        "result": "取得記録: 200。「アクセス | 壬生町公式WEBサイト」を確認。施設ごとの判定: 町の庁舎アクセスで壬生甲3841-1の新庁舎を確認。地図pbの数値は表示中心のみ。旧庁舎の位置や住所代表点を採用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-067336979043529fa019": {
+    "index": 79,
+    "name": "壬生町役場宿直室",
+    "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+    "attempts": [
+      {
+        "url": "https://www.town.mibu.tochigi.jp/",
+        "result": "取得記録: 200。「壬生町公式WEBサイト」を確認。施設ごとの判定: 宿直室も壬生甲3841-1の新庁舎。下水道課と同じアクセスを照合したが独立マーカーがなく、新庁舎内の位置は未確定。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2021041300025/",
+        "result": "取得記録: 200。「マンホールカード（二の丸門）の配布について | 壬生町公式WEBサイト」を確認。施設ごとの判定: 宿直室も壬生甲3841-1の新庁舎。下水道課と同じアクセスを照合したが独立マーカーがなく、新庁舎内の位置は未確定。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2026110400033/",
+        "result": "取得記録: 200。「壬生町スマート申請システムで利用している外部メール送信サービスへの不正アクセス及び個人情報の漏えいのおそれについて | 壬生町公式WEBサイト」を確認。施設ごとの判定: 宿直室も壬生甲3841-1の新庁舎。下水道課と同じアクセスを照合したが独立マーカーがなく、新庁舎内の位置は未確定。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2023102000042/",
+        "result": "取得記録: 200。「「ガンダムマンホール」のカード配布についてのお知らせ | 壬生町公式WEBサイト」を確認。施設ごとの判定: 宿直室も壬生甲3841-1の新庁舎。下水道課と同じアクセスを照合したが独立マーカーがなく、新庁舎内の位置は未確定。"
+      },
+      {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2014120400082/",
+        "result": "取得記録: 200。「アクセス | 壬生町公式WEBサイト」を確認。施設ごとの判定: 宿直室も壬生甲3841-1の新庁舎。下水道課と同じアクセスを照合したが独立マーカーがなく、新庁舎内の位置は未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-e6fe57b579c1126842f3": {
+    "index": 80,
+    "name": "那珂川町役場小川出張所",
+    "address": "栃木県那珂川町小川1065",
+    "attempts": [
+      {
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/index.html",
+        "result": "取得記録: 200。「那珂川町公式ホームページ」を確認。施設ごとの判定: 町の現配布記事と小川出張所紹介を確認。小川1065の埋め込みはpb表示中心で、旧小川庁舎2814-1の点は流用しない。"
+      },
+      {
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/0072/info-0000002006-0.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 那珂川町公式ホームページ」を確認。施設ごとの判定: 町の現配布記事と小川出張所紹介を確認。小川1065の埋め込みはpb表示中心で、旧小川庁舎2814-1の点は流用しない。"
+      },
+      {
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/office0067/section-0.html",
+        "result": "取得記録: 200。「町民係 | 那珂川町公式ホームページ」を確認。施設ごとの判定: 町の現配布記事と小川出張所紹介を確認。小川1065の埋め込みはpb表示中心で、旧小川庁舎2814-1の点は流用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-3c73ebb9bfe12f0c6aa9": {
+    "index": 81,
+    "name": "那珂川町役場(庁舎西側、日直室)",
+    "address": "栃木県那珂川町馬頭555",
+    "attempts": [
+      {
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/index.html",
+        "result": "取得記録: 200。「那珂川町公式ホームページ」を確認。施設ごとの判定: 町の現配布記事の馬頭555役場地図を確認。pb表示中心を除き数値マーカーを抽出できず、小川出張所とも別地点として保留。"
+      },
+      {
+        "url": "https://www.town.tochigi-nakagawa.lg.jp/0072/info-0000002006-0.html",
+        "result": "取得記録: 200。「マンホールカードの配布について | 那珂川町公式ホームページ」を確認。施設ごとの判定: 町の現配布記事の馬頭555役場地図を確認。pb表示中心を除き数値マーカーを抽出できず、小川出張所とも別地点として保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-077b4a952fc91c118d81": {
+    "index": 82,
+    "name": "群馬県県土整備部 下水道総合事務所",
+    "address": "群馬県佐波郡玉村町上之手1846-1",
+    "attempts": [
+      {
+        "url": "http://www.pref.gunma.jp/07/p23210002.html",
+        "result": "取得記録: 200。「下水道総合事務所 - 群馬県ホームページ」を確認。施設ごとの判定: 県下水道総合事務所と各水質浄化センターへのアクセス案内を確認。上之手1846-1の事務所建物を示す数値座標がなく、センター敷地の図から推計しない。"
+      },
+      {
+        "url": "http://www.pref.gunma.jp/07/p232_00001.html",
+        "result": "取得記録: 200。「群馬県流域下水道のマンホールカードについて - 群馬県ホームページ(下水道総合事務所)」を確認。施設ごとの判定: 県下水道総合事務所と各水質浄化センターへのアクセス案内を確認。上之手1846-1の事務所建物を示す数値座標がなく、センター敷地の図から推計しない。"
+      },
+      {
+        "url": "https://www.pref.gunma.jp/page/21101.html",
+        "result": "取得記録: 200。「各水質浄化センターへのアクセスについて - 群馬県ホームページ(下水道総合事務所)」を確認。施設ごとの判定: 県下水道総合事務所と各水質浄化センターへのアクセス案内を確認。上之手1846-1の事務所建物を示す数値座標がなく、センター敷地の図から推計しない。"
+      },
+      {
+        "url": "https://www.pref.gunma.jp/soshiki/190/",
+        "result": "取得記録: 200。「下水道総合事務所 - 群馬県ホームページ」を確認。施設ごとの判定: 県下水道総合事務所と各水質浄化センターへのアクセス案内を確認。上之手1846-1の事務所建物を示す数値座標がなく、センター敷地の図から推計しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-919f32c0b7299b9b3b94": {
+    "index": 83,
+    "name": "玉村町総合運動公園 管理棟",
+    "address": "群馬県佐波郡玉村町宇貫481",
+    "attempts": [
+      {
+        "url": "http://www.pref.gunma.jp/07/p23210002.html",
+        "result": "取得記録: 200。「下水道総合事務所 - 群馬県ホームページ」を確認。施設ごとの判定: 町公式の総合運動公園markerInfosは公園全体の点。指定管理者の施設利用案内も確認したが、宇貫481内の管理棟と同じ点とは確認できず保留。"
+      },
+      {
+        "url": "http://www.pref.gunma.jp/07/p232_00001.html",
+        "result": "取得記録: 200。「群馬県流域下水道のマンホールカードについて - 群馬県ホームページ(下水道総合事務所)」を確認。施設ごとの判定: 町公式の総合運動公園markerInfosは公園全体の点。指定管理者の施設利用案内も確認したが、宇貫481内の管理棟と同じ点とは確認できず保留。"
+      },
+      {
+        "url": "https://www.pref.gunma.jp/page/21101.html",
+        "result": "取得記録: 200。「各水質浄化センターへのアクセスについて - 群馬県ホームページ(下水道総合事務所)」を確認。施設ごとの判定: 町公式の総合運動公園markerInfosは公園全体の点。指定管理者の施設利用案内も確認したが、宇貫481内の管理棟と同じ点とは確認できず保留。"
+      },
+      {
+        "url": "https://tamamura-park.com/about/",
+        "result": "取得記録: 200。「玉村町総合運動公園　施設のご利用案内 ｜ 玉村町総合運動公園」を確認。施設ごとの判定: 町公式の総合運動公園markerInfosは公園全体の点。指定管理者の施設利用案内も確認したが、宇貫481内の管理棟と同じ点とは確認できず保留。"
+      },
+      {
+        "url": "https://www.town.tamamura.lg.jp/docs/2019100100716/",
+        "result": "取得記録: 200。「玉村町総合運動公園／スポーツ施設 | 玉村町」を確認。施設ごとの判定: 町公式の総合運動公園markerInfosは公園全体の点。指定管理者の施設利用案内も確認したが、宇貫481内の管理棟と同じ点とは確認できず保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-63e44d207a832584afa1": {
+    "index": 84,
+    "name": "道の駅「まえばし赤城」観光案内所",
+    "address": "群馬県前橋市田口町36番地",
+    "attempts": [
+      {
+        "url": "https://maebashi-akagi.jp/",
+        "result": "取得記録: 200。「道の駅まえばし赤城｜20を超えるショップとアクティビティ」を確認。施設ごとの判定: 道の駅公式アクセスのpbは施設全体を表示する中心。田口町36内の観光案内所が入る棟の目的地点座標を独立して確認できなかった。"
+      },
+      {
+        "url": "https://www.city.maebashi.gunma.jp/soshiki/suidokyoku/gesuidoseibi/oshirase/4363.html",
+        "result": "取得記録: 200。「前橋市「マンホールカード」配布しています／前橋市」を確認。施設ごとの判定: 道の駅公式アクセスのpbは施設全体を表示する中心。田口町36内の観光案内所が入る棟の目的地点座標を独立して確認できなかった。"
+      },
+      {
+        "url": "https://maebashi-akagi.jp/access/",
+        "result": "取得記録: 200。「アクセス ｜道の駅まえばし赤城」を確認。施設ごとの判定: 道の駅公式アクセスのpbは施設全体を表示する中心。田口町36内の観光案内所が入る棟の目的地点座標を独立して確認できなかった。"
+      },
+      {
+        "url": "https://maebashi-akagi.jp/access",
+        "result": "取得記録: 200。「アクセス ｜道の駅まえばし赤城」を確認。施設ごとの判定: 道の駅公式アクセスのpbは施設全体を表示する中心。田口町36内の観光案内所が入る棟の目的地点座標を独立して確認できなかった。"
+      },
+      {
+        "url": "https://www.city.maebashi.gunma.jp/gyosei/8/2/13384.html",
+        "result": "取得記録: 200。「前橋アクセスマップ／前橋市」を確認。施設ごとの判定: 道の駅公式アクセスのpbは施設全体を表示する中心。田口町36内の観光案内所が入る棟の目的地点座標を独立して確認できなかった。"
+      }
+    ]
+  },
+  "facility:kanto-north-65db06940fd00224099b": {
+    "index": 85,
+    "name": "桐生市役所水道局下水道課",
+    "address": "群馬県桐生市美原町2番5号",
+    "attempts": [
+      {
+        "url": "https://www.city.kiryu.lg.jp/kurashi/suido/gesui/1013174.html",
+        "result": "取得記録: 200。「マンホールカードの配布｜桐生市ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.kiryu.lg.jp/kankou/kooutsu/index.html",
+        "result": "取得記録: 200。「交通・アクセス｜桐生市ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.kiryu.lg.jp/shisetsu/index.html",
+        "result": "取得記録: 200。「施設｜桐生市ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.kiryu.lg.jp/shisetsu/kankyou/1027443.html",
+        "result": "取得記録: 200。「桐生市水道局　施設案内｜桐生市ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-88ee40433ca2bfde9534": {
+    "index": 86,
+    "name": "桐生市役所本庁舎1階警備・宿日直室",
+    "address": "群馬県桐生市織姫町1番1号",
+    "attempts": [
+      {
+        "url": "https://www.city.kiryu.lg.jp/kurashi/suido/gesui/1013174.html",
+        "result": "取得記録: 200。「マンホールカードの配布｜桐生市ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.kiryu.lg.jp/kankou/kooutsu/index.html",
+        "result": "取得記録: 200。「交通・アクセス｜桐生市ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.kiryu.lg.jp/shisetsu/shiyakusho/1005238.html",
+        "result": "取得記録: 200。「市役所（本庁舎）　施設案内｜桐生市ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-4e9eed89a1068c1af785": {
+    "index": 87,
+    "name": "伊勢崎市上下水道局総務課",
+    "address": "群馬県伊勢崎市連取元町170番地3",
+    "attempts": [
+      {
+        "url": "https://www.city.isesaki.lg.jp/soshiki/keizai/shoko/machinakakaseika/1588.html",
+        "result": "取得記録: 200。「伊勢崎駅前インフォメーションセンター／伊勢崎市」を確認。施設ごとの判定: 上下水道局専用案内のqは施設名検索、llは表示中心。連取元町170-3の施設マーカーと確定できず、駅前インフォメーションセンターの数値qも別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.isesaki.lg.jp/soshiki/suidokyo/suido/index.html",
+        "result": "取得記録: 200。「上下水道局総務課／伊勢崎市」を確認。施設ごとの判定: 上下水道局専用案内のqは施設名検索、llは表示中心。連取元町170-3の施設マーカーと確定できず、駅前インフォメーションセンターの数値qも別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.isesaki.lg.jp/soshiki/suidokyo/gesuisisetu/20782.html",
+        "result": "取得記録: 200。「伊勢崎市のマンホールカード／伊勢崎市」を確認。施設ごとの判定: 上下水道局専用案内のqは施設名検索、llは表示中心。連取元町170-3の施設マーカーと確定できず、駅前インフォメーションセンターの数値qも別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.isesaki.lg.jp/kurashi_tetsuzuki/shisetsu/shiyakuyo/16596.html",
+        "result": "取得記録: 200。「市役所へのアクセス／伊勢崎市」を確認。施設ごとの判定: 上下水道局専用案内のqは施設名検索、llは表示中心。連取元町170-3の施設マーカーと確定できず、駅前インフォメーションセンターの数値qも別施設なので除外。"
+      },
+      {
+        "url": "https://www.city.isesaki.lg.jp/kurashi_tetsuzuki/shisetsu/suidokanrenshisetsu/17552.html",
+        "result": "取得記録: 200。「上下水道局の案内／伊勢崎市」を確認。施設ごとの判定: 上下水道局専用案内のqは施設名検索、llは表示中心。連取元町170-3の施設マーカーと確定できず、駅前インフォメーションセンターの数値qも別施設なので除外。"
+      }
+    ]
+  },
+  "facility:kanto-north-105ca48451844bf76784": {
+    "index": 88,
+    "name": "沼田市観光案内所",
+    "address": "群馬県沼田市西倉内町2889-3",
+    "attempts": [
+      {
+        "url": "https://www.numata-kankou.jp/",
+        "result": "取得記録: 200。「沼田市観光協会」を確認。施設ごとの判定: 観光協会アクセス・スタンプラリー案内まで調査。西倉内2889-3の案内所を特定する明示座標はHTMLに見つからず、周遊My Mapsや他スポットの短縮リンクから転用しない。"
+      },
+      {
+        "url": "http://www.numata-kankou.jp/news/index.html",
+        "result": "取得記録: 200。「お知らせ一覧 | 沼田市観光協会」を確認。施設ごとの判定: 観光協会アクセス・スタンプラリー案内まで調査。西倉内2889-3の案内所を特定する明示座標はHTMLに見つからず、周遊My Mapsや他スポットの短縮リンクから転用しない。"
+      },
+      {
+        "url": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+        "result": "取得記録: 200。「沼田市のマンホールについて｜沼田市公式ホームページ」を確認。施設ごとの判定: 観光協会アクセス・スタンプラリー案内まで調査。西倉内2889-3の案内所を特定する明示座標はHTMLに見つからず、周遊My Mapsや他スポットの短縮リンクから転用しない。"
+      },
+      {
+        "url": "https://www.numata-kankou.jp/access/index.html",
+        "result": "取得記録: 200。「沼田市へのアクセス | 沼田市観光協会」を確認。施設ごとの判定: 観光協会アクセス・スタンプラリー案内まで調査。西倉内2889-3の案内所を特定する明示座標はHTMLに見つからず、周遊My Mapsや他スポットの短縮リンクから転用しない。"
+      },
+      {
+        "url": "https://numata-kankou.jp/model/coarse01.html",
+        "result": "取得記録: 200。「沼田城重ね押しスタンプラリー | おすすめコース・観光スポット | 沼田市観光協会」を確認。施設ごとの判定: 観光協会アクセス・スタンプラリー案内まで調査。西倉内2889-3の案内所を特定する明示座標はHTMLに見つからず、周遊My Mapsや他スポットの短縮リンクから転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-5084d7132f37de70e96a": {
+    "index": 89,
+    "name": "沼田市役所観光交流課(テラス沼田5階)",
+    "address": "群馬県沼田市下之町888番地",
+    "attempts": [
+      {
+        "url": "https://www.numata-kankou.jp/",
+        "result": "取得記録: 200。「沼田市観光協会」を確認。施設ごとの判定: 市公式「テラス沼田のご案内」を確認。下之町888の館内案内はあるが数値q・マーカーがなく、西倉内町の観光案内所と区別して保留。"
+      },
+      {
+        "url": "http://www.numata-kankou.jp/news/index.html",
+        "result": "取得記録: 200。「お知らせ一覧 | 沼田市観光協会」を確認。施設ごとの判定: 市公式「テラス沼田のご案内」を確認。下之町888の館内案内はあるが数値q・マーカーがなく、西倉内町の観光案内所と区別して保留。"
+      },
+      {
+        "url": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+        "result": "取得記録: 200。「沼田市のマンホールについて｜沼田市公式ホームページ」を確認。施設ごとの判定: 市公式「テラス沼田のご案内」を確認。下之町888の館内案内はあるが数値q・マーカーがなく、西倉内町の観光案内所と区別して保留。"
+      },
+      {
+        "url": "https://www.numata-kankou.jp/access/index.html",
+        "result": "取得記録: 200。「沼田市へのアクセス | 沼田市観光協会」を確認。施設ごとの判定: 市公式「テラス沼田のご案内」を確認。下之町888の館内案内はあるが数値q・マーカーがなく、西倉内町の観光案内所と区別して保留。"
+      },
+      {
+        "url": "https://www.city.numata.gunma.jp/shisei/soshiki/1002019.html",
+        "result": "取得記録: 200。「テラス沼田のご案内｜沼田市公式ホームページ」を確認。施設ごとの判定: 市公式「テラス沼田のご案内」を確認。下之町888の館内案内はあるが数値q・マーカーがなく、西倉内町の観光案内所と区別して保留。"
+      }
+    ]
+  },
+  "facility:kanto-north-5e7f290df963683e8941": {
+    "index": 90,
+    "name": "利根地区コミュニティセンター",
+    "address": "群馬県沼田市利根町追貝37",
+    "attempts": [
+      {
+        "url": "https://www.oigami.net/",
+        "result": "取得記録: 200。「旅館・ホテルの宿泊予約・観光情報 | 【公式】老神温泉観光協会・老神温泉旅館組合」を確認。"
+      },
+      {
+        "url": "https://www.oigami.net/blog/",
+        "result": "取得記録: 200。「新着情報 | 【公式】老神温泉観光協会・老神温泉旅館組合」を確認。"
+      },
+      {
+        "url": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+        "result": "取得記録: 200。「沼田市のマンホールについて｜沼田市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.oigami.net/access/",
+        "result": "取得記録: 200。「アクセス | 【公式】老神温泉観光協会・老神温泉旅館組合」を確認。"
+      },
+      {
+        "url": "https://www.city.numata.gunma.jp/shisetsu/kouminan/1003019.html",
+        "result": "取得記録: 200。「施設案内　利根地区コミュニティセンター｜沼田市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://maps.app.goo.gl/5ygxcbFBhVTMUJkg8",
+        "result": "取得記録: 429。「https://www.google.co.jp/maps/place/%E3%80%92378-0322+%E7%BE%A4%E9%A6%AC%E7%9C%8C%E6%B2%BC%E7%94%B0%E5%B8%82%E5%88%A9%E6%A0%B9%E7%94%BA%E8%80%81%E7%A5%9E%EF%BC%96%EF%BC%90%EF%BC%97%E2%88%92%EF%BC%91/@36.671107,139.2071983,17z/data=!3m1!4b1!4m6!3m5!1s0x601e5070912aa431:0x986fc5a5e7be8baf!8m2!3d36.671107!4d139.2097786!16s%2Fg%2F11clmvfhxw?entry=tts&g_ep=EgoyMDI0MTEwNi4wIPu8ASoASAFQAw%3D%3D」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-07a17db12d5d3a686622": {
+    "index": 91,
+    "name": "つつじが岡ふれあいセンター",
+    "address": "館林市花山町3181",
+    "attempts": [
+      {
+        "url": "https://www.city.tatebayashi.gunma.jp/s061/map/010/20201027183513.html",
+        "result": "取得記録: 200。「つつじが岡ふれあいセンター｜館林市」を確認。"
+      },
+      {
+        "url": "https://www.city.tatebayashi.gunma.jp/s073/kurashi/090/030/120/20200108201000.html",
+        "result": "取得記録: 200。「館林市マンホールカードを配布しています｜館林市」を確認。"
+      },
+      {
+        "url": "https://www.city.tatebayashi.gunma.jp/core/js/map/map.js",
+        "result": "取得記録: 200。"
+      }
+    ]
+  },
+  "facility:kanto-north-91edb2f2494934178388": {
+    "index": 92,
+    "name": "中央公民館(渋川東部公民館)",
+    "address": "渋川市渋川908番地21",
+    "attempts": [
+      {
+        "url": "https://www.city.shibukawa.lg.jp/kosodate/shougaigakushuu/cyuokominkan/p000926.html",
+        "result": "取得記録: 200。「中央公民館（渋川東部公民館併設）施設・利用案内 | 渋川市公式ホームページ」を確認。施設ごとの判定: 中央公民館専用施設・利用案内と関連アクセスを確認。渋川908-21の座標指定がなく、関連リンクの渋川市広域地図点を公民館へ転用しない。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p006148.html",
+        "result": "取得記録: 200。「渋川市の「マンホールカード」第1弾の配布について | 渋川市公式ホームページ」を確認。施設ごとの判定: 中央公民館専用施設・利用案内と関連アクセスを確認。渋川908-21の座標指定がなく、関連リンクの渋川市広域地図点を公民館へ転用しない。"
+      },
+      {
+        "url": "https://www.city.shibukawa.lg.jp/shisei/000233/000235/p002430.html",
+        "result": "取得記録: 200。「渋川市のアクセスマップ | 渋川市公式ホームページ」を確認。施設ごとの判定: 中央公民館専用施設・利用案内と関連アクセスを確認。渋川908-21の座標指定がなく、関連リンクの渋川市広域地図点を公民館へ転用しない。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/shisei/000233/000235/p002430.html",
+        "result": "取得記録: 200。「渋川市のアクセスマップ | 渋川市公式ホームページ」を確認。施設ごとの判定: 中央公民館専用施設・利用案内と関連アクセスを確認。渋川908-21の座標指定がなく、関連リンクの渋川市広域地図点を公民館へ転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-f542d0909d18d2b1dd94": {
+    "index": 93,
+    "name": "伊香保ロープウェイ不如帰駅観光案内所",
+    "address": "群馬県渋川市伊香保町伊香保558番地1",
+    "attempts": [
+      {
+        "url": "https://www.city.shibukawa.lg.jp/shisetsu/000349/p003096.html",
+        "result": "取得記録: 200。「渋川市営伊香保ロープウェイ不如帰駅 | 渋川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p006792.html",
+        "result": "取得記録: 200。「渋川市の「マンホールカード」第2弾の配布について | 渋川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.city.shibukawa.lg.jp/shisei/000233/000235/p002430.html",
+        "result": "取得記録: 200。「渋川市のアクセスマップ | 渋川市公式ホームページ」を確認。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/shisei/000233/000235/p002430.html",
+        "result": "取得記録: 200。「渋川市のアクセスマップ | 渋川市公式ホームページ」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-ba807cb8ac627a6b50e6": {
+    "index": 94,
+    "name": "渋川地区名産品センター(しぶさん)",
+    "address": "群馬県渋川市渋川1832番地27 渋川駅前プラザ",
+    "attempts": [
+      {
+        "url": "http://www.city.shibukawa.lg.jp/kankou/gift/omiyage/p003604.html",
+        "result": "取得記録: 200。「渋川地区名産品センター（しぶさん） | 渋川市観光情報」を確認。施設ごとの判定: しぶさん運営団体の専用紹介まで確認。地図qは渋川1832-27という住所文字列であり、住所検索結果からのジオコードは採用しない。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p007129.html",
+        "result": "取得記録: 200。「渋川市の「マンホールカード」第3弾の配布について | 渋川市公式ホームページ」を確認。施設ごとの判定: しぶさん運営団体の専用紹介まで確認。地図qは渋川1832-27という住所文字列であり、住所検索結果からのジオコードは採用しない。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/kankou-site/kankou/000357/000358/p000134.html",
+        "result": "取得記録: 200。「渋川アクセスガイド | 渋川市観光情報」を確認。施設ごとの判定: しぶさん運営団体の専用紹介まで確認。地図qは渋川1832-27という住所文字列であり、住所検索結果からのジオコードは採用しない。"
+      },
+      {
+        "url": "http://www.city.shibukawa.lg.jp/shisei/000233/000235/p002430.html",
+        "result": "取得記録: 200。「渋川市のアクセスマップ | 渋川市公式ホームページ」を確認。施設ごとの判定: しぶさん運営団体の専用紹介まで確認。地図qは渋川1832-27という住所文字列であり、住所検索結果からのジオコードは採用しない。"
+      },
+      {
+        "url": "https://shibukawachiku-bussan.com/lp/shibusan/",
+        "result": "取得記録: 200。「渋川地区名産品センター しぶさん | 渋川地区物産振興協会」を確認。施設ごとの判定: しぶさん運営団体の専用紹介まで確認。地図qは渋川1832-27という住所文字列であり、住所検索結果からのジオコードは採用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-fe061728a9f12b2742a6": {
+    "index": 95,
+    "name": "道の駅ららん藤岡 藤岡市観光案内所",
+    "address": "群馬県藤岡市中1131-8",
+    "attempts": [
+      {
+        "url": "http://www.laranfujioka.com/",
+        "result": "取得記録: 200。「ホーム | 道の駅ららん藤岡」を確認。施設ごとの判定: 市カード記事に道の駅ららん藤岡のPOI指定があるが、施設全体の点。公式アクセスとも照合したが、中1131-8内の観光案内所棟を示す点とは確認できない。"
+      },
+      {
+        "url": "https://www.city.fujioka.gunma.jp/soshiki/jogesuidobu/gesuido/2/1117.html",
+        "result": "取得記録: 200。「「マンホールカード」の配布に関するお知らせ／藤岡市」を確認。施設ごとの判定: 市カード記事に道の駅ららん藤岡のPOI指定があるが、施設全体の点。公式アクセスとも照合したが、中1131-8内の観光案内所棟を示す点とは確認できない。"
+      },
+      {
+        "url": "https://www.laranfujioka.com/access",
+        "result": "取得記録: 200。「アクセス | 道の駅ららん藤岡」を確認。施設ごとの判定: 市カード記事に道の駅ららん藤岡のPOI指定があるが、施設全体の点。公式アクセスとも照合したが、中1131-8内の観光案内所棟を示す点とは確認できない。"
+      },
+      {
+        "url": "https://www.city.fujioka.gunma.jp/shiseijoho/fujiokashinoshokai/2/3049.html",
+        "result": "取得記録: 200。「交通アクセス／藤岡市」を確認。施設ごとの判定: 市カード記事に道の駅ららん藤岡のPOI指定があるが、施設全体の点。公式アクセスとも照合したが、中1131-8内の観光案内所棟を示す点とは確認できない。"
+      }
+    ]
+  },
+  "facility:kanto-north-cbf9ce5973ddb256d849": {
+    "index": 96,
+    "name": "一般社団法人みどり市観光協会",
+    "address": "群馬県みどり市大間々町大間々1034-5",
+    "attempts": [
+      {
+        "url": "https://www.city.midori.gunma.jp/kurashi/1001626/1001734/1002177.html",
+        "result": "取得記録: 200。「マンホールカードについて\n｜群馬県みどり市」を確認。施設ごとの判定: 観光協会自身の施設紹介で大間々1034-5を確認。pb埋め込みの表示中心のみで、独立マーカー指定がないため未確定。"
+      },
+      {
+        "url": "https://www.city.midori.gunma.jp/shisei/1001657/1001831/1002993.html",
+        "result": "取得記録: 200。「交通アクセス\n｜群馬県みどり市」を確認。施設ごとの判定: 観光協会自身の施設紹介で大間々1034-5を確認。pb埋め込みの表示中心のみで、独立マーカー指定がないため未確定。"
+      },
+      {
+        "url": "https://16106midori.jp/spot/shopping/41/",
+        "result": "取得記録: 200。「みどり市観光協会 | みどころ情報 | わたらせ渓谷鐵道が走る群馬県みどり市の観光公式サイト」を確認。施設ごとの判定: 観光協会自身の施設紹介で大間々1034-5を確認。pb埋め込みの表示中心のみで、独立マーカー指定がないため未確定。"
+      }
+    ]
+  },
+  "facility:kanto-north-c0a593ee1ebbefef4ded": {
+    "index": 97,
+    "name": "吉岡町役場上下水道課",
+    "address": "群馬県北群馬郡吉岡町大字下野田560",
+    "attempts": [
+      {
+        "url": "https://www.town.yoshioka.gunma.jp/kurashi/suido/gesuido/manhole_card.html",
+        "result": "取得記録: <urlopen error [Errno -2] Name or service not known>。施設ごとの判定: 町アクセス一覧から専用アクセスマップまで確認。下野田560の位置は案内図・PDF参照であり、HTMLから明示座標を確認できず、下野田472の文化センター点は転用しない。"
+      },
+      {
+        "url": "https://www.town.yoshioka.lg.jp/kurashi/suido/gesuido/manhole_card.html",
+        "result": "取得記録: 200。「マンホールカード|吉岡町ホームページ」を確認。施設ごとの判定: 町アクセス一覧から専用アクセスマップまで確認。下野田560の位置は案内図・PDF参照であり、HTMLから明示座標を確認できず、下野田472の文化センター点は転用しない。"
+      },
+      {
+        "url": "https://www.town.yoshioka.lg.jp/chousei/access/",
+        "result": "取得記録: 200。「アクセス|町政情報|吉岡町ホームページ」を確認。施設ごとの判定: 町アクセス一覧から専用アクセスマップまで確認。下野田560の位置は案内図・PDF参照であり、HTMLから明示座標を確認できず、下野田472の文化センター点は転用しない。"
+      },
+      {
+        "url": "https://www.town.yoshioka.lg.jp/chousei/access/map.html",
+        "result": "取得記録: 200。「吉岡町アクセスマップ|吉岡町ホームページ」を確認。施設ごとの判定: 町アクセス一覧から専用アクセスマップまで確認。下野田560の位置は案内図・PDF参照であり、HTMLから明示座標を確認できず、下野田472の文化センター点は転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-e91264e37ba396d607a0": {
+    "index": 98,
+    "name": "吉岡町文化センター",
+    "address": "群馬県北群馬郡吉岡町大字下野田472",
+    "attempts": [
+      {
+        "url": "https://www.town.yoshioka.gunma.jp/kurashi/suido/gesuido/manhole_card.html",
+        "result": "取得記録: <urlopen error [Errno -2] Name or service not known>。"
+      },
+      {
+        "url": "https://www.town.yoshioka.lg.jp/kurashi/suido/gesuido/manhole_card.html",
+        "result": "取得記録: 200。「マンホールカード|吉岡町ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.gunma-fc.jp/location/yoshioka-town-cultural-center/",
+        "result": "取得記録: 200。「吉岡町文化センター | 【ぐんまフィルムコミッション】ロケ地検索と群馬で映画やドラマなど撮影する制作会社をサポート | 【ぐんまフィルムコミッション】ロケ地検索と群馬で映画やドラマなど撮影する制作会社をサポート」を確認。"
+      },
+      {
+        "url": "https://www.net.yoshioka.ed.jp/吉岡町文化センター/施設概要",
+        "result": "取得記録: 200。「吉岡町教育委員会 - 施設概要」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-f18e4d75a432181f8829": {
+    "index": 99,
+    "name": "草津町役場",
+    "address": "群馬県吾妻郡草津町大字草津28",
+    "attempts": [
+      {
+        "url": "https://www.town.kusatsu.gunma.jp/",
+        "result": "取得記録: 200。「草津町ホームページ」を確認。施設ごとの判定: 町役場窓口案内と県の市町村役場位置図案内まで確認。草津28の明示座標データは取得HTMLになく、観光協会の温泉アクセスを役場位置へ転用しない。"
+      },
+      {
+        "url": "https://www.town.kusatsu.gunma.jp/s011/030/020/1743492914990/index.html",
+        "result": "取得記録: 200。「草津町マンホールカードの配布について｜草津町」を確認。施設ごとの判定: 町役場窓口案内と県の市町村役場位置図案内まで確認。草津28の明示座標データは取得HTMLになく、観光協会の温泉アクセスを役場位置へ転用しない。"
+      },
+      {
+        "url": "https://www.kusatsu-onsen.ne.jp/top.php",
+        "result": "取得記録: 200。「湯Love草津(草津温泉観光協会ホームページ)」を確認。施設ごとの判定: 町役場窓口案内と県の市町村役場位置図案内まで確認。草津28の明示座標データは取得HTMLになく、観光協会の温泉アクセスを役場位置へ転用しない。"
+      },
+      {
+        "url": "https://www.town.kusatsu.gunma.jp/www/contents/1513640181830/index.html",
+        "result": "取得記録: 200。「役場窓口一覧｜草津町」を確認。施設ごとの判定: 町役場窓口案内と県の市町村役場位置図案内まで確認。草津28の明示座標データは取得HTMLになく、観光協会の温泉アクセスを役場位置へ転用しない。"
+      },
+      {
+        "url": "https://toukei.pref.gunma.jp/zu240068/",
+        "result": "取得記録: 200。「群馬県統計情報提供システム」を確認。施設ごとの判定: 町役場窓口案内と県の市町村役場位置図案内まで確認。草津28の明示座標データは取得HTMLになく、観光協会の温泉アクセスを役場位置へ転用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-faaad30a2433be0d1e9f": {
+    "index": 100,
+    "name": "玉村町水道庁舎(玉村町上下水道課)",
+    "address": "群馬県佐波郡玉村町大字上新田1116-3",
+    "attempts": [
+      {
+        "url": "https://www.town.tamamura.lg.jp/docs/2021110900019/",
+        "result": "取得記録: 200。「マンホールカードの配布再開について | 玉村町」を確認。"
+      },
+      {
+        "url": "https://www.town.tamamura.lg.jp/docs/2016020800054/",
+        "result": "取得記録: 200。「玉村町水道庁舎案内図 | 玉村町」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-aa5b7eddea78f8da3c18": {
+    "index": 101,
+    "name": "道の駅 玉村宿(総合案内)",
+    "address": "群馬県佐波郡玉村町大字上新田604-1",
+    "attempts": [
+      {
+        "url": "https://www.town.tamamura.lg.jp/docs/2021110900019/",
+        "result": "取得記録: 200。「マンホールカードの配布再開について | 玉村町」を確認。施設ごとの判定: 玉村宿公式交通アクセスを確認。pbの表示中心以外に総合案内建物の数値位置指定がなく、水道庁舎の別住所1116-3の点は流用しない。"
+      },
+      {
+        "url": "https://www.tamamura-juku.com/access",
+        "result": "取得記録: 200。「交通アクセス - 道の駅 玉村宿」を確認。施設ごとの判定: 玉村宿公式交通アクセスを確認。pbの表示中心以外に総合案内建物の数値位置指定がなく、水道庁舎の別住所1116-3の点は流用しない。"
+      }
+    ]
+  },
+  "facility:kanto-north-b9cf52ce187cbdc0d635": {
+    "index": 102,
+    "name": "駅前プラザ「メイちゃん家」",
+    "address": "群馬県邑楽郡明和町中谷328-10",
+    "attempts": [
+      {
+        "url": "https://www.town.meiwa.gunma.jp/life/soshiki/toshikensetsu/1_1/index.html",
+        "result": "取得記録: 200。「下水道係／群馬県明和町｜公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.meiwa.gunma.jp/life/soshiki/toshikensetsu/1_1/osirase/3208.html",
+        "result": "取得記録: 200。「明和町マンホールカード／群馬県明和町｜公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.meiwa.gunma.jp/life/soshiki/sangyoukankyo/meichanchi/348.html",
+        "result": "取得記録: 200。「駅前プラザ「メイちゃん家」／群馬県明和町｜公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.meiwa.gunma.jp/life/convenient/facility_map/1721.html",
+        "result": "取得記録: 200。「施設マップ／群馬県明和町｜公式ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.meiwa.gunma.jp/material/files/group/1/map_20260306181536.csv",
+        "result": "取得記録: 200。"
+      }
+    ]
+  },
+  "facility:kanto-north-35386468b06ec27f741e": {
+    "index": 103,
+    "name": "邑楽町役場2階 都市計画課",
+    "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+    "attempts": [
+      {
+        "url": "http://www.town.ora.gunma.jp",
+        "result": "取得記録: 200。「群馬県邑楽町ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/s018/2024-manho-rucard1th.html",
+        "result": "取得記録: 200。「マンホールカード第1弾の配布｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/li/050/040/index.html",
+        "result": "取得記録: 200。「交通アクセス｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/",
+        "result": "取得記録: 200。「群馬県邑楽町ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/map/010/20180901172000.html",
+        "result": "取得記録: 200。「邑楽町役場｜群馬県邑楽町」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-074d9a4df836af82bb16": {
+    "index": 104,
+    "name": "邑楽町役場1階 休日受付窓口",
+    "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+    "attempts": [
+      {
+        "url": "http://www.town.ora.gunma.jp",
+        "result": "取得記録: 200。「群馬県邑楽町ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/s018/2024-manho-rucard1th.html",
+        "result": "取得記録: 200。「マンホールカード第1弾の配布｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/li/050/040/index.html",
+        "result": "取得記録: 200。「交通アクセス｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/",
+        "result": "取得記録: 200。「群馬県邑楽町ホームページ」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/map/010/20180901172000.html",
+        "result": "取得記録: 200。「邑楽町役場｜群馬県邑楽町」を確認。"
+      }
+    ]
+  },
+  "facility:kanto-north-3bd86f16d6d9017f5da2": {
+    "index": 105,
+    "name": "シンボルタワー 未来MiRAi",
+    "address": "群馬県邑楽郡邑楽町大字中野2639番地1",
+    "attempts": [
+      {
+        "url": "https://www.town.ora.gunma.jp/orabiyori/050/010/symbol-tower.html",
+        "result": "取得記録: 200。「シンボルタワー未来MiRAi｜邑楽日和 おうらびより｜あなたの知らないまちへ出掛けよう」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+        "result": "取得記録: 200。「マンホールカード第2弾の配布｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/li/050/040/index.html",
+        "result": "取得記録: 200。「交通アクセス｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/map/index.html",
+        "result": "取得記録: 200。「町内の施設マップ｜群馬県邑楽町」を確認。"
+      },
+      {
+        "url": "https://www.town.ora.gunma.jp/map/030/030/20180901155000.html",
+        "result": "取得記録: 200。「【地図案内】シンボルタワー 未来MiRAi｜群馬県邑楽町」を確認。"
+      }
+    ]
+  }
+}

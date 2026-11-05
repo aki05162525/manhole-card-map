@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「マンホールカード」の配布に関して【配布場所・配布時間・定休日等】 | 甲府市上下水道局</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+        <script>
+            /* [共通] 既存サイトの配色をTailwindのカラー名として定義 */
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            kofu: {
+                                text:  '#696969', /* 本文の文字色 */
+                                link:  '#172a88', /* リンク色 */
+                                h2:    '#008ace', /* H2の文字色 */
+                                line:  '#009de1', /* H2の罫線・アクセント */
+                                h1:    '#dfebf5', /* H1の背景(上) */
+                                foot:  '#777777', /* フッタの文字色 */
+                                red:   '#e74c3c'  /* 注意書きの赤字 */
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['"Noto Sans JP"', '"Hiragino Kaku Gothic ProN"', 'Meiryo', 'sans-serif']
+                        }
+                    }
+                }
+            }
+        </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-[#f3f9fd] font-sans text-kofu-text antialiased">
+
+<!-- 外枠: PCでは最大954px(既存と同じ)、スマホでは画面幅いっぱい -->
+<div id="page-border" class="mx-auto flex min-h-screen w-full max-w-[954px] flex-col bg-white shadow-[0_0_10px_rgba(0,110,190,0.18)] supports-[height:100dvh]:min-h-[100dvh]">
+
+    <header id="p_header" class="flex flex-col gap-3 px-3 pb-3 pt-3 sm:flex-row sm:items-start sm:justify-between sm:bg-[url('/images/logo_back.png')] sm:bg-cover sm:bg-center sm:bg-no-repeat sm:px-4">
+
+    <!-- ロゴ: スマホは最大280px、PC(sm以上)は画像の元サイズ -->
+    <div class="logo mx-auto w-full max-w-[280px] sm:mx-0 sm:w-auto sm:max-w-none pt-3">
+        <a id="top"></a>
+        <a href="../../">
+            <picture>
+                <!-- PCサイズ（768px以上）で読み込む画像 -->
+                <source media="(min-width: 768px)" srcset="../../images/logo.png" />
+
+                <!-- スマホサイズで読み込む画像（デフォルト） -->
+                <img src="../../images/sp_logo.png" alt="上下水道局ロゴ" class="w-full h-auto object-cover"/>
+            </picture>
+        </a>
+    </div>
+
+    <!-- 右側: ショートカット(PCのみ) + 検索
+         スマホ: w-full で1行を使い切るので、ロゴの下に折り返して全幅で表示
+         PC(sm〜): 右寄せ。幅が足りない時は右端のまま下に折り返す -->
+    <div class="flex w-full flex-col gap-2 sm:ml-auto sm:w-auto sm:items-end">
+
+        <ul class="hidden text-sm sm:flex">
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../../various_procedures.html" class="no-underline hover:no-underline">Various Procedures</a></li>
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../../inquiry/mform.html" class="no-underline hover:no-underline">お問い合わせ</a></li>
+            <li class="pr-3 mr-3 border-r border-gray-500 last:border-r-0 last:mr-0"><a href="../../sitemap.html" class="no-underline hover:no-underline">サイトマップ</a></li>
+        </ul>
+
+            </div>
+</header>
+                    
+
+<nav id="p_menu" aria-label="メインメニュー" class="bg-[linear-gradient(to_bottom,#106cb3_0%,#005899_18%,#006db0_37%,#0789ca_65%,#18a6d9_100%)]">
+
+    <!-- ハンバーガーボタン（スマホのみ） -->
+    <button id="menu_toggle" type="button" aria-expanded="false" aria-controls="menu_list" aria-label="メニューを開く"
+            class="flex w-full items-center justify-end px-4 py-3 text-white sm:hidden">
+        <span aria-hidden="true" class="flex h-5 w-6 flex-col justify-between">
+            <span class="block h-0.5 w-full bg-white"></span>
+            <span class="block h-0.5 w-full bg-white"></span>
+            <span class="block h-0.5 w-full bg-white"></span>
+        </span>
+    </button>
+
+    <!-- メニュー本体
+         スマホ: 画面右から出るドロワー(fixed) / sm以上: 従来どおり5列 -->
+    <ul id="menu_list" data-open="false"
+        class="invisible fixed inset-y-0 right-0 z-50 flex w-[80%] max-w-xs translate-x-full flex-col overflow-y-auto bg-[#006db0] pt-14 shadow-2xl
+               transition-[transform,visibility] duration-300 ease-out
+               data-[open=true]:visible data-[open=true]:translate-x-0
+               sm:visible sm:static sm:grid sm:w-auto sm:max-w-none sm:translate-x-0 sm:grid-cols-5 sm:overflow-visible sm:bg-transparent sm:pt-0 sm:shadow-none">
+
+        <!-- 閉じるボタン（スマホのみ） -->
+        <li class="absolute right-2 top-2 sm:hidden">
+            <button id="menu_close" type="button" aria-label="メニューを閉じる"
+                    class="flex h-10 w-10 items-center justify-center text-white">
+                <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="M5 5l14 14M19 5L5 19"/>
+                </svg>
+            </button>
+        </li>
+
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../../general/procedure/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">各種手続き</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../../general/charge/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">上下水道料金のご案内</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../../questions/" aria-current="page" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">よくある質問</a></li>
+        <li class="border-t border-white/40 sm:border-t-0 sm:border-r"><a href="../../trader" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">工事事業者・指定店</a></li>
+        <li class="border-y border-white/40 sm:border-y-0"><a href="../../news/" class="flex h-full items-center px-5 py-4 text-sm font-bold text-white hover:bg-white/20 sm:justify-center sm:px-2 sm:py-3 sm:text-center ">お知らせ</a></li>
+    </ul>
+
+    <!-- 背景の暗幕（タップで閉じる） -->
+    <div id="menu_overlay" data-open="false" aria-hidden="true"
+         class="pointer-events-none fixed inset-0 z-40 bg-black/50 opacity-0 transition-opacity duration-300
+                data-[open=true]:pointer-events-auto data-[open=true]:opacity-100 sm:hidden"></div>
+</nav>
+
+
+    <script>
+        (function () {
+            var btn     = document.getElementById('menu_toggle');
+            var list    = document.getElementById('menu_list');
+            var overlay = document.getElementById('menu_overlay');
+            var closeBt = document.getElementById('menu_close');
+            var mq      = window.matchMedia('(min-width: 640px)');   // Tailwindの sm
+            if (!btn || !list || !overlay) return;
+
+            function isOpen() { return list.dataset.open === 'true'; }
+
+            function setOpen(open, moveFocus) {
+                list.dataset.open    = String(open);
+                overlay.dataset.open = String(open);
+                btn.setAttribute('aria-expanded', String(open));
+                btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+                document.documentElement.classList.toggle('overflow-hidden', open);  // 背面のスクロール固定
+                if (moveFocus) { (open ? closeBt : btn).focus(); }
+            }
+
+            btn.addEventListener('click',     function () { setOpen(!isOpen(), true); });
+            closeBt.addEventListener('click', function () { setOpen(false, true); });
+            overlay.addEventListener('click', function () { setOpen(false, true); });
+
+            // メニュー内リンクをタップしたら閉じる（ページ内リンク対策）
+            list.addEventListener('click', function (e) {
+                if (e.target.closest('a')) setOpen(false, false);
+            });
+
+            // Escキーで閉じる
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && isOpen()) setOpen(false, true);
+            });
+
+            // 画面幅がPCサイズになったら状態をリセット（スクロール固定が残るのを防ぐ）
+            mq.addEventListener('change', function (e) {
+                if (e.matches && isOpen()) setOpen(false, false);
+            });
+        })();
+    </script>
+
+
+
+            <nav id="p_breadcrumbs" aria-label="パンくずリスト" class="px-3 py-3 text-sm sm:px-4">
+    <ol class="flex flex-wrap items-center gap-x-1 gap-y-1">
+        <li><a href="../../" class="text-kofu-link hover:underline">HOME</a></li>
+                    <li aria-hidden="true">&gt;&gt;</li>
+                                                <li>
+                        <a href="../..//general/">
+                            一般向け情報                        </a>
+                    </li>
+                                                <li aria-hidden="true">&gt;&gt;</li>
+                                                <li>
+                        <a href="../..//general/manhole/">
+                            甲府市のマンホール                        </a>
+                    </li>
+                                                                        <li aria-hidden="true">&gt;&gt;</li>
+                <li aria-current="page">「マンホールカード」の配布に関して【配布場所・配布時間・定休日等】</li>
+                    
+    </ol>
+</nav>
+
+    
+    <main id="p_body" class="flex-1 px-3 pb-10 sm:px-4">
+
+                    <div id="p_contents" class="page p-5">
+            <p class="text-right mb-2">更新日：2026年4月27日</p>
+        <h1>「マンホールカード」の配布に関して【配布場所・配布時間・定休日等】</h1>
+    <div>
+        <p>             </p>
+
+<p style="margin-left:0mm; margin-right:0mm"> <span style="font-size:20px"><span style="color:#ffffff"><span style="background-color:#8e44ad">「武田信玄公イラスト／風林火山」（第８弾）</span></span></span>        <span style="font-size:20px"><span style="color:#ffffff"><span style="background-color:#ff6699">「甲府市公共下水道ナデシコ」（第１２弾）</span></span> </span>                                                                                                                                                                                                                           </p>
+
+<p style="margin-left:0mm; margin-right:0mm">　　 　　<img alt="" src="http://www.water.kofu.yamanashi.jp/data/images/imges/manhole/HP%20MC%20omotemen.png" style="height:350px; width:250px" />　                             　<img alt="" src="http://www.water.kofu.yamanashi.jp/data/images/imges/manhole/HP%20nadesiko%20omotemen.jpg" style="height:350px; width:250px" /></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px">　</span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><strong><span style="color:#000000"><span style="font-size:medium">〇「マンホールカード」とは？</span></span></strong></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium">　下水道広報プラットホーム（GKP）が自治体と共同で発行している<strong>【マンホール蓋のコレクションカード】</strong>です。表面にはマンホール蓋のデザインを、裏面にはデザインの由来などが記載されており、集めることでその土地にしかないマンホールの隠された魅力について触れることの出来る<strong>【カード型パンフレット】</strong>として全国各地にて展開されています。</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium"> </span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><strong><span style="color:#000000"><span style="font-size:medium">〇マンホール蓋は世界に誇れる日本の文化</span></span></strong></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium">　日本のマンホール蓋のデザインは管理する自治体によって異なるため、非常に多種多様のマンホール蓋が存在します。その土地の花・木・鳥をはじめ、文化や名産など様々なものがモチーフとなっており、地域の特色に溢れたものとなっております。これほどデザインが豊富な国は日本以外にはないため、日本独自の文化として注目されており、メディアにおいても「マンホーラー」と呼ばれるマンホールの愛好家の方たちが取り上げられるなど話題となっています。</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium"> </span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium">　マンホールカードは2016年4月に誕生して、2020年までに700種以上発行されてきました。【第８弾】「武田信玄公イラスト/風林火山」マンホールカードに続き、新たに【第１２弾】「甲府市公共下水道ナデシコ」マンホールカードが加わることになりました。カードのコレクションをきっかけに、下水道の重要な役割について楽しみながら知っていただけたらと思います。</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium"> </span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><strong><span style="color:#000000"><span style="font-size:medium">〇甲府市のマンホールカード</span></span></strong><strong><span style="color:#000000"><span style="font-size:medium">について</span></span></strong></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:22px;"><span style="color:#ffffff"><span style="background-color:#8e44ad">「武田信玄公イラスト／風林火山」（第８弾）</span></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium"><span style="font-size:22px"><strong>配布場所：</strong>武田氏館跡歴史館（信玄ミュージアム）甲府市大手３丁目１－１４</span>　</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><a href="https://kofu.geocloud.jp/webgis/?z=18&ll=35.685429%2C138.577008&t=roadmap&mp=12&ly=0&im=055-269-5030&vlf=-1&pin=1" target="_blank"><span style="color:#2980b9"><u>配布場所はこちらから</u></span></a></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><a href="http://www.water.kofu.yamanashi.jp/data/files/pdf/manhole/card%20map_shingenkou.jpg" target="_blank"><span style="color:#2980b9"><span style="font-size:18px"><u>マンホール設置場所はこちらから</u></span></span></a></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><u>※「武田信玄公イラスト/風林火山」デザインマンホールの実物も展示しています。</u></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>配布時間：</strong>9時～1７時</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>定休日　</strong></span></span><span style="font-size:18px;"><strong><span style="color:#d35400">火曜日（<u>祝日の場合はその翌日</u>）</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px;"><strong>　　　　<span style="color:#e67e22;">年末年始の休館日と開館時間は、下記の別サイトでご確認ください。</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px;"><strong>　　　　</strong><span style="color:#e67e22;"><strong>その他、臨時開館・休館有　</strong></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:22px"><strong><span style="color:null;"><span style="background-color:null;">※休館日については</span><a href="https://www.city.kofu.yamanashi.jp/rekishi_bunkazai/kofu-takedashirekishikan.html"><span style="background-color:null;">こちらから</span></a><span style="background-color:null;">ご確認ください（別サイトへ移動します）</span></span></strong></span><br />
+<strong><span style="color:#000000;"><span style="font-size:20px;"><span style="background-color:#f1c40f;">※休館日の配布はありません。ご確認のうえお越しください。</span></span></span></strong></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>駐車場：</strong>専用駐車場４台有（武田神社との共有駐車場も数台あります）</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:22px;"><span style="color:#ffffff"><span style="background-color:#ff6699">「甲府市公共下水道ナデシコ」（第１２弾）</span></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:22px"><strong>配布場所：</strong>甲府市立図書館　甲府市城東１丁目１２-33</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><a href="https://libnet.city.kofu.yamanashi.jp/lib/accessmap/" target="_blank"><span style="color:#2980b9"><u>配布場所はこちらから</u></span></a></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><u>※「甲府市公共下水道ナデシコ」カラーマンホールの実物は、甲府市上下水道局　１階ロビーに展示しています。</u></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px">（下水道整備地域に設置されているマンホールは、カラーではありません）</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>配布時間：</strong>10時～17時</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>定休日　</strong></span></span><span style="font-size:18px;"><strong><span style="color:#d35400">月曜日（<u>祝日の場合はその翌日</u>）</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px;"><strong><span style="color:#d35400">　　　　月末整理日（毎月最終の平日）</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px;"><strong><span style="color:#d35400">　　　　年末年始（１２月28日～１月4日）</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px;"><strong><span style="color:#d35400">　　　　特別整理期間（１月下旬～２月上旬）</span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:null;"><span style="font-size:22px"><strong>※休館日については<a href="https://libnet.city.kofu.yamanashi.jp/lib/information/">こちらから</a>ご確認ください（別サイトへ移動します）</strong></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><strong><span style="color:#000000;"><span style="font-size:20px;"><span style="background-color:#f1c40f;">※休館日の配布はありません。ご確認のうえお越しください。</span></span></span></strong></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:18px"><strong>駐車場：</strong>土日祝日は混雑するため、駐車場が不足する場合があります。また、周辺に時間貸駐車場はありません。</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><span style="color:#000000">※マンホールカードをお渡しする際に、<strong>簡単な</strong></span></span><span style="font-size:18px"><span style="color:#000000"><strong>アンケートへのご協力をお願いしています。</strong></span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><span style="color:#000000">※マンホールカードについて</span><strong>各配布場所へお問合せはご遠慮ください。</strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><span style="color:#000000">お問合せは、甲府市上下水道局　営業課までお願いします。</span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="font-size:18px"><span style="color:#000000">　<strong>営業課：TEL：055-228-3319（平日8：30～17：15（土日祝・年末年始は除く））</strong></span><strong><span style="color:#000000"><span style="color:#000000"> </span></span></strong></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"><span style="color:#000000"><span style="font-size:medium"> </span></span></p>
+
+<p style="margin-left:0mm; margin-right:0mm"> </p>
+
+    </div>
+
+    </div>
+        
+    </main>
+
+    <!-- ======================================================================
+     [7] フッタ  [共通]
+     上段: 3つのボタン(スマホは縦並び、PCは横並び) / 下段: 連絡先・業務時間
+     ====================================================================== -->
+<footer id="p_footer" class="bg-[linear-gradient(to_bottom,#eee_0%,#fff_60%)] text-[13px] text-[#777]">
+
+    <!-- 上段バー：PCは画像ボタン横並び、スマホは縦積み -->
+    <div class="upper border-y border-[#ccc] sm:h-[35px] sm:border-t-0 sm:bg-[url('./images/footer_back.png')] sm:bg-[position:0_2px] sm:bg-no-repeat">
+        <ul class="flex flex-col sm:flex-row sm:items-start">
+            <li class="border-b border-[#ccc] sm:mt-[5px] sm:border-b-0 sm:border-r sm:border-white sm:shadow-[1px_0_#999]">
+                <a href="../../" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../../images/footer_btn1.png" alt="上下水道局ホーム" width="155" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+            <li class="border-b border-[#ccc] sm:mt-[5px] sm:border-b-0 sm:border-r sm:border-white sm:shadow-[1px_0_#999]">
+                <a href="http://www.city.kofu.yamanashi.jp" target="_blank" rel="noopener" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../../images/footer_btn2.png" alt="甲府市ホームページ" width="142" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+            <li class="sm:ml-auto sm:mt-[5px]">
+                <a href="#top" class="flex justify-center px-5 py-3 sm:h-[25px] sm:items-center sm:py-0">
+                    <img src="../../images/footer_btn3.png" alt="このページの先頭へ" width="142" height="20" class="h-5 w-auto">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="lower px-3 py-5 text-[13px] leading-relaxed text-kofu-foot sm:px-4">
+        <h4 class="font-bold"><span class="text-kofu-line">■</span> お問い合わせ先</h4>
+        <p class="mt-2">
+            甲府市上下水道局　〒400-0046 甲府市下石田2-23-1<br class="sm:hidden">
+            <span class="sm:ml-2">Tel:<a href="tel:0552283311" class="text-kofu-link underline">055-228-3311</a></span>
+            <span class="sm:ml-2">Fax:055-237-4331</span>
+            <a href="../../general/facility/kofufacility.html" class="ml-2 text-kofu-link hover:underline">▶庁舎のご案内</a>
+        </p>
+        <p>
+            業務時間：月曜〜金曜日の午前8時30分〜午後5時15分迄（祝日、12月29日〜1月3日を除く）
+            <a href="../../general/dialin/index.html" class="ml-2 text-kofu-link hover:underline">▶各課ご連絡先</a>
+        </p>
+        <p>道路漏水など緊急の場合は、業務時間外でもご連絡をお願いします。</p>
+        <p class="pt-2 text-xs">Copyright(C)2003 KOFU CITY WATERWORKS AND SEWERAGE BUREAU</p>
+    </div>
+</footer>
+
+
+</div>
+
+
+
+
+<style type="text/tailwindcss">
+    @layer components {
+        /* H1: ページタイトル（#p_body 内） */
+        #p_body h1 {
+            @apply mb-6 flex items-center gap-2 border-t-[3px] border-b border-[#036eb8] bg-gradient-to-b from-kofu-h1 to-white px-3 py-3 text-lg font-bold text-[#606060] sm:text-xl;
+        }
+        #p_body h1::before {
+            content: '▶';
+            @apply text-xs text-kofu-line;
+        }
+
+        /* H2: 本文中の見出し（.contents_body 内） */
+        #p_contents h2 {
+            @apply flex items-center gap-2 border-t border-x border-b-4 border-kofu-line border-b-[#afccea] px-3 py-3 text-base font-bold text-kofu-h2 sm:text-lg;
+        }
+        #p_contents h2::before {
+            content: '▶';
+            @apply text-xs text-kofu-line;
+        }
+
+        #p_contents a{
+            @apply text-kofu-link underline;
+
+            &:hover {
+                @apply underline text-[#024a7d];
+            }
+        }
+
+        #p_contents .exhibition {
+            & h2{
+                @apply flex items-center gap-2 border border-[#b5305f] border-b-[5px] border-b-[#d9a0b5] bg-white px-3 py-3 text-base font-bold text-[#b5305f];
+            }
+            & h2::before {
+                content: '▶';
+                @apply text-xs text-kofu-line text-[#b5305f];
+            }
+        }
+
+        #p_contents .corporation {
+            & h2{
+                @apply flex items-center gap-2 border border-[#9aaa2c] border-b-[5px] border-b-[#c6d889] bg-white px-3 py-3 text-base font-bold text-[#3ea636];
+            }
+            & h2::before {
+                content: '▶';
+                @apply text-xs text-kofu-line text-[#9aaa2c];
+            }
+        }
+
+        #p_contents .general {
+            & h2{
+                @apply flex items-center gap-2 border border-[#036eb8] border-b-[5px] border-b-[#afccea] bg-white px-3 py-3 text-base font-bold text-[#0a6fa8];
+            }
+            & button {
+                &.tab-btn {
+                    @apply min-w-[7rem] flex-1 sm:flex-none sm:min-w-[10rem] border border-[#0096d6] border-b-0 px-4 py-3 text-sm font-bold sm:text-base
+                    bg-gradient-to-b from-white to-[#d8ebf7] text-[#0a6fa8]
+                    aria-[selected=false]:from-[#f4f4f4] aria-[selected=false]:to-[#e4e4e4]
+                    aria-[selected=false]:border-[#b8d4e6] aria-[selected=false]:text-[#999];
+                }
+            }
+
+        }
+
+        #p_contents .trader{
+            & h2{
+                @apply flex items-center justify-center gap-2 border-0  px-3 py-3 text-sm font-bold text-[#fff];
+            }
+            & h2::before {
+                content: '';
+            }
+        }
+
+        #p_contents .sitemap {
+
+            & h2{
+                @apply text-xs text-kofu-line border-t-0 border-x-0 border-b border-b-[#2f2849] sm:text-base text-[#2f2849] px-0;
+            }
+
+            & h2::before {
+                content:'';
+            }
+
+            & h3{
+                @apply text-xs text-[#606060] sm:text-sm;
+            }
+
+            & h4{
+
+            }
+
+            & ul{
+                @apply my-3 text-xs sm:text-sm;
+
+                & li{
+                    @apply my-2;
+                }
+
+                &.depth-3 {
+                    @apply ml-[1.5em];
+                }
+
+                &.depth-4 {
+                    @apply ml-[3em];
+                }
+            }
+        }
+
+
+    }
+</style>
+
+
+</body>
+</html>

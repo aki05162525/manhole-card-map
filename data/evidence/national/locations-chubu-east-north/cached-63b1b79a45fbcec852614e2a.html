@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PS4KJJZLH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PS4KJJZLH0');
+</script>
+<meta charset="utf-8">
+<title>SORAIRO国上-道の駅国上-日帰り温泉 てまりの湯｜新潟県燕市</title>
+<meta name="description" content="「自然と遊ぶ、道の駅」がコンセプトの道の駅 SORAIRO国上。手ぶらBBQやデイキャンプの施設も備えた“STAY INN”タイプの新しい道の駅です。">
+<meta name="keywords" content="道の駅,国上,てまりの湯,日帰り温泉,新潟県,燕市,産直野菜,名産マルシェ,足湯カフェ,フードコンテナ,BBQ,ドライブイン,良寛,酒呑童子,トレッキング,弥彦,五合庵,千限堂吊り橋">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta property="og:title" content="SORAIRO国上-道の駅国上-">
+<meta property="og:site_name" content="SORAIRO国上-道の駅国上- - 公式サイト">
+<meta property="og:description" content="「自然と遊ぶ、道の駅」がコンセプトの道の駅 SORAIRO国上。手ぶらBBQやデイキャンプの施設も備えた“STAY INN”タイプの新しい道の駅です。">
+<meta property="og:url" content="https://www.michinoeki-kugami.jp/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.michinoeki-kugami.jp/img/ogimage.jpg">
+
+<link rel="canonical" href="https://www.michinoeki-kugami.jp/">
+<link rel="shortcut icon" href="./favicon.ico">
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "t2spdtrcil");
+</script>
+
+<link rel="stylesheet" href="./css/reset.css?v=1715995338">
+<link rel="stylesheet" href="./css/base.css?v=1761958386">
+<link rel="stylesheet" href="./css/grid.css?v=1650613758">
+<link rel="stylesheet" href="https://cdn.attend.jp/fonts/FontAwesome/5.9.0/css/fontawesome_min.css">
+<link rel="stylesheet" href="./css/photoswipe.css">
+<link rel="stylesheet" href="./css/slick.css">
+
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script src="./js/jquery.matchHeight.js" defer></script>
+<script src="./js/biggerlink.js" defer></script>
+<script src="./js/jquery.photoswipe.js" defer></script>
+<script src="./js/slick.js" defer></script>
+<script src="./js/ofi.min.js" defer></script>
+<script src="./js/tools.js?v=1730368386" defer></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script>
+//ロゴアニメーションが終了したらslick
+var start_slick = function() {
+	//スライド画像
+	$('.slider')
+	// 最初のスライドに"add-animation"のclassを付ける(data-slick-index="0"が最初のスライドを指す)
+	.on("init", function () {
+		$('.slick-slide[data-slick-index="0"]').addClass("add-animation");
+	})
+	.slick({
+		fade: true,
+		arrows: false,
+		autoplaySpeed: 5000,
+		speed: 1000
+	})
+	.on({
+		// スライドが移動する前に発生するイベント
+		beforeChange: function (event, slick, currentSlide, nextSlide) {
+			// 表示されているスライドに"add-animation"のclassをつける
+			$(".slick-slide", this).eq(nextSlide).addClass("add-animation");
+			// あとで"add-animation"のclassを消すための"remove-animation"classを付ける
+			$(".slick-slide", this).eq(currentSlide).addClass("remove-animation");
+		},
+		// スライドが移動した後に発生するイベント
+		afterChange: function () {
+			// 表示していないスライドはアニメーションのclassを外す
+			$(".remove-animation", this).removeClass(
+				"remove-animation add-animation"
+			);
+		},
+	});
+};
+//ページを非表示にしておく
+    var start_Splash = function() {
+      $(".page").addClass("HIDE");
+      //console.log('.page非表示して');
+      setTimeout(function() {
+        $(".page").removeClass("HIDE");
+        $(".Splash").addClass("HIDE");
+        //console.log('指定秒数が経過したので.page表示、.Splash削除');
+        start_slick();
+//      }, 2500); //ロゴアニメーションの秒数
+      }, 10000); //ロゴアニメーションの秒数
+    };
+
+//ページが表示されたらスプラッシュを非表示にする
+	var skip_Splash = function() {
+		$(".page").removeClass("HIDE");
+      $(".Splash").remove();
+		//console.log('.page表示、.Splash削除');
+		start_slick();
+	};
+
+//ロゴアニメーション（スプラッシュ）
+    $(function() {
+      var password = location.search;
+      if (password == '?cookie=reset') {
+        $.removeCookie('Splash');
+      }
+
+// ファーストビュー動画クリックでスキップ
+			$(document).on('click', '.firstview-video', function() {
+				skip_Splash();
+			});
+
+      if ($.cookie('Splash')) {
+        //console.log('クッキー持ってる');
+          skip_Splash();
+//          start_Splash(); //表示確認用に毎回表示
+      } else {
+        //console.log('クッキー持ってない');
+        start_Splash();
+        var date = new Date();
+        date.setTime(date.getTime() + (10 * 60 * 1000)); //10分
+        $.cookie('Splash', 'done', {
+          expires: date
+        });
+      }
+    });
+</script>
+
+<style>
+/* -----------------------------------------------------------
+ロゴアニメーション（スプラッシュ）
+----------------------------------------------------------- */
+/*ページを非表示にしておく*/
+.page.HIDE {height: 100vh;overflow: hidden; opacity: 0;}
+/*ページが表示されたらスプラッシュを非表示にする*/
+.Splash.HIDE {opacity: 0;pointer-events: none;}
+/*スプラッシュ*/
+.Splash { background: rgba(255,255,255,1); color: #000; position: fixed; z-index: 6999; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; opacity: 1; transition: 2s opacity; display: flex; align-items: center; justify-content: center;}
+.Splash .logo{width: 23%;}
+.Splash video{width: 100%; height: 100vh; object-fit: cover;}
+.Splash video.firstview-video{cursor: pointer;}
+/*スマホ*/
+@media(max-width:900px) and (orientation:portrait){
+.Splash .logo{width: 60%;}
+.Splash video{object-fit: contain;}
+}
+/*アニメーション*/
+@keyframes Splash_logo{100%{opacity: 1; transform: scale(1);}}
+.Splash .logo{ opacity: 0; transform: scale(1.2); animation: Splash_logo 1s 0.4s ease-out both;}
+
+/*PCのみ　ファーストビューでハンバーガー以外のヘッダを隠す*/
+@media(min-width:901px){
+header.g{background: rgba(255,255,255,0);
+-webkit-backdrop-filter: saturate(100%) blur(0em); backdrop-filter: saturate(100%) blur(0em);
+transition: 0.2s;}
+header.g.active{background: rgba(255,255,255,0.9);
+-webkit-backdrop-filter: saturate(200%) blur(0.3em); backdrop-filter: saturate(200%) blur(0.3em);}
+header.g .logo{opacity: 0; transition: 0.2s; pointer-events: none;}
+header.g.active .logo{opacity: 1; pointer-events: auto;}
+header.g .num{opacity: 0; transition: 0.2s;}
+header.g.active .num{opacity: 1;}
+}
+
+/*ファーストビュー(スライド画像)*/
+.slide_wrap{margin: -100px auto 0; position: relative; overflow: hidden;}
+.slide_wrap>.inner{position: relative;}
+.slide_wrap .image img{width: 100%; height: 100vh; object-fit: cover;}
+.slide_wrap .center{position: absolute; top: 46%; left: 0; width: 100%; height: auto; text-align: center; transform: translateY(-50%); text-align: center; color: #fff;}
+.slide_wrap .center img.logo{width: 35%;}
+.slide_wrap .center .text{font-size: 1.4vw; line-height: 1.4; /*position: absolute;*/ bottom: 0; left: 0; /*transform: translateY(100%);*/ width: 100%; padding: 2em 0 0; font-feature-settings: "palt";}
+/*スマホ*/
+@media(max-width:900px){
+.slide_wrap{margin: 0 auto 0;}
+.slide_wrap .image img{height: 56.3vw;}
+}
+/*スマホ*/
+@media(max-width:900px) and (orientation:portrait){
+.slide_wrap .image img{height: 100vw;}
+.slide_wrap .center img.logo{width: 60%;}
+.slide_wrap .center .text{font-size: 3.2vw;}
+.slide_wrap .center{top: 47.5%;}
+}
+/*スライドが拡大縮小するアニメーション*/
+@keyframes slide_zoom {
+	0% { transform: scale(1); }
+	100% { transform: scale(1.2); }
+}
+.add-animation { animation: slide_zoom 10s linear 0s normal both;}
+
+/*最初の文章*/
+.first_letter{line-height: 2; margin: 0 auto 6em;}
+
+/*施設案内*/
+.sisetuannai { margin: 0 auto 2em;}
+.sisetuannai>h2{margin-bottom: 0.5em;}
+.sisetuannai .nav{display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; text-align: center; line-height: 1.4; max-width: 1000px; margin: auto;}
+.sisetuannai .nav>*{width: 20%; margin: 1em 0;}
+.sisetuannai .nav img{width: 80%; max-width:100px; margin: 0 auto 1em;}
+.sisetuannai .nav a{text-decoration: none; color:#555; display: block; font-feature-settings: "palt"; letter-spacing: 0.1em; padding: 0 0 0 0.1em;}
+/*スマホ*/
+@media(max-width:900px){
+.sisetuannai .nav>*{width: 33.33%;}
+}
+/*スマホ*/
+@media(max-width:440px){
+.sisetuannai .nav>*{width: 50%;}
+}
+
+/*イベントスケジュール*/
+.event_schedule_wrap{max-width: 960px; margin: auto;}
+.event_schedule{overflow-y: scroll; height: 289px; margin: 0 auto 0.5em;}
+.event_schedule>a{display: block; text-decoration: none;}
+.event_schedule .event_item{display: flex; align-items: center; justify-content: flex-start; line-height: 1.4; padding: 0.7em 1em; background: #f4f1ea; margin: 0.5em auto; position: relative; transition: 0.2s opacity;}
+.event_schedule>a>.event_item{padding-right: 2em;}
+.event_schedule>a:hover>.event_item{opacity: 0.7;}
+.event_schedule>a>.event_item:after{font-family: "Font Awesome 5 Free";font-weight: 600;content: "\f054";display: block;width: 1em;height: 1em;line-height: 1em;font-size: 0.8em;margin-top: -0.5em;position: absolute;top: 50%;right: 1em;text-align: center;color: #56987A;}
+.event_schedule .date{min-width: 10em; margin: 0 0.5em 0 0; color: #56987A;}
+.event_schedule .text{flex: 1; color: #000;}
+.event_schedule .longComment{margin: 0 !important;}
+/*スマホ*/
+@media(max-width:900px){
+.event_schedule{overflow-y: visible; height: auto;}
+.event_schedule .event_item{display: block;}
+.event_schedule .date{margin-bottom: 0.3em;}
+}
+/*スマホ*/
+@media(max-width:440px){
+.event_schedule .event_item{margin-left: -10px; margin-right: -10px;}
+}
+
+/*イベントとニュースの投稿*/
+section.post{margin:0 auto; max-width: 960px;}
+section.post ul.nav{overflow: hidden; border-bottom: 1px solid #ccc;}
+
+section.post ul.nav>li{width: 30%; border: none; float: right; font-size: 90%;}
+section.post ul.nav>li>a{display: block; padding: 1em;}
+section.post ul.nav>li>a:after{display: none;}
+
+section.post ul.nav>li:first-child{width: 70%; float: left;}
+section.post ul.nav>li:first-child strong{font-size: 140%;}
+
+section.post .right a{text-decoration: none;}
+section.post .right a:hover{text-decoration: underline;}
+/*画像*/
+section.post ul.nav .image.mask{width: 100%; height: 0.01px; padding: 66.7% 0 0; margin: 0 auto 0.5em;}
+/*スマホ*/
+@media(max-width:900px){
+section.post ul.nav{padding: 0; min-height: inherit;}
+section.post ul.nav>li{float: left; width: 50%;}
+section.post ul.nav>li:first-child{float: none; width: 100%;}
+}
+
+/*ニュース＆イベントと、イベントスケジュールを調整*/
+.News_Event_flex{display: flex; align-items: flex-start; justify-content: space-between; margin: 0 -20px;}
+.News_Event_flex>*{flex: 1; width: 50%; margin: 0; padding:0 20px;}
+/*スマホ*/
+@media(max-width:900px){
+.News_Event_flex{display: block; margin: 0;}
+.News_Event_flex>*{width: 100%; padding: 0;}
+.News_Event_flex>*+*{margin-top: 4em;}
+}
+
+/*インスタグラム*/
+.insta_post{display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;}
+.insta_post>*{width: 15%; margin: 2% 0 0; text-align: center; font-size: 80%;}
+.insta_post a{text-decoration: none; font-weight: bold; color: #000; display: block; position: relative; }
+.insta_post a:hover{opacity: 1;}
+.insta_post a:hover img{opacity: 1;}
+.insta_post a:hover .iine{opacity: 1;}
+.insta_post a:hover .iine .heart{bottom: 0;}
+.insta_post .image.mask{width: 100%; height: 0.01px; padding: 100% 0 0;}
+.insta_post .iine{display: flex; align-items: center; justify-content: center; position: absolute; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; line-height: 1.2; background: rgba(245,248,236,0.7); opacity: 0; transition: 0.2s;
+-webkit-backdrop-filter: saturate(200%) blur(0.3em); backdrop-filter: saturate(200%) blur(0.3em);}
+.insta_post .iine .heart{color: red; font-size: 120%; font-weight: normal; display: inline-block; position: relative; bottom: -1.5em; transition: 0.4s;}
+.insta_post .iine .num{font-size: 140%;}
+/*スマホ*/
+@media(max-width:900px){
+.insta_post>*{width: 32%;}
+}
+/*スマホ*/
+@media(max-width:440px){
+.insta_post>*{width: 48%; margin: 4% 0 0;}
+}
+</style>
+<script>
+//指定の高さを過ぎたらヘッダーを表示
+$(window).on("scroll", function() {
+    if ($(this).scrollTop() > 100) {
+        $("header.g").addClass("active");
+    } else {
+        $("header.g").removeClass("active");
+    }
+});
+</script>
+
+</head>
+<body style="overflow-y: scroll;">
+
+<div class="Splash">
+<!-- 	
+	<div class="logo">
+		<img src="img/splash_logo.png" alt="SORAIRO国上">
+	</div>
+-->
+	<video class="firstview-video" preload="auto" autoplay muted playsinline>
+		<!-- 大きいPC -->
+		<source src="https://data.attend.jp/michinoeki-kugami.jp/video/fv_taisyou_fullhd.webm" type="video/webm" media="(min-width: 961px)">
+    <!-- 小さいPC,モバイル横 -->
+		<source src="https://data.attend.jp/michinoeki-kugami.jp/video/fv_taisyou_sp_landscape.webm" type="video/webm" media="(max-width: 960px) and (orientation: landscape)">
+    <!-- モバイル縦 -->
+		<source src="https://data.attend.jp/michinoeki-kugami.jp/video/fv_taisyou_sp_portrait.webm" type="video/webm" media="(max-width: 960px) and (orientation: portrait)">
+	</video>
+</div><!--end Splash-->
+
+<div class="page" id="pageTop">
+<header class="g">
+
+<div class="logo">
+<a href="./"><img src="./img/header_logo_kugami.png" alt="道の駅 国上" class="kugami"></a>
+<!--<a href="./temarinoyu/"><img src="./img/header_logo_temari.png" alt="てまりの湯" class="temari"></a>-->
+</div>
+
+<div class="triggers">
+
+<div class="spHidden num center"><strong style="font-size:80%;" class="color">道の駅売店・食堂</strong><br><i class="fas fa-phone-alt color" style="margin-right: 0.3em;"></i>0256-98-0770</div>
+
+<div class="spHidden num center"><strong style="font-size:80%;" class="color orange">てまりの湯</strong><br><i class="fas fa-phone-alt color orange" style="margin-right: 0.3em;"></i>0256-97-1755</div>
+
+<div class="pcHidden"><img class="tr_denwa" src="./img/sp_denwa.png" alt="電話"></div>
+
+<div><img class="tr_menu" src="./img/sp_menu.png" alt="メニュー"></div>
+</div><!--end triggers-->
+
+</header>
+
+<nav class="g">
+<div class="triggerClose"><img src="./img/sp_menu_close.png" alt="閉じる"></div>
+<div class="inner">
+<ul>
+<li><a href="./">TOP</a></li>
+<li><a href="./event/">ニュース＆イベント</a></li>
+<li><a href="./about/">道の駅国上について</a></li>
+<!--
+<li><a href="./spend/">道の駅国上の過ごし方</a></li>
+-->
+<li><a href="./temarinoyu/">てまりの湯</a></li>
+<li><a href="./bbq/">手ぶらBBQ</a></li>
+<li><a href="./camp/">デイキャンプ</a></li>
+<li><a href="./camp-field/">キャンプフィールド</a></li>
+<li><a href="./rv-park/">RVパーク</a></li>
+<li><a href="./dog-run/">ドッグラン</a></li>
+<li><a href="./terrace/">足湯テラス・フードコンテナ</a></li>
+<li><a href="./marche/">313ファーマーズマーケット</a></li>
+<li><a href="./shop/">道の駅国上セレクト</a></li>
+<li><a href="./bakery/">ベーカリーバス のらの休日</a></li>
+<li><a href="./jun/">燕三条らーめん潤</a></li>
+<li><a href="./wada/">越後名物へぎそば 和田</a></li>
+<li><a href="./dining/">食堂</a></li>
+<li><a href="./dantai/">団体さま向けプラン</a></li>
+<li><a href="./park/">健康の森公園</a></li>
+<li><a href="./trekking/">トレッキング・サイクリング</a></li>
+<li><a href="./#instagram" class="FIX">Instagram</a></li>
+</ul>
+</div>
+</nav>
+<div class="overlay_g"></div>
+
+<div class="modalContact">
+<div class="inner">
+<ul class="nav">
+<li>
+<a href="tel:0256980770">
+<div class="text">
+<h3 class="color">道の駅売店・食堂</h3>
+<p class="tel"><i class="fas fa-phone-alt color"></i>0256-98-0770</p>
+</div>
+</a>
+</li>
+<li>
+<a href="tel:0256971755">
+<div class="text">
+<h3 class="color orange">てまりの湯</h3>
+<p class="tel"><i class="fas fa-phone-alt color orange"></i>0256-97-1755</p>
+</div>
+</a>
+</li>
+</ul>
+</div><!--end inner-->
+<div class="overlay"></div>
+</div><!--end modalContact-->
+
+<script>
+//ナビゲーションの開閉
+$(".tr_menu").click(function(){
+    $("nav.g,.overlay_g").addClass("open");
+});
+$("nav.g .triggerClose,.overlay_g").click(function(){
+    $("nav.g,.overlay_g").removeClass("open");
+});
+
+//ページ内リンクになる可能性のあるナビゲーションの対応
+$("nav.g a.FIX").click(function(){
+    $("nav.g,.overlay_g").removeClass("open");
+});
+
+//お問い合わせモーダル
+$(".fixedContact .button.triggerDenwa,.tr_denwa").click(function(){
+    $(".modalContact").addClass("show");
+});
+$(".modalContact .overlay").click(function(){
+    $(".modalContact").removeClass("show");
+});
+</script>
+
+
+<div class="wrapper">
+
+<div class="slide_wrap">
+<div class="inner">
+
+<div class="slider">
+<!-- 
+<div class="image"><a href="event/?id=71"><img src="img/blank.png" data-lazy="img/slide-cf.jpg" alt=""></a></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-dr.jpg?2" alt=""></div>
+<div class="image"><a href="bbq/index.html#beergarden"><img src="img/blank.png" data-lazy="img/slide-bg_2024.jpg?4" alt=""></a></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-1.jpg?2" alt=""></div>
+-->
+<div class="image"><img src="img/slide_taisho2026.webp" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide_taisho2026_02.webp" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide_taisho2026_03.webp" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-2.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-3.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-8.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-9.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-5.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-7.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-4.jpg?2" alt=""></div>
+<div class="image"><img src="img/blank.png" data-lazy="img/slide-6.jpg?2" alt=""></div>
+</div>
+
+<div class="center img-fade">
+<img class="logo" src="img/logo_kugami_w_slide.png" alt="SORAIRO国上">
+</div><!--end center-->
+
+</div><!--end inner-->
+</div><!--end slide_wrap-->
+
+
+<div class="wrapperInner" style="margin: 0 auto; max-width: 1000px;">
+<a href="https://kugami.base.shop" target="_blank">
+<picture>
+<img src="img/bn_ramenonline_pc03.jpg?0626" alt="">
+</picture>
+</a>
+</div>
+
+
+<hr class="anc" id="instagram">
+<div class="wrapperInner" style="background:#F4F1EA;">
+<div class="container wide">
+<h2 class="center spFontSize200per animation up"><i class="fab fa-instagram"></i> <img src="img/instagram.png" alt="Instagram" style="height: 1.4em; opacity: 0.7;"></h2>
+<p class="center-left animation up">最新情報やイベント情報はインスタグラムで随時更新！お気に入り登録をお願いします。</p>
+
+<div class="insta_post animation order">
+<div>
+<a href="https://www.instagram.com/p/DfTbUE2Jl_G/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.82787-15/886527933_18078881747741297_4733518965622525077_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=3MlBjc-PgjAQ7kNvwHJ521S&_nc_oc=AdoOHZGsexbATIFbFMQt-tYml2C0i2G2YADFdGeM-ofEgRgkvdtqZg2PYSx_8al7ZIc&_nc_zt=23&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQQQOvRCCZ37YehBe2TvH1IsU9gqaZf3OZJ0mXxzK1cKKg&oe=6AF1DF68" alt="🎤✨ てまりの湯 カラオケのど自慢 ✨🎤<br><br>🏆 グランドチャンピオン大会2026 開催！ 🏆<br><br>11月8日(日)、てまりの湯にて「カラオケのど自慢 グランドチャンピオン大会」を開催します！🎶<br><br>年間チャンピオンの座をかけた、熱い歌声の競演をぜひお楽しみください！👏✨<br><br>📅 開催日：2026年11月8日(日)<br>🕚 時間：11:00～<br>📍 会場：てまりの湯 2F 大広間<br>🎵 観覧無料<br><br>🌸 同時開催！ 🌸<br><br>🎤 新道かずこ スペシャルミニコンサート<br><br>心に響く歌声をお届けします✨<br><br>皆さまのお越しをお待ちしております😊<br><br>#てまりの湯 #カラオケのど自慢 #グランドチャンピオン大会 #カラオケ大会 #新道かずこ #ミニコンサート #燕市 #新潟県 #イベント情報 #道の駅SORAIRO国上"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">10</strong> いいね</div></div>
+</a>
+</div>
+<div>
+<a href="https://www.instagram.com/p/DfPLFx7iRzs/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/883558905_18078634001741297_7492737521119040104_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=2Isq0RjMHCgQ7kNvwFj0nRU&_nc_oc=AdocncrjPqilDBnf410I3vGOWjCjBWEoD4heBLasVYosSGEycKb-Kd6h3Fm4_JTWV3g&_nc_zt=23&_nc_ht=scontent-nrt1-2.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQTrfFuH4cWRF7cjjn44uKlLLDy_PEWarTURKZzP3F1duw&oe=6AF1BC1E" alt="🍠✨ 焼きいも屋ピースさん出店！ ✨🍠<br><br>秋といえば、やっぱり焼き芋！🍁<br><br>明日、11月3日は道の駅SORAIRO国上に「焼きいも屋ピース」さんがやってきます！<br><br>使用するのは、いつも道の駅に出荷してくださっている生産者さんが育てた、燕市産のさつまいも！ 🌱<br><br>今回は2種類の焼き芋を販売します！<br><br>🍠 あまはづき<br>しっとりなめらかな食感と、上品な甘さが魅力✨<br>後味もすっきり、食べやすい品種です！<br><br>🍠 シルクスイート<br>まるで絹のようになめらかな舌ざわり💕<br>しっとりとした食感と、やさしい甘さが特徴！<br><br>💰 価格：300円〜400円<br><br>焼き芋から立ちのぼる甘〜い香り🤤<br><br>地元・燕市で育ったさつまいものおいしさを、ぜひ食べ比べてみてくださいね！<br><br>皆さまのお越しをお待ちしております🍂<br><br>※なくなり次第、終了となります。<br><br>#道の駅SORAIRO国上<br>#新潟県燕市<br>#焼き芋"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">50</strong> いいね</div></div>
+</a>
+</div>
+<div>
+<a href="https://www.instagram.com/p/DfO4VAEuPQM/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/878981579_18078612503741297_1566965469784377087_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=EAkcqL-afyQQ7kNvwGtklhc&_nc_oc=AdpKGeCZlRFS0gGZrg3Nw88_ckU-QI-OHEXyI68udYHC4iYQ8aI_6-9vwVPe-HhoP2c&_nc_zt=23&_nc_ht=scontent-nrt1-2.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQRLg2juEyx7_HSSXNuyIiqyOv49UMk2SnUNqRNEld_Zkw&oe=6AF1CF10" alt="🚗✨ 名車が国上に大集合！！ ✨🚗<br><br>🍁 第2回 クラシックカー＆スーパーカーFES in 国上 🍁<br><br>待望の第2回開催！！🎉<br><br>往年のクラシックカーから憧れのスポーツカーまで、個性豊かな名車たちが道の駅SORAIRO国上に集結します！🏎️💨<br><br>車好きの方はもちろん、お子様やご家族でも楽しめる、特別な1日✨<br><br>秋の国上で、かっこいい車たちを間近で見てみませんか？🍁<br><br>📅 開催日：2026年11月3日（火・祝）<br>⏰ 時間：10:00〜15:00<br>📍 会場：道の駅SORAIRO国上<br>新潟県燕市国上5866-1<br><br>🚘 展示予定車両<br>・アルファスパイダー<br>・アルファロメオ ジュニア<br>・スカイライン RS-X turbo<br>・フィアット チンクエチェント<br>・ホンダ デルソル<br>・シボレー コルベット C5 または カマロ<br>・ロータス エラン SE<br>・ロータス エラン または ロータス ヨーロッパ<br>・MINI<br>・光岡 ビュート<br><br>⚠️ 天候・車の調子により、イベントの内容は変更・中止になる可能性がございます。<br>※写真はイメージです。<br><br>皆さまのご来場をお待ちしております！😊<br><br>#道の駅SORAIRO国上<br>#新潟県燕市<br>#クラシックカー<br>#スーパーカー<br>#車好きと繋がりたい"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">150</strong> いいね</div></div>
+</a>
+</div>
+<div>
+<a href="https://www.instagram.com/p/DfLnPEriTUg/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/883558461_18078388979741297_4270936241220849785_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=HFgi8AdMd-kQ7kNvwEEp-S-&_nc_oc=AdooMmFPVE3e-leq2aevJ_sqUQMPB_xR4LAHkyYTUT6BiwBEGVsN-5vTEePO-uiTYu8&_nc_zt=23&_nc_ht=scontent-nrt1-2.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQTlqEdvAJ9hqgbrhEEAeh3ZFoGnFE2Bh99VdPwaccXlog&oe=6AF1F1EA" alt="🐑✨お正月の縁起物「八丁紙」✨✂🐑<br><br>明日11月1日（日）より、道の駅SORAIRO国上で「八丁紙」の展示販売をスタートします！<br><br>八丁紙は、運気をあげてくれるといわれるお正月の縁起物🎍<br>分水切り絵村の皆さんが、一枚一枚丁寧に手作りしています。<br><br>繊細な切り絵と、温かみのあるデザイン。<br>手作りのため、それぞれ少しずつ表情が異なるのも魅力です😊<br><br>玄関やお部屋に飾って、新しい年を迎える準備にいかがでしょうか？<br><br>【八丁紙】<br>販売開始：11月1日（日）<br>価格：1枚420円（税込）<br><br>※手作りのため、数に限りがございます。売り切れの際はご了承ください。<br><br>ぜひ店頭で、じっくりとご覧ください✨<br><br>#道の駅SORAIRO国上<br>#新潟県燕市<br>#八丁紙<br>#お正月飾り"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">21</strong> いいね</div></div>
+</a>
+</div>
+<div>
+<a href="https://www.instagram.com/p/DfHLAVNpQUs/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.82787-15/880214308_18078100700741297_2414849898487490130_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ryJnw9UGo1oQ7kNvwFP6kh2&_nc_oc=AdqMnljVf4IIb8St81bqMSOTWhzBWzI6YZSSc27B5lGMTuU31AUEeSAzFJKISwcC9Xg&_nc_zt=23&_nc_ht=scontent-nrt1-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQTbcsm0h1Qu257racJxNK9LMUtqJ_NskdPSBEx9lAhTtQ&oe=6AF1E7AE" alt="🍋✨燕市の人気給食メニューが定食に！✨🍋<br><br>燕市民に長年愛される「鶏肉のレモン和え」が、国上食堂に登場します！🎉<br><br>過去には、神宮球場で人気の「じんカラ」とのコラボも実現した、燕市のソウルフード⚾✨<br><br>ジューシーな鶏のから揚げに、レモンの爽やかな酸味と甘辛いタレが絡む、ご飯がすすむ一品です🍚😋<br><br>🍋鶏肉のレモン和え定食<br>💰税込850円<br>📅10月31日（土）販売スタート！<br><br>さらに！「鶏肉のレモン和えのたれ」も11月中旬より売店にて販売予定🛍️✨<br><br>懐かしい給食の味を、ぜひ国上食堂でお楽しみください😊<br><br>#道の駅SORAIRO国上 #燕市 #鶏肉のレモン和え #給食メニュー"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">51</strong> いいね</div></div>
+</a>
+</div>
+<div>
+<a href="https://www.instagram.com/p/DfHIN6_ieoa/" target="_blank" rel="noopener noreferrer">
+<div class="image mask"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/879895935_18078099176741297_1558017604385504710_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=nT3UFurx5JoQ7kNvwGw9bFR&_nc_oc=Adph_TWGnbXGkDIBtc1aiatGFskGiKQ8_o-R-fwmGvYN6F9vji1VpbKyq32vwPvvDIM&_nc_zt=23&_nc_ht=scontent-nrt1-2.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=zHqX_IILxaunCzfJv5E5qA&oh=00_AQTk-VfyrVHg3xK8RFj-1luDePuU-F7S_uL42Yl4rroefw&oe=6AF1C099" alt="🍁🍊✨11月の営業・イベントカレンダー✨🍊🍁<br><br>11月の 道の駅 SORAIRO国上 ＆ てまりの湯 営業・イベント情報をお知らせします📅✨<br><br>秋も深まり、温泉が恋しくなる季節♨️🍂<br> 今月も、お買い物・グルメと一緒に楽しめるイベントやサービスが盛りだくさんです！<br><br>🎍 八丁紙 11月1日より販売開始！ 新春を彩る縁起物「八丁紙」が今年も登場！✨<br><br>🎁 にいがたおみやげフェア 新潟の魅力が詰まったおみやげに注目！✨<br><br>🎤 カラオケチャンピオン大会 11月8日開催！🎶 自慢の歌声で会場を盛り上げよう！🎵<br><br>💑 てまりの湯「いい夫婦の日イベント」 11月22日開催💕 特別な温泉時間を♨️<br><br>🍊 みかん足湯 <br>🎂 お誕生月の方への嬉しいサービス <br>👶 子育て応援イベント <br>♨️ 朝風呂 GOOD MORNING<br><br>毎週恒例の「国上サービスデー」「てまりの湯サービスデー」もございます✨<br><br>イベントの開催日や営業時間、てまりの湯の休館日など、詳しくは画像のカレンダーをご確認ください👀<br><br>秋のおでかけも、 道の駅 SORAIRO国上 ＆ てまりの湯へ！🍁♨️<br><br>皆さまのお越しをお待ちしております😊<br><br>#道の駅SORAIRO国上 #てまりの湯 #燕市 #道の駅 #新潟おでかけスポット #新潟観光 #イベント #温泉 #秋のおでかけ #八丁紙 #にいがたおみやげフェア #カラオケチャンピオン大会 #いい夫婦の日"></div>
+<div class="iine"><div><span class="heart">♥</span><br><strong class="num">25</strong> いいね</div></div>
+</a>
+</div>
+</div><!--end insta_post-->
+
+</div><!--end container-->
+</div><!--end wrapperInner-->
+
+
+<div class="wrapperInner bg_color sky">
+<div class="container wide">
+
+<style>
+h2.tsubamade img{width: min(70%,260px); display: inline-block;}
+</style>
+<h2 class="tsubamade center animation up" style="margin-bottom: 0;"><img src="img/tsubamade_logo.png" alt="発見つばメイド"></h2>
+<p class="center-left" style="color:#AD2722; margin:1em auto 2em;">燕市のものづくりの魅力を発信するチャンネルです。<br class="pc">燕市の逸品をご当地ヒーロー「メテオピンク」が潜入取材！</p>
+<div class="grid3 clearfix">
+<div>
+<iframe style="width:min(100%,330px); height: auto; aspect-ratio:16/9; display: block; margin: 2em auto;" src="https://www.youtube.com/embed/dEr5ctRqDws" title="【無料で作れる】最愛のペットにも”燕のものづくり”が大活躍！ | #3『片力商事／片力自研』" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div>
+<iframe style="width:min(100%,330px); height: auto; aspect-ratio:16/9; display: block; margin: 2em auto;" src="https://www.youtube.com/embed/c_CZm2oO99E" title="【創業100年超え】新潟のヤスリ職人が本気で作った極上のおろし金!! | #2『株式会社ツボエ』" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div>
+<iframe style="width:min(100%,330px); height: auto; aspect-ratio:16/9; display: block; margin: 2em auto;" src="https://www.youtube.com/embed/jmCIGc9_Gno" title="【これぞ匠の技】カトラリーの進化が止まらない！？燕市の老舗工場に潜入調査｜#1 「LUCKYWOOD」" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</div>
+</div>
+<p class="center-left" style="margin: 2em auto; color:#AD2722;">
+※チャンネルでご紹介された商品の一部は、道の駅国上でご購入頂けます</p>
+<div class="center">
+<a href="https://www.youtube.com/@%E7%99%BA%E8%A6%8B%E3%81%A4%E3%81%B0%E3%83%A1%E3%82%A4%E3%83%89" target="_blank" class="button red reverse spWidth80per">発見!つばメイド <br class="pcHidden">YouTubeチャンネル</a>
+</div>
+
+</div><!--end container-->
+</div><!--end wrapperInner-->
+
+
+<div class="wrapperInner">
+<div class="container wide">
+
+
+
+<div style="margin:2em auto 6em;">
+	<!--
+<p class="center" style=" margin-bottom: 2em;">
+	<span style="font-size: 240%; line-height: 1.4;" class="min">ラーメン通販追加</span>
+</p>
+<div style="display: flex; align-items: center; justify-content: center;">
+<p class="center">コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。<br><br>
+	コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。<br>
+	コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。<br>
+	コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。<br>
+	コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。コメントが入ります。<br>
+	コメントが入ります。コメントが入ります。コメントが入ります。</p>
+</div>
+-->
+
+
+<div class="first_letter">
+<p class="center animation up active spFontSize140per" style="font-size:180%; color:#56987A; margin-bottom: 2em;">自然と遊ぶ、道の駅。<span style="font-size:70%; color:#56987A; display:block;">食・遊・癒を楽しむ、<br class="pcHidden">国上のアクティビティ・ハブが誕生！</span></p>
+<p class="center-left animation up">酒吞童子伝説の残る越後最古の名刹「国上寺」や良寛が過ごした「五合庵」、<br class="spHidden">
+「乙子神社草庵」など多くの史跡が散在する国上山。<br>
+その麓にあるSORAIRO国上は、トレッキングやサイクリングの拠点として、また、<br class="spHidden">
+BBQ やDAYCAMP、温泉の施設を揃えたアウトドアと癒しのスポットとして、<br class="spHidden">
+そこを訪れること自体が旅の目的となる、新しいSTAY INN タイプの道の駅です。<br>
+自然を身近に感じ、自然と遊ぶ。ここから、燕の魅力を再発見してください。</p>
+<p class="center" style="margin-top: 2em;">
+<a href="about/" class="button reverse spWidth80per" style="margin: 0.5em;">道の駅国上について</a>
+<!--<a href="spend/" class="button reverse spWidth80per" style="margin: 0.5em;">道の駅国上の過ごし方</a>-->
+</p>
+</div><!--end first_letter-->
+
+
+<hr class="anc" id="sisetuannai">
+<div class="sisetuannai">
+<h2 class="symbol animation up">Facility Guide<small>施設案内</small></h2>
+
+<style>
+/*施設マップ*/
+.fa_map{position: relative; margin: 2em auto;}
+.fa_map img.background{position: relative; z-index: 10;}
+.fa_map .banners{position: absolute; z-index: 20; top: 0; left: 0; right: 0; bottom: 0; line-height: 1;}
+.fa_map .banners>*{width: 20%; position: absolute; text-align: center;}
+/* 点滅 */
+.blinking{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-out 0.5s infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    80% {opacity:1;}
+}
+</style>
+<div class="fa_map animation fadein">
+<img class="background" src="img/fa_map20251118.webp" alt="施設マップの背景">
+<div class="banners">
+  <div style="top: 31%;left: 3%;"><a href="bbq/"><img src="img/fa_bn1_202401.jpg" alt="TEBURA BBQ"></a></div>
+  <div style="top: 47%;left: 3%;"><a href="camp/"><img src="img/fa_bn2_202401.jpg" alt="DAY Camp"></a></div>
+  <div style="top: 63%;left: 3%;"><a href="terrace/"><img src="img/fa_bn3_202401.jpg" alt="ashiyu TERACE"></a></div>
+  <div style="top: 78%;left: 3%;"><a href="marche/"><img src="img/fa_bn4_2.jpg" alt="313ファーマーズマーケット"></a></div>
+  <div style="top: 85%; left: 27%;"><a href="shop/"><img src="img/fa_bn5-2.jpg" alt="物産販売所"></a></div>
+  <div style="top: 85%; left: 50%;"><a href="bakery/"><img src="img/fa_bn6.jpg?2" alt="ベーカリーバス"></a></div>
+  <div style="top: 86%; right: 3%;"><a href="trekking/"><img src="img/fa_bn7.jpg" alt="トレッキングサイクリング"></a></div>
+  <div style="top: 22%;right: 3%;"><a href="jun/"><img src="img/fa_bn_jun.jpg" alt="潤"></a></div>
+  <div style="top: 29.9%;right: 3%;"><a href="wada/"><img src="img/fa_bn_wada.jpg" alt="小千谷そば和田"></a></div>
+  <div style="top: 37.7%;right: 3%;"><a href="dining/"><img src="img/fa_bn_shokudo2.jpg?20261014" alt="国上食堂"></a></div>
+  <div style="top: 45.6%;right: 3%;"><a href="dantai/"><img src="img/fa_bn_dantai.jpg" alt="団体様向けプラン"></a></div>
+  <div style="top: -1%;left: 3%;"><a href="park/"><img src="img/fa_bn9.jpg" alt="健康の森公園"></a></div>
+  <div style="top: 1%; right: 3%;"><a href="temarinoyu/"><img src="img/fa_bn10_2.jpg" alt="てまりの湯"></a></div>
+  <div style="top: 15%;left: 3%;"><a href="dog-run/"><img src="img/fa_bn15.jpg?2" alt="ドッグラン"></a></div>
+  <div style="top: 54.7%;right: 3%;"><a href="camp-field/"><img src="img/fa_bn13.jpg" alt="キャンプフィールド"></a></div>
+  <div style="top: 70.5%;right: 3%;"><a href="rv-park/"><img src="img/fa_bn12.jpg" alt="RVパーク"></a></div>
+ </div>
+</div>
+
+</div><!--end sisetuannai-->
+
+<div class="grid2 clearfix">
+<div>
+<a href="dantai/">
+<picture>
+<source media="(max-width:900px) and (orientation:portrait)" srcset="dantai/img/bn_dantai_sp.jpg">
+<img src="dantai/img/bn_dantai_pc.jpg" alt="団体さま向けプランのご案内です。">
+</picture>
+</a>
+</div>
+<div>
+<a href="sainokami/">
+<picture>
+<source media="(max-width:900px) and (orientation:portrait)" srcset="sainokami/img/bn_sainokami_sp.jpg">
+<img src="sainokami/img/bn_sainokami_pc.jpg" alt="国上 塞の神">
+</picture>
+</a>
+</div>
+</div>
+
+
+
+<div class="News_Event_flex">
+
+<section class="post">
+<header>
+<h2 class="symbol animation up">News &amp; Event<small>ニュース＆イベント</small></h2>
+</header>
+<ul class='nav animation order'><li><a href='event/?id=221'><div class='image mask'><img src='/common/resize_image.php?file=/home/rental/e13860/www/upload/2/file_1_221_1.png&amp;width=640&amp;height=960&amp;1793761030' alt=''></div><div class='text'><span class='date'>2026/11/04</span><br><strong>🎤✨ てまりの湯 カラオケのど自慢 ✨🎤  🏆 グランドチャンピオン大会2026 開催！ 🏆</strong></div></a></li>
+<li><a href='event/?id=220'><div class='image mask'><img src='/common/resize_image.php?file=/home/rental/e13860/www/upload/2/file_1_220_1.png&amp;width=640&amp;height=960&amp;1793757757' alt=''></div><div class='text'><span class='date'>2026/11/03</span><br><strong>🍁 第2回 クラシックカー＆スーパーカーFES in 国上 🍁</strong></div></a></li>
+<li><a href='event/?id=219'><div class='image mask'><img src='/common/resize_image.php?file=/home/rental/e13860/www/upload/2/file_1_219_1.png&amp;width=640&amp;height=960&amp;1793332837' alt=''></div><div class='text'><span class='date'>2026/10/30</span><br><strong>🎤✨カラオケ大会・副賞広告を掲載✨🎤</strong></div></a></li>
+</ul>
+<div class='right animation up'><a href='event/#index'>ニュース＆イベント一覧はこちら　<i class='fas fa-chevron-right'></i></a></div>
+</section><!--end post-->
+
+<section>
+<header class='event'>
+<h2 class='symbol animation up'>Event Schedule<small>イベントスケジュール</small></h2>
+</header>
+<div class='event_schedule_wrap'>
+<h3 class='sankaku center sun reverse animation up'>楽しいイベント続々決定中！</h3>
+<div class='event_schedule animation order'>
+<a href='https://www.michinoeki-kugami.jp/event/' target='_blank'><div class='event_item'><div class='date'>2026/11/03</div><div class='text'><div class='longComment'><p>🍁 第2回 クラシックカー＆スーパーカーFES in 国上 11月3日（火・祝）🍁</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=215' target='_blank'><div class='event_item'><div class='date'>2026/10/24</div><div class='text'><div class='longComment'><p>🍁🌾 秋のわくわく収穫祭 10月24日（土）・25日（日）開催！ 🌾🍁</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=211' target='_blank'><div class='event_item'><div class='date'>2026/09/27</div><div class='text'><div class='longComment'><p>🍂👹🔥 9/27（日）酒呑童子行列＆鬼まつり！ 🔥👹 👹🍂</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=209' target='_blank'><div class='event_item'><div class='date'>2026/08/29</div><div class='text'><div class='longComment'><p>🎤🔥 第3回 企業対抗！燕市カラオケのど自慢大会 本選開催！ &nbsp;8月29日（土）🔥</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=208' target='_blank'><div class='event_item'><div class='date'>2026/08/28</div><div class='text'><div class='longComment'><p>🌙✨ 4周年記念「サマーナイトピクニック」！🎉🌙✨</p>
+<p>8/29（土）・30（日）の2日間開催🎉</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=205' target='_blank'><div class='event_item'><div class='date'>2026/07/15</div><div class='text'><div class='longComment'><p>📢 燕市の中学生集まれ！🔥</p>
+<p>🎉 燕市中学校対抗 早押しクイズ甲子園 開催！</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=204' target='_blank'><div class='event_item'><div class='date'>2026/07/09</div><div class='text'><div class='longComment'><p>🐟＼土用の丑の日限定企画／🐟</p>
+<p>7月26日（日）限定！<br />鹿児島産うなぎの蒲焼特売を開催します✨&nbsp;</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=202' target='_blank'><div class='event_item'><div class='date'>2026/08/29</div><div class='text'><div class='longComment'><p>🎤＼第3回 【企業対抗！燕市カラオケのど自慢大会】開催決定！／🎤<br /><br /></p>
+<p>会場は笑いあり、感動あり、大盛り上がりでした👏</p>
+<p>&nbsp;</p>
+<p>そして今年は&hellip;<br />🔥「予選会」を開催🔥<br />分水まつり・吉田まつりを勝ち抜いた挑戦企業が、本大会へ進出します！</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=201' target='_blank'><div class='event_item'><div class='date'>2026/06/01</div><div class='text'><div class='longComment'><p>🍺✨ 星空の下で、乾杯しよう。✨🍺</p>
+<p>今年も【SUMMER BEERGARDEN】🍺開催決定！<br /><br />前売り券の販売は、7/31まで</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=200' target='_blank'><div class='event_item'><div class='date'>2026/06/21</div><div class='text'><div class='longComment'><p>おたまちゃんがやってくる！</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=199' target='_blank'><div class='event_item'><div class='date'>2026/06/20</div><div class='text'><div class='longComment'><p>初開催！<br />CLASSIC & SUPERCAR FES in SORAIRO国上</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=191' target='_blank'><div class='event_item'><div class='date'>4月1日</div><div class='text'><div class='longComment'><p>道の駅大賞で&rdquo;全国3位&rdquo;に選出いただきました！</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=145' target='_blank'><div class='event_item'><div class='date'>1月11日(日)</div><div class='text'><div class='longComment'><p>第１９回国上塞の神</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=159' target='_blank'><div class='event_item'><div class='date'>6月28日(土)</div><div class='text'><div class='longComment'><p>BSNなじらて道の駅総選挙1位！</p></div></div></div></a><a href='https://www.michinoeki-kugami.jp/event/?id=90' target='_blank'><div class='event_item'><div class='date'>毎月第１水曜日</div><div class='text'><div class='longComment'><p>【てまりの湯】カラオケ大会！</p></div></div></div></a><a href='https://www.instagram.com/reel/CjHK28JpRQz/' target='_blank'><div class='event_item'><div class='date'>9/30(金)</div><div class='text'><div class='longComment'><p>愛称が決まりました！</p></div></div></div></a></div>
+<p class='indent normal right-left animation fadein' style='font-size: 80%;'>※イベントは予告なく変更となる場合がございます。予めご了承ください。</p>
+</div>
+</section>
+
+</div><!--end News_Event_flex-->
+
+
+<style>
+/*愛称募集バナー*/
+a.aisyoubosyuu{display: block; border: 2px solid #C3886D; color: #C3886D; max-width: 600px; margin: 4em auto 0; text-decoration: none; position: relative; padding: 20px 60px 20px 140px; border-radius: 1em;}
+a.aisyoubosyuu:hover{background: #f3e7e2;}
+a.aisyoubosyuu .maru{width: 120px; height: 120px; background: #C3886D; color: #fff; text-align: center; display:flex; align-items: center; justify-content: center; position: absolute; top: -20px; left: -20px; border-radius: 100%; font-size: 14px; line-height: 1.4;}
+a.aisyoubosyuu .header{font-size: 180%; text-align: left; line-height: 1.4; margin-bottom: 0.5em;}
+a.aisyoubosyuu .date{font-size: 16px; color: inherit;}
+a.aisyoubosyuu>i{position: absolute; top: 50%; right: 1em; transform: translateY(-50%);}
+/*スマホ*/
+@media(max-width:900px){
+a.aisyoubosyuu{padding: 20px 20px 50px;}
+a.aisyoubosyuu .maru{width: auto; height: auto; top: auto; left: auto; border-radius: 0.5em; padding: 0.5em; position: relative; display: block; margin: 0 auto 1em;}
+a.aisyoubosyuu .header{font-size: 150%; text-align: center;}
+a.aisyoubosyuu>i{position: absolute; top: auto; right: 50%; bottom: 1.2em; transform: translateX(50%);}
+}
+</style>
+
+
+</div><!--end container-->
+</div><!--end wrapperInner-->
+
+
+<div class="wrapperInner bg_color sky">
+<div class="container wide">
+
+<style>
+/*募集バナー*/
+.bosyu_banner_wrap{display: flex; align-items: stretch; justify-content: space-between; max-width: 1110px; margin: auto;}
+.bosyu_banner_wrap>*{width: 30%;}
+.bosyu_banner_wrap a{color: #5E8FA6; border:2px solid #5E8FA6; background: #fff; border-radius: 0.5em; padding: 0.5em; display:flex; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none; text-align: center; line-height: 1.4; font-size: 125%;}
+.bosyu_banner_wrap a:hover{background: #5E8FA6; color:#FFF;}
+/*スマホ*/
+@media(max-width:900px){
+.bosyu_banner_wrap{display: block;}
+.bosyu_banner_wrap>*{width: auto;}
+.bosyu_banner_wrap>*+*{margin-top: 1em;}
+.bosyu_banner_wrap a{font-size: 120%; min-height: 68px;}
+}
+</style>
+<div class="bosyu_banner_wrap">
+<div class="animation up"><a href="store_rct/">フリーマーケット・マルシェ<br>出展者募集</a></div>
+<div class="animation up"><a href="performer/">イベント&amp;パフォーマー募集</a></div>
+<div class="animation up"><a href="recruit/"><span style="font-size: 120%;">スタッフ募集</span></a></div>
+</div>
+
+</div><!--end container-->
+</div><!--end wrapperInner-->
+
+
+</div><!--end wrapper-->
+<footer class="g">
+
+<div class="wrapperInner">
+<div class="container wide">
+
+<hr class="anc" id="access">
+
+<div class="footer_text animation fadein">
+<div class="logo"><a href="./"><img src="./img/logo_kugami.png" alt="道の駅 国上"></a></div>
+<p>新潟県燕市国上5866-1</p>
+<div class="contacts">
+<div class="num center"><strong style="font-size:80%;" class="color">道の駅売店・食堂</strong><br>
+<a href="tel:0256980770"><i class="fas fa-phone-alt color" style="margin-right: 0.3em;"></i>0256-98-0770</a></div>
+<div class="num center temari"><strong style="font-size:80%;" class="color orange">てまりの湯</strong><br>
+<a href="tel:0256971755"><i class="fas fa-phone-alt color orange" style="margin-right: 0.3em;"></i>0256-97-1755</a></div>
+</div>
+</div><!--end footer_text-->
+
+<div class="footer_eigyoujikan">
+<div class="headding animation fadein"><i class="far fa-clock color"></i> 営業時間</div>
+<div class="flex animation order">
+<div>
+<div class="title"><a href="./temarinoyu/">てまりの湯</a></div>
+<div class="time">平日 10:00～21:00<br>土日祝 6:00~21:00<br>第2・4月曜定休<br>
+<span style="font-size: 85%;">食堂は11:00～21:00（L.O.20:30）</span></div>
+</div>
+<div>
+<div class="title"><a href="./terrace/">足湯テラス</a></div>
+<div class="time">10:00～18:00</div>
+</div>
+<div>
+<div class="title"><a href="./terrace/">フードコンテナ</a></div>
+<div class="time">
+11:00～17:00<br>
+<span style="font-size:75%;">※雨天の場合、変更になる場合がございます</span>
+</div>
+</div>
+<div>
+<div class="title"><a href="./camp/">デイキャンプ</a></div>
+<div class="time">11:00～17:00</div>
+</div>
+<div>
+<div class="title"><a href="./bbq/">手ぶらBBQ</a></div>
+<div class="time">Lunch 11:00～17:00<br>Dinner 17:00～21:00 </div>
+</div>
+<div>
+<div class="title"><a href="./marche/">313ファーマーズマーケット</a></div>
+<div class="time">平日 10:00～18:00<br>
+土日祝 9:00～18:00</div>
+</div>
+<div>
+<div class="title"><a href="./shop/">道の駅国上セレクト</a></div>
+<div class="time">平日 10:00～18:00<br>
+土日祝 9:00～18:00</div>
+</div>
+<div>
+<div class="title"><a href="./dining/">食堂</a></div>
+<div class="time">平日 11:00～16:00<br>
+土日祝 11:00～17:00<br>
+土日祝 6:00～9:00は<br>「朝おにぎり」営業</div>
+</div>
+<!--
+<div>
+<div class="title"><a href="./bakery/">ベーカリーバス のらの休日</a></div>
+<div class="time">11:00～16:00</div>
+</div>
+-->
+</div><!--end flex-->
+<p class="sp_left">インフォメーション・スタンプラリー押印は9:00から、トイレは24時間利用可能<br>
+※足湯テラスは天候により休業または営業時間を短縮する場合がございます</p>
+</div><!--end eigyoujikan-->
+
+<div class="location_map animation fadein">
+<img src="./img/location_map_go.jpg?3" alt="ロケーションマップ">
+</div>
+
+</div><!--end container-->
+</div><!--end wrapperInner-->
+
+<div class="footer_googleMap animation fadein">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9464.41438621087!2d138.82263856627654!3d37.66402794399997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8be1c36014e57cfa!2z6YGT44Gu6aeFIOWbveS4ig!5e0!3m2!1sja!2sjp!4v1655172940461!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="道の駅国上 GoogleMap"></iframe>
+</div>
+
+<address class="copyright">Copyright <span style="font-family: 'Verdana' , 'Droid Sans' ;">&copy;</span> Michinoeki Kugami</address>
+</footer>
+
+<div class="fixed_banner">
+<a href="https://booking.ebica.jp/webrsv/plan_search/e014030501/27598" target="_blank">BBQ・デイキャンプのご予約はこちら</a>
+
+
+</div>
+
+<a class="pageTopButton" href="#"><img src="./img/pagetop.png" alt="ページの先頭へ移動"></a>
+<script>
+//指定の高さを過ぎたらページトップボタンを表示
+$(window).on("scroll", function() {
+    if ($(this).scrollTop() > 200) {
+        $(".pageTopButton").addClass("active");
+    } else {
+        $(".pageTopButton").removeClass("active");
+    }
+});
+</script>
+</div><!--end page-->
+</body>
+</html>

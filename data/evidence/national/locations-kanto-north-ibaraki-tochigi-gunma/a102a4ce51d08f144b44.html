@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>牛久市役所　分庁舎 - 牛久市公式ホームページ</title>
+<link rel="stylesheet" href="skin/common/css/global.css" type="text/css" media="all">
+<link rel="stylesheet" href="skin/common/js/leaflet/leaflet.css" type="text/css" media="all">
+<script src="skin/common/js/leaflet/leaflet.js"></script>
+<script src="skin/common/js/leaflet/leaflet.sprite.js"></script>
+<script src="skin/common/js/leaflet/colorfilter.js"></script>
+<style>
+html, body { height: 100%; margin: 0; padding: 0; }
+.markerColor { filter: hue-rotate(150deg); }
+</style>
+<script>
+var mapCanvas;
+var markerIconOption = {
+	iconUrl: 'skin/common/js/leaflet/images/marker-icon.png',
+	iconRetinaUrl: 'skin/common/js/leaflet/images/marker-icon-2x.png',
+	shadowUrl: 'skin/common/js/leaflet/images/marker-shadow.png',
+	iconSize: [25, 41],
+	iconAnchor: [12, 41],
+	popupAnchor: [1, -34],
+	tooltipAnchor: [16, -28],
+	shadowSize: [41, 41],
+	className: 'markerColor'
+}
+var latlng = [35.979942294578, 140.149599909782];
+
+function initialize() {
+	// 地図表示
+	mapCanvas = L.map('mapCanvas', {
+		center: [35.979942294578, 140.14959990978],
+		zoom: 15,
+		zoomControl: true
+	});
+
+	var tileLayer = L.tileLayer.colorFilter(
+		'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+		{
+			attribution: '© <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>',
+		}
+	).addTo(mapCanvas);
+
+	mapCanvas.attributionControl.setPosition('bottomright').setPrefix('<a href="https://leafletjs.com" target="_blank">Leaflet</a>');
+	mapCanvas.zoomControl.setPosition('bottomright');
+
+	// ポップアップ表示
+	var popup = L.popup({
+		maxWidth: '100%',
+		autoClose: false,
+		content: '<div class="mapInfoWindow"><div class="mapInfoWindowTitle">牛久市役所　分庁舎</div><div class="mapInfoWindowContents"><p>住所：牛久市中央3丁目15番地1<br>TEL：029-873-2111代表<br>FAX：029-873-7510<br>業務時間：8:30-17:15</p></div><div class="mapRouteLink"><a href="https://www.city.ushiku.lg.jp/map_route.php?code=187" target="_blank">ルート案内(Googleマップ)</a></div></div>'
+	});
+
+	// マーカーアイコン
+	var icon = L.icon(markerIconOption);
+
+	// マーカー配置
+	var marker = L.marker(latlng, {icon: icon}).addTo(mapCanvas).bindPopup(popup).openPopup();
+}
+
+window.onload = initialize;
+</script>
+</head>
+<body>
+	<div id="mapCanvas" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

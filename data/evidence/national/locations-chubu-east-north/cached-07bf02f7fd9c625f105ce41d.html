@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=1100, maximum-scale=1.0, user-scalable=yes">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="copyright" content="(c)胎内観光NAVI">
+	<meta name='robots' content='index,follow'>
+	<meta name="keywords" content="胎内,観光,温泉,宿泊,グルメ,イベント,ツアー,交通,観光協会">
+	<meta name="description" content="胎内市観光協会による観光案内、宿泊施設や飲食店の紹介。">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://tainai.info/cms/xmlrpc.php">
+	<title>胎内観光NAVI | 新潟県胎内市は胎内川を中心に、海･山･里が一体になった美しいふる里です。</title>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href="https://tainai.info/cms/wp-content/themes/tainai/css/jquery.bxslider.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+	<meta property="og:description" content="新潟県胎内市は胎内川を中心に、海･山･里が一体になった美しいふる里です。">
+	<meta property="og:title" content="胎内観光NAVI">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://tainai.info">
+	<meta property="og:image" content="https://tainai.info/cms/wp-content/themes/tainai/images/ogp_facebook.png">
+
+	<link rel="shortcut icon" href="https://tainai.info/cms/wp-content/themes/tainai/images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="https://tainai.info/cms/wp-content/themes/tainai/images/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-title" content="胎内観光NAVI">
+
+	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+	<script type='text/javascript' src='https://tainai.info/cms/wp-content/themes/tainai/js/jquery-migrate.min.js'></script>
+	<script src="https://tainai.info/cms/wp-content/themes/tainai/js/jquery.bxslider.min.js"></script>
+
+
+	<script type="text/javascript">
+	/******************************************
+		・TOPのbxslider、footerのbxslider
+	******************************************/
+	$(document).ready(function(){
+		//TOPメイン
+		var slider_main = $( '.bxslider' ).bxSlider( {
+			auto: true,
+			speed: 1000,
+			pause: 6000,
+			onSlideAfter: function() {
+				slider_main.startAuto();
+			}
+		});
+
+	});
+	</script>
+
+
+
+
+	<script type="text/javascript" charset="utf-8">
+	/******************************************
+		・横並びのボックスの高さを揃える関数
+		・特定のボックスと高さを揃える関数
+	******************************************/
+	$(document).ready(function(){
+
+		$.fn.make_height = function() {
+			var maxHeight = 0;
+			$(this).each(function(){
+				if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+			});
+			$(this).height(maxHeight);
+		}
+
+		$.fn.copy_height = function(options) {
+			var copyHeight = $(options).height();
+			$(this).height(copyHeight);
+		}
+
+
+
+		//高さを揃える
+		$('#index-topics-box article').make_height();
+
+	});
+	</script>
+
+
+
+	<script type="text/javascript">
+	/******************************************
+		・タブ切り替えの関数
+	******************************************/
+	$(document).ready(function(){
+		//クリックしたときのファンクションをまとめて指定
+		$('#purpose-tab li').click(function() {
+
+			//.index()を使いクリックされたタブが何番目かを調べ、
+			//indexという変数に代入します。
+			var index = $('#purpose-tab li').index(this);
+
+			//コンテンツを一度すべて非表示にし、
+			$('#purpose-postlist > li').css('display','none');
+
+			//クリックされたタブと同じ順番のコンテンツを表示します。
+			$('#purpose-postlist > li').eq(index).fadeIn(1000);
+
+			//一度タブについているクラスselectを消し、
+			$('#purpose-tab li').removeClass('selected');
+
+			//クリックされたタブのみにクラスselectをつけます。
+			$(this).addClass('selected')
+		});
+	});
+	</script>
+
+
+
+
+
+
+
+
+
+	<!--[if IE 6]>
+	<script src="https://tainai.info/cms/wp-content/themes/tainai/js/DD_belatedPNG_0.0.8a-min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	// 適用するIDまたはclassを設定
+	DD_belatedPNG.fix('body *');
+	</script>
+	<![endif]-->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49578650-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<script>
+  var ajaxurl = 'https://tainai.info/cms/wp-admin/admin-ajax.php';
+</script>
+<link rel="alternate" type="application/rss+xml" title="胎内観光NAVI &raquo; フィード" href="https://tainai.info/feed/" />
+<link rel="alternate" type="application/rss+xml" title="胎内観光NAVI &raquo; コメントフィード" href="https://tainai.info/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/tainai.info\/cms\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://tainai.info/cms/wp-includes/css/dist/block-library/style.min.css?ver=6.7.1' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='fancybox-for-wp-css' href='https://tainai.info/cms/wp-content/plugins/fancybox-for-wordpress/assets/css/fancybox.css?ver=1.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css' href='https://tainai.info/cms/wp-content/themes/tainai/style.css?ver=20260605' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css' href='https://tainai.info/cms/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type="text/javascript" src="https://tainai.info/cms/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://tainai.info/cms/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://tainai.info/cms/wp-content/plugins/fancybox-for-wordpress/assets/js/purify.min.js?ver=1.3.4" id="purify-js"></script>
+<script type="text/javascript" src="https://tainai.info/cms/wp-content/plugins/fancybox-for-wordpress/assets/js/jquery.fancybox.js?ver=1.3.4" id="fancybox-for-wp-js"></script>
+<link rel="https://api.w.org/" href="https://tainai.info/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://tainai.info/wp-json/wp/v2/pages/42" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tainai.info/cms/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.7.1" />
+<link rel="canonical" href="https://tainai.info/" />
+<link rel='shortlink' href='https://tainai.info/' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://tainai.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftainai.info%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://tainai.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftainai.info%2F&#038;format=xml" />
+
+<!-- Fancybox for WordPress v3.3.7 -->
+<style type="text/css">
+	.fancybox-slide--image .fancybox-content{background-color: #FFFFFF}div.fancybox-caption{display:none !important;}
+	
+	img.fancybox-image{border-width:10px;border-color:#FFFFFF;border-style:solid;}
+	div.fancybox-bg{background-color:rgba(102,102,102,0.3);opacity:1 !important;}div.fancybox-content{border-color:#FFFFFF}
+	div#fancybox-title{background-color:#FFFFFF}
+	div.fancybox-content{background-color:#FFFFFF}
+	div#fancybox-title-inside{color:#333333}
+	
+	
+	
+	div.fancybox-caption p.caption-title{display:inline-block}
+	div.fancybox-caption p.caption-title{font-size:14px}
+	div.fancybox-caption p.caption-title{color:#333333}
+	div.fancybox-caption {color:#333333}div.fancybox-caption p.caption-title {background:#fff; width:auto;padding:10px 30px;}div.fancybox-content p.caption-title{color:#333333;margin: 0;padding: 5px 0;}body.fancybox-active .fancybox-container .fancybox-stage .fancybox-content .fancybox-close-small{display:block;}
+</style><script type="text/javascript">
+	jQuery(function () {
+
+		var mobileOnly = false;
+		
+		if (mobileOnly) {
+			return;
+		}
+
+		jQuery.fn.getTitle = function () { // Copy the title of every IMG tag and add it to its parent A so that fancybox can show titles
+			var arr = jQuery("a[data-fancybox]");jQuery.each(arr, function() {var title = jQuery(this).children("img").attr("title") || '';var figCaptionHtml = jQuery(this).next("figcaption").html() || '';var processedCaption = figCaptionHtml;if (figCaptionHtml.length && typeof DOMPurify === 'function') {processedCaption = DOMPurify.sanitize(figCaptionHtml, {USE_PROFILES: {html: true}});} else if (figCaptionHtml.length) {processedCaption = jQuery("<div>").text(figCaptionHtml).html();}var newTitle = title;if (processedCaption.length) {newTitle = title.length ? title + " " + processedCaption : processedCaption;}if (newTitle.length) {jQuery(this).attr("title", newTitle);}});		}
+
+		// Supported file extensions
+
+				var thumbnails = jQuery("a:has(img)").not(".nolightbox").not('.envira-gallery-link').not('.ngg-simplelightbox').filter(function () {
+			return /\.(jpe?g|png|gif|mp4|webp|bmp)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+		});
+		
+
+		// Add data-type iframe for links that are not images or videos.
+		var iframeLinks = jQuery('.fancyboxforwp').filter(function () {
+			return !/\.(jpe?g|png|gif|mp4|webp|bmp|pdf)(\?[^/]*)*$/i.test(jQuery(this).attr('href'))
+		}).filter(function () {
+			return !/vimeo|youtube/i.test(jQuery(this).attr('href'))
+		});
+		iframeLinks.attr({"data-type": "iframe"}).getTitle();
+
+				// Gallery All
+		thumbnails.addClass("fancyboxforwp").attr("data-fancybox", "gallery").getTitle();
+		iframeLinks.attr({"data-fancybox": "gallery"}).getTitle();
+
+		// Gallery type NONE
+		
+		// Call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel
+		jQuery("a.fancyboxforwp").fancyboxforwp({
+			loop: false,
+			smallBtn: true,
+			zoomOpacity: "auto",
+			animationEffect: "fade",
+			animationDuration: 500,
+			transitionEffect: "fade",
+			transitionDuration: "300",
+			overlayShow: true,
+			overlayOpacity: "0.3",
+			titleShow: true,
+			titlePosition: "inside",
+			keyboard: true,
+			showCloseButton: true,
+			arrows: true,
+			clickContent:false,
+			clickSlide: "close",
+			mobile: {
+				clickContent: function (current, event) {
+					return current.type === "image" ? "toggleControls" : false;
+				},
+				clickSlide: function (current, event) {
+					return current.type === "image" ? "close" : "close";
+				},
+			},
+			wheel: false,
+			toolbar: true,
+			preventCaptionOverlap: true,
+			onInit: function() { },			onDeactivate
+	: function() { },		beforeClose: function() { },			afterShow: function(instance) { jQuery( ".fancybox-image" ).on("click", function( ){ ( instance.isScaledDown() ) ? instance.scaleToActual() : instance.scaleToFit() }) },				afterClose: function() { },					caption : function( instance, item ) {var title = "";if("undefined" != typeof jQuery(this).context ){var title = jQuery(this).context.title;} else { var title = ("undefined" != typeof jQuery(this).attr("title")) ? jQuery(this).attr("title") : false;}var caption = jQuery(this).data('caption') || '';if ( item.type === 'image' && title.length ) {caption = (caption.length ? caption + '<br />' : '') + '<p class="caption-title">'+jQuery("<div>").text(title).html()+'</p>' ;}if (typeof DOMPurify === "function" && caption.length) { return DOMPurify.sanitize(caption, {USE_PROFILES: {html: true}}); } else { return jQuery("<div>").text(caption).html(); }},
+		afterLoad : function( instance, current ) {var captionContent = current.opts.caption || '';var sanitizedCaptionString = '';if (typeof DOMPurify === 'function' && captionContent.length) {sanitizedCaptionString = DOMPurify.sanitize(captionContent, {USE_PROFILES: {html: true}});} else if (captionContent.length) { sanitizedCaptionString = jQuery("<div>").text(captionContent).html();}if (sanitizedCaptionString.length) { current.$content.append(jQuery('<div class=\"fancybox-custom-caption inside-caption\" style=\" position: absolute;left:0;right:0;color:#000;margin:0 auto;bottom:0;text-align:center;background-color:#FFFFFF \"></div>').html(sanitizedCaptionString)); }},
+			})
+		;
+
+			})
+</script>
+<!-- END Fancybox for WordPress -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style></head>
+
+<body class="home page-template-default page page-id-42 top_page">
+
+<!-- facebookコード -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="wrapper" class="clearfix">
+
+
+	<header id="header-wrapper">
+		<div id="header-inner-wrapper">
+			<div id="header-inner-top" class="clearfix">
+				<p>新潟県胎内市は胎内川を中心に、海･山･里が一体になった美しいふる里です。</p>
+
+				<div id="hit-language">
+					<div><span>Choose a language:</span></div>
+					<ul>
+						<li><a href="https://tainai.info/"><span>Japanese</span></a></li>
+						<li><a href="https://tainai.info/en/"><span>English</span></a></li>
+						<li><a href="https://tainai.info/sc/"><span>Chinese</span></a></li>
+						<li><a href="https://tainai.info/kr/"><span>Korean</span></a></li>
+					</ul>
+				</div>
+
+				<ul id="hit-cntact">
+					<li><a href="https://tainai.info/contact/"><span>お問い合わせ･パンフレット請求</span></a></li>
+				</ul>
+
+				<ul id="hit-navi">
+					<li><a href="https://tainai.info/access/"><span>&gt;交通のご案内</span></a></li>
+					<li><a href="https://tainai.info/sitemap/"><span>&gt;サイトマップ</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="header-inner-bottom" class="clearfix">
+			<h1><a href="https://tainai.info/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/header_logo.png" alt="胎内観光NAVI　新潟県胎内市" width="400" height="100"></a></h1>
+			<nav>
+				<ul>
+					<li id="hib-navi-001"><a href="https://tainai.info/enjoy/"><span>遊ぶ</span></a></li>
+					<li id="hib-navi-002"><a href="https://tainai.info/eat/"><span>食べる</span></a></li>
+					<li id="hib-navi-003"><a href="https://tainai.info/learn/"><span>学ぶ</span></a></li>
+					<li id="hib-navi-004"><a href="https://tainai.info/recommend/"><span>おすすめ</span></a></li>
+					<li id="hib-navi-005"><a href="https://tainai.info/posts/category/event/"><span>イベント</span></a></li>
+					<li id="hib-navi-006"><a href="https://tainai.info/hot_springs/"><span>温泉･宿泊</span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- #header-wrapper -->
+
+
+		<div id="bxslider-wrapper">
+		<ul class="bxslider">
+			<li><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/image_main_001.jpg"></li>
+			<li><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/image_main_002.jpg"></li>
+			<li><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/image_main_003.jpg"></li>
+		</ul>
+	</div>
+	
+
+	<div class="contents">
+		<div id="index-topics">
+			<section>
+				<h1 class="finding-h1 clearfix">お知らせ [旬の情報をお届けします！]<a href="https://tainai.info/posts/"><span>お知らせをもっと見る</span></a></h1>
+
+						
+
+			
+			<div id="index-topics-box">
+
+					
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103117367/">
+							<div><img src="https://tainai.info/cms/wp-content/uploads/2026/10/07e8bc4929096d226eb7e3ef2b7b8364-238x159.jpeg" alt="" width="238" height="159"></div>
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<h1>レトロ商店街を巡ろう！ホンチョウウォークのお知らせ <span>New!</span></h1>
+								<p>胎内市のメインストリート「本町通り商店街」を、地元出身のガイドと一緒に歩いてみませんか。商店街のお店・・・</h1>
+							</header>
+						</a>
+					</article>
+
+
+							
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026102417228/">
+							<div><img src="https://tainai.info/cms/wp-content/uploads/2026/10/6cb3f1c1d3a35e52643592e8ad81d8f0-238x159.jpg" alt="" width="238" height="159"></div>
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<h1>胎内市の紅葉　スポット</h1>
+								<p>胎内市には美しい紅葉スポットが数多くあります。ぜひ各所を巡りながら、秋の彩りをお楽しみください。
+・・・</h1>
+							</header>
+						</a>
+					</article>
+
+
+							
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026092817186/">
+							<div><img src="https://tainai.info/cms/wp-content/uploads/2026/09/gold-238x159.jpeg" alt="" width="238" height="159"></div>
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<h1>胎内ゴールドヤキソバ デジタルスタンプラリー開催のお知らせ</h1>
+								<p>専用アプリ不要、スマホひとつですぐ参加
+胎内市自慢のご当地グルメ「胎内ゴールドヤキソバ」を食べて、・・・</h1>
+							</header>
+						</a>
+					</article>
+
+
+							
+
+					<article class="last">
+						<a href="https://tainai.info/posts/news/2026091817115/">
+							<div><img src="https://tainai.info/cms/wp-content/uploads/2026/09/27bac9cff2229f01efdf92d5d2944008-238x159.jpg" alt="" width="238" height="159"></div>
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<h1>胎内市謎解きツアーのお知らせ</h1>
+								<p>全国各地で謎を仕掛けるクリエーター集団「ナゾトキアドベンチャー」の”まち歩き+謎解き”イベントが胎内・・・</h1>
+							</header>
+						</a>
+					</article>
+
+
+							
+
+			</div>
+			
+
+
+
+				<div id="index-topics-list">
+
+							
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026110417389/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年11月04日 更新</span>
+								<h1>胎内スキー場よりシーズンパス販売のお知らせ <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103117375/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月31日 更新</span>
+								<h1>マコモの正月飾りづくりのお知らせ <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103117371/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月31日 更新</span>
+								<h1>光をまとうクリスマスツリー制作体験のお知らせ <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103117358/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月31日 更新</span>
+								<h1>「胎内魅力発見ツアー」から生まれた 胎内市おすすめガイドのお知らせ <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103017348/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月30日 更新</span>
+								<h1>胎内川漁協からのお知らせ～胎内川で獲れた魚介類を販売します～ <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026103017343/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月30日 更新</span>
+								<h1>11/21　スポーツ体験フェスタ2026 <span>New!</span></h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026102817332/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月28日 更新</span>
+								<h1>親子映画上映会ー親子で楽しむクリスマス上映会ーのお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026102817329/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月28日 更新</span>
+								<h1>樽ヶ橋遊園からお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/season/2026102017290/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-season">旬</span>								<span class="iib-time">2026年10月20日 更新</span>
+								<h1>冬の星座・神話解説教室　参加者募集のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026101717281/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月17日 更新</span>
+								<h1>【終了】10/25　胎内いいもんマルシェ2026＆JA北新潟胎内地区2026収穫感謝祭のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026101717266/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月17日 更新</span>
+								<h1>【終了】11/1山あいのちいさなお祭りのお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026101417260/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年10月14日 更新</span>
+								<h1>11/1、3　おいでよ本町マルシェin本町通り商店街のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026093017222/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月30日 更新</span>
+								<h1>「FUJIYAMA　ツインテラス」胎内市民割引きのお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026093017220/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月30日 更新</span>
+								<h1>第20回胎内市美術展覧会のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026092117139/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月21日 更新</span>
+								<h1>越後やまなみラインモビリティスタンプラリーのお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026091917167/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月19日 更新</span>
+								<h1>【終了】第1回防災学習フェスのお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026091817124/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月18日 更新</span>
+								<h1>Preventing Bear Encounters and Incidents　ークマによる事故等に遭わないためにー</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026091817108/">
+							<header>
+								<span class="tag icon-media">メディア</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月18日 更新</span>
+								<h1>【定期購読者募集！】 お出かけガイドブック 「いろどり胎内」秋冬号</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026091817103/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月18日 更新</span>
+								<h1>【終了】胎内カップバスケットボール フェスティバル2026のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+
+					<article>
+						<a href="https://tainai.info/posts/news/2026091817080/">
+							<header>
+								<span class="tag icon-event">イベント</span><span class="tag icon-media">メディア</span><span class="tag icon-season">旬</span><span class="tag icon-news">お知らせ</span>								<span class="iib-time">2026年09月18日 更新</span>
+								<h1>胎内市2大パワースポット　フォトコンテスト作品募集のお知らせ</h1>
+							</header>
+						</a>
+					</article>
+
+
+
+
+
+								
+
+				</div>
+
+			</section>
+		</div>
+
+	</div><!-- #contents -->
+
+
+
+
+	<div class="index-mesh">
+
+		<div id="index-category">
+			<section>
+				<h1 class="finding-h1">胎内は楽しいこともりだくさん！！</h1>
+				<ul>
+					<li><a href="https://tainai.info/enjoy/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_see.png" alt="遊ぶ：みんなで楽しめる観光スポットがいっぱい！" width="320" height="240" /></a></li>
+					<li><a href="https://tainai.info/eat/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_eat.png" alt="食べる：胎内産を食べ歩こう！おみやげ・特産品もどうぞ" width="320" height="240" /></a></li>
+					<li class="last"><a href="https://tainai.info/learn/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_museum.png" alt="学ぶ：ミュージアムや歴史・文化をめぐる旅" width="320" height="240" /></a></li>
+					<li><a href="https://tainai.info/recommend/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_recommend.png" alt="おすすめ：胎内の様々な魅力をくわしくご紹介します！" width="320" height="240" /></a></li>
+					<li><a href="https://tainai.info/posts/category/event/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_event.png" alt="イベント：四季をとおして楽しいイベントがいっぱい！" width="320" height="240" /></a></li>
+					<li class="last"><a href="https://tainai.info/hot_springs/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_purpose_stay.png" alt="温泉・宿泊：遊んだ後は温泉・お宿でゆったりのんびり" width="320" height="240" /></a></li>
+				</ul>
+			</section>
+		</div>
+
+	</div><!-- #index-mesh -->
+
+
+
+
+
+	<div class="contents">
+
+		<div id="index-pick-up">
+			<section>
+				<h1 class="finding-h1">ピックアップ！ [胎内をもっと楽しく！]</h1>
+				<ul>
+					<li><a href="https://tainai.info/hasegawarena/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_rena.png" alt="胎内市観光大使 長谷川玲奈さんのおすすめスポット＆スケジュール" width="320" height="100" /><p>長谷川玲奈さんおすすめスポット＆スケジュール！</p></a></li>
+					<li><a href="https://tainai.info/sukidesu/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_sukidesu.png" alt="胎内市が好きです" width="320" height="100" /><p>胎内市が好きです</p></a></li>
+					<li class="last"><a href="https://tainai.info/member/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_members.png" alt="胎内市観光協会会員リンク" width="320" height="100" /><p>胎内市観光協会の会員をご紹介。</p></a></li>
+
+					<li><a href="https://tainai.info/volunteer/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_volunteer.png" alt="胎内市観光ボランティアガイド" width="320" height="100" /><p>胎内観光の達人におまかせください！</p></a></li>
+					<li><a href="https://tainai.info/access/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_access.png" alt="交通のご案内" width="320" height="100" /><p>日本海東北自動車道のアクセスが便利！</p></a></li>
+					<li class="last"><a href="http://www.city.tainai.niigata.jp/gyose/hurusato/nozei.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_furusato_tax.png" alt="胎内市ふるさと納税" width="320" height="100" /><p>胎内市を応援して特産品をもらおう。</p></a></li>
+
+					<li><a href="https://tainaicity.thebase.in/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_tainai_shop.png" alt="胎内市観光協会BASE" width="320" height="100" /><p>胎内市観光協会の公式ショップです。</p></a></li>
+					<li><a href="https://www.mura-asobi.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_mura_asobi.png" alt="MURA-ASOBI" width="320" height="100" /><p>あなたの週末が胎内できっと豊かになる</p></a></li>
+					<li class="last"><a href="https://tainai.info/yaranyan/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_yaranyan.png" alt="胎内の観光大使やらにゃん" width="320" height="100" /><p>やらにゃん等の情報がはいってる！</p></a></li>
+
+					<li><a href="https://tainai.info/photo_contest/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_photo_contest.png" alt="胎内写真コンテスト" width="320" height="100" /><p>胎内写真コンテストの入賞作品をご紹介！</p></a></li>
+					<li><a href="https://tainai.info/nakajo_hs/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_nakajo_hs.png" alt="新潟県立中条高等学校 探求の軌跡" width="320" height="100" /><p>高校生が授業で作成した観光PRポスター＆動画。</p></a></li>
+					<li class="last"><a href="http://www.niigata-kankou.or.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_pickup_niigata_kankou_navi.png" alt="にいがた観光ナビ" width="320" height="100" /><p>検索機能、季節の特集やご予約など。</p></a></li>
+
+
+
+
+				</ul>
+			</section>
+		</div>
+
+	</div><!-- #contents -->
+
+
+
+
+	<div class="index-mesh">
+
+		<div id="index-sns">
+			<section class="clearfix">
+				<h1 class="finding-h1">胎内市観光協会とつながろう！</h1>
+
+				<div class="is-rss">
+					<ul class="clearfix">
+						<li><a href="https://www.youtube.com/channel/UCFppFW0Ln91injmA7gahNZg/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_youtube.png?ver=202009" alt="YOUTUBE　胎内観光協会公式チャンネル" width="320" height="70"></a></li>
+
+						<li><a href="https://www.instagram.com/camerajosiintainai/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_instagram_camera_girls.png" alt="カメラ女子inたいないInstagram" width="320" height="70"></a></li>
+
+						<li><a href="https://www.facebook.com/tainaisikankoukyoukai" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_facebook_kankou.png" alt="胎内観光協会Facebookページ" width="320" height="70"></a></li>
+
+						<li><a href="https://www.instagram.com/michinoeki_tainai/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_instagram_michinoeki.png" alt="道の駅「胎内」Instagram" width="320" height="70"></a></li>
+
+						<li><a href="https://x.com/tainaisikankou/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_x_kankou.jpg" alt="胎内市観光協会【公式】Xアカウント" width="320" height="70"></a></li>
+
+						<li><a href="https://tainai-komeko.blogto.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/blog_komeko.jpg" alt="胎内米粉ブログ 米粉のまち 新潟県胎内市" width="320" height="70"></a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+
+	</div><!-- #index-mesh -->
+
+
+
+
+
+	<div class="contents">
+
+		<div id="index-recommend">
+			<section>
+				<h1 class="finding-h1">おすすめコンテンツ</h1>
+				<ul>
+					<li><a href="https://www.pref.niigata.lg.jp/site/sado-goldmine/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_sado-goldmine.png?ver=20260921" alt="世界遺産 佐渡島の金山" width="240" height="80" /><p>世界遺産 佐渡島の金山</p></a></li>
+					<li><a href="https://www.pref.niigata.lg.jp/site/sado-goldmine/sadobuilder-lp.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_sadobuilder.png" alt="SADO BUILDER 佐渡島の金山 町づくり" width="240" height="80" /><p>佐渡島の金山がゲームになった！</p></a></li>
+					<li><a href="http://www.city.tainai.niigata.jp/kurashi/sekatsu/kotsu/norensu.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_norensu.png" alt="胎内市の公共交通" width="240" height="80" /><p>乗り合いタクシー「のれんす号」</p></a></li>
+					<li class="last"><a href="https://tainai.info/tokotoko/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_tokotokobin.png" alt="とっておきトコトコ便" width="240" height="80" /><p>毎月発行！胎内とっておき情報！</p></a></li>
+
+					<li><a href="https://tainai.info/pamphlet/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_pamphlet.png" alt="胎内観光パンフレット" width="240" height="80" /><p>配布中のパンフレットをダウンロード。</p></a></li>
+					<li><a href="https://tainaiwinery.stores.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_shop.png" alt="胎内高原ワインオンラインストア" width="240" height="80" /><p>お取り寄せギフトにどうぞ。</p></a></li>
+					<li><a href="https://www.tarugahashi.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_tarugahashi.png" alt="樽ケ橋遊園" width="240" height="80" /><p>かわいい動物たちと触れ合える！</p></a></li>
+					<li class="last"><a href="https://kurhaus-tainai.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_kurhaustainai.png" alt="クアハウスたいない" width="240" height="80" /><p>自然豊かな環境で楽しく健康づくり。</p></a></li>
+
+					<li><a href="https://www.city.tainai.niigata.jp/kurashi/kyoiku/bunkazai/tainai_art.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_tainai_art.png" alt="胎内市美術館" width="240" height="80" /><p>木のやさしさとアートを楽しむ。</p></a></li>
+					<li><a href="https://shionoyu-tainai.com/index.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_shionoyu_tainai.png" alt="しおのゆ" width="240" height="80" /><p>源泉かけ流しの良質なお湯を堪能。</p></a></li>
+					<li><a href="http://www.royal-tainai.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_roya.png" alt="ロイヤル胎内パークホテル" width="240" height="80" /><p>胎内を満喫するリゾートホテル。</p></a></li>
+					<li class="last"><a href="http://okutainai.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_hutte.png" alt="奥胎内ヒュッテ" width="240" height="80" /><p>奥胎内の大自然への旅はここから。</p></a></li>
+
+					<li><a href="http://www.tainairesort.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_ski.png" alt="胎内スキー場" width="240" height="80" /><p>初心者からエキスパートまで楽しめる。</p></a></li>
+					<li><a href="https://www.hokuriku-michinoeki.jp/contents/station/?sta=000013" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_michi_no_eki.png" alt="北陸「道の駅」" width="240" height="80" /><p>新潟・富山・石川 道の駅情報サイト。</p></a></li>
+					<li><a href="https://tainai.info/recommend/michinoeki-tainai/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_michi_no_eki_tainai.png" alt="「道の駅」胎内" width="240" height="80" /><p>自然の中でのんびりできる道の駅。</p></a></li>
+					<li class="last"><a href="https://www.facebook.com/matsubara.stabless/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_matsubarastables.png" alt="松原ステーブルス" width="240" height="80" /><p>引退馬と仲間の動物が暮らす養老牧場</p></a></li>
+
+					<li><a href="https://www.deers.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_deers.png" alt="胎内DEERS" width="240" height="80" /><p>胎内市がホームのアメフトチーム。</p></a></li>
+					<li><a href="https://niigata-shounensizen.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_shizen_no_ie.png" alt="新潟県少年自然の家" width="240" height="80" /><p>自然体験活動を通して交流を深める。 </p></a></li>
+					<li><a href="http://www.tainai.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_hoshimatsuri.png" alt="胎内星まつり" width="240" height="80" /><p>満天の星空、真夏の夜の祭典。</p></a></li>
+					<li class="last"><a href="https://trailrunners.jp/event/kushigata31k-2025/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_kushigatawindtrail_fb.png" alt="トレイルランナーズカップ櫛形" width="240" height="80" /><p>本格的なトレイルランニング大会。</p></a></li>
+
+					<li><a href="https://www.sake3.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_sake3.png" alt="村上市観光協会" width="240" height="80" /><p>村上市観光情報発信基地。</p></a></li>
+					<li><a href="https://shibata-info.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_shibata-info.png" alt="新発田市観光協会" width="240" height="80" /><p>ようこそ、食のまち 新発田へ。</p></a></li>
+					<li><a href="https://seiro-kanko.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_seiro-kanko.png" alt="聖籠町観光協会" width="240" height="80" /><p>果樹畑が広がり海水浴で賑わう町。</p></a></li>
+					<li class="last"><a href="https://sekikawa-kankou.com/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_sekikawa-kankou.png" alt="関川村観光協会" width="240" height="80" /><p>えちごせきかわ温泉郷。</p></a></li>
+
+					<li><a href="https://awa-isle.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_awa-isle.png" alt="粟島浦村観光協会" width="240" height="80" /><p>島時間の中、のんびりしませんか。</p></a></li>
+					<li><a href="https://area.jaf.or.jp/drive/stamp-rally/kanto/niigata_stamp-rally_no1619" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_nsr_no1619.png" alt="R290 越後やまなみライン モビリティスタンプラリー" width="240" height="80" /><p>それぞれの楽しみ方で旅に出かけよう。</p></a></li>
+					<li><a href="http://www.nihon-kankou.or.jp/home/gooproject" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_gooproject.png" alt="旅はグーだ！プロジェクト" width="240" height="80" /><p>全国の観光地からのメッセージ</p></a></li>
+					<li class="last"><a href="https://www.driveplaza.com/etc/drawari/2020_niigata/shuyu.html" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_dora_wari.png" alt="新潟観光ドライブパス" width="240" height="80" /><p>ドラ割 ETC・レンタカー限定！</p></a></li>
+
+					<li><a href="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/locamap.pdf" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_locamap.png" alt="ロケ地マップ" width="240" height="80" /><p>胎内市はロケ地もいっぱい。</p></a></li>
+					<li><a href="http://www.tainai.or.jp/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_tainai-shokokai.png" alt="胎内市商工会" width="240" height="80" /><p>地域の事業所をサポートします。</p></a></li>
+					<li><a href="http://www.mitobe.biz/kurumaisu-toilet/" target="_blank"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_wheelchair.png" alt="車いすトイレマップ" width="240" height="80" /><p>バリアフリー対応トイレを検索。</p></a></li>
+					<li class="last"><a href="https://tainai.info/contact/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/page/index/btn_top_osusume_form.png" alt="お問い合わせ・パンフレット請求" width="240" height="80" /><p>メールフォームをご利用できます。</p></a></li>
+
+				</ul>
+			</section>
+		</div>
+
+	</div><!-- #contents -->
+
+
+
+
+
+
+
+	
+
+
+
+	<footer id="footer-wrapper">
+
+		<div id="footer-info" class="clearfix">
+			<dl class="clearfix">
+				<dt><a href="https://tainai.info/"><img src="https://tainai.info/cms/wp-content/themes/tainai/images/header_logo.png" alt="胎内観光NAVI　新潟県胎内市" width="400" height="100"></a></dt>
+				<dd><p>胎内市観光協会　〒959-2806　新潟県胎内市下赤谷387-1<br><span>TEL：0254-47-2723　FAX：0254-47-2737</span></p></dd>
+			</dl>
+		</div>
+
+		<div id="footer-inner-wrapper">
+			<div id="footer-inner-top" class="clearfix">
+				<ul id="fit-cntact">
+					<li><a href="https://tainai.info/contact/"><span>お問い合わせ・パンフレット請求</span></a></li>
+				</ul>
+
+				<ul id="fit-navi">
+					<li><a href="https://tainai.info/access/"><span>&gt;交通のご案内</span></a></li>
+					<li><a href="https://tainai.info/link/"><span>&gt;おすすめリンク</span></a></li>
+					<li><a href="https://tainai.info/sitemap/"><span>&gt;サイトマップ</span></a></li>
+					<li><a href="https://tainai.info/privacy/"><span>&gt;プライバシーポリシー</span></a></li>
+				</ul>
+
+				<p id="copyright"><small>Copylight(C) 2015 胎内市観光協会. All Rights Reserved.</small></p>
+			</div>
+		</div>
+
+	</footer><!-- #footer-wrapper -->
+
+
+</div><!-- #wrapper -->
+
+<script type='text/javascript' src='https://tainai.info/cms/wp-content/themes/tainai/js/common.js'></script>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<!-- <script type="text/javascript" src="https://tainai.info/cms/wp-content/themes/tainai/js/blog_rss_kanko.js"></script> -->
+<!--<script type="text/javascript" src="https://tainai.info/cms/wp-content/themes/tainai/js/blog_rss_komeko.js"></script> -->
+<script type="text/javascript" src="https://tainai.info/cms/wp-content/themes/tainai/js/navigation.js?ver=20120206" id="tainai-navigation-js"></script>
+<script type="text/javascript" src="https://tainai.info/cms/wp-content/themes/tainai/js/skip-link-focus-fix.js?ver=20130115" id="tainai-skip-link-focus-fix-js"></script>
+
+</body>
+</html>

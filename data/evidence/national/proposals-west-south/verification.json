@@ -1,0 +1,25 @@
+{
+  "asOf": "2026-11-05",
+  "newPlaces": 18,
+  "addedRelations": 22,
+  "addedRelationStatuses": {
+    "active": 20,
+    "unknown": 2
+  },
+  "allAddedRelationsVerified": true,
+  "newCoordinates": 0,
+  "temporalChecks": {
+    "temporaryCounterBefore": "upcoming",
+    "temporaryCounterCurrent": "active",
+    "temporaryCounterAfter": "ended",
+    "oldDazaifuAfterReviewUntil": "unknown",
+    "kumamotoDHAfterReviewUntil": "unknown"
+  },
+  "goBuild": "passed: isolated base + chugoku-shikoku + kyushu-okinawa + exact patches + proposal",
+  "goTest": "failed: TestCheckedInRegionalFragments conflicting relation 13-214-D001 / facility:kokubunji-hikari (outside this assignment)",
+  "inputHashes": {
+    "places.json": "152bb738c77e95fcbd54702e42a2107cfd5949d614c7e6b4a706c94cba2a41fe",
+    "full.json": "6068da023f3bd4cb1e292b3e43877411a1505356e4377bbf02a255a89afb1987",
+    "quality.json": "8561505b9c8c0426fae93bf35306bd53f324e75527b842986da3d1df7b31012b"
+  }
+}

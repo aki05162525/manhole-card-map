@@ -1,0 +1,2318 @@
+[
+  {
+    "url": "http://ashikan.jp/index.html",
+    "fetchedAt": "2026-11-05T04:22:48.824478+00:00",
+    "status": 404,
+    "finalUrl": "https://ashikan.jp/index.html",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/65c058229c9ce4f54203.html",
+    "snapshotSHA256": "6c7f57987be059624a9df1c3bccbd60508840ab0710934c2430b69a0927485b6"
+  },
+  {
+    "url": "http://cototoba.com/",
+    "fetchedAt": "2026-11-05T04:22:48.825059+00:00",
+    "status": 200,
+    "finalUrl": "https://cototoba.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2cb921c09d52d3b7a41f.html",
+    "snapshotSHA256": "cda9b11c33c3eed4922245b1191f8b643fd0f860f31c6f29992d7d03ff7fc27a"
+  },
+  {
+    "url": "http://hiokishi-kankou.com/",
+    "fetchedAt": "2026-11-05T04:22:48.825469+00:00",
+    "status": 200,
+    "finalUrl": "https://hiokishi-kankou.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2ddf128c136e8b0941e6.html",
+    "snapshotSHA256": "a139af0d8f91052a5b1ec9dfdf20431ac88878a03522a0b0cb7aa2018154ecf6"
+  },
+  {
+    "url": "http://kurumecityplaza.jp/",
+    "fetchedAt": "2026-11-05T04:22:48.825998+00:00",
+    "status": 200,
+    "finalUrl": "https://kurumecityplaza.jp/",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7c78d240d76889a797f5.html",
+    "snapshotSHA256": "b5c01dddd45508f31f4231afb627a717da91936ddc970cfb2429cc8f9f2b8278"
+  },
+  {
+    "url": "http://makutabi.jp/see/post-1198",
+    "fetchedAt": "2026-11-05T04:22:48.826287+00:00",
+    "status": 200,
+    "finalUrl": "https://www.makutabi.jp/travel/161/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6b6708cad5a548634860.html",
+    "snapshotSHA256": "1e7594a9181c0b60aedf219213f84357375d338bda153d0dde512b8454ae9aed"
+  },
+  {
+    "url": "http://nago-ichiba.com/",
+    "fetchedAt": "2026-11-05T04:22:48.828506+00:00",
+    "status": 200,
+    "finalUrl": "http://nago-ichiba.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e1c769761ef626f63d6a.html",
+    "snapshotSHA256": "d48e880cce51cd0387b610568ae065ee5bdf8649386d3492da581888d3b44e45"
+  },
+  {
+    "url": "http://reihoku-kumamoto.jp/",
+    "fetchedAt": "2026-11-05T04:22:48.829080+00:00",
+    "status": 200,
+    "finalUrl": "https://reihoku-kumamoto.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e9185133556a45cb43e9.html",
+    "snapshotSHA256": "35cb20f27d1e84d168e2ddcba145b32ef81837d4c5fdba805e07d529713aa5f9"
+  },
+  {
+    "url": "http://www.akamakan.info/",
+    "fetchedAt": "2026-11-05T04:22:48.830042+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akamakan.info/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/738c9119582913119c3d.html",
+    "snapshotSHA256": "41debd52a0103751b3ba4ebd16439830251722607cfa3f7ee15308863ce7383b"
+  },
+  {
+    "url": "http://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+    "fetchedAt": "2026-11-05T04:22:48.831289+00:00",
+    "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+  },
+  {
+    "url": "http://www.chatan.jp/seikatsuguide/jogesuido/gesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T04:22:59.890440+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/17a2e916253ac2a7f79d.html",
+    "snapshotSHA256": "62bf8d25d9fb9a4effd756a6e2ff02fdd3e8315b36ad477a17736e0a643c5bac"
+  },
+  {
+    "url": "http://www.city.kagoshima.lg.jp/suidou/index.html",
+    "fetchedAt": "2026-11-05T04:22:53.065934+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kagoshima.lg.jp/suidou/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0b89442af1f657ac3f52.html",
+    "snapshotSHA256": "8ba51937990080008631882aaa21f29b11be4618dd233da1ba3db941541650e8"
+  },
+  {
+    "url": "http://www.city.kanzaki.saga.jp/main/7553.html",
+    "fetchedAt": "2026-11-05T04:22:53.562321+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kanzaki.saga.jp/main/7553.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7737d5776e4b06a866ae.html",
+    "snapshotSHA256": "ac3770256e1d8f3039e49db8fc2f08cdf3df3a400770123cb29ad133e2a9398e"
+  },
+  {
+    "url": "http://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+    "fetchedAt": "2026-11-05T04:22:55.784726+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e47effd09b24ee4c4b35.html",
+    "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27"
+  },
+  {
+    "url": "http://www.city.kitakyushu.lg.jp/suidou/s01300023.html",
+    "fetchedAt": "2026-11-05T04:23:03.292645+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01300023.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f00ad521ceb8da42faa7.html",
+    "snapshotSHA256": "839c8eec08b862806323d056dcc105261b9bc3f0f52a5000473275dc00a27d4d"
+  },
+  {
+    "url": "http://www.city.munakata.lg.jp/w032/010/030/050/0220/20180806110243.html",
+    "fetchedAt": "2026-11-05T04:22:58.840454+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/de079f3fe37d62813d61.html",
+    "snapshotSHA256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf"
+  },
+  {
+    "url": "http://www.city.nagasaki.lg.jp/sisetsu/5120000/p011066.html",
+    "fetchedAt": "2026-11-05T04:22:59.588185+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.nagasaki.lg.jp/page/2837.html",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5de1919df9cce0d418a6.html",
+    "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51"
+  },
+  {
+    "url": "http://www.city.nago.okinawa.jp/soshiki/kankyousuidou/keiei/",
+    "fetchedAt": "2026-11-05T04:23:01.597931+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou/keiei/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c8891bbe2de21d021399.html",
+    "snapshotSHA256": "5da868ccd152b4a4fed932f08b47c0021e66c6cf089c1836cd9bc8e67e50ed74"
+  },
+  {
+    "url": "http://www.city.nakagawa.lg.jp",
+    "fetchedAt": "2026-11-05T04:23:02.242913+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakagawa.lg.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ec0f8286893f21c6ddca.html",
+    "snapshotSHA256": "d56949f59e3ac62125e9cc557e62e56e40c3e93eb3467aaa0fdd31a23d1e4d18"
+  },
+  {
+    "url": "http://www.city.ogori.fukuoka.jp/index.php?cID=1000",
+    "fetchedAt": "2026-11-05T04:23:04.794923+00:00",
+    "error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+  },
+  {
+    "url": "http://www.city.omuta.lg.jp/kigyoukyoku/",
+    "fetchedAt": "2026-11-05T04:23:06.658519+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.omuta.lg.jp/kigyoukyoku/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d63c6366810041dd9a1b.html",
+    "snapshotSHA256": "439f25560b4ea0778f21027214cace19f6bb1c86625bbbf87537c28583b7c821"
+  },
+  {
+    "url": "http://www.city.onojo.fukuoka.jp/s079/010/010/040/20210830115036.html",
+    "fetchedAt": "2026-11-05T04:23:06.911344+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/55f08b0378198b76bd98.html",
+    "snapshotSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3"
+  },
+  {
+    "url": "http://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+    "fetchedAt": "2026-11-05T04:23:06.990697+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/deeefcaa54588659d493.html",
+    "snapshotSHA256": "207f23a78f4cf9897ccf17bdfecf1d4f7c9f917905946a8ef9a96274d11f63b0"
+  },
+  {
+    "url": "http://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+    "fetchedAt": "2026-11-05T04:23:10.897987+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c0dbc6547e853636c3e1.html",
+    "snapshotSHA256": "99a758ce8ad8c08387ae6ce8867ef6619302f4a0c3cc5b206350faab7d5cb2bf"
+  },
+  {
+    "url": "http://www.e-oomura.jp/",
+    "fetchedAt": "2026-11-05T04:23:09.309240+00:00",
+    "status": 200,
+    "finalUrl": "https://e-oomura.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ca0a0db54c1809cea15c.html",
+    "snapshotSHA256": "202822c1051eb50946daa7f9bdadbaa434e438955a4d7cf55af9b801886f32a5"
+  },
+  {
+    "url": "http://www.hyugacity.jp/display.php?slist=0024",
+    "fetchedAt": "2026-11-05T04:23:09.355612+00:00",
+    "status": 503,
+    "finalUrl": "https://www.hyugacity.jp/display.php?slist=0024",
+    "error": "HTTP Error 503: Service Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6d02cc7fbf092c8b1d10.html",
+    "snapshotSHA256": "0f5c3b283382605178eec68f74a43aad2152c8f785609294f27850adde4ff060"
+  },
+  {
+    "url": "http://www.isahaya-kankou.com/",
+    "fetchedAt": "2026-11-05T04:23:09.848320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.isahaya-kankou.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2b678fcae42d50c62238.html",
+    "snapshotSHA256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2"
+  },
+  {
+    "url": "http://www.kikusuiromankan.jp/",
+    "fetchedAt": "2026-11-05T04:23:11.037646+00:00",
+    "status": 200,
+    "finalUrl": "https://kikusuiromankan.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5355fcb68e9006f54275.html",
+    "snapshotSHA256": "556e2c089d0d5bb2e524082c428d7a9d07c01f931f6acbe84fc136798e6fe89a"
+  },
+  {
+    "url": "http://www.minamata-waterworks.jp",
+    "fetchedAt": "2026-11-05T04:23:11.048501+00:00",
+    "status": 403,
+    "finalUrl": "http://www.minamata-waterworks.jp",
+    "error": "HTTP Error 403: Forbidden",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6975fed5a2226429b4f2.html",
+    "snapshotSHA256": "339089c4d8a66ae3d9393dfd1d57caa5cfe04fcea15eeff8ff79faf2c60325ad"
+  },
+  {
+    "url": "http://www.mizunokagakukan.jp/",
+    "fetchedAt": "2026-11-05T04:23:12.926562+00:00",
+    "status": 200,
+    "finalUrl": "https://www.mizunokagakukan.jp/",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/74cf425daa256ab77111.html",
+    "snapshotSHA256": "436ac2fd839b39e023f761d9d323ddcc88288c8a6745caec8f6f3c83617c92fa"
+  },
+  {
+    "url": "http://www.okinoerabujima.info/",
+    "fetchedAt": "2026-11-05T04:23:14.339258+00:00",
+    "status": 200,
+    "finalUrl": "https://okinoerabujima.info/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ddaeb6ae4997268e2388.html",
+    "snapshotSHA256": "39f36e00d834b5a009d58dcdbdb60c9638906ce1856b4984378c341efd3129a7"
+  },
+  {
+    "url": "http://www.onojo-occm.jp/",
+    "fetchedAt": "2026-11-05T04:23:14.784438+00:00",
+    "status": 200,
+    "finalUrl": "https://www.onojo-occm.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/96c7fd0c2d4bd4f6ad44.html",
+    "snapshotSHA256": "11f38875893b21f8f4341d986e8529af9b28a1c001d6c49fee4c9ca391763030"
+  },
+  {
+    "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+    "fetchedAt": "2026-11-05T04:23:17.097267+00:00",
+    "status": 200,
+    "finalUrl": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/minamata/minamata.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/457af0d5fc8b2f6d7d13.html",
+    "snapshotSHA256": "677b8ea604396b9ca049d1aef0e6233f4f587ccf5956fb184fa43d677902beef"
+  },
+  {
+    "url": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
+    "fetchedAt": "2026-11-05T04:23:20.000661+00:00",
+    "status": 200,
+    "finalUrl": "http://www.qsr.mlit.go.jp/n-michi/michi_no_eki/kobetu/shiranui/shiranui.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5b1e7b6613d90eeb360d.html",
+    "snapshotSHA256": "8b68c73aed970d918286a4381eea3514b4a7f5cf1a66562a4ebb9d27dcaef47c"
+  },
+  {
+    "url": "http://www.suidou-miyazaki.jp/",
+    "fetchedAt": "2026-11-05T04:23:18.049426+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyazaki.miyazaki.jp/suidou/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/470056075cda900a1148.html",
+    "snapshotSHA256": "a51b11a4279811b3791ef37be4d359a828ec8cfa9cafba1855c39815b89c6e22"
+  },
+  {
+    "url": "http://www.takemachi.jp/index.html",
+    "fetchedAt": "2026-11-05T04:23:18.950957+00:00",
+    "status": 200,
+    "finalUrl": "http://www.takemachi.jp/index.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/29a3ee9495bd609f6a49.html",
+    "snapshotSHA256": "a773206519b95a5340a1a785d449556e2c6b39bbdeb57e73148c5df25626e953"
+  },
+  {
+    "url": "http://www.town.kouhoku.saga.jp/",
+    "fetchedAt": "2026-11-05T04:23:19.806606+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kouhoku.saga.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a7ce5e4ea6e919f5d376.html",
+    "snapshotSHA256": "b58ce0adcd14bfdcda1d380fbb3afc18c82b1bf3c8409cb224be5475af8f2454"
+  },
+  {
+    "url": "http://www.town.okagaki.lg.jp/010/060/010/index.html",
+    "fetchedAt": "2026-11-05T04:23:20.892209+00:00",
+    "status": 200,
+    "finalUrl": "http://www.town.okagaki.lg.jp/010/060/010/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7756d25bf3889e50f847.html",
+    "snapshotSHA256": "456f39af14a15bc79725045a0f64194e508bc53356886b86ed445697a347e7f7"
+  },
+  {
+    "url": "http://www.town.umi.lg.jp/soshiki/10/",
+    "fetchedAt": "2026-11-05T04:23:21.570828+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f678a8f319a446fed543.html",
+    "snapshotSHA256": "3fc23f53af77dd15b2f8d086bf85b4c6f9d37da532983d495d4c18c97e66c147"
+  },
+  {
+    "url": "http://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "fetchedAt": "2026-11-05T04:23:30.194595+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/b84f3254a7a2a3df421f.html",
+    "snapshotSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad"
+  },
+  {
+    "url": "http://www.water.saga.saga.jp/main/",
+    "fetchedAt": "2026-11-05T04:23:22.037305+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water.saga.saga.jp/main/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a16aab20df1a8e6afc53.html",
+    "snapshotSHA256": "2b3a3da784ba8458931236cd09cf322bba6641ac6e5522d49f40d9eaada39be2"
+  },
+  {
+    "url": "https://beppu-tourism.com/spot/wander-compass-beppu/",
+    "fetchedAt": "2026-11-05T04:23:22.857126+00:00",
+    "status": 200,
+    "finalUrl": "https://beppu-tourism.com/spot/wander-compass-beppu/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/01a89866136f60342ad9.html",
+    "snapshotSHA256": "325804f7e232182e6d10f804a0ff4f212bebede2af3a8e1411280d63cb0e328d"
+  },
+  {
+    "url": "https://chatantourism.com/information-center/",
+    "fetchedAt": "2026-11-05T04:23:23.297862+00:00",
+    "status": 200,
+    "finalUrl": "https://chatantourism.com/information-center/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c158be30e27719631e8b.html",
+    "snapshotSHA256": "58071050f87e75dc6ef77a3e8a368f1214f44b9425e11c373fcd3c1cfe7b2030"
+  },
+  {
+    "url": "https://fukuzawakyukyo.com",
+    "fetchedAt": "2026-11-05T04:23:23.415498+00:00",
+    "status": 200,
+    "finalUrl": "https://fukuzawakyukyo.com",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/246687d5941d376b3ecd.html",
+    "snapshotSHA256": "58529cb4f5f9587383dc819da828633006bdb062fbaf3d744b04f868720e31e7"
+  },
+  {
+    "url": "https://ginowankaihinkouen.jp/facility/gym/",
+    "fetchedAt": "2026-11-05T04:23:25.719932+00:00",
+    "status": 200,
+    "finalUrl": "https://ginowankaihinkouen.jp/facility/gym/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2b4d0fe775526f995363.html",
+    "snapshotSHA256": "3e6527d38d5d0d55b1a46ad214623418c60129e3d78c2a902bcfaaf80d27563b"
+  },
+  {
+    "url": "https://hanabatahiroba.jp/",
+    "fetchedAt": "2026-11-05T04:23:25.761790+00:00",
+    "status": 200,
+    "finalUrl": "https://hanabatahiroba.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/070a3c10d8dfd92e1d68.html",
+    "snapshotSHA256": "03941399441a1df2818555494c8d430cbb961f2a0f6c4a54ca414547fd46e63e"
+  },
+  {
+    "url": "https://hijinavi.com/spots/detail/55",
+    "fetchedAt": "2026-11-05T04:23:25.937855+00:00",
+    "status": 200,
+    "finalUrl": "https://hijinavi.com/spots/detail/55",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/06549ddc56496fe84380.html",
+    "snapshotSHA256": "82bf86fbb6bda055219c18b4b48b2a23ce944f42e717369c34a6fd314677a687"
+  },
+  {
+    "url": "https://hyuga.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:25.969429+00:00",
+    "status": 200,
+    "finalUrl": "https://hyuga.or.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9f99bd7c476c6b6e7e51.html",
+    "snapshotSHA256": "30014069c160834968c671328685a997f72551cad8559ea3f58b1c3bbe5773c6"
+  },
+  {
+    "url": "https://kc-sks.jp/soutai/",
+    "fetchedAt": "2026-11-05T04:23:27.240066+00:00",
+    "status": 200,
+    "finalUrl": "https://kc-sks.jp/soutai/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a54929dc892c52b38d8c.html",
+    "snapshotSHA256": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b"
+  },
+  {
+    "url": "https://kc-sks.jp/suizenji/",
+    "fetchedAt": "2026-11-05T04:23:31.989469+00:00",
+    "status": 200,
+    "finalUrl": "https://kc-sks.jp/suizenji/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7aecf020bbdae7ab26fb.html",
+    "snapshotSHA256": "7cae3e208f5afbf9edde07c6dc719d2e204427d4856547aa05803b048ad80012"
+  },
+  {
+    "url": "https://kirishimakankou.com/",
+    "fetchedAt": "2026-11-05T04:23:28.513564+00:00",
+    "status": 200,
+    "finalUrl": "https://kirishimakankou.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/239637f585d654b4665a.html",
+    "snapshotSHA256": "73a69cec5e01f404d0ca799768e1cd04ac75b56c7174a5b71e282992e5a79f68"
+  },
+  {
+    "url": "https://kobayashi-machi.com/",
+    "fetchedAt": "2026-11-05T04:23:28.527038+00:00",
+    "status": 200,
+    "finalUrl": "https://kobayashi-machi.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0898cdf8547b631a6ae1.html",
+    "snapshotSHA256": "fdecaf0cf705db8d15ed0ae66fcea9abbea7dbf6d22b7e2093835d0bab0cc858"
+  },
+  {
+    "url": "https://koshiki.satsumasendai.gr.jp/spotlist/39470",
+    "fetchedAt": "2026-11-05T04:23:29.144906+00:00",
+    "status": 429,
+    "finalUrl": "https://koshiki.satsumasendai.gr.jp/spotlist/39470",
+    "error": "HTTP Error 429: Too Many Requests",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f946c2ec8f733cda1dff.html",
+    "snapshotSHA256": "8fcd8447d9898cc9e1cc95d4abbd91e6a5a94502000da772747808cc1c14f820"
+  },
+  {
+    "url": "https://mitinoeki-ginoza.com/",
+    "fetchedAt": "2026-11-05T04:23:29.537843+00:00",
+    "status": 200,
+    "finalUrl": "https://mitinoeki-ginoza.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/cd7c027102fc40a7b006.html",
+    "snapshotSHA256": "156b18a1d82c0026022fdb098df8c9271a11bd10a817d04b8007b0843f7fbe4a"
+  },
+  {
+    "url": "https://motobufs.jp/tempo/",
+    "fetchedAt": "2026-11-05T04:23:29.753122+00:00",
+    "status": 200,
+    "finalUrl": "https://motobufs.jp/tempo/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/98e8868eaa8751aa6d72.html",
+    "snapshotSHA256": "22895ce634d7338689f168f8ca643b4d21f003e021ed037b3f986b867f66e5f7"
+  },
+  {
+    "url": "https://museum.chatan.jp/",
+    "fetchedAt": "2026-11-05T04:23:30.175717+00:00",
+    "status": 200,
+    "finalUrl": "https://museum.chatan.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3d537869888fdef6dc50.html",
+    "snapshotSHA256": "1282c131bc68619e270e11714576a6138632d0d622946251c5714fe1fe90a3b8"
+  },
+  {
+    "url": "https://nagomun.or.jp/",
+    "fetchedAt": "2026-11-05T04:23:30.939587+00:00",
+    "status": 200,
+    "finalUrl": "https://nagomun.or.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c10ca6d50418f60cdc01.html",
+    "snapshotSHA256": "c02ae60a15b79d5753837047550564cb70ecf91229dfe2b0b645b74060211a14"
+  },
+  {
+    "url": "https://oki-park.jp/shurijo/guide/1316",
+    "fetchedAt": "2026-11-05T04:23:32.800526+00:00",
+    "status": 200,
+    "finalUrl": "https://oki-park.jp/shurijo/guide/1316/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/98e9b3b3c23d426ab490.html",
+    "snapshotSHA256": "57b1e1b56f2cf6c4737e33d2cedd79ecef36ca3fdb86d1a7bea6e051cecfd438"
+  },
+  {
+    "url": "https://otic.okinawa/center/",
+    "fetchedAt": "2026-11-05T04:23:32.958085+00:00",
+    "status": 200,
+    "finalUrl": "https://otic.okinawa/center/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/68541521f9a25d7f6231.html",
+    "snapshotSHA256": "d7db0289aeeea3426ad34fae5f5da16d6de2c09c82f1ec802389b0294edf28ca"
+  },
+  {
+    "url": "https://place.sonogi.net/higashisonogi_kanko/",
+    "fetchedAt": "2026-11-05T04:23:33.535141+00:00",
+    "status": 200,
+    "finalUrl": "https://place.sonogi.net/higashisonogi_kanko/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/55c4bc1689bae23fb1a9.html",
+    "snapshotSHA256": "6ad3d11c96cbd483684f76bc81be7c514e53a402eb123f620c81dc1ce860a0ae"
+  },
+  {
+    "url": "https://satsumasendai.gr.jp/spotlist/39471/",
+    "fetchedAt": "2026-11-05T04:23:33.957239+00:00",
+    "status": 429,
+    "finalUrl": "https://satsumasendai.gr.jp/spotlist/39471/",
+    "error": "HTTP Error 429: Too Many Requests",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9d39b6d52d3d0e14df0f.html",
+    "snapshotSHA256": "60468be34620bc65d8446957845e94d6b4e1bc879fc1a87fa1a3a1805ed61178"
+  },
+  {
+    "url": "https://seven-eleven.areamarker.com/711map/info/547276?shopid=547276",
+    "fetchedAt": "2026-11-05T04:23:34.386714+00:00",
+    "status": 200,
+    "finalUrl": "https://seven-eleven.areamarker.com/711map/info/547276?shopid=547276",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f0e61f0a99ba8382b8aa.html",
+    "snapshotSHA256": "d5b2db33f270efd5e7a45cc9ef63aaa01e47742bc20773d42bae3dce16d05127"
+  },
+  {
+    "url": "https://ssk-dazaifu-gym.com",
+    "fetchedAt": "2026-11-05T04:23:34.701501+00:00",
+    "status": 200,
+    "finalUrl": "https://ssk-dazaifu-gym.com",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/549cc322929aa258259b.html",
+    "snapshotSHA256": "c93026cc982b051508a749e6daddbd8429802e0d85d5b322aed4f908fbf53a6d"
+  },
+  {
+    "url": "https://webtown.nagayo.jp/suido/default.html",
+    "fetchedAt": "2026-11-05T04:23:34.952846+00:00",
+    "status": 200,
+    "finalUrl": "https://webtown.nagayo.jp/suido/default.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6bcac115c9bdc203e0e0.html",
+    "snapshotSHA256": "9821157a0ed0b3ba2131746bf97dbf88841117a8e6c1b3a8ff0f5694fe6a7963"
+  },
+  {
+    "url": "https://webtown.nagayo.jp/suido/kiji0034473/index.html",
+    "fetchedAt": "2026-11-05T04:23:38.207958+00:00",
+    "status": 200,
+    "finalUrl": "https://webtown.nagayo.jp/suido/kiji0034473/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/cbe4e64644aa57c2d41f.html",
+    "snapshotSHA256": "dc9ad86cb8686312fea1a43f9c1d0a7536f566b7c21dbb2559807eda28a8724b"
+  },
+  {
+    "url": "https://www.arita.jp",
+    "fetchedAt": "2026-11-05T04:23:35.897806+00:00",
+    "status": 200,
+    "finalUrl": "https://www.arita.jp",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6e36d8ddba490132770e.html",
+    "snapshotSHA256": "67816c67e54be618e3ae4bdfd5f6b5b2517eb2551fe76635ac64d871e81c046b"
+  },
+  {
+    "url": "https://www.arita.jp/news/pickup/6054.html",
+    "fetchedAt": "2026-11-05T04:23:42.125192+00:00",
+    "status": 200,
+    "finalUrl": "https://www.arita.jp/news/pickup/6054.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/872c1f3e28eb95587abd.html",
+    "snapshotSHA256": "4f58ab521b76148dd27db3e3df7b23734d3ce8127581f11fbb19005e6ecc9e46"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+    "fetchedAt": "2026-11-05T04:23:37.158214+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9f357de8e94769df9e46.html",
+    "snapshotSHA256": "d5b591eaedb902f957b065d29836c6768d5dfec85251a37b4ae3c043c6976e52"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/hisyokouhou/kurashi/suido/gesuido",
+    "fetchedAt": "2026-11-05T04:23:40.110445+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/hisyokouhou/kurashi/suido/gesuido/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c1a7f0c1c840fb85e7ca.html",
+    "snapshotSHA256": "689bac7dbc0d358739642a0c141d0057055e343f7a0687b4fa05b7196aea5db6"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/201704kokubu.html#1",
+    "fetchedAt": "2026-11-05T04:23:50.080565+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/201704kokubu.html#1",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/eb7c268aa2575aa7bb3c.html",
+    "snapshotSHA256": "670e530c48354687f4f55fb3fdaeed51c497de61faad24923cac1d5067369980"
+  },
+  {
+    "url": "https://www.city-nakatsu.jp/doc/2024010900080/",
+    "fetchedAt": "2026-11-05T04:23:37.994558+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-nakatsu.jp/doc/2024010900080/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/54a258e8b8efbc896882.html",
+    "snapshotSHA256": "4e1f3cd4c175c263c117b88574efffa28b62586e906628fe4bbc4a08199f9d01"
+  },
+  {
+    "url": "https://www.city.amami.lg.jp/bunka/kyoiku/bunka/hakubutsukan/shokai.html",
+    "fetchedAt": "2026-11-05T04:23:38.583886+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.amami.lg.jp/bunka/kyoiku/bunka/hakubutsukan/shokai.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1221c147190cbf93f708.html",
+    "snapshotSHA256": "e57df0532587a9b5eeddfc3cc2822c1798ff50977c6a886ae799a3639c63e170"
+  },
+  {
+    "url": "https://www.city.amami.lg.jp/gesui/mhcard/01.html",
+    "fetchedAt": "2026-11-05T04:23:43.440812+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.amami.lg.jp/gesui/mhcard/01.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/79d7b6a5c3ef4d5c1df8.html",
+    "snapshotSHA256": "f8a38c96c63e85410bacd4e3d603f241c1d80d5e35e46c90254f763978f5989b"
+  },
+  {
+    "url": "https://www.city.amami.lg.jp/shosui/kanko/aiaihiroba.html",
+    "fetchedAt": "2026-11-05T04:23:49.533789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.amami.lg.jp/shosui/kanko/aiaihiroba.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/b0fb881759234bfb5bac.html",
+    "snapshotSHA256": "cd97ec85f47bcb99fe638a702004b0b70facca31e72bba2e52e996d9a433db11"
+  },
+  {
+    "url": "https://www.city.arao.lg.jp/",
+    "fetchedAt": "2026-11-05T04:23:41.075482+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.arao.lg.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1e6a6decf1a4664a11e2.html",
+    "snapshotSHA256": "105ae425a110db99c402066b514149bbf10a2a17c19c9495d83da4d004beb35b"
+  },
+  {
+    "url": "https://www.city.arao.lg.jp/oshirase/machi-wadai/page14159.html",
+    "fetchedAt": "2026-11-05T04:23:46.168795+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.arao.lg.jp/oshirase/machi-wadai/page14159.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/18048d609f7b50c1440d.html",
+    "snapshotSHA256": "0630f45cd45f60cef274956be65cd9e0416dc692dd3ba7fbd08d0b817e83a74c"
+  },
+  {
+    "url": "https://www.city.beppu.oita.jp/suido/05jigyo/anniversary3/index.html",
+    "fetchedAt": "2026-11-05T04:23:42.074347+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.beppu.oita.jp/seikatu/suido/s_jigyo/anniversary3.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/83b284a1142194029571.html",
+    "snapshotSHA256": "bc507da7a62efcbb253e32ef751555026987ec2a0ea672a41a3973668af94a7b"
+  },
+  {
+    "url": "https://www.city.bungotakada.oita.jp/site/showanomachi/15034.html",
+    "fetchedAt": "2026-11-05T04:23:42.391021+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.bungotakada.oita.jp/site/showanomachi/15034.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5d40c19efdb9238672b2.html",
+    "snapshotSHA256": "a9c4ac556ffa3d0ab3f20faede774a4c8d3f316738be988c5bf99d3a1302245c"
+  },
+  {
+    "url": "https://www.city.bungotakada.oita.jp/site/showanomachi/42349.html",
+    "fetchedAt": "2026-11-05T04:23:47.489637+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.bungotakada.oita.jp/site/showanomachi/42349.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2d0addaac7698a285604.html",
+    "snapshotSHA256": "3eb1bc6180bc90832cb4bd7666cdbc6d5f8ba64a610dcff6cb8fa04092a7520b"
+  },
+  {
+    "url": "https://www.city.chikugo.lg.jp",
+    "fetchedAt": "2026-11-05T04:23:45.119037+00:00",
+    "status": 503,
+    "finalUrl": "https://www.city.chikugo.lg.jp",
+    "error": "HTTP Error 503: Service Temporarily Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/13d6e845df8f7f90a9b2.html",
+    "snapshotSHA256": "070449e95d4e4f717fd3e53d7eb44e94b07a44ccb6fe19fdbe97ee59dc411d20"
+  },
+  {
+    "url": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+    "fetchedAt": "2026-11-05T04:23:50.051384+00:00",
+    "status": 503,
+    "finalUrl": "https://www.city.chikugo.lg.jp/kurashi/_2274/_6228/_26356.html",
+    "error": "HTTP Error 503: Service Temporarily Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3c7220b159d7de8cbeba.html",
+    "snapshotSHA256": "c2d80e2ce9432cfca48977ac996844cbb0997afe6465edf2b7ab43cd6be688e5"
+  },
+  {
+    "url": "https://www.city.dazaifu.lg.jp/site/kanko/3625.html",
+    "fetchedAt": "2026-11-05T04:23:46.439997+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.dazaifu.lg.jp/site/kanko/3625.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d2b7b664bd5261348ead.html",
+    "snapshotSHA256": "631beb77f31b7a6f23a34b467eeedb400c156d3cb8745ad3902fcbe1e450a9b3"
+  },
+  {
+    "url": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+    "fetchedAt": "2026-11-05T04:23:52.344698+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/886c9a3c2dafefb88728.html",
+    "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c"
+  },
+  {
+    "url": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/manhole_card.html",
+    "fetchedAt": "2026-11-05T04:23:49.001669+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/manhole_card.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6ffec855e4e2fadcf631.html",
+    "snapshotSHA256": "3df2ec5ce53631f82aad0e1e891dc07167018b40e374ede466af862c281aaaea"
+  },
+  {
+    "url": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon.html",
+    "fetchedAt": "2026-11-05T04:23:55.094531+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9b276a52f708b60733d1.html",
+    "snapshotSHA256": "306f1420f4f5a93e07453915ee013acfcb5ad0294c9e0bd6e98edc2967545ec6"
+  },
+  {
+    "url": "https://www.city.fukuoka.lg.jp/shisei/kouhou-hodo/johoplaza/index.html",
+    "fetchedAt": "2026-11-05T04:24:01.033930+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukuoka.lg.jp/shisei/kouhou-hodo/johoplaza/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/dc5df8ef04a68b42f0fa.html",
+    "snapshotSHA256": "0f5b3cee43d3f5b22ace68077627d0d61f7283a41a09bb7cfb6243f63accd1eb"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/index.html",
+    "fetchedAt": "2026-11-05T04:23:51.214150+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/411e254e5d163513ba1e.html",
+    "snapshotSHA256": "a3c1ff9dea564f377838c139ec948683f8a96b62870801f1012ad13cdf64bafd"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+    "fetchedAt": "2026-11-05T04:23:56.612149+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/49e2b863893103f780e9.html",
+    "snapshotSHA256": "117db75d34aba1bb636e5bd8ef5bc92a321c7d2bc6eb2ea0dac150c944957ed3"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
+    "fetchedAt": "2026-11-05T04:24:02.890302+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/049969cc9c54c8a2a50d.html",
+    "snapshotSHA256": "33a631a1fd1a9167abf15f99c788a7d93012c924aae9b4f55b50f7b21f133c2d"
+  },
+  {
+    "url": "https://www.city.ibusuki.lg.jp/cocco/",
+    "fetchedAt": "2026-11-05T04:23:53.376087+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ibusuki.lg.jp/cocco/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f2bfdffc12fbfdb47a93.html",
+    "snapshotSHA256": "3d5e6c27c4c68f111c2f46cbdb54152a37c2e5a3e908aec76c7610a97b8fcb34"
+  },
+  {
+    "url": "https://www.city.ibusuki.lg.jp/main/kyosei/seikatsu/page013512.html",
+    "fetchedAt": "2026-11-05T04:23:58.477111+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ibusuki.lg.jp/main/kyosei/seikatsu/page013512.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/59f1447e609962dc1287.html",
+    "snapshotSHA256": "a7c1a709424b9fcc4b63a4420d4966237af77523f6beb588274bc2f5913ccf45"
+  },
+  {
+    "url": "https://www.city.iki.nagasaki.jp/",
+    "fetchedAt": "2026-11-05T04:23:54.045080+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iki.nagasaki.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e8a8d82609561dfcc6f7.html",
+    "snapshotSHA256": "1ed42ac3aa5fbaec1d9a56b02e2b05a8fe4a3cfb2c3918004e8aefa898aca389"
+  },
+  {
+    "url": "https://www.city.kagoshima-izumi.lg.jp/cranepark/",
+    "fetchedAt": "2026-11-05T04:23:54.406377+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kagoshima-izumi.lg.jp/cranepark/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a037186a05e1a55e004e.html",
+    "snapshotSHA256": "a3d01321b9c476826ac1e96cdf743dbb32ba70108f1c1c457e4eede76d83e336"
+  },
+  {
+    "url": "https://www.city.kagoshima.lg.jp/kanshin/shisetsu/kanko/005.html",
+    "fetchedAt": "2026-11-05T04:23:54.933814+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kagoshima.lg.jp/kanshin/shisetsu/kanko/005.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5731e8a762870faf28c3.html",
+    "snapshotSHA256": "c1d2f38f74a02e855a7a5ed8c9bc5c1a0e32c0d8d4ac094db604afd5e0525732"
+  },
+  {
+    "url": "https://www.city.kagoshima.lg.jp/suido/gesuido/geken/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:00.805195+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kagoshima.lg.jp/suido/gesuido/geken/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7028d2c6d113462a5c39.html",
+    "snapshotSHA256": "8d1e1e7931738400a079af78f7ad3b4a6f8a76603d5da6187ef1e82b82e86223"
+  },
+  {
+    "url": "https://www.city.kanoya.lg.jp/gekensetsu/manho-ruka-do.html",
+    "fetchedAt": "2026-11-05T04:23:57.427443+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kanoya.lg.jp/gekensetsu/manho-ruka-do.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0d6b7bfd0b8af3cc0287.html",
+    "snapshotSHA256": "6e43069f24c9430c9d301727c28791a588b64beb73e2226abb3a89962109ae9c"
+  },
+  {
+    "url": "https://www.city.kanoya.lg.jp/kankou/bunka/kanko/omiyage/kankobussan.html",
+    "fetchedAt": "2026-11-05T04:24:03.328518+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kanoya.lg.jp/kankou/bunka/kanko/omiyage/kankobussan.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/39d1cee16b4efa13e3df.html",
+    "snapshotSHA256": "6fb9fe83995d9e07a17e7c9a4427c7906d74e0a0562f2fcc94809a8ed92908ce"
+  },
+  {
+    "url": "https://www.city.kitsuki.lg.jp/soshiki/1/suidou/gesui/ka-do/6439.html",
+    "fetchedAt": "2026-11-05T04:23:58.613400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitsuki.lg.jp/soshiki/1/suidou/gesui/ka-do/6439.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1431bb03a20aa44474e5.html",
+    "snapshotSHA256": "ec649f1ed8a2a736df35db3f58ac59a1ac7de2aecf027eaa0ce2a7a2e83bf09a"
+  },
+  {
+    "url": "https://www.city.kobayashi.lg.jp/index.html",
+    "fetchedAt": "2026-11-05T04:23:59.755417+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kobayashi.lg.jp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7f04be1fa6d051cb80e5.html",
+    "snapshotSHA256": "289abbc5a526f8c846cd00194bc83ec089c4cdaf54c23fff44474a511f553965"
+  },
+  {
+    "url": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+    "fetchedAt": "2026-11-05T04:24:09.533639+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/63f6516e42df3b36d96f.html",
+    "snapshotSHA256": "607d3e3a9917fa843e96266404ddac9c6d50acebaf9c1655ee77e6a61c18b9a7"
+  },
+  {
+    "url": "https://www.city.koga.fukuoka.jp",
+    "fetchedAt": "2026-11-05T04:24:01.840601+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koga.fukuoka.jp",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/fa586ff3d41e23810b32.html",
+    "snapshotSHA256": "ed6be37ad87be13ad3c64a765cd311cd774b6d63198a2b86b934cb7aff10fcf9"
+  },
+  {
+    "url": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+    "fetchedAt": "2026-11-05T04:24:07.512697+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d3da5ed856dae91eed11.html",
+    "snapshotSHA256": "2d194f0e21717871a2fdc87d843ddf3786b5d37c1f8eed898fccd1945e53bbd6"
+  },
+  {
+    "url": "https://www.city.makurazaki.lg.jp/soshiki/suidou/13884.html",
+    "fetchedAt": "2026-11-05T04:24:03.392466+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.makurazaki.lg.jp/soshiki/suidou/13884.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/4a095074bfd9d5c00f6f.html",
+    "snapshotSHA256": "3a67b5e6da114495b12c59b2bccc381ff39b2ae736614f9e335c898e5accacc7"
+  },
+  {
+    "url": "https://www.city.minamishimabara.lg.jp/page9601.html",
+    "fetchedAt": "2026-11-05T04:24:04.671216+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minamishimabara.lg.jp/kiji0039601/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5b0239da3a899208ebdd.html",
+    "snapshotSHA256": "1e0c6b20c6ca40c159f595539e7cfa4fd5f906a6566e98246b7c3c2b576826af"
+  },
+  {
+    "url": "https://www.city.minamishimabara.lg.jp/sekaiisan/page7165.html",
+    "fetchedAt": "2026-11-05T04:24:17.252719+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minamishimabara.lg.jp/kiji0037165/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7e3ed261a61d08d8d51a.html",
+    "snapshotSHA256": "677346f225e8dd3d98461984905068f8875aab1008f7419f4fe5fa2d3f6f3fbf"
+  },
+  {
+    "url": "https://www.city.miyakojima.lg.jp/soshiki/kyouiku/syougaigakusyu/miraisouzou/",
+    "fetchedAt": "2026-11-05T04:24:05.347832+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyakojima.lg.jp/soshiki/kyouiku/syougaigakusyu/miraisouzou/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a965d65d5558a679453a.html",
+    "snapshotSHA256": "08b96cb0a6b569a2e236a6f77a4244d2bc6821b64edb49770add1a10ebbdcdb8"
+  },
+  {
+    "url": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/",
+    "fetchedAt": "2026-11-05T04:24:08.608716+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7986f416fc78499f69cc.html",
+    "snapshotSHA256": "f131d254751282862a6105e8f98e115f3da05ff00f32ef62945eba88b88ac97d"
+  },
+  {
+    "url": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/oshirase/2026-0527-1411-318.html",
+    "fetchedAt": "2026-11-05T04:24:13.565864+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/oshirase/2026-0527-1411-318.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9ebae3c4b51c913879ce.html",
+    "snapshotSHA256": "b1c27b8c6e61486fb8feb3f04a84fa91339dd86060acd83726955fe1677e5a86"
+  },
+  {
+    "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
+    "fetchedAt": "2026-11-05T04:24:07.201029+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/393623.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/4a8336e0e6bbc864ba3f.html",
+    "snapshotSHA256": "918e79d93a3ddd35db777d2d4b8b2a111c9fb73ca6ab84c9ea5a98308ca0d716"
+  },
+  {
+    "url": "https://www.city.nagasaki.lg.jp/page/54935.html",
+    "fetchedAt": "2026-11-05T04:24:07.377361+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagasaki.lg.jp/page/54935.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/878073cee996544b5efb.html",
+    "snapshotSHA256": "293e7c5753fc9f2cbe1a3a8abd70d1b2eb2622ac317bc345f409c93e9cb259cf"
+  },
+  {
+    "url": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021060400010/",
+    "fetchedAt": "2026-11-05T04:24:07.558910+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021060400010/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f72c472a7356f28ac096.html",
+    "snapshotSHA256": "9a87a7d0b542e1a19d4653b1606ef6865fe8657a3559779942af421754b5dfa9"
+  },
+  {
+    "url": "https://www.city.naha.okinawa.jp/water/index.html",
+    "fetchedAt": "2026-11-05T04:24:08.484058+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.naha.okinawa.jp/water/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/781eb68cfa23d797b3d9.html",
+    "snapshotSHA256": "0c8b68bb49e845a1f024825260823453cfb45ea998d2f7bc7f84574e5b213c03"
+  },
+  {
+    "url": "https://www.city.naha.okinawa.jp/water/suidoukyoku/1006831/1006848/1006854/1007009.html",
+    "fetchedAt": "2026-11-05T04:24:13.355764+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.naha.okinawa.jp/water/suidoukyoku/1006831/1006848/1006854/1007009.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3884d33c0e919eecee6b.html",
+    "snapshotSHA256": "6566c0da32fbc30d2cb3b72f283b30fd0dfc1e0a3882461763829ddf6bcf020f"
+  },
+  {
+    "url": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+    "fetchedAt": "2026-11-05T04:24:10.826300+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/07a0d385aab6ad88c900.html",
+    "snapshotSHA256": "d13d5e952e47be162ef0a20a46f2d012887fe657cbf36758d5d33adbf67f738b"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+    "fetchedAt": "2026-11-05T04:24:11.082104+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7fb0c8d3468fda912b1c.html",
+    "snapshotSHA256": "fd2c490281ef98161fea3f24a9c950dc46d8a0b9acea6e682447c398b7c6b1b5"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/soshiki/37/10984.html",
+    "fetchedAt": "2026-11-05T04:24:16.241767+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/soshiki/37/10984.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/69be2ffbfc38b574c6ed.html",
+    "snapshotSHA256": "e6a8c3bbb1a69eb6aaa2143806f5646a2ad3794fde38aa09248658b265a5044e"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/soshiki/8/1469.html",
+    "fetchedAt": "2026-11-05T04:24:20.605828+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/soshiki/8/1469.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5796739c46332b984c88.html",
+    "snapshotSHA256": "5a846abbed6a1bfdac96ed91a7a7013ee76da7c25df21db7b1f97abf67e70c48"
+  },
+  {
+    "url": "https://www.city.nogata.fukuoka.jp/",
+    "fetchedAt": "2026-11-05T04:24:12.516314+00:00",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+  },
+  {
+    "url": "https://www.city.nogata.fukuoka.jp/kurashi/_1201/_1332/_17114.html",
+    "fetchedAt": "2026-11-05T04:24:16.772692+00:00",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+  },
+  {
+    "url": "https://www.city.nogata.fukuoka.jp/shisei/_1242/_2793/_12358.html",
+    "fetchedAt": "2026-11-05T04:24:21.202673+00:00",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+  },
+  {
+    "url": "https://www.city.ogori.fukuoka.jp/197/798",
+    "fetchedAt": "2026-11-05T04:24:15.192148+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ogori.fukuoka.jp/197/798",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ef0bb838307050a92f42.html",
+    "snapshotSHA256": "300bba1fda38158e02de2eb9a76a1d0330ad2ec83849f82d435f9be459bfe16f"
+  },
+  {
+    "url": "https://www.city.oita.oita.jp/bunkasports/bunka/bijutsukan/",
+    "fetchedAt": "2026-11-05T04:24:15.280229+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oita.oita.jp/bunkasports/bunka/bijutsukan/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1d979e5b864735639f0a.html",
+    "snapshotSHA256": "32da25fb841e975c4bbb6642871322cb5f2065386a94d0cb41cca8680fbbbd06"
+  },
+  {
+    "url": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+    "fetchedAt": "2026-11-05T04:24:18.018748+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d07d882562678ecada79.html",
+    "snapshotSHA256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b"
+  },
+  {
+    "url": "https://www.city.okinawa.okinawa.jp/about/2749127673",
+    "fetchedAt": "2026-11-05T04:24:16.203482+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/80810778e8a59194b0c3.html",
+    "snapshotSHA256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849"
+  },
+  {
+    "url": "https://www.city.omuta.lg.jp/list01003.html",
+    "fetchedAt": "2026-11-05T04:24:16.969110+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.omuta.lg.jp/list01003.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/04adcc631de81609195a.html",
+    "snapshotSHA256": "9594c5044b1b3cf680939f0b95c7c9e3425dc972ad8d0e2a735352d777704dbf"
+  },
+  {
+    "url": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+    "fetchedAt": "2026-11-05T04:24:17.137516+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.saga-kashima.lg.jp/main/15748.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/137a399c37d51a4e9303.html",
+    "snapshotSHA256": "b25f0ac5fe2c8a1dc23ab9ae0135718f144220290e61b5470d380bf2c8ed11bc"
+  },
+  {
+    "url": "https://www.city.saiki.oita.jp/kiji0033285/index.html",
+    "fetchedAt": "2026-11-05T04:24:18.935792+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.saiki.oita.jp/kiji0033285/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8f26579d7692ef1bce47.html",
+    "snapshotSHA256": "781b7dddd02d2fd7d8c050269d247e5a61ecb83192210b8982598814c378a970"
+  },
+  {
+    "url": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+    "fetchedAt": "2026-11-05T04:24:18.957787+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/b6d267bcc1a287c2291b.html",
+    "snapshotSHA256": "0e336f272a7c5423d0a6e9cf4d40e57184a7893f44db0a263d1c0ed6a7fe356b"
+  },
+  {
+    "url": "https://www.city.takeo.lg.jp/",
+    "fetchedAt": "2026-11-05T04:24:19.556114+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.takeo.lg.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/271968f4dede0375104c.html",
+    "snapshotSHA256": "1c4eacc8e8f618a0434e4e1e381049dd434451e472104f0501dcda42b75bc2f9"
+  },
+  {
+    "url": "https://www.city.takeo.lg.jp/home.html",
+    "fetchedAt": "2026-11-05T04:24:24.285869+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.takeo.lg.jp/home.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d6a33cc608b34aaee4d1.html",
+    "snapshotSHA256": "edff5859c7eff2c1cb61cb1f5e75f02dc505e5f1cda566336838c138c81bf009"
+  },
+  {
+    "url": "https://www.city.tosu.lg.jp/soshiki/18/107130.html",
+    "fetchedAt": "2026-11-05T04:24:20.719155+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tosu.lg.jp/soshiki/18/107130.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d364e11363b984c6b84d.html",
+    "snapshotSHA256": "4a636091c14cc6a2bc42bbef308a588d3c933f20b43ae8c16f67780cf25ed76d"
+  },
+  {
+    "url": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
+    "fetchedAt": "2026-11-05T04:24:25.286491+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0ef308ff801e1a6b65c4.html",
+    "snapshotSHA256": "f4db022fc0b71548890b40b7ddfc9bdf140ef61e1618a1244eceecaefa25d4ae"
+  },
+  {
+    "url": "https://www.city.uki.kumamoto.jp/",
+    "fetchedAt": "2026-11-05T04:24:21.548019+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.uki.kumamoto.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f8fb58fb5cbd9ba4c557.html",
+    "snapshotSHA256": "071f6536bfb97e74f00965834d5241029171e595991121f00e7b06b236eb5b15"
+  },
+  {
+    "url": "https://www.city.uki.kumamoto.jp/kankobunka/sonota_kanko/2028057",
+    "fetchedAt": "2026-11-05T04:24:26.205539+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.uki.kumamoto.jp/kankobunka/sonota_kanko/2028057",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/aa5e76bae96ae2dac446.html",
+    "snapshotSHA256": "4ddf6c40411757ed8b5246a34e42fe0b3038e154e57cd5ca5dcec67103093900"
+  },
+  {
+    "url": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+    "fetchedAt": "2026-11-05T04:24:23.236248+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5e371894a3f3a8a47918.html",
+    "snapshotSHA256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c"
+  },
+  {
+    "url": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/",
+    "fetchedAt": "2026-11-05T04:24:24.087063+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/fa9e0f4fa72248561f43.html",
+    "snapshotSHA256": "c90dc4049e7d76fb3120723f0d29e109cbe9eae51bd774f2be882c8859f7e858"
+  },
+  {
+    "url": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+    "fetchedAt": "2026-11-05T04:24:24.236846+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c132c9e2fca773b952cd.html",
+    "snapshotSHA256": "f564d5aa994bd2289033ac0b7e7f82089635356debf220420b80d9f287e456c9"
+  },
+  {
+    "url": "https://www.hyugacity.jp/display.php?cont=230124152347",
+    "fetchedAt": "2026-11-05T04:24:24.444916+00:00",
+    "status": 503,
+    "finalUrl": "https://www.hyugacity.jp/display.php?cont=230124152347",
+    "error": "HTTP Error 503: Service Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d387d32c863e438520df.html",
+    "snapshotSHA256": "0f5c3b283382605178eec68f74a43aad2152c8f785609294f27850adde4ff060"
+  },
+  {
+    "url": "https://www.izumi-navi.jp/news/post-2802/",
+    "fetchedAt": "2026-11-05T04:24:24.625743+00:00",
+    "status": 200,
+    "finalUrl": "https://www.izumi-navi.jp/news/post-2802/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0d3271002be175805304.html",
+    "snapshotSHA256": "0d305a2d59da4b407bca3ed64c37623d33e246ab7b97cf36b81dbc1149788571"
+  },
+  {
+    "url": "https://www.kitakyushu-stadium.jp/",
+    "fetchedAt": "2026-11-05T04:24:25.155699+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kitakyushu-stadium.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/be6897ece2afae3ea121.html",
+    "snapshotSHA256": "65cb634464f18e2425c4c1539d911e6dcea4b9724fbf633929a1671c808da385"
+  },
+  {
+    "url": "https://www.kitakyushuspacelabo.jp/",
+    "fetchedAt": "2026-11-05T04:24:26.935534+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kitakyushuspacelabo.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/66cf6fe35901d3544974.html",
+    "snapshotSHA256": "00fee380f1b7ed4cc5a3ee075a541449670134c7f324459c6410aa55b74c49b7"
+  },
+  {
+    "url": "https://www.kotodazaifu.net/pavilion",
+    "fetchedAt": "2026-11-05T04:24:27.075416+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kotodazaifu.net/pavilion",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/877ccd4dcf0da9badba1.html",
+    "snapshotSHA256": "596974e8f5439e4b497f09f136ecf15d509dca6c602b68feb6d078aa36226dcf"
+  },
+  {
+    "url": "https://www.kspa.or.jp/huzisaki/",
+    "fetchedAt": "2026-11-05T04:24:27.751069+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kspa.or.jp/huzisaki/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f2a2025bea09353daad9.html",
+    "snapshotSHA256": "84b5756e65ec6d44fffab453b3f76de342a58e219d08b2363bfbca41ca89200d"
+  },
+  {
+    "url": "https://www.kspa.or.jp/park/",
+    "fetchedAt": "2026-11-05T04:24:31.987198+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kspa.or.jp/park/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9ea6083252c52a403c2d.html",
+    "snapshotSHA256": "ccfee1e0b5ae8517a658fdb17a09e30e225dd391e4c2faac9f30dba3f3cdbc09"
+  },
+  {
+    "url": "https://www.kspa.or.jp/sougou/",
+    "fetchedAt": "2026-11-05T04:24:36.422521+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kspa.or.jp/sougou/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/744fe12d839a660f0efd.html",
+    "snapshotSHA256": "7a3d8e7ec704cd34a78a91297f8a7afb27008a75c631010cb048d46114892cb7"
+  },
+  {
+    "url": "https://www.kspa.or.jp/sougou_taiku/",
+    "fetchedAt": "2026-11-05T04:24:41.104083+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kspa.or.jp/sougou_taiku/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/cbe4a0c9578c55df111f.html",
+    "snapshotSHA256": "f7a8ec54c25ffaa407cce2e3f9725f0d95dd0bfcf91a74855f50d250b730bcd9"
+  },
+  {
+    "url": "https://www.ktqmm.jp/",
+    "fetchedAt": "2026-11-05T04:24:28.706060+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ktqmm.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/35721876fe1f528976ce.html",
+    "snapshotSHA256": "c1831de20538ec121534e8e1e7e042ca3cc704778b49c23fd74370f2e1f10a23"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/",
+    "fetchedAt": "2026-11-05T04:24:29.481011+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d7fb788d5705f205f054.html",
+    "snapshotSHA256": "f77771bd1fb916f0a2f209d523b9d50ebd66337a80f8f0c619fb40a2985b8299"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/19974/",
+    "fetchedAt": "2026-11-05T04:24:34.249608+00:00",
+    "status": 404,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/19974/",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e750587526e6974cbe17.html",
+    "snapshotSHA256": "1e5f6e76e01a38b845de37ca3796ccb840e2b27b74fe088f8370308cb70ec1eb"
+  },
+  {
+    "url": "https://www.muna-tabi.jp/k006/20240820133134.html",
+    "fetchedAt": "2026-11-05T04:24:30.332470+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.munakata.lg.jp/kanko/kiji0032472/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/038fd8ada27d307d7456.html",
+    "snapshotSHA256": "297f0f4a6bef549efb7a4a35cae55e1f2c2106b29d6e39e50c28a31092738728"
+  },
+  {
+    "url": "https://www.nakagusuku-jo.jp/",
+    "fetchedAt": "2026-11-05T04:24:30.838117+00:00",
+    "status": 200,
+    "finalUrl": "https://www.nakagusuku-jo.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9e1f320347c7346fa61a.html",
+    "snapshotSHA256": "5dff8a15be9d5abf8bf7b9d4e14e15f9a4df49bfc75b81babe35caea48a3e36b"
+  },
+  {
+    "url": "https://www.nmhc.jp/museum_hsb/",
+    "fetchedAt": "2026-11-05T04:24:30.937642+00:00",
+    "status": 200,
+    "finalUrl": "https://www.nmhc.jp/museum_hsb/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/97790eda876242c563c2.html",
+    "snapshotSHA256": "8f6fc7373b4e9c6ca0ab0d64f7d107f6f8c437ed9b7d4275977a4aa25332f736"
+  },
+  {
+    "url": "https://www.oishiimati-oita.jp/",
+    "fetchedAt": "2026-11-05T04:24:31.094255+00:00",
+    "status": 200,
+    "finalUrl": "https://www.oishiimati-oita.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8b05a6d1ec303054efa4.html",
+    "snapshotSHA256": "09474ae46716e1a6fb12973bfcb16165f250a1a360218c571f2403977a705128"
+  },
+  {
+    "url": "https://www.opam.jp/page/shop.html",
+    "fetchedAt": "2026-11-05T04:24:31.850407+00:00",
+    "status": 200,
+    "finalUrl": "https://www.opam.jp/info/information/shop.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/fd022b78ce74799a7d6c.html",
+    "snapshotSHA256": "a02a5088bd63f588e5fae41ee6a6880f3fca3f1726c39d294ea56a41a55437fb"
+  },
+  {
+    "url": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:32.975642+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+    "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08"
+  },
+  {
+    "url": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+    "fetchedAt": "2026-11-05T04:24:33.200019+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/bd56584967b85f7baffe.html",
+    "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7"
+  },
+  {
+    "url": "https://www.pref.okinawa.jp/site/doboku/gesui/kokyo/manho-ruka-do/20211220_syurijo.html",
+    "fetchedAt": "2026-11-05T04:24:34.066760+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012509.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/58d6dd4ff16e13492eaf.html",
+    "snapshotSHA256": "cb024d35481546be7ce1bf591aa4a4836cd301cca9d3900ce31b2fd9ac5f3dbf"
+  },
+  {
+    "url": "https://www.pref.okinawa.lg.jp/site/doboku/gesui/kokyo/manho-ruka-do/20230323_nami.html",
+    "fetchedAt": "2026-11-05T04:24:34.346321+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012508.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d05df02aa362c3169147.html",
+    "snapshotSHA256": "deaf51599b4adaee97cfcca1eeec94697cb112608798d510fce9e463a8c5f298"
+  },
+  {
+    "url": "https://www.sagabai.com/balloon-museum/main/48.html",
+    "fetchedAt": "2026-11-05T04:24:34.773562+00:00",
+    "status": 200,
+    "finalUrl": "https://www.sagabai.com/balloon-museum/main/48.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c0158c49d0afea6331bd.html",
+    "snapshotSHA256": "52044be58b0eaf2c12f7a3aeb3f56df386e552e99219315a4ccf44e60c252766"
+  },
+  {
+    "url": "https://www.sasebo99.com/spot/100267",
+    "fetchedAt": "2026-11-05T04:24:35.373134+00:00",
+    "status": 200,
+    "finalUrl": "https://www.sasebo99.com/spot/100267",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a22f84c950bd9b569625.html",
+    "snapshotSHA256": "8a74392261fdfed6e76fd62697f0d6025d3ab146c3d6a7b81b0ef03ac2c6c94d"
+  },
+  {
+    "url": "https://www.tamalala.jp/",
+    "fetchedAt": "2026-11-05T04:24:36.748456+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tamalala.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e70448c17d18320fb67d.html",
+    "snapshotSHA256": "485b67cfe7ac28c621cb44d1e670f41ec903c6099bde8a189787b64107b0071b"
+  },
+  {
+    "url": "https://www.tokunoshima-town.org/",
+    "fetchedAt": "2026-11-05T04:24:36.844441+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokunoshima-town.org/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/044b8b503cb895aa1d13.html",
+    "snapshotSHA256": "da19855d7f6d5f08f6f0ffe66cc4a389639e758f1bcded67a80bfa3fb899089e"
+  },
+  {
+    "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+    "fetchedAt": "2026-11-05T04:24:42.236076+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9a2da8a57f13603c6013.html",
+    "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb"
+  },
+  {
+    "url": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+    "fetchedAt": "2026-11-05T04:24:39.073995+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/4fb086a751da5add77e7.html",
+    "snapshotSHA256": "f8688ed07fefd9633b08f21152bc9cf3f56826e6495aa400216d4ef3238919e4"
+  },
+  {
+    "url": "https://www.town.higashisonogi.lg.jp/index.html",
+    "fetchedAt": "2026-11-05T04:24:39.731579+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.higashisonogi.lg.jp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e6f28c55820bc9343c64.html",
+    "snapshotSHA256": "f5982a053765eb1ed0949a0811b283978390d55cc88d1705d962ee446b44eb83"
+  },
+  {
+    "url": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+    "fetchedAt": "2026-11-05T04:24:45.419202+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/21da48f60caf7f3f8965.html",
+    "snapshotSHA256": "a63b2aa655e4d3cbc96f652aaa49ea4e0391423c43933912166170cbb106050c"
+  },
+  {
+    "url": "https://www.town.hiji.lg.jp/kurashi_tetsuzuki/ue_gesuido/gesuidou/491.html",
+    "fetchedAt": "2026-11-05T04:24:40.359190+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hiji.lg.jp/kurashi_tetsuzuki/ue_gesuido/gesuidou/491.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/bd0865a7ba4234e53246.html",
+    "snapshotSHA256": "37fbf1e3449a2169d4569421ce32b289514089f0092dbe81741f95f4ec0bdc4e"
+  },
+  {
+    "url": "https://www.town.mashiki.lg.jp/default.html",
+    "fetchedAt": "2026-11-05T04:24:41.186275+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.mashiki.lg.jp/default.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1a347269a8119492887a.html",
+    "snapshotSHA256": "db2f53e6072037e32d837e8ef12933685254495ba3b0af03d8e7afd1e2d4c0f3"
+  },
+  {
+    "url": "https://www.town.mashiki.lg.jp/kiji0037336/index.html",
+    "fetchedAt": "2026-11-05T04:24:44.671051+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.mashiki.lg.jp/kiji0037336/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/de8782c9b68d206a20ab.html",
+    "snapshotSHA256": "00b948b8f1cbd089029e668ef9fa5affaa4234a80ecda5f61f8bdfd248f6bfd4"
+  },
+  {
+    "url": "https://www.town.mashiki.lg.jp/kouryu/",
+    "fetchedAt": "2026-11-05T04:24:47.261392+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.mashiki.lg.jp/kouryu/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e560eddcbaad8b894679.html",
+    "snapshotSHA256": "34fa2830971a4ebcea1be033abf5722f77bc9e17643c073330a35134d7429958"
+  },
+  {
+    "url": "https://www.town.miyaki.lg.jp/index.html",
+    "fetchedAt": "2026-11-05T04:24:42.415522+00:00",
+    "status": 503,
+    "finalUrl": "https://www.town.miyaki.lg.jp/index.html",
+    "error": "HTTP Error 503: Service Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a8bdc527249d91b883e2.html",
+    "snapshotSHA256": "7b2c51c42bf4e07ce7f5d83fd24b3e102d67542bb1e6bfb8af5d8c1d6ebf4be4"
+  },
+  {
+    "url": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+    "fetchedAt": "2026-11-05T04:24:45.387505+00:00",
+    "status": 503,
+    "finalUrl": "https://www.town.miyaki.lg.jp/kurashi/kankyo/_1221/_3900.html",
+    "error": "HTTP Error 503: Service Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c01627343c5811773997.html",
+    "snapshotSHA256": "8c1621f8f1073c520d9c0c6810524d2d6a50575537d99bf7be83f7b105b26ab6"
+  },
+  {
+    "url": "https://www.town.motobu.okinawa.jp/doc/2025071500028/",
+    "fetchedAt": "2026-11-05T04:24:43.129976+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.motobu.okinawa.jp/doc/2025071500028/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/fa007173e0068011d122.html",
+    "snapshotSHA256": "327b5f210efe4f5822d8a09df742a681ff3b400b2f424a6610dcce64fd697338"
+  },
+  {
+    "url": "https://www.town.nagomi.lg.jp/soshiki/kensetsu/kurashi/3_2162/",
+    "fetchedAt": "2026-11-05T04:24:43.555693+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nagomi.lg.jp/soshiki/kensetsu/kurashi/3_2162/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ef4ce327e374bd38350c.html",
+    "snapshotSHA256": "a5b9a3dab667743f4d40e0db3a534bae3187097367e70651cacb27c85a9756c1"
+  },
+  {
+    "url": "https://www.town.shime.lg.jp/site/shimate/kannai-annai.html",
+    "fetchedAt": "2026-11-05T04:24:43.621592+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shime.lg.jp/site/shimate/kannai-annai.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e80356056121469d0165.html",
+    "snapshotSHA256": "35717e55680d1bd406f84d0110a0980f3b27b4d00b3fb86af0f6fbe7f7ab7776"
+  },
+  {
+    "url": "https://www.town.shime.lg.jp/soshiki/10/manhole-card.html",
+    "fetchedAt": "2026-11-05T04:24:46.409320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shime.lg.jp/soshiki/10/manhole-card.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/546e5232edc3290703b9.html",
+    "snapshotSHA256": "33460ef945d46d5b6df33f6ae2c0ada3f4384f8d6f01719a4e8521149b31a18d"
+  },
+  {
+    "url": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou",
+    "fetchedAt": "2026-11-05T04:24:44.337799+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/463455b824a84153080c.html",
+    "snapshotSHA256": "fdeef27e1e0e0fd563b04bcee315e33fa1aee515fef10501bbfea17a06b9351b"
+  },
+  {
+    "url": "https://www.vill.nakagusuku.okinawa.jp/detail.jsp?id=83873&type=TopicsTopPage&funcid=2",
+    "fetchedAt": "2026-11-05T04:24:44.369796+00:00",
+    "status": 404,
+    "finalUrl": "https://www.vill.nakagusuku.okinawa.jp/detail.jsp?id=83873&type=TopicsTopPage&funcid=2",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/827fc02c8b311cb4f4ff.html",
+    "snapshotSHA256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880"
+  },
+  {
+    "url": "https://www.visit-saiki.jp/spots/detail/f868f841-e816-4f0d-8dc8-ba22e082036d",
+    "fetchedAt": "2026-11-05T04:24:44.480582+00:00",
+    "status": 200,
+    "finalUrl": "https://www.visit-saiki.jp/spots/detail/f868f841-e816-4f0d-8dc8-ba22e082036d",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1c666d1c5080d731fa27.html",
+    "snapshotSHA256": "e69770e2da97794f673794f98b897979a6c32010e50d902b43534b3c9374d4e8"
+  },
+  {
+    "url": "https://www.water.saga.saga.jp/main/5768.html",
+    "fetchedAt": "2026-11-05T04:24:45.359580+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water.saga.saga.jp/main/5768.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8226335752f81e06725a.html",
+    "snapshotSHA256": "37973db511fba9673558621e3dfd9bdf9aa696e4995f2bcbae7aaf0a55590213"
+  },
+  {
+    "url": "https://www.yanagawa-net.com/",
+    "fetchedAt": "2026-11-05T04:24:45.796829+00:00",
+    "status": 200,
+    "finalUrl": "https://www.yanagawa-net.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d4bb41b4b97d3cfb4261.html",
+    "snapshotSHA256": "0804bcba84f7c86d3caa939f43d75cb49b960d80309c449e24a6c2f31ce97d86"
+  },
+  {
+    "url": "http://nago-ichiba.com/ichiba/%e5%90%8d%e8%ad%b7%e5%b8%82%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%82%92%e9%85%8d%e5%b8%83%e9%96%8b%e5%a7%8b%ef%bc%81/",
+    "fetchedAt": "2026-11-05T04:26:15.608434+00:00",
+    "status": 200,
+    "finalUrl": "http://nago-ichiba.com/ichiba/%e5%90%8d%e8%ad%b7%e5%b8%82%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%82%92%e9%85%8d%e5%b8%83%e9%96%8b%e5%a7%8b%ef%bc%81/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/df70d37e7988a69b624b.html",
+    "snapshotSHA256": "a78e65ea7c5483ddf713a614a23f37b93112bfc1f3b9defe62aaddabacc27279"
+  },
+  {
+    "url": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/mhccorona2020.html",
+    "fetchedAt": "2026-11-05T04:26:15.607795+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/mhccorona2020.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c5686e196815d9c5b977.html",
+    "snapshotSHA256": "4965e43b257e232291fd120fdfb3930672d65fb5edb20daa6320b9dd894a3693"
+  },
+  {
+    "url": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/manholecard_2018.html",
+    "fetchedAt": "2026-11-05T04:26:17.115831+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/manholecard_2018.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/19091fbfb83a58a34d4f.html",
+    "snapshotSHA256": "ffd62fb752f7c9211f9d36661eb598dc757ddce632bf0d61b9a8d579e0c43f77"
+  },
+  {
+    "url": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+    "fetchedAt": "2026-11-05T04:26:18.519315+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/18dcf762310a4f067484.html",
+    "snapshotSHA256": "814dc8cfcbb3f8152e05784bb493e1c3b9bb53d1b925012e41374f30f168fd02"
+  },
+  {
+    "url": "https://www.city.kitakyushu.lg.jp/suidou/menu03_0017.html",
+    "fetchedAt": "2026-11-05T04:26:15.609466+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/menu03_0017.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/bc3c26e028aa27784a65.html",
+    "snapshotSHA256": "c955ba588b32015263376a4b720ddcb388457c5a7c9c9ce781057124ff1033b9"
+  },
+  {
+    "url": "https://www.city.nago.okinawa.jp/articles/2026062900018/",
+    "fetchedAt": "2026-11-05T04:26:15.610005+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nago.okinawa.jp/articles/2026062900018/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/4091a1a1adb02b2bb463.html",
+    "snapshotSHA256": "524460c9eef013c80345beb95482a1133ac79f01f4d34902c4ca627217875c3e"
+  },
+  {
+    "url": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021073000047/",
+    "fetchedAt": "2026-11-05T04:26:16.927060+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021073000047/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/418f8f11f2cab977c9b7.html",
+    "snapshotSHA256": "f494a5c68b6eaf10c0108f710a2c5515c4b1c02482117e220f26e17596a97a42"
+  },
+  {
+    "url": "http://www.town.okagaki.lg.jp/s041/010/060/120/20171017155719.html",
+    "fetchedAt": "2026-11-05T04:26:15.611885+00:00",
+    "status": 200,
+    "finalUrl": "http://www.town.okagaki.lg.jp/s041/010/060/120/20171017155719.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e1f4df3f6eb32e11607a.html",
+    "snapshotSHA256": "cd7b67612ed9255af3a14c78f2bfe449678725c3286a6ce772554a329e13c2e9"
+  },
+  {
+    "url": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "fetchedAt": "2026-11-05T04:26:15.612887+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a05c60c09f3ace0ec062.html",
+    "snapshotSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad"
+  },
+  {
+    "url": "https://www.water.saga.saga.jp/main/10198.html",
+    "fetchedAt": "2026-11-05T04:26:15.613870+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water.saga.saga.jp/main/10198.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/71ae2c42cde5e76f2cc2.html",
+    "snapshotSHA256": "886ba2592711ccf0b6213d9095b9c6242f4599ae6beccc2626d99d47860bff7d"
+  },
+  {
+    "url": "https://mitinoeki-ginoza.com/news/36930/",
+    "fetchedAt": "2026-11-05T04:26:15.861013+00:00",
+    "status": 200,
+    "finalUrl": "https://mitinoeki-ginoza.com/news/36930/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/48f2ddd0ab3917c6de0e.html",
+    "snapshotSHA256": "5d5b95319032bbcd44c9cd43d8193c940e1424ac882b1230ad4195eaad21786f"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/12007.html",
+    "fetchedAt": "2026-11-05T04:26:15.877366+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/kyoiku/1/2/12007.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ae1eac91dda185ae3cb3.html",
+    "snapshotSHA256": "85a67e67592ea4f53fbc461f39e877bdb549b8e4ba218bf25d0549cdae3682c0"
+  },
+  {
+    "url": "https://www.city.ibusuki.lg.jp/main/uploads/toshi/docs/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89%E7%AC%AC%EF%BC%98%E5%BC%BE%E6%A6%82%E8%A6%81.pdf",
+    "fetchedAt": "2026-11-05T04:26:15.877735+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ibusuki.lg.jp/main/uploads/toshi/docs/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89%E7%AC%AC%EF%BC%98%E5%BC%BE%E6%A6%82%E8%A6%81.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6a7781b05fd25cd80c9c.pdf",
+    "snapshotSHA256": "ec1b921116c522ed278a4336f668bfc2c83dac0d8ff6f7f6ba3281903def4e38"
+  },
+  {
+    "url": "https://www.city.ibusuki.lg.jp/main/uploads/toshi/docs/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89%E7%AC%AC%EF%BC%98%E5%BC%BE%E4%B8%80%E8%A6%A7.pdf",
+    "fetchedAt": "2026-11-05T04:26:17.249870+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ibusuki.lg.jp/main/uploads/toshi/docs/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89%E7%AC%AC%EF%BC%98%E5%BC%BE%E4%B8%80%E8%A6%A7.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c776b49e217c4f155776.pdf",
+    "snapshotSHA256": "7cff1052917b426c4d4a76e941b520b565d5b0e9c5fcab40a2ea19a5db69c78c"
+  },
+  {
+    "url": "https://www.city.kitsuki.lg.jp/soshiki/1/suidou/gesui/ka-do/index.html",
+    "fetchedAt": "2026-11-05T04:26:16.066102+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kitsuki.lg.jp/soshiki/1/suidou/gesui/ka-do/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f2487b2da1693f2b01ef.html",
+    "snapshotSHA256": "be9425c3beeed0a2fb186d3306ed5f364ed14cc0799d3df03d01d4ca57e2f90f"
+  },
+  {
+    "url": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/ssewer06.html",
+    "fetchedAt": "2026-11-05T04:26:16.099018+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.miyazaki.miyazaki.jp/suidou/summary/sewer/ssewer06.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d0b3408f9d273ad05e70.html",
+    "snapshotSHA256": "9d48175c8b435c22a380340999da0f2a6d6cd158f9a14f2789d5b3b864c942c0"
+  },
+  {
+    "url": "https://www.city.nakagawa.lg.jp/uploaded/attachment/31582.docx",
+    "fetchedAt": "2026-11-05T04:26:16.188001+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakagawa.lg.jp/uploaded/attachment/31582.docx",
+    "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/cad12d55cf949a141beb.zip",
+    "snapshotSHA256": "fffb757351ef15455f9b25d976df9cf2deac2abfb4814581dc438c03ccc1b070"
+  },
+  {
+    "url": "https://www.city.ogori.fukuoka.jp/197/798/2239",
+    "fetchedAt": "2026-11-05T04:26:16.201742+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ogori.fukuoka.jp/197/798/2239",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f75a710f0601a0a653f4.html",
+    "snapshotSHA256": "e2b4d4c286ff8e95dd5ffb037dd233c5af96d519723456560fff455baf4f3091"
+  },
+  {
+    "url": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+    "fetchedAt": "2026-11-05T04:26:16.331423+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/795a286bcb6b26b3288a.html",
+    "snapshotSHA256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849"
+  },
+  {
+    "url": "https://www.city.omuta.lg.jp/kiji00311256/index.html",
+    "fetchedAt": "2026-11-05T04:26:16.362686+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.omuta.lg.jp/kiji00311256/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/46329628b8201116c2a0.html",
+    "snapshotSHA256": "260b5008a5501c659afae17682efb94eb42c4555909afb38d072157cab96a8ed"
+  },
+  {
+    "url": "https://www.city.omuta.lg.jp/kiji00311573/index.html",
+    "fetchedAt": "2026-11-05T04:26:17.697938+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.omuta.lg.jp/kiji00311573/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c769ee49a95abe71c8f5.html",
+    "snapshotSHA256": "1d3b62e52a12709317b9cbac4f377f9b278b31513b9db9fc7898dc8f0ed28328"
+  },
+  {
+    "url": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/8982.html",
+    "fetchedAt": "2026-11-05T04:26:16.617125+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yanagawa.fukuoka.jp/kurashi/jogesuido/gesui/8982.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2b1cb1ecfe49fb65dc07.html",
+    "snapshotSHA256": "731d3ed5f7169c68428354bac1e1746207e6d9ff10b945d2ef28c99cc871609f"
+  },
+  {
+    "url": "https://www.kspa.or.jp/archives/kusports_announce/54364/",
+    "fetchedAt": "2026-11-05T04:26:16.648504+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kspa.or.jp/archives/kusports_announce/54364/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5eaa6504f5c73f651eed.html",
+    "snapshotSHA256": "46f62935196c32b28ab8e37017a7fc1145d6f6e62d6d59a60426c08c1307ed76"
+  },
+  {
+    "url": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/index.html",
+    "fetchedAt": "2026-11-05T04:26:16.690281+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/26133b0c3b54a766b805.html",
+    "snapshotSHA256": "7992bdda0cfd1a27c5d16e127f058f118f000c5e74405786bd58cf00a4efc043"
+  },
+  {
+    "url": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012512.html",
+    "fetchedAt": "2026-11-05T04:26:17.929427+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012512.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f8ce65fc624530f2f676.html",
+    "snapshotSHA256": "6239c502611a452b5d64cd60ae18903901201c293f10172a09b1c9071ebfa9f1"
+  },
+  {
+    "url": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012508.html",
+    "fetchedAt": "2026-11-05T04:26:19.114626+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012508.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3b997866880de5a9b0be.html",
+    "snapshotSHA256": "deaf51599b4adaee97cfcca1eeec94697cb112608798d510fce9e463a8c5f298"
+  },
+  {
+    "url": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/index.html",
+    "fetchedAt": "2026-11-05T04:26:16.844505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/f7beab07aa048f92650e.html",
+    "snapshotSHA256": "7992bdda0cfd1a27c5d16e127f058f118f000c5e74405786bd58cf00a4efc043"
+  },
+  {
+    "url": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012509.html",
+    "fetchedAt": "2026-11-05T04:26:18.293322+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012509.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3bd3229c4d3db0b5eb7e.html",
+    "snapshotSHA256": "cb024d35481546be7ce1bf591aa4a4836cd301cca9d3900ce31b2fd9ac5f3dbf"
+  },
+  {
+    "url": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012512.html",
+    "fetchedAt": "2026-11-05T04:26:19.475262+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012512.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3cda6662d0a5c1c1a8f7.html",
+    "snapshotSHA256": "6239c502611a452b5d64cd60ae18903901201c293f10172a09b1c9071ebfa9f1"
+  },
+  {
+    "url": "https://www.town.hiji.lg.jp/material/files/group/15/manhole-card.jpg",
+    "fetchedAt": "2026-11-05T04:26:17.063561+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.hiji.lg.jp/material/files/group/15/manhole-card.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8b39ef43e6b9e6eece0f.jpg",
+    "snapshotSHA256": "8f84e99672712aee15652720beb4421efcfda88bf45127595f99aac075c3aeb1"
+  },
+  {
+    "url": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou/_3147.html",
+    "fetchedAt": "2026-11-05T04:26:17.243583+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shiroishi.lg.jp/jyuumin/seikatsu/jyougesuidou/gesuidou/_3147.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/be36cc32b4b139d84ee8.html",
+    "snapshotSHA256": "5ba23776b45761a4d75c57473a195a8bfa0fc8cb637115df923ec6d2fc0cb7a0"
+  },
+  {
+    "url": "https://ashikan.jp/",
+    "fetchedAt": "2026-11-05T04:26:17.420667+00:00",
+    "status": 200,
+    "finalUrl": "https://ashikan.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/3d2cbcb8b37f08acc3cb.html",
+    "snapshotSHA256": "2a8baf1ed7c9fcaec9452e2ebc896401dacc8a67a42d81985d54069eb4d9da4d"
+  },
+  {
+    "url": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+    "fetchedAt": "2026-11-05T04:26:17.469894+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/412ac228b0c2916127b1.html",
+    "snapshotSHA256": "e5545f6251aee9c20023c0cd6c5a8ffbf026704201ee801ecca835b7ee60ff54"
+  },
+  {
+    "url": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+    "fetchedAt": "2026-11-05T04:26:17.478725+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/8db9ad388e6f7b73c2b9.html",
+    "snapshotSHA256": "f58fb1443bddd43fa35da47109576b3709ef8be1153d85792c046bca1aebb4ef"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/article_cat/information/",
+    "fetchedAt": "2026-11-05T04:29:07.747947+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/article_cat/information/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0238855c7e04f6b39a1a.html",
+    "snapshotSHA256": "34c910590cfaa0e44c18916ae4d448bdaf84eb5dbb0658600161e389d0a5c92f"
+  },
+  {
+    "url": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+    "fetchedAt": "2026-11-05T04:29:07.749047+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iki.nagasaki.jp/soshiki/kankyo/gesuidou/4498.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2061c45a50d7f657c42a.html",
+    "snapshotSHA256": "d36cbf63573efa4f3e6020e30498439a8e6de87a4e5828a967fa5b55f53120e0"
+  },
+  {
+    "url": "https://www.city.sasebo.lg.jp/suidokyoku/suisou/mannho-ru.html",
+    "fetchedAt": "2026-11-05T04:29:07.749232+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sasebo.lg.jp/suidokyoku/suisou/mannho-ru.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/2f0d941163ce02256d5e.html",
+    "snapshotSHA256": "5bf7e910e608517c22c0dec363b6329d6704d5ff15f63fad2d01dc50d883c28d"
+  },
+  {
+    "url": "https://www.city.sasebo.lg.jp/suidokyoku/suiges/manholecard_haihukyuushinoyotei.html",
+    "fetchedAt": "2026-11-05T04:29:08.881327+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sasebo.lg.jp/suidokyoku/suiges/manholecard_haihukyuushinoyotei.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9a8d58b230ea9927ac47.html",
+    "snapshotSHA256": "b170757eddf4d335590361561bb9b59387cecd6ca8580a16db30cc63fcca7481"
+  },
+  {
+    "url": "https://www.city.nagasaki.lg.jp/page/1355.html",
+    "fetchedAt": "2026-11-05T04:29:07.749900+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagasaki.lg.jp/page/1355.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/b9241502fa99e6c0791c.html",
+    "snapshotSHA256": "bb472c7013572d52b31010ec6f72c81b0b89345e56a3d65e5047ef378c0a145a"
+  },
+  {
+    "url": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+    "fetchedAt": "2026-11-05T04:29:07.750840+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.takeo.lg.jp/information/2022/08/011400.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d1660f0b405c99814b61.html",
+    "snapshotSHA256": "a459e7efa2451d5bfb0dcd0f886161ffab4770e750d7b296e4d6b14fe86ce4f6"
+  },
+  {
+    "url": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+    "fetchedAt": "2026-11-05T04:29:07.751435+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kouhoku.saga.jp/kiji0031164/kouhousi8gatsu.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9fea7caeeba44699a152.pdf",
+    "snapshotSHA256": "97272730b092137194010ad40c649977410e608815e26c4ce14f2daa5dbf6c7d"
+  },
+  {
+    "url": "https://www.city.tamana.lg.jp/q/aview/223/8679.html",
+    "fetchedAt": "2026-11-05T04:29:07.753302+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tamana.lg.jp/q/aview/223/8679.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/0cdad767ccbac0087f9e.html",
+    "snapshotSHA256": "ead5b3e618732a929089ead95527796d6a2df8d5dbffb4ba7c62444b38f44cec"
+  },
+  {
+    "url": "http://kit-suki.com/pages/?detail=1&sb_id=3&r_id=45",
+    "fetchedAt": "2026-11-05T04:29:07.753196+00:00",
+    "status": 200,
+    "finalUrl": "https://kit-suki.com/pages/?detail=1&sb_id=3&r_id=45",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/bb3cf137667a64140a52.html",
+    "snapshotSHA256": "0a8d3a50ef72b85387b72232a657e1d1817e243745cf386f619af7dd5fe82535"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu.pdf",
+    "fetchedAt": "2026-11-05T04:29:07.755058+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c541467f7a02924b77e6.pdf",
+    "snapshotSHA256": "11d626e9a3af3a418591d26bd9c282aac121bf8b186abe6980f9a561b1ae4401"
+  },
+  {
+    "url": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu2.pdf",
+    "fetchedAt": "2026-11-05T04:29:09.182513+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu2.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/eda3ce17f22e241cc05f.pdf",
+    "snapshotSHA256": "8fc069fb64d2aaedf881d0ea359ae754bd0b2849d1d3196924ab17129319ff06"
+  },
+  {
+    "url": "https://www.vill.nakagusuku.okinawa.jp/kurashi/suido/gesuido/manhole/",
+    "fetchedAt": "2026-11-05T04:30:26.306320+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.nakagusuku.okinawa.jp/kurashi/suido/gesuido/manhole/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/407aab1b37666a2970bc.html",
+    "snapshotSHA256": "00c3ddc1d8e36b25ce6ce9457afddd013ec3b111ea93b5e634e78b1e1afadd06"
+  },
+  {
+    "url": "https://www.vill.nakagusuku.okinawa.jp/UserFiles/File/manho-ruka-do.pdf",
+    "fetchedAt": "2026-11-05T04:30:28.511408+00:00",
+    "status": 404,
+    "finalUrl": "https://www.vill.nakagusuku.okinawa.jp/UserFiles/File/manho-ruka-do.pdf",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/79d25b0faa5df51bdf71.html",
+    "snapshotSHA256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880"
+  },
+  {
+    "url": "https://www.hyugacity.jp/sp/tempimg/20230120164711.pdf",
+    "fetchedAt": "2026-11-05T04:30:26.307396+00:00",
+    "status": 503,
+    "finalUrl": "https://www.hyugacity.jp/sp/tempimg/20230120164711.pdf",
+    "error": "HTTP Error 503: Service Unavailable",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a32d61bdb45dbe572552.html",
+    "snapshotSHA256": "0f5c3b283382605178eec68f74a43aad2152c8f785609294f27850adde4ff060"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/38216/",
+    "fetchedAt": "2026-11-05T04:30:26.308086+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/38216/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5c12acbb8b5dbee1f95e.html",
+    "snapshotSHA256": "d932dc36b92d6ffd1e95d0c82b4b5232fbeaeb3554a62574cbdcc001fe458bfa"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/39924/",
+    "fetchedAt": "2026-11-05T04:30:28.509151+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/39924/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5e875a0f807698c3e6ed.html",
+    "snapshotSHA256": "6ec89a0cf65f9828d76ab55302b88efb3ae009212bd8c15ae1e63a75d2428c44"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/40935/",
+    "fetchedAt": "2026-11-05T04:30:30.194659+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/40935/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/4e76e86dfa5c250a88af.html",
+    "snapshotSHA256": "6c2e26d57f84a31b77f69a18ae5f3c69e0e8a154363121dd8513740708074775"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/41052/",
+    "fetchedAt": "2026-11-05T04:30:31.886322+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/41052/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/efad467b01ae21e8f7cc.html",
+    "snapshotSHA256": "a79930f3572ea0dca2592a907c940a5722a40fcffe985ae2d58ae330d1cb06a9"
+  },
+  {
+    "url": "https://www.kumamoto-waterworks.jp/waterworks_article/42607/",
+    "fetchedAt": "2026-11-05T04:30:34.058909+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kumamoto-waterworks.jp/waterworks_article/42607/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/26fe541f7ca0baa93292.html",
+    "snapshotSHA256": "2139282737c09e751a5cf679c14e0209b5ebd9952b7056d41afe8ca276b993e0"
+  },
+  {
+    "url": "https://ashikan.jp/play/manholecard/",
+    "fetchedAt": "2026-11-05T04:30:26.311838+00:00",
+    "status": 200,
+    "finalUrl": "https://ashikan.jp/play/manholecard/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a75c88d91309553b8b7f.html",
+    "snapshotSHA256": "3d84d493b62170b48785f54ecf029604624372a0f38d1b34ebe360f956028170"
+  },
+  {
+    "url": "https://ashikan.jp/tag/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89/",
+    "fetchedAt": "2026-11-05T04:30:28.470319+00:00",
+    "status": 200,
+    "finalUrl": "https://ashikan.jp/tag/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/7715ccfd2af183ca87e2.html",
+    "snapshotSHA256": "6277d74f96737d3a801cbb37ea2b5507b03adc6c0c2ca673aed670bd4680dcf0"
+  },
+  {
+    "url": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+    "fetchedAt": "2026-11-05T04:31:17.362674+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/83/1470.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/991d1da8b0cdd1913fc4.html",
+    "snapshotSHA256": "c052ff23159d7724740ace0370bd1a18c392d977a777293895bbd91ea780c065"
+  },
+  {
+    "url": "https://www.city.hioki.kagoshima.jp/suidou/20221125manhorucard.html",
+    "fetchedAt": "2026-11-05T04:31:17.363266+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hioki.kagoshima.jp/suidou/20221125manhorucard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1e2c83e713462c09743d.html",
+    "snapshotSHA256": "b456e08abed32d89baf412358c5d0dd3f6ada245ef202ee55cfbcd11fcbe648d"
+  },
+  {
+    "url": "https://hyuga.or.jp/contents/archives/859",
+    "fetchedAt": "2026-11-05T04:31:17.363705+00:00",
+    "status": 200,
+    "finalUrl": "https://hyuga.or.jp/contents/archives/859",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/5936e58f9097bf79b494.html",
+    "snapshotSHA256": "58f50db365fb06fd54af29635d563e9c44a62c6b8eb969c27f916a7c8d5b7f6c"
+  },
+  {
+    "url": "https://www.city.omura.nagasaki.jp/suidogyoumu/kurashi/sumai/suido/gesuidojigyo/manholecard.html",
+    "fetchedAt": "2026-11-05T04:31:17.364191+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.omura.nagasaki.jp/suidogyoumu/kurashi/sumai/suido/gesuidojigyo/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/1c0717fc7bebfbe9ddca.html",
+    "snapshotSHA256": "991df691fb6d4b5064af84d81f6186e4d6afb388e42d318cd98487824f60c88b"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+    "fetchedAt": "2026-11-05T04:31:17.365709+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/38a2c06be0965d24d45b.pdf",
+    "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/b9e02206069e82e37a0ab80dca951240.png",
+    "fetchedAt": "2026-11-05T04:31:18.721249+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/b9e02206069e82e37a0ab80dca951240.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c2262aa9c94c5b1c2654.png",
+    "snapshotSHA256": "034e99c2dd37be4e2dc27eb911aa6c912c0b1ff207aee2ac31a9047131e2057b"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2025/09/4d9cd15a18923d6fda892b4f4a96b7f7-4.jpg",
+    "fetchedAt": "2026-11-05T04:31:20.003299+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2025/09/4d9cd15a18923d6fda892b4f4a96b7f7-4.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/93c51109c4b658a0b962.jpg",
+    "snapshotSHA256": "647e957bab39091a98557bdbc0c38e4de23788baec5112ac0c50e42d13486965"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/0709d7b339da340f02de7e2c80df0825.png",
+    "fetchedAt": "2026-11-05T04:31:21.170696+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/0709d7b339da340f02de7e2c80df0825.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/655ec223a7cc010caddf.png",
+    "snapshotSHA256": "383896d963bfe6dc79b2d946ec46ab81f1c4c4f2b1a14e91c8ebd4dc5fa5d371"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/10/074ab77150cc928058b149b9cc8a281c.png",
+    "fetchedAt": "2026-11-05T04:31:22.296410+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/10/074ab77150cc928058b149b9cc8a281c.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/423608c51731d8b3f26d.png",
+    "snapshotSHA256": "1cc12a1744169282c6841afbdad133b7ffc0470078bea1fbd802656bbf0c8348"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2022/07/dd6d2faceb28608067be7e4091195ef2.png",
+    "fetchedAt": "2026-11-05T04:31:23.450624+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2022/07/dd6d2faceb28608067be7e4091195ef2.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/eaefb4c0993d505e37f7.png",
+    "snapshotSHA256": "56562f21ce6be8de0f864e987c0ead838195ad9b72545dfe80bf8cad7d5c05b9"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2019/08/mhcbn.png",
+    "fetchedAt": "2026-11-05T04:31:24.591774+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2019/08/mhcbn.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/c363551c517e0a9d5897.png",
+    "snapshotSHA256": "c7413b6c14996cab56046de170952087176569b1b1615908eb27dd9d2d7467df"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2025/09/49b8cdd81681c966bca1597d19ae1cfd.jpg",
+    "fetchedAt": "2026-11-05T04:31:25.786343+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2025/09/49b8cdd81681c966bca1597d19ae1cfd.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/775963275353b48499ab.jpg",
+    "snapshotSHA256": "a0b05692ab6c9630370813d1d07bcf743f7b96c3ca312c7e06a5a38b2d60dffc"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/08/72ea58f3ccebb1dee0ebbe46790c9817-1.png",
+    "fetchedAt": "2026-11-05T04:31:26.914661+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/08/72ea58f3ccebb1dee0ebbe46790c9817-1.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/05cdb959a9814dc198b4.png",
+    "snapshotSHA256": "d1628c6557c3c5e5635e333068ebaa5cc67c6609ce258468c92d962949ec7a3c"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2023/01/e585d13f1d66069aa91070ff00eb1f56.png",
+    "fetchedAt": "2026-11-05T04:31:28.136368+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2023/01/e585d13f1d66069aa91070ff00eb1f56.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/221d502d02d2878dd575.png",
+    "snapshotSHA256": "756c320c51c654b17a66420d96a48a74c1c4d00afa0155dbdb1ba865f6095b7f"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/troubleicon.png",
+    "fetchedAt": "2026-11-05T04:31:29.320733+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/troubleicon.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/6a54342d775d4e5bda1b.png",
+    "snapshotSHA256": "c6a30acaf03d3c7647a26f1e6c32082b7960c0bf1fb4af72b5c931500a9c8264"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/dayoriicon-1.png",
+    "fetchedAt": "2026-11-05T04:31:30.446743+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/dayoriicon-1.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e394878668d5884f81e1.png",
+    "snapshotSHA256": "1a5acf78b2dcb05cad4e25cbe48a386fcd6cbea771f79836a51c8a73ffbe06d2"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/pamphicon.png",
+    "fetchedAt": "2026-11-05T04:31:31.604520+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/pamphicon.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/e899c7d728f7ef37c29f.png",
+    "snapshotSHA256": "12bf75100b2fa53310ba28fedbc4f8fe5dcc37c331dc2f2aafb48f40ca361858"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2020/03/yakkanicon2.png",
+    "fetchedAt": "2026-11-05T04:31:32.799666+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2020/03/yakkanicon2.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a0860f82ff89c4becad4.png",
+    "snapshotSHA256": "5e52030e89c1437e1fadf4ea33484894e1433a011c01be1ee3e403f74e7d182e"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/keieiicon.png",
+    "fetchedAt": "2026-11-05T04:31:33.915847+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/keieiicon.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/9554f0cc97959ef5eadf.png",
+    "snapshotSHA256": "d31253d086ba1b99b3983af9adc48778da65ba17d182d904cce8adce212be0b8"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/hozenicon.png",
+    "fetchedAt": "2026-11-05T04:31:35.050377+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/hozenicon.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/ce36289c9c8fe3ae7551.png",
+    "snapshotSHA256": "6e4b9ceed23c4f22816ec632a1d07b7d5ba706d68b36ada939d6d9eeccbe3828"
+  },
+  {
+    "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/eigyoumadogutinogoannai2-230x46.png",
+    "fetchedAt": "2026-11-05T04:31:36.233154+00:00",
+    "status": 200,
+    "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2018/03/eigyoumadogutinogoannai2-230x46.png",
+    "contentType": "image/png",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/71e1b2723b514edb05f6.png",
+    "snapshotSHA256": "b6ba14e01ce26f4d86d016ffaa5f91ec30502dbc4dc824828768bd07f787bd45"
+  },
+  {
+    "url": "https://omura-waterworks.jp/guide/approach/manhole_card.php",
+    "fetchedAt": "2026-11-05T04:37:04.214776+00:00",
+    "status": 200,
+    "finalUrl": "https://omura-waterworks.jp/guide/approach/manhole_card.php",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/bd0a57569fd8cadc2b8c.html",
+    "snapshotSHA256": "23fbac88545a0f985b63410996127b68f185fa011fbc89578510aae6b3c03edc"
+  },
+  {
+    "url": "https://minamata-waterworks.jp/mannhorukadohennko.html",
+    "fetchedAt": "2026-11-05T04:37:04.215732+00:00",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'minamata-waterworks.jp'. (_ssl.c:1082)>"
+  },
+  {
+    "url": "https://www.city.nagasaki.lg.jp/shimin/150000/158000/p043297.html",
+    "fetchedAt": "2026-11-05T04:37:04.216330+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.nagasaki.lg.jp/shimin/150000/158000/p043297.html",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/a96b2cfe5cfb6b5657cc.html",
+    "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51"
+  },
+  {
+    "url": "https://www.city.nagasaki.lg.jp/shimin/150000/157000/p031371_d/fil/minnwaka.pdf",
+    "fetchedAt": "2026-11-05T04:37:05.520889+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.nagasaki.lg.jp/shimin/150000/157000/p031371_d/fil/minnwaka.pdf",
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/kyushu-okinawa/d3713b0c718929246545.html",
+    "snapshotSHA256": "82b1e4b8b736f982cfcccab1797454fc3faacb724e9ffb6e4e561c5097a88a51"
+  }
+]

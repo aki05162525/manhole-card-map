@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+	<title>施設｜とやま学遊ネット</title>
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="design/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="design/css/design.css" />
+	<link rel="stylesheet" type="text/css" href="design/css/home.css" />
+	<link rel="stylesheet" type="text/css" href="design/css/search.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+	
+	<!--OpenStreetMap用コードここから -->
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+	<script type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+	<script type="text/javascript" src="design/js/leaflet.sprite.js"></script>
+	<!--OpenStreetMap用コードここまで -->
+	
+	<!-- 読み上げ -->
+	<script src="https://cdn-eas.readspeaker.com/script/12921/webReader/webReader.js?pids=wr&amp;forceAdapter=ioshtml5&amp;disable=translation,lookup" type="text/javascript" id="rs_req_Init"></script>
+</head>
+<body class="bdmain hp_bg_idx">
+<main id="wrapper" class="ly_wrap">
+
+	
+
+	<div class="ly_sub">
+		
+		<header id="pc_header" class="hpxllg_view">
+			<div class="hpc_wrap">
+				<h1 class="hpc_logo">
+					<a href="/"><img src="/search/design/img/search/h_logo_c_gl.png" alt="とやま学遊ネット 生涯学習情報検索" width="329" height="105" loading="lazy" /></a>
+				</h1>
+				<h1 class="hpc_logo">
+					<a href="/"><img src="/search/design/img/search/h_logo_kensaku.png" alt="とやま学遊ネット 生涯学習情報検索" width="329" height="95" loading="lazy" /></a>
+				</h1>
+				<nav class="hpc_nav oy_arws hp_ffm fontUSR">
+					<ul>
+						<li><a href="/search/stdylist.aspx?ht=2" class="h_nav_i001">学習情報まるごと検索</a></li>
+						
+						<li class="hpc_navslhas"><span class="h_nav_i002 hpc_navsl_toggle oy_arw">学習情報それぞれ検索</span>
+							<div class="hpc_navsl_box">
+								
+								<div class="hpc_navsl_boxin">
+									<p class="hpc_navsl_ttl">学習情報それぞれ検索</p>
+									<ul class="oy_arws">
+										<li><a href="/search/stdylist.aspx?ht=1&knd=01">学習講座</a></li>
+										<li><a href="/search/stdylist.aspx?ht=1&knd=04">イベント</a></li>
+										<li><a href="/search/stdylist.aspx?ht=1&knd=09">ビデオ・映画教材</a></li>
+										<li><a href="/search/stdylist.aspx?ht=1&knd=06">施設</a></li>
+										<li><a href="/search/stdylist.aspx?ht=1&knd=06&bnk=1">文化財</a></li>
+										<li><a href="/search/stdylist.aspx?ht=1&knd=07">団体・サークル</a></li>
+									</ul>
+									<div class="hpc_navsl_boxclose oy_arw"></div>
+								</div>
+								
+							</div>
+						</li>
+						<li class="hpc_navslhas"><span class="h_nav_i008 hpc_navsl_toggle oy_arw">人材情報それぞれ検索</span>
+							<div class="hpc_navsl_box">
+								
+								<div class="hpc_navsl_boxin">
+									<p class="hpc_navsl_ttl">人材情報それぞれ検索</p>
+									<ul class="oy_arws">
+										<li><a href="/search/tchr/tchrlist.aspx">講師・指導者</a></li>
+										<li><a href="/search/vol/stdyvllist.aspx">ボランティア</a></li>
+									</ul>
+									<div class="hpc_navsl_boxclose oy_arw"></div>
+								</div>
+								
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<header id="sp_header" class="hpmd_view">
+		    <h1 class="hsp_logo"><a href="/"><img src="/search/design/img/search/h_logo_kensaku_sp.png" alt="とやま学遊ネット" width="140" height="31" loading="lazy"/></a></h1>
+		</header>
+		<nav id="sp_navi" class="hpmd_view">
+			<div class="hsp_navi hp_ffm">
+				<!-- bottom nav -->
+				<ul class="hsp_naviul">
+					<li class="hsp_navil">
+					 	<div id="nav-toggle" class="hsp_toggle"><div><span></span><span></span><span></span><p>メニュー</p></div></div>
+					</li>
+					<li class="hsp_navil">
+						<a href="stdylist.aspx?ht=2"><img src="/search/design/img/gl/i_sp_nav_serch.png" alt="" width="34" height="26"><p>まるごと検索</p></a>
+					</li>
+				</ul>
+				
+				<!-- bottom nav>menu -->
+				<div class="hsp_navi_menu">
+					<h3 class="hsp_nav_sttl">学習情報</h3>
+					<ul class="oy_arws">
+
+						<li><a href="stdylist.aspx?ht=1&knd=01" class="h_nav_i002">学習講座</a></li>
+						<li><a href="stdylist.aspx?ht=1&knd=04" class="h_nav_i003">イベント</a></li>
+						<li><a href="stdylist.aspx?ht=1&knd=09" class="h_nav_i004">ビデオ・映画教材</a></li>
+						<li><a href="stdylist.aspx?ht=1&knd=06" class="h_nav_i005">施設</a></li>
+						<li><a href="stdylist.aspx?ht=1&knd=06&bnk=1&" class="h_nav_i006">文化財</a></li>
+						<li><a href="stdylist.aspx?ht=1&knd=07" class="h_nav_i007">団体・サークル</a></li>
+					</ul>
+					<h3 class="hsp_nav_sttl">人材情報</h3>
+					<ul>
+						<li><a href="#" class="h_nav_i006">講師・指導者</a></li>
+						<li><a href="#" class="h_nav_i009">ボランティア</a></li>
+					</ul>
+					<div class="hsp_acc">
+						<div class="oy_flex">
+							<div class="hsp_acc_btn rs_skip" id="readspeaker_button1"><a href="https://app-eas.readspeaker.com/cgi-bin/rsent?customerid=12921&amp;lang=ja_jp&amp;readid=rscontents&amp;url=" onclick="readpage(this.href, 'xp1'); return false;" class="rs_href" rel="nofollow" accesskey="L"><img src="/search/design/img/idx/ac_readbtn_sp.png" alt="音声読み上げ" width="203" height="33"></a></div>
+							<div class="hsp_acc_btn"><a href="https://www.tkc.pref.toyama.jp/org/detail.aspx?servno=9997" target="_blank"><img src="/search/design/img/idx/ac_langbtn.png" alt="Foreign Languages" width="203" height="33"></a></div>
+						</div>
+						<div class="hsp_acc_serch">
+							<form method="GET" target="_blank" action="https://www.google.co.jp/search">
+						<input type="hidden" name="hl" value="ja" />
+						<input type="hidden" name="domains" value="www.tkc.pref.toyama.jp/search/" />
+						<input type="hidden" name="sitesearch" value="www.tkc.pref.toyama.jp/search/" />
+						<input type="text" class="hpc_gkensakutxt" name="q" size="31" title="Google検索" placeholder="Google検索" />
+						<input type="submit" name="sa" class="hpc_gkensakubtn hp_ffm" value="検索" />
+					</form>
+						</div>
+					</div>
+			 	</div>
+			 	
+			</div>
+			
+		</nav>
+	</div>
+	
+
+	<div class="ly_main" id="rscontents">
+		<div class="fontUSR">
+			<h1 class="el_pgttl1 hp_ffm"><span class="container hp_db">施設</span></h1>
+		</div>
+		
+
+		<div class="hpc_acc hpxllg_view hp_mb10">
+			<ul id="hpc_user" class="hpc_u1">
+				<li id="hpc_fontsize">
+					<span class="hp_ffm">文字サイズ</span>
+					<button id="fontDf" class="oy_arw hp_ffm">標準</button>
+					<button id="fontUp" class="oy_arw hp_ffm">拡大</button>
+				</li>
+				<li class="hpc_reading rs_skip" id="readspeaker_button1"><a href="https://app-eas.readspeaker.com/cgi-bin/rsent?customerid=12921&amp;lang=ja_jp&amp;readid=rscontents&amp;url=" onclick="readpage(this.href, 'xp1'); return false;" class="rs_href" rel="nofollow" accesskey="L"><button id="voice"><img src="/search/design/img/idx/ac_readbtn.png" alt="音声読み上げ" width="95" height="33"></button></a></li>
+				<li class="hpc_lang"><a href="https://www.tkc.pref.toyama.jp/org/detail.aspx?servno=9997" target="_blank"><img src="/search/design/img/idx/ac_langbtn.png" alt="Foreign Languages" width="203" height="33"></a></li>
+				<li class="hpc_gkensaku">
+					<form method="GET" target="_blank" action="https://www.google.co.jp/search">
+						<input type="hidden" name="hl" value="ja" />
+						<input type="hidden" name="domains" value="www.tkc.pref.toyama.jp/search/" />
+						<input type="hidden" name="sitesearch" value="www.tkc.pref.toyama.jp/search/" />
+						<input type="text" class="hpc_gkensakutxt" name="q" size="31" title="Google検索" placeholder="Google検索" />
+						<input type="submit" name="sa" class="hpc_gkensakubtn hp_ffm" value="検索" />
+					</form>
+				</li>
+			</ul>
+		</div>
+		<!-- 読み上げ　分離プレイヤー -->
+		<div id="xp1" class="rs_preserve rs_skip rs_splitbutton rs_addtools rs_exp"></div>
+
+		<div class="fontUSR">
+			
+
+			<nav class="el_pankuzu">
+				<ul class="container hp_fzs2 oy_arws">
+					<li><a href="/">ホーム</a></li>
+					<li><a href="stdycnd.aspx?knd=06&ht=1&psz=0&pnm=0&bnk=0&es=0&year=0">施設検索</a></li>
+					<li><a href="stdylist.aspx?knd=06&ht=1&psz=0&pnm=0&bnk=0&es=0&year=0">施設一覧</a></li>
+					<li>CiC とやま市民交流館　市民学習コーナー　国際交流センター</li>
+				</ul>
+			</nav>
+			
+			<div class="container hp_mb60">
+
+				<article class="hp_tal">
+					
+					
+					
+					<div class="bl_box4 bl_art_wrap">
+						
+						<header class="bl_arth">
+							<h2 class="bl_arth_ttl el_glttl1 hp_ffm">CiC とやま市民交流館　市民学習コーナー　国際交流センター</h2>
+							<div class="oy_flex oy_flex_rvr">
+								
+	<script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+	<div class="bl_arth_snsbtn"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.tkc.pref.toyama.jp/search/stdydtl.aspx?stdycd=00059778&amp;src=sdkpreparse"><img src="/search/design/img/gl/sns_fb.png" alt="facebookでシェア" width="72" height="22"></a> <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-lang="ja"><img src="/search/design/img/gl/sns_tw.png" alt="twitterでシェア" width="90" height="22"></a>
+        <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://www.tkc.pref.toyama.jp/search/stdydtl.aspx?stdycd=00059778" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;"></div>
+	</div>
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+							</div>
+						</header>
+						
+						<div class="bl_art_co oy_editor">
+							とやま市民交流館は、市民の皆様方に、学習および交流の機会や場を提供しております。土曜日や日曜日、祝日も業務を行っておりますので、皆様のご都合にあわせてご利用ください。
+						</div>
+						
+						
+						<ul class="oy_flex un_msa_file">
+		
+							<li>
+								<figure>
+									<a href="contents/imgstdy//000000597781.jpg" target="_blank">
+										<img src="../../search/resizeImg.aspx?src=contents%2fimgstdy%2f%2f000000597781.jpg&amp;x=150&amp;y=110&amp;type=jpg" alt="クリックすると画像を拡大" width="150" />
+									</a>
+									<figcaption></figcaption>
+								</figure>
+							</li>
+		
+						</ul>
+		
+
+						
+						<table class="el_tables2 oy_coltable hp_mb50">
+							<tbody>
+
+								<tr>
+									<th class="hp_ffm">所在地</th>
+									<td>
+										<div>〒930-0002</div><div>富山市新富町一丁目２番３号　CⅰCビル３F</div><div>TEL　076-444-0640</div><div>FAX　076-439-8158</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="hp_ffm">問合せ先</th>
+									<td>
+										
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">利用時間</th>
+									<td>
+										<div>■市民学習コーナー予約受付<br />
+◎平日１０：００～２０：４５<br />
+◎土・日・祝・休１０：００～２０：４５<br />
+（その他のコーナーは窓口により、利用時間は異なります）</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">利用案内</th>
+									<td>
+										<div>社会教育団体などへ、学習室（４室）、和室、音楽・映像室の貸し出しを行っています。詳細はホームページでご確認ください。</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">交通案内</th>
+									<td>
+										<div>■電車でお越しの方<br />
+JR富山駅より徒歩２分、あいの風とやま鉄道富山駅より徒歩３分、富山地方鉄道電鉄富山駅より徒歩２分、<br />
+市内電車／南富山方面～電鉄富山駅・エスタ前電停より徒歩１分、富山大学方面～新富町電停より徒歩２分、岩瀬浜方面～富山駅より徒歩２分<br />
+■バスでお越しの方<br />
+富山地鉄バス／富山駅前バス停より徒歩30秒、コミュニティバス「まいどはや」／東ルート富山駅前バス停より徒歩30秒、西ルート富山駅前バス停より徒歩１分</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">マイカー・駐車場案内</th>
+									<td>
+										<div>■お車でお越しの方<br />
+北陸自動車道（富山IC）から富山市街地方面へ20分<br />
+「市民サービスコーナー」をご利用の場合、富山市営桜町駐車場が1時間無料になります。<br />
+■そのほか周辺駐車場<br />
+チューゲキ駅前パーキング、タイムズ富山駅前立体、マリエ富山駐車場、タイムズマルート</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">主要設備</th>
+									<td>
+										<div>①市民学習コーナー…生涯学習団体などへの学習室等の貸し出し。<br />
+②市民サービスコーナー…各種証明書の交付、戸籍届出及び国民健康保険や国民年金、福祉等の各種受付。<br />
+③国際交流センター…語学講座の開講、各種国際交流や多文化共生事業の開催、外国人相談業務等、国際交流の推進。</div>
+	
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">共通分類</th>
+									<td>
+										<div>その他の生涯学習・福祉 / 国際理解・協力一般 / その他の市民生活･国際理解</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th class="hp_ffm">種別分類</th>
+									<td>
+										<div>その他の文化・教養施設 / 暮らしに関する施設</div>
+									</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+						
+						
+						
+					</div>
+					
+					
+					
+					
+					
+					
+				</article>
+
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<footer>
+	<div class="f_pgtop hp_tar hp_ffm hp_fzs2"><a href="#">ページのトップへ</a></div>
+	<div class="f_co">
+		<div class="ly_footer">
+			<div class="container"> 
+				<nav>
+					<ul class="f_co_nav hp_fzs2">
+						<li><a href="/org/detail.aspx?servno=9777">とやま学遊ネットとは</a></li>
+						<li><a href="/org/detail.aspx?servno=49">利用規約</a></li>
+						<li><a href="/org/detail.aspx?servno=48">個人情報について</a></li>
+						<li><a href="/org/detail.aspx?servno=2130">リンクについて</a></li>
+						<li><a href="/contact/formEntry.aspx">お問い合わせ</a></li>
+					</ul>
+				</nav>
+				<div class="oy_flex f_co_adds hp_ffm">
+					<h2 class="f_logo f_logo_home">富山県民生涯学習カレッジ</h2>
+					<address>
+					〒930-0096<br>富山市舟橋北町7-1（県教育文化会館）<br>TEL 076-441-8401　FAX 076-441-6157
+					</address>
+				</div>
+			</div>
+		</div>
+		<small class="hp_ffm">COPYRIGHT(C) TOYAMA GAKUYUU NET.ALL RIGHTS RESERVED.</small>
+	</div>
+</footer>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-19297490-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'UA-19297490-1');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K6Y246321B"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-K6Y246321B');
+</script>
+
+<script type="text/javascript" src="design/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="design/js/main.js"></script>
+</body>
+</html>

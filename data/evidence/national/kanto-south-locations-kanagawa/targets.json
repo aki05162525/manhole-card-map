@@ -1,0 +1,831 @@
+[
+  {
+    "id": "facility:kanto-south-4ecb948da292cb16373b",
+    "legacyIds": [
+      "place:4ecb948da292cb16373b"
+    ],
+    "name": "横浜駅観光案内所",
+    "address": "神奈川県横浜市西区南幸1-1-1 JR横浜タワー2階",
+    "phone": "045-620-9926",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+      "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+      "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+      "sourceLocator": "14-100-A001／横浜駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-312fc4619d499f9ff743",
+    "legacyIds": [
+      "place:312fc4619d499f9ff743"
+    ],
+    "name": "横浜市旭区役所 地域振興課",
+    "address": "神奈川県横浜市旭区鶴ケ峰1-4-12",
+    "phone": "045-954-6095",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+      "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+      "snapshotSHA256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2",
+      "sourceLocator": "14-100-B001／横浜市旭区役所 地域振興課・旭区市民活動支援センター みなくる：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-697024c210b4424f12ca",
+    "legacyIds": [
+      "place:697024c210b4424f12ca"
+    ],
+    "name": "旭区市民活動支援センター みなくる",
+    "address": "神奈川県横浜市旭区鶴ケ峰2-82-1ココロット鶴ヶ峰4階",
+    "phone": "045-382-1000",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokohama.lg.jp/asahi/shokai/gaiyo/mascot/asahikunmanhorukado.html",
+      "snapshotPath": "data/evidence/national/kanto-south/f47abf023fa3205815ab.html",
+      "snapshotSHA256": "6f1abdf748877aa2139da104a3d8562ffec62d527e8ec4b89e48a4ee5ef0bcb2",
+      "sourceLocator": "14-100-B001／横浜市旭区役所 地域振興課・旭区市民活動支援センター みなくる：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-7d5b518b29440ef8d976",
+    "legacyIds": [
+      "place:7d5b518b29440ef8d976"
+    ],
+    "name": "桜木町駅観光案内所",
+    "address": "横浜市中区桜木町1-1(JR桜木町駅 南改札正面)",
+    "phone": "045-211-0111",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+      "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+      "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+      "sourceLocator": "14-100-D001／桜木町駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-a60af499924663813476",
+    "legacyIds": [
+      "place:a60af499924663813476",
+      "place:b504192ea2e346dd5657"
+    ],
+    "name": "かわさききたテラス(川崎市観光案内所)",
+    "address": "神奈川県川崎市川崎区駅前本町26-1(アトレ3階 かわさききたテラス内)",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+      "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+      "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+      "sourceLocator": "14-130-A001／かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-20ebba51b4a3684b8c98",
+    "legacyIds": [
+      "place:20ebba51b4a3684b8c98"
+    ],
+    "name": "川崎市入江崎水処理センター ワクワクアクア",
+    "address": "神奈川県川崎市川崎区塩浜3-17-1",
+    "phone": "044-287-5214",
+    "evidence": {
+      "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+      "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+      "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+      "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-bb7650c5cde340e005cf",
+    "legacyIds": [
+      "place:bb7650c5cde340e005cf"
+    ],
+    "name": "東海道かわさき宿交流館",
+    "address": "神奈川県川崎市川崎区本町1-8-4",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+      "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+      "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+      "sourceLocator": "14-130-C001／東海道かわさき宿交流館：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+    "legacyIds": [
+      "place:d3e8ff1b9fe8cdfa07d3"
+    ],
+    "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+    "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)",
+    "phone": "042-707-1840",
+    "evidence": {
+      "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+      "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+      "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+      "sourceLocator": "14-150-A001／相模原市役所 都市建設局 土木部 下水道経営課総務・計画班：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-121e759343c948057983",
+    "legacyIds": [
+      "place:121e759343c948057983"
+    ],
+    "name": "相模湖観光案内所",
+    "address": "相模原市緑区与瀬1183",
+    "phone": "042-649-0661",
+    "evidence": {
+      "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+      "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+      "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+      "sourceLocator": "14-150-B001／相模湖観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-4841d708a48958cb7a2c",
+    "legacyIds": [
+      "place:4841d708a48958cb7a2c"
+    ],
+    "name": "相模原市立博物館",
+    "address": "神奈川県相模原市中央区高根3-1-15",
+    "phone": "042-750-8030",
+    "evidence": {
+      "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+      "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+      "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+      "sourceLocator": "14-150-C001／相模原市立博物館：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-a917541f326ca3f8f2d7",
+    "legacyIds": [
+      "place:a917541f326ca3f8f2d7"
+    ],
+    "name": "さがみはらアンテナショップsagamix",
+    "address": "神奈川県相模原市南区相模大野3-2-1ボーノ相模大野ショッピングセンター2F",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+      "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+      "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+      "sourceLocator": "14-150-D001／さがみはらアンテナショップsagamix：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-6395cd4a64b6b5ba4d71",
+    "legacyIds": [
+      "place:6395cd4a64b6b5ba4d71"
+    ],
+    "name": "よこすか近代遺産ミュージアム ティボディエ邸",
+    "address": "横須賀市汐入町1丁目1 ヴェルニー公園内 / 横須賀市汐入町1丁目1 ヴェルニー公園内",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+      "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+      "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+      "sourceLocator": "14-201-C001／よこすか近代遺産ミュージアム ティボディエ邸：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+    "legacyIds": [
+      "place:b8a0f5c7b930cf13dc47"
+    ],
+    "name": "衣笠商店街サービスセンター",
+    "address": "神奈川県横須賀市衣笠栄町2丁目28",
+    "phone": "046-853-8686",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+      "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+      "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+      "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-ec19477e52b814868f78",
+    "legacyIds": [
+      "place:ec19477e52b814868f78"
+    ],
+    "name": "衣笠商店街事務所",
+    "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+      "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+      "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+      "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-2eec15147b3a40fb17b7",
+    "legacyIds": [
+      "place:2eec15147b3a40fb17b7"
+    ],
+    "name": "四之宮ふれあいセンター",
+    "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+    "phone": "0463-54-6419",
+    "evidence": {
+      "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+      "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+      "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+      "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:fujisawa-ukiyoe",
+    "legacyIds": [
+      "place:978ac04ba3db7f6eef3f"
+    ],
+    "name": "藤沢市藤澤浮世絵館",
+    "address": "藤沢市辻堂神台二丁目2番2号 ココテラス湘南7階",
+    "phone": "0466-33-0111",
+    "evidence": {
+      "sourceUrl": "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html",
+      "snapshotPath": "data/evidence/distribution-20261105/fujisawa-card.html",
+      "snapshotSHA256": "556355b55feda4882b8f5041e78314f95a83e8e48e361295f384bd2803b1fe5c",
+      "sourceLocator": "フジのデザイン蓋 / 在庫状況 / マンホールカード配布休止期間 / 配布場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内の施設名・住所と既存窓口を照合。施設位置の座標は未確認のため設定しない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-68c8d4aeece98d96c2d2",
+    "legacyIds": [
+      "place:68c8d4aeece98d96c2d2"
+    ],
+    "name": "藤沢市ふじさわ宿交流館",
+    "address": "神奈川県藤沢市西富一丁目3番3号",
+    "phone": "0466-55-2255",
+    "evidence": {
+      "sourceUrl": "https://www.city.fujisawa.kanagawa.jp/gesui-ke/manholecard.html",
+      "snapshotPath": "data/evidence/national/kanto-south/ff3e9464bbf9c7d91d5d.html",
+      "snapshotSHA256": "556355b55feda4882b8f5041e78314f95a83e8e48e361295f384bd2803b1fe5c",
+      "sourceLocator": "14-205-B001／藤沢市ふじさわ宿交流館：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:odawara-water-department",
+    "legacyIds": [
+      "place:552d8d67b111098ac519"
+    ],
+    "name": "小田原市上下水道局経営総務課",
+    "address": "神奈川県小田原市高田401",
+    "phone": "0465-41-1611",
+    "evidence": {
+      "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-a-gkp-20261021-fragment.html",
+      "snapshotSHA256": "e66fa7a9aa6149ff5b066ebb5bb07fa674622b69da7b04947985b29bcaa558f6",
+      "sourceLocator": "2026-10-21保存一覧の画像14-206-A-01.jpgを含むtr（原本からバイト列を抽出）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "過去の配布窓口の識別だけに保存済みGKPの原文を使用。現在の配布先の承認ではなく、座標も未設定。現在の配布休止は別の自治体原典で確認。"
+    }
+  },
+  {
+    "id": "facility:odawara-lusca-information",
+    "legacyIds": [
+      "place:18664d4641dd2b27e707"
+    ],
+    "name": "ラスカ小田原 1階インフォメーション",
+    "address": "神奈川県小田原市栄町1-1-9",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-card.html",
+      "snapshotSHA256": "097de9148395d730b7ed9379b9649c42d8e78e747b72cd66c166d20d09144296",
+      "sourceLocator": "E257系 特急踊り子 / 配布休止 / 配布場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内の施設名・住所と既存窓口を照合。施設位置の座標は未確認のため設定しない。"
+    }
+  },
+  {
+    "id": "facility:odawara-tokiwagi",
+    "legacyIds": [
+      "place:eae76abbf616c724f897"
+    ],
+    "name": "小田原城址公園常盤木門1階",
+    "address": "神奈川県小田原市城内6番1号",
+    "phone": "0465-33-1521(小田原市観光課)",
+    "evidence": {
+      "sourceUrl": "https://www.city.odawara.kanagawa.jp/field/water/sewer/topics/p24794.html",
+      "snapshotPath": "data/evidence/distribution-20261105/odawara-card.html",
+      "snapshotSHA256": "097de9148395d730b7ed9379b9649c42d8e78e747b72cd66c166d20d09144296",
+      "sourceLocator": "MFゴースト / 配布休止 / 配布場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内の施設名・住所と既存窓口を照合。施設位置の座標は未確認のため設定しない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-af1b056736ebfd481a88",
+    "legacyIds": [
+      "place:af1b056736ebfd481a88"
+    ],
+    "name": "茅ヶ崎市観光案内所",
+    "address": "神奈川県茅ヶ崎市元町1-1",
+    "phone": "0467-82-3986",
+    "evidence": {
+      "sourceUrl": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+      "snapshotPath": "data/evidence/national/kanto-south/720b1c2b2f378e5d4ce5.html",
+      "snapshotSHA256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e",
+      "sourceLocator": "14-207-A001／茅ヶ崎市観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-a07660a7c7a1892d710d",
+    "legacyIds": [
+      "place:a07660a7c7a1892d710d"
+    ],
+    "name": "道の駅「湘南ちがさき」",
+    "address": "神奈川県茅ケ崎市柳島1546番地1",
+    "phone": "0467-33-6360",
+    "evidence": {
+      "sourceUrl": "https://www.city.chigasaki.kanagawa.jp/kurasi_gesuido/1051217.html",
+      "snapshotPath": "data/evidence/national/kanto-south/720b1c2b2f378e5d4ce5.html",
+      "snapshotSHA256": "4440da5f11e4ec363bbbfe93840194031a5e38ba0d94beedcc45f97675505e8e",
+      "sourceLocator": "14-207-B001／道の駅「湘南ちがさき」：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-0ded97a30e37e98782cb",
+    "legacyIds": [
+      "place:0ded97a30e37e98782cb"
+    ],
+    "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+    "address": "神奈川県三浦市城山町1-1",
+    "phone": "046-882-1111",
+    "evidence": {
+      "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+      "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+      "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+      "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-490affe5c4d10543f6b8",
+    "legacyIds": [
+      "place:490affe5c4d10543f6b8"
+    ],
+    "name": "三浦市観光インフォメーションセンター",
+    "address": "神奈川県三浦市南下浦町上宮田1450-4",
+    "phone": "046-888-0588",
+    "evidence": {
+      "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+      "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+      "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+      "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-36fae9051046490c8149",
+    "legacyIds": [
+      "place:36fae9051046490c8149"
+    ],
+    "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+    "address": "神奈川県秦野市上大槻190番地",
+    "phone": "0463-81-4114",
+    "evidence": {
+      "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+      "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+      "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+      "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-281213c5dc294c44f2e5",
+    "legacyIds": [
+      "place:281213c5dc294c44f2e5"
+    ],
+    "name": "秦野駅観光案内所",
+    "address": "神奈川県秦野市大秦町1(小田急線秦野駅改札出て左)",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+      "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+      "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+      "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-a55cbd1271c9d705c190",
+    "legacyIds": [
+      "place:a55cbd1271c9d705c190"
+    ],
+    "name": "あつぎ郷土博物館",
+    "address": "神奈川県厚木市下川入1366-4",
+    "phone": "046-225-2515",
+    "evidence": {
+      "sourceUrl": "https://www.city.atsugi.kanagawa.jp/kurashi_tetsuzuki/gesuido/6/2/12503.html",
+      "snapshotPath": "data/evidence/national/kanto-south/10ef24435df8c17e3f45.html",
+      "snapshotSHA256": "1e3130f7a91931f8e16aeca488d5122de0f41c2afc38e72bb85283759fa07bcf",
+      "sourceLocator": "14-212-C001／あつぎ郷土博物館：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-53fcefb12220c8b3f170",
+    "legacyIds": [
+      "place:53fcefb12220c8b3f170"
+    ],
+    "name": "大和市イベント観光協会",
+    "address": "大和市大和南1-8-1 文化創造拠点シリウス2階",
+    "phone": "046-260-5799",
+    "evidence": {
+      "sourceUrl": "https://www.city.yamato.lg.jp/gyosei/soshik/17/keiei/gesuidouimeziappuzigyou/7111.html",
+      "snapshotPath": "data/evidence/national/kanto-south/9a64e5f26984e2977ec4.html",
+      "snapshotSHA256": "8a8fcbac3531b106c00faa9b7f55e9d1a7fcc1801d67ff4bb3a0af1d003dacda",
+      "sourceLocator": "14-213-A001／大和市イベント観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-ee83b23f6b285cc3df5a",
+    "legacyIds": [
+      "place:ee83b23f6b285cc3df5a"
+    ],
+    "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+    "address": "神奈川県伊勢原市神戸120",
+    "phone": "0463-92-3341",
+    "evidence": {
+      "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+      "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+      "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+      "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-c28de78bc3ef2c56b069",
+    "legacyIds": [
+      "place:c28de78bc3ef2c56b069"
+    ],
+    "name": "伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階",
+    "address": "神奈川県伊勢原市 小田急マルシェ伊勢原2階（伊勢原駅改札から南口方面）",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2014041100252/",
+      "snapshotPath": "data/evidence/national/kanto-south/e266e0b832b067cffe19.html",
+      "snapshotSHA256": "46e731b7b735ba7f02b79e244a0602730a05037f3098f574a205202d4cf9f622",
+      "sourceLocator": "伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階／場所・住所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式施設案内の所在地と配布案内の窓口を照合。座標は未確定。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-aeb79140eed0b8307a90",
+    "legacyIds": [
+      "place:aeb79140eed0b8307a90"
+    ],
+    "name": "海老名市立郷土資料館「海老名市温故館」",
+    "address": "海老名市国分南1-6-36",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.ebina.kanagawa.jp/guide/sumai/gesui/1017802/1013343.html",
+      "snapshotPath": "data/evidence/national/kanto-south/5ef08993635d5335b7c6.html",
+      "snapshotSHA256": "14a3507b7f54c634248a5ca1e3e2e4035e06f23727deab09be6e5553435ebc19",
+      "sourceLocator": "14-215-A001／海老名市立郷土資料館「海老名市温故館」：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-b64fec539bb095ff72ac",
+    "legacyIds": [
+      "place:b64fec539bb095ff72ac"
+    ],
+    "name": "一般社団法人座間市観光協会",
+    "address": "神奈川県座間市入谷東3丁目60番5号 小田急マルシェ2 2階",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.zama.kanagawa.jp/kurashi/suidou/gesuidou/oshirase/1002425.html",
+      "snapshotPath": "data/evidence/national/kanto-south/74a42548bafebab14bfe.html",
+      "snapshotSHA256": "698a4545949b0f97ecc3c237e7d78a1689097e25f5e9127876a79e1333eef3db",
+      "sourceLocator": "14-216-A001／一般社団法人座間市観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-cb4883502585afce7159",
+    "legacyIds": [
+      "place:cb4883502585afce7159"
+    ],
+    "name": "綾瀬市役所 下水道課",
+    "address": "神奈川県綾瀬市早川550番地",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/gesuidoka/shimimmuke/24488.html",
+      "snapshotPath": "data/evidence/national/kanto-south/177b7be8a969e57e0d41.html",
+      "snapshotSHA256": "76e8a7d3f0d84fc40857da42d4efef7ade4a874173afb27c1da9bfa02a73c79e",
+      "sourceLocator": "14-218-A001／綾瀬市役所 下水道課：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-0bf4d5f78b864f155cfa",
+    "legacyIds": [
+      "place:0bf4d5f78b864f155cfa"
+    ],
+    "name": "葉山町役場",
+    "address": "神奈川県三浦郡葉山町堀内2135",
+    "phone": "046-876-1111",
+    "evidence": {
+      "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+      "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+      "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+      "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+    "legacyIds": [
+      "place:040c3fa2cd62eb9cfd10"
+    ],
+    "name": "葉山しおさい公園",
+    "address": "神奈川県三浦郡葉山町一色2123-1",
+    "phone": "046-876-1140",
+    "evidence": {
+      "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+      "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+      "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+      "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:hayama-station-tourism",
+    "legacyIds": [
+      "place:db0cd5cb39d6397852ae"
+    ],
+    "name": "葉山町観光協会(葉山ステーション内)",
+    "address": "神奈川県三浦郡葉山町長柄1583-17",
+    "phone": "046-876-8824",
+    "evidence": {
+      "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+      "snapshotPath": "data/evidence/distribution-20261105/hayama-card.html",
+      "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+      "sourceLocator": "町制施行100周年記念デザイン（中学生以下の部） / 配布場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内の施設名・住所と既存窓口を照合。施設位置の座標は未確認のため設定しない。"
+    }
+  },
+  {
+    "id": "facility:hayama-nango-park-office",
+    "legacyIds": [
+      "place:cc3ddf352288576d814d"
+    ],
+    "name": "南郷上ノ山公園",
+    "address": "神奈川県三浦郡葉山町長柄1888-1",
+    "phone": "046-876-1100",
+    "evidence": {
+      "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+      "snapshotPath": "data/evidence/distribution-20261105/hayama-card.html",
+      "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+      "sourceLocator": "町制施行100周年記念デザイン（一般の部） / 配布場所",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内の施設名・住所と既存窓口を照合。施設位置の座標は未確認のため設定しない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-485fbfa17ab92813b49e",
+    "legacyIds": [
+      "place:485fbfa17ab92813b49e"
+    ],
+    "name": "中井町役場 上下水道課",
+    "address": "神奈川県足柄上郡中井町比奈窪56(2階)",
+    "phone": "0465-81-3903",
+    "evidence": {
+      "sourceUrl": "https://www.town.nakai.kanagawa.jp/kurashi_tetsuzuki/jogesuido/gesuido_jokaso/1223.html",
+      "snapshotPath": "data/evidence/national/kanto-south/2db1daf7ba3da4f553a0.html",
+      "snapshotSHA256": "7e74300b02ffc2b57710da5c98ebb8d8d333c40f47e058f481807f3a22db8767",
+      "sourceLocator": "14-361-A001／中井町役場 上下水道課・中井町役場 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-2ad63a854eacb188159f",
+    "legacyIds": [
+      "place:2ad63a854eacb188159f"
+    ],
+    "name": "中井町役場 宿直室",
+    "address": "神奈川県足柄上郡中井町比奈窪56(1階)",
+    "phone": "0465-81-1111",
+    "evidence": {
+      "sourceUrl": "https://www.town.nakai.kanagawa.jp/kurashi_tetsuzuki/jogesuido/gesuido_jokaso/1223.html",
+      "snapshotPath": "data/evidence/national/kanto-south/2db1daf7ba3da4f553a0.html",
+      "snapshotSHA256": "7e74300b02ffc2b57710da5c98ebb8d8d333c40f47e058f481807f3a22db8767",
+      "sourceLocator": "14-361-A001／中井町役場 上下水道課・中井町役場 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-c7ea6b482b25915147a4",
+    "legacyIds": [
+      "place:c7ea6b482b25915147a4"
+    ],
+    "name": "大井町役場 生活環境課窓口",
+    "address": "神奈川県足柄上郡大井町金子1995",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+      "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+      "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+      "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-b799e7b5b2b0681cf8ba",
+    "legacyIds": [
+      "place:b799e7b5b2b0681cf8ba"
+    ],
+    "name": "大井町役場 夜間休日窓口",
+    "address": "神奈川県足柄上郡大井町金子1995",
+    "phone": "0465-85-5011",
+    "evidence": {
+      "sourceUrl": "https://www.town.oi.kanagawa.jp/soshiki/9/manho-ruka-do.html",
+      "snapshotPath": "data/evidence/national/kanto-south/7f93a3c3539ec096caf2.html",
+      "snapshotSHA256": "e0e396417a9224d3c01323a38b2e2d66cd9d701c04a6a72a48b120046048bc6e",
+      "sourceLocator": "14-362-A001／大井町役場 生活環境課窓口・大井町役場 夜間休日窓口：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-cd067988a5b63b385eef",
+    "legacyIds": [
+      "place:cd067988a5b63b385eef"
+    ],
+    "name": "山北町観光協会",
+    "address": "神奈川県足柄上郡山北町山北1840-15",
+    "phone": "0465-75-2717",
+    "evidence": {
+      "sourceUrl": "http://www.town.yamakita.kanagawa.jp/0000006183.html",
+      "snapshotPath": "data/evidence/national/kanto-south/c1d217a5a8f8d331f89d.html",
+      "snapshotSHA256": "7a3f7b7cad66b505b3d25dbb064a187099656dfd3fdfb6ba1edbfe2e2d400627",
+      "sourceLocator": "14-364-A001／山北町観光協会：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-f090d8b71fa8f8cf401f",
+    "legacyIds": [
+      "place:f090d8b71fa8f8cf401f"
+    ],
+    "name": "愛川町役場 下水道課",
+    "address": "神奈川県愛甲郡愛川町角田251-1(3階)",
+    "phone": "046-285-6946",
+    "evidence": {
+      "sourceUrl": "https://www.town.aikawa.kanagawa.jp/soshiki/kensetsu/gesuido/gyomu/info/1522738459733.html",
+      "snapshotPath": "data/evidence/national/kanto-south/886d358f56d17cb5bf2f.html",
+      "snapshotSHA256": "c180434926cf0d0733d8cdd36ada318740a811e74d93a33b130fb3bcc7129c18",
+      "sourceLocator": "14-401-A001／愛川町役場 下水道課・愛川町役場 住民課窓口(1階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-be23567eba5b629c22b6",
+    "legacyIds": [
+      "place:be23567eba5b629c22b6"
+    ],
+    "name": "愛川町役場 住民課窓口(1階)",
+    "address": "神奈川県愛甲郡愛川町角田251-1（1階）",
+    "phone": "046-285-2111",
+    "evidence": {
+      "sourceUrl": "https://www.town.aikawa.kanagawa.jp/soshiki/kensetsu/gesuido/gyomu/info/1522738459733.html",
+      "snapshotPath": "data/evidence/national/kanto-south/886d358f56d17cb5bf2f.html",
+      "snapshotSHA256": "c180434926cf0d0733d8cdd36ada318740a811e74d93a33b130fb3bcc7129c18",
+      "sourceLocator": "14-401-A001／愛川町役場 下水道課・愛川町役場 住民課窓口(1階)：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-2c9f62b5c1d339aebb8b",
+    "legacyIds": [
+      "place:2c9f62b5c1d339aebb8b"
+    ],
+    "name": "清川村本庁舎1階 清川村環境上下水道課",
+    "address": "神奈川県愛甲郡清川村煤ヶ谷2216番地",
+    "phone": "046-288-3862",
+    "evidence": {
+      "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+      "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+      "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+      "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "id": "facility:kanto-south-a9e505e27500c811b2a5",
+    "legacyIds": [
+      "place:a9e505e27500c811b2a5"
+    ],
+    "name": "清川村本庁舎1階 宿直室",
+    "address": "神奈川県愛甲郡清川村煤ヶ谷2216番地",
+    "phone": "",
+    "evidence": {
+      "sourceUrl": "https://www.town.kiyokawa.kanagawa.jp/soshiki/machizukuri/3480.html",
+      "snapshotPath": "data/evidence/national/kanto-south/bb4474202256633be7c9.html",
+      "snapshotSHA256": "7d422b696d0ea4e491f4e2181fb1b32f503075a6179bd6a38244a69bbb664be4",
+      "sourceLocator": "14-402-A001／清川村本庁舎1階 清川村環境上下水道課・清川村本庁舎1階 宿直室：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  }
+]

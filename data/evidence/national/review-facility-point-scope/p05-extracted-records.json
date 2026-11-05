@@ -1,0 +1,79 @@
+{
+  "derivedFrom": "data/evidence/national/kanto-south-locations-kanagawa/202bb7bb6256b7f5b65e.zip",
+  "archiveSHA256": "13449bfe8a57ba522fd7a4035ef02d97ffb930f654044c5a26ce6ac316213759",
+  "archiveMember": "P05-22_14.geojson",
+  "memberSHA256": "ab095dfee10f03b5f462910fef519f730f56f81faab4254a00f6e04b42c2d122",
+  "derivedNotOriginalDownload": true,
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::6668"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14112",
+        "P05_002": "5",
+        "P05_003": "旭区市民活動支援センターみなくる",
+        "P05_004": "横浜市旭区鶴ケ峰2-82-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.55003436557533,
+          35.47484467697792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14214",
+        "P05_002": "3",
+        "P05_003": "市役所駅窓口センター",
+        "P05_004": "伊勢原市桜台1-1-7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.31351027970655,
+          35.396031339519574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14362",
+        "P05_002": "1",
+        "P05_003": "大井町役場",
+        "P05_004": "大井町金子1995"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.15664581966178,
+          35.326701516848516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "14402",
+        "P05_002": "1",
+        "P05_003": "清川村役場",
+        "P05_004": "清川村煤ヶ谷2216"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.2763758732199,
+          35.48233019463441
+        ]
+      }
+    }
+  ]
+}

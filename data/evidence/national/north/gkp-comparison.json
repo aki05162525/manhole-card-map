@@ -1,0 +1,2666 @@
+{
+  "schema": 1,
+  "sourceFileProvidedByIntegrator": "/tmp/gkp-current-design.html",
+  "sourceSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+  "note": "統合担当提供の2026-11-05取得HTMLおよび抽出JSONを参照。地域班による再取得なし。取得日時の根拠は統合担当のmanifestに帰属。単独の承認根拠には使用しない。",
+  "cards": [
+    {
+      "cardId": "01-100-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "札幌市下水道科学館",
+        "北海道札幌市北区麻生町8",
+        "電話：011-717-0046"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-100-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "札幌市環境プラザ",
+        "北海道札幌市北区北8条西3丁目札幌エルプラザ2階",
+        "電話：011-728-1667"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-100-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【5月～10月】大通公園観光案内所",
+        "北海道札幌市中央区大通西3丁目",
+        "電話:011-211-2376",
+        "【11月～4月】大通公園インフォメーションセンター＆オフィシャルショップ",
+        "北海道札幌市中央区大通西7丁目",
+        "電話:011-251-0438",
+        "（問合せ先）",
+        "札幌市下水道河川局経営企画課",
+        "電話:011-818-3452"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "函館市地域交流まちづくりセンター",
+        "北海道函館市末広町4-19",
+        "電話：0138-22-9700"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-203-A002",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "小樽市水道局本庁舎",
+        "北海道小樽市花園2-11-15",
+        "（問い合わせ先）",
+        "小樽市水道局 総務課",
+        "電話：0134-32-1171"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-204-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【5～10月】旭川市下水処理センターバナナ館",
+        "【11～4月】管理本館事務室",
+        "北海道旭川市神居町忠和287（旭川市下水処理センター2階）",
+        "電話：0166-62-3554"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-204-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "旭川観光物産情報センター",
+        "北海道旭川市宮下通8丁目3番1号（JR旭川駅東コンコース）",
+        "電話:0166-26-6665",
+        "（問合せ先）",
+        "旭川市水道局上下水道部総務課",
+        "電話:0166-24-3160"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-205-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "室蘭観光協会",
+        "北海道室蘭市海岸町1丁目5番1号",
+        "電話：0143-23-0102"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】釧路市上下水道部 南大通庁舎経営企画課",
+        "【休日】釧路市上下水道部 南大通庁舎守衛室",
+        "北海道釧路市南大通2-1-121",
+        "電話：0154-43-2169"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-206-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "阿寒湖まりむ館 観光インフォメーションセンター",
+        "北海道釧路市阿寒町阿寒湖温泉2丁目6-20",
+        "電話：0154-67-3200",
+        "(問合せ先)",
+        "釧路市上下水道部経営企画課",
+        "電話：0154-43-2169"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-206-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ルート38 音別館 おんぽーと",
+        "北海道釧路市音別町本町1-51",
+        "電話:01547-6-2532",
+        "（問合せ先）",
+        "釧路市上下水道部経営企画課",
+        "電話:0154-43-2169"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "とかち観光情報センター",
+        "北海道帯広市西2条南12丁目 エスタ帯広東館2階",
+        "電話：0155-23-6403"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-208-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】北見市上下水道局給排水課窓口",
+        "【休日】北見市上下水道局当直室",
+        "北海道北見市中ノ島町1-4-1（北見市上下水道局庁舎内）",
+        "電話：0157-25-1177"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-208-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】北見市上下水道局常呂上下水道課窓口（北見市役所常呂総合支所内）",
+        "北海道北見市常呂町字常呂323番地",
+        "電話：0152-54-2116",
+        "【休日】北見市役所 常呂総合支所 当直室",
+        "（問い合わせ先）",
+        "北見市上下水道局総務課",
+        "電話：0157-25-1177"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-212-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【水曜日以外】",
+        "留萌プラザ2F まちなか賑わい広場",
+        "留萌市開運町3丁目4番11号",
+        "電話：0164-56-4382",
+        "【水曜日】留萌市役所上下水道課",
+        "留萌市幸町1丁目11番地 分庁舎1階",
+        "電話：0164-42-2049"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-213-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】苫小牧市役所上下水道部下水道課",
+        "北海道苫小牧市旭町4-5-6",
+        "電話：0144-32-6592",
+        "【休日】苫小牧観光案内所",
+        "北海道苫小牧市表町5-11-5",
+        "（ふれんどビル1階）",
+        "電話：0144-34-2000",
+        "（問い合わせ先）",
+        "苫小牧市役所 上下水道部 下水道課",
+        "電話：0144-32-6592",
+        "（平日8:45～17:15まで）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-214-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】稚内市役所建設産業部水道企業室水道施設課",
+        "北海道稚内市中央3丁目2番1号",
+        "【休日】稚内市役所 警備室",
+        "電話：0162-23-6509"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-214-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "稚内副港市場 1階",
+        "カフェPotto",
+        "北海道稚内市港1丁目6-28"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-215-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "美唄市役所",
+        "北海道美唄市西3条南1丁目1番1号",
+        "電話:0126-62-3131"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-216-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "芦別市観光物産センター（道の駅スタープラザ芦別内）",
+        "北海道芦別市北4条東1-1",
+        "電話：0124-23-1437",
+        "（問い合わせ先）",
+        "芦別市経済建設部 上下水道課",
+        "電話：0124-27-7583"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-217-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "EBRI内 江別アンテナショップGET'S",
+        "北海道江別市東野幌町3-3",
+        "電話：011-398-9558",
+        "（問い合わせ先）",
+        "江別市水道部 総務課",
+        "電話：011-385-1213"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-217-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "江別市民活動センター・あい",
+        "江別市東野幌本町6-43",
+        "電話:011-374-1460",
+        "（問合せ先）",
+        "江別市水道部総務課",
+        "電話:011-385-1213"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-218-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "情報発信基地 AKABIRAベース",
+        "北海道赤平市幌岡町54",
+        "電話：0125-32-6760",
+        "（問い合わせ先）",
+        "赤平市役所 上下水道課",
+        "電話：0125-32-2218"
+      ],
+      "currentStatus": "suspended"
+    },
+    {
+      "cardId": "01-219-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "(平日)紋別市役所 水道部事業課 下水道施設係",
+        "(休日）紋別市役所 当直室",
+        "北海道紋別市幸町2-1-18",
+        "電話：0158-24-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-220-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅「羊のまち 侍・しべつ」",
+        "北海道士別市大通東5丁目440番地23",
+        "電話:0165-26-7353"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-221-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅「もち米の里☆なよろ」",
+        "北海道名寄市風連町西町334番地1",
+        "電話：01655-7-8686",
+        "（問い合わせ先）",
+        "北海道名寄市建設水道部上下水道室業務課",
+        "電話：01655-3-2511"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-221-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "なよろ観光まちづくり協会（駅前交流プラザ「よろーな」内）",
+        "北海道名寄市東1条南7丁目1番地10",
+        "電話:01654-9-4607",
+        "(問合せ先)",
+        "北海道名寄市建設水道部上下水道室業務課",
+        "電話:01655-3-2511"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-224-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】千歳市水道局庁舎2F経営管理課総務係窓口",
+        "北海道千歳市東雲町3丁目2番地5",
+        "電話：0123-24-3270",
+        "【休日】千歳市水道局庁舎1F管理員室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-225-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "たきかわ観光国際スクエア",
+        "北海道滝川市栄町4丁目9−1",
+        "電話:0125-28-8031"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-226-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "砂川市まちなか交流施設「すないる」",
+        "北海道砂川市西1条北2丁目1番20号",
+        "【休館日】砂川市役所当直室",
+        "北海道砂川市西6条北3丁目1番1号",
+        "（問合せ先）",
+        "砂川市役所都市計画課下水道係",
+        "電話:0125-74-8748"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-228-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅ライスランドふかがわ １階総合案内所",
+        "北海道深川市音江町字広里59番7",
+        "電話：0164-26-3636",
+        "(問合せ先)",
+        "深川市上下水道課",
+        "電話：0164-26-2365"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-229-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】【休日】富良野市役所1階 総合窓口",
+        "北海道富良野市弥生町1番1号",
+        "電話：0167-39-2317"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-229-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "富良野チーズ工房",
+        "北海道富良野市中五区",
+        "電話:0167-23-1156",
+        "（問合せ先）",
+        "富良野市上下水道課",
+        "電話:0167-39-2317"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-230-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "登別市役所都市整備部 下水道グループ",
+        "北海道登別市中央町6丁目11番地",
+        "電話：0143-85-9052"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-231-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道と川の駅 花ロードえにわ",
+        "北海道恵庭市南島松817-18",
+        "電話：0123-37-8787",
+        "（問い合わせ先）",
+        "恵庭市水道部下水道課",
+        "電話：0123-33-3127"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-231-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": null,
+      "currentStatus": "ended"
+    },
+    {
+      "cardId": "01-231-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "花の拠点（はなふる）「センターハウス」",
+        "北海道恵庭市南島松828-3",
+        "（問合せ先）",
+        "恵庭市水道部下水道課",
+        "電話:0123-33-3127"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-234-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "エルフィンパーク市民サービスコーナー",
+        "北海道北広島市中央6-209",
+        "電話：011-376-8880",
+        "【4月から5月】9:30から18:00まで",
+        "【6月から8月】9:00から19:00まで",
+        "【9月から10月】9:30から18:00まで",
+        "【11月から3月】10:00から16:00まで",
+        "※年末年始【12月31日から1月3日】は配布をお休みします。"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-234-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "HUB HOKKAIDO SELECT SHOP",
+        "北海道北広島市Fビレッジ1番地 THELODGE2階",
+        "電話:080-4323-8935",
+        "（問合せ先）",
+        "北広島市水道部下水道課",
+        "電話:011-372-3311"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-235-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅石狩 あいろーど厚田",
+        "北海道石狩市厚田区厚田98-2",
+        "電話：0133-78-2300"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-235-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "石狩市観光センター「ゆめぽーと」",
+        "北海道石狩市親船町107番地",
+        "電話:0133-62-4611"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-236-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "北斗市観光交流センター内 北斗市観光案内所（1階）",
+        "北海道北斗市市渡1丁目1番1号",
+        "電話：0138-84-1147",
+        "（問い合わせ先）",
+        "北斗市役所上下水道課",
+        "電話：0138-73-3111（内線245）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-303-A002",
+      "presentInCurrent": false,
+      "placeChanged": false,
+      "currentRawPlace": [],
+      "currentStatus": null
+    },
+    {
+      "cardId": "01-334-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅みそぎの郷 きこない 観光案内所",
+        "北海道上磯郡木古内町字本町338-14",
+        "電話：01392-2-3161"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-362-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅上ノ国もんじゅ",
+        "北海道檜山郡上ノ国町字原歌3番地",
+        "電話：0139-55-3955"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-402-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅いわない ガイドセンター たら丸館",
+        "北海道岩内郡岩内町字万代47-4",
+        "電話：0135-63-1155",
+        "（問い合わせ先）",
+        "岩内町役場建設水道部 上下水道課",
+        "電話：0135-67-7093"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-406-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "古平町総合施設「かなえーる」（古平町役場内）",
+        "北海道古平郡古平町大字浜町50番地",
+        "電話：0135-42-2181"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-424-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "奈井江町交流プラザみなクル",
+        "北海道空知郡奈井江町字奈井江町74番地",
+        "電話:0125-74-5574"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-453-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】東神楽町役場建設水道課",
+        "北海道上川郡東神楽町南１条西１丁目３番２号",
+        "電話：0166-83-5414",
+        "【休日】東神楽町役場守衛室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-454-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【火曜日以外】当麻町郷土資料館ここから",
+        "北海道上川郡当麻町4条南3丁目1番41号",
+        "電話：0166-56-1123",
+        "【火曜日】当麻町役場まちづくり推進課",
+        "北海道上川郡当麻町3条東2丁目11番1号",
+        "電話：0166-84-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-460-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】上富良野町役場建設水道課",
+        "北海道空知郡上富良野町大町2丁目2番11号",
+        "電話：0167-45-6982",
+        "【休日】上富良野町役場警備室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-462-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】南富良野浄化センター",
+        "南富良野町字幾寅505番地5",
+        "電話:0167-52-2524",
+        "【土日】保健福祉センター（みなくる）管理人室",
+        "南富良野町字幾寅708番地1",
+        "電話:0167-52-2211"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-464-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】和寒町役場 産業振興課",
+        "【休日】和寒町役場 守衛室",
+        "北海道上川郡和寒町字西町120",
+        "電話：0165-32-2423",
+        "【平日・休日】わっさむ町食と観光情報案内所",
+        "北海道上川郡和寒町字北町200番地"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-465-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【水曜日以外】絵本の館",
+        "北海道上川郡剣淵町緑町15-3",
+        "電話：0165-34-2624【水曜のみ】剣淵町役場 建設課窓口",
+        "北海道上川郡剣淵町仲町37-1",
+        "（問い合わせ先）",
+        "剣淵町役場 建設課 上下水道グループ",
+        "電話：0165-26-9024"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-487-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "天塩町ファミリースポーツセンター",
+        "北海道天塩郡天塩町字川口5702番地の1",
+        "電話：01632-2-1873"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-487-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】天塩町役場建設課(２F)",
+        "【土日祝日】天塩町役場当直室(１F)",
+        "北海道天塩郡天塩町新栄通8丁目",
+        "電話：01632-2-1001"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-487-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "てしお温泉「夕映」",
+        "北海道天塩郡天塩町サラキシ5807番地4",
+        "電話:01632-2-3111",
+        "（問合せ先）",
+        "天塩町役場 建設課 下水道係",
+        "電話:01632-2-1001"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-516-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】豊富町役場 建設課 上下水道係窓口",
+        "北海道天塩郡豊富町字豊富大通6丁目",
+        "電話：0162-82-1001",
+        "【休日】豊富町役場宿直室（役場裏玄関）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-516-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "湯の杜ぽっけ",
+        "北海道天塩郡豊富町字温泉",
+        "電話:0162-73-6850"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-516-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "豊富町定住支援センター（ふらっと★きた）",
+        "北海道天塩郡豊富町字豊富東1条6丁目",
+        "電話：0162-82-2211"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-516-D001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "豊富町観光情報センター",
+        "北海道天塩郡豊富町字豊富駅前通（JR豊富駅となり）",
+        "電話：0162-82-2100"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-518-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】利尻町役場建設課",
+        "北海道利尻郡利尻町沓形字緑町14番地1",
+        "電話:0163-84-2345",
+        "【休日（土・日・祝日）】交流促進施設どんと1階郷土資料室（図書室）",
+        "北海道利尻郡利尻町字富士見町2番地2"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-520-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【木曜日以外】ホロカル",
+        "北海道天塩郡幌延町1条北1丁目28番地（幌延駅構内）",
+        "電話:01632-9-7780",
+        "【木曜日】幌延町産業地域振興センター",
+        "北海道幌延町栄町5番地3",
+        "（問合せ先）",
+        "幌延町産業建設課",
+        "電話:01632-5-1116"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-545-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅 うとろ・シリエトク",
+        "北海道斜里郡斜里町ウトロ西186-8",
+        "(問合せ先)",
+        "斜里町役場 水道課 事業係",
+        "電話：0152-26-8385"
+      ],
+      "currentStatus": "suspended"
+    },
+    {
+      "cardId": "01-555-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "遠軽町芸術文化交流プラザ-メトロプラザ",
+        "北海道紋別郡遠軽町岩見通南１丁目１－２",
+        "電話:0158-46-7151"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-560-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅香りの里たきのうえ",
+        "北海道紋別郡滝上町旭町",
+        "電話:0158-29-3300",
+        "（問合せ先）",
+        "滝上町役場 農林建設課上下水道係",
+        "電話:0158-29-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-563-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅おうむ",
+        "紋別郡雄武町雄武1885番地14",
+        "電話：0158-84-2403",
+        "(問合せ先)",
+        "雄武町役場上下水道課下水道係",
+        "電話：0158-84-2121"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-585-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅あびらＤ５１ステーション",
+        "北海道勇払郡安平町追分柏が丘49-1",
+        "電話:0145-29-7751",
+        "(問合せ先)",
+        "安平町役場建設課土木・公園グループ",
+        "電話：0145-29-7075（直通）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-607-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】浦河町役場 上下水道課",
+        "【休日】浦河町役場 警備室",
+        "北海道浦河郡浦河町築地1丁目3番1号",
+        "電話：0146-22-2554"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-631-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ガーデンスパ十勝川温泉",
+        "河東郡音更町十勝川温泉北14丁目1",
+        "電話：0155-46-2447",
+        "(問合せ先)",
+        "音更町役場建設水道部上下水道課",
+        "北海道河東郡音更町元町2番地",
+        "電話：0155-42-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-633-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】上士幌町役場建設課",
+        "北海道河東郡上士幌町字上士幌東3線238番地",
+        "電話:01564-2-4297",
+        "【土日祝日】道の駅かみしほろ",
+        "北海道河東郡上士幌町字上士幌東3線227番地",
+        "電話:01564-7-7722"
+      ],
+      "currentStatus": "suspended"
+    },
+    {
+      "cardId": "01-634-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "①【日、月、火、金、土、祝祭日】鹿追町観光インフォメーションデスク",
+        "北海道河東郡鹿追町東町1丁目9",
+        "電話:0156-66-1135",
+        "②【水、木】鹿追町役場商工観光課",
+        "北海道河東郡鹿追町東町1丁目15番地1",
+        "電話:0156-66-4034"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-635-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】新得町役場施設課窓口",
+        "【休日】新得町役場警備員室",
+        "北海道上川郡新得町3条南4丁目26番地",
+        "電話:0156-64-0529",
+        "（問合せ先）",
+        "新得町役場施設課上下水道係",
+        "電話:0156-64-0529"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-635-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "新得駅前地域交流センターとくとく 1F 総合案内所",
+        "北海道上川郡新得町本通南1丁目21番地22",
+        "電話:0156-67-9170",
+        "※訪れる際は、あらかじめSNS等をご確認ください",
+        "（問合せ先）",
+        "新得町施設課上下水道係",
+        "電話:0156-64-0529"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-647-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】 足寄下水終末処理場",
+        "北海道足寄郡足寄町共栄町120-5",
+        "電話：0156-25-9070",
+        "【土日祝日】 足寄町役場裏警備員室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-647-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】足寄町役場２階建設課上下水道室",
+        "北海道足寄郡足寄町北1条4丁目48番地1",
+        "電話：0156-28-3868",
+        "【土日祝日】足寄町役場警備員室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-648-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】陸別町役場 建設課",
+        "【休日】陸別町役場 警備室",
+        "北海道足寄郡陸別町字陸別東1条3-1",
+        "電話：0156-27-2141",
+        "※平日・休日ともに12:00～13:00は除く"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-691-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】別海町役場建設水道部上下水道課",
+        "北海道野付郡別海町別海常盤町280番地",
+        "電話：0153-75-2111",
+        "【休日】別海町役場警備室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "01-693-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "生涯学習センターあすぱる",
+        "北海道標津郡標津町南1条西5丁目5-3",
+        "電話:0153-82-2900",
+        "（問合せ先）",
+        "標津町役場建設水道課",
+        "電話:0153-85-7247"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-201-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "「道の駅」浅虫温泉 ゆ～さ浅虫",
+        "青森県青森市大字浅虫字螢谷341-19",
+        "電話：017-737-5151",
+        "（問い合わせ先）",
+        "青森市水道部総務課",
+        "電話：017-734-4201"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "弘前市緑の相談所",
+        "青森県弘前市下白銀町1-1",
+        "電話：0172-33-8737",
+        "（問い合わせ先）",
+        "弘前市上下水道部総務課",
+        "電話：0172-55-9660"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-205-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "立佞武多の館",
+        "青森県五所川原市大町506-10",
+        "電話:0173-38-3232",
+        "(問合せ先)",
+        "五所川原市役所経営管理課下水道管理係",
+        "0173-35-2111 内線2720"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "十和田市観光物産センター",
+        "青森県十和田市稲生町15-3（アートステーショントワダ内）",
+        "電話：0176-24-3006"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "SkyPlazaMISAWA（スカイプラザミサワ）",
+        "青森県三沢市中央町２丁目8-34",
+        "電話：0176-51-1712",
+        "(問合せ先)",
+        "三沢市役所 下水道課",
+        "0176-53-5111（内線335・378）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-208-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "北の防人大湊 安渡館",
+        "青森県むつ市桜木町3番1号",
+        "電話:0175-29-3101",
+        "（問合せ先）",
+        "むつ市上下水道局下水道課",
+        "電話:0175-28-3233"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-210-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "平川市ふるさとセンター",
+        "青森県平川市猿賀石林94",
+        "電話:0172-40-2231",
+        "（問合せ先）",
+        "平川市上下水道課",
+        "電話:0172-55-5383"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-441-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】三戸町役場建設課",
+        "青森県三戸郡三戸町大字在府小路町43",
+        "電話：0179-20-1154",
+        "【土日祝日】道の駅さんのへ",
+        "青森県三戸郡三戸町大字川守田字西張渡39-1",
+        "電話：0179-22-0600"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-445-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "南部公民館",
+        "青森県三戸郡南部町大字沖田面字沖中51番地２",
+        "電話:0179-34-2800",
+        "【休館日】",
+        "南部町いちょうホール",
+        "青森県三戸郡南部町大字平字広場28番地1",
+        "電話:0178-38-5970"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "02-445-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "南部町いちょうホール",
+        "青森県三戸郡南部町大字平字広場28番地1",
+        "電話:0178-38-5970"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-000-A001",
+      "presentInCurrent": false,
+      "placeChanged": false,
+      "currentRawPlace": [],
+      "currentStatus": null
+    },
+    {
+      "cardId": "03-201-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "もりおか歴史文化館",
+        "岩手県盛岡市内丸1-50",
+        "（問合せ先）",
+        "盛岡市上下水道局経営企画課",
+        "電話：019-623-1443"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-201-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "パルクアベニュー・カワトク",
+        "岩手県盛岡市菜園一丁目10-1",
+        "（問合せ先）",
+        "盛岡市上下水道局経営企画課",
+        "電話:019-623-1443"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-201-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "もりおか歴史文化館",
+        "岩手県盛岡市内丸1-50",
+        "（問合せ先）",
+        "盛岡市上下水道局経営企画課",
+        "電話：019-623-1443"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅・みなとオアシスみやこ",
+        "岩手県宮古市臨港通1-20",
+        "電話：0193-71-3100",
+        "（問合せ先）",
+        "宮古市上下水道部施設課",
+        "電話：0193-71-2299"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-202-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅たろう たろう潮里ステーション",
+        "岩手県宮古市田老二丁目5－1",
+        "電話：0193-77-3305",
+        "（問合せ先）",
+        "宮古市上下水道部施設課",
+        "電話：0193-71-2299"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-202-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ひきめの里直売所",
+        "岩手県宮古市蟇目13-3-1",
+        "電話:0193-72-3383",
+        "（問合せ先）",
+        "宮古市上下水道部施設課",
+        "電話:0193-71-2299"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-205-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】花巻市役所 建設部 下水道課",
+        "岩手県花巻市花城町9-30（市役所新館2階）",
+        "電話：0198-24-2111",
+        "【休日】花巻市役所本庁舎警備員室（本庁舎1階守衛室）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-205-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "花巻市役所石鳥谷総合支所",
+        "岩手県花巻市石鳥谷町八幡4-161",
+        "電話：0198-45-2111（内線251）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-205-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "花巻市役所大迫総合支所",
+        "花巻市大迫町大迫2-51-4",
+        "電話：0198-48-2111(内線155)"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-205-D001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】花巻市東和総合支所 地域振興課",
+        "岩手県花巻市東和町土沢8区60番地",
+        "電話：0198-42-2111（内線342）",
+        "【休日】花巻市東和総合支所 警備員室",
+        "花巻市東和町土沢8区60番地"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "展勝地レストハウス",
+        "岩手県北上市立花14地割21-1",
+        "電話:0197-64-2110",
+        "（問合せ先）",
+        "北上市都市整備部下水道課",
+        "電話:0197-72-8292"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "駅前観光交流センターYOMUNOSU",
+        "岩手県久慈市中央3丁目58",
+        "電話：0194-52-7777",
+        "（問い合わせ先）",
+        "久慈市役所下水道整備課",
+        "電話：0194-52-2189"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-208-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅みやもり内 めがねばし直売所",
+        "岩手県遠野市宮守町下宮守30地割37番地1",
+        "電話:0198-67-2929",
+        "(問合せ先)",
+        "遠野市環境整備部上下水道課",
+        "電話:0198-62-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-210-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "岩手県指定有形文化財旧吉田家住宅主屋",
+        "岩手県陸前高田市気仙町字町裏200番8",
+        "電話:0192-22-8872"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-210-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "陸前高田市総合交流センター（夢アリーナたかた）",
+        "岩手県陸前高田市高田町字太田5番地",
+        "電話:0192-22-8448"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-211-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "釜石観光案内所",
+        "岩手県釜石市鈴子町22-1 シープラザ釜石1階",
+        "電話：0193-27-8172"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-211-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "釜石魚河岸にぎわい館「魚河岸テラス」",
+        "岩手県釜石市魚河岸3番3",
+        "電話：0193-27-5566"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-211-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "いのちをつなぐ未来館",
+        "岩手県釜石市鵜住居町4丁目901",
+        "電話:0193-27-5666"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-213-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "なにゃーと物産センター（二戸広域観光物産センター1F）",
+        "岩手県二戸市石切所字森合68番地",
+        "電話：0195-22-4395",
+        "(問合せ先)",
+        "二戸市建設整備部下水道課",
+        "(平日8:30～17:15）",
+        "電話：0195-29-1130"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-216-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ビッグルーフ滝沢",
+        "岩手県滝沢市下鵜飼1－15",
+        "電話：019－656－7811"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-216-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】岩手県滝沢市施設課",
+        "岩手県滝沢市中鵜飼55",
+        "電話:019-656-6581",
+        "【土日祝日】ビッグルーフ滝沢",
+        "岩手県滝沢市下鵜飼1-15",
+        "電話:019-656-781"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-441-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅種山ケ原ぽらん",
+        "岩手県気仙郡住田町世田米字子飼沢30-39",
+        "電話:0197-38-2215",
+        "（問合せ先）",
+        "住田町役場建設課",
+        "電話:0192-46-2115"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-482-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅やまだ「おいすた」",
+        "岩手県下閉伊郡山田町山田第５地割66番地1",
+        "電話:0193-65-6631",
+        "（問合せ先）",
+        "山田町上下水道課下水道チーム",
+        "電話:0193-82-3111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "03-506-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅おりつめ 産直施設オドデ館",
+        "岩手県九戸郡九戸村大字山屋2-28-1",
+        "電話：0195-42-4400"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-000-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】石巻浄化センター（（株）アイ・ケー・エス）",
+        "宮城県石巻市蛇田字新〆切5-2",
+        "電話:0225-94-1994",
+        "【土日祝】みやぎ東日本大震災津波伝承館（受付）",
+        "宮城県石巻市南浜町2丁目1-56",
+        "電話:0225-98-8081",
+        "（問い合わせ先）",
+        "宮城県東部下水道事務所",
+        "電話:0225-23-7381"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-000-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内",
+        "岩沼市下野郷字赤江川1-3",
+        "電話:0223-22-1382",
+        "※お越しの際は、管理棟入り口正面の内線電話から連絡をお願いします",
+        "【休日】道の駅「村田」（村田町物産交流センター）",
+        "柴田郡村田町大字村田字北塩内41",
+        "電話:0224-83-5505",
+        "(問合せ先)",
+        "宮城県中南部下水道事務所",
+        "電話:022-367-4003"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-000-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "宮城県伊豆沼・内沼サンクチュアリセンター",
+        "宮城県栗原市若柳字上畑岡敷味17-2",
+        "電話：0228-33-2216",
+        "(問合せ先)",
+        "宮城県東部下水道事務所",
+        "電話：0225-23-7381"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-000-D001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "仙台港多賀城地区緩衝緑地 管理事務所",
+        "宮城県多賀城市大代1丁目16-1",
+        "電話:022-353-6903",
+        "（問合せ先）",
+        "宮城県中南部下水道事務所",
+        "電話:022-367-4003"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-100-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "せんだいメディアテーク",
+        "宮城県仙台市青葉区春日町2-1",
+        "電話：022-713-3171",
+        "（問い合わせ先）",
+        "仙台市建設局経営企画課",
+        "電話：022-214-8812"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "石巻市かわまち交流センター",
+        "宮城県石巻市中央二丁目11番17",
+        "電話：0225-93-6448"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-202-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "石ノ森萬画館",
+        "宮城県石巻市中瀬2番7号",
+        "電話:0225-96-5055",
+        "※令和8年10月19日から令和9年4月上旬まで配布場所が下記に変更になります（変更期間の最終日については、工事の進捗状況等によって変わる可能性があります）",
+        "石巻市かわまち交流センター",
+        "石巻市中央二丁目11番17",
+        "（問合せ先）",
+        "石巻市建設部下水道管理課水洗化収納係",
+        "電話:0225-95-1111（内線5684）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "白石城歴史探訪ミュージアム",
+        "宮城県白石市益岡町1-16",
+        "電話：0224-24-3030"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ウイングプラザ（名取駅コミュニティプラザ）",
+        "宮城県名取市手倉田字八幡287-15",
+        "電話：022-383-6330",
+        "（問い合わせ先）",
+        "名取市建設部下水道課",
+        "電話：022-724-7131"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-207-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "名取市観光物産協会 ナトリサン",
+        "宮城県名取市杜せきのした５丁目３−１（イオンモール名取１Ｆ）",
+        "電話：022-382-6526",
+        "（問合せ先）",
+        "名取市建設部下水道課",
+        "電話:022-724-7131"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-207-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "名取市観光物産協会陣中仙台国際空港店２階",
+        "宮城県名取市下増田字南原無番地",
+        "（問合せ先）",
+        "名取市建設部下水道課",
+        "電話:022-724-7131"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-209-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "多賀城市埋蔵文化財調査センター展示室（多賀城市文化センター内）",
+        "宮城県多賀城市中央2-27-1",
+        "電話：022-368-0134",
+        "（問合せ先）",
+        "多賀城市上下水道部企業経営課",
+        "電話:022-745-8049"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-209-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "史都多賀城観光案内所（JR仙石線多賀城駅）",
+        "宮城県多賀城市中央2-1-7",
+        "電話：022-364-5901",
+        "（問合せ先）",
+        "多賀城市上下水道部企業経営課",
+        "電話:022-745-8049"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-209-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "多賀城跡ガイダンス施設（中央公園内）",
+        "宮城県多賀城市市川立石3",
+        "電話：022-781-8101",
+        "（問合せ先）",
+        "多賀城市上下水道部企業経営課",
+        "電話:022-745-8049"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-214-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "東松島市震災復興伝承館",
+        "宮城県東松島市野蒜北余景56-36",
+        "電話：0225-86-2985",
+        "【定休日】",
+        "東松島市奥松島観光物産交流センター",
+        "宮城県東松島市野蒜ケ丘一丁目15番地1",
+        "電話：0225-88-2611"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-214-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "東松島商工会",
+        "東松島市矢本字河戸7番地",
+        "電話:0225-82-2088",
+        "【定休日】",
+        "東松島市震災復興伝承館",
+        "宮城県東松島市野蒜北景56-36",
+        "電話:0225-86-2985"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-214-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "東松島市役所 鳴瀬庁舎2階 都市整備課窓口",
+        "宮城県東松島市小野字 新宮前5番地",
+        "電話:0225-82-1111",
+        "【定休日】",
+        "東松島市震災復興伝承館",
+        "宮城県東松島市野蒜北景56-36",
+        "電話:0225-86-2985"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-216-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "富谷宿観光交流ステーションとみやど",
+        "宮城県富谷市富谷新町111-１",
+        "電話:022-347-3344",
+        "（問合せ先）",
+        "富谷市建設部上下水道課",
+        "電話:022-358-0529"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-321-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】大河原町役場 上下水道課",
+        "【休日】大河原町役場 守衛室",
+        "宮城県柴田郡大河原町字新南19",
+        "電話：0224-53-2116"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-361-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】亘理町上下水道課",
+        "宮城県亘理郡亘理町字悠里1",
+        "電話：0223-34-0515",
+        "【土日】亘理町立郷土資料館",
+        "宮城県亘理郡亘理町字西郷140",
+        "電話：0223-34-8701",
+        "【祝日、年末年始】亘理町役場 警備員室",
+        "宮城県亘理郡亘理町字悠里1",
+        "電話：0223-34-0515"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-404-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "七ヶ浜国際村",
+        "宮城県宮城郡七ヶ浜町花渕浜字大山1-1",
+        "(問い合わせ先)",
+        "七ヶ浜町水道事業所",
+        "電話：022-357-7458"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-404-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【開館日】七ヶ浜国際村",
+        "宮城県宮城郡七ヶ浜町花渕浜字大山1-1",
+        "電話:022-357-5931",
+        "【休館日】七ヶ浜町上下水道事業所",
+        "宮城県宮城郡七ヶ浜町東宮浜字丑谷辺5-1",
+        "電話:022-357-7457"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-406-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "利府町役場町民交流館「ペア・パル利府」",
+        "宮城県宮城郡利府町利府字新並松４番地",
+        "電話:022-767-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-406-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "利府町上下水道部上下水道課",
+        "宮城県宮城郡利府町利府字新並松4番地",
+        "電話:022-767-2126"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-421-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "大和町ふれあい文化創造センター",
+        "宮城県黒川郡大和町吉岡南二丁目4－14",
+        "電話：022-344-4401",
+        "（問合せ先）",
+        "大和町上下水道課",
+        "電話：022-345-2850"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-442-A001",
+      "presentInCurrent": false,
+      "placeChanged": false,
+      "currentRawPlace": [],
+      "currentStatus": null
+    },
+    {
+      "cardId": "04-424-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【開庁日】大衡村役場1階都市建設課",
+        "宮城県黒川郡大衡村大衡字平林62番地",
+        "電話:022-341-8516",
+        "【閉庁日】大衡村役場守衛室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-424-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "万葉・おおひら館",
+        "宮城県黒川郡大衡村大衡字鐙沢12番地2",
+        "電話:022-347-2188",
+        "（問合せ先）",
+        "大衡村役場都市建設課",
+        "電話:022-341-8516"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-501-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "わくや万葉の里 天平ろまん館",
+        "宮城県遠田郡涌谷町涌谷字黄金山1-3",
+        "電話：0229-43-2100"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "04-581-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "女川町たびの情報館ぷらっと",
+        "宮城県牡鹿郡女川町女川浜字大原479番地の20 SG-7街区1画地",
+        "電話：0225-54-4328"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-201-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "秋田市上下水道局 下水道整備課",
+        "秋田県秋田市川尻みよし町14-8",
+        "電話：018-864-1455"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-201-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅あきた港セリオン",
+        "秋田県秋田市土崎港西1-9-1",
+        "電話：018-857-3381"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "能代バスケミュージアム",
+        "秋田県能代市柳町5-20",
+        "電話:0185-88-8876",
+        "(問合せ先)",
+        "能代市下水道課下水道管理係",
+        "電話:0185-89-2202"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-203-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "横手市ふれあいセンターかまくら館",
+        "秋田県横手市中央町8-12",
+        "電話:0182-33-7111",
+        "（問合せ先）",
+        "横手市上下水道部下水道課",
+        "電話:0182-35-2253"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "「道の駅おが」男鹿市複合観光施設オガーレ",
+        "秋田県男鹿市船川港船川字新浜町1-19",
+        "電話:0185-47-7515",
+        "(問合せ先)",
+        "男鹿市企業局ガス上下水道課下水道班",
+        "電話:0185-46-4132"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-211-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "てんのうグリーンマーケット(道の駅てんのう)",
+        "秋田県潟上市天王字江川上谷地109-2",
+        "電話:018-878-6588",
+        "（問合せ先）",
+        "潟上市上下水道課",
+        "電話:018-853-5338"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "05-212-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "花火伝統文化継承資料館はなび・アム",
+        "秋田県大仙市大曲大町7-19",
+        "(問合せ先)",
+        "大仙市上下水道局下水道課",
+        "秋田県大仙市大曲花園町１番１号",
+        "電話：0187-63-1111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-000-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】山形浄化センター",
+        "山形県天童市大字大町字西原1915（（公財）山形県建設技術センター 下水道事業所）",
+        "電話：023-654-8400",
+        "【休日】大石田町役場時間外受付窓口",
+        "(山形県北村山郡大石田町緑町1番地)",
+        "（問い合わせ先）",
+        "山形県県土整備部 下水道課",
+        "電話：023-630-2590"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-201-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅やまがた蔵王",
+        "山形県山形市表蔵王79番地1",
+        "電話:023-676-6868",
+        "（問合せ先）",
+        "山形市上下水道部経営企画課",
+        "電話:023-645-1177"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-201-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "最上義光歴史館",
+        "山形県山形市大手町1-53",
+        "電話:023-625-7101",
+        "【「最上義光歴史館」の休館日】",
+        "山形市上下水道施設管理センター 2階 経営企画課窓口",
+        "山形県山形市南石関27",
+        "（問合せ先）",
+        "山形市上下水道部",
+        "電話:023-645-1177"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅米沢",
+        "山形県米沢市川井1039-1",
+        "電話:0238-40-8400",
+        "（問合せ先）",
+        "米沢市観光文化スポーツ部観光課",
+        "電話:0238-22-5111"
+      ],
+      "currentStatus": "suspended"
+    },
+    {
+      "cardId": "06-203-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "鶴岡市下水道部",
+        "山形県鶴岡市のぞみ町2-10",
+        "電話：0235-23-7731"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-203-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "鶴岡市観光案内所",
+        "鶴岡市末広町3-1 マリカ東館1F（FOODEVER内）",
+        "電話：0235-25-7678",
+        "（問い合わせ先）",
+        "鶴岡市下水道部総務課",
+        "電話：0235-23-7731"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-204-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "酒田駅前観光案内所(酒田駅前交流拠点施設ミライニ内)",
+        "山形県酒田市幸町一丁目10番1号",
+        "電話：0234-24-2454",
+        "(問合せ先)",
+        "酒田市建設部下水道課",
+        "電話:0234-22-1832"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-205-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "新庄ふるさと歴史センター",
+        "山形県新庄市堀端町4番74号",
+        "電話：0233-22-2188"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-206-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅寒河江チェリーランド（総合観光案内所内）",
+        "山形県寒河江市大字八鍬字川原919-6",
+        "電話：0237-86-1818"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "かみのやま温泉観光案内所（ＪＲかみのやま温泉駅前）",
+        "山形県上山市矢来1-2-1",
+        "電話：023-672-5703",
+        "（問合せ先）",
+        "上山市役所上下水道課",
+        "電話：023-672-1111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-210-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】",
+        "天童市上下水道事業所",
+        "山形県天童市老野森1-3-25",
+        "電話：023-654-1111（内線443）",
+        "【平日・土日祝日】",
+        "天童市森林情報館「もり〜な天童」（道の駅天童温泉内）",
+        "天童市鍬ノ町二丁目３番41号"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-210-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "天童市将棋資料館",
+        "山形県天童市本町一丁目1番1号",
+        "電話:023-653-1690",
+        "（問合せ先）",
+        "天童市上下水道事業所上下水道課",
+        "023-654-1111（内線443）"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-211-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "東根市観光物産協会",
+        "山形県東根市さくらんぼ駅前1-1-1（さくらんぼ東根駅1階）",
+        "電話：0237-41-1200",
+        "（問い合わせ先）",
+        "東根市上下水道部上下水道課",
+        "電話：0237-42-1111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-213-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】南陽市上下水道課 水道庁舎",
+        "山形県南陽市三間通466-15",
+        "電話：0238-40-3211（内線343）",
+        "【休日】赤湯温泉観光センター・ゆーなびからころ館",
+        "南陽市赤湯754-2",
+        "電話：0238-43-3114"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-321-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "紅花資料館 物産館",
+        "山形県西村山郡河北町谷地戊1143",
+        "電話：0237-73-3500",
+        "(問い合わせ先)",
+        "河北町役場 上下水道課",
+        "電話：0237-73-4111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "06-363-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "舟形町観光物産センターめがみ",
+        "山形県最上郡舟形町舟形391-2（舟形駅構内）",
+        "電話：0233-32-3302"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-000-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】福島県あだたら清流センター",
+        "福島県二本松市榎戸2-96",
+        "電話：090-4639-3946",
+        "【休日】二本松市観光案内所",
+        "福島県二本松市本町2-262（JR二本松駅構内）",
+        "電話：090-4639-3946",
+        "（問い合わせ先）",
+        "福島県土木部 下水道課",
+        "電話：024-521-7515"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-000-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】福島県県北浄化センター",
+        "福島県伊達郡国見町大字徳江字上悪戸46番地1",
+        "電話:090-8924-1758",
+        "【土日祝】国見町役場",
+        "福島県伊達郡国見町大字藤田字一丁田二1番地7",
+        "電話:090-8924-1758（自動音声案内対応）",
+        "（問合せ先）",
+        "福島県土木部下水道課",
+        "電話:024-521-7515"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-201-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "福島市アクティブシニアセンター・アオウゼ",
+        "福島県福島市曽根田町1−18 ＭＡＸふくしま4階",
+        "電話：024-533-2344"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-201-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "福島市観光案内所（JR福島駅西口２階）",
+        "福島市栄町１－１",
+        "電話：024-531-6428"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-202-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "会津若松市役所",
+        "会津若松市東栄町３番４６号",
+        "【平日】総合案内",
+        "【休日】警備員室"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-203-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "郡山市磐梯熱海観光物産館",
+        "福島県郡山市熱海町熱海二丁目15-1",
+        "電話：024-953-5408"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-203-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "湖南公民館",
+        "郡山市湖南町福良字家老9390-4",
+        "電話：024-983-2543"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-204-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "いわき市観光物産センター いわき・ら・らミュウ1階中央インフォメーション",
+        "福島県いわき市小名浜字辰巳町43-1",
+        "電話：0246-92-3701"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-204-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "観光遊覧船サンシャインシーガル受付",
+        "福島県いわき市小名浜字辰巳町43-1",
+        "いわき・ら・ら・ミュウ1F",
+        "電話：0246-38-4197"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-204-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "いわきマリンタワー",
+        "福島県いわき市小名浜下神白字大作93",
+        "電話:0246-53-2448"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-204-D001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "いわき市石炭･化石館ほるる",
+        "福島県いわき市常磐湯本町向田3-1",
+        "電話:0246-42-3155",
+        "（問合せ先）",
+        "いわき市生活環境部生活排水対策室経営企画課",
+        "電話:0246-22-7583"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-204-E001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "いわき市総合観光案内所",
+        "福島県いわき市平田町38-16 JRいわき駅コンコース自由通路",
+        "電話:0246-23-0122",
+        "（問合せ先）",
+        "いわき市生活環境部生活排水対策室経営企画課",
+        "電話:0246-22-7583"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-205-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "公益財団法人 白河観光物産協会",
+        "福島県白河市郭内1-2（しらかわ観光ステーション内）",
+        "電話：0248-22-1147"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-207-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "須賀川市民交流センター tette",
+        "福島県須賀川市中町4-1",
+        "0248-73-4407",
+        "（問い合わせ先）",
+        "須賀川市下水道施設課",
+        "0248-88-9159"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-207-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "須賀川市風流のはじめ館",
+        "福島県須賀川市本町81番地4",
+        "電話:0248-72-1212",
+        "（問合せ先）",
+        "須賀川市下水道施設課",
+        "電話:0248-88-9159"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-207-C001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "須賀川特撮アーカイブセンター",
+        "福島県須賀川市柱田字中地前22番地",
+        "電話:0248-94-5200",
+        "（問合せ先）",
+        "須賀川市下水道施設課",
+        "電話:0248-88-9159"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-208-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】喜多方市役所下水道課",
+        "福島県喜多方市字御清水東7244-2",
+        "電話：0241-24-5262",
+        "【休日】喜多方市役所宿日直室（本庁舎）",
+        "電話：0241-24-5222"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-209-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "相馬市千客万来館",
+        "福島県相馬市中村字北町55-1",
+        "電話：0244-26-4848"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-210-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "二本松市歴史観光施設【にほんまつ観光城報館】 ２階事務室",
+        "福島県二本松市郭内三丁目303番地5",
+        "電話：0243-22-6630"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-211-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "あぶくま洞管理事務所",
+        "福島県田村市滝根町菅谷字東釜山1",
+        "電話：0247-78-2125",
+        "（問い合わせ先）",
+        "田村市上下水道局上下水道課",
+        "電話：0247-82-1527"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-212-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "小高区役所市民総合サービス課窓口",
+        "福島県南相馬市小高区本町2-78",
+        "電話：0244-44-6711",
+        "（問い合わせ先）",
+        "南相馬市建設部 下水道課 業務係",
+        "電話：0244-24-5273"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-213-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】伊達市役所梁川総合支所",
+        "伊達市梁川町青葉町1",
+        "【土日祝日】伊達市観光案内所",
+        "福島県伊達市梁川町青葉町1（伊達市役所梁川総合支所1階）",
+        "電話:070-3163-8736",
+        "（問合せ先）",
+        "伊達市役所建設部上下水道課",
+        "電話:024-573-4138"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-214-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "本宮市役所建設部上下水道課",
+        "福島県本宮市本宮字万世212番地",
+        "電話：0243-24-5413"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-214-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】本宮市中央公民館",
+        "福島県本宮市本宮字矢来39-1",
+        "電話:0243-24-1930",
+        "【土日祝日】①本宮市中央公民館",
+        "福島県本宮市本宮字矢来39-1",
+        "電話:0243-24-1930",
+        "②白沢公民館",
+        "福島県本宮市白岩字堤崎500",
+        "電話:0243-44-4284",
+        "（問合せ先）",
+        "本宮市役所建設部上下水道課",
+        "0243-24-5413"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-301-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "旧伊達郡役所",
+        "福島県伊達郡桑折町字陣屋12",
+        "電話：024-582-5507",
+        "（問い合わせ先）",
+        "桑折町役場 上下水道課",
+        "電話：024-582-1100"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-303-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅国見 あつかしの郷",
+        "福島県伊達郡国見町大字藤田字日渡二18-1",
+        "電話:024-585-2132",
+        "（問合せ先）",
+        "国見町 上下水道課",
+        "電話:024-585-2997"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-408-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】猪苗代町役場上下水道課窓口",
+        "【休日】猪苗代町役場宿日直室",
+        "福島県耶麻郡猪苗代町字城南100",
+        "電話：0242-62-5633"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-421-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】会津坂下町役場 建設課 上下水道班",
+        "【休日】会津坂下町役場 日直窓口（戸籍環境班）",
+        "福島県河沼郡会津坂下町字市中三番甲3662",
+        "電話：0242-84-1531"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-422-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "湯川村役場窓口",
+        "福島県河沼郡湯川村大字清水田字長瀞18",
+        "電話：0241-27-8800"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-422-B001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "道の駅あいづ 湯川・会津坂下",
+        "福島県河沼郡湯川村大字佐野目字五丁ノ目78-1",
+        "電話:0241-27-8853"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-461-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "西郷村農産物産館「まるごと西郷館」",
+        "西郷村大字熊倉字折口原146番地",
+        "電話：0248-25-5007",
+        "ただし、年末年始のみ、",
+        "西郷村役場１階窓口",
+        "電話：0248-25-1111（代表）",
+        "（問い合わせ先）",
+        "西郷村上下水道課 業務係",
+        "電話：0248-25-2912"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-481-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【平日】棚倉町役場上下水道課",
+        "福島県東白川郡棚倉町大字棚倉字中居野33",
+        "電話:0247-33-2119",
+        "【休日】棚倉町役場日直窓口",
+        "電話:0247-33-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-504-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "つながるBASE",
+        "福島県石川郡浅川町大字浅川字本町西裏47番地3",
+        "（問合せ先）",
+        "浅川町役場建設水道課",
+        "電話:0247-36-1185"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-521-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "【月曜日以外】三春なかまち蔵一ノ蔵「花かご」",
+        "福島県田村郡三春町字中町4",
+        "電話：0247-61-2661",
+        "【月曜日】三春きたまち蔵「TENJIN」",
+        "福島県田村郡三春町字北町10",
+        "電話：0247-62-3690",
+        "(問合せ先)",
+        "三春町企業局 下水道グループ",
+        "Tel：0247-62-2500"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-542-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "楢葉町サイクリングターミナル",
+        "福島県双葉郡楢葉町大字北田字上ノ原27-29",
+        "電話：0240-25-3113"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-543-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "とみおかアーカイブ・ミュージアム",
+        "福島県双葉郡富岡町大字本岡字王塚760-1",
+        "電話：0240-25-8644",
+        "(問合せ先)",
+        "富岡町役場都市整備課",
+        "電話：0240-22-2111"
+      ],
+      "currentStatus": "active"
+    },
+    {
+      "cardId": "07-544-A001",
+      "presentInCurrent": true,
+      "placeChanged": false,
+      "currentRawPlace": [
+        "ショッピングセンターYO-TASHI内【けろりん堂】",
+        "福島県双葉郡川内村大字下川内字宮ノ下25-1",
+        "電話：0240-23-5551"
+      ],
+      "currentStatus": "active"
+    }
+  ]
+}

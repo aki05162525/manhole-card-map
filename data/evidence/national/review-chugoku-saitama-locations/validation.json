@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "reviewedUpdates": 156,
+  "accepted": 136,
+  "deferred": 19,
+  "correctionRequired": 1,
+  "exactPartition": true,
+  "inputHashesUnchanged": true,
+  "evidenceFilesHashed": 380,
+  "p05Updates": 32,
+  "p05UniqueFeatures": 28,
+  "metadataGapOriginals": 24,
+  "metadataGapPrimaryUpdates": 15,
+  "absolutePathsRejectedByActualAssemblerFunction": true,
+  "relativePathPatches": 101,
+  "exactRecordPatches": 3,
+  "preservedUnresolvedOutsideUpdateCount": 4,
+  "reviewSHA256": "0b153b16b39e7a15ac1d6ab638bfc9d78c0b871bb4bf41106d9e06e49f68cef7",
+  "limitation": "機械検証は採否の網羅性、証拠完全性、patch前提を検査。施設同定の意味判定は個別reviewのreasonと原典抜粋を読む。"
+}

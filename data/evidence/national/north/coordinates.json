@@ -1,0 +1,93 @@
+{
+  "place:9bfb7260eded47d22b51": {
+    "url": "d059082.html",
+    "lat": 43.7812334,
+    "lng": 142.2954047,
+    "sourceLocator": "第4弾 配布場所等 / バナナ館の場所 href !8m2!3d43.7812334!4d142.2954047",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:dca4ce45ad19c71b6464": {
+    "url": "d059082.html",
+    "lat": 43.780354,
+    "lng": 142.2940639,
+    "sourceLocator": "第4弾 配布場所等 / 下水処理センターの場所 href !8m2!3d43.780354!4d142.2940639 / 管理本館2階",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:b6bb00bd1d320b09179e": {
+    "url": "overview/378/",
+    "lat": 43.432737,
+    "lng": 144.096034,
+    "sourceLocator": "阿寒湖まりむ館観光インフォメーションセンター / 阿寒湖温泉2丁目6-20 / iframe q=43.432737,144.096034",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:941a2d33fa90a0ddbaac": {
+    "url": "1007879.html",
+    "lat": 42.889664,
+    "lng": 143.931236,
+    "sourceLocator": "ルート38音別館おんぽーと施設案内 / 本町1丁目51番地 / 地図を表示する href q=42.889664,143.931236",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:f5fa52f9a94c6f25b8c1": {
+    "url": "1004520.html",
+    "lat": 39.3135291109196,
+    "lng": 140.56622445354205,
+    "sourceLocator": "かまくら館施設案内 / 中央町8-12 / 地図を表示する href q=39.3135291109196,140.56622445354205",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:397428dfce75ea110ed1": {
+    "url": "mhc01.html",
+    "lat": 38.921309,
+    "lng": 139.845353,
+    "sourceLocator": "酒田駅前交流拠点施設ミライニのマーカーリスト / 幸町一丁目10番1号 / embed/v1/place q=38.921309,139.845353",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:fa081a0f635cc339bda3": {
+    "url": "ktkm-wwt/mhcard.html",
+    "lat": 38.4641559,
+    "lng": 141.2866379,
+    "sourceLocator": "石巻浄化センター内アイ・ケー・エス / GoogleMap href !8m2!3d38.4641559!4d141.2866379",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:e625ab0ab5a15ab078a3": {
+    "url": "ktkm-wwt/mhcard.html",
+    "lat": 38.4182714,
+    "lng": 141.3047529,
+    "sourceLocator": "みやぎ東日本大震災津波伝承館 / GoogleMap href !8m2!3d38.4182714!4d141.3047529",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:5fdb6061926eb3b39378": {
+    "url": "1681438660994/index.html",
+    "lat": 36.944353,
+    "lng": 140.905491,
+    "sourceLocator": "第5弾かもめカード配布場所・中央インフォメーション / iframe q=36.944353,140.905491。隣接するマンホール蓋設置場所のiframeとは区別",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:9399c534e1f5857ae081": {
+    "url": "1681438660994/index.html",
+    "lat": 36.94402134599691,
+    "lng": 140.9052858,
+    "sourceLocator": "第17弾汐風カード配布場所・サンシャインシーガルチケットカウンター / iframe q=36.94402134599691,140.9052858。隣接するマンホール蓋設置場所のiframeとは区別",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:5c4a16b214edf06f7b9e": {
+    "url": "1681438660994/index.html",
+    "lat": 36.939381648994534,
+    "lng": 140.9200626253818,
+    "sourceLocator": "第19弾澤風カード配布場所・マリンタワー / iframe q=36.939381648994534,140.9200626253818。隣接するマンホール蓋設置場所のiframeとは区別",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:39709f06c1b089971d4a": {
+    "url": "1681438660994/index.html",
+    "lat": 37.01253412517921,
+    "lng": 140.84833782133504,
+    "sourceLocator": "第25弾ほるるくんカード配布場所・ミュージアムショップ / iframe q=37.01253412517921,140.84833782133504。隣接するマンホール蓋設置場所のiframeとは区別",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  },
+  "place:a47e992be67df8cb84c8": {
+    "url": "1681438660994/index.html",
+    "lat": 37.05804133388738,
+    "lng": 140.89215081141447,
+    "sourceLocator": "第28弾フラおじさんカード配布場所・総合観光案内所 / iframe q=37.05804133388738,140.89215081141447。隣接するマンホール蓋設置場所のiframeとは区別",
+    "precision": "building-representative; indoor counter identified by distribution text, not measured"
+  }
+}

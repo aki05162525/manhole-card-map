@@ -1,0 +1,452 @@
+{
+  "7": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_11419.html",
+    "lat": 37.029717394558,
+    "lng": 138.69688868523,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "20": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_5615.html",
+    "lat": 37.80174229,
+    "lng": 139.1418249,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "21": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_7556.html",
+    "lat": 37.53890994,
+    "lng": 138.6788429,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "27": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_6078.html",
+    "lat": 37.3731431,
+    "lng": 138.5523501,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "37": {
+    "url": "https://niigata-kankou.or.jp/spot/7187",
+    "lat": 38.22562169,
+    "lng": 139.4811839,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "42": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_6095.html",
+    "lat": 37.31113015013835,
+    "lng": 138.79630164898686,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "44": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_9931.html",
+    "lat": 37.662924,
+    "lng": 138.825171,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "48": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_9852.html",
+    "lat": 37.652797,
+    "lng": 138.919568,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "57": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_11416.html",
+    "lat": 37.0663872,
+    "lng": 138.7070642,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "58": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_6096.html",
+    "lat": 37.31118134956955,
+    "lng": 138.79529313839726,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "63": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_7515.html",
+    "lat": 37.5318816,
+    "lng": 138.9147936,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "69": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_7009.html",
+    "lat": 38.3751788,
+    "lng": 139.45852109999998,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "78": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_9934.html",
+    "lat": 37.651871,
+    "lng": 138.869272,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "80": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_42987.html",
+    "lat": 37.1409295,
+    "lng": 138.7568305,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "85": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_42308.html",
+    "lat": 38.0225125,
+    "lng": 139.4998541,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "0": {
+    "url": "https://www.fuku-e.com/business/educational/learning/detail_1183.html",
+    "lat": 35.6635393733764,
+    "lng": 136.072831998673,
+    "locator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "2": {
+    "url": "https://www.fuku-e.com/spot/detail_1216.html",
+    "lat": 35.5587605,
+    "lng": 135.8963738,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "10": {
+    "url": "https://www.fuku-e.com/spot/detail_1172.html",
+    "lat": 35.6607879,
+    "lng": 136.0728077,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "25": {
+    "url": "https://www.fuku-e.com/business/educational/learning/detail_1241.html",
+    "lat": 35.975515,
+    "lng": 136.491215,
+    "locator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "46": {
+    "url": "https://www.fuku-e.com/spot/detail_1157.html",
+    "lat": 35.9112080120612,
+    "lng": 136.24484482209,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "50": {
+    "url": "https://www.fuku-e.com/spot/detail_1648.html",
+    "lat": 36.072004,
+    "lng": 136.478772,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "22": {
+    "url": "https://www.hot-ishikawa.jp/notohaku/spot/detail_19907.html",
+    "lat": 37.2282147493944,
+    "lng": 136.90493997787,
+    "locator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "39": {
+    "url": "https://www.hot-ishikawa.jp/spot/detail_13297.html",
+    "lat": 37.368622,
+    "lng": 137.244515,
+    "locator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "72": {
+    "url": "https://fuku-iro.jp/spot/detail_10362.html",
+    "lat": 36.06150377381757,
+    "lng": 136.22244015859127,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "74": {
+    "url": "https://www.info-toyama.com/attractions/11039",
+    "lat": 36.7600219,
+    "lng": 137.233925,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "86": {
+    "url": "https://www.info-toyama.com/attractions/80239",
+    "lat": 36.861277,
+    "lng": 136.989262,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+  },
+  "9": {
+    "url": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+    "lat": 36.7923689,
+    "lng": 137.0529881,
+    "locator": "勝興寺地図 の施設place !8m2!3d!4d",
+    "note": "公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+  },
+  "67": {
+    "url": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+    "lat": 36.8149384,
+    "lng": 137.0414904,
+    "locator": "道の駅「雨晴」地図 の施設place !8m2!3d!4d",
+    "note": "公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+  },
+  "26": {
+    "url": "https://www.city.tonami.toyama.jp/info/1610954496.html",
+    "lat": 36.6414842,
+    "lng": 136.9601108,
+    "locator": "富山県砺波市宮沢町３番９号 の施設place !8m2!3d!4d",
+    "note": "公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+  },
+  "45": {
+    "url": "https://www.bijinnoyu.jp/",
+    "lat": 37.6004931,
+    "lng": 139.1105779,
+    "locator": "アクセス の施設place !8m2!3d!4d",
+    "note": "公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+  },
+  "79": {
+    "url": "http://www.niigata-gesuikou.or.jp/manhole2017",
+    "lat": 37.9506632,
+    "lng": 139.1229608,
+    "locator": "※googleマップで確認 の施設place !8m2!3d!4d",
+    "note": "公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+  },
+  "17": {
+    "url": "https://maps.app.goo.gl/BGvn31GWhFkYkNkv5",
+    "lat": 37.2607511,
+    "lng": 138.8676985,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html"
+  },
+  "30": {
+    "url": "https://maps.app.goo.gl/BBQYPiigvsqGwpV17",
+    "lat": 37.6328237,
+    "lng": 138.9534761,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 http://kajidojo.com/ の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "http://kajidojo.com/"
+  },
+  "35": {
+    "url": "https://maps.app.goo.gl/jQ7CJPovtfY1b6NY9",
+    "lat": 37.4557425,
+    "lng": 138.8043398,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html"
+  },
+  "40": {
+    "url": "https://maps.app.goo.gl/6ACZtWrUTddcP97F9",
+    "lat": 36.70983,
+    "lng": 137.301444,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 http://www.union.nakaniikawa.toyama.jp/ の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "http://www.union.nakaniikawa.toyama.jp/"
+  },
+  "54": {
+    "url": "https://maps.app.goo.gl/SmGanweznuwkT2yc9",
+    "lat": 37.4465789,
+    "lng": 138.8508357,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html"
+  },
+  "55": {
+    "url": "https://maps.app.goo.gl/RDVjNAFq66rbhcFJ9",
+    "lat": 37.448291,
+    "lng": 138.8487799,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html"
+  },
+  "70": {
+    "url": "https://maps.app.goo.gl/JomCB61Vv2wEAFMr6",
+    "lat": 37.4595997,
+    "lng": 139.0072657,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html"
+  },
+  "71": {
+    "url": "https://maps.app.goo.gl/JKpE1QGB439mChoh6",
+    "lat": 37.3673573,
+    "lng": 138.5464918,
+    "locator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）",
+    "note": "公式掲載元 https://www.city.kashiwazaki.lg.jp/soshikiichiran/jogesuidokyoku/keieikikakuka/2/3/6790.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。",
+    "parentUrl": "https://www.city.kashiwazaki.lg.jp/soshikiichiran/jogesuidokyoku/keieikikakuka/2/3/6790.html"
+  },
+  "87": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.69587359214699,
+    "lng": 137.2136985885318,
+    "locator": "配布場所一覧 markers[0] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "41": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.69963565594072,
+    "lng": 137.21258697653815,
+    "locator": "配布場所一覧 markers[1] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "84": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.69436482872409,
+    "lng": 137.21265997671307,
+    "locator": "配布場所一覧 markers[2] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "31": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.70980443714813,
+    "lng": 137.20943022850716,
+    "locator": "配布場所一覧 markers[3] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "8": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.71722732140898,
+    "lng": 137.1647466715495,
+    "locator": "配布場所一覧 markers[4] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "56": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.69075526865272,
+    "lng": 137.21095912702802,
+    "locator": "配布場所一覧 markers[5] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "49": {
+    "url": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+    "lat": 36.70224971548778,
+    "lng": 137.21312086777385,
+    "locator": "配布場所一覧 markers[9] の名称付き地点と本文の住所",
+    "note": "本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+  },
+  "5": {
+    "url": "https://plaza.bunspo-namerikawa.jp/access",
+    "lat": 36.768431,
+    "lng": 137.344907,
+    "locator": "Marker position new google.maps.LatLng(36.768431, 137.344907)",
+    "note": "施設公式アクセスの名称・吾妻町426番地と照合。建物代表点。室内管理事務室ではない。"
+  },
+  "11": {
+    "url": "https://www.city.fukui.lg.jp/kurasi/suido/sisetu/p016229.html",
+    "lat": 36.058653799999995,
+    "lng": 136.21131990000003,
+    "locator": "水道記念館本文の施設地図 iframe q（フッター市役所地図は除外）",
+    "note": "足羽1丁目7番35号と施設名を確認。建物代表点。"
+  },
+  "68": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_6965.html",
+    "lat": 37.1325637,
+    "lng": 138.6138618,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "松代3816-1のまつだいふるさと会館（観光案内所を含む）代表点。市配布ページ末尾の無記名地図qは使わず施設名付きJSON-LDを採用。室内窓口ではない。"
+  },
+  "14": {
+    "url": "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+    "lat": 37.630705,
+    "lng": 138.953464,
+    "locator": "公共施設一覧CSV NO=19 名称・住所・緯度・経度列",
+    "note": "市公式公開CSVで施設名・住所・電話番号を現施設案内と照合。施設代表点、室内窓口の測位ではない。"
+  },
+  "24": {
+    "url": "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+    "lat": 37.656528,
+    "lng": 138.974488,
+    "locator": "公共施設一覧CSV NO=75 名称・住所・緯度・経度列",
+    "note": "市公式公開CSVで施設名・住所・電話番号を現施設案内と照合。施設代表点、室内窓口の測位ではない。"
+  },
+  "12": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 38.01827230363998,
+    "lng": 138.36822302647326,
+    "locator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "18": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 38.01827230363998,
+    "lng": 138.36822302647326,
+    "locator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "16": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 38.080409587975424,
+    "lng": 138.43500624068838,
+    "locator": "公共施設_view features OBJECTID=24; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「両津支所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "19": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 37.865776499210234,
+    "lng": 138.41058751742682,
+    "locator": "公共施設_view features OBJECTID=34; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「赤泊行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "36": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 37.99029565540373,
+    "lng": 138.39605020412418,
+    "locator": "公共施設_view features OBJECTID=29; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「畑野行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "64": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 38.01696054401921,
+    "lng": 138.42692098456578,
+    "locator": "公共施設_view features OBJECTID=28; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+    "note": "旧名称「新穂行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+  },
+  "83": {
+    "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "lat": 37.815244847634524,
+    "lng": 138.2796907635087,
+    "locator": "施設GIS features OBJECTID=19 属性の施設名・住所とgeometry (outSR=4326)",
+    "note": "南佐渡総合案内所(マリンプラザ小木)、小木町1935番地26を現配布案内と照合。建物代表点。窓口室内ではない。"
+  },
+  "15": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_42376.html",
+    "lat": 38.0299917,
+    "lng": 138.240602,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "同名施設・市公式施設へのリンクと相川三町目浜町18番地1を確認。台帳は18までの表記。施設代表点、室内窓口ではない。"
+  },
+  "38": {
+    "url": "https://niigata-kankou.or.jp/spot/detail_7010.html",
+    "lat": 38.0634101,
+    "lng": 139.4529934,
+    "locator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+    "note": "たるが橋観光交流センター内の胎内市観光協会。施設名・下赤谷387番地1・電話0254-47-2723を照合。建物代表点、室内窓口ではない。"
+  },
+  "82": {
+    "url": "https://www.hot-ishikawa.jp/spot/detail_18192.html",
+    "lat": 36.9700961,
+    "lng": 136.904615199999,
+    "locator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+    "note": "道の駅織姫の里なかのと、井田ぬ部10-1の施設代表点。室内窓口ではない。"
+  },
+  "73": {
+    "url": "https://www.town.anamizu.lg.jp/map/102986.html",
+    "lat": 37.23111708370985,
+    "lng": 136.91234436174898,
+    "locator": "initlat/initlong。参照JS /ssi/js/shisetsu-detail-googlemap.js が同値をgoogle.maps.Marker(position:myLatlng)へ渡す",
+    "note": "公式施設案内の役場名・川島ラ174と照合。表示中心だけでなく明示markerに使用。建物代表点、階・室内窓口ではない。"
+  },
+  "28": {
+    "url": "https://goo.gl/maps/MtS8GNYpVZHfafU48",
+    "lat": 37.3121405,
+    "lng": 137.2304082,
+    "locator": "公式accessのGoogle Mapを見るリンク先place !8m2!3d!4d、原本APP_OPTIONSにも存在",
+    "note": "公式アクセス本文は越坂18字18番1で台帳と一致。外部地図ルート文字列には18字6番1表記もあるが施設名とplace ID 0x50624158121f0471で同定。建物代表点、室内窓口ではない。",
+    "parentUrl": "https://ikanoeki.com/access/"
+  }
+}

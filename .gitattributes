@@ -1,2 +1,4 @@
 # Evidence hashes cover the original response bytes, including line endings.
-data/evidence/**/*.html -text
+data/evidence/** -text -whitespace
+data/evidence/national/** linguist-generated=true
+data/national/** linguist-generated=true

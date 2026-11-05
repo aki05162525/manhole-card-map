@@ -56,17 +56,26 @@ type LedgerPlace struct {
 	Coordinate *LedgerCoordinate `json:"coordinate,omitempty"`
 	Evidence   Evidence          `json:"evidence"`
 }
+
+// RelationChange records an explicitly evidenced new counter, retaining old source relations.
+type RelationChange struct {
+	Kind             string   `json:"kind"`
+	Reason           string   `json:"reason"`
+	PreviousPlaceIDs []string `json:"previousPlaceIds"`
+	Raw              []string `json:"raw"`
+}
 type LedgerRelation struct {
-	ReviewUntil string   `json:"reviewUntil,omitempty"`
-	Condition   *string  `json:"condition,omitempty"`
-	CardID      string   `json:"cardId"`
-	PlaceID     string   `json:"placeId"`
-	SourceHash  string   `json:"sourceHash"`
-	Hours       []string `json:"hours"`
-	Status      string   `json:"status"`
-	ValidFrom   string   `json:"validFrom,omitempty"`
-	ValidTo     string   `json:"validTo,omitempty"`
-	Evidence    Evidence `json:"evidence"`
+	Change      *RelationChange `json:"change,omitempty"`
+	ReviewUntil string          `json:"reviewUntil,omitempty"`
+	Condition   *string         `json:"condition,omitempty"`
+	CardID      string          `json:"cardId"`
+	PlaceID     string          `json:"placeId"`
+	SourceHash  string          `json:"sourceHash"`
+	Hours       []string        `json:"hours"`
+	Status      string          `json:"status"`
+	ValidFrom   string          `json:"validFrom,omitempty"`
+	ValidTo     string          `json:"validTo,omitempty"`
+	Evidence    Evidence        `json:"evidence"`
 }
 type PlaceLedger struct {
 	Schema    int              `json:"schema"`
@@ -87,6 +96,12 @@ func decodeLedger(raw []byte, l *PlaceLedger) error {
 	return nil
 }
 func cardSourceHash(c Card) string {
+	if c.ReviewSourceHash != "" {
+		return c.ReviewSourceHash
+	}
+	return originalCardSourceHash(c)
+}
+func originalCardSourceHash(c Card) string {
 	b, _ := json.Marshal(struct {
 		PlaceText []string `json:"placeText"`
 		Hours     []string `json:"hours"`
@@ -176,7 +191,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 	aliases := map[string]string{}
 	canonical := map[string]LedgerPlace{}
 	for _, p := range l.Places {
-		if !strings.HasPrefix(p.ID, "facility:") || len(p.ID) <= len("facility:") || p.Name == "" || p.Address == "" || len(p.LegacyIDs) == 0 {
+		if !strings.HasPrefix(p.ID, "facility:") || len(p.ID) <= len("facility:") || p.Name == "" || p.Address == "" {
 			return fmt.Errorf("incomplete stable facility: %s", p.ID)
 		}
 		if _, ok := canonical[p.ID]; ok {
@@ -198,7 +213,7 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			}
 			aliases[id] = p.ID
 		}
-		if !matched {
+		if !matched && len(p.LegacyIDs) > 0 {
 			return fmt.Errorf("no current source alias for facility: %s", p.ID)
 		}
 		canonical[p.ID] = p
@@ -223,7 +238,22 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			return fmt.Errorf("unknown canonical facility: %s", r.PlaceID)
 		}
 		if len(relIndexes[key]) == 0 {
-			return fmt.Errorf("relation missing from source: %s", key)
+			if r.Change == nil || r.Change.Kind != "addition" || strings.TrimSpace(r.Change.Reason) == "" || len(r.Change.Raw) == 0 {
+				return fmt.Errorf("relation missing from source; explicit evidenced addition required: %s", key)
+			}
+			for _, old := range r.Change.PreviousPlaceIDs {
+				found := false
+				for _, previous := range d.Relations {
+					if previous.CardID == r.CardID && previous.PlaceID == old {
+						found = true
+					}
+				}
+				if !found {
+					return fmt.Errorf("unknown previous relation: %s / %s", r.CardID, old)
+				}
+			}
+		} else if r.Change != nil {
+			return fmt.Errorf("addition already exists in source: %s", key)
 		}
 		if _, ok := reviewed[key]; ok {
 			return fmt.Errorf("duplicate reviewed relation: %s", key)
@@ -241,6 +271,33 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		}
 		reviewed[key] = r
 		statuses[key] = s
+	}
+	// Do not remove or silently end any previous relationship. Its correction needs
+	// its own evidence-backed ledger entry.
+	for _, r := range l.Relations {
+		if r.Change != nil {
+			change := *r.Change
+			change.PreviousPlaceIDs = append([]string(nil), r.Change.PreviousPlaceIDs...)
+			for i, previous := range change.PreviousPlaceIDs {
+				if canonicalID, ok := aliases[previous]; ok {
+					change.PreviousPlaceIDs[i] = canonicalID
+				}
+			}
+			d.Relations = append(d.Relations, Relation{CardID: r.CardID, PlaceID: r.PlaceID, Raw: r.Change.Raw, Change: &change, Interpretation: r.Change.Reason})
+		}
+	}
+	for _, p := range l.Places {
+		if len(p.LegacyIDs) == 0 {
+			used := false
+			for _, r := range l.Relations {
+				if r.PlaceID == p.ID && r.Change != nil {
+					used = true
+				}
+			}
+			if !used {
+				return fmt.Errorf("new facility requires an evidenced addition: %s", p.ID)
+			}
+		}
 	}
 	next := []Place{}
 	for _, p := range d.Places {
@@ -304,6 +361,11 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 				all = all && r.Review == "verified"
 				statuses[r.Status] = true
 			}
+		}
+		// A changed current listing invalidates the old card-wide inference even
+		// when this card has never had a reviewed ledger entry.
+		if (!all || count == 0) && d.Cards[i].ReviewSourceHash != "" && d.Cards[i].ReviewSourceHash != originalCardSourceHash(d.Cards[i]) {
+			staleEvidence = true
 		}
 		if (all && count > 0) || staleEvidence {
 			status := "unknown"

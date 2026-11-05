@@ -1,0 +1,2804 @@
+[
+  {
+    "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/access.html",
+    "fetchedAt": "2026-11-05T04:26:56.766628+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/cb94fe2d7f1955844354.html",
+    "snapshotSHA256": "39cac146e3f267d90422f538e1140888fd4918ed4dceab77b53133637dca12c4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/cb94fe2d7f1955844354.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
+    "fetchedAt": "2026-11-05T04:24:54.497361+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/nanbu_hp_20120423/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5c951bdef46622feb8c2.html",
+    "snapshotSHA256": "16911c188fdc347512031f76459737070cd8724b63777a6ac6ef9832bc651cde",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5c951bdef46622feb8c2.html"
+  },
+  {
+    "url": "https://www.saitama-swg.or.jp/access.html",
+    "fetchedAt": "2026-11-05T04:26:57.888180+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-swg.or.jp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d52758e43ecb9bb532fb.html",
+    "snapshotSHA256": "543d29989b84446d31b6b703462abcdd51e0f8c533d4ed3973a2840b00e39c10",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d52758e43ecb9bb532fb.html"
+  },
+  {
+    "url": "https://www.saitama-swg.or.jp/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:56.650142+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-swg.or.jp/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9c2161fbc43a30b825a0.html",
+    "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/9c2161fbc43a30b825a0.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/access.html",
+    "fetchedAt": "2026-11-05T04:26:59.524460+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8fc5e3e4fa2061b64fa1.html",
+    "snapshotSHA256": "543d29989b84446d31b6b703462abcdd51e0f8c533d4ed3973a2840b00e39c10",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8fc5e3e4fa2061b64fa1.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:58.829478+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/70c100deac275dad3cad.html",
+    "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/70c100deac275dad3cad.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/hokubu%20hp/access.html",
+    "fetchedAt": "2026-11-05T04:27:00.663411+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/hokubu%20hp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/da7020127e097cdba40f.html",
+    "snapshotSHA256": "60e29fc01eaeebe06240968a050f8dbbbe3a24287202e0e1b1b1e085293f4f46",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/da7020127e097cdba40f.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/hokubu%20hp/index.html",
+    "fetchedAt": "2026-11-05T04:25:00.238610+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/hokubu%20hp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2a1934895d3d409a1daa.html",
+    "snapshotSHA256": "062ef5b333fd74734360884d67bb21354e5d683cd749a15ec00c4a100ebd1901",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/2a1934895d3d409a1daa.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/ugan%20hp/access.html",
+    "fetchedAt": "2026-11-05T04:27:01.787771+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/ugan%20hp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d72cb070dea4fce76f34.html",
+    "snapshotSHA256": "2b7bef276f9df290c5566369d82e96a0c711a083e7437bcb43a93eb155efa11a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d72cb070dea4fce76f34.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/ugan%20hp/index.html",
+    "fetchedAt": "2026-11-05T04:25:01.627593+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/ugan%20hp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4cd75b940bf9084ae510.html",
+    "snapshotSHA256": "b34a0f712a83d6ddfe563d51b667b483083e5b61b57cc1d072d7551bca9da891",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4cd75b940bf9084ae510.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/nakagawa%20hp/access.html",
+    "fetchedAt": "2026-11-05T04:27:02.902880+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/nakagawa%20hp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6d27bdd5ef149cdccc63.html",
+    "snapshotSHA256": "f90bb72c0d47bfc18de62ed04206138ae927645cad0eb7a6794142769b06182f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/6d27bdd5ef149cdccc63.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/nakagawa%20hp/index.html",
+    "fetchedAt": "2026-11-05T04:25:02.876995+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/nakagawa%20hp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/309c6db15efb478eeb2a.html",
+    "snapshotSHA256": "69330c7de6fa61128e018a829bfc8ac3e22a462ade579103ade18838d03fd847",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/309c6db15efb478eeb2a.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/furutone_hp/access.html",
+    "fetchedAt": "2026-11-05T04:27:04.023189+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/furutone_hp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/76782a32beef31eed93b.html",
+    "snapshotSHA256": "83a15799337f5833e2c8086fa8bc3f6c66d797d5c23eb34d995f535dc0034318",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/76782a32beef31eed93b.html"
+  },
+  {
+    "url": "http://www.saitama-swg.or.jp/furutone_hp/index.html",
+    "fetchedAt": "2026-11-05T04:25:04.140697+00:00",
+    "status": 200,
+    "finalUrl": "http://www.saitama-swg.or.jp/furutone_hp/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bb226bafd1dde73bb10f.html",
+    "snapshotSHA256": "df471f9c3448befe18efcfaadbd349ecb02297aec1b87cd6c27d886d9a035d75",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/bb226bafd1dde73bb10f.html"
+  },
+  {
+    "url": "https://www.aeon.jp/sc/kitatoda/",
+    "fetchedAt": "2026-11-05T04:24:58.782313+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ac38c70ac90cbbc602b6.html",
+    "snapshotSHA256": "7e1dadc51ec4e93c9c62b89480f2611ffc89a9db0860f6780aa74f745a8d84c6",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/ac38c70ac90cbbc602b6.html"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/d1501/manho-ruka-do-tsujo.html",
+    "fetchedAt": "2026-11-05T04:24:58.829160+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/d1501/manho-ruka-do-tsujo.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fbe04569ff28c8560140.html",
+    "snapshotSHA256": "e421689e983d5d9d0080b5fbd7e3d767a020f0edddb7d01b384d0991659e31a5",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fbe04569ff28c8560140.html"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/kense/gaiyo/access.html",
+    "fetchedAt": "2026-11-05T04:26:58.047134+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/kense/gaiyo/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/79e8ffcb2c20c2590a6a.html",
+    "snapshotSHA256": "ae5068b7b0402bd5803ae515b77b0185b9ad1c286c963711677565089a216cec",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/79e8ffcb2c20c2590a6a.html"
+  },
+  {
+    "url": "https://www.city.kawagoe.saitama.jp/kurashi/jogesuidobu/1002861/1002862/1002917/1002920.html",
+    "fetchedAt": "2026-11-05T04:25:00.404922+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawagoe.saitama.jp/kurashi/jogesuidobu/1002861/1002862/1002917/1002920.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/83713788d90718afd4bf.html",
+    "snapshotSHA256": "3e655cb52dea68885a86bc13091b2c2fe31034946ae6809e3742505214cd82fc",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/83713788d90718afd4bf.html"
+  },
+  {
+    "url": "https://www.city.kawagoe.saitama.jp/shisei/info/1007840/index.html",
+    "fetchedAt": "2026-11-05T04:27:00.855764+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawagoe.saitama.jp/shisei/info/1007840/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2773ed6db6aac045bca2.html",
+    "snapshotSHA256": "e79c93c0fae5aeeeb43c3e9aee4774746a7b10f79e452ffe3733005f301a46e1",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/2773ed6db6aac045bca2.html"
+  },
+  {
+    "url": "http://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
+    "fetchedAt": "2026-11-05T04:25:02.904428+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/243ba0ccc5556d4c1d96.html",
+    "snapshotSHA256": "cd283ec5487518a177c62b5aca42159d2a0102974e15b7996fab1c75344ead3b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/243ba0ccc5556d4c1d96.html"
+  },
+  {
+    "url": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
+    "fetchedAt": "2026-11-05T04:25:01.627399+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7d480b33a198832febda.html",
+    "snapshotSHA256": "cd283ec5487518a177c62b5aca42159d2a0102974e15b7996fab1c75344ead3b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/7d480b33a198832febda.html"
+  },
+  {
+    "url": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/mannho-ru.html",
+    "fetchedAt": "2026-11-05T04:27:00.483818+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kumagaya.lg.jp/about/soshiki/jogesuido/gesuidou/oshirase/mannho-ru.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e69fb65ca6032f18393a.html",
+    "snapshotSHA256": "6cc5f6b0d468c8a7ff7701b5b3f6327bd6f9e8bf42338ea18166f5eaa0467384",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e69fb65ca6032f18393a.html"
+  },
+  {
+    "url": "http://oideyo-kumagaya.com",
+    "fetchedAt": "2026-11-05T04:25:01.972184+00:00",
+    "status": 200,
+    "finalUrl": "https://www.oideyo-kumagaya.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5c40ce9e1663882ee533.html",
+    "snapshotSHA256": "e35effa6e6891e3440b74465dbbf8bcb4c5e3e240b203ef3c53a07a0602db3fa",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5c40ce9e1663882ee533.html"
+  },
+  {
+    "url": "http://kawakan2.jp/",
+    "fetchedAt": "2026-11-05T04:25:02.021595+00:00",
+    "status": 200,
+    "finalUrl": "https://kawakan2.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/809b50559d8fe90f211c.html",
+    "snapshotSHA256": "7b8704350af046c9347afe49ff0b75ad4b8df70bda1ae986444368c76b5b696e",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/809b50559d8fe90f211c.html"
+  },
+  {
+    "url": "https://www.water-kawaguchi.jp/gesuido/1001904/1001620.html",
+    "fetchedAt": "2026-11-05T04:25:02.493758+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water-kawaguchi.jp/gesuido/1001904/1001620.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a612f57aabe963fe96d4.html",
+    "snapshotSHA256": "c5c7be2f3c027548b9b559d40e9d7e95acff0324939a52629ba407fdc9f6a085",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a612f57aabe963fe96d4.html"
+  },
+  {
+    "url": "https://www.water-kawaguchi.jp/riyousha/1001670/1001672.html",
+    "fetchedAt": "2026-11-05T04:27:02.215837+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water-kawaguchi.jp/riyousha/1001670/1001672.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c996f1e0135357449792.html",
+    "snapshotSHA256": "fa69fb994e11c57903d70627664bd2eadc787c6db14e12ca1769264c00585381",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c996f1e0135357449792.html"
+  },
+  {
+    "url": "https://www.city.gyoda.lg.jp/kurashi/jogesuido/gesuido/koho_fukyu/5893.html",
+    "fetchedAt": "2026-11-05T04:25:04.194008+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.gyoda.lg.jp/kurashi/jogesuido/gesuido/koho_fukyu/5893.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c5e375749fd6cfae7e4c.html",
+    "snapshotSHA256": "394e27b14d4542aec9dc9cf3b20bff0b7221f91cc28768415b11bdf3c04585d7",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c5e375749fd6cfae7e4c.html"
+  },
+  {
+    "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:02.876638+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/cc4227fdc138fa28e964.html",
+    "snapshotSHA256": "5856597f1a90152fec1b43cdaf39a778674574cd43c19ddc4cccad7dd278c81d",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/cc4227fdc138fa28e964.html"
+  },
+  {
+    "url": "https://www.gyoda-kankoukyoukai.jp/access.html",
+    "fetchedAt": "2026-11-05T04:27:01.652710+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gyoda-kankoukyoukai.jp/access.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/33a0e5496b62e1294d0f.html",
+    "snapshotSHA256": "80b22942d62d0b2fb17dc528f54fed0baaba6d1f966f3817ee93f19c98ba9daf",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/33a0e5496b62e1294d0f.html"
+  },
+  {
+    "url": "https://www.gyoda-kankoukyoukai.jp/gyoda_route.html",
+    "fetchedAt": "2026-11-05T04:27:02.854306+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gyoda-kankoukyoukai.jp/gyoda_route.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/21ecf3ca2cf858128d4f.html",
+    "snapshotSHA256": "179b486bd3272a18be4e79950e7b3436e777ec93831515bb5bf6a47389b9f54c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/21ecf3ca2cf858128d4f.html"
+  },
+  {
+    "url": "https://www.gyoda-kankoukyoukai.jp/shopping/998",
+    "fetchedAt": "2026-11-05T04:25:02.904093+00:00",
+    "status": 200,
+    "finalUrl": "https://www.gyoda-kankoukyoukai.jp/shopping/998",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e9801dc595907587548a.html",
+    "snapshotSHA256": "8bdfffe6fe5fb0e6ea2ee2a0941db6324bc6ff115bbec4d7e0a953a3b91441f7",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e9801dc595907587548a.html"
+  },
+  {
+    "url": "http://www.city.tokorozawa.saitama.jp/",
+    "fetchedAt": "2026-11-05T04:25:04.140298+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokorozawa.saitama.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/09079bddc396675ad06e.html",
+    "snapshotSHA256": "56d47c3ab66fdb428479186cd025bda6c6f411a14caf5e66a97b86616e6c0f4f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/09079bddc396675ad06e.html"
+  },
+  {
+    "url": "http://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/gesiji20210324141853995.html",
+    "fetchedAt": "2026-11-05T04:25:05.580021+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9f54126de18133b8a2b2.html",
+    "snapshotSHA256": "f9f63ba43dc832d7846f5cc632787bfcd9d713d2410d30da2c01ca74d1ed5cd9",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/9f54126de18133b8a2b2.html"
+  },
+  {
+    "url": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+    "fetchedAt": "2026-11-05T04:30:24.729943+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8e38771a200127afb8f1.html",
+    "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html"
+  },
+  {
+    "url": "https://www.city.tokorozawa.saitama.jp/shisetu/shi/shi/index.html",
+    "fetchedAt": "2026-11-05T04:27:01.903979+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokorozawa.saitama.jp/shisetu/shi/shi/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/72d6b137de03e07f36d0.html",
+    "snapshotSHA256": "0083d55951f24fe000a1064b3fa73a4e75478a9cfb998748cb0d91b7a705aefd",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/72d6b137de03e07f36d0.html"
+  },
+  {
+    "url": "http://www.machizou.jp/",
+    "fetchedAt": "2026-11-05T04:25:04.229778+00:00",
+    "status": 200,
+    "finalUrl": "http://www.machizou.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d8481be458d49d18d644.html",
+    "snapshotSHA256": "6285883826ac024705f91927d233a35d979a8ef632620b00c1946e336d834618",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d8481be458d49d18d644.html"
+  },
+  {
+    "url": "http://www.machizou.jp/access.html",
+    "fetchedAt": "2026-11-05T04:27:01.985538+00:00",
+    "status": 200,
+    "finalUrl": "http://www.machizou.jp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bfc8cfb86e465f7a8660.html",
+    "snapshotSHA256": "6891394010a22f0e3d67a246fa7d144f76b965bdeb6bbe3dd9d02e8d6b3d1f09",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/bfc8cfb86e465f7a8660.html"
+  },
+  {
+    "url": "https://yot-toko.jp/",
+    "fetchedAt": "2026-11-05T04:25:04.350359+00:00",
+    "status": 200,
+    "finalUrl": "https://yot-toko.jp/",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/349997c602c986ab1fc6.html",
+    "snapshotSHA256": "beab1bbb305c0dcc41ad8467827ef21c3d7d065e5378fab2ed1a73a99803c0f8",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/349997c602c986ab1fc6.html"
+  },
+  {
+    "url": "https://yot-toko.jp/pages/about",
+    "fetchedAt": "2026-11-05T04:27:02.216104+00:00",
+    "status": 200,
+    "finalUrl": "https://yot-toko.jp/pages/about",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/df5650ea97da3bb0be58.html",
+    "snapshotSHA256": "828d567a3a7cb4c203179785fb5802c01b44bb66efb984ba240813d6abd56431",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/df5650ea97da3bb0be58.html"
+  },
+  {
+    "url": "https://hanno-tourism.jp/",
+    "fetchedAt": "2026-11-05T04:25:04.742951+00:00",
+    "status": 200,
+    "finalUrl": "https://hanno-tourism.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d5ef9ef4682f5bb0b294.html",
+    "snapshotSHA256": "9697934b028ab3e4671ccd64ebcf17ea0587e3f3a8cf2ffe441ce2809bb0b301",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d5ef9ef4682f5bb0b294.html"
+  },
+  {
+    "url": "https://hanno-tourism.jp/access/",
+    "fetchedAt": "2026-11-05T04:27:02.853962+00:00",
+    "status": 200,
+    "finalUrl": "https://hanno-tourism.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/be7b6bf14b8c3d766e27.html",
+    "snapshotSHA256": "4f612cc3945748613818eefb2881ddd943f8b203f7a01c8107423c1f5eff84d7",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/be7b6bf14b8c3d766e27.html"
+  },
+  {
+    "url": "https://www.city.hanno.lg.jp/kurashi_seikatsukankyo/gesuido/designmanholekankei/7823.html",
+    "fetchedAt": "2026-11-05T04:30:24.730639+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hanno.lg.jp/kurashi_seikatsukankyo/gesuido/designmanholekankei/7823.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5c29bc21d8ad98a09bc2.html",
+    "snapshotSHA256": "bed97141d4e1deb2558fa1cfa5684fea1958dff517f7f868581df5ce9372aeec",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5c29bc21d8ad98a09bc2.html"
+  },
+  {
+    "url": "https://www.city.hanno.lg.jp/soshikikarasagasu/jogesuidobu/gesuidoka/gesuidouwosiru/7773.html",
+    "fetchedAt": "2026-11-05T04:25:04.987830+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4bd725a757fe0ad196c8.html",
+    "snapshotSHA256": "01249ab5be1ea5dab3250b116d67239e7140308fabb31cf5ced2182905fd4362",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4bd725a757fe0ad196c8.html"
+  },
+  {
+    "url": "http://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+    "fetchedAt": "2026-11-05T04:25:05.273792+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4bcc0ab89ef5286d1563.html",
+    "snapshotSHA256": "eed5a27d3d7f39a395f02fa07561fa64e1f47d53202b79e518c3468d683fd567",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4bcc0ab89ef5286d1563.html"
+  },
+  {
+    "url": "https://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+    "fetchedAt": "2026-11-05T04:25:08.024349+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/soshiki/gesui/oshirase/37040.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6bc1777114f7b2b78e09.html",
+    "snapshotSHA256": "eed5a27d3d7f39a395f02fa07561fa64e1f47d53202b79e518c3468d683fd567",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/6bc1777114f7b2b78e09.html"
+  },
+  {
+    "url": "https://www.city.kazo.lg.jp/kurashi_bosai/jogesuido/1/37047.html",
+    "fetchedAt": "2026-11-05T04:25:06.720298+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/kurashi_bosai/jogesuido/1/37047.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d47171ea75348b3baf1d.html",
+    "snapshotSHA256": "6635c6798b49239cda1018f3d48ce50a7aa5796e27bd150a8942e031c9ffd418",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d47171ea75348b3baf1d.html"
+  },
+  {
+    "url": "https://www.city.honjo.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido/1563327619038.html",
+    "fetchedAt": "2026-11-05T04:25:05.579775+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.honjo.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido/1563327619038.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c853ebeb63fd7845ba95.html",
+    "snapshotSHA256": "7e5730ad11b7e4230020ecb37a5783e2191669cd74bf64a18dc767d39183c229",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c853ebeb63fd7845ba95.html"
+  },
+  {
+    "url": "https://www.hwmm.jp",
+    "fetchedAt": "2026-11-05T04:25:05.928958+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hwmm.jp",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f97b08a2af8328883ec7.html",
+    "snapshotSHA256": "d509fac74f655aaf47a3f75653915f8c6e336f2b9f91c0ada47196669fa00eab",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/f97b08a2af8328883ec7.html"
+  },
+  {
+    "url": "https://www.hwmm.jp/outline/",
+    "fetchedAt": "2026-11-05T04:27:02.902677+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hwmm.jp/outline/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2cfa443f9247afb374bc.html",
+    "snapshotSHA256": "e029cfcc04ba1c3f230a2f7ac1d8d5dc56e0875bb30af2133c0da27bcaab3873",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/2cfa443f9247afb374bc.html"
+  },
+  {
+    "url": "https://www.city.sayama.saitama.jp/kurashi/dourokotsuu/jogesuido/oshirase/manholecard2018.html",
+    "fetchedAt": "2026-11-05T04:25:07.508517+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sayama.saitama.jp/kurashi/dourokotsuu/jogesuido/oshirase/manholecard2018.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/32c0dcc772bc7d0ae2cb.html",
+    "snapshotSHA256": "b20d190ba514e3de65bcc1d0cba82b9eda465ee1da8de7e3f81d673bf45c69f4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/32c0dcc772bc7d0ae2cb.html"
+  },
+  {
+    "url": "https://www.city.sayama.saitama.jp/shisei/shisetsu/bunkashisetsu/siminkouryuusenta/index.html",
+    "fetchedAt": "2026-11-05T04:25:06.275925+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sayama.saitama.jp/shisei/shisetsu/bunkashisetsu/siminkouryuusenta/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e5c2a1a7ab6ab663be92.html",
+    "snapshotSHA256": "74e51974160f7e704ef0ad64d009c82c203d9bf94cfe14f6764de87f44181dba",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e5c2a1a7ab6ab663be92.html"
+  },
+  {
+    "url": "https://www.city.sayama.saitama.jp/shisei/shisetsu/shiyakusho/index.html",
+    "fetchedAt": "2026-11-05T04:27:03.085570+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sayama.saitama.jp/shisei/shisetsu/shiyakusho/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5d59e8e71884857031ff.html",
+    "snapshotSHA256": "e18f5958c42d7c82647168822b21a14cf159e0411563407e7c4822958a24bfc9",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5d59e8e71884857031ff.html"
+  },
+  {
+    "url": "http://kiyasse.jp/",
+    "fetchedAt": "2026-11-05T04:25:06.719987+00:00",
+    "status": 200,
+    "finalUrl": "https://kiyasse.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7e8411c3020086db51fc.html",
+    "snapshotSHA256": "dad944d459b2cd540d2b91984609a34c5bf3199000043a46a87f21937a60d75f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/7e8411c3020086db51fc.html"
+  },
+  {
+    "url": "http://www.city.hanyu.lg.jp/docs/2017111000025/",
+    "fetchedAt": "2026-11-05T04:25:06.846132+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hanyu.lg.jp/docs/2017111000025/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8bb0d2464a8d47007d9f.html",
+    "snapshotSHA256": "a453994fd356a074dbbc80e0cc1efa5f58caad542e1fad018c74300b2be234fb",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8bb0d2464a8d47007d9f.html"
+  },
+  {
+    "url": "https://kiyasse.jp",
+    "fetchedAt": "2026-11-05T04:27:03.117022+00:00",
+    "status": 200,
+    "finalUrl": "https://kiyasse.jp",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c51897c5a04b7276fff9.html",
+    "snapshotSHA256": "dad944d459b2cd540d2b91984609a34c5bf3199000043a46a87f21937a60d75f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c51897c5a04b7276fff9.html"
+  },
+  {
+    "url": "http://www.city.kounosu.saitama.jp/",
+    "fetchedAt": "2026-11-05T04:25:07.301494+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kounosu.saitama.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/54a2ae31dd56eb8cf47a.html",
+    "snapshotSHA256": "4a52b7f126bed84440abf589ddc8733f32ac33c0018aced83649d59c4b5c1d95",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/54a2ae31dd56eb8cf47a.html"
+  },
+  {
+    "url": "http://www.konosu-kanko.jp/hinanosato/",
+    "fetchedAt": "2026-11-05T04:25:07.121468+00:00",
+    "status": 200,
+    "finalUrl": "https://konosu-kanko.jp/hinanosato/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fc93e8be56da0fa589ac.html",
+    "snapshotSHA256": "b16624e7309c685449fc56907da6961b03ff05bcee563228aacc222d769c8acd",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fc93e8be56da0fa589ac.html"
+  },
+  {
+    "url": "https://konosu-kanko.jp/access/",
+    "fetchedAt": "2026-11-05T04:27:03.376683+00:00",
+    "status": 200,
+    "finalUrl": "https://konosu-kanko.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fafd8c29d60a5190132d.html",
+    "snapshotSHA256": "8576bb59ef57680090855ef0cd2d92f87f6df89a0a57f091f45d98031402ae4b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fafd8c29d60a5190132d.html"
+  },
+  {
+    "url": "https://www.city.kounosu.saitama.jp/page/1056.html",
+    "fetchedAt": "2026-11-05T04:25:08.428536+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kounosu.saitama.jp/page/1056.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a90793630e431036856f.html",
+    "snapshotSHA256": "734e678e6d519c85283eb67072d4ac5500f8522d03f53ec7e64ad46171a0c3d9",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a90793630e431036856f.html"
+  },
+  {
+    "url": "http://www.city.kounosu.saitama.jp",
+    "fetchedAt": "2026-11-05T04:25:10.920158+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kounosu.saitama.jp",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/dcb8d7f2c93f69271d37.html",
+    "snapshotSHA256": "4a52b7f126bed84440abf589ddc8733f32ac33c0018aced83649d59c4b5c1d95",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/dcb8d7f2c93f69271d37.html"
+  },
+  {
+    "url": "http://www.city.kounosu.saitama.jp/page/15979.html",
+    "fetchedAt": "2026-11-05T04:25:12.067653+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kounosu.saitama.jp/page/15979.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a8ca22facd18956a821e.html",
+    "snapshotSHA256": "7955e5276890b977330a7a957ede2eab7917918532592994257f17dabdf2fddf",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a8ca22facd18956a821e.html"
+  },
+  {
+    "url": "http://www.city.kounosu.saitama.jp/site/konotori/",
+    "fetchedAt": "2026-11-05T04:25:09.700640+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.kounosu.saitama.jp/site/konotori/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c8c5b981161d91a1c6e7.html",
+    "snapshotSHA256": "9ddd0b4fb2c80ea47707a719e510d5e885e51fb0234f5786f64b4662a7d0de34",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c8c5b981161d91a1c6e7.html"
+  },
+  {
+    "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/14193.html",
+    "fetchedAt": "2026-11-05T04:25:08.428186+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/14193.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/52b4cc6fffdbbbeb920b.html",
+    "snapshotSHA256": "dd78a2f20f830db48fb90ee9fbb041bad241286ae67b22aece0db7e194fb4845",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/52b4cc6fffdbbbeb920b.html"
+  },
+  {
+    "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/16632.html",
+    "fetchedAt": "2026-11-05T04:25:09.655626+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/16632.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e9f13278d148cf0d2943.html",
+    "snapshotSHA256": "5173f8b2b4af5a6e9c926d29e51429ed041cb8fdb454a1c8d6fbf46e93451a92",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e9f13278d148cf0d2943.html"
+  },
+  {
+    "url": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
+    "fetchedAt": "2026-11-05T04:25:10.972628+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/18676.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f007c9c348cd8460a70e.html",
+    "snapshotSHA256": "1c80f01f4aeefef3b36354cebd649549566e301cc31c491172825017f17c9607",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/f007c9c348cd8460a70e.html"
+  },
+  {
+    "url": "https://www.city.ageo.lg.jp/site/suido/058111030701.html",
+    "fetchedAt": "2026-11-05T04:27:03.568986+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ageo.lg.jp/site/suido/058111030701.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d7ac7e6d440b32d19cec.html",
+    "snapshotSHA256": "c2beda0b70cef2ee84b501cb18a807ff741bb303ccea86c2a0d293cad5f3d11a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d7ac7e6d440b32d19cec.html"
+  },
+  {
+    "url": "https://www.city.ageo.lg.jp/site/suido/430079.html",
+    "fetchedAt": "2026-11-05T04:27:04.699201+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ageo.lg.jp/site/suido/430079.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d807568e0a57939c7319.html",
+    "snapshotSHA256": "844bb44be29dfd625af5c57bc48d1ce6605e70ea6a6d33cc483ab9272fb6a618",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d807568e0a57939c7319.html"
+  },
+  {
+    "url": "https://www.city.ageo.lg.jp/site/suido/list218-1040.html",
+    "fetchedAt": "2026-11-05T04:25:09.287231+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ageo.lg.jp/site/suido/list218-1040.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/adced9a4027d8a3d7f7f.html",
+    "snapshotSHA256": "42a4fad29cd7a8308974235721d7774c5dbc96cc05036728c7cbf98f94032840",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/adced9a4027d8a3d7f7f.html"
+  },
+  {
+    "url": "https://www.ageo-kankou.com/",
+    "fetchedAt": "2026-11-05T04:25:09.655298+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ageo-kankou.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/47350de31a41637e13be.html",
+    "snapshotSHA256": "4046fd70f5bbb7158d082a58613655a86808443f30f73fa5a3a9c39ec5338739",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/47350de31a41637e13be.html"
+  },
+  {
+    "url": "https://www.city.ageo.lg.jp/site/suido/051120112001.html",
+    "fetchedAt": "2026-11-05T04:27:05.878854+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ageo.lg.jp/site/suido/051120112001.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5be1fd0b0ed21b455fa4.html",
+    "snapshotSHA256": "9c8ec9b1b46d9200d65a8e145afe85dfcc2116dd239de4f94a879bd86f013edc",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5be1fd0b0ed21b455fa4.html"
+  },
+  {
+    "url": "http://www.city.soka.saitama.jp/cont/s1904/020/010/010/PAGE000000000000056963.html",
+    "fetchedAt": "2026-11-05T04:25:10.950054+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.soka.saitama.jp/cont/s1904/020/010/010/PAGE000000000000056963.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/1ce7bba12ab5466a1d77.html",
+    "snapshotSHA256": "bdef7595aedf1df960d45dc292431a8baba0e72c6b06baecfa04d4f5e602a070",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/1ce7bba12ab5466a1d77.html"
+  },
+  {
+    "url": "https://www.city.soka.saitama.jp/cont/s1002/map/22.html",
+    "fetchedAt": "2026-11-05T04:27:04.299803+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.soka.saitama.jp/cont/s1002/map/22.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b8c5a5ca0e89c77cd85e.html",
+    "snapshotSHA256": "12d68d21de386f8c41058029a47d244ecb6d7ff6dc8595e2168113a12e9528c0",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b8c5a5ca0e89c77cd85e.html"
+  },
+  {
+    "url": "https://www.city.soka.saitama.jp/cont/s1410/map/PAGE000000000000055984.html",
+    "fetchedAt": "2026-11-05T04:25:09.700252+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.soka.saitama.jp/cont/s1410/map/PAGE000000000000055984.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/1ee9e78986a8db5cecee.html",
+    "snapshotSHA256": "97509b3f573e83fe2bfe13a060e8e59ac107e99162ac417a139a446d34646d9d",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/1ee9e78986a8db5cecee.html"
+  },
+  {
+    "url": "http://www.city.soka.saitama.jp/cont/s1904/020/010/010/PAGE000000000000058775.html",
+    "fetchedAt": "2026-11-05T04:25:12.340267+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.soka.saitama.jp/cont/s1904/020/010/010/PAGE000000000000058775.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8aeb43c37f5188ecc83d.html",
+    "snapshotSHA256": "557a78329b16c6e2ab0a94700dfc145cdbb191e66a24b473b587b5ddc827cf53",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8aeb43c37f5188ecc83d.html"
+  },
+  {
+    "url": "https://soka-bunka.jp/pages/17/",
+    "fetchedAt": "2026-11-05T04:27:04.405621+00:00",
+    "status": 200,
+    "finalUrl": "https://soka-bunka.jp/pages/17/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3b00117dc26f58725a8a.html",
+    "snapshotSHA256": "4b7c25fca4eb194ccf9e35312721290de36319ed7e97e9fc3c0640cd1db37489",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/3b00117dc26f58725a8a.html"
+  },
+  {
+    "url": "https://soka-bunka.jp/smarts/index/60/",
+    "fetchedAt": "2026-11-05T04:25:10.852330+00:00",
+    "status": 200,
+    "finalUrl": "https://soka-bunka.jp/pages/60/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a48d8ed3cedb515ffa67.html",
+    "snapshotSHA256": "749974a839b99418123ab07e3b54dbaa69745651efa31be164bb7874e47465f3",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a48d8ed3cedb515ffa67.html"
+  },
+  {
+    "url": "http://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/douro/suidogesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:10.949807+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/douro/suidogesuido/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/40cc925c6ee4f0ac498f.html",
+    "snapshotSHA256": "ad2659d381b893a0d88fa76f694beefcb76eeaa49a59e9fd7e5b5cf08b487366",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/40cc925c6ee4f0ac498f.html"
+  },
+  {
+    "url": "https://www.city.koshigaya.saitama.jp/toiawase/map.html",
+    "fetchedAt": "2026-11-05T04:27:05.690179+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koshigaya.saitama.jp/toiawase/map.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/56ae7639093c37050173.html",
+    "snapshotSHA256": "776e7b728407ef5d3bc6a425b76a84bc659066da43af2413114e9dd5ea5a1271",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/56ae7639093c37050173.html"
+  },
+  {
+    "url": "https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/douro/suidogesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:12.374137+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/douro/suidogesuido/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c0a4c4a4980234abca23.html",
+    "snapshotSHA256": "ad2659d381b893a0d88fa76f694beefcb76eeaa49a59e9fd7e5b5cf08b487366",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c0a4c4a4980234abca23.html"
+  },
+  {
+    "url": "https://www.koshigaya-sightseeing.jp/ga-yachan_kurayashiki/",
+    "fetchedAt": "2026-11-05T04:25:10.972304+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9d69bba0f5273fee0bba.html",
+    "snapshotSHA256": "15cf12d3a4f2ee5b7dd8d5ce253f3576c78d2edfb6a05e6285c55661f6a58c26",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/9d69bba0f5273fee0bba.html"
+  },
+  {
+    "url": "https://www.koshigaya-sightseeing.jp/information/uncategorized/%e3%82%ac%e3%83%bc%e3%83%a4%e3%81%a1%e3%82%83%e3%82%93%e3%81%ae%e8%94%b5%e5%b1%8b%e6%95%b7/",
+    "fetchedAt": "2026-11-05T04:25:13.890119+00:00",
+    "status": 200,
+    "finalUrl": "https://www.koshigaya-sightseeing.jp/information/uncategorized/%e3%82%ac%e3%83%bc%e3%83%a4%e3%81%a1%e3%82%83%e3%82%93%e3%81%ae%e8%94%b5%e5%b1%8b%e6%95%b7/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6dc60a6631f1dfc4b1af.html",
+    "snapshotSHA256": "06ea1ab81b48316fa8a9822feb828b8a79f1dd93558d730f36a550f629dd1a6f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/6dc60a6631f1dfc4b1af.html"
+  },
+  {
+    "url": "https://www.koshigaya-sightseeing.jp/",
+    "fetchedAt": "2026-11-05T04:25:12.532856+00:00",
+    "status": 200,
+    "finalUrl": "https://www.koshigaya-sightseeing.jp/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b314df44fccb5dcf942a.html",
+    "snapshotSHA256": "d5b5e5ad00038cf2bb205a1efdb76a3ee40d609c40cc6ccdfdd3a70abd422a2f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b314df44fccb5dcf942a.html"
+  },
+  {
+    "url": "https://www.city.toda.saitama.jp/site/suidou/gesuidou-manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:12.373762+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toda.saitama.jp/site/suidou/gesuidou-manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4b206acd91fb74b2e7ba.html",
+    "snapshotSHA256": "038ca572c5e37de33ffa140680f1514aa8fc0c025879287c08af5faf0aa40dce",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4b206acd91fb74b2e7ba.html"
+  },
+  {
+    "url": "https://www.city.toda.saitama.jp/soshiki/173/access-todacity.html",
+    "fetchedAt": "2026-11-05T04:27:05.891524+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toda.saitama.jp/soshiki/173/access-todacity.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/55a7f0e2cfd18b4fe5d1.html",
+    "snapshotSHA256": "b8d61ab904e5579a3379467fcb408922b35dfd884d4e955e1a1fd36577f269f0",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/55a7f0e2cfd18b4fe5d1.html"
+  },
+  {
+    "url": "https://www.city.toda.saitama.jp/soshiki/411/access-niizominami.html",
+    "fetchedAt": "2026-11-05T04:27:04.698922+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toda.saitama.jp/soshiki/411/access-niizominami.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/809dcde4550f9d7e1575.html",
+    "snapshotSHA256": "3e9e3944d42c5ac12deaf0e7a80d972f46b2e9b56d591593b9181fe8c0bf1cb4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/809dcde4550f9d7e1575.html"
+  },
+  {
+    "url": "https://www.city.toda.saitama.jp/soshiki/214/keizai-tbic-top.html",
+    "fetchedAt": "2026-11-05T04:25:13.691779+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.toda.saitama.jp/soshiki/214/keizai-tbic-top.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b207bfcded752d551f55.html",
+    "snapshotSHA256": "96a5ae4f5e2a78ec844a0d09d81a054d4474c665cd8c12297f32351bbd0a4203",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b207bfcded752d551f55.html"
+  },
+  {
+    "url": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/index.html",
+    "fetchedAt": "2026-11-05T04:25:12.729416+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/190746e77cdf35e146e0.html",
+    "snapshotSHA256": "41941d48191ab9a01e741fb6aabf54d45e13d7ba3f2fde01c4434f5ea82cac2b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/190746e77cdf35e146e0.html"
+  },
+  {
+    "url": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/jogesuido/gesuido/oshirase_event/3577.html",
+    "fetchedAt": "2026-11-05T04:25:13.885163+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iruma.saitama.jp/soshiki/jogesuidokeeka/jogesuido/gesuido/oshirase_event/3577.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f4fee26925e3ea65eed4.html",
+    "snapshotSHA256": "7a419c3b65c7e4bb6dd0f1a60b30b2046949e02e2f1b44d11f7fe287016c90c1",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/f4fee26925e3ea65eed4.html"
+  },
+  {
+    "url": "https://www.alit.city.iruma.saitama.jp/",
+    "fetchedAt": "2026-11-05T04:25:13.594103+00:00",
+    "status": 200,
+    "finalUrl": "https://www.alit.city.iruma.saitama.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7a7d6ebdcd077ffaece2.html",
+    "snapshotSHA256": "a68f72bd3f0a6f32e950ee5e2106d2df638fa1194700b1414e44562bce66fa15",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/7a7d6ebdcd077ffaece2.html"
+  },
+  {
+    "url": "https://www.alit.city.iruma.saitama.jp/020/010/020/20200101225000.html",
+    "fetchedAt": "2026-11-05T04:27:05.515517+00:00",
+    "status": 200,
+    "finalUrl": "https://www.alit.city.iruma.saitama.jp/020/010/020/20200101225000.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b6bbade92f18f2590e4e.html",
+    "snapshotSHA256": "56d7fcea6e9c7a5025ef0db825f5147b44ce0eaa05f79a256e8c382712e865ec",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b6bbade92f18f2590e4e.html"
+  },
+  {
+    "url": "https://www.alit.city.iruma.saitama.jp/020/index.html",
+    "fetchedAt": "2026-11-05T04:27:07.154537+00:00",
+    "status": 200,
+    "finalUrl": "https://www.alit.city.iruma.saitama.jp/020/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/54cd5bbb5ccdb747f278.html",
+    "snapshotSHA256": "187b181f0bd85a075a4114496a5a1a1b8d0b5da8978486d9a1bfd39de9d07cef",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/54cd5bbb5ccdb747f278.html"
+  },
+  {
+    "url": "https://www.city.iruma.saitama.jp/kurashi/jogesuido/gesuido/koho_event/8610.html",
+    "fetchedAt": "2026-11-05T04:25:15.238904+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iruma.saitama.jp/kurashi/jogesuido/gesuido/koho_event/8610.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a5be43a21c4a7cda4776.html",
+    "snapshotSHA256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a5be43a21c4a7cda4776.html"
+  },
+  {
+    "url": "https://www.city.shiki.lg.jp/soshiki/3/3234.html",
+    "fetchedAt": "2026-11-05T04:27:05.878594+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiki.lg.jp/soshiki/3/3234.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/91456e40094720319b5b.html",
+    "snapshotSHA256": "e7c5f061839581b5e97db703ca97a8274346313a6b725df6bc81f7a7d01e6b6a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/91456e40094720319b5b.html"
+  },
+  {
+    "url": "https://www.city.shiki.lg.jp/soshiki/37/7096.html",
+    "fetchedAt": "2026-11-05T04:25:13.700247+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiki.lg.jp/soshiki/37/7096.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a283cd539c969633272d.html",
+    "snapshotSHA256": "e8bdf60329e403a7b9fa5a1a3cc2bd6a0f3ab8885cc793efe078660a27c3559b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a283cd539c969633272d.html"
+  },
+  {
+    "url": "http://www.okekan.com/",
+    "fetchedAt": "2026-11-05T04:25:13.884983+00:00",
+    "status": 200,
+    "finalUrl": "https://okekan.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bc7716a996c7360a0f35.html",
+    "snapshotSHA256": "064f3d94a0533977893c5e10988a86268a7036e82d4e8e4ffe4e9de78871f7d5",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/bc7716a996c7360a0f35.html"
+  },
+  {
+    "url": "https://www.city.okegawa.lg.jp/kurashi/sumai/jogesuido/7571.html",
+    "fetchedAt": "2026-11-05T04:25:13.889906+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.okegawa.lg.jp/kurashi/sumai/jogesuido/7571.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/53538cb8bfd8d393d940.html",
+    "snapshotSHA256": "4ede2b41a26d10ab40e1692c2207d010783a94390c34c8aee85edde4d35d1a9a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/53538cb8bfd8d393d940.html"
+  },
+  {
+    "url": "https://www.city.fujimi.saitama.jp/",
+    "fetchedAt": "2026-11-05T04:25:16.084390+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimi.saitama.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3077350ded7b400fb5e7.html",
+    "snapshotSHA256": "3e0b6bb68344654560ef53a3b8b9f0ac2fbbf5e0f52ac47da8207db15ded2c3a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/3077350ded7b400fb5e7.html"
+  },
+  {
+    "url": "https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/_suidou/gesui/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:17.336902+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimi.saitama.jp/kurashi_tetsuzuki/_suidou/gesui/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/96db486f4d5992f830a9.html",
+    "snapshotSHA256": "3c10752c26110eb7146764c86f1c4a00f6fa32df989b723c8e822ef2dca7562c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/96db486f4d5992f830a9.html"
+  },
+  {
+    "url": "https://www.city.fujimi.saitama.jp/madoguchi_shisetsu/01shisetsu/siyakysho/2010-0510-1001-142.html",
+    "fetchedAt": "2026-11-05T04:27:05.891336+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimi.saitama.jp/madoguchi_shisetsu/01shisetsu/siyakysho/2010-0510-1001-142.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c180a3acaa272696da66.html",
+    "snapshotSHA256": "959daece5d14ded5bb3bbdb82fc523fb6a21f23af2c0197140a7d6d3468640bf",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/c180a3acaa272696da66.html"
+  },
+  {
+    "url": "https://mitsui-shopping-park.com/lalaport/shinmisato/access/",
+    "fetchedAt": "2026-11-05T04:27:05.972150+00:00",
+    "status": 200,
+    "finalUrl": "https://mitsui-shopping-park.com/lalaport/shinmisato/access/",
+    "contentType": "text/html;charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d39fb3f745dc58d125c8.html",
+    "snapshotSHA256": "3b54c199807b79c6f7f461ce2e5dd1355c6520b86e398c8d3862cdb1e02359ff",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/d39fb3f745dc58d125c8.html"
+  },
+  {
+    "url": "https://mitsui-shopping-park.com/lalaport/shinmisato/shopguide/701505.html?msockid=19c2c2c4db1e65243f39d6abdaf46457",
+    "fetchedAt": "2026-11-05T04:25:16.424583+00:00",
+    "status": 200,
+    "finalUrl": "https://mitsui-shopping-park.com/lalaport/shinmisato/shopguide/701505.html?msockid=19c2c2c4db1e65243f39d6abdaf46457",
+    "contentType": "text/html;charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8113512a2924f1db7180.html",
+    "snapshotSHA256": "2d70c31214cdd19639428f4dd23d0ec68e72ffa4c15ad8c43a62e85570248a6f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8113512a2924f1db7180.html"
+  },
+  {
+    "url": "https://www.city.misato.lg.jp/soshiki/kensetsu/gesuido/5/961.html",
+    "fetchedAt": "2026-11-05T04:30:24.732192+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.misato.lg.jp/soshiki/kensetsu/gesuido/5/961.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a2a5cb550e79577938a5.html",
+    "snapshotSHA256": "096e1ccf0567a76bf1554dc0edf6907e103f7f8e76e4f9d04a2f853e92d677dd",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/a2a5cb550e79577938a5.html"
+  },
+  {
+    "url": "https://www.city.hasuda.saitama.jp/access/index.html",
+    "fetchedAt": "2026-11-05T04:27:06.477021+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hasuda.saitama.jp/access/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5a4ec77e9643a686efc9.html",
+    "snapshotSHA256": "1540dc2474a4118f3213ad586b9b5315e8ee49ed97090fdd584934a3fade4978",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5a4ec77e9643a686efc9.html"
+  },
+  {
+    "url": "https://www.city.hasuda.saitama.jp/kominkan/kyoiku/shogai/kominkan/cyuuoukouminnkann.html",
+    "fetchedAt": "2026-11-05T04:25:17.731849+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hasuda.saitama.jp/kominkan/kyoiku/shogai/kominkan/cyuuoukouminnkann.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fcc947bdbed7db3cb6ee.html",
+    "snapshotSHA256": "136149698954245c62b7968334669db30a121334c178634b6b6947a71f3d0704",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fcc947bdbed7db3cb6ee.html"
+  },
+  {
+    "url": "https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html",
+    "fetchedAt": "2026-11-05T04:25:16.447564+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hasuda.saitama.jp/kurashi/gyouseicenter/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/050f76adaac51e069f1b.html",
+    "snapshotSHA256": "6d1feb39bfc451096c40ecb95ff9e0c1c02370e5fb2c96c553a3875b9dba218c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/050f76adaac51e069f1b.html"
+  },
+  {
+    "url": "https://www.city.hasuda.saitama.jp/machi/suido/gesui/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:18.919209+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hasuda.saitama.jp/machi/suido/gesui/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/73d87ff998eac6e249bc.html",
+    "snapshotSHA256": "5e4593189b68f1bf93109213dec6d33ba4ed911d08a7c410614b511de78326dd",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/73d87ff998eac6e249bc.html"
+  },
+  {
+    "url": "http://www.stgesui.or.jp/",
+    "fetchedAt": "2026-11-05T04:25:18.866173+00:00",
+    "status": 200,
+    "finalUrl": "http://www.stgesui.or.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f2a5d62d739525b6381a.html",
+    "snapshotSHA256": "2fd71bbb3318f79236297bff5f1cacf7ec2ab94df2ddbed597af832b1b1f5301",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/f2a5d62d739525b6381a.html"
+  },
+  {
+    "url": "http://www.stgesui.or.jp/access/",
+    "fetchedAt": "2026-11-05T04:27:07.064400+00:00",
+    "status": 200,
+    "finalUrl": "http://www.stgesui.or.jp/access/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/af5da5fd342bc1bb8be1.html",
+    "snapshotSHA256": "951c8bc5a793446f9b3fd7647bacc3f09fd627dfb0dba9d820d7fec7e30baefa",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/af5da5fd342bc1bb8be1.html"
+  },
+  {
+    "url": "https://www.stgesui.or.jp/kumiai/jouhou/shisetsu/",
+    "fetchedAt": "2026-11-05T04:25:17.652881+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/cd25940c8db979809baa.html",
+    "snapshotSHA256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/cd25940c8db979809baa.html"
+  },
+  {
+    "url": "https://www.stgesui.or.jp/pr/",
+    "fetchedAt": "2026-11-05T04:30:24.732426+00:00",
+    "status": 200,
+    "finalUrl": "https://www.stgesui.or.jp/pr/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8746fd978ccb569fc141.html",
+    "snapshotSHA256": "cdf8d8425a02b5adbe9daafe8efaeb930cd2459eafd50b465a9d12719746b20c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/8746fd978ccb569fc141.html"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/20234.html",
+    "fetchedAt": "2026-11-05T04:27:07.102067+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/20234.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/53b71e9671ab986d6f92.html",
+    "snapshotSHA256": "cb542e7b470c8dbc434897889076b190f77172ec142e9235da5a7ee717bb19c4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/53b71e9671ab986d6f92.html"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/index.html",
+    "fetchedAt": "2026-11-05T04:25:18.505861+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/44d59b95c4281d9100ea.html",
+    "snapshotSHA256": "74ed8ec4ecd3489934518d749233fd664e6055691cb98564d7fd84784747751f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/44d59b95c4281d9100ea.html"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+    "fetchedAt": "2026-11-05T04:27:08.457561+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e427d4736d745c8e2576.html",
+    "snapshotSHA256": "73d082e268d4029fcf0d7fc927c70da27b5ec7575d14c4062d8d63b4ac64a638",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e427d4736d745c8e2576.html"
+  },
+  {
+    "url": "http://www.city.yoshikawa.saitama.jp/index.cfm/23,61996,123,html",
+    "fetchedAt": "2026-11-05T04:25:18.629527+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yoshikawa.saitama.jp/index.cfm/23,61996,123,html",
+    "contentType": "text/html;charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4182077e0d7ad91f37b5.html",
+    "snapshotSHA256": "76ec8ca7d4274dc409ea1d26dc912000a682bb99aec61f37b9c508e2211de49f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4182077e0d7ad91f37b5.html"
+  },
+  {
+    "url": "https://f-bunka.jp/stella-west/accessmap/",
+    "fetchedAt": "2026-11-05T04:25:18.865814+00:00",
+    "status": 200,
+    "finalUrl": "https://f-bunka.jp/stella-west/accessmap/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/12249c85a4016e4c61b9.html",
+    "snapshotSHA256": "cdaab624c52e718af8085bcfb8a3ef16cff4a21a7e404809061c2ae991c537d6",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/12249c85a4016e4c61b9.html"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/17326.html",
+    "fetchedAt": "2026-11-05T04:25:18.919476+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5548fb9cb4a2ba007e58.html",
+    "snapshotSHA256": "0a7dce6c65f79f0f922a7695ae5bb906328090245440c5dddeb81a3750490d0a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5548fb9cb4a2ba007e58.html"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/manhoru/17326.html",
+    "fetchedAt": "2026-11-05T04:30:26.075492+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/manhoru/17326.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b9effe1c4df88a8c6dd3.html",
+    "snapshotSHA256": "ce39aa4c91b3a6f845765064d77d3b41c3ff6782b34c97528c1b1ce166b3636c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b9effe1c4df88a8c6dd3.html"
+  },
+  {
+    "url": "https://f-bunka.jp/stella-east/accessmap/",
+    "fetchedAt": "2026-11-05T04:27:07.154325+00:00",
+    "status": 200,
+    "finalUrl": "https://www.f-bunka.jp/stella-east/accessmap/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/87c8198e2a39100a906d.html",
+    "snapshotSHA256": "caf49b31920b8c563b0e9cf1fcc98468d7c59ebc064b505c924d0a75fc59e02f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/87c8198e2a39100a906d.html"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+    "fetchedAt": "2026-11-05T04:30:24.731272+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2e5126f989811cf4195e.html",
+    "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/jogesuidoka/gesuidoshisetsukakari/2309.html",
+    "fetchedAt": "2026-11-05T04:25:20.142084+00:00",
+    "status": 404,
+    "error": "HTTP Error 404: Not Found",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/79f0fea334fdae95c1db.html",
+    "snapshotSHA256": "0a7dce6c65f79f0f922a7695ae5bb906328090245440c5dddeb81a3750490d0a",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/79f0fea334fdae95c1db.html"
+  },
+  {
+    "url": "https://www.f-bunka.jp/stella-east/accessmap/",
+    "fetchedAt": "2026-11-05T04:25:19.347425+00:00",
+    "status": 200,
+    "finalUrl": "https://www.f-bunka.jp/stella-east/accessmap/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f11d2bb690551023f9b5.html",
+    "snapshotSHA256": "caf49b31920b8c563b0e9cf1fcc98468d7c59ebc064b505c924d0a75fc59e02f",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/f11d2bb690551023f9b5.html"
+  },
+  {
+    "url": "http://inamachi.info/",
+    "fetchedAt": "2026-11-05T04:25:20.117674+00:00",
+    "status": 200,
+    "finalUrl": "https://inamachi.info/error/403.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/42503b197053c671d342.html",
+    "snapshotSHA256": "7ba7f0a7a1885a3c68e2b4fdf45188e25d57213811b5e3306f11a925a530327c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/42503b197053c671d342.html"
+  },
+  {
+    "url": "http://www.town.saitama-ina.lg.jp/0000000624.html",
+    "fetchedAt": "2026-11-05T04:25:20.141772+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.saitama-ina.lg.jp/0000000624.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/be4783662ec8565aeb04.html",
+    "snapshotSHA256": "27fef98b7f659e6f72ebc1374776e5f497ea365dc0b3ec9f43560483f3f719d2",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/be4783662ec8565aeb04.html"
+  },
+  {
+    "url": "https://www.town.saitama-ina.lg.jp/0000007622.html",
+    "fetchedAt": "2026-11-05T04:25:21.547777+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.saitama-ina.lg.jp/0000007622.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/080b1957f86734474e36.html",
+    "snapshotSHA256": "7ebc81c511cad83340f80e40373a46f08864b31ef17de27b5b933005204bd427",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/080b1957f86734474e36.html"
+  },
+  {
+    "url": "https://www.town.namegawa.saitama.jp",
+    "fetchedAt": "2026-11-05T04:25:20.927225+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.namegawa.saitama.jp",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9b85d756d718d254188d.html",
+    "snapshotSHA256": "b414bcf8506285ebc0ee2c3c76cbc3da2ca6f1f6102d843c10122dc29c9b1dcd",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/9b85d756d718d254188d.html"
+  },
+  {
+    "url": "https://www.town.namegawa.saitama.jp/soshikikarasagasu/jyougesuidouka/gesuido/4390.html",
+    "fetchedAt": "2026-11-05T04:25:22.162250+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.namegawa.saitama.jp/soshikikarasagasu/jyougesuidouka/gesuido/4390.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fe9ed333416b8da93a03.html",
+    "snapshotSHA256": "63c6cefcf032650b07b3d7453a66ece10fa2185fd2af48841e8a7a39cdc5a1d5",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fe9ed333416b8da93a03.html"
+  },
+  {
+    "url": "http://www.kankou-ogawa.com/untitled182.html",
+    "fetchedAt": "2026-11-05T04:25:21.328553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-ogawa.com/untitled182.html",
+    "contentType": "text/html;charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5eabf7dd0816c3ae50df.html",
+    "snapshotSHA256": "3384437cd93676213a35fa3071e8aeb7abcef79eda41a3bc04dd45da176f22f7",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/5eabf7dd0816c3ae50df.html"
+  },
+  {
+    "url": "https://www.town.ogawa.saitama.jp/gyosei/sosiki/14/1_1/2/375.html",
+    "fetchedAt": "2026-11-05T04:25:21.339165+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.ogawa.saitama.jp/gyosei/sosiki/14/1_1/2/375.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b278535486599f07a940.html",
+    "snapshotSHA256": "c7a6eb76178cef30b4f2bfc2e22049fa9cd96c93f011e76f774e1747e1ff6b88",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b278535486599f07a940.html"
+  },
+  {
+    "url": "https://www.town.ogawa.saitama.jp/map.html",
+    "fetchedAt": "2026-11-05T04:27:07.319226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.ogawa.saitama.jp/map.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/42431236a5cf0ed6fe36.html",
+    "snapshotSHA256": "121efe0de8edeaffc258cf21b5fbeaed845d92a9f2f60e13d13a2a79e5c56d8c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/42431236a5cf0ed6fe36.html"
+  },
+  {
+    "url": "https://samachika.jp/",
+    "fetchedAt": "2026-11-05T04:25:21.370254+00:00",
+    "status": 200,
+    "finalUrl": "https://samachika.jp/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/daaeceac539833da3576.html",
+    "snapshotSHA256": "9b025eec5617616f7d822ff5e51e9c73c87317630926dac99407fc4db50f4dc4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/daaeceac539833da3576.html"
+  },
+  {
+    "url": "https://www.town.kawajima.saitama.jp/1825.htm",
+    "fetchedAt": "2026-11-05T04:25:21.547438+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kawajima.saitama.jp/1825.htm",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/94c03d33f97df4713b57.html",
+    "snapshotSHA256": "daa208179067f2a231d8aabf5f33bad7c29fd0473f3c5cc1b03c4e5cfdc9ddc4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/94c03d33f97df4713b57.html"
+  },
+  {
+    "url": "https://www.town.kawajima.saitama.jp/6276.htm",
+    "fetchedAt": "2026-11-05T04:25:22.962667+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fbb24fac0b7e67537966.html",
+    "snapshotSHA256": "a054593ddb7947e1ee2a607320a3b527b170f29fb55c1b2a61e78175fa54992d",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/fbb24fac0b7e67537966.html"
+  },
+  {
+    "url": "https://www.town.yoshimi.saitama.jp/soshiki/mizuseikatsuka/gesuidou/390.html",
+    "fetchedAt": "2026-11-05T04:25:23.345559+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yoshimi.saitama.jp/soshiki/mizuseikatsuka/gesuidou/390.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/09c46673d3bc2644ea18.html",
+    "snapshotSHA256": "5ec84f027cf35c0a9f29afefaea83519d181ab80d92075afa7477065a52385c4",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/09c46673d3bc2644ea18.html"
+  },
+  {
+    "url": "https://www.town.yoshimi.saitama.jp/soshiki/shogaigakushuk/7/909.html",
+    "fetchedAt": "2026-11-05T04:25:22.161902+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yoshimi.saitama.jp/soshiki/shogaigakushuk/7/909.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/81e9fb3171a1e035f36b.html",
+    "snapshotSHA256": "23e6a1d2cb0a84e73b7d4e1b42a49aa03c344eefaf9a7dfd9d3f5b9917c837c1",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/81e9fb3171a1e035f36b.html"
+  },
+  {
+    "url": "http://www.town.yorii.saitama.jp/soshiki/18/manholecard.html",
+    "fetchedAt": "2026-11-05T04:25:22.587682+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yorii.saitama.jp/soshiki/18/manholecard.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b869e418a0f802bd2026.html",
+    "snapshotSHA256": "0ccc7a67cfa14921d7159502b6bdbf6e65c6ec7dfa5481aa414128415a63d7b5",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/b869e418a0f802bd2026.html"
+  },
+  {
+    "url": "http://www.atarasiimura.com",
+    "fetchedAt": "2026-11-05T04:25:22.671151+00:00",
+    "status": 200,
+    "finalUrl": "http://www.atarasiimura.com",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e78a5f057cf490ef3339.html",
+    "snapshotSHA256": "6bfafe463c300158cfc9b52c53435990191ebe5009f701a7ef0e779bc24b6fa3",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/e78a5f057cf490ef3339.html"
+  },
+  {
+    "url": "http://www.atarasiimura.com/access",
+    "fetchedAt": "2026-11-05T04:27:09.064181+00:00",
+    "status": 200,
+    "finalUrl": "http://www.atarasiimura.com/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4b439951c53506118c80.html",
+    "snapshotSHA256": "6f81d147185acb3a328c8e0939654d2b9d0be0df77ac4802e0d65624678df92c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/4b439951c53506118c80.html"
+  },
+  {
+    "url": "http://www.atarasiimura.com/access/",
+    "fetchedAt": "2026-11-05T04:27:07.724141+00:00",
+    "status": 200,
+    "finalUrl": "http://www.atarasiimura.com/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bf98e851d1f820d60445.html",
+    "snapshotSHA256": "6f81d147185acb3a328c8e0939654d2b9d0be0df77ac4802e0d65624678df92c",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/bf98e851d1f820d60445.html"
+  },
+  {
+    "url": "http://www.town.miyashiro.lg.jp/0000013667.html",
+    "fetchedAt": "2026-11-05T04:25:22.741988+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.miyashiro.lg.jp/0000013667.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/94417dc8644cb8673052.html",
+    "snapshotSHA256": "8bb1393922783d9598a1b0fdccadc7c65a3ce18897f3d84431b6edce0eca423b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/94417dc8644cb8673052.html"
+  },
+  {
+    "url": "https://www.town.miyashiro.lg.jp/0000013667.html",
+    "fetchedAt": "2026-11-05T04:25:23.982808+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.miyashiro.lg.jp/0000013667.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2a127a1acaad13c322c1.html",
+    "snapshotSHA256": "8bb1393922783d9598a1b0fdccadc7c65a3ce18897f3d84431b6edce0eca423b",
+    "cacheReused": true,
+    "reusedFrom": "data/evidence/national/kanto-north/2a127a1acaad13c322c1.html"
+  },
+  {
+    "url": "https://www.muji.com/jp/ja/shop/detail/046636",
+    "fetchedAt": "2026-11-05T04:25:22.840953+00:00",
+    "error": "The read operation timed out",
+    "cacheReused": true
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/d1503/arajou-shoukai.html",
+    "fetchedAt": "2026-11-05T04:51:14.007297+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/d1503/arajou-shoukai.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ba98413afdf488565269.html",
+    "snapshotSHA256": "47c89e3ac4350dc5939c6ced7368596ccffc0de592789cfba839ebf8cbd62658"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/d1503/ichinokawa-shoukai.html",
+    "fetchedAt": "2026-11-05T04:51:15.137251+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/d1503/ichinokawa-shoukai.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8fcaa798d575c385a8b9.html",
+    "snapshotSHA256": "69eac7e324e971512d22d88ff4b6c9a811be66a2984a4386e057539d080dcc61"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/d1503/toneugan-shoukai.html",
+    "fetchedAt": "2026-11-05T04:51:16.393852+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/d1503/toneugan-shoukai.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/eab4a1b1b963eba2dcea.html",
+    "snapshotSHA256": "479cea283068daae40826509c0d2e495176cab3f2dc0c06daea429e06ac32cb5"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/014.html",
+    "fetchedAt": "2026-11-05T04:51:17.520359+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/shisetsu/shakai/014.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bf679a6b61e169589b19.html",
+    "snapshotSHA256": "67b8b858b516f29c78ea05fc918685ff7a87d55f411258833f6de79fa37a98e0"
+  },
+  {
+    "url": "https://www.city.kawagoe.saitama.jp/shisei/shisetsu/kanko/1013327/1013330.html",
+    "fetchedAt": "2026-11-05T04:51:18.913852+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawagoe.saitama.jp/shisei/shisetsu/kanko/1013327/1013330.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/63b667d6c436f1a75996.html",
+    "snapshotSHA256": "b1a6474991dfba565babfa71af6315d092a043e7f2013a3ebe23e9856416d6f7"
+  },
+  {
+    "url": "https://www.city.kumagaya.lg.jp/shisetsu/shiyakusho/annai/shiyakusho.html",
+    "fetchedAt": "2026-11-05T04:51:19.036595+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kumagaya.lg.jp/shisetsu/shiyakusho/annai/shiyakusho.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fe62f146352babc9c33f.html",
+    "snapshotSHA256": "1c96d4d5a079eb09b116242d29e56948edbe56f44305f53620a84acbd090f273"
+  },
+  {
+    "url": "https://www.city.kumagaya.lg.jp/shisetsu/kurashi/kankoannaijyo.html",
+    "fetchedAt": "2026-11-05T04:51:20.214146+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kumagaya.lg.jp/shisetsu/kurashi/kankoannaijyo.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/60e62c9ac27725ed9370.html",
+    "snapshotSHA256": "4efc5778f3a755e9cf2f5815fcd9f23b29baec799664f74eb752fc5acca0fd53"
+  },
+  {
+    "url": "https://www.oideyo-kumagaya.com/cate-info/18673/",
+    "fetchedAt": "2026-11-05T04:51:20.364181+00:00",
+    "status": 200,
+    "finalUrl": "https://www.oideyo-kumagaya.com/cate-info/18673/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/19e906368434ec6e813e.html",
+    "snapshotSHA256": "2a07300f0ed37e4051b495b9780185c5b7119e39071d704acaf43717b9e2e9eb"
+  },
+  {
+    "url": "https://www.city.kawagoe.saitama.jp/shisei/shisetsu/kanko/1013327/1013329.html",
+    "fetchedAt": "2026-11-05T04:52:03.584779+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kawagoe.saitama.jp/shisei/shisetsu/kanko/1013327/1013329.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c661757108cf098910cd.html",
+    "snapshotSHA256": "a0d4cfdef4cc59d3b62959c50bc5742fbb5f56d1c0c2b15986a79563c0d2dda9"
+  },
+  {
+    "url": "https://www.kawaguchi-lib.jp/lib01_chuo.html",
+    "fetchedAt": "2026-11-05T04:52:03.797687+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kawaguchi-lib.jp/lib01_chuo.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9f9eeade5e2784019c45.html",
+    "snapshotSHA256": "efbe9f10831cff99e6813ea48593919b39aba052356b01e2565bec770b32314d"
+  },
+  {
+    "url": "https://www.city.tokorozawa.saitama.jp/shisetu/lifeline/suidochosha.html",
+    "fetchedAt": "2026-11-05T04:52:03.887439+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tokorozawa.saitama.jp/shisetu/lifeline/suidochosha.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/10fd2e4916d6355edef3.html",
+    "snapshotSHA256": "2de1ed6ec19f0c6524050e25d29a6e542e08bb3c3ce4df3f756f420163ff99f2"
+  },
+  {
+    "url": "https://www.city.kazo.lg.jp/benriservice/map/shisetsu/sisetugaiyou_siyakusyo/12026.html",
+    "fetchedAt": "2026-11-05T04:52:04.045480+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/benriservice/map/shisetsu/sisetugaiyou_siyakusyo/12026.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f35932a707f18eda05c3.html",
+    "snapshotSHA256": "6c66b940ff02aa803d1271d1fa7f5cda0922404e5fdf0180cf673b9ad08e4d88"
+  },
+  {
+    "url": "https://www.city.kazo.lg.jp/soshiki/citypromo/shoukai/1548.html",
+    "fetchedAt": "2026-11-05T04:52:05.239524+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/soshiki/citypromo/shoukai/1548.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8d3cc259914906e2f9a7.html",
+    "snapshotSHA256": "9ada357c5c9336d1d06a60d0da377566e1aa3235e83bc8e5e5a99206b67641d6"
+  },
+  {
+    "url": "https://www.city.honjo.lg.jp/soshiki/kikakuzaisei/hishokoho/shiseijoho/gaiyou/1379055784655.html",
+    "fetchedAt": "2026-11-05T04:52:05.413364+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.honjo.lg.jp/soshiki/kikakuzaisei/hishokoho/shiseijoho/gaiyou/1379055784655.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/35c463e6b6c316ea0a58.html",
+    "snapshotSHA256": "ba7615fc7ad438373adffdc81d3b445e6b3f60335ab9b6f8334b97ca4774fcde"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16329",
+    "fetchedAt": "2026-11-05T04:52:05.559075+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16329",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/24d5852c67898e6b4390.html",
+    "snapshotSHA256": "6fefb5df4e87bc4e09a4a0c875b1d9804aa35b489dcadafb537dd7a9f7b2304d"
+  },
+  {
+    "url": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/access/map_access.html",
+    "fetchedAt": "2026-11-05T04:52:13.917473+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.gyoda.lg.jp/soshiki/shougaigakusyubu/kyodohakubutsukan/riyou/access/map_access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/dc79c9d7931c92056f50.html",
+    "snapshotSHA256": "7726d4fecd637950fde5061a1c5192d16c04debb68a32fd239f5254dde881014"
+  },
+  {
+    "url": "https://www.city.gyoda.lg.jp/search_shisetsu/syuyo/5657.html",
+    "fetchedAt": "2026-11-05T04:52:15.069783+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.gyoda.lg.jp/search_shisetsu/syuyo/5657.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f25be2c3f4b5148ab93e.html",
+    "snapshotSHA256": "85ce4197d6fafd94c9dde57ad85eb10b2b525ca56e74030e2f5a5670527572d2"
+  },
+  {
+    "url": "https://www.city.kounosu.saitama.jp/page/2982.html",
+    "fetchedAt": "2026-11-05T04:52:15.239558+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kounosu.saitama.jp/page/2982.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0ecf49beac7ef6fc6d02.html",
+    "snapshotSHA256": "db67f53432ab4bb1ec7b9e6dc116e054d5efc47562e37fdc3fa6a993e32a8b1d"
+  },
+  {
+    "url": "https://www.city.kounosu.saitama.jp/site/konotori/1294.html",
+    "fetchedAt": "2026-11-05T04:52:16.464713+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kounosu.saitama.jp/site/konotori/1294.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4aaf6295e55fd43f169e.html",
+    "snapshotSHA256": "5b3051d2e04176965a87d1fc63bdf0e4d604865e4e8084d227741c25003fd613"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/information/33/38/4324.html",
+    "fetchedAt": "2026-11-05T04:52:25.125442+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/information/33/38/4324.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0c5f3bf2ff49c7b534e6.html",
+    "snapshotSHA256": "58ba819bf8ff7ba619731eea18574caf750edf0a34d268d9f7c0c6d5f736ee52"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/soshiki/kyoiku/shogaigakushu/komakominkan/kominkan/1677.html",
+    "fetchedAt": "2026-11-05T04:52:26.538396+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/soshiki/kyoiku/shogaigakushu/komakominkan/kominkan/1677.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/1f84bb94bed0cc91f68b.html",
+    "snapshotSHA256": "896213d80823ea191002b32a2a8462ac81fd11196a7d163fee4e03e643a65918"
+  },
+  {
+    "url": "https://www.city.kazo.lg.jp/soshiki/gesui/koukyougesuidou/6287.html",
+    "fetchedAt": "2026-11-05T04:52:56.229777+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kazo.lg.jp/soshiki/gesui/koukyougesuidou/6287.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f1c46afa04b88398c3dd.html",
+    "snapshotSHA256": "cee679549ca8f3f326773b8e81c575ed50b13331110ea3db2d655e177bf94814"
+  },
+  {
+    "url": "https://www.city.iruma.saitama.jp/search_shisetsu/158/8338.html",
+    "fetchedAt": "2026-11-05T04:52:56.562382+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iruma.saitama.jp/search_shisetsu/158/8338.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d45b0b72175f9d94dc7d.html",
+    "snapshotSHA256": "bb371d0d34a67162d84249b4db3b2d1a1960146489d53bb7745c0c64115e62fe"
+  },
+  {
+    "url": "https://inamachi.info/access",
+    "fetchedAt": "2026-11-05T04:52:56.684387+00:00",
+    "status": 200,
+    "finalUrl": "https://inamachi.info/error/403.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/92285216e2ae37fde70e.html",
+    "snapshotSHA256": "7ba7f0a7a1885a3c68e2b4fdf45188e25d57213811b5e3306f11a925a530327c"
+  },
+  {
+    "url": "https://yotteco-yorii.jp/about/",
+    "fetchedAt": "2026-11-05T04:52:56.818116+00:00",
+    "status": 200,
+    "finalUrl": "https://yotteco-yorii.jp/about/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c09a829ee12c6f95e3d7.html",
+    "snapshotSHA256": "aa28c777f595932b4250ef6d094b6296a9a740bddf15c90f18fda2800624eadb"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/27633",
+    "fetchedAt": "2026-11-05T04:53:18.536351+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/27633",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/525396cd14070e797901.html",
+    "snapshotSHA256": "3f5ad5801e55b6f0724db13879a05c49a9dfda8d6b754d63d87f252a57ead682"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16088",
+    "fetchedAt": "2026-11-05T04:53:19.724251+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16088",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/60c947adb28ffd649218.html",
+    "snapshotSHA256": "edd2604d2f692c1f023298a9a84af11d3538eb6f3f847cdd578fcba52f906806"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16302",
+    "fetchedAt": "2026-11-05T04:53:20.963309+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16302",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/91810456760f930a6ed0.html",
+    "snapshotSHA256": "2afec8bac2fd80072328b4fb7234ed9b6fedea9b5cc283cdf48c2135b41d9ec7"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16270",
+    "fetchedAt": "2026-11-05T04:53:22.109713+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16270",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/5af43ed8a8a54110c27e.html",
+    "snapshotSHA256": "44f3e30cb24b20a2041df2cb4a60b57382a01cc90cd71b222e8a7cb87feea9bc"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/13267",
+    "fetchedAt": "2026-11-05T04:53:30.131282+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/13267",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/037097556f1cf7da20cb.html",
+    "snapshotSHA256": "e7fa5a801eab7c6d411b360ccd839a2874309e4488abf091ad7bb8f03aa26874"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/17828",
+    "fetchedAt": "2026-11-05T04:53:31.275037+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/17828",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/671d8deb2bef66dbb350.html",
+    "snapshotSHA256": "dc3d13d7b225bfa803d310d1bd2c9225a67a493735d87d1047be65cbe9c2a175"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16974",
+    "fetchedAt": "2026-11-05T04:53:32.462656+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16974",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/47e855f4074488482889.html",
+    "snapshotSHA256": "d68aa3eaf363507b64fb6aba74b9ed17d755bd8dfa1c87f35c5f887e7c7bc409"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index/page~267?page=192",
+    "fetchedAt": "2026-11-05T04:53:33.676426+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index/page~267?page=192",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b96d1ee580a28653f960.html",
+    "snapshotSHA256": "d144e18d095fb7a5e698e149cfe2b1048ad9fe58638fef1523094249efd99d11"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search?area_id%5B0%5D=60&page=6",
+    "fetchedAt": "2026-11-05T04:53:42.784772+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search?area_id%5B0%5D=60&page=6",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c8e51558996e44672a08.html",
+    "snapshotSHA256": "aff180a94a6dd8e9f03714c9bd5e10bc29701747da3dbb93bd8abd4c806462d5"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/20222",
+    "fetchedAt": "2026-11-05T04:53:43.983655+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/20222",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c28d09bae379cc9a23d5.html",
+    "snapshotSHA256": "1bc37e9f0b0c746fad7ac9db7cbf848743015319a84ce33398e0841d92b08622"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%92%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:12.189623+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%92%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/741575c42320a6603f4f.html",
+    "snapshotSHA256": "a46d97dbbace33935f0ca4cedb672413576640dd925865548e53abfe41cf11ec"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%85%83%E8%8D%92%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:13.671799+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%85%83%E8%8D%92%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9ff682f7e4c5d763333b.html",
+    "snapshotSHA256": "3cc8dcf50bbe27841504cf1afd2a9be998a8eef03204b43514fb0db270662fbd"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E6%B2%B3%E5%B2%B8%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:15.129794+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E6%B2%B3%E5%B2%B8%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c576210900a5a4cd9b12.html",
+    "snapshotSHA256": "679a33bc0e6292b482f8478aa79f0621fa054d8ca2fe45be73061f8d4db706d1"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:16.578315+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/750e856ccc78fded6fd3.html",
+    "snapshotSHA256": "616b88c9ce131a89c18e101e135e08698f2c994a1310714590565a52651d2758"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%8F%A4%E5%88%A9%E6%A0%B9%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:18.085178+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%8F%A4%E5%88%A9%E6%A0%B9%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4a054c33257891e06fe3.html",
+    "snapshotSHA256": "8221aab77e87c8b2d9ea3479e353f72823aaed59ac013587ba0f0403ed54b85a"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%92%E5%B7%9D%E4%B8%8A%E6%B5%81%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:19.536840+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%92%E5%B7%9D%E4%B8%8A%E6%B5%81%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/87451cfad8eae3227d6a.html",
+    "snapshotSHA256": "28decf4c19a9480480d8a7446c70c4418ea48c311df3b7da172cc0851c9c9506"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B8%82%E9%87%8E%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:21.109169+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B8%82%E9%87%8E%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0b8ed5f01291389ab664.html",
+    "snapshotSHA256": "2d1604374925c252ba963ef55f24ae25f0f86dd0a4107a55082ff7934b5a7973"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B0%8F%E5%B1%B1%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "fetchedAt": "2026-11-05T04:54:22.647290+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B0%8F%E5%B1%B1%E5%B7%9D%E6%B0%B4%E5%BE%AA%E7%92%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c3367ab04982b0659d6e.html",
+    "snapshotSHA256": "bca846b025f417de7a0f2f8750d2da34070e60b0c6e72be503f740b430ff4e52"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%AD%E3%83%A5%E3%83%9D",
+    "fetchedAt": "2026-11-05T04:54:24.088827+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%AD%E3%83%A5%E3%83%9D",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/2d527ffb636bc420b423.html",
+    "snapshotSHA256": "ddcd9f92ed7f5df0abc50f1da18abc24409df159d1457a8b52a1f4e5d7b99759"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93%E5%B1%80",
+    "fetchedAt": "2026-11-05T04:54:25.597065+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93%E5%B1%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b0141abb17e435164e37.html",
+    "snapshotSHA256": "f9bb2cf010e994bf8023ed38854d6d45a31effb925dc804efc61e66e29d75b12"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%89%80%E6%B2%A2%E5%B8%82%E5%BD%B9%E6%89%80",
+    "fetchedAt": "2026-11-05T04:54:27.034626+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%89%80%E6%B2%A2%E5%B8%82%E5%BD%B9%E6%89%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/926175be6916eabdb532.html",
+    "snapshotSHA256": "6802d3d216beb59add1dbfcd479d41d0eeded1e968d9c404ee7f0d7795da19be"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E9%87%8E%E8%80%81%E6%BE%A4",
+    "fetchedAt": "2026-11-05T04:54:28.605348+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E9%87%8E%E8%80%81%E6%BE%A4",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3299aaeb3b1d47ac06ec.html",
+    "snapshotSHA256": "1d67901c41885e6c8bbbe33062a5a0cff9de61ea212351eb87617f6fe5822dd1"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=YOT",
+    "fetchedAt": "2026-11-05T04:54:30.257116+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=YOT",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3735fdb5e8025890e3fb.html",
+    "snapshotSHA256": "e1328b21a2195c46889a32f5e8ad542772921f0b60dd7d4b1b6360dbdf811481"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E9%A3%AF%E8%83%BD%E5%95%86%E5%B7%A5%E4%BC%9A%E8%AD%B0%E6%89%80",
+    "fetchedAt": "2026-11-05T04:54:31.628251+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E9%A3%AF%E8%83%BD%E5%95%86%E5%B7%A5%E4%BC%9A%E8%AD%B0%E6%89%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/67b88aecc0ded6c21899.html",
+    "snapshotSHA256": "a8d8eb3f6d1d8ff48613c6d7a290c6dc290936898d6064bf6620850f37e0995f"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E7%92%B0%E5%A2%83%E6%B5%84%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "fetchedAt": "2026-11-05T04:54:33.059264+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E7%92%B0%E5%A2%83%E6%B5%84%E5%8C%96%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c3c133fb6fef13523a75.html",
+    "snapshotSHA256": "6b9f0121a66e4721e2a069c4e553f019bbeaea00c57e98f81776368330a5749b"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%9C%AC%E5%BA%84%E6%97%A9%E7%A8%B2%E7%94%B0",
+    "fetchedAt": "2026-11-05T04:54:34.619927+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%9C%AC%E5%BA%84%E6%97%A9%E7%A8%B2%E7%94%B0",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b9fbfffb7a07b0c8a06c.html",
+    "snapshotSHA256": "232f09b849dcf61baec2457182f0717d23b81aaebcfd7a0dfe91bf5f852f18ba"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E7%8B%AD%E5%B1%B1%E5%B8%82%E5%B8%82%E6%B0%91%E4%BA%A4%E6%B5%81",
+    "fetchedAt": "2026-11-05T04:54:36.127670+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E7%8B%AD%E5%B1%B1%E5%B8%82%E5%B8%82%E6%B0%91%E4%BA%A4%E6%B5%81",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bc4d9df7cb7981a00ce7.html",
+    "snapshotSHA256": "3a0cce77e6f98828b479d4e831152934a083ecfdcd6187c09f66fcd6b4f1d700"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%AD%E3%83%A4%E3%83%83%E3%82%BB",
+    "fetchedAt": "2026-11-05T04:54:37.643462+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%AD%E3%83%A4%E3%83%83%E3%82%BB",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/36c8e8aebea35c7fd1e9.html",
+    "snapshotSHA256": "f1b7ad30c6bdb61781a41e6f7040e0f1af6491aeed885e22c8a696f9819aef36"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%B2%E3%81%AA%E3%81%AE%E9%87%8C",
+    "fetchedAt": "2026-11-05T04:54:39.180775+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%B2%E3%81%AA%E3%81%AE%E9%87%8C",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9a7cf1cddc8ee05a9b78.html",
+    "snapshotSHA256": "0636dd878754c4b8b1f5442ca2d153409a5f9a5e75886c93007fcfceb0720b3a"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%A4%A9%E7%A9%BA%E3%81%AE%E9%87%8C",
+    "fetchedAt": "2026-11-05T04:54:40.618584+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%A4%A9%E7%A9%BA%E3%81%AE%E9%87%8C",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fb09f80d23463b43ce02.html",
+    "snapshotSHA256": "e693e97f79566e6f6e4742c3b3d5def638fc57f2f5a60b3c7aa6de6add4a8023"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%B7%B1%E8%B0%B7%E3%83%86%E3%83%A9%E3%82%B9",
+    "fetchedAt": "2026-11-05T04:54:42.062893+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%B7%B1%E8%B0%B7%E3%83%86%E3%83%A9%E3%82%B9",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/139dd2d98c94d864853e.html",
+    "snapshotSHA256": "7a8dfc01b58129f74440377443c6bf370eaefaebe4c6aa14ec90422134b68570"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%8A%E3%81%8B%E3%81%B9",
+    "fetchedAt": "2026-11-05T04:54:43.499728+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%8A%E3%81%8B%E3%81%B9",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/305e685002bde7c0c03b.html",
+    "snapshotSHA256": "3b6b1f33fd357767f7aa3a6f8ab4802a782c481dd70514dd28bff3506b0e63c9"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%8B%E3%82%8F%E3%82%82%E3%81%A8",
+    "fetchedAt": "2026-11-05T04:54:44.980222+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E9%81%93%E3%81%AE%E9%A7%85%E3%81%8B%E3%82%8F%E3%82%82%E3%81%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/29da24b4335bcb3f2e2f.html",
+    "snapshotSHA256": "9866e4e81bae82a37496da5af33d71909e42e10be0305107661dbb602aa1d06e"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%8A%E5%B0%BE%E5%B8%82%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "fetchedAt": "2026-11-05T04:54:46.417108+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%8A%E5%B0%BE%E5%B8%82%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e8a6657dcf1165a8d6c9.html",
+    "snapshotSHA256": "ccf7c9f45f1beea66a49a35ff6b1f0b2a3f204079ffd5724082837bc1efb3101"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%8A%E5%9C%9F%E7%94%A3%E3%83%BB%E8%A6%B3%E5%85%89%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "fetchedAt": "2026-11-05T04:54:47.875644+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%8A%E5%9C%9F%E7%94%A3%E3%83%BB%E8%A6%B3%E5%85%89%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e7304c89e7f2fe8b39ae.html",
+    "snapshotSHA256": "126d599b851cdc5724f17e07c7e30b45daa133b3569bc8e2809ddcc316b3f4e0"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%89%E5%8A%A0%E5%AE%BF%E8%8A%AD%E8%95%89%E5%BA%B5",
+    "fetchedAt": "2026-11-05T04:54:49.406385+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%89%E5%8A%A0%E5%AE%BF%E8%8A%AD%E8%95%89%E5%BA%B5",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/11badbd108b22336a80c.html",
+    "snapshotSHA256": "c72dfd7c574dc76f9b936b0f2ac02c625c21bd3bebc98fae28ad595331208674"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%89%E5%8A%A0%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8",
+    "fetchedAt": "2026-11-05T04:54:50.907941+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%8D%89%E5%8A%A0%E5%B8%82%E6%96%87%E5%8C%96%E4%BC%9A%E9%A4%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7bb7b80b4f4ec92e9dd9.html",
+    "snapshotSHA256": "d795460ac7c8bfacc04c3aacdb5a593c732be7e4d16557ef09fd7440b5b5f5fb"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%B6%8A%E8%B0%B7%E5%B8%82%E5%B8%82%E6%B0%91%E6%B4%BB%E5%8B%95",
+    "fetchedAt": "2026-11-05T04:54:52.347927+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%B6%8A%E8%B0%B7%E5%B8%82%E5%B8%82%E6%B0%91%E6%B4%BB%E5%8B%95",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/38d7b69b349a02149406.html",
+    "snapshotSHA256": "a4dfad3a8dbe2797354b613a3d7bd9839e07a51e257e32a97588b3cabbff180e"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%B0%B4%E8%BE%BA%E3%81%AE%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A",
+    "fetchedAt": "2026-11-05T04:54:53.795135+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%B0%B4%E8%BE%BA%E3%81%AE%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/fb2289f55635f04c5071.html",
+    "snapshotSHA256": "74354bec3abf1f62d8d4ab4a078113532f8faa4837f9df45f50b1a858e1bc7d6"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E6%9B%BD%E5%8D%97",
+    "fetchedAt": "2026-11-05T04:54:55.268401+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E6%9B%BD%E5%8D%97",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7ad800eb2354103e1a03.html",
+    "snapshotSHA256": "063539333916ea701b66cde226821f71ff6900104a430c865aa55f5c7b7d864c"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%95%E3%81%8F%E3%82%89%E3%83%91%E3%83%AB",
+    "fetchedAt": "2026-11-05T04:54:56.738682+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%95%E3%81%8F%E3%82%89%E3%83%91%E3%83%AB",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/cc9f8ff04fbabe160611.html",
+    "snapshotSHA256": "f75753b73e9dd37e6d7a43db71fc80a6c18bebfb0a477ba469a10e562697c156"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%88%B8%E7%94%B0%E5%85%AC%E5%9C%92%E9%A7%85%E5%89%8D%E8%A1%8C%E6%94%BF",
+    "fetchedAt": "2026-11-05T04:54:58.229718+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%88%B8%E7%94%B0%E5%85%AC%E5%9C%92%E9%A7%85%E5%89%8D%E8%A1%8C%E6%94%BF",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3ba1aa5fd9a96cfad26c.html",
+    "snapshotSHA256": "4cca24f6c45a78fb5b1bf5a7b6d8b39cd96fee422f7d1aa786af89974e21a903"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%B1%B1%E9%81%93%E5%AE%BF%E5%A0%B4%E9%A4%A8",
+    "fetchedAt": "2026-11-05T04:54:59.670399+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%B1%B1%E9%81%93%E5%AE%BF%E5%A0%B4%E9%A4%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ae17950f1978b0e92070.html",
+    "snapshotSHA256": "1c89deb139f03bcaaa33c2e3e0c6beff7456966fc3abb610d3487d23ab8bcd7a"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%A1%B6%E5%B7%9D%E5%B8%82%E8%A6%B3%E5%85%89%E5%8D%94%E4%BC%9A",
+    "fetchedAt": "2026-11-05T04:55:01.152571+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%A1%B6%E5%B7%9D%E5%B8%82%E8%A6%B3%E5%85%89%E5%8D%94%E4%BC%9A",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9abba3940f5b74b2d0bb.html",
+    "snapshotSHA256": "88c92a8247d8598663fae4d71a45d94bbf79713df926d27b6e2d5390e4b37012"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%AF%8C%E5%A3%AB%E8%A6%8B%E5%B8%82%E5%BD%B9%E6%89%80",
+    "fetchedAt": "2026-11-05T04:55:02.616541+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%AF%8C%E5%A3%AB%E8%A6%8B%E5%B8%82%E5%BD%B9%E6%89%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/72c264482bad4fe6351b.html",
+    "snapshotSHA256": "339af9cd0c03bcf66a3006f5af3c3169a5c7a7b6c7609a9b9ff4330a72048f40"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%93%AE%E7%94%B0%E9%A7%85%E8%A5%BF%E5%8F%A3",
+    "fetchedAt": "2026-11-05T04:55:04.076429+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%93%AE%E7%94%B0%E9%A7%85%E8%A5%BF%E5%8F%A3",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d736f3c4b00001ff8110.html",
+    "snapshotSHA256": "eec3b038338f49a85265665f9012dd7c35be2c7baba1a12ae321d44b7738d3c3"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E8%93%AE%E7%94%B0%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "fetchedAt": "2026-11-05T04:55:05.559946+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E8%93%AE%E7%94%B0%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/613ef14dcd14ab8e292b.html",
+    "snapshotSHA256": "38a8d5d6245620c57df7e5279d057cf3fdf47d0227faf6978d8abcae21e6a997"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E7%9F%B3%E4%BA%95%E6%B0%B4%E5%87%A6%E7%90%86",
+    "fetchedAt": "2026-11-05T04:55:07.057758+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E7%9F%B3%E4%BA%95%E6%B0%B4%E5%87%A6%E7%90%86",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/abe13335138fc5fca3f9.html",
+    "snapshotSHA256": "b4994db2c5dda3623901437bddbe3681d0ba1c52bafafc892115473242d99875"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%97%A5%E9%AB%98%E5%B8%82%E6%B5%84%E5%8C%96",
+    "fetchedAt": "2026-11-05T04:55:08.604446+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%97%A5%E9%AB%98%E5%B8%82%E6%B5%84%E5%8C%96",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0bef2253c4daba0ba023.html",
+    "snapshotSHA256": "1c7e256713459fb456062f3c374c090bbb0ee48433a2a27003315f1099599da1"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%97%A5%E9%AB%98%E5%B8%82%E5%BD%B9%E6%89%80",
+    "fetchedAt": "2026-11-05T04:55:10.124479+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%97%A5%E9%AB%98%E5%B8%82%E5%BD%B9%E6%89%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/828facfc112cfe27fec1.html",
+    "snapshotSHA256": "f6e4abc7c2e5d44622d88524eab052348a94fd4b76f77e7c61e6507da02df26e"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E9%AB%98%E9%BA%97%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "fetchedAt": "2026-11-05T04:55:11.606477+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E9%AB%98%E9%BA%97%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a5c3ecf4a62ae3de3f37.html",
+    "snapshotSHA256": "badd114b667c55e6259ffae4a5a951715a3828b2b52364ac44c0697387878d61"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%83%A9%E3%83%83%E3%83%94%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89",
+    "fetchedAt": "2026-11-05T04:55:13.119267+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%83%A9%E3%83%83%E3%83%94%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/aa3030234c3343843322.html",
+    "snapshotSHA256": "9f526121a282134da612148a6920604201827096e49f5e1b01dfc522fa184bf5"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%B5%E3%81%98%E3%81%BF%E9%87%8E%E5%B8%82%E5%BD%B9%E6%89%80",
+    "fetchedAt": "2026-11-05T04:55:14.573906+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%81%B5%E3%81%98%E3%81%BF%E9%87%8E%E5%B8%82%E5%BD%B9%E6%89%80",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/94c030c952bde4f7ed0e.html",
+    "snapshotSHA256": "d9fe7cbdba37293e030462cba471046ed74bf37a396281ac4e7e9c729e372703"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%BC%8A%E5%A5%88%E7%94%BA%E7%B7%8F%E5%90%88%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "fetchedAt": "2026-11-05T04:55:16.028763+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%BC%8A%E5%A5%88%E7%94%BA%E7%B7%8F%E5%90%88%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e024ba640814fac52868.html",
+    "snapshotSHA256": "6e109c2e8d93a0f5bd7f51203b09c4cf25be37699f9afc1443dccb88894b8cff"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%BC%8A%E5%A5%88%E7%94%BA%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "fetchedAt": "2026-11-05T04:55:17.525642+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%BC%8A%E5%A5%88%E7%94%BA%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6f77f4bd3bc558a278b9.html",
+    "snapshotSHA256": "1bc9907498a92b21c2ffa07a3964d79647444c1fd2f3da72191efd10c7721495"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%80%E3%81%99%E3%81%B3%E3%82%81",
+    "fetchedAt": "2026-11-05T04:55:19.046805+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E3%82%80%E3%81%99%E3%81%B3%E3%82%81",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/115990f246837673762f.html",
+    "snapshotSHA256": "256e1fa162242e3a1a4e2aa3130d2adccb0cfea7db8c75bba167c622ed50bc04"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B7%9D%E5%B3%B6%E7%94%BA%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3",
+    "fetchedAt": "2026-11-05T04:55:20.495485+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%B7%9D%E5%B3%B6%E7%94%BA%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/60a626544dffdadfbb1c.html",
+    "snapshotSHA256": "8c948cf7fc57ef0d8f594ba1390e451d4264d3464c26ff9d42dd1ae819295fd8"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%90%89%E8%A6%8B%E7%99%BE%E7%A9%B4",
+    "fetchedAt": "2026-11-05T04:55:21.966788+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%90%89%E8%A6%8B%E7%99%BE%E7%A9%B4",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a381a8e2f06544475c69.html",
+    "snapshotSHA256": "4b616daf964e23bcf0316a257057e13bf8f2f1ab590cfdfbd0e6c60623ffdd8a"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=Yotteco",
+    "fetchedAt": "2026-11-05T04:55:23.473160+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=Yotteco",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e169500930bbedfb046c.html",
+    "snapshotSHA256": "add01149c5922bd19ca20b139f43a8277ade28e2abd9437551fa6f0e16304d6c"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E3%81%97%E3%81%84%E6%9D%91",
+    "fetchedAt": "2026-11-05T04:55:24.966387+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E6%96%B0%E3%81%97%E3%81%84%E6%9D%91",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e354601fb92ff797a61d.html",
+    "snapshotSHA256": "0eca3c02aef4f573af84873dbdcf5292bcb40e144a9fcffdfb140d1748faaeb1"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E5%AE%AE%E4%BB%A3%E7%94%BA%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "fetchedAt": "2026-11-05T04:55:26.434884+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E5%AE%AE%E4%BB%A3%E7%94%BA%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/8a50f88fd6c3070ba4a9.html",
+    "snapshotSHA256": "697ac1de1a3c168e4f2eccfb3ea8c7bcf7feaedc8e105b8d337e0e5d584c09df"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E7%84%A1%E5%8D%B0%E8%89%AF%E5%93%81%20%E6%9D%B1%E6%AD%A6",
+    "fetchedAt": "2026-11-05T04:55:28.010899+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E7%84%A1%E5%8D%B0%E8%89%AF%E5%93%81%20%E6%9D%B1%E6%AD%A6",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c803f9a27087324e005a.html",
+    "snapshotSHA256": "b7a67f7e85ab3f4543b6a75f4708d7d8e8c1b4553f929ddd6cc0ee4944a4c364"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/business/location/484/",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6697fcd7e92674e754c5.html",
+    "snapshotSHA256": "60c5b3afa5da44237bafb2b6ef5d6d3b0a1effe3727360bfcb553670fba45265",
+    "snapshotSavedAt": "2026-11-05T04:55:04.719946+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/souvenir/7498/",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/969053edb1300b568cdb.html",
+    "snapshotSHA256": "0c3b3835536cdd0f1e158bab24f2e756ad459133f02527fb858b13c60d3caaea",
+    "snapshotSavedAt": "2026-11-05T04:55:07.385582+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://fukaya-terracepark.jp/about/terracepark/",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b7a90fff9639417d2a2e.html",
+    "snapshotSHA256": "9da5082877210b57051d7a6de7647e5086f07f927fbcf9cf0b6a56c05cf81c5a",
+    "snapshotSavedAt": "2026-11-05T04:55:02.010007+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://saitama-supportdesk.com/ja/spots/post-22377/",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/cf44e054e140d058da69.html",
+    "snapshotSHA256": "43acb22eb1329c8a4ae24d5afb97c570ee17b4c9d74cefaa8d2eae591dde6197",
+    "snapshotSavedAt": "2026-11-05T04:55:04.133494+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1971.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/29abb061bcc22f7913a8.html",
+    "snapshotSHA256": "08c254088e02b4262584ce66f30e4237d3fad859b092733ef0ab502d8704704c",
+    "snapshotSavedAt": "2026-11-05T04:54:24.667829+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.city.hasuda.saitama.jp/nishic/sisetuannai.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/6bf4331daa1a2b0a8ae9.html",
+    "snapshotSHA256": "4dbcbf36a7e8bc4530e589995a869bbbcc21316b168a187728b4aaeb15cc5166",
+    "snapshotSavedAt": "2026-11-05T04:55:07.596343+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.city.soka.saitama.jp/enjoycore/js/map/map.js",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b7052a3bfa2c90979011.html",
+    "snapshotSHA256": "fdc2982c24cb6c2b07e4b36a652fc24080d6f78df47cd92834345b58f2406054",
+    "snapshotSavedAt": "2026-11-05T04:55:07.839245+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.city.toda.saitama.jp/soshiki/191/simin-todakouen-gyouseicenter.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/15729974372988b9e85f.html",
+    "snapshotSHA256": "28c803a1263a63dbea38509eb771171ab0ca1c4df93ab257aeec25eee1c9bed0",
+    "snapshotSavedAt": "2026-11-05T04:55:07.722983+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.city.tokorozawa.saitama.jp/shiseijoho/soshiki_gyomu/sangyokeizai/syougyoukankou.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d5d8636a3e98af77e127.html",
+    "snapshotSHA256": "db38fc891e626ec1f08338706961601956d6707b895481a5ad4e95ead56dad7b",
+    "snapshotSavedAt": "2026-11-05T04:55:01.788435+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/007.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0b8e2b3c2d7c13387405.html",
+    "snapshotSHA256": "d388380c25d10964e8ca1dfc57a4fe148e9220f48fd7c3de13335f2d14233b5e",
+    "snapshotSavedAt": "2026-11-05T04:55:06.893123+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/009.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/bcb1ef73c8886aeb58ed.html",
+    "snapshotSHA256": "eb04791075b380ffbb098565369b0e359e301a5dc08fcf24ab576b67c889bb16",
+    "snapshotSavedAt": "2026-11-05T04:55:08.052200+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/010.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/1ceee722955db08d6ec0.html",
+    "snapshotSHA256": "2c6e913a782f3f4b0a47455cb67351eb3b97f9cef9791791189cf224dea592d1",
+    "snapshotSavedAt": "2026-11-05T04:55:09.183309+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/011.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b1f57a97dacf1afb09c3.html",
+    "snapshotSHA256": "93b60479765c358913f769f83d4857602477d6f8ccb55d1ef6f69965888ae951",
+    "snapshotSavedAt": "2026-11-05T04:55:10.460012+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/012.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/284b9bef4add565d5d45.html",
+    "snapshotSHA256": "4d41194282c5333ec2aa0b5f90b7aedc3dac318e93f83e0c484f5d0116cf977b",
+    "snapshotSavedAt": "2026-11-05T04:55:11.714856+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/index.html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ce7784cd51a9449d6b33.html",
+    "snapshotSHA256": "9154512b0fe2eeceb0a18d232bc1bf1edd139ec5dd04ddd182b509b6ebb6299b",
+    "snapshotSavedAt": "2026-11-05T04:55:12.849838+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/13155",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/70e3ac60fe7a78c8ce52.html",
+    "snapshotSHA256": "7b104d8014498b5aa965d1eb48f63d5ae8fd38ab21d2f78ea460fedd98d3846c",
+    "snapshotSavedAt": "2026-11-05T04:54:57.057051+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16408",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f67cea5c7443ecfe9049.html",
+    "snapshotSHA256": "e7f38a3f3813ff38b4d65fb0bdea207a0163032c89b07f8a78c30abdc683cd64",
+    "snapshotSavedAt": "2026-11-05T04:55:00.497980+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16594",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/14ae2cc9a34b3c061dd2.html",
+    "snapshotSHA256": "965375eb5be04b5f816ab25d35c95c15b70fb82799e7c1f9ed64682f0f800633",
+    "snapshotSavedAt": "2026-11-05T04:54:26.001247+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16999",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d92b2a0cbf085496b51d.html",
+    "snapshotSHA256": "31caa10f6dd73ec84bb6adbed2e980de1c5bfa34d8309b9cc7774973b51ea7e2",
+    "snapshotSavedAt": "2026-11-05T04:54:27.230071+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/17827",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f089e532a119b0141e4a.html",
+    "snapshotSHA256": "533ce1ee0293fbcd88a4114ab8bb0232aeb7f86ea2bcda399d4ec0a6c470d139",
+    "snapshotSavedAt": "2026-11-05T04:54:58.204792+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/19611",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/e597308c96e27e04775c.html",
+    "snapshotSHA256": "43e7424080328d2edf9efc682aa54a42cdc171c625f0dd8ad0612eb4ea2fc0f4",
+    "snapshotSavedAt": "2026-11-05T04:55:01.672537+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/38667",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/150d99b80621c495f71e.html",
+    "snapshotSHA256": "713f392f9724f6a8ab86e2edf23f1033b381fa09a1a6d53f2c5e6244e487b2b9",
+    "snapshotSavedAt": "2026-11-05T04:54:55.874536+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/39795",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f6309fd45caa1dc4e65c.html",
+    "snapshotSHA256": "59f9ae1166c22d7d300160e4708e3939367936975cd253cec0457bfbc590af6a",
+    "snapshotSavedAt": "2026-11-05T04:54:24.771536+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/40444",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7ec1217b970a2ef1a2e2.html",
+    "snapshotSHA256": "fee047b97a358573d2a29ab0e60fbf67fc631e7bf4a1338074b616c2783cfc6b",
+    "snapshotSavedAt": "2026-11-05T04:54:59.348502+00:00",
+    "fetchedAt": null,
+    "provenanceNote": "取得成功後に原本を書き込んだファイル時刻。初期manifestの競合で取得開始時刻・HTTP metadataが欠落したため復元しない。再取得は行わず保存原本を再利用。"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16162",
+    "fetchedAt": "2026-11-05T04:55:46.930270+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16162",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c9557abf16a419be2845.html",
+    "snapshotSHA256": "bbe490c906523233f178eb1403b17e72fff4535b48a3af124acc0af34f5abfaa"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/19667",
+    "fetchedAt": "2026-11-05T04:55:48.076923+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/19667",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ef7631fe4b352cbabfe9.html",
+    "snapshotSHA256": "6f633aa3dcf54b1a3c4e69345dba95ff47e67fa6aceeefa60a13c5dcae25d89d"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/31857",
+    "fetchedAt": "2026-11-05T04:55:49.218492+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/31857",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/98d6421dfc4afe32de20.html",
+    "snapshotSHA256": "c6ff27902c42f85b2fda5ed0a92c709db8e94f4fd4993441a9964f7a11b0d767"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/17242",
+    "fetchedAt": "2026-11-05T04:55:50.429080+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/17242",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/946dfc00ff35c186b74c.html",
+    "snapshotSHA256": "c30c2d35d4bd5ffbabe41313d36e11bac8acaf6f5d7590cfcc9976c0a6af85cf"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16015",
+    "fetchedAt": "2026-11-05T04:55:51.560785+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16015",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/269f181714cc4b5eabae.html",
+    "snapshotSHA256": "8bcf0443f1d520345d224d3eb675c130c50a1d282f69095a933ae1d98c18744d"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/37307",
+    "fetchedAt": "2026-11-05T04:55:52.811735+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/37307",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9852b32d1f77945d6522.html",
+    "snapshotSHA256": "b7b380904a76f6d1ab758646b1b6cc81c40ef5e5649c1d2b889af17ce8c9b6c9"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16360",
+    "fetchedAt": "2026-11-05T04:55:53.945702+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16360",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9e126ecd5f6e21f454e3.html",
+    "snapshotSHA256": "4b19743cbf20d9bc009af538807c9ef4feb27d1e71edc0958b73732d145d1ca4"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16372",
+    "fetchedAt": "2026-11-05T04:55:55.075670+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16372",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/d6c1c17b77cebfe834be.html",
+    "snapshotSHA256": "20415391b9a2da8f9c0dea31d21b9cae6292fe1bc2927bee1d692ae74fe0265c"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/12021",
+    "fetchedAt": "2026-11-05T04:55:56.205747+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/12021",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/c78cd60c8bb05a0d5f89.html",
+    "snapshotSHA256": "6b1308312a260d0578e4b1b1cf5141a763565bf5c22b5eda13c20e157eed0517"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/35079",
+    "fetchedAt": "2026-11-05T04:55:57.386247+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/35079",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7ba865cea4bcce300139.html",
+    "snapshotSHA256": "04f27015a2b59e293a93e4cd3a230e52ce86b00e55687a8b27ad0d20f4c6606c"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/17989",
+    "fetchedAt": "2026-11-05T04:55:58.535386+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/17989",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/7b15465b70ca80492bcb.html",
+    "snapshotSHA256": "4d3c5ad017c87ca2dca084a26f20ea4aaeb34a4fe5101382d055e80ba270e371"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/16651",
+    "fetchedAt": "2026-11-05T04:55:59.758749+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/16651",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/00c82232841fec937e8b.html",
+    "snapshotSHA256": "61d4a5acc84a05bd35372e44bd5086ef548f514036c10458c5ded3ce2511607e"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/detail/12546",
+    "fetchedAt": "2026-11-05T04:56:00.946870+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/detail/12546",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/62d9eee2df77a9d1b993.html",
+    "snapshotSHA256": "f926d7051b999399fae4413e2e06b2d146cdf46835ac5887664e334be3424da5"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/souvenir/64597/?back=1",
+    "fetchedAt": "2026-11-05T04:56:21.516411+00:00",
+    "status": 200,
+    "finalUrl": "https://chocotabi-saitama.jp/souvenir/64597/?back=1",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/26486469e9a17170a68c.html",
+    "snapshotSHA256": "64a6da2bcd32bab0ba1b19e95154f8f0bb95a5bd164cb24bcf313b0b623e23cd"
+  },
+  {
+    "url": "https://www.hanno-cci.or.jp/access/",
+    "fetchedAt": "2026-11-05T04:56:23.417684+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hanno-cci.or.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9b5ebc25ef0600e8b3a5.html",
+    "snapshotSHA256": "c336279912d2728710d5f6e139ab8243fc2eea432ed86fff60af10761c13fc4e"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/spot/40825/",
+    "fetchedAt": "2026-11-05T04:56:24.343239+00:00",
+    "status": 200,
+    "finalUrl": "https://chocotabi-saitama.jp/spot/40825/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/ab80366a793377c1f8da.html",
+    "snapshotSHA256": "44474c27a2786972fb53f62c296774f8c63fe13968e104fb8b706664b946fea1"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/spot/19093/",
+    "fetchedAt": "2026-11-05T04:56:27.150778+00:00",
+    "status": 200,
+    "finalUrl": "https://chocotabi-saitama.jp/spot/19093/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/1e13d0d6467985ec8e39.html",
+    "snapshotSHA256": "32090fd6cb6e1fc6b4d7a5dddaffa461dc06c20134b15c116f8d3b48d939e561"
+  },
+  {
+    "url": "https://www.town.miyashiro.lg.jp/0000000876.html",
+    "fetchedAt": "2026-11-05T04:56:36.275397+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.miyashiro.lg.jp/0000000876.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/789c624c886f0d1be967.html",
+    "snapshotSHA256": "38e457bdf9dfde39f73f5f7424b63351c0ab14ee86d820c1f0f25f426522e3fd"
+  },
+  {
+    "url": "https://www.city.hidaka.lg.jp/soshiki/toshiseibi/toshikeikaku/keikakusuishinkigyoyuchijyuutakuseisaku/tosikeikaku/keikaku/1931.html",
+    "fetchedAt": "2026-11-05T04:56:36.586484+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hidaka.lg.jp/soshiki/toshiseibi/toshikeikaku/keikakusuishinkigyoyuchijyuutakuseisaku/tosikeikaku/keikaku/1931.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/b9d6056a3805255742a0.html",
+    "snapshotSHA256": "3afd678d05e8c66a1efde616ab3806f99ba4bcd88c3ccf656f41f1461911ad3e"
+  },
+  {
+    "url": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%A4%AE%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "fetchedAt": "2026-11-05T04:56:36.708356+00:00",
+    "status": 200,
+    "finalUrl": "https://www.saitama-support.jp/map/search/index?keyword=%E4%B8%AD%E5%A4%AE%E5%85%AC%E6%B0%91%E9%A4%A8",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/13ff2fe96e30e713f88f.html",
+    "snapshotSHA256": "a6db539d2ce46e451ce8d613385772c1c67788f3b3658f0bf483511cb569cd05"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/013.html",
+    "fetchedAt": "2026-11-05T04:57:13.243760+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/shisetsu/shakai/013.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/015148438592852f075f.html",
+    "snapshotSHA256": "637e4a739858be5ae7f938dc8fdb88afda7b90f92383c40bda3fe850dbaef41d"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/shisetsu/shakai/008.html",
+    "fetchedAt": "2026-11-05T04:57:15.439417+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/shisetsu/shakai/008.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/0c38f1f14cd2c43949ce.html",
+    "snapshotSHA256": "8c33b74185a41eb1e468745100c8e6cad6909f4f7b3879233999d9466911f0fd"
+  },
+  {
+    "url": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+    "fetchedAt": "2026-11-05T04:57:15.567188+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fujimino.saitama.jp/soshikiichiran/shisankanrika/shisankanrigakari/1932.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a67862cce10acddad0cb.html",
+    "snapshotSHA256": "f364a1987bb8e085ad1923e8bef23518cd6effe8ecdfba571db7b0732f6653f3"
+  },
+  {
+    "url": "https://chocotabi-saitama.jp/spot/19100/",
+    "fetchedAt": "2026-11-05T04:57:15.716700+00:00",
+    "status": 200,
+    "finalUrl": "https://chocotabi-saitama.jp/spot/19100/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/24c7faa0d8583e980993.html",
+    "snapshotSHA256": "266435bd0624cdb3db51a5b486205868d1ab316c60f4fff97b25613145facbcb"
+  },
+  {
+    "url": "https://www.town.kawajima.saitama.jp/8609.htm",
+    "fetchedAt": "2026-11-05T04:57:17.550295+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.kawajima.saitama.jp/8609.htm",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/81894811588af5143f0b.html",
+    "snapshotSHA256": "5d9952e654c458ff646c3b0bddce82a5526b51b67c7762a6aa2099f2d6855c12"
+  },
+  {
+    "url": "https://www.city.koshigaya.saitama.jp/kosodate-net/markers/2202/mizubeindex.html",
+    "fetchedAt": "2026-11-05T04:57:36.647008+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.koshigaya.saitama.jp/kosodate-net/markers/2202/mizubeindex.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/9c0f23929bd9317792ce.html",
+    "snapshotSHA256": "9cd9d4b112d5c8ed185e102ea14d9f7c3a2ab4f86ab1b893649e5b470ccc5330"
+  },
+  {
+    "url": "https://www.city.kounosu.saitama.jp/site/konotori/17194.html",
+    "fetchedAt": "2026-11-05T04:57:36.836788+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kounosu.saitama.jp/site/konotori/17194.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/4d0a3d9a5e89d5d397f6.html",
+    "snapshotSHA256": "9b7581ba088861246888e626c369c149841c454a59dff4d797d348a04657d653"
+  },
+  {
+    "url": "http://www2.wagmap.jp/ageocity/Map?mid=1&fid=357-830",
+    "fetchedAt": "2026-11-05T04:57:37.041751+00:00",
+    "status": 200,
+    "finalUrl": "http://www2.wagmap.jp/ageocity/Map?mid=1&fid=357-830",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/665792e023edc3422cc8.html",
+    "snapshotSHA256": "664f007c754dec8ce1e6bcbb20814e0fce507688dbed660c6e5e9d640086d766"
+  },
+  {
+    "url": "https://goo.gl/maps/cZZ2ZEwQXwms9Qws6",
+    "fetchedAt": "2026-11-05T05:00:25.986150+00:00",
+    "status": 429,
+    "finalUrl": "https://www.google.com/sorry/index?continue=https://www.google.co.jp/maps/place/%25E6%25B7%25B1%25E8%25B0%25B7%25E3%2583%2586%25E3%2583%25A9%25E3%2582%25B9%25E3%2583%2591%25E3%2583%25BC%25E3%2582%25AF/%4036.1328753,139.2430703,17z/data%3D!3m1!4b1!4m5!3m4!1s0x601ed1d0a636dfdf:0x9ef7456c9d597e84!8m2!3d36.132871!4d139.2452643%3Fhl%3Dja%26shorturl%3D1&hl=ja&q=EgQ8VBiRGOqasNcGIjBdBobsEQR8bPzrTHD-dd_gWzGelhKF7nqHUYsVoi50iX7p-MI85bhLc8PTHNh3_zQyAnJSWgFDYJaxssi7x97FtwE",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/3ebc407cdcead1c8dfc1.html",
+    "snapshotSHA256": "aa57b51177d96ba03a692a33a517cae86eff98bda728ee0f362a535302cfd4a6"
+  },
+  {
+    "url": "https://maps.app.goo.gl/5QV8opdFmghR5f2TA",
+    "fetchedAt": "2026-11-05T05:00:27.367166+00:00",
+    "status": 429,
+    "finalUrl": "https://www.google.com/sorry/index?continue=https://www.google.com/maps/place/%25E3%2580%2592350-0212%2B%25E5%259F%25BC%25E7%258E%2589%25E7%259C%258C%25E5%259D%2582%25E6%2588%25B8%25E5%25B8%2582%25E7%259F%25B3%25E4%25BA%2595%25EF%25BC%2591%25EF%25BC%2593%25EF%25BC%2593%25EF%25BC%2596%25E2%2588%2592%25EF%25BC%2591/%4035.9818713,139.4111034,17z/data%3D!3m1!4b1!4m6!3m5!1s0x6018d42a003aef71:0xcd5938e6a18e9ab!8m2!3d35.9818713!4d139.4111034!16s%252Fg%252F11cp9rf2f8%3Fentry%3Dtts%26g_ep%3DEgoyMDI2MDIyMy4wIPu8ASoASAFQAw%253D%253D%26skid%3D06b17d33-e2df-4b67-abd7-237ebe909103&q=EgQ8VBiRGOuasNcGIjBMqf8w6JcDcmQOmTMp9ryj2C1Pjd9BQkWCX0lrIGMGz0i4Ru6V0WISXwaasmXBl0cyAnJSWgFDYN7t1YmXk7Ticw",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/f81f732bc733ac57e247.html",
+    "snapshotSHA256": "f86116baccee7c83c1de5a41bec68910fe376a746a6887cd1b77690a47b7dffb"
+  },
+  {
+    "url": "https://www.town.miyashiro.lg.jp/0000026168.html",
+    "fetchedAt": "2026-11-05T05:00:28.105497+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.miyashiro.lg.jp/0000026168.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/065f593802da8d65d98b.html",
+    "snapshotSHA256": "38dfd20d283befdcbfb6151ee171c675a7aadec006baded35bfa9069891a616a"
+  },
+  {
+    "url": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/306022.html",
+    "fetchedAt": "2026-11-05T05:01:10.889481+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.saitama.lg.jp/greentourism/shisetsu/306022.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/dcb1d221747eed1a8ed9.html",
+    "snapshotSHA256": "d3c7cf5561c268548df919680e747d074023586379658becd4db4bf8a936a0e5"
+  }
+]

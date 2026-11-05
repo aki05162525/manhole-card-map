@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "files": {
+    "data/evidence/national/proposals-chubu/407b1f7471ce46d91a0b.html": "64ab2be5dae0627cdadee4354ee81f7afb992aab3b332fd5987fa5e957e362b1",
+    "data/evidence/national/proposals-chubu/verify.py": "3f0ec436fd5b1bb418282e05138c06c00890f79e817b05d4fa4a690c1b165c03",
+    "data/evidence/national/proposals-chubu/7df51cdcc576c0b69da9.html": "c48c9ab1a6499c9d3adec1e093d4ce96dbf4c004c45c8db8a67b0d0dd87a3ed6",
+    "data/evidence/national/proposals-chubu/decisions.json": "471e907c97f2f04007fb9c61048e165b56d1529d6126017e51b14e64a977b9cd",
+    "data/evidence/national/proposals-chubu/af9c7507c9e9485fc6ae.html": "9edd4b06de3ed985c44d8a622c2ca68b6cdf7b1ffe68772ee94bed81f2d3bd3a",
+    "data/evidence/national/proposals-chubu/README.md": "63fedf25951b2f351d365e69457417a99428ccb9c0f2fb1362cf63543305b208",
+    "data/evidence/national/proposals-chubu/f6bc175ab9f7279ed939.html": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+    "data/evidence/national/proposals-chubu/b4ebe8a2ebf1ba31de19.html": "aea2e0c7d38133891ed5307ba97c841b355dac9c754c4f89b129a424c68cf6a5",
+    "data/evidence/national/proposals-chubu/eb8e608db891f4ff0d43.pdf": "562ba2e380ea91dbb686c126bb1de9fa56d4fd8c344125d8a4a45ce58c9257ab",
+    "data/evidence/national/proposals-chubu/aa39b93965ecd84ac5cf.html": "74961c01e8ba1bdc921f9d00e18f0a9d21232bad61537920cfa3482f340deb88",
+    "data/evidence/national/proposals-chubu/fetches.json": "cd4b8c1b91932d4c576070c316b3b449a12bbfde260568db13e63f3c4b7f78c5",
+    "data/evidence/national/proposals-chubu/33923629bf9851dfaee7.pdf": "bcf0037aea996bd777d0e0d6329ef51c58df6b050ed98775c86d4cb2f4df8ceb",
+    "data/evidence/national/proposals-chubu/d23a7baa0527d95414e4.html": "afb6ed48a154eaaff6e64176b59ce7a7a392865371f1d49e971f3b2db81ab916",
+    "data/evidence/national/proposals-chubu/searches.json": "d8ed61bbb9a5367d585f63c08e805e831db54873b588451778d5326c45c2d89d",
+    "data/evidence/national/proposals-chubu/127c3a5a575cbd5c8bd5.jpg": "40288c6d2817a1e8158750f0c8ba6d246bf477bed0865b309881630553549687"
+  }
+}

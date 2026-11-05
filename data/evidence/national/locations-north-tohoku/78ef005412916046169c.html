@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="keywords" content="交通,アクセス,交通アクセス,アクセスマップ" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>交通アクセス - 本宮市公式ホームページ</title>
+    <style type="text/css" media="all">
+        @import url("/ssi/css/detail.css");
+    </style>
+    <link rel="stylesheet" type="text/css" media="print" href="/ssi/css/print.css" />
+<link rel="stylesheet" href="/ssi/css/gridlayout.css">
+<link type="text/css" rel="stylesheet" href="/ssi/css/megamenu-style.css" />
+
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/img/favicon.ico" type="image/vnd.microsoft.icon" />
+<script type="text/javascript" src="/ssi/js/jquery.js"></script>
+    <!-- スクロールヒント　ここから -->
+  <link rel="stylesheet" href="/ssi/css/scroll-hint.css" />
+  <script type="text/javascript" src="/ssi/js/jquery.js"></script>
+  <script type="text/javascript" src="/ssi/js/scroll-min.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      new ScrollHint('.js-scrollable', {
+        scrollHintIconAppendClass: 'scroll-hint-icon-white',
+        suggestiveShadow: true,
+        i18n: {
+          scrollable: "スクロールできます"
+        }
+      });
+    });
+  </script>
+  <!-- スクロールヒント　ここまで -->
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/img/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="/img/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/img/js/gridlayout-ie.min.js"></script>
+<script type="text/javascript" src="/ssi/js/megamenu.js"></script>
+<script type="text/javascript" src="/ssi/js/share.js"></script>
+<script type="text/javascript" src="/ssi/js/print.js"></script>
+<script type="text/javascript" src="/ssi/js/color.js" charset="utf-8"></script>
+<script type="text/javascript" src="/ssi/js/fontsize.js" charset="utf-8"></script>
+<script type="text/javascript" src="/ssi/js/jquery-migrate.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5TV1GL7L0T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5TV1GL7L0T');
+  gtag('config', 'UA-22997431-1');
+</script>
+</head>
+
+<body>
+    <span class="hide"><a name="pagetop" id="pagetop">ページの先頭です。</a></span>
+    <span class="hide"><a href="#skip">メニューを飛ばして本文へ</a></span>
+    <!-- ヘッダー全体ここから -->
+    <div id="header">
+        <!-- header1ここから -->
+        <div id="header2">
+        <div id="he_left">
+          <p id="logo"><a href="/"><img src="/img/motomiyacity.png" alt="本宮市" width="372" height="45" class="img_b" id="second_he_rogo" /></a></p>
+        </div>
+<div id="he_right_b">
+  <noscript>
+    <p>JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。</p>
+  </noscript>
+  <ul class="ichiretsu">
+    <li><a href="/site/userguide/">はじめての方へ</a></li>
+    <li><a href="/site/userguide/zoomsight.html">音声読み上げ</a></li>
+    <li><a href="/sitemap.html">サイトマップ</a></li>
+  </ul>
+
+<script>
+    var str = location.href ;
+    var str = str.replace(/https.*u=/, "") ;
+    var str = str.replace(/&usg.*/, "") ;
+</script>
+<nav class="menuWaku">
+    <ul class="menuHonyaku">
+      <li class="menu__single">
+        <a href="javascript:;" class="init-bottom">Select Language</a>
+        <ul class="menu__second-level">
+          <li>
+            <a href="https://motomiyacity.j-server.com/LUCMOTOMIY/ns/w1/jaen" target="_blank">English</a><span class="external_link_text">＜外部リンク＞</span>
+          </li>
+          <li>
+            <a href="https://motomiyacity.j-server.com/LUCMOTOMIY/ns/w1/jazh" target="_blank">簡体字</a><span class="external_link_text">＜外部リンク＞</span>
+          </li>
+          <li>
+            <a href="https://motomiyacity.j-server.com/LUCMOTOMIY/ns/w1/jazhb" target="_blank">繁体字</a><span class="external_link_text">＜外部リンク＞</span>
+          </li>
+          <li>
+            <a href="https://motomiyacity.j-server.com/LUCMOTOMIY/ns/w1/jako" target="_blank">한국어</a><span class="external_link_text">＜外部リンク＞</span>
+          </li>
+<li><script>document.write('<a href="https://translate.google.co.jp/translate?hl=&sl=ja&tl=vi&u=' + str + '" target="_blank">Tiếng Việt</a>');</script></li>
+<li><script>document.write('<a href="https://translate.google.co.jp/translate?hl=&sl=ja&tl=tl&u=' + str + '" target="_blank">Tagalog</a>');</script></li>
+<li><script>document.write('<a href="https://translate.google.co.jp/translate?hl=&sl=ja&tl=id&u=' + str + '" target="_blank">Bahasa Indonesia</a>');</script></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+<ul class="ichiretsu" style="padding: 0;">
+   <li><a href="/site/global/" target="_top"><ruby>外国人向け生活情報<rt>がいこくじんむけせいかつじょうほう</rt></ruby></a></li>
+</ul>
+
+
+  <!-- 文字の大きさ変更ここから -->
+  <ul class="ichiretsu">
+    <li id="moji_size"> 文字サイズ <span> <a id="moji_default" class="test12345" href="javascript:fsc('default');"><img src="/img/text_size_hyoujun.png" alt="標準" width="43" height="27" /></a></span><span><a id="moji_large"
+          href="javascript:fsc('larger');"><img src="/img/text_size_kakudai.png" alt="拡大" width="43" height="27" /></a> </span> </li>
+    <!-- 文字の大きさ変更ここまで -->
+    <!-- 背景の変更ここから -->
+    <li id="haikei_color" class="nonborder"> 背景色変更 <span> <a id="haikei_white" href="javascript:SetCss(1);"><img src="/img/background_shiro.png" alt="白" width="27" height="27" /></a><a id="haikei_black"
+          href="javascript:SetCss(2);"><img src="/img/background_kuro.png" alt="黒" width="27" height="27" /></a><a id="haikei_blue" href="javascript:SetCss(3);"><img src="/img/background_ao.png" alt="青" width="27"
+            height="27" /></a> </span> </li>
+    <!-- 背景の変更ここまで -->
+  </ul>
+
+</div>
+        
+ <!-- グローバルここから -->
+        <div class="menu-container"> 
+          <!-- グローバルタブここから -->
+          <div class="menu">
+                            <ul>
+                                <li>
+                                    <a href="/life/2/" class="altText"><img src="/img/gnavi_bousai_off.png" alt="防災・安全" width="234" height="63" /></a>
+                                    <ul>
+                                        <li><a href="/life/2/8/">救急・消防・防災</a></li>
+                                        <li><a href="/life/2/9/">交通安全・防犯</a></li>
+                                        <li><a href="/life/2/10/">震災関連情報</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/life/1/" class="altText"><img src="/img/gnavi_kurashi_off.png" alt="くらし・手続き" width="234" height="63" /></a>
+                                    <ul>
+                                        <li><a href="/life/1/1/">届出・証明</a></li>
+                                        <li><a href="/life/1/2/">保険・年金</a></li>
+                                        <li><a href="/life/1/3/">税金</a></li>
+                                        <li><a href="/life/1/4/">ごみ・リサイクル</a></li>
+                                        <li><a href="/life/1/5/">環境・ペット</a></li>
+                                        <li><a href="/life/1/6/">水道・土地・住宅</a></li>
+                                        <li><a href="/life/1/7/">交通</a></li>
+<li><a href="/life/1/33/">人権・男女共同参画</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/life/3/" class="altText"><img src="/img/gnavi_kosodate_off.png" alt="子育て・教育" width="234" height="63" /></a>
+                                    <ul>
+                                        <li><a href="/life/3/11/">子育て</a></li>
+                                        <li><a href="/life/3/12/">教育</a></li>
+                                        <li><a href="/life/3/13/">生涯学習・スポーツ</a></li>
+<li><a href="/site/motomiyasi-kokusaikouryu-tokyo2020/">国際交流・東京オリパラ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/life/4/" class="altText"><img src="/img/gnavi_kenkou_off.png" alt="健康・医療・福祉" width="234" height="63" /></a>
+                                    <ul>
+                                        <li><a href="/life/4/14/">健康</a></li>
+                                        <li><a href="/life/4/15/">予防接種</a></li>
+                                        <li><a href="/life/4/16/">介護・福祉</a></li>
+                                        <li><a href="/life/4/17/">医療</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/site/kanko/" class="altText"><img src="/img/gnavi_kankou_off.png" alt="観光・文化" width="234" height="63" /></a>
+                                </li>
+                                <li>
+                                    <a href="/life/5/" class="altText"><img src="/img/gnavi_shigoto2_off.png" alt="しごと・産業" width="234" height="63" /></a>
+                                    <ul id="shigoto">
+                                        <li><a href="/life/5/18/">農商工業</a></li>
+                                        <li><a href="/life/5/19/">産業振興</a></li>
+                                        <li><a href="/life/5/20/">雇用・労働</a></li>
+                                        <li><a href="/life/5/21/">企業情報</a></li>
+                                        <li><a href="/life/5/22/">入札・契約</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nonborder">
+                                    <a href="/life/6/" class="altText"><img src="/img/gnavi_shisei_off.png" alt="市政・まちづくり" width="234" height="63" /></a>
+                                    <ul>
+                                        <li><a href="/life/6/23/">市の紹介</a></li>
+                                        <li><a href="/life/6/24/">広報・広聴</a></li>
+                                        <li><a href="/life/6/25/">計画・事業</a></li>
+                                        <li><a href="/life/6/26/">財政状況</a></li>
+                                        <li><a href="/life/6/27/">市民参加</a></li>
+                                        <li><a href="/life/6/28/">市政</a></li>
+                                        <li><a href="/life/6/29/">各種募集</a></li>
+                                        <li><a href="/life/6/30/">採用情報</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+          </div>
+          <!-- グローバルタブここまで --> 
+        </div>
+        <!-- グローバルここまで --> 
+      </div>
+
+    <!-- 検索ここから -->
+     <div id="second_search">
+       <div class="gl">
+         <div class="gl-cell gl-lg-2 gl-md-0">
+          <p>サイト内検索</p>
+         </div>
+         <div class="gl-cell gl-lg-5 gl-md-6">
+          <form action="/search.html" id="cse-search-box" name="cse-search-box">
+            <input type="hidden" name="cx" value="001374101527147557989:dqric6mm_ea" />
+            <input type="hidden" name="cof" value="FORID:11" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <label for="tmp_query"><span class="hide">Googleカスタム検索</span></label>
+            <input type="text" name="q" value="" id="tmp_query" />
+            <input type="image" id="submit" name="sa" src="/img/bunrui/sec_search_button.png" alt="検索ボタン" width="97" height="38"  />
+          </form>
+          <script type="text/javascript" src="//www.google.com/coop/cse/brand?form=cse-search-box"></script>
+         </div>
+            <div id="second_search_banner" class="gl-cell gl-lg-5 gl-md-6">
+              <ul>
+                <li><a href="/soshiki/"><img src="/img/bunrui/sec_search_soshiki.png" alt="組織でさがす" width="190" height="38" class="search_button_soshiki" /></a></li>
+                <li><a href="/map/"><img src="/img/bunrui/sec_search_chizu.png" alt="地図でさがす" width="191" height="38" class="search_button_chizu" /></a></li>
+              </ul>
+            </div>
+       </div>
+     </div>
+      <!-- 検索ここまで -->
+        <!-- header1ここまで -->
+    </div>
+    <!-- ヘッダー全体ここまで -->
+
+
+    <div class="oowaku">
+        <div class="gl">
+            <div class="gl-cell">
+                <!-- ぱんくずナビここから -->
+                <div id="pankuzu_wrap">
+                    <!-- [[pankuzu_start]] --><!-- [[pankuzu_end]] -->
+
+                    <!-- [[pankuzu2_start]] --><!-- [[pankuzu2_end]] -->
+
+                    <!-- [[pankuzu_life_start]] -->
+                    <div class="pankuzu"><span class="genzaichi">現在地</span>
+                    <span class="pankuzu_class pankuzu_class_top"><a href="/">トップページ</a></span>
+                    <span class="pankuzu_mark"> &gt; </span>
+                    <span class="pankuzu_class"><a href="/life/">分類でさがす</a></span>
+                    <span class="pankuzu_mark"> &gt; </span>
+                    <span class="pankuzu_class"><a href="/life/6/">市政・まちづくり</a></span>
+                    <span class="pankuzu_mark"> &gt; </span>
+                    <span class="pankuzu_class"><a href="/life/6/23/">市の紹介</a></span>
+                    <span class="pankuzu_mark"> &gt; </span>
+                    <span class="pankuzu_class"><span class="pankuzu_class"><a href="/life/6/23/89/">市の概要</a></span><span class="pankuzu_mark"> &gt; </span></span>
+                    <span class="pankuzu_mark"> &gt; </span>
+                    <span class="pankuzu_class pankuzu_class_current">交通アクセス</span>
+                    </div>
+                    <!-- [[pankuzu_life_end]] -->
+
+                </div>
+                <!-- ぱんくずナビここまで -->
+
+                <!-- メインここから -->
+                <div id="main">
+                    <div id="main_a">
+                        <hr class="hide" />
+                        <p class="hide"><a id="skip" name="skip">本文</a></p>
+
+                        
+
+                        <div id="detail_header_bk">
+                            <h1>交通アクセス</h1>
+                        </div>
+
+                        <!-- main_bodyここから -->
+                        <div id="main_body">
+
+                            <div id="content_header" class="text_r"><a id="print_mode_link" href="javascript:print_mode();">印刷用ページを表示する</a> 掲載日：2023年10月2日更新</div>
+
+                            <div class="detail_free" ><p>本宮市は、東北自動車道と磐越自動車道とがクロスする郡山ジャンクションに近接しており、東北自動車道本宮インターチェンジを有するとともに、5つのインターチェンジと近接するなど、恵まれた立地条件にあります。</p>
+
+<p>本宮インターチェンジから東京都まで約250キロメートル、仙台市まで約110キロメートル、新潟市まで約150キロメートル、いわき市まで約100キロメートルの距離にあるほか、福島空港へ約40キロメートルの距離にあり、交通の要衝としてのさらなる発展が期待されてます。</p>
+
+<p>市内の道路網は、市の西部を縦貫する東北自動車道と西端部を通過する磐越自動車道のほか、国道4号線および県道、市道などによって構成されています。</p>
+
+<p>鉄道については、ほぼ中央部をＪＲ東北本線が南北に走っており、五百川駅・本宮駅の2つの駅があります。通勤・通学の手段として、また、郡山駅および福島駅での新幹線へのアクセス手段として、その利便性の向上が期待されています。</p>
+
+<p>バス交通については、郡山駅と本宮駅をつなぐ福島交通路線バス「がくとくん&hArr;まゆみちゃんライン」が運行しています。<br />
+「がくとくん&hArr;まゆみちゃんライン」を含む、地域公共交通サービスについては以下のページをご覧ください。<br />
+​<a href="/soshiki/10/koutsu1001.html">地域公共交通サービスについて</a></p>
+
+<h2>アクセスマップ</h2>
+
+<p><img alt="アクセスマップの画像" border="0" src="/uploaded/image/1595.jpg" style="height:305px; width:580px" /></p>
+</div>
+
+
+
+                            
+                            
+
+
+                <!-- [[add-template-pdf]] -->
+                <!-- [[add-template-windowsmediaplayer]] -->
+
+                            <!-- section_footerここから -->
+                            <div id="section_footer">
+                                <div id="section_footer_style">
+<div id="section_footer_title"><h2>このページに関するお問い合わせ先</h2></div>
+<div id="section_footer_name"><strong><a href="/soshiki/47/">秘書広報課</a></strong></div>
+<div id="section_footer_info">
+<span class="section_footer_zip">〒969-1192</span>
+<span class="section_footer_address">福島県本宮市本宮字万世212番地</span><br />
+<span class="section_footer_grpname">広報広聴係</span><br />
+<span class="section_footer_tel">電話：0243-24-5332（直通）</span><br />
+<span class="section_footer_fax">Fax：0243-34-3138</span><br />
+
+</div>
+</div>
+                            </div>
+                            <!-- section_footerここまで -->
+
+
+                        </div>
+                        <!-- main_bodyここまで -->
+
+                    </div>
+                </div>
+                <!-- メインここまで -->
+                <hr class="hide" />
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- フッターここから -->
+    <div id="footer">
+        <!-- footer1ここから -->
+        <!-- トップ八段目ここから-->
+<!-- 市民向けの情報ここから -->
+<div id="top_info_link_bk">
+    <div id="second_info_link" class="gl">
+        <div class="gl-cell gl-lg-3">
+            <h2>市民向けの情報</h2>
+            <ul>
+                <li><a href="/life/sub/1/">申請書ダウンロード</a></li>
+                <li><a href="/site/magazine/">広報もとみや</a></li>
+                <li><a href="/site/gomi-bunbetsu/">ごみの出し方と分け方</a></li>
+                <li><a href="/soshiki/10/koutsu1001.html">公共交通</a></li>
+                <li><a href="/life/6/24/98/">防災無線放送内容</a></li>
+            </ul>
+        </div>
+
+        <div class="gl-cell gl-lg-3">
+            <h2>市役所の情報</h2>
+            <ul class="link_city_yakusho">
+                <li><a href="/soshiki/">市の組織と業務内容</a></li>
+                <li><a href="/map/">公共施設一覧</a></li>
+                <li><a href="/life/5/22/">入札契約情報</a></li>
+                <li><a href="/life/6/30/">職員採用情報</a></li>
+            </ul>
+        </div>
+        <div class="gl-cell gl-lg-3">
+            <h2>本宮市の情報</h2>
+            <ul class="link_city_yakusho">
+                <li><a href="/life/6/23/89/">本宮市の概要</a></li>
+                <li><a href="/soshiki/47/325.html">交通アクセス</a></li>
+                <li><a href="/soshiki/15/motomiyasikougyoutoudanti2.html">本宮市工業等団地</a></li>
+                <li><a href="/reiki_int/reiki_menu.html" target="_blank">例規集</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 市民向けの情報ここまで -->
+<!-- トップ八段目ここまで-->
+
+
+
+<hr class="hide" />
+
+
+<!-- author_infoここから -->
+<div id="author_info">
+    <div class="footer_navi">
+        <ul>
+            <li><a href="/site/userguide/copyright.html">リンク・著作権・免責事項</a></li>
+            <li><a href="/site/userguide/privacy.html">個人情報保護</a></li>
+            <li><a href="/site/userguide/accessibility.html">アクセシビリティ</a></li>
+            <li><a href="/soshiki/47/281.html">広告掲載について</a></li>
+            <li><a href="/soshiki/0/ques004.html">ご意見・ご提案・お問い合わせ</a></li>
+        </ul>
+    </div>
+</div>
+        <!-- footer1ここまで -->
+        <!-- author_infoここから -->
+        <p id="page-top">
+	<img src="/img/go-top.png" alt="トップへ戻るボタン" width="86" height="86" />
+</p>
+<div id="author_box">
+	<div class="second-main-waku">
+		<div class="author_box">
+			<h2 id="motomiya">本宮市</h2>
+			<p>〒969-1192 福島県本宮市本宮字万世212 [ <a href="/map/001.html">地図</a> ]<br />
+			電話:0243-33-1111(代表)　Fax:0243-34-3138</p>
+		</div>
+		<div class="author_box">
+			<h2>白沢総合支所</h2>
+			<p>〒969-1292 福島県本宮市白岩字堤崎494番地22 [ <a href="/map/002.html">地図</a> ]<br />
+			電話:0243-44-2111　Fax:0243-44-2447</p>
+		</div>
+
+		<img src="/img/mayumi_family.png" alt="まゆみちゃんの家族のイラスト" width="201" height="139" />
+	</div>
+</div>
+<!-- author_infoここまで -->
+<p id="copyright">&#169; 2022 Motomiya City</p>
+        <!-- author_infoここまで -->
+        <!-- バナー広告ここから -->
+        <!-- バナー広告ここまで -->
+    </div>
+    <!-- フッターここまで -->
+    
+</body>
+
+</html>

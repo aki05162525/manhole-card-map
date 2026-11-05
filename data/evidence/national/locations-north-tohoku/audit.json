@@ -1,0 +1,3204 @@
+{
+  "schema": 1,
+  "scope": "north adopted facilities related to cardId prefixes 02..07, missing coordinate",
+  "checkedAt": "2026-11-05",
+  "actorType": "ai",
+  "facilities": [
+    {
+      "facilityId": "facility:north-0028d3c0cf4b1c5c46ea",
+      "name": "本宮市役所建設部上下水道課",
+      "address": "福島県本宮市本宮字万世212番地",
+      "cardIds": [
+        "07-214-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.motomiya.lg.jp/",
+        "http://www.city.motomiya.lg.jp/soshiki/23/mhcard.html",
+        "https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html",
+        "http://www.city.motomiya.lg.jp/map/001.html",
+        "http://www.city.motomiya.lg.jp/map/002.html",
+        "http://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "https://www.city.motomiya.lg.jp/map/001.html",
+        "https://www.city.motomiya.lg.jp/map/002.html",
+        "https://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "http://www.city.motomiya.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "https://maps.app.goo.gl/bWQBbD1q7vQ5ABfe6",
+        "https://maps.app.goo.gl/8iam4XBQ56i8WUcs9",
+        "https://maps.app.goo.gl/DEi1TW3xu4ogQY3JA",
+        "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3786.996304133814!2d140.40211109999998!3d37.5136111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDMwJzQ5LjAiTiAxNDDCsDI0JzA3LjYiRQ!5e1!3m2!1sja!2sjp!4v1750998102788!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3786.9878454507875!2d140.39911110000003!3d37.5137778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDMwJzQ5LjYiTiAxNDDCsDIzJzU2LjgiRQ!5e1!3m2!1sja!2sjp!4v1750998015943!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-0028d3c0cf4b1c5c46ea",
+        "sourceUrl": "https://maps.app.goo.gl/bWQBbD1q7vQ5ABfe6",
+        "lat": 37.5131248,
+        "lng": 140.3936997,
+        "sourceLocator": "公式案内 https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d37.5131248!4d140.3936997",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.motomiya.lg.jp/soshiki/23/mhcard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-d861209afe0bb8cbb3d9.html",
+          "snapshotSHA256": "7fcf46f8e8109f1309e051483abd7abd75ef3bbf0ddcac60e7973ba41f0eab6f",
+          "fetchedAt": "2026-11-05T04:26:09.579966+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-008e2585ad57dd933bf1",
+      "name": "花巻市役所大迫総合支所",
+      "address": "花巻市大迫町大迫2-51-4",
+      "cardIds": [
+        "03-205-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004115.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-008e2585ad57dd933bf1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004115.html",
+        "lat": 39.469086,
+        "lng": 141.291325,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.469086,141.291325",
+        "finding": "施設紹介の所在地と台帳住所を照合。市役所・総合支所の建物代表点であり各階・守衛室の精密位置ではない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-00eec84a6b9497eb716d",
+      "name": "天童市上下水道事業所",
+      "address": "山形県天童市老野森1-3-25",
+      "cardIds": [
+        "06-210-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.tendo.yamagata.jp/livinfo/machidukuri/tennyu_tensyutu.html",
+        "https://www.city.tendo.yamagata.jp/lifeinfo/jougesuidou/onegai.html",
+        "https://www.city.tendo.yamagata.jp/lifeinfo/shisetsu/index.html"
+      ],
+      "decision": {
+        "reason": "天童市施設案内と上下水道配布案内を確認。老野森の上下水道事業所を指定する数値目的地・施設点を取得できず、市役所代表点で代用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-01b573a6b665b555cceb",
+      "name": "福島市観光案内所(JR福島駅西口2階)",
+      "address": "福島市栄町1-1",
+      "cardIds": [
+        "07-201-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/koho/2072.html",
+        "https://www.f-kankou.jp/",
+        "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/about/access.html",
+        "https://www.f-kankou.jp/access",
+        "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d6622.475453926475!2d140.45763894783556!3d37.75695952060714!3m2!1i1024!2i768!4f13.1!2m1!1z56aP5bO25biC44CA44Os44Oz44K_44Kr44O8!5e0!3m2!1sja!2sjp!4v1647994382733!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d7000.30354766179!2d140.46174889714575!3d37.75455406894604!3m2!1i1024!2i768!4f13.1!2m1!1z56aP5bO25biC44CA44K_44Kv44K344O8!5e0!3m2!1sja!2sjp!4v1647994889855!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-01b573a6b665b555cceb",
+        "sourceUrl": "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/koho/2072.html",
+        "lat": 37.7540765,
+        "lng": 140.4587662,
+        "sourceLocator": "福島駅西口観光案内所の地図リンク !8m2!3d37.7540765!4d140.4587662",
+        "finding": "福島市栄町1-1・JR福島駅西口2階の配布窓口リンクの目的地。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-01fecf0845daf7a823c4",
+      "name": "ウイングプラザ(名取駅コミュニティプラザ)",
+      "address": "宮城県名取市手倉田字八幡287-15",
+      "cardIds": [
+        "04-207-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.natori-machidukuri.com/oshirase/plaza.html",
+        "https://www.city.natori.miyagi.jp/page/3988.html",
+        "https://www.city.natori.miyagi.jp/life/6/26/111/",
+        "https://www.city.natori.miyagi.jp/page/1371.html"
+      ],
+      "decision": {
+        "reason": "ウイングプラザの運営者案内、市の施設案内を確認。名取駅内の対象施設を指す数値地点がなく、駅や住所のジオコードで補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-0346af6a6a974c32ffe9",
+      "name": "大河原町役場 守衛室",
+      "address": "宮城県柴田郡大河原町字新南19",
+      "cardIds": [
+        "04-321-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.ogawara.miyagi.jp/",
+        "https://www.town.ogawara.miyagi.jp/1265.htm",
+        "https://www.town.ogawara.miyagi.jp/2370.htm",
+        "https://www.town.ogawara.miyagi.jp/2536.htm",
+        "https://www.town.ogawara.miyagi.jp/2911.htm"
+      ],
+      "decision": {
+        "reason": "大河原町の庁舎・交通案内を確認したが、現在の役場建物を指定する数値マーカーを取得できなかった。守衛室の推定座標は作らない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-0552354f13f29fd4dac2",
+      "name": "七ヶ浜国際村",
+      "address": "宮城県宮城郡七ヶ浜町花渕浜字大山1-1",
+      "cardIds": [
+        "04-404-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.shichigahama.com/",
+        "https://www.shichigahama.com/benricho/oshirase/suido3-020-12422.html",
+        "https://www.shichigahama.com/access/index.html",
+        "https://www.shichigahama.com/kokusai/guide.html"
+      ],
+      "decision": {
+        "reason": "七ヶ浜国際村の施設・交通案内を確認。案内画像はあるが数値マーカーがなく、画像から緯度経度を推定しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-08feca071946b5c7f130",
+      "name": "ショッピングセンターYO-TASHI内【けろりん堂】",
+      "address": "福島県双葉郡川内村大字下川内字宮ノ下25-1",
+      "cardIds": [
+        "07-544-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.kawauchimura.jp/page/page001068.html",
+        "https://www.kawauchimura.jp/kanko/news/page001068.html",
+        "https://www.kawauchimura.jp/kanko/shisetsu/page000185.html",
+        "https://www.kawauchimura.jp/gyosei/gaiyo-meiyosonmin/page000070.html",
+        "https://www.kawauchimura.jp/map_route.php?code=12"
+      ],
+      "decision": {
+        "facilityId": "facility:north-08feca071946b5c7f130",
+        "sourceUrl": "https://www.kawauchimura.jp/map_route.php?code=12",
+        "lat": 37.32951296847928,
+        "lng": 140.8215844631195,
+        "sourceLocator": "gmConfig.lat/lng → latlng → google.maps.Marker position; marker.title=YO-TASHI",
+        "finding": "下川内宮ノ下25-1のYO-TASHI内けろりん堂。施設案内と配布ページの現住所を照合。建物代表点。",
+        "supportUrls": [
+          "https://www.kawauchimura.jp/kanko/shisetsu/page000185.html",
+          "https://www.kawauchimura.jp/kanko/news/page001068.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.kawauchimura.jp/kanko/shisetsu/page000185.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-835680dea56aa269c9db.html",
+          "snapshotSHA256": "5cb38e639754c653d80e2b05f2d5e3ddc4965d58bee96d2a9686c0af96b52d82",
+          "fetchedAt": "2026-11-05T04:24:04.439809+00:00"
+        },
+        {
+          "url": "https://www.kawauchimura.jp/kanko/news/page001068.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-b9e3f8cc968ecdf9ca02.html",
+          "snapshotSHA256": "341b3d347848404784454dfe30c3d57db93bc3462cbf2258b6c0442e0cdf983c",
+          "fetchedAt": "2026-11-05T04:32:26.277111+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-09f2e5c7a2fcc63960a7",
+      "name": "二本松市観光案内所",
+      "address": "福島県二本松市本町2-262(JR二本松駅構内)",
+      "cardIds": [
+        "07-000-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.pref.fukushima.lg.jp/sec/41055c/",
+        "http://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.nihonmatsu-kanko.jp/?p=141",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.5334449424195!2d140.4332380153123!3d37.58960257979361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602076813764f639%3A0x7f133e9ef08357eb!2z5LqM5pys5p2-6aeF!5e0!3m2!1sja!2sjp!4v1655428753993!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6321.202212831967!2d140.466621!3d37.611546!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6020765176713031%3A0x2251687b46d6d937!2z5a6J6YGU6aeF!5e0!3m2!1sja!2sjp!4v1655428823060!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12651.030808947302!2d140.41111!3d37.56077200000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602074144f46304f%3A0x5680fb6bf411c49!2z5p2J55Sw6aeF!5e0!3m2!1sja!2sjp!4v1655429003407!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-09f2e5c7a2fcc63960a7",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.5334449424195!2d140.4332380153123!3d37.58960257979361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602076813764f639%3A0x7f133e9ef08357eb!2z5LqM5pys5p2-6aeF!5e0!3m2!1sja!2sjp!4v1655428753993!5m2!1sja!2sjp",
+        "lat": 37.5896026,
+        "lng": 140.4354267,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x602076813764f639:0x7f133e9ef08357eb / 〒964-0917 福島県二本松市本町２丁目２６２ 二本松駅",
+        "finding": "二本松駅舎内の観光案内所。公式観光案内の二本松駅の点を駅舎代表点として使用。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.nihonmatsu-kanko.jp/?p=141"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.nihonmatsu-kanko.jp/?p=141",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/6a0d62c933406242d350.html",
+          "snapshotSHA256": "e444885acc198020fd59333201cb92862f322fa3d84b1badeabf10eddc620e1e",
+          "fetchedAt": "2026-11-05T04:50:49.001127+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-0c0323c5b324c75fe4bf",
+      "name": "亘理町役場 警備員室",
+      "address": "宮城県亘理郡亘理町字悠里1",
+      "cardIds": [
+        "04-361-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.watari.miyagi.jp/",
+        "https://www.town.watari.miyagi.jp/life/detail.php?content=782",
+        "https://www.town.watari.miyagi.jp/tourism/category/?category=144",
+        "https://www.town.watari.miyagi.jp/town/category/?category=258",
+        "https://www.town.watari.miyagi.jp/town/detail.php?content=249",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.24318950624!2d140.868268!3d38.044253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a171a6f7d86a3%3A0x8db2be7f38d60939!2z5LqY55CG55S65b255aC0!5e0!3m2!1sja!2sjp!4v1643953757465!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-0c0323c5b324c75fe4bf",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.24318950624!2d140.868268!3d38.044253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a171a6f7d86a3%3A0x8db2be7f38d60939!2z5LqY55CG55S65b255aC0!5e0!3m2!1sja!2sjp!4v1643953757465!5m2!1sja!2sjp",
+        "lat": 38.0441935,
+        "lng": 140.8674846,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a171a6f7d86a3:0x8db2be7f38d60939 / 〒989-2352 宮城県亘理郡亘理町悠里１ 亘理町役場",
+        "finding": "悠里1の現庁舎。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.town.watari.miyagi.jp/town/detail.php?content=249"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.watari.miyagi.jp/town/detail.php?content=249",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/c65189c003b77f02279c.html",
+          "snapshotSHA256": "42aaf1f427645568a89451f4d199d607147e904d5c24a4051620d841249a6de8",
+          "fetchedAt": "2026-11-05T04:50:13.890480+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-11cb3780a2ba6c9b5f16",
+      "name": "南陽市上下水道課 水道庁舎",
+      "address": "山形県南陽市三間通466-15",
+      "cardIds": [
+        "06-213-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.nanyo.yamagata.jp/manhole/",
+        "http://www.city.nanyo.yamagata.jp/zyougesuido/index.html",
+        "http://www.city.nanyo.yamagata.jp/suido/1407"
+      ],
+      "decision": {
+        "reason": "南陽市の水道施設紹介を確認。水道庁舎の現住所と対応する公式施設点を取得できず、南陽市役所の公的施設点は別庁舎なので不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-13d3abdab08eed66e1df",
+      "name": "北の防人大湊 安渡館",
+      "address": "青森県むつ市桜木町3番1号",
+      "cardIds": [
+        "02-208-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.mutsu.lg.jp/bunka/leisure/kankousisetu-anndokann.html",
+        "https://www.city.mutsu.lg.jp/kurashi/suidou/gesuidou/2024-0702-2119-128.html",
+        "https://www.city.mutsu.lg.jp/government/shisetsu/kankou/andokan.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.402395154606!2d141.13694231542172!3d41.25657367927645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x377dee4ab7b43fe5!2z5YyX44Gu6Ziy5Lq65aSn5rmKIOWuiea4oemkqA!5e0!3m2!1sja!2sjp!4v1644382615264!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-13d3abdab08eed66e1df",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2999.402395154606!2d141.13694231542172!3d41.25657367927645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x377dee4ab7b43fe5!2z5YyX44Gu6Ziy5Lq65aSn5rmKIOWuiea4oemkqA!5e0!3m2!1sja!2sjp!4v1644382615264!5m2!1sja!2sjp",
+        "lat": 41.2565737,
+        "lng": 141.139131,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f9c1551e46454c3:0x377dee4ab7b43fe5 / 〒035-0094 青森県むつ市桜木町３−１ 北の防人大湊 安渡館",
+        "finding": "桜木町3-1の安渡館。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.city.mutsu.lg.jp/government/shisetsu/kankou/andokan.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.mutsu.lg.jp/government/shisetsu/kankou/andokan.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/4105d83d980732fc6357.html",
+          "snapshotSHA256": "62a50f114cbffec14d5614c8f8c0e1fd4766d75a300f20260e970eb0259586ab",
+          "fetchedAt": "2026-11-05T04:50:48.998498+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
+      "name": "「道の駅おが」男鹿市複合観光施設オガーレ",
+      "address": "秋田県男鹿市船川港船川字新浜町1-19",
+      "cardIds": [
+        "05-206-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.oga.akita.jp/soshik/kigyokyoku/moreabout/gesuidou/6032.html",
+        "https://www.city.oga.akita.jp/living_information/shiseijoho/ogashinitsuite/2874.html",
+        "https://michinoekioga.co.jp/",
+        "https://michinoekioga.co.jp/pages/4/"
+      ],
+      "decision": {
+        "reason": "オガーレ公式交通アクセスに数値qがあるが、地図設定の住所は船川新浜町60、本文・元facilityは新浜町1-19。住所対応が未解決のため数値qを直ちに採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-179dd18bf52ef959bb92",
+      "name": "福島県あだたら清流センター",
+      "address": "福島県二本松市榎戸2-96",
+      "cardIds": [
+        "07-000-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.pref.fukushima.lg.jp/sec/41055c/",
+        "http://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/sec/41520a/nihonmatu-gaiyo.html",
+        "https://www.fspc.or.jp/access.html"
+      ],
+      "decision": {
+        "reason": "県のあだたら清流センター概要を確認し、管理者のアクセス案内も調査したがTLSハンドシェイクエラーで取得不可。回避せず、二本松市榎戸2-96の施設点を確定しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-193fb1924670d9fff764",
+      "name": "いのちをつなぐ未来館",
+      "address": "岩手県釜石市鵜住居町4丁目901",
+      "cardIds": [
+        "03-211-C001"
+      ],
+      "investigatedUrls": [
+        "https://unosumai-tomosu.jp/tsunami-memorial-hall/",
+        "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "https://unosumai-tomosu.jp/access/",
+        "https://www.city.kamaishi.iwate.jp/category/bunya/shisetsu/",
+        "https://www.city.kamaishi.iwate.jp/docs/2014062700035/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.2777948489497!2d141.88529905142693!3d39.32729122899258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f860b092668c287%3A0x1eaa653fab804d24!2z44CSMDI2LTAzMDEg5bKp5omL55yM6Yec55-z5biC6bWc5L2P5bGF55S656ys77yR77yW5Zyw5Ymy77yX77yS4oiS77yR!5e0!3m2!1sja!2sjp!4v1553159573455"
+      ],
+      "decision": {
+        "facilityId": "facility:north-193fb1924670d9fff764",
+        "sourceUrl": "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "lat": 39.3273011680763,
+        "lng": 141.8875293016458,
+        "sourceLocator": "data-map-view-target=setting JSON markerInfos title=うのすまい・トモス「いのちをつなぐ未来館」",
+        "finding": "市の配布案内本文の施設名・現住所と、同ページの各施設名付きマーカーを照合。centerは使用しない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-194cafa26eb4fcdf4b86",
+      "name": "道の駅寒河江チェリーランド(総合観光案内所内)",
+      "address": "山形県寒河江市大字八鍬字川原919-6",
+      "cardIds": [
+        "06-206-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.cherryland.co.jp/",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://www.cherryland.co.jp/about.html",
+        "https://www.cherryland.co.jp/access.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563.421219959285!2d140.27093678579308!3d38.39889196316088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bc3ca18ccf2f7%3A0xf1076879d20114ba!2z6YGT44Gu6aeFIOWvkuays-axnw!5e0!3m2!1sja!2sjp!4v1616737654390!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "チェリーランド公式地図の施設目的地は寒河江字久保919-8。元facilityの総合観光案内所919-6との同一建物を確認できないため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-19dc8bef8474660264cc",
+      "name": "道の駅米沢",
+      "address": "山形県米沢市川井1039-1",
+      "cardIds": [
+        "06-202-A001"
+      ],
+      "investigatedUrls": [
+        "https://michinoeki-yonezawa.jp/",
+        "https://travelyonezawa.com/amanojaku-movie/",
+        "https://travelyonezawa.com/amanojaku-movie/manhole-card.html",
+        "https://michinoeki-yonezawa.jp/pages/access",
+        "https://michinoeki-yonezawa.jp/pages/access?anchor=a1",
+        "https://michinoeki-yonezawa.jp/pages/access?anchor=a2",
+        "https://michinoeki-yonezawa.jp/pages/access?anchor=a3",
+        "https://michinoeki-yonezawa.jp/pages/access?anchor=a4",
+        "https://michinoeki-yonezawa.jp/pages/access?anchor=a5",
+        "https://maps.app.goo.gl/ww7YW3AD4AAF2XhPA"
+      ],
+      "decision": {
+        "facilityId": "facility:north-19dc8bef8474660264cc",
+        "sourceUrl": "https://maps.app.goo.gl/ww7YW3AD4AAF2XhPA",
+        "lat": 37.9224446,
+        "lng": 140.1373204,
+        "sourceLocator": "公式案内 https://travelyonezawa.com/amanojaku-movie/manhole-card.html の短縮地図リンク。manifest.finalUrl の !8m2!3d37.9224446!4d140.1373204",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://travelyonezawa.com/amanojaku-movie/manhole-card.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://travelyonezawa.com/amanojaku-movie/manhole-card.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-e97d8e9726d062755893.html",
+          "snapshotSHA256": "fffe2871133b451c64a5ef3be68475e85dfa6388f62ee22f2925748817c4b16a",
+          "fetchedAt": "2026-11-05T04:26:09.313721+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-19ecb545c27c83547196",
+      "name": "警備員室",
+      "address": "会津若松市東栄町3番46号",
+      "cardIds": [
+        "07-202-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/"
+      ],
+      "decision": {
+        "facilityId": "facility:north-19ecb545c27c83547196",
+        "sourceUrl": "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/",
+        "lat": 37.49484774585194,
+        "lng": 139.9297606945038,
+        "sourceLocator": "JSON markerInfos title=会津若松市役所本庁舎",
+        "finding": "配布案内の東栄町3番46号・本庁舎の指定マーカー。警備員室と総合案内は別IDのまま、建物代表点を使用。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-1badf82c402f42e5a4ae",
+      "name": "本宮市中央公民館",
+      "address": "福島県本宮市本宮字矢来39-1",
+      "cardIds": [
+        "07-214-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.motomiya.lg.jp/",
+        "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html",
+        "http://www.city.motomiya.lg.jp/map/001.html",
+        "http://www.city.motomiya.lg.jp/map/002.html",
+        "http://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "https://www.city.motomiya.lg.jp/map/001.html",
+        "https://www.city.motomiya.lg.jp/map/002.html",
+        "https://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "https://maps.app.goo.gl/8iam4XBQ56i8WUcs9",
+        "https://maps.app.goo.gl/DEi1TW3xu4ogQY3JA"
+      ],
+      "decision": {
+        "facilityId": "facility:north-1badf82c402f42e5a4ae",
+        "sourceUrl": "https://maps.app.goo.gl/8iam4XBQ56i8WUcs9",
+        "lat": 37.5172436,
+        "lng": 140.4004968,
+        "sourceLocator": "公式案内 https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html の短縮地図リンク。manifest.finalUrl の !8m2!3d37.5172436!4d140.4004968",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-6977ed2b1889996b10b6.html",
+          "snapshotSHA256": "c1626fda87107640f7e945f7ba00aef6ed1d69a80e012d034fc56ad01c99334f",
+          "fetchedAt": "2026-11-05T04:23:41.800558+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-1bc636d6db8bb6f12c37",
+      "name": "東松島市役所 鳴瀬庁舎2階 都市整備課窓口",
+      "address": "宮城県東松島市小野字 新宮前5番地",
+      "cardIds": [
+        "04-214-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/shisetsuannai/index.html",
+        "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "https://maps.app.goo.gl/5iXum7Gq3qQtLR1EA",
+        "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "https://maps.app.goo.gl/zGtpS97gAQPUSQsb6",
+        "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8"
+      ],
+      "decision": {
+        "facilityId": "facility:north-1bc636d6db8bb6f12c37",
+        "sourceUrl": "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "lat": 38.4002191,
+        "lng": 141.1643124,
+        "sourceLocator": "公式案内 https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d38.4002191!4d141.1643124",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html",
+          "snapshotSHA256": "61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b",
+          "fetchedAt": "2026-11-05T04:23:34.308508+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-1ed6b6009a4a902d1c70",
+      "name": "七ヶ浜国際村",
+      "address": "宮城県宮城郡七ヶ浜町花渕浜字大山1-1",
+      "cardIds": [
+        "04-404-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.shichigahama.com/benricho/oshirase/suido3-020-8717.html",
+        "https://www.shichigahama.com/access/index.html",
+        "https://www.shichigahama.com/kokusai/guide.html"
+      ],
+      "decision": {
+        "reason": "七ヶ浜国際村の施設・交通案内を確認。案内画像はあるが数値マーカーがなく、画像から緯度経度を推定しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-1eddfd8633b7db334e79",
+      "name": "利府町役場町民交流館「ペア・パル利府」",
+      "address": "宮城県宮城郡利府町利府字新並松4番地",
+      "cardIds": [
+        "04-406-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.rifu.miyagi.jp/gyosei/soshikikarasagasu/jougesuidou/keiei/1/3/1/4209.html",
+        "https://www.town.rifu.miyagi.jp/gyosei/kurashi_tetsuzuki/doro_kotsu/1312.html",
+        "https://www.town.rifu.miyagi.jp/gyosei/soshikikarasagasu/zaimu/kanzai/1/1/735.html"
+      ],
+      "decision": {
+        "reason": "利府町の交通案内と役場施設案内を確認。ペア・パル利府の所在は確認できるが、対象施設を指定する数値目的地点を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-24b1f4f58ce76b63f140",
+      "name": "大衡村役場守衛室",
+      "address": "宮城県黒川郡大衡村大衡字平林62番地",
+      "cardIds": [
+        "04-424-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.village.ohira.miyagi.jp/9/15/80.html",
+        "https://www.village.ohira.miyagi.jp/soshiki/14/1161.html",
+        "https://www.village.ohira.miyagi.jp/666.html",
+        "https://www.village.ohira.miyagi.jp/9/4/126.html",
+        "https://www.village.ohira.miyagi.jp/theme/base/shisetsu_map/js/jquery_map.js",
+        "https://www.village.ohira.miyagi.jp/material/files/group/1/map_20260331104513.csv"
+      ],
+      "decision": {
+        "facilityId": "facility:north-24b1f4f58ce76b63f140",
+        "sourceUrl": "https://www.village.ohira.miyagi.jp/material/files/group/1/map_20260331104513.csv",
+        "lat": 38.467205,
+        "lng": 140.879944,
+        "sourceLocator": "mapCategoryCsv: name=大衡村役場,address=大衡村大衡字平林62番地,lat,lng",
+        "finding": "同住所の別施設「平林会館」の点とは区別。現住所と一致する役場の施設点。",
+        "supportUrls": [
+          "https://www.village.ohira.miyagi.jp/666.html",
+          "https://www.village.ohira.miyagi.jp/9/15/80.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.village.ohira.miyagi.jp/666.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/25d7cad47a8ec55a16dc.html",
+          "snapshotSHA256": "a394c4edc7ea6bedba51e5fd69dd6ad44b8498ae6481f96cbdb8dd67d7925d70",
+          "fetchedAt": "2026-11-05T04:48:50.227611+00:00"
+        },
+        {
+          "url": "https://www.village.ohira.miyagi.jp/9/15/80.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-7abaca2d2b6c085c312f.html",
+          "snapshotSHA256": "6186afe949685d4a05ec2633d4634194492347c624f488db4ce3e5d1efed2df4",
+          "fetchedAt": "2026-11-05T04:24:36.557064+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-274599ca91eb4abf4286",
+      "name": "小高区役所市民総合サービス課窓口",
+      "address": "福島県南相馬市小高区本町2-78",
+      "cardIds": [
+        "07-212-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.minamisoma.lg.jp/portal/admin/kokyoshisetsu/5/4086.html",
+        "https://www.city.minamisoma.lg.jp/portal/life/suido_gesuido/1/5485.html",
+        "https://www.city.minamisoma.lg.jp/portal/sections/21/2110/1/1434.html"
+      ],
+      "decision": {
+        "reason": "小高区役所の施設案内の地図は住所検索qと表示中心ll。施設マーカーの原典数値を確認できず、llを座標として採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-2c0b313f9da729088cbf",
+      "name": "総合案内",
+      "address": "会津若松市東栄町3番46号",
+      "cardIds": [
+        "07-202-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/"
+      ],
+      "decision": {
+        "facilityId": "facility:north-2c0b313f9da729088cbf",
+        "sourceUrl": "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/",
+        "lat": 37.49484774585194,
+        "lng": 139.9297606945038,
+        "sourceLocator": "JSON markerInfos title=会津若松市役所本庁舎",
+        "finding": "配布案内の東栄町3番46号・本庁舎の指定マーカー。警備員室と総合案内は別IDのまま、建物代表点を使用。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-2e8838dd867c746f89d7",
+      "name": "陸前高田市総合交流センター(夢アリーナたかた)",
+      "address": "岩手県陸前高田市高田町字太田5番地",
+      "cardIds": [
+        "03-210-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/manholecard/9231.html",
+        "https://www.city.rikuzentakata.iwate.jp/soshiki/kouryusuishinka/sportskoryugakari/supoutsushisetsunitsuite/3029.html",
+        "https://www.city.rikuzentakata.iwate.jp/shisei_shinokeikaku/shinogaiyo/access/3264.html",
+        "https://goo.gl/maps/JRVr7MPrHnG2",
+        "https://goo.gl/maps/TGL2P",
+        "http://goo.gl/maps/1JPWP"
+      ],
+      "decision": {
+        "reason": "夢アリーナたかたの市施設ページを確認。建物所在地・施設内容はあるが数値目的地点を取得できない。共通アクセスの市役所地点は別施設なので使わない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-302d2544c978ef46ca8e",
+      "name": "花巻市役所 建設部 下水道課",
+      "address": "岩手県花巻市花城町9-30(市役所新館2階)",
+      "cardIds": [
+        "03-205-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004113.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-302d2544c978ef46ca8e",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004113.html",
+        "lat": 39.388633,
+        "lng": 141.11686,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.388633,141.11686",
+        "finding": "公式施設案内が本庁舎・新館を一括して指定する庁舎施設代表点。花城町9-30と一致。本庁舎・新館それぞれの独立した建物中心や2階・守衛室の位置は未確認。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-316f74dcf4ce051f7441",
+      "name": "舟形町観光物産センターめがみ",
+      "address": "山形県最上郡舟形町舟形391-2(舟形駅構内)",
+      "cardIds": [
+        "06-363-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.funagata.yamagata.jp/",
+        "https://www.town.funagata.yamagata.jp/s002/kenko/010/010/20200111001000.html",
+        "https://www.town.funagata.yamagata.jp/s010/kanko/080/210/20200121022000.html",
+        "https://www.town.funagata.yamagata.jp:443/",
+        "https://www.town.funagata.yamagata.jp/s010/map/map02/010/010/20210902154905.html",
+        "https://www.town.funagata.yamagata.jp/core/js/map/map.js"
+      ],
+      "decision": {
+        "facilityId": "facility:north-316f74dcf4ce051f7441",
+        "sourceUrl": "https://www.town.funagata.yamagata.jp/s010/map/map02/010/010/20210902154905.html",
+        "lat": 38.69159622228555,
+        "lng": 140.3164228454037,
+        "sourceLocator": "initParam_Map.lat/lon; core/js/map/map.js のLatLng(o.lat,o.lon)→Marker(position:e)",
+        "finding": "舟形391-2の舟形観光情報館めがみ。現施設案内の名称・住所一致。",
+        "supportUrls": [
+          "https://www.town.funagata.yamagata.jp/core/js/map/map.js"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.funagata.yamagata.jp/core/js/map/map.js",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/4aaa64475f29f0bada81.html",
+          "snapshotSHA256": "fdc2982c24cb6c2b07e4b36a652fc24080d6f78df47cd92834345b58f2406054",
+          "fetchedAt": "2026-11-05T04:53:54.505703+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-32b66f536b601fd5b88d",
+      "name": "棚倉町役場日直窓口",
+      "address": "福島県東白川郡棚倉町大字棚倉字中居野33",
+      "cardIds": [
+        "07-481-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.tanagura.fukushima.jp",
+        "http://www.town.tanagura.fukushima.jp/page/page002568.html",
+        "https://www.town.tanagura.fukushima.jp/jumin/jo-gesuido/page002568.html",
+        "https://www.town.tanagura.fukushima.jp/page/dir000048.html"
+      ],
+      "decision": {
+        "reason": "棚倉町役場の公式案内・アクセス関連ページを確認。現在の庁舎を指定する数値目的地を取得できず、日直窓口を住所点で補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3443a4a6d08de5680f46",
+      "name": "石巻市かわまち交流センター",
+      "address": "宮城県石巻市中央二丁目11番21 1階",
+      "cardIds": [
+        "04-202-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+        "https://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+        "https://www.city.ishinomaki.lg.jp/cont/10452000a/-map/0001/20180918094836.html",
+        "https://www.city.ishinomaki.lg.jp/core/js/map/map.js"
+      ],
+      "decision": {
+        "reason": "公式かわまち交流センター施設地図にマーカー38.43044945875771,141.3097372729112があるが、住所は中央2-11-12。元facilityの中央2-11-21と不一致。住所修正proposal側の確認対象とし旧facilityへ流用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-347c81450b1564d1ed0e",
+      "name": "東松島商工会",
+      "address": "東松島市矢本字河戸7番地",
+      "cardIds": [
+        "04-214-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/shisetsuannai/index.html",
+        "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "https://maps.app.goo.gl/5iXum7Gq3qQtLR1EA",
+        "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "https://maps.app.goo.gl/zGtpS97gAQPUSQsb6",
+        "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8"
+      ],
+      "decision": {
+        "facilityId": "facility:north-347c81450b1564d1ed0e",
+        "sourceUrl": "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "lat": 38.419193,
+        "lng": 141.209939,
+        "sourceLocator": "公式案内 https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d38.419193!4d141.209939",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html",
+          "snapshotSHA256": "61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b",
+          "fetchedAt": "2026-11-05T04:23:34.308508+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-350b2ed34ef3f0dbcb82",
+      "name": "道の駅たろう たろう潮里ステーション",
+      "address": "岩手県宮古市田老二丁目5-1",
+      "cardIds": [
+        "03-202-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/2907.html",
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/index.html",
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/tarosogojimusho/3/2/2081.html"
+      ],
+      "decision": {
+        "reason": "宮古市の道の駅たろう施設紹介を確認。潮里ステーションを指定する数値マーカーを取得できず、道の駅敷地や隣接施設の代表点を推定しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3879ad45b7374f0d8691",
+      "name": "国見町役場",
+      "address": "福島県伊達郡国見町大字藤田字一丁田二1番地7",
+      "cardIds": [
+        "07-000-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25194.252361669914!2d140.54508200369153!3d37.87709795340309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63f236199693%3A0x1782d84996225b9b!2z5Zu96KaL55S65b255aC0!5e0!3m2!1sja!2sjp!4v1479357118614",
+        "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-3879ad45b7374f0d8691",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25194.252361669914!2d140.54508200369153!3d37.87709795340309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63f236199693%3A0x1782d84996225b9b!2z5Zu96KaL55S65b255aC0!5e0!3m2!1sja!2sjp!4v1479357118614",
+        "lat": 37.8766623,
+        "lng": 140.5490827,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a63f236199693:0x1782d84996225b9b / Kunimi Town Hall, Itchoda2-１-7 Fujita, Kunimi, Date District, Fukushima 969-1792",
+        "finding": "藤田字一丁田二1-7の国見町役場。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/11259a3a52d8b6ac22ea.html",
+          "snapshotSHA256": "a550d6a3a87330bc97d3222eff3622d88ed0cd72c9d3482336015a8b5b1180e1",
+          "fetchedAt": "2026-11-05T04:48:49.041170+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-3a3d893fa312fdeb2154",
+      "name": "ひきめの里直売所",
+      "address": "岩手県宮古市蟇目13-3-1",
+      "cardIds": [
+        "03-202-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/2907.html",
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/index.html",
+        "https://www.city.miyako.iwate.jp/material/files/group/24/chisanchishou_keikaku_2025-2029.pdf"
+      ],
+      "decision": {
+        "reason": "宮古市の配布案内に加え地産地消推進計画の直売所一覧を確認。ひきめの里の名称と蟇目地区の記載までで、現住所13-3-1に対応する公的施設点は取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3ac2ebbfacc3e3d481e0",
+      "name": "かみのやま温泉観光案内所(JRかみのやま温泉駅前)",
+      "address": "山形県上山市矢来1-2-1",
+      "cardIds": [
+        "06-207-A001"
+      ],
+      "investigatedUrls": [
+        "https://kaminoyama-spa.com/news/sightseeing/2633.html",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://kaminoyama-spa.com/"
+      ],
+      "decision": {
+        "reason": "かみのやま温泉観光案内所の公式紹介と観光協会ホームの地図を確認。複数スポットのMy Mapsで、当案内所の施設名・現住所と対応する原典数値を抽出確認できなかった。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3b24e49b4ed434e5e3f4",
+      "name": "ビッグルーフ滝沢",
+      "address": "岩手県滝沢市下鵜飼1-15",
+      "cardIds": [
+        "03-216-A001"
+      ],
+      "investigatedUrls": [
+        "https://bigroof.jp/",
+        "https://www.city.takizawa.iwate.jp/suido/kouhou-event/event-jouhou/p20250715105520",
+        "https://bigroof.jp/about/?id=access",
+        "https://bigroof.jp/access/",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193",
+        "https://goo.gl/maps/b7kFavV2hp2JDoUw7",
+        "https://goo.gl/maps/r64KzbYYbN6RNs7T8",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49092.05745153366!2d141.03829183975625!3d39.73395414439027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772802eaaaab%3A0xa5a1231525502fd0!2z44OT44OD44Kw44Or44O844OV5rud5rKi!5e0!3m2!1sja!2sjp!4v1705732787256!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.225029659541!2d141.07481991538103!3d39.73459577945016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772829a7d357%3A0xdc87ef9c783b014f!2z5rud5rKi5biC5b255omA!5e0!3m2!1sja!2sjp!4v1671528261679!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-3b24e49b4ed434e5e3f4",
+        "sourceUrl": "https://bigroof.jp/about/?id=access",
+        "lat": 39.7337977,
+        "lng": 141.0785187,
+        "sourceLocator": "施設概要 住所欄 [MAP] の最終 !8m2!3d39.7337977!4d141.0785187",
+        "finding": "下鵜飼1-15のビッグルーフ滝沢。リンク中の滝沢市役所の点とは区別。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-435218ddfd78ae1f7e95",
+      "name": "山形浄化センター",
+      "address": "山形県天童市大字大町字西原1915((公財)山形県建設技術センター 下水道事業所)",
+      "cardIds": [
+        "06-000-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.y-ctc.jp/outline/outline/index.html",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://y-ctc.jp/drainage/handling/index.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6254.038912687697!2d140.3286196332272!3d38.394799184016456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDIzJzQxLjMiTiAxNDDCsDE5JzU4LjgiRQ!5e0!3m2!1sja!2sjp!4v1593573424060!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6248.243782063199!2d140.34471663322856!3d38.46174718010953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI3JzQyLjMiTiAxNDDCsDIwJzU2LjciRQ!5e0!3m2!1sja!2sjp!4v1593573351607!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6285.8030458028525!2d140.11935863321946!3d38.026075205433706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDAxJzMzLjkiTiAxNDDCsDA3JzI1LjUiRQ!5e0!3m2!1sja!2sjp!4v1593572851623!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6215.738499962843!2d139.85689563323635!3d38.835455158197455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDUwJzA3LjYiTiAxMznCsDUxJzQwLjYiRQ!5e0!3m2!1sja!2sjp!4v1593574243840!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "管理者の処理場案内と埋込地図を確認。取得した埋込レスポンスから山形浄化センターの名前付き目的地点を確認できず、viewportは使用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-44552fc11faced8ea5c7",
+      "name": "道の駅 おおさと",
+      "address": "宮城県黒川郡大郷町中村字北浦51番地6",
+      "cardIds": [
+        "04-442-A001"
+      ],
+      "investigatedUrls": [
+        "https://oosato-rs.co.jp/",
+        "https://www.town.miyagi-osato.lg.jp/soshiki/jyogesui/oosatotyou-manho-rucard.html",
+        "https://oosato-rs.co.jp/access",
+        "https://oosato-rs.co.jp/information",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1562.8733542474058!2d140.9929195711646!3d38.42421805704072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f899d902aeb13d7%3A0xa4bc2cdcdfc503e8!2z6YGT44Gu6aeFIOOBiuOBiuOBleOBqA!5e0!3m2!1sja!2sjp!4v1774520477061!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.750321364037!2d140.99030617563218!3d38.42413457449028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f899d902aeb13d7%3A0xa4bc2cdcdfc503e8!2z6YGT44Gu6aeFIOOBiuOBiuOBleOBqA!5e0!3m2!1sja!2sjp!4v1777861879606!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-44552fc11faced8ea5c7",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.750321364037!2d140.99030617563218!3d38.42413457449028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f899d902aeb13d7%3A0xa4bc2cdcdfc503e8!2z6YGT44Gu6aeFIOOBiuOBiuOBleOBqA!5e0!3m2!1sja!2sjp!4v1777861879606!5m2!1sja!2sjp",
+        "lat": 38.4241304,
+        "lng": 140.9928811,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f899d902aeb13d7:0xa4bc2cdcdfc503e8 / 〒981-3521 宮城県黒川郡大郷町中村字北浦５１−６ 道の駅 おおさと",
+        "finding": "中村字北浦51-6の道の駅おおさと。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://oosato-rs.co.jp/access"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://oosato-rs.co.jp/access",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/76a791e34baae75d4573.html",
+          "snapshotSHA256": "e24ff5592314e2ebfbe76e7c40ec948d617a64c485c15af97f4fb12c437563f0",
+          "fetchedAt": "2026-11-05T04:48:38.300889+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-44cd1a51e4ccdee8fa08",
+      "name": "天童市将棋資料館",
+      "address": "山形県天童市本町一丁目1番1号",
+      "cardIds": [
+        "06-210-B001"
+      ],
+      "investigatedUrls": [
+        "http://bussan-tendo.gr.jp",
+        "https://www.city.tendo.yamagata.jp",
+        "https://www.city.tendo.yamagata.jp/lifeinfo/jougesuidou/onegai.html",
+        "https://bussan-tendo.gr.jp/museum/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38601.44574777296!2d140.35881487421307!3d38.354936101644434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bc576e23a0141%3A0x63623050c6a66363!2z44KC44KK44Cc44Gq5aSp56ul77yI5aSp56ul5biC5qOu5p6X5oOF5aCx6aSo77yJ!5e0!3m2!1sja!2sjp!4v1618128318750!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "将棋資料館を調査した公式観光協会ページの埋込地図は、もり〜な天童の施設IDであり取得レスポンスにも施設目的地なし。将棋資料館の点として使わない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-4738b1eb26eade31744a",
+      "name": "もりおか歴史文化館",
+      "address": "岩手県盛岡市内丸1-50",
+      "cardIds": [
+        "03-201-A001",
+        "03-201-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.morioka-water.jp/various/manhole.html",
+        "https://www.morireki.jp/",
+        "https://www.morireki.jp/infor/map/"
+      ],
+      "decision": {
+        "reason": "歴史文化館の公式アクセスリンクは施設ID付きだが数値は@表示中心のみ。配布ページの他の数値リンクはマンホール蓋の位置で、文化館の目的地点として採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-48441a52e5b152a63160",
+      "name": "県南浄化センター内 (株)みずむすびサービスみやぎ 県南浄化センター管理棟内",
+      "address": "岩沼市下野郷字赤江川1-3",
+      "cardIds": [
+        "04-000-B001"
+      ],
+      "investigatedUrls": [
+        "https://muratamachi.info/",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/mhcard.html",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/sisetusyoukai.html",
+        "https://muratamachi.info/access.html",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/kennanzyoukasenta-annai.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-48441a52e5b152a63160",
+        "sourceUrl": "https://www.pref.miyagi.jp/soshiki/senen-wwt/kennanzyoukasenta-annai.html",
+        "lat": 38.11266391873677,
+        "lng": 140.92905501542577,
+        "sourceLocator": "県南浄化センター案内「Google map」href q=38.11266391873677,140.92905501542577",
+        "finding": "下野郷字赤江川1-3が現住所と一致。県のセンター施設目的地点。管理棟内窓口の点ではなく施設代表点。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-4a005163a65259f5de9d",
+      "name": "釜石観光案内所",
+      "address": "岩手県釜石市鈴子町22-1 シープラザ釜石1階",
+      "cardIds": [
+        "03-211-A001"
+      ],
+      "investigatedUrls": [
+        "https://kamaishi-kankou.jp/kyoukai/",
+        "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "https://kamaishi-kankou.jp/access/",
+        "https://kamaishi-kankou.jp/access/camp/",
+        "https://kamaishi-kankou.jp/access/rentacar/",
+        "https://kamaishi-kankou.jp/access/rentacycle/",
+        "https://kamaishi-kankou.jp/access/transportation/",
+        "https://www.city.kamaishi.iwate.jp/category/bunya/shisetsu/",
+        "https://www.city.kamaishi.iwate.jp/docs/2014062700035/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1587.6687757962911!2d141.87109143489823!3d39.273480904175614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f860e9693630b69%3A0x4f5f3241a986ba15!2z44K344O844OX44Op44K26Yec55-z!5e0!3m2!1sja!2sjp!4v1711686293423!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-4a005163a65259f5de9d",
+        "sourceUrl": "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "lat": 39.27330492703001,
+        "lng": 141.8719477392733,
+        "sourceLocator": "data-map-view-target=setting JSON markerInfos title=釜石観光総合案内所",
+        "finding": "市の配布案内本文の施設名・現住所と、同ページの各施設名付きマーカーを照合。centerは使用しない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-4d8f1c0ac3abdf1a8996",
+      "name": "平川市ふるさとセンター",
+      "address": "青森県平川市猿賀石林94",
+      "cardIds": [
+        "02-210-A001"
+      ],
+      "investigatedUrls": [
+        "https://hirakawa-kankou.com",
+        "https://www.city.hirakawa.lg.jp/kurashi/suidou/gesuidou/colormanhole.html",
+        "https://hirakawa-kankou.com/access/",
+        "https://www.city.hirakawa.lg.jp/jouhou/shoukai/shihenoaccess.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.090920219609!2d140.56454771207441!3d40.583748471294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b03078d010e7f%3A0x2e74ae9f62aeacee!2z5bmz5bed5biC5b255omA!5e0!3m2!1sja!2sjp!4v1703725736327!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "平川市観光協会の交通案内と市アクセスを確認。取得した名前付き埋込地点は市役所で、ふるさとセンターではないため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5081ff289295375aef3a",
+      "name": "多賀城跡ガイダンス施設(中央公園内)",
+      "address": "宮城県多賀城市市川字立石3番地の2",
+      "cardIds": [
+        "04-209-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.tagajo.miyagi.jp/bunkazai/bunkazai/itibukaihou.html",
+        "https://www.city.tagajo.miyagi.jp/kurashi/suido/gesuido/index.html",
+        "https://www.city.tagajo.miyagi.jp/ryokin/kurashi/suido/gesuido/card.html",
+        "https://www.city.tagajo.miyagi.jp/kanzai/shise/gaiyo/madoguchi/chosha/index.html",
+        "https://www.city.tagajo.miyagi.jp/koho/shise/gaiyo/madoguchi/chosha/index.html",
+        "https://www.city.tagajo.miyagi.jp/koho/shise/gaiyo/madoguchi/shiyakusho.html",
+        "https://www.city.tagajo.miyagi.jp/kurashi/shisetsu/index.html"
+      ],
+      "decision": {
+        "reason": "多賀城跡ガイダンス施設の市案内、公開・見学案内を確認。中央公園内の対象建物を指定する数値マーカーがなく、史跡全体や文化センターで代用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-50bd2705ce19839d9aa4",
+      "name": "ビッグルーフ滝沢",
+      "address": "岩手県滝沢市下鵜飼1-15",
+      "cardIds": [
+        "03-216-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.takizawa.iwate.jp",
+        "https://bigroof.jp/",
+        "https://www.city.takizawa.iwate.jp/suido/kouhou-event/event-jouhou/p20250715105520",
+        "https://bigroof.jp/about/?id=access",
+        "https://bigroof.jp/access/",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193",
+        "https://goo.gl/maps/b7kFavV2hp2JDoUw7",
+        "https://goo.gl/maps/r64KzbYYbN6RNs7T8",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49092.05745153366!2d141.03829183975625!3d39.73395414439027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772802eaaaab%3A0xa5a1231525502fd0!2z44OT44OD44Kw44Or44O844OV5rud5rKi!5e0!3m2!1sja!2sjp!4v1705732787256!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.225029659541!2d141.07481991538103!3d39.73459577945016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772829a7d357%3A0xdc87ef9c783b014f!2z5rud5rKi5biC5b255omA!5e0!3m2!1sja!2sjp!4v1671528261679!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-50bd2705ce19839d9aa4",
+        "sourceUrl": "https://bigroof.jp/about/?id=access",
+        "lat": 39.7337977,
+        "lng": 141.0785187,
+        "sourceLocator": "施設概要 住所欄 [MAP] の最終 !8m2!3d39.7337977!4d141.0785187",
+        "finding": "下鵜飼1-15のビッグルーフ滝沢。リンク中の滝沢市役所の点とは区別。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-5611b5433e71129c00ed",
+      "name": "富谷宿観光交流ステーションとみやど",
+      "address": "宮城県富谷市富谷新町111",
+      "cardIds": [
+        "04-216-A001"
+      ],
+      "investigatedUrls": [
+        "https://tomiyado.com/",
+        "https://www.tomiya-city.miyagi.jp/information/2024/04/041bee602c6de14f1635ba1fbeb3dc13533f8cc0.html",
+        "https://www.tomiya-city.miyagi.jp/kurashi/suidou/",
+        "https://www.tomiya-city.miyagi.jp/access.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3126.79722647051!2d140.89311451533578!3d38.39993727965046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f897871480233df%3A0xb965597d4d026071!2z44CSOTgxLTMzMTEg5a6u5Z-O55yM5a-M6LC35biC5a-M6LC35Z2C5p2-55Sw77yT77yQ!5e0!3m2!1sja!2sjp!4v1618383645759!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "とみやど公式ページと市アクセスを確認。取得できる市共通地図は富谷坂松田30の市役所側で、新町111のとみやどではないため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-564d6cb018ca701ab673",
+      "name": "伊達市役所梁川総合支所",
+      "address": "伊達市梁川町青葉町1",
+      "cardIds": [
+        "07-213-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "https://www.date-shi.jp/information/4756",
+        "https://www.city.fukushima-date.lg.jp/soshiki/5/338.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.6314958290977!2d140.59869807588703!3d37.84551197196764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a6351bdc78e9b%3A0x87d548f583e39afd!2z5LyK6YGU5biC5b255omAIOaigeW3nee3j-WQiOaUr-aJgA!5e0!3m2!1sja!2sjp!4v1700448020227!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "公式埋込地図は梁川総合支所の名前付き地点だが、地図の番地1-1と元facilityの青葉町1の対応を確認できない。住所差を推測で解消しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-582273d007a043014c2e",
+      "name": "喜多方市役所宿日直室(本庁舎)",
+      "address": "福島県喜多方市字御清水東7244-2",
+      "cardIds": [
+        "07-208-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.kitakata.fukushima.jp/soshiki/jogesui/21796.html",
+        "https://www.city.kitakata.fukushima.jp/map/01.html",
+        "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js"
+      ],
+      "decision": {
+        "facilityId": "facility:north-582273d007a043014c2e",
+        "sourceUrl": "https://www.city.kitakata.fukushima.jp/map/01.html",
+        "lat": 37.651148349945245,
+        "lng": 139.87471568095089,
+        "sourceLocator": "initlat/initlong → shisetsu-detail-googlemap.js markerOpts.position=myLatlng",
+        "finding": "現案内の御清水東7244番地2と一致。喜多方市役所本庁舎代表点。",
+        "supportUrls": [
+          "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/9226fcbdac74c86e1a5a.html",
+          "snapshotSHA256": "702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429",
+          "fetchedAt": "2026-11-05T04:50:13.887683+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-59ddb2e28afd8231a1b0",
+      "name": "郡山市磐梯熱海観光物産館",
+      "address": "福島県郡山市熱海町熱海二丁目15-1",
+      "cardIds": [
+        "07-203-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.bandaiatami.or.jp/spot/kanko-bussankan",
+        "https://www.city.koriyama.lg.jp/site/jougesuidou/5690.html",
+        "https://www.bandaiatami.or.jp/access/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6332.292416257876!2d140.271859!3d37.480876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x388aaac038e93af8!2z6YOh5bGx5biC56OQ5qKv54ax5rW36Kaz5YWJ54mp55Sj6aSo!5e0!3m2!1sja!2sjp!4v1621850771568!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810533.7065771971!2d139.71057400909808!3d37.480850436787875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60200c1b5f77ea47%3A0x766fa394c407c035!2z56OQ5qKv54ax5rW35rip5rOJ6Kaz5YWJ5Y2U5Lya!5e0!3m2!1sja!2sjp!4v1620293541845!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-59ddb2e28afd8231a1b0",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6332.292416257876!2d140.271859!3d37.480876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x388aaac038e93af8!2z6YOh5bGx5biC56OQ5qKv54ax5rW36Kaz5YWJ54mp55Sj6aSo!5e0!3m2!1sja!2sjp!4v1621850771568!5m2!1sja!2sjp",
+        "lat": 37.4810734,
+        "lng": 140.272044,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x60200d7da68a4155:0x388aaac038e93af8 / 〒963-1309 福島県郡山市熱海町熱海２丁目１５−１ 郡山市磐梯熱海観光物産館",
+        "finding": "熱海町熱海2-15-1の観光物産館。観光協会の別住所の点は不使用。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.bandaiatami.or.jp/spot/kanko-bussankan"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.bandaiatami.or.jp/spot/kanko-bussankan",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-8e01316502fea7d8dc3c.html",
+          "snapshotSHA256": "82eb4d7112491761a4607abb44d22d9ade0b0f496962dc4af9f57323c940b405",
+          "fetchedAt": "2026-11-05T04:23:24.858679+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-5be89b09e4439e0d2776",
+      "name": "楢葉町サイクリングターミナル",
+      "address": "福島県双葉郡楢葉町大字北田字上ノ原27-29",
+      "cardIds": [
+        "07-542-A001"
+      ],
+      "investigatedUrls": [
+        "http://naraha-tenjin.net/enjoy/rental",
+        "https://www.town.naraha.lg.jp/life/009648.html",
+        "http://naraha-tenjin.net/access",
+        "http://naraha-tenjin.net/access/",
+        "http://naraha-tenjin.net/facility/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50798.35030411772!2d141.017852!3d37.273872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60212002c53ca2b7%3A0xf646f37c31b88b85!2z5pel5pys44CB44CSOTc5LTA2MDQg56aP5bO255yM5Y-M6JGJ6YOh5qWi6JGJ55S65YyX55Sw5LiK44OO5Y6f77yS77yX4oiS77yS77yZ!5e0!3m2!1sja!2sus!4v1531120595018"
+      ],
+      "decision": {
+        "reason": "楢葉サイクリングターミナルの公式アクセス・埋込地図を確認。取得した目的地レコードが住所のみで、施設点と確認できないため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5ccd4b2b6fb81a78cfac",
+      "name": "展勝地レストハウス",
+      "address": "岩手県北上市立花14地割21-1",
+      "cardIds": [
+        "03-206-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.tenshouchi.com/",
+        "https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/gesuidoka/ijifukyugakari/26436.html",
+        "https://kitakami-kanko.jp/sakura/access/",
+        "https://tenshouchi.com/access/",
+        "https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/seisakukikakuka/gyoseikeieikakari/soshiki/5661.html",
+        "https://goo.gl/maps/eopB4mrRmxT2"
+      ],
+      "decision": {
+        "reason": "展勝地レストハウスの公式アクセスとリンク先を確認。取得先が住所のみの点でレストハウス施設点を確認できず、展勝地公園全体の点で代用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5d54d1ea7c7f1aa99f92",
+      "name": "東松島市震災復興伝承館",
+      "address": "宮城県東松島市野蒜北余景56-36",
+      "cardIds": [
+        "04-214-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+        "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/shisetsuannai/index.html",
+        "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "https://maps.app.goo.gl/5iXum7Gq3qQtLR1EA",
+        "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "https://maps.app.goo.gl/zGtpS97gAQPUSQsb6",
+        "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8"
+      ],
+      "decision": {
+        "facilityId": "facility:north-5d54d1ea7c7f1aa99f92",
+        "sourceUrl": "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "lat": 38.3748648,
+        "lng": 141.1600816,
+        "sourceLocator": "公式案内 https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d38.3748648!4d141.1600816",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html",
+          "snapshotSHA256": "61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b",
+          "fetchedAt": "2026-11-05T04:23:34.308508+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-623ff6e946d0fb4564ad",
+      "name": "立佞武多の館",
+      "address": "青森県五所川原市大町506-10",
+      "cardIds": [
+        "02-205-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.goshogawara.lg.jp/kurashi/machi/gesui/manholecard.html",
+        "https://www.tachineputa.jp/",
+        "http://www.city.goshogawara.lg.jp/access.html",
+        "https://www.tachineputa.jp/parking-lot",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.8818330718727!2d140.44310545962554!3d40.81118689610952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9bbbb9e3c10fff%3A0x18ca8e9423388cab!2z56uL5L2e5q2m5aSa44Gu6aSoIOmnkOi7iuWgtA!5e0!3m2!1sja!2sjp!4v1573710351626!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d754.9553764752286!2d140.4445659498482!3d40.80991599865567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ4JzM1LjciTiAxNDDCsDI2JzQyLjUiRQ!5e0!3m2!1sja!2sjp!4v1575855258267!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1510.1210140657526!2d140.44678365800343!3d40.80067499483058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ4JzAyLjQiTiAxNDDCsDI2JzUyLjQiRQ!5e0!3m2!1sja!2sjp!4v1575867871242!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.7345498524028!2d140.44459124280948!3d40.811425703214674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9bbb23e6da4a6f%3A0x6b043e0d09435942!2z5LiK5bmz5LqV55S66aeQ6LuK5aC0!5e0!3m2!1sja!2sjp!4v1783305370169!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d754.9427724516505!2d140.44301430322454!3d40.811023779785046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9bbaccac46429d%3A0xb77d677a7b0eafd4!2z56uL5L2e5q2m5aSaKOOBn-OBoeOBreOBt-OBnynjga7ppKg!5e0!3m2!1sja!2sjp!4v1628250442847!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-623ff6e946d0fb4564ad",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d754.9427724516505!2d140.44301430322454!3d40.811023779785046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9bbaccac46429d%3A0xb77d677a7b0eafd4!2z56uL5L2e5q2m5aSaKOOBn-OBoeOBreOBt-OBnynjga7ppKg!5e0!3m2!1sja!2sjp!4v1628250442847!5m2!1sja!2sjp",
+        "lat": 40.8109502,
+        "lng": 140.4433349,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f9bbaccac46429d:0xb77d677a7b0eafd4 / 〒037-0063 青森県五所川原市大町５０６−１０ 立佞武多の館",
+        "finding": "大町506-10の立佞武多の館本館。駐車場の点は不使用。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.tachineputa.jp/parking-lot"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.tachineputa.jp/parking-lot",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/19de5f18bf6471b7e36d.html",
+          "snapshotSHA256": "2968e699397bf2db9f5d8d2a355a9199b464d695d5aca7b3b656478f75b3cb69",
+          "fetchedAt": "2026-11-05T04:48:47.911040+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-63a164e620a05ec05186",
+      "name": "福島市アクティブシニアセンター・アオウゼ",
+      "address": "福島県福島市曽根田町1-18 MAXふくしま4階",
+      "cardIds": [
+        "07-201-A001"
+      ],
+      "investigatedUrls": [
+        "https://f-aoz.jp/",
+        "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/koho/2072.html",
+        "https://f-aoz.jp/access.html",
+        "https://f-aoz.jp/shisetu.html",
+        "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/about/access.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.3317666951434!2d140.45793071543713!3d37.75881832085016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a85c4361601b5%3A0x4e88f33a1b4d035c!2z44Ki44Kq44Km44K8!5e0!3m2!1sja!2sjp!4v1550537089950"
+      ],
+      "decision": {
+        "facilityId": "facility:north-63a164e620a05ec05186",
+        "sourceUrl": "https://www.city.fukushima.fukushima.jp/suido/jogesuidojigyo/koho/2072.html",
+        "lat": 37.7589129,
+        "lng": 140.4601332,
+        "sourceLocator": "アオウゼの地図リンク !8m2!3d37.7589129!4d140.4601332",
+        "finding": "曽根田町1-18 MAXふくしま4階と施設名が一致。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-6bd64447ab6d66c731f3",
+      "name": "つながるBASE",
+      "address": "福島県石川郡浅川町大字浅川字本町西裏47番地3",
+      "cardIds": [
+        "07-504-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.asakawa.fukushima.jp/information/news/002270.html",
+        "https://www.town.asakawa.fukushima.jp/outline/access",
+        "https://www.town.asakawa.fukushima.jp/outline/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.0044069743503!2d140.4125861750772!3d37.07893317216891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60204b005babb4b9%3A0x4fe9184f3fb108fb!2z44Gk44Gq44GM44KLQkFTRSDjgqTjg5njg7Pjg4jjgrnjg5rjg7zjgrk!5e1!3m2!1sja!2sjp!4v1778743337548!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50934.43332353667!2d140.38586982985035!3d37.0717293597202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60204b7aa5b03a13%3A0xe2e322c8f084129d!2z56aP5bO255yM55-z5bed6YOh5rWF5bed55S6!5e0!3m2!1sja!2sjp!4v1583483057214!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-6bd64447ab6d66c731f3",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.0044069743503!2d140.4125861750772!3d37.07893317216891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60204b005babb4b9%3A0x4fe9184f3fb108fb!2z44Gk44Gq44GM44KLQkFTRSDjgqTjg5njg7Pjg4jjgrnjg5rjg7zjgrk!5e1!3m2!1sja!2sjp!4v1778743337548!5m2!1sja!2sjp",
+        "lat": 37.0789137,
+        "lng": 140.4150762,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x60204b005babb4b9:0x4fe9184f3fb108fb / 〒963-6204 福島県石川郡浅川町浅川本町西裏４７−３ つながるBASE イベントスペース",
+        "finding": "浅川字本町西裏47-3のつながるBASE。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.town.asakawa.fukushima.jp/information/news/002270.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.asakawa.fukushima.jp/information/news/002270.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-58457ec8925d49d76d2d.html",
+          "snapshotSHA256": "428cc4e9a5af6ca90e6db7b2a554002c8dce8b1c528dc76e6393972265c34d81",
+          "fetchedAt": "2026-11-05T04:24:21.317585+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-6cd5f14630abb71aeb29",
+      "name": "三戸町役場建設課",
+      "address": "青森県三戸郡三戸町大字在府小路町43",
+      "cardIds": [
+        "02-441-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.michinoeki-sannohe.com/",
+        "https://www.town.sannohe.aomori.jp/index.html",
+        "https://www.town.sannohe.aomori.jp/kanko_miryoku/11pikinoneko/3713.html",
+        "https://www.town.sannohe.aomori.jp/soshiki/machidukuri/11pikinoneko/3909.html",
+        "https://www.town.sannohe.aomori.jp/soshiki/soumu/4931.html"
+      ],
+      "decision": {
+        "reason": "三戸町公式サイト・庁舎関連案内を調査。検索で見つけた庁舎掲載ページは取得時404。配布記事の地図は二日町ポケットパーク・蓋側であり役場位置に使わない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-6d2445989dfed98c8a60",
+      "name": "宮城県伊豆沼・内沼サンクチュアリセンター",
+      "address": "宮城県栗原市若柳字上畑岡敷味17-2",
+      "cardIds": [
+        "04-000-C001"
+      ],
+      "investigatedUrls": [
+        "http://izunuma.org/",
+        "https://www.pref.miyagi.jp/soshiki/ktkm-wwt/mhcard-hasama.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12451.194541216973!2d141.08945139348876!3d38.72243187943635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89192e16f5fccf%3A0x1bad54657152d3cc!2z5a6u5Z-O55yM5LyK6LGG5rK844O75YaF5rK844K144Oz44Kv44OB44Ol44Ki44Oq44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1775454465432!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-6d2445989dfed98c8a60",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12451.194541216973!2d141.08945139348876!3d38.72243187943635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89192e16f5fccf%3A0x1bad54657152d3cc!2z5a6u5Z-O55yM5LyK6LGG5rK844O75YaF5rK844K144Oz44Kv44OB44Ol44Ki44Oq44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1775454465432!5m2!1sja!2sjp",
+        "lat": 38.7237926,
+        "lng": 141.0947011,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f89192e16f5fccf:0x1bad54657152d3cc / 〒989-5504 宮城県栗原市若柳上畑岡敷味１７−２ 宮城県伊豆沼・内沼サンクチュアリセンター鳥館",
+        "finding": "若柳字上畑岡敷味17-2の県サンクチュアリセンター鳥館。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "http://izunuma.org/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "http://izunuma.org/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-76c177972ce87a8db86e.html",
+          "snapshotSHA256": "19a0582afe136eb7922677f589aaf092bb4ada098c315774b98207958e7189be",
+          "fetchedAt": "2026-11-05T04:22:42.415959+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-716c305f4ea78c959505",
+      "name": "伊達市観光案内所",
+      "address": "福島県伊達市梁川町青葉町1(伊達市役所梁川総合支所1階)",
+      "cardIds": [
+        "07-213-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.fukushima-date.lg.jp/soshiki/25/68027.html",
+        "https://www.date-shi.jp/information/4756",
+        "https://www.city.fukushima-date.lg.jp/soshiki/5/338.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.6314958290977!2d140.59869807588703!3d37.84551197196764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a6351bdc78e9b%3A0x87d548f583e39afd!2z5LyK6YGU5biC5b255omAIOaigeW3nee3j-WQiOaUr-aJgA!5e0!3m2!1sja!2sjp!4v1700448020227!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "観光案内所が入る梁川総合支所の公式埋込地点を調査。地図番地1-1と元facilityの青葉町1の対応が未解決のため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-745e8c6d308975a88c9f",
+      "name": "パルクアベニュー・カワトク",
+      "address": "岩手県盛岡市菜園一丁目10-1",
+      "cardIds": [
+        "03-201-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.kawatoku.com/",
+        "https://www.morioka-water.jp/various/manhole.html",
+        "https://www.kawatoku.com/kwtkweb/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.7254489922043!2d141.14472851552205!3d39.70087657945467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85762fa9c7d865%3A0x16e5dfd9c003c654!2z44OR44Or44Kv44Ki44OZ44OL44Ol44O844O744Kr44Ov44OI44Kv!5e0!3m2!1sja!2sjp!4v1645071234464!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-745e8c6d308975a88c9f",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.7254489922043!2d141.14472851552205!3d39.70087657945467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85762fa9c7d865%3A0x16e5dfd9c003c654!2z44OR44Or44Kv44Ki44OZ44OL44Ol44O844O744Kr44Ov44OI44Kv!5e0!3m2!1sja!2sjp!4v1645071234464!5m2!1sja!2sjp",
+        "lat": 39.7008766,
+        "lng": 141.1469172,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f85762fa9c7d865:0x16e5dfd9c003c654 / 〒020-8655 岩手県盛岡市菜園１丁目１０−１ パルクアベニュー・カワトク",
+        "finding": "菜園1-10-1のカワトク。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.kawatoku.com/kwtkweb/access/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.kawatoku.com/kwtkweb/access/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/8fd1ba2eaa299ba07bc7.html",
+          "snapshotSHA256": "112defd7f4a5ad215112ae90536102175925313be9a5af96f2ea041d46f27447",
+          "fetchedAt": "2026-11-05T04:48:46.631068+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-79a76f9fa4f60b40d34e",
+      "name": "花巻市東和総合支所 地域振興課",
+      "address": "岩手県花巻市東和町土沢8区60番地",
+      "cardIds": [
+        "03-205-D001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004117.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-79a76f9fa4f60b40d34e",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004117.html",
+        "lat": 39.38689,
+        "lng": 141.228075,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.38689,141.228075",
+        "finding": "施設紹介の所在地と台帳住所を照合。市役所・総合支所の建物代表点であり各階・守衛室の精密位置ではない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-7cc7af2506f3a22c04bc",
+      "name": "天童市森林情報館「もり〜な天童」(道の駅天童温泉内)",
+      "address": "天童市鍬ノ町二丁目3番41号",
+      "cardIds": [
+        "06-210-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.tendo.yamagata.jp/livinfo/machidukuri/tennyu_tensyutu.html",
+        "https://www.city.tendo.yamagata.jp/lifeinfo/jougesuidou/onegai.html",
+        "https://bussan-tendo.gr.jp/morina/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38601.44574777296!2d140.35881487421307!3d38.354936101644434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bc576e23a0141%3A0x63623050c6a66363!2z44KC44KK44Cc44Gq5aSp56ul77yI5aSp56ul5biC5qOu5p6X5oOF5aCx6aSo77yJ!5e0!3m2!1sja!2sjp!4v1618128318750!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "もり〜な天童の公式紹介から埋込地図を取得したが、initEmbedは施設目的地なし・viewportのみ。表示中心を施設座標として採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7de6f0064c1c2676fc92",
+      "name": "七ヶ浜町上下水道事業所",
+      "address": "宮城県宮城郡七ヶ浜町東宮浜字丑谷辺5-1",
+      "cardIds": [
+        "04-404-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.shichigahama.com/",
+        "https://www.shichigahama.com/benricho/oshirase/suido3-020-12422.html",
+        "https://www.shichigahama.com/access/index.html"
+      ],
+      "decision": {
+        "reason": "七ヶ浜町の交通アクセス・役場案内を確認。上下水道事業所を指定する数値目的地を取得できず、住所のジオコードで補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7e8db3d9c7245b172fcf",
+      "name": "花火伝統文化継承資料館はなび・アム",
+      "address": "秋田県大仙市大曲大町7-19",
+      "cardIds": [
+        "05-212-A001"
+      ],
+      "investigatedUrls": [
+        "https://hanabimuseum.jp/",
+        "https://www.city.daisen.lg.jp/docs/2021092900038/",
+        "https://www.city.daisen.lg.jp/genre/facilities",
+        "https://hanabimuseum.jp/overview"
+      ],
+      "decision": {
+        "reason": "はなび・アムの公式ホーム・施設概要と大仙市施設案内を確認。大曲大町7-19の対象建物に対応する数値目的地を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7eb77b28c7c995212291",
+      "name": "亘理町立郷土資料館",
+      "address": "宮城県亘理郡亘理町字西郷140",
+      "cardIds": [
+        "04-361-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.watari.miyagi.jp/",
+        "https://www.town.watari.miyagi.jp/life/detail.php?content=782",
+        "https://www.town.watari.miyagi.jp/tourism/category/?category=144",
+        "https://www.town.watari.miyagi.jp/town/category/?category=258",
+        "https://www.town.watari.miyagi.jp/museum/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.5942120042355!2d140.861741!3d38.040163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaf11eb9c598cef37!2z5LqY55CG55S656uL6YO35Zyf6LOH5paZ6aSo!5e0!3m2!1sja!2sjp!4v1647147724180!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-7eb77b28c7c995212291",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.5942120042355!2d140.861741!3d38.040163!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaf11eb9c598cef37!2z5LqY55CG55S656uL6YO35Zyf6LOH5paZ6aSo!5e0!3m2!1sja!2sjp!4v1647147724180!5m2!1sja!2sjp",
+        "lat": 38.0401634,
+        "lng": 140.8617414,
+        "sourceLocator": "initEmbed施設目的地 0x5f8a1735126662fd:0xaf11eb9c598cef37 / 〒989-2351 宮城県亘理郡亘理町西郷１４０ 亘理町立郷土資料館",
+        "finding": "現施設名および住所を公式案内と一致確認。建物代表点。",
+        "supportUrls": [
+          "https://www.town.watari.miyagi.jp/museum/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.watari.miyagi.jp/museum/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/a1c061b29f3516d1594f.html",
+          "snapshotSHA256": "1710acab7ac37b956dc77e1d7f6e26b60648003c189254af930bedfa2d84b587",
+          "fetchedAt": "2026-11-05T04:53:54.506255+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-86c1b0e124a1aaee8f5b",
+      "name": "道の駅種山ケ原ぽらん",
+      "address": "岩手県気仙郡住田町世田米字子飼沢30-39",
+      "cardIds": [
+        "03-441-A001"
+      ],
+      "investigatedUrls": [
+        "https://jpn01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fporan.sumita-gayagaya.jp%2F&data=05%7C02%7Ckensetu%40sumitatown.onmicrosoft.com%7C82c2dfd729ff4313427508dee34eff72%7Ceefd5d4bf71d481bbe428abeab76e98a%7C0%7C0%7C639198125598914080%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=PciM6gxrRmFRQsMrawwdTJAN7S2tF6fmGPG8jWKj3BQ%3D&reserved=0<https://poran.sumita-gayagaya.jp/",
+        "https://www.town.sumita.iwate.jp/docs/2026062600017/",
+        "https://poran.sumita-gayagaya.jp/access.html",
+        "https://www.town.sumita.iwate.jp/access.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12371.09062315525!2d141.38705446282725!3d39.17988878191415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f88ad31dba7eaf9%3A0x1aad4d256035927b!2z6YGT44Gu6aeFIOeoruWxseODtuWOnyDjgb3jgonjgpM!5e0!3m2!1sja!2sjp!4v1540497725575"
+      ],
+      "decision": {
+        "facilityId": "facility:north-86c1b0e124a1aaee8f5b",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12371.09062315525!2d141.38705446282725!3d39.17988878191415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f88ad31dba7eaf9%3A0x1aad4d256035927b!2z6YGT44Gu6aeFIOeoruWxseODtuWOnyDjgb3jgonjgpM!5e0!3m2!1sja!2sjp!4v1540497725575",
+        "lat": 39.1798365,
+        "lng": 141.3958808,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f88ad31dba7eaf9:0x1aad4d256035927b / Road Station Taneyama KeHara Polan, Kogaizawa-30-39 Setamai, 住田町 Sumita, Kesen District, Iwate 029-2311",
+        "finding": "世田米字子飼沢30-39の道の駅種山ケ原ぽらん。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://poran.sumita-gayagaya.jp/access.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://poran.sumita-gayagaya.jp/access.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cca7bd5ce924464365d1.html",
+          "snapshotSHA256": "e27524c74da6da5bcd8ec3f2e2ffb54f5ba35385718b3a6eefcf2bcd25ecdb1e",
+          "fetchedAt": "2026-11-05T04:48:39.496740+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-8945d69757f54183600d",
+      "name": "旧伊達郡役所",
+      "address": "福島県伊達郡桑折町字陣屋12",
+      "cardIds": [
+        "07-301-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.koori.fukushima.jp/",
+        "https://www.town.koori.fukushima.jp/site/kanko/1759.html",
+        "https://www.town.koori.fukushima.jp/soshiki/6/1477.html",
+        "https://www.town.koori.fukushima.jp/life/5/29/",
+        "https://www.town.koori.fukushima.jp/soshiki/3/2207.html"
+      ],
+      "decision": {
+        "reason": "旧伊達郡役所の町公式施設・見学案内を確認。案内画像から目的地の数値位置は確定できず、絵の位置を緯度経度へ推定変換しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-8b03c57c18a982eede60",
+      "name": "釜石魚河岸にぎわい館「魚河岸テラス」",
+      "address": "岩手県釜石市魚河岸3番3",
+      "cardIds": [
+        "03-211-B001"
+      ],
+      "investigatedUrls": [
+        "https://uogashi-terrace.jp/",
+        "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "https://www.city.kamaishi.iwate.jp/category/bunya/shisetsu/",
+        "https://www.city.kamaishi.iwate.jp/docs/2014062700035/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.609795463229!2d141.8877491158346!3d39.27441927951431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f860fc911da130f%3A0x9aa49d65ab12a3f5!2z6a2a5rKz5bK444OG44Op44K5IFVPR0FTSEkgdGVycmFjZQ!5e0!3m2!1sja!2sjp!4v1555033700683!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-8b03c57c18a982eede60",
+        "sourceUrl": "https://www.city.kamaishi.iwate.jp/docs/2020030200278/",
+        "lat": 39.27417879732079,
+        "lng": 141.8892888307596,
+        "sourceLocator": "data-map-view-target=setting JSON markerInfos title=釜石魚河岸にぎわい館「魚河岸テラス",
+        "finding": "市の配布案内本文の施設名・現住所と、同ページの各施設名付きマーカーを照合。centerは使用しない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-8da9db2c5cc58d40b221",
+      "name": "花巻市役所石鳥谷総合支所",
+      "address": "岩手県花巻市石鳥谷町八幡4-161",
+      "cardIds": [
+        "03-205-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004116.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-8da9db2c5cc58d40b221",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004116.html",
+        "lat": 39.484213,
+        "lng": 141.146988,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.484213,141.146988",
+        "finding": "施設紹介の所在地と台帳住所を照合。市役所・総合支所の建物代表点であり各階・守衛室の精密位置ではない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-8eb3631ec33a618cdbd0",
+      "name": "白石城歴史探訪ミュージアム",
+      "address": "宮城県白石市益岡町1-16",
+      "cardIds": [
+        "04-206-A001"
+      ],
+      "investigatedUrls": [
+        "http://shiro-f.jp/shiroishijo/",
+        "http://www.city.shiroishi.miyagi.jp/soshiki/28/10776.html",
+        "https://www.city.shiroishi.miyagi.jp:443/soshiki/1/53.html",
+        "https://www.shiro-f.jp/shiroishijo/info/access",
+        "https://www.shiro-f.jp/wp-content/themes/lightning/accessible/jquery.accessible.js",
+        "https://www.shiro-f.jp/wp-content/themes/lightning/accessible/jquery.cookie.js",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6287.790732062843!2d140.617887!3d38.002901!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a421b74ff8635%3A0x15b00f93cc22b5c8!2z55m955-z5Z-O5q205Y-y5o6i6Kiq44Of44Ol44O844K444Ki44Og!5e0!3m2!1sja!2sjp!4v1721980972348!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-8eb3631ec33a618cdbd0",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6287.790732062843!2d140.617887!3d38.002901!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a421b74ff8635%3A0x15b00f93cc22b5c8!2z55m955-z5Z-O5q205Y-y5o6i6Kiq44Of44Ol44O844K444Ki44Og!5e0!3m2!1sja!2sjp!4v1721980972348!5m2!1sja!2sjp",
+        "lat": 38.0029009,
+        "lng": 140.6178868,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a421b74ff8635:0x15b00f93cc22b5c8 / 〒989-0251 宮城県白石市益岡町１−１６ 白石城歴史探訪ミュージアム",
+        "finding": "益岡町1-16の歴史探訪ミュージアム。城そのものの点ではない。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.shiro-f.jp/shiroishijo/info/access"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.shiro-f.jp/shiroishijo/info/access",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/870a6eadeb7aa67c4d07.html",
+          "snapshotSHA256": "8832d10c368c4afaa1fa044e2ec083967530a7005e0b44681239815fa2b8289a",
+          "fetchedAt": "2026-11-05T04:48:47.593657+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-8eefa9955eb3fbb09d0a",
+      "name": "道の駅あきた港セリオン",
+      "address": "秋田県秋田市土崎港西1-9-1",
+      "cardIds": [
+        "05-201-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.selion-akita.com/",
+        "https://www.city.akita.lg.jp/suido/jigyo-shokai/1008331.html",
+        "https://www.city.akita.lg.jp/shisei/shokai/1009993.html",
+        "https://www.city.akita.lg.jp/shisetsu/index.html",
+        "https://www.city.akita.lg.jp/shisetsu/shikanren/1011170/1006447.html",
+        "https://www.selion-akita.com/access",
+        "https://www.selion-akita.com/access/",
+        "https://www.selion-akita.com/facility"
+      ],
+      "decision": {
+        "facilityId": "facility:north-8eefa9955eb3fbb09d0a",
+        "sourceUrl": "https://www.selion-akita.com/access/",
+        "lat": 39.7527085,
+        "lng": 140.06100500000002,
+        "sourceLocator": "new google.maps.Marker position: new google.maps.LatLng(39.7527085,140.06100500000002)",
+        "finding": "道の駅あきた港セリオンのアクセス案内。土崎港西1-9-1と施設名一致。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-8f5be68d467d61a4c641",
+      "name": "須賀川市民交流センター tette",
+      "address": "福島県須賀川市中町4-1",
+      "cardIds": [
+        "07-207-A001"
+      ],
+      "investigatedUrls": [
+        "https://s-tette.jp/",
+        "https://www.sukagawa-jyogesuidojigyo.jp/user/notice/manhole_card/",
+        "https://s-tette.jp/about/005278.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11090.289008843101!2d140.3618453775809!3d37.299144768960005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60204044c918296b%3A0x7363a1b2e605a185!2z44CSOTYyLTA4NDUg56aP5bO255yM6aCI6LOA5bed5biC5Lit55S677yU4oiS77yR!5e0!3m2!1sja!2sjp!4v1541927846677",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2149.2755453849245!2d140.3772007102984!3d37.29261393290172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602040459080c3e3%3A0x862038bf41e7e094!2z44CSOTYyLTA4NDEg56aP5bO255yM6aCI6LOA5bed5biC5LiK5YyX55S6IOe_oOOCseS4mOWFrOWckuiHqueUseW6g-WgtA!5e0!3m2!1sja!2sjp!4v1547261385235",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d844.1854430460617!2d140.37256757445377!3d37.28661950486373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6020400b5f700bdd%3A0xfb6c279bf02849e7!2z6aCI6LOA5bed5biC5b255omA!5e0!3m2!1sja!2sjp!4v1545912037166"
+      ],
+      "decision": {
+        "reason": "tetteの公式アクセスと埋込地図を確認。レスポンスの点は住所のみで、名前付きの建物目的地点と確認できず不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-990598f970c19e7cc119",
+      "name": "名取市観光物産協会 ナトリサン",
+      "address": "宮城県名取市杜せきのした5丁目3-1(イオンモール名取1F)",
+      "cardIds": [
+        "04-207-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.natori.miyagi.jp/page/22491.html",
+        "https://www.kankou.natori.miyagi.jp/tokusan/11870",
+        "https://www.city.natori.miyagi.jp/life/6/26/111/",
+        "https://www.kankou.natori.miyagi.jp/access/",
+        "https://www.kankou.natori.miyagi.jp/course/course1/",
+        "https://www.kankou.natori.miyagi.jp/course/course4/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12551.865414719838!2d140.9195896185139!3d38.14097533711257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a223764f65d65%3A0x747b92955e8e4344!2z44CSOTgxLTEyMDEg5a6u5Z-O55yM5ZCN5Y-W5biC5LiL5aKX55Sw5Y2X5Y6f!5e0!3m2!1sja!2sjp!4v1752053293356!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6273.158979424782!2d140.88026771209326!3d38.17321137177039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a24089f36d053%3A0x6fc99133b647ad82!2z44CSOTgxLTEyMjQg5a6u5Z-O55yM5ZCN5Y-W5biC5aKX55Sw77yS5LiB55uu77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1752055152269!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "ナトリサンの観光協会案内・施設ページを確認。共通アクセスの空港などは別施設。イオンモール名取内の対象施設を指す公式数値地点を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-99097cae19efc7e963e9",
+      "name": "福島県県北浄化センター",
+      "address": "福島県伊達郡国見町大字徳江字上悪戸46番地1",
+      "cardIds": [
+        "07-000-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/sec/41055c/mhcard.html",
+        "https://www.pref.fukushima.lg.jp/site/infra/joukacenter.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201582.842642861!2d140.43596752888504!3d37.86656271464599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63802d1191a7%3A0x2ee8eed05a53f053!2z5YWs55uK6LKh5Zuj5rOV5Lq656aP5bO255yM5LiL5rC06YGT5YWs56S-IOecjOWMl-a1hOWMluOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1676348057637!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-99097cae19efc7e963e9",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201582.842642861!2d140.43596752888504!3d37.86656271464599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63802d1191a7%3A0x2ee8eed05a53f053!2z5YWs55uK6LKh5Zuj5rOV5Lq656aP5bO255yM5LiL5rC06YGT5YWs56S-IOecjOWMl-a1hOWMluOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1676348057637!5m2!1sja!2sjp",
+        "lat": 37.8665585,
+        "lng": 140.5760432,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a63802d1191a7:0x2ee8eed05a53f053 / 〒969-1741 福島県伊達郡国見町徳江上悪戸４６−１ 公益財団法人福島県下水道公社 県北浄化センター",
+        "finding": "徳江字上悪戸46-1の県北浄化センター。建物内の管理窓口位置は未確認。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.pref.fukushima.lg.jp/site/infra/joukacenter.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.pref.fukushima.lg.jp/site/infra/joukacenter.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/ad4a0b0b07653f4848a8.html",
+          "snapshotSHA256": "4bb10c2e2ad0b4a546a90b84f022def68411480ffb17501000410aa00f7d836f",
+          "fetchedAt": "2026-11-05T04:50:50.398398+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-99f5bfd0796498565ecf",
+      "name": "道の駅みやもり内 めがねばし直売所",
+      "address": "岩手県遠野市宮守町下宮守30地割37番地1",
+      "cardIds": [
+        "03-208-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.tono.iwate.jp/index.cfm/45,0,255,html",
+        "https://www.city.tono.iwate.jp/index.cfm/45,58494,249,482,html",
+        "https://www.city.tono.iwate.jp/index.cfm/1,10241,2,html"
+      ],
+      "decision": {
+        "reason": "遠野市の配布案内と道の駅関連情報を確認。めがねばし直売所の建物に対応する公式数値目的地点を取得できず、宮守橋梁や住所代表点で代用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9a7e7549e41a5a778866",
+      "name": "大河原町役場 上下水道課",
+      "address": "宮城県柴田郡大河原町字新南19",
+      "cardIds": [
+        "04-321-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.ogawara.miyagi.jp/",
+        "https://www.town.ogawara.miyagi.jp/1265.htm",
+        "https://www.town.ogawara.miyagi.jp/2370.htm",
+        "https://www.town.ogawara.miyagi.jp/2536.htm",
+        "https://www.town.ogawara.miyagi.jp/2911.htm"
+      ],
+      "decision": {
+        "reason": "大河原町の庁舎・交通案内を確認したが、現在の役場建物を指定する数値マーカーを取得できなかった。上下水道課窓口の推定座標は作らない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9c181bfdd8eb24f43c7c",
+      "name": "新庄ふるさと歴史センター",
+      "address": "山形県新庄市堀端町4番74号",
+      "cardIds": [
+        "06-205-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.shinjo.yamagata.jp",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "http://www.city.shinjo.yamagata.jp/090/010/20150302185638.html",
+        "http://www.city.shinjo.yamagata.jp/g/kanko/050/index.html",
+        "https://www2.wagmap.jp/shinjoimap/",
+        "https://www.city.shinjo.yamagata.jp/li/030/020/040/"
+      ],
+      "decision": {
+        "reason": "新庄市の歴史センター公式施設案内・見学関連情報を確認。現住所堀端町4-74は確認できるが、施設マーカーの数値がなく未採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9cb13f2a84717327940e",
+      "name": "花巻市東和総合支所 警備員室",
+      "address": "花巻市東和町土沢8区60番地",
+      "cardIds": [
+        "03-205-D001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004117.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-9cb13f2a84717327940e",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004117.html",
+        "lat": 39.38689,
+        "lng": 141.228075,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.38689,141.228075",
+        "finding": "施設紹介の所在地と台帳住所を照合。市役所・総合支所の建物代表点であり各階・守衛室の精密位置ではない。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-9d11453eb99d4846f2ef",
+      "name": "駅前観光交流センターYOMUNOSU",
+      "address": "岩手県久慈市中央3丁目58",
+      "cardIds": [
+        "03-207-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.kuji.lg.jp/soshiki/jogesuidoseibi/1/1/3/1423.html",
+        "https://yomunosu-kuji.jp/",
+        "https://www.city.kuji.lg.jp/soshiki/chiikizukurishinko/1/10/1/1369.html",
+        "https://yomunosu-kuji.jp/about",
+        "https://yomunosu-kuji.jp/facility/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.881336760442!2d141.7685156153891!3d40.189454179392285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8494f48967f563%3A0xf9db67df1ddb0213!2z44CSMDI4LTAwNjEg5bKp5omL55yM5LmF5oWI5biC5Lit5aSu77yT5LiB55uu77yV77yY!5e0!3m2!1sja!2sjp!4v1615456346239!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1523.9404097612285!2d141.76987994189886!3d40.18946568969388!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8494f48967f563%3A0xf9db67df1ddb0213!2z44CSMDI4LTAwNjEg5bKp5omL55yM5LmF5oWI5biC5Lit5aSu77yT5LiB55uu77yV77yY!5e0!3m2!1sja!2sjp!4v1616666080761!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "YOMUNOSUの公式案内・埋込地図を確認。住所のみのレコード等で、現在の建物を示す名前付き目的地点を確認できず不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9e5c81d3fcfe3dc21ea2",
+      "name": "南部公民館",
+      "address": "青森県三戸郡南部町大字沖田面字沖中51番地2",
+      "cardIds": [
+        "02-445-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
+        "https://www.town.aomori-nanbu.lg.jp/page/1832.html",
+        "https://www.town.aomori-nanbu.lg.jp/page/2052.html"
+      ],
+      "decision": {
+        "reason": "南部町の公民館施設案内と配布案内を確認。沖田面字沖中51-2の南部公民館を指定する数値目的地を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9fb3f3914564b68ff0f1",
+      "name": "大石田町役場時間外受付窓口",
+      "address": "山形県北村山郡大石田町緑町1番地",
+      "cardIds": [
+        "06-000-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.y-ctc.jp/outline/outline/index.html",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://www.pref.yamagata.jp/020051/kensei/shoukai/toukeijouhou/tokeijoho-opendate/opendata/cata5.html",
+        "https://www.pref.yamagata.jp/documents/1570/public_facility.csv"
+      ],
+      "decision": {
+        "facilityId": "facility:north-9fb3f3914564b68ff0f1",
+        "sourceUrl": "https://www.pref.yamagata.jp/documents/1570/public_facility.csv",
+        "lat": 38.593877,
+        "lng": 140.372646,
+        "sourceLocator": "CSV NO=141 名称=大石田町役場 住所=北村山郡大石田町緑町1 緯度/経度",
+        "finding": "平成30年公表の公的施設点。原監査の現配布住所「緑町1」と照合。同名・同住所の役場代表点。旧地点である点は留意。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-a12e04a3808b0cb41d78",
+      "name": "道の駅・みなとオアシスみやこ",
+      "address": "岩手県宮古市臨港通1-20",
+      "cardIds": [
+        "03-202-A001"
+      ],
+      "investigatedUrls": [
+        "http://oasis385.jp",
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/2907.html",
+        "https://www.city.miyako.iwate.jp/gyosei/soshiki/shisetsu/2/3/index.html",
+        "https://oasis385.jp/access/",
+        "https://oasis385.jp/facility/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d49160.29924563915!2d141.97155347098817!3d39.63803951131168!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85cb63f0d5efff%3A0xed5d2f5aa2cab505!2z44CSMDI3LTAwMDQg5bKp5omL55yM5a6u5Y-k5biC6Ieo5riv6YCa77yR4oiS77yS77yQ!5e0!3m2!1sja!2sjp!4v1696470745217!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "シートピアなあどの公式アクセス・埋込地図を確認。取得した地図レコードは住所のみで施設点としての裏付けが不足し不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a1f3958ce7c75fbdc3c9",
+      "name": "湯川村役場窓口",
+      "address": "福島県河沼郡湯川村大字清水田字長瀞18",
+      "cardIds": [
+        "07-422-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.vill.yugawa.fukushima.jp/index.html",
+        "https://www.vill.yugawa.fukushima.jp/site/kurashi-top/yugawa-manhole.html",
+        "https://www.vill.yugawa.fukushima.jp/site/gyousei-top/6-1-3.html",
+        "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/6-1-2.html",
+        "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/6-1-3.html",
+        "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/info-about3.html",
+        "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/shisetsu-guide.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.567751436051!2d139.88431157587377!3d37.56524647203905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8ab29220c53733%3A0x73037a403b08b4cd!2z5rmv5bed5p2R5b255aC0!5e0!3m2!1sja!2sjp!4v1730101525975!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-a1f3958ce7c75fbdc3c9",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.567751436051!2d139.88431157587377!3d37.56524647203905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8ab29220c53733%3A0x73037a403b08b4cd!2z5rmv5bed5p2R5b255aC0!5e0!3m2!1sja!2sjp!4v1730101525975!5m2!1sja!2sjp",
+        "lat": 37.5652465,
+        "lng": 139.8868865,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8ab29220c53733:0x73037a403b08b4cd / 〒969-3544 福島県河沼郡湯川村清水田長瀞18番地 湯川村役場",
+        "finding": "清水田字長瀞18の湯川村役場。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/info-about3.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.vill.yugawa.fukushima.jp:443/site/gyousei-top/info-about3.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/7c87d25293b5c2d90087.html",
+          "snapshotSHA256": "f59edf903145219beb63c1f79d50ea0405f83a145691237b595ae09712fba0eb",
+          "fetchedAt": "2026-11-05T04:48:52.440807+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-a26da1198276fe05dc91",
+      "name": "名取市観光物産協会陣中仙台国際空港店2階",
+      "address": "宮城県名取市下増田字南原無番地",
+      "cardIds": [
+        "04-207-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.natori.miyagi.jp/page/29364.html",
+        "https://www.city.natori.miyagi.jp/page/33572.html",
+        "https://www.kankou.natori.miyagi.jp/gourmet/9619",
+        "https://www.city.natori.miyagi.jp/life/6/26/111/",
+        "https://www.kankou.natori.miyagi.jp/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12552.388967683122!2d140.9125185395508!3d38.13793179999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a22392b53cef3%3A0x743d603cdd250da9!2z54mb44K_44Oz44Os44K544OI44Op44OzIOmZo-S4rSDku5nlj7Ag56m65riv5bqX!5e0!3m2!1sja!2sjp!4v1754985365048!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12551.865414719838!2d140.9195896185139!3d38.14097533711257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a223764f65d65%3A0x747b92955e8e4344!2z44CSOTgxLTEyMDEg5a6u5Z-O55yM5ZCN5Y-W5biC5LiL5aKX55Sw5Y2X5Y6f!5e0!3m2!1sja!2sjp!4v1752053293356!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6273.158979424782!2d140.88026771209326!3d38.17321137177039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a24089f36d053%3A0x6fc99133b647ad82!2z44CSOTgxLTEyMjQg5a6u5Z-O55yM5ZCN5Y-W5biC5aKX55Sw77yS5LiB55uu77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1752055152269!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-a26da1198276fe05dc91",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12552.388967683122!2d140.9125185395508!3d38.13793179999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a22392b53cef3%3A0x743d603cdd250da9!2z54mb44K_44Oz44Os44K544OI44Op44OzIOmZo-S4rSDku5nlj7Ag56m65riv5bqX!5e0!3m2!1sja!2sjp!4v1754985365048!5m2!1sja!2sjp",
+        "lat": 38.1379901,
+        "lng": 140.9295402,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a22392b53cef3:0x743d603cdd250da9 / 〒981-1201 宮城県名取市下増田南原 陣中 仙台 空港店",
+        "finding": "下増田南原の陣中仙台空港店。公式観光協会の施設紹介と対応。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.kankou.natori.miyagi.jp/gourmet/9619"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.kankou.natori.miyagi.jp/gourmet/9619",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-726730b7f1f811f356e8.html",
+          "snapshotSHA256": "c5c74c2ca15be15cacfee3cc02f271bbe3e62c27de4b2b243eeb741e892211b4",
+          "fetchedAt": "2026-11-05T04:24:02.464687+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-a39e6cbbf8058f8af909",
+      "name": "せんだいメディアテーク",
+      "address": "宮城県仙台市青葉区春日町2-1",
+      "cardIds": [
+        "04-100-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.sendai.jp/keekikaku-shomu/kurashi/card.html",
+        "http://www.smt.jp/",
+        "https://www.city.sendai.jp/keekikaku-shomu/kurashi/card.html",
+        "http://www.smt.jp/info/access/",
+        "https://www.smt.jp/info/access/",
+        "https://goo.gl/maps/s2HHYnEQkQK2",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.6089922212477!2d140.86347455126977!3d38.26537367957336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a28304e9a0c13%3A0xad57691298a3abb1!2z44Gb44KT44Gg44GE44Oh44OH44Kj44Ki44OG44O844Kv!5e0!3m2!1sja!2sjp!4v1519366392286"
+      ],
+      "decision": {
+        "facilityId": "facility:north-a39e6cbbf8058f8af909",
+        "sourceUrl": "https://goo.gl/maps/s2HHYnEQkQK2",
+        "lat": 38.2653737,
+        "lng": 140.8656686,
+        "sourceLocator": "公式案内 https://www.smt.jp/info/access/ の短縮地図リンク。manifest.finalUrl の !8m2!3d38.2653737!4d140.8656686",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.smt.jp/info/access/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.smt.jp/info/access/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/51b086864b1e21bce164.html",
+          "snapshotSHA256": "2efce88e6a6a4308b29366c78927953d0de669efead1367245ac73f49ecde6aa",
+          "fetchedAt": "2026-11-05T04:48:47.808768+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-a4e073898b8f0e283b69",
+      "name": "紅花資料館 物産館",
+      "address": "山形県西村山郡河北町谷地戊1143",
+      "cardIds": [
+        "06-321-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.kahoku.yamagata.jp/soshiki/shoko/kankousinkou/3343/742.html",
+        "https://www.town.kahoku.yamagata.jp/soshiki/suido/gesuikoumu/799.html",
+        "https://www.town.kahoku.yamagata.jp/soshiki/kahokuchoyakuba/yakuba/3539.html"
+      ],
+      "decision": {
+        "reason": "紅花資料館の公式案内の地図は施設名検索qと表示中心llのみ。数値目的地点が確定できず、llを物産館の座標に流用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a4f6eb49ec47671cbd67",
+      "name": "二本松市歴史観光施設【にほんまつ観光城報館】 2階事務室",
+      "address": "福島県二本松市郭内三丁目303番地5",
+      "cardIds": [
+        "07-210-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.nihonmatsu.lg.jp/page/page000236.html",
+        "https://www.city.nihonmatsu.lg.jp/kurashi_tetsuduki/suido_gesui/gesui/page000236.html",
+        "https://www.city.nihonmatsu.lg.jp/shisei/profile/page002155.html"
+      ],
+      "decision": {
+        "reason": "にほんまつ観光城報館について市配布案内・市アクセスを確認。市共通アクセスは対象建物を指定しないため、2階事務室を含む建物の数値目的地点は未確定。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a86e5bc10ccb3b8ad6ce",
+      "name": "棚倉町役場上下水道課",
+      "address": "福島県東白川郡棚倉町大字棚倉字中居野33",
+      "cardIds": [
+        "07-481-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.tanagura.fukushima.jp",
+        "http://www.town.tanagura.fukushima.jp/page/page002568.html",
+        "https://www.town.tanagura.fukushima.jp/jumin/jo-gesuido/page002568.html",
+        "https://www.town.tanagura.fukushima.jp/page/dir000048.html"
+      ],
+      "decision": {
+        "reason": "棚倉町役場の公式案内・アクセス関連ページを確認。現在の庁舎を指定する数値目的地を取得できず、上下水道課を住所点で補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-aa2c61d62d30e0fb71ce",
+      "name": "大衡村役場1階都市建設課",
+      "address": "宮城県黒川郡大衡村大衡字平林62番地",
+      "cardIds": [
+        "04-424-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.village.ohira.miyagi.jp/9/15/80.html",
+        "https://www.village.ohira.miyagi.jp/soshiki/14/1161.html",
+        "https://www.village.ohira.miyagi.jp/666.html",
+        "https://www.village.ohira.miyagi.jp/9/4/126.html",
+        "https://www.village.ohira.miyagi.jp/theme/base/shisetsu_map/js/jquery_map.js",
+        "https://www.village.ohira.miyagi.jp/material/files/group/1/map_20260331104513.csv"
+      ],
+      "decision": {
+        "facilityId": "facility:north-aa2c61d62d30e0fb71ce",
+        "sourceUrl": "https://www.village.ohira.miyagi.jp/material/files/group/1/map_20260331104513.csv",
+        "lat": 38.467205,
+        "lng": 140.879944,
+        "sourceLocator": "mapCategoryCsv: name=大衡村役場,address=大衡村大衡字平林62番地,lat,lng",
+        "finding": "同住所の別施設「平林会館」の点とは区別。現住所と一致する役場の施設点。",
+        "supportUrls": [
+          "https://www.village.ohira.miyagi.jp/666.html",
+          "https://www.village.ohira.miyagi.jp/9/15/80.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.village.ohira.miyagi.jp/666.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/25d7cad47a8ec55a16dc.html",
+          "snapshotSHA256": "a394c4edc7ea6bedba51e5fd69dd6ad44b8498ae6481f96cbdb8dd67d7925d70",
+          "fetchedAt": "2026-11-05T04:48:50.227611+00:00"
+        },
+        {
+          "url": "https://www.village.ohira.miyagi.jp/9/15/80.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-7abaca2d2b6c085c312f.html",
+          "snapshotSHA256": "6186afe949685d4a05ec2633d4634194492347c624f488db4ce3e5d1efed2df4",
+          "fetchedAt": "2026-11-05T04:24:36.557064+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-aa6be60dea56f90d4540",
+      "name": "岩手県滝沢市施設課",
+      "address": "岩手県滝沢市中鵜飼55",
+      "cardIds": [
+        "03-216-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.takizawa.iwate.jp",
+        "https://bigroof.jp/",
+        "https://www.city.takizawa.iwate.jp/suido/kouhou-event/event-jouhou/p20250715105520",
+        "https://bigroof.jp/about/?id=access",
+        "https://bigroof.jp/access/",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai",
+        "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193",
+        "https://goo.gl/maps/b7kFavV2hp2JDoUw7",
+        "https://goo.gl/maps/r64KzbYYbN6RNs7T8",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49092.05745153366!2d141.03829183975625!3d39.73395414439027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772802eaaaab%3A0xa5a1231525502fd0!2z44OT44OD44Kw44Or44O844OV5rud5rKi!5e0!3m2!1sja!2sjp!4v1705732787256!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.225029659541!2d141.07481991538103!3d39.73459577945016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772829a7d357%3A0xdc87ef9c783b014f!2z5rud5rKi5biC5b255omA!5e0!3m2!1sja!2sjp!4v1671528261679!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-aa6be60dea56f90d4540",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.225029659541!2d141.07481991538103!3d39.73459577945016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85772829a7d357%3A0xdc87ef9c783b014f!2z5rud5rKi5biC5b255omA!5e0!3m2!1sja!2sjp!4v1671528261679!5m2!1sja!2sjp",
+        "lat": 39.7345958,
+        "lng": 141.0770086,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f85772829a7d357:0xdc87ef9c783b014f / 〒020-0692 岩手県滝沢市中鵜飼５５ 滝沢市役所",
+        "finding": "中鵜飼55の滝沢市役所。ビッグルーフ滝沢の点とは区別。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.takizawa.iwate.jp/about-takizawa/shisetsu-annai/contents-1193",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/0c89dfd21d6f718bd606.html",
+          "snapshotSHA256": "07c702dcfc13f986a388015a9e58fc2a0478391b22a3d5ee9caeced82cfd77a2",
+          "fetchedAt": "2026-11-05T04:48:46.984865+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-afaf0dc914bdd8a3350b",
+      "name": "亘理町上下水道課",
+      "address": "宮城県亘理郡亘理町字悠里1",
+      "cardIds": [
+        "04-361-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.watari.miyagi.jp/",
+        "https://www.town.watari.miyagi.jp/life/detail.php?content=782",
+        "https://www.town.watari.miyagi.jp/tourism/category/?category=144",
+        "https://www.town.watari.miyagi.jp/town/category/?category=258",
+        "https://www.town.watari.miyagi.jp/town/detail.php?content=249",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.24318950624!2d140.868268!3d38.044253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a171a6f7d86a3%3A0x8db2be7f38d60939!2z5LqY55CG55S65b255aC0!5e0!3m2!1sja!2sjp!4v1643953757465!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-afaf0dc914bdd8a3350b",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6284.24318950624!2d140.868268!3d38.044253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a171a6f7d86a3%3A0x8db2be7f38d60939!2z5LqY55CG55S65b255aC0!5e0!3m2!1sja!2sjp!4v1643953757465!5m2!1sja!2sjp",
+        "lat": 38.0441935,
+        "lng": 140.8674846,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a171a6f7d86a3:0x8db2be7f38d60939 / 〒989-2352 宮城県亘理郡亘理町悠里１ 亘理町役場",
+        "finding": "悠里1の現庁舎。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.town.watari.miyagi.jp/town/detail.php?content=249"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.town.watari.miyagi.jp/town/detail.php?content=249",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/c65189c003b77f02279c.html",
+          "snapshotSHA256": "42aaf1f427645568a89451f4d199d607147e904d5c24a4051620d841249a6de8",
+          "fetchedAt": "2026-11-05T04:50:13.890480+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-b7cdc35a4d554c330b73",
+      "name": "秋田市上下水道局 下水道整備課",
+      "address": "秋田県秋田市川尻みよし町14-8",
+      "cardIds": [
+        "05-201-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.akita.lg.jp/suido/index.html",
+        "https://www.city.akita.lg.jp/suido/jigyo-shokai/1008331.html",
+        "https://www.city.akita.lg.jp/shisei/shokai/1009993.html",
+        "https://www.city.akita.lg.jp/shisetsu/index.html",
+        "https://www.city.akita.lg.jp/shisetsu/shikanren/1011170/1006447.html",
+        "https://www.city.akita.lg.jp/shobo/kyukyu/1008783/1036144.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-b7cdc35a4d554c330b73",
+        "sourceUrl": "https://www.city.akita.lg.jp/shobo/kyukyu/1008783/1036144.html",
+        "lat": 39.7101367,
+        "lng": 140.0971719,
+        "sourceLocator": "公共施設表「秋田市上下水道局」行の地図 href !8m2!3d39.7101367!4d140.0971719",
+        "finding": "同じ表の所在地=秋田市川尻みよし町14番8号。現配布ページの住所と一致。八橋ポンプ場・仁井田浄水場等の他行と区別。庁舎代表点。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-b7edce2dc5b3a72fc7b6",
+      "name": "東松島市震災復興伝承館",
+      "address": "宮城県東松島市野蒜字北余景56-36",
+      "cardIds": [
+        "04-214-B001",
+        "04-214-C001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/shisetsuannai/index.html",
+        "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "https://maps.app.goo.gl/5iXum7Gq3qQtLR1EA",
+        "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "https://maps.app.goo.gl/zGtpS97gAQPUSQsb6",
+        "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8"
+      ],
+      "decision": {
+        "facilityId": "facility:north-b7edce2dc5b3a72fc7b6",
+        "sourceUrl": "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "lat": 38.3748648,
+        "lng": 141.1600816,
+        "sourceLocator": "公式案内 https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d38.3748648!4d141.1600816",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html",
+          "snapshotSHA256": "61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b",
+          "fetchedAt": "2026-11-05T04:23:34.308508+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-bbae254c6bb6fd0bb1d2",
+      "name": "東松島市奥松島観光物産交流センター",
+      "address": "宮城県東松島市野蒜ケ丘一丁目15番地1",
+      "cardIds": [
+        "04-214-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+        "https://www.city.higashimatsushima.miyagi.jp/shisei/shinsaifukko/fukkokinenkoen/fukkodensyokan.html",
+        "https://www.city.higashimatsushima.miyagi.jp/kurashi/shisetsuannai/index.html",
+        "https://maps.app.goo.gl/xjbqz7WQE1Q5BcAD8",
+        "https://maps.app.goo.gl/gMovyieoFdRU7SDv6",
+        "https://maps.app.goo.gl/5iXum7Gq3qQtLR1EA",
+        "https://maps.app.goo.gl/xZZxuMxmMSijona18",
+        "https://maps.app.goo.gl/zGtpS97gAQPUSQsb6",
+        "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8"
+      ],
+      "decision": {
+        "facilityId": "facility:north-bbae254c6bb6fd0bb1d2",
+        "sourceUrl": "https://maps.app.goo.gl/Yiws9MuffRyQaYVa8",
+        "lat": 38.3788336,
+        "lng": 141.155857,
+        "sourceLocator": "公式案内 https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html の短縮地図リンク。manifest.finalUrl の !8m2!3d38.3788336!4d141.155857",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.higashimatsushima.miyagi.jp/kurashi/sumiyoimachini/lifeline-gesui/gesuido/manholecard.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-f6ca748b037f025f62ff.html",
+          "snapshotSHA256": "61c233e578b8cb42ae2456179f7f8ceb332f17d96b67ec1c5ab41e249fe1908b",
+          "fetchedAt": "2026-11-05T04:23:34.308508+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-bc29b3337dcd89019149",
+      "name": "喜多方市役所下水道課",
+      "address": "福島県喜多方市字御清水東7244-2",
+      "cardIds": [
+        "07-208-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.kitakata.fukushima.jp/soshiki/jogesui/21796.html",
+        "https://www.city.kitakata.fukushima.jp/map/01.html",
+        "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js"
+      ],
+      "decision": {
+        "facilityId": "facility:north-bc29b3337dcd89019149",
+        "sourceUrl": "https://www.city.kitakata.fukushima.jp/map/01.html",
+        "lat": 37.651148349945245,
+        "lng": 139.87471568095089,
+        "sourceLocator": "initlat/initlong → shisetsu-detail-googlemap.js markerOpts.position=myLatlng",
+        "finding": "現案内の御清水東7244番地2と一致。喜多方市役所本庁舎代表点。",
+        "supportUrls": [
+          "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.kitakata.fukushima.jp/ssi/js/shisetsu-detail-googlemap.js",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/9226fcbdac74c86e1a5a.html",
+          "snapshotSHA256": "702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429",
+          "fetchedAt": "2026-11-05T04:50:13.887683+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-bc3537ee12c196975af6",
+      "name": "赤湯温泉観光センター・ゆーなびからころ館",
+      "address": "南陽市赤湯754-2",
+      "cardIds": [
+        "06-213-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.nanyo.yamagata.jp/manhole/",
+        "http://www.city.nanyo.yamagata.jp/zyougesuido/index.html",
+        "http://www.city.nanyo.yamagata.jp/suido/1407",
+        "https://karakorokan.jp/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.883210504079!2d140.1656819146724!3d38.04980755406216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a55bf13b376e9%3A0x8a84462cdd90c2fe!2z44CSOTk5LTIyMTEg5bGx5b2i55yM5Y2X6Zm95biC6LWk5rmv77yX77yV77yU4oiS77ySIOi1pOa5r-a4qeazieims-WFieOCu-ODs-OCv-ODvOOChuODvOOBquOBs-OBi-OCieOBk-OCjemkqA!5e0!3m2!1sja!2sjp!4v1473327898936"
+      ],
+      "decision": {
+        "reason": "からころ館の公式アクセス・埋込地図を確認。取得レスポンスから対象施設の目的地レコードを確認できず、viewportは使用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-bd9ab14ef699fe922568",
+      "name": "あぶくま洞管理事務所",
+      "address": "福島県田村市滝根町菅谷字東釜山1",
+      "cardIds": [
+        "07-211-A001"
+      ],
+      "investigatedUrls": [
+        "http://abukumado.com/",
+        "https://www.city.tamura.lg.jp/soshiki/25/entry.html",
+        "https://abukumado.com/abukuma-access",
+        "https://abukumado.com/irimizu-access",
+        "https://www.city.tamura.lg.jp/life/4/26/",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6343.847655755557!2d140.67395!3d37.344312!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602058a21cca3957%3A0xca76f06930f7c026!2z44CSOTYzLTM2MDEg56aP5bO255yM55Sw5p2R5biC5rud5qC555S66I-F6LC35p2x6Yec5bGx77yR!5e0!3m2!1sja!2sjp!4v1616226672361!5m2!1sja!2sjp",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.9238287293533!2d140.6717608155771!3d37.344311979840136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602058a21cca3957%3A0xca76f06930f7c026!2z44CSOTYzLTM2MDEg56aP5bO255yM55Sw5p2R5biC5rud5qC555S66I-F6LC35p2x6Yec5bGx77yR!5e0!3m2!1sja!2sjp!4v1616518084720!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "あぶくま洞公式アクセスと埋込地図を確認。取得した点は住所のみで、管理事務所の建物目的地点と確認できず不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-be6517568d294904a50f",
+      "name": "須賀川特撮アーカイブセンター",
+      "address": "福島県須賀川市柱田字中地前22番地",
+      "cardIds": [
+        "07-207-C001"
+      ],
+      "investigatedUrls": [
+        "https://s-tokusatsu.jp/visitor/",
+        "https://www.sukagawa-jyogesuidojigyo.jp/",
+        "https://www.sukagawa-jyogesuidojigyo.jp/user/notice/manhole_card/",
+        "https://www.city.sukagawa.fukushima.jp/tokusatsu/3605.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-be6517568d294904a50f",
+        "sourceUrl": "https://www.city.sukagawa.fukushima.jp/tokusatsu/3605.html",
+        "lat": 37.318056,
+        "lng": 140.277094,
+        "sourceLocator": "「須賀川特撮アーカイブセンターの大きな地図を見る」href q=37.318056,140.277094",
+        "finding": "市の施設案内に柱田字中地前22番地と施設名称を併記。q目的地点を採用。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-c5a98d056047559d8981",
+      "name": "湖南公民館",
+      "address": "郡山市湖南町福良字家老9390-4",
+      "cardIds": [
+        "07-203-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.koriyama.lg.jp/site/jougesuidou/5690.html",
+        "https://www.city.koriyama.lg.jp/soshiki/185/",
+        "https://www.city.koriyama.lg.jp/uploaded/soshiki/map/185_map_img.jpg",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.0249874409947!2d140.08771331465974!3d37.38924134202076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6020039adad22ed1%3A0x4bbd2e46d987a6f8!2z6YOh5bGx5biCIOa5luWNl-WFrOawkemkqA!5e0!3m2!1sja!2sjp!4v1646974516657!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "湖南公民館の公式施設案内・埋込地図を確認。取得レスポンスから対象施設の目的地レコードを確認できず、viewportは使用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-c5af4cc6d180d9fcc389",
+      "name": "道の駅やまがた蔵王",
+      "address": "山形県山形市表蔵王79番地1",
+      "cardIds": [
+        "06-201-A001"
+      ],
+      "investigatedUrls": [
+        "https://suidou.yamagata.yamagata.jp/",
+        "https://www.m-yzao.com/",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://www.m-yzao.com/access",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.880653144766!2d140.30911699748432!3d38.18944627354761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bb5ea9b7ca3ff%3A0x3338e386a70ab1de!2zKOW7uuioreS4rSnpgZPjga7pp4XjgoTjgb7jgYzjgZ_olLXnjos!5e0!3m2!1sja!2sjp!4v1693808147989!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-c5af4cc6d180d9fcc389",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.880653144766!2d140.30911699748432!3d38.18944627354761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bb5ea9b7ca3ff%3A0x3338e386a70ab1de!2zKOW7uuioreS4rSnpgZPjga7pp4XjgoTjgb7jgYzjgZ_olLXnjos!5e0!3m2!1sja!2sjp!4v1693808147989!5m2!1sja!2sjp",
+        "lat": 38.1894465,
+        "lng": 140.3120848,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8bb5ea9b7ca3ff:0x3338e386a70ab1de / 〒990-2307 山形県山形市表蔵王７９−１ 道の駅やまがた蔵王",
+        "finding": "表蔵王79-1の道の駅やまがた蔵王。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://www.m-yzao.com/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.m-yzao.com/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-8ef578affeeddc1c174d.html",
+          "snapshotSHA256": "73261a9b38de919c290f4f92fae082c84422996b5726dc67a5580e303df3c588",
+          "fetchedAt": "2026-11-05T04:24:05.247118+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-c6369b8cb837062027e8",
+      "name": "弘前市緑の相談所",
+      "address": "青森県弘前市下白銀町1-1",
+      "cardIds": [
+        "02-202-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.hirosaki.aomori.jp/kurashi/suidou/topics/manholecard.html",
+        "http://www.hirosakipark.or.jp/green/index.html",
+        "https://www.city.hirosaki.aomori.jp/gaiyou/access/",
+        "https://www.city.hirosaki.aomori.jp/gaiyou/chosya/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.926414684872!2d140.46534985119214!3d40.60944715171815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b01c717de6455%3A0x11140d676bc8d50c!2z5byY5YmN5biC57eR44Gu55u46KuH5omA!5e0!3m2!1sja!2sjp!4v1540638086369"
+      ],
+      "decision": {
+        "facilityId": "facility:north-c6369b8cb837062027e8",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3028.926414684872!2d140.46534985119214!3d40.60944715171815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b01c717de6455%3A0x11140d676bc8d50c!2z5byY5YmN5biC57eR44Gu55u46KuH5omA!5e0!3m2!1sja!2sjp!4v1540638086369",
+        "lat": 40.6093972,
+        "lng": 140.4675947,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f9b01c717de6455:0x11140d676bc8d50c / 〒036-8356 Aomori, Hirosaki, Shimoshiroganecho, １−1 Hirosaki City Gardening Information Center, 弘前公園内",
+        "finding": "下白銀町1-1・弘前公園内の緑の相談所という施設名付き目的地。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "http://www.hirosakipark.or.jp/green/index.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "http://www.hirosakipark.or.jp/green/index.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-d5c01bf9c404c71d2200.html",
+          "snapshotSHA256": "6e0fc13026cb7e7096fd15bc49a5c3f5e388b91535f7edb6e85f81d6246ed529",
+          "fetchedAt": "2026-11-05T04:22:47.553260+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-c6fd19116fcd6dda5605",
+      "name": "東根市観光物産協会",
+      "address": "山形県東根市さくらんぼ駅前1-1-1(さくらんぼ東根駅1階)",
+      "cardIds": [
+        "06-211-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.higashine.com/",
+        "https://www.city.higashine.yamagata.jp/section_list/section027/gesuidou/498",
+        "https://www.city.higashine.yamagata.jp/tourism/access/",
+        "https://www.higashine.com/kanko/access",
+        "https://www.higashine.com/about-us",
+        "https://www.higashine.com/about-us/access",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4294.381047612297!2d140.38090460472196!3d38.428426543311446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bdc92baff57af%3A0x71239cfe7b1701ce!2z5p2x5qC55biC6Kaz5YWJ54mp55Sj5Y2U5Lya!5e0!3m2!1sja!2sjp!4v1532480094512"
+      ],
+      "decision": {
+        "facilityId": "facility:north-c6fd19116fcd6dda5605",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4294.381047612297!2d140.38090460472196!3d38.428426543311446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8bdc92baff57af%3A0x71239cfe7b1701ce!2z5p2x5qC55biC6Kaz5YWJ54mp55Sj5Y2U5Lya!5e0!3m2!1sja!2sjp!4v1532480094512",
+        "lat": 38.4281945,
+        "lng": 140.3810108,
+        "sourceLocator": "initEmbed施設目的地 0x5f8bdc92baff57af:0x71239cfe7b1701ce / Higashine City Tourism \\u0026 Products Association, 1-chome-1-1 Sakuranbo Ekimae, Higashine, Yamagata 999-3720",
+        "finding": "現施設名および住所を公式案内と一致確認。建物代表点。",
+        "supportUrls": [
+          "https://www.higashine.com/about-us/access"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.higashine.com/about-us/access",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/e735a70eb7fa5eecbb54.html",
+          "snapshotSHA256": "fe2d98a06b9ca6fdcaa71f0c2425c6cc2f7774cd4e4f994c92b58487c16fa209",
+          "fetchedAt": "2026-11-05T04:59:45.226944+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-c7e2a990fa708c49f784",
+      "name": "道の駅国見 あつかしの郷",
+      "address": "福島県伊達郡国見町大字藤田字日渡二18-1",
+      "cardIds": [
+        "07-303-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.kunimi.fukushima.jp/site/atsukashinosato/",
+        "https://www.town.kunimi.fukushima.jp/soshiki/9/19118.html",
+        "https://www.town.kunimi.fukushima.jp/soshiki/1/220.html",
+        "https://www.michinoeki923.com/access/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25194.252361669914!2d140.54508200369153!3d37.87709795340309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63f236199693%3A0x1782d84996225b9b!2z5Zu96KaL55S65b255aC0!5e0!3m2!1sja!2sjp!4v1479357118614",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2220.589982164935!2d140.54530899924112!3d37.87265481076066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a63ecc58da599%3A0x67e6b36ec4f10009!2z6YGT44Gu6aeFIOWbveimiyDjgYLjgaTjgYvjgZfjga7pg7c!5e0!3m2!1sja!2sjp!4v1772592928424!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-c7e2a990fa708c49f784",
+        "sourceUrl": "https://www.michinoeki923.com/access/",
+        "lat": 37.8727314,
+        "lng": 140.5467713,
+        "sourceLocator": "Google Mapを見る href !8m2!3d37.8727314!4d140.5467713",
+        "finding": "公式アクセス案内の藤田字日渡二18-1と一致。@のviewport数値とは区別。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-c88406f5e69a26cba40e",
+      "name": "鶴岡市観光案内所",
+      "address": "鶴岡市末広町3-1 マリカ東館1F(FOODEVER内)",
+      "cardIds": [
+        "06-203-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.tsuruoka.lg.jp/kurashi/suido/gesuido/kohokatsudo/mannhorukado.html",
+        "https://www.tsuruokakanko.com",
+        "https://www.tsuruokakanko.com/access",
+        "https://www.tsuruokakanko.com/spot/2861"
+      ],
+      "decision": {
+        "reason": "観光案内所の公式施設紹介を確認。マリカ東館の所在・館内案内はあるが、対象建物の数値目的地点を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-cb4f28d184cbcaebe0e8",
+      "name": "西郷村農産物産館「まるごと西郷館」",
+      "address": "西郷村大字熊倉字折口原146番地",
+      "cardIds": [
+        "07-461-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.marugoto-nishigo.com/",
+        "https://www.vill.nishigo.fukushima.jp/kurashi_tetsuzuki/jogesuido/gesuido/1036.html",
+        "https://www.marugoto-nishigo.com/address",
+        "https://www.vill.nishigo.fukushima.jp/soshiki/somuka/421.html"
+      ],
+      "decision": {
+        "reason": "まるごと西郷館の公式アクセスを確認。Wix businessLocationCoordinatesは施設名がテンプレート「レストラン名を入力」、位置表示が西郷村のみで施設のgeoとは確認できないため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-cb721e0f3b2d5b718e5b",
+      "name": "万葉・おおひら館",
+      "address": "宮城県黒川郡大衡村大衡字鐙沢12番地2",
+      "cardIds": [
+        "04-424-B001"
+      ],
+      "investigatedUrls": [
+        "http://ohirakan.com/",
+        "https://www.village.ohira.miyagi.jp/9/15/80.html",
+        "http://ohirakan.com/access/",
+        "https://www.village.ohira.miyagi.jp/666.html",
+        "https://www.village.ohira.miyagi.jp/9/4/126.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49980.054548570544!2d140.8555391261811!3d38.47025386036804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3e20ec3a0a92c5d!2z5LiH6JGJ44O744GK44GK44Gy44KJ6aSo!5e0!3m2!1sja!2sjp!4v1567519365541!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-cb721e0f3b2d5b718e5b",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49980.054548570544!2d140.8555391261811!3d38.47025386036804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3e20ec3a0a92c5d!2z5LiH6JGJ44O744GK44GK44Gy44KJ6aSo!5e0!3m2!1sja!2sjp!4v1567519365541!5m2!1sja!2sjp",
+        "lat": 38.4694642,
+        "lng": 140.890015,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8a282c4258bc11:0xf3e20ec3a0a92c5d / 〒981-3602 宮城県黒川郡大衡村大衡万葉・おおひら館 字鐙沢１２－２",
+        "finding": "大衡字鐙沢12-2の万葉・おおひら館。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "http://ohirakan.com/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "http://ohirakan.com/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-454e300f65b0119b4bd2.html",
+          "snapshotSHA256": "aac9d3b75ef7285fcd35aa1536f1af22f91a27d4b5144b8681521262d57b0f7f",
+          "fetchedAt": "2026-11-05T04:22:42.727745+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-cea3d24711de81888293",
+      "name": "最上義光歴史館",
+      "address": "山形県山形市大手町1-53",
+      "cardIds": [
+        "06-201-B001"
+      ],
+      "investigatedUrls": [
+        "https://mogamiyoshiaki.jp/",
+        "https://suidou.yamagata.yamagata.jp/",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://sp.mogamiyoshiaki.jp/?p=information",
+        "https://goo.gl/maps/uujcB5JHan12"
+      ],
+      "decision": {
+        "reason": "最上義光歴史館の公式利用案内から地図短縮URLへ進んだがHTTP429。迂回・再試行はせず、目的地点の数値を確定できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d0a8e558a26c68e5ba31",
+      "name": "猪苗代町役場上下水道課窓口",
+      "address": "福島県耶麻郡猪苗代町字城南100",
+      "cardIds": [
+        "07-408-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.inawashiro.fukushima.jp/",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/9/1361.html",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/1/1001.html",
+        "https://www.town.inawashiro.fukushima.jp/index2.html",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/1/1705.html"
+      ],
+      "decision": {
+        "reason": "猪苗代町の役場案内・アクセスを確認。庁舎の現住所は確認できるが数値目的地点を取得できず、町域や住所代表点で補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d15dcb12c82352e878da",
+      "name": "なにゃーと物産センター(二戸広域観光物産センター1F)",
+      "address": "岩手県二戸市石切所字森合68番地",
+      "cardIds": [
+        "03-213-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.ninohe.lg.jp/info/3066",
+        "https://www.nanyato-bussan.jp/",
+        "https://www.city.ninohe.lg.jp/info/1442",
+        "https://nanyato-sisetu.com/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.3383365277352!2d141.28461675841064!3d40.260716394845886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f84d1db2889452b%3A0xc272c29f4fe889c8!2z44Kr44K344Kq44Oa44Ki44Oh44OD44K744O744Gq44Gr44KD44O844GoIOeJqeeUo-OCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1555919806290!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "なにゃーと施設管理者の公式埋込地図に名前付き物産センター点があるが、住所表記が森合68-54-7、元facilityは森合68。番地対応が未解決のため保留。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d1803897b2520241710e",
+      "name": "いわて・盛岡広域観光センター",
+      "address": "岩手県盛岡市盛岡駅前通1-48 盛岡駅舎2階",
+      "cardIds": [
+        "03-000-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.pref.iwate.jp/kendozukuri/toshigesui/gesui/1036130/1022445.html",
+        "https://www.pref.iwate.jp/shisetsu/index.html"
+      ],
+      "decision": {
+        "reason": "盛岡駅2階の広域観光センターについて県・公式案内を確認。建物目的地点を裏付ける数値マーカーを取得できず、駅周辺地図の中心で代用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d421e2e7d68b7de7cbf7",
+      "name": "とみおかアーカイブ・ミュージアム",
+      "address": "福島県双葉郡富岡町大字本岡字王塚760-1",
+      "cardIds": [
+        "07-543-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.facebook.com/TheHistoricalArchiveMuseumOfTomioka/",
+        "https://www.tomioka-town.jp/soshiki/toshiseibi/1623.html",
+        "https://www.tomioka-town.jp/life/1/10/",
+        "https://www.tomioka-town.jp/soshiki/somu/1001.html"
+      ],
+      "decision": {
+        "reason": "とみおかアーカイブ・ミュージアムの町施設・アクセス関連案内を確認。市町村共通地図の富岡町役場・支所は別施設。ミュージアムの数値目的地点は未確定。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d4710ea1e4076fe4151b",
+      "name": "SkyPlazaMISAWA(スカイプラザミサワ)",
+      "address": "青森県三沢市中央町2丁目8-34",
+      "cardIds": [
+        "02-207-A001"
+      ],
+      "investigatedUrls": [
+        "https://skyplazamisawa.jp",
+        "https://www.city.misawa.lg.jp/index.cfm/22,34833,75,html",
+        "http://skyplazamisawa.jp/skyplazamisawa/",
+        "https://skyplazamisawa.jp/skyplaza/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1905.937069215338!2d141.3656030802772!3d40.6852835633521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b5f3b8d95c5cb%3A0xb039823ff04106f8!2z44K544Kr44Kk44OX44Op44K244Of44K144Ov!5e0!3m2!1sja!2sjp!4v1753845612162!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-d4710ea1e4076fe4151b",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1905.937069215338!2d141.3656030802772!3d40.6852835633521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9b5f3b8d95c5cb%3A0xb039823ff04106f8!2z44K544Kr44Kk44OX44Op44K244Of44K144Ov!5e0!3m2!1sja!2sjp!4v1753845612162!5m2!1sja!2sjp",
+        "lat": 40.6851084,
+        "lng": 141.3651624,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f9b5f3b8d95c5cb:0xb039823ff04106f8 / 〒033-0001 青森県三沢市中央町２丁目８−３４ スカイプラザミサワ",
+        "finding": "中央町2-8-34のスカイプラザミサワ。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://skyplazamisawa.jp"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://skyplazamisawa.jp",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-84e3732357cf94325f7a.html",
+          "snapshotSHA256": "265f607f135ce287ed655a686f0eb0529c00d793ae0ce1c06070b5c23194992a",
+          "fetchedAt": "2026-11-05T04:23:20.505187+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-d708d48e0d4d4cae8869",
+      "name": "てんのうグリーンマーケット(道の駅てんのう)",
+      "address": "秋田県潟上市天王字江川上谷地109-2",
+      "cardIds": [
+        "05-211-A001"
+      ],
+      "investigatedUrls": [
+        "https://michinoeki-tenno.jp",
+        "https://www.city.katagami.lg.jp/soshiki/kensetsubu/jogesuido/shisetsukomu/5752.html",
+        "https://www.city.katagami.lg.jp/gyosei/gyoseijoho/shiyakusho/2548.html"
+      ],
+      "decision": {
+        "reason": "てんのうグリーンマーケット公式サイトと市アクセスを確認。市域表示中心は施設点ではなく、対象店舗の数値目的地点を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d7b1c87c38351fa33362",
+      "name": "山形市上下水道施設管理センター 2階 経営企画課窓口",
+      "address": "山形県山形市南石関27",
+      "cardIds": [
+        "06-201-B001"
+      ],
+      "investigatedUrls": [
+        "https://mogamiyoshiaki.jp/",
+        "https://suidou.yamagata.yamagata.jp/",
+        "https://www.pref.yamagata.jp/180040/kurashi/kendo/gesuido/mhcard.html",
+        "https://suidou.yamagata.yamagata.jp/life/5/18/",
+        "https://suidou.yamagata.yamagata.jp/soshiki/2/1012297.html"
+      ],
+      "decision": {
+        "reason": "山形市上下水道施設一覧から管理センター本庁舎案内まで確認。南石関27とフロア案内はあるが数値施設点はなく、地図画像から推定しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-db757b448c8db73422a5",
+      "name": "花巻市役所本庁舎警備員室(本庁舎1階守衛室)",
+      "address": "岩手県花巻市花城町9-30 本庁舎1階守衛室",
+      "cardIds": [
+        "03-205-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/index.html",
+        "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004113.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-db757b448c8db73422a5",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisetsu/shiyakusyo/1004112/1004113.html",
+        "lat": 39.388633,
+        "lng": 141.11686,
+        "sourceLocator": "施設案内 / 地図を表示する Google Maps q=39.388633,141.11686",
+        "finding": "公式施設案内が本庁舎・新館を一括して指定する庁舎施設代表点。花城町9-30と一致。本庁舎・新館それぞれの独立した建物中心や2階・守衛室の位置は未確認。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-dc305b23b24f12a28bb6",
+      "name": "石ノ森萬画館",
+      "address": "宮城県石巻市中瀬2番7号 / 石巻市中央二丁目11番17",
+      "cardIds": [
+        "04-202-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+        "https://www.mangattan.jp/manga/",
+        "https://www.mangattan.jp/manga/access/",
+        "https://goo.gl/maps/jJS1KZr2Rr52"
+      ],
+      "decision": {
+        "reason": "萬画館公式アクセスの地図は中瀬2-7の施設点だが、元facility住所が中瀬2-7と中央2-11-17の連結。配布先混在・移転提案側の整理が必要で、旧facilityへ自動適用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-e10360ea122bf45ffded",
+      "name": "道の駅さんのへ",
+      "address": "青森県三戸郡三戸町大字川守田字西張渡39-1",
+      "cardIds": [
+        "02-441-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.michinoeki-sannohe.com/",
+        "https://www.town.sannohe.aomori.jp/index.html",
+        "https://www.town.sannohe.aomori.jp/kanko_miryoku/11pikinoneko/3713.html",
+        "https://www.town.sannohe.aomori.jp/soshiki/machidukuri/11pikinoneko/3909.html",
+        "https://www.michi-no-eki.jp/stations/views/18908"
+      ],
+      "decision": {
+        "facilityId": "facility:north-e10360ea122bf45ffded",
+        "sourceUrl": "https://www.michi-no-eki.jp/stations/views/18908",
+        "lat": 40.387808,
+        "lng": 141.2554758,
+        "sourceLocator": "全国道の駅連絡会 道の駅さんのへ iframe embed/v1/place q=40.387808,141.2554758",
+        "finding": "現住所=川守田字西張渡39-1と一致。公式施設案内の数値q目的地点。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    },
+    {
+      "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+      "name": "道の駅やまだ「おいすた」",
+      "address": "岩手県下閉伊郡山田町山田第5地割66番地1",
+      "cardIds": [
+        "03-482-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.yamada.iwate.jp/docs/6751.html",
+        "https://yamada-oisuta.jp/",
+        "https://www.town.yamada.iwate.jp/docs/910.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.604573082725!2d141.9506961772278!3d39.47826107160582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f85dbdcdaed3c4d%3A0xf947b4d27752505c!2z6YGT44Gu6aeF44KE44G-44GgIOOBiuOBhOOBmeOBnw!5e0!3m2!1sja!2sjp!4v1692255111995!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "reason": "現公式道の駅やまだ地図は山田第2地割111-2、39.478015,141.9533868。元facilityは第5地割66-1で一致しない。移転・住所修正proposal対応の候補とし旧facilityへ流用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-e2eaf547357696dfe333",
+      "name": "須賀川市風流のはじめ館",
+      "address": "福島県須賀川市本町81番地4",
+      "cardIds": [
+        "07-207-B001"
+      ],
+      "investigatedUrls": [
+        "https://s-furyu.jp/",
+        "https://www.sukagawa-jyogesuidojigyo.jp/",
+        "https://www.sukagawa-jyogesuidojigyo.jp/user/notice/manhole_card/",
+        "https://www.city.sukagawa.fukushima.jp/furyu-hajime/index.html",
+        "https://www.city.sukagawa.fukushima.jp/furyu-hajime/3746.html"
+      ],
+      "decision": {
+        "reason": "風流のはじめ館の新しい市公式アクセスを確認。qは本町81-4の住所検索で、数値はll表示中心のみ。施設目的地点としては採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-e7f17b2f34d16c6a3929",
+      "name": "白沢公民館",
+      "address": "福島県本宮市白岩字堤崎500",
+      "cardIds": [
+        "07-214-B001"
+      ],
+      "investigatedUrls": [
+        "http://www.city.motomiya.lg.jp/",
+        "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html",
+        "http://www.city.motomiya.lg.jp/map/001.html",
+        "http://www.city.motomiya.lg.jp/map/002.html",
+        "http://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "https://www.city.motomiya.lg.jp/map/001.html",
+        "https://www.city.motomiya.lg.jp/map/002.html",
+        "https://www.city.motomiya.lg.jp/soshiki/47/325.html",
+        "https://maps.app.goo.gl/8iam4XBQ56i8WUcs9",
+        "https://maps.app.goo.gl/DEi1TW3xu4ogQY3JA"
+      ],
+      "decision": {
+        "facilityId": "facility:north-e7f17b2f34d16c6a3929",
+        "sourceUrl": "https://maps.app.goo.gl/DEi1TW3xu4ogQY3JA",
+        "lat": 37.5078274,
+        "lng": 140.452372,
+        "sourceLocator": "公式案内 https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html の短縮地図リンク。manifest.finalUrl の !8m2!3d37.5078274!4d140.452372",
+        "finding": "公式配布施設リンクと現住所を照合し、リンク先の施設目的地を採用。@以降の表示中心は使用しない。",
+        "supportUrls": [
+          "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://www.city.motomiya.lg.jp/soshiki/23/mhcard-new.html",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/cached-6977ed2b1889996b10b6.html",
+          "snapshotSHA256": "c1626fda87107640f7e945f7ba00aef6ed1d69a80e012d034fc56ad01c99334f",
+          "fetchedAt": "2026-11-05T04:23:41.800558+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-e87fa72a02c9e04601f4",
+      "name": "会津坂下町役場 建設課 上下水道班",
+      "address": "福島県河沼郡会津坂下町字市中三番甲3662",
+      "cardIds": [
+        "07-421-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.town.aizubange.fukushima.jp/",
+        "http://www.town.aizubange.fukushima.jp/soshiki/28/7745.html",
+        "https://www.town.aizubange.fukushima.jp/site/furusato-nouzei/20032.html"
+      ],
+      "decision": {
+        "reason": "会津坂下町役場の公式配布・町案内を確認。市中三番甲3662の役場に対応する数値目的地を取得できず、町域・住所のジオコードで補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-ef70cf36b6909e9459a6",
+      "name": "猪苗代町役場宿日直室",
+      "address": "福島県耶麻郡猪苗代町字城南100",
+      "cardIds": [
+        "07-408-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.inawashiro.fukushima.jp/",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/9/1361.html",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/1/1001.html",
+        "https://www.town.inawashiro.fukushima.jp/index2.html",
+        "https://www.town.inawashiro.fukushima.jp/soshiki/1/1705.html"
+      ],
+      "decision": {
+        "reason": "猪苗代町の役場案内・アクセスを確認。庁舎の現住所は確認できるが数値目的地点を取得できず、宿日直室を住所代表点で補完しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f03c9220b38ca2acc708",
+      "name": "公益財団法人 白河観光物産協会",
+      "address": "福島県白河市郭内1-2(しらかわ観光ステーション内)",
+      "cardIds": [
+        "07-205-A001"
+      ],
+      "investigatedUrls": [
+        "http://shirakawa315.com/",
+        "http://www.city.shirakawa.fukushima.jp/page/page002897.html",
+        "https://www.city.shirakawa.fukushima.jp/page/page000275.html",
+        "https://www.city.shirakawa.fukushima.jp/page/page001489.html",
+        "https://shirakawa315.com/outline/"
+      ],
+      "decision": {
+        "reason": "白河観光物産協会の法人概要と市アクセスを確認。市共通地図の本庁舎は郭内1-2の観光ステーションと別施設のため不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f22830b4e35c8f477dae",
+      "name": "多賀城市埋蔵文化財調査センター展示室(多賀城市文化センター内)",
+      "address": "宮城県多賀城市中央2-27-1",
+      "cardIds": [
+        "04-209-A001"
+      ],
+      "investigatedUrls": [
+        "http://tagajo-bunka.jp/",
+        "https://www.city.tagajo.miyagi.jp/ryokin/kurashi/suido/gesuido/card.html",
+        "https://tagajo-bunka.jp/access/",
+        "https://www.city.tagajo.miyagi.jp/kanzai/shise/gaiyo/madoguchi/chosha/index.html",
+        "https://www.city.tagajo.miyagi.jp/koho/shise/gaiyo/madoguchi/shiyakusho.html",
+        "https://www.city.tagajo.miyagi.jp/kurashi/shisetsu/index.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25050.519464410936!2d140.98745793955078!3d38.29537050000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8985f470d2674b%3A0xa86318f4dd820b!2z5aSa6LOA5Z-O5biC5paH5YyW44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1628217127473!5m2!1sja!2sjp"
+      ],
+      "decision": {
+        "facilityId": "facility:north-f22830b4e35c8f477dae",
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25050.519464410936!2d140.98745793955078!3d38.29537050000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8985f470d2674b%3A0xa86318f4dd820b!2z5aSa6LOA5Z-O5biC5paH5YyW44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1628217127473!5m2!1sja!2sjp",
+        "lat": 38.2953724,
+        "lng": 141.0049869,
+        "sourceLocator": "initEmbed の施設目的地レコード 0x5f8985f470d2674b:0xa86318f4dd820b / 〒985-0873 宮城県多賀城市中央２丁目２７−１ 多賀城市文化センター",
+        "finding": "中央2-27-1の文化センター。館内展示室を含む建物代表点。 公式ページが埋め込んだ地図の施設目的地レコードを使用。viewportは使用しない。",
+        "supportUrls": [
+          "https://tagajo-bunka.jp/access/"
+        ]
+      },
+      "supportingSnapshots": [
+        {
+          "url": "https://tagajo-bunka.jp/access/",
+          "snapshotPath": "data/evidence/national/locations-north-tohoku/8a99ddc34687a4020e3b.html",
+          "snapshotSHA256": "bdd997d66fb51c019317bd1364d476dfc21b38895876c0411efb4b96735e67ec",
+          "fetchedAt": "2026-11-05T04:48:39.721871+00:00"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:north-f393ea45974a92d49fc5",
+      "name": "鶴岡市下水道部",
+      "address": "山形県鶴岡市のぞみ町2-10",
+      "cardIds": [
+        "06-203-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.city.tsuruoka.lg.jp/kurashi/suido/gesuido/index.html",
+        "https://www.city.tsuruoka.lg.jp/kurashi/suido/gesuido/kohokatsudo/mannhorukado.html",
+        "https://www.city.tsuruoka.lg.jp/kurashi/suido/annai.html"
+      ],
+      "decision": {
+        "reason": "鶴岡上下水道事務所の公式案内まで確認。案内図は画像で、現施設の数値マーカーは取得できない。共通Google Mapsスクリプトだけでは施設点を証明できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f65a0dfe19389a4988bf",
+      "name": "仙台港多賀城地区緩衝緑地 管理事務所",
+      "address": "宮城県多賀城市大代1丁目16-1",
+      "cardIds": [
+        "04-000-D001"
+      ],
+      "investigatedUrls": [
+        "https://tohokudaiken-management.com/sendaikou-tagajo/",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/mhcard.html",
+        "https://tohokudaiken-management.com/sendaikou-tagajo/access/",
+        "https://tohokudaiken-management.com/sendaikou-tagajo/guide/",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52569.73002050523!2d141.00653907537816!3d38.29802254842358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f898f6eea1f5c29%3A0xff91a7f57aabf6a4!2z5LuZ5Y-w5riv5aSa6LOA5Z-O5Zyw5Yy657ep6KGd57eR5Zyw!5e0!3m2!1sja!2sjp!4v1553405130023"
+      ],
+      "decision": {
+        "reason": "指定管理者の公式地図から得た名前付き目的地は中央地区駐車場。管理事務所の建物ではないため、同住所でも窓口施設の位置に採用しない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f74bc0daeadf52ba9070",
+      "name": "南部町いちょうホール",
+      "address": "青森県三戸郡南部町大字平字広場28番地1",
+      "cardIds": [
+        "02-445-A001",
+        "02-445-B001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.aomori-nanbu.lg.jp/page/1716.html",
+        "https://www.town.aomori-nanbu.lg.jp/page/1832.html",
+        "https://www.town.aomori-nanbu.lg.jp/page/2052.html"
+      ],
+      "decision": {
+        "reason": "南部町のいちょうホール施設案内と配布案内を確認。平字広場28-1のホールを指定する数値目的地を取得できない。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f8aec7769492a55dce23",
+      "name": "大和町ふれあい文化創造センター",
+      "address": "宮城県黒川郡大和町吉岡南二丁目4-14",
+      "cardIds": [
+        "04-421-A001"
+      ],
+      "investigatedUrls": [
+        "https://www.town.taiwa.miyagi.jp/soshiki/jogesuido/shisetsuseibi/1110.html",
+        "https://mahoroba-taiwa.jp/access.html",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.9750661923576!2d140.8789542156929!3d38.442044879643376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89776727f3d7db%3A0x69d800a96230e35c!2z44CSOTgxLTM2MjYg5a6u5Z-O55yM6buS5bed6YOh5aSn5ZKM55S65ZCJ5bKh5Y2X77yS5LiB55uu77yU4oiS77yR77yU!5e0!3m2!1sja!2sjp!4v1488710816708"
+      ],
+      "decision": {
+        "reason": "まほろばホール公式アクセスの埋込地図を確認。取得レコードは吉岡南2-4-14の住所のみで、施設名付きの建物目的地点と確認できず不採用。"
+      }
+    },
+    {
+      "facilityId": "facility:north-fc06d0f8dda64e3166de",
+      "name": "道の駅「村田」(村田町物産交流センター)",
+      "address": "柴田郡村田町大字村田字北塩内41",
+      "cardIds": [
+        "04-000-B001"
+      ],
+      "investigatedUrls": [
+        "https://muratamachi.info/",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/mhcard.html",
+        "https://www.pref.miyagi.jp/soshiki/senen-wwt/sisetusyoukai.html",
+        "https://muratamachi.info/access.html",
+        "https://muratamachi.info/m/access/",
+        "https://www.michinoeki-tohoku.com/michinoeki/miyagi/214"
+      ],
+      "decision": {
+        "reason": "道の駅村田の公式アクセス・道の駅連絡会ページを確認。旧地図リンクは施設名検索qと表示中心、連絡会は短縮URL。短縮ホストで429を受けたため追加アクセスせず、数値目的地点は未確定。"
+      }
+    },
+    {
+      "facilityId": "facility:north-fdc5e98d94931a4b1517",
+      "name": "道の駅おりつめ 産直施設オドデ館",
+      "address": "岩手県九戸郡九戸村大字山屋2-28-1",
+      "cardIds": [
+        "03-506-A001"
+      ],
+      "investigatedUrls": [
+        "http://www.vill.kunohe.iwate.jp/docs/213.html",
+        "https://vill.kunohe.iwate.jp/docs/206.html"
+      ],
+      "decision": {
+        "facilityId": "facility:north-fdc5e98d94931a4b1517",
+        "sourceUrl": "https://vill.kunohe.iwate.jp/docs/206.html",
+        "lat": 40.248349,
+        "lng": 141.416529,
+        "sourceLocator": "Googlemaps_Map.setMarkers loc:[141.416529,40.248349]",
+        "finding": "道の駅おりつめ・オドデ館の公式紹介の施設位置。山屋2-28-1と照合。",
+        "supportUrls": []
+      },
+      "supportingSnapshots": []
+    }
+  ]
+}

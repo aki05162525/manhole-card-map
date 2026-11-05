@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>メンテナンス中 | ながおか市民協働センター</title>
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: #f7f8fa;
+    color: #222;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+      "Yu Gothic", YuGothic, Meiryo, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+    padding: 52px 32px 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    text-align: center;
+  }
+
+  .icon {
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 28px;
+  }
+
+  h1 {
+    margin: 0 0 22px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #1f1f1f;
+  }
+
+  .message {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    color: #555;
+  }
+
+  .message span {
+    display: inline-block;
+  }
+
+  hr {
+    margin: 28px 0 22px;
+    border: 0;
+    border-top: 1px solid #ececec;
+  }
+
+  .footer {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #888;
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 44px 22px 32px;
+    }
+
+    h1 {
+      font-size: 19px;
+    }
+
+    .message {
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+      <defs>
+        <linearGradient id="wrench-color" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#e6dcf7" />
+          <stop offset="1" stop-color="#b7a3dc" />
+        </linearGradient>
+        <mask id="wrench-jaws">
+          <rect width="64" height="64" fill="#fff" />
+          <rect x="0" y="28" width="9" height="8" fill="#000" />
+          <rect x="56" y="29" width="8" height="6" fill="#000" />
+        </mask>
+      </defs>
+      <g transform="rotate(45 32 32)" mask="url(#wrench-jaws)" fill="url(#wrench-color)">
+        <circle cx="12" cy="32" r="10" />
+        <rect x="12" y="28.5" width="40" height="7" rx="3.5" />
+        <circle cx="52" cy="32" r="8" />
+      </g>
+    </svg>
+
+    <h1>ただいまメンテナンス中です</h1>
+
+    <p class="message">
+      <span>いつもご利用いただき</span><span>ありがとうございます。</span><br>
+      <span>現在、システムの</span><span>メンテナンスを実施しております。</span><br>
+      <b>再開予定：2026年11月6日（金）予定</b><br>
+      ご迷惑をおかけいたしますが、<br>
+      順次再開に向けて作業を進めておりますので<br>
+      今しばらくお待ちください。
+    </p>
+
+    <hr>
+
+    <p class="footer">© ながおか市民協働センター</p>
+  </main>
+</body>
+</html>

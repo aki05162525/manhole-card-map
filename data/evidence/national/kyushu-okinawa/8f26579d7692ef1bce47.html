@@ -1,0 +1,3752 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+<head id="ctl00_Head1"><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="format-detection" content="telephone=no" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>
+	マンホールカード配布情報 / 佐伯市
+</title>
+<script type="text/javascript" language="JavaScript">
+<!--
+    function enterCancel(event)
+    {
+        if (event.keyCode == 13)
+        {
+            var elem;
+            if(event.srcElement)
+            {
+                elem = event.srcElement;
+            }
+            else
+            {
+                elem = event.target;
+            }
+            if(elem.type!='submit' && elem.type!='textarea' && elem.tagName!='A' && elem.tagName!='a' && elem.tagName!='area' && elem.tagName!='AREA') /* 2011/04/04 a tag OK */
+            {
+                var useMapFlg = false;
+                if (elem.tagName == "img" || elem.tagName == "IMG") {
+                    if (elem.useMap) {
+                        useMapFlg = true;
+                    }
+                }
+                if (!useMapFlg) {
+                    if (event.preventDefault) 
+                    {
+                        event.preventDefault();
+                    } 
+                    else 
+                    {
+                        event.returnValue = false;
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Same Func is available in AjaxCalForIE6*/
+    function ajaxCalOnClientShown(){
+        /*IE6 does not have "maxHeight"*/
+        if (typeof document.documentElement.style.maxHeight == "undefined") {
+            try{
+                $$("select").each(function(_itm){
+                    _itm.style.visibility="hidden";
+                });
+            }catch(err){
+            }
+        }
+    }    
+    /* Same Func is available in AjaxCalForIE6*/
+    function ajaxCalOnClientHidden(){
+        /*IE6 does not have "maxHeight"*/
+        if (typeof document.documentElement.style.maxHeight == "undefined") {
+            try{
+                $$("select").each(function(_itm){
+                    _itm.style.visibility="visible";
+                });
+            }catch(err){
+            }
+        }
+    }
+    
+    function clickButton(id, event) {
+        if (event.keyCode == 13)
+        {
+            document.getElementById(id).click();
+
+            if (event.preventDefault) 
+            {
+                event.preventDefault();
+            } 
+            else 
+            {
+                event.returnValue = false;
+            }
+        }
+    }
+    
+    function checkValue(obj) {
+        var keyword = document.getElementById(obj).value;
+
+        keyword = keyword.replace(/^[\s　]+|[\s　]$/g, "");
+        if (keyword.length == 0) {
+            alert('検索キーワードを入力してください。');
+            return false;
+        }
+
+        searchResult(keyword);
+        return false;
+    }
+//-->
+</script>
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/default.css" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/stylesheet.css" id="css_stylesheet" rel="stylesheet" type="text/css" media="print, screen and (min-width: 481px)" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/stylesheetforsp.css" id="css_stylesheet_sp" rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/migration.css" id="css_Migration" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/hpkiji/designcss/design01.css" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/fontsizen.css" id="css_fontsize" rel="stylesheet" type="text/css" media="print, screen and (min-width: 481px)" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/fontsizen.css" id="css_fontsize_sp" rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/uiw.css" id="css_color" rel="stylesheet" type="text/css" media="print, screen and (min-width: 481px)" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/uiw.css" id="css_color_sp" rel="stylesheet" type="text/css" media="only screen and (max-width: 480px)" /><link id="ctl00_minicalendar_css" href="//www.city.saiki.oita.jp/dynamic/common/css/minicalendar.css" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/favicon.ico" rel="icon" type="image/vnd.microsoft.icon" /><link href="//www.city.saiki.oita.jp/dynamic/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" /><script id="ctl00_jquery_min_js" type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/jquery.min.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/js.cookie.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/setcookie.js"></script><script id="ctl00_pubfunc_js" type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/pubfunc.js"></script><script id="ctl00_jquery_rwdImageMaps_min_js" type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/jquery.rwdimagemaps.min.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/jquery-ui.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/jquery.easing.1.3.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/jquery.scrollfollow.js"></script><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/floatheader.js"></script><link href="//www.city.saiki.oita.jp/dynamic/common/css/default_body.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/stylesheet.css" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/fontsizen.css" id="css_fontsize_ie8" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/uiw.css" id="css_color_ie8" rel="stylesheet" type="text/css" /><link href="//www.city.saiki.oita.jp/dynamic/common/css/html5_block.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/html5shiv-printshiv.js"></script>
+<![endif]-->
+<script>const easyJapaneseSecretKey = '0ccab268-41aa-4878-8f4e-ef30f7a3205d';</script><script>var processBeforeDisplayEasyJapanese = "jQuery(\'#close_accessibility\').click();";</script><script id="ctl00_tsutaeru_mo_js" src="https://tsutaeru.cloud/assets/snippet/js/tsutaeru_mo.js"></script><script id="ctl00_tsutaeru_js" src="https://tsutaeru.cloud/assets/snippet/js/tsutaeru.js?a28f1ab4-3575-4eeb-91f1-60e94e5cd8f6"></script><script id="ctl00_easyJapanese_js" src="//www.city.saiki.oita.jp/dynamic/common/js/easyjapanese.js"></script><link id="ctl00_easyJapanese_css" href="//www.city.saiki.oita.jp/dynamic/common/css/easyjapanese.css" rel="stylesheet" type="text/css" /><link id="ctl00_BanAllDisp_css" href="//www.city.saiki.oita.jp/dynamic/common/banalldisp/css/style.css" rel="stylesheet" type="text/css" /><meta property="og:type" content="article" /><meta id="ctl00_MetaOGPTitle" property="og:title" content="マンホールカード配布情報" /><meta property="og:image" content="https://www.city.saiki.oita.jp/dynamic/common/images/ogp/og_image.gif" /><meta property="og:url" content="https://www.city.saiki.oita.jp/dynamic/hpkiji/pub/detail.aspx?c_id=3&amp;id=3285" /><meta property="og:description" content="マンホールカード配布情報 / 佐伯市" /><meta property="og:site_name" content="佐伯市" /><meta property="og:locality" content="Saiki-Shi" /><meta property="og:region" content="Saiki" /><meta property="og:country-name" content="Japan" /><meta name="keywords" content="マンホールカード配布情報" /><link id="ctl00_holidayCalendar_css" href="//www.city.saiki.oita.jp/dynamic/common/holidaycalendar/css/style.css" rel="stylesheet" type="text/css" /></head>
+<body class="haikei">
+<form name="aspnetForm" method="post" action="./detail.aspx?c_id=3&amp;id=3285" id="aspnetForm" enctype="multipart/form-data" tabindex="1" onkeydown="enterCancel(event||window.event);">
+<div>
+
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A5DD862A" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAN+c7/XXPmfBKdBwTryAlbfr/kCtIPg/ZD0i99J79UCIXqi3h4Wlhf4O3vFCjIILWFXRaMSH9dAhY+b/drIleC8j68SAQ==" />
+</div>
+
+<div class="Navigation"><ul><li><a href="#GlobalNavigationBlock" tabindex="1">ヘッダーをスキップ</a></li><li><a href="#mainBlock" tabindex="1">本文へジャンプ</a></li></ul></div>
+
+
+
+
+<!-- allheader start  -->
+
+<!--[if lt IE 9]>
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/header/top1.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<span id="top"></span>
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/header/top1.css" rel="stylesheet" type="text/css" /><div id="headerArea">
+	
+<link href="//www.city.saiki.oita.jp/dynamic/common/web-fonts-with-css/css/all.min.css" rel="stylesheet">
+<script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/web-fonts-with-css/js/all.min.js"></script>
+
+<div id="headerAreaDef">
+    <input type="submit" name="ctl00$ctl35$Dmy" value="" onclick="return false;" id="ctl00_ctl35_Dmy" style="height:0px;width:0px;position:absolute;top:-100px;" />
+    <!-- rect start -->
+    <map id="header_img" name="header_img">
+        <area shape="rect" alt="佐伯市トップへ" coords="1,3,509,105" href="https://www.city.saiki.oita.jp/default.html" />
+    </map>
+    <!-- rect end -->
+
+    
+    <div id="header">
+        <div class="head_container">
+            
+            
+            
+            
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(function () {
+        // メニュー用
+        jQuery('.select-box01 #normal a').focus(function () {
+            jQuery(this).siblings('.sub-menu').addClass('focused');
+        }).blur(function () {
+            jQuery(this).siblings('.sub-menu').removeClass('focused');
+        });
+
+        // サブメニュー用
+        jQuery('.sub-menu a').focus(function () {
+            jQuery(this).parents('.sub-menu').addClass('focused');
+        }).blur(function () {
+            jQuery(this).parents('.sub-menu').removeClass('focused');
+        });
+    });
+</script>
+
+<!-- 翻訳メニュー -->
+<div class="select-box01" tabIndex="-1">
+    <ul id="normal" class="dropmenu" tabIndex="-1">
+        <li><a lang="en" href="#" class="topmenu" tabindex="1">Foreign Language</a>
+            <ul class="sub-menu">
+                <li><a translate="no" lang="en" href="http://translate.google.co.jp/translate?hl=ja&sl=ja&tl=en&u=https://www.city.saiki.oita.jp/kiji0033285/index.html" target="_blank" class="topsub" tabindex="1">English&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin.gif" alt="Open in a new window" title=""></a></li>
+                <li><a translate="no" lang="zh" href="http://translate.google.co.jp/translate?hl=ja&sl=ja&tl=zh-CN&u=https://www.city.saiki.oita.jp/kiji0033285/index.html" target="_blank" tabindex="1">中文(简化字)&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin.gif" alt="在新视窗中开启" title=""></a></li>
+                <li><a translate="no" lang="zh" href="http://translate.google.co.jp/translate?hl=ja&sl=ja&tl=zh-TW&u=https://www.city.saiki.oita.jp/kiji0033285/index.html" target="_blank" tabindex="1">中文(繁體字)&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin.gif" alt="在新視窗中開啟" title=""></a></li>
+                <li><a translate="no" lang="ko" href="http://translate.google.co.jp/translate?hl=ja&sl=ja&tl=ko&u=https://www.city.saiki.oita.jp/kiji0033285/index.html" target="_blank" tabindex="1">한국어&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin.gif" alt="다른 창으로 엽니 다" title=""></a></li>
+                <li><a translate="no" lang="vi" href="http://translate.google.co.jp/translate?hl=ja&sl=ja&tl=vi&u=https://www.city.saiki.oita.jp/kiji0033285/index.html" target="_blank" tabindex="1">Tiếng việt nam&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin.gif" alt="Mở cái này với cửa sổ khác" title=""></a></li>
+                <li><a translate="no" lang="ja" href="https://www.city.saiki.oita.jp/kiji0033285/index.html" class="cl-norewrite" tabindex="1">日本語</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+            
+            <div id="mainFontSizeSel">
+                <span>文字サイズ</span>
+                <a href="#top" data-select="拡大" onclick="change_size('fontSizeB')" tabindex="1"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/white-mozi-l.gif" alt="拡大" title="" /></a><a href="#top" data-select="標準" onclick="change_size('fontSizeN')" tabindex="1"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/white-mozi-m.gif" alt="標準" title="" /></a>
+            </div>
+            <div id="changeHaikei">
+                <span>背景色</span>
+                <a href="#top" data-select="B" onclick="changeSiteIro('B')" tabindex="1"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/udbtn_blue.gif" alt="青" title="" /></a><a href="#top" data-select="K" onclick="changeSiteIro('K')" tabindex="1"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/udbtn_black.gif" alt="黒" title="" /></a><a href="#top" data-select="W" onclick="changeSiteIro('W')" tabindex="1"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/udbtn_white.gif" alt="白" title="" /></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- header start -->
+        <h1 id="hd_header" class="header_img">
+            <img id="imgHeader" class="header_img" usemap="#header_img" src="//www.city.saiki.oita.jp/common/upload/common/0_1_header_nkhhppnm.png" alt="佐伯市" style="border-width:0px;" />
+        </h1>
+        <!-- header end -->
+        <div id="headerMenu">
+            <div id="headerMenu01">
+                <!-- やさしい日本語 -->
+                <div class="easyJapanese_wrap">
+                    
+    <div id="easyJapaneseDispArea">
+        <div class="change_title"><span>やさしい日本語</span></div>
+        <div class="easyJapaneseButtonArea">
+            <a href="javascript:void(0);" class="easyJapaneseButton easyJapaneseButton_visible easyJapaneseActionButton" onclick="startEasyJapanese();">
+                やさしい日本語
+            </a>
+            <a href="javascript:void(0);" class="easyJapaneseResetButton easyJapaneseButton_hidden easyJapaneseActionButton" onclick="resetEasyJapanese();">
+                元に戻す
+            </a>
+            
+                <div id="easyJapaneseVoiceReadingButton">
+                    <script type="text/javascript">_tsutaeru.speech.button()</script>
+                </div>
+            
+        </div>
+    </div>
+
+                </div>
+
+                <!-- mainSearch start -->
+                <div class="mainSearch">
+                    
+                            
+                            
+    <script>
+        (function () {
+            var cx = '012074202513998238256:pbkflv5jm8n';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+
+        window.onload = function () {
+            var searchDiv = document.getElementsByClassName("searchBox-gcs");
+            if (searchDiv.length > 0) {
+                var tag = searchDiv[0].getElementsByTagName("input");
+                if(tag.length > 0){
+                    for (var i = 0; i < tag.length; i++) {
+                        tag[i].tabIndex = "1";
+                    }
+                }
+            }
+        }
+    </script>
+    <div class="searchBox-gcs">
+        <gcse:searchbox-only></gcse:searchbox-only>
+    </div>
+    <link rel="stylesheet" type="text/css"  href="//www.city.saiki.oita.jp/dynamic/common/css/googlecustamsearch.css" />
+
+                        
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+  
+
+
+
+    </div>
+    <div class="clear"></div>
+
+    <!-- グローバルナビゲーション -->
+    <div id="GlobalNavigationBlock" tabindex="1">
+        <div class="Navigation"><ul><li><a href="#mainContent" tabindex="1">グローバルナビゲーションをスキップ</a></li></ul></div>
+        <!-- global navigation start -->
+        
+
+<script type="text/javascript">
+    var open_id = "";
+    var leave_exe_flg = true;
+    jQuery.noConflict();
+    jQuery(function () {
+
+        var setPopNaviArea,setHideNaviArea;
+
+        jQuery("li.navi_tab,ul.g_navi").on({
+            'mouseenter': function () {
+
+                var id = jQuery(this).attr("id");
+
+                if (jQuery(this).hasClass("navi_tab")) {
+                    id = id.replace("navi_tab_", "");
+                } else if (jQuery(this).hasClass("g_navi")) {
+                    id = id.replace("g_navi_", "");
+                }
+
+                if(leave_exe_flg || open_id != id) 
+                {
+                    clearTimeout(setHideNaviArea);
+
+                    setPopNaviArea = setTimeout(function () {
+                        jQuery("li.navi_tab").each(function () {
+                            (jQuery(this).attr("id") == "navi_tab_" + id) ? jQuery(this).addClass("sankaku") : jQuery(this).removeClass("sankaku");
+                            (jQuery(this).attr("id") == "navi_tab_" + id) ? jQuery(this).addClass("selected") : jQuery(this).removeClass("selected");
+                        });
+                        jQuery("ul.g_navi").each(function () {
+                            (jQuery(this).attr("id") == "g_navi_" + id) ? jQuery(this).show() : jQuery(this).hide();
+                        });
+                        open_id = id; 
+                    }, 400); 
+                }
+                else
+                {
+                    if(!leave_exe_flg && jQuery(this).attr("id") == "navi_tab_" + id)
+                    {
+                        closePopMenu(id);
+                    }
+                }
+            },
+            'mouseleave': function () {
+                if(!leave_exe_flg)
+                {
+                    return false;
+                }
+                clearTimeout(setPopNaviArea);
+
+                setHideNaviArea = setTimeout(function () {
+                    jQuery("li.navi_tab").removeClass("sankaku");
+                    jQuery("li.navi_tab").removeClass("selected");
+                    jQuery("ul.g_navi").hide();
+                    open_id = "";
+                }, 50);
+            },
+
+            'focusin': function () {
+
+                var id = jQuery(this).attr("id");
+
+                if (jQuery(this).hasClass("navi_tab")) {
+                    id = id.replace("navi_tab_", "");
+                } else if (jQuery(this).hasClass("g_navi")) {
+                    id = id.replace("g_navi_", "");
+                }
+
+                clearTimeout(setHideNaviArea);
+
+                setPopNaviArea = setTimeout(function () {
+                    jQuery("li.navi_tab").each(function () {
+                        (jQuery(this).attr("id") == "navi_tab_" + id) ? jQuery(this).addClass("sankaku") : jQuery(this).removeClass("sankaku");
+                        (jQuery(this).attr("id") == "navi_tab_" + id) ? jQuery(this).addClass("selected") : jQuery(this).removeClass("selected");
+                    });
+                    jQuery("div.g_navi").each(function () {
+                        (jQuery(this).attr("id") == "g_navi_" + id) ? jQuery(this).show() : jQuery(this).hide();
+                    });
+                }, 1);
+            },
+            'focusout': function () {
+
+                clearTimeout(setPopNaviArea);
+
+                setHideNaviArea = setTimeout(function () {
+                    jQuery("li.navi_tab").removeClass("sankaku");
+                    jQuery("li.navi_tab").removeClass("selected");
+                    jQuery("ul.g_navi").hide();
+                }, 1);
+            }
+        });
+
+        if (jQuery("#globalNavigationData").length) {
+            var classid = jQuery("#globalNavigationData").attr("data-classid");
+            var parentid = jQuery("#globalNavigationData").attr("data-parentid");
+            var topid = jQuery("#globalNavigationData").attr("data-topid");
+
+            jQuery('[data-global="' + classid + '"]').addClass("now");
+            if (parentid > 0) {
+                jQuery('[data-ul-global="' + parentid + '"]').show();
+            }
+            if (topid > 0) {
+                jQuery('[data-global="' + topid + '"]').addClass("now");
+            }
+        }
+    });
+    function openCMenu(targetid)
+    {
+        jQuery("ul.childmenu").each(function () {
+            var parentid = jQuery(this).attr("data-ul-global");
+            if(parentid == targetid)
+            {
+                jQuery(this).toggle();
+            }
+            else
+            {
+                jQuery(this).hide()
+            }
+        });
+    }
+    function closePopMenu(targetid)
+    {
+        setTimeout(function () {
+            jQuery("li#navi_tab_" + targetid).removeClass("sankaku");
+            jQuery("li#navi_tab_" + targetid).removeClass("selected");
+            jQuery("ul#g_navi_" + targetid).hide();
+            open_id = "";
+        }, 10);
+    }
+</script>
+
+
+    <div id="naviContainer">
+        <div id="naviArea">
+    <ul id="navi_list">
+            <li class="navi_tab exsistpic " id="navi_tab_301"
+                data-global="301">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00301.html" tabindex="10" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/301_class_globalnavi_h8ih7a1n.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_301">くらし・手続き</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic " id="navi_tab_302"
+                data-global="302">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00302.html" tabindex="100" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/302_class_globalnavi_qruwlr7o.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_302">子育て・学び</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic " id="navi_tab_303"
+                data-global="303">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00303.html" tabindex="126" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/303_class_globalnavi_c2eesvs1.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_303">健康・福祉</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic " id="navi_tab_304"
+                data-global="304">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00304.html" tabindex="159" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/304_class_globalnavi_gi27481j.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_304">環境・まちづくり</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic " id="navi_tab_305"
+                data-global="305">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00305.html" tabindex="217" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/305_class_globalnavi_lqevsdk8.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_305">観光・文化・スポーツ</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic " id="navi_tab_306"
+                data-global="306">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00306.html" tabindex="255" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/306_class_globalnavi_dk03p1i5.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_306">産業・仕事</p>
+                    </a>
+                </div>
+             </li>
+        
+            <li class="navi_tab exsistpic navi_tab_last" id="navi_tab_307"
+                data-global="307">
+                <div>
+                    <a href="//www.city.saiki.oita.jp/list00307.html" tabindex="294" >
+                        <img src="//www.city.saiki.oita.jp/common/upload/hpkiji/307_class_globalnavi_4ang3npp.png" style="max-width:54px;max-height:40px" alt="" title="" /><p id="navi_tab_text_307">市政情報</p>
+                    </a>
+                </div>
+             </li>
+        </ul>
+        </div>
+    
+        <div id="popNaviArea">
+        
+            <ul class="g_navi " id="g_navi_301" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5417">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05417.html" tabindex="11" >電子申請</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="308">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00308.html" tabindex="12" >防災・安全安心</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="308">
+                        
+                        
+                                <li
+                                    data-global="5561">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05561.html" tabindex="13" >令和8年熊本地震への支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="383">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00383.html" tabindex="14" >防災・危機管理</a>
+                                </li>
+                            
+                                <li
+                                    data-global="384">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/syoubo119/default.html" tabindex="15" >消防・救急</a>
+                                </li>
+                            
+                                <li
+                                    data-global="385">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00385.html" tabindex="16" >交通安全</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5317">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05317.html" tabindex="17" >行政相談</a>
+                                </li>
+                            
+                                <li
+                                    data-global="319">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00319.html" tabindex="18" >消費生活</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5474">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05474.html" tabindex="19" >防犯</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="309">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00309.html" tabindex="20" >交通</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="309">
+                        
+                        
+                                <li
+                                    data-global="386">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00386.html" tabindex="21" >佐伯市公共交通（コミュニティバス・路線バス）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="387">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0037966/index.html" tabindex="22" >佐伯市公共交通（船舶・航路）</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="310">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00310.html" tabindex="23" >戸籍・住民の手続き</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="310">
+                        
+                        
+                                <li
+                                    data-global="388">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00388.html" tabindex="24" >戸籍の届出</a>
+                                </li>
+                            
+                                <li
+                                    data-global="389">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00389.html" tabindex="25" >印鑑登録</a>
+                                </li>
+                            
+                                <li
+                                    data-global="390">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00390.html" tabindex="26" >住所変更（転出・転入・転居）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5032">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05032.html" tabindex="27" >住民票の写し等の第三者交付に係る本人通知制度について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="392">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00392.html" tabindex="28" >各種証明</a>
+                                </li>
+                            
+                                <li
+                                    data-global="393">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00393.html" tabindex="29" >マイナンバーカード</a>
+                                </li>
+                            
+                                <li
+                                    data-global="394">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00394.html" tabindex="30" >パスポート</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="311">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00311.html" tabindex="31" >移住・定住</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="312">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00312.html" tabindex="32" >税金</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="312">
+                        
+                        
+                                <li
+                                    data-global="395">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00395.html" tabindex="33" >市税の納付について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="397">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00397.html" tabindex="34" >市税の証明</a>
+                                </li>
+                            
+                                <li
+                                    data-global="398">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00398.html" tabindex="35" >市民税</a>
+                                </li>
+                            
+                                <li
+                                    data-global="399">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00399.html" tabindex="36" >固定資産税・都市計画税</a>
+                                </li>
+                            
+                                <li
+                                    data-global="400">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00400.html" tabindex="37" >軽自動車税</a>
+                                </li>
+                            
+                                <li
+                                    data-global="402">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00402.html" tabindex="38" >公売</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="313">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00313.html" tabindex="39" >国民健康保険・年金</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="313">
+                        
+                        
+                                <li
+                                    data-global="403">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00403.html" tabindex="40" >国民健康保険</a>
+                                </li>
+                            
+                                <li
+                                    data-global="404">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00404.html" tabindex="41" >後期高齢者医療制度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="405">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00405.html" tabindex="42" >国民年金</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="314">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00314.html" tabindex="43" >ごみ・リサイクル</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="314">
+                        
+                        
+                                <li
+                                    data-global="406">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/dynamic/cal_recycle/pub/default.aspx?c_id=29" tabindex="44" >ごみ収集カレンダー</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5275">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/dynamic/word_l/pub/default.aspx?c_id=30" tabindex="45" >ごみ出し早見表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="407">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00407.html" tabindex="46" >ごみの分け方・出し方</a>
+                                </li>
+                            
+                                <li
+                                    data-global="408">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00408.html" tabindex="47" >収集日程表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="409">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00409.html" tabindex="48" >ごみ処理施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="410">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00410.html" tabindex="49" >ごみ減量・リサイクル</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5557">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji00310559/index.html" tabindex="50" >廃食油回収事業</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5223">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032216/index.html" tabindex="51" >事業所のごみについて</a>
+                                </li>
+                            
+                                <li
+                                    data-global="411">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00411.html" tabindex="52" >その他のお知らせ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="412">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00412.html" tabindex="53" >計画・統計・資料</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="315">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00315.html" tabindex="54" >ケーブルテレビ</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="315">
+                        
+                        
+                                <li
+                                    data-global="413">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031602/index.html" tabindex="55" >ケーブルテレビ事業の概要</a>
+                                </li>
+                            
+                                <li
+                                    data-global="414">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00414.html" tabindex="56" >サービスのご案内</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5472">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05472.html" tabindex="57" >その他のお知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="316">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00316.html" tabindex="58" >ペット・動物</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="316">
+                        
+                        
+                                <li
+                                    data-global="415">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00415.html" tabindex="59" >ペット・動物に関するお知らせ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="417">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00417.html" tabindex="60" >飼い犬登録・狂犬病予防注射</a>
+                                </li>
+                            
+                                <li
+                                    data-global="418">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00418.html" tabindex="61" >飼い主のいない猫（野良猫）について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="419">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00419.html" tabindex="62" >犬の保護収容情報</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="317">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00317.html" tabindex="63" >害虫など</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="317">
+                        
+                        
+                                <li
+                                    data-global="420">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00420.html" tabindex="64" >スズメバチ等駆除防護服貸出し</a>
+                                </li>
+                            
+                                <li
+                                    data-global="421">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00421.html" tabindex="65" >スズメバチ等の駆除費の助成</a>
+                                </li>
+                            
+                                <li
+                                    data-global="422">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00422.html" tabindex="66" >害虫などに関するお知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="318">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00318.html" tabindex="67" >墓地・改葬・火葬場</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="318">
+                        
+                        
+                                <li
+                                    data-global="423">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00423.html" tabindex="68" >墓地及び改葬等</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5352">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05352.html" tabindex="69" >火葬場</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="320">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00320.html" tabindex="70" >水道・下水道</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="320">
+                        
+                        
+                                <li
+                                    data-global="428">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00428.html" tabindex="71" >水道</a>
+                                </li>
+                            
+                                <li
+                                    data-global="429">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00429.html" tabindex="72" >下水道</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="322">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00322.html" tabindex="73" >人権・部落差別問題</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="322">
+                        
+                        
+                                <li
+                                    data-global="431">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00431.html" tabindex="74" >人権施策</a>
+                                </li>
+                            
+                                <li
+                                    data-global="433">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00433.html" tabindex="75" >部落差別の解消の推進</a>
+                                </li>
+                            
+                                <li
+                                    data-global="434">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00434.html" tabindex="76" >人権問題</a>
+                                </li>
+                            
+                                <li
+                                    data-global="435">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00435.html" tabindex="77" >人権教育</a>
+                                </li>
+                            
+                                <li
+                                    data-global="436">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00436.html" tabindex="78" >人権相談</a>
+                                </li>
+                            
+                                <li
+                                    data-global="437">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00437.html" tabindex="79" >人権擁護委員制度</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5028">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05028.html" tabindex="80" >犯罪被害者支援</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="323">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00323.html" tabindex="81" >男女共同参画</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="323">
+                        
+                        
+                                <li
+                                    data-global="438">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00438.html" tabindex="82" >相談（DV・LGBTほか）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="439">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00439.html" tabindex="83" >男女共同参画に向けた取り組み</a>
+                                </li>
+                            
+                                <li
+                                    data-global="440">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00440.html" tabindex="84" >男女共同参画に関する条例・計画</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="324">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00324.html" tabindex="85" >住まいに関する情報</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="324">
+                        
+                        
+                                <li
+                                    data-global="441">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00441.html" tabindex="86" >市営住宅</a>
+                                </li>
+                            
+                                <li
+                                    data-global="442">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00442.html" tabindex="87" >空家等対策</a>
+                                </li>
+                            
+                                <li
+                                    data-global="443">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00443.html" tabindex="88" >改修・リフォーム等支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="444">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00444.html" tabindex="89" >三世代同居支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="445">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00445.html" tabindex="90" >移住者支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="446">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032278/index.html" tabindex="91" >長期優良住宅</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5496">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05496.html" tabindex="92" >婚活事業</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5496">
+                        
+                        
+                                <li
+                                    data-global="5497">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji00310021/index.html" tabindex="93" >OITAえんむす部　出会いサポートセンター</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5341">
+                            
+                            <a href="https://www.city.saiki.oita.jp/kiji0035091/index.html" tabindex="94" >申請書等の押印の見直しについて</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5153">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05153.html" tabindex="95" >プレミアム商品券</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5525">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05525.html" tabindex="96" >生活応援 お米券配布事業</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="325">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00325.html" tabindex="97" >その他(くらし・手続き)</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="325">
+                        
+                        
+                                <li
+                                    data-global="5278">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05278.html" tabindex="98" >その他（共催・後援等）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5203">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05203.html" tabindex="99" >手当・助成</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_302" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="326">
+                            
+                            <a href="https://www.city.saiki.oita.jp/kosodate/default.html" tabindex="101" >子育て支援サイトへ</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="327">
+                            
+                            <a href="https://www.city.saiki.oita.jp/kiji0032281/index.html" tabindex="102" >不妊治療費の助成</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="330">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00330.html" tabindex="103" >子育て関連施設</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="330">
+                        
+                        
+                                <li
+                                    data-global="465">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00465.html" tabindex="104" >教育・文化施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="466">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00466.html" tabindex="105" >スポーツ施設</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="331">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00331.html" tabindex="106" >学校教育の方針・取組み</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="331">
+                        
+                        
+                                <li
+                                    data-global="467">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00467.html" tabindex="107" >学校指導方針</a>
+                                </li>
+                            
+                                <li
+                                    data-global="468">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00468.html" tabindex="108" >小中一貫教育</a>
+                                </li>
+                            
+                                <li
+                                    data-global="471">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00471.html" tabindex="109" >部活動の地域展開</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5530">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05530.html" tabindex="110" >小・中学校の再編</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="332">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00332.html" tabindex="111" >学校給食</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="333">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00333.html" tabindex="112" >小中学校</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="333">
+                        
+                        
+                                <li
+                                    data-global="473">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033313/index.html" tabindex="113" >小学校ホームページ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="474">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033314/index.html" tabindex="114" >中学校ホームページ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="475">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00475.html" tabindex="115" >学校施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="476">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00476.html" tabindex="116" >教科書・副読本</a>
+                                </li>
+                            
+                                <li
+                                    data-global="477">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00477.html" tabindex="117" >就学援助・奨学金</a>
+                                </li>
+                            
+                                <li
+                                    data-global="478">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00478.html" tabindex="118" >入園・入学／転校・校区外就学</a>
+                                </li>
+                            
+                                <li
+                                    data-global="479">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00479.html" tabindex="119" >教育相談・特別支援教育</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="334">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00334.html" tabindex="120" >教育委員会</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="334">
+                        
+                        
+                                <li
+                                    data-global="480">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00480.html" tabindex="121" >教育委員会の概要</a>
+                                </li>
+                            
+                                <li
+                                    data-global="481">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00481.html" tabindex="122" >教育委員会会議</a>
+                                </li>
+                            
+                                <li
+                                    data-global="482">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00482.html" tabindex="123" >佐伯市教育委員会計画・方針・評価</a>
+                                </li>
+                            
+                                <li
+                                    data-global="483">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00483.html" tabindex="124" >教育委員会からのお知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5415">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05415.html" tabindex="125" >その他のお知らせ</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_303" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="335">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00335.html" tabindex="127" >健康・医療</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="335">
+                        
+                        
+                                <li
+                                    data-global="484">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00484.html" tabindex="128" >健康づくり</a>
+                                </li>
+                            
+                                <li
+                                    data-global="485">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032329/index.html" tabindex="129" >検診（健診）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="486">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00486.html" tabindex="130" >大人の予防接種</a>
+                                </li>
+                            
+                                <li
+                                    data-global="488">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji00316/index.html " tabindex="131" >休日当番医</a>
+                                </li>
+                            
+                                <li
+                                    data-global="489">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00489.html" tabindex="132" >感染症等疾病の情報</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="336">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00336.html" tabindex="133" >介護・高齢者福祉</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="336">
+                        
+                        
+                                <li
+                                    data-global="491">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00491.html" tabindex="134" >高齢者向けサービス等</a>
+                                </li>
+                            
+                                <li
+                                    data-global="490">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00490.html" tabindex="135" >介護保険</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5211">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05211.html" tabindex="136" >地域包括支援センター</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5353">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05353.html" tabindex="137" >事業者の方へ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="337">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00337.html" tabindex="138" >お知らせ（健康・福祉）</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="337">
+                        
+                        
+                                <li
+                                    data-global="5019">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05019.html" tabindex="139" >申請書などの様式</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5299">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05299.html" tabindex="140" >こころの相談窓口一覧</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5358">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05358.html" tabindex="141" >お知らせ（健康・福祉）</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="338">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00338.html" tabindex="142" >障がい者の方へ</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="338">
+                        
+                        
+                                <li
+                                    data-global="492">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00492.html" tabindex="143" >手帳の交付</a>
+                                </li>
+                            
+                                <li
+                                    data-global="493">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00493.html" tabindex="144" >手当・年金</a>
+                                </li>
+                            
+                                <li
+                                    data-global="494">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00494.html" tabindex="145" >医療費の助成</a>
+                                </li>
+                            
+                                <li
+                                    data-global="496">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00496.html" tabindex="146" >障がい福祉サービス等について（市民の方へ）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="497">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00497.html" tabindex="147" >障がい福祉サービス等について（事業所の方へ）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="499">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00499.html" tabindex="148" >障がい福祉課からのお知らせ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5296">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05296.html" tabindex="149" >地域自立支援協議会</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5297">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05297.html" tabindex="150" >各種助成・支援など</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="340">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00340.html" tabindex="151" >生活にお困りの方へ</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="341">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00341.html" tabindex="152" >避難行動要支援者</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="342">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00342.html" tabindex="153" >民生委員・児童委員</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="343">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00343.html" tabindex="154" >日本赤十字社佐伯市地区</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="343">
+                        
+                        
+                                <li
+                                    data-global="5030">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05030.html" tabindex="155" >日本赤十字社について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5031">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033736/index.html" tabindex="156" >義援金・海外救援金について</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="344">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00344.html" tabindex="157" >社会福祉法人・指導監査</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="345">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00345.html" tabindex="158" >計画・統計資料</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_304" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="347">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00347.html" tabindex="160" >環境保全・対策</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="347">
+                        
+                        
+                                <li
+                                    data-global="500">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00500.html" tabindex="161" >騒音規制・振動規制・悪臭防止について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="501">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00501.html" tabindex="162" >PM2.5（微小粒子状物質）にご注意ください</a>
+                                </li>
+                            
+                                <li
+                                    data-global="502">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00502.html" tabindex="163" >埋め立て等の届出について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5471">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05471.html" tabindex="164" >熱中症特別警戒アラート</a>
+                                </li>
+                            
+                                <li
+                                    data-global="503">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00503.html" tabindex="165" >佐伯市環境に関するアンケート</a>
+                                </li>
+                            
+                                <li
+                                    data-global="504">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00504.html" tabindex="166" >環境に関する計画・報告</a>
+                                </li>
+                            
+                                <li
+                                    data-global="505">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00505.html" tabindex="167" >環境に関するお知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="348">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00348.html" tabindex="168" >さいきエコマイスター</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="349">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00349.html" tabindex="169" >再生可能エネルギー</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="349">
+                        
+                        
+                                <li
+                                    data-global="508">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00508.html" tabindex="170" >再生可能エネルギー</a>
+                                </li>
+                            
+                                <li
+                                    data-global="509">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00509.html" tabindex="171" >バイオマス</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="350">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00350.html" tabindex="172" >花のあるまちづくり</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="350">
+                        
+                        
+                                <li
+                                    data-global="5410">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05410.html" tabindex="173" >花の名所紹介</a>
+                                </li>
+                            
+                                <li
+                                    data-global="510">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00510.html" tabindex="174" >さいき花の楽園構想</a>
+                                </li>
+                            
+                                <li
+                                    data-global="511">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00511.html" tabindex="175" >花のあるまちづくり事業</a>
+                                </li>
+                            
+                                <li
+                                    data-global="512">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00512.html" tabindex="176" >佐伯市花のコンクール</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5328">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05328.html" tabindex="177" >さいきオープンガーデン</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5422">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05422.html" tabindex="178" >花マップ～さいきの四季折々の景色をたずねて～</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="351">
+                            
+                            <a href="https://www.city.saiki.oita.jp/ecopark/default.html" tabindex="179" >ユネスコエコパーク</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="352">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00352.html" tabindex="180" >都市計画</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="352">
+                        
+                        
+                                <li
+                                    data-global="513">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00513.html" tabindex="181" >佐伯市都市計画マスタープラン</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5475">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05475.html" tabindex="182" >佐伯市立地適正化計画</a>
+                                </li>
+                            
+                                <li
+                                    data-global="514">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00514.html" tabindex="183" >佐伯都市計画図</a>
+                                </li>
+                            
+                                <li
+                                    data-global="515">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00515.html" tabindex="184" >佐伯都市計画道路整備・見直し方針</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5274">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05274.html" tabindex="185" >景観まちづくり</a>
+                                </li>
+                            
+                                <li
+                                    data-global="516">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00516.html" tabindex="186" >各種届出・申請・証明</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="353">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00353.html" tabindex="187" >中心市街地のまちづくり</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="353">
+                        
+                        
+                                <li
+                                    data-global="519">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00519.html" tabindex="188" >中心市街地活性化の取組</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5234">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05234.html" tabindex="189" >佐伯市市街地グランドデザイン</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="354">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00354.html" tabindex="190" >食のまちづくり</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="354">
+                        
+                        
+                                <li
+                                    data-global="521">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00521.html" tabindex="191" >食のまちづくり</a>
+                                </li>
+                            
+                                <li
+                                    data-global="522">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00522.html" tabindex="192" >食育推進計画</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5232">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033904/index.html" tabindex="193" >さいきオーガニック憲章</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5157">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05157.html" tabindex="194" >地域振興</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5157">
+                        
+                        
+                                <li
+                                    data-global="5158">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05158.html" tabindex="195" >佐伯創生推進総合対策事業</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5396">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05396.html" tabindex="196" >地域コミュニティ</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5396">
+                        
+                        
+                                <li
+                                    data-global="5397">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05397.html" tabindex="197" >渡町台</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5398">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05398.html" tabindex="198" >大入島</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5399">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05399.html" tabindex="199" >青山</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5400">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05400.html" tabindex="200" >西上浦</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5439">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05439.html" tabindex="201" >下堅田</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5440">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05440.html" tabindex="202" >木立</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5441">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05441.html" tabindex="203" >上浦</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5443">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05443.html" tabindex="204" >本匠</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5401">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05401.html" tabindex="205" >宇目</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5402">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05402.html" tabindex="206" >直川</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5404">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05404.html" tabindex="207" >鶴見</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5405">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05405.html" tabindex="208" >米水津</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="355">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00355.html" tabindex="209" >生活環境</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="356">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00356.html" tabindex="210" >道路・河川</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="356">
+                        
+                        
+                                <li
+                                    data-global="525">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00525.html" tabindex="211" >道路に関する情報</a>
+                                </li>
+                            
+                                <li
+                                    data-global="526">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00526.html" tabindex="212" >河川に関する情報</a>
+                                </li>
+                            
+                                <li
+                                    data-global="527">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00527.html" tabindex="213" >道路・河川・法定外公共物の占用許可</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5312">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05312.html" tabindex="214" >市民大学</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5312">
+                        
+                        
+                                <li
+                                    data-global="5313">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05313.html" tabindex="215" >市民大学</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5438">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05438.html" tabindex="216" >地籍調査</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_305" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="357">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00357.html" tabindex="218" >歴史・文化・芸術</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="357">
+                        
+                        
+                                <li
+                                    data-global="5178">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05178.html" tabindex="219" >さいき城山桜ホール</a>
+                                </li>
+                            
+                                <li
+                                    data-global="529">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/rekishi/default.html" tabindex="220" >佐伯市歴史資料館</a>
+                                </li>
+                            
+                                <li
+                                    data-global="530">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00530.html" tabindex="221" >その他歴史文化施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="533">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00533.html" tabindex="222" >刊行物</a>
+                                </li>
+                            
+                                <li
+                                    data-global="532">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00532.html" tabindex="223" >文化芸術活動</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5287">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05287.html" tabindex="224" >文化芸術振興計画</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5453">
+                                    
+                                    <a href="https://saikishi-bunkageijutsu-portal.com/" tabindex="225" >佐伯市文化芸術ポータルサイト</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="358">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00358.html" tabindex="226" >文化財</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="358">
+                        
+                        
+                                <li
+                                    data-global="534">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00534.html" tabindex="227" >指定文化財</a>
+                                </li>
+                            
+                                <li
+                                    data-global="535">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033502/index.html" tabindex="228" >埋蔵文化財の保護</a>
+                                </li>
+                            
+                                <li
+                                    data-global="537">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00537.html" tabindex="229" >お知らせ（文化財）</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="359">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00359.html" tabindex="230" >市史編さん事業</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="359">
+                        
+                        
+                                <li
+                                    data-global="5295">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05295.html" tabindex="231" >『佐伯市誌』・『さいき学(まな)ブック』の販売</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5294">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033113/index.html" tabindex="232" >市史編さんだより</a>
+                                </li>
+                            
+                                <li
+                                    data-global="538">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033676/index.html" tabindex="233" >佐伯市史編さん基本方針</a>
+                                </li>
+                            
+                                <li
+                                    data-global="539">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00539.html" tabindex="234" >お知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="360">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00360.html" tabindex="235" >スポーツ施設・スポーツ振興</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="360">
+                        
+                        
+                                <li
+                                    data-global="540">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00540.html" tabindex="236" >スポーツ少年団</a>
+                                </li>
+                            
+                                <li
+                                    data-global="541">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00541.html" tabindex="237" >スポーツ情報</a>
+                                </li>
+                            
+                                <li
+                                    data-global="542">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00542.html" tabindex="238" >スポーツ施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="543">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00543.html" tabindex="239" >各種イベント</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5233">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05233.html" tabindex="240" >合宿誘致</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="361">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00361.html" tabindex="241" >生涯学習</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="361">
+                        
+                        
+                                <li
+                                    data-global="544">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00544.html" tabindex="242" >社会教育施設</a>
+                                </li>
+                            
+                                <li
+                                    data-global="545">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00545.html" tabindex="243" >社会教育事業</a>
+                                </li>
+                            
+                                <li
+                                    data-global="546">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00546.html" tabindex="244" >各種教室・講座・イベント（生涯学習）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="547">
+                                    
+                                    <a href="https://saiki.libweb.jp/" tabindex="245" >三浦造船佐伯図書館</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="362">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00362.html" tabindex="246" >観光情報</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="362">
+                        
+                        
+                                <li
+                                    data-global="548">
+                                    
+                                    <a href="https://www.visit-saiki.jp/" tabindex="247" >佐伯市観光ナビ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="549">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00549.html" tabindex="248" >さいきのまつり・イベント</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5360">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05360.html" tabindex="249" >さいき桜まつり</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5526">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05526.html" tabindex="250" >佐伯港クルーズ客船寄港情報</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5002">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05002.html" tabindex="251" >佐伯ブランド</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5212">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05212.html" tabindex="252" >さいきツーリズム戦略</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5206">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05206.html" tabindex="253" >補助金等</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5473">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05473.html" tabindex="254" >国際交流</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_306" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="364">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00364.html" tabindex="256" >農林水産業</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="364">
+                        
+                        
+                                <li
+                                    data-global="551">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00551.html" tabindex="257" >農地の制度・手続きなど</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5281">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05281.html" tabindex="258" >助成金・補助金など</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5302">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05302.html" tabindex="259" >農業・畜産業</a>
+                                </li>
+                            
+                                <li
+                                    data-global="552">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00552.html" tabindex="260" >林業・林産物</a>
+                                </li>
+                            
+                                <li
+                                    data-global="553">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00553.html" tabindex="261" >さいき農林業サポート人材バンク</a>
+                                </li>
+                            
+                                <li
+                                    data-global="554">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00554.html" tabindex="262" >水産業・漁港</a>
+                                </li>
+                            
+                                <li
+                                    data-global="556">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00556.html" tabindex="263" >農林水産業にチャレンジ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="557">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00557.html" tabindex="264" >計画・施策</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5527">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05527.html" tabindex="265" >農林水産祭「祭日豊」</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5220">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05220.html" tabindex="266" >就職・労働・雇用</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5220">
+                        
+                        
+                                <li
+                                    data-global="5476">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05476.html" tabindex="267" >就労支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5477">
+                                    
+                                    <a href="https://jsite.mhlw.go.jp/oita-roudoukyoku/hw/h44/hw_saiki.html" tabindex="268" target="_blank">求人情報&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin_navi.gif" alt="別ウインドウで開きます" title="" /></a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="365">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00365.html" tabindex="269" >商工業</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="365">
+                        
+                        
+                                <li
+                                    data-global="5478">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05478.html" tabindex="270" >創業支援</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5512">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0038684/index.html" tabindex="271" >事業承継</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5560">
+                                    
+                                    <a href="https://machi-center.net/industrial-education/" tabindex="272" >ふるさと産業教育</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5479">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05479.html" tabindex="273" >セーフティネット保証</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5480">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05480.html" tabindex="274" >利子補給</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5481">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05481.html" tabindex="275" >融資制度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5482">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05482.html" tabindex="276" >相談窓口</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5483">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05483.html" tabindex="277" >お知らせ</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="366">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00366.html" tabindex="278" >企業支援・企業誘致</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="366">
+                        
+                        
+                                <li
+                                    data-global="559">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00559.html" tabindex="279" >企業誘致・立地支援</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="367">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00367.html" tabindex="280" >入札・契約・プロポーザル</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="367">
+                        
+                        
+                                <li
+                                    data-global="560">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00560.html" tabindex="281" >入札・契約（建設工事・建設コンサルタント関連）</a>
+                                </li>
+                            
+                                <li
+                                    data-global="561">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00561.html" tabindex="282" >入札・契約（物品調達等関連）</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="368">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00368.html" tabindex="283" >建築確認・建築指導</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="368">
+                        
+                        
+                                <li
+                                    data-global="5531">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05531.html" tabindex="284" >建築確認申請</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5532">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032276/index.html" tabindex="285" >建築物の定期報告</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5533">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0035360/index.html" tabindex="286" >建築物省エネ法</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5534">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032278/index.html" tabindex="287" >長期優良住宅</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5535">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032268/index.html" tabindex="288" >大分県福祉のまちづくり条例について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5536">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05536.html" tabindex="289" >耐震改修計画・診断結果</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5537">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05537.html" tabindex="290" >建築審査会開催等の状況</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="369">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00369.html" tabindex="291" >事業系ごみ</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="369">
+                        
+                        
+                                <li
+                                    data-global="567">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00567.html" tabindex="292" >事業所のごみについて</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5311">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05311.html" tabindex="293" >建設リサイクル</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+            </ul>
+        
+            <ul class="g_navi " id="g_navi_307" style="display:none;">
+            
+            
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="370">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00370.html" tabindex="295" >佐伯市のご案内</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="370">
+                        
+                        
+                                <li
+                                    data-global="569">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00569.html" tabindex="296" >佐伯市の概要</a>
+                                </li>
+                            
+                                <li
+                                    data-global="570">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00570.html" tabindex="297" >世帯・人口・統計</a>
+                                </li>
+                            
+                                <li
+                                    data-global="571">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031898/index.html" tabindex="298" >市勢要覧</a>
+                                </li>
+                            
+                                <li
+                                    data-global="572">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033756/index.html" tabindex="299" >庁舎のご案内</a>
+                                </li>
+                            
+                                <li
+                                    data-global="573">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033541/index.html" tabindex="300" >各課業務のご案内</a>
+                                </li>
+                            
+                                <li
+                                    data-global="574">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/reiki/reiki_menu.html" tabindex="301" target="_blank">例規集&nbsp;<img src="//www.city.saiki.oita.jp/dynamic/common/images/newwin_navi.gif" alt="別ウインドウで開きます" title="" /></a>
+                                </li>
+                            
+                                <li
+                                    data-global="5003">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05003.html" tabindex="302" >公共施設</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="371">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00371.html" tabindex="303" >市長の部屋</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="371">
+                        
+                        
+                                <li
+                                    data-global="575">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00575.html" tabindex="304" >市長メッセージ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="576">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032387/index.html" tabindex="305" >市長プロフィール</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5516">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05516.html" tabindex="306" >市長の公務日程</a>
+                                </li>
+                            
+                                <li
+                                    data-global="577">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00577.html" tabindex="307" >市長の活動報告</a>
+                                </li>
+                            
+                                <li
+                                    data-global="579">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00579.html" tabindex="308" >記者発表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="580">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0032386/index.html" tabindex="309" >交際費</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5492">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05492.html" tabindex="310" >佐伯市表彰式</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="372">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00372.html" tabindex="311" >広報・広聴</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="372">
+                        
+                        
+                                <li
+                                    data-global="581">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00581.html" tabindex="312" >市民の声</a>
+                                </li>
+                            
+                                <li
+                                    data-global="582">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00582.html" tabindex="313" >市政出前講座</a>
+                                </li>
+                            
+                                <li
+                                    data-global="583">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00583.html" tabindex="314" >市報さいき</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5204">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05204.html" tabindex="315" >佐伯市ホームページ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="584">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00584.html" tabindex="316" >SNSなど</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5279">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05279.html" tabindex="317" >行政チャンネル（11ch）</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="373">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00373.html" tabindex="318" >選挙</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="373">
+                        
+                        
+                                <li
+                                    data-global="585">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00585.html" tabindex="319" >選挙管理委員会からのお知らせ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="586">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00586.html" tabindex="320" >選挙制度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="588">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00588.html" tabindex="321" >投票区と投票所</a>
+                                </li>
+                            
+                                <li
+                                    data-global="589">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00589.html" tabindex="322" >選挙人名簿登録者数と選挙の結果</a>
+                                </li>
+                            
+                                <li
+                                    data-global="590">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00590.html" tabindex="323" >選挙Q&amp;A</a>
+                                </li>
+                            
+                                <li
+                                    data-global="591">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00591.html" tabindex="324" >各種申請書類</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="374">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00374.html" tabindex="325" >行政・財政</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="374">
+                        
+                        
+                                <li
+                                    data-global="592">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031997/index.html" tabindex="326" >予算</a>
+                                </li>
+                            
+                                <li
+                                    data-global="593">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031990/index.html" tabindex="327" >決算</a>
+                                </li>
+                            
+                                <li
+                                    data-global="594">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031991/index.html" tabindex="328" >公会計</a>
+                                </li>
+                            
+                                <li
+                                    data-global="595">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031992/index.html" tabindex="329" >財政事情の公表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="596">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031993/index.html" tabindex="330" >財政収支の見通し</a>
+                                </li>
+                            
+                                <li
+                                    data-global="597">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031994/index.html" tabindex="331" >財政状況資料集</a>
+                                </li>
+                            
+                                <li
+                                    data-global="599">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0031996/index.html" tabindex="332" >公営企業に係る「経営比較分析表」の公表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="600">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0033244/index.html" tabindex="333" >財政健全化比率等</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5323">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05323.html" tabindex="334" >行財政改革</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5543">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05543.html" tabindex="335" >財務状況把握の結果概要</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5015">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05015.html" tabindex="336" >農業委員会</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5015">
+                        
+                        
+                                <li
+                                    data-global="5016">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05016.html" tabindex="337" >農業委員会議事録</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5160">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05160.html" tabindex="338" >申請書類など</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5017">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05017.html" tabindex="339" >農業委員会事務の実施状況等の公表</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5018">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05018.html" tabindex="340" >農地等の利用の最適化の推進に関する指針 </a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="375">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00375.html" tabindex="341" >各種計画</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="375">
+                        
+                        
+                                <li
+                                    data-global="601">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00601.html" tabindex="342" >行財政・総合計画</a>
+                                </li>
+                            
+                                <li
+                                    data-global="604">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00604.html" tabindex="343" >くらし・防災・安全・安心</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5321">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05321.html" tabindex="344" >子育て・学び</a>
+                                </li>
+                            
+                                <li
+                                    data-global="606">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00606.html" tabindex="345" >健康・福祉</a>
+                                </li>
+                            
+                                <li
+                                    data-global="602">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00602.html" tabindex="346" >環境・まちづくり</a>
+                                </li>
+                            
+                                <li
+                                    data-global="603">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00603.html" tabindex="347" >観光・文化・スポーツ</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5320">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05320.html" tabindex="348" >産業・仕事</a>
+                                </li>
+                            
+                                <li
+                                    data-global="607">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00607.html" tabindex="349" >その他の計画</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="377">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00377.html" tabindex="350" >ふるさと納税</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="377">
+                        
+                        
+                                <li
+                                    data-global="5283">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/furusatonouzei/default.html" tabindex="351" >ふるさとさいき応援寄付金</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5285">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05285.html" tabindex="352" >地方創生応援税制（企業版ふるさと納税） </a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5327">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05327.html" tabindex="353" >有料広告</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5327">
+                        
+                        
+                                <li
+                                    data-global="5382">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0035644/index.html" tabindex="354" >有料広告事業について</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5408">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0037612/index.html" tabindex="355" >自由提案型広告事業の募集について</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="378">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00378.html" tabindex="356" >情報公開・個人情報保護</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="378">
+                        
+                        
+                                <li
+                                    data-global="608">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00608.html" tabindex="357" >情報公開</a>
+                                </li>
+                            
+                                <li
+                                    data-global="609">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00609.html" tabindex="358" >個人情報保護</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5420">
+                                    
+                                    <a href="https://www.city.saiki.oita.jp/kiji0037986/index.html" tabindex="359" >佐伯市情報セキュリティポリシー</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5559">
+                            
+                            <a href="https://www.city.saiki.oita.jp/kiji00311567/index.html" tabindex="360" >公示送達</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="379">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00379.html" tabindex="361" >各審議会等の情報</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="379">
+                        
+                        
+                                <li
+                                    data-global="5545">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05545.html" tabindex="362" >令和8年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5514">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05514.html" tabindex="363" >令和7年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5467">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05467.html" tabindex="364" >令和6年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5414">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05414.html" tabindex="365" >令和5年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5378">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05378.html" tabindex="366" >令和4年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5339">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05339.html" tabindex="367" >令和3年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5273">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05273.html" tabindex="368" >令和2年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="610">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00610.html" tabindex="369" >令和元年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="611">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00611.html" tabindex="370" >平成30年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="612">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00612.html" tabindex="371" >平成29年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="613">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00613.html" tabindex="372" >平成28年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="614">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00614.html" tabindex="373" >平成27年度</a>
+                                </li>
+                            
+                                <li
+                                    data-global="615">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00615.html" tabindex="374" >平成26年度</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="380">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00380.html" tabindex="375" >人事・給与</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="380">
+                        
+                        
+                                <li
+                                    data-global="616">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00616.html" tabindex="376" >職員採用情報</a>
+                                </li>
+                            
+                                <li
+                                    data-global="617">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00617.html" tabindex="377" >人事</a>
+                                </li>
+                            
+                                <li
+                                    data-global="618">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list00618.html" tabindex="378" >給与等の状況</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="381">
+                            
+                            <a href="https://www.city.saiki.oita.jp/gikai/default.html" tabindex="379" >市議会</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="382">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00382.html" tabindex="380" >監査</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5154">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05154.html" tabindex="381" >地縁団体</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="376">
+                            
+                            <a href="//www.city.saiki.oita.jp/list00376.html" tabindex="382" >指定管理者制度</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="376">
+                        
+                        
+                                <li
+                                    data-global="5544">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05544.html" tabindex="383" >指定管理者制度運用ガイドライン</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5292">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05292.html" tabindex="384" >指定管理者制度導入施設</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5385">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05385.html" tabindex="385" >市有財産（土地・建物）の売却・貸付</a>
+                        </h3>
+                        <ul class="childmenu" data-ul-global="5385">
+                        
+                        
+                                <li
+                                    data-global="5386">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05386.html" tabindex="386" >市有財産（土地・建物）の売却</a>
+                                </li>
+                            
+                                <li
+                                    data-global="5387">
+                                    
+                                    <a href="//www.city.saiki.oita.jp/list05387.html" tabindex="387" >市有財産（土地・建物）の貸付</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5395">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05395.html" tabindex="388" >包括連携協定</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5498">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05498.html" tabindex="389" >広域連携</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+                    <li class="navi_child ">
+                        <h3 class="navi_child_name " data-global="5359">
+                            
+                            <a href="//www.city.saiki.oita.jp/list05359.html" tabindex="390" >各種報告・お知らせ</a>
+                        </h3>
+                        
+                        
+                        
+                        
+                    </li>
+            </ul>
+        
+        </div>
+        
+    </div>
+
+<input type="hidden" name="ctl00$ctl35$GlobalNavigation$HidErrMsg" id="ctl00_ctl35_GlobalNavigation_HidErrMsg" />
+
+        
+
+<script type="text/javascript">
+
+    function dspGlobalMenu() {
+        var menuDiv = document.getElementById("naviContainerSP");
+        var img = document.getElementById("menuImg");
+        if (menuDiv.style.display == "block") {
+            closeGlobalMenu();
+        } else {
+            menuDiv.style.display = "block";
+            img.src = "http://cms.city.saiki.oita.jp/makehtml/common/images/top1/menu2.png"
+        }
+    }
+
+    function closeGlobalMenu() {
+        var menuDiv = document.getElementById("naviContainerSP");
+        var img = document.getElementById("menuImg");
+        if (menuDiv.style.display == "block") {
+            menuDiv.style.display = "none";
+            img.src = "http://cms.city.saiki.oita.jp/makehtml/common/images/top1/sp/menu.png"
+        }
+    }
+</script>
+
+
+    <div id="headMenu" class="dspGlobalMenu">
+        <img id="menuImg" onclick="dspGlobalMenu();" src="//www.city.saiki.oita.jp/dynamic/common/images/top1/menu.png" alt="メニュー" class="dspGlobalMenu" title="" style="width:59px;height:60px" />
+    </div>
+
+    <!-- メニュー -->
+    <div id="naviContainerSP" style="display:none;">
+        <div id="naviAreaSP">
+            <ul id="navi_listSP">
+                    <li class="navi_tab  " id="navi_tabSP_301">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00301.html">
+                                
+                                <p>くらし・手続き</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_302">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00302.html">
+                                
+                                <p>子育て・学び</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_303">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00303.html">
+                                
+                                <p>健康・福祉</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_304">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00304.html">
+                                
+                                <p>環境・まちづくり</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_305">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00305.html">
+                                
+                                <p>観光・文化・スポーツ</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_306">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00306.html">
+                                
+                                <p>産業・仕事</p>
+                            </a>
+                        </div>
+                     </li>
+                
+                    <li class="navi_tab  " id="navi_tabSP_307">
+                        <div>
+                            <a href="https://www.city.saiki.oita.jp/list00307.html">
+                                
+                                <p>市政情報</p>
+                            </a>
+                        </div>
+                     </li>
+                </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+        <div id="globalNavigationData" data-classid="" data-parentid="" data-topid=""></div>
+        <div id="ctl00_ctl35_globalNavigationData"></div>
+        <!-- global navigation end -->
+    </div>
+</div>
+<div id="mainContent"></div>
+</div><!-- allheader end  -->
+<div id="pankuzuBlock">
+    <div id="pankuzu"><div id="pankuzuArea" data-categoryid="3" data-kijiid="3285" data-subid="15" data-topid="0" data-preview="OFF"></div></div>
+</div>
+
+
+<div id="container">
+
+
+
+
+
+<!-- sideArea start -->
+
+<!-- sideArea end -->
+
+
+<div id="mainBlock">
+    <span id="maincont"></span>
+    <div id="cont_body">
+
+        <div class="preview_label"></div>
+        
+<script type="text/javascript" language="javascript">
+<!--
+window.onload = function(){
+
+    
+    
+    
+
+}
+
+function DanrakuKirikae(dspNo, allCnt){
+    if(allCnt>0)
+    {
+        for(var i=1; i <= allCnt; ++i)
+        {
+            if(dspNo == i)
+            {
+                 document.getElementById("danraku" + i).style.display = "block";
+                 document.getElementById("dMenu" + i).className = "selected";
+            }
+            else
+            {
+                 document.getElementById("danraku" + i).style.display = "none";
+                 document.getElementById("dMenu" + i).className = "";
+            }
+       
+        }
+    }
+}
+//-->
+</script>
+
+<div style="margin:0px auto;"></div>
+
+
+
+<article>
+    <div id="mainShosai">
+        
+        
+        
+
+        
+        <div class="BottomArea">
+
+            <table class="containerWidth">
+		        <tr>
+		            <td style="text-align:left;">
+		                <h1 class="title">マンホールカード配布情報</h1>
+                        
+                        <div id="snsButtonArea"></div>
+                        <div class="kijiSubInfo">
+                            <div class="updDate">最終更新日：<time datetime="2026-04-14T16:51:32+09:00">2026年4月14日</time></div>
+                            
+                            <div id="kijiKengenArea"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+		                		            
+		                
+    		        
+		                <div class="danraku" id="danraku1" style="display:block;"><h2 class="title">マンホールカードを配布しています</h2><p>佐伯市では以下によりマンホールカードを配布しています。</p><h3 class="title">配布場所</h3><p>佐伯市城下東町8番19号　佐伯市城下町観光交流館<br>※開館時間及び休館日については<a href="https://www.visit-saiki.jp/spots/detail/f868f841-e816-4f0d-8dc8-ba22e082036d" target="_blank">佐伯市城下町観光交流館のホームページ<img title="" alt="別ウィンドウで開きます" src="https://www.city.saiki.oita.jp/dynamic/common/images/newwin.gif">（外部リンク）</a>をご覧ください。</p><p>【交通案内】<br>　JR佐伯駅から車で約4分<br>　東九州自動車道「佐伯IC」から車で約7分<br>　大手前バス停から徒歩約6分</p><h3 class="title">配布方法</h3><p>〇一人一枚で無料配布します。<br>〇配布場所にお越しいただき、館内スタッフにお声がけください。<br>〇郵送による配布や事前予約等は行っていません。<br>〇在庫に限りがあるため品切れになる場合があります。品切れの場合はホームページでお知らせします。</p><h3 class="title">問い合わせ先</h3><p>佐伯市上下水道部下水道課下水道業務・維持管理係（佐伯市役所3階）<br>住　　所：佐伯市中村南町1番1号<br>電話番号：0972-22-4618<br>※土日祝日を除く8時30分から17時00分の間にお問い合わせください。</p><h2 class="title">佐伯市のマンホールカード</h2><div tmptype="3" class="wys_template wys_imgList wys_img5"><ul><li><img src="https://www.city.saiki.oita.jp/kiji0033285/3_3285_51214_up_pg6yrh3s.jpg" alt="佐伯市マンホールカード" title="" draggable="false"></li></ul></div><p class="body"><br></p><div class="clear"></div></div>
+		            </td>
+	            </tr>
+            </table>      
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+</article>
+
+
+
+<div id="weblioLinkJsArea"></div>
+
+
+<div id="archiveTransitionArea">
+    <div class="archiveTransitionPrev"><a href="">前の記事へ</a></div>
+    <div class="archiveTransitionNext"><a href="">次の記事へ</a></div>
+</div>
+
+
+<div id="classTagsArea"></div>
+
+
+<div id="toiawaseInfo">
+
+    <div class="toiText"><strong>このページに関する<br />お問い合わせは</strong></div>
+    <div class="toiKugiri"></div>
+    <div class="toiData"></div>
+</div>
+
+<div id="hpkijiid_shosai">（ID:3285）</div>
+
+
+<div id="footerSoegakiArea"></div>
+
+
+<div id="shosaiBanArea" data-topid="0" data-dspshosai="0" data-preview="OFF"></div>
+
+
+<div id="recommendArea"></div>
+
+
+<div id="browsingHistoryArea"></div>
+
+<div id="accessCountHpKiji"
+    data-categoryid="3"
+    data-kijiid="3285"
+    data-subid="15"
+    data-topid="0"
+    data-preview="OFF"></div>
+
+<script type="text/javascript" language="javascript">
+    jQuery(function () {
+        jQuery.ajax({
+            type: 'POST',
+            cache: false,
+            url: '//www.city.saiki.oita.jp/dynamic/hpkiji/saverecommend.ashx',
+            data: {
+                "id": 3285,
+                "preview": "OFF"
+            }
+        }).done(function (response) {
+        }).fail(function (response) {
+        });
+    });
+</script>
+
+<script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/browsinghistory.js"></script>
+<script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/setcontents.js"></script>
+<script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/layoutadjustment.js"></script>
+<script type="text/javascript" language="javascript">
+    jQuery.noConflict();
+    jQuery(function () {
+        var set = new setContents();
+        set.rootUrl = "https://www.city.saiki.oita.jp/dynamic/";
+
+        
+        var bannerPrm = {
+            "top_id": jQuery("#shosaiBanArea").attr("data-topid"),
+            "dspShosaiFlg": jQuery("#shosaiBanArea").attr("data-dspshosai"),
+            "preview": jQuery("#shosaiBanArea").attr("data-preview")
+        }
+        set.banner("#shosaiBanArea", bannerPrm);
+
+        
+        var footerSoegakiPrm = {
+            "newWinOpnFlg": "True",
+            "pdfSetsumeiFlg": "ON",
+            "pdfDownloadFlg": "ON"
+        }
+        set.footerSoegaki("#footerSoegakiArea", footerSoegakiPrm);
+
+        
+        jQuery(".toiData").each(function () {
+
+            var toiawasePrm = {
+                "mdl": "85",
+                "c_id": "3",
+                "id": "3285",
+                "sub_id": "15",
+                "top_id": "0",
+                "preview": "OFF"
+            }
+
+            set.toiawase(this, toiawasePrm);
+        });
+
+        
+        var kijiKengenPrm = {
+            "mdl": "85",
+            "grp_id": "43",
+            "ka_no_disp": "1",
+            "top_id": "0",
+            "preview": "OFF"
+        }
+        set.kijiKengen("#kijiKengenArea", kijiKengenPrm);
+
+        
+        var snsButtonPrm = {
+            "c_id": "3",
+            "id": "3285",
+            "sub_id": "15",
+            "ttl": "",
+            "top_id": "0",
+            "preview": "OFF"
+        }
+        set.snsButton("#snsButtonArea", snsButtonPrm);
+
+        
+        var weblioLinkJsPrm = {
+            "c_id": "3"
+        }
+        set.weblioLinkJs("#weblioLinkJsArea", weblioLinkJsPrm);
+
+        
+        var recommendPrm = {
+            "c_id": "3",
+            "id": "3285",
+            "top_id": "0",
+            "preview": "OFF"
+        }
+        set.recommend("#recommendArea", recommendPrm);
+
+        
+        var pankuzuParam = {
+            "c_id": jQuery("#pankuzuArea").attr("data-categoryid"),
+            "class_id": "",
+            "id": jQuery("#pankuzuArea").attr("data-kijiid"),
+            "sub_id": jQuery("#pankuzuArea").attr("data-subid"),
+            "top_id": jQuery("#pankuzuArea").attr("data-topid"),
+            "preview": jQuery("#pankuzuArea").attr("data-preview")
+        }
+        set.pankuzu("#pankuzuArea", "#footerPankuzuArea", pankuzuParam);
+
+        
+        var archiveTransitionParam = {
+            "c_id": "3",
+            "class_id": "",
+            "id": "3285",
+            "wd": "",
+            "sely": "",
+            "selm": "",
+            "top_id": "0",
+            "preview": "OFF"
+        }
+        set.archiveTransition("#archiveTransitionArea", archiveTransitionParam);
+
+        
+        var classTagsParam = {
+            "rootURL":"//www.city.saiki.oita.jp/dynamic/",
+            "c_id": "3",
+            "class_id": "",
+            "id": "3285",
+            "sub_id": jQuery("#pankuzuArea").attr("data-subid"),
+            "top_id": "0",
+            "preview": "OFF"
+        }
+        set.classTags("#classTagsArea", classTagsParam);
+
+        var accessCountPrm = {
+            "c_id": jQuery("#accessCountHpKiji").attr("data-categoryid"),
+            "id": jQuery("#accessCountHpKiji").attr("data-kijiid"),
+            "sub_id": jQuery("#accessCountHpKiji").attr("data-subid"),
+            "top_id": jQuery("#accessCountHpKiji").attr("data-topid"),
+            "preview": jQuery("#accessCountHpKiji").attr("data-preview")
+        }
+        set.accessCountHpKiji(accessCountPrm);
+    });
+
+    
+    jQuery(function(){
+        var fn_bh = new setBrowsingHistory();
+        fn_bh.rootUrl = "https://www.city.saiki.oita.jp/dynamic/";
+        fn_bh.page_type = "detail";
+        fn_bh.top_id = "0";
+        fn_bh.kiji_id = "3285";
+        fn_bh.preview_type = "OFF";
+        fn_bh.loadBrowsingHistory();
+    });
+</script>
+
+        
+
+     </div> <!-- cont_body -->
+</div> <!-- mainBlock -->
+
+<div class="clear"></div>
+
+<!-- allfooter start  -->
+<iframe src="//www.city.saiki.oita.jp/dynamic/common/kijienqiframe.aspx?c_id=3&amp;id=3285" id="kijiEnqArea" style="border:0px none;" title="kijienq"></iframe>
+
+
+
+
+
+
+<div class="indent"></div>
+<div id="pagetop">
+    <a href="#top">ページの先頭へ</a></div>
+
+<div id="footerbtn" style="display:none;">
+    
+    
+</div>
+
+</div>
+
+<div id="footerPankuzu">
+    <div id="footerPankuzuArea"></div>
+</div>
+
+
+<span id="ctl00_LblCopyrights"></span>
+
+
+<!--[if lt IE 9]>
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/footer/top1.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="//www.city.saiki.oita.jp/dynamic/common/css/footer/top1.css" rel="stylesheet" type="text/css" /><div id="footerArea">
+	<!-- footer menu start -->
+
+<!-- BannerAllDisp start -->
+<div id="banAllDispArea25" class="banAllDisp" style="display:none">
+    <ul>
+        <li id="banAllDisp25" data-categoryid="25" data-topid="0" data-noshuffle="False" data-preview="OFF"></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    jQuery.noConflict();
+
+    function setBanAllDispContents25() {
+        this.rootUrl = null;
+        this.banner = function (elm, prm) {
+            if (jQuery(elm).length) {
+                jQuery.ajax({
+                    type: 'GET',
+                    cache: false,
+                    url: this.rootUrl + 'common/banalldisp/handler/SetBanner.ashx',
+                    data: prm
+                }).done(function (response) {
+                    jQuery(elm).replaceWith(response);
+                }).fail(function (response) {
+                });
+            }
+        };
+    }
+
+    jQuery(function () {
+        var set = new setBanAllDispContents25();
+        set.rootUrl = "https://www.city.saiki.oita.jp/dynamic/";
+
+        
+        var banalldispPrm = {
+            "c_id": jQuery("#banAllDisp25").attr("data-categoryid"),
+            "top_id": jQuery("#banAllDisp25").attr("data-topid"),
+            "preview": jQuery("#banAllDisp25").attr("data-preview"),
+            "noShuffleFlg": jQuery("#banAllDisp25").attr("data-noshuffle")
+        }
+        set.banner("#banAllDispArea25", banalldispPrm);
+    });
+</script>
+<!-- BannerAllDisp end -->
+
+
+
+
+<!-- footer menu end -->
+
+<!-- site info start -->
+
+<div id="siteinfo">
+    <div id="toiawasewaku">
+    <div id="toiawase">
+    <div class="footerimg"><img src="//www.city.saiki.oita.jp/dynamic/common/images/top1/shimbol.png" alt="佐伯市" title=""></div>
+    <div class="footeradd">
+        <p><strong>法人番号　2000020442054</strong><br />
+                〒876-8585&nbsp;
+                大分県佐伯市中村南町1-1&nbsp;&nbsp;<br />
+                電話番号:<span class="tel"><span class="teltoon"><a href="tel:0972-22-3111">0972-22-3111（代表）</a></span><span class="teltooff">0972-22-3111（代表）</span></span>&nbsp;&nbsp;
+                ファックス:0972-22-3124（代表）&nbsp;&nbsp;
+                
+            </p></div>
+        
+        <div class="clear"></div>
+        <!-- フッターボタン -->
+    
+        
+        
+<div class="clear"></div>
+</div></div>
+
+<div class="clear"></div>
+<div id="footerMenu">
+<!-- 問合せ先 -->
+
+        <ul id="footertextlink">
+            <li><a href="https://www.city.saiki.oita.jp/kiji0033202/index.html">交通アクセス</a></li>
+            <li><a href="//www.city.saiki.oita.jp/list05204.html">佐伯市ホームページについて</a></li>
+            <li><a href="//www.city.saiki.oita.jp/dynamic/link_m/pub/default.aspx?c_id=31">リンク集</a></li>
+            <li><a href="//www.city.saiki.oita.jp/sitemap.html">サイトマップ</a></li>
+        </ul>
+        <div class="clear"></div>
+</div>
+
+
+</div>
+<!-- copyright -->
+<div id="cp" lang="en">
+    Copyright(C) City of Saiki,All rights reserved.
+</div>
+
+<!-- site info end -->
+
+</div>
+<!-- allfooter end  -->
+
+<input type="hidden" name="fontResize" id="fontResize" value="" />
+
+</form>
+<noscript>本サイトは一部のページ・機能にJavascriptを使用しております。</noscript>
+
+<script type="text/javascript" src="//www.city.saiki.oita.jp/dynamic/common/js/ajaxcalforie6.js"></script>
+<!-- google analytics start -->
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id= UA-158821340-1"></script><script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', ' UA-158821340-1');</script>
+<!-- google analytics end -->
+
+
+    <script type="text/javascript" language="javascript">
+        jQuery.noConflict();
+
+        // 画面リサイズ時telto変更
+        var styleSheetSpWidth = 480;
+        var timer = false;
+        jQuery(window).resize(function () {
+            if (timer !== false) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(function () {
+                //画面サイズ切り分け
+                if(styleSheetSpWidth > window.innerWidth){
+                    //SP teltoあり
+                    jQuery('.teltoon').css('display', 'inline-block');
+                    jQuery('.teltooff').css('display', 'none');
+                }else{
+                    //PC teltoなし
+                    jQuery('.teltoon').css('display', 'none');
+                    jQuery('.teltooff').css('display', 'inline-block');
+                }
+            }, 200);
+        });
+
+        function searchResult(keyword) {
+            jQuery.ajax({
+                type: 'POST',
+                cache: false,
+                url: '//www.city.saiki.oita.jp/dynamic/common/handler/registersearchkeyword.ashx',
+                data: {
+                    "c_id": "2",
+                    "q": keyword,
+                    "nowurl": location.href
+                }
+            }).done(function (response) {
+                eval(response);
+            });
+        }
+
+        var pankuzu_flg = false;
+        function pankuzu_openclose(kbn) {
+            if (!pankuzu_flg) {
+                jQuery("#pankuzu-more, #footerPankuzu-more").hide();
+                jQuery("#pankuzu-close, #footerPankuzu-close").show();
+                jQuery(".pankuzu-toggle").show();
+                pankuzu_flg = true;
+            }
+            else {
+                jQuery("#pankuzu-more, #footerPankuzu-more").show();
+                jQuery("#pankuzu-close, #footerPankuzu-close").hide();
+                jQuery(".pankuzu-toggle").hide();
+                pankuzu_flg = false;
+            }
+        }
+
+        jQuery(function () {
+            jQuery('img[usemap]').rwdImageMaps();
+        });
+    </script>
+    
+    <script type="text/javascript" language="javascript">
+        jQuery(function () {
+            var fn = new setCookie();
+            fn.rootUrl = "https://www.city.saiki.oita.jp/dynamic/";
+            fn.topFlg = "False";
+            fn.topCategoryRootFolder = "";
+            fn.fontSizeCookieName = "FONT_SIZE";
+            fn.colorCookieName = "COLOR";
+
+            fn.fontSizeIconArr = setFontSizeIconArr();
+            fn.loadFontSize();
+            fn.loadColor();
+
+            
+                var prm = {
+                    "top_id": "",
+                    "dspTopFlg": "OFF"
+                }
+                setFloatHeader(prm, "//www.city.saiki.oita.jp/dynamic/");
+            
+        });
+
+        function setFontSizeIconArr() {
+            var fontSizeIconArr = {
+                "標準": { size: "fontSizeN", on: "https://www.city.saiki.oita.jp/dynamic/common/images/top1/black-mozi-m.gif", off: "https://www.city.saiki.oita.jp/dynamic/common/images/top1/white-mozi-m.gif" },
+                "拡大": { size: "fontSizeB", on: "https://www.city.saiki.oita.jp/dynamic/common/images/top1/black-mozi-l.gif", off: "https://www.city.saiki.oita.jp/dynamic/common/images/top1/white-mozi-l.gif" },
+            };
+
+            return fontSizeIconArr;
+        }
+    </script>
+    
+</body>
+</html>

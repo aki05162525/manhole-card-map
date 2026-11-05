@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-05T05:05:13.274330+00:00",
+  "targets": 102,
+  "updates": 77,
+  "unresolved": 25,
+  "snapshotsHashVerified": 389,
+  "coordinateReextractions": 77,
+  "idCoverage": "exact",
+  "existingCoordinatesOverwritten": 0,
+  "actorType": "ai",
+  "humanOrFieldVerification": false
+}

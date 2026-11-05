@@ -1,0 +1,248 @@
+[
+  {
+    "sourceUrl": "https://www.city.yonago.lg.jp/24306.htm",
+    "snapshotPath": "data/evidence/national/proposals-west-south/7563d353b2823f12eb0a.html",
+    "snapshotSHA256": "07cacecf9730badf9f537727718cdb7bd4ed500f5788daffed1d80049967edcc",
+    "importedFrom": "data/evidence/national/chugoku-shikoku/7563d353b2823f12eb0a.html",
+    "originalFetch": {
+      "url": "http://www.city.yonago.lg.jp/24306.htm",
+      "result": "HTTP 200",
+      "fetchedAt": "2026-11-05T04:22:57.338771+00:00",
+      "finalUrl": "https://www.city.yonago.lg.jp/24306.htm",
+      "snapshotPath": "data/evidence/national/chugoku-shikoku/7563d353b2823f12eb0a.html",
+      "sha256": "07cacecf9730badf9f537727718cdb7bd4ed500f5788daffed1d80049967edcc"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/e2b7f711ade6b80ca544.html",
+    "snapshotSHA256": "3038985bfb38bed0f3cc77378028af22edfc746a3d04f31f8bc8aaa3f0ee8d12",
+    "importedFrom": "data/evidence/national/chugoku-shikoku/e2b7f711ade6b80ca544.html",
+    "originalFetch": {
+      "url": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+      "result": "HTTP 200",
+      "fetchedAt": "2026-11-05T04:23:02.913347+00:00",
+      "finalUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+      "snapshotPath": "data/evidence/national/chugoku-shikoku/e2b7f711ade6b80ca544.html",
+      "sha256": "3038985bfb38bed0f3cc77378028af22edfc746a3d04f31f8bc8aaa3f0ee8d12"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+    "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+    "importedFrom": "data/evidence/national/chugoku-shikoku/0dc1eafad4ab749f8a1a.html",
+    "originalFetch": {
+      "url": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+      "result": "HTTP 200",
+      "fetchedAt": "2026-11-05T04:26:31.292911+00:00",
+      "finalUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+      "snapshotPath": "data/evidence/national/chugoku-shikoku/0dc1eafad4ab749f8a1a.html",
+      "sha256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/1d9283a166df0a413426.html",
+    "snapshotSHA256": "873b093b35f7afea1b58639f55e7947551ed5a1e46010832a54f8ebbc7516bc9",
+    "importedFrom": "data/evidence/national/chugoku-shikoku/1d9283a166df0a413426.html",
+    "originalFetch": {
+      "url": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
+      "result": "HTTP 200",
+      "fetchedAt": "2026-11-05T04:24:57.283165+00:00",
+      "finalUrl": "https://www.city.kochi-konan.lg.jp/soshikikarasagasu/jogesuidoka/jogesuido/1/2628.html",
+      "snapshotPath": "data/evidence/national/chugoku-shikoku/1d9283a166df0a413426.html",
+      "sha256": "873b093b35f7afea1b58639f55e7947551ed5a1e46010832a54f8ebbc7516bc9"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/e47effd09b24ee4c4b35.html",
+    "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/e47effd09b24ee4c4b35.html",
+    "originalFetch": {
+      "url": "http://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+      "fetchedAt": "2026-11-05T04:22:55.784726+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/e47effd09b24ee4c4b35.html",
+      "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/8db9ad388e6f7b73c2b9.html",
+    "snapshotSHA256": "f58fb1443bddd43fa35da47109576b3709ef8be1153d85792c046bca1aebb4ef",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/8db9ad388e6f7b73c2b9.html",
+    "originalFetch": {
+      "url": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+      "fetchedAt": "2026-11-05T04:26:17.478725+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/8db9ad388e6f7b73c2b9.html",
+      "snapshotSHA256": "f58fb1443bddd43fa35da47109576b3709ef8be1153d85792c046bca1aebb4ef",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/55f08b0378198b76bd98.html",
+    "snapshotSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/55f08b0378198b76bd98.html",
+    "originalFetch": {
+      "url": "http://www.city.onojo.fukuoka.jp/s079/010/010/040/20210830115036.html",
+      "fetchedAt": "2026-11-05T04:23:06.911344+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/55f08b0378198b76bd98.html",
+      "snapshotSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/de079f3fe37d62813d61.html",
+    "snapshotSHA256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/de079f3fe37d62813d61.html",
+    "originalFetch": {
+      "url": "http://www.city.munakata.lg.jp/w032/010/030/050/0220/20180806110243.html",
+      "fetchedAt": "2026-11-05T04:22:58.840454+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/de079f3fe37d62813d61.html",
+      "snapshotSHA256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/886c9a3c2dafefb88728.html",
+    "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/886c9a3c2dafefb88728.html",
+    "originalFetch": {
+      "url": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+      "fetchedAt": "2026-11-05T04:23:52.344698+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/886c9a3c2dafefb88728.html",
+      "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+    "snapshotPath": "data/evidence/national/proposals-west-south/38a2c06be0965d24d45b.pdf",
+    "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/38a2c06be0965d24d45b.pdf",
+    "originalFetch": {
+      "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+      "fetchedAt": "2026-11-05T04:31:17.365709+00:00",
+      "status": 200,
+      "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+      "contentType": "application/pdf",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/38a2c06be0965d24d45b.pdf",
+      "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/412ac228b0c2916127b1.html",
+    "snapshotSHA256": "e5545f6251aee9c20023c0cd6c5a8ffbf026704201ee801ecca835b7ee60ff54",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/412ac228b0c2916127b1.html",
+    "originalFetch": {
+      "url": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+      "fetchedAt": "2026-11-05T04:26:17.469894+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/412ac228b0c2916127b1.html",
+      "snapshotSHA256": "e5545f6251aee9c20023c0cd6c5a8ffbf026704201ee801ecca835b7ee60ff54",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/9a2da8a57f13603c6013.html",
+    "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/9a2da8a57f13603c6013.html",
+    "originalFetch": {
+      "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+      "fetchedAt": "2026-11-05T04:24:42.236076+00:00",
+      "status": 200,
+      "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/9a2da8a57f13603c6013.html",
+      "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/4fb086a751da5add77e7.html",
+    "snapshotSHA256": "f8688ed07fefd9633b08f21152bc9cf3f56826e6495aa400216d4ef3238919e4",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/4fb086a751da5add77e7.html",
+    "originalFetch": {
+      "url": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+      "fetchedAt": "2026-11-05T04:24:39.073995+00:00",
+      "status": 200,
+      "finalUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/4fb086a751da5add77e7.html",
+      "snapshotSHA256": "f8688ed07fefd9633b08f21152bc9cf3f56826e6495aa400216d4ef3238919e4",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/80810778e8a59194b0c3.html",
+    "snapshotSHA256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/80810778e8a59194b0c3.html",
+    "originalFetch": {
+      "url": "https://www.city.okinawa.okinawa.jp/about/2749127673",
+      "fetchedAt": "2026-11-05T04:24:16.203482+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/80810778e8a59194b0c3.html",
+      "snapshotSHA256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849",
+      "result": "原本取得（下記判断参照）"
+    }
+  },
+  {
+    "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+    "snapshotPath": "data/evidence/national/proposals-west-south/7bb3156c0f05ccde08b4.html",
+    "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+    "importedFrom": "data/evidence/national/chugoku-shikoku/7bb3156c0f05ccde08b4.html",
+    "originalFetch": {
+      "url": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+      "result": "HTTP 200",
+      "fetchedAt": "2026-11-05T04:26:35.277238+00:00",
+      "finalUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+      "snapshotPath": "data/evidence/national/chugoku-shikoku/7bb3156c0f05ccde08b4.html",
+      "sha256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a"
+    }
+  },
+  {
+    "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/8519b0a09cae5bfe1775.html",
+    "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+    "importedFrom": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+    "originalFetch": {
+      "url": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+      "fetchedAt": "2026-11-05T04:24:32.975642+00:00",
+      "status": 200,
+      "finalUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+      "contentType": "text/html",
+      "snapshotPath": "data/evidence/national/kyushu-okinawa/8519b0a09cae5bfe1775.html",
+      "snapshotSHA256": "95d5bccb3eafe1036c9ef9d3391fa20340b5087d12f3ecd661f3a5c096726a08",
+      "result": "原本取得（下記判断参照）"
+    }
+  }
+]

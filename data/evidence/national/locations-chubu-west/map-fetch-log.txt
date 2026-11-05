@@ -1,0 +1,48 @@
+{'source': 'http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html', 'url': 'https://maps.app.goo.gl/czwyQNcdzEY7Wmju8', 'label': 'Googleマップ'}
+{'source': 'http://www.city.takayama.lg.jp', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://hayabusamuseum.town.yaotsu.lg.jp/', 'url': 'https://maps.app.goo.gl/CCf7KAEihStBg8CD7', 'label': '八百津町港町公民館前（八百津町八百津4037－1）'}
+{'source': 'https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html', 'url': 'https://goo.gl/maps/c46B5tun3oq', 'label': 'グーグルマップ'}
+{'source': 'https://www.city.kaizu.lg.jp/kurashi/0000001234.html', 'url': 'https://goo.gl/maps/DLoh4phy4jm6m1mc7', 'label': 'さぼう遊学館の地図（Googleマップ） 外部リンク'}
+{'source': 'https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001406.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001408.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001409.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001413.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004141/1004416/1004417.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.kuruto.jp/', 'url': 'https://maps.app.goo.gl/PrNdbE2noXZ7j9px6', 'label': 'Google MAP'}
+{'source': 'https://www.town.yaotsu.lg.jp/7629.htm', 'url': 'https://maps.app.goo.gl/kivwrStDCVU2re4d6', 'label': 'googleマップ（設置場所）'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/5XfJ6SDWJ25ZXxMm8', 'label': 'あじさいエコパーク'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/GFBRVwpPVXWVA2pk9', 'label': '美濃加茂市上下水道課（市役所分庁舎）'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/SwzNE7AUhqnUVFZa8', 'label': 'みのかも観光案内所'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/5XfJ6SDWJ25ZXxMm8', 'label': 'あじさいエコパーク'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/GFBRVwpPVXWVA2pk9', 'label': '美濃加茂市上下水道課（市役所分庁舎）'}
+{'source': 'https://www.city.minokamo.lg.jp/soshiki/17/1948.html', 'url': 'https://maps.app.goo.gl/SwzNE7AUhqnUVFZa8', 'label': 'みのかも観光案内所'}
+{'source': 'https://www.city.fujinomiya.lg.jp/info/p002518.html', 'url': 'https://maps.app.goo.gl/hZq4QVgFBSKZThUX7', 'label': '富士宮市役所の地図（外部サイトへリンク）'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/gKf919FTmVAVQbgF7', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/fVn7f6DtPcPD3C8d9', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/nNtikwBjHziHSa216', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/bYC87cyx5cLBkPDP8', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/ttsnmRSP5X1EkEEd7', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/7RoJqBUSM8BKrP3E7', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/PnZYE6rDtguDjLsv5', 'label': 'Google Maps'}
+{'source': 'https://www.sourifureai.com/outline/', 'url': 'https://maps.app.goo.gl/2iUHcU6X7BpeyayKA', 'label': 'Google Maps'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000028/1003902.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1021675/index.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.kaizu.lg.jp/shisei/0000000231.html', 'url': 'https://goo.gl/maps/24nZrwDFPRZUUdtH9', 'label': '海津市役所の地図（Googleマップ）外部リンク 外部リンク'}
+{'source': 'https://www.city.kaizu.lg.jp/shisei/0000000231.html', 'url': 'https://goo.gl/maps/RtSDuLAet9j8bSVe9', 'label': '海津市の地図（Googleマップ） 外部リンク'}
+{'source': 'https://www.aeontown.co.jp/fujiminami/access/', 'url': 'https://maps.app.goo.gl/BGQLqgxEWFrA5DBm9', 'label': 'Google mapで見る'}
+{'source': 'https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001405.html', 'url': 'https://maps.app.goo.gl/TdKG6Uxjyio41itE6', 'label': 'Map'}
+{'source': 'https://www.city.kaizu.lg.jp/shisei/0000000171.html', 'url': 'https://goo.gl/maps/24nZrwDFPRZUUdtH9', 'label': '海津市役所の地図（Googleマップ） 外部リンク'}
+{'source': 'https://www.water.city.nagoya.jp/shiryokan/facilities/access.html', 'url': 'https://goo.gl/maps/7QXx92t2xp6d7mjt8', 'label': '◆Google Mapでご覧になる方はこちら◆'}
+{'source': 'https://fujinomiya.gr.jp/guide/1241/', 'url': 'https://maps.app.goo.gl/t3VS5Pj8c17mTGaP9', 'label': 'Googleマップで表示する'}
+{'source': 'https://fujinomiya.gr.jp/guide/1246/', 'url': 'https://maps.app.goo.gl/ntzzEJFgCjpMuMfMA', 'label': 'Googleマップで表示する'}
+{'source': 'https://www.city.fuji.shizuoka.jp/info/p005020.html', 'url': 'https://goo.gl/maps/3i8j3ZqJJznSfEuc7', 'label': '富士市役所の場所をグーグルマップで確認する（グーグルマップ）（外部サイトへリンク）'}
+{'source': 'https://gotemba.jp/information/1380/', 'url': 'https://maps.app.goo.gl/G5ZUFbFTQSiefAxY8', 'label': '〒412-0008 静岡県御殿場市印野1380-15'}
+{'source': 'https://www.kaninavi.jp/gallery/gallery-1078/', 'url': 'https://maps.app.goo.gl/bWgEKa7idbYPHFrS8', 'label': 'Google Mapで⾒る'}
+{'source': 'https://www.yaizu.gr.jp/about/', 'url': 'https://maps.app.goo.gl/Q8HJvoQwpdzwbYer5', 'label': 'MAP'}
+{'source': 'https://coconico.jp/access/', 'url': 'https://goo.gl/maps/NrVmGth913SnM1YU8', 'label': ''}
+{'source': 'https://machimobi-toyota.jp/', 'url': 'https://maps.app.goo.gl/cDCDA7ZBrJD8cosn7', 'label': '地図を見る'}
+{'source': 'https://machimobi-toyota.jp/', 'url': 'https://maps.app.goo.gl/gvMbfUvF8ivH42j26', 'label': '地図を見る'}
+{'source': 'https://machimobi-toyota.jp/', 'url': 'https://maps.app.goo.gl/CfYLra2Q737KmkVNA', 'label': '地図を見る'}

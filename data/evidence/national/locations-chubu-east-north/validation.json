@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-05T05:04:04.473959+00:00",
+  "scopePrefixes": [
+    "15",
+    "16",
+    "17",
+    "18"
+  ],
+  "targetFacilities": 88,
+  "updates": 63,
+  "unresolved": 25,
+  "manifestEntries": 266,
+  "checks": [
+    "88 canonical unlocated IDs exactly covered once",
+    "no originally located facility updated",
+    "all saved raw bytes SHA256 and sizes match",
+    "all fetch timestamps and URL hashes present",
+    "all supplement paths local to dedicated evidence directory",
+    "every coordinate numeric value occurs in its cited raw snapshot",
+    "all expanded Google links occur in cited official parent raw",
+    "all unresolved URLs have manifest records",
+    "all facility audit snapshot references match hashes"
+  ],
+  "inputHashes": {
+    "data/work/national-input/full.json": "6068da023f3bd4cb1e292b3e43877411a1505356e4377bbf02a255a89afb1987",
+    "data/work/national-input/quality.json": "8561505b9c8c0426fae93bf35306bd53f324e75527b842986da3d1df7b31012b",
+    "data/work/national-input/places.json": "152bb738c77e95fcbd54702e42a2107cfd5949d614c7e6b4a706c94cba2a41fe"
+  }
+}

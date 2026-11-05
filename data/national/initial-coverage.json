@@ -1,0 +1,64 @@
+{
+  "scope": "初回監査行の網羅のみ。位置確定・情報の正確性・全国整備の完了を意味しない。",
+  "cards": 1313,
+  "missingCardIds": [],
+  "duplicateCardIds": [],
+  "regions": [
+    {
+      "region": "chubu-east",
+      "auditPath": "data/national/regions/chubu-east.json",
+      "auditSHA256": "484320507a6ad512694ff78d3d84d87143917f84c58e1e0e9adf8a5eaa220740",
+      "cards": 153,
+      "relations": 197
+    },
+    {
+      "region": "chubu-west",
+      "auditPath": "data/national/regions/chubu-west.json",
+      "auditSHA256": "d8738b52115cae0bd7d892670a728ffd31589f11beb02e2ac5f94b497c6cb32e",
+      "cards": 123,
+      "relations": 165
+    },
+    {
+      "region": "chugoku-shikoku",
+      "auditPath": "data/national/regions/chugoku-shikoku.json",
+      "auditSHA256": "0e8e4d08aaa6580c0e892134cb296a2e0279f3f7da5ca8232e8172359a182643",
+      "cards": 164,
+      "relations": 199
+    },
+    {
+      "region": "kanto-north",
+      "auditPath": "data/national/regions/kanto-north.json",
+      "auditSHA256": "96b15507e936fd78df7e7e07ca8269c8cc4159e703e9abd9ba9edac4008eaf01",
+      "cards": 166,
+      "relations": 222
+    },
+    {
+      "region": "kanto-south",
+      "auditPath": "data/national/regions/kanto-south.json",
+      "auditSHA256": "3cdefd39857d6740f8e98f8cd2f88abf4b1e1bb771e8c8b70e819b0d67dc7148",
+      "cards": 192,
+      "relations": 248
+    },
+    {
+      "region": "kinki",
+      "auditPath": "data/national/regions/kinki.json",
+      "auditSHA256": "21f4770c7f66c240cbef7f41959eecc2d731b0c9157d3a62c29014dae5dd4733",
+      "cards": 191,
+      "relations": 263
+    },
+    {
+      "region": "kyushu-okinawa",
+      "auditPath": "data/national/regions/kyushu-okinawa.json",
+      "auditSHA256": "97c7ab7d7556a812c9f0a5e3154980371cc959cc692179928c78323ccaa04d9d",
+      "cards": 120,
+      "relations": 164
+    },
+    {
+      "region": "north",
+      "auditPath": "data/national/regions/north.json",
+      "auditSHA256": "904cc79d1f885809849bc4b260c8429c4e1931b0ce62a1b22530de916b533619",
+      "cards": 204,
+      "relations": 267
+    }
+  ]
+}

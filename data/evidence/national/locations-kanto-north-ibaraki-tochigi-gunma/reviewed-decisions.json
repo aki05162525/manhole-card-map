@@ -1,0 +1,674 @@
+[
+  {
+    "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
+    "name": "日立市役所下水道課",
+    "address": "茨城県日立市助川町1-1-1",
+    "index": 3,
+    "url": "https://www.city.hitachi.lg.jp/shisetsu/shikanrenshisetsu/1005730/1005731.html",
+    "kind": "q",
+    "key": "36.599152406940746,140.65045209985564",
+    "identity": "日立市役所、助川町1-1-1。下水道課の庁舎代表点。",
+    "coordinate": {
+      "lat": 36.599152406940746,
+      "lng": 140.65045209985564
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-39510f00feb32132cad4",
+    "name": "土浦市役所 シティプロモーション課",
+    "address": "茨城県土浦市大和町9-1 3階",
+    "index": 6,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=42",
+    "kind": "position",
+    "key": "",
+    "identity": "土浦市役所 本庁舎、大和町9-1。両窓口と同一建物。",
+    "coordinate": {
+      "lat": 36.078187531179,
+      "lng": 140.204612016678
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-faf51dac26851d419cf5",
+    "name": "観光情報物産センターきらら館",
+    "address": "茨城県土浦市大和町9-1 1階",
+    "index": 7,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=42",
+    "kind": "position",
+    "key": "",
+    "identity": "土浦市役所 本庁舎、大和町9-1。両窓口と同一建物。",
+    "coordinate": {
+      "lat": 36.078187531179,
+      "lng": 140.204612016678
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-9c16a5e9f705a6c0aeda",
+    "name": "土浦市立博物館",
+    "address": "茨城県土浦市中央一丁目15-18",
+    "index": 8,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=171",
+    "kind": "position",
+    "key": "",
+    "identity": "土浦市立博物館、中央一丁目15-18。",
+    "coordinate": {
+      "lat": 36.0852065517909,
+      "lng": 140.197305679321
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-23dde6cb0149f066fca4",
+    "name": "土浦市民ギャラリー",
+    "address": "茨城県土浦市大和町1-1",
+    "index": 9,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=1447",
+    "kind": "position",
+    "key": "",
+    "identity": "土浦市民ギャラリー、大和町1-1。",
+    "coordinate": {
+      "lat": 36.0788354403545,
+      "lng": 140.205835640422
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-f3021637145ad631f7d9",
+    "name": "土浦市亀城プラザ",
+    "address": "茨城県土浦市中央二丁目16-4",
+    "index": 10,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=192",
+    "kind": "position",
+    "key": "",
+    "identity": "土浦市亀城プラザ、中央二丁目16-4。",
+    "coordinate": {
+      "lat": 36.0855685411119,
+      "lng": 140.198990106583
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-00d6ef3c990590c41abf",
+    "name": "土浦市立一中地区公民館",
+    "address": "茨城県土浦市大手町13番9号",
+    "index": 13,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=1",
+    "kind": "position",
+    "key": "",
+    "identity": "一中地区公民館、大手町13-9。",
+    "coordinate": {
+      "lat": 36.0828351553735,
+      "lng": 140.197112560272
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-1230b4e67b9b5decbe87",
+    "name": "霞ケ浦文化体育会館",
+    "address": "茨城県土浦市大岩田1051番地",
+    "index": 14,
+    "url": "https://www.city.tsuchiura.lg.jp/map.php?code=206",
+    "kind": "position",
+    "key": "",
+    "identity": "霞ヶ浦文化体育会館、大岩田1051。",
+    "coordinate": {
+      "lat": 36.060212253867,
+      "lng": 140.218071341515
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-c5b7e1ec0325eed3fb6c",
+    "name": "まち蔵藍",
+    "address": "茨城県石岡市国府3-5-6",
+    "index": 16,
+    "url": "https://www.city.ishioka.lg.jp/map.php?code=276",
+    "kind": "redirect-q",
+    "key": "36.1884871,140.27398500000004",
+    "identity": "市の幌獅子カード記事page004217.htmlの「まち蔵 藍」アクセスマップcode276が指定するq。国府3-5-6を観光協会page000008.htmlと照合。リダイレクト後URLをmanifestに保存。",
+    "coordinate": {
+      "lat": 36.1884871,
+      "lng": 140.27398500000004
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-95dce59d2f6568dc1ae8",
+    "name": "結城市都市建設部下水道課",
+    "address": "結城市中央町二丁目3番地(庁舎3階)",
+    "index": 17,
+    "url": "https://www.city.yuki.lg.jp/machizukurikyoudouka/about/page002404.html",
+    "kind": "position",
+    "key": "",
+    "identity": "結城市役所、中央町二丁目3番地。マーカー吹出し住所と現庁舎を照合。旧市役所西庁舎とは区別。",
+    "coordinate": {
+      "lat": 36.289748457462,
+      "lng": 139.871426456305
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-ae50151eefa7485f5bed",
+    "name": "龍ケ崎市 下水道課",
+    "address": "茨城県龍ケ崎市3710番地",
+    "index": 18,
+    "url": "http://www.city.ryugasaki.ibaraki.jp/shisei/gaiyo/choshaannai.html",
+    "kind": "q",
+    "key": "35.9115939,140.1822639",
+    "identity": "龍ケ崎市役所、3710番地。q=龍ケ崎市役所@座標の明示指定を採用。view?centerではない。",
+    "coordinate": {
+      "lat": 35.9115939,
+      "lng": 140.1822639
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-645241e64a5c79700db5",
+    "name": "下妻市立図書館",
+    "address": "茨城県下妻市砂沼新田35-1",
+    "index": 21,
+    "url": "https://www.city.shimotsuma.lg.jp/map.php?code=7",
+    "kind": "position",
+    "key": "",
+    "identity": "下妻市立図書館、砂沼新田35-1。庁舎code264は別施設。",
+    "coordinate": {
+      "lat": 36.1813243653772,
+      "lng": 139.953986406326
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-f602a401dc3ad4f44cea",
+    "name": "高萩市役所都市建設課(庁舎2階)",
+    "address": "茨城県高萩市本町1-100-1",
+    "index": 22,
+    "url": "https://www.city.takahagi.ibaraki.jp/map.php?type=0",
+    "kind": "spot",
+    "key": "高萩市役所",
+    "identity": "本町1-100-1。市役所前交差点の蓋マーカーと区別。",
+    "coordinate": {
+      "lat": 36.7137401400033,
+      "lng": 140.709543228149
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-6e8b88be44736521572e",
+    "name": "高萩市役所総合受付(庁舎1階)",
+    "address": "茨城県高萩市本町1-100-1",
+    "index": 23,
+    "url": "https://www.city.takahagi.ibaraki.jp/map.php?type=0",
+    "kind": "spot",
+    "key": "高萩市役所",
+    "identity": "本町1-100-1。市役所前交差点の蓋マーカーと区別。",
+    "coordinate": {
+      "lat": 36.7137401400033,
+      "lng": 140.709543228149
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-d0b8900fb590b1bd3ddd",
+    "name": "牛久市役所分庁舎1階 下水道課",
+    "address": "茨城県牛久市中央3丁目15番地1",
+    "index": 26,
+    "url": "https://www.city.ushiku.lg.jp/map.php?type=0",
+    "kind": "spot",
+    "key": "牛久市役所　分庁舎",
+    "identity": "中央3-15-1。分庁舎を選択し本庁・第3分庁舎と区別。",
+    "coordinate": {
+      "lat": 35.979942294578,
+      "lng": 140.149599909782
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-20f856c938901d95a12d",
+    "name": "エスカード牛久2階 いばらき自慢",
+    "address": "茨城県牛久市牛久町280",
+    "index": 27,
+    "url": "https://www.city.ushiku.lg.jp/map.php?type=0",
+    "kind": "spot",
+    "key": "牛久市役所　エスカード出張所",
+    "identity": "牛久町280、エスカード牛久2階。同建物の出張所マーカーを建物代表点として採用。店舗公式 https://escado.jp/ibarakijiman/ と照合。出張所と店舗は別窓口。",
+    "coordinate": {
+      "lat": 35.9757834984725,
+      "lng": 140.140217542648
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+    "name": "筑西市役所上下水道部下水道課",
+    "address": "茨城県筑西市丙360番地",
+    "index": 35,
+    "url": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+    "kind": "poi",
+    "key": "36.3052692,139.9794245",
+    "identity": "筑西市役所本庁舎、丙360。記事の配布場所リンクが指定する本庁舎POI。",
+    "coordinate": {
+      "lat": 36.3052692,
+      "lng": 139.9794245
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+    "name": "筑西市役所1階総合案内",
+    "address": "茨城県筑西市丙360番地",
+    "index": 36,
+    "url": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+    "kind": "poi",
+    "key": "36.3052692,139.9794245",
+    "identity": "筑西市役所本庁舎、丙360。記事の配布場所リンクが指定する本庁舎POI。",
+    "coordinate": {
+      "lat": 36.3052692,
+      "lng": 139.9794245
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-8b00e897a44b95f4f883",
+    "name": "桜川市役所真壁庁舎",
+    "address": "茨城県桜川市真壁町飯塚911番地",
+    "index": 39,
+    "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+    "kind": "q",
+    "key": "36.2783968826407,140.091696381569",
+    "identity": "桜川市役所 真壁庁舎、真壁町飯塚911。",
+    "coordinate": {
+      "lat": 36.2783968826407,
+      "lng": 140.091696381569
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-f9fd315ed4076acc8b78",
+    "name": "桜川市役所大和庁舎総合窓口課",
+    "address": "茨城県桜川市羽田1023番地",
+    "index": 40,
+    "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+    "kind": "q",
+    "key": "36.3272639369819,140.090449154377",
+    "identity": "桜川市役所 大和庁舎、羽田1023。真壁・岩瀬庁舎と区別。",
+    "coordinate": {
+      "lat": 36.3272639369819,
+      "lng": 140.090449154377
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-e9151ee383d91a7a7f2e",
+    "name": "桜川市役所大和庁舎日直窓口",
+    "address": "茨城県桜川市羽田1023番地",
+    "index": 41,
+    "url": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+    "kind": "q",
+    "key": "36.3272639369819,140.090449154377",
+    "identity": "桜川市役所 大和庁舎、羽田1023。真壁・岩瀬庁舎と区別。",
+    "coordinate": {
+      "lat": 36.3272639369819,
+      "lng": 140.090449154377
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-dbeb70cbdad1ea010c60",
+    "name": "鉾田市役所本庁舎1F市民課窓口",
+    "address": "茨城県鉾田市鉾田1444番地1",
+    "index": 43,
+    "url": "https://www.city.hokota.lg.jp/map.php?type=0",
+    "kind": "spot",
+    "key": "鉾田市役所",
+    "identity": "鉾田1444番地1。本庁舎、旭・大洋総合支所と区別。",
+    "coordinate": {
+      "lat": 36.15863887503428,
+      "lng": 140.51653146743774
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-38b3769061a96e82585a",
+    "name": "五霞町役場 建設水道課",
+    "address": "茨城県猿島郡五霞町大字小福田1162番地1(庁舎2階)",
+    "index": 45,
+    "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/page000528.html",
+    "kind": "position",
+    "key": "",
+    "identity": "五霞町役場、小福田1162-1。",
+    "coordinate": {
+      "lat": 36.1141157,
+      "lng": 139.745832
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-b0446b56ab7495ff2ff5",
+    "name": "五霞町役場 日直",
+    "address": "茨城県猿島郡五霞町大字小福田1162番地1",
+    "index": 46,
+    "url": "https://www.town.goka.lg.jp/kurashi-machi-shigoto/gokanabi/access/page000528.html",
+    "kind": "position",
+    "key": "",
+    "identity": "五霞町役場、小福田1162-1。",
+    "coordinate": {
+      "lat": 36.1141157,
+      "lng": 139.745832
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-67107257814c51043efa",
+    "name": "2階 経営企画課",
+    "address": "栃木県宇都宮市河原町1-41",
+    "index": 49,
+    "url": "https://www.city.utsunomiya.lg.jp/josuido/1002777.html",
+    "kind": "q",
+    "key": "36.550463,139.88343",
+    "identity": "宇都宮市上下水道局、河原町1-41。市観光協会記事の上下水道局マーカーとも照合。",
+    "coordinate": {
+      "lat": 36.550463,
+      "lng": 139.88343
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-8f59caf41dafdd2208d2",
+    "name": "1階 警備員室",
+    "address": "栃木県宇都宮市河原町1-41",
+    "index": 50,
+    "url": "https://www.city.utsunomiya.lg.jp/josuido/1002777.html",
+    "kind": "q",
+    "key": "36.550463,139.88343",
+    "identity": "宇都宮市上下水道局、河原町1-41。市観光協会記事の上下水道局マーカーとも照合。",
+    "coordinate": {
+      "lat": 36.550463,
+      "lng": 139.88343
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-6d41773baa79f72fcdd6",
+    "name": "宇都宮市観光案内所",
+    "address": "栃木県宇都宮市川向町1-23",
+    "index": 51,
+    "url": "http://www.utsunomiya-cvb.org/9168.html",
+    "kind": "data-marker",
+    "key": "宇都宮市観光案内所",
+    "identity": "川向町1-23、JR宇都宮駅2階。",
+    "coordinate": {
+      "lat": 36.55908094192274,
+      "lng": 139.89844199938082
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-4490b60c4f44436c575b",
+    "name": "交通未来都市うつのみやオープンスクエア",
+    "address": "栃木県宇都宮市駅前通り1丁目4-6 トナリエ宇都宮 3階",
+    "index": 52,
+    "url": "http://www.utsunomiya-cvb.org/9168.html",
+    "kind": "data-marker",
+    "key": "交通未来都市うつのみやオープンスクエア",
+    "identity": "駅前通り1-4-6、トナリエ宇都宮3階。清原工業団地の蓋設置地と区別。",
+    "coordinate": {
+      "lat": 36.56024762583001,
+      "lng": 139.89698021047735
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-1da3e0a44b58e0f3372a",
+    "name": "宇都宮市役所文化都市推進課",
+    "address": "栃木県宇都宮市旭1-1-5",
+    "index": 53,
+    "url": "http://www.utsunomiya-cvb.org/9168.html",
+    "kind": "data-marker",
+    "key": "宇都宮市役所12階文化都市推進課",
+    "identity": "旭1-1-5、市役所12階。",
+    "coordinate": {
+      "lat": 36.5551589,
+      "lng": 139.8823279
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+    "name": "宇都宮城址公園清明館",
+    "address": "栃木県宇都宮市本丸町1-15",
+    "index": 54,
+    "url": "https://www.city.utsunomiya.lg.jp/event/rekishi/1035012/1016836.html",
+    "kind": "q",
+    "key": "36.554533663683266,139.88531112670898",
+    "identity": "宇都宮城址公園 清明館。市公式の清明館アクセス指定。",
+    "coordinate": {
+      "lat": 36.554533663683266,
+      "lng": 139.88531112670898
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-14336e747375e6550de3",
+    "name": "まちの駅 新・鹿沼宿",
+    "address": "栃木県鹿沼市仲町1604-1",
+    "index": 60,
+    "url": "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+    "kind": "json-marker",
+    "key": "新・鹿沼宿",
+    "identity": "仲町1604-1、まちの駅 新・鹿沼宿。",
+    "coordinate": {
+      "lat": 36.5642082,
+      "lng": 139.74632240000005
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+    "name": "一般社団法人 矢板市観光協会",
+    "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)",
+    "index": 68,
+    "url": "https://www.city.yaita.tochigi.jp/map/map-shironoyuonsencenter.html",
+    "kind": "init",
+    "key": "",
+    "identity": "城の湯温泉センター、川崎反町295。同建物内の観光協会。ssi/js/shisetsu-detail-googlemap.jsでinitlat/initlongがMarker.positionに渡ることを確認。",
+    "coordinate": {
+      "lat": 36.7937487,
+      "lng": 139.91774420000002
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-fdb8db5be17ae5e5d52a",
+    "name": "さくら市役所 卯の里庁舎",
+    "address": "栃木県さくら市氏家2190-7",
+    "index": 69,
+    "url": "https://www.city.tochigi-sakura.lg.jp/life/000016/000133/000543/p003072.html",
+    "kind": "json-marker",
+    "key": "2190−7",
+    "identity": "氏家2190-7の卯の里庁舎。氏家2771の本庁と区別。",
+    "coordinate": {
+      "lat": 36.6814714,
+      "lng": 139.9573986
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-4276a35dc1985599c530",
+    "name": "さくら市役所 当直室",
+    "address": "栃木県さくら市氏家2771",
+    "index": 70,
+    "url": "https://www.city.tochigi-sakura.lg.jp/life/000016/000133/000543/p003072.html",
+    "kind": "json-marker",
+    "key": "2771",
+    "identity": "氏家2771の本庁。卯の里庁舎と区別。",
+    "coordinate": {
+      "lat": 36.6853294,
+      "lng": 139.9664534
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-ca990651d2ec419b60ab",
+    "name": "グリムの森「グリムの館」",
+    "address": "栃木県下野市下古山747",
+    "index": 74,
+    "url": "https://www.city.shimotsuke.lg.jp/0385/info-0000000210-3.html",
+    "kind": "json-marker",
+    "key": "グリム",
+    "identity": "グリムの森「グリムの館」、下古山747。",
+    "coordinate": {
+      "lat": 36.4490598,
+      "lng": 139.85873270000002
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-d891168d3b11c5775e7c",
+    "name": "下野薬師寺歴史館",
+    "address": "栃木県下野市薬師寺1636",
+    "index": 75,
+    "url": "https://www.city.shimotsuke.lg.jp/0390/info-0000000643-3.html",
+    "kind": "json-marker",
+    "key": "歴史館",
+    "identity": "下野薬師寺歴史館、薬師寺1636。",
+    "coordinate": {
+      "lat": 36.4008047,
+      "lng": 139.8742615
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+    "name": "上三川町ORIGAMIプラザ",
+    "address": "栃木県河内郡上三川町大字上三川4173番地1",
+    "index": 77,
+    "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+    "kind": "json-marker",
+    "key": "ORIGAMI",
+    "identity": "上三川4173-1、ORIGAMIプラザ。町の施設利用案内のマーカーを採用。県農村めぐりの異なるq指定は採用しない。",
+    "coordinate": {
+      "lat": 36.436184923514126,
+      "lng": 139.90938283430177
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-65db06940fd00224099b",
+    "name": "桐生市役所水道局下水道課",
+    "address": "群馬県桐生市美原町2番5号",
+    "index": 85,
+    "url": "https://www.city.kiryu.lg.jp/shisetsu/kankyou/1027443.html",
+    "kind": "q",
+    "key": "36.407501,139.329257",
+    "identity": "桐生市水道局、美原町2-5。本庁舎と別建物。",
+    "coordinate": {
+      "lat": 36.407501,
+      "lng": 139.329257
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-88ee40433ca2bfde9534",
+    "name": "桐生市役所本庁舎1階警備・宿日直室",
+    "address": "群馬県桐生市織姫町1番1号",
+    "index": 86,
+    "url": "https://www.city.kiryu.lg.jp/shisetsu/shiyakusho/1005238.html",
+    "kind": "q",
+    "key": "36.4052102,139.3306458",
+    "identity": "桐生市役所本庁舎、織姫町1-1。美原町の水道局と別建物。",
+    "coordinate": {
+      "lat": 36.4052102,
+      "lng": 139.3306458
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-5e7f290df963683e8941",
+    "name": "利根地区コミュニティセンター",
+    "address": "群馬県沼田市利根町追貝37",
+    "index": 90,
+    "url": "https://www.city.numata.gunma.jp/shisetsu/kouminan/1003019.html",
+    "kind": "q",
+    "key": "36.697857,139.209505",
+    "identity": "利根地区コミュニティセンター、利根町追貝37。老神温泉観光協会へのdestinationとは区別。",
+    "coordinate": {
+      "lat": 36.697857,
+      "lng": 139.209505
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-07a17db12d5d3a686622",
+    "name": "つつじが岡ふれあいセンター",
+    "address": "館林市花山町3181",
+    "index": 91,
+    "url": "https://www.city.tatebayashi.gunma.jp/s061/map/010/20201027183513.html",
+    "kind": "param",
+    "key": "",
+    "identity": "つつじが岡ふれあいセンター、花山町3181。core/js/map/map.jsがlat/lonをMarker.positionに使用。noscriptの@viewportは不使用。",
+    "coordinate": {
+      "lat": 36.24171438620449,
+      "lng": 139.55139504841006
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-f542d0909d18d2b1dd94",
+    "name": "伊香保ロープウェイ不如帰駅観光案内所",
+    "address": "群馬県渋川市伊香保町伊香保558番地1",
+    "index": 93,
+    "url": "https://www.city.shibukawa.lg.jp/shisetsu/000349/p003096.html",
+    "kind": "q",
+    "key": "36.4971262,138.91945529999995",
+    "identity": "渋川市営伊香保ロープウェイ不如帰駅、伊香保558-1。同駅建物内の案内所。",
+    "coordinate": {
+      "lat": 36.4971262,
+      "lng": 138.91945529999995
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-e91264e37ba396d607a0",
+    "name": "吉岡町文化センター",
+    "address": "群馬県北群馬郡吉岡町大字下野田472",
+    "index": 98,
+    "url": "https://www.gunma-fc.jp/location/yoshioka-town-cultural-center/",
+    "kind": "fc",
+    "key": "",
+    "identity": "吉岡町文化センター、下野田472。教育委員会施設概要と同定。StreetView撮影地点ではなくmarkerDataを使用。",
+    "coordinate": {
+      "lat": 36.4473259,
+      "lng": 139.0118448
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-faaad30a2433be0d1e9f",
+    "name": "玉村町水道庁舎(玉村町上下水道課)",
+    "address": "群馬県佐波郡玉村町大字上新田1116-3",
+    "index": 100,
+    "url": "https://www.town.tamamura.lg.jp/docs/2016020800054/",
+    "kind": "markerInfos",
+    "key": "",
+    "identity": "玉村町水道庁舎、上新田1116-3。center座標ではなくmarkerInfosの名付きマーカー。",
+    "coordinate": {
+      "lat": 36.30882684139083,
+      "lng": 139.1060766220289
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-b9cf52ce187cbdc0d635",
+    "name": "駅前プラザ「メイちゃん家」",
+    "address": "群馬県邑楽郡明和町中谷328-10",
+    "index": 102,
+    "url": "https://www.town.meiwa.gunma.jp/material/files/group/1/map_20260306181536.csv",
+    "kind": "facility-data",
+    "key": "駅前プラザ メイちゃん家",
+    "identity": "町公式施設マップ1721.htmlから参照する施設データ。名称と中谷328-10が一致。",
+    "coordinate": {
+      "lat": 36.208529139039,
+      "lng": 139.526315232028
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-35386468b06ec27f741e",
+    "name": "邑楽町役場2階 都市計画課",
+    "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+    "index": 103,
+    "url": "https://www.town.ora.gunma.jp/map/010/20180901172000.html",
+    "kind": "q",
+    "key": "36.2523916,139.4623",
+    "identity": "邑楽町役場、中野2570-1。",
+    "coordinate": {
+      "lat": 36.2523916,
+      "lng": 139.4623
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-074d9a4df836af82bb16",
+    "name": "邑楽町役場1階 休日受付窓口",
+    "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+    "index": 104,
+    "url": "https://www.town.ora.gunma.jp/map/010/20180901172000.html",
+    "kind": "q",
+    "key": "36.2523916,139.4623",
+    "identity": "邑楽町役場、中野2570-1。",
+    "coordinate": {
+      "lat": 36.2523916,
+      "lng": 139.4623
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-3bd86f16d6d9017f5da2",
+    "name": "シンボルタワー 未来MiRAi",
+    "address": "群馬県邑楽郡邑楽町大字中野2639番地1",
+    "index": 105,
+    "url": "https://www.town.ora.gunma.jp/map/030/030/20180901155000.html",
+    "kind": "q",
+    "key": "36.2531638,139.4625222",
+    "identity": "シンボルタワー 未来MiRAi、中野2639-1。役場とは別建物。",
+    "coordinate": {
+      "lat": 36.2531638,
+      "lng": 139.4625222
+    }
+  }
+]

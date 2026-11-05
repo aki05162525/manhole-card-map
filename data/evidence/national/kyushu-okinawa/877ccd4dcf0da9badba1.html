@@ -1,0 +1,5392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset=utf-8 />
+    <title>大宰府展示館</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="古都大宰府保存協会" />
+    <meta name="robots" content="follow, index" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport"/>
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="shortcut icon" href="https://cdn.sitekitt.com/kotodazaifu/c4a0df22-5b74-432f-a5b0-b518e5a92c11.png" type="image/vnd.microsoft.icon" />
+    <link rel="apple-touch-icon" href="" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/facebox.css"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="/user/kotodazaifu/css/IE-fix.css" />
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/vendor/sanitize.css">-->
+     <style type="text/less">body {
+  background-color: #f8f6ef;
+  color: #393636;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.8em;
+
+}
+.table-row{
+  display:table-row;
+}
+div#bodyarea {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.go_to_index {
+  height: 80px;
+  display: block;
+  width: 300px;
+  position: absolute;
+  top: 0; /* 必要に応じて変更してください */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div.read_contents{
+  border-top: solid 1px #ddd;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding-top: 24px;
+}
+li {
+  border: solid 1px #ddd;
+  margin: -1px 0 0 0;
+  padding: 12px;
+}
+img{
+  max-width:100%;
+  height:auto!important;
+  height: initial!important;
+}
+ol {
+  list-style-position: inside;
+  margin-left:0;
+  padding-left:0;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  margin: 40px 0;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 80px;
+}
+
+
+//=================
+//===== class =====
+//=================
+.hide_pc {
+  display: none;
+}
+.google_map{
+  width:100%;
+  height:320px;
+}
+.flex{
+  -js-display: flex;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (doesn't work very well) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: flex-start;
+  align-items:flex-start;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
+  .content{
+    width:60%;
+  }
+  .thumnail{
+    text-align:left;   
+    img{
+      margin:12px;
+    }
+  }
+}
+.space-between {
+  justify-content: space-between;
+}
+.title{
+  font-weight : bold;
+}
+.color_pink {
+  color: #cb688f;
+}
+.color_red {
+  color: red;
+}
+.small_text {
+  font-size: 12px;
+  line-height: 1.2em;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.mb80 {
+  margin-bottom: 80px;
+}
+.h60 {
+  height: 60px;
+}
+
+//============================
+//===== For basic layout =====
+//============================
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.navigation {
+  background-color: #393636;
+  color: #fff;
+  height: 52px;
+  margin: 0 0 0 0;
+  padding: 0;
+  font-weight: bold;
+
+  .ptb12 {
+    padding: 12px 0;
+  }
+
+  .dropdown-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: none;
+    }
+    li {
+      margin: 0;
+      padding: 12px 0 0 12px;
+      text-align: left;
+      border: none;
+    }
+    a {
+      color: #fff;
+      display: block;
+    }
+    & > ul.nav {
+      .flex;
+      justify-content: space-between;
+      border-left: 1px solid #fff;
+      height: 28px;
+
+      & > li {
+        flex: 1;
+        text-align: center;
+        border-right: 1px solid #fff;
+        margin: 0;
+        padding: 0;
+        height: 28px;
+        line-height: 28px;
+        position: relative;
+
+        & > a {
+          height: 40px;
+        }
+        & > ul.dropdown-menu {
+          display:none;
+          position: absolute;
+          top: 40px;
+          left: 0;
+          padding: 12x 0;
+          width: 200px;
+          background-color: #393636;
+
+          & > .level-2:last-child {
+            padding-bottom: 12px;
+          }
+        }
+        &:hover > ul.dropdown-menu {
+          display:block;
+          z-index: 1000;
+        }
+      }
+    }
+  }
+}
+.header_slider {
+  #slider_container {
+    height: 548px!important;
+  }
+}
+.header_image {
+  margin: 0;
+  padding: 0;
+  height: 106px;
+  background-image: url("https://cdn.puchidb.com/kotodazaifu/af554491-b575-486e-bd58-b7adec9d4cff.png");
+  background-repeat: repeat-x;
+
+}
+.header_menu {
+  position: relative;
+  z-index: 100;
+  height: 100px;
+  margin-bottom: -100px;
+  background-image: url("https://cdn.sitekitt.com/kotodazaifu/0384b45f-d063-4dfe-b8a2-c0c6d04fd625.png");
+  background-repeat: no-repeat;
+  background-position: top 0 center; 
+
+  .menu {
+    //        width: 15%;
+    //        height: 30px;
+    //        position: absolute;
+    //        top: 5px;
+    //        right: 13%;
+    padding-top: 15px;      
+    padding-left: 844px;
+    width: 220px;
+    margin: 0 auto;
+    z-index: 1000;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight:bold;
+    span.kaisetu_entry {
+      margin-left: -950px;
+      position:absolute;
+    }
+    ul {
+      margin: 0;
+      padding: 0 4px;
+      border-left: 1px solid #393636;
+      display: flex;
+      width: 100%;
+      list-style: none;
+
+      li {
+        border-top: none;
+        border-bottom: none;
+        border-left: none;
+        border-right: 1px solid #393636;
+        padding: 0 4px;
+      }
+    }
+  }
+}
+.p10 {
+  padding: 10px;
+}
+footer {
+  background-color: #393636;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2em;
+
+  .btxt {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .stxt {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+
+    &.nav {
+      padding-top: 20px;
+    }
+    & > li {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  li {
+    margin: 0;
+    list-style: none;
+    border: none;
+
+    &.level-0 {
+      padding: 0 12px;
+    }
+    &.level-1 {
+      padding: 12px 0 0 0;
+
+      &:before {
+        content: "─";
+      }
+    }
+    &.level-2 {
+      padding: 12px 0 0 20px;
+    }
+  }
+  a {
+    color: #fff;
+  }
+}
+.footer_title_logo {
+  padding-top: 36px;
+  padding-bottom: 40px;
+}
+#copyright {
+  position: relative;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: normal;
+
+  .member_login {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #954c7a;
+    a {
+      display: block;
+      color: #fff;
+    }
+  }
+}
+.flex{
+  -js-display: flex;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (doesn't work very well) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: flex-start;
+  align-items:flex-start;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
+  .content{
+    width:60%;
+  }
+  .thumnail{
+    text-align:left;   
+    img{
+      margin:12px;
+    }
+  }
+}
+.application_btn_0{
+  display:none; 
+}
+.route_categories{
+  div{
+    display:inline-block;
+  }
+}
+.bgcolor_pink {
+  background-color: #fbf4f6;
+}
+.color_green {
+  color: #457d33;
+}
+.black_btn {
+  padding: 0 3px;
+  background-color: #6d6c6c;
+  color: #fff;
+  & > a {
+    color: #fff;
+  }
+}
+.block_center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.application_table {
+  width: 100%;
+  border-top: 1px solid #393636;
+  border-left: 1px solid #393636;
+  table-layout: fixed;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+
+  th {
+    padding: 10px;
+    border-right: 1px solid #393636;
+    border-bottom: 1px solid #393636;
+    background-color: #d4dbc4;
+    text-align:left;
+    vertical-align: top;
+  }
+  td {
+    padding: 10px;
+    border-right: 1px solid #393636;
+    border-bottom: 1px solid #393636;
+    background-color: #fff;
+    text-align:left;
+    vertical-align: top;
+
+    input {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+table.border_table {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #393636;
+  border-left: 1px solid #393636;
+  table-layout: fixed;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+
+  td {
+    padding: 5px;
+    border-right: 1px solid #393636;
+    border-bottom: 1px solid #393636;
+  }
+}
+
+table.border_table2 {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #393636;
+  table-layout: fixed;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+
+  th {
+    padding: 10px;
+    border-right: 1px solid #393636;
+    border-bottom: 1px solid #393636;
+    background-color: #d4dbc4;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+  td {
+    padding: 10px 20px;
+    border-right: 1px solid #393636;
+    border-bottom: 1px solid #393636;
+    text-align: center;
+    &.left {
+      text-align: left;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+table.border_table3 {
+  width: 100%;
+  //background-color: #fff;
+  border-top: 1px solid #393636;
+  table-layout: fixed;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+
+  th {
+    padding: 10px;
+    border-bottom: 1px solid #393636;
+    background-color: #d4dbc4;
+  }
+  td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #393636;
+  }
+}
+
+.flex_reverse {
+  flex-flow: row-reverse wrap;
+}
+
+// ====================================
+// ===== link_button, cart_button =====
+// ====================================
+div.large_btn {
+  padding: 2px;
+  width: 656px;
+  height: 66px;
+
+  & > div {
+    width: 656px;
+    height: 66px;
+
+    & > a {
+      width: 656px;
+      height: 66px;
+    }
+  }
+}
+div.small_btn {
+  padding: 2px;
+  width: 574px;
+  height: 66px;
+
+  & > div {
+    width: 574px;
+    height: 66px;
+
+    & > a {
+      width: 574px;
+      height: 66px;
+    }
+  }
+}
+div.small2_btn {
+  padding: 2px;
+  width: 542px;
+  height: 66px;
+
+  & > div {
+    width: 542px;
+    height: 66px;
+
+    & > a {
+      width: 542px;
+      height: 66px;
+    }
+  }
+}
+div.ss_btn {
+  padding: 2px;
+  width: 474px;
+  height: 66px;
+
+  & > div {
+    width: 474px;
+    height: 66px;
+
+    & > a {
+      width: 474px;
+      height: 66px;
+    }
+  }
+}
+div.link_button {
+  background-color: #cfcfD0;
+  border: 1px solid #393636;
+
+  & > div {
+    position: relative;
+
+    & > a {
+      color: #393636;
+      display: table-cell;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    &:before {
+      content: "";
+      bottom: 0;
+      right: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid #393636; /* ラベルの色はここで変更 */
+      position: absolute;
+      z-index: 100;
+    }
+    &:after {
+      content: " ";
+      display: block;
+      bottom: 5px;
+      transform: rotate(135deg);
+      color: #fff; /* 文字色はここで変更 */
+      font-weight: bold;
+      right: 0px;
+      position: absolute;
+      z-index: 101;
+    }
+  }
+}
+div.cart_button {
+  background-color: #cfcfD0;
+  border: 1px solid #393636;
+  padding: 2px;
+  width: 464px;
+  height: 66px;
+
+  & > div {
+    position: relative;
+    width: 464px;
+    height: 66px;
+
+    & > input ,.submit{
+      margin: 0;
+      padding: 0;
+      border: none;
+      color: #393636;
+      background-color: #cfcfD0;
+      display: table-cell;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      width: 464px;
+      height: 66px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:before {
+      content: "";
+      bottom: 0;
+      right: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid #393636; /* ラベルの色はここで変更 */
+      position: absolute;
+      z-index: 100;
+    }
+    &:after {
+      content: " ";
+      display: block;
+      bottom: 5px;
+      transform: rotate(135deg);
+      color: #fff; /* 文字色はここで変更 */
+      font-weight: bold;
+      right: 0px;
+      position: absolute;
+      z-index: 101;
+    }
+  }
+}
+div.purple {
+  background-color: #e2d0da;
+}
+div.green {
+  background-color: #e2e3c3;
+}
+div.lightgreen {
+  background-color: #ededda;
+}
+div.red {
+  background-color: #f1d7d4;
+}
+div.darkgreen {
+  background-color: #efe6d1;
+}
+div.brown {
+  background-color: #ece0c5;
+}
+// ===============
+// ===== TOP =====
+// ===============
+.indiv {
+  display: inline-block;
+}
+#pg_top {
+  h3 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+
+    .small_index {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  .whats_new_index {
+    font-size: 16px;
+    text-align: center;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/ab9e77e0-24e9-4c60-b732-ba97171c4e91.png");
+    background-repeat: no-repeat;
+  }
+  .new_blog_index {
+    font-size: 16px;
+    text-align: center;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/752790a6-7b43-4d5a-a635-7242ec17e663.png");
+    background-repeat: no-repeat;
+  }
+
+  .content_menu_background {
+    height: 650px;
+    padding-bottom: 20px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/390d2f91-de1d-4afe-beca-1517bd122164.png");
+    background-repeat: repeat-x;
+  }
+  .content_menu_1 {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/90ea0cf5-5a58-4e34-bdcc-e35649964103.png");
+    background-repeat: no-repeat;
+  }
+  .content_menu_2 {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/59b1f722-03f4-45dd-8f79-7fb4bf2c6240.png");
+    background-repeat: no-repeat;
+  }
+  .content_menu_3 {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/a227aa3b-c89e-4e7c-8fce-abd7c7d0cef0.png");
+    background-repeat: no-repeat;
+  }
+  .content_menu_1, .content_menu_2, .content_menu_3 {
+    margin-top: -48px;
+    padding-top: 338px;
+    padding-left: 60px;
+    width: 266px;
+    height: 348px;
+    color: #fff;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: none;
+
+      &.nav {
+        margin-top: -20px;
+        padding-top: 0;
+      }
+      & > li {
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+    li {
+      margin: 0;
+      list-style: none;
+      border: none;
+
+      &.level-0 {
+        padding: 0 12px;
+      }
+      &.level-1 {
+        padding: 6px 0 0 0;
+        font-weight: bold;
+
+        &:before {
+          content: "─";
+        }
+      }
+      &.level-2 {
+        padding: 6px 0 0 20px;
+      }
+    }
+    a {
+      color: #fff;
+    }   
+  }
+  .slider {
+    margin-bottom: 80px;
+    background-color: #393636;
+    color: #fff;
+
+    .huchi {
+      height: 20px;
+      background-color: #393636;
+    }
+    .slide {
+      background-image: url("https://cdn.puchidb.com/kotodazaifu/7e7bc4b8-8c82-469c-8b3f-16e029dcf924.png");
+      background-repeat: no-repeat;
+
+      a {
+        height: 330px!important;
+        display: table-cell!important;
+        vertical-align: middle;
+        text-align: center;
+      }
+      img {
+        position: static!important;
+        max-height: 330px!important;
+        max-width: 396px!important;
+        width:auto!important;
+        width: initial!important;
+        height:auto!important;
+        height: initial!important;
+      }
+      .slide_caption {
+        position: relative;
+        background-color: #393636;
+        color: #fff;
+        padding: 10px;
+        height: 100px;
+        z-index: 100;
+        text-align: center;
+      }
+    }
+    .jssor_left {
+      display: block!important;
+      position: absolute;
+      z-index: 1100;
+      top: calc(~"50% - 40px");
+      left: calc(~"50% - 440px");
+    }
+    .jssor_right {
+      display: block!important;
+      position: absolute;
+      z-index: 1100;
+      top: 200px;
+      top: calc(~"50% - 40px");
+      right: calc(~"50% - 440px");
+    }
+  }
+  .Event_schedule_calendar {
+    h1 {
+      display: none;
+    }
+    div {
+      text-align: center;
+      position: relative;
+      font-size: 16px;
+      font-weight: bold;
+
+      a {
+        position: absolute;
+        color: #393636
+      }
+      a:first-child {
+        left: 0;
+      }
+      a:last-child {
+        right: 0;
+      }
+    }
+    table {
+      width: 100%;
+      border-spacing: 0;
+      border-top: 1px solid #393636;
+      position: relative;
+
+      th {
+        padding: 0;
+        border-bottom: 1px solid #393636;
+      }
+      td {
+        padding: 10px;
+        height: 80px;
+        border-bottom: 1px solid #393636;
+        text-align: center;
+        vertical-align: top;
+      }
+      .saturday {
+        color: #adadad;              
+        .has_data:hover {
+          width: 200px!important;
+          margin-left: -160px!important;
+        }
+      }
+      .sunday, .holiday {
+        color: #ce7294;
+      }
+      a.event {
+        color: #cb678e;
+        font-size: 180%;
+      }
+      .current_data {
+        max-width : 60px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #393636;
+        font-size: 14px;
+        overflow: hidden;
+        max-height: 50px;
+      }
+      .has_data{
+        &:hover {
+          max-width: inherit!important;
+          max-height: initial!important;
+          position: absolute;
+          background: rgba(255,255,255,.8);
+          border-radius: 6px;
+          width: auto;
+          z-index: 100;
+          padding: 8px;
+          text-align:left!important;
+        }
+      }
+    }
+  }
+
+  .event_color {
+    color: #cb678e;
+  }
+  .access {
+    color: #fff;
+    padding: 80px 0;
+    height: 370px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/0e9384cc-393b-43b6-8c51-9ff9935ca12f.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    a{
+      color:#fff;
+    }
+    .google_map {
+      width: 100%!important;
+      height: 370px!important;
+    }
+  }
+}
+
+// ====================
+// ===== 知りたい =====
+// ====================
+#pg_composition, #pg_about,#pg_download, #pg_pavilion, #pg_link, #pg_mizukikan,#pg_colum,#pg_colum_detail, #pg_payment, #pg_shop, #pg_shop_category, #pg_payment {
+  background-color: #fbf4f6;
+
+  .contents_header {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/7dc95fa8-1427-46bf-91ed-62fbfea1f7fc.png");
+    background-repeat: no-repeat;
+    background-position: 60px 0px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    padding-top: 60px;
+    text-align: center;
+
+    h1 {
+      display: inline;
+      padding: 6px;
+      line-height: 1.4em;
+      text-align: center;
+      border: 5px solid transparent;
+      -moz-border-image: url("https://cdn.puchidb.com/kotodazaifu/b6f7d994-2b45-4c13-ac09-d309f2a73c35.png") 5 0 5 stretch; /* Old firefox */
+      -webkit-border-image: url("https://cdn.puchidb.com/kotodazaifu/b6f7d994-2b45-4c13-ac09-d309f2a73c35.png") 5 0 5 stretch; /* Safari */
+      -o-border-image: url("https://cdn.puchidb.com/kotodazaifu/b6f7d994-2b45-4c13-ac09-d309f2a73c35.png") 5 0 5 stretch; /* Opera */
+      border-image: url("https://cdn.puchidb.com/kotodazaifu/b6f7d994-2b45-4c13-ac09-d309f2a73c35.png") 5 0 5 stretch;
+
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+      &:after {
+        content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+    }
+  }
+}
+#pg_composition {
+  h2 {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/4e941a41-979b-4f2a-8a0e-9c83f716a560.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .header_bar {
+    width: 100%;
+    height: 12px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/46224953-c2ee-46af-a397-e7f2d385243d.png");
+    background-repeat: no-repeat;
+  }
+  .footer_bar {
+    margin-top: 80px;
+    width: 100%;
+    height: 12px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/e57990c7-31c2-495f-93a0-560219f985fc.png");
+    background-repeat: no-repeat;
+  }
+}
+#pg_about ,#pg_download{
+  .bgcolor_pink;
+
+  h2 {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/a9a8bc59-a684-48cf-9fd7-476d10dc408d.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .justify {
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+  .tenji {
+    .index {
+      text-align: center;
+      h3 {
+        display: inline;
+        &:before {
+          content: url("https://cdn.puchidb.com/kotodazaifu/577ffdc5-0523-48aa-801d-7fc7bdfec26e.png");
+          margin: 5px;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+    padding: 50px;
+    background-color: #ece1e7;
+  }
+  .mizuki{
+    .index {
+      text-align: center;
+      h3 {
+        display: inline;
+        &:before {
+          content: url("https://cdn.puchidb.com/kotodazaifu/c32125cc-f222-44bc-95a5-8103ede6525c.png");
+          margin: 5px;
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+    padding: 50px;
+    background-color: #e1eff4;
+  }
+  .header_bar {
+    width: 100%;
+    height: 12px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/46224953-c2ee-46af-a397-e7f2d385243d.png");
+    background-repeat: no-repeat;
+  }
+  .footer_bar {
+    margin-top: 80px;
+    width: 100%;
+    height: 12px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/e57990c7-31c2-495f-93a0-560219f985fc.png");
+    background-repeat: no-repeat;
+  }
+}
+
+#pg_pavilion {
+  h1 {
+    .title_mark:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/d80f3825-937d-4d6f-bdf4-880b99772dfc.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  h3 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  .whats_new_index {
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/302ab536-f2e8-496e-805d-0a8cf1ab5d8c.png");
+    background-repeat: no-repeat;
+  }
+  .access {
+    padding: 30px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/fa914eac-04a2-4a14-baf0-7a23a5956820.png");
+    background-repeat: no-repeat;
+
+    h3 {
+      margin: 30px 0 10px;
+    }
+    .google_map {
+      width: 100%!important;
+      height: 320px!important;
+    }
+  }
+  .left_bgimage {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/a2237606-0bd3-499a-a007-69066e892cfc.png");
+    background-repeat: no-repeat;
+    background-position: top 0px left 0px;
+    display: flex;
+    & > div {
+      align-self: flex-end;
+    }
+    .right_txt {
+      padding:10px 0 10px 30px;
+    }
+  }
+  .right_bgimage {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/09a94dc2-ab5a-44dc-bccc-4c6b6fba1cad.png");
+    background-repeat: no-repeat;
+    background-position: top 0px right 0px;
+    display: flex;
+    & > div {
+      align-self: flex-end;
+    }
+    .left_txt {
+      padding:10px 30px 10px 0;
+    }
+  }
+  .blk_btn {
+    width: 260px;
+    padding: 10px;
+    text-align: center;
+    background-color: #393636;
+
+    a {
+      color: #fff;
+      display: block;
+    }
+  }
+}
+#pg_mizukikan {
+  h1 {
+    .title_mark:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/3cf6caee-c087-4dae-bf0b-d85fe61fbe3b.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  h3 {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  .whats_new_index {
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/3e162643-c661-4c78-b5fe-b5f87eb231ea.png");
+    background-repeat: no-repeat;
+  }
+  .access {
+    padding: 30px;
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/aa1f19f5-f4de-424a-a64e-eb5471671293.png");
+    background-repeat: no-repeat;
+
+    h3 {
+      margin: 30px 0 10px;
+    }
+    .google_map {
+      width: 100%!important;
+      height: 320px!important;
+    }
+  }
+  .left_bgimage {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/5ac877f1-0f21-4ca2-af80-e90b7998d919.png");
+    background-repeat: no-repeat;
+    background-position: top 0px left 0px;
+    display: flex;
+    & > div {
+      align-self: flex-end;
+    }
+    .right_txt {
+      padding:10px 0 10px 30px;
+    }
+  }
+  .right_bgimage {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/56fb8005-4127-4a0e-aa35-76cc516726c0.png");
+    background-repeat: no-repeat;
+    background-position: top 0px right 0px;
+    display: flex;
+    & > div {
+      align-self: flex-end;
+    }
+    .left_txt {
+      padding:10px 30px 10px 0;
+    }
+  }
+  .blk_btn {
+    width: 260px;
+    padding: 10px;
+    text-align: center;
+    background-color: #393636;
+
+    a {
+      color: #fff;
+      display: block;
+    }
+  }
+}
+#pg_shop, #pg_shop_category {
+  // ご利用にあたってリンク部分
+  .contents_header {
+    position: relative;
+    padding-bottom: 80px;
+    margin-bottom: 30px;
+
+    .sub_link {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #cfcfD0;
+      border: 1px solid #393636;
+
+      & > a {
+        display: block;
+        color: #393636;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+      }
+    }
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .shop_table {
+    width: 100%;
+    border-top: 1px solid #393636;
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #393636;
+
+      &.index {
+        width: 100px;
+        font-weight: bold;
+      }
+    }
+  }
+  .link_button {
+    margin-top: 30px;
+  }
+  #category_contents{
+    .contents {
+      .flex;
+      justify-content: space-between;
+
+      div:first-child {
+        a {
+          color: #f00;
+        }
+      }
+      div:last-child {
+        display:none;
+      }
+      a {
+        color: #393636;
+      }
+    }
+  }
+}
+.pagination {
+  font-size: 16px;
+  display: flex;
+  //justify-content: space-between;
+  justify-content: flex-end;
+  margin-bottom: 80px;
+  a {
+    display: inline-block;
+    padding: 10px;
+    margin-left:10px;
+    border: 1px solid #393636;
+    color: #393636;
+    cursor:pointer;
+    &:hover{
+      background:#eee;
+    }
+    &.current{
+      background:#fff;
+      cursor: pointer!important;
+    }
+  }
+}
+#pg_payment {
+  .contents_header {
+    h1 {
+      width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block!important;
+      text-align: center!important;
+
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+        margin: 5px;
+        position: relative;
+        top: -5px;
+        left: -10px;
+      }
+      &:after {
+        content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+        margin: 5px;
+        position: relative;
+        top: -5px;
+        right: -10px;
+      }
+      & > div {
+        display: inline-block;
+      }
+      span {
+        font-size: 60%;
+      }
+    }
+  }
+
+  h2 {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/c1d12d29-b772-449d-a090-dae65132d25e.png");
+      margin: 5px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+//=======================
+// ===== 体感したい =====
+//=======================
+#pg_lecture, #pg_lecture_application, #pg_lecture_detail, #pg_topic, #pg_recommend, #pg_program, #pg_explanation, #pg_program_explanation, #pg_lecture_thankyou, #pg_explanation_thankyou {
+  background-color: #f4f5e8;
+
+  .contents_header {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/24f31b58-929e-4090-8c3c-896164970365.png");
+    background-repeat: no-repeat;
+    background-position: 60px 0px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    padding-top: 60px;
+    text-align: center;
+
+    h1 {
+      display: inline;
+      padding: 6px;
+      line-height: 1.4em;
+      text-align: center;
+      border: 5px solid transparent;
+      -moz-border-image: url("https://cdn.puchidb.com/kotodazaifu/090f8ea9-6278-4851-93e8-f15d1ba6a4e1.png") 5 0 5 stretch; /* Old firefox */
+      -webkit-border-image: url("https://cdn.puchidb.com/kotodazaifu/090f8ea9-6278-4851-93e8-f15d1ba6a4e1.png") 5 0 5 stretch; /* Safari */
+      -o-border-image: url("https://cdn.puchidb.com/kotodazaifu/090f8ea9-6278-4851-93e8-f15d1ba6a4e1.png") 5 0 5 stretch; /* Opera */
+      border-image: url("https://cdn.puchidb.com/kotodazaifu/090f8ea9-6278-4851-93e8-f15d1ba6a4e1.png") 5 0 5 stretch;
+
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+      &:after {
+        content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+    }
+  }
+}
+#pg_topic, #pg_recommend {
+  h2,h3,h4,p {
+    padding: 0;
+    margin: 0;
+  }
+  h2.index {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/5c4079f9-4424-4134-b306-20a50e5bc4ef.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    &.course {
+      margin-bottom: 10px;
+
+      & > a {
+        font-size: 18px;
+        color: #cb688f;
+        border-bottom: 1px solid #393636;
+      }
+    }
+  }
+}
+#pg_recommend {
+  h2,h3,h4,p {
+    padding: 0;
+    margin: 0;
+  }
+
+  h4.course {
+    color: #393636;
+    font-size: 22px;
+    padding-bottom: 10px;
+
+    & > a {
+      color: #393636;
+      border-bottom: 1px solid #393636;
+    }
+  }
+}
+h3.route_categories {
+  margin-top: 40px!important;
+  margin-bottom: 30px!important;
+  display: inline-block;
+  padding: 5px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;        /* CSS3草案 */  
+  -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+  -moz-border-radius: 10px;   /* Firefox用 */  
+  background-color: #457d33;
+
+  &:before {
+    content: url("https://cdn.puchidb.com/kotodazaifu/8269869c-c850-40bc-a6e6-3e4fd5b07285.png");
+    margin: 0 5px;
+    position: relative;
+    top: 8px;
+  }
+  &.route_category_3 {
+    background-color: #457d33;
+  }
+  &.route_category_6 {
+    background-color: #954c7a;
+  }
+  &.route_category_7 {
+    background-color: #cb688f;
+  }
+  &.route_category_8, &.route_category_9, &.route_category_10 {
+    background-color: #eaa0ad;
+  }
+  &.route_category_11 {
+    background-color: #457d33;
+  }
+  &.route_category_4 {
+    background-color: #457d33;
+  }
+}
+
+#pg_program {
+  h2,h3,h4,p {
+    padding: 0;
+    margin: 0;
+  }
+  h3.route_categories {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: inline-block;
+    padding: 5px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;        /* CSS3草案 */  
+    -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+    -moz-border-radius: 10px;   /* Firefox用 */  
+
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/965b8b3b-5a7d-4e9f-aaac-85df63008067.png");
+      margin: 0 5px;
+      position: relative;
+      top: 4px;
+    }
+    &.route_category_11 {
+      background-color: #457d33;
+    }
+  }
+  h4.course {
+    color: #393636;
+    font-size: 22px;
+
+    & > a {
+      color: #393636;
+      border-bottom: 1px solid #393636;
+    }
+  }
+}
+#pg_lecture, #pg_lecture_detail, #pg_lecture_thankyou {
+  .content {
+    padding: 30px;
+    background-color: #fff;
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .bosyu_mark {
+    display: inline-block;
+    padding: 0 5px;
+    background-color: #9f7a24;
+    color: #fff;
+    border-radius: 5px;        /* CSS3草案 */  
+    -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */  
+    -moz-border-radius: 5px;   /* Firefox用 */
+    font-size: 12px;
+  }
+  .side_image {
+    img {
+      width: 100%;
+    }
+  }
+  .division_mm {
+    color: #d57c7f;
+    font-weight: bold;
+    font-size: 18px;
+    &.mark {
+      font-size: 14px;
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6b0490ad-00a4-494c-9e56-c4f080b3496a.png");
+        margin: 0 5px;
+        position: relative;
+        top: 4px;
+      }
+    }
+  }
+  .division_kz {
+    color: #457d33;
+    font-weight: bold;
+    font-size: 18px;
+    &.mark {
+      font-size: 14px;
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/a5a88de3-a56f-46f7-8263-0603452d3ad3.png");
+        margin: 0 5px;
+        position: relative;
+        top: 4px;
+      }
+    }
+  }
+  .division_ke {
+    color: #b29247;
+    font-weight: bold;
+    font-size: 18px;
+    &.mark {
+      font-size: 14px;
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/20ea50e8-8877-4f20-bcac-bf7be3c08ef4.png");
+        margin: 0 5px;
+        position: relative;
+        top: 4px;
+      }
+    }
+  }
+  .button {
+    font-size: 14px;
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+    font-weight: bold;
+
+    &.division_mm {
+      background-color: #f1d7d4;
+      border: 1px solid #d57c7f;
+      color: #393636;
+    }
+    &.division_kz {
+      background-color: #d4dbc4;
+      border: 1px solid #457d33;
+      color: #393636;
+    }
+    &.division_ke {
+      background-color: #e7dcc4;
+      border: 1px solid #b29247;
+      color: #393636;
+    }
+    a {
+      display: block;
+      color: #393636;
+    }
+  }
+}
+// お問い合わせも含める
+#pg_lecture_application, #pg_explanation, #pg_explanation_thankyou, #pg_program_explanation, #pg_inquiry {
+  .hissu {
+    display: inline-block;
+    padding: 0 5px;
+    background-color: #9d1e23;
+    color: #fff;
+  }
+  .attention {
+    color: #9d1e23;
+  }
+  .field_memo textarea {
+    width: 95%;
+    height: 200px;
+  }
+  label.error {
+    display: none!important;
+  }
+  .error {
+    background: pink;
+  }
+}
+#pg_explanation, #pg_program_explanation {
+  h2 {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/b76e2009-cd3c-46e8-9359-3eff7b5c5a8b.png");
+      margin: 0 5px;
+      position: relative;
+      top: 4px;
+    }
+  }
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+}
+//=============================
+// ===== 守りたい伝えたい =====
+//=============================
+.monthlylist {
+  a {
+    color: #393636;
+  }
+}
+#pg_member_guide, 
+#pg_volunteer, #pg_volunteer_shiseki, #pg_volunteer_mannyou, #pg_volunteer_bunka, #pg_volunteer_monthly,
+#pg_volunteer_shiseki_detail, #pg_volunteer_mannyou_detail, #pg_volunteer_bunka_detail,
+#pg_volunteer_activity, #pg_volunteer_yukari, #pg_volunteer_secretariat,
+#pg_info, #pg_info_getting_started, #pg_info_historic_site, #pg_info_monthly,
+#pg_info_getting_started_detail, #pg_info_historic_site_detail,
+#pg_notice, #pg_notice_news, #pg_notice_topic,#pg_notice_sansaku,#pg_notice_sansaku_detail, #pg_notice_kentei, #pg_notice_pavilion, #pg_notice_mizuki, #pg_notice_monthly,
+#pg_notice_news_detail, #pg_notice_topic_detail, #pg_notice_kentei_detail, #pg_notice_pavilion_detail, #pg_notice_mizuki_detail {
+  background-color: #f7f2e8;
+
+  .contents_header {
+    background-image: url("https://cdn.puchidb.com/kotodazaifu/240f9e53-a88a-43c5-a599-a8ce5f78241e.png");
+    background-repeat: no-repeat;
+    background-position: 60px 0px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    padding-top: 70px;
+    text-align: center;
+
+    h1 {
+      display: inline;
+      padding: 6px;
+      line-height: 1.4em;
+      text-align: center;
+      border: 5px solid transparent;
+      -moz-border-image: url("https://cdn.puchidb.com/kotodazaifu/70f90a46-6132-47c6-a69e-6cef20efbbbb.png") 5 0 5 stretch; /* Old firefox */
+      -webkit-border-image: url("https://cdn.puchidb.com/kotodazaifu/70f90a46-6132-47c6-a69e-6cef20efbbbb.png") 5 0 5 stretch; /* Safari */
+      -o-border-image: url("https://cdn.puchidb.com/kotodazaifu/70f90a46-6132-47c6-a69e-6cef20efbbbb.png") 5 0 5 stretch; /* Opera */
+      border-image: url("https://cdn.puchidb.com/kotodazaifu/70f90a46-6132-47c6-a69e-6cef20efbbbb.png") 5 0 5 stretch;
+
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+      &:after {
+        content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+        margin: 5px;
+        position: relative;
+        top: 12px;
+      }
+    }
+  }
+}
+#pg_member_guide {
+  .contents_header {
+    h1 {
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block!important;
+      text-align: center!important;
+
+      &:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+        margin: 5px;
+        position: relative;
+        top: -5px;
+        left: -10px;
+      }
+      &:after {
+        content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+        margin: 5px;
+        position: relative;
+        top: -5px;
+        right: -10px;
+      }
+      & > div {
+        display: inline-block;
+      }
+      span {
+        font-size: 60%;
+      }
+    }
+  }
+
+  h2 {
+    color: #b5871b;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/2fb93832-81df-441b-8165-fd79d0d9c62f.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .membership_benefits {
+    background-color: #faf7d8;
+    padding: 30px;
+
+    h3 {
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 5px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .images {
+      .image_div {
+        display: inline-block;
+        margin-right: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+#pg_volunteer, #pg_volunteer_shiseki, #pg_volunteer_mannyou, #pg_volunteer_bunka, #pg_volunteer_monthly,
+#pg_volunteer_shiseki_detail, #pg_volunteer_mannyou_detail, #pg_volunteer_bunka_detail,
+#pg_volunteer_activity, #pg_volunteer_yukari, #pg_volunteer_secretariat,
+#pg_info, #pg_info_getting_started, #pg_info_historic_site, #pg_info_monthly,
+#pg_info_getting_started_detail, #pg_info_historic_site_detail,
+#pg_notice, #pg_notice_news, #pg_notice_sansaku,#pg_notice_topic, #pg_notice_kentei, #pg_notice_pavilion, #pg_notice_mizuki, #pg_notice_monthly,
+#pg_notice_news_detail,#pg_notice_sansaku_detail, #pg_notice_topic_detail, #pg_notice_kentei_detail, #pg_notice_pavilion_detail, #pg_notice_mizuki_detail {
+  hr {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .side {
+    .kadomaru {
+      border-radius: 6px;        /* CSS3草案 */  
+      -webkit-border-radius: 6px;    /* Safari,Google Chrome用 */  
+      -moz-border-radius: 6px;   /* Firefox用 */
+    }
+    .shiseki {
+      border: 1px solid #0063a7;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/d52041b2-700a-45f6-ac83-652378e088ea.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #0063a7;
+        font-weight: bold;
+      }
+    }
+    .mannyou {
+      border: 1px solid #7e308e;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/b571a712-41f9-4459-ac33-5bc4eddff044.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #7e308e;
+        font-weight: bold;
+      }
+    }
+    .bunka {
+      border: 1px solid #cc5218;
+      background-color: #fff;
+      margin-bottom: 5px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/881b958b-f066-425c-8c52-e35df03a28e6.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #cc5218;
+        font-weight: bold;
+      }
+    }
+    .getting_started {
+      border: 1px solid #0063a7;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/4f9e4edd-6e17-475d-9370-578a1db19bee.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #0063a7;
+        font-weight: bold;
+      }
+    }
+    .historic_site {
+      border: 1px solid #7e308e;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/1f1e37aa-dda6-40d0-870f-691c79c8c54a.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #7e308e;
+        font-weight: bold;
+      }
+    }
+    .news {
+      border: 1px solid #0063a7;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/eac08e20-47e8-4ab9-b89b-d8c13a235ac7.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #0063a7;
+        font-weight: bold;
+      }
+    }
+    .topic {
+      border: 1px solid #7e308e;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/1186432d-14af-4460-a0d9-825f8e3fda08.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #7e308e;
+        font-weight: bold;
+      }
+    }
+    .kentei {
+      border: 1px solid #cc5218;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/002d89bc-cf4b-4dd3-be20-d787820ea6de.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #cc5218;
+        font-weight: bold;
+      }
+    }
+    .pavilion {
+      border: 1px solid #446a37;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/123c0820-b43c-4683-be27-0c41e852638c.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #446a37;
+        font-weight: bold;
+      }
+    }
+    .mizuki {
+      border: 1px solid #0799cb;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.puchidb.com/kotodazaifu/79756312-f1fd-46b4-8722-d64ce8abbb4d.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #0799cb;
+        font-weight: bold;
+      }
+    }
+        .sansaku {
+      border: 1px solid #94AA00;
+      background-color: #fff;
+      margin-bottom: 10px;
+
+      .mark:before {
+        content: url("https://cdn.sitekitt.com/kotodazaifu/c0832026-00e5-4857-aa08-ca17aae8a1f2.png");
+        margin: 5px;
+        position: relative;
+        top: 3px;
+      }
+      & > a {
+        display: block;
+        color: #94AA00;
+        font-weight: bold;
+      }
+    }
+    ul {
+      margin:0;
+      padding-left: 20px;
+      li {
+        border: none;
+        margin:0 0 5px 0;
+        padding:0;
+
+        & > a {
+          color: #cc5218;
+        }
+      }
+    }
+  }
+  .contents {
+    .shiseki {
+      h3 {
+        a {
+          color: #0063a7;
+        }
+      }
+    }
+    .mannyou {
+      h3 {
+        a {
+          color: #7e308e;
+        }
+      }
+    }
+    .bunka {
+      h3 {
+        a {
+          color: #cc5218;
+        }
+      }
+    }
+
+    article {
+      background-color: #fff;
+      padding: 30px;
+
+      h5 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+#pg_volunteer_shiseki, #pg_volunteer_shiseki_detail {
+  h3.mark {
+    color: #0063a7;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/d52041b2-700a-45f6-ac83-652378e088ea.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_volunteer_mannyou, #pg_volunteer_mannyou_detail {
+  h3.mark {
+    color: #7e308e;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/b571a712-41f9-4459-ac33-5bc4eddff044.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_volunteer_bunka, #pg_volunteer_bunka_detail, 
+#pg_volunteer_activity, #pg_volunteer_yukari, #pg_volunteer_secretariat {
+  h3.mark {
+    color: #cc5218;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/881b958b-f066-425c-8c52-e35df03a28e6.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_info_getting_started, #pg_info_getting_started_detail {
+  h3.mark {
+    color: #0063a7;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/4f9e4edd-6e17-475d-9370-578a1db19bee.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_info_historic_site, #pg_info_historic_site_detail {
+  h3.mark {
+    color: #7e308e;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/1f1e37aa-dda6-40d0-870f-691c79c8c54a.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_news, #pg_notice_news_detail {
+  h3.mark {
+    color: #0063a7;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/eac08e20-47e8-4ab9-b89b-d8c13a235ac7.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_topic, #pg_notice_topic_detail {
+  h3.mark {
+    color: #7e308e;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/1186432d-14af-4460-a0d9-825f8e3fda08.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_kentei, #pg_notice_kentei_detail {
+  h3.mark {
+    color: #cc5218;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/002d89bc-cf4b-4dd3-be20-d787820ea6de.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_pavilion, #pg_notice_pavilion_detail {
+  h3.mark {
+    color: #446a37;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/123c0820-b43c-4683-be27-0c41e852638c.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_mizuki, #pg_notice_mizuki_detail {
+  h3.mark {
+    color: #0799cb;
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/79756312-f1fd-46b4-8722-d64ce8abbb4d.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+#pg_notice_sansaku, #pg_notice_sansaku_detail {
+  h3.mark {
+    color: #94AA00;
+    &:before {
+      content: url("https://cdn.sitekitt.com/kotodazaifu/c0832026-00e5-4857-aa08-ca17aae8a1f2.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+// ========================
+// ===== その他ページ =====
+// ========================
+#pg_inquiry, #pg_inquiry_thankyou, #pg_cart, #pg_privacy {
+  .contents_header {
+    margin-top: 0;
+    margin-bottom: 80px;
+    padding-top: 70px;
+    text-align: center;
+
+    h1 {
+      display: inline;
+      padding: 6px;
+      line-height: 1.4em;
+      text-align: center;
+      border: 5px solid transparent;
+      -moz-border-image: url("https://cdn.puchidb.com/kotodazaifu/27196571-f59c-4651-abe3-f63528a9359e.png") 5 0 5 stretch; /* Old firefox */
+      -webkit-border-image: url("https://cdn.puchidb.com/kotodazaifu/27196571-f59c-4651-abe3-f63528a9359e.png") 5 0 5 stretch; /* Safari */
+      -o-border-image: url("https://cdn.puchidb.com/kotodazaifu/27196571-f59c-4651-abe3-f63528a9359e.png") 5 0 5 stretch; /* Opera */
+      border-image: url("https://cdn.puchidb.com/kotodazaifu/27196571-f59c-4651-abe3-f63528a9359e.png") 5 0 5 stretch;
+
+    }
+  }
+}
+#pg_cart {
+  .cart {
+    h1 {
+      display: none!important;
+    }
+  }
+}
+#pg_privacy {
+  h2 {
+    &:before {
+      content: url("https://cdn.puchidb.com/kotodazaifu/2f23b130-569e-4f1c-84a3-ae9777d0450b.png");
+      margin: 5px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+// ============================
+// ===== 解説員専用ページ =====
+// ============================
+#pg_kaisetsu, #pg_kaisetsu_category,#pg_kaisetsu_document,#pg_kaisetsu_folder,#pg_kaisetsu_document_detail, #pg_kaisetsu_form {
+  h1, h2, p {
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+  .navi,.nav {
+    margin: 30px 0;
+    padding: 10px;
+    background-color: #696666;
+    li{
+      border:none;
+      list-style:none;
+      display: inline-block;
+      padding:0 12px 0 0;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  .contents {
+    width: 950px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    color: #393636;
+
+    .content {
+      width: calc(~"100% - 22px");
+      padding: 10px;
+      border: 1px solid #393636;
+
+      .container:first-child {
+        width: 100%;
+        position: relative;
+
+        h1 {
+          text-align: center;
+        }
+        h2.month {
+          text-align: center;
+
+          a {
+            position: absolute;
+            color: #393636
+          }
+          a:first-child {
+            left: 0;
+          }
+          a:last-child {
+            right: 0;
+          }
+        }
+        .table {
+          width: 100%;
+          border-top: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-collapse: collapse;
+
+          tr {
+            &.saturday {
+              background-color: #ddf;
+            }
+            &.sunday {
+              background-color: #fdd;
+            }
+            &.index {
+              background-color: #ddd;
+              display: none;
+            }
+          }
+          th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            font-size: 125%;
+
+            .date {
+              width: 100px;
+              text-align: right;
+              font-weight: bold;
+            }
+            .holiday_status {
+              display: none;
+            }
+            &.contents {
+              background-color: inherit;
+              .content {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .side_content {
+      width: calc(~"100% - 20px");
+      padding: 10px;
+      background-color: #ddd;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0 0 0 20px;
+          padding: 0;
+        }
+      }
+    }
+    .Categories_list {
+      .contents {
+        background-color: inherit;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; 
+
+        li {
+          margin: 0;
+          padding: 0;
+          line-height: 1.4em;
+
+          .date {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+@maincolor:#a7996a;
+#fixed_cart{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  font-weight:bold;
+  border-radius:6px;
+  border:solid 2px #666;
+  font-size:16px;
+  padding:12px 12px;
+  background:#fff;
+  a{
+    color:#111;
+  }
+}
+.kosu{
+ display:none; 
+}
+.regular_price{
+    float:right;
+    margin-right:12px;
+    display:none;
+}
+.products_detail .price .number_sale{
+    color: #FF7F1C;
+    font-weight: bold;
+    font-size: 34px;
+}
+.empty_cart{
+    .empty {
+        display:block
+    }
+    .incart{
+        display:none;
+        
+    }
+}
+.in_cart{
+    .empty {
+        display:none
+    }
+    .incart{
+        display:block;
+    }
+}
+
+.sending{
+  background:#b4430b!important;
+}
+td.no_padding {
+  padding-left: 0;
+}
+.btn-r{
+  float: right;
+  background: orange;
+  border-radius: 24px;
+  min-width: 80px;
+  margin-left: 6px;
+  cursor: pointer;
+  &:hover{
+    background:#261a19;
+    color:#fff;
+  }
+}
+span._error_code{
+  display:none;
+}
+span._alert {
+  font-size: 1.2em;
+  padding: 9px 24px;
+  width: 100%;
+  display: block;
+  margin-bottom:12px;
+  border:solid 2px red;
+  font-weigth:bold;
+  color:red;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+span._success {
+  font-size: 1.2em;
+  font-weight:bold;
+  color: #111;
+  padding: 24px 36px;
+  width: 100%;
+  display: block;
+  margin-bottom:12px;
+  font-weigth:bold;
+  background:#dfb78c;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+span.min_field input {
+  width: 40%;
+}
+.Form_zip{
+  width:120px!important;
+}
+input[type="text"],input[type="email"],input[type="tel"],input[type="password"],select{
+  font-size: 14px!important;
+  padding-left: 9px!important;
+  border: solid 1px #B7B3AB;
+  border-radius: 0;
+  font-weight:normal;
+  height:36px;
+}
+input[type="submit"],input[type="button"],textarea{
+  font-size: 16px!important;
+  padding: 9px!important;
+  border: solid 1px #B7B3AB;
+}
+
+.Signup_form {
+  select{
+    border-radius:0;
+    height:36px!important;
+  }
+}
+//confirm
+.order_address{
+  .delivery_address{
+    h3{
+      background:#e4e4e4;
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: 6px;
+      padding: 6px 20px;
+    }
+    border:1px solid #bab5ae;
+    min-height:180px;
+    padding:0 20px 12px;
+  }
+}
+
+.btn-mini {
+  font-size: 12px;
+  color: #0066C0;
+  font-weight: normal;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.Order_flow,.Signup_form{
+  select{
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+    &:disabled{
+      opacity:.6;
+    }
+  }
+  .entry_state select{
+    margin-left:0;
+  }
+  .table-header{
+    background:@maincolor;
+  }
+  h1{
+    font-size:28px!important;
+    display: block!important;
+  }
+  h2{
+    font-family: Hiragino Kaku Gothic Pro, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif,Helvetica Bold, Arial;
+    font-size:18px!important;
+  }
+  .step_navigation{
+    display:none;
+  }
+  #login_area a{
+    border-bottom:1px solid #00A0E9;
+  }
+  .btn{
+    font-weight:bold;
+  }
+  input[type="submit"],.btn{
+    -webkit-appearance: none;
+    font-weight:bold;
+    border-radius: 24px;
+    background:@maincolor;
+    width: auto;
+    height: 50px;
+    font-size: 16px;
+    min-width: 200px;
+    margin: 24px auto;
+    left: 0;
+    right: 0;
+    padding-left:12px;
+    padding-right:12px;
+    line-height: 24px;
+    font-family:"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+    &:hover{
+      background: #f8b656;
+      color: #261a19;
+    }
+  }
+  label.error {
+    display: block!important;
+    text-align:left;
+  }
+  select{
+    border-radius:0;
+    height:36px!important;
+  }
+
+  .login{
+    h1{
+      display:none!important;
+    }
+    input[type="submit"],.btn{
+      width: 200px;
+      -webkit-appearance: none;
+      border-radius: 24px;
+      background:#261a19;
+      min-width:200px;
+      font-size:14px;
+      color:#fff;
+      text-align:center;
+      height: 36px;
+      border: none;
+      margin-top: 18px;
+      padding: 6px 14px 14px 14px;
+    }
+
+  }
+  .delivery_date,.direct_receipt_date {
+    width: 200px!important;
+    background: #fff!important;
+    padding: 0 6px!important;
+  }
+
+  .shokei_with_tax{
+    width:120px;
+    text-align:right!important;
+    padding-right:12px!important;
+    b{
+      font-size:1.2em;
+    }
+  }
+  .products_name{
+    width:400px;
+  }
+
+  select{
+    min-width: 100px;
+  }
+  label.error {
+    display: initial!important
+  }
+  .payment .credit > .table-row:nth-child(2) {
+    background: #eee;
+  }
+  .payment .no > .table-row:nth-child(2) {
+    background: #eee;
+  }
+
+  .payment .table-row
+  {
+    &:first-child {
+      background: #fff!important;
+      font-weight:normal;
+      div{
+        text-align:left!important;
+      }
+    }
+    .description{
+      line-height:1.4em;
+      padding: 12px 20px;
+    }
+  }
+  .card_no,.card_expire,#securitycode{
+    label.error {
+      display: none!important;
+    }
+  }
+}
+a#kiyaku {
+  border: solid 1px #666;
+  padding: 6px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.selector:hover {
+  font-weight: bold;
+}
+.confirm{
+  input[type="submit"]{
+    -webkit-appearance: none;
+    width:280px!important;
+    position: absolute!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    left: 0!important;
+    right: 0!important;
+    border-radius: 24px;
+  }
+  #order_info {
+    top: -1px;
+    position: relative;
+  }
+  #msg_description{
+    margin: 5px 0;
+    line-height: 1.6em;
+    display: block;
+  }
+}
+.Signup_form{
+  input[type="submit"]{
+    -webkit-appearance: none;
+    width:200px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 24px;
+  }
+  label.error {
+    display: block!important;
+    text-align:left;
+  }
+  select{
+    min-width:200px
+  }
+}
+.Order_flow,.Signup_form{
+  select{
+    min-width:200px
+  }
+  .col3 {
+    border:solid 6px #d3d3d3;
+    padding: 24px;
+    height: 390px;
+    flex:none;
+    width:calc(~"100% / 3 - 16px");
+    // width: 290px;
+    box-sizing: border-box;
+    margin-right:24px;
+    margin-bottom: 24px;
+    &:nth-child(3n){
+      margin-right:0;
+    }
+    h3{
+      border-bottom:solid 1px #aaa;
+      font-size:16px;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+  }
+  .order_address{
+    .col3{
+      height:auto;
+    }
+  }
+
+  .table{
+    border-collapse: collapse;
+  }
+  .table-row{
+    .num{
+      width:80px;
+      padding:0 10px;
+      input{
+        text-align:center!important;
+      }
+    }
+    div {
+      position:relative;
+      vertical-align: middle;
+      display: table-cell;
+      padding: 6px 20px;
+      border: 1px solid #aaa;
+      &:last-child{
+        text-align: left;
+      }
+    }
+    .products_price,.shokei_with_tax{
+      text-align:right;
+    }
+    button.remove_btn {
+      border: 1px solid #aaa;
+      padding: 0 3px;
+    }
+    //&:first-child{
+    //  background:#e4e4e4;
+    //  font-weight:bold;
+    //  // text-align: center;
+    //  div{
+    //    // text-align: center!important;
+    //  }
+    //}
+  }
+  input:focus{
+    background:#ffffcc;
+  }
+  .cart{
+
+    .products_name {
+      line-height: 21px;
+    }
+    .after_description {
+      margin-top: 102px;
+      border:solid 1px #aaa;
+
+      position: relative;
+      top: 25px;
+      z-index:1;
+
+      h2{
+        background:#e4e4e4;
+        color:#111;
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        position: absolute;
+        margin: auto;
+        padding:10px 0;
+        text-align:center;
+        left: 0;
+        right: 0;
+        z-index:10;
+      }
+      div{
+        padding: 48px;
+        position: relative;
+        top: 25px;
+        z-index:1;
+
+
+      }
+    }
+    form{
+      margin-top: 16px;
+    }
+    input[type="submit"]{
+      //-webkit-appearance: none;
+      //background:#261a19;
+      //color:#fff;
+      width: 250px!important;
+      //height: 50px;
+      //font-size: 16px;
+      //margin: 24px auto;
+      //left: 0;
+      //right: 0;
+      //border-radius: 24px;
+
+    }
+    ._ctrl{
+      text-align:center!important;
+    }
+  }
+
+  //  .cart,.login,.Signup_form,.delivery,.confirm{
+
+  // h1{
+  //     display:none;
+  // }
+  //input[type="submit"],.btn{
+  //  -webkit-appearance: none;
+  //  border-radius: 24px;
+  //  background:#261a19;
+  //  min-width:200px;
+  //  font-size:14px;
+  //  color:#fff;
+  //  text-align:center;
+  //  height: 36px;
+  //  border: none;
+  //  margin-top: 18px;
+  //  padding: 6px 14px 14px 14px;
+  //  &:hover{
+  //    background: #f8b656;
+  //    color: #261a19;
+  //  }
+  //}
+  //  }
+  //.address,.apply{
+  //  .select2{
+  //    width: 200px!important;
+  //  }
+  //  .step_navigation{
+  //    display:none;
+  //  }
+  //  .table-row{
+  //    div {
+  //      padding: 3px;
+  //      padding-left: 20px!important;
+  //      display: table-cell;
+  //
+  //      border: 1px solid #aaa;
+  //      text-align:left!important;
+  //      &:first-child{
+  //        font-weight:bold;
+  //        background:#e4e4e4;
+  //        text-align: left;
+  //        width:180px;
+  //        div{
+  //          text-align: left!important;
+  //        }
+  //      }
+  //      &:last-child{
+  //        background:#fff;
+  //        text-align:left;
+  //      }
+  //    }
+  //    .products_price,.shokei_with_tax{
+  //      text-align:right;
+  //    }
+  //    button.remove_btn {
+  //      border: 1px solid #aaa;
+  //      padding: 0 3px;
+  //    }
+  //    &:first-child{
+  //      background:#fff;
+  //    }
+  //
+  //  }
+  //  .select2-container--default .select2-selection--single,.select2-container--default .select2-selection--single .select2-selection__arrow{
+  //    border-radius:0;
+  //    height:36px;
+  //  }
+  //
+  //}
+}
+.address,.delivery,.execution,.confirm{
+  .step_navigation{
+    display:none;
+  }
+}
+.customers_lastname.caption,
+.customers_firstname.caption,
+.customers_email_address.caption,
+.customers_name.caption,
+.customers_postcode.caption,
+.customers_state.caption,
+.customers_city.caption,
+.customers_street_address.caption,
+.customers_telephone.caption{
+  &:after{
+    content : "＊";
+    color: #F14449;
+  }
+}
+/*page*/
+#pg_60,#pg_61-62,#pg_61-63{
+  div#main_area{
+    background:#fff;
+  }
+  #main_contents h1{
+    font-size:20px;
+    border-bottom: 1px solid #aaa;
+    margin-bottom:12px;
+  }
+  footer{
+    border-top:none;
+  }
+}
+/*card*/
+.execution{
+  .contents{
+    padding:0!important;
+  }
+  div.selector{
+    background:#eee;
+    width:220px;
+  }
+  td,th{
+    border:none;
+  }
+  th{
+    padding: 16px 16px;
+  }
+  td{
+      padding-top:16px;
+      padding-bottom:16px;
+  }
+  input[type=text]{
+    height:33px;
+  }
+  .new_card_form td ,.card_expire td{
+    padding-left: 0;
+  }
+  .card_expire td{
+    padding: 0 6px 6px 0;
+    line-height:34px;
+  }
+  .card_no td{
+    padding: 0 6px 6px 0;
+  }
+  #securitycode img {
+    margin-top: 9px;
+  }
+  select{
+    height:33px;
+  }
+
+  tr.row_divider{
+    border-top:1px solid #bab5ae;
+  }
+  #total_amount{
+    font-size:18px;
+    font-weight:bold;
+  }
+  input[type="submit"]:disabled {
+    opacity: 0.3;
+  }
+  .table-header{
+    display:none;
+  }
+  .choice_card_form th{
+      width:165px;
+      line-height: 35px;
+  }
+  div#payment_info
+  {
+    margin-top:-1px;
+    border:solid 1px #bab5ae;
+    .table-row {
+      line-height:32px;    
+      div {
+        border-left: none;
+        border-right: none;
+      }
+      .title{
+        font-weight:bold;
+        width: 220px;
+        padding-left: 30px;
+        border-right: 1px solid #bab5ae;
+        border-bottom: 1px solid #bab5ae;
+        border-top: 1px solid #bab5ae;
+        background:#eee;
+      }
+      .contents{
+        padding:16px 16px!important;
+      }
+      &:last-child{
+        .contents{
+          font-size:1.2em;
+        }
+      }
+    }
+  }
+
+}
+.address_book_id,.normal,.direct_receipt,.credit,.no{
+  .table-header{
+    display:none;
+  }
+}
+div.selector{
+  line-height:32px;
+}
+#method_selector ,.address_book_id{
+
+  div.selector{
+    background:#eee;
+    width:220px;
+  }
+  .description{
+    line-height:42px;
+  }
+
+}
+#method_selector{
+  :placeholder-shown {
+    color: #454341; }
+  ::-webkit-input-placeholder {
+    color: #454341; }
+
+  :-moz-placeholder {
+    color: #454341; opacity: 1; }
+
+  ::-moz-placeholder {
+    color: #454341; opacity: 1; }
+
+  :-ms-input-placeholder {
+    color: #454341; }
+
+}
+
+.address_editor{
+  width:700px;
+  border:none!important;
+  padding: 24px 0!important;
+  th{
+    width:160px;
+  }
+}
+#address_form{
+  .table-row{
+    &:nth-child(n+2){
+      div{
+        &:nth-child(2){
+          padding:6px 42px;
+        }
+      }
+    }
+  }
+}
+.address_book_id{
+  select{
+    margin-top: 6px;
+    margin-left: 26px;
+  }
+  .contents{
+    padding:0!important;
+  }
+  .address_editor {
+    width: 700px;
+  }
+  th{
+    padding-left:20px;
+  }
+}
+
+
+#pg_cart,#pg_11-12{
+        #cart_header{
+        display:block;
+        z-index:20;
+    }
+    .body{
+        margin-top:180px;
+    }
+}    
+#kiyaku{
+    border: solid 1px #666;
+        padding: 6px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+}
+.btn_area{
+    width:100%;
+    text-align:center;
+}
+.require_flag {
+        color: #F14449;
+        width:20px!important;
+}
+.sending{
+  background:#b4430b!important;
+}
+.Form_zip,.Form_state{
+  width:120px!important;
+}
+
+span._error_code{
+  display:none!important;
+}
+span.min_field input {
+  width: 200px!important;
+}
+span._alert {
+  font-size: 1.2em;
+  padding: 9px 24px;
+  width: 100%;
+  display: block;
+  margin-bottom:12px;
+  border:solid 2px red;
+  font-weigth:bold;
+  color:red;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+span._comment{
+    display:none!important;
+}
+span._success {
+  font-size: 1.2em;
+  font-weight:bold;
+  color: #111;
+  padding: 24px 36px;
+  width: 100%;
+  display: block;
+  margin-bottom:12px;
+  font-weigth:bold;
+  //background:#dfb78
+  background: inherit;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+span.min_field input {
+  width: 40%;
+}
+.btn-r{
+    float: right;
+    background: orange;
+    border-radius: 24px;
+    min-width: 80px;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -3px;
+    color: #333;
+  &:hover{
+    background:#261a19;
+    color:#fff;
+  }
+}
+#cart_header {
+    font-size:12px;
+    z-index:1;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 44px;
+    overflow: hidden;
+    background:#fff;
+    line-height: 44px;
+    margin-top:-1px;
+    color: #261a19;
+    font-weight:bold;
+    small{
+        font-size:11px;
+    }
+    .tel{
+        margin-left:12px;
+        margin-right:8px;
+        a{
+            margin-left:0;
+        }
+    }
+    a{
+        margin-left:36px;
+    }
+}
+#address_form{
+    .table-row{
+        div{
+            // &:last-child{
+            //     width:650px;
+            // }
+            span{
+                display:inline-block;
+            }
+        }
+        &:nth-child(n+2) div:nth-child(2){
+            padding: 6px 42px;
+        }
+    }
+}
+.Signup_form{
+    margin-bottom:42px;
+}
+.Order_flow {
+  .contents {
+    #login_area {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .thankyou {
+    display: none;
+  }
+}
+.Order_flow ,.Signup_form{
+    font-size:14px;
+    select{
+      -moz-appearance: menulist;
+      -webkit-appearance: menulist;
+      &:disabled{
+        opacity:.6;
+      }
+    }
+    .entry_state select{
+      margin-left:0;
+    }
+    h1 {
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 12px;
+      font-size:28px;
+      margin-top:54px;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-family: Hiragino Kaku Gothic Pro, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif,Helvetica Bold, Arial;
+      font-size:18px!important;
+    }
+    .step_navigation{
+      display:none;
+    }
+    #login_area a{
+      border-bottom:1px solid #00A0E9;
+    }
+    .btn{
+      font-weight:bold;
+    }
+    width:920px;
+    margin-left:auto;
+    margin-right:auto;
+    input[type="text"],input[type="email"],input[type="tel"],input[type="password"],input[type="number"],select{
+          font-size: 14px!important;
+          padding-left: 9px!important;
+          border: solid 1px #B7B3AB;
+          border-radius: 0;
+          font-weight:normal;
+          height:36px;
+          width:100%;
+    }
+    textarea{
+      font-size: 16px!important;
+      padding-left: 9px!important;
+      width:100%;
+      border:solid 1px #B7B3AB;
+    }
+    .table {
+      width: 100%;
+    }
+    .table-row div{
+      text-align:left;
+    }
+    input[type="submit"],.btn{
+      -webkit-appearance: none;
+      font-weight:bold;
+      border-radius: 24px;
+      background:#261a19;
+      color:#fff;
+      width: auto;
+      height: 50px;
+      font-size: 16px;
+      min-width: 200px;
+      margin: 24px auto;
+      left: 0;
+      right: 0;
+      padding-left:12px;
+      padding-right:12px;
+      line-height: 24px;
+      font-family:"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+      &:hover{
+        background: #f8b656;
+        color: #261a19;
+      }
+  }
+  label.error {
+    display: block!important;
+    text-align:left;
+  }
+  select{
+    border-radius:0;
+    height:36px!important;
+  }
+  .btn{
+    //        line-height:50px;
+    //        line-height: 38px;
+    display: inline-block;
+  }
+    
+    .col3 {
+        border:solid 6px #d3d3d3;
+        padding: 24px;
+        height: 390px;
+        flex:none;
+        width:calc(~"100% / 3 - 16px");
+        // width: 290px;
+        box-sizing: border-box;
+        margin-right:24px;
+        margin-bottom: 24px;
+        &:nth-child(3n){
+          margin-right:0;
+        }
+        h3{
+          border-bottom:solid 1px #aaa;
+          font-size:16px;
+          padding-bottom: 6px;
+          margin-bottom: 12px;
+        }
+    }
+    .step_navigation{
+        display:none;
+    }
+  .table{
+    border-collapse: collapse;
+    display:table;
+
+      .table-row{
+        .num{
+          width:80px;
+          padding:0 10px;
+          input{
+            text-align:center!important;
+          }
+        }
+        div {
+          position:relative;
+          vertical-align: middle;
+          display: table-cell;
+          padding: 6px 20px;
+          border: 1px solid #aaa;
+          &:last-child{
+            text-align: left;
+          }
+        }
+        .products_price,.shokei_with_tax{
+          text-align:right;
+          width:120px;
+        }
+      }
+  }
+    //cart
+  .cart{
+      form{
+        text-align:center; 
+            ._products_model{
+                text-align:left;
+            }
+            .products_name {
+                line-height: 1.4em;
+             // line-height: 21px;
+            //  width:400px;
+            }
+            .options{
+                width:140px;
+            }
+            .final_price{
+                  width:100px;
+              }
+            .after_description {
+              margin-top: 102px;
+              border:solid 1px #aaa;
+        
+              position: relative;
+              top: 25px;
+              z-index:1;
+        
+              h2{
+                background:#e4e4e4;
+                color:#111;
+                width: 100%;
+                height: 50px;
+                font-size: 16px;
+                position: absolute;
+                margin: auto;
+                padding:10px 0;
+                text-align:center;
+                left: 0;
+                right: 0;
+                z-index:10;
+              }
+              div{
+                padding: 48px;
+                position: relative;
+                top: 25px;
+                z-index:1;
+        
+        
+              }
+            }
+        
+            ._ctrl{
+              text-align:center!important;
+            }
+            button.remove_btn {
+              border: 1px solid #aaa;
+              padding: 0 3px;
+            }
+      }
+  }
+ ._ctrl {
+        width: 100px;
+ }
+  .delivery,.payment{
+      h1{
+          display:none;
+      }
+      .table-header{
+          display:none;
+      }
+      .address_editor{
+          width:700px;
+          border:none!important;
+          padding: 24px 0!important;
+          th{
+            width:160px;
+          }
+          th,td{
+            border-top: 1px solid #bab5ae;
+            padding-top:6px;
+            padding-bottom:6px;
+          }
+          td{
+              width: 540px;
+              padding-right: 12px;
+          }
+      }
+      .address_selector {
+            margin-left: 24px;
+            margin-top: 9px;
+      }
+      select{
+          max-width:200px;
+              &:disabled{
+                  opacity:.6;
+              }
+      }
+      div.selector{
+          line-height:32px;
+      }
+      #method_selector, .address_book_id{
+          div.selector{
+            background: #eee;
+            width: 220px;
+          }
+          .description{
+            line-height:42px;
+            width:424px;
+          }
+      }
+#method_selector{
+  :placeholder-shown {
+    color: #454341; }
+  ::-webkit-input-placeholder {
+    color: #454341; }
+
+  :-moz-placeholder {
+    color: #454341; opacity: 1; }
+
+  ::-moz-placeholder {
+    color: #454341; opacity: 1; }
+
+  :-ms-input-placeholder {
+    color: #454341; }
+
+}
+      .credit,.daibiki{
+          div.selector{
+              width:220px;
+          }
+          div.contents{
+           // width:95px                  
+          }
+          div.description{
+            // width:590px                 
+          }
+      }
+      .no{
+          div.selector{
+              width:220px;
+          }
+          div.contents{
+           //   width:650px              
+          }
+
+      }
+      .address_book_id{
+  select{
+    margin-top: 6px;
+    // margin-left: 26px;
+  }
+  .contents{
+    padding:0!important;
+  }
+  .address_editor {
+    width: 700px;
+  }
+  th{
+    padding-left:20px;
+  }
+      }
+      
+      .credit > .table-row,.no > .table-row,.daibiki > .table-row{
+          &:nth-child(2){
+            background: #eee;
+          }
+      }
+  }
+  .confirm{
+     //confirm
+
+    .order_address{
+      .delivery_address{
+        h3{
+          background:#e4e4e4;
+          margin-left: -20px;
+          margin-right: -20px;
+          margin-bottom: 6px;
+          margin-top:0;
+          padding: 6px 20px;
+          font-size:inherit;
+        }
+        border:1px solid #bab5ae;
+        min-height:180px;
+        padding:0 20px 12px;
+      }
+    }
+    
+      .delivery_date,.direct_receipt_date {
+        width: 200px!important;
+        background: #fff!important;
+        padding: 0 6px!important;
+      }
+    
+      .shokei_with_tax{
+        width:120px;
+        text-align:right!important;
+        padding-right:12px!important;
+        b{
+          font-size:1.2em;
+        }
+      }
+      .final_price{
+          width:150px;
+      }
+      .options{
+          width:170px;
+      }
+      .products_name{
+        width:400px;
+        line-height:1em;
+      }
+      #order_info {
+          top: -1px;
+          position: relative;
+          .detail {
+                width: 400px;
+          }
+          
+      }
+      input[type=submit]{
+          width:280px;
+      }
+    } 
+  .thankyou{
+      h1{
+          display:block;
+      }
+  }    
+  .login{
+      margin-top: 52px;
+      h1{
+          display:none;
+          
+      }
+    input[type="submit"],.btn{
+      width: 200px;
+      -webkit-appearance: none;
+      border-radius: 24px;
+      background:#261a19;
+      min-width:200px;
+      font-size:14px;
+      color:#fff;
+      text-align:center;
+      height: 36px;
+      border: none;
+      margin-top: 18px;
+      padding: 6px 14px 14px 14px;
+    }
+
+  }
+.execution{
+  .contents{
+    padding:0!important;
+  }
+  div.selector{
+    background:#eee;
+    width:220px;
+  }
+  td,th{
+    border:none;
+  }
+  th{
+    padding: 16px 16px;
+  }
+  td{
+      padding-top:16px;
+      padding-bottom:16px;
+  }
+  input[type=text]{
+    height:33px;
+  }
+  .new_card_form td ,.card_expire td{
+    padding-left: 0;
+  }
+  .card_expire td{
+    padding: 0 6px 6px 0;
+    line-height:34px;
+  }
+  .card_no td{
+    padding: 0 6px 6px 0;
+  }
+  #securitycode img {
+    margin-top: 9px;
+  }
+  select{
+    height:33px;
+  }
+
+  tr.row_divider{
+    border-top:1px solid #bab5ae;
+  }
+  #total_amount{
+    font-size:18px;
+    font-weight:bold;
+  }
+  input[type="submit"]:disabled {
+    opacity: 0.3;
+  }
+  .table-header{
+    display:none;
+  }
+  .choice_card_form th{
+      width:165px;
+      line-height: 35px;
+  }
+  div#payment_info
+  {
+    margin-top:-1px;
+    border:solid 1px #bab5ae;
+    .table-row {
+      line-height:32px;    
+      div {
+        border-left: none;
+        border-right: none;
+      }
+      .title{
+        font-weight:bold;
+        width: 220px;
+        padding-left: 30px;
+        border-right: 1px solid #bab5ae;
+        border-bottom: 1px solid #bab5ae;
+        border-top: 1px solid #bab5ae;
+        background:#eee;
+      }
+      .contents{
+        padding:16px 16px!important;
+      }
+      &:last-child{
+        .contents{
+          font-size:1.2em;
+        }
+      }
+    }
+  }
+
+}
+}
+.Route_map{
+  .google_map{
+	  width:100%!important;
+      height:350px!important;
+  }
+}
+@media screen and (max-width: 480px){
+.hide_sp {
+    display: none;
+}
+.hide_pc {
+    display: block;
+}
+.sp_flex {
+    -js-display: flex!important;
+    display: -webkit-box!important;
+    display: -moz-box!important;
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
+    display: flex!important;
+    -webkit-align-items: flex-start!important;
+    align-items: flex-start;
+    flex-wrap: wrap!important;
+    -webkit-flex-wrap: wrap!important;
+}
+.sp_width {
+    width: 100%!important;
+    height: inherit!important;
+    img {
+		width: 100%!important;
+    }
+}
+.sp_width_news {
+    width: calc(~"100% - 180px")!important;
+}
+.sp_50width {
+    width: calc(~"50% - 5px")!important;
+    height: inherit!important;
+}
+.flex .content{
+  width:100%;
+}
+.go_to_index {
+height: 60px;
+    display: block;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contents ,.read_contents{
+        padding: 6px;
+}
+.contents_header {
+    //background-position: center 0px;
+    //padding-top: 120px;
+    background-position: center 0px!important;
+    padding-top: 50px!important;
+    background-size: 30%;
+    h1 {
+        display: block!important;
+    }
+}
+header {
+  	&.for_contents{
+      	position: relative;
+      	top: 0;
+      	width: 100%;
+      	height: 60px;
+      	margin-bottom: -60px;
+      	z-index: 999;
+  	}
+    .close_dropdown_menu {
+		height: 60px;
+		line-height: 60px;
+    }
+    .top_link {
+      	position: relative;
+      	z-index: 20;
+		display: block;
+      	width: 100%;
+      	height: 60px;
+    }
+    .header_image {
+        height: 60px;
+    }
+    .sp_header_menu {
+        position: relative;
+        z-index: 100;
+        
+        height: 54px;
+        margin-bottom: -54px;
+        background-image: url("https://cdn.sitekitt.com/kotodazaifu/824c9a4c-5b2c-4fa2-b997-4bf7bf55ef94.png");
+        background-repeat: no-repeat;
+        background-position: top 0 center;
+        background-size: cover;
+        
+        .menu_btn {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            z-index: 900;
+            background-color: #393636;
+            color: #fff;
+            padding: 30px 5px 0;
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #393636;
+            color: #fff;
+            width: 200px;
+            text-align: center;
+            
+            a {
+                color: #fff;
+                font-weight: bold;
+                display: block;
+            }
+            .index {
+                height: 100px;
+                line-height: 100px;
+                background-image: url("https://cdn.puchidb.com/kotodazaifu/0422b1c4-b54b-47e8-85e6-cbe9f670eb49.png");
+                background-repeat: no-repeat;
+                background-position: top 10px right 10px;
+            }
+            .link {
+                border-top: 1px solid #fff;
+                height: 60px;
+                line-height: 60px;
+            }
+            ul {
+				margin:0;
+              	padding:0;
+              	list-style: none;
+                .dropdown-menu {
+						display: none;
+                }
+                li {
+					margin:0;
+                  	padding:0;
+                  	border-left: none;
+                  	border-right: none;
+                  
+                    a {
+						display: block;
+                        height: 60px;
+                        line-height: 60px;
+                    }
+                  &.active{
+                       background: #8c2f2f;
+                    	.dropdown-menu {
+								display: block;
+		                }
+                  }
+                }
+
+            }
+        }
+    }
+}
+.level-1 .dropdown-menu {
+        background: #80664e;
+}
+footer {
+    .sp_footer_title_logo {
+        text-align: center;
+        border-bottom: 1px solid #fff;
+    }
+    .sp_txt {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+        a {
+            display: block;
+        }
+        &.member_login {
+          background-color: #954c7a;
+          a {
+              display: block;
+              color: #fff;
+          }
+        }
+    }
+}
+.copyright {
+    font-size: 8px;
+    text-align: center;
+}
+div#bodyarea {
+    width: 95%!important;
+  	margin:auto;
+  	&.for_contents {
+    	margin-top: 60px;
+  	}
+    h1 {
+		font-size: 22px;
+    }
+}
+
+// ====================================
+// ===== link_button, cart_button =====
+// ====================================
+div.large_btn, div.small_btn, div.small2_btn, div.ss_btn {
+    padding: 2px;
+    width: calc(~"100% - 6px");
+    height: 66px;
+    
+    & > div {
+        width: 100%;
+        height: 66px;
+        
+        & > a {
+            display: block;
+            width: 100%!important;
+            height: 66px;
+            line-height: 66px;
+            text-align: center;
+        }
+    }
+}
+div.cart_button {
+    padding: 2px;
+    width: calc(~"100% - 6px");
+    height: 66px;
+    
+    & > div {
+        width: 100%;
+        height: 66px;
+        
+        & > input ,.submit{
+            margin: 0;
+            padding: 0;
+            width: 100%!important;
+            height: 66px;
+            
+        }
+    }
+}
+div.multi_line {
+    div {
+        a {
+            line-height: 1.4em;
+            padding:15px;
+            width: calc(~"100% - 30px")!important;
+            height: 36px;
+        }
+    }
+}
+// ===============
+// ===== TOP =====
+// ===============
+#pg_top {
+    .border {
+        width: calc(~"50% - 2px");
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #393636;
+        font-size: 14px;
+        font-weight: bold;
+        a {
+            display: block;
+            color: #393636;
+        }
+    }
+    .sp_content_img {
+        line-height: 1em;
+        margin-bottom: -4px;
+        img {
+            display: inline-block;
+        }
+    }
+    .sp_content_menu_1 {
+        background-color: #cb678e;
+    }
+    .sp_content_menu_2 {
+        background-color: #969a25;
+    }
+    .sp_content_menu_3 {
+        background-color: #a17823;
+    }
+    .sp_content_menu_1, .sp_content_menu_2, .sp_content_menu_3 {
+        margin: 0;
+        padding: 30px 50px;
+        color: #fff;
+        display: none;
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border: none;
+            
+            &.nav {
+                margin-top: -20px;
+                padding-top: 0;
+            }
+            & > li {
+                font-size: 18px;
+                font-weight: normal;
+            }
+        }
+        li {
+            margin: 0;
+            list-style: none;
+            border: none;
+            
+            &.level-0 {
+                padding: 0 12px;
+            }
+            &.level-1 {
+                padding: 6px 0 0 0;
+                font-weight: bold;
+                
+                &:before {
+                    content: "─";
+                }
+            }
+            &.level-2 {
+                padding: 6px 0 0 20px;
+            }
+        }
+        a {
+            color: #fff;
+        }   
+    }
+    
+    .slider {
+        margin-bottom: 80px;
+        background-color: #393636;
+        color: #fff;
+        
+        .Fullscreen_slider {
+            height: 450px!important;
+            
+            div {
+                height: 450px!important;
+            }
+        } 
+        .huchi {
+            height: 20px;
+            background-color: #393636;
+        }
+        .slide {
+            //background-image: url("https://cdn.puchidb.com/kotodazaifu/7e7bc4b8-8c82-469c-8b3f-16e029dcf924.png");
+            //background-repeat: no-repeat;
+            background-position: top 0 center;
+            height: 450px!important;
+            
+            a {
+                height: 330px!important;
+                display: table-cell!important;
+                vertical-align: middle;
+                text-align: center;
+            }
+            img {
+                position: static!important;
+                max-height: 330px!important;
+                max-width: 396px!important;
+                width: initial!important;
+                height: initial!important;
+            }
+            .slide_caption {
+                position: relative;
+                background-color: #393636;
+                color: #fff;
+                padding: 10px;
+                height: 100px;
+                z-index: 100;
+                text-align: center;
+            }
+        }
+        .jssor_left {
+            display: block!important;
+            position: absolute;
+            z-index: 1100;
+            top: calc(~"50% - 40px");
+            left: calc(~"50% - 150px");
+        }
+        .jssor_right {
+            display: block!important;
+            position: absolute;
+            z-index: 1100;
+            top: 200px;
+            top: calc(~"50% - 40px");
+            right: calc(~"50% - 150px");
+        }
+    }
+    .sp_whats_news, .sp_new_blog {
+      	display: none;
+		border: 1px solid #393636;
+      	width: calc(~"100% - 2px");
+      	background-color: #fff;
+    }
+    .Event_schedule_calendar {
+        h1 {
+            display: none;
+        }
+        div {
+            text-align: center;
+            position: relative;
+            font-size: 16px;
+            font-weight: bold;
+            
+            a {
+                position: absolute;
+                color: #393636
+            }
+            a:first-child {
+                left: 0;
+            }
+            a:last-child {
+                right: 0;
+            }
+        }
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-top: 1px solid #393636;
+            
+            th {
+                padding: 0;
+                border-bottom: 1px solid #393636;
+            }
+            td {
+                padding: 20px 10px;
+                border-bottom: 1px solid #393636;
+                text-align: center;
+            }
+            .satuaday {
+                color: #adadad;
+            }
+            .sunday {
+                color: #ce7294;
+            }
+        }
+    }
+    .access {
+        color: #fff;
+        padding: 30px 0 0 0;
+        height: 630px;
+//        background-image: url("https://cdn.puchidb.com/kotodazaifu/0e9384cc-393b-43b6-8c51-9ff9935ca12f.png");
+//        background-repeat: no-repeat;
+        background-position: top 0 center;
+        .text {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        .google_map {
+            width: 100%!important;
+            height: 370px!important;
+        }
+    }
+    .banner {
+        margin: 0 0 30px 0;
+        padding: 0 20px;
+        width: calc(~"100% - 40px")!important;
+        div {
+            width: calc(~"50% - 20px");
+        }
+    }
+}
+
+// ====================
+// ===== 知りたい =====
+// ====================
+#pg_composition, #pg_about,#pg_download, #pg_pavilion, #pg_mizukikan, #pg_payment, #pg_shop, #pg_shop_category, #pg_payment { 
+     .contents_header {
+        //margin-top: 0;
+        //margin-bottom: 80px;
+        padding-top: 120px;
+        //text-align: center;
+    }
+    .left_bgimage {
+        background-image: none!important;
+        .right_txt {
+            padding-left: 0;
+        }
+    }
+    .right_bgimage {
+        background-image: none!important;
+    }
+}
+#pg_pavilion {
+    .access {
+        .map {
+            margin-top: 90px;
+        }
+    }
+}
+#pg_mizukikan {
+    .access {
+        .map {
+            margin-top: 90px;
+        }
+    }
+}
+#pg_payment {
+    .border_table2 {
+        .col1 {
+			width: 20px!important;
+        }
+        .col3, .col4 {
+			width: 60px!important;
+        }
+    }
+}
+// ======================
+// ===== 体感したい =====
+// ======================
+#pg_lecture, #pg_lecture_application, #pg_lecture_detail, #pg_topic, #pg_recommend, #pg_program, #pg_explanation  {
+     .contents_header {
+        //margin-top: 0;
+        //margin-bottom: 80px;
+        padding-top: 120px;
+        //text-align: center;
+    }
+}
+#pg_lecture, #pg_lecture_detail {
+    .contents {
+        .content {
+            padding: 10px!important;
+        }
+    }
+}
+#pg_topic, #pg_recommend, #pg_program {
+    h4.course, h3.course {
+        a {
+            border-bottom: none;
+            text-decoration: underline;
+        }
+    }
+}
+#pg_lecture_application, #pg_explanation, #pg_inquiry {
+    table.application_table {
+        th,td {
+            display: block;
+            width: calc(~"100% - 22px")!important;
+        }
+        td {
+            input[type=text],input[type=email] {
+                width: calc(~"100% - 20px")!important;
+            }
+            textarea, select {
+              	width: calc(~"100% - 20px")!important;
+            }
+        }
+    }
+}
+
+// ============================
+// ===== 守りたい伝えたい =====
+// ============================
+#pg_member_guide, 
+#pg_volunteer, #pg_volunteer_shiseki, #pg_volunteer_mannyou, #pg_volunteer_bunka, #pg_volunteer_monthly, 
+#pg_info, #pg_info_getting_started, #pg_info_historic_site, #pg_info_monthly, 
+#pg_notice, #pg_notice_news, #pg_notice_topic, #pg_notice_sansaku,#pg_notice_kentei, #pg_notice_pavilion, #pg_notice_mizuki, #pg_notice_monthly {
+     .contents_header {
+        //margin-top: 0;
+        //margin-bottom: 80px;
+        padding-top: 120px;
+        //text-align: center;
+    }
+}
+#pg_member_guide {
+    .sp_member_table {
+        tr {
+            td {
+                &:nth-child(1) {
+                    width: 60px;
+                }
+                &:nth-child(2) {
+                    width: 40px;
+                }
+                &:nth-child(3) {
+                    width: 110px;
+                }
+            } 
+        }
+    }
+    .hurikomi_width {
+        width: 60px!important;
+    }
+    .hurikomi_font {
+        font-size: 16px!important;
+    }
+}
+
+#pg_volunteer, #pg_volunteer_shiseki, #pg_volunteer_mannyou, #pg_volunteer_bunka, #pg_volunteer_monthly, 
+#pg_volunteer_activity, #pg_volunteer_yukari, #pg_volunteer_secretariat,
+#pg_info, #pg_info_getting_started, #pg_info_historic_site, #pg_info_monthly, 
+#pg_notice, #pg_notice_news, #pg_notice_topic, #pg_notice_kentei, #pg_notice_pavilion, #pg_notice_mizuki, #pg_notice_monthly {
+    .side {
+        width: 100%!important;
+    }
+    .contents {
+        width: 100%!important;
+    }
+}
+
+// ========================
+// ===== その他、調整 =====
+// ========================
+.course_block{
+		margin-bottom: 24px!important;
+        border-bottom: solid 1px #ddd;
+        padding-bottom: 24px;
+}
+
+// タイトル調整
+#pg_composition, #pg_about,#pg_download, #pg_recommend, #pg_program, #pg_member_guide {
+    .contents_header {
+        h1 {
+          	font-size: 22px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-block!important;
+            text-align: center!important;
+        
+            &:before {
+                content: url("https://cdn.puchidb.com/kotodazaifu/6870334b-38cf-4365-8594-24039fb8451d.png");
+                margin: 5px;
+                position: relative;
+                top: -5px;
+                left: -10px;
+            }
+            &:after {
+                content: url("https://cdn.puchidb.com/kotodazaifu/11a33faa-42dd-4f66-9d2e-ee9ec4a8f912.png");
+                margin: 5px;
+                position: relative;
+                top: -5px;
+                right: -10px;
+            }
+            & > div {
+                display: inline-block;
+            }
+            span {
+                font-size: 60%;
+            }
+        }
+    }
+}
+//blog
+.side {
+        order: 2;
+		  width:100%!important;
+}
+
+// ============================
+// ===== 解説員専用ページ =====
+// ============================
+#pg_kaisetsu, #pg_kaisetsu_category, #pg_kaisetsu_form {
+  h1, h2, p {
+  }
+  .navi {
+    a {
+    }
+  }
+  .contents {
+    width: calc(~"100% - 20px");
+    padding: 10px;
+    margin: 0;
+    
+    .content {
+      
+      .container:first-child {
+        
+        .table {
+          tr {
+            &.saturday {
+            }
+            &.sunday {
+            }
+            &.index {
+            }
+          }
+          th, td {
+            font-size: 120%;
+
+            .date {
+            }
+            .holiday_status {
+            }
+            &.contents {
+              .content {
+              }
+            }
+            textarea {
+              width: calc(~"100% - 20px");
+            }
+          }
+        }
+      }
+    }
+    .side_content {
+      ul {
+        li {
+        }
+      }
+    }
+    .Categories_list {
+      .contents {
+      }
+      ul {
+        li {
+          .date {
+          }
+        }
+      }
+    }
+  }
+}
+.xdsoft_calendar {th,td{
+        display:table-cell!important;
+    }
+}
+.shop_btn {
+        height: 24px;
+        flex: none!important;
+        width: 58px;
+        line-height: 0!important;
+}
+#sp_cart_header{
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        font-size: 10px;
+        background: #fff;
+        line-height: 26px;
+        position: fixed;
+        top: 58px;
+        height: 40px;
+        //width:100%;
+        width: calc(~"100% - 18px");
+        .tel{
+            font-size:12px;
+        }
+    div{
+        flex: 1;
+        line-height: 40px;
+    }
+}
+span._alert {
+  font-size: 1.1em;
+}
+
+span._success {
+  padding: 12px 12px;
+  top:-12px;
+}
+
+.Order_flow,.Signup_form{
+    #sp_cart_header{
+        display:flex;
+    }
+    width:100%;
+    select{
+        -moz-appearance: menulist;
+        -webkit-appearance: menulist;
+        &:disabled{
+            opacity:.6;
+        }
+    }
+    .delivery_date,.delivery_time{
+        width:200px!important;
+    }
+    
+    h1{
+        // border-bottom:2px solid  #bab5ae;
+        font-size:18px!important;
+        margin-bottom:0!important;
+    }
+    h2{
+        font-size:14px!important;
+        margin-bottom:4px;
+        // border-bottom:1px solid #bab5ae;
+    }
+    h3{
+        font-size:14px!important;
+    }
+    input{
+        background:#fff;
+    }
+    input[type="submit"]{
+        -webkit-appearance: none;
+    }
+    .col2{
+        width:100%;
+        border-top:1px solid #bab5ae;
+
+    }
+    .table .table-row div{
+        display:block;
+        border:none!important;
+        width:100%!important;
+    }
+    input[type="radio"] {
+        position: relative;
+        -webkit-appearance: button;
+        appearance: button;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 18px;
+        height: 18px;
+        content: "";
+        background-color: #fff;
+        border: 1px solid #999999;
+        -webkit-border-radius: 24px;
+        border-radius: 24px;
+        -webkit-box-shadow: inset 4px 4px 10px rgba(0,0,0,0.2);
+        box-shadow: inset 4px 4px 10px rgba(0,0,0,0.2);
+        vertical-align: middle;
+        cursor: pointer;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form.Form {
+        margin-bottom: 48px;
+    }
+    input[type="radio"]:checked{
+        background: #4C9FF8;
+    }
+    input[type="radio"]:checked:after {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+    }
+    .address{
+        .table-row{
+            display: -webkit-box;
+                  /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+                  /* OLD - Firefox 19- (doesn't work very well) */
+            display: -ms-flexbox;
+                  /* TWEENER - IE 10 */
+            display: -webkit-flex;
+                  /* NEW - Chrome */
+            display: flex;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          -webkit-flex-direction: row;
+          -webkit-flex-flow: row wrap;
+          flex-wrap: wrap;
+          margin-bottom:6px;
+          div{
+                padding:0;
+                border:none;
+                font-weight:normal;
+                width: 100%!important;
+                margin: 0!important;
+                &:first-child{
+                    background:#fff;
+                }
+          }
+        }
+    }
+    .table-row.table-header{
+        display:none;
+    }
+
+    .confirm,.cart{
+        .table-row{
+            display: -webkit-box;
+                  /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+                  /* OLD - Firefox 19- (doesn't work very well) */
+            display: -ms-flexbox;
+                  /* TWEENER - IE 10 */
+            display: -webkit-flex;
+                  /* NEW - Chrome */
+            display: flex;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          -webkit-flex-direction: row;
+          -webkit-flex-flow: row wrap;
+          flex-wrap: wrap;
+            div{
+                border:none!important;
+                padding:0;
+            }
+        }
+        .products_name{
+            width:100%!important;
+            clear:both;
+            // line-height:10px!important;
+        }
+        .options{
+            width:100%!important;
+            border-bottom:solid 1px #fff;
+        }
+        .final_price ,.num,.shokei_with_tax,.other,.detail,.price{
+            width:33%;
+            float:left;
+            border-bottom:solid 1px #fff;
+            br{
+                display:none;
+            }
+        }
+        .final_price ,.num,.shokei_with_tax,._ctrl{
+            width:50%!important;
+        }
+        .shokei_with_tax,.price{
+            text-align:right;
+        }
+
+    }
+    .cart,#cart_info{
+        .table-row{
+            .products_name{
+                order:1;
+            }
+            .options{
+                order:2;
+            }
+            .final_price{
+                order:3;
+                width: 100px;
+            }
+            .shokei_with_tax{
+                order:4;
+                text-align:left!important;
+                &:before{
+                        content:"/　";
+                }
+
+            }
+            .num{
+                order:5;
+                padding:0;
+                &:before{
+                    content:"数量";
+                }
+                input{
+                    width:60px;
+                    height:40px;
+                }
+            }
+            .remove_btn{
+                    width:60px;
+                    height:40px!important;
+                }
+            ._ctrl{
+                order:6;
+                text-align:right;
+            }
+
+            &:first-child{
+            display:none;
+            }
+            &:nth-child(2){
+                border-top:solid 1px #111;
+            }
+            &:last-child,&:nth-last-child(2){
+                .final_price{
+                    display:none!important;
+                }
+                .num{
+                    width:50%;
+                    text-align:left;
+                    font-weight:bold;
+                    order:4;
+                    &:before{
+                        content:" ";
+                    }
+                    font-size:1.2em;
+
+                }
+                .shokei_with_tax{
+                    width:50%;
+                    order:5;
+                    font-weight:bold;
+                    font-size:1.2em;
+                    &:before{
+                        content:"";
+                    }
+                    text-align:right!important;
+                }
+                ._ctrl{
+                    //display:none;
+                }
+            }
+            border-bottom:solid 1px #111;   
+            padding:6px;
+
+        }
+        
+        .final_price ,.num,.shokei_with_tax,.other,.detail,.price,.options{
+            border-bottom:none!important;
+        }
+        .remove_btn{
+            background:#fff;
+        }
+    }
+    .cart{
+        form.Form{
+         margin-bottom:0!important;   
+        }
+    }
+    #cart_info{
+        .final_price{
+            order:3!important;
+            width:33%;
+        }
+        .shokei_with_tax{
+            order:5!important;
+            width:33%;
+        }
+        .num{
+            order:4!important;
+            padding:0;
+            width:33%;
+            &:before{
+                content:"数量";
+                display: inline-block!important;
+            }
+        }
+    }
+    .confirm {
+        #cart_info .table-row {
+            .final_price{
+                    width:33%!important;
+            }
+            .shokei_with_tax{
+                    text-align:right!important;
+                    &:before{
+                            content:"";
+                    }
+    
+            }
+        }
+        #msg_description{
+            font-size:.9em;
+            line-height:1.4em;
+        }    
+}
+    #order_info{
+        .table-row{
+            padding:9px 0;
+            border-bottom:1px solid #111;
+            div{
+                padding-left:6px;
+            }
+            &:first-child{
+            display:none;
+            }
+            &:last-child{
+                font-size:1.2em;
+            }
+        }
+        .final_price ,.num,.shokei_with_tax,.other,.detail,.price,.options{
+            border-bottom:1px solid #111;
+        }
+    }
+    .description{
+        font-weight: normal;
+        margin: 12px;
+    }
+
+    .address_book_id{
+
+        div.selector{
+            width:104%!important;
+            border-bottom:1px solid #aaa;
+            margin-left:-6px;
+            margin-right:-6px;
+            margin-top: -6px;
+            margin-bottom:6px;
+            padding-left: 6px;
+            padding-top: 6px;
+            float:inherit!important;
+            br{
+                display:none;
+            }
+        }
+        th,td{
+            padding-left:0!important;
+            select{
+                margin-left:0!important;
+            }
+        }
+    }
+    .table-row {
+        display: block;
+        //margin-bottom: 24px;
+        margin-bottom: 3px;
+        div{
+            margin:0;
+            padding:0;
+            border:none;
+            display:block;
+        }
+        th,td{
+            padding:2px;
+        }
+        td{
+            background:#e8e2d9;
+        }
+        &:first-child{
+        background:#fff;
+        }
+    }
+    table .table-row {
+        margin-bottom:0;
+    }
+    .selector{
+        font-weight:bold;
+    }
+    
+        .col3 {
+            border:solid 6px #d3d3d3;
+            padding: 24px!important;
+            height: auto;
+            flex:none;
+            width:100%;
+            box-sizing: border-box;
+            margin-right:0;
+            margin-bottom: 24px;
+            &:nth-child(3n){
+                margin-right:0;
+            }
+            h3{
+                border-bottom:solid 1px #aaa;
+                font-size:16px;
+                padding-bottom: 6px;
+                margin-bottom: 12px;
+            }
+    }
+    span.min_field {
+        width :35%!important;
+        input {
+            width: 100%!important;
+        }
+    }
+    .payment {
+        .credit{
+            .table-row{
+                border: 1px solid #bab5ae;
+                padding: 6px;
+            }
+            div.selector{
+                text-align:left!important;
+                width:80%;
+                float:left;
+    
+            }
+            div.contents{
+                width: 20%;
+                float: right;
+            }
+            div.description{
+                clear:both;
+            }
+        }
+    }
+    .delivery{
+            select.address_book_id{
+            margin-left:9px;
+            }
+            .table-row{
+                border: 1px solid #bab5ae;
+                padding: 6px;
+            }
+            div.selector{
+                text-align:left!important;
+                width:80%;
+                float:left;
+    
+            }
+        label{
+            display:block;
+            margin-bottom:6px;
+        }
+        #method_selector{
+            margin-top: 36px;
+            .description{
+                clear:both;
+                line-height:1.4em!important;
+                padding-bottom:6px;
+                padding-top:6px;
+                width:100%!important;
+            }
+            .table-row div{
+               padding-left: 0;
+            }
+
+            div.selector{
+            width:104%!important;
+            border-bottom:1px solid #aaa;
+            margin-left:-6px;
+            margin-right:-6px;
+            margin-top: -6px;
+            margin-bottom:6px;
+            padding-left: 6px;
+            padding-top: 6px;
+            float:inherit!important;
+
+                br{
+                    display:none;
+                }
+            }
+            .contents{
+                border-bottom:1px solid #ddd;
+                padding-bottom:6px;
+                line-height:42px;
+            }
+        }
+    }
+    .no div.table-row{
+        border: #bab5ae solid 1px;
+        padding:6px;
+        label{
+            display:block;
+            margin-bottom:6px;
+        }
+    }
+    #order_info{
+        .detail{
+            width:70%!important;
+
+        }
+        .shokei_with_tax{
+            width:30%!important;
+            text-align:right;
+            b{
+                font-size:1em;
+            }
+        }
+    }
+    .address_editor{
+        padding:0!important;
+        th{
+            width:100%!important;
+            display:block;
+            border:none!important;
+            background:#fff;
+            border:none;
+            padding:0!important;
+        }
+        td{
+            background:#fff;                
+            border:none!important; 
+            padding:0!important;
+            
+        }
+        .table-row{
+            border:none;
+        }
+    }
+
+    .execution{
+  input[type=submit]{
+          background:#b4430b!important;
+  }    
+  div.selector{
+      display:none!important;
+      br{
+          display:none;
+      }
+  }    
+  table th{
+      background:#efefef;
+      line-height:30px;
+  }
+    td{
+        padding-top:9px!important;
+        padding-bottom:9px!important;
+      background:#fff!important;
+      padding-left: 0!important;
+  }
+  .table table td table td {
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+  }
+ .choice_card_form th{
+      width:100%;
+  }
+  div#payment_info 
+  {
+      border:none!important;
+      .table-row {
+
+          .contents{
+            // margin-top: 8px;
+            // margin-bottom: 8px;
+            border: none!important;
+            padding: 9px 0!important;
+
+          }
+          .title{
+            background: #efefef;
+            width:100%!important;
+            padding:2px!important;
+            border-top: 1px solid #bab5ae!important;
+            border-bottom:none;
+            border-right:none;
+          }
+
+      }     
+  }
+
+}
+    
+}
+.card_no td {
+        width: 25%!important;
+        display: table-cell;
+        label.error{
+            display:none!important;
+        }
+}
+.card_expire td{
+            width: 33%;
+            text-align: center;
+            display: table-cell;
+            line-height:30px;
+            select{
+                width: 90px!important;
+                min-width:90px;
+            }
+}
+#pg_60,#pg_61-62{
+    #main_contents{
+        background:#fff;
+        padding-top: 28px;
+        padding-bottom: 79px;
+        padding-left:0;
+        padding-right:0;
+    }
+}
+#address_form .table-row:nth-child(n+2) div:nth-child(2){
+    padding: 6px 24px;
+}
+.address_editor{
+    padding-top:0!important;
+    width:100%!important;
+}
+
+#pg_8,#pg_11-12{
+    header{
+        top:0;
+        height:58px!important;
+        nav{
+            display:none;
+        }
+    }
+    #cart_header{
+        display:none;
+    }
+    #sp_cart_header{
+        display:flex;
+        z-index:20;
+        position: fixed;
+    }
+    .body{
+        margin-top:110px;
+    }
+}
+
+}
+</style>
+    <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script async="" src="//connect.facebook.net/en_US/fbds.js"></script>
+    <script src="/js/common/sitekitt.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <script src="/plugin/facebox/facebox1.3.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</script>
+
+    <script>
+if (typeof ga !== 'undefined') {
+                        ga('create', 'UA-101851239-1', 'auto');
+                ga('send', 'pageview');
+                        }
+</script>
+
+</head>
+<body id="pg_pavilion" class="products_" oncontextmenu="return false;">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.9&appId=295474667539439";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<header class="for_contents">
+    <div class="header_menu hide_sp">
+      <a href="/">
+          <div class="go_to_index"></div>
+        </a>
+        <div class="menu">
+          <span class="kaisetu_entry">
+            <a href="https://www.kotodazaifu.net/recommend">
+          解説のお申込み
+              </a>
+          </span>
+            <ul class='nav navbar-nav'><li class='level-1 single'><a href='/member_guide' target=''>会員案内</a></li><li class='level-1 single'><a href='/inquiry' target=''>お問合せ</a></li><li class='level-1 single'><a href='/index.html#access' target=''>アクセス</a></li></ul>
+        </div>
+    </div>
+    <div class="hide_pc sp_header_menu">
+      	<a href="/">
+          <div class="go_to_index"></div>
+        </a>
+        <div class="menu_btn">
+            <img src="https://cdn.sitekitt.com/kotodazaifu/6860db11-13e4-425c-8ab9-88da8a4914b0.png" alt='' title=''     loading="lazy" />
+        </div>
+        <div class="menu">
+            <div class="index">MENU</div>
+          	<!--
+            <div class="link"><a href="/">TOP</a></div>
+            <div class="link"><a href="/composition">太宰府史跡の成り立ち</a></div>
+            <div class="link"><a href="/about">協会について</a></div>
+            <div class="link"><a href="/lecture">講座・イベント</a></div>
+            <div class="link"><a href="/pavilion">太宰府展示館</a></div>
+            <div class="link"><a href="/mizukikan">水城館</a></div>
+            <div class="link"><a href="/shop">書籍のご案内・販売</a></div>
+			-->
+          	<div class='ptb12 dropdown-menu'><ul class='nav navbar-nav'><li class='level-1 active'><a href='#' target=''>知りたい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/composition' target=''>大宰府史跡の成り立ち</a></li><li class='level-2 single'><a href='/about' target=''>協会について</a></li><li class='level-2 single self active'><a href='/pavilion' target=''>大宰府展示館</a></li><li class='level-2 single'><a href='/mizukikan' target=''>水城館</a></li><li class='level-2 single'><a href='/shop' target=''>書籍のご案内・販売</a></li><li class='level-2 single'><a href='/download' target=''>書類ダウンロード</a></li><li class='level-2 single'><a href='/link' target=''>リンク集</a></li></ul></li><li class='level-1'><a href='#' target=''>体感したい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/lecture' target=''>講座のご案内</a></li><li class='level-2'><a href='/recommend' target=''>だざいふ探訪</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/notice/sansaku' target=''>定例散策</a></li><li class='level-3 single'><a href='/recommend' target=''>おすすめコース</a></li><li class='level-3 single'><a href='/topic' target=''>今話題のコース</a></li><li class='level-3 single'><a href='/explanation' target=''>申込手順・フォーム</a></li></ul></li><li class='level-2'><a href='/program' target=''>学校向けプログラム</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/program' target=''>モデルプラン</a></li><li class='level-3 single'><a href='/program/explanation' target=''>申込手順・申込書</a></li></ul></li></ul></li><li class='level-1'><a href='#' target=''>伝えたい・守りたい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/member_guide' target=''>会員のご案内</a></li><li class='level-2 single'><a href='/volunteer' target=''>ボランティア活動</a></li><li class='level-2'><a href='/info' target=''>史跡地情報</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/info/getting_started' target=''>ご利用にあたって</a></li><li class='level-3 single'><a href='/info/historic_site' target=''>史跡地の情報</a></li></ul></li><li class='level-2 single'><a href='/notice' target=''>協会からのお知らせ</a></li></ul></li><li class='level-1 single'><a href='/colum' target=''>大宰府の歴史・文化財</a></li><li class='level-1 single self active'><a href='/pavilion' target=''>大宰府展示館</a></li><li class='level-1 single'><a href='/mizukikan' target=''>水城館</a></li><li class='level-1 single'><a href='/shop' target=''>書籍のご案内・販売</a></li></ul></div>
+        </div>
+    </div>
+    <div class="header_image">
+    </div>
+    <!--
+    <a id="header_logo" href="/">
+        
+    </a>
+    -->
+    <div class="navigation hide_sp">
+        <div class="container">
+            <div class='ptb12 dropdown-menu'><ul class='nav navbar-nav'><li class='level-1 active'><a href='#' target=''>知りたい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/composition' target=''>大宰府史跡の成り立ち</a></li><li class='level-2 single'><a href='/about' target=''>協会について</a></li><li class='level-2 single self active'><a href='/pavilion' target=''>大宰府展示館</a></li><li class='level-2 single'><a href='/mizukikan' target=''>水城館</a></li><li class='level-2 single'><a href='/shop' target=''>書籍のご案内・販売</a></li><li class='level-2 single'><a href='/download' target=''>書類ダウンロード</a></li><li class='level-2 single'><a href='/link' target=''>リンク集</a></li></ul></li><li class='level-1'><a href='#' target=''>体感したい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/lecture' target=''>講座のご案内</a></li><li class='level-2'><a href='/recommend' target=''>だざいふ探訪</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/notice/sansaku' target=''>定例散策</a></li><li class='level-3 single'><a href='/recommend' target=''>おすすめコース</a></li><li class='level-3 single'><a href='/topic' target=''>今話題のコース</a></li><li class='level-3 single'><a href='/explanation' target=''>申込手順・フォーム</a></li></ul></li><li class='level-2'><a href='/program' target=''>学校向けプログラム</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/program' target=''>モデルプラン</a></li><li class='level-3 single'><a href='/program/explanation' target=''>申込手順・申込書</a></li></ul></li></ul></li><li class='level-1'><a href='#' target=''>伝えたい・守りたい</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/member_guide' target=''>会員のご案内</a></li><li class='level-2 single'><a href='/volunteer' target=''>ボランティア活動</a></li><li class='level-2'><a href='/info' target=''>史跡地情報</a><ul class='dropdown-menu'><li class='level-3 single'><a href='/info/getting_started' target=''>ご利用にあたって</a></li><li class='level-3 single'><a href='/info/historic_site' target=''>史跡地の情報</a></li></ul></li><li class='level-2 single'><a href='/notice' target=''>協会からのお知らせ</a></li></ul></li><li class='level-1 single'><a href='/colum' target=''>大宰府の歴史・文化財</a></li><li class='level-1 single self active'><a href='/pavilion' target=''>大宰府展示館</a></li><li class='level-1 single'><a href='/mizukikan' target=''>水城館</a></li><li class='level-1 single'><a href='/shop' target=''>書籍のご案内・販売</a></li></ul></div>
+        </div>
+    </div>
+</header>
+<div id="bodyarea" class="for_contents">
+
+<div class="contents_header">
+<h1><span class="title_mark">大宰府展示館</span></h1>
+</div>
+
+<div class='border_pink mb30'><img src="https://cdn.sitekitt.com/kotodazaifu/1806001f-321b-436d-8327-47b7857a8f44.png" alt='' title=''     loading="lazy" /></div>
+
+<div class="mb30 block_center hide_sp" style="width:656px;">
+    <h3 class="whats_new_index">お知らせ</h3>
+    <div style='width:100%; height:180px; overflow-y: scroll;' class=' Blog_list List_widget Widget Layout_element' element_key='Blog_list_84'><div><div class="contents"><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2026年 03月11日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/969" style="color:#393636;">令和８年4月より大宰府展示館の入館料が変更になります。</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2024年 09月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/945" style="color:#393636;">다자이후 전시관에 오신 것을 환영합니다（大宰府展示館　ハングル案内）</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2024年 09月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/946" style="color:#393636;">欢迎光临大宰府展示馆（大宰府展示館　簡体案内）</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2024年 09月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/947" style="color:#393636;">歡迎光臨大宰府展示館（大宰府展示館　繁體案内）</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2023年 03月13日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/848" style="color:#393636;">大宰府展示館　入館に際してのお願い</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2021年 11月26日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/899" style="color:#393636;">大宰府政庁跡に立つ三基の石碑</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2021年 11月12日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/898" style="color:#393636;">古代の大宰府を眺めてみよう「大宰府条坊イメージジオラマ」公開中です</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2021年 09月29日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/841" style="color:#393636;">大宰府展示館は１０月１日（金曜日）より開館いたします</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2021年 03月27日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/885" style="color:#393636;">Welcome to Dazaifu Exhibition Hall（大宰府展示館　英語案内）</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2020年 03月18日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/838" style="color:#393636;">おうちで「だざいふ」チャレンジ！牛乳を使って、古代の「蘇（そ）」を作ってみよう♪</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 08月12日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/801" style="color:#393636;">大宰府条坊　客館周辺　再現ジオラマ　　古代の大宰府を覗いてみよう２!!</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 07月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/788" style="color:#393636;">大宰府政庁周辺　再現ジオラマ　　古代の大宰府を覗いてみよう!!</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 06月21日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/799" style="color:#393636;">入館料の免除について（令和元年7月1日～）</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 05月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/792" style="color:#393636;">元号「令和」ゆかりの地　太宰府</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 04月19日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/786" style="color:#393636;">『万葉集』・「令和」に関する機関誌『都府楼』のご紹介</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2019年 01月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/787" style="color:#393636;">榊 晃弘『万葉のこころ』写真パネル展のご紹介</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2018年 06月22日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/740" style="color:#393636;">日本遺産　ＶＲ「西の都」　　再現された古代の大宰府を見てみませんか!?</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2010年 05月25日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/904" style="color:#393636;">大宰府展示館受付職員（臨時職員）募集について</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2000年 06月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/976" style="color:#393636;">大宰府アカデミー・令和編・第2期　第5講　2026年8月19日　資料ダウンロードページ</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2000年 01月05日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/903" style="color:#393636;">太宰府の歴史・文化のご紹介　「太宰府の木うそ」</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;">2000年 01月01日</div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/768" style="color:#393636;">zoom配信視聴手順について</a></div>
+</div><div class="flex">
+  <div class="sp_width text_top" style="width:120px;"></div>
+  <div class="sp_width" style="width:500px;"><a href="/notice/pavilion/702" style="color:#393636;">日本100名城スタンプ「大野城スタンプ」でご来館されるお客様へ</a></div>
+</div></div></div></div>
+</div>
+
+<div class='flex space-between mb30'><div style="width:465px;">都府楼跡の名でも親しまれる「大宰府政庁跡」は、７世紀後半から奈良・平安時代にかけて、九州の政治外交の中心を担った地方最大の役所「大宰府」が置かれたところです。<br />
+背後の四王寺山には古代の山城「大野城」が築かれ、山と一体となった景観が千三百年前の往時を偲ばせています。現在は共に国の特別史跡に指定され、史跡公園として人々の憩いの場となっています。<br />
+大宰府展示館では、大宰府史跡の発掘調査によって検出された遺構（溝）の一部を保存公開し、出土遺物や模型などで大宰府の歴史と文化をご紹介しています。<br />
+昭和５５年の開館とともに(公財)古都大宰府保存協会が事務局を置き、広く大宰府史跡の整備地の維持管理や広報普及、史跡の解説・ご案内などを行っています。隣接する「学校院跡」「観世音寺」「戒壇院」や「水城跡」などと合わせ、史跡散策の拠点としてご利用ください。</div>
+<div style="width:515px;">
+    <table cellpadding="0" cellspacing="0" class="border_table">
+        <tr>
+            <td style="width:150px;">名　称</td>
+            <td colspan="2">大宰府展示館</td>
+        </tr>
+        <tr>
+            <td>住　所</td>
+            <td colspan="2">〒818-0101　福岡県太宰府市観世音寺四丁目６番１号<br>TEL:092-922-7811 / FAX:092-922-9524</td>
+        </tr>
+        <tr>
+            <td>開館時間</td>
+            <td colspan="2">9：00〜16：30</td>
+        </tr>
+        <tr>
+            <td>休館日</td>
+            <td colspan="2">月曜日（ただし祝日の場合はその翌日）、<br>年末年始（12月28日〜1月4日）</td>
+        </tr>
+        <tr>
+            <td rowspan="3">入館料<br/>（～令和8年3月31日）</td>
+            <td>一般</td>
+            <td>200円</td>
+        </tr>
+        <tr>
+            <td>高・大学生</td>
+            <td>100円</td>
+        </tr>
+        <tr>
+            <td>小・中学生</td>
+            <td>無料</td>
+        </tr>
+    </table>
+  <br/>
+    太宰府市の条例改正に伴い令和8年4月1日より入館料が変更になります。
+    <br/>
+  <table cellpadding="0" cellspacing="0" class="border_table">
+        <tr>
+            <td rowspan="3">入館料<br/>（令和8年4月1日～）</td>
+            <td>一般</td>
+            <td>400円</td>
+        </tr>
+        <tr>
+            <td>高・大学生</td>
+            <td>200円</td>
+        </tr>
+        <tr>
+            <td>小・中学生</td>
+            <td>無料</td>
+        </tr>
+    </table>
+  <br/>
+  ※太宰府市内在住の方および太宰府市内へ通勤・通学されている方については入館料が半額となります。<br/>
+  　（一般　200円　/　高・大学生　100円）<br/>
+  ※障害者手帳等をご持参の方および介護者１名は、入館料が無料となります。<br/>
+  ※入館料には団体割引の適用はありません。<br/>
+  <br/>
+  入館料の免除については<a href="https://www.kotodazaifu.net/notice/pavilion/799">こちら</a>をご覧ください。
+</div></div>
+<div class='access mb30'><div class='flex space-between flex_reverse'><div style="width:300px;">
+    <h3>アクセス</h3>
+    <div class="mb30">・福岡空港から車で３０分<br />
+・太宰府インターから車で５分<br />
+・JR二日市駅から車で１０分<br />
+・西鉄都府楼前駅から徒歩で１５分<br />
+・太宰府市コミュニティーバス まほろば号「大宰府政庁跡」バス停下車</div>
+    <div class="blk_btn"><a href="https://www.google.co.jp/maps/place/%E3%80%92818-0101+%E7%A6%8F%E5%B2%A1%E7%9C%8C%E5%A4%AA%E5%AE%B0%E5%BA%9C%E5%B8%82%E8%A6%B3%E4%B8%96%E9%9F%B3%E5%AF%BA%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%96%E2%88%92%EF%BC%91/@33.5137283,130.5140186,17z/data=!3m1!4b1!4m5!3m4!1s0x35419bca716c165f:0xef7965403ffb36c3!8m2!3d33.5137238!4d130.5162126" target="_blank">拡大して見る＞＞</a></div>
+</div>
+<div style="width:600px;height:320px;" class="map"><div id='Google_map_embed_12_0' class='google_map' style='width:200px; height:200px;'><iframe src='https://maps.google.com/maps?ll=33.5137238,130.5162126&q=33.5137238,130.5162126&z=15&output=embed&iwloc=near' style='width:100%; height:100%; border:0;' loading='lazy' allowfullscreen='' referrerpolicy='no-referrer-when-downgrade'></iframe></div></div></div></div>
+
+<h3><center>館内のご案内</center></h3>
+<div class='flex space-between mb30'><div style="width:600px;height:389px;" class="sp_width"><img src="https://cdn.sitekitt.com/kotodazaifu/abe47ff4-2f90-4437-af12-fffe822c07d6.png" alt='' title=''     loading="lazy" /></div>
+<div class="left_bgimage sp_width" style="width:400px;height:389px;">
+    <div class="right_txt">
+        <div>玉石溝</div>
+        <div>発掘調査で検出された奈良～平安時代の溝を、当時の姿のまま保存･公開しています。</div>
+    </div>
+</div></div>
+<div class='flex space-between mb30 flex_reverse'><div style="width:600px;height:389px;" class="sp_width"><img src="https://cdn.sitekitt.com/kotodazaifu/453e0a1a-eb40-4b0c-817e-df17248b9c80.png" alt='' title=''     loading="lazy" /></div>
+<div class="right_bgimage sp_width" style="width:400px;height:389px;">
+    <div class="left_txt">
+        <div>模型「梅花の宴」（山村 延燁作）</div>
+        <div>天平２年(730)正月１３日、大宰帥・大伴旅人の邸宅で開かれた「梅花の宴」<br />
+のようすを博多人形で再現しています。</div>
+    </div>
+</div></div>
+<div class='flex space-between mb30'><div style="width:600px;height:389px;" class="sp_width"><img src="https://cdn.sitekitt.com/kotodazaifu/f689e3e7-56bf-4648-9b7d-be8b1b8fd51f.jpg" alt='' title=''     loading="lazy" /></div>
+<div class="left_bgimage sp_width" style="width:400px;height:389px;">
+    <div class="right_txt">
+        <div></div>
+        <div>大宰府政庁　正殿跡　土層断面図</div>
+    </div>
+</div></div>
+<div class='flex space-between mb80 flex_reverse'><div style="width:600px;height:389px;" class="sp_width"><img src="https://cdn.sitekitt.com/kotodazaifu/d5083b35-39a4-4e26-afe5-56d508dbd4ea.jpg" alt='' title=''     loading="lazy" /></div>
+<div class="right_bgimage sp_width" style="width:400px;height:389px;">
+    <div class="left_txt">
+        <div>大宰府条坊イメージジオラマ　森野晴洋作</div>
+        <div>政庁を中心として広がっていた古代大宰府の街並みをイメージしたジオラマを展示しています。<br />
+人々が行き交う７５０年頃の大宰府の様子をぜひご覧ください。</div>
+    </div>
+</div></div>
+
+<div class="link_button large_btn green mb30 block_center multi_line">
+<div><a href="https://cdn.sitekitt.com/kotodazaifu/files/R%EF%BC%98%E4%B8%80%E8%88%AC%E5%9B%A3%E4%BD%93%E7%94%A8%E6%96%BD%E8%A8%AD%E8%A6%8B%E5%AD%A6%E9%80%A3%E7%B5%A1%E7%A5%A8%20(002).pdf" onclick="window.open('https://cdn.sitekitt.com/kotodazaifu/files/R%EF%BC%98%E4%B8%80%E8%88%AC%E5%9B%A3%E4%BD%93%E7%94%A8%E6%96%BD%E8%A8%AD%E8%A6%8B%E5%AD%A6%E9%80%A3%E7%B5%A1%E7%A5%A8%20(002).pdf', '_blank', 'width=800,height=600,scrollbars=yes,menubar=no,status=yes,resizable=yes,screenx=0,screeny=0'); return false;" 0="">見学申請書ダウンロード<br>（団体様向け）</a></div>
+</div>
+
+<div style='text-align: center;' class='mb30'>各種見学申請書類は上記のボタンをクリックし、<br />
+リンク先のファイルをダウンロードして御利用ください。</div>
+
+<div class="link_button large_btn red mb80 block_center">
+<div><a href="https://cdn.sitekitt.com/kotodazaifu/52546863-b382-49b4-8013-e978226c6678.pdf" onclick="window.open('https://cdn.sitekitt.com/kotodazaifu/52546863-b382-49b4-8013-e978226c6678.pdf', '_blank', 'width=800,height=600,scrollbars=yes,menubar=no,status=yes,resizable=yes,screenx=0,screeny=0'); return false;" 0="">館内撮影および資料画像の利用にあたって</a></div>
+</div>
+<p style="clear:both"></p>
+<p class="divider"></p>
+</div>
+<footer>
+    <div class="container hide_sp">
+        <center>
+            <div class='footer_title_logo'><img src="https://cdn.sitekitt.com/kotodazaifu/b56d4169-7bda-4fe7-ba50-1c59397a139a.png" alt='' title=''     loading="lazy" /></div>
+        </center>
+        <div class="flex space-between">
+            <div>
+                <div class="btxt"><a href="/composition">大宰府史跡の成り立ち</a></div>
+                <div class="btxt"><a href="/about">協会について</a></div>
+                <div class="btxt"><a href="/lecture">講座・イベント</a></div>
+                <div class="btxt"><a href="/pavilion">大宰府展示館</a></div>
+                <div class="btxt"><a href="/mizukikan">水城館</a></div>
+                <div class="btxt"><a href="/shop">書籍のご案内・販売</a></div>
+            </div>
+            <div><li class='level-0 active'><a href='#' target=''>知りたい</a><ul class='nav navbar-nav'><li class='level-1 single'><a href='/composition' target=''>大宰府史跡の成り立ち</a></li><li class='level-1 single'><a href='/about' target=''>協会について</a></li><li class='level-1 single self active'><a href='/pavilion' target=''>大宰府展示館</a></li><li class='level-1 single'><a href='/mizukikan' target=''>水城館</a></li><li class='level-1 single'><a href='/shop' target=''>書籍のご案内・販売</a></li><li class='level-1 single'><a href='/download' target=''>書類ダウンロード</a></li><li class='level-1 single'><a href='/link' target=''>リンク集</a></li></ul></li></div>
+            <div><li class='level-0'><a href='#' target=''>体感したい</a><ul class='nav navbar-nav'><li class='level-1 single'><a href='/lecture' target=''>講座のご案内</a></li><li class='level-1'><a href='/recommend' target=''>だざいふ探訪</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/notice/sansaku' target=''>定例散策</a></li><li class='level-2 single'><a href='/recommend' target=''>おすすめコース</a></li><li class='level-2 single'><a href='/topic' target=''>今話題のコース</a></li><li class='level-2 single'><a href='/explanation' target=''>申込手順・フォーム</a></li></ul></li><li class='level-1'><a href='/program' target=''>学校向けプログラム</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/program' target=''>モデルプラン</a></li><li class='level-2 single'><a href='/program/explanation' target=''>申込手順・申込書</a></li></ul></li></ul></li></div>
+            <div><li class='level-0'><a href='#' target=''>伝えたい・守りたい</a><ul class='nav navbar-nav'><li class='level-1 single'><a href='/member_guide' target=''>会員のご案内</a></li><li class='level-1 single'><a href='/volunteer' target=''>ボランティア活動</a></li><li class='level-1'><a href='/info' target=''>史跡地情報</a><ul class='dropdown-menu'><li class='level-2 single'><a href='/info/getting_started' target=''>ご利用にあたって</a></li><li class='level-2 single'><a href='/info/historic_site' target=''>史跡地の情報</a></li></ul></li><li class='level-1 single'><a href='/notice' target=''>協会からのお知らせ</a></li></ul></li></div>
+            <div>
+                <div class="stxt"><a href="/member_guide">会員案内</a></div>
+                <div class="stxt"><a href="/inquiry">お問合せ</a></div>
+                <div class="stxt"><a href="/index.html#access">アクセス</a></div>
+                <div class="stxt"><a href="/privacy">個人情報保護方針</a></div>
+            </div>
+        </div>
+        <div id="copyright">
+            Copyright(C) 公益財団法人　古都大宰府保存協会　All Rights Reserved.
+      		<div class="member_login"><a href="/kaisetsu">解説員専用　ログイン</a></div>
+        </div>
+    </div>
+    <div class="hide_pc">
+        <div class="sp_footer_title_logo">
+            <div class='footer_title_logo'><img src="https://cdn.sitekitt.com/kotodazaifu/b56d4169-7bda-4fe7-ba50-1c59397a139a.png" alt='' title=''     loading="lazy" /></div>
+        </div>
+        <div class="sp_txt"><a href="/member_guide">会員案内</a></div>
+        <div class="sp_txt"><a href="/inquiry">お問合せ</a></div>
+        <div class="sp_txt"><a href="/index#access">アクセス</a></div>
+      	<div class="sp_txt"><a href="/privacy">個人情報保護方針</a></div>
+      	<div class="sp_txt member_login"><a href="/kaisetsu">解説員専用　ログイン</a></div>
+    </div>
+</footer>
+<div class="hide_pc copyright">
+    Copyright(C) 公益財団法人　古都大宰府保存協会　All Rights Reserved.<br>
+</div>
+<span style="display:none;">
+
+</span>
+<script>
+jQuery(function($){
+  $(".popup img").each(function(){
+    if( $(this).parent()[0].nodeName.toLowerCase() != "a"){
+        $(this).wrap($('<a href="'+$(this).attr('src')+'" rel="facebox">'));
+    }
+  });
+});
+
+    $(function() {
+
+    $("img").lazyload();
+    });
+    var bodyWidth=document.body.clientWidth;
+    var WindowWidth=document.documentElement.clientWidth;
+    if(bodyWidth > 480) {
+        $("#viewport").attr("content","width=1440");
+    }
+</script>
+<script>
+$(document).bind('beforeReveal.facebox', function() {
+    $('#facebox .content').width('900px');
+});
+$(function(){
+//    $('a[rel*=facebox]').facebox();
+    $("header .menu_btn").click(function(){
+        $("header .menu").show();
+    });
+    $("header .index").click(function(){
+        $("header .menu").hide();
+    });
+  	$("header .menu li.level-1:not(.single)").click(function(){
+      	$(this).toggleClass('active');
+    });
+});
+</script>
+</body>
+</html>
+<link rel="stylesheet" href="https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery/datetimepicker-master/build/jquery.datetimepicker.min.css" type="text/css" media="screen" /><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery/datetimepicker-master/build/jquery.datetimepicker.full.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/datepicker/custom_datetimepicker.js' charset='utf-8'></script><link rel="stylesheet" href="/plugin/fineuploader/4.4.0/custom.fineuploader-4.4.0.css?260901_2" type="text/css" media="screen" /><script type='text/javascript' src='/plugin/fineuploader/4.4.0/custom.fineuploader-4.4.0.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='/js/common/s3_file_uploader.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='/js/common/form/form_ckfinder.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='https://ajaxzip3.github.io/ajaxzip3.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/zip/zip_analyzer.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/widget/list_widget.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/widget/search_form.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/module/mypage/address_book.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/module/mypage/member_info_form.js' charset='utf-8'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js?260901_2' charset='utf-8'></script><link rel="stylesheet" href="https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery/jquery-confirm-master/css/jquery-confirm.css" type="text/css" media="screen" /><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery/jquery-confirm-master/js/jquery-confirm.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery/jquery-cookie-master/src/jquery.cookie.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery.autosize.min.js' charset='utf-8'></script><link rel="stylesheet" href="https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/select2/select2-4.0.2/dist/css/select2.css" type="text/css" media="screen" /><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/select2/select2-4.0.2/dist/js/select2.js' charset='utf-8'></script><script type='text/javascript' src='/plugin/fileDownload-master/jquery.fileDownload.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/editor.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/front/template.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_selectable_multi.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_color.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_tags.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/select2/custom_select2.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_map.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_master_selector.js' charset='utf-8'></script><script type='text/javascript' src='/js/common/local_file_uploader.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='/js/common/wysiwyg/custom_ckeditor.js?260901_2' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/ajax_form.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/widget/form_widget.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_variable.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/form/form_form.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/tools/selector.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/module/shop/orders/form_order_schedule.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery-validation-1.19.5/dist/jquery.validate.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/plugin/jquery-validation-1.19.1/dist/localization/messages_ja.min.js' charset='utf-8'></script><script type='text/javascript' src='https://cdn.sitekitt.com/common/sitekitt/20260723_1/js/common/validation/custom_validator.js' charset='utf-8'></script><script type='text/javascript' src='/plugin/ajaxupload.3.2.js?260901_2' charset='utf-8'></script><script>page_id = '6';</script><script>active_url = '/pavilion';</script><script>active_params = [];</script><script>now = new Date(2026, 09, 01, 11, 49, 38);</script><script>$(function(){Sitekitt.init_form(); Sitekitt.exit();});var emv='production';</script>        <style>.Form_recurring_schedule .delivery_day label {display:none!important;}</style>

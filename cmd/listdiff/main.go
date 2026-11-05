@@ -22,13 +22,16 @@ type change struct {
 	After    gkp.Row  `json:"after"`
 }
 type report struct {
-	Identity    string            `json:"identity"`
-	BeforeCount int               `json:"beforeCount"`
-	AfterCount  int               `json:"afterCount"`
-	Added       []gkp.Row         `json:"added"`
-	Removed     []gkp.Row         `json:"removed"`
-	Changed     []change          `json:"changed"`
-	Inputs      map[string]string `json:"inputSHA256,omitempty"`
+	Reconciliation *reconciliation   `json:"reconciliation,omitempty"`
+	RetrievedAt    string            `json:"currentRetrievedAt,omitempty"`
+	SourceURL      string            `json:"currentSourceUrl,omitempty"`
+	Identity       string            `json:"identity"`
+	BeforeCount    int               `json:"beforeCount"`
+	AfterCount     int               `json:"afterCount"`
+	Added          []gkp.Row         `json:"added"`
+	Removed        []gkp.Row         `json:"removed"`
+	Changed        []change          `json:"changed"`
+	Inputs         map[string]string `json:"inputSHA256,omitempty"`
 }
 
 func index(rows []gkp.Row) (map[string]gkp.Row, error) {
@@ -88,6 +91,10 @@ func main() {
 	before := flag.String("before", "", "previous saved official HTML")
 	after := flag.String("after", "", "new saved official HTML")
 	out := flag.String("out", "", "JSON output (default stdout)")
+	checksPath := flag.String("checks", "", "saved municheck report with adopted printed IDs; requires -local")
+	localPath := flag.String("local", "", "local full.json to reconcile")
+	retrieved := flag.String("retrieved-at", "", "declared retrieval date of saved after HTML (no network request)")
+	sourceURL := flag.String("source-url", "", "retrieval source URL of saved after HTML")
 	flag.Parse()
 	if *before == "" || *after == "" {
 		log.Fatal("-before and -after are required")
@@ -105,10 +112,49 @@ func main() {
 		}
 		return rows
 	}
-	r, err := compare(read(*before), read(*after))
+	oldRows, newRows := read(*before), read(*after)
+	r, err := compare(oldRows, newRows)
 	if err != nil {
 		log.Fatal(err)
 	}
+	if *checksPath != "" || *localPath != "" {
+		if *checksPath == "" || *localPath == "" {
+			log.Fatal("checks and local must be supplied together")
+		}
+		var checks struct {
+			Inputs  map[string]string `json:"inputSHA256"`
+			Results []identityCheck   `json:"results"`
+		}
+		raw, e := os.ReadFile(*checksPath)
+		if e != nil {
+			log.Fatal(e)
+		}
+		if e = json.Unmarshal(raw, &checks); e != nil {
+			log.Fatal(e)
+		}
+		inputs[*checksPath] = fmt.Sprintf("%x", sha256.Sum256(raw))
+		if checks.Inputs[*before] != inputs[*before] {
+			log.Fatal("checks do not authenticate baseline HTML")
+		}
+		var local struct {
+			Cards []localCard `json:"cards"`
+		}
+		raw, e = os.ReadFile(*localPath)
+		if e != nil {
+			log.Fatal(e)
+		}
+		if e = json.Unmarshal(raw, &local); e != nil {
+			log.Fatal(e)
+		}
+		inputs[*localPath] = fmt.Sprintf("%x", sha256.Sum256(raw))
+		reconciliation, e := reconcile(oldRows, newRows, checks.Results, local.Cards)
+		if e != nil {
+			log.Fatal(e)
+		}
+		r.Reconciliation = &reconciliation
+	}
+	r.RetrievedAt = *retrieved
+	r.SourceURL = *sourceURL
 	r.Inputs = inputs
 	b, err := json.MarshalIndent(r, "", "  ")
 	if err != nil {

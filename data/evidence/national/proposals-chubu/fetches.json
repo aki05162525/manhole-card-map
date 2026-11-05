@@ -1,0 +1,137 @@
+[
+  {
+    "url": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+    "fetchedAt": "2026-11-05T04:47:53.791684+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+    "snapshotPath": "data/evidence/national/proposals-chubu/f6bc175ab9f7279ed939.html",
+    "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8"
+  },
+  {
+    "url": "https://www.city.tomi.nagano.jp/category/soshikiitiran/101437.html",
+    "fetchedAt": "2026-11-05T04:47:53.792424+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tomi.nagano.jp/category/soshikiitiran/101437.html",
+    "snapshotPath": "data/evidence/national/proposals-chubu/aa39b93965ecd84ac5cf.html",
+    "snapshotSHA256": "74961c01e8ba1bdc921f9d00e18f0a9d21232bad61537920cfa3482f340deb88"
+  },
+  {
+    "url": "https://tomikan.jp/share-bike/",
+    "fetchedAt": "2026-11-05T04:47:53.792921+00:00",
+    "status": 200,
+    "finalUrl": "https://tomikan.jp/share-bike/",
+    "snapshotPath": "data/evidence/national/proposals-chubu/7df51cdcc576c0b69da9.html",
+    "snapshotSHA256": "c48c9ab1a6499c9d3adec1e093d4ce96dbf4c004c45c8db8a67b0d0dd87a3ed6"
+  },
+  {
+    "url": "https://www.city.saku.nagano.jp/kurashi/gesuido/gesuidojigyo/designmanhole/mannholkard.images/11gatu.png",
+    "fetchedAt": "2026-11-05T04:47:53.793541+00:00",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://www.city.seto.aichi.jp/docs/2016/11/15/00054/index.html",
+    "fetchedAt": "2026-11-05T04:47:53.794027+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.toyohashi.lg.jp/item/44013.htm",
+    "fetchedAt": "2026-11-05T04:47:53.888846+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.kitanagoya.lg.jp/kurashi/suido/1002050/1002059.html",
+    "fetchedAt": "2026-11-05T04:47:53.963512+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.tomi.nagano.jp/file/155791.pdf",
+    "fetchedAt": "2026-11-05T04:51:02.163944+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tomi.nagano.jp/file/155791.pdf",
+    "snapshotPath": "data/evidence/national/proposals-chubu/33923629bf9851dfaee7.pdf",
+    "snapshotSHA256": "bcf0037aea996bd777d0e0d6329ef51c58df6b050ed98775c86d4cb2f4df8ceb"
+  },
+  {
+    "url": "https://db.go-nagano.net/topics_detail6/id%3D12087",
+    "fetchedAt": "2026-11-05T04:51:02.164767+00:00",
+    "status": 200,
+    "finalUrl": "https://db.go-nagano.net/topics_detail6/id%3D12087",
+    "snapshotPath": "data/evidence/national/proposals-chubu/d23a7baa0527d95414e4.html",
+    "snapshotSHA256": "afb6ed48a154eaaff6e64176b59ce7a7a392865371f1d49e971f3b2db81ab916"
+  },
+  {
+    "url": "https://www.kariya-infobox.jp/image/manhole_card.pdf",
+    "fetchedAt": "2026-11-05T04:51:02.165397+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kariya-infobox.jp/image/manhole_card.pdf",
+    "snapshotPath": "data/evidence/national/proposals-chubu/eb8e608db891f4ff0d43.pdf",
+    "snapshotSHA256": "562ba2e380ea91dbb686c126bb1de9fa56d4fd8c344125d8a4a45ce58c9257ab"
+  },
+  {
+    "url": "https://www.city.toyota.aichi.jp/sumaikankyo/jogesuido/1062795/1062800/1062803/1016109.html",
+    "fetchedAt": "2026-11-05T04:51:02.165909+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.tokoname-kankou.net/news/detail/88/",
+    "fetchedAt": "2026-11-05T04:53:34.574608+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokoname-kankou.net/news/detail/88/",
+    "snapshotPath": "data/evidence/national/proposals-chubu/af9c7507c9e9485fc6ae.html",
+    "snapshotSHA256": "9edd4b06de3ed985c44d8a622c2ca68b6cdf7b1ffe68772ee94bed81f2d3bd3a"
+  },
+  {
+    "url": "https://www.kuruto.jp/news/%E3%81%8A%E3%81%B6%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89-%E9%85%8D%E5%B8%83%E4%B8%AD%EF%BC%81-2/",
+    "fetchedAt": "2026-11-05T04:53:34.575265+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kuruto.jp/news/%E3%81%8A%E3%81%B6%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89-%E9%85%8D%E5%B8%83%E4%B8%AD%EF%BC%81-2/",
+    "snapshotPath": "data/evidence/national/proposals-chubu/b4ebe8a2ebf1ba31de19.html",
+    "snapshotSHA256": "aea2e0c7d38133891ed5307ba97c841b355dac9c754c4f89b129a424c68cf6a5"
+  },
+  {
+    "url": "https://www.takahama-shokokai.com/%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB%E3%82%AB%E3%83%BC%E3%83%89/",
+    "fetchedAt": "2026-11-05T04:53:34.575865+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.takahama-kawara-museum.com/info/",
+    "fetchedAt": "2026-11-05T04:53:34.576369+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.city.nisshin.lg.jp/kurashi/sumai/jougesuido/gentsukisonota/18616.html",
+    "fetchedAt": "2026-11-05T04:53:34.731249+00:00",
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+  },
+  {
+    "url": "https://www.town.kanie.aichi.jp/uploaded/attachment/18852.pdf",
+    "fetchedAt": "2026-11-05T04:53:34.780405+00:00",
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+  },
+  {
+    "url": "https://www.town.agui.lg.jp/0000004260.html",
+    "fetchedAt": "2026-11-05T04:53:34.801987+00:00",
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+  },
+  {
+    "url": "https://www.city.anjo.aichi.jp/photo/2023/0428.html",
+    "fetchedAt": "2026-11-05T04:53:34.926558+00:00",
+    "error": "HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound"
+  },
+  {
+    "url": "https://prtimes.jp/main/html/rd/p/000000088.000152789.html",
+    "fetchedAt": "2026-11-05T04:54:23.177247+00:00",
+    "status": 200,
+    "finalUrl": "https://prtimes.jp/main/html/rd/p/000000088.000152789.html",
+    "snapshotPath": "data/evidence/national/proposals-chubu/407b1f7471ce46d91a0b.html",
+    "snapshotSHA256": "64ab2be5dae0627cdadee4354ee81f7afb992aab3b332fd5987fa5e957e362b1"
+  },
+  {
+    "url": "https://www.city.shibata.lg.jp/_res/projects/default_project/_page_/001/031/179/m1-1.jpg",
+    "fetchedAt": "2026-11-05T04:54:46.502617+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibata.lg.jp/_res/projects/default_project/_page_/001/031/179/m1-1.jpg",
+    "snapshotPath": "data/evidence/national/proposals-chubu/127c3a5a575cbd5c8bd5.jpg",
+    "snapshotSHA256": "40288c6d2817a1e8158750f0c8ba6d246bf477bed0865b309881630553549687"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "targetFacilities": 48,
+  "updates": 40,
+  "unresolved": 8,
+  "scopeCounts": {
+    "building": 35,
+    "facility": 5
+  },
+  "manifestURLs": 128,
+  "validated": "IDs, raw-byte hashes, source record numeric pairs, scope, and attempt coverage"
+}

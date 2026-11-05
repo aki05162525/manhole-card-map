@@ -1,0 +1,229 @@
+
+ 0 アクアワールド茨城県大洗水族館入口チケット窓口
+https://www.pref.ibaraki.jp/doboku/gesui/kikaku/manholecard/aquaworld_manholecard.html [["地図を見る（GoogleMapページへ）（外部サイトへリンク）", "https://www.google.co.jp/maps/place/アクアワールド茨城県大洗水族館/@36.3323848,140.593545,37m/data=!3m1!1e3!4m6!3m5!1s0x60223163029ebc25:0x56608e569a1c880b!8m2!3d36.3335762!4d140.5940178!16s/m/04ljjf0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw=="]]
+
+ 1 水戸観光案内所
+
+ 2 水戸芸術館
+
+ 3 日立市役所下水道課
+
+ 4 ぷらっとひたち(日立駅情報交流プラザ)
+
+ 5 土浦市観光協会
+
+ 6 土浦市役所 シティプロモーション課
+
+ 7 観光情報物産センターきらら館
+
+ 8 土浦市立博物館
+
+ 9 土浦市民ギャラリー
+
+ 10 土浦市亀城プラザ
+
+ 11 霞ケ浦総合公園テニスコート管理事務所
+
+ 12 土浦市観光案内所
+
+ 13 土浦市立一中地区公民館
+
+ 14 霞ケ浦文化体育会館
+
+ 15 古河市観光案内所
+
+ 16 まち蔵藍
+
+ 17 結城市都市建設部下水道課
+https://www.city.yuki.lg.jp/kurashi-tetsuzuki/suidou-gesuidou/gesuidou/page005290.html [["script", "position: new google.maps.LatLng(36.3038966512035, 139.878222048283), \t\t\tmap: mapCanvas \t\t});  \t\t// 吹き出し表示処理 \t\tvar infoWin = new google.maps.InfoWindow({ \t\t\tcontent: '<div class=\"mapInfoWindow\"><div class=\"mapInfoWindowTitle\">結城蔵美館</div><di"]]
+
+ 18 龍ケ崎市 下水道課
+
+ 19 龍ケ崎市 市民窓口ステーション
+
+ 20 龍ケ崎市観光物産センター
+
+ 21 下妻市立図書館
+https://www.city.shimotsuma.lg.jp/map.php?code=264 [["script", "position: new google.maps.LatLng(36.18440286727993, 139.96827721595764),\r \t\t\tmap: mapCanvas\r \t\t});\r \r \t\t// 吹き出し表示処理\r \t\tvar infoWin = new google.maps.InfoWindow({\r \t\t\tcontent: '<div class=\"mapInfoWindow\"><div class=\"mapInfoWindowTitle\">下妻市庁舎"]]
+
+ 22 高萩市役所都市建設課(庁舎2階)
+https://www.city.takahagi.ibaraki.jp/kurashi/sumai/suidou/gesuidou/page004960.html [["市役所前交差点", "https://www.google.co.jp/maps?q=36.7132783640176,140.709871805326&z=15&hl=ja"], ["松岡小学校正門前", "https://www.google.co.jp/maps?q=36.7377127501951,140.705848342998&z=15&hl=ja"], ["国道6号東口交差点前", "https://www.google.co.jp/maps?q=36.714418497786,140.718753051037&z=15&hl=ja"], ["穂積家住宅前", "https://www.google.co.jp/maps?q=36.7378976402869,140.693351518355&z=15&hl=ja"], ["市民球場前", "https://www.google.co.jp/maps?q=36.7271159116551,140.681721697193&z=15&hl=ja"]]
+
+ 23 高萩市役所総合受付(庁舎1階)
+https://www.city.takahagi.ibaraki.jp/kurashi/sumai/suidou/gesuidou/page004960.html [["市役所前交差点", "https://www.google.co.jp/maps?q=36.7132783640176,140.709871805326&z=15&hl=ja"], ["松岡小学校正門前", "https://www.google.co.jp/maps?q=36.7377127501951,140.705848342998&z=15&hl=ja"], ["国道6号東口交差点前", "https://www.google.co.jp/maps?q=36.714418497786,140.718753051037&z=15&hl=ja"], ["穂積家住宅前", "https://www.google.co.jp/maps?q=36.7378976402869,140.693351518355&z=15&hl=ja"], ["市民球場前", "https://www.google.co.jp/maps?q=36.7271159116551,140.681721697193&z=15&hl=ja"]]
+
+ 24 北茨城市役所総合受付
+
+ 25 取手市役所取手支所取手駅前窓口
+
+ 26 牛久市役所分庁舎1階 下水道課
+
+ 27 エスカード牛久2階 いばらき自慢
+
+ 28 牛久シャトーショップ
+
+ 29 つくば市役所1階水道お客様センター
+
+ 30 つくば駅前観光案内所
+
+ 31 鹿島アントラーズオフィシャルショップ・クラブハウス店
+
+ 32 守谷市役所
+https://www.city.moriya.ibaraki.jp/kurashi_tetsuzuki/suido/1002264/1002265.html [["茨城県守谷市百合ケ丘二丁目2734番地の1 （外部リンク）", "https://maps.google.com/maps?q=35.948963,139.980445"]]
+
+ 33 道の駅常陸大宮~かわプラザ~
+
+ 34 那珂市曲がり屋
+
+ 35 筑西市役所上下水道部下水道課
+https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html [["筑西市役所本庁舎", "https://www.google.co.jp/maps/place/36°18'19.0\"N+139°58'45.9\"E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja"]]
+
+ 36 筑西市役所1階総合案内
+https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html [["筑西市役所本庁舎", "https://www.google.co.jp/maps/place/36°18'19.0\"N+139°58'45.9\"E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja"]]
+
+ 37 道の駅グランテラス筑西総合案内所
+
+ 38 雪入ふれあいの里公園(ネイチャーセンター)
+https://www.city.kasumigaura.lg.jp/page/page002376.html [["かすみがうら市交流センター", "https://maps.google.co.jp/maps?q=36.0700103,140.3747111&z=15&hl=ja"]]
+https://www.city.kasumigaura.lg.jp/page/page000555.html [["千代田庁舎", "https://maps.google.co.jp/maps?q=36.1518123,140.2370064&z=15&hl=ja"]]
+https://www.city.kasumigaura.lg.jp/page/page000557.html [["霞ヶ浦庁舎", "https://maps.google.co.jp/maps?q=36.0944761,140.3305553&z=15&hl=ja"]]
+
+ 39 桜川市役所真壁庁舎
+
+ 40 桜川市役所大和庁舎総合窓口課
+
+ 41 桜川市役所大和庁舎日直窓口
+
+ 42 天王崎観光交流センター「コテラス」
+
+ 43 鉾田市役所本庁舎1F市民課窓口
+
+ 44 大洗町観光情報交流センター「うみまちテラス」
+https://www.oarai-info.jp/access/ [["現在地からのルートを Googlemapで確認", "https://www.google.com/maps/dir/?api=1&destination=36.313423823959795, 140.57522096373933&travelmode=driving"], ["現在地からのルートを Googlemapで確認", "https://www.google.com/maps/dir/?api=1&destination=36.313423823959795, 140.57522096373933&travelmode=transit"], ["現在地からのルートを Googlemapで確認", "https://www.google.com/maps/dir/?api=1&destination=36.313423823959795, 140.57522096373933"], ["現在地からのルートを Googlemapで確認", "https://www.google.com/maps/dir/?api=1&destination=36.313423823959795, 140.57522096373933"], ["現在地からのルートを Googlemapで確認", "https://www.google.com/maps/dir/?api=1&destination=36.313423823959795, 140.57522096373933"]]
+
+ 45 五霞町役場 建設水道課
+
+ 46 五霞町役場 日直
+
+ 47 栃木県下水道管理事務所
+
+ 48 上三川町観光協会
+
+ 49 2階 経営企画課
+
+ 50 1階 警備員室
+
+ 51 宇都宮市観光案内所
+
+ 52 交通未来都市うつのみやオープンスクエア
+https://www.city.utsunomiya.lg.jp/kurashi/kotsu/lrt/1028855/1036491.html [["地図を表示する （外部リンク）", "https://maps.google.com/maps?q=36.54751115735435,139.98333110421828"]]
+
+ 53 宇都宮市役所文化都市推進課
+
+ 54 宇都宮城址公園清明館
+
+ 55 太平記館
+
+ 56 足利まちなか遊学館
+
+ 57 一般社団法人栃木市観光協会
+
+ 58 佐野市観光物産会館
+
+ 59 佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)
+
+ 60 まちの駅 新・鹿沼宿
+
+ 61 日光市観光協会 今市支部
+
+ 62 栃木県立日光自然博物館(奥日光インフォメーションセンター)
+
+ 63 小山市役所 市役所4階 下水道施設課内
+
+ 64 小山市役所 市役所1階 中央管理室(庁舎西側)
+
+ 65 小山市まちの駅思季彩館
+
+ 66 久保記念観光文化交流館
+
+ 67 道の駅 那須与一の郷 物産館
+
+ 68 一般社団法人 矢板市観光協会
+
+ 69 さくら市役所 卯の里庁舎
+
+ 70 さくら市役所 当直室
+
+ 71 那須烏山市役所烏山庁舎(まちづくり課)
+
+ 72 那須烏山市役所烏山庁舎(日直室)
+
+ 73 山あげ会館(那須烏山市観光協会)
+
+ 74 グリムの森「グリムの館」
+
+ 75 下野薬師寺歴史館
+
+ 76 しもつけ風土記の丘資料館
+
+ 77 上三川町ORIGAMIプラザ
+
+ 78 壬生町役場下水道課
+
+ 79 壬生町役場宿直室
+
+ 80 那珂川町役場小川出張所
+
+ 81 那珂川町役場(庁舎西側、日直室)
+
+ 82 群馬県県土整備部 下水道総合事務所
+
+ 83 玉村町総合運動公園 管理棟
+
+ 84 道の駅「まえばし赤城」観光案内所
+
+ 85 桐生市役所水道局下水道課
+
+ 86 桐生市役所本庁舎1階警備・宿日直室
+
+ 87 伊勢崎市上下水道局総務課
+https://www.city.isesaki.lg.jp/soshiki/keizai/shoko/machinakakaseika/1588.html [["大きな地図を見る（GoogleMapページへ）", "https://maps.google.co.jp/maps?q=36.327052,139.191989&ll=36.327052,139.191989&z=6"]]
+
+ 88 沼田市観光案内所
+
+ 89 沼田市役所観光交流課(テラス沼田5階)
+
+ 90 利根地区コミュニティセンター
+https://www.oigami.net/access/ [["現在地からのルート検索", "https://www.google.com/maps/dir/?api=1&destination=36.67120432762694, 139.20979625216566&travelmode=driving"], ["現在地からのルート検索", "https://www.google.com/maps/dir/?api=1&destination=36.67120432762694, 139.20979625216566&travelmode=transit"], ["現在地からのルート検索", "https://www.google.com/maps/dir/?api=1&destination=36.67120432762694, 139.20979625216566&travelmode=transit"]]
+
+ 91 つつじが岡ふれあいセンター
+
+ 92 中央公民館(渋川東部公民館)
+
+ 93 伊香保ロープウェイ不如帰駅観光案内所
+https://www.city.shibukawa.lg.jp/shisetsu/000349/p003096.html [["渋川市営伊香保ロープウェイ不如帰駅", "http://maps.google.co.jp/maps?hl=ja&q=36.4971262,138.91945529999995&ll=36.4971262,138.91945529999995&z=15"]]
+
+ 94 渋川地区名産品センター(しぶさん)
+
+ 95 道の駅ららん藤岡 藤岡市観光案内所
+https://www.city.fujioka.gunma.jp/soshiki/jogesuidobu/gesuido/2/1117.html [["道の駅ららん藤岡の地図はこちら", "https://www.google.co.jp/maps/place/道の駅+ららん藤岡/@36.2725639,139.0718415,15z/data=!4m5!3m4!1s0x0:0xebe21060d413f25a!8m2!3d36.2725639!4d139.0718415"]]
+
+ 96 一般社団法人みどり市観光協会
+
+ 97 吉岡町役場上下水道課
+
+ 98 吉岡町文化センター
+
+ 99 草津町役場
+
+ 100 玉村町水道庁舎(玉村町上下水道課)
+
+ 101 道の駅 玉村宿(総合案内)
+
+ 102 駅前プラザ「メイちゃん家」
+
+ 103 邑楽町役場2階 都市計画課
+
+ 104 邑楽町役場1階 休日受付窓口
+
+ 105 シンボルタワー 未来MiRAi

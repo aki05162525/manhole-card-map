@@ -1,0 +1,17 @@
+{
+  "result": "passed",
+  "auditCards": 123,
+  "auditRelations": 165,
+  "uniqueFacilities": 87,
+  "uniqueRelations": 89,
+  "coordinateFacilities": 16,
+  "snapshotHashesChecked": 238,
+  "checks": [
+    "全割当カード・関係の網羅性",
+    "重複・孤立IDなし",
+    "不変quality.jsonのsourceHash",
+    "全取得原本と採用根拠のSHA256",
+    "承認座標数値の原典内存在・明示locator",
+    "新規窓口proposalを旧関係に混入しない"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "targets": 79,
+  "updates": 41,
+  "unresolved": 38,
+  "unconfirmedLegacyCandidates": 2,
+  "allTargetsCoveredExactlyOnce": true,
+  "evidenceHashChecked": 155,
+  "coordinateLiteralsChecked": 82,
+  "inputSHA256": {
+    "data/work/national-input/full.json": "6068da023f3bd4cb1e292b3e43877411a1505356e4377bbf02a255a89afb1987",
+    "data/work/national-input/quality.json": "8561505b9c8c0426fae93bf35306bd53f324e75527b842986da3d1df7b31012b",
+    "data/work/national-input/places.json": "152bb738c77e95fcbd54702e42a2107cfd5949d614c7e6b4a706c94cba2a41fe",
+    "data/overrides/regions/chubu-east.json": "05e288475d1b3b5a9a69e3cddc3f6f01fb17e3024a5039728e77af08e414762d",
+    "data/national/regions/chubu-east.json": "484320507a6ad512694ff78d3d84d87143917f84c58e1e0e9adf8a5eaa220740"
+  },
+  "officialLinkChainsChecked": 25,
+  "officialLinkChainErrors": 0
+}

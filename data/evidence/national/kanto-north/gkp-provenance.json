@@ -1,0 +1,9 @@
+{
+  "sourceUrl": "https://www.gk-p.jp/mhcard/",
+  "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+  "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+  "importedFrom": "/tmp/gkp-current-design.html",
+  "parentAcquiredDate": "2026-11-05",
+  "importedAt": "2026-11-05T04:39:53.190129+00:00",
+  "note": "統合担当が取得した原本をbytesのまま複製。地域班は再取得していない。実取得時刻は統合担当の取得記録へ結合すること。mtimeから取得時刻を捏造しない。"
+}

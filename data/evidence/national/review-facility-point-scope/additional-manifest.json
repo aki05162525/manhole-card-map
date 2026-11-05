@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "fetchedAt": "2026-11-05T05:07:20.731861+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/8b3d596123345c99c3b6.html",
+    "sha256": "9da0ab08a5f5f9887e0456ff6a13eafea4b172050acb479869c2dad461931562"
+  },
+  {
+    "url": "https://www.japan47go.travel/ja/privacy-policy",
+    "fetchedAt": "2026-11-05T05:07:20.816932+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://www.japan47go.travel/ja/privacy-policy",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/ef26c3419bc26642709a.html",
+    "sha256": "049e30ccf64c53c50be253f2683f2e56d34e8bf51d6322319c6e574b645c9127"
+  },
+  {
+    "url": "https://www.city.sado.niigata.jp/site/mine/5294.html",
+    "fetchedAt": "2026-11-05T05:07:21.159758+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/site/mine/5294.html",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/f57cb01b4528747d405c.html",
+    "sha256": "3123a9da51f07a1db7e30edc0d922939fa29f335496653affcf9c6528b22d147"
+  },
+  {
+    "url": "https://www.japan47go.travel/ja/about",
+    "fetchedAt": "2026-11-05T05:07:40.603670+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://www.japan47go.travel/ja/about",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/e3435082ce53dfe3d1c2.html",
+    "sha256": "2293191d38648259879ad80c0c5b252162778294f2ada4dc61d0539e23e0c439"
+  },
+  {
+    "url": "https://kankou-data.nihon-kankou-dx.info/",
+    "fetchedAt": "2026-11-05T05:07:41.207736+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://kankou-data.nihon-kankou-dx.info/",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/b4ba1e3d3a7910c39004.html",
+    "sha256": "44066a74bfa97b183784932016ab33032304b4db8c29e7fabb426b4eeda956b9"
+  },
+  {
+    "url": "https://www.city.sado.niigata.jp/site/mine/list97-255.html",
+    "fetchedAt": "2026-11-05T05:07:41.347628+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/site/mine/list97-255.html",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/a49e9c33bb76b38f4389.html",
+    "sha256": "f87bf370242c570d631cd0d11cd363b8fec392d62eeef295c92f837b9082c302"
+  },
+  {
+    "url": "https://www.city.sado.niigata.jp/site/mine/5306.html",
+    "fetchedAt": "2026-11-05T05:09:55.306195+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/site/mine/5306.html",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/12628250cd38dfa3cd34.html",
+    "sha256": "dd68993971e33a5a61481d00c3155a0d55ac8976158c57b36cea20db442fbdc0"
+  },
+  {
+    "url": "https://m-shonanchigasaki.com/assets/about-us/image/%E3%83%95%E3%83%AD%E3%82%A2%E3%83%9E%E3%83%83%E3%83%97.pdf",
+    "fetchedAt": "2026-11-05T05:10:28.601967+00:00",
+    "actorType": "ai",
+    "status": 200,
+    "finalUrl": "https://m-shonanchigasaki.com/assets/about-us/image/%E3%83%95%E3%83%AD%E3%82%A2%E3%83%9E%E3%83%83%E3%83%97.pdf",
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/2910e80e494045fe5dce.html",
+    "sha256": "6820df4b07944980a10f1c56f97276025ee7297848e77746b6ad4f450fafcb5f"
+  }
+]

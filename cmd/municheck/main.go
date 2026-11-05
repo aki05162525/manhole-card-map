@@ -173,6 +173,7 @@ func main() {
 		if _, ok := byIndex[c.Index]; ok {
 			log.Fatalf("OCR 行の重複: %d", c.Index)
 		}
+		must(validateOCRIdentity(row, c))
 		r := result{Kind: "lid", Index: c.Index, Image: c.Image, Code: c.Code, City: strings.Join(row.City, " "), Pref: gkp.PrefName(row), Lat: c.Lat, Lng: c.Lng, Printed: c.Coord, CoordinateSource: *ocrPath, IDSource: *ocrPath, GKPPlace: row.Place, Reviewer: "Codex（AI、自動照合）"}
 		exclude := ""
 		if v, ok := ov[c.Image]; ok {
@@ -222,6 +223,7 @@ func main() {
 			if !ok {
 				log.Fatalf("OCR にない行: %d", s.Index)
 			}
+			must(validateAddressSource(rowByID[s.Index], s))
 			r.Kind = "distribution"
 			r.Lat = g.Result.Lat
 			r.Lng = g.Result.Lon

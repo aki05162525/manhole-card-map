@@ -1,0 +1,1099 @@
+
+24-202-A001 四日市市 （A001）
+['【通常時】9：30～17：00', 'ただし、月曜日（祝日の場合はその翌日）、年末年始はお休みです', '※土曜日は19：30まで配布しています', '※月曜日は一部開館する日もございます', '※年4回（各1週間程度）、整備休館があります', '【休館時】8：30 ～17：15', 'ただし、年末年始を除く平日のみ配布します']
+{'id': 'place:cdb607ea416f361b2b84', 'name': 'そらんぽ四日市 総合受付', 'address': '三重県四日市市安島1-3-16(そらんぽ四日市1階)', 'phone': '059-355-2700', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-202-A001', 'placeId': 'place:cdb607ea416f361b2b84', 'condition': '通常時', 'raw': ['【通常時】そらんぽ四日市 総合受付', '三重県四日市市安島1-3-16（そらんぽ四日市1階）', '電話：059-355-2700', '【休館時】四日市市上下水道局総務課', '三重県四日市市堀木1-3-18', '電話：059-354-8350'], 'periodRaw': '', 'alternativeRaw': '【通常時】そらんぽ四日市 総合受付\n三重県四日市市安島1-3-16（そらんぽ四日市1階）\n電話：059-355-2700\n【休館時】四日市市上下水道局総務課\n三重県四日市市堀木1-3-18\n電話：059-354-8350', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:efdb8ded331038c52b06', 'name': '四日市市上下水道局総務課', 'address': '三重県四日市市堀木1-3-18', 'phone': '059-354-8350', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-202-A001', 'placeId': 'place:efdb8ded331038c52b06', 'condition': '休館時', 'raw': ['【通常時】そらんぽ四日市 総合受付', '三重県四日市市安島1-3-16（そらんぽ四日市1階）', '電話：059-355-2700', '【休館時】四日市市上下水道局総務課', '三重県四日市市堀木1-3-18', '電話：059-354-8350'], 'periodRaw': '', 'alternativeRaw': '【通常時】そらんぽ四日市 総合受付\n三重県四日市市安島1-3-16（そらんぽ四日市1階）\n電話：059-355-2700\n【休館時】四日市市上下水道局総務課\n三重県四日市市堀木1-3-18\n電話：059-354-8350', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-202-B001 四日市市 （B001）
+['10:00～19:00', 'ただし、年末年始はお休みです', '※臨時休業する場合があります']
+{'id': 'place:d8f3abfec5dd87c0bbbf', 'name': 'お休み処四十三茶屋 観光案内所(四日市観光協会)', 'address': '三重県四日市市安島1-1-56 四日市物産観光ホール内', 'phone': '059-357-0381', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-202-B001', 'placeId': 'place:d8f3abfec5dd87c0bbbf', 'condition': '', 'raw': ['お休み処四十三茶屋 観光案内所（四日市観光協会）', '三重県四日市市安島1-1-56 四日市物産観光ホール内', '電話：059-357-0381'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-202-C001 四日市市 (C001)
+['8:30～17:15', '※土日・祝日は夜間休日窓口で配布します。']
+{'id': 'place:ea29752d2aa0d101e6bf', 'name': '四日市市上下水道局2階総務課', 'address': '三重県四日市市堀木一丁目3番18号', 'phone': '059-354-8350', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-202-C001', 'placeId': 'place:ea29752d2aa0d101e6bf', 'condition': '', 'raw': ['四日市市上下水道局2階総務課', '三重県四日市市堀木一丁目3番18号', '電話：059-354-8350'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-203-A001 伊勢市 (A001)
+['9：00～17：30（年中無休）']
+{'id': 'place:87d9ce37413322274366', 'name': '伊勢市駅観光案内所', 'address': '三重県伊勢市吹上1-1-4(JR伊勢市駅構内)', 'phone': '0596-65-6091', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-203-A001', 'placeId': 'place:87d9ce37413322274366', 'condition': '', 'raw': ['伊勢市駅観光案内所', '三重県伊勢市吹上1-1-4（JR伊勢市駅構内）', '電話：0596-65-6091'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-203-B001 伊勢市 (B001)
+['8:30～17:00(年中無休)']
+{'id': 'place:1e8bbf50e2f310db2d8f', 'name': '二見浦観光案内所', 'address': '三重県伊勢市二見町茶屋111-1 二見生涯学習センター内', 'phone': '0596-43-2331', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-203-B001', 'placeId': 'place:1e8bbf50e2f310db2d8f', 'condition': '', 'raw': ['二見浦観光案内所', '三重県伊勢市二見町茶屋111－1 二見生涯学習センター内', '電話:0596-43-2331'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-A001 松阪市(A001)
+['9：00～16：30']
+{'id': 'place:f57118518c023572b019', 'name': '松阪市上下水道部 1階 上下水道総務課', 'address': '三重県松阪市殿町1340番地1(松阪市本庁舎第3分館)', 'phone': '0598-53-4371', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-A001', 'placeId': 'place:f57118518c023572b019', 'condition': '平日', 'raw': ['【平日】松阪市上下水道部 1階 上下水道総務課', '三重県松阪市殿町1340番地1（松阪市本庁舎第3分館）', '電話：0598-53-4371', '【休日】松阪市役所1階 当直室', '三重県松阪市殿町1340番地1', '電話:0598-53-4100'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:989d5e47870093dfad9c', 'name': '松阪市役所1階 当直室', 'address': '三重県松阪市殿町1340番地1', 'phone': '0598-53-4100', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-A001', 'placeId': 'place:989d5e47870093dfad9c', 'condition': '休日', 'raw': ['【平日】松阪市上下水道部 1階 上下水道総務課', '三重県松阪市殿町1340番地1（松阪市本庁舎第3分館）', '電話：0598-53-4371', '【休日】松阪市役所1階 当直室', '三重県松阪市殿町1340番地1', '電話:0598-53-4100'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-B001 松阪市(B001)
+['【3月～11月】9:00～18:00', '【12月～2月】9:00～17:00', '【12/30～1/2】9:00～16:30']
+{'id': 'place:151c90f251d15ecaa7fa', 'name': '豪商のまち松阪 観光交流センター', 'address': '三重県松阪市魚町1658番地3', 'phone': '0598-25-6565', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-B001', 'placeId': 'place:151c90f251d15ecaa7fa', 'condition': '通常', 'raw': ['【通常】豪商のまち松阪 観光交流センター', '三重県松阪市魚町1658番地3', '電話：0598－25－6565', '【12/30～1/2】松阪市役所１階当直室', '三重県松阪市殿町1340番地1', '電話：0598－53－4100', '(問合せ先)', '松阪市上下水道部上下水道総務課', '電話：0598－53－4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c21e85daab2bdd58d4f2', 'name': '松阪市役所1階当直室', 'address': '三重県松阪市殿町1340番地1', 'phone': '0598-53-4100', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-B001', 'placeId': 'place:c21e85daab2bdd58d4f2', 'condition': '12/30~1/2', 'raw': ['【通常】豪商のまち松阪 観光交流センター', '三重県松阪市魚町1658番地3', '電話：0598－25－6565', '【12/30～1/2】松阪市役所１階当直室', '三重県松阪市殿町1340番地1', '電話：0598－53－4100', '(問合せ先)', '松阪市上下水道部上下水道総務課', '電話：0598－53－4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-C001 松阪市 (C001)
+['8：30～17：15', 'ただし、月曜日（祝日の場合はその翌日）、祝日の翌日（土・日・祝日の場合は営業）、年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:7b38013e94fc4708b0cc', 'name': '松阪市総合運動公園 管理事務所', 'address': '三重県松阪市山下町111', 'phone': '0598-28-6757', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-C001', 'placeId': 'place:7b38013e94fc4708b0cc', 'condition': '', 'raw': ['松阪市総合運動公園 管理事務所', '三重県松阪市山下町111', '電話:0598-28-6757', '（問合せ先）', '松阪市上下水道部 上下水道総務課', '電話:0598-53-4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-D001 松阪市 (D001)
+['9：00～16：30', 'ただし、月曜日（祝日の場合はその翌日）、祝日の翌平日（土・日・祝日の場合は開館）、年末年始（12月29日～1月3日）、展示替え期間中（2か月ごとの火～木曜日）はお休みです（HPに掲載）']
+{'id': 'place:1d7d05107376b51a3ca8', 'name': '松浦武四郎記念館', 'address': '三重県松阪市小野江町383', 'phone': '0598-56-6847', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-D001', 'placeId': 'place:1d7d05107376b51a3ca8', 'condition': '', 'raw': ['松浦武四郎記念館', '三重県松阪市小野江町383', '電話:0598-56-6847', '（問合せ先）', '松阪市上下水道部上下水道総務課', '電話:0598-53-4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-E001 松阪市 (E001)
+['9：00～16：30', 'ただし、月曜日(祝日の場合はその翌日)、祝日の翌平日(土・日・祝日の場合は開館)、年末年始(12月29日～1月3日)はお休みです', '※月曜日・祝日の翌平日は一部開館日あり（HPに掲載）']
+{'id': 'place:65044cfa94913594bf2f', 'name': '松阪市文化財センター はにわ館', 'address': '三重県松阪市外五曲町1番地', 'phone': '0598-26-7330', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-E001', 'placeId': 'place:65044cfa94913594bf2f', 'condition': '', 'raw': ['松阪市文化財センター はにわ館', '三重県松阪市外五曲町1番地', '電話:0598-26-7330', '（問合せ先）', '松阪市上下水道部 上下水道総務課', '電話:0598-53-4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-204-F001 松阪市 (F001)
+['9:00～18:00', 'ただし、年末年始（12/30～1/2）はお休みです']
+{'id': 'place:7245f0f70b79d8773267', 'name': '松阪駅観光情報センター', 'address': '三重県松阪市京町507番地2', 'phone': '0598-23-7771', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-204-F001', 'placeId': 'place:7245f0f70b79d8773267', 'condition': '', 'raw': ['松阪駅観光情報センター', '三重県松阪市京町507番地2', '電話:0598-23-7771', '(問合せ先）', '松阪市上下水道部上下水道総務課', '電話:0598-53-4371'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-205-A001 桑名市 (A001)
+['9：00～17：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:90a0a649350346399dcc', 'name': 'クワナベース', 'address': '三重県桑名市大字東方55-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-205-A001', 'placeId': 'place:90a0a649350346399dcc', 'condition': '', 'raw': ['クワナベース', '三重県桑名市大字東方55-1'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-205-B001 桑名市 (B001)
+['9：00~17：00', 'ただし、年末年始はお休みです']
+{'id': 'place:5737377c55356896ebee', 'name': '桑名市住吉浦休憩施設', 'address': '三重県桑名市太一丸地先', 'phone': '0594-23-3010', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-205-B001', 'placeId': 'place:5737377c55356896ebee', 'condition': '', 'raw': ['桑名市住吉浦休憩施設', '三重県桑名市太一丸地先', '電話：0594-23-3010'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-207-A001 鈴鹿市
+['【平日】8：30～17：15', '【休日】9：30～18：00', 'ただし、年末年始はお休みです']
+{'id': 'place:5d739ed0da591dafd1d2', 'name': '鈴鹿市上下水道局', 'address': '三重県鈴鹿市寺家町1170', 'phone': '059-368-1662', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-207-A001', 'placeId': 'place:5d739ed0da591dafd1d2', 'condition': '平日', 'raw': ['【平日】鈴鹿市上下水道局', '三重県鈴鹿市寺家町1170', '電話：059-368-1662', '【休日】鈴鹿市観光協会', '三重県鈴鹿市白子駅前17-12'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:3da57efe618fef7b85f1', 'name': '鈴鹿市観光協会', 'address': '三重県鈴鹿市白子駅前17-12', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-207-A001', 'placeId': 'place:3da57efe618fef7b85f1', 'condition': '休日', 'raw': ['【平日】鈴鹿市上下水道局', '三重県鈴鹿市寺家町1170', '電話：059-368-1662', '【休日】鈴鹿市観光協会', '三重県鈴鹿市白子駅前17-12'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-210-A001 亀山市 (A001)
+['9：00～16：30', 'ただし、毎週月曜日（祝日または振替休日の場合は翌日）、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:73bf1afc871a6b033fb0', 'name': '関まちなみ資料館', 'address': '三重県亀山市関町中町482', 'phone': '0595-96-2404', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-210-A001', 'placeId': 'place:73bf1afc871a6b033fb0', 'condition': '', 'raw': ['関まちなみ資料館', '三重県亀山市関町中町482', '電話：0595-96-2404'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-210-B001 亀山市 (B001)
+['9：00～20：00', 'ただし、火曜日（祝日の場合は翌日）、第4金曜日、図書特別整理期間・年末年始は', 'お休みです', '【休館日】8：30～17：15', 'ただし、年末年始はお休みです']
+{'id': 'place:ed05bf21cdf3571406bc', 'name': '亀山市立図書館', 'address': '三重県亀山市御幸町318番地1', 'phone': '0595-82-0542', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-210-B001', 'placeId': 'place:ed05bf21cdf3571406bc', 'condition': '', 'raw': ['亀山市立図書館', '三重県亀山市御幸町318番地1', '電話:0595-82-0542', '【休館日】亀山市上下水道部下水道課', '三重県亀山市関町木崎919番地１', '電話:0595-97-0628'], 'periodRaw': '', 'alternativeRaw': '亀山市立図書館\n三重県亀山市御幸町318番地1\n電話:0595-82-0542\n【休館日】亀山市上下水道部下水道課\n三重県亀山市関町木崎919番地１\n電話:0595-97-0628', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:9cebe66533eed96567b3', 'name': '亀山市上下水道部下水道課', 'address': '三重県亀山市関町木崎919番地1', 'phone': '0595-97-0628', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-210-B001', 'placeId': 'place:9cebe66533eed96567b3', 'condition': '休館日', 'raw': ['亀山市立図書館', '三重県亀山市御幸町318番地1', '電話:0595-82-0542', '【休館日】亀山市上下水道部下水道課', '三重県亀山市関町木崎919番地１', '電話:0595-97-0628'], 'periodRaw': '', 'alternativeRaw': '亀山市立図書館\n三重県亀山市御幸町318番地1\n電話:0595-82-0542\n【休館日】亀山市上下水道部下水道課\n三重県亀山市関町木崎919番地１\n電話:0595-97-0628', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-215-A001 志摩市
+['（配布場所①）', '9：30～16：00', '臨時休業等の情報についてはこちらからご確認ください', '（配布場所②）', '9:00〜17:00', '※年末年始（12/29～1/3）も配布します。']
+{'id': 'place:e6b0ae7612b51c2f669e', 'name': '(配布場所①)', 'address': '三重県志摩市阿児町安乗794-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-215-A001', 'placeId': 'place:e6b0ae7612b51c2f669e', 'condition': '', 'raw': ['（配布場所①）', '【平日、土日祝】安乗岬園地休憩舎', '三重県志摩市阿児町安乗794－1', '電話: \u200b0599-77-3267', '（配布場所②）', '【土日祝】志摩市観光協会', '三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階', '電話:0599-46-0570', '（問合せ先）', '志摩市上下水道部下水道課', '電話:0599-44-0225」（平日のみ）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:981f92e7ecb53d46d9ca', 'name': '安乗岬園地休憩舎', 'address': '三重県志摩市阿児町安乗794-1', 'phone': '\u200b0599-77-3267', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-215-A001', 'placeId': 'place:981f92e7ecb53d46d9ca', 'condition': '平日、土日祝', 'raw': ['（配布場所①）', '【平日、土日祝】安乗岬園地休憩舎', '三重県志摩市阿児町安乗794－1', '電話: \u200b0599-77-3267', '（配布場所②）', '【土日祝】志摩市観光協会', '三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階', '電話:0599-46-0570', '（問合せ先）', '志摩市上下水道部下水道課', '電話:0599-44-0225」（平日のみ）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:cf81cd857b86209bc8c8', 'name': '志摩市観光協会', 'address': '三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階', 'phone': '0599-46-0570', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-215-A001', 'placeId': 'place:cf81cd857b86209bc8c8', 'condition': '土日祝', 'raw': ['（配布場所①）', '【平日、土日祝】安乗岬園地休憩舎', '三重県志摩市阿児町安乗794－1', '電話: \u200b0599-77-3267', '（配布場所②）', '【土日祝】志摩市観光協会', '三重県志摩市阿児町鵜方1670-2 近鉄鵜方駅改札階', '電話:0599-46-0570', '（問合せ先）', '志摩市上下水道部下水道課', '電話:0599-44-0225」（平日のみ）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-216-A001 伊賀市
+['9：00～18：00', '(12/29～1/1を除く)']
+{'id': 'place:3c9d0ae839584b7e4795', 'name': '伊賀流忍者体験施設 万川集海 二階 お土産店「万川堂」', 'address': '三重県伊賀市上野丸之内29', 'phone': '0595-51-7307', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-216-A001', 'placeId': 'place:3c9d0ae839584b7e4795', 'condition': '', 'raw': ['伊賀流忍者体験施設 万川集海 二階 お土産店「万川堂」', '三重県伊賀市上野丸之内29', '電話：0595-51-7307', '※お車でお越しの方は、周辺駐車場をご利用ください'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-324-A001 東員町
+['8：15～17：00']
+{'id': 'place:a923ab5decbf089ca723', 'name': '東員町役場 上下水道課', 'address': '三重県員弁郡東員町大字山田1600', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-324-A001', 'placeId': 'place:a923ab5decbf089ca723', 'condition': '平日', 'raw': ['【平日】東員町役場 上下水道課', '【休日】東員町役場守衛室', '三重県員弁郡東員町大字山田1600', '電話：0594-86-2812'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:bb8882bd51e63108b720', 'name': '東員町役場守衛室', 'address': '三重県員弁郡東員町大字山田1600', 'phone': '0594-86-2812', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-324-A001', 'placeId': 'place:bb8882bd51e63108b720', 'condition': '休日', 'raw': ['【平日】東員町役場 上下水道課', '【休日】東員町役場守衛室', '三重県員弁郡東員町大字山田1600', '電話：0594-86-2812'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+24-341-A001 菰野町
+['9：00～17：00']
+{'id': 'place:b527d66a23c68692a08e', 'name': '道の駅 菰野', 'address': '三重県三重郡菰野町菰野2256', 'phone': '059-394-0116', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '24-341-A001', 'placeId': 'place:b527d66a23c68692a08e', 'condition': '', 'raw': ['道の駅 菰野', '三重県三重郡菰野町菰野2256', '電話：059-394-0116'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-000-A001 滋賀県 （流域下水道）
+['9：00～16：30', 'ただし、土日、祝日、年末年始、お盆等公益財団法人淡海環境保全財団が必要と認めた日はお休みです']
+{'id': 'place:9064b04ef5f779d726f7', 'name': '淡海環境プラザ', 'address': '滋賀県草津市矢橋字帰帆2108', 'phone': '077-569-5306', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-000-A001', 'placeId': 'place:9064b04ef5f779d726f7', 'condition': '', 'raw': ['淡海環境プラザ', '滋賀県草津市矢橋字帰帆2108', '電話：077-569-5306'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-201-A001 大津市 (A001)
+['9：00～17：00', '年末年始（12/29～1/3）はお休みです']
+{'id': 'place:6ad3133f41924d1d4b10', 'name': '大津市水再生センター', 'address': '滋賀県大津市由美浜1-1', 'phone': '077-522-5300', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-201-A001', 'placeId': 'place:6ad3133f41924d1d4b10', 'condition': '', 'raw': ['【大津市水再生センター】', '滋賀県大津市由美浜1-1', '電話：077-522-5300'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-201-B001 大津市 (B001)
+['9：00～18：00']
+{'id': 'place:7a7be1946c5a72e93e9f', 'name': '大津駅観光案内所', 'address': '滋賀県大津市春日町1-3 ビエラ大津', 'phone': '077-522-3830', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-201-B001', 'placeId': 'place:7a7be1946c5a72e93e9f', 'condition': '', 'raw': ['大津駅観光案内所', '滋賀県大津市春日町1-3 ビエラ大津', '電話:077-522-3830', '（問合せ先）', '大津市企業局企業戦略・危機対策室', '電話:077-528-2863'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-201-C001 大津市 (C001)
+['9:00～17:00', 'ただし、冬季休業があります。詳細はHPをご確認ください。', '（令和7年度は12/22～1/9休業。1/10～2/19は平日10:00～15:00、土日祝10:00～17:00営業）']
+{'id': 'place:a85cfd517816a4d43b6b', 'name': '大津港サイクルステーション Bird Café', 'address': '滋賀県大津市浜大津5-1-7', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-201-C001', 'placeId': 'place:a85cfd517816a4d43b6b', 'condition': '', 'raw': ['大津港サイクルステーション Bird Café', '滋賀県大津市浜大津5-1-7', '(問合せ先）', '大津市観光振興課', '電話:077-528-2756（平日9:00～17:00）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-202-A001 彦根市 （A001）
+['【平日】8:30～19:00', '【土、日、祝日および12/29～12/31】9:00～17:00', 'ただし、1/1～1/3はお休みです']
+{'id': 'place:41556d52418231f02801', 'name': '彦根市上下水道料金お客様サービスセンター', 'address': '滋賀県彦根市元町4番2号(彦根市役所1階)', 'phone': '0749-27-2802', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-202-A001', 'placeId': 'place:41556d52418231f02801', 'condition': '', 'raw': ['彦根市上下水道料金お客様サービスセンター', '滋賀県彦根市元町4番2号（彦根市役所１階）', '電話0749-27-2802', '（問い合わせ先）', '彦根市上下水道部下水道建設課', '電話0749-22-5232'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-202-B001 彦根市 （B001）
+['10:00～18:00（3月～11月）', '10:00～17:00（12月～2月）']
+{'id': 'place:422d3a414af57035aff6', 'name': 'ひこにゃんミュジアム', 'address': '滋賀県彦根市本町1-7-34', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-202-B001', 'placeId': 'place:422d3a414af57035aff6', 'condition': '', 'raw': ['ひこにゃんミュジアム', '滋賀県彦根市本町1-7-34', '（問い合わせ先）', '彦根市役所上下水道部 下水道建設課', '電話：0749-22-5232'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-204-A001 近江八幡市
+['【平日】9:00～12:00、13:00～16:00', '土曜・日曜・祝日および年末年始(12/29～1/3)はお休みです。']
+{'id': 'place:3ea825816afa0d502d04', 'name': '近江八幡市水道事業所上下水道施設課窓口', 'address': '近江八幡市桜宮町214-10', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-204-A001', 'placeId': 'place:3ea825816afa0d502d04', 'condition': '', 'raw': ['近江八幡市水道事業所上下水道施設課窓口', '近江八幡市桜宮町214-10', '(問い合わせ先)', '上下水道施設課 下水道Ｇ', '電話：0748-36-5537'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-206-A001 草津市 （A001）
+['9：00～17：00', 'ただし、毎週月曜日（祝日の場合はその翌日）、祝日の翌日（土・日と重なった場合は開館）、年末年始（12/28～1/4）、その他教育委員会が必要と認める日はお休みです。', 'なお、毎週月曜（月曜が祝日の場合はその翌日）、祝日の翌日(土・日曜と重なった場合を除く)は市役所2階の上下水道総務課（滋賀県草津市草津三丁目13番30号、電話:077-561-2440）で開庁時間中（9:00～16:45）に配布しています。ただし、年末年始（12月29日～1月3日）その他市長が必要と認めた日はお休みです。']
+{'id': 'place:f7118465cacf2eb7adc4', 'name': '草津宿街道交流館', 'address': '滋賀県草津市草津3-10-4', 'phone': '077-567-0030', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-206-A001', 'placeId': 'place:f7118465cacf2eb7adc4', 'condition': '', 'raw': ['草津宿街道交流館', '滋賀県草津市草津3-10-4', '電話：077-567-0030'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-206-B001 草津市 （B001）
+['9:00〜17:00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:fdcc4880a8133de5de46', 'name': 'くさつ夢本陣', 'address': '滋賀県草津市草津二丁目10-21', 'phone': '077-563-3700', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-206-B001', 'placeId': 'place:fdcc4880a8133de5de46', 'condition': '', 'raw': ['くさつ夢本陣', '滋賀県草津市草津二丁目10-21', '電話：077-563-3700'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-206-C001 草津市 (C001)
+['9:00〜18:00（7月〜8月は19：00まで）', 'ただし、月曜日(祝日の場合は翌日) はお休みです（7月〜8月は無休）']
+{'id': 'place:e35df20e918de7f20461', 'name': '道の駅草津 グリーンプラザからすま', 'address': '滋賀県草津市下物町1436番地', 'phone': '077-568-1208', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-206-C001', 'placeId': 'place:e35df20e918de7f20461', 'condition': '', 'raw': ['道の駅草津 グリーンプラザからすま', '滋賀県草津市下物町1436番地', '電話:077-568-1208'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-207-A001 守山市
+['7：30～19：30', 'ただし、12月29日～１月3日はお休みです']
+{'id': 'place:8ad7344fb642add50788', 'name': '守山市駅前総合案内所', 'address': '滋賀県守山市梅田町1-9', 'phone': '077-514-3765', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-207-A001', 'placeId': 'place:8ad7344fb642add50788', 'condition': '', 'raw': ['守山市駅前総合案内所', '滋賀県守山市梅田町1-9', '電話:077-514-3765', '（問合せ先）', '守山市上下水道事業所 施設工務課', '電話:077-582-1128'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-208-A001 栗東市 (A001)
+['【平日】8：30～17：15', '【土・日・祝日】8：30～12：00(こんぜめぐりちゃんバス運行期間中は17：00まで。詳しくは市HPをご確認ください。)', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:794bb4a12b5cb1072493', 'name': '栗東観光案内所', 'address': '滋賀県栗東市手原3丁目1-30(JR手原駅2階)', 'phone': '077-551-0126', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-208-A001', 'placeId': 'place:794bb4a12b5cb1072493', 'condition': '', 'raw': ['栗東観光案内所', '滋賀県栗東市手原3丁目1-30（JR手原駅2階）', '電話：077-551-0126', '(問い合わせ先)', '栗東市上下水道事業所', '電話：077-551-0135'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-208-B001 栗東市 (B001)
+['9:00～16:45', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:3b4cbb23cc2491bc7452', 'name': '栗東市役所 1階', 'address': '滋賀県栗東市安養寺1丁目13-33', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-208-B001', 'placeId': 'place:3b4cbb23cc2491bc7452', 'condition': '', 'raw': ['栗東市役所 １階', '滋賀県栗東市安養寺1丁目13-33', '【平日】上下水道事業所', '【土日祝】日直窓口', '（問い合わせ先）', '栗東市上下水道事業所', '電話 077-551-0135'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:7a943507490c21eb61f9', 'name': '上下水道事業所', 'address': '滋賀県栗東市安養寺1丁目13-33', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-208-B001', 'placeId': 'place:7a943507490c21eb61f9', 'condition': '平日', 'raw': ['栗東市役所 １階', '滋賀県栗東市安養寺1丁目13-33', '【平日】上下水道事業所', '【土日祝】日直窓口', '（問い合わせ先）', '栗東市上下水道事業所', '電話 077-551-0135'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:7b9e2998d828dc1edfa6', 'name': '日直窓口', 'address': '滋賀県栗東市安養寺1丁目13-33', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-208-B001', 'placeId': 'place:7b9e2998d828dc1edfa6', 'condition': '土日祝', 'raw': ['栗東市役所 １階', '滋賀県栗東市安養寺1丁目13-33', '【平日】上下水道事業所', '【土日祝】日直窓口', '（問い合わせ先）', '栗東市上下水道事業所', '電話 077-551-0135'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+25-209-A001 甲賀市 (A001)
+['9:00～16:45']
+{'id': 'place:05fa2fff7b3ec588550c', 'name': '甲賀地域市民センター', 'address': '滋賀県甲賀市甲賀町相模173-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-209-A001', 'placeId': 'place:05fa2fff7b3ec588550c', 'condition': '', 'raw': ['甲賀地域市民センター', '滋賀県甲賀市甲賀町相模173-1', '（問合せ先）', '甲賀市役所下水道課', '電話:0748-69-2228'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-209-B001 甲賀市(B001)
+['9：00～17:00', 'ただし、月曜日（祝日の場合は翌日）、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:6d8b89a29af144dceac1', 'name': '甲賀市ひと・まち街道交流館', 'address': '滋賀県甲賀市水口町八坂7番4号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-209-B001', 'placeId': 'place:6d8b89a29af144dceac1', 'condition': '', 'raw': ['甲賀市ひと・まち街道交流館', '滋賀県甲賀市水口町八坂7番4号', '（問合わせ先）', '甲賀市役所下水道課', '電話：0748-69-2228'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-209-C001 甲賀市 (C001)
+['10:00～16:00', 'ただし、月曜日（祝日の場合は開館）、年末年始（令和8年12月28日～令和9年1月4日）はお休みです']
+{'id': 'place:7f8b560361d8dcac0a04', 'name': '観光インフォメーションセンター甲賀流リアル忍者館', 'address': '滋賀県甲賀市甲南町竜法師600番地', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-209-C001', 'placeId': 'place:7f8b560361d8dcac0a04', 'condition': '', 'raw': ['観光インフォメーションセンター甲賀流リアル忍者館', '滋賀県甲賀市甲南町竜法師600番地', '（問合せ先）', '甲賀市役所上下水道部下水道課', '電話:0748-69-2228'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-210-A001 野洲市
+['8:30～17:15']
+{'id': 'place:c84376231b21f3e50397', 'name': '野洲市上下水道事業所事務室', 'address': '野洲市西河原2400番地', 'phone': '077-589-6433', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-210-A001', 'placeId': 'place:c84376231b21f3e50397', 'condition': '平日', 'raw': ['【平日】野洲市上下水道事業所事務室', '野洲市西河原2400番地', '電話:077-589-6433', '【土日祝日】野洲市役所宿日直室', '野洲市小篠原2100番地1', '電話:077-587-1121'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:f2abb44db075f27dc0ef', 'name': '野洲市役所宿日直室', 'address': '野洲市小篠原2100番地1', 'phone': '077-587-1121', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-210-A001', 'placeId': 'place:f2abb44db075f27dc0ef', 'condition': '土日祝日', 'raw': ['【平日】野洲市上下水道事業所事務室', '野洲市西河原2400番地', '電話:077-589-6433', '【土日祝日】野洲市役所宿日直室', '野洲市小篠原2100番地1', '電話:077-587-1121'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-213-A001 東近江市 (A001)
+['【平日】9：00～16：00', '【休日】10：00～16：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:46fa8e0a5edb51e6c29f', 'name': '東近江市水道事務所 上下水道総務課', 'address': '滋賀県東近江市川合寺町746', 'phone': '0748-24-5626', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-213-A001', 'placeId': 'place:46fa8e0a5edb51e6c29f', 'condition': '平日', 'raw': ['【平日】東近江市水道事務所 上下水道総務課', '滋賀県東近江市川合寺町746', '電話:0748-24-5626', '【休日】東近江市役所 守衛室', '滋賀県東近江市八日市緑町10番5号', '電話:0748-24-1234'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:be3afdfe33f91a87630e', 'name': '東近江市役所 守衛室', 'address': '滋賀県東近江市八日市緑町10番5号', 'phone': '0748-24-1234', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-213-A001', 'placeId': 'place:be3afdfe33f91a87630e', 'condition': '休日', 'raw': ['【平日】東近江市水道事務所 上下水道総務課', '滋賀県東近江市川合寺町746', '電話:0748-24-5626', '【休日】東近江市役所 守衛室', '滋賀県東近江市八日市緑町10番5号', '電話:0748-24-1234'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-213-B001 東近江市 (B001)
+['10：00～17：00', 'ただし、月曜日（祝日の場合は翌日）、年末年始（12/29～翌年1/3）はお休みです']
+{'id': 'place:28b6d0578b0f18d9c64f', 'name': '東近江市八日市駅前観光交流施設', 'address': '滋賀県東近江市八日市本町1番6号 シャリエ八日市駅前1階', 'phone': '0748-56-1655', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-213-B001', 'placeId': 'place:28b6d0578b0f18d9c64f', 'condition': '', 'raw': ['東近江市八日市駅前観光交流施設', '滋賀県東近江市八日市本町１番６号 シャリエ八日市駅前１階', '電話:0748-56-1655', '（問合せ先）', '東近江市水道部上下水道総務課', '電話:0748-24-5626'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-213-C001 東近江市(C001)
+['10：00～17:00', 'ただし、月曜日・火曜日／国民の祝日（祝日となる日はその翌日）、月末整理日（毎月第4金曜日）、年末年始（令和７年は12月28日から翌年1月6日まで）、特別整理期間はお休みです']
+{'id': 'place:ff116922c1caf29af135', 'name': '東近江市 蒲生図書館', 'address': '滋賀県東近江市市子川原町676番地(蒲生支所内)', 'phone': '0748-55-5701', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-213-C001', 'placeId': 'place:ff116922c1caf29af135', 'condition': '', 'raw': ['東近江市 蒲生図書館', '滋賀県東近江市市子川原町676番地（蒲生支所内）', '電話:0748-55-5701', '（問合せ先）', '東近江市 水道部 上下水道総務課', '電話:0748-24-5626'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+25-441-A001 豊郷町
+['9:00～17:00', 'ただし、月曜日（祝日の場合は翌日）、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:1e04fb99663d8a30e05e', 'name': '豊郷町観光案内所(豊郷小学校旧校舎群 酬徳記念館内)', 'address': '滋賀県犬上郡豊郷町大字石畑518', 'phone': '0749-35-3737', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '25-441-A001', 'placeId': 'place:1e04fb99663d8a30e05e', 'condition': '', 'raw': ['豊郷町観光案内所(豊郷小学校旧校舎群 酬徳記念館内)', '滋賀県犬上郡豊郷町大字石畑518', '電話：0749-35-3737'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-000-A001 京都府 （流域下水道・A001）
+['9：00～17:30（年中無休）']
+{'id': 'place:b3c184c7aed571b773cd', 'name': '「道の駅 海の京都 宮津」観光案内所', 'address': '京都府宮津市字浜町3007', 'phone': '0772-25-1382', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-000-A001', 'placeId': 'place:b3c184c7aed571b773cd', 'condition': '', 'raw': ['「道の駅 海の京都 宮津」観光案内所', '京都府宮津市字浜町３００７', '電話：0772-25-1382'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-000-B001 京都府 （流域下水道・B001）
+['9：00～17：00（年中無休 12月28日～1月4日のみ休園）']
+{'id': 'place:5d377b6a926c0d1e6fa1', 'name': '京都府立洛西浄化センター公園(アクアパルコ洛西)', 'address': '京都府長岡京市勝竜寺山崎作り20-5', 'phone': '075-951-9161', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-000-B001', 'placeId': 'place:5d377b6a926c0d1e6fa1', 'condition': '', 'raw': ['京都府立洛西浄化センター公園（アクアパルコ洛西）', '京都府長岡京市勝竜寺山崎作り２０－５', '電話：075-951-9161'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-100-A001 京都市 （A001）
+['10:00〜17:00', 'ただし年末年始（12/29～1/3)はお休みです']
+{'id': 'place:395deea0ac07ef85eee7', 'name': '京都市上下水道局総合庁舎 総合受付', 'address': '京都府京都市南区上鳥羽鉾立町11番地3', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-100-A001', 'placeId': 'place:395deea0ac07ef85eee7', 'condition': '', 'raw': ['京都市上下水道局総合庁舎 総合受付', '京都府京都市南区上鳥羽鉾立町１１番地３', '（問合せ先）', '京都市上下水道局下水道部管理課', '電話：075-672-7834'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-100-A002 京都市 （A002）
+['10:00～17:00', 'ただし年末年始（12/29～1/3)はお休みです']
+{'id': 'place:879b3bf5b89bc880cf5a', 'name': '京都市上下水道局 太秦庁舎 守衛室', 'address': '京都府京都市右京区太秦安井一町目町14', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-100-A002', 'placeId': 'place:879b3bf5b89bc880cf5a', 'condition': '', 'raw': ['京都市上下水道局 太秦庁舎 守衛室', '京都府京都市右京区太秦安井一町目町１４', '（問合せ先）', '京都市上下水道局下水道部管理課', '電話：075-672-7834'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-100-B001 京都市 (B001)
+['9:00～16：30', 'ただし、毎週月曜日（祝日・休日の場合は翌平日）及び年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:46333b4e1c368287ce1c', 'name': '琵琶湖疏水記念館', 'address': '京都府京都市左京区南禅寺草川町17', 'phone': '075-752-2530', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-100-B001', 'placeId': 'place:46333b4e1c368287ce1c', 'condition': '', 'raw': ['琵琶湖疏水記念館', '京都府京都市左京区南禅寺草川町17', '電話：075-752-2530', '（問合せ先）', '京都市上下水道局下水道部管理課', '電話：075-672-7834'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-202-A001 舞鶴市 (A001)
+['9：00～17：00', 'ただし、年末年始（12/29～1/1）、臨時休館日はお休みです', '詳細は左記施設のHPをご確認ください']
+{'id': 'place:42204a9cd5d0be6d8f90', 'name': '舞鶴赤レンガパーク', 'address': '京都府舞鶴市字北吸1039-2', 'phone': '0773-66-1096', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-202-A001', 'placeId': 'place:42204a9cd5d0be6d8f90', 'condition': '', 'raw': ['舞鶴赤レンガパーク', '京都府舞鶴市字北吸1039-2', '電話：0773-66-1096', '（問い合わせ先）', '舞鶴市上下水道部 下水道整備課', '電話：0773-66-1056'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-202-B001 舞鶴市 (B001)
+['9:00～17：00', 'ただし、毎週月曜日、祝日の翌日、年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:7de3550870a2bc3e4aec', 'name': '田辺城資料館', 'address': '京都府舞鶴市字南田辺15-22', 'phone': '0773-76-7211', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-202-B001', 'placeId': 'place:7de3550870a2bc3e4aec', 'condition': '', 'raw': ['田辺城資料館', '京都府舞鶴市字南田辺15-22', '電話:0773-76-7211', '(問合せ先)', '舞鶴市上下水道部下水道整備課', '電話:0773-66-1056'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-202-C001 舞鶴市 (C001)
+['9:00～17：00', 'ただし、年末年始（12月29日〜1月1日）はお休みです']
+{'id': 'place:f81835b8df6729a0f9f9', 'name': '赤れんが博物館', 'address': '京都府舞鶴市字浜2011', 'phone': '0773-66-1095', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-202-C001', 'placeId': 'place:f81835b8df6729a0f9f9', 'condition': '', 'raw': ['赤れんが博物館', '京都府舞鶴市字浜2011', '電話：0773-66-1095', '（問合せ先）', '舞鶴市上下水道部下水道整備課', '電話：0773-66-1056'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-203-A001 綾部市
+['10:00～19:00（土日祝は18:00まで）', 'ただし、毎週月曜日（祝日の場合は火曜日）、国民の祝日の翌日、毎月最終の火曜日（祝日の場合は水曜日）、年末年始、特別整理日はお休みです。']
+{'id': 'place:92bd636e0e5b9b58d5c8', 'name': '綾部市図書館', 'address': '京都府綾部市青野町西馬場下35-1', 'phone': '0773-42-6980', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-203-A001', 'placeId': 'place:92bd636e0e5b9b58d5c8', 'condition': '', 'raw': ['綾部市図書館', '京都府綾部市青野町西馬場下35-1', '電話：0773-42-6980'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-204-A001 宇治市
+['9：00～17：00', 'ただし、年末年始（12/29～1/1）はお休みです']
+{'id': 'place:0c8d6a57e95c37e282eb', 'name': '宇治市観光センター', 'address': '京都府宇治市宇治塔川2', 'phone': '0774-23-3334', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-204-A001', 'placeId': 'place:0c8d6a57e95c37e282eb', 'condition': '', 'raw': ['宇治市観光センター', '京都府宇治市宇治塔川2', '電話：0774-23-3334'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-206-A001 亀岡市 (A001)
+['【平日】8：30～17：15', '【休日】9：00～17：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:d3beb94836fe72b63cfb', 'name': '亀岡市上下水道庁舎', 'address': '京都府亀岡市安町釜ケ前20番地', 'phone': '0771-25-6702', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-206-A001', 'placeId': 'place:d3beb94836fe72b63cfb', 'condition': '', 'raw': ['亀岡市上下水道庁舎', '京都府亀岡市安町釜ケ前20番地', '電話：0771-25-6702'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-206-B001 亀岡市 (B001)
+['9:00～17:00', 'ただし、毎週月曜日と年末年始（12/28～1/4）はお休みです']
+{'id': 'place:c09001b28f3e7c1bf9f0', 'name': '亀岡市文化資料館', 'address': '亀岡市古世町中内坪1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-206-B001', 'placeId': 'place:c09001b28f3e7c1bf9f0', 'condition': '', 'raw': ['亀岡市文化資料館', '亀岡市古世町中内坪1', '(問合せ先)', '上下水道お客様センター', '京都府亀岡市安町釜ケ前20番地', '電話：0771-25-6702'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-208-A001 向日市 (A001)
+['10：00～17：30', 'ただし、', '・休館日（毎週月曜日（休日の場合は開館し、直後の平日を休館））', '・資料整理日（毎月1日（土日月の場合は次の平日））', '・年末年始（12/28～1/4）', 'はお休みです']
+{'id': 'place:fb1280594c67c2419406', 'name': '向日市文化資料館 受付カウンター', 'address': '京都府向日市寺戸町南垣内40-1', 'phone': '075-931-1182', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-208-A001', 'placeId': 'place:fb1280594c67c2419406', 'condition': '', 'raw': ['向日市文化資料館 受付カウンター', '京都府向日市寺戸町南垣内40-1', '電話：075-931-1182', '※現在、配布を一時中止しています'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-208-B001 向日市 (B001)
+['10：00～17：30', 'ただし、', '・休館日（毎週月曜日（休日の場合は開館し、直後の平日を休館））', '・資料整理日（毎月1日（土日月の場合は次の平日））', '・年末年始（12/28～1/4）', 'はお休みです']
+{'id': 'place:fb1280594c67c2419406', 'name': '向日市文化資料館 受付カウンター', 'address': '京都府向日市寺戸町南垣内40-1', 'phone': '075-931-1182', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-208-B001', 'placeId': 'place:fb1280594c67c2419406', 'condition': '', 'raw': ['向日市文化資料館 受付カウンター', '京都府向日市寺戸町南垣内40-1', '電話：075-931-1182', '※現在、配布を一時中止しています'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-209-A001 長岡京市 (A001)
+['【平日】9：00～17：00', '※土、日、祝日、12月28日～1月4日までは休みのため配布を行いません']
+{'id': 'place:129ffa1ab731e3dda85e', 'name': '長岡京市上下水道部下水道施設課', 'address': '長岡京市開田1-1-1 市役所分庁舎2', 'phone': '075-955-9723', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-209-A001', 'placeId': 'place:129ffa1ab731e3dda85e', 'condition': '', 'raw': ['長岡京市上下水道部下水道施設課', '長岡京市開田1-1-1 市役所分庁舎2', '電話：075-955-9723'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-209-B001 長岡京市 (B001)
+['【平日】8:30～17:15', 'ただし、土日祝日、年末年始(12月29日～1月3日)はお休みです', '【土日祝日】9:00～17:00', 'ただし、水曜日(4,5,6,11月は営業)、年末年始(12月28日～1月4日)はお休みです']
+{'id': 'place:6b223834d1d20ac42d00', 'name': '長岡京市役所上下水道部下水道施設課', 'address': '長岡京市開田1-1-1 市役所分庁舎2', 'phone': '075-955-9723', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-209-B001', 'placeId': 'place:6b223834d1d20ac42d00', 'condition': '平日', 'raw': ['【平日】長岡京市役所上下水道部下水道施設課', '長岡京市開田1-1-1 市役所分庁舎2', '電話：075-955-9723', '【土日祝日】長岡京市観光案内所', '長岡京市天神一丁目1番2号', '電話：075-951-4500', '(問合せ先)', '長岡京市上下水道部下水道施設課', '電話：075-955-9723'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:b743e30dfb2cafe88f80', 'name': '長岡京市観光案内所', 'address': '長岡京市天神一丁目1番2号', 'phone': '075-951-4500', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-209-B001', 'placeId': 'place:b743e30dfb2cafe88f80', 'condition': '土日祝日', 'raw': ['【平日】長岡京市役所上下水道部下水道施設課', '長岡京市開田1-1-1 市役所分庁舎2', '電話：075-955-9723', '【土日祝日】長岡京市観光案内所', '長岡京市天神一丁目1番2号', '電話：075-951-4500', '(問合せ先)', '長岡京市上下水道部下水道施設課', '電話：075-955-9723'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-210-A001 八幡市
+['9：00～17：00', 'ただし、6月～10月及び2月の月曜日はお休みです']
+{'id': 'place:afdfeb2e55968b7794b3', 'name': '八幡市観光案内所', 'address': '京都府八幡市八幡高坊8-7', 'phone': '075-981-1141', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-210-A001', 'placeId': 'place:afdfeb2e55968b7794b3', 'condition': '', 'raw': ['八幡市観光案内所', '京都府八幡市八幡高坊8-7', '電話:075-981-1141'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-212-A001 京丹後市 (A001)
+['【平日】9:00～16:30', '【休日】9:00～17:00']
+{'id': 'place:bbd37716f9955e413e80', 'name': '京丹後市上下水道部経営総務課', 'address': '京都府京丹後市大宮町口大野226番地', 'phone': '0772-69-0550', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-212-A001', 'placeId': 'place:bbd37716f9955e413e80', 'condition': '平日', 'raw': ['【平日】京丹後市上下水道部経営総務課', '京都府京丹後市大宮町口大野226番地', '電話：0772-69-0550', '【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンター', '京都府京丹後市弥栄町鳥取123', '電話：0772-66-3081'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:332ce8ce5ad5b6583d87', 'name': '道の駅 丹後王国「食のみやこ」インフォメーションセンター', 'address': '京都府京丹後市弥栄町鳥取123', 'phone': '0772-66-3081', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-212-A001', 'placeId': 'place:332ce8ce5ad5b6583d87', 'condition': '休日', 'raw': ['【平日】京丹後市上下水道部経営総務課', '京都府京丹後市大宮町口大野226番地', '電話：0772-69-0550', '【休日】道の駅 丹後王国「食のみやこ」インフォメーションセンター', '京都府京丹後市弥栄町鳥取123', '電話：0772-66-3081'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-212-B001 京丹後市 (B001)
+['9:00～17:00', 'ただし、火曜日はお休みです']
+{'id': 'place:332ce8ce5ad5b6583d87', 'name': '道の駅 丹後王国「食のみやこ」インフォメーションセンター', 'address': '京都府京丹後市弥栄町鳥取123', 'phone': '0772-66-3081', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-212-B001', 'placeId': 'place:332ce8ce5ad5b6583d87', 'condition': '', 'raw': ['道の駅 丹後王国「食のみやこ」インフォメーションセンター', '京都府京丹後市弥栄町鳥取123', '電話：0772-66-3081'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-303-A001 大山崎町
+['【平日】8：30～17：00', 'ただし、土日、年末年始（12/28～1/3）はお休みです', '※大山崎町役場が休みの場合、大山崎ふるさとセンター2階にて配布します', '【休日】9：30～17：00', 'ただし、毎週月曜日（祝日の場合はその翌日）、年末年始（12/28～1/4）はお休みです']
+{'id': 'place:97682f76cc0f5bafa521', 'name': '大山崎町役場 環境事業部 上下水道課窓口', 'address': '京都府乙訓郡大山崎町字円明寺小字夏目3', 'phone': '075-956-2101', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-303-A001', 'placeId': 'place:97682f76cc0f5bafa521', 'condition': '平日', 'raw': ['【平日】大山崎町役場 環境事業部 上下水道課窓口', '京都府乙訓郡大山崎町字円明寺小字夏目3', '電話：075-956-2101', '【休日】大山崎ふるさとセンター2階', '京都府乙訓郡大山崎町字大山崎小字竜光3', '電話：075-952-6288'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:6cb3e373ea87d4b96e9d', 'name': '大山崎ふるさとセンター2階', 'address': '京都府乙訓郡大山崎町字大山崎小字竜光3', 'phone': '075-952-6288', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-303-A001', 'placeId': 'place:6cb3e373ea87d4b96e9d', 'condition': '休日', 'raw': ['【平日】大山崎町役場 環境事業部 上下水道課窓口', '京都府乙訓郡大山崎町字円明寺小字夏目3', '電話：075-956-2101', '【休日】大山崎ふるさとセンター2階', '京都府乙訓郡大山崎町字大山崎小字竜光3', '電話：075-952-6288'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-322-A001 久御山町
+['9:00～17:00', 'ただし、年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:90f4a477736e4cd5c43b', 'name': '久御山町役場事業環境部上下水道課(庁舎2階)', 'address': '京都府久世郡久御山町島田ミスノ38番地', 'phone': '075-631-9987', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-322-A001', 'placeId': 'place:90f4a477736e4cd5c43b', 'condition': '平日', 'raw': ['【平日】久御山町役場事業環境部上下水道課(庁舎２階）', '京都府久世郡久御山町島田ミスノ38番地', '電話:075-631-9987', '【土日祝日】久御山町役場宿直室', '電話:075-631-6111'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:e8d26c0454d7822bc108', 'name': '久御山町役場宿直室', 'address': '京都府久世郡久御山町島田ミスノ38番地', 'phone': '075-631-6111', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-322-A001', 'placeId': 'place:e8d26c0454d7822bc108', 'condition': '土日祝日', 'raw': ['【平日】久御山町役場事業環境部上下水道課(庁舎２階）', '京都府久世郡久御山町島田ミスノ38番地', '電話:075-631-9987', '【土日祝日】久御山町役場宿直室', '電話:075-631-6111'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+26-344-A001 宇治田原町
+['8：30～17：15', 'ただし、土日、祝日、年末年始はお休みです']
+{'id': 'place:ce0f123ef5e185dce8c9', 'name': '宇治田原町 上下水道課', 'address': '京都府綴喜郡宇治田原町大字立川小字坂口18-1(宇治田原町役場2階)', 'phone': '0774-88-3337', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-344-A001', 'placeId': 'place:ce0f123ef5e185dce8c9', 'condition': '', 'raw': ['宇治田原町 上下水道課', '京都府綴喜郡宇治田原町大字立川小字坂口18-1（宇治田原町役場２階）', '電話：0774-88-3337'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-344-B001 宇治田原町 (B001)
+['①8:30～17:15', 'ただし、土日、祝日、年末年始（12/29～1/3）はお休みです', '②9:00～17:00', 'ただし、火曜日、12/28～1/4はお休みです']
+{'id': 'place:869d62037545d82e7fa3', 'name': '宇治田原町役場上下水道課', 'address': '京都府綴喜郡宇治田原町大字立川小字坂口18番地1(宇治田原町役場2階)', 'phone': '0774-88-3337', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-344-B001', 'placeId': 'place:869d62037545d82e7fa3', 'condition': '①', 'raw': ['①宇治田原町役場上下水道課', '京都府綴喜郡宇治田原町大字立川小字坂口18番地1（宇治田原町役場2階）', '電話：0774-88-3337', '②宇治田原町総合文化センター', '京都府綴喜郡宇治田原町大字岩山小字沼尻46番地1', '電話：0774-88-5851'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c1f821f1bc9c44d7290e', 'name': '宇治田原町総合文化センター', 'address': '京都府綴喜郡宇治田原町大字岩山小字沼尻46番地1', 'phone': '0774-88-5851', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-344-B001', 'placeId': 'place:c1f821f1bc9c44d7290e', 'condition': '②', 'raw': ['①宇治田原町役場上下水道課', '京都府綴喜郡宇治田原町大字立川小字坂口18番地1（宇治田原町役場2階）', '電話：0774-88-3337', '②宇治田原町総合文化センター', '京都府綴喜郡宇治田原町大字岩山小字沼尻46番地1', '電話：0774-88-5851'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+26-407-A001 京丹波町
+['【平日】8：30～17：15', '【土日祝日】8：30～17：15']
+{'id': 'place:443a928ce299052ac36e', 'name': '京丹波町上下水道課 畑川浄水場', 'address': '京都府船井郡京丹波町下山クラベシ41番地', 'phone': '0771-83-9105', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-407-A001', 'placeId': 'place:443a928ce299052ac36e', 'condition': '平日', 'raw': ['【平日】京丹波町上下水道課 畑川浄水場', '京都府船井郡京丹波町下山クラベシ41番地', '電話:0771-83-9105', '【土日祝日】京丹波町役場', '京都府船井郡京丹波町蒲生蒲生野487番地1', '電話:0771-82-0200'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:686caad0ba490d412755', 'name': '京丹波町役場', 'address': '京都府船井郡京丹波町蒲生蒲生野487番地1', 'phone': '0771-82-0200', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '26-407-A001', 'placeId': 'place:686caad0ba490d412755', 'condition': '土日祝日', 'raw': ['【平日】京丹波町上下水道課 畑川浄水場', '京都府船井郡京丹波町下山クラベシ41番地', '電話:0771-83-9105', '【土日祝日】京丹波町役場', '京都府船井郡京丹波町蒲生蒲生野487番地1', '電話:0771-82-0200'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-000-A001 大阪府 （流域下水道）
+['【平日】9：00～17：30', '【休日】9：00～17：00', 'ただし、年末年始（12/27～1/5）はお休みです']
+{'id': 'place:dcd7f98f6661c1743631', 'name': '寝屋川流域下水道 鴻池水みらいセンター', 'address': '大阪府東大阪市北鴻池町1-18(管理棟)', 'phone': '06-6911-9595', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-000-A001', 'placeId': 'place:dcd7f98f6661c1743631', 'condition': '平日', 'raw': ['【平日】寝屋川流域下水道 鴻池水みらいセンター', '大阪府東大阪市北鴻池町1-18（管理棟）', '電話：06-6911-9595', '【休日】原田処理場（スカイランドHARADA管理事務所）', '大阪府豊中市原田西町1-1', '電話：06-6846-8181'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:608e56a7ed0f7036b2a5', 'name': '原田処理場(スカイランドHARADA管理事務所)', 'address': '大阪府豊中市原田西町1-1', 'phone': '06-6846-8181', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-000-A001', 'placeId': 'place:608e56a7ed0f7036b2a5', 'condition': '休日', 'raw': ['【平日】寝屋川流域下水道 鴻池水みらいセンター', '大阪府東大阪市北鴻池町1-18（管理棟）', '電話：06-6911-9595', '【休日】原田処理場（スカイランドHARADA管理事務所）', '大阪府豊中市原田西町1-1', '電話：06-6846-8181'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-100-A001 大阪市 （A001）
+['10：00～17：00', 'ただし、月曜日と年末年始（12/29〜1/3）はお休みです']
+{'id': 'place:1b1b780b410fcc7a2624', 'name': 'おおさかATCグリーンエコプラザ', 'address': '大阪府大阪市住之江区南港北2-1-10(ATCビルITM棟11階西側)', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-100-A001', 'placeId': 'place:1b1b780b410fcc7a2624', 'condition': '', 'raw': ['おおさかATCグリーンエコプラザ', '大阪府大阪市住之江区南港北2-1-10（ATCビルITM棟11階西側）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-100-B001 大阪市 （B001）
+['【平日】9：00〜17：30', '※年末年始（12/29〜1/3）はお休みです', '【土日祝（月曜日は除く）】10：00〜17：00', '※年末年始（12/29〜1/3）はお休みです']
+{'id': 'place:16a24e189d63f3ba7b80', 'name': 'クリアウォーターOSAKA(株)本社 総務課', 'address': '大阪府大阪市中央区本町1-7-7(WAKITA堺筋本町ビル12階)', 'phone': '06-6121-6025', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-100-B001', 'placeId': 'place:16a24e189d63f3ba7b80', 'condition': '平日', 'raw': ['【平日】クリアウォーターOSAKA（株）本社 総務課', '大阪府大阪市中央区本町1-7-7（WAKITA堺筋本町ビル12階）', '電話:06-6121-6025', '【土日祝（月曜日は除く）】おおさかATCグリーンエコプラザ', '大阪府大阪市住之江区南港北2−1−10（ATCビルITM棟11階西側）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:1b1b780b410fcc7a2624', 'name': 'おおさかATCグリーンエコプラザ', 'address': '大阪府大阪市住之江区南港北2-1-10(ATCビルITM棟11階西側)', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-100-B001', 'placeId': 'place:1b1b780b410fcc7a2624', 'condition': '土日祝(月曜日は除く)', 'raw': ['【平日】クリアウォーターOSAKA（株）本社 総務課', '大阪府大阪市中央区本町1-7-7（WAKITA堺筋本町ビル12階）', '電話:06-6121-6025', '【土日祝（月曜日は除く）】おおさかATCグリーンエコプラザ', '大阪府大阪市住之江区南港北2−1−10（ATCビルITM棟11階西側）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-100-C001 大阪市 （C001）
+['9：30～17：00（入館は16：30まで）', 'ただし休館日は、毎週水曜日（水曜日が休日の場合は翌日）及び年末年始（12/29～1/3）です']
+{'id': 'place:5541e22064b914088d81', 'name': '大阪市下水道科学館', 'address': '大阪府大阪市此花区高見1-2-53', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-100-C001', 'placeId': 'place:5541e22064b914088d81', 'condition': '', 'raw': ['大阪市下水道科学館', '大阪府大阪市此花区高見1-2-53', '※館内を見学のうえ、アンケートにお答えいただいた方、お1人につき1枚お渡しします。'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-100-D001 大阪市 (D001)
+['7：00～21:00']
+{'id': 'place:9c6d72487abeddf5b293', 'name': '大阪観光案内所', 'address': '大阪市北区梅田3-1-1 JR大阪駅 1F中央コンコース トラベルサービスセンター大阪内', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-100-D001', 'placeId': 'place:9c6d72487abeddf5b293', 'condition': '', 'raw': ['大阪観光案内所', '大阪市北区梅田3-1-1 JR大阪駅 1F中央コンコース', 'トラベルサービスセンター大阪内'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-140-A001 堺市 (A001)
+['9：00～18：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:96f6a6f68866db6603fd', 'name': 'さかい利晶の杜 受付', 'address': '大阪府堺市堺区宿院町西2-1-1(さかい利晶の杜1階)', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-140-A001', 'placeId': 'place:96f6a6f68866db6603fd', 'condition': '', 'raw': ['さかい利晶の杜 受付', '大阪府堺市堺区宿院町西2-1-1（さかい利晶の杜1階）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-140-B001 堺市 (B001)
+['9:00～19:00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:1a5f533f279b9bf0b9f1', 'name': '堺東観光案内所', 'address': '大阪府堺市堺区三国ヶ丘御幸通39-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-140-B001', 'placeId': 'place:1a5f533f279b9bf0b9f1', 'condition': '', 'raw': ['堺東観光案内所', '大阪府堺市堺区三国ヶ丘御幸通39-1', '(問合せ先)', '堺市上下水道局経営企画室', '電話：0570-02-1132', '※堺市役所本館2階観光推進課では配布しませんので、ご注意ください'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-202-A001 岸和田市 (A001)
+['9：00～17：00', 'ただし、年末年始（12/31～1/3）はお休みです']
+{'id': 'place:401709fbed244ac9be6a', 'name': '岸和田駅前観光案内所', 'address': '岸和田市宮本町1番12号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-202-A001', 'placeId': 'place:401709fbed244ac9be6a', 'condition': '', 'raw': ['岸和田駅前観光案内所', '岸和田市宮本町1番12号', '（問い合わせ先）', '岸和田市下水道河川部下水道河川総務課', '電話：072-423-9591'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-202-B001 岸和田市 (B001)
+['10：00～17：00', 'ただし、水曜日及び年末年始（12/31～1/3）はお休みです']
+{'id': 'place:8928b0e88e78dd57d386', 'name': '道の駅「愛彩ランド」', 'address': '大阪府岸和田市岸の丘町3-6-18', 'phone': '072-444-8002', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-202-B001', 'placeId': 'place:8928b0e88e78dd57d386', 'condition': '', 'raw': ['道の駅「愛彩ランド」', '大阪府岸和田市岸の丘町3-6-18', '電話：072-444-8002', '(問合せ先)', '岸和田市下水道河川部下水道河川総務課', '電話：072-423-9591'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-202-C001 岸和田市 (C001)
+['10:00～18:00', '年末年始（12月29日～1月3日）、月曜日はお休みです（ただし月曜日が祝日の場合は開館）']
+{'id': 'place:216cded227809ea5a7c7', 'name': 'まちづくりの館', 'address': '大阪府岸和田市本町8番8号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-202-C001', 'placeId': 'place:216cded227809ea5a7c7', 'condition': '', 'raw': ['まちづくりの館', '大阪府岸和田市本町8番8号', '（問合せ先）', '岸和田市下水道河川部下水道河川総務課', '電話：072-423-9591'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-203-A001 豊中市
+['9：00～17：15']
+{'id': 'place:23e158dd32bc9d143679', 'name': '豊中市上下水道局 経営部 経営企画課(3F)', 'address': '大阪府豊中市北桜塚4-11-18', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-203-A001', 'placeId': 'place:23e158dd32bc9d143679', 'condition': '平日', 'raw': ['【平日】豊中市上下水道局 経営部 経営企画課(3F)', '【休日】豊中市上下水道局 警備員室(1F)', '大阪府豊中市北桜塚4-11-18', '（問い合わせ先)', '豊中市上下水道局経営部経営企画課', '電話：06-6858-2921（平日のみ)'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:3046e0d385ffb38ae68d', 'name': '豊中市上下水道局 警備員室(1F)', 'address': '大阪府豊中市北桜塚4-11-18', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-203-A001', 'placeId': 'place:3046e0d385ffb38ae68d', 'condition': '休日', 'raw': ['【平日】豊中市上下水道局 経営部 経営企画課(3F)', '【休日】豊中市上下水道局 警備員室(1F)', '大阪府豊中市北桜塚4-11-18', '（問い合わせ先)', '豊中市上下水道局経営部経営企画課', '電話：06-6858-2921（平日のみ)'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-204-A001 池田市(A001)
+['①10:00～18:00', 'ただし、火曜日（祝日の場合には翌平日）、年末年始はお休みです', '②9：00～17：00', '火曜日（祝日の場合には翌平日）のみ配布']
+{'id': 'place:cd9cf08aa448ddce137c', 'name': '池田市観光案内所', 'address': '大阪府池田市満寿美町2-7', 'phone': '072-737-7290', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-A001', 'placeId': 'place:cd9cf08aa448ddce137c', 'condition': '①', 'raw': ['①池田市観光案内所', '大阪府池田市満寿美町2-7', '電話：072-737-7290', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '（問い合わせ先）', '池田市上下水道部 経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c47b534e556537bd3103', 'name': '池田市上下水道部経営企画課', 'address': '池田市大和町1番10号', 'phone': '072-754-6069', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-A001', 'placeId': 'place:c47b534e556537bd3103', 'condition': '②', 'raw': ['①池田市観光案内所', '大阪府池田市満寿美町2-7', '電話：072-737-7290', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '（問い合わせ先）', '池田市上下水道部 経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-204-B001 池田市(B001)
+['3月～5月に配布します (春版)', '①9：30～17：00', 'ただし、火曜日(祝日の場合には翌平日)、年末年始はお休みです', '②9：00～17：00', '火曜日（祝日の場合には翌平日）のみ配布']
+{'id': 'place:d6915f3dfb02605bc65a', 'name': '大阪池田ゲストインフォメーション', 'address': '大阪府池田市栄町1-1', 'phone': '080-4703-3584', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-B001', 'placeId': 'place:d6915f3dfb02605bc65a', 'condition': '①', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c47b534e556537bd3103', 'name': '池田市上下水道部経営企画課', 'address': '池田市大和町1番10号', 'phone': '072-754-6069', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-B001', 'placeId': 'place:c47b534e556537bd3103', 'condition': '②', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-204-C001 池田市(C001)
+['6月～8月に配布します (夏版)', '①9：30～17：00', 'ただし、火曜日(祝日の場合には翌平日)、年末年始はお休みです', '②9：00～17：00', '火曜日（祝日の場合には翌平日）のみ配布']
+{'id': 'place:d6915f3dfb02605bc65a', 'name': '大阪池田ゲストインフォメーション', 'address': '大阪府池田市栄町1-1', 'phone': '080-4703-3584', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-C001', 'placeId': 'place:d6915f3dfb02605bc65a', 'condition': '①', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c47b534e556537bd3103', 'name': '池田市上下水道部経営企画課', 'address': '池田市大和町1番10号', 'phone': '072-754-6069', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-C001', 'placeId': 'place:c47b534e556537bd3103', 'condition': '②', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-204-D001 池田市(D001)
+['9月～11月に配布します (秋版)', '①9：30～17：00', 'ただし、火曜日(祝日の場合には翌平日)、年末年始はお休みです', '②9：00～17：00', '火曜日（祝日の場合には翌平日）のみ配布']
+{'id': 'place:d6915f3dfb02605bc65a', 'name': '大阪池田ゲストインフォメーション', 'address': '大阪府池田市栄町1-1', 'phone': '080-4703-3584', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-D001', 'placeId': 'place:d6915f3dfb02605bc65a', 'condition': '①', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c47b534e556537bd3103', 'name': '池田市上下水道部経営企画課', 'address': '池田市大和町1番10号', 'phone': '072-754-6069', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-D001', 'placeId': 'place:c47b534e556537bd3103', 'condition': '②', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-204-E001 池田市(E001)
+['12月～2月に配布します (冬版)', '①9：30～17：00', 'ただし、火曜日(祝日の場合には翌平日)、年末年始はお休みです', '②9：00～17：00', '火曜日（祝日の場合には翌平日）のみ配布']
+{'id': 'place:d6915f3dfb02605bc65a', 'name': '大阪池田ゲストインフォメーション', 'address': '大阪府池田市栄町1-1', 'phone': '080-4703-3584', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-E001', 'placeId': 'place:d6915f3dfb02605bc65a', 'condition': '①', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c47b534e556537bd3103', 'name': '池田市上下水道部経営企画課', 'address': '池田市大和町1番10号', 'phone': '072-754-6069', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-204-E001', 'placeId': 'place:c47b534e556537bd3103', 'condition': '②', 'raw': ['①大阪池田ゲストインフォメーション', '大阪府池田市栄町1-1', '電話：080-4703-3584', '②池田市上下水道部経営企画課', '池田市大和町1番10号', '電話：072-754-6069', '(問合せ先)', '池田市上下水道部経営企画課', '電話：072-754-6069'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-205-A001 吹田市
+['9:00〜17:30', 'ただし、毎週月曜日（祝休日の場合はその翌日）、年末年始（12/29～1/3）はお休みです。']
+{'id': 'place:94828112e62e655bb047', 'name': '千里ニュータウン情報館', 'address': '大阪府吹田市津雲台1丁目2番1号 千里ニュータウンプラザ2階', 'phone': '06-6155-3933', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-205-A001', 'placeId': 'place:94828112e62e655bb047', 'condition': '', 'raw': ['千里ニュータウン情報館', '大阪府吹田市津雲台１丁目２番１号 千里ニュータウンプラザ２階', '電話：06-6155-3933'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-207-A001 高槻市 （A001）
+['【平日】8:45～17:15', '【土日祝】10:00～17:00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:a5abac7c12eb8a378220', 'name': '高槻市役所 下水河川企画課', 'address': '大阪府高槻市桃園町2番1号(本館7階)', 'phone': '072-674-7432', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-207-A001', 'placeId': 'place:a5abac7c12eb8a378220', 'condition': '平日', 'raw': ['【平日】', '高槻市役所 下水河川企画課', '大阪府高槻市桃園町２番１号（本館７階）', '電話：072-674-7432', '【土日祝】', 'JR高槻駅観光案内所（JR高槻駅中央改札階）', '大阪府高槻市白梅町１番１号'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:d4a34c89914311188940', 'name': 'JR高槻駅観光案内所(JR高槻駅中央改札階)', 'address': '大阪府高槻市白梅町1番1号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-207-A001', 'placeId': 'place:d4a34c89914311188940', 'condition': '土日祝', 'raw': ['【平日】', '高槻市役所 下水河川企画課', '大阪府高槻市桃園町２番１号（本館７階）', '電話：072-674-7432', '【土日祝】', 'JR高槻駅観光案内所（JR高槻駅中央改札階）', '大阪府高槻市白梅町１番１号'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-207-B001 高槻市 （B001）
+['9：00～17：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:6ee4ee955755a6bfa7b7', 'name': '安満遺跡公園ボーネルンドパークセンター', 'address': '大阪府高槻市八丁畷町12番3号', 'phone': '072-648-4725', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-207-B001', 'placeId': 'place:6ee4ee955755a6bfa7b7', 'condition': '', 'raw': ['安満遺跡公園ボーネルンドパークセンター', '大阪府高槻市八丁畷町12番3号', '電話：072-648-4725'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-207-C001 高槻市 (C001)
+['9:00～17:15', 'ただし、毎週月曜日（月曜が休日の場合は次の日）、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:65bebcfcae7710dc09bc', 'name': '高槻城公園芸術文化劇場 南館', 'address': '大阪府高槻市野見町6番', 'phone': '072-671-1061', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-207-C001', 'placeId': 'place:65bebcfcae7710dc09bc', 'condition': '', 'raw': ['高槻城公園芸術文化劇場 南館', '大阪府高槻市野見町６番', '電話:072-671-1061'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-208-A001 貝塚市 (A001)
+['【平日】12：00～18：00', '【土日祝日】10：00～16:00', 'ただし、火曜日、祝日（火曜日が祝日の場合は、その翌日も休館）、年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:f37be32ebb7514aa05f6', 'name': '貝塚市歴史展示館', 'address': '大阪府貝塚市半田138-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-208-A001', 'placeId': 'place:f37be32ebb7514aa05f6', 'condition': '', 'raw': ['貝塚市歴史展示館', '大阪府貝塚市半田138－1'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-208-B001 貝塚市 (B001)
+['10：00～19：00', 'ただし、12月29日～1月3日はお休みです']
+{'id': 'place:eabe58611fd2c6d53a3e', 'name': 'まちの駅かいづか', 'address': '大阪府貝塚市海塚一丁目1番1号', 'phone': '072-432-1244', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-208-B001', 'placeId': 'place:eabe58611fd2c6d53a3e', 'condition': '', 'raw': ['まちの駅かいづか', '大阪府貝塚市海塚一丁目１番１号', '電話:072-432-1244'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-209-A001 守口市
+['9：00～17：30', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:2e26386ad29411013be5', 'name': '守口市役所 環境下水道部 下水道課', 'address': '大阪府守口市京阪本通2-5-5(5階南エリア)', 'phone': '06-6992-1747', 'coordinate': {'status': 'candidate', 'lat': 34.734015045, 'lng': 135.55897076, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-209-A001', 'placeId': 'place:2e26386ad29411013be5', 'condition': '平日', 'raw': ['【平日】守口市役所 環境下水道部 下水道課', '大阪府守口市京阪本通2-5-5（5階南エリア）', '電話：06-6992-1747', '【休日】守口市役所 総合案内', '大阪府守口市京阪本通2-5-5（1階）', '電話：06-6992-1221'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:1be70e72fc99db54a2c4', 'name': '守口市役所 総合案内', 'address': '大阪府守口市京阪本通2-5-5(1階)', 'phone': '06-6992-1221', 'coordinate': {'status': 'candidate', 'lat': 34.734015045, 'lng': 135.55897076, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-209-A001', 'placeId': 'place:1be70e72fc99db54a2c4', 'condition': '休日', 'raw': ['【平日】守口市役所 環境下水道部 下水道課', '大阪府守口市京阪本通2-5-5（5階南エリア）', '電話：06-6992-1747', '【休日】守口市役所 総合案内', '大阪府守口市京阪本通2-5-5（1階）', '電話：06-6992-1221'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-210-A001 枚方市
+['10：00～19：00', 'ただし、枚方モールの休館日はお休みです']
+{'id': 'place:fb4b43b63da166b6b021', 'name': '枚方市観光案内所Syuku56', 'address': '大阪府枚方市岡東町19-1枚方モール1階', 'phone': '072-896-7555', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-210-A001', 'placeId': 'place:fb4b43b63da166b6b021', 'condition': '', 'raw': ['枚方市観光案内所Syuku56', '大阪府枚方市岡東町19-1枚方モール１階', '電話：072-896-7555'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-211-A001 茨木市 (A001)
+['9:00〜21:00', 'ただし、第2・第4月曜日（祝日のときは翌日）、年末年始（12/29〜1/3）はお休みです', '※その他、イベント等により臨時閉館等行う場合があります']
+{'id': 'place:a39de4697e0157ac0eb8', 'name': '茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ', 'address': '大阪府茨木市駅前三丁目9番45号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-211-A001', 'placeId': 'place:a39de4697e0157ac0eb8', 'condition': '', 'raw': ['茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ', '大阪府茨木市駅前三丁目9番45号', '(問合せ先)', '茨木市建設部下水道総務課', '電話:072-620-1665'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-211-B001 茨木市 (B001)
+['9:00～17:30', 'ただし、年末年始（12/29～1/3）はお休みです', '※その他イベント等により臨時閉館等行う場合があります']
+{'id': 'place:0ab43e23e56721ae344c', 'name': 'ダムパークいばきた パークセンター', 'address': '大阪府茨木市大字生保53-1', 'phone': '072-648-2260', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-211-B001', 'placeId': 'place:0ab43e23e56721ae344c', 'condition': '', 'raw': ['ダムパークいばきた パークセンター', '大阪府茨木市大字生保53-1', '電話:072-648-2260', '（問合せ先）', '茨木市役所建設部下水道総務課', '電話:072-620-1665'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-212-A001 八尾市
+['【平日】8：45～12：00、12：45～17：15', '【休日】9：00～17：00（入館は16：30まで）', '※ただし、年末年始はお休みです']
+{'id': 'place:664ee95319277a0da221', 'name': '八尾市下水道部 下水道経営企画課', 'address': '大阪府八尾市本町1-1-1', 'phone': '072-924-3883', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-212-A001', 'placeId': 'place:664ee95319277a0da221', 'condition': '平日', 'raw': ['【平日】八尾市下水道部 下水道経営企画課', '大阪府八尾市本町1-1-1', '電話：072-924-3883', '【休日】安中新田会所跡 旧植田家住宅', '大阪府八尾市植松1-1-25', '電話：072-992-5311'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:4316f4367d52ae800b9a', 'name': '安中新田会所跡 旧植田家住宅', 'address': '大阪府八尾市植松1-1-25', 'phone': '072-992-5311', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-212-A001', 'placeId': 'place:4316f4367d52ae800b9a', 'condition': '休日', 'raw': ['【平日】八尾市下水道部 下水道経営企画課', '大阪府八尾市本町1-1-1', '電話：072-924-3883', '【休日】安中新田会所跡 旧植田家住宅', '大阪府八尾市植松1-1-25', '電話：072-992-5311'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-213-A001 泉佐野市 (A001)
+['9:00～20:00', 'ただし、年末年始は9:30～18:00']
+{'id': 'place:ba4cdd6798d547173e41', 'name': '観光交流プラザ りんくうまち処', 'address': '大阪府泉佐野市りんくう往来北1(りんくうタウン駅改札前)', 'phone': '072-474-2056', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-213-A001', 'placeId': 'place:ba4cdd6798d547173e41', 'condition': '', 'raw': ['観光交流プラザ りんくうまち処', '大阪府泉佐野市りんくう往来北1（りんくうタウン駅改札前）', '電話：072-474-2056'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-213-B001 泉佐野市 (B001)
+['①16:00～19:00', '②10:00～16:00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:18fffe7ebe8163062ed4', 'name': '観光おもてなしプラザ 泉佐野まち処', 'address': '大阪府泉佐野市上町3丁目8-12', 'phone': '072-469-0724', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-213-B001', 'placeId': 'place:18fffe7ebe8163062ed4', 'condition': '①', 'raw': ['①観光おもてなしプラザ 泉佐野まち処', '大阪府泉佐野市上町3丁目8-12', '電話:072-469-0724', '②泉佐野市観光情報センター', '大阪府泉佐野市上町3丁目11-47', '電話:072-458-3901'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:5843dc7b1e6112009f69', 'name': '泉佐野市観光情報センター', 'address': '大阪府泉佐野市上町3丁目11-47', 'phone': '072-458-3901', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-213-B001', 'placeId': 'place:5843dc7b1e6112009f69', 'condition': '②', 'raw': ['①観光おもてなしプラザ 泉佐野まち処', '大阪府泉佐野市上町3丁目8-12', '電話:072-469-0724', '②泉佐野市観光情報センター', '大阪府泉佐野市上町3丁目11-47', '電話:072-458-3901'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-214-A001 富田林市
+['10：00〜21：00', 'ただし、年末年始はお休みです']
+{'id': 'place:8aab8c6abec799b476b5', 'name': '観光交流施設きらめきファクトリー', 'address': '大阪府富田林市本町19-8', 'phone': '0721-24-5500', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-214-A001', 'placeId': 'place:8aab8c6abec799b476b5', 'condition': '', 'raw': ['観光交流施設きらめきファクトリー', '大阪府富田林市本町19-8', '電話：0721-24-5500', '（問合せ先）', '富田林市役所 上下水道部 下水道課', '電話 0721-25-1000（内線262）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-215-A001 寝屋川市
+['9：00～17：30', 'ただし、年末年始はお休みです']
+{'id': 'place:2d25fa4fd7e5424d29b7', 'name': '寝屋川市上下水道局 下水道事業室', 'address': '大阪府寝屋川市本町15-1', 'phone': '072-824-1181', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-215-A001', 'placeId': 'place:2d25fa4fd7e5424d29b7', 'condition': '', 'raw': ['寝屋川市上下水道局 下水道事業室', '大阪府寝屋川市本町15-1', '電話：072-824-1181'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-216-A001 河内長野市
+['9：00～17：00', '※年末年始については、配布場所のHPをご確認ください']
+{'id': 'place:18407c7d342c050ce443', 'name': '道の駅 奥河内くろまろの郷', 'address': '大阪府河内長野市高向1218-1', 'phone': '0721-56-9606', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-216-A001', 'placeId': 'place:18407c7d342c050ce443', 'condition': '', 'raw': ['道の駅 奥河内くろまろの郷', '大阪府河内長野市高向1218-1', '電話：0721-56-9606', '（問い合わせ先）', '河内長野市役所上下水道部 下水道課', '電話：0721-53-1111'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-217-A001 松原市
+['【平日】10:00～17:00', '【休日】9:00～17:30', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:e2d676f58090fbacb7f9', 'name': '松原市観光協会', 'address': '大阪府松原市阿保4-1-4', 'phone': '072-330-8201', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-217-A001', 'placeId': 'place:e2d676f58090fbacb7f9', 'condition': '平日', 'raw': ['【平日】松原市観光協会', '大阪府松原市阿保4－1－4', '電話：072-330-8201', '【休日】松原市役所宿直室（市役所1階）', '大阪府松原市阿保1－1－1', '電話:072-334-1550', '(問合せ先)', '松原市上下水道部上下水道建設課', '【平日】072-337-3140', '【休日】072-334-1550'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:319bd8fbabbbf75f654d', 'name': '松原市役所宿直室(市役所1階)', 'address': '大阪府松原市阿保1-1-1', 'phone': '072-334-1550', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-217-A001', 'placeId': 'place:319bd8fbabbbf75f654d', 'condition': '休日', 'raw': ['【平日】松原市観光協会', '大阪府松原市阿保4－1－4', '電話：072-330-8201', '【休日】松原市役所宿直室（市役所1階）', '大阪府松原市阿保1－1－1', '電話:072-334-1550', '(問合せ先)', '松原市上下水道部上下水道建設課', '【平日】072-337-3140', '【休日】072-334-1550'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-218-A001 大東市 (A001)
+['9：00～17：30']
+{'id': 'place:5ef4b8538c8df02b55f4', 'name': '大東市上下水道局 総務課', 'address': '大阪府大東市灰塚4-1-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-218-A001', 'placeId': 'place:5ef4b8538c8df02b55f4', 'condition': '平日', 'raw': ['【平日】大東市上下水道局 総務課', '【休日】大東市上下水道局 宿直室', '大阪府大東市灰塚4-1-1', '電話：072-871-1191'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:677fb9a18c933486a439', 'name': '大東市上下水道局 宿直室', 'address': '大阪府大東市灰塚4-1-1', 'phone': '072-871-1191', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-218-A001', 'placeId': 'place:677fb9a18c933486a439', 'condition': '休日', 'raw': ['【平日】大東市上下水道局 総務課', '【休日】大東市上下水道局 宿直室', '大阪府大東市灰塚4-1-1', '電話：072-871-1191'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-218-B001 大東市 (B001)
+['9:00～17:30']
+{'id': 'place:2a93872bfc0b665b05f1', 'name': '大東市上下水道局総務課', 'address': '大阪府大東市灰塚4-1-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-218-B001', 'placeId': 'place:2a93872bfc0b665b05f1', 'condition': '平日', 'raw': ['【平日】大東市上下水道局総務課', '【休日】大東市上下水道局宿直室', '大阪府大東市灰塚4-1-1', '電話:072-871-1191'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:6e82fd6da022cb804e43', 'name': '大東市上下水道局宿直室', 'address': '大阪府大東市灰塚4-1-1', 'phone': '072-871-1191', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-218-B001', 'placeId': 'place:6e82fd6da022cb804e43', 'condition': '休日', 'raw': ['【平日】大東市上下水道局総務課', '【休日】大東市上下水道局宿直室', '大阪府大東市灰塚4-1-1', '電話:072-871-1191'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-219-A001 和泉市 (A001)
+['10：00～18：00', 'ただし、月曜日（祝日の場合はその翌日）、年末年始はお休みです']
+{'id': 'place:a14e4d4fae9c3eaf9d08', 'name': '和泉市いずみの国 観光おもてなし処', 'address': '大阪府和泉市府中町1-19-9(JR和泉府中駅前)', 'phone': '0725-40-5552', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-219-A001', 'placeId': 'place:a14e4d4fae9c3eaf9d08', 'condition': '', 'raw': ['和泉市いずみの国 観光おもてなし処', '大阪府和泉市府中町1-19-9（JR和泉府中駅前）', '電話：0725-40-5552'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-219-B001 和泉市 (B001)
+['9：00－17：00', 'ただし、年末年始はお休みです']
+{'id': 'place:a0c0f50006d2757a8c8b', 'name': '道の駅 いずみ山愛の里', 'address': '大阪府和泉市仏並町398-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-219-B001', 'placeId': 'place:a0c0f50006d2757a8c8b', 'condition': '', 'raw': ['道の駅 いずみ山愛の里', '大阪府和泉市仏並町398-1', '（問合せ先）', '和泉市上下水道部下水道整備課', '電話：0725-99-8152(平日8：45～17：15)'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-220-A001 箕面市
+['10：00～16：00(土日祝及び11月全日は9:00～17:00)', 'ただし、毎週木曜日(祝日の場合は翌日)、12月28日～1月4日は休館です。']
+{'id': 'place:2657ffe8de47bc2b6212', 'name': '箕面交通・観光案内所', 'address': '大阪府箕面市箕面1丁目1番1号 阪急箕面駅横', 'phone': '072-723-1885', 'coordinate': {'status': 'candidate', 'lat': 34.835213021, 'lng': 135.468981676, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-220-A001', 'placeId': 'place:2657ffe8de47bc2b6212', 'condition': '', 'raw': ['箕面交通・観光案内所', '大阪府箕面市箕面1丁目1番1号 阪急箕面駅横', '電話：072-723-1885'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-221-A001 柏原市 (A001)
+['【平日】9:00～16:30', '【土曜日】10:00～18:00', '【日曜日・祝日】9:30～17:00', 'ただし、年末年始、臨時休館はお休みです']
+{'id': 'place:1ca68b2dbec83466c8f0', 'name': '柏原市市役所別館1階 下水工務課', 'address': '大阪府柏原市安堂町1-55', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-221-A001', 'placeId': 'place:1ca68b2dbec83466c8f0', 'condition': '平日', 'raw': ['【平日】柏原市市役所別館1階 下水工務課', '大阪府柏原市安堂町1-55', '【土日祝日】柏原市役所本館2階 かしわらテラス図書スペース', '大阪府柏原市安堂町1-55'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:9a89ff7b1625b66ddbd8', 'name': '柏原市役所本館2階 かしわらテラス図書スペース', 'address': '大阪府柏原市安堂町1-55', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-221-A001', 'placeId': 'place:9a89ff7b1625b66ddbd8', 'condition': '土日祝日', 'raw': ['【平日】柏原市市役所別館1階 下水工務課', '大阪府柏原市安堂町1-55', '【土日祝日】柏原市役所本館2階 かしわらテラス図書スペース', '大阪府柏原市安堂町1-55'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-221-B001 柏原市 (B001)
+['9:00～16:30', 'ただし、月曜日（祝日の場合は開館）、年末年始、臨時休館はお休みです']
+{'id': 'place:8877fb2b03b1871f3df4', 'name': '柏原市立歴史資料館', 'address': '大阪府柏原市高井田1598-1', 'phone': '072-976-3430', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-221-B001', 'placeId': 'place:8877fb2b03b1871f3df4', 'condition': '', 'raw': ['柏原市立歴史資料館', '大阪府柏原市高井田1598-1', '電話:072-976-3430'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-221-C001 柏原市 (C001)
+['9:00～17:00', 'ただし、年末年始（12/29～1/3）および臨時休館日はお休みです']
+{'id': 'place:212883840c3bc7b55808', 'name': '公民館堅下分館(堅下合同会館)', 'address': '大阪府柏原市大県3丁目9-19', 'phone': '072-971-6800', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-221-C001', 'placeId': 'place:212883840c3bc7b55808', 'condition': '', 'raw': ['公民館堅下分館（堅下合同会館）', '大阪府柏原市大県3丁目9-19', '電話：072-971-6800'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-222-A001 羽曳野市
+['【平日】9：00～17：30', '※土日・祝祭日、年末年始(12月29日～1月3日)の配布は行っていません', '【休日】9：30～17：00', 'ただし、年末年始等はお休みです']
+{'id': 'place:6f7e572fc387b69390d7', 'name': '羽曳野市下水道総務課', 'address': '大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F', 'phone': '072-958-1111(代)', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-222-A001', 'placeId': 'place:6f7e572fc387b69390d7', 'condition': '平日', 'raw': ['【平日】羽曳野市下水道総務課', '大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F', '電話：072-958-1111(代)', '【休日】古市駅前観光案内所', '大阪府羽曳野市古市1丁目1-19', '072-958-1111(内線2770)'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:23e5e276a7868c21e7a0', 'name': '古市駅前観光案内所', 'address': '大阪府羽曳野市古市1丁目1-19', 'phone': '072-958-1111(内線2770)', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-222-A001', 'placeId': 'place:23e5e276a7868c21e7a0', 'condition': '休日', 'raw': ['【平日】羽曳野市下水道総務課', '大阪府羽曳野市誉田4丁目1-1羽曳野市役所別館4F', '電話：072-958-1111(代)', '【休日】古市駅前観光案内所', '大阪府羽曳野市古市1丁目1-19', '072-958-1111(内線2770)'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-223-A001 門真市 (A001)
+['9：00～17：30', 'ただし、年末年始（12月29日〜1月3日）はお休みです']
+{'id': 'place:77dcfd9605bd83bd5b64', 'name': '門真市環境水道部 お客さまセンター', 'address': '大阪府門真市泉町7-23', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-223-A001', 'placeId': 'place:77dcfd9605bd83bd5b64', 'condition': '平日', 'raw': ['【平日】門真市環境水道部 お客さまセンター', '【休日】門真市泉町浄水場 当直室', '大阪府門真市泉町7-23', '電話：06-6903-2122'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:a778ef6e6dd8552c4743', 'name': '門真市泉町浄水場 当直室', 'address': '大阪府門真市泉町7-23', 'phone': '06-6903-2122', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-223-A001', 'placeId': 'place:a778ef6e6dd8552c4743', 'condition': '休日', 'raw': ['【平日】門真市環境水道部 お客さまセンター', '【休日】門真市泉町浄水場 当直室', '大阪府門真市泉町7-23', '電話：06-6903-2122'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-223-B001 門真市 (B001)
+['9：00～17：30', 'ただし、年末年始（12月29日～１月３日）はお休みです']
+{'id': 'place:a98778ce41a9719c6619', 'name': '門真市役所', 'address': '大阪府門真市中町1-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-223-B001', 'placeId': 'place:a98778ce41a9719c6619', 'condition': '', 'raw': ['門真市役所', '大阪府門真市中町１-１', '【平日】環境水道部経営総務課(本館２階)', '電話:06-6902-5873', '【土日祝日】門真市役所宿直室(本館１階)', '電話:06-6902-1231'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:bd54ffa4ff05c5de2e21', 'name': '環境水道部経営総務課(本館2階)', 'address': '大阪府門真市中町1-1', 'phone': '06-6902-5873', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-223-B001', 'placeId': 'place:bd54ffa4ff05c5de2e21', 'condition': '平日', 'raw': ['門真市役所', '大阪府門真市中町１-１', '【平日】環境水道部経営総務課(本館２階)', '電話:06-6902-5873', '【土日祝日】門真市役所宿直室(本館１階)', '電話:06-6902-1231'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:9d20fa57040c5342502f', 'name': '門真市役所宿直室(本館1階)', 'address': '大阪府門真市中町1-1', 'phone': '06-6902-1231', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-223-B001', 'placeId': 'place:9d20fa57040c5342502f', 'condition': '土日祝日', 'raw': ['門真市役所', '大阪府門真市中町１-１', '【平日】環境水道部経営総務課(本館２階)', '電話:06-6902-5873', '【土日祝日】門真市役所宿直室(本館１階)', '電話:06-6902-1231'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+27-224-A001 摂津市
+['8：45～17：00', 'ただし、年末年始はお休みです']
+{'id': 'place:409a7670d18868d73e02', 'name': '摂津市上下水道部庁舎', 'address': '大阪府摂津市三島一丁目1番10号', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-224-A001', 'placeId': 'place:409a7670d18868d73e02', 'condition': '', 'raw': ['摂津市上下水道部庁舎', '大阪府摂津市三島一丁目1番10号', '【平日】3階 下水道事業課', '電話:06-6383-7638', '【土日祝日】1階 お客さま窓口', '電話:06-6383-1525'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:2a39f775dea712cf3776', 'name': '3階 下水道事業課', 'address': '大阪府摂津市三島一丁目1番10号', 'phone': '06-6383-7638', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-224-A001', 'placeId': 'place:2a39f775dea712cf3776', 'condition': '平日', 'raw': ['摂津市上下水道部庁舎', '大阪府摂津市三島一丁目1番10号', '【平日】3階 下水道事業課', '電話:06-6383-7638', '【土日祝日】1階 お客さま窓口', '電話:06-6383-1525'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:ab4d9df5429f29cc4208', 'name': '1階 お客さま窓口', 'address': '大阪府摂津市三島一丁目1番10号', 'phone': '06-6383-1525', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-224-A001', 'placeId': 'place:ab4d9df5429f29cc4208', 'condition': '土日祝日', 'raw': ['摂津市上下水道部庁舎', '大阪府摂津市三島一丁目1番10号', '【平日】3階 下水道事業課', '電話:06-6383-7638', '【土日祝日】1階 お客さま窓口', '電話:06-6383-1525'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+27-225-A001 高石市
+['9：00～18：00', 'ただし、年末年始（12/31～1/1）はお休みです']
+{'id': 'place:348d70ced83b49e4afc2', 'name': '大阪府臨海スポーツセンター管理事務所', 'address': '大阪府高石市高師浜丁6-1', 'phone': '072-268-8351', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-225-A001', 'placeId': 'place:348d70ced83b49e4afc2', 'condition': '', 'raw': ['大阪府臨海スポーツセンター管理事務所', '大阪府高石市高師浜丁6-1', '電話：072-268-8351'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-226-A001 藤井寺市 (A001)
+['【平日】9：00～17：30', '【休日】9：00～17：00', 'ただし、年末年始はお休みです']
+{'id': 'place:003ceb76f7fc7d6094de', 'name': '藤井寺市 都市整備部 下水道課', 'address': '大阪府藤井寺市岡1-1-1', 'phone': '072-939-1264', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-226-A001', 'placeId': 'place:003ceb76f7fc7d6094de', 'condition': '平日', 'raw': ['【平日】藤井寺市 都市整備部 下水道課', '大阪府藤井寺市岡1-1-1', '電話：072-939-1264', '【休日】藤井寺市役所 警備室 ※東側入口すぐ', '大阪府藤井寺市岡1-1-1', '電話：072-939-1264'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:988490a7017a251fa340', 'name': '藤井寺市役所 警備室 ※東側入口すぐ', 'address': '大阪府藤井寺市岡1-1-1', 'phone': '072-939-1264', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-226-A001', 'placeId': 'place:988490a7017a251fa340', 'condition': '休日', 'raw': ['【平日】藤井寺市 都市整備部 下水道課', '大阪府藤井寺市岡1-1-1', '電話：072-939-1264', '【休日】藤井寺市役所 警備室 ※東側入口すぐ', '大阪府藤井寺市岡1-1-1', '電話：072-939-1264'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-226-B001 藤井寺市 (B001)
+['9：00～17：00', 'ただし、年末年始（12/29～1/4）はお休みです。年末年始のお休みは変更になる可能性がありますので事前にお問い合わせください']
+{'id': 'place:d8ae994ed35d69a0dfb1', 'name': 'パープルホール(藤井寺市立市民総合会館)1階地域サービス公社管理事務所', 'address': '大阪府藤井寺市北岡1丁目2番3号', 'phone': '072-939-7020', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-226-B001', 'placeId': 'place:d8ae994ed35d69a0dfb1', 'condition': '', 'raw': ['パープルホール（藤井寺市立市民総合会館）1階地域サービス公社管理事務所', '大阪府藤井寺市北岡1丁目2番3号', '電話：072-939-7020'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-226-C001 藤井寺市 (C001)
+['10:00～17:00', 'ただし、月曜日（その日が祝日に当たる時は翌平日）、12/29から1/3まではお休みです']
+{'id': 'place:6ad97690b4f9910a096e', 'name': '藤井寺市立にぎわい・まなび交流館1階 ウエルカムラウンジ', 'address': '大阪府藤井寺市藤井寺3丁目1番20号', 'phone': '072-952-7801', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-226-C001', 'placeId': 'place:6ad97690b4f9910a096e', 'condition': '', 'raw': ['藤井寺市立にぎわい・まなび交流館1階 ウエルカムラウンジ', '大阪府藤井寺市藤井寺3丁目1番20号', '電話:072-952-7801'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-227-A001 東大阪市
+['9：00～17：30', 'ただし、土日、祝日、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:8c975ae9df85aa9fea39', 'name': '東大阪市 下水道計画総務室', 'address': '大阪府東大阪市荒本北1-1-1(東大阪市役所13階)', 'phone': '06-4309-3246', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-227-A001', 'placeId': 'place:8c975ae9df85aa9fea39', 'condition': '', 'raw': ['東大阪市 下水道計画総務室', '大阪府東大阪市荒本北1-1-1（東大阪市役所13階）', '電話：06-4309-3246'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-228-A001 泉南市
+['【火・水以外】10：00～16：00', '【火・水のみ】9：00～17：30', 'ただし、年末年始（12/28～1/4）はお休みです', '※火・水曜が祝日の場合は、観光案内所にて配布します']
+{'id': 'place:958e879f17eafbb8e973', 'name': '泉南市観光協会観光案内所', 'address': '大阪府泉南市りんくう南浜4-201', 'phone': '', 'coordinate': {'status': 'candidate', 'lat': 34.386128293, 'lng': 135.270695225, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-228-A001', 'placeId': 'place:958e879f17eafbb8e973', 'condition': '火・水以外', 'raw': ['【火・水以外】泉南市観光協会観光案内所', '大阪府泉南市りんくう南浜4-201', '【火・水のみ】泉南市上下水道部 下水道整備課', '大阪府泉南市樽井737', '電話：072-482-5005'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:82667b8bd5200610cbd7', 'name': '泉南市上下水道部 下水道整備課', 'address': '大阪府泉南市樽井737', 'phone': '072-482-5005', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-228-A001', 'placeId': 'place:82667b8bd5200610cbd7', 'condition': '火・水のみ', 'raw': ['【火・水以外】泉南市観光協会観光案内所', '大阪府泉南市りんくう南浜4-201', '【火・水のみ】泉南市上下水道部 下水道整備課', '大阪府泉南市樽井737', '電話：072-482-5005'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-229-A001 四條畷市
+['8：45～17：15', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:507fc6c8fa978e4618f2', 'name': '四條畷市役所 都市整備部 下水道課', 'address': '大阪府四條綴市中野本町1-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-229-A001', 'placeId': 'place:507fc6c8fa978e4618f2', 'condition': '平日', 'raw': ['【平日】四條畷市役所 都市整備部 下水道課', '【休日】四條畷市役所 宿直室', '大阪府四條綴市中野本町1-1', '電話：072-877-2121（内線466）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:6f8549ee753cbea13b34', 'name': '四條畷市役所 宿直室', 'address': '大阪府四條綴市中野本町1-1', 'phone': '072-877-2121(内線466)', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '自治体照合が未解決', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-229-A001', 'placeId': 'place:6f8549ee753cbea13b34', 'condition': '休日', 'raw': ['【平日】四條畷市役所 都市整備部 下水道課', '【休日】四條畷市役所 宿直室', '大阪府四條綴市中野本町1-1', '電話：072-877-2121（内線466）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-230-A001 交野市 (A001)
+['9:00～17:00', 'ただし、年末年始（12月29日～1月3日）は配布を行っていません']
+{'id': 'place:8914b9e6744511e117c2', 'name': '交野市上下水道部(旧水道局)1階', 'address': '大阪府交野市私市2丁目24-1', 'phone': '072-891-0016', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-230-A001', 'placeId': 'place:8914b9e6744511e117c2', 'condition': '', 'raw': ['交野市上下水道部（旧水道局）1階', '大阪府交野市私市2丁目24-1', '電話：072-891-0016', '【内容等に関すること（平日のみ）】', '2階 下水道課 電話：072-896-8815'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-230-B001 交野市 (B001)
+['9:00～17:00', 'ただし、年末年始（12月29日～1月3日）は配布を行っていません。']
+{'id': 'place:8914b9e6744511e117c2', 'name': '交野市上下水道部(旧水道局)1階', 'address': '大阪府交野市私市2丁目24-1', 'phone': '072-891-0016', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-230-B001', 'placeId': 'place:8914b9e6744511e117c2', 'condition': '', 'raw': ['交野市上下水道部（旧水道局）1階', '大阪府交野市私市2丁目24-1', '電話：072-891-0016', '【内容等に関すること（平日のみ）】', '2階 下水道課 電話：072-896-8815'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-231-A001 大阪狭山市 (A001)
+['10：00～17：00', '（入館は16：30まで）', '毎週月曜日（月曜日が祝日の場合は翌日）と、年末年始（12/28～1/4）はお休みです']
+{'id': 'place:3dbfbd267a4410f311b2', 'name': '大阪府立狭山池博物館', 'address': '大阪府大阪狭市池尻中二丁目', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '自治体照合が未解決', 'level': 'prefecture', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-231-A001', 'placeId': 'place:3dbfbd267a4410f311b2', 'condition': '', 'raw': ['大阪府立狭山池博物館', '大阪府大阪狭市池尻中二丁目'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-231-B001 大阪狭山市 (B001)
+['【平日】9：00～17：30', 'ただし、土日、祝日、年末年始（12/29～1/3）はお休みです', '【土日祝】10：00時～17：00（入館は16：30まで）', 'ただし、年末年始（12/28～1/4）はお休みです']
+{'id': 'place:11d5574411a4dcfe6dec', 'name': '大阪狭山市役所庁舎2階 水政策部下水道・水路グループ', 'address': '大阪府大阪狭山市狭山1-2384-1', 'phone': '072-366-0011(内線364)', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-231-B001', 'placeId': 'place:11d5574411a4dcfe6dec', 'condition': '平日', 'raw': ['【平日】大阪狭山市役所庁舎2階 水政策部下水道・水路グループ', '大阪府大阪狭山市狭山1-2384-１', '電話:072-366-0011（内線364）', '【土日祝】大阪府立狭山池博物館', '大阪府大阪狭山市池尻中二丁目'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:e5b8e80cdd4564099f87', 'name': '大阪府立狭山池博物館', 'address': '大阪府大阪狭山市池尻中二丁目', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-231-B001', 'placeId': 'place:e5b8e80cdd4564099f87', 'condition': '土日祝', 'raw': ['【平日】大阪狭山市役所庁舎2階 水政策部下水道・水路グループ', '大阪府大阪狭山市狭山1-2384-１', '電話:072-366-0011（内線364）', '【土日祝】大阪府立狭山池博物館', '大阪府大阪狭山市池尻中二丁目'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-232-A001 阪南市
+['【平日】9：00～16：30', '【土日祝日】8：45～17：15', 'ただし、年末年始はお休みです']
+{'id': 'place:78cbd40384055357a1b0', 'name': '阪南市都市整備部下水道課(阪南市分室2階)', 'address': '大阪府阪南市鳥取74-1', 'phone': '072-470-2165', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-232-A001', 'placeId': 'place:78cbd40384055357a1b0', 'condition': '平日', 'raw': ['【平日】阪南市都市整備部下水道課（阪南市分室２階）', '大阪府阪南市鳥取74-1', '電話：072-470-2165', '【土日祝日】阪南市役所地下１階守衛室', '大阪府阪南市尾崎町３５－１'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:5155c601bcf944c4cbf5', 'name': '阪南市役所地下1階守衛室', 'address': '大阪府阪南市尾崎町35-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-232-A001', 'placeId': 'place:5155c601bcf944c4cbf5', 'condition': '土日祝日', 'raw': ['【平日】阪南市都市整備部下水道課（阪南市分室２階）', '大阪府阪南市鳥取74-1', '電話：072-470-2165', '【土日祝日】阪南市役所地下１階守衛室', '大阪府阪南市尾崎町３５－１'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-301-A001 島本町 (A001)
+['9：00～17：30', '休日は、大薮浄水場入口横のインターホンにてお呼び出しください']
+{'id': 'place:87fd2c6f493f6d2f472a', 'name': '島本町上下水道庁舎', 'address': '大阪府三島郡島本町広瀬3-11-24', 'phone': '075-962-6308', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-301-A001', 'placeId': 'place:87fd2c6f493f6d2f472a', 'condition': '平日', 'raw': ['【平日】島本町上下水道庁舎', '大阪府三島郡島本町広瀬3-11-24', '電話：075-962-6308', '【休日】大薮浄水場', '大阪府三島郡島本町広瀬3-12-10', '電話：075-961-0307'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:7b408797f0748634ad5e', 'name': '大薮浄水場', 'address': '大阪府三島郡島本町広瀬3-12-10', 'phone': '075-961-0307', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-301-A001', 'placeId': 'place:7b408797f0748634ad5e', 'condition': '休日', 'raw': ['【平日】島本町上下水道庁舎', '大阪府三島郡島本町広瀬3-11-24', '電話：075-962-6308', '【休日】大薮浄水場', '大阪府三島郡島本町広瀬3-12-10', '電話：075-961-0307'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-301-B001 島本町 (B001)
+['9:30～17:00', '※毎週月曜日（月曜日が祝日の場合はその翌日）、年末年始（12月29日から1月3', '日）、特別展示及び企画展示などの準備期間は休館日']
+{'id': 'place:7899e1fbcdc39cc8f87a', 'name': '島本町立歴史文化資料館', 'address': '大阪府三島郡島本町桜井一丁目3番1号', 'phone': '075-961-3411', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-301-B001', 'placeId': 'place:7899e1fbcdc39cc8f87a', 'condition': '', 'raw': ['島本町立歴史文化資料館', '大阪府三島郡島本町桜井一丁目3番1号', '電話：075-961-3411'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-321-A001 豊能町
+['9：00～17：30', 'ただし、土日、祝日、年末年始は警備室で配布します']
+{'id': 'place:87988ebfde4fcebbf78a', 'name': '豊能町役場3階 都市計画課', 'address': '大阪府豊能郡豊能町余野414-1 ただし、土日、祝日、年末年始は豊能町役場1階警備室で配布します', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-321-A001', 'placeId': 'place:87988ebfde4fcebbf78a', 'condition': '', 'raw': ['豊能町役場3階 都市計画課', '大阪府豊能郡豊能町余野414-1', 'ただし、土日、祝日、年末年始は豊能町役場１階警備室で配布します', '（問い合わせ先）', '豊能町建設環境部都市計画課', '電話：072-739-3425'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-322-A001 能勢町
+['8：45～17：00', 'ただし、土日、祝日、年末年始はお休みです']
+{'id': 'place:560ec92fc5daae89d908', 'name': '能勢浄化センター ささゆりの丘', 'address': '大阪府豊能郡能勢町下田119-1', 'phone': '072-734-3403', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-322-A001', 'placeId': 'place:560ec92fc5daae89d908', 'condition': '', 'raw': ['能勢浄化センター ささゆりの丘', '大阪府豊能郡能勢町下田119-1', '電話：072-734-3403'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-361-A001 熊取町
+['【平日】9：00～17：30', '【休日】9：00～17：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:0a1974237ea53d981c34', 'name': '熊取町役場 都市整備部 下水道河川課', 'address': '大阪府泉南郡熊取町野田1-1-1', 'phone': '072-452-1011', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-361-A001', 'placeId': 'place:0a1974237ea53d981c34', 'condition': '平日', 'raw': ['【平日】熊取町役場 都市整備部 下水道河川課', '大阪府泉南郡熊取町野田1-1-1', '電話：072-452-1011', '【休日】熊取町駅前観光案内所 駅下にぎわい館', '大阪府泉南郡熊取町大久保中1-17-1', '電話：072-451-2572'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:7ca7be428c056941e3f7', 'name': '熊取町駅前観光案内所 駅下にぎわい館', 'address': '大阪府泉南郡熊取町大久保中1-17-1', 'phone': '072-451-2572', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza_detail', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-361-A001', 'placeId': 'place:7ca7be428c056941e3f7', 'condition': '休日', 'raw': ['【平日】熊取町役場 都市整備部 下水道河川課', '大阪府泉南郡熊取町野田1-1-1', '電話：072-452-1011', '【休日】熊取町駅前観光案内所 駅下にぎわい館', '大阪府泉南郡熊取町大久保中1-17-1', '電話：072-451-2572'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-362-A001 田尻町
+['9：00～17：00', 'ただし、祝日及び年末年始はお休みです']
+{'id': 'place:7c94ba7a999f14ad29b9', 'name': '田尻町役場別館', 'address': '大阪府泉南郡田尻町嘉祥寺375番地1', 'phone': '072-466-1000', 'coordinate': {'status': 'candidate', 'lat': 34.393583689, 'lng': 135.291611948, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-362-A001', 'placeId': 'place:7c94ba7a999f14ad29b9', 'condition': '平日', 'raw': ['【平日】田尻町役場別館', '大阪府泉南郡田尻町嘉祥寺375番地１', '電話:072-466-1000', '【土日】田尻町立公民館', '大阪府泉南郡田尻町嘉祥寺1120番地2', '電話:072-466-0030'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:9f543cc614431566426a', 'name': '田尻町立公民館', 'address': '大阪府泉南郡田尻町嘉祥寺1120番地2', 'phone': '072-466-0030', 'coordinate': {'status': 'candidate', 'lat': 34.395189757, 'lng': 135.287956967, 'source': 'data/work/geocoded-c.json', 'reason': '試作の参考位置。公開用の確定位置ではない', 'level': 'parcel', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-362-A001', 'placeId': 'place:9f543cc614431566426a', 'condition': '土日', 'raw': ['【平日】田尻町役場別館', '大阪府泉南郡田尻町嘉祥寺375番地１', '電話:072-466-1000', '【土日】田尻町立公民館', '大阪府泉南郡田尻町嘉祥寺1120番地2', '電話:072-466-0030'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-381-A001 太子町
+['9:00～17:00', 'ただし、年末年始はお休みです']
+{'id': 'place:d8cb511836b42fcd532a', 'name': '道の駅「近つ飛鳥の里・太子」', 'address': '大阪府南河内郡太子町山田2254-3', 'phone': '0721-98-0760', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-381-A001', 'placeId': 'place:d8cb511836b42fcd532a', 'condition': '', 'raw': ['道の駅「近つ飛鳥の里・太子」', '大阪府南河内郡太子町山田2254-3', '電話：0721-98-0760'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-382-A001 河南町
+['9：00～17：30']
+{'id': 'place:5198d8060e4644e9ac95', 'name': '河南町まち創造部都市環境課', 'address': '大阪府南河内郡河南町大字白木1359-6', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-382-A001', 'placeId': 'place:5198d8060e4644e9ac95', 'condition': '平日', 'raw': ['【平日】河南町まち創造部都市環境課', '【休日】河南町役場宿直室', '大阪府南河内郡河南町大字白木1359-6', '電話：（平日）0721-93-2500（内線271）', '（休日）0721-91-2500'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:1421f0ca70946971eeef', 'name': '河南町役場宿直室', 'address': '大阪府南河内郡河南町大字白木1359-6', 'phone': '(平日)0721-93-2500(内線271) / (休日)0721-91-2500', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-382-A001', 'placeId': 'place:1421f0ca70946971eeef', 'condition': '休日', 'raw': ['【平日】河南町まち創造部都市環境課', '【休日】河南町役場宿直室', '大阪府南河内郡河南町大字白木1359-6', '電話：（平日）0721-93-2500（内線271）', '（休日）0721-91-2500'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+27-383-A001 千早赤阪村
+['9:00～17:30']
+{'id': 'place:c98e214d42e9b107f4cd', 'name': '千早赤阪村役場都市整備課', 'address': '大阪府南河内郡千早赤阪村大字水分180番地', 'phone': '0721-72-0081', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '施設を示すには粗い座標', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-383-A001', 'placeId': 'place:c98e214d42e9b107f4cd', 'condition': '平日', 'raw': ['【平日】千早赤阪村役場都市整備課', '大阪府南河内郡千早赤阪村大字水分180番地', '電話：0721-72-0081', '【土日祝日】庁舎正面入口のインターホンにて警備員にお申しつけ下さい'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:5c6786f83ef5b440d278', 'name': '庁舎正面入口のインターホンにて警備員にお申しつけ下さい', 'address': '大阪府南河内郡千早赤阪村大字水分180番地', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': 'data/work/geocoded-c.json', 'reason': '借用住所', 'level': 'machiaza', 'review': '人による施設位置の確認は未実施'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '27-383-A001', 'placeId': 'place:5c6786f83ef5b440d278', 'condition': '土日祝日', 'raw': ['【平日】千早赤阪村役場都市整備課', '大阪府南河内郡千早赤阪村大字水分180番地', '電話：0721-72-0081', '【土日祝日】庁舎正面入口のインターホンにて警備員にお申しつけ下さい'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+28-000-A001 兵庫県 （流域下水道）
+['9：00～17：00', 'ただし、毎週木曜日（祝日の場合は開館）、年末年始（12/27～1/5）はお休みです']
+{'id': 'place:25c64819200f5c4b3c74', 'name': '原田処理場(スカイランドHARADA管理事務所)', 'address': '大阪府豊中市原田西町1-1', 'phone': '06-6846-8181', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-000-A001', 'placeId': 'place:25c64819200f5c4b3c74', 'condition': '', 'raw': ['原田処理場（スカイランドHARADA管理事務所）', '大阪府豊中市原田西町1-1', '電話：06-6846-8181'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-100-A001 神戸市 (A001)
+['東水環境センター（東灘処理場）を見学された方に配布しています。施設見学は1日2回行っています。所要時間は約1時間です', '【午前】10：00～', '【午後】14：00～', '※ただし、一般団体見学がある日を除きます', '※事前にお電話でお問い合わせの上、見学の予約をお願いいたします', 'なお、土日、祝日、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:26dca137eb9b0e69e31f', 'name': '東水環境センター 東灘処理場', 'address': '兵庫県神戸市東灘区魚崎南町2-1-23', 'phone': '078-451-0456', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-100-A001', 'placeId': 'place:26dca137eb9b0e69e31f', 'condition': '', 'raw': ['東水環境センター 東灘処理場', '兵庫県神戸市東灘区魚崎南町2-1-23', '電話：078-451-0456'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-100-B001 神戸市 (B001)
+['7:00~23:00']
+{'id': 'place:7fa9299caf5b50e9e66c', 'name': '神戸空港 1階総合案内所', 'address': '兵庫県神戸市中央区神戸空港1番', 'phone': '078-304-7777', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-100-B001', 'placeId': 'place:7fa9299caf5b50e9e66c', 'condition': '', 'raw': ['神戸空港 1階総合案内所', '兵庫県神戸市中央区神戸空港１番', '電話：078-304-7777', '（問い合わせ先）', '神戸市建設局下水道部経営管理課', '電話：078－806－8708'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-100-C001 神戸市 (C001)
+['9:00～16:30', 'ただし、毎週月曜日（祝日の場合は翌日休み）および年末年始はお休みです']
+{'id': 'place:3c952f227742ffc4c140', 'name': '五色塚古墳館', 'address': '兵庫県神戸市垂水区五色山4丁目11―7', 'phone': '078-707-3131', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-100-C001', 'placeId': 'place:3c952f227742ffc4c140', 'condition': '', 'raw': ['五色塚古墳館', '兵庫県神戸市垂水区五色山4丁目11―7', '電話:078-707-3131', '（問合せ先）', '神戸市垂水区地域協働課', '電話：078-708-5151'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-100-D001 神戸市 (D001)
+['【3月～10月】9:00～18:00', '【11月～2月】9:00～17:00', 'ただし、年末年始（12/31～1/1）はお休みです']
+{'id': 'place:9ad8021637995f607dd7', 'name': '北野観光案内所', 'address': '神戸市中央区北野町3-10-20', 'phone': '078-251-8360', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-100-D001', 'placeId': 'place:9ad8021637995f607dd7', 'condition': '', 'raw': ['北野観光案内所', '神戸市中央区北野町3-10-20', '電話:078-251-8360'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-201-A001 姫路市
+['8：30～18：30', 'ただし、12/29、12/30および施設点検日はお休みです']
+{'id': 'place:0fcf12cda481cf26b84f', 'name': '姫路市観光案内所', 'address': '兵庫県姫路市駅前町210-2(JR姫路駅中央コンコース北西側)', 'phone': '079-287-0003', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-201-A001', 'placeId': 'place:0fcf12cda481cf26b84f', 'condition': '', 'raw': ['姫路市観光案内所', '兵庫県姫路市駅前町210-2（JR姫路駅中央コンコース北西側）', '電話：079-287-0003'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-202-A001 尼崎市(A001)
+['【平日】8：45～17：30', 'ただし、土日・祝日・年末年始（12/29から1/3）はお休みです', '【土日・祝日】9：00〜17：00', 'ただし、年末年始（12/29～1/2)はお休みです']
+{'id': 'place:53f8d8e8b390f87d4063', 'name': '尼崎市公営企業局上下水道部経営企画課', 'address': '兵庫県尼崎市東七松町2-4-16(上下水道庁舎3階)', 'phone': '06-6489-7405', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-202-A001', 'placeId': 'place:53f8d8e8b390f87d4063', 'condition': '平日', 'raw': ['【平日】尼崎市公営企業局上下水道部経営企画課', '兵庫県尼崎市東七松町2-4-16（上下水道庁舎3階）', '電話：06-6489-7405', '【土日・祝日】あまがさき観光案内所（阪神尼崎駅前）', '兵庫県尼崎市神田中通1－4 中央公園内', '電話：06-6409-4634'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:42a8a6aac597fdd7d184', 'name': 'あまがさき観光案内所(阪神尼崎駅前)', 'address': '兵庫県尼崎市神田中通1-4 中央公園内', 'phone': '06-6409-4634', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-202-A001', 'placeId': 'place:42a8a6aac597fdd7d184', 'condition': '土日・祝日', 'raw': ['【平日】尼崎市公営企業局上下水道部経営企画課', '兵庫県尼崎市東七松町2-4-16（上下水道庁舎3階）', '電話：06-6489-7405', '【土日・祝日】あまがさき観光案内所（阪神尼崎駅前）', '兵庫県尼崎市神田中通1－4 中央公園内', '電話：06-6409-4634'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-202-B001 尼崎市(B001)
+['9：00〜17：00', 'ただし、年末年始（12月29日から1月2日 ）はお休みです']
+{'id': 'place:42a8a6aac597fdd7d184', 'name': 'あまがさき観光案内所(阪神尼崎駅前)', 'address': '兵庫県尼崎市神田中通1-4 中央公園内', 'phone': '06-6409-4634', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-202-B001', 'placeId': 'place:42a8a6aac597fdd7d184', 'condition': '', 'raw': ['あまがさき観光案内所（阪神尼崎駅前）', '兵庫県尼崎市神田中通1-4 中央公園内', '電話：06-6409-4634'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-203-A001 明石市
+['9：30～16：30', 'ただし、毎週月曜日、第2火曜日（祝日の場合はその翌日）はお休みです', '※年末年始の開館日については、左記施設HP「開館日・休館日カレンダー」をご確認ください']
+{'id': 'place:1435805d8cdc92f82308', 'name': '明石市立天文科学館', 'address': '兵庫県明石市人丸町2-6', 'phone': '078-919-5000', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-203-A001', 'placeId': 'place:1435805d8cdc92f82308', 'condition': '', 'raw': ['明石市立天文科学館', '兵庫県明石市人丸町2-6', '電話：078-919-5000', '（問い合わせ先）', '明石市都市局下水道室 下水道総務課', '電話：078-934-9620'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-204-A001 西宮市
+['10：00～18：00', 'ただし、火曜日、年末年始及びららぽーと甲子園が休みの日はお休みです']
+{'id': 'place:ab9f4dc49dbc88088817', 'name': 'クリエートにしのみや(ららぽーと甲子園2F)', 'address': '兵庫県西宮市甲子園八番町1-100', 'phone': '0798-81-3888', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-204-A001', 'placeId': 'place:ab9f4dc49dbc88088817', 'condition': '', 'raw': ['クリエートにしのみや（ららぽーと甲子園2F）', '兵庫県西宮市甲子園八番町1-100', '電話：0798-81-3888', '（問い合わせ先）', '西宮市上下水道局下水道部 下水計画課', '電話：0798-32-2264'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-205-A001 洲本市
+['【平日】8：30～17：15', '【土日】8：30～17：15']
+{'id': 'place:7faefb3bb5755fca98a7', 'name': '洲本市役所都市整備部下水道課(庁舎3F)', 'address': '兵庫県洲本市本町三丁目4番10号', 'phone': '0799-23-3794', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-205-A001', 'placeId': 'place:7faefb3bb5755fca98a7', 'condition': '平日', 'raw': ['【平日】洲本市役所都市整備部下水道課（庁舎3F）', '兵庫県洲本市本町三丁目4番10号', '電話：0799-23-3794', '【土日】洲本市役所守衛室', '電話：0799-22-3321', '(問合せ先)', '洲本市役所都市整備部下水道課', '0799-23-3794'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:965372fe386821e874c0', 'name': '洲本市役所守衛室', 'address': '兵庫県洲本市本町三丁目4番10号', 'phone': '0799-22-3321', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-205-A001', 'placeId': 'place:965372fe386821e874c0', 'condition': '土日', 'raw': ['【平日】洲本市役所都市整備部下水道課（庁舎3F）', '兵庫県洲本市本町三丁目4番10号', '電話：0799-23-3794', '【土日】洲本市役所守衛室', '電話：0799-22-3321', '(問合せ先)', '洲本市役所都市整備部下水道課', '0799-23-3794'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+28-206-A001 芦屋市 (A001)
+['9：00～17：30', '年末年始（12/29～1/3）については守衛室にてお配りします。']
+{'id': 'place:5cade60bb6200407cec5', 'name': '芦屋市上下水道部 下水道課', 'address': '兵庫県芦屋市精道町7-6', 'phone': '0797-38-2067', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-206-A001', 'placeId': 'place:5cade60bb6200407cec5', 'condition': '平日', 'raw': ['【平日】芦屋市上下水道部 下水道課', '【休日】芦屋市役所守衛室', '兵庫県芦屋市精道町7-6', '電話：【平日】0797-38-2067', '【休日】0797-31-2121'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:0f86b9f28ca3800b81c4', 'name': '芦屋市役所守衛室', 'address': '兵庫県芦屋市精道町7-6', 'phone': '0797-31-2121', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-206-A001', 'placeId': 'place:0f86b9f28ca3800b81c4', 'condition': '休日', 'raw': ['【平日】芦屋市上下水道部 下水道課', '【休日】芦屋市役所守衛室', '兵庫県芦屋市精道町7-6', '電話：【平日】0797-38-2067', '【休日】0797-31-2121'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-206-B001 芦屋市 (B001)
+['10:00～17:00（入館は16:30まで）', 'ただし、月曜日（祝日の場合は開館，翌火曜日休館）、展示替え期間、年末年始 はお休みです']
+{'id': 'place:d9e13b21408adc9fb34c', 'name': '芦屋市立美術博物館', 'address': '兵庫県芦屋市伊勢町12-25', 'phone': '0797-38-5432', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-206-B001', 'placeId': 'place:d9e13b21408adc9fb34c', 'condition': '', 'raw': ['芦屋市立美術博物館', '兵庫県芦屋市伊勢町12-25', '電話:0797-38-5432'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-207-A001 伊丹市 (A001)
+['9：00～21：30', 'ただし、毎月第1月曜日・第3月曜日（祝日の場合、開館。翌日休館。）、12月29日～1月3日はお休みです']
+{'id': 'place:daaa4e44e2c541067679', 'name': 'スワンホール', 'address': '兵庫県伊丹市昆陽池2丁目1', 'phone': '072-779-5661', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-207-A001', 'placeId': 'place:daaa4e44e2c541067679', 'condition': '', 'raw': ['スワンホール', '兵庫県伊丹市昆陽池2丁目1', '電話：072-779-5661', '（問い合わせ先）', '伊丹市上下水道局経営企画課', '電話：072-783-1600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-207-B001 伊丹市 (B001)
+['【平日】9：00～17：30 ただし、12月29日～1月3日はお休みです', '【土日・祝日】10：00～17：00 ただし、12月30日～1月2日はお休みです']
+{'id': 'place:6239a33fa7de3d368fe8', 'name': '伊丹市上下水道局 水道サービスステーション', 'address': '兵庫県伊丹市昆陽1丁目1番地2', 'phone': '072-783-1601', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-207-B001', 'placeId': 'place:6239a33fa7de3d368fe8', 'condition': '平日', 'raw': ['【平日】伊丹市上下水道局 水道サービスステーション', '兵庫県伊丹市昆陽1丁目1番地2', '電話:072-783-1601', '【土日・祝日】伊丹市立観光物産ギャラリー', '兵庫県伊丹市東有岡1-6-2（JR伊丹駅構内）', '電話:072-770-7060', '(問合せ先)', '伊丹市上下水道局経営企画課', '電話:072-783-1600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:50fd7780197e359a9c8e', 'name': '伊丹市立観光物産ギャラリー', 'address': '兵庫県伊丹市東有岡1-6-2(JR伊丹駅構内)', 'phone': '072-770-7060', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-207-B001', 'placeId': 'place:50fd7780197e359a9c8e', 'condition': '土日・祝日', 'raw': ['【平日】伊丹市上下水道局 水道サービスステーション', '兵庫県伊丹市昆陽1丁目1番地2', '電話:072-783-1601', '【土日・祝日】伊丹市立観光物産ギャラリー', '兵庫県伊丹市東有岡1-6-2（JR伊丹駅構内）', '電話:072-770-7060', '(問合せ先)', '伊丹市上下水道局経営企画課', '電話:072-783-1600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-207-C001 伊丹市 (C001)
+['10:00～17:00', 'ただし、年末年始（12月30日～1月2日）はお休みです']
+{'id': 'place:50fd7780197e359a9c8e', 'name': '伊丹市立観光物産ギャラリー', 'address': '兵庫県伊丹市東有岡1-6-2(JR伊丹駅構内)', 'phone': '072-770-7060', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-207-C001', 'placeId': 'place:50fd7780197e359a9c8e', 'condition': '', 'raw': ['伊丹市立観光物産ギャラリー', '兵庫県伊丹市東有岡1-6-2（JR伊丹駅構内）', '電話：072-770-7060', '(問合せ先)', '伊丹市上下水道局経営企画課', '電話：072-783-1600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-207-D001 伊丹市 (D001)
+['10:00～18:00（入館は17:30まで）', 'ただし、毎週月曜日（祝日の場合は翌平日）、年末年始（12月29日～翌年1月3日）はお休みです。']
+{'id': 'place:6edf2f45e34026831b26', 'name': '旧岡田家住宅・酒蔵', 'address': '伊丹市宮ノ前2丁目5-20(市立伊丹ミュージアム)', 'phone': '072-772-5959', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-207-D001', 'placeId': 'place:6edf2f45e34026831b26', 'condition': '', 'raw': ['旧岡田家住宅・酒蔵', '伊丹市宮ノ前2丁目5-20（市立伊丹ミュージアム）', '電話：072-772-5959', '(問合せ先)', '伊丹市上下水道局経営企画課', '電話：072-783-1600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-210-A001 加古川市
+['9：30～18：00', 'ただし、12月29日～1月3日はお休みです']
+{'id': 'place:abc816170980d4f8c6db', 'name': '加古川観光案内所', 'address': '加古川市加古川町篠原町503-2(JR加古川駅構内)', 'phone': '079-456-0222', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-210-A001', 'placeId': 'place:abc816170980d4f8c6db', 'condition': '', 'raw': ['加古川観光案内所', '住所：加古川市加古川町篠原町503-2（ＪＲ加古川駅構内）', '電話：079-456-0222'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-213-A001 西脇市 (A001)
+['【平日】9：00～17：00', '【休日】10：00～17：00', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:4cb8623bc35115d6fb38', 'name': '西脇市役所建設水道部施設管理課', 'address': '兵庫県西脇市下戸田128番地の1', 'phone': '0795-22-3111', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-213-A001', 'placeId': 'place:4cb8623bc35115d6fb38', 'condition': '平日', 'raw': ['【平日】西脇市役所建設水道部施設管理課', '兵庫県西脇市下戸田128番地の1', '電話：0795-22-3111', '【休日】にしわき経緯度地球科学館', '兵庫県西脇市上比延町334-2（テラ・ドーム）', '電話：0795-23-2772'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:7a20fbceb66cb5ebb731', 'name': 'にしわき経緯度地球科学館', 'address': '兵庫県西脇市上比延町334-2(テラ・ドーム)', 'phone': '0795-23-2772', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-213-A001', 'placeId': 'place:7a20fbceb66cb5ebb731', 'condition': '休日', 'raw': ['【平日】西脇市役所建設水道部施設管理課', '兵庫県西脇市下戸田128番地の1', '電話：0795-22-3111', '【休日】にしわき経緯度地球科学館', '兵庫県西脇市上比延町334-2（テラ・ドーム）', '電話：0795-23-2772'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-213-B001 西脇市 (B001)
+['9：00～17：00', '年末年始（12月29日～1月3日）はお休みです']
+{'id': 'place:c75fe5e57c94810e2724', 'name': '西脇市日本のへそ日時計の丘公園オートキャンプ場', 'address': '兵庫県西脇市黒田庄町門柳871-14', 'phone': '0795-28-4851', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-213-B001', 'placeId': 'place:c75fe5e57c94810e2724', 'condition': '', 'raw': ['西脇市日本のへそ日時計の丘公園オートキャンプ場', '兵庫県西脇市黒田庄町門柳871-14', '電話:0795-28-4851', '（問合せ先）', '西脇市役所 建設水道部', '電話:0795-22-3111'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-214-A001 宝塚市
+['11:00～17:00', 'ただし、月曜日（月曜日が祝日の場合は翌平日）、年末年始、その他設備点検などにより臨時休館する場合があります']
+{'id': 'place:ab91f9a19111fa61686b', 'name': '宝塚市立文化芸術センター 1階受付', 'address': '兵庫県宝塚市武庫川町7-64', 'phone': '0797-62-6800', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-214-A001', 'placeId': 'place:ab91f9a19111fa61686b', 'condition': '', 'raw': ['宝塚市立文化芸術センター １階受付', '兵庫県宝塚市武庫川町7-64', '電話：0797-62-6800', '（お問合せ先）', '宝塚市上下水道局施設部下水道課', '電話：0797-77-2023'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-215-A001 三木市 (A001)
+['【平日】8:30～17:00', '【土日・休日】9：00〜12:00、13:00～17：00', 'ただし、年末年始(12/29～1/4)はお休みです']
+{'id': 'place:2c4debf723273279546a', 'name': '三木市上下水道部庁舎', 'address': '三木市福井字鷹尾1950-1', 'phone': '0794-82-2010', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-215-A001', 'placeId': 'place:2c4debf723273279546a', 'condition': '平日', 'raw': ['【平日】三木市上下水道部庁舎', '三木市福井字鷹尾1950-1', '電話：0794-82-2010', '【土日・休日】三木市観光協会', '三木市末広1丁目1-35', '電話：0794-83-8400'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:4818019032b1e3aac845', 'name': '三木市観光協会', 'address': '三木市末広1丁目1-35', 'phone': '0794-83-8400', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-215-A001', 'placeId': 'place:4818019032b1e3aac845', 'condition': '土日・休日', 'raw': ['【平日】三木市上下水道部庁舎', '三木市福井字鷹尾1950-1', '電話：0794-82-2010', '【土日・休日】三木市観光協会', '三木市末広1丁目1-35', '電話：0794-83-8400'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-215-B001 三木市 (B001)
+['①9：30～17：00', 'ただし、月曜日（月曜日が祝日の場合は翌火曜日が定休）及び年末年始はお休みです', '②8：30～17：00', '山田錦の館の休館日の平日に配布します。', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:4ac5ff61db71997a359d', 'name': '道の駅よかわ(山田錦の館)', 'address': '兵庫県三木市吉川町吉安222', 'phone': '0794-76-2401', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-215-B001', 'placeId': 'place:4ac5ff61db71997a359d', 'condition': '①', 'raw': ['①道の駅よかわ（山田錦の館）', '兵庫県三木市吉川町吉安２２２', '電話:0794-76-2401', '②吉川支所地域振興課', '兵庫県三木市吉川町大沢４１２', '電話:0794-72-0183'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:c5cb26a1af3a611b70b7', 'name': '吉川支所地域振興課', 'address': '兵庫県三木市吉川町大沢412', 'phone': '0794-72-0183', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-215-B001', 'placeId': 'place:c5cb26a1af3a611b70b7', 'condition': '②', 'raw': ['①道の駅よかわ（山田錦の館）', '兵庫県三木市吉川町吉安２２２', '電話:0794-76-2401', '②吉川支所地域振興課', '兵庫県三木市吉川町大沢４１２', '電話:0794-72-0183'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-215-C001 三木市 (C001)
+['10:00～15:00', 'ただし、火曜日（祝日の場合は翌平日が定休日）と年末年始はお休みです。', '※上記以外にも休業日があります。営業日の詳細は、あじさいフローラみき公式インスタグラムで事前にご確認ください']
+{'id': 'place:c8ea8d7650a6cc58c39e', 'name': 'あじさいフローラみき', 'address': '兵庫県三木市福井字三木山', 'phone': '0794-86-1250', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-215-C001', 'placeId': 'place:c8ea8d7650a6cc58c39e', 'condition': '', 'raw': ['あじさいフローラみき', '兵庫県三木市福井字三木山', '電話:0794-86-1250'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-216-A001 高砂市
+['10：00～17：00', '施設見学をされた方に配布します', '【休館日】毎週火曜日（※祝日の場合はその翌日）、年末年始（12/29～1/3）']
+{'id': 'place:4e5b0da0769b73d0b9e1', 'name': '工楽松右衛門旧宅', 'address': '兵庫県高砂市高砂町今津町532', 'phone': '079-490-4790', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-216-A001', 'placeId': 'place:4e5b0da0769b73d0b9e1', 'condition': '', 'raw': ['工楽松右衛門旧宅', '兵庫県高砂市高砂町今津町532', '電話：079-490-4790', '(問い合わせ先)', '高砂市上下水道部経営総務室総務課', '電話：079-443-9048'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-217-A001 川西市 (A001)
+['9：00～17：00（年末年始を除く）']
+{'id': 'place:52945aa1816499e04704', 'name': 'アステ市民プラザ', 'address': '兵庫県川西市栄町25番1-601号 アステ川西6階', 'phone': '072-740-1115', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-217-A001', 'placeId': 'place:52945aa1816499e04704', 'condition': '', 'raw': ['アステ市民プラザ', '兵庫県川西市栄町25番1-601号 アステ川西6階', '電話：072-740-1115'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-217-B001 川西市 (B001)
+['【平日】9：00～17：30（年末年始を除く）', '【休日】9：00～17：30（年末年始を除く）']
+{'id': 'place:cafe30ec5ed8a1771ce8', 'name': '川西公民館(キセラ川西プラザ 福祉棟3階)', 'address': '兵庫県川西市火打1丁目12番16号', 'phone': '072-757-1920', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-217-B001', 'placeId': 'place:cafe30ec5ed8a1771ce8', 'condition': '平日', 'raw': ['【平日】川西公民館（キセラ川西プラザ 福祉棟3階）', '兵庫県川西市火打1丁目12番16号', '電話：072-757-1920', '【休日】アステ市民プラザ', '兵庫県川西市栄町25番1-601号 アステ川西6階'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:0c299f4b7c2b47e4eb76', 'name': 'アステ市民プラザ', 'address': '兵庫県川西市栄町25番1-601号 アステ川西6階', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-217-B001', 'placeId': 'place:0c299f4b7c2b47e4eb76', 'condition': '休日', 'raw': ['【平日】川西公民館（キセラ川西プラザ 福祉棟3階）', '兵庫県川西市火打1丁目12番16号', '電話：072-757-1920', '【休日】アステ市民プラザ', '兵庫県川西市栄町25番1-601号 アステ川西6階'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-217-C001 川西市 (C001)
+['【平日】9：00～17：00（年末年始を除く）', '【休日】9：00～17：00（年末年始を除く）']
+{'id': 'place:18b924bdc253e8565fd8', 'name': '川西市役所 上下水道局経営企画課 3階13番', 'address': '', 'phone': '072-740-1261', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-217-C001', 'placeId': 'place:18b924bdc253e8565fd8', 'condition': '平日', 'raw': ['【平日】川西市役所 上下水道局経営企画課 3階13番', '電話：072-740-1261', '【休日】アステ市民プラザ', '兵庫県川西市栄町25番1-601号', 'アステ川西6階', '電話：072-740-1115'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:52945aa1816499e04704', 'name': 'アステ市民プラザ', 'address': '兵庫県川西市栄町25番1-601号 アステ川西6階', 'phone': '072-740-1115', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-217-C001', 'placeId': 'place:52945aa1816499e04704', 'condition': '休日', 'raw': ['【平日】川西市役所 上下水道局経営企画課 3階13番', '電話：072-740-1261', '【休日】アステ市民プラザ', '兵庫県川西市栄町25番1-601号', 'アステ川西6階', '電話：072-740-1115'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-220-A001 加西市 (A001)
+['【平日】9：00～17：00', '【休日】10：00～21：00', 'ただし、年末年始（12/28～1/4）はお休みです']
+{'id': 'place:b6ae02f6302875f4ca7f', 'name': '加西市生活環境部 上下水道課', 'address': '兵庫県加西市北条町横尾1000', 'phone': '0790-42-8760', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-220-A001', 'placeId': 'place:b6ae02f6302875f4ca7f', 'condition': '平日', 'raw': ['【平日】加西市生活環境部 上下水道課', '兵庫県加西市北条町横尾1000', '電話：0790-42-8760', '【休日】加西市民会館', '兵庫県加西市北条町古坂1-1', '電話：0790-43-0160'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:b4ecd274f209e965389d', 'name': '加西市民会館', 'address': '兵庫県加西市北条町古坂1-1', 'phone': '0790-43-0160', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-220-A001', 'placeId': 'place:b4ecd274f209e965389d', 'condition': '休日', 'raw': ['【平日】加西市生活環境部 上下水道課', '兵庫県加西市北条町横尾1000', '電話：0790-42-8760', '【休日】加西市民会館', '兵庫県加西市北条町古坂1-1', '電話：0790-43-0160'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-220-B001 加西市 (B001)
+['9：00～17：00']
+{'id': 'place:ce0f4e60767ae89a271d', 'name': '北条町駅', 'address': '兵庫県加西市北条町北条駅前町28-2', 'phone': '0790-42-0036', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-220-B001', 'placeId': 'place:ce0f4e60767ae89a271d', 'condition': '', 'raw': ['北条町駅', '兵庫県加西市北条町北条駅前町28-2', '電話:0790-42-0036'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-221-A001 丹波篠山市
+['【平日】8:30～17:15', 'ただし、年末年始はお休みです', '【土日祝日】9:00～16:30', 'ただし、年末年始（12/25～1/1）はお休みです。', '※臨時休館等の場合がありますので、事前にご確認ください。']
+{'id': 'place:7a95a5f3a5fbd7c93b60', 'name': '丹波篠山市役所 上下水道部 経営企画課', 'address': '兵庫県丹波篠山市北新町41(本庁舎)', 'phone': '079-552-5094', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-221-A001', 'placeId': 'place:7a95a5f3a5fbd7c93b60', 'condition': '平日', 'raw': ['【平日】丹波篠山市役所 上下水道部 経営企画課', '兵庫県丹波篠山市北新町41（本庁舎）', '電話：079-552-5094', '【土日祝日】丹波篠山市立歴史美術館', '兵庫県丹波篠山市呉服町５３', '電話：079-552-0601'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:1a59dc2a1c6607a3c533', 'name': '丹波篠山市立歴史美術館', 'address': '兵庫県丹波篠山市呉服町53', 'phone': '079-552-0601', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-221-A001', 'placeId': 'place:1a59dc2a1c6607a3c533', 'condition': '土日祝日', 'raw': ['【平日】丹波篠山市役所 上下水道部 経営企画課', '兵庫県丹波篠山市北新町41（本庁舎）', '電話：079-552-5094', '【土日祝日】丹波篠山市立歴史美術館', '兵庫県丹波篠山市呉服町５３', '電話：079-552-0601'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-223-A001 丹波市
+['10：00〜16：00', 'ただし、火曜日（祝日の場合は、祝日明けの平日が定休日）と12/29～1/3はお休みです']
+{'id': 'place:d03efeeb5e2760ad5647', 'name': '丹波市観光協会 かいばら観光案内所', 'address': '兵庫県丹波市柏原町柏原3625', 'phone': '0795-73-0303', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-223-A001', 'placeId': 'place:d03efeeb5e2760ad5647', 'condition': '', 'raw': ['丹波市観光協会 かいばら観光案内所', '兵庫県丹波市柏原町柏原3625', '電話：0795-73-0303', '(問合せ先)', '丹波市役所上下水道部 下水道課', '電話：0795-74-0224'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-228-A001 加東市 (A001)
+['【加東市観光協会】8:30〜17:15', '【加東市商工観光課】8:30〜17:15']
+{'id': 'place:c5d10ff37b683a499161', 'name': '(一社)加東市観光協会', 'address': '加東市河高4028', 'phone': '0795-48-0995 (水曜定休)', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-228-A001', 'placeId': 'place:c5d10ff37b683a499161', 'condition': '', 'raw': ['（一社）加東市観光協会', '加東市河高4028', '電話:0795-48-0995 (水曜定休)', '【加東市観光協会の休業日（主に水曜）】', '加東市役所商工観光課', '加東市社50（加東市役所3階）', '電話:0795-48-0530'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:9f4b65105dd72b2a9f6e', 'name': '加東市役所商工観光課 加東市社50(加東市役所3階)', 'address': '加東市河高4028', 'phone': '0795-48-0530', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-228-A001', 'placeId': 'place:9f4b65105dd72b2a9f6e', 'condition': '加東市観光協会の休業日(主に水曜)', 'raw': ['（一社）加東市観光協会', '加東市河高4028', '電話:0795-48-0995 (水曜定休)', '【加東市観光協会の休業日（主に水曜）】', '加東市役所商工観光課', '加東市社50（加東市役所3階）', '電話:0795-48-0530'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+28-228-B001 加東市 (B001)
+['【月・火・木・金・土・日】8：30～17：00', 'ただし、年末年始はお休みです', '【水曜日】８：30～17：15', 'ただし、祝日および年末年始はお休みです']
+{'id': 'place:5f81bd4a275725429d9d', 'name': '加東市観光協会', 'address': '兵庫県加東市河高4028', 'phone': '0795-48-0995', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-228-B001', 'placeId': 'place:5f81bd4a275725429d9d', 'condition': '月・火・木・金・土・日', 'raw': ['【月・火・木・金・土・日】加東市観光協会', '兵庫県加東市河高４０２８', '電話：0795-48-0995', '【水曜日】加東市役所商工観光課', '兵庫県加東市社５０番地', '電話：0795-43-0530'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:9f39963fd788d29d7a00', 'name': '加東市役所商工観光課', 'address': '兵庫県加東市社50番地', 'phone': '0795-43-0530', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-228-B001', 'placeId': 'place:9f39963fd788d29d7a00', 'condition': '水曜日', 'raw': ['【月・火・木・金・土・日】加東市観光協会', '兵庫県加東市河高４０２８', '電話：0795-48-0995', '【水曜日】加東市役所商工観光課', '兵庫県加東市社５０番地', '電話：0795-43-0530'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-229-A001 たつの市 (A001)
+['9：00～16：45', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:a592e005b236f7218498', 'name': 'たつの観光案内所', 'address': '兵庫県たつの市龍野町中村301-2(JR姫新線本龍野駅内', 'phone': '0791-63-9955', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-229-A001', 'placeId': 'place:a592e005b236f7218498', 'condition': '', 'raw': ['たつの観光案内所', '兵庫県たつの市龍野町中村301-2（JR姫新線本龍野駅内', '電話：0791-63-9955', '（問い合わせ先）', 'たつの市上下水道部下水道管理課', '電話：0791-64-3168'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-229-B001 たつの市 (B001)
+['①10:00～17:00', 'ただし、月曜日(月曜日が祝日となった場合は翌日)、年末年始(12/29～1/3)はお休みです', '②8:30～17：15 ※平日のみ', 'ただし、土日・祝日及び年末年始(12/29～1/3)はお休みです']
+{'id': 'place:63a3b36410f47b4ebd8a', 'name': '醬油の郷 大正ロマン館', 'address': '兵庫県たつの市龍野町上霞城126', 'phone': '0791-72-8871', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-229-B001', 'placeId': 'place:63a3b36410f47b4ebd8a', 'condition': '①', 'raw': ['①醬油の郷 大正ロマン館', '兵庫県たつの市龍野町上霞城126', '電話:0791-72-8871', '②たつの市役所下水道管理課', '兵庫県たつの市龍野町富永1005-1', '電話:0791-64-3168', '（問合せ先）', 'たつの市上下水道部下水道管理課管理係', '電話:0791-64-3168'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:89b25c9cb369d4ce912e', 'name': 'たつの市役所下水道管理課', 'address': '兵庫県たつの市龍野町富永1005-1', 'phone': '0791-64-3168', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-229-B001', 'placeId': 'place:89b25c9cb369d4ce912e', 'condition': '②', 'raw': ['①醬油の郷 大正ロマン館', '兵庫県たつの市龍野町上霞城126', '電話:0791-72-8871', '②たつの市役所下水道管理課', '兵庫県たつの市龍野町富永1005-1', '電話:0791-64-3168', '（問合せ先）', 'たつの市上下水道部下水道管理課管理係', '電話:0791-64-3168'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-301-A001 猪名川町
+['【水曜日以外】9:00～17:00', '【水曜日】9:00～17:00', 'ただし、年末年始はお休みです。']
+{'id': 'place:267189d890c0c740b45b', 'name': '道の駅いながわ', 'address': '猪名川町万善字竹添70-1', 'phone': '072-767-8600', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-301-A001', 'placeId': 'place:267189d890c0c740b45b', 'condition': '水曜日以外', 'raw': ['【水曜日以外】道の駅いながわ', '猪名川町万善字竹添70-1', '電話：072-767-8600', '【水曜日】猪名川町役場まちづくり部上下水道課', '猪名川町上野字北畑１１-１', '電話：072-766-8716'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:de68c351a26249edcfe0', 'name': '猪名川町役場まちづくり部上下水道課', 'address': '猪名川町上野字北畑11-1', 'phone': '072-766-8716', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-301-A001', 'placeId': 'place:de68c351a26249edcfe0', 'condition': '水曜日', 'raw': ['【水曜日以外】道の駅いながわ', '猪名川町万善字竹添70-1', '電話：072-767-8600', '【水曜日】猪名川町役場まちづくり部上下水道課', '猪名川町上野字北畑１１-１', '電話：072-766-8716'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-381-A001 稲美町
+['8：30～17：15（平日のみ）']
+{'id': 'place:0df3699f1debe84ccd2a', 'name': '稲美町役場地域整備部水道課', 'address': '兵庫県加古郡稲美町国岡1-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-381-A001', 'placeId': 'place:0df3699f1debe84ccd2a', 'condition': '', 'raw': ['稲美町役場地域整備部水道課', '兵庫県加古郡稲美町国岡1-1', '(問い合わせ先）', '稲美町地域整備部水道課工務係', '電話：079-492-9145'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-382-A001 播磨町
+['【4月-9月】9:30～18:00', '【10月-3月】9:30～17:00', 'ただし、月曜日（祝日の場合はその翌平日）、年末年始（12月29日〜1月3日）はお休みです。※左記施設HP「開館日カレンダー」をご確認ください']
+{'id': 'place:ca76c3b83b941d5c6531', 'name': '播磨町郷土資料館', 'address': '兵庫県加古郡播磨町大中1丁目1番2号', 'phone': '079-435-5000', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-382-A001', 'placeId': 'place:ca76c3b83b941d5c6531', 'condition': '', 'raw': ['播磨町郷土資料館', '兵庫県加古郡播磨町大中１丁目１番２号', '電話：079-435-5000', '（問い合わせ先）', '播磨町上下水道グループ', '電話：079-435-2379'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-442-A001 市川町
+['9：00～17：00']
+{'id': 'place:4e667eb047afa3b26231', 'name': '市川町役場 下水道課', 'address': '兵庫県神崎郡市川町西川辺165-3', 'phone': '0790-26-1018', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-442-A001', 'placeId': 'place:4e667eb047afa3b26231', 'condition': '平日', 'raw': ['【平日】市川町役場 下水道課', '【休日】市川町役場 1階受付', '兵庫県神崎郡市川町西川辺165-3', '電話：', '【平日】0790-26-1018', '【休日】0790-26-1010'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:65aca194bc92a930cdd3', 'name': '市川町役場 1階受付', 'address': '兵庫県神崎郡市川町西川辺165-3', 'phone': '0790-26-1010', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-442-A001', 'placeId': 'place:65aca194bc92a930cdd3', 'condition': '休日', 'raw': ['【平日】市川町役場 下水道課', '【休日】市川町役場 1階受付', '兵庫県神崎郡市川町西川辺165-3', '電話：', '【平日】0790-26-1018', '【休日】0790-26-1010'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-443-A001 福崎町
+['8:30～17:15', 'ただし、土日祝日、年末年始は役場日直が対応します']
+{'id': 'place:f44bd7e08bcfe2fc763c', 'name': '福崎町役場上下水道課', 'address': '兵庫県神崎郡福崎町南田原3116番地の1', 'phone': '0790-22-0560(内線382)', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-443-A001', 'placeId': 'place:f44bd7e08bcfe2fc763c', 'condition': '', 'raw': ['福崎町役場上下水道課', '兵庫県神崎郡福崎町南田原3116番地の1', '電話：0790-22-0560（内線382）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-446-A001 神河町
+['9:00～17:00', 'ただし、水曜定休日・年末年始は休館です']
+{'id': 'place:16fb4e440571f625f427', 'name': 'カーミンの観光案内所', 'address': '兵庫県神崎郡神河町鍛治142番地の47', 'phone': '0790-34-1001', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-446-A001', 'placeId': 'place:16fb4e440571f625f427', 'condition': '', 'raw': ['カーミンの観光案内所', '兵庫県神崎郡神河町鍛治142番地の47', '電話:0790-34-1001', '（問合せ先）', '神河町役場 ひと・まち・みらい課', '電話:0790-34-0002'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+28-464-A001 太子町
+['【平日】8：30～17：15', '【休日】9:00～16：00']
+{'id': 'place:4272460332f7f8fa378e', 'name': '太子町役場産業経済課', 'address': '兵庫県揖保郡太子町鵤280-1', 'phone': '079ー277-1010', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-464-A001', 'placeId': 'place:4272460332f7f8fa378e', 'condition': '平日', 'raw': ['【平日】太子町役場産業経済課', '兵庫県揖保郡太子町鵤280-1', '電話:079ｰ277-1010', '【休日】太子町役場時間外窓口'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:8e1349abc3bc5df5fe28', 'name': '太子町役場時間外窓口', 'address': '兵庫県揖保郡太子町鵤280-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-464-A001', 'placeId': 'place:8e1349abc3bc5df5fe28', 'condition': '休日', 'raw': ['【平日】太子町役場産業経済課', '兵庫県揖保郡太子町鵤280-1', '電話:079ｰ277-1010', '【休日】太子町役場時間外窓口'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+28-481-A001 上郡町
+['①9:30〜16:30', 'ただし、毎週月曜日（祝日の場合は翌火曜日）及び年末年始はお休みです', 'また、臨時休館についてはHP等をご確認ください', '②上郡町観光案内所の休館日に配布します。', '※年末年始は、事前にお電話にてご連絡ください']
+{'id': 'place:b1bc9917afb0016088fe', 'name': '上郡町観光案内所', 'address': '兵庫県赤穂郡上郡町駅前222', 'phone': '0791-52-6959', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-481-A001', 'placeId': 'place:b1bc9917afb0016088fe', 'condition': '①', 'raw': ['①上郡町観光案内所', '兵庫県赤穂郡上郡町駅前222', '電話：0791-52-6959', '①の休館日は②で配布します', '②上郡町上下水道課（上郡町水道管理事務所内）', '兵庫県赤穂郡上郡町與井380', '電話：0791-52-1119'], 'periodRaw': '', 'alternativeRaw': '①上郡町観光案内所\n兵庫県赤穂郡上郡町駅前222\n電話：0791-52-6959\n①の休館日は②で配布します\n②上郡町上下水道課（上郡町水道管理事務所内）\n兵庫県赤穂郡上郡町與井380\n電話：0791-52-1119', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:d429237e18b13845834b', 'name': 'の休館日は②で配布します', 'address': '兵庫県赤穂郡上郡町與井380', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-481-A001', 'placeId': 'place:d429237e18b13845834b', 'condition': '①', 'raw': ['①上郡町観光案内所', '兵庫県赤穂郡上郡町駅前222', '電話：0791-52-6959', '①の休館日は②で配布します', '②上郡町上下水道課（上郡町水道管理事務所内）', '兵庫県赤穂郡上郡町與井380', '電話：0791-52-1119'], 'periodRaw': '', 'alternativeRaw': '①上郡町観光案内所\n兵庫県赤穂郡上郡町駅前222\n電話：0791-52-6959\n①の休館日は②で配布します\n②上郡町上下水道課（上郡町水道管理事務所内）\n兵庫県赤穂郡上郡町與井380\n電話：0791-52-1119', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+{'id': 'place:aa58d39ff7470acf878c', 'name': '上郡町上下水道課(上郡町水道管理事務所内)', 'address': '兵庫県赤穂郡上郡町與井380', 'phone': '0791-52-1119', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '28-481-A001', 'placeId': 'place:aa58d39ff7470acf878c', 'condition': '②', 'raw': ['①上郡町観光案内所', '兵庫県赤穂郡上郡町駅前222', '電話：0791-52-6959', '①の休館日は②で配布します', '②上郡町上下水道課（上郡町水道管理事務所内）', '兵庫県赤穂郡上郡町與井380', '電話：0791-52-1119'], 'periodRaw': '', 'alternativeRaw': '①上郡町観光案内所\n兵庫県赤穂郡上郡町駅前222\n電話：0791-52-6959\n①の休館日は②で配布します\n②上郡町上下水道課（上郡町水道管理事務所内）\n兵庫県赤穂郡上郡町與井380\n電話：0791-52-1119', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-201-A001 奈良市
+['9:00～17:00（年中無休）']
+{'id': 'place:00076aa000243841ea36', 'name': '奈良町南観光案内所', 'address': '奈良市井上町11番地', 'phone': '0742-94-3500', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-201-A001', 'placeId': 'place:00076aa000243841ea36', 'condition': '', 'raw': ['奈良町南観光案内所', '奈良市井上町１１番地', '電話：0742-94-3500', '（問い合わせ先）', '奈良市企業局 企業総務課', '電話：0742-34-5200'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-203-A001 大和郡山市
+['【平日】9：00～17：00', '【休日】9：00～17：00', 'ただし、年末年始（12/28～1/3）はお休みです']
+{'id': 'place:1f53e017c012bc0ed6af', 'name': '大和郡山市上下水道部 下水道推進課', 'address': '奈良県大和郡山市植槻町6-10(上下水道部庁舎2階)', 'phone': '0743-58-5600', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-203-A001', 'placeId': 'place:1f53e017c012bc0ed6af', 'condition': '平日', 'raw': ['【平日】大和郡山市上下水道部 下水道推進課', '奈良県大和郡山市植槻町6-10（上下水道部庁舎2階）', '電話：0743-58-5600', '【休日】一般社団法人 大和郡山市観光協会', '奈良県大和郡山市高田町92-16（市民交流館1階）', '（問い合わせ先）', '大和郡山市上下水道部 下水道推進課', '電話：0743-58-5600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:2e1afa71c908ef731e24', 'name': '一般社団法人 大和郡山市観光協会', 'address': '奈良県大和郡山市高田町92-16(市民交流館1階)', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-203-A001', 'placeId': 'place:2e1afa71c908ef731e24', 'condition': '休日', 'raw': ['【平日】大和郡山市上下水道部 下水道推進課', '奈良県大和郡山市植槻町6-10（上下水道部庁舎2階）', '電話：0743-58-5600', '【休日】一般社団法人 大和郡山市観光協会', '奈良県大和郡山市高田町92-16（市民交流館1階）', '（問い合わせ先）', '大和郡山市上下水道部 下水道推進課', '電話：0743-58-5600'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-204-A001 天理市
+['9：00～17：00', 'ただし、月曜日、祝日（月曜日が祝日の場合は翌日も休館）、年末年始（12月28日～翌年1月4日）', 'ゴールデンウィークは祝日も臨時開館します']
+{'id': 'place:bd50aa62d0cdf1746b04', 'name': '天理市立黒塚古墳展示館', 'address': '天理市柳本町1118番地2', 'phone': '0743-67-3210', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-204-A001', 'placeId': 'place:bd50aa62d0cdf1746b04', 'condition': '', 'raw': ['天理市立黒塚古墳展示館', '天理市柳本町1118番地2', '電話： 0743-67-3210'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-205-A001 橿原市 (A001)
+['9：00～16：30', 'ただし、年末年始（12/29～1/3）はお休みです']
+{'id': 'place:09d12f8315cc6ca090a4', 'name': '今井まちなみ交流センター「華甍」', 'address': '奈良県橿原市今井町2-3-5', 'phone': '0744-24-8719', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-205-A001', 'placeId': 'place:09d12f8315cc6ca090a4', 'condition': '', 'raw': ['今井まちなみ交流センター「華甍」', '奈良県橿原市今井町2-3-5', '電話：0744-24-8719'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-205-B001 橿原市 (B001)
+['9:00～16:30', 'ただし、毎週月曜日(月曜日が祝日の場合は、その翌平日)、年末年始（12/25～1/5）はお休みです']
+{'id': 'place:f93d37dd46d29cf43095', 'name': '橿原市藤原京資料室', 'address': '奈良県橿原市縄手町178-1', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-205-B001', 'placeId': 'place:f93d37dd46d29cf43095', 'condition': '', 'raw': ['橿原市藤原京資料室', '奈良県橿原市縄手町178-1'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-205-C001 橿原市 (C001)
+['9:00～17:00（12/31～1/3を除く）']
+{'id': 'place:aef2b45d74e197045af5', 'name': '橿原市観光交流センター「かしはらナビプラザ」1階', 'address': '奈良県橿原市内膳町1-6-8', 'phone': '0744-47-2270', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-205-C001', 'placeId': 'place:aef2b45d74e197045af5', 'condition': '', 'raw': ['橿原市観光交流センター「かしはらナビプラザ」1階', '奈良県橿原市内膳町1-6-8', '電話:0744-47-2270'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-209-A001 生駒市
+['9:00～18:00', '定休日・臨時休業等についてはこちらをご確認ください。']
+{'id': 'place:639ab6c72f8fcd731d94', 'name': '観光案内所(IKOBA)', 'address': '奈良県生駒市北新町10-36 ベルテラスいこま3階', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-209-A001', 'placeId': 'place:639ab6c72f8fcd731d94', 'condition': '', 'raw': ['観光案内所（IKOBA）', '奈良県生駒市北新町10-36', 'ベルテラスいこま3階', '（問い合わせ先）', '生駒市下水道課', '電話:0743-74-1111（内線3561）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-343-A001 三郷町
+['9:30～16:30', '休館日は月曜日（月曜が祝日の場合は翌日火曜日）です', '【休館日は下記の時間で配布】', '8:30～17:15', '※年末年始の配布は行いません']
+{'id': 'place:47c3135b0a3aad88bcce', 'name': '日本遺産龍田古道ビジターセンター インフォメーションカウンター', 'address': '奈良県生駒郡三郷町立野南3-11-35', 'phone': '0745-60-9057', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-343-A001', 'placeId': 'place:47c3135b0a3aad88bcce', 'condition': '', 'raw': ['日本遺産龍田古道ビジターセンター インフォメーションカウンター', '奈良県生駒郡三郷町立野南3-11-35', '電話:0745-60-9057', '【休館日は下記の場所で配布】', '三郷町下水道課（立野汚水中継ポンプ場2階）', '奈良県生駒郡三郷町立野南3-11-13', '電話:0745-73-0999'], 'periodRaw': '', 'alternativeRaw': '日本遺産龍田古道ビジターセンター インフォメーションカウンター\n奈良県生駒郡三郷町立野南3-11-35\n電話:0745-60-9057\n【休館日は下記の場所で配布】\n三郷町下水道課（立野汚水中継ポンプ場2階）\n奈良県生駒郡三郷町立野南3-11-13\n電話:0745-73-0999', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:6a897a8ec6265a54d22a', 'name': '三郷町下水道課(立野汚水中継ポンプ場2階)', 'address': '奈良県生駒郡三郷町立野南3-11-13', 'phone': '0745-73-0999', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-343-A001', 'placeId': 'place:6a897a8ec6265a54d22a', 'condition': '休館日は下記の場所で配布', 'raw': ['日本遺産龍田古道ビジターセンター インフォメーションカウンター', '奈良県生駒郡三郷町立野南3-11-35', '電話:0745-60-9057', '【休館日は下記の場所で配布】', '三郷町下水道課（立野汚水中継ポンプ場2階）', '奈良県生駒郡三郷町立野南3-11-13', '電話:0745-73-0999'], 'periodRaw': '', 'alternativeRaw': '日本遺産龍田古道ビジターセンター インフォメーションカウンター\n奈良県生駒郡三郷町立野南3-11-35\n電話:0745-60-9057\n【休館日は下記の場所で配布】\n三郷町下水道課（立野汚水中継ポンプ場2階）\n奈良県生駒郡三郷町立野南3-11-13\n電話:0745-73-0999', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-344-A001 斑鳩町
+['8：30～18：00（年中無休）']
+{'id': 'place:2d91b22c0ece2c3b3814', 'name': '法隆寺iセンター', 'address': '奈良県生駒郡斑鳩町法隆寺1-8-25', 'phone': '0745-74-6800', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-344-A001', 'placeId': 'place:2d91b22c0ece2c3b3814', 'condition': '', 'raw': ['法隆寺iセンター', '奈良県生駒郡斑鳩町法隆寺1-8-25', '電話：0745-74-6800'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-363-A001 田原本町
+['9：00～18：00（年中無休）']
+{'id': 'place:b26c4a7829f736426734', 'name': '道の駅レスティ唐古・鍵', 'address': '奈良県磯城郡田原本町大字唐古70-1', 'phone': '0744-33-9170', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-363-A001', 'placeId': 'place:b26c4a7829f736426734', 'condition': '', 'raw': ['道の駅レスティ唐古・鍵', '奈良県磯城郡田原本町大字唐古70-1', '電話：0744-33-9170', '（問い合わせ先）', '田原本町上下水道部 下水道課', '電話：0744-34-2076'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+29-441-A001 吉野町
+['9：00～16：00', 'ただし、年末年始はお休みです']
+{'id': 'place:5890eab6e8c133c75016', 'name': '吉野町観光案内所(近鉄吉野駅前)', 'address': '奈良県吉野郡吉野町吉野山41-3', 'phone': '0746-39-9237', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '29-441-A001', 'placeId': 'place:5890eab6e8c133c75016', 'condition': '', 'raw': ['吉野町観光案内所（近鉄吉野駅前）', '奈良県吉野郡吉野町吉野山41-3', '電話:0746-39-9237'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+30-201-A001 和歌山市
+['9：00～17：00', 'ただし、年末年始（12/29～12/31）はお休みです']
+{'id': 'place:e8f5928bb47e34e7e8d4', 'name': 'わかやま歴史館', 'address': '和歌山県和歌山市1-3(和歌山城)', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-201-A001', 'placeId': 'place:e8f5928bb47e34e7e8d4', 'condition': '', 'raw': ['わかやま歴史館', '和歌山県和歌山市1-3（和歌山城）', '（問い合わせ先）', '和歌山市役所 下水道企画課', '電話：073-435-1093', '（平日9:00〜17:00）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+30-203-A001 橋本市
+['9：00～17：00', 'ただし、毎週水曜日（祝日の場合はその翌日）、年末年始（6日間）はお休みです']
+{'id': 'place:f1a04ff552a8ea4cdfb8', 'name': 'はしもと広域観光案内所', 'address': '和歌山県橋本市古佐田1-5-9', 'phone': '0736-33-3552', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-203-A001', 'placeId': 'place:f1a04ff552a8ea4cdfb8', 'condition': '', 'raw': ['はしもと広域観光案内所', '和歌山県橋本市古佐田1-5-9', '電話：0736-33-3552'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+30-205-A001 御坊市
+['【平日】8：30～17：15', '【休日】8：30～17：15']
+{'id': 'place:c8c261ef28a3887401ad', 'name': '御坊市役所1階 みやこ姫ロビー', 'address': '和歌山県御坊市薗350番地2', 'phone': '0738-22-4111(代表)', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-205-A001', 'placeId': 'place:c8c261ef28a3887401ad', 'condition': '平日', 'raw': ['【平日】御坊市役所1階 みやこ姫ロビー', '和歌山県御坊市薗350番地2', '電話：0738-22-4111（代表）', '【休日】御坊市役所1階 夜間休日窓口', '（問い合わせ先）', '御坊市役所上下水道事務所', '和歌山県御坊市薗350番地2', '電話：0738-23-5591（直通）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+{'id': 'place:eb17399090b3ca34093b', 'name': '御坊市役所1階 夜間休日窓口', 'address': '和歌山県御坊市薗350番地2', 'phone': '', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-205-A001', 'placeId': 'place:eb17399090b3ca34093b', 'condition': '休日', 'raw': ['【平日】御坊市役所1階 みやこ姫ロビー', '和歌山県御坊市薗350番地2', '電話：0738-22-4111（代表）', '【休日】御坊市役所1階 夜間休日窓口', '（問い合わせ先）', '御坊市役所上下水道事務所', '和歌山県御坊市薗350番地2', '電話：0738-23-5591（直通）'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': True}
+
+30-209-A001 岩出市 (A001)
+['9:00～17:00', 'ただし、毎週木曜日（祝日の場合はその翌日）・年末年始（12/29～1/3）はお休みです']
+{'id': 'place:bdfebcf28c671b15f164', 'name': '岩出市観光案内所', 'address': '和歌山県岩出市清水386番地の11', 'phone': '0736-72-1801', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-209-A001', 'placeId': 'place:bdfebcf28c671b15f164', 'condition': '', 'raw': ['岩出市観光案内所', '和歌山県岩出市清水386番地の11', '電話:0736-72-1801', '（問合せ先）', '岩出市上下水道局上下水道業務課', '電話:0736-62-2141'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}
+
+30-366-A001 有田川町
+['8：00～17：00', 'ただし、年末年始はお休みです']
+{'id': 'place:9f51e4ef0b602c7f03c4', 'name': '有田川町観光案内所', 'address': '和歌山県有田郡有田川町明王寺37-1', 'phone': '0737-52-7345', 'coordinate': {'status': 'unconfirmed', 'source': '保存済み一覧', 'reason': '今回の座標取得対象外または住所なし', 'review': '未確認'}}
+{'status': 'unknown', 'review': 'needs-review', 'cardId': '30-366-A001', 'placeId': 'place:9f51e4ef0b602c7f03c4', 'condition': '', 'raw': ['有田川町観光案内所', '和歌山県有田郡有田川町明王寺37-1', '電話：0737-52-7345'], 'periodRaw': '', 'alternativeRaw': '', 'alternativeTo': None, 'interpretation': '条件は原文を参照。期間と代替先の構造化は未確認', 'addressBorrowed': False}

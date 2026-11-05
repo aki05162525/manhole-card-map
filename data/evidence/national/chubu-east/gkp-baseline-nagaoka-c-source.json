@@ -1,0 +1,11 @@
+{
+  "url": "https://www.gk-p.jp/mhcard/",
+  "snapshotPath": "data/evidence/national/chubu-east/gkp-baseline-nagaoka-c-row.html",
+  "sha256": "c3840aac8c109d5fce0d746056389247a1a29cb669a30e056a283f685dac989f",
+  "acquired": "2026-10-21",
+  "sourceSnapshot": "data/raw/gkp-list-20261021.html",
+  "sourceSHA256": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
+  "byteStart": 455217,
+  "byteEnd": 456391,
+  "provenance": "保存原本の当該trバイト列を無変換抽出。取得時刻は本担当では不明。現在配布の根拠ではなく旧施設の名称住所の根拠。"
+}

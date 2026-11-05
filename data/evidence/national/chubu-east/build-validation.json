@@ -1,0 +1,78 @@
+{
+  "validation-build": {
+    "command": "mise exec -- go run ./cmd/builddata -places data/work/national-input/places.json -place-fragments data/overrides/regions/chubu-east.json -as-of 2026-11-05 -out data/evidence/national/chubu-east/validation-build",
+    "exitCode": 0,
+    "cards": 1313,
+    "regionalRelations": 197,
+    "needsReview": [
+      {
+        "cardId": "15-208-D001",
+        "placeId": "place:2a3c4c27a70d89172634",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "17-384-A001",
+        "placeId": "place:d00e9800e202c1422c74",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "20-000-E001",
+        "placeId": "place:6aeff039f964168e7348",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "20-451-A001",
+        "placeId": "place:be985eaf098a9526b4f9",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      }
+    ]
+  },
+  "validation-build-current": {
+    "command": "mise exec -- go run ./cmd/builddata -places data/work/national-input/places.json -place-fragments data/overrides/regions/chubu-east.json -as-of 2026-11-05 -review-list data/evidence/national/chubu-east/gkp-current-supplied.html -out data/evidence/national/chubu-east/validation-build-current",
+    "exitCode": 0,
+    "cards": 1313,
+    "regionalRelations": 197,
+    "needsReview": [
+      {
+        "cardId": "15-202-C001",
+        "placeId": "facility:chubu-east-b7d939284218814b6bba",
+        "status": "unknown",
+        "interpretation": "原典の配布場所・時間・配布状況・リンクが変更されています。再確認が必要です"
+      },
+      {
+        "cardId": "15-208-D001",
+        "placeId": "place:2a3c4c27a70d89172634",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "15-213-B001",
+        "placeId": "facility:chubu-east-97553bd65da2ea0b1ed8",
+        "status": "unknown",
+        "interpretation": "原典の配布場所・時間・配布状況・リンクが変更されています。再確認が必要です"
+      },
+      {
+        "cardId": "17-384-A001",
+        "placeId": "place:d00e9800e202c1422c74",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "20-000-E001",
+        "placeId": "place:6aeff039f964168e7348",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      },
+      {
+        "cardId": "20-451-A001",
+        "placeId": "place:be985eaf098a9526b4f9",
+        "status": "unknown",
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認"
+      }
+    ]
+  }
+}

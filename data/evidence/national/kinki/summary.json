@@ -1,0 +1,21 @@
+{
+  "cards": 191,
+  "baselineRelations": 263,
+  "approvedFacilities": 231,
+  "approvedRelations": 256,
+  "locatedFacilities": 25,
+  "auditStates": {
+    "verified": 19,
+    "partial": 167,
+    "ended": 5
+  },
+  "relationStatuses": {
+    "active": 210,
+    "suspended": 30,
+    "ended": 10,
+    "unknown": 6
+  },
+  "excludedRelations": 5,
+  "proposalCards": 18,
+  "fetchedUrls": 341
+}

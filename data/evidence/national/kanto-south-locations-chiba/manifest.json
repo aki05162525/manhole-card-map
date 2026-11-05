@@ -1,0 +1,1077 @@
+[
+  {
+    "url": "https://www.pref.chiba.lg.jp/gesui/jigyou/150manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:54.510553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.chiba.lg.jp/gesui/jigyou/150manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/370e66742e4e51047358.html",
+    "sha256": "ccc6419264c453083e689c04656f3a8cbbcbfbb3f00eb2c9eccf141a9d7553ae",
+    "reusedFrom": "data/evidence/national/kanto-south/370e66742e4e51047358.html"
+  },
+  {
+    "url": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "fetchedAt": "2026-11-05T04:23:35.285093+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chiba.jp/kensetsu/gesuidokikaku/eigyo/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c6aca8b3332e789f1680.html",
+    "sha256": "0022bbdcc947d5ac025e47c452fab90029e07f396708282c9515034e16c35b4e",
+    "reusedFrom": "data/evidence/national/kanto-south/c6aca8b3332e789f1680.html"
+  },
+  {
+    "url": "https://www.city.choshi.chiba.jp/suidou/page180024.html",
+    "fetchedAt": "2026-11-05T04:23:38.511861+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.choshi.chiba.jp/suidou/page180024.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ddb8106bcd9c7c723198.html",
+    "sha256": "1115ee9013bc33b7b9e63ee42afbebe02dabb967c2b2be86d15ebb65b81c4256",
+    "reusedFrom": "data/evidence/national/kanto-south/ddb8106bcd9c7c723198.html"
+  },
+  {
+    "url": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+    "fetchedAt": "2026-11-05T04:22:54.633553+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/2993.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/da4c67b29edff5ad759b.html",
+    "sha256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+    "reusedFrom": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html"
+  },
+  {
+    "url": "https://www.city.funabashi.lg.jp/machi/gesui/003/p046506.html",
+    "fetchedAt": "2026-11-05T04:29:42.465111+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.funabashi.lg.jp/machi/gesui/003/p046506.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/8174bc5e8014aca63151.html",
+    "sha256": "430c93b78a0d267c6317451c4bcb641a936dbd7c4fb022ef30cf6c9f08e50b35",
+    "reusedFrom": "data/evidence/national/kanto-south/8174bc5e8014aca63151.html"
+  },
+  {
+    "url": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+    "fetchedAt": "2026-11-05T04:24:44.430722+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/2518a0dcf31a4eca1920.html",
+    "sha256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+    "reusedFrom": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html"
+  },
+  {
+    "url": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/5/1684.html",
+    "fetchedAt": "2026-11-05T04:24:15.271850+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kisarazu.lg.jp/soshiki/toshiseibi/shitasuidosuishinshitsu/5/1684.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/8c60199483d5dca53f2f.html",
+    "sha256": "474e7a231f8d2bf68f60fad789687443a4231889e33cd642ab283a66bf4fda28",
+    "reusedFrom": "data/evidence/national/kanto-south/8c60199483d5dca53f2f.html"
+  },
+  {
+    "url": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/matsudo_manhole_card.html",
+    "fetchedAt": "2026-11-05T04:24:19.328400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/matsudo_manhole_card.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/fafc715273a977af4ea6.html",
+    "sha256": "26b8ca98d5c9b69fb50f5cbe36e39ed745111e28fc56b1ab1d4dc8d0ea77b253",
+    "reusedFrom": "data/evidence/national/kanto-south/fafc715273a977af4ea6.html"
+  },
+  {
+    "url": "http://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/atarasiimanhorukado.html",
+    "fetchedAt": "2026-11-05T04:22:58.056682+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/kurashi/jyougesuidou/gesuidou/atarasiimanhorukado.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/4396f7c97a77fe6764e4.html",
+    "sha256": "f2c0e861c43ca38f9fd24de654ea2f12cebfe73a45facb8c2f9098f8212a8413",
+    "reusedFrom": "data/evidence/national/kanto-south/4396f7c97a77fe6764e4.html"
+  },
+  {
+    "url": "http://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "fetchedAt": "2026-11-05T04:22:58.274404+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/kurashi/kankyo/gesui/1018225.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f6783d9fc4d4b688344a.html",
+    "sha256": "eb7f2ded897f3abbac145b74baaa8fb7bfe0beb6482d75b4c4f39dcaf5be2a29",
+    "reusedFrom": "data/evidence/national/kanto-south/f6783d9fc4d4b688344a.html"
+  },
+  {
+    "url": "http://www.city.sakura.lg.jp/0000029624.html",
+    "fetchedAt": "2026-11-05T04:22:59.706057+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/12475.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/833c8a3c4daa60b13500.html",
+    "sha256": "2c5c0fac15189b517df4d77881a977197173f3f40f70a049cca6028221476058",
+    "reusedFrom": "data/evidence/national/kanto-south/833c8a3c4daa60b13500.html"
+  },
+  {
+    "url": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+    "fetchedAt": "2026-11-05T04:24:35.418860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/6741b23f53c864254716.html",
+    "sha256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+    "reusedFrom": "data/evidence/national/kanto-south/6741b23f53c864254716.html"
+  },
+  {
+    "url": "https://www.city.togane.chiba.jp/0000013032.html",
+    "fetchedAt": "2026-11-05T04:24:45.757104+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f5e135e5f53035cb9e61.html",
+    "sha256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+    "reusedFrom": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:28.275019+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/gesuido/manholecard/narashino_city_manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/362ccfc2c88ce7f336ff.html",
+    "sha256": "e37eeca4660347b0b9c3b29273e28f5192c2d553497fce83ac16caa00d876f34",
+    "reusedFrom": "data/evidence/national/kanto-south/362ccfc2c88ce7f336ff.html"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+    "fetchedAt": "2026-11-05T04:24:13.536343+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ef60a2706537908cb913.html",
+    "sha256": "19a1f8f5285a608b5bb98b1d58f8f9ec76fd29df8980655af234e3ef6689f82e",
+    "reusedFrom": "data/evidence/national/kanto-south/ef60a2706537908cb913.html"
+  },
+  {
+    "url": "https://www.city.nagareyama.chiba.jp/life/1001972/1002077/1020210.html",
+    "fetchedAt": "2026-11-05T04:24:22.870278+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagareyama.chiba.jp/life/1001972/1002077/1020210.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f314fdd9d92c58c0165a.html",
+    "sha256": "2945f1ebe3e29261d61b9dd4dc5cbe4c699fc810b883f8f0d4dbf0092224d9bc",
+    "reusedFrom": "data/evidence/national/kanto-south/f314fdd9d92c58c0165a.html"
+  },
+  {
+    "url": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "fetchedAt": "2026-11-05T04:22:49.374505+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/bda1203ac1e2f6dc8f96.html",
+    "sha256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978",
+    "reusedFrom": "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html"
+  },
+  {
+    "url": "http://www.city.abiko.chiba.jp/kurashi/suidou/josuidou/kurashi/manho-ruka-do.html",
+    "fetchedAt": "2026-11-05T04:22:55.236760+00:00",
+    "status": 200,
+    "finalUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/josuidou/kurashi/manho-ruka-do.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c20fcb1a35761a655d8b.html",
+    "sha256": "555498214c1eefcee8faa95eb433b730f57f1f789bbb91b87228fde224830bb3",
+    "reusedFrom": "data/evidence/national/kanto-south/c20fcb1a35761a655d8b.html"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/kurashi-tetsuzuki/gesuidou/oshirase/mhcard.html",
+    "fetchedAt": "2026-11-05T04:24:05.218494+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/kurashi-tetsuzuki/gesuidou/oshirase/mhcard.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/aa7891a08d8d0a475eb6.html",
+    "sha256": "ab50f295c06bb1572183201b1a24f9c37317bc37d5546e8d13ddf9bfc92a8777",
+    "reusedFrom": "data/evidence/national/kanto-south/aa7891a08d8d0a475eb6.html"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "fetchedAt": "2026-11-05T04:24:49.848837+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/todokede/machi/douro/1046287/1030971.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7ef9dd743444ec4fb475.html",
+    "sha256": "34d016ee01def56c0ca98b45d4128709b45a2e031f7da206a3835333af15516c",
+    "reusedFrom": "data/evidence/national/kanto-south/7ef9dd743444ec4fb475.html"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "fetchedAt": "2026-11-05T04:24:40.144515+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/sodegaura-mannho-ru.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/fe62d84da7ad4ab3c226.html",
+    "sha256": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+    "reusedFrom": "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html"
+  },
+  {
+    "url": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+    "fetchedAt": "2026-11-05T04:24:47.845865+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/86586396e1e141a287d4.html",
+    "sha256": "6ee0d392f9646996373aa2c0adf761db155b2f1653839038754fed943d73c70b",
+    "reusedFrom": "data/evidence/national/kanto-south/86586396e1e141a287d4.html"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+    "fetchedAt": "2026-11-05T04:24:39.620492+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/fe60704da9f4ed5fe95d.html",
+    "sha256": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+    "reusedFrom": "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html"
+  },
+  {
+    "url": "https://www.city.oamishirasato.lg.jp/0000013090.html",
+    "fetchedAt": "2026-11-05T04:24:31.499580+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oamishirasato.lg.jp/0000013090.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/226072b1ba2ea2bbb0b5.html",
+    "sha256": "18b82fef232316afff7526ae90ca0a56d8fa789184cc4eb5d19035c0bf9efdf6",
+    "reusedFrom": "data/evidence/national/kanto-south/226072b1ba2ea2bbb0b5.html"
+  },
+  {
+    "url": "https://www.town.shibayama.lg.jp/0000006287.html",
+    "fetchedAt": "2026-11-05T04:24:59.310965+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shibayama.lg.jp/0000006287.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/5c9f9d4985a747c0739c.html",
+    "sha256": "20baf01e2aa9f06b91f3974073d405ff66648e86134bf27154d345918df67ff8",
+    "reusedFrom": "data/evidence/national/kanto-south/5c9f9d4985a747c0739c.html"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/0000002173.html",
+    "fetchedAt": "2026-11-05T04:24:58.919226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/0000002173.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c68fdca91f7fe79d179f.html",
+    "sha256": "cff3e5daeb4ce4bd0c15a8eeedb0df49253bd6d2be2113e7e5100aedbed09399",
+    "reusedFrom": "data/evidence/national/kanto-south/c68fdca91f7fe79d179f.html"
+  },
+  {
+    "url": "https://www2.chiba-muse.or.jp/SCIENCE/access/",
+    "fetchedAt": "2026-11-05T04:43:46.506699+00:00",
+    "error": "HTTPSConnectionPool(host='www2.chiba-muse.or.jp', port=443): Max retries exceeded with url: /SCIENCE/access/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www2.chiba-muse.or.jp'. (_ssl.c:1032)\")))"
+  },
+  {
+    "url": "https://maruchiba.jp/barrierfree/spot/detail_10051.html",
+    "fetchedAt": "2026-11-05T04:43:47.717053+00:00",
+    "status": 200,
+    "finalUrl": "https://maruchiba.jp/barrierfree/spot/detail_10051.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/2f16ac00f38ef6af9379.html",
+    "sha256": "39afef0b400ae483eae05a1b446584bae6fd515b8c0d2e1266907411902d40cb"
+  },
+  {
+    "url": "http://www.chibacity-ta.or.jp/spots/ctic",
+    "fetchedAt": "2026-11-05T04:22:47.610001+00:00",
+    "status": 200,
+    "finalUrl": "http://www.chibacity-ta.or.jp/spots/ctic/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/5cbb0ed17c55a98ca66d.html",
+    "sha256": "1193bea9160013cce7b1a96606f0fe90c318ffa58381a4237286becc46805a30",
+    "reusedFrom": "data/evidence/national/kanto-south/5cbb0ed17c55a98ca66d.html"
+  },
+  {
+    "url": "https://www.chibacity-ta.or.jp/spots/mtic",
+    "fetchedAt": "2026-11-05T04:43:49.395291+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chibacity-ta.or.jp/spots/mtic/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7801c2f022daef706396.html",
+    "sha256": "f2f36a73d3b9a55e210b2da2cd1caba305b4d0bf90c6b86234945e738058b4ac"
+  },
+  {
+    "url": "https://sunsetbeachpark.jp/access/",
+    "fetchedAt": "2026-11-05T04:43:50.920429+00:00",
+    "status": 200,
+    "finalUrl": "https://sunsetbeachpark.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7bf32497b27f01a82fc0.html",
+    "sha256": "1ce9e85c150467657b2de35884fade99c3296b1d7e4ddf421dc8a156e7cd025a"
+  },
+  {
+    "url": "https://www.choshikanko.com/kankoDB/0109/",
+    "fetchedAt": "2026-11-05T04:43:52.810297+00:00",
+    "status": 200,
+    "finalUrl": "https://www.choshikanko.com/kankoDB/0109/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/1bcb250a77fa27d288e1.html",
+    "sha256": "41312f218ee3cc91d8f6b0bba66d7e4926d12997fd08305e5420725c281292b0"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/library/guide/1002.html",
+    "fetchedAt": "2026-11-05T04:24:02.462613+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/library/7444.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ceb5ef2cc115a78f7b0e.html",
+    "sha256": "a9d917a6a2a570ad5eb553712e6bb6e0712941dedc03de51a53c209f62ccc8f6",
+    "reusedFrom": "data/evidence/national/kanto-south/ceb5ef2cc115a78f7b0e.html"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/library/guide/1014.html",
+    "fetchedAt": "2026-11-05T04:24:07.349424+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/library/3129.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f446be271dcdc445f73f.html",
+    "sha256": "cf9cdd0d34c679b2e005d31c367c74e457ec09bfb1287f961fa61ae2e23e4bd2",
+    "reusedFrom": "data/evidence/national/kanto-south/f446be271dcdc445f73f.html"
+  },
+  {
+    "url": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
+    "fetchedAt": "2026-11-05T04:24:23.869154+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/shisetsu-guide/kaikan_hole/bunka-hole/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/a3602a25cae7778d7be6.html",
+    "sha256": "43e335ad2c672387590495f13b066a99b192e3ecf8478cc9ecc49b08b74db3d8",
+    "reusedFrom": "data/evidence/national/kanto-south/a3602a25cae7778d7be6.html"
+  },
+  {
+    "url": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/access.html",
+    "fetchedAt": "2026-11-05T04:43:54.631035+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/shisetsu/shiyakusho/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/1389fe3833c02045ad57.html",
+    "sha256": "5a457ce1aac3ffe3ff890de74febb35981726847c69619d49f9ddc3cd92428ba"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "fetchedAt": "2026-11-05T04:24:36.416969+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.narashino.lg.jp/soshiki/kankyoseisaku/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/2bff9f3010726a801591.html",
+    "sha256": "0bca2f3652486cd58d25351e75dd2c166869367139bf7f8aa59ca0ac12f7a7ff",
+    "reusedFrom": "data/evidence/national/kanto-south/2bff9f3010726a801591.html"
+  },
+  {
+    "url": "https://www.city.abiko.chiba.jp/event/shiseki_bunkazai/inoueke/index.html",
+    "fetchedAt": "2026-11-05T04:23:31.487963+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.abiko.chiba.jp/event/shiseki_bunkazai/inoueke/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7bb94ed548433285fe5a.html",
+    "sha256": "06b2e047cc078585e1d823cfc4e5bf4406c6c95167079dc498a78221ddfca659",
+    "reusedFrom": "data/evidence/national/kanto-south/7bb94ed548433285fe5a.html"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/sisetsu/gyousei-shisetsu/shiyakusyo/index.html",
+    "fetchedAt": "2026-11-05T04:43:56.072306+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/sisetsu/gyousei-shisetsu/shiyakusyo/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/b69c6dd3b2f2ce1915ff.html",
+    "sha256": "2c43d9c911776f1f6075a6f0721aeed40cf30fd50d518709fb229fa05d140f04"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/shisetsu/shikanren/shiyakusho/1005488.html",
+    "fetchedAt": "2026-11-05T04:43:57.336640+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/shisetsu/shikanren/shiyakusho/1005488.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/bb7a6698c08b1974e660.html",
+    "sha256": "5f3a4e05085d7adb0fc24123af5c40e34fec24563794c209492405b073839e3e"
+  },
+  {
+    "url": "https://www.city.urayasu.lg.jp/shisetsu/bunka/1005586.html",
+    "fetchedAt": "2026-11-05T04:43:58.986717+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.urayasu.lg.jp/shisetsu/bunka/1005586.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/171205dadf90dbbb2ccb.html",
+    "sha256": "d0da55ce4fc5d3fdb1917eb8d474c53780d8abf71f3a48c6f885b746fb59aa0c"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/promotion/siyakusho-access.html",
+    "fetchedAt": "2026-11-05T04:44:00.240703+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/soshiki/promotion/siyakusho-access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/6122bf45b4078b822147.html",
+    "sha256": "6c18613899ca3334ffa6130e0a64807e716c3b9096eac7590dc99165b0f3eca8"
+  },
+  {
+    "url": "https://www.city.yachimata.lg.jp/soshiki/6/55673.html",
+    "fetchedAt": "2026-11-05T04:44:01.636436+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yachimata.lg.jp/soshiki/6/55673.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/376a6ef2e57a052ce5f9.html",
+    "sha256": "b55a714e203e1487867ba11a459bda5e6ad6d4a7b743dab6478472ee13cd0baa"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/shisetsu/chosha/8201.html",
+    "fetchedAt": "2026-11-05T04:44:02.933500+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/shisetsu/chosha/8201.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/0334522cfc474c2c4265.html",
+    "sha256": "853dd142f0f9d9d536c7946ae075c46c4022ac962953a74f9824e1c6fa5dbe6c"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/cul02/1111000017.html",
+    "fetchedAt": "2026-11-05T04:23:54.000191+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/2304.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/cfa500565ca385c6424e.html",
+    "sha256": "941b1e8b8c67976196de2d15160a503adef591bbd58feda9abfe9b18f9eaebeb",
+    "reusedFrom": "data/evidence/national/kanto-south/cfa500565ca385c6424e.html"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/site/zoo/7829.html",
+    "fetchedAt": "2026-11-05T04:44:22.087048+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/zoo/7829.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/db1545098bfd31e07c8b.html",
+    "sha256": "82a3c19861dcd00ad7016f829ca94dde9ac6be15962047432a5ea1930a38a2db"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/site/zoo/6709.html",
+    "fetchedAt": "2026-11-05T04:44:23.444148+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/site/zoo/6709.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c0460dea841a452c5024.html",
+    "sha256": "665fae92b4b81fce2eac5111227bd29601f18c10d5d866091c99e47cd7fd2959"
+  },
+  {
+    "url": "https://www.city.funabashi.lg.jp/shisetsu/shiyakusho/shiyakusho/0001/index.html",
+    "fetchedAt": "2026-11-05T04:44:24.671829+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.funabashi.lg.jp/shisetsu/shiyakusho/shiyakusho/0001/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/307473f273fa3dccfc49.html",
+    "sha256": "8bfc4c284157e411fde478fdb44dfa2fd18bd7e0bd8166bb7c70ed1a2859d90d"
+  },
+  {
+    "url": "https://mitsui-shopping-park.com/lalat-tokyobay/access/",
+    "fetchedAt": "2026-11-05T04:44:25.897151+00:00",
+    "status": 200,
+    "finalUrl": "https://mitsui-shopping-park.com/lalat-tokyobay/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ac076d70ec15021a5c0e.html",
+    "sha256": "c0dc8cec3053b89934de784c4141a6f95c4b63e33f4af9120e167f517f6c61c9"
+  },
+  {
+    "url": "https://tateyamacity.com/",
+    "fetchedAt": "2026-11-05T04:23:26.828302+00:00",
+    "status": 200,
+    "finalUrl": "https://tateyamacity.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/e547328c6185b1a8890b.html",
+    "sha256": "a10fcf25603d59efed753045be79ba0cf99ecf7d05cff874d7d34d71a04c7b9a",
+    "reusedFrom": "data/evidence/national/kanto-south/e547328c6185b1a8890b.html"
+  },
+  {
+    "url": "https://www.city.matsudo.chiba.jp/matumado/h29/kankoannaijo.html",
+    "fetchedAt": "2026-11-05T04:44:27.145892+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsudo.chiba.jp/matumado/h29/kankoannaijo.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/319aa83476e35550ef27.html",
+    "sha256": "a63d20a7eeddd4bca39c8616fe0b174b667fb4dc15fcbe0606d1db4b173085ea"
+  },
+  {
+    "url": "https://www.matsudo-kankou.jp/",
+    "fetchedAt": "2026-11-05T04:24:53.304333+00:00",
+    "status": 200,
+    "finalUrl": "https://www.matsudo-kankou.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/4e01e28e7812754b2315.html",
+    "sha256": "ac4094c4b22aa26f45870ad19ed518dbd562c8712e3e435290972799a59e1cee",
+    "reusedFrom": "data/evidence/national/kanto-south/4e01e28e7812754b2315.html"
+  },
+  {
+    "url": "https://www.city.noda.chiba.jp/kanko/1021220/1021276/1021279.html",
+    "fetchedAt": "2026-11-05T04:44:28.429479+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.noda.chiba.jp/kanko/1021220/1021276/1021279.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/d3d0d2c80cf1af54f389.html",
+    "sha256": "3fc96771b18bbcdf010d408434478ca4bc1d2b84ac654b66f9e25311b8d6a379"
+  },
+  {
+    "url": "https://www.city.sakura.lg.jp/section/museum/access.html",
+    "fetchedAt": "2026-11-05T04:44:29.811503+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/section/museum/access.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ee6201aa3aab98fa4cc7.html",
+    "sha256": "1967e281dd6b827633adbc2ead1360dff4874cb17a24fd66350bebd1ad9c9cf6"
+  },
+  {
+    "url": "https://www.city.sakura.lg.jp/tourism/2/15396.html",
+    "fetchedAt": "2026-11-05T04:44:31.182639+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sakura.lg.jp/tourism/2/15396.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/699855efd31f789ca30a.html",
+    "sha256": "d6e21e3d2a04e26f747c877c682b40f9dcb7b0abbfe59813257bf42205416691"
+  },
+  {
+    "url": "https://minorinosato-togane.com/accessmap",
+    "fetchedAt": "2026-11-05T04:44:32.591661+00:00",
+    "status": 200,
+    "finalUrl": "https://minorinosato-togane.com/accessmap",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f48732fecf45d00d57d0.html",
+    "sha256": "c7ddde6642e797bd5d0fdda606f5943862365bdfc4ae7ceaeb049ad053573e83"
+  },
+  {
+    "url": "https://maruchiba.jp/corporate/material/detail_10257.html",
+    "fetchedAt": "2026-11-05T04:44:36.061885+00:00",
+    "status": 200,
+    "finalUrl": "https://maruchiba.jp/corporate/material/detail_10257.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/63dac73fb5a9af6632d4.html",
+    "sha256": "840fce69ad0f30c7264f7250a52860e9d45e6bad99650b62f856a0d6113f4a69"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/about/kigyoukyokuaccess.html",
+    "fetchedAt": "2026-11-05T04:44:38.519225+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/about/kigyoukyokuaccess.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ff73eab5f49d4f49b38b.html",
+    "sha256": "82f30943a5067cb4ec6e6ccece0d699cefeb2381dd7f8716ad0190294efe0893"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/soshiki/kankyohozen/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "fetchedAt": "2026-11-05T04:44:59.015220+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/soshiki/kankyohozen/gyomu/shisetu/koenshiseki/yatuhigatakoen.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/01f1c8789653400b1161.html",
+    "sha256": "8fda7640d6c9a17d727aa5e3baff6361165d4c9214a9cdbe7a9ae9fb4e8b197f"
+  },
+  {
+    "url": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/1893",
+    "fetchedAt": "2026-11-05T04:45:00.318531+00:00",
+    "status": 200,
+    "finalUrl": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/1893",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/03a94a42f0cdb0fbd931.html",
+    "sha256": "2f3b3784a7ebf8ab82fc0f5e0977091512104db9d27259b488ed3f24a2ab66ac"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/somu/kashiwa_suido/suidobu/gaiyo/chosha.html",
+    "fetchedAt": "2026-11-05T04:45:01.634348+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/somu/kashiwa_suido/suidobu/gaiyo/chosha.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/30740701dd9cfd8e7e4a.html",
+    "sha256": "b7d6e528c4163517a1364750f90c99a12908484050667d0cd81b482fc7cfbf46"
+  },
+  {
+    "url": "https://www.kankou-kashiwa.jp/",
+    "fetchedAt": "2026-11-05T04:45:02.885880+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-kashiwa.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7b2c96bb49b62c75d660.html",
+    "sha256": "2eb906ca69cb673e8b058f69dc2f50e0725a86fa5fe2480ac5576dbc3b52c4c4"
+  },
+  {
+    "url": "https://www.city.nagareyama.chiba.jp/institution/1028492/1021196.html",
+    "fetchedAt": "2026-11-05T04:45:04.140592+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nagareyama.chiba.jp/institution/1028492/1021196.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c75b4d175ca386825c8d.html",
+    "sha256": "d18202dc9b9ae1572f713ab3939e6647de495d027fcd17a6439562c9b76a1eb8"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/sisetsu/kyoudoshiryokan/index.html",
+    "fetchedAt": "2026-11-05T04:45:05.503357+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/sisetsu/kyoudoshiryokan/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/6a5aa8607ba4827a4f98.html",
+    "sha256": "7bfb8c2fe78e5c2bc814019edb12a5d66e3c935912ace01f405a9438e1378cf5"
+  },
+  {
+    "url": "https://www.fuwarishibayama.com/",
+    "fetchedAt": "2026-11-05T04:45:06.975862+00:00",
+    "status": 200,
+    "finalUrl": "https://www.fuwarishibayama.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7c9c6fcd03a5d4ecc5f5.html",
+    "sha256": "b5acff543c89e3bb5943f8f070b4cce33a167f57e6a7eb9bc4472d6a0e7d3a59"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/0000000397.html",
+    "fetchedAt": "2026-11-05T04:45:11.323239+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/0000000397.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/b19a49055d161befffd1.html",
+    "sha256": "c9037185c9d5f8a5627e2c71b707bfbb881aa8ad125bcddb965bec4a1f3c2a66"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/category/3-5-0-0-0-0-0-0-0-0.html",
+    "fetchedAt": "2026-11-05T04:45:12.569877+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/category/3-5-0-0-0-0-0-0-0-0.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/977bde0e1016de1ac5eb.html",
+    "sha256": "09e25fd432145208a32c0394e02d2d47c6aa274239fe0be50fa80c0981753222"
+  },
+  {
+    "url": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/2404",
+    "fetchedAt": "2026-11-05T04:45:13.843834+00:00",
+    "status": 200,
+    "finalUrl": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/2404",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/026bccfc2e7f03c49aa4.html",
+    "sha256": "f4949c82ce9144f2716b939474a141c9106cc5f775c52eb9d9f1f103c6e62041"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/0000001539.html",
+    "fetchedAt": "2026-11-05T04:45:15.136119+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/0000001539.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/29d162fd484dee1a0f1a.html",
+    "sha256": "fc024ab65636f483de2cc691eaefeccc9cd388b3166ae59cf01c89eb826ba6fa"
+  },
+  {
+    "url": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/4088",
+    "fetchedAt": "2026-11-05T04:45:43.343588+00:00",
+    "status": 200,
+    "finalUrl": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/4088",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7b5736e658b4b15d652c.html",
+    "sha256": "ea4044bfacc3fe829211227ebec03a58979966d571773c122aae114b185b3473"
+  },
+  {
+    "url": "https://www.matsudo-kankou.jp/access/",
+    "fetchedAt": "2026-11-05T04:45:44.764789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.matsudo-kankou.jp/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/75a3f7bb4f27a66a8b45.html",
+    "sha256": "cba34b69563cd3d59e95bb5369bbe967c9ac0c4d9aff0e609f693ba362d666de"
+  },
+  {
+    "url": "https://www.abikoinfo.jp/",
+    "fetchedAt": "2026-11-05T04:23:29.507027+00:00",
+    "status": 200,
+    "finalUrl": "https://www.abikoinfo.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/6e8f1f9d1c86a40df1ca.html",
+    "sha256": "bd46596762a9c0b911bd5be2253cb09a1ec8b8a51de9e980f0422bee821c4086",
+    "reusedFrom": "data/evidence/national/kanto-south/6e8f1f9d1c86a40df1ca.html"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/soshiki/gesui/gesuitaisakuka-jimusitu-shuumatushorijyo.html",
+    "fetchedAt": "2026-11-05T04:45:47.062749+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/soshiki/gesui/gesuitaisakuka-jimusitu-shuumatushorijyo.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/5486dc0070744f38dcbc.html",
+    "sha256": "4cb69881a51cf73270f516b5c01c1fe73387e22bdfdc6666002a72bcdea4bdb7"
+  },
+  {
+    "url": "https://www.city.oamishirasato.lg.jp/0000005447.html",
+    "fetchedAt": "2026-11-05T04:24:27.275558+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.oamishirasato.lg.jp/0000005447.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/cb2be5203aaa3ecd835e.html",
+    "sha256": "461473acb1072b0e69f047626a37b6c5a9c82773286f6854d322bba55cf02487",
+    "reusedFrom": "data/evidence/national/kanto-south/cb2be5203aaa3ecd835e.html"
+  },
+  {
+    "url": "https://www.town.shibayama.lg.jp/0000001426.html",
+    "fetchedAt": "2026-11-05T04:45:48.458862+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shibayama.lg.jp/0000001426.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/dd981ff912a8f0ffee07.html",
+    "sha256": "c36f488e3fe373cd11e9139fe1656245669de7e86a53936f531faf3b04211b38"
+  },
+  {
+    "url": "https://www.fuwarishibayama.com/access/index.html",
+    "fetchedAt": "2026-11-05T04:45:49.926452+00:00",
+    "status": 200,
+    "finalUrl": "https://www.fuwarishibayama.com/access/index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/aae02d8990a3046a60a4.html",
+    "sha256": "1190065fc582279f87b0b3d43a94888105bd24bb5e70629090b2e9d8ac9803ef"
+  },
+  {
+    "url": "http://www.chosei-bunkahall.jp/",
+    "fetchedAt": "2026-11-05T04:45:52.208270+00:00",
+    "status": 200,
+    "finalUrl": "http://www.chosei-bunkahall.jp/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/191e9ce32be5785b7277.html",
+    "sha256": "98d36f8fd375618f8fe4718324eb367b1f62ed340d266533a46677bda536c85d"
+  },
+  {
+    "url": "https://chosei-koryu.com/",
+    "fetchedAt": "2026-11-05T04:23:14.515617+00:00",
+    "status": 200,
+    "finalUrl": "https://chosei-koryu.com/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/5d5a20c70c52df990bbc.html",
+    "sha256": "8cb6f9a17cf7f8e1b7e34b68861598d367c7fad9f511c482db9c057ca4c2407e",
+    "reusedFrom": "data/evidence/national/kanto-south/5d5a20c70c52df990bbc.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.7235212687558!2d140.317931963882!3d35.66599299868979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602293005fc2d1b5%3A0x59ae77dd939381bf!2z5YWr6KGX5biC56ysM-W6geiIjg!5e0!3m2!1sja!2sjp!4v1749012441184!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:45:53.591375+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.7235212687558!2d140.317931963882!3d35.66599299868979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602293005fc2d1b5%3A0x59ae77dd939381bf!2z5YWr6KGX5biC56ysM-W6geiIjg!5e0!3m2!1sja!2sjp!4v1749012441184!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/5ad86005b9d53e0cd6eb.html",
+    "sha256": "be3e44aa535b2553c3b508919a010bf9fe7a995cf44c48e40e00b804cbbf8d76",
+    "embeddedBy": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12989.088560650756!2d140.320346!3d35.522272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022bfc68d55ff39%3A0x31dcd3593fb78257!2z5aSn57ay55m96YeM5biCIOS4reWkruWFrOawkemkqA!5e0!3m2!1sja!2sjp!4v1688967404219!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:45:54.931698+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12989.088560650756!2d140.320346!3d35.522272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022bfc68d55ff39%3A0x31dcd3593fb78257!2z5aSn57ay55m96YeM5biCIOS4reWkruWFrOawkemkqA!5e0!3m2!1sja!2sjp!4v1688967404219!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/72af54be643f0fb10971.html",
+    "sha256": "2fb4422e19c0593190f9b72e7f1a943a34d42a99772276125de084e7d94e0a10",
+    "embeddedBy": "https://www.city.oamishirasato.lg.jp/0000013090.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.605345508632!2d140.1145827!3d35.6128005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602284b090523721%3A0x7a4667f2a38338df!2z5Y2D6JGJ5biC6Kaz5YWJ5oOF5aCx44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1748568564253!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:45:56.271281+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.605345508632!2d140.1145827!3d35.6128005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602284b090523721%3A0x7a4667f2a38338df!2z5Y2D6JGJ5biC6Kaz5YWJ5oOF5aCx44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1748568564253!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/4a258e951ab371be7812.html",
+    "sha256": "d3a2a68566f81b2c93c0695ef3a9cf057f6ea240a8bbfa16c8da37cd9fe29366",
+    "embeddedBy": "http://www.chibacity-ta.or.jp/spots/ctic"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.15636801967!2d140.0413447!3d35.6485189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022822087f48295%3A0x59f99669ee113537!2z5Y2D6JGJ5biC5bmV5by16Kaz5YWJ5oOF5aCx44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1748567572435!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:45:57.593306+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.15636801967!2d140.0413447!3d35.6485189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022822087f48295%3A0x59f99669ee113537!2z5Y2D6JGJ5biC5bmV5by16Kaz5YWJ5oOF5aCx44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1748567572435!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/11afd6ff7acbcb5aad57.html",
+    "sha256": "f8ba8f94521af82a4b6d8e76999cb5fc61309e1c0548052e2766393d95f63aea",
+    "embeddedBy": "https://www.chibacity-ta.or.jp/spots/mtic"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6486.827504739139!2d140.0542703935791!3d35.6175252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228304e34bb20f%3A0xb5b7dd81be496786!2z56iy5q-b5rW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1773884747526!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:45:58.937946+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6486.827504739139!2d140.0542703935791!3d35.6175252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228304e34bb20f%3A0xb5b7dd81be496786!2z56iy5q-b5rW35rWc5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1773884747526!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/d4ec2bc6c14333e7d801.html",
+    "sha256": "c8daecd30991fda3a11b0eef8662f615c65338cf91d43aaffde7466ed62f1f34",
+    "embeddedBy": "https://sunsetbeachpark.jp/access/"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12962.58491087667!2d139.916371!3d35.685712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601887420889873b%3A0x830d2fd72da001c8!2z5biC5bed5biCIOihjOW-s-aUr-aJgA!5e0!3m2!1sja!2sjp!4v1765862334925!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:00.312465+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12962.58491087667!2d139.916371!3d35.685712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601887420889873b%3A0x830d2fd72da001c8!2z5biC5bed5biCIOihjOW-s-aUr-aJgA!5e0!3m2!1sja!2sjp!4v1765862334925!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/acde136f8eb3e20ee7cc.html",
+    "sha256": "88626540a65e3f4043bcaa863dbc9942a74a7c12b691e275044e39eef79dda4f",
+    "embeddedBy": "https://www.city.ichikawa.lg.jp/library/guide/1002.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3239.437836475523!2d139.9329956970082!3d35.71544915591734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018872a1c9e27e9%3A0xbaa713fe806a925b!2z44CSMjcyLTAwMTUg5Y2D6JGJ55yM5biC5bed5biC6ay86auY77yR5LiB55uu77yR4oiS77yUIOW4guW3neW4gueUn-a2r-Wtpue_kuOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1764845041219!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:01.672450+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3239.437836475523!2d139.9329956970082!3d35.71544915591734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018872a1c9e27e9%3A0xbaa713fe806a925b!2z44CSMjcyLTAwMTUg5Y2D6JGJ55yM5biC5bed5biC6ay86auY77yR5LiB55uu77yR4oiS77yUIOW4guW3neW4gueUn-a2r-Wtpue_kuOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1764845041219!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/de3531f92621e548d082.html",
+    "sha256": "810faa5bcb78b601418d2a909cf5ffb474c64ceb68a369796ac546543364e8e3",
+    "embeddedBy": "https://www.city.ichikawa.lg.jp/library/guide/1014.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4583673429697!2d140.31551797578706!3d35.665714072592266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60229292b23d53f7%3A0x4ea87919cb265a68!2z5YWr6KGX5biC5b255omA!5e0!3m2!1sja!2sjp!4v1753409296157!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:03.113815+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4583673429697!2d140.31551797578706!3d35.665714072592266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60229292b23d53f7%3A0x4ea87919cb265a68!2z5YWr6KGX5biC5b255omA!5e0!3m2!1sja!2sjp!4v1753409296157!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/11cf56dd26529e551080.html",
+    "sha256": "3a09ecc6580686db107a7217e5c45aedd340909e21d276e1a3401fb80ecadd52",
+    "embeddedBy": "https://www.city.yachimata.lg.jp/soshiki/6/55673.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12963.268377294587!2d139.9849058141466!3d35.68150542995849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60187fa98236f113%3A0x54a1933c4346b141!2z44KJ44KJ44OG44Op44K5VE9LWU8tQkFZ!5e0!3m2!1sja!2sjp!4v1701137579388!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:04.534509+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12963.268377294587!2d139.9849058141466!3d35.68150542995849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60187fa98236f113%3A0x54a1933c4346b141!2z44KJ44KJ44OG44Op44K5VE9LWU8tQkFZ!5e0!3m2!1sja!2sjp!4v1701137579388!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/0963deb65f3da353fc96.html",
+    "sha256": "251e3b20f3d1bb7d500b64f9a314607d64020970dad232bd8459c092dd7e915c",
+    "embeddedBy": "https://mitsui-shopping-park.com/lalat-tokyobay/access/"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.2856149282375!2d140.22748015039943!3d35.71919363540005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228ed3f7da1df7%3A0xb47f85f1b07d1b93!2z44CSMjg1LTAwMjMg5Y2D6JGJ55yM5L2Q5YCJ5biC5paw55S677yS77yR77yQIOW4gueri-e-juihk-mkqA!5e0!3m2!1sja!2sjp!4v1561891820692!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:06.032549+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.2856149282375!2d140.22748015039943!3d35.71919363540005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60228ed3f7da1df7%3A0xb47f85f1b07d1b93!2z44CSMjg1LTAwMjMg5Y2D6JGJ55yM5L2Q5YCJ5biC5paw55S677yS77yR77yQIOW4gueri-e-juihk-mkqA!5e0!3m2!1sja!2sjp!4v1561891820692!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/d9a9eca4f57ded3a96e1.html",
+    "sha256": "bfb0ce6bfabb1cb4be319598a7bd91b3c10dfe00fb3a0721b3853688b18adcab",
+    "embeddedBy": "https://www.city.sakura.lg.jp/section/museum/access.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30937.71565479243!2d140.34029865526517!3d35.40706556284049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022c7fbf2eadd95%3A0x7ded9060ea8cae0b!2z5Y2D6JGJ55yM6ZW355Sf6YOh6ZW355Sf5p2R!5e0!3m2!1sja!2sjp!4v1484271129442",
+    "fetchedAt": "2026-11-05T04:46:07.444742+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30937.71565479243!2d140.34029865526517!3d35.40706556284049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022c7fbf2eadd95%3A0x7ded9060ea8cae0b!2z5Y2D6JGJ55yM6ZW355Sf6YOh6ZW355Sf5p2R!5e0!3m2!1sja!2sjp!4v1484271129442",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/4eec260267e268c89edc.html",
+    "sha256": "17bb45034656a281164d2ffe021ca197f42f5d028f13980c4ea10ea06c277704",
+    "embeddedBy": "https://www.vill.chosei.chiba.jp/0000000397.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.2719643140504!2d140.31815731460034!3d35.52227634628183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022bfc68d55ff39%3A0x31dcd3593fb78257!2z5aSn57ay55m96YeM5biCIOS4reWkruWFrOawkemkqA!5e0!3m2!1sja!2sjp!4v1669973407984!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:08.881507+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.2719643140504!2d140.31815731460034!3d35.52227634628183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022bfc68d55ff39%3A0x31dcd3593fb78257!2z5aSn57ay55m96YeM5biCIOS4reWkruWFrOawkemkqA!5e0!3m2!1sja!2sjp!4v1669973407984!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/40766a219f6cbcc6c844.html",
+    "sha256": "0bbc0a37f784fbf9d05833d72ff4452517e4f4f3c32644a511e7b5be35f028dd",
+    "embeddedBy": "https://www.city.oamishirasato.lg.jp/0000005447.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207423.99362230717!2d140.35785583115117!3d35.677004446697666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022edc8c09fcb43%3A0xa372c4c20ccdaf24!2z6Iqd5bGx55S65b255aC0!5e0!3m2!1sja!2sjp!4v1605251584566!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:10.211054+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207423.99362230717!2d140.35785583115117!3d35.677004446697666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022edc8c09fcb43%3A0xa372c4c20ccdaf24!2z6Iqd5bGx55S65b255aC0!5e0!3m2!1sja!2sjp!4v1605251584566!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/d4b27c95b3b9a3275ff9.html",
+    "sha256": "853363700bceae96d58141d79c1114c928cebb24327159934c49b9ece427ef9d",
+    "embeddedBy": "https://www.town.shibayama.lg.jp/0000001426.html"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13008.069893225069!2d140.34372502216434!3d35.40481743116452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022c7ff3cac30d9%3A0x2053e4d0863d7517!2z6ZW355Sf5p2R5paH5YyW5Lya6aSo!5e0!3m2!1sja!2sjp!4v1662973493138!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:11.549795+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13008.069893225069!2d140.34372502216434!3d35.40481743116452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022c7ff3cac30d9%3A0x2053e4d0863d7517!2z6ZW355Sf5p2R5paH5YyW5Lya6aSo!5e0!3m2!1sja!2sjp!4v1662973493138!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7bb307db5c85c0e21325.html",
+    "sha256": "2dddc32dd8573d26dec0edef7913678f3890ca33127a76517c351c3ea4221d1a",
+    "embeddedBy": "http://www.chosei-bunkahall.jp/"
+  },
+  {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1933.6445153013071!2d140.34325072842609!3d35.405507908644964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b99c9692e1ed%3A0x92c9c10a843c6193!2z6ZW355Sf5p2R5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1636338021955!5m2!1sja!2sjp",
+    "fetchedAt": "2026-11-05T04:46:12.914121+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1933.6445153013071!2d140.34325072842609!3d35.405507908644964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6022b99c9692e1ed%3A0x92c9c10a843c6193!2z6ZW355Sf5p2R5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1636338021955!5m2!1sja!2sjp",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/ea21c3c31537aa61c449.html",
+    "sha256": "dcaa2d1da8d16e5904dd5caf4dea3ea266bcfe976b82c9e2a62d5802e8eaf71e",
+    "embeddedBy": "https://chosei-koryu.com/"
+  },
+  {
+    "url": "https://www.city.funabashi.lg.jp/shisetsu/shiyakusho/shiyakusho/0001/0001/p011000.html",
+    "fetchedAt": "2026-11-05T04:46:45.329528+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.funabashi.lg.jp/shisetsu/shiyakusho/shiyakusho/0001/0001/p011000.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/82245feb0aa86f1bf481.html",
+    "sha256": "9051165a7546e71dfee2f3385bf594fa4ac13d8d138ffb3713e4bb8260fb4018"
+  },
+  {
+    "url": "https://maruchiba.jp/spot/detail_10427.html",
+    "fetchedAt": "2026-11-05T04:46:46.794778+00:00",
+    "status": 200,
+    "finalUrl": "https://maruchiba.jp/spot/detail_10427.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/7a78f14bf5f608c0e655.html",
+    "sha256": "a4d6fb60368c4617c8e23648a44cf3d83bd8e529564a229aa204c668b94f2b80"
+  },
+  {
+    "url": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/1658",
+    "fetchedAt": "2026-11-05T04:46:48.211899+00:00",
+    "status": 200,
+    "finalUrl": "https://wwwp.pref.chiba.lg.jp/pbbfmap/facility/1658",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/fc7ee24c62cd7b180271.html",
+    "sha256": "da1208bb5d3ba95155fde883b54632dc9f5472744c6c4b5e38ae7f8706bcae4e"
+  },
+  {
+    "url": "https://www.chiba-muse.or.jp/SEKIYADO/",
+    "fetchedAt": "2026-11-05T04:46:49.699987+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chiba-muse.or.jp/SEKIYADO/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/feb3828b849be66d5a88.html",
+    "sha256": "bbbc86b9c73004e711b5579f50a5302ff5afa3e211d1e364902b2e1f158b88d3"
+  },
+  {
+    "url": "https://www.city.abiko.chiba.jp/kouko/siteibunkazai/inoueke.html",
+    "fetchedAt": "2026-11-05T04:46:50.936098+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.abiko.chiba.jp/kouko/siteibunkazai/inoueke.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/778765fbf0e30734eaa9.html",
+    "sha256": "63ad5d9d31083ffde657b73577b02ef630ba01f5fc0851735bdeb1e228692dbe"
+  },
+  {
+    "url": "https://maruchiba.jp/spot/detail_10469.html",
+    "fetchedAt": "2026-11-05T04:46:52.461178+00:00",
+    "status": 200,
+    "finalUrl": "https://maruchiba.jp/spot/detail_10469.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/9b4898be8ecda4ce4d9e.html",
+    "sha256": "169a6ab5fd87dfe7852adf203e5d87dbbfeb9c0014f7cbe99388fc28c2ee0e70"
+  },
+  {
+    "url": "https://www.abikoinfo.jp/user-guide/",
+    "fetchedAt": "2026-11-05T04:46:53.871178+00:00",
+    "status": 200,
+    "finalUrl": "https://www.abikoinfo.jp/user-guide/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/1604cf5a67125d66d8ec.html",
+    "sha256": "b0cc25fcdf86b7e40fd35314cfa422d6d4f87b9c4e8e221220d30cd2d497a6ac"
+  },
+  {
+    "url": "https://www.fuwarishibayama.com/share/js/map.js",
+    "fetchedAt": "2026-11-05T04:46:55.428109+00:00",
+    "status": 200,
+    "finalUrl": "https://www.fuwarishibayama.com/share/js/map.js",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/b4f06c3748ec70356767.html",
+    "sha256": "e6890df0d6fb264f60bf7f502691605a3acb9a5eab19170f5259250c25d67512"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/map/map1/map2.html",
+    "fetchedAt": "2026-11-05T04:46:56.671036+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/map/map1/map2.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/88ff7101442b3346c6b7.html",
+    "sha256": "091b9f3944038e89d721fd7a5cd8eaf5003ac36babdd6dd10445f874f12aa949"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/page/4744.html",
+    "fetchedAt": "2026-11-05T04:47:26.458599+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/page/4744.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/3e0be5f499b661dc8cb9.html",
+    "sha256": "12893946a8e312882a342e4f8e205a13ff42a26e1b3822e1bc38246b90268877"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/soshiki/seisaku/keiei/keiei03/8319.html",
+    "fetchedAt": "2026-11-05T04:47:27.736709+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/soshiki/seisaku/keiei/keiei03/8319.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/60015eac2d51c56b73c8.html",
+    "sha256": "ab82738ba2e04550ef521eda6879236599532ab6bfb1af884e9d00364f0e4027"
+  },
+  {
+    "url": "https://www.vill.chosei.chiba.jp/map/xml/3.xml",
+    "fetchedAt": "2026-11-05T04:47:29.156505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.chosei.chiba.jp/map/xml/3.xml",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f5d915635cdf0d5ef17c.html",
+    "sha256": "2f8b4fc4d002c2e801c5dc96f5cc63e98fdacd2b1859182b7ad93ad95e4454cf"
+  },
+  {
+    "url": "https://goo.gl/maps/oeSWWmLPv612",
+    "fetchedAt": "2026-11-05T04:48:04.283616+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.co.jp/maps/place/%E7%BF%92%E5%BF%97%E9%87%8E%E5%B8%82+%E4%BC%81%E6%A5%AD%E5%B1%80/@35.6871245,140.028751,17z/data=!3m1!4b1!4m5!3m4!1s0x602280319952f9b1:0xaee3cae279030c6a!8m2!3d35.6871202!4d140.0309397?shorturl=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/8ddb9daccec098ff991c.html",
+    "sha256": "f9d2c5222ecdd05767064eee40483911f4aa25d7d1c7b788fe747c3632d56526"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/material/files/group/2/122327_public_facility.csv",
+    "fetchedAt": "2026-11-05T04:48:06.300935+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/material/files/group/2/122327_public_facility.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/0fde714105f8138136c0.html",
+    "sha256": "4828e70951b5d23a99f96eccde43e081159ef78136e5784a21e8154be5efbd9c"
+  },
+  {
+    "url": "https://www.google.com/maps/d/kml?mid=1wiRu2WXxoY3B-ioeNuz9MNx6jksSvqM&forcekml=1",
+    "fetchedAt": "2026-11-05T04:48:07.629089+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/d/kml?mid=1wiRu2WXxoY3B-ioeNuz9MNx6jksSvqM&forcekml=1",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/b06a728364381178f5ca.html",
+    "sha256": "fa726902d0989d1360d08b21e11209f439d3f5e6bad443e5c6a0b93648c06dfa"
+  },
+  {
+    "url": "https://www.google.com/maps/embed/v1/place?key=AIzaSyASzqnCrYBWXhFtdlXXBg_KCLxQTa1I5Y4&q=%E6%88%91%E5%AD%AB%E5%AD%90%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC&maptype=roadmap",
+    "fetchedAt": "2026-11-05T04:48:09.168130+00:00",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps/embed/v1/place?key=AIzaSyASzqnCrYBWXhFtdlXXBg_KCLxQTa1I5Y4&q=%E6%88%91%E5%AD%AB%E5%AD%90%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC&maptype=roadmap",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/a25e18f554408b9c8897.html",
+    "sha256": "8afe96a9c9233ee716d0642e532356d2afb6687420aafaab7e675ce46d4f89d1",
+    "embeddedBy": "https://www.abikoinfo.jp/user-guide/"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/uploaded/attachment/53042.csv",
+    "fetchedAt": "2026-11-05T04:48:40.025381+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/uploaded/attachment/53042.csv",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/77e9df9f93c2bd9d39b5.html",
+    "sha256": "c1cdbff2d1b9c9b37898bb5f4b3f81805f4b5f89cbf65e1a34ee95762fb2e912"
+  },
+  {
+    "url": "https://www.chiba-muse.or.jp/SEKIYADO/visit/page-1519065141259/",
+    "fetchedAt": "2026-11-05T04:48:42.042383+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chiba-muse.or.jp/SEKIYADO/visit/page-1519065141259/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/62ff1360d2d6701a6e1e.html",
+    "sha256": "221427ca7b11a5cbfdf59355f0837b3f97447ecb43307274a48a85f0edf34db8"
+  },
+  {
+    "url": "https://www.kankou-kashiwa.jp/about/",
+    "fetchedAt": "2026-11-05T04:48:43.905689+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-kashiwa.jp/about/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/1962eca7bdbeb1903ee8.html",
+    "sha256": "05300853a4646b0a7c2039986c4c0680537e5032eecffd24d99c1cc6312f7cbd"
+  },
+  {
+    "url": "https://tateyamacity.com/access",
+    "fetchedAt": "2026-11-05T04:48:45.160061+00:00",
+    "status": 200,
+    "finalUrl": "https://tateyamacity.com/access",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/a595c929798bc2e91685.html",
+    "sha256": "469938056ff04a1b59af5c50a67929f87d7f9ac787a009696ea4f191d7899bef"
+  },
+  {
+    "url": "https://www.kankou-kashiwa.jp/about/access/",
+    "fetchedAt": "2026-11-05T04:49:12.892877+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-kashiwa.jp/about/access/",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c06400bc6e1be525206c.html",
+    "sha256": "b5aec630a41816e89362655a8a83d82f893c84331be3e157ec6210e5ebd8a78e"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/web/citymap_index.html",
+    "fetchedAt": "2026-11-05T04:49:14.098674+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/web/citymap_index.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/f7b85a84bc6432036a53.html",
+    "sha256": "71970a505ec3d534762a4407182dbeeac518cf1d2b59f507def372a586d71d43"
+  },
+  {
+    "url": "https://maruchiba.jp/feature/detail_89.html",
+    "fetchedAt": "2026-11-05T04:50:01.521670+00:00",
+    "status": 200,
+    "finalUrl": "https://maruchiba.jp/feature/detail_89.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/1c20008a7351685f80d5.html",
+    "sha256": "44d4c8cec7a04f03cf18b78c069988e034288ec159d8978eb4a43cd20451a4fc"
+  },
+  {
+    "url": "https://www.city.ichikawa.lg.jp/uploaded/attachment/3513.pdf",
+    "fetchedAt": "2026-11-05T04:50:04.713270+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ichikawa.lg.jp/uploaded/attachment/3513.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/507b95c48a7858bc5479.html",
+    "sha256": "c0f3f45c0706d3b6c7e9a94dfd52daf0a5311522398ba41ecb7467e495042a0b"
+  },
+  {
+    "url": "https://tateyamacity.com/citycycle-rental",
+    "fetchedAt": "2026-11-05T04:50:06.156351+00:00",
+    "status": 200,
+    "finalUrl": "https://tateyamacity.com/citycycle-rental",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/cb16c43b87abcd8bc2cb.html",
+    "sha256": "6b6f75c3f5dcd66430e11fbb1775497c3970a6bcdf1e368e80cc35087401d81e"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/web/Gmaps/js/localmap.js",
+    "fetchedAt": "2026-11-05T04:50:09.795534+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/web/Gmaps/js/localmap.js",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/66ad62e91b8e9893ecb0.html",
+    "sha256": "5b6142eb23abc4a0b92ba13522f2bacc732bcfc6e3ad4492283604a274561191"
+  },
+  {
+    "url": "https://tateyamacity.com/archives/4093",
+    "fetchedAt": "2026-11-05T04:50:58.568087+00:00",
+    "status": 200,
+    "finalUrl": "https://tateyamacity.com/archives/4093",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/0bce78163f664cb05e83.html",
+    "sha256": "334c72a284ed5d6a674d931ed40c837bd8f11628382c29bc7ec59d04b73a0829"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/web/Gmaps/category.xml",
+    "fetchedAt": "2026-11-05T04:51:23.763861+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/web/Gmaps/category.xml",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/92afb804bd843a721b5b.html",
+    "sha256": "0e2148a05777f59eee6ecf6c112527e7d53c894011ccc6016befee02e32e8196"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/web/Gmaps/data/1_office.xml",
+    "fetchedAt": "2026-11-05T04:51:48.522737+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/web/Gmaps/data/1_office.xml",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/64db7d7aa90647bf9609.html",
+    "sha256": "a850670267b419fbce1af4772c1927ab61d11fd7b712ea4b2e5e4b91159be1d6"
+  },
+  {
+    "url": "https://www.city.kamagaya.chiba.jp/web/Gmaps/data/14_kyodo.xml",
+    "fetchedAt": "2026-11-05T04:51:49.774874+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kamagaya.chiba.jp/web/Gmaps/data/14_kyodo.xml",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/601cd9bed7c1515b0531.html",
+    "sha256": "a5290a38ee0ea26b1c70ef5a0491f0400babb2e278b6011d2e230d39eec3fac4"
+  },
+  {
+    "url": "https://www.city.narashino.lg.jp/kigyoukyoku/jigyosha/26529.html",
+    "fetchedAt": "2026-11-05T04:54:31.422254+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.narashino.lg.jp/kigyoukyoku/jigyosha/26529.html",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/74745ec8a4da6a3a47c9.html",
+    "sha256": "eaa2cd4aef1f968c8d961ab45e5a5e2acb0b973ef88fabdd61abe846c97a40f7"
+  },
+  {
+    "url": "https://www.city.kashiwa.lg.jp/documents/3436/chousyaannaizu.pdf",
+    "fetchedAt": "2026-11-05T04:54:32.817585+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kashiwa.lg.jp/documents/3436/chousyaannaizu.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/80d904170524a35d98a0.html",
+    "sha256": "44b1cc6bf5d85c63b8d3761eb82d1591b7c2e6d0de419314817810c8c1ab17fa"
+  },
+  {
+    "url": "https://www.city.sodegaura.lg.jp/uploaded/attachment/44755.pdf",
+    "fetchedAt": "2026-11-05T04:54:34.072844+00:00",
+    "status": 404,
+    "finalUrl": "https://www.city.sodegaura.lg.jp/uploaded/attachment/44755.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/c3d4943fe8d6367011a6.html",
+    "sha256": "c5674c8464d43dc15c39571278e39767ee69739aec5cd00ed6f7fb6c53568634"
+  },
+  {
+    "url": "https://www2.wagmap.jp/sodegaura/Portal",
+    "fetchedAt": "2026-11-05T04:54:35.433727+00:00",
+    "status": 200,
+    "finalUrl": "https://www2.wagmap.jp/sodegaura/Portal",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/95f781b621acbf6c8ca9.html",
+    "sha256": "b4519db515ee3724e94cd3f6808503e9e9165ddbbcb00cedad22352773a0e111"
+  },
+  {
+    "url": "https://www.city.shiroi.chiba.jp/material/files/group/22/R8tyousya_huroamappu.pdf",
+    "fetchedAt": "2026-11-05T04:54:36.855835+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shiroi.chiba.jp/material/files/group/22/R8tyousya_huroamappu.pdf",
+    "snapshotPath": "data/evidence/national/kanto-south-locations-chiba/112484db76df05e5bb5d.html",
+    "sha256": "f43e6a1cbb8fdb3073e7f4c87eaa64aab61a483ad6d6c01526f07133f11915d1"
+  }
+]

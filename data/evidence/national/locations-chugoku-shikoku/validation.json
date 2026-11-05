@@ -1,0 +1,13 @@
+{
+  "targetFacilities": 170,
+  "updates": 101,
+  "unresolved": 69,
+  "uniqueAssignment": true,
+  "allEvidenceHashesMatch": true,
+  "allCoordinateValuesMatchOriginalBytes": true,
+  "p05RecordsReopenedAndCompared": 32,
+  "sourceRecords": 304,
+  "snapshotsHashed": 303,
+  "failedAcquisitions": 1,
+  "outputSHA256": "f1653562142774c5b6d4b53b2b766010da2a77070ae95bc3991f0b3587cf6c07"
+}

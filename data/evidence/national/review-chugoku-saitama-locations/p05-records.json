@@ -1,0 +1,770 @@
+[
+  {
+    "facilityId": "facility:cs-3a4e86473bb8f3eba6",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1653",
+    "properties": {
+      "P05_001": "33216",
+      "P05_002": "2",
+      "P05_003": "金光総合支所",
+      "P05_004": "浅口市金光町占見新田751"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.624589,
+        34.543053
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-370cb782065d36438b",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1653",
+    "properties": {
+      "P05_001": "33216",
+      "P05_002": "2",
+      "P05_003": "金光総合支所",
+      "P05_004": "浅口市金光町占見新田751"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.624589,
+        34.543053
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-7451e610bb936daf58",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1681",
+    "properties": {
+      "P05_001": "33423",
+      "P05_002": "5",
+      "P05_003": "町民総合会館ゆるびの舎",
+      "P05_004": "早島町前潟370-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.827928,
+        34.601395
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-d30b06815c7c8b8b47",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1826",
+    "properties": {
+      "P05_001": "33622",
+      "P05_002": "1",
+      "P05_003": "勝央町役場",
+      "P05_004": "勝央町勝間田201"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.1161625,
+        35.04182875
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-0523e0c4e6d8bc357a",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1833",
+    "properties": {
+      "P05_001": "33622",
+      "P05_002": "5",
+      "P05_003": "勝央図書館",
+      "P05_004": "勝央町勝間田207-4"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.11622533,
+        35.04238297
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-fc72b93e2fafe94e09",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1952",
+    "properties": {
+      "P05_001": "33681",
+      "P05_002": "2",
+      "P05_003": "吉川支所",
+      "P05_004": "吉備中央町吉川4860-6"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.7607113,
+        34.83503316
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-96bbe6bdbe38de3b1d",
+    "sourceLocator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1977",
+    "properties": {
+      "P05_001": "33681",
+      "P05_002": "5",
+      "P05_003": "ロマン高原かよう総合会館",
+      "P05_004": "吉備中央町豊野1-2"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.693919,
+        34.863218
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-8a580f16fadbdead2f",
+    "sourceLocator": "P05-22_34_GML.zip!P05-22_34.geojson#/features/38",
+    "properties": {
+      "P05_001": "34101",
+      "P05_002": "5",
+      "P05_003": "中央老人福祉センター",
+      "P05_004": "広島市中区西白島町24-36"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.45814,
+        34.405524
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-06ab1e37be111b797f",
+    "sourceLocator": "P05-22_34_GML.zip!P05-22_34.geojson#/features/235",
+    "properties": {
+      "P05_001": "34104",
+      "P05_002": "4",
+      "P05_003": "三篠公民館",
+      "P05_004": "広島市西区打越町10-23"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.449707,
+        34.411862
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-47be0ed8ed1a8196c5",
+    "sourceLocator": "P05-22_34_GML.zip!P05-22_34.geojson#/features/1972",
+    "properties": {
+      "P05_001": "34212",
+      "P05_002": "2",
+      "P05_003": "豊栄支所",
+      "P05_004": "東広島市豊栄町鍛冶屋963-2"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.8247596,
+        34.56360544
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-1c64759899a8d8bafa",
+    "sourceLocator": "P05-22_34_GML.zip!P05-22_34.geojson#/features/2146",
+    "properties": {
+      "P05_001": "34213",
+      "P05_002": "3",
+      "P05_003": "中央市民センター",
+      "P05_004": "廿日市市天神11-29"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.3379486,
+        34.3550227
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-083e2128162dfb1b8a",
+    "sourceLocator": "P05-22_34_GML.zip!P05-22_34.geojson#/features/2373",
+    "properties": {
+      "P05_001": "34309",
+      "P05_002": "5",
+      "P05_003": "町民センター",
+      "P05_004": "坂町平成ヶ浜1-1-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.513215,
+        34.340976
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-7272a867af69db69f8",
+    "sourceLocator": "P05-22_36_GML.zip!P05-22_36.geojson#/features/351",
+    "properties": {
+      "P05_001": "36205",
+      "P05_002": "2",
+      "P05_003": "吉野川市役所東館",
+      "P05_004": "吉野川市鴨島町鴨島115-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.35933,
+        34.066603
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-d6d69be47fa12f0e04",
+    "sourceLocator": "P05-22_36_GML.zip!P05-22_36.geojson#/features/348",
+    "properties": {
+      "P05_001": "36205",
+      "P05_002": "1",
+      "P05_003": "吉野川市役所",
+      "P05_004": "吉野川市鴨島町鴨島115-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.358662,
+        34.066347
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-ccc5606fe81a37c277",
+    "sourceLocator": "P05-22_36_GML.zip!P05-22_36.geojson#/features/1149",
+    "properties": {
+      "P05_001": "36401",
+      "P05_002": "5",
+      "P05_003": "総合会館",
+      "P05_004": "松茂町広島字東裏30"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.5804145,
+        34.13380688
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-688eee70a7b12ba309",
+    "sourceLocator": "P05-22_36_GML.zip!P05-22_36.geojson#/features/1174",
+    "properties": {
+      "P05_001": "36402",
+      "P05_002": "1",
+      "P05_003": "北島町役場",
+      "P05_004": "北島町中村字上地23-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.547012,
+        34.125668
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-76c6933fe9f5469ed2",
+    "sourceLocator": "P05-22_36_GML.zip!P05-22_36.geojson#/features/1172",
+    "properties": {
+      "P05_001": "36402",
+      "P05_002": "5",
+      "P05_003": "創世ホール",
+      "P05_004": "北島町新喜来字南古田91"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.546407,
+        34.126197
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-f93e21d86cccf275d7",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/94",
+    "properties": {
+      "P05_001": "37201",
+      "P05_002": "3",
+      "P05_003": "市民サービスセンター",
+      "P05_004": "高松市常磐町1-3-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.052607,
+        34.339005
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-afa9af28a46e02cec3",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/189",
+    "properties": {
+      "P05_001": "37202",
+      "P05_002": "5",
+      "P05_003": "飯山市民総合センター",
+      "P05_004": "丸亀市飯山町川原1114-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.860857,
+        34.264484
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-afbb20330069e72cfd",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/189",
+    "properties": {
+      "P05_001": "37202",
+      "P05_002": "5",
+      "P05_003": "飯山市民総合センター",
+      "P05_004": "丸亀市飯山町川原1114-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.860857,
+        34.264484
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-8c5942a06d510a8d80",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/155",
+    "properties": {
+      "P05_001": "37202",
+      "P05_002": "5",
+      "P05_003": "綾歌市民総合センター",
+      "P05_004": "丸亀市綾歌町栗熊西1638"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.878073,
+        34.232382
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-67f9c49057274e1290",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/155",
+    "properties": {
+      "P05_001": "37202",
+      "P05_002": "5",
+      "P05_003": "綾歌市民総合センター",
+      "P05_004": "丸亀市綾歌町栗熊西1638"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.878073,
+        34.232382
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-e01e964a05af75ba9c",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/339",
+    "properties": {
+      "P05_001": "37206",
+      "P05_002": "1",
+      "P05_003": "さぬき市役所",
+      "P05_004": "さぬき市志度5385-8"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.171989,
+        34.32521
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-532572bf953e174e5f",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/411",
+    "properties": {
+      "P05_001": "37207",
+      "P05_002": "1",
+      "P05_003": "東かがわ市役所",
+      "P05_004": "東かがわ市湊1847-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.358837,
+        34.243803
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-b2cc368d8060f90bb9",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/411",
+    "properties": {
+      "P05_001": "37207",
+      "P05_002": "1",
+      "P05_003": "東かがわ市役所",
+      "P05_004": "東かがわ市湊1847-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.358837,
+        34.243803
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-9b78c2e027de361fcf",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/635",
+    "properties": {
+      "P05_001": "37341",
+      "P05_002": "1",
+      "P05_003": "三木町役場",
+      "P05_004": "三木町大字氷上310"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        134.134452,
+        34.268191
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-4b638feb799e5006de",
+    "sourceLocator": "P05-22_37_GML.zip!P05-22_37.geojson#/features/683",
+    "properties": {
+      "P05_001": "37387",
+      "P05_002": "1",
+      "P05_003": "綾川町役場",
+      "P05_004": "綾川町滝宮299"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.923099,
+        34.249613
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-eabba1eba8b68873be",
+    "sourceLocator": "P05-22_38_GML.zip!P05-22_38.geojson#/features/1315",
+    "properties": {
+      "P05_001": "38204",
+      "P05_002": "1",
+      "P05_003": "八幡浜市役所",
+      "P05_004": "八幡浜市北浜1-1-1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.4231742,
+        33.46292289
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-41f478b06e9ec00fa3",
+    "sourceLocator": "P05-22_38_GML.zip!P05-22_38.geojson#/features/2163",
+    "properties": {
+      "P05_001": "38402",
+      "P05_002": "1",
+      "P05_003": "砥部町役場",
+      "P05_004": "砥部町宮内1392"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        132.792233,
+        33.74926
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-c4a119e09cf6693c36",
+    "sourceLocator": "P05-22_39_GML.zip!P05-22_39.geojson#/features/584",
+    "properties": {
+      "P05_001": "39211",
+      "P05_002": "1",
+      "P05_003": "香南市役所",
+      "P05_004": "香南市野市町西野2706"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.700543,
+        33.564124
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-d9c24c8c65213679cf",
+    "sourceLocator": "P05-22_39_GML.zip!P05-22_39.geojson#/features/532",
+    "properties": {
+      "P05_001": "39211",
+      "P05_002": "2",
+      "P05_003": "香我美庁舎",
+      "P05_004": "香南市香我美町下分646"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.741605,
+        33.570492
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  },
+  {
+    "facilityId": "facility:cs-64ee651510af858bb1",
+    "sourceLocator": "P05-22_39_GML.zip!P05-22_39.geojson#/features/573",
+    "properties": {
+      "P05_001": "39211",
+      "P05_002": "2",
+      "P05_003": "夜須庁舎",
+      "P05_004": "香南市夜須町坪井219"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        133.755235,
+        33.537657
+      ]
+    },
+    "geojsonCrs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "coordinateMatches": true
+  }
+]

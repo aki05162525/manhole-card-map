@@ -1,0 +1,489 @@
+{
+  "82": [
+    "https://www.hot-ishikawa.jp/spot/detail_18192.html",
+    "https://orihime-nakanoto.jp/access/"
+  ],
+  "53": [
+    "https://www.niigatafurumachi.com/",
+    "https://machiminato.jp/",
+    "https://machiminato.jp/access/"
+  ],
+  "13": [
+    "https://kanko-kahoku.com/access/index.html"
+  ],
+  "60": [
+    "https://www.city.murakami.lg.jp/site/kouminkan/arakawa-koumin.html"
+  ],
+  "68": [
+    "https://niigata-kankou.or.jp/spot/detail_6965.html",
+    "https://furusato-kaikan.matsudai.jp/access/"
+  ],
+  "12": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "15": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://niigata-kankou.or.jp/spot/detail_42376.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "16": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "18": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "19": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "36": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "47": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "64": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "77": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "83": [
+    "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+    "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+    "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+    "https://opendata-sado-city.hub.arcgis.com/",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+    "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+    "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson"
+  ],
+  "4": [
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+    "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+    "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+    "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/3/4/972.html"
+  ],
+  "23": [
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+    "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+    "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+    "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv"
+  ],
+  "48": [
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+    "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+    "https://tim.securesite.jp/goannai.html",
+    "https://tim.securesite.jp/",
+    "https://goo.gl/maps/JGVN1J4Sm2v",
+    "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+    "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+    "https://niigata-kankou.or.jp/spot/detail_9852.html"
+  ],
+  "61": [
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+    "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+    "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+    "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+    "https://niigata-kankou.or.jp/spot/44312",
+    "https://tsubame-kankou.jp/seeing-2/%E7%87%95%E5%B8%82%E5%88%86%E6%B0%B4%E8%89%AF%E5%AF%9B%E5%8F%B2%E6%96%99%E9%A4%A8/"
+  ],
+  "78": [
+    "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+    "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+    "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+    "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+    "https://niigata-kankou.or.jp/spot/detail_9934.html"
+  ],
+  "8": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://maps.app.goo.gl/f1Z7fd5PZv8kYxMx7",
+    "https://www.geisou-toyama.jp/access/",
+    "https://www.city.toyama.lg.jp/shisei/shisetsu/1011038/1011039/1011359.html",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx"
+  ],
+  "31": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx"
+  ],
+  "41": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx",
+    "https://www.tkc.pref.toyama.jp/search/stdydtl.aspx?stdycd=00059778",
+    "https://www.city.toyama.lg.jp/shisei/soshiki/1010706/1003024.html"
+  ],
+  "49": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://www.city.toyama.lg.jp/kurashi/suido/1018440/1018454/1014658.html",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx"
+  ],
+  "56": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx",
+    "https://www.city.toyama.lg.jp/bunka/bunka/1010547/1010548/1008033.html",
+    "https://www.siminplaza.co.jp/?tid=100008"
+  ],
+  "74": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "http://canal.or.jp/access/",
+    "https://maps.app.goo.gl/f1Z7fd5PZv8kYxMx7",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx",
+    "https://www.info-toyama.com/attractions/11039"
+  ],
+  "84": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx"
+  ],
+  "87": [
+    "https://opdt.city.toyama.lg.jp/api/3/action/package_search?q=%E8%A6%B3%E5%85%89%E6%96%BD%E8%A8%AD",
+    "https://www.city.toyama.lg.jp/_template_/_site_/_default_/_res/js/map.js",
+    "https://www.city.toyama.lg.jp/bunka/sports/1010564/1019171.html",
+    "https://www.city.toyama.lg.jp/shisei/shisetsu/1001753.html",
+    "https://maps.app.goo.gl/f1Z7fd5PZv8kYxMx7",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/d877a255-b68a-4df4-9f42-6e0feccb355e/download/intfs01.int.toyama-city.localredirect111015downloads01kankosisetu.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/145eafa2-ddbc-476a-8ca0-59785869ca23/resource/afcda3bf-eb4e-47fe-9633-d3d86c5f5110/download/intfs01.int.toyama-city.localredirect111015downloads02hugansuizyorain.xlsx",
+    "https://opdt.city.toyama.lg.jp/dataset/42491bf1-d8d7-4030-9df9-3c883582449b/resource/b9a6ef69-3948-4a72-9242-0d9b03d3d8fe/download/intfs01.int.toyama-city.localredirect111015downloads25zyogesuidokanrensisetu.xlsx"
+  ],
+  "80": [
+    "https://www.tokamachi-museum.jp/guide/",
+    "https://niigata-kankou.or.jp/spot/detail_42987.html"
+  ],
+  "20": [
+    "https://www.ncnrm.com/english/",
+    "https://niigata-kankou.or.jp/spot/detail_5615.html"
+  ],
+  "73": [
+    "https://www.town.anamizu.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "https://www.town.anamizu.lg.jp/page/100115.html",
+    "https://www.town.anamizu.lg.jp/map/102986.html"
+  ],
+  "38": [
+    "https://niigata-kankou.or.jp/spot/detail_42306.html",
+    "https://tainai.info/access/",
+    "https://www.city.tainai.niigata.jp/shokai/yakuba/access.html",
+    "https://tainai.info/recommend/tarugahasikankoukouryucenter/",
+    "https://niigata-kankou.or.jp/spot/detail_7010.html"
+  ],
+  "66": [
+    "http://www2.wagmap.jp/nagaoka/gate/?lnk=215161D21221A"
+  ],
+  "59": [
+    "https://maps.google.co.jp/maps?q=%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%BC%E3%83%AB%E3%81%AE%E3%81%A8&ll=37.3101727,137.1482256&z=13",
+    "https://www.town.noto.lg.jp/kanko-bunka-sports/shisetsu/1/3201.html"
+  ],
+  "0": [
+    "https://tsuruga-museum.jp/modules/info/index.php?action=PageView&page_id=4",
+    "https://www.city.tsuruga.lg.jp/page/1322.html",
+    "https://www.fuku-e.com/business/educational/learning/detail_1183.html"
+  ],
+  "1": [
+    "http://www3.fctv.ne.jp/~asakura/40about/access.html",
+    "https://fuku-iro.jp/spot/detail_10033.html"
+  ],
+  "2": [
+    "https://www.town.fukui-wakasa.lg.jp/soshiki/wakasamikatajomonhakubutsukan/gyomuannai/953.html",
+    "https://www.fuku-e.com/spot/detail_1216.html"
+  ],
+  "5": [
+    "https://plaza.bunspo-namerikawa.jp/access"
+  ],
+  "6": [
+    "https://asahimidori.com/access-guide/",
+    "https://asahimidori.com/access-guide/road-station/",
+    "https://asahimidori.com/access-guide/store/",
+    "https://asahimidori.com/access-guide/restaurant/",
+    "https://asahimidori.com/access-guide/farmers-store/",
+    "https://asahimidori.com/access-guide/spa/",
+    "https://asahimidori.com/access-guide/kireikan/",
+    "https://asahimidori.com/access-guide/matagi/",
+    "https://asahimidori.com/access-guide/dome/",
+    "https://asahimidori.com/access-guide/cultural-exchange-center/",
+    "https://www.city.murakami.lg.jp/soshiki/135/webaccess.html",
+    "https://niigata-kankou.or.jp/spot/detail_7003.html"
+  ],
+  "21": [
+    "https://www.town.izumozaki.niigata.jp:443/chosei/gyosei/access.html",
+    "https://tenryonosato.jp/",
+    "https://maps.app.goo.gl/zrQpoac8DFnWiQWD8",
+    "https://www.town.izumozaki.niigata.jp/chosei/gyosei/access.html",
+    "https://niigata-kankou.or.jp/spot/detail_7556.html"
+  ],
+  "27": [
+    "https://aqua.ksz.or.jp/access",
+    "https://niigata-kankou.or.jp/spot/detail_6078.html"
+  ],
+  "28": [
+    "https://ikanoeki.com/access/",
+    "https://goo.gl/maps/MtS8GNYpVZHfafU48"
+  ],
+  "29": [
+    "https://www.city.itoigawa.lg.jp/site/userguide/8573.html",
+    "https://www.kita-re.jp/access"
+  ],
+  "30": [
+    "https://kajidojo.com/access/",
+    "https://maps.app.goo.gl/BBQYPiigvsqGwpV17"
+  ],
+  "34": [
+    "https://www.town.shika.lg.jp/page/1249.html",
+    "https://www.town.shika.lg.jp/page/1249.html"
+  ],
+  "35": [
+    "https://nagaoka-hanabikan.niigata.jp/access/",
+    "https://maps.app.goo.gl/SmGanweznuwkT2yc9",
+    "https://maps.app.goo.gl/jQ7CJPovtfY1b6NY9",
+    "https://maps.app.goo.gl/BGvn31GWhFkYkNkv5",
+    "https://maps.app.goo.gl/JomCB61Vv2wEAFMr6",
+    "https://maps.app.goo.gl/RDVjNAFq66rbhcFJ9",
+    "https://www.city.nagaoka.niigata.jp/shisei/cate05/ao-re/access.html"
+  ],
+  "37": [
+    "https://asahimidori.com/access-guide/store/",
+    "https://www.city.murakami.lg.jp/soshiki/135/webaccess.html",
+    "https://niigata-kankou.or.jp/spot/7187"
+  ],
+  "39": [
+    "https://www.lovero-koiji.jp/access",
+    "https://www.lovero-koiji.jp/access/",
+    "https://www.hot-ishikawa.jp/spot/detail_13297.html"
+  ],
+  "40": [
+    "https://www.union.nakaniikawa.toyama.jp/outline/access/",
+    "https://maps.app.goo.gl/6ACZtWrUTddcP97F9"
+  ],
+  "42": [
+    "https://www.ojiyasunplaza.jp/accessmap.html",
+    "https://niigata-kankou.or.jp/spot/detail_6095.html"
+  ],
+  "43": [
+    "https://kyoryunomori.net/access/",
+    "https://www.city.katsuyama.fukui.jp/site/mayor7/4088.html"
+  ],
+  "46": [
+    "https://goo.gl/maps/M8N6paXv8bE2",
+    "https://www.echizenwashi.jp/access/",
+    "https://www.fuku-e.com/spot/detail_1157.html"
+  ],
+  "51": [
+    "https://goo.gl/maps/1DQoroswuE32",
+    "https://www.town.takahama.fukui.jp/page/jyousuidou/p008136.html"
+  ],
+  "52": [
+    "https://maps.app.goo.gl/HXTfuPYHrjzmECYa9",
+    "https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=2",
+    "https://shinminato.co.jp/access/",
+    "https://maps.app.goo.gl/frJcpGQJh6kayMTYA"
+  ],
+  "54": [
+    "https://maps.app.goo.gl/SmGanweznuwkT2yc9",
+    "https://maps.app.goo.gl/jQ7CJPovtfY1b6NY9",
+    "https://maps.app.goo.gl/BGvn31GWhFkYkNkv5",
+    "https://maps.app.goo.gl/JomCB61Vv2wEAFMr6",
+    "https://maps.app.goo.gl/RDVjNAFq66rbhcFJ9",
+    "https://www.city.nagaoka.niigata.jp/shisei/cate05/ao-re/access.html"
+  ],
+  "55": [
+    "https://miraie-nagaoka.jp/user-guide",
+    "https://miraie-nagaoka.jp/user-guide/",
+    "https://maps.app.goo.gl/SmGanweznuwkT2yc9",
+    "https://maps.app.goo.gl/jQ7CJPovtfY1b6NY9",
+    "https://maps.app.goo.gl/BGvn31GWhFkYkNkv5",
+    "https://maps.app.goo.gl/JomCB61Vv2wEAFMr6",
+    "https://maps.app.goo.gl/RDVjNAFq66rbhcFJ9",
+    "https://www.city.nagaoka.niigata.jp/shisei/cate05/ao-re/access.html",
+    "https://www.city.nagaoka.niigata.jp/suidou/access.html"
+  ],
+  "58": [
+    "https://www.nishikigoinosato.jp/usersguide.html",
+    "https://niigata-kankou.or.jp/spot/detail_6096.html"
+  ],
+  "71": [
+    "https://maps.app.goo.gl/JKpE1QGB439mChoh6"
+  ],
+  "81": [
+    "https://www.town.izumozaki.niigata.jp:443/chosei/gyosei/access.html",
+    "https://tenryonosato.jp/",
+    "https://maps.app.goo.gl/zrQpoac8DFnWiQWD8",
+    "https://www.town.izumozaki.niigata.jp/chosei/gyosei/access.html"
+  ],
+  "85": [
+    "https://www.royal-tainai.jp/access/",
+    "https://www.city.tainai.niigata.jp/shokai/yakuba/access.html",
+    "https://niigata-kankou.or.jp/spot/detail_42308.html"
+  ],
+  "86": [
+    "https://himigyogyou.com/%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9/",
+    "https://www.city.himi.toyama.jp/gyosei/benri_service/shisetsu/chosha/2583.html",
+    "https://www.info-toyama.com/attractions/80239"
+  ],
+  "44": [
+    "https://niigata-kankou.or.jp/spot/detail_9931.html"
+  ],
+  "7": [
+    "https://niigata-kankou.or.jp/spot/detail_11419.html"
+  ],
+  "57": [
+    "https://niigata-kankou.or.jp/spot/detail_11416.html"
+  ],
+  "10": [
+    "https://www.fuku-e.com/spot/detail_1172.html"
+  ],
+  "25": [
+    "https://www.fuku-e.com/business/educational/learning/detail_1241.html"
+  ],
+  "50": [
+    "https://www.fuku-e.com/spot/detail_1648.html"
+  ],
+  "63": [
+    "https://niigata-kankou.or.jp/spot/detail_7515.html"
+  ],
+  "69": [
+    "https://niigata-kankou.or.jp/spot/detail_7009.html"
+  ],
+  "62": [
+    "https://niigata-kankou.or.jp/spot/detail_7002.html"
+  ],
+  "11": [
+    "https://www.city.fukui.lg.jp/kurasi/suido/sisetu/p016229.html"
+  ],
+  "14": [
+    "https://www.city.sanjo.niigata.jp/soshiki/shimimbu/shogaigakushuka/kouminkan/chuouc/1318.html",
+    "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+    "http://linkdata.org/work/rdf1s1475i",
+    "https://www.city.sanjo.niigata.jp/soshiki/somubu/dxsuishinka/service/4773.html"
+  ],
+  "72": [
+    "https://fuku-iro.jp/spot/detail_12534.html",
+    "https://fuku-iro.jp/spot/detail_10362.html"
+  ],
+  "24": [
+    "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+    "http://linkdata.org/work/rdf1s1475i",
+    "https://www.city.sanjo.niigata.jp/soshiki/somubu/dxsuishinka/service/4773.html"
+  ],
+  "22": [
+    "https://www.hot-ishikawa.jp/notohaku/spot/detail_19907.html"
+  ],
+  "32": [
+    "https://www.hot-ishikawa.jp/notohaku/spot/detail_6141.html"
+  ],
+  "76": [
+    "https://www.city.wajima.ishikawa.jp/article/2023020500013/"
+  ],
+  "33": [
+    "https://niigata-kankou.or.jp/spot/detail_6950.html"
+  ]
+}

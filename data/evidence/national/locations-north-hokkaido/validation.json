@@ -1,0 +1,447 @@
+{
+  "targets": 91,
+  "updates": 72,
+  "unresolved": 19,
+  "manifestURLs": 319,
+  "allSnapshotHashes": "pass",
+  "allTargetCoverage": "pass",
+  "checks": [
+    {
+      "facilityId": "facility:north-03d0245a068dd82eaa37",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-0c29dde3d5fc2a368725",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-12b6e6080ef6e1e816a7",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-1b80feaf8e6924df20c4",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-20e8f811524b0ce7d3f5",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-226fa24434ce9b26d323",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-3060a04659dcedce64b9",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-3170be48b7ec799e21bb",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-337a40d0c1a094f1643d",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-33d210dca3f1918726f9",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-343aa74f33ff03c6fa0a",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-3992dcf75c3cb9b680a4",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-45c2fe1219e88b833457",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-4a3e61d50e9a48491365",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-4c87540ad5304f8a47b5",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-5146ae8cc4fb697aa46b",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-52202833e562b25efc5c",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-53b2b9df9a8da2705261",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-5933f197216885e6d064",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-6104f556e2024abcb15f",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-62ad6ad3369746b37621",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-63f1d610c5add80db10e",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-6497f09097adeb769acf",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-65717121aad1d7580861",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-7539fb5b206d87a17ef5",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-76934d7112fde654b326",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-784f83101a1fba71ca5c",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-7e52de8e6f50eeba0d74",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-7fde83cc219f8104cc65",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-80c28f27f6f95e930a9b",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-81922f5137bfd85952f9",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-8b10bcb76cb93263b696",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-8b9eb37cc57d1790a6ab",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-94e8fd249c24448254ec",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-95253bf986d2693881d7",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-95977999d1143637e813",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-9a1bae888266745fcbc3",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-9d5628a68e45a5cf6deb",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-9f828ae51e79cb1346e4",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-9ff5ca81c48605ed790a",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-a44b8aa1c55ed7aae9ec",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-a5487e1f89df95c0f69d",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-a5e747e17e489df9e8b0",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-adeda0700dac8487ca81",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-adf76c586ebea80020ba",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-b3895bc1edbab7205d85",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-b52f5b5eb1fe0a290167",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-bf6e16a11cb13e5f9622",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-c2f6c2b5109a65d91a91",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-c755555d3ee86913edcf",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-c8ab3d989862cda67eba",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-c9c5016d77e51377f615",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-ca408ccc1bcbc950bdd6",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-cb479f7bbce2788c803e",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-cdee3e1ed7285d1301f2",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-d4f4c5138f1edd1b3b74",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-d68cb955eb8fb28297a6",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-da208a6abd2abdb93a0a",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-da9719ed3ef3729f4673",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-dc7b25bac2387c1d4172",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-dddf18164e0a5e3df321",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-df2e2fa9738be3f1981a",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-e02254fac40d4417b6a8",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-ec1d5acd6800362be7ec",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-f51a0f3cd3ce0a372cb6",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-f7c2ea84a43d097526df",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-faff1c6ba07862131750",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-fb4350ebefff5d4630de",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    },
+    {
+      "facilityId": "facility:north-fc46386371945051a55a",
+      "coordinateLiteralPair": "pass",
+      "snapshotSHA256": "pass",
+      "idReference": "pass"
+    }
+  ],
+  "immutableInputSHA256": {
+    "data/work/national-input/places.json": "152bb738c77e95fcbd54702e42a2107cfd5949d614c7e6b4a706c94cba2a41fe",
+    "data/work/national-input/full.json": "6068da023f3bd4cb1e292b3e43877411a1505356e4377bbf02a255a89afb1987",
+    "data/work/national-input/quality.json": "8561505b9c8c0426fae93bf35306bd53f324e75527b842986da3d1df7b31012b"
+  }
+}
