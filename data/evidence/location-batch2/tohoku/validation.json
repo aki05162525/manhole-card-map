@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "status": "pass-provisional-integration",
+  "status": "pass-approved-integration",
   "filesSHA256": {
-    "details.json": "73dcf64df6f59a8b9816e54348cf5ef0ae4dbb636e8a765ab5d179fbbc79e40e",
-    "full.json": "e7bbeef74e844e805cbd287a9ae1ec0c9520c00f0f9161a6036e4fd7308900cc",
-    "pins.json": "2b0b48638513fe4cdc8eb5343d472b40abdc5807736e9eddec1e41134691d806"
+    "details.json": "6bd50976a948196e9843fd1a0225ce72a8ee086d0300ef775f3eb67c8aa7e1d0",
+    "full.json": "088a0dec52343aa5895283ad8d3f3ed15159e35f62ca3dec5c605ab1633aafee",
+    "pins.json": "791e017252e4d1adae7bc6a2a7fdcfa4f42719e521e441b76a926c690dcdcae7"
   },
   "inputsSHA256": {
     "data/evidence/national/list-source/gkp-20261105.html": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
@@ -12,7 +12,7 @@
     "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
     "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
     "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
-    "data/work/location-batch2/tohoku/after.json": "521f404a07335661de6e8bde35b560b1bd0d9c8506826d525458d72c605ae83a",
+    "data/work/location-batch2/tohoku/after.json": "44e643400ce516bd342613a1e8999af3ec7981afd21ffb9e1d3910536e6a85c3",
     "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
     "docs/verification/05-findings.json": "d017aa64da312b51b4ac3568f9ee714dddad3e8305e2042e2cb71347c1068d20"
   },
@@ -20,8 +20,8 @@
   "cardCount": 1313,
   "placeCount": 1735,
   "relationCount": 1825,
-  "placePinsBefore": 981,
-  "placePinsAfter": 983,
+  "placePinsBefore": 985,
+  "placePinsAfter": 987,
   "newPinIds": [
     "facility:north-db757b448c8db73422a5",
     "facility:north-e2dfc05c8b1db51fc65b"
@@ -29,9 +29,13 @@
   "allOldPinsUnchanged": true,
   "cardsAndRelationsUnchanged": true,
   "detailTest": "Vitest real full.json -> CardDetail static markup and facilityMapLink; both names and exact lat,lng queries passed. External Google Maps/browser navigation not performed.",
-  "pythonTests": 102,
+  "pythonTests": 105,
   "go": "go test -count=1 ./... exit 0; full log inspected; no tail pipeline status",
   "claimRegressionTests": 6,
   "geometryReproduction": "derive.py and measure_shapes.py byte-identical saved JSON",
-  "nationalAuditSHA256": "b838b6e5840261212709f5446b18a914f797cf35997606d1a3655a17e3bc66af"
+  "nationalAuditSHA256": "98e635044bf176716295c233632b87b76695afd4e0e8582f3ae9762000a52f48",
+  "integrationMainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+  "approvedReviewHead": "e2b73a59f91cee61efccbeba89efeb2542f917af",
+  "reviewedCoordinatesEvidenceBindingsUnchanged": true,
+  "mapsRechecked": "2026-11-05T12:42:40Z; generated full.json; CardDetail names and exact confirmed lat,lng Maps queries; Vitest pass"
 }

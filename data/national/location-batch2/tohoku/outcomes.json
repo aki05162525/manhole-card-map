@@ -9,13 +9,13 @@
   "timingScope": "selection.json保存から新資料の取得・図面実見・Vector比較・初回成果作成までの地域共有wall clock。事前の既存資料読解・以後の検証/独立レビュー/PR作成は含まない。施設別に重複加算しない。",
   "selectionCount": 8,
   "comparisonCandidateCount": 3,
-  "adoptedCount": 1,
+  "adoptedCount": 2,
   "heldCount": 6,
   "regionalUnlocatedBefore": 59,
   "regionalUnlocatedAfter": 57,
   "nationalUnlocatedBefore": 608,
-  "nationalUnlocatedAfter": 603,
-  "countScope": "開始基準608は保持。北海道/近畿西採用後のmain未位置605に東北2点（山田採用/花巻仮統合）を加え603。東北は59→57。",
+  "nationalUnlocatedAfter": 599,
+  "countScope": "開始基準608は保持。北海道/近畿西/甲信採用後のmain未位置601に東北採用2点を加え599。東北59→57。",
   "manifestChanged": true,
   "rows": [
     {
@@ -166,7 +166,7 @@
       "priorReviewRefs": [
         "data/national/issue7/reviews/tohoku.json#/decisions/69"
       ],
-      "status": "proposed",
+      "status": "adopted",
       "stage": "building-comparison",
       "newMethod": "本館/新館の館内図と現配布案内を比較し、L字外形・横棒比・南側張出しをVector396/398へ対応付ける。配置図を取得したとは扱わない。",
       "sourceIds": [
@@ -179,16 +179,15 @@
       ],
       "finding": "本館2階図と396は反転せず一致するL字。上辺(1976,796)→(2501,770)の傾き-2.835度を補正し上辺長で正規化すると幅/高さ1.445、横棒厚.343。図の約1.44/.33と対応。alignment-measurements.jsonで再現。 南側398の開始は上辺幅の.658〜.659で、図の1階張出し開始約.676と概ね対応。vt_codeの用途解釈は使わない。 現配布案内は平日「新館2階」、休日「本庁舎1階守衛室」を書き分ける。本館1階図は「守衛室・宿直室」、新館1階は「警備」。本庁舎だけでは棟を限定せず、これらの表記を合わせて休日の守衛室を本館と判断する。 重心の正規化座標は(.415,.269)、横棒厚.343の内側。脚幅と張出し端の差に依存しない代表点で398を合体しない。 タイルAnno index4「花巻市役所」とindex5記号3205は396内。旧P05市役所点も396内で重心から概算8.45m。施設敷地付近という補助根拠だが、これら単独では本館/新館を判別できない。 461は凸包比約.97でほぼ凸のためL字396と区別できる。館内図に道路がなく道路の対応は独立証拠としない。",
       "stopCondition": "反証: 新館1階にも「警備」室があり、施設名「警備員室」と語が重なる。市の本館/新館案内ページはともに「本庁舎」を冠する。市が「配布の守衛室は本館」と直接明言した資料は未確認で、表記の組合せによる推論が残る。自治体への直接照会は行っていない。 396の脚幅は下部.397/くびれ部.278の2段、図の各階は約.33。階差で説明できるとはしない。旧「中段.42」「地階外周」の説明は誤りとして撤回。 398東端1.039は図の張出し端約.965を超える。図1階の全幅/全高約1.65も2階約1.44と異なる。館内図は縮尺/方位なしの概略図で外形の厳密一致は主張しない。 396/398や記号3205の用途定義は未照合。数値は保存外形の幾何計算、入口/窓口の測量精度を主張しない。",
-      "resumeCondition": "Claude Opusによる独立再レビュー。承認されなければ仮統合を取り消す。",
+      "resumeCondition": "採用済み。配布先の移転・対象棟/窓口案内の変更や矛盾する一次資料が判明した場合に再確認。",
       "priorConstraintHandling": "本館と新館を同棟groupにしない。",
-      "adoptedCoordinate": null,
-      "binding": "data/national/location-batch2/tohoku/location-lifecycle.json",
-      "independentReview": "Opus条件付き採用可。反証/計測記録を修正済み、最終確認待ち。",
-      "comparisonRef": "hanamaki-main-396",
-      "provisionalCoordinate": {
+      "adoptedCoordinate": {
         "lat": 39.3885493,
         "lng": 141.1168429
-      }
+      },
+      "binding": "data/national/location-batch2/tohoku/location-lifecycle.json",
+      "independentReview": "Gemini 3.8 Flash final review e2b73a59: adopted/approved; see gemini-final-review.json",
+      "comparisonRef": "hanamaki-main-396"
     },
     {
       "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
@@ -207,23 +206,23 @@
       ],
       "finding": "PDF物理2頁北矢印を上に保つと、緑の販売棟は南西、青の情報/トイレ棟は北東。Vector126/127も同じ配置で127が小さい。 PDFの情報棟東側の段差/切り欠きが127の東側（頂点3573,172→3550,184）と対応する。126側の北/南付属部分は125/129、両棟間は128の位置に現れる。付属外形の用途は断定しない。 西側の曲がる道路、東側の斜め南北道路、南側の北東〜南西道路に囲まれた区画と建物配置を両資料で照合。PDF位置図も山田IC付近の同区画を示す。 町現配布案内は右側の情報/トイレ棟を明記。販売棟126の重心を使わず127を選ぶ。 タイルAnno index2の道の駅「やまだ」注記は126内。現在の敷地区画という補助根拠で、情報棟の識別には使わない。",
       "stopCondition": "PDFは2023開業資料、Vectorは2026-07-01版で個別測量日不明。 建物内部の窓口を測量していない。127を含む代表点精度とする。 数値原典はVectorのみ。PDFを地理参照して座標算出していない。 運営者の第2地割111番地2と町/国交省の第5地割66番地1の地番制度上の対応は未確定。旧記録の運営者地図点は126外約15.84m/127外約23.97mで同じ敷地付近。町/国交省図の道路・2棟の配置と現配布案内の情報棟指定で127を選ぶため、運営者の住所点から棟を選ばない。旧住所/点は訂正せず履歴保持。",
-      "resumeCondition": "採用済み。情報棟変更・移転・現配布案内の変更が判明した場合に再確認。",
+      "resumeCondition": "採用済み。配布先の移転・対象棟/窓口案内の変更や矛盾する一次資料が判明した場合に再確認。",
       "priorConstraintHandling": "移転の時系列資料は得たが、旧住所との地番制度上の対応や運営者地図の生成由来は未確定。",
       "adoptedCoordinate": {
         "lat": 39.478372,
         "lng": 141.9535192
       },
       "binding": "data/national/location-batch2/tohoku/location-lifecycle.json",
-      "independentReview": "Opus independent re-review 77ef285: accepted",
+      "independentReview": "Gemini 3.8 Flash final review e2b73a59: adopted/approved; see gemini-final-review.json",
       "comparisonRef": "yamada-127"
     }
   ],
-  "proposedCount": 1,
-  "provisionalIntegratedCount": 1,
+  "proposedCount": 0,
+  "provisionalIntegratedCount": 0,
   "revisionStartedAt": "2026-11-05T11:48:45.633074+00:00",
   "revisionResearchRecordedAt": "2026-11-05T11:54:39.163619+00:00",
   "revisionElapsedSeconds": 945.583,
   "revisionTimingScope": "地域共有wall-clock: 初回Opus指摘読解後の追加調査開始から再レビュー前検証・記録まで。初回447.217秒と別計測、施設ごとに重複加算しない。再レビュー/PR更新は含まない。",
-  "nationalUnlocatedBeforeRegionalIntegration": 605,
-  "integrationMainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41"
+  "nationalUnlocatedBeforeRegionalIntegration": 601,
+  "integrationMainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818"
 }

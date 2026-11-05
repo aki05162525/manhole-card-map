@@ -2,7 +2,7 @@
 
 HTML/PDF/写真は再配布条件を確認していないため、原本を `data/work/location-batch2/tohoku/` に保持し、Gitには `retrievals.json` のURL・UTC取得日時・hashと `facts.json` の事実抽出だけを置く。取得失敗も記録する。`reuseFrom` がある行は旧原本のhashを確認したコピーで、新取得ではない。原本の確認日は書き換えていない。
 
-4個のPBFは国土地理院最適化ベクトルタイルPMTilesの必要範囲。出典：国土地理院最適化ベクトルタイル（https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles）。`vector-inputs.json` はBldAを抽出して作成し、`derived-comparisons.json` は比較用重心を算出した加工物で、国土地理院作成の施設座標ではない。石巻・花巻本館・山田情報棟の3点を算出。山田はOpus採用可、花巻本館は条件付きで記録修正後の最終確認待ち。
+4個のPBFは国土地理院最適化ベクトルタイルPMTilesの必要範囲。出典：国土地理院最適化ベクトルタイル（https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles）。`vector-inputs.json` はBldAを抽出して作成し、`derived-comparisons.json` は比較用重心を算出した加工物で、国土地理院作成の施設座標ではない。石巻・花巻本館・山田情報棟の3点を算出。山田・花巻本館はGemini Flash最終確認で採用承認。調査者の提案時点のinvestigatorDecisionは履歴として保持し、承認はnational側のgemini-final-review.jsonへ別記する。
 
 試験公開の位置付けは公式README Git `c0e37e155f7773a2940fb1c2ad3da01cc6a29c90`、利用は国土地理院コンテンツ利用規約（PDL1.0・出典/加工表示・第三者権利等の留保）による。基本測量成果に位置付けないというVector固有の説明を使い、標準ラスタの利用条件をそのまま当てはめていない。規約の直接取得はTLSエラーとなったため、batch1の保存原本をhash照合して再利用した。初稿の「Web読取でも本文を確認」は取得記録が残っていないため検証根拠から撤回し、保存原本のみを根拠とする。記録のない取得日時/hashを後付けしていない。
 

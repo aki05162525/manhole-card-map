@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "preparedBy": "Codex tohoku implementation",
-  "reviewStatus": "Yamada accepted by Opus; Hanamaki conditional acceptance, record corrections awaiting final confirmation",
+  "reviewStatus": "approved: Gemini 3.8 Flash independent final review at e2b73a59, 2026-11-05; see gemini-final-review.json",
   "updates": [
     {
       "facilityId": "facility:north-db757b448c8db73422a5",
