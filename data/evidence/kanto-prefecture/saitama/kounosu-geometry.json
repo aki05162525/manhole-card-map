@@ -1,0 +1,67 @@
+{
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4962,
+          4790
+        ],
+        [
+          5197,
+          4898
+        ],
+        [
+          5095,
+          5122
+        ],
+        [
+          4860,
+          5014
+        ],
+        [
+          4962,
+          4790
+        ]
+      ]
+    ]
+  },
+  "tile": {
+    "z": 16,
+    "x": 58166,
+    "y": 25719
+  },
+  "pointXY": [
+    5028.5,
+    4956.0
+  ],
+  "method": "shapely 2.2.0 polygon centroid; combined tile frame; inverse Web Mercator XYZ",
+  "sourceTile": {
+    "z": 16,
+    "x": 58167,
+    "y": 25720
+  },
+  "sourceLayer": "BldA",
+  "sourceLayerFeatureIndex": 53,
+  "combinedFeatureIndex": 2523,
+  "tileBoundaryTouched": false,
+  "outerBoundaryTouched": false,
+  "approxAreaSquareMeters": 927.0331363336346,
+  "mechanicalResult": {
+    "coordinate": {
+      "lat": 36.0659298,
+      "lng": 139.5221246
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      5028.497471690178,
+      4956.036114126444
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "identityApproved": false,
+  "crsApproved": false
+}
