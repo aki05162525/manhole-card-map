@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "source": "国土地理院最適化ベクトルタイル",
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "sourceVersion": "2026-07-01 per fixed README c0e37e155f7773a2940fb1c2ad3da01cc6a29c90; range Last-Modified 2026-09-17",
+  "crs": "JGD2011 geographic source / Web Mercator tile lattice; extent 4096",
+  "axisOrder": "tile x east / y south; z/x/y addressing",
+  "precision": "外形は一般化を含む試験データ。測量精度を保証しない。採用点なし。",
+  "processing": "pmtiles 3.4.1とmapbox-vector-tile 2.2.0でBldA外形をデコード、Pillowで3x3タイルの外形のみ描画。道路・地名レイヤーは未照合。代表点計算なし。",
+  "terms": "固定READMEは基本測量成果と位置付けない試験公開と明記。コンテンツ規約のPDL1.0・出典明示・加工表示を確認。ラスターの測量法条件を流用しない。",
+  "termsRefs": [
+    "data/evidence/location-batch2/north-kanto/retrievals.json#/records/18",
+    "data/evidence/location-batch2/north-kanto/retrievals.json#/records/21",
+    "data/evidence/location-batch2/north-kanto/retrievals.json#/records/22"
+  ],
+  "attribution": "国土地理院最適化ベクトルタイルを加工して外形比較図を作成。国土地理院による施設点作成・承認ではない。",
+  "redistribution": "このPRはVector原本・比較画像もworkにのみ保持。一般HTML/PDF/写真の再配布許諾は未確認。Gitは自作の事実・取得hashと検証/取得コードのみ。",
+  "limitation": "北向き/縮尺なしの園内イラストと、名称・道路なし外形の配置類似だけではムジナモ市場を同定しない。再開は周辺道路・出入口・建物識別を独立に接続できる資料/手法。"
+}

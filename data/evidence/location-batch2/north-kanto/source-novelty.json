@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "comparisonScope": "Issue5/7 north-kanto evidence JSON URLs only; no claim of exhaustive prior web history",
+  "rows": [
+    {
+      "id": "tsuchiura-facility",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "yaita-renewal",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "yaita-plan",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "kanuma-facility",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "kumagaya-plan",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "hanyu-map",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "shiraoka-bulletin",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "tsuchiura-current",
+      "urlPreviouslyRecorded": true
+    },
+    {
+      "id": "hitachi-floor",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "hitachi-layout",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "fukaya-facility",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "saitama-guide",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "shiraoka-construction",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "tsuchiura-plan",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "hitachi-plan",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "fukaya-guide",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "shiraoka-plan",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "kanuma-operator",
+      "urlPreviouslyRecorded": true
+    },
+    {
+      "id": "gsi-readme",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "gsi-terms",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "kanuma-layout",
+      "urlPreviouslyRecorded": true
+    },
+    {
+      "id": "reused-gsi-content.html",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "reused-gsi-vector-spec.html",
+      "urlPreviouslyRecorded": false
+    },
+    {
+      "id": "kanuma-store-layout",
+      "urlPreviouslyRecorded": false
+    }
+  ]
+}
