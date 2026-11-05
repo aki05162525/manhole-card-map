@@ -48,3 +48,49 @@
 - `issue57-workflow.md` の「原本rawと取得metadataを保持」は成功時には成立するが、既知のRange不一致時はContent-Range/ETag等をrecordへ入れる前に例外となる（`research_common.fetch_cached`）。今回のRange取得は全て成功しており、この既知不具合を修正・再現試験したとは扱わない。
 
 他の旧文書の不一致一覧はissue57の履歴を継承するが、今回すべてを再検証したとは主張しない。
+
+## 通常フックの確定証跡
+
+検証commit: `07edcffadb53f4129d4ad988eccce6c3b3bf0ff1`。開始 `2026-11-05T15:00:41.369828+00:00`、終了 `2026-11-05T15:02:13.013133+00:00`、終了コード `0`。コマンドは `mise exec -- git commit -m "research(gunma): record 13 targets and terrace Numata candidates"`。
+
+入力hashはvalidation.jsonのinputSHA256に対応し、追記直前にcommit時の全45ファイルhashと現ファイルの一致を検査した。validation.jsonのfullSuite pendingはcommit前の記録であり、本追記で成功を確定する。以下のログはANSI色指定とcommitファイル一覧を除いた全文。元ログSHA256: `07f913896d3359512816313097b652a5bff7aca364d713f6f274b3fefa0ba0ab`。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	82.331s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.004s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.005s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.004s
+
+  ────────────────────────────────────
+summary: (done in 83.21 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (83.21 seconds)
+```
+
+`cmd/builddata/fragments_test.go` の TestNationalAssemblyFailureGuards は `python3 -B -m unittest discover -s tools/national -v` を実行し、失敗時だけ出力する。従ってPythonの個別成功行はこのGoログに表示されない。Goパッケージ成功とその呼出し実装を合わせた証跡であり、別の手動Python全suiteログを捏造・重複実行していない。
+
+この追記は文書のみで、データ・テスト入力は検証commitから同一。文書追記commitも通常フックを通す。独立Codexレビュー・CI状態はPR側で別途確認する。
