@@ -1102,5 +1102,7 @@
       "selection": "excluded",
       "reason": "今回の8施設より後順位。旧保留を維持し、別原典・棟対応資料または利用者報告で再選定"
     }
-  ]
+  ],
+  "selectionAlgorithm": "保存済みIssue24 rows順で担当regionを抽出し、ended-onlyを除く先頭8件。理由は各行。firstPin/誤誘導の独自再ソートは行っていない。保存snapshotの優先順位を利用し、現在の在庫・休止を再判定したものではない。",
+  "selectionTimingLimit": "selectedAtは実査前のローカル保存時刻。選定単独commitがなくGit履歴だけでは実査前保存を証明できない。"
 }
