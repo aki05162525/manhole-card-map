@@ -8,13 +8,13 @@ import unittest
 import assemble as a
 
 
-def before_batch2(manifest):
-    """Keep historical contracts independent of later regional adoptions."""
-    result = copy.deepcopy(manifest)
+def batch1_manifest(root):
+    # Later regional research must not rewrite the historical Batch1 contract.
+    manifest = a.read_json(root / 'tools/national/manifest.json')
     for key in ('locations', 'locationLifecycle'):
-        result[key] = [s for s in result.get(key, [])
-                       if not s['path'].startswith('data/national/location-batch2/')]
-    return result
+        manifest[key] = [row for row in manifest.get(key, [])
+                         if not row['path'].startswith('data/national/location-batch2/')]
+    return manifest
 
 
 class AssemblyTests(unittest.TestCase):
@@ -120,7 +120,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_review_selection_excludes_deferred_and_facility_scope(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = before_batch2(a.read_json(root / 'tools/national/manifest.json'))
+        manifest = batch1_manifest(root)
         inputs, patches, updates = a.load_selection(root, manifest)
         self.assertEqual(len(patches), 113)  # Issue26 adds only address and evidence fields.
         self.assertEqual(len(updates), 844)  # Batch1: four independently reviewed facilities.
@@ -148,7 +148,7 @@ class AssemblyTests(unittest.TestCase):
         # Digest was compared against the parent's manual output once. CI never
         # opens that work file and needs no full.json/cards.json/raw inputs.
         root = Path(__file__).resolve().parents[2]
-        manifest = before_batch2(a.read_json(root / 'tools/national/manifest.json'))
+        manifest = batch1_manifest(root)
         # Keep the reviewed pre-Issue26 baseline intact. The next test proves
         # the exact address/evidence-only delta of the newly selected patch.
         manifest['patches'] = [p for p in manifest['patches']
@@ -212,7 +212,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_batch1_only_changes_reviewed_facilities_and_preserves_relations(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = before_batch2(a.read_json(root / 'tools/national/manifest.json'))
+        manifest = batch1_manifest(root)
         historical = copy.deepcopy(manifest)
         historical['locations'] = [p for p in historical['locations']
                                   if p['path'] != 'data/national/location-batch1/locations-reviewed.json']

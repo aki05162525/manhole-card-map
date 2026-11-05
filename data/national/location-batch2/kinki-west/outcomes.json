@@ -3,7 +3,7 @@
   "region": "kinki-west",
   "selectedCount": 8,
   "candidateForAdoptionCount": 2,
-  "adoptedCount": 0,
+  "adoptedCount": 2,
   "heldCount": 6,
   "rows": [
     {
@@ -108,6 +108,20 @@
           "path": "data/work/location-batch2/kinki-west/a68af60195e82951.pdf",
           "sha256": "f9cf34dd70fcce02f9fbbe95f9f0a82f7f64d581a0bc47598e91f74e2952ff5e",
           "fetchedAt": "2026-11-05T11:25:04.805254+00:00"
+        },
+        {
+          "path": "data/evidence/issue7/kinki-west/snapshots/32518006cc13b42e3db4c579.pdf",
+          "sha256": "ea7933abce9cde5d3719237816f04faa74d86f1cc2cb49093145cf88e7cdd88c",
+          "url": "https://www.town.hyogo-inami.lg.jp/cmsfiles/contents/0000003/3230/tyousyaannaizu2023.pdf",
+          "fetchedAt": "2026-11-05T06:37:44.039230+00:00",
+          "reused": true
+        },
+        {
+          "path": "data/evidence/issue5/kinki/snapshots/reused-14d3a00d8caa5ff9995c4c6a706edb7b610cbb7e3d6e4ebb4872d2b52bfdc82b.html",
+          "sha256": "14d3a00d8caa5ff9995c4c6a706edb7b610cbb7e3d6e4ebb4872d2b52bfdc82b",
+          "url": "https://www.town.hyogo-inami.lg.jp/0000007341.html",
+          "checkedAt": "2026-11-05",
+          "reused": true
         }
       ],
       "sourceVersion": "GSI PMTiles 2026-07-01; 公式図はbuilding-correspondence sources参照",
@@ -119,13 +133,17 @@
       "crsAndAxes": "GSI試験VectorのWeb Mercator格子、x東/y南。逆投影でlat/lng順。測地系変換なし。",
       "processing": "identified-wing-centroid; derive-buildings.pyで逆投影、小数7桁、丸め後内包。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
-      "decision": "proposed-pending-independent-review",
+      "decision": "adopted",
       "stage": "building-compared",
-      "stopCondition": "独立再レビューで棟対応・計算・bindingの問題が残る場合は採用しない。",
-      "resumeCondition": "Opus独立再レビューで現配布棟との対応と加工を点検し、問題があれば根拠に沿って修正。",
+      "stopCondition": "独立Opus再レビューで建物代表点として承認。",
+      "resumeCondition": "配布先/棟の変更や新しい不一致根拠が出た場合に再確認。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json",
-      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/0"
+      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/0",
+      "timingRefs": [
+        "data/national/location-batch2/kinki-west/timing.json",
+        "data/national/location-batch2/kinki-west/revision-timing.json"
+      ]
     },
     {
       "facilityId": "facility:kinki-0f86b9f28ca3800b81c4",
@@ -235,6 +253,20 @@
           "path": "data/work/location-batch2/kinki-west/1f1118c16427289a.pdf",
           "sha256": "a53208676adcc748ef4a60f635685578c2a2b5e4831721bdaefe3ee63b0ae790",
           "fetchedAt": "2026-11-05T11:26:15.282880+00:00"
+        },
+        {
+          "path": "data/evidence/issue7/kinki-west/snapshots/f8c638bda3eb535d6ee9d01c.html",
+          "sha256": "b23f23e2b2f81398db0a75e8f31f2c4724be3b67581209d09231274f3d041e0a",
+          "url": "https://www.city.kashiwara.lg.jp/docs/2025011400081/",
+          "fetchedAt": "2026-11-05T06:31:53.920786+00:00",
+          "reused": true
+        },
+        {
+          "path": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+          "sha256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+          "url": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+          "checkedAt": "2026-11-05",
+          "reused": true
         }
       ],
       "sourceVersion": "GSI PMTiles 2026-07-01; 公式図はbuilding-correspondence sources参照",
@@ -246,13 +278,17 @@
       "crsAndAxes": "GSI試験VectorのWeb Mercator格子、x東/y南。逆投影でlat/lng順。測地系変換なし。",
       "processing": "footprint-centroid; derive-buildings.pyで逆投影、小数7桁、丸め後内包。",
       "accuracy": "測量精度未確定。小数桁を現地精度としない。",
-      "decision": "proposed-pending-independent-review",
+      "decision": "adopted",
       "stage": "building-compared",
-      "stopCondition": "独立再レビューで棟対応・計算・bindingの問題が残る場合は採用しない。",
-      "resumeCondition": "Opus独立再レビューで現配布棟との対応と加工を点検し、問題があれば根拠に沿って修正。",
+      "stopCondition": "独立Opus再レビューで建物代表点として承認。",
+      "resumeCondition": "配布先/棟の変更や新しい不一致根拠が出た場合に再確認。",
       "rawRedistribution": "一般HTML/PDF/写真/Excel全文はworkのみ。自作事実抽出と取得hashをGitへ保持。",
       "timingRef": "data/national/location-batch2/kinki-west/timing.json",
-      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/1"
+      "comparisonRef": "data/evidence/location-batch2/kinki-west/building-correspondence.json#/rows/1",
+      "timingRefs": [
+        "data/national/location-batch2/kinki-west/timing.json",
+        "data/national/location-batch2/kinki-west/revision-timing.json"
+      ]
     },
     {
       "facilityId": "facility:kinki-2e26386ad29411013be5",
@@ -332,7 +368,7 @@
       "timingRef": "data/national/location-batch2/kinki-west/timing.json"
     }
   ],
-  "provisionalManifestCount": 2,
-  "finalDecision": "pending-opus-rereview",
+  "provisionalManifestCount": 0,
+  "finalDecision": "approved-after-independent-opus-rereview",
   "initialSnapshotRef": "data/national/location-batch2/kinki-west/initial-outcomes.json"
 }
