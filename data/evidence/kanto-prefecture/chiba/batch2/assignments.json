@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-11-05T15:33:38.045938+00:00",
+  "baselineHead": "05f1bbeec3bf825e41d344ca1317af5c18c3b0aa",
+  "protectedFiles": [
+    "data/evidence/kanto-prefecture/chiba/reproduction.txt",
+    "data/evidence/kanto-prefecture/chiba/validation.json"
+  ],
+  "groups": {
+    "civic-five": [
+      "38d7a5c180ebcf42c381",
+      "d4aaa6f664279d04fc85",
+      "integration-05",
+      "7e3c5c2330870eee7f79",
+      "cb5698330ef87617cf42"
+    ],
+    "yachiyo-four": [
+      "integration-01",
+      "integration-02",
+      "integration-legacy-yachiyo-0",
+      "integration-legacy-yachiyo-1"
+    ],
+    "visitor-five": [
+      "34abbed67b76aca3d2d2",
+      "46630cd19483230497e8",
+      "668322fd5a7c4bbcbf55",
+      "7a134ba2f20e70f69407",
+      "f4a2060d8b43f0ac3acb"
+    ],
+    "county-parent": [
+      "5724e90e3e451f22eeef",
+      "caac2827c5303ba03047",
+      "b3c83a3795c4697c100b"
+    ]
+  },
+  "prefix": "facility:kanto-south-",
+  "humanPending": [],
+  "humanPendingStatus": "3件は2026-11-06回答受領。user-answers-20261106.json。図面照合は継続",
+  "narashinoReview": "parent reports research and building comparison acceptable; adoption held for product-specific CRS; no direct review document inspected here",
+  "policy": "children write disjoint ignored subdirectories; county integrates after all per-ID evidence; no child fullsuite/commit/delegation",
+  "completion": "all 17 IDs have performed research and per-ID evidence; adoption/review/CRS unresolved separately",
+  "outputs": {
+    "civic-five": "data/evidence/kanto-prefecture/chiba/batch2/civic-five",
+    "yachiyo-four": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four",
+    "visitor-five": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five",
+    "shiroi": "data/evidence/kanto-prefecture/chiba/batch2/shiroi"
+  },
+  "newQuestionCandidates": "data/national/kanto-prefecture/chiba/batch2/human-questions.json"
+}

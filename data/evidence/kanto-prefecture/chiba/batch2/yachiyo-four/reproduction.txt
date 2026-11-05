@@ -1,0 +1,19 @@
+# Run from repository root; offline saved GSI originals only.
+mise exec -- uv run --with mapbox-vector-tile==2.2.0 python data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/reproduce_geometry.py
+python3 data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/calculate.py
+python3 data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/package.py
+python3 data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/verify.py
+
+# Optional local-only general-original verification (requires ignored original files):
+python3 data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/verify.py --with-local-originals
+
+# PNG preview must go to ignored work, not evidence; SVG is the tracked artifact.
+# mise exec -- uv run --with cairosvg==2.8.2 python -c "import cairosvg;cairosvg.svg2png(url='data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/current-comparison.svg',write_to='data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/current-comparison.png',output_width=1500)"
+
+# fetch.py/tiles.py are for NEW acquisitions only, not routine reproduction.
+# They require explicit output beneath git-ignored data/work and reject tracked directories.
+# python3 .../fetch.py data/work/NEW-UNUSED-DIRECTORY NAME URL
+# mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with pmtiles==3.4.1 --with cairosvg==2.8.2 python .../tiles.py data/work/NEW-UNUSED-DIRECTORY
+# Do not rerun against populated raw stores; no-overwrite assertions are intentional.
+# Original municipal acquisition and render commands are in historical/reproduction.txt.
+# historical/ logs/hashes describe the original pre-relocation work, not this reproduction.

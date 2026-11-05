@@ -1,0 +1,93 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58271,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25796.pbf.gz",
+      "sha256": "1008d28c16e1a70406e812e3ec2dd503ebfb9ce283ab0bec81b335ffb286172b"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58272,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25796.pbf.gz",
+      "sha256": "95dc09697cceb6f29530d497cada406af9cde3acf4c09c5787406f999b2216bc"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58273,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25796.pbf.gz",
+      "sha256": "e3a66fcfc9acafdafd3bd3cb41f9ecfb477f1c9f4636b091c84ae21ab445c10c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58271,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25797.pbf.gz",
+      "sha256": "1c7ba0c0bdd5d0111f4ce28ba6ede1e133a3370ec2824b5ae22e90ce004af22d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58272,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25797.pbf.gz",
+      "sha256": "884059451df640dc777b247c61c6800fb5d0b618b0715be544ac61ba5ed6b908"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58273,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25797.pbf.gz",
+      "sha256": "55e2adbca6ad68261fa385f14061ce15cc5c7051c890adc389798acd2b740b32"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58271,
+        "y": 25798
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58271-25798.pbf.gz",
+      "sha256": "1bc21f039204f778fa4c61560aaed95fa62abc1143def12f0e373beeedc9bc1e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58272,
+        "y": 25798
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58272-25798.pbf.gz",
+      "sha256": "6f55dd59a0e99b81ccf4e344e140005fd0d49fea1981ddce30e4ffce277b983c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58273,
+        "y": 25798
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/yachiyo-four/tiles/16-58273-25798.pbf.gz",
+      "sha256": "aa052208f4a4b070f3b95c8637ad99fb042d8e1e464d0ae2dd5bd97dd5562fbf"
+    }
+  ],
+  "seed": "historical yachiyo tile 58272/25797; search window only",
+  "processing": "mapbox-vector-tile 2.2.0 y_coord_down=True; all BldA/RdCL, extent4096; combine_tiles/render_svg; no area filtering",
+  "credit": "国土地理院最適化ベクトルタイルを加工、PDL1.0、採用未承認"
+}

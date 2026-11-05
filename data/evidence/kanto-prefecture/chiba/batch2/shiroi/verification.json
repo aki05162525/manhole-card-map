@@ -1,0 +1,22 @@
+{
+  "commit": "05f1bbeec3bf825e41d344ca1317af5c18c3b0aa",
+  "command": "mise exec -- uv run --with mapbox-vector-tile==2.2.0 python data/evidence/kanto-prefecture/chiba/batch2/shiroi/reproduce-shiroi.py <new ignored output directory>",
+  "exitCode": 0,
+  "checks": [
+    "4 inherited raw tile SHA256 matched before decoding",
+    "2 representative points: unrounded/rounded polygon inclusion and independent Shapely check",
+    "calculation JSON and complete/focused SVG byte equality",
+    "3 new official source hashes matched"
+  ],
+  "inputsSHA256": {
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/reproduce-shiroi.py": "94ee228c6b19760846219721903ae0b9b1a76b72a9fe28c3feaf8cd4aaaec095",
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-all.svg": "61659282c2e2624b02032e64c67ac397d8afb271ae11225351d26d8d4846cd60",
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/calculation.json": "bf4a32be2ee4348beebb725f437ddcfc6fbcbabecb43930536aa9823a9820fce",
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-focus.svg": "08c9bd0cb5c380d5bf52aef7f723626044ba191767a16114e30d66f6e3ee0ca7",
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-outcomes.json": "0daecd60c6c17511ea6a08f52345415145dc9648e425da4a0fe1453c99cef595",
+    "data/evidence/kanto-prefecture/chiba/batch2/shiroi/shiroi-tile-reuse.json": "b7248db4e5394b12a555dc9f1a0fe9f588f48da8dca3a131e1833e36b9a51671"
+  },
+  "identityReview": "pending independent review",
+  "CRSReview": "pending product-specific applicability",
+  "fullSuite": "county hook will validate integrated change; not part of this limited verification"
+}

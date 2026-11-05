@@ -1,0 +1,636 @@
+{
+  "source": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/cityhall-reused-combined.json",
+  "sourceSHA256": "abb3bb106c45b6d0a402e2bbb4a7cacac71abc42ce97dd2801ccf2ec1a0cda33",
+  "baseTile": {
+    "z": 16,
+    "x": 58245,
+    "y": 25862
+  },
+  "features": [
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3390,
+              2974
+            ],
+            [
+              3435,
+              3073
+            ],
+            [
+              3307,
+              3131
+            ],
+            [
+              3290,
+              3093
+            ],
+            [
+              3201,
+              3134
+            ],
+            [
+              3282,
+              3315
+            ],
+            [
+              3212,
+              3346
+            ],
+            [
+              3104,
+              3103
+            ],
+            [
+              3390,
+              2974
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3111,
+        "vt_lvorder": 0
+      },
+      "id": "58245-25862-BldA-104",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 104,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 104,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 624.3096779186629
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3312,
+              3385
+            ],
+            [
+              3432,
+              3654
+            ],
+            [
+              3480,
+              3632
+            ],
+            [
+              3503,
+              3683
+            ],
+            [
+              3391,
+              3734
+            ],
+            [
+              3247,
+              3414
+            ],
+            [
+              3312,
+              3385
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58245-25862-BldA-105",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 105,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 105,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 410.10484632047843
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3855,
+              3310
+            ],
+            [
+              3977,
+              3583
+            ],
+            [
+              3994,
+              3584
+            ],
+            [
+              4000,
+              3591
+            ],
+            [
+              4002,
+              3600
+            ],
+            [
+              3999,
+              3608
+            ],
+            [
+              3976,
+              3622
+            ],
+            [
+              3995,
+              3664
+            ],
+            [
+              4096,
+              3619
+            ],
+            [
+              4148,
+              3735
+            ],
+            [
+              4096,
+              3758
+            ],
+            [
+              3738,
+              3923
+            ],
+            [
+              3668,
+              3767
+            ],
+            [
+              3770,
+              3721
+            ],
+            [
+              3733,
+              3639
+            ],
+            [
+              3621,
+              3689
+            ],
+            [
+              3509,
+              3439
+            ],
+            [
+              3713,
+              3347
+            ],
+            [
+              3723,
+              3369
+            ],
+            [
+              3855,
+              3310
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": "58245-25862-BldA-111",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 111,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 111,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 2837.394593264059
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3895,
+              3849
+            ],
+            [
+              4005,
+              4096
+            ],
+            [
+              4010,
+              4106
+            ],
+            [
+              4025,
+              4099
+            ],
+            [
+              4040,
+              4134
+            ],
+            [
+              3988,
+              4157
+            ],
+            [
+              3982,
+              4144
+            ],
+            [
+              3910,
+              4176
+            ],
+            [
+              3867,
+              4176
+            ],
+            [
+              3832,
+              4096
+            ],
+            [
+              3811,
+              4047
+            ],
+            [
+              3897,
+              4008
+            ],
+            [
+              3839,
+              3878
+            ],
+            [
+              3895,
+              3849
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 1
+      },
+      "id": "58245-25862-BldA-113",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 113,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 113,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 518.313393939678
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3688,
+              4052
+            ],
+            [
+              3707,
+              4096
+            ],
+            [
+              3733,
+              4153
+            ],
+            [
+              3705,
+              4166
+            ],
+            [
+              3709,
+              4176
+            ],
+            [
+              3600,
+              4176
+            ],
+            [
+              3569,
+              4106
+            ],
+            [
+              3591,
+              4096
+            ],
+            [
+              3688,
+              4052
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58245-25862-BldA-114",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 114,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 114,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 196.7212898529422
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3969,
+              4016
+            ],
+            [
+              4005,
+              4096
+            ],
+            [
+              4010,
+              4106
+            ],
+            [
+              4025,
+              4099
+            ],
+            [
+              4040,
+              4134
+            ],
+            [
+              3988,
+              4157
+            ],
+            [
+              3982,
+              4144
+            ],
+            [
+              3875,
+              4192
+            ],
+            [
+              3832,
+              4096
+            ],
+            [
+              3811,
+              4047
+            ],
+            [
+              3879,
+              4016
+            ],
+            [
+              3969,
+              4016
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 1
+      },
+      "id": "58245-25863-BldA-15",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 15,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25863
+      },
+      "sourceFeatureIndex": 15,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 366.2517138938804
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3688,
+              4052
+            ],
+            [
+              3707,
+              4096
+            ],
+            [
+              3733,
+              4153
+            ],
+            [
+              3705,
+              4166
+            ],
+            [
+              3718,
+              4195
+            ],
+            [
+              3741,
+              4185
+            ],
+            [
+              3751,
+              4207
+            ],
+            [
+              3728,
+              4217
+            ],
+            [
+              3741,
+              4246
+            ],
+            [
+              3768,
+              4234
+            ],
+            [
+              3814,
+              4338
+            ],
+            [
+              3696,
+              4391
+            ],
+            [
+              3569,
+              4106
+            ],
+            [
+              3591,
+              4096
+            ],
+            [
+              3688,
+              4052
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58245-25863-BldA-255",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 255,
+      "sourceTile": {
+        "z": 16,
+        "x": 58245,
+        "y": 25863
+      },
+      "sourceFeatureIndex": 255,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 570.4162720480133
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4096,
+              3619
+            ],
+            [
+              4148,
+              3735
+            ],
+            [
+              4096,
+              3758
+            ],
+            [
+              4016,
+              3794
+            ],
+            [
+              4016,
+              3654
+            ],
+            [
+              4096,
+              3619
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "id": "58246-25862-BldA-3",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 3,
+      "sourceTile": {
+        "z": 16,
+        "x": 58246,
+        "y": 25862
+      },
+      "sourceFeatureIndex": 3,
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 218.62196000356312
+    },
+    {
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4314,
+              4188
+            ],
+            [
+              4335,
+              4239
+            ],
+            [
+              4264,
+              4269
+            ],
+            [
+              4243,
+              4218
+            ],
+            [
+              4314,
+              4188
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "id": "58246-25863-BldA-15",
+      "type": "Feature",
+      "sourceLayer": "BldA",
+      "layerFeatureIndex": 15,
+      "sourceTile": {
+        "z": 16,
+        "x": 58246,
+        "y": 25863
+      },
+      "sourceFeatureIndex": 15,
+      "tileBoundaryTouched": false,
+      "outerBoundaryTouched": false,
+      "areaM2Approx": 62.905235682628046
+    }
+  ],
+  "warning": "Clipped/buffered pieces are separate. Do not sum their areas: duplicate tile buffer not dissolved. Areas are approximate and belong to obsolete footprints, never candidate current South Hall.",
+  "currentCandidate": null,
+  "originalSource": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/sodegaura-combined.json"
+}

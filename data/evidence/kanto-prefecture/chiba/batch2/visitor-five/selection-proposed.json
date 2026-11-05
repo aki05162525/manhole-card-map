@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "status": "NOT APPROVED; NOT APPLIED",
+  "locations": {
+    "path": "data/evidence/kanto-prefecture/chiba/batch2/visitor-five/locations-proposed.json",
+    "approved": []
+  },
+  "locationLifecycle": [],
+  "candidateOnly": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "sha256": "41f8f19042717c745d83acaf6520f5abc79686410eb5cd1cebb2399e8db3becf",
+      "bindingSHA256": "f0ba4e71d7315eeb84576597a672a0667984ba7c70ce5da3f1053729e4dc5893",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "2082467033dd8342b9059c9d71674fcfc8d6245fa4495bc7987001979299ec99",
+      "expectedOldRelationsSHA256": "1e749def0e90022ccbd65c529216ee6f55d63f6a1b8335c108ab0c1b55292016",
+      "requires": [
+        "independent building identification review",
+        "product-specific CRS applicability",
+        "parent approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "sha256": "7435a04df1e5a6fd17fbe272ce4df94f4fd8bc3be9103dbdd9ecb0dc43359e73",
+      "bindingSHA256": "d0f697b4e203c9a1786d07607cf4b6635e244fe4a649f60cad35b5e610694683",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "8155126b15b0ac800fea56201bd548a662b80b935db3116281fc4146d3a5528d",
+      "expectedOldRelationsSHA256": "ac7f2787f0d71b021bef25e927761c89b172bdb5ec74b1ce095701f3b3d2b280",
+      "requires": [
+        "independent building identification review",
+        "product-specific CRS applicability",
+        "parent approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "sha256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b",
+      "bindingSHA256": "07498065a6be5af597bbf94e2a5fa3609214f9527d2cac0186efd0ac5bce995c",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "12ea11509d2d87c74c941f178f0639c9e5b5ade2108a6f786a6bccca66a77b7a",
+      "expectedOldRelationsSHA256": "42af67fa35391a0d7cc1da5139b71b8d4f3b65aa78a7e055d10e6665e2ead381",
+      "requires": [
+        "independent building identification review",
+        "product-specific CRS applicability",
+        "parent approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "sha256": "a83ac6892dd10451a2b5a523e2c5522927b1ad61e7528e7a3d6df436cdf40df2",
+      "bindingSHA256": "077ca1b32a48213c713a6b5d114c8628a2514f7df61b2de6007e1ff1344e65b7",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "b113327510a14aafa6a9defffd9cec9575885e53891b018a6f0ed94990d6185c",
+      "expectedOldRelationsSHA256": "aa99934fa542bdf293cad726083a056dc24ba38a1413f68ae8f294a90a62d54a",
+      "requires": [
+        "independent building identification review",
+        "product-specific CRS applicability",
+        "parent approval"
+      ]
+    }
+  ],
+  "relationPatches": []
+}

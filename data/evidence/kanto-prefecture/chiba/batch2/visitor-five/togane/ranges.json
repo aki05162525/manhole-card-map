@@ -1,0 +1,244 @@
+[
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=0-126"
+    },
+    "attemptedAt": "2026-11-05T15:35:37.769754+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 0-126/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "cached",
+    "fetchedAt": "2026-11-05T15:35:37.843724+00:00",
+    "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+    "bytes": 127,
+    "reusedAt": "2026-11-05T15:51:43.860966+00:00"
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=127-2502"
+    },
+    "attemptedAt": "2026-11-05T15:35:37.844221+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 127-2502/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "cached",
+    "fetchedAt": "2026-11-05T15:35:37.925284+00:00",
+    "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+    "bytes": 2376,
+    "reusedAt": "2026-11-05T15:51:43.861156+00:00"
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=2250969-2259626"
+    },
+    "attemptedAt": "2026-11-05T15:51:43.862134+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 2250969-2259626/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:43.940837+00:00",
+    "sha256": "593dad32ef6c34267957f7efc0ffac22847a10951015185383d6dcef03653e99",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/593dad32ef6c34267957f7efc0ffac22847a10951015185383d6dcef03653e99.raw",
+    "bytes": 8658
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407562996-10407573625"
+    },
+    "attemptedAt": "2026-11-05T15:51:43.946071+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407562996-10407573625/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.036641+00:00",
+    "sha256": "1b2733f548d482f424f5875d2155f508050ec4b46e3552da716d44dfcc5f00ee",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/1b2733f548d482f424f5875d2155f508050ec4b46e3552da716d44dfcc5f00ee.raw",
+    "bytes": 10630
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407548051-10407562995"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.055920+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407548051-10407562995/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.146187+00:00",
+    "sha256": "791ebd1ae8ddd33df59badaa428d63ab51ad2a6faf1e47e5100558609d8ad788",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/791ebd1ae8ddd33df59badaa428d63ab51ad2a6faf1e47e5100558609d8ad788.raw",
+    "bytes": 14945
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407367787-10407371574"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.160680+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407367787-10407371574/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.264191+00:00",
+    "sha256": "7686642ef8c4a61d0cc5ce1049b070aa5a797eb83d23c730b4cee28cabdf1958",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/7686642ef8c4a61d0cc5ce1049b070aa5a797eb83d23c730b4cee28cabdf1958.raw",
+    "bytes": 3788
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407573626-10407585304"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.270671+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407573626-10407585304/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.349071+00:00",
+    "sha256": "40194becd22e1767c77c80f65bb6bf88c68cbe43dd58cba1a7dc7d0b8f3a80b1",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/40194becd22e1767c77c80f65bb6bf88c68cbe43dd58cba1a7dc7d0b8f3a80b1.raw",
+    "bytes": 11679
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407540330-10407548050"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.359680+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407540330-10407548050/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.420852+00:00",
+    "sha256": "2aa6a60e5703348bf7dad247829f010bfa1d2e429e8a3cac65587705a4ef2964",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/2aa6a60e5703348bf7dad247829f010bfa1d2e429e8a3cac65587705a4ef2964.raw",
+    "bytes": 7721
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407371575-10407377274"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.428849+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407371575-10407377274/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.512402+00:00",
+    "sha256": "3e7c8c72bca43c1ff824ba87b1caacc249205d70ce7deb0ebe24b6d190f1a67b",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/3e7c8c72bca43c1ff824ba87b1caacc249205d70ce7deb0ebe24b6d190f1a67b.raw",
+    "bytes": 5700
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407517219-10407531506"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.518826+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407517219-10407531506/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.572178+00:00",
+    "sha256": "febfb27013bcbc1251721fca7c74633cbdc3edd725e287d6ec5c0d0b10ab351a",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/febfb27013bcbc1251721fca7c74633cbdc3edd725e287d6ec5c0d0b10ab351a.raw",
+    "bytes": 14288
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407531507-10407540329"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.583050+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407531507-10407540329/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.676893+00:00",
+    "sha256": "4293678416c6e9bbb74b7481820ee3939902714dc0c7822162484d2e38a6e4fa",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/4293678416c6e9bbb74b7481820ee3939902714dc0c7822162484d2e38a6e4fa.raw",
+    "bytes": 8823
+  },
+  {
+    "schema": 1,
+    "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "version": "visitor-five-2026-11-06",
+    "requestHeaders": {
+      "range": "bytes=10407483288-10407494153"
+    },
+    "attemptedAt": "2026-11-05T15:51:44.687173+00:00",
+    "httpStatus": 206,
+    "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+    "contentType": "binary/octet-stream",
+    "contentRange": "bytes 10407483288-10407494153/16900763181",
+    "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:51:44.745941+00:00",
+    "sha256": "a29d5f34787001958673629a092d688e84d44cc8a3c9dece9ccf999fabd2a30b",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/visitor-five/ranges/a29d5f34787001958673629a092d688e84d44cc8a3c9dece9ccf999fabd2a30b.raw",
+    "bytes": 10866
+  }
+]

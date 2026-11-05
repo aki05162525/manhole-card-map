@@ -1,0 +1,11 @@
+# Run from repository root. Existing acquired raw is immutable; do not rerun tiles.py in this populated directory.
+python3 data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/calculate.py
+python3 data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/package.py
+python3 data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/verify.py
+mise exec -- uv run --with cairosvg==2.8.2 python -c "import cairosvg;cairosvg.svg2png(url='data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/current-comparison.svg',write_to='data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/current-comparison.png',output_width=1500)"
+# Original successful acquisition:
+# mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with pmtiles==3.4.1 --with cairosvg==2.8.2 python data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/tiles.py
+# tiles.py refuses existing tile-inputs and existing raw. fetch.py refuses existing named files.
+# Original municipal rendering (saved derivative, not redistribution authorization):
+# pdftotext -layout data/work/kanto-prefecture/chiba/next-batch/yachiyo-design.pdf data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/design-all.txt
+# pdftoppm -f 40 -l 40 -scale-to 1800 -png -singlefile data/work/kanto-prefecture/chiba/next-batch/yachiyo-design.pdf data/work/kanto-prefecture/chiba/next-batch/yachiyo-four/design40

@@ -1,0 +1,107 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "seed": {
+    "lat": 35.858356,
+    "lng": 139.974472,
+    "purpose": "coarse search window only; source recorded in group outcomes; never an adopted coordinate"
+  },
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58248,
+        "y": 25765
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58248-25765.pbf.gz",
+      "sha256": "ee33a30a332db56e1d57c6b3923f521909c602959fd2bfca2bb0e73efda6e8dd",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58248-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58249,
+        "y": 25765
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25765.pbf.gz",
+      "sha256": "2d144fb0861c42fbf9f76fa0696cbd0b5a089e16382abea985dd18d73cd8aaac",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58249-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58250,
+        "y": 25765
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58250-25765.pbf.gz",
+      "sha256": "88edf88faeff66137ee9dd8d55dc13869f5512b051e1ba0495615f9014acbd39",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58250-25765.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58248,
+        "y": 25766
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58248-25766.pbf.gz",
+      "sha256": "1b40f1909f3e7cdf1a385a81add7d27e899cec6f515f9aa41f22e58e3d280ed5",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58248-25766.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58249,
+        "y": 25766
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25766.pbf.gz",
+      "sha256": "68282fd170c2668e8eb82a84ce2849590036f4d0772325ee3e52d99562fbb46f",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58249-25766.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58250,
+        "y": 25766
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58250-25766.pbf.gz",
+      "sha256": "4da000bcf26f3a36b53bd6bf15be94c690841cceede260168db2a358a78a816c",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58250-25766.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58248,
+        "y": 25767
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58248-25767.pbf.gz",
+      "sha256": "33c7fdb30be21c7960fc938d9d2709fdef9a8614e9d25e368e168597bacf4870",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58248-25767.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58249,
+        "y": 25767
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58249-25767.pbf.gz",
+      "sha256": "2ec7dca819fedbb17501218971ddc0295f9bf46cf5d47a79b4e5ba810b0583f0",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58249-25767.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58250,
+        "y": 25767
+      },
+      "path": "data/evidence/kanto-prefecture/chiba/batch2/civic-five/kashiwa-16-58250-25767.pbf.gz",
+      "sha256": "dc1859000ca6749f730394f558e43622ed98a10300d2d054adb9d23606dbc980",
+      "originalWorkPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-dd776b8a/data/work/kanto-prefecture/chiba/next-batch/civic-five/kashiwa-16-58250-25767.pbf.gz"
+    }
+  ],
+  "render": "kashiwa-all.svg",
+  "credit": "国土地理院最適化ベクトルタイルを加工。棟同定・位置採用未承認。",
+  "processing": "pmtiles Reader; mapbox-vector-tile 2.2.0 y_coord_down=True; all BldA/RdCL; research_common combine_tiles/render_svg; no area filter"
+}

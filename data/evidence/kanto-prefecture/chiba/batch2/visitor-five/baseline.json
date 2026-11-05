@@ -1,0 +1,262 @@
+[
+  {
+    "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+    "place": {
+      "id": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "legacyIds": [
+        "place:34abbed67b76aca3d2d2"
+      ],
+      "name": "市川市観賞植物園",
+      "address": "千葉県市川市大町213番11外",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+        "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+        "snapshotSHA256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+        "sourceLocator": "12-203-B001／市川市観賞植物園：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-203-B001",
+        "placeId": "facility:kanto-south-34abbed67b76aca3d2d2",
+        "sourceHash": "8b08c93cbef1a85ce89336b3c2b81be5a2894a1a2af33513f2d24ca274d6c58e",
+        "hours": [
+          "在庫なし、配付再開未定。通常9:30～16:30、月曜日（祝日なら翌日）・年末年始休園。"
+        ],
+        "status": "suspended",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+          "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+          "snapshotSHA256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+          "sourceLocator": "12-203-B001／市川市観賞植物園：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/12",
+    "oldEvidence": {
+      "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+      "snapshotPath": "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html",
+      "snapshotSHA256": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+      "sourceLocator": "12-203-B001／市川市観賞植物園：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-46630cd19483230497e8",
+    "place": {
+      "id": "facility:kanto-south-46630cd19483230497e8",
+      "legacyIds": [
+        "place:46630cd19483230497e8"
+      ],
+      "name": "旧井上家住宅",
+      "address": "千葉県我孫子市相島新田1番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+        "snapshotPath": "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html",
+        "snapshotSHA256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978",
+        "sourceLocator": "12-222-A001／旧井上家住宅：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-222-A001",
+        "placeId": "facility:kanto-south-46630cd19483230497e8",
+        "sourceHash": "12780840467612585cacd1e1598baa79ff5e8fbf738b8c50e676f2d8cc18fd67",
+        "hours": [
+          "5月1日～8月31日9:00～18:00、9月1日～4月30日9:00～16:00。入館は閉館30分前まで。月曜（祝日の場合は次の平日）・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "12-222-A001／当該カード画像の行・当該窓口の配布時間列",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "親が2026-11-05取得した現一覧の画像URLで当該行を特定し、全国観光PRコーナーと時間を再確認。自分での再GETではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/16",
+    "oldEvidence": {
+      "sourceUrl": "http://www.city.abiko.chiba.jp/kurashi/suidou/gesuidou/kurashi_gesuidou/mhc.html",
+      "snapshotPath": "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html",
+      "snapshotSHA256": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978",
+      "sourceLocator": "12-222-A001／旧井上家住宅：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+    "place": {
+      "id": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "legacyIds": [
+        "place:668322fd5a7c4bbcbf55"
+      ],
+      "name": "“渚の駅”たてやま",
+      "address": "千葉県館山市館山1564-1",
+      "phone": "0470-22-3606",
+      "evidence": {
+        "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+        "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+        "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+        "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-205-B001",
+        "placeId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+        "sourceHash": "3b9d5045301bf01f36f7183efb5421c551fb3987bcf1104793964fce8b4719da",
+        "hours": [
+          "9:00～16:45。月曜（祝日なら翌日）・年末年始休み。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+          "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+          "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/19",
+    "oldEvidence": {
+      "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+      "snapshotPath": "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html",
+      "snapshotSHA256": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+      "sourceLocator": "12-205-B001／“渚の駅”たてやま：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+    "place": {
+      "id": "facility:kanto-south-7a134ba2f20e70f69407",
+      "legacyIds": [
+        "place:7a134ba2f20e70f69407"
+      ],
+      "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+      "address": "千葉県佐倉市臼井田2714",
+      "phone": "043-486-8898",
+      "evidence": {
+        "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+        "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+        "snapshotSHA256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+        "sourceLocator": "12-212-B001／佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-212-B001",
+        "placeId": "facility:kanto-south-7a134ba2f20e70f69407",
+        "sourceHash": "7f49d80925b782f809085f1d452109e0f88a62866555ff3de3f233021e3825db",
+        "hours": [
+          "9:00～17:00（11～1月は16:00まで）。年末年始休業。"
+        ],
+        "status": "active",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+          "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+          "snapshotSHA256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+          "sourceLocator": "12-212-B001／佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/23",
+    "oldEvidence": {
+      "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+      "snapshotPath": "data/evidence/national/kanto-south/6741b23f53c864254716.html",
+      "snapshotSHA256": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+      "sourceLocator": "12-212-B001／佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  },
+  {
+    "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+    "place": {
+      "id": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "legacyIds": [
+        "place:f4a2060d8b43f0ac3acb"
+      ],
+      "name": "道の駅みのりの郷東金",
+      "address": "千葉県東金市田間1300-3",
+      "phone": "0475-53-3615",
+      "evidence": {
+        "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+        "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+        "snapshotSHA256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+        "sourceLocator": "12-213-A001／道の駅みのりの郷東金：配布場所・配布時間・在庫状況（該当デザインの節）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+      }
+    },
+    "relations": [
+      {
+        "cardId": "12-213-A001",
+        "placeId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+        "sourceHash": "16473621dd4cf9dbf5d1e8e471540093aaaa008b1792a78198e81b35ef296592",
+        "hours": [
+          "在庫なしで配布を一時中止。次回配布時期未定。"
+        ],
+        "status": "suspended",
+        "condition": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+          "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+          "snapshotSHA256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+          "sourceLocator": "12-213-A001／道の駅みのりの郷東金：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+        }
+      }
+    ],
+    "history": "data/national/issue7/south-kanto.json#/unresolved/46",
+    "oldEvidence": {
+      "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+      "snapshotPath": "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html",
+      "snapshotSHA256": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+      "sourceLocator": "12-213-A001／道の駅みのりの郷東金：配布場所・配布時間・在庫状況（該当デザインの節）",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+    }
+  }
+]

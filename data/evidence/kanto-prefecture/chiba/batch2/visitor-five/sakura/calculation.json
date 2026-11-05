@@ -1,0 +1,78 @@
+{
+  "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            8653,
+            5494
+          ],
+          [
+            8742,
+            5562
+          ],
+          [
+            8651,
+            5683
+          ],
+          [
+            8562,
+            5615
+          ],
+          [
+            8653,
+            5494
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": "58291-25793-BldA-6",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 6,
+    "sourceTile": {
+      "z": 16,
+      "x": 58291,
+      "y": 25793
+    },
+    "sourceFeatureIndex": 6,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "frame": {
+    "z": 16,
+    "x": 58289,
+    "y": 25792
+  },
+  "pointXY": [
+    8652.0,
+    5588.5
+  ],
+  "method": "Shapely representative_point",
+  "result": {
+    "coordinate": {
+      "lat": 35.7404292,
+      "lng": 140.2026433
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      8652.01844677329,
+      5588.5061442404985
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "areaM2Approx": 248.9873884407343,
+  "boundaryDistanceMApprox": 6.7858918739458005,
+  "independentRoundedContainment": true,
+  "coordinateCaveat": "XYZ inverse Mercator arithmetic; product datum applicability pending; no datum transformation; no survey accuracy assertion",
+  "adoptionApproval": false
+}

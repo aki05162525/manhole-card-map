@@ -1,0 +1,126 @@
+{
+  "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            4697,
+            4267
+          ],
+          [
+            4702,
+            4307
+          ],
+          [
+            4706,
+            4306
+          ],
+          [
+            4739,
+            4558
+          ],
+          [
+            4635,
+            4568
+          ],
+          [
+            4624,
+            4488
+          ],
+          [
+            4373,
+            4523
+          ],
+          [
+            4370,
+            4497
+          ],
+          [
+            4327,
+            4503
+          ],
+          [
+            4312,
+            4388
+          ],
+          [
+            4356,
+            4382
+          ],
+          [
+            4352,
+            4357
+          ],
+          [
+            4615,
+            4320
+          ],
+          [
+            4611,
+            4287
+          ],
+          [
+            4630,
+            4284
+          ],
+          [
+            4630,
+            4277
+          ],
+          [
+            4697,
+            4267
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 1
+    },
+    "id": "58312-25810-BldA-22",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 22,
+    "sourceTile": {
+      "z": 16,
+      "x": 58312,
+      "y": 25810
+    },
+    "sourceFeatureIndex": 22,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "frame": {
+    "z": 16,
+    "x": 58311,
+    "y": 25809
+  },
+  "extent": 4096,
+  "centroidXY": [
+    4548.1911607057955,
+    4423.569658773591
+  ],
+  "areaM2Approx": 1134.4200842371743,
+  "areaMeaning": "latitude-scaled Mercator footprint area approximation, not surveyed area",
+  "validPolygon": true,
+  "result": {
+    "coordinate": {
+      "lat": 35.6658654,
+      "lng": 140.3179892
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      4548.155291885138,
+      4423.603341177106
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "independentShapelyRoundedWithin": true,
+  "adoptionApproval": false
+}
