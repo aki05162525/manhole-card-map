@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "attribution": "\u56fd\u571f\u5730\u7406\u9662\u6700\u9069\u5316\u30d9\u30af\u30c8\u30eb\u30bf\u30a4\u30eb\u3092\u52a0\u5de5",
+  "oldRawSHA256": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd",
+  "newRawSHA256": "683476e48dd6da28e7f62d67531cda1b87a46f11f437b6117e7ce68d006a22dd",
+  "checks": [
+    {
+      "oldFlattenedIndex": 892,
+      "index": 17,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1274,
+              2023
+            ],
+            [
+              1298,
+              2240
+            ],
+            [
+              1057,
+              2267
+            ],
+            [
+              1066,
+              2350
+            ],
+            [
+              1081,
+              2348
+            ],
+            [
+              1086,
+              2388
+            ],
+            [
+              1039,
+              2393
+            ],
+            [
+              1026,
+              2267
+            ],
+            [
+              772,
+              2295
+            ],
+            [
+              749,
+              2085
+            ],
+            [
+              988,
+              2058
+            ],
+            [
+              986,
+              2039
+            ],
+            [
+              1090,
+              2028
+            ],
+            [
+              1091,
+              2043
+            ],
+            [
+              1274,
+              2023
+            ]
+          ]
+        ]
+      },
+      "areaTileUnits": 119923.5,
+      "areaApproxM2": 1714.0218802881836,
+      "valid": true,
+      "centroidXY": [
+        1026.547959046114,
+        2165.3456939910307
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.7937641,
+          "lng": 139.9177585
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1026.5151260495186,
+          2165.3242318332195
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      }
+    },
+    {
+      "oldFlattenedIndex": 899,
+      "index": 24,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1086,
+              2388
+            ],
+            [
+              1086,
+              2395
+            ],
+            [
+              1057,
+              2398
+            ],
+            [
+              1056,
+              2392
+            ],
+            [
+              1086,
+              2388
+            ]
+          ]
+        ]
+      },
+      "areaTileUnits": 193.5,
+      "areaApproxM2": 2.7656410350633682,
+      "valid": true,
+      "centroidXY": [
+        1071.5788113695091,
+        2393.191214470284
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.7935194,
+          "lng": 139.9178189
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1071.5526303052902,
+          2393.1739278435707
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      }
+    },
+    {
+      "oldFlattenedIndex": 900,
+      "index": 25,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1233,
+              2377
+            ],
+            [
+              1255,
+              2567
+            ],
+            [
+              1100,
+              2586
+            ],
+            [
+              1104,
+              2618
+            ],
+            [
+              981,
+              2633
+            ],
+            [
+              977,
+              2600
+            ],
+            [
+              854,
+              2614
+            ],
+            [
+              837,
+              2471
+            ],
+            [
+              964,
+              2455
+            ],
+            [
+              959,
+              2410
+            ],
+            [
+              1233,
+              2377
+            ]
+          ]
+        ]
+      },
+      "areaTileUnits": 75394.0,
+      "areaApproxM2": 1077.5886416111562,
+      "valid": true,
+      "centroidXY": [
+        1054.8052453334042,
+        2506.3992780150497
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.7933978,
+          "lng": 139.9177964
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          1054.7754143178463,
+          2506.4001509696245
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      }
+    }
+  ]
+}
