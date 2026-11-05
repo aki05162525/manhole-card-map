@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "initialReview": {
+    "providerInstanceId": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "status": "changes-requested",
+    "threadId": "thread:delegated-task:command%3Amcp%3A0ba9b7b9-2542-4035-a8b8-7e8d65fcb4ee%3Adelegate-task%3Ad02e2162-7def-4a6b-b105-950364449d18",
+    "readToEnd": true
+  },
+  "responses": [
+    {
+      "finding": "山田未比較/共通停止文",
+      "response": "4枚目のPBFを取得保存。PDF2頁北矢印、道路3方向、販売棟126/情報棟127配置、東切欠きを独立照合。127重心・丸め内包を計算し仮統合。"
+    },
+    {
+      "finding": "花巻本館を配置図形式で過剰保留",
+      "response": "396のL字、横棒厚比.34、398の開始位置.665を図と比較。脚幅.33対.42の差も記載。共通横棒内の代表点を提案。新館は識別未完で保留。"
+    },
+    {
+      "finding": "山田/河北/寒河江の段階と停止文の矛盾",
+      "response": "河北/寒河江は資料確認段階へ訂正し未実施を明記。山田は今回実施し個別比較記録へ接続。"
+    },
+    {
+      "finding": "男鹿の新手法/範囲/vt_code",
+      "response": "敷地図を得たとはせず実際の運営者写真と記述。228/279に加え219/161まで比較。3111用途は未確認、背後棟未同定で保留。"
+    },
+    {
+      "finding": "石巻の面積比較不足",
+      "response": "414約498.47㎡対資料463.04㎡、417約294.34㎡を補助材料に追加。3外形の所属が未確定で保留。"
+    },
+    {
+      "finding": "facts欠落5資料",
+      "response": "main.html/new.html/kahoku.html/oga-concept.html/sagae-photo.htmlを追加。現配布確認2資料も記録。"
+    },
+    {
+      "finding": "README Web確認記録欠落",
+      "response": "裏付けのないWeb確認主張を撤回。保存規約原本の旧取得日時/hashを維持。"
+    },
+    {
+      "finding": "Gemini失敗原文相違/代替指示",
+      "response": "Usage Limit Reached見出しと本文を保存。失敗時方針と後のOpus許可を分離。この初回レビューはchanges-requestedで採用承認ではない。"
+    },
+    {
+      "finding": "verifyの意味検査不足/608固定",
+      "response": "欠落facts、未実施比較、別施設比較、比較記録なしをRED→GREEN。全台帳差分/位置数をoutcomesと検査。履歴manifestは別検証。"
+    }
+  ],
+  "reReview": {
+    "status": "pending-new-delegation",
+    "adoptionApproved": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "status": "pass-provisional-integration",
+  "filesSHA256": {
+    "details.json": "80692ae357e995d62fa594110bae8ac2a3d51307f83962a9c38022f9a1d305af",
+    "full.json": "961c1951f7ccd77ac531ad7c41eda2b983148627747bcbb7d0f99ad304551c4e",
+    "pins.json": "24a2a927fb90c61ff8812306b449e57798669565fe54147e2a1acef8ad8185f2"
+  },
+  "inputsSHA256": {
+    "data/evidence/national/list-source/gkp-20261105.html": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+    "data/overrides/cards.json": "b473a558e8170e195a81dbf89e4f39361afd0ae61ceaac213d61faeb17f9069e",
+    "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
+    "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
+    "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
+    "data/work/location-batch2/tohoku/after.json": "027f47b99c49566b62b5b280abc62510c81d9ce61a65df66ad4c2e5a7b53da34",
+    "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
+    "docs/verification/05-findings.json": "d017aa64da312b51b4ac3568f9ee714dddad3e8305e2042e2cb71347c1068d20"
+  },
+  "evaluatedAt": "2026-11-05",
+  "cardCount": 1313,
+  "placeCount": 1735,
+  "relationCount": 1825,
+  "placePinsBefore": 978,
+  "placePinsAfter": 980,
+  "newPinIds": [
+    "facility:north-db757b448c8db73422a5",
+    "facility:north-e2dfc05c8b1db51fc65b"
+  ],
+  "allOldPinsUnchanged": true,
+  "cardsAndRelationsUnchanged": true,
+  "detailTest": "Vitest real full.json -> CardDetail static markup and facilityMapLink; both names and exact lat,lng queries passed. External Google Maps/browser navigation not performed.",
+  "pythonTests": 93,
+  "go": "go test -count=1 ./... exit 0; full log inspected; no tail pipeline status",
+  "claimRegressionTests": 6,
+  "geometryReproduction": "derive.py and measure_shapes.py byte-identical saved JSON",
+  "nationalAuditSHA256": "a83ecf9d6fa14af53b5e9c7f9d22eec4a30fac7e668a2e0b55e3d67e4bdd4bfd"
+}

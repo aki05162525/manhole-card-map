@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "note": "追加比較を実施した調査者の判断。独立レビュー承認とは別。",
+  "rows": [
+    {
+      "id": "yamada-127",
+      "facilityIds": [
+        "facility:north-e2dfc05c8b1db51fc65b"
+      ],
+      "performed": true,
+      "sourceIds": [
+        "yamada-layout.pdf",
+        "yamada-current.html"
+      ],
+      "tileName": "yamada",
+      "featureIndices": [
+        125,
+        126,
+        127,
+        128,
+        129
+      ],
+      "positiveEvidence": [
+        "PDF物理2頁北矢印を上に保つと、緑の販売棟は南西、青の情報/トイレ棟は北東。Vector126/127も同じ配置で127が小さい。",
+        "PDFの情報棟東側の段差/切り欠きが127の東側（頂点3573,172→3550,184）と対応する。126側の北/南付属部分は125/129、両棟間は128の位置に現れる。付属外形の用途は断定しない。",
+        "西側の曲がる道路、東側の斜め南北道路、南側の北東〜南西道路に囲まれた区画と建物配置を両資料で照合。PDF位置図も山田IC付近の同区画を示す。",
+        "町現配布案内は右側の情報/トイレ棟を明記。販売棟126の重心を使わず127を選ぶ。"
+      ],
+      "limitations": [
+        "PDFは2023開業資料、Vectorは2026-07-01版で個別測量日不明。",
+        "建物内部の窓口を測量していない。127を含む代表点精度とする。",
+        "数値原典はVectorのみ。PDFを地理参照して座標算出していない。"
+      ],
+      "investigatorDecision": "propose-building-point",
+      "selectedFeatureIndex": 127
+    },
+    {
+      "id": "hanamaki-main-396",
+      "facilityIds": [
+        "facility:north-db757b448c8db73422a5"
+      ],
+      "performed": true,
+      "sourceIds": [
+        "hanamaki-main.pdf",
+        "hanamaki-main.html",
+        "hanamaki-current.html"
+      ],
+      "tileName": "hanamaki",
+      "featureIndices": [
+        396,
+        398,
+        461
+      ],
+      "positiveEvidence": [
+        "案内図と396は長い横棒の左から下へ脚が伸びるL字。図を90度回転/反転せず外形に合わせられ、Vector上辺の約-2.8度傾斜との差にとどまる。",
+        "本館2階図（1500px高の保存描画）全幅約564px/全高390px=1.45、横棒約186px/幅564px=0.33。396の上辺長約525.64、横棒厚約180=0.34、全幅534/全高389=1.37。",
+        "1階図南側の張出しが全幅の約0.67から始まる。隣接398の西端x2331は396西端1976から355/534=0.665の位置で、南側に接する。vt_codeの用途解釈を使わず位置と形状で比較。",
+        "2階図の脚幅は約186/564=0.33、396の中段脚幅約226/534=0.42と不一致。ただし1階図は2階のL字より広がる地階外周を描き、同じ厳密平面ではない。代表点は共通する横棒内にあり、この差に依存しない。",
+        "タイル内最大外形461は凸包比約0.97でほぼ凸、396のL字と区別可能。周囲道路は396の西/南/東を囲むが、館内図に道路がないため道路対応そのものは独立証拠と数えない。",
+        "現市配布案内と本館図の守衛室表記で配布先→本館を接続。CSV点のcontainsだけに依存するbatch1東2候補とは異なり、L字と南側張出しの独立図形根拠がある。"
+      ],
+      "limitations": [
+        "館内図は縮尺/方位表示なし。比率は図面の厳密測量値ではなく概略比較。",
+        "396/398の用途分類の意味は未検証。398を合体せず396本体のみの代表点を提案。",
+        "延床面積や入口座標は検証していない。代表点採用に入口測量/敷地図の形式的提出を要求しない。"
+      ],
+      "investigatorDecision": "propose-building-point",
+      "selectedFeatureIndex": 396
+    },
+    {
+      "id": "hanamaki-new-unresolved",
+      "facilityIds": [
+        "facility:north-302d2544c978ef46ca8e"
+      ],
+      "performed": true,
+      "sourceIds": [
+        "hanamaki-new.pdf",
+        "hanamaki-new.html"
+      ],
+      "tileName": "hanamaki",
+      "featureIndices": [
+        405,
+        402,
+        324
+      ],
+      "positiveEvidence": [
+        "新館図は細長い矩形。タイルの405/402/324を比較候補として保存。"
+      ],
+      "limitations": [
+        "新館図は本館396と異なり識別力の高いL字や周辺付属外形を示さない。3候補への対応を区別できず新館は保留。"
+      ],
+      "investigatorDecision": "held"
+    },
+    {
+      "id": "oga-expanded",
+      "facilityIds": [
+        "facility:north-13fd80e5a9a93ae2a4a2"
+      ],
+      "performed": true,
+      "sourceIds": [
+        "oga-photo.jpg",
+        "oga-concept.html"
+      ],
+      "tileName": "oga",
+      "featureIndices": [
+        228,
+        279,
+        219,
+        161
+      ],
+      "positiveEvidence": [
+        "228は細長い主外形、東側に細い279が沿う。写真の長い主棟と前面の細長い張出しに似る。",
+        "西側まで描画範囲を拡大し、道路を隔てた219と161を確認。写真の背後建物を比較するための候補が存在する。"
+      ],
+      "limitations": [
+        "写真は斜視で方位表示がなく、塔のある背後建物を219/161のどちらとするか独立に確定できない。塔の垂直要素が平面外形に表れるとも仮定しない。",
+        "279のvt_code=3111の定義は仕様と未照合。庇と断定しない。",
+        "旧Google qは範囲ヒントのみ。228の建物対応が未確定なので重心を採用しない。"
+      ],
+      "investigatorDecision": "held"
+    },
+    {
+      "id": "ishinomaki-area",
+      "facilityIds": [
+        "facility:north-3443a4a6d08de5680f46"
+      ],
+      "performed": true,
+      "sourceIds": [
+        "ishinomaki-layout.pdf"
+      ],
+      "tileName": "ishinomaki",
+      "featureIndices": [
+        413,
+        414,
+        417
+      ],
+      "positiveEvidence": [
+        "414は約498.47㎡で資料の建築面積463.04㎡との差は約+7.65%。417約294.34㎡は約-36.43%。面積は414を支持する補助材料。",
+        "414は3外形の北東端で、市図の交流センターが元気いちばの北東側にある配置と整合。"
+      ],
+      "limitations": [
+        "PDFに埋め込まれた小縮尺図では2施設区画に対してVectorは3外形。417と414/413の所属、堤防接続部の区切りは未確定。",
+        "Vectorの概略外周面積と建築面積は定義が異なる可能性がある。近い面積だけで同定しない。"
+      ],
+      "investigatorDecision": "held"
+    }
+  ]
+}

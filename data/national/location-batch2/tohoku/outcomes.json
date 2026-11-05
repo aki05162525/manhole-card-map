@@ -8,15 +8,15 @@
   "wallSeconds": 447.217,
   "timingScope": "selection.json保存から新資料の取得・図面実見・Vector比較・初回成果作成までの地域共有wall clock。事前の既存資料読解・以後の検証/独立レビュー/PR作成は含まない。施設別に重複加算しない。",
   "selectionCount": 8,
-  "comparisonCandidateCount": 2,
+  "comparisonCandidateCount": 3,
   "adoptedCount": 0,
-  "heldCount": 8,
+  "heldCount": 6,
   "regionalUnlocatedBefore": 59,
-  "regionalUnlocatedAfter": 59,
+  "regionalUnlocatedAfter": 57,
   "nationalUnlocatedBefore": 608,
-  "nationalUnlocatedAfter": 608,
-  "countScope": "現manifest assembleの登録台帳施設。生成全体の未位置とは別。今回座標採用なしのため前後不変。",
-  "manifestChanged": false,
+  "nationalUnlocatedAfter": 606,
+  "countScope": "開始時は登録台帳未位置59/全国608。追加2件を独立再レビュー用に仮統合した現manifestは57/606。承認済み採用数とは別。",
+  "manifestChanged": true,
   "rows": [
     {
       "facilityId": "facility:north-3443a4a6d08de5680f46",
@@ -32,13 +32,14 @@
         "ishinomaki-layout.pdf",
         "vector-readme.txt"
       ],
-      "finding": "試験VectorのBldA index414を形状仮説として比較。重心と丸め後内包は成功。近傍のindex417との境界・堤防接続部を、保存済み小縮尺図だけで独立確定できない。面積約498㎡と資料463.04㎡の近さは同定の証明にしない。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "finding": "414は約498.47㎡で資料の建築面積463.04㎡との差は約+7.65%。417約294.34㎡は約-36.43%。面積は414を支持する補助材料。 414は3外形の北東端で、市図の交流センターが元気いちばの北東側にある配置と整合。",
+      "stopCondition": "PDFに埋め込まれた小縮尺図では2施設区画に対してVectorは3外形。417と414/413の所属、堤防接続部の区切りは未確定。 Vectorの概略外周面積と建築面積は定義が異なる可能性がある。近い面積だけで同定しない。",
       "resumeCondition": "施設名と周辺道路/堤防を読める高解像度の平面図・現況資料で414/417の対応を確認。",
       "priorConstraintHandling": "Issue26の住所訂正を保持。旧P05/市markerは範囲探索のみ、代表点として流用しない。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": "ishinomaki-area"
     },
     {
       "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
@@ -49,19 +50,20 @@
       ],
       "status": "held",
       "stage": "building-comparison",
-      "newMethod": "Google q二点を採用せず、運営者の敷地配置図とGSI試験Vectorの形状接続を試す。",
+      "newMethod": "運営者の建物写真と試験Vectorを比較。拡大範囲で228/279と背後候補219/161を検討。選定時の敷地図探索計画から、実際に取得できた写真へ変更。",
       "sourceIds": [
         "oga-photo.jpg",
         "oga-concept.html",
         "vector-readme.txt"
       ],
-      "finding": "運営者写真は主棟と前面駐車場を示す。旧Google qをヒントに取得した1タイルの外形に対して、写真の主棟・背後の塔を一意対応できず、外形選択と数値出力を停止。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "finding": "228は細長い主外形、東側に細い279が沿う。写真の長い主棟と前面の細長い張出しに似る。 西側まで描画範囲を拡大し、道路を隔てた219と161を確認。写真の背後建物を比較するための候補が存在する。",
+      "stopCondition": "写真は斜視で方位表示がなく、塔のある背後建物を219/161のどちらとするか独立に確定できない。塔の垂直要素が平面外形に表れるとも仮定しない。 279のvt_code=3111の定義は仕様と未照合。庇と断定しない。 旧Google qは範囲ヒントのみ。228の建物対応が未確定なので重心を採用しない。",
       "resumeCondition": "写真の主棟と道路/男鹿駅の方位を接続する公的配置図、必要なら隣接Vectorタイルを用いて独立同定。",
       "priorConstraintHandling": "旧q二点を採用しない。取得範囲で同定できないことはGSI全国データに建物がないという意味ではない。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": "oga-expanded"
     },
     {
       "facilityId": "facility:north-194cafa26eb4fcdf4b86",
@@ -71,19 +73,20 @@
         "data/national/issue7/reviews/tohoku.json#/decisions/29"
       ],
       "status": "held",
-      "stage": "building-comparison",
+      "stage": "source-review",
       "newMethod": "919-6案内所と919-8商業棟の混同を避けるため、観光案内所の配置資料を探索する。",
       "sourceIds": [
         "sagae-photo.html",
         "sagae-building.jpg"
       ],
       "finding": "施設写真で総合観光案内所の外観と入口表示を確認。919-6と919-8の敷地内位置関係を数値原典に接続する図は取得できず、写真から住所点や建物点を推定しない。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "stopCondition": "一次資料の読取まで実施。地理参照外形との比較は未実施であり、比較失敗とは扱わない。",
       "resumeCondition": "総合観光案内所を明記した敷地平面図か公開施設点を取得し、CRS/対象棟を検証。",
       "priorConstraintHandling": "旧about本文の再検索でなく、掲載写真という別資料を実見。外観確認と地理的同定を分ける。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": null
     },
     {
       "facilityId": "facility:north-302d2544c978ef46ca8e",
@@ -100,13 +103,14 @@
         "hanamaki-new.html",
         "vector-readme.txt"
       ],
-      "finding": "新館2階の下水道課と細長い建物形状を確認。本館周辺Vectorと比較したが、方位・本館との距離の裏付けがなく近傍矩形を新館に割り当てない。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "finding": "新館図は細長い矩形。タイルの405/402/324を比較候補として保存。",
+      "stopCondition": "新館図は本館396と異なり識別力の高いL字や周辺付属外形を示さない。3候補への対応を区別できず新館は保留。",
       "resumeCondition": "本館と新館を同時に記載する敷地配置図で新館の方位・外周を照合。",
       "priorConstraintHandling": "本館のP05点を新館2階へ転用しない。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": "hanamaki-new-unresolved"
     },
     {
       "facilityId": "facility:north-a4e073898b8f0e283b69",
@@ -116,7 +120,7 @@
         "data/national/issue7/reviews/tohoku.json#/decisions/58"
       ],
       "status": "held",
-      "stage": "building-comparison",
+      "stage": "source-review",
       "newMethod": "資料館全体でなく物産館を識別する公開配置図を探索する。",
       "sourceIds": [
         "kahoku-plan.pdf",
@@ -124,12 +128,13 @@
         "kahoku.html"
       ],
       "finding": "公式パンフレットで物産館・案内所が長屋門や紅の館とは別の建物として描かれ、県道285号側にあることを確認。絵図の方位・外周と地理参照外形の比較は未完。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "stopCondition": "一次資料の読取まで実施。地理参照外形との比較は未実施であり、比較失敗とは扱わない。",
       "resumeCondition": "県道側の物産館と現Vector/PLATEAU外形を周辺配置を含めて比較し、同定後に代表点算出。",
       "priorConstraintHandling": "2022イベント図の売店を現在の物産館と無根拠に同一視しない。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": null
     },
     {
       "facilityId": "facility:north-bd9ab14ef699fe922568",
@@ -146,12 +151,13 @@
         "abukuma-rent.html"
       ],
       "finding": "見どころPDFと施設貸出案内へ探索を変更。洞内コースと管理事務所連絡先は得られたが、管理棟を識別する建物配置資料は取得できなかった。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "stopCondition": "新資料を探索したが、管理事務所の建物外周を識別する図を取得できていない。",
       "resumeCondition": "管理事務所棟を明記する園地配置図・市の建物台帳/公開GISを得て、洞窟入口/レストハウスとの区別を確認。",
       "priorConstraintHandling": "洞窟入口や同じ電話番号のレストハウスを代替点にしない。",
       "adoptedCoordinate": null,
       "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": null
     },
     {
       "facilityId": "facility:north-db757b448c8db73422a5",
@@ -160,21 +166,27 @@
       "priorReviewRefs": [
         "data/national/issue7/reviews/tohoku.json#/decisions/69"
       ],
-      "status": "held",
+      "status": "proposed",
       "stage": "building-comparison",
       "newMethod": "本館守衛室と新館の区別を保ち、同じ配置資料を共同利用して本館外形の同定を試す。",
       "sourceIds": [
         "hanamaki-main.pdf",
         "hanamaki-main.html",
-        "vector-readme.txt"
+        "vector-readme.txt",
+        "hanamaki-current.html"
       ],
-      "finding": "本館L字形と守衛室表示を確認。Vector BldA index396のL字形を仮説として重心・丸め後内包を検査したが、方位のない室内図から敷地内配置への独立接続は未完。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
-      "resumeCondition": "本館/新館を載せた敷地図または周囲道路と現本館の対応を示す一次資料で396を確認。",
+      "finding": "案内図と396は長い横棒の左から下へ脚が伸びるL字。図を90度回転/反転せず外形に合わせられ、Vector上辺の約-2.8度傾斜との差にとどまる。 本館2階図（1500px高の保存描画）全幅約564px/全高390px=1.45、横棒約186px/幅564px=0.33。396の上辺長約525.64、横棒厚約180=0.34、全幅534/全高389=1.37。 1階図南側の張出しが全幅の約0.67から始まる。隣接398の西端x2331は396西端1976から355/534=0.665の位置で、南側に接する。vt_codeの用途解釈を使わず位置と形状で比較。 2階図の脚幅は約186/564=0.33、396の中段脚幅約226/534=0.42と不一致。ただし1階図は2階のL字より広がる地階外周を描き、同じ厳密平面ではない。代表点は共通する横棒内にあり、この差に依存しない。 タイル内最大外形461は凸包比約0.97でほぼ凸、396のL字と区別可能。周囲道路は396の西/南/東を囲むが、館内図に道路がないため道路対応そのものは独立証拠と数えない。 現市配布案内と本館図の守衛室表記で配布先→本館を接続。CSV点のcontainsだけに依存するbatch1東2候補とは異なり、L字と南側張出しの独立図形根拠がある。",
+      "stopCondition": "館内図は縮尺/方位表示なし。比率は図面の厳密測量値ではなく概略比較。 396/398の用途分類の意味は未検証。398を合体せず396本体のみの代表点を提案。 延床面積や入口座標は検証していない。代表点採用に入口測量/敷地図の形式的提出を要求しない。",
+      "resumeCondition": "Claude Opusによる独立再レビュー。承認されなければ仮統合を取り消す。",
       "priorConstraintHandling": "本館と新館を同棟groupにしない。",
       "adoptedCoordinate": null,
-      "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "binding": "data/national/location-batch2/tohoku/location-lifecycle.json",
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": "hanamaki-main-396",
+      "provisionalCoordinate": {
+        "lat": 39.3885493,
+        "lng": 141.1168429
+      }
     },
     {
       "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
@@ -183,19 +195,31 @@
       "priorReviewRefs": [
         "data/national/issue7/reviews/tohoku.json#/decisions/71"
       ],
-      "status": "held",
+      "status": "proposed",
       "stage": "building-comparison",
       "newMethod": "旧道の駅と新おいすた・情報棟の混同リスクを優先し、開業資料・情報棟配置図を探索する。",
       "sourceIds": [
-        "yamada-layout.pdf"
+        "yamada-layout.pdf",
+        "yamada-current.html"
       ],
-      "finding": "2023移転開業の国交省/町共同発表を取得。第5地割66番地1と情報/トイレ棟を平面図で確認。旧記録の運営者第2地割111-2を対象棟の点として使わない。現Vector外形との同定は未実施。",
-      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
-      "resumeCondition": "新所在地の情報棟を北矢印と周辺道路配置に沿って現Vector/PLATEAU外形と比較し、現配布継続を確認。",
+      "finding": "PDF物理2頁北矢印を上に保つと、緑の販売棟は南西、青の情報/トイレ棟は北東。Vector126/127も同じ配置で127が小さい。 PDFの情報棟東側の段差/切り欠きが127の東側（頂点3573,172→3550,184）と対応する。126側の北/南付属部分は125/129、両棟間は128の位置に現れる。付属外形の用途は断定しない。 西側の曲がる道路、東側の斜め南北道路、南側の北東〜南西道路に囲まれた区画と建物配置を両資料で照合。PDF位置図も山田IC付近の同区画を示す。 町現配布案内は右側の情報/トイレ棟を明記。販売棟126の重心を使わず127を選ぶ。",
+      "stopCondition": "PDFは2023開業資料、Vectorは2026-07-01版で個別測量日不明。 建物内部の窓口を測量していない。127を含む代表点精度とする。 数値原典はVectorのみ。PDFを地理参照して座標算出していない。",
+      "resumeCondition": "Claude Opusによる独立再レビュー。承認されなければ仮統合を取り消す。",
       "priorConstraintHandling": "移転の時系列資料は得たが、旧住所との地番制度上の対応や運営者地図の生成由来は未確定。",
       "adoptedCoordinate": null,
-      "binding": null,
-      "independentReview": "not-completed-provider-quota"
+      "binding": "data/national/location-batch2/tohoku/location-lifecycle.json",
+      "independentReview": "opus-initial-changes-requested; revised-review-pending",
+      "comparisonRef": "yamada-127",
+      "provisionalCoordinate": {
+        "lat": 39.478372,
+        "lng": 141.9535192
+      }
     }
-  ]
+  ],
+  "proposedCount": 2,
+  "provisionalIntegratedCount": 2,
+  "revisionStartedAt": "2026-11-05T11:48:45.633074+00:00",
+  "revisionResearchRecordedAt": "2026-11-05T11:54:39.163619+00:00",
+  "revisionElapsedSeconds": 945.583,
+  "revisionTimingScope": "地域共有wall-clock: 初回Opus指摘読解後の追加調査開始から再レビュー前検証・記録まで。初回447.217秒と別計測、施設ごとに重複加算しない。再レビュー/PR更新は含まない。"
 }

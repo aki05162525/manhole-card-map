@@ -26,6 +26,19 @@
       "roundedPointWithin": true,
       "status": "comparison-only-not-approved",
       "identityConfirmed": false
+    },
+    {
+      "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+      "featureIndex": 127,
+      "coordinate": {
+        "lat": 39.478372,
+        "lng": 141.9535192
+      },
+      "method": "centroid",
+      "centroidWithin": true,
+      "roundedPointWithin": true,
+      "status": "comparison-only-not-approved",
+      "identityConfirmed": false
     }
   ]
 }

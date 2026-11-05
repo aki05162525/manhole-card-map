@@ -3779,12 +3779,29 @@
           "sha256": "680f7c503ba55902dedcda02adeae62a6297d81124f2719d164e25b2ada113d5"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/tohoku/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-db757b448c8db73422a5",
+          "sha256": "c15af495a079a93d03e22c6e0fc8f5c21453413d0400c0b5b49e6cb528ea4c6c"
+        },
+        {
+          "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+          "sha256": "852f954014ec973d5b96583dc906d12fb08ca9fdfcf0fe63134a03a042c4e27a"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
     {
       "path": "data/national/location-batch1/location-lifecycle.json",
       "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
+    },
+    {
+      "path": "data/national/location-batch2/tohoku/location-lifecycle.json",
+      "sha256": "b5fba4c909f1affa9ad10b1dd8a5f2789330ab516aaff657244491ece27b75a4"
     }
   ]
 }

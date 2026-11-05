@@ -8,6 +8,15 @@ import unittest
 import assemble as a
 
 
+def batch1_manifest(root):
+    """Replay the historical contract without later regional batch2 choices."""
+    manifest = a.read_json(root / 'tools/national/manifest.json')
+    for key in ('locations', 'locationLifecycle'):
+        manifest[key] = [p for p in manifest.get(key, [])
+                         if not p['path'].startswith('data/national/location-batch2/')]
+    return manifest
+
+
 class AssemblyTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -111,7 +120,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_review_selection_excludes_deferred_and_facility_scope(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = a.read_json(root / 'tools/national/manifest.json')
+        manifest = batch1_manifest(root)
         inputs, patches, updates = a.load_selection(root, manifest)
         self.assertEqual(len(patches), 113)  # Issue26 adds only address and evidence fields.
         self.assertEqual(len(updates), 844)  # Batch1: four independently reviewed facilities.
@@ -139,7 +148,7 @@ class AssemblyTests(unittest.TestCase):
         # Digest was compared against the parent's manual output once. CI never
         # opens that work file and needs no full.json/cards.json/raw inputs.
         root = Path(__file__).resolve().parents[2]
-        manifest = a.read_json(root / 'tools/national/manifest.json')
+        manifest = batch1_manifest(root)
         # Keep the reviewed pre-Issue26 baseline intact. The next test proves
         # the exact address/evidence-only delta of the newly selected patch.
         manifest['patches'] = [p for p in manifest['patches']
@@ -185,7 +194,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_batch1_osaka_museum_has_reviewed_building_point_and_binding(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = a.read_json(root / 'tools/national/manifest.json')
+        manifest = batch1_manifest(root)
         output, audit = a.assemble(root, manifest)
         fid = 'facility:kinki-5541e22064b914088d81'
         place = next(p for p in output['places'] if p['id'] == fid)
@@ -203,7 +212,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_batch1_only_changes_reviewed_facilities_and_preserves_relations(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = a.read_json(root / 'tools/national/manifest.json')
+        manifest = batch1_manifest(root)
         historical = copy.deepcopy(manifest)
         historical['locations'] = [p for p in historical['locations']
                                   if p['path'] != 'data/national/location-batch1/locations-reviewed.json']

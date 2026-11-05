@@ -143,6 +143,83 @@
       "sourceVersion": "取得時掲載内容;保存原本再利用",
       "finding": "国内地図の世界測地系JGD2011とメルカトル格子を説明。MVT格子から逆投影し、測地系変換は行わない。",
       "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "hanamaki-main.html",
+      "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/1003286.html",
+      "snapshotSHA256": "1d9a1fc9f0ac1eed30499b54b9a5ad84b694aa3a278dbfd891a334a27e0a425a",
+      "retrievedAt": "2026-11-05T11:23:31.978286+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/hanamaki-main.html",
+      "sourceLocator": "本館案内図・冒頭とPDFリンク",
+      "sourceVersion": "2026-04-01現在/ページ更新2026-06-01",
+      "finding": "本館各階の案内とr8-honkanannaizu.pdfを掲載する。新館案内は別ページ。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "hanamaki-new.html",
+      "sourceUrl": "https://www.city.hanamaki.iwate.jp/shisei/shiyakusyo/annai/1008748.html",
+      "snapshotSHA256": "f6d7540603231f3765ab64d503f34e6e0da3efb07e6baab23fd237ca04670d4b",
+      "retrievedAt": "2026-11-05T11:23:31.976749+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/hanamaki-new.html",
+      "sourceLocator": "新館案内図・2階とPDFリンク",
+      "sourceVersion": "2025-04-01現在/ページ更新2025-05-08",
+      "finding": "下水道課を新館2階に掲載し、r7shinkan.pdfにリンクする。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "kahoku.html",
+      "sourceUrl": "https://www.town.kahoku.yamagata.jp/sithipuromo-syonsaito/benibanapuromo-syon/3066.html",
+      "snapshotSHA256": "0a4e16d54922a9f426f26338a392d3d3c00d13a0d56a996295f60c287c8fe49f",
+      "retrievedAt": "2026-11-05T11:23:31.980131+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/kahoku.html",
+      "sourceLocator": "館内案内・物産館見出しとパンフレットリンク",
+      "sourceVersion": "2026-07-10更新表記",
+      "finding": "物産館の写真と、紅花資料館パンフレットPDFへのリンクを掲載する。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "oga-concept.html",
+      "sourceUrl": "https://michinoekioga.co.jp/pages/17/",
+      "snapshotSHA256": "1b812f6eb24b02b0a3469251f6d394bfb84527b5ba8c464e0489aae6b454a51a",
+      "retrievedAt": "2026-11-05T11:26:30.610698+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/oga-concept.html",
+      "sourceLocator": "道の駅コンセプト本文・画像241",
+      "sourceVersion": "掲載画像URLに20180820/撮影日未確定",
+      "finding": "オガーレの施設コンセプトと建物写真を掲載する。敷地平面図としては使用しない。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "sagae-photo.html",
+      "sourceUrl": "https://www.cherryland.co.jp/about_p.html",
+      "snapshotSHA256": "e1182fa95c782d9ce7e2a97973cf5cd66113c1620f0e0284f417f52c20f3716a",
+      "retrievedAt": "2026-11-05T11:23:31.979619+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/sagae-photo.html",
+      "sourceLocator": "総合観光案内所見出し・sat_image08.jpg",
+      "sourceVersion": "撮影日不明",
+      "finding": "総合観光案内所を独立見出しで紹介し、今回実見した入口写真へ対応する。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "yamada-current.html",
+      "sourceUrl": "https://www.town.yamada.iwate.jp/docs/6751.html",
+      "snapshotSHA256": "a11ec30719f2ad637a640dc1b08a055b116f3a5b53d14a2c750a1599fd731f28",
+      "retrievedAt": "2026-11-05T11:50:05.175984+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/yamada-current.html",
+      "sourceLocator": "配布場所等・配布場所について",
+      "sourceVersion": "取得時掲載内容/2024-04-26開始の説明",
+      "finding": "配布先は第5地割66-1のおいすた情報棟インフォメーション窓口。正面に向かって右側のトイレ等がある建物と明記。",
+      "redistribution": "fact extraction only; raw not included in Git"
+    },
+    {
+      "sourceId": "hanamaki-current.html",
+      "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+      "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+      "retrievedAt": "2026-11-05T11:50:05.177140+00:00",
+      "rawPath": "data/work/location-batch2/tohoku/hanamaki-current.html",
+      "sourceLocator": "配布場所・配布時間/花巻地域",
+      "sourceVersion": "取得時掲載内容",
+      "finding": "平日は新館2階下水道課、土日祝日は本庁舎1階守衛室。今回採用提案は後者だけ。",
+      "redistribution": "fact extraction only; raw not included in Git"
     }
   ]
 }

@@ -150,6 +150,66 @@
       },
       "buildingFeatureCount": 287,
       "comparisons": []
+    },
+    {
+      "name": "yamada",
+      "file": "yamada-tile.pbf.gz",
+      "sha256": "fe4fa95a6068dff123f9d62fbbac863cda4d4448886c1f0425a01923bdfda0e1",
+      "tile": {
+        "z": 16,
+        "x": 58609,
+        "y": 24934
+      },
+      "buildingFeatureCount": 197,
+      "comparisons": [
+        {
+          "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+          "featureIndex": 127,
+          "feature": {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    3522,
+                    77
+                  ],
+                  [
+                    3573,
+                    172
+                  ],
+                  [
+                    3550,
+                    184
+                  ],
+                  [
+                    3608,
+                    291
+                  ],
+                  [
+                    3452,
+                    375
+                  ],
+                  [
+                    3344,
+                    173
+                  ],
+                  [
+                    3522,
+                    77
+                  ]
+                ]
+              ]
+            },
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            },
+            "id": 0,
+            "type": "Feature"
+          }
+        }
+      ]
     }
   ]
 }

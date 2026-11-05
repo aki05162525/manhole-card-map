@@ -274,6 +274,30 @@
       "bytes": 2827164,
       "status": 200,
       "redistribution": "original retained in work only; reused, not newly retrieved"
+    },
+    {
+      "id": "yamada-current.html",
+      "url": "https://www.town.yamada.iwate.jp/docs/6751.html",
+      "retrievedAt": "2026-11-05T11:50:05.175984+00:00",
+      "redistribution": "not confirmed; original in ignored work only",
+      "status": 200,
+      "finalURL": "https://www.town.yamada.iwate.jp/docs/6751.html",
+      "path": "data/work/location-batch2/tohoku/yamada-current.html",
+      "sha256": "a11ec30719f2ad637a640dc1b08a055b116f3a5b53d14a2c750a1599fd731f28",
+      "bytes": 23408,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "hanamaki-current.html",
+      "url": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+      "retrievedAt": "2026-11-05T11:50:05.177140+00:00",
+      "redistribution": "not confirmed; original in ignored work only",
+      "status": 200,
+      "finalURL": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+      "path": "data/work/location-batch2/tohoku/hanamaki-current.html",
+      "sha256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+      "bytes": 38162,
+      "contentType": "text/html"
     }
   ]
 }
