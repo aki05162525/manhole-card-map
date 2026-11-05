@@ -233,5 +233,6 @@
       "reason": "旧道の駅と新おいすた・情報棟の混同リスクを優先し、開業資料・情報棟配置図を探索する。",
       "priorHoldRef": null
     }
-  ]
+  ],
+  "baseManifestCanonicalSHA256": "8b4ae520130c5196f32e5139506f7139fe7f7b8f39224ad6ee9681ef50936bce"
 }
