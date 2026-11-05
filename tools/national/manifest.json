@@ -3779,12 +3779,29 @@
           "sha256": "680f7c503ba55902dedcda02adeae62a6297d81124f2719d164e25b2ada113d5"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/kinki-west/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+          "sha256": "eeaabd83e7e63c90b47ca0ec09e8ef88b1231082b90b88cae637c26a4949ad62"
+        },
+        {
+          "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+          "sha256": "b6349acc0339703d59a882afad754eb2e346b47593873d4a88182b2b3651f8b0"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
     {
       "path": "data/national/location-batch1/location-lifecycle.json",
       "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
+    },
+    {
+      "path": "data/national/location-batch2/kinki-west/location-lifecycle.json",
+      "sha256": "bb71bb4df7df2fc79ea21f3812242e79debcbcda49a6b1d51081e95552779e97"
     }
   ]
 }

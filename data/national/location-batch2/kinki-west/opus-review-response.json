@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "initialReviewedHead": "5e9a72c5364f97af0c1e4e6bf04f0fb5dfec25cb",
+  "initialReviewThread": "thread:delegated-task:command%3Amcp%3A0ba9b7b9-2542-4035-a8b8-7e8d65fcb4ee%3Adelegate-task%3A1da978b4-3adb-491b-a2fc-d379d4d23b12",
+  "geminiHistoryRef": "data/national/location-batch2/kinki-west/review.json",
+  "alternativeAuthorizedBy": "ユーザーのOpus代替レビュー指示",
+  "responses": [
+    {
+      "id": "M1",
+      "finding": "稲美/柏原の未照合保留",
+      "response": "GSI8タイルを取得、公式図の方位・形状・道路/周辺施設を照合。2点を再現計算し丸め内包確認。不要な存続/入口条件を撤回。",
+      "artifact": "building-correspondence.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "M2",
+      "finding": "map02の方位誤認",
+      "response": "左が北、パークセンターは駐車場南/ドッグラン西〜北西へ訂正。",
+      "artifact": "outcomes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "M3",
+      "finding": "選定条件と除外12件",
+      "response": "作業者判断の有意抽出と明示。12IDを記録し架空スコアなし。",
+      "artifact": "coverage.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C1",
+      "finding": "芦屋GIS/CSV記録",
+      "response": "GIS紹介・ポータル取得記録追加、個別地物/規約未確認。共通CSVは確認ページで未発見。",
+      "artifact": "search-notes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C2",
+      "finding": "府/奈良GIS探索",
+      "response": "府は検索のみ、奈良文化財GISは計画のみと正直に記録。",
+      "artifact": "search-notes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C3",
+      "finding": "守口Excel",
+      "response": "行3の座標改訂と行36 T/U別館ロビー記述を抽出。別施設点の流用なし。",
+      "artifact": "numeric-observations.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C4",
+      "finding": "奈良CSV一致",
+      "response": "名称・POI・旧振興館の対応を明記。未完は独立棟同定。",
+      "artifact": "outcomes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C5",
+      "finding": "奈良AND/OR",
+      "response": "配置図+GSI経路とCSV点意味/CRS確認経路をORに統一。",
+      "artifact": "outcomes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C6",
+      "finding": "追跡外スクリプト",
+      "response": "初回スクリプトをhistoryに保持、追加取得/描画/計算/検査処理を追跡。",
+      "artifact": "history/",
+      "status": "implemented-awaiting-independent-rereview"
+    },
+    {
+      "id": "C7",
+      "finding": "stageと到達度",
+      "response": "外形比較済み2、残6は資料確認/内包診断などの実到達段階に修正。",
+      "artifact": "outcomes.json",
+      "status": "implemented-awaiting-independent-rereview"
+    }
+  ],
+  "rereview": {
+    "provider": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "status": "pending-new-delegate"
+  }
+}
