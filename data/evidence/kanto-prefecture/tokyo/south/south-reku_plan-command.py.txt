@@ -1,0 +1,39 @@
+import json,math,sys,datetime
+sys.path.insert(0,'tools/national')
+from research_common import contains_point
+P=dict(NW=(447,805),NE=(2413,797),SW=(463,1360),SE=(2413,1397))
+A=dict(NW=(207,366),NE=(697,412),SW=(198,495),SE=(692,548))
+tower_plan=(2030,1255);tower_aerial=(592,527)
+restaurant_plan=None
+def bil(q,u,v):
+    return tuple((1-u)*(1-v)*q['NW'][i]+u*(1-v)*q['NE'][i]+(1-u)*v*q['SW'][i]+u*v*q['SE'][i] for i in(0,1))
+def inv(q,p):
+    u,v=.5,.5
+    for _ in range(50):
+        x,y=bil(q,u,v);e=(p[0]-x,p[1]-y)
+        du=tuple((bil(q,u+1e-4,v)[i]-bil(q,u-1e-4,v)[i])/2e-4 for i in(0,1));dv=tuple((bil(q,u,v+1e-4)[i]-bil(q,u,v-1e-4)[i])/2e-4 for i in(0,1))
+        D=du[0]*dv[1]-du[1]*dv[0];u+=(e[0]*dv[1]-e[1]*dv[0])/D;v+=(du[0]*e[1]-du[1]*e[0])/D
+    return u,v
+Z=18;X0,Y0=232921,103252;n=2**Z
+def ll(p):
+    lng=(X0+p[0]/256)/n*360-180;lat=math.degrees(math.atan(math.sinh(math.pi*(1-2*(Y0+p[1]/256)/n))));return lat,lng
+mpp=156543.03392*math.cos(math.radians(35.65))/n
+def map_(p): return bil(A,*inv(P,p))
+tw=map_(tower_plan);res=math.hypot(tw[0]-tower_aerial[0],tw[1]-tower_aerial[1])*mpp
+wall=[(537,912),(725,912),(725,1175),(537,1175)]
+poly=[map_(p) for p in wall]
+pt_plan=(640,1040);pt=map_(pt_plan);lat,lng=ll(pt)
+c=json.load(open('data/work/kanto-prefecture/tokyo/south/reku2-combined.json'));b=c['baseTile'];nn=65536;ex=c['extent']
+xy=lambda la,ln:(((ln+180)/360*nn-b['x'])*ex,((1-math.asinh(math.tan(math.radians(la)))/math.pi)/2*nn-b['y'])*ex)
+others=[i for i,f in enumerate(c['features']) if f['layer']=='BldA' and contains_point(f['geometry'],xy(lat,lng))]
+geo=[ll(p) for p in poly]
+pg=dict(type='Polygon',coordinates=[[xy(*g) for g in geo]+[xy(*geo[0])]])
+near=[]
+for i,f in enumerate(c['features']):
+    if f['layer']=='BldA':
+        r=f['geometry']['coordinates'][0] if f['geometry']['type']=='Polygon' else f['geometry']['coordinates'][0][0]
+        if any(contains_point(pg,tuple(p)) for p in r): near.append(i)
+rlat,rlng=round(lat,7),round(lng,7)
+out=dict(schema=1,facilityId='facility:kanto-south-dfd35978e81cbcc80123',checkedAt='2026-11-05',computedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),method='bilinear map of official plan block curb corners (manual read of sekkei p11 at 200dpi) onto GSI seamlessphoto z18 mosaic curb corners (manual read); seamlessphoto shows pre-renewal state so new building cannot be verified from imagery; plan point is manual; not a footprint',planControlPoints=P,aerialControlPointsMosaicPx=A,mosaicOriginTile=dict(z=Z,x=X0,y=Y0),metresPerAerialPixelApprox=mpp,checkPoint=dict(name='existing high-voltage tower (plan label: 高圧線鉄塔(既存)); aerial red square pad',planPx=tower_plan,aerialPx=tower_aerial,mappedPx=tw,residualApproxM=round(res,1)),planBuildingWallBoxPx=wall,mappedWallBoxLatLng=geo,planPointPx=pt_plan,manualPointLatLng=dict(lat=rlat,lng=rlng),insideMappedWallBox=contains_point(pg,xy(rlat,rlng)),mappedWallBoxWidthsApproxM=[round(math.dist(poly[0],poly[1])*mpp,1),round(math.dist(poly[1],poly[2])*mpp,1)],bldAContainingPoint=others,bldAVerticesInsideMappedWallBox=near,scaleBarDiscrepancy=dict(barPixelsFor50mAt200dpi=333,planBlockPxWidth=P['NE'][0]-P['NW'][0],barImpliedBlockWidthM=round((P['NE'][0]-P['NW'][0])/333*50,1),aerialBlockWidthM=round(math.dist(A['NW'],A['NE'])*mpp,1),note='plan scale bar is inconsistent with the block width in GSI aerial/vector; the published plan scale bar is not used'),northArrowNote='p11 north arrow points straight up, while block long axis tilts about 5-6 degrees in GSI vector/aerial and p7 map; north arrow not used for georeferencing',identityApproved=False,crsApproved=False,adoptionApproval=False)
+open('data/evidence/kanto-prefecture/tokyo/south/reku-plan-derivation.json','w').write(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({k:out[k] for k in('checkPoint','manualPointLatLng','insideMappedWallBox','mappedWallBoxWidthsApproxM','bldAContainingPoint','bldAVerticesInsideMappedWallBox','scaleBarDiscrepancy')},ensure_ascii=False))

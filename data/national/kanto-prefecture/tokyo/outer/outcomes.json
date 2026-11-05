@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "group": "outer",
+  "asOf": "2026-11-05",
+  "targetCount": 4,
+  "numericalComparisonCount": 4,
+  "footprintCandidateCount": 3,
+  "planDerivedEstimateCount": 1,
+  "approvedCount": 0,
+  "adoptedCount": 0,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "inventoryRow": 4,
+      "result": "numerical-candidate-weak-identity",
+      "remaining": "外形2872とTICKET小棟の対応、外形2877と写真の不一致、製品測地系、独立レビュー",
+      "nextAction": "現地写真か公式の入口平面図で窓口棟を確認し2872を採るか判断する。独立レビューと測地系判断の後に親がmanifestへ統合する",
+      "statusNote": "在庫表記は市ページ更新2026-06-04時点。現在在庫は未保証",
+      "candidateCoordinate": {
+        "lat": 35.7659906,
+        "lng": 139.3288311
+      },
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
+      "name": "秋川渓谷瀬音の湯",
+      "inventoryRow": 7,
+      "result": "numerical-candidate",
+      "remaining": "製品測地系、独立レビュー、706内の区画構成",
+      "nextAction": "独立レビューで写真と棟の対応を確認し、測地系判断後に親が統合する",
+      "statusNote": "市の配布時間9:50-18:00と施設公式の4-11月19:00閉店に差あり。関係データは変更していない",
+      "candidateCoordinate": {
+        "lat": 35.7272322,
+        "lng": 139.187366
+      },
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/seoto-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "name": "フレア五日市",
+      "inventoryRow": 12,
+      "result": "plan-derived-estimate-no-target-footprint",
+      "remaining": "対象棟の外形が2026-07製品に未収録、配置図は概寸、Esri画像の日付と利用条件、採用方式の判断、製品測地系、独立レビュー",
+      "nextAction": "親が配置図オフセット方式を認めるか判断する。認めない場合は外形更新か新しいGSI写真を待ち外形内点へ置き換える",
+      "statusNote": "市ページに令和8年7月28日から増刷分配布と記載。現在在庫は未保証",
+      "candidateCoordinate": {
+        "lat": 35.7325569,
+        "lng": 139.2288693
+      },
+      "coordinateIsFootprintInternal": false,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    },
+    {
+      "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
+      "name": "滝山中央名店会(食祭館あまいけ2階)",
+      "inventoryRow": 21,
+      "result": "numerical-candidate",
+      "remaining": "模式図と区画の一対一照合、製品測地系、独立レビュー",
+      "nextAction": "独立レビューで商店マップと棟列の対応を確認し、測地系判断後に親が統合する",
+      "statusNote": "市ページ(更新令和8年6月26日)はブラック・ジャック＆ピノコ配布中。名店会サイトの休止記載(2025/11/14現在)はカード名なしで古い。状態は変更していない",
+      "candidateCoordinate": {
+        "lat": 35.7442066,
+        "lng": 139.5060132
+      },
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false
+    }
+  ],
+  "humanQuestions": [
+    {
+      "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
+      "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
+      "officialUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
+      "question": "入口の羽ばたき屋根の下にあるTICKET表示の小棟が、カードを受け取るチケット売り場ですか。その小棟は屋根の動物公園通り側(南西)の縁にありますか。",
+      "resolves": "外形2872をチケット窓口棟の代表点としてよいか"
+    }
+  ],
+  "parentDecisions": [
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "decision": "対象棟の外形がない場合に公式配置図オフセット点を採用対象にするか"
+    },
+    {
+      "topic": "PMTiles provenance",
+      "decision": "README版2026-07-01と本体Last-Modified 2026-09-17の関係、製品測地系の適用"
+    }
+  ],
+  "notDone": [
+    "全担当IDの現地確認",
+    "Esri画像の撮影日と利用条件の確認",
+    "羽村の管理運営計画20頁・基本方針14頁の全文読解",
+    "独立レビュー",
+    "全Python/Goスイート(親担当)"
+  ]
+}

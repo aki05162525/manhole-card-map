@@ -1,0 +1,236 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
+  "checkedAt": "2026-11-05",
+  "computedAt": "2026-11-05T15:33:07.728650+00:00",
+  "source": "国土地理院最適化ベクトルタイル PMTiles",
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "baseTile": {
+    "z": 16,
+    "x": 58207,
+    "y": 25818
+  },
+  "selectedFeatureIndices": [
+    1493,
+    1636
+  ],
+  "fragments": [
+    {
+      "combinedIndex": 1493,
+      "sourceTile": {
+        "z": 16,
+        "x": 58208,
+        "y": 25819
+      },
+      "sourceFeatureIndex": 156,
+      "attributes": {
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature"
+      },
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "valid": true,
+      "areaApproxM2": 2191.8,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7957,
+              7046
+            ],
+            [
+              8132,
+              7050
+            ],
+            [
+              8127,
+              7236
+            ],
+            [
+              8192,
+              7236
+            ],
+            [
+              8192,
+              7268
+            ],
+            [
+              8187,
+              7430
+            ],
+            [
+              8119,
+              7429
+            ],
+            [
+              8118,
+              7451
+            ],
+            [
+              8115,
+              7589
+            ],
+            [
+              7938,
+              7584
+            ],
+            [
+              7942,
+              7511
+            ],
+            [
+              7885,
+              7500
+            ],
+            [
+              7886,
+              7373
+            ],
+            [
+              7823,
+              7370
+            ],
+            [
+              7826,
+              7234
+            ],
+            [
+              7833,
+              7135
+            ],
+            [
+              7896,
+              7137
+            ],
+            [
+              7899,
+              7072
+            ],
+            [
+              7957,
+              7046
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "combinedIndex": 1636,
+      "sourceTile": {
+        "z": 16,
+        "x": 58209,
+        "y": 25819
+      },
+      "sourceFeatureIndex": 5,
+      "attributes": {
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature"
+      },
+      "tileBoundaryTouched": true,
+      "outerBoundaryTouched": false,
+      "valid": true,
+      "areaApproxM2": 281.3,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8112,
+              7049
+            ],
+            [
+              8132,
+              7050
+            ],
+            [
+              8127,
+              7236
+            ],
+            [
+              8192,
+              7236
+            ],
+            [
+              8192,
+              7268
+            ],
+            [
+              8187,
+              7430
+            ],
+            [
+              8119,
+              7429
+            ],
+            [
+              8118,
+              7451
+            ],
+            [
+              8115,
+              7589
+            ],
+            [
+              8112,
+              7588
+            ],
+            [
+              8112,
+              7049
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "totalAreaApproxM2": 2473.1,
+  "primaryBoundsApproxM": [
+    44.8,
+    65.9
+  ],
+  "manualPointInputLatLng": [
+    35.62255,
+    139.7513
+  ],
+  "manualPointXY": [
+    7978.061368912458,
+    7303.958583459258
+  ],
+  "inclusion": {
+    "coordinate": {
+      "lat": 35.62255,
+      "lng": 139.7513
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      7978.061368912458,
+      7303.958583459258
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "otherBldAContainingPoint": [],
+  "minDistanceToPrimaryEdgeApproxM": 14.0,
+  "acquiredBounds": [
+    0,
+    0,
+    12288,
+    12288
+  ],
+  "scale_m_per_tile_unit": 0.12135447028855557,
+  "processing": "decode mapbox-vector-tile 2.2.0 y down; combine_tiles; manual point; Web Mercator inverse without datum transformation; 7 decimal rounding",
+  "crsApproved": false,
+  "identityApproved": false,
+  "adoptionApproval": false
+}

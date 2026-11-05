@@ -1,0 +1,104 @@
+{
+ "header": {
+  "version": 3,
+  "root_offset": 127,
+  "root_length": 2376,
+  "metadata_offset": 2503,
+  "metadata_length": 4168,
+  "leaf_directory_offset": 6671,
+  "leaf_directory_length": 5755653,
+  "tile_data_offset": 5762324,
+  "tile_data_length": 16895000857,
+  "addressed_tiles_count": 2949893,
+  "tile_entries_count": 2894857,
+  "tile_contents_count": 2582172,
+  "clustered": true,
+  "internal_compression": "GZIP",
+  "tile_compression": "GZIP",
+  "tile_type": "MVT",
+  "min_zoom": 4,
+  "max_zoom": 16,
+  "min_lon_e7": 1220000000,
+  "min_lat_e7": 170349800,
+  "max_lon_e7": 1547666670,
+  "max_lat_e7": 460000000,
+  "center_zoom": 16,
+  "center_lon_e7": 1356015010,
+  "center_lat_e7": 348295869
+ },
+ "metadata": {
+  "description": "output/tiles-25k.mbtiles",
+  "format": "pbf",
+  "generator": "tile-join v1.36.0",
+  "generator_options": "tippecanoe -P -f -q -pf -pk -S 2 -Z 4 -z 7 -B 4 -d 14 -D 14 -m 14 -o output/tiles-5000k.mbtiles; tippecanoe -P -f -q -pf -pk -S 2 -Z 8 -z 10 -B 8 -o output/tiles-1000k.mbtiles; tippecanoe -P -f -q -pf -pk -S 2 -Z 11 -z 13 -B 11 -o output/tiles-200k.mbtiles; tippecanoe -P -f -q -pf -pk -S 2 -Z 14 -z 16 -B 14 -o output/tiles-25k.mbtiles; tile-join -o ./26-07.mbtiles ./tiles-1000k.mbtiles ./tiles-200k.mbtiles ./tiles-25k.mbtiles ./tiles-5000k.mbtiles",
+  "maxzoom": "16",
+  "minzoom": "4",
+  "name": "output/tiles-5000k.mbtiles + output/tiles-1000k.mbtiles + output/tiles-200k.mbtiles + output/tiles-25k.mbtiles",
+  "type": "overlay",
+  "version": "2"
+ },
+ "ranges": [
+  {
+   "schema": 1,
+   "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "version": "tokyo-2026-11-05-east",
+   "requestHeaders": {
+    "range": "bytes=0-126"
+   },
+   "attemptedAt": "2026-11-05T15:30:46.193696+00:00",
+   "httpStatus": 206,
+   "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+   "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+   "contentType": "binary/octet-stream",
+   "contentRange": "bytes 0-126/16900763181",
+   "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "status": "cached",
+   "fetchedAt": "2026-11-05T15:30:46.282774+00:00",
+   "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+   "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/ranges/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+   "bytes": 127,
+   "reusedAt": "2026-11-05T15:45:40.700409+00:00"
+  },
+  {
+   "schema": 1,
+   "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "version": "tokyo-2026-11-05-east",
+   "requestHeaders": {
+    "range": "bytes=0-126"
+   },
+   "attemptedAt": "2026-11-05T15:30:46.193696+00:00",
+   "httpStatus": 206,
+   "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+   "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+   "contentType": "binary/octet-stream",
+   "contentRange": "bytes 0-126/16900763181",
+   "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "status": "cached",
+   "fetchedAt": "2026-11-05T15:30:46.282774+00:00",
+   "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+   "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/ranges/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+   "bytes": 127,
+   "reusedAt": "2026-11-05T15:45:40.700512+00:00"
+  },
+  {
+   "schema": 1,
+   "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "version": "tokyo-2026-11-05-east",
+   "requestHeaders": {
+    "range": "bytes=2503-6670"
+   },
+   "attemptedAt": "2026-11-05T15:45:40.700557+00:00",
+   "httpStatus": 206,
+   "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+   "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+   "contentType": "binary/octet-stream",
+   "contentRange": "bytes 2503-6670/16900763181",
+   "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+   "status": "acquired",
+   "fetchedAt": "2026-11-05T15:45:40.772010+00:00",
+   "sha256": "1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862",
+   "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/ranges/1eef92d4ac644dd63ef9e046a16b0bb4be40352858ccd4563d85656b78bb4862.raw",
+   "bytes": 4168
+  }
+ ]
+}

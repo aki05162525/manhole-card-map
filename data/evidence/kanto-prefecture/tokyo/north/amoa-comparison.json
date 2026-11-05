@@ -1,0 +1,424 @@
+{
+ "schema": 1,
+ "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+ "name": "荒川知水資料館 amoa",
+ "checkedAt": "2026-11-05",
+ "distribution": {
+  "source": "北区マンホールカード案内 sha256 5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649",
+  "fact": "荒川放水路通水100周年記念カードの配布場所。所在地 北区志茂5-41-1。在庫記載は保証ではない。"
+ },
+ "officialDiagrams": [
+  {
+   "url": "https://www.ktr.mlit.go.jp/kisha/kisha_01777.pdf",
+   "sha256": "117ad0ba4af72ce6789b0222a3d2b07b9464b2eaec868bf9f2dd3f9c1b1188b3",
+   "pages": "全7頁をコンタクトシートで確認。棟同定には3頁AREA MAPと5頁位置図を拡大読解。6頁のルート写真は縮小表示のみで詳細未読。",
+   "age": "令和6年10月7日付の記者発表。",
+   "reading": "AREA MAPは西から段状棟、平行2棟、緑の「アモアエリア」内にアモア（荒川知水資料館）と総合管理棟、続いて荒川下流河川事務所、東の連続棟、小棟2つを描く。アモアの引出線は東隣の総合管理棟とは別の棟を指す。上は荒川、下は新河岸川、新志茂橋が下、赤水門が上。",
+   "orientation": "AREA MAPに方位記号なし。5頁の位置図はN記号あり。製品との対応から画面上はおおむね北東。fitの回転は記録値を参照。"
+  },
+  {
+   "url": "https://www.ara-amoa.com/アクセス/",
+   "imageSha256": "df46659f50f0f25f8910f5633982642094842d7548dfa6595255a4239907eb63",
+   "pages": "1画像全域",
+   "reading": "荒川と新河岸川の間にamoa、東隣に河川事務所。略図で棟形状は示さない。"
+  },
+  {
+   "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000111822.jpg",
+   "sha256": "77e10fb9a64c920ae1ad84b660585193ab8e4a231ff59c44813448e4de68e8f4",
+   "reading": "3F案内図。片端が丸い平面で、外形2117の北端の丸い輪郭と形状が整合。方位なしのため形状の補助のみ。"
+  }
+ ],
+ "trap": "記者発表の「荒川下流河川事務所 1階 アモアホール」は事務所側で、発表自身が「荒川知水資料館（amoa）ではなく事務所側」と注記する。ホール名から2131へ割り当てない。",
+ "surroundings": "新志茂橋の直線RdCL、赤水門から中之島へのRdCL、河川敷道路、北の荒川・南の新河岸川を全域描画と対応。棟列の順序が西から東まで一致。",
+ "numericFit": {
+  "method": "西端1166・事務所2131・東端2486の3棟でfitし、他5棟を予測。鳥瞰的な略図の手読みなので棟順序の補助。",
+  "rows": [
+   {
+    "name": "西端の段状棟",
+    "officialPx": [
+     425,
+     615
+    ],
+    "mappedFeature": 1166,
+    "predicted": [
+     3465.1322873843733,
+     4693.600530778367
+    ],
+    "residualUnits": 9.6,
+    "nearestFeatures": [
+     [
+      9.6,
+      1166
+     ],
+     [
+      155.8,
+      1167
+     ],
+     [
+      265.8,
+      1169
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "荒川下流河川事務所",
+    "officialPx": [
+     1040,
+     632
+    ],
+    "mappedFeature": 2131,
+    "predicted": [
+     5012.585906962942,
+     5307.670768253056
+    ],
+    "residualUnits": 21.3,
+    "nearestFeatures": [
+     [
+      21.3,
+      2131
+     ],
+     [
+      134.6,
+      2130
+     ],
+     [
+      193.4,
+      2132
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "東端の小棟",
+    "officialPx": [
+     1547,
+     645
+    ],
+    "mappedFeature": 2486,
+    "predicted": [
+     6289.233383491701,
+     5811.32524037208
+    ],
+    "residualUnits": 11.7,
+    "nearestFeatures": [
+     [
+      11.7,
+      2486
+     ],
+     [
+      147.9,
+      2485
+     ],
+     [
+      338.3,
+      2140
+     ]
+    ],
+    "role": "fit"
+   },
+   {
+    "name": "アモア（荒川知水資料館）",
+    "officialPx": [
+     800,
+     630
+    ],
+    "mappedFeature": 2117,
+    "predicted": [
+     4404.400033125607,
+     5079.812874955743
+    ],
+    "residualUnits": 72.1,
+    "nearestFeatures": [
+     [
+      72.1,
+      2117
+     ],
+     [
+      159.7,
+      2120
+     ],
+     [
+      199.9,
+      2118
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "総合管理棟",
+    "officialPx": [
+     905,
+     620
+    ],
+    "mappedFeature": 2119,
+    "predicted": [
+     4680.575809195499,
+     5151.858160396179
+    ],
+    "residualUnits": 90.9,
+    "nearestFeatures": [
+     [
+      43.9,
+      2129
+     ],
+     [
+      90.9,
+      2119
+     ],
+     [
+      97.9,
+      2118
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "アモアエリア南の小棟",
+    "officialPx": [
+     890,
+     660
+    ],
+    "mappedFeature": 2129,
+    "predicted": [
+     4605.319129305898,
+     5239.6084933704
+    ],
+    "residualUnits": 83.3,
+    "nearestFeatures": [
+     [
+      83.3,
+      2129
+     ],
+     [
+      97.4,
+      2120
+     ],
+     [
+      148.6,
+      2118
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "東の棟",
+    "officialPx": [
+     1340,
+     630
+    ],
+    "mappedFeature": 2139,
+    "predicted": [
+     5776.995265645567,
+     5581.054841270365
+    ],
+    "residualUnits": 88.1,
+    "nearestFeatures": [
+     [
+      88.1,
+      2139
+     ],
+     [
+      97.9,
+      2138
+     ],
+     [
+      160.8,
+      2137
+     ]
+    ],
+    "role": "holdout"
+   },
+   {
+    "name": "東の小棟2",
+    "officialPx": [
+     1430,
+     645
+    ],
+    "mappedFeature": 2140,
+    "predicted": [
+     5991.8377497790425,
+     5702.722814337246
+    ],
+    "residualUnits": 23.4,
+    "nearestFeatures": [
+     [
+      23.4,
+      2140
+     ],
+     [
+      170.1,
+      2485
+     ],
+     [
+      268.5,
+      2139
+     ]
+    ],
+    "role": "holdout"
+   }
+  ],
+  "scaleUnitsPerPx": 2.706024613389501,
+  "rotationDeg": 20.061095459370645
+ },
+ "failedWindow": "最初のamoa窓（x58204..58206,y25781..25783）は荒川北岸側にずれ、対象棟を含まなかった。SVGは失敗窓として保持し根拠にしない。",
+ "footprint": {
+  "productVersion": "GSI optimal_bvmap PMTiles; ETag \"dfa81a9cba11aad28247d63a2d8361ec-2015\", Last-Modified 2026-09-17; READMEの版記述は親記録で2026-07-01",
+  "featureIndexCombined": 2117,
+  "layer": "BldA",
+  "sourceTile": {
+   "z": 16,
+   "x": 58205,
+   "y": 25783
+  },
+  "sourceFeatureIndex": 34,
+  "featureId": 0,
+  "properties": {
+   "vt_code": 3102,
+   "vt_lvorder": 0
+  },
+  "tileBoundaryTouched": false,
+  "outerBoundaryTouched": false,
+  "vertexCount": 20,
+  "ring": [
+   [
+    4448,
+    4914
+   ],
+   [
+    4487,
+    4948
+   ],
+   [
+    4500,
+    4944
+   ],
+   [
+    4525,
+    4948
+   ],
+   [
+    4537,
+    4955
+   ],
+   [
+    4542,
+    4962
+   ],
+   [
+    4544,
+    4974
+   ],
+   [
+    4591,
+    4994
+   ],
+   [
+    4520,
+    5159
+   ],
+   [
+    4380,
+    5098
+   ],
+   [
+    4368,
+    5126
+   ],
+   [
+    4312,
+    5102
+   ],
+   [
+    4332,
+    5054
+   ],
+   [
+    4367,
+    5069
+   ],
+   [
+    4398,
+    4997
+   ],
+   [
+    4389,
+    4981
+   ],
+   [
+    4387,
+    4971
+   ],
+   [
+    4391,
+    4952
+   ],
+   [
+    4422,
+    4917
+   ],
+   [
+    4448,
+    4914
+   ]
+  ],
+  "areaApproxM2": 542.6,
+  "centroidCombined": [
+   4463.2598498977395,
+   5038.23940679875
+  ],
+  "manualPointXY": [
+   4463,
+   5038
+  ],
+  "inclusion": {
+   "coordinate": {
+    "lat": 35.7856021,
+    "lng": 139.7301064
+   },
+   "unroundedWithin": true,
+   "roundedWithin": true,
+   "roundedTileXY": [
+    4462.967812567949,
+    5037.974356621504
+   ],
+   "mechanicalChecksPassed": true,
+   "identityApproved": false,
+   "crsApproved": false
+  },
+  "scaleMetersPerUnit": 0.12110652721729877
+ },
+ "alternatives": [
+  {
+   "feature": 2119,
+   "reason": "図の総合管理棟"
+  },
+  {
+   "feature": 2129,
+   "reason": "アモアエリア南の小棟。図に用途の注記なし"
+  },
+  {
+   "feature": 2131,
+   "reason": "図の荒川下流河川事務所。同住所だが別棟"
+  },
+  {
+   "feature": 2118,
+   "reason": "2117と2119の間の細い接続部で約35㎡。資料館本体でない"
+  }
+ ],
+ "notUsed": [
+  "同住所の河川事務所外形",
+  "最初の北岸窓"
+ ],
+ "tileCoverage": "z16 x58204..58206 y25782..25784の9タイル。外形は z16/58205/25783 内 index34。タイル境界・取得外端を跨がない。",
+ "relationNote": "開館時刻の差：区案内は平日16:00（3-10月16:30）、館公式は平日17:00・11-2月16:30。配布時間と開館時間は別の可能性があり、台帳を変更せず親へ報告する。",
+ "limits": [
+  "AREA MAPは2024年のイベント用略図で方位・縮尺なし",
+  "現地確認ではない",
+  "外形測量日不明",
+  "製品測地系の適用は未承認"
+ ],
+ "decision": "numerical candidate only",
+ "adoptionApproval": false,
+ "manifestApplied": false
+}

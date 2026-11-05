@@ -1,0 +1,17 @@
+import sys,json
+sys.path.insert(0,sys.argv[1])
+from northlib import *
+from research_common import contains_point
+c=load('amoa2')
+fs=c['features']
+# official AREA MAP building base centres, read by hand from page 3 at 220dpi crop (display px of the crop)
+off={'西端の段状棟':(425,615,1166),'荒川下流河川事務所':(1040,632,2131),'東端の小棟':(1547,645,2486)}
+hold={'アモア（荒川知水資料館）':(800,630,2117),'総合管理棟':(905,620,2119),'アモアエリア南の小棟':(890,660,2121),'東の棟':(1340,630,2139),'東の小棟2':(1430,645,2140)}
+a,b=fit([v[:2] for v in off.values()],[centroid(outer(fs[v[2]])) for v in off.values()]);rows=[]
+for k,v in {**off,**hold}.items():
+ p=apply(a,b,v[:2]);m=centroid(outer(fs[v[2]]));rows.append(dict(name=k,officialPx=v[:2],mappedFeature=v[2],predicted=p,residualUnits=round(math.dist(p,m),1),nearestFeatures=[[round(d,1),i] for d,i in nearest(c,p,3)],role='fit' if k in off else 'holdout'))
+for r in rows:print(r['name'],r['residualUnits'],r['nearestFeatures'])
+I=2117;r=outer(fs[I]);m=centroid(r);print(r,m,fs[I]['sourceTile'],fs[I]['sourceFeatureIndex'],fs[I]['tileBoundaryTouched'],fs[I]['outerBoundaryTouched']);pt=[round(m[0]),round(m[1])]
+print(contains_point(fs[I]['geometry'],pt))
+d=describe(c,I,pt);print(d['inclusion'],d['areaApproxM2']);print({k:describe(c,k,[round(x) for x in centroid(outer(fs[k]))])['areaApproxM2'] for k in (2118,2119,2121,2131)})
+json.dump(dict(rows=rows,scaleUnitsPerPx=abs(a),rotationDeg=rotationDeg(a),pt=pt),open(sys.argv[2],'w'),ensure_ascii=False,indent=1)

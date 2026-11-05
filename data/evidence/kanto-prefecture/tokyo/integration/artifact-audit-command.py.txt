@@ -1,0 +1,17 @@
+import json,hashlib,datetime,subprocess
+from pathlib import Path
+E=Path('data/evidence/kanto-prefecture/tokyo'); count=0;relocated=[]
+for f in (E/'west').glob('*/abr-overlay.png'):
+ dst=Path('data/work/kanto-prefecture/tokyo/integration')/f'{f.parent.name}-abr-overlay.png';dst.parent.mkdir(exist_ok=True,parents=True);h=hashlib.sha256(f.read_bytes()).hexdigest();f.rename(dst);relocated.append(dict(originalPath=str(f),localPath=str(dst),sha256=h,reason='ABR reuse conditions not verified; preserve locally, exclude from Git'))
+def walk(x):
+ global count
+ if isinstance(x,dict):
+  if x.get('rawPath') and x.get('sha256'):
+   raw=Path(x['rawPath']);assert raw.exists(),raw;assert hashlib.sha256(raw.read_bytes()).hexdigest()==x['sha256'],raw;count+=1
+  for v in x.values():walk(v)
+ elif isinstance(x,list):
+  for v in x:walk(v)
+for g in ['north','east','south','west','outer','integration']:walk(json.loads((E/g/'retrievals.json').read_text()))
+assert subprocess.run(['git','check-ignore','data/work/kanto-prefecture/tokyo/integration'],capture_output=True).returncode==0
+r=dict(command='python3 -B /tmp/tokyo-artifact-audit.py',exitCode=0,verifiedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),rawHashReferenceCount=count,relocated=relocated,ordinaryOriginalsGitIgnored=True)
+(E/'integration/artifact-audit.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n');print('PASS',count,'raw hash references; ABR overlays retained locally',len(relocated))

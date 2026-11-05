@@ -1,0 +1,67 @@
+import sys,json,hashlib,os,datetime,time
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import new_observation,validate_observation
+E=Path('data/evidence/kanto-prefecture/tokyo/north');N=Path('data/national/kanto-prefecture/tokyo/north');W=Path('data/work/kanto-prefecture/tokyo/north');H=Path(sys.argv[1])
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+KITA='5dc0bf4f635699e89d9da80573bbb45e6fd9467298f43b03171d5ef717a56649'
+# resolve abbreviated references left in comparison drafts
+fixes={'asukayama':[('sha256 5dc0bf4f…（再取得で旧原本と同一hash）',f'sha256 {KITA}（再取得で旧原本と同一hash）')],
+ 'forest':[('sha256 5dc0bf4f…',f'sha256 {KITA}'),('bd292f3d5b2b…(retrievals参照)','bd292f3d5b2b1c35ce7e0404cf485febb03d27c417b71083e38a5f4fb1ceb5a3'),('北に区財務局記述どおり赤羽自然観察公園側の園路','北は関東財務局PDFの「北側に隣接する赤羽自然観察公園」と整合する園路')],
+ 'amoa':[('sha256 5dc0bf4f…',f'sha256 {KITA}')],
+ 'museum':[('sha256 74a794c0f52a…（再取得で旧原本と同一hash）','sha256 74a794c0f52a757db5e83ea8cbd1af2ecd7cbcae618ade8c691079ea3d17baaf（再取得で旧原本と同一hash）'),('ffe21add7b59（全hashはretrievals）',[x['sha256'] for x in json.load(open(E/'retrievals.json')) if x.get('sha256','').startswith('ffe21add7b59')][0])]}
+for k,rs in fixes.items():
+ p=E/f'{k}-comparison.json';t=p.read_text()
+ for a,b in rs:
+  assert a in t or b in t,(k,a);t=t.replace(a,b)
+ p.write_text(t)
+# curl POSTs were outside fetch_cached; record them explicitly, including the null first response
+rec=json.loads((E/'retrievals.json').read_text())
+if not any(r.get('method')=='POST' for r in rec):
+ for f,form,note in ((H/'urapi/rooms.json','shisya=20&danchi=694&shikibetu=0&pageIndex=0 (detail_bukken_room)','HTTP200、本文null。空室一覧なしとして扱い、棟図の不在を意味しない'),(H/'urapi/b.json','shisya=20&danchi=694&shikibetu=0 (detail_bukken)','住棟配置図フラグ付き画像を確認')):
+  rec.append(dict(schema=1,scope='facility:kanto-south-1a3833b4bda5568eaddb',method='POST',url='https://chintai.r6.ur-net.go.jp/chintai/api/bukken/detail/'+('detail_bukken_room/' if 'room' in form else 'detail_bukken/'),form=form,status='acquired',httpStatus=200,fetchedAtFromFileMtime=datetime.datetime.fromtimestamp(os.path.getmtime(f),datetime.timezone.utc).isoformat(),sha256=sha(f),bytes=f.stat().st_size,note=note,tool='curl; metadata headers not retained'))
+ (W/'ur-api-rooms-response.json').write_bytes((H/'urapi/rooms.json').read_bytes())
+ (E/'retrievals.json').write_text(json.dumps(rec,ensure_ascii=False,indent=1)+'\n')
+inv=json.load(open('data/national/kanto-prefecture/tokyo/inventory.json'))['rows']
+parent=json.load(open('data/evidence/kanto-prefecture/tokyo/retrievals.json'))
+readme=[r for r in parent if 'optimal_bvmap' in r['url'] and r.get('sha256')][0];terms=[r for r in parent if 'web1.gsi' in r['url'] and r.get('sha256')][0];spec=[r for r in parent if 'siyou.html' in r['url'] and r.get('sha256')][0]
+PROD='https://github.com/gsi-cyberjapan/optimal_bvmap'
+ROWS=[
+ dict(i=3,slug='hintmation',cls='derived-from-official-layout; product-footprint-absent',url='https://chintai.r6.ur-net.go.jp/chintai/img_photo/20/20_694/20_694_AP_01_l.gif',loc='hintmation-comparison.json: officialDiagram 20_694_AP_01_l.gif 15号棟を6棟相似変換で写像した矩形の中心',method='未承認の調査候補。UR公式住棟配置図の15号棟中心を、製品外形と対応する周辺6棟の相似変換で写像し逆投影。15号棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。',ver='UR住棟配置図 Last-Modified 2024-07-19; GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; product datum applicability pending',identity='confirmed',pages=(1,[1]),orient='confirmed',blockers=['独立レビュー','配置図写像点を棟代表点として許容する判断','UR図からの座標導出の利用条件','製品測地系適用'],remain='製品に15号棟外形がなく外形内包で確認できない。'),
+ dict(i=5,slug='forest',cls='footprint-candidate; no-official-site-plan',url=PROD,loc='forest-comparison.json: BldA z16/58201/25786 index45 全外形の内点',method='未承認の調査候補。公式配置図は未発見。区・指定管理者の写真、105mピッチ、建物用途と外形の長さ約104m・矩形内無建物の一致で競技場棟とみなし手動内点を逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。',ver='GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending',identity='insufficient',pages=(None,[]),orient='insufficient',blockers=['独立レビュー','公式配置図なしでの棟同定の可否','製品測地系適用'],remain='公式配置図がなく写真・寸法照合に留まる。トラック4670の帰属は未確定。'),
+ dict(i=8,slug='amoa',cls='footprint-candidate',url=PROD,loc='amoa-comparison.json: BldA z16/58205/25783 index34 全外形の内点',method='未承認の調査候補。国交省AREA MAP（2024年）の棟列と製品外形を照合し、アモア引出線の棟に手動内点を置いて逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。',ver='GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending',identity='confirmed',pages=(7,[1,2,3,4,5,6,7]),orient='insufficient',blockers=['独立レビュー','製品測地系適用'],remain='AREA MAPに方位なし。6頁写真は縮小読解のみ。'),
+ dict(i=10,slug='museum',cls='derived-from-official-site-plan; product-footprint-absent',url='https://akabanemuseum.ur-net.go.jp/asset_trial_competition/img/URmuseum_map.pdf',loc='museum-comparison.json: officialDiagram URmuseum_map.pdf ミュージアム棟塗り重心を4棟相似変換で写像',method='未承認の調査候補。UR公式縮尺付き配置図のミュージアム棟重心を、製品外形と対応する41〜44号棟の相似変換（残差1m未満）で写像し逆投影。ミュージアム棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。',ver='UR URmuseum_map.pdf 作成2023-11-02; GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; product datum applicability pending',identity='confirmed',pages=(1,[1]),orient='confirmed',blockers=['独立レビュー','配置図写像点を棟代表点として許容する判断','UR図からの座標導出の利用条件','製品測地系適用'],remain='製品にミュージアム棟外形がなく外形内包で確認できない。'),
+ dict(i=20,slug='asukayama',cls='footprint-candidate',url=PROD,loc='asukayama-comparison.json: BldA z16/58206/25791 index743 全外形の内点',method='未承認の調査候補。北区公式園内マップの配布場所矢印・番号2を、3棟fitと他棟holdoutで製品外形へ対応させ手動内点を逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。',ver='GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending',identity='confirmed',pages=(1,[1]),orient='confirmed',blockers=['独立レビュー','製品測地系適用'],remain='図の年代不明。方位記号と棟配列の向きに約24度差。'),
+]
+updates=[];bindings=[];approved=[];inspect=[];out=[]
+for R in ROWS:
+ row=inv[R['i']];cmp=json.load(open(E/f"{R['slug']}-comparison.json"));fid=row['facilityId']
+ assert cmp['facilityId']==fid
+ coord=(cmp.get('footprint') or {}).get('inclusion',{}).get('coordinate') or cmp['candidate']['coordinate']
+ snap=str(E/f"{R['slug']}-comparison.json")
+ ev=dict(sourceUrl=R['url'],snapshotPath=snap,snapshotSHA256=sha(snap),sourceLocator=R['loc'],checkedAt='2026-11-05',actorType='ai',verificationMethod=R['method'])
+ u=dict(facilityId=fid,coordinate=coord,scope='building',evidence=ev);updates.append(u)
+ d=hashlib.sha256(json.dumps(u,sort_keys=True,ensure_ascii=False).encode()).hexdigest();approved.append(dict(facilityId=fid,sha256=d))
+ bindings.append(dict(facilityId=fid,identity=dict(name=row['name'],address=row['address']),adoption=u,adoptionSHA256=d,sourceVersion=R['ver']))
+ o=new_observation(fid,['現配布案内の再取得','公式図読解','PMTiles全域描画','棟対応','丸め前後内包検査'])
+ o['performedMethods']=o['plannedMethods'][:]
+ o['acquisition']=dict(status='mixed',records=[str(E/'retrievals.json'),str(E/'range-retrievals.json')])
+ t,c=R['pages'];o['pages']=dict(total=t,checked=c)
+ o['orientation']=dict(status=R['orient'],evidence=[f"{R['slug']}-comparison.json orientation/officialDiagram"])
+ o['coverage']=dict(tiles=[x for x in cmp['tileCoverage'].split('。')[:1]],boundaryClipping='選択外形・アンカーとも境界非接触',renderPath=str(E/f"{R['slug']}-detail.svg"))
+ o['buildingIdentity']=dict(status=R['identity'],evidence=[f"{R['slug']}-comparison.json"],aiReadingOnly=True)
+ o['surroundings']=dict(status='confirmed',evidence=[cmp['surroundings']])
+ o['crs']=dict(status='insufficient',product='GSI optimal_bvmap PMTiles',evidence=[f"一般仕様とREADMEは親記録 {readme['sha256']} / {spec['sha256']}。当該版の測地系明示は未確認。"])
+ lic=[f"GSI規約ミラー {terms['sha256']}（親記録）。PDL1.0・出典加工表示。"]
+ o['licence']=dict(status='insufficient' if 'derived' in R['cls'] else 'confirmed',evidence=lic+(['UR公式図から座標を導出する利用条件は未確認。'] if 'derived' in R['cls'] else []))
+ o['mechanicalChecks']=dict(status='passed',evidence=['verification.json'])
+ o['review']=dict(status='pending',reviewer=None,evidence=[]);validate_observation(o);inspect.append(o)
+ out.append(dict(facilityId=fid,name=row['name'],inventoryIndex=R['i'],stage='numeric-comparison-performed; candidate-saved; adoption-unapproved',candidateClass=R['cls'],coordinate=coord,comparisonRef=snap,detailSvgRef=str(E/f"{R['slug']}-detail.svg"),remainingReason=R['remain'],blockedBy=R['blockers'],nextAction=cmp.get('nextAction') or '独立レビューで棟対応と製品測地系適用を判断する。承認後に親がmanifestへ統合する。',statusUnchanged='配布関係・稼働状態・在庫は今回変更しない。',adoptionApproval=False,manifestApplied=False))
+N.mkdir(exist_ok=True)
+(N/'locations-proposal.json').write_text(json.dumps(dict(schema=1,updates=updates),ensure_ascii=False,indent=2)+'\n')
+(N/'lifecycle-proposal.json').write_text(json.dumps(dict(schema=1,bindings=bindings,events=[],groups=[]),ensure_ascii=False,indent=2)+'\n')
+(N/'selection-proposal.json').write_text(json.dumps(dict(schema=1,approval=False,manifestApplied=False,integrationBlockedBy=['independent review','product-specific datum applicability','official plan derived points require explicit acceptance (Hintmation, museum)','stadium identity without official site plan'],proposedManifestAppend=dict(locations=[dict(path=str(N/'locations-proposal.json'),approved=approved)],locationLifecycle=[dict(path=str(N/'lifecycle-proposal.json'),sha256=sha(N/'lifecycle-proposal.json'))]),warning='approved is the existing manifest schema field, not granted approval; do not apply before parent review'),ensure_ascii=False,indent=2)+'\n')
+(E/'inspection.json').write_text(json.dumps(dict(schema=1,asOf='2026-11-05',rows=inspect),ensure_ascii=False,indent=1)+'\n')
+(N/'outcomes.json').write_text(json.dumps(dict(schema=1,asOf='2026-11-05',group='north',targetCount=5,numericalComparisonCount=5,candidateCount=5,footprintCandidateCount=3,derivedCandidateCount=2,approvedCount=0,adoptedCount=0,humanQuestions=[],humanQuestionReason='5件とも公式資料と数値で候補まで到達し、人手一問で解消する論点はない。残りはレビュー判断と製品更新。',groupFindings=['GSI製品2026-09-17 ETag版でも赤羽台南街区の新棟（ミュージアム棟・14〜17号棟）は未反映で、旧外形とみられる3370等が残る。新しい建物の周辺では外形があることを現況の証拠としない。'],relationNotes=[dict(facilityId=inv[8]['facilityId'],note='開館時刻が区案内と館公式で差がある。台帳未変更。'),dict(facilityId=inv[20]['facilityId'],note='台帳住所は管理事務所内、運営者は管理事務所隣、区地図は別棟。台帳未変更。'),dict(facilityId=inv[10]['facilityId'],note='台帳10:00-17:00、館公式開館9:45-17:00。配布時間として矛盾はないが未確認。')],rows=out),ensure_ascii=False,indent=2)+'\n')
+for o in out:print(o['name'],o['coordinate'],o['candidateClass'])
+print(sha(N/'lifecycle-proposal.json'))

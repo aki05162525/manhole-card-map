@@ -1,0 +1,41 @@
+# Re-decode saved PBFs; recheck hashes, inclusion and path scope. Not a substitute for map reading, CRS or adoption review.
+import sys,json,hashlib,math,subprocess,datetime,re
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import decode_tile,contains_point
+E=Path('data/evidence/kanto-prefecture/tokyo/north');N=Path('data/national/kanto-prefecture/tokyo/north');log=[];fail=[]
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def chk(ok,msg):
+ log.append(('OK ' if ok else 'NG ')+msg)
+ if not ok:fail.append(msg)
+# tiles
+T=json.load(open(E/'tiles.json'));n=0
+for a in T['areas']:
+ for t in a['tiles']:
+  n+=1;chk(sha(t['path'])==t['sha256'],f"tile hash {t['tile']['x']}/{t['tile']['y']} area {a['area']}")
+R=json.load(open(E/'range-retrievals.json'));chk({r.get('etag') for r in R if r['status']=='acquired'}=={'"dfa81a9cba11aad28247d63a2d8361ec-2015"'},'single ETag across acquired ranges');chk(not [r for r in R if r['status']=='failed'],f'no failed range among {len(R)} records')
+# raw retrieval hashes
+for r in json.load(open(E/'retrievals.json')):
+ if r.get('rawPath') and r.get('sha256'):chk(sha(r['rawPath'])==r['sha256'],'raw '+r['url'][:70])
+# footprint rows from raw PBF
+F={'asukayama':(58206,25791,743),'forest':(58201,25786,45),'amoa':(58205,25783,34)}
+for slug,(x,y,i) in F.items():
+ c=json.load(open(E/f'{slug}-comparison.json'));fp=c['footprint'];raw=Path(f'data/evidence/kanto-prefecture/tokyo/north/tiles/16-{x}-{y}.pbf.gz').read_bytes();f=decode_tile(raw)['BldA']['features'][i];lat,lng=fp['inclusion']['coordinate']['lat'],fp['inclusion']['coordinate']['lng']
+ px=((lng+180)/360*65536-x)*4096;py=((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*65536-y)*4096
+ chk(contains_point(f['geometry'],(px,py)),f'{slug} rounded point inside raw BldA index{i}: tile xy {px:.2f},{py:.2f}')
+ chk((fp['sourceTile']['x'],fp['sourceTile']['y'],fp['sourceFeatureIndex'])==(x,y,i),f'{slug} provenance');chk(not fp['tileBoundaryTouched'] and not fp['outerBoundaryTouched'],f'{slug} no tile/outer boundary touch')
+# proposal integrity
+L=json.load(open(N/'locations-proposal.json'));B=json.load(open(N/'lifecycle-proposal.json'));S=json.load(open(N/'selection-proposal.json'));inv=json.load(open('data/national/kanto-prefecture/tokyo/inventory.json'))['rows'];ids={inv[i]['facilityId']:inv[i] for i in (3,5,8,10,20)}
+chk(set(u['facilityId'] for u in L['updates'])==set(ids),'locations cover assigned IDs only')
+for u in L['updates']:
+ ev=u['evidence'];chk(sha(ev['snapshotPath'])==ev['snapshotSHA256'],'evidence hash '+ev['snapshotPath']);chk(u['scope']=='building','scope building');chk(ev['checkedAt']=='2026-11-05','checkedAt')
+for b,a in zip(B['bindings'],S['proposedManifestAppend']['locations'][0]['approved']):
+ d=hashlib.sha256(json.dumps(b['adoption'],sort_keys=True,ensure_ascii=False).encode()).hexdigest();chk(d==b['adoptionSHA256']==a['sha256'],'adoption sha '+b['facilityId']);row=ids[b['facilityId']];chk(b['identity']=={'name':row['name'],'address':row['address']},'identity '+row['name'])
+chk(sha(N/'lifecycle-proposal.json')==S['proposedManifestAppend']['locationLifecycle'][0]['sha256'],'lifecycle sha');chk(S['approval'] is False and S['manifestApplied'] is False,'not approved')
+O=json.load(open(N/'outcomes.json'));chk(set(r['facilityId'] for r in O['rows'])==set(ids),'outcomes cover assigned IDs');chk(all(r['adoptionApproval'] is False for r in O['rows']),'no adoption')
+# no general-source originals in evidence
+bad=[p.name for p in E.rglob('*') if p.is_file() and not re.search(r'\.(json|svg|txt|log|pbf\.gz)$',p.name)];chk(not bad,f'evidence has only json/svg/txt/log/pbf: {bad}')
+g=subprocess.run(['git','status','--short','--','tools','web','docs','data/national/manifest.json','tools/national/manifest.json','data/national/kanto-prefecture/tokyo/inventory.json','data/national/kanto-prefecture/tokyo/outcomes.json'],capture_output=True,text=True).stdout;chk(g=='',f'no change to shared code/docs/manifest/top-level files: {g!r}')
+(E/'verification.log').write_text('\n'.join(log)+'\n')
+(E/'verification.json').write_text(json.dumps(dict(schema=1,checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),command='python -B verify (see verification-command.py.txt)',exitCode=1 if fail else 0,checks=len(log),failed=fail,scope='hash/inclusion/provenance only; Python and Go suites not run per assignment',logRef=str(E/'verification.log'),inputSHA256={str(p):sha(p) for p in sorted(list(E.glob('*-comparison.json'))+list(N.glob('*.json')))}),ensure_ascii=False,indent=1)+'\n')
+print(len(log),'checks;',len(fail),'failed',fail);sys.exit(1 if fail else 0)

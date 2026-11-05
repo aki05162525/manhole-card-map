@@ -1,0 +1,221 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "cacheVersion": "tokyo-outer-2026-11-05",
+  "searchSeedOnly": [
+    35.727211,
+    139.187894
+  ],
+  "seedBasis": "search window only; never adoption evidence",
+  "pmtilesHeader": {
+    "tile_compression": "Compression.GZIP",
+    "tile_type": "TileType.MVT",
+    "min_zoom": "4",
+    "max_zoom": "16"
+  },
+  "metadataKeys": [
+    "description",
+    "format",
+    "generator",
+    "generator_options",
+    "maxzoom",
+    "minzoom",
+    "name",
+    "tilestats",
+    "type",
+    "vector_layers",
+    "version"
+  ],
+  "metadataAttribution": null,
+  "metadataVersion": "2",
+  "metadataDescription": "output/tiles-25k.mbtiles",
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58105-25795.pbf.gz",
+      "sha256": "449da8377306650ddc9f669c803644dde7113a6e4d49098e0b27e326b9edff9a",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 20,
+        "BldA": 131,
+        "Cntr": 54,
+        "RdCL": 54,
+        "RdEdg": 49,
+        "RvrCL": 2,
+        "WA": 3,
+        "WL": 12,
+        "WStrL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25795.pbf.gz",
+      "sha256": "265aad4376fc7cafd080b6c19a0321edc6dce8f1164154719ea173629e7e3073",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 10,
+        "BldA": 137,
+        "Cntr": 39,
+        "RdCL": 60,
+        "RdEdg": 55,
+        "RvrCL": 1,
+        "TpgphLine": 19,
+        "WA": 1,
+        "WL": 5,
+        "WStrL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25795
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58107-25795.pbf.gz",
+      "sha256": "3dbd939ebba81116466ffc2817330c402bc8786706ec267eec593ac728040779",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 5,
+        "BldA": 22,
+        "Cntr": 58,
+        "PwrTrnsmL": 2,
+        "RdCL": 27,
+        "RdEdg": 31,
+        "RvrCL": 4,
+        "TpgphLine": 61,
+        "WA": 2,
+        "WL": 17,
+        "WStrL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58105-25796.pbf.gz",
+      "sha256": "725c34d890cf44cc1d824f6ba9b904cfb5d1ba1b4222e33aee026384cf3e9b54",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 11,
+        "BldA": 106,
+        "Cntr": 95,
+        "RdCL": 69,
+        "RdCompt": 1,
+        "RdEdg": 73,
+        "RvrCL": 4,
+        "WA": 5,
+        "WL": 12,
+        "WStrL": 8
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25796.pbf.gz",
+      "sha256": "5f431c8bf4dfa71e46d75b0bdf755f0aabf3001dda0ae03b5c18d7b03a7cde55",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 36,
+        "BldA": 93,
+        "Cntr": 58,
+        "RdCL": 40,
+        "RdEdg": 41,
+        "TpgphLine": 7,
+        "WA": 1,
+        "WL": 9
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25796
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58107-25796.pbf.gz",
+      "sha256": "4d1ff9788bb8144db6edcd4de7b08ce3f5319b3e0a2598917dfe12d0e5e15f10",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 10,
+        "BldA": 4,
+        "Cntr": 75,
+        "PwrTrnsmL": 5,
+        "RdCL": 18,
+        "RdEdg": 5,
+        "TpgphLine": 12,
+        "WA": 2,
+        "WL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58105,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58105-25797.pbf.gz",
+      "sha256": "b522dc8a5863842ba50f3f075d3ff719d176bef8f0c569b2cf82b6c426fa186d",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 11,
+        "BldA": 31,
+        "Cntr": 62,
+        "RdCL": 23,
+        "RdEdg": 11,
+        "RvrCL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58106-25797.pbf.gz",
+      "sha256": "38957be7a4929af31035311d6b56154217efdddc053794a27a8e6a2706823cd5",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 13,
+        "BldA": 95,
+        "Cntr": 38,
+        "RdCL": 29,
+        "RdEdg": 28,
+        "RvrCL": 3,
+        "WA": 2,
+        "WL": 3
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58107,
+        "y": 25797
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/seoto-16-58107-25797.pbf.gz",
+      "sha256": "d4b3ee9dec106a166b3b8df0f66a087f809e7faf570d329d8a54c61ae8e17ec1",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 10,
+        "BldA": 94,
+        "Cntr": 51,
+        "PwrTrnsmL": 2,
+        "RdCL": 42,
+        "RdEdg": 31,
+        "RvrCL": 7,
+        "WA": 2,
+        "WL": 4
+      }
+    }
+  ]
+}

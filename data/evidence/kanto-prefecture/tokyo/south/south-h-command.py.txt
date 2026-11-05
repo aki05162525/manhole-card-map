@@ -1,0 +1,8 @@
+import sys,re,html
+s=open(sys.argv[1],'rb').read().decode('utf8','replace')
+s=re.sub(r'(?is)<(script|style)[^>]*>.*?</\1>',' ',s)
+imgs=re.findall(r'(?i)<img[^>]+src="([^"]+)"[^>]*?(?:alt="([^"]*)")?',s)
+ifr=re.findall(r'(?i)<iframe[^>]+src="([^"]+)"',s)
+links=[l for l in re.findall(r'(?i)href="([^"]+\.(?:pdf|jpg|png|gif)[^"]*)"',s)]
+t=re.sub(r'(?s)<[^>]+>','\n',s);t=html.unescape(t);t=re.sub(r'\s*\n\s*','\n',t)
+print(t[:int(sys.argv[2]) if len(sys.argv)>2 else 5000]);print('IMGS',imgs[:40]);print('IFRAME',ifr);print('LINKS',links[:40])

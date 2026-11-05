@@ -1,0 +1,14 @@
+# usage: python outer-fetch.py.txt <facility-key> <url> [more urls]; caches raw under data/work/.../outer/raw and appends retrieval ledger.
+import sys,json
+from pathlib import Path
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached
+W=Path('data/work/kanto-prefecture/tokyo/outer/raw');L=Path('data/evidence/kanto-prefecture/tokyo/outer/retrievals.jsonl')
+UA={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36 manhole-card-map-research'}
+key=sys.argv[1]
+for u in sys.argv[2:]:
+    raw,rec=fetch_cached(u,W,'tokyo-outer-2026-11-05',headers=UA)
+    rec=dict(rec,facilityKey=key)
+    rec.pop('requestHeaders',None)
+    with L.open('a') as f: f.write(json.dumps(rec,ensure_ascii=False)+'\n')
+    print(rec['status'],rec.get('httpStatus'),rec.get('bytes'),rec.get('contentType'),rec.get('rawPath',rec.get('error')),u)

@@ -1,0 +1,210 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "cacheVersion": "tokyo-outer-2026-11-05",
+  "searchSeedOnly": [
+    35.74432,
+    139.506271
+  ],
+  "seedBasis": "search window only; never adoption evidence",
+  "pmtilesHeader": {
+    "tile_compression": "Compression.GZIP",
+    "tile_type": "TileType.MVT",
+    "min_zoom": "4",
+    "max_zoom": "16"
+  },
+  "metadataKeys": [
+    "description",
+    "format",
+    "generator",
+    "generator_options",
+    "maxzoom",
+    "minzoom",
+    "name",
+    "tilestats",
+    "type",
+    "vector_layers",
+    "version"
+  ],
+  "metadataAttribution": null,
+  "metadataVersion": "2",
+  "metadataDescription": "output/tiles-25k.mbtiles",
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58163,
+        "y": 25791
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58163-25791.pbf.gz",
+      "sha256": "accc2681d2f0d9478fbaf5e4203851e9a1332dcbda2a9c11931a912427bb65e3",
+      "layers": {
+        "AdmArea": 4,
+        "Anno": 4,
+        "BldA": 551,
+        "Cntr": 7,
+        "PwrTrnsmL": 1,
+        "RdCL": 269,
+        "RdEdg": 189,
+        "WA": 2,
+        "WL": 2
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58164,
+        "y": 25791
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25791.pbf.gz",
+      "sha256": "3183ae64d957f998ecae58754e8b606988fe5fb11167ebde77d1ddcf65d36297",
+      "layers": {
+        "AdmArea": 2,
+        "Anno": 9,
+        "BldA": 682,
+        "Cntr": 1,
+        "PwrTrnsmL": 5,
+        "RdCL": 213,
+        "RdEdg": 155
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58165,
+        "y": 25791
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58165-25791.pbf.gz",
+      "sha256": "9d4d77b4648d1e8020d6c0982045dc4d6dadf6b518d64fd0f593184af6ca39f3",
+      "layers": {
+        "AdmArea": 2,
+        "Anno": 19,
+        "BldA": 616,
+        "Cntr": 2,
+        "RdCL": 171,
+        "RdCompt": 1,
+        "RdEdg": 104
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58163,
+        "y": 25792
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58163-25792.pbf.gz",
+      "sha256": "cbb88dcfb4e95ac83013242aafe0232e9abd80106d7447061d699cfbe2db8980",
+      "layers": {
+        "AdmArea": 4,
+        "AdmBdry": 5,
+        "Anno": 9,
+        "BldA": 998,
+        "Cntr": 2,
+        "RdCL": 248,
+        "RdEdg": 137,
+        "RvrCL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58164,
+        "y": 25792
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25792.pbf.gz",
+      "sha256": "17bc1e08791ebaef98380338f36df9b6965db0b5bb2b57bc2d6864035ea2d7fe",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 1,
+        "Anno": 13,
+        "BldA": 443,
+        "Cntr": 6,
+        "PwrTrnsmL": 2,
+        "RdCL": 197,
+        "RdEdg": 144,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58165,
+        "y": 25792
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58165-25792.pbf.gz",
+      "sha256": "0705923822c5ca90df73adbdbbcc35ec974cf2fa3aff8c36e2547ea413763218",
+      "layers": {
+        "AdmArea": 1,
+        "Anno": 6,
+        "BldA": 817,
+        "RdCL": 205,
+        "RdEdg": 89
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58163,
+        "y": 25793
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58163-25793.pbf.gz",
+      "sha256": "82a65b1805dbeef86b84405494b84dfefb66108ac6f531abb8a38caec96bf762",
+      "layers": {
+        "AdmArea": 3,
+        "AdmBdry": 2,
+        "Anno": 16,
+        "BldA": 469,
+        "RdCL": 158,
+        "RdEdg": 99,
+        "RvrCL": 3,
+        "SpcfArea": 3,
+        "WA": 3,
+        "WL": 4
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58164,
+        "y": 25793
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58164-25793.pbf.gz",
+      "sha256": "a70e495fbb1f5184d572bc8b9b000bbc2ef7cb4c422636e43317212622ca9957",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 14,
+        "Anno": 4,
+        "BldA": 870,
+        "Cntr": 2,
+        "PwrTrnsmL": 2,
+        "RdCL": 187,
+        "RdEdg": 102,
+        "RvrCL": 2,
+        "SpcfArea": 1,
+        "WA": 1,
+        "WL": 1
+      }
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58165,
+        "y": 25793
+      },
+      "path": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-16-58165-25793.pbf.gz",
+      "sha256": "d10195f511352e23f415a5f4c1f3ffaae1133a82ed8fbd36a71faf7120823dd0",
+      "layers": {
+        "AdmArea": 2,
+        "AdmBdry": 5,
+        "Anno": 6,
+        "BldA": 784,
+        "Cntr": 2,
+        "PwrTrnsmL": 1,
+        "RdCL": 187,
+        "RdEdg": 115,
+        "RvrCL": 1,
+        "SpcfArea": 1
+      }
+    }
+  ]
+}

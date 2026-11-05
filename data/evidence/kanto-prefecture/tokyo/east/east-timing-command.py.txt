@@ -1,0 +1,16 @@
+import json,sys,time,datetime
+from pathlib import Path
+p=Path('/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/evidence/kanto-prefecture/tokyo/east/timing.json')
+d=json.loads(p.read_text())
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+def stop():
+    a=d.pop('active',None)
+    if a:
+        d['intervals'].append(dict(key=a['key'],note=a.get('note'),startedAt=a['startedAt'],finishedAt=now,seconds=round(time.monotonic()-a['monotonic'],3)))
+if sys.argv[1]=='interrupt':
+    a=d.pop('active');d['intervals'].append(dict(key=a['key'],startedAt=a['startedAt'],finishedAt=None,seconds=None,lastObservedFileWrite=sys.argv[2],note=sys.argv[3]))
+elif sys.argv[1]=='start':
+    stop();d['active']=dict(key=sys.argv[2],note=sys.argv[3] if len(sys.argv)>3 else None,startedAt=now,monotonic=time.monotonic())
+elif sys.argv[1]=='stop':
+    stop()
+p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');print(sys.argv[1:],now)

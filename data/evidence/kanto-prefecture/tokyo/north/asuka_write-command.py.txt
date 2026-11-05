@@ -1,0 +1,18 @@
+import sys,json
+sys.path.insert(0,sys.argv[1])
+from northlib import *
+c=load('asukayama');F=json.load(open(sys.argv[2]));pt=[8062,5908];d=describe(c,5469,pt)
+svg(c,[7000,5300,8400,6900],{5469:pt,5470:None,5467:None,5466:None},E/'asukayama-detail.svg','Asukayama: omiyage candidate 5469 highlighted with office 5470 and garden buildings')
+out=dict(schema=1,facilityId='facility:kanto-south-e0a282f09bea26f727bf',name='渋沢×北区 飛鳥山 おみやげ館',checkedAt='2026-11-05',
+ distribution=dict(source='北区マンホールカード案内 sha256 5dc0bf4f…（再取得で旧原本と同一hash）',fact='しぶさわくん配布場所。所在地 北区西ケ原2-16（飛鳥山公園内）。ページ更新日2025年9月12日。在庫記載「有」は案内記載で現在在庫の保証ではない。'),
+ operatorPage=dict(url='https://shibusawakitaku.tokyo/omiyage/',sha256='8d86c67cd02866511587099e14c7afccc173542a74983594f15d17d9b3adbf7e',fact='住所は「飛鳥山公園管理事務所隣」。台帳住所の「管理事務所内」と表現差があり、公式園内マップも別建物として描く。台帳は変更しない。'),
+ officialDiagram=dict(url='https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/020/208/mappu.jpg',sha256='b3f6949eb0cb589e32184edc1404327d86683bb89549055740793c105ace8190',pages='1画像の全域を読解。未読頁なし。',age='図中に作成年の記載なし。公開ページ更新日2025-09-12は図単体の作成日ではない。',orientation='図右下に方位記号があり、N側はおおむね画面右。3棟fitの回転では画面右の方位が約318度で、方位記号の読取（約342度）と約24度差がある。略図の描画差として記録し、方位記号だけに依存せず棟配列で照合した。',reading='赤札「配布場所」と矢印が番号2の橙色棟を指す。灰色の「飛鳥山公園管理事務所」はその隣の別形状として描かれる。カード画像の緯度経度は図右下の蓋設置場所の座標であり使用しない。'),
+ surroundings='東の道路（公園東縁）、北西の史料館・博物館・紙の博物館の並び、庭園内の青淵文庫・晩香廬を全域描画と対応。北東の王子駅側と南西の西ヶ原側も図の向きと一致。',
+ numericFit=dict(method='番号3・1・4の3棟の図上中心と外形重心で相似変換を推定し、他4棟は当てはめに使わず予測。図上座標は手読みで、誤差検定ではなく棟対応の補助。',**F),
+ footprint=dict(productVersion='GSI optimal_bvmap PMTiles; ETag "dfa81a9cba11aad28247d63a2d8361ec-2015", Last-Modified 2026-09-17; 製品READMEの版記述は親記録で2026-07-01',**d),
+ alternatives=[dict(feature=5470,reason='図の管理事務所に対応。別棟なので代用しない'),dict(feature=5468,reason='5469の北に近接する約8㎡の小外形。図の番号2の形状規模に合わない')],
+ notUsed=['公園全体の地点','蓋の座標（カード記載 35°45\'09.7"N 139°44\'13.7"E）','管理事務所外形5470'],
+ tileCoverage='z16 x58205..58207 y25790..25792の9タイル。選択外形はタイル境界・取得外端を跨がない。詳細SVGの範囲は切抜きで取得範囲ではない。',
+ limits=['建物同定は略図と外形の対応によるAI判断で現地確認ではない','図の年代不明','外形の個別測量日不明','製品測地系の適用は未承認','面積はタイル格子からの水平概算で延床面積ではない'],
+ decision='numerical candidate only',adoptionApproval=False,manifestApplied=False)
+(E/'asukayama-comparison.json').write_text(json.dumps(out,ensure_ascii=False,indent=1)+'\n');print(d['inclusion']['coordinate'],d['sourceTile'],d['sourceFeatureIndex'])

@@ -1,0 +1,210 @@
+{
+ "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+ "searchSeedOnly": [
+  35.741524,
+  139.788971
+ ],
+ "seedBasis": "search window only; never adoption evidence",
+ "tiles": [
+  {
+   "tile": {
+    "z": 16,
+    "x": 58214,
+    "y": 25792
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58214-25792.pbf.gz",
+   "sha256": "53553101cf026b72b595551b04267bb76bdd7a49548a29da9d187c817946ab4e",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 13,
+    "BldA": 1533,
+    "RailCL": 17,
+    "RailTrCL": 16,
+    "RdCL": 274,
+    "RdCompt": 1,
+    "RdEdg": 179,
+    "SpcfArea": 3,
+    "WA": 2,
+    "WL": 2
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58215,
+    "y": 25792
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25792.pbf.gz",
+   "sha256": "30de96695142086181fc4f23fe7c04f48dd276d6b5aa6f1defe813f1ff741934",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 1,
+    "Anno": 6,
+    "BldA": 695,
+    "RailCL": 4,
+    "RailTrCL": 9,
+    "RdCL": 124,
+    "RdCompt": 5,
+    "RdEdg": 101,
+    "SpcfArea": 2,
+    "TpgphLine": 9,
+    "WA": 11,
+    "WL": 13,
+    "WStrL": 22
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58216,
+    "y": 25792
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58216-25792.pbf.gz",
+   "sha256": "c438ee29e7cb2637bd156779d3f59ee7022d24d4de899b454eb9a9a3e0b3365e",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 1,
+    "Anno": 9,
+    "BldA": 949,
+    "RailCL": 6,
+    "RailTrCL": 16,
+    "RdCL": 218,
+    "RdEdg": 143,
+    "TpgphLine": 31,
+    "WA": 2,
+    "WL": 3,
+    "WStrL": 11
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58214,
+    "y": 25793
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58214-25793.pbf.gz",
+   "sha256": "445e058698d22d0990124ea9681b07bc2b4e2008503d061632c1cda757c4166f",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 11,
+    "BldA": 1739,
+    "RailCL": 11,
+    "RailTrCL": 12,
+    "RdCL": 322,
+    "RdEdg": 243,
+    "SpcfArea": 4,
+    "WA": 2,
+    "WL": 2
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58215,
+    "y": 25793
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25793.pbf.gz",
+   "sha256": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 4,
+    "BldA": 761,
+    "RailCL": 4,
+    "RailTrCL": 4,
+    "RdCL": 195,
+    "RdEdg": 192,
+    "WA": 32,
+    "WL": 52,
+    "WStrL": 2
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58216,
+    "y": 25793
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58216-25793.pbf.gz",
+   "sha256": "0dca8bd0a44e80f7259eff79a8a40b74e1d019488348aba713b8785e0931adb0",
+   "layers": {
+    "AdmArea": 2,
+    "AdmBdry": 5,
+    "Anno": 10,
+    "BldA": 397,
+    "RdCL": 167,
+    "RdEdg": 172,
+    "RvrCL": 1,
+    "SpcfArea": 1,
+    "TpgphLine": 74,
+    "WA": 11,
+    "WL": 15,
+    "WStrL": 2
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58214,
+    "y": 25794
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58214-25794.pbf.gz",
+   "sha256": "e9ef181ed8961e00a91bd5246ed0bbdddb3e3940e2115bf88884f43be692bf6e",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 18,
+    "BldA": 1766,
+    "RailCL": 1,
+    "RailTrCL": 4,
+    "RdCL": 318,
+    "RdCompt": 6,
+    "RdEdg": 206,
+    "WA": 4,
+    "WL": 4
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58215,
+    "y": 25794
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58215-25794.pbf.gz",
+   "sha256": "7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 18,
+    "BldA": 1669,
+    "RailCL": 6,
+    "RailTrCL": 5,
+    "RdCL": 320,
+    "RdCompt": 7,
+    "RdEdg": 174,
+    "SpcfArea": 9,
+    "WA": 4,
+    "WL": 4
+   }
+  },
+  {
+   "tile": {
+    "z": 16,
+    "x": 58216,
+    "y": 25794
+   },
+   "path": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-16-58216-25794.pbf.gz",
+   "sha256": "3b77890dcc6c05db3d00a4f522caeeb3099759d65ac409a2a6acf0a8608273ea",
+   "layers": {
+    "AdmArea": 1,
+    "Anno": 20,
+    "BldA": 1513,
+    "RailCL": 1,
+    "RailTrCL": 2,
+    "RdCL": 254,
+    "RdCompt": 2,
+    "RdEdg": 176,
+    "SpcfArea": 14,
+    "WA": 5,
+    "WL": 5
+   }
+  }
+ ]
+}

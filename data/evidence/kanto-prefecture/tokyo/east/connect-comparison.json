@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+  "checkedAt": "2026-11-05",
+  "decision": "low-tier numeric candidate on viaduct centerline; no polygon inclusion possible; adoption unapproved",
+  "adoptionApproval": false,
+  "manifestApplied": false,
+  "distribution": {
+    "fact": "墨田区公式(Last-Modified 2026-11-04)：リコリス・リコイル、コネクトすみだ[まち処] 向島一丁目23番9号 イーストゾーンE03、10:30-18:00火曜定休、「在庫あり」(ページ記載時点)。運営者ページも同住所。",
+    "sources": [
+      {
+        "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+        "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428",
+        "fetchedAt": "2026-11-05T15:37:16.330985+00:00",
+        "lastModified": "Wed, 04 Nov 2026 01:00:14 GMT",
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428.raw"
+      },
+      {
+        "url": "https://visit-sumida.jp/connect/",
+        "sha256": "0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94",
+        "fetchedAt": "2026-11-05T15:37:16.003202+00:00",
+        "lastModified": null,
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94.raw"
+      }
+    ]
+  },
+  "identification": [
+    "東京ミズマチ公式トップの2024-12-24アーカイブ：E01 WISE OWL、E02 ファミリーマート、E03 コネクトすみだ[まち処]、E04 WASH&FOLD…E08。",
+    "同アーカイブのimg_map.png：源森橋と小梅橋の間にE01〜E07を西→東の順で配置した模式図(縮尺なし、方位記号なし、左が浅草)。",
+    "国土地理院住所検索の号点：23-1〜23-17が高架北側に約14.6m間隔で連続し、23-9は(7669,4407)。隣接23-8/23-10も同列。",
+    "外形比較：z16 x58217..19 y25799..25801全域描画で、高架部はRailCL(vt_railstate=橋・高架)のみでBldA外形なし。航空写真も線路面。候補は23-9からRailCLへの垂線の足で、高架構造の中心線上。住所点からの距離7.9m。"
+  ],
+  "rejected": [
+    {
+      "point": "国土地理院住所検索点そのもの",
+      "reason": "高架北の道路側に落ち施設内でない"
+    },
+    {
+      "point": "東京スカイツリータウン・区役所等の点",
+      "reason": "別施設"
+    },
+    {
+      "point": "隣接の一般建物5281ほか",
+      "reason": "高架の北側の別棟"
+    }
+  ],
+  "limits": [
+    "外形内包検査が成立しない(BldAに高架下店舗なし)。mechanicalChecks not_run",
+    "桁位置決定は国土地理院住所検索に依存。同APIの利用条件は未確認(docs/verification/04-geocoding.md)で座標出典にできるか親判断。ABR(catalog.registries.digital.go.jp)はNXDOMAINで代替取得不可",
+    "www.tokyo-mizumachi.jp は今回全URLがHTTP503。配置図はアーカイブで現行公式でない",
+    "E03の桁幅は未確認。沿線方向の誤差は1桁約14.6m規模",
+    "2023-05-03開業でWikipedia系の旧E03「すみずみ」とは時点差"
+  ],
+  "baselineHashNote": "gk-p基準 ad9d5072…は別原本。区案内 1f431f2c…は旧取得と同一hash、connect 0289618c…は旧5360df9b…と異なるが住所同一",
+  "sources": [
+    {
+      "url": "https://visit-sumida.jp/connect/",
+      "sha256": "0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94",
+      "fetchedAt": "2026-11-05T15:37:16.003202+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94.raw"
+    },
+    {
+      "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+      "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428",
+      "fetchedAt": "2026-11-05T15:37:16.330985+00:00",
+      "lastModified": "Wed, 04 Nov 2026 01:00:14 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428.raw"
+    },
+    {
+      "url": "https://web.archive.org/web/2024/https://www.tokyo-mizumachi.jp/",
+      "sha256": "24aaed9358df286c36b197512aca6872407e208becb91b8e0b37ac3b4f4e314d",
+      "fetchedAt": "2026-11-05T15:37:59.391817+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/24aaed9358df286c36b197512aca6872407e208becb91b8e0b37ac3b4f4e314d.raw"
+    },
+    {
+      "url": "https://web.archive.org/web/20241224183018im_/https://www.tokyo-mizumachi.jp/module/img/index/img_map.png",
+      "sha256": "e9e1b8048c681f4d900d2a158491c0178392b5bbcc1ff719fc4a234d2d7721c9",
+      "fetchedAt": "2026-11-05T15:38:47.975930+00:00",
+      "lastModified": null,
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e9e1b8048c681f4d900d2a158491c0178392b5bbcc1ff719fc4a234d2d7721c9.raw"
+    },
+    {
+      "url": "https://visit-sumida.jp/docs/map/kanko_book.pdf",
+      "sha256": "54879eed74b589a05f8cfc175d81e0042d37fd67ab2d2530346dba8f13c5d9bf",
+      "fetchedAt": "2026-11-05T15:37:47.358922+00:00",
+      "lastModified": "Mon, 13 Dec 2021 20:35:42 GMT",
+      "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/54879eed74b589a05f8cfc175d81e0042d37fd67ab2d2530346dba8f13c5d9bf.raw"
+    }
+  ],
+  "numeric": {
+    "baseTile": {
+      "z": 16,
+      "x": 58217,
+      "y": 25799
+    },
+    "bounds": [
+      0,
+      0,
+      12288,
+      12288
+    ],
+    "railFeature": {
+      "combinedIndex": 5948,
+      "sourceTile": {
+        "z": 16,
+        "x": 58218,
+        "y": 25800
+      },
+      "sourceFeatureIndex": 1476,
+      "properties": {
+        "vt_code": 8201,
+        "vt_lvorder": 1,
+        "vt_sngldbl": "複線以上",
+        "vt_railstate": "橋・高架",
+        "vt_rtcode": "JR以外",
+        "vt_flag17": 0
+      },
+      "coordinates": [
+        [
+          8272,
+          4668
+        ],
+        [
+          8192,
+          4650
+        ],
+        [
+          8070,
+          4615
+        ],
+        [
+          6572,
+          4096
+        ],
+        [
+          6348,
+          4016
+        ]
+      ]
+    },
+    "addressPointXY": [
+      7668.882909864187,
+      4407.159772276878
+    ],
+    "footOnRailCenterlineXY": [
+      7647.5797650324575,
+      4468.6474619838755
+    ],
+    "addressToCenterlineM": 7.89,
+    "coordinate": {
+      "lat": 35.710432,
+      "lng": 139.8057884
+    },
+    "insideAnyBldA": [],
+    "nearestBldAM": [
+      [
+        13.1,
+        5281
+      ],
+      [
+        18.1,
+        5276
+      ],
+      [
+        24.8,
+        5274
+      ]
+    ],
+    "metersPerUnit": 0.1212
+  },
+  "processing": "国土地理院最適化ベクトルタイルPMTiles(metadata 26-07.mbtiles、README「2026年7月1日時点」、Range ETag dfa81a9c…-2015、Last-Modified 2026-09-17)をmanhole-card-mapが加工。試験公開で基本測量成果ではない。",
+  "candidate": {
+    "lat": 35.710432,
+    "lng": 139.8057884
+  }
+}

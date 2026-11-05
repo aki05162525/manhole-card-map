@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "startedAt": "2026-11-05T15:23:25.190598+00:00",
+  "asOf": "2026-11-05",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "name": "Hintmation",
+      "inventoryIndex": 3
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "name": "赤羽スポーツの森公園競技場",
+      "inventoryIndex": 5
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "name": "荒川知水資料館 amoa",
+      "inventoryIndex": 8
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "name": "URまちとくらしのミュージアム",
+      "inventoryIndex": 10
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "name": "渋沢×北区 飛鳥山おみやげ館",
+      "inventoryIndex": 20
+    }
+  ],
+  "intervals": [
+    {
+      "scope": "shared",
+      "label": "環境準備と既存資料の共通読解（施設へ配賦しない）",
+      "startedAt": "2026-11-05T15:29:13.423189+00:00",
+      "seconds": 70.436,
+      "finishedAt": "2026-11-05T15:30:23.859431+00:00",
+      "note": "PMTiles窓の取得を含む。全区間とも施設へ配賦しない。"
+    },
+    {
+      "scope": "facility:kanto-south-e0a282f09bea26f727bf",
+      "label": "飛鳥山おみやげ館：原本取得・図読解・外形比較",
+      "startedAt": "2026-11-05T15:30:38.776331+00:00",
+      "seconds": 136.592,
+      "finishedAt": "2026-11-05T15:32:55.368556+00:00",
+      "note": "図読解・3棟fit・外形比較・記録まで。PMTiles共通取得とlib作成の共有区間は含まない。"
+    },
+    {
+      "scope": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "label": "赤羽スポーツの森公園競技場：原本取得・図読解・外形比較",
+      "startedAt": "2026-11-05T15:32:55.388466+00:00",
+      "seconds": 150.341,
+      "finishedAt": "2026-11-05T15:35:25.729519+00:00",
+      "note": "公式配置図の探索・写真読解・外形比較・記録まで。"
+    },
+    {
+      "scope": "facility:kanto-south-52e07f72613c21d30eeb",
+      "label": "荒川知水資料館amoa：原本取得・図読解・外形比較",
+      "startedAt": "2026-11-05T15:35:25.748054+00:00",
+      "seconds": 210.969,
+      "finishedAt": "2026-11-05T15:38:56.716906+00:00",
+      "note": "公式図探索・棟同定・外形比較・記録まで。失敗窓の取得を含む。"
+    },
+    {
+      "scope": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "label": "URまちとくらしのミュージアム：原本取得・図読解・外形比較",
+      "startedAt": "2026-11-05T15:38:56.734096+00:00",
+      "seconds": 294.945,
+      "finishedAt": "2026-11-05T15:43:51.678837+00:00",
+      "note": "配置図探索・連結成分抽出・fit・記録まで。UR共通プレスの取得と読解もこの区間内で実施し、Hintmationへ再配賦しない。"
+    },
+    {
+      "scope": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "label": "Hintmation：原本取得・図読解・外形比較",
+      "startedAt": "2026-11-05T15:43:51.699210+00:00",
+      "seconds": 236.802,
+      "finishedAt": "2026-11-05T15:47:48.501366+00:00",
+      "note": "配置図探索(API含む)・fit・記録まで。3号棟等の読解を含む。ミュージアム区間の共通UR資料は含まない。"
+    },
+    {
+      "scope": "shared",
+      "label": "提案ファイル・調査記録の統合と数値検証（施設へ配賦しない）",
+      "startedAt": "2026-11-05T15:47:48.522625+00:00",
+      "seconds": 127.896,
+      "finishedAt": "2026-11-05T15:49:56.418309+00:00",
+      "note": "調査記録の統合と検証。施設へ配賦しない。"
+    }
+  ],
+  "note": "intervalsは開始時に開いて終了時に閉じた実計測。shared区間は施設へ配賦しない。UR共通資料の読解はミュージアム区間内で実施したため両施設の純粋な手動時間比較には使えない。startedAtは親が用意した時刻で子の開始より前。"
+}

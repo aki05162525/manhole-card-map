@@ -1,0 +1,21 @@
+{
+  "command": "python3 -B /tmp/tokyo-artifact-audit.py",
+  "exitCode": 0,
+  "verifiedAt": "2026-11-05T16:21:58.028444+00:00",
+  "rawHashReferenceCount": 524,
+  "relocated": [
+    {
+      "originalPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/abr-overlay.png",
+      "localPath": "data/work/kanto-prefecture/tokyo/integration/koganei-abr-overlay.png",
+      "sha256": "509536bf42df653cccded11d54aa37530ca932b487d4841d2df286226572abc0",
+      "reason": "ABR reuse conditions not verified; preserve locally, exclude from Git"
+    },
+    {
+      "originalPath": "data/evidence/kanto-prefecture/tokyo/west/toei/abr-overlay.png",
+      "localPath": "data/work/kanto-prefecture/tokyo/integration/toei-abr-overlay.png",
+      "sha256": "fcfedf0c094517057ea7b3253354b60eaa4a0b6cc2c4dbd98cf5200847236bab",
+      "reason": "ABR reuse conditions not verified; preserve locally, exclude from Git"
+    }
+  ],
+  "ordinaryOriginalsGitIgnored": true
+}

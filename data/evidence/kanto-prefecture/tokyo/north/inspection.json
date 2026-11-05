@@ -1,0 +1,417 @@
+{
+ "schema": 1,
+ "asOf": "2026-11-05",
+ "rows": [
+  {
+   "schema": 1,
+   "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+   "plannedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "performedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "acquisition": {
+    "status": "mixed",
+    "records": [
+     "data/evidence/kanto-prefecture/tokyo/north/retrievals.json",
+     "data/evidence/kanto-prefecture/tokyo/north/range-retrievals.json"
+    ]
+   },
+   "pages": {
+    "total": 1,
+    "checked": [
+     1
+    ]
+   },
+   "orientation": {
+    "status": "confirmed",
+    "evidence": [
+     "hintmation-comparison.json orientation/officialDiagram"
+    ]
+   },
+   "coverage": {
+    "tiles": [
+     "z16 x58201..58203 y25784..25786の9タイル"
+    ],
+    "boundaryClipping": "選択外形・アンカーとも境界非接触",
+    "renderPath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-detail.svg"
+   },
+   "buildingIdentity": {
+    "status": "confirmed",
+    "evidence": [
+     "hintmation-comparison.json"
+    ],
+    "aiReadingOnly": true
+   },
+   "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+     "団地内通路、イチョウ通り、41号棟、スターハウス3棟、北側の3・6号棟の並びを対応。"
+    ]
+   },
+   "crs": {
+    "status": "insufficient",
+    "product": "GSI optimal_bvmap PMTiles",
+    "evidence": [
+     "一般仕様とREADMEは親記録 41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223 / 1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa。当該版の測地系明示は未確認。"
+    ]
+   },
+   "licence": {
+    "status": "insufficient",
+    "evidence": [
+     "GSI規約ミラー 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e（親記録）。PDL1.0・出典加工表示。",
+     "UR公式図から座標を導出する利用条件は未確認。"
+    ]
+   },
+   "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+     "verification.json"
+    ]
+   },
+   "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+   }
+  },
+  {
+   "schema": 1,
+   "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+   "plannedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "performedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "acquisition": {
+    "status": "mixed",
+    "records": [
+     "data/evidence/kanto-prefecture/tokyo/north/retrievals.json",
+     "data/evidence/kanto-prefecture/tokyo/north/range-retrievals.json"
+    ]
+   },
+   "pages": {
+    "total": null,
+    "checked": []
+   },
+   "orientation": {
+    "status": "insufficient",
+    "evidence": [
+     "forest-comparison.json orientation/officialDiagram"
+    ]
+   },
+   "coverage": {
+    "tiles": [
+     "z16 x58200..58202 y25785..25787の9タイル"
+    ],
+    "boundaryClipping": "選択外形・アンカーとも境界非接触",
+    "renderPath": "data/evidence/kanto-prefecture/tokyo/north/forest-detail.svg"
+   },
+   "buildingIdentity": {
+    "status": "insufficient",
+    "evidence": [
+     "forest-comparison.json"
+    ],
+    "aiReadingOnly": true
+   },
+   "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+     "南はHPSC陸上門バス停側の別施設トラック外形4670。西に南北道路と住宅地。北は関東財務局PDFの「北側に隣接する赤羽自然観察公園」と整合する園路。東の園路まで建物のない区画。"
+    ]
+   },
+   "crs": {
+    "status": "insufficient",
+    "product": "GSI optimal_bvmap PMTiles",
+    "evidence": [
+     "一般仕様とREADMEは親記録 41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223 / 1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa。当該版の測地系明示は未確認。"
+    ]
+   },
+   "licence": {
+    "status": "confirmed",
+    "evidence": [
+     "GSI規約ミラー 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e（親記録）。PDL1.0・出典加工表示。"
+    ]
+   },
+   "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+     "verification.json"
+    ]
+   },
+   "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+   }
+  },
+  {
+   "schema": 1,
+   "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+   "plannedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "performedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "acquisition": {
+    "status": "mixed",
+    "records": [
+     "data/evidence/kanto-prefecture/tokyo/north/retrievals.json",
+     "data/evidence/kanto-prefecture/tokyo/north/range-retrievals.json"
+    ]
+   },
+   "pages": {
+    "total": 7,
+    "checked": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "orientation": {
+    "status": "insufficient",
+    "evidence": [
+     "amoa-comparison.json orientation/officialDiagram"
+    ]
+   },
+   "coverage": {
+    "tiles": [
+     "z16 x58204..58206 y25782..25784の9タイル"
+    ],
+    "boundaryClipping": "選択外形・アンカーとも境界非接触",
+    "renderPath": "data/evidence/kanto-prefecture/tokyo/north/amoa-detail.svg"
+   },
+   "buildingIdentity": {
+    "status": "confirmed",
+    "evidence": [
+     "amoa-comparison.json"
+    ],
+    "aiReadingOnly": true
+   },
+   "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+     "新志茂橋の直線RdCL、赤水門から中之島へのRdCL、河川敷道路、北の荒川・南の新河岸川を全域描画と対応。棟列の順序が西から東まで一致。"
+    ]
+   },
+   "crs": {
+    "status": "insufficient",
+    "product": "GSI optimal_bvmap PMTiles",
+    "evidence": [
+     "一般仕様とREADMEは親記録 41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223 / 1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa。当該版の測地系明示は未確認。"
+    ]
+   },
+   "licence": {
+    "status": "confirmed",
+    "evidence": [
+     "GSI規約ミラー 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e（親記録）。PDL1.0・出典加工表示。"
+    ]
+   },
+   "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+     "verification.json"
+    ]
+   },
+   "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+   }
+  },
+  {
+   "schema": 1,
+   "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+   "plannedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "performedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "acquisition": {
+    "status": "mixed",
+    "records": [
+     "data/evidence/kanto-prefecture/tokyo/north/retrievals.json",
+     "data/evidence/kanto-prefecture/tokyo/north/range-retrievals.json"
+    ]
+   },
+   "pages": {
+    "total": 1,
+    "checked": [
+     1
+    ]
+   },
+   "orientation": {
+    "status": "confirmed",
+    "evidence": [
+     "museum-comparison.json orientation/officialDiagram"
+    ]
+   },
+   "coverage": {
+    "tiles": [
+     "z16 x58201..58203 y25784..25786の9タイル"
+    ],
+    "boundaryClipping": "選択外形・アンカーとも境界非接触",
+    "renderPath": "data/evidence/kanto-prefecture/tokyo/north/museum-detail.svg"
+   },
+   "buildingIdentity": {
+    "status": "confirmed",
+    "evidence": [
+     "museum-comparison.json"
+    ],
+    "aiReadingOnly": true
+   },
+   "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+     "東の崖線沿い道路のカーブ、北の保育園方向、西のラボ41、東のスター3棟を対応。"
+    ]
+   },
+   "crs": {
+    "status": "insufficient",
+    "product": "GSI optimal_bvmap PMTiles",
+    "evidence": [
+     "一般仕様とREADMEは親記録 41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223 / 1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa。当該版の測地系明示は未確認。"
+    ]
+   },
+   "licence": {
+    "status": "insufficient",
+    "evidence": [
+     "GSI規約ミラー 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e（親記録）。PDL1.0・出典加工表示。",
+     "UR公式図から座標を導出する利用条件は未確認。"
+    ]
+   },
+   "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+     "verification.json"
+    ]
+   },
+   "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+   }
+  },
+  {
+   "schema": 1,
+   "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+   "plannedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "performedMethods": [
+    "現配布案内の再取得",
+    "公式図読解",
+    "PMTiles全域描画",
+    "棟対応",
+    "丸め前後内包検査"
+   ],
+   "acquisition": {
+    "status": "mixed",
+    "records": [
+     "data/evidence/kanto-prefecture/tokyo/north/retrievals.json",
+     "data/evidence/kanto-prefecture/tokyo/north/range-retrievals.json"
+    ]
+   },
+   "pages": {
+    "total": 1,
+    "checked": [
+     1
+    ]
+   },
+   "orientation": {
+    "status": "confirmed",
+    "evidence": [
+     "asukayama-comparison.json orientation/officialDiagram"
+    ]
+   },
+   "coverage": {
+    "tiles": [
+     "z16 x58205..58207 y25790..25792の9タイル"
+    ],
+    "boundaryClipping": "選択外形・アンカーとも境界非接触",
+    "renderPath": "data/evidence/kanto-prefecture/tokyo/north/asukayama-detail.svg"
+   },
+   "buildingIdentity": {
+    "status": "confirmed",
+    "evidence": [
+     "asukayama-comparison.json"
+    ],
+    "aiReadingOnly": true
+   },
+   "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+     "東の道路（公園東縁）、北西の史料館・博物館・紙の博物館の並び、庭園内の青淵文庫・晩香廬を全域描画と対応。北東の王子駅側と南西の西ヶ原側も図の向きと一致。"
+    ]
+   },
+   "crs": {
+    "status": "insufficient",
+    "product": "GSI optimal_bvmap PMTiles",
+    "evidence": [
+     "一般仕様とREADMEは親記録 41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223 / 1d9fa2729a17803aa3dc34ba0c5e144f183ce4f614885f3c44ac6802abe38aaa。当該版の測地系明示は未確認。"
+    ]
+   },
+   "licence": {
+    "status": "confirmed",
+    "evidence": [
+     "GSI規約ミラー 5388d2854a05f3e7b41cb980ecfb2de75b315de68e0d9c94b9334c11e580739e（親記録）。PDL1.0・出典加工表示。"
+    ]
+   },
+   "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+     "verification.json"
+    ]
+   },
+   "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+   }
+  }
+ ]
+}

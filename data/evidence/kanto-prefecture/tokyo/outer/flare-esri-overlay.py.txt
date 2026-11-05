@@ -1,0 +1,27 @@
+# Overlays GSI footprints and plan-derived estimates on cached Esri z19 tiles (reading aid only; imagery date/licence not adoption evidence).
+import math,json,io,sys
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont
+sys.path.insert(0,'tools/national')
+from research_common import fetch_cached
+z=19;la,ln=float(sys.argv[1]),float(sys.argv[2]);out=sys.argv[3];n=2**z
+x=(ln+180)/360*n;y=(1-math.asinh(math.tan(math.radians(la)))/math.pi)/2*n;x0,y0=int(x)-1,int(y)-1
+W=Path('data/work/kanto-prefecture/tokyo/outer');im=Image.new('RGB',(768,768),'#888')
+for i in range(3):
+  for j in range(3):
+    b,r=fetch_cached(f'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y0+j}/{x0+i}',W/'esri','tokyo-outer-2026-11-05',headers={'User-Agent':'manhole-card-map-research'})
+    if b: im.paste(Image.open(io.BytesIO(b)).convert('RGB'),(i*256,j*256))
+R=1.8;im=im.resize((int(768*R),int(768*R)),Image.LANCZOS);d=ImageDraw.Draw(im);font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',14)
+c=json.load(open(W/'flare-combined.json'));bx,by,ext,bn=c['baseTile']['x'],c['baseTile']['y'],c['extent'],2**c['baseTile']['z']
+tr=lambda p:(((bx+p[0]/ext)/bn*n-x0)*256*R,((by+p[1]/ext)/bn*n-y0)*256*R)
+for i,f in enumerate(c['features']):
+    if f['layer']!='BldA':continue
+    ps=[f['geometry']['coordinates']] if f['geometry']['type']=='Polygon' else f['geometry']['coordinates']
+    for po in ps:
+        pts=[tr(p) for p in po[0]]
+        if all(a[0]<0 or a[0]>768*R or a[1]<0 or a[1]>768*R for a in pts):continue
+        d.line(pts,fill='#ffee00',width=1);d.text((sum(a[0] for a in pts)/len(pts)-10,sum(a[1] for a in pts)/len(pts)-7),str(i),fill='#ff4040',font=font)
+for a in sys.argv[4:]:
+    la2,ln2=map(float,a.split(','));px=((ln2+180)/360*n-x0)*256*R;py=((1-math.asinh(math.tan(math.radians(la2)))/math.pi)/2*n-y0)*256*R
+    d.ellipse((px-6,py-6,px+6,py+6),outline='#00ffff',width=2)
+im.save(out);print(im.size,'m/px',40075016.68*math.cos(math.radians(la))/(n*256)/R)

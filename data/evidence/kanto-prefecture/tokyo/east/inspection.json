@@ -1,0 +1,988 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "reviewStatus": "independent review pending",
+  "observations": [
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
+      "plannedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion"
+      ],
+      "performedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion",
+        "neighbor-store-marker-comparison"
+      ],
+      "acquisition": {
+        "status": "acquired",
+        "records": [
+          {
+            "url": "https://www.katsushika-kushouren.jp/store/s07043/",
+            "sha256": "0b7b95497b7db4159b001d76d82b2e4fcc37ce372fe3dfc6be07aaf99d84ceb1",
+            "fetchedAt": "2026-11-05T15:23:39.308360+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/0b7b95497b7db4159b001d76d82b2e4fcc37ce372fe3dfc6be07aaf99d84ceb1.raw"
+          },
+          {
+            "url": "https://www.katsushika-kushouren.jp/wp-content/uploads/s07043_1.jpg",
+            "sha256": "771183914c07b0b241c5bb52a66b7ea1064e6c38d64e337ed7295b796cfef556",
+            "fetchedAt": "2026-11-05T15:25:00.684749+00:00",
+            "lastModified": "Mon, 04 Oct 2021 12:19:50 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/771183914c07b0b241c5bb52a66b7ea1064e6c38d64e337ed7295b796cfef556.raw"
+          },
+          {
+            "url": "https://www.katsushika-kushouren.jp/store/s07042/",
+            "sha256": "9aafdef33251f2056ca18ec92eca2322a7a2c9b68e0623a46b1b62057358597c",
+            "fetchedAt": "2026-11-05T15:32:57.956471+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/9aafdef33251f2056ca18ec92eca2322a7a2c9b68e0623a46b1b62057358597c.raw"
+          },
+          {
+            "url": "https://www.katsushika-kushouren.jp/wp-content/uploads/s07042_1.jpg",
+            "sha256": "5e1c58d5bf39a06226fcd4cbfa949f89e95ada79748deae0350758a7ce11d56e",
+            "fetchedAt": "2026-11-05T15:33:21.191120+00:00",
+            "lastModified": "Mon, 04 Oct 2021 12:19:48 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/5e1c58d5bf39a06226fcd4cbfa949f89e95ada79748deae0350758a7ce11d56e.raw"
+          },
+          {
+            "url": "https://www.katsushika-kushouren.jp/area/a03/m008/",
+            "sha256": "7281df500396510ac64f57fcf57afc24e3261c3dce38e30717b21062fd3623fa",
+            "fetchedAt": "2026-11-05T15:32:18.348300+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/7281df500396510ac64f57fcf57afc24e3261c3dce38e30717b21062fd3623fa.raw"
+          },
+          {
+            "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E8%91%9B%E9%A3%BE%E5%8C%BA%E7%AB%8B%E7%9F%B3%E4%B8%80%E4%B8%81%E7%9B%AE21-2",
+            "sha256": "db50256e40bb88789d99f0a449d48d13170022c965e07272e83dad650be1dd0a",
+            "fetchedAt": "2026-11-05T15:31:39.946238+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/db50256e40bb88789d99f0a449d48d13170022c965e07272e83dad650be1dd0a.raw"
+          }
+        ]
+      },
+      "pages": {
+        "total": 1,
+        "checked": [
+          1
+        ],
+        "document": "20260401_manholecard.pdf; HTML/写真は頁なし。未読頁なし"
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "公式図に方位記号なし。写真の向きは街区形状からの推定"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25794
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25794
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25794
+          },
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25795
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25795
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25795
+          }
+        ],
+        "tileSHA256": {
+          "58225/25793": "c91c5d3756937d3970359bac40b1b63f0e80217c1064439c4c3970dee05e8131",
+          "58226/25793": "8d58137fdfcc388eb1e2a15cfbe2afd27af4f81f4b41519e5ef427ce668ab414",
+          "58227/25793": "496be50d9938ab62d48e6de66aebd3c974626fae447e214c5baebe6b5d21344b",
+          "58225/25794": "8b5b32e7ad722b81c5a0da640e239401e5c3688b7ada8a89f7d64ed90592072e",
+          "58226/25794": "0554e75e96f3ddf71f49bef545e6999970dbd7e1966a772a1574b01194a3b695",
+          "58227/25794": "9039d0c2cb3d34313f7021e8773addaf423d36b33602f2f3ce88be73966c5853",
+          "58225/25795": "2d3a7d70c7d8c2832f8c2c46fab6e706893ac2b61819e870658eae7498bb2b5d",
+          "58226/25795": "67d4f7559703e2fc6b431f9c8adbbecc4871c92803ad0629162c180a36c8a7c1",
+          "58227/25795": "30457b44aad62f76192da4220f55ee2a406458f7e3dcdaa93832c6b5c6445de8"
+        },
+        "boundaryClipping": "対象外形2982/7479はy=4096に頂点が接するが上下タイルで同形を確認。取得外端なし",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-full.svg",
+        "renderScope": "9タイルの全BldA/RdCL/RailCL/RailTrCL/WA/WL。詳細PNGはdata/work/.../east/detailの部分窓で取得範囲ではない"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "区商連公式店舗ページs07043の地図マーカー LatLng(35.73758225,139.8496443)。作成者・手法不明のため目印扱い。外形2853と2982の間の隙間に落ち、候補点から約2.1m。",
+          "同ページ写真(s07043_1.jpg Last-Modified 2021-10-04)：黄看板「おもちゃの店 丸吉 TEL 697-4615」。店右手に別の道路と自転車、左隣は緑看板。",
+          "隣店花蝶商店(1-21-2)写真s07042_1.jpg：緑看板「花蝶」とTEL 3692-0031の右に丸吉の黄看板が写り、並びを相互確認。アーケード屋根も写る。",
+          "外形：東側街区の東西通り北側。西のN-S長形6500はアーケード屋根と航空写真で対応。写真右手=南の通りは東向きの撮影で成立し、西側街区には交差路がない。よって丸吉=東西通りに接する2982(z16/58226/25793 #1551、下タイル7479同形)、花蝶=2853。"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "アーケード6500、東西通りRdCL、東隣街区を航空写真と対応"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap-v1 PMTiles",
+        "evidence": [
+          "README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない",
+          "maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）",
+          "PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join",
+          "逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親"
+        ]
+      },
+      "licence": {
+        "status": "confirmed",
+        "evidence": [
+          "GSI出典・加工表示とPDL1.0は親の取得記録 ../retrievals.json の web1.gsi.go.jp 規約（本取得なし、継承）",
+          "自治体・商店街HTML/PDF/写真全文はdata/workのみ。Git/配信資産に入れていない"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "丸め前後とも2982/7479内。余裕1.68m。他BldAに内包なし"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
+      "plannedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion"
+      ],
+      "performedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion",
+        "neighbor-store-order"
+      ],
+      "acquisition": {
+        "status": "acquired",
+        "records": [
+          {
+            "url": "https://www.youroad.com/shop-b-macaron.html",
+            "sha256": "fb4889e2c0fdc437856be59cc37537c4e9a06a5df40d54cf965a5e0c1d3de540",
+            "fetchedAt": "2026-11-05T15:34:03.503772+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:02:32 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/fb4889e2c0fdc437856be59cc37537c4e9a06a5df40d54cf965a5e0c1d3de540.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop/buppin/macaron/top.jpg",
+            "sha256": "ebd8e14826a96c01800bdcd6f733de8b58c2796e440a3a2c71f87061db7ccb09",
+            "fetchedAt": "2026-11-05T15:34:17.133397+00:00",
+            "lastModified": "Fri, 23 Sep 2022 19:53:11 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/ebd8e14826a96c01800bdcd6f733de8b58c2796e440a3a2c71f87061db7ccb09.raw"
+          },
+          {
+            "url": "https://www.youroad.com/map-e.html",
+            "sha256": "f57bbdec86091c6948124e5736f446d2e677a8c98608b9042fac8ee01bf1c56a",
+            "fetchedAt": "2026-11-05T15:34:13.687208+00:00",
+            "lastModified": "Wed, 09 Sep 2026 12:13:05 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/f57bbdec86091c6948124e5736f446d2e677a8c98608b9042fac8ee01bf1c56a.raw"
+          },
+          {
+            "url": "https://www.youroad.com/map-2/map-e.gif",
+            "sha256": "e063dfef51d038d0a93eb2d9cf21ae9c896df6fe31b75b938eff2f3a82e80075",
+            "fetchedAt": "2026-11-05T15:34:28.232525+00:00",
+            "lastModified": "Wed, 09 Sep 2026 03:10:59 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e063dfef51d038d0a93eb2d9cf21ae9c896df6fe31b75b938eff2f3a82e80075.raw"
+          },
+          {
+            "url": "https://www.youroad.com/map-2/map-all.jpg",
+            "sha256": "06aaf23a21b912cd18c6a5a4348b162563bdababea9f5c9b06cc2b96eb70e6a4",
+            "fetchedAt": "2026-11-05T15:34:28.388944+00:00",
+            "lastModified": "Tue, 06 May 2025 09:54:26 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/06aaf23a21b912cd18c6a5a4348b162563bdababea9f5c9b06cc2b96eb70e6a4.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop-g-kaihale.html",
+            "sha256": "2faa79e490991fd2db1c99b4c7755229ec1ee3a9fd9364e2513541880c0dc520",
+            "fetchedAt": "2026-11-05T15:35:16.114533+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:16:50 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/2faa79e490991fd2db1c99b4c7755229ec1ee3a9fd9364e2513541880c0dc520.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop/gurume/kaihale/top.jpg",
+            "sha256": "8b7b851742ad28e055bacab719b4496b74609c4e8c2c3a436ca364f8855e2736",
+            "fetchedAt": "2026-11-05T15:35:40.443677+00:00",
+            "lastModified": "Fri, 23 Sep 2022 20:03:00 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/8b7b851742ad28e055bacab719b4496b74609c4e8c2c3a436ca364f8855e2736.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop-i-komaysuganka.html",
+            "sha256": "bcae6f74beb25b1470033e2e668ee8323e6afe09c3cf7fddd16493b69ea61275",
+            "fetchedAt": "2026-11-05T15:35:16.641781+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:21:35 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/bcae6f74beb25b1470033e2e668ee8323e6afe09c3cf7fddd16493b69ea61275.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop/iryou/komatsuganka/top.jpg",
+            "sha256": "bc51684e110607d4be9fad4ae2611dd65949a05071fb5e721ecee7c6465f2852",
+            "fetchedAt": "2026-11-05T15:35:40.582113+00:00",
+            "lastModified": "Fri, 23 Sep 2022 20:04:26 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/bc51684e110607d4be9fad4ae2611dd65949a05071fb5e721ecee7c6465f2852.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop-g-suzukisoba.html",
+            "sha256": "d158fdecc0c0ac817633db0d1d770a305edc40ea0b85677467829a04ac920976",
+            "fetchedAt": "2026-11-05T15:35:16.352631+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:17:04 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/d158fdecc0c0ac817633db0d1d770a305edc40ea0b85677467829a04ac920976.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop-fo-mitakara.html",
+            "sha256": "097bdd27225aee0e35858fd54db043e5ae2216f97683088a6caacf1a2c67ac7f",
+            "fetchedAt": "2026-11-05T15:35:15.792692+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:16:01 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/097bdd27225aee0e35858fd54db043e5ae2216f97683088a6caacf1a2c67ac7f.raw"
+          },
+          {
+            "url": "https://www.youroad.com/shop-b-moraes.html",
+            "sha256": "e2fab83d10fad808bdd804f87bcab6d7cf58d5a262f467148bb16e780bb65597",
+            "fetchedAt": "2026-11-05T15:35:13.750180+00:00",
+            "lastModified": "Thu, 06 Aug 2026 05:02:33 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e2fab83d10fad808bdd804f87bcab6d7cf58d5a262f467148bb16e780bb65597.raw"
+          },
+          {
+            "url": "https://www.macaron-3.com",
+            "sha256": "be6f7ef3f8ec048ccd6f5b8f303b69577eb4aefd3c8e418a9cb6f5ac7dd2b38c",
+            "fetchedAt": "2026-11-05T15:34:15.817744+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/be6f7ef3f8ec048ccd6f5b8f303b69577eb4aefd3c8e418a9cb6f5ac7dd2b38c.raw"
+          }
+        ]
+      },
+      "pages": {
+        "total": 1,
+        "checked": [
+          1
+        ],
+        "document": "20260401_manholecard.pdf"
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "E街区図・全体図に方位記号なし。道路形状(両さん像前の分岐、並行路)で対応"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25787
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25787
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25787
+          },
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25788
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25788
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25788
+          },
+          {
+            "z": 16,
+            "x": 58225,
+            "y": 25789
+          },
+          {
+            "z": 16,
+            "x": 58226,
+            "y": 25789
+          },
+          {
+            "z": 16,
+            "x": 58227,
+            "y": 25789
+          }
+        ],
+        "tileSHA256": {
+          "58225/25787": "8b20019ea8dba7d6ed5f703193d43d9a06478331fe98ee80295bffa6a4ab5bbb",
+          "58226/25787": "75678e8b26ceba226f6cefce87a7f71fff67bb1a64e6ac57ecb77bdd222fc549",
+          "58227/25787": "2bc308645d4ba68844d2aeb8c85576252428f04c19f0d36606d068bfc33f2237",
+          "58225/25788": "e9a894cc9522a1f342c6d0a508c00476484b7e95d68669e8c8e2213afb24db90",
+          "58226/25788": "e0569a51b1eb6f8440b556072e479d3f1e86e6a4cbe53a59ecd03db1d8f877ee",
+          "58227/25788": "b63b29b146bae4d6c1cfd6c0510762a4c0dd0c75d57fe930058fa3c47e9d767f",
+          "58225/25789": "9b1bf5a44b390e8e206f3ea32d8017d0b39d01373e7569dd9a6e2c95803a2bca",
+          "58226/25789": "20ae71464901bd6ec53ca18be4fadcae4242cb00519a849a245476764bd23070",
+          "58227/25789": "f089c76a6ed36ec3628b25759bd4b3a646d3b642dce8911a95269fe8ceb8153a"
+        },
+        "boundaryClipping": "対象外形6109はタイル境界・取得外端に接しない",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/east/macaron-full.svg",
+        "renderScope": "9タイルの全BldA/RdCL/RailCL/RailTrCL/WA/WL。詳細PNGはdata/work/.../east/detailの部分窓で取得範囲ではない"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "ゆうろーど公式E街区図(map-e.gif、方位記号なし)：東側を北からMORAES・マンマチャオ・寿々喜・マカロン・KAIHALE・小松眼科・みたから。全体図map-all.jpgで道路形状を確認。",
+          "各店公式ページの住所：MORAES/寿々喜3-35-4、マカロン/KAIHALE 3-35-3、小松眼科/みたから3-35-2。KAIHALEは「エルピス亀有102」と建物名を記載。",
+          "写真：マカロン(shop/buppin/macaron/top.jpg)右隣にKAIHALE。KAIHALE写真の左にマカロン、右に細い通り。小松眼科写真は左に同じ通りの角。よってマカロン・KAIHALEは東西通りの北角の棟。",
+          "外形：通り北の6109(z16/58226/25788 #618、vt_code3102堅ろう、間口約7.7m×奥行約17m、約134㎡)。2店の間口合計約8mと整合。北隣6029は間口約5.2mで2店が入らない。南の6121は通りの反対側。",
+          "国土地理院住所検索の号点：35-4→6027、35-3→6109、35-2→6121で公式の並びと順序一致(補助のみ)。"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "E街区図の東西通りと6109南側RdCL、西並行路、北分岐を対応"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap-v1 PMTiles",
+        "evidence": [
+          "README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない",
+          "maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）",
+          "PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join",
+          "逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親"
+        ]
+      },
+      "licence": {
+        "status": "confirmed",
+        "evidence": [
+          "GSI出典・加工表示とPDL1.0は親の取得記録 ../retrievals.json の web1.gsi.go.jp 規約（本取得なし、継承）",
+          "自治体・商店街HTML/PDF/写真全文はdata/workのみ。Git/配信資産に入れていない"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "丸め前後とも6109内。余裕3.79m"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "plannedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion"
+      ],
+      "performedMethods": [
+        "official-reading",
+        "archive-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "centerline-projection"
+      ],
+      "acquisition": {
+        "status": "mixed",
+        "records": [
+          {
+            "url": "https://visit-sumida.jp/connect/",
+            "sha256": "0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94",
+            "fetchedAt": "2026-11-05T15:37:16.003202+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/0289618cd883295a10bd3adf01169c014d1c955a442577bec0d61ce0473b0c94.raw"
+          },
+          {
+            "url": "https://www.city.sumida.lg.jp/bunka_kanko/annnai/kankou/designmanhole-sumida.html",
+            "sha256": "1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428",
+            "fetchedAt": "2026-11-05T15:37:16.330985+00:00",
+            "lastModified": "Wed, 04 Nov 2026 01:00:14 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/1f431f2cc342d68be79352817b4aba161515c5a57ee503c24d758afa6ff2a428.raw"
+          },
+          {
+            "url": "https://web.archive.org/web/2024/https://www.tokyo-mizumachi.jp/",
+            "sha256": "24aaed9358df286c36b197512aca6872407e208becb91b8e0b37ac3b4f4e314d",
+            "fetchedAt": "2026-11-05T15:37:59.391817+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/24aaed9358df286c36b197512aca6872407e208becb91b8e0b37ac3b4f4e314d.raw"
+          },
+          {
+            "url": "https://web.archive.org/web/20241224183018im_/https://www.tokyo-mizumachi.jp/module/img/index/img_map.png",
+            "sha256": "e9e1b8048c681f4d900d2a158491c0178392b5bbcc1ff719fc4a234d2d7721c9",
+            "fetchedAt": "2026-11-05T15:38:47.975930+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e9e1b8048c681f4d900d2a158491c0178392b5bbcc1ff719fc4a234d2d7721c9.raw"
+          },
+          {
+            "url": "https://visit-sumida.jp/docs/map/kanko_book.pdf",
+            "sha256": "54879eed74b589a05f8cfc175d81e0042d37fd67ab2d2530346dba8f13c5d9bf",
+            "fetchedAt": "2026-11-05T15:37:47.358922+00:00",
+            "lastModified": "Mon, 13 Dec 2021 20:35:42 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/54879eed74b589a05f8cfc175d81e0042d37fd67ab2d2530346dba8f13c5d9bf.raw"
+          },
+          {
+            "note": "www.tokyo-mizumachi.jp 全URL HTTP503、ABR host NXDOMAIN、アーカイブのshopページはJS描画で店舗情報読めず"
+          }
+        ]
+      },
+      "pages": {
+        "total": 14,
+        "checked": [],
+        "document": "kanko_book.pdf 2021年版。ミズマチ語句のテキスト抽出のみで頁読解なし。E03の位置判断に不使用"
+      },
+      "orientation": {
+        "status": "insufficient",
+        "evidence": [
+          "模式図に方位記号なし。左が浅草・右がスカイツリーの地理対応のみ"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25799
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25799
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25799
+          },
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25800
+          },
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25801
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25801
+          }
+        ],
+        "tileSHA256": {
+          "58217/25799": "787b256c5c596b8be61602e380e6e44d8156ec363dea4cde8bb0bd39052fadbb",
+          "58218/25799": "67f5ecad6723c0c2e1688f4e817102e90865d63a72691eb5c30be89828d389e3",
+          "58219/25799": "4d9ecfa2e980bc3ba43357f2a8a5bb0a34a4e27e17bb72bdfbead3dc6f3e8e86",
+          "58217/25800": "ce04fed7d52aad702a239f1346f50dccbf24adede134d51c662c128de6dcb4df",
+          "58218/25800": "42b40843c73cafb7967142cc95a2cf7bae69e81c8d479437f375d0c7007399f1",
+          "58219/25800": "1eb98cf071a1116804c1404d336a108d67a43f971ffda117eb0af3f160c274e7",
+          "58217/25801": "1ca88eb827db911c14620e0ccab4ee9d092faa2d2db99af31bb52cc27daa61a6",
+          "58218/25801": "00ace210cbac817c2d64bd417fc1bb89c3cd3bed7dfb18eddcdce3ede5930f6a",
+          "58219/25801": "ee0cb415eda9cb777d45017575e6b161d088b0d9fddcd51fac5a34b4a95a8fda"
+        },
+        "boundaryClipping": "高架部BldAなし。切断の問題ではなく外形未表現",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/east/connect-full.svg",
+        "renderScope": "9タイルの全BldA/RdCL/RailCL/RailTrCL/WA/WL。詳細PNGはdata/work/.../east/detailの部分窓で取得範囲ではない"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "東京ミズマチ公式トップの2024-12-24アーカイブ：E01 WISE OWL、E02 ファミリーマート、E03 コネクトすみだ[まち処]、E04 WASH&FOLD…E08。",
+          "同アーカイブのimg_map.png：源森橋と小梅橋の間にE01〜E07を西→東の順で配置した模式図(縮尺なし、方位記号なし、左が浅草)。",
+          "国土地理院住所検索の号点：23-1〜23-17が高架北側に約14.6m間隔で連続し、23-9は(7669,4407)。隣接23-8/23-10も同列。",
+          "外形比較：z16 x58217..19 y25799..25801全域描画で、高架部はRailCL(vt_railstate=橋・高架)のみでBldA外形なし。航空写真も線路面。候補は23-9からRailCLへの垂線の足で、高架構造の中心線上。住所点からの距離7.9m。"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "高架RailCL、北の道路、南の北十間川(WA)、源森橋・小梅橋方向を航空写真と対応"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap-v1 PMTiles",
+        "evidence": [
+          "README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない",
+          "maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）",
+          "PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join",
+          "逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親"
+        ]
+      },
+      "licence": {
+        "status": "insufficient",
+        "evidence": [
+          "桁位置に使った国土地理院住所検索APIの利用条件未確認(docs/verification/04-geocoding.md)。GSIタイル側はPDL1.0継承"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "not_run",
+        "evidence": []
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "plannedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion"
+      ],
+      "performedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "footprint-comparison",
+        "aerial-overlay",
+        "rounded-inclusion",
+        "manual-tile-join"
+      ],
+      "acquisition": {
+        "status": "acquired",
+        "records": [
+          {
+            "url": "https://www.tgs-mikawashimayoyaku.jp/news/detail/22",
+            "sha256": "6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8",
+            "fetchedAt": "2026-11-05T15:43:17.317776+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/6c225f38fc11a6aae7600e294edff12d5104f8c5a8e4e328758815ba705811a8.raw"
+          },
+          {
+            "url": "https://www.tgs-mikawashimayoyaku.jp/news/detail/5",
+            "sha256": "ca935e556eda07a06f161ea1fe2ae9f68a6ce514717e77f77afd1a2162b28f7d",
+            "fetchedAt": "2026-11-05T15:43:17.548562+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/ca935e556eda07a06f161ea1fe2ae9f68a6ce514717e77f77afd1a2162b28f7d.raw"
+          },
+          {
+            "url": "https://www.tgs-mikawashimayoyaku.jp/file/access_walk/walk2025.jpg",
+            "sha256": "13704909fb2bcdb822a28bad1b9afa9beb47b204c46ec43ae81a7de3122e7691",
+            "fetchedAt": "2026-11-05T15:43:27.658822+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/13704909fb2bcdb822a28bad1b9afa9beb47b204c46ec43ae81a7de3122e7691.raw"
+          },
+          {
+            "url": "https://www.tgs-mikawashimayoyaku.jp/file/access_car/car2025.jpg",
+            "sha256": "7c1a5fc6e4a97ccd7398d186aca4235d5d15636272e850dd87d107ed10ebb84f",
+            "fetchedAt": "2026-11-05T15:43:27.771027+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/7c1a5fc6e4a97ccd7398d186aca4235d5d15636272e850dd87d107ed10ebb84f.raw"
+          },
+          {
+            "url": "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/03_kyuumikawashima_r8_jp",
+            "sha256": "3462d138db15ba8824d6945fc18ed42f094da26ef3b20079495bc83a050554c1",
+            "fetchedAt": "2026-11-05T15:42:52.080112+00:00",
+            "lastModified": "Tue, 09 Jun 2026 12:06:32 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/3462d138db15ba8824d6945fc18ed42f094da26ef3b20079495bc83a050554c1.raw"
+          },
+          {
+            "url": "https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/s_mikawa2",
+            "sha256": "04e32a480cf9dbb058aafd41ff935a6d771de3384e129a197a00ea001e529e4c",
+            "fetchedAt": "2026-11-05T15:42:52.198993+00:00",
+            "lastModified": "Mon, 09 Sep 2024 05:01:23 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/04e32a480cf9dbb058aafd41ff935a6d771de3384e129a197a00ea001e529e4c.raw"
+          },
+          {
+            "url": "https://www.gesui.metro.tokyo.lg.jp/business/b4/guide/s-mikawa/index.html",
+            "sha256": "c3c3e62b83c5dc3ab3748a7da08c8517d4072c2ae19b761d5618248519a93222",
+            "fetchedAt": "2026-11-05T15:42:35.478793+00:00",
+            "lastModified": null,
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/c3c3e62b83c5dc3ab3748a7da08c8517d4072c2ae19b761d5618248519a93222.raw"
+          },
+          {
+            "url": "https://www.gotokyo.org/jp/spot/1072/index.html",
+            "sha256": "fe2869cac4005b23bfdf0b36681e6c938876a2c27dbfb9986b09b2a37d7df864",
+            "fetchedAt": "2026-11-05T15:42:36.032790+00:00",
+            "lastModified": "Wed, 01 Jul 2026 03:11:02 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/fe2869cac4005b23bfdf0b36681e6c938876a2c27dbfb9986b09b2a37d7df864.raw"
+          }
+        ]
+      },
+      "pages": {
+        "total": 2,
+        "checked": [
+          1,
+          2
+        ],
+        "document": "03_kyuumikawashima_r8_jp"
+      },
+      "orientation": {
+        "status": "confirmed",
+        "evidence": [
+          "アクセス図のN記号は左向き。都電=下(西)、正門=右(南)、喞筒場=左(北)で航空写真と一致。リーフレット案内図のN記号も確認"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58214,
+            "y": 25792
+          },
+          {
+            "z": 16,
+            "x": 58215,
+            "y": 25792
+          },
+          {
+            "z": 16,
+            "x": 58216,
+            "y": 25792
+          },
+          {
+            "z": 16,
+            "x": 58214,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58215,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58216,
+            "y": 25793
+          },
+          {
+            "z": 16,
+            "x": 58214,
+            "y": 25794
+          },
+          {
+            "z": 16,
+            "x": 58215,
+            "y": 25794
+          },
+          {
+            "z": 16,
+            "x": 58216,
+            "y": 25794
+          }
+        ],
+        "tileSHA256": {
+          "58214/25792": "53553101cf026b72b595551b04267bb76bdd7a49548a29da9d187c817946ab4e",
+          "58215/25792": "30de96695142086181fc4f23fe7c04f48dd276d6b5aa6f1defe813f1ff741934",
+          "58216/25792": "c438ee29e7cb2637bd156779d3f59ee7022d24d4de899b454eb9a9a3e0b3365e",
+          "58214/25793": "445e058698d22d0990124ea9681b07bc2b4e2008503d061632c1cda757c4166f",
+          "58215/25793": "331b3013b04397212824949ca5ec435f3cb45bc1a7d220f37a870b02e73935c4",
+          "58216/25793": "0dca8bd0a44e80f7259eff79a8a40b74e1d019488348aba713b8785e0931adb0",
+          "58214/25794": "e9ef181ed8961e00a91bd5246ed0bbdddb3e3940e2115bf88884f43be692bf6e",
+          "58215/25794": "7e07ab24d228dc2078d86d80427d8abe9d9357019b18feb54e33caa25b2b3732",
+          "58216/25794": "3b77890dcc6c05db3d00a4f522caeeb3099759d65ac409a2a6acf0a8608273ea"
+        },
+        "boundaryClipping": "対象はy=8192を跨ぎ両断片を接合。取得外端なし",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-full.svg",
+        "renderScope": "9タイルの全BldA/RdCL/RailCL/RailTrCL/WA/WL。詳細PNGはdata/work/.../east/detailの部分窓で取得範囲ではない"
+      },
+      "buildingIdentity": {
+        "status": "insufficient",
+        "evidence": [
+          "アクセス図walk2025.jpg/car2025.jpg：N記号は左向き。正門・門衛所・旧事務棟(L字)・喞筒場施設の位置関係。「施設見学当日は、旧事務棟にお越しください」。",
+          "R8年3月発行リーフレットPDF全2頁：案内図に旧事務棟・門衛所・正門入口。立体図で旧事務棟はL字、①門衛所②入口阻水扉室上屋⑧喞筒室などは別棟。",
+          "外形：喞筒室(長大屋根)、濾格室上屋、沈砂池、阻水扉室上屋6149/6154を航空写真で対応。その南西のL字外形6677(z16/58215/25793 #695)+9777(z16/58215/25794 #60)が旧事務棟、南の小棟9780が門衛所。西の都電、東の南北道路と整合。",
+          "y=8192のタイル境界を跨ぎ、上タイル側はy8272、下タイル側はy8112で切断。手動接合の外形約741㎡(概算水平面積)。候補点(4443,8170)は両断片に内包。"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "都電、南北道路、阻水扉室上屋、沈砂池、喞筒室、三河島公園の並びを対応"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap-v1 PMTiles",
+        "evidence": [
+          "README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない",
+          "maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）",
+          "PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join",
+          "逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親"
+        ]
+      },
+      "licence": {
+        "status": "confirmed",
+        "evidence": [
+          "GSI出典・加工表示とPDL1.0は親の取得記録 ../retrievals.json の web1.gsi.go.jp 規約（本取得なし、継承）",
+          "自治体・商店街HTML/PDF/写真全文はdata/workのみ。Git/配信資産に入れていない"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "丸め前後とも6677・9777の両断片内。余裕7.03m以上"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    },
+    {
+      "schema": 1,
+      "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
+      "plannedMethods": [
+        "official-reading",
+        "crs-applicability",
+        "identity-supplement"
+      ],
+      "performedMethods": [
+        "official-reading",
+        "all-page-reading",
+        "aerial-overlay",
+        "crs-documents",
+        "coordinate-reproduction"
+      ],
+      "acquisition": {
+        "status": "acquired",
+        "records": [
+          {
+            "url": "https://www.city.adachi.tokyo.jp/documents/9017/r8zenkanannai20260401.pdf",
+            "sha256": "a6aa49799a8bc4b13462b01ec4d2c9b77e1e8a372f07960eef2622a683d47cca",
+            "fetchedAt": "2026-11-05T15:46:13.922223+00:00",
+            "lastModified": "Tue, 21 Jul 2026 00:30:05 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/a6aa49799a8bc4b13462b01ec4d2c9b77e1e8a372f07960eef2622a683d47cca.raw"
+          },
+          {
+            "url": "https://www.city.adachi.tokyo.jp/documents/9017/r8kakukaiannnai1f.pdf",
+            "sha256": "e6cebf14c3b113c5fffc112eee900f0ba5ac1dcd67361701d1f90f0c19f045d5",
+            "fetchedAt": "2026-11-05T15:46:14.139462+00:00",
+            "lastModified": "Tue, 21 Jul 2026 00:30:04 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/e6cebf14c3b113c5fffc112eee900f0ba5ac1dcd67361701d1f90f0c19f045d5.raw"
+          },
+          {
+            "url": "https://www.gikai-adachi.jp/voices/GikaiDoc/attach/Nittei/soumu/pdf/20191111houkoku4.pdf",
+            "sha256": "b853d777de4ce47a164d65543a7f68b25b305ee52d6b5c4e7dd984cb1c583f3c",
+            "fetchedAt": "2026-11-05T15:46:01.154899+00:00",
+            "lastModified": "Thu, 26 Dec 2019 01:41:44 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/b853d777de4ce47a164d65543a7f68b25b305ee52d6b5c4e7dd984cb1c583f3c.raw"
+          },
+          {
+            "url": "https://www.city.adachi.tokyo.jp/chosha/shisetsu/kuyakusho/001.html",
+            "sha256": "d88cf6d9a1b45795e2ddc79b8982aff57ff26489a93144431a2dccedf95dcb3e",
+            "fetchedAt": "2026-11-05T15:46:00.840790+00:00",
+            "lastModified": "Sun, 01 Nov 2026 15:02:51 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/d88cf6d9a1b45795e2ddc79b8982aff57ff26489a93144431a2dccedf95dcb3e.raw"
+          },
+          {
+            "url": "https://www.city.adachi.tokyo.jp/images/46088/adachi-kuyakusyo-map.jpg",
+            "sha256": "fd2e8313a4c450e95c73211defe020a1d277d81162871e3d050efd142357f74e",
+            "fetchedAt": "2026-11-05T15:46:14.251158+00:00",
+            "lastModified": "Mon, 01 Jun 2026 06:30:04 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/fd2e8313a4c450e95c73211defe020a1d277d81162871e3d050efd142357f74e.raw"
+          },
+          {
+            "url": "https://www.gikai-adachi.jp/image/kuyakusho_map.jpg",
+            "sha256": "f001d30c9320c0943df5a32dbb68ad8583e8eb0f38058e6d4849114ed7e303b8",
+            "fetchedAt": "2026-11-05T15:45:26.224205+00:00",
+            "lastModified": "Fri, 07 Jun 2024 08:24:22 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/f001d30c9320c0943df5a32dbb68ad8583e8eb0f38058e6d4849114ed7e303b8.raw"
+          },
+          {
+            "url": "https://www.gikai-adachi.jp/image/mitorizu.gif",
+            "sha256": "2949b259fbe8a9e336898877913d52eb53372fe569523dea3fe49a9f3c3e866e",
+            "fetchedAt": "2026-11-05T15:45:27.290625+00:00",
+            "lastModified": "Thu, 26 Dec 2019 00:29:14 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/2949b259fbe8a9e336898877913d52eb53372fe569523dea3fe49a9f3c3e866e.raw"
+          },
+          {
+            "url": "https://www.adachikanko.net/news/archives/56626",
+            "sha256": "73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a",
+            "fetchedAt": "2026-11-05T15:45:27.440461+00:00",
+            "lastModified": "Thu, 05 Nov 2026 02:25:03 GMT",
+            "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-42632adb/data/work/kanto-prefecture/tokyo/east/raw/73124e85cca19268e6652019c2632e1e6dabbb6b2f3a83fce7b8c2690703f31a.raw"
+          }
+        ]
+      },
+      "pages": {
+        "total": 1,
+        "checked": [
+          1
+        ],
+        "document": "r8zenkanannai20260401.pdf。基本計画26頁はp.5のみ読解"
+      },
+      "orientation": {
+        "status": "confirmed",
+        "evidence": [
+          "基本計画p.5配置図のN上向き、議会JPEGのN上向き"
+        ]
+      },
+      "coverage": {
+        "tiles": [
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25784
+          },
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25785
+          },
+          {
+            "z": 16,
+            "x": 58217,
+            "y": 25786
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25784
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25785
+          },
+          {
+            "z": 16,
+            "x": 58218,
+            "y": 25786
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25784
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25785
+          },
+          {
+            "z": 16,
+            "x": 58219,
+            "y": 25786
+          }
+        ],
+        "boundaryClipping": "既存どおり対象外形はタイル境界・外端を跨がない",
+        "renderPath": "data/evidence/kanto-prefecture/tokyo/adachi-full.svg",
+        "renderScope": "既存SVG。追補は同タイルからdata/workへ再結合"
+      },
+      "buildingIdentity": {
+        "status": "confirmed",
+        "evidence": [
+          "区公式「本庁舎各階ご案内」r8zenkanannai20260401.pdf(全1頁、作成2026-04-02)で南館4階に「一般財団法人 足立区観光交流協会」。既存記録の旧PDF 404を解消。",
+          "区議会資料「本庁舎改修基本計画(案)」令和元年11月 p.5(26頁中)：配置図にN矢印(上向き)、北館・中央館・南館を明示。南館は中央館の南に接続し、S造地下3階地上14階、延床28,192.06㎡、1996年竣工。",
+          "区公式1F案内(r8kakukaiannnai1f.pdf)：南館に南出入口、中央館と接続。方位記号は左向きで別図の北上と向きが異なる(図ごとに回転)。",
+          "区公式アクセス図adachi-kuyakusyo-map.jpg(略図、N矢印上向き、差込図に北館・中央館・南館)：南館は中央館の南、国道4号は西。",
+          "航空写真重ね合わせ(detail/a-photo.png)：連続外形6761の南端張出に塔屋ヘリポートが対応。14階建の南館の屋上形状として整合。"
+        ]
+      },
+      "surroundings": {
+        "status": "confirmed",
+        "evidence": [
+          "国道4号、北の道路、高校、3棟の並びは既存読解を継承し航空写真で再確認"
+        ]
+      },
+      "crs": {
+        "status": "insufficient",
+        "product": "GSI optimal_bvmap-v1 PMTiles",
+        "evidence": [
+          "README(sha 41a7a4d2…)はPMTiles版も地理院タイルと同じ方式と記すが測地系を明記しない",
+          "maps.gsi.go.jp/development/siyou.html は地理院タイルの測地系を日本国内JGD2011と記す（一般仕様）",
+          "PMTiles header/metadata(east/pmtiles-metadata.json)にCRS項目なし。生成はtippecanoe/tile-join",
+          "逆投影はWebメルカトル式のみで測地系変換なし。製品固有の明示宣言は未確認のまま、適用判断は親"
+        ]
+      },
+      "licence": {
+        "status": "confirmed",
+        "evidence": [
+          "GSI出典・加工表示とPDL1.0は親の取得記録 ../retrievals.json の web1.gsi.go.jp 規約（本取得なし、継承）",
+          "自治体・商店街HTML/PDF/写真全文はdata/workのみ。Git/配信資産に入れていない"
+        ]
+      },
+      "mechanicalChecks": {
+        "status": "passed",
+        "evidence": [
+          "保存PBFから既存座標35.7744893,139.8045243を再現、丸め前後内包"
+        ]
+      },
+      "review": {
+        "status": "pending",
+        "reviewer": null,
+        "evidence": []
+      }
+    }
+  ]
+}

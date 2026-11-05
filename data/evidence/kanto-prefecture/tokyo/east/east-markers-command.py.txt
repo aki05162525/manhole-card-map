@@ -1,0 +1,9 @@
+import json,sys,math
+sys.path.insert(0,'tools/national')
+from research_common import contains_point
+key=sys.argv[1];x=json.load(open(f'data/work/kanto-prefecture/tokyo/east/{key}-combined.json'));b=x['baseTile']
+for a in sys.argv[2:]:
+    n,lat,lng=a.split(':');lat=float(lat);lng=float(lng)
+    X=((lng+180)/360*65536-b['x'])*4096;Y=((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*65536-b['y'])*4096
+    hit=[i for i,f in enumerate(x['features']) if f['layer']=='BldA' and contains_point(f['geometry'],[X,Y])]
+    print(n,round(X,1),round(Y,1),hit)

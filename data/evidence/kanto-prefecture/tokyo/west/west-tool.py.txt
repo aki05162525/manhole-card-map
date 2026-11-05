@@ -1,0 +1,175 @@
+"""東京都west群の調査用CLI。取得・描画・内包計算だけを行い、棟同定や採用は判断しない。"""
+import argparse, gzip, hashlib, json, math, sys, time
+from datetime import datetime, timezone
+from pathlib import Path
+sys.path.insert(0, 'tools/national')
+from research_common import fetch_cached, adjacent_tiles, decode_tile, combine_tiles, render_svg, rounded_coordinate, contains_point
+
+E = Path('data/evidence/kanto-prefecture/tokyo/west')
+W = Path('data/work/kanto-prefecture/tokyo/west')
+PM = 'https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles'
+UA = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36'}
+VERSION = 'tokyo-west-2026-11-06'
+now = lambda: datetime.now(timezone.utc).isoformat()
+
+def load(path, default):
+    return json.loads(path.read_text()) if path.exists() else default
+
+def save(path, value):
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+
+def cmd_timer(a):
+    p = E/'timing.json'
+    d = load(p, {'schema': 1, 'asOf': '2026-11-05', 'clock': 'wall clock at timer command; intervals are not allocated afterward', 'intervals': [], 'open': {}})
+    if a.action == 'start':
+        d['open'][a.key] = a.at or now()
+    else:
+        s = d['open'].pop(a.key)
+        d['intervals'].append({'key': a.key, 'startedAt': s, 'finishedAt': now(), 'seconds': round((datetime.now(timezone.utc)-datetime.fromisoformat(s)).total_seconds(), 3), 'note': a.note})
+    save(p, d)
+    print(a.action, a.key)
+
+def cmd_fetch(a):
+    p = E/'retrievals.json'
+    rows = load(p, [])
+    for url in a.urls:
+        raw, rec = fetch_cached(url, W/'raw', VERSION, headers=UA, timeout=40)
+        rec['facilityKey'] = a.key
+        rows.append(rec)
+        save(p, rows)
+        print(url, rec.get('status'), rec.get('httpStatus'), rec.get('bytes'), rec.get('contentType'), rec.get('rawPath', rec.get('error')))
+
+def ranges():
+    records = []
+    p = E/'range-retrievals.json'
+    prior = load(p, [])
+    def get(offset, length):
+        b, r = fetch_cached(PM, W/'ranges', VERSION, headers={**UA, 'Range': f'bytes={offset}-{offset+length-1}'})
+        records.append(r)
+        save(p, prior+records)
+        if b is None:
+            raise ValueError(r.get('error'))
+        return b
+    return get
+
+def cmd_tiles(a):
+    from pmtiles.reader import Reader
+    reader = Reader(ranges())
+    n = 2**16
+    center = dict(z=16, x=int((a.lng+180)/360*n), y=int((1-math.asinh(math.tan(math.radians(a.lat)))/math.pi)/2*n))
+    tiles, summary = [], []
+    d = E/a.key
+    d.mkdir(exist_ok=True)
+    for t in adjacent_tiles(center, a.radius):
+        raw = reader.get(t['z'], t['x'], t['y'])
+        p = d/f"{t['z']}-{t['x']}-{t['y']}.pbf.gz"
+        p.write_bytes(raw)
+        dec = decode_tile(raw)
+        fs = []
+        for name in ['BldA', 'RdCL', 'RailCL', 'WA', 'WL']:
+            if name in dec:
+                fs.extend(dict(f, layer=name) for f in dec[name]['features'])
+        tiles.append(dict(tile=t, extent=4096, features=fs))
+        summary.append(dict(tile=t, path=str(p), sha256=hashlib.sha256(raw).hexdigest(), layers={k: len(v['features']) for k, v in dec.items()}))
+    c = combine_tiles(tiles)
+    (W/f'{a.key}-combined.json').write_text(json.dumps(c))
+    (d/'full.svg').write_text(render_svg(c))
+    save(d/'tiles.json', dict(sourceURL=PM, searchSeedOnly=[a.lat, a.lng], seedBasis=a.seed_basis, retrievedAt=now(), tiles=summary))
+    print('tiles', len(tiles), 'features', len(c['features']), 'bounds', c['bounds'], c['baseTile'])
+
+def to_xy(c, lat, lng):
+    n = 2**c['baseTile']['z']
+    e = c['extent']
+    return ((lng+180)/360*n-c['baseTile']['x'])*e, ((1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*n-c['baseTile']['y'])*e
+
+def rings(f):
+    g = f['geometry']
+    k, co = g['type'], g['coordinates']
+    return [r for p in co for r in p] if k == 'MultiPolygon' else co if k in ('Polygon', 'MultiLineString') else [co]
+
+def cmd_view(a):
+    from PIL import Image, ImageDraw, ImageFont
+    c = json.loads((W/f'{a.key}-combined.json').read_text())
+    cx, cy = to_xy(c, a.lat, a.lng)
+    half = a.half
+    s = a.size/(2*half)
+    tr = lambda p: ((p[0]-cx+half)*s, (p[1]-cy+half)*s)
+    im = Image.new('RGB', (a.size, a.size), 'white')
+    dr = ImageDraw.Draw(im)
+    font = ImageFont.load_default(size=a.font)
+    order = {'WA': 0, 'BldA': 1, 'RailCL': 2, 'WL': 2, 'RdCL': 3}
+    idx = sorted(enumerate(c['features']), key=lambda t: order.get(t[1].get('layer'), 9))
+    listed = []
+    for i, f in idx:
+        rr = rings(f)
+        pts = [p for r in rr for p in r]
+        if max(p[0] for p in pts) < cx-half or min(p[0] for p in pts) > cx+half or max(p[1] for p in pts) < cy-half or min(p[1] for p in pts) > cy+half:
+            continue
+        layer = f.get('layer')
+        for r in rr:
+            xy = [tr(p) for p in r]
+            if layer == 'BldA':
+                if len(xy) >= 3:
+                    dr.polygon(xy, fill=(219, 231, 237), outline=(200, 0, 50) if f['outerBoundaryTouched'] else (40, 40, 40))
+            elif layer == 'WA':
+                if len(xy) >= 3:
+                    dr.polygon(xy, fill=(200, 225, 255))
+            elif layer == 'RailCL':
+                dr.line(xy, fill=(120, 0, 160), width=3)
+            elif layer == 'WL':
+                dr.line(xy, fill=(60, 120, 255), width=2)
+            else:
+                dr.line(xy, fill=(240, 140, 0), width=2)
+        if layer == 'BldA':
+            r0 = rr[0]
+            x0, y0 = sum(p[0] for p in r0)/len(r0), sum(p[1] for p in r0)/len(r0)
+            area = abs(sum(p[0]*q[1]-q[0]*p[1] for p, q in zip(r0, r0[1:])))/2
+            scale = 40075016.68557849*math.cos(math.radians(a.lat))/(2**c['baseTile']['z']*c['extent'])
+            m2 = area*scale*scale
+            if abs(x0-cx) < half and abs(y0-cy) < half and m2 >= a.minlabel:
+                dr.text(tr((x0, y0)), str(i), fill=(200, 0, 0), font=font)
+                listed.append(dict(index=i, tile=f['sourceTile'], tileIndex=f['sourceFeatureIndex'], approxM2=round(m2, 1), bbox=[min(p[0] for p in r0), min(p[1] for p in r0), max(p[0] for p in r0), max(p[1] for p in r0)], tileBoundary=f['tileBoundaryTouched'], outerBoundary=f['outerBoundaryTouched'], props=f.get('properties')))
+    for r in c['tiles']:
+        x0 = (r['x']-c['baseTile']['x'])*c['extent']
+        y0 = (r['y']-c['baseTile']['y'])*c['extent']
+        dr.rectangle([tr((x0, y0)), tr((x0+c['extent'], y0+c['extent']))], outline=(0, 160, 0))
+    if a.mark:
+        for m in a.mark:
+            la, ln = map(float, m.split(','))
+            x, y = tr(to_xy(c, la, ln))
+            dr.line([(x-10, y), (x+10, y)], fill='magenta', width=2)
+            dr.line([(x, y-10), (x, y+10)], fill='magenta', width=2)
+    d = E/a.key
+    im.save(W/f'{a.key}-{a.name}.png')
+    # 公開可能なのはGSI由来の派生図と自作観察のみ。
+    im.save(d/f'{a.name}.png')
+    print(json.dumps(sorted(listed, key=lambda r: -r['approxM2'])[:a.list], ensure_ascii=False))
+
+def cmd_point(a):
+    c = json.loads((W/f'{a.key}-combined.json').read_text())
+    f = c['features'][a.feature]
+    r0 = f['geometry']['coordinates'][0]
+    if a.latlng:
+        la, ln = map(float, a.latlng.split(','))
+        xy = list(to_xy(c, la, ln))
+    elif a.xy:
+        xy = [float(v) for v in a.xy.split(',')]
+    else:
+        raise SystemExit('need point')
+    res = rounded_coordinate(f['geometry'], c['baseTile'], xy)
+    area = abs(sum(p[0]*q[1]-q[0]*p[1] for p, q in zip(r0, r0[1:])))/2
+    scale = 40075016.68557849*math.cos(math.radians(res['coordinate']['lat']))/(2**c['baseTile']['z']*c['extent'])
+    out = dict(featureIndex=a.feature, sourceTile=f['sourceTile'], sourceFeatureIndex=f['sourceFeatureIndex'], properties=f.get('properties'), id=f.get('id'), tileBoundaryTouched=f['tileBoundaryTouched'], outerBoundaryTouched=f['outerBoundaryTouched'], geometry=f['geometry'], areaApproxM2=round(area*scale*scale, 1), areaNote='タイル格子からの概算水平面積。延床面積ではない', manualPointXY=xy, baseTile=c['baseTile'], inclusion=res)
+    if a.out:
+        save(E/a.key/a.out, out)
+    print(json.dumps({k: v for k, v in out.items() if k != 'geometry'}, ensure_ascii=False))
+
+ap = argparse.ArgumentParser()
+sub = ap.add_subparsers(required=True)
+p = sub.add_parser('timer'); p.add_argument('action', choices=['start', 'stop']); p.add_argument('key'); p.add_argument('--note', default=''); p.add_argument('--at'); p.set_defaults(fn=cmd_timer)
+p = sub.add_parser('fetch'); p.add_argument('key'); p.add_argument('urls', nargs='+'); p.set_defaults(fn=cmd_fetch)
+p = sub.add_parser('tiles'); p.add_argument('key'); p.add_argument('lat', type=float); p.add_argument('lng', type=float); p.add_argument('--radius', type=int, default=1); p.add_argument('--seed-basis', required=True); p.set_defaults(fn=cmd_tiles)
+p = sub.add_parser('view'); p.add_argument('key'); p.add_argument('lat', type=float); p.add_argument('lng', type=float); p.add_argument('--half', type=float, default=500); p.add_argument('--size', type=int, default=1100); p.add_argument('--font', type=int, default=13); p.add_argument('--name', default='detail'); p.add_argument('--minlabel', type=float, default=40); p.add_argument('--list', type=int, default=40); p.add_argument('--mark', nargs='*'); p.set_defaults(fn=cmd_view)
+p = sub.add_parser('point'); p.add_argument('key'); p.add_argument('feature', type=int); p.add_argument('--latlng'); p.add_argument('--xy'); p.add_argument('--out'); p.set_defaults(fn=cmd_point)
+a = ap.parse_args()
+a.fn(a)

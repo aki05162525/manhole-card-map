@@ -2,273 +2,593 @@
   "schema": 1,
   "asOf": "2026-11-05",
   "targetCount": 24,
-  "numericalComparisonCount": 1,
-  "unstartedNumericalComparisonCount": 23,
+  "numericalComparisonCount": 24,
+  "unstartedNumericalComparisonCount": 0,
+  "footprintCandidateCount": 17,
+  "derivedCandidateHeldCount": 4,
+  "buildingUnresolvedHeldCount": 2,
+  "noReliablePointCount": 1,
   "approvedCount": 0,
   "adoptedCount": 0,
-  "humanQuestions": [],
-  "humanQuestionReason": "first comparison has usable official diagram; no additional one-question human blocker identified yet; remaining23 not triaged as human-wait",
+  "manifestApplied": false,
+  "initialRecordCommit": "6710b7bcb252dda5b5b2ef75b72d7a6b634a8469",
+  "humanQuestionsRef": "data/national/kanto-prefecture/tokyo/human-questions.json",
   "rows": [
     {
       "facilityId": "facility:kanto-south-04903f9b604f31b843df",
       "name": "小金井市観光まちおこし協会",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "市配布案内の松島ビル103と協会contactは一致。旧本町6-5-3を示す商工会検索結果を現配布先に流用せず、松島ビルの公式店舗図と外形を照合する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.koganei.lg.jp/smph/kurashi/478/keihatuzigyou/mcardhaihu.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "key": "koganei",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "numeric-candidate-held-building-unconfirmed",
+      "buildingIdentity": "insufficient",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.700771,
+          "lng": 139.5078492
+        },
+        "feature": "BldA combined index 4550 (z16/58164/25802 tile内index209)。概算51.4㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/koganei/comparison.json",
+        "comparisonSHA256": "8eb2a1d193886959926f9c3d7097cf428482219b44f4679e368898ad163f99a6"
       },
-      "adoptionApproval": false
+      "inProposalFiles": false,
+      "secondsMeasured": 268.552,
+      "remainingReason": "松島ビルが4550か4551かの確認。NAVITIMEは住所と徒歩分のみで建物同定に使わない。商工会検索の旧本町6-5-3は移転前の値として流用しない",
+      "nextAction": "回答済みだが原本裏付けなし。human-questions.jsonとintegration追補を参照。同じ質問を再送せず、現棟を示す独立資料が得られた場合に再照合。",
+      "adoptionApproval": false,
+      "group": "west",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/0",
+      "groupOutcomeSHA256": "c751539d7f9ed68ae0c80fa3a4865368368df806050ac63764d6fb192a26dbfd",
+      "manifestApplied": false,
+      "integrationClass": "building-choice-unresolved-held"
     },
     {
       "facilityId": "facility:kanto-south-13a98e4a6ad62274aac8",
       "name": "丸吉玩具店",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "区配布案内の立石1-21-2を商店街店舗図へ対応させる。蓋位置のリンクを除外し、臨時休業時のテクノプラザ代替は別関係として保持する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7375636,
+        "lng": 139.8496431
       },
-      "adoptionApproval": false
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "公式の店舗配置図がなく写真・マーカーからの推論。余裕1.68m。",
+      "nextAction": "独立レビューで写真の並びと外形2982の対応を確認。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/maruyoshi-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false,
+      "group": "east",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/0",
+      "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-1611a2392fec34e2db1f",
       "name": "ハンドメイドファクトリー マカロン",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "亀有3-35-3の店舗と商店街図を照合する。亀有観光案内所の定休日代替であり、通常窓口と同棟扱いしない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.katsushika.lg.jp/tourism/1000064/1026023/1032481.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7638157,
+        "lng": 139.849112
       },
-      "adoptionApproval": false
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "公式に棟を直接示す資料なし。",
+      "nextAction": "独立レビューで店順・住所・間口と外形6109の対応を確認。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/macaron-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false,
+      "group": "east",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/1",
+      "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
       "name": "Hintmation",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "UR公式の15号棟1階記載と団地配置図の15号棟を照合する。隣のミュージアムを流用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryIndex": 3,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "derived-from-official-layout; product-footprint-absent",
+      "coordinate": {
+        "lat": 35.7763847,
+        "lng": 139.7150606
       },
-      "adoptionApproval": false
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/hintmation-detail.svg",
+      "remainingReason": "製品に15号棟外形がなく外形内包で確認できない。",
+      "blockedBy": [
+        "独立レビュー",
+        "配置図写像点を棟代表点として許容する判断",
+        "UR図からの座標導出の利用条件",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで配置図写像点を棟代表点として許容するか判断する。製品更新後に15号棟外形が収録されたら内包を再検証する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "north",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/0",
+      "groupOutcomeSHA256": "97ea188d9a2eca99d9a7d6f99b953f6fce3a909d513641d95eaa6b3b4f21444d",
+      "integrationClass": "derived-without-target-footprint-held"
     },
     {
       "facilityId": "facility:kanto-south-1e2eb2c199aa90b834c0",
       "name": "ヒノトントンZOO(羽村市動物公園)チケット売り場",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "動物園園内図でチケット売り場を識別し外形へ対応させる。園の代表地点は採用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.hamura.tokyo.jp/0000010587.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryRow": 4,
+      "result": "numerical-candidate-weak-identity",
+      "remaining": "外形2872とTICKET小棟の対応、外形2877と写真の不一致、製品測地系、独立レビュー",
+      "nextAction": "現地写真か公式の入口平面図で窓口棟を確認し2872を採るか判断する。独立レビューと測地系判断の後に親がmanifestへ統合する",
+      "statusNote": "在庫表記は市ページ更新2026-06-04時点。現在在庫は未保証",
+      "candidateCoordinate": {
+        "lat": 35.7659906,
+        "lng": 139.3288311
       },
-      "adoptionApproval": false
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/hamura-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "outer",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/0",
+      "groupOutcomeSHA256": "2e9dbb04083a66fb3d6771bed6eaa78636029ef68221ead17a88e2de3eb5fb96",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
       "name": "赤羽スポーツの森公園競技場",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "競技場の施設図で配布窓口を含む棟を識別し、グラウンド全体の座標と区別する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryIndex": 5,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate; no-official-site-plan",
+      "coordinate": {
+        "lat": 35.7722141,
+        "lng": 139.7087695
       },
-      "adoptionApproval": false
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/forest-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/forest-detail.svg",
+      "remainingReason": "公式配置図がなく写真・寸法照合に留まる。トラック4670の帰属は未確定。",
+      "blockedBy": [
+        "独立レビュー",
+        "公式配置図なしでの棟同定の可否",
+        "製品測地系適用"
+      ],
+      "nextAction": "区または指定管理者の配置図を得た場合に4617と窓口棟の一致を確認する。独立レビューでトラック4670の除外と写真解釈を確認する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "north",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/1",
+      "groupOutcomeSHA256": "97ea188d9a2eca99d9a7d6f99b953f6fce3a909d513641d95eaa6b3b4f21444d",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-23883d07b60ef5d7bb0d",
       "name": "東京都虹の下水道館",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "有明水再生センター5階の案内から入居棟を識別し外形を調べる。旧取得失敗だけを保留理由にしない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "東京都下水道局 designmanhole/togesui に配布場所記載。館公式access/ に所在・開館時間・休館を確認。トップの通知(2026-07-21〜11-11の5F館内トイレ工事)は館の閉館を意味せず5F在館を補強。在庫保証なし。",
+      "coordinateCandidate": {
+        "lat": 35.63318,
+        "lng": 139.78382
       },
-      "adoptionApproval": false
+      "buildingIdentity": "BldA 480の楕円外形4758.3㎡。公式access掲載写真の卵形建物、parking.pngの楕円「体育館棟(5F)」と一致。北側の曲線棟478は「プール棟」(写真右のガラスドームと矛盾なし)に対応すると判断。",
+      "footprint": "z16/58214/25817 BldA配列index37、4758.3㎡。bbox 96.9×78.6m。タイル境界・取得外端を跨がない。隣接481/628はx境界で分割の別外形。",
+      "remainingMismatch": "写真は上部が張り出す形で、外形は屋根投影に近い可能性。5階案内は図の括弧書き「(5F)」に依拠。下水道局公式の館内平面と棟の対応図は今回未発見。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。旧TLS/429は取得不能理由にしない(下記)。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false,
+      "group": "south",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/2",
+      "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-3cf6f9f3a8305f07b8d8",
       "name": "秋川渓谷瀬音の湯",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "公式施設図の売店棟と温泉棟を区別し、数値外形を対応させる。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryRow": 7,
+      "result": "numerical-candidate",
+      "remaining": "製品測地系、独立レビュー、706内の区画構成",
+      "nextAction": "独立レビューで写真と棟の対応を確認し、測地系判断後に親が統合する",
+      "statusNote": "市の配布時間9:50-18:00と施設公式の4-11月19:00閉店に差あり。関係データは変更していない",
+      "candidateCoordinate": {
+        "lat": 35.7272322,
+        "lng": 139.187366
       },
-      "adoptionApproval": false
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/seoto-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "outer",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/1",
+      "groupOutcomeSHA256": "2e9dbb04083a66fb3d6771bed6eaa78636029ef68221ead17a88e2de3eb5fb96",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
       "name": "荒川知水資料館 amoa",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "資料館公式アクセスの案内図と荒川河川敷の道路・隣接棟を外形へ対応させる。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryIndex": 8,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate",
+      "coordinate": {
+        "lat": 35.7856021,
+        "lng": 139.7301064
       },
-      "adoptionApproval": false
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/amoa-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/amoa-detail.svg",
+      "remainingReason": "AREA MAPに方位なし。6頁写真は縮小読解のみ。",
+      "blockedBy": [
+        "独立レビュー",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで棟対応と製品測地系適用を判断する。承認後に親がmanifestへ統合する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "north",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/2",
+      "groupOutcomeSHA256": "97ea188d9a2eca99d9a7d6f99b953f6fce3a909d513641d95eaa6b3b4f21444d",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-687c3fe54c6f69bc669c",
       "name": "日野市環境共生部下水道課",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "日野本町1-7-2の生活保健センター向かいの建物を公式施設案内から識別する。蓋座標を除外する。",
-      "plannedNextMethod": {
-        "sourceUrl": "http://www.city.hino.lg.jp/kurashi/sumai/suido/gesui/1011841.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "key": "hino",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.676356,
+          "lng": 139.4003192
+        },
+        "feature": "BldA combined index 3319 (z16/58145/25807 tile内index233)。概算176.7㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/hino/comparison.json",
+        "comparisonSHA256": "9f5cb3a526a28000d112d702200911e972eaa1e203096ef1f9640318c94e7ab5"
       },
-      "adoptionApproval": false
+      "inProposalFiles": true,
+      "secondsMeasured": 53.551,
+      "remainingReason": "marker精度・測地系は市資料に明記なし。隣接3315/3316/3318は同じ街区の別外形で用途未読。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューでmarkerと3319の対応を確認",
+      "adoptionApproval": false,
+      "group": "west",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/1",
+      "groupOutcomeSHA256": "c751539d7f9ed68ae0c80fa3a4865368368df806050ac63764d6fb192a26dbfd",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
       "name": "URまちとくらしのミュージアム",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "URミュージアムのミュージアム棟と住棟群の配置図を確認する。埋込地図の表示中心は採用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.ur-net.go.jp/rd_portal/manhole/",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryIndex": 10,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "derived-from-official-site-plan; product-footprint-absent",
+      "coordinate": {
+        "lat": 35.7767568,
+        "lng": 139.7159833
       },
-      "adoptionApproval": false
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/museum-detail.svg",
+      "remainingReason": "製品にミュージアム棟外形がなく外形内包で確認できない。",
+      "blockedBy": [
+        "独立レビュー",
+        "配置図写像点を棟代表点として許容する判断",
+        "UR図からの座標導出の利用条件",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで「公式配置図の写像点」を建物代表点として許容するか判断する。製品が更新され外形が収録されたら内包を再検証する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "north",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/3",
+      "groupOutcomeSHA256": "97ea188d9a2eca99d9a7d6f99b953f6fce3a909d513641d95eaa6b3b4f21444d",
+      "integrationClass": "derived-without-target-footprint-held"
     },
     {
       "facilityId": "facility:kanto-south-790a0057852ab669a5b8",
       "name": "CADAN大手町",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "銭瓶町ビルディング1階ぜにがめプレイスの公式棟配置図を確認する。旧CADANアクセスHTTP500を現在の取得結果にしない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "東京都下水道局 designmanhole/togesui にCADAN大手町・銭瓶町ビルディング1階ぜにがめプレイス・12:00-19:00を確認。下水道局2022-07-06資料が同所でのカード配布予定を明記。cadan.org root と仮サイトは展覧会 2026-12-05 までと銭瓶町ビル1階を示す。",
+      "coordinateCandidate": {
+        "lat": 35.685616,
+        "lng": 139.769332
       },
-      "adoptionApproval": false
+      "buildingIdentity": "BldA 3399。D棟(銭瓶町ビルディング/下水ポンプ所)の平面=西角が丸く北東辺が面取りされた形・南辺が直線を一致。公式写真の曲面外壁とも矛盾しない。延床約30,000㎡/9階に対し外形2922㎡は同オーダー。",
+      "footprint": "z16/58212/25805 BldA配列index44、2922.2㎡(概算水平面積)。bbox 67.1×66.7m。タイル境界・取得外端を跨がない。",
+      "remainingMismatch": "cadan.org自身が2026年10月20日頃の改ざんを告知し旧URLは500。告知本文の仮サイトは補助読解のみで、配布・棟同定は東京都下水道局原本に依拠。入居区画は室内図なしのため棟代表点までで止める。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false,
+      "group": "south",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/1",
+      "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-8d82eff13732778fad69",
       "name": "フレア五日市",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "2025年開業施設の公式配置図と2026-07-01外形を比較する。2022年CSVの未掲載は現在外形の未収録を意味しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000013916.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryRow": 12,
+      "result": "plan-derived-estimate-no-target-footprint",
+      "remaining": "対象棟の外形が2026-07製品に未収録、配置図は概寸、Esri画像の日付と利用条件、採用方式の判断、製品測地系、独立レビュー",
+      "nextAction": "親が配置図オフセット方式を認めるか判断する。認めない場合は外形更新か新しいGSI写真を待ち外形内点へ置き換える",
+      "statusNote": "市ページに令和8年7月28日から増刷分配布と記載。現在在庫は未保証",
+      "candidateCoordinate": {
+        "lat": 35.7325569,
+        "lng": 139.2288693
       },
-      "adoptionApproval": false
+      "coordinateIsFootprintInternal": false,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "outer",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/2",
+      "groupOutcomeSHA256": "2e9dbb04083a66fb3d6771bed6eaa78636029ef68221ead17a88e2de3eb5fb96",
+      "integrationClass": "derived-without-target-footprint-held"
     },
     {
       "facilityId": "facility:kanto-south-8eb0c39e8de39e13a0bf",
       "name": "アイルしながわ",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "施設公式aboutの建物写真・配置を数値外形と比較する。埋込pb表示中心は採用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://isleshinagawa.com/archives/489",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "公式お知らせ archives/489 (投稿2026-11-01/更新2026-11-02) に受付配布・時間・休館を確認。在庫保証なし。「受付」の星印図を配布位置として読解。",
+      "coordinateCandidate": {
+        "lat": 35.62255,
+        "lng": 139.7513
       },
-      "adoptionApproval": false
+      "buildingIdentity": "青線外形1493+1636。公式図を90度回転した向きで、西辺の階段状突出・北西の面取り・南北長辺が一致。受付の張出は西辺中央の突出。棟は一つで隣接する別棟なし。",
+      "footprint": "z16/58208/25819 BldA配列index156(2191.8㎡)と 58209/25819 index5(281.3㎡)。タイル境界 x=58209 で切断された同一棟の断片として連結判断。計2473.1㎡(概算水平面積)。bbox 44.8×65.9m(主断片)。全棟が取得9タイル内。外端接触なし。",
+      "remainingMismatch": "公式図は東側下辺が全幅の帯状に見えるが、GSIは東側中央のみ張出(1636)。図の模式化か改修差かは未確定。点はこの差の影響がない主断片中央(境界まで14.0m)。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビュー。東側張出の差と製品CRS適用を確認。在庫は現在保証しない。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false,
+      "group": "south",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/0",
+      "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-97a685101067226be52c",
       "name": "武蔵境駅北口QuOla内1階「DEAN&DELUCA」",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "QuOlaの公式テナント配置と北口道路を比較する。南口の武蔵野プレイス座標は使用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.musashino.lg.jp/kurashi_tetsuzuki/shigoto_sangyo/shoko/1054612.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "key": "quola",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.7022827,
+          "lng": 139.5449308
+        },
+        "feature": "BldA combined index 3568 (z16/58171/25801 tile内index368)。vt_code3101。点はフロアマップで店舗がある駅側（西側）",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/quola/comparison.json",
+        "comparisonSHA256": "e2b28bdb53f020147fcd14bbd0ae629d35aa8c4c7c20d07067c8e2ef1697c685"
       },
-      "adoptionApproval": false
+      "inProposalFiles": true,
+      "secondsMeasured": 89.917,
+      "remainingReason": "フロアマップは模式図で店舗境界は測量ではない。2026年10月着手のJR東側駅ビルは検索要約のみで本文未読。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューで案内図の向きと店舗側の点を確認",
+      "adoptionApproval": false,
+      "group": "west",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/2",
+      "groupOutcomeSHA256": "c751539d7f9ed68ae0c80fa3a4865368368df806050ac63764d6fb192a26dbfd",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-c2c0b9a15a98a189678c",
       "name": "しながわ観光協会",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "大井1丁目共同ビル1階の窓口を公式案内・棟配置から対応させる。地域アクセス全般のリンクは除外する。",
-      "plannedNextMethod": {
-        "sourceUrl": "http://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-doro/20181016161115.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "status": "numerical-candidate-unapproved",
+      "distributionConfirmation": "品川区 デザインマンホール頁(更新2026-10-27)に第1弾配布場所・午前9:30〜午後5時・日祝年末年始休・在庫十分を確認。協会 tourist-information に しなかんPLAZA 同住所を確認。",
+      "coordinateCandidate": {
+        "lat": 35.607655,
+        "lng": 139.73149
       },
-      "adoptionApproval": false
+      "buildingIdentity": "BldA 5756。協会公式PDFは「社会福祉協議会の標識…同じ建物の1階」、到着写真に社協としながわ観光協会の看板が同一壁面。社協公式の地図リンク(大井1丁目共同ビル)と協会My Mapsピンの2点はどちらも5756のみに内包。隣接5762は別外形。",
+      "footprint": "z16/58205/25823 BldA配列index135、459.0㎡。bbox 25.6×28.5m。タイル境界・取得外端を跨がない。",
+      "remainingMismatch": "Google由来の2点は同定補助で座標源にしない。棟は隣接外形があるため、2点と写真・道順の整合に依拠する。建物名表示の個別確認は未実施。西口PDFの吉野家・アオキ等は2019年時点。",
+      "remainingReason": "製品CRS適用判断・独立レビュー未完了",
+      "nextAction": "親の独立レビューと製品CRS適用確認。Google点の利用条件を採用根拠に含めないこと。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false,
+      "group": "south",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/3",
+      "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
       "name": "コネクトすみだ[まち処]",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "運営者原本で東京都向島1-23-9を確認。東京ミズマチE03の高架下区画と数値外形の表現を照合する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "stage": "low-tier-numeric-candidate-unapproved",
+      "candidateTier": "C",
+      "candidateCoordinate": {
+        "lat": 35.710432,
+        "lng": 139.8057884
       },
-      "adoptionApproval": false
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "BldAに高架下店舗なし。桁位置が利用条件未確認APIに依存。",
+      "nextAction": "tokyo-mizumachi.jpが復旧したら現行配置図とE03を再取得。住所検索APIの利用条件確認またはABRの現行取得先で号点を再確認。高架建物の外形を別資料で探す。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false,
+      "group": "east",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/2",
+      "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
+      "integrationClass": "derived-without-target-footprint-held"
     },
     {
       "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
       "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "旧三河島の施設案内でカード窓口を含む棟を確認し外形を比較する。施設全体と喞筒棟・受付の同一視を避ける。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/designmanhole/togesui",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "stage": "numeric-candidate-unapproved",
+      "candidateTier": "B",
+      "candidateCoordinate": {
+        "lat": 35.7376191,
+        "lng": 139.7850113
       },
-      "adoptionApproval": false
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "見学受付と旧事務棟の同一性が推論。",
+      "nextAction": "人手一問で受付棟を確定。独立レビュー。測地系判断。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/mikawashima-comparison.json",
+      "proposal": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "existingProposal": null,
+      "relationChange": false,
+      "group": "east",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/3",
+      "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-de8aff1633c63180b295",
       "name": "東映アニメーションミュージアムショップ",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "ミュージアムの公式ショップ案内・配置図を確認し、スタジオなど近隣棟と区別する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.nerima.tokyo.jp/kankomoyoshi/kankojoho/designmanhole.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "key": "toei",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "proposal-candidate-unapproved",
+      "buildingIdentity": "confirmed",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.752455,
+          "lng": 139.5946549
+        },
+        "feature": "BldA combined index 5413 (z16/58180/25790 tile内index385)。概算188.1㎡、vt_code3101。点は図のショップ側（東北東寄り）",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/toei/comparison.json",
+        "comparisonSHA256": "02156c0930d1cfa0062dd4c2e08ecd252ac5c294ea908df896e9d3279e4b61da"
       },
-      "adoptionApproval": false
+      "inProposalFiles": true,
+      "secondsMeasured": 87.902,
+      "remainingReason": "図の方位は明示なし。入口写真の方向は読取り推定。OSMの館nodeは5436南部で本比較と一致しないが、第三者点で採用根拠にしない。製品CRSと独立レビューが残る",
+      "nextAction": "独立レビューで5413と前面棟の対応・ショップ側の点を確認",
+      "adoptionApproval": false,
+      "group": "west",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/3",
+      "groupOutcomeSHA256": "c751539d7f9ed68ae0c80fa3a4865368368df806050ac63764d6fb192a26dbfd",
+      "manifestApplied": false,
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-dfd35978e81cbcc80123",
       "name": "総合レクリエーション公園サービスセンター",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "ファミリースポーツ広場内のセンター棟を園内図で識別する。公園CSV地点だけでは代用しない。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.edogawa.tokyo.jp/e026/sports/kankomidokoro/bungakukan/manhole.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
-      },
-      "adoptionApproval": false
+      "status": "footprint-absent-in-compared-products; plan-derived reference only; human question open",
+      "distributionConfirmation": "江戸川区 manhole頁で総合レクリエーション公園サービスセンター窓口・ファミリースポーツ広場内・8:30-17:15を確認。区の2025-01-25発表が同広場内のサービスセンターを新棟(円形屋根・屋内ひろば)と明記。運営サイトも同住所。",
+      "coordinateCandidate": null,
+      "buildingIdentity": "設計図 p11 の西端「屋内ひろば・管理事務所」が現サービスセンター新棟と判断(区発表の円形屋根・屋内ひろばと図の円形外周が一致、公式写真あり)。ただし公式の棟名対応は「管理棟(屋内ひろば)」→サービスセンターの推論。",
+      "footprint": "数値外形なし。z16 2026-07-01製品のBldAは街区西端の該当範囲に小片3311(19㎡)/3312(21㎡)のみで、写像した壁箱内に頂点0。GSI seamlessphoto z18・ort とも旧配置(テニスコート・円形施設)で新棟が写らない。OSM map APIの当該範囲にも該当buildingなし。現製品では「新棟未収録」を実比較で確認。",
+      "remainingMismatch": "旧棟3562/3532を代用しない(区設計で移行、東側は相撲場等の別施設の可能性)。Edogawa公式地図リンクと p7 地図の数値は旧日本測地系と仮定すると本街区に一致するが仮定は未検証で数値は不使用。promo頁は03-3675-5030を「富士公園サービスセンター」と記載し他頁と異なる(旧表記の可能性、未確定)。",
+      "remainingReason": "数値外形・現況写真に新棟未収録",
+      "nextAction": "人手一問で現況棟の代表点を確定(humanQuestions参照)。または新版外形/空中写真の更新後に p11 との照合を再実施。設計点は検証点残差約10m・棟半幅11〜15mのため採用候補にしない。",
+      "inspectionRef": "data/evidence/kanto-prefecture/tokyo/south/inspection.json",
+      "adoptionApproval": false,
+      "relationChanges": false,
+      "group": "south",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/south/outcomes.json#/rows/4",
+      "groupOutcomeSHA256": "202485dfce4543e2bcb5045dedf27ccd1474e34733a506230824fe6f7a38b049",
+      "manifestApplied": false,
+      "integrationClass": "no-reliable-point"
     },
     {
       "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
       "name": "渋沢×北区 飛鳥山おみやげ館",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "飛鳥山公園図から管理事務所内のおみやげ館を識別し外形を比較する。公園全体の地点を除外する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.kita.lg.jp/culture-tourism-sports/tourism/1018318/1020188/1020208.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryIndex": 20,
+      "stage": "numeric-comparison-performed; candidate-saved; adoption-unapproved",
+      "candidateClass": "footprint-candidate",
+      "coordinate": {
+        "lat": 35.7489982,
+        "lng": 139.7404262
       },
-      "adoptionApproval": false
+      "comparisonRef": "data/evidence/kanto-prefecture/tokyo/north/asukayama-comparison.json",
+      "detailSvgRef": "data/evidence/kanto-prefecture/tokyo/north/asukayama-detail.svg",
+      "remainingReason": "図の年代不明。方位記号と棟配列の向きに約24度差。",
+      "blockedBy": [
+        "独立レビュー",
+        "製品測地系適用"
+      ],
+      "nextAction": "独立レビューで棟対応と製品測地系適用を判断する。承認後に親がmanifestへ統合する。",
+      "statusUnchanged": "配布関係・稼働状態・在庫は今回変更しない。",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "north",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/north/outcomes.json#/rows/4",
+      "groupOutcomeSHA256": "97ea188d9a2eca99d9a7d6f99b953f6fce3a909d513641d95eaa6b3b4f21444d",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-f0ceef835d0bb3408c02",
       "name": "滝山中央名店会(食祭館あまいけ2階)",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "食祭館あまいけ滝山店2階の棟を商店街案内と外形へ対応させる。商店街全体の地点と区別する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.higashikurume.lg.jp/1007337/1026011.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "inventoryRow": 21,
+      "result": "numerical-candidate",
+      "remaining": "模式図と区画の一対一照合、製品測地系、独立レビュー",
+      "nextAction": "独立レビューで商店マップと棟列の対応を確認し、測地系判断後に親が統合する",
+      "statusNote": "市ページ(更新令和8年6月26日)はブラック・ジャック＆ピノコ配布中。名店会サイトの休止記載(2025/11/14現在)はカード名なしで古い。状態は変更していない",
+      "candidateCoordinate": {
+        "lat": 35.7442066,
+        "lng": 139.5060132
       },
-      "adoptionApproval": false
+      "coordinateIsFootprintInternal": true,
+      "comparison": "data/evidence/kanto-prefecture/tokyo/outer/takiyama-comparison.json",
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "group": "outer",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/outer/outcomes.json#/rows/3",
+      "groupOutcomeSHA256": "2e9dbb04083a66fb3d6771bed6eaa78636029ef68221ead17a88e2de3eb5fb96",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     },
     {
       "facilityId": "facility:kanto-south-f8ee4ebfc645aa7894ed",
       "name": "荻外荘公園受付",
-      "stage": "history-resolved; current-building-and-footprint-comparison-not-started",
-      "nextAction": "荻外荘公園案内で受付棟を識別し、史跡建物や公園代表地点と区別して外形を比較する。",
-      "plannedNextMethod": {
-        "sourceUrl": "https://www.city.suginami.tokyo.jp/guide/shigoto/kankou/1057047.html",
-        "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+      "key": "ogikubo",
+      "stage": "official material read; footprint compared; numerical point computed",
+      "result": "numeric-candidate-held-building-unconfirmed",
+      "buildingIdentity": "insufficient",
+      "candidate": {
+        "coordinate": {
+          "lat": 35.6989936,
+          "lng": 139.622291
+        },
+        "feature": "BldA combined index 5899 (z16/58185/25802 tile内index424)。概算502.5㎡、vt_code3101",
+        "comparisonPath": "data/evidence/kanto-prefecture/tokyo/west/ogikubo/comparison.json",
+        "comparisonSHA256": "59a38736c3197f768d066705c4bcb291a932b592b0c54d03714ef7463abfe3d9"
       },
-      "adoptionApproval": false
+      "inProposalFiles": false,
+      "secondsMeasured": 205.474,
+      "remainingReason": "受付が本体の見学者入口か、別の管理施設か。第三者投稿はチケット窓口での受領を記すが棟は不明。図と外形の幅差の原因（再移築部の未反映）は推定で未検証",
+      "nextAction": "回答済みだが原本裏付けなし。human-questions.jsonとintegration追補を参照。同じ質問を再送せず、現棟を示す独立資料が得られた場合に再照合。",
+      "adoptionApproval": false,
+      "group": "west",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/west/outcomes.json#/rows/4",
+      "groupOutcomeSHA256": "c751539d7f9ed68ae0c80fa3a4865368368df806050ac63764d6fb192a26dbfd",
+      "manifestApplied": false,
+      "integrationClass": "building-choice-unresolved-held"
     },
     {
       "facilityId": "facility:kanto-south-integration-adachi-tourism-association",
       "name": "一般財団法人足立区観光交流協会",
-      "stage": "official diagram and numerical footprint compared; datum applicability and independent review pending",
-      "nextAction": "南館候補を独立読解し、PMTiles製品版への測地系適用根拠を確認する。採用承認後にのみ親がmanifestへ統合する。",
-      "plannedNextMethod": "review candidate",
-      "adoptionApproval": false
+      "stage": "existing-candidate-strengthened-unapproved",
+      "candidateTier": "A",
+      "candidateCoordinate": {
+        "lat": 35.7744893,
+        "lng": 139.8045243
+      },
+      "adoptionApproval": false,
+      "manifestApplied": false,
+      "remainingReason": "製品測地系の明示宣言が未確認。3棟接続外形で南館単独境界は未復元。",
+      "nextAction": "親が独立レビューと測地系判断後にのみ既存提案を統合。",
+      "evidence": "data/evidence/kanto-prefecture/tokyo/east/adachi-supplement.json",
+      "proposal": null,
+      "existingProposal": "data/national/kanto-prefecture/tokyo/locations-proposal.json",
+      "relationChange": false,
+      "group": "east",
+      "groupOutcomeRef": "data/national/kanto-prefecture/tokyo/east/outcomes.json#/rows/4",
+      "groupOutcomeSHA256": "f879a35ab304ecdb157c268eebf00ddf63d4203f7fda69929b6ec6c35588be90",
+      "integrationClass": "footprint-internal-candidate-unapproved"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+ "scaleMPerUnit": 0.12118738403367685,
+ "planPxPerM": 14.0,
+ "buildingPlanSizeM": [
+  23.9,
+  15.4
+ ],
+ "results": [
+  {
+   "lotEdgeAssumptionM": -3,
+   "tileXY": [
+    3467.0,
+    549.6
+   ],
+   "lat": 35.7325379,
+   "lng": 139.2288928
+  },
+  {
+   "lotEdgeAssumptionM": 0,
+   "tileXY": [
+    3449.5,
+    532.1
+   ],
+   "lat": 35.7325569,
+   "lng": 139.2288693
+  },
+  {
+   "lotEdgeAssumptionM": 3,
+   "tileXY": [
+    3432.0,
+    514.6
+   ],
+   "lat": 35.732576,
+   "lng": 139.2288458
+  }
+ ]
+}

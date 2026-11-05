@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "identity": {
+        "name": "Hintmation",
+        "address": "東京都北区赤羽台2丁目1-15 ヌーヴェル赤羽台15号棟1階"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+        "coordinate": {
+          "lat": 35.7763847,
+          "lng": 139.7150606
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://chintai.r6.ur-net.go.jp/chintai/img_photo/20/20_694/20_694_AP_01_l.gif",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+          "snapshotSHA256": "90b4a53c8142faebcaaadb8b1337f0b5eface133600d22fd28401fb9c9d82df1",
+          "sourceLocator": "hintmation-comparison.json: officialDiagram 20_694_AP_01_l.gif 15号棟を6棟相似変換で写像した矩形の中心",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。UR公式住棟配置図の15号棟中心を、製品外形と対応する周辺6棟の相似変換で写像し逆投影。15号棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "63328dde134879a8bbbaa764aa053f2ae6e5303d557f56ac45097b7f45be33ea",
+      "sourceVersion": "UR住棟配置図 Last-Modified 2024-07-19; GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+      "identity": {
+        "name": "赤羽スポーツの森公園競技場",
+        "address": "東京都北区赤羽西5-2-27"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-1fef933ed459e3c91a5d",
+        "coordinate": {
+          "lat": 35.7722141,
+          "lng": 139.7087695
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/forest-comparison.json",
+          "snapshotSHA256": "8a7de44bc512f19530b5101ee3e0aba5b312b9fd1bc92bbb35eaaf7faf61d8f7",
+          "sourceLocator": "forest-comparison.json: BldA z16/58201/25786 index45 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。公式配置図は未発見。区・指定管理者の写真、105mピッチ、建物用途と外形の長さ約104m・矩形内無建物の一致で競技場棟とみなし手動内点を逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "ea57a54c01746c5c08541a828a690628a41861ba2767b17f84e7aa1935c95b91",
+      "sourceVersion": "GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+      "identity": {
+        "name": "荒川知水資料館 amoa",
+        "address": "東京都北区志茂 5-41-1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-52e07f72613c21d30eeb",
+        "coordinate": {
+          "lat": 35.7856021,
+          "lng": 139.7301064
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/amoa-comparison.json",
+          "snapshotSHA256": "0727ccbd62be67108e6afa0aeb428316eba35f1fa1b299be6225aa1889f52f8f",
+          "sourceLocator": "amoa-comparison.json: BldA z16/58205/25783 index34 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。国交省AREA MAP（2024年）の棟列と製品外形を照合し、アモア引出線の棟に手動内点を置いて逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "e62ec6f8871791f038df4c72a455ba0c4bff6287debd022f8763e02e27fd1d0f",
+      "sourceVersion": "GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "identity": {
+        "name": "URまちとくらしのミュージアム",
+        "address": "東京都北区赤羽台1-4-50"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+        "coordinate": {
+          "lat": 35.7767568,
+          "lng": 139.7159833
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://akabanemuseum.ur-net.go.jp/asset_trial_competition/img/URmuseum_map.pdf",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+          "snapshotSHA256": "5f2f0937c8a9c3311e50fb9aabc762989a5f6fe1eccde0c1c1d88a5fb29e4522",
+          "sourceLocator": "museum-comparison.json: officialDiagram URmuseum_map.pdf ミュージアム棟塗り重心を4棟相似変換で写像",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。UR公式縮尺付き配置図のミュージアム棟重心を、製品外形と対応する41〜44号棟の相似変換（残差1m未満）で写像し逆投影。ミュージアム棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "7fe98e174011c64134eb42c6e0e809830e82c5f3774bb42422b8553e4ace2281",
+      "sourceVersion": "UR URmuseum_map.pdf 作成2023-11-02; GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; product datum applicability pending"
+    },
+    {
+      "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+      "identity": {
+        "name": "渋沢×北区 飛鳥山おみやげ館",
+        "address": "東京都北区西ケ原2-16飛鳥山公園管理事務所内"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-e0a282f09bea26f727bf",
+        "coordinate": {
+          "lat": 35.7489982,
+          "lng": 139.7404262
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/asukayama-comparison.json",
+          "snapshotSHA256": "3c1881525988629ddd68202fe3d9c1b06e25c27d0d67dea1932617e1735c5504",
+          "sourceLocator": "asukayama-comparison.json: BldA z16/58206/25791 index743 全外形の内点",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。北区公式園内マップの配布場所矢印・番号2を、3棟fitと他棟holdoutで製品外形へ対応させ手動内点を逆投影。丸め前後の外形内包を確認。製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+        }
+      },
+      "adoptionSHA256": "a650afc0882528731c4e05569fbc9992ef9f183ca33281a9867a783e0884156c",
+      "sourceVersion": "GSI optimal_bvmap PMTiles ETag dfa81a9c-2015; README 2026-07-01; product datum applicability pending"
+    }
+  ],
+  "events": [],
+  "groups": []
+}
