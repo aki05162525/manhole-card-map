@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "actor": "parent-codex",
+  "resolvedAt": "2026-11-05T09:17:24.958540+00:00",
+  "review": "data/national/issue16/group-b-review.json",
+  "outcomesSHA256": "e29a1614570ce3c184906b05e15828c3aee1ccfb6e7b208464503a597d31b388",
+  "resolutions": {
+    "B-01": "方位推測を除き図の左下側と記述、閲覧範囲を物理1・2頁へ訂正",
+    "B-02": "小山市以外11施設の小山市CSV条件文を除去"
+  },
+  "adoptionChanged": false
+}

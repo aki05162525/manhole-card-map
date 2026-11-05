@@ -1,0 +1,331 @@
+{
+  "schema": 1,
+  "selectionSHA256": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6",
+  "startedAt": "2026-11-05T09:00:41.571210+00:00",
+  "endedAt": "2026-11-05T09:10:19.632800+00:00",
+  "elapsedSeconds": 578.06159,
+  "timeDefinition": "group-b wall time including parallel retrieval, waits and parent integration interruptions; not per-building labor",
+  "updates": [],
+  "outcomes": [
+    {
+      "facilityId": "facility:north-4855b77907547ff0f2c6",
+      "groupId": "pilot-11",
+      "cardIds": [
+        "01-214-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "2023実施設計書の物理5頁を画像確認。新棟は山下通りと駅前通りに面し郵便局の隣、旧棟敷地は駐車場/広場になる配置を区別。2025開庁案内とも対応するが、新棟の再利用可能な数値原典は未確定。",
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/6",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/0",
+        "data/evidence/issue16/group-b/retrievals.json#/records/1"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "2025竣工後外形と配置図を対応付け、旧庁舎点を除外する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:north-e5fc22bb4348acd7bcdb",
+      "groupId": "pilot-11",
+      "cardIds": [
+        "01-214-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "2023実施設計書の物理5頁を画像確認。新棟は山下通りと駅前通りに面し郵便局の隣、旧棟敷地は駐車場/広場になる配置を区別。2025開庁案内とも対応するが、新棟の再利用可能な数値原典は未確定。",
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/30",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/0",
+        "data/evidence/issue16/group-b/retrievals.json#/records/1"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "2025竣工後外形と配置図を対応付け、旧庁舎点を除外する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "groupId": "pilot-12",
+      "cardIds": [
+        "46-530-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/2",
+        "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "開庁案内配置を現建物外形と照合する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "groupId": "pilot-12",
+      "cardIds": [
+        "46-530-A001"
+      ],
+      "status": "held",
+      "stage": "retrieved",
+      "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/2",
+        "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "開庁案内配置を現建物外形と照合する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "groupId": "pilot-13",
+      "cardIds": [
+        "09-208-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "市の公共施設CSVを新規取得（カタログ更新日2026-03-03、CC BY4.0）。小山市役所行の緯度36.1851728/経度139.4802911は既知候補36.3148/139.8001近辺と大きく異なる。度分秒風の値と推測して自動変換せず、原データの座標系・記法を未確認として保留。新しい更新日やライセンス明記だけでは正しい位置を保証しない。",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/9",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/oyama-retrievals.json#/records/0",
+        "data/evidence/issue16/group-b/oyama-csv-retrievals.json#/records/0"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。小山市CSVのCC BY4.0表示は確認したが数値記法は未確認。新原本はdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "提供者の座標記法/CRS説明又は訂正版CSVを取得し新庁舎配置と照合する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "groupId": "pilot-13",
+      "cardIds": [
+        "09-208-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "市の公共施設CSVを新規取得（カタログ更新日2026-03-03、CC BY4.0）。小山市役所行の緯度36.1851728/経度139.4802911は既知候補36.3148/139.8001近辺と大きく異なる。度分秒風の値と推測して自動変換せず、原データの座標系・記法を未確認として保留。新しい更新日やライセンス明記だけでは正しい位置を保証しない。",
+      "originalRef": "data/national/issue7/north-kanto.json#/updates/15",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/oyama-retrievals.json#/records/0",
+        "data/evidence/issue16/group-b/oyama-csv-retrievals.json#/records/0"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。小山市CSVのCC BY4.0表示は確認したが数値記法は未確認。新原本はdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "提供者の座標記法/CRS説明又は訂正版CSVを取得し新庁舎配置と照合する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "groupId": "pilot-14",
+      "cardIds": [
+        "22-344-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "公式2018パンフレット物理1・2頁を画像確認。観光案内所金太郎ステーションは直売所と連続する図の左下側区画、農村活性化センターは別棟と区別。県の道の駅点がこの建物を指すかは未確定。図の古さも残るため代表点採用を保留。",
+      "originalRef": "data/national/issue7/tokai.json#/unresolved/8",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/4",
+        "data/evidence/issue16/group-b/retrievals.json#/records/5"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "現行案内で入居継続を確認し、県点と当該棟の外形を照合する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:north-7e8db3d9c7245b172fcf",
+      "groupId": "pilot-15",
+      "cardIds": [
+        "05-212-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "公式施設案内と街あるきマップ原本を確認。地図はGoogle Maps APIを使う周辺スポット案内で、近隣施設の数値を資料館点と誤認しない。独立した施設数値原典と利用条件は未確定。",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/24",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/6",
+        "data/evidence/issue16/group-b/followup-retrievals.json#/records/4"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "大仙市の施設固有GIS/オープンデータ、又は原作成者の施設点と条件説明",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:north-d708d48e0d4d4cae8869",
+      "groupId": "pilot-16",
+      "cardIds": [
+        "05-211-A001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "公式配置図の画像でグリーンマーケット/くららの湯/天王スカイタワーを区別。既P05天王ふれあい交流センター候補をGSI標準地図z18に射影したpixel(8.16,195.93)は取得タイルの建物面内ではない。外縁点も施設との対応証拠を要する。地図更新年未確認のため旧施設点とは断定せず保留。",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/42",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/7",
+        "data/evidence/issue16/group-b/followup-retrievals.json#/records/2",
+        "data/evidence/issue16/group-b/tenno-comparison.json"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "現在のマーケット棟に対応する数値原典を取得。隣接施設P05を同住所だけで流用しない",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:north-proposal-daisen-grandport",
+      "groupId": "pilot-17",
+      "cardIds": [
+        "05-212-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "観光協会公式ページで大曲通町6番5号・JR大曲駅内の案内を再確認。地図はGoogle Maps Engine埋込。駅と市民活動交流拠点センターの同棟性は証明できず、近隣P05点を共有しない。",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/54",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/9"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "JR駅舎の再利用可能な外形/点原典と入居対応を確認する",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-d03efeeb5e2760ad5647",
+      "groupId": "pilot-18",
+      "cardIds": [
+        "28-223-A001"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "conclusion": "観光協会の個別案内で柏原3625・木の根橋隣を確認。地図iframeはGoogle埋込で、表示中心を施設固有点として抜き出すことはしない。原点の由来/条件/建物対応は未解決。",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/87",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/10"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "県/市の施設固有点又は配置図と公開外形の照合",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "groupId": "pilot-19",
+      "cardIds": [
+        "47-326-A001",
+        "47-326-B001"
+      ],
+      "status": "held",
+      "stage": "retrieval-failed",
+      "conclusion": "町の現施設紹介と県のオープンデータ一覧を取得。北谷町AED一覧が次候補として見つかったがBODIK package APIは403。施設名掲載や座標有無は未確認で、取得成功と扱わない。",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/11",
+        "data/evidence/issue16/group-b/retrievals.json#/records/12",
+        "data/evidence/issue16/group-b/followup-retrievals.json#/records/1"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "AED原データの取得経路復旧後、センター行・CRS・版・ライセンスを確認",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "groupId": "pilot-20",
+      "cardIds": [
+        "01-214-B001"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "conclusion": "施設公式フロア案内HTMLと1階図を取得、Pottoを含む1階と屋台村の別区画を確認。画像単体は名称ラベルをHTMLで重ねる構成。市場全体点から当該棟への対応と座標の由来/条件は未確定。",
+      "originalRef": "data/national/issue7/hokkaido.json#/unresolved/18",
+      "newEvidenceRefs": [
+        "data/evidence/issue16/group-b/retrievals.json#/records/13",
+        "data/evidence/issue16/group-b/detail-retrievals.json#/records/1"
+      ],
+      "coordinate": null,
+      "crs": null,
+      "precision": "building representative intended; not established",
+      "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+      "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+      "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+      "resumeCondition": "公式フロア区画を地理外形と対応付け、市場全体の点との違いを検査",
+      "actorType": "ai",
+      "independentReview": "data/national/issue16/group-b-review.json"
+    }
+  ],
+  "summary": {
+    "groups": 10,
+    "facilities": 13,
+    "proposedCoordinates": 0,
+    "held": 13,
+    "accepted": 0
+  }
+}

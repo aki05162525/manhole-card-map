@@ -135,3 +135,49 @@ it("does not navigate to obsolete reviewed facilities after their source changes
     } as Data["relations"][number])?.label,
   ).toContain("施設名・住所で検索");
 });
+
+it.each(["needs-review", "withdrawn"] as const)(
+  "uses only the valid address when the location is %s, even with stale confirmed coordinates",
+  (status) => {
+    const changed = {
+      ...place,
+      locationReview: {
+        status,
+        addressStatus: "valid" as const,
+        reason: "座標根拠の再確認",
+      },
+    };
+    const link = facilityMapLink(changed)!;
+    expect(new URL(link.href).searchParams.get("query")).toBe(
+      "施設 & 案内所 東京都 #1",
+    );
+    expect(link.label).toContain("施設名・住所で検索");
+    expect(
+      facilityMapLink({
+        ...changed,
+        locationReview: {
+          ...changed.locationReview,
+          addressStatus: "needs-review",
+        },
+      }),
+    ).toBeNull();
+    expect(
+      facilityMapLink(changed, {
+        review: "needs-review",
+        evidence: { sourceUrl: "https://example.gov.jp" },
+      } as Data["relations"][number]),
+    ).toBeNull();
+  },
+);
+it("keeps reconfirmed coordinates available when only a future review is due", () => {
+  const link = facilityMapLink({
+    ...place,
+    locationReview: {
+      status: "confirmed",
+      addressStatus: "valid",
+      reason: "同建物と再確認",
+      reviewDue: "2026-01-01",
+    },
+  })!;
+  expect(new URL(link.href).searchParams.get("query")).toBe("35,139");
+});

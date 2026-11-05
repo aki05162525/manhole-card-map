@@ -186,12 +186,26 @@ export function CardDetail({
               </p>
             )}
             <p className="subtle">
-              {place.coordinate.status === "candidate"
-                ? "参考位置（未確定）"
-                : place.coordinate.status === "confirmed"
-                  ? "位置確定"
-                  : "地図の位置は未確定"}
+              {place.locationReview?.status === "withdrawn"
+                ? "施設位置は取り下げ済み"
+                : place.locationReview?.status === "needs-review" ||
+                    place.locationReview?.addressStatus === "needs-review"
+                  ? "施設位置は再確認待ち"
+                  : place.coordinate.status === "candidate"
+                    ? "参考位置（未確定）"
+                    : place.coordinate.status === "confirmed"
+                      ? "位置確定"
+                      : "地図の位置は未確定"}
             </p>
+            {place.locationReview &&
+              (place.locationReview.status !== "confirmed" ||
+                place.locationReview.addressStatus === "needs-review") && (
+                <p className="subtle">
+                  {place.locationReview.reason}
+                  {place.locationReview.addressStatus === "needs-review" &&
+                    "（住所も再確認待ちです）"}
+                </p>
+              )}
             <ExternalLink link={facilityMapLink(place, relation)} />
             {relation.evidence && (
               <>

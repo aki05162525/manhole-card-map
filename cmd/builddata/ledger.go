@@ -47,14 +47,56 @@ func (c *LedgerCoordinate) UnmarshalJSON(raw []byte) error {
 	return nil
 }
 
+// LocationReview is the current browser-safe result of the archived lifecycle.
+// Previous coordinates and identity snapshots remain in the offline audit only.
+type LocationReview struct {
+	Status        string `json:"status"`
+	AddressStatus string `json:"addressStatus"`
+	Reason        string `json:"reason"`
+	DecisionID    string `json:"decisionId,omitempty"`
+	ReviewedAt    string `json:"reviewedAt,omitempty"`
+	ReviewDue     string `json:"reviewDue,omitempty"`
+	SourceVersion string `json:"sourceVersion,omitempty"`
+}
+
+func validateLocationReview(review *LocationReview, coordinate *LedgerCoordinate) error {
+	if review == nil {
+		return nil
+	}
+	if review.Status != "confirmed" && review.Status != "needs-review" && review.Status != "withdrawn" {
+		return fmt.Errorf("invalid location review status")
+	}
+	if review.AddressStatus != "valid" && review.AddressStatus != "needs-review" {
+		return fmt.Errorf("invalid location address status")
+	}
+	if strings.TrimSpace(review.Reason) == "" {
+		return fmt.Errorf("missing location review reason")
+	}
+	if (review.Status == "confirmed") != (coordinate != nil) {
+		return fmt.Errorf("location review coordinate mismatch")
+	}
+	if review.Status == "confirmed" && review.AddressStatus != "valid" {
+		return fmt.Errorf("confirmed location has unreviewed address")
+	}
+	for _, date := range []string{review.ReviewedAt, review.ReviewDue} {
+		if date != "" {
+			if _, err := time.Parse("2006-01-02", date); err != nil {
+				return fmt.Errorf("invalid location review date: %w", err)
+			}
+		}
+	}
+	return nil
+}
+
 type LedgerPlace struct {
-	ID         string            `json:"id"`
-	LegacyIDs  []string          `json:"legacyIds"`
-	Name       string            `json:"name"`
-	Address    string            `json:"address"`
-	Phone      string            `json:"phone"`
-	Coordinate *LedgerCoordinate `json:"coordinate,omitempty"`
-	Evidence   Evidence          `json:"evidence"`
+	LocationReview *LocationReview   `json:"locationReview,omitempty"`
+	ID             string            `json:"id"`
+	LegacyIDs      []string          `json:"legacyIds"`
+	Name           string            `json:"name"`
+	Address        string            `json:"address"`
+	Phone          string            `json:"phone"`
+	Coordinate     *LedgerCoordinate `json:"coordinate,omitempty"`
+	Evidence       Evidence          `json:"evidence"`
 }
 
 // RelationChange records an explicitly evidenced new counter, retaining old source relations.
@@ -200,6 +242,12 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 		if p.Coordinate != nil && (!finite(p.Coordinate.Lat) || !finite(p.Coordinate.Lng) || p.Coordinate.Lat < -85 || p.Coordinate.Lat > 85 || p.Coordinate.Lng < -180 || p.Coordinate.Lng > 180) {
 			return fmt.Errorf("invalid facility coordinate: %s", p.ID)
 		}
+		if err := validateLocationReview(p.LocationReview, p.Coordinate); err != nil {
+			return fmt.Errorf("facility %s: %w", p.ID, err)
+		}
+		if p.LocationReview != nil && p.LocationReview.ReviewedAt > now.Format("2006-01-02") {
+			return fmt.Errorf("facility %s: location decision is after evaluatedAt", p.ID)
+		}
 		if err := validateEvidence(p.Evidence); err != nil {
 			return fmt.Errorf("facility %s: %w", p.ID, err)
 		}
@@ -312,7 +360,10 @@ func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
 			lat, lng := p.Coordinate.Lat, p.Coordinate.Lng
 			coordinate = Coordinate{Status: "confirmed", Lat: &lat, Lng: &lng, Source: ev.SourceURL, Reason: ev.VerificationMethod, Review: ev.ActorType + " / " + ev.CheckedAt}
 		}
-		next = append(next, Place{ID: p.ID, Name: p.Name, Address: p.Address, Phone: p.Phone, Coordinate: coordinate, Evidence: &ev})
+		if p.LocationReview != nil && p.LocationReview.Status != "confirmed" {
+			coordinate.Reason = p.LocationReview.Reason
+		}
+		next = append(next, Place{ID: p.ID, Name: p.Name, Address: p.Address, Phone: p.Phone, Coordinate: coordinate, Evidence: &ev, LocationReview: p.LocationReview})
 	}
 	d.Places = next
 	for i := range d.Relations {

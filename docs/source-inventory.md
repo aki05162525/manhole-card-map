@@ -22,7 +22,7 @@ python3 -B -m unittest discover -s tools/national -p test_source_inventory.py -v
 
 ## 対象集合
 
-- **採用済み**：パッチ適用後の台帳に元からある座標、およびmanifestが明示採用した位置追補。施設数と採用行数を分ける。
+- **採用経路**：パッチ適用後の台帳に元からある座標、およびmanifestが明示採用した位置追補。`adoption` は撤回後も元の経路を保持する。現在有効な採用行は `currentlyAdoptedRecord` で識別し、`summary.adoptedRecords` はその件数。施設数と採用行数を分ける。
 - **候補**：manifestに選択された位置ファイルの全 `updates`、Issue7の原13地域の `updates`、追加指定ファイルの `updates`。明示採用と同一行は採用済みにまとめる。
 - **行の同一性**：`facilityId` と行全体の正規化JSONのSHA256。同施設の旧候補と現在採用を残す。候補行数は未位置施設数ではない。
 - **対象外**：座標提案のない `unresolved`、明示リスト外の候補ファイル、ブラウザー生成物。リポジトリ内の全候補を調査済みとは扱わず、`coverage.candidateFiles` と `allRepositoryCandidatesScanned: false` を出す。
@@ -59,3 +59,5 @@ registryは `schema: 1` と `reviews` 配列を持つ。各reviewの必須項目
 テストはbase座標/追補/未採用候補の被覆、同施設の異なる原行保持、exactレビュー適用、重複・広域selector・変更済みhashの拒否、原本改変、非有限数、出力上書き防止を確認する。台帳・パッチ・追補・候補・registryと、座標追補で置き換わる旧施設証拠や関係証拠も含む検査対象原本はhash付きで記録し、処理の最後に再確認して途中変更を拒否する。別プロセスの書込みをロックする仕組みではない。
 
 候補ファイル外の全調査履歴、各原本の測地系や加工工程の意味解釈、実際の座標到達精度、取得元の規約更新監視は自動検証しない。新しい採用・削除や条件未確認の施設の一括変更は行わない。
+
+位置の訂正・撤回は[位置ライフサイクル](location-lifecycle.md)を適用した現在値へ反映する。訂正で元行と異なる座標/証拠になる場合は `lifecycle-current` 行を追加し、元の採用行も履歴として保持する。
