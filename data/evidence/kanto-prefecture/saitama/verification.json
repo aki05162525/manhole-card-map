@@ -50,8 +50,15 @@
   },
   "fullSuite": {
     "command": "go test -count=1 ./... (normal pre-commit; includes python3 -B -m unittest discover -s tools/national -v)",
-    "status": "pending commit hook"
+    "status": "passed",
+    "exitCode": 0,
+    "log": "data/evidence/kanto-prefecture/saitama/commit-hook.log",
+    "startedEpoch": 1793890905.873937,
+    "finishedEpoch": 1793890993.879475,
+    "pythonEvidence": "cmd/builddata TestNationalAssemblyFailureGuards executes python unittest discovery; successful Go output suppresses successful child stdout."
   },
   "UI": "not run; no UI changes",
-  "identityReview": "pending parent independent Codex review"
+  "identityReview": "pending parent independent Codex review",
+  "testedCommit": "467d14b4cbb3f73ffad32f9c454e86d483f719ed",
+  "followup": "Only verification/log metadata added after tested commit; candidate, raw tiles, input hashes and test code unchanged. Normal hooks still apply to the evidence commit."
 }
