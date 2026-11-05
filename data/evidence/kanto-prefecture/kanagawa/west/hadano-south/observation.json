@@ -1,0 +1,305 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-36fae9051046490c8149",
+  "plannedMethods": [
+    "official-distribution",
+    "inherited-history",
+    "official-diagram",
+    "GSI-BldA-RdCL"
+  ],
+  "performedMethods": [
+    "official-distribution",
+    "inherited-history",
+    "official-diagram",
+    "GSI-BldA-RdCL"
+  ],
+  "acquisition": {
+    "status": "mixed",
+    "records": [
+      {
+        "key": "hadano-card.html",
+        "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+        "sha256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-access.html",
+        "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/4/3068.html",
+        "sha256": "519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-access.jpg",
+        "url": "https://www.city.hadano.kanagawa.jp/material/images/group/69/jomap.jpg",
+        "sha256": "84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-plan.pdf",
+        "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou03-2.pdf",
+        "sha256": "9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-council.html",
+        "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1065/3/2529.html",
+        "sha256": "6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-2025-layout.pdf",
+        "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou.pdf",
+        "sha256": "507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-disaster.pdf",
+        "url": "https://www.city.hadano.kanagawa.jp/material/files/group/17/shiryouhen.pdf",
+        "sha256": "a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      },
+      {
+        "key": "hadano-health.html",
+        "url": "https://www.city.hadano.kanagawa.jp/soshiki/6/1043/4/4/1397.html",
+        "sha256": "5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a",
+        "rawPath": "data/work/kanto-kanagawa/west/cache/5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a.raw",
+        "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+      }
+    ]
+  },
+  "pages": {
+    "total": 2,
+    "checked": [
+      1,
+      2
+    ],
+    "other": [
+      {
+        "key": "hadano-plan.pdf",
+        "total": 12,
+        "checked": [
+          8
+        ],
+        "scope": "12頁全テキスト抽出、全頁コンタクトシートで図の位置確認、第8頁全寸視読。第6頁詳細未読。"
+      },
+      {
+        "key": "hadano-disaster.pdf",
+        "checkedTextPages": [
+          58
+        ],
+        "scope": "全文テキスト検索、58頁管理棟=庁舎を読解。全頁画像視読未実施。"
+      }
+    ]
+  },
+  "orientation": {
+    "status": "insufficient",
+    "evidence": [
+      "資料3第1頁の広域図にN、同第2頁の敷地図に独立N矢印はない。敷地図の上を北と決めつけず、東西長い水処理棟とその西端管理棟、南の2棟、北側水無川/南側小田急線の位置関係からGSI北上図への約45度回転を比較。"
+    ],
+    "limitation": "方位の明示がない図の向きを周囲から推論する部分は未承認。"
+  },
+  "coverage": {
+    "tiles": [
+      {
+        "tile": {
+          "z": 16,
+          "x": 58115,
+          "y": 25876
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58115-25876.pbf.gz",
+        "sha256": "a55ce7818b0bd9816d314f9c2fd44dd3b5b91d13fafd89cda699b80394b9b634"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58116,
+          "y": 25876
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58116-25876.pbf.gz",
+        "sha256": "5ad9bfeeb17e3e105e1beddbb287b78fe586c7dc60fb78184a976795b75dd44e"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58117,
+          "y": 25876
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58117-25876.pbf.gz",
+        "sha256": "2024a1f7e45694ba5f1dc160b5c942749a5f871bae870fd9e28d0be4b4aa5705"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58115,
+          "y": 25877
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58115-25877.pbf.gz",
+        "sha256": "296017bbac8761d73fa088eb069d08d83a93ac3367710b43fddbe445a0e38af6"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58116,
+          "y": 25877
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58116-25877.pbf.gz",
+        "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58117,
+          "y": 25877
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58117-25877.pbf.gz",
+        "sha256": "8702fd9298d9ddb69761ce146dbd1339d5d32c82d654095c60c398e15cab4ac8"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58115,
+          "y": 25878
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58115-25878.pbf.gz",
+        "sha256": "5168d37cfc6c15f91d149167f155b3b1249802d6edaaa1c1f3838c22a52054b0"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58116,
+          "y": 25878
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58116-25878.pbf.gz",
+        "sha256": "35082769428d5376ec0eeed537f807cdbc323868d1e9a6c783f9e6b10596eaae"
+      },
+      {
+        "tile": {
+          "z": 16,
+          "x": 58117,
+          "y": 25878
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58117-25878.pbf.gz",
+        "sha256": "9fad79610409b805ba7e9e85a75a638c36dfc5c9ec7441ec7619febca083b66d"
+      }
+    ],
+    "boundaryClipping": "候補3棟はtileBoundaryTouched=false/outerBoundaryTouched=false。綾瀬本館はタイル境界で分割、周辺9タイル描画で継続を確認、当該屋外区画の面なし。",
+    "renderPath": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/detail.svg",
+    "fullRenderPath": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-all.svg",
+    "exploration": "四之宮と秦野は最初の探索窓が北過ぎたため別9タイルを追加取得。元探索窓も保存。"
+  },
+  "buildingIdentity": {
+    "status": "confirmed",
+    "evidence": [
+      "2025年度前の市上下水道審議会資料3第2頁と2020年作成計画第8頁の沈砂池管理棟を照合。西の縦長管理棟に南側機械棟が接続しGSI BldA[55]では一体外形となる。東の巨大水処理棟、西のテニスコート、南の汚泥濃縮棟・汚泥処理棟の相対位置が一致。市防災資料PDF58頁は管理棟=上下水道局庁舎と明記。既往AED原本も同センター管理棟1階玄関と上下水道局お客様センター4階を記録。配布本文はセンター/下水道施設課の指定で階は指定しない。管理棟内の代表点候補として、外形中央より北東のpointXY[5800,5770]を図面の管理棟側に選定（機械棟側を避けた目視対応。測量ではない）。"
+    ],
+    "approval": "担当の候補同定、独立承認ではない"
+  },
+  "surroundings": {
+    "status": "confirmed",
+    "evidence": [
+      "資料3第1頁の広域図にN、同第2頁の敷地図に独立N矢印はない。敷地図の上を北と決めつけず、東西長い水処理棟とその西端管理棟、南の2棟、北側水無川/南側小田急線の位置関係からGSI北上図への約45度回転を比較。",
+      "2025年度前の市上下水道審議会資料3第2頁と2020年作成計画第8頁の沈砂池管理棟を照合。西の縦長管理棟に南側機械棟が接続しGSI BldA[55]では一体外形となる。東の巨大水処理棟、西のテニスコート、南の汚泥濃縮棟・汚泥処理棟の相対位置が一致。市防災資料PDF58頁は管理棟=上下水道局庁舎と明記。既往AED原本も同センター管理棟1階玄関と上下水道局お客様センター4階を記録。配布本文はセンター/下水道施設課の指定で階は指定しない。管理棟内の代表点候補として、外形中央より北東のpointXY[5800,5770]を図面の管理棟側に選定（機械棟側を避けた目視対応。測量ではない）。"
+    ]
+  },
+  "crs": {
+    "status": "insufficient",
+    "product": "国土地理院最適化Vector PMTiles 2026-07-01",
+    "evidence": [
+      "XYZ Web Mercator逆投影、extent4096、y_coord_down=True。HTTP generation etag/Last-Modified全Range一致を検査。製品固有CRSの承認は県親検証へ引継ぎ。従来XYZ2023-10-01と混同しない。"
+    ]
+  },
+  "licence": {
+    "status": "insufficient",
+    "evidence": [
+      "GSI原本/派生外形のみGit候補。一般HTML/PDF/画像はignored data/work内。製品条件の承認は県親へ引継ぎ。出典:国土地理院最適化Vector、加工:manhole-card-map。"
+    ]
+  },
+  "mechanicalChecks": {
+    "status": "passed",
+    "evidence": [
+      "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json",
+      "有効ポリゴン、小数7桁丸め前後の厳密内包、境界非接触。面積は球面Mercator局所cos補正の概算。測量精度を保証しない。"
+    ]
+  },
+  "review": {
+    "status": "pending",
+    "reviewer": null,
+    "evidence": []
+  },
+  "asOf": "2026-11-05",
+  "retrievalDatePolicy": "checkedAt基準日は変更せずHTTP取得時刻はretrievals.json。利用者現地報告なし。全記述はAIの原本読解/数値加工/明記した推論。",
+  "distributionAssessment": {
+    "relation": "平日・土曜センター、日曜祝日は別施設。activeを維持",
+    "stock": "在庫の新規判定をしない",
+    "operation": "現配布案内・庁舎記録で現使用を確認、2016年工事中の汚泥棟仮移転は採用しない。"
+  },
+  "sourceRefs": [
+    {
+      "key": "hadano-card.html",
+      "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+      "sha256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-access.html",
+      "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/4/3068.html",
+      "sha256": "519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/519194e06712202730460ccaf284ff3e1760587a62947ed6502aac83f6f886a1.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-access.jpg",
+      "url": "https://www.city.hadano.kanagawa.jp/material/images/group/69/jomap.jpg",
+      "sha256": "84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/84cae78621a96a9c9d9c0c56c6192f6d31f218218e020e02ed096e71f153b342.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-plan.pdf",
+      "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou03-2.pdf",
+      "sha256": "9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/9140dac1aa84f164c105c3af8958af40215f565bb2350eb71780107879dd11b0.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-council.html",
+      "url": "https://www.city.hadano.kanagawa.jp/soshiki/11/1065/3/2529.html",
+      "sha256": "6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/6b3701138bd66756aa90cb0cb3dbcec39f29848e88f61078726572348d6e4e69.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-2025-layout.pdf",
+      "url": "https://www.city.hadano.kanagawa.jp/material/files/group/66/gesuidou.pdf",
+      "sha256": "507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/507194f979cdcf441cfdf8ff8db96b86c20cdbe6660ffef2a9f4213b6cec4523.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-disaster.pdf",
+      "url": "https://www.city.hadano.kanagawa.jp/material/files/group/17/shiryouhen.pdf",
+      "sha256": "a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/a7555d9a455794f1f98502feb9e90e4de6fb191788f6601c29a7775ee74517bc.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    },
+    {
+      "key": "hadano-health.html",
+      "url": "https://www.city.hadano.kanagawa.jp/soshiki/6/1043/4/4/1397.html",
+      "sha256": "5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a",
+      "rawPath": "data/work/kanto-kanagawa/west/cache/5c7f95e75afd74c17a785258825a713b13550930db4cdb948e957cf264d3261a.raw",
+      "retrievalRecord": "data/evidence/kanto-prefecture/kanagawa/west/retrievals.json"
+    }
+  ],
+  "historyRef": "data/evidence/kanto-prefecture/kanagawa/west/history.json",
+  "manifestApplied": false,
+  "adoptionApproved": false,
+  "numericLimitations": "面積1821.9m2は接続機械棟も含むGSI一体外形の概算。管理棟単体の面積ではない。選定点は北東側管理棟の内部対応。"
+}

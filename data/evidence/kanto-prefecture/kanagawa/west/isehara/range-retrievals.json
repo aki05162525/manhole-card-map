@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=0-126"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.583306+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 0-126/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:07.642560+00:00",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+      "bytes": 127,
+      "elapsedSeconds": 0.059968
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=127-2502"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.642956+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 127-2502/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:07.687313+00:00",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+      "bytes": 2376,
+      "elapsedSeconds": 0.044599
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=2197604-2206941"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.688613+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 2197604-2206941/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:07.733566+00:00",
+      "sha256": "aa99772c3ef45dbb00604231daabda34974a7e2f1728c6185cdf7209ae9d15d5",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/aa99772c3ef45dbb00604231daabda34974a7e2f1728c6185cdf7209ae9d15d5.raw",
+      "bytes": 9338,
+      "elapsedSeconds": 0.045693
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10283817040-10283824659"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.737865+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10283817040-10283824659/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:07.882726+00:00",
+      "sha256": "d11da461d4681094486b58dc80bd39332c6a91ccf5df8c97439d3a3a1bebc07f",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/d11da461d4681094486b58dc80bd39332c6a91ccf5df8c97439d3a3a1bebc07f.raw",
+      "bytes": 7620,
+      "elapsedSeconds": 0.145192
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10283849860-10283858425"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.887705+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10283849860-10283858425/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:07.963612+00:00",
+      "sha256": "f3c3691da8fe153d940675fbbbb1d933301fa4b741b1ef75dd212f498ceba8a1",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/f3c3691da8fe153d940675fbbbb1d933301fa4b741b1ef75dd212f498ceba8a1.raw",
+      "bytes": 8566,
+      "elapsedSeconds": 0.076354
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10283858426-10283877389"
+      },
+      "attemptedAt": "2026-11-05T15:36:07.968185+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10283858426-10283877389/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.064154+00:00",
+      "sha256": "6b6bca3f9d25a365fe99c184d328dff13431ce78a8d251bb674fd0d01977dc73",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/6b6bca3f9d25a365fe99c184d328dff13431ce78a8d251bb674fd0d01977dc73.raw",
+      "bytes": 18964,
+      "elapsedSeconds": 0.096308
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293148966-10293154417"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.070106+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293148966-10293154417/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.178814+00:00",
+      "sha256": "f5bb29a1a5862d24f62ae7fe6dd103d67de607d9f5b15ca755e343482a8ba3e0",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/f5bb29a1a5862d24f62ae7fe6dd103d67de607d9f5b15ca755e343482a8ba3e0.raw",
+      "bytes": 5452,
+      "elapsedSeconds": 0.10904
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293127416-10293134632"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.183733+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293127416-10293134632/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.279717+00:00",
+      "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f.raw",
+      "bytes": 7217,
+      "elapsedSeconds": 0.096395
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293115215-10293127415"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.285787+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293115215-10293127415/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.390368+00:00",
+      "sha256": "e708fa64ea439df9112f0b6a495e7d1de70b934aa92bc99516cee20d44002f0c",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/e708fa64ea439df9112f0b6a495e7d1de70b934aa92bc99516cee20d44002f0c.raw",
+      "bytes": 12201,
+      "elapsedSeconds": 0.104878
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293143954-10293148965"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.395124+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293143954-10293148965/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.451979+00:00",
+      "sha256": "51db7da51da61e266176cf4cc638d8b1e8c1677cf435e0e64a474fb2462e07ea",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/51db7da51da61e266176cf4cc638d8b1e8c1677cf435e0e64a474fb2462e07ea.raw",
+      "bytes": 5012,
+      "elapsedSeconds": 0.057259
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293134633-10293143953"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.456587+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293134633-10293143953/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.501565+00:00",
+      "sha256": "056a0f825ecb833459ab2b736888ffd1c26f872b4fcadb9e80f27e03bdea1c48",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/056a0f825ecb833459ab2b736888ffd1c26f872b4fcadb9e80f27e03bdea1c48.raw",
+      "bytes": 9321,
+      "elapsedSeconds": 0.045226
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10293090592-10293115214"
+      },
+      "attemptedAt": "2026-11-05T15:36:08.506784+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10293090592-10293115214/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:36:08.582386+00:00",
+      "sha256": "cf1bcefca374d20177db354fb30ab27722a55cdce5b07fa0e3acbee99ca1e56f",
+      "rawPath": "data/work/kanto-kanagawa/west/isehara/range-cache/cf1bcefca374d20177db354fb30ab27722a55cdce5b07fa0e3acbee99ca1e56f.raw",
+      "bytes": 24623,
+      "elapsedSeconds": 0.075946
+    }
+  ]
+}

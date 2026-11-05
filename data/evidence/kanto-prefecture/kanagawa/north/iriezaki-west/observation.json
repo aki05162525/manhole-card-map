@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+  "name": "入江崎ワクワクアクア",
+  "asOf": "2026-11-05",
+  "sourceInterpretation": "independently retrieved original reading plus explicitly identified inference; no user report used",
+  "sourceRefs": [
+    {
+      "key": "kawasaki-card.html",
+      "url": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+      "sha256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:23:14.443364+00:00",
+      "attemptedAt": "2026-11-05T15:23:14.261097+00:00"
+    },
+    {
+      "key": "iriezaki.html",
+      "url": "https://www.city.kawasaki.jp/800/page/0000105394.html",
+      "sha256": "7fcb250a02b8a169a9259f815438018fcbe5a52e6a77f25962fd0938cd3d5e60",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/7fcb250a02b8a169a9259f815438018fcbe5a52e6a77f25962fd0938cd3d5e60.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:23:14.647196+00:00",
+      "attemptedAt": "2026-11-05T15:23:14.589793+00:00"
+    },
+    {
+      "key": "iriezaki.pdf",
+      "url": "https://www.city.kawasaki.jp/800/cmsfiles/contents/0000105/105394/iriezakipanhu.pdf",
+      "sha256": "8ac9648e9edb7411d3e5097a886958e1460a14cda2d6aef57061bea93138e824",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/8ac9648e9edb7411d3e5097a886958e1460a14cda2d6aef57061bea93138e824.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:23:21.831440+00:00",
+      "attemptedAt": "2026-11-05T15:23:21.743360+00:00"
+    },
+    {
+      "key": "iriezaki-plan.pdf",
+      "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000096/96966/0524suidou.pdf",
+      "sha256": "49f62ff3ea563425ed8a4be0ff30a86b8dfc61682bf88052f4ab1b7ff419c2ea",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/49f62ff3ea563425ed8a4be0ff30a86b8dfc61682bf88052f4ab1b7ff419c2ea.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:24:03.623817+00:00",
+      "attemptedAt": "2026-11-05T15:24:03.518435+00:00"
+    },
+    {
+      "key": "iriezaki-casbee.html",
+      "url": "https://www.city.kawasaki.jp/500/page/0000021163.html",
+      "sha256": "577dd9c8a6da541a31b246c5fcd64560406af631a35884e81538d4e9da297f43",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/577dd9c8a6da541a31b246c5fcd64560406af631a35884e81538d4e9da297f43.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:28:40.973747+00:00",
+      "attemptedAt": "2026-11-05T15:28:40.861935+00:00"
+    },
+    {
+      "key": "iriezaki-2019.html",
+      "url": "https://www.jiwet.or.jp/publicity/hashiwatashi/2020-03-16",
+      "sha256": "9efa5b910375fbdd680bd5900d831acea1b9bc8a11137b852e85f896fb73f3e4",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/9efa5b910375fbdd680bd5900d831acea1b9bc8a11137b852e85f896fb73f3e4.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:47:24.014750+00:00",
+      "attemptedAt": "2026-11-05T15:47:20.492675+00:00"
+    },
+    {
+      "key": "iriezaki-open2019.html",
+      "url": "https://www.city.kawasaki.jp/800/page/0000085356.html",
+      "sha256": "d64166cd731af876a8182e8fa462c2db0c30a56509ee4c719d129b9463ff35ed",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/d64166cd731af876a8182e8fa462c2db0c30a56509ee4c719d129b9463ff35ed.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:50:17.188755+00:00",
+      "attemptedAt": "2026-11-05T15:50:17.087133+00:00"
+    },
+    {
+      "key": "iriezaki-2026.pdf",
+      "url": "https://policies.env.go.jp/policy/roadmap/local_keikaku/jimu/files/tool/202603pvjirei.pdf",
+      "sha256": "7f64b452410fa4ce00988fc9b676cf6c2802f77162d59d3e13050ee7223f6d80",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/7f64b452410fa4ce00988fc9b676cf6c2802f77162d59d3e13050ee7223f6d80.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:48:57.502635+00:00",
+      "attemptedAt": "2026-11-05T15:48:57.160597+00:00"
+    }
+  ],
+  "distributionLifecycleStock": "川崎B001平日は予約した見学者のみ。水曜・年末年始除外。休日はきたテラスの別関係。施設は予約見学稼働を案内。表示在庫ありを取得時点の原文として扱い将来在庫を保証しない。",
+  "originalReading": "現パンフレット全2頁を拡大目視。沈砂池管理棟1F入口、2Fガイダンス、3F監視、4F展示と確認。2018-05-24議会資料全16頁は文字抽出と縮小一覧、p2/p3を拡大して確認、p4以降は全頁拡大読解ではない。p3赤色沈砂池管理棟とポンプ棟・東側処理施設・道路・鉄道を比較。北矢印を見つけず道路/鉄道から回転推論。CASBEE一覧は沈砂地管理棟の竣工令和5年3月記載で2018図との年代差を未解消。",
+  "numericComparison": "時計回り60度の表示回転で2018p3/2026航空図と管理棟443の上端段差・下端444、左上432、右下L字447、道路向かい西系3/4が一致。441は細い接続/辺の外形でL本体ではない。443内部代表点を選択し元点と7桁丸め後内包、タイル境界非接触を確認。北側14は棄却履歴保存。",
+  "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+  "sourceEdition": "GSI optimized vector PMTiles 2026-07-01; not XYZ2023-10-01",
+  "crsAndTerms": "PMTiles tile coordinate decoding and XYZ Web Mercator inverse used; product-specific geodetic-datum applicability and terms approval delegated to prefecture parent, unresolved here",
+  "precision": "decimal7 is storage rounding, not survey accuracy",
+  "adoptionApproved": false,
+  "manifestUpdated": false,
+  "remainingReason": "正式採用・製品固有CRS確認は県親担当。担当内の棟対応は未承認候補化に十分と判断。",
+  "historicalInheritance": "scope.json currentPlace/currentRelations/inheritedIndex and history-extract.json consulted; no answered human-queue item repeated",
+  "timingRef": "data/evidence/kanto-prefecture/kanagawa/north/timing.json",
+  "exploratoryProbeRefs": [
+    "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/exploratory-probe-rejected-north.json",
+    "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/exploratory-probe-south.json"
+  ],
+  "performedMethods": [
+    "市現配布HTML・施設見学HTMLを取得し原履歴hashと照合",
+    "現パンフ全2頁目視・2018資料全16頁文字抽出と一覧目視、p2/p3拡大",
+    "GSI PMTiles18タイル取得（東探索9、西探索9）、std9枚と道路・鉄道・隣接棟比較",
+    "CASBEE11041項目本文再抽出、2019開設の市公式・2020視察記録と年代照合",
+    "2026環境省PDF全45頁文字検索、p44/p45（印刷頁43/44）拡大目視、棟名付き航空図を照合",
+    "当初北側262㎡probeを棄却し南側BldA443約2184㎡を追加数値評価。採用候補にしない",
+    "時計回り60度の数値図を生成し2018p3/2026p45と複数棟の相対配置・突出部を目視照合。443を未承認候補化。"
+  ],
+  "chronologyCorrection": {
+    "CASBEE": "11041は入江崎水処理センター西系再構築事業（沈砂地管理棟）、塩浜3-17-2、完了年月令和5年3月、変更届出あり。11044は別の水処理施設。項目取り違えなし。本文は工事完了届出提出物件に完了年月表示と説明している。",
+    "operationalEvidence": "市水処理施設見学ページは2019-04-01ワクワクアクア開設を明記。日本下水道新技術機構の2020-02-18現地視察記録は沈砂池管理棟地下管廊と4F展示を記載。現パンフと2018計画の階構成が対応。",
+    "conclusion": "2023という数値だけで新棟や移転、2018図の失効と判断したのは不適切。供用開始とCASBEE完了年月は異なる判断。完了届の詳細は未取得のため差の行政上理由までは確定しない。"
+  },
+  "identityComparisonRef": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/identity-comparison.json"
+}

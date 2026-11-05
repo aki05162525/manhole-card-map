@@ -1,0 +1,203 @@
+{
+  "coordinate": {
+    "lat": 35.4341379,
+    "lng": 139.4300155
+  },
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "roundedTileXY": [
+    5978.974526554346,
+    7900.999030172825
+  ],
+  "mechanicalChecksPassed": true,
+  "identityApproved": false,
+  "crsApproved": false,
+  "facilityId": "facility:kanto-south-integration-11",
+  "baseTile": {
+    "z": 16,
+    "x": 58149,
+    "y": 25860
+  },
+  "extent": 4096,
+  "pointXY": [
+    5978.954002389486,
+    7901.0
+  ],
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            6135,
+            7579
+          ],
+          [
+            6254,
+            7826
+          ],
+          [
+            6201,
+            7851
+          ],
+          [
+            6212,
+            7872
+          ],
+          [
+            6260,
+            7849
+          ],
+          [
+            6299,
+            7930
+          ],
+          [
+            6256,
+            7951
+          ],
+          [
+            6269,
+            7979
+          ],
+          [
+            6188,
+            8019
+          ],
+          [
+            6216,
+            8076
+          ],
+          [
+            6297,
+            8037
+          ],
+          [
+            6303,
+            8049
+          ],
+          [
+            6349,
+            8026
+          ],
+          [
+            6369,
+            8070
+          ],
+          [
+            6379,
+            8065
+          ],
+          [
+            6440,
+            8192
+          ],
+          [
+            6451,
+            8213
+          ],
+          [
+            6332,
+            8272
+          ],
+          [
+            6245,
+            8272
+          ],
+          [
+            6206,
+            8192
+          ],
+          [
+            6189,
+            8156
+          ],
+          [
+            6151,
+            8175
+          ],
+          [
+            6159,
+            8192
+          ],
+          [
+            6198,
+            8272
+          ],
+          [
+            5858,
+            8272
+          ],
+          [
+            5819,
+            8192
+          ],
+          [
+            5764,
+            8077
+          ],
+          [
+            5759,
+            8079
+          ],
+          [
+            5639,
+            7831
+          ],
+          [
+            5706,
+            7798
+          ],
+          [
+            5699,
+            7784
+          ],
+          [
+            5880,
+            7695
+          ],
+          [
+            5877,
+            7689
+          ],
+          [
+            5980,
+            7639
+          ],
+          [
+            5986,
+            7651
+          ],
+          [
+            6135,
+            7579
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "id": "58150-25861-BldA-78",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 78,
+    "sourceTile": {
+      "z": 16,
+      "x": 58150,
+      "y": 25861
+    },
+    "sourceFeatureIndex": 78,
+    "tileBoundaryTouched": true,
+    "outerBoundaryTouched": false
+  },
+  "validPolygon": true,
+  "areaSquareMetresApprox": 4928.742388716745,
+  "areaMethod": "tile area * local cos(latitude) Mercator metre scale squared",
+  "adoptionApproved": false,
+  "purpose": "文化会館本館の比較専用プローブ。屋外第2駐車場南側の候補ではない。",
+  "candidate": false,
+  "rejection": "配布場所は道路を隔てた屋外駐車場。BldA本館で代用しない。",
+  "areaLimitation": "この外形はタイル断片。面積4928m2は全棟面積ではない。隣接1,2:0との連続は描画確認したが統合面積未計算。"
+}

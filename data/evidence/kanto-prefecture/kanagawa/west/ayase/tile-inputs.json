@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58149,
+        "y": 25860
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58149-25860.pbf.gz",
+      "sha256": "713bd1b3b5a60c02f4d7f56e25da05e3e5d7cee6fa0d441a01ffa7bbc8e8f6c3"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58150,
+        "y": 25860
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58150-25860.pbf.gz",
+      "sha256": "1a5e71a5173d8e2287a9259532b1658edb5b78d578bbada229458cefad38bb05"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58151,
+        "y": 25860
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58151-25860.pbf.gz",
+      "sha256": "10a350f8acbf76b2aa408c3ff70f83b58355f815c2b61876473820d634e3aa43"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58149,
+        "y": 25861
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58149-25861.pbf.gz",
+      "sha256": "cb946554ef4c898da7e22f20d83cf07500568d8d6a9dd007a517c62d9fb8697d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58150,
+        "y": 25861
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58150-25861.pbf.gz",
+      "sha256": "1ec3fa5a0027a20651a1eb7ecd8c89421d2bf9cbaeaa5ae22af4bd40c9cb89ca"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58151,
+        "y": 25861
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58151-25861.pbf.gz",
+      "sha256": "cd80805c9fc99237b03455e2045ced7344fb33e09b8c5553ce99cd8ec775b2f5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58149,
+        "y": 25862
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58149-25862.pbf.gz",
+      "sha256": "632f4ffb4cc2ca80cd12fa0689da5b2be09d0a8922d45a41678fbfb60b1293e4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58150,
+        "y": 25862
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58150-25862.pbf.gz",
+      "sha256": "80191b41f196b7375e88e05419f47d5776186bb96e318e36a724b08aa58ce31d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58151,
+        "y": 25862
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/west/ayase/tile-16-58151-25862.pbf.gz",
+      "sha256": "58efe03462f8f3ae1e4a3324755f09a93c2ab56e1e80089a54d0cd05016414f5"
+    }
+  ],
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles"
+}

@@ -1,0 +1,257 @@
+{
+  "schema": 1,
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=0-126"
+      },
+      "attemptedAt": "2026-11-05T15:26:28.759898+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 0-126/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:28.865271+00:00",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+      "bytes": 127,
+      "elapsedSeconds": 0.105982
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=127-2502"
+      },
+      "attemptedAt": "2026-11-05T15:26:28.865675+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 127-2502/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:28.926412+00:00",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+      "bytes": 2376,
+      "elapsedSeconds": 0.061077
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=2285879-2295712"
+      },
+      "attemptedAt": "2026-11-05T15:26:28.927789+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 2285879-2295712/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:28.991889+00:00",
+      "sha256": "20e436714e0878642091986c81ed04a2b780ac943914fa3cd76f9ebfe4421404",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/20e436714e0878642091986c81ed04a2b780ac943914fa3cd76f9ebfe4421404.raw",
+      "bytes": 9834,
+      "elapsedSeconds": 0.064363
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580436420-10580454573"
+      },
+      "attemptedAt": "2026-11-05T15:26:28.995746+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580436420-10580454573/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.102034+00:00",
+      "sha256": "8be2686e5297b851fd6ef117d08039335465e8e73f17ae4f57a42848a83cf8c7",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/8be2686e5297b851fd6ef117d08039335465e8e73f17ae4f57a42848a83cf8c7.raw",
+      "bytes": 18154,
+      "elapsedSeconds": 0.106555
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580422194-10580436419"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.106563+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580422194-10580436419/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.173265+00:00",
+      "sha256": "23842774eb11629d5465ef591deb70a0172727a1aa0177301593376bcd892479",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/23842774eb11629d5465ef591deb70a0172727a1aa0177301593376bcd892479.raw",
+      "bytes": 14226,
+      "elapsedSeconds": 0.067075
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10524059649-10524072889"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.177698+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10524059649-10524072889/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.236486+00:00",
+      "sha256": "b299dbcb403ee6eb828d88422f1ede81ead6431d39d4877ab9df4354d6e2baca",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/b299dbcb403ee6eb828d88422f1ede81ead6431d39d4877ab9df4354d6e2baca.raw",
+      "bytes": 13241,
+      "elapsedSeconds": 0.059126
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580454574-10580468209"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.241233+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580454574-10580468209/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.314725+00:00",
+      "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379.raw",
+      "bytes": 13636,
+      "elapsedSeconds": 0.073926
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580468210-10580477445"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.320104+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580468210-10580477445/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.397288+00:00",
+      "sha256": "815d857dba2b18817f4e7cf7264aac730fadeecafab0cf89b4d602bfee75cfa8",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/815d857dba2b18817f4e7cf7264aac730fadeecafab0cf89b4d602bfee75cfa8.raw",
+      "bytes": 9236,
+      "elapsedSeconds": 0.077578
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10524022030-10524031155"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.403114+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10524022030-10524031155/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.512652+00:00",
+      "sha256": "e5a0de35f8782b1fcf47a4b1782727b7265ead5b3edf61335ee69f7af1c1bc2c",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/e5a0de35f8782b1fcf47a4b1782727b7265ead5b3edf61335ee69f7af1c1bc2c.raw",
+      "bytes": 9126,
+      "elapsedSeconds": 0.109919
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580482531-10580490745"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.517739+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580482531-10580490745/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.582311+00:00",
+      "sha256": "1a66d5ccd74556e58c0f1be1080730bb4f1c4dc77698f6d3a37e78b4a74c22b9",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/1a66d5ccd74556e58c0f1be1080730bb4f1c4dc77698f6d3a37e78b4a74c22b9.raw",
+      "bytes": 8215,
+      "elapsedSeconds": 0.064884
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10580477446-10580482530"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.586766+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10580477446-10580482530/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.653063+00:00",
+      "sha256": "0fad3d0e42941ee8d45b1cd7c31f5ed31d06e6b9cfac2cb1a71f40ee527ef738",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/0fad3d0e42941ee8d45b1cd7c31f5ed31d06e6b9cfac2cb1a71f40ee527ef738.raw",
+      "bytes": 5085,
+      "elapsedSeconds": 0.066597
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-kanagawa-north-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10524017516-10524022029"
+      },
+      "attemptedAt": "2026-11-05T15:26:29.658021+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10524017516-10524022029/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:26:29.704771+00:00",
+      "sha256": "4b43950d569b355bda128cf5ae5baa0cf46ee5ecf816896e5e4d30f3d117a82e",
+      "rawPath": "data/work/kanto-kanagawa/north/iriezaki-west/range-cache/4b43950d569b355bda128cf5ae5baa0cf46ee5ecf816896e5e4d30f3d117a82e.raw",
+      "bytes": 4514,
+      "elapsedSeconds": 0.047066
+    }
+  ]
+}

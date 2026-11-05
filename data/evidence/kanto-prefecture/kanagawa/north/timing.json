@@ -1,0 +1,46 @@
+{
+  "sessions": [
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "task": "現配布案内と広報施設図・外形調査",
+      "startedAt": "2026-11-05T15:23:14.107340+00:00",
+      "elapsedSeconds": 497.366,
+      "finishedAt": "2026-11-05T15:31:31.472919+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "task": "現配布案内・北口フロア図・GSI外形の照合",
+      "startedAt": "2026-11-05T15:31:31.633456+00:00",
+      "elapsedSeconds": 206.831,
+      "finishedAt": "2026-11-05T15:34:58.464694+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "task": "sagamixの現店舗とショッピングセンター外形照合",
+      "startedAt": "2026-11-05T15:34:58.623103+00:00",
+      "elapsedSeconds": 302.873,
+      "finishedAt": "2026-11-05T15:40:01.496226+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-10",
+      "task": "現配布案内・駅構内図・数値外形の実照合",
+      "startedAt": "2026-11-05T15:40:01.655931+00:00",
+      "elapsedSeconds": 148.825,
+      "finishedAt": "2026-11-05T15:42:30.481118+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "task": "CASBEE対象棟・年代差再読解と探索点分離",
+      "startedAt": "2026-11-05T15:46:54.618559+00:00",
+      "elapsedSeconds": 267.095,
+      "finishedAt": "2026-11-05T15:51:21.713965+00:00"
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "task": "2026航空図と443/444/441の棟対応最終比較",
+      "startedAt": "2026-11-05T15:54:25.968775+00:00",
+      "elapsedSeconds": 169.357,
+      "finishedAt": "2026-11-05T15:57:15.326198+00:00"
+    }
+  ]
+}

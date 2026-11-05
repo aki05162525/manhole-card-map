@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-integration-10",
+  "name": "三浦海岸駅前観光案内所",
+  "asOf": "2026-11-05",
+  "sourceInterpretation": "independently retrieved original reading plus explicitly identified inference; no user report used",
+  "sourceRefs": [
+    {
+      "key": "miura-card.html",
+      "url": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+      "sha256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:40:01.968366+00:00",
+      "attemptedAt": "2026-11-05T15:40:01.834994+00:00"
+    },
+    {
+      "key": "miura-tourism.html",
+      "url": "https://miura-info.ne.jp/tourismassociation/",
+      "sha256": "14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/14a08fb6162a2fb8b09ee7822ce751c2a350b8f411a1e4dd6f03e740c0ba69a4.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:40:02.525243+00:00",
+      "attemptedAt": "2026-11-05T15:40:02.067663+00:00"
+    },
+    {
+      "key": "miura-photo.jpg",
+      "url": "https://www.miura-info.ne.jp/wp-content/uploads/2024/09/ekimae_-840x476-1.jpg",
+      "sha256": "7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/7d8b57d4bdd19ff5fad79ff7225f907d50ee8087e133932051ed867438644e20.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:40:24.509513+00:00",
+      "attemptedAt": "2026-11-05T15:40:24.153778+00:00"
+    },
+    {
+      "key": "miura-barrier.html",
+      "url": "https://www.city.miura.kanagawa.jp/soshiki/seisakuka/seisakuka_seisaku/barrierfreemap/shisetsuzyouhouitiran/2794.html",
+      "sha256": "02e0ca5ce04c99c56aafba13fa756f99fb94cda0f82ca8285d0d70a96fd84542",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/02e0ca5ce04c99c56aafba13fa756f99fb94cda0f82ca8285d0d70a96fd84542.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:40:24.873149+00:00",
+      "attemptedAt": "2026-11-05T15:40:24.660783+00:00"
+    },
+    {
+      "key": "miura-city-photo.jpg",
+      "url": "https://www.city.miura.kanagawa.jp/material/images/group/5/012233_000001.jpg",
+      "sha256": "7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/7ce00320a42a6f9b0765cce15abb78886afe58dacb4f07bd2f578d283a1caa18.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:41:32.547880+00:00",
+      "attemptedAt": "2026-11-05T15:41:32.424655+00:00"
+    },
+    {
+      "key": "miura-passage.pdf",
+      "url": "https://www.city.miura.kanagawa.jp/material/files/group/5/012594_000001.pdf",
+      "sha256": "7dbfd900ab41da8f8f50df5e8a48b3a02ed98b1a6231e593ef126c0c68fe540d",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/7dbfd900ab41da8f8f50df5e8a48b3a02ed98b1a6231e593ef126c0c68fe540d.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:41:32.863715+00:00",
+      "attemptedAt": "2026-11-05T15:41:32.712868+00:00"
+    },
+    {
+      "key": "miura-open.html",
+      "url": "https://miura-info.ne.jp/%E4%B8%89%E6%B5%A6%E6%B5%B7%E5%B2%B8%E9%A7%85%E5%89%8D%E8%A6%B3%E5%85%89%E6%A1%88%E5%86%85%E6%89%80%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%EF%BC%81/",
+      "sha256": "612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/612ad5a698e892923a40f54eb7b906aaafb9b4e19827a34af3b35f1cffbefef9.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:41:50.161794+00:00",
+      "attemptedAt": "2026-11-05T15:41:49.637125+00:00"
+    },
+    {
+      "key": "miura-station.html",
+      "url": "https://www.keikyu.co.jp/ride/kakueki/KK71.html",
+      "status": "failed",
+      "attemptedAt": "2026-11-05T15:40:02.681734+00:00"
+    },
+    {
+      "key": "miura-plan.png",
+      "url": "https://www.keikyu.co.jp/ride/kakueki/img/KK71_im01.png",
+      "status": "failed",
+      "attemptedAt": "2026-11-05T15:41:16.925566+00:00"
+    }
+  ],
+  "distributionLifecycleStock": "市配布表の三浦海岸駅構内改札前と観光協会の上宮田1497・改札外を確認。海岸1450-4の観光インフォメーションセンターとは別。観光協会は季節時間を案内。市カード案内年末休業12/28〜1/3と2024開設記事12/29〜1/3に差があるため上書きしない。在庫断定なし。",
+  "originalReading": "2024-08-31開設記事は9/1観光案内所、9/5オープントップバス案内所開設。現公式写真全体では高架下の独立黒色区画と前面デッキを確認。市駅写真全体と通路PDF全1頁も視読。京急駅ページと構内図原本は403、検索ツールの駅本文閲覧は可能だが構内図画素原本未取得。各写真に北矢印なく撮影方向確定せず。",
+  "numericComparison": "9タイルの駅周囲を描画しBldA124/134の細長いホーム屋根と東側169/170の大きな商業棟を比較。高架下案内所の部屋外形は分離して同定できなかった。高架上ホーム全体の代表点や隣の商業棟を代用しない。外形未収録と断定せず、収録外形との対応未解決と記録。",
+  "numericRef": null,
+  "sourceEdition": "GSI optimized vector PMTiles 2026-07-01; not XYZ2023-10-01",
+  "crsAndTerms": "PMTiles tile coordinate decoding and XYZ Web Mercator inverse used; product-specific geodetic-datum applicability and terms approval delegated to prefecture parent, unresolved here",
+  "precision": "decimal7 is storage rounding, not survey accuracy",
+  "adoptionApproved": false,
+  "manifestUpdated": false,
+  "remainingReason": "高架下案内所区画と数値外形の位置対応未解決。京急構内図取得403。",
+  "historicalInheritance": "scope.json currentPlace/currentRelations/inheritedIndex and history-extract.json consulted; no answered human-queue item repeated",
+  "timingRef": "data/evidence/kanto-prefecture/kanagawa/north/timing.json"
+}

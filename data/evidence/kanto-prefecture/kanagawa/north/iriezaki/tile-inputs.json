@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58207,
+        "y": 25840
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58207-25840.pbf.gz",
+      "sha256": "acb3b7482af401624cb6c07ec3c83eeabd6b789727426bfd168640e7f5a199f7"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58208,
+        "y": 25840
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58208-25840.pbf.gz",
+      "sha256": "982a40c3b141040047942a8c162666522c38cc0f250109008768b8ba0e1a6bd5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58209,
+        "y": 25840
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58209-25840.pbf.gz",
+      "sha256": "41c5df3076d91ffb9d5fea7f63bbff1f1afd3cb95f972a0a530ac7893480336c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58207,
+        "y": 25841
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58207-25841.pbf.gz",
+      "sha256": "23842774eb11629d5465ef591deb70a0172727a1aa0177301593376bcd892479"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58208,
+        "y": 25841
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58208-25841.pbf.gz",
+      "sha256": "b299dbcb403ee6eb828d88422f1ede81ead6431d39d4877ab9df4354d6e2baca"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58209,
+        "y": 25841
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58209-25841.pbf.gz",
+      "sha256": "07f78d95df8e7b037912f935ba2bd68fac8028cff4865979f1aa3889a77ae672"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58207,
+        "y": 25842
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58207-25842.pbf.gz",
+      "sha256": "815d857dba2b18817f4e7cf7264aac730fadeecafab0cf89b4d602bfee75cfa8"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58208,
+        "y": 25842
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58208-25842.pbf.gz",
+      "sha256": "e5a0de35f8782b1fcf47a4b1782727b7265ead5b3edf61335ee69f7af1c1bc2c"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58209,
+        "y": 25842
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki/tile-16-58209-25842.pbf.gz",
+      "sha256": "cc83cb242b3c8f7d8fd45af58f638ea65bc60e35330368745cd839a4cc07e912"
+    }
+  ],
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles"
+}

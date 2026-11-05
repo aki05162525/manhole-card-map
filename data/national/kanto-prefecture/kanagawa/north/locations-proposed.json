@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "coordinate": {
+        "lat": 35.5320363,
+        "lng": 139.6982029
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json",
+        "snapshotSHA256": "35a17e45419e255950062005ca794c332be002a30719fc61ec1ef5c2041b06bc",
+        "sourceLocator": "PMTiles BldA; data/evidence/kanto-prefecture/kanagawa/north/kita/observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。公式棟図と9タイル比較、元点/小数7桁丸め後内包。製品固有CRSと独立同定の承認前。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "coordinate": {
+        "lat": 35.5311698,
+        "lng": 139.4350792
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+        "snapshotSHA256": "1ac6b373188d708c7248d7d62f94fc3bd81297c842165003c09ce8dfd80f9321",
+        "sourceLocator": "PMTiles BldA; data/evidence/kanto-prefecture/kanagawa/north/sagamix/observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。公式棟図と9タイル比較、元点/小数7桁丸め後内包。製品固有CRSと独立同定の承認前。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "coordinate": {
+        "lat": 35.519306,
+        "lng": 139.7395574
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+        "snapshotSHA256": "eb0c9c1c9dc1edcee5121486a3379769835483caef5448bb555054a0ed310465",
+        "sourceLocator": "PMTiles z16/58206/25842 BldA443。2018市計画p3/2026環境省PDFp45を60度表示回転の数値図で照合。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認候補。主棟443内部代表点のXYZ逆投影と小数7桁丸め内包。上端突出・付属444・ポンプ432・L字447・道路向かい西系3/4を照合。製品固有CRS・独立採用承認前。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json",
+      "numericSHA256": "5435e7f4f43fec017edb536b5be1ab65f75d7846dd028353c486ccafbeee0eb1",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58140,
+          "y": 25831
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+        "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.5717352,
+          "lng": 139.3726981
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4200.023399531841,
+          4750.009800225496
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.615051+00:00",
+      "elapsedSeconds": 0.1123,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-point.json",
+      "numericSHA256": "710b83c791f92a5baa33e38e78801b17b33e2651adc4b4311e6e968fca4139bd",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58191,
+          "y": 25895
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-16-58191-25895.pbf.gz",
+        "sha256": "a4f48f2a7687459be5ba982e8d903c786b0aba727a18ff1115f2dae349d64dd4"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.2844707,
+          "lng": 139.6572924
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7512.914220333099,
+          5479.0279541015625
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.727350+00:00",
+      "elapsedSeconds": 0.008248,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-point.json",
+      "numericSHA256": "a6300bc59846d9363c4b4960937ef1f7ed704ca80c4b465033469f0044adff78",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58185,
+          "y": 25926
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+        "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.1446872,
+          "lng": 139.6208024
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4879.998138606548,
+          6080.033562272787
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.735600+00:00",
+      "elapsedSeconds": 0.010248,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+      "numericSHA256": "eb0c9c1c9dc1edcee5121486a3379769835483caef5448bb555054a0ed310465",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58206,
+          "y": 25842
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/tile-16-58206-25842.pbf.gz",
+        "sha256": "ec64672ba27d33187a52e1704bf48a22e02b42e4395f9a9b979d92b045be7379"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.519306,
+          "lng": 139.7395574
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          3318.1441865563393,
+          7741.524455547333
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.745851+00:00",
+      "elapsedSeconds": 0.005273,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json",
+      "numericSHA256": "35a17e45419e255950062005ca794c332be002a30719fc61ec1ef5c2041b06bc",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58199,
+          "y": 25840
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/north/kita/tile-16-58199-25840.pbf.gz",
+        "sha256": "ea03fc831afcd4c0ddc8eac7ce71c24895168098939245e6a4669e277b099f85"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.5320363,
+          "lng": 139.6982029
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5249.99400562048,
+          4270.025739341974
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.751126+00:00",
+      "elapsedSeconds": 0.005844,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+      "numericSHA256": "1ac6b373188d708c7248d7d62f94fc3bd81297c842165003c09ce8dfd80f9321",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58151,
+          "y": 25840
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/tile-16-58151-25840.pbf.gz",
+        "sha256": "34fc46655a246369ce6dc0aeb166c93d67b92f2ee6dc71dee5a7bc4a31e8b1f9"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.5311698,
+          "lng": 139.4350792
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5658.742911458015,
+          5063.971581339836
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.756970+00:00",
+      "elapsedSeconds": 0.00849,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/numeric.json",
+      "numericSHA256": "912dcd2ce0c162e80b402e74a442e10d167daf56fbc9a565a7b9aebc1ebdf446",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58138,
+          "y": 25878
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/tile-16-58138-25878.pbf.gz",
+        "sha256": "9cb6acde57956f0bc11061239ad6a567b9761fa22f4ad8cf3fe813d953ca2261"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.3596009,
+          "lng": 139.3619751
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4396.375080943108,
+          6450.535365611315
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.765464+00:00",
+      "elapsedSeconds": 0.004204,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json",
+      "numericSHA256": "152862848339d17e0281438882f6e9afc2f928492595f34de1552d19f1bb52ee",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58116,
+          "y": 25877
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/tile-16-58116-25877.pbf.gz",
+        "sha256": "ff8d48bb717bb3ab571dadaa13b6d35137da148a2c88e6fe97d4eef9533252a5"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.3648249,
+          "lng": 139.2430079
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5800.001244723797,
+          5770.017167106271
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.769671+00:00",
+      "elapsedSeconds": 0.003681,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "numericRef": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+      "numericSHA256": "60f635a6f1bca5496bbdebddfb977d48caf26874703ec3482171f9b585ab210b",
+      "tileRef": {
+        "tile": {
+          "z": 16,
+          "x": 58126,
+          "y": 25872
+        },
+        "path": "data/evidence/kanto-prefecture/kanagawa/west/isehara/tile-16-58126-25872.pbf.gz",
+        "sha256": "cfdf0da3811253dbdfa250748c84c9fe75e9d162492e9ad2493f35f982cb669f"
+      },
+      "rawGeometryMatches": true,
+      "calculation": {
+        "coordinate": {
+          "lat": 35.3872848,
+          "lng": 139.2971013
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5174.963732481003,
+          5710.483934700489
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "startedAt": "2026-11-05T15:57:48.773353+00:00",
+      "elapsedSeconds": 0.002372,
+      "scope": "県親のhash/原タイル再decode/座標/内包再計算。原本同定の独立レビュー承認ではない。"
+    }
+  ]
+}

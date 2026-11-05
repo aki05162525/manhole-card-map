@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+  "name": "sagamix",
+  "asOf": "2026-11-05",
+  "sourceInterpretation": "independently retrieved original reading plus explicitly identified inference; no user report used",
+  "sourceRefs": [
+    {
+      "key": "sagami-card.html",
+      "url": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+      "sha256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:00.024979+00:00",
+      "attemptedAt": "2026-11-05T15:34:58.789343+00:00"
+    },
+    {
+      "key": "bono2.html",
+      "url": "https://bono-sagamiono.jp/floorguide/?area=type1&floor=2f",
+      "sha256": "12afc12e946191506897b3ad383815415b07a9c161edf49c0631b439348aca55",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/12afc12e946191506897b3ad383815415b07a9c161edf49c0631b439348aca55.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:26.064755+00:00",
+      "attemptedAt": "2026-11-05T15:35:25.842703+00:00"
+    },
+    {
+      "key": "bono2-map.jpg",
+      "url": "https://bono-sagamiono.jp/uploads/images/resized/1012x0/bono/000002/000002/c394745b.jpg",
+      "sha256": "ca33171803b2338c9f7d1c35ce985254b77bd37ed217f059f233cf9e6afba1ef",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/ca33171803b2338c9f7d1c35ce985254b77bd37ed217f059f233cf9e6afba1ef.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:36.000718+00:00",
+      "attemptedAt": "2026-11-05T15:35:35.927448+00:00"
+    },
+    {
+      "key": "bono-access.html",
+      "url": "https://bono-sagamiono.jp/access/",
+      "sha256": "3be9628fe10e99782054c9cd89bce80ba840a3218aedcf4da74b767679639811",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/3be9628fe10e99782054c9cd89bce80ba840a3218aedcf4da74b767679639811.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:26.401261+00:00",
+      "attemptedAt": "2026-11-05T15:35:26.232367+00:00"
+    },
+    {
+      "key": "bono-access-map.png",
+      "url": "https://bono-sagamiono.jp/assets/images/access/img01.png",
+      "sha256": "322aac52bd931bbb7b4a2ee2412b853e77dd5b7447a8e4894decd2ad4ffcefae",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/322aac52bd931bbb7b4a2ee2412b853e77dd5b7447a8e4894decd2ad4ffcefae.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:36.236736+00:00",
+      "attemptedAt": "2026-11-05T15:35:36.162425+00:00"
+    },
+    {
+      "key": "sagamix.html",
+      "url": "https://bono-sagamiono.jp/floorguide/detail/?scd=000138",
+      "sha256": "5ee8c3dbff0fb77364e4c490664ccad681be2705ee3c8135f1daec9879b3b2d1",
+      "rawPath": "data/work/kanto-kanagawa/north/cache/5ee8c3dbff0fb77364e4c490664ccad681be2705ee3c8135f1daec9879b3b2d1.raw",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:35:36.652045+00:00",
+      "attemptedAt": "2026-11-05T15:35:36.406871+00:00"
+    }
+  ],
+  "distributionLifecycleStock": "相模原D001配布先sagamixを市案内と店舗公式で確認。ボーノSC2F、10時〜21時。表示在庫ありは取得原文の状態で現場確認ではない。",
+  "originalReading": "現SC2Fフロア図全体のMAP24と店舗詳細を読解。アクセス図全体に北矢印あり。SCは駐車場東、北モール西、南モール北、相模大野駅南西。行幸道路とボーノ入口交差点はNW、ボーノウォークは南。旧Google POIの3-1-2を棄却し現店舗図を採用。最初の?c=2は1Fへ戻るため正しいarea=type1&floor=2fを再取得した。",
+  "numericComparison": "BldA147がSC主体、148は駐車場、151は北モール側、152/153は南側。6172㎡のSC主体の内部代表点を選ぶ。北矢印と道路/隣接棟配置が対応。フロア図の正確な発行日は不明で2026年12月OPEN予告が見える。",
+  "numericRef": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+  "sourceEdition": "GSI optimized vector PMTiles 2026-07-01; not XYZ2023-10-01",
+  "crsAndTerms": "PMTiles tile coordinate decoding and XYZ Web Mercator inverse used; product-specific geodetic-datum applicability and terms approval delegated to prefecture parent, unresolved here",
+  "precision": "decimal7 is storage rounding, not survey accuracy",
+  "adoptionApproved": false,
+  "manifestUpdated": false,
+  "remainingReason": "製品固有CRSと独立建物同定の承認が未了。",
+  "historicalInheritance": "scope.json currentPlace/currentRelations/inheritedIndex and history-extract.json consulted; no answered human-queue item repeated",
+  "timingRef": "data/evidence/kanto-prefecture/kanagawa/north/timing.json"
+}

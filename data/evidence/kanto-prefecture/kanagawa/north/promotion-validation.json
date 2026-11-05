@@ -1,0 +1,23 @@
+{
+  "exitCode": 0,
+  "log": "PASS: 3 candidate locations/outcomes/selection coordinates and hashes; 4 performedMethods; rejected northern probe differs from new southern candidate",
+  "inputHashes": [
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/outcomes.json",
+      "sha256": "d6772b8c6c5de36e14557c2f356169a3fef5f052d6afc7b04d5cff8e7c0aeb1c"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/locations-proposed.json",
+      "sha256": "8954c67cd34af3b27ed4c78b4c49a08a482164c793c7a16af451ec7c41f8a492"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/selection-proposed.json",
+      "sha256": "2373d3d4f06d2e57cd6a841c98dfbd14d0c2a815250f0625d2b6476f72e88c92"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/identity-comparison.json",
+      "sha256": "7649bfc1d3e64d3435d8b12bfead247482d7b263afb7595a2999387502fb329f"
+    }
+  ],
+  "independentAdoptionApproval": false
+}

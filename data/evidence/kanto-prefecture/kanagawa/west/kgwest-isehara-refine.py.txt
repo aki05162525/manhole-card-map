@@ -1,0 +1,18 @@
+import json,hashlib,sys
+from pathlib import Path
+sys.path.insert(0,str(Path.cwd()/'tools/national'))
+from research_common import validate_observation
+E=Path('data/evidence/kanto-prefecture/kanagawa/west');N=Path('data/national/kanto-prefecture/kanagawa/west');fid='facility:kanto-south-ee83b23f6b285cc3df5a'
+def save(p,d):p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+p=E/'isehara/user-followup.json';r=json.load(open(p));r['interimDecision']=r['decision'];r['alternativeBuildingComparison']=[{'feature':'BldA37','observation':'記名された横長棟。南側東寄りの張出、北に小棟32、西に長棟33、東側道路の曲折が位置図と一致。'},{'feature':'BldA33','observation':'37の西側の縦長棟。長軸が37とほぼ直交し、記名棟の形と不一致。'},{'feature':'BldA32','observation':'37の北側小棟。面積は37の約14%。位置図でも記名棟北側の別小棟。'},{'feature':'BldA27','observation':'さらに西のほぼ正方形棟。縦横比約1.16、記名棟37の約2.38と不一致。'}];r['decision']='敷地全体の北西/北東という相対呼称は未解消として採用根拠から除く。位置図の棟内記名と配布本文・形状/隣接/道路対応は直接評価でき、同等に一致する別棟を確認しなかったため、BldA37の未承認候補を維持。';r['nextAction']='県親と独立レビューが記名棟BldA37の同定・CRS・条件を判定。敷地北東/北西の断定はしない。新質問なし。';save(p,r)
+p=E/'isehara/observation.json';o=json.load(open(p));o['buildingIdentity']['status']='confirmed';o['buildingIdentity']['evidence']=[o['buildingIdentity']['evidence'][0],r['decision']]+[x['feature']+': '+x['observation'] for x in r['alternativeBuildingComparison']];o['humanQuestionHistory']['followup']='利用者回答の北西/旧担当北東は未確定。記名棟の直接比較は別に評価し未承認候補を維持、新質問なし。';o['adoptionDisposition']='candidate_pending_review_with_unresolved_site_direction_wording';validate_observation(o);save(p,o)
+p=N/'outcomes.json';out=json.load(open(p))
+for x in out['facilities']:
+ if x['facilityId']==fid:x.update(status='candidate_pending_review',remainingReason='棟内記名と形状/隣接/道路によりBldA37を未承認候補として維持。利用者の敷地北西端と旧担当の北東推論は未解消のため両方位呼称を採用根拠から除外。独立レビュー/製品CRS・条件未承認。',nextAction=r['nextAction'],selectionEligible=True)
+save(p,out)
+h=json.load(open(N/'isehara-held-proposal.json'));h['superseded']=True;h['finalDisposition']=r['decision'];save(E/'isehara/interim-held-proposal.json',h);(N/'isehara-held-proposal.json').unlink()
+p=N/'locations-proposed.json';loc=json.load(open(p));loc['updates']+=h['updates'];save(p,loc)
+p=N/'lifecycle-proposed.json';life=json.load(open(p));life['bindings']+=h['bindings'];save(p,life)
+p=N/'selection-proposed.json';s=json.load(open(p));s['locations']['approved'].append({'facilityId':fid,'sha256':h['bindings'][0]['adoptionSHA256']});s['locationLifecycle']['sha256']=hashlib.sha256((N/'lifecycle-proposed.json').read_bytes()).hexdigest();s['reason']='未承認提案。approved配列は選択schemaの案で承認実施ではない。共有manifest編集なし。伊勢原は記名棟形状の直接比較で候補維持、未解消の敷地方位呼称は根拠から除外。';save(p,s)
+assert len(loc['updates'])==len(life['bindings'])==len(s['locations']['approved'])==3
+print('Compared alternatives 27/32/33/37; labeled BldA37 retained as unapproved candidate; whole-site direction claims excluded')

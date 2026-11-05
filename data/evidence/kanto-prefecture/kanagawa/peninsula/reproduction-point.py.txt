@@ -1,0 +1,6 @@
+import sys,json,math,hashlib
+from shapely.geometry import shape
+sys.path.insert(0,'/tmp');from peninsula_tools import E,W,save
+sys.path.insert(0,'tools/national');from research_common import rounded_coordinate
+key,fid,index=sys.argv[1],sys.argv[2],sys.argv[3];c=json.load(open(W/(key+'-combined.json')));f=next(f for f in c['features'] if f['id']==index);g=shape(f['geometry']);p=g.representative_point();r=rounded_coordinate(f['geometry'],c['baseTile'],[p.x,p.y]);s=math.cos(math.radians(r['coordinate']['lat']))*2*math.pi*6378137/(2**16*4096)
+r.update({'facilityId':fid,'sourceFeature':f,'baseTile':c['baseTile'],'pointXY':[p.x,p.y],'extent':4096,'pointMethod':'shapely representative_point; no geocoding','areaSquareMetresApprox':g.area*s*s,'areaMethod':'tile area * local Mercator cosine scale squared; not survey area','geometryValid':g.is_valid,'adoptionApproved':False});save(key+'-point.json',r);print(r['coordinate'],r['areaSquareMetresApprox'],r['mechanicalChecksPassed'],f['tileBoundaryTouched'],f['outerBoundaryTouched'])

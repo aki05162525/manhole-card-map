@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "approvedForIntegration": false,
+  "reason": "未承認提案。approved配列は選択schemaの案で承認実施ではない。共有manifest編集なし。伊勢原は記名棟形状の直接比較で候補維持、未解消の敷地方位呼称は根拠から除外。",
+  "locations": {
+    "path": "data/national/kanto-prefecture/kanagawa/west/locations-proposed.json",
+    "approved": [
+      {
+        "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+        "sha256": "841a8fb0b80e96df2c235bf99f111378cb3459493cdb67ee41b11c38ee509b17"
+      },
+      {
+        "facilityId": "facility:kanto-south-36fae9051046490c8149",
+        "sha256": "b52c6687b6e8635f025ee6b9f0ffd4a26562840e2028b349c0e8ab03e931e1e8"
+      },
+      {
+        "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "sha256": "9eb7901e29979b8933f77661c251dd2a352c55122e92196e76c48d519c39a0af"
+      }
+    ]
+  },
+  "locationLifecycle": {
+    "path": "data/national/kanto-prefecture/kanagawa/west/lifecycle-proposed.json",
+    "sha256": "8c79d18c3e6ce2750dcb110c31d8fdf2eea8babb9e2381a9de01775af3e6ace2"
+  }
+}

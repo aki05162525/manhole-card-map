@@ -1,0 +1,247 @@
+{
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=0-126"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.246580+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 0-126/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "cached",
+      "fetchedAt": "2026-11-05T15:25:17.295377+00:00",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+      "bytes": 127,
+      "reusedAt": "2026-11-05T15:27:50.266319+00:00"
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=127-2502"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.295867+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 127-2502/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "cached",
+      "fetchedAt": "2026-11-05T15:25:17.345019+00:00",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+      "bytes": 2376,
+      "reusedAt": "2026-11-05T15:27:50.266831+00:00"
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=2206942-2215967"
+      },
+      "attemptedAt": "2026-11-05T15:25:17.346282+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 2206942-2215967/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "cached",
+      "fetchedAt": "2026-11-05T15:25:17.392245+00:00",
+      "sha256": "35423245ed20b2cb57a78c996743a195f80153e00c07cb5eac1b26ce4e594078",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/35423245ed20b2cb57a78c996743a195f80153e00c07cb5eac1b26ce4e594078.raw",
+      "bytes": 9026,
+      "reusedAt": "2026-11-05T15:27:50.268876+00:00"
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336785099-10336812882"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.278385+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336785099-10336812882/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.438333+00:00",
+      "sha256": "1941689598e6f1c7031adcd7ecdac737eb214ec29c4a3c2f2e66e0203d0f3e84",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/1941689598e6f1c7031adcd7ecdac737eb214ec29c4a3c2f2e66e0203d0f3e84.raw",
+      "bytes": 27784
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336554468-10336581494"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.464824+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336554468-10336581494/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.564573+00:00",
+      "sha256": "50d665ad7964981ed4469e49827df89dac97e036949860864ea94b126e6d22b6",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/50d665ad7964981ed4469e49827df89dac97e036949860864ea94b126e6d22b6.raw",
+      "bytes": 27027
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336528645-10336554467"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.580906+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336528645-10336554467/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.671798+00:00",
+      "sha256": "129a402692b66f92763127ed77c4dd1ede8ce24e1e9b606e6be3d5b234de6c4f",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/129a402692b66f92763127ed77c4dd1ede8ce24e1e9b606e6be3d5b234de6c4f.raw",
+      "bytes": 25823
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336754275-10336785098"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.690432+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336754275-10336785098/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.765009+00:00",
+      "sha256": "9c482d9a5ac9de7c2135cffd82417489a9c1a9a1336021b21532eb21be8482dd",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/9c482d9a5ac9de7c2135cffd82417489a9c1a9a1336021b21532eb21be8482dd.raw",
+      "bytes": 30824
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336581495-10336609099"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.788460+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336581495-10336609099/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.845413+00:00",
+      "sha256": "ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/ca7bf20d53ddeba9e6ac88e9cdcb01739c3e4aff715a4a03f8819eef3637a67b.raw",
+      "bytes": 27605
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336497851-10336528644"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.863751+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336497851-10336528644/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:50.921507+00:00",
+      "sha256": "f32f38e8c58f7d4ce5b3973d450293fd9e788cdbaa884f9e2a323b8d2dc044f2",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/f32f38e8c58f7d4ce5b3973d450293fd9e788cdbaa884f9e2a323b8d2dc044f2.raw",
+      "bytes": 30794
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336730178-10336754274"
+      },
+      "attemptedAt": "2026-11-05T15:27:50.942678+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336730178-10336754274/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:51.038045+00:00",
+      "sha256": "ecc0c2f0a79a47b854a59c204d1a2246c3b5d35765efe8f60884f925e9766659",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/ecc0c2f0a79a47b854a59c204d1a2246c3b5d35765efe8f60884f925e9766659.raw",
+      "bytes": 24097
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336609100-10336630018"
+      },
+      "attemptedAt": "2026-11-05T15:27:51.053127+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336609100-10336630018/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:51.201333+00:00",
+      "sha256": "a0c55595a3e248bc1d466fc661bebaf4adf8d67a1053d584392eaba4d74d90a4",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/a0c55595a3e248bc1d466fc661bebaf4adf8d67a1053d584392eaba4d74d90a4.raw",
+      "bytes": 20919
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "issue62-peninsula-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10336630019-10336659160"
+      },
+      "attemptedAt": "2026-11-05T15:27:51.214650+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10336630019-10336659160/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T15:27:51.273049+00:00",
+      "sha256": "d9188760660d50706a5b0f9624d9674740b3b4a619c5fe8b4e564db3ba66b678",
+      "rawPath": "data/work/kanto-kanagawa/peninsula/range-cache/d9188760660d50706a5b0f9624d9674740b3b4a619c5fe8b4e564db3ba66b678.raw",
+      "bytes": 29142
+    }
+  ]
+}

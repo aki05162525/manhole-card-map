@@ -1,0 +1,110 @@
+{
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58184,
+        "y": 25925
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25925.pbf.gz",
+      "sha256": "305bd85da7d17d0b7f96fd17d77ac799079784e8b808f443d998a52894c647ce"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58185,
+        "y": 25925
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25925.pbf.gz",
+      "sha256": "7d74af75f4f97b5b5fb063289b1d4fb21066c14922fa5758e286b63843e9e3d1"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58186,
+        "y": 25925
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25925.pbf.gz",
+      "sha256": "c0cd5d060acd56a178bff491b4735849022f024880fc813a148a1729e5708fff"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58184,
+        "y": 25926
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25926.pbf.gz",
+      "sha256": "7ac8fc22c9dd97e17ee68cdf4a897ba8d0837611b856af434188a595d3dc4685"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58185,
+        "y": 25926
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25926.pbf.gz",
+      "sha256": "d751dc8810a98b2d9fdc4227527a4ce6a893b4fdd0783701f181c9e93beebdf5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58186,
+        "y": 25926
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25926.pbf.gz",
+      "sha256": "aeff672cc1b8e1c7bd7836015c8e5eab7dec1c15b77ee46444124480b6030a8f"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58184,
+        "y": 25927
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58184-25927.pbf.gz",
+      "sha256": "f1d4e934a56102e9c87d6fb84d8bf51155bf96d6a32fae084f96e5bd6167ad64"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58185,
+        "y": 25927
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58185-25927.pbf.gz",
+      "sha256": "a3700e3776a635fc3c819d0a55e8fa211284e09fa5667fad9d1db7aacb833cdf"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58186,
+        "y": 25927
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-16-58186-25927.pbf.gz",
+      "sha256": "a416b64397021eafbc5cd5385c620c4252619cab0593895c27414b0e3d95fe69"
+    }
+  ],
+  "searchSeedOnly": [
+    35.1444,
+    139.6207
+  ],
+  "seedNotAdopted": true,
+  "sourceEdition": "PMTiles 2026-07-01 per product README; feature survey dates unknown",
+  "baseTile": {
+    "z": 16,
+    "x": 58184,
+    "y": 25925
+  },
+  "bounds": [
+    0,
+    0,
+    12288,
+    12288
+  ],
+  "allFeatureCount": 8318,
+  "processing": "research_common decode/combine/render; mapbox-vector-tile 2.2.0 y_coord_down=True; BldA/RdCL/Cstline all geometries",
+  "identityApproved": false
+}

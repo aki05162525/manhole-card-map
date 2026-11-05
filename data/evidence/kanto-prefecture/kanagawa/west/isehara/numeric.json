@@ -1,0 +1,75 @@
+{
+  "coordinate": {
+    "lat": 35.3872848,
+    "lng": 139.2971013
+  },
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "roundedTileXY": [
+    5174.963732481003,
+    5710.483934700489
+  ],
+  "mechanicalChecksPassed": true,
+  "identityApproved": false,
+  "crsApproved": false,
+  "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+  "baseTile": {
+    "z": 16,
+    "x": 58125,
+    "y": 25871
+  },
+  "extent": 4096,
+  "pointXY": [
+    5175.0,
+    5710.5
+  ],
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5347,
+            5525
+          ],
+          [
+            5427,
+            5704
+          ],
+          [
+            5003,
+            5896
+          ],
+          [
+            4923,
+            5717
+          ],
+          [
+            5347,
+            5525
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": "58126-25872-BldA-37",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 37,
+    "sourceTile": {
+      "z": 16,
+      "x": 58126,
+      "y": 25872
+    },
+    "sourceFeatureIndex": 37,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "validPolygon": true,
+  "areaSquareMetresApprox": 1351.8156038516208,
+  "areaMethod": "tile area * local cos(latitude) Mercator metre scale squared",
+  "adoptionApproved": false
+}
