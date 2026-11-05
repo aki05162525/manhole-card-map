@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "reviewer": "Gemini 4 Argon",
+  "providerInstanceId": "antigravity",
+  "reviewedAt": "2026-11-05",
+  "scope": "8IDの一次資料と限定調査PR、原本、集合、非採用、検証",
+  "result": "conditional-approval",
+  "majorFindings": [
+    {
+      "finding": "西ノ島wi-fi/AEDの公開日を最終更新日と誤記",
+      "response": "取得HTMLの表を再確認。公開日と最終更新日2022-06-15を分離しoutcomes/文書を訂正。竣工前との誤った推論を除去。",
+      "status": "fixed-by-implementation-agent"
+    }
+  ],
+  "minorFindings": [
+    {
+      "finding": "27出典のうち中継ページ7件は行のsourceIdsから直接参照なし",
+      "response": "文書で探索中継ページを含む取得ログと明記。",
+      "status": "clarified"
+    }
+  ],
+  "validation": "レビュアーがverify.py通常/--rawとも成功、原本の図/PDFを独立確認。",
+  "limitations": "修正後の再レビューなし。数値外形照合は未実施。採用0。",
+  "reviewConclusion": "記述修正をすれば限定調査PRとして妥当。"
+}

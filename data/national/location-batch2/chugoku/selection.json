@@ -1,0 +1,2641 @@
+{
+  "schema": 1,
+  "region": "chugoku",
+  "issue": 41,
+  "selectedAt": "2026-11-05T11:24:14.253784+00:00",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "summary": {
+    "snapshotPopulation": 47,
+    "alreadyAdopted": 1,
+    "remaining": 46,
+    "selected": 8
+  },
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/work/location-batch2/chugoku/before.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:cs-7851aeb9671340371a",
+      "automaticRank": 34,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-501-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-501-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/17"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "旧住所と駅内窓口の誤誘導を優先。町の駅改修・観光案内所移転資料からカード窓口への接続を調べる。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "(一社)津和野町観光協会",
+      "address": "島根県鹿足郡津和野町後田イ71-2",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "追加取得した津和野駅公式記事はイ66-1の駅舎内切符簡易販売窓口を明示。台帳イ71-2との履歴とカード窓口の対応は未確定。P05にも協会個別点なし。",
+      "newMethod": "旧住所と駅内窓口の誤誘導を優先。町の駅改修・観光案内所移転資料からカード窓口への接続を調べる。"
+    },
+    {
+      "facilityId": "facility:cs-8d0cee31bd1bcec521",
+      "automaticRank": 35,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-202-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-202-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/23"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "公園企画課点との競合を優先。湖水ホールの館内図・公園配置図で独立に建物を同定する。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "ときわ湖水ホール受付窓口",
+      "address": "山口県宇部市大字沖宇部254",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "新規県福祉マップ7621は施設名付きmarker 33.9453848,131.2825532を持つが、住所は則貞3-4-1・電話は公園企画課。運営者の沖宇部254・湖水ホール専用電話51-7057と不整合。名称だけでホール点と断定しない。",
+      "newMethod": "公園企画課点との競合を優先。湖水ホールの館内図・公園配置図で独立に建物を同定する。"
+    },
+    {
+      "facilityId": "facility:cs-a5355105c733978fb2",
+      "automaticRank": 37,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-526-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-526-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/27"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:20"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "旧役場流用の防止。新庁舎竣工配置図・公共施設データを調査。宿直室の入居を別途確認。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "西ノ島町役場 宿直室",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "町トップと新庁舎建設ページ481を新規取得し現美田600-4を再確認。全国P05再抽出でも浦郷534の旧役場しか該当せず、現庁舎数値点が不足。",
+      "newMethod": "旧役場流用の防止。新庁舎竣工配置図・公共施設データを調査。宿直室の入居を別途確認。"
+    },
+    {
+      "facilityId": "facility:cs-d96f3a22bac31657b3",
+      "automaticRank": 41,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-526-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-526-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/36"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:20"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "旧役場流用の防止。新庁舎竣工配置図を共同調査し環境整備課の所在を個別確認。同住所だけで統合しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "西ノ島町役場 環境整備課",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "現美田600-4の町公式ページと新庁舎建設ページを追加確認。P05浦郷534は旧庁舎と判定し現環境整備課の建物へ流用しない。",
+      "newMethod": "旧役場流用の防止。新庁舎竣工配置図を共同調査し環境整備課の所在を個別確認。同住所だけで統合しない。"
+    },
+    {
+      "facilityId": "facility:cs-42df9ae55a2417f861",
+      "automaticRank": 229,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-100-E001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-100-E001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/9"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "レストハウスとの誤同定を防ぐ。地下広場の指定管理・平面図資料を探索し地上外形採用の可否を判断。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "広島駅南口地下広場案内所",
+      "address": "広島県広島市南区松原町9番地先(広島駅南口地下広場)",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "旧補助URL1702は再取得しても平和公園のレストハウス。追加でひろチカ運営サイトを取得したが地下広場案内所の数値点を確認できない。",
+      "newMethod": "レストハウスとの誤同定を防ぐ。地下広場の指定管理・平面図資料を探索し地上外形採用の可否を判断。"
+    },
+    {
+      "facilityId": "facility:cs-4418dd72a69888d0bf",
+      "automaticRank": 230,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-214-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-214-C001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/10"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "4627/14627の住所競合を優先。旅籠を区別する公式村内配置図を探索する。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "神楽門前湯治村 旅籠千両萬両1階 総合案内所",
+      "address": "安芸高田市美土里町本郷4627",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "公式アクセスとJSを再取得しmap_dataがマーカーに使われることを確認。ただし村全体点で旅籠千両萬両への結び付き不足、所在地14627と台帳4627の差も残る。",
+      "newMethod": "4627/14627の住所競合を優先。旅籠を区別する公式村内配置図を探索する。"
+    },
+    {
+      "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+      "automaticRank": 241,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-202-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-202-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/25"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初ピン候補。記念館全体点とは別に公式施設配置図で券売所棟を探索する。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "入船山記念館券売所",
+      "address": "広島県呉市幸町4-6",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "県観光53と呉観光94を再取得。前者は複数建物を含む記念館、後者は公園で住所も幸町5番他。券売所建物の数値原典としては使えない。",
+      "newMethod": "初ピン候補。記念館全体点とは別に公式施設配置図で券売所棟を探索する。"
+    },
+    {
+      "facilityId": "facility:cs-f9ac7cca9893ace076",
+      "automaticRank": 254,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-204-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-204-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/43",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/43"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初ピン候補。学校全体点とは別に本館フロア図・文化財建物資料で外形対応を探索する。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "萩・明倫学舎 インフォメーションセンター",
+      "address": "山口県萩市大字江向602番地",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "市配布・県観光を再取得。インフォメーションは本館内だが、複数校舎全体のqを本館点に結び付ける配置証拠はなお不足。P05同名なし。",
+      "newMethod": "初ピン候補。学校全体点とは別に本館フロア図・文化財建物資料で外形対応を探索する。"
+    }
+  ],
+  "coverage": [
+    {
+      "facilityId": "facility:cs-7851aeb9671340371a",
+      "automaticRank": 34,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-501-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-501-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/17"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "(一社)津和野町観光協会",
+      "address": "島根県鹿足郡津和野町後田イ71-2",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "追加取得した津和野駅公式記事はイ66-1の駅舎内切符簡易販売窓口を明示。台帳イ71-2との履歴とカード窓口の対応は未確定。P05にも協会個別点なし。"
+    },
+    {
+      "facilityId": "facility:cs-8d0cee31bd1bcec521",
+      "automaticRank": 35,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-202-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-202-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/23"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "ときわ湖水ホール受付窓口",
+      "address": "山口県宇部市大字沖宇部254",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "新規県福祉マップ7621は施設名付きmarker 33.9453848,131.2825532を持つが、住所は則貞3-4-1・電話は公園企画課。運営者の沖宇部254・湖水ホール専用電話51-7057と不整合。名称だけでホール点と断定しない。"
+    },
+    {
+      "facilityId": "facility:cs-a5355105c733978fb2",
+      "automaticRank": 37,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-526-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-526-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/27"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:20"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "西ノ島町役場 宿直室",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "町トップと新庁舎建設ページ481を新規取得し現美田600-4を再確認。全国P05再抽出でも浦郷534の旧役場しか該当せず、現庁舎数値点が不足。"
+    },
+    {
+      "facilityId": "facility:cs-d96f3a22bac31657b3",
+      "automaticRank": 41,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-526-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-526-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/36"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [
+        "address:20"
+      ],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "西ノ島町役場 環境整備課",
+      "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "現美田600-4の町公式ページと新庁舎建設ページを追加確認。P05浦郷534は旧庁舎と判定し現環境整備課の建物へ流用しない。"
+    },
+    {
+      "facilityId": "facility:cs-442369a0c345a4ef96",
+      "automaticRank": 131,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/11"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "JR新見駅",
+      "address": "岡山県新見市西方471",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "JR駅情報は西方471を確認。市配布ページには観光協会とJR駅の2配布先に対し単一marker(34.9876651,133.456787)があるがどちらか明示せず。協会の別マーカーを駅に流用しない。"
+    },
+    {
+      "facilityId": "facility:cs-85f80ce977bcdf56d4",
+      "automaticRank": 132,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 0
+      },
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/21"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "瀬戸内市役所長船支所窓口",
+      "address": "岡山県瀬戸内市長船町土師291",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "追加取得の市広報115698.pdfで2023年5月8日に土師288-1へ新支所移転と確認。現マーカーはその新支所、P05土師291は旧支所。配布原本は2023年4月1日から休止のため新庁舎へカード窓口が引き継がれた根拠なし。単なる住所同一性不足から、休止前旧窓口と新庁舎の関係未確認へ理由更新。"
+    },
+    {
+      "facilityId": "facility:cs-09ae420fdee6e6c661",
+      "automaticRank": 220,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-216-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-216-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/0"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "おのサンサッカーパーク(山陽小野田市立サッカー交流公園)",
+      "address": "山口県山陽小野田市大字小野田7525-17",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市の公園案内と配布ページを再取得。P05の同名施設は見つからず、公園名称から管理建物の数値点を確定できない。"
+    },
+    {
+      "facilityId": "facility:cs-0b31ddb7a9bb8b0617",
+      "automaticRank": 221,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-622-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-622-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/1"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "おかやまファーマーズ・マーケット ノースヴィレッジ",
+      "address": "岡山県勝田郡勝央町岡1100",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県施設ページを再取得しq=35.0373927,134.1336676を再確認。ノースヴィレッジ敷地全体の案内で、配布を受け持つ建物の指定には至らない。P05同名なし。"
+    },
+    {
+      "facilityId": "facility:cs-10b6ee9f630ef7203b",
+      "automaticRank": 222,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-623-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-623-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/2"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "多世代交流広場ナギテラス",
+      "address": "岡山県勝田郡奈義町豊沢314番地",
+      "selected": false,
+      "exclusionReason": "第1弾保留条件維持。新しい棟同定資料が得られた時に再開。",
+      "priorReason": "町の施設案内を新規取得し豊沢314・フロアマップの存在を確認。P05同名なし。フロア図のみでは地理座標を復元できない。"
+    },
+    {
+      "facilityId": "facility:cs-29d39832b41529a063",
+      "automaticRank": 223,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-202-D001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-202-D001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/3"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "水島臨海鉄道水島駅",
+      "address": "岡山県倉敷市水島東千鳥町 10-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "鉄道公式路線図を再取得。水島駅埋込のpb表示中心を目的地として扱わず、P05でも駅建物を特定できなかった。"
+    },
+    {
+      "facilityId": "facility:cs-2a5031a7a254d9bdbd",
+      "automaticRank": 224,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-214-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-214-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/4"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "道の駅北の関宿安芸高田",
+      "address": "広島県安芸高田市美土里町横田331-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市施設ページで産直・ラーメン店・ローソンの構成と横田331-1を再確認。P05検索でも同名なし。各棟のうち配布建物に対応する数値原典が不足。"
+    },
+    {
+      "facilityId": "facility:cs-31ca2ca80f991e84b4",
+      "automaticRank": 225,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-461-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-461-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/5"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "矢掛ビジターセンター問屋(といや)",
+      "address": "岡山県小田郡矢掛町矢掛1989",
+      "selected": false,
+      "exclusionReason": "第1弾保留条件維持。新しい棟同定資料が得られた時に再開。",
+      "priorReason": "観光施設詳細を再取得し矢掛1989を確認、追加取得の町条例も同名・同住所。P05に問屋の同名点なし。施設の実在確認と座標確認を区別。"
+    },
+    {
+      "facilityId": "facility:cs-3451fd3f7466c85bb5",
+      "automaticRank": 226,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-208-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-208-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/6"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "(一社)府中市観光協会",
+      "address": "広島県府中市府中町559-2",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "協会の公式アクセスを再取得しP05も検索したが、府中町559-2の協会建物を示す数値原典を確認できない。"
+    },
+    {
+      "facilityId": "facility:cs-37f1eda15ce4d18414",
+      "automaticRank": 227,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-202-D001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-202-D001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/7"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "水島臨海鉄道倉敷市駅",
+      "address": "岡山県倉敷市阿知 1-1-2",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "鉄道公式路線図を再取得。倉敷市駅用の埋込表示中心から建物点を作らない。P05検索にも駅建物の同名点なし。"
+    },
+    {
+      "facilityId": "facility:cs-3f5f3971d581f490c7",
+      "automaticRank": 228,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-214-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-214-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/8"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "GREENable HIRUZEN(グリーナブル ヒルゼン)",
+      "address": "岡山県真庭市蒜山上福田1205番地220",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光と運営者施設案内を再取得。ビジターセンター、美術館、サイクリング棟等があり、qの施設全体点を配布棟へ接続する証拠が不足。P05同名なし。"
+    },
+    {
+      "facilityId": "facility:cs-42df9ae55a2417f861",
+      "automaticRank": 229,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-100-E001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-100-E001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/9"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "広島駅南口地下広場案内所",
+      "address": "広島県広島市南区松原町9番地先(広島駅南口地下広場)",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "旧補助URL1702は再取得しても平和公園のレストハウス。追加でひろチカ運営サイトを取得したが地下広場案内所の数値点を確認できない。"
+    },
+    {
+      "facilityId": "facility:cs-4418dd72a69888d0bf",
+      "automaticRank": 230,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-214-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-214-C001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/10"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "神楽門前湯治村 旅籠千両萬両1階 総合案内所",
+      "address": "安芸高田市美土里町本郷4627",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "公式アクセスとJSを再取得しmap_dataがマーカーに使われることを確認。ただし村全体点で旅籠千両萬両への結び付き不足、所在地14627と台帳4627の差も残る。"
+    },
+    {
+      "facilityId": "facility:cs-56534586c259fb790a",
+      "automaticRank": 232,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-205-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-205-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/12"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "笠岡市カブトガニ博物館",
+      "address": "岡山県笠岡市横島1946-2",
+      "selected": false,
+      "exclusionReason": "現manifestで位置採用済み",
+      "priorReason": "市博物館案内を再取得し、P05の同名点も検索。埋込pbの表示中心以外に博物館建物の数値点を確認できない。"
+    },
+    {
+      "facilityId": "facility:cs-56c4b3109bfbb9d36d",
+      "automaticRank": 233,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-201-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-201-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/13"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "長府庭園",
+      "address": "山口県下関市長府黒門東町8番11号",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光と運営者アクセスを再取得。33.990717,130.9891736は庭園目的地であり、書院・茶室等のうち受付建物との対応が不足。"
+    },
+    {
+      "facilityId": "facility:cs-5c25582e543cde5044",
+      "automaticRank": 234,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-368-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-368-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/14"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "道の駅来夢とごうち",
+      "address": "広島県山県郡安芸太田町大字上殿632-2",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光を再取得。売店1階・レストラン2階の情報と別棟施設の存在を確認。GeoCoordinatesは既知値だが対象売店建物に重なる根拠を追加できない。"
+    },
+    {
+      "facilityId": "facility:cs-7234bdb6d4605a7665",
+      "automaticRank": 236,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-321-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-321-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/16"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "和木町蜂ヶ峯総合公園 管理棟",
+      "address": "山口県玖珂郡和木町大字瀬田紺屋作260-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "公園公式アクセスを再取得。P05には同住所のはっちの家があるが管理棟と同定できない。住所qを管理棟座標へ変換しない。"
+    },
+    {
+      "facilityId": "facility:cs-78d5b7e93bce40b71b",
+      "automaticRank": 237,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-213-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-213-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/18"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "秋芳洞案内所",
+      "address": "山口県美祢市秋芳町秋吉3449番地1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "秋芳洞公式ページを再取得し秋吉3449-1、黒谷・秋吉台等の案内所の存在を確認。洞窟全体や入口の点を対象案内所に流用できない。"
+    },
+    {
+      "facilityId": "facility:cs-792aab26713d312890",
+      "automaticRank": 238,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-208-C001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-208-C001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/19"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "潮風公園みなとオアシスゆう",
+      "address": "山口県岩国市由宇町8500-6",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光を再取得し由宇8500-6・海浜公園/物産館等を確認。34.0326527,132.2169625の施設全体座標だけでは配布棟との対応が不足。"
+    },
+    {
+      "facilityId": "facility:cs-8b8fd2a944840cadfd",
+      "automaticRank": 239,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "33-445-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "33-445-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/22"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "里庄つばきの丘運動公園 管理棟",
+      "address": "岡山県浅口郡里庄町大字里見2392番地",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "町施設ページと県観光を再取得。管理事務所電話と公園住所は確認できるがq=34.5186399,133.562182は公園全体で管理棟指定ではない。P05同名点なし。"
+    },
+    {
+      "facilityId": "facility:cs-9158e6a0fc7222e6ab",
+      "automaticRank": 240,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-202-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-202-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/24"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "一般社団法人浜田市観光協会",
+      "address": "島根県浜田市浅井町777-35(JR浜田駅2階)",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "協会案内に加えて特産品販売所の公式salonを新規取得。同駅2階と1階の建物関係は確認できるが、地図はpb表示中心のみ。P05に浜田駅同名点なし。"
+    },
+    {
+      "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+      "automaticRank": 241,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-202-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-202-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/25"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "入船山記念館券売所",
+      "address": "広島県呉市幸町4-6",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "県観光53と呉観光94を再取得。前者は複数建物を含む記念館、後者は公園で住所も幸町5番他。券売所建物の数値原典としては使えない。"
+    },
+    {
+      "facilityId": "facility:cs-a24ab0817e243a1ffb",
+      "automaticRank": 242,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-100-D001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-100-D001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/26"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "広島港総合案内所",
+      "address": "広島県広島市南区宇品海岸一丁目13-26 広島港宇品旅客ターミナル1階",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市の施設案内を再取得し宇品旅客ターミナル1階・宇品海岸1-13-26を再確認。P05に固有建物点なし。入口精度は不要だが旅客ターミナルの数値原典が不足。"
+    },
+    {
+      "facilityId": "facility:cs-a7982389d4085032f9",
+      "automaticRank": 243,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-202-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-202-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/28"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "街かど市民ギャラリー90(くれ)",
+      "address": "広島県呉市中通3-3-17",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "商店街の個別店舗ページを再取得し中通3-3-17・電話36-3902を確認。P05同名なし。表示中心/文字住所から点を作らず保留。"
+    },
+    {
+      "facilityId": "facility:cs-ac2f433114644560e5",
+      "automaticRank": 244,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-201-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-201-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/29"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "松江堀川ふれあい広場 乗船場",
+      "address": "島根県松江市黒田町507-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光ページを再取得し3乗船場の併記を確認。単一GeoCoordinatesは対象黒田町ふれあい広場への対応を証明しない。P05同名なし。"
+    },
+    {
+      "facilityId": "facility:cs-baec24a203c6ed911a",
+      "automaticRank": 245,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "34-000-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "34-000-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/31"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "広島県芦田川流域下水道浄化センター",
+      "address": "広島県福山市箕沖町106",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "管理法人の施設紹介とアクセスを再取得しP05検索も実施。処理場内配布建物の緯度経度との対応は得られない。案内図の目測を数値原典にしない。"
+    },
+    {
+      "facilityId": "facility:cs-cb11c6cf2f76187e61",
+      "automaticRank": 246,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-216-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-216-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/32"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "歴史民俗資料館",
+      "address": "山口県山陽小野田市栄町9-21",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市の施設案内を再取得し栄町9-21と資料館を確認。P05同名なし。pb表示中心以外の明示建物数値点が見つからない。"
+    },
+    {
+      "facilityId": "facility:cs-cd44c49fdfac071988",
+      "automaticRank": 247,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-212-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-212-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/33"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "柳井市観光協会",
+      "address": "山口県柳井市柳井3714-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "公式アクセスに加えhomeと読み込まれるgooglemap.jsを追加取得。JSは.marker要素のdata-lat/lngを位置に使うが、取得したhome/access本文に当該要素はなく協会の数値点を得られない。P05同名なし。"
+    },
+    {
+      "facilityId": "facility:cs-d0065de3f1d6af9a22",
+      "automaticRank": 248,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-216-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-216-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/34"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "山陽小野田市役所 別館2階 下水道課",
+      "address": "山口県山陽小野田市日の出1-1-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市庁舎アクセスと下水道課を再取得。P05山陽小野田市役所1028は庁舎総称で別館指定なし。別館を本館点へ集約せず保留。"
+    },
+    {
+      "facilityId": "facility:cs-db60eef36c8f3b518b",
+      "automaticRank": 249,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-203-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-203-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/37",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/37"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "山口観光案内所",
+      "address": "山口県山口市惣太夫町2-1(山口駅1階)",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市観光サイトを再取得、P05に山口駅案内所の固有点なし。惣太夫町2-1の駅内案内所について数値原典をまだ確保できない。"
+    },
+    {
+      "facilityId": "facility:cs-e10aada0cecdff9fae",
+      "automaticRank": 250,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "31-203-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "31-203-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/39",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/39"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "赤瓦一号館",
+      "address": "鳥取県倉吉市新町1丁目2441",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "観光協会詳細を再取得し、新たに赤瓦運営者の一号館ページも取得。醤油蔵建物と新町2441は確認できるが数値地点なし。県旧ページ503は1回で打ち切り。"
+    },
+    {
+      "facilityId": "facility:cs-e2f1019dc6faed28bc",
+      "automaticRank": 251,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "32-207-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "32-207-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/40",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/40"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "江津市観光協会",
+      "address": "島根県江津市江津町1518-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "協会公式サイトを再取得しP05も検索したが、江津町1518-1の協会建物を指定する数値原典なし。pb表示中心を採らない。"
+    },
+    {
+      "facilityId": "facility:cs-eb39ed62b47f9f29ba",
+      "automaticRank": 252,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-208-B001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-208-B001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/42",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/42"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "岩国市英語交流センター「PLAT ABC」",
+      "address": "山口県岩国市元町⼀丁⽬1番1号 レジデンス岩国駅東1階",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市PLAT ABC施設案内を再取得しレジデンス岩国駅東1階を確認。P05同名なし。駅そのものの点とレジデンス建物点は区別。"
+    },
+    {
+      "facilityId": "facility:cs-f9ac7cca9893ace076",
+      "automaticRank": 254,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [
+          "35-204-A001"
+        ],
+        "firstPinCardCount": 1,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "35-204-A001"
+      ],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/43",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/43"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "萩・明倫学舎 インフォメーションセンター",
+      "address": "山口県萩市大字江向602番地",
+      "selected": true,
+      "exclusionReason": null,
+      "priorReason": "市配布・県観光を再取得。インフォメーションは本館内だが、複数校舎全体のqを本館点に結び付ける配置証拠はなお不足。P05同名なし。"
+    },
+    {
+      "facilityId": "facility:cs-5c5cec6c482042291d",
+      "automaticRank": 508,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/15"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "三朝温泉観光商工センター",
+      "address": "鳥取県東伯郡三朝町三朝973-1",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "温泉公式アクセスを再取得。温泉地への広域交通案内から商工センター個別建物は特定できず、P05同名点もなし。"
+    },
+    {
+      "facilityId": "facility:cs-83c9c4a0ad77ff4af0",
+      "automaticRank": 509,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/20"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "山口市上下水道局下水道整備課",
+      "address": "山口県山口市宮島町7番1号",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "上下水道局の公式案内を再取得、P05にも局固有点を探したが該当なし。複数地図のpb表示中心から下水道整備課建物の点を作らない。"
+    },
+    {
+      "facilityId": "facility:cs-ad6498274696679c6b",
+      "automaticRank": 510,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/30"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "下松市観光案内所",
+      "address": "山口県下松市西豊井1247(下松駅南口)",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県観光ページを再取得し案内所の名称・西豊井1247は確認。位置データは依然lat=0,lng=0、P05にも同名なし。ゼロを除外。"
+    },
+    {
+      "facilityId": "facility:cs-d79e170069f79cc7d2",
+      "automaticRank": 511,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/35",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/acceptedCorrectionKeys/2",
+        "data/national/issue7/reviews/chugoku.json#/acceptedCorrectionKeys/3",
+        "data/national/issue7/reviews/chugoku.json#/corrections/2",
+        "data/national/issue7/reviews/chugoku.json#/corrections/3",
+        "data/national/issue7/reviews/chugoku.json#/deferred/35"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "児島駅観光案内所",
+      "address": "岡山県倉敷市児島駅前1-107",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市配布案内と観光案内所一覧を再取得。児島駅1-107と商工会議所1-37を明確に区別できるため住所・電話の分離訂正を提案。駅建物の数値原典はなお不足。"
+    },
+    {
+      "facilityId": "facility:cs-e0dc2b70dac9632686",
+      "automaticRank": 512,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/38",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/38"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "備前おさふね刀剣の里",
+      "address": "岡山県瀬戸内市長船町長船966",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "県の刀剣博物館案内と配布休止原本を再取得。長船966のq=34.72186,134.10701は鍛刀場・工房を含む施設の案内で受付棟との対応不足。"
+    },
+    {
+      "facilityId": "facility:cs-e4b9d51a912a95286a",
+      "automaticRank": 513,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/41",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/41"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "和木町蜂ヶ峯総合公園 Bee+交流棟",
+      "address": "山口県玖珂郡和木町瀬田173番地4",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "地域振興協会連絡先を再取得。文字列q・住所からBee+交流棟の数値点は得られず、P05も同名なし。管理棟と別IDを維持。"
+    },
+    {
+      "facilityId": "facility:ws-811926f2652d6640dc",
+      "automaticRank": 608,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/44",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/acceptedCorrectionKeys/4",
+        "data/national/issue7/reviews/chugoku.json#/corrections/4",
+        "data/national/issue7/reviews/chugoku.json#/deferred/44"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "新倉敷駅観光案内所",
+      "address": "岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "市配布案内を新規取得し玉島爪崎390-4・JR新倉敷駅2階を確認。既存観光案内所一覧も同駅として照合。P05に駅建物点なし。旧柚木家の点とは分離。"
+    },
+    {
+      "facilityId": "facility:ws-db1f68e131a3fd939d",
+      "automaticRank": 611,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": null,
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/45",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/45"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "浜田市観光協会特産品販売所",
+      "address": "島根県浜田市 JR浜田駅1階",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "追加取得の協会salonは浅井町777-35・JR浜田駅1Fを明記。駅建物と同定できるがpb数値は表示中心で建物マーカーではない。P05にも同名駅なし。"
+    },
+    {
+      "facilityId": "facility:ws-dc1637ffd07c249588",
+      "automaticRank": 612,
+      "priority": {
+        "tier": 3,
+        "requested": null,
+        "regionalGap": null,
+        "firstPinCardIds": [],
+        "firstPinCardCount": 0,
+        "exception": null,
+        "estimatedMinutes": null,
+        "assessmentTier": 3
+      },
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "originalRef": "data/national/issue7/chugoku.json#/unresolved/46",
+      "reviewRefs": [
+        "data/national/issue7/reviews/chugoku.json#/deferred/46"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "normalizedStage": "not-evaluated",
+      "currentStage": "not-evaluated",
+      "holdRef": null,
+      "stopCondition": null,
+      "resumeCondition": null,
+      "sharedGroupIds": [],
+      "selection": "not-in-first-batch",
+      "selectionReason": "初回を3群5施設に限定した。未選定は重要度なし/調査完了を意味しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。",
+      "name": "米子市国際観光案内所",
+      "address": "鳥取県米子市弥生町2 JR米子駅1F",
+      "selected": false,
+      "exclusionReason": "今回8件の移転・競合/棟別配置資料調査を優先。原調査の保留を維持し未解決扱い。",
+      "priorReason": "追加取得の観光協会f/kankoannaiで国際観光案内所を確認。市配布先と照合したが駅建物の数値原典は得られず、P05にも同名なし。"
+    }
+  ]
+}
