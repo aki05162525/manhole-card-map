@@ -11,7 +11,7 @@
     "population": 91,
     "selected": 8,
     "proposed": 2,
-    "adopted": 0,
+    "adopted": 2,
     "held": 6,
     "notSelected": 83
   },
@@ -49,7 +49,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-14336e747375e6550de3",
@@ -77,7 +77,7 @@
       "axisOrder": null,
       "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
@@ -108,7 +108,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
@@ -118,13 +118,16 @@
         "08-202-A001"
       ],
       "newMethod": "市報9頁・現配布案内とGSI建物/道路/水部を照合し、旧q/P05競合を検査",
-      "status": "proposed",
+      "status": "adopted",
       "stage": "new-primary-material-building-correspondence",
       "candidateCoordinate": {
         "lat": 36.5991526,
         "lng": 140.6503817
       },
-      "adoptedCoordinate": null,
+      "adoptedCoordinate": {
+        "lat": 36.5991526,
+        "lng": 140.6503817
+      },
       "conclusion": "市報9頁の北側道路、西側道路・水路、東側国道6号と、本庁舎/大屋根/ホールの順序をGSI外形に照合。本庁舎は西の矩形（BldA index241）、大屋根は東の穴を持つ外形274、ホールは275。現配布案内は本庁舎6階海側下水道課を指定。市HTML qは矩形内、P05は西側で外形外（hitachi-conflict.json）。qは比較専用で、座標は独立同定したGSI矩形の重心から派生。",
       "sourceVersion": "chousya_annnai0804.pdf（Last-Modified 2026-03-27）。市報2025-05-05物理9頁を目視。",
       "newEvidenceRefs": [
@@ -133,13 +136,13 @@
         "data/evidence/location-batch2/north-kanto/retrievals.json#/records/9",
         "data/evidence/location-batch2/north-kanto/retrievals.json#/records/31"
       ],
-      "stopCondition": "独立再レビュー未了の間は仮統合。重大指摘が残れば採用しない。",
-      "resumeCondition": "新規Opusレビューで建物同定・原典・派生計算・全差分の判断を確認する。",
+      "stopCondition": "現時点の採用停止条件はなし。将来、移転・建物同定/原典の否定根拠が判明した場合に再審査。",
+      "resumeCondition": "独立レビューで採用承認済み。将来の移転や原典訂正時にはlocationLifecycleと新根拠を伴って再評価する。",
       "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
@@ -164,7 +167,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-c73669beeeb24f667599",
@@ -174,14 +177,17 @@
         "11-216-A001"
       ],
       "newMethod": "園内配置図でムジナモ市場を分離",
-      "status": "proposed",
+      "status": "adopted",
       "stage": "new-primary-material-building-correspondence",
       "candidateCoordinate": {
         "lat": 36.1716201,
         "lng": 139.6014386
       },
-      "adoptedCoordinate": null,
-      "conclusion": "初回の「3棟」を訂正。園内図の4主要棟は、北西の斜めのバーガー棟1454、北東の事務所/体験棟1462、南西の縦長ムジナモ市場1456、東隣の横長加工棟1458に対応。西外周道路の北側入口/南側出口、中央を蛇行する水部、東側周回路と円形丘の配置も一致し、単なる形の類似や点containsでの選択ではない。現市配布案内も市場を指定。市場外形の重心を採用候補とし丸め後内包を確認。",
+      "adoptedCoordinate": {
+        "lat": 36.1716201,
+        "lng": 139.6014386
+      },
+      "conclusion": "初回の「3棟」を訂正。園内図の4主要棟は、北西の斜めのバーガー棟1454、北東の事務所/体験棟1462、南西の縦長ムジナモ市場1456、東隣の横長加工棟1458に対応。西外周道路の北側入口/南側出口、中央を蛇行する水部、東側周回路と円形丘の配置も一致し、単なる形の類似や点containsでの選択ではない。現市配布案内も市場を指定。市場外形の重心を採用し丸め後内包を確認。",
       "sourceVersion": "kiyasse_map2024.pdf 1頁、ファイル内名kiyasse_map202410。Vectorは2026-07-01データ（固定README）、HTTP Last-Modified 2026-09-17。",
       "newEvidenceRefs": [
         "data/evidence/location-batch2/north-kanto/retrievals.json#/records/5",
@@ -190,13 +196,13 @@
         "data/evidence/location-batch2/north-kanto/retrievals.json#/records/22",
         "data/evidence/location-batch2/north-kanto/retrievals.json#/records/32"
       ],
-      "stopCondition": "独立再レビュー未了の間は仮統合。重大指摘が残れば採用しない。",
-      "resumeCondition": "新規Opusレビューで建物同定・原典・派生計算・全差分の判断を確認する。",
+      "stopCondition": "現時点の採用停止条件はなし。将来、移転・建物同定/原典の否定根拠が判明した場合に再審査。",
+      "resumeCondition": "独立レビューで採用承認済み。将来の移転や原典訂正時にはlocationLifecycleと新根拠を伴って再評価する。",
       "crs": "JGD2011 / Web Mercator tile lattice; source-conditions.json参照",
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
@@ -223,7 +229,7 @@
       "axisOrder": null,
       "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     },
     {
       "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
@@ -250,11 +256,10 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Claude API rate limitとAntigravity Opus quotaで再レビュー失敗・未承認。各失敗はreview-response.jsonへ別記。"
+      "independentReview": "Gemini 3.8 Flash独立レビュー完了。日立/羽生採用承認、他6件保留支持。review-response.json.finalReview参照。"
     }
   ],
   "unverified": [
-    "独立再レビュー",
     "現地・在庫・全施設の配布状況再確認",
     "一般HTML/PDF/画像原本の再配布条件",
     "未選定83件の追加調査",
@@ -262,7 +267,7 @@
   ],
   "documentationDifferences": [
     "旧issue5/north-kanto/README.mdは「今回読んだ範囲では発見していない」と記す。一方、旧assemble.pyはEvidenceへfetchedAtを加え、現Go Evidenceは7項目。初回の「不一致なし」という引用を訂正。旧コードは変更せず取得時刻は調査メタデータに分離。",
-    "初回の3棟/道路未照合/全件保留/manifest不変はinitial-outcomes.jsonと旧commitの履歴に限定。現成果は4棟照合・2提案の仮統合。"
+    "初回の3棟/道路未照合/全件保留/manifest不変はinitial-outcomes.jsonと旧commitの履歴に限定。現成果は4棟照合・独立レビュー承認済み2採用。"
   ],
   "initialPass": {
     "startedAt": "2026-11-05T11:23:04.255122+00:00",
@@ -271,7 +276,7 @@
     "timeDefinition": "選定保存から成果確定までの地域共有壁時計時間。事前の資料読み・選定検討を含まない。 独立レビューとPR作業を除く。施設別に重複計上しない。",
     "record": "initial-outcomes.json (historical, superseded)"
   },
-  "integrationStatus": "provisional-before-independent-review",
+  "integrationStatus": "adopted-after-independent-review",
   "baselineManifestSHA256": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
   "revisionMeasurement": {
     "startedAt": "2026-11-05T11:52:31.936487+00:00",
@@ -280,13 +285,13 @@
     "definition": "再開後の旧レビュー確認・原本再取得・数値外形照合・修正・検証を含む地域共有壁時計時間。これ以降の文書仕上げ/commit/PR/再レビュー待機は除く。施設別重複計上なし。"
   },
   "integrationBaseline": {
-    "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
-    "nationalUnlocatedBefore": 605,
-    "nationalUnlocatedAfter": 603,
+    "mainCommit": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+    "nationalUnlocatedBefore": 601,
+    "nationalUnlocatedAfter": 599,
     "regionUnlocatedBefore": 91,
     "regionUnlocatedAfter": 89,
     "initialNationalUnlocated": 608,
-    "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+    "note": "北海道PR56/近畿西PR45/甲信PR46の採用・binding・地域テストを保持。北関東差分2件は自地域prefixだけ除いたmanifestとの比較。"
   },
   "integrationHistory": [
     {
@@ -297,6 +302,15 @@
       "regionUnlocatedAfter": 89,
       "initialNationalUnlocated": 608,
       "note": "北海道PR56の1採用/binding/地域テストを保持。北関東差分は自地域だけを除いたmanifestとの比較。"
+    },
+    {
+      "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
+      "nationalUnlocatedBefore": 605,
+      "nationalUnlocatedAfter": 603,
+      "regionUnlocatedBefore": 91,
+      "regionUnlocatedAfter": 89,
+      "initialNationalUnlocated": 608,
+      "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
     }
   ]
 }
