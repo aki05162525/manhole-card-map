@@ -3788,6 +3788,19 @@
           "sha256": "3cfbf0c459d2c9401660f524d5a1b93a5238c47825b4d74c3cf0a66713e293e7"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/kinki-west/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+          "sha256": "eeaabd83e7e63c90b47ca0ec09e8ef88b1231082b90b88cae637c26a4949ad62"
+        },
+        {
+          "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+          "sha256": "b6349acc0339703d59a882afad754eb2e346b47593873d4a88182b2b3651f8b0"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3798,6 +3811,10 @@
     {
       "path": "data/national/location-batch2/hokkaido/location-lifecycle.json",
       "sha256": "5ab69d1935b65fdda07368cb581110efbfadc266eb3f592055dc8baf87e40cb2"
+    },
+    {
+      "path": "data/national/location-batch2/kinki-west/location-lifecycle.json",
+      "sha256": "bb71bb4df7df2fc79ea21f3812242e79debcbcda49a6b1d51081e95552779e97"
     }
   ]
 }
