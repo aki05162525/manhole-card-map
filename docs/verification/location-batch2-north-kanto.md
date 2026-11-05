@@ -64,3 +64,5 @@ Gemini利用枠超過の失敗は[review.json](../../data/national/location-batc
 統合済みhead `496689ee9941d0fd47f1037b1593eff730bef5f6`をClaude Opus 5.5へ新規独立再レビュー依頼したが、`Claude API rate limit reached. Try again later.` で失敗した。レビュー結果・採用承認は得られていない。`review-response.json.reReviewAttempt`へGemini失敗とは別に記録。2件は仮統合、6件は保留を維持し、Draft解除・マージは行わない。今回の追記は失敗履歴と文書の整合のみで、座標・manifest・binding・コードに変更はない。
 
 最新main65e7b2f7統合後、ユーザー許可によりAntigravityのClaude Opus 5.5へ新規再レビューを依頼する。旧Claude失敗は終了済みで、実行中レビューとの重複はない。初回608・統合基準605・北関東効果2件（仮統合後603）を区別する。
+
+head `dbbdd141e59b2aad4383924b58fd1c91341c7f22`に対するAntigravity Claude Opus 5.5の新規再レビューも利用枠超過（`You have reached your Antigravity quota for this period.`）で失敗した。`review-response.json.antigravityOpusAttempt`へ別記。実行中レビューはなく、独立再レビュー未完・2候補未承認・Draft/マージ保留を維持する。
