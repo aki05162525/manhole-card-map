@@ -39,3 +39,47 @@ GSI最適化Vectorの3×3タイルを取得し、建物・道路・水部を共�
 [時間記録](../../data/evidence/kanto-prefecture/ibaraki/timing.json)は機械処理と手作業を分離。最初の守谷壁時計区間には共通の全県確認が混入したため施設専用時間としては使えない。後付け配賦しない。代表点計算以降は守谷の専用区間として計測した。時間短縮率・施設別総時間の比較には使わない。
 
 本追加で新たに確認した文書/コード不一致はない。既往の北関東READMEとEvidenceの`fetchedAt`契約差等はissue57-workflowと原履歴の参照を継承し、今回解消したとはしない。一般原本の保管場所はこのworktree固有で、別マシンで独立レビューする場合はhash指定で原本を共有または再取得し、取得版の違いを記録する。
+
+## 実行後の検証証跡
+
+対象commit `4f9fdd47a7ac39f74e763e3c7e27ad296695ef3d`。`mise exec -- git commit -m 'research: record Ibaraki scope and provisional Moriya building point'` は終了コード0。通常hookによる`go test -count=1 ./...`成功、所要82.06秒。`cmd/builddata/fragments_test.go:59`が全国Pythonの`unittest discover`を必須実行するため、その成功も含む。Goの通常出力は成功時のPython個別ケースログを表示しない。
+
+`validation.json.commitHook.status=pending` はcommit前に保存した履歴で、この節が実行後の確定記録。validation.jsonのinputSHA256全件がこのcommit時点のbytesと一致することを再確認した。この追記は文書のみで、データ・コード・manifest・テスト入力は同一のため全suite結果を継承する。hook自体は後続文書commitでも通常実行する。
+
+hook標準出力（ANSI色指定を除去。gitの作成ファイル一覧は除外）:
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯
+
+┃  go-test ❯
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	81.046s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.004s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.005s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.004s
+
+  ────────────────────────────────────
+summary: (done in 82.06 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (82.06 seconds)
+```
