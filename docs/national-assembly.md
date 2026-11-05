@@ -53,7 +53,7 @@ SouthKantoの`sourceFile=data/work/national-input/places.json`だけは、明示
 
 位置証拠の`checkedAt`がタイムゾーン付きtimestampなら、その表記の暦日へ正規化する。元の位置追補ファイルを変更せず、任意の監査出力にも`originalEvidence`としてtimestampをそのまま保存する。置換前の施設証拠は`previousEvidence`に記録する。タイムゾーンのないtimestampは失敗する。監査出力には入力ファイルhashと適用件数も含む。
 
-親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。基準照合テストはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。Issue26以降もこの履歴digestを保持し、Issue26の住所パッチとIssue30の位置・binding選択を除いたmanifestで旧基準を照合する。別テストで石巻1施設の住所・証拠の訂正、およびIssue30の4施設への位置追加だけが生じ、他の施設・全関係を保持することを検査する。
+親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。基準照合テストはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。Issue26以降もこの履歴digestを保持し、`test_assemble.py` の `batch1_manifest` で `locations` / `locationLifecycle` の `data/national/location-batch2/` 配下の選択をすべて除き、さらにIssue26の住所パッチとIssue30の位置・binding選択を除いたmanifestで旧基準を照合する。844件の選択検査と第1弾4施設の差分検査も `batch1_manifest` を使う。これら3テストは履歴契約であり、現manifestの総数検査ではない。別テストで石巻1施設の住所・証拠の訂正、およびIssue30の4施設への位置追加だけが生じ、他の施設・全関係を保持することを検査する。
 
 ```text
 d89e788b0998fd625ea3d2b06e4cae6ff85c1c30f1526bc18c6bd8908702a5ff
@@ -110,4 +110,8 @@ PythonとGoの施設座標検査は有限数値の緯度±90・経度±180で一
 
 30施設の調査で得た6候補を独立レビューし、大阪市下水道科学館・スワンホール・笠岡市カブトガニ博物館・大分市美術館の4施設を追加した。新居関所史料館・焼津市観光協会は派生計算を再現できたが、現施設と外形の対応が不足しているため未選択。原提案は保持する。
 
-2026-11-05評価時点で位置追補は844件、exactパッチは12ファイル113操作。今回の4採用にはそれぞれbindingを作成し、`locationLifecycle`は1ファイル4binding・event/groupなし。従来の未管理既存位置全体を移行したわけではない。施設ピン978、台帳内未位置608、生成全体未位置757という別集合の集計と再生成手順は[第1弾記録](verification/location-batch1.md)を参照する。
+第1弾統合コミット `f66b7e99`（評価日2026-11-05）では位置追補844件、exactパッチ12ファイル113操作だった。当時の4採用にはそれぞれbindingを作成し、`locationLifecycle`は1ファイル4binding・event/groupなしだった。従来の未管理既存位置全体を移行したわけではない。施設ピン978、台帳内未位置608、生成全体未位置757という別集合の集計と再生成手順は[第1弾記録](verification/location-batch1.md)を参照する。
+
+## 位置調査第2弾の統合後
+
+2026-11-05、地域PR45〜56を統合した `11b7e4ee` のassemble再実行では、位置追補864件、exactパッチ12ファイル113操作、`locationLifecycle` 9ファイル24binding・2group・0event。第2弾の追加20施設IDだけにcoordinate/evidence/locationReviewの差分があり、既存施設と全1,670関係を保持する。台帳1,586施設の未位置は608→588。これは生成fullの全施設・地図ピン数とは別の集合である。[第2弾最終集計](verification/location-batch2.md)に地域別採否・独立レビュー・再現コマンド・未確認範囲を記録する。
