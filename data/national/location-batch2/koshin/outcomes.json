@@ -10,10 +10,10 @@
     "baselineRegionUnlocated": 27,
     "baselineNationalLedgerUnlocated": 608,
     "currentRegionUnlocated": 23,
-    "nationalLedgerUnlocatedBeforeRegionalAdoption": 607,
-    "currentNationalLedgerUnlocated": 603
+    "nationalLedgerUnlocatedBeforeRegionalAdoption": 605,
+    "currentNationalLedgerUnlocated": 601
   },
-  "interpretation": "Opus独立再レビューで重大指摘0、4ID採用可を確認して採用確定。開始baseline608は履歴。北海道採用済main統合後607から自地域4IDで603。",
+  "interpretation": "Opus独立再レビューで重大指摘0、4ID採用可を確認して採用確定。開始baseline608は履歴。北海道・近畿西採用済main統合後605から自地域4IDで601。",
   "rows": [
     {
       "facilityId": "facility:chubu-chuo-duty-counter",

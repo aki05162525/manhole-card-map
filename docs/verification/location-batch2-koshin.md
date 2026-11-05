@@ -6,7 +6,7 @@ batch1 integration/followups、Issue20/25/26/27の保留条件を確認した。
 
 ## 再調査：選定8・採用4・保留4
 
-Opus独立再レビューは重大指摘0件、4ID採用可。軽微指摘へ対応して4IDの採用を確定した。北海道PR #56を含むmain `ccc473e4bdbc9ecc1165e86bc783f144fea33395` を統合し、北海道の採用/bindingを保持した。現在は地域未位置23・全国台帳未位置603（最新main607から自地域4件減）。608は当初開始集合、604は北海道統合前のレビュー対象headの値であり、現在値とは区別する。
+Opus独立再レビューは重大指摘0件、4ID採用可。軽微指摘へ対応して4IDの採用を確定した。北海道PR #56・近畿西PR #45を含むmain `65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41` を統合し、北海道・近畿西の採用/binding/地域テストを保持した。現在は地域未位置23・全国台帳未位置601（最新main605から自地域4件減）。608は当初開始集合、604は北海道統合前のレビュー対象headの値であり、現在値とは区別する。
 
 | 施設 | 実施した比較と判断 |
 | --- | --- |
@@ -26,9 +26,9 @@ Opus独立再レビューは重大指摘0件、4ID採用可。軽微指摘へ対
 [外形比較](../../data/evidence/location-batch2/koshin/building-comparison.json)、[松本計算](../../data/evidence/location-batch2/koshin/matsumoto-comparison.json)、[証拠README](../../data/evidence/location-batch2/koshin/README.md) に資料版、CRS、軸順、加工、精度、利用条件、出典とhashを記録した。上田CSVは市カタログのCC BY4.0によりGit収録済みであり、facts/retrievalsの「workのみ/許諾未確認」を訂正した。別の利用規約PDFは未取得。一般HTML/PDF/画像は新たにGitへ複製せずworkに保持する。
 
 - 4ID差分テストは未統合時のRED→仮統合後GREENを確認。全台帳の差分は当該4IDのcoordinate/evidence/locationReviewのみ。全関係・既存ピンは不変、他23IDは非採用。
-- 全Pythonテスト96件が統合後に成功。Go非cacheテストとフックも実行。
+- 全Pythonテスト97件が統合後に成功。Go非cacheテストとフックも実行。
 - 派生計算再現、CSV seed内包、重心/内代表点/7桁丸め後内包、千曲境界、参照JSON、原本/Range hash33件を検証。
-- 保存一覧20261021・review-list20261105・as-of2026-11-05で採用前後をGo builddata生成し全国監査を実行。カード1313・場所1735・関係1825は不変。施設ピン979→983、蓋1309は不変。full/details/pins整合・世代hash・4IDの詳細→Mapsリンクを既存関数で検査。[生成検証](../../data/evidence/location-batch2/koshin/generation-check.json) を参照。
+- 保存一覧20261021・review-list20261105・as-of2026-11-05で採用前後をGo builddata生成し全国監査を実行。カード1313・場所1735・関係1825は不変。施設ピン981→985、蓋1309は不変。full/details/pins整合・世代hash・4IDの詳細→Mapsリンクを既存関数で検査。[生成検証](../../data/evidence/location-batch2/koshin/generation-check.json) を参照。
 - サーバー・ブラウザーは起動せず、UIコードも変更していない。Mapsの外部画面、現地、現況との完全一致、各施設の現在在庫は未確認。
 
 共有変更はmanifestの自地域選択のみ。 `test_assemble.py` はmainの履歴テスト3件のmanifest分離実装をそのまま保持し、当PR差分はない。844件や履歴digestの期待値を変更せず、全batch2を除くmanifestで履歴契約を維持する。地域差分は `test_location_batch2_koshin.py` で検査する。共有進捗文書は変更していない。

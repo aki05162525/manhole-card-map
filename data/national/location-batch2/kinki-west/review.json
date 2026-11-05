@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "provider": "antigravity",
+  "model": "gemini-4-argon",
+  "status": "failed-quota",
+  "error": "You have reached your Antigravity quota for this period.",
+  "taskId": "node:delegated-task:command%3Amcp%3Aa91d5251-90d9-40fc-af85-a8e1660c8894%3Adelegate-task%3A5dc80cb8-bac0-4f98-a9c2-44d8f714ee7d",
+  "worktree": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-d8788805",
+  "findings": null,
+  "approval": false,
+  "response": "代替モデルなし。採用ゼロの調査成果をdraft PRとして共有。Geminiの独立レビューを未完了として親へ報告。"
+}
