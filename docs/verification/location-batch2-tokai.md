@@ -54,3 +54,7 @@ mise exec -- uv run --with mapbox-vector-tile==2.2.0 --with shapely==2.2.0 pytho
 ## 独立レビュー
 
 Gemini 4 Argonの独立レビューは重大指摘0件・任意改善2件で、研究のみのPRとして妥当と判定した。地域検証の再実行、Vector比較のbyte一致、原本/派生ファイルhash、旧停止条件、利用条件を独立確認。任意改善は両方反映し、派生6ファイルのhash検査を `verify.py --with-work` に加え、計時後の仕上げ取得を注記した。[レビューと対応記録](../../data/national/location-batch2/tokai/review.json)を参照。座標採用の承認ではない。
+
+## Issue57での検証手順の訂正
+
+当時の検証結果は上記のまま保持する。現在の `verify.py` は保存済みmanifestと当時の台帳hashで歴史基準を検査し、現manifestでは当該地域だけを除いた台帳との全フィールド・全関係差分を別に検査する。他地域の採用で当時の608件を更新しない。通常検査は全国Python試験にも含まれる。原本を検査するオプションには別途ignored workの原本が必要。今回の対象試験・未確認範囲は[Issue57の記録](issue57-workflow.md)を参照する。

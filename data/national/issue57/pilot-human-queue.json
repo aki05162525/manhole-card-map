@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-11-05T13:38:52.429973+00:00",
+  "questions": [
+    {
+      "group": "shiroi",
+      "facilityIds": [
+        "facility:kanto-south-5724e90e3e451f22eeef",
+        "facility:kanto-south-caac2827c5303ba03047"
+      ],
+      "officialCheckURL": "https://www.city.shiroi.chiba.jp/soshiki/kankyo/k03/sui003/sui009/sui010/1532075261217.html",
+      "question": "現窓口は平日東庁舎2階上下水道課、土日祝本庁舎1階守衛室で合っていますか。",
+      "resolves": "現配布窓口と棟名の接続。外形への棟同定・座標採用は別。",
+      "status": "answered",
+      "answer": "合っている。平日東庁舎2階上下水道課、土日祝本庁舎1階守衛室。",
+      "answerEvidence": {
+        "type": "human-report",
+        "sourceURL": null,
+        "confirmedOn": "2026-11-05",
+        "via": "利用者回答を親エージェントから受領",
+        "notAnAdoptionApproval": true
+      }
+    },
+    {
+      "group": "atami",
+      "facilityIds": [
+        "facility:chubu-west-2c746636b1d8b34ff7c1",
+        "facility:chubu-west-b93c428182c323c9093b"
+      ],
+      "officialCheckURL": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+      "question": "貫一お宮の受取は平日第二庁舎1階料金センター、休日第一庁舎1階警備員室で合っていますか。",
+      "resolves": "現配布窓口と棟名の接続。外形への棟同定・座標採用は別。",
+      "status": "answered",
+      "answer": "合っている。貫一お宮は平日第二庁舎1階上下水道・温泉料金お客様センター、休日第一庁舎1階警備員室。配布案内2026-07-01更新・同日変更。休日の範囲列挙なし。",
+      "answerEvidence": {
+        "type": "human-report",
+        "sourceURL": null,
+        "confirmedOn": "2026-11-05",
+        "via": "利用者回答を親エージェントから受領",
+        "notAnAdoptionApproval": true
+      }
+    }
+  ],
+  "independentOfficialEvidence": "data/evidence/issue57/pilot/retrievals.json（実取得時刻/hashはhuman-reportへ合成しない）",
+  "municipalityContacted": false
+}

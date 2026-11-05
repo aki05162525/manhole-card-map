@@ -1,0 +1,1164 @@
+{
+  "schema": 2,
+  "asOf": "2026-11-05",
+  "population": "588未位置からの人手確認。34質問グループはすべて回答受領。回答受領は課題解決・位置採用を意味しない。追加抽出は範囲固定のため停止、試行は既存5施設。",
+  "pending": [],
+  "answered": [
+    {
+      "id": "human-01",
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "facilityIds": [
+        "facility:kanto-south-5724e90e3e451f22eeef",
+        "facility:kanto-south-caac2827c5303ba03047"
+      ],
+      "name": "白井市役所",
+      "cardIds": [
+        "12-232-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "平日は東庁舎2階・上下水道課、土日祝日は本庁舎1階・守衛室。",
+      "sourceDescription": "白井市マンホールカード配布案内",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "棟・階は利用者確認済み。数値外形との対応・採用は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/0",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/0",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-02",
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "facilityIds": [
+        "facility:chubu-west-2c746636b1d8b34ff7c1",
+        "facility:chubu-west-b93c428182c323c9093b"
+      ],
+      "name": "熱海市役所",
+      "cardIds": [
+        "22-205-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "「貫一お宮」。平日は第二庁舎1階・上下水道・温泉料金お客様センター、休日は第一庁舎1階・警備員室。配布案内は2026-07-01更新、同日変更。",
+      "sourceDescription": "熱海市配布案内",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "「休日」の具体的範囲は未列挙。棟・階確認と数値同定を分離。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/1",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/1",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-03",
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "facilityIds": [
+        "facility:cs-c859f2f66b0d2b847c"
+      ],
+      "name": "月見ヶ丘海浜公園",
+      "cardIds": [
+        "36-000-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "土日祝の配布先として案内。徳島県資料15頁に管理棟と明記。",
+      "sourceDescription": "配布元案内／徳島県資料15頁",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "保存news休止記事と現案内の時系列を別途照合。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/2",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/2",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-04",
+      "facilityId": "facility:kinki-332ce8ce5ad5b6583d87",
+      "facilityIds": [
+        "facility:kinki-332ce8ce5ad5b6583d87"
+      ],
+      "name": "丹後王国 食のみやこ",
+      "cardIds": [
+        "26-212-A001",
+        "26-212-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "中央情報交流センターではなくメインゲート前インフォメーションセンター。",
+      "sourceDescription": "市配布案内／施設FAQ",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "現窓口と外形の対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/3",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/3",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-05",
+      "facilityId": "facility:kinki-b3c184c7aed571b773cd",
+      "facilityIds": [
+        "facility:kinki-b3c184c7aed571b773cd"
+      ],
+      "name": "道の駅 海の京都宮津",
+      "cardIds": [
+        "26-000-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "府カード案内は観光案内所指定。施設公式図では国道178号側の駐車場端、トイレと同じ棟。再開後も観光案内所の営業案内あり。",
+      "sourceDescription": "府カード案内／施設公式図",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "府案内更新は10月再開前。再開後のカード配布継続は未確認。旧候補外形を再審査。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/4",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/4",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-06",
+      "facilityId": "facility:kinki-6ad3133f41924d1d4b10",
+      "facilityIds": [
+        "facility:kinki-6ad3133f41924d1d4b10"
+      ],
+      "name": "大津市水再生センター",
+      "cardIds": [
+        "25-201-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "屋上公園管理人室は処理場管理棟とは別。市位置図では相模川・大津プリンスホテル側の公園端、旧テニスコート脇の小建物。",
+      "sourceDescription": "カード配布案内",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "数値外形の対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/5",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/5",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-07",
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "facilityIds": [
+        "facility:chubu-east-3309d6639e95492f62ff"
+      ],
+      "name": "佐渡市役所",
+      "cardIds": [
+        "15-224-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "宿日直室は第1庁舎1階「夜間休日受付」。現行フロア図では第2庁舎との連絡部分近く。新庁舎案内に「休日受付となる宿日直室」。",
+      "sourceDescription": "現行フロア図／市新庁舎案内",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "CRS適用等の技術残件は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/6",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 3,
+          "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+          "name": "佐渡市役所本庁舎1F 宿日直室",
+          "cardIds": [
+            "15-224-B001"
+          ],
+          "question": "休日にカードを受け取る宿日直室は、現在の第1庁舎と第2庁舎のどちらにありますか？",
+          "officialConfirmationURL": "https://www.city.sado.niigata.jp/site/bousaikyotenchousha/60451.html",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/1",
+          "currentUnknown": "休日窓口の所属棟が未確定。",
+          "resolvedByAnswer": "総合案内と休日窓口の同棟・別棟を確認できる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/6",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-08",
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "facilityIds": [
+        "facility:chubu-east-1def973f29471b191a99"
+      ],
+      "name": "勝興寺",
+      "cardIds": [
+        "16-202-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "市案内はカード窓口「入口受付」。寺パンフ2頁では総門を入ってすぐ左、堀の手前・トイレ横の小建物が「受付」。",
+      "sourceDescription": "市案内／寺パンフ2頁境内図",
+      "sourceURLs": [],
+      "sourceURLProvided": false,
+      "remainingUncertainty": "両資料から同じ窓口とするのは利用者推論。直接の同一性明記は未確認。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/7",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 4,
+          "facilityId": "facility:chubu-east-1def973f29471b191a99",
+          "name": "雲龍山勝興寺",
+          "cardIds": [
+            "16-202-B001"
+          ],
+          "question": "カードを配布する拝観受付は、伽藍図のどの建物ですか？",
+          "officialConfirmationURL": "https://www.shoukouji.jp/garan.html",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/7",
+          "currentUnknown": "伽藍図に拝観受付の棟名がない。",
+          "resolvedByAnswer": "受付を本堂・総門・境内中心と取り違えずに棟を選べる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/7",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-09",
+      "facilityId": "facility:cs-85f80ce977bcdf56d4",
+      "facilityIds": [
+        "facility:cs-85f80ce977bcdf56d4"
+      ],
+      "name": "瀬戸内市役所長船支所",
+      "cardIds": [
+        "33-212-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "刀匠カードは「配布中止・再開未定」。現支所住所は瀬戸内市長船町土師288-1。",
+      "sourceDescription": "市案内",
+      "sourceURLs": [
+        "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "https://www.city.setouchi.lg.jp/soshiki/5/133580.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "移転後の再開は未確認。住所を配布先移転・再開証拠にせず、歴史IDも変更しない。中止から恒久終了を推測しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/8",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/8",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-10",
+      "facilityId": "facility:cs-e0dc2b70dac9632686",
+      "facilityIds": [
+        "facility:cs-e0dc2b70dac9632686"
+      ],
+      "name": "備前おさふね刀剣の里",
+      "cardIds": [
+        "33-212-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "現在も「配布中止・再開未定」。2026年9月更新施設案内にも記載。",
+      "sourceDescription": "施設案内",
+      "sourceURLs": [
+        "https://www.city.setouchi.lg.jp/site/token/107413.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "再開未確認。中止から恒久終了を推測しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/9",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/9",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-11",
+      "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+      "facilityIds": [
+        "facility:cs-93e9b0b1e4bcb33b8e"
+      ],
+      "name": "入船山記念館",
+      "cardIds": [
+        "34-202-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "カードは券売所配布。公式ガイド「郷土館（券売所）」、直近案内では郷土館1階券売所。旧司令長官官舎と別棟。",
+      "sourceDescription": "公式ガイド／施設案内",
+      "sourceURLs": [
+        "https://irifuneyama.com/入船山記念館について/マンホールカードの配布について/",
+        "https://www.irifuneyama.com/download-data/irifuneyamamemorialmuseum.pdf#page=11"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/10",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/10",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-12",
+      "facilityId": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "facilityIds": [
+        "facility:chubu-west-29febbd64ae38b41c6fc"
+      ],
+      "name": "カクキュー八丁味噌の郷",
+      "cardIds": [
+        "23-202-D001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "市は施設配布を案内。売店内見学受付という情報はある。",
+      "sourceDescription": "市配布案内／施設案内",
+      "sourceURLs": [
+        "https://www.city.okazaki.lg.jp/water/riyosha/1011205/1003416.html",
+        "https://www.kakukyu.jp/info_view.asp?ID=1468"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "カード窓口の建物は公式資料から未特定。見学受付と同一とは未確認、保留。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/11",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/11",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-13",
+      "facilityId": "facility:chubu-chuo-duty-counter",
+      "facilityIds": [
+        "facility:chubu-chuo-duty-counter",
+        "facility:chubu-east-4ddffced59c4adbf00e2"
+      ],
+      "name": "中央市役所上下水道課",
+      "cardIds": [
+        "19-214-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "平日は南館1階。南館は本館に隣接する旧庁舎。",
+      "sourceDescription": "市配布案内／施設紹介",
+      "sourceURLs": [
+        "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+        "https://www.yamanashi-kankou.jp/fc/location/2024/chuocityhallgovernment.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "休日宿日直室は利用者が図を判読できず棟未確定。この未判読だけで既採用宿日直室を取り下げたり南館と同棟にしない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/12",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/12",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-14",
+      "facilityId": "facility:cs-a5355105c733978fb2",
+      "facilityIds": [
+        "facility:cs-a5355105c733978fb2",
+        "facility:cs-d96f3a22bac31657b3"
+      ],
+      "name": "西ノ島町役場",
+      "cardIds": [
+        "32-526-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "平日は役場2階環境整備課、休日は役場1階宿直室。新庁舎は2021年業務開始。",
+      "sourceDescription": "町案内／新庁舎資料",
+      "sourceURLs": [
+        "https://www.town.nishinoshima.shimane.jp/news/1786",
+        "https://www.town.nishinoshima.shimane.jp/files/original/2021070116533870265eb276c.pdf"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/13",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/13",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-15",
+      "facilityId": "facility:cs-42df9ae55a2417f861",
+      "facilityIds": [
+        "facility:cs-42df9ae55a2417f861"
+      ],
+      "name": "広島駅南口地下広場案内所",
+      "cardIds": [
+        "34-100-E001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "西国街道カード配布先として現在掲載、在庫あり表示。地下図中央の南北通路左、トイレ表示すぐ下の案内所区画。",
+      "sourceDescription": "市配布案内／利用者提示画像",
+      "sourceURLs": [
+        "https://www.city.hiroshima.lg.jp/living/suido-gesuido/1005966/1026325/1026326/1010193.html",
+        "https://www.city.hiroshima.lg.jp/*res/projects/default_project/_page*/001/005/978/7.jpg"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "在庫はリアルタイムではない。画像URLは*を含み有効性不明、HTML実リンクの照合が必要。地下を地上駅棟で代用しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/14",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/14",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-16",
+      "facilityId": "facility:chubu-east-677f66d597c7f24ed2ab",
+      "facilityIds": [
+        "facility:chubu-east-677f66d597c7f24ed2ab"
+      ],
+      "name": "ゆきむら夢工房",
+      "cardIds": [
+        "20-203-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "カード窓口は本館。市配置図で国道144号を下にして中央右の横長棟。左の旧市直売所・さらに左のJA直売所とは別。入口上の「ゆきむら夢工房」「観光案内所」が目印。",
+      "sourceDescription": "市配布案内／配置図／外観写真",
+      "sourceURLs": [
+        "https://www.city.ueda.nagano.jp/soshiki/gesuido/83031.html",
+        "https://www.city.ueda.nagano.jp/uploaded/attachment/76717.pdf",
+        "https://www.city.ueda.nagano.jp/uploaded/image/18227.jpg"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "図の左右を方位と同一視しない。数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/15",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/15",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-17",
+      "facilityId": "facility:cs-0b31ddb7a9bb8b0617",
+      "facilityIds": [
+        "facility:cs-0b31ddb7a9bb8b0617"
+      ],
+      "name": "ノースヴィレッジ",
+      "cardIds": [
+        "33-622-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "園内図①は「入口ゲート＆インフォメーション」。町公式配布案内は施設名まで。",
+      "sourceDescription": "町配布案内／園内図",
+      "sourceURLs": [
+        "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+        "https://alis-nv.sakura.ne.jp/map.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "カード窓口①は直接未確認。図公開時期不明。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/16",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/16",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-18",
+      "facilityId": "facility:cs-3f5f3971d581f490c7",
+      "facilityIds": [
+        "facility:cs-3f5f3971d581f490c7"
+      ],
+      "name": "GREENable HIRUZEN",
+      "cardIds": [
+        "33-214-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "施設公式案内に配布窓口「サイクリングセンター」と明記。",
+      "sourceDescription": "施設公式案内",
+      "sourceURLs": [
+        "https://greenable-hiruzen.co.jp/data/64/news_detail/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/17",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/17",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-19",
+      "facilityId": "facility:cs-2a5031a7a254d9bdbd",
+      "facilityIds": [
+        "facility:cs-2a5031a7a254d9bdbd"
+      ],
+      "name": "道の駅北の関宿安芸高田",
+      "cardIds": [
+        "34-214-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "市は道の駅配布を案内。",
+      "sourceDescription": "市案内",
+      "sourceURLs": [
+        "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "産直・飲食店等どの建物か公式資料では未特定。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/18",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/18",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-20",
+      "facilityId": "facility:cs-09ae420fdee6e6c661",
+      "facilityIds": [
+        "facility:cs-09ae420fdee6e6c661"
+      ],
+      "name": "おのサンサッカーパーク",
+      "cardIds": [
+        "35-216-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "窓口は「管理事務所」。施設案内は交流施設棟に事務室がある。",
+      "sourceDescription": "施設配布案内／施設案内",
+      "sourceURLs": [
+        "https://soc-park.com/news/453/",
+        "https://soc-park.com/facility/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "その事務室とカード窓口の同一性は直接未確認、棟特定保留。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/19",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/19",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-21",
+      "facilityId": "facility:north-2c42d8946a63660d54a1",
+      "facilityIds": [
+        "facility:north-2c42d8946a63660d54a1"
+      ],
+      "name": "足寄下水終末処理場",
+      "cardIds": [
+        "01-647-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "第10弾カード平日配布先は処理場。土日祝は役場裏警備員室。",
+      "sourceDescription": "町配布案内",
+      "sourceURLs": [
+        "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/page_7.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "処理場の棟・受付・配置図は未確認。役場裏は別施設で代用しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/20",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/20",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-22",
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "facilityIds": [
+        "facility:north-a3a29a0bb04d24bdf7ac"
+      ],
+      "name": "稚内副港市場カフェPotto",
+      "cardIds": [
+        "01-214-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "副港市場1階カフェPottoでスタッフへ声掛け。運営者フロア図でも1階市場側。",
+      "sourceDescription": "市配布案内／運営者フロア図",
+      "sourceURLs": [
+        "https://www.city.wakkanai.hokkaido.jp/kurashi/sumaisuido/gesui/mhcard.html",
+        "https://fukkoichiba.hokkaido.jp/floormap/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/21",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/21",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-23",
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "facilityIds": [
+        "facility:north-b59c391ec004d507bb86"
+      ],
+      "name": "てしお温泉夕映",
+      "cardIds": [
+        "01-487-C001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "温泉側受付。町資料では温泉施設夕映と客室のある宿泊本館は別の建物区分。",
+      "sourceDescription": "町案内／町資料",
+      "sourceURLs": [
+        "https://www.teshiotown.hokkaido.jp/?p=22908",
+        "https://www.teshiotown.hokkaido.jp/wp-content/uploads/2025/09/7599c768bf47bed135430aa80e580b6d.pdf"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "接続通路・入口位置は未確認だが、建物代表点に不要な入口条件を増やさない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/22",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/22",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-24",
+      "facilityId": "facility:kinki-c84376231b21f3e50397",
+      "facilityIds": [
+        "facility:kinki-c84376231b21f3e50397"
+      ],
+      "name": "野洲市上下水道事業所",
+      "cardIds": [
+        "25-210-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "防災コミュニティセンターと旧市民サービスセンターの北部合同庁舎は別。サービスセンター2023廃止。対象カード2025-07-27配布終了。",
+      "sourceDescription": "市資料／市配布案内",
+      "sourceURLs": [
+        "https://www.city.yasu.lg.jp/ikkrwebBrowse/material/files/group/4/2-sanko1.pdf",
+        "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "施設廃止とカード終了は別事実。現台帳25-210-A001当該関係は既にended、重複変更しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/23",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/23",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。"
+    },
+    {
+      "id": "human-25",
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "facilityIds": [
+        "facility:chubu-east-d003d24aec02be8d661e"
+      ],
+      "name": "輪島市上下水道局",
+      "cardIds": [
+        "17-204-A001",
+        "17-204-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "県配布案内は上下水道局1階窓口、住所は輪島市河井町21部1番地。市施設案内も同住所。",
+      "sourceDescription": "県配布案内／市施設案内",
+      "sourceURLs": [
+        "https://www.pref.ishikawa.lg.jp/seikatsuhaisui/gesui/manholekard.html",
+        "https://www.city.wajima.ishikawa.jp/docs/2021052500018/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "震災前の建物の継続使用・建替え・仮移転は未確認。住所一致を現外形同一性の証拠にしない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/24",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 1,
+          "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+          "name": "輪島市上下水道局 1階窓口",
+          "cardIds": [
+            "17-204-A001",
+            "17-204-B001"
+          ],
+          "question": "現在のカード配布先は上下水道局の従来の庁舎1階のままですか、それとも別の場所に変わっていますか？",
+          "officialConfirmationURL": "https://www.city.wajima.ishikawa.jp/categories/bunya/shisetsu/shiyakusho/",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/4",
+          "currentUnknown": "震災後も従来の配布先か未確認。",
+          "resolvedByAnswer": "震災後の現配布先・移転有無を確認できる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/24",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "震災後現在窓口",
+      "questionSummaryAsAsked": "震災後現在窓口"
+    },
+    {
+      "id": "human-26",
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "facilityIds": [
+        "facility:chubu-east-1a2846e8da90dda974fe"
+      ],
+      "name": "道の駅朝日・朝日みどりの里",
+      "cardIds": [
+        "15-212-D001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "工事中も食堂と渡り廊下でつながる物産会館内総合案内所で配布。11月2日更新案内にも配布中。",
+      "sourceDescription": "施設案内",
+      "sourceURLs": [
+        "https://asahimidori.com/post-10282/",
+        "https://asahimidori.com/access-guide/road-station/",
+        "https://asahimidori.com/access-guide/store/"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "現配布継続の人手確認とCRS・独立位置採否を分離。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/25",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 2,
+          "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+          "name": "道の駅朝日 朝日みどりの里物産会館",
+          "cardIds": [
+            "15-212-D001"
+          ],
+          "question": "再整備工事中の現在も、カードは食堂と渡り廊下でつながる既存の物産会館で受け取れますか？",
+          "officialConfirmationURL": "https://asahimidori.com/access-guide/store/",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/6",
+          "currentUnknown": "再整備中の現配布棟が未確認。",
+          "resolvedByAnswer": "計画上の新棟と現在の配布棟を区別できる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/25",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "工事中現棟",
+      "questionSummaryAsAsked": "工事中現棟"
+    },
+    {
+      "id": "human-27",
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "facilityIds": [
+        "facility:chubu-east-08e3cd9cb85e36189dcd"
+      ],
+      "name": "一乗谷復原町並",
+      "cardIds": [
+        "18-201-B001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "現市案内は南・北両チケット売場が配布先。",
+      "sourceDescription": "市配布案内",
+      "sourceURLs": [
+        "https://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "南売場が事務所・売店どの建物か未特定。北窓口を南IDで代用しない。配布先追加と位置課題を分離。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/26",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 5,
+          "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+          "name": "福井市一乗谷朝倉氏遺跡復原町並",
+          "cardIds": [
+            "18-201-B001"
+          ],
+          "question": "カードを配布するチケット売場は、南入口の事務所・その隣の売店・別の建物のどれですか？",
+          "officialConfirmationURL": "https://ichijo-dani.com/site/townscape",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/hokuriku/outcomes.json#/rows/5",
+          "currentUnknown": "南側の売場・事務所・売店と個別建物の対応が未確定。",
+          "resolvedByAnswer": "南側の複数建物のうち配布窓口を含む棟を絞れる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/26",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "チケット売場棟",
+      "questionSummaryAsAsked": "チケット売場棟"
+    },
+    {
+      "id": "human-28",
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "facilityIds": [
+        "facility:kanto-south-b3c83a3795c4697c100b"
+      ],
+      "name": "習志野企業局",
+      "cardIds": [
+        "12-216-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "現配布先は藤崎1-1-13新館3階。2013配置図で本館右隣・別館手前・配水池左隣。将来新局舎は鷺沼台の別場所。",
+      "sourceDescription": "市配布案内／2013配置図8頁／新局舎案内",
+      "sourceURLs": [
+        "https://www.city.narashino.lg.jp/soshiki/gesuido/gyoumuannai_gesui/narashino_city_manholecard.html",
+        "https://www.city.narashino.lg.jp/material/files/group/24/ajisai156.pdf#page=8",
+        "https://www.city.narashino.lg.jp/soshiki/koeikikaku/30312.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "現外形は別途照合。在庫なくなり次第一時中止・再開未定という条件付き案内を現在中止と断定しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/27",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [
+        {
+          "priority": 6,
+          "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+          "name": "習志野市企業局工務部下水道課",
+          "cardIds": [
+            "12-216-A001"
+          ],
+          "question": "現在カードを受け取る新館は、藤崎1丁目1-13の敷地で本館・別館に対してどこにある建物ですか？",
+          "officialConfirmationURL": "https://www.city.narashino.lg.jp/kigyoukyoku/jigyosha/26529.html",
+          "urlRole": "管理者・運営者の確認先。配布案内の出典URLとは限らない。今回再取得したとの主張ではない。",
+          "evidenceRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+          "currentUnknown": "現在の本館・新館・別館の配置が未確定。",
+          "resolvedByAnswer": "将来の新局舎建設予定地と現新館を区別できる。",
+          "status": "awaiting-human-confirmation",
+          "answer": null,
+          "answerSourceURL": null,
+          "answerCheckedAt": null,
+          "doesNotApprove": "数値外形同定・座標系・利用条件・位置採用・当日在庫は別判断"
+        }
+      ],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/27",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "現新館位置",
+      "questionSummaryAsAsked": "現新館位置"
+    },
+    {
+      "id": "human-29",
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "facilityIds": [
+        "facility:kanto-north-14336e747375e6550de3"
+      ],
+      "name": "新・鹿沼宿",
+      "cardIds": [
+        "09-205-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "配布先は本館。2011整備時配置図で例幣使街道沿い東側が本館、西隣物産館。現紹介でも別棟。",
+      "sourceDescription": "市配布案内／2011配置図／施設紹介",
+      "sourceURLs": [
+        "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+        "https://www.town.ami.lg.jp/cmsfiles/contents/0000005/5787/3.03_shiryo1-2_syuttyou-fukumei.pdf",
+        "https://kanumajuku.com/facility.html"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "最新配置図は未確認。カード配布時間と現営業時間の差は勝手に統一しない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/28",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/28",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "本館配置",
+      "questionSummaryAsAsked": "本館配置"
+    },
+    {
+      "id": "human-30",
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "facilityIds": [
+        "facility:kanto-north-1c3ab1ee8ca76b7c99e0"
+      ],
+      "name": "矢板観光協会",
+      "cardIds": [
+        "09-211-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "城の湯宿泊棟側受付。正面向かって右の宿泊棟受付入口から館内観光協会受付へ。公式PDF4〜5頁に写真動線。",
+      "sourceDescription": "観光協会PDF4〜5頁／館内図",
+      "sourceURLs": [
+        "https://www.yaita-kankou.com/images/配布場所・駐車場のお知らせ.pdf",
+        "https://www.yaita-onsen-shironoyu.jp/_contents/wp-content/uploads/2024/04/kannai.jpg"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/29",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/29",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "宿泊棟との同棟/別棟と配置",
+      "questionSummaryAsAsked": "宿泊棟との同棟/別棟と配置"
+    },
+    {
+      "id": "human-31",
+      "facilityId": "facility:kanto-north-4f8550974a31b7d62c39",
+      "facilityIds": [
+        "facility:kanto-north-4f8550974a31b7d62c39"
+      ],
+      "name": "入間市役所守衛室",
+      "cardIds": [
+        "11-225-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "本庁舎地下守衛室。経路図はAB棟をまとめて表示。",
+      "sourceDescription": "市配布案内／経路図",
+      "sourceURLs": [
+        "https://www.city.iruma.saitama.jp/kurashi/jogesuido/gesuido/koho_event/8610.html",
+        "https://www.city.iruma.saitama.jp/material/files/group/44/3gatu17nitikarasyueisituhenoikikata.pdf"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "A棟・B棟・接続部分のいずれか未特定。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/30",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/30",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "守衛室のA/B棟対応",
+      "questionSummaryAsAsked": "守衛室のA/B棟対応"
+    },
+    {
+      "id": "human-32",
+      "facilityId": "facility:kyushu-056030efbe436e3617a8",
+      "facilityIds": [
+        "facility:kyushu-056030efbe436e3617a8",
+        "facility:kyushu-431427a75efc404fc5c1"
+      ],
+      "name": "宇美役場",
+      "cardIds": [
+        "40-341-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "平日は上下水道課南館1階、警備室は本館。公式図で別館として表示。",
+      "sourceDescription": "町配布案内／公式図",
+      "sourceURLs": [
+        "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+        "https://www.town.umi.lg.jp/uploaded/attachment/15903.jpg"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "警備室の階・入口は未確認。建物代表点に不要な入口精度要求を増やさない。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/31",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/31",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "南館/本館の配置",
+      "questionSummaryAsAsked": "南館/本館の配置"
+    },
+    {
+      "id": "human-33",
+      "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+      "facilityIds": [
+        "facility:ws-6ba1bca2e1474a7cd2",
+        "facility:ws-c42fbe5f44427d0284"
+      ],
+      "name": "大野城市役所",
+      "cardIds": [
+        "40-219-A001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "企業総務課新館2階と北玄関横警備員室本館1階は別棟。通常は心のふるさと館、役所2窓口は休館日代替。",
+      "sourceDescription": "市配布案内／フロア図",
+      "sourceURLs": [
+        "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+        "https://www.city.onojo.fukuoka.jp/kiji003229/3_229_9_floormap_1f_20210517.pdf",
+        "https://www.city.onojo.fukuoka.jp/kiji003229/3_229_10_floormap_2f_20210517.pdf"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "旧質問の「平日／休日」という単純区分は不正確。質問履歴として保持し訂正。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/32",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/32",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "平日新館と休日警備員室同棟か",
+      "questionSummaryAsAsked": "平日新館と休日警備員室同棟か",
+      "questionCorrection": "旧質問の平日/休日区分は不正確。通常は心のふるさと館、役所2窓口は休館日代替。"
+    },
+    {
+      "id": "human-34",
+      "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+      "facilityIds": [
+        "facility:kyushu-fa023783ed7f7b1e4171"
+      ],
+      "name": "熊本県民総合運動公園",
+      "cardIds": [
+        "43-100-F001",
+        "43-100-J001"
+      ],
+      "checkedAt": "2026-11-05",
+      "actorType": "user",
+      "answer": "体育館横・B駐車場北の公園受付。スタジアム側公園事務所とは別。一般園内図に施設番号なし。",
+      "sourceDescription": "市配布案内／園内図",
+      "sourceURLs": [
+        "https://www.kumamoto-waterworks.jp/waterworks_article/42607/",
+        "https://www.kspa.or.jp/wordpress/wp-content/themes/kumasports/pdf/undoukouen_map.pdf"
+      ],
+      "sourceURLProvided": true,
+      "remainingUncertainty": "数値外形対応は別。",
+      "answerStatus": "received",
+      "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+      "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+      "adoptionApproval": false,
+      "answerRef": "data/national/issue57/human-responses.json#/responses/33",
+      "status": "answer-received-not-location-approved",
+      "previousQuestions": [],
+      "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/33",
+      "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+      "receivedQuestionSummary": "受付兼事務所の図上建物",
+      "questionSummaryAsAsked": "受付兼事務所の図上建物"
+    }
+  ],
+  "answerPolicy": "利用者から受領した確認内容。原本取得・hash照合・数値棟同定・独立採用承認を意味しない。URL未提示は空配列のまま保持し、候補URLで補完しない。",
+  "noAutomaticContact": true,
+  "initialQuestionsRef": "data/evidence/issue57/human/initial-six-questions.json",
+  "summary": {
+    "answeredGroups": 34,
+    "pendingGroups": 0,
+    "answeredFacilityIDs": 40,
+    "locationApprovals": 0
+  }
+}
