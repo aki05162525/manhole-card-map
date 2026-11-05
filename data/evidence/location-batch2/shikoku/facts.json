@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "factsOnly": true,
+  "sourceLocatorNotes": {
+    "kyuyoshino-plan.pdf": "PDF p11: ⑨管理棟; PDF p1: 令和04年03月08日",
+    "ryugado-education.pdf": "PDF p9 (printed 8): 観光センター写真と指示線",
+    "moon-r7-lg.pdf": "PDF p7 B-01配置図; p9 B-03平面図; 25年07月08日表記",
+    "besshi-map.pdf": "PDF p1: 端出場本館、1階図の窓口/事務所/売店。切符売場という文字はない。配布案内のチケット売り場との対応は推論。",
+    "welpia-map.png": "HTML館内施設ガイドマップ。模式的鳥瞰図、ラベルはHTML側。"
+  },
+  "welpiaDiagnostic": {
+    "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+    "points": [
+      {
+        "key": "P05",
+        "coordinate": {
+          "lat": 33.770037,
+          "lng": 132.717016
+        },
+        "sourceRef": "data/evidence/issue7/shikoku/p05-shikoku-records.json",
+        "sourceLocator": "P05-22_38_GML.zip/P05-22_38.geojson features[1786]",
+        "originalFetch": "2026-11-05T04:46:10.674180+00:00; reused, not newly fetched",
+        "crs": "JGD2011; original axes longitude,latitude"
+      },
+      {
+        "key": "OG",
+        "coordinate": {
+          "lat": 33.770134,
+          "lng": 132.717616
+        },
+        "retrievalKey": "welpia.html",
+        "sourceLocator": "meta property og:latitude,og:longitude",
+        "crs": "not declared; diagnostic only, not accepted numeric authority"
+      }
+    ],
+    "tile": "welpia",
+    "featureIndex": 122,
+    "result": "both-inside-same-tile-feature; geographic building identity unresolved",
+    "noCentroidCalculated": true
+  },
+  "generalHtmlPdfRedistribution": "未確認。Gitへ全文・画像・PDFを追加しない。workに原本保持、取得hash・事実のみGit管理。",
+  "reassessment": {
+    "aeon": {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "numericParts": [
+        "aeon#53",
+        "aeon-east#25",
+        "aeon-south#2",
+        "aeon-southeast#0"
+      ],
+      "identity": "市の現配布案内は1Fインフォメーション。公式20261006フロア図p1のモールインフォメーションは連続主棟内。床図は北上ではなく、上=南東、下=北西、左=北東、右=南西として鏡像化せず回転すると、AEON STYLEは北東端、郵便局119/H&M側の折れは南西端、MIMOSA翼はaeon#53の北西突出、Food Forest/SAI&Coは北西側の別棟群aeon#50/east#18/#45に対応する。北西に開く中庭と周囲別棟の配置も一致。両端の幅は大差なく、幅広さを判定根拠にしない。GSI郵便局注記は南西端の補助照合であり、注記だけや面積だけでは同定しない。",
+      "positiveEvidence": [
+        "aeon-floor.pdf p1: 床図上=南東。郵便局119/H&M=南西、AEON STYLE=北東、MIMOSA翼と北西中庭/別棟配置",
+        "aeon-corporate.html: 所在地・電話が現配布先と一致",
+        "GSI BldA 4分割の接続をunionし単一Polygon、外形の折れ/相対配置一致"
+      ],
+      "negativeEvidence": [
+        "最初のタイルの最大完全外形#43は主棟でなく別棟。比較から除外",
+        "Google埋込中心を採用しない",
+        "日建連事例PDFは二次利用禁止表示。図面の転載・トレース・数値導出・採用証拠には使わず、追加で公式フロア図を取得"
+      ],
+      "remaining": "現地測量/室内入口の精度は未確認。建物代表点として提案。"
+    },
+    "kyuyoshino-manager": {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "numericParts": [
+        "moon#26"
+      ],
+      "identity": "県PDF p11凡例⑧送風機棟が⑨管理棟の北。GSI m25/m26がこの南北配置に一致。⑨の南中央突出とm26の南中央突出、⑧北側突出とm25の北側突出、⑧西の水処理建物群との配置を照合。⑧を配布点にせず⑨を選択。既存公式配布案内に管理棟で受付と明記。 既存R8パンフレットp2の現行平面図でも送風機棟の南の管理棟と南中央突出を確認。県事後評価書は⑧送風機棟/⑨管理棟、R8パンフレット・施設概要は⑨送風機棟/⑩管理棟で番号体系が異なる。番号単独で同一視せず名称/形状/配置で照合。m26東側小突出は図との対応未確定だが主形状と南突出の一致を覆す差ではない。",
+      "positiveEvidence": [
+        "県PDF p11: ⑧⑨の相対位置・⑨南突出",
+        "GSI m25/m26: 対応する相対位置・反対方向の突出",
+        "保存公式配布案内: 管理棟で受付",
+        "既存R8パンフレットp2: ⑨送風機棟/⑩管理棟、南北配置と管理棟南中央突出"
+      ],
+      "negativeEvidence": [
+        "処理場全体中心、北側送風機棟を除外"
+      ],
+      "remaining": "計画図単独で現存を推定せず現行GSI外形と既存配布案内を併用。現地未確認。"
+    },
+    "moon-manager": {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "numericParts": [
+        "moon-west#27"
+      ],
+      "identity": "B-01の北矢印に合わせた約28度回転でB-03の扇形、内側弧、南側研修室の張り出し、北西側小突出が一致。北側のコテージ列、駐車場側の西位置、南の小構造物の並びも照合。約1387m²の外形全体は保存タイル内に収まる。前回は作図y上限3600で自ら切っていた。",
+      "positiveEvidence": [
+        "R7 B-01/B-03の方位・形状・研修室",
+        "既存ビジターセンター説明のカーブ屋根と管理棟事務所電話"
+      ],
+      "negativeEvidence": [
+        "m11/m19/m20は小さく管理棟規模/形状に不一致",
+        "保存公園newsのカード関連最新記事は2022-01-21の配布一時休止。その後の再開告知は保存ページ内では確認できない。過去の再開記事はこれより前であり、現在再開の根拠にしない。現在の公式配布案内は公園で配布とするが管理棟を明示しない。過去の一時休止を恒久終了として台帳変更しない。"
+      ],
+      "remaining": "建物自体は同定。現在の公園側配布窓口がその管理棟かという関係が明示資料で未確定。代表点計算は調査専用で非採用。"
+    },
+    "welpia": {
+      "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+      "retrievalKey": "iyo-aed-urban.csv",
+      "sourceLocator": "CP932 CSV data row 3 (header-inclusive row 4)",
+      "rawFields": {
+        "名称": "ウェルピア伊予",
+        "住所": "伊予市下三谷1791番地1",
+        "緯度": "33770121",
+        "経度": "132.717617",
+        "設置位置": "事務所"
+      },
+      "assessment": "緯度は±90範囲外。小数欠落と考えられるが未確認のため補正値を採用しない。1791番地は台帳/P05の1761と不一致。OGと同じ出所の可能性を排除できず、独立原典とは認定しない。CSVにCRS明記なし。データページはCC-BY表示のみだが、保存iyo-terms.htmlはCC BY 4.0 Internationalを明記。リンク先の市利用規約PDFは未取得。出典表示に従う、出典必須、原本workのみ。",
+      "resume": "市の原数値/住所の訂正または作成根拠が確認できれば再審査。公式平面配置図による独立同定も別経路として可。"
+    }
+  },
+  "references": [
+    {
+      "key": "kyuyoshino-plan.pdf",
+      "sourceUrl": "https://www.pref.tokushima.lg.jp/file/attachment/773574.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/kyuyoshino-plan.pdf",
+      "snapshotSHA256": "37d0ead9a63e42d27228627bc754e54cb54a200e2920036d5abcb10c0a39df61",
+      "fetchedAt": "2026-11-05T11:25:39.446217+00:00"
+    },
+    {
+      "key": "aeon-corporate.html",
+      "sourceUrl": "https://www.aeonmall.com/facility/detail/3957/",
+      "snapshotPath": "data/work/location-batch2/shikoku/aeon-corporate.html",
+      "snapshotSHA256": "2aad5fe3af5e1d9ee19dc23c1958de7743743d90b5a370a4bde738cd499f6287",
+      "fetchedAt": "2026-11-05T11:25:38.184251+00:00"
+    },
+    {
+      "key": "moon-r7-lg.pdf",
+      "sourceUrl": "https://e-ppi.pref.tokushima.lg.jp/file/anken/360000/35426/1/Ｒ７営繕　月見ヶ丘海浜公園　松・豊岡　管理棟改修工事　図面 .pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/moon-r7-lg.pdf",
+      "snapshotSHA256": "424965eac2e7281e59ab3eca386d0b4c619d75a1af503460621947931a599873",
+      "fetchedAt": "2026-11-05T11:26:35.222125+00:00"
+    },
+    {
+      "key": "iyo-aed.html",
+      "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/meta001.html",
+      "snapshotPath": "data/work/location-batch2/shikoku/iyo-aed.html",
+      "snapshotSHA256": "602648662986c2f0238eb41975f1a80ad12c13bf850f676504b9aa3b24316a99",
+      "fetchedAt": "2026-11-05T11:26:34.991805+00:00"
+    },
+    {
+      "key": "besshi-map.pdf",
+      "sourceUrl": "https://besshi.com/wp/wp-content/themes/besshi/assets/images/map/map.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/besshi-map.pdf",
+      "snapshotSHA256": "96d4893879687f44ac9e4b283666f247f5208bd5735e76056d29122ca6f9f6eb",
+      "fetchedAt": "2026-11-05T11:29:02.548750+00:00"
+    },
+    {
+      "key": "iyo-aed-urban.csv",
+      "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/documents/382108_aed_06.csv",
+      "snapshotPath": "data/work/location-batch2/shikoku/iyo-aed-urban.csv",
+      "snapshotSHA256": "71f58fbd823c102f042bb689a8fa8c09efc9afe2585383cc4f2ab716542005b2",
+      "fetchedAt": "2026-11-05T11:52:10.915155+00:00"
+    },
+    {
+      "key": "aeon-architecture.pdf",
+      "sourceUrl": "https://www.nikkenren.com/kenchiku/sb/pdf/381/05-044.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/aeon-architecture.pdf",
+      "snapshotSHA256": "bfb0a35c163e894b1501b3eefc3cd81005e1e16e0662b957475e2961d6a4c21b",
+      "fetchedAt": "2026-11-05T11:52:33.976153+00:00"
+    },
+    {
+      "key": "moon-news.html",
+      "sourceUrl": "https://www.tsukimigaoka.com/cgi-bin/tab-news/topics.cgi",
+      "snapshotPath": "data/work/location-batch2/shikoku/moon-news.html",
+      "snapshotSHA256": "53561759a06f54c8a4aac210a93b12d77708303fdb7f046af8aae930338b7f59",
+      "fetchedAt": "2026-11-05T11:53:15.366055+00:00"
+    },
+    {
+      "key": "aeon-floor.pdf",
+      "sourceUrl": "https://file-cdn.aeonmall.jp/uploads/218be487-88fa-41c5-9fb6-f8d7f04dc6e4.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/aeon-floor.pdf",
+      "snapshotSHA256": "1281a61034bc2832add8dd19f6651bb4710e94876d304238ef8aee30ea5fa846",
+      "fetchedAt": "2026-11-05T11:54:12.267773+00:00"
+    },
+    {
+      "key": "iyo-terms.html",
+      "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/index.html",
+      "snapshotPath": "data/work/location-batch2/shikoku/iyo-terms.html",
+      "snapshotSHA256": "4d235f28b0cc33d67b69dc17558d621c2ab9ec844094083ff6d22aca4d2521d7",
+      "fetchedAt": "2026-11-05T11:54:12.893772+00:00"
+    }
+  ],
+  "reusedEvidence": [
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+      "snapshotPath": "data/evidence/issue7/shikoku/4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7.html",
+      "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+      "fetchedAt": "2026-11-05T06:28:19.922299+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "sourceUrl": "https://www.pref.tokushima.lg.jp/ippannokata/kurashi/shizen/7205286/",
+      "snapshotPath": "data/evidence/issue7/shikoku/be4bdf0cb24cdd561e79502a4ecf9dfb2be7326daee7713ba1c90e1cc5f96b53.html",
+      "snapshotSHA256": "be4bdf0cb24cdd561e79502a4ecf9dfb2be7326daee7713ba1c90e1cc5f96b53",
+      "fetchedAt": "2026-11-05T06:28:19.862071+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "sourceUrl": "https://www.toku-eta.or.jp/sewer/access/",
+      "snapshotPath": "data/evidence/issue7/shikoku/35c06176a78b5b8585463b42d5e9add7eb8e1e844a9275c8cec307d6c1dbc430.html",
+      "snapshotSHA256": "35c06176a78b5b8585463b42d5e9add7eb8e1e844a9275c8cec307d6c1dbc430",
+      "fetchedAt": "2026-11-05T06:32:14.902799+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "sourceUrl": "https://www.toku-eta.or.jp/sewer/facility-outline/",
+      "snapshotPath": "data/evidence/issue7/shikoku/7fcbac188c6ef0cf19e8f4a7503addb4ad9ebc582f32b44f0f10ffc0270f7cec.html",
+      "snapshotSHA256": "7fcbac188c6ef0cf19e8f4a7503addb4ad9ebc582f32b44f0f10ffc0270f7cec",
+      "fetchedAt": "2026-11-05T06:33:01.178796+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "sourceUrl": "https://www.toku-eta.or.jp/wp-content/uploads/2026/06/sewer-pamphlet_r08.pdf",
+      "snapshotPath": "data/evidence/issue7/shikoku/93410aa409c3121fd745347e79622e01369717a98cde545460e851338b364129.pdf",
+      "snapshotSHA256": "93410aa409c3121fd745347e79622e01369717a98cde545460e851338b364129",
+      "fetchedAt": "2026-11-05T06:33:01.082833+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+      "snapshotPath": "data/evidence/issue7/shikoku/13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a.html",
+      "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+      "fetchedAt": "2026-11-05T06:28:12.574932+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "sourceUrl": "https://imabarishintoshi.aeonmall.jp/access",
+      "snapshotPath": "data/evidence/issue7/shikoku/e77be49af88f166b9516f9c8e191d83d67741852dc52650610d594105cb8be4b.html",
+      "snapshotSHA256": "e77be49af88f166b9516f9c8e191d83d67741852dc52650610d594105cb8be4b",
+      "fetchedAt": "2026-11-05T06:28:09.365633+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "sourceUrl": "https://imabarishintoshi.aeonmall.jp/floormap",
+      "snapshotPath": "data/evidence/issue7/shikoku/e54cd31781fb2711bfe949721e009551a69fb47f9163327618c167a8c2350a0d.html",
+      "snapshotSHA256": "e54cd31781fb2711bfe949721e009551a69fb47f9163327618c167a8c2350a0d",
+      "fetchedAt": "2026-11-05T06:31:03.581056+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+      "snapshotPath": "data/evidence/issue7/shikoku/4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7.html",
+      "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+      "fetchedAt": "2026-11-05T06:28:19.922299+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "sourceUrl": "https://www.tsukimigaoka.com/access/index.html",
+      "snapshotPath": "data/evidence/issue7/shikoku/814e80327b96c238237e1fc3fdbfc4fd8d29b91bc083cfc05c6bc8462da39d0e.html",
+      "snapshotSHA256": "814e80327b96c238237e1fc3fdbfc4fd8d29b91bc083cfc05c6bc8462da39d0e",
+      "fetchedAt": "2026-11-05T06:28:21.762524+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "sourceUrl": "https://www.tsukimigaoka.com/park/visitor.html",
+      "snapshotPath": "data/evidence/issue7/shikoku/3bc04544002eb6bd8afb10a07defef5207ce5f86370297c15c0564d96dc2b972.html",
+      "snapshotSHA256": "3bc04544002eb6bd8afb10a07defef5207ce5f86370297c15c0564d96dc2b972",
+      "fetchedAt": "2026-11-05T06:31:03.695490+00:00",
+      "reuse": "旧取得日を維持。今回再取得ではない。"
+    }
+  ]
+}
