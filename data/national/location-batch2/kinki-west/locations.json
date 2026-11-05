@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+      "coordinate": {
+        "lat": 34.748402,
+        "lng": 134.9130319
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-west/building-correspondence.json",
+        "snapshotSHA256": "b6405bf893d90d1630f41127debdf4e26d0bdf503dcad4d4862f01b4d8e681ec",
+        "sourceLocator": "自作棟照合記録 rows[0]。原タイルと数値計算はbuilding-inputs.json / derived-buildings.json / derive-buildings.py。国土地理院最適化ベクトルタイルPMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先・公式配置図とGSI外形の方位、形状、連絡部、周辺配置を照合。連続した本館・新館外形から公式図で識別した新館側の元頂点16..31を閉じた部分外形の重心。Web Mercatorタイル格子から逆投影してlat/lngへ、小数7桁に丸めた後も原外形と対象棟部分に内包。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル、PDL1.0。加工: manhole-card-map。試験Vectorは基本測量成果でなく、国土地理院による施設点の作成・承認ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+      "coordinate": {
+        "lat": 34.5775854,
+        "lng": 135.6296097
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-west/building-correspondence.json",
+        "snapshotSHA256": "b6405bf893d90d1630f41127debdf4e26d0bdf503dcad4d4862f01b4d8e681ec",
+        "sourceLocator": "自作棟照合記録 rows[1]。原タイルと数値計算はbuilding-inputs.json / derived-buildings.json / derive-buildings.py。国土地理院最適化ベクトルタイルPMTiles 2026-07-01版。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現配布先・公式配置図とGSI外形の方位、形状、連絡部、周辺配置を照合。別館の矩形外形全体の重心。Web Mercatorタイル格子から逆投影してlat/lngへ、小数7桁に丸めた後も原外形と対象棟部分に内包。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル、PDL1.0。加工: manhole-card-map。試験Vectorは基本測量成果でなく、国土地理院による施設点の作成・承認ではない。"
+      }
+    }
+  ]
+}

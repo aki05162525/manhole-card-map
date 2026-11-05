@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "id": "kakukyu",
+      "url": "https://www.kakukyu.pro/facilities.asp",
+      "fetchedAt": "2026-11-05T11:24:46.014196+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "atami",
+      "url": "https://www.city.atami.lg.jp/shisei/soshiki/1001632/1001547.html",
+      "fetchedAt": "2026-11-05T11:24:46.015020+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.atami.lg.jp/shisei/soshiki/1001632/1001547.html",
+      "contentType": "text/html",
+      "path": "data/work/location-batch2/tokai/atami.html",
+      "sha256": "535ca53a66b633f2f8d5bb5817376b70588078d8f4231b74ecb684c9b0ae6611",
+      "bytes": 27589
+    },
+    {
+      "id": "seki",
+      "url": "https://www.city.seki.lg.jp/cmsfiles/contents/0000009/9451/saihaitikaitei.pdf",
+      "fetchedAt": "2026-11-05T11:24:46.015480+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.seki.lg.jp/cmsfiles/contents/0000009/9451/saihaitikaitei.pdf",
+      "contentType": "application/pdf",
+      "path": "data/work/location-batch2/tokai/seki.pdf",
+      "sha256": "a172a072429d1926b2deab0f2e99783337cd27854456ef2657ef3e9e9f13c5f8",
+      "bytes": 5961774
+    },
+    {
+      "id": "nakatsugawa",
+      "url": "https://www.city.nakatsugawa.lg.jp/material/files/group/1/20241019PR_koureisien.pdf",
+      "fetchedAt": "2026-11-05T11:24:46.015885+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.nakatsugawa.lg.jp/material/files/group/1/20241019PR_koureisien.pdf",
+      "contentType": "application/pdf",
+      "path": "data/work/location-batch2/tokai/nakatsugawa.pdf",
+      "sha256": "04535ffd6e9d9b015eaf057ad9e6182d36e878c1577c2205fc7c6ecd622438c1",
+      "bytes": 1236066
+    },
+    {
+      "id": "aichi",
+      "url": "https://www.pref.aichi.jp/uploaded/life/626010_2878549_misc.pdf",
+      "fetchedAt": "2026-11-05T11:24:46.016466+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "tarui",
+      "url": "https://www.town.tarui.lg.jp/uploaded/attachment/1041.pdf",
+      "fetchedAt": "2026-11-05T11:24:46.016890+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.town.tarui.lg.jp/uploaded/attachment/1041.pdf",
+      "contentType": "application/pdf",
+      "path": "data/work/location-batch2/tokai/tarui.pdf",
+      "sha256": "139c6c17cc8c9a393d17805e3cfa9310e04a7fc7b752567aa947ff2fefd44b78",
+      "bytes": 736812
+    },
+    {
+      "id": "atami-layout",
+      "url": "https://www.city.atami.lg.jp/_res/projects/default_project/_page_/001/001/547/2098_863.jpg",
+      "fetchedAt": "2026-11-05T11:25:20.620800+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.atami.lg.jp/_res/projects/default_project/_page_/001/001/547/2098_863.jpg",
+      "contentType": "image/jpeg",
+      "path": "data/work/location-batch2/tokai/atami-layout.jpg",
+      "sha256": "43ab70f5c62cf753ac695deb63f09e74af118ca6b5527ce59a032e2dd6e742c3",
+      "bytes": 28280
+    },
+    {
+      "id": "nakatsugawa-floor",
+      "url": "https://www.city.nakatsugawa.lg.jp/shisei/cityhall/23624.html",
+      "fetchedAt": "2026-11-05T11:25:20.621256+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.nakatsugawa.lg.jp/shisei/cityhall/23624.html",
+      "contentType": "text/html",
+      "path": "data/work/location-batch2/tokai/nakatsugawa-floor.html",
+      "sha256": "d1d61b8782e56b1597656516912954a8063c7a8bc5d52514f5309a8fd4794f11",
+      "bytes": 40284
+    },
+    {
+      "id": "gsi-readme",
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/master/README.md",
+      "fetchedAt": "2026-11-05T11:26:40.425526+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "gsi-terms",
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "fetchedAt": "2026-11-05T11:26:40.426460+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "error": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>"
+    },
+    {
+      "id": "nakatsugawa-layout",
+      "url": "https://www.city.nakatsugawa.lg.jp/material/images/group/1/floormap_hitomachiterrace.jpg",
+      "fetchedAt": "2026-11-05T11:26:40.426858+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://www.city.nakatsugawa.lg.jp/material/images/group/1/floormap_hitomachiterrace.jpg",
+      "contentType": "image/jpeg",
+      "path": "data/work/location-batch2/tokai/nakatsugawa-layout.jpg",
+      "sha256": "283d1f31a27815b224e9996fda8afb505390fde224816b0f46351eb40befb540",
+      "bytes": 128101
+    },
+    {
+      "id": "gsi-readme-main",
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/README.md",
+      "fetchedAt": "2026-11-05T11:27:33.750320+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "gsi-readme-lowercase",
+      "url": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "fetchedAt": "2026-11-05T11:29:55.602225+00:00",
+      "redistribution": "未確認。原本はwork限定。Gitには事実抽出とhashのみ。",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/main/readme.md",
+      "contentType": "text/plain; charset=utf-8",
+      "path": "data/work/location-batch2/tokai/gsi-readme-lowercase.html",
+      "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+      "bytes": 8296
+    }
+  ]
+}
