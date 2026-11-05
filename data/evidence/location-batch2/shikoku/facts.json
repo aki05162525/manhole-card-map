@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "factsOnly": true,
+  "sourceLocatorNotes": {
+    "kyuyoshino-plan.pdf": "PDF p11: ⑨管理棟; PDF p1: 令和04年03月08日",
+    "ryugado-education.pdf": "PDF p9 (printed 8): 観光センター写真と指示線",
+    "moon-r7-lg.pdf": "PDF p7 B-01配置図; p9 B-03平面図; 25年07月08日表記",
+    "besshi-map.pdf": "PDF p1: 端出場本館・1階切符売場; 35周年表記",
+    "welpia-map.png": "HTML館内施設ガイドマップ。模式的鳥瞰図、ラベルはHTML側。"
+  },
+  "welpiaDiagnostic": {
+    "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+    "points": [
+      {
+        "key": "P05",
+        "coordinate": {
+          "lat": 33.770037,
+          "lng": 132.717016
+        },
+        "sourceRef": "data/evidence/issue7/shikoku/p05-shikoku-records.json",
+        "sourceLocator": "P05-22_38_GML.zip/P05-22_38.geojson features[1786]",
+        "originalFetch": "2026-11-05T04:46:10.674180+00:00; reused, not newly fetched",
+        "crs": "JGD2011; original axes longitude,latitude"
+      },
+      {
+        "key": "OG",
+        "coordinate": {
+          "lat": 33.770134,
+          "lng": 132.717616
+        },
+        "retrievalKey": "welpia.html",
+        "sourceLocator": "meta property og:latitude,og:longitude",
+        "crs": "not declared; diagnostic only, not accepted numeric authority"
+      }
+    ],
+    "tile": "welpia",
+    "featureIndex": 122,
+    "result": "both-inside-same-tile-feature; geographic building identity unresolved",
+    "noCentroidCalculated": true
+  },
+  "generalHtmlPdfRedistribution": "未確認。Gitへ全文・画像・PDFを追加しない。workに原本保持、取得hash・事実のみGit管理。"
+}
