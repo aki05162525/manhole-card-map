@@ -38,7 +38,7 @@ mise exec -- python3 -B data/evidence/location-batch2/north-kanto/verify.py --wi
 
 両方成功。現manifestの証拠検査を伴うassemble、91IDの母集団一致、8IDの原調査JSON pointer、入力hash、非採用、停止/再開条件、選定と既存保留の非重複を検査した。`--with-work`は44個の原本/Range/タイル参照のhash（同じbytesの別参照を含む）、開始時と終了時の全台帳・全関係一致も検査する。workなしの検証は原本の再取得・内容検査ではない。最初の検証スクリプト呼出しはassembleの引数型エラーとなり、実APIに合わせてmanifestをJSONとして渡すよう直して成功した。
 
-研究のみで採用・アプリ変更がないため、Go全体・UI・実データbuilddata/full/details/pins・Mapsの再検証は行っていない。履歴digest・共通テストも変更していない。現地、在庫、一般原本の再配布許諾、羽生以外の数値外形照合は未確認。取得hash一致は意味的な施設同定の保証ではない。
+研究のみで採用・アプリ変更はないが、既存pre-commitフックはdata配下変更に `go test -count=1 ./...` を要求するため実行し成功した（cmd/builddata経由のPython統合テストを含む）。フックは省略していない。UI・実データbuilddata/full/details/pins・Mapsの再検証は行っていない。履歴digest・共通テストも変更していない。現地、在庫、一般原本の再配布許諾、羽生以外の数値外形照合は未確認。取得hash一致は意味的な施設同定の保証ではない。
 
 地域共有の実測は345.762秒（選定保存から結果JSON作成まで）。事前の必須資料読み、独立レビュー、PR作業を含まず、8施設へ重複加算しない。全国所要時間への外挿もしない。
 
