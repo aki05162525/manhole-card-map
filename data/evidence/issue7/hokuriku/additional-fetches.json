@@ -1,0 +1,93 @@
+[
+  {
+    "sourceUrl": "https://www.town.noto.lg.jp/kakuka/1012/gyomu/kyouikufront/syokannshisetsu/syougaigakusyuushisetsu/4876.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.321789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.noto.lg.jp/kakuka/1012/gyomu/kyouikufront/syokannshisetsu/syougaigakusyuushisetsu/4876.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/4699003427708de7d04f.html",
+    "snapshotSHA256": "18552f214c865bba27f8bde06f85d841840f07870cf7690e980e8110779b0051",
+    "bytes": 70483,
+    "fetchedAt": "2026-11-05T06:28:32.739944+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.shibata.lg.jp/shisetsu/kanko/kanko/index.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.322459+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shibata.lg.jp/shisetsu/kanko/kanko/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/hokuriku/e55863993d79ace39450.html",
+    "snapshotSHA256": "8050dae88f2d7d4ef397922ade41ac80a67cb0f912ca4294480cd9aa37092d4b",
+    "bytes": 17725,
+    "fetchedAt": "2026-11-05T06:28:32.853465+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.kahoku.lg.jp/006/612/613/d002017_d/fil/kahoku_169_53.pdf",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.323027+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kahoku.lg.jp/006/612/613/d002017_d/fil/kahoku_169_53.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/issue7/hokuriku/5a9bde81102913dfba1c.pdf",
+    "snapshotSHA256": "79b09e9913c85d153a3aa240c3f6b2c149ce8759a185be0f634ae0285b57bd49",
+    "bytes": 4971043,
+    "fetchedAt": "2026-11-05T06:28:35.451145+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/51975.pdf",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.323622+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sado.niigata.jp/uploaded/attachment/51975.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/issue7/hokuriku/f0a0e1189955c1413d11.pdf",
+    "snapshotSHA256": "113d0343de71fa21f596b78b64b65d0621d54c190242920392a20e3a4b40b33b",
+    "bytes": 13724171,
+    "fetchedAt": "2026-11-05T06:28:33.200358+00:00"
+  },
+  {
+    "sourceUrl": "https://www.ikunesu-shibata.jp/faq.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.325546+00:00",
+    "status": 200,
+    "finalUrl": "https://www.ikunesu-shibata.jp/faq.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/b4d854f0a3a36dd06236.html",
+    "snapshotSHA256": "292830c02eee01e2077e531865fcdcb03a989dd48c1b9cfea8cc50519395a032",
+    "bytes": 33887,
+    "fetchedAt": "2026-11-05T06:28:32.973691+00:00"
+  },
+  {
+    "sourceUrl": "https://www.city.murakami.lg.jp/site/kouminkan/arakawa-chiku.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.326566+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "fetchedAt": "2026-11-05T06:28:32.713882+00:00"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.327066+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/28d45067bfd5191b2a49.html",
+    "snapshotSHA256": "0c3f4366ef9b637a7ea7d9a87d478aae0144fec394423eb247472f5de59b9345",
+    "bytes": 128344,
+    "fetchedAt": "2026-11-05T06:28:32.764598+00:00"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "facilityIds": [],
+    "startedAt": "2026-11-05T06:28:32.327563+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/hokuriku/8b3d596123345c99c3b6.html",
+    "snapshotSHA256": "158fa17aaa6182c1b40dd2f46ca2bb903cb25d871361538316a1616c50967dea",
+    "bytes": 27978,
+    "fetchedAt": "2026-11-05T06:28:32.747090+00:00"
+  }
+]

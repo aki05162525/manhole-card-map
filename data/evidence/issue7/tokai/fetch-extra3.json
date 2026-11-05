@@ -1,0 +1,95 @@
+[
+  {
+    "url": "https://www.city.seki.lg.jp/cmsfiles/contents/0000014/14044/1F_PLAN_HP_2018_OL.jpg",
+    "facilityIds": [
+      "facility:chubu-west-44c55ff47f14ec6d456e"
+    ],
+    "startedAt": "2026-11-05T06:31:50.109694+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.seki.lg.jp/cmsfiles/contents/0000014/14044/1F_PLAN_HP_2018_OL.jpg",
+    "snapshotPath": "data/evidence/issue7/tokai/576fb0c230c78753e368.html",
+    "snapshotSHA256": "d0f3fd9593a821514e4f0686bd3720a1b341d7f88fdb58bb933714264eb58a03",
+    "contentType": "image/jpeg",
+    "bytes": 208653,
+    "fetchedAt": "2026-11-05T06:31:50.509715+00:00"
+  },
+  {
+    "url": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html",
+    "facilityIds": [
+      "facility:chubu-west-b8c6ad4784789086f0d7"
+    ],
+    "startedAt": "2026-11-05T06:31:50.110211+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html",
+    "snapshotPath": "data/evidence/issue7/tokai/9812881ba1b21bdb8a85.html",
+    "snapshotSHA256": "5eddb68162add531e846703db332e8d09663119d8b3b623cbe6fdd1d64934137",
+    "contentType": "text/html",
+    "bytes": 33633,
+    "fetchedAt": "2026-11-05T06:31:50.296234+00:00"
+  },
+  {
+    "url": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm",
+    "facilityIds": [
+      "facility:chubu-west-5c2eca0bf60a3cf39536"
+    ],
+    "startedAt": "2026-11-05T06:31:50.110606+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm",
+    "snapshotPath": "data/evidence/issue7/tokai/461674246c693ff28338.html",
+    "snapshotSHA256": "2797f79042e3ffe7f8216648ba03313de113ca8c6679eb1e0bd977db11db53f2",
+    "contentType": "text/html",
+    "bytes": 14193,
+    "fetchedAt": "2026-11-05T06:31:50.308554+00:00"
+  },
+  {
+    "url": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+    "facilityIds": [
+      "facility:chubu-west-3ae4954df5521d92e778"
+    ],
+    "startedAt": "2026-11-05T06:31:50.110933+00:00",
+    "status": 200,
+    "finalUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html",
+    "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+    "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 16160,
+    "fetchedAt": "2026-11-05T06:31:50.279477+00:00"
+  },
+  {
+    "url": "https://www.hidatakayama.or.jp/about/",
+    "facilityIds": [
+      "facility:chubu-takayama-nakabashi"
+    ],
+    "startedAt": "2026-11-05T06:31:50.111321+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "fetchedAt": "2026-11-05T06:31:51.192545+00:00"
+  },
+  {
+    "url": "https://www.hida-kankou.jp/privacy",
+    "facilityIds": [
+      "facility:chubu-west-8b10b99e9d58aaa58550"
+    ],
+    "startedAt": "2026-11-05T06:31:50.111761+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hida-kankou.jp/",
+    "snapshotPath": "data/evidence/issue7/tokai/5765963b571a2ce68691.html",
+    "snapshotSHA256": "4b77180536621fa7bbd6ee6d915ea4b6a787230b5f7139df1691b7066fab6032",
+    "contentType": "text/html; charset=UTF-8",
+    "bytes": 109564,
+    "fetchedAt": "2026-11-05T06:31:50.634398+00:00"
+  },
+  {
+    "url": "https://www.tokonamesanpo.jp/member/member_008.html",
+    "facilityIds": [
+      "facility:chubu-west-423fcab6c8f81568e652"
+    ],
+    "startedAt": "2026-11-05T06:31:50.279515+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokonamesanpo.jp/member/member_008.html",
+    "snapshotPath": "data/evidence/issue7/tokai/c283960446010b27c6d5.html",
+    "snapshotSHA256": "34d46c84ee42b31ca69741a17a70e40c92c03abaac588346eb081a00a6c64c8d",
+    "contentType": "text/html",
+    "bytes": 8980,
+    "fetchedAt": "2026-11-05T06:31:50.396898+00:00"
+  }
+]

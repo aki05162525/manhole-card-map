@@ -1,0 +1,1033 @@
+[
+  {
+    "facilityId": "facility:north-0c29dde3d5fc2a368725",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3244",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01464",
+        "P05_002": "1",
+        "P05_003": "和寒町役場",
+        "P05_004": "和寒町字西町120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.413383,
+          44.023119
+        ]
+      }
+    },
+    "featureIndex": 3244,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 44.023119,
+      "lng": 142.413383
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-20e8f811524b0ce7d3f5",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/5318",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01691",
+        "P05_002": "1",
+        "P05_003": "別海町役場",
+        "P05_004": "別海町別海常盤町280"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.117341,
+          43.39399
+        ]
+      }
+    },
+    "featureIndex": 5318,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.39399,
+      "lng": 145.117341
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-3170be48b7ec799e21bb",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3244",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01464",
+        "P05_002": "1",
+        "P05_003": "和寒町役場",
+        "P05_004": "和寒町字西町120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.413383,
+          44.023119
+        ]
+      }
+    },
+    "featureIndex": 3244,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 44.023119,
+      "lng": 142.413383
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-337a40d0c1a094f1643d",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4642",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01634",
+        "P05_002": "1",
+        "P05_003": "鹿追町役場",
+        "P05_004": "鹿追町東町1-15-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.989028,
+          43.098876
+        ]
+      }
+    },
+    "featureIndex": 4642,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.098876,
+      "lng": 142.989028
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-3992dcf75c3cb9b680a4",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3161",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01460",
+        "P05_002": "1",
+        "P05_003": "上富良野町役場",
+        "P05_004": "上富良野町大町2-2-11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.467112,
+          43.455614
+        ]
+      }
+    },
+    "featureIndex": 3161,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.455614,
+      "lng": 142.467112
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-4c87540ad5304f8a47b5",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4625",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01633",
+        "P05_002": "1",
+        "P05_003": "上士幌町役場",
+        "P05_004": "上士幌町字上士幌東3線238"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.296243,
+          43.232615
+        ]
+      }
+    },
+    "featureIndex": 4625,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.232615,
+      "lng": 143.296243
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-5146ae8cc4fb697aa46b",
+    "snapshotPath": "data/evidence/issue7/hokkaido/originals/f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d.html",
+    "snapshotSHA256": "f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d",
+    "locator": "CSV ID=PF0000000001（データ行1）、名称・所在地_連結表記・緯度・経度",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "municipal CSV",
+    "rawRecord": {
+      "全国地方公共団体コード": "12297",
+      "ID": "PF0000000001",
+      "地方公共団体名": "北海道富良野市",
+      "名称": "富良野市複合庁舎",
+      "名称_カナ": "フラノシフクゴウチョウシャ",
+      "名称_英字": "Furano City Complex Government Building",
+      "施設区分": "市施設",
+      "POIコード": "1302",
+      "所在地_連結表記": "富良野市弥生町1番1号",
+      "所在地_都道府県": "北海道",
+      "所在地_市区町村": "富良野市",
+      "所在地_町字": "弥生町",
+      "所在地_番地以下": "1番1号",
+      "緯度": "43.342336",
+      "経度": "142.383447",
+      "郵便番号": "768555"
+    },
+    "adjacentRecord": {
+      "全国地方公共団体コード": "12297",
+      "ID": "PF0000000002",
+      "地方公共団体名": "北海道富良野市",
+      "名称": "富良野市総合保健センター",
+      "名称_カナ": "フラノシソウゴウホケンセンター",
+      "名称_英字": "Furano City Comprehensive Health Center",
+      "施設区分": "市施設",
+      "POIコード": "1606",
+      "所在地_連結表記": "富良野市弥生町1番3号",
+      "所在地_都道府県": "北海道",
+      "所在地_市区町村": "富良野市",
+      "所在地_町字": "弥生町",
+      "所在地_番地以下": "1番3号",
+      "緯度": "43.3426675",
+      "経度": "142.3820473",
+      "郵便番号": "760018"
+    },
+    "crs": "not declared in source; no EPSG assertion",
+    "axisOrder": "named 緯度 latitude / 経度 longitude",
+    "coordinate": {
+      "lat": 43.342336,
+      "lng": 142.383447
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+    "snapshotPath": "data/evidence/issue7/hokkaido/originals/db780fa2c6c2a77315a99e7a2d25816bc09b8cb0f57907bf65be74e9d7c26db0.html",
+    "snapshotSHA256": "db780fa2c6c2a77315a99e7a2d25816bc09b8cb0f57907bf65be74e9d7c26db0",
+    "locator": "「カード配布について」直後 div.g_map > iframe[src] の q=43.93876130596552,141.64699032117065",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "official HTML q",
+    "rawRecord": "<iframe src=\"https://maps.google.co.jp/maps?q=43.93876130596552,141.64699032117065",
+    "crs": "web map geographic lat/lng; EPSG not declared",
+    "axisOrder": "q=latitude,longitude; not an HTTP Google response",
+    "coordinate": {
+      "lat": 43.93876130596552,
+      "lng": 141.64699032117065
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-6104f556e2024abcb15f",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3631",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01516",
+        "P05_002": "1",
+        "P05_003": "豊富町役場",
+        "P05_004": "豊富町大通6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.777508,
+          45.102847
+        ]
+      }
+    },
+    "featureIndex": 3631,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 45.102847,
+      "lng": 141.777508
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-63f1d610c5add80db10e",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3663",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01518",
+        "P05_002": "1",
+        "P05_003": "利尻町役場",
+        "P05_004": "利尻町沓形字緑町14-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.139597,
+          45.187041
+        ]
+      }
+    },
+    "featureIndex": 3663,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 45.187041,
+      "lng": 141.139597
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-76934d7112fde654b326",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4655",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01635",
+        "P05_002": "1",
+        "P05_003": "新得町役場",
+        "P05_004": "新得町3条南4-26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.838822,
+          43.079741
+        ]
+      }
+    },
+    "featureIndex": 4655,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.079741,
+      "lng": 142.838822
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-7e52de8e6f50eeba0d74",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/5318",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01691",
+        "P05_002": "1",
+        "P05_003": "別海町役場",
+        "P05_004": "別海町別海常盤町280"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          145.117341,
+          43.39399
+        ]
+      }
+    },
+    "featureIndex": 5318,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.39399,
+      "lng": 145.117341
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-7fde83cc219f8104cc65",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/5000",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01648",
+        "P05_002": "1",
+        "P05_003": "陸別町役場",
+        "P05_004": "陸別町字陸別東1条3-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.747305,
+          43.468914
+        ]
+      }
+    },
+    "featureIndex": 5000,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.468914,
+      "lng": 143.747305
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-80c28f27f6f95e930a9b",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3161",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01460",
+        "P05_002": "1",
+        "P05_003": "上富良野町役場",
+        "P05_004": "上富良野町大町2-2-11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.467112,
+          43.455614
+        ]
+      }
+    },
+    "featureIndex": 3161,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.455614,
+      "lng": 142.467112
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-94e8fd249c24448254ec",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3631",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01516",
+        "P05_002": "1",
+        "P05_003": "豊富町役場",
+        "P05_004": "豊富町大通6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.777508,
+          45.102847
+        ]
+      }
+    },
+    "featureIndex": 3631,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 45.102847,
+      "lng": 141.777508
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-9d5628a68e45a5cf6deb",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4982",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01647",
+        "P05_002": "1",
+        "P05_003": "足寄町役場",
+        "P05_004": "足寄町北1条4-48-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.55393,
+          43.244786
+        ]
+      }
+    },
+    "featureIndex": 4982,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.244786,
+      "lng": 143.55393
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-9f828ae51e79cb1346e4",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3039",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01454",
+        "P05_002": "1",
+        "P05_003": "当麻町役場",
+        "P05_004": "当麻町3条東2-11-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.508388,
+          43.828201
+        ]
+      }
+    },
+    "featureIndex": 3039,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.828201,
+      "lng": 142.508388
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-a44b8aa1c55ed7aae9ec",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/2812",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01424",
+        "P05_002": "5",
+        "P05_003": "交流プラザみなクル",
+        "P05_004": "奈井江町本町1区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.888449,
+          43.42515612
+        ]
+      }
+    },
+    "featureIndex": 2812,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.42515612,
+      "lng": 141.888449
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-c2f6c2b5109a65d91a91",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3534",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01487",
+        "P05_002": "1",
+        "P05_003": "天塩町役場",
+        "P05_004": "天塩町新栄通8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.745324,
+          44.888121
+        ]
+      }
+    },
+    "featureIndex": 3534,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 44.888121,
+      "lng": 141.745324
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-c755555d3ee86913edcf",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3272",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01465",
+        "P05_002": "1",
+        "P05_003": "剣淵町役場",
+        "P05_004": "剣淵町仲町37-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.361027,
+          44.095746
+        ]
+      }
+    },
+    "featureIndex": 3272,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 44.095746,
+      "lng": 142.361027
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-ca408ccc1bcbc950bdd6",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4655",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01635",
+        "P05_002": "1",
+        "P05_003": "新得町役場",
+        "P05_004": "新得町3条南4-26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.838822,
+          43.079741
+        ]
+      }
+    },
+    "featureIndex": 4655,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.079741,
+      "lng": 142.838822
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-cdee3e1ed7285d1301f2",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4982",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01647",
+        "P05_002": "1",
+        "P05_003": "足寄町役場",
+        "P05_004": "足寄町北1条4-48-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.55393,
+          43.244786
+        ]
+      }
+    },
+    "featureIndex": 4982,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.244786,
+      "lng": 143.55393
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-df2e2fa9738be3f1981a",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/5000",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01648",
+        "P05_002": "1",
+        "P05_003": "陸別町役場",
+        "P05_004": "陸別町字陸別東1条3-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.747305,
+          43.468914
+        ]
+      }
+    },
+    "featureIndex": 5000,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.468914,
+      "lng": 143.747305
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-f19c149e540fddcdc014",
+    "snapshotPath": "data/evidence/issue7/hokkaido/originals/a84822462eb8f061ea02f94d0c1d80da43f636c7023628ff7a9065de2c053c9d.xlsx",
+    "snapshotSHA256": "a84822462eb8f061ea02f94d0c1d80da43f636c7023628ff7a9065de2c053c9d",
+    "locator": "xl/worksheets/sheet1.xml row12 (ID0000000011), K12 latitude / L12 longitude",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "municipal XLSX",
+    "rawRecord": {
+      "A12": "014656",
+      "B12": "0000000011",
+      "C12": "北海道",
+      "D12": "剣淵町",
+      "E12": "剣淵町絵本の館",
+      "F12": "ケンブチチョウエホンノヤカタ",
+      "I12": "剣淵町緑町15番３号",
+      "K12": "44.100099999999998",
+      "L12": "142.35883999999999",
+      "M12": "0165-34-2624",
+      "P12": "剣淵町",
+      "R12": "0.41666666666666669",
+      "S12": "0.70833333333333337"
+    },
+    "adjacentRecord": {
+      "A13": "014656",
+      "B13": "0000000012",
+      "C13": "北海道",
+      "D13": "剣淵町",
+      "E13": "剣淵町資料館",
+      "F13": "ケンブチチョウシリョウカン",
+      "I13": "剣淵町緑町15番４号",
+      "K13": "44.100380000000001",
+      "L13": "142.35867999999999",
+      "M13": "0165-34-2235",
+      "P13": "剣淵町",
+      "X13": "隣接する絵本の館に問い合わせ"
+    },
+    "crs": "not declared in source; no EPSG assertion",
+    "axisOrder": "K12 緯度 latitude / L12 経度 longitude",
+    "coordinate": {
+      "lat": 44.1001,
+      "lng": 142.35884
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-f51a0f3cd3ce0a372cb6",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/4982",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01647",
+        "P05_002": "1",
+        "P05_003": "足寄町役場",
+        "P05_004": "足寄町北1条4-48-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          143.55393,
+          43.244786
+        ]
+      }
+    },
+    "featureIndex": 4982,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.244786,
+      "lng": 143.55393
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-fc46386371945051a55a",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3534",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01487",
+        "P05_002": "1",
+        "P05_003": "天塩町役場",
+        "P05_004": "天塩町新栄通8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.745324,
+          44.888121
+        ]
+      }
+    },
+    "featureIndex": 3534,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 44.888121,
+      "lng": 141.745324
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-proposal-minamifurano-construction",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3210",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01462",
+        "P05_002": "1",
+        "P05_003": "南富良野町役場",
+        "P05_004": "南富良野町字幾寅867"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.568522,
+          43.164088
+        ]
+      }
+    },
+    "featureIndex": 3210,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.164088,
+      "lng": 142.568522
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-proposal-minamifurano-planning",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/3210",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01462",
+        "P05_002": "1",
+        "P05_003": "南富良野町役場",
+        "P05_004": "南富良野町字幾寅867"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.568522,
+          43.164088
+        ]
+      }
+    },
+    "featureIndex": 3210,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.164088,
+      "lng": 142.568522
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-proposal-noboribetsu-duty",
+    "snapshotPath": "data/evidence/issue7/hokkaido/originals/67f877a57954778c16406e26d9e45671e6a4d5a9e8a31e5ef5a41b3b49345e61.html",
+    "snapshotSHA256": "67f877a57954778c16406e26d9e45671e6a4d5a9e8a31e5ef5a41b3b49345e61",
+    "locator": "script[data-map-view-target=setting] JSON markerInfos[0] (not center)",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "official HTML marker",
+    "rawRecord": {
+      "source": "osm",
+      "center": {
+        "lat": 42.41505619884396,
+        "lng": 141.1061538
+      },
+      "zoom": 14,
+      "markerInfos": [
+        {
+          "name": 0,
+          "title": "北海道登別市役所",
+          "lat": 42.41243118169229,
+          "lng": 141.1067676544189,
+          "popup": true
+        }
+      ]
+    },
+    "crs": "web map geographic lat/lng; EPSG not declared",
+    "axisOrder": "named lat/lng; center excluded",
+    "coordinate": {
+      "lat": 42.41243118169229,
+      "lng": 141.1067676544189
+    },
+    "passed": true
+  },
+  {
+    "facilityId": "facility:north-proposal-sunagawa-duty",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "locator": "P05-22_01_GML.zip!P05-22_01.geojson#/features/1603",
+    "checkedAt": "2026-11-05",
+    "scope": "building",
+    "method": "P05-22",
+    "rawRecord": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "01226",
+        "P05_002": "1",
+        "P05_003": "砂川市役所",
+        "P05_004": "砂川市西7条北2-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          141.903465,
+          43.494846
+        ]
+      }
+    },
+    "featureIndex": 1603,
+    "crs": "EPSG:6668 / JGD2011",
+    "axisOrder": "GeoJSON [longitude, latitude]",
+    "memberSHA256": "ba97e7929caa0d5c11a08ac742e2fec8e8d382cebdd7c080bc3ed96c7427bb01",
+    "coordinate": {
+      "lat": 43.494846,
+      "lng": 141.903465
+    },
+    "passed": true
+  }
+]

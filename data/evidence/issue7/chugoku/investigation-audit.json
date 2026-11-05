@@ -1,0 +1,2811 @@
+[
+  {
+    "facilityId": "facility:cs-09ae420fdee6e6c661",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-09ae420fdee6e6c661"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-09ae420fdee6e6c661"
+          }
+        ],
+        "result": "市のサッカー交流公園公式案内を調べたが、公園のどの建物が配布場所か対応する数値点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/renofa-manholecard.html",
+        "fetchedAt": "2026-11-05T06:28:00.248814+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-de418ac533e9269a3869.html",
+        "snapshotSHA256": "de418ac533e9269a3869ca9b8e1ec402416fb3d649b16a2a52f1b7ad85ee7f88",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/site/soccer-exchange-park/",
+        "fetchedAt": "2026-11-05T06:28:00.249563+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0eb072a965e51a142821.html",
+        "snapshotSHA256": "62a508e28061cee6e8a2f1c2f8cb782e6bb0c066db153b65f038036df535bef1",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-0b31ddb7a9bb8b0617",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-0b31ddb7a9bb8b0617"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-0b31ddb7a9bb8b0617"
+          }
+        ],
+        "result": "県観光q=35.0373927,134.1336676はノースヴィレッジ敷地の代表点で、配布建物を特定する根拠には不足。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+        "fetchedAt": "2026-11-05T06:28:00.249977+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b01e05be8f6f1e5f261f.html",
+        "snapshotSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_11780.html",
+        "fetchedAt": "2026-11-05T06:28:00.250448+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/e92e3b3b610359818f56.html",
+        "snapshotSHA256": "fc551f428961f8b637c36e4fe7975e3fd9e5e1b468a1af38f3b7cc0fbfe24ff2",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-0bd3389d5748cea3af",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-0bd3389d5748cea3af"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-0bd3389d5748cea3af"
+          }
+        ],
+        "result": "道の駅あいお公式アクセスを取得したが、施設の数値目的地を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "fetchedAt": "2026-11-05T06:28:00.251208+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://michinoeki-aio.com/access/",
+        "fetchedAt": "2026-11-05T06:28:00.251858+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/183860d85b69afb75899.html",
+        "snapshotSHA256": "757ae6c767bc9be922239c064173e1d6c8ae4bb982fd0132f2b67734f406a93b",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.yamaguchi.lg.jp/map/7282.html",
+        "fetchedAt": "2026-11-05T06:29:07.371960+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/0b660662b4408b7e75dd.html",
+        "snapshotSHA256": "02de51afcb975422cb348beb7f374dea89f2668e29a1402f0d5f190d5fcbe812",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.yamaguchi.lg.jp/uploaded/attachment/85381.pdf",
+        "fetchedAt": "2026-11-05T06:31:11.240394+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/cc8f1f5674ba4ea4fd6d.pdf",
+        "snapshotSHA256": "d68a46e79f11322fde8132ed9083198d8fc6463f3d9b77501e534d814f0aaa30",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.yamaguchi.lg.jp/site/kaiken/189052.html",
+        "fetchedAt": "2026-11-05T06:32:50.345363+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/1618c23c2cb359067320.html",
+        "snapshotSHA256": "22757c4cb723a54b722a31613224708f4dba02b9ac9c6eeac1dc04482c7c5170",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-10b6ee9f630ef7203b",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-10b6ee9f630ef7203b"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-10b6ee9f630ef7203b"
+          }
+        ],
+        "result": "町のナギテラス施設案内を調べたが、名称住所と対応する数値マーカーを確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nagi.okayama.jp/gyousei/manhorukado.html",
+        "fetchedAt": "2026-11-05T06:28:00.253331+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-708f3573e10e133fc1c8.html",
+        "snapshotSHA256": "708f3573e10e133fc1c8b94117c1a87f4656c0cdcd36a10ce8bf00f9806f4023",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
+        "fetchedAt": "2026-11-05T06:28:00.253910+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3ae04d9e2c31bfc5435e.html",
+        "snapshotSHA256": "3ae04d9e2c31bfc5435eadef33d51c1239a196224fa4f04b9d35b92a995052cb",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-29d39832b41529a063",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-29d39832b41529a063"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-29d39832b41529a063"
+          }
+        ],
+        "result": "鉄道公式路線図の駅別Google埋込はpb表示中心。水島駅の建物地点として明示された値ではないため保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.mizurin.co.jp/passenger/routemap.html",
+        "fetchedAt": "2026-11-05T06:28:00.989936+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "snapshotSHA256": "9a1c8b5deed3cdc2bd601966a37a5d10742439e936581c09cf4d382e81cd1a94",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-2a5031a7a254d9bdbd",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-2a5031a7a254d9bdbd"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-2a5031a7a254d9bdbd"
+          }
+        ],
+        "result": "安芸高田市の施設紹介を取得したが、北の関宿の建物目的地を裏付ける数値地点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/",
+        "fetchedAt": "2026-11-05T06:28:01.116505+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/4029dd01f79210fe9dc6.html",
+        "snapshotSHA256": "3b79a9249a60b98accd4054c65e8e5b2495f458ab27f760bfb2acef670098078",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
+        "fetchedAt": "2026-11-05T06:28:01.149743+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/ea1e05b8a060006fb91d.html",
+        "snapshotSHA256": "74da762add701b26f4dd3563fca84d23a3a34dd07132a0b815db322e0cb27a53",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-31ca2ca80f991e84b4",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-31ca2ca80f991e84b4"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-31ca2ca80f991e84b4"
+          }
+        ],
+        "result": "矢掛の公式観光施設詳細で問屋を確認したが、建物の数値目的地を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+        "fetchedAt": "2026-11-05T06:28:01.159154+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "snapshotSHA256": "d697307cc90dd5bcb98de05fd2d37e06d52a2fb7835e05eb49e05fb216a5b6da",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://japan-yakage.jp/archives/spot/detail/9340",
+        "fetchedAt": "2026-11-05T06:28:01.244489+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/47df3388d776a26850d7.html",
+        "snapshotSHA256": "2795addf4eb9449b4c21e017c38da40686187d810cbb2449216e39a3df137ad2",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.yakage.okayama.jp/files/20241112sankou01.pdf",
+        "fetchedAt": "2026-11-05T06:32:50.345845+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/c66ea4075edbd8b512c8.pdf",
+        "snapshotSHA256": "70740cac30f9ad249f03ec31d9530d55593c802b1c3d48bc6a092b7d78dfea10",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-3451fd3f7466c85bb5",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-3451fd3f7466c85bb5"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-3451fd3f7466c85bb5"
+          }
+        ],
+        "result": "府中市観光協会公式のアクセス案内を調べたが、協会事務所の数値地点を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.fuchu.hiroshima.jp/shisei/ippangyosei/8481.html",
+        "fetchedAt": "2026-11-05T06:28:01.269830+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/9d55a40d34dfd23e1250.html",
+        "snapshotSHA256": "6aa5d10b5c13e088babd15d2677c9b3c9e76e6fcffb11f070ecbe5eb8ebee110",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://fuchu-kanko.jp/ufaqs/ufaq-451/",
+        "fetchedAt": "2026-11-05T06:28:01.541846+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/58fc78a27f889e682899.html",
+        "snapshotSHA256": "48a1d610207b9b219d02c99e7ad2bbc6e6bbd257569a8629cb518a8df85c8ca0",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-37f1eda15ce4d18414",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-37f1eda15ce4d18414"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-37f1eda15ce4d18414"
+          }
+        ],
+        "result": "鉄道公式路線図の倉敷市駅地図はpb表示中心のみで、駅建物地点と区別できない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.mizurin.co.jp/passenger/routemap.html",
+        "fetchedAt": "2026-11-05T06:28:00.989936+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "snapshotSHA256": "9a1c8b5deed3cdc2bd601966a37a5d10742439e936581c09cf4d382e81cd1a94",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-3f5f3971d581f490c7",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-3f5f3971d581f490c7"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-3f5f3971d581f490c7"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-3f5f3971d581f490c7"
+          }
+        ],
+        "result": "公式施設紹介はビジターセンター・ミュージアム・サイクリングセンター・風の葉を含む複数棟。qはGREENable HIRUZEN全体の目的地で、カード受付建物を選ぶ証拠がない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.city.maniwa.lg.jp/soshiki/147/55500.html",
+        "fetchedAt": "2026-11-05T06:28:01.569525+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9b7dbb8d66073e1c037a.html",
+        "snapshotSHA256": "9b7dbb8d66073e1c037ac01943d6d2f432e6b94c8b6d5c7373484983c2a486e3",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_16167.html",
+        "fetchedAt": "2026-11-05T06:28:02.352860+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eb8fa7d3ac9730641c73.html",
+        "snapshotSHA256": "f9c14f8131caf68f54f114f1c79afb8a3e1eadfd17cf3ba4aed2d88682b534c7",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://greenable-hiruzen.co.jp/facility/",
+        "fetchedAt": "2026-11-05T06:28:02.399321+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/1e834e2ef2b6829bcca0.html",
+        "snapshotSHA256": "d6462164762751fc3c9d9ceb48df34cbab8bd275f858bffd60af056b7f2eb531",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-424799903d1a9c1291",
+    "priorReasonCategory": "mixed-record",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-424799903d1a9c1291"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-424799903d1a9c1291"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-424799903d1a9c1291"
+          }
+        ],
+        "result": "座標は玉島3-8-25の旧柚木家住宅を指し妥当。しかしfacilityの住所・電話がJR新倉敷駅と混在。親台帳に駅窓口は別IDで存在するため、旧柚木家側の記録修正後に採用可能。駅の座標には流用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_10300.html",
+        "fetchedAt": "2026-11-05T06:28:02.426760+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/7a85bd1b3ca90c368403.html",
+        "snapshotSHA256": "927ea97263770af036e16e36e8be3e2565aa1f201f8f9bcd1bb8af6001489c32",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-42df9ae55a2417f861",
+    "priorReasonCategory": "wrong-facility",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-42df9ae55a2417f861"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-42df9ae55a2417f861"
+          }
+        ],
+        "result": "追加で見つかった広島観光コンベンションビューロー1702の点はレストハウスで、広島駅南口地下広場案内所ではなかった。誤施設の座標を不採用。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/site/gesuido/304786.html",
+        "fetchedAt": "2026-11-05T06:28:02.484877+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/91f9069464eb6a11adfa.html",
+        "snapshotSHA256": "905dce058cf47e8a16f875b1652f097ccbbb72182e4ee2eeab8a3157c996c25d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://hiroshimacvb.jp/venues-accomodation/1702.html",
+        "fetchedAt": "2026-11-05T06:28:02.598946+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ed784e13a8dfaf20a172.html",
+        "snapshotSHA256": "f251a51fa6b7e3a1b6923d54da3d1f51697845d4651c7128273a67898b477b67",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://hiro-chika.com/",
+        "fetchedAt": "2026-11-05T06:33:53.075485+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/586875c9ff4e4db8bdff.html",
+        "snapshotSHA256": "ff8bc1f6bf151589ffd81dd6696795d0226add5ca63ce18ec8e09c59b0d34643",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-4418dd72a69888d0bf",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-4418dd72a69888d0bf"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-4418dd72a69888d0bf"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-4418dd72a69888d0bf"
+          }
+        ],
+        "result": "公式アクセス本文は本郷１４６２７、元台帳は本郷4627。さらにmap_dataの点は湯治村全体で旅籠千両萬両の建物と確定できないため保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/c120/",
+        "fetchedAt": "2026-11-05T06:28:03.147325+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/a40098a460243d0b097d.html",
+        "snapshotSHA256": "4f1829c8a96cd884e238d9831b2a057954c3003d2ed1bdbf730cc7a9bad0b22b",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://toujimura.com/access/",
+        "fetchedAt": "2026-11-05T06:28:03.194371+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d569d7ba6c8f51c2e386.html",
+        "snapshotSHA256": "2e4d3caed4dda43280496fb6b136a61f5df0353bf5bd3f1b3d80f72477830e92",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://toujimura.com/cmn/js/map.js",
+        "fetchedAt": "2026-11-05T06:28:03.301084+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d53928e374fa19dfd32c.html",
+        "snapshotSHA256": "aaaedec05768a785ca595e478ded45a6956ace6184cb4147aa7c3ac26db8e424",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-442369a0c345a4ef96",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-442369a0c345a4ef96"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-442369a0c345a4ef96"
+          }
+        ],
+        "result": "JR西日本公式の新見駅情報で駅を確認したが、原典に採用できる数値目的地を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587.html",
+        "fetchedAt": "2026-11-05T06:28:03.428521+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/37107e02a7b7b846f195.html",
+        "snapshotSHA256": "be240df40407332a94dda88a5c89a56ddd39cb801d1d84e25eff7ce5cc5287db",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://eki.jr-odekake.net/top?id=0650414",
+        "fetchedAt": "2026-11-05T06:28:03.511585+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0c086d003ed50f2e6181.html",
+        "snapshotSHA256": "6bb0c4eaf6977d4951183308e19e7403465595c0957a319be9d3127233faec95",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-56534586c259fb790a",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-56534586c259fb790a"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-56534586c259fb790a"
+          }
+        ],
+        "result": "市立カブトガニ博物館の施設案内地図はpb表示中心のみ。公園や周辺を含む表示中心から博物館の建物点を作らない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.city.kasaoka.okayama.jp/soshiki/34/11538.html",
+        "fetchedAt": "2026-11-05T06:28:03.705181+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f26e69147c49076f455b.html",
+        "snapshotSHA256": "f26e69147c49076f455b9dad432f1b95b92a33554a5321775bb447df1526b2d4",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kasaoka.okayama.jp/site/kabutogani/20197.html",
+        "fetchedAt": "2026-11-05T06:28:03.842791+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3dc653d1ea2393a78264.html",
+        "snapshotSHA256": "99544952d45ea9a7332043f3d5dfa2da508bb46c34b32f8235863426beade126",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-56c4b3109bfbb9d36d",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+          }
+        ],
+        "result": "原典は約3万平方メートルの庭園と書院・茶室・あずまやを説明。qは長府庭園目的地であり、配布受付建物との対応なし。庭園全体点を建物確定点にしない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.shimonoseki.lg.jp/site/water/5654.html",
+        "fetchedAt": "2026-11-05T06:28:03.877235+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-cdc3773c32fe39703d38.html",
+        "snapshotSHA256": "cdc3773c32fe39703d3899817edc35e6bb81b70aed364cab7ca638599f15226f",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_11060.html",
+        "fetchedAt": "2026-11-05T06:28:04.635022+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/ba14c6744f88d642d973.html",
+        "snapshotSHA256": "35c941bf61ea3ba2059b88e4bda7e9762984fd4e42efb37622f82042632e289f",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://s-kanrikousha.com/teienaccess.html",
+        "fetchedAt": "2026-11-05T06:28:04.709659+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95d724149b4d0e2941f4.html",
+        "snapshotSHA256": "c000fc74758a127134f4565a0c1876ac408725efc24203f28e39466a3663adbe",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-5c25582e543cde5044",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-5c25582e543cde5044"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-5c25582e543cde5044"
+          }
+        ],
+        "result": "県観光GeoCoordinatesは34.576072563331,132.26974531791。運営者アクセス図との建物対応を確定できず、道の駅の実建物の裏付け不足で保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://cs-akiota.or.jp/news/originalmanhole-card/",
+        "fetchedAt": "2026-11-05T06:28:04.796758+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/5dd7ebf8a5633cb6142a.html",
+        "snapshotSHA256": "52bdada91f22cd81a0796c9b2e371176cefe0599cfdaae95a95efbcea1e71d41",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://dive-hiroshima.com/explore/2/",
+        "fetchedAt": "2026-11-05T06:28:04.869372+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8d1c41f5e8edb8961802.html",
+        "snapshotSHA256": "232f7b89ea43e976f759f14754673954b7aad20013cb1a65bd038e75a7bef3fd",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-5c5cec6c482042291d",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-5c5cec6c482042291d"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-5c5cec6c482042291d"
+          }
+        ],
+        "result": "三朝温泉公式アクセスは温泉地への交通案内で、観光商工センター建物を指定する座標を確定できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.misasa.tottori.jp/315/319/329/35761.html",
+        "fetchedAt": "2026-11-05T06:28:04.904525+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f4bcf7cd7497d2fec147.html",
+        "snapshotSHA256": "f4bcf7cd7497d2fec14742318eb21972d048b6fd5486240edc53b50822e2f6f2",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://misasaonsen.jp/access/",
+        "fetchedAt": "2026-11-05T06:28:05.286602+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/7e3157a0607f5ba1a9f5.html",
+        "snapshotSHA256": "665dbc6e1564f3e7fb241d1c9b56cd498588d6c53d81ee969b9cd4cc34d699ec",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-7234bdb6d4605a7665",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-7234bdb6d4605a7665"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-7234bdb6d4605a7665"
+          }
+        ],
+        "result": "公園公式アクセスのqは住所文字列（瀬田紺屋作260-1）。住所ジオコーディングや公園中心を管理棟の建物点として使わない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.waki.lg.jp/soshiki/3/186.html",
+        "fetchedAt": "2026-11-05T06:28:06.336775+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-00f7d471008d6cc2b898.html",
+        "snapshotSHA256": "00f7d471008d6cc2b898cfd024c936a3c03ebb80e9a6304206420067a50c0d3d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.hachigamine-grand-park.com/access/",
+        "fetchedAt": "2026-11-05T06:28:06.649140+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/ca0c09308cfb129cc265.html",
+        "snapshotSHA256": "133502b55ef14713a74402f2dba51296e602c2ae73d81cf98e11b16caa6ff7f7",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-7851aeb9671340371a",
+    "priorReasonCategory": "relocation-or-address-identity",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-7851aeb9671340371a"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-7851aeb9671340371a"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-7851aeb9671340371a"
+          }
+        ],
+        "result": "現在の協会所在地は津和野駅内・後田イ66-1。基準台帳後田イ71-2との移転・同一性判定が残る。駅内の明示建物点と現配布原本の接続が必要。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://tsuwano-kanko.net/manholecard/",
+        "fetchedAt": "2026-11-05T06:28:07.074435+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/eae552d9da13a5042f9c.html",
+        "snapshotSHA256": "45944769c1d487eba3efcbc953f3eb728b63540df7f8078984a6d224417e5ee0",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://tsuwano-kanko.net/category1/loca/",
+        "fetchedAt": "2026-11-05T06:28:07.442592+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/323fd82b11177a1cfc76.html",
+        "snapshotSHA256": "e5bfc315091b54f0e8b2e69fcd9a63574e9107ffcf5a3914c3e93b5e627fa03a",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://tsuwano-kanko.net/info/tsuwanostation/",
+        "fetchedAt": "2026-11-05T06:29:07.373315+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d8e91a59894d44f5b61e.html",
+        "snapshotSHA256": "1cc7a6d641e064ef3ce856eaca2fdabbad0dbe664125dc2b94aef7f601d9df76",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-78d5b7e93bce40b71b",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-78d5b7e93bce40b71b"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-78d5b7e93bce40b71b"
+          }
+        ],
+        "result": "秋芳洞公式の施設紹介は洞窟全体の案内。案内所建物を別に示す数値地点が未確認で、洞窟入口点を流用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yamaguchi-tourism.jp/event/detail_19522.html",
+        "fetchedAt": "2026-11-05T06:28:07.578042+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d845c068c056d2defeb4.html",
+        "snapshotSHA256": "adc2ccae2d6850060b29decdda1f4add07fcec2aa62a72d9092a6e2b6b313675",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.akiyoshidai-park.com/spot/akiyoshi-do.html",
+        "fetchedAt": "2026-11-05T06:28:07.669763+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/cd92734831630416e8e1.html",
+        "snapshotSHA256": "31aee417b2fb28b2658f02c51211fc784913078ed20af4ad1816431e3eeb3a44",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-792aab26713d312890",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-792aab26713d312890"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-792aab26713d312890"
+          }
+        ],
+        "result": "県観光のq/GeoCoordinatesは潮風公園の代表点。みなとオアシスの配布建物に対応するか確認できない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+        "fetchedAt": "2026-11-05T06:28:07.843255+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "snapshotSHA256": "9f0cc695bf168620d50d8697eced8ab67a916685965399a4c1fb582970b0a77c",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://dive-hiroshima.com/explore/2938/",
+        "fetchedAt": "2026-11-05T06:28:08.258715+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/281aa736ab3e44818f4e.html",
+        "snapshotSHA256": "5071dfc5d8e8b6d1e6836f8d97bf80b9b58baaf2d603da16b3da1aca471b4c0c",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-7940cff6f6fa056d34",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-7940cff6f6fa056d34"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-7940cff6f6fa056d34"
+          }
+        ],
+        "result": "新見市観光協会公式サイトを調べたが、協会事務所そのものの採用可能な数値地点が得られなかった。新見駅や駅前交流センターへの読み替えはしない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587.html",
+        "fetchedAt": "2026-11-05T06:28:03.428521+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/37107e02a7b7b846f195.html",
+        "snapshotSHA256": "be240df40407332a94dda88a5c89a56ddd39cb801d1d84e25eff7ce5cc5287db",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.niimi.gr.jp/",
+        "fetchedAt": "2026-11-05T06:28:08.731789+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/24b43de9865af9b77f1d.html",
+        "snapshotSHA256": "0c9b2491d56071b503de529703bf564b4b516818788df74607f79169b44b3f37",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://niimi.gr.jp/contact/contact_register/index.html",
+        "fetchedAt": "2026-11-05T06:31:10.974528+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/cb0fe7eac18da9be1379.html",
+        "snapshotSHA256": "4b4f126bd5d884399ec27c49a0752e190c65b45b7e9cce136443190833aa1b36",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://niimi.gr.jp/info/info_detail/index/77.html",
+        "fetchedAt": "2026-11-05T06:31:11.136627+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/5c5ea335d9e0d8dd110c.html",
+        "snapshotSHA256": "f97897ef93cdc0c1059874d8950c2e374cb7ea8f8a1398085b2a2cc25f1d41c9",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-795a18c5cddf2431eb",
+    "priorReasonCategory": "relocation-or-address-identity",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-795a18c5cddf2431eb"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-795a18c5cddf2431eb"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-795a18c5cddf2431eb"
+          }
+        ],
+        "result": "県観光施設情報は西条本町12-3、元台帳は西条町西条475-2。ともに駅2階でも住所の同一性・変更時期を確定できずGeoCoordinatesの適用を保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+        "fetchedAt": "2026-11-05T06:28:09.011485+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/1354af2b442acd7b70ea.html",
+        "snapshotSHA256": "6159f12455d58b43ad264b87da26fcc4de1062ede1ded73fd9b7dd25017c37e0",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://dive-hiroshima.com/explore/341/",
+        "fetchedAt": "2026-11-05T06:28:09.502189+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/49e5f34f6d0f6c62c098.html",
+        "snapshotSHA256": "ff175cd406f95b26fd074045e3e5f9e84ed105ec59ecf055826c097db37d9002",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.higashihiroshima.lg.jp/kanko/kanko/sitemap/40088.html",
+        "fetchedAt": "2026-11-05T06:29:07.370701+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/1625e65358f4d8dd7e1a.html",
+        "snapshotSHA256": "a9618654d75270d2273db4b2b701cbb1a09d8e1898c0c6acf282c705a76a9a0d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-83c9c4a0ad77ff4af0",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-83c9c4a0ad77ff4af0"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-83c9c4a0ad77ff4af0"
+          }
+        ],
+        "result": "上下水道局公式アクセスに複数施設のpb地図あり。下水道整備課所在建物と数値マーカーを対応づけられず、表示中心は不採用。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "fetchedAt": "2026-11-05T06:28:00.251208+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://water-city-yamaguchi.com/contact/",
+        "fetchedAt": "2026-11-05T06:28:09.562903+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/87f6c7de1cd62d5bf09b.html",
+        "snapshotSHA256": "0f5562cb884a5c30d277d309e3a6e6b1719c78069a8ee8326d324520aeb4c72d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://water-city-yamaguchi.com/access/",
+        "fetchedAt": "2026-11-05T06:28:09.673483+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95390f562f86ddd46240.html",
+        "snapshotSHA256": "c2895b5c34af4dc4b16a8ba0b66842cb56eb79352ebedfee215f3390bba79570",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-85f80ce977bcdf56d4",
+    "priorReasonCategory": "relocation-or-address-identity",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-85f80ce977bcdf56d4"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-85f80ce977bcdf56d4"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-85f80ce977bcdf56d4"
+          }
+        ],
+        "result": "再取得した施設ページは土師288-1、initlat=34.69969459401827、initlong=134.10324919623656。P05の土師291（34.70016725,134.1020908）と異なる。市地図JSは同値をmarker.positionに使うが、基準台帳住所との変更関係は未確定。住所訂正だけで同一建物と仮定しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "fetchedAt": "2026-11-05T06:28:09.754253+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.setouchi.lg.jp/map/405.html",
+        "fetchedAt": "2026-11-05T06:28:09.794752+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue5/west-south/570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f.bin",
+        "snapshotSHA256": "570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.setouchi.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "fetchedAt": "2026-11-05T06:28:10.396727+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c514bbde05832eb12deb.html",
+        "snapshotSHA256": "a62b83d13bc35abe58349072a188c23625e8b11185ddf11af41656082fc07c38",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.setouchi.lg.jp/uploaded/attachment/115698.pdf",
+        "fetchedAt": "2026-11-05T06:29:07.369791+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/2a7352d08fc596620c75.pdf",
+        "snapshotSHA256": "0ebd4ad06afe29281007beedcb725cbfe6e0660c74683bb0fbf9d982b35d6b48",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-8b8fd2a944840cadfd",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-8b8fd2a944840cadfd"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-8b8fd2a944840cadfd"
+          }
+        ],
+        "result": "県観光のq=34.5186399,133.562182はつばきの丘運動公園全体。配布窓口がある管理棟と特定できない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.town.satosho.okayama.jp/soshiki/6/9634.html",
+        "fetchedAt": "2026-11-05T06:28:10.399962+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-e048bdcbce1615d62e1c.html",
+        "snapshotSHA256": "e048bdcbce1615d62e1ce74876f0733e40f70a975e8686a6552b0110f668f97c",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.satosho.okayama.jp/site/tsubaki/",
+        "fetchedAt": "2026-11-05T06:28:10.583155+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/bf329d80ba734f5beddf.html",
+        "snapshotSHA256": "8e58cb4dea7bd3c868bc48b2e61f897da9e6b051e0260faff39f78cbdd82bb94",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_11648.html",
+        "fetchedAt": "2026-11-05T06:28:11.263283+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/cb11c6df15c273a713f1.html",
+        "snapshotSHA256": "fb4a48472ca1c6cf35577b682ed2f830593b2343380f37e5fba0bb3730504020",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-8d0cee31bd1bcec521",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-8d0cee31bd1bcec521"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-8d0cee31bd1bcec521"
+          }
+        ],
+        "result": "公園公式の湖水ホール施設詳細はpb表示中心を含む埋込地図のみ。受付の建物を示す独立した数値地点が未確認。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.ube.yamaguchi.jp/kurashi/gasgesui/1015032/1015277/1015109.html",
+        "fetchedAt": "2026-11-05T06:28:11.739869+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-1313a07a735e29268db9.html",
+        "snapshotSHA256": "1313a07a735e29268db9e2a583f514f31132b3f42e5377587c2d45b3682ac811",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.tokiwapark.jp/etc/kosuihall.html",
+        "fetchedAt": "2026-11-05T06:28:11.762418+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/fa43d9b465c17ea87fc4.html",
+        "snapshotSHA256": "06cf96d4e58ca38daef99f6ce8dd11d788b042c873d6c788f8a21935c87de490",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.fukushi-map.pref.yamaguchi.lg.jp/spot/7621",
+        "fetchedAt": "2026-11-05T06:29:07.371336+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/02042ce679932d818b6c.html",
+        "snapshotSHA256": "36762f59475ef8d25916417016595440b95380e320dc73baab6cfbad5059ce3a",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-8dd78605b23dd55e25",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-8dd78605b23dd55e25"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-8dd78605b23dd55e25"
+          }
+        ],
+        "result": "町家交流館公式施設案内を取得したが、建物目的地を裏付ける数値地点を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+        "fetchedAt": "2026-11-05T06:28:01.159154+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "snapshotSHA256": "d697307cc90dd5bcb98de05fd2d37e06d52a2fb7835e05eb49e05fb216a5b6da",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yakagemachiya.information.jp/shisetsuannai/",
+        "fetchedAt": "2026-11-05T06:28:11.805304+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3d39c4d8c7a361b0d785.html",
+        "snapshotSHA256": "517c9e50f65b480620fa3acb2b94e2ead8bb6abdb615d8908ae1e2baf30b32ea",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yakagemachiya.information.jp/kannaiannai/",
+        "fetchedAt": "2026-11-05T06:31:11.295723+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/acd361cb08815f9dcdfe.html",
+        "snapshotSHA256": "60862f4fe532f56f29c89f6f989494254f87884ad853660c842ded5a274f1d75",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.yakage.okayama.jp/files/20241112sankou01.pdf",
+        "fetchedAt": "2026-11-05T06:32:50.345845+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/c66ea4075edbd8b512c8.pdf",
+        "snapshotSHA256": "70740cac30f9ad249f03ec31d9530d55593c802b1c3d48bc6a092b7d78dfea10",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-9158e6a0fc7222e6ab",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-9158e6a0fc7222e6ab"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-9158e6a0fc7222e6ab"
+          }
+        ],
+        "result": "観光協会公式地図はGoogle埋込pbの表示領域中心のみ。浜田駅の案内所の明示地点としては採用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+        "fetchedAt": "2026-11-05T06:28:11.810328+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/e2b7f711ade6b80ca544.html",
+        "snapshotSHA256": "c6f53b6238df8b9479437085b284b922ee28df4fc97dcd4dfd89a37c788b7bcb",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kankou-hamada.org/tourisminfo",
+        "fetchedAt": "2026-11-05T06:28:12.146233+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-2f3444933a8b9df2f622.html",
+        "snapshotSHA256": "2f3444933a8b9df2f6225c6610c2da855b5183b1c8afd935fdba8fdca4788e97",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://kankou-hamada.or.jp/salon",
+        "fetchedAt": "2026-11-05T06:33:53.073984+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/831b0eeba7aff8fac5b8.html",
+        "snapshotSHA256": "400684f6ddd37b5893701aa77053e4bac4c10ac4ac34d1edceb1898f24febee7",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+          }
+        ],
+        "result": "配布原典は入船山記念館券売所を指定。一方地点原典は旧司令長官官舎、郷土館、歴史民俗資料館を含む入船山記念館全体。券売所の建物点と同定できない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+        "fetchedAt": "2026-11-05T06:28:12.367443+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/b9a49e2c2e84f47e5141.html",
+        "snapshotSHA256": "69d8f7e331ed0164efe61e124196ce26571a86088b57297a7bf648f81cf0e945",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://dive-hiroshima.com/explore/53/",
+        "fetchedAt": "2026-11-05T06:28:13.366544+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ebaf988e8f3e910db30d.html",
+        "snapshotSHA256": "955cf3ead2f3b38f723c42e31c2d34191f45b12a92817d54a242e4f8c230faba",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://kure-trip.jp/spots/94",
+        "fetchedAt": "2026-11-05T06:28:13.492219+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/8a9ccc4025fd15ac8867.html",
+        "snapshotSHA256": "555fbb0498a3d7220de795b17639d31d915ff8580f7fb1a8605ac46fa41da145",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-a24ab0817e243a1ffb",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-a24ab0817e243a1ffb"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-a24ab0817e243a1ffb"
+          }
+        ],
+        "result": "市の広島港施設案内を確認したが、総合案内所のある建物を指定する数値地点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/site/gesuido/304786.html",
+        "fetchedAt": "2026-11-05T06:28:02.484877+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/91f9069464eb6a11adfa.html",
+        "snapshotSHA256": "905dce058cf47e8a16f875b1652f097ccbbb72182e4ee2eeab8a3157c996c25d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/facility/port/1026902/1026904/1014527.html",
+        "fetchedAt": "2026-11-05T06:28:13.516053+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/1802aab38d725bc4e356.html",
+        "snapshotSHA256": "fdcd8f93b4f84a8387581c27673795c4f84e1a52d4dc971594ac86095fca9d15",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-a5355105c733978fb2",
+    "priorReasonCategory": "relocation-or-address-identity",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-a5355105c733978fb2"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-a5355105c733978fb2"
+          }
+        ],
+        "result": "宿直室は現役場（美田600-4）内。P05は浦郷534の旧役場であり、現住所へ旧庁舎点を流用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/news/1786",
+        "fetchedAt": "2026-11-05T06:28:13.768577+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/f2daaa25cd1813558f11.html",
+        "snapshotSHA256": "2adea02229aad5fb8c4eeed551845e0e7b8992547e2629e850f30aa71fdc42d4",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/",
+        "fetchedAt": "2026-11-05T06:28:14.339562+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d304c05089e763c72bf1.html",
+        "snapshotSHA256": "22532596054c8427d2618d6f955d3415dc400f8ac94b8cf80fe29b4945240381",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/bunya/b_anshin-joho/b_disclosure/481",
+        "fetchedAt": "2026-11-05T06:31:10.972458+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/e131bf5c0ce17668dcdf.html",
+        "snapshotSHA256": "3548bcb34a3973702b1eb6c9774d3f6f49dcec1d449fb423976300a47e810545",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-a7982389d4085032f9",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-a7982389d4085032f9"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-a7982389d4085032f9"
+          }
+        ],
+        "result": "商店街のギャラリー90施設紹介を確認したが、ギャラリー建物を指す採用可能な数値地点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+        "fetchedAt": "2026-11-05T06:28:12.367443+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/b9a49e2c2e84f47e5141.html",
+        "snapshotSHA256": "69d8f7e331ed0164efe61e124196ce26571a86088b57297a7bf648f81cf0e945",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://rengadori.net/archives/shopinfo/%E8%A1%97%E3%81%8B%E3%81%A9%E5%B8%82%E6%B0%91%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC90",
+        "fetchedAt": "2026-11-05T06:28:14.369589+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/136a897963644be6102c.html",
+        "snapshotSHA256": "5bd49cb1a5b6905a9e7c3adbbff66d3cdc5c4d1900677202009074f1de09f135",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ac2f433114644560e5",
+    "priorReasonCategory": "wrong-facility",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-ac2f433114644560e5"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-ac2f433114644560e5"
+          }
+        ],
+        "result": "県観光ページのGeoCoordinatesは堀川遊覧の別乗船場（大手前側）で、黒田町507-1のふれあい広場乗船場とは一致しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.water.matsue.shimane.jp/jogesuido/designmanhole/manhole-card.html",
+        "fetchedAt": "2026-11-05T06:28:15.218385+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-bf9390477ba0ef6e50b7.html",
+        "snapshotSHA256": "bf9390477ba0ef6e50b7583d2f3305b6b3991a5f8bf39bfe552951a9d174df55",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kankou-shimane.com/destination/20256",
+        "fetchedAt": "2026-11-05T06:28:15.350013+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/87b7c087a87e062517ec.html",
+        "snapshotSHA256": "ab6ed002ef9da3c22c6156140a3479ffe24c227c953918a50c6f594d65f85e84",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ad6498274696679c6b",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-ad6498274696679c6b"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-ad6498274696679c6b"
+          }
+        ],
+        "result": "県観光の案内所ページはgConf lat:0,lng:0で実地点を提供していない。ゼロ値や周辺施設点は不採用。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+        "fetchedAt": "2026-11-05T06:28:15.387896+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_18554.html",
+        "fetchedAt": "2026-11-05T06:28:15.561376+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/3a846948e67bc5c6e3de.html",
+        "snapshotSHA256": "9ee384823ab8398d3908eb51a9a4b42249e9933bc0c22e8746bd33be1eecc8bf",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-baec24a203c6ed911a",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-baec24a203c6ed911a"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-baec24a203c6ed911a"
+          }
+        ],
+        "result": "管理法人の芦田川施設紹介・アクセスを取得。案内図から建物の緯度経度を推定せず、数値地点未確認として保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.pref.hiroshima.lg.jp/soshiki/106/manholecover-info.html",
+        "fetchedAt": "2026-11-05T06:28:15.575410+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/fa9d75e9191150256aed.html",
+        "snapshotSHA256": "7530e6e2ffebb40b644b4366e287c5fcca26e1b0d6450adce0a14969cc3fb971",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/sisetu.html",
+        "fetchedAt": "2026-11-05T06:28:15.822399+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0900eb3893323f103bb0.html",
+        "snapshotSHA256": "4949e307dfe2fcc768de576da22580e58839ed925c8bcd023712fd655f0216f6",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/map.html",
+        "fetchedAt": "2026-11-05T06:28:16.998950+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/65efecd55d097f3646ea.html",
+        "snapshotSHA256": "2501cb3abe2f89721c9888afe1a7bcf8cf39580a1e0a62b28ec333492912d7a4",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-cb11c6cf2f76187e61",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-cb11c6cf2f76187e61"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-cb11c6cf2f76187e61"
+          }
+        ],
+        "result": "市の歴史民俗資料館施設案内地図はpb表示中心のみで、資料館建物の明示地点を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+        "fetchedAt": "2026-11-05T06:28:17.120379+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "snapshotSHA256": "aa0d0620b82eb322e90ac495ad5e9bd2032eda6a12d669553061eb1680ff9c12",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
+        "fetchedAt": "2026-11-05T06:28:17.520500+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-61c180e16c0a339230ce.html",
+        "snapshotSHA256": "61c180e16c0a339230ce7238cfcee0088151c63f5b4ed85d1dfac0fe74d30b82",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-cd44c49fdfac071988",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-cd44c49fdfac071988"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-cd44c49fdfac071988"
+          }
+        ],
+        "result": "柳井市観光協会公式アクセスを取得したが、協会事務所の明示数値地点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city-yanai.jp/soshiki/72/gesuika-do.html",
+        "fetchedAt": "2026-11-05T06:28:17.612230+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b3f28cb66caf9d11b11d.html",
+        "snapshotSHA256": "b3f28cb66caf9d11b11d3726b746a47ad1c2b8d746476f7353039c0ab879f562",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yanai-kankou.jp/access",
+        "fetchedAt": "2026-11-05T06:28:18.272754+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/02d725d9769e8e7013d4.html",
+        "snapshotSHA256": "ab121b217868044c308f3f85b51ad48644eb9b666c4903b6499675722a9617ba",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.yanai-kankou.jp/home/",
+        "fetchedAt": "2026-11-05T06:33:53.078400+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/4744ebfb9d3954d3378a.html",
+        "snapshotSHA256": "a3857b429f207b82cc9ad285b1fdae22ef5e9830f75292a4e5e029a65450f448",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yanai-kankou.jp/wp-content/themes/yanai-kankou/js/googlemap.js?ver=1.0.0",
+        "fetchedAt": "2026-11-05T06:34:39.306265+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/1e45aa12aaa125a25cbd.html",
+        "snapshotSHA256": "7654d4ec5c933f1370a82c79b353da2cba97c633c0f540b60a6f9f0cdabfc96c",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-d0065de3f1d6af9a22",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-d0065de3f1d6af9a22"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-d0065de3f1d6af9a22"
+          }
+        ],
+        "result": "市庁舎公式アクセスを取得したが、別館を本館から区別した数値地点がない。本館点や埋込表示中心を別館2階に流用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+        "fetchedAt": "2026-11-05T06:28:17.120379+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "snapshotSHA256": "aa0d0620b82eb322e90ac495ad5e9bd2032eda6a12d669553061eb1680ff9c12",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/",
+        "fetchedAt": "2026-11-05T06:28:18.308213+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/b497ece68f0e2a970d4d.html",
+        "snapshotSHA256": "30d2677918fd8aed54bcd78606046810db7083d20d2c16d8b844c2c3babc5683",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/2/access.html",
+        "fetchedAt": "2026-11-05T06:28:18.504674+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8ca8dbcee1ee6f3a0fbe.html",
+        "snapshotSHA256": "ad1708c6a5b2bb4fe2be4202fc8b140a7af9687b84a50f89cc9a5546861e12f5",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-d79e170069f79cc7d2",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-d79e170069f79cc7d2"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-d79e170069f79cc7d2"
+          }
+        ],
+        "result": "倉敷公式の観光案内所一覧で児島駅案内所を確認したが、その建物を指す数値地点を得られなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kurashiki-tabi.jp/tourist-information-center/",
+        "fetchedAt": "2026-11-05T06:28:19.098311+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/f8288331fe1abe3e4a34.html",
+        "snapshotSHA256": "cbda154302af94c481921ed6ccd8a140449f97e2164bdf72d27d89310bfa9088",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-d96f3a22bac31657b3",
+    "priorReasonCategory": "relocation-or-address-identity",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-d96f3a22bac31657b3"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-d96f3a22bac31657b3"
+          }
+        ],
+        "result": "現役場の美田600-4を旧P05レコードの浦郷534に結び付けられない。旧庁舎座標は採用せず、現庁舎の建物点が未確定。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/news/1786",
+        "fetchedAt": "2026-11-05T06:28:13.768577+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/f2daaa25cd1813558f11.html",
+        "snapshotSHA256": "2adea02229aad5fb8c4eeed551845e0e7b8992547e2629e850f30aa71fdc42d4",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/",
+        "fetchedAt": "2026-11-05T06:28:14.339562+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d304c05089e763c72bf1.html",
+        "snapshotSHA256": "22532596054c8427d2618d6f955d3415dc400f8ac94b8cf80fe29b4945240381",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/bunya/b_anshin-joho/b_disclosure/481",
+        "fetchedAt": "2026-11-05T06:31:10.972458+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/e131bf5c0ce17668dcdf.html",
+        "snapshotSHA256": "3548bcb34a3973702b1eb6c9774d3f6f49dcec1d449fb423976300a47e810545",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-db60eef36c8f3b518b",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-db60eef36c8f3b518b"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-db60eef36c8f3b518b"
+          }
+        ],
+        "result": "山口市観光公式サイトを調査したが、山口駅の観光案内所を指定する数値目的地を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "fetchedAt": "2026-11-05T06:28:00.251208+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yamaguchi-city.jp/",
+        "fetchedAt": "2026-11-05T06:28:19.111589+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/6d28421e57df131b8029.html",
+        "snapshotSHA256": "70f4f1719ac42e8e35b9924850429edb569201b6de2a76ed9bd80489b726ef38",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ddde663d81d83b2c0f",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-ddde663d81d83b2c0f"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-ddde663d81d83b2c0f"
+          }
+        ],
+        "result": "管理公社のスポーツ公園案内を確認したが、公園全体から体育館管理事務所の建物点を区別できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+        "fetchedAt": "2026-11-05T06:28:19.149376+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://k-kanrikousha.or.jp/sportspark/",
+        "fetchedAt": "2026-11-05T06:28:19.176385+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c4a98e54fea3107d360e.html",
+        "snapshotSHA256": "26cc6eaf79ecb4fa672dc3694ead4f30eecd9d4b6115ab3d828228255429a775",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.pref.yamaguchi.lg.jp/soshiki/96/189046.html",
+        "fetchedAt": "2026-11-05T06:29:07.814366+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/f01c1931587bcbfa985b.html",
+        "snapshotSHA256": "7d88172fe1bafb45777d506db2b8f5cc7ce0f95d9f06945924a08d572ecf5897",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://k-kanrikousha.or.jp/sportspark/supokou.html",
+        "fetchedAt": "2026-11-05T06:31:10.972931+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/81fd850ae46721265983.html",
+        "snapshotSHA256": "7490ca8a39f3ff70ac5be7d34b2b16e27b011e6155011fb4b1971b54add06efa",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://k-kanrikousha.or.jp/sportspark/access.html",
+        "fetchedAt": "2026-11-05T06:31:10.973364+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/28c4904d30bba19256d4.html",
+        "snapshotSHA256": "69417498135377c22d4d2e2e635893ff524685217242cbd056a0ba1b519245df",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://hirosetu.or.jp/wp-content/uploads/2023/06/f8dbb4b1ff128920c826fa32859fbbeb.pdf",
+        "fetchedAt": "2026-11-05T06:32:50.344492+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/fe564228195eee59f9fd.pdf",
+        "snapshotSHA256": "7ada43e59bb2eefebf16ca9adb3b9dc2bf08b87c1285d2c458844c3e39c845a6",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-e0dc2b70dac9632686",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-e0dc2b70dac9632686"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-e0dc2b70dac9632686"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-e0dc2b70dac9632686"
+          }
+        ],
+        "result": "主原典は備前長船刀剣博物館を含む刀剣の里の案内で、鍛刀場・工房等の複数棟を明示する。保存されたqと配布受付建物との対応を確定できない。博物館または配布棟を指す独立した地点根拠が必要。長船支所の保留とは別件。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "fetchedAt": "2026-11-05T06:28:09.754253+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.okayama-kanko.jp/setouchi/spot/detail_11175.html",
+        "fetchedAt": "2026-11-05T06:28:20.185873+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/5fc3aed9e422aadc24ce.html",
+        "snapshotSHA256": "a6389bec9a8d0d9fdd43732c5e87a5c5db4a7519ff767f3c5363b29d5e7aeebe",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-e10aada0cecdff9fae",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-e10aada0cecdff9fae"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-e10aada0cecdff9fae"
+          }
+        ],
+        "result": "観光協会の赤瓦一号館紹介に採用可能な明示座標がなく、県観光詳細はHTTP 503。赤瓦地区全体の点を一号館に流用しない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/manhole/",
+        "fetchedAt": "2026-11-05T06:28:20.398899+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-5bb42b7d6838e460f668.html",
+        "snapshotSHA256": "5bb42b7d6838e460f6689b0256d9f5b9cb7926da98d8acc299868c81e0ab576d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/akagawara-ichigokan/",
+        "fetchedAt": "2026-11-05T06:28:20.590340+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/84e21d2b3ba10c1537c3.html",
+        "snapshotSHA256": "a6f08b7869b071c8b4ff660d4d14c5afcefbd5573075c77e94540c1ff5ca3c7d",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.tottori-guide.jp/tourism/tour/view/160",
+        "fetchedAt": "2026-11-05T06:28:20.595204+00:00",
+        "status": null,
+        "snapshotPath": null,
+        "snapshotSHA256": null,
+        "result": "HTTP Error 503: Service Unavailable"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://akagawara.net/akagawara/01/index.php",
+        "fetchedAt": "2026-11-05T06:31:10.971990+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/39a254f5636a3559b469.html",
+        "snapshotSHA256": "b458dc28b0a24c32d1def1e012ff46e51428ca45f8273b310cc4a78f1f81c800",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-e2f1019dc6faed28bc",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-e2f1019dc6faed28bc"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-e2f1019dc6faed28bc"
+          }
+        ],
+        "result": "江津市観光協会公式地図のpbに表示中心はあるが、協会・案内所建物の座標と証明できない。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://gotsu-kanko.jp/52/news/topics/2892",
+        "fetchedAt": "2026-11-05T06:28:20.863526+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/73cb2fa154b6dfb13840.html",
+        "snapshotSHA256": "743279f34595ea685cbfacb6a489fade9385c5b70ddf5abbbacbf986f8feae53",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://gotsu-kanko.jp/",
+        "fetchedAt": "2026-11-05T06:28:20.948415+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/9a14a0f4e2b222c14a7f.html",
+        "snapshotSHA256": "7f8e158441f1a2c2ad2c43120a51ee925447929ae38c71c2448e971149f1a301",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-e4b9d51a912a95286a",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-e4b9d51a912a95286a"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-e4b9d51a912a95286a"
+          }
+        ],
+        "result": "地域振興協会の公式地図qは団体名文字列で、Bee+交流棟の数値地点ではない。管理棟と交流棟を区別するため保留。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.town.waki.lg.jp/soshiki/3/8139.html",
+        "fetchedAt": "2026-11-05T06:28:21.023226+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-26850e5aab84fba84857.html",
+        "snapshotSHA256": "26850e5aab84fba848570087ffb051a2b689d288d1bf49fce05a4cf5ab926ec4",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.wakiiine.net/contact/",
+        "fetchedAt": "2026-11-05T06:28:21.501547+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/96a27c44710465351ff6.html",
+        "snapshotSHA256": "4f29f1b62b18b15b75fbf48a813eab7b1de176821b30fd8b972694eab914c525",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-eb39ed62b47f9f29ba",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-eb39ed62b47f9f29ba"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-eb39ed62b47f9f29ba"
+          }
+        ],
+        "result": "岩国市のPLAT ABC案内を調べたが、現所在地に対応する数値マーカーを確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+        "fetchedAt": "2026-11-05T06:28:07.843255+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "snapshotSHA256": "9f0cc695bf168620d50d8697eced8ab67a916685965399a4c1fb582970b0a77c",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/site/eigo-iwakuni/66476.html",
+        "fetchedAt": "2026-11-05T06:28:22.411933+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7b83d0afa2eb5e575244.html",
+        "snapshotSHA256": "006c95e29dec0ee1f9fc7f57477c4560303004b3e5f18966910452a3e92a28d9",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-ec8a334a6855cf91c5",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-ec8a334a6855cf91c5"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-ec8a334a6855cf91c5"
+          }
+        ],
+        "result": "市の観光センター施設案内を取得したが、建物を指す数値座標を確認できなかった。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.city.yonago.lg.jp/24306.htm",
+        "fetchedAt": "2026-11-05T06:28:22.643733+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/7563d353b2823f12eb0a.html",
+        "snapshotSHA256": "4374ff6f5ccd71cb4b8ee891248b91ba5df28f63e96aa7965c82f64ed8d4c40e",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.yonago.lg.jp/9894.htm",
+        "fetchedAt": "2026-11-05T06:28:22.661343+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/c9bcd42604f570802770.html",
+        "snapshotSHA256": "58a03e8769d224b293bf2e2925a51fc7bfaacd3ea2264a52cdfe5b248e413ecc",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kaike-onsen.jp/about",
+        "fetchedAt": "2026-11-05T06:29:07.372780+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/6fa73a33230f872d62d5.html",
+        "snapshotSHA256": "4c2d29930a464e1d1ad10ae6d4eb9409e46b36c895d1e02307aa3498796bfc8f",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kaike-onsen.jp/",
+        "fetchedAt": "2026-11-05T06:31:11.263374+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/f539592c11ed581008ac.html",
+        "snapshotSHA256": "4138501e35a7d29a1591fb78c258f717b201b999a0a4b863697ffb927949b44b",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-f82ae05278a2614df9",
+    "priorReasonCategory": "missing-primary-coordinate",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-f82ae05278a2614df9"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-f82ae05278a2614df9"
+          }
+        ],
+        "result": "観光協会の円形劇場紹介で施設を同定したが数値地点を確認できず、県観光詳細はHTTP 503。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://enkei-museum.com/news/news-detail.php?id=8",
+        "fetchedAt": "2026-11-05T06:28:22.663638+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d99464534094bdde996d.html",
+        "snapshotSHA256": "8b3bec07302b78001c0bc652c1dca0239b1804d44346549c52d461ced7111868",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/figuremuseum/",
+        "fetchedAt": "2026-11-05T06:28:22.701025+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/09f512393305817572ac.html",
+        "snapshotSHA256": "87f741502e76651333a4c626a7b6e5050afbe96efec725e89dab46fa2abb4a5f",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.tottori-guide.jp/tourism/tour/view/1072",
+        "fetchedAt": "2026-11-05T06:28:22.838287+00:00",
+        "status": null,
+        "snapshotPath": null,
+        "snapshotSHA256": null,
+        "result": "HTTP Error 503: Service Unavailable"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://enkei-museum.com/html/information.html",
+        "fetchedAt": "2026-11-05T06:31:10.971193+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/b2fd58c06571e3e79cee.html",
+        "snapshotSHA256": "b04fa14d2512173f299440673f20994bec60ec772adc7091e90f65f1ccba3c7e",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:cs-f9ac7cca9893ace076",
+    "priorReasonCategory": "multiple-buildings",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [
+          {
+            "path": "data/national/location-updates/chugoku-shikoku.json",
+            "facilityId": "facility:cs-f9ac7cca9893ace076"
+          },
+          {
+            "path": "data/national/reviews/chugoku-saitama-locations.json",
+            "facilityId": "facility:cs-f9ac7cca9893ace076"
+          },
+          {
+            "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+            "facilityId": "facility:cs-f9ac7cca9893ace076"
+          }
+        ],
+        "result": "インフォメーションセンターが萩・明倫学舎本館内にあることは確認できる。ただし複数校舎の施設全体qが本館を指すことは保存原典だけでは未確認。棟別地点か配置図との対応が必要。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "http://www.city.hagi.lg.jp/soshiki/105/h29713.html",
+        "fetchedAt": "2026-11-05T06:28:23.219270+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4fd233b4773c785639fe.html",
+        "snapshotSHA256": "4fd233b4773c785639fec3bb7d24c71790dae87f523a2f03570e01a3c4425e0b",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_17538.html",
+        "fetchedAt": "2026-11-05T06:28:24.111730+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/6ac937854a3abd0bdac9.html",
+        "snapshotSHA256": "4366ba72ac14cd5ac632d4c43621534894a94d043f7db8c37f84b99acb22f8e1",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-811926f2652d6640dc",
+    "priorReasonCategory": "not-previously-investigated",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [],
+        "result": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-ab79fd8795933123c5",
+    "priorReasonCategory": "not-previously-investigated",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [],
+        "result": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-db1f68e131a3fd939d",
+    "priorReasonCategory": "not-previously-investigated",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [],
+        "result": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+        "fetchedAt": "2026-11-05T06:28:11.810328+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/e2b7f711ade6b80ca544.html",
+        "snapshotSHA256": "c6f53b6238df8b9479437085b284b922ee28df4fc97dcd4dfd89a37c788b7bcb",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://kankou-hamada.or.jp/salon",
+        "fetchedAt": "2026-11-05T06:33:53.073984+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/831b0eeba7aff8fac5b8.html",
+        "snapshotSHA256": "400684f6ddd37b5893701aa77053e4bac4c10ac4ac34d1edceb1898f24febee7",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-dc1637ffd07c249588",
+    "priorReasonCategory": "not-previously-investigated",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [],
+        "result": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.yonago.lg.jp/24306.htm",
+        "fetchedAt": "2026-11-05T06:28:24.584960+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/d5883c46b554c3bf30ff.html",
+        "snapshotSHA256": "4374ff6f5ccd71cb4b8ee891248b91ba5df28f63e96aa7965c82f64ed8d4c40e",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.yonago-navi.jp/f/kankoannai/",
+        "fetchedAt": "2026-11-05T06:33:53.074838+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/issue7/chugoku/691c41d82efc3041e67b.html",
+        "snapshotSHA256": "6837903a0e9daf7fc36ae41299b4c33310c03900146cf53a24a4339290ca2566",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-f0d5e530cedd97b88a",
+    "priorReasonCategory": "not-previously-investigated",
+    "investigationStatus": "new-investigation",
+    "attempts": [
+      {
+        "kind": "prior-record-reread",
+        "sources": [],
+        "result": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。"
+      },
+      {
+        "kind": "new-p05-extraction-search",
+        "source": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "result": "全国ZIP内の31〜35県GeoJSONを名称・住所の部分一致候補検索。検索ログ参照。候補一致自体を採用とはしない。"
+      },
+      {
+        "kind": "new-web-fetch",
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+        "status": 200,
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "result": "本文を取得し名称・住所・地図データを確認。個別の結論はreason/coordinate-proof参照。"
+      }
+    ]
+  }
+]

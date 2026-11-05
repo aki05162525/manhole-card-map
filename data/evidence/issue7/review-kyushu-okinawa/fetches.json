@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/images/20260401_1f.jpg",
+    "startedAt": "2026-11-05T06:42:22.669140+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/images/20260401_1f.jpg",
+    "contentType": "image/jpeg",
+    "snapshotPath": "data/evidence/issue7/review-kyushu-okinawa/civic-floor.jpg",
+    "snapshotSHA256": "c90cfd203229d61f58809c5a90c7b588f1ecf022c056190a3c3ca30356f4571b",
+    "fetchedAt": "2026-11-05T06:42:22.816776+00:00"
+  },
+  {
+    "url": "https://www.city-kirishima.jp/kanzai/documents/civicatm.pdf",
+    "startedAt": "2026-11-05T06:42:22.669883+00:00",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+    "startedAt": "2026-11-05T06:42:22.670303+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/review-kyushu-okinawa/p05-current.html",
+    "snapshotSHA256": "cbfb43657b9785a2e8344f700b738a1b218152820d2f91a5f89344ace29d11b1",
+    "fetchedAt": "2026-11-05T06:42:22.818110+00:00"
+  },
+  {
+    "url": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "startedAt": "2026-11-05T06:42:22.670724+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/review-kyushu-okinawa/terms-current.html",
+    "snapshotSHA256": "fd6a0588c80da50cc6821910550fe8889d27865ab699bb33510e80390c26e713",
+    "fetchedAt": "2026-11-05T06:42:22.806435+00:00"
+  }
+]

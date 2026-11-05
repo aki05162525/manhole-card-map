@@ -1,0 +1,1625 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-05T06:46:53.812119+00:00",
+  "role": "independent review sub-agent",
+  "input": {
+    "path": "data/national/issue7/kyushu-okinawa.json",
+    "sha256": "ac7f9f97054c2fb34e4476637bbcf07ac02731d164e46cba8b580f5dfa0a19d1",
+    "readmePath": "data/evidence/issue7/kyushu-okinawa/README.md",
+    "readmeSHA256": "0585e68d30b0bac4fcd76f02ec46787339db4ae337a80853f8d8fb7a75ae9779"
+  },
+  "scope": "9 coordinate candidates and 1 address correction; building representative points; no room/entrance surveying or universal no-reconstruction proof required",
+  "instructions": {
+    "AGENTS": "User-provided AGENTS instructions read. No AGENTS.md file found in repository data/cmd trees or root/ancestor locations searched.",
+    "writes": "Only designated review JSON and new review evidence directory",
+    "distributionRelations": "immutable; all preserved",
+    "baseline": "immutable; do not apply address correction to fixed baseline"
+  },
+  "summary": {
+    "coordinateCandidates": {
+      "acceptedAsSubmitted": 0,
+      "correction-required": 8,
+      "deferred": 1,
+      "acceptedAfterExactDateCorrection": 8
+    },
+    "addressCorrections": {
+      "correction-required": 1,
+      "addressFactAccepted": 1
+    },
+    "existingDeferralsPreserved": 65
+  },
+  "acceptedIds": [],
+  "acceptedCoordinateFactIds": [
+    "facility:kyushu-015d01512ed3752919cd",
+    "facility:kyushu-3be846e318561ee431e9",
+    "facility:kyushu-3c3902d19243e599e3c4",
+    "facility:kyushu-4c93c76776a06838fe00",
+    "facility:kyushu-51dfc976486b8b93581d",
+    "facility:ws-a33e80c6dd86bf6e7f",
+    "facility:kyushu-a4ba2e23eab057c818dc",
+    "facility:kyushu-e3d5be3b0b0c3ac9d446"
+  ],
+  "adoptableAfterExactCorrectionsIds": [
+    "facility:kyushu-015d01512ed3752919cd",
+    "facility:kyushu-3be846e318561ee431e9",
+    "facility:kyushu-3c3902d19243e599e3c4",
+    "facility:kyushu-4c93c76776a06838fe00",
+    "facility:kyushu-51dfc976486b8b93581d",
+    "facility:ws-a33e80c6dd86bf6e7f",
+    "facility:kyushu-a4ba2e23eab057c818dc",
+    "facility:kyushu-e3d5be3b0b0c3ac9d446"
+  ],
+  "deferredCandidateIds": [
+    "facility:kyushu-a7f2c9a57f74387fbabb"
+  ],
+  "candidates": [
+    {
+      "facilityId": "facility:kyushu-015d01512ed3752919cd",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "ナースパワーアリーナ(熊本市総合体育館・青年会館)受付",
+      "address": "熊本県熊本市中央区出水2-7-1",
+      "proposedCoordinate": {
+        "lat": 32.78524352,
+        "lng": 130.7366229
+      },
+      "scope": "building",
+      "finding": "運営者がナースパワーアリーナ＝熊本市総合体育館・青年会館、出水2-7-1を明示。P05総合体育館と対応。青年会館点は約4.7m差の併設機能点で、総合体育館を採用する判断は合理的。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-0"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "43-100-E001",
+          "placeId": "facility:kyushu-015d01512ed3752919cd",
+          "sourceHash": "40fd0475829da43301a14fd4c9f0887510a38d14a4ee0c64052464977080cdc8",
+          "hours": [
+            "9:00～21:00。月曜（祝日は翌平日）休館。"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/38a2c06be0965d24d45b.pdf",
+            "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+            "sourceLocator": "43-100-E001 / マンホールカード配布場所・配布日時 / ナースパワーアリーナ(熊本市総合体育館・青年会館)受付 / PDF 1ページの当該デザイン行",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。"
+          }
+        },
+        {
+          "cardId": "43-100-I001",
+          "placeId": "facility:kyushu-015d01512ed3752919cd",
+          "sourceHash": "49b6355918c431f2075be41a619f58a95ab1acdf7832de55c08e221ad83303e1",
+          "hours": [
+            "9:00～21:00。月曜（祝日は翌平日）休館。"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/38a2c06be0965d24d45b.pdf",
+            "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+            "sourceLocator": "43-100-I001 / マンホールカード配布場所・配布日時 / ナースパワーアリーナ(熊本市総合体育館・青年会館)受付 / PDF 1ページの当該デザイン行",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "b1d5780541d08337cd74c7d408dcb57503ee3389610a2f7c3c8e2cd68b87487d",
+        "geojsonSHA256": "7a0e3f9b687670b11f3c0bf27c9fc793a9d189749f43f12c11e9d4754c0e6b61",
+        "locator": "P05-22_43_GML.zip!P05-22_43.geojson#/features/40",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "熊本市中央区出水2-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7366229,
+              32.78524352
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.736622899999986",
+          "32.78524352"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://kc-sks.jp/soutai/index.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e7b0e44616d0b436ca8c1fe4.html",
+        "snapshotSHA256": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b",
+        "excerpts": [
+          "ナースパワーアリーナ（熊本市総合体育館・青年会館）｜SKS 熊本市スポーツ情報＆施設ガイド ナースパワーアリーナ（熊本市総合体育館・青年会館） トップ 財団概要 サイトマップ 文字サイズ 文字サイズ：小 文字サイズ：大 SKS 重要なお知らせが入ります ナースパワーアリー",
+          "字サイズ：小 文字サイズ：大 SKS 重要なお知らせが入ります ナースパワーアリーナ （熊本市総合体育館・青年会館） 〒862-0941 熊本市中央区出水2-7-1 TEL 096-385-1010 FAX 096-381-0953 開館時間 9：00～22：00 プール 7月～9月 10：00～21：00 10月～翌6月 12：00～20：00 トレーニング室 9：00～21：00 休館日 毎週月曜日 但し、月曜日が祝"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-3be846e318561ee431e9",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "ナカイチインフォメーション",
+      "address": "福岡県那珂川市中原2丁目120 博多南駅前ビル1F",
+      "proposedCoordinate": {
+        "lat": 33.5180701844527,
+        "lng": 130.436146431221
+      },
+      "scope": "building",
+      "finding": "運営者のフロア案内で博多南駅前ビル1Fインフォメーションと中原2丁目120を確認。P05町民情報ステーションの同住所の建物と合理的に対応。駅構内や隣接広場への置換ではない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-1"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "40-231-B001",
+          "placeId": "facility:kyushu-3be846e318561ee431e9",
+          "sourceHash": "91d4c3b8b7367066f41dd0e2d76fd902c5f29ab9d7acf438088518f5e9893ae9",
+          "hours": [
+            "10:00～18:00、年中無休。年始はできる限り1/3以降の受取に協力。"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/07a0d385aab6ad88c900.html",
+            "snapshotSHA256": "d13d5e952e47be162ef0a20a46f2d012887fe657cbf36758d5d33adbf67f738b",
+            "sourceLocator": "40-231-B001 / マンホールカード配布場所・配布日時 / ナカイチインフォメーション",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。第1弾在庫切れ・再開未定、第2弾在庫あり。ナカイチは公式の全種類同様・年中無休を採用。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "e84520c82528e90b3956335880299d07fd44590e4fea4b4b9f6647c822207124",
+        "geojsonSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+        "locator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40218",
+            "P05_002": "3",
+            "P05_003": "町民情報ステーション",
+            "P05_004": "那珂川市中原2-120"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.436146431221,
+              33.5180701844527
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.436146431221005",
+          "33.518070184452696"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://cototoba.com/floor/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html",
+        "snapshotSHA256": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033",
+        "excerpts": [
+          "ば那珂川オフィスへご提出ください。 こととば那珂川 ナカイチインフォメーション OPEN 10:00〜18:00 〒811-1213 福岡県那珂川市 中原2丁目120 博多南駅前ビル1階 TEL 092-710-2003 FAX 092-710-2004 Email mail@cototoba.com お問い合わせ Copyright Cototoba Nakagawa All Rights Reserved.",
+          " アイデアを形にする クリエイティブスペース「ワーク」 2F PARK FLOOR 様々な過ごし方の中に 思わぬアイデアや 出会いがひそむ「パーク」 1F TERMINAL FLOOR 情報と交通が行き交う「ターミナル」 駐輪場 1F TERMINAL FLOOR 博多南駅前ビルTERMINAL FLOOR 利用時間 6:00〜24:00 バスターミナルでもある博多南駅前広場に面したフロアです。バス待合やショッピングなどにご利用"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "博多南駅前ビル1F ナカイチインフォメーション",
+      "address": "福岡県那珂川市中原2丁目120 博多南駅前ビル",
+      "proposedCoordinate": {
+        "lat": 33.5180701844527,
+        "lng": 130.436146431221
+      },
+      "scope": "building",
+      "finding": "別IDのナカイチも同じ名称・番地・電話・駅前ビルを指す。建物点共有は合理的。配布関係のstatusが異なるためID統合・関係変更をしない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-2"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "40-231-A001",
+          "placeId": "facility:kyushu-3c3902d19243e599e3c4",
+          "sourceHash": "d99872af7311d4863e6e9694c992cbf4b3d4d46602b87c8e83771ec8bf5e7e8c",
+          "hours": [
+            "10:00～18:00、年中無休。年始はできる限り1/3以降の受取に協力。"
+          ],
+          "status": "suspended",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/07a0d385aab6ad88c900.html",
+            "snapshotSHA256": "d13d5e952e47be162ef0a20a46f2d012887fe657cbf36758d5d33adbf67f738b",
+            "sourceLocator": "40-231-A001 / マンホールカード配布場所・配布日時 / 博多南駅前ビル1F ナカイチインフォメーション",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。第1弾在庫切れ・再開未定、第2弾在庫あり。ナカイチは公式の全種類同様・年中無休を採用。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "e84520c82528e90b3956335880299d07fd44590e4fea4b4b9f6647c822207124",
+        "geojsonSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+        "locator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40218",
+            "P05_002": "3",
+            "P05_003": "町民情報ステーション",
+            "P05_004": "那珂川市中原2-120"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.436146431221,
+              33.5180701844527
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.436146431221005",
+          "33.518070184452696"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://cototoba.com/floor/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html",
+        "snapshotSHA256": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033",
+        "excerpts": [
+          "ば那珂川オフィスへご提出ください。 こととば那珂川 ナカイチインフォメーション OPEN 10:00〜18:00 〒811-1213 福岡県那珂川市 中原2丁目120 博多南駅前ビル1階 TEL 092-710-2003 FAX 092-710-2004 Email mail@cototoba.com お問い合わせ Copyright Cototoba Nakagawa All Rights Reserved."
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "東彼杵町役場水道課",
+      "address": "長崎県東彼杵郡東彼杵町蔵本郷1850-6",
+      "proposedCoordinate": {
+        "lat": 33.037,
+        "lng": 129.9172
+      },
+      "scope": "building",
+      "finding": "公式役場案内は蔵本郷1850番地6の3階17番窓口を水道課と記載。P05本庁1500を採用し、西館1508は不採用。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-3"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "42-321-A001",
+          "placeId": "facility:kyushu-4c93c76776a06838fe00",
+          "sourceHash": "d5f853547cbe6f98a3fd5d3a4cbf824ffa03817f79fcb4ac8ce13ceb69a484b7",
+          "hours": [
+            "平日9:00～16:30。年末年始休み。"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/21da48f60caf7f3f8965.html",
+            "snapshotSHA256": "a63b2aa655e4d3cbc96f652aaa49ea4e0391423c43933912166170cbb106050c",
+            "sourceLocator": "42-321-A001 / マンホールカード配布場所・配布日時 / 東彼杵町役場水道課",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "684a0701cf78a36e8dab13516c057a120fdbac1ee97f465cf4ae7287cb092543",
+        "geojsonSHA256": "3f7fcd08fc0aa4e8195a8c2f167bc6dbe41a56f466d3314c291ee87c333c5e5f",
+        "locator": "P05-22_42_GML.zip!P05-22_42.geojson#/features/1500",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42321",
+            "P05_002": "1",
+            "P05_003": "東彼杵町役場",
+            "P05_004": "東彼杵町蔵本郷1850-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.9172,
+              33.037
+            ]
+          }
+        },
+        "numericTokens": [
+          "129.9172",
+          "33.037"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.town.higashisonogi.lg.jp/gyoseijoho/annai/783.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/511982aa6b69f8794afea29e.html",
+        "snapshotSHA256": "511982aa6b69f8794afea29e7baca10cb7aa235872840a1eb0df051c02940ee4",
+        "excerpts": [
+          "） 15番窓口 総務課 防災交通係（0957-46-0099） 16番窓口 総務課 総務係（0957-46-1265） 会計課 応接室 町長室 3階 17番窓口 水道課 上下水道総務係（0957-46-1327） 17番窓口 水道課 上水道施設係（0957-46-1327） 17番窓口 水道課 下水道施設係（0957-46-1352） 18番窓口 建設課 建設係（0957-46-1354） 18番窓口 建設課 管理係",
+          "364） 15番窓口 総務課 防災交通係（0957-46-0099） 16番窓口 総務課 総務係（0957-46-1265） 会計課 応接室 町長室 3階 17番窓口 水道課 上下水道総務係（0957-46-1327） 17番窓口 水道課 上水道施設係（0957-46-1327） 17番窓口 水道課 下水道施設係（0957-46-1352） 18番窓口 建設課 建設係（0957-46-1354） 18番窓口 建"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "太宰府館",
+      "address": "福岡県太宰府市宰府3-2-3",
+      "proposedCoordinate": {
+        "lat": 33.519857,
+        "lng": 130.532575
+      },
+      "scope": "building",
+      "finding": "公式配布本文で宰府三丁目2番3号の太宰府館を確認。2026-10-01～12-22の駅内観光案内所への一時変更は別建物。旧館点のみを整備しsuspended/reviewUntilを維持する判断は妥当。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-4"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "40-221-C001",
+          "placeId": "facility:kyushu-51dfc976486b8b93581d",
+          "sourceHash": "3b042eebe39af5c412911311f15284163f8446fa7c3ebdf7092833276fa53442",
+          "hours": [
+            "通常10:00～18:00、水曜（祝日は翌日）休み。2026-10-01～2026-12-22はこの窓口で配布しない。"
+          ],
+          "status": "suspended",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/886c9a3c2dafefb88728.html",
+            "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+            "sourceLocator": "40-221-C001 / マンホールカード配布場所・配布日時 / 太宰府館",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。期間限定移転中。入力は太宰府館1関係のみで新案内所へ誤対応させない。"
+          },
+          "reviewUntil": "2026-12-22"
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "e84520c82528e90b3956335880299d07fd44590e4fea4b4b9f6647c822207124",
+        "geojsonSHA256": "0b532b111fb55c080eccb1543dd807fe1d72edc2d7ac3ed735c0fdcb9f27d84f",
+        "locator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1710",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "地域活性化複合施設太宰府館",
+            "P05_004": "太宰府市宰府3-2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.532575,
+              33.519857
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.532575",
+          "33.519857"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/81bb60b63e285f51e2ba3ed4.html",
+        "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+        "excerpts": [
+          "時～午後6時 休館日 ：毎週水曜日（ただし祝日の場合はその翌日） ※休館日（年末年始除く）は市役所1階総合案内にて配布します。 ※令和8年10月1日～12月22日まで配布場所が下記に変更になります。 配布場所：太宰府市観光案内所 （福岡県太宰府市宰府2-5-1（西鉄太宰府駅構内）） 配布時間：9:00～17:00（年中無休） 地図の読み込みに関する問題が発生したとき ＜外部リンク＞ とびうめアリーナ 配布場所：とびうめ",
+          "通る人に古代への思いを馳せてほしいという想いを込めています。 配布場所および配布時間 宝満山（令和5年4月28日から） 配布場所：太宰府館 （太宰府市宰府三丁目2番3号） 配布時間：午前10時～午後6時 休館日 ：毎週水曜日（ただし祝日の場合はその翌日） ※休館日（年末年始除く）は市役所1階総合案内にて配布します。 ※令和8年10月1日～12月22日まで配布場所が下記に変更になります。 配布場所：太宰府市観光案内所 "
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "status": "deferred",
+      "coordinateDecision": "deferred",
+      "name": "国分シビックセンター1階総合窓口",
+      "address": "鹿児島県霧島市国分中央3-45-1",
+      "proposedCoordinate": {
+        "lat": 31.7407538,
+        "lng": 130.763524
+      },
+      "scope": "building",
+      "finding": "公式庁舎案内は国分シビックセンターを本館・別館・議会庁舎・公民館等の集合とし、総合窓口は行政庁舎本館1階と明記。P05には同住所でfeature626霧島市役所と630国分シビックセンターが約48m離れて存在する。原提案は626との対応を解決せず総称630を本館点とする。公式1階図・地理院外形を追加確認したが、連続した複合施設外形内であることだけでは630と本館棟の対応を確定できなかった。別館・複合施設との区分を解決するまで保留。室内窓口位置の精度は要求しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-5"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "46-218-A001",
+          "placeId": "facility:kyushu-a7f2c9a57f74387fbabb",
+          "sourceHash": "a4d9051686243a4a403ac055ba109a797bfee86ba4f7b5a0b96d8e35cdc722ce",
+          "hours": [
+            "8：15～17：00",
+            "ただし、年末年始（12/29～1/3）はお休みです"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.city-kirishima.jp/gesuidou/20180726.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/9f357de8e94769df9e46.html",
+            "snapshotSHA256": "d5b591eaedb902f957b065d29836c6768d5dfec85251a37b4ae3c043c6976e52",
+            "sourceLocator": "46-218-A001 / マンホールカード配布場所・配布日時 / 国分シビックセンター1階総合窓口",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "58a956c90ebedb691b0ecab24b645288ee827c4c8357967e6273342f3260d75a",
+        "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+        "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/630",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "国分シビックセンター",
+            "P05_004": "霧島市国分中央3-45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.763524,
+              31.7407538
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.763524",
+          "31.7407538"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.city-kirishima.jp/soumu/shise/annai/choshaannai/civiccenter.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/74c5d817e781a5f9bf288c9b.html",
+        "snapshotSHA256": "74c5d817e781a5f9bf288c9b78529cc67ab1674f3a98e9fb0c6682999ac28ef9",
+        "excerpts": [
+          " 施設一覧 イベントカレンダー ここから本文です。 ツイート 更新日：2025年3月10日 国分シビックセンター 全景写真 国分シビックセンターは、 行政庁舎本館 行政庁舎別館 議会庁舎 国分ハウジングシビックホール（多目的ホール） 国分公民館 国分図書館 メディアセンター 市民広場及びお祭り広場 からなっています。 行政庁舎本館 いろいろな行政機関、委員会があります。総合窓口は1階に、その他の窓口はおもに1・2階に、",
+          "ベントカレンダー ここから本文です。 ツイート 更新日：2025年3月10日 国分シビックセンター 全景写真 国分シビックセンターは、 行政庁舎本館 行政庁舎別館 議会庁舎 国分ハウジングシビックホール（多目的ホール） 国分公民館 国分図書館 メディアセンター 市民広場及びお祭り広場 からなっています。 行政庁舎本館 いろいろな行政機関、委員会があります。総合窓口は1階に、その他の窓口はおもに1・2階に、一般事務につい",
+          "的ホール） 国分公民館 国分図書館 メディアセンター 市民広場及びお祭り広場 からなっています。 行政庁舎本館 いろいろな行政機関、委員会があります。総合窓口は1階に、その他の窓口はおもに1・2階に、一般事務については、3～7階にあります。ただし、収納課、会計課は議会庁舎1階にあります。 また、上下水道部、消防局、一般財団法人霧島市施設管理公社、霧島市公設地方卸売市場は、国分シビックセンター外にあります。 8階には"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "南さつま市役所 都市整備課",
+      "address": "鹿児島県南さつま市加世田川畑2648番地",
+      "proposedCoordinate": {
+        "lat": 31.41657,
+        "lng": 130.323494
+      },
+      "scope": "building",
+      "finding": "現公式庁舎配置表の本庁2階に都市整備課を確認。別施設あんぼう21・旧スタジオ21は別表。加世田川畑2648のP05南さつま市役所点に対応。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-6"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "46-220-A001",
+          "placeId": "facility:ws-a33e80c6dd86bf6e7f",
+          "sourceHash": "90ae2de31b9f2acb05ef0bed2c3116cfcbe14f2ba0b918227eab90dfe96f6c23",
+          "hours": [
+            "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。"
+          ],
+          "status": "active",
+          "condition": "きやったもんせ南さつま休館日（月曜、祝日の場合翌火曜）のみ。年末年始除く。カード受付時刻は原典に明記なし、訪問前確認。",
+          "evidence": {
+            "sourceUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+            "snapshotPath": "data/evidence/national/proposals-west-south/412ac228b0c2916127b1.html",
+            "snapshotSHA256": "e5545f6251aee9c20023c0cd6c5a8ffbf026704201ee801ecca835b7ee60ff54",
+            "sourceLocator": "46-220-A001 / 南さつま市役所 都市整備課",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "公式原本で独立した配布窓口と対象カードを確認し、元入力で未分離の関係を追加。既存窓口は自動終了しない。",
+            "previousPlaceIds": [],
+            "raw": [
+              "※「きやったもんせ南さつま」の休館日には、南さつま市役所 都市整備課 にて配布いたします。"
+            ]
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "outerZipSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "innerZipSHA256": "58a956c90ebedb691b0ecab24b645288ee827c4c8357967e6273342f3260d75a",
+        "geojsonSHA256": "daf0dfa283d101d9ec5673e96d6d6c26c0d8195b6139967118180fecbf96e1d9",
+        "locator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/756",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46220",
+            "P05_002": "1",
+            "P05_003": "南さつま市役所",
+            "P05_004": "南さつま市加世田川畑2648"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.323494,
+              31.41657
+            ]
+          }
+        },
+        "numericTokens": [
+          "130.323494",
+          "31.41657"
+        ],
+        "axisOrder": [
+          "longitude",
+          "latitude"
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "transformation": "none; source longitude/latitude fields mapped to lng/lat"
+      },
+      "license": "P05 individual CC BY 4.0; retain MLIT attribution, dataset URL, license URL, processing statement and no endorsement. Building HTML is separate.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.city.minamisatsuma.lg.jp/goshokai/gaiyo/e018900.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4358f0701f33575a3701e26b.html",
+        "snapshotSHA256": "4358f0701f33575a3701e26b3695a7b43895df4d6d1cdbfb3832054265d1834f",
+        "excerpts": [
+          "域包括支援センター以外)、公金取扱所 、南さつま市職員労働組合 ２階 総務課(選挙管理委員会)、市長公室、総合政策課、財政課、建設維持課、建設整備課、都市整備課、建築住宅課 ３階 商工水産課、消費生活センター、観光交流課、議会事務局 ４階 監査事務局 あんぼう21・旧スタジオ21 あんぼう21・旧スタジオ21 (PDF形式) １階 あんぼう21：小会議室1、研修室１、研修室２ 旧スタジオ21：農村振興課、農業委員会 ",
+          "018900 更新日： 2026年5月18日 14:32 市役所の主な課室等配置表 各施設名 をクリックすると配置図をみることができます。 南さつま市本庁 あんぼう21・旧スタジオ21 市民会館 市民センター ふれあいかせだ 消防署・消防本部 笠沙支所・笠沙保健センター 笠沙地区総合センター よいどこい 大浦支所 坊津支所 坊津支所(久志出張所) 坊津支所(輝津館) 金峰支所 南さつま市本庁 南さつま市本庁 ("
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "佐賀工房バルーンミュージアム店",
+      "address": "佐賀県佐賀市松原2丁目2-27",
+      "proposedCoordinate": {
+        "lat": 33.25244444444444,
+        "lng": 130.30041666666668
+      },
+      "scope": "building",
+      "finding": "公式アクセスのiframeは地図中心!2d/!3dとは別の!3m3!1m2内にDMS目的地ラベル!2zを持つ。復号した原DMSから十進値を再計算して完全一致。施設案内・アクセス本文の1階佐賀工房と松原2丁目2-27に対応。",
+      "evidence": {
+        "sourceUrl": "https://www.sagabai.com/balloon-museum/main/21.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/daf037a730652526782cf5f5.html",
+        "snapshotSHA256": "daf037a730652526782cf5f576f74ab607d44e32bc5dd17d7937adc81bb5dd14"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-7"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "41-201-B001",
+          "placeId": "facility:kyushu-a4ba2e23eab057c818dc",
+          "sourceHash": "d1e3a06aac7c05ca61457748bd1b05e67d35524ce530a8c46cba95c3de2b54cd",
+          "hours": [
+            "10:00～17:00。元旦は時間変更の場合あり。"
+          ],
+          "status": "suspended",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.water.saga.saga.jp/main/5768.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/8226335752f81e06725a.html",
+            "snapshotSHA256": "37973db511fba9673558621e3dfd9bdf9aa696e4995f2bcbae7aaf0a55590213",
+            "sourceLocator": "41-201-B001 / マンホールカード配布場所・配布日時 / 佐賀工房バルーンミュージアム店",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。佐賀市上下水道局の第2種配布休止中を採用、再開日未定。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "iframe": "<iframe allowfullscreen=\"\" frameborder=\"0\" height=\"400\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.5367389259422!2d130.29823131519413!3d33.25243798083109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDE1JzA4LjgiTiAxMzDCsDE4JzAxLjUiRQ!5e0!3m2!1sja!2sjp!4v1475045388919\" style=\"border: 0px currentColor; border-image: none;\" width=\"700\">",
+        "crs": {
+          "declaredInHTML": null,
+          "interpretation": "Google Maps geographic latitude/longitude convention (WGS84 assumed); no explicit EPSG declaration in publisher HTML; not JGD2011 evidence"
+        },
+        "transformation": "DMS to decimal degrees",
+        "encodedLabel": "MzPCsDE1JzA4LjgiTiAxMzDCsDE4JzAxLjUiRQ",
+        "decodedLabel": "33°15'08.8\"N 130°18'01.5\"E",
+        "axisOrder": [
+          "latitude(N)",
+          "longitude(E)"
+        ],
+        "formula": {
+          "lat": "33 + 15/60 + 8.8/3600",
+          "lng": "130 + 18/60 + 1.5/3600"
+        },
+        "computed": {
+          "lat": 33.25244444444444,
+          "lng": 130.30041666666668
+        }
+      },
+      "license": "Individual coordinate/address facts from publisher HTML; no open license or full-HTML external redistribution permission established. Google map response, tiles, imagery and database are not used for these coordinates.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.sagabai.com/balloon-museum/main/9.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e5300a3525bf78a44da99c39.html",
+        "snapshotSHA256": "e5300a3525bf78a44da99c39501f333cacacc2f1353b4f8db4eb4bd4d7e36aaa",
+        "excerpts": [
+          "券1枚あたり最大2時間分のサービス券を差し上げます。 1階総合カウンターまで駐車券をお持ちください。但し、当館敷地内の駐車場ご利用に限ります。 ※1階佐賀工房バルーンミュージアム店、2階ハルカフェ、3階青少年センターをご利用される場合は、 ご利用に応じてサービス券の発行や無料処理等を行いますので、各施設の窓口に駐車券をお持ち下さい。 ※大型バス駐車希望の場合は、事前に「佐賀市観光協会 旅行課」TEL:0952-37"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+      "status": "correction-required",
+      "coordinateDecision": "accepted",
+      "name": "指宿市考古博物館 時遊館COCCOはしむれ",
+      "address": "鹿児島県指宿市十二町2290",
+      "proposedCoordinate": {
+        "lat": 31.2320642,
+        "lng": 130.6442088
+      },
+      "scope": "building",
+      "finding": "観光協会の当該博物館詳細は十二町2290番地を明記し、施設専用iframeに数値q目的地と同住所ラベルを設定。qとllが等しくても採用根拠はq。住所検索結果やGoogle応答の抽出ではない。",
+      "evidence": {
+        "sourceUrl": "https://www.ibusuki.or.jp/tourism/view/cocco/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/52deb1a5e97008c86ef93511.html",
+        "snapshotSHA256": "52deb1a5e97008c86ef9351102c0121b0fe21680f296bcacf5c1de161fdb67a9"
+      },
+      "goEvidence": {
+        "fields": "exactly 7; strict decode passes",
+        "semanticValidation": "fails checkedAt date format; YYYY-MM-DD correction passes"
+      },
+      "requiredCorrectionIds": [
+        "date-update-8"
+      ],
+      "preserveRelations": [
+        {
+          "cardId": "46-210-A001",
+          "placeId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+          "sourceHash": "f8cb89169b283f10feb70f94077ca4993d9bcfcb71e698122d7d66df66651fe0",
+          "hours": [
+            "9：00～17：00",
+            "ただし、月曜日（祝日の場合はその翌日）、第4水曜日、年末年始（12/29～1/3）はお休みです"
+          ],
+          "status": "active",
+          "condition": "配布条件・対象日はこの関係の配布時間欄および公式確認先を参照。",
+          "evidence": {
+            "sourceUrl": "https://www.city.ibusuki.lg.jp/main/kyosei/seikatsu/page013512.html",
+            "snapshotPath": "data/evidence/national/kyushu-okinawa/59f1447e609962dc1287.html",
+            "snapshotSHA256": "a7c1a709424b9fcc4b63a4420d4966237af77523f6beb588274bc2f5913ccf45",
+            "sourceLocator": "46-210-A001 / マンホールカード配布場所・配布日時 / 指宿市考古博物館 時遊館COCCOはしむれ",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIがカード別配布施設・曜日・時間・状態を公式本文で照合。営業時間だけから配布時間を推定しない。"
+          }
+        }
+      ],
+      "rawCoordinate": {
+        "iframe": "<iframe width=\"692\" height=\"280\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"//maps.google.co.jp/maps?f=q&amp;hl=ja&amp;q=31.2320642,130.6442088(%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E6%8C%87%E5%AE%BF%E5%B8%82%E5%8D%81%E4%BA%8C%E7%94%BA2290)&amp;ll=31.2320642,130.6442088&amp;ie=UTF8&amp;t=m&amp;z=13&amp;iwloc=B&amp;output=embed\">",
+        "crs": {
+          "declaredInHTML": null,
+          "interpretation": "Google Maps geographic latitude/longitude convention (WGS84 assumed); no explicit EPSG declaration in publisher HTML; not JGD2011 evidence"
+        },
+        "transformation": "none",
+        "rawQ": "31.2320642,130.6442088(%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E6%8C%87%E5%AE%BF%E5%B8%82%E5%8D%81%E4%BA%8C%E7%94%BA2290)",
+        "numericTokens": [
+          "31.2320642",
+          "130.6442088"
+        ],
+        "axisOrder": [
+          "latitude",
+          "longitude"
+        ]
+      },
+      "license": "Individual coordinate/address facts from publisher HTML; no open license or full-HTML external redistribution permission established. Google map response, tiles, imagery and database are not used for these coordinates.",
+      "buildingEvidence": {
+        "sourceUrl": "https://www.ibusuki.or.jp/tourism/view/cocco/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/52deb1a5e97008c86ef93511.html",
+        "snapshotSHA256": "52deb1a5e97008c86ef9351102c0121b0fe21680f296bcacf5c1de161fdb67a9",
+        "finding": "当該ページのタイトル・所在地・電話と施設専用iframeを確認。"
+      }
+    }
+  ],
+  "addressCorrection": {
+    "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+    "status": "correction-required",
+    "addressDecision": "accepted",
+    "evidence": {
+      "sourceUrl": "https://motobufs.jp/access/",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+      "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94"
+    },
+    "finding": "固定台帳のexact old一致。運営者所在地は沖縄県国頭郡本部町字大浜８８１番地１。県名のみの訂正は妥当。coordinateは付与しない。",
+    "requiredCorrectionIds": [
+      "date-address-0"
+    ],
+    "proposedCorrection": {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "targetPath": "data/work/issue7-baseline/ledger.json",
+      "selector": {
+        "id": "facility:kyushu-475d355ad6294a2b61a8"
+      },
+      "field": "address",
+      "old": "沖和県国頭郡本部町字大浜881-1",
+      "new": "沖縄県国頭郡本部町字大浜881-1",
+      "reason": "県名の誤字。現運営者アクセスの沖縄県本部町大浜881-1と照合。配布関係・番地・状態は変更しない。",
+      "evidence": {
+        "sourceUrl": "https://motobufs.jp/access/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+        "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94",
+        "sourceLocator": "施設アクセスの住所欄",
+        "checkedAt": "2026-11-05T06:38:45.524300+00:00",
+        "actorType": "ai",
+        "verificationMethod": "AIが運営者の住所表示と固定台帳を照合。"
+      },
+      "applied": false
+    },
+    "correctedEvidence": {
+      "sourceUrl": "https://motobufs.jp/access/",
+      "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+      "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94",
+      "sourceLocator": "施設アクセスの住所欄",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが運営者の住所表示と固定台帳を照合。"
+    }
+  },
+  "exactCorrections": [
+    {
+      "id": "date-update-0",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/0/evidence/checkedAt",
+      "facilityId": "facility:kyushu-015d01512ed3752919cd",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-1",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/1/evidence/checkedAt",
+      "facilityId": "facility:kyushu-3be846e318561ee431e9",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-2",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/2/evidence/checkedAt",
+      "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-3",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/3/evidence/checkedAt",
+      "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-4",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/4/evidence/checkedAt",
+      "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-5",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/5/evidence/checkedAt",
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-6",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/6/evidence/checkedAt",
+      "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-7",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/7/evidence/checkedAt",
+      "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-update-8",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/updates/8/evidence/checkedAt",
+      "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "cmd/builddata/ledger.go validateEvidence uses time.Parse(\"2006-01-02\", ...). Preserve detailed checked time in auxiliary metadata, not Evidence.",
+      "applied": false
+    },
+    {
+      "id": "date-address-0",
+      "targetPath": "data/national/issue7/kyushu-okinawa.json",
+      "jsonPointer": "/corrections/0/evidence/checkedAt",
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "old": "2026-11-05T06:38:45.524300+00:00",
+      "new": "2026-11-05",
+      "reason": "Evidence date-only validation",
+      "applied": false
+    }
+  ],
+  "acceptedAddressCorrectionProposal": {
+    "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+    "targetPath": "data/work/issue7-baseline/ledger.json",
+    "selector": {
+      "id": "facility:kyushu-475d355ad6294a2b61a8"
+    },
+    "field": "address",
+    "old": "沖和県国頭郡本部町字大浜881-1",
+    "new": "沖縄県国頭郡本部町字大浜881-1",
+    "applyToFrozenBaseline": false,
+    "instruction": "Parent may use exact old/new in its editable integration ledger; frozen baseline must remain untouched."
+  },
+  "preservedDeferrals": [
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "status": "deferred",
+      "reasonCategory": "座標競合",
+      "reason": "新P05照合で物産ホールfeature419と諫早商工会館ビルfeature518を発見。現運営者hallページは物産ホール＝商工会館1階、高城町5-10と同定するが、二点は約38m離れる。どちらが建物内か外形照合未完了のため採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/0"
+    },
+    {
+      "facilityId": "facility:kyushu-04dd6fa162496df84411",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "東彼杵町観光案内所（長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)）：観光協会の活動・施設案内で道の駅彼杵の荘に併設する2023年開設の案内所と確認。道の駅本体と案内所を区別する明示数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/1"
+    },
+    {
+      "facilityId": "facility:kyushu-056030efbe436e3617a8",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/2"
+    },
+    {
+      "facilityId": "facility:kyushu-27873221b74e521bc34d",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "花畑広場サービス棟（熊本県熊本市中央区花畑町7-7）：広場公式アクセスを確認。花畑7-7の広場全体とサービス棟を区別する建物目的地が未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/3"
+    },
+    {
+      "facilityId": "facility:kyushu-2c563d0c054fa158905a",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "観光ステーションむなたびラボ(道の駅むなかた南館)（福岡県宗像市江口1177-1）：市の開所記事で道の駅入口右の南館1階と確認。道の駅全体・物産館の点では南館を区別できず、南館の明示目的地点が必要。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/4"
+    },
+    {
+      "facilityId": "facility:kyushu-36b4ad8b697e9a275512",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "福岡県古賀市役所上下水道庁舎（福岡県古賀市駅東1-1-1）：古賀市公共施設CSVの古賀市役所庁舎と同じ駅東1-1-1だが、配布先は上下水道庁舎。市役所代表点を別庁舎に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/5"
+    },
+    {
+      "facilityId": "facility:kyushu-37487cd1fb5f5fdb7207",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "那珂川市役所 下水道課（福岡県那珂川市大字安徳702番地1）：下水道課の公式住所は安徳702-1。市役所本庁の西隈1-1-1とは異なるため、本庁点を採用しない。部署案内に数値の建物目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/6"
+    },
+    {
+      "facilityId": "facility:kyushu-3cb5f29b6d7fae86e248",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "荒尾市企業局（熊本県荒尾市増永1903番地）：市の企業局関連施設情報と公共施設CSVを追加調査。増永1903の企業局庁舎に対応する採用可能な数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/7"
+    },
+    {
+      "facilityId": "facility:kyushu-3f7df6c1e3db027d5517",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)（大分県豊後高田市新町989-1）：県観光施設案内を確認。33.557885,131.43851599999994は地図centerと周辺検索の引数で、昭和ロマン蔵内案内所の明示マーカーとしては確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/8"
+    },
+    {
+      "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "北谷町立博物館（沖縄県中頭郡北谷町伊平1-11-1）：博物館公式アクセスのGoogleリンクは26.32444,127.7586443を含むが、対象ラベルが伊平1丁目という住所区域で、伊平1-11-1の博物館建物ではない。住所代表点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/9"
+    },
+    {
+      "facilityId": "facility:kyushu-431427a75efc404fc5c1",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/10"
+    },
+    {
+      "facilityId": "facility:kyushu-45251ad37ff8b4222481",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "CSVは日明浄化センター全体の点。公式配布案内は見学者への配布を示すが、受付建物・管理棟とこの点の対応を示さない。現在の受付建物代表点としては保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/11"
+    },
+    {
+      "facilityId": "facility:kyushu-46c335509894f026bbaa",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "枕崎駅前観光案内所（鹿児島県枕崎市東本町200）：公式案内の短縮リンクの解決先は東本町の県道266号であり、東本町200の駅前観光案内所という建物対象を確認できない。道路上の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/12"
+    },
+    {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "もとぶかりゆし市場（沖和県国頭郡本部町字大浜881-1）：市場運営者のアクセスと県GIS施設データを照合。大浜881-1の市場建物の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/13"
+    },
+    {
+      "facilityId": "facility:kyushu-48facba373e0ace71a79",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "宮古島市 下水道課（沖縄県宮古島市平良字西仲宗根565-6）：市のクリーンセンター施設詳細を確認。埋込は住所検索とviewport中心で、西仲宗根565-6の管理棟に対応する明示マーカーではない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/14"
+    },
+    {
+      "facilityId": "facility:kyushu-4aa5f9a0d74b3fb87974",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "福岡市下水道博物館（福岡県福岡市博多区祇園町8-3(ぽんプラザ2階)）：ぽんプラザの市公式施設案内を確認したが、取得原本から建物の明示数値目的地点を確定できない。福岡市公共施設CSVでも一致行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/15"
+    },
+    {
+      "facilityId": "facility:kyushu-4aca915a11bca836ac11",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所（沖縄県国頭郡宜野座村字漢那1633番地）：道の駅公式アクセスを確認。物産館等の複数建物があるため、漢那1633の観光拠点施設1階と区別できない敷地・道路の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/16"
+    },
+    {
+      "facilityId": "facility:kyushu-4b6c8f692d562ba8fc1f",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "下甑島観光案内所（鹿児島県薩摩川内市下甑町長浜913番4）：公式観光案内所詳細を確認。長浜913-4の港ターミナル内案内所の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/17"
+    },
+    {
+      "facilityId": "facility:kyushu-500296f58e26ea863c1f",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "WANDER COMPASS BEPPU(ワンダーコンパス別府)（大分県別府市駅前町12番13号えきマチ1丁目 別府BIS南館内）：公式観光施設案内を確認。駅前12-13の駅構内案内所の数値目的地は未確認。別府市配布ページの他の短縮リンクは上野口1-15を指し、当施設に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/18"
+    },
+    {
+      "facilityId": "facility:kyushu-52557966acb8dec24849",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "新鳥栖駅観光案内所（佐賀県鳥栖市原古賀町220-2）：市の新鳥栖駅観光案内所ページを確認。原古賀220-2の駅舎・案内所の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/19"
+    },
+    {
+      "facilityId": "facility:kyushu-527347c20ae2968cc662",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "水前寺競技場 事務所（熊本県熊本市中央区水前寺5丁目23-3）：競技場運営者のアクセスと県スポーツ施設案内を確認。水前寺5-23-3の事務所の入る競技場目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/20"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）：観光協会公式施設詳細と県GISデータを照合。美浜16-3の観光情報センターの建物目的地座標を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/21"
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）：管理者の施設紹介・アクセスを追加確認。勝連城跡や歴史文化施設と観光ターミナル（南風原3807-2）を区別する建物目的地を未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/22"
+    },
+    {
+      "facilityId": "facility:kyushu-5bd9ed457378cacb6524",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "古賀水再生センター（福岡県古賀市古賀1337-3）：市庁舎案内は駅東1-1-1であり、古賀1337-3の水再生センターと異なる。公共施設CSVにも当該センターの建物点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/23"
+    },
+    {
+      "facilityId": "facility:kyushu-628964aa1208c4c45303",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "大分市竹町通商店街振興組合（大分市中央町3丁目6番7号）：商店街の公式共同事業案内を追加調査。中央町3-6-7の竹町通商店街振興組合事務所に対応する数値目的地を確保できない。別組合の事務所を採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/24"
+    },
+    {
+      "facilityId": "facility:kyushu-62e5bba8872fe20f0c0f",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "東よか干潟ビジターセンター「ひがさす」（佐賀県佐賀市東与賀町大字田中2757-4）：県観光案内は田中2757-4と数値q/destination=33.174981,130.27021を掲載するが、タイトルが「東よか干潟／ひがさす」の複合施設案内。干潟とビジターセンター建物のどちらを指すか裏付け不足として保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/25"
+    },
+    {
+      "facilityId": "facility:kyushu-6a607bd1f8ff8e4f7cd5",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "熊本県立総合体育館 事務所（熊本県熊本市西区上熊本1丁目9番28号）：管理者の総合体育館アクセスと県スポーツ施設案内を確認。上熊本1-9-28の体育館目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/26"
+    },
+    {
+      "facilityId": "facility:kyushu-6a8e8508cf7afc2b0ab7",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "佐賀市下水浄化センター 事務室（佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)）：下水浄化センター施設案内を確認。広い処理場内の管理棟2階事務室に対応する建物目的地点を特定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/27"
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "名護市営市場（沖縄県名護市城1-4-11）：市場公式アクセスと県GISデータを照合。城1-4-11の市営市場の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/28"
+    },
+    {
+      "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "リブワーク藤崎台球場（熊本市中央区宮内4番1号）：球場管理者アクセスと県スポーツ施設案内を確認。宮内4-1の球場について採用可能な数値目的地マーカーを確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/29"
+    },
+    {
+      "facilityId": "facility:kyushu-721597ce8a871ee7907f",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "八代市水処理センター管理棟2階（熊本県八代市新港町三丁目1番地）：市の施設関連ページと公共施設CSVを確認。新港3-1の水処理センター管理棟に該当する数値目的地点を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/30"
+    },
+    {
+      "facilityId": "facility:kyushu-77b2078f3d92eae241e6",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "中尾城公園管理事務所（長崎県西彼杵郡長与町吉無田郷61番地1）：長与町公共施設CSVには中尾城公園32.820645,129.88234があるが管理事務所の点ではない。吉無田61-1の公園代表点を配布建物に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/31"
+    },
+    {
+      "facilityId": "facility:kyushu-79566b7301f7f95b9ea0",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "川内駅観光案内所（鹿児島県薩摩川内市鳥追町1番1号）：公式観光案内所詳細を確認。鳥追町1-1の川内駅2階案内所の入る建物目的地を取得原本から数値で確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/32"
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "status": "deferred",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/33"
+    },
+    {
+      "facilityId": "facility:kyushu-83173665e8ef18a5eed0",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "大村湾南部浄化センター（長崎県諫早市貝津町1410）：市の下水道施設一覧を追加調査。貝津町1410の大村湾南部浄化センターについて建物単位の数値目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/34"
+    },
+    {
+      "facilityId": "facility:kyushu-8bbab01afd77e40b5bdb",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "沖縄観光情報センター（沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階）：県観光案内と県GIS避難ビルデータを追加照合。カフーナ旭橋A街区のGIS住所は泉崎1-20-1、配布先は1-20-6。棟・住所の同一性を確定できず保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/35"
+    },
+    {
+      "facilityId": "facility:kyushu-8c90fac8c05c5f8fcb80",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "観光物産交流施設「きやったもんせ南さつま」（鹿児島県南さつま市加世田本町43番地9）：観光協会の施設詳細を追加確認。加世田本43-9の店舗の数値目的地は未確認。市ページの短縮リンクは別の市役所を指すため代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/36"
+    },
+    {
+      "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "パークドーム熊本 受付兼事務所（熊本県熊本市東区平山町2972番地）：管理者のパークドームアクセスを確認。平山2972の施設目的地点を示す数値マーカーは取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/37"
+    },
+    {
+      "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "大分市美術館（大分県大分市大字上野865番地）：市美術館公式アクセスを確認。上野865の美術館の数値目的地を取得原本から確定できず、民間施設ディレクトリの緯度経度は不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/38"
+    },
+    {
+      "facilityId": "facility:kyushu-a4cd93cc1425ac573ac5",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "小林市役所上下水道課 第2別館2階下水道グループ（宮崎県小林市細野300番地）：市公式と公共施設データを探索。細野300の市役所本庁代表点では第2別館を区別できないため採用保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/39"
+    },
+    {
+      "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "熊本市上下水道局（熊本県熊本市中央区水前寺6-2-45）：水道局公式案内と県公開施設CSVを照合。水前寺6-2-45の局庁舎の採用可能な数値目的地行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/40"
+    },
+    {
+      "facilityId": "facility:kyushu-aae8a5e8cdb120497a24",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "セブン-イレブン若松区役所前店（福岡県北九州市若松区浜町1丁目1ー4）：店舗公式案内の取得原本で店舗の数値目的地を確認できない。公共施設CSVの若松区役所（浜町1-1-1）は当店（1-1-4）と別建物なので代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/41"
+    },
+    {
+      "facilityId": "facility:kyushu-c377ae7db47aa8c7a0c3",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "小林まちづくり株式会社 観光案内所（宮崎県小林市細野1829-16 KITTO小林）：運営会社案内を追加確認。別ページの埋込ラベルはコミュニティスペース（小林まちづくり株式会社）であり、細野1829-16 KITTO内観光案内所の数値目的地点として確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/42"
+    },
+    {
+      "facilityId": "facility:kyushu-c7ce832b34e06d96ad33",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "宜野湾市上下水道局業務サービス課（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/43"
+    },
+    {
+      "facilityId": "facility:kyushu-db074910d35fc98cfcff",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "御笠川浄化センター（福岡県福岡市博多区那珂4-5-1）：管理者の施設案内と地図短縮リンクzcMyWを確認。解決先はviewport中心のみで、配布先の正門横守衛室または建物目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/44"
+    },
+    {
+      "facilityId": "facility:kyushu-db16f89ef3a741afd0fe",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "首里城首里杜館総合案内所（沖縄県那覇市首里金城町1-2）：公園管理者の首里杜館案内を確認。首里城公園全体やマンホール蓋の点を首里杜館に流用しない。建物単位の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/45"
+    },
+    {
+      "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "大分市観光案内所（大分県大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/46"
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)（沖縄県那覇市松尾2丁目10番1号）：市公式案内と県GIS施設データを照合。新しい第一牧志公設市場の建物内案内所について、旧市場・仮設市場と区別して採用できる点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/47"
+    },
+    {
+      "facilityId": "facility:kyushu-e6d46c885e30b1c754cb",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "配布原本は市役所下水道課（西別館2階）。CSVは小郡市役所という総称のみで、西別館を同定する情報がない。小郡255-1という同番地だけで同棟扱いできない。西別館の代表点が確定するまで保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/48"
+    },
+    {
+      "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "今回の2026年4月更新庁舎案内と別館1階画像1485.jpgで下水道課は別館1階と確定（画像を目視確認）。P05中間市役所feature1332は本庁総称点で、この別館の数値点と同定できない。部署名・住所の一致だけでは採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/49"
+    },
+    {
+      "facilityId": "facility:kyushu-eacba90579d3dbedfc8c",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "日置市観光協会（鹿児島県日置市伊集院町徳重285-12）：観光協会の団体・アクセス案内を追加確認。徳重285-12の協会施設の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/50"
+    },
+    {
+      "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "大分市観光案内所（大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/51"
+    },
+    {
+      "facilityId": "facility:kyushu-f659f3d40d25570465de",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "宜野湾市上下水道局業務サービス課排水設備係（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/52"
+    },
+    {
+      "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+      "status": "deferred",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "熊本県民総合運動公園 受付兼事務所（熊本県熊本市東区石原2丁目9-1）：管理者の運動公園アクセスを確認。石原2-9-1の広い公園の代表点では受付兼事務所の建物を区別できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/53"
+    },
+    {
+      "facilityId": "facility:kyushu-fd6ecb1635ce74789ef8",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "まちの駅 とみたか(日向市駅 南側・高架下)（宮崎県日向市上町1-19）：日向市観光協会のアクセスを追加確認。上町1-19の日向市駅南側高架下「とみたか」の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/54"
+    },
+    {
+      "facilityId": "facility:ws-11eacc27427ab619f0",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/55"
+    },
+    {
+      "facilityId": "facility:ws-571a1c21a1a6a8b166",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "2026-10-01～12-22の現行配布先は西鉄太宰府駅構内の観光案内所。旧太宰府館のCSV/P05点をこの施設に流用しない。駅構内の当該建物の公開座標原典が未確保。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/56"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "status": "deferred",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/57"
+    },
+    {
+      "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/58"
+    },
+    {
+      "facilityId": "facility:ws-8c2f2fd56f3678dbba",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/59"
+    },
+    {
+      "facilityId": "facility:ws-8fca35672837332639",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/60"
+    },
+    {
+      "facilityId": "facility:ws-9aba1585a794a70f9c",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/61"
+    },
+    {
+      "facilityId": "facility:ws-b16bb4e05b36ef7277",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/62"
+    },
+    {
+      "facilityId": "facility:ws-c42fbe5f44427d0284",
+      "status": "deferred",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/63"
+    },
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "status": "deferred",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現公式アクセスは知名1100。P05知名町役場feature1457は知名307の旧庁舎で不一致。追加取得した新アクセスのllは表示中心、qは役場名であり数値建物markerとは扱えない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "reviewDepth": "existing deferral preserved; not independently exhausted",
+      "sourcePointer": "/unresolved/64"
+    }
+  ],
+  "sourceConditions": {
+    "P05": {
+      "decision": "individual CC BY 4.0 designation confirmed in both saved original and fresh HTML, not a commented-out label",
+      "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-2022.html",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "requirements": [
+        "国土交通省・データセット・出典URL・CC BY 4.0を表示",
+        "原値からlat/lngへ転記した加工を明示",
+        "国土交通省の承認を示唆しない"
+      ],
+      "generalTerms": "Current general PDL1.0 applies absent individual rights indication; does not erase P05-specific CC BY. agreement_01 confirms CC BY compatibility and separate rules."
+    },
+    "HTML": {
+      "coordinateFacts": "Individual published numeric destination and address facts may be used for this evidence assessment. No site-wide open license inferred.",
+      "externalFullHTMLRedistribution": "not cleared by this review; copyrighted text, images, layout and embedded-map content have separate rights. Local audit preservation does not itself establish permission for external redistribution. Parent must separately resolve packaging; this does not by itself defer coordinate facts.",
+      "maps": "The two HTML-derived candidates use publisher-specified destination parameters; no Google map response was fetched. Review-only GSI tiles for civic building comparison are separate evidence, not source for new coordinates."
+    },
+    "support": "data/evidence/issue7/kyushu-okinawa/source-conditions.json",
+    "freshSnapshots": "data/evidence/issue7/review-kyushu-okinawa/fetches.json"
+  },
+  "documentationCodeDiscrepancies": [
+    {
+      "document": "data/evidence/issue7/kyushu-okinawa/README.md",
+      "claim": "その他のコード仕様との不一致は見つかっていない / 厳密デコード10件で検証",
+      "code": "cmd/builddata/ledger.go:121",
+      "finding": "All 9 updates and 1 correction have timestamp checkedAt; actual validateEvidence accepts YYYY-MM-DD only. Existing verify-go.py extracts Evidence but never executes validateEvidence. Strict decoding success does not imply runtime validity.",
+      "resolution": "Follow code; 10 exact date corrections proposed. Existing outputs not modified."
+    },
+    {
+      "document": "data/evidence/issue5/west-south/README.md",
+      "claim": "ドキュメントと実装コードの食い違いはない",
+      "code": "cmd/builddata/ledger.go:17,88",
+      "finding": "Old west-south corrections[0..2].evidence contain fetchedAt outside current Evidence7; DisallowUnknownFields rejects it. Reconfirmed from raw JSON, as input README already noted.",
+      "resolution": "Follow Evidence7; no old artifacts modified."
+    }
+  ],
+  "limitations": [
+    "国分の630/626と本館棟の対応は未確定。新座標を推測して置換しない。",
+    "既存65保留は維持。全残件の深掘り完了・原典不存在を主張しない。",
+    "施設HTML全文・画像の外部再配布許諾は本レビューでは確立していない。",
+    "全アプリの文書・実装監査は範囲外。"
+  ],
+  "verificationArtifact": "data/evidence/issue7/review-kyushu-okinawa/verification.json",
+  "goValidationArtifact": "data/evidence/issue7/review-kyushu-okinawa/go-validation.txt",
+  "competingFeaturesArtifact": "data/evidence/issue7/review-kyushu-okinawa/competing-features.json",
+  "civicAdditionalEvidence": {
+    "officialFloorMap": "data/evidence/issue7/review-kyushu-okinawa/civic-floor.jpg",
+    "GSI": "data/evidence/issue7/review-kyushu-okinawa/civic-gsi.json",
+    "finding": "GSI tile candidate pixel (23.634,57.227) lies within connected civic-complex outline. Official floor image distinguishes complex facilities/main building/council/annex. These do not georeference the named main-building wing sufficiently to resolve the distinct P05 points; do not treat entire complex membership as proof of main-building identity."
+  },
+  "workspaceObservation": {
+    "observedAt": "2026-11-05T06:47:49.669832+00:00",
+    "trackedChangesAtStart": [],
+    "trackedChangesAtEnd": [
+      "tools/national/manifest.json",
+      "tools/national/test_assemble.py"
+    ],
+    "reviewDidNotWriteThesePaths": true,
+    "action": "Observed concurrent/outside-review edits; not reverted or modified. Protected-input hash verification covers the 224 paths explicitly listed in protected-before.json, not the entire worktree."
+  }
+}

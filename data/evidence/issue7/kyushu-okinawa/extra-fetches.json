@@ -1,0 +1,82 @@
+[
+  {
+    "url": "https://www.city.minamisatsuma.lg.jp/goshokai/gaiyo/e018900.html",
+    "targets": [
+      {
+        "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+        "purpose": "additional-building-identification"
+      }
+    ],
+    "startedAt": "2026-11-05T06:30:51.567620+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.minamisatsuma.lg.jp/goshokai/gaiyo/e018900.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4358f0701f33575a3701e26b.html",
+    "snapshotSHA256": "4358f0701f33575a3701e26b3695a7b43895df4d6d1cdbfb3832054265d1834f",
+    "fetchedAt": "2026-11-05T06:30:51.772298+00:00"
+  },
+  {
+    "url": "https://www.city.nakama.lg.jp/life/6/23/89/",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+        "purpose": "additional-building-identification"
+      }
+    ],
+    "startedAt": "2026-11-05T06:30:51.568696+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.nakama.lg.jp/life/6/23/89/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8e1c699389a6db8ca69d18ef.html",
+    "snapshotSHA256": "8e1c699389a6db8ca69d18efd7c45c7ce094cab5248a2110d3c03dd7d1f66289",
+    "fetchedAt": "2026-11-05T06:30:51.821234+00:00"
+  },
+  {
+    "url": "https://www.isahaya-kankou.com/hall",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+        "purpose": "additional-building-identification"
+      }
+    ],
+    "startedAt": "2026-11-05T06:30:51.569187+00:00",
+    "status": 200,
+    "finalUrl": "https://www.isahaya-kankou.com/hall",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/95d3eae1d6205a1d6330e631.html",
+    "snapshotSHA256": "95d3eae1d6205a1d6330e6316cf7958f9066b5c9871617eda03986219110426d",
+    "fetchedAt": "2026-11-05T06:30:52.227569+00:00"
+  },
+  {
+    "url": "https://www.city.onojo.fukuoka.jp/list01297.html",
+    "targets": [
+      {
+        "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+        "purpose": "additional-building-identification"
+      },
+      {
+        "facilityId": "facility:ws-c42fbe5f44427d0284",
+        "purpose": "additional-building-identification"
+      }
+    ],
+    "startedAt": "2026-11-05T06:30:51.569721+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.onojo.fukuoka.jp/list01297.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/d218b97ccb0659799bd7a8b3.html",
+    "snapshotSHA256": "d218b97ccb0659799bd7a8b3e16b78bd8f188d551c8243699269a565dbba44c7",
+    "fetchedAt": "2026-11-05T06:30:51.786689+00:00"
+  },
+  {
+    "url": "https://kc-sks.jp/sougou/",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-015d01512ed3752919cd",
+        "purpose": "additional-building-identification"
+      }
+    ],
+    "startedAt": "2026-11-05T06:30:51.772357+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "fetchedAt": "2026-11-05T06:30:51.870048+00:00"
+  }
+]

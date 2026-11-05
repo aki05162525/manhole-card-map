@@ -1,0 +1,868 @@
+[
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/f27d1eb5a55f35cdd718.html",
+    "snapshotSHA256": "de1f678bba835bb692c744e123ae4b4e2381984ffa3dba126550151332cebe35",
+    "sourceUrl": "https://www.city.ayabe.lg.jp/0000006318.html",
+    "fetchedAt": "2026-11-05T06:27:39.806206+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/a393cfa20c578518fb3d.html",
+    "snapshotSHA256": "de0e8c2f45beea510ad7bf8df422eefdec4ad64d33cb58c9b434a222cbaccb41",
+    "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1008976.html",
+    "fetchedAt": "2026-11-05T06:27:39.807310+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/234889c36f8c6964f7fa.html",
+    "snapshotSHA256": "6d971f1fcba3061f038e5d0b7f6a7bb8dca56bc5af4c4e8cb80022be995cef3a",
+    "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1009690.html",
+    "fetchedAt": "2026-11-05T06:27:39.808008+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/6eeb53c966081194683d.html",
+    "snapshotSHA256": "c5b5ae18662ad2310780248fe644f2c500dc83c10c0bc6b30ebea93a6585df6e",
+    "sourceUrl": "https://www.city.hikone.lg.jp/kakuka/jogesuido/2/9/2219.html",
+    "fetchedAt": "2026-11-05T06:27:39.808682+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/c687bae061ca1386941b.html",
+    "snapshotSHA256": "04f7e476a93bfa3193cea992f1e74320d9294c52178ac47a97cfb8e71a2c423e",
+    "sourceUrl": "https://www.city.iga.lg.jp/0000004701.html",
+    "fetchedAt": "2026-11-05T06:27:39.809210+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/edb74213fe38d8fec550.html",
+    "snapshotSHA256": "3732781695b9fe113cdbe9105f9d4ce416a76ebe36f8c506e83f79fb4193db8e",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3966.html",
+    "fetchedAt": "2026-11-05T06:27:39.810892+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/b49d7ca7fbffd5af4242.html",
+    "snapshotSHA256": "b9104c5ed1f7aa2a52ae46c3a5546ef6be04e753b25934290e9d0b00017d624a",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3967.html",
+    "fetchedAt": "2026-11-05T06:27:39.811484+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/76c5c87c357fa666130f.html",
+    "snapshotSHA256": "b3fdbefbd7fb785b52ca31f2202bbfcd8c1742894fdee65080fa2f0c6d52e578",
+    "sourceUrl": "https://www.city.kameyama.mie.jp/docs/2017032800025/",
+    "fetchedAt": "2026-11-05T06:27:39.811965+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/3375d3b2f967581b227a.html",
+    "snapshotSHA256": "a1b9f6ca9efa70c1dd6362e5350103ee7797d872890582ad1246a643a692f483",
+    "sourceUrl": "https://www.city.koka.lg.jp/24108.htm",
+    "fetchedAt": "2026-11-05T06:27:40.110469+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/9c189264eb4b8ea1c07f.html",
+    "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+    "sourceUrl": "https://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T06:27:40.117892+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/b0a9899d7fbc48a60e0c.html",
+    "snapshotSHA256": "9dd4ef1b730df3c74f27b2ddd351a39d918fb87153b3532f37340cbe54cbe6ba",
+    "sourceUrl": "https://www.city.kyotango.lg.jp/top/soshiki/jogesuido/suido/gesuidou/manhole/21182.html",
+    "fetchedAt": "2026-11-05T06:27:40.126559+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/2108d107b050f837567c.html",
+    "snapshotSHA256": "d175f7c28c3b8a5fbf43c57ce214ea858b73fcd289b380f0ce6f814fefcb8885",
+    "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+    "fetchedAt": "2026-11-05T06:27:40.150061+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/ee61e6e000acdb471677.html",
+    "snapshotSHA256": "99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f",
+    "sourceUrl": "https://www.city.maizuru.kyoto.jp/kurashi/0000004329.html",
+    "fetchedAt": "2026-11-05T06:27:40.185987+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/15a3d8096dcd04fda2aa.html",
+    "snapshotSHA256": "c3ad52b4ba871be163f252478eb4229f7ce19b2e35591479283bea7a1673e59d",
+    "sourceUrl": "https://www.city.moriyama.lg.jp/kurashitetsuzuki/jougesuido/1001701/1008797.html",
+    "fetchedAt": "2026-11-05T06:27:40.186535+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/4433705be3d2a4cd719a.html",
+    "snapshotSHA256": "bdd6739d175da717d65c681989555a448cf5375a1552e792dde267f8e4b37b52",
+    "sourceUrl": "https://www.city.nagaokakyo.lg.jp/0000007110.html",
+    "fetchedAt": "2026-11-05T06:27:40.258048+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/74ff55a68a674771784b.html",
+    "snapshotSHA256": "77e9da2b8497244baa27022b38c8462e474a12b4b5eed85c8c8773b197a526e7",
+    "sourceUrl": "https://www.city.nagaokakyo.lg.jp/0000013143.html",
+    "fetchedAt": "2026-11-05T06:27:40.292927+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/311a408381b74555230e.html",
+    "snapshotSHA256": "22be2df0f56269eb2d6d1c3496ae389dca79e8a30035ca18caac35672977830c",
+    "sourceUrl": "https://www.city.omihachiman.lg.jp/soshiki/suidou_sisetsu/gesuidouosirase/29246.html",
+    "fetchedAt": "2026-11-05T06:27:40.978499+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/f3899c5601fcfa0950c6.html",
+    "snapshotSHA256": "2ff14dc8360b2beb1ba2257600d7fbbcb8fbacf15cb0ccba702e7397f57dc49b",
+    "sourceUrl": "https://www.city.otsu.lg.jp/kigyo/about/koho/68041.html",
+    "fetchedAt": "2026-11-05T06:27:40.981590+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/e48a63941d64af5442d1.html",
+    "snapshotSHA256": "03556e92ecc749a718b6d3750f6ac1f7c1176870d13095f73a120efcbee1b429",
+    "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/025/1604/g/kanko/74138.html",
+    "fetchedAt": "2026-11-05T06:27:40.984728+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/996e3e29e9ffa70a28ba.html",
+    "snapshotSHA256": "ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d",
+    "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/080/1901/g/manhole/1499746928377.html",
+    "fetchedAt": "2026-11-05T06:27:40.989320+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/eb37e1342fd8f220047d.html",
+    "snapshotSHA256": "b5e55f4c88957729756c3cf74d92a7492a1e5b15550ff6eb2d8a491bbfe8aef7",
+    "sourceUrl": "https://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+    "fetchedAt": "2026-11-05T06:27:40.998680+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/fc41ede7ed702b2d16fc.html",
+    "snapshotSHA256": "e0a28fe8b23f29e22eea041b9cefe35a36bd1fbc77b0b4d8da27f8f83a93b306",
+    "sourceUrl": "https://www.city.shima.mie.jp/kakuka/jogesuidobu/gesuidoka/gesuido/7166.html",
+    "fetchedAt": "2026-11-05T06:27:41.045228+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/ca4fd1d3ae3fcce6d165.html",
+    "snapshotSHA256": "34a769f3ca60f5ff74978dbd63a84db94af2d9a135cdfe583526dafd74fa59ea",
+    "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+    "fetchedAt": "2026-11-05T06:27:41.085303+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/3348ed192f3c2d83cebe.html",
+    "snapshotSHA256": "beaf22accd674f9789e0f22f915b8d51e11102c1aa9559437f9abf2b4ed583cf",
+    "sourceUrl": "https://www.city.uji.kyoto.jp/soshiki/12/6038.html",
+    "fetchedAt": "2026-11-05T06:27:41.111406+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/15038014b18749405ad7.html",
+    "snapshotSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+    "sourceUrl": "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html",
+    "fetchedAt": "2026-11-05T06:27:41.168240+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/7b99e91084a009441183.html",
+    "snapshotSHA256": "0375f944ad370ec22a45361b46478e45b6f7c921c90d46846488c41f6e8ff595",
+    "sourceUrl": "https://www.ohmi.or.jp/plaza/manhole/",
+    "fetchedAt": "2026-11-05T06:27:41.172569+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/fd84ddcba7574a11a148.html",
+    "snapshotSHA256": "fd86bdc1761ad9bd1c7d13103f37ab7c613973dd1169f64498af22866e7deb73",
+    "sourceUrl": "https://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+    "fetchedAt": "2026-11-05T06:27:41.194323+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/ba3c6d4d64b636b9f0c8.html",
+    "snapshotSHA256": "83ceb0f998f96956b87a2e50a6cf0a23a8ab0bc9ace0bfe1dfba0636f4054545",
+    "sourceUrl": "https://www.pref.kyoto.jp/gesuido/manholemiyazu.html",
+    "fetchedAt": "2026-11-05T06:27:41.273902+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/019825c3c042510f3cc9.html",
+    "snapshotSHA256": "4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2",
+    "sourceUrl": "https://www.town.kumiyama.lg.jp/0000005678.html",
+    "fetchedAt": "2026-11-05T06:27:41.305562+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/112bdc3fa280460402a6.html",
+    "snapshotSHA256": "aa14a413ff2ec13cc510c6aa0dc626ac34f311c36bb978f5b0d9c0fccd705028",
+    "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+    "fetchedAt": "2026-11-05T06:27:41.552337+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/ea1c8c5cd3d7ef7769aa.html",
+    "snapshotSHA256": "c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4",
+    "sourceUrl": "https://www.town.oyamazaki.kyoto.jp/annai/jyogesuidoka/gesuidokakari/oshirase/4864.html",
+    "fetchedAt": "2026-11-05T06:27:41.777306+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/62e6d8fec8e80dc6fa8a.html",
+    "snapshotSHA256": "e45f48c417678da64bfe75dc969d3998a64c5871a3d157197769243810dbb9b7",
+    "sourceUrl": "https://www.town.toin.lg.jp/soshiki/1013/4/338.html",
+    "fetchedAt": "2026-11-05T06:27:41.839347+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/aef5a24f460c1f4f1ed3.html",
+    "snapshotSHA256": "e989cbae06fc5b3c1992230eaa21c6d3c43aaa574b1245b9871320abc40085f0",
+    "sourceUrl": "https://www.town.toyosato.shiga.jp/contents_detail.php?co=kak&frmId=1749",
+    "fetchedAt": "2026-11-05T06:27:42.124582+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/4ca6f8145508b258c08e.html",
+    "snapshotSHA256": "6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd",
+    "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/4328.html",
+    "fetchedAt": "2026-11-05T06:27:42.197535+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/05a6d72466a56689d856.html",
+    "snapshotSHA256": "666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea",
+    "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/782.html",
+    "fetchedAt": "2026-11-05T06:27:42.198447+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/a30155c38b8e00daacfb.html",
+    "snapshotSHA256": "5723fb96b28514d72a8d1b9cfef853a2b83cea97067d1d68a9f0d991d48bf49d",
+    "sourceUrl": "https://www2.town.komono.mie.jp/soshiki/14/1144.html",
+    "fetchedAt": "2026-11-05T06:27:42.215734+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/3437896710a483da8fe1.html",
+    "snapshotSHA256": "3323583927e8de6efdb5c369973f9445a7184c0c54ec66b49de70417a9ff5256",
+    "sourceUrl": "http://www.jade.dti.ne.jp/~rjpark/index.html",
+    "fetchedAt": "2026-11-05T06:29:36.360988+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/7380d488e0e90173d642.html",
+    "snapshotSHA256": "2e57074e0f473e228f096588a54392b33a0b0154d00ea1b8214026b20f80b994",
+    "sourceUrl": "https://akarenga-park.com/access",
+    "fetchedAt": "2026-11-05T06:29:36.361852+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/d6837eb6182ae731a190.html",
+    "snapshotSHA256": "c6196e248dfa5df049c234f600df5df47bd69c725b6fb793f61f2170a22c60d5",
+    "sourceUrl": "https://akarenga-park.com/facility/facility_01/",
+    "fetchedAt": "2026-11-05T06:29:36.362353+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/60e79ed6306d4e42d298.html",
+    "snapshotSHA256": "9c7d0f4bde2ffcf42b321646c850046d8c2c7a1160f2b328eca8ec4664ceab12",
+    "sourceUrl": "https://biwakososui-museum.city.kyoto.lg.jp/access/",
+    "fetchedAt": "2026-11-05T06:29:36.362822+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/427d532c434a208f36a2.html",
+    "snapshotSHA256": "f1fec82fe965f92a007d672d42fff5bcc982ce1ac0bdbe50883ee3797e2444f2",
+    "sourceUrl": "https://iga-nin.com/",
+    "fetchedAt": "2026-11-05T06:29:36.363243+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/73135ae23ea4f6a18a83.html",
+    "snapshotSHA256": "dd6fbeb834e120c35b682d77df9fb8976a091b4113ffd13cf4b9bae8f56eea39",
+    "sourceUrl": "https://kanko-kusatsu.com/",
+    "fetchedAt": "2026-11-05T06:29:36.364223+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/6c82ab6bfd2ace9fb433.html",
+    "snapshotSHA256": "da333117ed46fac2a1381fbf48a49f978793a96177aa34c84ee305340955e1a3",
+    "sourceUrl": "https://michinoeki-miyazu.jp/",
+    "fetchedAt": "2026-11-05T06:29:36.365693+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/0fed947ea16ee84dddf4.html",
+    "snapshotSHA256": "19fc0673fa84ad54ac9b3d871f8af970e75ee8c79f0a7c5930e6bb11c584d7f8",
+    "sourceUrl": "https://oportable.jp/birdcafe.html",
+    "fetchedAt": "2026-11-05T06:29:36.366107+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/31bff29c6577b2fb61c6.html",
+    "snapshotSHA256": "fb49530e9bd2e68d2e9c173886d575af134f2e1b6759e7640ee8678680c44cc2",
+    "sourceUrl": "https://otsu.or.jp/tourism/",
+    "fetchedAt": "2026-11-05T06:29:36.531033+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/b26dcf60b00eb18ebe9c.html",
+    "snapshotSHA256": "64c1df3cf440b3ac7165322c98cbabd6d6b4508482b743172b8b340dbf823590",
+    "sourceUrl": "https://tango-kingdom.com/",
+    "fetchedAt": "2026-11-05T06:29:36.583527+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/6c4902345744a2b2bb90.html",
+    "snapshotSHA256": "ebaa461690c51f2138e5f21f563dbcafdd27f77980912510467e8c9cf70237fc",
+    "sourceUrl": "https://toyosato-kanko.jp/",
+    "fetchedAt": "2026-11-05T06:29:36.675799+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/aad845394e4d3b497bcc.html",
+    "snapshotSHA256": "590b85ab1217383fb714963627b6e2a9d038fce5ab7b779985610ce0586fe70c",
+    "sourceUrl": "https://uedashoten.jp/",
+    "fetchedAt": "2026-11-05T06:29:36.830591+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/39fa31768452545a504b.html",
+    "snapshotSHA256": "3dd2b98bf315a9f2bff69499bb2647264a5d19590c7ba5c253413e4331ca3540",
+    "sourceUrl": "https://www.city.ayabe.lg.jp/category/4-7-0-0-0-0-0-0-0-0.html",
+    "fetchedAt": "2026-11-05T06:29:36.975466+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/de8a6826daf509852cc2.html",
+    "snapshotSHA256": "097715a61c50a9d76540559fcbb3cffbd417aaf475e89ff4ab05bb1bf6d39b94",
+    "sourceUrl": "https://www.city.higashiomi.shiga.jp/shiseijouhou/soshiki/1004023/1004024.html",
+    "fetchedAt": "2026-11-05T06:29:37.096073+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/05e0776c6264e9626bca.html",
+    "snapshotSHA256": "d79399ea435e4d8a97aeeead57fddece2702ac146b2b007a4e1ac3b40a702932",
+    "sourceUrl": "https://www.city.hikone.lg.jp/kakuka/somubu/3/21730.html",
+    "fetchedAt": "2026-11-05T06:29:37.212602+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/ef819b7381a8dc1082c5.html",
+    "snapshotSHA256": "b0f7e8cf70b7dd2eef634c0c452a2bcd23ec0d17efaf3d8882bdb4734fc88812",
+    "sourceUrl": "https://www.city.kameyama.mie.jp/shisetsu/2014121800249/",
+    "fetchedAt": "2026-11-05T06:29:37.333073+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/0fe09c7190a69982879d.html",
+    "snapshotSHA256": "1d46bf7d5b162c7223793138c5d3c2513dc4945af936e9e5d8fe8ad11db8124d",
+    "sourceUrl": "https://www.city.koka.lg.jp/1119.htm",
+    "fetchedAt": "2026-11-05T06:29:37.355331+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/0543fd4c7ba02cb53e05.html",
+    "snapshotSHA256": "2a58eec81da4858f6ce52b7d6dc6957f9f29206c23340d214812c6976aadd361",
+    "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000009356.html",
+    "fetchedAt": "2026-11-05T06:29:37.434089+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/c792f5b0f6ae31fba7e7.html",
+    "snapshotSHA256": "c8757ca60c04e0c0d5cb13b2ac370677f86ce238fb79180bf72101242b9e30fb",
+    "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000309702.html",
+    "fetchedAt": "2026-11-05T06:29:37.481536+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/62d4b8b2d412ab1df99d.html",
+    "snapshotSHA256": "aae1718727814745d778dd04cd0cc8e38d384a5ffb459caaac8b85dfb803efe8",
+    "sourceUrl": "https://www.city.nagaokakyo.lg.jp/0000000225.html",
+    "fetchedAt": "2026-11-05T06:29:37.574291+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/70de3eba9ffaf2284e59.html",
+    "snapshotSHA256": "0437b4ac923b4f5700b4e4a9d8b98509727b8af5e16f1a52e4b815bcff9b4a23",
+    "sourceUrl": "https://www.city.omihachiman.lg.jp/soshiki/suidou_sisetsu/index.html",
+    "fetchedAt": "2026-11-05T06:29:37.646977+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/1a310e188384b44359e7.html",
+    "snapshotSHA256": "b8937d6475b2f63ab020934b842f2c44572fa4b652e0711894b2eac7a8ca0796",
+    "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/080/1902/",
+    "fetchedAt": "2026-11-05T06:29:37.650888+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/faa583fb6bde805772fd.html",
+    "snapshotSHA256": "946bd2d2409221e3e581efa1cdc1734f25375cf60b37ff228ba28d1968f88ad4",
+    "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002338/index.html",
+    "fetchedAt": "2026-11-05T06:29:37.660069+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/8452966b809bfcc4cec5.html",
+    "snapshotSHA256": "37720ca153f6e509aa57ddbf540b1ba717f72c4374f84cc68598e28d1ce33324",
+    "sourceUrl": "https://www.city.uji.kyoto.jp/site/uji-kankou/3259.html",
+    "fetchedAt": "2026-11-05T06:29:37.698848+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/1879de420c1c40f5c81e.html",
+    "snapshotSHA256": "d01656f324596439558334025a4d24fb1ce8d7f599935ce87f7440f556831dd7",
+    "sourceUrl": "https://www.hikonyan-museum.com/access/",
+    "fetchedAt": "2026-11-05T06:29:37.758747+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/9b19efa7aa6b3b887166.html",
+    "snapshotSHA256": "c8c7cf149109ba1cf617f8512b5f195da7256842febc8f466a302531ae70da73",
+    "sourceUrl": "https://www.kanko-komono.com/spots/3371/",
+    "fetchedAt": "2026-11-05T06:29:37.767077+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/bab3184a99f9ccd04a4a.html",
+    "snapshotSHA256": "5fe5d4a4cb42e65138f05bda45d008196c24d40a088ac271b291871de286b685",
+    "sourceUrl": "https://www.kanko-shima.com/",
+    "fetchedAt": "2026-11-05T06:29:37.825280+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/719cf5c9b9daf3770270.html",
+    "snapshotSHA256": "df4914be986d873e03d9fc268c0328c7c4be466ebd64f4da6b5131110dc7f226",
+    "sourceUrl": "https://www.kanko.suzuka.mie.jp/about/",
+    "fetchedAt": "2026-11-05T06:29:37.849965+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/2130026a1aa24ca5e5e9.html",
+    "snapshotSHA256": "31f818b7b9ed8a9a62ea10d54a16187f2984243b3b56882f0138b4149bd6c1b0",
+    "sourceUrl": "https://www.karasuma.co.jp/",
+    "fetchedAt": "2026-11-05T06:29:38.021600+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/6f1704e6174a46aa907e.html",
+    "snapshotSHA256": "55196973855e48885b101ea8671671feaa5ef02107818b54068fb0c19a933691",
+    "sourceUrl": "https://www.ohmi.or.jp/plaza/",
+    "fetchedAt": "2026-11-05T06:29:38.155931+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/648585d5254085313ee8.html",
+    "snapshotSHA256": "ea450f1dfb0287e1d7cfe4d9d6b955dec189141db5f94f83e8dd4fd4c578f035",
+    "sourceUrl": "https://www.ritto-kanko.com/information/",
+    "fetchedAt": "2026-11-05T06:29:38.206365+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/42a9be840b0b9e24112e.html",
+    "snapshotSHA256": "624565baf58c8d4622a61e593b7d56209721798dc4e18881abb7dfbe26c161c4",
+    "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/somuka/gyomuannai/20/821.html",
+    "fetchedAt": "2026-11-05T06:29:38.374993+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/9ecaf4ec637a0b262d10.html",
+    "snapshotSHA256": "98221b1d574c85e330168a91e36a99f08018d9c133f78afc176d23ac391f00a0",
+    "sourceUrl": "https://museums.city.kameoka.kyoto.jp/",
+    "fetchedAt": "2026-11-05T06:30:53.306771+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/5ee551a9de2bed74a38f.html",
+    "snapshotSHA256": "5d864b06dc46b7f7076ae6860ca6bf710a0f8bf175579fa1860b29d7ffe3948d",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/",
+    "fetchedAt": "2026-11-05T06:30:53.307809+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/aed865c1824116b2e830.html",
+    "snapshotSHA256": "87429bf573484d2a2a0fb40cac8b355fcd633427d1eff5555e5219dcc3852b81",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/soshiki/49/",
+    "fetchedAt": "2026-11-05T06:30:53.308484+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/c97c1f8190262617d674.html",
+    "snapshotSHA256": "ce0a1380ec73a1cc41e16ca49cfb5bd81a4bbcc3e2c39eca8cfbab1ff8fde160",
+    "sourceUrl": "https://www.city.maizuru.kyoto.jp/kurashi/0000009007.html",
+    "fetchedAt": "2026-11-05T06:30:53.308961+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/5cc94781c6fe09f9f520.html",
+    "snapshotSHA256": "2fe021b4cf8db8f5f76eb1bb971f34b57d181325c590fe9258c08f105b9578fa",
+    "sourceUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+    "fetchedAt": "2026-11-05T06:30:53.309354+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue7/kinki-east/sources/92454facb589de041581.html",
+    "snapshotSHA256": "c71d3cf8120066c67ba463c3fbf6aea471cc967883743f9dad9b11a6f7fcc7dd",
+    "sourceUrl": "https://www.ohmi.or.jp/zaidan/access/",
+    "fetchedAt": "2026-11-05T06:30:53.310871+00:00",
+    "retrievalTimeKnown": true,
+    "fetchedAtDefinition": "HTTP request start UTC, logged at retrieval; completion time not recorded"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/p05-catalog.html",
+    "snapshotSHA256": "15241960c994fdd6800b7065e99291fe00a722f86a909ef3596a09c39eddfce4",
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "fetchedAt": "2026-11-05T05:45:44.463528+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/chubu/p05-terms.html",
+    "snapshotSHA256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "fetchedAt": "2026-11-05T05:45:44.454259+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "retrievalTimeKnown": true,
+    "metadataPath": "data/evidence/issue5/chubu/P05-22_GML.zip.source.json"
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b.html",
+    "snapshotSHA256": "e7bf554f1eb7d280cd38667cfaf5cc272b53f9dfb0d8e267abc2288786a25b5b",
+    "sourceUrl": "https://www.city.koka.lg.jp/24108.htm",
+    "fetchedAt": "2026-11-05T04:24:38.336544+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cf2ff5ddbc0ef7da63f9c7487a40fab128253b77c885af8ba8aee4e30887dba4.html",
+    "snapshotSHA256": "cf2ff5ddbc0ef7da63f9c7487a40fab128253b77c885af8ba8aee4e30887dba4",
+    "sourceUrl": "https://www.city.uji.kyoto.jp/soshiki/12/6038.html",
+    "fetchedAt": "2026-11-05T04:32:46.663139+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bdd6739d175da717d65c681989555a448cf5375a1552e792dde267f8e4b37b52.html",
+    "snapshotSHA256": "bdd6739d175da717d65c681989555a448cf5375a1552e792dde267f8e4b37b52",
+    "sourceUrl": "http://www.city.nagaokakyo.lg.jp/0000007110.html",
+    "fetchedAt": "2026-11-05T04:23:06.490217+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e989cbae06fc5b3c1992230eaa21c6d3c43aaa574b1245b9871320abc40085f0.html",
+    "snapshotSHA256": "e989cbae06fc5b3c1992230eaa21c6d3c43aaa574b1245b9871320abc40085f0",
+    "sourceUrl": "http://www.town.toyosato.shiga.jp/contents_detail.php?co=kak&frmId=1749",
+    "fetchedAt": "2026-11-05T04:23:40.725914+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6d971f1fcba3061f038e5d0b7f6a7bb8dca56bc5af4c4e8cb80022be995cef3a.html",
+    "snapshotSHA256": "6d971f1fcba3061f038e5d0b7f6a7bb8dca56bc5af4c4e8cb80022be995cef3a",
+    "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1009690.html",
+    "fetchedAt": "2026-11-05T04:24:19.379107+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025.html",
+    "snapshotSHA256": "b74d5c37bec2e44f74f981116318f3b071500fcede4ebdbfbd125e8a69fc6025",
+    "sourceUrl": "https://www.city.kyotango.lg.jp/top/soshiki/jogesuido/suido/gesuidou/manhole/21182.html",
+    "fetchedAt": "2026-11-05T04:24:43.151106+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4.html",
+    "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+    "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+    "fetchedAt": "2026-11-05T04:24:42.859308+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-04f7e476a93bfa3193cea992f1e74320d9294c52178ac47a97cfb8e71a2c423e.html",
+    "snapshotSHA256": "04f7e476a93bfa3193cea992f1e74320d9294c52178ac47a97cfb8e71a2c423e",
+    "sourceUrl": "https://www.city.iga.lg.jp/0000004701.html",
+    "fetchedAt": "2026-11-05T04:24:19.164230+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294.html",
+    "snapshotSHA256": "0edb65ef061bca53db00dc0a8e3b0a8926c54a7d23f234d29607a69de77a7294",
+    "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+    "fetchedAt": "2026-11-05T04:24:48.718768+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-22be2df0f56269eb2d6d1c3496ae389dca79e8a30035ca18caac35672977830c.html",
+    "snapshotSHA256": "22be2df0f56269eb2d6d1c3496ae389dca79e8a30035ca18caac35672977830c",
+    "sourceUrl": "https://www.city.omihachiman.lg.jp/soshiki/suidou_sisetsu/gesuidouosirase/29246.html",
+    "fetchedAt": "2026-11-05T04:24:45.709883+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f.html",
+    "snapshotSHA256": "5a5c8be8475b390bcdab922dd78e0a672657ebf7e69e9675070b587bcf61094f",
+    "sourceUrl": "https://www.city.hikone.lg.jp/kakuka/jogesuido/2/9/2219.html",
+    "fetchedAt": "2026-11-05T04:24:16.818286+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f.html",
+    "snapshotSHA256": "99e1f7f201220f4e1a583d0b2d1e255df6d9bc0b83c7fa32d2340e5ac84f0b7f",
+    "sourceUrl": "http://www.city.maizuru.kyoto.jp/kurashi/0000004329.html",
+    "fetchedAt": "2026-11-05T04:23:11.204281+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d.html",
+    "snapshotSHA256": "efe65cae05004722dc6bf39de774067e58608f4d5c8f24c9ba697b7fa02d925d",
+    "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+    "fetchedAt": "2026-11-05T04:25:00.705895+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-de0e8c2f45beea510ad7bf8df422eefdec4ad64d33cb58c9b434a222cbaccb41.html",
+    "snapshotSHA256": "de0e8c2f45beea510ad7bf8df422eefdec4ad64d33cb58c9b434a222cbaccb41",
+    "sourceUrl": "https://www.city.higashiomi.shiga.jp/kurashi_tetsuzuki/jougesuidou/1008975/1008976.html",
+    "fetchedAt": "2026-11-05T04:24:16.817561+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5e7c1c5de9b1fa9c91abad4f9c3672f15ffc48ce68d570bac5a82fda8eab1c39.html",
+    "snapshotSHA256": "5e7c1c5de9b1fa9c91abad4f9c3672f15ffc48ce68d570bac5a82fda8eab1c39",
+    "sourceUrl": "http://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+    "fetchedAt": "2026-11-05T04:23:22.689974+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d.html",
+    "snapshotSHA256": "ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d",
+    "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/080/1901/g/manhole/1499746928377.html",
+    "fetchedAt": "2026-11-05T04:24:49.071879+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4.html",
+    "snapshotSHA256": "c24e057337bef6113c0f4c7a7589c7fc7835848787d2a821076007fa12a141a4",
+    "sourceUrl": "http://www.town.oyamazaki.kyoto.jp/annai/jyogesuidoka/gesuidokakari/oshirase/4864.html",
+    "fetchedAt": "2026-11-05T04:23:54.899776+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60.html",
+    "snapshotSHA256": "5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60",
+    "sourceUrl": "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+    "fetchedAt": "2026-11-05T04:23:11.204927+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2ff14dc8360b2beb1ba2257600d7fbbcb8fbacf15cb0ccba702e7397f57dc49b.html",
+    "snapshotSHA256": "2ff14dc8360b2beb1ba2257600d7fbbcb8fbacf15cb0ccba702e7397f57dc49b",
+    "sourceUrl": "https://www.city.otsu.lg.jp/kigyo/about/koho/68041.html",
+    "fetchedAt": "2026-11-05T04:24:46.871633+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-7a3f0296dfda143f5efe8688f3a05782ca4625e27c76af9d65b100b038689af4.html",
+    "snapshotSHA256": "7a3f0296dfda143f5efe8688f3a05782ca4625e27c76af9d65b100b038689af4",
+    "sourceUrl": "https://www.city.moriyama.lg.jp/kurashitetsuzuki/jougesuido/1001701/1008797.html",
+    "fetchedAt": "2026-11-05T04:24:44.478314+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0375f944ad370ec22a45361b46478e45b6f7c921c90d46846488c41f6e8ff595.html",
+    "snapshotSHA256": "0375f944ad370ec22a45361b46478e45b6f7c921c90d46846488c41f6e8ff595",
+    "sourceUrl": "https://www.ohmi.or.jp/plaza/manhole/",
+    "fetchedAt": "2026-11-05T04:24:56.831170+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2.html",
+    "snapshotSHA256": "4de1bab3bd1b1e0dafab3323b3a36bc7bd2302d95f931286a5fb480c441b64a2",
+    "sourceUrl": "https://www.town.kumiyama.lg.jp/0000005678.html",
+    "fetchedAt": "2026-11-05T04:25:00.608460+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-de1f678bba835bb692c744e123ae4b4e2381984ffa3dba126550151332cebe35.html",
+    "snapshotSHA256": "de1f678bba835bb692c744e123ae4b4e2381984ffa3dba126550151332cebe35",
+    "sourceUrl": "https://www.city.ayabe.lg.jp/0000006318.html",
+    "fetchedAt": "2026-11-05T04:26:55.093729+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1.html",
+    "snapshotSHA256": "3cae4f457a96b7618117873c1a762414701a3e8f7f8fb91c81cdf8509686d4f1",
+    "sourceUrl": "https://www.city.shima.mie.jp/kakuka/jogesuidobu/gesuidoka/gesuido/7166.html",
+    "fetchedAt": "2026-11-05T04:24:47.480534+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6b93d02fc557287deca070b112720496bd842ee2eaaf83a4ab60c6a2c5d06326.html",
+    "snapshotSHA256": "6b93d02fc557287deca070b112720496bd842ee2eaaf83a4ab60c6a2c5d06326",
+    "sourceUrl": "https://www.city.kameyama.mie.jp/docs/2017032800025/",
+    "fetchedAt": "2026-11-05T04:24:30.259443+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-03556e92ecc749a718b6d3750f6ac1f7c1176870d13095f73a120efcbee1b429.html",
+    "snapshotSHA256": "03556e92ecc749a718b6d3750f6ac1f7c1176870d13095f73a120efcbee1b429",
+    "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/025/1604/g/kanko/74138.html",
+    "fetchedAt": "2026-11-05T04:24:47.971786+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e.html",
+    "snapshotSHA256": "d05e42a3aac04e4378106b3f844575aab93af6751c40ffb692a4b96ce141d16e",
+    "sourceUrl": "https://www.town.toin.lg.jp/soshiki/1013/4/338.html",
+    "fetchedAt": "2026-11-05T04:25:00.576862+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0c0316884d0b4b207d25658d7c9ca4417745cb149fa34ca5921d886481e59712.html",
+    "snapshotSHA256": "0c0316884d0b4b207d25658d7c9ca4417745cb149fa34ca5921d886481e59712",
+    "sourceUrl": "http://www.pref.kyoto.jp/gesuido/manholemiyazu.html",
+    "fetchedAt": "2026-11-05T04:23:26.371276+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-b1f28aa533c05d386b90badeb93f10708860de97f2f570beabf33b350bb327e0.html",
+    "snapshotSHA256": "b1f28aa533c05d386b90badeb93f10708860de97f2f570beabf33b350bb327e0",
+    "sourceUrl": "https://www2.town.komono.mie.jp/soshiki/14/1144.html",
+    "fetchedAt": "2026-11-05T04:34:36.162001+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-77e9da2b8497244baa27022b38c8462e474a12b4b5eed85c8c8773b197a526e7.html",
+    "snapshotSHA256": "77e9da2b8497244baa27022b38c8462e474a12b4b5eed85c8c8773b197a526e7",
+    "sourceUrl": "https://www.city.nagaokakyo.lg.jp/0000013143.html",
+    "fetchedAt": "2026-11-05T04:24:46.568739+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9859c34edef51b0f82368d6ab7cd137ebfb40d553293d0282644a10dae76ca24.html",
+    "snapshotSHA256": "9859c34edef51b0f82368d6ab7cd137ebfb40d553293d0282644a10dae76ca24",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3966.html",
+    "fetchedAt": "2026-11-05T04:24:29.752768+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd.html",
+    "snapshotSHA256": "6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd",
+    "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/4328.html",
+    "fetchedAt": "2026-11-05T04:26:55.097879+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766.html",
+    "snapshotSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+    "sourceUrl": "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html",
+    "fetchedAt": "2026-11-05T04:24:53.815525+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea.html",
+    "snapshotSHA256": "666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea",
+    "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/782.html",
+    "fetchedAt": "2026-11-05T04:25:02.801047+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-df4a9b7b0df7e0326dd5d29b2bf9aec0f38c9d9e02fb5f2f3055140c3e4116dc.html",
+    "snapshotSHA256": "df4a9b7b0df7e0326dd5d29b2bf9aec0f38c9d9e02fb5f2f3055140c3e4116dc",
+    "sourceUrl": "https://www.city.kameoka.kyoto.jp/site/jougesuidou/3967.html",
+    "fetchedAt": "2026-11-05T04:24:32.773187+00:00",
+    "retrievalTimeKnown": true
+  },
+  {
+    "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f.html",
+    "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+    "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+    "fetchedAt": "2026-11-05T04:22:58.427873+00:00",
+    "retrievalTimeKnown": true
+  }
+]

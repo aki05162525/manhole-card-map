@@ -1,0 +1,11 @@
+{
+  "data/work/issue7-baseline/full.json": "c12ff18fa3bae89bfd04875d2e0656e90fe65fc24780a4882263432769ace130",
+  "data/work/issue7-baseline/assignments.json": "97d7c362e94fbf45ca3c86e093940c8b4140dbe2f31dbd7519a93852d179aeda",
+  "data/work/issue7-baseline/ledger.json": "a0e3fe82a4996e1041cb5434b7a24e90408a8c55c1f3f1d7e36e0e5e56b2c6c8",
+  "data/work/issue7-baseline/hashes.json": "41cf672ca07f87c2bb0cedc1de0f081eac9d864da32d032c650cc491b47788ad",
+  "data/national/issue5/chubu.json": "68e9c0ad0998a5ba0930634bfe11c7d80fc1589001465ad252c72f7a1a5650b5",
+  "data/national/issue5/reviews/chubu.json": "99679341b9417d8b4cc794464977565a2817c915809f7f6021d9363ffdda5338",
+  "data/national/location-updates/chubu-west.json": "c65e5e0d458d31a8c5e69d056106248f00128f498ed7d235919906b64c1cd8ee",
+  "data/national/reviews/chubu-west-locations.json": "a83a2c217d0ef4c699bb8b857984e40fd2afa03459275d71b21a0a94c0fc0903",
+  "data/evidence/issue5/chubu/P05-22_GML.zip": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+}

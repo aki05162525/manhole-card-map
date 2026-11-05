@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<meta charset="utf-8">
+
+<title>柏市／上下水道局庁舎</title>
+
+<meta property="og:title" content="上下水道局庁舎">
+<meta property="og:type" content="article">
+<meta property="og:description" content="">
+<meta property="og:url" content="https://www.city.kashiwa.lg.jp/somu/kashiwa_suido/suidobu/gaiyo/chosha.html">
+<meta property="og:image" content="https://www.city.kashiwa.lg.jp/shared/site_rn2023/images/sns/logo.jpg">
+<meta property="og:site_name" content="柏市">
+<meta property="og:locale" content="ja_JP">
+<meta name="author" content="柏市">
+<meta name="viewport" content="width=device-width, maximum-scale=3.0">
+<meta name="format-detection" content="telephone=no">
+<link href="/shared/site_suido_gesui/style/default.css" rel="stylesheet" type="text/css" media="all">
+<link href="/shared/site_suido_gesui/style/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="/shared/templates/suido_gesui_free/style/edit.css" rel="stylesheet" type="text/css" media="all">
+<link href="/shared/site_suido_gesui/style/smartphone.css" rel="stylesheet" media="only screen and (max-width : 640px)" type="text/css" class="mc_css">
+<link href="/shared/templates/suido_gesui_free/style/edit_sp.css" rel="stylesheet" media="only screen and (max-width : 640px)" type="text/css" class="mc_css">
+<link href="/shared/images/favicon/favicon.ico" rel="icon">
+<link href="/shared/site_rn2023/images/favicon/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+<script src="/shared/site_suido_gesui/js/jquery.js"></script>
+<script src="/shared/site_suido_gesui/js/setting.js"></script>
+<script src="/shared/site_suido_gesui/js/page_print.js"></script>
+<script src="/shared/js/ga.js"></script>
+
+
+<script type="text/javascript" src="/shared/js/ga_social_tracking.js"></script>
+<script type="text/javascript">
+var publish = true;
+var userAgent = window.navigator.userAgent.toLowerCase();
+var appVersion = window.navigator.appVersion.toLowerCase();
+if(userAgent.indexOf('msie') != -1){
+  if(appVersion.indexOf('msie 6.') != -1){
+    publish = false;
+  }else if(appVersion.indexOf('msie 7.') != -1){
+    publish = false;
+  }
+}
+if(publish){
+	window.twttr = (function (d,s,id) {
+	  var t, js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+	  js.src='//platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs);
+	  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+	}(document, 'script', 'twitter-wjs'));
+	// Wait for the asynchronous resources to load
+	twttr.ready(function(twttr) {
+	    _ga.trackTwitter(); //Google Analytics tracking
+	});
+}
+</script>
+</head>
+<body class="format_free no_javascript">
+<div id="fb-root"></div>
+<script type="text/javascript">
+var publish = true;
+var userAgent = window.navigator.userAgent.toLowerCase();
+var appVersion = window.navigator.appVersion.toLowerCase();
+if(userAgent.indexOf('msie') != -1){
+  if(appVersion.indexOf('msie 6.') != -1){
+    publish = false;
+  }else if(appVersion.indexOf('msie 7.') != -1){
+    publish = false;
+  }
+}
+if(publish){
+	window.fbAsyncInit = function() {
+	  _ga.trackFacebook(); //Google Analytics tracking
+	};
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+}
+</script>
+<script src="/shared/site_suido_gesui/js/init.js"></script>
+<div id="tmp_wrapper">
+<noscript>
+<p>このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。</p>
+</noscript>
+<p><a href="#tmp_honbun" class="skip">本文へスキップします。</a></p><div id="tmp_front_top">
+<div class="container">
+<div class="logo_mainsite">
+<p><img src="/shared/site_rn2023/images/header/front_kashiwa.jpg" width="176" height="42" alt="柏市つづくを、つなぐ。"></p>
+</div>
+<div class="setting_func">
+<p class="func_moji"><a href="/moji.html">文字サイズ・色合い変更</a></p>
+<p class="func_lang"><a href="/foreignlanguage.html" lang="en">Foreign Language</a></p>
+<p class="func_pref"><a href="/index.html"><span>柏市ホームページ</span></a></p>
+</div>
+</div>
+</div>
+<header id="tmp_header">
+<div class="container">
+<div id="tmp_hlogo">
+<p><a href="/kashiwa_suido_gesui/index.html"><span>柏市上下水道局</span></a></p>
+</div>
+<div id="tmp_means">
+<div class="means_inner">
+<div id="tmp_gnavi">
+<nav class="gnavi">
+<ul>
+<li class="glist1"><a href="/kashiwa_suido/shimin/index.html">市民の方</a></li>
+<li class="glist2"><a href="/kashiwa_suido/jigyosha/index.html">事業者の方</a></li>
+<li class="glist3"><a href="/kashiwa_suido/kanrenjoho/index.html">関連情報</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="tmp_hnavi_s">
+<ul>
+<li id="tmp_hnavi_rmenu"><a href="javascript:void(0)"><span>メニュー</span></a></li>
+</ul>
+</div>
+</div>
+</header>
+<div id="tmp_sma_menu">
+<div id="tmp_sma_rmenu" class="wrap_sma_sch">
+<div class="sma_menu_inner">
+<div id="tmp_sma_search">
+<form id="tmp_sma_gsearch" action="/search_result.html" name="tmp_sma_gsearch">
+<div class="wrap_sch_box">
+<p class="sch_ttl"><label for="tmp_sma_query">サイト内検索</label></p>
+<div class="wrap_sch_input">
+<p class="sch_box">
+<input type="text" size="31" name="q" id="tmp_sma_query">
+</p>
+<div class="sch_action">
+<p class="sch_btn">
+<input type="submit" name="sa" value="検索" id="tmp_sma_func_sch_btn">
+</p>
+<p id="tmp_sma_search_hidden">
+<input name="cx" type="hidden" value="007625988971896691124:5kfgn5alv58">
+<input name="ie" type="hidden" value="UTF-8">
+<input name="cof" type="hidden" value="FORID:9">
+</p>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div id="tmp_sma_cnavi">
+<div class="gnavi">
+<ul>
+<li class="glist1"><a href="/kashiwa_suido/shimin/index.html">市民の方</a></li>
+<li class="glist2"><a href="/kashiwa_suido/jigyosha/index.html">事業者の方</a></li>
+<li class="glist3"><a href="/kashiwa_suido/kanrenjoho/index.html">関連情報</a></li>
+</ul>
+</div>
+</div>
+<p class="close_btn"><a href="javascript:void(0);"><span>閉じる</span></a></p>
+</div>
+</div>
+</div>
+<div id="tmp_wrap_main" class="column_rnavi">
+<div id="tmp_main">
+<div class="container">
+<div id="tmp_directional">
+<div id="tmp_pankuzu">
+<p><a href="/index.html">トップ</a> &gt; <a href="/kurashi/index.html">くらし・手続き</a> &gt; <a href="/kashiwa_suido_gesui/index.html">上下水道</a> &gt; <a href="/kashiwa_suido/kanrenjoho/index.html">関連情報</a> &gt; <a href="/kashiwa_suido/kanrenjoho/annai/index.html">庁舎案内</a> &gt; 上下水道局庁舎</p>
+</div>
+<div id="tmp_wrap_custom_update">
+<div id="tmp_custom_update">
+
+<p id="tmp_update"><span>更新日</span>令和5(2023)年6月16日</p>
+
+<p id="tmp_pageid"><span>ページID</span>3436</p>
+</div>
+</div>
+</div>
+<div class="wrap_col_main">
+<div class="col_main">
+<p id="tmp_honbun" class="skip">ここから本文です。</p>
+<div id="tmp_contents">
+
+<h1>上下水道局庁舎</h1>
+<p>柏市水道事業と下水道事業は組織を統合し令和4年度から上下水道局になりました。</p>
+<p>上下水道局庁舎の所在地と各課の主な業務内容は以下のとおりです。</p>
+<h2>上下水道局庁舎</h2>
+<ul>
+	<li>住所<br>
+	柏市千代田1丁目2番32号</li>
+	<li>地図<br>
+	<a href="/documents/3436/chousyaannaizu.pdf">上下水道局庁舎案内図（PDF：87KB）</a></li>
+	<li>代表電話番号<br>
+	04-7166-2191</li>
+</ul>
+<h3>所在する課・主な業務内容</h3>
+<h4>総務課</h4>
+<p>上下水道事業についての職員の人事・給与、庁舎管理、契約、検査、防災危機管理、審議会など</p>
+<h4>経営企画課</h4>
+<p>各事業計画の策定、経営戦略、各会計の予算編成・決算、出納など</p>
+<h4>料金課</h4>
+<p>上下水道料金の徴収、検針・使用量認定、下水道受益者負担金、水洗便所改造資金貸付、債権管理など</p>
+<h4>給排水課</h4>
+<p>給水装置工事・排水設備計画の申請確認・検査、応急給水、水道メーター管理、水洗化普及など</p>
+<h4>水道工務課</h4>
+<p>配水管等の計画・拡張・維持補修など</p>
+<h4>下水道工務課</h4>
+<p>公共下水道の新設・改良工事・維持管理、用地取得など</p>
+<h4>施設管理課</h4>
+<p>水源施設の更新、維持管理及び運転管理、水質管理など</p>
+
+</div>
+
+<div id="tmp_social_plugins"><div class="social_media_btn line_btn">
+<script type="text/javascript" src="https://media.line.naver.jp/js/line-button.js"></script>
+<script type="text/javascript">new jp.naver.line.media.LineButton({"pc":true,"lang":"ja","type":"a"});</script>
+</div><div class="social_media_btn facebook_btn">
+<div data-href="https://www.city.kashiwa.lg.jp/somu/kashiwa_suido/suidobu/gaiyo/chosha.html" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" class="fb-like"></div>
+</div><div class="social_media_btn twitter_btn">
+<a href="https://twitter.com/share" data-url="https://www.city.kashiwa.lg.jp/somu/kashiwa_suido/suidobu/gaiyo/chosha.html" data-text="上下水道局庁舎" data-lang="ja" class="twitter-share-button">ツイート</a>
+<script type="text/javascript">
+if(publish){
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+}
+</script>
+</div>
+</div>
+
+
+
+
+<div id="tmp_inquiry">
+<div id="tmp_inquiry_ttl">
+<p>お問い合わせ先</p>
+</div>
+<div id="tmp_inquiry_cnt">
+<div class="inquiry_parts">
+<p>所属課室：上下水道局総務課</p>
+<p>柏市千代田1丁目2番32号（上下水道局庁舎3階）</p>
+<div class="inq_phone">
+<p>電話番号：</p>
+<p class="tel_link">04-7166-3181</p>
+</div>
+<p class="inquiry_btn">
+<a target="_blank" href="https://secure.okbiz.jp/question-kashiwa/helpdesk?category_id=434&site_domain=default">お問い合わせフォーム</a></p>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+<div class="wrap_col_rgt_navi">
+<div class="col_rgt_navi">
+
+<div id="tmp_rnavi">
+<div id="tmp_rnavi_ttl">
+<p><a href="/kashiwa_suido/kanrenjoho/annai/index.html">庁舎案内</a></p>
+</div>
+<div id="tmp_rnavi_cnt">
+<ul>
+<li><a href="/somu/kashiwa_suido/suidobu/gaiyo/chosha.html">上下水道局庁舎</a></li>
+<li><a href="/somu/kashiwa_suido/suidobu/gaiyo/tel.html">電話のご利用案内</a></li>
+</ul>
+</div>
+</div>
+<div id="tmp_rnavi_func">
+<div class="func_item">
+<div class="item_inner">
+<div class="item_icon">
+<p><img alt="よくある質問等" height="50" src="/shared/site_suido_gesui/images/icon/icon_rnavi_qa.png" width="58"></p>
+</div>
+<div class="item_txt">
+<p><a href="/kashiwa_suido/shitsumon/index.html">よくある<br>
+質問等</a></p>
+</div>
+</div>
+</div>
+<div class="func_item">
+<div class="item_inner">
+<div class="item_icon">
+<p><img alt="キッズページ" height="50" src="/shared/site_suido_gesui/images/icon/icon_rnavi_campaign.png" width="58"></p>
+</div>
+<div class="item_txt">
+<p><a href="/kashiwa_suido/kanrenjoho/kids/index.html">キッズページ</a></p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div><footer id="tmp_footer">
+<div class="fnavi_wrap">
+<div class="container">
+<ul class="fnavi">
+<li><a href="/kashiwa_suido/sitemap.html">サイトマップ</a></li>
+<li><a href="/otoiawase.html">お問い合わせ</a></li>
+<li><a href="/shiseijoho/shisei/soshiki/suido/index.html">上下水道局について</a></li>
+</ul>
+<div class="pnavi">
+<p class="ptop"><a href="#tmp_header"><span>ページの先頭へ戻る</span></a></p>
+</div>
+</div>
+</div>
+<div class="footer_wrap">
+<div class="container">
+<div class="footer_logo">
+<p><span>柏市上下水道局</span></p>
+</div>
+<div class="footer_cnt">
+<address>
+<p>法人番号：6000020122173</p>
+<p><span>〒277-0025</span> 千葉県柏市千代田1丁目2番32号</p>
+<p>電話番号：04-7166-2191</p>
+</address>
+</div>
+<p lang="en" class="copyright">Copyright &copy; Kashiwa City. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+<script src="/shared/site_suido_gesui/js/splide_min.js"></script>
+<script src="/shared/site_suido_gesui/js/function.js"></script>
+<script src="/shared/site_suido_gesui/js/main.js"></script>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=1716445543" async></script></body>
+</html>

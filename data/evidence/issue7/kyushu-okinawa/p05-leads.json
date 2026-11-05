@@ -1,0 +1,6309 @@
+[
+  {
+    "facilityId": "facility:kyushu-015d01512ed3752919cd",
+    "addressSearchStem": "中央区出水",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 275,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40108",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "北九州市八幡東区八王寺町4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8415133,
+              33.8731432
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 955,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "飯塚市鯰田1560-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70365859,
+              33.65693435
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 957,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40206",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "田川市大字伊田2550-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.811515,
+              33.632015
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1092,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40210",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "八女市馬場434"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.568821,
+              33.209065
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2417,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40381",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "芦屋町大字山鹿228-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.67674,
+              33.90189
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2518,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40421",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "桂川町大字吉隈429-26"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.682884,
+              33.59344
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2620,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40522",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "大木町大字八町牟田671-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.440538,
+              33.211022
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2825,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40621",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "苅田町殿川町1-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.984279,
+              33.775329
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 1351,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42214",
+            "P05_002": "5",
+            "P05_003": "青年会館",
+            "P05_004": "南島原市南有馬町乙1360"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.244922,
+              32.6358521
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 38,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "青年会館",
+            "P05_004": "熊本市中央区出水2-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7366549,
+              32.78527552
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 40,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "熊本市中央区出水2-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7366229,
+              32.78524352
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 428,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43202",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "八代市緑町11-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.610451,
+              32.504793
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 461,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "水俣市袋933-外"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.38545,
+              32.17777
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 495,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43206",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "玉名市大倉1144"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.567601,
+              32.921838
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 960,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43348",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "美里町萱野745"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.809087,
+              32.633121
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 1237,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43443",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "益城町大字木山236"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.821754,
+              32.786064
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 1408,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43501",
+            "P05_002": "5",
+            "P05_003": "青年会館",
+            "P05_004": "錦町一武1587"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.840957325582,
+              32.2021515651841
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 1463,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43510",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "相良村大字深水2493-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.797189,
+              32.235686
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 381,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44204",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "日田市田島3-29"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.951357,
+              33.319032
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 490,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "佐伯市大字長谷2614"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.866995,
+              32.926431
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 1104,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44211",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宇佐市大字川部1571-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.36098,
+              33.53637
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 28,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45201",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宮崎市宮崎駅東1-2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.435315,
+              31.914598
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 69,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46201",
+            "P05_002": "5",
+            "P05_003": "青年会館",
+            "P05_004": "鹿児島市山下町6-1教育総合センター内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5551281,
+              31.59553533
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 206,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46204",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "枕崎市中央町26"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.287203,
+              31.275019
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 926,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46224",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "伊佐市大口鳥巣336-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.598184,
+              32.056102
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1122,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46468",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "大崎町神領2488-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.032843,
+              31.436896
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1136,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46482",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "東串良町新川西1850"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.985561,
+              31.385434
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1417,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46532",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "伊仙町伊仙3071-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              128.942411,
+              27.688499
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 73,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47207",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "石垣市字平得439"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              124.175238,
+              24.344286
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 483,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47214",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宮古島市平良字東仲宗根676-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              125.2998102,
+              24.80372297
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 694,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47313",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宜野座村字惣慶1880"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              127.97179954,
+              26.48178785
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+    "addressSearchStem": "高城町",
+    "number": "5",
+    "matches": [
+      {
+        "prefecture": "42",
+        "featureIndex": 419,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42204",
+            "P05_002": "5",
+            "P05_003": "物産ホール",
+            "P05_004": "諫早市高城町5-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.05262,
+              32.84505
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 421,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42204",
+            "P05_002": "5",
+            "P05_003": "高城会館",
+            "P05_004": "諫早市高城町5-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.05191,
+              32.84526
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 485,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42204",
+            "P05_002": "5",
+            "P05_003": "男女共同参画推進センター",
+            "P05_004": "諫早市高城町5-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.05191,
+              32.84524
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 518,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42204",
+            "P05_002": "5",
+            "P05_003": "諫早商工会館ビル",
+            "P05_004": "諫早市高城町5-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.0522222,
+              32.845
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-04dd6fa162496df84411",
+    "addressSearchStem": "彼杵宿郷",
+    "number": "747",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-056030efbe436e3617a8",
+    "addressSearchStem": "宇美",
+    "number": "5",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 2150,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "貴船自治会公民館",
+            "P05_004": "宇美町貴船5-1-13"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.504536,
+              33.556807
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2152,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "原田中央自治会公民館",
+            "P05_004": "宇美町原田3-5-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.526074,
+              33.555256
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2153,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "1",
+            "P05_003": "宇美町役場",
+            "P05_004": "宇美町宇美5-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.511208,
+              33.567768
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2155,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "武道館",
+            "P05_004": "宇美町宇美5-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.513016,
+              33.566988
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2161,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "四王寺坂二自治会公民館",
+            "P05_004": "宇美町四王寺坂2-17-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.518876,
+              33.56022
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2164,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "障子岳砥石場集会所",
+            "P05_004": "宇美町障子岳南1-5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.533746,
+              33.564194
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2167,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "上宇美二自治会公民館",
+            "P05_004": "宇美町宇美5-12-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.513116,
+              33.567664
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2177,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "地域包括支援センター",
+            "P05_004": "宇美町宇美5-1-1宇美町役場内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.51108675,
+              33.56752027
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2183,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "馬場自治会公民館",
+            "P05_004": "宇美町宇美1-9-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.509191,
+              33.571676
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-27873221b74e521bc34d",
+    "addressSearchStem": "中央区花畑町",
+    "number": "7",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-2c563d0c054fa158905a",
+    "addressSearchStem": "江口",
+    "number": "1177",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-36b4ad8b697e9a275512",
+    "addressSearchStem": "駅東",
+    "number": "1",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 430,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40132",
+            "P05_002": "4",
+            "P05_003": "堅粕公民館",
+            "P05_004": "福岡市博多区博多駅東1-8-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.42273,
+              33.59244
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1748,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40223",
+            "P05_002": "5",
+            "P05_003": "岡部記念福祉会館",
+            "P05_004": "古賀市駅東1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.469424,
+              33.728602
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1749,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40223",
+            "P05_002": "1",
+            "P05_003": "古賀市役所",
+            "P05_004": "古賀市駅東1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.469985,
+              33.728795
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1766,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40223",
+            "P05_002": "4",
+            "P05_003": "古賀東公民館",
+            "P05_004": "古賀市駅東1-2-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.46863,
+              33.72924
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 27,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45201",
+            "P05_002": "3",
+            "P05_003": "宮崎市保健所",
+            "P05_004": "宮崎市宮崎駅東1-6-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.4329317,
+              31.9139668304
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 28,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45201",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宮崎市宮崎駅東1-2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.435315,
+              31.914598
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 30,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45201",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "宮崎市宮崎駅東1-2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.435285,
+              31.914601
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 399,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47213",
+            "P05_002": "2",
+            "P05_003": "水道庁舎",
+            "P05_004": "うるま市兼箇段896"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              127.8404492,
+              26.36925366
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-37487cd1fb5f5fdb7207",
+    "addressSearchStem": "安徳",
+    "number": "702",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 2126,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40231",
+            "P05_002": "1",
+            "P05_003": "那珂川市役所",
+            "P05_004": "那珂川市西隈1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4221796,
+              33.49958044
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-3be846e318561ee431e9",
+    "addressSearchStem": "中原",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 107,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40105",
+            "P05_002": "5",
+            "P05_003": "中小企業支援センター",
+            "P05_004": "北九州市戸畑区中原新町2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8407264,
+              33.9011513
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 109,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40105",
+            "P05_002": "3",
+            "P05_003": "中原市民センター",
+            "P05_004": "北九州市戸畑区中原東2-2-35"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8450845,
+              33.8980239
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1590,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40218",
+            "P05_002": "3",
+            "P05_003": "町民情報ステーション",
+            "P05_004": "那珂川市中原2-120"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.436146431221,
+              33.5180701844527
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "41",
+        "featureIndex": 91,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "41201",
+            "P05_002": "4",
+            "P05_003": "富士北部コミュニティセンター",
+            "P05_004": "佐賀市富士町大字中原342-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.20259,
+              33.4323337
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 448,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45205",
+            "P05_002": "5",
+            "P05_003": "原地区集会施設",
+            "P05_004": "小林市須木中原1819-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.069542,
+              32.080468
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+    "addressSearchStem": "中原",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 107,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40105",
+            "P05_002": "5",
+            "P05_003": "中小企業支援センター",
+            "P05_004": "北九州市戸畑区中原新町2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8407264,
+              33.9011513
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 109,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40105",
+            "P05_002": "3",
+            "P05_003": "中原市民センター",
+            "P05_004": "北九州市戸畑区中原東2-2-35"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8450845,
+              33.8980239
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1590,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40218",
+            "P05_002": "3",
+            "P05_003": "町民情報ステーション",
+            "P05_004": "那珂川市中原2-120"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.436146431221,
+              33.5180701844527
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "41",
+        "featureIndex": 91,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "41201",
+            "P05_002": "4",
+            "P05_003": "富士北部コミュニティセンター",
+            "P05_004": "佐賀市富士町大字中原342-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.20259,
+              33.4323337
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 448,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45205",
+            "P05_002": "5",
+            "P05_003": "原地区集会施設",
+            "P05_004": "小林市須木中原1819-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.069542,
+              32.080468
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-3cb5f29b6d7fae86e248",
+    "addressSearchStem": "増永",
+    "number": "1903",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-3f7df6c1e3db027d5517",
+    "addressSearchStem": "新町",
+    "number": "989",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+    "addressSearchStem": "伊平",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-431427a75efc404fc5c1",
+    "addressSearchStem": "宇美",
+    "number": "5",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 2150,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "貴船自治会公民館",
+            "P05_004": "宇美町貴船5-1-13"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.504536,
+              33.556807
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2152,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "原田中央自治会公民館",
+            "P05_004": "宇美町原田3-5-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.526074,
+              33.555256
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2153,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "1",
+            "P05_003": "宇美町役場",
+            "P05_004": "宇美町宇美5-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.511208,
+              33.567768
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2155,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "武道館",
+            "P05_004": "宇美町宇美5-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.513016,
+              33.566988
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2161,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "四王寺坂二自治会公民館",
+            "P05_004": "宇美町四王寺坂2-17-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.518876,
+              33.56022
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2164,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "障子岳砥石場集会所",
+            "P05_004": "宇美町障子岳南1-5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.533746,
+              33.564194
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2167,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "上宇美二自治会公民館",
+            "P05_004": "宇美町宇美5-12-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.513116,
+              33.567664
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2177,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "5",
+            "P05_003": "地域包括支援センター",
+            "P05_004": "宇美町宇美5-1-1宇美町役場内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.51108675,
+              33.56752027
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2183,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40341",
+            "P05_002": "4",
+            "P05_003": "馬場自治会公民館",
+            "P05_004": "宇美町宇美1-9-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.509191,
+              33.571676
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-45251ad37ff8b4222481",
+    "addressSearchStem": "小倉北区西港町",
+    "number": "96",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-46c335509894f026bbaa",
+    "addressSearchStem": "東本町",
+    "number": "200",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+    "addressSearchStem": "大浜",
+    "number": "881",
+    "matches": [
+      {
+        "prefecture": "47",
+        "featureIndex": 643,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47308",
+            "P05_002": "5",
+            "P05_003": "地域福祉センター",
+            "P05_004": "本部町字大浜881-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              127.88479345999998,
+              26.65820763
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-48facba373e0ace71a79",
+    "addressSearchStem": "平良西仲宗根",
+    "number": "565",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-4aa5f9a0d74b3fb87974",
+    "addressSearchStem": "博多区祇園町",
+    "number": "8",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-4aca915a11bca836ac11",
+    "addressSearchStem": "漢那",
+    "number": "1633",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-4b6c8f692d562ba8fc1f",
+    "addressSearchStem": "下甑町長浜",
+    "number": "913",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+    "addressSearchStem": "蔵本郷",
+    "number": "1850",
+    "matches": [
+      {
+        "prefecture": "42",
+        "featureIndex": 1500,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42321",
+            "P05_002": "1",
+            "P05_003": "東彼杵町役場",
+            "P05_004": "東彼杵町蔵本郷1850-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.9172,
+              33.037
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 1508,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42321",
+            "P05_002": "2",
+            "P05_003": "役場庁舎西館",
+            "P05_004": "東彼杵町蔵本郷1850-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.917,
+              33.0372
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-500296f58e26ea863c1f",
+    "addressSearchStem": "駅前町",
+    "number": "12",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+    "addressSearchStem": "宰府",
+    "number": "3",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1695,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "吉松共同利用施設",
+            "P05_004": "太宰府市吉松3-10-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4916176,
+              33.5141983
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1697,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "いきいき情報センター",
+            "P05_004": "太宰府市五条3-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5258507,
+              33.5107271
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1698,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "プラム・カルコア太宰府",
+            "P05_004": "太宰府市観世音寺1-3-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5223787,
+              33.5118714
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1705,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "国分共同利用施設",
+            "P05_004": "太宰府市国分3-17-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5034359,
+              33.5199202
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1708,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "新町公民館",
+            "P05_004": "太宰府市宰府1-2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5286422,
+              33.5178762
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1710,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "地域活性化複合施設太宰府館",
+            "P05_004": "太宰府市宰府3-2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.532575,
+              33.519857
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1711,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "連歌屋公民館",
+            "P05_004": "太宰府市宰府3-5-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5324781,
+              33.5216425
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1713,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "坂本公民館",
+            "P05_004": "太宰府市坂本3-5-17"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5098048,
+              33.5167817
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1721,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "水城台公民館",
+            "P05_004": "太宰府市水城3-15-9"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4999557,
+              33.5238253
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1728,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "湯の谷公民館",
+            "P05_004": "太宰府市石坂3-30-29"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5375472,
+              33.5155404
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1729,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "大佐野公民館",
+            "P05_004": "太宰府市大佐野3-5-16"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4940618,
+              33.501969
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1730,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "太宰府市観世音寺1-3-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.52244,
+              33.511855
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1733,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "都府楼公民館",
+            "P05_004": "太宰府市都府楼南3-4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.50862,
+              33.50426
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1738,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "都府楼共同利用施設",
+            "P05_004": "太宰府市都府楼南3-4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5086494,
+              33.504283
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1742,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "緑台公民館",
+            "P05_004": "太宰府市梅香苑3-4-29"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5395277,
+              33.5025142
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1746,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "老人福祉センター",
+            "P05_004": "太宰府市白川2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.52560421,
+              33.51499508
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1747,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "大町公民館",
+            "P05_004": "太宰府市連歌屋1-3-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.530567,
+              33.520277
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-52557966acb8dec24849",
+    "addressSearchStem": "原古賀町",
+    "number": "220",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-527347c20ae2968cc662",
+    "addressSearchStem": "中央区水前寺",
+    "number": "5",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+    "addressSearchStem": "美浜",
+    "number": "16",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+    "addressSearchStem": "勝連南風原",
+    "number": "3807",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-5bd9ed457378cacb6524",
+    "addressSearchStem": "古賀",
+    "number": "1337",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-628964aa1208c4c45303",
+    "addressSearchStem": "中央町",
+    "number": "3",
+    "matches": [
+      {
+        "prefecture": "44",
+        "featureIndex": 224,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44203",
+            "P05_002": "5",
+            "P05_003": "勤労者青少年ホーム",
+            "P05_004": "中津市中央町1-3-45"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.19296,
+              33.593247
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 255,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44203",
+            "P05_002": "5",
+            "P05_003": "生涯学習センター",
+            "P05_004": "中津市中央町1-3-45"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.1929637,
+              33.59325015
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-62e5bba8872fe20f0c0f",
+    "addressSearchStem": "東与賀町田中",
+    "number": "2757",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-6a607bd1f8ff8e4f7cd5",
+    "addressSearchStem": "西区上熊本",
+    "number": "1",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 275,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40108",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "北九州市八幡東区八王寺町4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8415133,
+              33.8731432
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 955,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "飯塚市鯰田1560-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70365859,
+              33.65693435
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 957,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40206",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "田川市大字伊田2550-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.811515,
+              33.632015
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1092,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40210",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "八女市馬場434"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.568821,
+              33.209065
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2417,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40381",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "芦屋町大字山鹿228-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.67674,
+              33.90189
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2518,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40421",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "桂川町大字吉隈429-26"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.682884,
+              33.59344
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2620,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40522",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "大木町大字八町牟田671-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.440538,
+              33.211022
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2825,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40621",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "苅田町殿川町1-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.984279,
+              33.775329
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 231,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42201",
+            "P05_002": "5",
+            "P05_003": "県立総合体育館",
+            "P05_004": "長崎市油木町7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.854954,
+              32.778651
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 40,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "熊本市中央区出水2-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7366229,
+              32.78524352
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 162,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43103",
+            "P05_002": "5",
+            "P05_003": "上熊本老人憩の家",
+            "P05_004": "熊本市西区上熊本1-9-21"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.701051,
+              32.813397
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 428,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43202",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "八代市緑町11-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.610451,
+              32.504793
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 461,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "水俣市袋933-外"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.38545,
+              32.17777
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 495,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43206",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "玉名市大倉1144"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.567601,
+              32.921838
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 960,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43348",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "美里町萱野745"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.809087,
+              32.633121
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 1237,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43443",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "益城町大字木山236"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.821754,
+              32.786064
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 1463,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43510",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "相良村大字深水2493-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.797189,
+              32.235686
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 381,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44204",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "日田市田島3-29"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.951357,
+              33.319032
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 490,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44205",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "佐伯市大字長谷2614"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.866995,
+              32.926431
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "44",
+        "featureIndex": 1104,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "44211",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宇佐市大字川部1571-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.36098,
+              33.53637
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 28,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45201",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宮崎市宮崎駅東1-2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.435315,
+              31.914598
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 206,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46204",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "枕崎市中央町26"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.287203,
+              31.275019
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 926,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46224",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "伊佐市大口鳥巣336-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.598184,
+              32.056102
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1122,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46468",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "大崎町神領2488-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.032843,
+              31.436896
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1136,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46482",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "東串良町新川西1850"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.985561,
+              31.385434
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1417,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46532",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "伊仙町伊仙3071-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              128.942411,
+              27.688499
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 73,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47207",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "石垣市字平得439"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              124.175238,
+              24.344286
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 483,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47214",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宮古島市平良字東仲宗根676-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              125.2998102,
+              24.80372297
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "47",
+        "featureIndex": 694,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "47313",
+            "P05_002": "5",
+            "P05_003": "総合体育館",
+            "P05_004": "宜野座村字惣慶1880"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              127.97179954,
+              26.48178785
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-6a8e8508cf7afc2b0ab7",
+    "addressSearchStem": "西与賀町高太郎",
+    "number": "2667",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+    "addressSearchStem": "城",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+    "addressSearchStem": "中央区宮内",
+    "number": "4",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-721597ce8a871ee7907f",
+    "addressSearchStem": "新港町",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-77b2078f3d92eae241e6",
+    "addressSearchStem": "吉無田郷",
+    "number": "61",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-79566b7301f7f95b9ea0",
+    "addressSearchStem": "鳥追町",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+    "addressSearchStem": "亀津",
+    "number": "7203",
+    "matches": [
+      {
+        "prefecture": "46",
+        "featureIndex": 1373,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46530",
+            "P05_002": "1",
+            "P05_003": "徳之島町役場",
+            "P05_004": "徳之島町亀津7203"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.018504,
+              27.726621
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-83173665e8ef18a5eed0",
+    "addressSearchStem": "貝津町",
+    "number": "1410",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-8bbab01afd77e40b5bdb",
+    "addressSearchStem": "泉﨑",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-8c90fac8c05c5f8fcb80",
+    "addressSearchStem": "加世田本町",
+    "number": "43",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+    "addressSearchStem": "東区平山町",
+    "number": "2972",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+    "addressSearchStem": "上野",
+    "number": "865",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+    "addressSearchStem": "松原",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 2453,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40383",
+            "P05_002": "4",
+            "P05_003": "東部公民館",
+            "P05_004": "岡垣町東松原1-3-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.62436158,
+              33.84246376
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "41",
+        "featureIndex": 29,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "41201",
+            "P05_002": "5",
+            "P05_003": "青少年センター",
+            "P05_004": "佐賀市松原2-27"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.3027236,
+              33.24909242
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "41",
+        "featureIndex": 210,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "41203",
+            "P05_002": "4",
+            "P05_003": "松原町公民館",
+            "P05_004": "鳥栖市松原町1761-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5216915,
+              33.38222638
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 65,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46201",
+            "P05_002": "5",
+            "P05_003": "松原福祉館",
+            "P05_004": "鹿児島市松原町2-24"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5569501,
+              31.58626006
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 994,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46225",
+            "P05_002": "4",
+            "P05_003": "松原上公民館",
+            "P05_004": "姶良市松原町2-27-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.6322658,
+              31.720434
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 996,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46225",
+            "P05_002": "4",
+            "P05_003": "松原地区公民館",
+            "P05_004": "姶良市松原町1-16-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.628436,
+              31.71939
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1398,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46531",
+            "P05_002": "4",
+            "P05_003": "松原上区公民館",
+            "P05_004": "天城町松原1922-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              128.9003389,
+              27.84833137
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-a4cd93cc1425ac573ac5",
+    "addressSearchStem": "細野",
+    "number": "300",
+    "matches": [
+      {
+        "prefecture": "45",
+        "featureIndex": 430,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45205",
+            "P05_002": "1",
+            "P05_003": "小林市役所",
+            "P05_004": "小林市細野300"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.972717,
+              31.996689
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+    "addressSearchStem": "国分中央",
+    "number": "3",
+    "matches": [
+      {
+        "prefecture": "46",
+        "featureIndex": 608,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "国分ふれあいの郷",
+            "P05_004": "霧島市国分中央2-4-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7724275,
+              31.7405439
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 624,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "国分総合福祉センター",
+            "P05_004": "霧島市国分中央3-33-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.764531,
+              31.739121
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 625,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "働く婦人の家",
+            "P05_004": "霧島市国分中央3-43-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.760136,
+              31.74196
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 626,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "1",
+            "P05_003": "霧島市役所",
+            "P05_004": "霧島市国分中央3-45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.763136,
+              31.741035
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 630,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "国分シビックセンター",
+            "P05_004": "霧島市国分中央3-45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.763524,
+              31.7407538
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 632,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "4",
+            "P05_003": "国分公民館",
+            "P05_004": "霧島市国分中央3-45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7630829,
+              31.74084032
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 633,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "霧島市民会館",
+            "P05_004": "霧島市国分中央3-8-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.764953,
+              31.739871
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 634,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "3",
+            "P05_003": "市民サービスセンター",
+            "P05_004": "霧島市国分中央3-9-20"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.766453,
+              31.738885
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 642,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46218",
+            "P05_002": "5",
+            "P05_003": "多目的ホール",
+            "P05_004": "霧島市国分中央3-45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7630829,
+              31.74082032
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+    "addressSearchStem": "中央区水前寺",
+    "number": "6",
+    "matches": [
+      {
+        "prefecture": "43",
+        "featureIndex": 24,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "山の下老人憩の家",
+            "P05_004": "熊本市中央区水前寺6-47-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.74282002,
+              32.79202197
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-aae8a5e8cdb120497a24",
+    "addressSearchStem": "若松区浜町",
+    "number": "1",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 78,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40103",
+            "P05_002": "5",
+            "P05_003": "若松区親子ふれあいルーム",
+            "P05_004": "北九州市若松区浜町1-1-1若松区役所内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.811153509,
+              33.9054051027
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 79,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40103",
+            "P05_002": "5",
+            "P05_003": "若松区統括支援センター",
+            "P05_004": "北九州市若松区浜町1-1-1若松区役所保健福祉課"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8112985,
+              33.9054588
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 80,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40103",
+            "P05_002": "1",
+            "P05_003": "若松区役所",
+            "P05_004": "北九州市若松区浜町1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8112985,
+              33.9054788
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 81,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40103",
+            "P05_002": "3",
+            "P05_003": "若松中央市民センター",
+            "P05_004": "北九州市若松区浜町1-1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.8115957,
+              33.9053977
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 86,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40103",
+            "P05_002": "5",
+            "P05_003": "地域包括支援センター若松１",
+            "P05_004": "北九州市若松区浜町1-1-1若松区役所保健福祉課"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7821375,
+              33.8927039
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-c377ae7db47aa8c7a0c3",
+    "addressSearchStem": "細野",
+    "number": "1829",
+    "matches": [
+      {
+        "prefecture": "45",
+        "featureIndex": 459,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45205",
+            "P05_002": "5",
+            "P05_003": "地域・観光交流センター",
+            "P05_004": "小林市細野1829-16"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.975624,
+              31.991157
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-c7ce832b34e06d96ad33",
+    "addressSearchStem": "野嵩",
+    "number": "730",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-db074910d35fc98cfcff",
+    "addressSearchStem": "博多区那珂",
+    "number": "4",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 473,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40132",
+            "P05_002": "4",
+            "P05_003": "弥生公民館",
+            "P05_004": "福岡市博多区那珂4-9-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.447572,
+              33.569049
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-db16f89ef3a741afd0fe",
+    "addressSearchStem": "首里金城町",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+    "addressSearchStem": "十",
+    "number": "2290",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+    "addressSearchStem": "要町",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+    "addressSearchStem": "松尾",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "43",
+        "featureIndex": 68,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43102",
+            "P05_002": "5",
+            "P05_003": "一の口老人憩の家",
+            "P05_004": "熊本市東区松尾町上松尾1-2-43"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.65014689825,
+              32.787234663103
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 96,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43102",
+            "P05_002": "5",
+            "P05_003": "松尾西老人憩の家",
+            "P05_004": "熊本市東区松尾町上松尾3724-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.62541793821,
+              32.792578217512
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 97,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43102",
+            "P05_002": "5",
+            "P05_003": "松尾東老人憩の家",
+            "P05_004": "熊本市東区松尾町上松尾2827-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.634529231523,
+              32.7971128017854
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-e6d46c885e30b1c754cb",
+    "addressSearchStem": "小郡",
+    "number": "255",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1390,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40216",
+            "P05_002": "5",
+            "P05_003": "地域包括支援センター",
+            "P05_004": "小郡市小郡255-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.55558168,
+              33.3967242
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1392,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40216",
+            "P05_002": "1",
+            "P05_003": "小郡市役所",
+            "P05_004": "小郡市小郡255-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5555394,
+              33.3964253
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+    "addressSearchStem": "中間",
+    "number": "1",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1294,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "さくらの里地域交流センター",
+            "P05_004": "中間市大字垣生660-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.6996503,
+              33.81761621
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1296,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "屋島公民館",
+            "P05_004": "中間市長津1-27-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70636,
+              33.82365
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1297,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "中間市立隣保館",
+            "P05_004": "中間市岩瀬1-10-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.712737,
+              33.828157
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1298,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "児童センター",
+            "P05_004": "中間市岩瀬1-1-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.712064,
+              33.827545
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1299,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "下大隅公民館",
+            "P05_004": "中間市大字下大隅1608-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70129587,
+              33.81286225
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1300,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "人権センター",
+            "P05_004": "中間市岩瀬1-17-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71439788,
+              33.82932023
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1301,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "下大隈公民館",
+            "P05_004": "中間市下大隈1608-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70129,
+              33.81286
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1305,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "岩瀬南町公民館",
+            "P05_004": "中間市岩瀬1-14-60"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71236,
+              33.8295
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1307,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "御館町公民館",
+            "P05_004": "中間市中央2-8-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71102,
+              33.82605
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1308,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "高見公民館",
+            "P05_004": "中間市中央1-21-19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71472,
+              33.82254
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1309,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "砂山公民館",
+            "P05_004": "中間市垣生1339-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.6952,
+              33.82449
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1317,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "昭和町公民館",
+            "P05_004": "中間市長津1-17-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70903,
+              33.82526
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1318,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "松ヶ岡一区公民館",
+            "P05_004": "中間市扇ケ浦2-17-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72283,
+              33.81627
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1319,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "松ヶ岡二区公民館",
+            "P05_004": "中間市松ヶ岡4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72036,
+              33.81629
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1323,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "深坂公民館",
+            "P05_004": "中間市深坂1-3-18"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7272,
+              33.81206
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1324,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "星ヶ丘集会所",
+            "P05_004": "中間市星ヶ丘7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.73582,
+              33.82036
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1327,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "中間市武道場・天道館",
+            "P05_004": "中間市中央1-8-41"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71192906,
+              33.81904911
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1332,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "1",
+            "P05_003": "中間市役所",
+            "P05_004": "中間市中間1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.709026,
+              33.816699
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1334,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "大根土集会所",
+            "P05_004": "中間市大根土9-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71737,
+              33.82258
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1336,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "地域交流センター",
+            "P05_004": "中間市大字垣生660-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.699633,
+              33.817574
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1337,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "池田町公民館",
+            "P05_004": "中間市池田1-20-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72524,
+              33.81341
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1340,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "中鶴三区集会所",
+            "P05_004": "中間市中鶴1-14-19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70216,
+              33.82707
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1342,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "中鶴二丁目中央集会所",
+            "P05_004": "中間市中鶴2-9-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70324,
+              33.83016
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1343,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "中底井野公民館",
+            "P05_004": "中間市中底井野482-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.67833,
+              33.82047
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1344,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "働く婦人の家",
+            "P05_004": "中間市長津1-25-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.705413,
+              33.824965
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1345,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "中尾第一公民館",
+            "P05_004": "中間市中尾1-2-11"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7133,
+              33.81707
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1347,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "中牟田公民館",
+            "P05_004": "中間市中央5-11-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71818,
+              33.82454
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1349,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "鳥森公民館",
+            "P05_004": "中間市中央1-15-20"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7129,
+              33.82185
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1350,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "ハピネスなかま",
+            "P05_004": "中間市通谷1-36-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.73258,
+              33.822816
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1351,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "生涯学習センター",
+            "P05_004": "中間市通谷1-36-16"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.733077,
+              33.822725
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1352,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "通谷一丁目公民館",
+            "P05_004": "中間市通谷1-11-12"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72901,
+              33.82283
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1354,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "通谷二区公民館",
+            "P05_004": "中間市通谷2-34-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.7323,
+              33.8192
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1355,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "土手ノ内一丁目公民館",
+            "P05_004": "中間市土手ノ内1-9-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.70817,
+              33.80961
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1358,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "徳若公民館",
+            "P05_004": "中間市中央1-42-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71769,
+              33.82109
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1359,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "鍋山公民館",
+            "P05_004": "中間市朝霧1-5-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72914,
+              33.81879
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1360,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "白天公民館",
+            "P05_004": "中間市中央1-39-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.71616,
+              33.82146
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1361,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "中間市蓮花寺3-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.715301,
+              33.827354
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1363,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "体育文化センター",
+            "P05_004": "中間市蓮花寺3-1-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.716948,
+              33.826765
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1364,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "弥生町集会所",
+            "P05_004": "中間市弥生1-10-14"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.72006,
+              33.80818
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1365,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40215",
+            "P05_002": "5",
+            "P05_003": "なかまハーモニーホール",
+            "P05_004": "中間市蓮花寺3-7-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.717742,
+              33.82761
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-eacba90579d3dbedfc8c",
+    "addressSearchStem": "伊集院町徳重",
+    "number": "285",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+    "addressSearchStem": "要町",
+    "number": "1",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-f659f3d40d25570465de",
+    "addressSearchStem": "野嵩",
+    "number": "730",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+    "addressSearchStem": "東区石原",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "43",
+        "featureIndex": 115,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43102",
+            "P05_002": "4",
+            "P05_003": "託麻北地域コミュニティセンター",
+            "P05_004": "熊本市東区石原1-2-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.77650747,
+              32.84085709
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 116,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43102",
+            "P05_002": "5",
+            "P05_003": "熊本県民総合運動公園体育館",
+            "P05_004": "熊本市東区石原2-9-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.789306,
+              32.843209
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 1148,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46490",
+            "P05_002": "5",
+            "P05_003": "総合運動公園",
+            "P05_004": "錦江町神川1820-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.80542369,
+              31.25079699
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:kyushu-fd6ecb1635ce74789ef8",
+    "addressSearchStem": "上町",
+    "number": "1",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 2928,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "コミュニティセンターソピア",
+            "P05_004": "築上町大字築城253-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.03813,
+              33.66504156
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2937,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "越路公民館",
+            "P05_004": "築上町大字越路456-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0419517,
+              33.65083416
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2938,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "越路地区学習等供用施設",
+            "P05_004": "築上町大字越路456-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0419417,
+              33.65083416
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2939,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "奥村集会所",
+            "P05_004": "築上町大字上ノ河内472-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0670322,
+              33.61245402
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2941,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "下の原地区集会所２",
+            "P05_004": "築上町大字安武1180-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.009171451082,
+              33.6601724839365
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2943,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "下香楽集会所",
+            "P05_004": "築上町大字下香楽223-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0070698,
+              33.6462432
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2945,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "下深野集会所",
+            "P05_004": "築上町大字下深野238-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.000387,
+              33.63633947
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2948,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "弓の師地区集会所",
+            "P05_004": "築上町大字弓の師235-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0158156,
+              33.6680715
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2951,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "極楽寺公民館",
+            "P05_004": "築上町大字極楽寺465-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0354302,
+              33.60349569
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2952,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "袈裟丸集会所",
+            "P05_004": "築上町大字袈裟丸566-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0047506,
+              33.64617097
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2953,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "交流促進センター",
+            "P05_004": "築上町大字本庄1630-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.9838573,
+              33.60270699
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2967,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "武道館",
+            "P05_004": "築上町大字高塚788-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.065364,
+              33.658767
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2970,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "上寒田集会所",
+            "P05_004": "築上町大字寒田1901-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.9873507,
+              33.54950806
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2973,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "上城井地区多目的集会センター",
+            "P05_004": "築上町大字本庄1834-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.9818283,
+              33.60208594
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2975,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "上日奈古公民館",
+            "P05_004": "築上町大字日奈古957-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.042939,
+              33.6309511
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2976,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "上日奈古集落センター",
+            "P05_004": "築上町大字日奈古957-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.042929,
+              33.6309511
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2977,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "上日奈古農業集落センター",
+            "P05_004": "築上町大字日奈古957-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0421859,
+              33.63944153
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2978,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "真如寺農業集落センター",
+            "P05_004": "築上町大字真如寺1303-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0463521,
+              33.60742212
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2981,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "石堂集落センター",
+            "P05_004": "築上町大字石堂349-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0718713,
+              33.63377822
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2982,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "船田集会所",
+            "P05_004": "築上町大字椎田851-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0536403,
+              33.65553441
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2986,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "中原地区集会所",
+            "P05_004": "築上町大字袈裟丸163-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.9988844,
+              33.64850678
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2989,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "椎田社会福祉センター",
+            "P05_004": "築上町大字椎田861-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0565719,
+              33.65223342
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2992,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "椎田南公民館",
+            "P05_004": "築上町大字椎田428-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0556793,
+              33.64279149
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 2997,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "東高塚公民館",
+            "P05_004": "築上町大字高塚1427-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0603346,
+              33.65918354
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3001,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "峠集会所",
+            "P05_004": "築上町大字下深野33-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0003539,
+              33.64051039
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3003,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "4",
+            "P05_003": "奈古公民館",
+            "P05_004": "築上町大字奈古459-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.035363,
+              33.63667293
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3006,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "南別府学習等供用施設集会所",
+            "P05_004": "築上町大字上別府166-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0278867,
+              33.66144143
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3008,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "比久尼原集会所",
+            "P05_004": "築上町大字安武1475-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0174951,
+              33.66068954
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3009,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "比久尼原地区集会所",
+            "P05_004": "築上町大字安武1475-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0150213,
+              33.66390533
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3015,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "本庄地区集会所",
+            "P05_004": "築上町大字本庄806-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.983275218115,
+              33.5974909095943
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3018,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "老人いこいの家やまさと",
+            "P05_004": "築上町大字寒田527-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.9950942,
+              33.55451082
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 3019,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40647",
+            "P05_002": "5",
+            "P05_003": "檪原集会所",
+            "P05_004": "築上町大字檪原653-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.0560318,
+              33.65614274
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 164,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42201",
+            "P05_002": "4",
+            "P05_003": "東公民館",
+            "P05_004": "長崎市矢上町19-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.951686,
+              32.775607
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 166,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42201",
+            "P05_002": "3",
+            "P05_003": "東長崎地域センター",
+            "P05_004": "長崎市矢上町19-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.951813,
+              32.775681
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "42",
+        "featureIndex": 403,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "42203",
+            "P05_002": "5",
+            "P05_003": "母子生活支援施設わかば",
+            "P05_004": "島原市坂上町7526-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.37114,
+              32.778709
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 179,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43103",
+            "P05_002": "5",
+            "P05_003": "池上老人憩の家",
+            "P05_004": "熊本市西区池上町1376-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.667273949,
+              32.7921096842
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 397,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43202",
+            "P05_002": "4",
+            "P05_003": "太田郷コミュニティセンター",
+            "P05_004": "八代市井上町601-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.6300745,
+              32.51527398
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "43",
+        "featureIndex": 400,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43202",
+            "P05_002": "2",
+            "P05_003": "太田郷出張所",
+            "P05_004": "八代市井上町601-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.6300745,
+              32.51525398
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 503,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45206",
+            "P05_002": "5",
+            "P05_003": "障がい者センター",
+            "P05_004": "日向市上町9189-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.6238313,
+              32.42496584
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "45",
+        "featureIndex": 576,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "45208",
+            "P05_002": "5",
+            "P05_003": "第９区館",
+            "P05_004": "西都市上町1-51"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              131.405865,
+              32.112819
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 389,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46215",
+            "P05_002": "4",
+            "P05_003": "城上地区コミュニティセンター",
+            "P05_004": "薩摩川内市城上町3697-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.298501,
+              31.879868
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "46",
+        "featureIndex": 390,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46215",
+            "P05_002": "4",
+            "P05_003": "吉川地区コミュニティセンター",
+            "P05_004": "薩摩川内市城上町8292-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.280158,
+              31.916226
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-11eacc27427ab619f0",
+    "addressSearchStem": "合川町",
+    "number": "2190",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:ws-571a1c21a1a6a8b166",
+    "addressSearchStem": "宰府",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1701,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "向佐野共同利用施設",
+            "P05_004": "太宰府市向佐野2-8-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4974365,
+              33.5075546
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1702,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "高雄公民館",
+            "P05_004": "太宰府市高雄2-3844-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5399138,
+              33.5006921
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1708,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "新町公民館",
+            "P05_004": "太宰府市宰府1-2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5286422,
+              33.5178762
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1709,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "馬場公民館",
+            "P05_004": "太宰府市宰府2-8-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5323142,
+              33.5181623
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1710,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "地域活性化複合施設太宰府館",
+            "P05_004": "太宰府市宰府3-2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.532575,
+              33.519857
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1714,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "三条台公民館",
+            "P05_004": "太宰府市三条2-29-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.531734,
+              33.528636
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1716,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "南体育館",
+            "P05_004": "太宰府市朱雀2-4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5205566,
+              33.5068358
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1717,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "桜町公民館",
+            "P05_004": "太宰府市朱雀2-5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5200622,
+              33.5061498
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1722,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "太宰府南コミュニティセンター",
+            "P05_004": "太宰府市高雄2-3855"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.539242,
+              33.501612
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1724,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "男女共同参画推進センタールミナス",
+            "P05_004": "太宰府市白川2-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5255452,
+              33.5147822
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1727,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "湯の谷西公民館",
+            "P05_004": "太宰府市石坂2-14-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.535656,
+              33.512229
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1737,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "東ヶ丘公民館",
+            "P05_004": "太宰府市青山2-5-8"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5347279,
+              33.5069775
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1740,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "4",
+            "P05_003": "梅ヶ丘公民館",
+            "P05_004": "太宰府市梅ケ丘2-1-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5421583,
+              33.4947843
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1744,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "体育センター",
+            "P05_004": "太宰府市白川2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5251035,
+              33.5145378
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1745,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "北谷只越集会所",
+            "P05_004": "太宰府市大字北谷790-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.5428104,
+              33.5452009
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1746,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40221",
+            "P05_002": "5",
+            "P05_003": "老人福祉センター",
+            "P05_004": "太宰府市白川2-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.52560421,
+              33.51499508
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-61c944585418f01447",
+    "addressSearchStem": "亀津",
+    "number": "7203",
+    "matches": [
+      {
+        "prefecture": "46",
+        "featureIndex": 1373,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46530",
+            "P05_002": "1",
+            "P05_003": "徳之島町役場",
+            "P05_004": "徳之島町亀津7203"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              129.018504,
+              27.726621
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+    "addressSearchStem": "曙町",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1618,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "1",
+            "P05_003": "大野城市役所",
+            "P05_004": "大野城市曙町2-2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.478838,
+              33.536214
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1620,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "5",
+            "P05_003": "大野城まどかぴあ",
+            "P05_004": "大野城市曙町2-3-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4796381,
+              33.5354766
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1630,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "5",
+            "P05_003": "消費生活センター",
+            "P05_004": "大野城市曙町2-2-1大野城市役所内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4785404,
+              33.53600116
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-8c2f2fd56f3678dbba",
+    "addressSearchStem": "美里",
+    "number": "5",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:ws-8fca35672837332639",
+    "addressSearchStem": "中央区水前寺",
+    "number": "6",
+    "matches": [
+      {
+        "prefecture": "43",
+        "featureIndex": 24,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "43101",
+            "P05_002": "5",
+            "P05_003": "山の下老人憩の家",
+            "P05_004": "熊本市中央区水前寺6-47-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.74282002,
+              32.79202197
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-9aba1585a794a70f9c",
+    "addressSearchStem": "若松区響町",
+    "number": "126",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+    "addressSearchStem": "加世田川畑",
+    "number": "2648",
+    "matches": [
+      {
+        "prefecture": "46",
+        "featureIndex": 756,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46220",
+            "P05_002": "1",
+            "P05_003": "南さつま市役所",
+            "P05_004": "南さつま市加世田川畑2648"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.323494,
+              31.41657
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-b16bb4e05b36ef7277",
+    "addressSearchStem": "田熊",
+    "number": "1373",
+    "matches": []
+  },
+  {
+    "facilityId": "facility:ws-c42fbe5f44427d0284",
+    "addressSearchStem": "曙町",
+    "number": "2",
+    "matches": [
+      {
+        "prefecture": "40",
+        "featureIndex": 1618,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "1",
+            "P05_003": "大野城市役所",
+            "P05_004": "大野城市曙町2-2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.478838,
+              33.536214
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1620,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "5",
+            "P05_003": "大野城まどかぴあ",
+            "P05_004": "大野城市曙町2-3-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4796381,
+              33.5354766
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      },
+      {
+        "prefecture": "40",
+        "featureIndex": 1630,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "40219",
+            "P05_002": "5",
+            "P05_003": "消費生活センター",
+            "P05_004": "大野城市曙町2-2-1大野城市役所内"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              130.4785404,
+              33.53600116
+            ]
+          }
+        },
+        "match": "address-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:ws-f5ea517afaab927bb9",
+    "addressSearchStem": "知名",
+    "number": "1100",
+    "matches": [
+      {
+        "prefecture": "46",
+        "featureIndex": 1457,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "46534",
+            "P05_002": "1",
+            "P05_003": "知名町役場",
+            "P05_004": "知名町知名307"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              128.5740605,
+              27.33378922
+            ]
+          }
+        },
+        "match": "name-lead",
+        "notAutomaticallyAccepted": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,458 @@
+[
+  {
+    "sourceUrl": "https://www.town.fujikawaguchiko.lg.jp/upload/file/soumu/hisho/2024_gaido/25_koukyoushisetsu.pdf",
+    "fetchedAt": "2026-11-05T06:28:06.272636+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.fujikawaguchiko.lg.jp/upload/file/soumu/hisho/2024_gaido/25_koukyoushisetsu.pdf",
+    "contentType": "application/pdf",
+    "snapshotPath": "data/evidence/issue7/koshin/52743bd6f27dae1d3148.pdf",
+    "snapshotSHA256": "5b7eee696e5bdf42e45a143f5aa1ace347ce1bb075beda4b8f3911f9e63955bd",
+    "bytes": 1851213
+  },
+  {
+    "sourceUrl": "https://www.city.tsuru.yamanashi.jp/soshiki/somu/houseikouhou_t/1/1776.html",
+    "fetchedAt": "2026-11-05T06:28:06.158455+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tsuru.yamanashi.jp/soshiki/somu/houseikouhou_t/1/1776.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/8c3b6ee6d282b9be34da.html",
+    "snapshotSHA256": "ec657120c963100f91b7396eb98ca13b0904c837c4b8f0b2b1eb877eb66a70c4",
+    "bytes": 39963
+  },
+  {
+    "sourceUrl": "https://www.city.komagane.nagano.jp/soshikiichiran/shiminka/shiminkakari/4/1/3156.html",
+    "fetchedAt": "2026-11-05T06:28:08.865474+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.komagane.nagano.jp/soshikiichiran/shiminka/shiminkakari/4/1/3156.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/b39225a9444135bcb981.html",
+    "snapshotSHA256": "88bcc8632cbb3d4ff0682259a1f2f6e710c1190ea19daf746ed9845c17801e79",
+    "bytes": 35565
+  },
+  {
+    "sourceUrl": "https://minami-alpskankou.jp/?p=20273",
+    "fetchedAt": "2026-11-05T06:28:08.066627+00:00",
+    "status": 200,
+    "finalUrl": "https://minami-alpskankou.jp/?p=20273",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/035b6ca54adc84d530c5.html",
+    "snapshotSHA256": "510109b313886d23c86829704a636c8a1b4e95e9b55ea853f50b1102973578cc",
+    "bytes": 49766
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/17-2.html",
+    "fetchedAt": "2026-11-05T06:28:13.898904+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/soshiki/17-2.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/7cf16a0d5a860ebcf26a.html",
+    "snapshotSHA256": "6fa97304f02eea20c1da08dd8727873d74f45de7af4e86c62d6b9ab3b0267938",
+    "bytes": 49458
+  },
+  {
+    "sourceUrl": "https://www.city.matsumoto.nagano.jp/soshiki/3/5902.html",
+    "fetchedAt": "2026-11-05T06:28:07.171071+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.matsumoto.nagano.jp/soshiki/3/5902.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/30ed50271a71ece0b407.html",
+    "snapshotSHA256": "eb29ff84d96cb2727dc2eee0c7d16fd502f9558d5845899684ccb266f53c7a25",
+    "bytes": 29536
+  },
+  {
+    "sourceUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+    "fetchedAt": "2026-11-05T06:28:08.145096+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.nagano.lg.jp/suwakoryuiki/jimusho/event/fureai.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/935530f3afa836190c50.html",
+    "snapshotSHA256": "93fdad52a06c17ecf318a4f34215385ba30b38ff3d206b4dd7dca0426c2203d0",
+    "bytes": 18048
+  },
+  {
+    "sourceUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/koshokubunkakaikan/2306.html",
+    "fetchedAt": "2026-11-05T06:28:09.125894+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/koshokubunkakaikan/2306.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/3791f87d40fb46d15223.html",
+    "snapshotSHA256": "0ddddad102ea369801d2639484e4c2e3db821d623d50e654bfa631442134d457",
+    "bytes": 32467
+  },
+  {
+    "sourceUrl": "https://www.vill.asahi.nagano.jp/official/sonseijoho/asahimuranoshokai/612.html",
+    "fetchedAt": "2026-11-05T06:28:08.891547+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.asahi.nagano.jp/official/sonseijoho/asahimuranoshokai/612.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/27c5756910ad5b2d97ed.html",
+    "snapshotSHA256": "dbc43bf2b7a4901ceaa318884231edb71b92aefbb1050c9612ecc5033676fd39",
+    "bytes": 58171
+  },
+  {
+    "sourceUrl": "https://www.vill.asahi.nagano.jp/official/soshikikarasagasu/somuka/somutanto/5/500.html",
+    "fetchedAt": "2026-11-05T06:28:08.967883+00:00",
+    "status": 200,
+    "finalUrl": "https://www.vill.asahi.nagano.jp/official/soshikikarasagasu/somuka/somutanto/5/500.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/3887e01279a07455e841.html",
+    "snapshotSHA256": "d17024eed964d1effb694d157f0e8c896ef7e7215fc53901f0633e2e3cb3dada",
+    "bytes": 77946
+  },
+  {
+    "sourceUrl": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
+    "fetchedAt": "2026-11-05T06:28:11.876894+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.chuo.yamanashi.jp/benriservice/facilitymap/bunya/koukyousisetsu/684.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/a986cb02fb52f6e0614a.html",
+    "snapshotSHA256": "0a21156bf7fc1fa2f6e1074d1efa90ea9c78eddd1bfaf5dff38c49cf2147c909",
+    "bytes": 59216
+  },
+  {
+    "sourceUrl": "https://kanko-omachi.gr.jp/access/",
+    "fetchedAt": "2026-11-05T06:28:10.794400+00:00",
+    "status": 200,
+    "finalUrl": "https://kanko-omachi.gr.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/f1cd782a1258617a826e.html",
+    "snapshotSHA256": "0a0648053128e6276e2440ea84f0ceb5ce04b4ae3714473c6e7e652a86a2378c",
+    "bytes": 29568
+  },
+  {
+    "sourceUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/jimusho/map.html",
+    "fetchedAt": "2026-11-05T06:28:10.783449+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.nagano.lg.jp/chikumagawaryuiki/jimusho/map.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/a8c4efb3f76a2379750d.html",
+    "snapshotSHA256": "4ba0a9c8f8c8b3a38bb199f3f6ff20d7187736faff195eee23cf434fb0203a77",
+    "bytes": 16371
+  },
+  {
+    "sourceUrl": "https://www.town.obuse.nagano.jp/access.html",
+    "fetchedAt": "2026-11-05T06:28:11.927950+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.obuse.nagano.jp/access.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/38c291a1045f44d942df.html",
+    "snapshotSHA256": "8e900a5c7bb86f6e4672f17c31efd3af404b8e8458b1e47f589c8acee5951202",
+    "bytes": 18008
+  },
+  {
+    "sourceUrl": "https://www.town.obuse.nagano.jp/site/bunshokan/",
+    "fetchedAt": "2026-11-05T06:28:11.907873+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.obuse.nagano.jp/site/bunshokan/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/fe6d65b2b04cc042df04.html",
+    "snapshotSHA256": "4f8f6f642a616523beac0c79fbf7eab2ac38578133676381fadc22dbee8d70b1",
+    "bytes": 18499
+  },
+  {
+    "sourceUrl": "https://www.town.obuse.nagano.jp/facilities/",
+    "fetchedAt": "2026-11-05T06:28:12.930491+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.obuse.nagano.jp/facilities/",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/34799a3643b2d79f2114.html",
+    "snapshotSHA256": "7a9fa1ef7782d5048358ccf82ba9f300fbfd9b6437a53e876f095d95fc53da3c",
+    "bytes": 15728
+  },
+  {
+    "sourceUrl": "https://otsuki-kanko.info/page/access",
+    "fetchedAt": "2026-11-05T06:28:12.535467+00:00",
+    "status": 200,
+    "finalUrl": "https://otsuki-kanko.info/page/access",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/1bc144b37036bf28b34c.html",
+    "snapshotSHA256": "87e5ddf5d3f258e5898a503cb629a20fb48290483d78b6a52c41dadffdf233f1",
+    "bytes": 26378
+  },
+  {
+    "sourceUrl": "https://www.go-nagano.net/food-and-drink/id21871",
+    "fetchedAt": "2026-11-05T06:28:13.780788+00:00",
+    "status": 200,
+    "finalUrl": "https://www.go-nagano.net/food-and-drink/id21871",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/d4d442b8becf6c22a89d.html",
+    "snapshotSHA256": "89438628769e19a993636ffcf8df97c52f8546fe324a22c67035dacbe8136228",
+    "bytes": 69927
+  },
+  {
+    "sourceUrl": "https://www.iwamurada.com/",
+    "fetchedAt": "2026-11-05T06:28:15.270545+00:00",
+    "status": 200,
+    "finalUrl": "https://www.iwamurada.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/6795e9f343c019d4a74c.html",
+    "snapshotSHA256": "03ade3e4bdee25490e1caf744527a16f0e2dceab9ec9a2d37ab1bd048c9a8304",
+    "bytes": 110175
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/ssangyo/2828.html",
+    "fetchedAt": "2026-11-05T06:28:13.844530+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/soshiki/ssangyo/2828.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/464d2e5c8a40169bc46c.html",
+    "snapshotSHA256": "c53ecfa50e54db263c6a748739432278dd5785b4fb3585dff164cb0275492d81",
+    "bytes": 38801
+  },
+  {
+    "sourceUrl": "https://www.town.nagano-takamori.lg.jp/docs/13533.html",
+    "fetchedAt": "2026-11-05T06:28:14.599352+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nagano-takamori.lg.jp/docs/13533.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/473094e3f93281622591.html",
+    "snapshotSHA256": "81a3a82d5afbb04836f841c1ccf469709c35411b53c2d58f30aea589dff9edb8",
+    "bytes": 21547
+  },
+  {
+    "sourceUrl": "https://www.komoro-tour.jp/access/",
+    "fetchedAt": "2026-11-05T06:28:18.089739+00:00",
+    "status": 200,
+    "finalUrl": "https://www.komoro-tour.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/ceb4e05ee0451c6c2028.html",
+    "snapshotSHA256": "482c7496e05a11b95b1aff1fc42acc077831ec14b51af877245f1391ac2a786b",
+    "bytes": 48452
+  },
+  {
+    "sourceUrl": "https://www.komoro-tour.jp/tourist-information/",
+    "fetchedAt": "2026-11-05T06:28:18.093476+00:00",
+    "status": 200,
+    "finalUrl": "https://www.komoro-tour.jp/tourist-information/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/6ca802c628146f58ce22.html",
+    "snapshotSHA256": "77cf804c0c1794997172a659ac83bc03f4d126166b949e243f7dfb61f8378870",
+    "bytes": 41459
+  },
+  {
+    "sourceUrl": "https://www.city.komoro.lg.jp/soshikikarasagasu/somubu/kmanage/3/tyousyaannai/index.html",
+    "fetchedAt": "2026-11-05T06:28:15.758201+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.komoro.lg.jp/soshikikarasagasu/somubu/kmanage/3/tyousyaannai/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/c37ee3d87009796d73c8.html",
+    "snapshotSHA256": "de55f4ac64189d7d42cb5324b7f9981569d28c655bcfa2f80a520cad0031db29",
+    "bytes": 37548
+  },
+  {
+    "sourceUrl": "https://komoroplaza.com/?page_id=368",
+    "fetchedAt": "2026-11-05T06:28:18.151181+00:00",
+    "status": 200,
+    "finalUrl": "https://komoroplaza.com/?page_id=368",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/8d239f8d89b59f9400aa.html",
+    "snapshotSHA256": "a670e3f73ba0e1c1e0a2c9af058d5a6269a8768101ae4b5766ce34ba6ccfea0b",
+    "bytes": 72535
+  },
+  {
+    "sourceUrl": "https://www.karuizawa-kosya.jp/service/service3/",
+    "fetchedAt": "2026-11-05T06:28:16.554839+00:00",
+    "status": 200,
+    "finalUrl": "https://www.karuizawa-kosya.jp/service/service3/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/a2e41323b4a8254293e6.html",
+    "snapshotSHA256": "c5e091505d53a4ccff00331bf1d7ff69ea397f5bdf26faab6f33d9fa37e0c1ce",
+    "bytes": 36466
+  },
+  {
+    "sourceUrl": "https://www.city.kai.yamanashi.jp/page/4711.html",
+    "fetchedAt": "2026-11-05T06:28:17.298865+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kai.yamanashi.jp/page/4711.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/43c2b76349d20f25781e.html",
+    "snapshotSHA256": "229bd7ea254bc38989de5d3953e525d472392c356f4ade92bb8e3b44176f7ec3",
+    "bytes": 27891
+  },
+  {
+    "sourceUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/2319.html",
+    "fetchedAt": "2026-11-05T06:28:17.772183+00:00",
+    "status": 200,
+    "finalUrl": "https://www.chikuma-bunka.jp/shisetsu_goannai/kamiyamadabunkakaikan/2319.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/2d11455d29b9b289dd8f.html",
+    "snapshotSHA256": "75ee6f0e8b1938a456fb7451bc776b1aa28e83a863bcb98fbd8dcde634ba4977",
+    "bytes": 29415
+  },
+  {
+    "sourceUrl": "https://www.pref.nagano.lg.jp/azuminoryuiki/jimusho/jimushogaiyou.html",
+    "fetchedAt": "2026-11-05T06:28:19.454245+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.nagano.lg.jp/azuminoryuiki/jimusho/jimushogaiyou.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/65e0c20123d402253759.html",
+    "snapshotSHA256": "8dfcc42648c02a5650e9f0be07ce12ddbc747fa2669c70250a40469d22f52d38",
+    "bytes": 25996
+  },
+  {
+    "sourceUrl": "https://www.suwakanko.jp/access/",
+    "fetchedAt": "2026-11-05T06:28:21.638319+00:00",
+    "status": 200,
+    "finalUrl": "https://www.suwakanko.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/015ae4f62f528b69a74b.html",
+    "snapshotSHA256": "289cc1dafb873f20c765abaa08f35aea4064358a782aad0ed92737fde9592dd8",
+    "bytes": 115289
+  },
+  {
+    "sourceUrl": "https://www.city.okaya.lg.jp/soshikikarasagasu/somuka/640/654/156/5246.html",
+    "fetchedAt": "2026-11-05T06:28:19.606214+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.okaya.lg.jp/soshikikarasagasu/somuka/640/654/156/5246.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/f960486ff7082a56f128.html",
+    "snapshotSHA256": "aaa81b68c3903d3f40ee85301f1bc507b7bbb00a6f086e92905b343999c9dca8",
+    "bytes": 41705
+  },
+  {
+    "sourceUrl": "https://hotpark-asashina.com/page-3.html",
+    "fetchedAt": "2026-11-05T06:28:19.889407+00:00",
+    "status": 200,
+    "finalUrl": "https://hotpark-asashina.com/page-3.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/626663eb33962ad34115.html",
+    "snapshotSHA256": "0d18f91974b10d94d6773b57c7ad3e3f795f900296c3eac5655fd32e88abecf6",
+    "bytes": 23856
+  },
+  {
+    "sourceUrl": "https://tohyamago.com/archives/2449",
+    "fetchedAt": "2026-11-05T06:28:21.028362+00:00",
+    "status": 200,
+    "finalUrl": "https://tohyamago.com/archives/2449",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/005ef9cab25c968bf6a2.html",
+    "snapshotSHA256": "04c4a41a2b8393bb4b66e861f9e0554dfffc9f6986cbc2f7a7aaee4d45d21d38",
+    "bytes": 80781
+  },
+  {
+    "sourceUrl": "https://www.iida-museum.org/guidance/related-facility/tohyama/",
+    "fetchedAt": "2026-11-05T06:28:25.060189+00:00",
+    "status": 200,
+    "finalUrl": "https://www.iida-museum.org/guidance/related-facility/tohyama/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/6cc42e996ab983cf224d.html",
+    "snapshotSHA256": "76ae23a5ebf6655c855fcee2e73d4a8035f48d36c5c39402449e18821d9ad1b0",
+    "bytes": 78099
+  },
+  {
+    "sourceUrl": "https://www.city.otsuki.yamanashi.jp/gyoumu/02somukanri/tyousya_annaizu.html",
+    "fetchedAt": "2026-11-05T06:28:21.346591+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.otsuki.yamanashi.jp/gyoumu/02somukanri/tyousya_annaizu.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/5d301fb87b2302787361.html",
+    "snapshotSHA256": "c77e2b8dfbe1e6050d03d594566f07c9e95e8a936ebc340b6af35fd155170529",
+    "bytes": 45800
+  },
+  {
+    "sourceUrl": "https://www.city.otsuki.yamanashi.jp/access/index.html",
+    "fetchedAt": "2026-11-05T06:28:21.344487+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.otsuki.yamanashi.jp/access/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/aa8b897e486ea2f4b24c.html",
+    "snapshotSHA256": "b8744441ce9ebfda768612f6e50faf4c4eb83c51ab9d356c6ce73df740b57fcc",
+    "bytes": 40219
+  },
+  {
+    "sourceUrl": "https://db.go-nagano.net/themelist/detail/id%3D12075",
+    "fetchedAt": "2026-11-05T06:28:21.725385+00:00",
+    "status": 200,
+    "finalUrl": "https://db.go-nagano.net/themelist/detail/id%3D12075",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/koshin/738ba6114d6195c24074.html",
+    "snapshotSHA256": "72c83e2354c52b5d01d9c0ce88d05658fdaca8d80574934402b2364a8d025bfe",
+    "bytes": 26210
+  },
+  {
+    "sourceUrl": "https://www.nagano-cvb.or.jp/modules/page/tourist_office",
+    "fetchedAt": "2026-11-05T06:28:22.756614+00:00",
+    "status": 200,
+    "finalUrl": "https://www.nagano-cvb.or.jp/modules/page/tourist_office",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/f7c7a4c6238b7a47bab8.html",
+    "snapshotSHA256": "a402cae9b3cdd36faf5ee47434fc1205da04b93c08f8daefad8247a50d336f3c",
+    "bytes": 34763
+  },
+  {
+    "sourceUrl": "https://tsumago.jp/access",
+    "fetchedAt": "2026-11-05T06:28:26.649395+00:00",
+    "status": 200,
+    "finalUrl": "https://tsumago.jp/access/",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/fcef1824b5364453b441.html",
+    "snapshotSHA256": "70dc7ae8311268452424972040c34734d1ece7086453828b3bb67f3d22f865f2",
+    "bytes": 65712
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/soshiki/ttiiki/127168.html",
+    "fetchedAt": "2026-11-05T06:28:23.193275+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/soshiki/ttiiki/127168.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/3b563ae9835ad9db29a5.html",
+    "snapshotSHA256": "3127a3db3d1013e16a91c70654d27e4073eb5fdb7d6b0114a0296a678f51a9e4",
+    "bytes": 28757
+  },
+  {
+    "sourceUrl": "https://www.city.ueda.nagano.jp/map/13805.html",
+    "fetchedAt": "2026-11-05T06:28:23.214272+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ueda.nagano.jp/map/13805.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/ed1740151091441ae784.html",
+    "snapshotSHA256": "709891848f9ee4fe510afb4b9e3aa140c376efb13be4d5a0bb30ad6860e04313",
+    "bytes": 21359
+  },
+  {
+    "sourceUrl": "https://db.go-nagano.net/topics_detail6/id%3D3402",
+    "fetchedAt": "2026-11-05T06:28:24.906243+00:00",
+    "status": 200,
+    "finalUrl": "https://db.go-nagano.net/topics_detail6/id%3D3402",
+    "contentType": "text/html; charset=utf-8",
+    "snapshotPath": "data/evidence/issue7/koshin/28a654840ff294f61783.html",
+    "snapshotSHA256": "f51c2fbba35b7aa6c1eec7ea187b84c0c2848216dd24505d891705b1e5c6bf9a",
+    "bytes": 37127
+  },
+  {
+    "sourceUrl": "https://www.city.tsuru.yamanashi.jp/contact/jyogesuido/index.html",
+    "fetchedAt": "2026-11-05T06:28:24.689183+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.tsuru.yamanashi.jp/contact/jyogesuido/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/koshin/9c5b6f0da88361a3548c.html",
+    "snapshotSHA256": "c31c424a6abcc1ecd846efb79f3664c08a58a3a92674bdeb1f4c9b898099053a",
+    "bytes": 33516
+  },
+  {
+    "sourceUrl": "https://www.city.tomi.nagano.jp/category/soshiki/101437.html",
+    "fetchedAt": "2026-11-05T06:28:26.093211+00:00",
+    "error": "HTTP Error 404: Not Found",
+    "status": 404
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "fetchedAt": "2026-11-05T06:28:25.282673+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/28d45067bfd5191b2a49.html",
+    "snapshotSHA256": "77d5e017a4b6ee5a92909fef30ccd282f1ef2d19b47ba49a7b3b891740f35665",
+    "bytes": 128344
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "fetchedAt": "2026-11-05T06:28:25.282127+00:00",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "contentType": "text/html; charset=UTF-8",
+    "snapshotPath": "data/evidence/issue7/koshin/8b3d596123345c99c3b6.html",
+    "snapshotSHA256": "db087de628d63d3fb4d2d98ac7fb8cec55ae64b4fe93a92ac69f47f7ace6d1c0",
+    "bytes": 27978
+  }
+]

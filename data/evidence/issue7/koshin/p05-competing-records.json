@@ -1,0 +1,178 @@
+[
+  {
+    "prefecture": 19,
+    "featureIndex": 127,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "19204",
+        "P05_002": "1",
+        "P05_003": "都留市役所",
+        "P05_004": "都留市上谷1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.90547146199393,
+          35.55156498732389
+        ]
+      }
+    },
+    "memberSHA256": "e6aa5bf40283f6d9c9a89b30e5485d28b1933a70739ae4c199bdf1caf29a15ad",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 19,
+    "featureIndex": 134,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "19204",
+        "P05_002": "2",
+        "P05_003": "都留市役所北別館",
+        "P05_004": "都留市上谷1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.9051239622701,
+          35.551743777145106
+        ]
+      }
+    },
+    "memberSHA256": "e6aa5bf40283f6d9c9a89b30e5485d28b1933a70739ae4c199bdf1caf29a15ad",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 19,
+    "featureIndex": 682,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "19214",
+        "P05_002": "1",
+        "P05_003": "中央市役所",
+        "P05_004": "中央市臼井阿原301-1旧田富庁舎"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.5172698502828,
+          35.599642985106264
+        ]
+      }
+    },
+    "memberSHA256": "e6aa5bf40283f6d9c9a89b30e5485d28b1933a70739ae4c199bdf1caf29a15ad",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 20,
+    "featureIndex": 352,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20203",
+        "P05_002": "3",
+        "P05_003": "武石地域自治センター",
+        "P05_004": "上田市上武石77"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.23040120086486,
+          36.28345253887168
+        ]
+      }
+    },
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 20,
+    "featureIndex": 397,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20203",
+        "P05_002": "5",
+        "P05_003": "武石健康センター",
+        "P05_004": "上田市下武石742"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.22938320394616,
+          36.28538453864926
+        ]
+      }
+    },
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 20,
+    "featureIndex": 398,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20203",
+        "P05_002": "4",
+        "P05_003": "武石公民館",
+        "P05_004": "上田市下武石742武石地域総合センター2F"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2305623045388,
+          36.28453399871085
+        ]
+      }
+    },
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 20,
+    "featureIndex": 1463,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20218",
+        "P05_002": "5",
+        "P05_003": "更埴文化会館あんずホール",
+        "P05_004": "千曲市杭瀬下1-64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.11688115103794,
+          36.53027711494134
+        ]
+      }
+    },
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  },
+  {
+    "prefecture": 20,
+    "featureIndex": 1503,
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20218",
+        "P05_002": "5",
+        "P05_003": "更埴文化会館",
+        "P05_004": "千曲市杭瀬下1-64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.116915050938,
+          36.53025631501076
+        ]
+      }
+    },
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "status": "comparison-only-see-classification-not-an-additional-update"
+  }
+]

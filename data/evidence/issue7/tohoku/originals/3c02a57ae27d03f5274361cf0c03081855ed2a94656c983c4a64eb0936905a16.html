@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>上下水道　｜　女川町</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="女川町役場,女川町,おながわ,onagawa,宮城" />
+    <meta name="description" content="女川町の公式ウェブサイトです。町民向け情報、事業者向け情報、観光情報など、各種情報を提供しています。" />
+    <link href="image/favicon.ico" rel="shortcut icon"  type="image/vnd.microsoft.icon" />
+    
+    <!-- maincss -->
+    <link rel="stylesheet" href="css/style.css"  />
+    <!-- <link rel="stylesheet" href="css/sp.css"  /> -->
+    
+    <link rel="alternate stylesheet"  href="css/medium.css" title="medium" />
+    <link rel="alternate stylesheet"  href="css/large.css" title="large" />
+    
+    <!-- java -->
+    <script  src="js/jquery-1.10.1.min.js"></script>
+    <script  src="js/styleswitcher.js"></script>
+    
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <script  src="js/jquery.bxslider.js"></script>
+    <script  src="js/ran_slide.js"></script>
+    <script  src="js/checkDevice.js"></script>
+   
+    <script  src="js/top_link.js"></script>
+    <script  src="js/accordion.js"></script>
+
+</head>
+<body>
+
+<!--本文へ移動リンク-->
+<div class="txtlink"><a href="#main_box"><img src="/img/spacer.gif" width="1" height="1" alt="本文へジャンプします" /></a></div>
+
+<div id="wrapper_out" class="navi1">
+
+<!-- ヘッダー -->
+<!-- 06改修CSS追加 -->
+<link rel="stylesheet" href="/css/style.css?20250301" />
+<link rel="stylesheet" href="/css/style_r1.css?20250301" />
+<link rel="stylesheet" href="/css/navi_common.css?20260301" />
+<link rel="stylesheet" href="/css/common_sp.css?20250301" />
+<link rel="stylesheet" href="/css/spmenu.css?20250301" />
+<!-- <script  src="/js/top_link_set.js?20250301"></script> -->
+
+
+<script>
+$(function() {
+  //ページスクロール
+  
+    var topBtn2 = $('#trigger_3');
+    topBtn2.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 300);
+        if ( $('.slide_menu').hasClass('active') ) {
+          $('.slide_menu').removeClass('active');
+          $('#trigger_1').html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+        }
+        if ( $('.slide_menu2').hasClass('active') ) {
+          $('.slide_menu2').removeClass('active');
+          $('#trigger_2').html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+        }
+        return false;
+    });
+  
+  
+  //SPメニュー切替
+    var spmBtn1 = $('#trigger_1');
+    var spmBtn2 = $('#trigger_2');
+  //メニュー表示
+    function spHubMenu1() {
+    $('.slide_menu').toggleClass('active');
+    if ( $('.slide_menu2').hasClass('active') ) {
+      $('.slide_menu2').removeClass('active');
+    }
+    if ( $('.slide_menu').hasClass('active') ) {
+      spmBtn1.html('<i class="fas fa-xmark"></i><p id="trigger_text1">閉じる</p>');
+      spmBtn2.html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+    }else{
+      spmBtn1.html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+    }
+    return false;
+    }
+  //探す表示
+    function spHubMenu2() {
+    $('.slide_menu2').toggleClass('active');
+    if ( $('.slide_menu').hasClass('active') ) {
+      $('.slide_menu').removeClass('active');
+    }
+    if ( $('.slide_menu2').hasClass('active') ) {
+      spmBtn2.html('<i class="fas fa-xmark"></i><p id="trigger_text2">閉じる</p>');
+      spmBtn1.html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+    }else{
+      spmBtn2.html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+    }
+    return false;
+    }
+  
+    spmBtn1.click(spHubMenu1);
+    spmBtn2.click(spHubMenu2);
+  
+});
+
+</script>
+
+
+<!-- 多言語警告 -->
+<div class="modal">
+  <div class="modalBody">
+    <div id="attention" class="nosec"></div>
+    <p class="close"></p>
+  </div>
+  <div class="modalBK"></div>
+</div>
+
+<!-- spナビ -->
+<div class="bottom_nav">
+  <div class="btmitem">
+    <a id="trigger_1"><i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p></a>
+  </div>
+ <div class="btmitem">
+    <a id="trigger_2"><i class="fas fa-search"></i><p id="trigger_text2">探す</p></a>
+ </div>
+ <div class="btmitem">
+    <a id="trigger_3"><i class="fas fa-chevron-up"></i><p id="trigger_text3">TOP</p></a>
+ </div>
+</div>
+
+<!-- ヘッダー -->
+<div id="head_out">
+
+<div class="toplogo head">
+  <a href="/index.html"></a>
+</div>
+
+<div class="slide_menu">
+  
+<!--オプション-->
+<div class="headitem">
+  <div class="hmsec">
+    <div class="hitem">
+      <div class="itemlist pc">「いのち」と「くらし」をみんなが紡ぐまち</div>
+
+      <div class="itemlist r-txt">
+        <div id="textsize">
+          <div class="item_ib"><p>文字サイズ</p></div>
+          <div class="item_ib">
+            <div id="txt_size2">
+              <ul class="txt_size">
+                <li><a class="size01" href="javascript:void(0);" onclick="setActiveStyleSheet('medium'); return false;" onkeypress="setActiveStyleSheet('medium');">標準</a></li>
+                <li><a class="size02" href="javascript:void(0);" onclick="setActiveStyleSheet('large'); return false;" onkeypress="setActiveStyleSheet('large');">拡大</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="item_ib">
+            <div class="translate_element">
+              <select id="honyaku" name="honyaku" title="Foreign Language">
+                <option value="0" lang="">Foreign Language</option>
+                <option value="en">English</option>
+                <option value="zh">中文（簡体字）</option>
+                <option value="zhb">中文（繁体字）</option>
+                <option value="ko">&#54620;&#44397;&#50612;</option>
+                <option value="th">ไทย</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="ja" lang="jp">日本語</option>
+              </select>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="headitem">
+  <!--ヘッダー&スライド-->
+  <div id="head" class="cl">
+
+    <!-- スライダー -->
+    <div id="topslide" class="pc">
+      <div id="slider"></div>
+    </div>
+    <!-- 女川町ロゴ -->
+    <div class="toplogo pc">
+      <a href="/index.html"></a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- グローバルナビ -->
+  
+<div class="headitem">
+  <!--メインナビ-->
+  <div class="hnav_sec">
+   
+<!--   <div class="gnav r2 noto_500">
+     
+      <ul>
+        <li>
+          <a class="drop list1 " href="/onagawa.html">女川町について</a>
+          <div class="secondmenu list1">
+            <a id="hm0" href="/onagawa.html">女川町について</a>
+            <a id="hm1" href="/02_01_02.html">町長挨拶</a>
+            <a id="hm2" href="/02_01_01.html">町の紹介</a>
+            <a href="/05_19.html">町政情報</a>
+            <a href="/choushi.html">女川町誌</a>
+            <a href="/02_03.html">各種統計</a>
+            <a href="/04_04syokuin%20bosyu/04_04_04rinji01.html">町職員募集</a>
+            <a href="/archive/index.html">女川町震災アーカイブ</a>
+            <a href="/shisatsu.html">視察について</a>
+            <a href="/11_21.html">ふるさと応援寄附金</a>
+            <a href="/11_22.html">企業版ふるさと納税</a>
+            <a href="/kouhou.html">広報おながわ</a>
+            <a href="https://gikai-town-onagawa.jp">女川町議会</a>
+            <a href="/kyosai_kouen_meigi.html">共催・名義後援申請</a>
+            <a href="/onagawa_tyoumin_kaigi.html">女川町民会議</a>
+            <a href="/100th/index.html">女川町町制施行100周年記念事業</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2" href="/kurashi.html">くらしの情報</a>
+        </li>
+        <li class="">
+          <a class="drop list3" href="/raihou.html">観光される方へ</a>
+          <div class="secondmenu list3">
+            <a href="/raihou.html">観光トップ</a>
+            <a href="/03_05_01.html">アクセス</a>
+            <a href="/03_00_01.html">食べる</a>
+            <a href="/03_00_02.html">観る・買う</a>
+            <a href="/03_00_03.html">体験する</a>
+            <a href="https://www.onagawa.org/stay/">泊まる（外部サイト）</a>
+            <a href="/03_00_04.html">イベント</a>
+            <a href="/03_00_08.html">震災学習</a>
+            <a href="/03_00_09.html">女川の文化財</a>
+            <a href="/03_00_06.html">観光モデルコース</a>
+            <a href="/03_00_07.html">いのちの石碑</a>
+            <a href="/hurusatocm.html">みやぎふるさとCM大賞</a>
+            <a href="/03_00_05_01.html">リンク集</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list4" href="/jigyou.html">事業者の方へ</a>
+          <div class="secondmenu list4">
+          <a href="/05_17_04.html">商工・労働情報</a>
+          <a href="/suisan_danchi_p4.html">排水処理施設整備等事業</a>
+          <a href="/05_17_01.html">企業立地</a>
+          <a href="/04_06nyusatu/00_index.html">入札関連情報</a>
+          <a href="/05_17_08.html">町有施設の貸付</a>
+          <a href="/sounding_research.html">町有施設サウンディング型市場調査</a>
+          <a href="/05_17_11.html">特定技能所属機関による「協力確認書」の提出について</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list5" href="/iju/index.html">移住・定住</a>
+        </li>
+        <li>
+        <a class="drop list6" href="https://onagawa.org/"><p>イベント<br class="pc"><span>(観光協会HP)</span></p></a>
+        </li>
+      </ul>
+      
+  </div> -->
+  <div class="gnav r2 noto_500">
+     
+      <ul>
+        <li>
+          <a class="drop list2a" href="/kurashi.html#bunrui1">くらし・手続き・移住</a>
+          <div class="secondmenu list2a">
+            <a href="/emer/">災害・感染症情報</a>
+            <a href="/04_02_01.html">住民票・戸籍</a>
+            <a href="/life_event_01i.html">結婚・離婚</a>
+            <a href="/life_event_07i.html">転入・転出</a>
+            <a href="/life_event_04.html">住まい</a>
+            <a href="/05_05.html">環境・ごみ</a>
+            <a href="/05_08_01.html">税金</a>
+            <a href="/05_06_01_00.html">消費生活</a>
+            <a href="/11_04_01.html">交通</a>
+            <a href="/life_event_08i.html">おくやみ</a>
+            <a href="/05_05_00_02.html">ペット</a>
+            <a href="/05_06_01.html">各種相談</a>
+            <a href="kurashi_benrityou.html">くらしの便利帳</a>
+            <a href="/chomin_calendar.html">おながわ町民カレンダー</a>
+            <a href="/mynumber.html">マイナンバー</a>
+            <a href="/04_02_02.html">窓口・施設のご案内</a>
+            <a href="/04_02_03.html">手数料一覧</a>
+            <a href="/04_02_05.html">様式ダウンロード</a>
+            <a href="/iju">移住特設サイト【女川で暮らす】</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2b" href="/kurashi.html#bunrui2">健康・医療・福祉</a>
+          <div class="secondmenu list2b">
+          <a href="/life_event_06.html">保健・医療</a>
+          <a href="/05_13_01_01.html">各種検診</a>
+          <a href="/05_09_00.html">健康保険・年金</a>
+          <a href="/05_14hukushi/05_14.html">福祉</a>
+          <a href="/05_14hukushi/05_14_03.html">障害者福祉</a>
+          <a href="/life_event_05i.html">高齢・介護</a>
+          <a href="/05_24.html">生活支援</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2c" href="/kurashi.html#bunrui3">子育て・教育</a>
+          <div class="secondmenu list2c">
+          <a href="/life_event_02.html">妊娠・出産</a>
+          <a href="/05_13_09.html">母子保健</a>
+          <a href="/life_event_09.html">子育て</a>
+          <a href="/05_15_02_04.html">子育て支援センター</a>
+          <a href="/05_15_02_05.html">放課後児童クラブ</a>
+          <a href="/hoiku">女川町保育所</a>
+          <a href="/life_event_03.html">学校・教育</a>
+          <a href="/05_15_03_04.html">各種補助制度のご案内</a>
+          <a href="/05_18.html">国際交流</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2d" href="/kurashi.html#bunrui4">まちづくり・産業</a>
+          <div class="secondmenu list2d">
+          <a href="/05_03.html">防災</a>
+          <a href="/bouhan.html">防犯</a>
+          <a href="/05_07_01.html">上下水道</a>
+          <a href="/05_07_00.html">都市計画・土地利用</a>
+          <a href="/05_04.html">原子力</a>
+          <a href="/machi_hito_shigoto.html">まちづくり</a>
+          <a href="/05_07_06.html">道路・河川</a>
+          <a href="/nouen_bosyu.html">女川町民農園使用者募集</a>
+          <a href="/05_17.html">産業</a>
+          <a href="/life_event_10i.html">仕事</a>
+          </div>
+        </li>
+        <li class="">
+          <a class="drop list3" href="/raihou.html">観光情報</a>
+          <div class="secondmenu list3">
+            <!-- <a href="/raihou.html">観光トップ</a> -->
+            <a href="/03_05_01.html">アクセス</a>
+            <a href="/03_00_01.html">食べる</a>
+            <a href="/03_00_02.html">観る・買う</a>
+            <a href="/03_00_03.html">体験する</a>
+            <a href="https://www.onagawa.org/stay/">泊まる<br>（女川町観光協会：外部サイト）</a>
+            <a href="/03_00_04.html">イベント</a>
+            <a href="/03_00_08.html">震災学習</a>
+            <a href="/03_00_09.html">女川の文化財</a>
+            <a href="/03_00_06.html">観光モデルコース</a>
+            <a href="/hurusatocm.html">みやぎふるさとCM大賞</a>
+            <a href="/03_00_05_01.html">リンク集</a>
+            <a href="https://www.onagawa.org/stay/">開催イベント<br>（女川町観光協会：外部サイト）</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list4" href="/jigyou.html">事業者情報</a>
+          <div class="secondmenu list4">
+          <a href="/05_17_04.html">商工・労働情報</a>
+          <a href="/suisan_danchi_p4.html">排水処理施設整備等事業</a>
+          <a href="/05_17_01.html">企業立地</a>
+          <a href="/04_06nyusatu/00_index.html">入札関連情報</a>
+          <a href="/05_17_08.html">町有施設の貸付</a>
+          <!-- <a href="/sounding_research.html">町有施設サウンディング型市場調査</a> -->
+          <a href="/05_17_11.html">特定技能所属機関による「協力確認書」の提出について</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list1 " href="/onagawa.html">女川町について</a>
+          <div class="secondmenu list1">
+            <a id="hm1" href="/02_01_02.html">町長挨拶</a>
+            <a id="hm2" href="/02_01_01.html">町の紹介</a>
+            <a href="/05_19.html">町政情報</a>
+            <a href="/choushi.html">女川町誌</a>
+            <a href="/02_03.html">各種統計</a>
+            <a href="/04_04syokuin%20bosyu/04_04_04rinji01.html">町職員募集</a>
+            <a href="/05_20_01.html">選挙</a>
+            <a href="/04_04_01.html">情報公開</a>
+            <a href="/shisatsu.html">視察について</a>
+            <a href="/11_21.html">ふるさと応援寄附金</a>
+            <a href="/11_22.html">企業版ふるさと納税</a>
+            <a href="/kouhou.html">広報おながわ</a>
+            <a href="https://gikai-town-onagawa.jp">女川町議会（外部サイト）</a>
+            <a href="/kyosai_kouen_meigi.html">共催・名義後援申請</a>
+            <a href="/onagawa_tyoumin_kaigi.html">女川町民会議</a>
+            <a href="/archive/index.html">女川町震災アーカイブ</a>
+            <a href="/100th/index.html">女川町町制施行100周年記念事業</a>
+            <a href="/furusatojuumin.html">ふるさと住民登録制度について</a>
+          </div>
+        </li>
+        
+        
+        <!-- <li><a class="drop list5" href="/iju/index.html">移住・定住</a></li> -->
+        <!-- <li><a class="drop list6" href="https://onagawa.org/"><p>イベント<br class="pc"><span>(観光協会HP)</span></p></a></li> -->
+      </ul>
+      
+  </div>
+  
+  </div>
+  
+</div>
+  
+</div>
+
+<!-- R06モバイル改修 -->
+<!--追加検索メニュー部分 -->
+<div class="slide_menu2">
+  
+  <!-- 検索メニュー -->
+  <!-- サイト内検索-->
+<div class="headitem kensaku">
+ <div class="search_sec noto_300">
+  <div class="search_sp spmode">
+    <div class="key_text">キーワード検索</div>
+    <div class="search">
+    <form class="search" name="form1" action="https://www.google.co.jp/search" method="get">
+    <input name="ie" type="hidden" value="UTF-8">
+    <input name="oe" type="hidden" value="UTF-8">
+    <input name="hl" type="hidden" value="ja">
+    <input name="domains" type="hidden" value="www.town.onagawa.miyagi.jp">
+    <input name="sitesearch" type="hidden" value="www.town.onagawa.miyagi.jp">
+    <input id="search_mobile" name="q" size="31" type="text" placeholder="Google提供" style=""><button class="search-start">検索</button>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
+  
+  <!-- ライフイベント -->
+  <div class="art_menu">
+    <h2>ライフイベントから探す</h2>
+    <div class="spmbox life">
+      <div class="spmitem"><a href="/life_event_02.html"><img src="/img/menu/l_icon_01.png" alt="">妊娠・出産</a></div>
+      <div class="spmitem"><a href="/life_event_09.html"><img src="/img/menu/l_icon_02.png" alt="">子育て</a></div>
+      <div class="spmitem"><a href="/life_event_03.html"><img src="/img/menu/l_icon_03.png" alt="">学校・教育</a></div>
+      <div class="spmitem"><a href="/life_event_01i.html"><img src="/img/menu/l_icon_04.png" alt="">結婚・離婚</a></div>
+      <div class="spmitem"><a href="/life_event_07i.html"><img src="/img/menu/l_icon_05.png" alt="">転入・転出</a></div>
+      <div class="spmitem"><a href="/life_event_04.html"><img src="/img/menu/l_icon_06.png" alt="">住まい</a></div>
+      <div class="spmitem"><a href="/life_event_10i.html"><img src="/img/menu/l_icon_07.png" alt="">仕事</a></div>
+      <div class="spmitem"><a href="/life_event_06.html"><img src="/img/menu/l_icon_08.png" alt="">保健・医療</a></div>
+      <div class="spmitem"><a href="/life_event_05i.html"><img src="/img/menu/l_icon_09.png" alt="">高齢・介護</a></div>
+      <div class="spmitem"><a href="/life_event_08i.html"><img src="/img/menu/l_icon_10.png" alt="">おくやみ</a></div>
+    </div>
+  </div>
+  
+  <!-- 分類から探す -->
+  <div class="art_menu">
+    <h2>分類から探す</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/kurashi.html#bunrui1">くらし・手続き・移住</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui2">健康・医療・福祉</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui3">子育て・教育</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui4">まちづくり・産業</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui5">行政</a></div>
+    </div>
+  </div>
+  
+  <!-- お役立ち情報 -->
+  <div class="art_menu">
+    <h2>お役立ち情報</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/04_02_02.html">窓口案内</a></div>
+      <div class="spmitem"><a href="/05_19.html">町政情報</a></div>
+      <div class="spmitem"><a href="/04_02_05.html">申請書様式</a></div>
+      <div class="spmitem"><a href="/04_06nyusatu/00_index.html">入札関連情報</a></div>
+      <div class="spmitem"><a href="/04_02_03.html">証明書交付手数料</a></div>
+      <div class="spmitem"><a href="/05_05.html">ごみ収集</a></div>
+      <div class="spmitem"><a href="/kouhou.html">広報おながわ</a></div>
+      <div class="spmitem"><a href="/11_21.html">ふるさと応援寄附金</a></div>
+      <div class="spmitem"><a href="/11_21.html">移住特設サイト【女川で暮らす】</a></div>
+      <div class="spmitem"><a href="/11_21.html">ふるさと応援寄附金</a></div>
+    </div>
+  </div>
+  
+  <!-- いざという時に -->
+  <div class="art_menu saigai">
+    <h2>いざという時に</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/emer/bousai/05_03.html">女川町防災マップ</a></div>
+      <div class="spmitem"><a href="/pdf/bousai/shitei_kinkyu_hinan_ichiran.pdf">指定避難所一覧</a></div>
+      <div class="spmitem"><a href="/05_13_00.html">休日・夜間診療</a></div>
+      <div class="spmitem"><a href="/emer/">災害・感染症情報</a></div>
+    </div>
+  </div>
+  
+  <div class="art_menu last"></div>
+  </div>
+  
+</div>
+
+
+<!-- ここからページ内容 -->
+<div id="wrapper" class="cl">
+
+<!--パンくず-->
+<div id="pankz" class="pc">
+      現在位置：<a href="index.html">ホーム</a> &gt; <a href="kurashi.html">くらしの情報</a> &gt; <a>上下水道</a>
+</div>
+
+<!-- メインコンテンツ -->
+<div id="main_box">
+  <h1 class="navi1">上下水道</h1>
+  <p>&nbsp;</p>
+     <p>&nbsp;</p>
+
+    <!-- <h2 class="navi1">女川町上下水道課からのお知らせ<img src="/image/update.gif" alt="【NEW】"></h2>
+      <div class="content">
+    <h3 class="navi1">町内の水道水における「におい」について</h3>
+      <p>令和8年9月3日（木曜日）から町内水道水において、自然由来の成分が原因と思われる「におい」が発生していましたが、令和8年9月28日現在において、においの原因となっていると思われるものについて調査した結果、基準値以下のため、「におい」の発生は収束したものと思われます。</p>
+      <p>&nbsp;</p>
+      <ul>
+        <li>においの原因となっていると思われる成分：ジェオスミン</li>
+      </ul>
+    </div>
+    <p>&nbsp;</p>  -->
+      
+    <h2 class="navi1">女川町上下水道事業の概要と経営状況</h2>
+      <div class="content">
+      <p>女川町の上下水道事業の概要は、下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_14.html">女川町の上下水道</a></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>女川町上下水道事業の経営状況は、下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_15.html">女川町上下水道の経営状況</a></li>
+      </ul>
+    </div>
+    <p>&nbsp;</p>
+      
+    <h2 class="navi1">上下水道事業の手続き等（町民向け情報）</h2>
+      <div class="content">
+      
+      <h3 class="navi1">1. 上下水道の開始・中止等手続き</h3>
+      
+      <ul>
+        <li>使用開始や使用手続きは、<a href="05_07_01_01.html">水道に関する手続きのご案内</a> をご覧ください。</li>
+      </ul>
+      <p>&nbsp;</p>
+
+      <h3 class="navi1">2. 上下水道の料金と支払方法（インボイス等）</h3>
+      <ul>
+        <li>料金や支払方法（インボイス等）は、<a href="05_07_01_05.html">上下水道料金及び支払方法</a> をご覧ください。</li>
+      </ul>
+      <p>&nbsp;</p>
+
+      <h3 class="navi1">3. 水道基本料金等減免事業（終了のお知らせ）</h3>
+      <ul>
+        <li>水道基本料金等減免事業は、<a href="05_07_01_20.html">水道基本料金等減免事業</a> をご覧ください。</li>
+      </ul>
+
+
+      </div>
+      
+      <p>&nbsp;</p>
+      
+      
+    <h2 class="navi1">上下水道Ｑ＆Ａ、修繕などで困ったら</h2>
+      <div class="content">
+      
+      <ul>
+        <li>上下水道Ｑ＆Ａは、<a href="05_07_01_07.html">水道に関するQ＆A</a> をご覧ください</li>
+        <li><p>ご家庭の給水・排水設備工事（新設や修繕など）は、下記一覧の指定工事事業者へお申し込みください。なお、町内で給水・排水設備工事を行う場合、指定業者以外では実施できませんので、ご注意ください。</p>
+        <ul>
+        <li><a href="05_07_01_06.html">上下水道の指定工事事業者</a></li>
+        </ul>
+        <!-- <div class="txt_sec"><a href="pdf/suidou/20260601_kyusui_haisui_jigyosya.pdf">給水装置工事事業者及び排水設備等工事指定店の一覧（PDF形式：245KB）</a></div> -->
+        <!-- <div class="txt_sec"><a href="pdf/suidou/20251001_kyusui_haisui_jigyosya.pdf">給水装置工事事業者及び排水設備等工事指定店の一覧（PDF形式：418KB）</a></div> -->
+        </li>
+      </ul>
+    </div>
+    <p>&nbsp;</p>
+      
+      
+    <h2 class="navi1">水道水質検査計画と検査結果</h2>
+      <div class="content">
+      <p>適正な水質検査（水道水の安全性確認）のための検査計画と結果は、下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_09.html">水道水質検査計画と検査結果</a></li>
+      </ul>
+    </div>
+    <p>&nbsp;</p>
+      
+      
+    <h2 class="navi1">下水道の普及（接続等）に関すること</h2>
+      <div class="content">
+      
+      <p>下水道が使用できるようになった区域となった際の各ご家庭の負担（費用）や手続き、工事などについては、下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_02.html">下水道の普及（接続等）に関すること</a></li>
+      </ul>
+      
+      <div class="txt_sec">
+      <p>また、下水道の役割や重要性とイメージアップや普及率の向上等を目的として、マンホールカードを製作しています。詳しくは下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="mhcard.html">マンホールカード</a> </li>
+      </ul>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+      
+    <h2 class="navi1">女川町上下水道事業に関係する事業者向け情報</h2>
+      <div class="content">
+      <h3 class="navi1">1. 上下水道台帳</h3>
+      <p>上下水道事業者の利便性向上のため、参考資料として上下水道台帳を掲載しています。</p>
+      <ul>
+        <li><a href="05_07_01_11.html">上下水道台帳</a></li>
+      </ul>
+      <p>&nbsp;</p>
+
+      <h3 class="navi1">2.地下埋設物調査</h3>
+      <p>調査に係る紙資源削減のため、地下埋設物調査の受付は、メールで行っています。<br>詳しくは下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_17.html">地下埋設物調査</a></li>
+      </ul>
+      
+      <p>&nbsp;</p>
+
+
+      <h3 class="navi1">3.給水装置工事・排水設備工事手続き</h3>
+      <p>申請手続きの効率化を図るため、押印の省略に加え、申請受付は基本的にメールでの対応とさせていただいております。なお、窓口や郵送での申請も可能ですので、ご都合に合わせてご利用ください。<br>詳しくは下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_18.html">給水装置工事申込書等について</a></li>
+        <li><a href="05_07_01_19.html">排水設備計画確認申請書等について</a></li>
+      </ul>
+      
+      <p>&nbsp;</p>
+
+      <h3 class="navi1">4. 上下水道の指定工事事業者の登録等</h3>
+      <p>登録事務に係る紙資源削減のほか、指定工事事業者の負担軽減を目的に、登録の受付は、メールで行っています。<br>詳しくは下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_06.html">上下水道の指定工事事業者</a></li>
+      </ul>
+      
+      <p>&nbsp;</p>
+      <h3 class="navi1">5. 上下水道事業用地の目的外使用手続き等</h3>
+      <p>上下水道事業用地を占用（電柱の設置等）における手続きや水道事業用地活用事業への申込は、下記ページをご覧ください。</p>
+      <ul>
+        <li><a href="05_07_01_16.html">上下水道事業用地の目的外使用手続き等</a></li>
+      </ul>
+      
+      
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+      
+
+
+      <div id="page_info" class="navi1">
+      <h4 class="navi1">このページについてのお問い合わせ</h4>
+      　上下水道課<br>
+      　電話：0225-54-3131
+      </div>
+      <br>
+      <br>
+  
+  
+  <!-- ページ内容 ここまで -->
+</div>
+  
+<!-- 左メニュー -->
+<div id="left_box">
+  <div class="menu_sec navi1">
+        
+      <h6 class="pc">くらしの情報</h6>
+        <!-- <div class="pullbtn sp">
+          <a id="pull1" class="pulldown navi1" data-target="m_onagawa">くらしの情報</a>
+        </div> -->
+         
+        <div id="m_onagawa" class="filed">
+         <p class="noto_500" style="margin:10px 5px;">くらし・手続き・移住</p>
+          <ul class="navi1" style="margin:10px 0 30px;">
+            <li><a href="/emer/">災害・感染症情報</a></li>
+
+            <li><a href="/04_02_01.html">住民票・戸籍</a></li>
+            <li><a href="/life_event_01i.html">結婚・離婚</a></li>
+            <li><a href="/life_event_07i.html" >転入・転出</a></li>
+            <li><a href="/life_event_04.html">住まい</a></li>
+            <li><a href="/05_05.html">環境・ごみ</a></li>
+            <li><a href="/05_08_01.html">税金</a></li>
+            <li><a href="/05_06_01_00.html">消費生活</a></li>
+            <li><a href="/11_04_01.html">交通</a></li>
+            <li><a href="/life_event_08i.html">おくやみ</a></li>
+            <li><a href="/05_05_00_02.html">ペット</a></li>
+            <li><a href="/05_06_01.html">各種相談</a></li>
+            <li><a href="/05_20_01.html">選挙</a></li>
+            <li><a href="/04_04_01.html">情報公開</a></li>
+            <li><a href="/kurashi_benrityou.html">暮らしの便利帳</a></li>
+            <li><a href="/chomin_calendar.html">町民カレンダー</a></li>
+            <li><a href="/mynumber.html">マイナンバー</a></li>
+            <li><a href="/04_02_02.html">窓口・施設のご案内</a></li>
+            <li><a href="/04_02_03.html">手数料一覧</a></li>
+            <li><a href="/04_02_05.html">様式ダウンロード</a></li>
+
+          </ul>
+
+          <p class="noto_500" style="margin:10px 5px;">健康・医療・福祉</p>
+          <ul class="navi1" style="margin:10px 0 30px;">
+            <li><a href="/life_event_06.html">保健・医療</a></li>
+            <li><a href="/05_13_01_01.html">各種検診</a></li>
+            <li><a href="/05_09_00.html">健康保険・年金</a></li>
+            <li><a href="/05_14hukushi/05_14.html">福祉・介護</a></li>
+            <li><a href="/05_14hukushi/05_14_03.html">障害者福祉</a></li>
+            <li><a href="/life_event_05i.html" >高齢・介護</a></li>
+            <li><a href="/05_24.html">生活支援</a></li>
+          </ul>
+
+          <p class="noto_500" style="margin:10px 5px;">子育て・教育</p>
+           <ul class="navi1" style="margin:10px 0 30px;">
+              <li><a href="/life_event_02.html">妊娠・出産</a></li>
+              <li><a href="/05_13_09.html">母子保健</a></li>
+              <li><a href="/life_event_09.html">子育て</a></li>
+              <li><a href="/05_15_02_04.html">子育て支援センター</a></li>
+              <li><a href="/05_15_02_05.html">放課後児童クラブ概要</a></li>
+              <li><a href="/hoiku">女川町保育所</a></li>
+              <li><a href="/life_event_03.html">学校・教育</a></li>
+              <li><a href="/05_15_03_04.html">各種補助制度の案内</a></li>
+              <li><a href="/05_18.html">国際交流</a></li>
+            </ul>
+            
+          <p class="noto_500" style="margin:10px 5px;">まちづくり・産業</p>
+          <ul class="navi1" style="margin:10px 0 0px;">
+            <li><a href="/05_03.html">防災</a></li>
+            <li><a href="/bouhan.html">防犯</a></li>
+            <li><a href="/05_07_01.html">上下水道</a></li>
+            <li><a href="/05_07_00.html">都市計画</a></li>
+            <li><a href="/05_07_06.html">道路・河川</a></li>
+            <li><a href="/05_04.html">原子力</a></li>
+            <li><a href="/machi_hito_shigoto.html">まちづくり</a></li>
+            <li><a href="/nouen_bosyu.html">町民農園使用者募集</a></li>
+            <li><a href="/05_17.html">産業</a></li>
+            <li><a href="/life_event_10i.html">仕事</a></li>
+          </ul>
+        </div>
+        
+    </div>
+    
+    <div class="bnr_list">
+    
+    <ul>
+      <li><a href="/machi_hito_shigoto.html"><img src="/css/image/bnr/bn_machi.jpg" alt="まち・ひと・しごと創生総合戦略" title="まち・ひと・しごと創生総合戦略" /></a></li>
+      <li><a href="/kurashi_benrityou.html"><img src="/css/image/bnr/bn_kurashi2016.jpg" alt="女川町　暮らしの便利帳" title="女川町　暮らしの便利帳" /></a></li>
+    </ul>
+    </div>
+</div>    
+</div>
+
+<!-- フッター -->
+<!-- フッター -->
+<!-- 街並みイメージ -->
+<div class="btmimg pc"></div>
+<div class="h_link">
+    <ul>
+        <li><a href="/index2.html">女川町ホームページについて</a></li>
+        <li><a href="/kojinjoho.html">個人情報の保護について</a></li>
+        <li><a href="/sitemap.html">サイトマップ</a></li>
+        <li><a href="/policy.html">ツイッター運用ポリシー</a></li>
+        <li><a href="/webaccessibility.html">ウェブアクセシビリティについて</a></li>
+    </ul>
+</div>
+<div id="foot_out2">
+ 
+  <div id="foot2">
+    <div class="address2">
+        <span>女川町庁舎</span><br>
+        〒986-2265 宮城県牡鹿郡女川町女川一丁目1番地1 <br>電話番号：0225-54-3131(代表) <br>
+        開庁時間：午前8時30分から午後5時15分まで（土曜・日曜・祝日・年末年始は閉庁）<br>
+        <a href="/emer/contact_form.html">メールでのお問い合わせ</a>
+    </div>
+    <div class="inblk right pc">
+     <div class="right_item">
+        <a href="/03_05_01.html">女川町へのアクセス</a>
+     </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+
+<!-- コピーライト -->
+<div id="copy_out2">
+  
+  <div id="copy2">
+    
+    <div class="inblk copyright c-txt">
+      <p>&copy;Onagawa Town. All rights reaserved.</p>
+    </div>
+    <span id="device"></span><span id="mobile"></span>
+  </div>
+  
+</div>
+
+<script src="/js/honyaku.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QDD8Y0WSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6QDD8Y0WSP');
+</script>
+<p id="pagetop"><a href="wrapper_out"></a></p>
+
+<script  src="js/jquery.cookie.js"></script>
+<script  src="js/switch.screen.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50130849-1', 'town.onagawa.miyagi.jp');
+  ga('send', 'pageview');
+</script>
+  
+</div>
+
+</body>
+</html>

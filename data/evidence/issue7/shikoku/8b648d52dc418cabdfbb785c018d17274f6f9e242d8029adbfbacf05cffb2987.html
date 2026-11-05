@@ -1,0 +1,374 @@
+
+$(document).ready(function(){
+	
+	var $frameRight = $('.frame.-right');
+
+	/* ロゴ */
+	if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+		$(window).scroll(function(){
+      if ($(window).scrollTop() > 0) {
+        $('#top .logo-top').fadeOut("slow");
+        $('#top .frame.-left .logo').fadeIn("slow");
+      } else {
+        $('#top .logo-top').fadeIn("slow");
+        $('#top .frame.-left .logo').fadeOut("slow");
+      }
+    });
+	}
+
+	/*
+	/*	テンプレートの動き調整
+	*/
+
+	// グローバルナビゲーション
+// グローバルナビゲーション
+$('.global-nav .sub-menu').each(function () {
+  let closeTimer;
+  const $item = $(this);
+  const $submenu = $item.children('.sub-menu-inner');
+
+  $item.on('mouseenter', function () {
+    clearTimeout(closeTimer);
+    $item.addClass('-active');
+    $submenu.stop(true, true).slideDown(200);
+  });
+
+  $item.on('mouseleave', function () {
+    closeTimer = setTimeout(function () {
+      $item.removeClass('-active');
+      $submenu.stop(true, true).slideUp(200);
+    }, 150);
+  });
+});
+	// 言語切替
+	$('.frame .sub-menu>a').on({
+		'click': function () {
+			if( $(this).parent().hasClass('-active') ){
+				$(this).parent().removeClass('-active').find('.sub-menu-inner').velocity('slideUp', { duration: 300 });
+			} else {
+				$(this).parent().addClass('-active').find('.sub-menu-inner').velocity('slideDown', { duration: 300 });
+			}
+			return false;
+		}
+	});
+	$('.frame .language-close').on('click', function(){
+		$(this).parent().removeClass('-active').find('.sub-menu-inner').velocity('slideUp', { duration: 300 });
+	});
+
+	// サイト内検索
+	$('.search-menu').on('click', function () {
+		$frameRight.toggleClass('open');
+	});
+	$('.search-close').on('click', function () {
+		$frameRight.removeClass('open');
+	});
+
+	// フッターバナー
+    var ua = navigator.userAgent;
+    if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+		$('.site-guide .banner .banner-list').slick({
+			infinite: true,
+			dots: false,
+			arrows:false,
+			slidesToShow: 1,
+			centerMode: true,
+			centerPadding:'40px',
+			autoplay: true
+		});
+    }
+	
+	/*
+	/*	グローバルナビのアクティブ表示
+	*/
+	$('.global-nav li > a').each(function(){
+		if( $(this).attr('href') ){
+			// ファイル名を削除
+			var loc = window.location.pathname;
+			if( loc.match(/[^/]+$/i) ){
+				loc = loc.replace(loc.match(/[^/]+$/i)[0], '');
+			}
+			if( $(this).attr('href').replace(location.protocol+'//'+location.host+'/', '/').replace('index.html','') == loc ){
+				$(this).addClass('-active');
+				$(this).closest('ul').prev('a').trigger('click');
+			}
+		}
+	});
+	
+	
+	/*
+	/*	アコーディオン
+	*/
+	function accordion() {
+		$(this).toggleClass("active").next().slideToggle(300);
+	}
+	$(".switch .toggle").click(accordion);
+
+	
+	/*
+	/*	スムーススクロール
+	*/
+	$('.pagetop a, .js-anchor, .js-anchor a').click(function() {
+		var headerHeight = $('.site-header').height() + $('.sp-header .logo').outerHeight();
+		var speed = 400;
+		var href = $(this).attr("href").replace(/.*(\#.*?)$/, "$1");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top - headerHeight;
+		$('body,html').animate({scrollTop:position}, speed, 'swing');
+		return false;
+	});
+
+	// 別ページからリンクした場合
+	$('img:last').load(function(){
+		if( $(location.hash).length > 0 ){
+			var headerHeight = $('.site-header').height() + $('.sp-header .logo').outerHeight();
+			var position = $(location.hash).offset().top  - headerHeight;
+			console.info(position);
+			$('html, body').scrollTop(position);
+		}
+	});
+
+
+	/*
+	/*	スマートフォン微調整
+	*/
+
+	/* a-blog cms内の本文にtelリンク追加 */
+	if( $('.acms-entry').length ){
+		$('.acms-entry').html( $('.acms-entry').html().replace(/(\d{1,4}-\d{1,4}-\d{3,4})/, "<a href=\"tel:$1\">$1</a>") );
+	}
+	
+	/* TELリンクはPC版で表示しない */
+	var ua = navigator.userAgent;
+	if (ua.indexOf('iPhone') < 0 && ua.indexOf('Android') < 0) {
+		$('a[href^="tel:"]').removeAttr('href').attr('nohref', '').css({'cursor':'default', 'text-decoration':'none'}).click(function (event) {
+			event.preventDefault();
+		});
+	}
+
+	/* URLは折り返す */
+	$('.acms-entry a[href^="http"]').each(function(){
+		if($(this).text().match(/https?:\/\//)){
+			var _result = $(this).html().replace(/(https?\:\/\/[a-zA-Z_\/.?#]*)([\s\S]*)/ig,'<span style="word-break: break-all;">$1</span>$2');
+			console.info(_result);
+			$(this).html(_result);
+		}
+	});
+
+	/* クリッカブルマップ */
+	$('img[usemap]').rwdImageMaps();
+	
+	
+	/*
+	/*	イベント計測
+	*/
+	$('a[href*="@"]').on('click', function(e){
+		if ( typeof gtag === 'function' ) {
+			e.preventDefault(); 
+			var url   = $(this).attr('href');
+			var label = $(this).text();
+			gtag( 'event', 'click', {
+				'event_category': 'link',
+				'event_label'   : label,
+				'event_callback': function() {
+					location.href = url;
+				}
+			});
+		}
+	});
+	$('a[href^="tel:"]').on('click', function(e){
+		if ( typeof gtag === 'function' ) {
+			e.preventDefault(); 
+			var url   = $(this).attr('href');
+			var label = $(this).text();
+			gtag( 'event', 'click', {
+				'event_category': 'link',
+				'event_label'   : label,
+				'event_callback': function() {
+					location.href = url;
+				}
+			});
+		}
+	});
+	$('a[href^="mailto:"]').on('click', function(e){
+		if ( typeof gtag === 'function' ) {
+			e.preventDefault(); 
+			var url   = $(this).attr('href');
+			var label = $(this).text();
+			gtag( 'event', 'click', {
+				'event_category': 'link',
+				'event_label'   : label,
+				'event_callback': function() {
+					location.href = url;
+				}
+			});
+		}
+	});
+
+
+	/*
+	/*	スマートフォンナビゲーション
+	*/
+
+	// 変数定義
+	var $spNav = $('.sp-nav'),
+		$spNavButton = $('.sp-nav-button'),
+		$spNavClose = $('.sp-nav-close'),
+		activeClass = '-active';
+
+	// メニューボタン押下時
+	$spNavButton.click(function(){
+		$spNav.addClass(activeClass);
+		$spNavButton.addClass(activeClass).bind('click', spNavClose);
+		return false;
+	});
+
+	// ページ移動orメニュー閉じるボタン押下時
+	window.onunload = spNavClose;
+	window.onpagehide = spNavClose;
+	$spNavClose.click(function(){ spNavClose(); });
+	function spNavClose(ret){
+		$spNav.removeClass(activeClass);
+		$spNavButton.removeClass(activeClass).unbind('click', spNavClose);
+		if( ret === undefined ) return false;
+	}
+	
+	// ナビゲーション fixed
+	$(function() {
+	  var $win = $(window),
+	      $main = $('main'),
+	      $nav = $('.sp-nav-button-wrap'),
+	      $logo = $('.sp-header .logo'),
+	      navHeight = $nav.outerHeight(),
+	      navPos = 50, //$nav.offset().top,
+	      fixedClass = 'is-fixed';
+
+	  $win.on('load scroll', function() {
+	    var value = $(this).scrollTop();
+	    if ( value > navPos ) {
+	      $nav.addClass(fixedClass);
+	      $logo.addClass(fixedClass);
+	    } else {
+	      $nav.removeClass(fixedClass);
+	      $logo.removeClass(fixedClass);
+	    }
+	  });
+	});
+
+
+	/*
+	/*	画像切り替え
+	/*	http://www.tam-tam.co.jp/tipsnote/javascript/post8851.html
+	*/
+	var $elem = $('.js-image-switch');
+	var sp = '_sp.';
+	var pc = '_pc.';
+	var replaceWidth = 768;
+	function imageSwitch() {
+		var windowWidth = parseInt($(window).width());
+		$elem.each(function() {
+			var $this = $(this);
+			if(windowWidth >= replaceWidth) {
+				$('body').removeClass('sp').addClass('pc');
+				$this.attr('src', $this.attr('src').replace(sp, pc));
+			} else {
+				$('body').removeClass('pc').addClass('sp');
+				$this.attr('src', $this.attr('src').replace(pc, sp));
+			}
+		});
+	}
+	imageSwitch();
+
+
+	/*
+	/*	リサイズ検知
+	*/
+	var resizeTimer;
+	$(window).on('resize', function() {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() {
+			imageSwitch();
+		}, 200);
+	});
+
+	
+	/*
+	/*	a-blog cms 調整
+	*/
+
+	// 管理メニュー
+	$('.site-content').prepend($('#adminBox'));
+
+	// 見出しのデザイン修正
+	$('.acms-entry .h4-a').each(function(){
+		$(this).wrapInner('<span>');
+	});
+
+	// 関連記事のdiv
+	if( ! $('.related-article>*').length > 0 ) {
+		$('.related-article').remove();
+	}
+
+
+	// 編集画面に追加
+	// ACMS.Ready(function(){
+	//   ACMS.Config.LiteEditorConf.btnOptions.splice(1,1);
+	//   ACMS.Config.LiteEditorConf.btnOptions.push(
+	// 		{
+	// 		label: '<span class="color-red"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-red',
+	// 		group: 'color'
+	//     }, 
+	//     {
+	// 		label: '<span class="color-orange"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-orange',
+	// 		group: 'color'
+	//     }, 
+	//     {
+	// 		label: '<span class="color-green"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-green',
+	// 		group: 'color'
+	//     }, 
+	//     {
+	// 		label: '<span class="color-blue"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-blue',
+	// 		group: 'color'
+	//     }, 
+	//     {
+	// 		label: '<span class="color-pink"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-pink',
+	// 		group: 'color'
+	//     }, 
+	//     {
+	// 		label: '<span class="color-gray"></span>',
+	// 		tag: 'span',
+	// 		className: 'color-gray',
+	// 		group: 'color'
+	//     }
+	//   );
+	// });
+
+
+});
+
+if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
+$(document).ready(function(){
+	//関連リンクスライダー
+	$('.banner-slide').slick({
+		autoplay: true,
+		dots: true,
+	});
+});
+}
+
+	// Google翻訳
+	ACMS.Ready(function(){
+		setTimeout(function(){
+			$('.goog-te-menu-value').removeAttr('target');
+		}, 1000);
+	});
+

@@ -1,0 +1,23 @@
+{
+  "actualRuns": [
+    {
+      "command": "python3 -B tools/national/assemble.py --out /tmp/issue7-final-review-ledger.json",
+      "exitCode": 0
+    },
+    {
+      "command": "mise exec -- go run ./cmd/builddata -places /tmp/issue7-final-review-ledger.json -review-list data/evidence/national/list-source/gkp-20261105.html -as-of 2026-11-05 -out /tmp/issue7-final-review-generated",
+      "exitCode": 0,
+      "output": "カード 1313、場所 1735、対応 1825、ピン map[lid:1309 place:974]"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/national -p test_assemble.py",
+      "exitCode": 0,
+      "tests": 13,
+      "result": "OK"
+    }
+  ],
+  "notes": [
+    "verify.py development initially failed on wrong pin field, omitted Koshin explanation correction, and generated manifest pathname assumption; corrected reviewer script only. All final checks passed.",
+    "No frontend test/build rerun; parent-reported checks are distinguished in report."
+  ]
+}

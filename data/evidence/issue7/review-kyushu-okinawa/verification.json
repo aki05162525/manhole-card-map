@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-05T06:46:53.812119+00:00",
+  "candidateCount": 9,
+  "addressCorrectionCount": 1,
+  "p05ExactMatches": 7,
+  "htmlExactMatches": 2,
+  "EvidenceStrictDecodePasses": 10,
+  "EvidenceSemanticFailuresBeforeCorrection": 10,
+  "EvidenceSemanticPassesAfterDateCorrection": 10,
+  "originalSnapshotHashes": {
+    "data/evidence/national/official-facility-index/p05.html": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9",
+    "data/evidence/national/official-facility-index/p05-license.html": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1",
+    "data/evidence/national/official-facility-index/p05-spec.pdf": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e",
+    "data/evidence/issue5/review-west-south/current-terms.html": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42",
+    "data/evidence/issue5/chubu/P05-22_GML.zip": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "data/evidence/issue7/kyushu-okinawa/e7b0e44616d0b436ca8c1fe4.html": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b",
+    "data/evidence/issue7/kyushu-okinawa/868aec166570318ce8765557.html": "868aec166570318ce87655578dea9b2f1af94e53a101645ee386af20e4ac0033",
+    "data/evidence/issue7/kyushu-okinawa/511982aa6b69f8794afea29e.html": "511982aa6b69f8794afea29e7baca10cb7aa235872840a1eb0df051c02940ee4",
+    "data/evidence/issue7/kyushu-okinawa/81bb60b63e285f51e2ba3ed4.html": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+    "data/evidence/issue7/kyushu-okinawa/74c5d817e781a5f9bf288c9b.html": "74c5d817e781a5f9bf288c9b78529cc67ab1674f3a98e9fb0c6682999ac28ef9",
+    "data/evidence/issue7/kyushu-okinawa/4358f0701f33575a3701e26b.html": "4358f0701f33575a3701e26b3695a7b43895df4d6d1cdbfb3832054265d1834f",
+    "data/evidence/issue7/kyushu-okinawa/daf037a730652526782cf5f5.html": "daf037a730652526782cf5f576f74ab607d44e32bc5dd17d7937adc81bb5dd14",
+    "data/evidence/issue7/kyushu-okinawa/e5300a3525bf78a44da99c39.html": "e5300a3525bf78a44da99c39501f333cacacc2f1353b4f8db4eb4bd4d7e36aaa",
+    "data/evidence/issue7/kyushu-okinawa/52deb1a5e97008c86ef93511.html": "52deb1a5e97008c86ef9351102c0121b0fe21680f296bcacf5c1de161fdb67a9",
+    "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94"
+  },
+  "baselineDeclaredHashes": {
+    "ledger.json": true,
+    "full.json": true,
+    "assignments.json": true
+  },
+  "protectedInputFilesChecked": 224,
+  "protectedInputChanges": []
+}

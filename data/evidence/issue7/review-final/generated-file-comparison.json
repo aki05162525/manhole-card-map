@@ -1,0 +1,52 @@
+[
+  {
+    "file": "details.json",
+    "sha256": "e5515e1178c412a27c9f54e9c9a1411bd8f6f6d0944a13f0badf64b25011ccbb",
+    "byteMatches": {
+      "web/public/data": true,
+      "web/dist/data": true
+    },
+    "normalizedMatch": true,
+    "normalization": null
+  },
+  {
+    "file": "full.json",
+    "sha256": "d2934e149d7d04676017560c9d1689bd167e676afb1f62e713afca79a70cbeb5",
+    "byteMatches": {
+      "web/public/data": true,
+      "web/dist/data": true
+    },
+    "normalizedMatch": true,
+    "normalization": null
+  },
+  {
+    "file": "manifest.json",
+    "sha256": "cb2304127259b808c5c1ede68b169124226c2a7ebde9cd2c2a66ee46750ee0a3",
+    "byteMatches": {
+      "web/public/data": false,
+      "web/dist/data": false
+    },
+    "normalizedMatch": true,
+    "normalization": "only ledger input pathname"
+  },
+  {
+    "file": "pins.json",
+    "sha256": "14fb25c8ec3d4214c44c7cfeea06beb6f5ee93fd4fa62f754e5d7f29bbc415c4",
+    "byteMatches": {
+      "web/public/data": true,
+      "web/dist/data": true
+    },
+    "normalizedMatch": true,
+    "normalization": null
+  },
+  {
+    "file": "quality.json",
+    "sha256": "ff9a9899b007cb1de6e825c590685d2ffbb371b7fff1363f62b8853c16e871af",
+    "byteMatches": {
+      "web/public/data": true,
+      "web/dist/data": true
+    },
+    "normalizedMatch": true,
+    "normalization": null
+  }
+]

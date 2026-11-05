@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "candidateNumericChecks": 7,
+  "additionalHadanoNumericCheck": 1,
+  "allIds": 64,
+  "hashedSources": 418,
+  "correctionOldMatches": 10,
+  "additionalCorrectionOldMatches": 11,
+  "protectedFilesUnchanged": 236,
+  "goProbe": "passed: 7 candidates + Hadano additional candidate",
+  "codeSHA256": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695",
+  "originalScriptsExecuted": false,
+  "textualSourceChecks": 16
+}

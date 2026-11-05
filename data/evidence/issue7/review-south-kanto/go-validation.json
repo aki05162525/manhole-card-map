@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "command": "GOCACHE=<review evidence dir>/.go-cache GOPATH=<review evidence dir>/.go-path GOTOOLCHAIN=local GOENV=off go run data/evidence/issue7/review-south-kanto/evidence-probe.go",
+  "candidateEvidenceCount": 7,
+  "additionalHadanoEvidenceCount": 1,
+  "strictDecode": "passed for all 8",
+  "validateEvidence": "passed for all 8",
+  "source": "Evidence struct and validateEvidence copied verbatim from cmd/builddata/ledger.go; hash implemented as SHA256",
+  "stdout": "0 passed\n1 passed\n2 passed\n3 passed\n4 passed\n5 passed\n6 passed\n7 passed\n"
+}

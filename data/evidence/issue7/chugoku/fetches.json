@@ -1,0 +1,1465 @@
+[
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/renofa-manholecard.html",
+    "facilityIds": [
+      "facility:cs-09ae420fdee6e6c661"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.248814+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/renofa-manholecard.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-de418ac533e9269a3869.html",
+    "snapshotSHA256": "de418ac533e9269a3869ca9b8e1ec402416fb3d649b16a2a52f1b7ad85ee7f88",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/site/soccer-exchange-park/",
+    "facilityIds": [
+      "facility:cs-09ae420fdee6e6c661"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.249563+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/site/soccer-exchange-park/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0eb072a965e51a142821.html",
+    "snapshotSHA256": "62a508e28061cee6e8a2f1c2f8cb782e6bb0c066db153b65f038036df535bef1",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+    "facilityIds": [
+      "facility:cs-0b31ddb7a9bb8b0617"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.249977+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b01e05be8f6f1e5f261f.html",
+    "snapshotSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.okayama-kanko.jp/spot/detail_11780.html",
+    "facilityIds": [
+      "facility:cs-0b31ddb7a9bb8b0617"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.250448+00:00",
+    "status": 200,
+    "finalUrl": "https://www.okayama-kanko.jp/spot/detail_11780.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/e92e3b3b610359818f56.html",
+    "snapshotSHA256": "fc551f428961f8b637c36e4fe7975e3fd9e5e1b468a1af38f3b7cc0fbfe24ff2"
+  },
+  {
+    "url": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+    "facilityIds": [
+      "facility:cs-0bd3389d5748cea3af",
+      "facility:cs-83c9c4a0ad77ff4af0",
+      "facility:cs-db60eef36c8f3b518b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.251208+00:00",
+    "status": 200,
+    "finalUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+    "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://michinoeki-aio.com/access/",
+    "facilityIds": [
+      "facility:cs-0bd3389d5748cea3af"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.251858+00:00",
+    "status": 200,
+    "finalUrl": "https://michinoeki-aio.com/access/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/183860d85b69afb75899.html",
+    "snapshotSHA256": "757ae6c767bc9be922239c064173e1d6c8ae4bb982fd0132f2b67734f406a93b",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.town.nagi.okayama.jp/gyousei/manhorukado.html",
+    "facilityIds": [
+      "facility:cs-10b6ee9f630ef7203b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.253331+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nagi.okayama.jp/gyousei/manhorukado.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-708f3573e10e133fc1c8.html",
+    "snapshotSHA256": "708f3573e10e133fc1c8b94117c1a87f4656c0cdcd36a10ce8bf00f9806f4023",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
+    "facilityIds": [
+      "facility:cs-10b6ee9f630ef7203b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.253910+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3ae04d9e2c31bfc5435e.html",
+    "snapshotSHA256": "3ae04d9e2c31bfc5435eadef33d51c1239a196224fa4f04b9d35b92a995052cb",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+    "facilityIds": [
+      "facility:cs-29d39832b41529a063",
+      "facility:cs-37f1eda15ce4d18414",
+      "facility:cs-424799903d1a9c1291",
+      "facility:cs-d79e170069f79cc7d2",
+      "facility:ws-811926f2652d6640dc",
+      "facility:ws-ab79fd8795933123c5",
+      "facility:ws-f0d5e530cedd97b88a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.981081+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+    "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+    "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.mizurin.co.jp/passenger/routemap.html",
+    "facilityIds": [
+      "facility:cs-29d39832b41529a063",
+      "facility:cs-37f1eda15ce4d18414"
+    ],
+    "fetchedAt": "2026-11-05T06:28:00.989936+00:00",
+    "status": 200,
+    "finalUrl": "https://www.mizurin.co.jp/passenger/routemap.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+    "snapshotSHA256": "9a1c8b5deed3cdc2bd601966a37a5d10742439e936581c09cf4d382e81cd1a94",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/",
+    "facilityIds": [
+      "facility:cs-2a5031a7a254d9bdbd"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.116505+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/",
+    "snapshotPath": "data/evidence/issue7/chugoku/4029dd01f79210fe9dc6.html",
+    "snapshotSHA256": "3b79a9249a60b98accd4054c65e8e5b2495f458ab27f760bfb2acef670098078"
+  },
+  {
+    "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
+    "facilityIds": [
+      "facility:cs-2a5031a7a254d9bdbd"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.149743+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
+    "snapshotPath": "data/evidence/issue7/chugoku/ea1e05b8a060006fb91d.html",
+    "snapshotSHA256": "74da762add701b26f4dd3563fca84d23a3a34dd07132a0b815db322e0cb27a53"
+  },
+  {
+    "url": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+    "facilityIds": [
+      "facility:cs-31ca2ca80f991e84b4",
+      "facility:cs-8dd78605b23dd55e25"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.159154+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+    "snapshotSHA256": "d697307cc90dd5bcb98de05fd2d37e06d52a2fb7835e05eb49e05fb216a5b6da",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://japan-yakage.jp/archives/spot/detail/9340",
+    "facilityIds": [
+      "facility:cs-31ca2ca80f991e84b4"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.244489+00:00",
+    "status": 200,
+    "finalUrl": "https://japan-yakage.jp/archives/spot/detail/9340",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/47df3388d776a26850d7.html",
+    "snapshotSHA256": "2795addf4eb9449b4c21e017c38da40686187d810cbb2449216e39a3df137ad2",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.fuchu.hiroshima.jp/shisei/ippangyosei/8481.html",
+    "facilityIds": [
+      "facility:cs-3451fd3f7466c85bb5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.269830+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.fuchu.hiroshima.jp/shisei/ippangyosei/8481.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/9d55a40d34dfd23e1250.html",
+    "snapshotSHA256": "6aa5d10b5c13e088babd15d2677c9b3c9e76e6fcffb11f070ecbe5eb8ebee110"
+  },
+  {
+    "url": "https://fuchu-kanko.jp/ufaqs/ufaq-451/",
+    "facilityIds": [
+      "facility:cs-3451fd3f7466c85bb5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.541846+00:00",
+    "status": 200,
+    "finalUrl": "https://fuchu-kanko.jp/ufaqs/ufaq-451/",
+    "snapshotPath": "data/evidence/issue7/chugoku/58fc78a27f889e682899.html",
+    "snapshotSHA256": "48a1d610207b9b219d02c99e7ad2bbc6e6bbd257569a8629cb518a8df85c8ca0"
+  },
+  {
+    "url": "http://www.city.maniwa.lg.jp/soshiki/147/55500.html",
+    "facilityIds": [
+      "facility:cs-3f5f3971d581f490c7"
+    ],
+    "fetchedAt": "2026-11-05T06:28:01.569525+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.maniwa.lg.jp/soshiki/147/55500.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9b7dbb8d66073e1c037a.html",
+    "snapshotSHA256": "9b7dbb8d66073e1c037ac01943d6d2f432e6b94c8b6d5c7373484983c2a486e3",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.okayama-kanko.jp/spot/detail_16167.html",
+    "facilityIds": [
+      "facility:cs-3f5f3971d581f490c7"
+    ],
+    "fetchedAt": "2026-11-05T06:28:02.352860+00:00",
+    "status": 200,
+    "finalUrl": "https://www.okayama-kanko.jp/spot/detail_16167.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eb8fa7d3ac9730641c73.html",
+    "snapshotSHA256": "f9c14f8131caf68f54f114f1c79afb8a3e1eadfd17cf3ba4aed2d88682b534c7",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://greenable-hiruzen.co.jp/facility/",
+    "facilityIds": [
+      "facility:cs-3f5f3971d581f490c7"
+    ],
+    "fetchedAt": "2026-11-05T06:28:02.399321+00:00",
+    "status": 200,
+    "finalUrl": "https://greenable-hiruzen.co.jp/facility/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/1e834e2ef2b6829bcca0.html",
+    "snapshotSHA256": "d6462164762751fc3c9d9ceb48df34cbab8bd275f858bffd60af056b7f2eb531",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.okayama-kanko.jp/spot/detail_10300.html",
+    "facilityIds": [
+      "facility:cs-424799903d1a9c1291"
+    ],
+    "fetchedAt": "2026-11-05T06:28:02.426760+00:00",
+    "status": 200,
+    "finalUrl": "https://www.okayama-kanko.jp/spot/detail_10300.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/7a85bd1b3ca90c368403.html",
+    "snapshotSHA256": "927ea97263770af036e16e36e8be3e2565aa1f201f8f9bcd1bb8af6001489c32"
+  },
+  {
+    "url": "https://www.city.hiroshima.lg.jp/site/gesuido/304786.html",
+    "facilityIds": [
+      "facility:cs-42df9ae55a2417f861",
+      "facility:cs-a24ab0817e243a1ffb"
+    ],
+    "fetchedAt": "2026-11-05T06:28:02.484877+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hiroshima.lg.jp/living/suido-gesuido/1005966/1026325/1026326/1010193.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/91f9069464eb6a11adfa.html",
+    "snapshotSHA256": "905dce058cf47e8a16f875b1652f097ccbbb72182e4ee2eeab8a3157c996c25d"
+  },
+  {
+    "url": "https://hiroshimacvb.jp/venues-accomodation/1702.html",
+    "facilityIds": [
+      "facility:cs-42df9ae55a2417f861"
+    ],
+    "fetchedAt": "2026-11-05T06:28:02.598946+00:00",
+    "status": 200,
+    "finalUrl": "https://hiroshimacvb.jp/venues-accomodation/1702.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ed784e13a8dfaf20a172.html",
+    "snapshotSHA256": "f251a51fa6b7e3a1b6923d54da3d1f51697845d4651c7128273a67898b477b67",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.akitakata.jp/ja/shisei/section/syoukou/c120/",
+    "facilityIds": [
+      "facility:cs-4418dd72a69888d0bf"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.147325+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/c120/",
+    "snapshotPath": "data/evidence/issue7/chugoku/a40098a460243d0b097d.html",
+    "snapshotSHA256": "4f1829c8a96cd884e238d9831b2a057954c3003d2ed1bdbf730cc7a9bad0b22b"
+  },
+  {
+    "url": "https://toujimura.com/access/",
+    "facilityIds": [
+      "facility:cs-4418dd72a69888d0bf"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.194371+00:00",
+    "status": 200,
+    "finalUrl": "https://toujimura.com/access/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d569d7ba6c8f51c2e386.html",
+    "snapshotSHA256": "2e4d3caed4dda43280496fb6b136a61f5df0353bf5bd3f1b3d80f72477830e92",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://toujimura.com/cmn/js/map.js",
+    "facilityIds": [
+      "facility:cs-4418dd72a69888d0bf"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.301084+00:00",
+    "status": 200,
+    "finalUrl": "https://toujimura.com/cmn/js/map.js",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d53928e374fa19dfd32c.html",
+    "snapshotSHA256": "aaaedec05768a785ca595e478ded45a6956ace6184cb4147aa7c3ac26db8e424",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587.html",
+    "facilityIds": [
+      "facility:cs-442369a0c345a4ef96",
+      "facility:cs-7940cff6f6fa056d34"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.428521+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587",
+    "snapshotPath": "data/evidence/issue7/chugoku/37107e02a7b7b846f195.html",
+    "snapshotSHA256": "be240df40407332a94dda88a5c89a56ddd39cb801d1d84e25eff7ce5cc5287db"
+  },
+  {
+    "url": "https://eki.jr-odekake.net/top?id=0650414",
+    "facilityIds": [
+      "facility:cs-442369a0c345a4ef96"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.511585+00:00",
+    "status": 200,
+    "finalUrl": "https://eki.jr-odekake.net/top?id=0650414",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0c086d003ed50f2e6181.html",
+    "snapshotSHA256": "6bb0c4eaf6977d4951183308e19e7403465595c0957a319be9d3127233faec95",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "http://www.city.kasaoka.okayama.jp/soshiki/34/11538.html",
+    "facilityIds": [
+      "facility:cs-56534586c259fb790a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.705181+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kasaoka.okayama.jp/soshiki/34/11538.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f26e69147c49076f455b.html",
+    "snapshotSHA256": "f26e69147c49076f455b9dad432f1b95b92a33554a5321775bb447df1526b2d4",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.kasaoka.okayama.jp/site/kabutogani/20197.html",
+    "facilityIds": [
+      "facility:cs-56534586c259fb790a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.842791+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kasaoka.okayama.jp/site/kabutogani/20197.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3dc653d1ea2393a78264.html",
+    "snapshotSHA256": "99544952d45ea9a7332043f3d5dfa2da508bb46c34b32f8235863426beade126",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.shimonoseki.lg.jp/site/water/5654.html",
+    "facilityIds": [
+      "facility:cs-56c4b3109bfbb9d36d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:03.877235+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.shimonoseki.lg.jp/site/water/5654.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-cdc3773c32fe39703d38.html",
+    "snapshotSHA256": "cdc3773c32fe39703d3899817edc35e6bb81b70aed364cab7ca638599f15226f",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://yamaguchi-tourism.jp/spot/detail_11060.html",
+    "facilityIds": [
+      "facility:cs-56c4b3109bfbb9d36d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:04.635022+00:00",
+    "status": 200,
+    "finalUrl": "https://yamaguchi-tourism.jp/spot/detail_11060.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/ba14c6744f88d642d973.html",
+    "snapshotSHA256": "35c941bf61ea3ba2059b88e4bda7e9762984fd4e42efb37622f82042632e289f"
+  },
+  {
+    "url": "https://s-kanrikousha.com/teienaccess.html",
+    "facilityIds": [
+      "facility:cs-56c4b3109bfbb9d36d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:04.709659+00:00",
+    "status": 200,
+    "finalUrl": "https://s-kanrikousha.com/teienaccess.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95d724149b4d0e2941f4.html",
+    "snapshotSHA256": "c000fc74758a127134f4565a0c1876ac408725efc24203f28e39466a3663adbe",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://cs-akiota.or.jp/news/originalmanhole-card/",
+    "facilityIds": [
+      "facility:cs-5c25582e543cde5044"
+    ],
+    "fetchedAt": "2026-11-05T06:28:04.796758+00:00",
+    "status": 200,
+    "finalUrl": "https://cs-akiota.or.jp/news/originalmanhole-card/",
+    "snapshotPath": "data/evidence/issue7/chugoku/5dd7ebf8a5633cb6142a.html",
+    "snapshotSHA256": "52bdada91f22cd81a0796c9b2e371176cefe0599cfdaae95a95efbcea1e71d41"
+  },
+  {
+    "url": "https://dive-hiroshima.com/explore/2/",
+    "facilityIds": [
+      "facility:cs-5c25582e543cde5044"
+    ],
+    "fetchedAt": "2026-11-05T06:28:04.869372+00:00",
+    "status": 200,
+    "finalUrl": "https://dive-hiroshima.com/explore/2/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8d1c41f5e8edb8961802.html",
+    "snapshotSHA256": "232f7b89ea43e976f759f14754673954b7aad20013cb1a65bd038e75a7bef3fd",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.town.misasa.tottori.jp/315/319/329/35761.html",
+    "facilityIds": [
+      "facility:cs-5c5cec6c482042291d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:04.904525+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.misasa.tottori.jp/315/319/329/35761.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f4bcf7cd7497d2fec147.html",
+    "snapshotSHA256": "f4bcf7cd7497d2fec14742318eb21972d048b6fd5486240edc53b50822e2f6f2",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://misasaonsen.jp/access/",
+    "facilityIds": [
+      "facility:cs-5c5cec6c482042291d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:05.286602+00:00",
+    "status": 200,
+    "finalUrl": "https://misasaonsen.jp/access/",
+    "snapshotPath": "data/evidence/issue7/chugoku/7e3157a0607f5ba1a9f5.html",
+    "snapshotSHA256": "665dbc6e1564f3e7fb241d1c9b56cd498588d6c53d81ee969b9cd4cc34d699ec"
+  },
+  {
+    "url": "https://www.town.waki.lg.jp/soshiki/3/186.html",
+    "facilityIds": [
+      "facility:cs-7234bdb6d4605a7665"
+    ],
+    "fetchedAt": "2026-11-05T06:28:06.336775+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.waki.lg.jp/soshiki/3/186.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-00f7d471008d6cc2b898.html",
+    "snapshotSHA256": "00f7d471008d6cc2b898cfd024c936a3c03ebb80e9a6304206420067a50c0d3d",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.hachigamine-grand-park.com/access/",
+    "facilityIds": [
+      "facility:cs-7234bdb6d4605a7665"
+    ],
+    "fetchedAt": "2026-11-05T06:28:06.649140+00:00",
+    "status": 200,
+    "finalUrl": "https://www.hachigamine-grand-park.com/access/",
+    "snapshotPath": "data/evidence/issue7/chugoku/ca0c09308cfb129cc265.html",
+    "snapshotSHA256": "133502b55ef14713a74402f2dba51296e602c2ae73d81cf98e11b16caa6ff7f7"
+  },
+  {
+    "url": "https://tsuwano-kanko.net/manholecard/",
+    "facilityIds": [
+      "facility:cs-7851aeb9671340371a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:07.074435+00:00",
+    "status": 200,
+    "finalUrl": "https://tsuwano-kanko.net/manholecard/",
+    "snapshotPath": "data/evidence/issue7/chugoku/eae552d9da13a5042f9c.html",
+    "snapshotSHA256": "45944769c1d487eba3efcbc953f3eb728b63540df7f8078984a6d224417e5ee0"
+  },
+  {
+    "url": "https://tsuwano-kanko.net/category1/loca/",
+    "facilityIds": [
+      "facility:cs-7851aeb9671340371a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:07.442592+00:00",
+    "status": 200,
+    "finalUrl": "https://tsuwano-kanko.net/category1/loca/",
+    "snapshotPath": "data/evidence/issue7/chugoku/323fd82b11177a1cfc76.html",
+    "snapshotSHA256": "e5bfc315091b54f0e8b2e69fcd9a63574e9107ffcf5a3914c3e93b5e627fa03a"
+  },
+  {
+    "url": "https://yamaguchi-tourism.jp/event/detail_19522.html",
+    "facilityIds": [
+      "facility:cs-78d5b7e93bce40b71b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:07.578042+00:00",
+    "status": 200,
+    "finalUrl": "https://yamaguchi-tourism.jp/event/detail_19522.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/d845c068c056d2defeb4.html",
+    "snapshotSHA256": "adc2ccae2d6850060b29decdda1f4add07fcec2aa62a72d9092a6e2b6b313675"
+  },
+  {
+    "url": "https://www.akiyoshidai-park.com/spot/akiyoshi-do.html",
+    "facilityIds": [
+      "facility:cs-78d5b7e93bce40b71b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:07.669763+00:00",
+    "status": 200,
+    "finalUrl": "https://www.akiyoshidai-park.com/spot/akiyoshi-do.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/cd92734831630416e8e1.html",
+    "snapshotSHA256": "31aee417b2fb28b2658f02c51211fc784913078ed20af4ad1816431e3eeb3a44",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+    "facilityIds": [
+      "facility:cs-792aab26713d312890",
+      "facility:cs-eb39ed62b47f9f29ba"
+    ],
+    "fetchedAt": "2026-11-05T06:28:07.843255+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+    "snapshotSHA256": "9f0cc695bf168620d50d8697eced8ab67a916685965399a4c1fb582970b0a77c",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://dive-hiroshima.com/explore/2938/",
+    "facilityIds": [
+      "facility:cs-792aab26713d312890"
+    ],
+    "fetchedAt": "2026-11-05T06:28:08.258715+00:00",
+    "status": 200,
+    "finalUrl": "https://dive-hiroshima.com/explore/2938/",
+    "snapshotPath": "data/evidence/issue7/chugoku/281aa736ab3e44818f4e.html",
+    "snapshotSHA256": "5071dfc5d8e8b6d1e6836f8d97bf80b9b58baaf2d603da16b3da1aca471b4c0c"
+  },
+  {
+    "url": "https://www.niimi.gr.jp/",
+    "facilityIds": [
+      "facility:cs-7940cff6f6fa056d34"
+    ],
+    "fetchedAt": "2026-11-05T06:28:08.731789+00:00",
+    "status": 200,
+    "finalUrl": "https://www.niimi.gr.jp/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/24b43de9865af9b77f1d.html",
+    "snapshotSHA256": "0c9b2491d56071b503de529703bf564b4b516818788df74607f79169b44b3f37",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+    "facilityIds": [
+      "facility:cs-795a18c5cddf2431eb"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.011485+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/1354af2b442acd7b70ea.html",
+    "snapshotSHA256": "6159f12455d58b43ad264b87da26fcc4de1062ede1ded73fd9b7dd25017c37e0"
+  },
+  {
+    "url": "https://dive-hiroshima.com/explore/341/",
+    "facilityIds": [
+      "facility:cs-795a18c5cddf2431eb"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.502189+00:00",
+    "status": 200,
+    "finalUrl": "https://dive-hiroshima.com/explore/341/",
+    "snapshotPath": "data/evidence/issue7/chugoku/49e5f34f6d0f6c62c098.html",
+    "snapshotSHA256": "ff175cd406f95b26fd074045e3e5f9e84ed105ec59ecf055826c097db37d9002"
+  },
+  {
+    "url": "https://water-city-yamaguchi.com/contact/",
+    "facilityIds": [
+      "facility:cs-83c9c4a0ad77ff4af0"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.562903+00:00",
+    "status": 200,
+    "finalUrl": "https://water-city-yamaguchi.com/contact/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/87f6c7de1cd62d5bf09b.html",
+    "snapshotSHA256": "0f5562cb884a5c30d277d309e3a6e6b1719c78069a8ee8326d324520aeb4c72d",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://water-city-yamaguchi.com/access/",
+    "facilityIds": [
+      "facility:cs-83c9c4a0ad77ff4af0"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.673483+00:00",
+    "status": 200,
+    "finalUrl": "https://water-city-yamaguchi.com/access/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95390f562f86ddd46240.html",
+    "snapshotSHA256": "c2895b5c34af4dc4b16a8ba0b66842cb56eb79352ebedfee215f3390bba79570",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+    "facilityIds": [
+      "facility:cs-85f80ce977bcdf56d4",
+      "facility:cs-e0dc2b70dac9632686"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.754253+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+    "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.setouchi.lg.jp/map/405.html",
+    "facilityIds": [
+      "facility:cs-85f80ce977bcdf56d4"
+    ],
+    "fetchedAt": "2026-11-05T06:28:09.794752+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/map/405.html",
+    "snapshotPath": "data/evidence/issue5/west-south/570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f.bin",
+    "snapshotSHA256": "570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.setouchi.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "facilityIds": [
+      "facility:cs-85f80ce977bcdf56d4"
+    ],
+    "fetchedAt": "2026-11-05T06:28:10.396727+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c514bbde05832eb12deb.html",
+    "snapshotSHA256": "a62b83d13bc35abe58349072a188c23625e8b11185ddf11af41656082fc07c38",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "http://www.town.satosho.okayama.jp/soshiki/6/9634.html",
+    "facilityIds": [
+      "facility:cs-8b8fd2a944840cadfd"
+    ],
+    "fetchedAt": "2026-11-05T06:28:10.399962+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.satosho.okayama.jp/soshiki/6/9634.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-e048bdcbce1615d62e1c.html",
+    "snapshotSHA256": "e048bdcbce1615d62e1ce74876f0733e40f70a975e8686a6552b0110f668f97c",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.town.satosho.okayama.jp/site/tsubaki/",
+    "facilityIds": [
+      "facility:cs-8b8fd2a944840cadfd"
+    ],
+    "fetchedAt": "2026-11-05T06:28:10.583155+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.satosho.okayama.jp/site/tsubaki/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/bf329d80ba734f5beddf.html",
+    "snapshotSHA256": "8e58cb4dea7bd3c868bc48b2e61f897da9e6b051e0260faff39f78cbdd82bb94",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.okayama-kanko.jp/spot/detail_11648.html",
+    "facilityIds": [
+      "facility:cs-8b8fd2a944840cadfd"
+    ],
+    "fetchedAt": "2026-11-05T06:28:11.263283+00:00",
+    "status": 200,
+    "finalUrl": "https://www.okayama-kanko.jp/spot/detail_11648.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/cb11c6df15c273a713f1.html",
+    "snapshotSHA256": "fb4a48472ca1c6cf35577b682ed2f830593b2343380f37e5fba0bb3730504020"
+  },
+  {
+    "url": "https://www.city.ube.yamaguchi.jp/kurashi/gasgesui/1015032/1015277/1015109.html",
+    "facilityIds": [
+      "facility:cs-8d0cee31bd1bcec521"
+    ],
+    "fetchedAt": "2026-11-05T06:28:11.739869+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.ube.yamaguchi.jp/kurashi/gasgesui/1015032/1015277/1015109.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-1313a07a735e29268db9.html",
+    "snapshotSHA256": "1313a07a735e29268db9e2a583f514f31132b3f42e5377587c2d45b3682ac811",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.tokiwapark.jp/etc/kosuihall.html",
+    "facilityIds": [
+      "facility:cs-8d0cee31bd1bcec521"
+    ],
+    "fetchedAt": "2026-11-05T06:28:11.762418+00:00",
+    "status": 200,
+    "finalUrl": "https://www.tokiwapark.jp/etc/kosuihall.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/fa43d9b465c17ea87fc4.html",
+    "snapshotSHA256": "06cf96d4e58ca38daef99f6ce8dd11d788b042c873d6c788f8a21935c87de490",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://yakagemachiya.information.jp/shisetsuannai/",
+    "facilityIds": [
+      "facility:cs-8dd78605b23dd55e25"
+    ],
+    "fetchedAt": "2026-11-05T06:28:11.805304+00:00",
+    "status": 200,
+    "finalUrl": "https://yakagemachiya.information.jp/shisetsuannai/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3d39c4d8c7a361b0d785.html",
+    "snapshotSHA256": "517c9e50f65b480620fa3acb2b94e2ead8bb6abdb615d8908ae1e2baf30b32ea",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+    "facilityIds": [
+      "facility:cs-9158e6a0fc7222e6ab",
+      "facility:ws-db1f68e131a3fd939d"
+    ],
+    "fetchedAt": "2026-11-05T06:28:11.810328+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/e2b7f711ade6b80ca544.html",
+    "snapshotSHA256": "c6f53b6238df8b9479437085b284b922ee28df4fc97dcd4dfd89a37c788b7bcb"
+  },
+  {
+    "url": "https://www.kankou-hamada.org/tourisminfo",
+    "facilityIds": [
+      "facility:cs-9158e6a0fc7222e6ab"
+    ],
+    "fetchedAt": "2026-11-05T06:28:12.146233+00:00",
+    "status": 200,
+    "finalUrl": "https://kankou-hamada.or.jp/tourisminfo",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-2f3444933a8b9df2f622.html",
+    "snapshotSHA256": "2f3444933a8b9df2f6225c6610c2da855b5183b1c8afd935fdba8fdca4788e97",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+    "facilityIds": [
+      "facility:cs-93e9b0b1e4bcb33b8e",
+      "facility:cs-a7982389d4085032f9"
+    ],
+    "fetchedAt": "2026-11-05T06:28:12.367443+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/b9a49e2c2e84f47e5141.html",
+    "snapshotSHA256": "69d8f7e331ed0164efe61e124196ce26571a86088b57297a7bf648f81cf0e945"
+  },
+  {
+    "url": "https://dive-hiroshima.com/explore/53/",
+    "facilityIds": [
+      "facility:cs-93e9b0b1e4bcb33b8e"
+    ],
+    "fetchedAt": "2026-11-05T06:28:13.366544+00:00",
+    "status": 200,
+    "finalUrl": "https://dive-hiroshima.com/explore/53/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ebaf988e8f3e910db30d.html",
+    "snapshotSHA256": "955cf3ead2f3b38f723c42e31c2d34191f45b12a92817d54a242e4f8c230faba",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://kure-trip.jp/spots/94",
+    "facilityIds": [
+      "facility:cs-93e9b0b1e4bcb33b8e"
+    ],
+    "fetchedAt": "2026-11-05T06:28:13.492219+00:00",
+    "status": 200,
+    "finalUrl": "https://kure-trip.jp/spots/94",
+    "snapshotPath": "data/evidence/issue7/chugoku/8a9ccc4025fd15ac8867.html",
+    "snapshotSHA256": "555fbb0498a3d7220de795b17639d31d915ff8580f7fb1a8605ac46fa41da145"
+  },
+  {
+    "url": "https://www.city.hiroshima.lg.jp/facility/port/1026902/1026904/1014527.html",
+    "facilityIds": [
+      "facility:cs-a24ab0817e243a1ffb"
+    ],
+    "fetchedAt": "2026-11-05T06:28:13.516053+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hiroshima.lg.jp/facility/port/1026902/1026904/1014527.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/1802aab38d725bc4e356.html",
+    "snapshotSHA256": "fdcd8f93b4f84a8387581c27673795c4f84e1a52d4dc971594ac86095fca9d15"
+  },
+  {
+    "url": "https://www.town.nishinoshima.shimane.jp/news/1786",
+    "facilityIds": [
+      "facility:cs-a5355105c733978fb2",
+      "facility:cs-d96f3a22bac31657b3"
+    ],
+    "fetchedAt": "2026-11-05T06:28:13.768577+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nishinoshima.shimane.jp/news/1786",
+    "snapshotPath": "data/evidence/issue7/chugoku/f2daaa25cd1813558f11.html",
+    "snapshotSHA256": "2adea02229aad5fb8c4eeed551845e0e7b8992547e2629e850f30aa71fdc42d4"
+  },
+  {
+    "url": "https://www.town.nishinoshima.shimane.jp/",
+    "facilityIds": [
+      "facility:cs-a5355105c733978fb2",
+      "facility:cs-d96f3a22bac31657b3"
+    ],
+    "fetchedAt": "2026-11-05T06:28:14.339562+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nishinoshima.shimane.jp/",
+    "snapshotPath": "data/evidence/issue7/chugoku/d304c05089e763c72bf1.html",
+    "snapshotSHA256": "22532596054c8427d2618d6f955d3415dc400f8ac94b8cf80fe29b4945240381"
+  },
+  {
+    "url": "https://rengadori.net/archives/shopinfo/%E8%A1%97%E3%81%8B%E3%81%A9%E5%B8%82%E6%B0%91%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC90",
+    "facilityIds": [
+      "facility:cs-a7982389d4085032f9"
+    ],
+    "fetchedAt": "2026-11-05T06:28:14.369589+00:00",
+    "status": 200,
+    "finalUrl": "https://rengadori.net/archives/shopinfo/%E8%A1%97%E3%81%8B%E3%81%A9%E5%B8%82%E6%B0%91%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC90",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/136a897963644be6102c.html",
+    "snapshotSHA256": "5bd49cb1a5b6905a9e7c3adbbff66d3cdc5c4d1900677202009074f1de09f135",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.water.matsue.shimane.jp/jogesuido/designmanhole/manhole-card.html",
+    "facilityIds": [
+      "facility:cs-ac2f433114644560e5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.218385+00:00",
+    "status": 200,
+    "finalUrl": "https://www.water.matsue.shimane.jp/jogesuido/designmanhole/manhole-card.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-bf9390477ba0ef6e50b7.html",
+    "snapshotSHA256": "bf9390477ba0ef6e50b7583d2f3305b6b3991a5f8bf39bfe552951a9d174df55",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.kankou-shimane.com/destination/20256",
+    "facilityIds": [
+      "facility:cs-ac2f433114644560e5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.350013+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kankou-shimane.com/destination/20256",
+    "snapshotPath": "data/evidence/issue7/chugoku/87b7c087a87e062517ec.html",
+    "snapshotSHA256": "ab6ed002ef9da3c22c6156140a3479ffe24c227c953918a50c6f594d65f85e84"
+  },
+  {
+    "url": "http://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+    "facilityIds": [
+      "facility:cs-ad6498274696679c6b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.387896+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+    "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://yamaguchi-tourism.jp/spot/detail_18554.html",
+    "facilityIds": [
+      "facility:cs-ad6498274696679c6b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.561376+00:00",
+    "status": 200,
+    "finalUrl": "https://yamaguchi-tourism.jp/spot/detail_18554.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/3a846948e67bc5c6e3de.html",
+    "snapshotSHA256": "9ee384823ab8398d3908eb51a9a4b42249e9933bc0c22e8746bd33be1eecc8bf"
+  },
+  {
+    "url": "https://www.pref.hiroshima.lg.jp/soshiki/106/manholecover-info.html",
+    "facilityIds": [
+      "facility:cs-baec24a203c6ed911a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.575410+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.hiroshima.lg.jp/soshiki/106/manholecover-info.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/fa9d75e9191150256aed.html",
+    "snapshotSHA256": "7530e6e2ffebb40b644b4366e287c5fcca26e1b0d6450adce0a14969cc3fb971"
+  },
+  {
+    "url": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/sisetu.html",
+    "facilityIds": [
+      "facility:cs-baec24a203c6ed911a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:15.822399+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/sisetu.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0900eb3893323f103bb0.html",
+    "snapshotSHA256": "4949e307dfe2fcc768de576da22580e58839ed925c8bcd023712fd655f0216f6",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/map.html",
+    "facilityIds": [
+      "facility:cs-baec24a203c6ed911a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:16.998950+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/map.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/65efecd55d097f3646ea.html",
+    "snapshotSHA256": "2501cb3abe2f89721c9888afe1a7bcf8cf39580a1e0a62b28ec333492912d7a4",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+    "facilityIds": [
+      "facility:cs-cb11c6cf2f76187e61",
+      "facility:cs-d0065de3f1d6af9a22"
+    ],
+    "fetchedAt": "2026-11-05T06:28:17.120379+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+    "snapshotSHA256": "aa0d0620b82eb322e90ac495ad5e9bd2032eda6a12d669553061eb1680ff9c12",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
+    "facilityIds": [
+      "facility:cs-cb11c6cf2f76187e61"
+    ],
+    "fetchedAt": "2026-11-05T06:28:17.520500+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-61c180e16c0a339230ce.html",
+    "snapshotSHA256": "61c180e16c0a339230ce7238cfcee0088151c63f5b4ed85d1dfac0fe74d30b82",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city-yanai.jp/soshiki/72/gesuika-do.html",
+    "facilityIds": [
+      "facility:cs-cd44c49fdfac071988"
+    ],
+    "fetchedAt": "2026-11-05T06:28:17.612230+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city-yanai.jp/soshiki/72/gesuika-do.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b3f28cb66caf9d11b11d.html",
+    "snapshotSHA256": "b3f28cb66caf9d11b11d3726b746a47ad1c2b8d746476f7353039c0ab879f562",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://yanai-kankou.jp/access",
+    "facilityIds": [
+      "facility:cs-cd44c49fdfac071988"
+    ],
+    "fetchedAt": "2026-11-05T06:28:18.272754+00:00",
+    "status": 200,
+    "finalUrl": "https://yanai-kankou.jp/access",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/02d725d9769e8e7013d4.html",
+    "snapshotSHA256": "ab121b217868044c308f3f85b51ad48644eb9b666c4903b6499675722a9617ba",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/",
+    "facilityIds": [
+      "facility:cs-d0065de3f1d6af9a22"
+    ],
+    "fetchedAt": "2026-11-05T06:28:18.308213+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/b497ece68f0e2a970d4d.html",
+    "snapshotSHA256": "30d2677918fd8aed54bcd78606046810db7083d20d2c16d8b844c2c3babc5683",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.sanyo-onoda.lg.jp/soshiki/2/access.html",
+    "facilityIds": [
+      "facility:cs-d0065de3f1d6af9a22"
+    ],
+    "fetchedAt": "2026-11-05T06:28:18.504674+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/2/access.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8ca8dbcee1ee6f3a0fbe.html",
+    "snapshotSHA256": "ad1708c6a5b2bb4fe2be4202fc8b140a7af9687b84a50f89cc9a5546861e12f5",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.kurashiki-tabi.jp/tourist-information-center/",
+    "facilityIds": [
+      "facility:cs-d79e170069f79cc7d2"
+    ],
+    "fetchedAt": "2026-11-05T06:28:19.098311+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurashiki-tabi.jp/tourist-information-center/",
+    "snapshotPath": "data/evidence/issue7/chugoku/f8288331fe1abe3e4a34.html",
+    "snapshotSHA256": "cbda154302af94c481921ed6ccd8a140449f97e2164bdf72d27d89310bfa9088"
+  },
+  {
+    "url": "https://yamaguchi-city.jp/",
+    "facilityIds": [
+      "facility:cs-db60eef36c8f3b518b"
+    ],
+    "fetchedAt": "2026-11-05T06:28:19.111589+00:00",
+    "status": 200,
+    "finalUrl": "https://yamaguchi-city.jp/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/6d28421e57df131b8029.html",
+    "snapshotSHA256": "70f4f1719ac42e8e35b9924850429edb569201b6de2a76ed9bd80489b726ef38",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:28:19.149376+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+    "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://k-kanrikousha.or.jp/sportspark/",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:28:19.176385+00:00",
+    "status": 200,
+    "finalUrl": "https://k-kanrikousha.or.jp/sportspark/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c4a98e54fea3107d360e.html",
+    "snapshotSHA256": "26cc6eaf79ecb4fa672dc3694ead4f30eecd9d4b6115ab3d828228255429a775",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.okayama-kanko.jp/setouchi/spot/detail_11175.html",
+    "facilityIds": [
+      "facility:cs-e0dc2b70dac9632686"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.185873+00:00",
+    "status": 200,
+    "finalUrl": "https://www.okayama-kanko.jp/setouchi/spot/detail_11175.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/5fc3aed9e422aadc24ce.html",
+    "snapshotSHA256": "a6389bec9a8d0d9fdd43732c5e87a5c5db4a7519ff767f3c5363b29d5e7aeebe"
+  },
+  {
+    "url": "https://www.kurayoshi-kankou.jp/manhole/",
+    "facilityIds": [
+      "facility:cs-e10aada0cecdff9fae"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.398899+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurayoshi-kankou.jp/manhole/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-5bb42b7d6838e460f668.html",
+    "snapshotSHA256": "5bb42b7d6838e460f6689b0256d9f5b9cb7926da98d8acc299868c81e0ab576d",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.kurayoshi-kankou.jp/akagawara-ichigokan/",
+    "facilityIds": [
+      "facility:cs-e10aada0cecdff9fae"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.590340+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurayoshi-kankou.jp/akagawara-ichigokan/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/84e21d2b3ba10c1537c3.html",
+    "snapshotSHA256": "a6f08b7869b071c8b4ff660d4d14c5afcefbd5573075c77e94540c1ff5ca3c7d",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.tottori-guide.jp/tourism/tour/view/160",
+    "facilityIds": [
+      "facility:cs-e10aada0cecdff9fae"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.595204+00:00",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "url": "https://gotsu-kanko.jp/52/news/topics/2892",
+    "facilityIds": [
+      "facility:cs-e2f1019dc6faed28bc"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.863526+00:00",
+    "status": 200,
+    "finalUrl": "https://gotsu-kanko.jp/52/news/topics/2892",
+    "snapshotPath": "data/evidence/issue7/chugoku/73cb2fa154b6dfb13840.html",
+    "snapshotSHA256": "743279f34595ea685cbfacb6a489fade9385c5b70ddf5abbbacbf986f8feae53"
+  },
+  {
+    "url": "https://gotsu-kanko.jp/",
+    "facilityIds": [
+      "facility:cs-e2f1019dc6faed28bc"
+    ],
+    "fetchedAt": "2026-11-05T06:28:20.948415+00:00",
+    "status": 200,
+    "finalUrl": "https://gotsu-kanko.jp/",
+    "snapshotPath": "data/evidence/issue7/chugoku/9a14a0f4e2b222c14a7f.html",
+    "snapshotSHA256": "7f8e158441f1a2c2ad2c43120a51ee925447929ae38c71c2448e971149f1a301"
+  },
+  {
+    "url": "https://www.town.waki.lg.jp/soshiki/3/8139.html",
+    "facilityIds": [
+      "facility:cs-e4b9d51a912a95286a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:21.023226+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.waki.lg.jp/soshiki/3/8139.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-26850e5aab84fba84857.html",
+    "snapshotSHA256": "26850e5aab84fba848570087ffb051a2b689d288d1bf49fce05a4cf5ab926ec4",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.wakiiine.net/contact/",
+    "facilityIds": [
+      "facility:cs-e4b9d51a912a95286a"
+    ],
+    "fetchedAt": "2026-11-05T06:28:21.501547+00:00",
+    "status": 200,
+    "finalUrl": "https://www.wakiiine.net/contact/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/96a27c44710465351ff6.html",
+    "snapshotSHA256": "4f29f1b62b18b15b75fbf48a813eab7b1de176821b30fd8b972694eab914c525",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.city.iwakuni.lg.jp/site/eigo-iwakuni/66476.html",
+    "facilityIds": [
+      "facility:cs-eb39ed62b47f9f29ba"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.411933+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.iwakuni.lg.jp/site/eigo-iwakuni/66476.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7b83d0afa2eb5e575244.html",
+    "snapshotSHA256": "006c95e29dec0ee1f9fc7f57477c4560303004b3e5f18966910452a3e92a28d9",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "http://www.city.yonago.lg.jp/24306.htm",
+    "facilityIds": [
+      "facility:cs-ec8a334a6855cf91c5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.643733+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yonago.lg.jp/24306.htm",
+    "snapshotPath": "data/evidence/issue7/chugoku/7563d353b2823f12eb0a.html",
+    "snapshotSHA256": "4374ff6f5ccd71cb4b8ee891248b91ba5df28f63e96aa7965c82f64ed8d4c40e"
+  },
+  {
+    "url": "https://www.city.yonago.lg.jp/9894.htm",
+    "facilityIds": [
+      "facility:cs-ec8a334a6855cf91c5"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.661343+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yonago.lg.jp/9894.htm",
+    "snapshotPath": "data/evidence/issue7/chugoku/c9bcd42604f570802770.html",
+    "snapshotSHA256": "58a03e8769d224b293bf2e2925a51fc7bfaacd3ea2264a52cdfe5b248e413ecc"
+  },
+  {
+    "url": "https://enkei-museum.com/news/news-detail.php?id=8",
+    "facilityIds": [
+      "facility:cs-f82ae05278a2614df9"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.663638+00:00",
+    "status": 200,
+    "finalUrl": "https://enkei-museum.com/news/news-detail.php?id=8",
+    "snapshotPath": "data/evidence/issue7/chugoku/d99464534094bdde996d.html",
+    "snapshotSHA256": "8b3bec07302b78001c0bc652c1dca0239b1804d44346549c52d461ced7111868"
+  },
+  {
+    "url": "https://www.kurayoshi-kankou.jp/figuremuseum/",
+    "facilityIds": [
+      "facility:cs-f82ae05278a2614df9"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.701025+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kurayoshi-kankou.jp/figuremuseum/",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/09f512393305817572ac.html",
+    "snapshotSHA256": "87f741502e76651333a4c626a7b6e5050afbe96efec725e89dab46fa2abb4a5f",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://www.tottori-guide.jp/tourism/tour/view/1072",
+    "facilityIds": [
+      "facility:cs-f82ae05278a2614df9"
+    ],
+    "fetchedAt": "2026-11-05T06:28:22.838287+00:00",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "url": "http://www.city.hagi.lg.jp/soshiki/105/h29713.html",
+    "facilityIds": [
+      "facility:cs-f9ac7cca9893ace076"
+    ],
+    "fetchedAt": "2026-11-05T06:28:23.219270+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.hagi.lg.jp/soshiki/105/h29713.html",
+    "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4fd233b4773c785639fe.html",
+    "snapshotSHA256": "4fd233b4773c785639fec3bb7d24c71790dae87f523a2f03570e01a3c4425e0b",
+    "storageNote": "今回実取得したbytesが旧原本と完全一致。重複bytesは保存せずrepo相対パスで参照。fetchedAtは今回の実取得時刻。"
+  },
+  {
+    "url": "https://yamaguchi-tourism.jp/spot/detail_17538.html",
+    "facilityIds": [
+      "facility:cs-f9ac7cca9893ace076"
+    ],
+    "fetchedAt": "2026-11-05T06:28:24.111730+00:00",
+    "status": 200,
+    "finalUrl": "https://yamaguchi-tourism.jp/spot/detail_17538.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/6ac937854a3abd0bdac9.html",
+    "snapshotSHA256": "4366ba72ac14cd5ac632d4c43621534894a94d043f7db8c37f84b99acb22f8e1"
+  },
+  {
+    "url": "https://www.city.yonago.lg.jp/24306.htm",
+    "facilityIds": [
+      "facility:ws-dc1637ffd07c249588"
+    ],
+    "fetchedAt": "2026-11-05T06:28:24.584960+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yonago.lg.jp/24306.htm",
+    "snapshotPath": "data/evidence/issue7/chugoku/d5883c46b554c3bf30ff.html",
+    "snapshotSHA256": "4374ff6f5ccd71cb4b8ee891248b91ba5df28f63e96aa7965c82f64ed8d4c40e"
+  },
+  {
+    "url": "https://www.city.setouchi.lg.jp/uploaded/attachment/115698.pdf",
+    "facilityIds": [
+      "facility:cs-85f80ce977bcdf56d4"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.369791+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.setouchi.lg.jp/uploaded/attachment/115698.pdf",
+    "snapshotPath": "data/evidence/issue7/chugoku/2a7352d08fc596620c75.pdf",
+    "snapshotSHA256": "0ebd4ad06afe29281007beedcb725cbfe6e0660c74683bb0fbf9d982b35d6b48"
+  },
+  {
+    "url": "https://www.city.higashihiroshima.lg.jp/kanko/kanko/sitemap/40088.html",
+    "facilityIds": [
+      "facility:cs-795a18c5cddf2431eb"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.370701+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.higashihiroshima.lg.jp/kanko/kanko/sitemap/40088.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/1625e65358f4d8dd7e1a.html",
+    "snapshotSHA256": "a9618654d75270d2273db4b2b701cbb1a09d8e1898c0c6acf282c705a76a9a0d"
+  },
+  {
+    "url": "https://www.fukushi-map.pref.yamaguchi.lg.jp/spot/7621",
+    "facilityIds": [
+      "facility:cs-8d0cee31bd1bcec521"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.371336+00:00",
+    "status": 200,
+    "finalUrl": "https://www.fukushi-map.pref.yamaguchi.lg.jp/spot/7621",
+    "snapshotPath": "data/evidence/issue7/chugoku/02042ce679932d818b6c.html",
+    "snapshotSHA256": "36762f59475ef8d25916417016595440b95380e320dc73baab6cfbad5059ce3a"
+  },
+  {
+    "url": "https://www.city.yamaguchi.lg.jp/map/7282.html",
+    "facilityIds": [
+      "facility:cs-0bd3389d5748cea3af"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.371960+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yamaguchi.lg.jp/map/7282.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/0b660662b4408b7e75dd.html",
+    "snapshotSHA256": "02de51afcb975422cb348beb7f374dea89f2668e29a1402f0d5f190d5fcbe812"
+  },
+  {
+    "url": "https://www.kaike-onsen.jp/about",
+    "facilityIds": [
+      "facility:cs-ec8a334a6855cf91c5"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.372780+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kaike-onsen.jp/about",
+    "snapshotPath": "data/evidence/issue7/chugoku/6fa73a33230f872d62d5.html",
+    "snapshotSHA256": "4c2d29930a464e1d1ad10ae6d4eb9409e46b36c895d1e02307aa3498796bfc8f"
+  },
+  {
+    "url": "https://tsuwano-kanko.net/info/tsuwanostation/",
+    "facilityIds": [
+      "facility:cs-7851aeb9671340371a"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.373315+00:00",
+    "status": 200,
+    "finalUrl": "https://tsuwano-kanko.net/info/tsuwanostation/",
+    "snapshotPath": "data/evidence/issue7/chugoku/d8e91a59894d44f5b61e.html",
+    "snapshotSHA256": "1cc7a6d641e064ef3ce856eaca2fdabbad0dbe664125dc2b94aef7f601d9df76"
+  },
+  {
+    "url": "https://www.pref.yamaguchi.lg.jp/soshiki/96/189046.html",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:29:07.814366+00:00",
+    "status": 200,
+    "finalUrl": "https://www.pref.yamaguchi.lg.jp/soshiki/96/189046.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/f01c1931587bcbfa985b.html",
+    "snapshotSHA256": "7d88172fe1bafb45777d506db2b8f5cc7ce0f95d9f06945924a08d572ecf5897"
+  },
+  {
+    "url": "https://enkei-museum.com/html/information.html",
+    "facilityIds": [
+      "facility:cs-f82ae05278a2614df9"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.971193+00:00",
+    "status": 200,
+    "finalUrl": "https://enkei-museum.com/html/information.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/b2fd58c06571e3e79cee.html",
+    "snapshotSHA256": "b04fa14d2512173f299440673f20994bec60ec772adc7091e90f65f1ccba3c7e"
+  },
+  {
+    "url": "https://akagawara.net/akagawara/01/index.php",
+    "facilityIds": [
+      "facility:cs-e10aada0cecdff9fae"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.971990+00:00",
+    "status": 200,
+    "finalUrl": "http://akagawara.net/akagawara/01/index.php",
+    "snapshotPath": "data/evidence/issue7/chugoku/39a254f5636a3559b469.html",
+    "snapshotSHA256": "b458dc28b0a24c32d1def1e012ff46e51428ca45f8273b310cc4a78f1f81c800"
+  },
+  {
+    "url": "https://www.town.nishinoshima.shimane.jp/bunya/b_anshin-joho/b_disclosure/481",
+    "facilityIds": [
+      "facility:cs-a5355105c733978fb2",
+      "facility:cs-d96f3a22bac31657b3"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.972458+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.nishinoshima.shimane.jp/bunya/b_anshin-joho/b_disclosure/481",
+    "snapshotPath": "data/evidence/issue7/chugoku/e131bf5c0ce17668dcdf.html",
+    "snapshotSHA256": "3548bcb34a3973702b1eb6c9774d3f6f49dcec1d449fb423976300a47e810545"
+  },
+  {
+    "url": "https://k-kanrikousha.or.jp/sportspark/supokou.html",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.972931+00:00",
+    "status": 200,
+    "finalUrl": "https://k-kanrikousha.or.jp/sportspark/supokou.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/81fd850ae46721265983.html",
+    "snapshotSHA256": "7490ca8a39f3ff70ac5be7d34b2b16e27b011e6155011fb4b1971b54add06efa"
+  },
+  {
+    "url": "https://k-kanrikousha.or.jp/sportspark/access.html",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.973364+00:00",
+    "status": 200,
+    "finalUrl": "https://k-kanrikousha.or.jp/sportspark/access.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/28c4904d30bba19256d4.html",
+    "snapshotSHA256": "69417498135377c22d4d2e2e635893ff524685217242cbd056a0ba1b519245df"
+  },
+  {
+    "url": "https://niimi.gr.jp/contact/contact_register/index.html",
+    "facilityIds": [
+      "facility:cs-7940cff6f6fa056d34"
+    ],
+    "fetchedAt": "2026-11-05T06:31:10.974528+00:00",
+    "status": 200,
+    "finalUrl": "https://niimi.gr.jp/contact/contact_register/index.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/cb0fe7eac18da9be1379.html",
+    "snapshotSHA256": "4b4f126bd5d884399ec27c49a0752e190c65b45b7e9cce136443190833aa1b36"
+  },
+  {
+    "url": "https://niimi.gr.jp/info/info_detail/index/77.html",
+    "facilityIds": [
+      "facility:cs-7940cff6f6fa056d34"
+    ],
+    "fetchedAt": "2026-11-05T06:31:11.136627+00:00",
+    "status": 200,
+    "finalUrl": "https://niimi.gr.jp/info/info_detail/index/77.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/5c5ea335d9e0d8dd110c.html",
+    "snapshotSHA256": "f97897ef93cdc0c1059874d8950c2e374cb7ea8f8a1398085b2a2cc25f1d41c9"
+  },
+  {
+    "url": "https://www.city.yamaguchi.lg.jp/uploaded/attachment/85381.pdf",
+    "facilityIds": [
+      "facility:cs-0bd3389d5748cea3af"
+    ],
+    "fetchedAt": "2026-11-05T06:31:11.240394+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yamaguchi.lg.jp/uploaded/attachment/85381.pdf",
+    "snapshotPath": "data/evidence/issue7/chugoku/cc8f1f5674ba4ea4fd6d.pdf",
+    "snapshotSHA256": "d68a46e79f11322fde8132ed9083198d8fc6463f3d9b77501e534d814f0aaa30"
+  },
+  {
+    "url": "https://www.kaike-onsen.jp/",
+    "facilityIds": [
+      "facility:cs-ec8a334a6855cf91c5"
+    ],
+    "fetchedAt": "2026-11-05T06:31:11.263374+00:00",
+    "status": 200,
+    "finalUrl": "https://www.kaike-onsen.jp/",
+    "snapshotPath": "data/evidence/issue7/chugoku/f539592c11ed581008ac.html",
+    "snapshotSHA256": "4138501e35a7d29a1591fb78c258f717b201b999a0a4b863697ffb927949b44b"
+  },
+  {
+    "url": "https://yakagemachiya.information.jp/kannaiannai/",
+    "facilityIds": [
+      "facility:cs-8dd78605b23dd55e25"
+    ],
+    "fetchedAt": "2026-11-05T06:31:11.295723+00:00",
+    "status": 200,
+    "finalUrl": "https://yakagemachiya.information.jp/kannaiannai/",
+    "snapshotPath": "data/evidence/issue7/chugoku/acd361cb08815f9dcdfe.html",
+    "snapshotSHA256": "60862f4fe532f56f29c89f6f989494254f87884ad853660c842ded5a274f1d75"
+  },
+  {
+    "url": "https://hirosetu.or.jp/wp-content/uploads/2023/06/f8dbb4b1ff128920c826fa32859fbbeb.pdf",
+    "facilityIds": [
+      "facility:cs-ddde663d81d83b2c0f"
+    ],
+    "fetchedAt": "2026-11-05T06:32:50.344492+00:00",
+    "status": 200,
+    "finalUrl": "https://hirosetu.or.jp/wp-content/uploads/2023/06/f8dbb4b1ff128920c826fa32859fbbeb.pdf",
+    "snapshotPath": "data/evidence/issue7/chugoku/fe564228195eee59f9fd.pdf",
+    "snapshotSHA256": "7ada43e59bb2eefebf16ca9adb3b9dc2bf08b87c1285d2c458844c3e39c845a6"
+  },
+  {
+    "url": "https://www.city.yamaguchi.lg.jp/site/kaiken/189052.html",
+    "facilityIds": [
+      "facility:cs-0bd3389d5748cea3af"
+    ],
+    "fetchedAt": "2026-11-05T06:32:50.345363+00:00",
+    "status": 200,
+    "finalUrl": "https://www.city.yamaguchi.lg.jp/site/kaiken/189052.html",
+    "snapshotPath": "data/evidence/issue7/chugoku/1618c23c2cb359067320.html",
+    "snapshotSHA256": "22757c4cb723a54b722a31613224708f4dba02b9ac9c6eeac1dc04482c7c5170"
+  },
+  {
+    "url": "https://www.town.yakage.okayama.jp/files/20241112sankou01.pdf",
+    "facilityIds": [
+      "facility:cs-31ca2ca80f991e84b4",
+      "facility:cs-8dd78605b23dd55e25"
+    ],
+    "fetchedAt": "2026-11-05T06:32:50.345845+00:00",
+    "status": 200,
+    "finalUrl": "https://www.town.yakage.okayama.jp/files/20241112sankou01.pdf",
+    "snapshotPath": "data/evidence/issue7/chugoku/c66ea4075edbd8b512c8.pdf",
+    "snapshotSHA256": "70740cac30f9ad249f03ec31d9530d55593c802b1c3d48bc6a092b7d78dfea10"
+  },
+  {
+    "url": "https://kankou-hamada.or.jp/salon",
+    "facilityIds": [
+      "facility:cs-9158e6a0fc7222e6ab",
+      "facility:ws-db1f68e131a3fd939d"
+    ],
+    "fetchedAt": "2026-11-05T06:33:53.073984+00:00",
+    "status": 200,
+    "finalUrl": "https://kankou-hamada.or.jp/salon",
+    "snapshotPath": "data/evidence/issue7/chugoku/831b0eeba7aff8fac5b8.html",
+    "snapshotSHA256": "400684f6ddd37b5893701aa77053e4bac4c10ac4ac34d1edceb1898f24febee7"
+  },
+  {
+    "url": "https://www.yonago-navi.jp/f/kankoannai/",
+    "facilityIds": [
+      "facility:ws-dc1637ffd07c249588"
+    ],
+    "fetchedAt": "2026-11-05T06:33:53.074838+00:00",
+    "status": 200,
+    "finalUrl": "https://www.yonago-navi.jp/f/kankoannai/",
+    "snapshotPath": "data/evidence/issue7/chugoku/691c41d82efc3041e67b.html",
+    "snapshotSHA256": "6837903a0e9daf7fc36ae41299b4c33310c03900146cf53a24a4339290ca2566"
+  },
+  {
+    "url": "https://hiro-chika.com/",
+    "facilityIds": [
+      "facility:cs-42df9ae55a2417f861"
+    ],
+    "fetchedAt": "2026-11-05T06:33:53.075485+00:00",
+    "status": 200,
+    "finalUrl": "https://hiro-chika.com/",
+    "snapshotPath": "data/evidence/issue7/chugoku/586875c9ff4e4db8bdff.html",
+    "snapshotSHA256": "ff8bc1f6bf151589ffd81dd6696795d0226add5ca63ce18ec8e09c59b0d34643"
+  },
+  {
+    "url": "https://www.yanai-kankou.jp/home/",
+    "facilityIds": [
+      "facility:cs-cd44c49fdfac071988"
+    ],
+    "fetchedAt": "2026-11-05T06:33:53.078400+00:00",
+    "status": 200,
+    "finalUrl": "https://www.yanai-kankou.jp/home/",
+    "snapshotPath": "data/evidence/issue7/chugoku/4744ebfb9d3954d3378a.html",
+    "snapshotSHA256": "a3857b429f207b82cc9ad285b1fdae22ef5e9830f75292a4e5e029a65450f448"
+  },
+  {
+    "url": "https://yanai-kankou.jp/wp-content/themes/yanai-kankou/js/googlemap.js?ver=1.0.0",
+    "facilityIds": [
+      "facility:cs-cd44c49fdfac071988"
+    ],
+    "fetchedAt": "2026-11-05T06:34:39.306265+00:00",
+    "status": 200,
+    "finalUrl": "https://yanai-kankou.jp/wp-content/themes/yanai-kankou/js/googlemap.js?ver=1.0.0",
+    "snapshotPath": "data/evidence/issue7/chugoku/1e45aa12aaa125a25cbd.html",
+    "snapshotSHA256": "7654d4ec5c933f1370a82c79b353da2cba97c633c0f540b60a6f9f0cdabfc96c"
+  }
+]

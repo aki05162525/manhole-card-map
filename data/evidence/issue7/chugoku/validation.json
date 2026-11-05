@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-11-05T06:42:25.355494+00:00",
+  "assigned": 57,
+  "updates": 10,
+  "unresolved": 47,
+  "corrections": 5,
+  "allIdsClassifiedExactlyOnce": true,
+  "evidenceSevenFields": true,
+  "numericOriginalsMatch": true,
+  "snapshotHashesMatch": true,
+  "oldCorrectionValuesMatch": true,
+  "fixedInputsUnchanged": true,
+  "newWebInvestigatedIds": 57,
+  "fetchAttempts": 126,
+  "fetchSuccess": 124,
+  "notClaimed": [
+    "親独立レビュー",
+    "manifest採用",
+    "Go/UI変更",
+    "全施設の座標確定",
+    "全施設の移転不存在証明"
+  ]
+}

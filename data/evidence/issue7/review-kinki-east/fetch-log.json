@@ -1,0 +1,65 @@
+[
+  {
+    "sourceUrl": "https://www.city.kyotango.lg.jp/top/shisei/gaiyo/4/6116.html",
+    "fetchedAt": "2026-11-05T06:42:20.552598+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/42a8d6280b23fc1a0408.html",
+    "snapshotSHA256": "1d28abf53d09de59af89c2674e249137ae00986ba6b07590d4ff372b79ee68de",
+    "status": 200,
+    "finalUrl": "https://www.city.kyotango.lg.jp/top/shisei/gaiyo/4/6116.html"
+  },
+  {
+    "sourceUrl": "https://www.city.kyotango.lg.jp/material/files/group/3/20260401.pdf",
+    "fetchedAt": "2026-11-05T06:42:20.553258+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/e0a30faed2b75424d985.pdf",
+    "snapshotSHA256": "22abcfa33b1bb196b8244befadf1ee7caf8e46a82b781ca2ff43d24c4b976f01",
+    "status": 200,
+    "finalUrl": "https://www.city.kyotango.lg.jp/material/files/group/3/20260401.pdf"
+  },
+  {
+    "sourceUrl": "https://www.city.hikone.lg.jp/kurashi/suidou/5/29782.html",
+    "fetchedAt": "2026-11-05T06:42:20.553703+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/c86228a6a48cf524b005.html",
+    "snapshotSHA256": "1414dd45e7eeefcd55ed61bd4ecb00e20a3c7adb234649b2ef8489089ea97232",
+    "status": 200,
+    "finalUrl": "https://www.city.hikone.lg.jp/kurashi/suidou/5/29782.html"
+  },
+  {
+    "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/yakuba/yakubashokai/518.html",
+    "fetchedAt": "2026-11-05T06:42:20.554215+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/49142aae2247ddc83e24.html",
+    "snapshotSHA256": "81c85b2fd891dc4f84bc432608fa7ce49e927d043a2ec59b10219d2f1beb0fed",
+    "status": 200,
+    "finalUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/yakuba/yakubashokai/518.html"
+  },
+  {
+    "sourceUrl": "https://www.city.koka.lg.jp/1119.htm",
+    "fetchedAt": "2026-11-05T06:42:20.554789+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/0fe09c7190a69982879d.html",
+    "snapshotSHA256": "0bedf4f2c99041bc3f5f6fffd0bb1434e09e34d0cc60d3da9d187df403286161",
+    "status": 200,
+    "finalUrl": "https://www.city.koka.lg.jp/1119.htm"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html",
+    "fetchedAt": "2026-11-05T06:42:20.555534+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/28d45067bfd5191b2a49.html",
+    "snapshotSHA256": "6cd1808ff89e28ebc90add3567220b2fb3065786117bb3ac580a1a46fcac7d05",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P05-v3_0.html"
+  },
+  {
+    "sourceUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+    "fetchedAt": "2026-11-05T06:42:20.558332+00:00",
+    "fetchedAtDefinition": "request start UTC",
+    "snapshotPath": "data/evidence/issue7/review-kinki-east/8b3d596123345c99c3b6.html",
+    "snapshotSHA256": "3307588d48d679c28c6d24c076cbec363369b91e0fa5547bd00a7f18be07b4d6",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/other/agreement.html"
+  }
+]

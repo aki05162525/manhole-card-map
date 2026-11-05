@@ -1,0 +1,672 @@
+{
+  "success": true,
+  "assignedIds": 52,
+  "candidatesChecked": 17,
+  "p05GeojsonAndGmlChecked": 13,
+  "htmlCoordinatesChecked": 4,
+  "exactCorrectionsChecked": 9,
+  "sourceHashesChecked": 198,
+  "goEvidenceFields": [
+    "sourceUrl",
+    "snapshotPath",
+    "snapshotSHA256",
+    "sourceLocator",
+    "checkedAt",
+    "actorType",
+    "verificationMethod"
+  ],
+  "protectedInputHashesMatch": true,
+  "coordinateChecks": [
+    {
+      "facilityId": "facility:chubu-iwata-water-counter",
+      "coordinate": {
+        "lat": 34.681536,
+        "lng": 137.881063
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22211",
+          "P05_002": "2",
+          "P05_003": "福田支所",
+          "P05_004": "磐田市福田400"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.881063,
+            34.681536
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/825",
+      "gmlPosition": "34.68153600 137.88106300",
+      "gmlPoint": "pt825",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-minokamo-water-counter",
+      "coordinate": {
+        "lat": 35.441741685039354,
+        "lng": 137.01337966257734
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "21211",
+          "P05_002": "2",
+          "P05_003": "美濃加茂市役所分庁舎",
+          "P05_004": "美濃加茂市太田町1900"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.01337966257734,
+            35.441741685039354
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+      "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/667",
+      "gmlPosition": "35.44174169 137.01337966",
+      "gmlPoint": "pt667",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-takayama-nakabashi",
+      "coordinate": {
+        "lat": 36.1400326,
+        "lng": 137.2587576
+      },
+      "snapshotPath": "data/evidence/issue7/tokai/f6bc175ab9f7279ed939.html",
+      "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+      "evidenceFieldsMatchGo": true,
+      "rawNumbers": [
+        "36.1400326",
+        "137.2587576"
+      ],
+      "sourceAxisOrder": "gConf lat,lng; iframe q latitude,longitude",
+      "crs": "not explicitly stated in source",
+      "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+    },
+    {
+      "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+      "coordinate": {
+        "lat": 35.391682842156115,
+        "lng": 136.68977610431787
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "21216",
+          "P05_002": "4",
+          "P05_003": "穂積公民館",
+          "P05_004": "瑞穂市別府1300-3"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.68977610431787,
+            35.391682842156115
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+      "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/887",
+      "gmlPosition": "35.39168284 136.68977610",
+      "gmlPoint": "pt887",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+      "coordinate": {
+        "lat": 34.990793,
+        "lng": 137.010975
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "23210",
+          "P05_002": "5",
+          "P05_003": "産業振興センター",
+          "P05_004": "刈谷市相生町1-1-6"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            137.010975,
+            34.990793
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "9ef9d45417b051bb52484063c8a1e702754e4fa95694846d8262f55cdc6810f1",
+      "locator": "P05-22_23_GML.zip!P05-22_23.geojson#/features/969",
+      "gmlPosition": "34.99079300 137.01097500",
+      "gmlPoint": "pt969",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "coordinate": {
+        "lat": 35.44226985301179,
+        "lng": 136.5729551431789
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "21404",
+          "P05_002": "1",
+          "P05_003": "池田町役場",
+          "P05_004": "池田町六之井1468-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.5729551431789,
+            35.44226985301179
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+      "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/1317",
+      "gmlPosition": "35.44226985 136.57295514",
+      "gmlPoint": "pt1317",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+      "coordinate": {
+        "lat": 35.096402,
+        "lng": 138.863022
+      },
+      "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+      "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+      "evidenceFieldsMatchGo": true,
+      "rawRow": [
+        "222038",
+        "0000000030",
+        "静岡県沼津市",
+        "水道部庁舎",
+        "スイドウブチョウシャ",
+        "",
+        "222038",
+        "",
+        "静岡県沼津市御幸町2-20",
+        "静岡県",
+        "沼津市",
+        "御幸町",
+        "2-20",
+        "",
+        "35.096402",
+        "138.863022",
+        "",
+        "",
+        "1階自動ドア前",
+        "(055)934-4851",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8000020222038",
+        "沼津市",
+        "月火水木金",
+        "08:30:00",
+        "17:15:00",
+        "祝日、休日、年末年始を除く",
+        "",
+        "https://city.numazu.shizuoka.jp/kurashi/anshin/aed/setti.htm",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sourceAxisOrder": "table 緯度 then 経度",
+      "crs": "not explicitly stated in source",
+      "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "coordinate": {
+        "lat": 35.095646,
+        "lng": 138.863556
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22203",
+          "P05_002": "1",
+          "P05_003": "沼津市役所",
+          "P05_004": "沼津市御幸町16-1"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.863556,
+            35.095646
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/437",
+      "gmlPosition": "35.09564600 138.86355600",
+      "gmlPoint": "pt437",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+      "coordinate": {
+        "lat": 35.222064,
+        "lng": 138.621654
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22207",
+          "P05_002": "1",
+          "P05_003": "富士宮市役所",
+          "P05_004": "富士宮市弓沢町150"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.621654,
+            35.222064
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525",
+      "gmlPosition": "35.22206400 138.62165400",
+      "gmlPoint": "pt525",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "coordinate": {
+        "lat": 36.2350326,
+        "lng": 137.1863768
+      },
+      "snapshotPath": "data/evidence/issue7/tokai/ab548fdcccd6faf9a553.html",
+      "snapshotSHA256": "a98a8b8dc08fc34105a400eb556216ace03d21b66738fe1a533937432060527d",
+      "evidenceFieldsMatchGo": true,
+      "oldAndNewMarkerMatch": true,
+      "rawNumbers": [
+        "36.2350326",
+        "137.1863768"
+      ],
+      "sourceAxisOrder": "explicit lat/lng properties",
+      "crs": "not explicitly stated in source",
+      "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+    },
+    {
+      "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+      "coordinate": {
+        "lat": 35.40406283064763,
+        "lng": 136.64978809698977
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "21216",
+          "P05_002": "2",
+          "P05_003": "瑞穂市役所巣南庁舎",
+          "P05_004": "瑞穂市宮田300-2"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            136.64978809698977,
+            35.40406283064763
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+      "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/880",
+      "gmlPosition": "35.40406283 136.64978810",
+      "gmlPoint": "pt880",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+      "coordinate": {
+        "lat": 35.140919,
+        "lng": 138.895037
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22342",
+          "P05_002": "5",
+          "P05_003": "健康づくりセンター",
+          "P05_004": "長泉町納米里549"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.895037,
+            35.140919
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1802",
+      "gmlPosition": "35.14091900 138.89503700",
+      "gmlPoint": "pt1802",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "coordinate": {
+        "lat": 35.1580946,
+        "lng": 138.6793826
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22210",
+          "P05_002": "1",
+          "P05_003": "富士市役所",
+          "P05_004": "富士市永田町1-100"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.6793826,
+            35.1580946
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/723",
+      "gmlPosition": "35.15809460 138.67938260",
+      "gmlPoint": "pt723",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "coordinate": {
+        "lat": 35.222064,
+        "lng": 138.621654
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22207",
+          "P05_002": "1",
+          "P05_003": "富士宮市役所",
+          "P05_004": "富士宮市弓沢町150"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.621654,
+            35.222064
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525",
+      "gmlPosition": "35.22206400 138.62165400",
+      "gmlPoint": "pt525",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+      "coordinate": {
+        "lat": 35.137712,
+        "lng": 138.897258
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22342",
+          "P05_002": "1",
+          "P05_003": "長泉町役場",
+          "P05_004": "長泉町中土狩828"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.897258,
+            35.137712
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1807",
+      "gmlPosition": "35.13771200 138.89725800",
+      "gmlPoint": "pt1807",
+      "gmlWithin1e7Degree": true
+    },
+    {
+      "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+      "coordinate": {
+        "lat": 35.096402,
+        "lng": 138.863022
+      },
+      "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+      "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+      "evidenceFieldsMatchGo": true,
+      "rawRow": [
+        "222038",
+        "0000000030",
+        "静岡県沼津市",
+        "水道部庁舎",
+        "スイドウブチョウシャ",
+        "",
+        "222038",
+        "",
+        "静岡県沼津市御幸町2-20",
+        "静岡県",
+        "沼津市",
+        "御幸町",
+        "2-20",
+        "",
+        "35.096402",
+        "138.863022",
+        "",
+        "",
+        "1階自動ドア前",
+        "(055)934-4851",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "8000020222038",
+        "沼津市",
+        "月火水木金",
+        "08:30:00",
+        "17:15:00",
+        "祝日、休日、年末年始を除く",
+        "",
+        "https://city.numazu.shizuoka.jp/kurashi/anshin/aed/setti.htm",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sourceAxisOrder": "table 緯度 then 経度",
+      "crs": "not explicitly stated in source",
+      "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+    },
+    {
+      "facilityId": "facility:chubu-yoshida-water-counter",
+      "coordinate": {
+        "lat": 34.77087,
+        "lng": 138.251943
+      },
+      "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+      "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+      "evidenceFieldsMatchGo": true,
+      "rawFeature": {
+        "type": "Feature",
+        "properties": {
+          "P05_001": "22424",
+          "P05_002": "1",
+          "P05_003": "吉田町役場",
+          "P05_004": "吉田町住吉87"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            138.251943,
+            34.77087
+          ]
+        }
+      },
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::6668"
+        }
+      },
+      "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+      "transformation": "axis reordering only; no WGS84 transformation",
+      "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+      "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1837",
+      "gmlPosition": "34.77087000 138.25194300",
+      "gmlPoint": "pt1837",
+      "gmlWithin1e7Degree": true
+    }
+  ],
+  "documentationCodeDiscrepancies": []
+}

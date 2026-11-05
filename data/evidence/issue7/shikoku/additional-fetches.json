@@ -1,0 +1,459 @@
+[
+  {
+    "sourceUrl": "https://www.my-kagawa.jp/point/155",
+    "finalUrl": "https://www.my-kagawa.jp/point/155",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/2ebedb40be28232e797455ab1c6e8af1cdc18a7b44002d1e3080fbae6a808c47.html",
+    "snapshotSHA256": "2ebedb40be28232e797455ab1c6e8af1cdc18a7b44002d1e3080fbae6a808c47",
+    "fetchedAt": "2026-11-05T06:28:43.539344+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.885997+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.iyokannet.jp/spot/4554",
+    "finalUrl": "https://www.iyokannet.jp/spot/4554",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/b835d36777ee5421c07b20d117f8abc4cd2d5796ecc5588208e01c75c905e396.html",
+    "snapshotSHA256": "b835d36777ee5421c07b20d117f8abc4cd2d5796ecc5588208e01c75c905e396",
+    "fetchedAt": "2026-11-05T06:28:43.757054+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.886678+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://kochi-tabi.jp/search_spot.html?id=7528",
+    "finalUrl": "https://kochi-tabi.jp/search_spot.html?id=7528",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/bac92932fb9eb83505a8a5cfa626cc0494c4bde0e336c74f03ad37f543c256c4.html",
+    "snapshotSHA256": "bac92932fb9eb83505a8a5cfa626cc0494c4bde0e336c74f03ad37f543c256c4",
+    "fetchedAt": "2026-11-05T06:28:43.170374+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.887249+00:00",
+    "contentType": "text/html;charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://maps.pref.tokushima.lg.jp/ud/search/facility_1253.html",
+    "finalUrl": "https://maps.pref.tokushima.lg.jp/ud/search/facility_1253.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/824dc1a0cd4d820baebba0ad579468df3fe235c13a490c92798ab8da9dcf5b69.html",
+    "snapshotSHA256": "824dc1a0cd4d820baebba0ad579468df3fe235c13a490c92798ab8da9dcf5b69",
+    "fetchedAt": "2026-11-05T06:28:43.212916+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.887744+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.kaiyo-kankou.jp/spots/spots-1321/",
+    "finalUrl": "https://www.kaiyo-kankou.jp/spots/spots-1321/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/951873a99320942379c2549e02ec9366b7962a78368d5fee49c7a06413aa116b.html",
+    "snapshotSHA256": "951873a99320942379c2549e02ec9366b7962a78368d5fee49c7a06413aa116b",
+    "fetchedAt": "2026-11-05T06:28:43.552496+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.889472+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.city.kochi.kochi.jp/soshiki/50/usuishori.html",
+    "finalUrl": "https://www.city.kochi.kochi.jp/soshiki/50/usuishori.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/b945e0b0aec67241dc158d95bd4e094dbf6590632be2bef7ef9969a0a43b966f.html",
+    "snapshotSHA256": "b945e0b0aec67241dc158d95bd4e094dbf6590632be2bef7ef9969a0a43b966f",
+    "fetchedAt": "2026-11-05T06:28:43.264736+00:00",
+    "requestStartedAt": "2026-11-05T06:28:42.891116+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://www.town.tadotsu.kagawa.jp/material/files/group/1/map_20230202.csv",
+    "finalUrl": "https://www.town.tadotsu.kagawa.jp/material/files/group/1/map_20230202.csv",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/6a72ced6d72cb99f268512cf61e2319c491da9268c5b6076a1384b8b232cef1f.html",
+    "snapshotSHA256": "6a72ced6d72cb99f268512cf61e2319c491da9268c5b6076a1384b8b232cef1f",
+    "fetchedAt": "2026-11-05T06:29:04.314234+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.133355+00:00",
+    "contentType": "application/octet-stream"
+  },
+  {
+    "sourceUrl": "https://www.town.tadotsu.kagawa.jp/theme/base/shisetsu_map/js/jquery_map.js",
+    "finalUrl": "https://www.town.tadotsu.kagawa.jp/theme/base/shisetsu_map/js/jquery_map.js",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/a72207c89446529816bfd9001187da3b01c827e11e34f1e21e550b7adf829ff1.html",
+    "snapshotSHA256": "a72207c89446529816bfd9001187da3b01c827e11e34f1e21e550b7adf829ff1",
+    "fetchedAt": "2026-11-05T06:29:04.348430+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.134097+00:00",
+    "contentType": "application/javascript"
+  },
+  {
+    "sourceUrl": "https://www.city.marugame.lg.jp/page/30100.html",
+    "finalUrl": "https://www.city.marugame.lg.jp/page/30100.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/cd82fe075a14f7587b5166e0f493f6935ed9e19104a3b8938810c00d707b78b0.html",
+    "snapshotSHA256": "cd82fe075a14f7587b5166e0f493f6935ed9e19104a3b8938810c00d707b78b0",
+    "fetchedAt": "2026-11-05T06:29:04.261288+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.134487+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://www.city.marugame.lg.jp/site/bousaiinfo/2455.html",
+    "finalUrl": "https://www.city.marugame.lg.jp/site/bousaiinfo/2455.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/49650f43663a66fabea4c13b808cf5d856d9e1a0af1dae81bc583586bbca000d.html",
+    "snapshotSHA256": "49650f43663a66fabea4c13b808cf5d856d9e1a0af1dae81bc583586bbca000d",
+    "fetchedAt": "2026-11-05T06:29:04.270753+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.134986+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/28/",
+    "finalUrl": "https://kagawa-gesui.or.jp/publics/index/28/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/6855384fcaa41c80fb490fff56a31c2b732e953f3a4148c05906f1bc40d94a37.html",
+    "snapshotSHA256": "6855384fcaa41c80fb490fff56a31c2b732e953f3a4148c05906f1bc40d94a37",
+    "fetchedAt": "2026-11-05T06:29:04.731060+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.135529+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.toku-eta.or.jp/about/guide/sewer-managemen/",
+    "finalUrl": "https://www.toku-eta.or.jp/about/guide/sewer-managemen/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/cdd06b7910a7ea3091db649940810025b2ee36b5ae9e5deada1ea1493b109257.html",
+    "snapshotSHA256": "cdd06b7910a7ea3091db649940810025b2ee36b5ae9e5deada1ea1493b109257",
+    "fetchedAt": "2026-11-05T06:29:04.472663+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.136040+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://welpiaiyo.jp/facility-guidemap",
+    "finalUrl": "https://welpiaiyo.jp/facility-guidemap",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/d4feea7636a4bc32a7565862d3e98669ed86d2a1b22b91c357e0e04dc0e8e98b.html",
+    "snapshotSHA256": "d4feea7636a4bc32a7565862d3e98669ed86d2a1b22b91c357e0e04dc0e8e98b",
+    "fetchedAt": "2026-11-05T06:29:05.355349+00:00",
+    "requestStartedAt": "2026-11-05T06:29:04.136460+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://maps.pref.tokushima.lg.jp/ud/search/feature_1253.xml",
+    "finalUrl": "https://maps.pref.tokushima.lg.jp/ud/search/feature_1253.xml",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/4a9380d6dd03263d406a6b2c53d20e7c6c762ba8a10ccc12e48c65659e281269.html",
+    "snapshotSHA256": "4a9380d6dd03263d406a6b2c53d20e7c6c762ba8a10ccc12e48c65659e281269",
+    "fetchedAt": "2026-11-05T06:29:31.284259+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.867514+00:00",
+    "contentType": "application/xml; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://kochitourism-barrierfree.jp/det.php?i=85",
+    "finalUrl": "https://kochitourism-barrierfree.jp/det.php?i=85",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/9f45df139b3308ee8fb7c26165891260576377d3e64bf329bbc10864faa533e4.html",
+    "snapshotSHA256": "9f45df139b3308ee8fb7c26165891260576377d3e64bf329bbc10864faa533e4",
+    "fetchedAt": "2026-11-05T06:29:31.108459+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.868254+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://kochi-tabi.jp/search_spot_sightseeing.html?id=1382",
+    "finalUrl": "https://kochi-tabi.jp/search_spot_sightseeing.html?id=1382",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/928348174c84949b04c88b789e5c78ab07f71753c90dee517d97c47e68d5905d.html",
+    "snapshotSHA256": "928348174c84949b04c88b789e5c78ab07f71753c90dee517d97c47e68d5905d",
+    "fetchedAt": "2026-11-05T06:29:31.006039+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.868917+00:00",
+    "contentType": "text/html;charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.sk-michinoeki.jp/michinoeki/458",
+    "finalUrl": "https://www.sk-michinoeki.jp/michinoeki/458",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/20f83e46025afd2e7fdddfe1f25f2f6a5a55ebd15d292867b4b3f4142cf6f461.html",
+    "snapshotSHA256": "20f83e46025afd2e7fdddfe1f25f2f6a5a55ebd15d292867b4b3f4142cf6f461",
+    "fetchedAt": "2026-11-05T06:29:31.368198+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.869546+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/9fa8b273-ee7c-4374-9a8e-7af865fbaff9",
+    "finalUrl": "https://www.japan47go.travel/ja/detail/9fa8b273-ee7c-4374-9a8e-7af865fbaff9",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/b72af19567b8517c27b6472cdb6fd1b3a5d1f78d15b5c22f9a33eeda4abb14ac.html",
+    "snapshotSHA256": "b72af19567b8517c27b6472cdb6fd1b3a5d1f78d15b5c22f9a33eeda4abb14ac",
+    "fetchedAt": "2026-11-05T06:29:31.447970+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.870188+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.pref.kagawa.lg.jp/documents/43491/r5-1-siryou1.pdf",
+    "finalUrl": "https://www.pref.kagawa.lg.jp/documents/43491/r5-1-siryou1.pdf",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/ca9bec782c4a55785e6cbc44caa737df4d0137a2898e01c55b0d7d2acf0f4536.pdf",
+    "snapshotSHA256": "ca9bec782c4a55785e6cbc44caa737df4d0137a2898e01c55b0d7d2acf0f4536",
+    "fetchedAt": "2026-11-05T06:29:31.138980+00:00",
+    "requestStartedAt": "2026-11-05T06:29:30.871000+00:00",
+    "contentType": "application/pdf"
+  },
+  {
+    "sourceUrl": "https://kochi-tabi.jp/search_spot_food.html?id=7721",
+    "finalUrl": "https://kochi-tabi.jp/search_spot_food.html?id=7721",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/cf4bdaa8793e552dbccf93f37bce9c53a092bffb7c5492031cfab219b1195711.html",
+    "snapshotSHA256": "cf4bdaa8793e552dbccf93f37bce9c53a092bffb7c5492031cfab219b1195711",
+    "fetchedAt": "2026-11-05T06:30:36.016750+00:00",
+    "requestStartedAt": "2026-11-05T06:30:35.818013+00:00",
+    "contentType": "text/html;charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.city.kami.lg.jp/soshiki/34/kaminka.html",
+    "finalUrl": "https://www.city.kami.lg.jp/soshiki/34/kaminka.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/eb5599f86ef2eadbfe8f9ed3b359e3cef899a2d37849c4e028560e329aac3a84.html",
+    "snapshotSHA256": "eb5599f86ef2eadbfe8f9ed3b359e3cef899a2d37849c4e028560e329aac3a84",
+    "fetchedAt": "2026-11-05T06:30:36.134483+00:00",
+    "requestStartedAt": "2026-11-05T06:30:35.818847+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://ryugadou.or.jp/facility/",
+    "finalUrl": "https://ryugadou.or.jp/facility/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/e9f6820cf22813f5af52339b17fbe2184f9eedf353bf82440aef42a57323337f.html",
+    "snapshotSHA256": "e9f6820cf22813f5af52339b17fbe2184f9eedf353bf82440aef42a57323337f",
+    "fetchedAt": "2026-11-05T06:30:36.078072+00:00",
+    "requestStartedAt": "2026-11-05T06:30:35.819498+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://toonartvillage2.amebaownd.com/pages/4013369/information",
+    "finalUrl": "https://toonartvillage2.amebaownd.com/pages/4013369/information",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/eb6aab82f0c386223e344dd5f5e329127211b11a0936b35bac0cbf2ee57a906b.html",
+    "snapshotSHA256": "eb6aab82f0c386223e344dd5f5e329127211b11a0936b35bac0cbf2ee57a906b",
+    "fetchedAt": "2026-11-05T06:30:35.926334+00:00",
+    "requestStartedAt": "2026-11-05T06:30:35.819967+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.my-kagawa.jp/point/155",
+    "finalUrl": "https://www.my-kagawa.jp/point/155",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/2ebedb40be28232e797455ab1c6e8af1cdc18a7b44002d1e3080fbae6a808c47.html",
+    "snapshotSHA256": "2ebedb40be28232e797455ab1c6e8af1cdc18a7b44002d1e3080fbae6a808c47",
+    "fetchedAt": "2026-11-05T06:30:36.294871+00:00",
+    "requestStartedAt": "2026-11-05T06:30:35.820540+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.city.kami.lg.jp/map/michinoeki20231209.html",
+    "finalUrl": "https://www.city.kami.lg.jp/map/michinoeki20231209.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/b00c37518b3d009a5d6a67f3883ddbdb6173ccc0e86fbe875e5cf27451036536.html",
+    "snapshotSHA256": "b00c37518b3d009a5d6a67f3883ddbdb6173ccc0e86fbe875e5cf27451036536",
+    "fetchedAt": "2026-11-05T06:31:03.746403+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.386350+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://kochi-tabi.jp/search_spot_inn.html?id=1370",
+    "finalUrl": "https://kochi-tabi.jp/search_spot_inn.html?id=1370",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/96f58f1d8ec302660df15fb23476994b880070e65b6c517b5b4ad0ea03811329.html",
+    "snapshotSHA256": "96f58f1d8ec302660df15fb23476994b880070e65b6c517b5b4ad0ea03811329",
+    "fetchedAt": "2026-11-05T06:31:03.590530+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.387068+00:00",
+    "contentType": "text/html;charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.marugame-happylife.jp/islands/info/entry-160.html",
+    "finalUrl": "https://www.marugame-happylife.jp/islands/info/entry-160.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/77eb6eaca704242240bba10f9f6a194c1a35455b51f484dcb85352954b56d656.html",
+    "snapshotSHA256": "77eb6eaca704242240bba10f9f6a194c1a35455b51f484dcb85352954b56d656",
+    "fetchedAt": "2026-11-05T06:31:03.777293+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.387509+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/9c66239c-6e1b-499c-9b34-033e2c562392",
+    "finalUrl": "https://www.japan47go.travel/ja/detail/9c66239c-6e1b-499c-9b34-033e2c562392",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/04dde3cc2fd81f7758a201d59766ed6107299680d521844b5b9d961a71608d57.html",
+    "snapshotSHA256": "04dde3cc2fd81f7758a201d59766ed6107299680d521844b5b9d961a71608d57",
+    "fetchedAt": "2026-11-05T06:31:03.869636+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.387939+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.tsukimigaoka.com/park/visitor.html",
+    "finalUrl": "https://www.tsukimigaoka.com/park/visitor.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/3bc04544002eb6bd8afb10a07defef5207ce5f86370297c15c0564d96dc2b972.html",
+    "snapshotSHA256": "3bc04544002eb6bd8afb10a07defef5207ce5f86370297c15c0564d96dc2b972",
+    "fetchedAt": "2026-11-05T06:31:03.695490+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.388927+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://imabarishintoshi.aeonmall.jp/floormap",
+    "finalUrl": "https://imabarishintoshi.aeonmall.jp/floormap",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/e54cd31781fb2711bfe949721e009551a69fb47f9163327618c167a8c2350a0d.html",
+    "snapshotSHA256": "e54cd31781fb2711bfe949721e009551a69fb47f9163327618c167a8c2350a0d",
+    "fetchedAt": "2026-11-05T06:31:03.581056+00:00",
+    "requestStartedAt": "2026-11-05T06:31:03.390016+00:00",
+    "contentType": "text/html;charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://kochi-tabi.jp/policy.html",
+    "finalUrl": "https://kochi-tabi.jp/policy.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/2db0d36a70dcbd76f89bea7f46964c5cc588862fbe60487faa2151462d21a6e3.html",
+    "snapshotSHA256": "2db0d36a70dcbd76f89bea7f46964c5cc588862fbe60487faa2151462d21a6e3",
+    "fetchedAt": "2026-11-05T06:31:36.058073+00:00",
+    "requestStartedAt": "2026-11-05T06:31:35.935607+00:00",
+    "contentType": "text/html;charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.japan47go.travel/ja/about",
+    "finalUrl": "https://www.japan47go.travel/ja/about",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/2293191d38648259879ad80c0c5b252162778294f2ada4dc61d0539e23e0c439.html",
+    "snapshotSHA256": "2293191d38648259879ad80c0c5b252162778294f2ada4dc61d0539e23e0c439",
+    "fetchedAt": "2026-11-05T06:31:36.257795+00:00",
+    "requestStartedAt": "2026-11-05T06:31:35.936371+00:00",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "sourceUrl": "https://www.city.marugame.lg.jp/site/castle/2897.html",
+    "finalUrl": "https://www.city.marugame.lg.jp/site/castle/2897.html",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/a5cafa521aca3b55ada8b6a59ad53c74939403f158d41127142d2136f68cdd85.html",
+    "snapshotSHA256": "a5cafa521aca3b55ada8b6a59ad53c74939403f158d41127142d2136f68cdd85",
+    "fetchedAt": "2026-11-05T06:31:36.042094+00:00",
+    "requestStartedAt": "2026-11-05T06:31:35.936731+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://www.city.kami.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "finalUrl": "https://www.city.kami.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429.html",
+    "snapshotSHA256": "702ff3a4932824856ffe488728a601012b2ab648821bcb581cfff995c36c3429",
+    "fetchedAt": "2026-11-05T06:31:36.190351+00:00",
+    "requestStartedAt": "2026-11-05T06:31:35.937228+00:00",
+    "contentType": "application/javascript"
+  },
+  {
+    "sourceUrl": "https://www.marugame-happylife.jp/js/dest/index.js?date=20250519191746",
+    "finalUrl": "https://www.marugame-happylife.jp/js/dest/index.js?date=20250519191746",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/451c25628950746ef6a392f37a4d3d1d58125e3ec561fef9a80de16d7bec836a.html",
+    "snapshotSHA256": "451c25628950746ef6a392f37a4d3d1d58125e3ec561fef9a80de16d7bec836a",
+    "fetchedAt": "2026-11-05T06:31:56.529241+00:00",
+    "requestStartedAt": "2026-11-05T06:31:56.277926+00:00",
+    "contentType": "application/x-javascript"
+  },
+  {
+    "sourceUrl": "https://www.marugame-happylife.jp/themes/islands/js/islands.js?date=20260408184320",
+    "finalUrl": "https://www.marugame-happylife.jp/themes/islands/js/islands.js?date=20260408184320",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/8b648d52dc418cabdfbb785c018d17274f6f9e242d8029adbfbacf05cffb2987.html",
+    "snapshotSHA256": "8b648d52dc418cabdfbb785c018d17274f6f9e242d8029adbfbacf05cffb2987",
+    "fetchedAt": "2026-11-05T06:31:56.498897+00:00",
+    "requestStartedAt": "2026-11-05T06:31:56.278684+00:00",
+    "contentType": "application/x-javascript"
+  },
+  {
+    "sourceUrl": "https://www.my-kagawa.jp/site",
+    "finalUrl": "https://www.my-kagawa.jp/site",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/c0788391a80e23a3b1fe06b4e06b2cc6b3886d42278e04a5efd44a56bde6a90f.html",
+    "snapshotSHA256": "c0788391a80e23a3b1fe06b4e06b2cc6b3886d42278e04a5efd44a56bde6a90f",
+    "fetchedAt": "2026-11-05T06:32:14.741598+00:00",
+    "requestStartedAt": "2026-11-05T06:32:14.568855+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.iyokannet.jp/site",
+    "finalUrl": "https://www.iyokannet.jp/site",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/55db9d3fcf248393c349eefb5337413fc3b4b4fb6e98b8e57d82ed449d1b3bcd.html",
+    "snapshotSHA256": "55db9d3fcf248393c349eefb5337413fc3b4b4fb6e98b8e57d82ed449d1b3bcd",
+    "fetchedAt": "2026-11-05T06:32:14.795696+00:00",
+    "requestStartedAt": "2026-11-05T06:32:14.569824+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://maps.pref.tokushima.lg.jp/about/",
+    "requestStartedAt": "2026-11-05T06:32:14.570387+00:00",
+    "fetchedAt": null,
+    "error": "HTTP Error 404: Not Found",
+    "requestEndedAt": "2026-11-05T06:32:14.809921+00:00"
+  },
+  {
+    "sourceUrl": "https://www.toku-eta.or.jp/sewer/access/",
+    "finalUrl": "https://www.toku-eta.or.jp/sewer/access/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/35c06176a78b5b8585463b42d5e9add7eb8e1e844a9275c8cec307d6c1dbc430.html",
+    "snapshotSHA256": "35c06176a78b5b8585463b42d5e9add7eb8e1e844a9275c8cec307d6c1dbc430",
+    "fetchedAt": "2026-11-05T06:32:14.902799+00:00",
+    "requestStartedAt": "2026-11-05T06:32:14.570785+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.pref.kochi.lg.jp/doc/2016061000215/",
+    "finalUrl": "https://www.pref.kochi.lg.jp/doc/2016061000215/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/19c2563e020e523f2fa2d9c2c4844b42f34336922e3d9c30a8eda825cee3c570.html",
+    "snapshotSHA256": "19c2563e020e523f2fa2d9c2c4844b42f34336922e3d9c30a8eda825cee3c570",
+    "fetchedAt": "2026-11-05T06:32:14.767383+00:00",
+    "requestStartedAt": "2026-11-05T06:32:14.571146+00:00",
+    "contentType": "text/html"
+  },
+  {
+    "sourceUrl": "https://www.toku-eta.or.jp/sewer/facility-outline/",
+    "finalUrl": "https://www.toku-eta.or.jp/sewer/facility-outline/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/7fcbac188c6ef0cf19e8f4a7503addb4ad9ebc582f32b44f0f10ffc0270f7cec.html",
+    "snapshotSHA256": "7fcbac188c6ef0cf19e8f4a7503addb4ad9ebc582f32b44f0f10ffc0270f7cec",
+    "fetchedAt": "2026-11-05T06:33:01.178796+00:00",
+    "requestStartedAt": "2026-11-05T06:33:00.915178+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.toku-eta.or.jp/wp-content/uploads/2026/06/sewer-pamphlet_r08.pdf",
+    "finalUrl": "https://www.toku-eta.or.jp/wp-content/uploads/2026/06/sewer-pamphlet_r08.pdf",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/93410aa409c3121fd745347e79622e01369717a98cde545460e851338b364129.pdf",
+    "snapshotSHA256": "93410aa409c3121fd745347e79622e01369717a98cde545460e851338b364129",
+    "fetchedAt": "2026-11-05T06:33:01.082833+00:00",
+    "requestStartedAt": "2026-11-05T06:33:00.916073+00:00",
+    "contentType": "application/pdf"
+  },
+  {
+    "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/32/",
+    "finalUrl": "https://kagawa-gesui.or.jp/publics/index/32/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/73daec09cb4cdf3d82273df8b134d19a6466353c5fad1a33c1da38d2b3e073ca.html",
+    "snapshotSHA256": "73daec09cb4cdf3d82273df8b134d19a6466353c5fad1a33c1da38d2b3e073ca",
+    "fetchedAt": "2026-11-05T06:33:01.426510+00:00",
+    "requestStartedAt": "2026-11-05T06:33:00.916575+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.naruto-kankou.jp/charm/charm-5996/",
+    "finalUrl": "https://www.naruto-kankou.jp/charm/charm-5996/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/a320224bf1543420ae0c07e74730689c2be6075a9c7f439bf539b9e6272995ee.html",
+    "snapshotSHA256": "a320224bf1543420ae0c07e74730689c2be6075a9c7f439bf539b9e6272995ee",
+    "fetchedAt": "2026-11-05T06:33:11.409770+00:00",
+    "requestStartedAt": "2026-11-05T06:33:10.593369+00:00",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "sourceUrl": "https://www.pref.kochi.lg.jp/doc/takasu-gaiyou/",
+    "finalUrl": "https://www.pref.kochi.lg.jp/doc/takasu-gaiyou/",
+    "status": 200,
+    "snapshotPath": "data/evidence/issue7/shikoku/9d0fcbbad47937d92d4661ec2e15fb33dc89582b168cba0b75a815ed2f6811a3.html",
+    "snapshotSHA256": "9d0fcbbad47937d92d4661ec2e15fb33dc89582b168cba0b75a815ed2f6811a3",
+    "fetchedAt": "2026-11-05T06:33:10.716862+00:00",
+    "requestStartedAt": "2026-11-05T06:33:10.594217+00:00",
+    "contentType": "text/html"
+  }
+]

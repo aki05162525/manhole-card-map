@@ -1,0 +1,38 @@
+[
+  {
+    "path": "data/national/issue5/west-south.json",
+    "sha256": "f627ab7b241490cf015508ae8a6c0c1b03c6d6600d5d038f9f1e44196481bba3"
+  },
+  {
+    "path": "data/national/issue5/reviews/west-south.json",
+    "sha256": "92beba08dc81ae2157de3f047f1a32edd56012ed466a82858d8abe1fd0a57783"
+  },
+  {
+    "path": "data/national/reviews/chugoku-saitama-locations.json",
+    "sha256": "0b153b16b39e7a15ac1d6ab638bfc9d78c0b871bb4bf41106d9e06e49f68cef7"
+  },
+  {
+    "path": "data/national/location-updates/chugoku-shikoku.json",
+    "sha256": "f1653562142774c5b6d4b53b2b766010da2a77070ae95bc3991f0b3587cf6c07"
+  },
+  {
+    "path": "data/evidence/national/official-facility-index/p05.html",
+    "sha256": "f4fb606b48648e225580eefef68bacd8daf75d1245b938c2057d7798f2d898e9"
+  },
+  {
+    "path": "data/evidence/national/official-facility-index/p05-license.html",
+    "sha256": "f9947a182c0f946a298b04f4cf2d112ed13807b22abaf52b74272c7e710744e1"
+  },
+  {
+    "path": "data/evidence/issue5/review-west-south/current-terms.html",
+    "sha256": "23ee18cdc254aea448675cb1fef73755024842c2b874819f3ff45576d68e8a42"
+  },
+  {
+    "path": "data/evidence/issue5/review-chubu/p05-spec.txt",
+    "sha256": "dd87a21aee2132b60f7d996bef5113032969094f08e877195609f88fff3b3ce5"
+  },
+  {
+    "path": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "sha256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+  }
+]

@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <title>大和市文化創造拠点シリウスについて｜大和市文化創造拠点</title>
+
+  <link rel="stylesheet" type="text/css" href="/common/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/module.css">
+  <link rel="stylesheet" type="text/css" href="/about/common/css/parts.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/sp_base.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/sp_module.css">
+  <link rel="stylesheet" type="text/css" href="/about/common/css/sp_parts.css">
+
+  <!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/common/js/jquery.js"></script>
+  <script type="text/javascript" src="/common/js/viewport.js"></script>
+  <script type="text/javascript" src="/common/js/jquery.responsive-elements.js"></script>
+  <script type="text/javascript" src="/common/js/common.js"></script>
+  <script type="text/javascript" src="/common/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="/common/js/jquery.accessible.js"></script>
+</head>
+
+<body id="about">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69153190-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--GA4230120 Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT43BS4"
+
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) --><div id="container" data-respond="start: 620px; end: 670px; interval: 10px;">
+
+<!--================= Header start ==================-->
+<header id="boxHeader">
+
+  <!--========= Header Top start =========-->
+  <div class="boxHeaderTop">
+  <div class="boxInner clearfix">
+
+  <!--==== ▼サイトロゴ start ====-->
+  <div class="boxSiteLogo clearfix">
+    <h1 id="ttlSiteLogo"><a href="/"><img src="/common/img/header/logo.png" width="140" alt="大和市文化創造拠点"></a></h1>
+  </div>
+  <!--==== //サイトロゴ end ====-->
+
+  <!--==== ▼リンクエリア start ====-->
+  <div class="boxLinkArea mediaPC">
+    <!--==== ▽文字サイズ変更 start ====-->
+    <div id="fontsize" class="mediaPC">  
+      <p class="boxChangeBtn">文字サイズ<span id="fontsize-normal" class="btnFontsize"><a href="#">標準</a></span><span id="fontsize-enlarge" class="btnFontsize"><a href="#">拡大</a></span></p>
+    </div>
+    <!--==== //文字サイズ変更 end ====-->
+  
+    <!--==== ▽ヘッダーナビ start ====-->
+    <div class="boxHeaderNavGRR">
+      <p><a href="https://smilego.jp/fa7eaa6" target="_blank">2階市民交流ラウンジ 混雑状況</a></p>
+    </div>
+    
+    <div class="boxHeaderNavGR">
+      <p><a href="https://smilego.jp/1b77f79" target="_blank">6階ぷらっと大和 混雑状況</a></p>
+    </div>
+    <!--==== //ヘッダーナビ end ====-->
+	  
+	<div class="searchArea">
+		<script>
+          (function() {
+              var cx = '018344580088037867210:6_pjfyfi8t0';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+			  
+			  window.addEventListener('load', function() {
+				  /* get input tag */
+				  let inputArea = document.getElementById('gsc-i-id1');
+				  /* default text init */
+				  inputArea.setAttribute('placeholder','');
+				  /* default text toggle (classname) */
+				  if(inputArea.value === ""){
+				      inputArea.parentNode.classList.add('current');
+				  }
+				  inputArea.onfocus = function(){
+					  this.parentNode.classList.remove('current');
+				  }
+				  inputArea.onblur = function(){
+					  if(this.value === ""){
+					      this.parentNode.classList.add('current');
+					  }
+				  }
+			  });
+          })();
+       </script>
+       <gcse:searchbox-only></gcse:searchbox-only>
+	</div>
+	  
+  </div>
+  <!--==== //リンクエリア end ====-->
+
+  <!--==== ▼グローバルナビ（SP） start ====-->
+  <nav class="boxGlobalNav mediaSP">
+    <dl>
+    <dt class="btnOpen"><img src="/common/img/header/gnav-btn-menu.png" alt="Menu"></dt>
+    <dd class="boxMenu">
+    <ul>
+    <li><a href="/" class="icnArw"><span>ホーム</span></a></li>
+    <li><a href="/hall/" class="icnArw"><span>芸術文化ホール</span></a></li>
+    <li><a href="/library/" class="icnArw"><span>図書館</span></a></li>
+    <li><a href="/learning/" class="icnArw"><span>生涯学習センター</span></a></li>
+    <li><a href="/plaza/" class="icnArw"><span>屋内こども広場</span></a></li>
+    <li><a href="/about/" class="icnArw"><span>シリウスについて</span></a></li>
+    <li><a href="https://smilego.jp/fa7eaa6" target="_blank" class="green"><span>2階市民交流ラウンジ 混雑状況</span></a></li>
+    <li><a href="https://smilego.jp/1b77f79" target="_blank" class="green"><span>6階ぷらっと大和 混雑状況</span></a></li>
+<!--
+    <li>
+   <p class="boxSNS">
+      <a href="/" target="_blank"><img src="/common/img/header/sns-btn-fb-sp.png" alt="facebook"></a>
+      <a href="/" target="_blank"><img src="/common/img/header/sns-btn-tw-sp.png" alt="twitter"></a>
+    </p>
+    </li>
+-->
+	<li style="padding:20px; text-align: center;"><div class="searchArea">
+		<script>
+          (function() {
+              var cx = '018344580088037867210:6_pjfyfi8t0';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+			  
+			  window.addEventListener('load', function() {
+				  /* get input tag */
+				  let inputArea = document.getElementById('gsc-i-id1');
+				  /* default text init */
+				  inputArea.setAttribute('placeholder','');
+				  /* default text toggle (classname) */
+				  if(inputArea.value === ""){
+				      inputArea.parentNode.classList.add('current');
+				  }
+				  inputArea.onfocus = function(){
+					  this.parentNode.classList.remove('current');
+				  }
+				  inputArea.onblur = function(){
+					  if(this.value === ""){
+					      this.parentNode.classList.add('current');
+					  }
+				  }
+			  });
+          })();
+       </script>
+       <gcse:searchbox-only></gcse:searchbox-only>
+	</div></li>
+    </ul>
+    </dd>
+    </dl>
+	 
+  </nav>
+  <!--==== //グローバルナビ（SP） end ====-->
+
+  </div>
+  </div>
+  <!--========= //Header Top end =========-->
+
+  <!--========= Header Bottom start =========-->
+  <div class="mediaPC" id="headerBtm">
+  <div class="boxInner clearfix">
+
+  <!--==== ▼グローバルナビ（PC） start ====-->
+  <nav class="boxGlobalNav mediaPC">
+    <ul>
+    <li class="btnHall"><a href="/hall/"><span>芸術文化ホール</span></a></li>
+    <li class="btnLibrary"><a href="/library/"><span>図書館</span></a></li>
+    <li class="btnLearning"><a href="/learning/"><span>生涯学習センター</span></a></li>
+    <li class="btnPlaza"><a href="/plaza/"><span>屋内こども広場</span></a></li>
+    <li class="btnAbout"><a href="/about/"><span>大和市文化創造拠点について</span></a></li>
+    </ul>
+  </nav>
+  <!--==== //グローバルナビ（PC） end ====-->
+  
+  </div>
+  </div>
+  <!--========= //Header Bottom end =========-->
+
+</header><!--================= //Header end ==================-->
+
+
+<!--================= Content start ==================-->
+<div id="contentWide" class="bgContent">
+
+<!--========== ▼Breadcrumb start ==========-->
+<nav class="boxBreadcrumb">
+  <p class="boxInner clearfix">
+  <span><a href="/">ホーム</a> &gt; </span>
+  <span>大和市文化創造拠点シリウスについて</span>
+  </p>
+</nav>
+<!--========== //Breadcrumb end ==========-->
+
+<!--======== Common Content start ==========-->
+<div class="boxCommonContent boxInner">
+  
+<!--========== ▼Category Title start ==========-->
+<div class="boxMainTitle clearfix">
+  <h1 class="ttlMain"><span>シリウスについて</span></h1>
+</div>
+<!--========== //Category Title end ==========-->
+
+<!--========== ▼Section start ==========-->
+<section class="boxSection">
+  <div class="boxAbout clearfix">
+          <section class="boxAboutContent clearfix">
+      <h2 class="ttlSection">「心に響く・心が躍る・<br class="mediaSP">心をつなぐ」</h2>
+      <p class="txtCatch">大和市文化創造拠点は、子どもから大人まで多くのみなさまに、芸術文化や生涯学習の素晴らしさ、新しい知識・人々との心弾む出会いをお届けし、<br class="mediaPC">みなさまの心に一体感を生み出す場として誕生しました。中核を成すのは、図書館、芸術文化ホール、生涯学習センター、屋内こども広場。<br class="mediaPC">4つの施設はそれぞれの個性の融合により更なるエネルギーを生み出し、未来につながる創造力を育むとともに、<br class="mediaPC">みなさまの芸術文化活動の道標となり、日々進化を遂げてゆきます。</p>
+      
+      <div class="boxImg">
+      <video poster="common/img/thumb_digest.jpg" controls id="movieDigest">
+        <source src="common/movie/about_movie.mp4" type="video/mp4">
+        <source src="common/movie/about_movie.ogv" type="video/ogg">
+        <source src="common/movie/about_movie.webm" type="video/webm">
+        <p>※ご利用のブラウザでは再生することができません。</p>
+      </video>
+      </div>
+      
+      　<div class="boxAboutContent clearfix" id="sirius">
+      <h2 class="ttlSection"><img src="/about/common/img/img-about-05.png" alt="シリウスロゴマーク"></h2>
+      <p class="txtCatch">
+      大和市文化創造拠点の愛称はシリウスです。<br>
+シリウスは、おおいぬ座を代表する、地球から見える恒星の中で最も明るい一等星。夜空のどの星よりも明るく輝くこの星の名は、<br class="mediaPC">
+「文化創造拠点が未来にわたって光り輝き、市民に愛される施設となるように」という想いを込めて名付けられました。</p>
+    </div>
+    
+      <div class="boxImg">
+        <ul>
+          <li><img src="./common/img/img-about-02.png" alt="芸術文化ホール　写真" oncontextmenu="return false;"></li>
+          <li><img src="./common/img/img-about-03.png" alt="図書館　写真" oncontextmenu="return false;"></li>
+          <li><img src="./common/img/img-about-04.png" alt="生涯学習センター　写真" oncontextmenu="return false;"></li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="boxAboutContent clearfix">
+      <!--<h2 class="ttlSection">「未来へつなげる　<br class="mediaSP">大和の文化創造拠点」</h2>
+      <p class="txtCatch">2016年11月大和駅の近くに「大和市文化創造拠点」が誕生。<br>芸術文化ホール、図書館、生涯学習センター、屋内こども広場など複数の機能が融合された新しいタイプの公共施設です。<br>従来の公共施設の枠を超え、幅広い世代の市民による活動や交流を生み出す大和の新たな文化の発信地です。</p>-->
+
+    </section>
+    
+    <section class="boxAboutContent clearfix">
+      <h2 class="ttlSection">「やまとみらい」</h2>
+      <p class="txtCatch">指定管理者「やまとみらい」が大和市文化創造拠点シリウスを運営いたします。<br>それぞれが持つ高度な専門性、運営スキルを最大限活用し、「心に響く・心が躍る・心をつなぐ」 機会を提供します。</p>
+      <div class="boxOutline">
+        <h3>概要</h3>
+        <ul>
+          <li>
+            <dl>
+              <dt>指定管理者</dt>
+              <dd>やまとみらい<br>株式会社図書館流通センター、<br class="mediaSP">サントリーパブリシティサービス株式会社、<br>株式会社小学館集英社プロダクション、<br class="mediaSP">株式会社明日香、 株式会社ボーネルンド、<br>横浜ビルシステム株式会社 </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>所&nbsp;在&nbsp;地</dt>
+              <dd>神奈川県大和市大和南一丁目8番1号</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;途</dt>
+              <dd>ホール、図書館、生涯学習センター、屋内こども広場、駐車場等</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>階&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</dt>
+              <dd>地上6階  地下1階</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>
+<!--========== //Section end ==========-->
+
+</div>
+<!--======== //Common Content end ==========-->
+
+</div>
+<!--================= //Content end ==================-->
+
+
+<!--================= Footer start ===================-->
+<footer id="boxFooter">
+
+  <!--========= Footer Top start =========-->
+  <div class="boxFooterTop">
+    <ul>
+      <li><a href="/sitepolicy/">サイト利用にあたって</a></li>
+      <li><a href="/sns/">SNS利用規約</a></li>
+      <li><a href="/privacypolicy/">プライバシーポリシー</a></li>
+    </ul>
+  </div>
+
+  <!--==== ▼ページトップボタン start ====-->
+  <div class="boxPageTop" id="pagetop"><p><a href="#container"><span>TOP</span></a></p></div>
+  <!--==== //ページトップボタン end ====-->
+
+  <div class="boxFooterBottom">
+    <!--==== ▼コピーライト start ====-->
+    <small class="txtCopyright">Copyright&nbsp;&copy;YAMATO&nbsp;MIRAI.&nbsp;All&nbsp;rights&nbsp;reserved.</small>
+    <!--==== //コピーライト end ====-->
+  </div>
+</footer>
+<!--================= //Footer end ===================-->
+
+</div>
+</body>
+
+</html>

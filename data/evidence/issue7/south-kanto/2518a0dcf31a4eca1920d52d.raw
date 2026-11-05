@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="copyright" content="(C) Copyright Tateyama City All Rights Reserved." />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="content-style-type" content="text/css" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="start" href="http://www.city.tateyama.chiba.jp/" title="館山市役所ホームページ" />
+
+
+              
+  <title>マンホールカードの配布について | 館山市役所</title>
+  
+  <meta property="og:title" content="マンホールカードの配布について | 館山市役所" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="詳細はリンク先にてご確認下さい。" />
+  <meta property="og:url" content="http://www.city.tateyama.chiba.jp/gesui/page100037.html" />
+  <meta property="og:site_name" content="館山市役所" />
+  <meta property="og:locale" content="ja_JP" />
+  
+  <link rel="stylesheet" type="text/css" href="/css/import.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="/css/pc_bgcolor_white.css" media="screen, projection" id="changeColor" />
+
+  <script type="text/javascript" src="/js/jquery-1.6.1.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="/js/ui.js"></script>
+  <script type="text/javascript" src="/js/printcss.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/new_pc.css?202410" media="print, screen and (min-width: 800px)" />
+  <link rel="stylesheet" type="text/css" href="/css/new_sp.css?202410" media="only screen and (max-width: 799px)" />
+  <script type="text/javascript" src="/js/new_common.js"></script>
+  <script type="text/javascript" src="/js/googlesearch.js"></script>
+  <script type="text/javascript" src="/js/tablewrap.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30620334-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script src="//cdn1.readspeaker.com/script/11405/webReader/webReader.js?pids=wr&amp;forceAdapter=ioshtml5&amp;disable=translation,lookup" type="text/javascript"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M4NGD1HFKQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M4NGD1HFKQ');
+</script>
+</head>
+
+<body id="pc_life" class="pc_contents">
+  <noscript><p style="text-align:center; margin-bottom:0px; padding:5px; background-color:#efefef; border:2px solid #000; font-weight:bold;">館山市ウェブサイトではJavaScriptを使用しています。JavaScriptを無効にしている場合、機能が制限されますのでご了承ください。</p></noscript>
+
+ <div id="container">
+
+    <!-- header start ==============================-->
+    <div id="header">
+      <div class="inner">
+        <div class="sublogo">
+          <a class="logo" href="/index.html" title="館山市役所ホームページトップへ"><img src="/files/300358924.png" alt="館山市役所" /></a>
+          <a class="character" href="/kankominato/page000001_00122.html" title="南房総 花海街道 ダッペエ紹介ページへ"><img src="/files/300358897.png" alt="館山市のマスコットキヤラクターダッペエ" /></a>
+        </div>
+
+        <div class="btn_search"></div>
+        <div class="btn_menu btn_ac">
+          <div class="inner">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div><!-- /.inner -->
+        </div><!-- /.btn_menu -->
+
+        <div class="linkArea">
+          <div class="linkBlock01">
+            <div class="inner">
+              <p class="link_article"><a href="#article">本文へ</a></p>
+              <p class="link_Language"><a href="/jouhou/page100131.html">Foreign Language</a></p>
+
+              <div class="fontsizeBlock">
+                <p class="text">文字サイズ</p>
+                <button type="button" class="btn normal" name="標準" value="標準" onclick="javascript:void(0)" id="lsNormal">標準</button>
+                <button type="button" class="btn enlarge" name="拡大" value="拡大" onclick="javascript:void(0)" id="lsBigger">拡大</button>
+              </div><!-- /.btn_fontsize -->
+            </div><!-- /.inner -->
+          </div><!-- /.linkBlock01 -->
+
+          <div class="linkBlock02">
+            <p class="link_contact"><a href="/shisei/page050012.html">お問い合わせ</a></p>
+            <p class="link_sitemap"><a href="/sitemap.html">サイトマップ</a></p>
+            <div class="searchBlock">
+              <div class="inner">
+                <p class="text">サイト内検索</p>
+                <div class="searchBox">
+                  <script>
+                    (function() {
+                    var cx = '009104217821603886992:ob9d_newuow';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                    })();
+                  </script>
+                  <gcse:searchbox-only resultsUrl="/result.html"></gcse:searchbox-only>
+                  <link rel="stylesheet" href="https://www.google.com/cse/static/style/look/default.css" type="text/css" />
+                </div><!-- /.searchBox -->
+              </div><!-- /.inner -->
+            </div><!-- /.searchBlock -->
+          </div><!-- /.linkBlock02 -->
+        </div><!-- /.linkArea -->
+      </div><!-- /.inner -->
+
+      <div class="navArea">
+        <div id="xp1" class="rs_preserve rs_skip rs_splitbutton rs_addtools rs_exp areaReadSpeaker"></div>
+        <div class="inner">
+          <ul class="navBlock">
+            <li class="nav_top"><a href="/index.html">ホーム</a></li>
+            <li class="nav_life"><a href="/kurashi/index.html">暮らしの情報</a></li>
+            <li class="nav_tourism"><a href="/kankou-bunka/index.html">観光・文化情報</a></li>
+            <li class="nav_work"><a href="/shigoto-sangyou/index.html">しごと・産業情報</a></li>
+            <li class="nav_mGovernment"><a href="/shisei/index.html">市政情報</a></li>
+            <li class="nav_faq"><a href="/faq/index.html">よくあるご質問</a></li>
+          </ul>
+        </div><!-- /.inner -->
+      </div><!-- /.navArea -->
+    </div><!-- /#header -->
+    <!-- //header end ==============================-->
+
+
+   <div id="pagebody">
+   	<div class="wrap">
+      <p id="navTpath" class="navigation"><a href="/index.html">ホーム</a> &gt; <a href="/kurashi/index.html">暮らしの情報</a> &gt; <a href="/kurashi/cate000069.html">住宅・水質保全</a> &gt; <a href="/kurashi/cate000076.html">上下水道</a> &gt; <a href="/kurashi/cate000077.html">公共下水道</a> &gt; <span>マンホールカードの配布について</span></p>
+      <p id="navPrint" class="navigation"><input type="image" src="/files/300000005.png" value="印刷用ページ" alt="印刷用ページ" id="printBtn" /></p>
+    </div>
+
+    <div id="article">
+
+    	<h1><span>マンホールカードの配布について</span></h1>
+      
+<ul class="sbList">
+<li class="sbFacebook">
+<div class="fb-share-button" data-href="https://www.city.tateyama.chiba.jp/gesui/page100037.html" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.city.tateyama.chiba.jp/gesui/page100037.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェアする</a></div>
+</li>
+<li class="sbTwitter"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+<script type="text/javascript">
+<!--
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+// --></script></li>
+</ul>
+      
+
+
+
+
+
+      <p class="update">最終更新日：令和8年9月15日</p>
+
+      <div class="lead">
+
+      
+
+      </div><!-- /.lead -->
+
+
+      <div class="section">
+
+
+
+      <div id="section1">
+
+
+
+         <div class="text">
+ <span class="aly_tx_m"><span class="aly_tx_f_red">館山市では以下のマンホールカードを配布しています。<br />
+（1）配布カード：さかなクン、配布場所：&ldquo;渚の駅&rdquo;たてやま<br />
+（2）配布カード：館山湾、配布場所：館山駅東口観光案内所<br />
+（3）配布カード：つばきファクトリー、配布場所：たてチャリサイクリングステーション</span></span>
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section2">
+
+       	<h2><span>マンホールカードとは</span></h2>
+
+
+         <div class="text">
+ 「マンホールカード」とは、カード型の下水道広報パンフレットです。<br />
+マンホール蓋は、路上を飾るご当地ものとして地域によって様々な<br />
+デザインがあり、カードにより楽しみながら下水道に興味を持って<br />
+いただくことを目的としています。
+
+        </div>
+ 
+
+
+
+ 
+<ul class="navigation">
+<li class="linkPage">
+<a href="http://www.gk-p.jp/mhcard/">
+マンホールカードについて
+
+<img src="/files/300039623.png" alt="外部リンク" class="icon">
+</a>
+</li>
+</ul>
+
+      </div>
+ 
+
+
+      <div id="section3">
+
+       	<h2><span>「さかなクン」デザインのマンホールカードについて</span></h2>
+
+
+         <div class="text layoutCt">
+ デザインの由来<br />
+&rdquo;ギョギョギョ&rdquo;でお馴染み、館山おさかな大使の「さかなクン」が描いたイラストを基に、館山市制施行80周年を記念したコラボ企画のマンホール蓋です。館山と言えばこれ<em>！！</em>「海と太陽と富士山」をバックに、「さかなクン」を取り囲むように「マダイちゃん」や「イセエビちゃん」、「ジンベエザメちゃん」など、館山の海で見られる色とりどりのお魚大集ギョー<em>！！</em><br />
+マンホール蓋設置のみなとオアシス&rdquo;渚の駅&rdquo;たてやまは、「さかなクンギャラリー」や館山湾に生息する生き物を観察できる「海辺の広場」のほか、お土産屋やレストランも併設する交流拠点施設です。ぜひ、ギョ覧ください。
+
+        <span class="layoutImg">
+<span class="layout1">
+<img src="/files/300349325.jpg" alt="設置場所は、"渚の駅"たてやま内に設置してあります。" />
+<br />設置場所は、"渚の駅"たてやま内に設置してあります。
+</span>
+        </span>
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section4">
+
+
+
+         <div class="text">
+ <iframe allowfullscreen="" frameborder="0" height="480" loading="lazy" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d817.1707148675891!2d139.85489897068157!3d34.989607745087085!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1641255252329!5m2!1sja!2sjp" style="border: 0px currentColor; border-image: none;" width="640"></iframe>
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section5">
+
+       	<h2><span>「館山湾」デザインのマンホールカード</span></h2>
+
+
+         <div class="text">
+ デザインの由来<br />
+館山市は千葉県南部に位置し、温暖な気候と緑豊かな自然に恵まれ、冬でもポピーや菜の花が咲き誇るほか、サンゴやウミホタルの生息域ともなっています。<br />
+ヨットやサーフインなどのマリンスポーツも盛んで、海水浴の適地としても楽しめるまちです。<br />
+館山湾は波が穏やかで鏡のように美しいことから、別名「鏡ヶ浦」とも呼ばれ、空気が澄んだ日には富士山を望めることもできるほか、湾に沈む夕日はあたり一面をオレンジ色に染め、その光景は格別です。<br />
+そうした館山湾の自然豊かな様子をデザインしたマンホール蓋です。館山の海がより澄み渡り、いつまでも続くようにとの願いが込められています。
+
+        </div>
+ 
+
+
+
+
+      </div>
+ 
+
+
+      <div id="section6">
+
+
+
+         <div class="text layoutCt">
+
+        <span class="layoutImg">
+<span class="layout1">
+<img src="/files/300364490.jpg" alt="設置場所は、館山駅西口から海岸道路交差点左側に設置してあります。" />
+<br />設置場所は、館山駅西口から海岸道路交差点左側に設置してあります。
+</span>
+        </span>
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section7">
+
+
+
+         <div class="text">
+ <iframe allowfullscreen="" frameborder="0" height="480" loading="lazy" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d817.110431853426!2d139.85828123616892!3d34.995646021470215!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1641255166794!5m2!1sja!2sjp" style="border: 0px currentColor; border-image: none;" width="640"></iframe>
+
+        </div>
+ 
+
+
+
+
+      </div>
+ 
+
+
+      <div id="section8">
+
+       	<h2><span>「つばきファクトリー」デザインのマンホールカードについて</span></h2>
+
+
+         <div class="text layoutCt">
+ デザインの由来<br />
+アップフロントグループが取り組む活動「SATOYAMA &amp; SATOUMI movement」が館山市と連携し<br />
+て、館山市における地域活性化を図るために、ハロー!プロジェクトのアイドルグループ&quot;つばきファ<br />
+クトリー&quot;が出演する地域活性化コンサートを令和8年4月5日に千葉県南総文化ホールにて開催しま<br />
+した。<br />
+館山市の木である「椿」は、市内に多く植栽され、誰からも親しまれる常緑樹です。その名を冠する<br />
+つばきファクトリーと館山市の象徴である館山城、海、ヤシ並木をモチーフにしたデザインマンホー<br />
+ルが当該コンサートの開催を記念して制作され、館山市に寄贈されました。
+
+        <span class="layoutImg">
+<span class="layout1">
+<img src="/files/300400779.jpg" alt="設置場所は、館山駅西口から海岸道路交差点右側に設置してあります。 " />
+<br />設置場所は、館山駅西口から海岸道路交差点右側に設置してあります。 
+</span>
+        </span>
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section9">
+
+
+
+         <div class="text">
+ <iframe allowfullscreen="" height="450" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3268.417606185194!2d139.8584444!3d34.99625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDU5JzQ2LjUiTiAxMznCsDUxJzMwLjQiRQ!5e0!3m2!1sja!2sjp!4v1783064387482!5m2!1sja!2sjp" style="border:0;" width="600"></iframe>
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section10">
+
+       	<h4>配布について</h4>
+
+
+         <div class="text">
+ 配布開始日<br />
+「さかなクン」デザインのマンホールカード&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ： 令和4年&nbsp; &nbsp;1月15日（土曜日）<br />
+「館山湾」デザインのマンホールカード&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;： 令和元年12月14日（土曜日）<br />
+<span class="aly_tx_f_red">「つばきファクトリー」デザインのマンホールカード： 令和8年&nbsp; &nbsp; 7月31日（金曜日）</span><br />
+&nbsp;
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section11">
+
+       	<h4>在庫状況</h4>
+
+
+         <div class="text">
+ 「さかなクン」デザインのマンホールカード　&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ：在庫あり<br />
+「館山湾」デザインのマンホールカード　　&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 　：在庫あり<br />
+<span class="aly_tx_f_red">「つばきファクトリー」デザインのマンホールカード：在庫あり</span>
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section12">
+
+       	<h4>配布場所</h4>
+
+
+         <div class="text">
+ 「さかなクン」デザインのマンホールカードについて<br />
+&rdquo;渚の駅&rdquo;たてやま（館山市館山1564-1）<br />
+午前9時00分から午後4時45分まで<br />
+　年末年始及び<span class="aly_tx_f_red">毎週月曜日</span>（祝日の場合は翌日）はお休みです。<br />
+<br />
+<br />
+「館山湾」デザインのマンホールカードについて<br />
+館山駅東口　観光案内所（館山市北条1879-2）<br />
+午前9時00分から午後5時00分まで<br />
+　年末年始（12月29日～1月3日）は午前10時00分から午後4時00分まで<br />
+<br />
+<br />
+<span class="aly_tx_f_red">「つばきファクトリー」デザインのマンホールカードについて<br />
+たてチャリサイクリングステーション（館山市北条1879-2）<br />
+午前9時30分から午後5時00分まで<br />
+年末年始（12月29日～1月3日）の配布はなし</span><br />
+<br />
+<br />
+配布に関するお問い合わせは下水道課（0470－22－3674）までお願いします。<br />
+<br />
+&nbsp;
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+      <div id="section13">
+
+       	<h4>配布方法</h4>
+
+
+         <div class="text">
+ <span class="aly_tx_l"><strong>マンホールカードは1人につき1枚、手渡しでのお渡しとなります。</strong></span><br />
+※）事前予約や郵送での配布は行っておりません。
+
+        </div>
+ 
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div><!-- /.section -->
+
+
+
+
+
+
+
+
+
+      <dl id="panelContact" class="panel">
+        <dt>このページについてのお問い合わせ</dt>
+        <dd>
+          <address>
+            <strong>市民生活部下水道課施設整備係</strong>
+            <span class="address">
+              <span>住所：</span><span>〒294-0054</span>
+              千葉県館山市湊465-1
+            </span><br>
+            <span class="tel">電話：<span>0470-22-3674</span></span><br>
+            <span class="fax">FAX：0470-29-7601</span><br>
+            <span class="mail">E-mail：gesui@city.tateyama.chiba.jp</span>
+          </address>
+        </dd>
+      </dl>
+
+
+<script type="text/javascript">
+<!--
+function checkFeedback() {
+    var checked_result1 = false;
+    var feedback = document.feedback;
+    if (feedback.ans_search.length) {
+        for (var i = 0; i < feedback.ans_search.length; i++) {
+            if (feedback.ans_search[i].checked) {
+                checked_result1 = true;
+            }
+        }
+    }
+    var checked_result2 = false;
+    if (feedback.ans_easy.length) {
+        for (var i = 0; i < feedback.ans_easy.length; i++) {
+            if (feedback.ans_easy[i].checked) {
+                checked_result2 = true;
+            }
+        }
+    }
+    var checked_result3 = false;
+    if (feedback.ans_helpful.length) {
+        for (var i = 0; i < feedback.ans_helpful.length; i++) {
+            if (feedback.ans_helpful[i].checked) {
+                checked_result3 = true;
+            }
+        }
+    }
+    
+    
+    if (checked_result1 && checked_result2 && checked_result3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// -->
+</script>
+<form name="feedback" method="post" action="/cgi-bin/feedback/accept.cgi" onsubmit="return checkFeedback();">
+<input type="hidden" id="code" name="code" value="00260" /><label for="code"></label>
+<input type="hidden" id="pgid" name="pgid" value="300084802" /><label for="pgid"></label>
+<input type="hidden" id="url" name="url" value="http://www.city.tateyama.chiba.jp/gesui/page100037.html" /><label for="url"></label>
+
+      <dl id="panelQuestion" class="panel">
+      	<dt>このページについて<br>ご意見をお聞かせください</dt>
+        <dd>
+        	<dl>
+          	<dt>このページは見つけやすかったですか？</dt>
+            <dd>
+<fieldset><legend>このページは見つけやすかったですか？</legend>
+              <ul>
+              	<li><input type="radio" value="1" id="ans_search1" name="ans_search" /><label for="ans_search1">見つけやすかった</label></li>
+                <li><input type="radio" value="2" id="ans_search2" name="ans_search" /><label for="ans_search2">どちらとも言えない</label></li>
+                <li><input type="radio" value="3" id="ans_search3" name="ans_search" /><label for="ans_search3">見つけにくかった</label></li>
+              </ul>
+</fieldset>
+            </dd>
+            
+            <dt>このページの内容はわかりやすかったですか？</dt>
+            <dd>
+<fieldset><legend>このページの内容はわかりやすかったですか？</legend>
+              <ul>
+              	<li><input type="radio" value="1" id="ans_easy1" name="ans_easy" /><label for="ans_easy1">わかりやすかった</label></li>
+                <li><input type="radio" value="2" id="ans_easy2" name="ans_easy" /><label for="ans_easy2">どちらとも言えない</label></li>
+                <li><input type="radio" value="3" id="ans_easy3" name="ans_easy" /><label for="ans_easy3">わかりにくかった</label></li>
+              </ul>
+</fieldset>
+            </dd>
+
+            <dt class="listEnd">このページの内容は参考になりましたか？</dt>
+            <dd class="listEnd">
+<fieldset><legend>このページの内容は参考になりましたか？</legend>
+              <ul>
+              	<li><input type="radio" value="1" id="ans_helpful1" name="ans_helpful" /><label for="ans_helpful1">参考になった</label></li>
+                <li><input type="radio" value="2" id="ans_helpful2" name="ans_helpful" /><label for="ans_helpful2">どちらとも言えない</label></li>
+                <li><input type="radio" value="3" id="ans_helpful3" name="ans_helpful" /><label for="ans_helpful3">参考にならなかった</label></li>
+              </ul>
+</fieldset>
+            </dd>
+          </dl>          
+         <p class="layoutBtn"><input type="image" src="/files/300000006.png" value="送信" alt="送信" id="send_btn" /><label for="send_btn"></label></p>
+        </dd>
+      </dl>
+</form>
+
+      <p class="navigation linkTop"><a href="#pagebody">ページ上部に戻る</a></p>
+
+    </div><!-- /#article -->
+
+
+
+<div id="asideContents" class="aside">
+<dl class="navigation">
+<dt class="listTtl"><a href="/kurashi/cate000076.html">上下水道</a></dt>
+<dd>
+<ul>
+<li class="selected">
+<a href="/kurashi/cate000077.html">公共下水道</a>
+</li>
+<li>
+<a href="/kurashi/cate000079.html">排水設備</a>
+</li>
+<li>
+<a href="/kurashi/cate000080.html">下水道普及活動</a>
+</li>
+</li>
+</ul>
+</dd>
+</dl>
+<ul class="navigation listBn">
+<li><a href="/shisei/page050012.html">各課連絡先<img src="/files/300000057.png" alt="" width="200" height="44" /></a></li>
+<li><a href="/shisei/cate000333.html">施設案内<img src="/files/300000050.png" alt="" width="200" height="44" /></a></li>
+
+</ul>
+</div><!-- /#aside -->
+</div><!-- /#pagebody -->
+
+    <!-- footer start ==============================-->
+    <div id="footer">
+      <div class="wrapper">
+        <div class="inner">
+          <div class="logoBlock">
+            <a href="/index.html" title="館山市役所ホームページトップへ"><img src="/files/300358924.png" alt="館山市役所" /></a>
+            館山市役所<br>法人番号 5000020122050
+          </div><!-- /.logoBlock -->
+          <div class="textBlock">
+            <p class="address">〒294-8601 千葉県館山市北条1145-1（<a href="/shisei/page000456.html">所在地と地図</a>）</p>
+            <p class="info">
+              電話：<a href="/shisei/page050012.html">直通電話番号一覧</a> 又は 0470-22-3111（代表電話）<br>
+              ファックス：0470-23-3115<br>
+              開庁時間（受付時間）： 9時から16時30分
+            </p>
+          </div><!-- /.textBlock -->
+          <ul class="list_link">
+            <li><a href="/jouhou/page050013.html">サイトのご利用にあたって</a></li>
+            <li><a href="/jouhou/page050014.html">プライバシーポリシー</a></li>
+            <li><a href="/jouhou/page015697.html">リンクについて</a></li>
+          </ul>
+        </div><!-- /.inner -->
+      </div><!-- /.wrapper -->
+      <div class="copyright">&copy; Copyright Tateyama City. All Rights Reserved.</div>
+      <div class="pagetop"><a href="#">PAGE TOP</a></div>
+    </div><!-- /#footer -->
+    <!-- //footer end ==============================-->
+
+ </div><!-- /#container -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v17.0&appId=159453780488451&autoLogAppEvents=1" nonce="5ZFGkRSl"></script>
+
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=140041194" async></script></body>
+</html>

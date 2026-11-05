@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <title>アクセス｜大和市文化創造拠点</title>
+
+  <link rel="stylesheet" type="text/css" href="/common/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/base.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/module.css">
+  <link rel="stylesheet" type="text/css" href="/access/css/parts.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/sp_base.css">
+  <link rel="stylesheet" type="text/css" href="/common/css/sp_module.css">
+  <link rel="stylesheet" type="text/css" href="/access/css/sp_parts.css">
+
+  <!--[if lt IE 9]>
+  <script src="/common/js/html5shiv.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/common/js/jquery.js"></script>
+  <script type="text/javascript" src="/common/js/viewport.js"></script>
+  <script type="text/javascript" src="/common/js/jquery.responsive-elements.js"></script>
+  <script type="text/javascript" src="/common/js/common.js"></script>
+</head>
+
+<body id="access">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69153190-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--GA4230120 Google Tag Manager (noscript) -->
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT43BS4"
+
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) --><div id="container" data-respond="start: 620px; end: 670px; interval: 10px;">
+
+<!--================= Header start ==================-->
+<header id="boxHeader">
+
+  <!--========= Header Top start =========-->
+  <div class="boxHeaderTop">
+  <div class="boxInner clearfix">
+
+  <!--==== ▼サイトロゴ start ====-->
+  <div class="boxSiteLogo clearfix">
+    <h1 id="ttlSiteLogo"><a href="/"><img src="/common/img/header/logo.png" width="140" alt="大和市文化創造拠点"></a></h1>
+  </div>
+  <!--==== //サイトロゴ end ====-->
+
+  <!--==== ▼リンクエリア start ====-->
+  <div class="boxLinkArea mediaPC">
+    <!--==== ▽文字サイズ変更 start ====-->
+    <div id="fontsize" class="mediaPC">  
+      <p class="boxChangeBtn">文字サイズ<span id="fontsize-normal" class="btnFontsize"><a href="#">標準</a></span><span id="fontsize-enlarge" class="btnFontsize"><a href="#">拡大</a></span></p>
+    </div>
+    <!--==== //文字サイズ変更 end ====-->
+  
+    <!--==== ▽ヘッダーナビ start ====-->
+    <div class="boxHeaderNavGRR">
+      <p><a href="https://smilego.jp/fa7eaa6" target="_blank">2階市民交流ラウンジ 混雑状況</a></p>
+    </div>
+    
+    <div class="boxHeaderNavGR">
+      <p><a href="https://smilego.jp/1b77f79" target="_blank">6階ぷらっと大和 混雑状況</a></p>
+    </div>
+    <!--==== //ヘッダーナビ end ====-->
+	  
+	<div class="searchArea">
+		<script>
+          (function() {
+              var cx = '018344580088037867210:6_pjfyfi8t0';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+			  
+			  window.addEventListener('load', function() {
+				  /* get input tag */
+				  let inputArea = document.getElementById('gsc-i-id1');
+				  /* default text init */
+				  inputArea.setAttribute('placeholder','');
+				  /* default text toggle (classname) */
+				  if(inputArea.value === ""){
+				      inputArea.parentNode.classList.add('current');
+				  }
+				  inputArea.onfocus = function(){
+					  this.parentNode.classList.remove('current');
+				  }
+				  inputArea.onblur = function(){
+					  if(this.value === ""){
+					      this.parentNode.classList.add('current');
+					  }
+				  }
+			  });
+          })();
+       </script>
+       <gcse:searchbox-only></gcse:searchbox-only>
+	</div>
+	  
+  </div>
+  <!--==== //リンクエリア end ====-->
+
+  <!--==== ▼グローバルナビ（SP） start ====-->
+  <nav class="boxGlobalNav mediaSP">
+    <dl>
+    <dt class="btnOpen"><img src="/common/img/header/gnav-btn-menu.png" alt="Menu"></dt>
+    <dd class="boxMenu">
+    <ul>
+    <li><a href="/" class="icnArw"><span>ホーム</span></a></li>
+    <li><a href="/hall/" class="icnArw"><span>芸術文化ホール</span></a></li>
+    <li><a href="/library/" class="icnArw"><span>図書館</span></a></li>
+    <li><a href="/learning/" class="icnArw"><span>生涯学習センター</span></a></li>
+    <li><a href="/plaza/" class="icnArw"><span>屋内こども広場</span></a></li>
+    <li><a href="/about/" class="icnArw"><span>シリウスについて</span></a></li>
+    <li><a href="https://smilego.jp/fa7eaa6" target="_blank" class="green"><span>2階市民交流ラウンジ 混雑状況</span></a></li>
+    <li><a href="https://smilego.jp/1b77f79" target="_blank" class="green"><span>6階ぷらっと大和 混雑状況</span></a></li>
+<!--
+    <li>
+   <p class="boxSNS">
+      <a href="/" target="_blank"><img src="/common/img/header/sns-btn-fb-sp.png" alt="facebook"></a>
+      <a href="/" target="_blank"><img src="/common/img/header/sns-btn-tw-sp.png" alt="twitter"></a>
+    </p>
+    </li>
+-->
+	<li style="padding:20px; text-align: center;"><div class="searchArea">
+		<script>
+          (function() {
+              var cx = '018344580088037867210:6_pjfyfi8t0';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+			  
+			  window.addEventListener('load', function() {
+				  /* get input tag */
+				  let inputArea = document.getElementById('gsc-i-id1');
+				  /* default text init */
+				  inputArea.setAttribute('placeholder','');
+				  /* default text toggle (classname) */
+				  if(inputArea.value === ""){
+				      inputArea.parentNode.classList.add('current');
+				  }
+				  inputArea.onfocus = function(){
+					  this.parentNode.classList.remove('current');
+				  }
+				  inputArea.onblur = function(){
+					  if(this.value === ""){
+					      this.parentNode.classList.add('current');
+					  }
+				  }
+			  });
+          })();
+       </script>
+       <gcse:searchbox-only></gcse:searchbox-only>
+	</div></li>
+    </ul>
+    </dd>
+    </dl>
+	 
+  </nav>
+  <!--==== //グローバルナビ（SP） end ====-->
+
+  </div>
+  </div>
+  <!--========= //Header Top end =========-->
+
+  <!--========= Header Bottom start =========-->
+  <div class="mediaPC" id="headerBtm">
+  <div class="boxInner clearfix">
+
+  <!--==== ▼グローバルナビ（PC） start ====-->
+  <nav class="boxGlobalNav mediaPC">
+    <ul>
+    <li class="btnHall"><a href="/hall/"><span>芸術文化ホール</span></a></li>
+    <li class="btnLibrary"><a href="/library/"><span>図書館</span></a></li>
+    <li class="btnLearning"><a href="/learning/"><span>生涯学習センター</span></a></li>
+    <li class="btnPlaza"><a href="/plaza/"><span>屋内こども広場</span></a></li>
+    <li class="btnAbout"><a href="/about/"><span>大和市文化創造拠点について</span></a></li>
+    </ul>
+  </nav>
+  <!--==== //グローバルナビ（PC） end ====-->
+  
+  </div>
+  </div>
+  <!--========= //Header Bottom end =========-->
+
+</header><!--================= //Header end ==================-->
+
+
+<!--================= Content start ==================-->
+<div id="contentWide" class="bgContent">
+
+<!--========== ▼Breadcrumb start ==========-->
+<nav class="boxBreadcrumb">
+  <p class="boxInner clearfix">
+  <span><a href="/">ホーム</a> &gt; </span>
+  <span>アクセス</span>
+  </p>
+</nav>
+<!--========== //Breadcrumb end ==========-->
+
+<!--======== Common Content start ==========-->
+<div class="boxCommonContent boxInner">
+  
+<!--========== ▼Category Title start ==========-->
+<div class="boxMainTitle clearfix">
+  <h1 class="ttlMain"><span>アクセス</span></h1>
+</div>
+<!--========== //Category Title end ==========-->
+
+<!--========== ▼Section start ==========-->
+<section class="boxSection">
+  <div class="boxAccess clearfix">
+    <div class="boxAccessMap">
+          <p class="txtL mb10">
+        〒242-0016<br>
+        神奈川県大和市大和南一丁目8番1号<br>
+        <br>
+        小田急江ノ島線・相鉄本線　大和駅から徒歩3分
+      </p>
+      <img src="./img/imgMap.gif">
+      <p class="btnGoogleMap"><a href="https://maps.app.goo.gl/4FNcn2rxF8ViS2gC6" target="_blank">Google Mapで見る</a></p>
+    </div>
+    <div class="boxAccessTxt">
+      <dl>
+        <dt>駐車場・駐輪場のご案内（シリウス地下1階）</dt>
+        <dd>
+          <ul>
+            <li>・利用時間 8時15分～22時30分</li>
+            <li>・収容台数<br>
+            【駐車場】普通車：55台　身障者用駐車場：3台<br class="mediaSP">　バイク(125cc超)：15台<br>
+            【駐輪場】バイク(125cc以下)：36台　自転車：196台
+            </li>
+          </ul>
+          <table>
+            <caption>［ご利用料金］</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">区分</th>
+                <th scope="col" colspan="2">利用料金</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col" rowspan="2">駐車場</th>
+                <td class="kubun"><span>普通車</span></td>
+                <td>30分ごとに200円</td>
+                <td>1日上限 1,000円</td>
+              </tr>
+              <tr>
+                <td class="kubun"><span>二輪自動車</span>(125cc超)</td>
+                <td>4時間ごとに100円</td>
+                <td>1日上限 300円</td>
+              </tr>
+              <tr>
+                <th rowspan="2">駐輪場</th>
+                <td class="kubun"><span>二輪自動車(125cc以下)<br>及び 
+                  原動機付自転車</span></td>
+                <td>4時間ごとに100円<br>（ただし最初の3時間は無料）</td>
+                <td>1日上限 300円</td>
+              </tr>
+              <tr>
+                <td class="kubun"><span>自転車</span></td>
+                <td>6時間ごとに100円<br>（ただし最初の3時間は無料）</td>
+                <td>1日上限 200円</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>※高校生以下の方の駐輪場利用は無料です。<br>
+            ※駐車場の台数には限りがあります。公共交通機関をご利用ください。<br>
+※以下の手帳をお持ちの方、及びそれらの方の介護者の方の駐車場・駐輪場利用は無料です。<br>
+　・身体障害者手帳<br>
+　・療育手帳<br>
+　・精神障害者保健福祉手帳<br>
+※車高2.1メートルを超える福祉車両で当館の地下駐車場をご利用になるには、あらかじめ防災センター（電話 046-259-8291）までご連絡ください。<br>
+ご利用の際、誘導員が専用スペースまでご案内します。      
+       </p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<!--========== //Section end ==========-->
+
+</div>
+<!--======== //Common Content end ==========-->
+
+</div>
+<!--================= //Content end ==================-->
+
+
+<!--================= Footer start ===================-->
+<footer id="boxFooter">
+
+  <!--========= Footer Top start =========-->
+  <div class="boxFooterTop">
+    <ul>
+      <li><a href="/sitepolicy/">サイト利用にあたって</a></li>
+      <li><a href="/sns/">SNS利用規約</a></li>
+      <li><a href="/privacypolicy/">プライバシーポリシー</a></li>
+    </ul>
+  </div>
+
+  <!--==== ▼ページトップボタン start ====-->
+  <div class="boxPageTop" id="pagetop"><p><a href="#container"><span>TOP</span></a></p></div>
+  <!--==== //ページトップボタン end ====-->
+
+  <div class="boxFooterBottom">
+    <!--==== ▼コピーライト start ====-->
+    <small class="txtCopyright">Copyright&nbsp;&copy;YAMATO&nbsp;MIRAI.&nbsp;All&nbsp;rights&nbsp;reserved.</small>
+    <!--==== //コピーライト end ====-->
+  </div>
+</footer>
+<!--================= //Footer end ===================-->
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+[
+  {
+    "snapshotPath": "data/evidence/national/kanto-south-locations-kanagawa/6e30a13cb39c5991a3ce.html",
+    "snapshotSHA256": "ed9f9c615aa70abc81b09e5e28812ae52ff8954ac407aa13522384abaf4df716",
+    "sourceUrl": "https://www.japan47go.travel/ja/detail/192b5216-6f7a-4769-b3fb-e804f55bf9d3",
+    "role": "primary-source",
+    "fetchedAt": null,
+    "fetchTimeNote": "旧取得メタデータの時刻は今回未照合。今回の再取得時刻で代用しない。"
+  },
+  {
+    "snapshotPath": "data/evidence/national/kanto-south/808a81b865c356337461.html",
+    "snapshotSHA256": "16c5237de37819631b4618490a3ab686f4358b137a29f359b21943e1b7029a67",
+    "sourceUrl": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/koho/manholecard.html",
+    "role": "primary-source",
+    "fetchedAt": null,
+    "fetchTimeNote": "旧取得メタデータの時刻は今回未照合。今回の再取得時刻で代用しない。"
+  },
+  {
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/e3435082ce53dfe3d1c2.html",
+    "snapshotSHA256": "2293191d38648259879ad80c0c5b252162778294f2ada4dc61d0539e23e0c439",
+    "sourceUrl": "https://www.japan47go.travel/ja/about",
+    "role": "primary-source",
+    "fetchedAt": null,
+    "fetchTimeNote": "旧取得メタデータの時刻は今回未照合。今回の再取得時刻で代用しない。"
+  },
+  {
+    "snapshotPath": "data/evidence/national/review-facility-point-scope/b4ba1e3d3a7910c39004.html",
+    "snapshotSHA256": "44066a74bfa97b183784932016ab33032304b4db8c29e7fabb426b4eeda956b9",
+    "sourceUrl": "https://kankou-data.nihon-kankou-dx.info/",
+    "role": "primary-source",
+    "fetchedAt": null,
+    "fetchTimeNote": "旧取得メタデータの時刻は今回未照合。今回の再取得時刻で代用しない。"
+  },
+  {
+    "url": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "path": "data/evidence/issue5/chubu/P05-22_GML.zip",
+    "status": 200,
+    "finalUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+    "contentType": "application/zip",
+    "lastModified": "Tue, 21 Jan 2025 07:17:19 GMT",
+    "bytes": 8366402,
+    "sha256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+    "reusedFrom": "data/work/official-facility-index/P05-22_GML.zip",
+    "actorType": "ai",
+    "checkedAt": "2026-11-05"
+  }
+]

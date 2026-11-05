@@ -1,0 +1,4804 @@
+[
+  {
+    "facilityId": "facility:north-00eec84a6b9497eb716d",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/625",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "1",
+            "P05_003": "天童市役所",
+            "P05_004": "天童市老野森1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37796886176724,
+              38.36227219851434
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/631",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "5",
+            "P05_003": "市農業センター",
+            "P05_004": "天童市老野森2-6-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37495781609894,
+              38.363086209069714
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/626",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "5",
+            "P05_003": "市立図書館",
+            "P05_004": "天童市老野森1-2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37894686855975,
+              38.36332518684239
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-01fecf0845daf7a823c4",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/568",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "5",
+            "P05_003": "プラザホール",
+            "P05_004": "名取市手倉田字八幡287-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.88274019798615,
+              38.1735423825756
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/567",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "4",
+            "P05_003": "増田西公民館",
+            "P05_004": "名取市手倉田字堰根265-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.8721998464088,
+              38.17371950045338
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/579",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "1",
+            "P05_003": "名取市役所",
+            "P05_004": "名取市増田字柳田80"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.8918854975217,
+              38.1714932942944
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-0346af6a6a974c32ffe9",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1341",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "1",
+            "P05_003": "大河原町役場",
+            "P05_004": "大河原町字新南19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.73080568676423,
+              38.04940654317667
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1342",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "5",
+            "P05_003": "中町集会所",
+            "P05_004": "大河原町字新南22-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.73190871401337,
+              38.0500855301737
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1363",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "4",
+            "P05_003": "大河原駅前コミュニティセンター",
+            "P05_004": "大河原町大谷字町向126-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.7394657009439,
+              38.04808447211952
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-0552354f13f29fd4dac2",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1547",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "国際村ホール",
+            "P05_004": "七ヶ浜町花淵浜字大山1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.06847222397948,
+              38.29821998272475
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1558",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "1",
+            "P05_003": "七ヶ浜町役場",
+            "P05_004": "七ヶ浜町東宮浜字丑谷辺5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05918491190155,
+              38.304544057970546
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1557",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "東宮浜地区交流センター",
+            "P05_004": "七ヶ浜町東宮浜字笠岩16-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05212420804133,
+              38.31118439531556
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-11cb3780a2ba6c9b5f16",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/686",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "1",
+            "P05_003": "南陽市役所",
+            "P05_004": "南陽市三間通436-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.14844178344626,
+              38.05514723884376
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/685",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "5",
+            "P05_003": "南陽市武道館",
+            "P05_004": "南陽市宮内3436-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.137444638186,
+              38.07633412749887
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/682",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "5",
+            "P05_003": "市民体育館",
+            "P05_004": "南陽市三間通1096"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15205685184387,
+              38.0628581987677
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
+    "candidates": [
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/414",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05206",
+            "P05_002": "1",
+            "P05_003": "男鹿市役所",
+            "P05_004": "男鹿市船川港船川字泉台66-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.8509098606532,
+              39.88396216851509
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/413",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05206",
+            "P05_002": "5",
+            "P05_003": "男鹿市民ふれあいプラザ",
+            "P05_004": "男鹿市船川港船川字外ケ沢126-16"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.84530988344235,
+              39.880036170477496
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/415",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05206",
+            "P05_002": "5",
+            "P05_003": "男鹿市民文化会館",
+            "P05_004": "男鹿市船川港船川字海岸通り2-14-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.8545338033815,
+              39.89283417942351
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-179dd18bf52ef959bb92",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-194cafa26eb4fcdf4b86",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/396",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06206",
+            "P05_002": "1",
+            "P05_003": "寒河江市役所",
+            "P05_004": "寒河江市中央1-9-45"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.27605288692757,
+              38.38147058134225
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/373",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06206",
+            "P05_002": "4",
+            "P05_003": "東部地区公民館中河原分館",
+            "P05_004": "寒河江市字中河原61-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.28466597184163,
+              38.40070044099041
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/392",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06206",
+            "P05_002": "5",
+            "P05_003": "文化センター",
+            "P05_004": "寒河江市大字西根字石川西333"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.27549284762213,
+              38.38945054651756
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-19e9c73e2a8c8ffc9846",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2171",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "5",
+            "P05_003": "三春交流館まほら",
+            "P05_004": "三春町字大町191"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.49139533779604,
+              37.44223185439946
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2169",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "1",
+            "P05_003": "三春町役場",
+            "P05_004": "三春町字大町1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.492596348628,
+              37.44104484109609
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2174",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "5",
+            "P05_003": "三春町民図書館",
+            "P05_004": "三春町字大町12-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.49180333879167,
+              37.44161151051979
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-1ed6b6009a4a902d1c70",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1547",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "国際村ホール",
+            "P05_004": "七ヶ浜町花淵浜字大山1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.06847222397948,
+              38.29821998272475
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1558",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "1",
+            "P05_003": "七ヶ浜町役場",
+            "P05_004": "七ヶ浜町東宮浜字丑谷辺5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05918491190155,
+              38.304544057970546
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1557",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "東宮浜地区交流センター",
+            "P05_004": "七ヶ浜町東宮浜字笠岩16-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05212420804133,
+              38.31118439531556
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-1eddfd8633b7db334e79",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1596",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "5",
+            "P05_003": "利府町民交流館",
+            "P05_004": "利府町利府字新並松4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97583275931046,
+              38.33034550877993
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1595",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "1",
+            "P05_003": "利府町役場",
+            "P05_004": "利府町利府字新並松4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97585275979014,
+              38.33034550872088
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1594",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "4",
+            "P05_003": "館公民館",
+            "P05_004": "利府町利府字新館12"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97760879106207,
+              38.33194149587002
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-274599ca91eb4abf4286",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1286",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07212",
+            "P05_002": "2",
+            "P05_003": "小高区役所",
+            "P05_004": "南相馬市小高区本町2-78"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.99236217683793,
+              37.565480777305176
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1261",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07212",
+            "P05_002": "5",
+            "P05_003": "小高交流センター",
+            "P05_004": "南相馬市小高区本町2-28"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.9926737676669,
+              37.564707169149514
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1287",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07212",
+            "P05_002": "5",
+            "P05_003": "小高生涯学習センター",
+            "P05_004": "南相馬市小高区本町2-89-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.9930322137069,
+              37.56664676563664
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-2e8838dd867c746f89d7",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/978",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03210",
+            "P05_002": "5",
+            "P05_003": "総合交流センター",
+            "P05_004": "陸前高田市高田町字太田5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.64105986640067,
+              39.01745717410915
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/934",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03210",
+            "P05_002": "5",
+            "P05_003": "Ｂ＆Ｇ海洋センター",
+            "P05_004": "陸前高田市高田町字太田5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.6410698666958,
+              39.01745717398714
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/960",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03210",
+            "P05_002": "1",
+            "P05_003": "陸前高田市役所",
+            "P05_004": "陸前高田市高田町字下和野100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.62953021547114,
+              39.015093577857904
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-302d2544c978ef46ca8e",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/358",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "1",
+            "P05_003": "花巻市役所",
+            "P05_004": "花巻市花城町9-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.11690965743975,
+              39.388604921379425
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/356",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "5",
+            "P05_003": "花巻中央振興センター",
+            "P05_004": "花巻市花城町1-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.11592360867763,
+              39.39044965544358
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/359",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "2",
+            "P05_003": "花巻地区合同庁舎",
+            "P05_004": "花巻市花城町1-41"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.1159291164733,
+              39.39002138692725
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-32b66f536b601fd5b88d",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2018",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "1",
+            "P05_003": "棚倉町役場",
+            "P05_004": "棚倉町大字棚倉字中居野33"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37967598815462,
+              37.02993760134533
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2019",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "5",
+            "P05_003": "保健福祉センター",
+            "P05_004": "棚倉町大字棚倉字中居野68-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3801989724836,
+              37.02881200097654
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2024",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "5",
+            "P05_003": "日向前集会所",
+            "P05_004": "棚倉町棚倉字日向前173-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.36639654209694,
+              37.02936620884066
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-3443a4a6d08de5680f46",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/322",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "5",
+            "P05_003": "かわまち交流センター",
+            "P05_004": "石巻市中央2-11-12"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.3097207149293,
+              38.43027428349826
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/355",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "5",
+            "P05_003": "石巻市北上観光物産交流センター",
+            "P05_004": "石巻市十三浜字東田1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.30294021624843,
+              38.43447090405375
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/373",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "5",
+            "P05_003": "石巻文化センター",
+            "P05_004": "石巻市南浜町1-7-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.30822644537398,
+              38.41647881988754
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-350b2ed34ef3f0dbcb82",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/246",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "新里生涯学習センター",
+            "P05_004": "宮古市茂市5-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.8005770731862,
+              39.62095442499044
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/275",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "4",
+            "P05_003": "高齢者コミュニティセンター",
+            "P05_004": "宮古市田老字小林86-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.9601124080445,
+              39.730515989991865
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/272",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "グリーンピア三陸みやこ体育館",
+            "P05_004": "宮古市田老字向新田148"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.97176094908676,
+              39.79214858671216
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-3a3d893fa312fdeb2154",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/267",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "田老総合事務所",
+            "P05_004": "宮古市田老1-3-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.9692302374351,
+              39.73680706864416
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/300",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "4",
+            "P05_003": "新里高齢者コミュニティセンター",
+            "P05_004": "宮古市蟇目12-74-9"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.83819360368017,
+              39.62859581892901
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/292",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "2",
+            "P05_003": "門馬出張所",
+            "P05_004": "宮古市門馬田代3-32-20"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.43759624248082,
+              39.63394068258683
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-3ac2ebbfacc3e3d481e0",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/420",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06207",
+            "P05_002": "1",
+            "P05_003": "上山市役所",
+            "P05_004": "上山市河崎1-1-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.2678523103666,
+              38.14955792047153
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/436",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06207",
+            "P05_002": "2",
+            "P05_003": "本庄出張所",
+            "P05_004": "上山市皆沢字鶴巻1247-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.28689161327642,
+              38.11206798749253
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/418",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06207",
+            "P05_002": "2",
+            "P05_003": "西郷出張所",
+            "P05_004": "上山市藤吾字下原412-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.26956109555937,
+              38.12978744715748
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-435218ddfd78ae1f7e95",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-44cd1a51e4ccdee8fa08",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/571",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "4",
+            "P05_003": "天童原公民館",
+            "P05_004": "天童市久野本1242-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3859758840952,
+              38.37712706628616
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/625",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "1",
+            "P05_003": "天童市役所",
+            "P05_004": "天童市老野森1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37796886176724,
+              38.36227219851434
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/627",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "4",
+            "P05_003": "天童南部公民館",
+            "P05_004": "天童市一日町1-13-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3678898011711,
+              38.34934933246491
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-4738b1eb26eade31744a",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/173",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03201",
+            "P05_002": "5",
+            "P05_003": "都南文化会館",
+            "P05_004": "盛岡市永井24-10-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.15484776704812,
+              39.65248290219791
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/81",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03201",
+            "P05_002": "5",
+            "P05_003": "渋民文化会館",
+            "P05_004": "盛岡市渋民字鶴塚55"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.16950413021462,
+              39.849306980341865
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/39",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03201",
+            "P05_002": "4",
+            "P05_003": "見前南地区公民館",
+            "P05_004": "盛岡市西見前13-50"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.1565456531663,
+              39.66195492983773
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-48441a52e5b152a63160",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-4d8f1c0ac3abdf1a8996",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/868",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02210",
+            "P05_002": "5",
+            "P05_003": "尾上地域福祉センター",
+            "P05_004": "平川市猿賀南田96-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.57287961702664,
+              40.61439162472297
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/803",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02210",
+            "P05_002": "5",
+            "P05_003": "生涯学習センター",
+            "P05_004": "平川市猿賀南田151"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.5734160142376,
+              40.61484012572001
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/802",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02210",
+            "P05_002": "5",
+            "P05_003": "尾上農村環境改善センターさるか荘",
+            "P05_004": "平川市猿賀池上45-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.56538600695032,
+              40.61597513890264
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-5081ff289295375aef3a",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/642",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "1",
+            "P05_003": "多賀城市役所",
+            "P05_004": "多賀城市中央2-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00439557345868,
+              38.29334864151173
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/645",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "多賀城市中央2-27-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00515158727075,
+              38.29562961765827
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/657",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "4",
+            "P05_003": "山王地区公民館",
+            "P05_004": "多賀城市南宮字毛上28"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97857593768143,
+              38.30053272424829
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-5611b5433e71129c00ed",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1280",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04216",
+            "P05_002": "4",
+            "P05_003": "富谷中央公民館",
+            "P05_004": "富谷市富谷字西沢13"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.89041627163374,
+              38.40138587487453
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1279",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04216",
+            "P05_002": "5",
+            "P05_003": "富谷武道館",
+            "P05_004": "富谷市富谷坂松田30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.89536696332505,
+              38.39991091906643
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1281",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04216",
+            "P05_002": "1",
+            "P05_003": "富谷市役所",
+            "P05_004": "富谷市富谷坂松田30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.89544927624246,
+              38.39993284804875
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-5be89b09e4439e0d2776",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2283",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07542",
+            "P05_002": "1",
+            "P05_003": "楢葉町役場",
+            "P05_004": "楢葉町大字北田字鐘突堂5-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.99349201069126,
+              37.28259998261354
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2281",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07542",
+            "P05_002": "4",
+            "P05_003": "コミュニティセンター",
+            "P05_004": "楢葉町大字北田字鐘突堂5-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.99339701013818,
+              37.28202698284755
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2285",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07542",
+            "P05_002": "4",
+            "P05_003": "楢葉町公民館",
+            "P05_004": "楢葉町大字北田字鐘突堂5の5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.99308800356798,
+              37.283269987825165
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-5ccd4b2b6fb81a78cfac",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/522",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03206",
+            "P05_002": "5",
+            "P05_003": "老人福祉センター展勝園",
+            "P05_004": "北上市立花15地割185-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.13126284184574,
+              39.27513502594122
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/485",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03206",
+            "P05_002": "5",
+            "P05_003": "更木地区交流センター",
+            "P05_004": "北上市更木12-151-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.14898308954176,
+              39.34254829051413
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/508",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03206",
+            "P05_002": "4",
+            "P05_003": "沢目公民館",
+            "P05_004": "北上市平沢13地割1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.17389870201217,
+              39.325709441592494
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-6b3394cd8f84aae2ffd7",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2171",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "5",
+            "P05_003": "三春交流館まほら",
+            "P05_004": "三春町字大町191"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.49139533779604,
+              37.44223185439946
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2169",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "1",
+            "P05_003": "三春町役場",
+            "P05_004": "三春町字大町1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.492596348628,
+              37.44104484109609
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2174",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07521",
+            "P05_002": "5",
+            "P05_003": "三春町民図書館",
+            "P05_004": "三春町字大町12-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.49180333879167,
+              37.44161151051979
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-6cd5f14630abb71aeb29",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1506",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02441",
+            "P05_002": "1",
+            "P05_003": "三戸町役場",
+            "P05_004": "三戸町大字在府小路町43"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.25874694385323,
+              40.37841583963053
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1501",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02441",
+            "P05_002": "5",
+            "P05_003": "福祉センターふくじゅそう",
+            "P05_004": "三戸町在府小路町17"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.25955994108557,
+              40.37872083989086
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1512",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02441",
+            "P05_002": "4",
+            "P05_003": "三戸中央公民館",
+            "P05_004": "三戸町大字川守田字関根川原55"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.25415693089496,
+              40.379650852945566
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-7cc7af2506f3a22c04bc",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/627",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "4",
+            "P05_003": "天童南部公民館",
+            "P05_004": "天童市一日町1-13-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3678898011711,
+              38.34934933246491
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/571",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "4",
+            "P05_003": "天童原公民館",
+            "P05_004": "天童市久野本1242-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3859758840952,
+              38.37712706628616
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/574",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06210",
+            "P05_002": "4",
+            "P05_003": "原町公民館",
+            "P05_004": "天童市原町上37-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.38544405871448,
+              38.33895429651609
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-7db8e601fb17d17714aa",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1774",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07422",
+            "P05_002": "1",
+            "P05_003": "湯川村役場",
+            "P05_004": "湯川村大字清水田字長瀞18"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.88662922158463,
+              37.56534821779314
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1773",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07422",
+            "P05_002": "4",
+            "P05_003": "湯川公民館",
+            "P05_004": "湯川村清水田字長瀞17"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.887395231851,
+              37.565657966626695
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1770",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07422",
+            "P05_002": "5",
+            "P05_003": "湯川村体育館",
+            "P05_004": "湯川村清水田字川入3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.88818723618166,
+              37.56492196853603
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-7de6f0064c1c2676fc92",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1558",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "1",
+            "P05_003": "七ヶ浜町役場",
+            "P05_004": "七ヶ浜町東宮浜字丑谷辺5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05918491190155,
+              38.304544057970546
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1557",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "東宮浜地区交流センター",
+            "P05_004": "七ヶ浜町東宮浜字笠岩16-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05212420804133,
+              38.31118439531556
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1549",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "町民体育館・武道館",
+            "P05_004": "七ヶ浜町吉田浜字野山1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.06117197709798,
+              38.3018090518327
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-7e8db3d9c7245b172fcf",
+    "candidates": [
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/890",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "5",
+            "P05_003": "健康文化活動拠点センター",
+            "P05_004": "大仙市大曲中通町6-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.4793382531725,
+              39.46297328710601
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/848",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "2",
+            "P05_003": "花館出張所",
+            "P05_004": "大仙市花館上町5-19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.46541236651768,
+              39.47246834531765
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/862",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "4",
+            "P05_003": "花館公民館",
+            "P05_004": "大仙市花館上町5-19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.4654123666218,
+              39.47245834529842
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-87bb76a16d97c7b4aee9",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/505",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02206",
+            "P05_002": "5",
+            "P05_003": "十和田市民文化センター",
+            "P05_004": "十和田市西三番町2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.212170071424,
+              40.6125083665178
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/503",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02206",
+            "P05_002": "5",
+            "P05_003": "十和田湖観光交流センター",
+            "P05_004": "十和田市大字奥瀬字十和田湖畔休屋486"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.8931479919717,
+              40.42600986519008
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/491",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02206",
+            "P05_002": "5",
+            "P05_003": "市民文化センター",
+            "P05_004": "十和田市西三番町2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.21219007138401,
+              40.612508366531145
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-8945d69757f54183600d",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1424",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "4",
+            "P05_003": "伊達崎公民館",
+            "P05_004": "桑折町大字下郡字堂ノ前11-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.539754287262,
+              37.85000326814554
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1419",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "2",
+            "P05_003": "桑折出張所",
+            "P05_004": "桑折町字東大隅18"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.51650349303793,
+              37.84950789712176
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1420",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "1",
+            "P05_003": "桑折町役場",
+            "P05_004": "桑折町字東大隅18"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.51648349261126,
+              37.84950789723313
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-8f5be68d467d61a4c641",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/867",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "5",
+            "P05_003": "市民交流センター",
+            "P05_004": "須賀川市中町4-1外"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37530311122265,
+              37.28881918124704
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/868",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "5",
+            "P05_003": "総合福祉センター",
+            "P05_004": "須賀川市中町6-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37533151070429,
+              37.2887317112933
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/865",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "5",
+            "P05_003": "須賀川西部地域包括支援センター",
+            "P05_004": "須賀川市長禄町1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3724703352205,
+              37.294838114451316
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-990598f970c19e7cc119",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/582",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "5",
+            "P05_003": "杜せきのした東集会所",
+            "P05_004": "名取市杜せきのした4-2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.9051133884163,
+              38.163608078537266
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/581",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "5",
+            "P05_003": "杜せきのした西集会所",
+            "P05_004": "名取市杜せきのした1-9"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.89763978308508,
+              38.16738056475913
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/592",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04207",
+            "P05_002": "5",
+            "P05_003": "名取が丘西集会所",
+            "P05_004": "名取市名取が丘6-11-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.8705765296364,
+              38.15408861176641
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-99097cae19efc7e963e9",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-99f5bfd0796498565ecf",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/659",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03208",
+            "P05_002": "5",
+            "P05_003": "宮守ゆうＹ０Ｕソフト館",
+            "P05_004": "遠野市宮守町下宮守30地割37-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.3515874620428,
+              39.34587795724781
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/661",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03208",
+            "P05_002": "5",
+            "P05_003": "鹿込地区集会所",
+            "P05_004": "遠野市宮守町下宮守37地割2-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.37649240416982,
+              39.353026901050114
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/670",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03208",
+            "P05_002": "5",
+            "P05_003": "上宮守転作営農研修施設",
+            "P05_004": "遠野市宮守町上宮守1地割37"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.4143140541524,
+              39.36402498242884
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-9a7e7549e41a5a778866",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1341",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "1",
+            "P05_003": "大河原町役場",
+            "P05_004": "大河原町字新南19"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.73080568676423,
+              38.04940654317667
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1342",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "5",
+            "P05_003": "中町集会所",
+            "P05_004": "大河原町字新南22-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.73190871401337,
+              38.0500855301737
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1363",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04321",
+            "P05_002": "4",
+            "P05_003": "大河原駅前コミュニティセンター",
+            "P05_004": "大河原町大谷字町向126-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.7394657009439,
+              38.04808447211952
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-9c181bfdd8eb24f43c7c",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/360",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06205",
+            "P05_002": "5",
+            "P05_003": "市民文化会館",
+            "P05_004": "新庄市堀端町4-67"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.29650239126548,
+              38.76775641378526
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/348",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06205",
+            "P05_002": "5",
+            "P05_003": "萩野児童センター",
+            "P05_004": "新庄市大字萩野2652"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3613314706335,
+              38.813601536650815
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/336",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06205",
+            "P05_002": "1",
+            "P05_003": "新庄市役所",
+            "P05_004": "新庄市沖の町10-37"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.30168551277464,
+              38.76495340493915
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-9d11453eb99d4846f2ef",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/596",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03207",
+            "P05_002": "5",
+            "P05_003": "情報交流センターＹＯＭＵＮＯＳＵ",
+            "P05_004": "久慈市中央3-58"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.77085381953805,
+              40.189446395318654
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/626",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03207",
+            "P05_002": "5",
+            "P05_003": "観光交流センター",
+            "P05_004": "久慈市中町2-5-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.7649854057714,
+              40.18974072494003
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/612",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03207",
+            "P05_002": "3",
+            "P05_003": "中央市民センター",
+            "P05_004": "久慈市新中の橋5-28-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.76997403090843,
+              40.19464334833369
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-9d6b7b9b440c17738339",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1748",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04501",
+            "P05_002": "4",
+            "P05_003": "涌谷公民館",
+            "P05_004": "涌谷町字下道69-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.13223976893374,
+              38.53148156857138
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1754",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04501",
+            "P05_002": "4",
+            "P05_003": "箟岳公民館",
+            "P05_004": "涌谷町太田字北太田190-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.17989873590994,
+              38.5793265712966
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1752",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04501",
+            "P05_002": "1",
+            "P05_003": "涌谷町役場",
+            "P05_004": "涌谷町字新町裏153-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.1281474979148,
+              38.53969156543921
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-9e5c81d3fcfe3dc21ea2",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1631",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "4",
+            "P05_003": "南部公民館",
+            "P05_004": "南部町沖田面字沖中512"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.28099189509985,
+              40.41304021483251
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1673",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "5",
+            "P05_003": "南部町民体育館",
+            "P05_004": "南部町大字沖田面字沖中80"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.28125018993683,
+              40.413517918110614
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1671",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "2",
+            "P05_003": "南部分庁舎",
+            "P05_004": "南部町大字沖田面字沖中46"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.28025360028823,
+              40.412585012325074
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-a12e04a3808b0cb41d78",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/272",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "グリーンピア三陸みやこ体育館",
+            "P05_004": "宮古市田老字向新田148"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.97176094908676,
+              39.79214858671216
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/287",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "平津戸集会所",
+            "P05_004": "宮古市平津戸1-20-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.5122147774172,
+              39.62357823982275
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/296",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03202",
+            "P05_002": "5",
+            "P05_003": "和井内ふるさと会館",
+            "P05_004": "宮古市和井内17-64-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.70884968269874,
+              39.69507537118735
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-a4e073898b8f0e283b69",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/748",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06321",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "河北町谷地所岡3-1-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.30911823119578,
+              38.43133115456486
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/751",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06321",
+            "P05_002": "1",
+            "P05_003": "河北町役場",
+            "P05_004": "河北町谷地戊81"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.31433335249443,
+              38.42627014741481
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/740",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06321",
+            "P05_002": "5",
+            "P05_003": "交流館遊蔵",
+            "P05_004": "河北町谷地甲2325-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.31601899202934,
+              38.424620325596024
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-a4f6eb49ec47671cbd67",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1086",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07210",
+            "P05_002": "1",
+            "P05_003": "二本松市役所",
+            "P05_004": "二本松市金色403-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.431192970817,
+              37.58475122159184
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1079",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07210",
+            "P05_002": "5",
+            "P05_003": "二本松勤労者研修センター",
+            "P05_004": "二本松市郭内1-5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.43593118756658,
+              37.59770118101764
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1080",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07210",
+            "P05_002": "5",
+            "P05_003": "城山総合体育館",
+            "P05_004": "二本松市郭内4-220"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.433550194889,
+              37.60187817728685
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-a86e5bc10ccb3b8ad6ce",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2018",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "1",
+            "P05_003": "棚倉町役場",
+            "P05_004": "棚倉町大字棚倉字中居野33"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37967598815462,
+              37.02993760134533
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2019",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "5",
+            "P05_003": "保健福祉センター",
+            "P05_004": "棚倉町大字棚倉字中居野68-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3801989724836,
+              37.02881200097654
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2025",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07481",
+            "P05_002": "5",
+            "P05_003": "馬場集会所",
+            "P05_004": "棚倉町棚倉字馬場32-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37705258347188,
+              37.030316529900674
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-bc3537ee12c196975af6",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/695",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "4",
+            "P05_003": "赤湯公民館",
+            "P05_004": "南陽市赤湯791-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.16669405467462,
+              38.04931027410676
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/670",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "5",
+            "P05_003": "宮崎集落センターホール",
+            "P05_004": "南陽市宮崎268-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1221113357219,
+              38.03141937337738
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/692",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06213",
+            "P05_002": "5",
+            "P05_003": "赤湯市民体育館",
+            "P05_004": "南陽市赤湯212-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.16677804825903,
+              38.04653328925289
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-bd9ab14ef699fe922568",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1222",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07211",
+            "P05_002": "5",
+            "P05_003": "菅谷団地集会所",
+            "P05_004": "田村市滝根町菅谷字堂田439-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.64486285791304,
+              37.35064879222202
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1213",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07211",
+            "P05_002": "5",
+            "P05_003": "滝根多目的集会所",
+            "P05_004": "田村市滝根町神俣字河原122"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.66234975933756,
+              37.32345678190227
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1159",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07211",
+            "P05_002": "5",
+            "P05_003": "三世代ふれあい交流館",
+            "P05_004": "田村市滝根町神俣字町40-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.6582405295936,
+              37.32604903911588
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-c88406f5e69a26cba40e",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/248",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "1",
+            "P05_003": "鶴岡市役所",
+            "P05_004": "鶴岡市馬場町9-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.8267505176079,
+              38.72728700470088
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/204",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "5",
+            "P05_003": "青少年育成センター",
+            "P05_004": "鶴岡市末広町3-1マリカ東館2F"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.83646356766437,
+              38.73896596015512
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/193",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "5",
+            "P05_003": "庄内産業振興センター",
+            "P05_004": "鶴岡市末広町3-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.83620556570463,
+              38.7390709601692
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-cb4f28d184cbcaebe0e8",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1897",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "西郷村民体育館",
+            "P05_004": "西郷村大字小田倉字蛇口1-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1503893867845,
+              37.130315486484434
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1878",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "1",
+            "P05_003": "西郷村役場",
+            "P05_004": "西郷村熊倉折口原40"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15531400144673,
+              37.14176528581662
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1895",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "上折口原農林漁家婦人活動促進施設",
+            "P05_004": "西郷村大字熊倉字折口原96-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15202577478857,
+              37.14171566460678
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-cea3d24711de81888293",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/14",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "山形市七日町1-2-39"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.33806501517313,
+              38.252047883016175
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/70",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "西部公民館",
+            "P05_004": "山形市篭田1-223"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.32102745339773,
+              38.24120503171251
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/3",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "北部公民館",
+            "P05_004": "山形市宮町4-1713"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.34121983450382,
+              38.267584803643906
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-d0a8e558a26c68e5ba31",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1724",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "1",
+            "P05_003": "猪苗代町役場",
+            "P05_004": "猪苗代町字城南100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.10481120036596,
+              37.55779711472239
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1728",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "4",
+            "P05_003": "猪苗代地区コミュニティセンター",
+            "P05_004": "猪苗代町字本町10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1077352545363,
+              37.56156611778574
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1725",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "5",
+            "P05_003": "農村環境改善センター",
+            "P05_004": "猪苗代町字城南100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1047452266777,
+              37.55722071530191
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-d15dcb12c82352e878da",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1136",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03213",
+            "P05_002": "5",
+            "P05_003": "シビックセンター",
+            "P05_004": "二戸市石切所字荷渡6-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.2948150038194,
+              40.26891433182675
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1138",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03213",
+            "P05_002": "4",
+            "P05_003": "大村地区コミュニティセンター",
+            "P05_004": "二戸市石切所字大村36"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.28756505722336,
+              40.264977540962
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1135",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03213",
+            "P05_002": "5",
+            "P05_003": "総合スポーツセンターアリーナ",
+            "P05_004": "二戸市石切所字荷渡22-20"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.29368399721136,
+              40.2699833405634
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-d1803897b2520241710e",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-d421e2e7d68b7de7cbf7",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2296",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07543",
+            "P05_002": "1",
+            "P05_003": "富岡町役場",
+            "P05_004": "富岡町大字本岡字王塚622-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.0086799160483,
+              37.34549091284979
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2302",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07543",
+            "P05_002": "5",
+            "P05_003": "文化交流センター学びの森",
+            "P05_004": "富岡町本岡字王塚622-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00898092989274,
+              37.34596491065837
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/2301",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07543",
+            "P05_002": "5",
+            "P05_003": "王塚集会所",
+            "P05_004": "富岡町本岡字王塚373-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00565491601552,
+              37.34834694405879
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-d708d48e0d4d4cae8869",
+    "candidates": [
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/805",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05211",
+            "P05_002": "5",
+            "P05_003": "天王ふれあい交流センター",
+            "P05_004": "潟上市天王字江川上谷地109-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.0098093917262,
+              39.856239584654524
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/809",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05211",
+            "P05_002": "5",
+            "P05_003": "二田栄町集会所",
+            "P05_004": "潟上市天王字上江川170"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.99209717414192,
+              39.8794596647961
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/816",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05211",
+            "P05_002": "4",
+            "P05_003": "細谷分館",
+            "P05_004": "潟上市天王字上狼縁1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.0267444745273,
+              39.85249154597041
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-d7b1c87c38351fa33362",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/68",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "椹沢コミュニティセンター",
+            "P05_004": "山形市金石田82"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.2921895957914,
+              38.267225067965086
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/1",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "飯塚コミュニティセンター",
+            "P05_004": "山形市横道7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.29425179931613,
+              38.2558951123918
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/54",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06201",
+            "P05_002": "4",
+            "P05_003": "南山形コミュニティセンター",
+            "P05_004": "山形市大字松原2031"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3059169025943,
+              38.1999353596605
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-db757b448c8db73422a5",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/358",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "1",
+            "P05_003": "花巻市役所",
+            "P05_004": "花巻市花城町9-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.11690965743975,
+              39.388604921379425
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/359",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "2",
+            "P05_003": "花巻地区合同庁舎",
+            "P05_004": "花巻市花城町1-41"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.1159291164733,
+              39.39002138692725
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/356",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03205",
+            "P05_002": "5",
+            "P05_003": "花巻中央振興センター",
+            "P05_004": "花巻市花城町1-30"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.11592360867763,
+              39.39044965544358
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-dc305b23b24f12a28bb6",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/375",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "4",
+            "P05_003": "石巻中央公民館",
+            "P05_004": "石巻市日和が丘1-2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.30520719090865,
+              38.42754980010253
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/332",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "4",
+            "P05_003": "石巻市稲井公民館",
+            "P05_004": "石巻市新栄1-25-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.33563327415035,
+              38.446514465391374
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/321",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04202",
+            "P05_002": "4",
+            "P05_003": "蛇田公民館",
+            "P05_004": "石巻市恵み野2-11-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.27294835730464,
+              38.44388192569571
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+    "candidates": [
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1732",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03482",
+            "P05_002": "4",
+            "P05_003": "羽々の下コミュニティセンター",
+            "P05_004": "山田町荒川第1地割2-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.9172980533938,
+              39.54206438443912
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1747",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03482",
+            "P05_002": "5",
+            "P05_003": "山の内生活改善センター",
+            "P05_004": "山田町船越第3地割49-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.97172008652768,
+              39.4243174704615
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_03_GML.zip!P05-22_03.geojson#/features/1766",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "03482",
+            "P05_002": "4",
+            "P05_003": "長内コミュニティセンター",
+            "P05_004": "山田町豊間根第5地割137"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.93678968795706,
+              39.52911810407124
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-e2eaf547357696dfe333",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/893",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "1",
+            "P05_003": "須賀川市役所",
+            "P05_004": "須賀川市八幡町135"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.37264545353247,
+              37.28649773502681
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/833",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "5",
+            "P05_003": "須賀川アリーナ",
+            "P05_004": "須賀川市牛袋町5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.35609128990447,
+              37.29186383421521
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/865",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07207",
+            "P05_002": "5",
+            "P05_003": "須賀川西部地域包括支援センター",
+            "P05_004": "須賀川市長禄町1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3724703352205,
+              37.294838114451316
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-e87fa72a02c9e04601f4",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1758",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "1",
+            "P05_003": "会津坂下町役場",
+            "P05_004": "会津坂下町字市中三番甲3662"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82174643019044,
+              37.56145508125543
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1764",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "4",
+            "P05_003": "坂下コミュニティセンター",
+            "P05_004": "会津坂下町字市中二番甲3650"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82248733856642,
+              37.56130947978408
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1754",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "3",
+            "P05_003": "まちづくりセンター",
+            "P05_004": "会津坂下町字市中二番甲3650"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82249733868866,
+              37.561309479759636
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-ef70cf36b6909e9459a6",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1724",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "1",
+            "P05_003": "猪苗代町役場",
+            "P05_004": "猪苗代町字城南100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.10481120036596,
+              37.55779711472239
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1728",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "4",
+            "P05_003": "猪苗代地区コミュニティセンター",
+            "P05_004": "猪苗代町字本町10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1077352545363,
+              37.56156611778574
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1725",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07408",
+            "P05_002": "5",
+            "P05_003": "農村環境改善センター",
+            "P05_004": "猪苗代町字城南100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1047452266777,
+              37.55722071530191
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-f03c9220b38ca2acc708",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/634",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07205",
+            "P05_002": "5",
+            "P05_003": "関の森公園白河都市農村交流センター",
+            "P05_004": "白河市旗宿白河内13-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.23046201303322,
+              37.045589113719316
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/636",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07205",
+            "P05_002": "5",
+            "P05_003": "丸の内会館",
+            "P05_004": "白河市郭内1-169"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.21495436414446,
+              37.13042109579959
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/749",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07205",
+            "P05_002": "5",
+            "P05_003": "白河商工会議所会館",
+            "P05_004": "白河市道場小路96-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.2115795777107,
+              37.12993295909071
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-f393ea45974a92d49fc5",
+    "candidates": [
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/248",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "1",
+            "P05_003": "鶴岡市役所",
+            "P05_004": "鶴岡市馬場町9-25"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.8267505176079,
+              38.72728700470088
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/247",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "5",
+            "P05_003": "鶴岡老人福祉センター",
+            "P05_004": "鶴岡市馬場町13-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82413349958256,
+              38.726764009913765
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_06_GML.zip!P05-22_06.geojson#/features/159",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "06203",
+            "P05_002": "4",
+            "P05_003": "下川代公民館",
+            "P05_004": "鶴岡市羽黒町川代字下川代109"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.94070351453206,
+              38.69590281074483
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-f46ab0fab535cf852a33",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/120",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02201",
+            "P05_002": "3",
+            "P05_003": "北部市民センター",
+            "P05_004": "青森市大字奥内字宮田41-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.67587331842202,
+              40.8863618646371
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/71",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02201",
+            "P05_002": "5",
+            "P05_003": "野木ふるさと館",
+            "P05_004": "青森市大字野木字山口1402"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.74047007596533,
+              40.76230026616511
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/52",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02201",
+            "P05_002": "2",
+            "P05_003": "野内支所",
+            "P05_004": "青森市大字久栗坂字山辺169-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.84729128645156,
+              40.873879527565904
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-f65a0dfe19389a4988bf",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-f74bc0daeadf52ba9070",
+    "candidates": [
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1682",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "5",
+            "P05_003": "南部町名川Ｂ＆Ｇ海洋センター",
+            "P05_004": "南部町大字平字広場281"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.33083334314708,
+              40.42093345676523
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1677",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "5",
+            "P05_003": "町民ホール",
+            "P05_004": "南部町大字下名久井字白山81"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.33386834141595,
+              40.426446205061865
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_02_GML.zip!P05-22_02.geojson#/features/1678",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "02445",
+            "P05_002": "1",
+            "P05_003": "南部町役場",
+            "P05_004": "南部町大字苫米地字下宿23-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.38191779122923,
+              40.466793644319246
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-f8aec7769492a55dce23",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1604",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04421",
+            "P05_002": "4",
+            "P05_003": "大和町公民館",
+            "P05_004": "大和町吉岡南2-4-14"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.88118259023673,
+              38.4418567543137
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1606",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04421",
+            "P05_002": "5",
+            "P05_003": "吉田教育ふれあいセンター",
+            "P05_004": "大和町吉田字仁和多利16"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.83304471055862,
+              38.451590345153065
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1620",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04421",
+            "P05_002": "5",
+            "P05_003": "鶴巣教育ふれあいセンター",
+            "P05_004": "大和町鶴巣北目大崎字塚64"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.93026856634597,
+              38.4185123627368
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-fc06d0f8dda64e3166de",
+    "candidates": []
+  },
+  {
+    "facilityId": "facility:north-proposal-aizubange-info",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1758",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "1",
+            "P05_003": "会津坂下町役場",
+            "P05_004": "会津坂下町字市中三番甲3662"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82174643019044,
+              37.56145508125543
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1764",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "4",
+            "P05_003": "坂下コミュニティセンター",
+            "P05_004": "会津坂下町字市中二番甲3650"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82248733856642,
+              37.56130947978408
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1754",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07421",
+            "P05_002": "3",
+            "P05_003": "まちづくりセンター",
+            "P05_004": "会津坂下町字市中二番甲3650"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              139.82249733868866,
+              37.561309479759636
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-akita-guard",
+    "candidates": [
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/45",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05201",
+            "P05_002": "3",
+            "P05_003": "秋田市保健所",
+            "P05_004": "秋田市八橋南1-8-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.09141832262986,
+              39.72029569327054
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/82",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05201",
+            "P05_002": "5",
+            "P05_003": "秋田市民交流プラザ",
+            "P05_004": "秋田市東通仲町4-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.13155507143628,
+              39.715833926039636
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/46",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05201",
+            "P05_002": "1",
+            "P05_003": "秋田市役所",
+            "P05_004": "秋田市山王1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.10252388178793,
+              39.719923026531944
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-daisen-grandport",
+    "candidates": [
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/890",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "5",
+            "P05_003": "健康文化活動拠点センター",
+            "P05_004": "大仙市大曲中通町6-10"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.4793382531725,
+              39.46297328710601
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/937",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "5",
+            "P05_003": "大曲交流センター",
+            "P05_004": "大仙市大曲日の出町2-458"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.48188971974795,
+              39.44846124194868
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_05_GML.zip!P05-22_05.geojson#/features/893",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "05212",
+            "P05_002": "5",
+            "P05_003": "市民活動交流拠点センター",
+            "P05_004": "大仙市大曲通町741"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.4766408733373,
+              39.464620924626956
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-koori-office",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1420",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "1",
+            "P05_003": "桑折町役場",
+            "P05_004": "桑折町字東大隅18"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.51648349261126,
+              37.84950789723313
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1426",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "5",
+            "P05_003": "地域包括支援センター",
+            "P05_004": "桑折町大字谷地字道下22"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.5216330332624,
+              37.854396343673585
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1421",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07301",
+            "P05_002": "5",
+            "P05_003": "桑折町児童館",
+            "P05_004": "桑折町字桑島三2-7"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.51637247227941,
+              37.84651391351214
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-motomiya-guard",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1403",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07214",
+            "P05_002": "1",
+            "P05_003": "本宮市役所",
+            "P05_004": "本宮市本宮字万世212"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.3938976386345,
+              37.51315961679087
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1411",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07214",
+            "P05_002": "2",
+            "P05_003": "本宮出張所",
+            "P05_004": "本宮市白岩字堤崎494-22"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.45403507727494,
+              37.50750841261405
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1412",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07214",
+            "P05_002": "5",
+            "P05_003": "本宮第一地域包括支援センター",
+            "P05_004": "本宮市本宮字南町裡129"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.40059446479174,
+              37.51596210401487
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-nishigo-customer",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1884",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "下折口原地区集落センター",
+            "P05_004": "西郷村大字熊倉字折口原790-5"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.16003900093736,
+              37.13579127561505
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1902",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "生活改善センター",
+            "P05_004": "西郷村熊倉折口原40"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1553255979413,
+              37.14122409606987
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1878",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "1",
+            "P05_003": "西郷村役場",
+            "P05_004": "西郷村熊倉折口原40"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15531400144673,
+              37.14176528581662
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-nishigo-guard",
+    "candidates": [
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1878",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "1",
+            "P05_003": "西郷村役場",
+            "P05_004": "西郷村熊倉折口原40"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15531400144673,
+              37.14176528581662
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1897",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "西郷村民体育館",
+            "P05_004": "西郷村大字小田倉字蛇口1-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.1503893867845,
+              37.130315486484434
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_07_GML.zip!P05-22_07.geojson#/features/1895",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "07461",
+            "P05_002": "5",
+            "P05_003": "上折口原農林漁家婦人活動促進施設",
+            "P05_004": "西郷村大字熊倉字折口原96-4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.15202577478857,
+              37.14171566460678
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-onagawa-platto",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1794",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04581",
+            "P05_002": "1",
+            "P05_003": "女川町役場",
+            "P05_004": "女川町女川1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.44449127669725,
+              38.44551674893617
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1795",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04581",
+            "P05_002": "5",
+            "P05_003": "まちなか交流館",
+            "P05_004": "女川町女川2-65-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.44582173713715,
+              38.445408760070784
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1796",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04581",
+            "P05_002": "5",
+            "P05_003": "生涯学習センター",
+            "P05_004": "女川町女川1-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.44308861700378,
+              38.44541702972787
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-rifu-information",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1596",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "5",
+            "P05_003": "利府町民交流館",
+            "P05_004": "利府町利府字新並松4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97583275931046,
+              38.33034550877993
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1595",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "1",
+            "P05_003": "利府町役場",
+            "P05_004": "利府町利府字新並松4"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97585275979014,
+              38.33034550872088
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1594",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04406",
+            "P05_002": "4",
+            "P05_003": "館公民館",
+            "P05_004": "利府町利府字新館12"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              140.97760879106207,
+              38.33194149587002
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-shichigahama-water",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1558",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "1",
+            "P05_003": "七ヶ浜町役場",
+            "P05_004": "七ヶ浜町東宮浜字丑谷辺5-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05918491190155,
+              38.304544057970546
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1557",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "東宮浜地区交流センター",
+            "P05_004": "七ヶ浜町東宮浜字笠岩16-15"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.05212420804133,
+              38.31118439531556
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/1549",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04404",
+            "P05_002": "5",
+            "P05_003": "町民体育館・武道館",
+            "P05_004": "七ヶ浜町吉田浜字野山1-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.06117197709798,
+              38.3018090518327
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "facilityId": "facility:north-proposal-tagajo-info",
+    "candidates": [
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/642",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "1",
+            "P05_003": "多賀城市役所",
+            "P05_004": "多賀城市中央2-1-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00439557345868,
+              38.29334864151173
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/645",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "4",
+            "P05_003": "中央公民館",
+            "P05_004": "多賀城市中央2-27-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00515158727075,
+              38.29562961765827
+            ]
+          }
+        }
+      },
+      {
+        "locator": "P05-22_04_GML.zip!P05-22_04.geojson#/features/663",
+        "feature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "04209",
+            "P05_002": "5",
+            "P05_003": "文化センター",
+            "P05_004": "多賀城市中央2-27-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              141.00517158775773,
+              38.29562961750907
+            ]
+          }
+        }
+      }
+    ]
+  }
+]

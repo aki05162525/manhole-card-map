@@ -1,0 +1,17 @@
+{
+  "data/work/issue7-baseline/ledger.json": "a0e3fe82a4996e1041cb5434b7a24e90408a8c55c1f3f1d7e36e0e5e56b2c6c8",
+  "data/work/issue7-baseline/full.json": "c12ff18fa3bae89bfd04875d2e0656e90fe65fc24780a4882263432769ace130",
+  "data/work/issue7-baseline/assignments.json": "97d7c362e94fbf45ca3c86e093940c8b4140dbe2f31dbd7519a93852d179aeda",
+  "data/work/issue7-baseline/hashes.json": "41cf672ca07f87c2bb0cedc1de0f081eac9d864da32d032c650cc491b47788ad",
+  "data/national/issue5/chubu.json": "68e9c0ad0998a5ba0930634bfe11c7d80fc1589001465ad252c72f7a1a5650b5",
+  "data/national/issue5/chubu-reviewed.json": "d4204442f53cf0175c8a308f6584c6172312eeadc41f3b00702660dbafea911d",
+  "data/national/issue5/reviews/chubu.json": "99679341b9417d8b4cc794464977565a2817c915809f7f6021d9363ffdda5338",
+  "data/national/location-updates/chubu-east-north.json": "0f4b62883e8fd96def94fccc293149e4c15af1225f2165defac298ec3fd51a0f",
+  "data/national/reviews/facility-point-scope.json": "6517557071c8eaf0cb574fa7717f90012ba63a6f5441ee3b1769d7c98bf15ede",
+  "cmd/builddata/ledger.go": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695",
+  "data/evidence/national/official-facility-index/p05-spec.pdf": "62ae214bfb4e0811a622fcb7d107e6b52fb5bf7fc42adb1b576b02cde981778e",
+  "data/evidence/national/official-facility-index/p05-spec.txt": "396e02c427023f404c11b31a041e2ddf82a8b63fabc6480c28b68288e4363f36",
+  "data/evidence/national/official-facility-index/p05-spec.pdf.source.json": "aece9c860e0bc9ffa66ecac1b30c6401b1f48d87ece81bee28c62f252bcae9aa",
+  "data/evidence/issue5/chubu/P05-22_GML.zip.source.json": "0019e55556a99651daeca737f4725ce84c9ab4b60a8f768bbf76d2e2d8ad0935",
+  "data/evidence/issue5/chubu/P05-22_GML.zip": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc"
+}

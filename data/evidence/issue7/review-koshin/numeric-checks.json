@@ -1,0 +1,477 @@
+[
+  {
+    "facilityId": "facility:chubu-east-229e5e47f9803908c4c6",
+    "featureIndex": 966,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "19430",
+        "P05_002": "5",
+        "P05_003": "生涯学習館",
+        "P05_004": "富士河口湖町船津1754"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7543258795814,
+          35.496816454250215
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "35.49681645 138.75432588",
+    "memberSHA256": "e6aa5bf40283f6d9c9a89b30e5485d28b1933a70739ae4c199bdf1caf29a15ad",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-240805ae87211fec2017",
+    "featureIndex": 127,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "19204",
+        "P05_002": "1",
+        "P05_003": "都留市役所",
+        "P05_004": "都留市上谷1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.90547146199393,
+          35.55156498732389
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "35.55156499 138.90547146",
+    "memberSHA256": "e6aa5bf40283f6d9c9a89b30e5485d28b1933a70739ae4c199bdf1caf29a15ad",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-36a5d6c92fa9483cf836",
+    "rawLat": "36.28432559266264",
+    "rawLng": "138.23053752084536",
+    "axisOrder": "initlat latitude; initlong longitude",
+    "crs": "Geographic degrees used by Google Maps LatLng (WGS84 API convention); no explicit EPSG declaration in municipality HTML; not P05/JGD2011",
+    "markerNotOnlyCenter": true,
+    "javascriptPath": "data/evidence/issue7/koshin/91ff513aa1997f3d8402.html",
+    "exactMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-44d29ce20b77b1fda73b",
+    "featureIndex": 1463,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20218",
+        "P05_002": "5",
+        "P05_003": "更埴文化会館あんずホール",
+        "P05_004": "千曲市杭瀬下1-64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.11688115103794,
+          36.53027711494134
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.53027711 138.11688115",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-4cbef6338a9e2b8c48c2",
+    "featureIndex": 2889,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20451",
+        "P05_002": "1",
+        "P05_003": "朝日村役場",
+        "P05_004": "朝日村朝日村大字古見1555-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.86698629125806,
+          36.12900021280447
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.12900021 137.86698629",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-5a0a8e11ba49036a9c1e",
+    "featureIndex": 1551,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20218",
+        "P05_002": "5",
+        "P05_003": "総合観光会館",
+        "P05_004": "千曲市上山田温泉2-12-10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1445523775411,
+          36.47847748667426
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.47847749 138.14455238",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-64b7118a7d922e54371d",
+    "featureIndex": 3026,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20541",
+        "P05_002": "1",
+        "P05_003": "小布施町役場",
+        "P05_004": "小布施町大字小布施1491-2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.31215112763743,
+          36.69747710747287
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.69747711 138.31215113",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-7d19c697816a714fd233",
+    "featureIndex": 2403,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20403",
+        "P05_002": "1",
+        "P05_003": "高森町役場",
+        "P05_004": "高森町下市田2183-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8790378521034,
+          35.55147450429491
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "35.55147450 137.87903785",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-97b67626e4aca3bcd172",
+    "featureIndex": 673,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20208",
+        "P05_002": "1",
+        "P05_003": "小諸市役所",
+        "P05_004": "小諸市相生町3-3-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.42602488164707,
+          36.326873657020116
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.32687366 138.42602488",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-9861585483eb71552f50",
+    "featureIndex": 3026,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20541",
+        "P05_002": "1",
+        "P05_003": "小布施町役場",
+        "P05_004": "小布施町大字小布施1491-2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.31215112763743,
+          36.69747710747287
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.69747711 138.31215113",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-98dcd8cc70b2aab9ecb7",
+    "featureIndex": 673,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20208",
+        "P05_002": "1",
+        "P05_003": "小諸市役所",
+        "P05_004": "小諸市相生町3-3-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.42602488164707,
+          36.326873657020116
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.32687366 138.42602488",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-acd40115c426144e6322",
+    "featureIndex": 2889,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20451",
+        "P05_002": "1",
+        "P05_003": "朝日村役場",
+        "P05_004": "朝日村朝日村大字古見1555-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.86698629125806,
+          36.12900021280447
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.12900021 137.86698629",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+    "featureIndex": 1529,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20218",
+        "P05_002": "5",
+        "P05_003": "上山田文化会館",
+        "P05_004": "千曲市上山田温泉3-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.14561077711286,
+          36.47819438658133
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.47819439 138.14561078",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-ba9f34b2c65026c605a0",
+    "featureIndex": 420,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20204",
+        "P05_002": "1",
+        "P05_003": "岡谷市役所",
+        "P05_004": "岡谷市幸町8-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.04955931163758,
+          36.06700260454378
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.06700260 138.04955931",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-east-c1dbcbef842ac7914747",
+    "featureIndex": 2403,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20403",
+        "P05_002": "1",
+        "P05_003": "高森町役場",
+        "P05_004": "高森町下市田2183-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8790378521034,
+          35.55147450429491
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "35.55147450 137.87903785",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  },
+  {
+    "facilityId": "facility:chubu-tomi-water-counter",
+    "featureIndex": 1606,
+    "rawFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "20219",
+        "P05_002": "5",
+        "P05_003": "勤労者会館",
+        "P05_004": "東御市県291-5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.33003184048005,
+          36.35974343784405
+        ]
+      }
+    },
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    },
+    "geojsonAxisOrder": "longitude latitude",
+    "gmlAxisOrder": "latitude longitude",
+    "gmlRaw": "36.35974344 138.33003184",
+    "memberSHA256": "71f4cfe9e1821bf9fbd488a61013dfadb9be4b4ba2393f177bba2d4c9ddf863c",
+    "exactGeoJSONMatch": true
+  }
+]

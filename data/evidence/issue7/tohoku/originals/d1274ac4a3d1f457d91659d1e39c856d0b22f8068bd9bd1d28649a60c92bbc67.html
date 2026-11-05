@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>観る・買う　｜　女川町</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="女川町役場,女川町,おながわ,onagawa,宮城" />
+    <meta name="description" content="女川町の公式ウェブサイトです。町民向け情報、事業者向け情報、観光情報など、各種情報を提供しています。" />
+    <link href="image/favicon.ico" rel="shortcut icon"  type="image/vnd.microsoft.icon" />
+    
+    <!-- maincss -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/sp.css" type="text/css" /> -->
+    
+    
+    <!-- java -->
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/styleswitcher.js"></script>
+    
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/ran_slide.js"></script>
+    <script src="js/checkDevice.js"></script>
+   
+    <script src="js/top_link.js"></script>
+    <script src="js/accordion.js"></script>
+
+</head>
+<body>
+<!--本文へ移動リンク-->
+<div class="txtlink"><a href="#main_box"><img src="/img/spacer.gif" width="1" height="1" alt="本文へジャンプします" /></a></div>
+
+<div id="wrapper_out" class="navi3">
+
+<!-- ヘッダー -->
+<!-- 06改修CSS追加 -->
+<link rel="stylesheet" href="/css/style.css?20250301" />
+<link rel="stylesheet" href="/css/style_r1.css?20250301" />
+<link rel="stylesheet" href="/css/navi_common.css?20260301" />
+<link rel="stylesheet" href="/css/common_sp.css?20250301" />
+<link rel="stylesheet" href="/css/spmenu.css?20250301" />
+<!-- <script  src="/js/top_link_set.js?20250301"></script> -->
+
+
+<script>
+$(function() {
+  //ページスクロール
+  
+    var topBtn2 = $('#trigger_3');
+    topBtn2.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 300);
+        if ( $('.slide_menu').hasClass('active') ) {
+          $('.slide_menu').removeClass('active');
+          $('#trigger_1').html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+        }
+        if ( $('.slide_menu2').hasClass('active') ) {
+          $('.slide_menu2').removeClass('active');
+          $('#trigger_2').html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+        }
+        return false;
+    });
+  
+  
+  //SPメニュー切替
+    var spmBtn1 = $('#trigger_1');
+    var spmBtn2 = $('#trigger_2');
+  //メニュー表示
+    function spHubMenu1() {
+    $('.slide_menu').toggleClass('active');
+    if ( $('.slide_menu2').hasClass('active') ) {
+      $('.slide_menu2').removeClass('active');
+    }
+    if ( $('.slide_menu').hasClass('active') ) {
+      spmBtn1.html('<i class="fas fa-xmark"></i><p id="trigger_text1">閉じる</p>');
+      spmBtn2.html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+    }else{
+      spmBtn1.html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+    }
+    return false;
+    }
+  //探す表示
+    function spHubMenu2() {
+    $('.slide_menu2').toggleClass('active');
+    if ( $('.slide_menu').hasClass('active') ) {
+      $('.slide_menu').removeClass('active');
+    }
+    if ( $('.slide_menu2').hasClass('active') ) {
+      spmBtn2.html('<i class="fas fa-xmark"></i><p id="trigger_text2">閉じる</p>');
+      spmBtn1.html('<i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p>');
+    }else{
+      spmBtn2.html('<i class="fas fa-search"></i><p id="trigger_text2">探す</p>');
+    }
+    return false;
+    }
+  
+    spmBtn1.click(spHubMenu1);
+    spmBtn2.click(spHubMenu2);
+  
+});
+
+</script>
+
+
+<!-- 多言語警告 -->
+<div class="modal">
+  <div class="modalBody">
+    <div id="attention" class="nosec"></div>
+    <p class="close"></p>
+  </div>
+  <div class="modalBK"></div>
+</div>
+
+<!-- spナビ -->
+<div class="bottom_nav">
+  <div class="btmitem">
+    <a id="trigger_1"><i class="fas fa-bars"></i><p id="trigger_text1">メニュー</p></a>
+  </div>
+ <div class="btmitem">
+    <a id="trigger_2"><i class="fas fa-search"></i><p id="trigger_text2">探す</p></a>
+ </div>
+ <div class="btmitem">
+    <a id="trigger_3"><i class="fas fa-chevron-up"></i><p id="trigger_text3">TOP</p></a>
+ </div>
+</div>
+
+<!-- ヘッダー -->
+<div id="head_out">
+
+<div class="toplogo head">
+  <a href="/index.html"></a>
+</div>
+
+<div class="slide_menu">
+  
+<!--オプション-->
+<div class="headitem">
+  <div class="hmsec">
+    <div class="hitem">
+      <div class="itemlist pc">「いのち」と「くらし」をみんなが紡ぐまち</div>
+
+      <div class="itemlist r-txt">
+        <div id="textsize">
+          <div class="item_ib"><p>文字サイズ</p></div>
+          <div class="item_ib">
+            <div id="txt_size2">
+              <ul class="txt_size">
+                <li><a class="size01" href="javascript:void(0);" onclick="setActiveStyleSheet('medium'); return false;" onkeypress="setActiveStyleSheet('medium');">標準</a></li>
+                <li><a class="size02" href="javascript:void(0);" onclick="setActiveStyleSheet('large'); return false;" onkeypress="setActiveStyleSheet('large');">拡大</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="item_ib">
+            <div class="translate_element">
+              <select id="honyaku" name="honyaku" title="Foreign Language">
+                <option value="0" lang="">Foreign Language</option>
+                <option value="en">English</option>
+                <option value="zh">中文（簡体字）</option>
+                <option value="zhb">中文（繁体字）</option>
+                <option value="ko">&#54620;&#44397;&#50612;</option>
+                <option value="th">ไทย</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="ja" lang="jp">日本語</option>
+              </select>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="headitem">
+  <!--ヘッダー&スライド-->
+  <div id="head" class="cl">
+
+    <!-- スライダー -->
+    <div id="topslide" class="pc">
+      <div id="slider"></div>
+    </div>
+    <!-- 女川町ロゴ -->
+    <div class="toplogo pc">
+      <a href="/index.html"></a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- グローバルナビ -->
+  
+<div class="headitem">
+  <!--メインナビ-->
+  <div class="hnav_sec">
+   
+  <div class="gnav r2 noto_500">
+     
+      <ul>
+        <li>
+          <a class="drop list2a" href="/kurashi.html#bunrui1">くらし・手続き・移住</a>
+          <div class="secondmenu list2a">
+            <a href="/emer/">災害・感染症情報</a>
+            <a href="/04_02_01.html">住民票・戸籍</a>
+            <a href="/life_event_01i.html">結婚・離婚</a>
+            <a href="/life_event_07i.html">転入・転出</a>
+            <a href="/life_event_04.html">住まい</a>
+            <a href="/05_05.html">環境・ごみ</a>
+            <a href="/05_08_01.html">税金</a>
+            <a href="/05_06_01_00.html">消費生活</a>
+            <a href="/11_04_01.html">交通</a>
+            <a href="/life_event_08i.html">おくやみ</a>
+            <a href="/05_05_00_02.html">ペット</a>
+            <a href="/05_06_01.html">各種相談</a>
+            <a href="kurashi_benrityou.html">くらしの便利帳</a>
+            <a href="/chomin_calendar.html">おながわ町民カレンダー</a>
+            <a href="/mynumber.html">マイナンバー</a>
+            <a href="/04_02_02.html">窓口・施設のご案内</a>
+            <a href="/04_02_03.html">手数料一覧</a>
+            <a href="/04_02_05.html">様式ダウンロード</a>
+            <a href="/iju">移住特設サイト【女川で暮らす】</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2b" href="/kurashi.html#bunrui2">健康・医療・福祉</a>
+          <div class="secondmenu list2b">
+          <a href="/life_event_06.html">保健・医療</a>
+          <a href="/05_13_01_01.html">各種検診</a>
+          <a href="/05_09_00.html">健康保険・年金</a>
+          <a href="/05_14hukushi/05_14.html">福祉</a>
+          <a href="/05_14hukushi/05_14_03.html">障害者福祉</a>
+          <a href="/life_event_05i.html">高齢・介護</a>
+          <a href="/05_24.html">生活支援</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2c" href="/kurashi.html#bunrui3">子育て・教育</a>
+          <div class="secondmenu list2c">
+          <a href="/life_event_02.html">妊娠・出産</a>
+          <a href="/05_13_09.html">母子保健</a>
+          <a href="/life_event_09.html">子育て</a>
+          <a href="/05_15_02_04.html">子育て支援センター</a>
+          <a href="/05_15_02_05.html">放課後児童クラブ</a>
+          <a href="/hoiku">女川町保育所</a>
+          <a href="/life_event_03.html">学校・教育</a>
+          <a href="/05_15_03_04.html">各種補助制度のご案内</a>
+          <a href="/05_18.html">国際交流</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list2d" href="/kurashi.html#bunrui4">まちづくり・産業</a>
+          <div class="secondmenu list2d">
+          <a href="/05_03.html">防災</a>
+          <a href="/bouhan.html">防犯</a>
+          <a href="/05_07_01.html">上下水道</a>
+          <a href="/05_07_00.html">都市計画・土地利用</a>
+          <a href="/05_04.html">原子力</a>
+          <a href="/machi_hito_shigoto.html">まちづくり</a>
+          <a href="/05_07_06.html">道路・河川</a>
+          <a href="/nouen_bosyu.html">女川町民農園使用者募集</a>
+          <a href="/05_17.html">産業</a>
+          <a href="/life_event_10i.html">仕事</a>
+          </div>
+        </li>
+        <li class="">
+          <a class="drop list3" href="/raihou.html">観光情報</a>
+          <div class="secondmenu list3">
+            <!-- <a href="/raihou.html">観光トップ</a> -->
+            <a href="/03_05_01.html">アクセス</a>
+            <a href="/03_00_01.html">食べる</a>
+            <a href="/03_00_02.html">観る・買う</a>
+            <a href="/03_00_03.html">体験する</a>
+            <a href="https://www.onagawa.org/stay/">泊まる<br>（女川町観光協会：外部サイト）</a>
+            <a href="/03_00_04.html">イベント</a>
+            <a href="/03_00_08.html">震災学習</a>
+            <a href="/03_00_09.html">女川の文化財</a>
+            <a href="/03_00_06.html">観光モデルコース</a>
+            <a href="/hurusatocm.html">みやぎふるさとCM大賞</a>
+            <a href="/03_00_05_01.html">リンク集</a>
+            <a href="https://www.onagawa.org/stay/">開催イベント<br>（女川町観光協会：外部サイト）</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list4" href="/jigyou.html">事業者情報</a>
+          <div class="secondmenu list4">
+          <a href="/05_17_04.html">商工・労働情報</a>
+          <a href="/suisan_danchi_p4.html">排水処理施設整備等事業</a>
+          <a href="/05_17_01.html">企業立地</a>
+          <a href="/04_06nyusatu/00_index.html">入札関連情報</a>
+          <a href="/05_17_08.html">町有施設の貸付</a>
+          <!-- <a href="/sounding_research.html">町有施設サウンディング型市場調査</a> -->
+          <a href="/05_17_11.html">特定技能所属機関による「協力確認書」の提出について</a>
+          </div>
+        </li>
+        <li>
+          <a class="drop list1 " href="/onagawa.html">女川町について</a>
+          <div class="secondmenu list1">
+            <a id="hm1" href="/02_01_02.html">町長挨拶</a>
+            <a id="hm2" href="/02_01_01.html">町の紹介</a>
+            <a href="/05_19.html">町政情報</a>
+            <a href="/choushi.html">女川町誌</a>
+            <a href="/02_03.html">各種統計</a>
+            <a href="/04_04syokuin%20bosyu/04_04_04rinji01.html">町職員募集</a>
+            <a href="/05_20_01.html">選挙</a>
+            <a href="/04_04_01.html">情報公開</a>
+            <a href="/shisatsu.html">視察について</a>
+            <a href="/11_21.html">ふるさと応援寄附金</a>
+            <a href="/11_22.html">企業版ふるさと納税</a>
+            <a href="/kouhou.html">広報おながわ</a>
+            <a href="https://gikai-town-onagawa.jp">女川町議会（外部サイト）</a>
+            <a href="/kyosai_kouen_meigi.html">共催・名義後援申請</a>
+            <a href="/onagawa_tyoumin_kaigi.html">女川町民会議</a>
+            <a href="/archive/index.html">女川町震災アーカイブ</a>
+            <a href="/100th/index.html">女川町町制施行100周年記念事業</a>
+            <a href="/furusatojuumin.html">ふるさと住民登録制度について</a>
+          </div>
+        </li>
+        
+        
+        <!-- <li><a class="drop list5" href="/iju/index.html">移住・定住</a></li> -->
+        <!-- <li><a class="drop list6" href="https://onagawa.org/"><p>イベント<br class="pc"><span>(観光協会HP)</span></p></a></li> -->
+      </ul>
+      
+  </div>
+  
+  </div>
+  
+</div>
+  
+</div>
+
+<!-- R06モバイル改修 -->
+<!--追加検索メニュー部分 -->
+<div class="slide_menu2">
+  
+  <!-- 検索メニュー -->
+  <!-- サイト内検索-->
+<div class="headitem kensaku">
+ <div class="search_sec noto_300">
+  <div class="search_sp spmode">
+    <div class="key_text">キーワード検索</div>
+    <div class="search">
+    <form class="search" name="form1" action="https://www.google.co.jp/search" method="get">
+    <input name="ie" type="hidden" value="UTF-8">
+    <input name="oe" type="hidden" value="UTF-8">
+    <input name="hl" type="hidden" value="ja">
+    <input name="domains" type="hidden" value="www.town.onagawa.miyagi.jp">
+    <input name="sitesearch" type="hidden" value="www.town.onagawa.miyagi.jp">
+    <input id="search_mobile" name="q" size="31" type="text" placeholder="Google提供" style=""><button class="search-start">検索</button>
+    </form>
+    </div>
+  </div>
+</div>
+</div>
+  
+  <!-- ライフイベント -->
+  <div class="art_menu">
+    <h2>ライフイベントから探す</h2>
+    <div class="spmbox life">
+      <div class="spmitem"><a href="/life_event_02.html"><img src="/img/menu/l_icon_01.png" alt="">妊娠・出産</a></div>
+      <div class="spmitem"><a href="/life_event_09.html"><img src="/img/menu/l_icon_02.png" alt="">子育て</a></div>
+      <div class="spmitem"><a href="/life_event_03.html"><img src="/img/menu/l_icon_03.png" alt="">学校・教育</a></div>
+      <div class="spmitem"><a href="/life_event_01i.html"><img src="/img/menu/l_icon_04.png" alt="">結婚・離婚</a></div>
+      <div class="spmitem"><a href="/life_event_07i.html"><img src="/img/menu/l_icon_05.png" alt="">転入・転出</a></div>
+      <div class="spmitem"><a href="/life_event_04.html"><img src="/img/menu/l_icon_06.png" alt="">住まい</a></div>
+      <div class="spmitem"><a href="/life_event_10i.html"><img src="/img/menu/l_icon_07.png" alt="">仕事</a></div>
+      <div class="spmitem"><a href="/life_event_06.html"><img src="/img/menu/l_icon_08.png" alt="">保健・医療</a></div>
+      <div class="spmitem"><a href="/life_event_05i.html"><img src="/img/menu/l_icon_09.png" alt="">高齢・介護</a></div>
+      <div class="spmitem"><a href="/life_event_08i.html"><img src="/img/menu/l_icon_10.png" alt="">おくやみ</a></div>
+    </div>
+  </div>
+  
+  <!-- 分類から探す -->
+  <div class="art_menu">
+    <h2>分類から探す</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/kurashi.html#bunrui1">くらし・手続き・移住</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui2">健康・医療・福祉</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui3">子育て・教育</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui4">まちづくり・産業</a></div>
+      <div class="spmitem"><a href="/kurashi.html#bunrui5">行政</a></div>
+    </div>
+  </div>
+  
+  <!-- お役立ち情報 -->
+  <div class="art_menu">
+    <h2>お役立ち情報</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/04_02_02.html">窓口案内</a></div>
+      <div class="spmitem"><a href="/05_19.html">町政情報</a></div>
+      <div class="spmitem"><a href="/04_02_05.html">申請書様式</a></div>
+      <div class="spmitem"><a href="/04_06nyusatu/00_index.html">入札関連情報</a></div>
+      <div class="spmitem"><a href="/04_02_03.html">証明書交付手数料</a></div>
+      <div class="spmitem"><a href="/05_05.html">ごみ収集</a></div>
+      <div class="spmitem"><a href="/kouhou.html">広報おながわ</a></div>
+      <div class="spmitem"><a href="/11_21.html">ふるさと応援寄附金</a></div>
+    </div>
+  </div>
+  
+  <!-- いざという時に -->
+  <div class="art_menu saigai">
+    <h2>いざという時に</h2>
+    <div class="spmbox">
+      <div class="spmitem"><a href="/emer/bousai/05_03.html">女川町防災マップ</a></div>
+      <div class="spmitem"><a href="/pdf/bousai/shitei_kinkyu_hinan_ichiran.pdf">指定避難所一覧</a></div>
+      <div class="spmitem"><a href="/05_13_00.html">休日・夜間診療</a></div>
+      <div class="spmitem"><a href="/emer/">災害・感染症情報</a></div>
+    </div>
+  </div>
+  
+  <div class="art_menu last"></div>
+  </div>
+  
+</div>
+
+
+
+<!-- ここからページ内容 -->
+<div id="wrapper" class="cl">
+
+<!--パンくず-->
+<div id="pankz" class="pc">
+      現在位置：<a href="index.html">ホーム</a> &gt; <a href="raihou.html">観光される方へ</a> &gt; <a>観る・買う</a>
+</div>
+
+<!-- メインコンテンツ -->
+<div id="main_box">
+  <h1 class="navi3">観る・買う</h1>
+  <br>
+      
+      <h2 class="navi3">女川駅・女川温泉ゆぽっぽ</h2>
+      <div class="content">
+      
+      
+      <p>
+      女川駅は、1階に改札、2階に温泉温浴施設「女川温泉ゆぽっぽ」があり、3階の展望フロアからは駅前商業エリアや女川湾の青い海を見渡すことができます。ウミネコが羽ばたく様子をイメージした曲線を描く大屋根が特徴の建物で、町のシンボルとなっています。<br>
+      女川温泉ゆぽっぽのお湯は、肌に良いとされるカルシウム・ナトリウム塩化物泉の低張性アルカリ性低温泉で疲れた身体を癒してくれます。屋外には気軽に楽しめる無料の足湯を設置しています。電車の待ち時間や散策後にほっと一息、ぜひお気軽にご利用ください。</p>
+
+      
+      
+      
+      <div class="txt_sec">
+      <ul>
+        <li><a href="http://onagawa-yupoppo.com/" target="_blank" title="女川温泉ゆぽっぽホームページ（外部サイト：別ウィンドウで開きます）">女川温泉ゆぽっぽホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+      </div>
+      <br>
+      <div class="half_sec cl">
+        
+        <div class="l_30">
+          <img class="wt_auto" src="image/kankou/miru16.jpg" alt="女川駅外観"/>
+          <img class="wt_auto" src="image/kankou/miru17.jpg" alt="女川温泉ゆぽっぽ内観" />
+        </div>
+        <div class="r_70">
+          <table class="wt100 mobile">
+            <tbody>
+              <tr>
+                <th scope="row">住所</th>
+                <td>宮城県牡鹿郡女川町女川2丁目3番地2</td>
+              </tr>
+              <tr>
+                <th scope="row">地図</th>
+                <td>
+                <iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12499.106729751411!2d141.4439676!3d38.4466269!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe058a0972cbd7429!2z5aWz5bed5rip5rOJ44KG44G944Gj44G9!5e0!3m2!1sja!2sjp!4v1503645999241" height="300" style="border:0" allowfullscreen title="女川駅マップ"></iframe>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">問合せ先</th>
+                <td>女川温泉ゆぽっぽ<br>（指定管理者：女川町ゆぽっぽコンソーシアム）</td>
+              </tr>
+              <tr>
+                <th scope="row">電話番号</th>
+                <td>0225-50-2683</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      <br>
+      
+      <h2 class="navi3">道の駅「おながわ」</h2>
+      <div class="content">
+      「シーパルピア女川」、「地元市場ハマテラス」、「女川町まちなか交流館」、「女川町たびの情報館ぷらっと」のエリアは、令和3年4月に宮城県第17番目の道の駅として登録されました。町民と道路利用者との交流を促進し、道路情報・観光情報・震災復興に関する情報等、幅広く発信する施設となります。
+      <br><br>
+        <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/miru21.jpg" alt="道の駅「おながわ」" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町女川2丁目66番</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.818253589871!2d141.44380951533714!3d38.445666779642885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b11ade3e54a9%3A0x6bc634c6893b8425!2z6YGT44Gu6aeFIOOBiuOBquOBjOOCjw!5e0!3m2!1sja!2sjp!4v1618190394708!5m2!1sja!2sjp" width="400" height="300" style="border:0;" title="道の駅「おながわ」"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>女川みらい創造株式会社</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-24-8118</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <br id="seapal">
+      
+     <h2 class="navi3">シーパルピア女川・地元市場ハマテラス</h2>
+      <div class="content">
+      
+      「シーパルピア女川」は、レンガみちに隣接するテナント型の商業施設です。女川のグルメを堪能できる飲食店や、ギターやスペインタイルなどの魅力的な製作工房などさまざまな店舗が並び、町民の日常生活をサポートするだけでなく、観光客のおもてなし拠点にもなっています。<br>
+      また、海をコンセプトにした「地元市場 ハマテラス」では、鮮魚や水産加工品などの特産品の販売や飲食メニューの提供を行っています。<br>
+      <div class="txt_sec">
+      <ul>
+        <li><a href="http://onagawa-mirai.jp/" target="_blank" title="シーパルピア女川・地元市場ハマテラスホームページ（外部サイト：別ウィンドウで開きます）">シーパルピア女川・地元市場ハマテラスホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+      </div>
+      
+        <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/miru14.jpg" alt="シーパルピア女川中庭" />
+            <img class="wt_auto" src="image/kankou/miru15.jpg" alt="女川駅前レンガみちを歩く人々" />
+          </div>
+          <div class="r_70">
+             <table class="wt100 mobile">
+                <tbody>
+                  <tr>
+                    <th scope="row">住所</th>
+                    <td>宮城県牡鹿郡女川町女川浜字大原地内</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">地図</th>
+                    <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1562.1477368017127!2d141.44394519591307!3d38.44624909779562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI2JzQ2LjUiTiAxNDHCsDI2JzQyLjEiRQ!5e0!3m2!1sja!2sjp!4v1451956858320" height="300" style="border:0" allowfullscreen title="シーパルピア女川マップ"></iframe></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">問合せ先</th>
+                    <td>女川みらい創造(株)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">電話番号</th>
+                    <td>0225-24-8118</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+        </div>
+
+      </div>
+      <br>
+      
+      <h2 class="navi3">女川町まちなか交流館</h2>
+      <div class="content">
+      
+      「居心地のよい、まちの居間となる、賑わい交流拠点」をコンセプトに、町民や来町者が気軽に立ち寄ることのできる施設です。開放感のあるロビーや多人数収容のホール、会議室・多目的室、ドラムセットを完備した本格的な音楽スタジオ、調理室、多目的室、キッズコーナー、商工会で構成され、各世代が気軽に訪れることのできる施設です。<br>
+      <div class="txt_sec">
+      <ul>
+        <li><a href="http://onagawa-machikou.com" target="_blank" title="女川町まちなか交流館ホームページ（外部サイト：別ウィンドウで開きます）">女川町まちなか交流館ホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+        </div>
+      <div class="half_sec cl">
+        
+        <div class="l_30">
+          <img class="wt_auto" src="image/kankou/miru01s.jpg" alt="女川町まちなか交流館外観" />
+          <img class="wt_auto" src="image/kankou/miru02s.jpg" alt="女川町まちなか交流館ロビー" />
+        </div>
+        <div class="r_70">
+          <table class="wt100 mobile">
+            <tbody>
+              <tr>
+                <th scope="row">住所</th>
+                <td>宮城県牡鹿郡女川町女川2丁目65番地2</td>
+              </tr>
+              <tr>
+                <th scope="row">地図</th>
+                <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.6593953424854!2d141.44730888472105!3d38.44536664156029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd7a03e01da91bf1!2z5aWz5bed55S644G-44Gh44Gq44GL5Lqk5rWB6aSo!5e0!3m2!1sja!2sjp!4v1502936294485" height="300" style="border:0" allowfullscreen title="女川町まちなか交流館マップ"></iframe></td>
+              </tr>
+              <tr>
+                <th scope="row">問合せ先</th>
+                <td>女川町まちなか交流館（指定管理者：女川町商工会）</td>
+              </tr>
+              <tr>
+                <th scope="row">電話番号</th>
+                <td>0225-24-6677</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      <br>
+      
+      <h2 class="navi3">女川町たびの情報館　ぷらっと</h2>
+      <div class="content">
+      
+      <p>女川町観光協会事務所に併設された女川の情報発信拠点となる施設です。<br>
+      おすすめの飲食店、遊ぶ場所、楽しみ方のご案内のほか、レンタサイクルの貸出や荷物の預かりサービスも承っています。室内には休憩スペースが設けられ、開放感のある大きな窓から海を望みながら飲食を楽しむことができます。<br>
+      無料のWi-Fiスポットにもなっているので、お気軽にご利用ください。</p><br>
+      <div class="txt_sec">
+      <ul>
+        <li><a href="http://onagawa.org" target="_blank" title="女川町観光協会ホームページ（外部サイト：別ウィンドウで開きます）">女川町観光協会ホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+        </div>
+        
+      <div class="half_sec cl">
+        
+        <div class="l_30">
+          <img class="wt_auto" src="image/kankou/purato1.jpg" alt="女川町たびの情報館ぷらっと外観" />
+          <img class="wt_auto" src="image/kankou/purato2.jpg" alt="女川町たびの情報館ぷらっと内観" />
+        </div>
+        <div class="r_70">
+          <table class="wt100 mobile">
+            <tbody>
+              <tr>
+                <th scope="row">住所</th>
+                <td>宮城県牡鹿郡女川町女川2丁目16番5号</td>
+              </tr>
+              <tr>
+                <th scope="row">地図</th>
+                <td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12499.289273319775!2d141.4462553!3d38.4455729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x993c70d422c8e2f1!2z5aWz5bed55S644Gf44Gz44Gu5oOF5aCx6aSo44CM44G344KJ44Gj44Go44CN!5e0!3m2!1sja!2sjp!4v1542247229936" class="wt100" height="300" style="border:0" allowfullscreen title="女川町たびの情報館ぷらっとマップ"></iframe></td>
+              </tr>
+              <tr>
+                <th scope="row">問合せ先</th>
+                <td>女川町観光協会</td>
+              </tr>
+              <tr>
+                <th scope="row">電話番号</th>
+                <td>0225-54-4328</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+      <br>
+      
+      <a id="again"></a>
+      <h2 class="navi3">女川水産業体験館　あがいんステーション</h2>
+      <div class="content">
+      
+      <p>
+        水産業体験と水産加工品等の地場産品の魅力発信拠点となる施設です。<br>
+        女川の水産加工品をブランド化した「あがいんおながわ」認定品や全国の「いいもの」を販売しており、多種多様な商品を見比べながらお買い物を楽しむことができます。施設内には、水産業体験や調理実習のプログラムができる「あがいんキッチン」と、憩いのスペースとなっている「あがいんプラザ」があります。<br>
+        この施設は、東日本大震災時の津波により流出した「旧JR女川駅」の外観を復元し、過去と未来を繋ぐ新しい交流拠点となっています。
+      </p>
+      <div class="txt_sec">
+      <ul>
+        <li><a href="http://www.onagawa.co.jp/" target="_blank" title="女川水産業体験館あがいんステーションホームページ（外部サイト：別ウィンドウで開きます）">女川水産業体験館あがいんステーションホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+        </div>
+      <br>
+         
+      	  <img class="wt_auto" src="image/kankou/again_logo.png" alt="女川水産業体験館あがいんステーション" /><br><br>
+      	  
+        <div class="half_sec cl">
+
+          <div class="l_30">
+          	<img class="wt_auto" src="image/kankou/miru12.jpg" alt="女川水産業体験館あがいんステーション外観" />
+          	<img class="wt_auto" src="image/kankou/miru13.jpg" alt="女川水産業体験館あがいんステーション内観" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町女川2丁目16番地4</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.8328401710964!2d141.44429264343856!3d38.44532988560543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b0132c913b4f%3A0xd5509f943ff48982!2z5aWz5bed5rC055Sj5qWt5L2T6aiT6aSoIOOBguOBjOOBhOOCk-OCueODhuODvOOCt-ODp-ODsw!5e0!3m2!1sja!2sjp!4v1502936368591" height="300" style="border:0" title="あがいんステーションマップ"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>復幸まちづくり女川合同会社</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-98-7839</td>
+                </tr>
+                <!-- <tr>
+                  <th>HP</th>
+                  <td><a href="http://www.onagawa.co.jp/" alt="女川水産業体験館あがいんステーションホームページ（外部サイト）">http://www.onagawa.co.jp/</a></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      
+      </div>
+      <br>
+      <!-- <br id="marinpal"> -->
+      
+<!--       <h2 class="navi3">マリンパル女川おさかな市場</h2>
+      <div class="content">
+      
+      女川港に水揚げされた新鮮な魚介類や、女川ならではの加工品などを販売しています。<br>
+      <ul class="kome">
+        <li class="red">平成28年8月31日をもって、マリンパル女川事業協同組合は解散しましたが、各店舗は営業中で、順次本設の店舗へ移転予定です。同組合の解散に伴い、毎月、第2土日に開催していた月例イベントは行いませんので、ご注意ください。</li>
+      </ul>
+      <br>
+      
+      <div class="half_sec cl">
+        
+        <div class="l_30">
+          <img class="wt_auto" src="image/kankou/miru03.jpg" />
+          <img class="wt_auto" src="image/kankou/miru04.jpg" />
+        </div>
+        <div class="r_70">
+              <table class="wt100 mobile">
+                <tbody>
+                  <tr>
+                    <th>住所</th>
+                    <td>宮城県牡鹿郡女川町浦宿浜字篠浜山２番地</td>
+                  </tr>
+                  <tr>
+                    <th>地図</th>
+                    <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3125.193241743852!2d141.4013963!3d38.4370052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89bac7e174081f%3A0xa0ed2c18c9eea594!2z5a6u5Z-O55yM54mh6bm_6YOh5aWz5bed55S65rWm5a6_5rWc56-g5rWc5bGx77yS!5e0!3m2!1sja!2sjp!4v1395996426242" height="300" style="border:0"></iframe></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+      </div> -->
+      <!-- <br id="iten">
+      
+      <h2 class="navi3">きぼうのかね商店街</h2>
+      <div class="content">
+      <p>2012年４月のオープン当時には、被災地最大級の52店舗が出店。洋品店や釣具店、飲食店、理・美容室などさまざまな業種のお店が軒を連ねてきました。</p>
+      
+      <br>
+       <p>オープン当初のきぼうのかね商店街の様子</p>
+        <div class="half_sec cl">
+            <img class="wt_auto" src="image/kankou/miru05.jpg" alt="きぼうのかね商店街オープン当時" />
+            <img class="wt_auto" src="image/kankou/miru06.jpg" alt="きぼうのかね商店街の看板" />
+        </div>
+        
+        <br>
+        
+        <h3 class="navi3">きぼうのかね商店街の移転先</h3>
+        平成29年10月にきぼうのかね商店街は、鷲神大道地区へ移転しました。<br>
+        <ul>
+          <li>入居事業者（順不同）…岡果菜専門店、カワムラ釣具店、リバーソンエンタープライズ、髙橋酒店、串焼きたろう、(株)赤間商会、(有)聖花園、(株)トリートップ、読売新聞女川販売所、救世軍、横井米穀店</li>
+        </ul>
+        <br>
+        <p>移転後のきぼうのかね商店街写真</p>
+        <div class="half_sec cl">
+          <img class="wt_auto" src="image/kankou/miru19.jpg" alt="きぼうのかね商店街移転先1" />
+          <img class="wt_auto" src="image/kankou/miru20.jpg" alt="きぼうのかね商店街移転先2" />
+        </div>
+        
+        <br>
+        
+      </div>
+      <br> -->
+      
+      
+      
+      
+      
+      <h2 class="navi3">女川町海岸広場</h2>
+      <div class="content">
+      町中心部の沿岸エリアは、「海岸広場」として、海辺の新たな日常の場となるとともに、まちの賑わい拠点となるようにデザインされています。広さ約43,000m&sup2;の敷地には、東日本大震災遺構「旧女川交番」、スケートパーク等を擁し、イベント等にも利用できる施設となっています。
+      <br><br>
+        <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/miru22.jpg" alt="女川町海岸広場 旧女川交番" />
+            <img class="wt_auto" src="image/kankou/miru23.jpg" alt="女川町海岸広場 スケートパーク" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町海岸通り</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6249.815382681489!2d141.44330622443485!3d38.4436010716374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b06d07e48545%3A0x68f8af816b7e2521!2z44CSOTg2LTIyNjQg5a6u5Z-O55yM5rW35bK46YCa44KK!5e0!3m2!1sja!2sjp!4v1618190739939!5m2!1sja!2sjp" width="400" height="300" style="border:0;"  title="女川町海岸広場"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>女川みらい創造(株)（指定管理者）</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-24-8118</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <br>
+      <ul>
+          <li><a href="pdf/kankou/kaigan_hiroba_guidebook.pdf">女川町海岸広場　利活用ガイドブック（PDF形式：9,172KB）</a></li>
+          <!-- <li><a href="pdf/kankou/kaigan_hiroba_jourei.pdf">女川町海岸広場条例（PDF形式：153KB）</a></li>
+          <li><a href="pdf/kankou/kaigan_hiroba_kisoku.pdf">女川町海岸広場条例施行規則（PDF形式：114KB）</a></li>
+          <li><a href="pdf/kankou/kaigan_hiroba_shiyoushinseisyo.pdf">女川町海岸広場使用許可申請書（PDF形式：81KB）</a></li> -->
+      </ul>
+      </div>
+      <br>
+      
+      <h2 class="navi3">マッシュパーク女川</h2>
+      <div class="content">
+      <p>マッシュパーク女川は、令和3年8月に株式会社マッシュホールディングス様より寄贈されました。ウミウシやサンゴなど海の生き物をモチーフにしたカラフルな遊具があり、大人も子どももワクワクすること間違いなしの人気スポットです。カメラ片手に楽しめる、まさにアートな公園です。</p>
+      <div class="txt_sec">
+          <ul>
+              <li><a href="https://www.mash-holdings.com/mashparkproject/mp_onagawa.html" target="_blank">（株）マッシュホールディングス　マッシュパーク女川紹介ページ（外部サイト：別ウィンドウで開きます）</a></li>
+          </ul>
+      </div>
+      <br>
+        <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/mashpark1.jpg" alt="マッシュパーク1" />
+            <img class="wt_auto" src="image/kankou/mashpark2.jpg" alt="マッシュパーク2" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町海岸通り（海岸広場内）</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.821539859641!2d141.44518661533712!3d38.445590879642914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b06ccafef129%3A0xe809967602e974c2!2z44Oe44OD44K344Ol44OR44O844Kv5aWz5bed!5e0!3m2!1sja!2sjp!4v1631774965249!5m2!1sja!2sjp" height="300" style="border:0" title="マッシュパーク女川マップ"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>女川町役場　産業振興課</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-54-3131</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <br>
+      
+      </div>
+     <br>
+      
+      
+      <h2 class="navi3">コバルトライン～大六天駐車場</h2>
+      <div class="content">
+      
+      牡鹿半島を女川町-石巻市と横断する全長約29Kmのドライブコース県道220号線。途中の大六天駐車場からはコバルト色の太平洋とリアス式海岸ならではの景色を望めます。<br>
+      
+      <br>
+        <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/miru10.jpg" alt="コバルトラインからの眺望" />
+            <img class="wt_auto" src="image/kankou/miru11.jpg" alt="コバルトライン大六天駐車場" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町高白浜</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12503.384047246112!2d141.45992744999998!3d38.42192339999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b0828089c831%3A0xc726fba12f18db43!2z5a6u5Z-O55yM54mh6bm_6YOh5aWz5bed55S66auY55m95rWc!5e0!3m2!1sja!2sjp!4v1395997076846" height="300" style="border:0" title="コバルトラインマップ"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>女川町役場　産業振興課</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-54-3131</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+    <br>
+      
+      <h2 class="navi3">女川原子力PRセンター</h2>
+      <div class="content">
+      女川原子力PRセンターは、原子力発電のしくみや女川原子力発電所の安全性向上に向けた取り組みをはじめ、放射線やエネルギーについて「見て・触れて・体験して」楽しく学べる施設です。また、スイートガーデンにある様々な種類のバラは毎年6月中旬頃から見頃を迎えます。特に「しあわせのバラのトンネル」は見ごたえ十分です。<br>
+      <br>
+      
+       <div class="half_sec cl">
+
+          <div class="l_30">
+            <img class="wt_auto" src="image/kankou/miru09.jpg" alt="女川原子力PRセンターローズガーデン" />
+            <img class="wt_auto" src="image/kankou/miru24.jpg" alt="女川原子力PRセンター" />
+          </div>
+          <div class="r_70">
+            <table class="wt100 mobile">
+              <tbody>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td>宮城県牡鹿郡女川町塚浜字前田123</td>
+                </tr>
+                <tr>
+                  <th scope="row">地図</th>
+                  <td><iframe class="wt100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.12261036585!2d141.49807369999996!3d38.39241399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f89b9e783e95c37%3A0x5ebe155d228e4a72!2z5a6u5Z-O55yM54mh6bm_6YOh5aWz5bed55S65aGa5rWc5YmN55Sw77yR77yS77yT!5e0!3m2!1sja!2sjp!4v1395997249373" height="300" style="border:0" title="女川原子力PRセンターローズガーデンマップ"></iframe></td>
+                </tr>
+                <tr>
+                  <th scope="row">問合せ先</th>
+                  <td>女川原子力PRセンター</td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td>0225-53-3410</td>
+                </tr>
+                <!-- <tr>
+                  <th scope="row">HP</th>
+                  <td><a href="http://www.tohoku-epco.co.jp/pr/onagawa/" target="_blank" title="女川原子力PRセンター（外部サイト：別ウィンドウで開きます）">女川原子力PRセンター（外部サイト：別ウィンドウで開きます）</a></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <br>
+   
+     
+     <h2 class="navi3">いのちの石碑</h2>
+      <div class="content">
+      震災直後に女川第一中学校（現在の女川中学校）に入学した生徒らが、将来の津波被害から命を守る取り組みの一つとして、町内全ての浜に石碑を設置しました。
+      
+      <div class="txt_sec">
+              <ul>
+        <li><a href="03_00_07.html">いのちの石碑マップ</a></li>
+      </ul>
+      </div>
+      </div>
+      
+	  <br>
+     
+     
+      <h2 class="navi3" id="jump07">お問い合わせ</h2>
+      <div class="content">
+      町内の観光・お買い物の情報は、女川町観光協会（TEL:0225-54-4328）までお問い合わせ、または観光協会のホームページをご覧ください。
+      
+      <div class="txt_sec">
+              <ul>
+        <li><a href="http://onagawa.org" target="_blank" title="女川町観光協会ホームページ（外部サイト：別ウィンドウで開きます）">女川町観光協会ホームページ（外部サイト：別ウィンドウで開きます）</a></li>
+      </ul>
+      </div>
+  </div>
+      
+	  <br>
+
+      <div id="page_info" class="navi3">
+      <h4 class="navi3">このページについてのお問い合わせ</h4>
+      　産業振興課　観光係<br>
+      　電話：0225-54-3131
+      </div>
+	  
+      <br>
+      <br>
+      
+      
+      
+      
+  
+  
+  <!-- ここまで -->
+</div>
+  
+<!-- 左メニュー -->
+<div id="left_box">
+  <div class="menu_sec navi3">
+        
+      <h6 class="pc">観光される方へ</h6>
+        <!-- <div class="pullbtn sp">
+          <a id="pull2" class="pulldown navi3" data-target="m_onagawa">観光される方へ</a>
+        </div> -->
+         
+        <div id="m_onagawa" class="filed">
+          <ul class="navi3">
+            <li><a href="/raihou.html">観光トップ</a></li>
+            <li><a href="/03_05_01.html">アクセス</a></li>
+            <li><a href="/03_00_01.html">食べる</a></li>
+            <li><a href="/03_00_02.html">観る・買う</a></li>
+            <li><a href="/03_00_03.html">体験する</a></li>
+            <li><a href="http://www.onagawa.org/stay/" target="_blank" title="泊まる（外部サイト：別ウィンドウで開きます）">泊まる（外部サイト）</a></li>
+            <li><a href="/03_00_04.html">イベント</a></li>
+            <li><a href="/03_00_08.html">震災学習</a></li>
+            <li><a href="/03_00_09.html">女川の文化財</a></li>
+            <li><a href="/03_00_06.html">観光モデルコース</a></li>
+            <li><a href="/hurusatocm.html">みやぎふるさとCM大賞</a></li>
+            <li><a href="/03_00_05_01.html">リンク集</a></li>
+          </ul>
+        </div>
+         
+    </div>
+
+    <div class="bnr_list">
+    
+    <ul>
+      <li><a href="http://onagawa-yupoppo.com/" target="_blank"><img src="/css/image/bn_yupoppo.jpg" alt="女川温泉ゆぽっぽ" title="女川温泉ゆぽっぽ" /></a></li>
+      <li><a href="http://www.onagawa.org/" target="_blank"><img src="/css/image/bnr/bn_onagawatabi.jpg" alt="女川町観光協会ホームページ" title="女川町観光協会ホームページ" /></a></li>
+      <li><a href="http://onagawa-mirai.jp/" target="_blank"><img src="/css/image/bnr/bn_seapalpier.jpg" alt="シーパルピア女川" title="シーパルピア女川" /></a></li>
+      <li><a href="http://www.onagawa.co.jp/" target="_blank"><img src="/css/image/bnr/bn_again.jpg" alt="あがいんステーション" title="あがいんステーション" /></a></li>
+      <li><a href="http://www.sendaimiyagidc.jp/" target="_blank"><img src="/css/image/bn_date.jpg" alt="仙台・宮城【伊達な旅】キャンペーン" title="仙台・宮城【伊達な旅】キャンペーン" /></a></li>
+      <li><a href="http://47web.jp/" target="_blank"><img src="/css/image/bn_47web.jpg" alt="よしもと住みます芸人 47WEB" /></a></li>
+      <li><a href="http://jafnavi.jp/" target="_blank"><img src="/css/image/bn_jaf.jpg" alt="JAFナビ" /></a></li>
+      <li><a href="https://www.umimachi-sanpo.com" target="_blank"><img class="sanpo" src="/css/image/bn_sanpo.gif" alt="海街さんぽ" /></a></li>
+      <li><a href="https://www.env.go.jp/park/" target="_blank"><img src="/css/image/bn_kouen.png" alt="日本の国立公園" /></a></li>
+    </ul>
+    </div>
+</div>    
+</div>
+
+<!-- フッター -->
+<!-- フッター -->
+<!-- 街並みイメージ -->
+<div class="btmimg pc"></div>
+<div class="h_link">
+    <ul>
+        <li><a href="/index2.html">女川町ホームページについて</a></li>
+        <li><a href="/kojinjoho.html">個人情報の保護について</a></li>
+        <li><a href="/sitemap.html">サイトマップ</a></li>
+        <li><a href="/policy.html">ツイッター運用ポリシー</a></li>
+        <li><a href="/webaccessibility.html">ウェブアクセシビリティについて</a></li>
+    </ul>
+</div>
+<div id="foot_out2">
+ 
+  <div id="foot2">
+    <div class="address2">
+        <span>女川町庁舎</span><br>
+        〒986-2265 宮城県牡鹿郡女川町女川一丁目1番地1 <br>電話番号：0225-54-3131(代表) <br>
+        開庁時間：午前8時30分から午後5時15分まで（土曜・日曜・祝日・年末年始は閉庁）<br>
+        <a href="/emer/contact_form.html">メールでのお問い合わせ</a>
+    </div>
+    <div class="inblk right pc">
+     <div class="right_item">
+        <a href="/03_05_01.html">女川町へのアクセス</a>
+     </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+
+<!-- コピーライト -->
+<div id="copy_out2">
+  
+  <div id="copy2">
+    
+    <div class="inblk copyright c-txt">
+      <p>&copy;Onagawa Town. All rights reaserved.</p>
+    </div>
+    <span id="device"></span><span id="mobile"></span>
+  </div>
+  
+</div>
+
+<script src="/js/honyaku.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6QDD8Y0WSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6QDD8Y0WSP');
+</script>
+
+<p id="pagetop"><a href="wrapper_out"></a></p>
+
+<script src="js/jquery.cookie.js"></script>
+<script src="js/switch.screen.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50130849-1', 'town.onagawa.miyagi.jp');
+  ga('send', 'pageview');
+</script>
+
+</div>
+
+</body>
+</html>

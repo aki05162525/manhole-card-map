@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no">
+
+<link rel="shortcut icon" href="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/favicon.ico" type="image/vnd.microsoft.icon">
+
+<title>
+久慈市情報交流センター YOMUNOSU｜よむのす《公式》</title>
+
+<meta name="description" content="「情報交流センターYOMUNOSU」は、観光案内所と図書館がひとつになった複合施設です。この町に暮らす皆さんはもちろん、観光やビジネスで久慈を訪れた人たちが集い、交流する場所。人、情報、地域、知識を結び、未来へとつなげていく、久慈の新たな活動・交流拠点となることを目指しています。">
+<meta name="keywords" content="岩手,久慈,よむのす,YOMUNOSU,久慈市,複合施設,情報交流センター,観光案内所,図書館,屋上広場,StAND hibiki,展望,やませ土風館,土の館,風の館,観光,旅行,買い物,土産,特産品,地元食材,旅行,道の駅,食事,軽食,カフェ,休憩,沿岸,あまちゃん">
+
+<link rel="stylesheet" href="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/style.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var topBtn = $('.pagetop');
+	topBtn.hide();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 200) {
+			topBtn.fadeIn();
+		} else {
+			topBtn.fadeOut();
+		}
+	});
+    topBtn.click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 1000);
+		return false;
+    });
+
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>
+
+<!-- spNavi -->
+<script src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/js/jquery.easing.1.3.js"></script>
+<script src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/js/jquery.backstretch.min.js"></script>
+<script src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/js/main.js"></script>
+
+<!-- ↓slick -->
+<link rel="stylesheet" type="text/css" href="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/css/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/css/slick-theme.css"/>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/js/slick.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$('.slider01').slick({
+	adaptiveHeight: false,
+	infinite: true,
+	speed: 2000,
+	fade: true,
+	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 4000,
+	pauseOnFocus: false,
+	pauseOnHover: false,
+	cssEase: 'linear'
+});
+$('.slider02').slick({
+	adaptiveHeight: false,
+	fade: false,
+	autoplay: true,
+	arrows: false,
+	pauseOnFocus: false,
+	pauseOnHover: false,
+	autoplaySpeed: 0,
+	speed: 5000,
+	cssEase: 'linear',
+	slidesToShow: 4,
+	responsive: [{
+        breakpoint: 640,
+        settings: { slidesToShow: 2 }
+    }]
+});
+});
+</script>
+<!-- ↑slick↑ -->
+
+<!-- スクロールフェード -->
+<script>
+$(function(){
+$(window).scroll(function (){
+  $('.fadein').each(function(){
+    var elemPos = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight + 50){
+      $(this).addClass('scrollin');
+    }
+  });
+  //サイドイン
+  $('.lBox').each(function(){
+    var elemPos = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight + 100){
+      $(this).addClass('onBox');
+    }
+  });
+  $('.rBox').each(function(){
+    var elemPos = $(this).offset().top;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight + 100){
+      $(this).addClass('onBox');
+    }
+  });
+});
+});
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1VXE2JE402"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1VXE2JE402');
+</script>
+
+<meta name='robots' content='max-image-preview:large' />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel="https://api.w.org/" href="https://yomunosu-kuji.jp/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://yomunosu-kuji.jp/official/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<header>
+	<h1 class="hlogo"><a href="https://yomunosu-kuji.jp/">
+		<img class="pcSite" src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/logo_h_pc.png" alt="よむのす">
+		<img class="spSite" src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/logo_h_sp.png" alt="よむのす"></a>
+	</h1>
+	<!-- Navi -->
+	<section id="gnavi">
+	<ul><li><a href="https://yomunosu-kuji.jp/"><span>ホーム</span></a></li>
+		<li><a href="https://yomunosu-kuji.jp/topicslist/"><span>お知らせ</span></a></li>
+		<li><a href="https://yomunosu-kuji.jp/about/"><span>施設概要</span></a></li>
+		<li><a href="https://yomunosu-kuji.jp/facility/"><span>施設紹介</span></a></li>
+		<li><a href="https://yomunosu-kuji.jp/contact/"><span>お問い合わせ</span></a></li>
+		<li><a href="https://yomunosu-kuji.jp/about#access"><span>アクセス</span></a></li>
+		<li><a style="display:inline-block;" href="https://x.com/yomunosu" target="_blank">
+				<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_x_color.png" alt="X" width="35px" height="35px">
+			</a>
+			<a style="display:inline-block;" href="https://www.instagram.com/yomunosu_official/" target="_blank">
+				<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_instagram_color.png" alt="Instagram" width="35px" height="35px">
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- spNavi -->
+<div class="btn_wrapper clearfix">
+	<div class="menu_btn">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+</div>
+<nav>
+	<ul><li class="btn"><a href="https://yomunosu-kuji.jp/"><span>ホーム</span></a></li>
+		<li><p class="fs80">施設概要</p>
+			<a href="https://yomunosu-kuji.jp/about/">よむのすについて</a>
+		</li>
+		<li><p class="fs80">施設紹介</p>
+			<a href="https://yomunosu-kuji.jp/center/"><span class="icon">1F</span>観光交流センター</a>
+			<a href="https://yomunosu-kuji.jp/stand-hibiki/"><span class="icon">1F</span>地産地消カフェ ｢StAND hibiki｣</a>
+			<a href="https://yomunosu-kuji.jp/library/"><span class="icon">2F</span><span class="icon">3F</span>久慈市立図書館</a>
+			<a href="https://yomunosu-kuji.jp/panorama/"><span class="icon">4F</span>屋上広場　<span class="icon">5F</span>展望室</a>
+		</li>
+		<li><p class="fs80">周辺施設</p>
+			<a href="https://yomunosu-kuji.jp/yamase/">道の駅くじ ｢やませ土風館｣</a>
+		</li>
+		<li class="btn mt30"><a href="https://yomunosu-kuji.jp/about#access"><span>アクセス</span></a></li>
+		<li class="btn"><a href="https://yomunosu-kuji.jp/topicslist/"><span>お知らせ一覧</span></a></li>
+		<li class="btn"><a href="https://yomunosu-kuji.jp/contact/"><span>お問い合わせ</span></a></li>
+		<div class="mt40">
+			<a href="https://x.com/yomunosu" target="_blank" rel="noopener noreferrer"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_x_white.png" alt="X" width="47px"></a>
+			&nbsp;
+			<a style="display:inline-block;" href="https://www.instagram.com/yomunosu_official/" target="_blank"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_instagram_white.png" alt="Instagram" width="47px"></a>
+		</div>
+	</ul>
+	<div class="menu_overlay"></div>
+</nav></header>
+<!-- Slideshow -->
+<section id="mainImg" class="box">
+	<div class="pcSite">
+		<ul class="slider01">
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/slide01.jpg" alt="よむのす"></li>
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/slide02.jpg" alt="よむのす"></li>
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/slide03.jpg" alt="よむのす"></li>
+		</ul>
+	</div>
+	<div class="spSite">
+		<ul class="slider01">
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/spslide01.jpg" alt="よむのす"></li>
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/spslide02.jpg" alt="よむのす"></li>
+			<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/spslide03.jpg" alt="よむのす"></li>
+		</ul>
+	</div>
+</section>
+
+<!-- NEWS -->
+<section class="box bg01">
+	<div class="case padh80">
+		<div id="newsBox" class="b2cols">
+			<div class="b2col single01">
+				<div class="mds"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/mds_news.png" alt="NEWS"></div>
+				<div class="btn01 mt30 pcSite"><a href="https://yomunosu-kuji.jp/topicslist/">一覧を見る</a></div>
+			</div>
+			<div class="b2col marge01">
+				<dl class="topicsList">
+										<dt>2026.10.28</dt>
+					<dd><a href="https://yomunosu-kuji.jp/topics/1028toshokan/">久慈市立図書館ホームページ・電子図書館サービス再開のお知らせ</a></dd>
+										<dt>2026.10.28</dt>
+					<dd><a href="https://yomunosu-kuji.jp/topics/20261206yomunosucup/">【12/6（日）】YOMUNOSU CUP（任天堂Switch大乱闘スマッシュブラザーズ）開催</a></dd>
+										<dt>2026.10.23</dt>
+					<dd><a href="https://yomunosu-kuji.jp/topics/1023toshokanhp/">久慈市立図書館ホームページ・電子図書館サービス停止について</a></dd>
+									</dl>
+				<div class="btn01 mt50 spSite"><a href="https://yomunosu-kuji.jp/topicslist/">一覧を見る</a></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- TopContents -->
+<section class="box topBg padh80">
+	<div class="inner">
+		<h3 class="line01">
+			<span class="fs110">
+			知をつなぐ、<br>人を結ぶ、<br>情報ステーション</span>
+		</h3>
+		<p>「情報交流センターYOMUNOSU」は、観光案内所と図書館がひとつになった複合施設です。<br>
+		この町に暮らす皆さんはもちろん、観光やビジネスで久慈を訪れた人たちが集い、交流する場所。<br>
+		人、情報、地域、知識を結び、未来へとつなげていく、久慈の新たな活動・交流拠点となることを目指しています。</p>
+		<div class="btn01 tac mt30">
+			<a href="https://yomunosu-kuji.jp/about/">よむのすについて</a>
+		</div>
+	</div>
+</section>
+
+<!-- 1F -->
+<section class="box padh50 bgW">
+	<div class="topImg lBox">
+		<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-1.jpg" alt="観光交流センター">
+	</div>
+	<div class="case">
+		<div class="b2cols mt60">
+			<div class="b2col marge02 fadein">
+				<h3>久慈を知る、<br>｢あまちゃん｣の世界を<br class="spSite">楽しむ</h3>
+				<h4 class="icon01 mt15">
+					<span class="icon">1F</span>
+					<span>観光交流センター</span>
+				</h4>
+				<p class="mt15">
+					インフォメーションでは、久慈市の観光情報やおすすめスポットなどを紹介。<br>
+					ドラマ「あまちゃん」で実際に使われた衣装やジオラマの展示、“あま絵”ギャラリーなど、「あまちゃん」の世界もたっぷり楽しめます。
+				</p>
+				<div class="btn01 mt30">
+					<a href="https://yomunosu-kuji.jp/center/">詳しく見る</a>
+				</div>
+			</div>
+			<div class="b2col single02 fadein">
+				<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-2.jpg" alt="観光交流センター">
+			</div>
+		</div>
+		<!-- 地産地消カフェ ｢StAND hibiki｣ -->
+		<div class="topBox01 mt60 fadein">
+			<div class="b3cols mb30 pcSite">
+				<div class="b3col">
+					<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-3.jpg" alt="StAND hibiki">
+				</div>
+				<div class="b3col">
+					<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-4.jpg" alt="StAND hibiki">
+				</div>
+				<div class="b3col">
+					<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-5.jpg" alt="StAND hibiki">
+				</div>
+			</div>
+			<h4 class="tac">地産地消カフェ<br class="spSite"> ｢StAND hibiki｣</h4>
+			<p class="pctac mt15">
+				地元産食材を使ったドリンクや軽食を気軽に楽しめるカフェ。<br>
+				久慈駅前の風景や、ドラマに使われたジオラマを眺めながら、ゆったりくつろげる空間です。
+			</p>
+			<div class="btn01 tac mt30">
+				<a href="https://yomunosu-kuji.jp/stand-hibiki/">詳しく見る</a>
+			</div>
+			<div class="mt50 tac spSite">
+				<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic01-3_sp.jpg" alt="StAND hibiki">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 2F -->
+<section class="box padh50 bg02">
+	<div class="topImg rBox">
+		<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic02-1.jpg" alt="久慈市立図書館">
+	</div>
+	<div class="case pb120">
+		<div class="b2cols mt60">
+			<div class="b2col marge02 fadein">
+				<h3>知識をつなぐ、<br>想いを伝える知の集積地</h3>
+				<h4 class="icon01 mt15">
+					<span class="icon">2F</span><span></span>
+					<span class="icon">3F</span>
+					<span>久慈市立図書館</span>
+				</h4>
+				<p class="mt15">
+					情報と人、人と人、人と地域をつなげることをコンセプトに、多様な知識や情報を市民に提供する図書館エリア。<br>
+					ゆったりとした閲覧コーナーや学習コーナー、キッズコーナーなどを設け、幅広い世代の「知りたい」「学びたい」に応えます。
+				</p>
+				<div class="btn01 mt30">
+					<a href="https://yomunosu-kuji.jp/library/">詳しく見る</a>
+				</div>
+			</div>
+			<div class="b2col single02 fadein">
+				<img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic02-2.jpg" alt="久慈市立図書館">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- 屋上広場 展望室 -->
+<section class="box topBox02 bgW">
+	<div class="case">
+		<div class="b2cols fadein">
+			<div class="b2col"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic02-3.jpg" alt="屋上広場 展望室"></div>
+			<div class="b2col"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic02-4.jpg" alt="屋上広場 展望室"></div>
+		</div>
+		<div class="text fadein">
+			<h4 class="icon02 tac">
+				<span class="icon">4F</span><span>屋上広場</span>
+				<span>&nbsp;</span>
+				<span class="icon">5F</span><span>展望室</span>
+			</h4>
+			<p class="mt20">
+				海、山、里がそろった、久慈市内の街並みを一望できます。三陸鉄道の列車も見下ろすことができ、久慈の魅力を体感できるスポットです。
+			</p>
+			<div class="btn01 tac mt30">
+				<a href="https://yomunosu-kuji.jp/panorama/">詳しく見る</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.881336760442!2d141.7685156153891!3d40.189454179392285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8494f48967f563%3A0xf9db67df1ddb0213!2z44CSMDI4LTAwNjEg5bKp5omL55yM5LmF5oWI5biC5Lit5aSu77yT5LiB55uu77yV77yY!5e0!3m2!1sja!2sjp!4v1615456346239!5m2!1sja!2sjp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- Slideshow -->
+<section class="padh30 bg01 box">
+	<ul class="slider02">
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-1.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-2.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-3.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-4.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-5.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-6.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-7.jpg" alt="よむのす"></li>
+		<li><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic04-8.jpg" alt="よむのす"></li>
+	</ul>
+</section>
+
+<!-- 周辺施設 -->
+<section class="bg02 box">
+	<div class="case padh80 pb120">
+		<h4 class="line02 tac"><span class="fs120">周辺施設</span></h4>
+		<div class="b2cols w02 tac padh50">
+			<div class="b2col fadein">
+				<div class="topBox03">
+					<div class="mb20"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic05-1.jpg" alt="土の館"></div>
+					<h4 class="yellow"><span class="fs90">山･海･里の恵み。<br>久慈の「いいもの」探しなら</span></h4>
+					<h3 class="mt05">土の館</h3>
+					<div class="btn01 tac">
+						<a href="https://yomunosu-kuji.jp/yamase#tsuchi">詳しく見る</a>
+					</div>
+				</div>
+			</div>
+			<div class="b2col fadein">
+				<div class="topBox03">
+					<div class="mb20"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/top/pic05-2.jpg" alt="風の館"></div>
+					<h4 class="yellow"><span class="fs90">自然、文化、観光。<br>久慈地域の見どころ情報なら</span></h4>
+					<h3 class="mt05">風の館</h3>
+					<div class="btn01 tac">
+						<a href="https://yomunosu-kuji.jp/yamase#kaze">詳しく見る</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</article>
+<footer>
+	<div class="bg01 box">
+		<div class="case padh80">
+			<div class="b2cols">
+				<div class="b2col">
+					<div class="flogo"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/logo_f.png" alt="よむのす"></div>
+					<p class="fs90">
+						[ 住所 ] 〒028-0061 岩手県久慈市中央三丁目58番地<br>
+						[ TEL ] 0194-52-7777　<br class="spSite">[ FAX ] 0194-52-3222<br>
+						[ Mail ] yomunosu@kuji-kankou.com
+					</p>
+					<div class="mt10" style="float: left;"><a href="https://x.com/yomunosu" target="_blank" rel="noopener noreferrer"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_x_white.png" alt="X" width="40px"></a></div>
+					<div class="mt10"><a href="https://www.instagram.com/yomunosu_official/" target="_blank"><img style="margin-left: 10px;" src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/icon_instagram_white.png" alt="Instagram" width="40px"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="Copyright bgW"><i class="fa fa-copyright"></i> 久慈市情報交流センターYOMUNOSU All Rights Reserved.</p>
+	<div class="pagetop"><a href="#"><img src="https://yomunosu-kuji.jp/official/wp-content/themes/yomunosu/images/common/pagetop.png" alt="ページトップへ"></a></div>
+</footer>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/official/wp-*.php","/official/wp-admin/*","/official/wp-content/uploads/*","/official/wp-content/*","/official/wp-content/plugins/*","/official/wp-content/themes/yomunosu/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript">
+window.onload = function() {
+    if(window.location.hash==""){return;}
+    document.getElementById(window.location.hash.slice(1)).scrollIntoView(true);
+};
+</script><script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://yomunosu-kuji.jp/official/wp-includes/js/wp-emoji-release.min.js?ver=7.1.4"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://yomunosu-kuji.jp/official/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+[
+  {
+    "facilityId": "facility:cs-8dd78605b23dd55e25",
+    "locator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/1749",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "33461",
+        "P05_002": "5",
+        "P05_003": "やかげ町家交流館",
+        "P05_004": "矢掛町矢掛2639"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.5892872,
+          34.62377391
+        ]
+      }
+    },
+    "memberSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:ws-ab79fd8795933123c5",
+    "locator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/327",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "33202",
+        "P05_002": "5",
+        "P05_003": "児島産業振興センター",
+        "P05_004": "倉敷市児島駅前1-37"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8051071,
+          34.4630201
+        ]
+      }
+    },
+    "memberSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:ws-f0d5e530cedd97b88a",
+    "locator": "P05-22_33_GML.zip!P05-22_33.geojson#/features/327",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "33202",
+        "P05_002": "5",
+        "P05_003": "児島産業振興センター",
+        "P05_004": "倉敷市児島駅前1-37"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          133.8051071,
+          34.4630201
+        ]
+      }
+    },
+    "memberSHA256": "a4166a8f415f61679269896aaf61604f51c6f050ac06c2b46de05c80ca640626",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  },
+  {
+    "facilityId": "facility:cs-ddde663d81d83b2c0f",
+    "locator": "P05-22_35_GML.zip!P05-22_35.geojson#/features/486",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "35207",
+        "P05_002": "5",
+        "P05_003": "下松スポーツ公園体育館",
+        "P05_004": "下松市大字河内140"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          131.8871072,
+          34.02543449
+        ]
+      }
+    },
+    "memberSHA256": "d34c8f6c580bc25e122b8fff57ba8594b85d347c12614ae4943136e1d11ff171",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::6668"
+      }
+    }
+  }
+]

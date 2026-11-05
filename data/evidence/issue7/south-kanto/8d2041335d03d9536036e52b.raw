@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<!-- STRIGHT ONE Google Consent Mode Tag Start -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments);}
+gtag('set' , 'developer_id.dZTE2OD', true);
+
+/* IMPORTANT : Please change to the target site domain.*/
+const cmd = "toei-anim.co.jp"
+const matches = document.cookie.match(new RegExp(
+"(?:^|; )" + "cookie_consent_gcm_data".replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+));
+let val = null;
+if (matches) {
+cData = JSON.parse(decodeURIComponent(matches[1]));
+if (cmd === cData.cmd) {
+val = cData.gGcType
+}
+}
+if (!val) {
+const lData = localStorage.getItem('cookie_consent_gcm_data')
+if (lData) {
+const lCmdData = JSON.parse(decodeURIComponent(lData))[cmd]
+if (lCmdData) {
+val = lCmdData.gGcType
+}
+}
+}
+
+if (val) {
+gtag('consent', 'default', {
+'ad_storage': 'denied',
+'ad_user_data': 'denied',
+'ad_personalization': 'denied',
+'analytics_storage': 'denied',
+'functionality_storage': 'denied',
+'personalization_storage': 'denied',
+'security_storage': 'denied',
+'wait_for_update': 500
+});
+let updateVal = {};
+for (let i = 0; i < val.length; i++) {
+updateVal[val[i]] = 'granted';
+}
+if (Object.keys(updateVal).length !== 0) {
+gtag('consent', 'update', updateVal);
+}
+} else {
+/* IMPORTANT : gtag.js(default)    --- START --- */
+gtag('consent', 'default', {
+'ad_storage': 'denied',
+'ad_user_data': 'denied',
+'ad_personalization': 'denied',
+'analytics_storage': 'denied',
+'functionality_storage': 'denied',
+'personalization_storage': 'denied',
+'security_storage': 'granted',
+'wait_for_update': 500,
+'region': ['at','be','bg','hr','cy','cz','dk','ee','fi','fr','de','gr','hu','is','ie','it','lv','li','lt','lu','mt','nl','no','pl','pt','ro','sk','si','es','se','gb']
+});
+gtag('consent', 'default', {
+'ad_storage': 'granted',
+'ad_user_data': 'granted',
+'ad_personalization': 'granted',
+'analytics_storage': 'granted',
+'functionality_storage': 'granted',
+'personalization_storage': 'granted',
+'security_storage': 'granted',
+'wait_for_update': 500
+});
+/* --- END --- */
+}
+</script>
+<!-- STRIGHT ONE Google Consent Mode Tag End -->
+
+<!-- STRIGHT ONE Banner Script Start -->
+<script type="module" src="https://cdn01.stright.bizris.com/js/cookie_consent_setting.js?banner_type=banner" charset="UTF-8" data-site-id="SIT-03513aa1-6635-4916-8248-514f4f3baf0c"></script>
+<!-- STRIGHT ONE Banner Script End -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJ2XQ9ZS');</script>
+<!-- End Google Tag Manager -->
+
+<!-- gtm head -->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>東映アニメーションミュージアム</title>
+	<meta name="description" content="東映アニメーションミュージアムの公式サイト。日本で最初の本格的なアニメーション製作会社である東映アニメーションが自ら運営する企業博物館。開館カレンダーや展示内容、ご利用案内、アクセス情報など、来館前にチェックしておきたい情報が満載。">
+
+		<!-- meta -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" media="all" href="/assets/css/common.css">
+	<link rel="stylesheet" media="screen and (max-width: 767px)" href="/assets/css/sp.css">
+	<link rel="stylesheet" media="print, screen and (min-width: 768px)" href="/assets/css/pc.css">
+	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 970px)" href="/assets/css/tb.css">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="https://museum.toei-anim.co.jp/favicon.ico">
+	<link rel="icon" href="https://museum.toei-anim.co.jp/favicon.ico">
+	<link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="https://museum.toei-anim.co.jp/assets/img/common/apple-icon-152x152.png" />
+	<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/common/android-icon-192x192.png">	<link rel="stylesheet" href="/assets/css/slick.css" />
+	<link rel="stylesheet" href="/assets/css/slick-theme.css" />
+<!-- sns -->
+	<meta property="og:site_name" content="東映アニメーションミュージアム">
+	<meta property="og:title" content="東映アニメーションミュージアム">
+	<meta property="og:description" content="東映アニメーションミュージアムの公式サイト。日本で最初の本格的なアニメーション製作会社である東映アニメーションが自ら運営する企業博物館。開館カレンダーや展示内容、ご利用案内、アクセス情報など、来館前にチェックしておきたい情報が満載。">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://museum.toei-anim.co.jp/">
+	<meta property="og:image" content="https://museum.toei-anim.co.jp/assets/img/common/ogp.jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="東映アニメーションミュージアム">
+	<meta name="twitter:description" content="東映アニメーションミュージアムの公式サイト。日本で最初の本格的なアニメーション製作会社である東映アニメーションが自ら運営する企業博物館。開館カレンダーや展示内容、ご利用案内、アクセス情報など、来館前にチェックしておきたい情報が満載。">
+
+</head>
+
+<body id="top">
+<!-- gtm body -->
+	<div class="wrap">
+				<!-- header -->
+		<header>
+			<div id="header">
+				<div class="logo"><a href="/"><img src="/assets/img/common/logo.svg" alt="ロゴ"></a></div>
+				<nav>
+					<ul class="globalNavi">
+						<li><a href="/"><span>トップ</span></a></li>
+						<li><a href="/message/"><span>ごあいさつ</span></a></li>
+						<li><a href="/#information"><span>お知らせ</span></a></li>
+						<li><a href="/guide/"><span>ご利用案内</span></a></li>
+						<li><a href="/exhibition/"><span>展示</span></a></li>
+						<li><a href="/shop/"><span>ショップ</span></a></li>
+						<li><a href="/access/"><span>アクセス</span></a></li>
+					</ul>
+					<ul class="guideLink">
+						<li><a href="/#calendar" class="calendarLinkBtn">開館<br>カレンダー</a></li>
+						<li><a href="/guide/#forGroup" class="schoolLinkBtn">7名以上の<br>学校関係者さまへ</a></li>
+						<li><a href="/en/" class="langBtn"><img src="/assets/img/common/btn_lang_jp.svg" alt="jp"></a></li>
+					</ul>
+					<div id="toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<div class="mainImg">
+			<h1>
+				<span class="firstHalf">東映アニメーションミュージアムは</span>
+				<span class="secondHalf">“遊んで学べる”アニメの企業博物館です。</span>
+			</h1>
+			<ul class="slider">
+				<li>
+					<picture>
+						<source srcset="/assets/img/top/main_1_sp.jpg?=20261105152737" media="(max-width: 767px)"/>
+						<img src="/assets/img/top/main_1_pc.jpg?=20261105152737" alt="東映アニメーションミュージアム">
+					</picture>
+				</li>
+				<li>
+					<picture>
+						<source srcset="/assets/img/top/main_2_sp.jpg?=20261105152737" media="(max-width: 767px)"/>
+						<img src="/assets/img/top/main_2_pc.jpg?=20261105152737" alt="東映アニメーションミュージアム">
+					</picture>
+				</li>
+				<li>
+					<picture>
+						<source srcset="/assets/img/top/main_3_sp.jpg?=20261105152737" media="(max-width: 767px)"/>
+						<img src="/assets/img/top/main_3_pc.jpg?=20261105152737" alt="東映アニメーションミュージアム">
+					</picture>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- content -->
+		<div class="content">
+
+			<!-- main -->
+			<main>
+				<!-- 緊急告知 -->
+													
+				<section id="prologue">
+					<div class="innerM">
+						<p>東映アニメーションミュージアムは、現存する最古のアニメ製作会社である東映アニメーションが自ら運営する企業博物館です。<br>
+						70年前の初期の作品から最新の作品まで小さいながらも幅広い作品の展示などが見られ、アニメについて遊んで学べる施設になっています。</p>
+						<div class="whiteBox">
+							<div class="museumInfo">
+								<div class="iconArea">
+									<div class="openTime">
+										<dl>
+											<dt>11:00～16:00</dt>
+											<dd>最終入館 15:30</dd>
+										</dl>
+									</div>
+									<div class="closeDay">
+										<dl>
+											<dt class="infoS">毎週水曜日<span>その他不定休</span></dt>
+											<dd>※詳しくは<a href="#calendar" class="textLink">開館カレンダー</a>を<br>ご覧ください。</dd>
+										</dl>
+									</div>
+								</div>
+								<div class="noIconArea">
+									<div class="admissionFee">
+										<dl>
+											<dt>入館料<span class="spNone">：</span></dt>
+											<dd>無料</dd>
+										</dl>
+									</div>
+									<div class="duration">
+										<dl>
+											<dt>所要時間<span class="spNone">：</span></dt>
+											<dd>約30分～1時間程</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="btnArea">
+							<a href="/guide/#forGroup" class="linkBtn iconSchool">
+								7名以上の学校関係者で<br>
+								来館希望のお客さまへ
+								<span class="fontS">事前予約をお願いします</span>
+							</a>
+						</div>
+						<div class="cautionArea">
+							<ul class="cautionList">
+								<li>学校関係者の皆様に限り、7名以上のグループについても、平日1組、事前予約制にて受け付けております。</li>
+								<li>その他のグループや、ご予約のない学校関係者の皆様のご来館は、混雑防止のためお断りしていますので、あらかじめご了承ください。</li>
+															</ul>
+						</div>
+					</div>
+				</section>
+				<section id="calendar">
+					<div class="inner">
+						<figure class="calendarIcon"><img src="/assets/img/top/ttl_icon_calendar.svg" alt=""></figure>
+						<h2 class="secTitle">OPENING CALENDAR</h2>
+						<p class="titleSub">開館カレンダー</p>
+						<div class="boxWrap Two blockend-ss">
+							<div class="whiteBox">
+								<div>
+									<figure><img src="/assets/img/top/calendar_14.png?=20261105152737" alt="10月開館カレンダー"></figure>
+								</div>
+							</div>
+							<div class="whiteBox">
+								<div>
+									<figure><img src="/assets/img/top/calendar_15.png?=20261105152737" alt="11月開館カレンダー"></figure>
+								</div>
+							</div>
+						</div>
+						<p class="center">翌月の開館カレンダーは、毎月10日頃に公開予定です。</p>
+					</div>
+				</section>
+
+				<section id="information">
+					<div class="inner">
+						<h2 class="secTitle">INFORMATION</h2>
+						<p class="titleSub">お知らせ</p>
+						<ul class="informationList">
+														<li>
+								<dl>
+									<dt>2026.11.05</dt>
+									<dd><a href="/information/2026-018.php" class="textLink">10/29(木)より「名探偵プリキュア！」×「おジャ魔女どれみ」特別コラボ展示がスタート</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.10.30</dt>
+									<dd><a href="/information/2026-017.php" class="textLink">10/17(土)より『デジモン』シリーズのアニメ資料展示がスタート！</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.10.20</dt>
+									<dd><a href="/information/2026-016.php" class="textLink">12/5(土)はイベント開催のため臨時休館となります</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.10.13</dt>
+									<dd><a href="#calendar" class="textLink">11月開館日のお知らせ</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.10.02</dt>
+									<dd><a href="/information/2026-015.php" class="textLink">10/23(金) 東映アニメーションのシンボルキャラクター「ペロ」がやってくる！</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.09.18</dt>
+									<dd><a href="/information/2026-014.php" class="textLink">9/18(金)公開『映画 名探偵プリキュア！ 』特別展示スタート</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.09.01</dt>
+									<dd><a href="/information/2026-013.php" class="textLink">9/8(火)、東映アニメーションミュージアムにボボボーボ・ボーボボがやってくる！！</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.08.27</dt>
+									<dd><a href="/information/2026-012.php" class="textLink">東映アニメーション創立70周年記念企画・第二弾がスタート！</a></dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt>2026.08.03</dt>
+									<dd><a href="/information/2026-011.php" class="textLink">7/30(木)より、東映アニメーション創立70周年記念企画がスタートいたしました</a></dd>
+								</dl>
+							</li>
+													</ul>
+					</div>
+				</section>
+			</main>
+
+		</div><!-- / .content -->
+
+		<div id="overLay"><!-- sp overlay --></div>
+
+				<!-- footer -->
+		<footer>
+			<div id="footer">
+				<div class="footerLogoArea">
+					<div class="footerLogoWrap">
+						<div class="footerLogo"><a href="/"><img src="/assets/img/common/footer_logo.svg" alt="ロゴ"></a></div>
+						<div class="footerAdress"><p>〒178-8567<br>東京都練馬区東大泉2-10-5</p></div>
+					</div>
+					<ul class="snsLink">
+						<li class="xLink"><a href="https://x.com/TA_museum" target="_blank"><img src="/assets/img/common/logo_x.svg" alt="X"></a></li>
+						<li class="youtubeLink"><a href="https://www.youtube.com/c/ToeiAnimation60th" target="_blank"><img src="/assets/img/common/logo_youtube.svg" alt="YOUTUBE"></a></li>
+					</ul>
+				</div>
+				<div class="footerCopy">
+					<p>&copy; 2025 TOEI ANIMATION Co.,Ltd. All Rights Reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+	</div><!-- / .wrap -->
+
+	<!-- script -->
+	<script src="/assets/js/jquery-3.7.0.min.js"></script>
+	<script src="/assets/js/common.js"></script>
+	<script src="/assets/js/slick.js"></script>
+	<script>
+		$(function() {
+			$('.slider').slick({
+				pauseOnHover: false,
+				infinite: false,
+				fade: true,
+				dots: true,
+				arrows: true
+			});
+				
+			$(".acBtn").on("click", function() {
+				var $infoArea = $(".infoArea");
+				var $acContents = $(this).prev(".acContents");
+				var $infoImg = $acContents.find(".infoImg img"); // 特定の画像
+
+				// アコーディオンを開閉
+				$infoArea.toggleClass("acToggle");
+				$acContents.slideToggle(function() {
+					// スライドアニメーションが完了した後に画像のフェードインを制御
+					if ($acContents.is(":visible")) {
+						$infoImg.addClass("visible");
+					} else {
+						$infoImg.removeClass("visible");
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

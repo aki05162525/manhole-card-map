@@ -1,0 +1,2562 @@
+[
+  {
+    "facilityId": "facility:cs-09ae420fdee6e6c661",
+    "name": "おのサンサッカーパーク(山陽小野田市立サッカー交流公園)",
+    "address": "山口県山陽小野田市大字小野田7525-17",
+    "previousReason": "市のサッカー交流公園公式案内を調べたが、公園のどの建物が配布場所か対応する数値点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/renofa-manholecard.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-de418ac533e9269a3869.html",
+        "snapshotSHA256": "de418ac533e9269a3869ca9b8e1ec402416fb3d649b16a2a52f1b7ad85ee7f88",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-de418ac533e9269a3869.html",
+        "fetchedAt": "2026-11-05T04:24:26.095082+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/site/soccer-exchange-park/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0eb072a965e51a142821.html",
+        "snapshotSHA256": "62a508e28061cee6e8a2f1c2f8cb782e6bb0c066db153b65f038036df535bef1",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/0eb072a965e51a142821.html",
+        "fetchedAt": "2026-11-05T04:50:47.535666+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-09ae420fdee6e6c661"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-09ae420fdee6e6c661"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-0b31ddb7a9bb8b0617",
+    "name": "おかやまファーマーズ・マーケット ノースヴィレッジ",
+    "address": "岡山県勝田郡勝央町岡1100",
+    "previousReason": "県観光q=35.0373927,134.1336676はノースヴィレッジ敷地の代表点で、配布建物を特定する根拠には不足。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b01e05be8f6f1e5f261f.html",
+        "snapshotSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-b01e05be8f6f1e5f261f.html",
+        "fetchedAt": "2026-11-05T04:23:39.984323+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_11780.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/e92e3b3b610359818f56.html",
+        "snapshotSHA256": "4abeb3f0e4bca2000e495787b0faecd890e0e052f943d13a7cd0eb3265b40a1d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/e92e3b3b610359818f56.html",
+        "fetchedAt": "2026-11-05T04:49:11.586611+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-0b31ddb7a9bb8b0617"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-0b31ddb7a9bb8b0617"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-0bd3389d5748cea3af",
+    "name": "道の駅あいお",
+    "address": "山口県山口市秋穂東1520番地4",
+    "previousReason": "道の駅あいお公式アクセスを取得したが、施設の数値目的地を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "fetchedAt": "2026-11-05T04:24:00.554520+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://michinoeki-aio.com/access/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/183860d85b69afb75899.html",
+        "snapshotSHA256": "757ae6c767bc9be922239c064173e1d6c8ae4bb982fd0132f2b67734f406a93b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/183860d85b69afb75899.html",
+        "fetchedAt": "2026-11-05T04:50:45.485503+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-0bd3389d5748cea3af"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-0bd3389d5748cea3af"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-10b6ee9f630ef7203b",
+    "name": "多世代交流広場ナギテラス",
+    "address": "岡山県勝田郡奈義町豊沢314番地",
+    "previousReason": "町のナギテラス施設案内を調べたが、名称住所と対応する数値マーカーを確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.nagi.okayama.jp/gyousei/manhorukado.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-708f3573e10e133fc1c8.html",
+        "snapshotSHA256": "708f3573e10e133fc1c8b94117c1a87f4656c0cdcd36a10ce8bf00f9806f4023",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-708f3573e10e133fc1c8.html",
+        "fetchedAt": "2026-11-05T04:23:39.747213+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.nagi.okayama.jp/gyousei/koukyou_shisetsu/nagiterrace.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3ae04d9e2c31bfc5435e.html",
+        "snapshotSHA256": "3ae04d9e2c31bfc5435eadef33d51c1239a196224fa4f04b9d35b92a995052cb",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-3ae04d9e2c31bfc5435e.html",
+        "fetchedAt": "2026-11-05T04:23:33.725693+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-10b6ee9f630ef7203b"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-10b6ee9f630ef7203b"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-29d39832b41529a063",
+    "name": "水島臨海鉄道水島駅",
+    "address": "岡山県倉敷市水島東千鳥町 10-1",
+    "previousReason": "鉄道公式路線図の駅別Google埋込はpb表示中心。水島駅の建物地点として明示された値ではないため保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "fetchedAt": "2026-11-05T04:26:31.292911+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.mizurin.co.jp/passenger/routemap.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "snapshotSHA256": "9a1c8b5deed3cdc2bd601966a37a5d10742439e936581c09cf4d382e81cd1a94",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "fetchedAt": "2026-11-05T04:48:16.915335+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-29d39832b41529a063"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-29d39832b41529a063"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-2a5031a7a254d9bdbd",
+    "name": "道の駅北の関宿安芸高田",
+    "address": "広島県安芸高田市美土里町横田331-1",
+    "previousReason": "安芸高田市の施設紹介を取得したが、北の関宿の建物目的地を裏付ける数値地点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-155457a421abc98b81da.html",
+        "snapshotSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-155457a421abc98b81da.html",
+        "fetchedAt": "2026-11-05T04:34:36.960057+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/y100/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-6d3685208b3e9fbce863.html",
+        "snapshotSHA256": "6d3685208b3e9fbce8638aa2d3c12cbe77e1b6ca7c5653eb207344cbc88bb9af",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-6d3685208b3e9fbce863.html",
+        "fetchedAt": "2026-11-05T04:23:52.285040+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-2a5031a7a254d9bdbd"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-2a5031a7a254d9bdbd"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-31ca2ca80f991e84b4",
+    "name": "矢掛ビジターセンター問屋(といや)",
+    "address": "岡山県小田郡矢掛町矢掛1989",
+    "previousReason": "矢掛の公式観光施設詳細で問屋を確認したが、建物の数値目的地を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "snapshotSHA256": "d697307cc90dd5bcb98de05fd2d37e06d52a2fb7835e05eb49e05fb216a5b6da",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "fetchedAt": "2026-11-05T04:32:22.553950+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://japan-yakage.jp/archives/spot/detail/9340",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/47df3388d776a26850d7.html",
+        "snapshotSHA256": "2795addf4eb9449b4c21e017c38da40686187d810cbb2449216e39a3df137ad2",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/47df3388d776a26850d7.html",
+        "fetchedAt": "2026-11-05T04:49:07.018756+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-31ca2ca80f991e84b4"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-31ca2ca80f991e84b4"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-3451fd3f7466c85bb5",
+    "name": "(一社)府中市観光協会",
+    "address": "広島県府中市府中町559-2",
+    "previousReason": "府中市観光協会公式のアクセス案内を調べたが、協会事務所の数値地点を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.fuchu.hiroshima.jp/shisei/ippangyosei/8481.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4926fd550fd05e6a619b.html",
+        "snapshotSHA256": "4926fd550fd05e6a619b309734913d127c8f74cd8f1c1061b0af79a717cb12c0",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4926fd550fd05e6a619b.html",
+        "fetchedAt": "2026-11-05T04:32:22.555490+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://fuchu-kanko.jp/ufaqs/ufaq-451/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/58fc78a27f889e682899.html",
+        "snapshotSHA256": "d252c4a07f4420c1952626984930df1426358c8abf85e48bc844bf11529e06f9",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/58fc78a27f889e682899.html",
+        "fetchedAt": "2026-11-05T04:49:08.535396+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-3451fd3f7466c85bb5"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-3451fd3f7466c85bb5"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-37f1eda15ce4d18414",
+    "name": "水島臨海鉄道倉敷市駅",
+    "address": "岡山県倉敷市阿知 1-1-2",
+    "previousReason": "鉄道公式路線図の倉敷市駅地図はpb表示中心のみで、駅建物地点と区別できない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "fetchedAt": "2026-11-05T04:26:31.292911+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.mizurin.co.jp/passenger/routemap.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "snapshotSHA256": "9a1c8b5deed3cdc2bd601966a37a5d10742439e936581c09cf4d382e81cd1a94",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/eeb585847f62ea2522ba.html",
+        "fetchedAt": "2026-11-05T04:48:16.915335+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-37f1eda15ce4d18414"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-37f1eda15ce4d18414"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-3f5f3971d581f490c7",
+    "name": "GREENable HIRUZEN(グリーナブル ヒルゼン)",
+    "address": "岡山県真庭市蒜山上福田1205番地220",
+    "previousReason": "公式施設紹介はビジターセンター・ミュージアム・サイクリングセンター・風の葉を含む複数棟。qはGREENable HIRUZEN全体の目的地で、カード受付建物を選ぶ証拠がない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.city.maniwa.lg.jp/soshiki/147/55500.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9b7dbb8d66073e1c037a.html",
+        "snapshotSHA256": "9b7dbb8d66073e1c037ac01943d6d2f432e6b94c8b6d5c7373484983c2a486e3",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9b7dbb8d66073e1c037a.html",
+        "fetchedAt": "2026-11-05T04:23:18.232447+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_16167.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/eb8fa7d3ac9730641c73.html",
+        "snapshotSHA256": "f9c14f8131caf68f54f114f1c79afb8a3e1eadfd17cf3ba4aed2d88682b534c7",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/eb8fa7d3ac9730641c73.html",
+        "fetchedAt": "2026-11-05T04:52:32.828564+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://greenable-hiruzen.co.jp/facility/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/1e834e2ef2b6829bcca0.html",
+        "snapshotSHA256": "d6462164762751fc3c9d9ceb48df34cbab8bd275f858bffd60af056b7f2eb531",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/1e834e2ef2b6829bcca0.html",
+        "fetchedAt": "2026-11-05T04:48:18.354747+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-3f5f3971d581f490c7"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-3f5f3971d581f490c7"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-3f5f3971d581f490c7"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-424799903d1a9c1291",
+    "name": "旧柚木家住宅(西爽亭) きゅう ゆのきけ じゅうたく(さいそうてい)",
+    "address": "岡山県倉敷市玉島3丁目8-25 / 岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階",
+    "previousReason": "座標は玉島3-8-25の旧柚木家住宅を指し妥当。しかしfacilityの住所・電話がJR新倉敷駅と混在。親台帳に駅窓口は別IDで存在するため、旧柚木家側の記録修正後に採用可能。駅の座標には流用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "fetchedAt": "2026-11-05T04:26:31.292911+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_10300.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7a85bd1b3ca90c368403.html",
+        "snapshotSHA256": "8b44c96c05c0a4588d68153718472828be24b5f631440d962804120b6976726a",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/7a85bd1b3ca90c368403.html",
+        "fetchedAt": "2026-11-05T04:48:16.897694+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-424799903d1a9c1291"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-424799903d1a9c1291"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-424799903d1a9c1291"
+      }
+    ],
+    "priorReasonCategory": "mixed-record"
+  },
+  {
+    "facilityId": "facility:cs-42df9ae55a2417f861",
+    "name": "広島駅南口地下広場案内所",
+    "address": "広島県広島市南区松原町9番地先(広島駅南口地下広場)",
+    "previousReason": "追加で見つかった広島観光コンベンションビューロー1702の点はレストハウスで、広島駅南口地下広場案内所ではなかった。誤施設の座標を不採用。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/site/gesuido/304786.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-6dc9e6779c04828c4d1d.html",
+        "snapshotSHA256": "6dc9e6779c04828c4d1db348def3b6a8eab2affec531b149b57866667124d839",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-6dc9e6779c04828c4d1d.html",
+        "fetchedAt": "2026-11-05T04:23:42.863898+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://hiroshimacvb.jp/venues-accomodation/1702.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ed784e13a8dfaf20a172.html",
+        "snapshotSHA256": "f251a51fa6b7e3a1b6923d54da3d1f51697845d4651c7128273a67898b477b67",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/ed784e13a8dfaf20a172.html",
+        "fetchedAt": "2026-11-05T04:49:07.788994+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-42df9ae55a2417f861"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-42df9ae55a2417f861"
+      }
+    ],
+    "priorReasonCategory": "wrong-facility"
+  },
+  {
+    "facilityId": "facility:cs-4418dd72a69888d0bf",
+    "name": "神楽門前湯治村 旅籠千両萬両1階 総合案内所",
+    "address": "安芸高田市美土里町本郷4627",
+    "previousReason": "公式アクセス本文は本郷１４６２７、元台帳は本郷4627。さらにmap_dataの点は湯治村全体で旅籠千両萬両の建物と確定できないため保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.akitakata.jp/ja/shisei/section/syoukou/c120/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-05e907701650f5907d2f.html",
+        "snapshotSHA256": "05e907701650f5907d2f1a6d485845e50749e1290e4c9ec76bbd0415873920bd",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-05e907701650f5907d2f.html",
+        "fetchedAt": "2026-11-05T04:32:22.757265+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://toujimura.com/access/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d569d7ba6c8f51c2e386.html",
+        "snapshotSHA256": "2e4d3caed4dda43280496fb6b136a61f5df0353bf5bd3f1b3d80f72477830e92",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/d569d7ba6c8f51c2e386.html",
+        "fetchedAt": "2026-11-05T04:49:09.368346+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://toujimura.com/cmn/js/map.js",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/d53928e374fa19dfd32c.html",
+        "snapshotSHA256": "aaaedec05768a785ca595e478ded45a6956ace6184cb4147aa7c3ac26db8e424",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/d53928e374fa19dfd32c.html",
+        "fetchedAt": "2026-11-05T04:52:27.774762+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-4418dd72a69888d0bf"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-4418dd72a69888d0bf"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-4418dd72a69888d0bf"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-442369a0c345a4ef96",
+    "name": "JR新見駅",
+    "address": "岡山県新見市西方471",
+    "previousReason": "JR西日本公式の新見駅情報で駅を確認したが、原典に採用できる数値目的地を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c32126ea469c3bc0f114.html",
+        "snapshotSHA256": "c32126ea469c3bc0f11470d4e333293ddc509240840f91415efdb42660f76146",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-c32126ea469c3bc0f114.html",
+        "fetchedAt": "2026-11-05T04:23:13.276249+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://eki.jr-odekake.net/top?id=0650414",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0c086d003ed50f2e6181.html",
+        "snapshotSHA256": "6bb0c4eaf6977d4951183308e19e7403465595c0957a319be9d3127233faec95",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/0c086d003ed50f2e6181.html",
+        "fetchedAt": "2026-11-05T04:48:17.541253+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-442369a0c345a4ef96"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-442369a0c345a4ef96"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-56534586c259fb790a",
+    "name": "笠岡市カブトガニ博物館",
+    "address": "岡山県笠岡市横島1946-2",
+    "previousReason": "市立カブトガニ博物館の施設案内地図はpb表示中心のみ。公園や周辺を含む表示中心から博物館の建物点を作らない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.city.kasaoka.okayama.jp/soshiki/34/11538.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f26e69147c49076f455b.html",
+        "snapshotSHA256": "f26e69147c49076f455b9dad432f1b95b92a33554a5321775bb447df1526b2d4",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-f26e69147c49076f455b.html",
+        "fetchedAt": "2026-11-05T04:23:13.366931+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.kasaoka.okayama.jp/site/kabutogani/20197.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3dc653d1ea2393a78264.html",
+        "snapshotSHA256": "99544952d45ea9a7332043f3d5dfa2da508bb46c34b32f8235863426beade126",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3dc653d1ea2393a78264.html",
+        "fetchedAt": "2026-11-05T04:48:17.152832+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-56534586c259fb790a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-56534586c259fb790a"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-56c4b3109bfbb9d36d",
+    "name": "長府庭園",
+    "address": "山口県下関市長府黒門東町8番11号",
+    "previousReason": "原典は約3万平方メートルの庭園と書院・茶室・あずまやを説明。qは長府庭園目的地であり、配布受付建物との対応なし。庭園全体点を建物確定点にしない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.shimonoseki.lg.jp/site/water/5654.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-cdc3773c32fe39703d38.html",
+        "snapshotSHA256": "cdc3773c32fe39703d3899817edc35e6bb81b70aed364cab7ca638599f15226f",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-cdc3773c32fe39703d38.html",
+        "fetchedAt": "2026-11-05T04:24:02.391513+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_11060.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ba14c6744f88d642d973.html",
+        "snapshotSHA256": "fa6666ac81540731b85fa10503ff2b17c65ccc42c4661ba0fb32485a427a202e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/ba14c6744f88d642d973.html",
+        "fetchedAt": "2026-11-05T04:52:27.920739+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://s-kanrikousha.com/teienaccess.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95d724149b4d0e2941f4.html",
+        "snapshotSHA256": "c000fc74758a127134f4565a0c1876ac408725efc24203f28e39466a3663adbe",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/95d724149b4d0e2941f4.html",
+        "fetchedAt": "2026-11-05T04:50:45.324775+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-56c4b3109bfbb9d36d"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-5c25582e543cde5044",
+    "name": "道の駅来夢とごうち",
+    "address": "広島県山県郡安芸太田町大字上殿632-2",
+    "previousReason": "県観光GeoCoordinatesは34.576072563331,132.26974531791。運営者アクセス図との建物対応を確定できず、道の駅の実建物の裏付け不足で保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://cs-akiota.or.jp/news/originalmanhole-card/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-cde2b902d92b481a27d5.html",
+        "snapshotSHA256": "cde2b902d92b481a27d5bde4e2c28274bf433dd849925ff2df3d103135857781",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-cde2b902d92b481a27d5.html",
+        "fetchedAt": "2026-11-05T04:26:31.980777+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://dive-hiroshima.com/explore/2/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8d1c41f5e8edb8961802.html",
+        "snapshotSHA256": "232f7b89ea43e976f759f14754673954b7aad20013cb1a65bd038e75a7bef3fd",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/8d1c41f5e8edb8961802.html",
+        "fetchedAt": "2026-11-05T04:49:13.304299+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-5c25582e543cde5044"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-5c25582e543cde5044"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-5c5cec6c482042291d",
+    "name": "三朝温泉観光商工センター",
+    "address": "鳥取県東伯郡三朝町三朝973-1",
+    "previousReason": "三朝温泉公式アクセスは温泉地への交通案内で、観光商工センター建物を指定する座標を確定できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.misasa.tottori.jp/315/319/329/35761.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-f4bcf7cd7497d2fec147.html",
+        "snapshotSHA256": "f4bcf7cd7497d2fec14742318eb21972d048b6fd5486240edc53b50822e2f6f2",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-f4bcf7cd7497d2fec147.html",
+        "fetchedAt": "2026-11-05T04:22:59.235627+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://misasaonsen.jp/access/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7e3157a0607f5ba1a9f5.html",
+        "snapshotSHA256": "974786333ea1541aa520658cfea27ace494a50f92feea025279f0033af9270dc",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/7e3157a0607f5ba1a9f5.html",
+        "fetchedAt": "2026-11-05T04:48:15.722509+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-5c5cec6c482042291d"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-5c5cec6c482042291d"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-7234bdb6d4605a7665",
+    "name": "和木町蜂ヶ峯総合公園 管理棟",
+    "address": "山口県玖珂郡和木町大字瀬田紺屋作260-1",
+    "previousReason": "公園公式アクセスのqは住所文字列（瀬田紺屋作260-1）。住所ジオコーディングや公園中心を管理棟の建物点として使わない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.waki.lg.jp/soshiki/3/186.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-00f7d471008d6cc2b898.html",
+        "snapshotSHA256": "00f7d471008d6cc2b898cfd024c936a3c03ebb80e9a6304206420067a50c0d3d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-00f7d471008d6cc2b898.html",
+        "fetchedAt": "2026-11-05T04:24:17.345984+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.hachigamine-grand-park.com/access/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ca0c09308cfb129cc265.html",
+        "snapshotSHA256": "e2e31e9963d10d45ebb2e5d84ce317b2285da8e1c6a4c87d7a3cffff2a44e49d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/ca0c09308cfb129cc265.html",
+        "fetchedAt": "2026-11-05T04:50:46.410427+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-7234bdb6d4605a7665"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-7234bdb6d4605a7665"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-7851aeb9671340371a",
+    "name": "(一社)津和野町観光協会",
+    "address": "島根県鹿足郡津和野町後田イ71-2",
+    "previousReason": "現在の協会所在地は津和野駅内・後田イ66-1。基準台帳後田イ71-2との移転・同一性判定が残る。駅内の明示建物点と現配布原本の接続が必要。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://tsuwano-kanko.net/manholecard/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4feb112dff78cabe6151.html",
+        "snapshotSHA256": "4feb112dff78cabe61514457bb6465f0d25121d8fc93889ebeaaed88bd281ddf",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4feb112dff78cabe6151.html",
+        "fetchedAt": "2026-11-05T04:34:36.959700+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://tsuwano-kanko.net/category1/loca/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/323fd82b11177a1cfc76.html",
+        "snapshotSHA256": "d1839b29f092da2c0867b3f8e7524762ba40dbe45fb8849164b4907be3df2ae3",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/323fd82b11177a1cfc76.html",
+        "fetchedAt": "2026-11-05T04:48:16.498343+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://tsuwano-kanko.net/category1/loca/",
+        "snapshotPath": "data/evidence/issue5/west-south/7b31f1fe006ed375a7e86d3756bc8541729aceb20c732b5b652bc139a6fbf890.bin",
+        "snapshotSHA256": "7b31f1fe006ed375a7e86d3756bc8541729aceb20c732b5b652bc139a6fbf890",
+        "fetchedAt": "2026-11-05T05:46:24.936410+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-7851aeb9671340371a"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-7851aeb9671340371a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-7851aeb9671340371a"
+      }
+    ],
+    "priorReasonCategory": "relocation-or-address-identity"
+  },
+  {
+    "facilityId": "facility:cs-78d5b7e93bce40b71b",
+    "name": "秋芳洞案内所",
+    "address": "山口県美祢市秋芳町秋吉3449番地1",
+    "previousReason": "秋芳洞公式の施設紹介は洞窟全体の案内。案内所建物を別に示す数値地点が未確認で、洞窟入口点を流用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://yamaguchi-tourism.jp/event/detail_19522.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-809e800b8dd2802ea701.html",
+        "snapshotSHA256": "809e800b8dd2802ea70134554fa4b26150c7d56fe5f43930fd6fc870f64ca80d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-809e800b8dd2802ea701.html",
+        "fetchedAt": "2026-11-05T04:32:22.888212+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.akiyoshidai-park.com/spot/akiyoshi-do.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/cd92734831630416e8e1.html",
+        "snapshotSHA256": "31aee417b2fb28b2658f02c51211fc784913078ed20af4ad1816431e3eeb3a44",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/cd92734831630416e8e1.html",
+        "fetchedAt": "2026-11-05T04:50:46.162582+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-78d5b7e93bce40b71b"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-78d5b7e93bce40b71b"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-792aab26713d312890",
+    "name": "潮風公園みなとオアシスゆう",
+    "address": "山口県岩国市由宇町8500-6",
+    "previousReason": "県観光のq/GeoCoordinatesは潮風公園の代表点。みなとオアシスの配布建物に対応するか確認できない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "snapshotSHA256": "9f0cc695bf168620d50d8697eced8ab67a916685965399a4c1fb582970b0a77c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "fetchedAt": "2026-11-05T04:26:32.038246+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://dive-hiroshima.com/explore/2938/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/281aa736ab3e44818f4e.html",
+        "snapshotSHA256": "a906b98db5ddded35ae01a13cf88831dac89a1c7299be6f0c3c46862bc02e4f3",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/281aa736ab3e44818f4e.html",
+        "fetchedAt": "2026-11-05T04:50:46.030965+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-792aab26713d312890"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-792aab26713d312890"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-7940cff6f6fa056d34",
+    "name": "一般社団法人 新見市観光協会",
+    "address": "岡山県新見市西方472-10",
+    "previousReason": "新見市観光協会公式サイトを調べたが、協会事務所そのものの採用可能な数値地点が得られなかった。新見駅や駅前交流センターへの読み替えはしない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/15587.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c32126ea469c3bc0f114.html",
+        "snapshotSHA256": "c32126ea469c3bc0f11470d4e333293ddc509240840f91415efdb42660f76146",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-c32126ea469c3bc0f114.html",
+        "fetchedAt": "2026-11-05T04:23:13.276249+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.niimi.gr.jp/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/24b43de9865af9b77f1d.html",
+        "snapshotSHA256": "0c9b2491d56071b503de529703bf564b4b516818788df74607f79169b44b3f37",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/24b43de9865af9b77f1d.html",
+        "fetchedAt": "2026-11-05T04:48:17.537392+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-7940cff6f6fa056d34"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-7940cff6f6fa056d34"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-795a18c5cddf2431eb",
+    "name": "東広島市観光案内所",
+    "address": "東広島市西条町西条475番地2 JR西条駅2階",
+    "previousReason": "県観光施設情報は西条本町12-3、元台帳は西条町西条475-2。ともに駅2階でも住所の同一性・変更時期を確定できずGeoCoordinatesの適用を保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/1354af2b442acd7b70ea.html",
+        "snapshotSHA256": "c4da81c0296714756b5b3b2805701b28cbaa0bd0b391ab07bbb1b15cc566299f",
+        "reusedFrom": "data/evidence/national/chugoku-shikoku/1354af2b442acd7b70ea.html",
+        "fetchedAt": "2026-11-05T04:23:49.367514+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／東広島市観光案内所／34-212-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.higashihiroshima.lg.jp/soshiki/gesuido/1/2/40232.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4d279f3c9e1bba3c0c9b.html",
+        "snapshotSHA256": "4d279f3c9e1bba3c0c9b5657031d08a0f678d3f52678a634361520c55855658f",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4d279f3c9e1bba3c0c9b.html",
+        "fetchedAt": "2026-11-05T04:23:50.085565+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://dive-hiroshima.com/explore/341/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/49e5f34f6d0f6c62c098.html",
+        "snapshotSHA256": "ab2ba5062016af14ecbbec4b42bbf2673625f58fd455d77cbb86745caf29ab8a",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/49e5f34f6d0f6c62c098.html",
+        "fetchedAt": "2026-11-05T04:49:11.953153+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-795a18c5cddf2431eb"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-795a18c5cddf2431eb"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-795a18c5cddf2431eb"
+      }
+    ],
+    "priorReasonCategory": "relocation-or-address-identity"
+  },
+  {
+    "facilityId": "facility:cs-83c9c4a0ad77ff4af0",
+    "name": "山口市上下水道局下水道整備課",
+    "address": "山口県山口市宮島町7番1号",
+    "previousReason": "上下水道局公式アクセスに複数施設のpb地図あり。下水道整備課所在建物と数値マーカーを対応づけられず、表示中心は不採用。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "fetchedAt": "2026-11-05T04:24:00.554520+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://water-city-yamaguchi.com/contact/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/87f6c7de1cd62d5bf09b.html",
+        "snapshotSHA256": "0f5562cb884a5c30d277d309e3a6e6b1719c78069a8ee8326d324520aeb4c72d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/87f6c7de1cd62d5bf09b.html",
+        "fetchedAt": "2026-11-05T04:50:45.479578+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://water-city-yamaguchi.com/access/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/95390f562f86ddd46240.html",
+        "snapshotSHA256": "c2895b5c34af4dc4b16a8ba0b66842cb56eb79352ebedfee215f3390bba79570",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/95390f562f86ddd46240.html",
+        "fetchedAt": "2026-11-05T04:52:28.283464+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-83c9c4a0ad77ff4af0"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-83c9c4a0ad77ff4af0"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-85f80ce977bcdf56d4",
+    "name": "瀬戸内市役所長船支所窓口",
+    "address": "岡山県瀬戸内市長船町土師291",
+    "previousReason": "再取得した施設ページは土師288-1、initlat=34.69969459401827、initlong=134.10324919623656。P05の土師291（34.70016725,134.1020908）と異なる。市地図JSは同値をmarker.positionに使うが、基準台帳住所との変更関係は未確定。住所訂正だけで同一建物と仮定しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "fetchedAt": "2026-11-05T04:23:30.873681+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/map/405.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3c4e3c92a27c805778dd.html",
+        "snapshotSHA256": "570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3c4e3c92a27c805778dd.html",
+        "fetchedAt": "2026-11-05T04:48:20.530161+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/ssi/js/shisetsu-detail-googlemap.js",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c514bbde05832eb12deb.html",
+        "snapshotSHA256": "a62b83d13bc35abe58349072a188c23625e8b11185ddf11af41656082fc07c38",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/c514bbde05832eb12deb.html",
+        "fetchedAt": "2026-11-05T04:52:26.855227+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/map/405.html",
+        "snapshotPath": "data/evidence/issue5/west-south/570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f.bin",
+        "snapshotSHA256": "570d4e7bd55944030128a09ca93ef9526805b2b0684205e582462f5d700d383f",
+        "fetchedAt": "2026-11-05T05:46:23.767222+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      },
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "snapshotPath": "data/evidence/issue5/west-south/c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a.bin",
+        "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+        "fetchedAt": "2026-11-05T05:46:23.769039+00:00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+        "verificationMethod": "AIが今回取得した公式本文を読み、固定baselineと照合。取得時刻はHTTP応答bytesの実取得時刻。現地確認ではない。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-85f80ce977bcdf56d4"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-85f80ce977bcdf56d4"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-85f80ce977bcdf56d4"
+      }
+    ],
+    "priorReasonCategory": "relocation-or-address-identity"
+  },
+  {
+    "facilityId": "facility:cs-8b8fd2a944840cadfd",
+    "name": "里庄つばきの丘運動公園 管理棟",
+    "address": "岡山県浅口郡里庄町大字里見2392番地",
+    "previousReason": "県観光のq=34.5186399,133.562182はつばきの丘運動公園全体。配布窓口がある管理棟と特定できない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.town.satosho.okayama.jp/soshiki/6/9634.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-e048bdcbce1615d62e1c.html",
+        "snapshotSHA256": "e048bdcbce1615d62e1ce74876f0733e40f70a975e8686a6552b0110f668f97c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-e048bdcbce1615d62e1c.html",
+        "fetchedAt": "2026-11-05T04:23:27.010419+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.satosho.okayama.jp/site/tsubaki/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/bf329d80ba734f5beddf.html",
+        "snapshotSHA256": "8e58cb4dea7bd3c868bc48b2e61f897da9e6b051e0260faff39f78cbdd82bb94",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/bf329d80ba734f5beddf.html",
+        "fetchedAt": "2026-11-05T04:49:07.016318+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.okayama-kanko.jp/spot/detail_11648.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/cb11c6df15c273a713f1.html",
+        "snapshotSHA256": "32c8d0a3eea3b0ba9ec153d319892b4a880b3077f87a5b6f4ed3bf757b6e92ab",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/cb11c6df15c273a713f1.html",
+        "fetchedAt": "2026-11-05T04:49:08.535207+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-8b8fd2a944840cadfd"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-8b8fd2a944840cadfd"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-8d0cee31bd1bcec521",
+    "name": "ときわ湖水ホール受付窓口",
+    "address": "山口県宇部市大字沖宇部254",
+    "previousReason": "公園公式の湖水ホール施設詳細はpb表示中心を含む埋込地図のみ。受付の建物を示す独立した数値地点が未確認。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.ube.yamaguchi.jp/kurashi/gasgesui/1015032/1015277/1015109.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-1313a07a735e29268db9.html",
+        "snapshotSHA256": "1313a07a735e29268db9e2a583f514f31132b3f42e5377587c2d45b3682ac811",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-1313a07a735e29268db9.html",
+        "fetchedAt": "2026-11-05T04:23:57.691642+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.tokiwapark.jp/etc/kosuihall.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/fa43d9b465c17ea87fc4.html",
+        "snapshotSHA256": "06cf96d4e58ca38daef99f6ce8dd11d788b042c873d6c788f8a21935c87de490",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/fa43d9b465c17ea87fc4.html",
+        "fetchedAt": "2026-11-05T04:50:45.325080+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-8d0cee31bd1bcec521"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-8d0cee31bd1bcec521"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-8dd78605b23dd55e25",
+    "name": "やかげ町家交流館",
+    "address": "岡山県小田郡矢掛町矢掛2639",
+    "previousReason": "町家交流館公式施設案内を取得したが、建物目的地を裏付ける数値地点を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.yakage.okayama.jp/life/kankyo/gesui/manhole.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "snapshotSHA256": "d697307cc90dd5bcb98de05fd2d37e06d52a2fb7835e05eb49e05fb216a5b6da",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-d697307cc90dd5bcb98d.html",
+        "fetchedAt": "2026-11-05T04:32:22.553950+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yakagemachiya.information.jp/shisetsuannai/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3d39c4d8c7a361b0d785.html",
+        "snapshotSHA256": "517c9e50f65b480620fa3acb2b94e2ead8bb6abdb615d8908ae1e2baf30b32ea",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3d39c4d8c7a361b0d785.html",
+        "fetchedAt": "2026-11-05T04:49:07.018493+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-8dd78605b23dd55e25"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-8dd78605b23dd55e25"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-9158e6a0fc7222e6ab",
+    "name": "一般社団法人浜田市観光協会",
+    "address": "島根県浜田市浅井町777-35(JR浜田駅2階)",
+    "previousReason": "観光協会公式地図はGoogle埋込pbの表示領域中心のみ。浜田駅の案内所の明示地点としては採用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3038985bfb38bed0f3cc.html",
+        "snapshotSHA256": "3038985bfb38bed0f3cc77378028af22edfc746a3d04f31f8bc8aaa3f0ee8d12",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-3038985bfb38bed0f3cc.html",
+        "fetchedAt": "2026-11-05T04:23:02.913347+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kankou-hamada.org/tourisminfo",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-2f3444933a8b9df2f622.html",
+        "snapshotSHA256": "2f3444933a8b9df2f6225c6610c2da855b5183b1c8afd935fdba8fdca4788e97",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-2f3444933a8b9df2f622.html",
+        "fetchedAt": "2026-11-05T04:23:01.868445+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-9158e6a0fc7222e6ab"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-9158e6a0fc7222e6ab"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-93e9b0b1e4bcb33b8e",
+    "name": "入船山記念館券売所",
+    "address": "広島県呉市幸町4-6",
+    "previousReason": "配布原典は入船山記念館券売所を指定。一方地点原典は旧司令長官官舎、郷土館、歴史民俗資料館を含む入船山記念館全体。券売所の建物点と同定できない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-05a564b00d600b9329b5.html",
+        "snapshotSHA256": "05a564b00d600b9329b5e06dc4f26834a712f858febec417d4ad27f623186251",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-05a564b00d600b9329b5.html",
+        "fetchedAt": "2026-11-05T04:23:43.568992+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://dive-hiroshima.com/explore/53/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/ebaf988e8f3e910db30d.html",
+        "snapshotSHA256": "955cf3ead2f3b38f723c42e31c2d34191f45b12a92817d54a242e4f8c230faba",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/ebaf988e8f3e910db30d.html",
+        "fetchedAt": "2026-11-05T04:52:27.461949+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://kure-trip.jp/spots/94",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8a9ccc4025fd15ac8867.html",
+        "snapshotSHA256": "53687627adf151db36d43779668e65ff10c3195ae0d5bfddbe522d5729d40c63",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/8a9ccc4025fd15ac8867.html",
+        "fetchedAt": "2026-11-05T04:49:07.874306+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-93e9b0b1e4bcb33b8e"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-a24ab0817e243a1ffb",
+    "name": "広島港総合案内所",
+    "address": "広島県広島市南区宇品海岸一丁目13-26 広島港宇品旅客ターミナル1階",
+    "previousReason": "市の広島港施設案内を確認したが、総合案内所のある建物を指定する数値地点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/site/gesuido/304786.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-6dc9e6779c04828c4d1d.html",
+        "snapshotSHA256": "6dc9e6779c04828c4d1db348def3b6a8eab2affec531b149b57866667124d839",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-6dc9e6779c04828c4d1d.html",
+        "fetchedAt": "2026-11-05T04:23:42.863898+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.hiroshima.lg.jp/facility/port/1026902/1026904/1014527.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-eb2c423e33a156243a18.html",
+        "snapshotSHA256": "eb2c423e33a156243a188a1520a9dde57e9e3d0fefcfbe81f8004470899b3932",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-eb2c423e33a156243a18.html",
+        "fetchedAt": "2026-11-05T04:23:46.367838+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-a24ab0817e243a1ffb"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-a24ab0817e243a1ffb"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-a5355105c733978fb2",
+    "name": "西ノ島町役場 宿直室",
+    "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+    "previousReason": "宿直室は現役場（美田600-4）内。P05は浦郷534の旧役場であり、現住所へ旧庁舎点を流用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/news/1786",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3d476718f180003549ef.html",
+        "snapshotSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-3d476718f180003549ef.html",
+        "fetchedAt": "2026-11-05T04:32:22.546912+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-dcfe8b113e64f463626b.html",
+        "snapshotSHA256": "dcfe8b113e64f463626bf9d5a45f186f181a976a695e53e7408874caf047c453",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-dcfe8b113e64f463626b.html",
+        "fetchedAt": "2026-11-05T04:23:06.463249+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-a5355105c733978fb2"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-a5355105c733978fb2"
+      }
+    ],
+    "priorReasonCategory": "relocation-or-address-identity"
+  },
+  {
+    "facilityId": "facility:cs-a7982389d4085032f9",
+    "name": "街かど市民ギャラリー90(くれ)",
+    "address": "広島県呉市中通3-3-17",
+    "previousReason": "商店街のギャラリー90施設紹介を確認したが、ギャラリー建物を指す採用可能な数値地点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kure.lg.jp/site/jougesui/manhourucard.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-05a564b00d600b9329b5.html",
+        "snapshotSHA256": "05a564b00d600b9329b5e06dc4f26834a712f858febec417d4ad27f623186251",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-05a564b00d600b9329b5.html",
+        "fetchedAt": "2026-11-05T04:23:43.568992+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://rengadori.net/archives/shopinfo/%E8%A1%97%E3%81%8B%E3%81%A9%E5%B8%82%E6%B0%91%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC90",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/136a897963644be6102c.html",
+        "snapshotSHA256": "5bd49cb1a5b6905a9e7c3adbbff66d3cdc5c4d1900677202009074f1de09f135",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/136a897963644be6102c.html",
+        "fetchedAt": "2026-11-05T04:49:07.880320+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-a7982389d4085032f9"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-a7982389d4085032f9"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-ac2f433114644560e5",
+    "name": "松江堀川ふれあい広場 乗船場",
+    "address": "島根県松江市黒田町507-1",
+    "previousReason": "県観光ページのGeoCoordinatesは堀川遊覧の別乗船場（大手前側）で、黒田町507-1のふれあい広場乗船場とは一致しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.water.matsue.shimane.jp/jogesuido/designmanhole/manhole-card.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-bf9390477ba0ef6e50b7.html",
+        "snapshotSHA256": "bf9390477ba0ef6e50b7583d2f3305b6b3991a5f8bf39bfe552951a9d174df55",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-bf9390477ba0ef6e50b7.html",
+        "fetchedAt": "2026-11-05T04:23:01.563047+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kankou-shimane.com/destination/20256",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/87b7c087a87e062517ec.html",
+        "snapshotSHA256": "b516c1e225b17556dbe9f758673a6bf87f0738b55f3e3439b705b47298a2acf8",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/87b7c087a87e062517ec.html",
+        "fetchedAt": "2026-11-05T04:48:15.725103+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ac2f433114644560e5"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ac2f433114644560e5"
+      }
+    ],
+    "priorReasonCategory": "wrong-facility"
+  },
+  {
+    "facilityId": "facility:cs-ad6498274696679c6b",
+    "name": "下松市観光案内所",
+    "address": "山口県下松市西豊井1247(下松駅南口)",
+    "previousReason": "県観光の案内所ページはgConf lat:0,lng:0で実地点を提供していない。ゼロ値や周辺施設点は不採用。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "fetchedAt": "2026-11-05T04:24:05.441557+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_18554.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/3a846948e67bc5c6e3de.html",
+        "snapshotSHA256": "abdb8f9191252d499dd75b61a1a599ae6351d07bf64ceb054ef0bc604168cd62",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/3a846948e67bc5c6e3de.html",
+        "fetchedAt": "2026-11-05T04:50:48.415978+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ad6498274696679c6b"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ad6498274696679c6b"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-baec24a203c6ed911a",
+    "name": "広島県芦田川流域下水道浄化センター",
+    "address": "広島県福山市箕沖町106",
+    "previousReason": "管理法人の芦田川施設紹介・アクセスを取得。案内図から建物の緯度経度を推定せず、数値地点未確認として保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.pref.hiroshima.lg.jp/soshiki/106/manholecover-info.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c124c33e0b02e2391fa0.html",
+        "snapshotSHA256": "c124c33e0b02e2391fa048c936c89d4e98282fea5c6b3fd87da0ecd47d67445c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-c124c33e0b02e2391fa0.html",
+        "fetchedAt": "2026-11-05T04:32:22.553232+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/sisetu.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/0900eb3893323f103bb0.html",
+        "snapshotSHA256": "4949e307dfe2fcc768de576da22580e58839ed925c8bcd023712fd655f0216f6",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/0900eb3893323f103bb0.html",
+        "fetchedAt": "2026-11-05T04:49:07.486855+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kengesui-hiroshima.or.jp/purification-center-introduction/ashidagawa/map.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/65efecd55d097f3646ea.html",
+        "snapshotSHA256": "2501cb3abe2f89721c9888afe1a7bcf8cf39580a1e0a62b28ec333492912d7a4",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/65efecd55d097f3646ea.html",
+        "fetchedAt": "2026-11-05T04:52:27.388253+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-baec24a203c6ed911a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-baec24a203c6ed911a"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-cb11c6cf2f76187e61",
+    "name": "歴史民俗資料館",
+    "address": "山口県山陽小野田市栄町9-21",
+    "previousReason": "市の歴史民俗資料館施設案内地図はpb表示中心のみで、資料館建物の明示地点を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "snapshotSHA256": "aa0d0620b82eb322e90ac495ad5e9bd2032eda6a12d669553061eb1680ff9c12",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "fetchedAt": "2026-11-05T04:24:21.375295+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/site/rekimin/shisetu-annai.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-61c180e16c0a339230ce.html",
+        "snapshotSHA256": "61c180e16c0a339230ce7238cfcee0088151c63f5b4ed85d1dfac0fe74d30b82",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-61c180e16c0a339230ce.html",
+        "fetchedAt": "2026-11-05T04:24:13.811187+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-cb11c6cf2f76187e61"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-cb11c6cf2f76187e61"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-cd44c49fdfac071988",
+    "name": "柳井市観光協会",
+    "address": "山口県柳井市柳井3714-1",
+    "previousReason": "柳井市観光協会公式アクセスを取得したが、協会事務所の明示数値地点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city-yanai.jp/soshiki/72/gesuika-do.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b3f28cb66caf9d11b11d.html",
+        "snapshotSHA256": "b3f28cb66caf9d11b11d3726b746a47ad1c2b8d746476f7353039c0ab879f562",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-b3f28cb66caf9d11b11d.html",
+        "fetchedAt": "2026-11-05T04:24:12.192961+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yanai-kankou.jp/access",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/02d725d9769e8e7013d4.html",
+        "snapshotSHA256": "ab121b217868044c308f3f85b51ad48644eb9b666c4903b6499675722a9617ba",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/02d725d9769e8e7013d4.html",
+        "fetchedAt": "2026-11-05T04:50:46.105348+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-cd44c49fdfac071988"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-cd44c49fdfac071988"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-d0065de3f1d6af9a22",
+    "name": "山陽小野田市役所 別館2階 下水道課",
+    "address": "山口県山陽小野田市日の出1-1-1",
+    "previousReason": "市庁舎公式アクセスを取得したが、別館を本館から区別した数値地点がない。本館点や埋込表示中心を別館2階に流用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/manholecard.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "snapshotSHA256": "aa0d0620b82eb322e90ac495ad5e9bd2032eda6a12d669553061eb1680ff9c12",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-aa0d0620b82eb322e90a.html",
+        "fetchedAt": "2026-11-05T04:24:21.375295+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/27/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/b497ece68f0e2a970d4d.html",
+        "snapshotSHA256": "30d2677918fd8aed54bcd78606046810db7083d20d2c16d8b844c2c3babc5683",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/b497ece68f0e2a970d4d.html",
+        "fetchedAt": "2026-11-05T04:50:46.220438+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.sanyo-onoda.lg.jp/soshiki/2/access.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/8ca8dbcee1ee6f3a0fbe.html",
+        "snapshotSHA256": "ad1708c6a5b2bb4fe2be4202fc8b140a7af9687b84a50f89cc9a5546861e12f5",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/8ca8dbcee1ee6f3a0fbe.html",
+        "fetchedAt": "2026-11-05T04:52:28.638507+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-d0065de3f1d6af9a22"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-d0065de3f1d6af9a22"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-d79e170069f79cc7d2",
+    "name": "児島駅観光案内所",
+    "address": "岡山県倉敷市児島駅前1-107 / 岡山県倉敷市児島駅前1-37 2階",
+    "previousReason": "倉敷公式の観光案内所一覧で児島駅案内所を確認したが、その建物を指す数値地点を得られなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-53846466c88f5665167e.html",
+        "fetchedAt": "2026-11-05T04:26:31.292911+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kurashiki-tabi.jp/tourist-information-center/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/f8288331fe1abe3e4a34.html",
+        "snapshotSHA256": "8ef7dacffc0352121070a455d87eb93fbba92f6ff1a439dcc8f995260de16f54",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/f8288331fe1abe3e4a34.html",
+        "fetchedAt": "2026-11-05T04:48:16.613246+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-d79e170069f79cc7d2"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-d79e170069f79cc7d2"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-d96f3a22bac31657b3",
+    "name": "西ノ島町役場 環境整備課",
+    "address": "島根県隠岐郡西ノ島町大字美田600番地4",
+    "previousReason": "現役場の美田600-4を旧P05レコードの浦郷534に結び付けられない。旧庁舎座標は採用せず、現庁舎の建物点が未確定。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/news/1786",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3d476718f180003549ef.html",
+        "snapshotSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-3d476718f180003549ef.html",
+        "fetchedAt": "2026-11-05T04:32:22.546912+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.town.nishinoshima.shimane.jp/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-dcfe8b113e64f463626b.html",
+        "snapshotSHA256": "dcfe8b113e64f463626bf9d5a45f186f181a976a695e53e7408874caf047c453",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-dcfe8b113e64f463626b.html",
+        "fetchedAt": "2026-11-05T04:23:06.463249+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-d96f3a22bac31657b3"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-d96f3a22bac31657b3"
+      }
+    ],
+    "priorReasonCategory": "relocation-or-address-identity"
+  },
+  {
+    "facilityId": "facility:cs-db60eef36c8f3b518b",
+    "name": "山口観光案内所",
+    "address": "山口県山口市惣太夫町2-1(山口駅1階)",
+    "previousReason": "山口市観光公式サイトを調査したが、山口駅の観光案内所を指定する数値目的地を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://water-city-yamaguchi.com/for-kids/page_1089/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "snapshotSHA256": "326d3bb9acd4278242c9a42b0d938e2d06702d1aa5d31d8336514890840d0d31",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-326d3bb9acd4278242c9.html",
+        "fetchedAt": "2026-11-05T04:24:00.554520+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yamaguchi-city.jp/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/6d28421e57df131b8029.html",
+        "snapshotSHA256": "70f4f1719ac42e8e35b9924850429edb569201b6de2a76ed9bd80489b726ef38",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/6d28421e57df131b8029.html",
+        "fetchedAt": "2026-11-05T04:50:45.325551+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-db60eef36c8f3b518b"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-db60eef36c8f3b518b"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-ddde663d81d83b2c0f",
+    "name": "下松スポーツ公園体育館管理事務所",
+    "address": "山口県下松市大字河内字恋路10140",
+    "previousReason": "管理公社のスポーツ公園案内を確認したが、公園全体から体育館管理事務所の建物点を区別できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kudamatsu.lg.jp/sui-gesui/kurashi/jougesuidou/gesuidou/manhole-card.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "snapshotSHA256": "07966a81b947dbc7e9e0ee55ed76e28202671412b776900edc3f8ccbedf67d6e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-07966a81b947dbc7e9e0.html",
+        "fetchedAt": "2026-11-05T04:24:14.372285+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://k-kanrikousha.or.jp/sportspark/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c4a98e54fea3107d360e.html",
+        "snapshotSHA256": "26cc6eaf79ecb4fa672dc3694ead4f30eecd9d4b6115ab3d828228255429a775",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/c4a98e54fea3107d360e.html",
+        "fetchedAt": "2026-11-05T04:50:45.841442+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ddde663d81d83b2c0f"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ddde663d81d83b2c0f"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-e0dc2b70dac9632686",
+    "name": "備前おさふね刀剣の里",
+    "address": "岡山県瀬戸内市長船町長船966",
+    "previousReason": "主原典は備前長船刀剣博物館を含む刀剣の里の案内で、鍛刀場・工房等の複数棟を明示する。保存されたqと配布受付建物との対応を確定できない。博物館または配布棟を指す独立した地点根拠が必要。長船支所の保留とは別件。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "snapshotSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+        "fetchedAt": "2026-11-05T04:23:30.873681+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.okayama-kanko.jp/setouchi/spot/detail_11175.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/5fc3aed9e422aadc24ce.html",
+        "snapshotSHA256": "ae26b13a297a6566bd6e65ab745a24434dc4b1979daae8f47c3955c0b4dd68ec",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/5fc3aed9e422aadc24ce.html",
+        "fetchedAt": "2026-11-05T04:48:19.927036+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-e0dc2b70dac9632686"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-e0dc2b70dac9632686"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-e0dc2b70dac9632686"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-e10aada0cecdff9fae",
+    "name": "赤瓦一号館",
+    "address": "鳥取県倉吉市新町1丁目2441",
+    "previousReason": "観光協会の赤瓦一号館紹介に採用可能な明示座標がなく、県観光詳細はHTTP 503。赤瓦地区全体の点を一号館に流用しない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/manhole/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-5bb42b7d6838e460f668.html",
+        "snapshotSHA256": "5bb42b7d6838e460f6689b0256d9f5b9cb7926da98d8acc299868c81e0ab576d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-5bb42b7d6838e460f668.html",
+        "fetchedAt": "2026-11-05T04:23:02.206740+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/akagawara-ichigokan/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/84e21d2b3ba10c1537c3.html",
+        "snapshotSHA256": "a6f08b7869b071c8b4ff660d4d14c5afcefbd5573075c77e94540c1ff5ca3c7d",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/84e21d2b3ba10c1537c3.html",
+        "fetchedAt": "2026-11-05T04:48:15.719755+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.tottori-guide.jp/tourism/tour/view/160",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7da8567ae0f1277177cc.html",
+        "snapshotSHA256": "523b25fcafde7dca3a52f11764154df2d5f9898ce42b6ec31f0ac43132123b85",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/7da8567ae0f1277177cc.html",
+        "fetchedAt": "2026-11-05T04:52:26.612973+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-e10aada0cecdff9fae"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-e10aada0cecdff9fae"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-e2f1019dc6faed28bc",
+    "name": "江津市観光協会",
+    "address": "島根県江津市江津町1518-1",
+    "previousReason": "江津市観光協会公式地図のpbに表示中心はあるが、協会・案内所建物の座標と証明できない。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://gotsu-kanko.jp/52/news/topics/2892",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-83cca8577554b5355332.html",
+        "snapshotSHA256": "83cca8577554b53553327b764ee0a22924fbb1f0883224e10ec7c4467783b78e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-83cca8577554b5355332.html",
+        "fetchedAt": "2026-11-05T04:23:08.185312+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://gotsu-kanko.jp/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4d25101da563dc08c97d.html",
+        "snapshotSHA256": "4d25101da563dc08c97d143205fe1e09ad53c11503bf425bad25736c0c8a989c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4d25101da563dc08c97d.html",
+        "fetchedAt": "2026-11-05T04:23:04.992226+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-e2f1019dc6faed28bc"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-e2f1019dc6faed28bc"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-e4b9d51a912a95286a",
+    "name": "和木町蜂ヶ峯総合公園 Bee+交流棟",
+    "address": "山口県玖珂郡和木町瀬田173番地4",
+    "previousReason": "地域振興協会の公式地図qは団体名文字列で、Bee+交流棟の数値地点ではない。管理棟と交流棟を区別するため保留。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.town.waki.lg.jp/soshiki/3/8139.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-26850e5aab84fba84857.html",
+        "snapshotSHA256": "26850e5aab84fba848570087ffb051a2b689d288d1bf49fce05a4cf5ab926ec4",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-26850e5aab84fba84857.html",
+        "fetchedAt": "2026-11-05T04:24:21.843419+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.wakiiine.net/contact/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/96a27c44710465351ff6.html",
+        "snapshotSHA256": "4f29f1b62b18b15b75fbf48a813eab7b1de176821b30fd8b972694eab914c525",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/96a27c44710465351ff6.html",
+        "fetchedAt": "2026-11-05T04:50:46.430480+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-e4b9d51a912a95286a"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-e4b9d51a912a95286a"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:cs-eb39ed62b47f9f29ba",
+    "name": "岩国市英語交流センター「PLAT ABC」",
+    "address": "山口県岩国市元町⼀丁⽬1番1号 レジデンス岩国駅東1階",
+    "previousReason": "岩国市のPLAT ABC案内を調べたが、現所在地に対応する数値マーカーを確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/soshiki/26/36795.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "snapshotSHA256": "9f0cc695bf168620d50d8697eced8ab67a916685965399a4c1fb582970b0a77c",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-9f0cc695bf168620d50d.html",
+        "fetchedAt": "2026-11-05T04:26:32.038246+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.iwakuni.lg.jp/site/eigo-iwakuni/66476.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/7b83d0afa2eb5e575244.html",
+        "snapshotSHA256": "006c95e29dec0ee1f9fc7f57477c4560303004b3e5f18966910452a3e92a28d9",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/7b83d0afa2eb5e575244.html",
+        "fetchedAt": "2026-11-05T04:50:46.030291+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-eb39ed62b47f9f29ba"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-eb39ed62b47f9f29ba"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-ec8a334a6855cf91c5",
+    "name": "米子市観光センター",
+    "address": "鳥取県米子市皆生温泉3-1-1",
+    "previousReason": "市の観光センター施設案内を取得したが、建物を指す数値座標を確認できなかった。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.city.yonago.lg.jp/24306.htm",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-07cacecf9730badf9f53.html",
+        "snapshotSHA256": "07cacecf9730badf9f537727718cdb7bd4ed500f5788daffed1d80049967edcc",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-07cacecf9730badf9f53.html",
+        "fetchedAt": "2026-11-05T04:22:57.338771+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.city.yonago.lg.jp/9894.htm",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/c9bcd42604f570802770.html",
+        "snapshotSHA256": "c845bdf669ab7efa6a61ed12e82e566c922fedca0aabe6bb6304d7b15429fe7e",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/c9bcd42604f570802770.html",
+        "fetchedAt": "2026-11-05T04:48:15.718808+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-ec8a334a6855cf91c5"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-ec8a334a6855cf91c5"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-f82ae05278a2614df9",
+    "name": "円形劇場くらよしフィギュアミュージアム",
+    "address": "鳥取県 倉吉市鍛冶町1丁目2971番地2",
+    "previousReason": "観光協会の円形劇場紹介で施設を同定したが数値地点を確認できず、県観光詳細はHTTP 503。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://enkei-museum.com/news/news-detail.php?id=8",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-e271f2e8d5238403a3c6.html",
+        "snapshotSHA256": "e271f2e8d5238403a3c69240c7fb943d8ea592653fceea36d1165c13e3bf6180",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-e271f2e8d5238403a3c6.html",
+        "fetchedAt": "2026-11-05T04:23:00.334894+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.kurayoshi-kankou.jp/figuremuseum/",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/09f512393305817572ac.html",
+        "snapshotSHA256": "87f741502e76651333a4c626a7b6e5050afbe96efec725e89dab46fa2abb4a5f",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/09f512393305817572ac.html",
+        "fetchedAt": "2026-11-05T04:48:17.705976+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://www.tottori-guide.jp/tourism/tour/view/1072",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/e8769694902ae2c1d221.html",
+        "snapshotSHA256": "523b25fcafde7dca3a52f11764154df2d5f9898ce42b6ec31f0ac43132123b85",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/e8769694902ae2c1d221.html",
+        "fetchedAt": "2026-11-05T04:52:27.954360+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-f82ae05278a2614df9"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-f82ae05278a2614df9"
+      }
+    ],
+    "priorReasonCategory": "missing-primary-coordinate"
+  },
+  {
+    "facilityId": "facility:cs-f9ac7cca9893ace076",
+    "name": "萩・明倫学舎 インフォメーションセンター",
+    "address": "山口県萩市大字江向602番地",
+    "previousReason": "インフォメーションセンターが萩・明倫学舎本館内にあることは確認できる。ただし複数校舎の施設全体qが本館を指すことは保存原典だけでは未確認。棟別地点か配置図との対応が必要。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "http://www.city.hagi.lg.jp/soshiki/105/h29713.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-4fd233b4773c785639fe.html",
+        "snapshotSHA256": "4fd233b4773c785639fec3bb7d24c71790dae87f523a2f03570e01a3c4425e0b",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/reuse-4fd233b4773c785639fe.html",
+        "fetchedAt": "2026-11-05T04:24:11.482330+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      },
+      {
+        "sourceUrl": "https://yamaguchi-tourism.jp/spot/detail_17538.html",
+        "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/6ac937854a3abd0bdac9.html",
+        "snapshotSHA256": "97f74f1b1aa63d2b4f4deafebcb999361cc6716afa1a1f876555389098b502ee",
+        "reusedFrom": "data/evidence/national/locations-chugoku-shikoku/6ac937854a3abd0bdac9.html",
+        "fetchedAt": "2026-11-05T04:50:46.941115+00:00",
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [
+      {
+        "path": "data/national/location-updates/chugoku-shikoku.json",
+        "facilityId": "facility:cs-f9ac7cca9893ace076"
+      },
+      {
+        "path": "data/national/reviews/chugoku-saitama-locations.json",
+        "facilityId": "facility:cs-f9ac7cca9893ace076"
+      },
+      {
+        "path": "data/evidence/national/locations-chugoku-shikoku/facility-audit.json",
+        "facilityId": "facility:cs-f9ac7cca9893ace076"
+      }
+    ],
+    "priorReasonCategory": "multiple-buildings"
+  },
+  {
+    "facilityId": "facility:ws-811926f2652d6640dc",
+    "name": "新倉敷駅観光案内所",
+    "address": "岡山県倉敷市玉島爪崎390-4 JR新倉敷駅構内2階",
+    "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "33-202-C001 / 新倉敷駅観光案内所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [],
+    "priorReasonCategory": "not-previously-investigated"
+  },
+  {
+    "facilityId": "facility:ws-ab79fd8795933123c5",
+    "name": "児島商工会議所",
+    "address": "岡山県倉敷市児島駅前1-37 2階",
+    "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "33-202-B001 / 児島商工会議所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [],
+    "priorReasonCategory": "not-previously-investigated"
+  },
+  {
+    "facilityId": "facility:ws-db1f68e131a3fd939d",
+    "name": "浜田市観光協会特産品販売所",
+    "address": "島根県浜田市 JR浜田駅1階",
+    "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.hamada.shimane.jp/www/contents/1552525586705/index.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/e2b7f711ade6b80ca544.html",
+        "snapshotSHA256": "3038985bfb38bed0f3cc77378028af22edfc746a3d04f31f8bc8aaa3f0ee8d12",
+        "reusedFrom": "data/evidence/national/proposals-west-south/e2b7f711ade6b80ca544.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "32-202-A001 / 浜田市観光協会特産品販売所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [],
+    "priorReasonCategory": "not-previously-investigated"
+  },
+  {
+    "facilityId": "facility:ws-dc1637ffd07c249588",
+    "name": "米子市国際観光案内所",
+    "address": "鳥取県米子市弥生町2 JR米子駅1F",
+    "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.yonago.lg.jp/24306.htm",
+        "snapshotPath": "data/evidence/national/proposals-west-south/7563d353b2823f12eb0a.html",
+        "snapshotSHA256": "07cacecf9730badf9f537727718cdb7bd4ed500f5788daffed1d80049967edcc",
+        "reusedFrom": "data/evidence/national/proposals-west-south/7563d353b2823f12eb0a.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "31-202-A001 / 米子市国際観光案内所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [],
+    "priorReasonCategory": "not-previously-investigated"
+  },
+  {
+    "facilityId": "facility:ws-f0d5e530cedd97b88a",
+    "name": "児島産業振興センター",
+    "address": "岡山県倉敷市児島駅前1-37 1階",
+    "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。",
+    "priorEvidence": [
+      {
+        "sourceUrl": "https://www.city.kurashiki.okayama.jp/kurashi/suidou/1003847/1013233/1010897.html",
+        "snapshotPath": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "snapshotSHA256": "53846466c88f5665167e146bdba0ec64f054e3dd6d22a0b726a8d60674903d25",
+        "reusedFrom": "data/evidence/national/proposals-west-south/0dc1eafad4ab749f8a1a.html",
+        "fetchedAt": null,
+        "acquisitionTimePolicy": "Original recorded time only; null means unavailable.",
+        "sourceLocator": "33-202-B001 / 児島産業振興センター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "旧原本bytesと記録済みSHA256を再照合。取得時刻は元メタデータを保持。座標採用の意味確認とは別の原本保全検査。"
+      }
+    ],
+    "priorReviewReferences": [],
+    "priorReasonCategory": "not-previously-investigated"
+  }
+]

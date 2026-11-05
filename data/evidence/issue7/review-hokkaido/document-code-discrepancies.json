@@ -1,0 +1,49 @@
+[
+  {
+    "id": "historical-1",
+    "kind": "documentation-overclaim",
+    "finding": "旧locations READMEは現名称住所の照合を説明する一方、decide.pyの旧H22/H25/H26データ処理は個別利用条件・CRSを記録せず採用する。公式施設索引の条件確認方針を満たす実装ではない。",
+    "paths": [
+      "data/evidence/national/locations-north-hokkaido/README.md",
+      "data/evidence/national/locations-north-hokkaido/decide.py",
+      "data/evidence/national/official-facility-index/README.md"
+    ],
+    "action": "旧点を承認済みとして引き継がず、今回の原典・条件で判断。旧成果は変更しない。"
+  },
+  {
+    "id": "historical-2",
+    "kind": "documentation-overclaim",
+    "finding": "旧READMEの建物内複数窓口の説明に対し、decide.pyは登別市役所総称点を第2庁舎にも、苫小牧市役所総称点を北庁舎にも候補化している。現配布本文は棟を区別。",
+    "action": "登別本庁舎だけ採用、第2庁舎・苫小牧北庁舎は保留。"
+  },
+  {
+    "id": "historical-3",
+    "kind": "generated-explanation-mismatch",
+    "finding": "旧decide.pyは釧路と留萌の共通verificationMethodに「るもいプラザ公式施設ページ」を含める。釧路の出典連鎖の個別説明になっていない。",
+    "action": "釧路へ留萌根拠を流用しない。留萌は今回の市HTML q原値を使用。"
+  },
+  {
+    "id": "historical-4",
+    "kind": "already-corrected-in-baseline",
+    "finding": "千歳の旧成果は経営管理課、現本文は総務課。固定baselineの施設nameは既に総務課総務係へ訂正済み。古いsourceLocatorは過去の取得時説明として残る。",
+    "action": "名称訂正は再提出しない。baseline・過去証拠は変更しない。"
+  },
+  {
+    "id": "P05-individual-vs-general",
+    "kind": "current-review-documentation-correction",
+    "finding": "元README第5項とpolicy.jsonのPDLに基づく説明は、P05-2022個別ページのCC_BY_4.0を適用根拠として保持していない。旧issue5のCC BY表記自体は原典と整合するため、一般PDL登場だけでコード誤りとはしない。",
+    "action": "exact old/new訂正案に従い、個別指定と現行一般規約を併記。"
+  },
+  {
+    "id": "Go-date-validation-gap",
+    "kind": "verification-coverage-gap",
+    "finding": "元verify.pyはEvidenceの7キー存在を検査するがcheckedAtの日付形式は検査しない。Go実装cmd/builddata/ledger.go:121はtime.Parse(\"2006-01-02\", e.CheckedAt)を必須にする。今回30件は日付のみで全て通過し、日時文字列負例は拒否された。",
+    "action": "本レビューのGo probe結果を契約検証に使用。候補checkedAtの訂正は不要。"
+  },
+  {
+    "id": "P05-specification-locator",
+    "kind": "documentation-source-mismatch",
+    "finding": "policy.jsonは建物外周内検査を8章と記すが、PDF原本は6章データ品質・本文12頁。8章はメタデータ。",
+    "action": "原本の6章を根拠に評価し、locatorのexact old/newを提出する。数値・建物同定は影響なし。"
+  }
+]

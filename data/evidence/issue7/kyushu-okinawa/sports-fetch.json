@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://kc-sks.jp/soutai/index.html",
+    "targets": [
+      {
+        "facilityId": "facility:kyushu-015d01512ed3752919cd",
+        "purpose": "current-building-name-and-address"
+      }
+    ],
+    "startedAt": "2026-11-05T06:33:34.571280+00:00",
+    "status": 200,
+    "finalUrl": "https://kc-sks.jp/soutai/index.html",
+    "contentType": "text/html",
+    "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e7b0e44616d0b436ca8c1fe4.html",
+    "snapshotSHA256": "e7b0e44616d0b436ca8c1fe49f0ec8a6df91c53178d720a8307846060f86df0b",
+    "fetchedAt": "2026-11-05T06:33:34.667028+00:00"
+  }
+]

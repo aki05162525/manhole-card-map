@@ -1,0 +1,4058 @@
+[
+  {
+    "facilityId": "facility:kinki-09d12f8315cc6ca090a4",
+    "name": "今井まちなみ交流センター「華甍」",
+    "address": "奈良県橿原市今井町2-3-5",
+    "identityReason": "旧華甍の建物自体を同定。現行配布先は今井まちづくりセンターであり、旧施設の関係・休館状態を変更しない。施設案内の今井町2-3-5とP05名称住所を照合。",
+    "coordinate": {
+      "lat": 34.505151,
+      "lng": 135.789254
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "29205",
+        "P05_002": "5",
+        "P05_003": "今井まちなみ交流センター",
+        "P05_004": "橿原市今井町2-3-5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.789254,
+          34.505151
+        ]
+      }
+    },
+    "sourceMember": "P05-22_29_GML.zip/P05-22_29.geojson",
+    "sourceMemberSHA256": "4300e86824172daeb12bc5ffd8b2d06fe2d9a78a4013b623482f39579c13cb5b",
+    "featureIndex": 281,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "fetchedAt": "2026-11-05T06:28:03.825792+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bc1f9981003102a1ff48664c.html",
+        "sha256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+        "bytes": 80189,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/boshu/2/331.html",
+        "fetchedAt": "2026-11-05T06:28:03.826117+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1021/boshu/2/331.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/59dc504c28b1d5a3c456b919.html",
+        "sha256": "1961b7106686747dde05f9e0fd86bfe44c3b29e15d756fc21d02572d90c28346",
+        "bytes": 85513,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "fetchedAt": "2026-11-05T06:28:03.828752+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/95bc58b06d8c88f826aaad91.html",
+        "sha256": "9c27a0bfcecb99c8f7558418262c51d04f5f959e2d0042b0e57a33d59a2a3c14",
+        "bytes": 76633,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "fetchedAt": "2026-11-05T06:31:47.401758+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/2a71613424a1290ffe3ad6d8.html",
+        "sha256": "e1f0d2874a9defd44a478e575bc6e51f49f736deee727841f56e9d2bd8f40286",
+        "bytes": 87408,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617.html",
+      "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。施設休館に伴う移転。旧華甍の関係のみ終了、新窓口はproposal。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "fetchedAt": "2026-11-05T06:28:03.825792+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bc1f9981003102a1ff48664c.html",
+        "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+        "status": 200,
+        "title": "マンホールカード配布について／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/boshu/2/331.html",
+        "fetchedAt": "2026-11-05T06:28:03.826117+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/59dc504c28b1d5a3c456b919.html",
+        "snapshotSHA256": "1961b7106686747dde05f9e0fd86bfe44c3b29e15d756fc21d02572d90c28346",
+        "status": 200,
+        "title": "（休止中）今井まちなみ交流センター華甍の貸室利用手続き／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "fetchedAt": "2026-11-05T06:28:03.828752+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/95bc58b06d8c88f826aaad91.html",
+        "snapshotSHA256": "9c27a0bfcecb99c8f7558418262c51d04f5f959e2d0042b0e57a33d59a2a3c14",
+        "status": 200,
+        "title": "市役所へのアクセス／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "fetchedAt": "2026-11-05T06:31:47.401758+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/2a71613424a1290ffe3ad6d8.html",
+        "snapshotSHA256": "e1f0d2874a9defd44a478e575bc6e51f49f736deee727841f56e9d2bd8f40286",
+        "status": 200,
+        "title": "（休館中）今井まちなみ交流センター「華甍」／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-09d12f8315cc6ca090a4"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-11d5574411a4dcfe6dec",
+    "name": "大阪狭山市役所庁舎2階 水政策部下水道・水路グループ",
+    "address": "大阪府大阪狭山市狭山1-2384-1",
+    "identityReason": "配布案内が狭山一丁目2384番地の1の市役所庁舎2階を明記。休日の狭山池博物館には転用しない。",
+    "coordinate": {
+      "lat": 34.503718,
+      "lng": 135.555748
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27231",
+        "P05_002": "1",
+        "P05_003": "大阪狭山市役所",
+        "P05_004": "大阪狭山市狭山1-2384-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.555748,
+          34.503718
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1952,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+        "fetchedAt": "2026-11-05T06:28:08.345217+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/3723f15d024e0aed923c2570.html",
+        "sha256": "bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85",
+        "bytes": 154354,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://sayamaikehaku.osakasayama.osaka.jp/?page_id=49",
+        "fetchedAt": "2026-11-05T06:28:08.708139+00:00",
+        "status": 200,
+        "finalUrl": "https://sayamaikehaku.osakasayama.osaka.jp/?page_id=49",
+        "path": "data/evidence/issue7/kinki-west/snapshots/1ca3903d7ad7cf8033233acc.html",
+        "sha256": "0b9f6d0e72e64aaf75f3daafc946ba51083f603158a46b3ac845ffbea0534668",
+        "bytes": 187042,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://sayamaikehaku.osakasayama.osaka.jp/wp/",
+        "fetchedAt": "2026-11-05T06:28:08.714098+00:00",
+        "status": 200,
+        "finalUrl": "https://sayamaikehaku.osakasayama.osaka.jp/wp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/db6f57c8dca9781d154dc9f7.html",
+        "sha256": "0b97900b994eefd996ddeae9a0e8a0f12d59acb75d226cf678b07668a883be70",
+        "bytes": 196169,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85.html",
+      "snapshotSHA256": "bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-231-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市公式は工事休館中もカード配布継続と明記。施設公式の2026/9開館展示と現行アクセスを追加確認。博物館内の受付詳細位置は未確定。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.osakasayama.osaka.jp/tetsuzuki/jogesuido/1/1/3315.html",
+        "fetchedAt": "2026-11-05T06:28:08.345217+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/3723f15d024e0aed923c2570.html",
+        "snapshotSHA256": "bd670c8b16e5351c17bccaaa7505cb99269d8ac21de9633c84e9080318fa1e85",
+        "status": 200,
+        "title": "「マンホールカード」の配布／大阪狭山市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://sayamaikehaku.osakasayama.osaka.jp/?page_id=49",
+        "fetchedAt": "2026-11-05T06:28:08.708139+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/1ca3903d7ad7cf8033233acc.html",
+        "snapshotSHA256": "0b9f6d0e72e64aaf75f3daafc946ba51083f603158a46b3ac845ffbea0534668",
+        "status": 200,
+        "title": "開館時間・住所・交通案内・問い合わせ先 | 大阪府立狭山池博物館",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://sayamaikehaku.osakasayama.osaka.jp/wp/",
+        "fetchedAt": "2026-11-05T06:28:08.714098+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/db6f57c8dca9781d154dc9f7.html",
+        "snapshotSHA256": "0b97900b994eefd996ddeae9a0e8a0f12d59acb75d226cf678b07668a883be70",
+        "status": 200,
+        "title": "大阪府立狭山池博物館",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-11d5574411a4dcfe6dec"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-1421f0ca70946971eeef",
+    "name": "河南町役場宿直室",
+    "address": "大阪府南河内郡河南町大字白木1359-6",
+    "identityReason": "公式配布案内の庁舎1階西側出入口の宿直室。平日2階と同一庁舎であり独立守衛棟ではない。",
+    "coordinate": {
+      "lat": 34.491637,
+      "lng": 135.62988
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27382",
+        "P05_002": "1",
+        "P05_003": "河南町役場",
+        "P05_004": "河南町大字白木1359-6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.62988,
+          34.491637
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 2163,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "fetchedAt": "2026-11-05T06:28:08.745655+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/fc2be545e68e9d56bb0c1ac7.html",
+        "sha256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+        "bytes": 67400,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "fetchedAt": "2026-11-05T06:28:09.023216+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/158c222c3e398f11922866a8.html",
+        "sha256": "adc6749d5deaf4e32ca89429c6b1120cc750d02b3eea1ba7dd64ceef3d5ebc9d",
+        "bytes": 66370,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b.html",
+      "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-382-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階西27番都市環境課・休日1階西宿直室、9～17:30。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "fetchedAt": "2026-11-05T06:28:08.745655+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/fc2be545e68e9d56bb0c1ac7.html",
+        "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+        "status": 200,
+        "title": "マンホールカードを配布します／河南町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "fetchedAt": "2026-11-05T06:28:09.023216+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/158c222c3e398f11922866a8.html",
+        "snapshotSHA256": "adc6749d5deaf4e32ca89429c6b1120cc750d02b3eea1ba7dd64ceef3d5ebc9d",
+        "status": 200,
+        "title": "交通アクセス／河南町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-1421f0ca70946971eeef"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-212883840c3bc7b55808",
+    "name": "公民館堅下分館(堅下合同会館)",
+    "address": "大阪府柏原市大県3丁目9-19",
+    "identityReason": "現配布先は堅下合同会館内公民館堅下分館、大県3丁目9-19。P05にもその名称・住所が一致。同会館の他用途レコードとの差は約1mで同一複合建物の用途別点。",
+    "coordinate": {
+      "lat": 34.588802,
+      "lng": 135.628738
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27221",
+        "P05_002": "4",
+        "P05_003": "公民館堅下分館",
+        "P05_004": "柏原市大県3-9-19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.628738,
+          34.588802
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1638,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+        "fetchedAt": "2026-11-05T06:28:14.660439+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/static/manhole-card/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/14346db9a522443bb1b92b1d.html",
+        "sha256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+        "bytes": 29617,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/use.html",
+        "fetchedAt": "2026-11-05T06:28:15.692241+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/use.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/103f17b85a197059fc1f98f2.html",
+        "sha256": "ae2935a3c018b62928c260e913843636574489c148ec67e2a457d64861867951",
+        "bytes": 21414,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "fetchedAt": "2026-11-05T06:28:15.695674+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/dc9d7f0c2c9273b373eda875.html",
+        "sha256": "7eb11057d71ccec608235a1f711f52e7721b582aa0831392baeeafc9bebfa9c8",
+        "bytes": 81920,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "fetchedAt": "2026-11-05T06:31:47.808281+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4430e70b57f7962f7179153c.html",
+        "sha256": "e38249920969376061ef1e5c139a8548e0d1b5fd78123de86c5c0e82b73711a7",
+        "bytes": 22775,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+      "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-221-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A別館平日と本館図書休日、C堅下分館を照合。本文上部の旧市民文化センターより現行配布表を採用。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+        "fetchedAt": "2026-11-05T06:28:14.660439+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/14346db9a522443bb1b92b1d.html",
+        "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+        "status": 200,
+        "title": "マンホールカード | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/use.html",
+        "fetchedAt": "2026-11-05T06:28:15.692241+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/103f17b85a197059fc1f98f2.html",
+        "snapshotSHA256": "ae2935a3c018b62928c260e913843636574489c148ec67e2a457d64861867951",
+        "status": 200,
+        "title": "ご利用案内 | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "fetchedAt": "2026-11-05T06:28:15.695674+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/dc9d7f0c2c9273b373eda875.html",
+        "snapshotSHA256": "7eb11057d71ccec608235a1f711f52e7721b582aa0831392baeeafc9bebfa9c8",
+        "status": 200,
+        "title": "道路・交通 | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "fetchedAt": "2026-11-05T06:31:47.808281+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4430e70b57f7962f7179153c.html",
+        "snapshotSHA256": "e38249920969376061ef1e5c139a8548e0d1b5fd78123de86c5c0e82b73711a7",
+        "status": 200,
+        "title": "柏原市役所へのアクセス | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 3 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-212883840c3bc7b55808"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-2e1afa71c908ef731e24",
+    "name": "一般社団法人 大和郡山市観光協会",
+    "address": "奈良県大和郡山市高田町92-16(市民交流館1階)",
+    "identityReason": "公式配布表が高田町92-16の市民交流館1階を指定。P05の市民交流館を採用し、植槻町の上下水道庁舎と区別。同名重複の202との差は約0.3m。",
+    "coordinate": {
+      "lat": 34.647583,
+      "lng": 135.790535
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "29203",
+        "P05_002": "5",
+        "P05_003": "大和郡山市市民交流館",
+        "P05_004": "大和郡山市高田町92-16"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.790535,
+          34.647583
+        ]
+      }
+    },
+    "sourceMember": "P05-22_29_GML.zip/P05-22_29.geojson",
+    "sourceMemberSHA256": "4300e86824172daeb12bc5ffd8b2d06fe2d9a78a4013b623482f39579c13cb5b",
+    "featureIndex": 225,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+        "fetchedAt": "2026-11-05T06:28:16.110329+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/27e8236e7fba7daf27b887cc.html",
+        "sha256": "510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5",
+        "bytes": 48588,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.yk-kankou.jp/access.html",
+        "fetchedAt": "2026-11-05T06:28:16.111669+00:00",
+        "status": 200,
+        "finalUrl": "https://www.yk-kankou.jp/access.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/591801b4bc4a020ffa63c051.html",
+        "sha256": "8b6537212e2abe59438267d1d35751c41533a0a4840708e385426d21b0e50d17",
+        "bytes": 19311,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.yk-kankou.jp/member.html",
+        "fetchedAt": "2026-11-05T06:28:25.825306+00:00",
+        "status": 200,
+        "finalUrl": "https://www.yk-kankou.jp/member.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4e7ff9b6246002d23b702dc8.html",
+        "sha256": "c25de1c7209c0b566e51b4ffaccefea64a94142a7dc66798261d3fb69ec95cdc",
+        "bytes": 19582,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "http://www.yk-kankou.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.829448+00:00",
+        "status": 200,
+        "finalUrl": "https://www.yk-kankou.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/3671b602c764f02cf0d5726a.html",
+        "sha256": "a72271cae0607a52d077440274da8e9bc1ec896a516da20ffe7bdaac2a392f27",
+        "bytes": 29013,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.yk-kankou.jp/",
+        "fetchedAt": "2026-11-05T06:31:48.262257+00:00",
+        "status": 200,
+        "finalUrl": "https://www.yk-kankou.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/0feb83b17cfd9cc413b3e470.html",
+        "sha256": "a72271cae0607a52d077440274da8e9bc1ec896a516da20ffe7bdaac2a392f27",
+        "bytes": 29013,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5.html",
+      "snapshotSHA256": "510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-203-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2025/4/1案内の組織名称・年末休業差異を反映。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.yamatokoriyama.lg.jp/kurashi_tetsuzuki/seikatu/jogesuido/gesuido/5776.html",
+        "fetchedAt": "2026-11-05T06:28:16.110329+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/27e8236e7fba7daf27b887cc.html",
+        "snapshotSHA256": "510333ed920d80daa6a549838e3ae9b15ddc8799b36ab96289f322d549f6e8f5",
+        "status": 200,
+        "title": "「マンホールカード」を配布しています!／大和郡山市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.yk-kankou.jp/access.html",
+        "fetchedAt": "2026-11-05T06:28:16.111669+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/591801b4bc4a020ffa63c051.html",
+        "snapshotSHA256": "8b6537212e2abe59438267d1d35751c41533a0a4840708e385426d21b0e50d17",
+        "status": 200,
+        "title": "お役立ち情報｜金魚とお城のまち　やまとこおりやま（一般社団法人 大和郡山市観光協会公式ウェブサイト）",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.yk-kankou.jp/member.html",
+        "fetchedAt": "2026-11-05T06:28:25.825306+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4e7ff9b6246002d23b702dc8.html",
+        "snapshotSHA256": "c25de1c7209c0b566e51b4ffaccefea64a94142a7dc66798261d3fb69ec95cdc",
+        "status": 200,
+        "title": "大和郡山市観光協会　会員募集｜金魚とお城のまち　やまとこおりやま（一般社団法人 大和郡山市観光協会公式ウェブサイト）",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.yk-kankou.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.829448+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/3671b602c764f02cf0d5726a.html",
+        "snapshotSHA256": "a72271cae0607a52d077440274da8e9bc1ec896a516da20ffe7bdaac2a392f27",
+        "status": 200,
+        "title": "金魚とお城のまち　やまとこおりやま（一般社団法人 大和郡山市観光協会公式ウェブサイト）",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.yk-kankou.jp/",
+        "fetchedAt": "2026-11-05T06:31:48.262257+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/0feb83b17cfd9cc413b3e470.html",
+        "snapshotSHA256": "a72271cae0607a52d077440274da8e9bc1ec896a516da20ffe7bdaac2a392f27",
+        "status": 200,
+        "title": "金魚とお城のまち　やまとこおりやま（一般社団法人 大和郡山市観光協会公式ウェブサイト）",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-2e1afa71c908ef731e24"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-319bd8fbabbbf75f654d",
+    "name": "松原市役所宿直室(市役所1階)",
+    "address": "大阪府松原市阿保1-1-1",
+    "identityReason": "公式配布案内は土日祝に市役所1階宿直室。阿保1-1-1の役所建物点を採用。平日の観光協会阿保4-1-4には転用しない。",
+    "coordinate": {
+      "lat": 34.57805556,
+      "lng": 135.5516667
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27217",
+        "P05_002": "1",
+        "P05_003": "松原市役所",
+        "P05_004": "松原市阿保1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5516667,
+          34.57805556
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1407,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+        "fetchedAt": "2026-11-05T06:28:26.934041+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.matsubara.lg.jp/docs/page14804.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/480604d276da716e889793f4.html",
+        "sha256": "9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32",
+        "bytes": 58705,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.city.matsubara.lg.jp/docs/page2415.html",
+        "fetchedAt": "2026-11-05T06:28:27.367235+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.matsubara.lg.jp/docs/page2415.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6e57a3fb67f0d1bef728aa2a.html",
+        "sha256": "09a3c36cfe4dc7df21701ecd1993fa9b1d53a8dbc84556bc324fcd7ddf3812a3",
+        "bytes": 58397,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32.html",
+      "snapshotSHA256": "9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-217-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日観光協会・土日祝役所1階宿直室、時間差あり。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.matsubara.lg.jp/soshiki/suidou_kensetsu/1/14804.html",
+        "fetchedAt": "2026-11-05T06:28:26.934041+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/480604d276da716e889793f4.html",
+        "snapshotSHA256": "9566fbd1cad04a5feceb4c95a48e17e85c20977388300715dfb4b7bd3fe5ec32",
+        "status": 200,
+        "title": "マンホールカードの配布 -  松原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.matsubara.lg.jp/docs/page2415.html",
+        "fetchedAt": "2026-11-05T06:28:27.367235+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6e57a3fb67f0d1bef728aa2a.html",
+        "snapshotSHA256": "09a3c36cfe4dc7df21701ecd1993fa9b1d53a8dbc84556bc324fcd7ddf3812a3",
+        "status": 200,
+        "title": "松原市へのアクセス -  松原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-319bd8fbabbbf75f654d"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-4cb8623bc35115d6fb38",
+    "name": "西脇市役所建設水道部施設管理課",
+    "address": "兵庫県西脇市下戸田128番地の1",
+    "identityReason": "現配布案内が下戸田128-1の西脇市役所2階208窓口を明記。P05は移転前の郷瀬町ではなく現住所の役所。併設市民交流施設の用途別点を選ばず市役所レコードを採用。",
+    "coordinate": {
+      "lat": 34.98273752,
+      "lng": 134.97954585
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28213",
+        "P05_002": "1",
+        "P05_003": "西脇市役所",
+        "P05_004": "西脇市下戸田128-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.97954585,
+          34.98273752
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1148,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+        "fetchedAt": "2026-11-05T06:28:30.086233+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/1c2e50b3fce3f4fa5bb3521f.html",
+        "sha256": "2d6dc94d294165e91075942753ae162040beca7501baa1d5bc702b7bbd8c8a25",
+        "bytes": 37978,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.nishiwaki.lg.jp/lifescenemokutekibetsudesagasu/facility_organization/index.html",
+        "fetchedAt": "2026-11-05T06:28:30.260280+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.nishiwaki.lg.jp/lifescenemokutekibetsudesagasu/facility_organization/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/f42d51d692d869bb7e4d6ce6.html",
+        "sha256": "21243f62d1b888705f8904ac28ceeb20087398d24d24c43177f0410fa02a16c8",
+        "bytes": 30662,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.nishiwaki.lg.jp/access/1355806026700.html",
+        "fetchedAt": "2026-11-05T06:28:30.845695+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.nishiwaki.lg.jp/access/1355806026700.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6ea0a569495a058706204367.html",
+        "sha256": "c2337e908f4494fe0697361316443b8173fae4a733186984d060161246bc9217",
+        "bytes": 32250,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.nishiwaki.lg.jp/access/index.html",
+        "fetchedAt": "2026-11-05T06:31:48.544507+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.nishiwaki.lg.jp/access/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/d99aee355715ef317dbdf0d5.html",
+        "sha256": "36cd09f9aa10dead589e6dc72bb06f9328052cc572bedaa5cbcf3fc4cbc6492b",
+        "bytes": 29412,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.nishiwaki.lg.jp/jyuyo_oshirase/31654.html",
+        "fetchedAt": "2026-11-05T06:31:48.547404+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.nishiwaki.lg.jp/jyuyo_oshirase/31654.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/baac785ca1489e02c9ddb575.html",
+        "sha256": "088b93887fab72aa22daef2e39d71cd4dc7d96cf951a6ea0c11bedf9ce3ba1cb",
+        "bytes": 35825,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752.html",
+      "snapshotSHA256": "147017c4ac8fcfb7e61894b23db3039b59d03c07932f53b2e1bdf0720b88d752",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-213-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日終了時間を公式16:30へ訂正。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.nishiwaki.lg.jp/kurashi/jyogesuido/topics/1511776919480.html",
+        "fetchedAt": "2026-11-05T06:28:30.086233+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/1c2e50b3fce3f4fa5bb3521f.html",
+        "snapshotSHA256": "2d6dc94d294165e91075942753ae162040beca7501baa1d5bc702b7bbd8c8a25",
+        "status": 200,
+        "title": "西脇市版「マンホールカード」配布中／西脇市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.nishiwaki.lg.jp/lifescenemokutekibetsudesagasu/facility_organization/index.html",
+        "fetchedAt": "2026-11-05T06:28:30.260280+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/f42d51d692d869bb7e4d6ce6.html",
+        "snapshotSHA256": "21243f62d1b888705f8904ac28ceeb20087398d24d24c43177f0410fa02a16c8",
+        "status": 200,
+        "title": "施設案内・市の組織／西脇市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.nishiwaki.lg.jp/access/1355806026700.html",
+        "fetchedAt": "2026-11-05T06:28:30.845695+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6ea0a569495a058706204367.html",
+        "snapshotSHA256": "c2337e908f4494fe0697361316443b8173fae4a733186984d060161246bc9217",
+        "status": 200,
+        "title": "市役所へのアクセス／西脇市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.nishiwaki.lg.jp/access/index.html",
+        "fetchedAt": "2026-11-05T06:31:48.544507+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/d99aee355715ef317dbdf0d5.html",
+        "snapshotSHA256": "36cd09f9aa10dead589e6dc72bb06f9328052cc572bedaa5cbcf3fc4cbc6492b",
+        "status": 200,
+        "title": "アクセス／西脇市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.nishiwaki.lg.jp/jyuyo_oshirase/31654.html",
+        "fetchedAt": "2026-11-05T06:31:48.547404+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/baac785ca1489e02c9ddb575.html",
+        "snapshotSHA256": "088b93887fab72aa22daef2e39d71cd4dc7d96cf951a6ea0c11bedf9ce3ba1cb",
+        "status": 200,
+        "title": "委託先における不正アクセスに伴うメールアドレス漏えいの可能性と一部サービスの停止について／西脇市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-4cb8623bc35115d6fb38"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-4e667eb047afa3b26231",
+    "name": "市川町役場 下水道課",
+    "address": "兵庫県神崎郡市川町西川辺165-3",
+    "identityReason": "公式配布案内が西川辺165-3の役場下水道課を指定。休日当直室も同じ庁舎東玄関から入ると明記。",
+    "coordinate": {
+      "lat": 34.989365,
+      "lng": 134.763289
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28442",
+        "P05_002": "1",
+        "P05_003": "市川町役場",
+        "P05_004": "市川町西川辺165-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.763289,
+          34.989365
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 2150,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.town.ichikawa.lg.jp/info/800",
+        "fetchedAt": "2026-11-05T06:28:31.037705+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/info/800",
+        "path": "data/evidence/issue7/kinki-west/snapshots/15790b0a3d4754f9edc2fe8f.html",
+        "sha256": "b05b0703128b662d4804d22dd7c3e20b8880675e00f7fb1a429793f0519fac02",
+        "bytes": 51099,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/menu/38",
+        "fetchedAt": "2026-11-05T06:28:31.119660+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/menu/38",
+        "path": "data/evidence/issue7/kinki-west/snapshots/c2b52a5d9eb632704ae4449a.html",
+        "sha256": "7411b0652d9e525f55d39185fb5189ef9d1d2c1967082330461643e486851b01",
+        "bytes": 54501,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/Info/135",
+        "fetchedAt": "2026-11-05T06:28:31.121598+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/Info/135",
+        "path": "data/evidence/issue7/kinki-west/snapshots/b6a9306e00ac2ccb4f971424.html",
+        "sha256": "b2f775168b8bed829d9e485372a1ec8b609c3298ca700cd5f7e8d03f968793fe",
+        "bytes": 48737,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/info/135",
+        "fetchedAt": "2026-11-05T06:31:48.555039+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/info/135",
+        "path": "data/evidence/issue7/kinki-west/snapshots/c4c115bef1ecc158d2a5ed7f.html",
+        "sha256": "3a1641839654690623f1beb34e407042e3661c3f6884479f2176b44b673ca0e7",
+        "bytes": 48737,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/accessranking",
+        "fetchedAt": "2026-11-05T06:31:48.691630+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/accessranking",
+        "path": "data/evidence/issue7/kinki-west/snapshots/46751c18dcd60d9226ed7983.html",
+        "sha256": "4a6b6f890f7e8c7f83f159d47d6babc34d0beaf7c7cffa2dbed8418ca868d1b1",
+        "bytes": 59719,
+        "contentType": "text/html; charset=utf-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.town.ichikawa.lg.jp/info/800",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376.html",
+      "snapshotSHA256": "aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-442-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9～17時、平日下水道課、休日当直室。年末年始も休日同様配布。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/info/800",
+        "fetchedAt": "2026-11-05T06:28:31.037705+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/15790b0a3d4754f9edc2fe8f.html",
+        "snapshotSHA256": "b05b0703128b662d4804d22dd7c3e20b8880675e00f7fb1a429793f0519fac02",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町マンホールカードを配布します",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/menu/38",
+        "fetchedAt": "2026-11-05T06:28:31.119660+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/c2b52a5d9eb632704ae4449a.html",
+        "snapshotSHA256": "7411b0652d9e525f55d39185fb5189ef9d1d2c1967082330461643e486851b01",
+        "status": 200,
+        "title": "兵庫県市川町 交通",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/Info/135",
+        "fetchedAt": "2026-11-05T06:28:31.121598+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/b6a9306e00ac2ccb4f971424.html",
+        "snapshotSHA256": "b2f775168b8bed829d9e485372a1ec8b609c3298ca700cd5f7e8d03f968793fe",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町役場までのアクセス",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/info/135",
+        "fetchedAt": "2026-11-05T06:31:48.555039+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/c4c115bef1ecc158d2a5ed7f.html",
+        "snapshotSHA256": "3a1641839654690623f1beb34e407042e3661c3f6884479f2176b44b673ca0e7",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町役場までのアクセス",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/accessranking",
+        "fetchedAt": "2026-11-05T06:31:48.691630+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/46751c18dcd60d9226ed7983.html",
+        "snapshotSHA256": "4a6b6f890f7e8c7f83f159d47d6babc34d0beaf7c7cffa2dbed8418ca868d1b1",
+        "status": 200,
+        "title": "兵庫県市川町  アクセスランキング",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-4e667eb047afa3b26231"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-5155c601bcf944c4cbf5",
+    "name": "阪南市役所地下1階守衛室",
+    "address": "大阪府阪南市尾崎町35-1",
+    "identityReason": "公式配布案内が尾崎町35-1の市役所地下1階守衛室を指定。平日の鳥取74-1の分室や道案内用の鳥取66とは区別。",
+    "coordinate": {
+      "lat": 34.359594,
+      "lng": 135.239656
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27232",
+        "P05_002": "1",
+        "P05_003": "阪南市役所",
+        "P05_004": "阪南市尾崎町35-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.239656,
+          34.359594
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 2005,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+        "fetchedAt": "2026-11-05T06:28:32.866347+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/b9158d8fa58cd8a0fe231a8b.html",
+        "sha256": "cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98",
+        "bytes": 41610,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.city.hannan.lg.jp/",
+        "fetchedAt": "2026-11-05T06:28:33.478649+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.hannan.lg.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6ec4798abbec3ba13487a863.html",
+        "sha256": "b3d526995aa6ab31831a9c082151daeb1d379011890362fca9aaa5bc1b0817d6",
+        "bytes": 60259,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.hannan.lg.jp/shisei/access/index.html",
+        "fetchedAt": "2026-11-05T06:28:33.767946+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.hannan.lg.jp/shisei/access/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/c83c37530f92ca3cc945115d.html",
+        "sha256": "678c127910e6dc32bfad0f1b4824800a70990bf0748b2b886733e4632c49028f",
+        "bytes": 41480,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98.html",
+      "snapshotSHA256": "cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-232-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。10/10在庫あり、平日9/1短縮後9～16:30。分室へのナビ案内は鳥取66で、代表点を座標承認しない。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.hannan.lg.jp/kakuka/toshi/gesuido/6682.html",
+        "fetchedAt": "2026-11-05T06:28:32.866347+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/b9158d8fa58cd8a0fe231a8b.html",
+        "snapshotSHA256": "cd57098b56b73ad5b572b49ae2e24a2fb1f15493a952777a94add954a051ac98",
+        "status": 200,
+        "title": "マンホールカードの配布について／阪南市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.hannan.lg.jp/",
+        "fetchedAt": "2026-11-05T06:28:33.478649+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6ec4798abbec3ba13487a863.html",
+        "snapshotSHA256": "b3d526995aa6ab31831a9c082151daeb1d379011890362fca9aaa5bc1b0817d6",
+        "status": 200,
+        "title": "ホーム／阪南市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.hannan.lg.jp/shisei/access/index.html",
+        "fetchedAt": "2026-11-05T06:28:33.767946+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/c83c37530f92ca3cc945115d.html",
+        "snapshotSHA256": "678c127910e6dc32bfad0f1b4824800a70990bf0748b2b886733e4632c49028f",
+        "status": 200,
+        "title": "阪南市へのアクセス／阪南市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-5155c601bcf944c4cbf5"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-5198d8060e4644e9ac95",
+    "name": "河南町まち創造部都市環境課",
+    "address": "大阪府南河内郡河南町大字白木1359-6",
+    "identityReason": "公式配布案内の庁舎2階西フロア27番窓口。白木1359-6でP05役場と一致。1階の休日窓口と同建物。",
+    "coordinate": {
+      "lat": 34.491637,
+      "lng": 135.62988
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27382",
+        "P05_002": "1",
+        "P05_003": "河南町役場",
+        "P05_004": "河南町大字白木1359-6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.62988,
+          34.491637
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 2163,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "fetchedAt": "2026-11-05T06:28:08.745655+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/fc2be545e68e9d56bb0c1ac7.html",
+        "sha256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+        "bytes": 67400,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "fetchedAt": "2026-11-05T06:28:09.023216+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/158c222c3e398f11922866a8.html",
+        "sha256": "adc6749d5deaf4e32ca89429c6b1120cc750d02b3eea1ba7dd64ceef3d5ebc9d",
+        "bytes": 66370,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b.html",
+      "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-382-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日2階西27番都市環境課・休日1階西宿直室、9～17:30。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.kanan.osaka.jp/soshiki/machisozobu/toshikankyoka/gyomuannai/5/1/294.html",
+        "fetchedAt": "2026-11-05T06:28:08.745655+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/fc2be545e68e9d56bb0c1ac7.html",
+        "snapshotSHA256": "53daee40f2d44fef5083e09f0f492c96eb2d9fdd2b2dfbc56e0f82385439870b",
+        "status": 200,
+        "title": "マンホールカードを配布します／河南町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.kanan.osaka.jp/soshiki/seisakusoumubu/machidukurihishoka/gyomuannai/3/1254.html",
+        "fetchedAt": "2026-11-05T06:28:09.023216+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/158c222c3e398f11922866a8.html",
+        "snapshotSHA256": "adc6749d5deaf4e32ca89429c6b1120cc750d02b3eea1ba7dd64ceef3d5ebc9d",
+        "status": 200,
+        "title": "交通アクセス／河南町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-5198d8060e4644e9ac95"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-52945aa1816499e04704",
+    "name": "アステ市民プラザ",
+    "address": "兵庫県川西市栄町25番1-601号 アステ川西6階",
+    "identityReason": "市民プラザはアステ川西6階、中央図書館は同じアステ川西4・5階。施設運営者のフロア一覧と図書館公式施設案内で同一建物を確認。栄町25-1のP05中央図書館を建物代表点として使う。別施設である川西市役所・キセラ川西は不使用。",
+    "coordinate": {
+      "lat": 34.8265127,
+      "lng": 135.4129451
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28217",
+        "P05_002": "5",
+        "P05_003": "中央図書館",
+        "P05_004": "川西市栄町25-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.4129451,
+          34.8265127
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1351,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+        "fetchedAt": "2026-11-05T06:28:33.904691+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/1fbab2e1964eddaca1b95911.html",
+        "sha256": "fb80d1645496e594b16a2aff8a5908e2bcc2582ee2b93999aecaa47abeaa1508",
+        "bytes": 23843,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
+        "fetchedAt": "2026-11-05T06:28:33.910737+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/b64ec2f03e482b618f1aa4fa.html",
+        "sha256": "75d2ee8ce29ce06aa8f38918e43d151a8f278def9041829c629b57e0cd0c50fb",
+        "bytes": 30175,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kawanishi.hyogo.jp/_res/projects/default_project/_page_/001/003/009/ekuseru.xlsx",
+        "fetchedAt": "2026-11-05T06:28:33.913866+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kawanishi.hyogo.jp/_res/projects/default_project/_page_/001/003/009/ekuseru.xlsx",
+        "path": "data/evidence/issue7/kinki-west/snapshots/eeb0d82617fe25d77d53735c.html",
+        "sha256": "091726c9b8a7846b02385464380b4a074723bf1ac3ca282881833434c34c76d0",
+        "bytes": 32435,
+        "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      },
+      {
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1003005.html",
+        "fetchedAt": "2026-11-05T06:31:48.825102+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1003005.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/ad9ab94d7ed3fdbe02707f2d.html",
+        "sha256": "fe15b3d68172fc1809ae5ff0d969b8c7c7eb004a5a89fc16650e73127376a904",
+        "bytes": 32285,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1008004.html",
+        "fetchedAt": "2026-11-05T06:31:48.828188+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1008004.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bbc2842cef929767448e1548.html",
+        "sha256": "9fefceeadc526e0e557d91025ca62e3a21d74546068af8a764872a5d35205c38",
+        "bytes": 24854,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.ip.licsre-saas.jp/kawanishi/useguide/facilities.html",
+        "fetchedAt": "2026-11-05T06:33:23.663408+00:00",
+        "status": 200,
+        "finalUrl": "https://www.ip.licsre-saas.jp/kawanishi/useguide/facilities.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/5fa0540a200f68b16264b1c2.html",
+        "sha256": "2747287031857b8769d41fa9b0691ae576d13a74c3bc03fd87636eb6bfe6824d",
+        "bytes": 13434,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.astekawanishi.com/floor/",
+        "fetchedAt": "2026-11-05T06:33:23.898315+00:00",
+        "status": 200,
+        "finalUrl": "https://www.astekawanishi.com/floor/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/48a879647483fb233748e27d.html",
+        "sha256": "d5f9b95ca2863ecac773371fae12ef5910ed530b753b9badc62706a3eff5f223",
+        "bytes": 62616,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-e1634c2aace006e255d684e0ed3fb661022853a471ec1a958f00b6e120244147.html",
+      "snapshotSHA256": "e1634c2aace006e255d684e0ed3fb661022853a471ec1a958f00b6e120244147",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-217-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市公式の全種類一括休止を確認。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kawanishi.hyogo.jp/water-toppage/about/1016931/1017158/1016952.html",
+        "fetchedAt": "2026-11-05T06:28:33.904691+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/1fbab2e1964eddaca1b95911.html",
+        "snapshotSHA256": "fb80d1645496e594b16a2aff8a5908e2bcc2582ee2b93999aecaa47abeaa1508",
+        "status": 200,
+        "title": "マンホールカードの配布を中止しています｜川西市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/index.html",
+        "fetchedAt": "2026-11-05T06:28:33.910737+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/b64ec2f03e482b618f1aa4fa.html",
+        "snapshotSHA256": "75d2ee8ce29ce06aa8f38918e43d151a8f278def9041829c629b57e0cd0c50fb",
+        "status": 200,
+        "title": "アステ市民プラザ｜川西市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kawanishi.hyogo.jp/_res/projects/default_project/_page_/001/003/009/ekuseru.xlsx",
+        "fetchedAt": "2026-11-05T06:28:33.913866+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/eeb0d82617fe25d77d53735c.html",
+        "snapshotSHA256": "091726c9b8a7846b02385464380b4a074723bf1ac3ca282881833434c34c76d0",
+        "status": 200,
+        "title": null,
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1003005.html",
+        "fetchedAt": "2026-11-05T06:31:48.825102+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/ad9ab94d7ed3fdbe02707f2d.html",
+        "snapshotSHA256": "fe15b3d68172fc1809ae5ff0d969b8c7c7eb004a5a89fc16650e73127376a904",
+        "status": 200,
+        "title": "アステ市民プラザの部屋のご利用案内｜川西市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kawanishi.hyogo.jp/shisetsu/1002999/1003002/1008004.html",
+        "fetchedAt": "2026-11-05T06:31:48.828188+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bbc2842cef929767448e1548.html",
+        "snapshotSHA256": "9fefceeadc526e0e557d91025ca62e3a21d74546068af8a764872a5d35205c38",
+        "status": 200,
+        "title": "アステ市民プラザ無料Wi-Fi回線のご利用案内｜川西市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.ip.licsre-saas.jp/kawanishi/useguide/facilities.html",
+        "fetchedAt": "2026-11-05T06:33:23.663408+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/5fa0540a200f68b16264b1c2.html",
+        "snapshotSHA256": "2747287031857b8769d41fa9b0691ae576d13a74c3bc03fd87636eb6bfe6824d",
+        "status": 200,
+        "title": "川西市立中央図書館|利用案内・Q&amp;A|図書館施設案内",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.astekawanishi.com/floor/",
+        "fetchedAt": "2026-11-05T06:33:23.898315+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/48a879647483fb233748e27d.html",
+        "snapshotSHA256": "d5f9b95ca2863ecac773371fae12ef5910ed530b753b9badc62706a3eff5f223",
+        "status": 200,
+        "title": "フロアマップ | アステ川西",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 3 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-52945aa1816499e04704"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-65aca194bc92a930cdd3",
+    "name": "市川町役場 当直室（東玄関呼出）",
+    "address": "兵庫県神崎郡市川町西川辺165-3",
+    "identityReason": "公式配布案内は当直室を庁舎東玄関から呼出と明記。下水道課と同じ西川辺165-3の役場建物であり、独立した守衛棟を推測していない。",
+    "coordinate": {
+      "lat": 34.989365,
+      "lng": 134.763289
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28442",
+        "P05_002": "1",
+        "P05_003": "市川町役場",
+        "P05_004": "市川町西川辺165-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.763289,
+          34.989365
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 2150,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.town.ichikawa.lg.jp/info/800",
+        "fetchedAt": "2026-11-05T06:28:31.037705+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/info/800",
+        "path": "data/evidence/issue7/kinki-west/snapshots/15790b0a3d4754f9edc2fe8f.html",
+        "sha256": "b05b0703128b662d4804d22dd7c3e20b8880675e00f7fb1a429793f0519fac02",
+        "bytes": 51099,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/menu/38",
+        "fetchedAt": "2026-11-05T06:28:31.119660+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/menu/38",
+        "path": "data/evidence/issue7/kinki-west/snapshots/c2b52a5d9eb632704ae4449a.html",
+        "sha256": "7411b0652d9e525f55d39185fb5189ef9d1d2c1967082330461643e486851b01",
+        "bytes": 54501,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/Info/135",
+        "fetchedAt": "2026-11-05T06:28:31.121598+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/Info/135",
+        "path": "data/evidence/issue7/kinki-west/snapshots/b6a9306e00ac2ccb4f971424.html",
+        "sha256": "b2f775168b8bed829d9e485372a1ec8b609c3298ca700cd5f7e8d03f968793fe",
+        "bytes": 48737,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/info/135",
+        "fetchedAt": "2026-11-05T06:31:48.555039+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/info/135",
+        "path": "data/evidence/issue7/kinki-west/snapshots/c4c115bef1ecc158d2a5ed7f.html",
+        "sha256": "3a1641839654690623f1beb34e407042e3661c3f6884479f2176b44b673ca0e7",
+        "bytes": 48737,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://www.town.ichikawa.lg.jp/accessranking",
+        "fetchedAt": "2026-11-05T06:31:48.691630+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.ichikawa.lg.jp/accessranking",
+        "path": "data/evidence/issue7/kinki-west/snapshots/46751c18dcd60d9226ed7983.html",
+        "sha256": "4a6b6f890f7e8c7f83f159d47d6babc34d0beaf7c7cffa2dbed8418ca868d1b1",
+        "bytes": 59719,
+        "contentType": "text/html; charset=utf-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.town.ichikawa.lg.jp/info/800",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376.html",
+      "snapshotSHA256": "aa6b5d2f1839a05d2a5f7838bc90f781db80640812d856cb1dcb8d3f651fb376",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-442-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9～17時、平日下水道課、休日当直室。年末年始も休日同様配布。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/info/800",
+        "fetchedAt": "2026-11-05T06:28:31.037705+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/15790b0a3d4754f9edc2fe8f.html",
+        "snapshotSHA256": "b05b0703128b662d4804d22dd7c3e20b8880675e00f7fb1a429793f0519fac02",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町マンホールカードを配布します",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/menu/38",
+        "fetchedAt": "2026-11-05T06:28:31.119660+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/c2b52a5d9eb632704ae4449a.html",
+        "snapshotSHA256": "7411b0652d9e525f55d39185fb5189ef9d1d2c1967082330461643e486851b01",
+        "status": 200,
+        "title": "兵庫県市川町 交通",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/Info/135",
+        "fetchedAt": "2026-11-05T06:28:31.121598+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/b6a9306e00ac2ccb4f971424.html",
+        "snapshotSHA256": "b2f775168b8bed829d9e485372a1ec8b609c3298ca700cd5f7e8d03f968793fe",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町役場までのアクセス",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/info/135",
+        "fetchedAt": "2026-11-05T06:31:48.555039+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/c4c115bef1ecc158d2a5ed7f.html",
+        "snapshotSHA256": "3a1641839654690623f1beb34e407042e3661c3f6884479f2176b44b673ca0e7",
+        "status": 200,
+        "title": "兵庫県市川町  兵庫県市川町 市川町役場までのアクセス",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.ichikawa.lg.jp/accessranking",
+        "fetchedAt": "2026-11-05T06:31:48.691630+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/46751c18dcd60d9226ed7983.html",
+        "snapshotSHA256": "4a6b6f890f7e8c7f83f159d47d6babc34d0beaf7c7cffa2dbed8418ca868d1b1",
+        "status": 200,
+        "title": "兵庫県市川町  アクセスランキング",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-65aca194bc92a930cdd3"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-6ad97690b4f9910a096e",
+    "name": "藤井寺市立にぎわい・まなび交流館1階 ウエルカムラウンジ",
+    "address": "大阪府藤井寺市藤井寺3丁目1番20号",
+    "identityReason": "公式観光拠点化案内はアイセルシュラホールを旧来の生涯学習センターと明記。2026年自習室案内の生涯学習課はシュラホール3階、配布窓口は同館1階。藤井寺3-1-20のP05生涯学習センターと同一建物であり、改装・用途名称変更を建替えと扱わない。",
+    "coordinate": {
+      "lat": 34.56614517,
+      "lng": 135.5972902
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27226",
+        "P05_002": "5",
+        "P05_003": "生涯学習センター",
+        "P05_004": "藤井寺市藤井寺3-1-20"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5972902,
+          34.56614517
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1806,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "fetchedAt": "2026-11-05T06:28:35.805784+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/63c9335c3c65e09bca49a9b5.html",
+        "sha256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+        "bytes": 38723,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19496.html",
+        "fetchedAt": "2026-11-05T06:28:35.855121+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19496.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/67209e2511e1a74133fcb0e8.html",
+        "sha256": "73d8ea48c146485d3fd3ac17d3f699332647f5b8c19aa53799f0c78f2c7f232a",
+        "bytes": 38071,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "fetchedAt": "2026-11-05T06:28:35.860372+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/06bbcc4e1d521bf14a1bb0ca.html",
+        "sha256": "34258b186124a4255a9ee335a81ea2cf008a2fc1c83b903b7590cd15b3ed3bef",
+        "bytes": 39442,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
+        "fetchedAt": "2026-11-05T06:31:49.620426+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/e66f07a372c2e82f9468f121.html",
+        "sha256": "f049108d7dee0e7f164fea249afd6e89d88b43b6c28da61fe802420f1c8ff843",
+        "bytes": 38321,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19441.html",
+        "fetchedAt": "2026-11-05T06:31:49.707955+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19441.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/41e5f953c6beb50a841b3aab.html",
+        "sha256": "7c237a549f117345dbf8f49ab05739728297884a9bfe005844c74e379e0d819e",
+        "bytes": 45660,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/kyoikuiinkai/shogaigakushu/oshirase/18462.html",
+        "fetchedAt": "2026-11-05T06:33:24.153521+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/kyoikuiinkai/shogaigakushu/oshirase/18462.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/e89908ccbdc445ced135f7dd.html",
+        "sha256": "e068ca5c5f649d08fef7cb8cea00c8305d7f213b2957616a3797b58ce074c467",
+        "bytes": 36171,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/aicelsyurahallkankoukyotenka/index.html",
+        "fetchedAt": "2026-11-05T06:36:34.195754+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/aicelsyurahallkankoukyotenka/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/2d8a14a98a90a00da7a160c0.html",
+        "sha256": "d99b3a3d9bd05bcd139906a254095317f24533246a97e8f8f7973d248cb96f96",
+        "bytes": 38843,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a.html",
+      "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-226-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。アイセルシュラホール1階。GKP年始1/3までを1/4までへ。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "fetchedAt": "2026-11-05T06:28:35.805784+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/63c9335c3c65e09bca49a9b5.html",
+        "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+        "status": 200,
+        "title": "【配布中】藤井寺市のマンホールカードについて／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19496.html",
+        "fetchedAt": "2026-11-05T06:28:35.855121+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/67209e2511e1a74133fcb0e8.html",
+        "snapshotSHA256": "73d8ea48c146485d3fd3ac17d3f699332647f5b8c19aa53799f0c78f2c7f232a",
+        "status": 200,
+        "title": "アイセルシュラホール「ウエルカムラウンジ」出品募集について／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "fetchedAt": "2026-11-05T06:28:35.860372+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/06bbcc4e1d521bf14a1bb0ca.html",
+        "snapshotSHA256": "34258b186124a4255a9ee335a81ea2cf008a2fc1c83b903b7590cd15b3ed3bef",
+        "status": 200,
+        "title": "本庁／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 1,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/index.html",
+        "fetchedAt": "2026-11-05T06:31:49.620426+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/e66f07a372c2e82f9468f121.html",
+        "snapshotSHA256": "f049108d7dee0e7f164fea249afd6e89d88b43b6c28da61fe802420f1c8ff843",
+        "status": 200,
+        "title": "藤井寺市立にぎわい・まなび交流館（アイセルシュラホール）／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/fujiiderasi-nigiwai-manabikouryukan/19441.html",
+        "fetchedAt": "2026-11-05T06:31:49.707955+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/41e5f953c6beb50a841b3aab.html",
+        "snapshotSHA256": "7c237a549f117345dbf8f49ab05739728297884a9bfe005844c74e379e0d819e",
+        "status": 200,
+        "title": "藤井寺市立にぎわい・まなび交流館 （愛称：アイセルシュラホール）／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/kyoikuiinkai/shogaigakushu/oshirase/18462.html",
+        "fetchedAt": "2026-11-05T06:33:24.153521+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/e89908ccbdc445ced135f7dd.html",
+        "snapshotSHA256": "e068ca5c5f649d08fef7cb8cea00c8305d7f213b2957616a3797b58ce074c467",
+        "status": 200,
+        "title": "生涯学習センターにおける自習室について／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/shiminseikatsu/kankou/aicelsyurahallkankoukyotenka/index.html",
+        "fetchedAt": "2026-11-05T06:36:34.195754+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/2d8a14a98a90a00da7a160c0.html",
+        "snapshotSHA256": "d99b3a3d9bd05bcd139906a254095317f24533246a97e8f8f7973d248cb96f96",
+        "status": 200,
+        "title": "アイセルシュラホールの観光拠点化に向けて／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-6ad97690b4f9910a096e"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-7a95a5f3a5fbd7c93b60",
+    "name": "丹波篠山市役所 上下水道部 経営企画課",
+    "address": "兵庫県丹波篠山市北新町41(本庁舎)",
+    "identityReason": "公式配布案内は北新町41の本庁舎2階。P05市役所を選び、同番地のたんば田園交響ホールの別点は使わない。",
+    "coordinate": {
+      "lat": 35.075673,
+      "lng": 135.219002
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28221",
+        "P05_002": "1",
+        "P05_003": "丹波篠山市役所",
+        "P05_004": "丹波篠山市北新町41"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.219002,
+          35.075673
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1513,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+        "fetchedAt": "2026-11-05T06:28:12.443512+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6999f6f4e7f2988c3634c426.html",
+        "sha256": "217e777b4e6e719b1804e7355368dd5586b5d058e5d18038a1bd02543779285f",
+        "bytes": 36481,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://withsasayama.jp/civic-center",
+        "fetchedAt": "2026-11-05T06:28:36.845319+00:00",
+        "status": 200,
+        "finalUrl": "https://withsasayama.jp/civic-center/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/384b969bf47e7ee0af2e2a73.html",
+        "sha256": "d43df2173fd37d0ed55c252ff49409641c9c66e9c78b3336f9762ffb1c46b67c",
+        "bytes": 85074,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://withsasayama.jp/history-museum/",
+        "fetchedAt": "2026-11-05T06:31:47.745055+00:00",
+        "status": 200,
+        "finalUrl": "https://withsasayama.jp/history-museum/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/82ed95111dbfde0ab9a81642.html",
+        "sha256": "929cae49d1ddca194996eec9849f37b3a8683c2a6c18c794704130eb111e4f9e",
+        "bytes": 146894,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.city.tambasasayama.lg.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.791276+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.tambasasayama.lg.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/199a988e0a5c4919062acd73.html",
+        "sha256": "77e901696c0353b9dbaa9207156124548e311f144ba20fb258d4e2e5192c6311",
+        "bytes": 38919,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006.html",
+      "snapshotSHA256": "a265cec9aca178a890005b2663c952e3fe5cc4139a05cbdaea530d3faefef006",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。現行日本語公式の9～17時を採用。旧GKP・観光英語版の8:30～17:15と相違。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.tambasasayama.lg.jp/kurashi_tetsuzuki/jogesuidou/8473.html",
+        "fetchedAt": "2026-11-05T06:28:12.443512+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6999f6f4e7f2988c3634c426.html",
+        "snapshotSHA256": "217e777b4e6e719b1804e7355368dd5586b5d058e5d18038a1bd02543779285f",
+        "status": 200,
+        "title": "マンホールカードを配布しています!／丹波篠山市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.tambasasayama.lg.jp/soshikikarasagasu/jogesuidoubu/keieikikakuka/2653.html",
+        "fetchedAt": "2026-11-05T06:28:36.793319+00:00",
+        "result": "取得失敗。制限回避・同一URL再試行なし。",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://withsasayama.jp/civic-center",
+        "fetchedAt": "2026-11-05T06:28:36.845319+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/384b969bf47e7ee0af2e2a73.html",
+        "snapshotSHA256": "d43df2173fd37d0ed55c252ff49409641c9c66e9c78b3336f9762ffb1c46b67c",
+        "status": 200,
+        "title": "丹波篠山市民センター - withsasayama",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://withsasayama.jp/history-museum/",
+        "fetchedAt": "2026-11-05T06:31:47.745055+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/82ed95111dbfde0ab9a81642.html",
+        "snapshotSHA256": "929cae49d1ddca194996eec9849f37b3a8683c2a6c18c794704130eb111e4f9e",
+        "status": 200,
+        "title": "丹波篠山市立歴史美術館の公式ページ - withsasayama",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.tambasasayama.lg.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.791276+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/199a988e0a5c4919062acd73.html",
+        "snapshotSHA256": "77e901696c0353b9dbaa9207156124548e311f144ba20fb258d4e2e5192c6311",
+        "status": 200,
+        "title": "ホーム／丹波篠山市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-7a95a5f3a5fbd7c93b60"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-8c975ae9df85aa9fea39",
+    "name": "東大阪市 下水道計画総務室",
+    "address": "大阪府東大阪市荒本北1-1-1(東大阪市役所13階)",
+    "identityReason": "公式配布案内は市役所13階、休日は22階。同一庁舎荒本北1-1-1のP05市役所点で十分。",
+    "coordinate": {
+      "lat": 34.679324,
+      "lng": 135.600898
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27227",
+        "P05_002": "1",
+        "P05_003": "東大阪市役所",
+        "P05_004": "東大阪市荒本北1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.600898,
+          34.679324
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1838,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+        "fetchedAt": "2026-11-05T06:28:37.558677+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/0000019197.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/84af15b97594c4ff338c9484.html",
+        "sha256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+        "bytes": 26005,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.higashiosaka.lg.jp/category/14-6-0-0-0-0-0-0-0-0.html",
+        "fetchedAt": "2026-11-05T06:28:37.656381+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/category/14-6-0-0-0-0-0-0-0-0.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/0dbb37881dbb2687d70e07f2.html",
+        "sha256": "f45ce421469c9e4ce84d3d106642d821c86d1cbc3af4e066f0c91efe1a18d7e0",
+        "bytes": 25560,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.city.higashiosaka.lg.jp/0000005557.html",
+        "fetchedAt": "2026-11-05T06:28:37.675489+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/0000005557.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/19b91a435ffc4ea37eba0f09.html",
+        "sha256": "e5bd81a8d341645f98c4a72ecfc7ada4ed60fc8b118ab97a2ecb53a379859bed",
+        "bytes": 54720,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.higashiosaka.lg.jp/category/12-0-0-0-0-0-0-0-0-0.html",
+        "fetchedAt": "2026-11-05T06:31:50.621397+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/category/12-0-0-0-0-0-0-0-0-0.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/d97e168b3920fe9adf97ab5b.html",
+        "sha256": "10dd61368e0eac1dade13fc46e6376f5fbb32870b0e292ae4ead6f4732d0d692",
+        "bytes": 25870,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.higashiosaka.lg.jp/0000029899.html",
+        "fetchedAt": "2026-11-05T06:31:50.639366+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/0000029899.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/2328111fbe5ad0d10dd681be.html",
+        "sha256": "7b6387cf9f7534779f1876c373890560a05452572b6b451b9bf3b79b4749d01f",
+        "bytes": 23940,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "fetchedAt": "2026-11-05T06:37:38.892459+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/229a89da6feef8d0f0a9ef6a.html",
+        "sha256": "ce021d98b8b5dfa83bc1ab2debb71f281942d8225e71608a14d43ea34f31596d",
+        "bytes": 18448,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f.html",
+      "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-227-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。平日13階計画課は同定。休日22階展望ロビー9～23時が未抽出のためproposal、既存13階に休日を混同しない。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+        "fetchedAt": "2026-11-05T06:28:37.558677+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/84af15b97594c4ff338c9484.html",
+        "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+        "status": 200,
+        "title": "東大阪市の「マンホールカード」　【配布再開しました！】 | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.higashiosaka.lg.jp/category/14-6-0-0-0-0-0-0-0-0.html",
+        "fetchedAt": "2026-11-05T06:28:37.656381+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/0dbb37881dbb2687d70e07f2.html",
+        "snapshotSHA256": "f45ce421469c9e4ce84d3d106642d821c86d1cbc3af4e066f0c91efe1a18d7e0",
+        "status": 200,
+        "title": "防犯・交通安全・市民共済 | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.higashiosaka.lg.jp/0000005557.html",
+        "fetchedAt": "2026-11-05T06:28:37.675489+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/19b91a435ffc4ea37eba0f09.html",
+        "snapshotSHA256": "e5bd81a8d341645f98c4a72ecfc7ada4ed60fc8b118ab97a2ecb53a379859bed",
+        "status": 200,
+        "title": "東大阪市役所本庁舎概要 | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.higashiosaka.lg.jp/category/12-0-0-0-0-0-0-0-0-0.html",
+        "fetchedAt": "2026-11-05T06:31:50.621397+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/d97e168b3920fe9adf97ab5b.html",
+        "snapshotSHA256": "10dd61368e0eac1dade13fc46e6376f5fbb32870b0e292ae4ead6f4732d0d692",
+        "status": 200,
+        "title": "東大阪市上下水道局 | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.higashiosaka.lg.jp/0000029899.html",
+        "fetchedAt": "2026-11-05T06:31:50.639366+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/2328111fbe5ad0d10dd681be.html",
+        "snapshotSHA256": "7b6387cf9f7534779f1876c373890560a05452572b6b451b9bf3b79b4749d01f",
+        "status": 200,
+        "title": "パンフレット(東大阪市の下水道) | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "fetchedAt": "2026-11-05T06:37:38.892459+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/229a89da6feef8d0f0a9ef6a.html",
+        "snapshotSHA256": "ce021d98b8b5dfa83bc1ab2debb71f281942d8225e71608a14d43ea34f31596d",
+        "status": 200,
+        "title": "市役所本庁舎へのアクセス | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-8c975ae9df85aa9fea39"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+    "name": "柏原市役所本館2階 かしわらテラス図書スペース",
+    "address": "大阪府柏原市安堂町1-55",
+    "identityReason": "公式配布案内は本館2階かしわらテラス。2025年公式庁舎案内が本館2021年3月竣工と別館1995年竣工を区別。P05-2022の柏原市役所を本館として採用し別館の下水工務課へは流用しない。",
+    "coordinate": {
+      "lat": 34.579315,
+      "lng": 135.628642
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27221",
+        "P05_002": "1",
+        "P05_003": "柏原市役所",
+        "P05_004": "柏原市安堂町1-55"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.628642,
+          34.579315
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1610,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+        "fetchedAt": "2026-11-05T06:28:14.660439+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/static/manhole-card/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/14346db9a522443bb1b92b1d.html",
+        "sha256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+        "bytes": 29617,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/use.html",
+        "fetchedAt": "2026-11-05T06:28:15.692241+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/use.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/103f17b85a197059fc1f98f2.html",
+        "sha256": "ae2935a3c018b62928c260e913843636574489c148ec67e2a457d64861867951",
+        "bytes": 21414,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "fetchedAt": "2026-11-05T06:28:15.695674+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/dc9d7f0c2c9273b373eda875.html",
+        "sha256": "7eb11057d71ccec608235a1f711f52e7721b582aa0831392baeeafc9bebfa9c8",
+        "bytes": 81920,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "fetchedAt": "2026-11-05T06:31:47.808281+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4430e70b57f7962f7179153c.html",
+        "sha256": "e38249920969376061ef1e5c139a8548e0d1b5fd78123de86c5c0e82b73711a7",
+        "bytes": 22775,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.city.kashiwara.osaka.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.823038+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/9576f5f995a47994e75f9d5d.html",
+        "sha256": "be74f8ac4ef0f8fd56ab3008612fe1fc0119e50e9f27f1a8358dca9adff77a1b",
+        "bytes": 55352,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashiwara.lg.jp/docs/2025011400081/",
+        "fetchedAt": "2026-11-05T06:31:53.920786+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashiwara.lg.jp/docs/2025011400081/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/f8c638bda3eb535d6ee9d01c.html",
+        "sha256": "b23f23e2b2f81398db0a75e8f31f2c4724be3b67581209d09231274f3d041e0a",
+        "bytes": 22994,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c.html",
+      "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-221-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A別館平日と本館図書休日、C堅下分館を照合。本文上部の旧市民文化センターより現行配布表を採用。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.kashiwara.osaka.jp/static/manhole-card/",
+        "fetchedAt": "2026-11-05T06:28:14.660439+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/14346db9a522443bb1b92b1d.html",
+        "snapshotSHA256": "f97165d291f7a95c4ffaa827cb183da0b762298c5771e86304e5c45b8acdc25c",
+        "status": 200,
+        "title": "マンホールカード | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/use.html",
+        "fetchedAt": "2026-11-05T06:28:15.692241+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/103f17b85a197059fc1f98f2.html",
+        "snapshotSHA256": "ae2935a3c018b62928c260e913843636574489c148ec67e2a457d64861867951",
+        "status": 200,
+        "title": "ご利用案内 | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/category/bunya/machizukuri_kankyo/douro_koutsu/",
+        "fetchedAt": "2026-11-05T06:28:15.695674+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/dc9d7f0c2c9273b373eda875.html",
+        "snapshotSHA256": "7eb11057d71ccec608235a1f711f52e7721b582aa0831392baeeafc9bebfa9c8",
+        "status": 200,
+        "title": "道路・交通 | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/docs/2014062700202/",
+        "fetchedAt": "2026-11-05T06:31:47.808281+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4430e70b57f7962f7179153c.html",
+        "snapshotSHA256": "e38249920969376061ef1e5c139a8548e0d1b5fd78123de86c5c0e82b73711a7",
+        "status": 200,
+        "title": "柏原市役所へのアクセス | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.kashiwara.osaka.jp/",
+        "fetchedAt": "2026-11-05T06:31:47.823038+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/9576f5f995a47994e75f9d5d.html",
+        "snapshotSHA256": "be74f8ac4ef0f8fd56ab3008612fe1fc0119e50e9f27f1a8358dca9adff77a1b",
+        "status": 200,
+        "title": "大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashiwara.lg.jp/docs/2025011400081/",
+        "fetchedAt": "2026-11-05T06:31:53.920786+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/f8c638bda3eb535d6ee9d01c.html",
+        "snapshotSHA256": "b23f23e2b2f81398db0a75e8f31f2c4724be3b67581209d09231274f3d041e0a",
+        "status": 200,
+        "title": "柏原市役所庁舎（本館・別館）について | 大阪府柏原市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 3 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-9a89ff7b1625b66ddbd8"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9d20fa57040c5342502f",
+    "name": "門真市役所宿直室(本館1階)",
+    "address": "大阪府門真市中町1-1",
+    "identityReason": "固定台帳と旧配布原本の本館1階宿直室。新取得公式ページは一時中止を掲示し、問い合わせは中町1-1の本館2階。建物所在地だけ補い既存配布状態を変えない。",
+    "coordinate": {
+      "lat": 34.739145,
+      "lng": 135.586899
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27223",
+        "P05_002": "1",
+        "P05_003": "門真市役所",
+        "P05_004": "門真市中町1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.586899,
+          34.739145
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1675,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "fetchedAt": "2026-11-05T06:28:37.844540+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/9d600b60cb33241a73ee1c84.html",
+        "sha256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+        "bytes": 48796,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kadoma.osaka.jp/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.852411+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4140a475e42fcf35452466d9.html",
+        "sha256": "9a8b47a70e234a51cf1cc0ea0791104b81c16174bc4d99fbc47536309b0c0255",
+        "bytes": 177934,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "fetchedAt": "2026-11-05T06:28:36.575358+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/a99fb0b0f86bc68638b9f9bc.html",
+        "sha256": "30269c0bf6d940da21a3dd656800846a4305e539fc4e574a3ce032eb3d76ba53",
+        "bytes": 54579,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5.html",
+      "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市制60周年のみ休止。砂子水路Aとは区別。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "fetchedAt": "2026-11-05T06:28:37.844540+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/9d600b60cb33241a73ee1c84.html",
+        "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+        "status": 200,
+        "title": "市制施行60周年記念マンホールカードの配布について(一時中止)／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.852411+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4140a475e42fcf35452466d9.html",
+        "snapshotSHA256": "9a8b47a70e234a51cf1cc0ea0791104b81c16174bc4d99fbc47536309b0c0255",
+        "status": 200,
+        "title": "ホーム／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "fetchedAt": "2026-11-05T06:28:36.575358+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/a99fb0b0f86bc68638b9f9bc.html",
+        "snapshotSHA256": "30269c0bf6d940da21a3dd656800846a4305e539fc4e574a3ce032eb3d76ba53",
+        "status": 200,
+        "title": "位置・アクセスルート／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-9d20fa57040c5342502f"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-9f543cc614431566426a",
+    "name": "田尻町立公民館",
+    "address": "大阪府泉南郡田尻町嘉祥寺1120番地2",
+    "identityReason": "公式配布案内は嘉祥寺1120番地2の田尻町立公民館、土日のみ。P05公民館の自治体コード27362・住所を照合。役場別館や観光案内所には使わない。",
+    "coordinate": {
+      "lat": 34.39505676,
+      "lng": 135.2879566
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27362",
+        "P05_002": "4",
+        "P05_003": "公民館",
+        "P05_004": "田尻町嘉祥寺1120-2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.2879566,
+          34.39505676
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 2106,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+        "fetchedAt": "2026-11-05T06:28:36.884346+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/9e0309a5c8167d11ac959031.html",
+        "sha256": "c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa",
+        "bytes": 55132,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.tajiri.osaka.jp/johowosagasu/shisetsuannai/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.006153+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.tajiri.osaka.jp/johowosagasu/shisetsuannai/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/214df73eb5014e6f7d3c4d88.html",
+        "sha256": "26aabfa665c29e71ee70b480fced7f30bcb1d8a95c43b7ae7ee65e902a9f3dd3",
+        "bytes": 50716,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.tajiri.osaka.jp/gyoseijoho/shisetsu/tajirityoyakuba/access.html",
+        "fetchedAt": "2026-11-05T06:28:37.020304+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.tajiri.osaka.jp/gyoseijoho/shisetsu/tajirityoyakuba/access.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/71691a7eb7a2b1290f6de7c6.html",
+        "sha256": "0e2b80e44130662bc299296ab14f516baf9ae94418d974249eb8792fa189893e",
+        "bytes": 53307,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.tajiri.osaka.jp/taisetsu/5760.html",
+        "fetchedAt": "2026-11-05T06:31:50.313935+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.tajiri.osaka.jp/taisetsu/5760.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6cdfa93599690e83b836baa4.html",
+        "sha256": "d4040581e2801f968b5dfa393af8c3a29e8f6bbc6d23da41ad404dc19d5e75fb",
+        "bytes": 56374,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.town.tajiri.osaka.jp",
+        "fetchedAt": "2026-11-05T06:31:50.362557+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.tajiri.osaka.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/da9fba730d7533badebee435.html",
+        "sha256": "9b9ba999a899bbb918683d3c30dcd6df1dacbc0572e643c6657bdf69c01f32aa",
+        "bytes": 123030,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa.html",
+      "snapshotSHA256": "c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-362-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場別館は平日、公民館は土日（祝日除外）、両9～17時。観光協会も配布するが未抽出proposal、観光協会の営業時間9～15時と市案内9～17時が相違。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.tajiri.osaka.jp/kakukanojoho/jigyobu/dobokugesuidoka/4/1/632.html",
+        "fetchedAt": "2026-11-05T06:28:36.884346+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/9e0309a5c8167d11ac959031.html",
+        "snapshotSHA256": "c7f729cbacaa2f6dff5a9f3931f0e31c829ca1e8c6d069cfb57779470efa07fa",
+        "status": 200,
+        "title": "マンホールカードの配布について／田尻町ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.tajiri.osaka.jp/johowosagasu/shisetsuannai/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.006153+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/214df73eb5014e6f7d3c4d88.html",
+        "snapshotSHA256": "26aabfa665c29e71ee70b480fced7f30bcb1d8a95c43b7ae7ee65e902a9f3dd3",
+        "status": 200,
+        "title": "施設案内／田尻町ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.tajiri.osaka.jp/gyoseijoho/shisetsu/tajirityoyakuba/access.html",
+        "fetchedAt": "2026-11-05T06:28:37.020304+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/71691a7eb7a2b1290f6de7c6.html",
+        "snapshotSHA256": "0e2b80e44130662bc299296ab14f516baf9ae94418d974249eb8792fa189893e",
+        "status": 200,
+        "title": "田尻町役場庁舎／田尻町ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.tajiri.osaka.jp/taisetsu/5760.html",
+        "fetchedAt": "2026-11-05T06:31:50.313935+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6cdfa93599690e83b836baa4.html",
+        "snapshotSHA256": "d4040581e2801f968b5dfa393af8c3a29e8f6bbc6d23da41ad404dc19d5e75fb",
+        "status": 200,
+        "title": "ふるさと納税サイト「ふるさとチョイス」への不正アクセスについて／田尻町ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.town.tajiri.osaka.jp",
+        "fetchedAt": "2026-11-05T06:31:50.362557+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/da9fba730d7533badebee435.html",
+        "snapshotSHA256": "9b9ba999a899bbb918683d3c30dcd6df1dacbc0572e643c6657bdf69c01f32aa",
+        "status": 200,
+        "title": "ホーム／田尻町ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-9f543cc614431566426a"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-aef2b45d74e197045af5",
+    "name": "橿原市観光交流センター「かしはらナビプラザ」1階",
+    "address": "奈良県橿原市内膳町1-6-8",
+    "identityReason": "内膳町1-6-8のかしはらナビプラザ。公式運営施設案内と配布案内を照合。P05観光交流センターを使用し、配布ページの藤原京マンホール蓋の数値qを使わない。同住所の観光センターレコードとの差は約1m。",
+    "coordinate": {
+      "lat": 34.512766,
+      "lng": 135.793121
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "29205",
+        "P05_002": "5",
+        "P05_003": "観光交流センター",
+        "P05_004": "橿原市内膳町1-6-8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.793121,
+          34.512766
+        ]
+      }
+    },
+    "sourceMember": "P05-22_29_GML.zip/P05-22_29.geojson",
+    "sourceMemberSHA256": "4300e86824172daeb12bc5ffd8b2d06fe2d9a78a4013b623482f39579c13cb5b",
+    "featureIndex": 278,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+        "fetchedAt": "2026-11-05T06:28:39.205229+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/3253be0d3fb6235286ef4406.html",
+        "sha256": "dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d",
+        "bytes": 83569,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "fetchedAt": "2026-11-05T06:28:03.828752+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/95bc58b06d8c88f826aaad91.html",
+        "sha256": "9c27a0bfcecb99c8f7558418262c51d04f5f959e2d0042b0e57a33d59a2a3c14",
+        "bytes": 76633,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://kashihara-naviplaza.com/about/",
+        "fetchedAt": "2026-11-05T06:28:39.422335+00:00",
+        "status": 200,
+        "finalUrl": "https://kashihara-naviplaza.com/about/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/3ddfe7e182ce4a957a7d114c.html",
+        "sha256": "d1c0b12f04b6abf702a2a580ea88ee21f6eeff12575432bc149ca69f13d79c96",
+        "bytes": 42591,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "http://www.kashihara-naviplaza.com/",
+        "fetchedAt": "2026-11-05T06:31:51.198477+00:00",
+        "status": 200,
+        "finalUrl": "https://kashihara-naviplaza.com/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4abb93a40900a0c268339dcb.html",
+        "sha256": "1215d67803c6c4db54fd66455b9c7269db960a6abb404d8267119a087b247c7c",
+        "bytes": 50749,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d.html",
+      "snapshotSHA256": "dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-C001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。Bは2026/4/1移転後のJAならけん2階資料室、Cはナビプラザ1階。配布時間は問合せ受付時間と区別。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1006/gyomu/citysales/16403.html",
+        "fetchedAt": "2026-11-05T06:28:39.205229+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/3253be0d3fb6235286ef4406.html",
+        "snapshotSHA256": "dcf067ce58869a5c88755ed3fb7830b35042827fbe035ce65cb0f1aa0a805e0d",
+        "status": 200,
+        "title": "マンホールカード配布について（よみがえる藤原京・リュウ）／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 1,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1003/gyomu/3/kashiharashinitsuite/12396.html",
+        "fetchedAt": "2026-11-05T06:28:03.828752+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/95bc58b06d8c88f826aaad91.html",
+        "snapshotSHA256": "9c27a0bfcecb99c8f7558418262c51d04f5f959e2d0042b0e57a33d59a2a3c14",
+        "status": 200,
+        "title": "市役所へのアクセス／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://kashihara-naviplaza.com/about/",
+        "fetchedAt": "2026-11-05T06:28:39.422335+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/3ddfe7e182ce4a957a7d114c.html",
+        "snapshotSHA256": "d1c0b12f04b6abf702a2a580ea88ee21f6eeff12575432bc149ca69f13d79c96",
+        "status": 200,
+        "title": "かしはらナビプラザとは | かしはらナビプラザ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.kashihara-naviplaza.com/",
+        "fetchedAt": "2026-11-05T06:31:51.198477+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4abb93a40900a0c268339dcb.html",
+        "snapshotSHA256": "1215d67803c6c4db54fd66455b9c7269db960a6abb404d8267119a087b247c7c",
+        "status": 200,
+        "title": "かしはらナビプラザ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 3 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-aef2b45d74e197045af5"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-b4ecd274f209e965389d",
+    "name": "加西市民会館",
+    "address": "兵庫県加西市北条町古坂1-1",
+    "identityReason": "公式配布案内の休日窓口。施設運営者のアクセス・概要の北条町古坂1-1と一致。併設中央公民館の用途別点との差は約2m。別住所の役所付属棟には転用しない。",
+    "coordinate": {
+      "lat": 34.92615044,
+      "lng": 134.8402468
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28220",
+        "P05_002": "5",
+        "P05_003": "加西市民会館",
+        "P05_004": "加西市北条町古坂1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.8402468,
+          34.92615044
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1455,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+        "fetchedAt": "2026-11-05T06:28:39.798526+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/a33006917a6eff092764c373.html",
+        "sha256": "22cb17feae3a3f06f942e8c2bc4923c1879ebb63aea693bef5b4494c8aed7536",
+        "bytes": 26590,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.kasai-shimin.jp/access/",
+        "fetchedAt": "2026-11-05T06:28:39.819268+00:00",
+        "status": 200,
+        "finalUrl": "https://www.kasai-shimin.jp/access/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bf5b425e872ebfbcc17b7dbc.html",
+        "sha256": "ab2d910bb2634d873a6fe53647dc9b9479e870eef716d560d37ee8050a743722",
+        "bytes": 42766,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.kasai-shimin.jp/about/outline/",
+        "fetchedAt": "2026-11-05T06:28:39.827427+00:00",
+        "status": 200,
+        "finalUrl": "https://www.kasai-shimin.jp/about/outline/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/565246618e0dd4e27e30a111.html",
+        "sha256": "985fba25c1748c3b201aae25eff24f0a206f1aeaa0aa27cb7d971d9b41e492a9",
+        "bytes": 43720,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.kasai-shimin.jp/about/",
+        "fetchedAt": "2026-11-05T06:31:51.539648+00:00",
+        "status": 200,
+        "finalUrl": "https://www.kasai-shimin.jp/about/outline/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/d75cdfcfb6b632f6057fa811.html",
+        "sha256": "985fba25c1748c3b201aae25eff24f0a206f1aeaa0aa27cb7d971d9b41e492a9",
+        "bytes": 43720,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.kasai-shimin.jp/",
+        "fetchedAt": "2026-11-05T06:31:51.595069+00:00",
+        "status": 200,
+        "finalUrl": "https://www.kasai-shimin.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bfdb79ffdaed9362d4c24674.html",
+        "sha256": "d26488c31760347e2053bc73d65ad816d0fe106895cb5ed12a27592c4e61643d",
+        "bytes": 67004,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5.html",
+      "snapshotSHA256": "2f3840c62d4ef227be863c7b9844078445a90ebaec5f6b69aa9d53bcd659a4d5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-220-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。A平日付属棟2階上下水道課／休日市民会館、B北条町駅。双方在庫十分。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kasai.hyogo.jp/site/jougesuido/1249.html",
+        "fetchedAt": "2026-11-05T06:28:39.798526+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/a33006917a6eff092764c373.html",
+        "snapshotSHA256": "22cb17feae3a3f06f942e8c2bc4923c1879ebb63aea693bef5b4494c8aed7536",
+        "status": 200,
+        "title": "マンホールカードの配布 - 加西市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.kasai-shimin.jp/access/",
+        "fetchedAt": "2026-11-05T06:28:39.819268+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bf5b425e872ebfbcc17b7dbc.html",
+        "snapshotSHA256": "ab2d910bb2634d873a6fe53647dc9b9479e870eef716d560d37ee8050a743722",
+        "status": 200,
+        "title": "交通アクセス｜加西市民会館",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.kasai-shimin.jp/about/outline/",
+        "fetchedAt": "2026-11-05T06:28:39.827427+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/565246618e0dd4e27e30a111.html",
+        "snapshotSHA256": "985fba25c1748c3b201aae25eff24f0a206f1aeaa0aa27cb7d971d9b41e492a9",
+        "status": 200,
+        "title": "施設概要｜加西市民会館",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.kasai-shimin.jp/about/",
+        "fetchedAt": "2026-11-05T06:31:51.539648+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/d75cdfcfb6b632f6057fa811.html",
+        "snapshotSHA256": "985fba25c1748c3b201aae25eff24f0a206f1aeaa0aa27cb7d971d9b41e492a9",
+        "status": 200,
+        "title": "施設概要｜加西市民会館",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.kasai-shimin.jp/",
+        "fetchedAt": "2026-11-05T06:31:51.595069+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bfdb79ffdaed9362d4c24674.html",
+        "snapshotSHA256": "d26488c31760347e2053bc73d65ad816d0fe106895cb5ed12a27592c4e61643d",
+        "status": 200,
+        "title": "加西市民会館｜兵庫県加西市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-b4ecd274f209e965389d"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-bd54ffa4ff05c5de2e21",
+    "name": "環境水道部経営総務課(本館2階)",
+    "address": "大阪府門真市中町1-1",
+    "identityReason": "固定台帳の本館2階。現行一時中止案内の問い合わせ先も経営総務課本館2階・中町1-1と明記。配布状態を変えず役所本館の建物点のみ補完。",
+    "coordinate": {
+      "lat": 34.739145,
+      "lng": 135.586899
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27223",
+        "P05_002": "1",
+        "P05_003": "門真市役所",
+        "P05_004": "門真市中町1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.586899,
+          34.739145
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1675,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "fetchedAt": "2026-11-05T06:28:37.844540+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/9d600b60cb33241a73ee1c84.html",
+        "sha256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+        "bytes": 48796,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kadoma.osaka.jp/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.852411+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4140a475e42fcf35452466d9.html",
+        "sha256": "9a8b47a70e234a51cf1cc0ea0791104b81c16174bc4d99fbc47536309b0c0255",
+        "bytes": 177934,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "fetchedAt": "2026-11-05T06:28:36.575358+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/a99fb0b0f86bc68638b9f9bc.html",
+        "sha256": "30269c0bf6d940da21a3dd656800846a4305e539fc4e574a3ce032eb3d76ba53",
+        "bytes": 54579,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5.html",
+      "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-223-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。市制60周年のみ休止。砂子水路Aとは区別。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "fetchedAt": "2026-11-05T06:28:37.844540+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/9d600b60cb33241a73ee1c84.html",
+        "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+        "status": 200,
+        "title": "市制施行60周年記念マンホールカードの配布について(一時中止)／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/index.html",
+        "fetchedAt": "2026-11-05T06:28:37.852411+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4140a475e42fcf35452466d9.html",
+        "snapshotSHA256": "9a8b47a70e234a51cf1cc0ea0791104b81c16174bc4d99fbc47536309b0c0255",
+        "status": 200,
+        "title": "ホーム／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kadoma.osaka.jp/shisei/shokai/5398.html",
+        "fetchedAt": "2026-11-05T06:28:36.575358+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/a99fb0b0f86bc68638b9f9bc.html",
+        "snapshotSHA256": "30269c0bf6d940da21a3dd656800846a4305e539fc4e574a3ce032eb3d76ba53",
+        "status": 200,
+        "title": "位置・アクセスルート／門真市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-bd54ffa4ff05c5de2e21"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-c5cb26a1af3a611b70b7",
+    "name": "吉川支所地域振興課",
+    "address": "兵庫県三木市吉川町大沢412",
+    "identityReason": "公式配布案内が吉川町大沢412の吉川支所と明記。P05支所を選び、同番地の健康福祉センター点を選ばない。吉安222の山田錦の館とも別。",
+    "coordinate": {
+      "lat": 34.88433915,
+      "lng": 135.12208613
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28215",
+        "P05_002": "2",
+        "P05_003": "吉川支所",
+        "P05_004": "三木市吉川町大沢412"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.12208613,
+          34.88433915
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1247,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+        "fetchedAt": "2026-11-05T06:28:24.113252+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/236daf1cb69e0260f2d4686a.html",
+        "sha256": "d34d5cc0d36272858cf8933bd2cf1588c48ce81dcd7a2e95b698a1de9b2412e1",
+        "bytes": 27966,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.miki.lg.jp/soshiki/7/1232.html",
+        "fetchedAt": "2026-11-05T06:28:25.363490+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.miki.lg.jp/soshiki/7/1232.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/e741c0c4eb97b65cfa59df11.html",
+        "sha256": "9c590fa1e939e86a03f16ad9f0cec7484ca5f6bd30fa03d17ccf90999789b1e7",
+        "bytes": 23269,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.miki.lg.jp/soshiki/0/1480.html",
+        "fetchedAt": "2026-11-05T06:28:25.823933+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.miki.lg.jp/soshiki/0/1480.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/8ce60b3cdfc2603ed81caf7c.html",
+        "sha256": "89706d93e74874a11ec539db1c379032cb9dd3b64145c725401265560f2ce787",
+        "bytes": 21114,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.miki.lg.jp/soshiki/43/",
+        "fetchedAt": "2026-11-05T06:31:51.893491+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.miki.lg.jp/soshiki/43/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/5812d65d0719800a728decfb.html",
+        "sha256": "d4f8f0c0d9a6f049434e8e05fa5d8deb0c1c111c1e2fc7ab10683a456930ea2d",
+        "bytes": 19718,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.miki.lg.jp/life/5/26/119/",
+        "fetchedAt": "2026-11-05T06:31:48.250074+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.miki.lg.jp/life/5/26/119/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/62240043d71a2efcf7cd4f7d.html",
+        "sha256": "8598877b200289dfa67ab0c174033b2ab5987d6abd89ad7f3a22944ddbdb1d3e",
+        "bytes": 18189,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9.html",
+      "snapshotSHA256": "52fc28a00853c95676f5dcdd064aee00dacbd7270efc634a93fd4eeb1ef09cf9",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-215-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/7/1更新の各窓口を照合。Cの配布は10～15時で施設営業とは異なる。旧道の駅みきでの配布は6月終了。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.miki.lg.jp/soshiki/46/8300.html",
+        "fetchedAt": "2026-11-05T06:28:24.113252+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/236daf1cb69e0260f2d4686a.html",
+        "snapshotSHA256": "d34d5cc0d36272858cf8933bd2cf1588c48ce81dcd7a2e95b698a1de9b2412e1",
+        "status": 200,
+        "title": "マンホールカードの配布（配布場所にご注意ください） - 三木市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.miki.lg.jp/soshiki/7/1232.html",
+        "fetchedAt": "2026-11-05T06:28:25.363490+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/e741c0c4eb97b65cfa59df11.html",
+        "snapshotSHA256": "9c590fa1e939e86a03f16ad9f0cec7484ca5f6bd30fa03d17ccf90999789b1e7",
+        "status": 200,
+        "title": "三木市役所へのアクセス - 三木市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.miki.lg.jp/soshiki/0/1480.html",
+        "fetchedAt": "2026-11-05T06:28:25.823933+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/8ce60b3cdfc2603ed81caf7c.html",
+        "snapshotSHA256": "89706d93e74874a11ec539db1c379032cb9dd3b64145c725401265560f2ce787",
+        "status": 200,
+        "title": "三木市への交通手段 - 三木市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.miki.lg.jp/soshiki/43/",
+        "fetchedAt": "2026-11-05T06:31:51.893491+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/5812d65d0719800a728decfb.html",
+        "snapshotSHA256": "d4f8f0c0d9a6f049434e8e05fa5d8deb0c1c111c1e2fc7ab10683a456930ea2d",
+        "status": 200,
+        "title": "地域振興課 - 三木市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": true
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.miki.lg.jp/life/5/26/119/",
+        "fetchedAt": "2026-11-05T06:31:48.250074+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/62240043d71a2efcf7cd4f7d.html",
+        "snapshotSHA256": "8598877b200289dfa67ab0c174033b2ab5987d6abd89ad7f3a22944ddbdb1d3e",
+        "status": 200,
+        "title": "市役所へのアクセス - 三木市ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-c5cb26a1af3a611b70b7"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-d8ae994ed35d69a0dfb1",
+    "name": "パープルホール(藤井寺市立市民総合会館)1階地域サービス公社管理事務所",
+    "address": "大阪府藤井寺市北岡1丁目2番3号",
+    "identityReason": "配布ページがパープルホール本館1階事務所と北岡1-2-3を指定。P05も明示的に本館パープルホール。一般的な会館点・藤井寺市役所点からの推測ではない。",
+    "coordinate": {
+      "lat": 34.57612131,
+      "lng": 135.5963817
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27226",
+        "P05_002": "5",
+        "P05_003": "市民総合会館本館パープルホール",
+        "P05_004": "藤井寺市北岡1-2-3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.5963817,
+          34.57612131
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1804,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "fetchedAt": "2026-11-05T06:28:35.805784+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/63c9335c3c65e09bca49a9b5.html",
+        "sha256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+        "bytes": 38723,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "fetchedAt": "2026-11-05T06:28:35.860372+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/06bbcc4e1d521bf14a1bb0ca.html",
+        "sha256": "34258b186124a4255a9ee335a81ea2cf008a2fc1c83b903b7590cd15b3ed3bef",
+        "bytes": 39442,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city-fujiidera-kosha.or.jp/shisetsu/",
+        "fetchedAt": "2026-11-05T06:28:40.749557+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city-fujiidera-kosha.or.jp/shisetsu",
+        "path": "data/evidence/issue7/kinki-west/snapshots/92cd86d47b9c2ab57217f17b.html",
+        "sha256": "e77ada57f1c23df8982698d962d88eed29e2aa72abc31da7c4149823a793d874",
+        "bytes": 38993,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.city-fujiidera-kosha.or.jp/",
+        "fetchedAt": "2026-11-05T06:31:52.450124+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city-fujiidera-kosha.or.jp/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4846e570b5c89e528a2a85e2.html",
+        "sha256": "a866522c681167af15b3932b4c97b912fc7dae92e4342d7cf9fc83a84eb52430",
+        "bytes": 37147,
+        "contentType": "text/html; charset=UTF-8"
+      },
+      {
+        "url": "https://www.city-fujiidera-kosha.or.jp/access/",
+        "fetchedAt": "2026-11-05T06:31:52.602610+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city-fujiidera-kosha.or.jp/access",
+        "path": "data/evidence/issue7/kinki-west/snapshots/972697d97be0dd75cfefbcd9.html",
+        "sha256": "0f4cb8877f87a9198b6113e4d419b08c61f3671e282c8c636a696b2d540579b1",
+        "bytes": 34065,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a.html",
+      "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-226-B001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。パープルホール1階地域サービス公社事務所。現行legacy同住所と一致。公式連絡先072-937-2321へ訂正可能。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/soshiki/toshiseibi/gesuidosoumu/11043.html",
+        "fetchedAt": "2026-11-05T06:28:35.805784+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/63c9335c3c65e09bca49a9b5.html",
+        "snapshotSHA256": "38cb8490b9eed190f6c22c46d0049696f73284c95533d74ac825973c2785b00a",
+        "status": 200,
+        "title": "【配布中】藤井寺市のマンホールカードについて／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.fujiidera.lg.jp/shisetsuannaibasu/shiyakusho/1387413886663.html",
+        "fetchedAt": "2026-11-05T06:28:35.860372+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/06bbcc4e1d521bf14a1bb0ca.html",
+        "snapshotSHA256": "34258b186124a4255a9ee335a81ea2cf008a2fc1c83b903b7590cd15b3ed3bef",
+        "status": 200,
+        "title": "本庁／藤井寺市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 1,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city-fujiidera-kosha.or.jp/shisetsu/",
+        "fetchedAt": "2026-11-05T06:28:40.749557+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/92cd86d47b9c2ab57217f17b.html",
+        "snapshotSHA256": "e77ada57f1c23df8982698d962d88eed29e2aa72abc31da7c4149823a793d874",
+        "status": 200,
+        "title": "藤井寺市立市民総合会館(パープルホール)",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city-fujiidera-kosha.or.jp/",
+        "fetchedAt": "2026-11-05T06:31:52.450124+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4846e570b5c89e528a2a85e2.html",
+        "snapshotSHA256": "a866522c681167af15b3932b4c97b912fc7dae92e4342d7cf9fc83a84eb52430",
+        "status": 200,
+        "title": "藤井寺市立市民総合会館(パープルホール)",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city-fujiidera-kosha.or.jp/access/",
+        "fetchedAt": "2026-11-05T06:31:52.602610+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/972697d97be0dd75cfefbcd9.html",
+        "snapshotSHA256": "0f4cb8877f87a9198b6113e4d419b08c61f3671e282c8c636a696b2d540579b1",
+        "status": 200,
+        "title": "藤井寺市立市民総合会館(パープルホール)",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-d8ae994ed35d69a0dfb1"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-daaa4e44e2c541067679",
+    "name": "スワンホール",
+    "address": "兵庫県伊丹市昆陽池2丁目1",
+    "identityReason": "水道局配布案内と市施設案内がスワンホール、昆陽池2-1を指定。P05の明示的なスワンホール点を選択。同住所の中央公民館レコード948は約480m離れているため使用しない。市施設案内は労働福祉会館・中央公民館等が同施設内と明記し名称同定を補強。",
+    "coordinate": {
+      "lat": 34.786012,
+      "lng": 135.396727
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28207",
+        "P05_002": "5",
+        "P05_003": "スワンホール",
+        "P05_004": "伊丹市昆陽池2-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.396727,
+          34.786012
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 947,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+        "fetchedAt": "2026-11-05T06:28:32.383755+00:00",
+        "status": 200,
+        "finalUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/45bb7c10149ccb81146959eb.html",
+        "sha256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+        "bytes": 48479,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.itami.lg.jp/shiseijoho/shiyakusho/index.html",
+        "fetchedAt": "2026-11-05T06:28:32.408856+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.itami.lg.jp/shiseijoho/shiyakusho/index.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/cc700761069335a56b4f7a9d.html",
+        "sha256": "62e919080c9ef8edae2517bc8802d20f4f278c598578c08274759ffd36c2c6e2",
+        "bytes": 46743,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.itami.lg.jp/SISETU_KIKAN/HUKUSIJINKEN/1392084168786.html",
+        "fetchedAt": "2026-11-05T06:31:52.867072+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.itami.lg.jp/SISETU_KIKAN/HUKUSIJINKEN/1392084168786.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/6a12173f33bb700e96ebe11f.html",
+        "sha256": "44fafa63baaf8d871d3493e9d8c3d576dec6ea79126e2647c46f4550a614f657",
+        "bytes": 51677,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://nem-shiteikanri.jp/shisetsu/itami/",
+        "fetchedAt": "2026-11-05T06:31:52.911660+00:00",
+        "status": 200,
+        "finalUrl": "https://nem-shiteikanri.jp/shisetsu/itami/",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bd5ebeb74247742d0ae5f36a.html",
+        "sha256": "d960a734d2d5d09093c68e42be2c6d78bff59331ecd510d8a04f85b2392d508f",
+        "bytes": 106545,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12.html",
+      "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-207-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。各カード配布表と在庫を照合。B休日とCの観光物産ギャラリーは2026/9/14移転、旧窓口と誤対応させない。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.water.itami.hyogo.jp/tetsuzuki/manholecard/manholecard.html",
+        "fetchedAt": "2026-11-05T06:28:32.383755+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/45bb7c10149ccb81146959eb.html",
+        "snapshotSHA256": "3f75b768e378feb126c16dd8db1a10d60cfa49c4159b47de9473530b1aa14a12",
+        "status": 200,
+        "title": "デザインマンホールカード配布中／伊丹市上下水道局",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.itami.lg.jp/shiseijoho/shiyakusho/index.html",
+        "fetchedAt": "2026-11-05T06:28:32.408856+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/cc700761069335a56b4f7a9d.html",
+        "snapshotSHA256": "62e919080c9ef8edae2517bc8802d20f4f278c598578c08274759ffd36c2c6e2",
+        "status": 200,
+        "title": "市役所の案内・行き方・業務時間／伊丹市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://goo.gl/maps/tYN6zSp81e8SioiQ7",
+        "fetchedAt": "2026-11-05T06:28:32.844173+00:00",
+        "result": "取得失敗。制限回避・同一URL再試行なし。",
+        "error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.itami.lg.jp/SISETU_KIKAN/HUKUSIJINKEN/1392084168786.html",
+        "fetchedAt": "2026-11-05T06:31:52.867072+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/6a12173f33bb700e96ebe11f.html",
+        "snapshotSHA256": "44fafa63baaf8d871d3493e9d8c3d576dec6ea79126e2647c46f4550a614f657",
+        "status": 200,
+        "title": "スワンホール（労働福祉会館・中央公民館・青少年センター・市民まちづくりプラザ）／伊丹市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://nem-shiteikanri.jp/shisetsu/itami/",
+        "fetchedAt": "2026-11-05T06:31:52.911660+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bd5ebeb74247742d0ae5f36a.html",
+        "snapshotSHA256": "d960a734d2d5d09093c68e42be2c6d78bff59331ecd510d8a04f85b2392d508f",
+        "status": 200,
+        "title": "スワンホール | 伊丹市立労働福祉会館・伊丹市立中央公民館・伊丹市青少年センター",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 5 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-daaa4e44e2c541067679"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-f44bd7e08bcfe2fc763c",
+    "name": "福崎町役場上下水道課",
+    "address": "兵庫県神崎郡福崎町南田原3116番地の1",
+    "identityReason": "新取得配布ページに町役場上下水道課窓口を明記。南田原3116-1がP05役場と一致。フクちゃんプラザ・サキちゃんプラザの点には転用しない。",
+    "coordinate": {
+      "lat": 34.950319,
+      "lng": 134.760245
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28443",
+        "P05_002": "1",
+        "P05_003": "福崎町役場",
+        "P05_004": "福崎町南田原3116-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.760245,
+          34.950319
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 2162,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "http://www.town.fukusaki.hyogo.jp/0000002753.html",
+        "fetchedAt": "2026-11-05T06:28:41.904673+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.fukusaki.hyogo.jp/0000002753.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/21ebd550cf060bc75781838d.html",
+        "sha256": "e4e669b1d52d12f71c1d412980ef538789fb7d1e4171e4f8d10fc5a68c53b69b",
+        "bytes": 17950,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "fetchedAt": "2026-11-05T06:28:41.913353+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/4b3653aa4bfa587f89590075.html",
+        "sha256": "27a36bc02ed46a2d18116d76b1bea535186a9582c62e1e757c6778eec9a890fe",
+        "bytes": 18466,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "fetchedAt": "2026-11-05T06:28:41.930099+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/444eea8bef9a7dcb7358dae4.html",
+        "sha256": "3409cec18bf99ebd6b4c5920f26579b62e0097d07d83c8a0fbee16741c6b296a",
+        "bytes": 18465,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://www.town.fukusaki.hyogo.jp/0000000112.html",
+        "fetchedAt": "2026-11-05T06:31:53.515128+00:00",
+        "status": 200,
+        "finalUrl": "https://www.town.fukusaki.hyogo.jp/0000000112.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/10871899530436a02fbda877.html",
+        "sha256": "36d8dc6dd7f771eb5139e4f75042f49ddccdf5e29c07b6b7709d77024f7e36af",
+        "bytes": 18417,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "http://www.town.fukusaki.hyogo.jp/0000002753.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-57f6a4c34899e09abb754f6f34afc77f617259d448fe35f170069f4342cfaa19.html",
+      "snapshotSHA256": "57f6a4c34899e09abb754f6f34afc77f617259d448fe35f170069f4342cfaa19",
+      "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 28-443-A001",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。役場8:30～17:15土日祝も可。在庫700枚2026/10/21。フクちゃんプラザ・サキちゃんプラザの追加配布所はproposal。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.town.fukusaki.hyogo.jp/0000002753.html",
+        "fetchedAt": "2026-11-05T06:28:41.904673+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/21ebd550cf060bc75781838d.html",
+        "snapshotSHA256": "e4e669b1d52d12f71c1d412980ef538789fb7d1e4171e4f8d10fc5a68c53b69b",
+        "status": 200,
+        "title": "マンホールカードを配布しています | 福崎町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "fetchedAt": "2026-11-05T06:28:41.913353+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/4b3653aa4bfa587f89590075.html",
+        "snapshotSHA256": "27a36bc02ed46a2d18116d76b1bea535186a9582c62e1e757c6778eec9a890fe",
+        "status": 200,
+        "title": "福崎町アクセスマップ | 福崎町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.town.fukusaki.hyogo.jp/0000000002.html",
+        "fetchedAt": "2026-11-05T06:28:41.930099+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/444eea8bef9a7dcb7358dae4.html",
+        "snapshotSHA256": "3409cec18bf99ebd6b4c5920f26579b62e0097d07d83c8a0fbee16741c6b296a",
+        "status": 200,
+        "title": "福崎町アクセスマップ | 福崎町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.town.fukusaki.hyogo.jp/0000000112.html",
+        "fetchedAt": "2026-11-05T06:31:53.515128+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/10871899530436a02fbda877.html",
+        "snapshotSHA256": "36d8dc6dd7f771eb5139e4f75042f49ddccdf5e29c07b6b7709d77024f7e36af",
+        "status": 200,
+        "title": "下水道 | 福崎町",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-f44bd7e08bcfe2fc763c"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-higashiosaka-lobby",
+    "name": "東大阪市役所22階 展望ロビー",
+    "address": "大阪府東大阪市荒本北一丁目1番1号",
+    "identityReason": "公式配布案内で22階展望ロビーと13階下水道課を同じ東大阪市役所内と確認。P05市役所の名称住所一致。室内精密点は不要。",
+    "coordinate": {
+      "lat": 34.679324,
+      "lng": 135.600898
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "27227",
+        "P05_002": "1",
+        "P05_003": "東大阪市役所",
+        "P05_004": "東大阪市荒本北1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.600898,
+          34.679324
+        ]
+      }
+    },
+    "sourceMember": "P05-22_27_GML.zip/P05-22_27.geojson",
+    "sourceMemberSHA256": "276e2318e0251700f1f37c3e44a97dd06f96bc22eb71c8601a46bf284ca74962",
+    "featureIndex": 1838,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+        "fetchedAt": "2026-11-05T06:28:37.558677+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/0000019197.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/84af15b97594c4ff338c9484.html",
+        "sha256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+        "bytes": 26005,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "fetchedAt": "2026-11-05T06:37:38.892459+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/229a89da6feef8d0f0a9ef6a.html",
+        "sha256": "ce021d98b8b5dfa83bc1ab2debb71f281942d8225e71608a14d43ea34f31596d",
+        "bytes": 18448,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f.html",
+      "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+      "sourceLocator": "東大阪市役所22階 展望ロビー",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "http://www.city.higashiosaka.lg.jp/0000019197.html",
+        "fetchedAt": "2026-11-05T06:28:37.558677+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/84af15b97594c4ff338c9484.html",
+        "snapshotSHA256": "1d85f1862b4e9d02bd35940fc86ebf695ebd0c7a2c663dcd1e34f5c3d698f34f",
+        "status": 200,
+        "title": "東大阪市の「マンホールカード」　【配布再開しました！】 | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.higashiosaka.lg.jp/site_policy/0000000033.html",
+        "fetchedAt": "2026-11-05T06:37:38.892459+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/229a89da6feef8d0f0a9ef6a.html",
+        "snapshotSHA256": "ce021d98b8b5dfa83bc1ab2debb71f281942d8225e71608a14d43ea34f31596d",
+        "status": 200,
+        "title": "市役所本庁舎へのアクセス | 東大阪市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-higashiosaka-lobby"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-imai-machizukuri",
+    "name": "今井まちづくりセンター",
+    "address": "奈良県橿原市今井町3丁目8番8号",
+    "identityReason": "新取得公式配布案内が2026年10月1日以降の配布先を今井町3丁目8番8号と明記。P05の当該まちづくりセンターそのものを採用。旧華甍の点は使わない。",
+    "coordinate": {
+      "lat": 34.506423,
+      "lng": 135.78531
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "29205",
+        "P05_002": "3",
+        "P05_003": "今井まちづくりセンター",
+        "P05_004": "橿原市今井町3-8-8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.78531,
+          34.506423
+        ]
+      }
+    },
+    "sourceMember": "P05-22_29_GML.zip/P05-22_29.geojson",
+    "sourceMemberSHA256": "4300e86824172daeb12bc5ffd8b2d06fe2d9a78a4013b623482f39579c13cb5b",
+    "featureIndex": 274,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "fetchedAt": "2026-11-05T06:28:03.825792+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/bc1f9981003102a1ff48664c.html",
+        "sha256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+        "bytes": 80189,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "fetchedAt": "2026-11-05T06:31:47.401758+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/2a71613424a1290ffe3ad6d8.html",
+        "sha256": "e1f0d2874a9defd44a478e575bc6e51f49f736deee727841f56e9d2bd8f40286",
+        "bytes": 87408,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617.html",
+      "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+      "sourceLocator": "「今井まちづくりセンター」（今井町3丁目8番8号）にてマンホールカードの配布を継続しております。",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "fetchedAt": "2026-11-05T06:28:03.825792+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/bc1f9981003102a1ff48664c.html",
+        "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+        "status": 200,
+        "title": "マンホールカード配布について／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.kashihara.nara.jp/soshiki/1021/gyomu/1/332.html",
+        "fetchedAt": "2026-11-05T06:31:47.401758+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/2a71613424a1290ffe3ad6d8.html",
+        "snapshotSHA256": "e1f0d2874a9defd44a478e575bc6e51f49f736deee727841f56e9d2bd8f40286",
+        "status": 200,
+        "title": "（休館中）今井まちなみ交流センター「華甍」／橿原市公式ホームページ",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 1 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-imai-machizukuri"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  },
+  {
+    "facilityId": "facility:kinki-takasago-cityhall",
+    "name": "高砂市役所本庁舎3階12番窓口 上下水道部経営総務室",
+    "address": "兵庫県高砂市荒井町千鳥1丁目1番1号",
+    "identityReason": "公式2021年11月広報の本庁舎開庁と、現行配布案内の本庁舎3階12番窓口を照合。開庁後の2022年P05の高砂市役所を採用し西庁舎レコード1290は使わない。一般に改修履歴がない証明を求めず既知の建替え時期とデータ時点を確認。",
+    "coordinate": {
+      "lat": 34.765921,
+      "lng": 134.790614
+    },
+    "sourceFeature": {
+      "type": "Feature",
+      "properties": {
+        "P05_001": "28216",
+        "P05_002": "1",
+        "P05_003": "高砂市役所",
+        "P05_004": "高砂市荒井町千鳥1-1-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.790614,
+          34.765921
+        ]
+      }
+    },
+    "sourceMember": "P05-22_28_GML.zip/P05-22_28.geojson",
+    "sourceMemberSHA256": "1c40faee88e0284d875c640345dbf80f3580010517c40679dccc5aade00ff614",
+    "featureIndex": 1298,
+    "datum": "JGD2011 EPSG:6668; GeoJSON経度,緯度をlat,lngに対応。測地系変換・測量精度の上乗せなし。",
+    "datasetFetchedAt": "2026-11-05T04:46:10.674180+00:00",
+    "currentSources": [
+      {
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+        "fetchedAt": "2026-11-05T06:28:30.940298+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/21d0ca6aa35b846f0dbb4758.html",
+        "sha256": "7e03e968956c902ad482433792e2e02ccf343893ed54dd8d33b6a097e0d5dfa5",
+        "bytes": 57950,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/yakusho_madoguchiannai/6596.html",
+        "fetchedAt": "2026-11-05T06:31:53.783922+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/yakusho_madoguchiannai/6596.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/9d87c73d24965c07cc780c5d.html",
+        "sha256": "2c1510bb92a9bb30dbc5f5924cf8eb58b1322f8464a7fa90fedd28c606bc1b56",
+        "bytes": 66691,
+        "contentType": "text/html"
+      },
+      {
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/koho_kocho/4/7/3/2/6216.html",
+        "fetchedAt": "2026-11-05T06:31:53.910843+00:00",
+        "status": 200,
+        "finalUrl": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/koho_kocho/4/7/3/2/6216.html",
+        "path": "data/evidence/issue7/kinki-west/snapshots/825405057f7fad8c67b875c4.html",
+        "sha256": "e7f22b918cdc6118890976d99ba7ba2a4c57d62bc20dd3416da5999c5d4f449c",
+        "bytes": 157179,
+        "contentType": "text/html"
+      }
+    ],
+    "priorDistributionEvidence": {
+      "sourceUrl": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56.html",
+      "snapshotSHA256": "fe06ffd2529d730aea1d709c27a174e10bc3b85af6e1f8595526ec2dde89eb56",
+      "sourceLocator": "本庁舎3階12番窓口 上下水道部経営総務室",
+      "checkedAt": "2026-11-05",
+      "actorType": "ai",
+      "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+    },
+    "attempts": [
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/kurashi_tetsuzuki/jogesuido/1/3434.html",
+        "fetchedAt": "2026-11-05T06:28:30.940298+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/21d0ca6aa35b846f0dbb4758.html",
+        "snapshotSHA256": "7e03e968956c902ad482433792e2e02ccf343893ed54dd8d33b6a097e0d5dfa5",
+        "status": 200,
+        "title": "マンホールカードの配布／高砂市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/yakusho_madoguchiannai/6596.html",
+        "fetchedAt": "2026-11-05T06:31:53.783922+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/9d87c73d24965c07cc780c5d.html",
+        "snapshotSHA256": "2c1510bb92a9bb30dbc5f5924cf8eb58b1322f8464a7fa90fedd28c606bc1b56",
+        "status": 200,
+        "title": "庁舎のご案内／高砂市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-web-fetch",
+        "url": "https://www.city.takasago.lg.jp/gyoseisite/shiseijoho/koho_kocho/4/7/3/2/6216.html",
+        "fetchedAt": "2026-11-05T06:31:53.910843+00:00",
+        "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/825405057f7fad8c67b875c4.html",
+        "snapshotSHA256": "e7f22b918cdc6118890976d99ba7ba2a4c57d62bc20dd3416da5999c5d4f449c",
+        "status": 200,
+        "title": "2021（令和3）年11月号 特集／高砂市",
+        "result": "原本取得・施設名住所および位置表現の構造探索。取得成功だけでは建物同定の承認を意味しない。",
+        "numericDestinationPatterns": 0,
+        "iframeViewportPresent": false
+      },
+      {
+        "kind": "new-p05-record-comparison",
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "fetchedAt": "2026-11-05T04:46:10.674180+00:00",
+        "result": "大阪・兵庫・奈良・和歌山のGeoJSONを実際に再走査。名称/住所の広い候補 2 件。候補には別自治体同名や住所前方一致が含まれ、自動採用しない。",
+        "recordDetails": "data/evidence/issue7/kinki-west/inventory.json#facility:kinki-takasago-cityhall"
+      }
+    ],
+    "decision": "candidate-for-parent-independent-review"
+  }
+]
