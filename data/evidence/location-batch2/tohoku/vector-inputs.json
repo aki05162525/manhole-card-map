@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "sourceVersion": "2026-07-01 per official README; tile bytes fetched 2026-11-05; individual building survey dates unknown",
+  "sourceCRS": "JGD2011 geographic per GSI tile specification; XYZ Web Mercator lattice, MVT y-down extent 4096; inverse Web Mercator only, no datum conversion",
+  "precision": "7 decimals are serialization precision; source generalization and building identification uncertainty remain, no surveyed accuracy claimed",
+  "attribution": "国土地理院最適化ベクトルタイルを加工（BldA抽出・比較用代表点算出）。国土地理院作成の施設座標ではない。",
+  "license": "PDL1.0 via GSI content policy; optimal Vector README explicitly describes trial data not designated basic survey results. Raster permission not assumed.",
+  "tiles": [
+    {
+      "name": "ishinomaki",
+      "file": "ishinomaki-tile.pbf.gz",
+      "sha256": "831713e3fccf46a2d64205d718010bfcf64c2a79048e70e45c203e093de205dc",
+      "tile": {
+        "z": 16,
+        "x": 58492,
+        "y": 25179
+      },
+      "buildingFeatureCount": 436,
+      "comparisons": [
+        {
+          "facilityId": "facility:north-3443a4a6d08de5680f46",
+          "featureIndex": 414,
+          "feature": {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    2649,
+                    1372
+                  ],
+                  [
+                    2681,
+                    1392
+                  ],
+                  [
+                    2692,
+                    1376
+                  ],
+                  [
+                    2838,
+                    1473
+                  ],
+                  [
+                    2743,
+                    1618
+                  ],
+                  [
+                    2564,
+                    1501
+                  ],
+                  [
+                    2649,
+                    1372
+                  ]
+                ]
+              ]
+            },
+            "properties": {
+              "vt_code": 3101,
+              "vt_lvorder": 0
+            },
+            "id": 0,
+            "type": "Feature"
+          }
+        }
+      ]
+    },
+    {
+      "name": "hanamaki",
+      "file": "hanamaki-tile.pbf.gz",
+      "sha256": "98d61fe5552b318aff58e0474b0207ecedee1709ce9d01d7798f38533019d055",
+      "tile": {
+        "z": 16,
+        "x": 58457,
+        "y": 24955
+      },
+      "buildingFeatureCount": 723,
+      "comparisons": [
+        {
+          "facilityId": "facility:north-db757b448c8db73422a5",
+          "featureIndex": 396,
+          "feature": {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    2501,
+                    770
+                  ],
+                  [
+                    2510,
+                    950
+                  ],
+                  [
+                    2131,
+                    968
+                  ],
+                  [
+                    2133,
+                    1006
+                  ],
+                  [
+                    2195,
+                    1003
+                  ],
+                  [
+                    2202,
+                    1149
+                  ],
+                  [
+                    2069,
+                    1155
+                  ],
+                  [
+                    1994,
+                    1159
+                  ],
+                  [
+                    1976,
+                    796
+                  ],
+                  [
+                    2501,
+                    770
+                  ]
+                ]
+              ]
+            },
+            "properties": {
+              "vt_code": 3102,
+              "vt_lvorder": 0
+            },
+            "id": 0,
+            "type": "Feature"
+          }
+        }
+      ]
+    },
+    {
+      "name": "oga",
+      "file": "oga-tile.pbf.gz",
+      "sha256": "0781518545c910860ba1cc091bd866b3ce19afa3857c81f1f987572c78f30342",
+      "tile": {
+        "z": 16,
+        "x": 58226,
+        "y": 24838
+      },
+      "buildingFeatureCount": 287,
+      "comparisons": []
+    }
+  ]
+}

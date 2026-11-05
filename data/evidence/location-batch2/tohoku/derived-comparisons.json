@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "facilityId": "facility:north-3443a4a6d08de5680f46",
+      "featureIndex": 414,
+      "coordinate": {
+        "lat": 38.4305124,
+        "lng": 141.3097757
+      },
+      "method": "centroid",
+      "centroidWithin": true,
+      "roundedPointWithin": true,
+      "status": "comparison-only-not-approved",
+      "identityConfirmed": false
+    },
+    {
+      "facilityId": "facility:north-db757b448c8db73422a5",
+      "featureIndex": 396,
+      "coordinate": {
+        "lat": 39.3885493,
+        "lng": 141.1168429
+      },
+      "method": "centroid",
+      "centroidWithin": true,
+      "roundedPointWithin": true,
+      "status": "comparison-only-not-approved",
+      "identityConfirmed": false
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "schema": 1,
+  "region": "tohoku",
+  "issue": 34,
+  "asOf": "2026-11-05",
+  "researchStartedAt": "2026-11-05T11:22:40.460002+00:00",
+  "researchFinishedAt": "2026-11-05T11:30:07.677260+00:00",
+  "wallSeconds": 447.217,
+  "timingScope": "selection.json保存から新資料の取得・図面実見・Vector比較・初回成果作成までの地域共有wall clock。事前の既存資料読解・以後の検証/独立レビュー/PR作成は含まない。施設別に重複加算しない。",
+  "selectionCount": 8,
+  "comparisonCandidateCount": 2,
+  "adoptedCount": 0,
+  "heldCount": 8,
+  "regionalUnlocatedBefore": 59,
+  "regionalUnlocatedAfter": 59,
+  "nationalUnlocatedBefore": 608,
+  "nationalUnlocatedAfter": 608,
+  "countScope": "現manifest assembleの登録台帳施設。生成全体の未位置とは別。今回座標採用なしのため前後不変。",
+  "manifestChanged": false,
+  "rows": [
+    {
+      "facilityId": "facility:north-3443a4a6d08de5680f46",
+      "name": "石巻市かわまち交流センター",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/7",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/32"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "Issue26の住所訂正後、GSI試験Vector外形と保存済み市復興配置図の比較という別手法を試す。初ピン2枚・旧P05との位置競合を優先。",
+      "sourceIds": [
+        "ishinomaki-layout.pdf",
+        "vector-readme.txt"
+      ],
+      "finding": "試験VectorのBldA index414を形状仮説として比較。重心と丸め後内包は成功。近傍のindex417との境界・堤防接続部を、保存済み小縮尺図だけで独立確定できない。面積約498㎡と資料463.04㎡の近さは同定の証明にしない。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "施設名と周辺道路/堤防を読める高解像度の平面図・現況資料で414/417の対応を確認。",
+      "priorConstraintHandling": "Issue26の住所訂正を保持。旧P05/市markerは範囲探索のみ、代表点として流用しない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-13fd80e5a9a93ae2a4a2",
+      "name": "「道の駅おが」男鹿市複合観光施設オガーレ",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/2",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/27"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "Google q二点を採用せず、運営者の敷地配置図とGSI試験Vectorの形状接続を試す。",
+      "sourceIds": [
+        "oga-photo.jpg",
+        "oga-concept.html",
+        "vector-readme.txt"
+      ],
+      "finding": "運営者写真は主棟と前面駐車場を示す。旧Google qをヒントに取得した1タイルの外形に対して、写真の主棟・背後の塔を一意対応できず、外形選択と数値出力を停止。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "写真の主棟と道路/男鹿駅の方位を接続する公的配置図、必要なら隣接Vectorタイルを用いて独立同定。",
+      "priorConstraintHandling": "旧q二点を採用しない。取得範囲で同定できないことはGSI全国データに建物がないという意味ではない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-194cafa26eb4fcdf4b86",
+      "name": "道の駅寒河江チェリーランド(総合観光案内所内)",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/4",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/29"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "919-6案内所と919-8商業棟の混同を避けるため、観光案内所の配置資料を探索する。",
+      "sourceIds": [
+        "sagae-photo.html",
+        "sagae-building.jpg"
+      ],
+      "finding": "施設写真で総合観光案内所の外観と入口表示を確認。919-6と919-8の敷地内位置関係を数値原典に接続する図は取得できず、写真から住所点や建物点を推定しない。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "総合観光案内所を明記した敷地平面図か公開施設点を取得し、CRS/対象棟を検証。",
+      "priorConstraintHandling": "旧about本文の再検索でなく、掲載写真という別資料を実見。外観確認と地理的同定を分ける。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-302d2544c978ef46ca8e",
+      "name": "花巻市役所 建設部 下水道課",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/6",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/31"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "市役所代表点の再利用でなく新館の案内図・棟配置を探索しVector対応を試す。",
+      "sourceIds": [
+        "hanamaki-new.pdf",
+        "hanamaki-new.html",
+        "vector-readme.txt"
+      ],
+      "finding": "新館2階の下水道課と細長い建物形状を確認。本館周辺Vectorと比較したが、方位・本館との距離の裏付けがなく近傍矩形を新館に割り当てない。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "本館と新館を同時に記載する敷地配置図で新館の方位・外周を照合。",
+      "priorConstraintHandling": "本館のP05点を新館2階へ転用しない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-a4e073898b8f0e283b69",
+      "name": "紅花資料館 物産館",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/33",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/58"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "資料館全体でなく物産館を識別する公開配置図を探索する。",
+      "sourceIds": [
+        "kahoku-plan.pdf",
+        "kahoku-fes.pdf",
+        "kahoku.html"
+      ],
+      "finding": "公式パンフレットで物産館・案内所が長屋門や紅の館とは別の建物として描かれ、県道285号側にあることを確認。絵図の方位・外周と地理参照外形の比較は未完。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "県道側の物産館と現Vector/PLATEAU外形を周辺配置を含めて比較し、同定後に代表点算出。",
+      "priorConstraintHandling": "2022イベント図の売店を現在の物産館と無根拠に同一視しない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-bd9ab14ef699fe922568",
+      "name": "あぶくま洞管理事務所",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/36",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/61"
+      ],
+      "status": "held",
+      "stage": "numeric-search",
+      "newMethod": "洞窟の座標でなく管理事務所を示す園内配置図を探索する。",
+      "sourceIds": [
+        "abukuma-map.pdf",
+        "abukuma-rent.html"
+      ],
+      "finding": "見どころPDFと施設貸出案内へ探索を変更。洞内コースと管理事務所連絡先は得られたが、管理棟を識別する建物配置資料は取得できなかった。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "管理事務所棟を明記する園地配置図・市の建物台帳/公開GISを得て、洞窟入口/レストハウスとの区別を確認。",
+      "priorConstraintHandling": "洞窟入口や同じ電話番号のレストハウスを代替点にしない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-db757b448c8db73422a5",
+      "name": "花巻市役所本庁舎警備員室(本庁舎1階守衛室)",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/44",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/69"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "本館守衛室と新館の区別を保ち、同じ配置資料を共同利用して本館外形の同定を試す。",
+      "sourceIds": [
+        "hanamaki-main.pdf",
+        "hanamaki-main.html",
+        "vector-readme.txt"
+      ],
+      "finding": "本館L字形と守衛室表示を確認。Vector BldA index396のL字形を仮説として重心・丸め後内包を検査したが、方位のない室内図から敷地内配置への独立接続は未完。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "本館/新館を載せた敷地図または周囲道路と現本館の対応を示す一次資料で396を確認。",
+      "priorConstraintHandling": "本館と新館を同棟groupにしない。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    },
+    {
+      "facilityId": "facility:north-e2dfc05c8b1db51fc65b",
+      "name": "道の駅やまだ「おいすた」",
+      "originalRef": "data/national/issue7/tohoku.json#/unresolved/46",
+      "priorReviewRefs": [
+        "data/national/issue7/reviews/tohoku.json#/decisions/71"
+      ],
+      "status": "held",
+      "stage": "building-comparison",
+      "newMethod": "旧道の駅と新おいすた・情報棟の混同リスクを優先し、開業資料・情報棟配置図を探索する。",
+      "sourceIds": [
+        "yamada-layout.pdf"
+      ],
+      "finding": "2023移転開業の国交省/町共同発表を取得。第5地割66番地1と情報/トイレ棟を平面図で確認。旧記録の運営者第2地割111-2を対象棟の点として使わない。現Vector外形との同定は未実施。",
+      "stopCondition": "今回取得・比較した資料では現配布建物と数値外形の独立対応が未確定。同じ資料の再取得だけを続けない。",
+      "resumeCondition": "新所在地の情報棟を北矢印と周辺道路配置に沿って現Vector/PLATEAU外形と比較し、現配布継続を確認。",
+      "priorConstraintHandling": "移転の時系列資料は得たが、旧住所との地番制度上の対応や運営者地図の生成由来は未確定。",
+      "adoptedCoordinate": null,
+      "binding": null,
+      "independentReview": "not-completed-provider-quota"
+    }
+  ]
+}
