@@ -63,3 +63,47 @@ GSI原本9タイルとRange取得記録のETag/Last-Modifiedを保持。同じ�
 ## 文書とコードの不一致
 
 今回新たに確認した共有文書/コード不一致はない。既知の歴史hash/現manifest混同、Issue24のsource説明、絶対snapshotPath、旧Evidence fetchedAt、再利用日時nullの訂正は[Issue57の記録](issue57-workflow.md#文書整理と既知の記録差)を継承するが、今回すべてを再監査したとは扱わない。製品CRSの地域間判断差は上記の未承認事項として残す。
+
+### 通常フック実行証跡
+
+対象データcommit: `7a677f2185891619d20aa3f2e3f7f71dc1247247`。コマンド: `mise exec -- git commit -m "research: 千葉17施設の引継ぎと習志野新館候補を記録"`、終了コード0。ステージ済み全研究データはvalidation.jsonの入力hashに対応（validation.json自身はcommitで固定）。
+
+`cmd/builddata/fragments_test.go` SHA256 `10e6fc0ae0c0996ac2f6736a6281243ac32e0b562d8b62adbb83e43d0ed9211f` の `TestNationalAssemblyFailureGuards` が `python3 -B -m unittest discover -s tools/national -v` を実行する。成功時の個別Python出力はGo側で表示されないため、以下はその包含suiteの成功ログ。独立したPythonログ取得のために同一suiteを重ねていない。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯
+
+┃  go-test ❯
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	78.942s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.003s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.005s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 79.80 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (79.80 seconds)
+```
+
+この証跡追記commitは本Markdownのみを変更し、対象データ・コードのhashが同一であることを確認した。通常フックは実行し、変更種別に基づき追加Go/UI suiteを選択しない既存動作に従う。
