@@ -1,0 +1,539 @@
+{
+  "schema": 1,
+  "region": "kinki-east",
+  "asOf": "2026-11-05",
+  "selected": 8,
+  "proposed": 2,
+  "adopted": 2,
+  "held": 6,
+  "updates": [
+    {
+      "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+      "coordinate": {
+        "lat": 34.8324063,
+        "lng": 136.5714216
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+        "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+        "sourceLocator": "自作採用根拠 rows[0]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+      }
+    },
+    {
+      "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+      "coordinate": {
+        "lat": 34.9080456,
+        "lng": 135.7071966
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+        "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+        "sourceLocator": "自作採用根拠 rows[1]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "facilityId": "facility:kinki-332ce8ce5ad5b6583d87",
+      "name": "道の駅 丹後王国「食のみやこ」インフォメーションセンター",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/4",
+      "sourceLocator": "令和8年園内マップ PDF物理2頁、市配布表",
+      "finding": "園内図は中央の21情報交流センターとメインゲート付近の道の駅観光案内所を別に表示。市のインフォメーションセンターという表記だけでは一方へ結べない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/10",
+          "sourceUrl": "https://tangooukoku.com/wp-content/uploads/2026/04/R8-%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%9E%E3%83%83%E3%83%97.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/8799000e683400ee.pdf",
+          "snapshotSHA256": "9a61f3db4fdf664580e90cf6456ed06e53279eb27d964e02126bf1666298092f",
+          "fetchedAt": "2026-11-05T11:25:35.496798+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/15",
+          "sourceUrl": "https://www.city.kyotango.lg.jp/top/soshiki/jogesuido/suido/gesuidou/manhole/21182.html",
+          "rawPath": "data/work/location-batch2/kinki-east/b0a9899d7fbc48a6.html",
+          "snapshotSHA256": "9dd4ef1b730df3c74f27b2ddd351a39d918fb87153b3532f37340cbe54cbe6ba",
+          "fetchedAt": "2026-11-05T11:26:30.287296+00:00"
+        }
+      ],
+      "stopCondition": "上記資料から現在の配布先の数値原典まで結び付かないため、今回の候補提出を停止。資料全体に数値がないという網羅的主張ではない。",
+      "resumeCondition": "配布窓口が園内図のどちらの棟に属するかを明示する運営者資料を得た上で、地理参照外形と接続する。",
+      "blockers": [
+        "identity"
+      ],
+      "coordinate": null,
+      "CRS": null,
+      "axisOrder": null,
+      "processing": "HTML本文・PDFテキスト抽出、指定図の画像確認。地理参照・座標導出なし。",
+      "precision": "未評価。建物代表点を目標とし入口精度は要求しない。",
+      "sourceConditions": "原本再配布許諾未確認のためworkのみ。座標の利用条件は座標未導出につき未評価。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "園内配置図から情報棟を独立同定しVectorへ接続",
+      "performedMethod": "既存指定頁・本文の比較。数値外形への接続は未実施。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。"
+    },
+    {
+      "facilityId": "facility:kinki-443a928ce299052ac36e",
+      "name": "京丹波町上下水道課 畑川浄水場",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/11",
+      "sourceLocator": "水道ビジョン2020 PDF物理18頁・紙面17、市配布場所節",
+      "finding": "ビジョンに畑川浄水場の管理棟と薬品沈殿池を分けた写真。平日窓口は下山クラベシ41。写真は正面外観で地理参照外形・棟配置を提供しない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/7",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/material/files/group/13/vision2020.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/3e4bb06a9a3c6657.pdf",
+          "snapshotSHA256": "af38d46d85ee85b914e9f3228b98b3862d01030e8765b0cee8d0575ac039f709",
+          "fetchedAt": "2026-11-05T11:25:08.945360+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/16",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+          "rawPath": "data/work/location-batch2/kinki-east/112bdc3fa2804604.html",
+          "snapshotSHA256": "aa14a413ff2ec13cc510c6aa0dc626ac34f311c36bb978f5b0d9c0fccd705028",
+          "fetchedAt": "2026-11-05T11:26:30.287838+00:00"
+        }
+      ],
+      "stopCondition": "上記資料から現在の配布先の数値原典まで結び付かないため、今回の候補提出を停止。資料全体に数値がないという網羅的主張ではない。",
+      "resumeCondition": "管理棟の写真に対応する配置図または施設GISを得て、現窓口との対応とCRS・利用条件を審査する。",
+      "blockers": [
+        "building"
+      ],
+      "coordinate": null,
+      "CRS": null,
+      "axisOrder": null,
+      "processing": "HTML本文・PDFテキスト抽出、指定図の画像確認。地理参照・座標導出なし。",
+      "precision": "未評価。建物代表点を目標とし入口精度は要求しない。",
+      "sourceConditions": "原本再配布許諾未確認のためworkのみ。座標の利用条件は座標未導出につき未評価。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "浄水場と新庁舎の公開施設資料を分離して探索",
+      "performedMethod": "既存指定頁・本文の比較。数値外形への接続は未実施。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。"
+    },
+    {
+      "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+      "name": "京都府立洛西浄化センター公園 サービスセンター管理棟",
+      "status": "adopted",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/14",
+      "sourceLocator": "運営者施設案内 #kanritou/#other、府園内GIF・配布場所節",
+      "finding": "管理棟南側トイレという運営者記述、GIFの管理棟/WC/テニス/球技場/せせらぎ配置を、GSI空中写真とBldAに照合した。GIFは北上ではなく、右がおおむね北、下がおおむね東と読むと、テニスが球技場の北、芝生球技場が球技場の東、せせらぎが管理棟の東に対応する。9c075aa8（324.27㎡）の管理棟候補の南東にc9f40153（90.47㎡）があり、運営者の南側トイレ記述に整合する。東のL字形せせらぎ周辺外形8a41、東方の駐車場/アプローチ棟を別物として比較した。前段の大外形c7bdは芝生球技場側であり管理棟ではない。この配置一致に基づき9c075aa8の建物代表点を提案する。GIFの図面下をそのまま南と扱った初期解釈を訂正。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/22",
+          "sourceUrl": "https://www.aquaparcorakusai.jp/facility/",
+          "rawPath": "data/work/location-batch2/kinki-east/331a736167f77cae.html",
+          "snapshotSHA256": "f2dda0854c89b02a85bccbccd4f9b6e47b90b2b35eabcf78f1845c5d39b1637e",
+          "fetchedAt": "2026-11-05T11:27:34.737735+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/11",
+          "sourceUrl": "https://www.pref.kyoto.jp/koen-annai/documents/rakuseijouka.gif",
+          "rawPath": "data/work/location-batch2/kinki-east/8815aec31704e023.html",
+          "snapshotSHA256": "65b4c57f848ca70a5a513b6e4fd88454acc8e20788766993093e35788fcae7af",
+          "fetchedAt": "2026-11-05T11:25:35.497547+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/17",
+          "sourceUrl": "https://www.pref.kyoto.jp/gesuido/manholekaturagawa.html",
+          "rawPath": "data/work/location-batch2/kinki-east/fd84ddcba7574a11.html",
+          "snapshotSHA256": "370b41ad64ee3968b7da50dc892aaea3e9ab47b0b8423652c87604fc88b62a6d",
+          "fetchedAt": "2026-11-05T11:26:30.288326+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/82",
+          "sourceUrl": "https://www.aquaparcorakusai.jp/wordpress/wp-content/themes/ryuumu_tpl/img/facility07.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-center.jpg",
+          "snapshotSHA256": "4487e4bb7dc4100fc72ba7626c572c8fa73a80c04e8ee2895510a1abf25c7623",
+          "fetchedAt": "2026-11-05T12:02:44.412020+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/84",
+          "sourceUrl": "https://www.aquaparcorakusai.jp/wordpress/wp-content/themes/ryuumu_tpl/img/facility_top2.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-aerial.jpg",
+          "snapshotSHA256": "322daaccdb36f0283a30b021233a9abebdf005f9adacde82b356ae66b47a225a",
+          "fetchedAt": "2026-11-05T12:04:04.701715+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/85",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114944/51956.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114944-51956.jpg",
+          "snapshotSHA256": "72438287b56e9efcc00100148d220e76dd466a25112a6f8932116bae9034f822",
+          "fetchedAt": "2026-11-05T12:14:25.809446+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/86",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114944/51957.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114944-51957.jpg",
+          "snapshotSHA256": "b8c5737553551b39bfac4e672f98f2a333f5adc2fc457aba242a5ff7b6797071",
+          "fetchedAt": "2026-11-05T12:14:26.165752+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/87",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114944/51958.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114944-51958.jpg",
+          "snapshotSHA256": "f3023f395aacf4ed485af5e9a9d7f9d5774ac2906f1565016df811ab91f7be15",
+          "fetchedAt": "2026-11-05T12:14:26.542875+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/88",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114945/51956.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114945-51956.jpg",
+          "snapshotSHA256": "dcd8be2978547619f4ceff995aebf26fc67394329391b84947186e0466639def",
+          "fetchedAt": "2026-11-05T12:14:26.836806+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/89",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114945/51957.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114945-51957.jpg",
+          "snapshotSHA256": "4ce9c684e612de2844ea74a980e8f79d92924f96825402d6e20ddc92097a79ec",
+          "fetchedAt": "2026-11-05T12:14:27.198975+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/90",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114945/51958.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114945-51958.jpg",
+          "snapshotSHA256": "2944a9079c73e660e5713226f4e0f77dbbe559ae3061640b292a0461ed340e98",
+          "fetchedAt": "2026-11-05T12:14:27.494738+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/91",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114946/51956.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114946-51956.jpg",
+          "snapshotSHA256": "2eb506ee42a2b5727827a34f890a43d152a1785f2b20d5f0a141e3134d5cac07",
+          "fetchedAt": "2026-11-05T12:14:27.818505+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/92",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114946/51957.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114946-51957.jpg",
+          "snapshotSHA256": "745aecfd42ba3d1332b3ee00bb51ef643622d8d084d13cb55614cbcb068698d9",
+          "fetchedAt": "2026-11-05T12:14:28.196711+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/93",
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/17/114946/51958.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/rakusai-photo-17-114946-51958.jpg",
+          "snapshotSHA256": "71867f875b30ee85f3d1fdf09bd017b0eb7927531203e921169d1d5ce4424859",
+          "fetchedAt": "2026-11-05T12:14:28.548121+00:00"
+        }
+      ],
+      "stopCondition": "独立レビュー承認により採用。旧停止条件はresearch-outcomes.jsonに保持。",
+      "resumeCondition": "施設移転・名称住所変更・出典改訂時はlocationLifecycleで再確認。",
+      "blockers": [],
+      "coordinate": {
+        "lat": 34.9080456,
+        "lng": 135.7071966
+      },
+      "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
+      "axisOrder": "longitude,latitude",
+      "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
+      "precision": "原図の一般化・更新時点の限界あり。7桁は精度保証ではない。",
+      "sourceConditions": "GSI試験VectorはPDL1.0/出典加工表示。その他HTML/PDF/写真原本は再配布未確認のためworkのみ。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "公園施設配置図からサービスセンターを同定",
+      "performedMethod": "公式原本の本文・図を再確認し、独立取得したGSI PMTiles BldAの形状・面積と比較。数値処理はnumerical-comparisons.json参照。 GSI空中写真で方位と各運動施設配置を照合し、GIFの概略方位を修正。画像から座標は採らずBldA代表点を算出。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json",
+      "approvalRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+      "name": "鈴鹿市上下水道局",
+      "status": "adopted",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/15",
+      "sourceLocator": "401.pdf物理2・3頁（紙面1・2）、市配布案内",
+      "finding": "401.pdf物理2頁は本館建築面積1096㎡・倉庫250㎡、物理3頁は別館559㎡。GSI外形37fb3b43=1207.30㎡、北西の19fe902c=273.86㎡、東の76954e17=574.94㎡を比較した。面積差は各10.16%、9.54%、2.85%。本館の細長い形・RC3階写真、倉庫と別館の規模差に整合し、同一敷地内にはほかの補助外形もある。市施設案内（更新2026-04-01）は下水道工務課を本館1階と明示し、現配布案内の部署とつながる。本館内の代表点を採用提案する。q点の包含は独立同定根拠に数えない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/14",
+          "sourceUrl": "https://www.city.suzuka.lg.jp/_res/projects/default_project/_page_/001/013/882/401.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/a3e5cc3d9a164f5f.pdf",
+          "snapshotSHA256": "b108d2594700c8f9546d382cef1b2e86da60437c8def0e22afcce258d19c0152",
+          "fetchedAt": "2026-11-05T11:25:49.284400+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/18",
+          "sourceUrl": "https://www.city.suzuka.lg.jp/suido/1002380/1002381/1002388.html",
+          "rawPath": "data/work/location-batch2/kinki-east/ca4fd1d3ae3fcce6.html",
+          "snapshotSHA256": "1ef492a585dbe6507cc89ac5446f5f03cbfd6c59e8b79e35492c569dbac8fbf3",
+          "fetchedAt": "2026-11-05T11:26:30.288811+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/53",
+          "sourceUrl": "https://www.city.suzuka.lg.jp/shisei/shisetsu/1004326/1004339.html",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/suzuka-location.html",
+          "snapshotSHA256": "bded2c3f43b7a97a1080a565d52d77ce268ca7ff1d02f33f9beb5c58c6c3cf6f",
+          "fetchedAt": "2026-11-05T11:55:49.969825+00:00"
+        }
+      ],
+      "stopCondition": "独立レビュー承認により採用。旧停止条件はresearch-outcomes.jsonに保持。",
+      "resumeCondition": "施設移転・名称住所変更・出典改訂時はlocationLifecycleで再確認。",
+      "blockers": [],
+      "coordinate": {
+        "lat": 34.8324063,
+        "lng": 136.5714216
+      },
+      "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
+      "axisOrder": "longitude,latitude",
+      "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
+      "precision": "原図の一般化・更新時点の限界あり。7桁は精度保証ではない。",
+      "sourceConditions": "GSI試験VectorはPDL1.0/出典加工表示。その他HTML/PDF/写真原本は再配布未確認のためworkのみ。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "本館・別館の庁舎配置資料を探索",
+      "performedMethod": "公式原本の本文・図を再確認し、独立取得したGSI PMTiles BldAの形状・面積と比較。数値処理はnumerical-comparisons.json参照。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json",
+      "approvalRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json"
+    },
+    {
+      "facilityId": "facility:kinki-686caad0ba490d412755",
+      "name": "京丹波町役場",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/16",
+      "sourceLocator": "新庁舎整備基本設計（案）PDF物理13頁・紙面11–12、市配布場所節",
+      "finding": "平成30年度基本設計案に加え、令和3年度町政懇談会資料物理7頁の1・2階平面図を取得した。西側の議会・ラウンジ翼と横長執務翼を持つL形で、道路の東側にあるBldA 2890fb14（2936.07㎡）を候補とした。現在の町アクセス図が示す国道9号の東側、27号の西側という位置関係にも整合する。4ff9系の別建物を住所点への近さだけで選ばない。図の縮尺・屋根線・ラウンジ張出しの差は残るため、L形一致だけを確定同定としない。竣工図の入手自体は必須条件から外す。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/13",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/material/files/group/2/30siryou.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/1a27af3f76216d12.pdf",
+          "snapshotSHA256": "440200ce50bd2ff0347f66adb0dc438ad57bd14b72eb42cd1dcf16fd9b3a8bfb",
+          "fetchedAt": "2026-11-05T11:25:35.499913+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/16",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/kakukakarasagasu/jogesuidoka/9120.html",
+          "rawPath": "data/work/location-batch2/kinki-east/112bdc3fa2804604.html",
+          "snapshotSHA256": "aa14a413ff2ec13cc510c6aa0dc626ac34f311c36bb978f5b0d9c0fccd705028",
+          "fetchedAt": "2026-11-05T11:26:30.287838+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/49",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/material/files/group/2/townmeeting.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/kyotamba-2021.pdf",
+          "snapshotSHA256": "046e2f6320a9c2ab03481e40dc37762cdf4b8700dddc31207edb4a03a6ff6d3a",
+          "fetchedAt": "2026-11-05T11:54:23.993911+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/54",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/gyoseijoho/yakusho_madoguchiannai/3530.html",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/kyotamba-current.html",
+          "snapshotSHA256": "3dd18e377641ccbbf80e5b0a0cf92c735656089fce9499ad5e9c8498c7bbb675",
+          "fetchedAt": "2026-11-05T11:55:50.292567+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/81",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/material/images/group/3/tizu4_2021102016261682.jpg",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/kyotamba-access.jpg",
+          "snapshotSHA256": "2c48e81af7f2e953a7e5c1a1343f34431d4763b4aca4d26191ebac16a6c8f6a5",
+          "fetchedAt": "2026-11-05T12:01:49.792171+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/83",
+          "sourceUrl": "https://www.town.kyotamba.kyoto.jp/material/files/group/18/R030113kaigi.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/kyotamba-committee.pdf",
+          "snapshotSHA256": "4c802e878dc501e3abc442fdc42357f78d5e42d68e33e3adb53825daf188f71e",
+          "fetchedAt": "2026-11-05T12:03:01.136961+00:00"
+        }
+      ],
+      "stopCondition": "記載の比較を実施した結果、残る同定・現配布対応の未確定事項により採用を保留。",
+      "resumeCondition": "2021年平面図と2890fb14の翼・張出し・道路の対応を独立レビューする。必要なら設計者の現建物写真で相違を解決する。",
+      "blockers": [
+        "identity"
+      ],
+      "coordinate": null,
+      "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
+      "axisOrder": "longitude,latitude",
+      "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
+      "precision": "原図の一般化・更新時点の限界あり。7桁は精度保証ではない。",
+      "sourceConditions": "GSI試験VectorはPDL1.0/出典加工表示。その他HTML/PDF/写真原本は再配布未確認のためworkのみ。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "新庁舎の建設・配置資料で旧P05を除外",
+      "performedMethod": "公式原本の本文・図を再確認し、独立取得したGSI PMTiles BldAの形状・面積と比較。数値処理はnumerical-comparisons.json参照。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json"
+    },
+    {
+      "facilityId": "facility:kinki-6ad3133f41924d1d4b10",
+      "name": "大津市水再生センター",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/17",
+      "sourceLocator": "下水道事業PDF物理19頁・紙面115と管理棟一覧、市配付情報",
+      "finding": "平面図の①管理棟は特定できるが、現配布ページが指定するのは屋上公園管理人室。管理棟と管理人室の同一性は資料から確定できない。処理場管理棟の点を配布先に転用しない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/5",
+          "sourceUrl": "https://www.city.otsu.lg.jp/material/files/group/250/06s_zigyou.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/567fb4cf7b649b96.pdf",
+          "snapshotSHA256": "fcc1783bd1fbece89d664d8aa6f5fe94b8a1056e2878e1492e7880080496b6bb",
+          "fetchedAt": "2026-11-05T11:24:55.754124+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/19",
+          "sourceUrl": "https://www.city.otsu.lg.jp/soshiki/080/1901/g/manhole/1499746928377.html",
+          "rawPath": "data/work/location-batch2/kinki-east/996e3e29e9ffa70a.html",
+          "snapshotSHA256": "ece28f72172f089ccce219fa46ff0e61ff57ba2fd472109bd198db33330a2d5d",
+          "fetchedAt": "2026-11-05T11:26:30.289959+00:00"
+        }
+      ],
+      "stopCondition": "上記資料から現在の配布先の数値原典まで結び付かないため、今回の候補提出を停止。資料全体に数値がないという網羅的主張ではない。",
+      "resumeCondition": "屋上公園管理人室の所在棟を示す公園図・管理資料を得て、当該棟の地理参照外形へ接続する。",
+      "blockers": [
+        "identity"
+      ],
+      "coordinate": null,
+      "CRS": null,
+      "axisOrder": null,
+      "processing": "HTML本文・PDFテキスト抽出、指定図の画像確認。地理参照・座標導出なし。",
+      "precision": "未評価。建物代表点を目標とし入口精度は要求しない。",
+      "sourceConditions": "原本再配布許諾未確認のためworkのみ。座標の利用条件は座標未導出につき未評価。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "処理場配置図で配布窓口棟を区別",
+      "performedMethod": "既存指定頁・本文の比較。数値外形への接続は未実施。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。"
+    },
+    {
+      "facilityId": "facility:kinki-981f92e7ecb53d46d9ca",
+      "name": "安乗岬園地休憩舎",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/24",
+      "sourceLocator": "県PDF物理1〜11頁、特に3/4/7頁。環境省計画「15.安乗灯台と文楽のみち」。",
+      "finding": "県PDFは全11頁を画像確認。第5回変更は令和2年12月。物理3頁の事業10は安乗崎園地整備（H29、13000千円）、4頁の内訳はサイト造成150㎡・歩道舗装1000㎡・駐車場舗装1200㎡。休憩舎の個別建築・外形は表示されていない。物理7頁の1:100000区域図で安乗崎の事業位置を確認したが、建物を選ぶ縮尺ではない。6/8頁は他区域の10万分1図、9/10頁は5万分1図、2頁方針・5頁添付様式・11頁評価様式も確認した。環境省の休憩施設整備の一般記述を現休憩舎と同一視しない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/8",
+          "sourceUrl": "https://www.env.go.jp/park/iseshima/data/files/02_01/03_07.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/14c0b0b082bbdcf1.pdf",
+          "snapshotSHA256": "9ed696377b79b58f88a9fda294fc34e252c7c506f24d2da1e4878ac82b955ca8",
+          "fetchedAt": "2026-11-05T11:25:08.946211+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/9",
+          "sourceUrl": "https://www.pref.mie.lg.jp/common/content/000945092.pdf",
+          "rawPath": "data/work/location-batch2/kinki-east/4d9703acf39f4fc6.pdf",
+          "snapshotSHA256": "16c3a8a20fcf6f4f4b8f2feb762b55d2185ad1e959647cf8a446bbc1b568f5cc",
+          "fetchedAt": "2026-11-05T11:25:08.946750+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/20",
+          "sourceUrl": "https://www.city.shima.mie.jp/kakuka/jogesuidobu/gesuidoka/gesuido/7166.html",
+          "rawPath": "data/work/location-batch2/kinki-east/fc41ede7ed702b2d.html",
+          "snapshotSHA256": "3044719d6adebb5160585b2875ffa4099cbdaf71ffce0f27c1a48cb3a7dcf5cd",
+          "fetchedAt": "2026-11-05T11:26:30.291711+00:00"
+        }
+      ],
+      "stopCondition": "記載の比較を実施した結果、残る同定・現配布対応の未確定事項により採用を保留。",
+      "resumeCondition": "現休憩舎の配置を識別できる資料と数値外形を照合する。灯台点・園地中心は使わない。",
+      "blockers": [
+        "building"
+      ],
+      "coordinate": null,
+      "CRS": null,
+      "axisOrder": null,
+      "processing": "HTML本文・PDFテキスト抽出、指定図の画像確認。地理参照・座標導出なし。",
+      "precision": "未評価。建物代表点を目標とし入口精度は要求しない。",
+      "sourceConditions": "原本再配布許諾未確認のためworkのみ。座標の利用条件は座標未導出につき未評価。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "園地休憩舎の公園計画・配置資料を探索",
+      "performedMethod": "県PDF物理1〜11頁をレンダリングし本文・事業表・区域図を画像確認。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。"
+    },
+    {
+      "facilityId": "facility:kinki-b3c184c7aed571b773cd",
+      "name": "「道の駅 海の京都 宮津」観光案内所",
+      "status": "held",
+      "originalRef": "data/national/issue7/kinki-east.json#/unresolved/27",
+      "sourceLocator": "運営者FLOORMAP SVG、2026-09-30リニューアル告知掲載トップ、府配布場所節",
+      "finding": "運営者SVGをGSI外形と比較した。立体駐車場の南東、まごころ市・しおさいの西側の小型棟9a7e2ec8（118.51㎡）が案内所候補。駐車場5ab4系2346㎡に住所検索点が入り、検索点を採用すると誤誘導する。隣接する別種外形は庇等の可能性があり、本体候補と分離した。SVG自体の版は不明。府ページ更新2026-04-20は10月1日再開より前で、字浜3007と台帳字浜町3007の表記差がある。9月30日再開告知と現tourismページは案内所の存在を示すが、再開後のカード配布を明示しない。再開後の配布継続は今回の公式資料検索でも確認できず、関係の終了や移転とは断定しない。",
+      "evidence": [
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/12",
+          "sourceUrl": "https://michinoeki-miyazu.jp/assets/img/floormap/map.svg",
+          "rawPath": "data/work/location-batch2/kinki-east/d8fe7be50a74ae4e.html",
+          "snapshotSHA256": "98aa1a8e46e1482deee00e9229428258eaa2935001d1bcb2019c42dc2af9d220",
+          "fetchedAt": "2026-11-05T11:25:35.498098+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/6",
+          "sourceUrl": "https://michinoeki-miyazu.jp/",
+          "rawPath": "data/work/location-batch2/kinki-east/6c82ab6bfd2ace9f.html",
+          "snapshotSHA256": "da333117ed46fac2a1381fbf48a49f978793a96177aa34c84ee305340955e1a3",
+          "fetchedAt": "2026-11-05T11:24:55.755321+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/retrievals.json#/21",
+          "sourceUrl": "https://www.pref.kyoto.jp/gesuido/manholemiyazu.html",
+          "rawPath": "data/work/location-batch2/kinki-east/ba3c6d4d64b636b9.html",
+          "snapshotSHA256": "36661d51d74a882f4fcb64ea4935a2711366cb15fd9aa451fe1f820215079ae2",
+          "fetchedAt": "2026-11-05T11:26:30.292081+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/51",
+          "sourceUrl": "https://michinoeki-miyazu.jp/tourism/",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/miyazu-tourism.html",
+          "snapshotSHA256": "737ea4ddb61d432c688e27e04ec43bd5e3126ee67b50176a7f8fdb582c1a476b",
+          "fetchedAt": "2026-11-05T11:55:17.118418+00:00"
+        },
+        {
+          "reference": "data/evidence/location-batch2/kinki-east/revision-retrievals.json#/52",
+          "sourceUrl": "https://michinoeki-miyazu.jp/info/article.php?slug=%25e3%2580%259010%25e6%259c%25881%25e6%2597%25a5%25e6%259c%25a8-grand-open%25e3%2580%2591%25e3%2580%258c%25e9%2581%2593%25e3%2581%25ae%25e9%25a7%2585%25e3%2581%25bf%25e3%2582%2584%25e3%2581%25a5%25e3%2580%258d%25e3%2583%25aa%25e3%2583%258b%25e3%2583%25a5%25e3%2583%25bc%25e3%2582%25a2%25e3%2583%25ab%25e3%2582%25aa",
+          "rawPath": "data/work/location-batch2/kinki-east/revision/miyazu-reopening.html",
+          "snapshotSHA256": "552615e403cc17ff10f9ae917c71b80f21d5e2accba76ff5a89c78058177e377",
+          "fetchedAt": "2026-11-05T11:55:17.219459+00:00"
+        }
+      ],
+      "stopCondition": "記載の比較を実施した結果、残る同定・現配布対応の未確定事項により採用を保留。",
+      "resumeCondition": "再開後の同案内所でのカード配布を示す公式資料と住所表記差の対応を確認する。既得SVG/外形の再取得だけを再開理由にしない。",
+      "blockers": [
+        "identity"
+      ],
+      "coordinate": null,
+      "CRS": "JGD2011地理座標・Web Mercatorタイル格子",
+      "axisOrder": "longitude,latitude",
+      "processing": "GSI MVT decode、BldA形状比較、GRS80楕円体面積、格子重心→地理座標、7桁丸め後内包検査。全外形が現配布棟と確定した意味ではない。",
+      "precision": "原図の一般化・更新時点の限界あり。7桁は精度保証ではない。",
+      "sourceConditions": "GSI試験VectorはPDL1.0/出典加工表示。その他HTML/PDF/写真原本は再配布未確認のためworkのみ。",
+      "elapsedTimeRef": "timing.json（初回と修正調査を別計時）",
+      "plannedMethod": "道の駅の施設配置図で案内所棟を区別",
+      "performedMethod": "公式原本の本文・図を再確認し、独立取得したGSI PMTiles BldAの形状・面積と比較。数値処理はnumerical-comparisons.json参照。",
+      "previousBlockers": [
+        "relocation"
+      ],
+      "blockerChangeReason": "開始snapshotのrelocationを今回の棟同定・原典照合結果で具体化した。原調査の障害を削除・書換えしたものではない。",
+      "numericalEvidence": "data/evidence/location-batch2/kinki-east/numerical-comparisons.json"
+    }
+  ],
+  "limits": "採用2・保留6。候補原記録を保持し承認済コピーを明示選択。配布関係は不変。"
+}

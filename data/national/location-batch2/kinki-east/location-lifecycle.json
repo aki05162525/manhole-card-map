@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+      "identity": {
+        "name": "鈴鹿市上下水道局",
+        "address": "三重県鈴鹿市寺家町1170"
+      },
+      "adoption": {
+        "facilityId": "facility:kinki-5d739ed0da591dafd1d2",
+        "coordinate": {
+          "lat": 34.8324063,
+          "lng": 136.5714216
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+          "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+          "sourceLocator": "自作採用根拠 rows[0]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+        }
+      },
+      "adoptionSHA256": "9c53feef7dbb6efa19d742d1277223da62a634e96601549978b88ab84612da6e",
+      "sourceVersion": "GSI optimal_bvmap 2026-07-01; municipality versions in adoption evidence"
+    },
+    {
+      "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+      "identity": {
+        "name": "京都府立洛西浄化センター公園 サービスセンター管理棟",
+        "address": "京都府長岡京市勝竜寺山崎作り20-5"
+      },
+      "adoption": {
+        "facilityId": "facility:kinki-5d377b6a926c0d1e6fa1",
+        "coordinate": {
+          "lat": 34.9080456,
+          "lng": 135.7071966
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kinki-east/adoption-evidence.json",
+          "snapshotSHA256": "733d0ab5a0be47e4d188acce182ef15d1c1352a3d8631d04e344fa812d8a4b15",
+          "sourceLocator": "自作採用根拠 rows[1]。公式現配布案内・配置資料との対応、原本hash/版、BldA数値原典は同記録から参照。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "公式配布先・棟配置とGSI BldAの形状/面積/周辺配置を独立照合。国内JGD2011対応Web Mercatorタイル格子から逆投影、GRS80面積、格子重心を緯度経度7桁へ丸めて原外形内包を検査。測地系変換なし。建物代表点で入口・室内精度ではない。出典: 国土地理院最適化ベクトルタイル。加工: manhole-card-map。PDL1.0、試験公開で基本測量成果ではない。7桁は保存桁数で精度保証ではない。Gemini 3.8 Flash独立レビュー承認済み。"
+        }
+      },
+      "adoptionSHA256": "b9d938c5e6ed585848ccf60943f3fe86b03f307f85a991ddd4933dc760609209",
+      "sourceVersion": "GSI optimal_bvmap 2026-07-01; municipality versions in adoption evidence"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

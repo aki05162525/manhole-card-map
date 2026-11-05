@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "provider": "antigravity",
+  "model": "gemini-4-argon",
+  "requestedAt": "2026-11-05",
+  "status": "unavailable-quota",
+  "error": "You have reached your Antigravity quota for this period.",
+  "taskId": "node:delegated-task:command%3Amcp%3A0baea22a-f754-417d-b974-03d114869005%3Adelegate-task%3A8149b064-f645-41e4-b536-9d1154da0e5a",
+  "independentReviewCompleted": false,
+  "findings": null,
+  "response": "代替モデルを使用しない。採用0を維持しDraft PRとして親へ引き継ぐ。Gemini再レビューは未完。",
+  "adoptionApproved": false,
+  "recordScope": "初回Gemini失敗時点の履歴。以後ユーザーがOpus代替を明示許可。review-response.json参照。"
+}
