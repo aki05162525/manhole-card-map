@@ -53,7 +53,7 @@ XYZ逆投影の計算根拠は確認したが製品固有測地系の明記は�
 新たな共通コード不具合・文書/code仕様不一致は発見していない。既往の「一般仕様だけで製品CRSを確定する」判断差は未解消として残す。
 資料間の差（古い三浦移転予定、入江崎の年代、三浦海岸の年末休業日）と、初回文書の未着手状態はコード不一致と混同しない。
 
-[今回の検証入力とRED→GREEN](../../data/evidence/kanto-prefecture/kanagawa/annex-followup/validation-all.json) に入力hash・コマンド・終了コード・ログを保存。対象5テストは全14件の実施証拠、候補9件の丸め内包、全台帳差分/関係不変、旧値・binding・hash改ざん拒否を検証した。全国suiteは下記の通常commit hookで一度実行する。
+[9候補checkpointの検証入力とRED→GREEN](../../data/evidence/kanto-prefecture/kanagawa/annex-followup/validation-all.json) に入力hash・コマンド・終了コード・ログを保存。対象5テストは全14件の実施証拠、候補9件の丸め内包、全台帳差分/関係不変、旧値・binding・hash改ざん拒否を検証した。この9候補入力に対する全国suiteは下記の通常commit hookで一度実行した。
 
 ## 追加回答後の再照合（9候補checkpoint以後）
 
@@ -71,6 +71,50 @@ GSIの124/134は `vt_code=3111` の分離ホーム屋根であり、案内室/�
 県親も配置図p1と構内図全体を視読した。人手待ちではなく、原図と数値外形の対応という具体的な保留である。
 
 追加回答後の [差分検証](../../data/evidence/kanto-prefecture/kanagawa/annex-followup/feedback-validation.json) は対象5テストと新規1点の原タイル再計算に成功。候補の追加で検証入力が変わるため通常commit hookを実行し、全国suiteを手動で重複させない。
+
+## 追加回答反映・10候補の通常フック検証
+
+検証commit `ad8c2f7b89bd164d79397f128d55fc40a420ce51`、終了コード0。通常pre-commit成功（85.73秒）。
+前の9候補検証と異なり葉山候補追加後の入力である。対象5テスト、原タイル再計算、全国Python＋非cache Goが成功。
+同じ入力を手動とhookで二重実行していない。全国Pythonは前節同様 `TestNationalAssemblyFailureGuards` 経由。
+feedback-validation.json の入力hashをhook完了後に全照合し、検証中の変更がないことを確認した。
+この後の変更は本書の検証証跡追記だけ。独立Codexレビュー・製品CRS適用・採用承認は未了、共有manifest未反映。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	85.153s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.003s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 85.73 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (85.73 seconds)
+```
 
 ## 全14件・9候補の通常フック検証
 
