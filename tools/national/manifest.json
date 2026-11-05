@@ -3861,6 +3861,19 @@
           "sha256": "b9d938c5e6ed585848ccf60943f3fe86b03f307f85a991ddd4933dc760609209"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/shikoku/locations.json",
+      "approved": [
+        {
+          "facilityId": "facility:cs-1fe04097ed447030ce",
+          "sha256": "3fcdefb83134d9c0e3e62fa8cfec809961143253aabe47d2baf163b74a1b3f5a"
+        },
+        {
+          "facilityId": "facility:cs-66c4c4fbd8f914efac",
+          "sha256": "1dedd5b31d43a6fe1a83f2e2f3f45208e863e9d7f3a20d264d1aeaad0777c4de"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
@@ -3891,6 +3904,10 @@
     {
       "path": "data/national/location-batch2/kinki-east/location-lifecycle.json",
       "sha256": "b1dfde2c5a5d50b82dffe303b09e0208ae4dafbc4468daab2e84c76a4d9fd28d"
+    },
+    {
+      "path": "data/national/location-batch2/shikoku/location-lifecycle.json",
+      "sha256": "4c721a8fa1e23de0c5ff94945a9f96b07b24e61bcfbd1354b721acc9b4acdb69"
     }
   ]
 }
