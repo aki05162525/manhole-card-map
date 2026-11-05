@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "note": "探索用の数値候補。採用提案・manifest入力ではない。",
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "coordinate": {
+        "lat": 37.38892691992177,
+        "lng": 136.9041497718089
+      },
+      "sourceRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/11",
+      "locator": "data-map-view-target=setting / markerInfos[0]",
+      "excludedCenter": {
+        "lat": 37.38861959697795,
+        "lng": 136.9045083469571
+      },
+      "sourceCRS": "未記載",
+      "axisOrder": "lat/lng属性をそのまま転記",
+      "derivation": "なし。住所ジオコード・Googleから抽出していないが、提供者側の作成工程は未確認。",
+      "precision": "原典桁数。測位精度は不明",
+      "sourceConditions": "座標の二次利用条件・由来は未確定。原HTMLはworkのみ",
+      "decision": "held",
+      "buildingIdentity": "CRS不明点が外形内にあっても独立同定にしない"
+    }
+  ]
+}
