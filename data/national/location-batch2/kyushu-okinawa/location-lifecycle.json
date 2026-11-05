@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "identity": {
+        "name": "知名町役場上下水道課",
+        "address": "鹿児島県大島郡知名町大字知名1100番地"
+      },
+      "adoption": {
+        "facilityId": "facility:ws-f5ea517afaab927bb9",
+        "coordinate": {
+          "lat": 27.338544,
+          "lng": 128.5738394
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[0]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのchina。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      },
+      "adoptionSHA256": "c69cf1fa35bf74a6eb212af517e62b7bf58b0b142770fa62671606075bd9a0ac",
+      "sourceVersion": "国土地理院最適化ベクトルタイル 2026-07-01; 現施設照合 2026-11-05"
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "identity": {
+        "name": "諫早物産ホール諫早観光物産コンベンション協会",
+        "address": "長崎県諫早市高城町5-10"
+      },
+      "adoption": {
+        "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+        "coordinate": {
+          "lat": 32.8452193,
+          "lng": 130.0523047
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[1]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのisahaya。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      },
+      "adoptionSHA256": "3079787109ee53f37a822da9bdacc5fb43eb884c4e225839a955f6d5daafeede",
+      "sourceVersion": "国土地理院最適化ベクトルタイル 2026-07-01; 現施設照合 2026-11-05"
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "identity": {
+        "name": "徳之島町役場建設課",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地"
+      },
+      "adoption": {
+        "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+        "coordinate": {
+          "lat": 27.726407,
+          "lng": 129.0186019
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      },
+      "adoptionSHA256": "5fad5d5d67c899b1e0f2896838b6a0740c7e7f1d5f600cc53a9080d2c82671e0",
+      "sourceVersion": "国土地理院最適化ベクトルタイル 2026-07-01; 現施設照合 2026-11-05"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "identity": {
+        "name": "徳之島町役場新庁舎1階宿直室",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地"
+      },
+      "adoption": {
+        "facilityId": "facility:ws-61c944585418f01447",
+        "coordinate": {
+          "lat": 27.726407,
+          "lng": 129.0186019
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      },
+      "adoptionSHA256": "6ec69a625dd5b26ea4817790f60bbd6818e0bfd1d19be74f2be96d8fae48b0f3",
+      "sourceVersion": "国土地理院最適化ベクトルタイル 2026-07-01; 現施設照合 2026-11-05"
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "identity": {
+        "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+        "address": "沖縄県うるま市勝連南風原3807-2"
+      },
+      "adoption": {
+        "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+        "coordinate": {
+          "lat": 26.3324282,
+          "lng": 127.8808337
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[3]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのuruma。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      },
+      "adoptionSHA256": "f390974bc822c3285a08239dae35278f1cc13d34a96c7cc8e0081c2b0b7de9c0",
+      "sourceVersion": "国土地理院最適化ベクトルタイル 2026-07-01; 現施設照合 2026-11-05"
+    }
+  ],
+  "events": [],
+  "groups": [
+    {
+      "id": "building:kyushu-okinawa-tokunoshima-new-town-hall",
+      "facilityIds": [
+        "facility:kyushu-7a9f8dae19665147953f",
+        "facility:ws-61c944585418f01447"
+      ],
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/facility-identification.json",
+        "snapshotSHA256": "963193348888a6baf081944d54159d5f1733f36d8e2af5f28e0ba26429f09a79",
+        "sourceLocator": "rows[0] tokunoshima。2022年開庁配置図p1と現外形を照合し、新庁舎内の建設課・1階宿直室を確認。同じ住所や座標だけを同棟根拠にしない。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+      }
+    }
+  ]
+}

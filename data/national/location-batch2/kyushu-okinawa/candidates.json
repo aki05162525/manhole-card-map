@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "status": "not-selected-in-manifest",
+  "status": "approved-and-adopted",
   "rows": [
     {
       "facilityId": "facility:ws-f5ea517afaab927bb9",
-      "status": "proposed-review-pending",
+      "status": "adopted",
       "oldRowSHA256": "3269b1ed617a21d0579e90ee401abbc29eecfd6f5a9b5bbafe274be13d39e732",
       "oldRow": {
         "id": "facility:ws-f5ea517afaab927bb9",
@@ -42,7 +42,7 @@
     },
     {
       "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
-      "status": "proposed-review-pending",
+      "status": "adopted",
       "oldRowSHA256": "623aeffb55574842194170d283f881001353df68165c514c54ffd9d3be426036",
       "oldRow": {
         "name": "諫早物産ホール諫早観光物産コンベンション協会",
@@ -82,7 +82,7 @@
     },
     {
       "facilityId": "facility:kyushu-7a9f8dae19665147953f",
-      "status": "proposed-review-pending",
+      "status": "adopted",
       "oldRowSHA256": "63ca992f4a702eb78725b5998f6c5f6e0fee61a6863af0d791c6bc7bf7a969a2",
       "oldRow": {
         "name": "徳之島町役場建設課",
@@ -122,7 +122,7 @@
     },
     {
       "facilityId": "facility:ws-61c944585418f01447",
-      "status": "proposed-review-pending",
+      "status": "adopted",
       "oldRowSHA256": "f4075c220b1f118367ee97aa4424ab02910f0c136e4ea4412d22324083e67a53",
       "oldRow": {
         "id": "facility:ws-61c944585418f01447",
@@ -160,7 +160,7 @@
     },
     {
       "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
-      "status": "proposed-review-pending",
+      "status": "adopted",
       "oldRowSHA256": "848dfb78f0392782ae315e3291e0f0c74af6c86e411991b867c1486f3eaa428d",
       "oldRow": {
         "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
@@ -198,5 +198,6 @@
         }
       }
     }
-  ]
+  ],
+  "historyNote": "proposal/旧行はレビューhead53e664dcの数値・証拠を無変更で保持。candidate-lifecycle.jsonはレビュー時binding。最終選択はlocations.json/location-lifecycle.json。"
 }

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "initialReview": "review-opus-initial.json",
-  "status": "awaiting-independent-re-review",
+  "status": "resolved-by-gemini-flash-review",
   "rows": [
     {
       "finding": "M1 那覇の過大条件",
@@ -47,5 +47,6 @@
       "finding": "追加 数値解析の限界",
       "response": "レビュアー概算ではなく取得原本からAEQD GRS80で再計算。徳之島連結外形は種別3111を含むと発見し候補は3102だけ。図化で別ポリゴンの穴が上塗りされる場合があるため採否は保存geometryと個別形状で検査。"
     }
-  ]
+  ],
+  "finalReviewRef": "review-gemini-flash.json"
 }
