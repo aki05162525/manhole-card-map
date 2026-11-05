@@ -1,0 +1,150 @@
+{
+  "schema": 1,
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "rows": [
+    {
+      "id": "facility:cs-1fe04097ed447030ce",
+      "legacyIds": [
+        "place:0f0a63ccdc4cd8eed00c"
+      ],
+      "name": "旧吉野川浄化センター(愛称:アクアきらら月見ヶ丘)",
+      "address": "板野郡松茂町豊岡字山の手41",
+      "phone": "088-699-9630",
+      "evidence": {
+        "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/dbd367049478659e2926.html",
+        "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／旧吉野川浄化センター(愛称:アクアきらら月見ヶ丘)／36-000-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-4273f7af29262d7c74",
+      "legacyIds": [
+        "place:c125e611df332e0ca6b7"
+      ],
+      "name": "龍河洞観光センター",
+      "address": "高知県香美市土佐山田町逆川1424",
+      "phone": "0887-53-2144",
+      "evidence": {
+        "sourceUrl": "https://www.city.kami.lg.jp/uploaded/attachment/51507.pdf",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/01239d5cd2e1a623468d.pdf",
+        "snapshotSHA256": "2d55fc017eb8c0a1ac19f6da7b36e19409901e2e5070d2b3d31da328d8f0eea0",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／龍河洞観光センター／39-212-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-66c4c4fbd8f914efac",
+      "legacyIds": [
+        "place:62328958346da9170610"
+      ],
+      "name": "イオンモール今治新都市1F インフォメーションカウンター",
+      "address": "愛媛県今治市にぎわい広場1番地1",
+      "phone": "0898-34-3700",
+      "evidence": {
+        "sourceUrl": "https://www.city.imabari.ehime.jp/gesuig/mhcard/",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/7bb3156c0f05ccde08b4.html",
+        "snapshotSHA256": "13646e7f7ab2d18d537da7c117ccaa632ff7131e41612092592995ddafef739a",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／イオンモール今治新都市1F インフォメーションカウンター／38-202-C001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-966cf6f4a303ce7b1c",
+      "legacyIds": [
+        "place:3c05d50fb80d4a168b71"
+      ],
+      "name": "ウェルピア伊予",
+      "address": "愛媛県伊予市下三谷1761番地1",
+      "phone": "089-983-4500",
+      "evidence": {
+        "sourceUrl": "https://www.city.iyo.lg.jp/gesuidou/mannho-ruka-do.html",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/b425ccfb03a9ff7a258e.html",
+        "snapshotSHA256": "2d5832ab2549b04121827337653e155f0c97b32c376cc85768eb22b042deb08c",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／ウェルピア伊予／38-210-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-ba24f603e6bac38d9e",
+      "legacyIds": [
+        "place:3901df6e26dbc424e405"
+      ],
+      "name": "中讃流域下水道金倉川浄化センター",
+      "address": "香川県仲多度郡多度津町堀江5-10-1",
+      "phone": "0877-32-6005",
+      "evidence": {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/0285d4f966a131f82bc6.html",
+        "snapshotSHA256": "e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／中讃流域下水道金倉川浄化センター／37-000-A002",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-c7eae2022b55200128",
+      "legacyIds": [
+        "place:ba1d932cad9ad4762741"
+      ],
+      "name": "中讃流域下水道大束川浄化センター",
+      "address": "香川県綾歌郡宇多津町吉田4001-4",
+      "phone": "0877-46-2016",
+      "evidence": {
+        "sourceUrl": "https://kagawa-gesui.or.jp/publics/index/1/detail=1/b_id=1/r_id=30#block1-30",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/0285d4f966a131f82bc6.html",
+        "snapshotSHA256": "e327c54d70131ef8be6105f743dd5b515784ebd1d1b3427d3cc81236b371511b",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／中讃流域下水道大束川浄化センター／37-000-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-c859f2f66b0d2b847c",
+      "legacyIds": [
+        "place:e74bda8e3276594a963e"
+      ],
+      "name": "月見ヶ丘海浜公園",
+      "address": "板野郡松茂町豊岡字山の手42",
+      "phone": "088-699-6697",
+      "evidence": {
+        "sourceUrl": "https://www.toku-eta.or.jp/sewer/manhole-card/",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/dbd367049478659e2926.html",
+        "snapshotSHA256": "4c1ef4874e861cb4b4201c8018cc1207d937c0241838e51c63407c00c13991d7",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／月見ヶ丘海浜公園／36-000-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    },
+    {
+      "id": "facility:cs-f48988ec217d052e92",
+      "legacyIds": [
+        "place:ec22b5c39ce562da61af"
+      ],
+      "name": "マイントピア別子 本館1階チケット売り場",
+      "address": "愛媛県新居浜市立川町707-3",
+      "phone": "0897-43-1801",
+      "evidence": {
+        "sourceUrl": "https://www.city.niihama.lg.jp/site/waterandsewage-public/manhole-card.html",
+        "snapshotPath": "data/evidence/national/chugoku-shikoku/de1cebe906b746644029.html",
+        "snapshotSHA256": "39076a42f2d988abf020ef376d2d42fa42c4d21a09dfdd64af50e1b6877df204",
+        "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／マイントピア別子 本館1階チケット売り場／38-205-B001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内と原入力の施設・窓口を照合し、カード別の配布状態・条件を確認。現地・人手確認ではない。座標の承認は別の施設根拠による。"
+      }
+    }
+  ]
+}
