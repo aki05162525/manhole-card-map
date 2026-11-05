@@ -3779,12 +3779,25 @@
           "sha256": "680f7c503ba55902dedcda02adeae62a6297d81124f2719d164e25b2ada113d5"
         }
       ]
+    },
+    {
+      "path": "data/national/location-batch2/hokkaido/locations-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-53b2b9df9a8da2705261",
+          "sha256": "3cfbf0c459d2c9401660f524d5a1b93a5238c47825b4d74c3cf0a66713e293e7"
+        }
+      ]
     }
   ],
   "locationLifecycle": [
     {
       "path": "data/national/location-batch1/location-lifecycle.json",
       "sha256": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24"
+    },
+    {
+      "path": "data/national/location-batch2/hokkaido/location-lifecycle.json",
+      "sha256": "5ab69d1935b65fdda07368cb581110efbfadc266eb3f592055dc8baf87e40cb2"
     }
   ]
 }
