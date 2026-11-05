@@ -124,3 +124,47 @@ summary: (done in 83.21 seconds)
 `cmd/builddata/fragments_test.go` の TestNationalAssemblyFailureGuards は `python3 -B -m unittest discover -s tools/national -v` を実行し、失敗時だけ出力する。従ってPythonの個別成功行はこのGoログに表示されない。Goパッケージ成功とその呼出し実装を合わせた証跡であり、別の手動Python全suiteログを捏造・重複実行していない。
 
 この追記は文書のみで、データ・テスト入力は検証commitから同一。文書追記commitも通常フックを通す。独立Codexレビュー・CI状態はPR側で別途確認する。
+
+## 第2回統合commitの通常フック確定証跡
+
+検証commit: `5b9e5de16b01905e839a588f3a37a74b053e1668`。開始 `2026-11-05T16:05:53.164441+00:00`、終了 `2026-11-05T16:07:20.083352+00:00`、終了コード `0`。コマンド: `mise exec -- git commit -m "research(gunma): investigate all 13 facilities and propose 10 locations"`。
+
+round2-validation.jsonの全入力hashをcommit後にも照合し一致。対象5テストGREEN、以下の非cache Go成功により、その内部の全国Python全suite成功を確認した。初回のログを今回の結果として流用していない。元ログSHA256: `d9741409f86ec36f6a56214e2677048e41f6236ab6efd6e9e6c2e02473eb7d92`。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	85.471s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.003s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 86.29 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (86.29 seconds)
+```
+
+この追記は文書のみ。第2回validationのpendingはcommit前記録で、本節で成功を確定する。独立Codexレビュー・採用承認・更新後CIの確認は未了。
