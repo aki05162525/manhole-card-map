@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "region": "kyushu-okinawa",
+  "reviewSource": "data/national/reviews/kyushu-okinawa-locations.json",
+  "updates": [
+    {
+      "facilityId": "facility:kyushu-6f8c3d9614b515be55bb",
+      "coordinate": {
+        "lat": 32.9733855,
+        "lng": 130.6022657
+      },
+      "evidence": {
+        "sourceUrl": "https://data.bodik.jp/dataset/ae485a7d-19b8-4add-815a-262f764e874f/resource/6c67bac8-1a9c-4025-b61b-06d05655fcce/download/data_public-facilities.csv",
+        "snapshotPath": "data/evidence/national/locations-kyushu-okinawa/c9966b6fe9854a598545bf5b.html",
+        "snapshotSHA256": "4ddab83f3df97a5b20c75f4ced00df6873ae914d9dd5d9fe58fbef06e2ed421a",
+        "sourceLocator": "自治体公開CSV dataset=433691_public_facilities / 論理レコード24（ヘッダー=1） / 菊水ロマン館 / 熊本県玉名郡和水町江田455 / 原点(緯度)・原点(経度)列",
+        "checkedAt": "2026-11-05T05:02:06.578645+00:00",
+        "actorType": "ai",
+        "verificationMethod": "保存済み自治体公開CSVを独立再読。論理レコード24の菊水ロマン館・江田455を配布原本の道の駅きくすい 菊水ロマン館・江田455と照合。旧提案の論理レコード25（緑彩館・大田黒768-1）は別施設のため除外。建物の代表目的地点。AIによる原典照合であり現地確認ではない。"
+      }
+    }
+  ],
+  "unresolved": []
+}

@@ -25,8 +25,8 @@ const card = (id: string, city: string, lat?: number, lng?: number): Card => ({
   acquired: "2000-01-01",
 });
 const cards = [
-  card("TEST-TOKYO-1", "東京A", 35.68, 139.76),
-  card("TEST-TOKYO-2", "東京B", 35.68, 139.76),
+  card("TEST-TOKYO-1", "東京A", 35.7, 139.78),
+  card("TEST-TOKYO-2", "東京B", 35.7, 139.78),
   card("TEST-OSAKA", "大阪", 34.69, 135.5),
   card("TEST-ISLAND", "大島", 34.75, 139.36),
   card("TEST-UNKNOWN", "位置未確定"),
@@ -57,6 +57,9 @@ export const fixtureData: Data & { fixture: true } = {
       cardId: cards[0]!.id,
       placeId: "test-shared",
       condition: "平日",
+      hours: ["9:00–17:00（合成）"],
+      status: "active",
+      review: "verified",
       periodRaw: "",
       alternativeRaw: "",
     },
@@ -88,7 +91,7 @@ export const fixtureData: Data & { fixture: true } = {
         reference: false,
       })),
     {
-      id: "place-shared",
+      id: "test-shared",
       kind: "place",
       cardIds: [cards[0]!.id, cards[1]!.id],
       status: "active",

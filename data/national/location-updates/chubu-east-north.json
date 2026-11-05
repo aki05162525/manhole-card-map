@@ -1,0 +1,1662 @@
+{
+  "schema": 1,
+  "region": "chubu-east",
+  "updates": [
+    {
+      "facilityId": "facility:chubu-east-03b8e873197013417a8a",
+      "coordinate": {
+        "lat": 35.6635393733764,
+        "lng": 136.072831998673
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/business/educational/learning/detail_1183.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/fb9602c75dd4c634657b88e5.html",
+        "snapshotSHA256": "e311f14c076b643e48e9dee4ee4139dda4cf441056dc68aee4f97963297dc2b1",
+        "sourceLocator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-09184e5313535e78025b",
+      "coordinate": {
+        "lat": 35.5587605,
+        "lng": 135.8963738
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/spot/detail_1216.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/8e7e9d7de72c0084c14ab2c1.html",
+        "snapshotSHA256": "e6361493f84853817cbdd32c9d3569549d3a58c8ce6af84e2d9182be44a4cd01",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-162ab35cfa355151c937",
+      "coordinate": {
+        "lat": 36.768431,
+        "lng": 137.344907
+      },
+      "evidence": {
+        "sourceUrl": "https://plaza.bunspo-namerikawa.jp/access",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/1e077ecad0df52d714b2709e.html",
+        "snapshotSHA256": "f324d5596663da7eda22eaf9f626459d9b2bd77ba5d10af5d53fcbc02ed19315",
+        "sourceLocator": "Marker position new google.maps.LatLng(36.768431, 137.344907)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設公式アクセスの名称・吾妻町426番地と照合。建物代表点。室内管理事務室ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-1a30fa9fb170d0cd51cb",
+      "coordinate": {
+        "lat": 37.029717394558,
+        "lng": 138.69688868523
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_11419.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/ba0aacdf511ce5e6cbe1cd4c.html",
+        "snapshotSHA256": "0e446ae7caf000495164bc2d7e06633c8ccaaa406bd31d7f62e84d470af03c22",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-1c686a28c47587b6bb59",
+      "coordinate": {
+        "lat": 36.71722732140898,
+        "lng": 137.1647466715495
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[4] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "coordinate": {
+        "lat": 36.7923689,
+        "lng": 137.0529881
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-4f8cda9db5ca74004eba29ea.html",
+        "snapshotSHA256": "ff619f41523e703749a1053e8a5f5d161a411d2e3575fe0908e0b8c15a8762dd",
+        "sourceLocator": "勝興寺地図 の施設place !8m2!3d!4d",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-1f10ee2f5c349a9bd423",
+      "coordinate": {
+        "lat": 35.6607879,
+        "lng": 136.0728077
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/spot/detail_1172.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/007406e4f44847fe4f193197.html",
+        "snapshotSHA256": "1a175e9e48ef27cbceb1dba40f063dec2e8e511bf1a96cebdbcf791712399d02",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-214393f454727d00bd68",
+      "coordinate": {
+        "lat": 36.058653799999995,
+        "lng": 136.21131990000003
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.fukui.lg.jp/kurasi/suido/sisetu/p016229.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/70c72e90d1171b118f961e4c.html",
+        "snapshotSHA256": "0e4a4044063e08589610f212a5106afb42a700e7f6922024a4769f09bd5033bd",
+        "sourceLocator": "水道記念館本文の施設地図 iframe q（フッター市役所地図は除外）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。足羽1丁目7番35号と施設名を確認。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "coordinate": {
+        "lat": 38.01827230363998,
+        "lng": 138.36822302647326
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-2d5ed77041c688fd1e92",
+      "coordinate": {
+        "lat": 37.630705,
+        "lng": 138.953464
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/bb6d381adc23758a21496e4d.html",
+        "snapshotSHA256": "4cd2d42f72c4a238bc5fb08a3d4794a41e54f3f93f35f9d6b13e2b28f5e2acbb",
+        "sourceLocator": "公共施設一覧CSV NO=19 名称・住所・緯度・経度列",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。市公式公開CSVで施設名・住所・電話番号を現施設案内と照合。施設代表点、室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-2e76c59a6c05238dbfb6",
+      "coordinate": {
+        "lat": 38.0299917,
+        "lng": 138.240602
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_42376.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/f829145aa65be0511187256a.html",
+        "snapshotSHA256": "3d60051490aad99113ef2f5c0a30126ef555115b5f79ec047ae78245285c22bc",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。同名施設・市公式施設へのリンクと相川三町目浜町18番地1を確認。台帳は18までの表記。施設代表点、室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-2f014b30b1beec34d5a2",
+      "coordinate": {
+        "lat": 38.080409587975424,
+        "lng": 138.43500624068838
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=24; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「両津支所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-300bbd7bfb6d358a0828",
+      "coordinate": {
+        "lat": 37.2607511,
+        "lng": 138.8676985
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-eb985402edb1445f1fc0f8d7.html",
+        "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/840fab17033d4f0506cc90dd.html SHA256=0468c07df86bf8fad00ecb39340dda7653ca557b67123846de58532ac2d620d7",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "coordinate": {
+        "lat": 38.01827230363998,
+        "lng": 138.36822302647326
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=23; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「佐渡市役所」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-3e592300b98192950d30",
+      "coordinate": {
+        "lat": 37.865776499210234,
+        "lng": 138.41058751742682
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=34; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「赤泊行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-42167e212308e349971a",
+      "coordinate": {
+        "lat": 37.80174229,
+        "lng": 139.1418249
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_5615.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/55e979718f7e7eee566943d5.html",
+        "snapshotSHA256": "c0409b6254b27fc56ee1b6a6cfda2db278b8eae71ba1a31a4b6de7126ab156b0",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-430d427a8a9917ec3c97",
+      "coordinate": {
+        "lat": 37.53890994,
+        "lng": 138.6788429
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7556.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/c0f86feaec5676924e77564c.html",
+        "snapshotSHA256": "49b1bfe8cb237798c634190e97a927d8797d7407ba4d4c2c23afc785cb227da0",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-4a230b7f47d938402297",
+      "coordinate": {
+        "lat": 37.2282147493944,
+        "lng": 136.90493997787
+      },
+      "evidence": {
+        "sourceUrl": "https://www.hot-ishikawa.jp/notohaku/spot/detail_19907.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/ee1148ec001158e3b725e928.html",
+        "snapshotSHA256": "915b82e9777ea3140605f52aaf3fc4ebf83edb193ba678c65115e98782be366f",
+        "sourceLocator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-5435eb27542ce25ee75a",
+      "coordinate": {
+        "lat": 37.656528,
+        "lng": 138.974488
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.sanjo.niigata.jp/material/files/group/3/000104488.csv",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/bb6d381adc23758a21496e4d.html",
+        "snapshotSHA256": "4cd2d42f72c4a238bc5fb08a3d4794a41e54f3f93f35f9d6b13e2b28f5e2acbb",
+        "sourceLocator": "公共施設一覧CSV NO=75 名称・住所・緯度・経度列",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。市公式公開CSVで施設名・住所・電話番号を現施設案内と照合。施設代表点、室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-57361defd79c0f1be55f",
+      "coordinate": {
+        "lat": 35.975515,
+        "lng": 136.491215
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/business/educational/learning/detail_1241.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/426d5eebfc52225094b82926.html",
+        "snapshotSHA256": "a16b09f73f1be47839fc8f1f1af558ae8ba3980aaa0550e85a3e73dd6ebf7fef",
+        "sourceLocator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-5741d341973498bb0b14",
+      "coordinate": {
+        "lat": 36.6414842,
+        "lng": 136.9601108
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.tonami.toyama.jp/info/1610954496.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-e5a7369782214d0fa24c4b75.html",
+        "snapshotSHA256": "26e61c2fac53e6e3882eff62e09f301b8fa2e6c40ab37101cad8561c80878ba0",
+        "sourceLocator": "富山県砺波市宮沢町３番９号 の施設place !8m2!3d!4d",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-58cc7f609bced100c8fb",
+      "coordinate": {
+        "lat": 37.3731431,
+        "lng": 138.5523501
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_6078.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/429da461705561aca50457f9.html",
+        "snapshotSHA256": "e9fafcfae1bbc9fc64619b58d0ecca42e8f9974f6c6ad8c1c2b8f57a5031c483",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-5ae2f427ee1814054975",
+      "coordinate": {
+        "lat": 37.3121405,
+        "lng": 137.2304082
+      },
+      "evidence": {
+        "sourceUrl": "https://ikanoeki.com/access/",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/40392b0552b56097b2d87ef5.html",
+        "snapshotSHA256": "c19460fd69f71d093dec6d81cd1942b4a9f2f375a9c9f9612c8c7717f2930309",
+        "sourceLocator": "公式accessのGoogle Mapを見るリンク先place !8m2!3d!4d、原本APP_OPTIONSにも存在。展開先原本 data/evidence/national/locations-chubu-east-north/f4d3eec84ca961d914f65404.html SHA256=948bd72eb6f4154b45329e6f3feb531eaf4bbbe832e50e377819e0a596b6bf63",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式アクセス本文は越坂18字18番1で台帳と一致。外部地図ルート文字列には18字6番1表記もあるが施設名とplace ID 0x50624158121f0471で同定。建物代表点、室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-64ba9b94f32e4d7b02e5",
+      "coordinate": {
+        "lat": 37.6328237,
+        "lng": 138.9534761
+      },
+      "evidence": {
+        "sourceUrl": "http://kajidojo.com/",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-d62e03f4bfa1ddbdbf0ac9fb.html",
+        "snapshotSHA256": "0fc4f63593171f3d6a32488ffd07a9c620bb543858d9b3625e716ef2b11a6e25",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/2f9effc10b6ed5cf3fd6b57a.html SHA256=1449241021b2fb3516a01f6f59d1b778bc38b51f17d8d35f542e1fe99d31fd11",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 http://kajidojo.com/ の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-65c46cbeb95e0b33fb3d",
+      "coordinate": {
+        "lat": 36.70980443714813,
+        "lng": 137.20943022850716
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[3] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-6fa46f79d558ac9a2294",
+      "coordinate": {
+        "lat": 37.4557425,
+        "lng": 138.8043398
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-eb985402edb1445f1fc0f8d7.html",
+        "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/b2cf8efdf1c5a7f41dd5a18e.html SHA256=7fda0c5fb94896c983f6e1e2dc3937ce38f1f33b8197b5e4c594ccb8dbb72726",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-73c901460d5c4085feae",
+      "coordinate": {
+        "lat": 37.99029565540373,
+        "lng": 138.39605020412418
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=29; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「畑野行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-804da037a103f4e7fed4",
+      "coordinate": {
+        "lat": 38.22562169,
+        "lng": 139.4811839
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/7187",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/c455eeb3325ef036eabb2eee.html",
+        "snapshotSHA256": "146b6ae66bf4147c4a11850bb73102b0302fb4167b05089f06def166da3e7a8d",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-8269fabfa7160814d997",
+      "coordinate": {
+        "lat": 38.0634101,
+        "lng": 139.4529934
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7010.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/d8a4ad495325b2491f02289d.html",
+        "snapshotSHA256": "0e9aac2a12c8a21f3a4246d45ef0fb3bf3a6150691ddee4a6dff95b64aa4718b",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。たるが橋観光交流センター内の胎内市観光協会。施設名・下赤谷387番地1・電話0254-47-2723を照合。建物代表点、室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-8572b08f710776401864",
+      "coordinate": {
+        "lat": 37.368622,
+        "lng": 137.244515
+      },
+      "evidence": {
+        "sourceUrl": "https://www.hot-ishikawa.jp/spot/detail_13297.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/bfc2f9ccf12fe60ca0ba0d37.html",
+        "snapshotSHA256": "23901c3f7a5850c1c507d613308ce8048d9858c253d5a1d0b2073172f2d8cfec",
+        "sourceLocator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-8d079ca91aebd481b02f",
+      "coordinate": {
+        "lat": 36.70983,
+        "lng": 137.301444
+      },
+      "evidence": {
+        "sourceUrl": "http://www.union.nakaniikawa.toyama.jp/",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-00e4cbb507dc60b20968d877.html",
+        "snapshotSHA256": "fcc07cd604e14a13344bb6172b0a634f327ce28c8489ebb0388a8e5b723c5de4",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/1f263f1fdcdab720f01d1946.html SHA256=ec2707865bf85bff3639a120001d7aa14f78327b38c50b9bf40cdde888d39dcb",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 http://www.union.nakaniikawa.toyama.jp/ の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-8d422f663b3095441653",
+      "coordinate": {
+        "lat": 36.69963565594072,
+        "lng": 137.21258697653815
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[1] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-8d6cd79bfebe6de27fd7",
+      "coordinate": {
+        "lat": 37.31113015013835,
+        "lng": 138.79630164898686
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_6095.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/7784b5cb0f6edda7c68dfc07.html",
+        "snapshotSHA256": "4c2b39b0ec516804e0d1488d1d0c23c52329da18e2b67775011eb47ad32c5ddf",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-91ee9dc1eec4e57f0c55",
+      "coordinate": {
+        "lat": 37.662924,
+        "lng": 138.825171
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_9931.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/ffb6c0e071d97d32f8529294.html",
+        "snapshotSHA256": "305f66598874bcbfc125cb20bae7fec51842c06b4a5d885c7fa90fc7249b0e0f",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-940ea32eb0ce0b6bfa15",
+      "coordinate": {
+        "lat": 37.6004931,
+        "lng": 139.1105779
+      },
+      "evidence": {
+        "sourceUrl": "https://www.bijinnoyu.jp/",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-01fa09a7f2678486242ebaa1.html",
+        "snapshotSHA256": "25ad1297aa0b60b6c95f6143574fc07c495c1b6e8d151d345005520de00437fa",
+        "sourceLocator": "アクセス の施設place !8m2!3d!4d",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-9472b21c841796d5551b",
+      "coordinate": {
+        "lat": 35.9112080120612,
+        "lng": 136.24484482209
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/spot/detail_1157.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cb0c83a689e9b005ee05bcc2.html",
+        "snapshotSHA256": "ab0001f348d391807264c0d148d4bc8770f98ce5eefacd95cad062c474aa90fc",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-97553bd65da2ea0b1ed8",
+      "coordinate": {
+        "lat": 37.652797,
+        "lng": 138.919568
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_9852.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/535690639a2adf54968d3336.html",
+        "snapshotSHA256": "9b9765557a7dea28d94dff6134237576c2adda00e4d1bd54b03bb947541c4661",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-996b1b6ed3945a8a136a",
+      "coordinate": {
+        "lat": 36.70224971548778,
+        "lng": 137.21312086777385
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[9] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-9b6d37f36d104bd85e7d",
+      "coordinate": {
+        "lat": 36.072004,
+        "lng": 136.478772
+      },
+      "evidence": {
+        "sourceUrl": "https://www.fuku-e.com/spot/detail_1648.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/f502e13c1658b836286d804b.html",
+        "snapshotSHA256": "42ae5579f0dcab4db4800961a4f2f3f33ee9535836cb675914271b82d681c703",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-a2a5f539ca9876bcbc10",
+      "coordinate": {
+        "lat": 37.4465789,
+        "lng": 138.8508357
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-eb985402edb1445f1fc0f8d7.html",
+        "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/665db80f2b892874b2483406.html SHA256=9de72f6e35afa8d28e3ab852f30287207528718465fe57d709a12170463ac7e1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-a431ee1f761434eba5b1",
+      "coordinate": {
+        "lat": 37.448291,
+        "lng": 138.8487799
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-eb985402edb1445f1fc0f8d7.html",
+        "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/160d71aa9c97cfd8550fa2aa.html SHA256=2ab9e94c2f172c185133a4af55c3b63e2d47523a7b683341bd07c032e8942e6c",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-a693a65d91da4849eed9",
+      "coordinate": {
+        "lat": 36.69075526865272,
+        "lng": 137.21095912702802
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[5] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-a6e07b78b9b85940a9ea",
+      "coordinate": {
+        "lat": 37.0663872,
+        "lng": 138.7070642
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_11416.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/60d2937e0cb4814f5d47a646.html",
+        "snapshotSHA256": "dcff4f98617afed1ed953d0d770a8e9b0a7cb075a49492d88e2336c4335c2994",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-a74d74b8f71512ef2f93",
+      "coordinate": {
+        "lat": 37.31118134956955,
+        "lng": 138.79529313839726
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_6096.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/80e3ff55ab259c84adabd443.html",
+        "snapshotSHA256": "d4c162039c74e2e379e59c1ccfdd97c94f2ef51945113d377dc5c71d7526e977",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-b405f996a8e3a9126188",
+      "coordinate": {
+        "lat": 37.5318816,
+        "lng": 138.9147936
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7515.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/f8b6886169a3d07859b4dc5d.html",
+        "snapshotSHA256": "3ba7e50cd0321fc56a5645de9d92f26738a7ee96a5b0cef19e65a6ab16da3635",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-b769b5a8ad75b69085fb",
+      "coordinate": {
+        "lat": 38.01696054401921,
+        "lng": 138.42692098456578
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2c2e14aa110493a26cee1b16.html",
+        "snapshotSHA256": "7c8e154199e4199fbea09361e24fb64cf9031a22f9c0fedbe5c52a68dd3e4504",
+        "sourceLocator": "公共施設_view features OBJECTID=28; 属性の施設名・所在地・電話番号、geometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。旧名称「新穂行政サービスセンター」を現市民センター住所連絡先一覧（https://www.city.sado.niigata.jp/soshiki/2028/55004.html）の住所と電話番号で同定。同一建物代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-b869e5f26ddb73f34509",
+      "coordinate": {
+        "lat": 36.8149384,
+        "lng": 137.0414904
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.takaoka.toyama.jp/gyosei/kurashi_tetsuzuki/jogesuido/2/55/7056.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-4f8cda9db5ca74004eba29ea.html",
+        "snapshotSHA256": "ff619f41523e703749a1053e8a5f5d161a411d2e3575fe0908e0b8c15a8762dd",
+        "sourceLocator": "道の駅「雨晴」地図 の施設place !8m2!3d!4d",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-ba9d6179833956e3a5e5",
+      "coordinate": {
+        "lat": 37.1325637,
+        "lng": 138.6138618
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_6965.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/2baf04c47e3921781d5672da.html",
+        "snapshotSHA256": "0a9adf0df81f1512dfc9418ccfaaa0a3dccfac06c9ac782f92f1c202f9d53b98",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。松代3816-1のまつだいふるさと会館（観光案内所を含む）代表点。市配布ページ末尾の無記名地図qは使わず施設名付きJSON-LDを採用。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-be57335b774251287453",
+      "coordinate": {
+        "lat": 38.3751788,
+        "lng": 139.45852109999998
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_7009.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/a6fd818ba2ef3b338f0d8bbe.html",
+        "snapshotSHA256": "55763959abc0c3100ae1b160e6a27df024acdc2144f07da67fd78b1cc4f7fce2",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-bfa20e96abc2e1e893f9",
+      "coordinate": {
+        "lat": 37.4595997,
+        "lng": 139.0072657
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-eb985402edb1445f1fc0f8d7.html",
+        "snapshotSHA256": "3335a6b814e0938c750f768e0c096ac0df283cee285a7c3f968620811b9d9f43",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/b98511b1144c54052fc8e30a.html SHA256=ef8c936daff061be889db377e2e4c37dc3204f921c2c57e99391eed687775ea7",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-c0ecda8d9d93b8a57802",
+      "coordinate": {
+        "lat": 37.3673573,
+        "lng": 138.5464918
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.kashiwazaki.lg.jp/soshikiichiran/jogesuidokyoku/keieikikakuka/2/3/6790.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-616f1c5a7d80e22ef1f49f46.html",
+        "snapshotSHA256": "e76db69bad32bf5a0dbc2fd1ffa08d7f0717b52dee2c5407913fd1528ec82dae",
+        "sourceLocator": "公式施設リンクのリダイレクト先 place !8m2!3d!4d（原本内APP_OPTIONS URLにも存在）。展開先原本 data/evidence/national/locations-chubu-east-north/f707b63f6a80db119b502ab9.html SHA256=4a082db37e205a51a9c271a5066ddc1cb7919834a7cbc73943c528f6d8eddd8a",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式掲載元 https://www.city.kashiwazaki.lg.jp/soshikiichiran/jogesuidokyoku/keieikikakuka/2/3/6790.html の施設配布案内と名称・住所を照合。建物代表点で階・室内窓口までは表さない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-c70c4e011f081edd992d",
+      "coordinate": {
+        "lat": 36.06150377381757,
+        "lng": 136.22244015859127
+      },
+      "evidence": {
+        "sourceUrl": "https://fuku-iro.jp/spot/detail_10362.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/1989c97a784e24d69f6d8874.html",
+        "snapshotSHA256": "f4ca8cbf00ebe605fb5db202be7dfdc82efe70aa8d892eab9f66b9d01ae995df",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-c77e1d4291123e443e02",
+      "coordinate": {
+        "lat": 37.23111708370985,
+        "lng": 136.91234436174898
+      },
+      "evidence": {
+        "sourceUrl": "https://www.town.anamizu.lg.jp/map/102986.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/531334f4a26af0f00a999876.html",
+        "snapshotSHA256": "80376dcb2722eb5c20af37e5ee85ac01c18ddc38221392741c12d9e4a4729e5a",
+        "sourceLocator": "initlat/initlong。参照JS /ssi/js/shisetsu-detail-googlemap.js が同値をgoogle.maps.Marker(position:myLatlng)へ渡す",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式施設案内の役場名・川島ラ174と照合。表示中心だけでなく明示markerに使用。建物代表点、階・室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-c97fe3159065c1d396d0",
+      "coordinate": {
+        "lat": 36.7600219,
+        "lng": 137.233925
+      },
+      "evidence": {
+        "sourceUrl": "https://www.info-toyama.com/attractions/11039",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/ee8d4e59040031ff7749ca0d.html",
+        "snapshotSHA256": "3f5cad2f092d1fb6059e76ee4adc86dc1461778e2cc0bba945d78081beb26624",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-da3138eda85b8b9aa5f0",
+      "coordinate": {
+        "lat": 37.651871,
+        "lng": 138.869272
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_9934.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/c70c4a4410bfcaca788e148a.html",
+        "snapshotSHA256": "c4c0cc746ca5163034496898a5193ff02a00bd6e0bf4ea7813c9d0eb0a9eb0b0",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-dade89399c684a92a0fa",
+      "coordinate": {
+        "lat": 37.9506632,
+        "lng": 139.1229608
+      },
+      "evidence": {
+        "sourceUrl": "http://www.niigata-gesuikou.or.jp/manhole2017",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-ef5ab05fce0ec98378adc6e5.html",
+        "snapshotSHA256": "322096bc7027b95c1793be8cc330da36b7953ac8ff7add8f44f9cceabf2bda4a",
+        "sourceLocator": "※googleマップで確認 の施設place !8m2!3d!4d",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。公式ページの施設名・配布住所と同定。建物代表点。室内窓口の測位ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-e19306d23984524324fa",
+      "coordinate": {
+        "lat": 37.1409295,
+        "lng": 138.7568305
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_42987.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/36cbe9ac447ae29038c99ac4.html",
+        "snapshotSHA256": "2f758ce915e3e70a4e2c6cbab1d45409dd7ff2cc11a1c3f67f095aac24a918bc",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-f0ae4d2d7ac7da968233",
+      "coordinate": {
+        "lat": 36.9700961,
+        "lng": 136.904615199999
+      },
+      "evidence": {
+        "sourceUrl": "https://www.hot-ishikawa.jp/spot/detail_18192.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/61db63860bb80f9716eae26c.html",
+        "snapshotSHA256": "4eb7bb5dec91db83ff79c2886b6137610aba6682b4f9e0ef7a9524d39f850c91",
+        "sourceLocator": "当該施設基本情報・アクセス地図 iframe embed/v1/place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。道の駅織姫の里なかのと、井田ぬ部10-1の施設代表点。室内窓口ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-f32a8444ba413d95d7c7",
+      "coordinate": {
+        "lat": 37.815244847634524,
+        "lng": 138.2796907635087
+      },
+      "evidence": {
+        "sourceUrl": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/892f1e951258443bcd3b31a8.html",
+        "snapshotSHA256": "f9ee63be1d2f60a21a86b635f946369f708e19c381be7e396e16b9b42bf01cd8",
+        "sourceLocator": "施設GIS features OBJECTID=19 属性の施設名・住所とgeometry (outSR=4326)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。南佐渡総合案内所(マリンプラザ小木)、小木町1935番地26を現配布案内と照合。建物代表点。窓口室内ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-f76be56daea16dee1c4b",
+      "coordinate": {
+        "lat": 36.69436482872409,
+        "lng": 137.21265997671307
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[2] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-f96127654c2cf93ddf74",
+      "coordinate": {
+        "lat": 38.0225125,
+        "lng": 139.4998541
+      },
+      "evidence": {
+        "sourceUrl": "https://niigata-kankou.or.jp/spot/detail_42308.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/ea9746de95bd235c15e25770.html",
+        "snapshotSHA256": "7cd6fbcb6d2b1e3094b39c5c5328b1891fc1b3605dfe9a007a8b7e451a802883",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-fac87e65d8ae65cf8ba5",
+      "coordinate": {
+        "lat": 36.861277,
+        "lng": 136.989262
+      },
+      "evidence": {
+        "sourceUrl": "https://www.info-toyama.com/attractions/80239",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/3b3f2169e00da6dbcab7e374.html",
+        "snapshotSHA256": "b9145ce59a3483befddbac9c78169e967ef2dd5ab28465e823c9d9935b2c5a12",
+        "sourceLocator": "当該施設JSON-LD GeoCoordinates、基本情報の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。施設名・住所が台帳と一致。施設代表点であり室内の正確な窓口位置ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:chubu-east-ffaf8d907c2a31f69989",
+      "coordinate": {
+        "lat": 36.69587359214699,
+        "lng": 137.2136985885318
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.toyama.lg.jp/kurashi/suido/1010356/1010360/1011634.html",
+        "snapshotPath": "data/evidence/national/locations-chubu-east-north/cached-0cc678ca5c1973670046847f.html",
+        "snapshotSHA256": "397aeea01a750a46b1927cad9d79a3c0d22dae6d4bf833d2552274e75712fd60",
+        "sourceLocator": "配布場所一覧 markers[0] の名称付き地点と本文の住所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原典照合。本文で当該配布施設・住所を確認した明示marker。地図全体のpoints中心とは異なる。施設代表点で室内の正確な窓口位置ではない。"
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "attempts": [
+        {
+          "url": "http://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+          "result": "原本確認 HTTP 200。保存協会アクセスと福井市観光の復原町並を調査。観光JSON-LDは町並全体の地点で、台帳の復原町並受付（城戸ノ内町28-43）に対応する建物・入口地点を分離できない。広い史跡の代表点を受付点として採用しない。"
+        },
+        {
+          "url": "http://www3.fctv.ne.jp/~asakura/",
+          "result": "原本確認 HTTP 200。保存協会アクセスと福井市観光の復原町並を調査。観光JSON-LDは町並全体の地点で、台帳の復原町並受付（城戸ノ内町28-43）に対応する建物・入口地点を分離できない。広い史跡の代表点を受付点として採用しない。"
+        },
+        {
+          "url": "http://www3.fctv.ne.jp/~asakura/40about/access.html",
+          "result": "原本確認 HTTP 200。保存協会アクセスと福井市観光の復原町並を調査。観光JSON-LDは町並全体の地点で、台帳の復原町並受付（城戸ノ内町28-43）に対応する建物・入口地点を分離できない。広い史跡の代表点を受付点として採用しない。"
+        },
+        {
+          "url": "https://fuku-iro.jp/spot/detail_10033.html",
+          "result": "原本確認 HTTP 200。保存協会アクセスと福井市観光の復原町並を調査。観光JSON-LDは町並全体の地点で、台帳の復原町並受付（城戸ノ内町28-43）に対応する建物・入口地点を分離できない。広い史跡の代表点を受付点として採用しない。"
+        }
+      ],
+      "reason": "保存協会アクセスと福井市観光の復原町並を調査。観光JSON-LDは町並全体の地点で、台帳の復原町並受付（城戸ノ内町28-43）に対応する建物・入口地点を分離できない。広い史跡の代表点を受付点として採用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-0c0f3438fa9b21563d94",
+      "attempts": [
+        {
+          "url": "http://www.union.nakaniikawa.toyama.jp/",
+          "result": "原本確認 HTTP 200。舟橋村公式会館詳細で海老江147を確認。埋込地図は住所ラベルとviewportのみで、会館建物の数値markerを確定できない。中新川広域組合トップのGoogleリンクは国重242の別庁舎で不採用。"
+        },
+        {
+          "url": "https://www.union.nakaniikawa.toyama.jp/_wp/wp-content/uploads/2025/12/manholecard.pdf",
+          "result": "原本確認 HTTP 200。舟橋村公式会館詳細で海老江147を確認。埋込地図は住所ラベルとviewportのみで、会館建物の数値markerを確定できない。中新川広域組合トップのGoogleリンクは国重242の別庁舎で不採用。"
+        },
+        {
+          "url": "https://www.union.nakaniikawa.toyama.jp/info/cat_info/gesui/page/2/",
+          "result": "原本確認 HTTP 200。舟橋村公式会館詳細で海老江147を確認。埋込地図は住所ラベルとviewportのみで、会館建物の数値markerを確定できない。中新川広域組合トップのGoogleリンクは国重242の別庁舎で不採用。"
+        },
+        {
+          "url": "https://www.vill.funahashi.toyama.jp/facility_new/hall.html",
+          "result": "原本確認 HTTP 200。舟橋村公式会館詳細で海老江147を確認。埋込地図は住所ラベルとviewportのみで、会館建物の数値markerを確定できない。中新川広域組合トップのGoogleリンクは国重242の別庁舎で不採用。"
+        }
+      ],
+      "reason": "舟橋村公式会館詳細で海老江147を確認。埋込地図は住所ラベルとviewportのみで、会館建物の数値markerを確定できない。中新川広域組合トップのGoogleリンクは国重242の別庁舎で不採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-0ec1549ca80513ef50b8",
+      "attempts": [
+        {
+          "url": "https://www.city.tsubame.niigata.jp/",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/kurashi/joge/1/3772.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/somu/3/4/972.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+        }
+      ],
+      "reason": "燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、掲載案内図・施設地図入口から庁舎の明示数値markerを得られず、2階下水道課の目的地座標は未確定。"
+    },
+    {
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "attempts": [
+        {
+          "url": "http://www.asahimidori.com/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/road-station/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/store/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/restaurant/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/farmers-store/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/spa/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/kireikan/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/matagi/",
+          "result": "原本確認 HTTP 404; HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/dome/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://asahimidori.com/access-guide/cultural-exchange-center/",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://www.city.murakami.lg.jp/soshiki/135/webaccess.html",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        },
+        {
+          "url": "https://niigata-kankou.or.jp/spot/detail_7003.html",
+          "result": "原本確認 HTTP 200。朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+        }
+      ],
+      "reason": "朝日みどりの里公式の物産会館・配置案内と県観光の道の駅を照合。物産会館は猿沢1215、県観光の道の駅は猿沢1212で複数棟構成。道の駅全体点を物産会館へ流用しない。再整備の記載は別途注意事項。"
+    },
+    {
+      "facilityId": "facility:chubu-east-2c154ba68d0d6982682e",
+      "attempts": [
+        {
+          "url": "http://www.city.kahoku.ishikawa.jp/www/index.html",
+          "result": "原本確認 HTTP 200。かほく市公式配布案内と観光公式アクセスを調査。対象は市役所宇野気ニ81の上下水道課。観光アクセスは地域案内または高松の観光協会であり当該庁舎の明示数値markerを確認できない。"
+        },
+        {
+          "url": "https://www.city.kahoku.lg.jp/001/162/166/d000181.html",
+          "result": "原本確認 HTTP 200。かほく市公式配布案内と観光公式アクセスを調査。対象は市役所宇野気ニ81の上下水道課。観光アクセスは地域案内または高松の観光協会であり当該庁舎の明示数値markerを確認できない。"
+        },
+        {
+          "url": "https://kanko-kahoku.com/access/index.html",
+          "result": "原本確認 HTTP 200。かほく市公式配布案内と観光公式アクセスを調査。対象は市役所宇野気ニ81の上下水道課。観光アクセスは地域案内または高松の観光協会であり当該庁舎の明示数値markerを確認できない。"
+        }
+      ],
+      "reason": "かほく市公式配布案内と観光公式アクセスを調査。対象は市役所宇野気ニ81の上下水道課。観光アクセスは地域案内または高松の観光協会であり当該庁舎の明示数値markerを確認できない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-4af15accba6e0c303389",
+      "attempts": [
+        {
+          "url": "https://www.city.tsubame.niigata.jp/",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/kurashi/joge/1/3772.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+          "result": "原本確認 HTTP 200。燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+        }
+      ],
+      "reason": "燕市公式市役所案内・アクセス・公開データを調査。吉田西太田1934の庁舎住所は一致するが、案内図から数値は推定しない。1階夜間休日受付と同庁舎を同定したが庁舎の明示数値marker未取得。"
+    },
+    {
+      "facilityId": "facility:chubu-east-63a2e5f9e47674402ad4",
+      "attempts": [
+        {
+          "url": "https://www.city.itoigawa.lg.jp/site/gasusui/1506.html",
+          "result": "原本確認 HTTP 200。キターレ公式アクセス・市公式案内を調査。市地図URLのlat/lngは検索モードの表示中心で施設markerではない。公式サイトでも河井町4-66-1の建物地点を明示する座標を確定できず。"
+        },
+        {
+          "url": "https://www.kita-re.jp/",
+          "result": "原本確認 HTTP 200。キターレ公式アクセス・市公式案内を調査。市地図URLのlat/lngは検索モードの表示中心で施設markerではない。公式サイトでも河井町4-66-1の建物地点を明示する座標を確定できず。"
+        },
+        {
+          "url": "https://www.city.itoigawa.lg.jp/site/userguide/8573.html",
+          "result": "原本確認 HTTP 200。キターレ公式アクセス・市公式案内を調査。市地図URLのlat/lngは検索モードの表示中心で施設markerではない。公式サイトでも河井町4-66-1の建物地点を明示する座標を確定できず。"
+        },
+        {
+          "url": "https://www.kita-re.jp/access",
+          "result": "原本確認 HTTP 200。キターレ公式アクセス・市公式案内を調査。市地図URLのlat/lngは検索モードの表示中心で施設markerではない。公式サイトでも河井町4-66-1の建物地点を明示する座標を確定できず。"
+        }
+      ],
+      "reason": "キターレ公式アクセス・市公式案内を調査。市地図URLのlat/lngは検索モードの表示中心で施設markerではない。公式サイトでも河井町4-66-1の建物地点を明示する座標を確定できず。"
+    },
+    {
+      "facilityId": "facility:chubu-east-66796850ae3f8443ee9a",
+      "attempts": [
+        {
+          "url": "https://www.town.anamizu.lg.jp/page/105862.html",
+          "result": "原本確認 HTTP 200。能登ワインの県公式観光施設座標を発見したが、同ページ住所は旭ケ丘リ5番1、台帳・町配布案内はり5番6。地番の違いと配布建物の関係が未解消のため施設名だけで採用しない。"
+        },
+        {
+          "url": "https://www.hot-ishikawa.jp/notohaku/spot/detail_6141.html",
+          "result": "原本確認 HTTP 200。能登ワインの県公式観光施設座標を発見したが、同ページ住所は旭ケ丘リ5番1、台帳・町配布案内はり5番6。地番の違いと配布建物の関係が未解消のため施設名だけで採用しない。"
+        }
+      ],
+      "reason": "能登ワインの県公式観光施設座標を発見したが、同ページ住所は旭ケ丘リ5番1、台帳・町配布案内はり5番6。地番の違いと配布建物の関係が未解消のため施設名だけで採用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-6ce3317916265907deb9",
+      "attempts": [
+        {
+          "url": "https://www.city.tokamachi.lg.jp/soshiki/jogesuidokyoku/jogesuidoka/1/event/1531463972378.html",
+          "result": "原本確認 HTTP 200。清津峡公式案内・県観光を調査。県観光の数値は清津峡渓谷トンネル全体の地点。エントランスPeriscopeはトンネル入口から離れた別施設であり、トンネル点をショップへ流用しない。"
+        },
+        {
+          "url": "https://www.city.tokamachi.lg.jp/soshiki/jogesuidokyoku/jogesuidoka/1/event/1607923705463.html",
+          "result": "原本確認 HTTP 200。清津峡公式案内・県観光を調査。県観光の数値は清津峡渓谷トンネル全体の地点。エントランスPeriscopeはトンネル入口から離れた別施設であり、トンネル点をショップへ流用しない。"
+        },
+        {
+          "url": "https://niigata-kankou.or.jp/spot/detail_6950.html",
+          "result": "原本確認 HTTP 200。清津峡公式案内・県観光を調査。県観光の数値は清津峡渓谷トンネル全体の地点。エントランスPeriscopeはトンネル入口から離れた別施設であり、トンネル点をショップへ流用しない。"
+        }
+      ],
+      "reason": "清津峡公式案内・県観光を調査。県観光の数値は清津峡渓谷トンネル全体の地点。エントランスPeriscopeはトンネル入口から離れた別施設であり、トンネル点をショップへ流用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-6f1cf560a94cdce2b66d",
+      "attempts": [
+        {
+          "url": "https://www.town.shika.lg.jp/page/2242.html",
+          "result": "原本確認 HTTP 200。志賀町役場アクセスで末吉千古1-1の本庁舎を確認。埋込pbの!2d/!3dはviewportで、2階上下水道課の建物を指す明示数値markerを確認できない。富来支所とは区別。"
+        },
+        {
+          "url": "https://www.town.shika.lg.jp/page/1249.html",
+          "result": "原本確認 HTTP 200。志賀町役場アクセスで末吉千古1-1の本庁舎を確認。埋込pbの!2d/!3dはviewportで、2階上下水道課の建物を指す明示数値markerを確認できない。富来支所とは区別。"
+        }
+      ],
+      "reason": "志賀町役場アクセスで末吉千古1-1の本庁舎を確認。埋込pbの!2d/!3dはviewportで、2階上下水道課の建物を指す明示数値markerを確認できない。富来支所とは区別。"
+    },
+    {
+      "facilityId": "facility:chubu-east-8dd03483e4267e298b2c",
+      "attempts": [
+        {
+          "url": "https://kyoryunomori.net/",
+          "result": "原本確認 HTTP 200。かつやま恐竜の森公式アクセス・園内案内を調査。長尾山総合公園の広域案内と管理事務所建物を分離できない。サイトのGoogleリンクに含まれる別駐車場地点や公園代表点を管理事務所へ流用しない。"
+        },
+        {
+          "url": "https://www.city.katsuyama.fukui.jp/soshiki/17/324.html",
+          "result": "原本確認 HTTP 200。かつやま恐竜の森公式アクセス・園内案内を調査。長尾山総合公園の広域案内と管理事務所建物を分離できない。サイトのGoogleリンクに含まれる別駐車場地点や公園代表点を管理事務所へ流用しない。"
+        },
+        {
+          "url": "https://kyoryunomori.net/access/",
+          "result": "原本確認 HTTP 200。かつやま恐竜の森公式アクセス・園内案内を調査。長尾山総合公園の広域案内と管理事務所建物を分離できない。サイトのGoogleリンクに含まれる別駐車場地点や公園代表点を管理事務所へ流用しない。"
+        },
+        {
+          "url": "https://www.city.katsuyama.fukui.jp/site/mayor7/4088.html",
+          "result": "原本確認 HTTP 200。かつやま恐竜の森公式アクセス・園内案内を調査。長尾山総合公園の広域案内と管理事務所建物を分離できない。サイトのGoogleリンクに含まれる別駐車場地点や公園代表点を管理事務所へ流用しない。"
+        }
+      ],
+      "reason": "かつやま恐竜の森公式アクセス・園内案内を調査。長尾山総合公園の広域案内と管理事務所建物を分離できない。サイトのGoogleリンクに含まれる別駐車場地点や公園代表点を管理事務所へ流用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-9720552572da10795a23",
+      "attempts": [
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2021/84122.html",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://opendata-sado-city.hub.arcgis.com/",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+        }
+      ],
+      "reason": "佐渡公式公共施設GISの佐和田行政サービスセンター（河原田本町394）は37.99825171390319,138.3218818549902、同住所の会館等GIS佐渡中央会館は38.00143338792895,138.31787263805097。現市民センター一覧と住所は一致するが約500mの矛盾を解消できず不採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-9edbc9e5f93fa2bba0a9",
+      "attempts": [
+        {
+          "url": "https://www.town.takahama.fukui.jp/page/jyousuidou/index.html",
+          "result": "原本確認 HTTP 200。高浜町公式上水道センター施設案内で東三松34-3-1を確認。本文に採用できる明示数値markerなし。フッターGoogleリンクは宮崎の町役場であり上水道センターではない。"
+        },
+        {
+          "url": "https://www.town.takahama.fukui.jp/page/jyousuidou/p006274.html",
+          "result": "原本確認 HTTP 200。高浜町公式上水道センター施設案内で東三松34-3-1を確認。本文に採用できる明示数値markerなし。フッターGoogleリンクは宮崎の町役場であり上水道センターではない。"
+        },
+        {
+          "url": "https://goo.gl/maps/1DQoroswuE32",
+          "result": "原本確認 HTTP 200。高浜町公式上水道センター施設案内で東三松34-3-1を確認。本文に採用できる明示数値markerなし。フッターGoogleリンクは宮崎の町役場であり上水道センターではない。"
+        },
+        {
+          "url": "https://www.town.takahama.fukui.jp/page/jyousuidou/p008136.html",
+          "result": "原本確認 HTTP 200。高浜町公式上水道センター施設案内で東三松34-3-1を確認。本文に採用できる明示数値markerなし。フッターGoogleリンクは宮崎の町役場であり上水道センターではない。"
+        }
+      ],
+      "reason": "高浜町公式上水道センター施設案内で東三松34-3-1を確認。本文に採用できる明示数値markerなし。フッターGoogleリンクは宮崎の町役場であり上水道センターではない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-a038b0439fa5d98aaedd",
+      "attempts": [
+        {
+          "url": "http://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=22577",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        },
+        {
+          "url": "https://shinminato.co.jp",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        },
+        {
+          "url": "https://maps.app.goo.gl/HXTfuPYHrjzmECYa9",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        },
+        {
+          "url": "https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=2",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        },
+        {
+          "url": "https://shinminato.co.jp/access/",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        },
+        {
+          "url": "https://maps.app.goo.gl/frJcpGQJh6kayMTYA",
+          "result": "原本確認 HTTP 200。射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+        }
+      ],
+      "reason": "射水市公式物産館施設ページと道の駅公式配置案内を調査。物産館の埋込地図place IDと短縮リンクが解決する道の駅全体place IDが異なる。物産館事務所の建物と全体代表点を区別できず不採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-a0e69430196f5ec5e2d8",
+      "attempts": [
+        {
+          "url": "https://www.city.niigata.lg.jp/kurashi/jyogesuido/gesui/oshirase/mhcard.html",
+          "result": "原本確認 HTTP 200。運営者のmachiminato.jp公式施設サイト・アクセスを確認。アクセスは交通経路の文章・案内図で数値markerなし。類似ドメインniigatafurumachi.comは運営主体が異なる第三者案内のため根拠不採用。"
+        },
+        {
+          "url": "https://www.niigatafurumachi.com/",
+          "result": "原本確認 HTTP 200。運営者のmachiminato.jp公式施設サイト・アクセスを確認。アクセスは交通経路の文章・案内図で数値markerなし。類似ドメインniigatafurumachi.comは運営主体が異なる第三者案内のため根拠不採用。"
+        },
+        {
+          "url": "https://machiminato.jp/",
+          "result": "原本確認 HTTP 200。運営者のmachiminato.jp公式施設サイト・アクセスを確認。アクセスは交通経路の文章・案内図で数値markerなし。類似ドメインniigatafurumachi.comは運営主体が異なる第三者案内のため根拠不採用。"
+        },
+        {
+          "url": "https://machiminato.jp/access/",
+          "result": "原本確認 HTTP 200。運営者のmachiminato.jp公式施設サイト・アクセスを確認。アクセスは交通経路の文章・案内図で数値markerなし。類似ドメインniigatafurumachi.comは運営主体が異なる第三者案内のため根拠不採用。"
+        }
+      ],
+      "reason": "運営者のmachiminato.jp公式施設サイト・アクセスを確認。アクセスは交通経路の文章・案内図で数値markerなし。類似ドメインniigatafurumachi.comは運営主体が異なる第三者案内のため根拠不採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-a97e4141d06f3d78c1ff",
+      "attempts": [
+        {
+          "url": "https://www.town.noto.lg.jp/kakuka/1006/gyomu/1/1/1528.html",
+          "result": "原本確認 HTTP 200。能登町公式コンセールのと・宇出津公民館案内で同建物住所を確認。Google地図qは名称文字列、llはviewportで数値目的地ではない。リンク先からも確実な施設feature座標を取得できず。"
+        },
+        {
+          "url": "https://www.town.noto.lg.jp/kakuka/1012/gyomu/kyouikufront/syokannshisetsu/syougaigakusyuushisetsu/4876.html",
+          "result": "原本確認 HTTP 200。能登町公式コンセールのと・宇出津公民館案内で同建物住所を確認。Google地図qは名称文字列、llはviewportで数値目的地ではない。リンク先からも確実な施設feature座標を取得できず。"
+        },
+        {
+          "url": "https://maps.google.co.jp/maps?q=%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%BC%E3%83%AB%E3%81%AE%E3%81%A8&ll=37.3101727,137.1482256&z=13",
+          "result": "原本確認 HTTP 429; HTTP Error 429: Too Many Requests"
+        },
+        {
+          "url": "https://www.town.noto.lg.jp/kanko-bunka-sports/shisetsu/1/3201.html",
+          "result": "原本確認 HTTP 200。能登町公式コンセールのと・宇出津公民館案内で同建物住所を確認。Google地図qは名称文字列、llはviewportで数値目的地ではない。リンク先からも確実な施設feature座標を取得できず。"
+        }
+      ],
+      "reason": "能登町公式コンセールのと・宇出津公民館案内で同建物住所を確認。Google地図qは名称文字列、llはviewportで数値目的地ではない。リンク先からも確実な施設feature座標を取得できず。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+      "attempts": [
+        {
+          "url": "http://www.city.murakami.lg.jp/soshiki/90/arakawakouminnkann.html",
+          "result": "原本確認 HTTP 200。村上市公式荒川地区公民館案内で羽ケ榎104-25を確認。埋込地図のviewport以外に建物位置として採用できる明示座標を確認できない。別URLの施設案内探索も未解決。"
+        },
+        {
+          "url": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+          "result": "原本確認 HTTP 200。村上市公式荒川地区公民館案内で羽ケ榎104-25を確認。埋込地図のviewport以外に建物位置として採用できる明示座標を確認できない。別URLの施設案内探索も未解決。"
+        },
+        {
+          "url": "https://www.city.murakami.lg.jp/site/kouminkan/arakawa-koumin.html",
+          "result": "原本確認 HTTP 404; HTTP Error 404: Not Found"
+        }
+      ],
+      "reason": "村上市公式荒川地区公民館案内で羽ケ榎104-25を確認。埋込地図のviewport以外に建物位置として採用できる明示座標を確認できない。別URLの施設案内探索も未解決。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b283747d4f21772ff09f",
+      "attempts": [
+        {
+          "url": "https://www.city.tsubame.niigata.jp/kurashi/joge/1/3772.html",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/kyoiku/3/12/10278/683.html",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/somu/1/gis_opendata/17993.html",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/soshiki/kikaku_zaisei/1/17/1458.html",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/2/152137_open_data_list.csv",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://www.city.tsubame.niigata.jp/material/files/group/5/sougoriyoushisetsu20240401.csv",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://niigata-kankou.or.jp/spot/44312",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        },
+        {
+          "url": "https://tsubame-kankou.jp/seeing-2/%E7%87%95%E5%B8%82%E5%88%86%E6%B0%B4%E8%89%AF%E5%AF%9B%E5%8F%B2%E6%96%99%E9%A4%A8/",
+          "result": "原本確認 HTTP 200。燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+        }
+      ],
+      "reason": "燕市施設案内・県観光・燕市観光協会の個別詳細を照合。上諏訪9-9は一致するが県観光geoは未設定、協会埋込地図は住所ラベル付きviewport。住所代表点を史料館建物点へ格上げしない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b2f8a6198b903eba94ee",
+      "attempts": [
+        {
+          "url": "https://www.city.murakami.lg.jp/site/kanko/bussan-mitinoeki.html",
+          "result": "原本確認 HTTP 200。県公式観光の道の駅神林詳細を確認。九日市809の道の駅全体geoはあるが道路情報ターミナル棟と穂波の里直売所等の区別が付かず、全体点を対象棟に流用しない。"
+        },
+        {
+          "url": "https://www.city.murakami.lg.jp/soshiki/139/gesuido-mhcard.html",
+          "result": "原本確認 HTTP 200。県公式観光の道の駅神林詳細を確認。九日市809の道の駅全体geoはあるが道路情報ターミナル棟と穂波の里直売所等の区別が付かず、全体点を対象棟に流用しない。"
+        },
+        {
+          "url": "https://niigata-kankou.or.jp/spot/detail_7002.html",
+          "result": "原本確認 HTTP 200。県公式観光の道の駅神林詳細を確認。九日市809の道の駅全体geoはあるが道路情報ターミナル棟と穂波の里直売所等の区別が付かず、全体点を対象棟に流用しない。"
+        }
+      ],
+      "reason": "県公式観光の道の駅神林詳細を確認。九日市809の道の駅全体geoはあるが道路情報ターミナル棟と穂波の里直売所等の区別が付かず、全体点を対象棟に流用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b7d603f8e144e10c3bb0",
+      "attempts": [
+        {
+          "url": "http://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+          "result": "原本確認 HTTP 200。福井市上下水道局公式案内を確認。大手3-13-1の局庁舎への地図qは名称・住所文字列で数値marker未取得。公式ページ共通フッターの大手3-10-1市役所地点は別建物につき不採用。"
+        }
+      ],
+      "reason": "福井市上下水道局公式案内を確認。大手3-13-1の局庁舎への地図qは名称・住所文字列で数値marker未取得。公式ページ共通フッターの大手3-10-1市役所地点は別建物につき不採用。"
+    },
+    {
+      "facilityId": "facility:chubu-east-b7d939284218814b6bba",
+      "attempts": [
+        {
+          "url": "https://www.city.nagaoka.niigata.jp/kurashi/cate05/gesui/mhcard.html",
+          "result": "原本確認 HTTP 200。長岡市公式配布案内・市民センター詳細・公式施設地図リンクを調査。旧施設大手通2-2-6の明示座標未取得。配布終了・後継案内があるため後継アオーレ地点を旧市民センターへ付けない。移転採否は担当外。"
+        },
+        {
+          "url": "https://www.city.nagaoka.niigata.jp/kurashi/cate13/s-center/",
+          "result": "原本確認 HTTP 200。長岡市公式配布案内・市民センター詳細・公式施設地図リンクを調査。旧施設大手通2-2-6の明示座標未取得。配布終了・後継案内があるため後継アオーレ地点を旧市民センターへ付けない。移転採否は担当外。"
+        },
+        {
+          "url": "http://www2.wagmap.jp/nagaoka/gate/?lnk=215161D21221A",
+          "result": "原本確認 HTTP 200。長岡市公式配布案内・市民センター詳細・公式施設地図リンクを調査。旧施設大手通2-2-6の明示座標未取得。配布終了・後継案内があるため後継アオーレ地点を旧市民センターへ付けない。移転採否は担当外。"
+        }
+      ],
+      "reason": "長岡市公式配布案内・市民センター詳細・公式施設地図リンクを調査。旧施設大手通2-2-6の明示座標未取得。配布終了・後継案内があるため後継アオーレ地点を旧市民センターへ付けない。移転採否は担当外。"
+    },
+    {
+      "facilityId": "facility:chubu-east-cf23f7f3846328ad1c67",
+      "attempts": [
+        {
+          "url": "https://www.town.shika.lg.jp/page/2242.html",
+          "result": "原本確認 HTTP 200。志賀町役場アクセスで本庁舎末吉千古1-1を確認。pb内数値はviewportで建物markerと見なさない。1階管理人室のある本庁舎を同定したが目的地座標未取得。"
+        }
+      ],
+      "reason": "志賀町役場アクセスで本庁舎末吉千古1-1を確認。pb内数値はviewportで建物markerと見なさない。1階管理人室のある本庁舎を同定したが目的地座標未取得。"
+    },
+    {
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "attempts": [
+        {
+          "url": "https://www.pref.ishikawa.lg.jp/seikatsuhaisui/gesui/manholekard.html",
+          "result": "原本確認 HTTP 200。輪島市上下水道局の公式窓口案内を追加確認。河井町21部1（台帳21部1-1）までは確認できるが、当該局の建物を特定する明示数値markerを得られない。市役所やキターレの地点とは区別。"
+        },
+        {
+          "url": "https://www.city.wajima.ishikawa.jp/article/2023020500013/",
+          "result": "原本確認 HTTP 200。輪島市上下水道局の公式窓口案内を追加確認。河井町21部1（台帳21部1-1）までは確認できるが、当該局の建物を特定する明示数値markerを得られない。市役所やキターレの地点とは区別。"
+        }
+      ],
+      "reason": "輪島市上下水道局の公式窓口案内を追加確認。河井町21部1（台帳21部1-1）までは確認できるが、当該局の建物を特定する明示数値markerを得られない。市役所やキターレの地点とは区別。"
+    },
+    {
+      "facilityId": "facility:chubu-east-d96a5cb4a1b2f5fc4173",
+      "attempts": [
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2021/53417.html",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2021/76740.html",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2028/55004.html",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/3009/index.html",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://www.city.sado.niigata.jp/soshiki/2002/30816.html",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://opendata-sado-city.hub.arcgis.com/",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://www.arcgis.com/sharing/rest/search?f=json&num=100&q=orgid%3ACkpxhGWnBSk5Y9fW%20AND%20type%3A%22Feature%20Service%22",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E3%81%8F%E3%82%89%E3%81%97_%E7%94%9F%E6%B4%BB_%E5%85%AC%E5%85%B1_%E4%BC%9A%E9%A4%A8%E7%AD%89_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        },
+        {
+          "url": "https://services6.arcgis.com/CkpxhGWnBSk5Y9fW/arcgis/rest/services/%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD_%E8%A6%B3%E5%85%89_%E7%94%A3%E6%A5%AD%E9%96%A2%E9%80%A3%E6%96%BD%E8%A8%AD_view/FeatureServer?f=pjson",
+          "result": "原本確認 HTTP 200。佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+        }
+      ],
+      "reason": "佐渡公式会館等GISの佐渡離島開発総合センター（佐渡中央会館）と公共施設GISの同住所河原田本町394の点が約500m離れる。現施設案内と住所を照合したが棟・旧位置・GIS誤登録のどれか判別不能。中央会館へ片方を無検証採用しない。"
+    },
+    {
+      "facilityId": "facility:chubu-east-ee483872ed2d67e3f0ab",
+      "attempts": [
+        {
+          "url": "http://www.town.izumozaki.niigata.jp/kurashi/suido/colormanhole.html",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        },
+        {
+          "url": "https://tenryonosato.jp/",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        },
+        {
+          "url": "https://www.town.izumozaki.niigata.jp/kurashi/suido/",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        },
+        {
+          "url": "https://www.town.izumozaki.niigata.jp:443/chosei/gyosei/access.html",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        },
+        {
+          "url": "https://maps.app.goo.gl/zrQpoac8DFnWiQWD8",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        },
+        {
+          "url": "https://www.town.izumozaki.niigata.jp/chosei/gyosei/access.html",
+          "result": "原本確認 HTTP 200。出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+        }
+      ],
+      "reason": "出雲崎町公式役場アクセス・配布案内を調査。川西140は一致するが埋込地図は住所ラベルのviewportのみ。役場建物に対応する数値markerを確定できない。"
+    }
+  ]
+}

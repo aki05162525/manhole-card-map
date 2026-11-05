@@ -1,0 +1,395 @@
+{
+  "schema": 1,
+  "places": [
+    {
+      "id": "facility:kanto-north-29bd0325065029394d6b",
+      "legacyIds": [
+        "place:29bd0325065029394d6b"
+      ],
+      "name": "北茨城市役所1階 守衛室",
+      "address": "茨城県北茨城市磯原町磯原1630番地",
+      "phone": "0293-43-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+        "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+        "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+        "sourceLocator": "08-215-A001 / 【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室 / 【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口 / 配布時間９：００〜１７：００",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-kitaibaraki-shiminka",
+      "legacyIds": [],
+      "name": "北茨城市役所1階 市民課窓口",
+      "address": "茨城県北茨城市磯原町磯原1630番地",
+      "phone": "0293-43-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+        "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+        "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+        "sourceLocator": "08-215-A001 / 【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室 / 【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口 / 配布時間９：００〜１７：００",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-sakuragawa-makabe-water",
+      "legacyIds": [],
+      "name": "桜川市水道お客様センター（真壁庁舎2階）",
+      "address": "茨城県桜川市真壁町飯塚911番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "snapshotPath": "data/evidence/national/kanto-north/46cfe2892a6fb58a2c97.html",
+        "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff",
+        "sourceLocator": "08-231-A001 / 【平日】桜川市水道お客様センター（桜川市役所真壁庁舎2階） / 住所：茨城県桜川市真壁町飯塚911番地 / 9：00～16：00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-numata-water-4f",
+      "legacyIds": [],
+      "name": "テラス沼田4階 上下水道経営課",
+      "address": "群馬県沼田市下之町888番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+        "snapshotPath": "data/evidence/national/kanto-north/c938ea87cf76022d2897.html",
+        "snapshotSHA256": "b2fca3b1a3a22d9b075630677e79d3ee0609a1d92c6ee82d158dc492be19ab25",
+        "sourceLocator": "10-206-A001 / ※水曜日は、テラス沼田（沼田市下之町888番地）4階上下水道経営課、5階観光交流課（午前8時30分から午後5時15分）で配布しております。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-shibukawa-sewerage",
+      "legacyIds": [],
+      "name": "渋川市役所第二庁舎 上下水道局下水道課",
+      "address": "群馬県渋川市石原6番地1",
+      "phone": "0279-25-7143",
+      "evidence": {
+        "sourceUrl": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p006148.html",
+        "snapshotPath": "data/evidence/national/kanto-north/1d9cec8e5dc4fbe3229e.html",
+        "snapshotSHA256": "361bff13999f4e4fa33653f575ed66cdae8a094e91edccaf004208721059bcb4",
+        "sourceLocator": "10-208-A001 / ＊定期清掃時は、渋川市役所上下水道局下水道課にて配布します。（渋川市役所第二庁舎の方になりますので、お越しになる際はご注意ください。） / 問い合わせ先 下水道課：群馬県渋川市石原6番地1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-shiraoka-temporary-shoko",
+      "legacyIds": [],
+      "name": "白岡市役所仮設本庁舎 商工観光課",
+      "address": "埼玉県白岡市千駄野432番地",
+      "phone": "0480-92-1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.shiraoka.lg.jp/soshiki/seikatsukeizaibu/shokokankoka/8/703.html",
+        "snapshotPath": "data/evidence/national/proposals-kanto-north/00f98834eff4df2ad43b.html",
+        "snapshotSHA256": "9b42feda8b59f2c3f9f47f9850c9a034152db7f12891bd503aedb15404ba361b",
+        "sourceLocator": "仮設本庁舎 商工観光課内 / 商工観光課消費労政担当 〒349-0292 埼玉県白岡市千駄野432番地",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式本文を照合。現地確認ではない。"
+      }
+    },
+    {
+      "id": "facility:kanto-north-kawajima-water",
+      "legacyIds": [],
+      "name": "川島町役場1階 上下水道課",
+      "address": "埼玉県比企郡川島町大字下八ツ林870番地1",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+        "snapshotPath": "data/evidence/national/kanto-north/fbb24fac0b7e67537966.html",
+        "snapshotSHA256": "a054593ddb7947e1ee2a607320a3b527b170f29fb55c1b2a61e78175fa54992d",
+        "sourceLocator": "11-346-A001 / 配布時間 【平日】午前9時から午後5時 / ※川島町役場上下水道課（川島町役場1階）でも配布しております。 / ※年末年始（12月29日～1月3日）は配布しません。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "cardId": "08-208-B001",
+      "placeId": "facility:kanto-north-ae50151eefa7485f5bed",
+      "sourceHash": "a750edb210b03b1a8cd10a8e90ca402b3b7a7bc41fbe84448446559740f3c710",
+      "hours": [
+        "観光物産センター定休日のみ（市役所での配布時刻は公式第23弾欄に記載なし。訪問前に要確認）"
+      ],
+      "condition": "観光物産センター定休日のみ。市役所閉庁日と重なる年始等は配布可否要確認",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.ryugasaki.ibaraki.jp/kurashi/seikatsu/suido/oshirase/ryugasaki-mhc.html",
+        "snapshotPath": "data/evidence/national/kanto-north/2812224f969d01c2a5a5.html",
+        "snapshotSHA256": "7a502840379752b862a77c96f4171f1e866bdad131c2a5ad210567d69c4361bb",
+        "sourceLocator": "08-208-B001 / 定休日 月曜日(月曜が祝日の場合は翌日)、1月1日から1月3日まで / ※定休日のみ龍ケ崎市役所下水道課にて配布しています。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "市公式第23弾欄で定休日の代替配布を明記。既存Aの実窓口を共用。",
+        "previousPlaceIds": [
+          "place:fb8539f44aa2bc8487c0"
+        ],
+        "raw": [
+          "定休日 月曜日(月曜が祝日の場合は翌日)、1月1日から1月3日まで / ※定休日のみ龍ケ崎市役所下水道課にて配布しています。"
+        ]
+      }
+    },
+    {
+      "cardId": "08-215-A001",
+      "placeId": "facility:kanto-north-29bd0325065029394d6b",
+      "sourceHash": "e6e73e79af2714718c6fc91399a8eba951fb5a1531d5cb92213a4af69841a4c1",
+      "hours": [
+        "9:00～17:00"
+      ],
+      "condition": "土日祝・年末年始（日曜開庁日を除く）",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+        "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+        "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+        "sourceLocator": "08-215-A001 / 【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室 / 【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口 / 配布時間９：００〜１７：００",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "cardId": "08-215-A001",
+      "placeId": "facility:kanto-north-kitaibaraki-shiminka",
+      "sourceHash": "e6e73e79af2714718c6fc91399a8eba951fb5a1531d5cb92213a4af69841a4c1",
+      "hours": [
+        "9:00～17:00"
+      ],
+      "condition": "第2・第4日曜日の日曜開庁日（年末年始を除く）",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+        "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+        "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+        "sourceLocator": "08-215-A001 / 【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室 / 【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口 / 配布時間９：００〜１７：００",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "休日混在抽出から日曜開庁日の実窓口を分離。守衛室の終了を意味しない。",
+        "previousPlaceIds": [
+          "place:29bd0325065029394d6b"
+        ],
+        "raw": [
+          "【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室",
+          "【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口",
+          "配布時間９：００〜１７：００"
+        ]
+      }
+    },
+    {
+      "cardId": "08-231-A001",
+      "placeId": "facility:kanto-north-sakuragawa-makabe-water",
+      "sourceHash": "6bd379b2c5b37fc6d3e51fc7bcbd40831d99261938201e2ace7592e2b7fa7409",
+      "hours": [
+        "平日9:00～16:00"
+      ],
+      "condition": "平日",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "snapshotPath": "data/evidence/national/kanto-north/46cfe2892a6fb58a2c97.html",
+        "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff",
+        "sourceLocator": "08-231-A001 / 【平日】桜川市水道お客様センター（桜川市役所真壁庁舎2階） / 住所：茨城県桜川市真壁町飯塚911番地 / 9：00～16：00",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "現行公式が示す水道お客様センターを追加。旧下水道課の配布終了は未確認。",
+        "previousPlaceIds": [
+          "place:198f070515a946f64966"
+        ],
+        "raw": [
+          "【平日】桜川市水道お客様センター（桜川市役所真壁庁舎2階） / 住所：茨城県桜川市真壁町飯塚911番地 / 9：00～16：00"
+        ]
+      }
+    },
+    {
+      "cardId": "10-206-A001",
+      "placeId": "facility:kanto-north-numata-water-4f",
+      "sourceHash": "e3205d92cad09e26196a95aaf4d7939b3e7c391275bda60046033c171d9b24b2",
+      "hours": [
+        "水曜日8:30～17:15",
+        "年末年始等の休業は沼田市観光協会の案内を確認"
+      ],
+      "condition": "水曜日",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+        "snapshotPath": "data/evidence/national/kanto-north/c938ea87cf76022d2897.html",
+        "snapshotSHA256": "b2fca3b1a3a22d9b075630677e79d3ee0609a1d92c6ee82d158dc492be19ab25",
+        "sourceLocator": "10-206-A001 / ※水曜日は、テラス沼田（沼田市下之町888番地）4階上下水道経営課、5階観光交流課（午前8時30分から午後5時15分）で配布しております。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "公式の水曜代替窓口2か所のうち未抽出だった4階窓口を追加。",
+        "previousPlaceIds": [
+          "place:105ca48451844bf76784"
+        ],
+        "raw": [
+          "※水曜日は、テラス沼田（沼田市下之町888番地）4階上下水道経営課、5階観光交流課（午前8時30分から午後5時15分）で配布しております。"
+        ]
+      }
+    },
+    {
+      "cardId": "10-208-A001",
+      "placeId": "facility:kanto-north-shibukawa-sewerage",
+      "sourceHash": "65331f97f7fa3a790b20299eb57e8b36e032fde1f409fdf2137293bb9a86deaf",
+      "hours": [
+        "中央公民館の定期清掃時のみ（代替先の配布時刻は公式記事に記載なし。要確認）"
+      ],
+      "condition": "中央公民館の定期清掃時のみ",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p006148.html",
+        "snapshotPath": "data/evidence/national/kanto-north/1d9cec8e5dc4fbe3229e.html",
+        "snapshotSHA256": "361bff13999f4e4fa33653f575ed66cdae8a094e91edccaf004208721059bcb4",
+        "sourceLocator": "10-208-A001 / ＊定期清掃時は、渋川市役所上下水道局下水道課にて配布します。（渋川市役所第二庁舎の方になりますので、お越しになる際はご注意ください。） / 問い合わせ先 下水道課：群馬県渋川市石原6番地1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "清掃時の代替配布を公式が明記。通常の中央公民館の配布時間を流用しない。",
+        "previousPlaceIds": [
+          "place:91edb2f2494934178388"
+        ],
+        "raw": [
+          "＊定期清掃時は、渋川市役所上下水道局下水道課にて配布します。（渋川市役所第二庁舎の方になりますので、お越しになる際はご注意ください。）"
+        ]
+      }
+    },
+    {
+      "cardId": "10-525-B001",
+      "placeId": "facility:kanto-north-35386468b06ec27f741e",
+      "sourceHash": "00c3b3b85e0399e5c10e3fc8904dd58efb7e4461e242b6ca2b5e1609ce6a2b79",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "condition": "月曜・火曜（祝日・年末年始を除く）",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/ae4ddea755fa243b7f5c.html",
+        "snapshotSHA256": "3b627480d83c9cf9aa450b89a5343a3b4410a9ea87e89235a1c64e2473e802e6",
+        "sourceLocator": "10-525-B001 / 注：休館日（月曜・火曜（祝日を除く））は都市計画課（役場庁舎2階）にて配布。注：年末年始は休日受付窓口（役場庁舎1階東側）にて配布。 / 午前8時30分から午後5時15分まで。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "cardId": "10-525-B001",
+      "placeId": "facility:kanto-north-074d9a4df836af82bb16",
+      "sourceHash": "00c3b3b85e0399e5c10e3fc8904dd58efb7e4461e242b6ca2b5e1609ce6a2b79",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "condition": "年末年始",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/ae4ddea755fa243b7f5c.html",
+        "snapshotSHA256": "3b627480d83c9cf9aa450b89a5343a3b4410a9ea87e89235a1c64e2473e802e6",
+        "sourceLocator": "10-525-B001 / 注：休館日（月曜・火曜（祝日を除く））は都市計画課（役場庁舎2階）にて配布。注：年末年始は休日受付窓口（役場庁舎1階東側）にて配布。 / 午前8時30分から午後5時15分まで。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "混在抽出から年末年始の1階休日受付を分離。既存Aの実窓口を再利用。",
+        "previousPlaceIds": [
+          "place:123de16085c3e8fd58bd"
+        ],
+        "raw": [
+          "注：休館日（月曜・火曜（祝日を除く））は都市計画課（役場庁舎2階）にて配布。注：年末年始は休日受付窓口（役場庁舎1階東側）にて配布。 / 午前8時30分から午後5時15分まで。"
+        ]
+      }
+    },
+    {
+      "cardId": "11-246-A001",
+      "placeId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "sourceHash": "edf1f7a2ce6475f998e5c92412c1a283e869a348e883af8d1f06fc65af2f5e0c",
+      "hours": [
+        "月曜日9:00～16:30（祝日・年末年始を除く）",
+        "味彩センターの臨時休業時も代替配布（土日祝等の閉庁日を除く）"
+      ],
+      "condition": "月曜日。味彩センター臨時休業時は開庁日に限り代替",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+        "snapshotPath": "data/evidence/national/kanto-north/e9da0ea40950950a0e2a.html",
+        "snapshotSHA256": "3b28f6f91bb5e4b6cf7d495d3ee8d7ce6bb814f6b78d9655bc836a20fbe9246e",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "sourceLocator": "11-246-A001 / 配布表下段：白岡市役所仮設本庁舎 商工観光課 / 午前9時から午後4時30分まで / 月曜日○、他曜日×",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "市公式配布表に仮設本庁舎の窓口を明記。別公式部署案内で所在地を照合。旧窓口の配布終了は未確認。",
+        "previousPlaceIds": [
+          "place:ac28e5c2b5b86ea16b94"
+        ],
+        "raw": [
+          "白岡市役所仮設本庁舎 商工観光課 午前9時から午後4時30分まで"
+        ]
+      }
+    },
+    {
+      "cardId": "11-346-A001",
+      "placeId": "facility:kanto-north-kawajima-water",
+      "sourceHash": "3bf2c56a206da56aa9c6d8a3f77304efb626d47f0ca2fda85a272fbb189c585c",
+      "hours": [
+        "平日9:00～17:00（12月29日～1月3日を除く）"
+      ],
+      "condition": "平日（年末年始を除く）",
+      "status": "active",
+      "evidence": {
+        "sourceUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+        "snapshotPath": "data/evidence/national/kanto-north/fbb24fac0b7e67537966.html",
+        "snapshotSHA256": "a054593ddb7947e1ee2a607320a3b527b170f29fb55c1b2a61e78175fa54992d",
+        "sourceLocator": "11-346-A001 / 配布時間 【平日】午前9時から午後5時 / ※川島町役場上下水道課（川島町役場1階）でも配布しております。 / ※年末年始（12月29日～1月3日）は配布しません。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      },
+      "change": {
+        "kind": "addition",
+        "reason": "さまちか事務所と並行して配布する役場1階窓口を明示追加。",
+        "previousPlaceIds": [
+          "place:4244d9dc97ba1a68e1de"
+        ],
+        "raw": [
+          "配布時間 【平日】午前9時から午後5時 / ※川島町役場上下水道課（川島町役場1階）でも配布しております。 / ※年末年始（12月29日～1月3日）は配布しません。"
+        ]
+      }
+    }
+  ]
+}

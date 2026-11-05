@@ -1,0 +1,455 @@
+package main
+
+import (
+	"bytes"
+	"encoding/hex"
+	"encoding/json"
+	"fmt"
+	"io"
+	"math"
+	"net/url"
+	"os"
+	"sort"
+	"strings"
+	"time"
+)
+
+type Evidence struct {
+	SourceURL          string `json:"sourceUrl"`
+	SnapshotPath       string `json:"snapshotPath"`
+	SnapshotSHA256     string `json:"snapshotSHA256"`
+	SourceLocator      string `json:"sourceLocator"`
+	CheckedAt          string `json:"checkedAt"`
+	ActorType          string `json:"actorType"`
+	VerificationMethod string `json:"verificationMethod"`
+}
+type LedgerCoordinate struct {
+	Lat float64 `json:"lat"`
+	Lng float64 `json:"lng"`
+}
+
+// An omitted coordinate means unlocated. A present coordinate must supply both
+// components; Go's numeric zero value must never turn missing data into a pin.
+func (c *LedgerCoordinate) UnmarshalJSON(raw []byte) error {
+	var value struct {
+		Lat *float64 `json:"lat"`
+		Lng *float64 `json:"lng"`
+	}
+	d := json.NewDecoder(bytes.NewReader(raw))
+	d.DisallowUnknownFields()
+	if err := d.Decode(&value); err != nil {
+		return err
+	}
+	if value.Lat == nil || value.Lng == nil {
+		return fmt.Errorf("facility coordinate requires both lat and lng")
+	}
+	c.Lat, c.Lng = *value.Lat, *value.Lng
+	return nil
+}
+
+type LedgerPlace struct {
+	ID         string            `json:"id"`
+	LegacyIDs  []string          `json:"legacyIds"`
+	Name       string            `json:"name"`
+	Address    string            `json:"address"`
+	Phone      string            `json:"phone"`
+	Coordinate *LedgerCoordinate `json:"coordinate,omitempty"`
+	Evidence   Evidence          `json:"evidence"`
+}
+
+// RelationChange records an explicitly evidenced new counter, retaining old source relations.
+type RelationChange struct {
+	Kind             string   `json:"kind"`
+	Reason           string   `json:"reason"`
+	PreviousPlaceIDs []string `json:"previousPlaceIds"`
+	Raw              []string `json:"raw"`
+}
+type LedgerRelation struct {
+	Change      *RelationChange `json:"change,omitempty"`
+	ReviewUntil string          `json:"reviewUntil,omitempty"`
+	Condition   *string         `json:"condition,omitempty"`
+	CardID      string          `json:"cardId"`
+	PlaceID     string          `json:"placeId"`
+	SourceHash  string          `json:"sourceHash"`
+	Hours       []string        `json:"hours"`
+	Status      string          `json:"status"`
+	ValidFrom   string          `json:"validFrom,omitempty"`
+	ValidTo     string          `json:"validTo,omitempty"`
+	Evidence    Evidence        `json:"evidence"`
+}
+type PlaceLedger struct {
+	Schema    int              `json:"schema"`
+	Places    []LedgerPlace    `json:"places"`
+	Relations []LedgerRelation `json:"relations"`
+}
+
+func decodeLedger(raw []byte, l *PlaceLedger) error {
+	d := json.NewDecoder(bytes.NewReader(raw))
+	d.DisallowUnknownFields()
+	if err := d.Decode(l); err != nil {
+		return err
+	}
+	var extra any
+	if err := d.Decode(&extra); err != io.EOF {
+		return fmt.Errorf("ledger has trailing JSON")
+	}
+	return nil
+}
+func cardSourceHash(c Card) string {
+	if c.ReviewSourceHash != "" {
+		return c.ReviewSourceHash
+	}
+	return originalCardSourceHash(c)
+}
+func originalCardSourceHash(c Card) string {
+	b, _ := json.Marshal(struct {
+		PlaceText []string `json:"placeText"`
+		Hours     []string `json:"hours"`
+		Stock     []string `json:"stock"`
+		Links     []string `json:"links"`
+	}{c.PlaceText, c.Hours, c.SourceStock, c.Links})
+	return hash(b)
+}
+func validateEvidence(e Evidence) error {
+	u, err := url.Parse(e.SourceURL)
+	if err != nil || (u.Scheme != "https" && u.Scheme != "http") || u.Host == "" || u.User != nil {
+		return fmt.Errorf("invalid evidence URL: %q", e.SourceURL)
+	}
+	if strings.TrimSpace(e.SourceLocator) == "" || strings.TrimSpace(e.VerificationMethod) == "" || (e.ActorType != "human" && e.ActorType != "ai") {
+		return fmt.Errorf("missing evidence verification details")
+	}
+	if _, err := time.Parse("2006-01-02", e.CheckedAt); err != nil {
+		return fmt.Errorf("invalid evidence checkedAt: %w", err)
+	}
+	b, err := os.ReadFile(e.SnapshotPath)
+	if err != nil {
+		return fmt.Errorf("evidence snapshot: %w", err)
+	}
+	if hash(b) != e.SnapshotSHA256 {
+		return fmt.Errorf("evidence snapshot hash mismatch: %s", e.SnapshotPath)
+	}
+	return nil
+}
+func validStatus(s string) bool {
+	switch s {
+	case "active", "upcoming", "suspended", "ended", "unknown":
+		return true
+	}
+	return false
+}
+func relationStatus(r LedgerRelation, now time.Time) (string, error) {
+	status := r.Status
+	if r.ReviewUntil != "" {
+		if _, err := time.Parse("2006-01-02", r.ReviewUntil); err != nil {
+			return "", fmt.Errorf("invalid reviewUntil: %w", err)
+		}
+	}
+	if !validStatus(status) {
+		return "", fmt.Errorf("invalid relation status: %s", status)
+	}
+	var from, to time.Time
+	var err error
+	if r.ValidFrom != "" {
+		from, err = time.Parse("2006-01-02", r.ValidFrom)
+		if err != nil {
+			return "", err
+		}
+	}
+	if r.ValidTo != "" {
+		to, err = time.Parse("2006-01-02", r.ValidTo)
+		if err != nil {
+			return "", err
+		}
+	}
+	if !from.IsZero() && !to.IsZero() && from.After(to) {
+		return "", fmt.Errorf("invalid validity interval")
+	}
+	today, _ := time.Parse("2006-01-02", now.Format("2006-01-02"))
+	if !from.IsZero() && today.Before(from) {
+		return "upcoming", nil
+	}
+	if !to.IsZero() && today.After(to) {
+		return "ended", nil
+	}
+	return status, nil
+}
+
+// Apply only explicitly reviewed facts. A changed upstream field keeps identity,
+// but invalidates the distribution relation until its evidence is reviewed again.
+func applyPlaceLedger(d *Data, l PlaceLedger, now time.Time) error {
+	if l.Schema != 1 {
+		return fmt.Errorf("unsupported place ledger schema: %d", l.Schema)
+	}
+	places := map[string]Place{}
+	for _, p := range d.Places {
+		places[p.ID] = p
+	}
+	cards := map[string]Card{}
+	for _, c := range d.Cards {
+		cards[c.ID] = c
+	}
+	aliases := map[string]string{}
+	canonical := map[string]LedgerPlace{}
+	for _, p := range l.Places {
+		if !strings.HasPrefix(p.ID, "facility:") || len(p.ID) <= len("facility:") || p.Name == "" || p.Address == "" {
+			return fmt.Errorf("incomplete stable facility: %s", p.ID)
+		}
+		if _, ok := canonical[p.ID]; ok {
+			return fmt.Errorf("duplicate facility: %s", p.ID)
+		}
+		if p.Coordinate != nil && (!finite(p.Coordinate.Lat) || !finite(p.Coordinate.Lng) || p.Coordinate.Lat < -85 || p.Coordinate.Lat > 85 || p.Coordinate.Lng < -180 || p.Coordinate.Lng > 180) {
+			return fmt.Errorf("invalid facility coordinate: %s", p.ID)
+		}
+		if err := validateEvidence(p.Evidence); err != nil {
+			return fmt.Errorf("facility %s: %w", p.ID, err)
+		}
+		matched := false
+		for _, id := range p.LegacyIDs {
+			if _, ok := places[id]; ok {
+				matched = true
+			}
+			if _, ok := aliases[id]; ok {
+				return fmt.Errorf("duplicate legacy alias: %s", id)
+			}
+			aliases[id] = p.ID
+		}
+		if !matched && len(p.LegacyIDs) > 0 {
+			return fmt.Errorf("no current source alias for facility: %s", p.ID)
+		}
+		canonical[p.ID] = p
+	}
+	relIndexes := map[string][]int{}
+	for i, r := range d.Relations {
+		id := r.PlaceID
+		if a, ok := aliases[id]; ok {
+			id = a
+		}
+		key := r.CardID + "\x00" + id
+		relIndexes[key] = append(relIndexes[key], i)
+	}
+	reviewed := map[string]LedgerRelation{}
+	statuses := map[string]string{}
+	for _, r := range l.Relations {
+		key := r.CardID + "\x00" + r.PlaceID
+		if _, ok := cards[r.CardID]; !ok {
+			return fmt.Errorf("unknown card: %s", r.CardID)
+		}
+		if _, ok := canonical[r.PlaceID]; !ok {
+			return fmt.Errorf("unknown canonical facility: %s", r.PlaceID)
+		}
+		if len(relIndexes[key]) == 0 {
+			if r.Change == nil || r.Change.Kind != "addition" || strings.TrimSpace(r.Change.Reason) == "" || len(r.Change.Raw) == 0 {
+				return fmt.Errorf("relation missing from source; explicit evidenced addition required: %s", key)
+			}
+			for _, old := range r.Change.PreviousPlaceIDs {
+				found := false
+				for _, previous := range d.Relations {
+					if previous.CardID == r.CardID && previous.PlaceID == old {
+						found = true
+					}
+				}
+				if !found {
+					return fmt.Errorf("unknown previous relation: %s / %s", r.CardID, old)
+				}
+			}
+		} else if r.Change != nil {
+			return fmt.Errorf("addition already exists in source: %s", key)
+		}
+		if _, ok := reviewed[key]; ok {
+			return fmt.Errorf("duplicate reviewed relation: %s", key)
+		}
+		_, hashErr := hex.DecodeString(r.SourceHash)
+		if len(r.SourceHash) != 64 || hashErr != nil {
+			return fmt.Errorf("missing sourceHash for %s", key)
+		}
+		if err := validateEvidence(r.Evidence); err != nil {
+			return fmt.Errorf("relation %s: %w", key, err)
+		}
+		s, err := relationStatus(r, now)
+		if err != nil {
+			return err
+		}
+		reviewed[key] = r
+		statuses[key] = s
+	}
+	// Do not remove or silently end any previous relationship. Its correction needs
+	// its own evidence-backed ledger entry.
+	for _, r := range l.Relations {
+		if r.Change != nil {
+			change := *r.Change
+			change.PreviousPlaceIDs = append([]string(nil), r.Change.PreviousPlaceIDs...)
+			for i, previous := range change.PreviousPlaceIDs {
+				if canonicalID, ok := aliases[previous]; ok {
+					change.PreviousPlaceIDs[i] = canonicalID
+				}
+			}
+			d.Relations = append(d.Relations, Relation{CardID: r.CardID, PlaceID: r.PlaceID, Raw: r.Change.Raw, Change: &change, Interpretation: r.Change.Reason})
+		}
+	}
+	for _, p := range l.Places {
+		if len(p.LegacyIDs) == 0 {
+			used := false
+			for _, r := range l.Relations {
+				if r.PlaceID == p.ID && r.Change != nil {
+					used = true
+				}
+			}
+			if !used {
+				return fmt.Errorf("new facility requires an evidenced addition: %s", p.ID)
+			}
+		}
+	}
+	next := []Place{}
+	for _, p := range d.Places {
+		if _, ok := aliases[p.ID]; !ok {
+			next = append(next, p)
+		}
+	}
+	for _, p := range l.Places {
+		ev := p.Evidence
+		coordinate := Coordinate{Status: "unconfirmed", Source: ev.SourceURL, Reason: "施設情報・配布状況のみ確認。施設座標は未確認", Review: ev.ActorType + " / " + ev.CheckedAt}
+		if p.Coordinate != nil {
+			lat, lng := p.Coordinate.Lat, p.Coordinate.Lng
+			coordinate = Coordinate{Status: "confirmed", Lat: &lat, Lng: &lng, Source: ev.SourceURL, Reason: ev.VerificationMethod, Review: ev.ActorType + " / " + ev.CheckedAt}
+		}
+		next = append(next, Place{ID: p.ID, Name: p.Name, Address: p.Address, Phone: p.Phone, Coordinate: coordinate, Evidence: &ev})
+	}
+	d.Places = next
+	for i := range d.Relations {
+		r := &d.Relations[i]
+		if id, ok := aliases[r.PlaceID]; ok {
+			r.PlaceID = id
+		}
+		r.Status = "unknown"
+		r.Review = "needs-review"
+		key := r.CardID + "\x00" + r.PlaceID
+		v, ok := reviewed[key]
+		if !ok {
+			continue
+		}
+		ev := v.Evidence
+		r.Evidence = &ev
+		r.ReviewUntil = v.ReviewUntil
+		if v.ReviewUntil != "" && now.Format("2006-01-02") > v.ReviewUntil {
+			r.Interpretation = "確認の有効期限を過ぎています。再開・配布状況を公式情報で再確認してください"
+			continue
+		}
+		if cardSourceHash(cards[r.CardID]) != v.SourceHash {
+			r.Interpretation = "原典の配布場所・時間・配布状況・リンクが変更されています。再確認が必要です"
+			continue
+		}
+		if v.Condition != nil {
+			r.Condition = *v.Condition
+		}
+		r.Status = statuses[key]
+		r.Hours = v.Hours
+		r.ValidFrom = v.ValidFrom
+		r.ValidTo = v.ValidTo
+		r.Review = "verified"
+	}
+	// Replace card-wide status only if every distribution relation was reviewed.
+	// A single active counter must not be hidden because a different counter ended.
+	for i := range d.Cards {
+		all, count, statuses := true, 0, map[string]bool{}
+		staleEvidence := false
+		verifiedActive := false
+		for _, r := range d.Relations {
+			if r.CardID == d.Cards[i].ID {
+				count++
+				staleEvidence = staleEvidence || (r.Review != "verified" && r.Evidence != nil)
+				verifiedActive = verifiedActive || (r.Review == "verified" && r.Status == "active")
+				all = all && r.Review == "verified"
+				statuses[r.Status] = true
+			}
+		}
+		// A changed current listing invalidates the old card-wide inference even
+		// when this card has never had a reviewed ledger entry.
+		if (!all || count == 0) && d.Cards[i].ReviewSourceHash != "" && d.Cards[i].ReviewSourceHash != originalCardSourceHash(d.Cards[i]) {
+			staleEvidence = true
+		}
+		if (all && count > 0) || staleEvidence {
+			status := "unknown"
+			for _, candidate := range []string{"active", "upcoming", "suspended", "unknown", "ended"} {
+				if statuses[candidate] {
+					status = candidate
+					break
+				}
+			}
+			if staleEvidence && !verifiedActive {
+				status = "unknown"
+			}
+			d.Cards[i].Status = status
+			for j := range d.Pins {
+				if d.Pins[j].Kind == "lid" && len(d.Pins[j].CardIDs) == 1 && d.Pins[j].CardIDs[0] == d.Cards[i].ID {
+					d.Pins[j].Status = status
+				}
+			}
+		}
+	}
+	return nil
+}
+func finite(v float64) bool { return !math.IsNaN(v) && !math.IsInf(v, 0) }
+func appendPlacePins(d *Data, references bool) {
+	for _, p := range d.Places {
+		confirmed := p.Coordinate.Status == "confirmed"
+		if !confirmed && !(references && p.Coordinate.Status == "candidate") {
+			continue
+		}
+		if p.Coordinate.Lat == nil || p.Coordinate.Lng == nil {
+			continue
+		}
+		ids := map[string]bool{}
+		status := ""
+		for _, r := range d.Relations {
+			if r.PlaceID != p.ID || (confirmed && r.Review != "verified") {
+				continue
+			}
+			ids[r.CardID] = true
+			s := r.Status
+			if s == "" {
+				s = "unknown"
+			}
+			if status == "" {
+				status = s
+			} else if status != s {
+				status = "unknown"
+			}
+		}
+		if len(ids) == 0 {
+			continue
+		}
+		cardIDs := []string{}
+		for id := range ids {
+			cardIDs = append(cardIDs, id)
+		}
+		sort.Strings(cardIDs)
+		d.Pins = append(d.Pins, Pin{ID: p.ID, Kind: "place", CardIDs: cardIDs, Status: status, Lat: *p.Coordinate.Lat, Lng: *p.Coordinate.Lng, Reference: !confirmed})
+	}
+}
+func qualityReport(d Data) any {
+	coords := map[string]int{}
+	reviews := map[string]int{}
+	pins := map[string]int{}
+	for _, p := range d.Places {
+		coords[p.Coordinate.Status]++
+	}
+	for _, r := range d.Relations {
+		reviews[r.Review]++
+	}
+	for _, p := range d.Pins {
+		pins[p.Kind]++
+	}
+	hashes := map[string]string{}
+	missing := []string{}
+	linked := map[string]bool{}
+	for _, r := range d.Relations {
+		linked[r.CardID] = true
+	}
+	for _, c := range d.Cards {
+		hashes[c.ID] = cardSourceHash(c)
+		if !linked[c.ID] {
+			missing = append(missing, c.ID)
+		}
+	}
+	return map[string]any{"schema": 1, "updated": d.Updated, "cards": len(d.Cards), "places": len(d.Places), "relations": len(d.Relations), "coordinates": coords, "reviews": reviews, "pins": pins, "cardsWithoutPlaces": missing, "sourceHashes": hashes}
+}

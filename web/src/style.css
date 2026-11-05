@@ -495,3 +495,34 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.layer-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: #24594c;
+}
+.map-legend,
+#coverage-note {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin: 3px 0;
+}
+.detail-panel .journey-heading {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1000px) {
+  .has-detail .search-panel {
+    max-height: 30%;
+  }
+}

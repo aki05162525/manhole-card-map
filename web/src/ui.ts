@@ -19,8 +19,10 @@ function maps(query: string, label: string): MapLink {
 }
 export function facilityMapLink(
   place?: Data["places"][number],
+  relation?: Data["relations"][number],
 ): MapLink | null {
-  if (!place) return null;
+  if (!place || (relation?.review === "needs-review" && relation.evidence))
+    return null;
   const query = confirmedQuery(place.coordinate);
   if (query !== null)
     return maps(query, "配布施設をGoogle Mapsで表示（確定座標）");
@@ -34,7 +36,7 @@ export function facilityMapLink(
 export function lidMapLink(coord: Coord): MapLink | null {
   const query = confirmedQuery(coord);
   return query !== null
-    ? maps(query, "蓋をGoogle Mapsで表示（確定座標）")
+    ? maps(query, "蓋をGoogle Mapsで表示（カード印刷座標）")
     : null;
 }
 export function safeHttpUrl(value: string): string | null {
