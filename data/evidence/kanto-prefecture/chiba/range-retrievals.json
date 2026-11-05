@@ -1,0 +1,244 @@
+{
+  "records": [
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=0-126"
+      },
+      "attemptedAt": "2026-11-05T14:48:12.916769+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 0-126/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:12.978592+00:00",
+      "sha256": "063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/063e0600eb16f8b92dea1c125f407bbfd016f2c7ee6a401898ca8de1bba05de5.raw",
+      "bytes": 127
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=127-2502"
+      },
+      "attemptedAt": "2026-11-05T14:48:12.979033+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 127-2502/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.053757+00:00",
+      "sha256": "ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/ece535c0919983a500c9614ed835857d716bbdfd2f88f09aa61cd8d027259e99.raw",
+      "bytes": 2376
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=2276681-2285878"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.054858+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 2276681-2285878/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.121925+00:00",
+      "sha256": "725d392f061ffd5c5e84948b42e9fa7783b960579bf4aabae449d2c37da70c98",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/725d392f061ffd5c5e84948b42e9fa7783b960579bf4aabae449d2c37da70c98.raw",
+      "bytes": 9198
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10496165857-10496183223"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.126255+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10496165857-10496183223/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.194816+00:00",
+      "sha256": "6efbe10166a72e8c1b0bf0b734273cf9d5994bdefb0c5f9e4e41b9516527bb8c",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/6efbe10166a72e8c1b0bf0b734273cf9d5994bdefb0c5f9e4e41b9516527bb8c.raw",
+      "bytes": 17367
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10496218539-10496241027"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.433457+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10496218539-10496241027/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.501220+00:00",
+      "sha256": "51324e22c7caa657fd4eabdfc3271b3e27e7782fe05c459d8f9e80530b6d0aa3",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/51324e22c7caa657fd4eabdfc3271b3e27e7782fe05c459d8f9e80530b6d0aa3.raw",
+      "bytes": 22489
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10495813538-10495836860"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.517482+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10495813538-10495836860/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.576631+00:00",
+      "sha256": "2ef896e86df553ad7854da1f27dca2c21326db58367226c2b4e3741c035cab2e",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/2ef896e86df553ad7854da1f27dca2c21326db58367226c2b4e3741c035cab2e.raw",
+      "bytes": 23323
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10496183224-10496201165"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.590759+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10496183224-10496201165/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.647573+00:00",
+      "sha256": "1915244dbb56f45405faac192b2de1d7e63251e4ccc3280343d8d3dee27bd907",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/1915244dbb56f45405faac192b2de1d7e63251e4ccc3280343d8d3dee27bd907.raw",
+      "bytes": 17942
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10496201166-10496218538"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.659353+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10496201166-10496218538/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.722769+00:00",
+      "sha256": "4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/4d51003508a8da39d057b55c78b495da4dd063347050e1436f0464a9142c360a.raw",
+      "bytes": 17373
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10495836861-10495852965"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.736422+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10495836861-10495852965/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.805394+00:00",
+      "sha256": "c608e3641e65b7fc22d91c1a32f790c9b36c0e7938f7b3587adc535d2d850a73",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/c608e3641e65b7fc22d91c1a32f790c9b36c0e7938f7b3587adc535d2d850a73.raw",
+      "bytes": 16105
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10495979100-10496002150"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.815905+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10495979100-10496002150/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.861219+00:00",
+      "sha256": "fa2fdb67dad3242749ea8a4692580676153a6008eaa7c4b93ffd48ea08f56abd",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/fa2fdb67dad3242749ea8a4692580676153a6008eaa7c4b93ffd48ea08f56abd.raw",
+      "bytes": 23051
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10495961242-10495979099"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.877843+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10495961242-10495979099/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.936502+00:00",
+      "sha256": "7ddbdab2ee0c9e58049be4736d9eae91a6db4996db376b58e32e4ecffb3bb4e8",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/7ddbdab2ee0c9e58049be4736d9eae91a6db4996db376b58e32e4ecffb3bb4e8.raw",
+      "bytes": 17858
+    },
+    {
+      "schema": 1,
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "version": "chiba-narashino-2026-11-05",
+      "requestHeaders": {
+        "range": "bytes=10495852966-10495872254"
+      },
+      "attemptedAt": "2026-11-05T14:48:13.948127+00:00",
+      "httpStatus": 206,
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT",
+      "contentType": "binary/octet-stream",
+      "contentRange": "bytes 10495852966-10495872254/16900763181",
+      "responseURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "status": "acquired",
+      "fetchedAt": "2026-11-05T14:48:13.998579+00:00",
+      "sha256": "679ecdb99003fa77b01b9f88495600d7e5f1d86ba5f69dbecafc3a8a91492555",
+      "rawPath": "data/work/kanto-prefecture/chiba/ranges/679ecdb99003fa77b01b9f88495600d7e5f1d86ba5f69dbecafc3a8a91492555.raw",
+      "bytes": 19289
+    }
+  ]
+}

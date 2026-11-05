@@ -1,0 +1,2242 @@
+{
+  "schema": 1,
+  "policy": "全履歴pointer/hashを解決。scoped reviewは当該地域の判断として継承し全国承認へ拡張しない。原本全件再読了の主張ではない。",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+        "name": "市川市観賞植物園",
+        "address": "千葉県市川市大町213番11外",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/12",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/19",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/46",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/12",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/12/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/12",
+            "excerpts": [
+              "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市CSVは観賞植物園という園全体の行。市施設原本6709は大温室・サボテン温室、7829は植物園窓口を説明するが、CSV点が窓口建物に対応する記載はない。園点を受付建物に読み替えず保留。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市CSVは観賞植物園という園全体の行。市施設原本6709は大温室・サボテン温室、7829は植物園窓口を説明するが、CSV点が窓口建物に対応する記載はない。園点を受付建物に読み替えず保留。",
+        "resumeCondition": {
+          "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "http://www.city.ichikawa.lg.jp/gre07/1111000135.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/12",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "41417d7b182cbc9c0bff2f43b71bf0d3b4ab29c526de12fc9bb232ec5e69f45a"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/19",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "33aa430b0652fa50199bf4b4dcd2246f9483b5561d11e7078e799f2f0504ca3a"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/46",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "e33b18d6018786a06a816f8643cf23a71d2bd76cf3ef93ca63c3418ab831cee9"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+        "name": "袖ケ浦市役所 下水道課",
+        "address": "千葉県袖ケ浦市中袖4番地 (袖ケ浦終末処理場 管理棟2階)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/14",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/21",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/0",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/0",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/0",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "document-building-identification",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "comparison-not-performed",
+            "label": "照合未実施",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/0",
+            "excerpts": [
+              "管理棟を配置図上で区別できたが、今回この処理場の地理参照外形を取得・同定していない。図の画素位置を座標に変換しない。"
+            ],
+            "assessment": "historical-text-match; confirm scope before resuming"
+          },
+          {
+            "category": "retrieval-failed",
+            "label": "原本取得失敗",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/0",
+            "excerpts": [
+              "33055.pdf PDF2ページの現況図は管理棟、重力濃縮棟、汚泥脱水機棟と正門の相対配置を区別する。新しい44755.pdfは検索索引にあるが直接取得404。"
+            ],
+            "assessment": "historical-text-match; confirm scope before resuming"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "管理棟を配置図上で区別できたが、今回この処理場の地理参照外形を取得・同定していない。図の画素位置を座標に変換しない。",
+        "resumeCondition": "現況図の管理棟と処理槽・正門・道路の配置を地理参照外形へ独立対応させる。",
+        "nextAction": "現況図の管理棟と処理槽・正門・道路の配置を地理参照外形へ独立対応させる。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/14",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "10eed0b12e06ac76515fcbaff9e2bfd4181b348a0e67f0ce235e6f1d73663137"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/21",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "987b812ef79667eeae53d33c316d7bf4315ba8abf12a8a2123c6972147593c4d"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/0",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "42252cc2a3019ba0988b5ca656553e13706c102bb26adcb8ef990ceb28f2a043"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/0",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "2264d9f40744e36d7e51cd15616f298b5977733933e2d84eed1bee76cefd1441"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-46630cd19483230497e8",
+        "name": "旧井上家住宅",
+        "address": "千葉県我孫子市相島新田1番地",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/16",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/23",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/23",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/16",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/16/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/16",
+            "excerpts": [
+              "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は2件だが、建物代表点としての対象同定には未到達。残る確認事項：県・市原本は母屋、土蔵、旧漉場、門・塀等を含む9棟の歴史的建造物を説明する。配布受付建物と施設代表点の対応が不明なため保留。9棟すべてが受付用の建物とは解釈しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は2件だが、建物代表点としての対象同定には未到達。残る確認事項：県・市原本は母屋、土蔵、旧漉場、門・塀等を含む9棟の歴史的建造物を説明する。配布受付建物と施設代表点の対応が不明なため保留。9棟すべてが受付用の建物とは解釈しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/16",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "7322e11afbbe3a7042fdeb84bedbc0ae7c8076d1b5a006739a29d89630ea252c"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/23",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "1971450c6bde770de1c977e69ba43926ddc8558158399e9e9da4f3923dce06c1"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/23",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "9c45782f5a4e6a2075eaf4d6f595727db58075918c609a45d30b07c31243a359"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+        "name": "白井市役所 本庁舎1階守衛室",
+        "address": "千葉県白井市復1123番地",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/18",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/25",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/1",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/1",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/issue57/pilot-outcomes.json#/rows/3",
+            "kind": "explicit-followup"
+          },
+          {
+            "ref": "data/national/issue57/pilot-review-corrections.json#/rows/0",
+            "kind": "explicit-followup"
+          }
+        ],
+        "latestResultRef": "data/national/issue57/pilot-review-corrections.json#/rows/0",
+        "priorDecision": "held",
+        "recordedStopCategories": [
+          "building-unresolved",
+          "crs-or-terms-unverified"
+        ],
+        "recordedStage": null,
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue57/pilot-review-corrections.json#/rows/0",
+            "excerpts": [
+              "2016年図面の新築棟は市の整備記事で本庁舎と接続できる。北方位記号に合わせると道路の屈曲、南側保健福祉センター、東側別棟の配置がBldA112/南隣20周辺と整合する。BldA112は東庁舎側も含む一体外形で、南端は隣接タイルに続く。新築棟領域の仮点だけを計算し、棟境界の独立確認前なので採用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "2016年図面の新築棟は市の整備記事で本庁舎と接続できる。北方位記号に合わせると道路の屈曲、南側保健福祉センター、東側別棟の配置がBldA112/南隣20周辺と整合する。BldA112は東庁舎側も含む一体外形で、南端は隣接タイルに続く。新築棟領域の仮点だけを計算し、棟境界の独立確認前なので採用しない。",
+        "resumeCondition": "配置図1頁、1階図3頁と現行棟名を独立照合し、新築棟部分を確認する。",
+        "nextAction": "配置図1頁、1階図3頁と現行棟名を独立照合し、新築棟部分を確認する。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": "data/national/issue57/human-confirmation-queue.json#/answered/0"
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/18",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "548fb0f1c1182a4d1c930f6270b66c85c36424bc8254a5bf62aaf313d5b6ed4b"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/25",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "d46df33dcf908a5aeed36571d167b6910897feb902171542074d2727aabae04c"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/1",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "e24f4b39e8ce5544cfad049764e2377ca82d349b05b64b6a5c1f4e6d9c37f3ff"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/1",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "4db8cb1f88ff0b624c38d0bee3cbc7d326e0c3f69f28acc4bada7d7c021656f5"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        },
+        {
+          "ref": "data/national/issue57/pilot-outcomes.json#/rows/3",
+          "kind": "explicit-followup",
+          "fileSHA256": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+          "objectSHA256": "35ced1401b68021368e75ad5446b01c4ee9a9d2374dfb28fa7fa03f644a7f052"
+        },
+        {
+          "ref": "data/national/issue57/pilot-review-corrections.json#/rows/0",
+          "kind": "explicit-followup",
+          "fileSHA256": "8f1d8e8597da5c8485b78d86b84e845ce4cfd97d9b0319f21076c77aa6dfcc72",
+          "objectSHA256": "c13cbe206bba19d9a900d7e0717c04ff3dbfcb7a8d83adf88e575b2ed8346124"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+        "name": "“渚の駅”たてやま",
+        "address": "千葉県館山市館山1564-1",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/19",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/26",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/25",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/19",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/19/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/19",
+            "excerpts": [
+              "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：県原本は渚の博物館・海辺の広場・海のマルシェ・食堂をまとめた複合施設。市配布本文は渚の駅とだけ指定し、GeoCoordinatesと配布受付建物の対応が未確定。蓋の設置図は採用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：県原本は渚の博物館・海辺の広場・海のマルシェ・食堂をまとめた複合施設。市配布本文は渚の駅とだけ指定し、GeoCoordinatesと配布受付建物の対応が未確定。蓋の設置図は採用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.tateyama.chiba.jp/gesui/page100037.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/19",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "de530e3cf5addd71541cd3b297cb8c5f77f0302687c13fb2fb7980f0b55b61bf"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/26",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "0ee163887dd8522f5079251d744c050908bee6a57449eebabaae08ae922ce07a"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/25",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "0417f203ffe3a1c34177bfefe32b8821e6c50ebaa5f95419aa695eb05fdfd20e"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+        "name": "佐倉ふるさと広場管理棟「佐蘭花(さらんか)(売店内)」",
+        "address": "千葉県佐倉市臼井田2714",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/23",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/30",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/28",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/23",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/23/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/23",
+            "excerpts": [
+              "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：佐倉ふるさと広場の公式施設詳細は広場全体の名称検索と表示中心のみ。佐蘭花（管理棟・売店）の独立した公開数値位置を確認できず、風車・公園の点を受付棟へ転用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：佐倉ふるさと広場の公式施設詳細は広場全体の名称検索と表示中心のみ。佐蘭花（管理棟・売店）の独立した公開数値位置を確認できず、風車・公園の点を受付棟へ転用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.sakura.lg.jp/soshiki/jogesuidobu/20/351/18936.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/23",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "29c458987226f1272aeaa38e3bab898cc73faa1a30de37eb233a4beb22b61c9b"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/30",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "947adb757a485487bbeec97648e66e488213efe76e7b54f381995dd6425f4a02"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/28",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "a0d20125fbf2a22a139af2150c68c8d6a6fce6774c30c7400b9616d7d3574caf"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+        "name": "八街市役所受付(第一庁舎一階)",
+        "address": "千葉県八街市八街ほ35番地29",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/24",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/31",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/10",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/24",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/24/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/24",
+            "excerpts": [
+              "市「庁舎の概要・アクセス」を追加取得。P05市役所1点と第1庁舎の建物対応の照合は未完了。市役所住所一致だけで複数棟を統合しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "市「庁舎の概要・アクセス」を追加取得。P05市役所1点と第1庁舎の建物対応の照合は未完了。市役所住所一致だけで複数棟を統合しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yachimata.lg.jp/soshiki/26/54793.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/24",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "ed5cd6bbc7da0151ef68964c265f20a59757a4357ab8e3c6b48dbe2347f6ef31"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/31",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "ff945ff48a8e3764b0f5e1fb90f999bfed251d82fb87dec6c4ec0bccacdec917"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/10",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "3041b8002ddb0310746eccc9cad266a5ac9bb8c2e8b79da3f1dd6c1547c606a5"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+        "name": "習志野市企業局工務部下水道課",
+        "address": "千葉県習志野市藤崎1-1-13(企業局新館3階)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/30",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/37",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/2",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "document-building-identification",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+            "excerpts": [
+              "将来の新局舎と現新館を混同できない。今回得た予定地図は現配布棟の外形同定に使えないため停止。\n2025年5月基本計画は現局舎を本館・新館・別館と区別。新局舎建設地図は藤崎7丁目付近の予定地を囲うもので、配布先藤崎1丁目の現新館を示す図ではない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "将来の新局舎と現新館を混同できない。今回得た予定地図は現配布棟の外形同定に使えないため停止。",
+        "resumeCondition": "現藤崎1丁目1-13敷地の本館/新館/別館の名称付き配置図、または棟名付きの利用可能な公的座標を得る。計画上の移転を現移転と扱わない。",
+        "nextAction": "現藤崎1丁目1-13敷地の本館/新館/別館の名称付き配置図、または棟名付きの利用可能な公的座標を得る。計画上の移転を現移転と扱わない。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": "data/national/issue57/human-confirmation-queue.json#/answered/27"
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/30",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "d63c81c4acafbbe8bd3a9eddae435011861b4b13f5f34c3e047b821fcb2bb741"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/37",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "d98bd57f6ee6da59b18ee16e606766ec1dd5c03c76c2e8b7edc4d5007b54ff5a"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/2",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "bd032cf5947872d13d693ac884911c918f12d51fda0f09d32995d31aacc5e8c1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/2",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "355e98f5d6ed88c3cbfe826507f7445b5eb7ed7fb2057de41db829d7e216d283"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+        "name": "白井市役所 都市建設部 上下水道課業務係",
+        "address": "千葉県白井市復1123番地",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/35",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/42",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/issue57/pilot-outcomes.json#/rows/4",
+            "kind": "explicit-followup"
+          },
+          {
+            "ref": "data/national/issue57/pilot-review-corrections.json#/rows/1",
+            "kind": "explicit-followup"
+          }
+        ],
+        "latestResultRef": "data/national/issue57/pilot-review-corrections.json#/rows/1",
+        "priorDecision": "held",
+        "recordedStopCategories": [
+          "building-unresolved",
+          "crs-or-terms-unverified"
+        ],
+        "recordedStage": null,
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue57/pilot-review-corrections.json#/rows/1",
+            "excerpts": [
+              "市の整備記事は減築改修棟を東庁舎と明示する。9頁全部を確認し、1頁の配置図と4頁の2階図で新築棟との接続を確認した。BldA112の東側部分が対応候補だが、形状全体を東庁舎として採用しない。東側仮点の内包は計算上成功。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "市の整備記事は減築改修棟を東庁舎と明示する。9頁全部を確認し、1頁の配置図と4頁の2階図で新築棟との接続を確認した。BldA112の東側部分が対応候補だが、形状全体を東庁舎として採用しない。東側仮点の内包は計算上成功。",
+        "resumeCondition": "配置図の減築改修棟範囲をBldA112東側へ独立対応付けする。",
+        "nextAction": "配置図の減築改修棟範囲をBldA112東側へ独立対応付けする。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": "data/national/issue57/human-confirmation-queue.json#/answered/0"
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/35",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "6e388d24ab5ea046bb6521f0e6f90be1b02923656508a482dc2abeca7d19f636"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/42",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "37de7475fe535b3eee9ed90dea1c7bbd5828042269016004fc7ed641beeaf344"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/3",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "d699a176b50b87dd2c789e8640ee90eeb519cf81d2ff9b8fdf551762c5c9a2ea"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/3",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "2073543eed685a4729a5cba62cd2208abdcbf5be483d788b7665b097281f1e3a"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        },
+        {
+          "ref": "data/national/issue57/pilot-outcomes.json#/rows/4",
+          "kind": "explicit-followup",
+          "fileSHA256": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+          "objectSHA256": "2f3e256cfdd4fa320bd0bdd06659da6ccc1dbd0f5c9407f6d772e199f6d828f1"
+        },
+        {
+          "ref": "data/national/issue57/pilot-review-corrections.json#/rows/1",
+          "kind": "explicit-followup",
+          "fileSHA256": "8f1d8e8597da5c8485b78d86b84e845ce4cfd97d9b0319f21076c77aa6dfcc72",
+          "objectSHA256": "0b1649790d584be5cb38e530776f2b29ca294acf3eeef98415c533c719afdc8d"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+        "name": "柏市上下水道局3階総務課",
+        "address": "柏市千代田一丁目2番32号",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/36",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/43",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/11",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/36",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/36/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/36",
+            "excerpts": [
+              "上下水道局庁舎の現行公式ページを追加取得。所在地千代田1-2-32を照合したが、新庁舎を示す数値建物点の抽出まで未完了。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "上下水道局庁舎の現行公式ページを追加取得。所在地千代田1-2-32を照合したが、新庁舎を示す数値建物点の抽出まで未完了。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.kashiwa.lg.jp/somu/living_environment/gesui/1561/manholecard.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/36",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "0f867b6d8b2d48bb68cf87930d58a76fda17d9ce857fd71e95449f65d0c03e0a"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/43",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "bc1acda67b07c82294c81e4705ba4c048effc79874a225ec6e015bc9376e5952"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/11",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "d21ca5d120c0a3bf8d8e5ecfe2930feabb9eccff22d214f1ec1d821c0b683143"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-d4aaa6f664279d04fc85",
+        "name": "袖ケ浦市役所 守衛室",
+        "address": "千葉県袖ケ浦市坂戸市場1番地1(袖ケ浦市役所 南庁舎1階)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/39",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/46",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/5",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/5",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/5",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "building-comparison",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "building-unresolved",
+            "label": "棟対応未確定",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/5",
+            "excerpts": [
+              "設計配置図と4タイルの外形を確認したが、現南庁舎の外形と既存中庁舎・連絡部分の対応を確定できていない。P05時点の旧庁舎を新棟へ流用しない。"
+            ],
+            "assessment": "historical-text-match; confirm scope before resuming"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "設計配置図と4タイルの外形を確認したが、現南庁舎の外形と既存中庁舎・連絡部分の対応を確定できていない。P05時点の旧庁舎を新棟へ流用しない。",
+        "resumeCondition": "竣工後の南庁舎輪郭が分かる資料と現在の地理参照外形を対応。2026年フロア案内による守衛室所在棟を保持して代表点の内包を検査。",
+        "nextAction": "竣工後の南庁舎輪郭が分かる資料と現在の地理参照外形を対応。2026年フロア案内による守衛室所在棟を保持して代表点の内包を検査。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/39",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "0335712f4ff427b97c9322560cd74b63debc232c71adda79b494142c10695281"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/46",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "900602cb905c0e1aa49ce4b149a2061168317f03393e6327f246923882aa9deb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/5",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "b1eca65f47edbe0ac3e78b160d22462c43ee4bbe6542332a83895c7c46a3962b"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/5",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "85fee6bf07a012560a3b544df4b8c93075d96d1a3c3ced50b63399584f83001b"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-f4a2060d8b43f0ac3acb",
+        "name": "道の駅みのりの郷東金",
+        "address": "千葉県東金市田間1300-3",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/46",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/53",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/52",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/46",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/46/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/46",
+            "excerpts": [
+              "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：県原本は緑花木市場・東金マルシェ・レストラン・イベント広場等をまとめた道の駅の公開点。配布を扱う建物がこの数値点の対象であるとの棟別根拠がなく保留。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：県原本は緑花木市場・東金マルシェ・レストラン・イベント広場等をまとめた道の駅の公開点。配布を扱う建物がこの数値点の対象であるとの棟別根拠がなく保留。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.togane.chiba.jp/0000013032.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/46",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "67cbc01783b954f5f7a8dfbed2e3fc67f65574af9814c11193b18b458a1d2b4b"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/53",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "18c5d02e40627490feaf57fe27a84cd11c93faee8540a53df581ea9e198c1d23"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/52",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "ce5f4f3e90f7099a4d47342d3d41e449ed8d62ad95206efc07ce36229fe830c4"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-integration-01",
+        "name": "八千代市上下水道局1階 お客様センター（工事）",
+        "address": "八千代市大和田新田312-5",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/48",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/55",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/6",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/6",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/6",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "building-comparison",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/6",
+            "excerpts": [
+              "配置図とBldAを目視比較したが、2023年計画の新市庁舎と取得外形の現況差を含めた建物の対応付けは未完。候補ポリゴンは未選択。\n2023年3月基本設計資料編PDF5ページは新市庁舎・本庁舎別館・上下水道局庁舎・福祉センターを区別。上下水道局庁舎は新市庁舎と別の建物として表示。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "配置図とBldAを目視比較したが、2023年計画の新市庁舎と取得外形の現況差を含めた建物の対応付けは未完。候補ポリゴンは未選択。",
+        "resumeCondition": "新庁舎計画図と現況を区別し、既存として描かれた上下水道局庁舎を道路と福祉センターの配置で独立同定。旧局庁舎/P05から流用せず丸め後内包まで検査。",
+        "nextAction": "新庁舎計画図と現況を区別し、既存として描かれた上下水道局庁舎を道路と福祉センターの配置で独立同定。旧局庁舎/P05から流用せず丸め後内包まで検査。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/48",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "124531b56568180b3fe24b760896fbc16022238957e541485c19d6671b201b53"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/55",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "8f3d1218e2b32d6dbc617a9c5665ab71cc5702d358819d8e01a216705371f5cb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/6",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "f766cae66c2bece25ac00f0881a51bfe97b292c4e5c8fc28d06e22c7eb153636"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/6",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "33652cec5852e41848ff61b6f17c1cee85d042e4cfe40123fe8e209b1f981829"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-integration-02",
+        "name": "八千代市水道サービス（宿直対応）",
+        "address": "八千代市大和田新田312-5 上下水道局庁舎内",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/49",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/56",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/7",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/49",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/49/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/49",
+            "excerpts": [
+              "市広報PDFで上下水道局新庁舎移転を追加確認。旧萱田町サービス事務所と現局庁舎を区別し、宿直対応の現建物点原典を引き続き要する。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "市広報PDFで上下水道局新庁舎移転を追加確認。旧萱田町サービス事務所と現局庁舎を区別し、宿直対応の現建物点原典を引き続き要する。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/49",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "ee988eeb5c28b32f88ae8f7be828bfd730b33000ee8b6e74ab1df7e2927c2d7c"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/56",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "ca65d1dd8e7eaffd2ee6e558708d26401725c13dc41f0b7c918a80c63100aac5"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/7",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "31ed30bf12b167483e89a147f101a48416b6e02ab484f5a6e434840b84b2d6c3"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-05",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-integration-05",
+        "name": "袖ケ浦市観光協会",
+        "address": "千葉県袖ケ浦市坂戸市場1番地1 南庁舎1階",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/50",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/57",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/7",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/8",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/7",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "building-comparison",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/7",
+            "excerpts": [
+              "守衛室と同じ南庁舎への所在根拠はあるが、その南庁舎の数値外形を未確定。住所の一致だけで座標を共有しない。\n南庁舎は2期棟であり既存7階棟とは区別される。観光協会の南庁舎1階所在はIssue7保存2026年案内図を継承。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "守衛室と同じ南庁舎への所在根拠はあるが、その南庁舎の数値外形を未確定。住所の一致だけで座標を共有しない。",
+        "resumeCondition": "南庁舎の現外形と配置図を対応してから両施設の個別bindingを審査。同棟groupは建物証拠とともに別途明示する。",
+        "nextAction": "南庁舎の現外形と配置図を対応してから両施設の個別bindingを審査。同棟groupは建物証拠とともに別途明示する。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/50",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "a957ea812154a69de065e30d41b94eb36bfc8559a840c0da1abdf0adc3cd72e5"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/57",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "8bb5a6a0856427831ee1627388fe3020ee4265c2bbeedc94016c499e729ea345"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/7",
+          "kind": "history",
+          "fileSHA256": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+          "objectSHA256": "1276db57578f30ff19f9807abf461742a624dcd8fcb5d107b3875d1d1932a82d"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/8",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "2ab756e55f7c9e5f7231a7b24fbdb7fce8a8f61a2ce8afdedb35e3d5e358722e"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+        "name": "八千代市上下水道局1階給排水相談課窓口",
+        "address": "千葉県八千代市大和田新田312-5",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/55",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/62",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/13",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/55",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/55/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/55",
+            "excerpts": [
+              "市広報PDFは新庁舎1階の給排水相談課を示す。建物移転の履歴と旧関係を分離し、当該旧IDの時点との対応を追加確認する。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "市広報PDFは新庁舎1階の給排水相談課を示す。建物移転の履歴と旧関係を分離し、当該旧IDの時点との対応を追加確認する。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/55",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "ca58d93e3d912bc68456507ceb7d5e3ab6692695f0ae34046f70f6e4e43dd090"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/62",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "378233a4ee354c23cdc76e1cf3ce3818e3235d0108590be3e2f4d08fed146e29"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "3f238ea81187acd4e85df051cdf7d7637c4a1074de2a7ae02c772fb60b96a6b5"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/13",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "6d4a9c9c4063ac58d5f68f1f9911d5c78d531aa1551d4e3eca030d4f3093bb8d"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+      "indexRecord": {
+        "facilityId": "facility:kanto-south-integration-legacy-yachiyo-1",
+        "name": "株式会社八千代市水道サービス",
+        "address": "千葉県八千代市萱田町596-19(八千代市上下水道局敷地内)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/56",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/63",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/2",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/14",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/56",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/56/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/56",
+            "excerpts": [
+              "市広報PDFは新庁舎への移転・サービス連絡先を示すが、旧萱田町596-19の建物を同定する資料ではない。endedの旧施設へ現庁舎点を上書きしない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "市広報PDFは新庁舎への移転・サービス連絡先を示すが、旧萱田町596-19の建物を同定する資料ではない。endedの旧施設へ現庁舎点を上書きしない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yachiyo.lg.jp/site/jougesui/5240.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/south-kanto.json#/unresolved/56",
+          "kind": "original",
+          "fileSHA256": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+          "objectSHA256": "bdb04460bf67ac03d060c30bd59d311966b91c59d51f68e362f191d2280444b5"
+        },
+        {
+          "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/63",
+          "kind": "review",
+          "fileSHA256": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+          "objectSHA256": "60f75035d3db9f3b211b95988a4c7af03572139e3c90345c519bfd09b5f46034"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/2",
+          "kind": "history",
+          "fileSHA256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+          "objectSHA256": "16074d05a9f07f2d8fdcd64bc9595028e4a26604ab000a85cb77a0375f5e63d2"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/14",
+          "kind": "history",
+          "fileSHA256": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+          "objectSHA256": "2e2ecc25b74a2f68c991d47b89cec067c468f3d3d9dbf85fceef20024828e31a"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+          "objectSHA256": "651b88f8e142bb08f48a94c3fc0e0041c25c69d238107e0080df3cdcc9152c49"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+          "objectSHA256": "787fb82ef4e34fb0d3c1af8bdec35573819b423e17f889fa44c5e54d21e20ba1"
+        },
+        {
+          "ref": "data/national/location-batch2/south-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "fileSHA256": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+          "objectSHA256": "a5c482c4fd7e204bd30bbb27f2650845023adbcbff3e03fbf86f24b5d740fb15"
+        }
+      ]
+    }
+  ],
+  "inputSHA256": {
+    "data/national/issue7/south-kanto.json": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+    "data/national/issue7/reviews/south-kanto.json": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+    "data/national/location-batch1/coverage.json": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+    "data/national/location-batch2/south-kanto/selection.json": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+    "data/national/location-batch1/review.json": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+    "data/national/location-batch1/validation-review.json": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+    "data/national/location-batch2/south-kanto/review.json": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+    "data/evidence/national/kanto-south/da4c67b29edff5ad759b.html": "dcb7b30859f055ebcb26f5f02da123166467f5b2b8e0cd87f0ffd7ffd83bfecc",
+    "data/national/location-batch2/south-kanto/outcomes.json": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+    "data/evidence/national/kanto-south/fe62d84da7ad4ab3c226.html": "dae3eb4b9b327a18c23f1b57677a68a5a047ac764305111c5245235bb3747bbc",
+    "data/evidence/national/kanto-south/bda1203ac1e2f6dc8f96.html": "590b2cafd54bf2b3de31c2385785268b788fce18b816b0dcfd6b0d11d7cc3978",
+    "data/national/issue57/pilot-outcomes.json": "6994e78b190cf1b9acb19dbc0fcdb0525252443eae4c56bd2ed9c3f082497499",
+    "data/national/issue57/pilot-review-corrections.json": "8f1d8e8597da5c8485b78d86b84e845ce4cfd97d9b0319f21076c77aa6dfcc72",
+    "data/evidence/national/kanto-south/fe60704da9f4ed5fe95d.html": "0ba75abca09288ffc27a86760fe1ffeada19a94cc265e7b59432335a46ed0ac7",
+    "data/evidence/national/kanto-south/2518a0dcf31a4eca1920.html": "20a5d329101d0125831df62bec7605c20fd2f1e4b7addadd57594b613fc10f1f",
+    "data/evidence/national/kanto-south/6741b23f53c864254716.html": "d68fbacf12ba83a9345cfe4927a3c84dc2feb0799ae921057f95796c7bab8475",
+    "data/evidence/national/kanto-south/86586396e1e141a287d4.html": "6ee0d392f9646996373aa2c0adf761db155b2f1653839038754fed943d73c70b",
+    "data/evidence/national/kanto-south/362ccfc2c88ce7f336ff.html": "e37eeca4660347b0b9c3b29273e28f5192c2d553497fce83ac16caa00d876f34",
+    "data/evidence/national/kanto-south/ef60a2706537908cb913.html": "19a1f8f5285a608b5bb98b1d58f8f9ec76fd29df8980655af234e3ef6689f82e",
+    "data/evidence/national/kanto-south/f5e135e5f53035cb9e61.html": "d52f026978983862461b1a46dc363a5397c41e0b762e889900b3dcb97d4c4b4d",
+    "data/evidence/national/kanto-south-integration/5b07ce3775aadf21039e.html": "966c3ac1e24bd736591fac1c1c025b1914c001a5105f23468aab12070c351329",
+    "data/evidence/national/kanto-south-integration/fe62d84da7ad4ab3c226.html": "5ef4b181d740d89226cd27d32e141086b3faa7b1c0798d36193ca1937aa82277",
+    "tools/national/manifest.json": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+    "tools/national/assemble.py": "9bfbeff5ae3707696d2eecf23f85fab83cd3dc678ab32353b446dc6c02ead988",
+    "data/national/issue57/remaining-index.json": "094c568165004c98650d42fc9c3ec349b3bdbcec72c0d9ce7555b4c3c14f34a5",
+    "data/national/issue57/human-confirmation-queue.json": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+    "data/national/issue57/human-responses.json": "ca57276d8e00ffcbaad7364cce1858ef86ffc9cd329dd9b8d5745c0a8737acf3"
+  },
+  "indexHistoryCatalog": [
+    "data/national/issue16/group-a-outcomes.json",
+    "data/national/issue16/group-a-review.json",
+    "data/national/issue16/group-b-outcomes.json",
+    "data/national/issue16/group-b-review-resolution.json",
+    "data/national/issue16/group-b-review.json",
+    "data/national/issue16/group-b-start.json",
+    "data/national/issue16/selection.json",
+    "data/national/issue20/fujioyama-outcomes.json",
+    "data/national/issue20/north-outcomes.json",
+    "data/national/issue20/oyama-outcomes.json",
+    "data/national/issue20/review.json",
+    "data/national/issue20/selection.json",
+    "data/national/issue20/verification.json",
+    "data/national/issue25/investigation.json",
+    "data/national/issue25/relation-comparison.json",
+    "data/national/issue26/address-patch.json",
+    "data/national/issue26/address-proposal.json",
+    "data/national/issue26/integration.json",
+    "data/national/issue26/outcomes.json",
+    "data/national/issue26/review.json",
+    "data/national/issue27/outcomes.json",
+    "data/national/location-batch1/baseline.json",
+    "data/national/location-batch1/browser-verification.json",
+    "data/national/location-batch1/coverage.json",
+    "data/national/location-batch1/east-outcomes.json",
+    "data/national/location-batch1/east-selection.json",
+    "data/national/location-batch1/followups.json",
+    "data/national/location-batch1/generated-comparison.json",
+    "data/national/location-batch1/integration.json",
+    "data/national/location-batch1/kinki-outcomes.json",
+    "data/national/location-batch1/kinki-selection.json",
+    "data/national/location-batch1/location-lifecycle.json",
+    "data/national/location-batch1/locations-reviewed.json",
+    "data/national/location-batch1/review-east.json",
+    "data/national/location-batch1/review-kinki.json",
+    "data/national/location-batch1/review-west.json",
+    "data/national/location-batch1/review.json",
+    "data/national/location-batch1/validation-review.json",
+    "data/national/location-batch1/west-outcomes.json",
+    "data/national/location-batch1/west-selection.json",
+    "data/national/location-batch2/chugoku/outcomes.json",
+    "data/national/location-batch2/chugoku/review.json",
+    "data/national/location-batch2/chugoku/selection.json",
+    "data/national/location-batch2/hokkaido/browser-verification.json",
+    "data/national/location-batch2/hokkaido/location-lifecycle.json",
+    "data/national/location-batch2/hokkaido/location-proposal.json",
+    "data/national/location-batch2/hokkaido/locations-reviewed.json",
+    "data/national/location-batch2/hokkaido/outcomes.json",
+    "data/national/location-batch2/hokkaido/review-opus.md",
+    "data/national/location-batch2/hokkaido/review.json",
+    "data/national/location-batch2/hokkaido/selection.json",
+    "data/national/location-batch2/hokkaido/validation.json",
+    "data/national/location-batch2/hokuriku/candidates.json",
+    "data/national/location-batch2/hokuriku/outcomes.json",
+    "data/national/location-batch2/hokuriku/review-gemini-flash.json",
+    "data/national/location-batch2/hokuriku/review-opus-initial.json",
+    "data/national/location-batch2/hokuriku/review-opus-recheck.json",
+    "data/national/location-batch2/hokuriku/review.json",
+    "data/national/location-batch2/hokuriku/selection.json",
+    "data/national/location-batch2/hokuriku/timing.json",
+    "data/national/location-batch2/kinki-east/adoption-d880-verification.json",
+    "data/national/location-batch2/kinki-east/adoption-verification.json",
+    "data/national/location-batch2/kinki-east/approved-candidates.json",
+    "data/national/location-batch2/kinki-east/candidates.json",
+    "data/national/location-batch2/kinki-east/decision.json",
+    "data/national/location-batch2/kinki-east/gemini-flash-review.json",
+    "data/national/location-batch2/kinki-east/gemini-flash-review.md",
+    "data/national/location-batch2/kinki-east/location-lifecycle.json",
+    "data/national/location-batch2/kinki-east/locations.json",
+    "data/national/location-batch2/kinki-east/outcomes.json",
+    "data/national/location-batch2/kinki-east/prior-values.json",
+    "data/national/location-batch2/kinki-east/research-outcomes.json",
+    "data/national/location-batch2/kinki-east/review.json",
+    "data/national/location-batch2/kinki-east/revision-verification.json",
+    "data/national/location-batch2/kinki-east/selection.json",
+    "data/national/location-batch2/kinki-east/timing.json",
+    "data/national/location-batch2/kinki-east/verification.json",
+    "data/national/location-batch2/kinki-west/coverage.json",
+    "data/national/location-batch2/kinki-west/initial-outcomes.json",
+    "data/national/location-batch2/kinki-west/location-lifecycle.json",
+    "data/national/location-batch2/kinki-west/locations.json",
+    "data/national/location-batch2/kinki-west/opus-review-response.json",
+    "data/national/location-batch2/kinki-west/outcomes.json",
+    "data/national/location-batch2/kinki-west/review.json",
+    "data/national/location-batch2/kinki-west/revision-timing.json",
+    "data/national/location-batch2/kinki-west/selection.json",
+    "data/national/location-batch2/kinki-west/timing.json",
+    "data/national/location-batch2/koshin/location-lifecycle.json",
+    "data/national/location-batch2/koshin/locations.json",
+    "data/national/location-batch2/koshin/outcomes.json",
+    "data/national/location-batch2/koshin/prior-values.json",
+    "data/national/location-batch2/koshin/proposals.json",
+    "data/national/location-batch2/koshin/review-response.json",
+    "data/national/location-batch2/koshin/review.json",
+    "data/national/location-batch2/koshin/selection.json",
+    "data/national/location-batch2/koshin/timing.json",
+    "data/national/location-batch2/kyushu-okinawa/candidate-lifecycle.json",
+    "data/national/location-batch2/kyushu-okinawa/candidates.json",
+    "data/national/location-batch2/kyushu-okinawa/coverage.json",
+    "data/national/location-batch2/kyushu-okinawa/initial-outcomes.json",
+    "data/national/location-batch2/kyushu-okinawa/integration.json",
+    "data/national/location-batch2/kyushu-okinawa/location-lifecycle.json",
+    "data/national/location-batch2/kyushu-okinawa/locations.json",
+    "data/national/location-batch2/kyushu-okinawa/outcomes.json",
+    "data/national/location-batch2/kyushu-okinawa/prior-values.json",
+    "data/national/location-batch2/kyushu-okinawa/review-antigravity-opus-failure.json",
+    "data/national/location-batch2/kyushu-okinawa/review-before-flash.json",
+    "data/national/location-batch2/kyushu-okinawa/review-claude-rate-limit.json",
+    "data/national/location-batch2/kyushu-okinawa/review-gemini-failure.json",
+    "data/national/location-batch2/kyushu-okinawa/review-gemini-flash.json",
+    "data/national/location-batch2/kyushu-okinawa/review-opus-initial.json",
+    "data/national/location-batch2/kyushu-okinawa/review-responses.json",
+    "data/national/location-batch2/kyushu-okinawa/review.json",
+    "data/national/location-batch2/kyushu-okinawa/selection.json",
+    "data/national/location-batch2/north-kanto/coverage.json",
+    "data/national/location-batch2/north-kanto/initial-outcomes.json",
+    "data/national/location-batch2/north-kanto/location-lifecycle.json",
+    "data/national/location-batch2/north-kanto/locations.json",
+    "data/national/location-batch2/north-kanto/outcomes.json",
+    "data/national/location-batch2/north-kanto/review-flash.md",
+    "data/national/location-batch2/north-kanto/review-response.json",
+    "data/national/location-batch2/north-kanto/review.json",
+    "data/national/location-batch2/north-kanto/revision-start.json",
+    "data/national/location-batch2/north-kanto/selection.json",
+    "data/national/location-batch2/shikoku/adoption-decision.json",
+    "data/national/location-batch2/shikoku/before-rows.json",
+    "data/national/location-batch2/shikoku/gemini-final-review.json",
+    "data/national/location-batch2/shikoku/location-lifecycle.json",
+    "data/national/location-batch2/shikoku/locations.json",
+    "data/national/location-batch2/shikoku/opus-review-initial.json",
+    "data/national/location-batch2/shikoku/opus-review-second.json",
+    "data/national/location-batch2/shikoku/outcomes.json",
+    "data/national/location-batch2/shikoku/review.json",
+    "data/national/location-batch2/shikoku/selection.json",
+    "data/national/location-batch2/south-kanto/outcomes.json",
+    "data/national/location-batch2/south-kanto/review.json",
+    "data/national/location-batch2/south-kanto/selection.json",
+    "data/national/location-batch2/tohoku/classification.json",
+    "data/national/location-batch2/tohoku/coverage.json",
+    "data/national/location-batch2/tohoku/gemini-final-review.json",
+    "data/national/location-batch2/tohoku/location-lifecycle.json",
+    "data/national/location-batch2/tohoku/locations.json",
+    "data/national/location-batch2/tohoku/opus-review.json",
+    "data/national/location-batch2/tohoku/outcomes.json",
+    "data/national/location-batch2/tohoku/previous-places.json",
+    "data/national/location-batch2/tohoku/review.json",
+    "data/national/location-batch2/tohoku/selection.json",
+    "data/national/location-batch2/tokai/outcomes.json",
+    "data/national/location-batch2/tokai/review.json",
+    "data/national/location-batch2/tokai/selection.json"
+  ]
+}
