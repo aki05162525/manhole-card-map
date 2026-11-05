@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "held-review-unavailable",
+  "status": "pending-opus-rereview",
   "adoptedIds": [],
   "heldIds": [
     "facility:kinki-332ce8ce5ad5b6583d87",
@@ -14,6 +14,6 @@
   ],
   "manifestChanged": false,
   "bindings": [],
-  "reason": "建物対応または数値原典への接続が未完のため候補0。",
+  "reason": "鈴鹿・洛西2件を提案。独立再レビュー前で採用0。ほか6件の未確定事項はoutcomes参照。",
   "reviewRef": "data/national/location-batch2/kinki-east/review.json"
 }
