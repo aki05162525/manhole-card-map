@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+  "checkedAt": "2026-11-05",
+  "sources": [
+    {
+      "path": "data/evidence/issue7/south-kanto/7d1137186eb7317799425af7.raw",
+      "url": "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/002/632/map_r07.pdf",
+      "originalFetchedAt": "2026-11-05T06:27:37.469102+00:00",
+      "pages": {
+        "total": 1,
+        "visuallyChecked": [
+          1
+        ]
+      },
+      "edition": "URL map_r07、紙面に作成年月の明記は確認できず",
+      "sha256": "ee2e8be59010e1bc5313310d9f58be15c40bd3c7c62d5522f33f7758d12f533c"
+    },
+    {
+      "path": "data/work/kanto-kanagawa/policy.pdf",
+      "url": "https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/035/697/kihonhousin.pdf",
+      "originalFetchedAt": "2026-11-05T14:47:10.506490+00:00",
+      "pages": {
+        "total": 13,
+        "visuallyChecked": [
+          4
+        ],
+        "otherPages": "全13頁からpdftotext抽出し棟名・建築・配置を検索。残り12頁の画像は未読。全頁目視済みとはしない。"
+      },
+      "edition": "令和8年2月基本方針。PDF4頁図の時点は令和7年度。",
+      "sha256": "4495a9efc435b0981e3295845b0fd22765012e900737d5e7908f259b546e6724"
+    }
+  ],
+  "distributionEvidence": "scope.json currentPlace/evidenceの市カード案内。第1別館2階下水道経営課。別途web再読でも同記載。在庫表示はリアルタイム確認ではない。",
+  "orientation": "map_r07の北矢印は紙面左上。紙面上側を北と仮定せず、道路を北上のVectorと対応。基本方針4頁図には北矢印を確認できないため周辺施設の補助確認のみ。",
+  "matching": [
+    "市役所さくら通りは庁舎敷地の東～南東側、郵便局等を道路反対側に確認。",
+    "第1別館は本館の西～北西にある細長い棟。第2別館はその北東側。",
+    "西側の職員会館から連絡部分555、本館側へ連絡部分40。これらを第1別館の代表点に含めない。",
+    "BldA39と隣接タイル761は重複するbuffer断片。両者のunion面積は約1482m²（局所Mercator補正の概算）。第1別館候補の長軸・道路・接続を案内図に対応。"
+  ],
+  "tileCoverage": "z16 x58139–58141/y25830–25832の9タイル。全BldA/RdCLをsagamihara-all.svgへ描画。候補はタイル境界に触れるが取得範囲外端には触れない。detailはviewBox3000 3500 3800 3800の部分表示で全域図ではない。",
+  "fragmentCheck": "中央タイル新取得hashはbatch2保存d2610b56…と一致。原来の版/provenanceはvector-inspection.jsonに保持。",
+  "derivedPoint": "sagamihara-numeric.json、35.5717352,139.3726981。小数7桁は測量精度ではない。",
+  "identityDecision": "調査担当の候補同定。親の独立同定未了。",
+  "crsDecision": "一般仕様と製品への適用は分離。rights.json参照、承認待ち。",
+  "notDone": [
+    "残り12頁の目視",
+    "独立Codexレビュー",
+    "製品固有CRS承認",
+    "manifestへの統合",
+    "生成物/Maps確認（未採用のため未実施）"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25830
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25830.pbf.gz",
+      "sha256": "ec598edf5b935b70aedffa2abd567d8928674422f5cc81759d2cecb8663915a7"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58140,
+        "y": 25830
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25830.pbf.gz",
+      "sha256": "945763cd363afbbdf801007c71805deb431ce819401d3bd31fd1f7115cae4cd1"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25830
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25830.pbf.gz",
+      "sha256": "975e8acfe9c15744055851677b9bf8523929955448211248fef794494e2d2b55"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25831
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25831.pbf.gz",
+      "sha256": "d9d8520111e17967f8d7794f04b9624462c6c8c051bb69509b88f3c900a0fc61"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58140,
+        "y": 25831
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25831.pbf.gz",
+      "sha256": "d2610b56a4aef2fa2565017498b4dc3b3f64f2780c1e9c8ba4b618204c8c1970"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25831
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25831.pbf.gz",
+      "sha256": "84e931c7c74b35072f2c8d50b9a573d0b1c7900841272140c7ced7aee600a92e"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58139,
+        "y": 25832
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58139-25832.pbf.gz",
+      "sha256": "573be3392d8715d78ee9ff47d70c0e2a1a48d41af848fe6dffaa8a0edbb7e79a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58140,
+        "y": 25832
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58140-25832.pbf.gz",
+      "sha256": "226c7c63a7dcf3f423aed0f6276ecf9677fdd189b51e75c3a2ab2b801a36dff8"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25832
+      },
+      "path": "data/evidence/kanto-prefecture/kanagawa/sagamihara-16-58141-25832.pbf.gz",
+      "sha256": "49ed8d58525a8880aa0795cdda3f2cc318a99cca8933d4e772be01c39f02af94"
+    }
+  ],
+  "generation": [
+    "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+    "Thu, 17 Sep 2026 07:32:00 GMT"
+  ],
+  "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles"
+}

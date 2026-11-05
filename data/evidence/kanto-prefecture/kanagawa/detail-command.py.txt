@@ -1,0 +1,16 @@
+import json,re,sys
+from pathlib import Path
+import cairosvg
+from shapely.geometry import shape
+sys.path.insert(0,'tools/national');from research_common import render_svg
+c=json.load(open('data/work/kanto-kanagawa/combined.json'))
+s=render_svg(c);s=re.sub(r'viewBox="[^"]+"','viewBox="3000 3500 3800 3800"',s,1)
+labels=[]
+for f in c['features']:
+ if f['sourceLayer']!='BldA':continue
+ g=shape(f['geometry']);p=g.representative_point()
+ if 3000<p.x<6800 and 3500<p.y<7300 and g.area>2500:
+  labels.append(f'<text x="{p.x}" y="{p.y}" font-size="36" fill="blue">{f["sourceTile"]["x"]-58139},{f["sourceTile"]["y"]-25830}:{f["layerFeatureIndex"]}</text>')
+s=s.replace('</svg>','\n'.join(labels)+'</svg>')
+Path('data/evidence/kanto-prefecture/kanagawa/sagamihara-detail.svg').write_text(s)
+cairosvg.svg2png(bytestring=s.encode(),write_to='data/work/kanto-kanagawa/detail.png',output_width=1600,output_height=1600,background_color='white')
