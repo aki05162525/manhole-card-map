@@ -56,6 +56,6 @@ decisionのheldIdsを空にしても旧verifyがexit 0となる失敗を再現�
 
 [計時](../../data/national/location-batch2/kinki-east/timing.json)は初回288.494秒と今回の修正調査を分け、施設に重複配賦しない。後続の全体検証・レビュー・採用実装時間は調査時間と混同しない。
 
-Gemini 4 ArgonはAntigravity quota超過で失敗し、レビュー未実施だった履歴を保持する。その後、ユーザーがClaude Opus代替レビューを明示許可した。旧Opusの重大指摘と対応は[review.json](../../data/national/location-batch2/kinki-east/review.json)へ個別記録。修正後に新規Opus独立レビューを依頼する。レビュー前の候補自動採用はしない。PRはDraftで、マージとCI監視は親担当。
+Gemini 4 ArgonはAntigravity quota超過で失敗し、レビュー未実施だった履歴を保持する。その後、ユーザーがClaude Opus代替レビューを明示許可した。旧Opusの重大指摘と対応は[review.json](../../data/national/location-batch2/kinki-east/review.json)へ個別記録。修正head ae217cf3に新規Opus独立レビューを依頼したが、Claude API rate limit reachedで実行前に失敗した。承認・指摘0として扱わない。利用制限解除後の新規レビューが残る。レビュー前の候補自動採用はしない。PRはDraftで、マージとCI監視は親担当。
 
 共有ファイルの変更はない。今回見つけて訂正した文書/実装の不一致は、数値外形未試行なのに完了を思わせる停止条件、資料版と取得時期の混同、安乗全体確認の過大記載、未記録の描画頁/scale、verifyの現在値固定・採否未検査、代替モデルを使わないという旧方針の残存。プロダクトのコード/動作は変更していない。
