@@ -11,7 +11,7 @@
       "evidence": {
         "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
         "snapshotPath": "data/evidence/location-batch2/shikoku/reassessment-calculations.json",
-        "snapshotSHA256": "4e298e28aabb3da560492adfd7190a0d8d41dcfeb3487a0f39b3139a80084f72",
+        "snapshotSHA256": "f76b204b1916423c8870cc545ce789c341bcbc14ce00001a097c2568d3ea0cb7",
         "sourceLocator": "kyuyoshino-manager; 原タイルhash/feature/geometryは本記録とvector-inputs.json。施設対応はfacts.json#/reassessment/kyuyoshino-manager",
         "checkedAt": "2026-11-05",
         "actorType": "ai",
@@ -28,7 +28,7 @@
       "evidence": {
         "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
         "snapshotPath": "data/evidence/location-batch2/shikoku/reassessment-calculations.json",
-        "snapshotSHA256": "4e298e28aabb3da560492adfd7190a0d8d41dcfeb3487a0f39b3139a80084f72",
+        "snapshotSHA256": "f76b204b1916423c8870cc545ce789c341bcbc14ce00001a097c2568d3ea0cb7",
         "sourceLocator": "aeon; 原タイルhash/feature/geometryは本記録とvector-inputs.json。施設対応はfacts.json#/reassessment/aeon",
         "checkedAt": "2026-11-05",
         "actorType": "ai",

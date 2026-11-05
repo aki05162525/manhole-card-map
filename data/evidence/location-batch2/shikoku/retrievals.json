@@ -296,7 +296,7 @@
       "key": "iyo-aed-urban.csv",
       "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/documents/382108_aed_06.csv",
       "requestStartedAt": "2026-11-05T11:52:10.790973+00:00",
-      "redistribution": "市のCC-BY表示確認（版指定なし）。原本はwork保持、事実抽出のみGit。利用規約入口はiyo-terms.html。",
+      "redistribution": "データページはCC-BY表示、保存iyo-terms.htmlはCC BY 4.0 Internationalを明記。リンク先の市利用規約PDFは未取得。原本はwork、Gitは事実抽出のみ。",
       "status": 200,
       "finalUrl": "https://www.city.iyo.lg.jp/shise/opendata/documents/382108_aed_06.csv",
       "snapshotPath": "data/work/location-batch2/shikoku/iyo-aed-urban.csv",

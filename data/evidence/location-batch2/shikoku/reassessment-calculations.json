@@ -894,8 +894,8 @@
     }
   ],
   "dependencies": {
-    "data/evidence/location-batch2/shikoku/facts.json": "b179a58409832d54b5d1b3eef45db5aed5865912bd666125d8d246c21ca3debb",
+    "data/evidence/location-batch2/shikoku/facts.json": "6ac17fd1ec3b6ee1fb8e72a2c4613e3c92cc9cecce73a1bf24c65bda4615f785",
     "data/evidence/location-batch2/shikoku/vector-inputs.json": "4bf740853a30033ddf22da349c2e6ec7d6541ea282eb23636540911c369ad7ad",
-    "data/evidence/location-batch2/shikoku/retrievals.json": "46050e52647f1fdf6c2f2c99ab6bffc1430043f4e5306657f8385c51fc049b74"
+    "data/evidence/location-batch2/shikoku/retrievals.json": "caf886802e766d1f7c063bc2d0770548b64f86d5684ec0a1d368c68d523dee30"
   }
 }

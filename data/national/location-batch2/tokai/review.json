@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-05T11:35:47.832661+00:00",
+  "reviewer": {
+    "providerInstanceId": "antigravity",
+    "model": "gemini-4-argon",
+    "independent": true,
+    "taskId": "node:delegated-task:command%3Amcp%3Aafd99854-e2fd-4fc3-91e1-e55bc9d28222%3Adelegate-task%3Ad1102983-23c2-4b3b-85b4-f8a85533664b"
+  },
+  "worktree": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-105a9ced",
+  "decision": "research-only-approved",
+  "scope": "候補0・採用0・保留8の研究記録・証拠整合性を独立レビュー。座標採用承認ではない。マージは行わない。",
+  "blockingFindings": [],
+  "optionalFindings": [
+    {
+      "finding": "inspection.jsonの派生6ファイルhashをverify.py --with-workにも含める",
+      "response": "反映。レビュー時点で6ファイル一致済み、検査へ追加した。"
+    },
+    {
+      "finding": "GSI README最終取得が初回成果作成時刻より後であることを補足",
+      "response": "outcomes.jsonと地域文書に仕上げ確認は計時対象外と明記。初回計時値は保持。"
+    }
+  ],
+  "reviewerValidation": [
+    "verify.py 成功",
+    "verify.py --with-work 成功",
+    "compare.py 出力と保存JSONのbyte一致",
+    "35ID全被覆、8ID firstPin、旧停止条件維持",
+    "非配布原本・派生6ファイルhash確認",
+    "manifest/assemble出力不変",
+    "CRS/試験Vector/PDL1.0・再配布条件確認"
+  ],
+  "newAdoptions": []
+}

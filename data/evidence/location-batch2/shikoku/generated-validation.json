@@ -2,17 +2,17 @@
   "schema": 1,
   "basis": "saved list 20261021, review-list 20261105, as-of 2026-11-05",
   "fileSHA256": {
-    "details.json": "3acd41e2e8d5a0f9d83e487803a05a930c6e0c213b80e8e6f61b86f0a60989a6",
-    "full.json": "5ab7e3a9802c9ff70d320fce1e55c5c195f950c79586a4f2af1b28ff6167cc24",
-    "pins.json": "3cb9b1d9f072af34eec4074da590c192237fc68c61fee004fefab663062ddde3"
+    "details.json": "1600120ab6e9fb366297f61918deb208d0c75939bf45fe66523dc6ff5047d0a7",
+    "full.json": "0f0c6b472cfff1673dce591098e37d792c075b0b63f8bcb4f974d904193eb204",
+    "pins.json": "9f6d9ae1980f36e64ceba380124ba02f0dd08d63de199cd69b4271184fcd3894"
   },
-  "detailsSHA256": "3acd41e2e8d5a0f9d83e487803a05a930c6e0c213b80e8e6f61b86f0a60989a6",
+  "detailsSHA256": "1600120ab6e9fb366297f61918deb208d0c75939bf45fe66523dc6ff5047d0a7",
   "counts": {
     "cards": 1313,
     "places": 1735,
     "relations": 1825,
-    "facilityPinsBefore": 978,
-    "facilityPinsAfter": 980,
+    "facilityPinsBefore": 979,
+    "facilityPinsAfter": 981,
     "lidPins": 1309
   },
   "firstPinCardIds": [
@@ -72,5 +72,12 @@
       "sha256": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
       "reuse": "親root保存原本をcopy2。新取得ではない。"
     }
-  ]
+  ],
+  "baseline": "現manifestから四国location/lifecycle選択のみ除外。北海道PR56を保持。",
+  "integratedMain": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+  "nationalUnlocated": {
+    "originalStart": 608,
+    "integratedMainBeforeShikoku": 607,
+    "afterShikoku": 605
+  }
 }
