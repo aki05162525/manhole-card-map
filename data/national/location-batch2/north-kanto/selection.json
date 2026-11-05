@@ -178,13 +178,13 @@
   },
   "integrationHistory": [
     {
-      "mainCommit": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
-      "nationalUnlocatedBefore": 605,
-      "nationalUnlocatedAfter": 603,
+      "mainCommit": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+      "nationalUnlocatedBefore": 607,
+      "nationalUnlocatedAfter": 605,
       "regionUnlocatedBefore": 91,
       "regionUnlocatedAfter": 89,
       "initialNationalUnlocated": 608,
-      "note": "北海道PR56/近畿西PR45の採用・binding・地域テストを保持。北関東の差分は自地域prefixだけ除いたmanifestとの比較。"
+      "note": "北海道PR56の1採用/binding/地域テストを保持。北関東差分は自地域だけを除いたmanifestとの比較。"
     }
   ]
 }
