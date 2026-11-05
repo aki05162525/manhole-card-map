@@ -22,12 +22,14 @@ go test -count=1 ./...
 2. 入力のメモリ上のコピーへexactパッチを適用する。対象行は一意、旧値は完全一致が必要。フィールドの不在とnullを区別し、重複・同一行への全体置換とフィールド置換の重複も拒否する。
 3. 施設ID、関係のcardId/placeIdが同じ行は、全内容が一致するときだけ重複排除する。異なる値、legacy alias衝突、存在しない施設を参照する関係は失敗する。
 4. 全施設・関係の証拠bytesのSHA256、URL・確認主体・確認日などを検査する。
-5. 統合後にだけ承認済み位置642件を追補する。未存在施設、重複座標パッチ、既存coordinateの上書きを拒否する。lat/lngは両方必須の有限数値で、文字列・真偽値・null・範囲外を拒否する。座標追補の証拠SHA256も検査する。
+5. 統合後にだけ承認済み位置840件を追補する。未存在施設、重複座標パッチ、既存coordinateの上書きを拒否する。lat/lngは両方必須の有限数値で、文字列・真偽値・null・範囲外を拒否する。座標追補の証拠SHA256も検査する。
 
-パッチは次の9ファイル・103操作を選択している。
+パッチは次の11ファイル・111操作を選択している。
 
 | ファイル | 操作数 | 選択 |
 | --- | ---: | --- |
+| issue7/address-reviewed-patches.json | 3 | 沼津水道部2窓口住所、本部町県名 |
+| issue7/chugoku-reviewed-patches.json | 5 | 倉敷の混在住所電話と不足電話 |
 | issue5/north-reviewed-patches.json | 1 | 千歳の部署名 |
 | issue5/west-south-reviewed-patches.json | 4 | 宇美棟別名称2件、神埼hours/condition2件 |
 | kanto-south-integration.json | 52 | replacements全件 |
@@ -48,10 +50,10 @@ SouthKantoの`sourceFile=data/work/national-input/places.json`だけは、明示
 
 位置証拠の`checkedAt`がタイムゾーン付きtimestampなら、その表記の暦日へ正規化する。元の位置追補ファイルを変更せず、任意の監査出力にも`originalEvidence`としてtimestampをそのまま保存する。置換前の施設証拠は`previousEvidence`に記録する。タイムゾーンのないtimestampは失敗する。監査出力には入力ファイルhashと適用件数も含む。
 
-親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。現在のCIはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。下記digestはその最終出力に対応する。
+親の手動基準`data/work/national-assembled-reviewed-itg.json`との一度限りの比較で、施設1,586件・関係1,670件、全フィールド一致を確認した。比較は施設ID・cardId/placeIdで配列を整列する。この比較はIssue5開始前の履歴である。現在のCIはworkファイルを読み込まず、Issue5の固定基準から37位置・名称3件・神埼hours/conditionだけが変化したことを全フィールド比較した最終出力の正規化JSON SHA256を回帰テストに固定している。Issue7ではそこから198位置と住所電話8フィールドだけが変化したことを比較し、下記digestを更新した。詳しくは[Issue7統合記録](verification/issue7-integration.md)。
 
 ```text
-38d0451c51fc2f3fcf74f3d73fb42ba28e71a18927bdbb5253e532528e6f91f6
+d89e788b0998fd625ea3d2b06e4cae6ff85c1c30f1526bc18c6bd8908702a5ff
 ```
 
 テストは実装前のImportError（RED）から実装後の成功（GREEN）を確認した。旧値不一致、不在行、不在フィールド条件、重複・重複範囲パッチ、同ID異値、alias衝突、不在施設参照、未承認削除非適用、位置上書き・重複・型違反、証拠hash不一致、timestamp、manifestの変更を検査する。統合テストは入力hashが実行前後で変わらないことも検査する。
@@ -66,7 +68,7 @@ CIに必要なのは選択manifest、台帳・パッチ・位置追補、それ�
 
 ## 見つかった記述の差
 
-- 初期依頼文の「完成済みパッチ7ファイル」に対し、当時の列挙と実ファイルは6つで、初期実装は6ファイル97操作だった。Issue5開始前は家康館の再確認期限パッチを加えた7ファイル98操作。現在はIssue5の訂正を含め9ファイル103操作。
+- 初期依頼文の「完成済みパッチ7ファイル」に対し、当時の列挙と実ファイルは6つで、初期実装は6ファイル97操作だった。Issue5開始前は家康館の再確認期限パッチを加えた7ファイル98操作。Issue5完了時は9ファイル103操作。現在はIssue7を含め11ファイル111操作。
 - `data/evidence/national/proposals-chubu/README.md`が指摘する、初期地域記録の「入力外のため新規関係を登録できない」は現在のGoの`change.kind=addition`対応と一致しない。現在のコードに従い、レビュー済みproposalを統合する。
 - 千葉位置追補の`checkedAt`はtimestampだが、既存GoのEvidence検証は日付のみを受け付ける。元証拠を保持して出力を日付へ正規化した。
 - 変更前のfragmentsテストは未補正のpilot＋全地域を直接mergeしており、各追補READMEの「exact patchを先に適用する」手順と一致していなかった。厳密mergeを維持したまま適用順序を修正した。

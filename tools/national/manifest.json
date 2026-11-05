@@ -192,6 +192,30 @@
         0
       ],
       "sha256": "bdfc8eacb898bc8883e267d9358313b7f343adcc03e8d2da69928c7493224a30"
+    },
+    {
+      "path": "data/national/issue7/address-reviewed-patches.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1,
+        2
+      ],
+      "sha256": "90d196ba633a7b7b762b23114481965261da739e48f42b3b999f2e205face58b"
+    },
+    {
+      "path": "data/national/issue7/chugoku-reviewed-patches.json",
+      "adapter": "field",
+      "collection": "patches",
+      "indexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "sha256": "085913daf5e98615f5a7a8d6cb7b94ffdcb12ac990f0eafc17d658f1ecf6e9cb"
     }
   ],
   "locations": [
@@ -2860,6 +2884,868 @@
         {
           "facilityId": "facility:kanto-south-4ecb948da292cb16373b",
           "sha256": "aad4c7908cfea1ea2f96023b5e665635d4a07a5ad985e0cfbe4b7387b39383e5"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/north-kanto.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-north-186aaf0b34375b1f039d",
+          "sha256": "8b7968f8e251bb98ea9328ed84d1ad2e8b2612e0db201e9f184e3ea7f4bbc135"
+        },
+        {
+          "facilityId": "facility:kanto-north-1bfeb40ad99d60b3f386",
+          "sha256": "f427ffab59e433b706c7a39f0317a47684862b412a28571e7752bbc0d749dbc8"
+        },
+        {
+          "facilityId": "facility:kanto-north-25dc369fdbc22580ba80",
+          "sha256": "6efb889c26d10eeaf81cf7ae436b08cbb2b92458753d59e36cd744c76745f28c"
+        },
+        {
+          "facilityId": "facility:kanto-north-29bd0325065029394d6b",
+          "sha256": "93cb262ea98d47fea0a83457e3ba5279e422324e8750ffd1ffb2885088896d79"
+        },
+        {
+          "facilityId": "facility:kanto-north-2b7f825239f662031410",
+          "sha256": "92fde34037c44842ec077bd3085e8f534fe8d1032b72d72419fef4fcf86d3fdf"
+        },
+        {
+          "facilityId": "facility:kanto-north-3c73ebb9bfe12f0c6aa9",
+          "sha256": "44b93828a79b141a03448d62d7fce3937294ef3c9c11ca453746cdbf220520a8"
+        },
+        {
+          "facilityId": "facility:kanto-north-4276a35dc1985599c530",
+          "sha256": "caf434115d1fabfdfdeac004ef1880af707d897a28aab2c492b4132042126dcb"
+        },
+        {
+          "facilityId": "facility:kanto-north-4a157c5ae1e556e15835",
+          "sha256": "b999b23853da86ca08c9b8ed496b256c668b32214494e3e88830b770fb6e30b6"
+        },
+        {
+          "facilityId": "facility:kanto-north-73f40ac43cb2acd57ac6",
+          "sha256": "c86c7e0dd3a9567e0f9c9d4d1aeeab4a66338e8b2484802e3fe54666bffd0605"
+        },
+        {
+          "facilityId": "facility:kanto-north-8f14586e294c59e7ff50",
+          "sha256": "9ad810fd5bcef92117614cbe336d50c6e4a46c9ea9fd43a8dc9f2160d4b2155f"
+        },
+        {
+          "facilityId": "facility:kanto-north-91edb2f2494934178388",
+          "sha256": "93c814731ed257ab8cc0739d33a067d510a543185a56df427a89d417054d7d38"
+        },
+        {
+          "facilityId": "facility:kanto-north-a2c53ffd48e2697dd556",
+          "sha256": "4371e84164ca6589d4b632b8099814bcd186f45a11abd2f9d6d1d8c115c80b10"
+        },
+        {
+          "facilityId": "facility:kanto-north-b9794de4ce6f43340943",
+          "sha256": "c5b241dd0f1d4722e071dedd900d4262be0fd734d502e8530f6f3791beba97d3"
+        },
+        {
+          "facilityId": "facility:kanto-north-d7702132db50cd3bea9d",
+          "sha256": "3b7665986188588181a140e6a03627e0123a24a6a828aad1aa0e1dda49b98990"
+        },
+        {
+          "facilityId": "facility:kanto-north-e6fe57b579c1126842f3",
+          "sha256": "be7a99321b20827f55476fadae18735af8cd7eff1b113b6baf9dc538aaa64046"
+        },
+        {
+          "facilityId": "facility:kanto-north-e9c407539fac35ab201d",
+          "sha256": "c422593c180fe511f9d889d9a4edfa2d4b64d26184047dff284a9f02492f61b0"
+        },
+        {
+          "facilityId": "facility:kanto-north-f18e4d75a432181f8829",
+          "sha256": "25f0014d31b1bae9aecb4fce6f22456c47427484acc2fcedfb71d102523fef73"
+        },
+        {
+          "facilityId": "facility:kanto-north-fdb8db5be17ae5e5d52a",
+          "sha256": "e559b0e7a2d9d56f735919ad4b49b472a4f76f4a83d33c698ccf757e7ee5af7a"
+        },
+        {
+          "facilityId": "facility:kanto-north-ffe180a6b3c0c8434319",
+          "sha256": "75ddc83d5eb6f817531e751bd8488a58e939397c5047320d69fd79a5a1ccb1b8"
+        },
+        {
+          "facilityId": "facility:kanto-north-kitaibaraki-shiminka",
+          "sha256": "149d11565a4fd7a4d822a4111f0eebaad23ffb0f0fcbc39a6ba3e10ea7558178"
+        },
+        {
+          "facilityId": "facility:kanto-north-shibukawa-sewerage",
+          "sha256": "6880e89ca66e35b946338a68837df8a5ca1b025e8e05d34745a356a0138007b4"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/south-kanto.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-integration-09",
+          "sha256": "c0a35f57c6f32184647ae48e206b75b2bfbe46c84e9a7d419bd454f344f90cf7"
+        },
+        {
+          "facilityId": "facility:kanto-south-53fcefb12220c8b3f170",
+          "sha256": "0a3400990797e533e082b1eaff5ea45f7ffaf42ce46db74655a15525c544276f"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-06",
+          "sha256": "a4fe03f3d0d0788ac366725250f238690c5bd9a9a142ba64973be1cbfc35a1f7"
+        },
+        {
+          "facilityId": "facility:kanto-south-integration-legacy-urayasu",
+          "sha256": "9a5b70cdce7e0dfe3156d4ae03cae6c6e1478a6e4a2e385d39c722a106757e03"
+        },
+        {
+          "facilityId": "facility:kanto-south-121e759343c948057983",
+          "sha256": "0306e3ee26785b59a89cf3245da8dc81c76d2b5748d9475a2172aac565148a7b"
+        },
+        {
+          "facilityId": "facility:kanto-south-490affe5c4d10543f6b8",
+          "sha256": "9ddfe2e1cfd12d256a0e07bb11ee1d91aaf7cd9d9623434a049d25e86d37c18f"
+        },
+        {
+          "facilityId": "facility:kanto-south-af1b056736ebfd481a88",
+          "sha256": "d3f8e5d52639826d02769b46764887d4d0731767de11d1a0ef82f9603a6c8726"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/hokuriku.json",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-east-0c0f3438fa9b21563d94",
+          "sha256": "e92d4b69a10178308bf11935ee13c424cbe3029b242a84d14a3b8a274be84f3b"
+        },
+        {
+          "facilityId": "facility:chubu-east-b0499212fbe7ed94fa2a",
+          "sha256": "62837f47c0a8469bb00233f3f26f0106bd368db2e14490d4e38b76a4b47763e2"
+        },
+        {
+          "facilityId": "facility:chubu-east-6f1cf560a94cdce2b66d",
+          "sha256": "43f2c867955d56ab2274037086ad016c2dc182420afe60a30df33a5f6fa0a07b"
+        },
+        {
+          "facilityId": "facility:chubu-east-cf23f7f3846328ad1c67",
+          "sha256": "01fa4737bf3017eef27d4e060ea42844ae5125db9401bd4abf1a9dce3567b4da"
+        },
+        {
+          "facilityId": "facility:chubu-east-ee483872ed2d67e3f0ab",
+          "sha256": "95c8514d791bd93a8c18be585293189734e01f0320da75539e391b6cbbc12afa"
+        },
+        {
+          "facilityId": "facility:chubu-east-a97e4141d06f3d78c1ff",
+          "sha256": "4e8105520fb065f1364ba6e56c65d38357ce05eb2dd5115b15c8980b32d33966"
+        },
+        {
+          "facilityId": "facility:chubu-east-b7d603f8e144e10c3bb0",
+          "sha256": "8721402e245df225f1e7fd0c7e41723a32b5efcb748202affcfe6d2dce233551"
+        },
+        {
+          "facilityId": "facility:chubu-east-2a3c4c27a70d89172634",
+          "sha256": "90d6ddb61748ce24a1f271849edce0c85913e58d1642983cd7fb26c9121ec7d1"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/kinki-east.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-05fa2fff7b3ec588550c",
+          "sha256": "1626155711c6330b4b9709b7fc9ab947147a2660bdd2fd28d8b4572bf084e4e1"
+        },
+        {
+          "facilityId": "facility:kinki-41556d52418231f02801",
+          "sha256": "84323fd9b7b999db75109eb3a65d093ee4c2a012ae0dc5750551517bd021563a"
+        },
+        {
+          "facilityId": "facility:kinki-6cb3e373ea87d4b96e9d",
+          "sha256": "cbbf8d24e2691f1b3983bf17a4c5662595f266ba4e39cb499eae1ebe637b36df"
+        },
+        {
+          "facilityId": "facility:kinki-6d8b89a29af144dceac1",
+          "sha256": "330c4a062061f7dc28cc78784175840061dc2767a87e7beb62eec5c27ae5abf4"
+        },
+        {
+          "facilityId": "facility:kinki-8ad7344fb642add50788",
+          "sha256": "9fd1042e0475e317e44e81935d0484f1bbc2f1169418af0c6cde1d09470ca661"
+        },
+        {
+          "facilityId": "facility:kinki-90f4a477736e4cd5c43b",
+          "sha256": "b7fc2ccbba807843c6a349200df4001fa2a5ac7aa0f42ee538bf8a6592cd12b9"
+        },
+        {
+          "facilityId": "facility:kinki-97682f76cc0f5bafa521",
+          "sha256": "eea856e1efb9ab5a8e8ce10369e7a1018a0d518cb02604d98e2bd9de27ff3640"
+        },
+        {
+          "facilityId": "facility:kinki-a923ab5decbf089ca723",
+          "sha256": "c1e92d00150832429e114ac37a586435ea19c7f913f75e0c9a471ee256831917"
+        },
+        {
+          "facilityId": "facility:kinki-bb8882bd51e63108b720",
+          "sha256": "b64aac73f2142dc276b6a2e2f4187e553eeea7c2d37d85a50ed55499f67c2964"
+        },
+        {
+          "facilityId": "facility:kinki-bbd37716f9955e413e80",
+          "sha256": "f512675bad25277c36d7a56531f38c846e773c20b4ed5648b96cc07f479e1e66"
+        },
+        {
+          "facilityId": "facility:kinki-c1f821f1bc9c44d7290e",
+          "sha256": "d6fe463aa59079147b2f547b74d1d6e844b14702a94a160bb8edca987c3c73e7"
+        },
+        {
+          "facilityId": "facility:kinki-ce0f123ef5e185dce8c9",
+          "sha256": "636b6308acb52b205a164a18de56363b765e1ef72999f41aa3a1e1c7e8931836"
+        },
+        {
+          "facilityId": "facility:kinki-e8d26c0454d7822bc108",
+          "sha256": "41bac08128d0f2119004eeb8365c3871f9cbb989309cbffe3af2b813d723a30e"
+        },
+        {
+          "facilityId": "facility:kinki-f2abb44db075f27dc0ef",
+          "sha256": "042d9986f5c4ab7cc70d02ef3d4d69c3a642060a302637df3c19becd21a700cf"
+        },
+        {
+          "facilityId": "facility:kinki-f7118465cacf2eb7adc4",
+          "sha256": "71418b056f4c49f129da4b0b2554fe7cceafe2cf23d51bb9132fa523a03afa12"
+        },
+        {
+          "facilityId": "facility:kinki-kusatsu-cityhall",
+          "sha256": "aea163b038b9305c2c338bb8c43fc996996cd46bdd9a3cdc17cc494dbcedae17"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/koshin-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-east-229e5e47f9803908c4c6",
+          "sha256": "b2a2bcdbc4890b7a37492bde9a8e37996419b08e64e1c1af3e51e0899429c2f9"
+        },
+        {
+          "facilityId": "facility:chubu-east-240805ae87211fec2017",
+          "sha256": "c869dc4a864a54cb01c650265bceb11c59b77de11a4a0e4db0b94975690123a7"
+        },
+        {
+          "facilityId": "facility:chubu-east-36a5d6c92fa9483cf836",
+          "sha256": "362170112716356212204ce8e6b4b09efccc56a2d9e45232e8fc6a1796e60c15"
+        },
+        {
+          "facilityId": "facility:chubu-east-44d29ce20b77b1fda73b",
+          "sha256": "cc636ec7d9ae0bf4d814afcb912770583efb372417d08964dbca47d9ce981e42"
+        },
+        {
+          "facilityId": "facility:chubu-east-4cbef6338a9e2b8c48c2",
+          "sha256": "ae0d16aee6fc779661282319945f887a6207a81c767a9999591b061c2e483008"
+        },
+        {
+          "facilityId": "facility:chubu-east-5a0a8e11ba49036a9c1e",
+          "sha256": "dfe900835b42e4e75acb20dde908a0911752323d2e2f8b8f9230de0da83fa92a"
+        },
+        {
+          "facilityId": "facility:chubu-east-64b7118a7d922e54371d",
+          "sha256": "8d21de0ecf88959358f6b4bbd9647d2b71b8545b1cd9fdd85169c31ed0b1815e"
+        },
+        {
+          "facilityId": "facility:chubu-east-7d19c697816a714fd233",
+          "sha256": "36ebda02ef331bdcead7131022f6ee3ac3bbdf6f4f6bdf3a99e109ebb4e77db9"
+        },
+        {
+          "facilityId": "facility:chubu-east-97b67626e4aca3bcd172",
+          "sha256": "ecf2811ad48e4b5e7e0815fca84014caa03ad7cfea235ef0aa99745b3dc8490d"
+        },
+        {
+          "facilityId": "facility:chubu-east-9861585483eb71552f50",
+          "sha256": "b65e2bc29d7f19dc48cf4e82f8d3ff7e1e456d5b60d84275987ef3a398e3a6ed"
+        },
+        {
+          "facilityId": "facility:chubu-east-98dcd8cc70b2aab9ecb7",
+          "sha256": "6162a7d3b514d354126226fbaf01a184fcb79fc4b64d09b0f27b1bae773b8fe7"
+        },
+        {
+          "facilityId": "facility:chubu-east-acd40115c426144e6322",
+          "sha256": "e359973f946a334ab875d754ab919793d95dc0aa247144fd4bdb5c1d31a6a835"
+        },
+        {
+          "facilityId": "facility:chubu-east-aeb7a0221c19b68a47dc",
+          "sha256": "8024981b7e7920e6e89357d584b82b04d206d00cd061f5010d423daa090da720"
+        },
+        {
+          "facilityId": "facility:chubu-east-ba9f34b2c65026c605a0",
+          "sha256": "16f5bee4a5d95e0180aec4f84c690b2f6cb6b33af1f57612ed3fe7b3514a802d"
+        },
+        {
+          "facilityId": "facility:chubu-east-c1dbcbef842ac7914747",
+          "sha256": "3cadbed009de86b9daccfdad33c385113fbce73197d4ea3bda74587d6bbf253a"
+        },
+        {
+          "facilityId": "facility:chubu-tomi-water-counter",
+          "sha256": "6b20048acc90192aa99b388a025811d4a58aa48796bdb0b9af41e26db375b94f"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/sakuragicho-followup.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-7d5b518b29440ef8d976",
+          "sha256": "ccac337371c041af5ecf15b4f2beaea43a564c800abbe84206ccc4b5803c172a"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/shikoku.json",
+      "approved": [
+        {
+          "facilityId": "facility:cs-03ecde6c69b7676882",
+          "sha256": "45ceb6629ac5a70306033ccb6b7abdc7e0927e9193f717d4f346be20519150e5"
+        },
+        {
+          "facilityId": "facility:cs-0a3fd9d830063e2ad7",
+          "sha256": "8ec50d431c718785d24d81613065d5e803fd3ce97c00e83e0df60cd82054745f"
+        },
+        {
+          "facilityId": "facility:cs-403952f78c6d18a261",
+          "sha256": "5b720b20b27b464cb309cd709ccd824efb5f549f22f244c95d650b762011a825"
+        },
+        {
+          "facilityId": "facility:cs-53a83a0263666dddd1",
+          "sha256": "98a2ee642a9a11e06824723574b7a3ae2160603df000aeb0ffc26a2c3abdf13c"
+        },
+        {
+          "facilityId": "facility:cs-5d99918e1ea4d0b991",
+          "sha256": "cc31941789f27754c54378ecab610aa0b9c0e3229198930ce93d0a90dacc1e1f"
+        },
+        {
+          "facilityId": "facility:cs-93122d3bc481983632",
+          "sha256": "189f43fe5d4233e458d255267b7ac0adf93939221566221fda2af4a9234b2c11"
+        },
+        {
+          "facilityId": "facility:cs-c39121867e5e6927e2",
+          "sha256": "cddb31e03465ad8692e1776f09ce01bf9c22319f04f2e6966e131bd8f33ed99f"
+        },
+        {
+          "facilityId": "facility:cs-c43792fd530ad920ed",
+          "sha256": "0fdbb11ab6800ee9758e6c2451be28427d509e2cddc777c14d796bdbde32e766"
+        },
+        {
+          "facilityId": "facility:cs-d14ceddc7ade5a7e6a",
+          "sha256": "ba73205ffab6baf4dd26815f3d03dd39d5a64652d64024fc5831f96e9b280efe"
+        },
+        {
+          "facilityId": "facility:cs-dd7eb1d2869acfbc00",
+          "sha256": "19c3372364711e50581d59ea4785fc6fe620bc6595bcfb4ccf3cc1fd5d2b4ec3"
+        },
+        {
+          "facilityId": "facility:cs-e908bad62bf5a18ac0",
+          "sha256": "093e0adaf7d853c8159e2c723fcdca82ed9fcc20f80ff9188b077fabad2ebb91"
+        },
+        {
+          "facilityId": "facility:cs-f23124a8f6d7059054",
+          "sha256": "ab2a99695025697607706c668503322e33b8eba4a6cb3c884566d736ceeb9bfa"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/tokai.json",
+      "approved": [
+        {
+          "facilityId": "facility:chubu-iwata-water-counter",
+          "sha256": "6ebed97aceec0256f448263bbaf724ca48101549f4dd8fd518b90e37e259be99"
+        },
+        {
+          "facilityId": "facility:chubu-minokamo-water-counter",
+          "sha256": "55e3dcf7a5b49d06192cfe4d292dac5fc013a5701f8912f78a9938414eb524e8"
+        },
+        {
+          "facilityId": "facility:chubu-takayama-nakabashi",
+          "sha256": "fd17a1b9b9a16615bd1a5200f8808b2f9622ff6bfcb9116c184969278a8f6fbb"
+        },
+        {
+          "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+          "sha256": "5e4f96038a618dfa7dc3c8b676c753a9f6e6791b1b5ed53f6997042b68f96680"
+        },
+        {
+          "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+          "sha256": "b8ecfdef162e538f01fa719e6491b0f58e6b7a82a23aaaf4c2e9d82dec0dd789"
+        },
+        {
+          "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+          "sha256": "43ff91384153b1ae7afa1d181e5e533101cecd0f6624844f0fa68202d91b7054"
+        },
+        {
+          "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+          "sha256": "31c81bb46dec02c62040dc2d45d4b440c43becb65d75778675b05bd563a8eb17"
+        },
+        {
+          "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+          "sha256": "8c7c51eec574c51f2218ada2e3bd0c69946d93065d5c86b1621b4a7dbf347b50"
+        },
+        {
+          "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+          "sha256": "83b7941a6f045f23cc2198548d5cba00f8dc9cbcd62c32d7885fba5a47cf3593"
+        },
+        {
+          "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+          "sha256": "f283dce6a88731db3880114c32bb82ef1c04e442e97563360feabcf0b6a51490"
+        },
+        {
+          "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+          "sha256": "13f6a25aacd52f16243aef15f978450cfd881db20e382ffff812ea0d06a4f99d"
+        },
+        {
+          "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+          "sha256": "a837eaf954b5a7f0be1ca74fd4eea1a882912ba4737f08f833fc089d04293429"
+        },
+        {
+          "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+          "sha256": "89844a644a09e71269d3397f7a747eceabda06825e9e5c7b8123f0fb27b7440a"
+        },
+        {
+          "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+          "sha256": "da47841ed09250b268e617f6134f0c17fe74e60030988029667f1aa33eef6d78"
+        },
+        {
+          "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+          "sha256": "68259c011b8a8ad99b72bdf0163f0b5f631aa99af076237645e4af411390279b"
+        },
+        {
+          "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+          "sha256": "40021cefb715970aaa5fbbc8e735010e3422e9997f178305d7afdc1ceb3b2d43"
+        },
+        {
+          "facilityId": "facility:chubu-yoshida-water-counter",
+          "sha256": "93238fbcf80e3ace85187a0129586acd2e766b49591d28c0b7bd88319e2a0e0c"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/kyushu-okinawa-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kyushu-015d01512ed3752919cd",
+          "sha256": "2ec564f315a2393a12f6e78294cb01668e45e3b00ebf4188cb37a5db16bd07fe"
+        },
+        {
+          "facilityId": "facility:kyushu-3be846e318561ee431e9",
+          "sha256": "929f3035ff55136feece327c28f4dcc72f3a1d5fbde54547fb806da019ab6ad3"
+        },
+        {
+          "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+          "sha256": "330a3d0d1806fdf2556109df4e3096760099d72ed22a9c04aeb78ed7091a10fc"
+        },
+        {
+          "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+          "sha256": "2cdae3cf98f6cf2360e00ac9a628f852b0fc41307de9504fa14fd2ec5302d91c"
+        },
+        {
+          "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+          "sha256": "5af0f872120790153c49744adaffdb11838b2e5ae895c125b5a28b7d62ffc833"
+        },
+        {
+          "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+          "sha256": "b88bdb106fffd24cdbd87250dd558535f6acd11953005918da1d9de328eec9b6"
+        },
+        {
+          "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+          "sha256": "f7b007801a7df0a587b5841d4fcd6ce4e96baccf053102128f7b8e8c3e6baff6"
+        },
+        {
+          "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+          "sha256": "78d10b5ff0d1a95665e3bc4e2dc607eda6b74d04f8b0b1bbd75ab6d031ffa388"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/chugoku.json",
+      "approved": [
+        {
+          "facilityId": "facility:cs-8dd78605b23dd55e25",
+          "sha256": "f19e96dd9e309f25e7dc0f42e5c6ce8828d7e16b58790e27b7cfa0086895754d"
+        },
+        {
+          "facilityId": "facility:ws-ab79fd8795933123c5",
+          "sha256": "25d501a9610945996d37109c7cea28dab524b7ead7410ba0a9c70ce44aff1794"
+        },
+        {
+          "facilityId": "facility:ws-f0d5e530cedd97b88a",
+          "sha256": "32289c506d035f877f3f20300ec0b4de0c85a8e8f5594a9749b807fc9a55d4b4"
+        },
+        {
+          "facilityId": "facility:cs-ddde663d81d83b2c0f",
+          "sha256": "9c17b35542e9ca3740757d1749d1f8c89c3dc64fb585dd534a2edc7f20b107ac"
+        },
+        {
+          "facilityId": "facility:cs-795a18c5cddf2431eb",
+          "sha256": "8c5203e485570044a542d46a8340db1b7d83ab97b956c74c62740e674b66142b"
+        },
+        {
+          "facilityId": "facility:cs-424799903d1a9c1291",
+          "sha256": "ccedf6e9e3d4f662fc767a4c276eaf889b0c53dc8ee72a9472b1a83807c63b43"
+        },
+        {
+          "facilityId": "facility:cs-0bd3389d5748cea3af",
+          "sha256": "2a76ecb31c7aa80bf5dbdd4a21ac16508b0fa75aa6989558d49d1c066ea691ad"
+        },
+        {
+          "facilityId": "facility:cs-7940cff6f6fa056d34",
+          "sha256": "38b3d51f0a76e8ed312f1ecb7010b34108f5d55df75d5b0c96e8414edaf02618"
+        },
+        {
+          "facilityId": "facility:cs-ec8a334a6855cf91c5",
+          "sha256": "d510e77ce55c74406ed5de36a69026def5b91027f36402d2ba3565ada30e720d"
+        },
+        {
+          "facilityId": "facility:cs-f82ae05278a2614df9",
+          "sha256": "c14378d4cadabe5ad3c2828396611ca238c6fc89c519c7da38bca23847fd5873"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/tohoku.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-01fecf0845daf7a823c4",
+          "sha256": "0e930324e8acfd0727e9e0cb8d9f982f012553527cf90ac7714e71be1da9ffda"
+        },
+        {
+          "facilityId": "facility:north-0346af6a6a974c32ffe9",
+          "sha256": "fa6351eacb251f72549abfc652ab6ad8ac9bb1ef68713a905fc3a3bd770f1c67"
+        },
+        {
+          "facilityId": "facility:north-0552354f13f29fd4dac2",
+          "sha256": "b1f4714b64987c13bc18ab8307b0761dcdff467b61c74745a156fca31b80dba5"
+        },
+        {
+          "facilityId": "facility:north-1ed6b6009a4a902d1c70",
+          "sha256": "e318581a3b4cef5863ddfa0257c89ba52612d8a42674eda9a566f79c405adad5"
+        },
+        {
+          "facilityId": "facility:north-1eddfd8633b7db334e79",
+          "sha256": "e1e8020ec3e9bde03c96f945fe40d789ea4bc0b05f36f3e7ba74e7a59347f86a"
+        },
+        {
+          "facilityId": "facility:north-274599ca91eb4abf4286",
+          "sha256": "fe1eab64f29c85184abdb12339db843241b04d54e6b40122c45e33d7ee84df6a"
+        },
+        {
+          "facilityId": "facility:north-2e8838dd867c746f89d7",
+          "sha256": "f036a17921683678f05454a51338c4bf1847af3a60cebe9f26802470d03ec49f"
+        },
+        {
+          "facilityId": "facility:north-32b66f536b601fd5b88d",
+          "sha256": "8c154504a4ab9c4bc1cb45f33f8a29e0d8dbc6a0b9662f465dfa501f8fc6012f"
+        },
+        {
+          "facilityId": "facility:north-6cd5f14630abb71aeb29",
+          "sha256": "9a389d8c0dd0c1ef1840919e87ff2576c2c5a807cf6a4454a73ef7237c9707a3"
+        },
+        {
+          "facilityId": "facility:north-8f5be68d467d61a4c641",
+          "sha256": "71f561caf474f52649ef534a5812f72b113d8fc71ae63889cd5544572649b636"
+        },
+        {
+          "facilityId": "facility:north-9a7e7549e41a5a778866",
+          "sha256": "568fc5b877486d7c260a9d6ec0b01e087e0eb34125641579da8ccef45028dac8"
+        },
+        {
+          "facilityId": "facility:north-9d11453eb99d4846f2ef",
+          "sha256": "1f7cabe370041de974200b0f12fe35c72843b33f12959e6edb68ec0c2f13b584"
+        },
+        {
+          "facilityId": "facility:north-9e5c81d3fcfe3dc21ea2",
+          "sha256": "5627d09710fc3c6f97a043a5fae95e2ab4d1c437c520113b8ae7db301e5aee81"
+        },
+        {
+          "facilityId": "facility:north-a86e5bc10ccb3b8ad6ce",
+          "sha256": "a7ae4b0ad73692dbaaee37266f90919089c63ec7cfa5da78655a487da8a6732b"
+        },
+        {
+          "facilityId": "facility:north-c88406f5e69a26cba40e",
+          "sha256": "6f197c7a7706133c34c1ed68c11980aca13dc13691e84866c7c49e432bfc2d75"
+        },
+        {
+          "facilityId": "facility:north-d0a8e558a26c68e5ba31",
+          "sha256": "c669d2b10bbef400d8bfcc3f9955e84ad036b1132f1722f066dcd822e9cd6243"
+        },
+        {
+          "facilityId": "facility:north-e87fa72a02c9e04601f4",
+          "sha256": "87df3affadfa58bde6eb477344d5c88076a7ee39e53490139d61689ca9b2c3c7"
+        },
+        {
+          "facilityId": "facility:north-ef70cf36b6909e9459a6",
+          "sha256": "25e37e01bcde3011766233783bd2532ba4b76c54cc50da49d64811f0e4b7d195"
+        },
+        {
+          "facilityId": "facility:north-f46ab0fab535cf852a33",
+          "sha256": "2bbad10dea11c80939d4de4225105bc855236e6fce5389b89fb7e451c38fa6b2"
+        },
+        {
+          "facilityId": "facility:north-f8aec7769492a55dce23",
+          "sha256": "eab87aca1b5bacfc4702614f5b1ac097eab9f9ac006bda72b17bd674c71abd4d"
+        },
+        {
+          "facilityId": "facility:north-proposal-aizubange-info",
+          "sha256": "a2eef880405b92310278618f5a88a4de630b8b44d1911313124c98cbb8b4cb6a"
+        },
+        {
+          "facilityId": "facility:north-proposal-motomiya-guard",
+          "sha256": "83a49970609446884d5bed1f0f55aae6078254d118fe7ec466046bbe1b7f61f8"
+        },
+        {
+          "facilityId": "facility:north-proposal-nishigo-customer",
+          "sha256": "244a7bd707bac3ce37131f533565c4501ec446b0bcb8bb180d6a7fbce9f6ceae"
+        },
+        {
+          "facilityId": "facility:north-proposal-nishigo-guard",
+          "sha256": "cfdf83e1ac960b621f823144033480f3d08224bf416728178b9e1afc53208447"
+        },
+        {
+          "facilityId": "facility:north-proposal-rifu-information",
+          "sha256": "8840ccb2bf55e2caed4741cf2c2dc455ceffcf5aceaa6cff3a3cc34e15dea6e7"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/hadano-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:kanto-south-281213c5dc294c44f2e5",
+          "sha256": "a981f35558d5f976d19dbb5411d87c4e90170110c77f236c34df9ea3c422e090"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/kinki-west.json",
+      "approved": [
+        {
+          "facilityId": "facility:kinki-09d12f8315cc6ca090a4",
+          "sha256": "8520c19132e9536a34d8d9370b6518f9e1eb9bdb2df0e003f2b974eed7630878"
+        },
+        {
+          "facilityId": "facility:kinki-11d5574411a4dcfe6dec",
+          "sha256": "803782d2383857d492260ba20d64df9a30def65e696910f72849f09074fddef2"
+        },
+        {
+          "facilityId": "facility:kinki-1421f0ca70946971eeef",
+          "sha256": "a57008ca90f1fa3850882ddafb55ed75f9f78b21533e4210ff9608cf8c8f820a"
+        },
+        {
+          "facilityId": "facility:kinki-212883840c3bc7b55808",
+          "sha256": "2709660097fd4e9ecc53cc7407d7b7d1e94f7e237c56e4bf7d437651ac4c4ee9"
+        },
+        {
+          "facilityId": "facility:kinki-2e1afa71c908ef731e24",
+          "sha256": "75ebfa2ed861f9a3f2621ae50d0468edadff33dd41a85274135af4396471d4a4"
+        },
+        {
+          "facilityId": "facility:kinki-319bd8fbabbbf75f654d",
+          "sha256": "25b23c5f0abec9d78ef9e49b2fd50a9dd9008c4b18b95bd8c77c06a78ebf4522"
+        },
+        {
+          "facilityId": "facility:kinki-4cb8623bc35115d6fb38",
+          "sha256": "948d80087067f4f38d87e7b27bc8b1f942d24888af37bb5bc42eff4ca2539728"
+        },
+        {
+          "facilityId": "facility:kinki-4e667eb047afa3b26231",
+          "sha256": "969c0c9bdc50a28068ca6529bf085f29538c20ca24d2cc8d96b6c701f18af044"
+        },
+        {
+          "facilityId": "facility:kinki-5155c601bcf944c4cbf5",
+          "sha256": "26e857c7724a0d53bf7d695b9c752cef584210168987d18b957cb4cec77a3741"
+        },
+        {
+          "facilityId": "facility:kinki-5198d8060e4644e9ac95",
+          "sha256": "f88553839ddb066c5f4a1ffaad2d5b0cf3d288713deda2e795348be8ac77d770"
+        },
+        {
+          "facilityId": "facility:kinki-52945aa1816499e04704",
+          "sha256": "6a8df6d45fb1b7f7d41ab35547a956a0719229a036817ea95f7f2fc26eabe69a"
+        },
+        {
+          "facilityId": "facility:kinki-65aca194bc92a930cdd3",
+          "sha256": "471e259d4d1dd4f4f7ae6c7dd3e3ef687a0d37f56fb56b2836caadc8993ce111"
+        },
+        {
+          "facilityId": "facility:kinki-6ad97690b4f9910a096e",
+          "sha256": "80ff158767a8d8c19a644597b88604ca6ea22810254eb1af2c802e7c8a61d0e8"
+        },
+        {
+          "facilityId": "facility:kinki-7a95a5f3a5fbd7c93b60",
+          "sha256": "9ba60bb1a05023d184e03d2f8d8a0799c17b500b2c7adaf5abb0ec7d5af5959e"
+        },
+        {
+          "facilityId": "facility:kinki-8c975ae9df85aa9fea39",
+          "sha256": "dfb8d24a453742fc904f0fab97f4e816aa15553960a2272fd087cd20b249d2e9"
+        },
+        {
+          "facilityId": "facility:kinki-9d20fa57040c5342502f",
+          "sha256": "dcf1b09041d80c5f01e28fc9fad65c0d3db6a1286440ac6b9e0d5b9b802d97e2"
+        },
+        {
+          "facilityId": "facility:kinki-9f543cc614431566426a",
+          "sha256": "cdb8e49848ac57ee59be3ef5e19f8d97a8f2289729e4f3fd0353fd9b05d64f8d"
+        },
+        {
+          "facilityId": "facility:kinki-aef2b45d74e197045af5",
+          "sha256": "86837690a8dbec609dbf324cd8c6a43f6cbe9674db42e398e92b66919ddd5fc2"
+        },
+        {
+          "facilityId": "facility:kinki-b4ecd274f209e965389d",
+          "sha256": "a93991c09595e84c18462726b88caebef0957e1916f0cd64d07d10b691483b5d"
+        },
+        {
+          "facilityId": "facility:kinki-bd54ffa4ff05c5de2e21",
+          "sha256": "b552eec9d805e842b2befc5a6b24e670dc0d8c36a27d250020b390ab0f949894"
+        },
+        {
+          "facilityId": "facility:kinki-c5cb26a1af3a611b70b7",
+          "sha256": "4f54697c42e63d523b5341b11681960dbbc046d7f4af77342305db84f33e153e"
+        },
+        {
+          "facilityId": "facility:kinki-d8ae994ed35d69a0dfb1",
+          "sha256": "9a7c371520d08c49656314120ac358ffc9718a778bd4fcc22c5e87713279798f"
+        },
+        {
+          "facilityId": "facility:kinki-f44bd7e08bcfe2fc763c",
+          "sha256": "69a0cd69c8aabb7c9d1b34ca9bf248e88ecb0594d224d52bde5e8f630a33db06"
+        },
+        {
+          "facilityId": "facility:kinki-higashiosaka-lobby",
+          "sha256": "90898b6c48888a58ae3c1b4303122db48958daddcc17bb22c0a6f0c022cf3f89"
+        },
+        {
+          "facilityId": "facility:kinki-imai-machizukuri",
+          "sha256": "0ca1754297bc0ee9c07bce6fa513aaf546710fd512fd956fda40d85638f0bb38"
+        },
+        {
+          "facilityId": "facility:kinki-takasago-cityhall",
+          "sha256": "2e28023f89186465102f92f2230c9e452edebfab790de2d08ddc4a26a3244043"
+        }
+      ]
+    },
+    {
+      "path": "data/national/issue7/hokkaido-reviewed.json",
+      "approved": [
+        {
+          "facilityId": "facility:north-0c29dde3d5fc2a368725",
+          "sha256": "acdae5870df74342da9fcc439d13e60517e96e8a62b8505c54337a3ef2779f4e"
+        },
+        {
+          "facilityId": "facility:north-20e8f811524b0ce7d3f5",
+          "sha256": "3dbe63f2b3fbe1ff2e1b1dfd8e7475126bae52808b549d19d6ac89b89ec235cb"
+        },
+        {
+          "facilityId": "facility:north-3170be48b7ec799e21bb",
+          "sha256": "c958d23bebdbc7aba96fbff909e654385c218c162769020cb5e238829814d44c"
+        },
+        {
+          "facilityId": "facility:north-337a40d0c1a094f1643d",
+          "sha256": "57f1330d10df2039b59e11d242cf635f88277d772d45dbec07fe39e0a6389944"
+        },
+        {
+          "facilityId": "facility:north-3992dcf75c3cb9b680a4",
+          "sha256": "7867a57f49c9348593410b47c9a18fdf6baa7254262914386dc31327dfbfb1df"
+        },
+        {
+          "facilityId": "facility:north-4c87540ad5304f8a47b5",
+          "sha256": "7305f5474966a8d1bae19dc3246b79480b1cba2759f9a3bfb1c098be370e076d"
+        },
+        {
+          "facilityId": "facility:north-5146ae8cc4fb697aa46b",
+          "sha256": "2879f82a6dddc5e8c34038be48750dbe82f55f53f4854ea81e887affb33aaff7"
+        },
+        {
+          "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+          "sha256": "7ceff86578a8a11171c998383c64540f703390241d710162206c7ded363e3c79"
+        },
+        {
+          "facilityId": "facility:north-6104f556e2024abcb15f",
+          "sha256": "6944700f31e3a7f321254f17a85172a2ffacdf7960e89a6a75030fbba8e5d569"
+        },
+        {
+          "facilityId": "facility:north-63f1d610c5add80db10e",
+          "sha256": "79b00b342e75c13d9e6bc4c7a6482824c1aeb007d414dc72213cf4dd79d62715"
+        },
+        {
+          "facilityId": "facility:north-76934d7112fde654b326",
+          "sha256": "f0bc2f734ab443478ed92d4df8d75fea6b349c98f4e1762fedfc6242de659fcc"
+        },
+        {
+          "facilityId": "facility:north-7e52de8e6f50eeba0d74",
+          "sha256": "7a787ce391326d6bab24a205fb63fa6de7e0611b4d55be82b9f04a9aabfcaa40"
+        },
+        {
+          "facilityId": "facility:north-7fde83cc219f8104cc65",
+          "sha256": "bcdd1da7784a4f0a1f2f960cb174ff4db93b5d53a6d69188afd4a68162d49ecc"
+        },
+        {
+          "facilityId": "facility:north-80c28f27f6f95e930a9b",
+          "sha256": "3ae083906514cd2ac87d58e76ece53e6a2ced40c5bc8558f2919674063d07166"
+        },
+        {
+          "facilityId": "facility:north-94e8fd249c24448254ec",
+          "sha256": "247bec24d763e5b4676d589bdf72ea9ca293f86eefae2e0d717194c4d2d993a9"
+        },
+        {
+          "facilityId": "facility:north-9d5628a68e45a5cf6deb",
+          "sha256": "97c4a0b77dc3d5f086baa8fc4dfd44787f18572cfa7afd6ddff5492521687013"
+        },
+        {
+          "facilityId": "facility:north-9f828ae51e79cb1346e4",
+          "sha256": "5843bddbb660c06ae7b806c7f3461b81dfcf68c9226414dd65051494c932995d"
+        },
+        {
+          "facilityId": "facility:north-a44b8aa1c55ed7aae9ec",
+          "sha256": "73631b441f5bed3d83948ed03d3237765fdf36b3a5d4b2353dbba05a3bc532e8"
+        },
+        {
+          "facilityId": "facility:north-c2f6c2b5109a65d91a91",
+          "sha256": "883a85709525233d7f2fc91a5dec9403ae2248788c532043327e942babf81dcb"
+        },
+        {
+          "facilityId": "facility:north-c755555d3ee86913edcf",
+          "sha256": "de6474578c2c322dceb04e8dae1177a42e4d8f181974ebd759c0ce73b22be0fe"
+        },
+        {
+          "facilityId": "facility:north-ca408ccc1bcbc950bdd6",
+          "sha256": "590aeec8b6910a3e581c1b7665bcad569f56ac41e3b69ae86301a78d7d0f6751"
+        },
+        {
+          "facilityId": "facility:north-cdee3e1ed7285d1301f2",
+          "sha256": "8126e218e6ee6ea383310c4351e7868dd8a98379eb34eee4134833b2625431c2"
+        },
+        {
+          "facilityId": "facility:north-df2e2fa9738be3f1981a",
+          "sha256": "0034c70e3923091a650fc3a5ec8ea4218463d9446a26005369bf9a701b1b40cd"
+        },
+        {
+          "facilityId": "facility:north-f19c149e540fddcdc014",
+          "sha256": "e43bb0da3ed54c16951b245cb3a4909fc89e37e90061cc18b0146b24f4a27b67"
+        },
+        {
+          "facilityId": "facility:north-f51a0f3cd3ce0a372cb6",
+          "sha256": "3c226f0f15c0cd53aa18a989b2d2624728eee13ce865bf99ce6b774441e37a97"
+        },
+        {
+          "facilityId": "facility:north-fc46386371945051a55a",
+          "sha256": "fcc81421aee65615fc30cf0fa77f130c4478ac006a2ab7d1f9d4618a2c2b20f7"
+        },
+        {
+          "facilityId": "facility:north-proposal-minamifurano-construction",
+          "sha256": "3b704447eb8418aef36d43fe15b2ad5068a2399afd7f242d2b36c3c42debd8ee"
+        },
+        {
+          "facilityId": "facility:north-proposal-minamifurano-planning",
+          "sha256": "75da9a97ca7729b42f4579213635072a2f30cb158d790c30230ce02352f48e11"
+        },
+        {
+          "facilityId": "facility:north-proposal-noboribetsu-duty",
+          "sha256": "c74817235c320428e25b3d852ed5fc11eb23fc9041ae6696c6bf115ecf8c9aa4"
+        },
+        {
+          "facilityId": "facility:north-proposal-sunagawa-duty",
+          "sha256": "8b854e4d31cb70e477af4e6eb96e2d4ba04ff59ff8725745e611199d5a248bc0"
         }
       ]
     }

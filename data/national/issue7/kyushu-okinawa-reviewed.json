@@ -1,0 +1,3186 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kyushu-015d01512ed3752919cd",
+      "coordinate": {
+        "lat": 32.78524352,
+        "lng": 130.7366229
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_43_GML.zip!P05-22_43.geojson#/features/40; 総合体育館 / 熊本市中央区出水2-7-1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。県施設案内・現運営者がナースパワーアリーナ＝熊本市総合体育館・青年会館、出水2-7-1と明記。P05総合体育館を採用。青年会館feature38は約4.7m差の併設機能点で、別敷地の施設ではない。受付室を測位した値ではない。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-3be846e318561ee431e9",
+      "coordinate": {
+        "lat": 33.5180701844527,
+        "lng": 130.436146431221
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590; 町民情報ステーション / 那珂川市中原2-120",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。P05町民情報ステーションは中原2-120の情報拠点。現運営者は同番地の博多南駅前ビル1階ナカイチインフォメーションを明記。建物レベルで対応する駅前ビル点として採用。町民窓口と現在の窓口の位置一致までは主張しない。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-3c3902d19243e599e3c4",
+      "coordinate": {
+        "lat": 33.5180701844527,
+        "lng": 130.436146431221
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1590; 町民情報ステーション / 那珂川市中原2-120",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。同じ博多南駅前ビル・中原2-120の別facilityId。P05情報ステーションの建物点を両IDに使用するが、ID・関係の統合は行わない。現運営者の1Fインフォメーションと同定。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-4c93c76776a06838fe00",
+      "coordinate": {
+        "lat": 33.037,
+        "lng": 129.9172
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_42_GML.zip!P05-22_42.geojson#/features/1500; 東彼杵町役場 / 東彼杵町蔵本郷1850-6",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。役場庁舎案内の3階17番窓口が水道課。現配布先の蔵本郷1850-6本庁舎と一致。P05西館feature1508を混同せず本庁feature1500を採用。新庁舎計画だけを理由に現庁舎を否定しない。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-51dfc976486b8b93581d",
+      "coordinate": {
+        "lat": 33.519857,
+        "lng": 130.532575
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_40_GML.zip!P05-22_40.geojson#/features/1710; 地域活性化複合施設太宰府館 / 太宰府市宰府3-2-3",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。宰府3-2-3の太宰府館そのものの建物点。2026-10-01～12-22は配布休止・別IDの駅内観光案内所へ臨時移転と再確認。既存suspended/reviewUntilを維持するため、旧館の建物位置を整備しても現配布先だとは主張しない。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "coordinate": {
+        "lat": 31.7407538,
+        "lng": 130.763524
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/630; 国分シビックセンター / 霧島市国分中央3-45-1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。公式庁舎案内は1階総合窓口を記載。国分中央3-45-1の国分シビックセンターとP05固有施設を同定。公民館feature632や2017年の行政庁舎別館を総合窓口に代用しない。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:ws-a33e80c6dd86bf6e7f",
+      "coordinate": {
+        "lat": 31.41657,
+        "lng": 130.323494
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_46_GML.zip!P05-22_46.geojson#/features/756; 南さつま市役所 / 南さつま市加世田川畑2648",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AI原本照合。現庁舎配置表は南さつま市本庁2階に都市整備課を明記。加世田川畑2648の本庁舎と一致。あんぼう21・旧スタジオ21など別施設から区別できる。 P05 JGD2011/EPSG:6668 [lng,lat]を転記、変換なし。CC BY 4.0、国土交通省の承認を意味しない。建物代表点。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-a4ba2e23eab057c818dc",
+      "coordinate": {
+        "lat": 33.25244444444444,
+        "lng": 130.30041666666668
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.sagabai.com/balloon-museum/main/21.html",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/daf037a730652526782cf5f5.html",
+        "snapshotSHA256": "daf037a730652526782cf5f576f74ab607d44e32bc5dd17d7937adc81bb5dd14",
+        "sourceLocator": "アクセス地図 iframe pb !2z=MzPCsDE1JzA4LjgiTiAxMzDCsDE4JzAxLjUiRQ",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式アクセスiframeの!2z目的地ラベル（33°15'08.8\"N 130°18'01.5\"E）を復号し十進度化。!2d/!3d表示中心は不使用。公式施設案内main/9.htmlは1階佐賀工房バルーンミュージアム店を明記。"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-e3d5be3b0b0c3ac9d446",
+      "coordinate": {
+        "lat": 31.2320642,
+        "lng": 130.6442088
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.ibusuki.or.jp/tourism/view/cocco/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/52deb1a5e97008c86ef93511.html",
+        "snapshotSHA256": "52deb1a5e97008c86ef9351102c0121b0fe21680f296bcacf5c1de161fdb67a9",
+        "sourceLocator": "当該博物館ページ iframe src maps?f=q ... q=31.2320642,130.6442088(鹿児島県指宿市十二町2290)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式観光案内の当該博物館詳細、十二町2290と施設専用地図を照合。iframe qに明示された数値目的地点31.2320642,130.6442088を採用。ll表示中心や住所のジオコードを抽出した値ではなく、公開者が施設アクセスに指定した点。"
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "reasonCategory": "座標競合",
+      "reason": "新P05照合で物産ホールfeature419と諫早商工会館ビルfeature518を発見。現運営者hallページは物産ホール＝商工会館1階、高城町5-10と同定するが、二点は約38m離れる。どちらが建物内か外形照合未完了のため採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+        "required": "諫早物産ホール諫早観光物産コンベンション協会（長崎県諫早市高城町5-10）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補4行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "finalUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "fetchedAt": "2026-11-05T06:27:58.237016+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/48546c856302f2db65623d97.html",
+          "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.isahaya-kankou.com/",
+          "finalUrl": "https://www.isahaya-kankou.com/",
+          "fetchedAt": "2026-11-05T06:27:58.716906+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/efc3ef4e28163845a1fda7ec.html",
+          "snapshotSHA256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.isahaya-kankou.com/hall",
+          "finalUrl": "https://www.isahaya-kankou.com/hall",
+          "fetchedAt": "2026-11-05T06:30:52.227569+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/95d3eae1d6205a1d6330e631.html",
+          "snapshotSHA256": "95d3eae1d6205a1d6330e6316cf7958f9066b5c9871617eda03986219110426d",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-04dd6fa162496df84411",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "東彼杵町観光案内所（長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)）：観光協会の活動・施設案内で道の駅彼杵の荘に併設する2023年開設の案内所と確認。道の駅本体と案内所を区別する明示数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+        "required": "東彼杵町観光案内所（長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+          "finalUrl": "https://www.town.higashisonogi.lg.jp/kurashi_tetsuzuki/sumai_suido/gesuidou/3492.html",
+          "fetchedAt": "2026-11-05T06:27:58.283321+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a63b2aa655e4d3cbc96f652a.html",
+          "snapshotSHA256": "a63b2aa655e4d3cbc96f652aaa49ea4e0391423c43933912166170cbb106050c",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://place.sonogi.net/higashisonogi_kanko/about/",
+          "finalUrl": "https://place.sonogi.net/higashisonogi_kanko/about/",
+          "fetchedAt": "2026-11-05T06:27:59.195986+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/7e63332af55696d162e538f7.html",
+          "snapshotSHA256": "7e63332af55696d162e538f710f7dc1826b45cc928a70a85c3a775c67dfec196",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-056030efbe436e3617a8",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.town.umi.lg.jp/soshiki/10/14168.html",
+        "required": "宇美町役場 本館 警備室（福岡県糟屋郡宇美町宇美5丁目1番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補9行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+          "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+          "fetchedAt": "2026-11-05T06:27:58.551433+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/cc5fb1ec44029eefe6a2aebd.html",
+          "snapshotSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.umi.lg.jp/site/profile/1482.html",
+          "finalUrl": "https://www.town.umi.lg.jp/site/profile/1482.html",
+          "fetchedAt": "2026-11-05T06:27:58.552456+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/15156003084a7a0028dfe0f6.html",
+          "snapshotSHA256": "15156003084a7a0028dfe0f663632dd454892c2e88f3437e74eed3be09b9c315",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-27873221b74e521bc34d",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "花畑広場サービス棟（熊本県熊本市中央区花畑町7-7）：広場公式アクセスを確認。花畑7-7の広場全体とサービス棟を区別する建物目的地が未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "花畑広場サービス棟（熊本県熊本市中央区花畑町7-7）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://hanabatahiroba.jp/access/",
+          "finalUrl": "https://hanabatahiroba.jp/access/",
+          "fetchedAt": "2026-11-05T06:27:59.898905+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/43bf5b53ec73c6d6135c5d0a.html",
+          "snapshotSHA256": "43bf5b53ec73c6d6135c5d0a1943ec64c8459529222c38ac774681ff3c06eda7",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-2c563d0c054fa158905a",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "観光ステーションむなたびラボ(道の駅むなかた南館)（福岡県宗像市江口1177-1）：市の開所記事で道の駅入口右の南館1階と確認。道の駅全体・物産館の点では南館を区別できず、南館の明示目的地点が必要。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.city.munakata.lg.jp/w032/010/030/050/0220/20180806110243.html",
+        "required": "観光ステーションむなたびラボ(道の駅むなかた南館)（福岡県宗像市江口1177-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.munakata.lg.jp/w032/010/030/050/0220/20180806110243.html",
+          "finalUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+          "fetchedAt": "2026-11-05T06:27:59.342113+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/db8a0bb95053910aed3e502e.html",
+          "snapshotSHA256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.munakata.lg.jp/kiji0037246/index.html",
+          "finalUrl": "https://www.city.munakata.lg.jp/kiji0037246/index.html",
+          "fetchedAt": "2026-11-05T06:27:59.004666+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/bcb4c2e0364baf2667634f2b.html",
+          "snapshotSHA256": "bcb4c2e0364baf2667634f2b44afbad6e29bf8cc35bb902cf0dc68fe57d06fbe",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-36b4ad8b697e9a275512",
+      "reasonCategory": "原典不足",
+      "reason": "福岡県古賀市役所上下水道庁舎（福岡県古賀市駅東1-1-1）：古賀市公共施設CSVの古賀市役所庁舎と同じ駅東1-1-1だが、配布先は上下水道庁舎。市役所代表点を別庁舎に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+        "required": "福岡県古賀市役所上下水道庁舎（福岡県古賀市駅東1-1-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補8行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+          "finalUrl": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+          "fetchedAt": "2026-11-05T06:27:59.048265+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e4a75d282d65c7021728979e.html",
+          "snapshotSHA256": "e4a75d282d65c7021728979e5785dd3ed72c7e5a8751c134f070cd37e5ba1e07",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.koga.fukuoka.jp/access/",
+          "finalUrl": "https://www.city.koga.fukuoka.jp/access/",
+          "fetchedAt": "2026-11-05T06:27:59.213434+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/36909aef79ee6071273d4231.html",
+          "snapshotSHA256": "36909aef79ee6071273d423115cb703f699d74496e87204479420f3c743bd403",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.koga.fukuoka.jp/floor/",
+          "finalUrl": "https://www.city.koga.fukuoka.jp/floor/",
+          "fetchedAt": "2026-11-05T06:29:46.090193+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/dc29cf104a207acd78740705.html",
+          "snapshotSHA256": "dc29cf104a207acd787407057678dc8e760e069b4aa81bf53e2335b55c346030",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-37487cd1fb5f5fdb7207",
+      "reasonCategory": "原典不足",
+      "reason": "那珂川市役所 下水道課（福岡県那珂川市大字安徳702番地1）：下水道課の公式住所は安徳702-1。市役所本庁の西隈1-1-1とは異なるため、本庁点を採用しない。部署案内に数値の建物目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+        "required": "那珂川市役所 下水道課（福岡県那珂川市大字安徳702番地1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+          "finalUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/manhole-card.html",
+          "fetchedAt": "2026-11-05T06:27:59.308608+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/35db090affaa9ca55b765efa.html",
+          "snapshotSHA256": "35db090affaa9ca55b765efac739b7db4e956446991e10703e0d2377ed37a92b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/",
+          "finalUrl": "https://www.city.nakagawa.lg.jp/soshiki/17/",
+          "fetchedAt": "2026-11-05T06:27:59.306594+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a53c628c3cf9fc8914e0b0ec.html",
+          "snapshotSHA256": "a53c628c3cf9fc8914e0b0ec38310021cc24f9f3d30dab9dbc6257d9c80c3881",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-3cb5f29b6d7fae86e248",
+      "reasonCategory": "原典不足",
+      "reason": "荒尾市企業局（熊本県荒尾市増永1903番地）：市の企業局関連施設情報と公共施設CSVを追加調査。増永1903の企業局庁舎に対応する採用可能な数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.arao.lg.jp/oshirase/machi-wadai/page14159.html",
+        "required": "荒尾市企業局（熊本県荒尾市増永1903番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.arao.lg.jp/oshirase/machi-wadai/page14159.html",
+          "finalUrl": "https://www.city.arao.lg.jp/oshirase/machi-wadai/page14159.html",
+          "fetchedAt": "2026-11-05T06:27:59.791921+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0630f45cd45f60cef274956b.html",
+          "snapshotSHA256": "0630f45cd45f60cef274956be65cd9e0416dc692dd3ba7fbd08d0b817e83a74c",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.arao.lg.jp/kurashi/suido/jigyo/page11026.html",
+          "finalUrl": "https://www.city.arao.lg.jp/kurashi/suido/jigyo/page11026.html",
+          "fetchedAt": "2026-11-05T06:27:59.789593+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/20a405df5550682510180d2a.html",
+          "snapshotSHA256": "20a405df5550682510180d2a3a91c4daa5738a6c60bebe93a62fb4e2c6915e8b",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-3f7df6c1e3db027d5517",
+      "reasonCategory": "原典不足",
+      "reason": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)（大分県豊後高田市新町989-1）：県観光施設案内を確認。33.557885,131.43851599999994は地図centerと周辺検索の引数で、昭和ロマン蔵内案内所の明示マーカーとしては確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.bungotakada.oita.jp/site/showanomachi/42349.html",
+        "required": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)（大分県豊後高田市新町989-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.bungotakada.oita.jp/site/showanomachi/42349.html",
+          "finalUrl": "https://www.city.bungotakada.oita.jp/site/showanomachi/42349.html",
+          "fetchedAt": "2026-11-05T06:28:00.023112+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8b96d3b3a5f50726098ff47a.html",
+          "snapshotSHA256": "8b96d3b3a5f50726098ff47a7dba033dcf022c1df16e8c2128b2a7d2b5776825",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.visit-oita.jp/spots/detail/4800",
+          "finalUrl": "https://www.visit-oita.jp/spots/detail/4800",
+          "fetchedAt": "2026-11-05T06:28:01.960121+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ea264cfc3327f6589b930f07.html",
+          "snapshotSHA256": "ea264cfc3327f6589b930f0710ff764a2d2df9ea5e8e46a3153261048f549966",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+      "reasonCategory": "原典不足",
+      "reason": "北谷町立博物館（沖縄県中頭郡北谷町伊平1-11-1）：博物館公式アクセスのGoogleリンクは26.32444,127.7586443を含むが、対象ラベルが伊平1丁目という住所区域で、伊平1-11-1の博物館建物ではない。住所代表点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+        "required": "北谷町立博物館（沖縄県中頭郡北谷町伊平1-11-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+          "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/gesui50thanniv/manholecard2021.html",
+          "fetchedAt": "2026-11-05T06:28:00.722967+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/814dc8cfcbb3f8152e05784b.html",
+          "snapshotSHA256": "814dc8cfcbb3f8152e05784bb493e1c3b9bb53d1b925012e41374f30f168fd02",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://museum.chatan.jp/traffic_informatio/",
+          "finalUrl": "https://museum.chatan.jp/traffic_information/",
+          "fetchedAt": "2026-11-05T06:28:02.180606+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ca14e657985c617b1b2546e5.html",
+          "snapshotSHA256": "ca14e657985c617b1b2546e58cbe11dcead835e72a0f62b12849faeb0970414d",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-431427a75efc404fc5c1",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.town.umi.lg.jp/soshiki/10/14168.html",
+        "required": "宇美町役場 南館 上下水道課（福岡県糟屋郡宇美町宇美5丁目1番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補9行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+          "finalUrl": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+          "fetchedAt": "2026-11-05T06:27:58.551433+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/cc5fb1ec44029eefe6a2aebd.html",
+          "snapshotSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.umi.lg.jp/site/profile/1482.html",
+          "finalUrl": "https://www.town.umi.lg.jp/site/profile/1482.html",
+          "fetchedAt": "2026-11-05T06:27:58.552456+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/15156003084a7a0028dfe0f6.html",
+          "snapshotSHA256": "15156003084a7a0028dfe0f663632dd454892c2e88f3437e74eed3be09b9c315",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-45251ad37ff8b4222481",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "CSVは日明浄化センター全体の点。公式配布案内は見学者への配布を示すが、受付建物・管理棟とこの点の対応を示さない。現在の受付建物代表点としては保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+        "required": "日明浄化センター（北九州市小倉北区西港町96-3）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "fetchedAt": "2026-11-05T06:28:00.996775+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3a18e7f126766d00f9a59193.html",
+          "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-46c335509894f026bbaa",
+      "reasonCategory": "原典不足",
+      "reason": "枕崎駅前観光案内所（鹿児島県枕崎市東本町200）：公式案内の短縮リンクの解決先は東本町の県道266号であり、東本町200の駅前観光案内所という建物対象を確認できない。道路上の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.makurazaki.lg.jp/soshiki/suidou/13884.html",
+        "required": "枕崎駅前観光案内所（鹿児島県枕崎市東本町200）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.makurazaki.lg.jp/soshiki/suidou/13884.html",
+          "finalUrl": "https://www.city.makurazaki.lg.jp/soshiki/suidou/13884.html",
+          "fetchedAt": "2026-11-05T06:28:00.988359+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ffb15dfaeeb25d5e1cb07938.html",
+          "snapshotSHA256": "ffb15dfaeeb25d5e1cb079383758227fe478408ef36f1904ecb5e98f69c04753",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "reasonCategory": "原典不足",
+      "reason": "もとぶかりゆし市場（沖和県国頭郡本部町字大浜881-1）：市場運営者のアクセスと県GIS施設データを照合。大浜881-1の市場建物の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.town.motobu.okinawa.jp/doc/2025071500028/",
+        "required": "もとぶかりゆし市場（沖和県国頭郡本部町字大浜881-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.motobu.okinawa.jp/doc/2025071500028/",
+          "finalUrl": "https://www.town.motobu.okinawa.jp/doc/2025071500028/",
+          "fetchedAt": "2026-11-05T06:28:01.351856+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/327b5f210efe4f5822d8a09d.html",
+          "snapshotSHA256": "327b5f210efe4f5822d8a09df742a681ff3b400b2f424a6610dcce64fd697338",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://motobufs.jp/access/",
+          "finalUrl": "https://motobufs.jp/access/",
+          "fetchedAt": "2026-11-05T06:28:02.360859+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+          "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-48facba373e0ace71a79",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "宮古島市 下水道課（沖縄県宮古島市平良字西仲宗根565-6）：市のクリーンセンター施設詳細を確認。埋込は住所検索とviewport中心で、西仲宗根565-6の管理棟に対応する明示マーカーではない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/oshirase/2026-0527-1411-318.html",
+        "required": "宮古島市 下水道課（沖縄県宮古島市平良字西仲宗根565-6）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/oshirase/2026-0527-1411-318.html",
+          "finalUrl": "https://www.city.miyakojima.lg.jp/soshiki/shityo/kankyoueisei/gesuidou/oshirase/2026-0527-1411-318.html",
+          "fetchedAt": "2026-11-05T06:28:01.849707+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/b1c27b8c6e61486fb8feb3f0.html",
+          "snapshotSHA256": "b1c27b8c6e61486fb8feb3f04a84fa91339dd86060acd83726955fe1677e5a86",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.miyakojima.lg.jp/kurashi/shisetsu/koukyo/shisetu36.html",
+          "finalUrl": "https://www.city.miyakojima.lg.jp/kurashi/shisetsu/koukyo/shisetu36.html",
+          "fetchedAt": "2026-11-05T06:28:01.862934+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a6518e2093fd780b1ae87097.html",
+          "snapshotSHA256": "a6518e2093fd780b1ae87097fa1feeb48d098e13c06bde908802c718c7b9e718",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-4aa5f9a0d74b3fb87974",
+      "reasonCategory": "原典不足",
+      "reason": "福岡市下水道博物館（福岡県福岡市博多区祇園町8-3(ぽんプラザ2階)）：ぽんプラザの市公式施設案内を確認したが、取得原本から建物の明示数値目的地点を確定できない。福岡市公共施設CSVでも一致行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/manhole_card.html",
+        "required": "福岡市下水道博物館（福岡県福岡市博多区祇園町8-3(ぽんプラザ2階)）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/manhole_card.html",
+          "finalUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/manhole_card.html",
+          "fetchedAt": "2026-11-05T06:28:02.541702+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3df2ec5ce53631f82aad0e1e.html",
+          "snapshotSHA256": "3df2ec5ce53631f82aad0e1e891dc07167018b40e374ede466af862c281aaaea",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon_3.html",
+          "finalUrl": "https://www.city.fukuoka.lg.jp/doro-gesuido/somu/hp/pon_3.html",
+          "fetchedAt": "2026-11-05T06:28:02.546693+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/cb40b5e54e19a5e4a2b3a7db.html",
+          "snapshotSHA256": "cb40b5e54e19a5e4a2b3a7dbdb1a43b3ed451ecaf73141f8a1677e192ad1ef91",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-4aca915a11bca836ac11",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所（沖縄県国頭郡宜野座村字漢那1633番地）：道の駅公式アクセスを確認。物産館等の複数建物があるため、漢那1633の観光拠点施設1階と区別できない敷地・道路の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://mitinoeki-ginoza.com/news/36930/",
+        "required": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所（沖縄県国頭郡宜野座村字漢那1633番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://mitinoeki-ginoza.com/news/36930/",
+          "finalUrl": "https://mitinoeki-ginoza.com/news/36930/",
+          "fetchedAt": "2026-11-05T06:28:03.833659+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5d5b95319032bbcd44c9cd43.html",
+          "snapshotSHA256": "5d5b95319032bbcd44c9cd43d8193c940e1424ac882b1230ad4195eaad21786f",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://mitinoeki-ginoza.com/access/",
+          "finalUrl": "https://mitinoeki-ginoza.com/access/",
+          "fetchedAt": "2026-11-05T06:28:04.238652+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/9ebfeb78de7a7403531f70f4.html",
+          "snapshotSHA256": "9ebfeb78de7a7403531f70f407fbd4762f75a2a8d99936c3e98d38cd0f1717f2",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://mitinoeki-ginoza.com/area/facility/",
+          "finalUrl": "https://mitinoeki-ginoza.com/area/facility/",
+          "fetchedAt": "2026-11-05T06:29:47.019654+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4d494e92f0f5ad3b28b85baa.html",
+          "snapshotSHA256": "4d494e92f0f5ad3b28b85baa38493070aab3aea9677f26846dfa33c45aff2851",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-4b6c8f692d562ba8fc1f",
+      "reasonCategory": "原典不足",
+      "reason": "下甑島観光案内所（鹿児島県薩摩川内市下甑町長浜913番4）：公式観光案内所詳細を確認。長浜913-4の港ターミナル内案内所の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+        "required": "下甑島観光案内所（鹿児島県薩摩川内市下甑町長浜913番4）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+          "finalUrl": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+          "fetchedAt": "2026-11-05T06:28:04.022044+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f098392800b2b7117905cae7.html",
+          "snapshotSHA256": "f098392800b2b7117905cae7cbbd5e7ded5995fa035986db8304c4973e1f0238",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://koshiki.satsumasendai.gr.jp/spotlist/39470",
+          "finalUrl": null,
+          "fetchedAt": "2026-11-05T06:28:03.449404+00:00",
+          "status": null,
+          "error": "HTTP Error 429: Too Many Requests",
+          "snapshotPath": null,
+          "snapshotSHA256": null,
+          "purpose": "facility",
+          "outcome": "取得失敗。本文を根拠に用いず、制限回避・同一URL反復はしない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-500296f58e26ea863c1f",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "WANDER COMPASS BEPPU(ワンダーコンパス別府)（大分県別府市駅前町12番13号えきマチ1丁目 別府BIS南館内）：公式観光施設案内を確認。駅前12-13の駅構内案内所の数値目的地は未確認。別府市配布ページの他の短縮リンクは上野口1-15を指し、当施設に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.beppu.oita.jp/suido/05jigyo/anniversary3/index.html",
+        "required": "WANDER COMPASS BEPPU(ワンダーコンパス別府)（大分県別府市駅前町12番13号えきマチ1丁目 別府BIS南館内）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.beppu.oita.jp/suido/05jigyo/anniversary3/index.html",
+          "finalUrl": "https://www.city.beppu.oita.jp/seikatu/suido/s_jigyo/anniversary3.html",
+          "fetchedAt": "2026-11-05T06:28:05.743434+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/bc507da7a62efcbb253e32ef.html",
+          "snapshotSHA256": "bc507da7a62efcbb253e32ef751555026987ec2a0ea672a41a3973668af94a7b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://beppu-tourism.com/spot/wander-compass-beppu/",
+          "finalUrl": "https://beppu-tourism.com/spot/wander-compass-beppu/",
+          "fetchedAt": "2026-11-05T06:28:05.699960+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/325804f7e232182e6d10f804.html",
+          "snapshotSHA256": "325804f7e232182e6d10f804a0ff4f212bebede2af3a8e1411280d63cb0e328d",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-52557966acb8dec24849",
+      "reasonCategory": "原典不足",
+      "reason": "新鳥栖駅観光案内所（佐賀県鳥栖市原古賀町220-2）：市の新鳥栖駅観光案内所ページを確認。原古賀220-2の駅舎・案内所の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.tosu.lg.jp/soshiki/18/107130.html",
+        "required": "新鳥栖駅観光案内所（佐賀県鳥栖市原古賀町220-2）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.tosu.lg.jp/soshiki/18/107130.html",
+          "finalUrl": "https://www.city.tosu.lg.jp/soshiki/18/107130.html",
+          "fetchedAt": "2026-11-05T06:28:05.876483+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4a636091c14cc6a2bc42bbef.html",
+          "snapshotSHA256": "4a636091c14cc6a2bc42bbef308a588d3c933f20b43ae8c16f67780cf25ed76d",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
+          "finalUrl": "https://www.city.tosu.lg.jp/soshiki/18/2386.html",
+          "fetchedAt": "2026-11-05T06:28:05.862166+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f4db022fc0b71548890b40b7.html",
+          "snapshotSHA256": "f4db022fc0b71548890b40b7ddfc9bdf140ef61e1618a1244eceecaefa25d4ae",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-527347c20ae2968cc662",
+      "reasonCategory": "原典不足",
+      "reason": "水前寺競技場 事務所（熊本県熊本市中央区水前寺5丁目23-3）：競技場運営者のアクセスと県スポーツ施設案内を確認。水前寺5-23-3の事務所の入る競技場目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "水前寺競技場 事務所（熊本県熊本市中央区水前寺5丁目23-3）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://kc-sks.jp/suizenji/map.html",
+          "finalUrl": "https://kc-sks.jp/suizenji/map.html",
+          "fetchedAt": "2026-11-05T06:28:07.359921+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/baf9caa2ecae83731fca6a6f.html",
+          "snapshotSHA256": "baf9caa2ecae83731fca6a6fc8a4128db722d3dc364a71342a7a6f511db02c98",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "reasonCategory": "原典不足",
+      "reason": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）：観光協会公式施設詳細と県GISデータを照合。美浜16-3の観光情報センターの建物目的地座標を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/mhccorona2020.html",
+        "required": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/mhccorona2020.html",
+          "finalUrl": "https://www.chatan.jp/seikatsuguide/jogesuido/gesuido/mhccorona2020.html",
+          "fetchedAt": "2026-11-05T06:28:07.734768+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4965e43b257e232291fd120f.html",
+          "snapshotSHA256": "4965e43b257e232291fd120fdfb3930672d65fb5edb20daa6320b9dd894a3693",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://chatantourism.com/information-center/",
+          "finalUrl": "https://chatantourism.com/information-center/",
+          "fetchedAt": "2026-11-05T06:28:07.681906+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/58071050f87e75dc6ef77a3e.html",
+          "snapshotSHA256": "58071050f87e75dc6ef77a3e8a368f1214f44b9425e11c373fcd3c1cfe7b2030",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）：管理者の施設紹介・アクセスを追加確認。勝連城跡や歴史文化施設と観光ターミナル（南風原3807-2）を区別する建物目的地を未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+        "required": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+          "finalUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+          "fetchedAt": "2026-11-05T06:28:07.852890+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fd704b5c58fee72e60fbf7bd.html",
+          "snapshotSHA256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.katsuren-jo.jp/about_amawari-park/",
+          "finalUrl": "https://www.katsuren-jo.jp/about_amawari-park/",
+          "fetchedAt": "2026-11-05T06:28:07.793329+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ac02261283b060e9cd41aaa8.html",
+          "snapshotSHA256": "ac02261283b060e9cd41aaa8dd3dfd2c1ec1267935148249408ef5e8b41d1566",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.katsuren-jo.jp/access/",
+          "finalUrl": "https://www.katsuren-jo.jp/access/",
+          "fetchedAt": "2026-11-05T06:29:46.801520+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fc767ee98347c7ae2f638cf1.html",
+          "snapshotSHA256": "fc767ee98347c7ae2f638cf11b2d00782418bc33b97f4b0c90676375e8259fd0",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-5bd9ed457378cacb6524",
+      "reasonCategory": "原典不足",
+      "reason": "古賀水再生センター（福岡県古賀市古賀1337-3）：市庁舎案内は駅東1-1-1であり、古賀1337-3の水再生センターと異なる。公共施設CSVにも当該センターの建物点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+        "required": "古賀水再生センター（福岡県古賀市古賀1337-3）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+          "finalUrl": "https://www.city.koga.fukuoka.jp/cityhall/work/jougesuido/s_jigyou/s_jigyou_2/007.php",
+          "fetchedAt": "2026-11-05T06:27:59.048265+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e4a75d282d65c7021728979e.html",
+          "snapshotSHA256": "e4a75d282d65c7021728979e5785dd3ed72c7e5a8751c134f070cd37e5ba1e07",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.koga.fukuoka.jp/access/",
+          "finalUrl": "https://www.city.koga.fukuoka.jp/access/",
+          "fetchedAt": "2026-11-05T06:27:59.213434+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/36909aef79ee6071273d4231.html",
+          "snapshotSHA256": "36909aef79ee6071273d423115cb703f699d74496e87204479420f3c743bd403",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-628964aa1208c4c45303",
+      "reasonCategory": "原典不足",
+      "reason": "大分市竹町通商店街振興組合（大分市中央町3丁目6番7号）：商店街の公式共同事業案内を追加調査。中央町3-6-7の竹町通商店街振興組合事務所に対応する数値目的地を確保できない。別組合の事務所を採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+        "required": "大分市竹町通商店街振興組合（大分市中央町3丁目6番7号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補2行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "finalUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "fetchedAt": "2026-11-05T06:28:12.259801+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f61e475c3ef5143c60951603.html",
+          "snapshotSHA256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://centporta.jp/category/news/",
+          "finalUrl": "https://centporta.jp/category/news/",
+          "fetchedAt": "2026-11-05T06:28:10.386133+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/9ce566188c36e58be5816f32.html",
+          "snapshotSHA256": "9ce566188c36e58be5816f320e061a2a15d533bbc9efcad847fb67f7dbc7cc5a",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-62e5bba8872fe20f0c0f",
+      "reasonCategory": "原典不足",
+      "reason": "東よか干潟ビジターセンター「ひがさす」（佐賀県佐賀市東与賀町大字田中2757-4）：県観光案内は田中2757-4と数値q/destination=33.174981,130.27021を掲載するが、タイトルが「東よか干潟／ひがさす」の複合施設案内。干潟とビジターセンター建物のどちらを指すか裏付け不足として保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.water.saga.saga.jp/main/5768.html",
+        "required": "東よか干潟ビジターセンター「ひがさす」（佐賀県佐賀市東与賀町大字田中2757-4）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.water.saga.saga.jp/main/5768.html",
+          "finalUrl": "https://www.water.saga.saga.jp/main/5768.html",
+          "fetchedAt": "2026-11-05T06:28:09.767703+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/37973db511fba9673558621e.html",
+          "snapshotSHA256": "37973db511fba9673558621e3dfd9bdf9aa696e4995f2bcbae7aaf0a55590213",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.asobo-saga.jp/spots/detail/272a6d01-5912-4e13-a928-08e5b709a0e4",
+          "finalUrl": "https://www.asobo-saga.jp/spots/detail/272a6d01-5912-4e13-a928-08e5b709a0e4",
+          "fetchedAt": "2026-11-05T06:28:10.175009+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/7731c6a27992dd955e79d57b.html",
+          "snapshotSHA256": "7731c6a27992dd955e79d57b4222a42e5f296ab1ad5458ba219f358aa3bd294a",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-6a607bd1f8ff8e4f7cd5",
+      "reasonCategory": "原典不足",
+      "reason": "熊本県立総合体育館 事務所（熊本県熊本市西区上熊本1丁目9番28号）：管理者の総合体育館アクセスと県スポーツ施設案内を確認。上熊本1-9-28の体育館目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.kspa.or.jp/archives/kusports_announce/54364/",
+        "required": "熊本県立総合体育館 事務所（熊本県熊本市西区上熊本1丁目9番28号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補29行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kspa.or.jp/archives/kusports_announce/54364/",
+          "finalUrl": null,
+          "fetchedAt": "2026-11-05T06:28:09.809079+00:00",
+          "status": null,
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": null,
+          "snapshotSHA256": null,
+          "purpose": "distribution",
+          "outcome": "取得失敗。本文を根拠に用いず、制限回避・同一URL反復はしない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kspa.or.jp/sougou_taiku_map/",
+          "finalUrl": "https://www.kspa.or.jp/sougou_taiku_map/",
+          "fetchedAt": "2026-11-05T06:28:10.846112+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/68c028388320259c301b90ae.html",
+          "snapshotSHA256": "68c028388320259c301b90aeca9016aa3db02a9b38f077e2e8d3365d2fbbc12f",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-6a8e8508cf7afc2b0ab7",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "佐賀市下水浄化センター 事務室（佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)）：下水浄化センター施設案内を確認。広い処理場内の管理棟2階事務室に対応する建物目的地点を特定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.water.saga.saga.jp/main/5768.html",
+        "required": "佐賀市下水浄化センター 事務室（佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.water.saga.saga.jp/main/5768.html",
+          "finalUrl": "https://www.water.saga.saga.jp/main/5768.html",
+          "fetchedAt": "2026-11-05T06:28:09.767703+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/37973db511fba9673558621e.html",
+          "snapshotSHA256": "37973db511fba9673558621e3dfd9bdf9aa696e4995f2bcbae7aaf0a55590213",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.water.saga.saga.jp/main/568.html",
+          "finalUrl": "https://www.water.saga.saga.jp/main/568.html",
+          "fetchedAt": "2026-11-05T06:28:12.786401+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5143e71c7e092b324c163508.html",
+          "snapshotSHA256": "5143e71c7e092b324c163508ab42663a2670988aa2c2fb5a5e34aa251717f9cb",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "reasonCategory": "原典不足",
+      "reason": "名護市営市場（沖縄県名護市城1-4-11）：市場公式アクセスと県GISデータを照合。城1-4-11の市営市場の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021060400010/",
+        "required": "名護市営市場（沖縄県名護市城1-4-11）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021060400010/",
+          "finalUrl": "https://www.city.nago.okinawa.jp/soshiki/kankyousuidou-nav/2021060400010/",
+          "fetchedAt": "2026-11-05T06:28:12.119278+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/9a87a7d0b542e1a19d4653b1.html",
+          "snapshotSHA256": "9a87a7d0b542e1a19d4653b1606ef6865fe8657a3559779942af421754b5dfa9",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://nago-ichiba.com/ichiba/?page_id=70",
+          "finalUrl": "https://nago-ichiba.com/ichiba/70-2/",
+          "fetchedAt": "2026-11-05T06:28:28.245021+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/bd0786ebc695d63736ff1838.html",
+          "snapshotSHA256": "bd0786ebc695d63736ff183801e5ae68be70876cb5d4db1923ef72144fa8147e",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+      "reasonCategory": "原典不足",
+      "reason": "リブワーク藤崎台球場（熊本市中央区宮内4番1号）：球場管理者アクセスと県スポーツ施設案内を確認。宮内4-1の球場について採用可能な数値目的地マーカーを確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "リブワーク藤崎台球場（熊本市中央区宮内4番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kspa.or.jp/huzisaki_map/",
+          "finalUrl": "https://www.kspa.or.jp/huzisaki_map/",
+          "fetchedAt": "2026-11-05T06:28:12.608920+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f2e06f4d07bc6607b45f3f69.html",
+          "snapshotSHA256": "f2e06f4d07bc6607b45f3f697d29eb1c235099c441953dbc9f1a5d4b3c5c3309",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-721597ce8a871ee7907f",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "八代市水処理センター管理棟2階（熊本県八代市新港町三丁目1番地）：市の施設関連ページと公共施設CSVを確認。新港3-1の水処理センター管理棟に該当する数値目的地点を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+        "required": "八代市水処理センター管理棟2階（熊本県八代市新港町三丁目1番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+          "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji00314492/index.html",
+          "fetchedAt": "2026-11-05T06:28:13.954175+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0524c9cc4add7e0b545531e6.html",
+          "snapshotSHA256": "0524c9cc4add7e0b545531e6d7f23b32f1a7c29be933dfd40092e4f1a083e94b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "finalUrl": "https://www.city.yatsushiro.lg.jp/kiji0037227/index.html",
+          "fetchedAt": "2026-11-05T06:28:13.954365+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/992eeac7ce708ece842c4776.html",
+          "snapshotSHA256": "992eeac7ce708ece842c4776d7393c52c0dcba08b37ce3013bdafce1cd10a2a0",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-77b2078f3d92eae241e6",
+      "reasonCategory": "原典不足",
+      "reason": "中尾城公園管理事務所（長崎県西彼杵郡長与町吉無田郷61番地1）：長与町公共施設CSVには中尾城公園32.820645,129.88234があるが管理事務所の点ではない。吉無田61-1の公園代表点を配布建物に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://webtown.nagayo.jp/suido/kiji0034473/index.html",
+        "required": "中尾城公園管理事務所（長崎県西彼杵郡長与町吉無田郷61番地1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://webtown.nagayo.jp/suido/kiji0034473/index.html",
+          "finalUrl": "https://webtown.nagayo.jp/suido/kiji0034473/index.html",
+          "fetchedAt": "2026-11-05T06:28:14.761289+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/dc9ad86cb8686312fea1a43f.html",
+          "snapshotSHA256": "dc9ad86cb8686312fea1a43f9c1d0a7536f566b7c21dbb2559807eda28a8724b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://data.bodik.jp/dataset/54796881-5703-468e-9508-38c9fca11970/resource/7efab59e-1e66-4852-b020-653770869cae/download/423076_public_facility.csv",
+          "finalUrl": "https://data.bodik.jp/dataset/54796881-5703-468e-9508-38c9fca11970/resource/7efab59e-1e66-4852-b020-653770869cae/download/423076_public_facility.csv",
+          "fetchedAt": "2026-11-05T06:28:14.793865+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8282fe362e54ace1216f3ee1.html",
+          "snapshotSHA256": "8282fe362e54ace1216f3ee1b196c878b5b385783f02d318fc58f6c89d2988a6",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-79566b7301f7f95b9ea0",
+      "reasonCategory": "原典不足",
+      "reason": "川内駅観光案内所（鹿児島県薩摩川内市鳥追町1番1号）：公式観光案内所詳細を確認。鳥追町1-1の川内駅2階案内所の入る建物目的地を取得原本から数値で確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+        "required": "川内駅観光案内所（鹿児島県薩摩川内市鳥追町1番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+          "finalUrl": "https://www.city.satsumasendai.lg.jp/soshiki/1002/1/3/4/1749.html",
+          "fetchedAt": "2026-11-05T06:28:04.022044+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f098392800b2b7117905cae7.html",
+          "snapshotSHA256": "f098392800b2b7117905cae7cbbd5e7ded5995fa035986db8304c4973e1f0238",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://satsumasendai.gr.jp/spotlist/39471/",
+          "finalUrl": null,
+          "fetchedAt": "2026-11-05T06:28:17.816670+00:00",
+          "status": null,
+          "error": "HTTP Error 429: Too Many Requests",
+          "snapshotPath": null,
+          "snapshotSHA256": null,
+          "purpose": "facility",
+          "outcome": "取得失敗。本文を根拠に用いず、制限回避・同一URL反復はしない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+        "required": "徳之島町役場建設課（鹿児島県大島郡徳之島町亀津7203番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "fetchedAt": "2026-11-05T06:28:16.891440+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a69e9fd0cba8280082ff6e0d.html",
+          "snapshotSHA256": "a69e9fd0cba8280082ff6e0ddbbfed41a68bdd2a66bec3562ce4418b5b804510",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.tokunoshima-town.org/shisetsu/yakuba/s001.html",
+          "finalUrl": "https://www.tokunoshima-town.org/shisetsu/yakuba/s001.html",
+          "fetchedAt": "2026-11-05T06:28:16.900184+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/08304f51f1916ecfd92b9344.html",
+          "snapshotSHA256": "08304f51f1916ecfd92b934470940a2f742e3d78f5eefcb7ea33a293fd9fdb8b",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+          "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+          "fetchedAt": "2026-11-05T06:29:46.207886+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3ed620a45b57836d2ebac8ae.pdf",
+          "snapshotSHA256": "3ed620a45b57836d2ebac8ae9835e6995f8407bb6c4f8f8b55c6312cbb5a5047",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-83173665e8ef18a5eed0",
+      "reasonCategory": "原典不足",
+      "reason": "大村湾南部浄化センター（長崎県諫早市貝津町1410）：市の下水道施設一覧を追加調査。貝津町1410の大村湾南部浄化センターについて建物単位の数値目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+        "required": "大村湾南部浄化センター（長崎県諫早市貝津町1410）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "finalUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "fetchedAt": "2026-11-05T06:27:58.237016+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/48546c856302f2db65623d97.html",
+          "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/80/1472.html",
+          "finalUrl": "https://www.city.isahaya.nagasaki.jp/soshiki/80/1472.html",
+          "fetchedAt": "2026-11-05T06:28:16.504928+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4efbafb493d2d91dfd011599.html",
+          "snapshotSHA256": "4efbafb493d2d91dfd0115991ab8036a635adc6e01f4725d8a18c54c5cf86563",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-8bbab01afd77e40b5bdb",
+      "reasonCategory": "原典不足",
+      "reason": "沖縄観光情報センター（沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階）：県観光案内と県GIS避難ビルデータを追加照合。カフーナ旭橋A街区のGIS住所は泉崎1-20-1、配布先は1-20-6。棟・住所の同一性を確定できず保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.pref.okinawa.lg.jp/site/doboku/gesui/kokyo/manho-ruka-do/20230323_nami.html",
+        "required": "沖縄観光情報センター（沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.pref.okinawa.lg.jp/site/doboku/gesui/kokyo/manho-ruka-do/20230323_nami.html",
+          "finalUrl": "https://www.pref.okinawa.lg.jp/machizukuri/suido/1012453/1022274/1012507/1012508.html",
+          "fetchedAt": "2026-11-05T06:28:19.627479+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/deaf51599b4adaee97cfcca1.html",
+          "snapshotSHA256": "deaf51599b4adaee97cfcca1eeec94697cb112608798d510fce9e463a8c5f298",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.okinawastory.jp/spot/10966100",
+          "finalUrl": "https://www.okinawastory.jp/spot/10966100",
+          "fetchedAt": "2026-11-05T06:28:19.221194+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/7764641f3f9e8b475ec7ea54.html",
+          "snapshotSHA256": "7764641f3f9e8b475ec7ea5471e24d5eacc9d047d359eef039b759304a812117",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-8c90fac8c05c5f8fcb80",
+      "reasonCategory": "原典不足",
+      "reason": "観光物産交流施設「きやったもんせ南さつま」（鹿児島県南さつま市加世田本町43番地9）：観光協会の施設詳細を追加確認。加世田本43-9の店舗の数値目的地は未確認。市ページの短縮リンクは別の市役所を指すため代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+        "required": "観光物産交流施設「きやったもんせ南さつま」（鹿児島県南さつま市加世田本町43番地9）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+          "finalUrl": "https://www.city.minamisatsuma.lg.jp/living/tetsuzuki/suido/e027669.html",
+          "fetchedAt": "2026-11-05T06:28:19.806207+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/9c8f88d0e9073b97581173c1.html",
+          "snapshotSHA256": "9c8f88d0e9073b97581173c1317fdfbbbc6151efd3a95248c5c27ce389208239",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://kanko-minamisatsuma.jp/spot/15591/",
+          "finalUrl": "https://kanko-minamisatsuma.jp/spot/15591/",
+          "fetchedAt": "2026-11-05T06:28:19.827523+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/076e517e088dabc3cd594567.html",
+          "snapshotSHA256": "076e517e088dabc3cd59456797a1d62352b17271f3d2e38e2c33d4a45c313011",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+      "reasonCategory": "原典不足",
+      "reason": "パークドーム熊本 受付兼事務所（熊本県熊本市東区平山町2972番地）：管理者のパークドームアクセスを確認。平山2972の施設目的地点を示す数値マーカーは取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "パークドーム熊本 受付兼事務所（熊本県熊本市東区平山町2972番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kspa.or.jp/park_map/",
+          "finalUrl": "https://www.kspa.or.jp/park_map/",
+          "fetchedAt": "2026-11-05T06:28:21.174718+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/56d96688ff7b7b3411202bff.html",
+          "snapshotSHA256": "56d96688ff7b7b3411202bff1ad4643cb411c6fb0b889300ab1d0d8ffb4c61e0",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+      "reasonCategory": "原典不足",
+      "reason": "大分市美術館（大分県大分市大字上野865番地）：市美術館公式アクセスを確認。上野865の美術館の数値目的地を取得原本から確定できず、民間施設ディレクトリの緯度経度は不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+        "required": "大分市美術館（大分県大分市大字上野865番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "finalUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "fetchedAt": "2026-11-05T06:28:12.259801+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f61e475c3ef5143c60951603.html",
+          "snapshotSHA256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.oita.oita.jp/o210/bunkasports/bunka/1443857882364.html",
+          "finalUrl": "https://www.city.oita.oita.jp/o210/bunkasports/bunka/1443857882364.html",
+          "fetchedAt": "2026-11-05T06:28:21.329547+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/88b5f0737272da3aa7e8baf5.html",
+          "snapshotSHA256": "88b5f0737272da3aa7e8baf5fc0c02c1a3e44c75dfca4740b540278b367f18c5",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-a4cd93cc1425ac573ac5",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "小林市役所上下水道課 第2別館2階下水道グループ（宮崎県小林市細野300番地）：市公式と公共施設データを探索。細野300の市役所本庁代表点では第2別館を区別できないため採用保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+        "required": "小林市役所上下水道課 第2別館2階下水道グループ（宮崎県小林市細野300番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+          "finalUrl": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+          "fetchedAt": "2026-11-05T06:28:21.482076+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/607d3e3a9917fa843e962664.html",
+          "snapshotSHA256": "607d3e3a9917fa843e96266404ddac9c6d50acebaf9c1655ee77e6a61c18b9a7",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kobayashi.lg.jp/index.html",
+          "finalUrl": "https://www.city.kobayashi.lg.jp/index.html",
+          "fetchedAt": "2026-11-05T06:28:21.545552+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/289abbc5a526f8c846cd0019.html",
+          "snapshotSHA256": "289abbc5a526f8c846cd00194bc83ec089c4cdaf54c23fff44474a511f553965",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+      "reasonCategory": "原典不足",
+      "reason": "熊本市上下水道局（熊本県熊本市中央区水前寺6-2-45）：水道局公式案内と県公開施設CSVを照合。水前寺6-2-45の局庁舎の採用可能な数値目的地行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "熊本市上下水道局（熊本県熊本市中央区水前寺6-2-45）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kumamoto-waterworks.jp/",
+          "finalUrl": "https://www.kumamoto-waterworks.jp/",
+          "fetchedAt": "2026-11-05T06:28:24.089745+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/402c0825cb971b95d3f1f5f8.html",
+          "snapshotSHA256": "402c0825cb971b95d3f1f5f8dbfe4672b533ceacb14356a97b8e724d3751e462",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-aae8a5e8cdb120497a24",
+      "reasonCategory": "原典不足",
+      "reason": "セブン-イレブン若松区役所前店（福岡県北九州市若松区浜町1丁目1ー4）：店舗公式案内の取得原本で店舗の数値目的地を確認できない。公共施設CSVの若松区役所（浜町1-1-1）は当店（1-1-4）と別建物なので代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "http://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+        "required": "セブン-イレブン若松区役所前店（福岡県北九州市若松区浜町1丁目1ー4）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補5行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "fetchedAt": "2026-11-05T06:28:00.996775+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3a18e7f126766d00f9a59193.html",
+          "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://seven-eleven.areamarker.com/711map/info/547276?shopid=547276%20h",
+          "finalUrl": "https://seven-eleven.areamarker.com/711map/info/547276?shopid=547276%20h",
+          "fetchedAt": "2026-11-05T06:28:24.111929+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/d5b2db33f270efd5e7a45cc9.html",
+          "snapshotSHA256": "d5b2db33f270efd5e7a45cc9ef63aaa01e47742bc20773d42bae3dce16d05127",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-c377ae7db47aa8c7a0c3",
+      "reasonCategory": "原典不足",
+      "reason": "小林まちづくり株式会社 観光案内所（宮崎県小林市細野1829-16 KITTO小林）：運営会社案内を追加確認。別ページの埋込ラベルはコミュニティスペース（小林まちづくり株式会社）であり、細野1829-16 KITTO内観光案内所の数値目的地点として確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+        "required": "小林まちづくり株式会社 観光案内所（宮崎県小林市細野1829-16 KITTO小林）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+          "finalUrl": "https://www.city.kobayashi.lg.jp/soshikikarasagasu/jogesuidokyokujogesuidoka/gesuido/9689.html",
+          "fetchedAt": "2026-11-05T06:28:21.482076+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/607d3e3a9917fa843e962664.html",
+          "snapshotSHA256": "607d3e3a9917fa843e96266404ddac9c6d50acebaf9c1655ee77e6a61c18b9a7",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://kobayashi-machi.com/company",
+          "finalUrl": "https://kobayashi-machi.com/company",
+          "fetchedAt": "2026-11-05T06:28:25.609022+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8443a8bfc7f3f42f93cd8562.html",
+          "snapshotSHA256": "8443a8bfc7f3f42f93cd8562d868d49aa8496897578fb8e3f45bf06975c878af",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-c7ce832b34e06d96ad33",
+      "reasonCategory": "原典不足",
+      "reason": "宜野湾市上下水道局業務サービス課（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu2.pdf",
+        "required": "宜野湾市上下水道局業務サービス課（沖縄県宜野湾市字野嵩730）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu2.pdf",
+          "finalUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu2.pdf",
+          "fetchedAt": "2026-11-05T06:28:25.014878+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8fc069fb64d2aaedf881d0ea.pdf",
+          "snapshotSHA256": "8fc069fb64d2aaedf881d0ea359ae754bd0b2849d1d3196924ab17129319ff06",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+          "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+          "fetchedAt": "2026-11-05T06:28:25.387930+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/117db75d34aba1bb636e5bd8.html",
+          "snapshotSHA256": "117db75d34aba1bb636e5bd8ef5bc92a321c7d2bc6eb2ea0dac150c944957ed3",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-db074910d35fc98cfcff",
+      "reasonCategory": "原典不足",
+      "reason": "御笠川浄化センター（福岡県福岡市博多区那珂4-5-1）：管理者の施設案内と地図短縮リンクzcMyWを確認。解決先はviewport中心のみで、配布先の正門横守衛室または建物目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+        "required": "御笠川浄化センター（福岡県福岡市博多区那珂4-5-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "finalUrl": "https://www.pref.fukuoka.lg.jp/contents/manholecard.html",
+          "fetchedAt": "2026-11-05T06:28:25.714711+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/40330926f125596c123a8ceb.html",
+          "snapshotSHA256": "40330926f125596c123a8ceb0b7ae9eccc99aad8a33df3dd6cef15a7d600ec2b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://fukuoka-smc.jp/center/mikasa/",
+          "finalUrl": "https://fukuoka-smc.jp/center/mikasa/",
+          "fetchedAt": "2026-11-05T06:28:26.903192+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5151e7548080a1c334dfe7c0.html",
+          "snapshotSHA256": "5151e7548080a1c334dfe7c0aa63e579138b73eea0d9ed1d8a101455982f30a1",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-db16f89ef3a741afd0fe",
+      "reasonCategory": "原典不足",
+      "reason": "首里城首里杜館総合案内所（沖縄県那覇市首里金城町1-2）：公園管理者の首里杜館案内を確認。首里城公園全体やマンホール蓋の点を首里杜館に流用しない。建物単位の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.pref.okinawa.jp/site/doboku/gesui/kokyo/manho-ruka-do/20211220_syurijo.html",
+        "required": "首里城首里杜館総合案内所（沖縄県那覇市首里金城町1-2）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.pref.okinawa.jp/site/doboku/gesui/kokyo/manho-ruka-do/20211220_syurijo.html",
+          "finalUrl": "https://www.pref.okinawa.jp/machizukuri/suido/1012453/1022274/1012507/1012509.html",
+          "fetchedAt": "2026-11-05T06:28:28.347227+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/cb024d35481546be7ce1bf59.html",
+          "snapshotSHA256": "cb024d35481546be7ce1bf591aa4a4836cd301cca9d3900ce31b2fd9ac5f3dbf",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://oki-park.jp/shurijo/guide/1316",
+          "finalUrl": "https://oki-park.jp/shurijo/guide/1316/",
+          "fetchedAt": "2026-11-05T06:28:28.458623+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/57b1e1b56f2cf6c4737e33d2.html",
+          "snapshotSHA256": "57b1e1b56f2cf6c4737e33d2cedd79ecef36ca3fdb86d1a7bea6e051cecfd438",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+      "reasonCategory": "原典不足",
+      "reason": "大分市観光案内所（大分県大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+        "required": "大分市観光案内所（大分県大分市要町1-1(JR大分駅構内)）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "finalUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "fetchedAt": "2026-11-05T06:28:12.259801+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f61e475c3ef5143c60951603.html",
+          "snapshotSHA256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.oishiimati-oita.jp/about-tourism",
+          "finalUrl": "https://www.oishiimati-oita.jp/about-tourism",
+          "fetchedAt": "2026-11-05T06:28:29.050364+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3de54004e1f29cf0b35abece.html",
+          "snapshotSHA256": "3de54004e1f29cf0b35abecec9c8f6bdfccbacd816a1b63762b21ed749c1f320",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.oishiimati-oita.jp/access",
+          "finalUrl": "https://www.oishiimati-oita.jp/access",
+          "fetchedAt": "2026-11-05T06:29:47.152130+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/7ec621ee8f65ae8eb2901784.html",
+          "snapshotSHA256": "7ec621ee8f65ae8eb2901784d17cd58283e2c2b92a6bbc859bae5e25076a59b9",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)（沖縄県那覇市松尾2丁目10番1号）：市公式案内と県GIS施設データを照合。新しい第一牧志公設市場の建物内案内所について、旧市場・仮設市場と区別して採用できる点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.naha.okinawa.jp/water/suidoukyoku/1006831/1006848/1006854/1007009.html",
+        "required": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)（沖縄県那覇市松尾2丁目10番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補3行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.naha.okinawa.jp/water/suidoukyoku/1006831/1006848/1006854/1007009.html",
+          "finalUrl": "https://www.city.naha.okinawa.jp/water/suidoukyoku/1006831/1006848/1006854/1007009.html",
+          "fetchedAt": "2026-11-05T06:28:31.118145+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/6566c0da32fbc30d2cb3b72f.html",
+          "snapshotSHA256": "6566c0da32fbc30d2cb3b72f283b30fd0dfc1e0a3882461763829ddf6bcf020f",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-e6d46c885e30b1c754cb",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "配布原本は市役所下水道課（西別館2階）。CSVは小郡市役所という総称のみで、西別館を同定する情報がない。小郡255-1という同番地だけで同棟扱いできない。西別館の代表点が確定するまで保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.ogori.fukuoka.jp/197/798/2239",
+        "required": "小郡市役所 下水道課（福岡県小郡市小郡255-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補2行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ogori.fukuoka.jp/197/798/2239",
+          "finalUrl": "https://www.city.ogori.fukuoka.jp/197/798/2239",
+          "fetchedAt": "2026-11-05T06:28:30.085639+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e19a6472df545ef23c4db0e3.html",
+          "snapshotSHA256": "e19a6472df545ef23c4db0e374c9ece0ca7ffcc5e124ff4ff9b060425a2151aa",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ogori.fukuoka.jp/1139/1145/4453",
+          "finalUrl": "https://www.city.ogori.fukuoka.jp/1139/1145/4453",
+          "fetchedAt": "2026-11-05T06:29:46.861212+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ee4f87d78bc7a9bb8f9ac591.html",
+          "snapshotSHA256": "ee4f87d78bc7a9bb8f9ac591610efb91222749bf92d3a94e1d4599b9f65a5254",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "今回の2026年4月更新庁舎案内と別館1階画像1485.jpgで下水道課は別館1階と確定（画像を目視確認）。P05中間市役所feature1332は本庁総称点で、この別館の数値点と同定できない。部署名・住所の一致だけでは採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+        "required": "別館1階の外形または公式GISの別館marker。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補40行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+          "finalUrl": "https://www.city.nakama.lg.jp/site/kankou/19807.html",
+          "fetchedAt": "2026-11-05T06:28:32.306308+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/47d55857174c7a7ceb74bb2c.html",
+          "snapshotSHA256": "47d55857174c7a7ceb74bb2cdb93c479519f91db176f15234752e06999bd72e2",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/soshiki/8/1420.html",
+          "finalUrl": "https://www.city.nakama.lg.jp/soshiki/8/1420.html",
+          "fetchedAt": "2026-11-05T06:28:32.311450+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/e2d977b5becf3ccff2eda216.html",
+          "snapshotSHA256": "e2d977b5becf3ccff2eda2166d10e44b521c958acf9402a18384ea043106e21d",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/soshiki/26/",
+          "finalUrl": "https://www.city.nakama.lg.jp/soshiki/26/",
+          "fetchedAt": "2026-11-05T06:29:45.812871+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/4a22e1e5539bd41e52389f23.html",
+          "snapshotSHA256": "4a22e1e5539bd41e52389f23a2ae0017089836f4215fab3f83c5f7fa92d8dbd4",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/life/6/23/89/",
+          "finalUrl": "https://www.city.nakama.lg.jp/life/6/23/89/",
+          "fetchedAt": "2026-11-05T06:30:51.821234+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8e1c699389a6db8ca69d18ef.html",
+          "snapshotSHA256": "8e1c699389a6db8ca69d18efd7c45c7ce094cab5248a2110d3c03dd7d1f66289",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/soshiki/8/1469.html",
+          "finalUrl": "https://www.city.nakama.lg.jp/soshiki/8/1469.html",
+          "fetchedAt": "2026-11-05T06:31:20.904783+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/431a8569407f8f21ca3b5bf0.html",
+          "snapshotSHA256": "431a8569407f8f21ca3b5bf0a62c8631143fd15f7a0139cb7f96d61f98637440",
+          "purpose": "building-floor-guide",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3352.png",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3352.png",
+          "fetchedAt": "2026-11-05T06:31:53.056578+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/51fe73b4488807bba0e40bfc.html",
+          "snapshotSHA256": "51fe73b4488807bba0e40bfc3141e5cbb3f5a60ca88bbc9c6a6b693f287f51d5",
+          "purpose": "地下",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3354.png",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3354.png",
+          "fetchedAt": "2026-11-05T06:31:53.320353+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/43082f074807eb6fc6785d36.html",
+          "snapshotSHA256": "43082f074807eb6fc6785d366caea3eca851d11ee7e862c61264790d9981142f",
+          "purpose": "１階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3606.png",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3606.png",
+          "fetchedAt": "2026-11-05T06:31:53.501934+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/c82487ba584b3a30dcafd76d.html",
+          "snapshotSHA256": "c82487ba584b3a30dcafd76de610e9cec83edaac87f05fc5c4895b65923d0e62",
+          "purpose": "庁舎見取り図　本館２階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3360.png",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3360.png",
+          "fetchedAt": "2026-11-05T06:31:53.778861+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f844ed05d26aa8dda8c6e917.html",
+          "snapshotSHA256": "f844ed05d26aa8dda8c6e9175cb3189fdacaca24b4929831ea9d7d98bee38015",
+          "purpose": "本館3階の画像",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/1484.jpg",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1484.jpg",
+          "fetchedAt": "2026-11-05T06:31:54.036074+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66cd9e6acdfe245ee81b66b9.html",
+          "snapshotSHA256": "66cd9e6acdfe245ee81b66b96cc491a7b69b6220c0d35f1590f4d204de239a8a",
+          "purpose": "本館4階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/1485.jpg",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1485.jpg",
+          "fetchedAt": "2026-11-05T06:31:54.280447+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fcaeb43c9fa41ad2ff143ee8.html",
+          "snapshotSHA256": "fcaeb43c9fa41ad2ff143ee84c95c153ce9c6b10c83abce5c1fedc156c4c634d",
+          "purpose": "別館1階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3356.png",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3356.png",
+          "fetchedAt": "2026-11-05T06:31:54.469811+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/c5b40eeb9771b9ddc23dba4c.html",
+          "snapshotSHA256": "c5b40eeb9771b9ddc23dba4c3f35b42a03b4da2a2c78d6add1fac729d3e5f1cb",
+          "purpose": " 別館２階の画像",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/1487.jpg",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/1487.jpg",
+          "fetchedAt": "2026-11-05T06:31:54.676605+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/31dd459c021ddcdbab8ebf94.html",
+          "snapshotSHA256": "31dd459c021ddcdbab8ebf947bf7f5c9124340256014f389c51da3d73e432278",
+          "purpose": "別館3階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.nakama.lg.jp/uploaded/image/3609.jpg",
+          "finalUrl": "https://www.city.nakama.lg.jp/uploaded/image/3609.jpg",
+          "fetchedAt": "2026-11-05T06:31:54.847061+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0a38ccc5a7ecf0aade04ba98.html",
+          "snapshotSHA256": "0a38ccc5a7ecf0aade04ba98b859d1cc49403171152a5c3ca161da4706d20175",
+          "purpose": "庁舎見取り図　別館４階",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-eacba90579d3dbedfc8c",
+      "reasonCategory": "原典不足",
+      "reason": "日置市観光協会（鹿児島県日置市伊集院町徳重285-12）：観光協会の団体・アクセス案内を追加確認。徳重285-12の協会施設の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.hioki.kagoshima.jp/suidou/20221125manhorucard.html",
+        "required": "日置市観光協会（鹿児島県日置市伊集院町徳重285-12）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.hioki.kagoshima.jp/suidou/20221125manhorucard.html",
+          "finalUrl": "https://www.city.hioki.kagoshima.jp/suidou/20221125manhorucard.html",
+          "fetchedAt": "2026-11-05T06:28:30.378976+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/9bda91c9f17d083cf8e0e1fc.html",
+          "snapshotSHA256": "9bda91c9f17d083cf8e0e1fc3aeb7906f6949ba57d1c7e4298e976c799df11f3",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://hiokishi-kankou.com/about/",
+          "finalUrl": "https://hiokishi-kankou.com/about/",
+          "fetchedAt": "2026-11-05T06:28:31.196687+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0066b8e1db1372fb1afe1562.html",
+          "snapshotSHA256": "0066b8e1db1372fb1afe156220725c1755590738d06215a24f4ebf1848684c0c",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+      "reasonCategory": "原典不足",
+      "reason": "大分市観光案内所（大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+        "required": "大分市観光案内所（大分市要町1-1(JR大分駅構内)）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "finalUrl": "https://www.city.oita.oita.jp/o223/kurashi/suidogesuido/manhoruhaihu.html",
+          "fetchedAt": "2026-11-05T06:28:12.259801+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/f61e475c3ef5143c60951603.html",
+          "snapshotSHA256": "f61e475c3ef5143c609516032a7b856bc5f070abb1958fd55a82e4b75a4b106b",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.oishiimati-oita.jp/about-tourism",
+          "finalUrl": "https://www.oishiimati-oita.jp/about-tourism",
+          "fetchedAt": "2026-11-05T06:28:29.050364+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3de54004e1f29cf0b35abece.html",
+          "snapshotSHA256": "3de54004e1f29cf0b35abecec9c8f6bdfccbacd816a1b63762b21ed749c1f320",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.oishiimati-oita.jp/access",
+          "finalUrl": "https://www.oishiimati-oita.jp/access",
+          "fetchedAt": "2026-11-05T06:29:47.152130+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/7ec621ee8f65ae8eb2901784.html",
+          "snapshotSHA256": "7ec621ee8f65ae8eb2901784d17cd58283e2c2b92a6bbc859bae5e25076a59b9",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-f659f3d40d25570465de",
+      "reasonCategory": "原典不足",
+      "reason": "宜野湾市上下水道局業務サービス課排水設備係（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu.pdf",
+        "required": "宜野湾市上下水道局業務サービス課排水設備係（沖縄県宜野湾市字野嵩730）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+          "finalUrl": "https://www.city.ginowan.lg.jp/soshiki/suido/13408.html",
+          "fetchedAt": "2026-11-05T06:28:25.387930+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/117db75d34aba1bb636e5bd8.html",
+          "snapshotSHA256": "117db75d34aba1bb636e5bd8ef5bc92a321c7d2bc6eb2ea0dac150c944957ed3",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu.pdf",
+          "finalUrl": "https://www.city.ginowan.lg.jp/material/files/group/43/haihu.pdf",
+          "fetchedAt": "2026-11-05T06:28:31.353576+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/11d626e9a3af3a418591d26b.pdf",
+          "snapshotSHA256": "11d626e9a3af3a418591d26bd9c282aac121bf8b186abe6980f9a561b1ae4401",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+      "reasonCategory": "複数棟・建物同定未完了",
+      "reason": "熊本県民総合運動公園 受付兼事務所（熊本県熊本市東区石原2丁目9-1）：管理者の運動公園アクセスを確認。石原2-9-1の広い公園の代表点では受付兼事務所の建物を区別できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "熊本県民総合運動公園 受付兼事務所（熊本県熊本市東区石原2丁目9-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補3行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.kspa.or.jp/sougou_map/",
+          "finalUrl": "https://www.kspa.or.jp/sougou_map/",
+          "fetchedAt": "2026-11-05T06:28:32.373983+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/94237e1a4ab882ba687e4614.html",
+          "snapshotSHA256": "94237e1a4ab882ba687e46142174f834b3074b8f5866fa712c913f01856eedbc",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-fd6ecb1635ce74789ef8",
+      "reasonCategory": "原典不足",
+      "reason": "まちの駅 とみたか(日向市駅 南側・高架下)（宮崎県日向市上町1-19）：日向市観光協会のアクセスを追加確認。上町1-19の日向市駅南側高架下「とみたか」の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://hyuga.or.jp/contents/archives/859",
+        "required": "まちの駅 とみたか(日向市駅 南側・高架下)（宮崎県日向市上町1-19）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補42行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://hyuga.or.jp/contents/archives/859",
+          "finalUrl": "https://hyuga.or.jp/contents/archives/859",
+          "fetchedAt": "2026-11-05T06:28:32.349518+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/8d1610d5c2945687706c38ff.html",
+          "snapshotSHA256": "8d1610d5c2945687706c38ff7c9f9d64dd91b5e5431929b7d6e5448b115255aa",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://hyuga.or.jp/access.html",
+          "finalUrl": "https://hyuga.or.jp/access.html",
+          "fetchedAt": "2026-11-05T06:28:32.311869+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/0bfe7d56b968ae4a7540e82b.html",
+          "snapshotSHA256": "0bfe7d56b968ae4a7540e82bf06d36c3c6242c2affbd5407e0cc82f3951e4351",
+          "purpose": "facility",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-11eacc27427ab619f0",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+        "required": "久留米市企業局1階上下水道料金センター窓口（福岡県久留米市合川町2190-3 久留米市企業局1階）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+          "finalUrl": "https://www.city.kurume.fukuoka.jp/1050kurashi/2090suidougasu/3170gesui/2017-1122-1321-150.html",
+          "fetchedAt": "2026-11-05T06:28:32.405855+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/dfbe313aa164f8252f1fa06e.html",
+          "snapshotSHA256": "dfbe313aa164f8252f1fa06ef4a6e979f7c3f9c8942fb9ee6cdac9b0decd4b8d",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-571a1c21a1a6a8b166",
+      "reasonCategory": "原典不足",
+      "reason": "2026-10-01～12-22の現行配布先は西鉄太宰府駅構内の観光案内所。旧太宰府館のCSV/P05点をこの施設に流用しない。駅構内の当該建物の公開座標原典が未確保。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+        "required": "太宰府市観光案内所（福岡県太宰府市宰府2-5-1 西鉄太宰府駅構内）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補16行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+          "finalUrl": "https://www.city.dazaifu.lg.jp/soshiki/22/22649.html",
+          "fetchedAt": "2026-11-05T06:28:05.538757+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/81bb60b63e285f51e2ba3ed4.html",
+          "snapshotSHA256": "81bb60b63e285f51e2ba3ed4fd43af8f08750a4ff39a6a8383ca4a2320934b3c",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+        "required": "徳之島町役場新庁舎1階宿直室（鹿児島県大島郡徳之島町亀津7203番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "fetchedAt": "2026-11-05T06:28:16.891440+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a69e9fd0cba8280082ff6e0d.html",
+          "snapshotSHA256": "a69e9fd0cba8280082ff6e0ddbbfed41a68bdd2a66bec3562ce4418b5b804510",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+          "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+          "fetchedAt": "2026-11-05T06:29:46.207886+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3ed620a45b57836d2ebac8ae.pdf",
+          "snapshotSHA256": "3ed620a45b57836d2ebac8ae9835e6995f8407bb6c4f8f8b55c6312cbb5a5047",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+        "required": "大野城市役所新館2階 企業総務課（福岡県大野城市曙町二丁目2-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補3行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+          "fetchedAt": "2026-11-05T06:28:32.528872+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/260cc2f13207e10dc6d558b2.html",
+          "snapshotSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/list00249.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/list00249.html",
+          "fetchedAt": "2026-11-05T06:29:46.666045+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ae8b8fcc0d7fb564d7683026.html",
+          "snapshotSHA256": "ae8b8fcc0d7fb564d768302618f9ecc7c72ea3bcc5bf420441770daa12a7fe8c",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/list01297.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/list01297.html",
+          "fetchedAt": "2026-11-05T06:30:51.786689+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/d218b97ccb0659799bd7a8b3.html",
+          "snapshotSHA256": "d218b97ccb0659799bd7a8b3e16b78bd8f188d551c8243699269a565dbba44c7",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-8c2f2fd56f3678dbba",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+        "required": "沖縄市上下水道局 下水道課（沖縄県沖縄市美里5丁目28番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+          "finalUrl": "https://www.city.okinawa.okinawa.jp/k058-004/kurashi/jougesuidou/gesuidou/2749127673.html",
+          "fetchedAt": "2026-11-05T06:28:32.603549+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/37ff6f0f1465120220a2b818.html",
+          "snapshotSHA256": "37ff6f0f1465120220a2b818719b36e41da41312f3fc981d5d78b3c026082849",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-8fca35672837332639",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+        "required": "熊本市上下水道局1階 時間外業務窓口（熊本県熊本市中央区水前寺6丁目2番45号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "finalUrl": "https://99ev2jtm.user.webaccel.jp/wp-content/uploads/2026/08/bbb6f7c0a968ad49e3803526126eb091.pdf",
+          "fetchedAt": "2026-11-05T06:27:58.392817+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/66e896e60eb80d2111e3601e.pdf",
+          "snapshotSHA256": "66e896e60eb80d2111e3601e555e22fa4e1400a1215d224d85938882314f5257",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-9aba1585a794a70f9c",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+        "required": "北九州市響灘ビオトープ（福岡県北九州市若松区響町一丁目126番1号）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "finalUrl": "https://www.city.kitakyushu.lg.jp/suidou/s01101006.html",
+          "fetchedAt": "2026-11-05T06:28:00.996775+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3a18e7f126766d00f9a59193.html",
+          "snapshotSHA256": "3a18e7f126766d00f9a591935202ac72561045ed6c34cc7809b81e95a2033f27",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-b16bb4e05b36ef7277",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+        "required": "宗像終末処理場内 下水道課（福岡県宗像市田熊1373）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+          "finalUrl": "https://www.city.munakata.lg.jp/kiji0032053/index.html",
+          "fetchedAt": "2026-11-05T06:28:33.013409+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/db8a0bb95053910aed3e502e.html",
+          "snapshotSHA256": "db8a0bb95053910aed3e502efd20fa9ca409a7cc79c3edcaac572edbd41947cf",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-c42fbe5f44427d0284",
+      "reasonCategory": "原典不足",
+      "reason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+        "required": "大野城市役所北玄関横通用口 警備員室（福岡県大野城市曙町二丁目2-1）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補3行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+          "fetchedAt": "2026-11-05T06:28:32.528872+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/260cc2f13207e10dc6d558b2.html",
+          "snapshotSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/list00249.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/list00249.html",
+          "fetchedAt": "2026-11-05T06:29:46.666045+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ae8b8fcc0d7fb564d7683026.html",
+          "snapshotSHA256": "ae8b8fcc0d7fb564d768302618f9ecc7c72ea3bcc5bf420441770daa12a7fe8c",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.city.onojo.fukuoka.jp/list01297.html",
+          "finalUrl": "https://www.city.onojo.fukuoka.jp/list01297.html",
+          "fetchedAt": "2026-11-05T06:30:51.786689+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/d218b97ccb0659799bd7a8b3.html",
+          "snapshotSHA256": "d218b97ccb0659799bd7a8b3e16b78bd8f188d551c8243699269a565dbba44c7",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "reasonCategory": "移転・旧新地点の対応未確定",
+      "reason": "現公式アクセスは知名1100。P05知名町役場feature1457は知名307の旧庁舎で不一致。追加取得した新アクセスのllは表示中心、qは役場名であり数値建物markerとは扱えない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "nextSource": {
+        "url": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+        "required": "知名町役場上下水道課（鹿児島県大島郡知名町大字知名1100番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+      },
+      "investigationStatus": "new-investigation-unresolved",
+      "attempts": [
+        {
+          "type": "new-local-original-analysis",
+          "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+          "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+          "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+          "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+          "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+          "finalUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+          "fetchedAt": "2026-11-05T06:28:34.079422+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/6592094fcd74de778bd9e272.html",
+          "snapshotSHA256": "6592094fcd74de778bd9e272bae291f9a7712dd1d1a70671e0eff2e4ae972030",
+          "purpose": "distribution",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        },
+        {
+          "type": "new-http-retrieval",
+          "sourceUrl": "https://www.town.china.lg.jp/soshiki/1001/12/2709.html",
+          "finalUrl": "https://www.town.china.lg.jp/soshiki/1001/12/2709.html",
+          "fetchedAt": "2026-11-05T06:29:46.478269+00:00",
+          "status": 200,
+          "error": null,
+          "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fbc08f67f2a5e5246841aff7.html",
+          "snapshotSHA256": "fbc08f67f2a5e5246841aff74d0636b3dfabdab426e2bdc0ec5533642cc63c50",
+          "purpose": "additional-building-identification",
+          "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "targetPath": "data/work/issue7-baseline/ledger.json",
+      "selector": {
+        "id": "facility:kyushu-475d355ad6294a2b61a8"
+      },
+      "field": "address",
+      "old": "沖和県国頭郡本部町字大浜881-1",
+      "new": "沖縄県国頭郡本部町字大浜881-1",
+      "reason": "県名の誤字。現運営者アクセスの沖縄県本部町大浜881-1と照合。配布関係・番地・状態は変更しない。",
+      "evidence": {
+        "sourceUrl": "https://motobufs.jp/access/",
+        "snapshotPath": "data/evidence/issue7/kyushu-okinawa/5620e96f3a2a22bcbaf9a33c.html",
+        "snapshotSHA256": "5620e96f3a2a22bcbaf9a33cee37d9cc4fef10909193ce9f027f39a80283ec94",
+        "sourceLocator": "施設アクセスの住所欄",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが運営者の住所表示と固定台帳を照合。"
+      }
+    }
+  ]
+}
