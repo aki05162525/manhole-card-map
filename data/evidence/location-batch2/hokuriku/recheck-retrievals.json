@@ -1,0 +1,93 @@
+[
+  {
+    "id": "optbv-dataspec",
+    "sourceUrl": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+    "startedAt": "2026-11-05T11:57:48.592848+00:00",
+    "fetchedAt": "2026-11-05T11:57:48.725009+00:00",
+    "finalUrl": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/optbv-dataspec.pdf",
+    "sha256": "f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b",
+    "bytes": 101792,
+    "contentType": "application/pdf",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "optbv-attribute",
+    "sourceUrl": "https://maps.gsi.go.jp/help/pdf/vector/optbv_attribute.pdf",
+    "startedAt": "2026-11-05T11:57:48.593293+00:00",
+    "fetchedAt": "2026-11-05T11:57:48.708633+00:00",
+    "finalUrl": "https://maps.gsi.go.jp/help/pdf/vector/optbv_attribute.pdf",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/optbv-attribute.pdf",
+    "sha256": "a5c4b1e767d22b81d17030b473160ed7b5650f78466946ae331a2a4620b934e1",
+    "bytes": 199246,
+    "contentType": "application/pdf",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "wajima-copyright",
+    "sourceUrl": "https://www.city.wajima.ishikawa.jp/docs/2013040100041/?doc_id=1104",
+    "startedAt": "2026-11-05T11:58:40.483123+00:00",
+    "fetchedAt": "2026-11-05T11:58:40.821156+00:00",
+    "finalUrl": "https://www.city.wajima.ishikawa.jp/docs/2013040100041/?doc_id=1104",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/wajima-copyright.html",
+    "sha256": "4c566582af1631977c8ad7beb510399dff393f7e891bf33cc6c98198b032f6ee",
+    "bytes": 18869,
+    "contentType": "text/html",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "fukui-brochure",
+    "sourceUrl": "https://asakura-museum.pref.fukui.lg.jp/files/cu_custom_field/BlogPost/2/2023/12/eba4e03e-8a5d-4b78-9443-ac19444640b7.pdf",
+    "startedAt": "2026-11-05T11:59:45.159414+00:00",
+    "fetchedAt": "2026-11-05T11:59:47.657449+00:00",
+    "finalUrl": "https://asakura-museum.pref.fukui.lg.jp/files/cu_custom_field/BlogPost/2/2023/12/eba4e03e-8a5d-4b78-9443-ac19444640b7.pdf",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/fukui-brochure.pdf",
+    "sha256": "9adb369c8d4100feeba8553406339691379c7a2944074d73d12dcd570ebdde35",
+    "bytes": 4576485,
+    "contentType": "application/pdf",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "fukui-operator",
+    "sourceUrl": "http://www3.fctv.ne.jp/~asakura/",
+    "startedAt": "2026-11-05T11:59:45.159818+00:00",
+    "fetchedAt": "2026-11-05T11:59:45.267186+00:00",
+    "finalUrl": "http://www3.fctv.ne.jp/~asakura/",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/fukui-operator.html",
+    "sha256": "2aebeb5868fd9975013d9ae25301610c181257f046e605a593ae5dbf235fe008",
+    "bytes": 5714,
+    "contentType": "text/html; charset=none",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "fukui-townplan",
+    "sourceUrl": "http://www3.fctv.ne.jp/~asakura/20kengaku/fukugen.html",
+    "startedAt": "2026-11-05T12:01:17.459624+00:00",
+    "fetchedAt": "2026-11-05T12:01:17.601345+00:00",
+    "finalUrl": "http://www3.fctv.ne.jp/~asakura/20kengaku/fukugen.html",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/fukui-townplan.html",
+    "sha256": "7c2ab600556cd58b59ff228bab42f078c8a35c999361768201aac85378d45951",
+    "bytes": 9784,
+    "contentType": "text/html; charset=none",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  },
+  {
+    "id": "fukui-guide",
+    "sourceUrl": "http://www3.fctv.ne.jp/~asakura/20kengaku/guide.html",
+    "startedAt": "2026-11-05T12:05:44.987722+00:00",
+    "fetchedAt": "2026-11-05T12:05:45.146986+00:00",
+    "finalUrl": "http://www3.fctv.ne.jp/~asakura/20kengaku/guide.html",
+    "status": 200,
+    "path": "data/work/location-batch2/hokuriku/fukui-guide.html",
+    "sha256": "ecd635747a4e8cec820d745d49d184bba644510f5d7dd966d1123fd5b1ff88d6",
+    "bytes": 9989,
+    "contentType": "text/html; charset=none",
+    "redistribution": "未確認。原本はignored workのみ、Gitには自作事実抽出とhash。"
+  }
+]

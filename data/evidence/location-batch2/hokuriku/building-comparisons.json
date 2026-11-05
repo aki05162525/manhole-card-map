@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "source": "国土地理院最適化ベクトルタイルを加工。試験公開・基本測量成果ではない。",
+  "crsNote": "XYZ Web Mercator格子から経緯度(lat/lng)へ逆変換。一般地理院タイル仕様はJGD2011だがoptbv_dataspec/attributeに測地系の明記なし。製品固有の適用確認は未解決。測地系変換なし。6小数は記録桁数で精度保証でない。",
+  "sadoExcluded29": {
+    "bounds": [
+      -39.0,
+      3455.0,
+      289.0,
+      3922.0
+    ],
+    "bufferLimit": -80,
+    "touchesBufferLimit": false,
+    "roadSeparates": true,
+    "intersectedRoadCenterlineIndices": [
+      43
+    ],
+    "finding": "idx29は西側道路の向こう。minx=-39はbuffer=-80に達せず、タイル端に接することを切断とした旧判断を撤回。"
+  },
+  "representativeStudies": [
+    {
+      "id": "sado-first",
+      "tileId": "sado",
+      "featureIndex": 31,
+      "wholeGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              622,
+              3086
+            ],
+            [
+              768,
+              3396
+            ],
+            [
+              533,
+              3509
+            ],
+            [
+              572,
+              3592
+            ],
+            [
+              807,
+              3481
+            ],
+            [
+              927,
+              3735
+            ],
+            [
+              785,
+              3801
+            ],
+            [
+              719,
+              3662
+            ],
+            [
+              507,
+              3762
+            ],
+            [
+              453,
+              3648
+            ],
+            [
+              544,
+              3605
+            ],
+            [
+              504,
+              3521
+            ],
+            [
+              457,
+              3543
+            ],
+            [
+              310,
+              3232
+            ],
+            [
+              622,
+              3086
+            ]
+          ]
+        ]
+      },
+      "partVertexIndices": [
+        0,
+        1,
+        2,
+        11,
+        12,
+        13,
+        0
+      ],
+      "otherPartVertexIndices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        3
+      ],
+      "partGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              622.0,
+              3086.0
+            ],
+            [
+              768.0,
+              3396.0
+            ],
+            [
+              533.0,
+              3509.0
+            ],
+            [
+              504.0,
+              3521.0
+            ],
+            [
+              457.0,
+              3543.0
+            ],
+            [
+              310.0,
+              3232.0
+            ],
+            [
+              622.0,
+              3086.0
+            ]
+          ]
+        ]
+      },
+      "centroidLocal": [
+        539.2636216528065,
+        3314.620901402902
+      ],
+      "geographicCandidate": {
+        "lat": 38.0186295400575,
+        "lng": 138.3680327791862
+      },
+      "roundedCandidate": {
+        "lat": 38.01863,
+        "lng": 138.368033
+      },
+      "centroidInsidePart": true,
+      "roundedInsidePart": true,
+      "roundedInsideWhole": true,
+      "roundedBoundaryClearanceApproxMetres": 20.192,
+      "partAreaApproxSquareMetres": 1638.43,
+      "otherPartAreaApproxSquareMetres": 1017.29,
+      "publishedFloorAreasSquareMetres": [
+        1849.88,
+        1075.76
+      ],
+      "measurementNote": "局所Mercator縮尺cos(latitude)補正の概算。屋根/描画外形と建築床面積は異なり一致を要求しない。棟境界の切断線は資料の細い渡廊下に対応する頂点間で明示。",
+      "decision": "research-only; no manifest selection or lifecycle binding"
+    },
+    {
+      "id": "asahi-product",
+      "tileId": "asahi-58167-25213",
+      "featureIndex": 116,
+      "wholeGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1468,
+              2405
+            ],
+            [
+              1607,
+              2470
+            ],
+            [
+              1438,
+              2835
+            ],
+            [
+              1321,
+              2780
+            ],
+            [
+              1304,
+              2816
+            ],
+            [
+              1426,
+              2873
+            ],
+            [
+              1348,
+              3040
+            ],
+            [
+              1239,
+              2989
+            ],
+            [
+              1265,
+              2933
+            ],
+            [
+              1183,
+              2895
+            ],
+            [
+              1204,
+              2850
+            ],
+            [
+              1189,
+              2844
+            ],
+            [
+              1218,
+              2781
+            ],
+            [
+              1233,
+              2788
+            ],
+            [
+              1251,
+              2749
+            ],
+            [
+              1235,
+              2742
+            ],
+            [
+              1308,
+              2585
+            ],
+            [
+              1371,
+              2614
+            ],
+            [
+              1468,
+              2405
+            ]
+          ]
+        ]
+      },
+      "partVertexIndices": [
+        0,
+        1,
+        2,
+        3,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "otherPartVertexIndices": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        4
+      ],
+      "partGeometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1468.0,
+              2405.0
+            ],
+            [
+              1607.0,
+              2470.0
+            ],
+            [
+              1438.0,
+              2835.0
+            ],
+            [
+              1321.0,
+              2780.0
+            ],
+            [
+              1251.0,
+              2749.0
+            ],
+            [
+              1235.0,
+              2742.0
+            ],
+            [
+              1308.0,
+              2585.0
+            ],
+            [
+              1371.0,
+              2614.0
+            ],
+            [
+              1468.0,
+              2405.0
+            ]
+          ]
+        ]
+      },
+      "centroidLocal": [
+        1428.5793550719725,
+        2629.3679208189274
+      ],
+      "geographicCandidate": {
+        "lat": 38.28285704237143,
+        "lng": 139.52278989764983
+      },
+      "roundedCandidate": {
+        "lat": 38.282857,
+        "lng": 139.52279
+      },
+      "centroidInsidePart": true,
+      "roundedInsidePart": true,
+      "roundedInsideWhole": true,
+      "roundedBoundaryClearanceApproxMetres": 6.889,
+      "partAreaApproxSquareMetres": 1012.88,
+      "otherPartAreaApproxSquareMetres": 470.09,
+      "publishedFloorAreasSquareMetres": [
+        940,
+        419
+      ],
+      "measurementNote": "局所Mercator縮尺cos(latitude)補正の概算。屋根/描画外形と建築床面積は異なり一致を要求しない。棟境界の切断線は資料の細い渡廊下に対応する頂点間で明示。",
+      "decision": "research-only; no manifest selection or lifecycle binding"
+    }
+  ],
+  "sawataP05Source": {
+    "path": "data/evidence/issue7/hokuriku/p05-leads.json",
+    "sha256": "3c019d13cb429dc679748bbb998f4a90705c9f0ddfcad0328452daf9868f91b5",
+    "retrieval": "既存Issue7抽出の再利用。今回の新規取得ではない。"
+  },
+  "sawataP05": [
+    {
+      "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1193",
+      "name": "佐渡離島開発総合センター",
+      "lng": 138.32251691802279,
+      "lat": 37.99812392540366,
+      "inside253": true
+    },
+    {
+      "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1194",
+      "name": "佐渡中央会館",
+      "lng": 138.3225069179761,
+      "lat": 37.99812392540416,
+      "inside253": true
+    },
+    {
+      "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1215",
+      "name": "佐和田行政サービスセンター",
+      "lng": 138.32250171803022,
+      "lat": 37.99804555530516,
+      "inside253": true
+    },
+    {
+      "sourceLocator": "P05-22_15_GML.zip!P05-22_15.geojson#/features/1218",
+      "name": "佐和田地区公民館",
+      "lng": 138.32248171793688,
+      "lat": 37.9980455553062,
+      "inside253": true
+    }
+  ],
+  "fukui": {
+    "tileId": "fukui-57579-25735",
+    "comparedFeatureIndices": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "positive": "公式広域図(新パンフ物理5頁)の川西岸・道路西側に南北に延びる復原町並と、Vectorの西側の列状外形(3–10,13–19)、南側11/12の建物群を比較。運営者guideは事務所を南入口、売店をその隣と説明する。",
+    "negative": "パンフは複数建物を一括して復原町並と描き、売場・事務所・売店を個々の外形に付記しない。写真も受付棟の名付き全景ではない。11/12や列の端の10を窓口棟とする一意の対応は得られない。",
+    "unresolved": "南入口にあることだけでは隣接する別棟を選べない。チケット売場を示す地理参照可能な配置図/建物対応が必要。入口そのものの測量は不要。"
+  }
+}

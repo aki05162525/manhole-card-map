@@ -3,7 +3,7 @@
   "python": {
     "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
     "exitCode": 0,
-    "tests": 99
+    "tests": 102
   },
   "go": {
     "command": "mise exec -- go test -count=1 ./...",
@@ -28,7 +28,7 @@
   "generated": "generated-check.json",
   "maps": "maps-check.json",
   "audit": {
-    "path": "data/work/location-batch2/north-kanto/after-final-audit.json",
+    "path": "data/work/location-batch2/north-kanto/after-final2-audit.json",
     "sha256": "255d30b7d671fdc75ca2e1462ea634d5e89f1c3d250ad01c9e5fa1361a7d3bb6"
   },
   "limitations": [
@@ -36,8 +36,8 @@
     "builddata初回はmunicheck不足で失敗。元hash付き既存原本をコピー後に前後両生成成功。",
     "新規施設CSV探索は未実施。"
   ],
-  "mergedMain": "d8800718ee8331356ff19751e5b07f6bdcb20818",
-  "postMergeVerification": "main d8800718統合後Python全99/Go-count=1を再実行しexit0。最新mainとの前後生成・全国監査・full/details/pins・Maps関数・159原本参照検査成功。",
+  "mergedMain": "48bf7105758794794b2eba0edece5ec5431b9ed6",
+  "postMergeVerification": "main48bf7105（甲信d8800718＋北陸PR53）統合後Python全102/Go-count=1全件exit0。北陸追加前後の基準/採用後台帳の完全一致も確認し、Go生成・全国監査・世代hash・既存ピン不変・Maps関数を再実行。",
   "reviewedEvidenceUnchanged": true,
   "redExplanation": "初回3failureは2施設subTest＋差分テスト。現2メソッドと矛盾しない。元RED単独ログはworkに見つからず、後日再現をred-reproduction.jsonに分離。"
 }

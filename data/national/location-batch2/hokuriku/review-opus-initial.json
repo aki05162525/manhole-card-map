@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "provider": "claudeAgent",
+  "model": "claude-opus-5-5",
+  "userAuthorizedSubstitution": true,
+  "reviewedHead": "81ae122816c29c93efaf331a2d9be4f032cccfea",
+  "threadId": "thread:delegated-task:command%3Amcp%3A0ba9b7b9-2542-4035-a8b8-7e8d65fcb4ee%3Adelegate-task%3A052ec3d3-f36c-4baa-9f94-c82403c494bb",
+  "completedAt": "2026-11-05T11:48:56.980Z",
+  "result": "do-not-ready; 重大1件。採用承認なし。",
+  "geminiHistoryRef": "data/national/location-batch2/hokuriku/review.json",
+  "findings": [
+    {
+      "id": "major-sado",
+      "finding": "佐渡の切断/隣接タイル結合待ちは誤り",
+      "implementationResponse": "idx29道路分離を再計算、idx31北/南と床面積/形/渡廊下を原本照合。第1庁舎部分の重心・丸め後内包を導出。宿日直同一性は保留。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-1",
+      "finding": "朝日・福井・勝興寺の未取得外形を比較済み扱い",
+      "implementationResponse": "朝日/福井は各5タイルを取得して実比較。朝日は部分内候補導出。福井の個別棟対応不足を具体化。勝興寺はretrieved。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-2",
+      "finding": "監査列挙外stage",
+      "implementationResponse": "既存STAGESに合わせテスト/verifyを追加。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-3",
+      "finding": "佐和田四点の包含記録不足",
+      "implementationResponse": "元Issue7数値からidx253内包を再計算。用途・旧GIS競合を解消する根拠にはしない。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-4",
+      "finding": "verifyの基準固定制約未説明",
+      "implementationResponse": "baseline-manifestを原hashで固定し608を歴史基準で検証。現manifestは別集計、北陸32全フィールドを比較。旧入力hash固定制約も明記。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-5",
+      "finding": "facts節名/旧第2庁舎/施設一覧facts不足",
+      "implementationResponse": "お知らせへ訂正、旧/現名称を区別、一覧facts追加。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-6",
+      "finding": "輪島著作権未取得・震災後現況条件なし",
+      "implementationResponse": "著作権原本取得、marker許諾はなお未確認。震災後現配布棟の継続を再開条件へ。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "minor-7",
+      "finding": "一般GSIタイル仕様のCRSは間接根拠",
+      "implementationResponse": "optbv_dataspec/attributeを取得。測地系明記は見つからず、固有適用確認を残件に。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "selection-order",
+      "finding": "8選定の実際の機械的順序未明記",
+      "implementationResponse": "snapshot順でended-onlyを除く先頭8、単独commitのない時刻検証限界を記載。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "history",
+      "finding": "代替モデル不使用・レビュー前PR提出との不一致",
+      "implementationResponse": "Gemini失敗を歴史記録として保持しユーザー許可によるOpusを別記。Draft先行の順序も開示。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    },
+    {
+      "id": "dependency",
+      "finding": "mise.toml未管理uv",
+      "implementationResponse": "追加調査依存uv0.13.5、uv側Python3.13.12、固定ライブラリを明記。共有mise.toml変更なし。",
+      "independentResolution": "新規Opus再レビュー待ち"
+    }
+  ],
+  "note": "レビュアーの一時画像・手動面積は採用根拠にせず原PBFから再計算。新規再レビューの結果は別記する。"
+}

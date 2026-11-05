@@ -2,7 +2,7 @@
 
 基準commit `f66b7e994ef250fadee78f396d22fdfc40ba6a83`、評価日2026-11-05。開始時はIssue24 originalRefで北関東91ID、第1弾baselineとの一致と未採用をassembleで検証した。全国608は開始時集合。Issue24保存分類はactive78・suspended12・ended-only1で、当日の在庫確認ではない。
 
-選定8件のうち**日立・羽生2件を独立レビュー承認後に採用、6件を保留**。最新main `d8800718`（北海道PR56・近畿西PR45・甲信PR46を含む）統合後の北関東差分は2施設のみ。地域未位置91→89、全国601→599、配布施設ピン985→987。第2弾開始時全国608と統合基準601を区別する。全関係と既存ピンは不変。未選定83件は未調査。
+選定8件のうち**日立・羽生2件を独立レビュー承認後に採用、6件を保留**。最新main `48bf7105`（北海道PR56・近畿西PR45・甲信PR46・採用0の北陸PR53を含む）統合後の北関東差分は2施設のみ。地域未位置91→89、全国601→599、配布施設ピン985→987。第2弾開始時全国608と統合基準601を区別する。全関係と既存ピンは不変。未選定83件は未調査。
 
 [selection.json](../../data/national/location-batch2/north-kanto/selection.json)は8IDを最初に保存した記録を維持し、当初予定と実施手法を分離した。公開CSVを実施済みとは扱わない。[coverage.json](../../data/national/location-batch2/north-kanto/coverage.json)に91件の除外理由と保留参照を保持。ぱりっせ/入間2窓口の選定判断補足は事後明文化と明示した。
 
@@ -43,7 +43,7 @@ Issue16白岡`group-a-outcomes.json#/outcomes/8`と吉岡`#/outcomes/3`を引き
 
 `vector-scan.py`のキャッシュ再実行失敗を再現後、保存provenanceの復元・hash検査・版混在拒否へ修正。`check-cache.py`でネットワークなしの再利用成功、provenance欠落とhash改竄の拒否を確認した。
 
-実施結果は[validation.json](../../data/evidence/location-batch2/north-kanto/validation.json)。統合後Python全99テスト、Go `-count=1` が成功（終了コードを直接確認）。`verify.py --with-work`は159原本/Range/タイル参照、母集団、旧保留の許可再開、旧台帳と正確な差分を検証。builddataは保存一覧20261021・review-list20261105・as-of2026-11-05で前後生成し全国監査も成功。full/details/pinsとmanifest/世代hashが一致、全カード/関係/既存ピンが不変。
+実施結果は[validation.json](../../data/evidence/location-batch2/north-kanto/validation.json)。統合後Python全102テスト、Go `-count=1` が成功（終了コードを直接確認）。`verify.py --with-work`は159原本/Range/タイル参照、母集団、旧保留の許可再開、旧台帳と正確な差分を検証。builddataは保存一覧20261021・review-list20261105・as-of2026-11-05で前後生成し全国監査も成功。full/details/pinsとmanifest/世代hashが一致、全カード/関係/既存ピンが不変。
 
 [Maps検査](../../data/evidence/location-batch2/north-kanto/maps-check.json)は生成detailsの2施設・実関係をUIの`facilityMapLink`へ渡して確定座標リンクを確認した。外部Maps遷移・ブラウザー操作・現地ナビは未検証。UIコード変更/サーバー起動はない。フックは省略しない。
 
