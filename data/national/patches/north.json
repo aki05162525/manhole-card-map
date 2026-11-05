@@ -1,0 +1,696 @@
+{
+  "schema": 1,
+  "region": "north",
+  "patches": [
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-dc7b25bac2387c1d4172"
+      },
+      "field": "name",
+      "oldExists": true,
+      "old": "小樽市水道局本庁舎",
+      "new": "小樽市水道局本庁舎2階サービス課",
+      "reason": "休日窓口追加に合わせ、既存の平日窓口を特定する",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/bea4feea639a0a42f99b.html",
+        "snapshotSHA256": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+        "sourceUrl": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "平日2階サービス課・休日1階当直室、建物単位の入力から分離必要。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-203-A002",
+        "placeId": "facility:north-dc7b25bac2387c1d4172"
+      },
+      "field": "condition",
+      "oldExists": true,
+      "old": "平日（2階サービス課窓口）",
+      "new": "平日。祝日・年末年始除外",
+      "reason": "曜日別窓口を原文どおり限定",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/bea4feea639a0a42f99b.html",
+        "snapshotSHA256": "4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc",
+        "sourceUrl": "https://www.city.otaru.lg.jp/docs/2020112200455/",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "平日2階サービス課・休日1階当直室、建物単位の入力から分離必要。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-12b6e6080ef6e1e816a7"
+      },
+      "field": "name",
+      "oldExists": true,
+      "old": "美唄市役所",
+      "new": "美唄市役所上下水道課窓口",
+      "reason": "休日窓口追加に合わせ、既存の平日窓口を特定する",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/d00c7574bef7982e2b0f.html",
+        "snapshotSHA256": "3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6",
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "9月7日再開。平日上下水道課・土日祝当直室、8:45～17:15。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-215-A001",
+        "placeId": "facility:north-12b6e6080ef6e1e816a7"
+      },
+      "field": "condition",
+      "oldExists": true,
+      "old": "平日（上下水道課窓口）",
+      "new": "平日",
+      "reason": "曜日別窓口を原文どおり限定",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/d00c7574bef7982e2b0f.html",
+        "snapshotSHA256": "3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6",
+        "sourceUrl": "https://www.city.bibai.hokkaido.jp/site/suidou/29785.html",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "9月7日再開。平日上下水道課・土日祝当直室、8:45～17:15。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-c6af31b0552e6e96071a"
+      },
+      "field": "name",
+      "oldExists": true,
+      "old": "古平町総合施設「かなえーる」(古平町役場内)",
+      "new": "古平町複合施設かなえーる2階建設水道課",
+      "reason": "休日窓口追加に合わせ、既存の平日窓口を特定する",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/d107671da4b57c1b927e.html",
+        "snapshotSHA256": "f05cd7ca74eb1de6b570c53df6700485e5baea19592b2a81e62a6c0d25e7502e",
+        "sourceUrl": "https://www.town.furubira.lg.jp/life/detail.php?id=134",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "2022年5月6日新庁舎へ移転。平日2階建設水道課・休日1階管理室。入力は建物一括で窓口分離proposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-406-A001",
+        "placeId": "facility:north-c6af31b0552e6e96071a"
+      },
+      "field": "condition",
+      "oldExists": true,
+      "old": "",
+      "new": "平日",
+      "reason": "曜日別窓口を原文どおり限定",
+      "evidence": {
+        "snapshotPath": "data/evidence/national/north/d107671da4b57c1b927e.html",
+        "snapshotSHA256": "f05cd7ca74eb1de6b570c53df6700485e5baea19592b2a81e62a6c0d25e7502e",
+        "sourceUrl": "https://www.town.furubira.lg.jp/life/detail.php?id=134",
+        "sourceLocator": "マンホールカード 配布場所・時間・変更案内",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "2022年5月6日新庁舎へ移転。平日2階建設水道課・休日1階管理室。入力は建物一括で窓口分離proposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-8da9db2c5cc58d40b221"
+      },
+      "field": "name",
+      "oldExists": true,
+      "old": "花巻市役所石鳥谷総合支所",
+      "new": "花巻市石鳥谷総合支所1階地域振興課建設係",
+      "reason": "休日窓口追加に合わせ、既存の平日窓口を特定する",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-B001",
+        "placeId": "facility:north-8da9db2c5cc58d40b221"
+      },
+      "field": "condition",
+      "oldExists": true,
+      "old": "平日（総合支所地域振興課）",
+      "new": "平日。12/29～1/3除外",
+      "reason": "曜日別窓口を原文どおり限定",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "places",
+      "match": {
+        "id": "facility:north-008e2585ad57dd933bf1"
+      },
+      "field": "name",
+      "oldExists": true,
+      "old": "花巻市役所大迫総合支所",
+      "new": "花巻市大迫総合支所2階地域振興課建設係",
+      "reason": "休日窓口追加に合わせ、既存の平日窓口を特定する",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-C001",
+        "placeId": "facility:north-008e2585ad57dd933bf1"
+      },
+      "field": "condition",
+      "oldExists": true,
+      "old": "平日（総合支所地域振興課）",
+      "new": "平日。12/29～1/3除外",
+      "reason": "曜日別窓口を原文どおり限定",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-A001",
+        "placeId": "facility:north-302d2544c978ef46ca8e"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市 （A001） 03-205-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-A001",
+        "placeId": "facility:north-db757b448c8db73422a5"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市 （A001） 03-205-A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-B001",
+        "placeId": "facility:north-8da9db2c5cc58d40b221"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市 （B001） 03-205-B001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-C001",
+        "placeId": "facility:north-008e2585ad57dd933bf1"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市 （C001） 03-205-C001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-D001",
+        "placeId": "facility:north-79a76f9fa4f60b40d34e"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市(D001) 03-205-D001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/north.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "03-205-D001",
+        "placeId": "facility:north-9cb13f2a84717327940e"
+      },
+      "field": "evidence",
+      "oldExists": true,
+      "old": {
+        "snapshotPath": "data/evidence/national/north/a5006c62538b99c18220.html",
+        "snapshotSHA256": "37fce4a44bd4fbeb67db51f68d665977f0832bddd4f199de913169aec8aceca1",
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/index.html",
+        "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（花巻市(D001) 03-205-D001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード図柄・弾・配布施設を原典と照合。地域別・平日休日別窓口を確認。2026年1月23日以降平日は9～16:30、休日9～17時。B/Cの入力は建物単位で警備員室分離が必要。"
+      },
+      "new": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      },
+      "reason": "初回は詳細のないindexを参照。保存済み詳細原本1012397へ訂正",
+      "evidence": {
+        "sourceUrl": "https://www.city.hanamaki.iwate.jp/kurashi/suidou/1019833/1001196/1012397.html",
+        "snapshotPath": "data/evidence/national/north/d3ab4e65a28b3849cca6.html",
+        "snapshotSHA256": "3f7d6aee02f8ec095430eaf194cfc67882f5eee0084397ac2bd919dba0022565",
+        "sourceLocator": "各地域の配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存済み公式原本の施設名・住所・配布条件を個別照合。現地・人確認ではない。"
+      }
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d",
+        "condition": "4月から5月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:ac7e763f23b8726063bc"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:ac7e763f23b8726063bc",
+        "condition": "6月から8月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d",
+        "condition": "9月から10月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:2e3e65acd34d1bb673af"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:2e3e65acd34d1bb673af",
+        "condition": "11月から3月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "07-202-A001",
+        "placeId": "place:652171d4c3784b670cc1"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "07-202-A001",
+        "placeId": "place:652171d4c3784b670cc1",
+        "condition": "",
+        "raw": [
+          "会津若松市役所",
+          "会津若松市東栄町３番４６号",
+          "【平日】総合案内",
+          "【休日】警備員室"
+        ],
+        "periodRaw": "",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": false
+      },
+      "new": null,
+      "reason": "建物総称の重複。実際の総合案内・警備員室は維持",
+      "evidence": [
+        {
+          "url": "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:43.740635+00:00",
+          "snapshotPath": "data/evidence/national/north/ba3a8929c3df8e66f2af.html",
+          "snapshotSHA256": "041ee626ff6328f00d2be90c8742998e0a40fad95d33469be03cf643378d7ede",
+          "pageTitle": "「マンホールカード」を配布しています | 会津若松市",
+          "findings": "新庁舎1階の平日総合案内と休日警備員室。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1372 @@
+{
+  "schema": 1,
+  "region": "kanto-north",
+  "checkedAt": "2026-11-05",
+  "patches": [
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "places",
+      "old": {
+        "id": "facility:kanto-north-67107257814c51043efa",
+        "legacyIds": [
+          "place:67107257814c51043efa"
+        ],
+        "name": "2階 経営企画課",
+        "address": "栃木県宇都宮市河原町1-41",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-201-A001 / 2階 経営企画課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "new": {
+        "id": "facility:kanto-north-67107257814c51043efa",
+        "legacyIds": [
+          "place:67107257814c51043efa",
+          "place:6de4876b701fc38bd3a1"
+        ],
+        "name": "宇都宮市上下水道局2階 経営企画課",
+        "address": "栃木県宇都宮市河原町1-41",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+          "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+          "sourceLocator": "09-201-A001 / 配布場所：宇都宮市上下水道局（平日：2階経営企画課、土日・祝日：1階警備員室） / 配布時間：午前8時30分から午後5時15分（年末年始を除く平日、土日・祝日）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "建物見出しを独立配布窓口として抽出していた誤り。平日実窓口のaliasへ統合。休日窓口は別施設のまま。",
+      "evidence": {
+        "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+        "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+        "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+        "sourceLocator": "09-201-A001 / 配布場所：宇都宮市上下水道局（平日：2階経営企画課、土日・祝日：1階警備員室） / 配布時間：午前8時30分から午後5時15分（年末年始を除く平日、土日・祝日）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "09-201-A001",
+        "placeId": "facility:kanto-north-67107257814c51043efa",
+        "sourceHash": "4b2f849c5c75af382c75e81385ff38d92f3d6e8d471268f93d924b93462441e7",
+        "hours": [
+          "平日8:30～17:15（年末年始を除く）"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+          "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+          "sourceLocator": "09-201-A001 / 2階 経営企画課 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。上下水道局という建物全体の抽出行は独立窓口と認めず保留。市配布ページは17:15、観光協会とGKPの17:30より優先。"
+        }
+      },
+      "new": {
+        "cardId": "09-201-A001",
+        "placeId": "facility:kanto-north-67107257814c51043efa",
+        "sourceHash": "4b2f849c5c75af382c75e81385ff38d92f3d6e8d471268f93d924b93462441e7",
+        "hours": [
+          "平日8:30～17:15（年末年始を除く）"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+          "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+          "sourceLocator": "09-201-A001 / 配布場所：宇都宮市上下水道局（平日：2階経営企画課、土日・祝日：1階警備員室） / 配布時間：午前8時30分から午後5時15分（年末年始を除く平日、土日・祝日）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        "condition": "平日（年末年始を除く）"
+      },
+      "reason": "見出し由来の空conditionにも平日窓口の条件を明示適用。生の抽出行は履歴として維持。",
+      "evidence": {
+        "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+        "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+        "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+        "sourceLocator": "09-201-A001 / 配布場所：宇都宮市上下水道局（平日：2階経営企画課、土日・祝日：1階警備員室） / 配布時間：午前8時30分から午後5時15分（年末年始を除く平日、土日・祝日）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "places",
+      "old": {
+        "id": "facility:kanto-north-35386468b06ec27f741e",
+        "legacyIds": [
+          "place:35386468b06ec27f741e"
+        ],
+        "name": "邑楽町役場2階 都市計画課",
+        "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "10-525-A001 / 邑楽町役場2階 都市計画課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "new": {
+        "id": "facility:kanto-north-35386468b06ec27f741e",
+        "legacyIds": [
+          "place:35386468b06ec27f741e",
+          "place:123de16085c3e8fd58bd"
+        ],
+        "name": "邑楽町役場2階 都市計画課",
+        "address": "群馬県邑楽郡邑楽町大字中野2570-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "10-525-A001 / 邑楽町役場2階 都市計画課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "reason": "Bの混在行を既存2階都市計画課へalias追加。1階休日受付は既存A施設を共用しB関係を明示追加。",
+      "evidence": {
+        "sourceUrl": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/ae4ddea755fa243b7f5c.html",
+        "snapshotSHA256": "3b627480d83c9cf9aa450b89a5343a3b4410a9ea87e89235a1c64e2473e802e6",
+        "sourceLocator": "10-525-B001 / 注：休館日（月曜・火曜（祝日を除く））は都市計画課（役場庁舎2階）にて配布。注：年末年始は休日受付窓口（役場庁舎1階東側）にて配布。 / 午前8時30分から午後5時15分まで。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "09-211-A001",
+        "placeId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+        "sourceHash": "ff34e3484ffd98cc1671e9f3709249028540d8533e288bf9d7ab80d45d42f86c",
+        "hours": [
+          "9:00～15:00",
+          "第1・第3火曜日（祝祭日は翌日）休み。城の湯温泉センター休館日に準じる"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+          "snapshotPath": "data/evidence/national/kanto-north/6717f8fcf9553cc79a83.html",
+          "snapshotSHA256": "886a4f427dab89faec7cc381ccaadc8e517171633492d59ce14407ea09ba671f",
+          "sourceLocator": "09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。10/23再配布開始告知。"
+        }
+      },
+      "new": {
+        "cardId": "09-211-A001",
+        "placeId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+        "sourceHash": "f0ea031f3571baa606a790406552070d1d22b1b762378d4f08a53a8c6c5838ef",
+        "hours": [
+          "9:00～15:00",
+          "第1・第3火曜日（祝祭日は翌日）休み。城の湯温泉センター休館日に準じる"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+          "snapshotPath": "data/evidence/national/kanto-north/6717f8fcf9553cc79a83.html",
+          "snapshotSHA256": "886a4f427dab89faec7cc381ccaadc8e517171633492d59ce14407ea09ba671f",
+          "sourceLocator": "09-211-A001 / 09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所・配布時間・在庫状況 / 現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+      "evidence": {
+        "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+        "snapshotPath": "data/evidence/national/kanto-north/6717f8fcf9553cc79a83.html",
+        "snapshotSHA256": "886a4f427dab89faec7cc381ccaadc8e517171633492d59ce14407ea09ba671f",
+        "sourceLocator": "09-211-A001 / 09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所・配布時間・在庫状況 / 現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-A001",
+        "placeId": "facility:kanto-north-86b317f4a95dbb2aa4fd",
+        "sourceHash": "34c61caa2b3a46336a908e9292d469d716fc44f1ce4fb40e0d55f2ed72d14918",
+        "hours": [
+          "平日8:30～18:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 所沢市上下水道局1階 お客様センター / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-A001",
+        "placeId": "facility:kanto-north-86b317f4a95dbb2aa4fd",
+        "sourceHash": "c4f3e5f53153028acc7bcad11f582e45183cdc2cb7b3e6e247298fbab22a5d40",
+        "hours": [
+          "平日8:30～18:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 お客様センター / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 お客様センター / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-A001",
+        "placeId": "facility:kanto-north-3dee3a4996cb5afc3f41",
+        "sourceHash": "34c61caa2b3a46336a908e9292d469d716fc44f1ce4fb40e0d55f2ed72d14918",
+        "hours": [
+          "土日祝・年末年始8:30～18:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 所沢市上下水道局1階 夜間・総合窓口 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-A001",
+        "placeId": "facility:kanto-north-3dee3a4996cb5afc3f41",
+        "sourceHash": "c4f3e5f53153028acc7bcad11f582e45183cdc2cb7b3e6e247298fbab22a5d40",
+        "hours": [
+          "土日祝・年末年始8:30～18:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 夜間・総合窓口 / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        "condition": "土日祝・年末年始"
+      },
+      "reason": "現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 夜間・総合窓口 / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-B001",
+        "placeId": "facility:kanto-north-b49337e3f4e3384f788a",
+        "sourceHash": "b20340e0430b999a2b68951a9ef5f74ee46c80908274853aed12ad294f90b28d",
+        "hours": [
+          "平日9:00～16:30"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。市現行案内の配布時間9:00～16:30。GKP8:30～17:15から訂正。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-B001",
+        "placeId": "facility:kanto-north-b49337e3f4e3384f788a",
+        "sourceHash": "ffbcbe92536060d1a6aba2ed2b0049a24277211cefc86a583097abfd39469c83",
+        "hours": [
+          "平日9:00～16:30"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-B001",
+        "placeId": "facility:kanto-north-9a337b5f8519622fa6cb",
+        "sourceHash": "b20340e0430b999a2b68951a9ef5f74ee46c80908274853aed12ad294f90b28d",
+        "hours": [
+          "土日祝・年末年始9:00～16:30"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 所沢市役所1階 夜間休日受付 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。市現行案内の配布時間9:00～16:30。GKP8:30～17:15から訂正。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-B001",
+        "placeId": "facility:kanto-north-9a337b5f8519622fa6cb",
+        "sourceHash": "ffbcbe92536060d1a6aba2ed2b0049a24277211cefc86a583097abfd39469c83",
+        "hours": [
+          "土日祝・年末年始9:00～16:30"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所1階 夜間休日受付 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        "condition": "土日祝・年末年始"
+      },
+      "reason": "現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所1階 夜間休日受付 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-C001",
+        "placeId": "facility:kanto-north-338d33c309d5e44859e4",
+        "sourceHash": "090d55b3cdfbafcd0c04d264e8aa4d67f74245a90a00e300f1b648f60593792e",
+        "hours": [
+          "10:00～17:00",
+          "木曜日・祝日・年末年始休み"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-C001 / 野老澤町造商店 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。市2026-10-01更新。施設公式の臨時休業にも留意。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-C001",
+        "placeId": "facility:kanto-north-338d33c309d5e44859e4",
+        "sourceHash": "8525db975e7ff9ddcf3f5028aa50b781b5f6283b627dcf977f7444066eb3556d",
+        "hours": [
+          "10:00～17:00",
+          "木曜日・祝日・年末年始休み"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-C001 / 11-208-C001 / 野老澤町造商店 / 配布場所・配布時間・在庫状況 / 現GKPはリンクのみ変更、時間10～17:30・水木休は市と不一致。市第16弾の10～17時・木曜祝日年末年始休、在庫ありを再採用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPはリンクのみ変更、時間10～17:30・水木休は市と不一致。市第16弾の10～17時・木曜祝日年末年始休、在庫ありを再採用。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-C001 / 11-208-C001 / 野老澤町造商店 / 配布場所・配布時間・在庫状況 / 現GKPはリンクのみ変更、時間10～17:30・水木休は市と不一致。市第16弾の10～17時・木曜祝日年末年始休、在庫ありを再採用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-208-D001",
+        "placeId": "facility:kanto-north-6ff13e2850b584937120",
+        "sourceHash": "515713b5c1fbd636ce652e6350f0ec602cca8a1fa7f9f0d516fdda07d948773d",
+        "hours": [
+          "9:00～17:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-D001 / 所沢市観光情報・物産館YOT-TOKO / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-208-D001",
+        "placeId": "facility:kanto-north-6ff13e2850b584937120",
+        "sourceHash": "bf4daa4503db9f7aa8140d86bf95662874ef0d7077dcd7fd9212714de60ab7df",
+        "hours": [
+          "9:00～17:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-D001 / 11-208-D001 / 所沢市観光情報・物産館YOT-TOKO / 配布場所・配布時間・在庫状況 / 現GKP参照URL変更。市第16弾YOT-TOKOの9～17時、住所松郷143-3、在庫ありを再読。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKP参照URL変更。市第16弾YOT-TOKOの9～17時、住所松郷143-3、在庫ありを再読。",
+      "evidence": {
+        "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+        "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+        "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+        "sourceLocator": "11-208-D001 / 11-208-D001 / 所沢市観光情報・物産館YOT-TOKO / 配布場所・配布時間・在庫状況 / 現GKP参照URL変更。市第16弾YOT-TOKOの9～17時、住所松郷143-3、在庫ありを再読。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-242-B001",
+        "placeId": "facility:kanto-north-55e31c11e0a51fc0ce61",
+        "sourceHash": "1121a9107b3ac3217b3ceda72c1d2a556064870a20413310c598d768a6bfac5c",
+        "hours": [
+          "2026-10-26から在庫切れで配布休止。再開未定"
+        ],
+        "status": "suspended",
+        "evidence": {
+          "sourceUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+          "snapshotPath": "data/evidence/national/kanto-north/e427d4736d745c8e2576.html",
+          "snapshotSHA256": "73d082e268d4029fcf0d7fc927c70da27b5ec7575d14c4062d8d63b4ac64a638",
+          "sourceLocator": "11-242-B001 / 高麗公民館 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-242-B001",
+        "placeId": "facility:kanto-north-55e31c11e0a51fc0ce61",
+        "sourceHash": "853ed0962c61d57a07a57e31d9ee91be191496be7e28bf625245cbd06f2fb008",
+        "hours": [
+          "2026-10-26から在庫切れで配布休止。再開未定"
+        ],
+        "status": "suspended",
+        "evidence": {
+          "sourceUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+          "snapshotPath": "data/evidence/national/kanto-north/e427d4736d745c8e2576.html",
+          "snapshotSHA256": "73d082e268d4029fcf0d7fc927c70da27b5ec7575d14c4062d8d63b4ac64a638",
+          "sourceLocator": "11-242-B001 / 11-242-B001 / 高麗公民館 / 配布場所・配布時間・在庫状況 / 現GKPの現在一時中止と、市10/26から在庫切れ休止・再開未定が一致。suspendedを再採用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPの現在一時中止と、市10/26から在庫切れ休止・再開未定が一致。suspendedを再採用。",
+      "evidence": {
+        "sourceUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+        "snapshotPath": "data/evidence/national/kanto-north/e427d4736d745c8e2576.html",
+        "snapshotSHA256": "73d082e268d4029fcf0d7fc927c70da27b5ec7575d14c4062d8d63b4ac64a638",
+        "sourceLocator": "11-242-B001 / 11-242-B001 / 高麗公民館 / 配布場所・配布時間・在庫状況 / 現GKPの現在一時中止と、市10/26から在庫切れ休止・再開未定が一致。suspendedを再採用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-245-B001",
+        "placeId": "facility:kanto-north-5c4982af3e662dc55961",
+        "sourceHash": "961dc5da0a9333b478c4515d7b2ded403b3214090ee1b6b0d1941bd94202a305",
+        "hours": [
+          "9:00～17:00",
+          "第3月曜（祝日は翌火曜）休み"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / ふじみ野 ステラ・イースト / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-245-B001",
+        "placeId": "facility:kanto-north-5c4982af3e662dc55961",
+        "sourceHash": "9ea610956602a9a9d001f56176d86b1f7dd16221b810c2682feb559b0a5eddbd",
+        "hours": [
+          "9:00～17:00",
+          "第3月曜（祝日は翌火曜）休み"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野 ステラ・イースト / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      },
+      "reason": "現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+      "evidence": {
+        "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+        "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+        "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+        "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野 ステラ・イースト / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    },
+    {
+      "targetFile": "data/overrides/regions/kanto-north.json",
+      "section": "relations",
+      "old": {
+        "cardId": "11-245-B001",
+        "placeId": "facility:kanto-north-afe67f47007d5e1f246c",
+        "sourceHash": "961dc5da0a9333b478c4515d7b2ded403b3214090ee1b6b0d1941bd94202a305",
+        "hours": [
+          "ステラ・イースト休館日の9:00～17:00"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / ふじみ野市上下水道課 / 配布場所・配布時間・在庫状況",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+        }
+      },
+      "new": {
+        "cardId": "11-245-B001",
+        "placeId": "facility:kanto-north-afe67f47007d5e1f246c",
+        "sourceHash": "9ea610956602a9a9d001f56176d86b1f7dd16221b810c2682feb559b0a5eddbd",
+        "hours": [
+          "毎月第3月曜日9:00～17:00（祝日翌火曜日の代替配布は公式本文に明記なし。要確認）"
+        ],
+        "status": "active",
+        "evidence": {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野市上下水道課 / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        "condition": "毎月第3月曜日（ステラ・イースト休館日）"
+      },
+      "reason": "現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+      "evidence": {
+        "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+        "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+        "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+        "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野市上下水道課 / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+      }
+    }
+  ],
+  "proposalDecisions": [
+    {
+      "cardId": "08-208-B001",
+      "state": "adopted-with-limitations",
+      "reason": "追加関係を採用。第10弾の9～17時は第23弾へ流用しない。年始の代替可否・時間は未確定として条件に明記。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.ryugasaki.ibaraki.jp/kurashi/seikatsu/suido/oshirase/ryugasaki-mhc.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2812224f969d01c2a5a5.html",
+          "snapshotSHA256": "7a502840379752b862a77c96f4171f1e866bdad131c2a5ad210567d69c4361bb",
+          "sourceLocator": "08-208-B001 / 定休日 月曜日(月曜が祝日の場合は翌日)、1月1日から1月3日まで / ※定休日のみ龍ケ崎市役所下水道課にて配布しています。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "08-215-A001",
+      "state": "adopted",
+      "reason": "旧legacyは守衛室へ対応させ曜日を限定、市民課をaddition。2実窓口に分離。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+          "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+          "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+          "sourceLocator": "08-215-A001 / 【土曜日・日曜日・祝祭日・年末年始（日曜開庁日以外）】庁舎１階 守衛室 / 【日曜開庁日】（第２、第４日曜 年末年始を除く）庁舎１階 市民課窓口 / 配布時間９：００〜１７：００",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "08-231-A001",
+      "state": "adopted-with-limitations",
+      "reason": "新窓口は採用。旧下水道課の終了日・終了告知は確認できず旧関係は未承認で維持。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+          "snapshotPath": "data/evidence/national/kanto-north/46cfe2892a6fb58a2c97.html",
+          "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff",
+          "sourceLocator": "08-231-A001 / 【平日】桜川市水道お客様センター（桜川市役所真壁庁舎2階） / 住所：茨城県桜川市真壁町飯塚911番地 / 9：00～16：00",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "09-201-A001",
+      "state": "adopted",
+      "reason": "施設を増やさず既存平日窓口へalias統合。Go出力の原文関係行は2行残るが同一card+facility。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+          "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+          "sourceLocator": "09-201-A001 / 配布場所：宇都宮市上下水道局（平日：2階経営企画課、土日・祝日：1階警備員室） / 配布時間：午前8時30分から午後5時15分（年末年始を除く平日、土日・祝日）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "10-206-A001",
+      "state": "adopted",
+      "reason": "4階上下水道経営課を追加、既存5階窓口は維持。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.numata.gunma.jp/life/suido/gesui/1010518.html",
+          "snapshotPath": "data/evidence/national/kanto-north/c938ea87cf76022d2897.html",
+          "snapshotSHA256": "b2fca3b1a3a22d9b075630677e79d3ee0609a1d92c6ee82d158dc492be19ab25",
+          "sourceLocator": "10-206-A001 / ※水曜日は、テラス沼田（沼田市下之町888番地）4階上下水道経営課、5階観光交流課（午前8時30分から午後5時15分）で配布しております。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "10-208-A001",
+      "state": "adopted-with-limitations",
+      "reason": "代替配布関係のみ採用。第二庁舎の配布時刻は未確定。",
+      "evidence": [
+        {
+          "sourceUrl": "http://www.city.shibukawa.lg.jp/kurashi/jyougesuidou/gesuidou/p006148.html",
+          "snapshotPath": "data/evidence/national/kanto-north/1d9cec8e5dc4fbe3229e.html",
+          "snapshotSHA256": "361bff13999f4e4fa33653f575ed66cdae8a094e91edccaf004208721059bcb4",
+          "sourceLocator": "10-208-A001 / ＊定期清掃時は、渋川市役所上下水道局下水道課にて配布します。（渋川市役所第二庁舎の方になりますので、お越しになる際はご注意ください。） / 問い合わせ先 下水道課：群馬県渋川市石原6番地1",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "10-525-B001",
+      "state": "adopted",
+      "reason": "既存Aの2施設を共用。Bを平日の月火と年末年始の2関係へ分離。施設増加なし。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/ae4ddea755fa243b7f5c.html",
+          "snapshotSHA256": "3b627480d83c9cf9aa450b89a5343a3b4410a9ea87e89235a1c64e2473e802e6",
+          "sourceLocator": "10-525-B001 / 注：休館日（月曜・火曜（祝日を除く））は都市計画課（役場庁舎2階）にて配布。注：年末年始は休日受付窓口（役場庁舎1階東側）にて配布。 / 午前8時30分から午後5時15分まで。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-246-A001",
+      "state": "adopted-with-limitations",
+      "reason": "仮設本庁舎を採用。旧庁舎の配布終了は断定しない。味彩センターの午後9:30という矛盾は未解決。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+          "snapshotPath": "data/evidence/national/kanto-north/e9da0ea40950950a0e2a.html",
+          "snapshotSHA256": "3b28f6f91bb5e4b6cf7d495d3ee8d7ce6bb814f6b78d9655bc836a20fbe9246e",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "sourceLocator": "11-246-A001 / 配布表下段：白岡市役所仮設本庁舎 商工観光課 / 午前9時から午後4時30分まで / 月曜日○、他曜日×",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-346-A001",
+      "state": "adopted",
+      "reason": "さまちか・役場日直と別の実窓口を追加。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+          "snapshotPath": "data/evidence/national/kanto-north/fbb24fac0b7e67537966.html",
+          "snapshotSHA256": "a054593ddb7947e1ee2a607320a3b527b170f29fb55c1b2a61e78175fa54992d",
+          "sourceLocator": "11-346-A001 / 配布時間 【平日】午前9時から午後5時 / ※川島町役場上下水道課（川島町役場1階）でも配布しております。 / ※年末年始（12月29日～1月3日）は配布しません。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    }
+  ],
+  "pendingRelationDecisions": [
+    {
+      "cardId": "08-215-A001",
+      "legacyPlaceId": "place:29bd0325065029394d6b",
+      "state": "resolved",
+      "reason": "守衛室へのlegacy対応と日曜市民課のadditionで曜日を分離。",
+      "attempts": [
+        {
+          "url": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+          "finalUrl": "https://www.city.kitaibaraki.lg.jp/docs/2019121200037/",
+          "fetchedAt": "2026-11-05T04:23:30.650089+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/a28213c27c2fcf7b6cbc.html",
+          "snapshotSHA256": "f1d1f1eeb05954a6d19ceaecb06c1119e069d3ee17fd0292978ddfa09797c5ff",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        }
+      ]
+    },
+    {
+      "cardId": "08-231-A001",
+      "legacyPlaceId": "place:198f070515a946f64966",
+      "state": "pending",
+      "reason": "現行市配布ページは水道お客様センターを指定。下水道課という旧窓口の配布終了や改称を明示する独立告知は確認できず、旧関係は未承認のまま。新センターだけ追加。",
+      "attempts": [
+        {
+          "url": "http://www.city.sakuragawa.lg.jp/page/dir000068.html",
+          "finalUrl": "https://www.city.sakuragawa.lg.jp/page/dir000068.html",
+          "fetchedAt": "2026-11-05T04:23:45.912133+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/90e25a50766910957b2b.html",
+          "snapshotSHA256": "8c72679757c58a92102d3540877fd1ccd2354a23932a928d2483a74ef7f4ae2e",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "http://www.city.sakuragawa.lg.jp/page/page006330.html",
+          "finalUrl": "https://www.city.sakuragawa.lg.jp/page/page006330.html",
+          "fetchedAt": "2026-11-05T04:23:53.696938+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/e7fdb8f7bf4457907215.html",
+          "snapshotSHA256": "d24b99b3875b455436dd252fbfc637ab74ae574c99a99d7fad16f16776745d81",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+          "finalUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+          "fetchedAt": "2026-11-05T04:24:15.403776+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/46cfe2892a6fb58a2c97.html",
+          "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.sakuragawa.lg.jp/map.php?code=3",
+          "finalUrl": "https://www.google.co.jp/maps?q=36.2783968826407,140.091696381569&z=15&hl=ja",
+          "fetchedAt": "2026-11-05T04:26:39.861764+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/4376a99a5e8d92ab8e52.html",
+          "snapshotSHA256": "c7d890d49bfd873abf5ebd9101af0efd3c9919fe7b216e66f7e26cab7e091682",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.sakuragawa.lg.jp/shisei/profile/page008866.html",
+          "finalUrl": "https://www.city.sakuragawa.lg.jp/shisei/profile/page008866.html",
+          "fetchedAt": "2026-11-05T04:26:41.372437+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/8830a3f2d8c14c85f5fd.html",
+          "snapshotSHA256": "849c222c02e068c25aa5b9dad9cd279a7d0e1ec2608a584a4a375eeb94d45a73",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        }
+      ]
+    },
+    {
+      "cardId": "09-201-A001",
+      "legacyPlaceId": "place:6de4876b701fc38bd3a1",
+      "state": "resolved",
+      "reason": "市原典の括弧内は平日経営企画課・休日警備員室。独立窓口のない建物見出しを既存経営企画課のaliasに統合。",
+      "attempts": [
+        {
+          "url": "http://www.city.utsunomiya.tochigi.jp/josuido/index.html",
+          "finalUrl": "https://www.city.utsunomiya.lg.jp/josuido/index.html",
+          "fetchedAt": "2026-11-05T04:24:00.208190+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/f3823214aa901e791a35.html",
+          "snapshotSHA256": "b2b31d60125f4eddfb2d20fa4bb34a60fa2ff9ce109654d6b62f6df3c8a1736e",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "finalUrl": "https://www.city.utsunomiya.lg.jp/josuido/user/1018745/1012918.html",
+          "fetchedAt": "2026-11-05T04:27:08.334858+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/437c26841653ef0c4a20.html",
+          "snapshotSHA256": "87657158982c049ff5780ac6ce48f1ad41aaba017679debc8807384493fcae1d",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        }
+      ]
+    },
+    {
+      "cardId": "10-210-A001",
+      "legacyPlaceId": "place:7f804a59300f56c710b7",
+      "state": "pending",
+      "reason": "市原典1474333379830は初回HTTP/HTTPSともTLS insufficient security。セキュリティ緩和や別経路での取得回避は実施しない。市観光公式旧韮塚製糸場ページは施設開場時間のみでカード条件なし。検索で見つかった観光公式7160はLOGet!CARD別商品かつ原本404。県21100は流域下水道カードの案内で富岡市カードの配布根拠ではない。検索索引の市配布時刻だけでは承認しない。",
+      "attempts": [
+        {
+          "url": "https://www.tomioka-silk.jp/_spot/sightseeing/detail/id=7679",
+          "finalUrl": "https://www.tomioka-silk.jp/_spot/sightseeing/detail/id=7679",
+          "fetchedAt": "2026-11-05T04:24:49.063494+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/a98cdd326ad4093215d0.html",
+          "snapshotSHA256": "3c101fa81f12359993271f530283a87f7a56428a33e76641db2ae2bd30d8e111",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "http://www.city.tomioka.lg.jp/www/contents/1474333379830/index.html",
+          "fetchedAt": "2026-11-05T04:24:49.413211+00:00",
+          "error": "<urlopen error [SSL: TLSV1_ALERT_INSUFFICIENT_SECURITY] tlsv1 alert insufficient security (_ssl.c:1082)>",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "failed"
+        },
+        {
+          "url": "https://www.city.tomioka.lg.jp/www/contents/1474333379830/index.html",
+          "fetchedAt": "2026-11-05T04:35:55.387058+00:00",
+          "error": "<urlopen error [SSL: TLSV1_ALERT_INSUFFICIENT_SECURITY] tlsv1 alert insufficient security (_ssl.c:1082)>",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "failed"
+        },
+        {
+          "url": "https://www.tomioka-silk.jp/_tomioka-silk-mill/access/",
+          "finalUrl": "https://www.tomioka-silk.jp/_tomioka-silk-mill/access/",
+          "fetchedAt": "2026-11-05T04:26:54.819478+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/75afc0dc644f59195154.html",
+          "snapshotSHA256": "17477caeda65883d8454a29508055966687b192b76390b8adfa2a0ac97f92112",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.tomioka-silk.jp/_tomioka-silk-mill/tomioka-silk/news/detail/id%3D7160",
+          "fetchedAt": "2026-11-05T04:51:45.803839+00:00",
+          "status": 404,
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/d16d20c09ec59833bb06.html",
+          "snapshotSHA256": "25475180d1cf0703c1786cb8c3634be987f5b6fe471e2032706e55b66630b0fa"
+        },
+        {
+          "url": "https://www.pref.gunma.jp/page/21100.html",
+          "fetchedAt": "2026-11-05T04:51:47.064505+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.gunma.jp/page/21100.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/1340b58e26dd5ccc7382.html",
+          "snapshotSHA256": "e1f4f1b356c0a251d5a41495f7d84f3a71e0925b79b4de8dd3cdd884e5eb4d63"
+        }
+      ]
+    },
+    {
+      "cardId": "10-525-B001",
+      "legacyPlaceId": "place:123de16085c3e8fd58bd",
+      "state": "resolved",
+      "reason": "町第2弾記事の月火2階と年末年始1階を分離。両者とも既存A施設を共用。",
+      "attempts": [
+        {
+          "url": "https://www.town.ora.gunma.jp/orabiyori/050/010/symbol-tower.html",
+          "finalUrl": "https://www.town.ora.gunma.jp/orabiyori/050/010/symbol-tower.html",
+          "fetchedAt": "2026-11-05T04:24:56.918167+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/f2f756d7134050f110d1.html",
+          "snapshotSHA256": "fc11d0946368710f80721facfbb3be6982e91e58dff9cbc0266a4aa573c0ba28",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+          "finalUrl": "https://www.town.ora.gunma.jp/s018/020/050/120/2023-manho-rucard.html",
+          "fetchedAt": "2026-11-05T04:24:58.782544+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/ae4ddea755fa243b7f5c.html",
+          "snapshotSHA256": "3b627480d83c9cf9aa450b89a5343a3b4410a9ea87e89235a1c64e2473e802e6",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.town.ora.gunma.jp/li/050/040/index.html",
+          "finalUrl": "https://www.town.ora.gunma.jp/li/050/040/index.html",
+          "fetchedAt": "2026-11-05T04:26:56.629934+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/b64ef1f4c6f39670fd9a.html",
+          "snapshotSHA256": "c3865dc2d8f0d07a3505ca3e25b4f2aec8b0a1c73de343178b7ab117f0bafaf3",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        }
+      ]
+    },
+    {
+      "cardId": "11-233-A001",
+      "legacyPlaceId": "place:4661877fca07c64296b8",
+      "state": "pending",
+      "reason": "市14043の404原本とカテゴリ本文を再読。県kitamoto.htmlは発行ありのみで配布先・在庫は市へ照会と明記。北本市観光協会machikan.comのマンホール検索は表示できるコンテンツなし。2025年の一時終了は検索索引以外の現原本を取得できずsuspendedの確定根拠不足。",
+      "attempts": [
+        {
+          "url": "https://www.city.kitamoto.lg.jp/soshiki/toshiseibi/kensetsu/gyomu/g2/mhc/14043.html",
+          "fetchedAt": "2026-11-05T04:25:15.257286+00:00",
+          "status": 404,
+          "error": "HTTP Error 404: Not Found",
+          "snapshotPath": "data/evidence/national/kanto-north/1ed51d81c6b5e68b096a.html",
+          "snapshotSHA256": "1179c54ca69ed31abc58b9e50ecc3498db9b44aa72a06988a5b43c3799793c2a",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "failed"
+        },
+        {
+          "url": "https://www.city.kitamoto.lg.jp/soshiki/toshiseibi/kensetsu/gyomu/g2/mhc/index.html",
+          "finalUrl": "https://www.city.kitamoto.lg.jp/soshiki/toshiseibi/kensetsu/gyomu/g2/mhc/index.html",
+          "fetchedAt": "2026-11-05T04:25:16.424848+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/d7d7d6982c77c93f1f32.html",
+          "snapshotSHA256": "02b0e45a7d98ea3f0da1fbafb6418cb0cc223972bdd7d96a292db235cda6b808",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.machikan.com/?s=%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB",
+          "fetchedAt": "2026-11-05T04:52:12.424871+00:00",
+          "status": 200,
+          "finalUrl": "https://www.machikan.com/?s=%E3%83%9E%E3%83%B3%E3%83%9B%E3%83%BC%E3%83%AB",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/3c371883f0c549e8509d.html",
+          "snapshotSHA256": "c902c65451ef004f1e32bb3adb10f00fd3a675ddfc104a68518ebe6bf98ed849"
+        },
+        {
+          "url": "https://www.pref.saitama.lg.jp/c1501/manhole/kitamoto.html",
+          "fetchedAt": "2026-11-05T04:52:14.729556+00:00",
+          "status": 200,
+          "finalUrl": "https://www.pref.saitama.lg.jp/c1501/manhole/kitamoto.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/efeec9c19126b0a5822c.html",
+          "snapshotSHA256": "eba30c5eeb5e13ab4e4d3d693ea515138d4ed7f013d7cd6a0af572bbcf882ccd"
+        }
+      ]
+    },
+    {
+      "cardId": "11-246-A001",
+      "legacyPlaceId": "place:767f5909e50bd88d3d3b",
+      "state": "pending",
+      "reason": "市1206/4701/3419はいずれも同一HP_MHC.jpgを参照。画像は午後9時30分から午後3時30分という矛盾。施設2018年記事?p=2271の検索索引は9:30～17時だが、取得原本は施設トップと同じSHA256で本文なし。古い営業時間から2026年の配布時刻を推測せず未承認。",
+      "attempts": [
+        {
+          "url": "https://www.shiraoka-ajisai.center/",
+          "finalUrl": "https://www.shiraoka-ajisai.center/",
+          "fetchedAt": "2026-11-05T04:25:19.821649+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/da84a43e541a9ecf325d.html",
+          "snapshotSHA256": "64d8aafcbf27b05c717738099d5c804adb7dc8e7ca2f594ba3a0b2bea8d935ab",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/jogesuidobu/jogesuidouka/2/1206.html",
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/jogesuidobu/jogesuidouka/2/1206.html",
+          "fetchedAt": "2026-11-05T04:25:20.092079+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/cc7023e535c0b5fe0af1.html",
+          "snapshotSHA256": "6c129dbd62fe90966042071206ddd9980d7fe3a772603e9609ea3a3fcaf8b4c0",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+          "finalUrl": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+          "fetchedAt": "2026-11-05T04:35:43.990984+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/e9da0ea40950950a0e2a.html",
+          "snapshotSHA256": "3b28f6f91bb5e4b6cf7d495d3ee8d7ce6bb814f6b78d9655bc836a20fbe9246e",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/miryoku_hasshin/miru_asobu_taberu/2/4701.html",
+          "fetchedAt": "2026-11-05T04:50:04.302389+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/miryoku_hasshin/miru_asobu_taberu/2/4701.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/e51c5534d8bf967525e9.html",
+          "snapshotSHA256": "22c4648a0e569eb1f7530b5c625aa44b3f279de60f350746b8aaed526899ad67"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/kurashi_tetsuzuki/jogesuido/1/3419.html",
+          "fetchedAt": "2026-11-05T04:51:43.081838+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/kurashi_tetsuzuki/jogesuido/1/3419.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/231cb29dca0a96c2827c.html",
+          "snapshotSHA256": "377e69004681e08ab8db2087805eea7f0d4780d8a3564071d1735b33486cb222"
+        },
+        {
+          "url": "https://www.shiraoka-ajisai.center/?p=2271",
+          "fetchedAt": "2026-11-05T04:51:44.361088+00:00",
+          "status": 200,
+          "finalUrl": "https://www.shiraoka-ajisai.center/?p=2271",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/818461c46e5ad3687f6c.html",
+          "snapshotSHA256": "64d8aafcbf27b05c717738099d5c804adb7dc8e7ca2f594ba3a0b2bea8d935ab"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/seikatsukeizaibu/shokokankoka/8/703.html",
+          "fetchedAt": "2026-11-05T04:50:05.613954+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/seikatsukeizaibu/shokokankoka/8/703.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/00f98834eff4df2ad43b.html",
+          "snapshotSHA256": "9b42feda8b59f2c3f9f47f9850c9a034152db7f12891bd503aedb15404ba361b"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/kikakuseisakuka/shicyousya/9089.html",
+          "fetchedAt": "2026-11-05T04:50:42.163999+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/kikakuseisakuka/shicyousya/9089.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/0cb40e4741b7760d3e84.html",
+          "snapshotSHA256": "8917d9b8778821a3aba279fc691a622bf87088dcfb1e548a43dc07ba504344fa"
+        }
+      ]
+    },
+    {
+      "cardId": "11-246-A001",
+      "legacyPlaceId": "place:ac28e5c2b5b86ea16b94",
+      "state": "pending",
+      "reason": "市703・9089で仮設本庁舎内の商工観光課と所在地は確認でき、新関係は採用。旧GKP窓口が旧本庁舎・暫定窓口のどちらを指すか、当該旧カード窓口の配布終了日は独立根拠なし。終了・削除せず未承認で残す。",
+      "attempts": [
+        {
+          "url": "https://www.shiraoka-ajisai.center/",
+          "finalUrl": "https://www.shiraoka-ajisai.center/",
+          "fetchedAt": "2026-11-05T04:25:19.821649+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/da84a43e541a9ecf325d.html",
+          "snapshotSHA256": "64d8aafcbf27b05c717738099d5c804adb7dc8e7ca2f594ba3a0b2bea8d935ab",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/jogesuidobu/jogesuidouka/2/1206.html",
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/jogesuidobu/jogesuidouka/2/1206.html",
+          "fetchedAt": "2026-11-05T04:25:20.092079+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/cc7023e535c0b5fe0af1.html",
+          "snapshotSHA256": "6c129dbd62fe90966042071206ddd9980d7fe3a772603e9609ea3a3fcaf8b4c0",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+          "finalUrl": "https://www.city.shiraoka.lg.jp/material/images/group/42/HP_MHC.jpg",
+          "fetchedAt": "2026-11-05T04:35:43.990984+00:00",
+          "status": 200,
+          "snapshotPath": "data/evidence/national/kanto-north/e9da0ea40950950a0e2a.html",
+          "snapshotSHA256": "3b28f6f91bb5e4b6cf7d495d3ee8d7ce6bb814f6b78d9655bc836a20fbe9246e",
+          "purpose": "配布先・条件・座標の確認",
+          "result": "retrieved"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/miryoku_hasshin/miru_asobu_taberu/2/4701.html",
+          "fetchedAt": "2026-11-05T04:50:04.302389+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/miryoku_hasshin/miru_asobu_taberu/2/4701.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/e51c5534d8bf967525e9.html",
+          "snapshotSHA256": "22c4648a0e569eb1f7530b5c625aa44b3f279de60f350746b8aaed526899ad67"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/kurashi_tetsuzuki/jogesuido/1/3419.html",
+          "fetchedAt": "2026-11-05T04:51:43.081838+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/kurashi_tetsuzuki/jogesuido/1/3419.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/231cb29dca0a96c2827c.html",
+          "snapshotSHA256": "377e69004681e08ab8db2087805eea7f0d4780d8a3564071d1735b33486cb222"
+        },
+        {
+          "url": "https://www.shiraoka-ajisai.center/?p=2271",
+          "fetchedAt": "2026-11-05T04:51:44.361088+00:00",
+          "status": 200,
+          "finalUrl": "https://www.shiraoka-ajisai.center/?p=2271",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/818461c46e5ad3687f6c.html",
+          "snapshotSHA256": "64d8aafcbf27b05c717738099d5c804adb7dc8e7ca2f594ba3a0b2bea8d935ab"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/seikatsukeizaibu/shokokankoka/8/703.html",
+          "fetchedAt": "2026-11-05T04:50:05.613954+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/seikatsukeizaibu/shokokankoka/8/703.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/00f98834eff4df2ad43b.html",
+          "snapshotSHA256": "9b42feda8b59f2c3f9f47f9850c9a034152db7f12891bd503aedb15404ba361b"
+        },
+        {
+          "url": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/kikakuseisakuka/shicyousya/9089.html",
+          "fetchedAt": "2026-11-05T04:50:42.163999+00:00",
+          "status": 200,
+          "finalUrl": "https://www.city.shiraoka.lg.jp/soshiki/keieikikakubu/kikakuseisakuka/shicyousya/9089.html",
+          "snapshotPath": "data/evidence/national/proposals-kanto-north/0cb40e4741b7760d3e84.html",
+          "snapshotSHA256": "8917d9b8778821a3aba279fc691a622bf87088dcfb1e548a43dc07ba504344fa"
+        }
+      ]
+    }
+  ],
+  "currentSourceReviews": [
+    {
+      "cardId": "09-211-A001",
+      "oldSourceHash": "ff34e3484ffd98cc1671e9f3709249028540d8533e288bf9d7ab80d45d42f86c",
+      "newSourceHash": "f0ea031f3571baa606a790406552070d1d22b1b762378d4f08a53a8c6c5838ef",
+      "reason": "現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+          "snapshotPath": "data/evidence/national/kanto-north/6717f8fcf9553cc79a83.html",
+          "snapshotSHA256": "886a4f427dab89faec7cc381ccaadc8e517171633492d59ce14407ea09ba671f",
+          "sourceLocator": "09-211-A001 / 09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所・配布時間・在庫状況 / 現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-208-A001",
+      "oldSourceHash": "34c61caa2b3a46336a908e9292d469d716fc44f1ce4fb40e0d55f2ed72d14918",
+      "newSourceHash": "c4f3e5f53153028acc7bcad11f582e45183cdc2cb7b3e6e247298fbab22a5d40",
+      "reason": "現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 お客様センター / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-A001 / 11-208-A001 / 所沢市上下水道局1階 夜間・総合窓口 / 配布場所・配布時間・在庫状況 / 現GKPの参照URL変更先を保存市原典と照合。第1弾の平日/土日祝年末年始窓口、8:30～18時、各在庫ありを確認。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-208-B001",
+      "oldSourceHash": "b20340e0430b999a2b68951a9ef5f74ee46c80908274853aed12ad294f90b28d",
+      "newSourceHash": "ffbcbe92536060d1a6aba2ed2b0049a24277211cefc86a583097abfd39469c83",
+      "reason": "現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所別館 商業観光課 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-B001 / 11-208-B001 / 所沢市役所1階 夜間休日受付 / 配布場所・配布時間・在庫状況 / 現GKPで9～16:30に変更、市第8弾の平日別館/土日祝年末年始1階と一致。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-208-C001",
+      "oldSourceHash": "090d55b3cdfbafcd0c04d264e8aa4d67f74245a90a00e300f1b648f60593792e",
+      "newSourceHash": "8525db975e7ff9ddcf3f5028aa50b781b5f6283b627dcf977f7444066eb3556d",
+      "reason": "現GKPはリンクのみ変更、時間10～17:30・水木休は市と不一致。市第16弾の10～17時・木曜祝日年末年始休、在庫ありを再採用。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-C001 / 11-208-C001 / 野老澤町造商店 / 配布場所・配布時間・在庫状況 / 現GKPはリンクのみ変更、時間10～17:30・水木休は市と不一致。市第16弾の10～17時・木曜祝日年末年始休、在庫ありを再採用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-208-D001",
+      "oldSourceHash": "515713b5c1fbd636ce652e6350f0ec602cca8a1fa7f9f0d516fdda07d948773d",
+      "newSourceHash": "bf4daa4503db9f7aa8140d86bf95662874ef0d7077dcd7fd9212714de60ab7df",
+      "reason": "現GKP参照URL変更。市第16弾YOT-TOKOの9～17時、住所松郷143-3、在庫ありを再読。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.tokorozawa.saitama.jp/kurashi/jogesuido/gesui/manholecard/tokorozawacitymanholecard.html",
+          "snapshotPath": "data/evidence/national/kanto-north/8e38771a200127afb8f1.html",
+          "snapshotSHA256": "0df9e73abe21fd875ab28efcb9d099285d61923429ca47c89383c686a4ccb567",
+          "sourceLocator": "11-208-D001 / 11-208-D001 / 所沢市観光情報・物産館YOT-TOKO / 配布場所・配布時間・在庫状況 / 現GKP参照URL変更。市第16弾YOT-TOKOの9～17時、住所松郷143-3、在庫ありを再読。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-242-B001",
+      "oldSourceHash": "1121a9107b3ac3217b3ceda72c1d2a556064870a20413310c598d768a6bfac5c",
+      "newSourceHash": "853ed0962c61d57a07a57e31d9ee91be191496be7e28bf625245cbd06f2fb008",
+      "reason": "現GKPの現在一時中止と、市10/26から在庫切れ休止・再開未定が一致。suspendedを再採用。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.hidaka.lg.jp/soshiki/jogesuido/gesuido/koumu/gesuido/34049.html",
+          "snapshotPath": "data/evidence/national/kanto-north/e427d4736d745c8e2576.html",
+          "snapshotSHA256": "73d082e268d4029fcf0d7fc927c70da27b5ec7575d14c4062d8d63b4ac64a638",
+          "sourceLocator": "11-242-B001 / 11-242-B001 / 高麗公民館 / 配布場所・配布時間・在庫状況 / 現GKPの現在一時中止と、市10/26から在庫切れ休止・再開未定が一致。suspendedを再採用。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    },
+    {
+      "cardId": "11-245-B001",
+      "oldSourceHash": "961dc5da0a9333b478c4515d7b2ded403b3214090ee1b6b0d1941bd94202a305",
+      "newSourceHash": "9ea610956602a9a9d001f56176d86b1f7dd16221b810c2682feb559b0a5eddbd",
+      "reason": "現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+      "evidence": [
+        {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野 ステラ・イースト / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        },
+        {
+          "sourceUrl": "https://www.city.fujimino.saitama.jp/kurashinojoho/jogesuido/gesuido/4400.html",
+          "snapshotPath": "data/evidence/national/kanto-north/2e5126f989811cf4195e.html",
+          "snapshotSHA256": "26407c7c4e94f6e9a761c69a287081322997df2748ca1ad0d0a3285f45ee3d4e",
+          "sourceLocator": "11-245-B001 / 11-245-B001 / ふじみ野市上下水道課 / 配布場所・配布時間・在庫状況 / 現GKPの一時中止表示が消失。市4400の在庫あり・ステライースト9～17時・第3月曜休（祝日は翌日）を再読。役場代替は市記載の第3月曜だけを採用、振替火曜へ拡張しない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+        }
+      ]
+    }
+  ],
+  "sourceReview": {
+    "path": "data/evidence/national/list-source/gkp-20261105.html",
+    "sha256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+    "retrievedAt": "2026-11-05",
+    "retrievedAtPrecision": "date-only; seconds not recorded by original fetch",
+    "hashOutput": "/tmp/kanto-north-proposals-current/quality.json"
+  }
+}

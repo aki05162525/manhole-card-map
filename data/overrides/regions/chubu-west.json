@@ -1,0 +1,3403 @@
+{
+  "schema": 1,
+  "places": [
+    {
+      "id": "facility:chubu-west-003049ae86c838ff02fe",
+      "legacyIds": [
+        "place:003049ae86c838ff02fe"
+      ],
+      "name": "八百津町情報発信施設 ハヤブサ・ミュージアム",
+      "address": "岐阜県加茂郡八百津町八百津1088番地2",
+      "phone": "0574-50-7629",
+      "evidence": {
+        "sourceUrl": "https://hayabusamuseum.town.yaotsu.lg.jp/",
+        "snapshotPath": "data/evidence/national/chubu-west/7b689c455850259de6a1.html",
+        "snapshotSHA256": "52a0ee03be1b1a6a56e8a15079cf98c4447c0efd6fa1a52a4b42e0be937c63cd",
+        "sourceLocator": "JSON-LD GeoCoordinates／同じ施設オブジェクトのname・PostalAddress（八百津1088番地2）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 35.472389,
+        "lng": 137.166117
+      }
+    },
+    {
+      "id": "facility:chubu-west-037accf34de0d5a2d262",
+      "legacyIds": [
+        "place:037accf34de0d5a2d262"
+      ],
+      "name": "高山市役所 水道部下水道課(2階)",
+      "address": "岐阜県高山市花岡町2丁目18番地",
+      "phone": "0577-35-3150",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "こばのみつばつつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-0760e6a872c336ab6cb2",
+      "legacyIds": [
+        "place:0760e6a872c336ab6cb2"
+      ],
+      "name": "いわむら街並みふれあいの館(岩村町観光協会)",
+      "address": "岐阜県恵那市岩村町263番地2",
+      "phone": "0573-43-3231",
+      "evidence": {
+        "sourceUrl": "https://www.city.ena.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido_gappeijokaso/12047.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d8c13826ca1b98ee265c.html",
+        "snapshotSHA256": "b0305e317d5f8a8dcc2919cee09f7a1a510dac70a4b316d1c971a12864382b2b",
+        "sourceLocator": "女城主の里（第24弾）／配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-089d047d9f0ce871adc7",
+      "legacyIds": [
+        "place:089d047d9f0ce871adc7"
+      ],
+      "name": "高山市清見支所当直室窓口",
+      "address": "岐阜県高山市清見町三日町305番地",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5b96d5d048069ff4267b.html",
+        "snapshotSHA256": "494e722e7affdd270cc837c564ad3d12f68c40a7fc317a01c346d6d3aaa0adcf",
+        "sourceLocator": "施設案内 清見支所／所在地三日町305／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.1286413,
+        "lng": 137.18676919999996
+      }
+    },
+    {
+      "id": "facility:chubu-west-08f2e7d930fa90a462e3",
+      "legacyIds": [
+        "place:08f2e7d930fa90a462e3"
+      ],
+      "name": "瑞穂市民センター 1階",
+      "address": "岐阜県瑞穂市別府1300-3",
+      "phone": "058-327-8448",
+      "evidence": {
+        "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+        "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+        "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "legacyIds": [
+        "place:0bc3f40e4a788b25c5ee"
+      ],
+      "name": "伊東市観光案内所(伊東駅構内)",
+      "address": "静岡県伊東市湯川3-12-1",
+      "phone": "0557-37-6105",
+      "evidence": {
+        "sourceUrl": "https://www.city.ito.shizuoka.jp/gyosei/soshikikarasagasu/gesuidoka/kurashi_tetsuzuki/1/1/7611.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d978205b437920cb5183.html",
+        "snapshotSHA256": "948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7",
+        "sourceLocator": "配布場所・時間／配布場所の地図",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-10600abe91968b5fc99e",
+      "legacyIds": [
+        "place:10600abe91968b5fc99e"
+      ],
+      "name": "恵那市観光物産館 観光案内所",
+      "address": "岐阜県恵那市大井町286番地25",
+      "phone": "0573-25-4058",
+      "evidence": {
+        "sourceUrl": "https://www.city.ena.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido_gappeijokaso/12047.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d8c13826ca1b98ee265c.html",
+        "snapshotSHA256": "b0305e317d5f8a8dcc2919cee09f7a1a510dac70a4b316d1c971a12864382b2b",
+        "sourceLocator": "中山道大井宿（第21弾）／配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-173631f1c1625346bb45",
+      "legacyIds": [
+        "place:173631f1c1625346bb45"
+      ],
+      "name": "森町役場上下水道課",
+      "address": "静岡県周智郡森町森2101-1",
+      "phone": "0538-85-6327",
+      "evidence": {
+        "sourceUrl": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/gesuido/4924.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a366a04376fa8d16320b.html",
+        "snapshotSHA256": "898e055fc4b7ba04750fc2a6f88353f2c0dd20a8d0673e8eb99131a0d3662990",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-1ac3582c3ba4e7409460",
+      "legacyIds": [
+        "place:1ac3582c3ba4e7409460"
+      ],
+      "name": "寄って宮",
+      "address": "静岡県富士宮市宮町1-1",
+      "phone": "0544-29-7223",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "にじます／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "legacyIds": [
+        "place:1b6382f20cc3aec78ecd"
+      ],
+      "name": "焼津市観光協会",
+      "address": "静岡県焼津市栄町1-2-14",
+      "phone": "054-626-6266",
+      "evidence": {
+        "sourceUrl": "https://www.city.yaizu.lg.jp/life/water-sewage/sewage/other-info/manhole-card.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3271176bd331a58e3358.html",
+        "snapshotSHA256": "6f12dbe837ffb9f4e978d37a51dafa8a0a19400c24225bbbce01c2d2f559b08e",
+        "sourceLocator": "配布再開／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-1d4a968e42f9ee53e385",
+      "legacyIds": [
+        "place:1d4a968e42f9ee53e385"
+      ],
+      "name": "森町役場(日直)",
+      "address": "静岡県周智郡森町森2101-1",
+      "phone": "0538-85-2111",
+      "evidence": {
+        "sourceUrl": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/gesuido/4924.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a366a04376fa8d16320b.html",
+        "snapshotSHA256": "898e055fc4b7ba04750fc2a6f88353f2c0dd20a8d0673e8eb99131a0d3662990",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "legacyIds": [
+        "place:27d3e9286d3414e0cb80"
+      ],
+      "name": "池田町役場 水道部 水道課",
+      "address": "岐阜県揖斐郡池田町六之井1468-1",
+      "phone": "0585-45-3111",
+      "evidence": {
+        "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001112.html",
+        "snapshotPath": "data/evidence/national/chubu-west/689a8f5590d85ab5f9a8.html",
+        "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+        "sourceLocator": "池田町のマンホールカード配布について",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "legacyIds": [
+        "place:29febbd64ae38b41c6fc"
+      ],
+      "name": "カクキュー八丁味噌の郷",
+      "address": "愛知県岡崎市八帖町字往還通69",
+      "phone": "0564-21-1355",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "legacyIds": [
+        "place:2c746636b1d8b34ff7c1"
+      ],
+      "name": "熱海市役所 下水道課(上下水道・温泉料金センター)",
+      "address": "静岡県熱海市中央町1-1 熱海市役所第2庁舎1階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "貫一お宮／平日第二庁舎・休日第一庁舎／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "legacyIds": [
+        "place:2eab45ac31e88d3cb71e"
+      ],
+      "name": "浜松市観光インフォメーションセンター",
+      "address": "静岡県浜松市中区砂山町265-13(JR浜松駅構内)",
+      "phone": "053-452-1634",
+      "evidence": {
+        "sourceUrl": "https://www.city.hamamatsu.shizuoka.jp/suidow-s/kouhou/manholecard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/971c86ba833f5fdaadae.html",
+        "snapshotSHA256": "9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576",
+        "sourceLocator": "家康くん・直虎ちゃん／観光インフォメーションセンター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "legacyIds": [
+        "place:305c4ff7d31e4b18d58b"
+      ],
+      "name": "新居関所史料館",
+      "address": "静岡県湖西市新居町新居1227-5",
+      "phone": "053-594-3615",
+      "evidence": {
+        "sourceUrl": "https://www.city.kosai.shizuoka.jp/soshikiichiran/gesuidoka/12799.html",
+        "snapshotPath": "data/evidence/national/chubu-west/f025ceade1cf7f0fbcf1.html",
+        "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+        "sourceLocator": "新居関所マンホールカード／配布について・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-31d2d4cf44cd774ab67d",
+      "legacyIds": [
+        "place:31d2d4cf44cd774ab67d"
+      ],
+      "name": "高山市役所久々野支所当直室窓口",
+      "address": "岐阜県高山市久々野町無数河580番地1",
+      "phone": "0577-52-3111",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c97ba2a8e27f8f1fd70d.html",
+        "snapshotSHA256": "74acdccdb676c72380518aabf41e1827bfda8e1bf706f2b363a8d1c49dea1f78",
+        "sourceLocator": "施設案内 久々野支所／所在地無数河580-1／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.0484488,
+        "lng": 137.27522290000002
+      }
+    },
+    {
+      "id": "facility:chubu-west-377a9125bc963427ccae",
+      "legacyIds": [
+        "place:377a9125bc963427ccae"
+      ],
+      "name": "犀ヶ崖資料館",
+      "address": "静岡県浜松市中央区鹿谷町25-10",
+      "phone": "053-472-8383",
+      "evidence": {
+        "sourceUrl": "https://www.city.hamamatsu.shizuoka.jp/maps/c-saigagake.html",
+        "snapshotPath": "data/evidence/national/chubu-west/2923b17a56c4e6d54c97.html",
+        "snapshotSHA256": "c1aa732f05815758b479cfb4855b7bee8ef3265c6861bb73bd91ea2a4d898c36",
+        "sourceLocator": "犀ヶ崖資料館施設情報／鹿谷町25-10／地図を開く q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 34.71941,
+        "lng": 137.718708
+      }
+    },
+    {
+      "id": "facility:chubu-west-3ae4954df5521d92e778",
+      "legacyIds": [
+        "place:3ae4954df5521d92e778"
+      ],
+      "name": "沼津市役所 水道部庁舎 守衛室",
+      "address": "静岡県沼津市御幸町16-1 水道部庁舎1階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-3e235965c9bf1b755341",
+      "legacyIds": [
+        "place:3e235965c9bf1b755341"
+      ],
+      "name": "水の歴史資料館",
+      "address": "愛知県名古屋市千種区月が丘1-1-44",
+      "phone": "052-723-3311",
+      "evidence": {
+        "sourceUrl": "https://www.water.city.nagoya.jp/category/manhole/141508.html",
+        "snapshotPath": "data/evidence/national/chubu-west/91f7d2ad601e7dbd33bb.html",
+        "snapshotSHA256": "ba039cc41aadbf5d20e5d12ec5196c887b146c7552b6da549d2f1a968ee09e56",
+        "sourceLocator": "名古屋市上下水道局におけるマンホールカードの配布／デザイン別表",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "legacyIds": [
+        "place:3ff6821525e60d2dab4d"
+      ],
+      "name": "小山町観光協会(道の駅ふじおやま内)",
+      "address": "静岡県駿東郡小山町用沢72-2",
+      "phone": "0550-76-5000",
+      "evidence": {
+        "sourceUrl": "https://www.fuji-oyama.jp/page/1248.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c7331fde339a5043de92.html",
+        "snapshotSHA256": "4535755945294f4ac428a02b91ceb8fdd6fc1e4e8976cc47b63ad0d80d6ca7e2",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-42d1fd3038d27275e943",
+      "legacyIds": [
+        "place:42d1fd3038d27275e943"
+      ],
+      "name": "三島観光案内所",
+      "address": "静岡県三島市一番町16-1",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.mishima.shizuoka.jp/page/5716.html",
+        "snapshotPath": "data/evidence/national/chubu-west/88ac9be8ae85cce38bca.html",
+        "snapshotSHA256": "bbf249f8f925f2d14a6e393839633ae3a9436aef19b84a1b4015d2e51aa86581",
+        "sourceLocator": "令和8年8月5日配布再開／配布状況／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "legacyIds": [
+        "place:4404f19ea7b0642d5a01"
+      ],
+      "name": "裾野市観光協会",
+      "address": "静岡県裾野市千福7-1",
+      "phone": "055-992-5005",
+      "evidence": {
+        "sourceUrl": "https://www.city.susono.shizuoka.jp/soshiki/11/3/1/21155.html",
+        "snapshotPath": "data/evidence/national/chubu-west/25e20c68afa8352a3312.html",
+        "snapshotSHA256": "e8d9b0a9890053226389f7188a8ae627831dbf59c9d79b174e46c1c6c5d8b0f0",
+        "sourceLocator": "臨時休止などの情報／配布時間・場所／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-4474115e677e3d67b529",
+      "legacyIds": [
+        "place:4474115e677e3d67b529"
+      ],
+      "name": "奥殿陣屋 書院内",
+      "address": "岡崎市奥殿町雑谷下10番地",
+      "phone": "0564-45-7230",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-44c55ff47f14ec6d456e",
+      "legacyIds": [
+        "place:44c55ff47f14ec6d456e"
+      ],
+      "name": "関市役所基盤整備部 下水道課",
+      "address": "岐阜県関市若草通3-1",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.seki.lg.jp/0000012751.html",
+        "snapshotPath": "data/evidence/national/chubu-west/519ea58f41b63e425fbd.html",
+        "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+        "sourceLocator": "マンホールカード配布情報／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-4b8f7a5808187306039a",
+      "legacyIds": [
+        "place:4b8f7a5808187306039a"
+      ],
+      "name": "岐阜県さぼう遊学館",
+      "address": "岐阜県海津市南濃町奥条無番地",
+      "phone": "0584-55-1110",
+      "evidence": {
+        "sourceUrl": "https://www.city.kaizu.lg.jp/kurashi/0000003072.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a85cae5a25d7eb573e96.html",
+        "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+        "sourceLocator": "配布場所・日程／配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-4c849d1dd26e653ecf9e",
+      "legacyIds": [
+        "place:4c849d1dd26e653ecf9e"
+      ],
+      "name": "清水駅前観光案内所(JR清水駅前)",
+      "address": "静岡県静岡市清水区辻1丁目1-3-103 アトラス清水駅前1階",
+      "phone": "054-367-9613",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-4dc14b2f36d531ba43e1",
+      "legacyIds": [
+        "place:4dc14b2f36d531ba43e1"
+      ],
+      "name": "メタウォーター下水道科学館なごや(名古屋市下水道科学館)",
+      "address": "愛知県名古屋市北区名城1-3-3",
+      "phone": "052-911-2301",
+      "evidence": {
+        "sourceUrl": "https://www.water.city.nagoya.jp/category/manhole/141508.html",
+        "snapshotPath": "data/evidence/national/chubu-west/91f7d2ad601e7dbd33bb.html",
+        "snapshotSHA256": "ba039cc41aadbf5d20e5d12ec5196c887b146c7552b6da549d2f1a968ee09e56",
+        "sourceLocator": "名古屋市上下水道局におけるマンホールカードの配布／デザイン別表",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-51ec8a66f05dedab114b",
+      "legacyIds": [
+        "place:51ec8a66f05dedab114b"
+      ],
+      "name": "郡上八幡駅 観光案内所",
+      "address": "岐阜県郡上市八幡町城南町188-54",
+      "phone": "0575-67-9039",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-56f3a4266eeae373c798",
+      "legacyIds": [
+        "place:56f3a4266eeae373c798"
+      ],
+      "name": "掛川城公園(掛川城券売所)",
+      "address": "静岡県掛川市掛川1138番地の24",
+      "phone": "0537-22-1146",
+      "evidence": {
+        "sourceUrl": "http://www.city.kakegawa.shizuoka.jp/life/gesuidou/jyokasonituite_2_2.html",
+        "snapshotPath": "data/evidence/national/chubu-west/53fc190289517f9154c3.html",
+        "snapshotSHA256": "466e849146c152eef2787b74f3ca1932a3a136390cde1cd392860c55a9d92f29",
+        "sourceLocator": "配布について／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5932e2e45330110f4e22",
+      "legacyIds": [
+        "place:5932e2e45330110f4e22"
+      ],
+      "name": "道の駅 潮見坂",
+      "address": "静岡県湖西市白須賀1896-2",
+      "phone": "053-573-1155",
+      "evidence": {
+        "sourceUrl": "https://www.city.kosai.shizuoka.jp/soshikiichiran/gesuidoka/12799.html",
+        "snapshotPath": "data/evidence/national/chubu-west/f025ceade1cf7f0fbcf1.html",
+        "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+        "sourceLocator": "うなぽんマンホールカード／配布について・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5adf45f55cd55f967643",
+      "legacyIds": [
+        "place:5adf45f55cd55f967643"
+      ],
+      "name": "伊豆の国市観光案内所",
+      "address": "伊豆の国市南條780-3",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.izunokuni.shizuoka.jp/jyougesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/87e79f480b6944a6758b.html",
+        "snapshotSHA256": "c9308bbb0d2f6d226e48753013e1b2f89c92aeb61b34b623b314714e7a0a0376",
+        "sourceLocator": "配布方法／配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "legacyIds": [
+        "place:5c2eca0bf60a3cf39536"
+      ],
+      "name": "沼津市役所 総合案内",
+      "address": "静岡県沼津市御幸町16-1(本庁舎1階)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5c6fb9ffe9787f7dcf8b",
+      "legacyIds": [
+        "place:5c6fb9ffe9787f7dcf8b"
+      ],
+      "name": "道の駅古今伝授の里やまと",
+      "address": "岐阜県郡上市大和町剣164番地",
+      "phone": "0575-88-2525",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5ce6982ed962c936849d",
+      "legacyIds": [
+        "place:5ce6982ed962c936849d"
+      ],
+      "name": "みのかも観光案内所",
+      "address": "岐阜県美濃加茂市太田町立石2484 美濃太田駅南口1F",
+      "phone": "0574-28-7717",
+      "evidence": {
+        "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+        "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+        "sourceLocator": "配布場所・配布時間／配布場所へのアクセス",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5e018b80beeddee90a38",
+      "legacyIds": [
+        "place:5e018b80beeddee90a38"
+      ],
+      "name": "海津市役所上下水道課",
+      "address": "岐阜県海津市海津町高須515番地",
+      "phone": "0584-53-1429",
+      "evidence": {
+        "sourceUrl": "https://www.city.kaizu.lg.jp/kurashi/0000003072.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a85cae5a25d7eb573e96.html",
+        "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+        "sourceLocator": "配布場所・日程／配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5ea337a795edcf07581c",
+      "legacyIds": [
+        "place:5ea337a795edcf07581c"
+      ],
+      "name": "富士宮市役所 1階東側 当直室",
+      "address": "静岡県富士宮市弓沢町150",
+      "phone": "0544-22-1111",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "逆さ富士／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5ef81d64754943b71c47",
+      "legacyIds": [
+        "place:5ef81d64754943b71c47"
+      ],
+      "name": "富士市役所 上下水道部 上下水道営業課",
+      "address": "静岡県富士市本市場441-1(静岡県富士総合庁舎6階)",
+      "phone": "0545-67-2829",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "赤富士と駿河湾の白波デザイン（A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-5fe78965351993358d59",
+      "legacyIds": [
+        "place:5fe78965351993358d59"
+      ],
+      "name": "中津川市観光センター・にぎわい特産館",
+      "address": "岐阜県中津川市栄町1-1",
+      "phone": "0573-62-2277",
+      "evidence": {
+        "sourceUrl": "https://nakatsugawa.town/tokusankan/",
+        "snapshotPath": "data/evidence/national/chubu-west/399436532c5760c6391a.html",
+        "snapshotSHA256": "53afe25c0c53cdfeec86c1312602564967aad3258f5cb1df554ba12de0047082",
+        "sourceLocator": "にぎわい特産館／栄町1-1／ez-map_tokusan用google.maps.Markerのposition:new google.maps.LatLng。map centerは不採用。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 35.501217,
+        "lng": 137.50384099999997
+      }
+    },
+    {
+      "id": "facility:chubu-west-6174b986d89b31577298",
+      "legacyIds": [
+        "place:6174b986d89b31577298"
+      ],
+      "name": "御殿場市富士山交流センター富士山樹空の森",
+      "address": "静岡県御殿場市印野1380-15",
+      "phone": "0550-80-3776",
+      "evidence": {
+        "sourceUrl": "https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html",
+        "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+        "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+        "sourceLocator": "冒頭：令和8年度分の配布枚数は終了。再開は令和9年度予定",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-6427a13dacffcc9fe6cd",
+      "legacyIds": [
+        "place:6427a13dacffcc9fe6cd"
+      ],
+      "name": "高山市役所当直室",
+      "address": "岐阜県高山市花岡町2丁目18番地",
+      "phone": "0577-32-3333",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "こばのみつばつつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-66a0ec8fb8767a43d43a",
+      "legacyIds": [
+        "place:66a0ec8fb8767a43d43a"
+      ],
+      "name": "高山市清見支所基盤産業課窓口",
+      "address": "岐阜県高山市清見町三日町305番地",
+      "phone": "0577-68-2211",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001407.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5b96d5d048069ff4267b.html",
+        "snapshotSHA256": "494e722e7affdd270cc837c564ad3d12f68c40a7fc317a01c346d6d3aaa0adcf",
+        "sourceLocator": "施設案内 清見支所／所在地三日町305／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.1286413,
+        "lng": 137.18676919999996
+      }
+    },
+    {
+      "id": "facility:chubu-west-6d6bf5ddbdfb9667e163",
+      "legacyIds": [
+        "place:6d6bf5ddbdfb9667e163"
+      ],
+      "name": "郡上八幡旧庁舎記念館",
+      "address": "岐阜県郡上市八幡町島谷520-1",
+      "phone": "0575-67-1819",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-81c5c44b2b18c5be8f72",
+      "legacyIds": [
+        "place:81c5c44b2b18c5be8f72"
+      ],
+      "name": "静岡市上下水道局庁舎1階 守衛室",
+      "address": "静岡県静岡市葵区七間町15-1 上下水道局庁舎1階",
+      "phone": "054-270-9119",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-88433c254b4bd97d8db9",
+      "legacyIds": [
+        "place:88433c254b4bd97d8db9"
+      ],
+      "name": "多治見市PRセンター(陶都創造館1階)",
+      "address": "岐阜県多治見市本町5丁目9-1",
+      "phone": "0572-23-5444",
+      "evidence": {
+        "sourceUrl": "https://www.city.tajimi.lg.jp/kurashi_tetsuduzuki/jougesuido/1005578/1009966.html",
+        "snapshotPath": "data/evidence/national/chubu-west/405c0bfe61c17444de40.html",
+        "snapshotSHA256": "4e02b7554aed395bf7dc9984e4a489589f6d5a7517632ceec3f34311e16a43a6",
+        "sourceLocator": "在庫状況／配布場所／配布日時",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "legacyIds": [
+        "place:8b10b99e9d58aaa58550"
+      ],
+      "name": "飛騨古川まちなか観光案内所",
+      "address": "飛騨市古川町壱之町8-3",
+      "phone": "0577-73-7463(平日のみ)",
+      "evidence": {
+        "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+        "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+        "sourceLocator": "古川町のマンホールカード／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-8c07e0d1e3594dac8e69",
+      "legacyIds": [
+        "place:8c07e0d1e3594dac8e69"
+      ],
+      "name": "富士宮駅前観光案内所",
+      "address": "静岡県富士宮市中央町16番1号",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "さくやちゃん／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-92032ce5cf770c2813c4",
+      "legacyIds": [
+        "place:92032ce5cf770c2813c4"
+      ],
+      "name": "道の駅スカイドーム神岡",
+      "address": "岐阜県飛騨市神岡町夕陽ヶ丘6",
+      "phone": "0578-82-6777",
+      "evidence": {
+        "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+        "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+        "sourceLocator": "神岡町のマンホールカード／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-92b7b359d5ae1c55761b",
+      "legacyIds": [
+        "place:92b7b359d5ae1c55761b"
+      ],
+      "name": "関市役所北庁舎 守衛室",
+      "address": "岐阜県関市若草通3-1",
+      "phone": "0575-23-7708",
+      "evidence": {
+        "sourceUrl": "https://www.city.seki.lg.jp/0000012751.html",
+        "snapshotPath": "data/evidence/national/chubu-west/519ea58f41b63e425fbd.html",
+        "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+        "sourceLocator": "マンホールカード配布情報／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-978f1acf9e5ee7761f02",
+      "legacyIds": [
+        "place:978f1acf9e5ee7761f02"
+      ],
+      "name": "りぶら市民活動センター",
+      "address": "愛知県岡崎市康生通西4丁目71番地 岡崎市図書館交流プラザりぶら2階",
+      "phone": "0564-23-3114",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "下水道事業100周年記念デザイン「岡崎城とルネガール」／りぶら市民活動センター／配布時間・休館日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-990be32c648e4d8bae69",
+      "legacyIds": [
+        "place:990be32c648e4d8bae69"
+      ],
+      "name": "道の駅藤川宿",
+      "address": "愛知県岡崎市藤川町字東沖田44番地",
+      "phone": "0564-66-6031",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/news/5394",
+        "snapshotPath": "data/evidence/national/chubu-west/fb12ca8383dc0a8b8c39.html",
+        "snapshotSHA256": "d2cea2794f53c8c4ff0ae1396d779bb755b6e6c406749aed64f12a2e59081e11",
+        "sourceLocator": "紫ルネ配布場所 道の駅藤川宿／埋込地図 place q。住所はfeature/manhole/manholecardで照合。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 34.9144788,
+        "lng": 137.2172286
+      }
+    },
+    {
+      "id": "facility:chubu-west-9967da81268c03d26284",
+      "legacyIds": [
+        "place:9967da81268c03d26284"
+      ],
+      "name": "道の駅ひだ朝日村",
+      "address": "岐阜県高山市朝日町万石150番地",
+      "phone": "0577-55-3777",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "すずらん／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-9c28d6d70df40627bdc2",
+      "legacyIds": [
+        "place:9c28d6d70df40627bdc2"
+      ],
+      "name": "熱海市観光協会(ワカガエルステーション)",
+      "address": "静岡県熱海市渚町2018-8親水公園レインボーデッキ内(初川寄り)",
+      "phone": "0557-85-2222",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "梅と芸妓／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-a06f703e25492c968c36",
+      "legacyIds": [
+        "place:a06f703e25492c968c36"
+      ],
+      "name": "高山市一之宮支所",
+      "address": "岐阜県高山市一之宮町3100番地",
+      "phone": "0577-53-2211",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001409.html",
+        "snapshotPath": "data/evidence/national/chubu-west/2ab434bc4b9a27de6d0c.html",
+        "snapshotSHA256": "31c7c5176097496a3ca74731961884376f3c10834a354d3087f15a4c7cfe879e",
+        "sourceLocator": "施設案内 一之宮支所／所在地3100／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.08336,
+        "lng": 137.23936979999996
+      }
+    },
+    {
+      "id": "facility:chubu-west-aa2f784642e8d8d09de7",
+      "legacyIds": [
+        "place:aa2f784642e8d8d09de7"
+      ],
+      "name": "瑞穂市役所 巣南庁舎 下水道課",
+      "address": "岐阜県瑞穂市宮田300-2",
+      "phone": "058-327-2114",
+      "evidence": {
+        "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+        "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+        "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-ac91b1a9ed9a8365efe6",
+      "legacyIds": [
+        "place:ac91b1a9ed9a8365efe6"
+      ],
+      "name": "中津川市ひと・まちテラス1階 総合案内窓口",
+      "address": "岐阜県中津川市新町2-34",
+      "phone": "0573-67-7111",
+      "evidence": {
+        "sourceUrl": "https://www.city.nakatsugawa.lg.jp/kanko/bunka/taishi/39776.html",
+        "snapshotPath": "data/evidence/national/chubu-west/e1bc9c32a6613d8e7bfa.html",
+        "snapshotSHA256": "bd892d60d410f6056c04575f3c7552aa733acc409143b5ac8509ed79bd7debd3",
+        "sourceLocator": "マンホールカードの配布のご案内／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-aca9f9af9af1eaca55a0",
+      "legacyIds": [
+        "place:aca9f9af9af1eaca55a0"
+      ],
+      "name": "静岡市上下水道局庁舎",
+      "address": "静岡県静岡市葵区七間町15-1(上下水道局庁舎6階 上下水道経営企画課)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "legacyIds": [
+        "place:adab25c66d301ba3b4e8"
+      ],
+      "name": "南伊豆町観光協会",
+      "address": "静岡県賀茂郡南伊豆町下賀茂157-1",
+      "phone": "0558-62-0141",
+      "evidence": {
+        "sourceUrl": "http://www.town.minamiizu.shizuoka.jp/docs/2016113000026/",
+        "snapshotPath": "data/evidence/national/chubu-west/3bb5f25c6a06af64e728.html",
+        "snapshotSHA256": "f1f5b0fa05b1e1e0e50c145d196115d42c135d7ec875bcb7e6035bff25800ed9",
+        "sourceLocator": "マンホールカードの配布詳細",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-afef7940a50a4b46b9f3",
+      "legacyIds": [
+        "place:afef7940a50a4b46b9f3"
+      ],
+      "name": "高山市国府支所",
+      "address": "岐阜県高山市国府町広瀬町880番地1",
+      "phone": "0577-72-3111",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001413.html",
+        "snapshotPath": "data/evidence/national/chubu-west/b8d82996abfbe1d13f1a.html",
+        "snapshotSHA256": "e405106819158ec78a96905b0a9fdd6935ad137418e78163164b263c228d80b3",
+        "sourceLocator": "施設案内 国府支所／所在地880-1／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.2113368,
+        "lng": 137.21493940000005
+      }
+    },
+    {
+      "id": "facility:chubu-west-b128731fef6309f26ed0",
+      "legacyIds": [
+        "place:b128731fef6309f26ed0"
+      ],
+      "name": "愛西市観光協会",
+      "address": "愛知県愛西市森川町井桁西25番地1",
+      "phone": "0567-55-9993",
+      "evidence": {
+        "sourceUrl": "https://www.aisaikankou.jp/wgs/blog/fp/43/",
+        "snapshotPath": "data/evidence/national/chubu-west/8433ec26de36764e31b3.html",
+        "snapshotSHA256": "c7a5e36a8ba5c0c02958e1b815f2ad00eb4e067b714097c4fb41c030f2238dcf",
+        "sourceLocator": "よくある質問／マンホールカードはどこでもらえますか／住所フッター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-b1a8034431096652d1e4",
+      "legacyIds": [
+        "place:b1a8034431096652d1e4"
+      ],
+      "name": "高山市朝日支所基盤産業課窓口",
+      "address": "岐阜県高山市朝日町万石800番地",
+      "phone": "0577-55-3311",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004141/1004416/1004417.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d5b430faef4d87801794.html",
+        "snapshotSHA256": "8d57350f2519497143992ffb807134044d30dc06ff2116b79024e2b8ef4dfbd4",
+        "sourceLocator": "施設案内 朝日支所／所在地万石800／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.0888864,
+        "lng": 137.34705039999994
+      }
+    },
+    {
+      "id": "facility:chubu-west-b1cc9578f267b5c9cbd4",
+      "legacyIds": [
+        "place:b1cc9578f267b5c9cbd4"
+      ],
+      "name": "しらすのまどぐち",
+      "address": "静岡県榛原郡吉田町片岡2499番地の2",
+      "phone": "0548-32-9285",
+      "evidence": {
+        "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3e4a7c50833d565690c7.html",
+        "snapshotSHA256": "246e9ccd2a71e6e2a7e27b29c1ecbcf2de1738aa3c81c0180658ddb52c076739",
+        "sourceLocator": "マンホールカードの配付場所・時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-b2f09c0252344a65be02",
+      "legacyIds": [
+        "place:b2f09c0252344a65be02"
+      ],
+      "name": "ウエルピアながいずみ健康づくりセンター",
+      "address": "静岡県駿東郡長泉町納米里549",
+      "phone": "055-989-5510",
+      "evidence": {
+        "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+        "sourceLocator": "新カラーマンホールカード配布状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-b71259080cfcb6fc37c9",
+      "legacyIds": [
+        "place:b71259080cfcb6fc37c9"
+      ],
+      "name": "高山市荘川支所",
+      "address": "岐阜県高山市荘川町新渕430番地1",
+      "phone": "05769-2-2211",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001408.html",
+        "snapshotPath": "data/evidence/national/chubu-west/ace1825a08c3fc89a418.html",
+        "snapshotSHA256": "c54c10b5ac1a080b6363e09a71adf8c0e8216aa396b7c35526065bd01e01d56a",
+        "sourceLocator": "施設案内 荘川支所／所在地新渕430-1／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.03270550000001,
+        "lng": 136.95621800000004
+      }
+    },
+    {
+      "id": "facility:chubu-west-b831c16823b4aa3bed7c",
+      "legacyIds": [
+        "place:b831c16823b4aa3bed7c"
+      ],
+      "name": "奥飛騨温泉郷観光案内所(新穂高センター内)",
+      "address": "岐阜県高山市奥飛騨温泉郷神坂710番地9",
+      "phone": "0578-89-2458",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000028/1003902.html",
+        "snapshotPath": "data/evidence/national/chubu-west/8f74eaff44bf880402ad.html",
+        "snapshotSHA256": "61ff5d4f7454e4d3b962d5d55fb4e543110d98c91b64e04064a84bfd5ffa09f5",
+        "sourceLocator": "施設案内 新穂高センター／奥飛騨温泉郷神坂710番地9／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.284497,
+        "lng": 137.574447
+      }
+    },
+    {
+      "id": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "legacyIds": [
+        "place:b8c6ad4784789086f0d7"
+      ],
+      "name": "富士市役所北口警備室",
+      "address": "静岡県富士市永田町1-100",
+      "phone": "0545-51-0123",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "赤富士と駿河湾の白波デザイン（A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-b93c428182c323c9093b",
+      "legacyIds": [
+        "place:b93c428182c323c9093b"
+      ],
+      "name": "熱海市役所 警備員室 熱海市役所第1庁舎1階",
+      "address": "静岡県熱海市中央町1-1 熱海市役所第一庁舎1階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "貫一お宮／平日第二庁舎・休日第一庁舎／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-b943f5c6151615096149",
+      "legacyIds": [
+        "place:b943f5c6151615096149"
+      ],
+      "name": "磐田市観光協会",
+      "address": "静岡県磐田市中泉1-1-5(JR磐田駅北口)",
+      "phone": "0538-33-1222",
+      "evidence": {
+        "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+        "snapshotPath": "data/evidence/national/chubu-west/bdfdefe3c6f22a457c32.html",
+        "snapshotSHA256": "83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e",
+        "sourceLocator": "配布場所・配布時間／休館日の配布",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "legacyIds": [
+        "place:c2c5fb9c50cfbaf2f9e7"
+      ],
+      "name": "まるや八丁味噌",
+      "address": "愛知県岡崎市八帖町字往還通52",
+      "phone": "平日 0564-22-0222 / 休日 0564-22-0678",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "legacyIds": [
+        "place:c9411b8d4b5166d4dd66"
+      ],
+      "name": "道の駅開国下田みなと(2F下田市観光協会事務局)",
+      "address": "下田市外が岡1-1",
+      "phone": "0558-22-1531",
+      "evidence": {
+        "sourceUrl": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c54f705610e406880b3a.html",
+        "snapshotSHA256": "9c48a698c270fa925dd21256160df8aa958d9b400c53a290980c26ccbce82e45",
+        "sourceLocator": "配布について／マンホールカードの残数",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-cd2bc5f252d7f3212ad2",
+      "legacyIds": [
+        "place:cd2bc5f252d7f3212ad2"
+      ],
+      "name": "高山市役所久々野支所基盤産業課窓口",
+      "address": "岐阜県高山市久々野町無数河580番地1",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001410.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c97ba2a8e27f8f1fd70d.html",
+        "snapshotSHA256": "74acdccdb676c72380518aabf41e1827bfda8e1bf706f2b363a8d1c49dea1f78",
+        "sourceLocator": "施設案内 久々野支所／所在地無数河580-1／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.0484488,
+        "lng": 137.27522290000002
+      }
+    },
+    {
+      "id": "facility:chubu-west-cee0813d2aeb67ba5ec9",
+      "legacyIds": [
+        "place:cee0813d2aeb67ba5ec9"
+      ],
+      "name": "道の駅 美並物産館",
+      "address": "郡上市美並町上田2605",
+      "phone": ".0575-79-3886",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "legacyIds": [
+        "place:d065e4d0f8f352af76bb"
+      ],
+      "name": "岳南排水路管理組合総務課業務係",
+      "address": "静岡県富士市今泉654-1",
+      "phone": "0545-51-2667",
+      "evidence": {
+        "sourceUrl": "http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html",
+        "snapshotPath": "data/evidence/national/chubu-west/bf46211ce6cbf7385759.html",
+        "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+        "sourceLocator": "配布場所／配布時間／配布方法",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-d3d90a695397655a9f91",
+      "legacyIds": [
+        "place:d3d90a695397655a9f91"
+      ],
+      "name": "岡崎市観光協会(籠田案内所)",
+      "address": "愛知県岡崎市康生通東2丁目47番地",
+      "phone": "0564-64-1637",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/news/4278",
+        "snapshotPath": "data/evidence/national/chubu-west/6f6ae6dadb924f565ac9.html",
+        "snapshotSHA256": "10a2415ad5931b7014009487de86b0a4158dec0ca4561b4394f058b4aa766358",
+        "sourceLocator": "ルネふた配布場所 籠田観光案内所／康生通東2-47／埋込地図 place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 34.95893179999999,
+        "lng": 137.1662133
+      }
+    },
+    {
+      "id": "facility:chubu-west-d450af2b3a1205fb8645",
+      "legacyIds": [
+        "place:d450af2b3a1205fb8645"
+      ],
+      "name": "奥の細道むすびの地記念館",
+      "address": "岐阜県大垣市船町2-26-1",
+      "phone": "0584-84-8430",
+      "evidence": {
+        "sourceUrl": "http://www.city.ogaki.lg.jp/0000041755.html",
+        "snapshotPath": "data/evidence/national/chubu-west/0d3e107728bd7ed3c121.html",
+        "snapshotSHA256": "db222c01d672a2ec7b9aaec4ace78977cad9073ad0f073adc8870e225a6c65b3",
+        "sourceLocator": "配布場所・時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-da2a2dd8261e6ba2994d",
+      "legacyIds": [
+        "place:da2a2dd8261e6ba2994d"
+      ],
+      "name": "藤枝市郷土博物館・文学館",
+      "address": "静岡県藤枝市若王子500",
+      "phone": "054-645-1100",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujieda.shizuoka.jp/soshiki/kankyosuido/gesuido/oshirase/1531352696524.html",
+        "snapshotPath": "data/evidence/national/chubu-west/de36c042cf03b5db1bc9.html",
+        "snapshotSHA256": "9beff305ff43feb48e08c1f9f3806b0b880cb2e90fb5a7d005dd91f9c2a05b62",
+        "sourceLocator": "配布場所／配布時間／在庫配布状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-da2c46732042f07a4ce1",
+      "legacyIds": [
+        "place:da2c46732042f07a4ce1"
+      ],
+      "name": "あじさいエコパーク（蜂屋川クリーンセンター）",
+      "address": "岐阜県美濃加茂市加茂野町鷹之巣2158-2",
+      "phone": "0574-28-4743",
+      "evidence": {
+        "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+        "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+        "sourceLocator": "配布場所・配布時間／配布場所へのアクセス",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-dd679ceab32d01f0470f",
+      "legacyIds": [
+        "place:dd679ceab32d01f0470f"
+      ],
+      "name": "伊東温泉観光・文化施設「東海館」",
+      "address": "静岡県伊東市東松原町12-10",
+      "phone": "0557-36-2004",
+      "evidence": {
+        "sourceUrl": "https://itospa.com/feature/tokaikan/",
+        "snapshotPath": "data/evidence/national/chubu-west/9ebbc082169c1e2e2477.html",
+        "snapshotSHA256": "b5697f44a4d2f9ec097c4ba3552d26966a78fb4bbe9330d198463329b901b78b",
+        "sourceLocator": "東海館基本情報／東松原町12-10／埋込地図 place q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 34.9716499,
+        "lng": 139.09707219999996
+      }
+    },
+    {
+      "id": "facility:chubu-west-e123842febb7c7319ad4",
+      "legacyIds": [
+        "place:e123842febb7c7319ad4"
+      ],
+      "name": "岐阜かかみがはら航空宇宙博物館",
+      "address": "岐阜県各務原市下切町5丁目1",
+      "phone": "058-386-8500",
+      "evidence": {
+        "sourceUrl": "https://www.city.kakamigahara.lg.jp/event/1005356/1010019/1017805.html",
+        "snapshotPath": "data/evidence/national/chubu-west/1b1ad4a4d9e100614bfe.html",
+        "snapshotSHA256": "59fb35933c446a19ccfb04fd696d3a526b0b9cb2aa28e38df48c0fcdaf8da585",
+        "sourceLocator": "配布場所／配布時間／休館日／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "legacyIds": [
+        "place:e4875744d6ee2c5a0a4f"
+      ],
+      "name": "富士宮市役所下水道課",
+      "address": "静岡県富士宮市弓沢町150",
+      "phone": "0544-22-1174",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "逆さ富士／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "legacyIds": [
+        "place:ea050d1cbc4a2d578cde"
+      ],
+      "name": "沼津観光案内所",
+      "address": "静岡県沼津市大手町1-1-1 沼津駅ビルアントレ2階",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第2号（ラブライブ！サンシャイン!!）／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-ec4b19393f5d955232db",
+      "legacyIds": [
+        "place:ec4b19393f5d955232db"
+      ],
+      "name": "愛知県下水道科学館",
+      "address": "愛知県稲沢市平和町須ケ谷長田295-3",
+      "phone": "0567-47-1551",
+      "evidence": {
+        "sourceUrl": "https://eppy.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/chubu-west/8b979d860cd7fef39364.html",
+        "snapshotSHA256": "cbd1a4cbe3258417c7712958d3b0bf8ce35e56f336de923847535c303eeba02f",
+        "sourceLocator": "マンホールカード在庫状況／概要／配付時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-f1394f4d42e33eedb981",
+      "legacyIds": [
+        "place:f1394f4d42e33eedb981"
+      ],
+      "name": "三河武士のやかた家康館",
+      "address": "愛知県岡崎市康生町561",
+      "phone": "0564-24-2204",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-f314eee8a2d1753372ca",
+      "legacyIds": [
+        "place:f314eee8a2d1753372ca"
+      ],
+      "name": "長泉町上下水道課",
+      "address": "静岡県駿東郡長泉町中土狩828",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+        "sourceLocator": "マンホールカード配布状況／窓口開庁時間変更に伴う短縮",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-f860c41765b78b59c083",
+      "legacyIds": [
+        "place:f860c41765b78b59c083"
+      ],
+      "name": "沼津市役所 水道部 水道総務課",
+      "address": "静岡県沼津市御幸町16-1(水道部庁舎2階)",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-fbf9eb4a36f46b0aac24",
+      "legacyIds": [
+        "place:fbf9eb4a36f46b0aac24"
+      ],
+      "name": "イオンタウン富士南 2階モールインフォメーション",
+      "address": "静岡県富士市鮫島118-10",
+      "phone": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "かぐや姫デザイン（消火栓）C001／配布場所・時間・受取条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIがカード配布窓口名を既存入力・現在GKP行と照合。住所・電話は基礎入力を保持し、明示訂正のみ反映。施設座標未確認。"
+      }
+    },
+    {
+      "id": "facility:chubu-west-fde9b94b8dfbd22c7499",
+      "legacyIds": [
+        "place:fde9b94b8dfbd22c7499"
+      ],
+      "name": "高山市丹生川支所",
+      "address": "岐阜県高山市丹生川町坊方2000番地",
+      "phone": "0577-78ー1111",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/shisetsu/1004139/1000027/1001406.html",
+        "snapshotPath": "data/evidence/national/chubu-west/76f1130da813914a63fc.html",
+        "snapshotSHA256": "7e3e42702abd4b7d3a6a4d4fcb22fde946cff6810e89e5b96badd78cbc91736d",
+        "sourceLocator": "施設案内 丹生川支所／所在地坊方2000／地図を表示する q",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本の施設名・住所と目的地座標を照合。建物代表点であり室内配布窓口の位置ではない。蓋座標・ジオコード・表示中心は不使用。"
+      },
+      "coordinate": {
+        "lat": 36.1702251,
+        "lng": 137.3099247
+      }
+    }
+  ],
+  "relations": [
+    {
+      "cardId": "21-202-A001",
+      "placeId": "facility:chubu-west-d450af2b3a1205fb8645",
+      "sourceHash": "f4d497d8e3477c47a3f5932e7d773a713b554f3f4a11c852642cbdb779111d46",
+      "hours": [
+        "9:00～17:00",
+        "12月29日～1月3日及び展示替えは休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.ogaki.lg.jp/0000041755.html",
+        "snapshotPath": "data/evidence/national/chubu-west/0d3e107728bd7ed3c121.html",
+        "snapshotSHA256": "db222c01d672a2ec7b9aaec4ace78977cad9073ad0f073adc8870e225a6c65b3",
+        "sourceLocator": "配布場所・時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-A001",
+      "placeId": "facility:chubu-west-037accf34de0d5a2d262",
+      "sourceHash": "d84577af7cd07b236d135afa7f051c0cd3dc61b642fba7d9f6f97433f8d95b2e",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "こばのみつばつつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-A001",
+      "placeId": "facility:chubu-west-6427a13dacffcc9fe6cd",
+      "sourceHash": "d84577af7cd07b236d135afa7f051c0cd3dc61b642fba7d9f6f97433f8d95b2e",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "こばのみつばつつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-B001",
+      "placeId": "facility:chubu-west-b831c16823b4aa3bed7c",
+      "sourceHash": "2f7d972a968d30e1965d1584b76382054ceed4e1f15a507f9c214116fdb4a5c7",
+      "hours": [
+        "【4月～10月】 10：00～17：00",
+        "【11月～3月】 10：00～16：00"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "おこじょ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-C001",
+      "placeId": "facility:chubu-west-afef7940a50a4b46b9f3",
+      "sourceHash": "9b6dafa40e3365294a13add18d11f746dfaa2b02d9d9bf40d24318be3e1478f1",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "風土季の郷 飛騨国府／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-D001",
+      "placeId": "facility:chubu-west-b71259080cfcb6fc37c9",
+      "sourceHash": "56fe3c99b69abb1e63afbe03234da020ddbee7bce1380549f5f11a905d2f39d5",
+      "hours": [
+        "8：30～17:15"
+      ],
+      "status": "active",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "荘川桜／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-E001",
+      "placeId": "facility:chubu-west-a06f703e25492c968c36",
+      "sourceHash": "2d64beb19229d43d738b3a1bd2bc8c8d23ef2fea33f24d054083675548739886",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "一之宮支所 基盤産業課窓口（休日の別窓口は公式記載なし）",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "臥龍桜／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-F001",
+      "placeId": "facility:chubu-west-cd2bc5f252d7f3212ad2",
+      "sourceHash": "e7388054666c4baa6aa4e5884be74440b806bdd29f3d2c91f7966fda9ef7408a",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "岩つつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-F001",
+      "placeId": "facility:chubu-west-31d2d4cf44cd774ab67d",
+      "sourceHash": "e7388054666c4baa6aa4e5884be74440b806bdd29f3d2c91f7966fda9ef7408a",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "岩つつじ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-G001",
+      "placeId": "facility:chubu-west-9967da81268c03d26284",
+      "sourceHash": "533f1c2fb129e6b177a12bf3b9fbdfc9fe238a671f20ea06f838eb185fc9166c",
+      "hours": [
+        "10:00～16:00",
+        "水曜日（祝祭日の場合は翌日）は配布なし"
+      ],
+      "status": "active",
+      "condition": "道の駅ひだ朝日村の営業日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "すずらん／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-G001",
+      "placeId": "facility:chubu-west-b1a8034431096652d1e4",
+      "sourceHash": "533f1c2fb129e6b177a12bf3b9fbdfc9fe238a671f20ea06f838eb185fc9166c",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "status": "active",
+      "condition": "水曜日（祝祭日の場合は翌日）：朝日支所基盤産業課窓口",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "すずらん／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-H001",
+      "placeId": "facility:chubu-west-fde9b94b8dfbd22c7499",
+      "sourceHash": "bcc8f1a61cab09266dfc28c8aa4dabe52377ab4129e0bf64dca7daec10b57030",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "status": "active",
+      "condition": "平日：基盤産業課窓口／休日：当直室窓口。施設建物を表す元の支所単位を維持。室内窓口の分割は未実装。",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "乗鞍岳と雷鳥／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-I001",
+      "placeId": "facility:chubu-west-66a0ec8fb8767a43d43a",
+      "sourceHash": "54b4d5a998d402b54efbf6af371b9d5cce565c30ad313ecaf4e3b396cafce33a",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "カワセミ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-203-I001",
+      "placeId": "facility:chubu-west-089d047d9f0ce871adc7",
+      "sourceHash": "54b4d5a998d402b54efbf6af371b9d5cce565c30ad313ecaf4e3b396cafce33a",
+      "hours": [
+        "8:30～17:15"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.takayama.lg.jp/kurashi/1000022/1000122/1001131/1022809.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a6c81cadbf3c83d10060.html",
+        "snapshotSHA256": "583544aa73f6273f7261bc14f3c3ee5f46b38a93df806fe758d24fef90d11820",
+        "sourceLocator": "カワセミ／配布場所・配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-204-A001",
+      "placeId": "facility:chubu-west-88433c254b4bd97d8db9",
+      "sourceHash": "9602389bfa588a9c4f3e0003a91612022d36e9abcadd7358536f9127976ac05f",
+      "hours": [
+        "10:00～18:00",
+        "ただし、年末年始はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.tajimi.lg.jp/kurashi_tetsuduzuki/jougesuido/1005578/1009966.html",
+        "snapshotPath": "data/evidence/national/chubu-west/405c0bfe61c17444de40.html",
+        "snapshotSHA256": "4e02b7554aed395bf7dc9984e4a489589f6d5a7517632ceec3f34311e16a43a6",
+        "sourceLocator": "在庫状況／配布場所／配布日時",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-205-A001",
+      "placeId": "facility:chubu-west-44c55ff47f14ec6d456e",
+      "sourceHash": "b9591cfeb7f0608e445843f24746dbe01109d57fc324f70835a3eb790622f2a8",
+      "hours": [
+        "平日開庁時間内（配布案内に具体時刻の独立明記なし）"
+      ],
+      "status": "active",
+      "condition": "平日開庁時間内・北庁舎2階下水道課",
+      "evidence": {
+        "sourceUrl": "https://www.city.seki.lg.jp/0000012751.html",
+        "snapshotPath": "data/evidence/national/chubu-west/519ea58f41b63e425fbd.html",
+        "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+        "sourceLocator": "マンホールカード配布情報／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-205-A001",
+      "placeId": "facility:chubu-west-92b7b359d5ae1c55761b",
+      "sourceHash": "b9591cfeb7f0608e445843f24746dbe01109d57fc324f70835a3eb790622f2a8",
+      "hours": [
+        "平日開庁時間外、土日祝、年末年始（配布案内に具体時刻の独立明記なし）"
+      ],
+      "status": "active",
+      "condition": "平日開庁時間外、土日祝、年末年始・北庁舎1階守衛室",
+      "evidence": {
+        "sourceUrl": "https://www.city.seki.lg.jp/0000012751.html",
+        "snapshotPath": "data/evidence/national/chubu-west/519ea58f41b63e425fbd.html",
+        "snapshotSHA256": "5a119fca0e9ddff7b5b8327fa0674881a0a6d868ab3136913bd32bfa8496ff77",
+        "sourceLocator": "マンホールカード配布情報／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-206-A001",
+      "placeId": "facility:chubu-west-5fe78965351993358d59",
+      "sourceHash": "ece524ecbe9d72994f5df05684eb45be83ccc33e5e57501a6d0a2bc4e45184ac",
+      "hours": [
+        "8：30～18：00",
+        "ただし、年末年始（12/29～1/3）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.nakatsugawa.lg.jp/life/wc/1/3551.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a8fc16972f717340c7bf.html",
+        "snapshotSHA256": "0ebafa7491df958259e880f68d58c9fa7492037ba72fdebf45e54aae3dfba93b",
+        "sourceLocator": "おいでん祭（風流踊り）／配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-206-B001",
+      "placeId": "facility:chubu-west-ac91b1a9ed9a8365efe6",
+      "sourceHash": "312312f5f479ba40bd09a6d6d7e4c073461d97a1352c843fd54e9bd1a9cd859a",
+      "hours": [
+        "9:00～21:30",
+        "年末年始・施設点検日は休み"
+      ],
+      "status": "active",
+      "condition": "ひと・まちテラス1階総合案内窓口。施設へのカード問合せは控え、観光課へ。",
+      "evidence": {
+        "sourceUrl": "https://www.city.nakatsugawa.lg.jp/kanko/bunka/taishi/39776.html",
+        "snapshotPath": "data/evidence/national/chubu-west/e1bc9c32a6613d8e7bfa.html",
+        "snapshotSHA256": "bd892d60d410f6056c04575f3c7552aa733acc409143b5ac8509ed79bd7debd3",
+        "sourceLocator": "マンホールカードの配布のご案内／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-210-A001",
+      "placeId": "facility:chubu-west-10600abe91968b5fc99e",
+      "sourceHash": "8d285050b884f56375a212242ca4dcf37a4a9c0052bdeff4c319a584ad51d6c1",
+      "hours": [
+        "9：00～18：00",
+        "ただし、12/29～1/4はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.ena.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido_gappeijokaso/12047.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d8c13826ca1b98ee265c.html",
+        "snapshotSHA256": "b0305e317d5f8a8dcc2919cee09f7a1a510dac70a4b316d1c971a12864382b2b",
+        "sourceLocator": "中山道大井宿（第21弾）／配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-210-B001",
+      "placeId": "facility:chubu-west-0760e6a872c336ab6cb2",
+      "sourceHash": "4367770372411fa059795ad0d8a3c9cc1ded61adbf5b0f8f9e86c28f0baec9e3",
+      "hours": [
+        "9：00～16：00",
+        "ただし、年末年始（12月28日～1月4日）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.ena.lg.jp/kurashi_tetsuzuki/jogesuido/gesuido_gappeijokaso/12047.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d8c13826ca1b98ee265c.html",
+        "snapshotSHA256": "b0305e317d5f8a8dcc2919cee09f7a1a510dac70a4b316d1c971a12864382b2b",
+        "sourceLocator": "女城主の里（第24弾）／配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-211-A001",
+      "placeId": "facility:chubu-west-da2c46732042f07a4ce1",
+      "sourceHash": "33bc4206ffe7dc5c3e911559dbfa2489a8e745312ab02cc6eb3de438895784dd",
+      "hours": [
+        "平日9:00～17:00",
+        "年末年始は配布なし"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+        "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+        "sourceLocator": "配布場所・配布時間／配布場所へのアクセス",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-211-A001",
+      "placeId": "facility:chubu-west-5ce6982ed962c936849d",
+      "sourceHash": "33bc4206ffe7dc5c3e911559dbfa2489a8e745312ab02cc6eb3de438895784dd",
+      "hours": [
+        "土日祝9:00～16:00",
+        "年末年始は配布なし"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html",
+        "snapshotPath": "data/evidence/national/chubu-west/21f980de953d19733592.html",
+        "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+        "sourceLocator": "配布場所・配布時間／配布場所へのアクセス",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-213-A001",
+      "placeId": "facility:chubu-west-e123842febb7c7319ad4",
+      "sourceHash": "29b83a709e5b3b8c0961355dccfad84692c81a5dfd2e91ce85eb89a2ea65931a",
+      "hours": [
+        "10:00～17:00",
+        "第一火曜日（休日は翌平日）・12月28日～1月2日休館。8月第一火曜日は開館。臨時休館あり"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.kakamigahara.lg.jp/event/1005356/1010019/1017805.html",
+        "snapshotPath": "data/evidence/national/chubu-west/1b1ad4a4d9e100614bfe.html",
+        "snapshotSHA256": "59fb35933c446a19ccfb04fd696d3a526b0b9cb2aa28e38df48c0fcdaf8da585",
+        "sourceLocator": "配布場所／配布時間／休館日／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-216-A001",
+      "placeId": "facility:chubu-west-aa2f784642e8d8d09de7",
+      "sourceHash": "dcd8c154d33b567a622166aa93941169c5377e8994850f64589333bbca0083d0",
+      "hours": [
+        "平日9:00～16:30",
+        "年末年始は配布休止"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+        "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+        "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-216-A001",
+      "placeId": "facility:chubu-west-08f2e7d930fa90a462e3",
+      "sourceHash": "dcd8c154d33b567a622166aa93941169c5377e8994850f64589333bbca0083d0",
+      "hours": [
+        "土日祝9:00～21:00",
+        "年末年始は配布休止"
+      ],
+      "status": "active",
+      "condition": "土日祝日",
+      "evidence": {
+        "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/70b7463e46200328b402.html",
+        "snapshotSHA256": "ebfc4c9287094a7625bc4b76b466d296596f5da0e2a2b2891f43c447252cdb73",
+        "sourceLocator": "通常カードの平日／土日祝の配布場所・時間（限定合格祈願版の終了とは別）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-217-A001",
+      "placeId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "sourceHash": "28afbc09094370e0bf21536004c95a13a03fb824a760c5126e179c568e9bd030",
+      "hours": [
+        "9：00～16：00",
+        "ただし、年末年始（12/29～1/3）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+        "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+        "sourceLocator": "古川町のマンホールカード／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-217-B001",
+      "placeId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "sourceHash": "0bdee0443e8d8413f2fc9c5ef96f3b8981e04dab3a75001e24e21d3facfca305",
+      "hours": [
+        "9:00～17:00（公式ページに「現在は16:00までの営業」の併記あり。訪問前確認が必要）",
+        "水曜日・年末年始休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d30b77eb8da1e0e2b8df.html",
+        "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+        "sourceLocator": "神岡町のマンホールカード／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-219-A001",
+      "placeId": "facility:chubu-west-51ec8a66f05dedab114b",
+      "sourceHash": "69ce95cd967ac8dad2c940b377c685cd0f5a46decd67695a2d98ef5a0db64d5c",
+      "hours": [
+        "9:00～17:00",
+        "ただし、年末年始（12/29～1/3）はお休みです",
+        "※天候等により予告なく変更する場合があります。"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-219-B001",
+      "placeId": "facility:chubu-west-5c6fb9ffe9787f7dcf8b",
+      "sourceHash": "34c1c78f526131838f09fb0506e2bd4ef44b88782e80330bdb15cd96c3de4169",
+      "hours": [
+        "9:00～18:00",
+        "ただし、毎週火曜日(祝日の場合は翌平日) 及び12月31日と1月1日はお休みです",
+        "※天候等により予告なく変更する場合があります。"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-219-C001",
+      "placeId": "facility:chubu-west-6d6bf5ddbdfb9667e163",
+      "sourceHash": "89c789ac5438a2710fdc6711615c825f0fd5d83e20278cd69a85cb5ebd8960c0",
+      "hours": [
+        "8:30～17:00",
+        "ただし、12月29日～1月3日はお休みです",
+        "※イベント開催・設備点検等で臨時休館となる場合があります"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-219-D001",
+      "placeId": "facility:chubu-west-cee0813d2aeb67ba5ec9",
+      "sourceHash": "38c3652013306344e98bf8e9393d83f4554c63e809307a5d2cb4453eee7d2b5c",
+      "hours": [
+        "8:00～17:00",
+        "ただし、12月31日･1月1日はお休みです",
+        "※季節･天候等により予告なく時間を変更する場合があります"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.gujo.gifu.jp/admin/info/post-1158.html",
+        "snapshotPath": "data/evidence/national/chubu-west/17ff68b0dbfc2f144c02.html",
+        "snapshotSHA256": "8e376d337a7e0232dcb482a18cebeedab39d49ca8b7a1ddfc9d781e89c7c9d4a",
+        "sourceLocator": "あまご／やまつつじ／GJ8マン／桜並木と長良川に泳ぐ鮎のカード別配布場所・時間・在庫",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-221-A001",
+      "placeId": "facility:chubu-west-5e018b80beeddee90a38",
+      "sourceHash": "b54bf0cab834381ba55ef8e81e96592f3e41ae3163c17c7ee50bbfd9eef529ef",
+      "hours": [
+        "平日9:00～16:30"
+      ],
+      "status": "active",
+      "condition": "平日のみ",
+      "evidence": {
+        "sourceUrl": "https://www.city.kaizu.lg.jp/kurashi/0000003072.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a85cae5a25d7eb573e96.html",
+        "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+        "sourceLocator": "配布場所・日程／配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-221-A001",
+      "placeId": "facility:chubu-west-4b8f7a5808187306039a",
+      "sourceHash": "b54bf0cab834381ba55ef8e81e96592f3e41ae3163c17c7ee50bbfd9eef529ef",
+      "hours": [
+        "9:00～17:00",
+        "休館日・年末年始は配布なし"
+      ],
+      "status": "active",
+      "condition": "平日・土日・祝日",
+      "evidence": {
+        "sourceUrl": "https://www.city.kaizu.lg.jp/kurashi/0000003072.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a85cae5a25d7eb573e96.html",
+        "snapshotSHA256": "eec8f1f1d67ca5d3ac358225216b90328a12e1dade0f4c3d208f13f6ba4676b2",
+        "sourceLocator": "配布場所・日程／配布時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-404-A001",
+      "placeId": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "sourceHash": "4dd57b67a5c801c0fa8a8bf2adc4ae7c7ec97615d75b826bd8a31a938998151b",
+      "hours": [
+        "9:00～16:30",
+        "土日祝・年末年始は平日の配布時間内に電話予約が必要"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001112.html",
+        "snapshotPath": "data/evidence/national/chubu-west/689a8f5590d85ab5f9a8.html",
+        "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+        "sourceLocator": "池田町のマンホールカード配布について",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-404-B001",
+      "placeId": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "sourceHash": "4dd57b67a5c801c0fa8a8bf2adc4ae7c7ec97615d75b826bd8a31a938998151b",
+      "hours": [
+        "9:00～16:30",
+        "土日祝・年末年始は平日の配布時間内に電話予約が必要"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001223.html",
+        "snapshotPath": "data/evidence/national/chubu-west/dc4312a46d8ea3be65e4.html",
+        "snapshotSHA256": "56dd2fa377998a7910a159f28b80e62566e8f1dd21db3e5d94a5a20be098ace8",
+        "sourceLocator": "池田町のマンホールカード配布について",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "21-505-A001",
+      "placeId": "facility:chubu-west-003049ae86c838ff02fe",
+      "sourceHash": "0d8e973eb295b3bb499172f4839c3ca192fca6eed7eabcf3cf33fb9cd0ec8400",
+      "hours": [
+        "9:30～16:30",
+        "月曜休館（祝日は翌日）。年末年始12月28日～1月5日休み（町配布ページ参照）"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://hayabusamuseum.town.yaotsu.lg.jp/",
+        "snapshotPath": "data/evidence/national/chubu-west/7b689c455850259de6a1.html",
+        "snapshotSHA256": "52a0ee03be1b1a6a56e8a15079cf98c4447c0efd6fa1a52a4b42e0be937c63cd",
+        "sourceLocator": "2026年8月14日 マンホールカード配布情報",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。 補足原本：https://www.town.yaotsu.lg.jp/7629.htm [data/evidence/national/chubu-west/00705a83b5229db76d5e.html sha256:cdedf6b5306bcf682d406f525b1d4e34c21454be04b76704e9d7909ba6d99ec0]"
+      }
+    },
+    {
+      "cardId": "22-100-A001",
+      "placeId": "facility:chubu-west-aca9f9af9af1eaca55a0",
+      "sourceHash": "ee9d8e47c1fbb0640ba1295b9f80cf2b51a04c31a0617497386bcf7ba721987a",
+      "hours": [
+        "8：30～17：15",
+        "ただし、年末年始（12月29日から1月3日まで）はお休みです"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-100-A001",
+      "placeId": "facility:chubu-west-81c5c44b2b18c5be8f72",
+      "sourceHash": "ee9d8e47c1fbb0640ba1295b9f80cf2b51a04c31a0617497386bcf7ba721987a",
+      "hours": [
+        "8：30～17：15",
+        "ただし、年末年始（12月29日から1月3日まで）はお休みです"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-100-B001",
+      "placeId": "facility:chubu-west-4c849d1dd26e653ecf9e",
+      "sourceHash": "4a8c6138bbccb7703e8db20327d485c529c20e703a9476b4c2e6996013a9b656",
+      "hours": [
+        "9:00～13:00、14:00〜17:45",
+        "ただし、年末年始（12/29～1/3）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.shizuoka.lg.jp/s2432/s001092.html",
+        "snapshotPath": "data/evidence/national/chubu-west/858c8a14753c65bff063.html",
+        "snapshotSHA256": "895a602cf31318071d4f9e1ccc56b92671b4230034f20e85bbbd59be7d6258fe",
+        "sourceLocator": "カード別配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-130-A001",
+      "placeId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "sourceHash": "65595869dc8dc40648919e526a818305b480d28518c6656c7889abb2f72beced",
+      "hours": [
+        "9：00～19：00（年中無休）"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.hamamatsu.shizuoka.jp/suidow-s/kouhou/manholecard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/971c86ba833f5fdaadae.html",
+        "snapshotSHA256": "9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576",
+        "sourceLocator": "家康くん・直虎ちゃん／観光インフォメーションセンター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-130-B001",
+      "placeId": "facility:chubu-west-377a9125bc963427ccae",
+      "sourceHash": "771426f7fa23d624cccb705bf42a133630cf3593de0403b4098c85fbaa2e07a7",
+      "hours": [
+        "配布時間は市の配布ページに記載なし。GKP案内9:00～17:00は未独立確認",
+        "月曜日（祝日は翌日）、祝日の翌日、12月29日～1月3日は配布なし"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.hamamatsu.shizuoka.jp/suidow-s/kouhou/manholecard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/971c86ba833f5fdaadae.html",
+        "snapshotSHA256": "9b43d0dd0262acf7cc6b512ee4a7cf8b6bdc69dc622c7f7df10ae101a8a03576",
+        "sourceLocator": "家康くん／犀ヶ崖資料館",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-203-A001",
+      "placeId": "facility:chubu-west-f860c41765b78b59c083",
+      "sourceHash": "1afdf739faa8a220ec8ce93abc2cf33c6a900ef2a29818224aac62b2c96c4a21",
+      "hours": [
+        "平日8:30～17:15",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-203-A001",
+      "placeId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "sourceHash": "1afdf739faa8a220ec8ce93abc2cf33c6a900ef2a29818224aac62b2c96c4a21",
+      "hours": [
+        "平日8:30～17:15",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-203-A001",
+      "placeId": "facility:chubu-west-3ae4954df5521d92e778",
+      "sourceHash": "1afdf739faa8a220ec8ce93abc2cf33c6a900ef2a29818224aac62b2c96c4a21",
+      "hours": [
+        "土日祝8:30～17:15",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "土日祝",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第1号（富士山とはまゆう）／配布時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-203-B001",
+      "placeId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "sourceHash": "db0a194ebc26adda1123dc149043d392e12078ae4a57a7e4e27a906ea39a9176",
+      "hours": [
+        "10:00～18:00"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3dc019aef1d363607a4d.html",
+        "snapshotSHA256": "22f4444780e5933efe322529dcb01c347a08457f2c579253a50ca461cd41d978",
+        "sourceLocator": "第2号（ラブライブ！サンシャイン!!）／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-205-A001",
+      "placeId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "sourceHash": "fa78399deb4bf3f9de3d75869cf97d34cd43837a00ec845a31073987c7dd74eb",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "貫一お宮／平日第二庁舎・休日第一庁舎／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-205-A001",
+      "placeId": "facility:chubu-west-b93c428182c323c9093b",
+      "sourceHash": "fa78399deb4bf3f9de3d75869cf97d34cd43837a00ec845a31073987c7dd74eb",
+      "hours": [
+        "8：30～17：15"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "貫一お宮／平日第二庁舎・休日第一庁舎／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-205-B001",
+      "placeId": "facility:chubu-west-9c28d6d70df40627bdc2",
+      "sourceHash": "857c1159de047f2d1e783c75310cbd36f94252487152afbabed3bff4c0a9ec7d",
+      "hours": [
+        "9:00～17:00",
+        "12月29日～1月3日は10:00～15:00",
+        "2026年11月18日・19日、2027年1月1日は協会休業につき配布なし（協会公式トップ告知参照）"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.atami.lg.jp/kurashi/suido/1000884/1011837/1016443.html",
+        "snapshotPath": "data/evidence/national/chubu-west/5e367acb7240f60f7279.html",
+        "snapshotSHA256": "a03dc8453ef58c4d9fe3fc7ba4e1c65a1859b55f3050b0e9dc87c55961ae022d",
+        "sourceLocator": "梅と芸妓／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。 補足原本：https://ataminews.gr.jp/ [data/evidence/national/chubu-west/a5baf4a1529d19f6b5e7.html sha256:2650f2de54e57ecc2281c2eedccae23d4bc9798770ede3e405c0ced15aea1819]"
+      },
+      "reviewUntil": "2026-11-17"
+    },
+    {
+      "cardId": "22-206-A001",
+      "placeId": "facility:chubu-west-42d1fd3038d27275e943",
+      "sourceHash": "9b5a7e6f366aeaefa6ad0e930bfe382ed7910820fad006508f659d09e1e7ba79",
+      "hours": [
+        "9:00～16:00"
+      ],
+      "status": "active",
+      "condition": "三島観光案内所の受付職員へ。問合せは市下水道課055-983-2662。",
+      "evidence": {
+        "sourceUrl": "https://www.city.mishima.shizuoka.jp/page/5716.html",
+        "snapshotPath": "data/evidence/national/chubu-west/88ac9be8ae85cce38bca.html",
+        "snapshotSHA256": "bbf249f8f925f2d14a6e393839633ae3a9436aef19b84a1b4015d2e51aa86581",
+        "sourceLocator": "令和8年8月5日配布再開／配布状況／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-207-A001",
+      "placeId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "sourceHash": "96fcd68ae1009200f410b622dc7757c7ce1ffa6713fb600a45953465c3a5e0ac",
+      "hours": [
+        "9:00～17:00",
+        "ただし、年末年始（12/27～1/4）はお休みです。"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "逆さ富士／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-207-A001",
+      "placeId": "facility:chubu-west-5ea337a795edcf07581c",
+      "sourceHash": "96fcd68ae1009200f410b622dc7757c7ce1ffa6713fb600a45953465c3a5e0ac",
+      "hours": [
+        "9:00～17:00",
+        "ただし、年末年始（12/27～1/4）はお休みです。"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "逆さ富士／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-207-B001",
+      "placeId": "facility:chubu-west-8c07e0d1e3594dac8e69",
+      "sourceHash": "b15bf708e148d6f88fd4a3696a5530d09eaed08db34ca77b7ff3a5b095c64344",
+      "hours": [
+        "【平日】9:00～17:00",
+        "【休日】10:00～16:00",
+        "ただし、年末年始（12/27～1/4）はお休みです。"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "さくやちゃん／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-207-C001",
+      "placeId": "facility:chubu-west-1ac3582c3ba4e7409460",
+      "sourceHash": "d0f08d6f18535db78a14609f7508c109f820bf6974ae7dc2a78823741ff42083",
+      "hours": [
+        "10:00～14:45",
+        "ただし、年末年始（12/27～1/5）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html",
+        "snapshotPath": "data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html",
+        "snapshotSHA256": "2c69bedd3edf0e53a2d17e5df66f305fb3d47cb9a9a18795ebb4bd9513deb94d",
+        "sourceLocator": "にじます／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-208-A001",
+      "placeId": "facility:chubu-west-dd679ceab32d01f0470f",
+      "sourceHash": "e071c939f4f3d2673365a30d6b8e34d1bfcd01221ae5c2aaa5d18a407d096adb",
+      "hours": [
+        "9:00～20:30",
+        "毎月第3火曜日（祝祭日は翌日）は休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.ito.shizuoka.jp/gyosei/soshikikarasagasu/gesuidoka/kurashi_tetsuzuki/1/1/7611.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d978205b437920cb5183.html",
+        "snapshotSHA256": "948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7",
+        "sourceLocator": "配布場所・時間／配布場所の地図",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。 補足原本：https://itospa.com/feature/tokaikan/ [data/evidence/national/chubu-west/9ebbc082169c1e2e2477.html sha256:b5697f44a4d2f9ec097c4ba3552d26966a78fb4bbe9330d198463329b901b78b]"
+      }
+    },
+    {
+      "cardId": "22-208-A001",
+      "placeId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "sourceHash": "e071c939f4f3d2673365a30d6b8e34d1bfcd01221ae5c2aaa5d18a407d096adb",
+      "hours": [
+        "9:00～17:00"
+      ],
+      "status": "active",
+      "condition": "東海館休館日（毎月第3火曜日、祝祭日は翌日）のみ",
+      "evidence": {
+        "sourceUrl": "https://www.city.ito.shizuoka.jp/gyosei/soshikikarasagasu/gesuidoka/kurashi_tetsuzuki/1/1/7611.html",
+        "snapshotPath": "data/evidence/national/chubu-west/d978205b437920cb5183.html",
+        "snapshotSHA256": "948c84ffc766c51d35050df74ebebd07089028a5fd6d1cd80402f25d828d83c7",
+        "sourceLocator": "配布場所・時間／配布場所の地図",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。 補足原本：https://itospa.com/feature/tokaikan/ [data/evidence/national/chubu-west/9ebbc082169c1e2e2477.html sha256:b5697f44a4d2f9ec097c4ba3552d26966a78fb4bbe9330d198463329b901b78b]"
+      }
+    },
+    {
+      "cardId": "22-210-A001",
+      "placeId": "facility:chubu-west-5ef81d64754943b71c47",
+      "sourceHash": "0b30925d6170b8fc4a728b25fb1c51bf7fd6014f8aafd082c1807d486ec40587",
+      "hours": [
+        "平日8:30～17:15"
+      ],
+      "status": "active",
+      "condition": "平日。窓口アンケートへの回答必須",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "赤富士と駿河湾の白波デザイン（A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-210-A001",
+      "placeId": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "sourceHash": "0b30925d6170b8fc4a728b25fb1c51bf7fd6014f8aafd082c1807d486ec40587",
+      "hours": [
+        "土日祝9:00～16:00",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "土日祝（振替休日含む）",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "赤富士と駿河湾の白波デザイン（A001）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-210-B001",
+      "placeId": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "sourceHash": "95d9a2dcb9ce1f54cab55d6d79fe7e1a5e009252b6ddda48193a5e10b8a3c518",
+      "hours": [
+        "平日8:30～17:15",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html",
+        "snapshotPath": "data/evidence/national/chubu-west/bf46211ce6cbf7385759.html",
+        "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+        "sourceLocator": "配布場所／配布時間／配布方法",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-210-B001",
+      "placeId": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "sourceHash": "95d9a2dcb9ce1f54cab55d6d79fe7e1a5e009252b6ddda48193a5e10b8a3c518",
+      "hours": [
+        "土日祝9:00～16:00",
+        "12月29日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "休日",
+      "evidence": {
+        "sourceUrl": "http://gakunan-haisuiro.jp/link(html)/manhole/manhole.html",
+        "snapshotPath": "data/evidence/national/chubu-west/bf46211ce6cbf7385759.html",
+        "snapshotSHA256": "5cb0db759a50de7ffed1b423a97f78e8dc092c68b871e3477e897585d6eba599",
+        "sourceLocator": "配布場所／配布時間／配布方法",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-210-C001",
+      "placeId": "facility:chubu-west-fbf9eb4a36f46b0aac24",
+      "sourceHash": "120a230da4dc895eb0f6bf27ec9c4c3d668aef3de32495751528407f4710c2fb",
+      "hours": [
+        "10:00～17:00",
+        "モールインフォメーション不在時は渡せない場合あり"
+      ],
+      "status": "active",
+      "condition": "本人ごとに窓口WEBアンケート回答必須。通信可能なスマートフォン等を持参。問合せは富士市上下水道営業課0545-67-2829へ（施設には不可）。",
+      "evidence": {
+        "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3b200be69fecf3ecbb2f.html",
+        "snapshotSHA256": "05797db75da42287fe32230dc4bc9333d8fd5a6c3b872e67858005c737628c7a",
+        "sourceLocator": "かぐや姫デザイン（消火栓）C001／配布場所・時間・受取条件",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-211-A001",
+      "placeId": "facility:chubu-west-b943f5c6151615096149",
+      "sourceHash": "bf150f490a4da06a984d153aa6b2327d38ca2bce953edc3fda7b32e816b7cf91",
+      "hours": [
+        "9:00～18:00",
+        "月曜日（祝日は翌日）・12月29日～1月3日休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html",
+        "snapshotPath": "data/evidence/national/chubu-west/bdfdefe3c6f22a457c32.html",
+        "snapshotSHA256": "83b7ae49106791d369f9b308c799d5978bef3af6579384fc7e885b1f7b86912e",
+        "sourceLocator": "配布場所・配布時間／休館日の配布",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-212-A001",
+      "placeId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "sourceHash": "5b8919ac65033490636e2826ef99a494fc873d5e6e0d6e5e3b76bc0c0187856a",
+      "hours": [
+        "8:45～17:00",
+        "年末年始除く"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.yaizu.lg.jp/life/water-sewage/sewage/other-info/manhole-card.html",
+        "snapshotPath": "data/evidence/national/chubu-west/3271176bd331a58e3358.html",
+        "snapshotSHA256": "6f12dbe837ffb9f4e978d37a51dafa8a0a19400c24225bbbce01c2d2f559b08e",
+        "sourceLocator": "配布再開／配布場所・配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-213-A001",
+      "placeId": "facility:chubu-west-56f3a4266eeae373c798",
+      "sourceHash": "b8d71b1b7608df0de3695786be42ebb97c1fcbb4f4f3a6ea2e213b2007147309",
+      "hours": [
+        "9:00～16:30（年中無休）"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.kakegawa.shizuoka.jp/life/gesuidou/jyokasonituite_2_2.html",
+        "snapshotPath": "data/evidence/national/chubu-west/53fc190289517f9154c3.html",
+        "snapshotSHA256": "466e849146c152eef2787b74f3ca1932a3a136390cde1cd392860c55a9d92f29",
+        "sourceLocator": "配布について／配布場所・時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-214-A001",
+      "placeId": "facility:chubu-west-da2a2dd8261e6ba2994d",
+      "sourceHash": "229a04b078516adfe172124aa449dbc1ef4d3073425d30f6fac3784b1ce3eb69",
+      "hours": [
+        "9：00～17：00（入館は16：30まで）",
+        "ただし、月曜日、祝日の翌日、年末年始(12/28～1/4)はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.city.fujieda.shizuoka.jp/soshiki/kankyosuido/gesuido/oshirase/1531352696524.html",
+        "snapshotPath": "data/evidence/national/chubu-west/de36c042cf03b5db1bc9.html",
+        "snapshotSHA256": "9beff305ff43feb48e08c1f9f3806b0b880cb2e90fb5a7d005dd91f9c2a05b62",
+        "sourceLocator": "配布場所／配布時間／在庫配布状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-215-A001",
+      "placeId": "facility:chubu-west-6174b986d89b31577298",
+      "sourceHash": "566817f9b1fa1bed6f558e4b21bff4e6250e5b59e173c4f34da2b48d281d39c1",
+      "hours": [
+        "9:00～17：00(12月～2月は9:00～16：00)",
+        "ただし、火曜日（火曜日が祝日の場合は翌日）及び年末年始（12/30～1/1）はお休みです。なお、7/20～8/31は無休です"
+      ],
+      "status": "suspended",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.gotemba.lg.jp/kurashi/b-6/b-6-1/7287.html",
+        "snapshotPath": "data/evidence/national/chubu-west/708527bcc5a726837bd7.html",
+        "snapshotSHA256": "9233c40809dba6d96f3b1d41adc3bc40b24893875cd3febb33063e3ae76403de",
+        "sourceLocator": "冒頭：令和8年度分の配布枚数は終了。再開は令和9年度予定",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      },
+      "reviewUntil": "2027-03-31"
+    },
+    {
+      "cardId": "22-219-A001",
+      "placeId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "sourceHash": "8af7d788ac8fcac9627116c83c91335641f46e7c14df09e67b1b2551e8d58399",
+      "hours": [
+        "8:30～17:00"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.shimoda.shizuoka.jp/category/020200gesuidou/155727.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c54f705610e406880b3a.html",
+        "snapshotSHA256": "9c48a698c270fa925dd21256160df8aa958d9b400c53a290980c26ccbce82e45",
+        "sourceLocator": "配布について／マンホールカードの残数",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-220-A001",
+      "placeId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "sourceHash": "9b0939aa80fef6dfc9808e247e4599400c73c992c1ace6f9a022ba13fd68fcf9",
+      "hours": [
+        "8:30～17:00（4/1～9/30）",
+        "8:30～16:00(10/1～3/31)",
+        "ただし、年末年始（12/29～1/3）はお休みです"
+      ],
+      "status": "active",
+      "condition": "2026年11月14日・15日は職員不在により終日配布休止。通常は季節別時間。",
+      "evidence": {
+        "sourceUrl": "https://www.city.susono.shizuoka.jp/soshiki/11/3/1/21155.html",
+        "snapshotPath": "data/evidence/national/chubu-west/25e20c68afa8352a3312.html",
+        "snapshotSHA256": "e8d9b0a9890053226389f7188a8ae627831dbf59c9d79b174e46c1c6c5d8b0f0",
+        "sourceLocator": "臨時休止などの情報／配布時間・場所／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      },
+      "reviewUntil": "2026-11-13"
+    },
+    {
+      "cardId": "22-221-A001",
+      "placeId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "sourceHash": "94c1f9a8d2c09ff369f3ed3c8b0d26253d071241a0f5a8567a24bec09f88e910",
+      "hours": [
+        "9：00～16：30",
+        "ただし、毎週月曜日（祝日の場合は配布可能）と年末年始（12/26～1/2）はお休みです",
+        "８月は無休です"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.kosai.shizuoka.jp/soshikiichiran/gesuidoka/12799.html",
+        "snapshotPath": "data/evidence/national/chubu-west/f025ceade1cf7f0fbcf1.html",
+        "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+        "sourceLocator": "新居関所マンホールカード／配布について・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-221-B001",
+      "placeId": "facility:chubu-west-5932e2e45330110f4e22",
+      "sourceHash": "2bc4c9ba74854a8bd6c3194ca63c7836b36c4c27ef2516243e48ef18d1dcea9a",
+      "hours": [
+        "8:00～18:00",
+        "年中無休※臨時休業する場合があります。最新情報は道の駅潮見坂ウェブサイトをご確認ください"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.kosai.shizuoka.jp/soshikiichiran/gesuidoka/12799.html",
+        "snapshotPath": "data/evidence/national/chubu-west/f025ceade1cf7f0fbcf1.html",
+        "snapshotSHA256": "258e1ac3e7b6479b0474b6eb94d5a0e8c1a51f41152ddb0bfb93f3876d0e1132",
+        "sourceLocator": "うなぽんマンホールカード／配布について・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-225-A001",
+      "placeId": "facility:chubu-west-5adf45f55cd55f967643",
+      "sourceHash": "230be2829cd79ce6b4d5a38432b5ea42bbe862ad5fb91be0ca4997bf10877279",
+      "hours": [
+        "9:00～16:00"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.city.izunokuni.shizuoka.jp/jyougesui/mhcard.html",
+        "snapshotPath": "data/evidence/national/chubu-west/87e79f480b6944a6758b.html",
+        "snapshotSHA256": "c9308bbb0d2f6d226e48753013e1b2f89c92aeb61b34b623b314714e7a0a0376",
+        "sourceLocator": "配布方法／配布場所・配布時間・在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-304-A001",
+      "placeId": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "sourceHash": "4c6296b956aa1d6861b5554c0cbb69b376eb11246134753c01c75939d99bcf72",
+      "hours": [
+        "9:00～17:00",
+        "12月31日～1月3日は当施設での配布なし"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.town.minamiizu.shizuoka.jp/docs/2016113000026/",
+        "snapshotPath": "data/evidence/national/chubu-west/3bb5f25c6a06af64e728.html",
+        "snapshotSHA256": "f1f5b0fa05b1e1e0e50c145d196115d42c135d7ec875bcb7e6035bff25800ed9",
+        "sourceLocator": "マンホールカードの配布詳細",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-342-A001",
+      "placeId": "facility:chubu-west-f314eee8a2d1753372ca",
+      "sourceHash": "b61c964a9c0633d4a94722551c4c243ac44e9e71ec712c59b2b7820a99417d86",
+      "hours": [
+        "9:00～16:30"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+        "sourceLocator": "マンホールカード配布状況／窓口開庁時間変更に伴う短縮",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-342-B001",
+      "placeId": "facility:chubu-west-b2f09c0252344a65be02",
+      "sourceHash": "53507e536a0616047723a4f18cfaad28dee588e3a1b6df5abdc1f27cbe9b5aa1",
+      "hours": [
+        "9：00～17：00",
+        "ただし、毎月第3月曜日・12月28日～1月4日はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html",
+        "snapshotPath": "data/evidence/national/chubu-west/ebff2daa14b40c2a38b6.html",
+        "snapshotSHA256": "27eee33684ce0603edc5ff043c8cb28bf02ed00d8d2ab02f1ddb1fbb2101af8b",
+        "sourceLocator": "新カラーマンホールカード配布状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-344-A001",
+      "placeId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "sourceHash": "7de5f3b403c69657c38ed5408f5d3f35641feafa2794d4a1c56ecd16adc3fcf0",
+      "hours": [
+        "9:00～17:00",
+        "年末年始は配布なし"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.fuji-oyama.jp/page/1248.html",
+        "snapshotPath": "data/evidence/national/chubu-west/c7331fde339a5043de92.html",
+        "snapshotSHA256": "4535755945294f4ac428a02b91ceb8fdd6fc1e4e8976cc47b63ad0d80d6ca7e2",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-424-A001",
+      "placeId": "facility:chubu-west-b1cc9578f267b5c9cbd4",
+      "sourceHash": "8b05a301d135cc09fabc7e23e9bfe04d62636df51250ec64e4323f3b76016ba8",
+      "hours": [
+        "9:00～16:00",
+        "ただし、月曜日（祝日の場合は翌日）と年末年始の12月28日～1月5日はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm",
+        "snapshotPath": "data/evidence/national/chubu-west/3e4a7c50833d565690c7.html",
+        "snapshotSHA256": "246e9ccd2a71e6e2a7e27b29c1ecbcf2de1738aa3c81c0180658ddb52c076739",
+        "sourceLocator": "マンホールカードの配付場所・時間／在庫状況",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-461-A001",
+      "placeId": "facility:chubu-west-173631f1c1625346bb45",
+      "sourceHash": "4d3763b2e3a429cd7650f713fdc06ff5dc54736ffeeecc0fac8b4d8b6f0901df",
+      "hours": [
+        "8:35～17:00",
+        "12月29日～1月3日は配布なし"
+      ],
+      "status": "active",
+      "condition": "平日",
+      "evidence": {
+        "sourceUrl": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/gesuido/4924.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a366a04376fa8d16320b.html",
+        "snapshotSHA256": "898e055fc4b7ba04750fc2a6f88353f2c0dd20a8d0673e8eb99131a0d3662990",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "22-461-A001",
+      "placeId": "facility:chubu-west-1d4a968e42f9ee53e385",
+      "sourceHash": "4d3763b2e3a429cd7650f713fdc06ff5dc54736ffeeecc0fac8b4d8b6f0901df",
+      "hours": [
+        "8:35～17:00",
+        "12月29日～1月3日は配布なし"
+      ],
+      "status": "active",
+      "condition": "土日祝日",
+      "evidence": {
+        "sourceUrl": "https://www.town.morimachi.shizuoka.jp/gyosei/kurashi_tetsuzuki/jogesuido/gesuido/4924.html",
+        "snapshotPath": "data/evidence/national/chubu-west/a366a04376fa8d16320b.html",
+        "snapshotSHA256": "898e055fc4b7ba04750fc2a6f88353f2c0dd20a8d0673e8eb99131a0d3662990",
+        "sourceLocator": "配布場所／配布時間",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-000-A001",
+      "placeId": "facility:chubu-west-ec4b19393f5d955232db",
+      "sourceHash": "ac769ceca9cea3af4ce7b3f04740f70d6aa3c9e9337a271fc13bcfe85af150c3",
+      "hours": [
+        "9:30～16:30",
+        "月曜日（祝日は翌平日）・12月29日～1月3日休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://eppy.jp/mhcard/",
+        "snapshotPath": "data/evidence/national/chubu-west/8b979d860cd7fef39364.html",
+        "snapshotSHA256": "cbd1a4cbe3258417c7712958d3b0bf8ce35e56f336de923847535c303eeba02f",
+        "sourceLocator": "マンホールカード在庫状況／概要／配付時間・場所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-100-A001",
+      "placeId": "facility:chubu-west-4dc14b2f36d531ba43e1",
+      "sourceHash": "c0ce2afbbf397de8c00066b617ffd6de758a713a6b055faea4576e6e303721eb",
+      "hours": [
+        "9：30～16：30",
+        "ただし、月曜日（祝日の場合は翌平日）、年末年始はお休みです",
+        "なお、駐車場はありません"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.water.city.nagoya.jp/category/manhole/141508.html",
+        "snapshotPath": "data/evidence/national/chubu-west/91f7d2ad601e7dbd33bb.html",
+        "snapshotSHA256": "ba039cc41aadbf5d20e5d12ec5196c887b146c7552b6da549d2f1a968ee09e56",
+        "sourceLocator": "名古屋市上下水道局におけるマンホールカードの配布／デザイン別表",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-100-B001",
+      "placeId": "facility:chubu-west-3e235965c9bf1b755341",
+      "sourceHash": "70efc5a2164a1eed7732360048763ca4d06720b5c204838e8f07871ffbf8b0aa",
+      "hours": [
+        "9:30～16:30",
+        "ただし、月曜日（祝日の場合は翌平日）、年末年始（12/29～1/3）はお休みです",
+        "※臨時休館日についてはHPをご確認ください"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://www.water.city.nagoya.jp/category/manhole/141508.html",
+        "snapshotPath": "data/evidence/national/chubu-west/91f7d2ad601e7dbd33bb.html",
+        "snapshotSHA256": "ba039cc41aadbf5d20e5d12ec5196c887b146c7552b6da549d2f1a968ee09e56",
+        "sourceLocator": "名古屋市上下水道局におけるマンホールカードの配布／デザイン別表",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-A001",
+      "placeId": "facility:chubu-west-f1394f4d42e33eedb981",
+      "sourceHash": "fe63c18d8ebf8da7d9272c4ad721e68e904db0f1176595433f8241fa71e92f68",
+      "hours": [
+        "9：00～17：00（入館は16:30まで）",
+        "ただし、年末（12/29～12/31）はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-B001",
+      "placeId": "facility:chubu-west-d3d90a695397655a9f91",
+      "sourceHash": "a0d85075684f6e603ff472aad632d520ac980ce9b796fd784101e71ebcefed1b",
+      "hours": [
+        "9：00～17：00",
+        "ただし、年末年始はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-C001",
+      "placeId": "facility:chubu-west-990be32c648e4d8bae69",
+      "sourceHash": "09f3070a818d59eb1821437a2dba2ce006997d6e86807b32cb3367e6e6c50695",
+      "hours": [
+        "9：00〜18：00"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-D001",
+      "placeId": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "sourceHash": "1de5aa9523d95c333a1f60d268d7096585d43cd60d60f7344e061667f1f950a1",
+      "hours": [
+        "9：00〜16：00",
+        "ただし、年末年始はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-E001",
+      "placeId": "facility:chubu-west-4474115e677e3d67b529",
+      "sourceHash": "b2afd67d00ca042d9008b407b0511e992008babdc25f7f8040245b819be522ea",
+      "hours": [
+        "9:30～16:30",
+        "ただし、毎週月曜日（祝日の場合は翌日）、年末年始はお休みです"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-F001",
+      "placeId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "sourceHash": "429c3b3e2383c68225cea3145610e806992050f2f2c0203b13f547dde3a47e6c",
+      "hours": [
+        "9:00～17:00",
+        "12月31日～1月3日休み"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "カード別配布窓口・配布時間・定休日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-202-G001",
+      "placeId": "facility:chubu-west-978f1acf9e5ee7761f02",
+      "sourceHash": "de7be226b9113eb7da4096dc6f57500cf9b96381d80c7b10cd17bf71974d145e",
+      "hours": [
+        "9:00～12:00、13:00～18:00、19:00～21:00（時間は前後する可能性あり）",
+        "毎週水曜日・12月29日～1月3日休館"
+      ],
+      "status": "active",
+      "condition": "",
+      "evidence": {
+        "sourceUrl": "https://okazaki-kanko.jp/feature/manhole/manholecard",
+        "snapshotPath": "data/evidence/national/chubu-west/8b69267308f823b08a18.html",
+        "snapshotSHA256": "51751d1667baffd5464af525a6570f2b4a397a4166acc968dd1c86126d95e5b1",
+        "sourceLocator": "下水道事業100周年記念デザイン「岡崎城とルネガール」／りぶら市民活動センター／配布時間・休館日",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    },
+    {
+      "cardId": "23-232-A001",
+      "placeId": "facility:chubu-west-b128731fef6309f26ed0",
+      "sourceHash": "9e998ad72a8950030bfbb1c35036782e054b24fdd49751632211e202cb44f5dc",
+      "hours": [
+        "配布時間は観光協会FAQに記載なし（GKPの9:00～17:00は未独立確認）"
+      ],
+      "status": "active",
+      "condition": "観光案内所内で配布。事前に窓口アンケートへの回答が必要。",
+      "evidence": {
+        "sourceUrl": "https://www.aisaikankou.jp/wgs/blog/fp/43/",
+        "snapshotPath": "data/evidence/national/chubu-west/8433ec26de36764e31b3.html",
+        "snapshotSHA256": "c7a5e36a8ba5c0c02958e1b815f2ad00eb4e067b714097c4fb41c030f2238dcf",
+        "sourceLocator": "よくある質問／マンホールカードはどこでもらえますか／住所フッター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式配布案内のカード図柄・配布施設と既存関係を照合し、明示されたカード配布時間・条件を確認。不明な時間は不明と表示。人手・現地確認ではない。"
+      }
+    }
+  ]
+}

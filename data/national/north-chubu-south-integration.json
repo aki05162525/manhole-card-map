@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "inputs": [
+    {
+      "path": "data/work/national-assembled-chiba-locations.json",
+      "sha256": "6d1f12485ec3cb1ba02f3cf6f978fbf6b9298a99a7ebee408d860734a8457a62"
+    },
+    {
+      "path": "data/national/patches/north.json",
+      "sha256": "26857d9fb90de9fc7caa29ee72d26c7d65861c36196bde662fda1b2660710d28"
+    },
+    {
+      "path": "data/overrides/proposals/north.json",
+      "sha256": "c3a45d01d89adde2543c94f5c6e9d84ebe1b9e37d797c963388f4b9324991e79"
+    },
+    {
+      "path": "data/national/location-updates/chubu-east-south.json",
+      "sha256": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707"
+    }
+  ],
+  "output": "data/work/national-assembled-north-chubu-south.json",
+  "outputSHA256": "5edf64897facc887bca747383ac5517a5930e569ee810e9b0e85398f89b2e15f",
+  "northApplied": [
+    {
+      "id": "facility:north-dc7b25bac2387c1d4172"
+    },
+    {
+      "cardId": "01-203-A002",
+      "placeId": "facility:north-dc7b25bac2387c1d4172"
+    },
+    {
+      "id": "facility:north-12b6e6080ef6e1e816a7"
+    },
+    {
+      "cardId": "01-215-A001",
+      "placeId": "facility:north-12b6e6080ef6e1e816a7"
+    },
+    {
+      "id": "facility:north-c6af31b0552e6e96071a"
+    },
+    {
+      "cardId": "01-406-A001",
+      "placeId": "facility:north-c6af31b0552e6e96071a"
+    },
+    {
+      "id": "facility:north-8da9db2c5cc58d40b221"
+    },
+    {
+      "cardId": "03-205-B001",
+      "placeId": "facility:north-8da9db2c5cc58d40b221"
+    },
+    {
+      "id": "facility:north-008e2585ad57dd933bf1"
+    },
+    {
+      "cardId": "03-205-C001",
+      "placeId": "facility:north-008e2585ad57dd933bf1"
+    },
+    {
+      "cardId": "03-205-A001",
+      "placeId": "facility:north-302d2544c978ef46ca8e"
+    },
+    {
+      "cardId": "03-205-A001",
+      "placeId": "facility:north-db757b448c8db73422a5"
+    },
+    {
+      "cardId": "03-205-B001",
+      "placeId": "facility:north-8da9db2c5cc58d40b221"
+    },
+    {
+      "cardId": "03-205-C001",
+      "placeId": "facility:north-008e2585ad57dd933bf1"
+    },
+    {
+      "cardId": "03-205-D001",
+      "placeId": "facility:north-79a76f9fa4f60b40d34e"
+    },
+    {
+      "cardId": "03-205-D001",
+      "placeId": "facility:north-9cb13f2a84717327940e"
+    }
+  ],
+  "northDeferredDeletions": [
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d",
+        "condition": "4月から5月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:ac7e763f23b8726063bc"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:ac7e763f23b8726063bc",
+        "condition": "6月から8月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:10a13ada0d33b3d6482d",
+        "condition": "9月から10月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "01-234-A001",
+        "placeId": "place:2e3e65acd34d1bb673af"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "01-234-A001",
+        "placeId": "place:2e3e65acd34d1bb673af",
+        "condition": "11月から3月",
+        "raw": [
+          "エルフィンパーク市民サービスコーナー",
+          "北海道北広島市中央6-209",
+          "電話：011-376-8880",
+          "【4月から5月】9:30から18:00まで",
+          "【6月から8月】9:00から19:00まで",
+          "【9月から10月】9:30から18:00まで",
+          "【11月から3月】10:00から16:00まで",
+          "※年末年始【12月31日から1月3日】は配布をお休みします。"
+        ],
+        "periodRaw": "エルフィンパーク市民サービスコーナー\n北海道北広島市中央6-209\n電話：011-376-8880\n【4月から5月】9:30から18:00まで\n【6月から8月】9:00から19:00まで\n【9月から10月】9:30から18:00まで\n【11月から3月】10:00から16:00まで\n※年末年始【12月31日から1月3日】は配布をお休みします。",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": true
+      },
+      "new": null,
+      "reason": "時間見出しの誤抽出",
+      "evidence": [
+        {
+          "url": "http://www.city.kitahiroshima.hokkaido.jp/hotnews/category/163.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:44.644201+00:00",
+          "snapshotPath": "data/evidence/national/north/d03d99d4f0c03e2d1e56.html",
+          "snapshotSHA256": "ee5a0121e05e3c7567c0a630bad85752147c3a0bfd4d5b1c5e917cbe3f65f814",
+          "pageTitle": "エルフィンパーク | 施設 | 北海道北広島市",
+          "findings": "取得本文を配布根拠・施設位置の照合に使用。採用可否は関係別記録を参照。"
+        },
+        {
+          "url": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:23:36.937895+00:00",
+          "snapshotPath": "data/evidence/national/north/283a55ead38b50c89d51.html",
+          "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+          "pageTitle": "マンホールカードの配布 | 北海道北広島市",
+          "findings": "placeTextに混入した他施設の季節時間を採用せず。"
+        }
+      ]
+    },
+    {
+      "file": "generated full.json only; parser correction requires parent review",
+      "collection": "relations",
+      "match": {
+        "cardId": "07-202-A001",
+        "placeId": "place:652171d4c3784b670cc1"
+      },
+      "old": {
+        "status": "unknown",
+        "review": "needs-review",
+        "cardId": "07-202-A001",
+        "placeId": "place:652171d4c3784b670cc1",
+        "condition": "",
+        "raw": [
+          "会津若松市役所",
+          "会津若松市東栄町３番４６号",
+          "【平日】総合案内",
+          "【休日】警備員室"
+        ],
+        "periodRaw": "",
+        "alternativeRaw": "",
+        "alternativeTo": null,
+        "interpretation": "条件は原文を参照。期間と代替先の構造化は未確認",
+        "addressBorrowed": false
+      },
+      "new": null,
+      "reason": "建物総称の重複。実際の総合案内・警備員室は維持",
+      "evidence": [
+        {
+          "url": "http://www.city.aizuwakamatsu.fukushima.jp/docs/2016071500026/",
+          "result": 200,
+          "fetchedAt": "2026-11-05T04:22:43.740635+00:00",
+          "snapshotPath": "data/evidence/national/north/ba3a8929c3df8e66f2af.html",
+          "snapshotSHA256": "041ee626ff6328f00d2be90c8742998e0a40fad95d33469be03cf643378d7ede",
+          "pageTitle": "「マンホールカード」を配布しています | 会津若松市",
+          "findings": "新庁舎1階の平日総合案内と休日警備員室。"
+        }
+      ]
+    }
+  ],
+  "chubuSouthLocations": [
+    "facility:chubu-east-07f787d6ebaa93bc9835",
+    "facility:chubu-east-0f733e578ed8dfabce6f",
+    "facility:chubu-east-0fd84c6d0c4eabf1d0d1",
+    "facility:chubu-east-14694c15ef3d57ca92b2",
+    "facility:chubu-east-16b405b7652564745b34",
+    "facility:chubu-east-16c63dfdfc3546f0dd4a",
+    "facility:chubu-east-177e0a9ccf3f9efd4d8e",
+    "facility:chubu-east-1873f00f89397e604f91",
+    "facility:chubu-east-1919e96c38d93464ac10",
+    "facility:chubu-east-23b765e83a24b0572f14",
+    "facility:chubu-east-250ec98cc7674e184f8e",
+    "facility:chubu-east-2eb024e00a99a3718e55",
+    "facility:chubu-east-3ac38db71a691c3fcfbb",
+    "facility:chubu-east-3c6dce1c5d99dbee8ed8",
+    "facility:chubu-east-3d395fd0898a7e897f1a",
+    "facility:chubu-east-3da655e9cc4aace828ca",
+    "facility:chubu-east-4b2534397c48d77bcbbe",
+    "facility:chubu-east-4c15af4b331b75bc8e13",
+    "facility:chubu-east-55583a446f35b69ffe19",
+    "facility:chubu-east-594468deaaadb12566fe",
+    "facility:chubu-east-63b3ecc82b26a1cad556",
+    "facility:chubu-east-6a5f95e13b28a80c7879",
+    "facility:chubu-east-6e500b9711c811def1c6",
+    "facility:chubu-east-6ea68c8c943841673780",
+    "facility:chubu-east-7736bb2f1ac11ccc5532",
+    "facility:chubu-east-77cf8288e6e9510f9ae8",
+    "facility:chubu-east-7bd80ff6a9966802b8d1",
+    "facility:chubu-east-7f549ada73c57c23a534",
+    "facility:chubu-east-7fc804b6a9362ddc2876",
+    "facility:chubu-east-84a991ac28e95bb0f5d9",
+    "facility:chubu-east-92f40003c8378260eee6",
+    "facility:chubu-east-9496f36780caf9f45cfa",
+    "facility:chubu-east-9da3a3fa6597081b07b6",
+    "facility:chubu-east-a26b7fe4e2ae7321d5e3",
+    "facility:chubu-east-b7497f6468e8a95e8d7a",
+    "facility:chubu-east-bb2709c025d6efa5a6fa",
+    "facility:chubu-east-cbdcd8afa15f77a453c8",
+    "facility:chubu-east-d068a23e7adb469b3e16",
+    "facility:chubu-east-de5dfcbffd2871a41428",
+    "facility:chubu-east-e3947117d69e4bf41fb4",
+    "facility:chubu-east-e56a148b2c800c4359da"
+  ]
+}

@@ -1,0 +1,565 @@
+{
+  "schema": 1,
+  "region": "kinki",
+  "patches": [
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "26-344-A001",
+        "placeId": "facility:kinki-ce0f123ef5e185dce8c9"
+      },
+      "field": "sourceHash",
+      "old": "1e8628579221a08e24a25fd9be8443040d766246dbfa9d19dba55d3cc0ab636a",
+      "new": "3ca831fc8845de494bb16f5fe31d613bd5ae2bbb66f7d09f6aa2903722390644",
+      "reason": "2026-11-05現一覧と保存自治体原典の時間・配布場所を個別再照合。指紋のみの承認持越しではない。",
+      "evidence": {
+        "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/782.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/05a6d72466a56689d856.html",
+        "snapshotSHA256": "666760762ca21e71e3cb84432da3d5c57d086252df98e3e293a263551f75e0ea",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-344-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。旧カードにも文化センター追加。既存対応にない窓口はproposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "26-344-B001",
+        "placeId": "facility:kinki-ce0f123ef5e185dce8c9"
+      },
+      "field": "sourceHash",
+      "old": "69302e4d10c7b25781ef7278e0c7ada1c8f0ac1d3abd4efc37664c6c060af6ee",
+      "new": "5f8b81d40ba7e4aee3e534ef604f565d0c2a88656553654c2171b4ba31d28bff",
+      "reason": "2026-11-05現一覧と保存自治体原典の時間・配布場所を個別再照合。指紋のみの承認持越しではない。",
+      "evidence": {
+        "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/4328.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/4ca6f8145508b258c08e.html",
+        "snapshotSHA256": "6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-344-B001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9/1再開・在庫あり。AとBとも2施設、抽出されていない関係はproposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "26-344-B001",
+        "placeId": "facility:kinki-c1f821f1bc9c44d7290e"
+      },
+      "field": "sourceHash",
+      "old": "69302e4d10c7b25781ef7278e0c7ada1c8f0ac1d3abd4efc37664c6c060af6ee",
+      "new": "5f8b81d40ba7e4aee3e534ef604f565d0c2a88656553654c2171b4ba31d28bff",
+      "reason": "2026-11-05現一覧と保存自治体原典の時間・配布場所を個別再照合。指紋のみの承認持越しではない。",
+      "evidence": {
+        "sourceUrl": "https://www.town.ujitawara.kyoto.jp/soshiki/jogesuidoka/seikatsu_kankyo/1/4328.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/4ca6f8145508b258c08e.html",
+        "snapshotSHA256": "6d6debedcfb648ae2aa3edef95c8f2aecd158870fefece148cd7146bd5f8d8bd",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 26-344-B001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。9/1再開・在庫あり。AとBとも2施設、抽出されていない関係はproposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "29-205-A001",
+        "placeId": "facility:kinki-09d12f8315cc6ca090a4"
+      },
+      "field": "sourceHash",
+      "old": "3aed27d20d3ac4f2ab8749e60e45c5bb7c500bc81666b5385de08a2f82d303f5",
+      "new": "c0c4cefa3b3c3d55347c4d10ed85e8ce72b778f2dc652f7cb84e8ff1cc84fa6d",
+      "reason": "2026-11-05現一覧と保存自治体原典の時間・配布場所を個別再照合。指紋のみの承認持越しではない。",
+      "evidence": {
+        "sourceUrl": "https://www.city.kashihara.nara.jp/soshiki/1056/gyomu/1/1/1/243.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/bc1f9981003102a1ff48.html",
+        "snapshotSHA256": "1d09ba74e6312d53dcf5a072fe2f8e43a0f4120802802d58f1cbd4c474418617",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 29-205-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。施設休館に伴う移転。旧華甍の関係のみ終了、新窓口はproposal。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "26-100-A001",
+        "placeId": "facility:kinki-395deea0ac07ef85eee7"
+      },
+      "field": "hours",
+      "old": [
+        "平日8:30～17:15（年末年始除く）"
+      ],
+      "new": [
+        "平日10:00～17:00。12/29～1/3は配布なし。"
+      ],
+      "reason": "初回fragmentの8:30～17:15は庁舎営業時間。公式第2弾のカード配布時間へ訂正。",
+      "evidence": {
+        "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000277176.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/2108d107b050f837567c.html",
+        "snapshotSHA256": "1b9c4c1496e9c93a368bb837cb0b23de0817a17096ec031e28c704a0038508c4",
+        "sourceLocator": "午前10時～午後5時",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "27-230-A001",
+        "placeId": "facility:kinki-8914b9e6744511e117c2"
+      },
+      "field": "condition",
+      "old": "",
+      "new": "平日",
+      "reason": "休日の警備員室を追加したため既存1階窓口は平日と明示。",
+      "evidence": {
+        "sourceUrl": "https://www.city.katano.osaka.jp/docs/2018053100033/",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/605f13a53e01c12e8dd8.html",
+        "snapshotSHA256": "3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-230-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/2/2移転済み上下水道部1階。休日警備員室窓口を区別。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "27-230-A001",
+        "placeId": "facility:kinki-8914b9e6744511e117c2"
+      },
+      "field": "hours",
+      "old": [
+        "9:00～17:00",
+        "ただし、年末年始（12月29日～1月3日）は配布を行っていません"
+      ],
+      "new": [
+        "平日9:00～17:00。12/29～1/3は配布なし。"
+      ],
+      "reason": "既存窓口と休日警備員室の適用曜日を分離。",
+      "evidence": {
+        "sourceUrl": "https://www.city.katano.osaka.jp/docs/2018053100033/",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/605f13a53e01c12e8dd8.html",
+        "snapshotSHA256": "3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 27-230-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。2026/2/2移転済み上下水道部1階。休日警備員室窓口を区別。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "24-202-C001",
+        "placeId": "facility:kinki-efdb8ded331038c52b06"
+      },
+      "field": "hours",
+      "old": [
+        "平日8:30～17:15、年末年始除く。休日の夜間休日窓口は別窓口proposal。"
+      ],
+      "new": [
+        "平日8:30～17:15、年末年始除く。"
+      ],
+      "reason": "休日窓口を実登録したため未採用proposal表記を除く。",
+      "evidence": {
+        "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/ce02f6547d2cf5c65ae0.html",
+        "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 24-202-C001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。局2階総務課／休日夜間窓口8:30～17:15、年末年始除く。"
+      }
+    },
+    {
+      "file": "data/overrides/regions/kinki.json",
+      "collection": "relations",
+      "match": {
+        "cardId": "25-206-A001",
+        "placeId": "facility:kinki-f7118465cacf2eb7adc4"
+      },
+      "field": "hours",
+      "old": [
+        "9:00～17:00。月曜（祝日は翌日）・祝日の翌日（土日を除く）・12/28～1/4ほか指定日休館。代替市役所窓口は追加proposal。"
+      ],
+      "new": [
+        "9:00～17:00。月曜（祝日は翌日）・祝日の翌日（土日を除く）・12/28～1/4ほか指定日休館。"
+      ],
+      "reason": "代替窓口を実登録したため未採用proposal表記を除く。",
+      "evidence": {
+        "sourceUrl": "http://www.city.kusatsu.shiga.jp/kurashi/suidogesuido/gesuido/manholecard.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/7275288818dbbbddd351.html",
+        "snapshotSHA256": "0fb0cef12530594491f3e38074281b162f3e2ab15f89be7484686e1fd0a9549f",
+        "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-206-A001",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式記載と不変入力のカード・窓口を照合。1種類目の通常窓口を照合。市役所代替窓口は原典hoursのみ記載で、対応未抽出なら追加proposal。"
+      }
+    }
+  ],
+  "deferredCorrections": [
+    {
+      "cardId": "25-208-B001",
+      "legacyPlaceId": "place:3b4cbb23cc2491bc7452",
+      "decision": "retain-unreviewed",
+      "old": {
+        "legacyPlaceId": "place:3b4cbb23cc2491bc7452",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+          "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:47.113496+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/eb37e1342fd8f220047d.html",
+            "snapshotSHA256": "b7dd4c86ce3d566a88f5cab109df9bcdddc096a5891599e2a72f66f266c13fd2"
+          },
+          {
+            "url": "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:23:11.204927+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/ba67f22cf18864e031b2.html",
+            "snapshotSHA256": "5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "new": {
+        "legacyPlaceId": "place:3b4cbb23cc2491bc7452",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+          "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:47.113496+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/eb37e1342fd8f220047d.html",
+            "snapshotSHA256": "b7dd4c86ce3d566a88f5cab109df9bcdddc096a5891599e2a72f66f266c13fd2"
+          },
+          {
+            "url": "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:23:11.204927+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/ba67f22cf18864e031b2.html",
+            "snapshotSHA256": "5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "reason": "建物見出しと平日・休日の実窓口を再照合。独立した第三窓口ではない。現schemaに原関係の見出し除外指定はなく、一方の窓口への同一性aliasは不正確になるため変更保留。",
+      "evidence": {
+        "sourceUrl": "http://www.city.ritto.lg.jp/soshiki/jogeuido/jogesuido/oshirase/7224.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/ba67f22cf18864e031b2.html",
+        "snapshotSHA256": "5bf75576c7b6f6b2887975b400ecaada0cee2020972a3f0cc1fdc3386abc4a60",
+        "sourceLocator": "配布場所・窓口記載（門真Bはカード全体の在庫切れ告知）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本と旧抽出関係を再照合。終了日を推測しない。"
+      }
+    },
+    {
+      "cardId": "27-222-A001",
+      "legacyPlaceId": "place:23e5e276a7868c21e7a0",
+      "decision": "retain-unreviewed",
+      "old": {
+        "legacyPlaceId": "place:23e5e276a7868c21e7a0",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.habikino.lg.jp/",
+          "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.habikino.lg.jp/",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:12.173490+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/2dfe5f06e15526749173.html",
+            "snapshotSHA256": "4c0f08f79b15fe98263894edc15537aeffae500ed8e7bf8b8f92427c55fc9c05"
+          },
+          {
+            "url": "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:15.477418+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/799350ad6fc940bfc23b.html",
+            "snapshotSHA256": "368929aedb9f0c023263f7ea4471c593d47fdee57d773fa3c4a64207f328144d"
+          }
+        ],
+        "remainingReason": "現行公式ははびきのビジターセンター。旧古市駅前観光案内所との同一性・住所対応が未確定。新窓口proposal。"
+      },
+      "new": {
+        "legacyPlaceId": "place:23e5e276a7868c21e7a0",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.habikino.lg.jp/",
+          "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.habikino.lg.jp/",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:12.173490+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/2dfe5f06e15526749173.html",
+            "snapshotSHA256": "4c0f08f79b15fe98263894edc15537aeffae500ed8e7bf8b8f92427c55fc9c05"
+          },
+          {
+            "url": "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:15.477418+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/799350ad6fc940bfc23b.html",
+            "snapshotSHA256": "368929aedb9f0c023263f7ea4471c593d47fdee57d773fa3c4a64207f328144d"
+          }
+        ],
+        "remainingReason": "現行公式ははびきのビジターセンター。旧古市駅前観光案内所との同一性・住所対応が未確定。新窓口proposal。"
+      },
+      "reason": "新ビジターセンターは古市1-1-21で採用。旧古市1-1-19の終了告知は公式検索でも確認できず、旧関係の終了・同一性統合は保留。",
+      "evidence": {
+        "sourceUrl": "https://www.city.habikino.lg.jp/soshiki/gesuido/gesuido_soumu/gesuido_soumu_oshirase/11515.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/799350ad6fc940bfc23b.html",
+        "snapshotSHA256": "368929aedb9f0c023263f7ea4471c593d47fdee57d773fa3c4a64207f328144d",
+        "sourceLocator": "配布場所・窓口記載（門真Bはカード全体の在庫切れ告知）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本と旧抽出関係を再照合。終了日を推測しない。"
+      }
+    },
+    {
+      "cardId": "27-223-B001",
+      "legacyPlaceId": "place:a98778ce41a9719c6619",
+      "decision": "retain-unreviewed",
+      "old": {
+        "legacyPlaceId": "place:a98778ce41a9719c6619",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.kadoma.osaka.jp/index.html",
+          "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.kadoma.osaka.jp/index.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:23.093691+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/4140a475e42fcf354524.html",
+            "snapshotSHA256": "3ebbb00310315dc9e9eda475fe6af01eae7bb45b08408e6503b2acf45540ffd2"
+          },
+          {
+            "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:28.643417+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/9d600b60cb33241a73ee.html",
+            "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "new": {
+        "legacyPlaceId": "place:a98778ce41a9719c6619",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.kadoma.osaka.jp/index.html",
+          "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.kadoma.osaka.jp/index.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:23.093691+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/4140a475e42fcf354524.html",
+            "snapshotSHA256": "3ebbb00310315dc9e9eda475fe6af01eae7bb45b08408e6503b2acf45540ffd2"
+          },
+          {
+            "url": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:28.643417+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/9d600b60cb33241a73ee.html",
+            "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "reason": "建物見出しと平日・休日の実窓口を再照合。独立した第三窓口ではない。現schemaに原関係の見出し除外指定はなく、一方の窓口への同一性aliasは不正確になるため変更保留。",
+      "evidence": {
+        "sourceUrl": "https://www.city.kadoma.osaka.jp/kurashi/jogesuido/osirase/25709.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/9d600b60cb33241a73ee.html",
+        "snapshotSHA256": "25a7e13c6df4f1ec1851ce584723871be24fe4489b31fd4c320e0bed62fc69e5",
+        "sourceLocator": "配布場所・窓口記載（門真Bはカード全体の在庫切れ告知）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本と旧抽出関係を再照合。終了日を推測しない。"
+      }
+    },
+    {
+      "cardId": "27-224-A001",
+      "legacyPlaceId": "place:409a7670d18868d73e02",
+      "decision": "retain-unreviewed",
+      "old": {
+        "legacyPlaceId": "place:409a7670d18868d73e02",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.settsu.osaka.jp/suidou/index.html",
+          "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.settsu.osaka.jp/suidou/index.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:47.309233+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/02ed2fd73a2e5cca1f03.html",
+            "snapshotSHA256": "a948bc23f90ced5fd8bae64c0fb0725023d45dc18878806cd3899941b0d36299"
+          },
+          {
+            "url": "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:48.905171+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/c3d2f3c5cb2c8524f421.html",
+            "snapshotSHA256": "c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "new": {
+        "legacyPlaceId": "place:409a7670d18868d73e02",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "https://www.city.settsu.osaka.jp/suidou/index.html",
+          "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html"
+        ],
+        "attempts": [
+          {
+            "url": "https://www.city.settsu.osaka.jp/suidou/index.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:47.309233+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/02ed2fd73a2e5cca1f03.html",
+            "snapshotSHA256": "a948bc23f90ced5fd8bae64c0fb0725023d45dc18878806cd3899941b0d36299"
+          },
+          {
+            "url": "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:24:48.905171+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/c3d2f3c5cb2c8524f421.html",
+            "snapshotSHA256": "c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e"
+          }
+        ],
+        "remainingReason": "建物見出しの独立抽出。同じカードの平日窓口・休日窓口を個別採用し、建物を第三窓口にしない。"
+      },
+      "reason": "建物見出しと平日・休日の実窓口を再照合。独立した第三窓口ではない。現schemaに原関係の見出し除外指定はなく、一方の窓口への同一性aliasは不正確になるため変更保留。",
+      "evidence": {
+        "sourceUrl": "https://www.city.settsu.osaka.jp/suidou/okyakusama/21655.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/c3d2f3c5cb2c8524f421.html",
+        "snapshotSHA256": "c79c7550cc66467454e531abbdd29d306812ee1c80efab4d7c5e186bdaae992e",
+        "sourceLocator": "配布場所・窓口記載（門真Bはカード全体の在庫切れ告知）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本と旧抽出関係を再照合。終了日を推測しない。"
+      }
+    },
+    {
+      "cardId": "27-228-A001",
+      "legacyPlaceId": "place:82667b8bd5200610cbd7",
+      "decision": "retain-unreviewed",
+      "old": {
+        "legacyPlaceId": "place:82667b8bd5200610cbd7",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "http://welcome-sennan.com/access",
+          "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
+          "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html"
+        ],
+        "attempts": [
+          {
+            "url": "http://welcome-sennan.com/access",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:22:50.220443+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/1706d15707a1586f70dd.html",
+            "snapshotSHA256": "a86e8ef6556866d20e8c53e088d579c8e090febb3616f32a67a50823cfee3685"
+          },
+          {
+            "url": "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
+            "result": "HTTP 404",
+            "fetchedAt": "2026-11-05T04:24:47.210447+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/016efb079c5876265506.html",
+            "snapshotSHA256": "02cc4b75f52c3dc0646cacf8606a1446b8e9691110e5255ed9d01a4c2d3a740f"
+          },
+          {
+            "url": "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:33:17.187000+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/abba48b96c10c1f971ff.html",
+            "snapshotSHA256": "30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87"
+          }
+        ],
+        "remainingReason": "現行配布先は樽井1-1-1市役所別館2階。旧樽井737の窓口へ誤対応できないため移転proposal。"
+      },
+      "new": {
+        "legacyPlaceId": "place:82667b8bd5200610cbd7",
+        "locationState": "unresolved",
+        "distributionState": "unapproved",
+        "sourceUrls": [
+          "http://welcome-sennan.com/access",
+          "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
+          "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html"
+        ],
+        "attempts": [
+          {
+            "url": "http://welcome-sennan.com/access",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:22:50.220443+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/1706d15707a1586f70dd.html",
+            "snapshotSHA256": "a86e8ef6556866d20e8c53e088d579c8e090febb3616f32a67a50823cfee3685"
+          },
+          {
+            "url": "https://www.city.sennan.lg.jp/kakuka/soumu/gyouzaisei/gyoseihyoka/R1hyouka/R1sosiki/R1jyougesui/index.html",
+            "result": "HTTP 404",
+            "fetchedAt": "2026-11-05T04:24:47.210447+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/016efb079c5876265506.html",
+            "snapshotSHA256": "02cc4b75f52c3dc0646cacf8606a1446b8e9691110e5255ed9d01a4c2d3a740f"
+          },
+          {
+            "url": "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html",
+            "result": "HTTP 200",
+            "fetchedAt": "2026-11-05T04:33:17.187000+00:00",
+            "snapshotPath": "data/evidence/national/kinki/snapshots/abba48b96c10c1f971ff.html",
+            "snapshotSHA256": "30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87"
+          }
+        ],
+        "remainingReason": "現行配布先は樽井1-1-1市役所別館2階。旧樽井737の窓口へ誤対応できないため移転proposal。"
+      },
+      "reason": "別館2階の現配布は採用。樽井737の配布終了を明示した公式原本は未発見。旧関係は未確認として保持。",
+      "evidence": {
+        "sourceUrl": "https://www.city.sennan.lg.jp/kakuka/toshiseibi/gesui/gesui_soumu/manhole_card/1499661374299.html",
+        "snapshotPath": "data/evidence/national/kinki/snapshots/abba48b96c10c1f971ff.html",
+        "snapshotSHA256": "30e7de07ad83291814fb9804e85ddf2fea2c122b4a93cdf149d2927175291d87",
+        "sourceLocator": "配布場所・窓口記載（門真Bはカード全体の在庫切れ告知）",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが公式原本と旧抽出関係を再照合。終了日を推測しない。"
+      }
+    }
+  ]
+}

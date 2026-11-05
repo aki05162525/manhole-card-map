@@ -1,0 +1,1494 @@
+{
+  "schema": 1,
+  "region": "north",
+  "updates": [
+    {
+      "facilityId": "facility:north-03d0245a068dd82eaa37",
+      "coordinate": {
+        "lat": 42.41243118169229,
+        "lng": 141.1067676544189
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.noboribetsu.lg.jp/docs/2013031800141/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/33a695a439eb99d77234.html",
+        "snapshotSHA256": "39ec7a440fa81282be1ad0cd273c548828bcd50abad8da730091bce910fdd4dd",
+        "sourceLocator": "markerInfos: title=北海道登別市役所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式庁舎案内の施設マーカー。中央町6丁目11番地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.noboribetsu.lg.jp/ （原地域snapshot data/evidence/national/north/7d1df694cf9daf6f9cee.html SHA256 42818ddfef3d6a5bf74aec9f3a17bafb3adc3ca6151c8d463848386fa6328bac）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-0c29dde3d5fc2a368725",
+      "coordinate": {
+        "lat": 44.023119,
+        "lng": 142.413383
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1464 市役所=和寒町役場 住所=字西町１２０",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.wassamu.hokkaido.jp/ （原地域snapshot data/evidence/national/north/8e4b5c3f657b92c227d4.html SHA256 e798bea8da037a0ffb9ebe663c90edd6dcad6c1aee14e4cf4f6cc3a5b8c57e8d）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-12b6e6080ef6e1e816a7",
+      "coordinate": {
+        "lat": 43.332951,
+        "lng": 141.853986
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1215 市役所=美唄市役所 住所=西３条南１－１－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.bibai.hokkaido.jp/site/suidou/29785.html （原地域snapshot data/evidence/national/north/d00c7574bef7982e2b0f.html SHA256 3ed0489eef2da91d873fdf36a1ef6c70522cab8decb879efa35cfc5ec8ea92f6）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-1b80feaf8e6924df20c4",
+      "coordinate": {
+        "lat": 42.9892477,
+        "lng": 141.5511668
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/283a55ead38b50c89d51.html",
+        "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+        "sourceLocator": "HUB HOKKAIDO SELECT SHOP のGoogle Mapsリンク !8m2!3d42.9892477!4d141.5511668",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市の配布案内の当該店舗リンク。Fビレッジ1番地THE LODGE2階を照合。蓋位置iframeと区別。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html （原地域snapshot data/evidence/national/north/283a55ead38b50c89d51.html SHA256 55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-20e8f811524b0ce7d3f5",
+      "coordinate": {
+        "lat": 43.39399,
+        "lng": 145.117341
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1691 市役所=別海町役場 住所=別海常盤町２８０",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://betsukai.jp/kurashi/water/gesuidou/ （原地域snapshot data/evidence/national/north/01fc9a144e0e190d84e4.html SHA256 81eaa3eaa6ad70aeccdf4be65f93139051ecaf0439681d9548ed29cd98121d33）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-226fa24434ce9b26d323",
+      "coordinate": {
+        "lat": 43.5560714,
+        "lng": 141.9019012
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.4221063533937!2d141.89928397617157!3d43.55608687110689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0c98d7aad314bb%3A0x52e4dd4ff9ff3b80!2z44CSMDczLTAwMzEg5YyX5rW36YGT5rud5bed5biC5qCE55S677yU5LiB55uu77yZ4oiS77yR!5e0!3m2!1sja!2sjp!4v1707461062268!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/571deeff365d5d3f4405.html",
+        "snapshotSHA256": "316d86ca975d62b77fa229db2ec3dfaa440e40cbe461d4c08ccf88e3ec0da060",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0c98d7aad314bb:0x52e4dd4ff9ff3b80 / 〒073-0031 北海道滝川市栄町４丁目９−１ たきかわ観光国際スクエア",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.city.takikawa.lg.jp/page/2703.html のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.takikawa.lg.jp/page/2703.html （原地域snapshot data/evidence/national/north/4df32a9c24f2aaddf2d6.html SHA256 a3ca236a1668de6d3b0e891027683d4b5237d588a2e63fd0bc78d16bf0f13d60）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3060a04659dcedce64b9",
+      "coordinate": {
+        "lat": 44.12064,
+        "lng": 144.0712
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html",
+        "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+        "sourceLocator": "CSV 施設名=常呂総合支所 住所_出典元=北見市常呂町字常呂323",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式施設位置DB。国土数値情報市区町村役場データH26の施設点。現公式施設案内と施設名称・所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.kitami.lg.jp/administration/life/detail.php?content=9605 （原地域snapshot data/evidence/national/north/29133a5fc3ec9dc578f3.html SHA256 c015c2e79824033dabdf4451b1fe2c8f26a15c2fa87f0d87a2d67fc9ce67cb31）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3170be48b7ec799e21bb",
+      "coordinate": {
+        "lat": 44.023119,
+        "lng": 142.413383
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1464 市役所=和寒町役場 住所=字西町１２０",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.wassamu.hokkaido.jp/ （原地域snapshot data/evidence/national/north/8e4b5c3f657b92c227d4.html SHA256 e798bea8da037a0ffb9ebe663c90edd6dcad6c1aee14e4cf4f6cc3a5b8c57e8d）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-337a40d0c1a094f1643d",
+      "coordinate": {
+        "lat": 43.098876,
+        "lng": 142.989028
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1634 市役所=鹿追町役場 住所=東町１－１５－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.shikaoi.lg.jp/sightseeing/ （原地域snapshot data/evidence/national/north/4e68bfc02d3889e98f46.html SHA256 2bbe2e462e749d2b67c0d41090d132d93f0d2ca8bb84f1b343ef23ed5ea986d9）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-33d210dca3f1918726f9",
+      "coordinate": {
+        "lat": 44.12064,
+        "lng": 144.0712
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html",
+        "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+        "sourceLocator": "CSV 施設名=常呂総合支所 住所_出典元=北見市常呂町字常呂323",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式施設位置DB。国土数値情報市区町村役場データH26の施設点。現公式施設案内と施設名称・所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.kitami.lg.jp/administration/life/detail.php?content=9605 （原地域snapshot data/evidence/national/north/29133a5fc3ec9dc578f3.html SHA256 c015c2e79824033dabdf4451b1fe2c8f26a15c2fa87f0d87a2d67fc9ce67cb31）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-343aa74f33ff03c6fa0a",
+      "coordinate": {
+        "lat": 41.76379,
+        "lng": 140.71699
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html",
+        "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+        "sourceLocator": "CSV 施設名=地域交流まちづくりセンター 住所_出典元=末広町4番19号",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式施設位置DBのH22公的集会施設点。現在の施設公式アクセス https://hakomachi.com/facility/access/ と名称・末広町4-19を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://hakomachi.com/ （原地域snapshot data/evidence/national/north/d4960fcf61d4a2dacfc2.html SHA256 a417d85e57abbd06197ee0e3a8488f9e2138fcf4255786ba53ef2931346c9e5e）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-3992dcf75c3cb9b680a4",
+      "coordinate": {
+        "lat": 43.455614,
+        "lng": 142.467112
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1460 市役所=上富良野町役場 住所=大町２－２－１１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.kamifurano.hokkaido.jp/index.php?id=3390 （原地域snapshot data/evidence/national/north/d3fdf2c2d7645d59b1e9.html SHA256 1b342b4b99e9b71b775f5ffc881507bffdd8861e5666209739cb2e0dfc6d4119）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-45c2fe1219e88b833457",
+      "coordinate": {
+        "lat": 41.67774761340679,
+        "lng": 140.43543847168996
+      },
+      "evidence": {
+        "sourceUrl": "https://kikonai.jp/access/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/074b19353a237bea79c8.html",
+        "snapshotSHA256": "941d0b4aa0684dfbbdb9733e58a0773e531addc6f4873b77608b4223803191b7",
+        "sourceLocator": "mapp.data.push: pois[].point; title=道の駅 みそぎの郷 きこない",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "施設アクセスページのPOI pointを使用。centerではない。本町338（台帳338-14）の施設名・運営者を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://kikonai.jp/ （原地域snapshot data/evidence/national/north/77fa865f18457149394a.html SHA256 f06729229670415afbc8dc9d77bb2db7b52059859d1a2157806c0befc3f6fbdf）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-4a3e61d50e9a48491365",
+      "coordinate": {
+        "lat": 42.6340159,
+        "lng": 141.6056116
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2935.2857910674142!2d141.6033163156435!3d42.634100925743304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7510c3cf973837%3A0x63eb268568e8fdc5!2z6Iur5bCP54mn5biC5b255omA!5e0!3m2!1sja!2sjp!4v1570002687633!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/f8e7da96a82deef011e0.html",
+        "snapshotSHA256": "f330bdff6ff84741e127abcd2b2dac81246763954233a8fbcb37b093337c3e30",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f7510c3cf973837:0x63eb268568e8fdc5 / 〒053-8722 北海道苫小牧市旭町４丁目５−６ 苫小牧市役所",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.city.tomakomai.hokkaido.jp/shisei/tomakomainitsuite/gaiyo/kotsu-access.html のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.tomakomai.hokkaido.jp/kurashi/jogesuido/sokatsu/card1.html （原地域snapshot data/evidence/national/north/f76c33b6efc2964f333a.html SHA256 28c5552ebe675217f39f02320d4827c15f31a8089284606a66bf597650308db8）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-4c87540ad5304f8a47b5",
+      "coordinate": {
+        "lat": 43.232615,
+        "lng": 143.296243
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1633 市役所=上士幌町役場 住所=字上士幌東３線２３８",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.kamishihoro.jp/page/00000060 （原地域snapshot data/evidence/national/north/8c1ade7923e5be6ae739.html SHA256 8bbc23c4a1422a377437bb900a7ec7fd9cbb964ec62acff2bf29d1eede13452a）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5146ae8cc4fb697aa46b",
+      "coordinate": {
+        "lat": 43.342336,
+        "lng": 142.383447
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/2235/resource/8288/%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD%E4%B8%80%E8%A6%A7.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/8b304ef7c5a088bb9596.html",
+        "snapshotSHA256": "f717987670e023bc765047e56a62a6bc083ffa4f37fcaf017b7a9997eaf54d0d",
+        "sourceLocator": "CSV ID=PF0000000001 名称=富良野市複合庁舎 所在地=富良野市弥生町1番1号",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "2025年公開の市公式施設一覧の複合庁舎点。旧役場CSVの43.342024,142.383104は使用せず新庁舎を選択。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.furano.hokkaido.jp/ （原地域snapshot data/evidence/national/north/8d966b55518d644888ba.html SHA256 f765ad0ca9ef77b3c995cef592d533bfb13adece32afdc4d56920b329bd38a34）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-52202833e562b25efc5c",
+      "coordinate": {
+        "lat": 42.9177661,
+        "lng": 143.2027537
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1460.9362324788058!2d143.20120364415126!3d42.917730634624704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f739941b5c87583%3A0x3cc6fce2691f12b!2z44Go44GL44Gh6Kaz5YWJ5oOF5aCx44K744Oz44K_44O8IOOCpOODs-ODleOCqeODoeODvOOCt-ODp-ODsw!5e0!3m2!1sja!2sjp!4v1566441230507!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/ea7df1919aea0c85e7a2.html",
+        "snapshotSHA256": "02893a24c0ecb3be12b7cd8a5bd5d30fac75c58e911fcfd41a103a40b0b0e2d6",
+        "sourceLocator": "地図応答の施設feature 0x5f739941b5c87583:0x3cc6fce2691f12b / 〒080-0012 北海道帯広市西２条南１２丁目 エスタ帯広 東館 2階 とかち観光情報センター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設ページ https://obikan.jp/post_spot/1501/ のiframeの施設名付き位置。台帳の現在の所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://obikan.jp/ （原地域snapshot data/evidence/national/north/479de5ee7a8e8ffa9797.html SHA256 7dccf9ddca91a3653e3c93e73adfcf037365024a3b8ac526b2aa56695a5582df）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-53b2b9df9a8da2705261",
+      "coordinate": {
+        "lat": 43.11707,
+        "lng": 141.34264
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html",
+        "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+        "sourceLocator": "CSV 施設名=札幌市下水道科学館 住所_出典元=麻生町8",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式施設位置DB。国土数値情報文化施設データH25の施設点。現公式施設案内と施設名称・所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.sapporo.jp/gesui/manholecard.html （原地域snapshot data/evidence/national/north/0e4814058205bbde7296.html SHA256 cd5fcd7bccd3bbcee2ec3e1078d16cf23df500a9e20e311dc905fefb035fb9a2）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5933f197216885e6d064",
+      "coordinate": {
+        "lat": 44.5830367,
+        "lng": 142.9597327
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/1975/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3411088c7f54465ea25.html",
+        "snapshotSHA256": "f806c4c0921852057f1e61e524a65ae60641d23b9c79d066064be66b1af93971",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.5830367!4d142.9597327",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.oumu.hokkaido.jp/soshiki/kensetusuido/jogesuido/2325.html （原地域snapshot data/evidence/national/north/abb6dd1f56a7c4f32ce3.html SHA256 99f222e4325b1ee7b39ee5bfe0ab5b43444c972d056720f3b3cca121a2ac5eb1）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-5e7ef2bf3873a0c566d6",
+      "coordinate": {
+        "lat": 43.9387173,
+        "lng": 141.6470101
+      },
+      "evidence": {
+        "sourceUrl": "https://goo.gl/maps/9N5kicx1tnbfZWJi6",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/5bcc6916c26c7d1623b6.html",
+        "snapshotSHA256": "cefb611c5f0b5a595243149f551265560970cecdce31b0b9d411c8feb94bfb9a",
+        "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d43.9387173!4d141.6470101",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市公式配布案内／るもいプラザ公式施設ページが指定する施設名付き目的地。現在の住所に照合。表示中心を不採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://rumoi.main.jp/shoplist/%e3%82%8b%e3%82%82%e3%81%84%e3%83%97%e3%83%a9%e3%82%b6/ （原地域snapshot data/evidence/national/north/0c7640db2ea8af858b25.html SHA256 71d7f9ec94839e3bf73ff28fd5bd34ad9aebea3a26bd90ee79d57510f321925f）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-6104f556e2024abcb15f",
+      "coordinate": {
+        "lat": 45.102847,
+        "lng": 141.777508
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1516 市役所=豊富町役場 住所=大通６丁目",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html （原地域snapshot data/evidence/national/north/8673d7246bf5652cfa2c.html SHA256 db2482ae1ca3b5149bdf9c47380f78caa74f61eca11cb685459c31f0b5f00500）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-62ad6ad3369746b37621",
+      "coordinate": {
+        "lat": 44.0690342,
+        "lng": 144.9906951
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/2884/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/e5debc49fb9510a5691e.html",
+        "snapshotSHA256": "ab63f8ca818d1f6388d75e3ecf466787a4b766d592bf3457a1ee7c269481b351",
+        "sourceLocator": "GoogleMapで見る !8m2!3d44.0690342!4d144.9906951",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式道の駅情報の施設目的地。ウトロ西186-8を照合。配布終了の関係はそのまま、再開を意味しない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://hokkaido-michinoeki.jp/michinoeki/2884/ （原地域snapshot data/evidence/national/north/e5debc49fb9510a5691e.html SHA256 ab63f8ca818d1f6388d75e3ecf466787a4b766d592bf3457a1ee7c269481b351）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-63f1d610c5add80db10e",
+      "coordinate": {
+        "lat": 45.187041,
+        "lng": 141.139597
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1518 市役所=利尻町役場 住所=沓形字緑町１４－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://rishiri-town.jp/%e8%a6%b3%e5%85%89%e3%83%bb%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%81%ae%e9%85%8d%e5%b8%83/ （原地域snapshot data/evidence/national/north/ef622427d80183dbec2e.html SHA256 21e1e799b9c4e7f0e6e32fb4c5020ec87893cf8f86b94baba9b14c3349b700f0）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-6497f09097adeb769acf",
+      "coordinate": {
+        "lat": 43.579387,
+        "lng": 142.037424
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.akabira.hokkaido.jp/docs/2019080200024.html?cat=/kurashi/suido/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/92cf45684d120fe8b4cc.html",
+        "snapshotSHA256": "fc25467861aaefc67467f6faec6fa748c24ce4cc0772361e7ea7a840aa492009",
+        "sourceLocator": "var opts markers: name=AKABIRAベース loc=[142.037424,43.579387]",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市の配布先の施設名付きマーカー。幌岡町54を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://akabirabase.com/ （原地域snapshot data/evidence/national/north/281b52ddb6fe39d420b5.html SHA256 f6457a981f0ae07041eac346f32d081bb38ad4e9de7adcc336b203fe23494bc0）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-65717121aad1d7580861",
+      "coordinate": {
+        "lat": 42.9834393,
+        "lng": 140.5168061
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.7548387829156!2d140.51458783026763!3d42.983437729252174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0a97bf39299869%3A0xbe37fbb6a9e8b167!2z6YGT44Gu6aeF44GE44KP44Gq44GE44O744Ks44Kk44OJ44K744Oz44K_44O8IOOBn-OCieS4uOmkqA!5e0!3m2!1sja!2sjp!4v1619079332721!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3b8ffcf6cbaedff68bf.html",
+        "snapshotSHA256": "c56521afb5873939094dee135e3253d7df48a536b8db7ec5c89b881742c97ee7",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0a97bf392a3ee1:0x19b0a18a41c64aaf / 〒045-0003 北海道岩内郡岩内町万代47−４ 道の駅 いわない",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.iwanai-kanko.jp/tourism/michinoeki/23.html のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.iwanai-kanko.org/ （原地域snapshot data/evidence/national/north/5d3ee4ea1a208147a1c3.html SHA256 4c9e8f181f190c7fdf5dfbde8f26bbdd01fb8b6e2085190859ac857ef3efc64e）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7539fb5b206d87a17ef5",
+      "coordinate": {
+        "lat": 43.0912725,
+        "lng": 141.5293511
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.634501975799!2d141.52754301122096!3d43.09117890618622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2d8bbee0b4d9%3A0x54a9d1d3a9bdd2ca!2z5rGf5Yil5biC5rCR5rS75YuV44K744Oz44K_44O844O744GC44GE!5e0!3m2!1sja!2sjp!4v1617698797728!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/f2068910fcb0690bb167.html",
+        "snapshotSHA256": "b95e427a241b357f36e4289846fce80db970dd031c44225d2f65869b8cac096b",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b2d8bbee0b4d9:0x54a9d1d3a9bdd2ca / 〒069-0824 北海道江別市東野幌本町６−４３ 江別市民活動センター・あい",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://center-i.jp/access/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://plat-ebetsu.info/ （原地域snapshot data/evidence/national/north/8881acc2df1cbb10f59f.html SHA256 e990cbc546c2ba75c37b915e176ae0c30523978ba81bc22456a8e2fb3d12c444）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-76934d7112fde654b326",
+      "coordinate": {
+        "lat": 43.079741,
+        "lng": 142.838822
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1635 市役所=新得町役場 住所=３条南４－２６",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.shintoku-town.jp/ （原地域snapshot data/evidence/national/north/f42b91b9152b636799f2.html SHA256 64fbb0cd4cf7c4ea2c7271e941bf4016a80377662cd2592007b98bdc08198291）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-784f83101a1fba71ca5c",
+      "coordinate": {
+        "lat": 43.1775367,
+        "lng": 141.4488237
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/13542/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3ce7f49efdaacfc483b.html",
+        "snapshotSHA256": "7771e4d5d7f46bfb9428121faa6891bd96dc0a179f42998bfde37a78adcbb447",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.1775367!4d141.4488237",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://tobest.co.jp/michinoeki/ （原地域snapshot data/evidence/national/north/90a2519b76573734d179.html SHA256 10e2295b7874b73100c9482f02509606de6e7a997e12ab27446f5585b5ad9b8a）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7e52de8e6f50eeba0d74",
+      "coordinate": {
+        "lat": 43.39399,
+        "lng": 145.117341
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1691 市役所=別海町役場 住所=別海常盤町２８０",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://betsukai.jp/kurashi/water/gesuidou/ （原地域snapshot data/evidence/national/north/01fc9a144e0e190d84e4.html SHA256 81eaa3eaa6ad70aeccdf4be65f93139051ecaf0439681d9548ed29cd98121d33）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-7fde83cc219f8104cc65",
+      "coordinate": {
+        "lat": 43.468914,
+        "lng": 143.747305
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1648 市役所=陸別町役場 住所=字陸別東１条３－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.rikubetsu.jp/ （原地域snapshot data/evidence/national/north/9a70653355440fb6b3e9.html SHA256 cd8f61bef2c3a23be8b674fcb994a56cc579a2e95eb14bb6bb70717d3f7c2d6b）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-80c28f27f6f95e930a9b",
+      "coordinate": {
+        "lat": 43.455614,
+        "lng": 142.467112
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1460 市役所=上富良野町役場 住所=大町２－２－１１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.kamifurano.hokkaido.jp/index.php?id=3390 （原地域snapshot data/evidence/national/north/d3fdf2c2d7645d59b1e9.html SHA256 1b342b4b99e9b71b775f5ffc881507bffdd8861e5666209739cb2e0dfc6d4119）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-81922f5137bfd85952f9",
+      "coordinate": {
+        "lat": 43.0955135,
+        "lng": 141.5351911
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.4285776575207!2d141.53302845053827!3d43.095507395252014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b3275fb6283bf%3A0x738352c5645b4b13!2sEBRI!5e0!3m2!1sja!2sjp!4v1538481595904",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/256e6d63783a50af45ad.html",
+        "snapshotSHA256": "d9c4c6a6f8221a23ca8b17b113d7901cd9a9af9db235aae971ea2c68fe039847",
+        "sourceLocator": "地図応答の施設feature 0x5f0b3275fb6283bf:0x738352c5645b4b13 / ËBRI, ３-3 Higashinopporocho, Ebetsu, Hokkaido 069-0821",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設ページ https://www.ebri-nopporo.com/ のiframeの施設名付き位置。台帳の現在の所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.ebetsu.hokkaido.jp/soshiki/kanko/99486.html （原地域snapshot data/evidence/national/north/95dabc0214f15626ca29.html SHA256 6f9ff529b78184474a82f84ff8502c637fd501cfbd3ccc62075eb07152be37d8）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-8b10bcb76cb93263b696",
+      "coordinate": {
+        "lat": 41.9041752,
+        "lng": 140.6488098
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.4692974974996!2d140.64640435184373!3d41.904269179118074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9ef8f1320980bf%3A0x96e8eae1a271783b!2z5YyX5paX5biC6Kaz5YWJ5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1659598597438!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/ecea8aedd3f373f51b31.html",
+        "snapshotSHA256": "91ca70fd55b9f11e1abc8e9bc7472f72cf0beab37694c40c4473c67f820e21ef",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f9ef8f1320980bf:0x96e8eae1a271783b / 〒041-1242 北海道北斗市市渡１丁目１−１ 北斗市観光交流センター",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://hokutoinfo.com/access/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://hokutoinfo.com/tec/ （原地域snapshot data/evidence/national/north/9adcab770d748d5b393b.html SHA256 bc48473ee37587e657ec1722392a1e4a144ca0df472ed3a02774f054e46f9a12）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-8b9eb37cc57d1790a6ab",
+      "coordinate": {
+        "lat": 43.7627011,
+        "lng": 142.3594675
+      },
+      "evidence": {
+        "sourceUrl": "https://taisetsu-kamui.jp/transportation/13680",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/b62d6b2a0a0b1ee042d1.html",
+        "snapshotSHA256": "cb6357e580bfccd2772287e377146f1fa03a5757f34d7973875114e2c7fd28b7",
+        "sourceLocator": "JSON-LD TransitSystem description=旭川観光物産情報センター address=宮下通８丁目３番１号 JR旭川駅東コンコース前 geo latitude/longitude およびhasMap",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式地域DMOの当センターで行うレンタサイクル案内。電話0166-26-6665・住所・施設名を市の施設ページと照合。センターの代表点としてのみ採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.asahikawa.hokkaido.jp/kankou/2400/d053770.html （原地域snapshot data/evidence/national/north/644a6812f55432083364.html SHA256 d7fbb2f858983f4928180fc347c22dad4e49b0bf91c738808117e4b842dd7660）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-94e8fd249c24448254ec",
+      "coordinate": {
+        "lat": 45.102847,
+        "lng": 141.777508
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1516 市役所=豊富町役場 住所=大通６丁目",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html （原地域snapshot data/evidence/national/north/8673d7246bf5652cfa2c.html SHA256 db2482ae1ca3b5149bdf9c47380f78caa74f61eca11cb685459c31f0b5f00500）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-95253bf986d2693881d7",
+      "coordinate": {
+        "lat": 42.82172569999999,
+        "lng": 141.6519333
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1463.2104522661236!2d141.65170769444282!3d42.82172206534851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7520a42f20602f%3A0x7f2252a1952ebaf2!2z5Y2D5q2z5biC5rC06YGT5bGA!5e0!3m2!1sja!2sus!4v1763704172360!5m2!1sja!2sus",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/df35f0042dff9b707dde.html",
+        "snapshotSHA256": "3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f7520a42f20602f:0x7f2252a1952ebaf2 / 日本、〒066-0042 北海道千歳市東雲町３丁目２−５ 千歳市水道局",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F （原地域snapshot data/evidence/national/north/6d3ae44dab18bce5e66f.html SHA256 8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-95977999d1143637e813",
+      "coordinate": {
+        "lat": 42.978986,
+        "lng": 141.563174
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/283a55ead38b50c89d51.html",
+        "snapshotSHA256": "55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c",
+        "sourceLocator": "エルフィンパーク市民サービスコーナー のリンク !8m2!3d42.978986!4d141.563174",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市の配布案内の当該窓口リンク。中央6丁目209番地を照合。蓋位置iframeと区別。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00128529.html （原地域snapshot data/evidence/national/north/283a55ead38b50c89d51.html SHA256 55b89e79a38e665f23d058385d649f0f5aa975f0f2a937bbe3cb9ff680bba52c）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9a1bae888266745fcbc3",
+      "coordinate": {
+        "lat": 43.243740737075925,
+        "lng": 141.3511178586446
+      },
+      "evidence": {
+        "sourceUrl": "https://www.city.ishikari.hokkaido.jp/kanko/kau/1002982.html",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/103358ba1046cfd2b99b.html",
+        "snapshotSHA256": "b0f280f12706de7da79ea397e65746e893b0a4a9537ed047ed7c5e3cc09ea754",
+        "sourceLocator": "施設名付き地図のstaticmap markers=43.243740737075925,141.3511178586446 およびリンク q=同値",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市公式個別施設ページの施設マーカーと親船町107番地を照合。地図中心のみでなくmarkers指定を確認。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.ishikari-kankou.net/ （原地域snapshot data/evidence/national/north/e6846e5f2d8908aeea3b.html SHA256 a709ef218d9fbfbabb0eb2b9e536986e627ba79e1afc0f824959bb02ce45e1e4）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9d5628a68e45a5cf6deb",
+      "coordinate": {
+        "lat": 43.244786,
+        "lng": 143.55393
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.ashoro.hokkaido.jp/ （原地域snapshot data/evidence/national/north/f2a3aecaf5a6ce8f0fe2.html SHA256 bac0180e9ebc962ea3805eec6ebfd465668a2cd148f73d7d90636a23a929cafe）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9f828ae51e79cb1346e4",
+      "coordinate": {
+        "lat": 43.828201,
+        "lng": 142.508388
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1454 市役所=当麻町役場 住所=３条東２丁目１１－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.tohma.hokkaido.jp/all-about/03/03/1739 （原地域snapshot data/evidence/national/north/a8b23f536d177c33a212.html SHA256 6525ece1e2ca8cb42446e7066ea6f36136890c635c05762a7fed81fd4631da13）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-9ff5ca81c48605ed790a",
+      "coordinate": {
+        "lat": 45.1047269,
+        "lng": 141.7724011
+      },
+      "evidence": {
+        "sourceUrl": "https://maps.google.com/maps?q=%E8%B1%8A%E5%AF%8C%E7%94%BA%E8%A6%B3%E5%85%89%E6%83%85%E5%A0%B1%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC&t=m&z=15&output=embed&iwloc=near",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/e681c226584f95bc1855.html",
+        "snapshotSHA256": "76bc7cc165b9f61a0c11e539984093367db65fd2c938b8134416ca39e2a8bb2e",
+        "sourceLocator": "地図応答の施設feature 0x5f0e2a3c5f4154fd:0xce35880bf4f340b4 / Toyotomi Town Tourist Information Center, Toyotomiekimaedori, Toyotomi, Teshio District, Hokkaido 098-4138",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "豊富町観光協会の当該施設ページから埋め込み地図を取得。名称と住所（温泉／駅前通）を照合。町の住所代表点ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html （原地域snapshot data/evidence/national/north/2d7edf7054161e5555a1.html SHA256 f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "coordinate": {
+        "lat": 45.408652,
+        "lng": 141.676545
+      },
+      "evidence": {
+        "sourceUrl": "https://www.visit-hokkaido.jp/spot/detail_11269.html",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/1b063b391145c59e54f0.html",
+        "snapshotSHA256": "4f414781279e22bc27b9117461912dd266618d3bb67cb51b6bbc390bf3fd8353",
+        "sourceLocator": "施設詳細の埋め込み地図 q=45.408652,141.676545 および経路到着地 /dir//45.408652,141.676545/",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道観光振興機構の公式施設ページで副港市場・港1丁目6-28を照合。市場建物点。施設サイトのcenterのみの値は不採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.wakkanai.hokkaido.jp/kurashi/sumaisuido/gesui/mhcard.html （原地域snapshot data/evidence/national/north/920fb820d7c82561bf9b.html SHA256 aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a44b8aa1c55ed7aae9ec",
+      "coordinate": {
+        "lat": 43.425154,
+        "lng": 141.888901
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1881/resource/4991/014249_%E5%A5%88%E4%BA%95%E6%B1%9F%E7%94%BA_%E9%81%BF%E9%9B%A3%E6%89%80%E3%80%81%E9%81%BF%E9%9B%A3%E5%A0%B4%E6%89%80.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/d77e4df40c32f13e21b8.html",
+        "snapshotSHA256": "f1f00a56bb2327fa4cf5d20f804bd68e7365e7152ab3fa266fb90aba9ca967ff",
+        "sourceLocator": "CSV 施設ID=00000500 名称=奈井江町交流プラザみなクル 住所=奈井江町字奈井江町74(本町1区)",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式公開避難施設データR03-04-01の建物施設点。町公式施設ページ https://www.town.naie.hokkaido.jp/shisetsu/bunka/minakuru/ の現在の施設名・住所・電話と照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.naie.hokkaido.jp/kurashi/suidou/startmanhole/ （原地域snapshot data/evidence/national/north/c9f8fbfb8326b240243b.html SHA256 aacb2c5a6b5270726ac0d7675640df9ff01432e173580c6651d7e50f6e42d6df）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a5487e1f89df95c0f69d",
+      "coordinate": {
+        "lat": 43.4040765,
+        "lng": 141.431374
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.683203521337!2d141.42914231548968!3d43.40455047913065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b6b82dc884f5b%3A0x1dec92bdc4997e4a!2z6YGT44Gu6aeF55-z54up44CM44GC44GE44KN44O844Gp5Y6a55Sw44CN!5e0!3m2!1sja!2sjp!4v1625727450466!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/accf777010320aff33ec.html",
+        "snapshotSHA256": "122b528a14d6e73ccd443c2073385d6634f9d60652c2eab1ed951685f49c30fc",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b6b82dc884f5b:0x1dec92bdc4997e4a / 〒061-3601 北海道石狩市厚田９８−２ 道の駅 石狩あいろーど厚田",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 http://aikaze.co.jp/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://aikaze.co.jp/ （原地域snapshot data/evidence/national/north/ed963685706af98df10e.html SHA256 b9363b3a9cc6c3b30a15e8626a5e48fe6ae9fe39134fab854986316cbb4d6c68）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-a5e747e17e489df9e8b0",
+      "coordinate": {
+        "lat": 44.2873853,
+        "lng": 142.4137849
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/2939/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/22c8713c75f1215a695c.html",
+        "snapshotSHA256": "769866510534b64553808a031e17ba6ee2f65dc5123c987883a1c9324044705f",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.2873853!4d142.4137849",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.city.nayoro.lg.jp/section/suidou/prkeql0000020lqo.html （原地域snapshot data/evidence/national/north/0669b505be83d55cefc0.html SHA256 a2115259dad4a930322293ffa7867910fde205d42bcc0a229d7f5f2b06280134）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-adeda0700dac8487ca81",
+      "coordinate": {
+        "lat": 42.82172569999999,
+        "lng": 141.6519333
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1463.2104522661236!2d141.65170769444282!3d42.82172206534851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f7520a42f20602f%3A0x7f2252a1952ebaf2!2z5Y2D5q2z5biC5rC06YGT5bGA!5e0!3m2!1sja!2sus!4v1763704172360!5m2!1sja!2sus",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/df35f0042dff9b707dde.html",
+        "snapshotSHA256": "3155f365eb707a7c8e6181076175d6b487a67101fe5a28428b51e673dc00f5d4",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f7520a42f20602f:0x7f2252a1952ebaf2 / 日本、〒066-0042 北海道千歳市東雲町３丁目２−５ 千歳市水道局",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.city.chitose.lg.jp/c70/1002771/1002772/1005528.html のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.chitose.lg.jp/docs/28386.html?cat=%2F95%2F95_170%2F95_170_938%2F （原地域snapshot data/evidence/national/north/6d3ae44dab18bce5e66f.html SHA256 8babc6855359ecc864a1df7d65978606eddc35650440955cba8f40710bff8701）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-adf76c586ebea80020ba",
+      "coordinate": {
+        "lat": 43.0710373,
+        "lng": 141.3497371
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.6052676798413!2d141.34726017730122!3d43.070768889904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b290b765d2cb9%3A0x92fb31b5c3ca80e7!2z5pyt5bmM44Ko44Or44OX44Op44K2!5e0!3m2!1sja!2sjp!4v1706247472504!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/29e8bba60f5b7a3c88b3.html",
+        "snapshotSHA256": "82bbde6430a36ed0a7532df608bc327d162c83ccdad7dd40a2ba9fd5c3863351",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0b290b765d2cb9:0x92fb31b5c3ca80e7 / 〒060-0808 北海道札幌市北区北８条西３丁目２８ 札幌エルプラザ",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.kankyo.sl-plaza.jp/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.kankyo.sl-plaza.jp/ （原地域snapshot data/evidence/national/north/f51f60807b64bb28f7aa.html SHA256 c405c7218974e6b1968b70bbb6961b14702046cd311174ba05f4b7c64c544372）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-b3895bc1edbab7205d85",
+      "coordinate": {
+        "lat": 44.88511,
+        "lng": 141.75092
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/227/url_resource/41/Hokkaido_OD_GeoDataBase2018.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c5703dee40dd9aad81cd.html",
+        "snapshotSHA256": "f341183ec01e2317ee14b707921a1e13a698fc80e9234e77233c166c713c7e05",
+        "sourceLocator": "CSV 施設名=天塩町ファミリースポーツセンター 住所_出典元=字川口5702-1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公式施設位置DB。国土数値情報文化施設データH25の施設点。現公式施設案内と施設名称・所在地を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.teshiotown.hokkaido.jp/?page_id=620 （原地域snapshot data/evidence/national/north/5fd1a2f1f1e431f4fc0d.html SHA256 e61aa34e9400b0d316fcb10af05222965c21f7a2adc9da656b1788e1197d7294）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-b52f5b5eb1fe0a290167",
+      "coordinate": {
+        "lat": 41.8082832,
+        "lng": 140.09548
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2973.9221165483823!2d140.0928001148122!3d41.80843817775085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f9f20b37ac0747b%3A0x59ec14c67310e4be!2z6YGT44Gu6aeFIOS4iuODjuWbveOCguOCk-OBmOOChQ!5e0!3m2!1sja!2sjp!4v1563840613394!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/b4838813958d16ec0c4a.html",
+        "snapshotSHA256": "12572bc7bc0ae81935f1b20c001cacedad294d57699b2b3681938ad267ea4d8a",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f9f20b37ac0747b:0x59ec14c67310e4be / 〒049-0602 北海道檜山郡上ノ国町原歌３ 道の駅 上ノ国もんじゅ",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.kaminokuni.com/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.kaminokuni.com/ （原地域snapshot data/evidence/national/north/6ea003424819b70d4526.html SHA256 49266924d7f22521a687fd1b988f85773a55070a46755a769df21a4a9014236e）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-b59c391ec004d507bb86",
+      "coordinate": {
+        "lat": 44.8766775,
+        "lng": 141.7441787
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11309.346989686534!2d141.73653960227972!3d44.875795552465696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e3c46f311ffbb%3A0x55449db309918b60!2z44Gm44GX44GK5rip5rOJIOWkleaYoA!5e0!3m2!1sja!2sjp!4v1712301432342!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/530bbb7a2058d7f8218c.html",
+        "snapshotSHA256": "47652ab3246399fb917bf03a8a4bd5f127666c9357f09e1ed68f15016cfe7ab1",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c46f311ffbb:0x55449db309918b60 / 〒098-3300 北海道天塩郡天塩町サラキシ5807番地4 てしお温泉 夕映",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.teshiotown.hokkaido.jp/?p=22908 のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.teshiotown.hokkaido.jp/?p=22908 （原地域snapshot data/evidence/national/north/fa47d7c578728270881e.html SHA256 4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-bf6e16a11cb13e5f9622",
+      "coordinate": {
+        "lat": 45.103188,
+        "lng": 141.778888
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2816.1602733350833!2d141.77644655152238!3d45.102818978995636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e2a22ef4f357f%3A0x45c4209423f181b1!2z6LGK5a-M55S65b255aC0IOWumuS9j-aUr-aPtOOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1448436671690",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/c2f82a6a450d9eb484e9.html",
+        "snapshotSHA256": "3fd08dcfdd6578d715c9fae30ee1d5f56b37064bfae9c8e4be4a1aee2e6d5c84",
+        "sourceLocator": "地図応答の施設feature 0x5f0e2a22ef4f357f:0x45c4209423f181b1 / Municipal permanent resident support center Furattokita., 6 Chome Toyotomi Higashi 1 Jo, Toyotomi, Teshio District, Hokkaido 098-4121",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "町公式施設案内 https://www.town.toyotomi.hokkaido.jp/section/chominka/a7cug6000000128e.html が埋め込む定住支援センターの施設点。東1条6丁目と名称を照合。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html （原地域snapshot data/evidence/national/north/2d7edf7054161e5555a1.html SHA256 f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-c2f6c2b5109a65d91a91",
+      "coordinate": {
+        "lat": 44.888285,
+        "lng": 141.7451438
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2826.734679600265!2d141.7447941424157!3d44.88804811114499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e3c66efdc96cd%3A0xef22cd222d2399d4!2z5aSp5aGp55S65b255aC0!5e0!3m2!1sja!2sjp!4v1659061167813!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3048d7ce9bdcd328573.html",
+        "snapshotSHA256": "1d6343c917194ab1dce8ba9a76eaa16f191b670b399aa58b65778074693f5a9e",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c66efdc96cd:0xef22cd222d2399d4 / 〒098-3398 北海道天塩郡天塩町新栄通８丁目 天塩町役場",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 http://www.teshiotown.hokkaido.jp/?p=20872 のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.teshiotown.hokkaido.jp/ （原地域snapshot data/evidence/national/north/accf6c97d75e4897ebe6.html SHA256 edd23e9084b1fbdef3978cd92ab9b1eaa7b341be9f60ba5a5121ca232c7e5637）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-c755555d3ee86913edcf",
+      "coordinate": {
+        "lat": 44.095746,
+        "lng": 142.361007
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1465 市役所=剣淵町役場 住所=仲町３７－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.kembuchi.hokkaido.jp/kurashi/%E4%BD%8F%E5%AE%85%E3%83%BB%E4%B8%8A%E4%B8%8B%E6%B0%B4%E9%81%93/%E6%B0%B4%E9%81%93%E3%83%BB%E4%B8%8B%E6%B0%B4%E9%81%93/ （原地域snapshot data/evidence/national/north/f5e859e12d329fe91be1.html SHA256 2d04483cf787940925cc796eb4cd10e47a4691d83fc54e7fab5b27d3e736cbf8）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-c8ab3d989862cda67eba",
+      "coordinate": {
+        "lat": 43.825956,
+        "lng": 142.5128792
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d508.8449923983628!2d142.5133107955908!3d43.825518592832026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0ce1ed6e33f4bf%3A0x6b58daafebb5cf1f!2z5b2T6bq755S6IOmDt-Wcn-izh-aWmemkqCDjgZPjgZPjgYvjgok!5e0!3m2!1sja!2sjp!4v1696314710162!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/ae1405fa92ef0157eccb.html",
+        "snapshotSHA256": "50f568619e6947c391e33f99f2e0838a20ecbd44af5346a86558635a4fea4968",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0ce1ed6e33f4bf:0x6b58daafebb5cf1f / 〒078-1324 北海道上川郡当麻町４条南３丁目１−４１ 当麻町 郷土資料館 ここから",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 http://www.town.tohma.hokkaido.jp/all-about/04/01/1812 のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.town.tohma.hokkaido.jp/all-about/03/03/1739 （原地域snapshot data/evidence/national/north/a8b23f536d177c33a212.html SHA256 6525ece1e2ca8cb42446e7066ea6f36136890c635c05762a7fed81fd4631da13）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-c9c5016d77e51377f615",
+      "coordinate": {
+        "lat": 42.9333615,
+        "lng": 143.3009616
+      },
+      "evidence": {
+        "sourceUrl": "https://www.tokachigawa.jp/access.php",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9f928b49cbf77db02c7b.html",
+        "snapshotSHA256": "85d80788550432756e3631d5fe6af617cd89d09239df3fe17e65d7b9d53f80e7",
+        "sourceLocator": "経路iframe到着地 ガーデンスパ十勝川温泉 !3m2!1d42.9333615!2d143.3009616",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "施設アクセスの経路到着地点と十勝川温泉北14丁目1を照合。出発駅・地図中心と区別。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.tokachigawa.jp/ （原地域snapshot data/evidence/national/north/a115a9f0ef6b631757ff.html SHA256 9334da20d6450dc06c8b34472e2a21516bff7067dc6bbe64b89dc144ba8789ec）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-ca408ccc1bcbc950bdd6",
+      "coordinate": {
+        "lat": 43.079741,
+        "lng": 142.838822
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1635 市役所=新得町役場 住所=３条南４－２６",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.shintoku-town.jp/ （原地域snapshot data/evidence/national/north/f42b91b9152b636799f2.html SHA256 64fbb0cd4cf7c4ea2c7271e941bf4016a80377662cd2592007b98bdc08198291）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-cb479f7bbce2788c803e",
+      "coordinate": {
+        "lat": 43.32069218366,
+        "lng": 142.37707933331296
+      },
+      "evidence": {
+        "sourceUrl": "https://www.furanotourism.com/jp/spot/spot_D.php?id=69",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/d78ca359e270e1ab5055.html",
+        "snapshotSHA256": "30092158184afdf8b1e5e11cf964b81d9fb4e50aba6b6509674649a9059cc23d",
+        "sourceLocator": "住所欄MAP href: q=43.32069218366,142.37707933331296",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "ふらの観光協会のチーズ工房個別ページ。施設名と中五区を照合。前庭の避難場所点とは区別。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.furano-cheese.jp/ （原地域snapshot data/evidence/national/north/6b9d861efd2e79990765.html SHA256 ffe733f615ab0a822524cb3439d65c38e03a1a8b9e33fc42a476f09aa04d8b2a）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-cdee3e1ed7285d1301f2",
+      "coordinate": {
+        "lat": 43.244786,
+        "lng": 143.55393
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/index.html （原地域snapshot data/evidence/national/north/3e5c32c0a9101f16320c.html SHA256 c98426f6b7639d5ed1ded27f646c3c455af3b088fbf029f1139b8a6e0948ee23）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d4f4c5138f1edd1b3b74",
+      "coordinate": {
+        "lat": 45.07421919999999,
+        "lng": 141.8384681
+      },
+      "evidence": {
+        "sourceUrl": "https://maps.google.com/maps?q=%E6%B9%AF%E3%81%AE%E6%9D%9C%E3%81%BD%E3%81%A3%E3%81%91&t=m&z=15&output=embed&iwloc=near",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3855c2d46f01e664f85.html",
+        "snapshotSHA256": "206896a3a722d65a68c660f36463ae475fee97a9b0be258296d460918bbc729c",
+        "sourceLocator": "地図応答の施設feature 0x5f0e29ccae4e29db:0xb7b49d196a05ef06 / Yunomori POKKE, Hot Spring, Toyotomi, Teshio District, Hokkaido 098-4132",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "豊富町観光協会の当該施設ページから埋め込み地図を取得。名称と住所（温泉／駅前通）を照合。町の住所代表点ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.toyotomi.hokkaido.jp/section/kensetuka/lepd6s0000007wkm.html （原地域snapshot data/evidence/national/north/2d7edf7054161e5555a1.html SHA256 f775a4ef6b528f277e606c239dfb4329a576d838e87eb7c786b82f8ab6a5a6be）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-d68cb955eb8fb28297a6",
+      "coordinate": {
+        "lat": 43.6578346,
+        "lng": 145.1208715
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5773.014744049067!2d145.11384410964976!3d43.65841672198401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f6dab0f723b8dc5%3A0xc8e9d9aeb68fb9ff!2z5qiZ5rSl55S6IOeUn-a2r-Wtpue_kuOCu-ODs-OCv-ODvCDjgYLjgZnjgbHjgos!5e0!3m2!1sja!2sjp!4v1770873630873!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/4acf1c69685f8978a5c2.html",
+        "snapshotSHA256": "905cda0a327d9066361b60e43a2974a5aa43fbf4f65b69fc878684ec6f1ae12b",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f6dab0f723b8dc5:0xc8e9d9aeb68fb9ff / 〒086-1651 北海道標津郡標津町南１条西５丁目５−３ 標津町 生涯学習センター あすぱる",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.shibetsutown.jp/culture/?content=229 のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.shibetsutown.jp/life/?content=1111 （原地域snapshot data/evidence/national/north/a00dd41639910d81a803.html SHA256 6373a0206151feb561410730479a1ac1f267f91b3af8616434a89043ecd427f0）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-da208a6abd2abdb93a0a",
+      "coordinate": {
+        "lat": 42.875861,
+        "lng": 141.8186066
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.847625792275!2d141.81659921498667!3d42.876060179155594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f74dcf3c961069f%3A0x7afb310cb93731eb!2z6YGT44Gu6aeF44GC44Gz44KJRDUx44K544OG44O844K344On44Oz!5e0!3m2!1sja!2sjp!4v1555300466647!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/aba098ea912881a1ae6c.html",
+        "snapshotSHA256": "6eeee94f77f0a43399c6ac354337a2d66980eabc383f825d824d19f6ef075661",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f74dcf3c961069f:0x7afb310cb93731eb / 〒059-1921 北海道勇払郡安平町追分柏が丘４９−１ 道の駅 あびらD51ステーション",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://d51-station.com/access/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://d51-station.com/ （原地域snapshot data/evidence/national/north/86e51b62c05d09811956.html SHA256 577594383873106a03e5ee52d7672453e9075e75cbbc35e0eaa33e0259ec5aa1）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-da9719ed3ef3729f4673",
+      "coordinate": {
+        "lat": 42.978677,
+        "lng": 144.3831971
+      },
+      "evidence": {
+        "sourceUrl": "https://maps.app.goo.gl/StpyysamtXeQvhMx9",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/44074af416e8f0ee4fd0.html",
+        "snapshotSHA256": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+        "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市公式配布案内／るもいプラザ公式施設ページが指定する施設名付き目的地。現在の住所に照合。表示中心を不採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html （原地域snapshot data/evidence/national/north/c3ce801f7d8e2107daa3.html SHA256 33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-dc7b25bac2387c1d4172",
+      "coordinate": {
+        "lat": 43.1916988,
+        "lng": 140.9940904
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d727.2124423496584!2d140.9935458292117!3d43.1916629764532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0ae056723bb729%3A0xd4548654aefbc2f5!2z5bCP5qi95biCIOawtOmBk-WxgCDjgrXjg7zjg5PjgrnoqrI!5e0!3m2!1sja!2sjp!4v1674021052302!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/23be8aefdabc528d5b4a.html",
+        "snapshotSHA256": "e5f91badfe842de8241e85bd8da37e86523be8ae7c62843ea261445f0b40aff4",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0ae0567147720b:0xb38ad9a978422d45 / 〒047-0024 北海道小樽市花園２丁目１１−１５ 小樽市水道局",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://www.city.otaru.lg.jp/docs/2020112200455/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.otaru.lg.jp/docs/2020112200455/ （原地域snapshot data/evidence/national/north/bea4feea639a0a42f99b.html SHA256 4b5ff6ef12929b96c09bc47b8b7410993cdfe058bd9af67cf84071fa69cea7fc）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-dddf18164e0a5e3df321",
+      "coordinate": {
+        "lat": 42.978677,
+        "lng": 144.3831971
+      },
+      "evidence": {
+        "sourceUrl": "https://maps.app.goo.gl/StpyysamtXeQvhMx9",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/44074af416e8f0ee4fd0.html",
+        "snapshotSHA256": "d961687a0c4b454b2b5abce603562f7bd7cb48dfec65202607c101b567582384",
+        "sourceLocator": "公式短縮リンクの最終URLおよび原本内の施設目的地 !3d42.978677!4d144.3831971",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "市公式配布案内／るもいプラザ公式施設ページが指定する施設名付き目的地。現在の住所に照合。表示中心を不採用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.kushiro.lg.jp/kurashi/suidou/1004657/1014085.html （原地域snapshot data/evidence/national/north/c3ce801f7d8e2107daa3.html SHA256 33d74b481e2021098b44880b9f2763bad6a67c4ae9bb4653548b528cc39c5f13）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-df2e2fa9738be3f1981a",
+      "coordinate": {
+        "lat": 43.468914,
+        "lng": 143.747305
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1648 市役所=陸別町役場 住所=字陸別東１条３－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.rikubetsu.jp/ （原地域snapshot data/evidence/national/north/9a70653355440fb6b3e9.html SHA256 cd8f61bef2c3a23be8b674fcb994a56cc579a2e95eb14bb6bb70717d3f7c2d6b）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-e02254fac40d4417b6a8",
+      "coordinate": {
+        "lat": 43.6995109,
+        "lng": 142.0707377
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/2390/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/5be022b0ee589ee97a14.html",
+        "snapshotSHA256": "0c87a72ae5f9993a3f5e79ef8a87aa973ff82fd943d71b34675f56f121112248",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.6995109!4d142.0707377",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.city.fukagawa.lg.jp/cms/section/jogesuid/qnv6ca0000000fkv.html （原地域snapshot data/evidence/national/north/9302a1eb1aa2b83c9b3a.html SHA256 4b98710dbeb23843a772fab8372e94eaaca1835f9cb8020f9d6a4f5cf65ab693）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-ec1d5acd6800362be7ec",
+      "coordinate": {
+        "lat": 43.5251379,
+        "lng": 142.1894311
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/202/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/f8680f0cd4a05e2f9902.html",
+        "snapshotSHA256": "48e9fb36b5241b267ac458e706233ef95dfb1e91b0887561f6fc23d98793181d",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d43.5251379!4d142.1894311",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://go-to-ashibetsu.com/ （原地域snapshot data/evidence/national/north/d921a292831042cea16e.html SHA256 846efe6b27dbe10ca8ceb72366faf21d56d556507978d055c2eba1045bef0cde）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f51a0f3cd3ce0a372cb6",
+      "coordinate": {
+        "lat": 43.244786,
+        "lng": 143.55393
+      },
+      "evidence": {
+        "sourceUrl": "https://www.harp.lg.jp/opendata/dataset/1749/resource/4180/hokkaido_yakuba.csv",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/9a5ea91e24436212ca88.html",
+        "snapshotSHA256": "7882496b84216ccbf96ffa543a00d0b7a4b87007a3472a57d5bf3d7ce0ba3b42",
+        "sourceLocator": "CSV コード=1647 市役所=足寄町役場 住所=北１条４－４８－１",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北海道公開の役場施設点（国土数値情報由来）。原地域の取得済み公式本文の現施設名・現住所と丁目・番地を照合。旧資料の施設点であることを保持。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.town.ashoro.hokkaido.jp/ （原地域snapshot data/evidence/national/north/f2a3aecaf5a6ce8f0fe2.html SHA256 bac0180e9ebc962ea3805eec6ebfd465668a2cd148f73d7d90636a23a929cafe）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-f7c2ea84a43d097526df",
+      "coordinate": {
+        "lat": 44.1764611,
+        "lng": 142.392846
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6612.358157296876!2d142.38711152278154!3d44.173719752719364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0da507a86a22d5%3A0xf0106a7cbd869305!2z6YGT44Gu6aeFIOe-iuOBruOBvuOBoSDkvo3jg7vjgZfjgbnjgaQ!5e0!3m2!1sja!2sjp!4v1619614510934!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/584e495198ebd0f81392.html",
+        "snapshotSHA256": "6694f16ff4266ecaa5e3ae61c1b2a21a29621bc675d3f60d546f39a426f97a29",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0da507a86a22d5:0xf0106a7cbd869305 / 〒095-0019 北海道士別市大通東５丁目４４０−２３ 道の駅 羊のまち 侍・しべつ",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 https://machi-shibetsu.securesite.jp/michinoeki/ のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://machi-shibetsu.securesite.jp/michinoeki/ （原地域snapshot data/evidence/national/north/e17fb6a3781c5086e49b.html SHA256 7f54da4c908cfb34399e5011a817b8c0f4bf72c645ab894eb1cc1506e4c7ffd5）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-faff1c6ba07862131750",
+      "coordinate": {
+        "lat": 44.1968187,
+        "lng": 143.0909312
+      },
+      "evidence": {
+        "sourceUrl": "https://hokkaido-michinoeki.jp/michinoeki/1016/",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/2c78104fb9201a15e078.html",
+        "snapshotSHA256": "4b20070fbaac30893eef9031e2dc4793a977df04241978b8b822002e941aa0b2",
+        "sourceLocator": "GoogleMapで見る の施設目的地 !3d44.1968187!4d143.0909312",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "北の道の駅の施設個別案内で名称・住所を照合。ページのL.markerではなく施設名付き目的地リンクを使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://town.takinoue.hokkaido.jp/shokai/shisetsu/kankou/michinoeki.html （原地域snapshot data/evidence/national/north/b4a1c1fdd0e6967e9405.html SHA256 bc0a68cd55800ec7c815cf973fb5da838b6f72448d3a8266476b019b4e5d8bad）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-fb4350ebefff5d4630de",
+      "coordinate": {
+        "lat": 42.8972354,
+        "lng": 141.5856753
+      },
+      "evidence": {
+        "sourceUrl": "https://hanafuru.jp/access.html",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/8363eba393810a6ff971.html",
+        "snapshotSHA256": "0d772dd1aa5890a23be87f3d510fb38d15d0f078882e4d73eac173aebf374799",
+        "sourceLocator": "経路iframeの到着地 花ロードえにわ !3m2!1d42.8972354!2d141.5856753",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "はなふる公式アクセスの到着地は花ロードえにわ（南島松817番地18）。センターハウスと別施設として使用。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: https://www.hanaroadeniwa.jp/ （原地域snapshot data/evidence/national/north/c32520c8956a9eb070dd.html SHA256 af9d7e6dfecec8f503a5ba465799e70dc2356f3fd13d2d3543699b2a86288096）。"
+      }
+    },
+    {
+      "facilityId": "facility:north-fc46386371945051a55a",
+      "coordinate": {
+        "lat": 44.888285,
+        "lng": 141.7451438
+      },
+      "evidence": {
+        "sourceUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2826.734679600265!2d141.7447941424157!3d44.88804811114499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0e3c66efdc96cd%3A0xef22cd222d2399d4!2z5aSp5aGp55S65b255aC0!5e0!3m2!1sja!2sjp!4v1659061167813!5m2!1sja!2sjp",
+        "snapshotPath": "data/evidence/national/locations-north-hokkaido/a3048d7ce9bdcd328573.html",
+        "snapshotSHA256": "1d6343c917194ab1dce8ba9a76eaa16f191b670b399aa58b65778074693f5a9e",
+        "sourceLocator": "埋め込み地図応答の施設feature 0x5f0e3c66efdc96cd:0xef22cd222d2399d4 / 〒098-3398 北海道天塩郡天塩町新栄通８丁目 天塩町役場",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式施設案内 http://www.teshiotown.hokkaido.jp/?p=20872 のiframeから取得。施設featureの名称と住所を台帳の現住所に照合。表示中心の座標ではない。 建物・施設の代表点であり、室内窓口の精密位置ではない。AIによる原典照合で現地・人確認ではない。現施設の名称・住所根拠: http://www.teshiotown.hokkaido.jp/ （原地域snapshot data/evidence/national/north/accf6c97d75e4897ebe6.html SHA256 edd23e9084b1fbdef3978cd92ab9b1eaa7b341be9f60ba5a5121ca232c7e5637）。"
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "facilityId": "facility:north-2a029b3a4fe86e92e4ea",
+      "attempts": [
+        {
+          "url": "https://www.town.wassamu.hokkaido.jp/industrial-development/2018/12/03/%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab%e3%82%ab%e3%83%bc%e3%83%89%e3%81%af%e3%81%98%e3%82%81%e3%81%be%e3%81%97%e3%81%9f%ef%bc%81%e4%b8%80%e9%83%a8%e3%83%9e%e3%83%b3%e3%83%9b%e3%83%bc%e3%83%ab/",
+          "result": "HTTP 200; 町公式施設案内で交流施設ひだまり内・字北町200番地を確認。施設紹介とアクセスガイドに当施設の数値マーカーを見いだせず、公的施設DBにも当該名称・住所の対応点なし。役場の点は別施設のため使わない。"
+        },
+        {
+          "url": "https://www.town.wassamu.hokkaido.jp/industrial-development/commerce-tourism/attractions/wassamu-foodandtouristinformation/",
+          "result": "HTTP 200; 町公式施設案内で交流施設ひだまり内・字北町200番地を確認。施設紹介とアクセスガイドに当施設の数値マーカーを見いだせず、公的施設DBにも当該名称・住所の対応点なし。役場の点は別施設のため使わない。"
+        },
+        {
+          "url": "https://www.town.wassamu.hokkaido.jp/affairs/city-building/guest-house-hidamari/",
+          "result": "HTTP 200; 町公式施設案内で交流施設ひだまり内・字北町200番地を確認。施設紹介とアクセスガイドに当施設の数値マーカーを見いだせず、公的施設DBにも当該名称・住所の対応点なし。役場の点は別施設のため使わない。"
+        }
+      ],
+      "reason": "町公式施設案内で交流施設ひだまり内・字北町200番地を確認。施設紹介とアクセスガイドに当施設の数値マーカーを見いだせず、公的施設DBにも当該名称・住所の対応点なし。役場の点は別施設のため使わない。"
+    },
+    {
+      "facilityId": "facility:north-2c42d8946a63660d54a1",
+      "attempts": [
+        {
+          "url": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/page_7.html",
+          "result": "HTTP 200; 条例で足寄下水終末処理場・共栄町120番地の5を確認。公式の処理場位置案内はPDF画像へのリンクで、採用可能な数値の目的地点を確認できない。町役場・他の処理施設点は不採用。"
+        },
+        {
+          "url": "https://www.town.ashoro.hokkaido.jp/d1w_reiki/H343901010016/print.html",
+          "result": "HTTP 200; 条例で足寄下水終末処理場・共栄町120番地の5を確認。公式の処理場位置案内はPDF画像へのリンクで、採用可能な数値の目的地点を確認できない。町役場・他の処理施設点は不採用。"
+        }
+      ],
+      "reason": "条例で足寄下水終末処理場・共栄町120番地の5を確認。公式の処理場位置案内はPDF画像へのリンクで、採用可能な数値の目的地点を確認できない。町役場・他の処理施設点は不採用。"
+    },
+    {
+      "facilityId": "facility:north-2f26ae4b0395f3d156ca",
+      "attempts": [
+        {
+          "url": "https://www.city.sapporo.jp/gesui/manholecard.html",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        },
+        {
+          "url": "https://odori-park.jp/access/",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        },
+        {
+          "url": "https://www.sapporo.travel/info/about/informationcenter/?lang=ja",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        }
+      ],
+      "reason": "公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+    },
+    {
+      "facilityId": "facility:north-3b54409c9b1539133325",
+      "attempts": [
+        {
+          "url": "https://suido.city.eniwa.hokkaido.jp/business/sewer/manhole-card.html",
+          "result": "HTTP 200; 施設公式はセンターハウスを南島松828-3と記載するが台帳／水道配布案内は823-3。公式同士の住所不一致のため保留。アクセス経路の目的地は花ロードえにわ817-18であり、センターハウスへ流用しない。住所訂正は親レビュー対象。"
+        },
+        {
+          "url": "https://hanafuru.jp/access.html",
+          "result": "HTTP 200; 施設公式はセンターハウスを南島松828-3と記載するが台帳／水道配布案内は823-3。公式同士の住所不一致のため保留。アクセス経路の目的地は花ロードえにわ817-18であり、センターハウスへ流用しない。住所訂正は親レビュー対象。"
+        },
+        {
+          "url": "https://hanafuru.jp/contact.html",
+          "result": "HTTP 200; 施設公式はセンターハウスを南島松828-3と記載するが台帳／水道配布案内は823-3。公式同士の住所不一致のため保留。アクセス経路の目的地は花ロードえにわ817-18であり、センターハウスへ流用しない。住所訂正は親レビュー対象。"
+        }
+      ],
+      "reason": "施設公式はセンターハウスを南島松828-3と記載するが台帳／水道配布案内は823-3。公式同士の住所不一致のため保留。アクセス経路の目的地は花ロードえにわ817-18であり、センターハウスへ流用しない。住所訂正は親レビュー対象。"
+    },
+    {
+      "facilityId": "facility:north-42de513bcef33f8c7164",
+      "attempts": [
+        {
+          "url": "https://www.town.higashikagura.lg.jp/",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "https://www.town.higashikagura.lg.jp/c2_kurashi/shisetsu/yakuba/",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "https://www.town.higashikagura.lg.jp/docs/365.html",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "http://www.town.higashikagura.lg.jp/docs/678.html",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        }
+      ],
+      "reason": "現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+    },
+    {
+      "facilityId": "facility:north-4855b77907547ff0f2c6",
+      "attempts": [
+        {
+          "url": "http://www.city.wakkanai.hokkaido.jp/",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/floor.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/sangyo/kanko/wfc/location.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/access.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        }
+      ],
+      "reason": "2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+    },
+    {
+      "facilityId": "facility:north-6470eb0a313ea693898c",
+      "attempts": [
+        {
+          "url": "https://www.city.sapporo.jp/gesui/manholecard.html",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        },
+        {
+          "url": "https://odori-park.jp/access/",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        },
+        {
+          "url": "https://www.sapporo.travel/info/about/informationcenter/?lang=ja",
+          "result": "HTTP 200; 公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+        }
+      ],
+      "reason": "公園管理者と公式観光案内で西7丁目インフォメーション／西3丁目観光案内所をそれぞれ確認。アクセス地図は公園全体のll表示中心で個別窓口のマーカー座標ではない。公園代表点も不採用。"
+    },
+    {
+      "facilityId": "facility:north-7d980545cacdb9317d51",
+      "attempts": [
+        {
+          "url": "https://www.e-rumoi.jp/suidou/page26_00039.html",
+          "result": "HTTP 200; 市アクセス経路の到着地43.940931,141.636995は市役所本庁の代表点。対象は分庁舎1階の上下水道課で、同敷地の別棟を特定できない。配布案内のq=43.93876130596552,141.64699032117065はるもいプラザ側なので流用不可。"
+        },
+        {
+          "url": "https://www.e-rumoi.jp/shisei/rum_00025.html",
+          "result": "HTTP 200; 市アクセス経路の到着地43.940931,141.636995は市役所本庁の代表点。対象は分庁舎1階の上下水道課で、同敷地の別棟を特定できない。配布案内のq=43.93876130596552,141.64699032117065はるもいプラザ側なので流用不可。"
+        }
+      ],
+      "reason": "市アクセス経路の到着地43.940931,141.636995は市役所本庁の代表点。対象は分庁舎1階の上下水道課で、同敷地の別棟を特定できない。配布案内のq=43.93876130596552,141.64699032117065はるもいプラザ側なので流用不可。"
+    },
+    {
+      "facilityId": "facility:north-82685b3507353b74ef2d",
+      "attempts": [
+        {
+          "url": "https://www.town.higashikagura.lg.jp/",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "https://www.town.higashikagura.lg.jp/c2_kurashi/shisetsu/yakuba/",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "https://www.town.higashikagura.lg.jp/docs/365.html",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        },
+        {
+          "url": "http://www.town.higashikagura.lg.jp/docs/678.html",
+          "result": "HTTP 200; 現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+        }
+      ],
+      "reason": "現公式は複合施設はなのわを案内。公的旧データには同住所の役場点43.696303,142.451571があるが、複合施設整備後の該当棟との照合が不十分。アクセスiframeは町域のfeatureで役場施設点ではなく不採用。"
+    },
+    {
+      "facilityId": "facility:north-853b19860f4c8e24d9b4",
+      "attempts": [
+        {
+          "url": "http://muro-kanko.com/",
+          "result": "HTTP 200; 協会事務局の海岸町1-5-1を確認。アクセスページには複数の交通地点を扱う地図スクリプトがあるが、協会の建物名・住所と結び付く座標を取得原本から確定できない。市街地・駅代表点を不採用。"
+        },
+        {
+          "url": "https://muro-kanko.com/kyoukai.html",
+          "result": "HTTP 200; 協会事務局の海岸町1-5-1を確認。アクセスページには複数の交通地点を扱う地図スクリプトがあるが、協会の建物名・住所と結び付く座標を取得原本から確定できない。市街地・駅代表点を不採用。"
+        },
+        {
+          "url": "https://muro-kanko.com/access.html",
+          "result": "HTTP 200; 協会事務局の海岸町1-5-1を確認。アクセスページには複数の交通地点を扱う地図スクリプトがあるが、協会の建物名・住所と結び付く座標を取得原本から確定できない。市街地・駅代表点を不採用。"
+        }
+      ],
+      "reason": "協会事務局の海岸町1-5-1を確認。アクセスページには複数の交通地点を扱う地図スクリプトがあるが、協会の建物名・住所と結び付く座標を取得原本から確定できない。市街地・駅代表点を不採用。"
+    },
+    {
+      "facilityId": "facility:north-907d32962778fcc976eb",
+      "attempts": [
+        {
+          "url": "https://www.kamishihoro.jp/page/00000060",
+          "result": "HTTP 200; 公式施設案内の地図featureは道の駅かみしほろ、43.2248833,143.2909196、住所は上士幌東3線227-1。台帳は227番地。施設は一致するが現住所の枝番照合・台帳訂正は親レビューに委ね、今回は更新を保留。原本地図応答はmanifestに保存済み。"
+        },
+        {
+          "url": "https://www.kamishihoro.jp/place/00000251",
+          "result": "HTTP 200; 公式施設案内の地図featureは道の駅かみしほろ、43.2248833,143.2909196、住所は上士幌東3線227-1。台帳は227番地。施設は一致するが現住所の枝番照合・台帳訂正は親レビューに委ね、今回は更新を保留。原本地図応答はmanifestに保存済み。"
+        },
+        {
+          "url": "https://hokkaido-michinoeki.jp/michinoeki/23227/",
+          "result": "HTTP 200; 公式施設案内の地図featureは道の駅かみしほろ、43.2248833,143.2909196、住所は上士幌東3線227-1。台帳は227番地。施設は一致するが現住所の枝番照合・台帳訂正は親レビューに委ね、今回は更新を保留。原本地図応答はmanifestに保存済み。"
+        }
+      ],
+      "reason": "公式施設案内の地図featureは道の駅かみしほろ、43.2248833,143.2909196、住所は上士幌東3線227-1。台帳は227番地。施設は一致するが現住所の枝番照合・台帳訂正は親レビューに委ね、今回は更新を保留。原本地図応答はmanifestに保存済み。"
+    },
+    {
+      "facilityId": "facility:north-9f9446b5647fc3b00482",
+      "attempts": [
+        {
+          "url": "http://www.city.tomakomai.hokkaido.jp/kurashi/jogesuido/sokatsu/card1.html",
+          "result": "HTTP 200; 施設個別案内に表町5-11-5ふれんどビル1階を確認。取得本文に建物の数値マーカーがない。市役所は別施設。市配布案内のMy Mapsは個別施設featureを今回抽出できず保留。"
+        },
+        {
+          "url": "https://www.tomakomai-kanko.jp/aboutus.html",
+          "result": "HTTP 200; 施設個別案内に表町5-11-5ふれんどビル1階を確認。取得本文に建物の数値マーカーがない。市役所は別施設。市配布案内のMy Mapsは個別施設featureを今回抽出できず保留。"
+        },
+        {
+          "url": "https://tomako-mice.jp/locations/tourist-info/",
+          "result": "HTTP 200; 施設個別案内に表町5-11-5ふれんどビル1階を確認。取得本文に建物の数値マーカーがない。市役所は別施設。市配布案内のMy Mapsは個別施設featureを今回抽出できず保留。"
+        }
+      ],
+      "reason": "施設個別案内に表町5-11-5ふれんどビル1階を確認。取得本文に建物の数値マーカーがない。市役所は別施設。市配布案内のMy Mapsは個別施設featureを今回抽出できず保留。"
+    },
+    {
+      "facilityId": "facility:north-a8b82abf28a7cf508886",
+      "attempts": [
+        {
+          "url": "http://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+          "result": "HTTP 200; 局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+        },
+        {
+          "url": "https://www.city.kitami.lg.jp/detail.php?content=8097",
+          "result": "HTTP 200; 局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+        }
+      ],
+      "reason": "局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+    },
+    {
+      "facilityId": "facility:north-c6af31b0552e6e96071a",
+      "attempts": [
+        {
+          "url": "https://www.town.furubira.lg.jp/life/detail.php?id=134",
+          "result": "HTTP 200; 現公式配布案内のかなえーるは浜町50。北海道役場CSV・施設DBの古平町役場は旧住所浜町40-4で不一致。町への広域アクセスに新複合施設の数値目的地点を確認できないため旧施設点を不採用。"
+        },
+        {
+          "url": "https://www.town.furubira.lg.jp/tourism/detail.php?id=86",
+          "result": "HTTP 200; 現公式配布案内のかなえーるは浜町50。北海道役場CSV・施設DBの古平町役場は旧住所浜町40-4で不一致。町への広域アクセスに新複合施設の数値目的地点を確認できないため旧施設点を不採用。"
+        }
+      ],
+      "reason": "現公式配布案内のかなえーるは浜町50。北海道役場CSV・施設DBの古平町役場は旧住所浜町40-4で不一致。町への広域アクセスに新複合施設の数値目的地点を確認できないため旧施設点を不採用。"
+    },
+    {
+      "facilityId": "facility:north-dd30f89f2c53805091b6",
+      "attempts": [
+        {
+          "url": "http://www.city.kitami.lg.jp/administration/life/detail.php?content=9605",
+          "result": "HTTP 200; 局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+        },
+        {
+          "url": "https://www.city.kitami.lg.jp/detail.php?content=8097",
+          "result": "HTTP 200; 局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+        }
+      ],
+      "reason": "局の各課・アクセス案内で中ノ島町1丁目4番1号を確認。駅から徒歩の説明と所在地はあるが、当庁舎を指す数値のマーカーを確認できない。常呂総合支所の点とは別。"
+    },
+    {
+      "facilityId": "facility:north-e5fc22bb4348acd7bcdb",
+      "attempts": [
+        {
+          "url": "http://www.city.wakkanai.hokkaido.jp/",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/floor.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/sangyo/kanko/wfc/location.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        },
+        {
+          "url": "https://www.city.wakkanai.hokkaido.jp/access.html",
+          "result": "HTTP 200; 2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+        }
+      ],
+      "reason": "2025年建築の新庁舎を公式で確認。旧役場CSVは中央3-13-15、現台帳は中央3-2-1で不一致。新庁舎の室内図・広域アクセスでは当該建物の数値点を確定できず、旧地点を流用しない。ロケーション地図の個別featureは今回未抽出。"
+    },
+    {
+      "facilityId": "facility:north-ebda8a1ab861f8da3b85",
+      "attempts": [
+        {
+          "url": "http://www.city.nayoro.lg.jp/section/suidou/prkeql0000027w8z.html",
+          "result": "HTTP 200; 協会問い合わせ先とよろーな公式施設説明で東1条南7丁目1番地10を照合。取得した施設説明・問い合わせ原本に数値の施設点がなく、駅代表点からは確定しない。"
+        },
+        {
+          "url": "https://nayoro-kankou.com/top/inquiries/",
+          "result": "HTTP 200; 協会問い合わせ先とよろーな公式施設説明で東1条南7丁目1番地10を照合。取得した施設説明・問い合わせ原本に数値の施設点がなく、駅代表点からは確定しない。"
+        },
+        {
+          "url": "https://yoro-na.com/about/",
+          "result": "HTTP 503; 協会問い合わせ先とよろーな公式施設説明で東1条南7丁目1番地10を照合。取得した施設説明・問い合わせ原本に数値の施設点がなく、駅代表点からは確定しない。"
+        }
+      ],
+      "reason": "協会問い合わせ先とよろーな公式施設説明で東1条南7丁目1番地10を照合。取得した施設説明・問い合わせ原本に数値の施設点がなく、駅代表点からは確定しない。"
+    },
+    {
+      "facilityId": "facility:north-f19c149e540fddcdc014",
+      "attempts": [
+        {
+          "url": "http://ehon-yakata.com/",
+          "result": "HTTP 200; 施設公式アクセスの地図はsimplemapでdata-lat/data-lngが空。緑町15番3号の住所ジオコードで表示する実装のため不採用。町公共施設マップも数値施設点を確認できない。"
+        },
+        {
+          "url": "https://ehon-yakata.com/info/access/",
+          "result": "HTTP 200; 施設公式アクセスの地図はsimplemapでdata-lat/data-lngが空。緑町15番3号の住所ジオコードで表示する実装のため不採用。町公共施設マップも数値施設点を確認できない。"
+        },
+        {
+          "url": "https://www.town.kembuchi.hokkaido.jp/siteseeing/facility/",
+          "result": "HTTP 200; 施設公式アクセスの地図はsimplemapでdata-lat/data-lngが空。緑町15番3号の住所ジオコードで表示する実装のため不採用。町公共施設マップも数値施設点を確認できない。"
+        }
+      ],
+      "reason": "施設公式アクセスの地図はsimplemapでdata-lat/data-lngが空。緑町15番3号の住所ジオコードで表示する実装のため不採用。町公共施設マップも数値施設点を確認できない。"
+    },
+    {
+      "facilityId": "facility:north-f487aee21374d9453844",
+      "attempts": [
+        {
+          "url": "https://sunairu.jp/",
+          "result": "HTTP 200; 施設公式短縮リンクは西1条北2丁目1-20の住所featureへ遷移。43.4929982,141.9072378は取得できたが、施設名付きPOIではなく住所の目的地で建物点としての同定が足りず不採用。"
+        },
+        {
+          "url": "https://maps.app.goo.gl/FLoLRWuCvfnMRbLF8",
+          "result": "HTTP 200; 施設公式短縮リンクは西1条北2丁目1-20の住所featureへ遷移。43.4929982,141.9072378は取得できたが、施設名付きPOIではなく住所の目的地で建物点としての同定が足りず不採用。"
+        }
+      ],
+      "reason": "施設公式短縮リンクは西1条北2丁目1-20の住所featureへ遷移。43.4929982,141.9072378は取得できたが、施設名付きPOIではなく住所の目的地で建物点としての同定が足りず不採用。"
+    }
+  ]
+}
