@@ -9,11 +9,11 @@ import assemble as a
 
 
 def batch1_manifest(root):
-    """Replay the historical contract without later regional batch2 choices."""
+    # Later regional research must not rewrite the historical Batch1 contract.
     manifest = a.read_json(root / 'tools/national/manifest.json')
     for key in ('locations', 'locationLifecycle'):
-        manifest[key] = [p for p in manifest.get(key, [])
-                         if not p['path'].startswith('data/national/location-batch2/')]
+        manifest[key] = [row for row in manifest.get(key, [])
+                         if not row['path'].startswith('data/national/location-batch2/')]
     return manifest
 
 
@@ -194,7 +194,7 @@ class AssemblyTests(unittest.TestCase):
 
     def test_batch1_osaka_museum_has_reviewed_building_point_and_binding(self):
         root = Path(__file__).resolve().parents[2]
-        manifest = batch1_manifest(root)
+        manifest = a.read_json(root / 'tools/national/manifest.json')
         output, audit = a.assemble(root, manifest)
         fid = 'facility:kinki-5541e22064b914088d81'
         place = next(p for p in output['places'] if p['id'] == fid)
