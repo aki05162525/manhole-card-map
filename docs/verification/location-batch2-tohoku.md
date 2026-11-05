@@ -56,3 +56,5 @@ bindingと位置追補は `data/national/location-batch2/tohoku/`。元行の旧
 初稿の未実施3施設をbuilding-comparisonとした段階/共通停止文、男鹿の予定敷地図と取得写真の違い、factsの5資料欠落、READMEの取得記録がないWeb本文確認、Gemini失敗見出し省略を修正した。verifyが段階と参照の矛盾を見逃していたため回帰検査を追加した。新採用に対する履歴844件テストは履歴manifestへ限定し、現manifestとの目的を分離した。Issue24の石巻旧住所は履歴snapshotとして保持する。アプリの説明と実装について新たな不一致は確認していない。
 
 再レビューで判明した不一致も修正した: 花巻新館「警備」の欠落、回転なしの比率/脚幅と地階説明、山田番地差の限界記録、花巻newMethodの配置資料という誤記、山田README参照欠落。研究回帰テストはCI対象外だったため全国discoveryへ接続し、verifyの全batch2差分判定を東北単独へ修正した。共有 `docs/national-assembly.md:56` はIssue26/30だけの除外記載で、コードはbatch2も除外する。共有文書は親の統合対象のため編集せず、この不一致を引き継ぐ。未承認manifest仮統合と採用済み限定規則の差は利用者が許可したDraft検証の範囲であり、花巻最終確認前には統合しない。
+
+最終修正確認の新規Claude Opus依頼は `Claude API rate limit reached. Try again later.` で失敗した。花巻の反証・数値記録修正は完了したが、その修正を独立承認済みとは扱わない。山田採用1・花巻提案1・保留6のDraftで親へ引き継ぐ。

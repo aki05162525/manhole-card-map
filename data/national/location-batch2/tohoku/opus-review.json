@@ -62,6 +62,13 @@
     ]
   },
   "finalReview": {
-    "status": "pending-new-delegation"
+    "status": "failed-provider-rate-limit",
+    "providerInstanceId": "claudeAgent",
+    "model": "claude-opus-5-5",
+    "reviewedHead": null,
+    "requestedHead": "46d7d67ff5f3c33042f50e83d7b6ef4107835104",
+    "taskId": "node:delegated-task:command%3Amcp%3A04b4214c-39c8-41be-8e56-dd8ed01fa431%3Adelegate-task%3A3a0f8f74-c9db-4d4c-89b7-9e0dab84cf29",
+    "error": "Claude API rate limit reached. Try again later.",
+    "response": "代替モデルに変更しない。山田採用1、花巻条件付き提案1、保留6のDraftを維持し、親へ最終確認未完として引継ぐ。"
   }
 }
