@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "preparedBy": "koshin-implementation-agent",
-  "status": "proposed-awaiting-opus-rereview",
+  "status": "reviewed-and-adopted",
   "updates": [
     {
       "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
@@ -13,7 +13,7 @@
       "evidence": {
         "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
         "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-        "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+        "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
         "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-3c366372adb1d9e39b13; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
         "checkedAt": "2026-11-05",
         "actorType": "ai",
@@ -30,7 +30,7 @@
       "evidence": {
         "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
         "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-        "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+        "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
         "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-511d795c4d0bff516838; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
         "checkedAt": "2026-11-05",
         "actorType": "ai",
@@ -47,7 +47,7 @@
       "evidence": {
         "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
         "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-        "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+        "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
         "sourceLocator": "rows[1]; vector-inputs.json / derived-points.json facilityId=facility:chubu-chuo-duty-counter; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
         "checkedAt": "2026-11-05",
         "actorType": "ai",
@@ -64,7 +64,7 @@
       "evidence": {
         "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
         "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-        "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+        "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
         "sourceLocator": "rows[2]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-59b4cce2285148bd4dfd; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
         "checkedAt": "2026-11-05",
         "actorType": "ai",

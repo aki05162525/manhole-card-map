@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "four-proposed-facility-points-and-one-unapproved-diagnostic",
+  "status": "four-adopted-facility-points-and-one-unapproved-diagnostic",
   "sourceURL": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
   "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; lng/lat output order converted to lat/lng keys. No WGS84 datum conversion.",
   "version": "2026-07-01 per official readme; fetched 2026-11-05",

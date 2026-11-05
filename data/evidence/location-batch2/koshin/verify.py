@@ -28,6 +28,18 @@ def resolve(ref):
     return obj
 
 
+def check_evidence_links(updates, derived, comparison):
+    points = {r['facilityId']: r for r in derived}
+    for row in updates:
+        point = points[row['facilityId']]
+        assert row['coordinate'] == point['coordinate'], row['facilityId']
+        assert point['pointWithinFootprint'] and point['roundedPointWithinFootprint']
+    for reused in comparison['reusedSources']:
+        for source in reused['sources']:
+            if source.get('snapshotPath'):
+                assert digest(source['snapshotPath']) == source['snapshotSHA256'], source['snapshotPath']
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--with-work', action='store_true')
@@ -42,7 +54,7 @@ def main():
     manifest = read('tools/national/manifest.json')
     historical = json.loads(json.dumps(manifest))
     for key in ('locations', 'locationLifecycle'):
-        historical[key] = [r for r in historical.get(key, []) if not r['path'].startswith(base)]
+        historical[key] = [r for r in historical.get(key, []) if not r['path'].startswith('data/national/location-batch2/')]
     historical_bytes = (json.dumps(historical, ensure_ascii=False, indent=2) + '\n').encode()
     assert hashlib.sha256(historical_bytes).hexdigest() == selection['inputSHA256']['tools/national/manifest.json']
     snapshot = [r for r in read('data/national/issue24/priorities-snapshot.json')['rows']
@@ -95,6 +107,7 @@ def main():
     comparison = read(ev + 'building-comparison.json')
     for path, expected in comparison['filesSHA256'].items():
         assert digest(path) == expected
+    check_evidence_links(updates, read(ev + 'derived-points.json')['rows'], comparison)
     raw_checks = 0
     if args.with_work:
         for row in read(ev + 'retrievals.json')['rows']:
@@ -107,7 +120,9 @@ def main():
         for row in facts['facts']:
             assert digest(row['snapshotPath']) == row['snapshotSHA256']
     print(json.dumps({'baselineRegionUnlocated': 27, 'selected': 8, 'held': 4,
-                      'integratedProposals': 4, 'currentRegionUnlocated': 23, 'currentNationalLedgerUnlocated': 604,
+                      'adopted': len(adopted),
+                      'currentRegionUnlocated': sum(not current_places[i].get('coordinate') for i in ids),
+                      'currentNationalLedgerUnlocated': sum(not p.get('coordinate') for p in current_places.values()),
                       'localRawHashChecks': raw_checks}, ensure_ascii=False))
 
 

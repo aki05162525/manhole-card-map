@@ -17,14 +17,14 @@
         "evidence": {
           "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
           "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
           "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-3c366372adb1d9e39b13; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
           "checkedAt": "2026-11-05",
           "actorType": "ai",
           "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
         }
       },
-      "adoptionSHA256": "e2d9e0317338ce94aae7ca0dc429e894bb0efcaaafe1e07e777eef8c3051187d",
+      "adoptionSHA256": "a5d61c3d86c2a27116d796444fd327fff3a1f1cc9e0bc39324695e107e791253",
       "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
     },
     {
@@ -43,14 +43,14 @@
         "evidence": {
           "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
           "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
           "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-511d795c4d0bff516838; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
           "checkedAt": "2026-11-05",
           "actorType": "ai",
           "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
         }
       },
-      "adoptionSHA256": "e73e78a09db4309463ea06b97c727637960df9f5cdf36c83a9d9bd9c0078474d",
+      "adoptionSHA256": "f3fdfe76a0d6037fe2cca57c06a83fb1147c5c42d724d61deab92c7724cac472",
       "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
     },
     {
@@ -69,14 +69,14 @@
         "evidence": {
           "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
           "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
           "sourceLocator": "rows[1]; vector-inputs.json / derived-points.json facilityId=facility:chubu-chuo-duty-counter; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
           "checkedAt": "2026-11-05",
           "actorType": "ai",
           "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。外形重心が外なので建物内代表点を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
         }
       },
-      "adoptionSHA256": "bf03fc42d340fa2c5a6df0743d8f7c512e49a657740430fc4cf40c770008a8bf",
+      "adoptionSHA256": "28c2dbc6710ebcb0cd613b4f15dd35d092edd3db4a1ad9ca0676ae687b935f41",
       "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
     },
     {
@@ -95,17 +95,34 @@
         "evidence": {
           "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
           "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
-          "snapshotSHA256": "8a7f9e70a42f85d17757a565bde25b818d8708756b38b06bb14f86803d779d00",
+          "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
           "sourceLocator": "rows[2]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-59b4cce2285148bd4dfd; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
           "checkedAt": "2026-11-05",
           "actorType": "ai",
           "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
         }
       },
-      "adoptionSHA256": "2e0c21fafc2d92d7a1bc3a8d3fb6e27bceff1741dc69828245f0417444bcb59c",
+      "adoptionSHA256": "a289bf3803cbfbf2efd53ef198597cd791b81a89aa61dcfb6e02928a1557943d",
       "sourceVersion": "GSI optimal Vector 2026-07-01; official layout comparison 2026-11-05"
     }
   ],
   "events": [],
-  "groups": []
+  "groups": [
+    {
+      "id": "building:koshin-cleanlake-suwa-management",
+      "facilityIds": [
+        "facility:chubu-east-3c366372adb1d9e39b13",
+        "facility:chubu-east-511d795c4d0bff516838"
+      ],
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/location-batch2/koshin/building-comparison.json",
+        "snapshotSHA256": "94a8487392e89d8ece2f00fd3055d4695136e1432dc4d64606623f4e9f452f56",
+        "sourceLocator": "rows[0]; vector-inputs.json / derived-points.json facilityId=facility:chubu-east-3c366372adb1d9e39b13; 国土地理院最適化ベクトルタイルを加工して作成、PDL1.0。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "保存公式図と現配布本文をGSI BldA外形・周囲配置へ照合。JGD2011地理座標、Web Mercatorタイルx/yから逆投影しlat/lngへ格納。WGS84への測地系変換なし。建物外形重心を使用。丸め後内包確認済み。建物代表点で入口・室内測量ではない。小数7桁は測量精度ではない。加工: manhole-card-map。"
+      }
+    }
+  ]
 }

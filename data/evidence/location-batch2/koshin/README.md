@@ -11,7 +11,7 @@
 
 ## 診断計算の限界
 
-`vector-inputs.json` の外形選択は、上田CSV点を内包する外形を探した診断であり、夢工房の建物同定を証明しない。隣接する旧直売所との独立配置照合が未完のため、`derived-points.json` の点は未承認。上田は診断のみ。他の4IDは別の配置図照合を根拠に仮統合し、独立再レビュー待ち。
+`vector-inputs.json` の外形選択は、上田CSV点を内包する外形を探した診断であり、夢工房の建物同定を証明しない。隣接する旧直売所との独立配置照合が未完のため、`derived-points.json` の点は未承認。上田は診断のみ。他の4IDは別の配置図照合を根拠にOpus独立再レビュー後に採用。
 
 GSI数値はJGD2011地理座標・Web Mercatorタイル格子。x/yからlng/latへ逆投影し、lat/lngキーへ格納する。WGS84への測地系変換は行わない。穴を含めたPolygon重心を検査し、外になる中央市ではrepresentative_pointを使う。7桁丸め後の内包も検査する。小数7桁は出力精度であり、測量精度ではない。一般化・現況との差・棟同定の不確かさは残る。
 
@@ -22,7 +22,7 @@ mise exec -- python3 -B data/evidence/location-batch2/koshin/verify.py
 mise exec -- python3 -B data/evidence/location-batch2/koshin/verify.py --with-work
 ```
 
-`verify.py` は自地域batch2選択を除去して開始manifest hashを検証する。後続地域がmanifestを更新した場合は当PRのcommitで再現する。継続的な全国採用件数テストを置換するものではない。
+`verify.py` は全batch2選択を除去して当初開始manifest hashを検証し、現在件数は実manifestから別途計算する。後続地域がmanifestを更新した場合は当PRのcommitで再現する。継続的な全国採用件数テストを置換するものではない。
 
 ## 再調査で追加した証拠
 

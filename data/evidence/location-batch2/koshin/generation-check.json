@@ -2,8 +2,8 @@
   "cards": 1313,
   "places": 1735,
   "relations": 1825,
-  "placePinsBefore": 978,
-  "placePinsAfter": 982,
+  "placePinsBefore": 979,
+  "placePinsAfter": 983,
   "lidPins": 1309,
   "changedPlaceIDs": [
     "facility:chubu-chuo-duty-counter",
@@ -12,9 +12,9 @@
     "facility:chubu-east-59b4cce2285148bd4dfd"
   ],
   "generationHashes": {
-    "details.json": "cb14908a1cf609b4ba73ca1d390e54be765fec9ac3b7cb68add928827c32fb68",
-    "full.json": "0fc7e6b8c8c2780e33ee38129a819f6cd2a4177536813b01fdd27d93e1eefe59",
-    "pins.json": "c51dd443b85a1da27ae1feeb0ee0e375d11b37b70a0b8a4adbc113c156c764bb"
+    "details.json": "c6493087e5942f215b1cab40ee97b8e93ad998024d0b78d934d47aedb908545c",
+    "full.json": "b1f03eb369da8b8fec192f0e8062c99443f383ced28ac974717016c272b2b7b8",
+    "pins.json": "685164671ede68866c4972199fda14ad8c5b673195faf7d336aadf0f611434c4"
   },
   "inputHashes": {
     "data/evidence/national/list-source/gkp-20261105.html": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
@@ -22,7 +22,7 @@
     "data/raw/gkp-list-20261021.html": "d77c7837d1ce62052c690f91945cf867b26eb11f6abcf209e4a3f3bc4779fb6c",
     "data/work/addresses-sources.json": "5199a3d56b75217e5e883236390992551ae90c1ff68ef99b94060d5c0a4a811d",
     "data/work/geocoded-c.json": "e2adf23eff162849decc1ce3091069895d1ce4267f8555fd8eded85ad7ddd159",
-    "data/work/location-batch2/koshin/provisional-ledger.json": "b6e824ca5d3615756710db0bf81cb8bf6b95476c8c8b8857e6cbe21c7af8513f",
+    "data/work/location-batch2/koshin/final-ledger.json": "06b446a157bec661bb3ebe0322d78209fc8f3aad8a953880ba8123baf0933d5d",
     "data/work/ocr.json": "2d4d43971e3b8f5d07b75d20aaf67c3c0f8917d1d5ad41bc22445ba35c975f24",
     "docs/verification/05-findings.json": "d017aa64da312b51b4ac3568f9ee714dddad3e8305e2042e2cb71347c1068d20"
   },
@@ -41,19 +41,26 @@
     "facility:chubu-chuo-duty-counter 19-214-A001 https://www.google.com/maps/search/?api=1&query=35.5999764%2C138.516776",
     "facility:chubu-east-59b4cce2285148bd4dfd 20-000-C001 https://www.google.com/maps/search/?api=1&query=36.6108645%2C138.2214568"
   ],
-  "reusedInputs": "親worktreeの保存一覧・municheck入力をcopy2で再利用。元hash一致をbuilddataで検証。新取得とは扱わない。",
+  "reusedInputs": "親worktreeの保存一覧・municheck入力をcopy2で再利用。元hashをbuilddataで検証、新取得と扱わない。",
   "asOf": "2026-11-05",
   "listingDate": "2026-10-21",
+  "integratedMain": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+  "comparisonBaseline": "最新mainから自地域4IDだけを加えた差分。他地域採用/bindingは両側に保持。",
   "nationalAudit": {
-    "assembledUnlocated": 604,
-    "generatedUnlocated": 753,
+    "assembledUnlocated": 603,
+    "generatedUnlocated": 752,
     "missingGeneratedAdoptedIds": [],
     "missingGeneratedPinIds": []
   },
+  "nationalLedgerUnlocatedBeforeRegionalAdoption": 607,
+  "historicalStartingUnlocated": 608,
   "tests": {
-    "python": "93 passed; python3 -B -m unittest discover -s tools/national -v",
+    "python": "96 passed; python3 -B -m unittest discover -s tools/national -v",
     "go": "passed; go test -count=1 ./...",
-    "regionalRed": "4 expected updates absent before integration: assertion failed",
-    "regionalGreen": "exact four updates and bindings passed"
+    "redGreen": [
+      "exact four updates before integration",
+      "Suwa group identity change withholds both",
+      "coordinate and reused-source hash mismatch rejection"
+    ]
   }
 }

@@ -5,28 +5,29 @@
   "counts": {
     "selected": 8,
     "proposed": 4,
-    "adopted": 0,
+    "adopted": 4,
     "held": 4,
     "baselineRegionUnlocated": 27,
-    "provisionalRegionUnlocated": 23,
     "baselineNationalLedgerUnlocated": 608,
-    "provisionalNationalLedgerUnlocated": 604
+    "currentRegionUnlocated": 23,
+    "nationalLedgerUnlocatedBeforeRegionalAdoption": 607,
+    "currentNationalLedgerUnlocated": 603
   },
-  "interpretation": "初版8保留を追加照合で再審査。4IDは仮統合して検証中、独立再レビュー前の最終採用は0。未承認候補を自動採用しない。",
+  "interpretation": "Opus独立再レビューで重大指摘0、4ID採用可を確認して採用確定。開始baseline608は履歴。北海道採用済main統合後607から自地域4IDで603。",
   "rows": [
     {
       "facilityId": "facility:chubu-chuo-duty-counter",
       "name": "中央市役所宿日直室",
-      "decision": "proposed",
-      "stage": "independent-review",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
       "previousFinding": "今回取得した宿日直案内PDFを画像で確認し、庁舎西側棟南端の入口まで同定。P05旧田富庁舎点がこの棟内か、南館との対応を未確認。入口精度ではなく棟対応が残る。",
       "newMethod": "既存市宿日直航空写真とGSI外形/周辺棟を比較",
       "factRefs": [
         "data/evidence/location-batch2/koshin/facts.json#/facts/0",
         "data/evidence/location-batch2/koshin/building-comparison.json#/rows/1"
       ],
-      "stopCondition": "建物図・周囲配置の照合と計算を完了。独立再レビューが承認するまで最終採用としない。",
-      "resumeCondition": "Opus再レビューの指摘を反映して最終採否を確定。",
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
       "coordinate": {
         "lat": 35.5999764,
         "lng": 138.516776
@@ -74,16 +75,16 @@
     {
       "facilityId": "facility:chubu-east-3c366372adb1d9e39b13",
       "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階受付窓口",
-      "decision": "proposed",
-      "stage": "independent-review",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
       "previousFinding": "県配布案内とふれあいまつり案内を再取得。管理本館1階の指定を確認したが処理場全体と管理棟を分離した数値原典なし。",
       "newMethod": "県事務所年報p4全体配置図/p8平面図とGSI外形を比較",
       "factRefs": [
         "data/evidence/location-batch2/koshin/facts.json#/facts/7",
         "data/evidence/location-batch2/koshin/building-comparison.json#/rows/0"
       ],
-      "stopCondition": "建物図・周囲配置の照合と計算を完了。独立再レビューが承認するまで最終採用としない。",
-      "resumeCondition": "Opus再レビューの指摘を反映して最終採否を確定。",
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
       "coordinate": {
         "lat": 36.0333033,
         "lng": 138.0894658
@@ -111,16 +112,16 @@
     {
       "facilityId": "facility:chubu-east-511d795c4d0bff516838",
       "name": "豊田終末処理場(クリーンレイク諏訪)管理本館1階ロビー",
-      "decision": "proposed",
-      "stage": "independent-review",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
       "previousFinding": "県配布案内とまつり案内を再取得。管理本館1階ロビーは確認できるが管理棟の数値原典が未取得。受付・ロビーの室内差は保留理由ではない。",
       "newMethod": "県事務所年報p4全体配置図/p8平面図とGSI外形を比較",
       "factRefs": [
         "data/evidence/location-batch2/koshin/facts.json#/facts/7",
         "data/evidence/location-batch2/koshin/building-comparison.json#/rows/0"
       ],
-      "stopCondition": "建物図・周囲配置の照合と計算を完了。独立再レビューが承認するまで最終採用としない。",
-      "resumeCondition": "Opus再レビューの指摘を反映して最終採否を確定。",
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
       "coordinate": {
         "lat": 36.0333033,
         "lng": 138.0894658
@@ -131,16 +132,16 @@
     {
       "facilityId": "facility:chubu-east-59b4cce2285148bd4dfd",
       "name": "千曲川流域下水道事務所 アクアパル千曲管理本館1階",
-      "decision": "proposed",
-      "stage": "independent-review",
+      "decision": "adopted",
+      "stage": "reviewed-building-adoption",
       "previousFinding": "県配布案内と事務所アクセスを再取得。真島町川合1060-1のアクアパル管理本館が対象。別処理場クリーンピアや処理場敷地代表点は不採用。",
       "newMethod": "長野市被災復旧資料p15配置図とGSI4タイルの建物/河川/池/公園を比較",
       "factRefs": [
         "data/evidence/location-batch2/koshin/facts.json#/facts/8",
         "data/evidence/location-batch2/koshin/building-comparison.json#/rows/2"
       ],
-      "stopCondition": "建物図・周囲配置の照合と計算を完了。独立再レビューが承認するまで最終採用としない。",
-      "resumeCondition": "Opus再レビューの指摘を反映して最終採否を確定。",
+      "stopCondition": "原図照合・派生計算・独立再レビューを完了し採用確定。",
+      "resumeCondition": "移転・名称住所変更・新たな相反資料を検知したらlifecycleで再確認。同棟諏訪2IDはgroupで影響を共有。",
       "coordinate": {
         "lat": 36.6108645,
         "lng": 138.2214568

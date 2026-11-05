@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "region": "hokkaido",
+  "reviewedAt": "2026-11-05",
+  "provider": "claudeAgent",
+  "model": "claude-opus-5-5",
+  "geminiAttempt": {
+    "status": "failed-before-review",
+    "reason": "You have reached your Antigravity quota for this period."
+  },
+  "fallbackAuthorization": "利用者がGemini quota時のClaude provider Opus独立レビューを明示許可。",
+  "decision": "approve candidate; PR permitted after documented corrections; re-review not required per reviewer",
+  "acceptedFacilityIds": [
+    "facility:north-53b2b9df9a8da2705261"
+  ],
+  "report": "data/national/location-batch2/hokkaido/review-opus.md",
+  "findings": [
+    {
+      "id": 1,
+      "severity": "medium",
+      "issue": "レビュー前の状態表示",
+      "resolution": "提案原記録を保持し、locations-reviewed.jsonと本記録を追加。manifestは承認済みコピーのみを選択。outcomesを採用1へ更新。"
+    },
+    {
+      "id": 2,
+      "severity": "low",
+      "issue": "隣接施設名称と外形範囲の不正確さ",
+      "resolution": "貯留管/融雪監視室/雨水ポンプを区別し、科学館南東部が外形に含まれないことを明記。数値不変、証拠文と全行/binding/manifest hashを再計算。"
+    },
+    {
+      "id": 3,
+      "severity": "low",
+      "issue": "探索記録の旧表現",
+      "resolution": "科学館1タイル採用と旧H25/旧P05ヒントの由来を追記。"
+    },
+    {
+      "id": 4,
+      "severity": "low",
+      "issue": "選定理由の一般性",
+      "resolution": "selectionPolicyClarificationと旧snapshotフィールド注記を追記。選定IDは変更しない。"
+    },
+    {
+      "id": 5,
+      "severity": "low",
+      "issue": "北斗のGSI探索を誤読する定型文",
+      "resolution": "北斗GSI未取得を明記。"
+    },
+    {
+      "id": 6,
+      "severity": "low",
+      "issue": "規約参照とブラウザー回帰ログ不足等",
+      "resolution": "規約/仕様のpointerを追記。最終再生成後の回帰10ケースと科学館詳細/Maps2ケースが成功。workログを保存しvalidation/browser-verificationへhashを記録。"
+    }
+  ],
+  "limitations": "独立レビューはPython/Go/座標派生を再実行。生成とブラウザーは保存結果の照合/担当者実行で、レビュー側再実行なし。",
+  "postCorrectionValidation": "Python93・Go全件・再生成/全国監査・原本hash/参照/台帳/世代差分・web build・full/splitブラウザー再実行成功。"
+}
