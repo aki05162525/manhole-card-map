@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "manifestIntegrated": false,
+  "adoptionApproved": false,
+  "proposedFacilityIds": [
+    "facility:kanto-north-4244d9dc97ba1a68e1de"
+  ],
+  "locationsPath": "data/national/kanto-prefecture/saitama/groups/civic/locations.json",
+  "locationsSHA256": "459616b7133420eba9f5a1a2f37129661b557925ffdf17748e286fbdee85761b",
+  "requiredReview": [
+    "current community-center identity and rename continuity",
+    "source-specific CRS and reuse conditions",
+    "tile-fragment correspondence and numerical point"
+  ],
+  "oldBindingsRef": "data/national/kanto-prefecture/saitama/groups/civic/old-bindings.json"
+}

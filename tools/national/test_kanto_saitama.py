@@ -62,5 +62,49 @@ class SaitamaDraftTests(unittest.TestCase):
         self.assertEqual(expected, changed)
 
 
+class SaitamaFullInvestigationTests(unittest.TestCase):
+    def test_full_proposal_has_only_bound_location_changes(self):
+        proposal = read_json(ROOT / (N + 'full-selection-proposal.json'))
+        manifest = read_json(ROOT / 'tools/national/manifest.json')
+        before, _ = assemble(ROOT, manifest)
+        trial = copy.deepcopy(manifest)
+        trial['locations'].append(proposal['locations'])
+        trial['locationLifecycle'].append(proposal['locationLifecycle'])
+        after, _ = assemble(ROOT, trial)
+        self.assertFalse(proposal['adoptionApproved'])
+        self.assertEqual(before['relations'], after['relations'])
+        self.assertEqual([p['id'] for p in before['places']], [p['id'] for p in after['places']])
+        changed = set()
+        for old, new in zip(before['places'], after['places']):
+            if old != new:
+                changed.add(old['id'])
+                self.assertEqual(
+                    {k: v for k, v in old.items() if k not in ('coordinate', 'locationReview', 'evidence')},
+                    {k: v for k, v in new.items() if k not in ('coordinate', 'locationReview', 'evidence')})
+        self.assertEqual({r['facilityId'] for r in proposal['locations']['approved']}, changed)
+
+    def test_every_assigned_facility_has_actual_work_and_traceable_result(self):
+        assignment = read_json(ROOT / (N + 'parallel-assignment.json'))
+        document = read_json(ROOT / (N + 'full-outcomes.json'))
+        assigned = [f['facilityId'] for g in assignment['groups'] for f in g['facilities']]
+        rows = document['rows']
+        self.assertEqual(39, len(assigned))
+        self.assertEqual(39, len(set(assigned)))
+        self.assertEqual(set(assigned), {r['facilityId'] for r in rows})
+        self.assertEqual(39, len(rows))
+        self.assertFalse(document['adoptionApproved'])
+        self.assertFalse(document['manifestModified'])
+        for row in rows:
+            self.assertTrue(row['performedMethods'], row['facilityId'])
+            self.assertNotIn(row['status'], ('not-started', 'queued', 'planned'))
+            self.assertTrue(row['evidenceReferences'], row['facilityId'])
+            for ref in row['evidenceReferences']:
+                self.assertEqual(ref['sha256'], hashlib.sha256((ROOT / ref['path']).read_bytes()).hexdigest())
+            self.assertTrue(row['remainingWork'] or row['candidateCoordinate'])
+            if row['candidateCoordinate']:
+                self.assertTrue(row['buildingComparisonPerformed'], row['facilityId'])
+                self.assertFalse(row['adoptionApproved'])
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "updates": [],
+  "note": "No lifecycle mutations proposed automatically. Existing suspended status for Kazo retained pending separate decision; distribution-ended text does not imply permanent facility closure.",
+  "separateRelationConcern": {
+    "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+    "oldName": "加須市物産観光協会(市役所本庁舎2階観光振興課内)",
+    "newAssociationOffice": "加須市中央1-11-41 加須商工会館1階",
+    "source": "https://www.city.kazo.lg.jp/soshiki/shougyou_kankou/tourism/44417.html",
+    "sourceSHA256": "ad258a024772dfa0fe05370338fb3a0968994caaf99acdc84c0967615342efdc",
+    "action": "No coordinate relocation or card relation transfer without explicit card-distribution evidence."
+  }
+}

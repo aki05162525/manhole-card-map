@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "adoptionApproved": false,
+  "manifestReflected": false,
+  "changes": [],
+  "reviewItems": [
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "field": "distributionHours",
+      "oldSourceValue": "8:30–17:00",
+      "otherOfficialValue": "施設2026-04-01以降8:45–16:50、入場16:30",
+      "sourceUrl": "https://www.town.yoshimi.saitama.jp/soshiki/chiikishinkoka/1/4971.html",
+      "decision": "カード専用案内は旧時刻のまま。施設時刻をカード配布時刻へ自動転用せず親へ報告済み。"
+    },
+    {
+      "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
+      "field": "address",
+      "oldSourceValue": "筑波2-115-1（現カード案内）",
+      "otherOfficialValue": "筑波2-112（現施設ページ）",
+      "sourceUrl": "https://www.city.kumagaya.lg.jp/shisetsu/kurashi/kankoannaijyo.html",
+      "decision": "同じ2025移転後施設を案内する公式間差。住所/配布関係修正は未提案。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "field": "address",
+      "oldSourceValue": "北吉見324（観光施設全体）",
+      "otherOfficialValue": "北吉見327（資産一覧管理事務所）",
+      "decision": "敷地と棟住所の差の可能性。原本を保持し修正未提案。"
+    }
+  ]
+}
