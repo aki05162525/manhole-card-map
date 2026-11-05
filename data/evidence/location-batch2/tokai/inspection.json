@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "renderMethod": "pdftoppm -scale-to 1600 -png -singlefile -f 3; pdftotext -layout; matplotlibでBldA/RdCLを描画。原本を改変しない。",
+  "facts": [
+    "熱海敷地図の相対配置は確認したが方位・縮尺がなく地物対応は未確定。",
+    "関のVector大外形index21にP05点が入ることは北庁舎同定とは別。",
+    "中津川PDF物理3ページと現フロア図の総合案内・周辺配置を画像確認。"
+  ],
+  "files": [
+    {
+      "path": "data/work/location-batch2/tokai/atami-vector.png",
+      "sha256": "99c1658279b3ca3d6f1c4746afe652111412e968e51b73c4178b1c8cd8926535"
+    },
+    {
+      "path": "data/work/location-batch2/tokai/seki-vector.png",
+      "sha256": "7a6f0b2b64a9dfca67e504f03d82c2965d536f6b848b3e2bdfe85f1104e00144"
+    },
+    {
+      "path": "data/work/location-batch2/tokai/nakatsugawa-page3.png",
+      "sha256": "04fcadf4de8fb6df3ccac8e2db9bf0f32a1d3ef1ab01cb2b791dc7bfd15113db"
+    },
+    {
+      "path": "data/work/location-batch2/tokai/seki.txt",
+      "sha256": "df5aa1969388be08dad29572a16dd248671d5d665600136fcdddb89946edb7dd"
+    },
+    {
+      "path": "data/work/location-batch2/tokai/tarui.txt",
+      "sha256": "f8c5646cf9e5549121edcb4e86acfb272d1fe91a86b3b8cdfff5907fbfc82652"
+    },
+    {
+      "path": "data/work/location-batch2/tokai/nakatsugawa.txt",
+      "sha256": "b65f00f02050769f6d7d5866abbd5c0120bde5e3a092d9d93f316504dcf8265f"
+    }
+  ]
+}

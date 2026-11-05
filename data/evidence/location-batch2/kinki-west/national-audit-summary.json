@@ -47,6 +47,8 @@
     "data/national/issue7/tokai.json": "9f76fc1819df28ce9ab89cda741c43c1ee089fb5102c5f2501e3fd098317ae55",
     "data/national/location-batch1/location-lifecycle.json": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24",
     "data/national/location-batch1/locations-reviewed.json": "ef65dbcd6347f43dba328b1a6bc41b10bca6d1354ff9b38797bc2809a5185e4f",
+    "data/national/location-batch2/hokkaido/location-lifecycle.json": "5ab69d1935b65fdda07368cb581110efbfadc266eb3f592055dc8baf87e40cb2",
+    "data/national/location-batch2/hokkaido/locations-reviewed.json": "fa4535f3c74d7f96ce09a0597966612e22e6294971cd6b607920eb78b221dccf",
     "data/national/location-batch2/kinki-west/location-lifecycle.json": "bb71bb4df7df2fc79ea21f3812242e79debcbcda49a6b1d51081e95552779e97",
     "data/national/location-batch2/kinki-west/locations.json": "f228827f90f022306b7bb5ee329e226c675703ba23dfb3cb11750906c1c79f4d",
     "data/national/location-updates/chubu-east-north.json": "0f4b62883e8fd96def94fccc293149e4c15af1225f2165defac298ec3fd51a0f",
@@ -84,9 +86,9 @@
     "data/overrides/regions/kinki.json": "d1aa57ee76aca69596d24d17f608befbf276b3a0cbfb3c768bf17856dc4801df",
     "data/overrides/regions/kyushu-okinawa.json": "9dba12a76bcde4169f159547ac300e82a88d0525749535efcf0a7f3573b3b983",
     "data/overrides/regions/north.json": "802f2d8cec2f2ae7279f616326a1ec095f8875d7d7081fb1d465fc408fdcb3b3",
-    "data/work/location-batch2/kinki-west/revision/after-generated/full.json": "78419ac0dcf9fbdb55afa7fda1cf8fe72930b0154b476cb1e9a1dd1ef7584e84",
-    "data/work/location-batch2/kinki-west/revision/after.json": "88d46f0b716a10183f5df66bff07b96767de4f602ad38dc83ed96a8ff084a543",
-    "tools/national/manifest.json": "13ddc7e3eac192920c823347d610fc98bbd81a4b2a761799b226efd9f0e9234a"
+    "data/work/location-batch2/kinki-west/revision/after-generated/full.json": "7512921dcc40aa4115fcf49a1a735e8567ee9387b0d05cf1c9f51db0b87f6cf1",
+    "data/work/location-batch2/kinki-west/revision/after.json": "2737eda45539e97197e57976b91ba8dd03c39be00fbf5658e715a03b95fb2829",
+    "tools/national/manifest.json": "776eae60fab479c3af4b6c1bedd46de29fa6a9cd0666974182897d833e495901"
   },
   "dates": {
     "asOf": "2026-11-05",
@@ -97,8 +99,8 @@
   "national": {
     "knownFacilityCount": 1735,
     "generatedFacilityCount": 1735,
-    "generatedUnlocated": 755,
-    "assembledUnlocated": 606,
+    "generatedUnlocated": 754,
+    "assembledUnlocated": 605,
     "outsideFixedSelectedIds": [],
     "lifecycleWithheldIds": [],
     "missingGeneratedAdoptedIds": [],
@@ -206,5 +208,6 @@
     },
     "evidenceValidation": "assemble validates approved ledger/location evidence bytes; inputSHA256 lists JSON inputs and explicit listing source, not every archived evidence file.",
     "generatedRelations": "Effective statuses are trusted only from supplied full; generation age and as-of are reported, not silently refreshed."
-  }
+  },
+  "integrationBase": "ccc473e4bdbc9ecc1165e86bc783f144fea33395"
 }

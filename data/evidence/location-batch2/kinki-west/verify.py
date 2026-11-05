@@ -95,4 +95,4 @@ if '--raw' in sys.argv:
             if 'path' in r:
                 assert sha(ROOT / r['path']) == r['sha256'], r['path']
                 raw_count += 1
-print(json.dumps({'population': 108, 'regionalUnlocatedAtStart': 106, 'regionalUnlocatedCurrent': sum(not places[fid].get('coordinate') for fid in expected), 'selected': 8, 'provisionalIntegrated': 2, 'held': 6, 'rawHashesChecked': raw_count}))
+print(json.dumps({'population': 108, 'regionalUnlocatedAtStart': 106, 'regionalUnlocatedCurrent': sum(not places[fid].get('coordinate') for fid in expected), 'selected': 8, 'integrated': 2, 'adopted': o['adoptedCount'], 'held': 6, 'rawHashesChecked': raw_count}))
