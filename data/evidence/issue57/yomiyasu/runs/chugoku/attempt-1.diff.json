@@ -1,0 +1,224 @@
+{
+ "format": "yomiyasu-diff",
+ "format_version": 2,
+ "tool_version": "2.5.0",
+ "status": "has_candidates",
+ "changed": true,
+ "candidate_count": 4,
+ "meaning_risk_count": 1,
+ "fail_on_meaning_risk_count": 1,
+ "not_judged": [
+  "meaning_equivalence",
+  "reader_comprehension"
+ ],
+ "context": {
+  "doc_type": "manual",
+  "reader": "expert"
+ },
+ "meaning_risks": [
+  {
+   "kind": "number",
+   "subkind": "added",
+   "old_line": null,
+   "new_line": 41,
+   "old": null,
+   "new": "\u4ed6\u5730\u57df\u306e\u63a1\u7528\u3067\u5f53\u6642\u306e608\u4ef6\u3092\u66f4\u65b0\u3057\u306a\u3044\u3002",
+   "detail": {
+    "removed": [],
+    "added": [
+     "608\u4ef6"
+    ]
+   },
+   "basis": null
+  }
+ ],
+ "markers": [],
+ "new_words": [
+  "Issue57",
+  "Python",
+  "issue57-workflow.md",
+  "\u30aa\u30d7\u30b7\u30e7\u30f3",
+  "\u30d5\u30a3\u30fc\u30eb\u30c9",
+  "\u4ed6\u5730\u57df",
+  "\u4fdd\u5b58\u6e08",
+  "\u5168\u95a2\u4fc2\u5dee\u5206",
+  "\u5bfe\u8c61\u8a66\u9a13",
+  "\u5f53\u6642",
+  "\u5f53\u8a72\u5730\u57df",
+  "\u691c\u8a3c\u624b\u9806",
+  "\u691c\u8a3c\u7d50\u679c",
+  "\u6b74\u53f2\u57fa\u6e96",
+  "\u73fe\u5728",
+  "\u901a\u5e38\u691c\u67fb"
+ ],
+ "lost_words": [],
+ "structure": [
+  "\u6587\u306e\u6570\u304c\u5909\u308f\u3063\u305f\uff0886 \u2192 93\uff09",
+  "\u898b\u51fa\u3057\u306e\u6570\u304c\u5909\u308f\u3063\u305f\uff081 \u2192 2\uff09\u3002\u7bc0\u306e\u5206\u3051\u65b9\u304c\u5143\u3068\u540c\u3058\u3067\u3088\u3044\u304b\u898b\u308b"
+ ],
+ "spans": [
+  {
+   "added": "\n\nIssue57\u3067\u306e\u691c\u8a3c\u624b\u9806\u306e\u8a02\u6b63\n\n\u5f53\u6642\u306e\u691c\u8a3c\u7d50\u679c\u306f\u4e0a\u8a18\u306e\u307e\u307e\u4fdd\u6301\u3059\u308b\u3002\u73fe\u5728\u306e `verify.py` \u306f\u4fdd\u5b58\u6e08\u307fmanifest\u3068\u5f53\u6642\u306e\u53f0\u5e33hash\u3067\u6b74\u53f2\u57fa\u6e96\u3092\u691c\u67fb\u3057\u3001\u73femanifest\u3067\u306f\u5f53\u8a72\u5730\u57df\u3060\u3051\u3092\u9664\u3044\u305f\u53f0\u5e33\u3068\u306e\u5168\u30d5\u30a3\u30fc\u30eb\u30c9\u30fb\u5168\u95a2\u4fc2\u5dee\u5206\u3092\u5225\u306b\u691c\u67fb\u3059\u308b\u3002\u4ed6\u5730\u57df\u306e\u63a1\u7528\u3067\u5f53\u6642\u306e608\u4ef6\u3092\u66f4\u65b0\u3057\u306a\u3044\u3002\u901a\u5e38\u691c\u67fb\u306f\u5168\u56fdPython\u8a66\u9a13\u306b\u3082\u542b\u307e\u308c\u308b\u3002\u539f\u672c\u3092\u691c\u67fb\u3059\u308b\u30aa\u30d7\u30b7\u30e7\u30f3\u306b\u306f\u5225\u9014ignored work\u306e\u539f\u672c\u304c\u5fc5\u8981\u3002\u4eca\u56de\u306e\u5bfe\u8c61\u8a66\u9a13\u30fb\u672a\u78ba\u8a8d\u7bc4\u56f2\u306f[Issue57\u306e\u8a18\u9332](issue57-workflow.md)\u3092\u53c2\u7167\u3059\u308b\u3002",
+   "was": "",
+   "kinds": [],
+   "new_words": [
+    "Issue57",
+    "\u691c\u8a3c\u624b\u9806",
+    "\u5f53\u6642",
+    "\u691c\u8a3c\u7d50\u679c",
+    "\u73fe\u5728",
+    "\u4fdd\u5b58\u6e08",
+    "\u5f53\u6642",
+    "\u6b74\u53f2\u57fa\u6e96",
+    "\u5f53\u8a72\u5730\u57df",
+    "\u30d5\u30a3\u30fc\u30eb\u30c9",
+    "\u5168\u95a2\u4fc2\u5dee\u5206",
+    "\u4ed6\u5730\u57df",
+    "\u5f53\u6642",
+    "\u901a\u5e38\u691c\u67fb",
+    "Python",
+    "\u30aa\u30d7\u30b7\u30e7\u30f3",
+    "\u5bfe\u8c61\u8a66\u9a13",
+    "Issue57",
+    "issue57-workflow.md"
+   ],
+   "where": "\u3067\u306f\u65e7\u5f62\u5f0f\u3092\u65b0\u898f\u63a1\u7528\u306b\u6301\u3061\u8fbc\u307e\u306a\u3044\u3002\uff3b\n\nIssue57\u3067\u306e\u691c\u8a3c\u624b\u9806\u306e\u8a02\u6b63\n\n\u5f53\u6642\u306e\u691c\u8a3c\u7d50\u679c\u306f\u4e0a\u8a18\u306e\u307e\u307e\u4fdd\u6301\u3059\u308b\u3002\u73fe\u5728\u306e `verify.py` \u306f\u4fdd\u5b58\u6e08\u307fmanifest\u3068\u5f53\u6642\u306e\u53f0\u5e33hash\u3067\u6b74\u53f2\u57fa\u6e96\u3092\u691c\u67fb\u3057\u3001\u73femanifest\u3067\u306f\u5f53\u8a72\u5730\u57df\u3060\u3051\u3092\u9664\u3044\u305f\u53f0\u5e33\u3068\u306e\u5168\u30d5\u30a3\u30fc\u30eb\u30c9\u30fb\u5168\u95a2\u4fc2\u5dee\u5206\u3092\u5225\u306b\u691c\u67fb\u3059\u308b\u3002\u4ed6\u5730\u57df\u306e\u63a1\u7528\u3067\u5f53\u6642\u306e608\u4ef6\u3092\u66f4\u65b0\u3057\u306a\u3044\u3002\u901a\u5e38\u691c\u67fb\u306f\u5168\u56fdPython\u8a66\u9a13\u306b\u3082\u542b\u307e\u308c\u308b\u3002\u539f\u672c\u3092\u691c\u67fb\u3059\u308b\u30aa\u30d7\u30b7\u30e7\u30f3\u306b\u306f\u5225\u9014ignored work\u306e\u539f\u672c\u304c\u5fc5\u8981\u3002\u4eca\u56de\u306e\u5bfe\u8c61\u8a66\u9a13\u30fb\u672a\u78ba\u8a8d\u7bc4\u56f2\u306f[Issue57\u306e\u8a18\u9332](issue57-workflow.md)\u3092\u53c2\u7167\u3059\u308b\u3002\uff3d"
+  }
+ ],
+ "logic": [],
+ "bold": [],
+ "endings": {
+  "stance": "\u8aac\u660e",
+  "changes": [],
+  "flags": [],
+  "orig_flags": []
+ },
+ "type_changes": [],
+ "full_diff": {
+  "encoding_notes": [],
+  "final_newline": {
+   "old": true,
+   "new": true
+  },
+  "limits_applied": [],
+  "hunks": [
+   {
+    "index": 1,
+    "tag": "insert",
+    "old_start": 38,
+    "old_end": 37,
+    "new_start": 38,
+    "new_end": 41,
+    "old_blocks": [],
+    "new_blocks": [
+     "blank",
+     "heading",
+     "paragraph"
+    ],
+    "whitespace_only": false,
+    "notes": [],
+    "moved_to": null,
+    "moved_from": null,
+    "old_lines": [],
+    "new_lines": [
+     "",
+     "## Issue57\u3067\u306e\u691c\u8a3c\u624b\u9806\u306e\u8a02\u6b63",
+     "",
+     "\u5f53\u6642\u306e\u691c\u8a3c\u7d50\u679c\u306f\u4e0a\u8a18\u306e\u307e\u307e\u4fdd\u6301\u3059\u308b\u3002\u73fe\u5728\u306e `verify.py` \u306f\u4fdd\u5b58\u6e08\u307fmanifest\u3068\u5f53\u6642\u306e\u53f0\u5e33hash\u3067\u6b74\u53f2\u57fa\u6e96\u3092\u691c\u67fb\u3057\u3001\u73femanifest\u3067\u306f\u5f53\u8a72\u5730\u57df\u3060\u3051\u3092\u9664\u3044\u305f\u53f0\u5e33\u3068\u306e\u5168\u30d5\u30a3\u30fc\u30eb\u30c9\u30fb\u5168\u95a2\u4fc2\u5dee\u5206\u3092\u5225\u306b\u691c\u67fb\u3059\u308b\u3002\u4ed6\u5730\u57df\u306e\u63a1\u7528\u3067\u5f53\u6642\u306e608\u4ef6\u3092\u66f4\u65b0\u3057\u306a\u3044\u3002\u901a\u5e38\u691c\u67fb\u306f\u5168\u56fdPython\u8a66\u9a13\u306b\u3082\u542b\u307e\u308c\u308b\u3002\u539f\u672c\u3092\u691c\u67fb\u3059\u308b\u30aa\u30d7\u30b7\u30e7\u30f3\u306b\u306f\u5225\u9014ignored work\u306e\u539f\u672c\u304c\u5fc5\u8981\u3002\u4eca\u56de\u306e\u5bfe\u8c61\u8a66\u9a13\u30fb\u672a\u78ba\u8a8d\u7bc4\u56f2\u306f[Issue57\u306e\u8a18\u9332](issue57-workflow.md)\u3092\u53c2\u7167\u3059\u308b\u3002"
+    ],
+    "segments": null,
+    "segments_omitted": null
+   }
+  ]
+ },
+ "stiffness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "metrics": {
+   "old": {
+    "sentences": 41,
+    "chars": 1627,
+    "avg_sentence_length": 39.68,
+    "kanji_ratio": 38.83,
+    "kanji": 591,
+    "nominalizations": 0,
+    "nominalization_names": {},
+    "no_chains": 0
+   },
+   "new": {
+    "sentences": 47,
+    "chars": 1833,
+    "avg_sentence_length": 39.0,
+    "kanji_ratio": 39.38,
+    "kanji": 677,
+    "nominalizations": 0,
+    "nominalization_names": {},
+    "no_chains": 0
+   }
+  },
+  "list": "references/lists/nominalization.txt",
+  "list_problem": null
+ },
+ "tone": {
+  "level": "info",
+  "candidate_count": 0,
+  "candidates": [],
+  "counts": {
+   "old": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 1,
+    "heading_chars": 20
+   },
+   "new": {
+    "exclamation": 0,
+    "question": 0,
+    "emoji": 0,
+    "intensifier": 1,
+    "heading_chars": 36
+   }
+  },
+  "list": "references/lists/intensifiers.txt",
+  "list_problem": null
+ },
+ "feeling": {
+  "list": "references/lists/feelings.txt",
+  "list_problem": null
+ },
+ "hedges": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "list": "references/lists/hedges.txt",
+  "list_problem": null
+ },
+ "immutable": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "meaning_risk_count": 0
+ },
+ "politeness": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "applicable": false,
+  "threshold": 0.2,
+  "metrics": null
+ },
+ "register": {
+  "level": "review",
+  "candidate_count": 0,
+  "candidates": [],
+  "threshold": {
+   "min_sentences": 3,
+   "min_ratio": 0.5
+  },
+  "skipped_by": null
+ },
+ "added_actors": [],
+ "heading_shapes": [],
+ "comma_increase": null
+}

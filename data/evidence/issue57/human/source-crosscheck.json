@@ -1,0 +1,1151 @@
+{
+  "schema": 1,
+  "method": "受領URL（fragment除外）を既存JSONのsourceUrl/urlと厳密一致照合し、snapshotPathの実bytes SHA256を比較。新HTTP取得なし。",
+  "rows": [
+    {
+      "responseId": "human-01",
+      "facilityIds": [
+        "facility:kanto-south-5724e90e3e451f22eeef",
+        "facility:kanto-south-caac2827c5303ba03047"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-02",
+      "facilityIds": [
+        "facility:chubu-west-2c746636b1d8b34ff7c1",
+        "facility:chubu-west-b93c428182c323c9093b"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-03",
+      "facilityIds": [
+        "facility:cs-c859f2f66b0d2b847c"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-04",
+      "facilityIds": [
+        "facility:kinki-332ce8ce5ad5b6583d87"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-05",
+      "facilityIds": [
+        "facility:kinki-b3c184c7aed571b773cd"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-06",
+      "facilityIds": [
+        "facility:kinki-6ad3133f41924d1d4b10"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-07",
+      "facilityIds": [
+        "facility:chubu-east-3309d6639e95492f62ff"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-08",
+      "facilityIds": [
+        "facility:chubu-east-1def973f29471b191a99"
+      ],
+      "urls": [],
+      "sourceURLMissing": true,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-09",
+      "facilityIds": [
+        "facility:cs-85f80ce977bcdf56d4"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.setouchi.lg.jp/soshiki/35/1990.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/38/evidence/0",
+              "snapshotPath": "data/evidence/issue5/west-south/c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a.html",
+              "recordedSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "actualSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:23:30.873681+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/38/evidence/4",
+              "snapshotPath": "data/evidence/issue5/west-south/c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a.bin",
+              "recordedSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "actualSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "hashMatches": true,
+              "sourceLocator": "当該施設の名称・所在地・配布場所または庁舎移転の本文。具体的な照合箇所はbuildingIdentification/reasonを参照。",
+              "fetchedAt": "2026-11-05T05:46:23.769039+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/location-updates/official-facility-index.json#/candidates/75/distributionEvidence",
+              "snapshotPath": "data/evidence/national/chugoku-shikoku/117511c2be0a71b6c157.html",
+              "recordedSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "actualSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "hashMatches": true,
+              "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／瀬戸内市役所長船支所窓口／33-212-B001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/reviews/chugoku-saitama-locations.json#/reviews/13/identityEvidence/0",
+              "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-c410f036f374f726021e.html",
+              "recordedSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "actualSHA256": "c410f036f374f726021ef11d8fa9e716911437ff9bdd0e82addaa0947d83998a",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.city.setouchi.lg.jp/soshiki/5/133580.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-10",
+      "facilityIds": [
+        "facility:cs-e0dc2b70dac9632686"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.setouchi.lg.jp/site/token/107413.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-11",
+      "facilityIds": [
+        "facility:cs-93e9b0b1e4bcb33b8e"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://irifuneyama.com/入船山記念館について/マンホールカードの配布について/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.irifuneyama.com/download-data/irifuneyamamemorialmuseum.pdf#page=11",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-12",
+      "facilityIds": [
+        "facility:chubu-west-29febbd64ae38b41c6fc"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.okazaki.lg.jp/water/riyosha/1011205/1003416.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.kakukyu.jp/info_view.asp?ID=1468",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-13",
+      "facilityIds": [
+        "facility:chubu-chuo-duty-counter",
+        "facility:chubu-east-4ddffced59c4adbf00e2"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.chuo.yamanashi.jp/soshiki/jyougesuidou/gesui/1636/13346.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/0/distributionEvidence",
+              "snapshotPath": "data/evidence/national/chubu-east/0f5b73e12236a5635ef6.html",
+              "recordedSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "actualSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "hashMatches": true,
+              "sourceLocator": "19-214-A001 / カード別配布場所・条件・時間・現在の在庫を原典で再確認",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/0/reusedSnapshot",
+              "snapshotPath": "data/evidence/issue5/chubu/reused/4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6.html",
+              "recordedSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "actualSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:27:19.178713+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/koshin.json#/unresolved/0/attempts/0",
+              "snapshotPath": "data/evidence/issue7/koshin/0f5b73e12236a5635ef6.html",
+              "recordedSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "actualSHA256": "4f9a91f3b7ac51a2ee62c9fceeaa434c61c0acd5aba0e130fdebb9fe47d244b6",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:44.259996+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.yamanashi-kankou.jp/fc/location/2024/chuocityhallgovernment.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-14",
+      "facilityIds": [
+        "facility:cs-a5355105c733978fb2",
+        "facility:cs-d96f3a22bac31657b3"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.town.nishinoshima.shimane.jp/news/1786",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/47/evidence/0",
+              "snapshotPath": "data/evidence/issue5/west-south/3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8.html",
+              "recordedSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "actualSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:32:22.546912+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/chugoku.json#/unresolved/27/attempts/2",
+              "snapshotPath": "data/evidence/issue7/chugoku/f2daaa25cd1813558f11.html",
+              "recordedSHA256": "2adea02229aad5fb8c4eeed551845e0e7b8992547e2629e850f30aa71fdc42d4",
+              "actualSHA256": "2adea02229aad5fb8c4eeed551845e0e7b8992547e2629e850f30aa71fdc42d4",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:13.768577+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/issue7/chugoku/prior-audit.json#/32/priorEvidence/0",
+              "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-3d476718f180003549ef.html",
+              "recordedSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "actualSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:32:22.546912+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/locations-chugoku-shikoku/targets.json#/13/evidence",
+              "snapshotPath": "data/evidence/national/chugoku-shikoku/f2daaa25cd1813558f11.html",
+              "recordedSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "actualSHA256": "3d476718f180003549efb0a00768cfd63b83ba6e753118182b6189f66329c0d8",
+              "hashMatches": true,
+              "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／西ノ島町役場 環境整備課／32-526-A001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.town.nishinoshima.shimane.jp/files/original/2021070116533870265eb276c.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-15",
+      "facilityIds": [
+        "facility:cs-42df9ae55a2417f861"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.hiroshima.lg.jp/living/suido-gesuido/1005966/1026325/1026326/1010193.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.hiroshima.lg.jp/*res/projects/default_project/_page*/001/005/978/7.jpg",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-16",
+      "facilityIds": [
+        "facility:chubu-east-677f66d597c7f24ed2ab"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.ueda.nagano.jp/soshiki/gesuido/83031.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/31/distributionEvidence",
+              "snapshotPath": "data/evidence/national/chubu-east/fac4e64a9f1eabc471fd.html",
+              "recordedSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "actualSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "hashMatches": true,
+              "sourceLocator": "20-203-B001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/31/reusedSnapshot",
+              "snapshotPath": "data/evidence/issue5/chubu/reused/14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406.html",
+              "recordedSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "actualSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:58.841463+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/koshin.json#/unresolved/11/attempts/0",
+              "snapshotPath": "data/evidence/issue7/koshin/fac4e64a9f1eabc471fd.html",
+              "recordedSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "actualSHA256": "14b297509a22120b995406b01893ec26339ede0afde41115a1c275ab07b74406",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:43.459651+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.city.ueda.nagano.jp/uploaded/attachment/76717.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.ueda.nagano.jp/uploaded/image/18227.jpg",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-17",
+      "facilityIds": [
+        "facility:cs-0b31ddb7a9bb8b0617"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.town.shoo.lg.jp/soshiki/1/3934.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/3/evidence/0",
+              "snapshotPath": "data/evidence/issue5/west-south/b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931.html",
+              "recordedSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "actualSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:23:39.984323+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/chugoku.json#/unresolved/1/attempts/2",
+              "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-b01e05be8f6f1e5f261f.html",
+              "recordedSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "actualSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:00.249977+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/locations-chugoku-shikoku/targets.json#/42/evidence",
+              "snapshotPath": "data/evidence/national/chugoku-shikoku/a3aa37f08a81f8cb7636.html",
+              "recordedSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "actualSHA256": "b01e05be8f6f1e5f261f698efb8a85f8ee79e3d76981e476bb59a99192408931",
+              "hashMatches": true,
+              "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／おかやまファーマーズ・マーケット ノースヴィレッジ／33-622-B001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://alis-nv.sakura.ne.jp/map.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-18",
+      "facilityIds": [
+        "facility:cs-3f5f3971d581f490c7"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://greenable-hiruzen.co.jp/data/64/news_detail/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-19",
+      "facilityIds": [
+        "facility:cs-2a5031a7a254d9bdbd"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.akitakata.jp/ja/shisei/section/syoukou/r609/",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/10/evidence/0",
+              "snapshotPath": "data/evidence/issue5/west-south/155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089.html",
+              "recordedSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "actualSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:34:36.960057+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/chugoku.json#/unresolved/4/attempts/2",
+              "snapshotPath": "data/evidence/issue7/chugoku/4029dd01f79210fe9dc6.html",
+              "recordedSHA256": "3b79a9249a60b98accd4054c65e8e5b2495f458ab27f760bfb2acef670098078",
+              "actualSHA256": "3b79a9249a60b98accd4054c65e8e5b2495f458ab27f760bfb2acef670098078",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:01.116505+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/issue7/chugoku/prior-audit.json#/5/priorEvidence/0",
+              "snapshotPath": "data/evidence/national/locations-chugoku-shikoku/reuse-155457a421abc98b81da.html",
+              "recordedSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "actualSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "hashMatches": true,
+              "sourceLocator": "旧記録が参照する当該施設本文。target-audit.jsonのfacilityId別priorRecordsを参照。",
+              "fetchedAt": "2026-11-05T04:34:36.960057+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/locations-chugoku-shikoku/targets.json#/65/evidence",
+              "snapshotPath": "data/evidence/national/chugoku-shikoku/4029dd01f79210fe9dc6.html",
+              "recordedSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "actualSHA256": "155457a421abc98b81dae706b08c007caa0dd783527ae88e2673b55d920e3089",
+              "hashMatches": true,
+              "sourceLocator": "本文のマンホールカード配布場所・配布時間・在庫案内／道の駅北の関宿安芸高田／34-214-B001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-20",
+      "facilityIds": [
+        "facility:cs-09ae420fdee6e6c661"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://soc-park.com/news/453/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://soc-park.com/facility/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-21",
+      "facilityIds": [
+        "facility:north-2c42d8946a63660d54a1"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/jogesuido/page_7.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/16/evidence/0",
+              "snapshotPath": "data/evidence/issue5/north/originals/712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2.html",
+              "recordedSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "actualSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "hashMatches": true,
+              "sourceLocator": "足寄下水終末処理場 / 所在地・配布場所住所（北海道足寄郡足寄町共栄町120-5）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/16/priorReview/evidence/0",
+              "snapshotPath": "data/evidence/national/locations-north-hokkaido/8a522b600cef688a7569.html",
+              "recordedSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "actualSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:29.498786+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/hokkaido-reviewed.json#/unresolved/2/attempts/0",
+              "snapshotPath": "data/evidence/issue7/hokkaido/originals/a55b3b69d3eedda5237477ee046497e518cba3d6a194dbf7860185bb504f22d4.html",
+              "recordedSHA256": "a55b3b69d3eedda5237477ee046497e518cba3d6a194dbf7860185bb504f22d4",
+              "actualSHA256": "a55b3b69d3eedda5237477ee046497e518cba3d6a194dbf7860185bb504f22d4",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:11.600891+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/regions/north.json#/cards/74/attempts/1",
+              "snapshotPath": "data/evidence/national/north/8a522b600cef688a7569.html",
+              "recordedSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "actualSHA256": "712efe81dc123c3dba695214c4c9c5b67583871b3cec54cf13bdb56f16604ab2",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:29.498786+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-22",
+      "facilityIds": [
+        "facility:north-a3a29a0bb04d24bdf7ac"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.wakkanai.hokkaido.jp/kurashi/sumaisuido/gesui/mhcard.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/34/evidence/1",
+              "snapshotPath": "data/evidence/issue5/north/originals/aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13.html",
+              "recordedSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "actualSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "hashMatches": true,
+              "sourceLocator": "マンホールカード / 配布場所・配布時間・在庫状況（稚内市 (A001) 01-214-A001）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/81/priorReview/evidence/1",
+              "snapshotPath": "data/evidence/national/north/920fb820d7c82561bf9b.html",
+              "recordedSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "actualSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "hashMatches": true,
+              "sourceLocator": "稚内副港市場 1階 カフェPotto / 所在地・配布場所住所（北海道稚内市港1丁目6-28）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/hokkaido-reviewed.json#/unresolved/6/attempts/0",
+              "snapshotPath": "data/evidence/issue7/hokkaido/originals/ee65df53f638dec2d00770b384843c08c7d41999a7c887f276db5fad11ce1b68.html",
+              "recordedSHA256": "ee65df53f638dec2d00770b384843c08c7d41999a7c887f276db5fad11ce1b68",
+              "actualSHA256": "ee65df53f638dec2d00770b384843c08c7d41999a7c887f276db5fad11ce1b68",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:16.386984+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/locations-north-hokkaido/manifest.json#/83",
+              "snapshotPath": "data/evidence/national/locations-north-hokkaido/920fb820d7c82561bf9b.html",
+              "recordedSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "actualSHA256": "aa5f0aab62772e2b35afeb15f611a76a84c48940ea81ecd616debaf57ed1dc13",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:23:54.726868+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://fukkoichiba.hokkaido.jp/floormap/",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/evidence/national/locations-north-hokkaido/manifest.json#/295",
+              "snapshotPath": "data/evidence/national/locations-north-hokkaido/dc3ac5e2730ab4b99935.html",
+              "recordedSHA256": "457441f01e1f2a5b2927da7d0f11b075706238b30ba702f38bf5d523d89fb1e7",
+              "actualSHA256": "457441f01e1f2a5b2927da7d0f11b075706238b30ba702f38bf5d523d89fb1e7",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:53:59.540899+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-23",
+      "facilityIds": [
+        "facility:north-b59c391ec004d507bb86"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.teshiotown.hokkaido.jp/?p=22908",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/89/evidence/0",
+              "snapshotPath": "data/evidence/issue5/north/originals/4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357.html",
+              "recordedSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "actualSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "hashMatches": true,
+              "sourceLocator": "てしお温泉「夕映」 / 所在地・配布場所住所（北海道天塩郡天塩町サラキシ5807番地4）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/89/priorReview/evidence/1",
+              "snapshotPath": "data/evidence/national/north/fa47d7c578728270881e.html",
+              "recordedSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "actualSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "hashMatches": true,
+              "sourceLocator": "てしお温泉「夕映」 / 所在地・配布場所住所（北海道天塩郡天塩町サラキシ5807番地4）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/north.json#/unresolved/89/priorReview/evidence/2",
+              "snapshotPath": "data/evidence/national/locations-north-hokkaido/fa47d7c578728270881e.html",
+              "recordedSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "actualSHA256": "4c9199dfb3b58619af5b33376584da279db95adabaf132aed7a0244d9fb6a357",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:16.842232+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/hokkaido-reviewed.json#/unresolved/22/attempts/0",
+              "snapshotPath": "data/evidence/issue7/hokkaido/originals/a4785f12a8a958c3c2b7d2b253dc3a6dbea963544126845f07ae468e7ea81c01.html",
+              "recordedSHA256": "a4785f12a8a958c3c2b7d2b253dc3a6dbea963544126845f07ae468e7ea81c01",
+              "actualSHA256": "a4785f12a8a958c3c2b7d2b253dc3a6dbea963544126845f07ae468e7ea81c01",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:34.530045+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.teshiotown.hokkaido.jp/wp-content/uploads/2025/09/7599c768bf47bed135430aa80e580b6d.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-24",
+      "facilityIds": [
+        "facility:kinki-c84376231b21f3e50397"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.yasu.lg.jp/ikkrwebBrowse/material/files/group/4/2-sanko1.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.yasu.lg.jp/soshiki/jougesoudou/oshirase/7177.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/kinki.json#/unresolved/145/distributionEvidence",
+              "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766.html",
+              "recordedSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "actualSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "hashMatches": true,
+              "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-210-A001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/location-updates/official-facility-index.json#/candidates/185/distributionEvidence",
+              "snapshotPath": "data/evidence/national/kinki/snapshots/15038014b18749405ad7.html",
+              "recordedSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "actualSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "hashMatches": true,
+              "sourceLocator": "マンホールカード配布場所・配布時間・在庫/終了案内 / 25-210-A001",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/kinki-east.json#/unresolved/31/attempts/0",
+              "snapshotPath": "data/evidence/issue7/kinki-east/sources/15038014b18749405ad7.html",
+              "recordedSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "actualSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:41.168240+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/locations-kinki/manifest.json#/836",
+              "snapshotPath": "data/evidence/national/locations-kinki/snapshots/reused-15038014b18749405ad7.html",
+              "recordedSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "actualSHA256": "ac556b357799e30c2e962885d6f5643842154929cfc169d3d9ed67e28dfbe766",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:53.815525+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-25",
+      "facilityIds": [
+        "facility:chubu-east-d003d24aec02be8d661e"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.pref.ishikawa.lg.jp/seikatsuhaisui/gesui/manholekard.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/64/distributionEvidence",
+              "snapshotPath": "data/evidence/national/chubu-east/6f833e3665a741d5c96f.html",
+              "recordedSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "actualSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "hashMatches": true,
+              "sourceLocator": "17-204-A001 / 配布場所・配布時間・休館日・在庫状況（PDFの場合1ページ）",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/chubu.json#/unresolved/64/reusedSnapshot",
+              "snapshotPath": "data/evidence/issue5/chubu/reused/4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23.html",
+              "recordedSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "actualSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:25:36.394643+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/hokuriku.json#/unresolved/26/attempts/0",
+              "snapshotPath": "data/evidence/issue7/hokuriku/6f833e3665a741d5c96f.html",
+              "recordedSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "actualSHA256": "4ee06982a0b2561d652d55671d70eb95e9f4c15cffd6b82f65deb31a95cc3f23",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:41.787011+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.city.wajima.ishikawa.jp/docs/2021052500018/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-26",
+      "facilityIds": [
+        "facility:chubu-east-1a2846e8da90dda974fe"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://asahimidori.com/post-10282/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://asahimidori.com/access-guide/road-station/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://asahimidori.com/access-guide/store/",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-27",
+      "facilityIds": [
+        "facility:chubu-east-08e3cd9cb85e36189dcd"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.fukui.lg.jp/kurasi/gesui/gesuiproject/mcard.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-28",
+      "facilityIds": [
+        "facility:kanto-south-b3c83a3795c4697c100b"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.narashino.lg.jp/soshiki/gesuido/gyoumuannai_gesui/narashino_city_manholecard.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.narashino.lg.jp/material/files/group/24/ajisai156.pdf#page=8",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.narashino.lg.jp/soshiki/koeikikaku/30312.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-29",
+      "facilityIds": [
+        "facility:kanto-north-14336e747375e6550de3"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/north-kanto.json#/unresolved/13/evidence/1",
+              "snapshotPath": "data/evidence/issue5/north-kanto/reused-3e82545e42e7c052892e4b5d.html",
+              "recordedSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "actualSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "hashMatches": true,
+              "sourceLocator": "09-205-A001 / まちの駅 新・鹿沼宿 / 配布場所・配布時間・在庫状況",
+              "fetchedAt": "2026-11-05T04:24:17.096686+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue5/north-kanto.json#/unresolved/13/evidence/1/acquisitionRecord/record",
+              "snapshotPath": "data/evidence/national/kanto-north/e6f58e515da7f6e84a6e.html",
+              "recordedSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "actualSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:24:17.096686+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/location-updates/kanto-north-ibaraki-tochigi-gunma.json#/updates/30/evidence",
+              "snapshotPath": "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/reused-e6f58e515da7f6e84a6e.html",
+              "recordedSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "actualSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "hashMatches": true,
+              "sourceLocator": "input#MapInformations.value JSON内 markers[]（addr=栃木県鹿沼市仲町1604-1; comment=まちの駅新・鹿沼宿）のlat/lng。外側lat/lngは不使用。",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/north-kanto.json#/unresolved/13/attempts/0",
+              "snapshotPath": "data/evidence/issue7/north-kanto/e6f58e515da7f6e84a6e3c37.html",
+              "recordedSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "actualSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:54.490148+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.town.ami.lg.jp/cmsfiles/contents/0000005/5787/3.03_shiryo1-2_syuttyou-fukumei.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://kanumajuku.com/facility.html",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-30",
+      "facilityIds": [
+        "facility:kanto-north-1c3ab1ee8ca76b7c99e0"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.yaita-kankou.com/images/配布場所・駐車場のお知らせ.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.yaita-onsen-shironoyu.jp/_contents/wp-content/uploads/2024/04/kannai.jpg",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-31",
+      "facilityIds": [
+        "facility:kanto-north-4f8550974a31b7d62c39"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.iruma.saitama.jp/kurashi/jogesuido/gesuido/koho_event/8610.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/reviews/chugoku-saitama-locations.json#/reviews/139/identityEvidence/1",
+              "snapshotPath": "data/evidence/national/locations-kanto-north-saitama/a5be43a21c4a7cda4776.html",
+              "recordedSHA256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+              "actualSHA256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/regions/kanto-north.json#/cards/141/relations/0/attempts/1",
+              "snapshotPath": "data/evidence/national/kanto-north/a5be43a21c4a7cda4776.html",
+              "recordedSHA256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+              "actualSHA256": "1b02d1a8cae1731c06870c97233265d3d27b86986bc1d0b32ae8d2d79060b2b9",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:25:15.238904+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.city.iruma.saitama.jp/material/files/group/44/3gatu17nitikarasyueisituhenoikikata.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-32",
+      "facilityIds": [
+        "facility:kyushu-056030efbe436e3617a8",
+        "facility:kyushu-431427a75efc404fc5c1"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.town.umi.lg.jp/soshiki/10/14168.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/2/attempts/1",
+              "snapshotPath": "data/evidence/issue7/kyushu-okinawa/cc5fb1ec44029eefe6a2aebd.html",
+              "recordedSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+              "actualSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:27:58.551433+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/kyushu-okinawa/manifest.json#/188",
+              "snapshotPath": "data/evidence/national/kyushu-okinawa/a05c60c09f3ace0ec062.html",
+              "recordedSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+              "actualSHA256": "cc5fb1ec44029eefe6a2aebdc3ec3f431d54363a4be026da03dd29a7805e6fad",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:26:15.612887+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.town.umi.lg.jp/uploaded/attachment/15903.jpg",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-33",
+      "facilityIds": [
+        "facility:ws-6ba1bca2e1474a7cd2",
+        "facility:ws-c42fbe5f44427d0284"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.city.onojo.fukuoka.jp/kiji0036750/index.html",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/issue5/west-south.json#/unresolved/144/evidence/0",
+              "snapshotPath": "data/evidence/issue5/west-south/260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3.html",
+              "recordedSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "actualSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "hashMatches": true,
+              "sourceLocator": "40-219-A001 / 大野城市役所新館2階 企業総務課",
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/58/attempts/1",
+              "snapshotPath": "data/evidence/issue7/kyushu-okinawa/260cc2f13207e10dc6d558b2.html",
+              "recordedSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "actualSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T06:28:32.528872+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            },
+            {
+              "recordRef": "data/evidence/national/proposals-west-south/manifest.json#/6",
+              "snapshotPath": "data/evidence/national/proposals-west-south/55f08b0378198b76bd98.html",
+              "recordedSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "actualSHA256": "260cc2f13207e10dc6d558b225e86e0988ba924f6e35a58cc68e0319fac3abc3",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": null,
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.city.onojo.fukuoka.jp/kiji003229/3_229_9_floormap_1f_20210517.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        },
+        {
+          "userProvidedURL": "https://www.city.onojo.fukuoka.jp/kiji003229/3_229_10_floormap_2f_20210517.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    },
+    {
+      "responseId": "human-34",
+      "facilityIds": [
+        "facility:kyushu-fa023783ed7f7b1e4171"
+      ],
+      "urls": [
+        {
+          "userProvidedURL": "https://www.kumamoto-waterworks.jp/waterworks_article/42607/",
+          "matchingSavedEvidence": [
+            {
+              "recordRef": "data/national/regions/kyushu-okinawa.json#/cards/49/relations/0/attempts/2",
+              "snapshotPath": "data/evidence/national/kyushu-okinawa/26fe541f7ca0baa93292.html",
+              "recordedSHA256": "2139282737c09e751a5cf679c14e0209b5ebd9952b7056d41afe8ca276b993e0",
+              "actualSHA256": "2139282737c09e751a5cf679c14e0209b5ebd9952b7056d41afe8ca276b993e0",
+              "hashMatches": true,
+              "sourceLocator": null,
+              "fetchedAt": "2026-11-05T04:30:34.058909+00:00",
+              "semanticVerification": "not-performed-in-this-crosscheck"
+            }
+          ],
+          "status": "saved-bytes-hash-checked"
+        },
+        {
+          "userProvidedURL": "https://www.kspa.or.jp/wordpress/wp-content/themes/kumasports/pdf/undoukouen_map.pdf",
+          "matchingSavedEvidence": [],
+          "status": "not-matched-to-saved-bytes"
+        }
+      ],
+      "sourceURLMissing": false,
+      "semanticCheck": "利用者が見たbytes・頁との同一性は未確認。URL一致/hash一致だけで読解や現況の再確認とは扱わない。"
+    }
+  ]
+}

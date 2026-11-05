@@ -1,0 +1,50 @@
+{
+  "baseCommit": "11b7e4ee271a3622f794e09e33d3fd6730be3e2b",
+  "scope": [
+    "tools/national/research_common.py",
+    "tools/national/test_research_common.py"
+  ],
+  "fileSHA256": {
+    "tools/national/research_common.py": "be82dbd8502a173719796064fb67449906e585a76a3c1993bc84c6498f08e1e1",
+    "tools/national/test_research_common.py": "cfa7462d6a8d0425e40dd246f03ef2fd6208c0ca47cd2939e830061f06e87adc"
+  },
+  "command": "python3 -B -m unittest discover -s tools/national -p test_research_common.py -v",
+  "runs": [
+    {
+      "log": "data/work/issue57/checks/research-common-green.log",
+      "exitCode": 0,
+      "sha256": "1a3816a20cdcef517abbd18cec8f0a365c24deff25caf5d528267d7d9fcb2cfd"
+    },
+    {
+      "log": "data/work/issue57/checks/research-common-red.log",
+      "exitCode": 1,
+      "sha256": "a364f01e604dd6200c7e25e6920c4f494d21e6824d64a7d9d6e5d2d3149eef9b"
+    },
+    {
+      "log": "data/work/issue57/checks/research-common-render-green.log",
+      "exitCode": 0,
+      "sha256": "f527259742c40578728ba99f728b2fc4c59e3ec840f0fd6593bbc52156c90646"
+    },
+    {
+      "log": "data/work/issue57/checks/research-common-render-red.log",
+      "exitCode": 1,
+      "sha256": "f4ef86e24e6e7fe1df0a5d74f60be3ba2f70cdacf8886407dfc37b22f749d5b8"
+    },
+    {
+      "log": "data/work/issue57/checks/research-common-response-green.log",
+      "exitCode": 0,
+      "sha256": "2d58a41e1bae2511929dbfcaf2317630457137dadb1b57521b15ec1c4fb35979"
+    },
+    {
+      "log": "data/work/issue57/checks/research-common-response-red.log",
+      "exitCode": 1,
+      "sha256": "d41e2604a31f40edacb0c83a3006ad6d1c76dfb91586eeffeb72988025e0db56"
+    }
+  ],
+  "fullSuiteRun": false,
+  "notes": [
+    "Final targeted run: research-common-render-green.log, 11 tests.",
+    "Initial RED: missing module. Response retention and viewport REDs fail on implemented behavior.",
+    "No network or actual decoder test in this unit suite."
+  ]
+}

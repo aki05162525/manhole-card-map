@@ -1,11 +1,16 @@
 """Verify research scope, references, preserved ledger, and saved source hashes.
-Run from repository root after assemble --out data/work/location-batch2/south-kanto/after-ledger.json.
+Run from repository root. Historical raw ledgers are checked only with --raw.
 No network; no coordinate adoption. --raw also checks local ignored acquired originals.
 """
 import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT / "tools/national"))
+from research_baseline import check_research_only
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--raw', action='store_true')
@@ -42,7 +47,7 @@ assert selected == {r['facilityId'] for r in o['rows']}
 assert o['candidateCount'] == o['adoptedCount'] == 0
 assert o['heldCount'] == o['selectedCount'] == 8 and o['updates'] == []
 for path, sha in s['inputSHA256'].items():
-    if path.startswith('data/work/') and not args.raw:
+    if path == 'tools/national/manifest.json' or (path.startswith('data/work/') and not args.raw):
         continue
     assert digest(path) == sha, path
 for row in s['rows']:
@@ -63,15 +68,20 @@ for t in v['tiles']:
 for r in read(E / 'retrievals.json')['records']:
     if args.raw and r.get('status') == 200:
         assert digest(r['rawPath']) == r['sha256'], r['key']
+baseline_ledger, current_ledger, integration = check_research_only(
+    ROOT, 'south-kanto', s, str(W / 'before-ledger.json'))
+unlocated = {r['id'] for r in baseline_ledger['places'] if not r.get('coordinate')}
+assert len(unlocated) == s['nationalUnlocatedAtStart'] == 608
+assert expected <= unlocated
 if args.raw:
     for r in v['ranges']:
         assert digest(r['rawPath']) == r['sha256']
     before = read(W / 'before-ledger.json')
     after = read(W / 'after-ledger.json')
-    assert before == after, 'research-only PR must preserve every field and relation'
+    assert before == after == baseline_ledger, 'historical research ledgers must remain exact'
     unlocated = {r['id'] for r in after['places'] if not r.get('coordinate')}
     assert len(unlocated) == s['nationalUnlocatedAtStart'] == 608
     assert expected <= unlocated
 print(json.dumps({'regionalPopulation': 56, 'selected': 8, 'adopted': 0, 'held': 8,
                   'vectorTileHashes': 10, 'rawChecked': args.raw,
-                  'allLedgerFieldsUnchanged': True if args.raw else None}))
+                  'historicalRawLedgerChecked': args.raw, **integration}))

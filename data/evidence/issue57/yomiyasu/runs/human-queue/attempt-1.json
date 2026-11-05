@@ -1,0 +1,204 @@
+{
+ "format": "yomiyasu-check-record",
+ "format_version": 1,
+ "run_id": "human-queue",
+ "attempt": 1,
+ "fix_count": 0,
+ "previous": null,
+ "created_at": "2026-11-05T14:16:48Z",
+ "mode": "rewrite",
+ "cwd": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029",
+ "host": {
+  "session": null,
+  "codex_thread_id": "01a1abe5-6b2a-7da1-a04a-890e0a1981a6",
+  "armed_by": null
+ },
+ "skill": {
+  "found": true,
+  "dir": "/home/akihiro/.agents/skills/yomiyasu",
+  "skill_md_sha256": "e3aee084c9fd4e0db746890d0bbcf2ba247ac3292cc14ee38710c51a1bef0b89",
+  "version": "2.5.0"
+ },
+ "tools": {
+  "yomiyasu_check.py": {
+   "version": "2.5.0",
+   "sha256": "ba1662ac89d605c6fe09617a4efbb27dc00ed150c769568f9e43f6eccc1f8607"
+  },
+  "yomiyasu_lint.py": {
+   "version": "2.5.0",
+   "sha256": "cfa03a806514ba050dcb526ed76e1114e879e27fee47f86dc64b010c865514db"
+  },
+  "yomiyasu_diff.py": {
+   "version": "2.5.0",
+   "sha256": "44a95ce08115e424f5871dadc4dada38ac2683493c366d699b99586716936bb8"
+  },
+  "markdown_visibility.py": {
+   "version": "2.5.0",
+   "sha256": "603dae42750dc6a4823983453a93941db59a0138a2416772971bd8bc16e0b553"
+  },
+  "references/lists/nominalization.txt": {
+   "version": null,
+   "sha256": "cfe31060efc6d165c30b1619ab574ec405312a80bfb00387efc6557911614be0"
+  },
+  "references/lists/intensifiers.txt": {
+   "version": null,
+   "sha256": "65d9189ebebaf8f9cb2aad2c04be3d0ccf53c4d6782affe16bcd8078054d3c83"
+  },
+  "references/lists/feelings.txt": {
+   "version": null,
+   "sha256": "37b6779b3ef8cf91260379b21d6b721bda362542a5702affd99d550879539e82"
+  },
+  "references/lists/hedges.txt": {
+   "version": null,
+   "sha256": "ed666036f63f4705d2c129d3fd30e971018d50732bbef2c18081412a61ccd771"
+  },
+  "references/lists/katakana-terms.txt": {
+   "version": null,
+   "sha256": "47c686e6a7a94590a97fa9e052b3dee9171dfc8a5f25da727111428cda978e2d"
+  },
+  "references/lists/thin-evaluation.txt": {
+   "version": null,
+   "sha256": "b2cf6a8e1fc424d1bcac15e2aa2045a98ec77a002e2830692922a8f97ee406e4"
+  },
+  "references/lists/renyo-nouns.txt": {
+   "version": null,
+   "sha256": "0642b6ba40e4707af4715463d7433c0215087a8e068b00e7894b73e89365997a"
+  },
+  "references/lists/fact-gaps.txt": {
+   "version": null,
+   "sha256": "c78da500dcddc76978fecd1a7a9f3318d9feabf0db78387a41662a4545e6964f"
+  }
+ },
+ "python": {
+  "version": "3.14.8",
+  "implementation": "CPython",
+  "unicode_version": "16.0.0"
+ },
+ "inputs": {
+  "source": {
+   "role": "source",
+   "index": 0,
+   "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/work/issue57/yomiyasu/human-queue-original.md",
+   "via": "file",
+   "bytes": 13166,
+   "sha256": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795",
+   "text_sha256": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795",
+   "bom": false,
+   "eol": "lf",
+   "snapshot": "inputs/3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795.bin"
+  },
+  "materials": [],
+  "final": {
+   "role": "final",
+   "index": 0,
+   "path": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/docs/verification/issue57-human-queue.md",
+   "via": "file",
+   "bytes": 13166,
+   "sha256": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795",
+   "text_sha256": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795",
+   "bom": false,
+   "eol": "lf",
+   "snapshot": "inputs/3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795.bin"
+  }
+ },
+ "options": {
+  "stance": "\u8aac\u660e",
+  "fail_on": [],
+  "timeout": 90,
+  "doc_type": "manual",
+  "reader": "expert",
+  "fact_gaps": true
+ },
+ "required_checks": [
+  "lint",
+  "diff"
+ ],
+ "checks": [
+  {
+   "name": "lint",
+   "status": "ran",
+   "exit_code": 0,
+   "duration_ms": 135,
+   "target": {
+    "final": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795"
+   },
+   "report": "runs/human-queue/attempt-1.lint.json",
+   "report_sha256": "735825eb78c5fdce314c7311621a5f7b10d66f2b82dfe90b545154d4c414e84d",
+   "text": "runs/human-queue/attempt-1.lint.txt",
+   "text_sha256": "4972c336b18c8d3a22c8d94117a93c6f981bfed4a257d5eea2ea502832d3ded3",
+   "summary": {
+    "candidate_count": 2,
+    "counts": {
+     "error": 0,
+     "warn": 1,
+     "info": 1
+    },
+    "kept_marks": []
+   },
+   "stderr": "",
+   "error": null
+  },
+  {
+   "name": "diff",
+   "status": "ran",
+   "exit_code": 0,
+   "duration_ms": 274,
+   "target": {
+    "source": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795",
+    "final": "3d181126d53ed8da490b0aace3d4522fa2cee6c2aabe5e11fb5f3af1c5a8e795"
+   },
+   "report": "runs/human-queue/attempt-1.diff.json",
+   "report_sha256": "1bad18a09284b492c217307289e8b9c5d6efef764d2a184ff61aefc9eb04bcac",
+   "text": "runs/human-queue/attempt-1.diff.txt",
+   "text_sha256": "6b36ad1ba07c1f35c459a61171de0c693b3367085811aeb51b67ef37ea009507",
+   "summary": {
+    "status": "no_change",
+    "candidate_count": 0,
+    "meaning_risk_count": 0,
+    "fail_on_meaning_risk_count": 0,
+    "hunk_count": 0,
+    "stiffness_candidate_count": 0,
+    "stiffness_level": "review",
+    "stiffness_review_count": 0,
+    "tone_candidate_count": 0,
+    "tone_level": "info",
+    "tone_review_count": 0,
+    "hedges_candidate_count": 0,
+    "hedges_level": "review",
+    "hedges_review_count": 0,
+    "immutable_candidate_count": 0,
+    "immutable_level": "review",
+    "immutable_review_count": 0,
+    "politeness_candidate_count": 0,
+    "politeness_level": "review",
+    "politeness_review_count": 0,
+    "register_candidate_count": 0,
+    "register_level": "review",
+    "register_review_count": 0
+   },
+   "stderr": "",
+   "error": null
+  }
+ ],
+ "materials_summary": null,
+ "fact_gaps": {
+  "count": 0,
+  "skipped": null,
+  "by_kind": {},
+  "items": []
+ },
+ "result": {
+  "status": "executed",
+  "token": "yomiyasu-check: executed via=run run=human-queue attempt=1 final=sha256:3d181126d53e mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=0",
+  "next": "finalize",
+  "fail_on_hit": false,
+  "meaning_risk_count": 0,
+  "fail_on_meaning_risk_count": 0,
+  "final_unchanged_during_run": true,
+  "not_judged": [
+   "meaning_preservation",
+   "reader_comprehension"
+  ]
+ },
+ "record_digest": "sha256:2f566d6540c23bea4186d7e3192011e47ba57d0f14188c6c5bbb7e172e48306b"
+}

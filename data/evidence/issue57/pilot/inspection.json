@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-11-05T13:50:18.777016+00:00",
+  "inspector": "implementation agent self-assessment",
+  "independentReview": false,
+  "sources": [
+    {
+      "key": "shiroi-drawings.pdf",
+      "physicalPages": 9,
+      "checkedPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "pageFindings": {
+        "1": "配置図。新築棟・減築改修棟・保健福祉センター、道路屈曲と北記号あり。",
+        "2": "地階平面図。連結部を含む全体配置。",
+        "3": "1階平面図。新築/改修部分と南側保健福祉センターへの連結。",
+        "4": "2階平面図。新築/改修部分を区別。",
+        "5": "3階平面図。棟の接続と南側別棟。",
+        "6": "4階平面図。新築側議場等と東側部分。",
+        "7": "R階平面図。屋根の段差/高さ区分。",
+        "8": "北側・東側・西側立面図。地理座標値ではない。",
+        "9": "南側立面図・断面図。地理座標値ではない。"
+      },
+      "readingLimit": "1200px/pageの全頁画像確認と1頁1800px確認。細部寸法の測量/文字全件転記は未実施。棟を結ぶ地理参照対応の検討。"
+    },
+    {
+      "key": "atami-layout.jpg",
+      "checkedWholeImage": true,
+      "findings": "第一/第二/第三庁舎、消防庁舎、市営中央駐車場、道路接続と方面表示を確認。北記号と縮尺はない。"
+    },
+    {
+      "key": "nakatsugawa-layout.jpg",
+      "checkedWholeImage": true,
+      "findings": "1階総合案内、2階入口、周辺道路/商業施設/公園の配置を確認。"
+    },
+    {
+      "key": "nakatsugawa-location.png",
+      "checkedWholeImage": true,
+      "findings": "N記号、駅、郵便局、P1〜P4、公園、商業施設と一方通行方向を確認。"
+    }
+  ],
+  "htmlScope": "取得12原本のうちHTML8原本は対象本文をテキスト抽出して確認。自治体サイトの全リンク巡回はしていない。",
+  "derivedInspectionFiles": [
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-1.png",
+      "sha256": "9876cad380c3d454e3934157658464c4d049c10884576765439bae8a69778e4a",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-2.png",
+      "sha256": "a4e3a7e4d038bfac2e1efd9d5f741a41049b7af2b16ac05bff13057622b4353c",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-3.png",
+      "sha256": "24d90e76a77f57ba4071b84ca6591ee809203ab739dfd051e5d69d44b59f1262",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-4.png",
+      "sha256": "bdc3499377ef24ad93e49f9ccd558b7238f96f4b10116fcef8eb92699fdf82c9",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-5.png",
+      "sha256": "d8e0866ac30b3bb6c12da804c15f6451acd1bf9747d182b4d01dfeefedc060fc",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-6.png",
+      "sha256": "1b6e5ccec196ba253067617440b421e32a72cf74ed1e4c821ff78bf2562930e4",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-7.png",
+      "sha256": "8c3afb491dac7802c78a871837242e2a86ee020d8ed1183f4a9973964d338b4f",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-8.png",
+      "sha256": "38298c02c69e20dcb9823f5b8b304083a40d09f0528d3aa773e522c9d063e12d",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-page-9.png",
+      "sha256": "6e62f059917518adad56093742356705e72c69cfaafefe73b13ff60e3afd7b1e",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/atami-focus.png",
+      "sha256": "9f89b8c95aa9f563f6ebbe1f725a62269592b8ea59d643b6517734a49013134e",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/nakatsugawa-focus.png",
+      "sha256": "79ac56bd3312d9f77c299b8835748b2f4261a8a8d73842e6ff2fca6c3fc9ccb7",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    },
+    {
+      "path": "data/work/issue57/pilot/shiroi-focus.png",
+      "sha256": "35b97b79a1bf723fc725ce931a7db7dc7f65c8b6c59c42cf94b6d41c4cf39596",
+      "redistribution": "work限定。原図面の再配布未確認。focusはGSI加工で原本別。"
+    }
+  ],
+  "focusWindows": {
+    "shiroi": [
+      900,
+      3400,
+      1900,
+      1500
+    ],
+    "atami": [
+      4100,
+      4600,
+      1700,
+      1700
+    ],
+    "nakatsugawa": [
+      7000,
+      2200,
+      2500,
+      2500
+    ]
+  },
+  "focusNote": "全体SVGは全取得外形/道路を含む。focus画像は上記viewBoxへの拡大で全体画像の代替ではない。赤数字は結合配列index（面積9000tile-unit^2超のラベルのみ）、描画自体には面積フィルタなし。",
+  "referenceTools": {
+    "pdfinfo": "9 physical pages",
+    "pdftoppm": "-scale-to 1200 -png; page1 also -scale-to 1800",
+    "decode": "mapbox-vector-tile==2.2.0 y_coord_down=True",
+    "render": "cairosvg==2.8.2"
+  },
+  "noPointUsedForIdentity": "探索seedを含む外形の自動選択はしていない。注記Pointは駅・郵便局等の探索窓確認にのみ使用。"
+}

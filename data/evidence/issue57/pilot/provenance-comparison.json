@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "path": "data/evidence/location-batch2/south-kanto/shiroi-tile.pbf.gz",
+      "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+      "acquisition": "historical reuse; no new fetchedAt",
+      "originalRangeRecords": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "range": "bytes=10480755063-10480765744",
+          "fetchedAt": "2026-11-05T11:26:41.712628+00:00",
+          "status": 206,
+          "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480755063-10682.bin",
+          "sha256": "7bd70ae824a24d27e4e34c1234cc9c73997d9e0786134d948a2a0f531c6eb270",
+          "bytes": 10682,
+          "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+          "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+        }
+      ],
+      "sameGenerationAsNewPilotRanges": true,
+      "generationInferenceOnly": "共通ヘッダ値は調査時点の世代一致。個々の地物の測量日や現況一致を意味しない。"
+    },
+    {
+      "path": "data/evidence/location-batch2/south-kanto/shiroi-0-1-tile.pbf.gz",
+      "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+      "acquisition": "historical reuse; no new fetchedAt",
+      "originalRangeRecords": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "range": "bytes=10480765745-10480774505",
+          "fetchedAt": "2026-11-05T11:27:46.539910+00:00",
+          "status": 206,
+          "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480765745-8761.bin",
+          "sha256": "37dda620a40d2cae7186e6be971b51e470471d5637abe79c77c210a9c83857fe",
+          "bytes": 8761,
+          "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+          "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+        }
+      ],
+      "sameGenerationAsNewPilotRanges": true,
+      "generationInferenceOnly": "共通ヘッダ値は調査時点の世代一致。個々の地物の測量日や現況一致を意味しない。"
+    },
+    {
+      "path": "data/evidence/location-batch2/south-kanto/shiroi-1-0-tile.pbf.gz",
+      "sha256": "9edee88d26e4eaa9bec71087afdd262526d73606b34df9fe699c1704170e5a1d",
+      "acquisition": "historical reuse; no new fetchedAt",
+      "originalRangeRecords": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "range": "bytes=10480716818-10480725998",
+          "fetchedAt": "2026-11-05T11:27:46.711927+00:00",
+          "status": 206,
+          "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480716818-9181.bin",
+          "sha256": "9edee88d26e4eaa9bec71087afdd262526d73606b34df9fe699c1704170e5a1d",
+          "bytes": 9181,
+          "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+          "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+        }
+      ],
+      "sameGenerationAsNewPilotRanges": true,
+      "generationInferenceOnly": "共通ヘッダ値は調査時点の世代一致。個々の地物の測量日や現況一致を意味しない。"
+    },
+    {
+      "path": "data/evidence/location-batch2/south-kanto/shiroi-1-1-tile.pbf.gz",
+      "sha256": "dbcc3196215c532f39564698fc172a573d52682197c5bb1fb50f176dd0efdc7c",
+      "acquisition": "historical reuse; no new fetchedAt",
+      "originalRangeRecords": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "range": "bytes=10480774506-10480782437",
+          "fetchedAt": "2026-11-05T11:27:46.823400+00:00",
+          "status": 206,
+          "rawPath": "data/work/location-batch2/south-kanto/pmtiles-10480774506-7932.bin",
+          "sha256": "dbcc3196215c532f39564698fc172a573d52682197c5bb1fb50f176dd0efdc7c",
+          "bytes": 7932,
+          "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+          "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+        }
+      ],
+      "sameGenerationAsNewPilotRanges": true,
+      "generationInferenceOnly": "共通ヘッダ値は調査時点の世代一致。個々の地物の測量日や現況一致を意味しない。"
+    },
+    {
+      "path": "data/evidence/issue57/pilot/atami-16-58085-25937.pbf.gz",
+      "historicalPath": "data/evidence/location-batch2/tokai/atami-tile.pbf.gz",
+      "oldSHA256": "0d59597a9db903e193a221e48fa85cec3431710f02c2cee6187425020188349b",
+      "newSHA256": "0d59597a9db903e193a221e48fa85cec3431710f02c2cee6187425020188349b",
+      "sameBytes": true,
+      "acquisition": "new retrieval; matching old bytes do not turn new retrieval into historical reuse"
+    }
+  ]
+}

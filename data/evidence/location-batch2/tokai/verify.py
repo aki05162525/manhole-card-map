@@ -5,8 +5,11 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import tempfile
+import sys
+
+ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT / "tools/national"))
+from research_baseline import check_research_only
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--with-work', action='store_true')
@@ -27,7 +30,7 @@ def pointer(ref):
 s, o = read(N / 'selection.json'), read(N / 'outcomes.json')
 assert sha(N / 'selection.json') == o['selectionSHA256']
 for path, digest in s['inputSHA256'].items():
-    if not path.startswith('data/work/') or args.with_work:
+    if path != 'tools/national/manifest.json' and (not path.startswith('data/work/') or args.with_work):
         assert sha(path) == digest, path
 population = {r['facilityId'] for r in read('data/national/issue24/priorities-snapshot.json')['rows']
               if r['originalRef'].startswith('data/national/issue7/tokai.json#')}
@@ -84,12 +87,11 @@ for r in records:
         assert sha(r['path']) == r['sha256']
 for r in v['rows']:
     assert any(x['sha256'] == r['sha256'] for x in records)
-with tempfile.TemporaryDirectory() as td:
-    p = Path(td) / 'ledger.json'
-    subprocess.run(['python3', '-B', 'tools/national/assemble.py', '--out', str(p)], check=True)
-    assert sha(p) == s['inputSHA256']['data/work/location-batch2/tokai/before-ledger.json']
-    places = {r['id']: r for r in read(p)['places']}
-    assert all(not places[f].get('coordinate') for f in population)
+baseline_ledger, current_ledger, integration = check_research_only(
+    ROOT, 'tokai', s, 'data/work/location-batch2/tokai/before-ledger.json')
+places = {r['id']: r for r in baseline_ledger['places']}
+assert all(not places[f].get('coordinate') for f in population)
+assert integration['baselineNationalUnlocated'] == s['nationalStartUnlocatedCount'] == 608
 print(json.dumps({'population': 35, 'selected': 8, 'adopted': 0, 'held': 8,
-                  'unchangedAssemble': True, 'privateRawVerified': args.with_work,
+                  'historicalAssemblyUnchanged': True, **integration, 'privateRawVerified': args.with_work,
                   'retrievalRecords': len(retrievals), 'vectorRangeRecords': len(records)}))

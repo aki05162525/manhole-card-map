@@ -1,0 +1,21 @@
+test_research_common (unittest.loader._FailedTest.test_research_common) ... ERROR
+
+======================================================================
+ERROR: test_research_common (unittest.loader._FailedTest.test_research_common)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_research_common
+Traceback (most recent call last):
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/unittest/loader.py", line 433, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/unittest/loader.py", line 374, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/tools/national/test_research_common.py", line 8, in <module>
+    import research_common as research
+ModuleNotFoundError: No module named 'research_common'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

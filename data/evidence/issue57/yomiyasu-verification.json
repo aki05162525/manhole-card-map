@@ -1,0 +1,52 @@
+[
+  {
+    "id": "issue24",
+    "chunk_id": "57edba",
+    "wall_time_seconds": 2.5359e-05,
+    "exit_code": 0,
+    "original_token_count": 175,
+    "output": "この最終稿に必要な検査（lint、diff）を実行した記録があり、最終稿のハッシュが記録と合いました。合格の判定ではありません。完了報告を付けるときは、この出力の2行目を写してください。\nyomiyasu-check: executed via=verify run=issue24 attempt=2 final=sha256:ccfa523aaa44 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=3 replay=skipped\n記録: /home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/issue57/yomiyasu/runs/issue24/attempt-2.json\n記録の中身: 見直し候補 最終稿 8件、直した箇所 4か所（原文の件数と元と後は run の出力にあります）\n"
+  },
+  {
+    "id": "batch2",
+    "chunk_id": "c03e52",
+    "wall_time_seconds": 3.9946e-05,
+    "exit_code": 0,
+    "original_token_count": 175,
+    "output": "この最終稿に必要な検査（lint、diff）を実行した記録があり、最終稿のハッシュが記録と合いました。合格の判定ではありません。完了報告を付けるときは、この出力の2行目を写してください。\nyomiyasu-check: executed via=verify run=batch2 attempt=1 final=sha256:97a88b241c2b mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=1 replay=skipped\n記録: /home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/issue57/yomiyasu/runs/batch2/attempt-1.json\n記録の中身: 見直し候補 最終稿 5件、直した箇所 2か所（原文の件数と元と後は run の出力にあります）\n"
+  },
+  {
+    "id": "south-kanto",
+    "chunk_id": "9d93ad",
+    "wall_time_seconds": 2.099e-05,
+    "exit_code": 0,
+    "original_token_count": 257,
+    "output": "この最終稿に必要な検査（lint、diff）を実行した記録があり、最終稿のハッシュが記録と合いました。合格の判定ではありません。完了報告を付けるときは、この出力の2行目を写してください。\nyomiyasu-check: executed via=verify run=south-kanto attempt=1 final=sha256:a9a7441dc001 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=0 replay=skipped\n記録: /home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/issue57/yomiyasu/runs/south-kanto/attempt-1.json\n記録の中身: 見直し候補 最終稿 6件、直した箇所 1か所（原文の件数と元と後は run の出力にあります）\n残した指摘の語: 版（直訳語。L28）。完了報告を付けるときは、「書き手に確かめたい点」で尋ねたか（3点を超える分は「ほかに N か所」に数える）、残す理由を「残したAIっぽいところ」に書いたかを確かめてから提出してください。\n"
+  },
+  {
+    "id": "tokai",
+    "chunk_id": "d1a3c1",
+    "wall_time_seconds": 2.1712e-05,
+    "exit_code": 0,
+    "original_token_count": 174,
+    "output": "この最終稿に必要な検査（lint、diff）を実行した記録があり、最終稿のハッシュが記録と合いました。合格の判定ではありません。完了報告を付けるときは、この出力の2行目を写してください。\nyomiyasu-check: executed via=verify run=tokai attempt=1 final=sha256:a5576b1404c2 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=1 replay=skipped\n記録: /home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/issue57/yomiyasu/runs/tokai/attempt-1.json\n記録の中身: 見直し候補 最終稿 4件、直した箇所 1か所（原文の件数と元と後は run の出力にあります）\n"
+  },
+  {
+    "id": "chugoku",
+    "chunk_id": "2009ee",
+    "wall_time_seconds": 2.3234e-05,
+    "exit_code": 0,
+    "original_token_count": 175,
+    "output": "この最終稿に必要な検査（lint、diff）を実行した記録があり、最終稿のハッシュが記録と合いました。合格の判定ではありません。完了報告を付けるときは、この出力の2行目を写してください。\nyomiyasu-check: executed via=verify run=chugoku attempt=1 final=sha256:1a7b2f56f300 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=1 replay=skipped\n記録: /home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/issue57/yomiyasu/runs/chugoku/attempt-1.json\n記録の中身: 見直し候補 最終稿 4件、直した箇所 1か所（原文の件数と元と後は run の出力にあります）\n"
+  },
+  {
+    "id": "workflow",
+    "exit_code": 0,
+    "output": "yomiyasu-check: executed via=verify run=workflow attempt=2 final=sha256:0e6a9e1a49f5 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=0 replay=skipped"
+  },
+  {
+    "id": "human-queue",
+    "exit_code": 0,
+    "output": "yomiyasu-check: executed via=verify run=human-queue attempt=2 final=sha256:b37d68d20dc8 mode=rewrite doc_type=manual reader=expert checks=lint,diff meaning_risk=0 replay=skipped"
+  }
+]

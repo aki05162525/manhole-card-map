@@ -1,0 +1,30 @@
+test_historical_ledger_tampering_is_rejected (test_research_baseline.ResearchBaselineTest.test_historical_ledger_tampering_is_rejected) ... ok
+test_historical_manifest_tampering_is_rejected (test_research_baseline.ResearchBaselineTest.test_historical_manifest_tampering_is_rejected) ... ok
+test_other_region_adoption_does_not_change_historical_hash (test_research_baseline.ResearchBaselineTest.test_other_region_adoption_does_not_change_historical_hash) ... ok
+test_region_cannot_silently_adopt_a_facility (test_research_baseline.ResearchBaselineTest.test_region_cannot_silently_adopt_a_facility) ... ok
+test_regional_patch_and_input_cannot_change_research_only_ledger (test_research_baseline.ResearchBaselineTest.test_regional_patch_and_input_cannot_change_research_only_ledger) ... 
+  test_regional_patch_and_input_cannot_change_research_only_ledger (test_research_baseline.ResearchBaselineTest.test_regional_patch_and_input_cannot_change_research_only_ledger) (key='patches') ... FAIL
+  test_regional_patch_and_input_cannot_change_research_only_ledger (test_research_baseline.ResearchBaselineTest.test_regional_patch_and_input_cannot_change_research_only_ledger) (key='inputs') ... FAIL
+
+======================================================================
+FAIL: test_regional_patch_and_input_cannot_change_research_only_ledger (test_research_baseline.ResearchBaselineTest.test_regional_patch_and_input_cannot_change_research_only_ledger) (key='patches')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/tools/national/test_research_baseline.py", line 67, in test_regional_patch_and_input_cannot_change_research_only_ledger
+    with patch.object(b, 'assemble', side_effect=assemble), self.assertRaisesRegex(ValueError, 'regional ledger changed'):
+                                                            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_regional_patch_and_input_cannot_change_research_only_ledger (test_research_baseline.ResearchBaselineTest.test_regional_patch_and_input_cannot_change_research_only_ledger) (key='inputs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/tools/national/test_research_baseline.py", line 67, in test_regional_patch_and_input_cannot_change_research_only_ledger
+    with patch.object(b, 'assemble', side_effect=assemble), self.assertRaisesRegex(ValueError, 'regional ledger changed'):
+                                                            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.016s
+
+FAILED (failures=2)

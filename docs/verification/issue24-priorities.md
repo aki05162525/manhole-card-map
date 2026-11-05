@@ -20,58 +20,16 @@ python3 -B tools/national/national_audit.py --full data/work/issue24/generated/f
 python3 -B tools/national/location_priorities.py --audit data/work/issue24/national-audit.json --full data/work/issue24/generated/full.json --hold-selection data/national/issue20/selection.json --hold-outcomes data/national/issue20/north-outcomes.json --hold-outcomes data/national/issue20/oyama-outcomes.json --hold-outcomes data/national/issue20/fujioyama-outcomes.json --out data/work/issue24/location-priorities-final.json
 ```
 
-分類結果から追跡用スナップショットを作る手順（既存ファイルには上書きしない）:
+次のコマンドで分類結果から追跡用スナップショットを作る。既存ファイルには上書きしない。
 
 ```sh
-python3 -B - <<'PYEXPORT'
-import json, hashlib
-from pathlib import Path
-
-def export(source, decisions):
-    report = json.loads(source.read_text())
-    selection = json.loads(decisions.read_text())
-    decision_rows = selection['rows']
-    selected = {row['facilityId']: row for row in decision_rows}
-    facilities = report['facilities']
-    ids = [row['facilityId'] for row in facilities]
-    if (len(set(ids)) != len(ids) or len(selected) != len(decision_rows)
-            or set(ids) != set(selected)):
-        raise ValueError('classification and selection IDs must match exactly without duplicates')
-    rows = []
-    for rank, facility in enumerate(facilities, 1):
-        investigation = facility['investigation']
-        hold = facility['hold']
-        decision = selected[facility['facilityId']]
-        rows.append(dict(
-            facilityId=facility['facilityId'], automaticRank=rank,
-            priority=facility['priority'], distribution=facility['distribution'],
-            firstPinCardIds=facility['firstPinCardIds'],
-            originalRef=facility['provenance'].get('original', {}).get('ref'),
-            reviewRefs=[row['ref'] for row in investigation['reviews']],
-            blockers=investigation['blockers'], normalizedStage=investigation['stage'],
-            currentStage=facility['currentInvestigationStage'],
-            holdRef=hold['outcomeRef'] if hold else None,
-            stopCondition=hold['stopCondition'] if hold else investigation['stopCondition'],
-            resumeCondition=hold['resumeCondition'] if hold else investigation['resumeCondition'],
-            sharedGroupIds=facility['sharedGroupIds'], selection=decision['selection'],
-            selectionReason=decision['reason'], reevaluateWhen=decision['reevaluateWhen']))
-    return dict(schema=1, asOf=report['dates']['asOf'], source=str(source),
-                sourceSHA256=hashlib.sha256(source.read_bytes()).hexdigest(),
-                definitions=report['definitions'], summary=report['summary'],
-                inputSHA256=report['inputSHA256'],
-                sharedInvestigationCandidates=report['sharedInvestigationCandidates'], rows=rows)
-
-
-source = Path('data/work/issue24/location-priorities-final.json')
-decisions = Path('data/national/issue24/selection-decisions.json')
-result = export(source, decisions)
-with Path('/tmp/issue24-priorities-snapshot.json').open('x') as stream:
-    stream.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-PYEXPORT
+python3 -B tools/national/export_priorities.py --source data/work/issue24/location-priorities-final.json --decisions data/national/issue24/selection-decisions.json --out /tmp/issue24-priorities-snapshot.json
 cmp data/national/issue24/priorities-snapshot.json /tmp/issue24-priorities-snapshot.json
 ```
 
-出力パスを変えて再生成した場合、sourceのパスとその入力hash参照も変わるため、同じパスでの再現と区別する。exportは分類と手動選定のID欠落・重複を拒否する。
+分類入力を別のパスに生成すると、スナップショットの`source`と入力内のパス・hash参照も変わり得るため、同じパスでの再現と区別する。export CLIは分類と手動選定のID欠落・重複、既存出力への上書きを拒否する。
+
+Issue57で文書内のexport処理をCLIへ移した。旧処理はGit履歴に保持し、合成入力で旧処理とCLI出力のバイト一致を検査した。元の作業用分類入力は残っていないため、今回の抽出作業では実612行の再現を確認していない。以下の612件と検証結果はIssue24当時の記録である。
 
 巨大full・全国監査・原文付き分類結果はignored `data/work`に置く。[分類スナップショット](../../data/national/issue24/priorities-snapshot.json)は612IDごとに分類、順位、原記録/レビュー参照、停止再開条件、選定理由を残す。CLI原出力のhashも持ち、原文コピーは省く。選定判断は[初回提案](../../data/national/issue24/initial-selection-proposal.json)と[全件選定記録](../../data/national/issue24/selection-decisions.json)に分離した。自動順位は採用承認でも手動の初回選定でもない。
 
@@ -114,7 +72,7 @@ cmp data/national/issue24/priorities-snapshot.json /tmp/issue24-priorities-snaps
 
 未選定607施設には全件で除外理由と再評価条件を付けた。終了のみ9、#20保留6、その他592。その他は重要性なしや調査済みを意味せず、新根拠・配布関係変更・利用者報告・初回群の完了/停止を契機に優先度を見直す。明示的な誤誘導の新報告は初回完了を待たない。
 
-作成済み後続Issue（ローカル案は作成時の補助記録）:
+後続Issueは作成済み。ローカル案は作成時の補助記録として残す。
 
 - [加東 #25](https://github.com/aki05162525/manhole-card-map/issues/25)
 - [石巻 #26](https://github.com/aki05162525/manhole-card-map/issues/26)

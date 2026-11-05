@@ -35,3 +35,7 @@ mise exec -- python3 -B data/evidence/location-batch2/chugoku/verify.py
 Gemini 4 Argonの独立レビューは[review.json](../../data/national/location-batch2/chugoku/review.json)。重大1件（西ノ島カタログの公開日と最終更新日の取り違え）は原本の表を再確認して訂正した。両データセットの最終更新日は2022-06-15であり、竣工前という誤った説明を削除した。実体未検査という保留理由は維持する。軽微1件（中継ページの位置づけ）は27取得記録に探索途中の7ページを含む旨を明記した。修正後のGemini再レビューはしていない。
 
 文書とコードの新しい不一致は見つけていない。既存中国レビューに記載された2点（旧locations-chugoku-shikoku READMEと絶対snapshotPathの拒否、旧west-south READMEとEvidenceの未知fetchedAt拒否）は解消済みとは扱わず、本調査では旧形式を新規採用に持ち込まない。
+
+## Issue57での検証手順の訂正
+
+当時の検証結果は上記のまま保持する。現在の `verify.py` は保存済みmanifestと当時の台帳hashで歴史基準を検査し、現manifestでは当該地域だけを除いた台帳との全フィールド・全関係差分を別に検査する。他地域の採用で当時の608件を更新しない。通常検査は全国Python試験にも含まれる。原本を検査するオプションには別途ignored workの原本が必要。今回の対象試験・未確認範囲は[Issue57の記録](issue57-workflow.md)を参照する。

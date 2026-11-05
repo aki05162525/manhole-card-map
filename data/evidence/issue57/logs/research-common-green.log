@@ -1,0 +1,13 @@
+test_cache_keeps_original_provenance_and_detects_tampering (test_research_common.AcquisitionTests.test_cache_keeps_original_provenance_and_detects_tampering) ... ok
+test_new_version_and_failed_attempt_do_not_replace_old_raw (test_research_common.AcquisitionTests.test_new_version_and_failed_attempt_do_not_replace_old_raw) ... ok
+test_range_request_requires_matching_partial_response (test_research_common.AcquisitionTests.test_range_request_requires_matching_partial_response) ... ok
+test_combination_retains_all_features_and_reports_outer_clipping (test_research_common.GeometryTests.test_combination_retains_all_features_and_reports_outer_clipping) ... ok
+test_holes_and_polygon_boundaries_are_not_inside (test_research_common.GeometryTests.test_holes_and_polygon_boundaries_are_not_inside) ... ok
+test_rounding_can_move_an_inside_point_outside (test_research_common.GeometryTests.test_rounding_can_move_an_inside_point_outside) ... ok
+test_mechanical_success_cannot_approve_crs_or_identity (test_research_common.ObservationTests.test_mechanical_success_cannot_approve_crs_or_identity) ... ok
+test_planned_methods_are_not_executed_or_approved (test_research_common.ObservationTests.test_planned_methods_are_not_executed_or_approved) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+OK

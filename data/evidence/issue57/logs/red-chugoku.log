@@ -1,0 +1,23 @@
+test_historical_baseline_and_current_region_are_separate (test_location_batch2_chugoku.ResearchOnlyTest.test_historical_baseline_and_current_region_are_separate) ... FAIL
+
+======================================================================
+FAIL: test_historical_baseline_and_current_region_are_separate (test_location_batch2_chugoku.ResearchOnlyTest.test_historical_baseline_and_current_region_are_separate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/tools/national/test_location_batch2_chugoku.py", line 16, in test_historical_baseline_and_current_region_are_separate
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/location-batch2/chugoku/verify.py", line 81, in <module>
+    main()
+    ~~~~^^
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-9e91b029/data/evidence/location-batch2/chugoku/verify.py", line 44, in main
+    assert len(unlocated) == 608
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+
+----------------------------------------------------------------------
+Ran 1 test in 2.004s
+
+FAILED (failures=1)

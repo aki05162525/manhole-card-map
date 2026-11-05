@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "groups": {
+    "shiroi": {
+      "facilityIds": [
+        "facility:kanto-south-5724e90e3e451f22eeef",
+        "facility:kanto-south-caac2827c5303ba03047"
+      ],
+      "originalAcquisitionSeconds": 2.198184,
+      "vectorAcquisitionSeconds": null,
+      "vectorAcquisitionNote": "旧4タイルのhash確認と再描画。取得時間として計上しない。",
+      "renderSeconds": 0.320279,
+      "individualCalculationSeconds": {
+        "facility:kanto-south-5724e90e3e451f22eeef": 0.005849,
+        "facility:kanto-south-caac2827c5303ba03047": 0.008356
+      },
+      "manualComparison": "shared interval; not separately allocated",
+      "reviewSeconds": null,
+      "integrationSeconds": 0,
+      "integrationReason": "採用なし・manifest未変更"
+    },
+    "atami": {
+      "facilityIds": [
+        "facility:chubu-west-2c746636b1d8b34ff7c1",
+        "facility:chubu-west-b93c428182c323c9093b"
+      ],
+      "originalAcquisitionSeconds": 0.373775,
+      "vectorAcquisitionSeconds": 1.5051424309494905,
+      "vectorAcquisitionNote": "PMTiles複数Rangeとタイル抽出。共有ヘッダのキャッシュ再利用あり。",
+      "renderSeconds": 0.934192,
+      "individualCalculationSeconds": {
+        "facility:chubu-west-2c746636b1d8b34ff7c1": 0.031352,
+        "facility:chubu-west-b93c428182c323c9093b": 0.034286
+      },
+      "manualComparison": "shared interval; not separately allocated",
+      "reviewSeconds": null,
+      "integrationSeconds": 0,
+      "integrationReason": "採用なし・manifest未変更"
+    },
+    "nakatsugawa": {
+      "facilityIds": [
+        "facility:chubu-west-ac91b1a9ed9a8365efe6"
+      ],
+      "originalAcquisitionSeconds": 1.231671,
+      "vectorAcquisitionSeconds": 1.3203413040027954,
+      "vectorAcquisitionNote": "PMTiles複数Rangeとタイル抽出。共有ヘッダのキャッシュ再利用あり。",
+      "renderSeconds": 1.416637,
+      "individualCalculationSeconds": {},
+      "manualComparison": "shared interval; not separately allocated",
+      "reviewSeconds": null,
+      "integrationSeconds": 0,
+      "integrationReason": "採用なし・manifest未変更"
+    }
+  },
+  "shared": {
+    "selectionSavedAt": "2026-11-05T13:34:37.696119+00:00",
+    "researchFinishedAt": "2026-11-05T13:48:40.803938+00:00",
+    "wallSeconds": 843.107819,
+    "includes": "選定保存後の取得、依存準備、全頁確認、描画、目視比較、記録、検証、待ち。選定前の既往読取と今後の独立レビュー/PR作業を含まない。",
+    "manualComparisonStartedAt": "2026-11-05T13:41:04.641813+00:00",
+    "manualComparisonFinishedAt": "2026-11-05T13:43:21.642583+00:00",
+    "manualComparisonWallSeconds": 137.00077,
+    "manualScope": "道路/棟対応の比較区間。先行する全頁確認・初回画像読取は全体wallに含む。施設別には配賦しない。",
+    "countOnce": true
+  },
+  "perFacilityInterpretation": "各施設は同じgroup/shared区間を参照する。2施設共通資料取得や共有目視時間を2回加算しない。個別に測れた計算時間のみID別記録。",
+  "notMeasured": [
+    "独立レビュー時間（親担当）",
+    "施設ごとの手動読図時間（共用資料を一緒に見たため分離できない）",
+    "旧手法を同じ範囲で実施した対照時間"
+  ],
+  "evaluation": {
+    "reducedOperations": "白井/熱海の2窓口ずつで原本と描画を共有。共通APIで取得hash/Range/全描画/丸め内包を再利用した。",
+    "timeReductionClaim": null,
+    "remainingManualWork": "現況図と外形の棟境界対応、資料の時点差、製品CRS適用根拠、独立レビュー。",
+    "nextScope": "この5施設のうち白井2棟と熱海第二庁舎の候補対応を独立確認。中津川は現況GIS/航空写真を一つ得てから再開し、全国へ拡大しない。"
+  }
+}
