@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "baselineAsOf": "2026-11-05",
+  "scope": "県内共通の数値原典・属性・CRS説明の追加読解。施設同定の承認ではない。",
+  "findings": [
+    {
+      "topic": "BldA feature categories",
+      "source": {
+        "url": "https://maps.gsi.go.jp/help/pdf/vector/optbv_featurecodes.pdf",
+        "sha256": "6c670b9eb7a5bacfce139af5c2a3cf61dbd0cc546df26562d747b471114344c5",
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/common-followup/cache/6c670b9eb7a5bacfce139af5c2a3cf61dbd0cc546df26562d747b471114344c5.raw",
+        "fetchedAt": "2026-11-05T15:26:08.851689+00:00"
+      },
+      "readScope": "PDF全6頁のテキスト抽出とBldA行。描画内容の独立全頁確認とはしない。",
+      "observation": "3101普通建物、3102堅ろう建物、3103高層建物、3111普通無壁舎、3112堅ろう無壁舎。隣接面を一棟と自動unionしない。"
+    },
+    {
+      "topic": "BldA attribute hierarchy",
+      "source": {
+        "url": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+        "sha256": "f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b",
+        "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/common-followup/cache/f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b.raw",
+        "fetchedAt": "2026-11-05T15:26:08.758943+00:00"
+      },
+      "readScope": "全2頁テキスト、物理1頁BldA行。",
+      "observation": "BldAはfill、vt_lvorderは階層順。値を階数や建物番号に読み替えない。"
+    },
+    {
+      "topic": "JGD2024 naming and horizontal coordinates",
+      "source": {
+        "url": "https://www.gsi.go.jp/sokuchikijun/hyoko2024rev.html",
+        "sha256": "a01eb54761186b6fbefd1ee2ad69f10324121deb26c44981d1eb4088ee847be2",
+        "rawPath": "data/work/kanto-prefecture/saitama/common-followup/a01eb54761186b6fbefd1ee2ad69f10324121deb26c44981d1eb4088ee847be2.raw",
+        "fetchedAt": "2026-11-05T15:28:11.438885+00:00"
+      },
+      "readScope": "測地基準座標系の国際標準等への登録について、横方向の注記。",
+      "observation": "公式は水平方向の座標系・測地原子等に変更がなくJGD2011をaliasとして残したと説明する。JGD2024への呼称更新だけで緯度経度の数値変換が必要とはしない。optbv個別版のCRS明示とは別。"
+    },
+    {
+      "topic": "Rejected source for product-specific CRS",
+      "source": {
+        "url": "https://www.gsi.go.jp/common/000276862.pdf",
+        "sha256": "0416f38af3c6533bcb4b0c3b73dbaa96a4a9f07f24454fe625b65a51ca777cd3",
+        "rawPath": "data/work/kanto-prefecture/saitama/common-followup/0416f38af3c6533bcb4b0c3b73dbaa96a4a9f07f24454fe625b65a51ca777cd3.raw",
+        "fetchedAt": "2026-11-05T15:28:14.991223+00:00"
+      },
+      "readScope": "表紙・目次および5.2座標参照系のテキスト。31頁全体の図読解は未実施。",
+      "observation": "電子国土基本図3次元データの仕様書（2026年4月）であり、optbv PMTilesの製品仕様書ではない。これを直接optbvのCRS承認に流用しない。"
+    }
+  ],
+  "productChain": {
+    "readme": "https://raw.githubusercontent.com/gsi-cyberjapan/optimal_bvmap/c0e37e155f7773a2940fb1c2ad3da01cc6a29c90/readme.md",
+    "sha256": "41a7a4d2724def73e6837516ff2661141747bceca82d81574c2eea4674bfc223",
+    "observation": "製品READMEの「ベクトルタイルの仕様」は地理院タイルsiyou.htmlへのリンクと同じ配信方式、Mapbox MVT、PMTiles版2026-07-01を明示。JGD2011そのものの直接文字列はない。一般タイル仕様のJGD2011とそのリンクを合わせて読む根拠はあるが、直接記載と推論を分ける。",
+    "independentReviewPending": true
+  },
+  "transport": "既定TLSでwww.gsi.go.jpはUNSAFE_LEGACY_RENEGOTIATION_DISABLED。証明書/ホスト名検証を維持したlegacy-server-connectの代替取得を記録。最初の失敗履歴を保持。",
+  "noSharedCodeChange": true
+}

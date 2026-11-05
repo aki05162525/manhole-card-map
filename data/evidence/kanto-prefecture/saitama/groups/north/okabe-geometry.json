@@ -1,0 +1,84 @@
+{
+  "source": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            4455,
+            7235
+          ],
+          [
+            4524,
+            7286
+          ],
+          [
+            4531,
+            7279
+          ],
+          [
+            4574,
+            7328
+          ],
+          [
+            4704,
+            7421
+          ],
+          [
+            4592,
+            7573
+          ],
+          [
+            4342,
+            7396
+          ],
+          [
+            4366,
+            7351
+          ],
+          [
+            4455,
+            7235
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": 0,
+    "type": "Feature",
+    "layer": "BldA",
+    "layerFeatureIndex": 8,
+    "sourceTile": {
+      "z": 16,
+      "x": 58116,
+      "y": 25685
+    },
+    "sourceFeatureIndex": 8,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58115,
+    "y": 25684
+  },
+  "extent": 4096,
+  "candidateCoordinate": {
+    "lat": 36.2185348,
+    "lng": 139.2412954
+  },
+  "unroundedCoordinate": {
+    "lat": 36.218534843935224,
+    "lng": 139.24129543008212
+  },
+  "combinedPoint": [
+    4523.091124476035,
+    7408.5
+  ],
+  "roundedPointInside": true,
+  "areaApproxM2": 871.2749803435898,
+  "choice": "Shapely representative_point on actual identified building polygon; rounded7decimal and inverse point strictly inside; no entrance claim."
+}

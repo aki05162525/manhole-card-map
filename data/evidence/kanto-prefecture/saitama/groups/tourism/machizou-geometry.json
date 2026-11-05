@@ -1,0 +1,445 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 6009,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8564,
+                7998
+              ],
+              [
+                8613,
+                8003
+              ],
+              [
+                8600,
+                8126
+              ],
+              [
+                8550,
+                8121
+              ],
+              [
+                8564,
+                7998
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 337,
+        "sourceTile": {
+          "z": 16,
+          "x": 58157,
+          "y": 25781
+        },
+        "sourceFeatureIndex": 337,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58155,
+        "y": 25780
+      },
+      "representativeTileXY": [
+        8581.739837398374,
+        8062.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.7912242,
+          "lng": 139.4664651
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          8581.766184955835,
+          8062.032880872488
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 90.2759919849524,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/machizou-16-58157-25781.pbf.gz",
+      "snapshotSHA256": "92af49500d17e62ff34f174b224456b8c65d4196d65474aa5c4abc9a41c4108a",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 9903,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8601,
+                8112
+              ],
+              [
+                8600,
+                8126
+              ],
+              [
+                8550,
+                8121
+              ],
+              [
+                8551,
+                8112
+              ],
+              [
+                8601,
+                8112
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 1,
+        "sourceTile": {
+          "z": 16,
+          "x": 58157,
+          "y": 25782
+        },
+        "sourceFeatureIndex": 1,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58155,
+        "y": 25780
+      },
+      "representativeTileXY": [
+        8575.589285714286,
+        8116.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.7911649,
+          "lng": 139.4664568
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          8575.577256381512,
+          8116.544478848577
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 8.4688861562245,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/machizou-16-58157-25782.pbf.gz",
+      "snapshotSHA256": "d160252880d71a6b5e772f388b1e5c595ef7e2c5d6e1ff401d687416219e44d1",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 9984,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                8785,
+                8131
+              ],
+              [
+                9007,
+                8151
+              ],
+              [
+                9019,
+                8165
+              ],
+              [
+                9016,
+                8192
+              ],
+              [
+                9004,
+                8327
+              ],
+              [
+                8991,
+                8338
+              ],
+              [
+                8770,
+                8319
+              ],
+              [
+                8759,
+                8305
+              ],
+              [
+                8768,
+                8192
+              ],
+              [
+                8773,
+                8142
+              ],
+              [
+                8785,
+                8131
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3103,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 82,
+        "sourceTile": {
+          "z": 16,
+          "x": 58157,
+          "y": 25782
+        },
+        "sourceFeatureIndex": 82,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58155,
+        "y": 25780
+      },
+      "representativeTileXY": [
+        8887.238888888889,
+        8248.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.7910214,
+          "lng": 139.4668748
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          8887.260646998882,
+          8248.456862136722
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 675.973536282016,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/machizou-16-58157-25782.pbf.gz",
+      "snapshotSHA256": "d160252880d71a6b5e772f388b1e5c595ef7e2c5d6e1ff401d687416219e44d1",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 9985,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                9016,
+                8116
+              ],
+              [
+                9035,
+                8120
+              ],
+              [
+                9049,
+                8140
+              ],
+              [
+                9052,
+                8152
+              ],
+              [
+                9050,
+                8192
+              ],
+              [
+                9038,
+                8348
+              ],
+              [
+                9034,
+                8356
+              ],
+              [
+                9021,
+                8369
+              ],
+              [
+                8995,
+                8375
+              ],
+              [
+                8908,
+                8366
+              ],
+              [
+                8902,
+                8462
+              ],
+              [
+                8867,
+                8459
+              ],
+              [
+                8876,
+                8364
+              ],
+              [
+                8753,
+                8353
+              ],
+              [
+                8732,
+                8343
+              ],
+              [
+                8726,
+                8337
+              ],
+              [
+                8721,
+                8316
+              ],
+              [
+                8734,
+                8192
+              ],
+              [
+                8737,
+                8160
+              ],
+              [
+                8771,
+                8162
+              ],
+              [
+                8768,
+                8192
+              ],
+              [
+                8759,
+                8305
+              ],
+              [
+                8770,
+                8319
+              ],
+              [
+                8991,
+                8338
+              ],
+              [
+                9004,
+                8327
+              ],
+              [
+                9016,
+                8192
+              ],
+              [
+                9019,
+                8165
+              ],
+              [
+                9012,
+                8156
+              ],
+              [
+                9016,
+                8116
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3111,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 83,
+        "sourceTile": {
+          "z": 16,
+          "x": 58157,
+          "y": 25782
+        },
+        "sourceFeatureIndex": 83,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58155,
+        "y": 25780
+      },
+      "representativeTileXY": [
+        8745.788306451614,
+        8248.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.7910214,
+          "lng": 139.4666851
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          8745.810074746609,
+          8248.456862136722
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 397.7751206178879,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/machizou-16-58157-25782.pbf.gz",
+      "snapshotSHA256": "d160252880d71a6b5e772f388b1e5c595ef7e2c5d6e1ff401d687416219e44d1",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

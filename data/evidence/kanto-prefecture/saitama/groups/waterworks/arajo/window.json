@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "name": "arajo",
+  "acquisitionCenterOnly": {
+    "lat": 36.13678,
+    "lng": 139.292648
+  },
+  "rawTiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58124,
+        "y": 25703
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58124-25703.pbf.gz",
+      "sha256": "6ca15081ebbf0c7ca5b93c5f709f8589106307856233c2ffe24b95e136441dfc"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58125,
+        "y": 25703
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58125-25703.pbf.gz",
+      "sha256": "30788cda9ab92f691a33c822b5afae12611e13f360ef3ce28b65e3e62308cc2d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58126,
+        "y": 25703
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58126-25703.pbf.gz",
+      "sha256": "22f7857ca4caf7c43233674d9f2ef013a6aa15a249dcee47bded7188c2c87d39"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58124,
+        "y": 25704
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58124-25704.pbf.gz",
+      "sha256": "88911f388afdd8434a5a3156cbeb914899a75db2d84d78e145b7863025f16a1d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58125,
+        "y": 25704
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58125-25704.pbf.gz",
+      "sha256": "0a6758c960a52d9a221e5e9a7b32495cfeef769e17fbffdeea3b8cc3fb59b3a5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58126,
+        "y": 25704
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58126-25704.pbf.gz",
+      "sha256": "e4a1f7c77449503537a0f1e8f59ff0819a369ff8ed4dfb61727b940276542878"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58124,
+        "y": 25705
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58124-25705.pbf.gz",
+      "sha256": "d8dfd822dcbfe2811eb4739d3771af5cfa29207b463338d2779249843041dc22"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58125,
+        "y": 25705
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58125-25705.pbf.gz",
+      "sha256": "cc5b4b5535273e6a692f98464cbc960102a4919491dd0b80827487db0d892898"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58126,
+        "y": 25705
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo/16-58126-25705.pbf.gz",
+      "sha256": "44aae914de7e572cdc40bfdb80560a9741addbc3b3b94b4467081c11022fe1c9"
+    }
+  ],
+  "fullRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/arajo-full.png",
+  "localRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/arajo-local.png",
+  "localCropTileXYBounds": [
+    2450.342576354742,
+    1606.7420570999384,
+    9450.342576354742,
+    8606.742057099938
+  ],
+  "baseTile": {
+    "z": 16,
+    "x": 58124,
+    "y": 25703
+  },
+  "featureCount": 2591,
+  "elapsedSeconds": 1.7419350147247314
+}

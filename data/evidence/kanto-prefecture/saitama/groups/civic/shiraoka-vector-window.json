@@ -1,0 +1,155 @@
+{
+  "centerUsedForAcquisitionOnly": {
+    "z": 16,
+    "x": 58195,
+    "y": 25730
+  },
+  "tiles": [
+    {
+      "z": 16,
+      "x": 58194,
+      "y": 25729
+    },
+    {
+      "z": 16,
+      "x": 58195,
+      "y": 25729
+    },
+    {
+      "z": 16,
+      "x": 58196,
+      "y": 25729
+    },
+    {
+      "z": 16,
+      "x": 58194,
+      "y": 25730
+    },
+    {
+      "z": 16,
+      "x": 58195,
+      "y": 25730
+    },
+    {
+      "z": 16,
+      "x": 58196,
+      "y": 25730
+    },
+    {
+      "z": 16,
+      "x": 58194,
+      "y": 25731
+    },
+    {
+      "z": 16,
+      "x": 58195,
+      "y": 25731
+    },
+    {
+      "z": 16,
+      "x": 58196,
+      "y": 25731
+    }
+  ],
+  "elapsedSeconds": 2.1633408069610596,
+  "startedEpoch": 1793893176.145567,
+  "endedEpoch": 1793893178.3089082,
+  "featureCount": 5244,
+  "rawTiles": [
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58194-25729.pbf.gz",
+      "sha256": "28ad908a92388e42b825ec0e3a082e2521d603e07f89655f5e246f216c9e82cb",
+      "bytes": 10339,
+      "tile": {
+        "z": 16,
+        "x": 58194,
+        "y": 25729
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58195-25729.pbf.gz",
+      "sha256": "1d111ad5f5203c03ae2055178ddbe9385de7952f1f8bce2015008b22f4f113d2",
+      "bytes": 8973,
+      "tile": {
+        "z": 16,
+        "x": 58195,
+        "y": 25729
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58196-25729.pbf.gz",
+      "sha256": "6e41b2b0becc00ca8199cb0dd3ff6411cfc034ee7d4131c4b397814195a011b8",
+      "bytes": 12694,
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25729
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58194-25730.pbf.gz",
+      "sha256": "7b4830eb19f05a29187cce831d4124eb4a813cc2df8f6573ba3a2a7c984e2f90",
+      "bytes": 18375,
+      "tile": {
+        "z": 16,
+        "x": 58194,
+        "y": 25730
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58195-25730.pbf.gz",
+      "sha256": "588a508dc1f1551ea8cefa7a1871e10667fd32fc98d634747a738a168a54a6f2",
+      "bytes": 9657,
+      "tile": {
+        "z": 16,
+        "x": 58195,
+        "y": 25730
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58196-25730.pbf.gz",
+      "sha256": "d32004d79a6768b970a34775bd8c2b41026d5ff78083a43d6f0813dc10e8073a",
+      "bytes": 14846,
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25730
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58194-25731.pbf.gz",
+      "sha256": "9c89ac46d817e25ff5371df7c030133e89bbdbbd64b283e1700748822439e992",
+      "bytes": 15826,
+      "tile": {
+        "z": 16,
+        "x": 58194,
+        "y": 25731
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58195-25731.pbf.gz",
+      "sha256": "e9b57ec4020f490955d0540a38f5df86a9ee6a833f14fd4215568d9e91f299e2",
+      "bytes": 7371,
+      "tile": {
+        "z": 16,
+        "x": 58195,
+        "y": 25731
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-16-58196-25731.pbf.gz",
+      "sha256": "3ea6fa309891099b9aedcc13432760fadab8bf799cae87e74c7510ca8049535a",
+      "bytes": 9278,
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25731
+      }
+    }
+  ],
+  "fullNineTileRender": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-full.png",
+  "labelledLocalRender": "data/evidence/kanto-prefecture/saitama/groups/civic/shiraoka-local.png",
+  "orientation": "north up; decode y_coord_down=True",
+  "renderScope": "full 3x3 tile mosaic inspected; local crop supplementary, polygon holes may not be painted in local crop; raw geometry authoritative",
+  "adoptionApproved": false
+}

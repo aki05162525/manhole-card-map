@@ -1,0 +1,28 @@
+{
+  "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+  "status": "candidate-building-point",
+  "performedMethods": [
+    "Inherited actual current card15979 and full2page official plan5427 comparison",
+    "Revalidated reused source hashes and numeric rounded containment"
+  ],
+  "reusedSources": [
+    {
+      "url": "https://www.city.kounosu.saitama.jp/uploaded/attachment/5427.pdf",
+      "sha256": "56e46037a247c65e71bcab7190a6ac1e01917d9b5897be12a286303ad2850857",
+      "fetchedAt": "2026-11-05T14:50:58.089887+00:00"
+    },
+    {
+      "url": "https://www.city.kounosu.saitama.jp/page/15979.html",
+      "sha256": "7955e5276890b977330a7a957ede2eab7917918532592994257f17dabdf2fddf",
+      "fetchedAt": "2026-11-05T14:53:05.929100+00:00"
+    }
+  ],
+  "priorEvidence": "data/evidence/kanto-prefecture/saitama/comparison.json#/kounosu",
+  "observation": "B001火曜の市役所1階24番窓口。2016図の下水道課2階は当時の配置で現配布階の根拠にしない。本庁舎南/新館北・西駐車場と比較済み2523を維持。",
+  "candidateCoordinate": {
+    "lat": 36.0659298,
+    "lng": 139.5221246
+  },
+  "remainingWork": "独立原本同定・製品CRSレビュー。",
+  "adoptionApproved": false
+}

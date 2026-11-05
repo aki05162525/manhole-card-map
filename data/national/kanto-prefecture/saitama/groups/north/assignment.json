@@ -1,0 +1,39 @@
+{
+  "group": "north",
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-08db6f2252ed32919222",
+      "name": "コウノトリ野生復帰センター「天空の里」"
+    },
+    {
+      "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+      "name": "深谷テラスパーク管理棟事務所"
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "name": "鴻巣市上下水道部下水道課"
+    },
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "name": "鴻巣市上下水道部下水道課"
+    },
+    {
+      "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+      "name": "道の駅おかべ ふるさと物産センター"
+    },
+    {
+      "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+      "name": "道の駅かわもと 深谷市物産館"
+    },
+    {
+      "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+      "name": "無印良品 東武動物公園駅前"
+    }
+  ],
+  "outputPrefixes": [
+    "data/national/kanto-prefecture/saitama/groups/north/",
+    "data/evidence/kanto-prefecture/saitama/groups/north/"
+  ],
+  "status": "assigned-pending-start",
+  "responsibility": "Actual source/building/geometry investigation for every ID; local hashes and necessary calculations only; no full suite, commit, push, manifest edit or re-delegation."
+}

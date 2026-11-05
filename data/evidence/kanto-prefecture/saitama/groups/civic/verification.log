@@ -1,0 +1,2 @@
+{"facilities": 8, "generalRetrievalHashes": 52, "rawVectorTiles": 72, "candidateLocations": 1}
+PASS: hash, ID, binding, raw numeric geometry, rounded containment. Exit 0.

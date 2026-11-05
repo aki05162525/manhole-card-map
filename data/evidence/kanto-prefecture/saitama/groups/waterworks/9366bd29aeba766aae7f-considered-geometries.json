@@ -1,0 +1,133 @@
+{
+  "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+  "baseTile": {
+    "z": 16,
+    "x": 58178,
+    "y": 25728
+  },
+  "features": [
+    {
+      "combinedFeatureIndex": 1433,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7207,
+                4323
+              ],
+              [
+                7212,
+                4380
+              ],
+              [
+                7376,
+                4365
+              ],
+              [
+                7405,
+                4685
+              ],
+              [
+                7338,
+                4691
+              ],
+              [
+                7336,
+                4661
+              ],
+              [
+                7100,
+                4682
+              ],
+              [
+                7096,
+                4639
+              ],
+              [
+                7090,
+                4640
+              ],
+              [
+                7090,
+                4647
+              ],
+              [
+                7079,
+                4648
+              ],
+              [
+                7079,
+                4644
+              ],
+              [
+                7070,
+                4645
+              ],
+              [
+                7064,
+                4582
+              ],
+              [
+                7073,
+                4581
+              ],
+              [
+                7072,
+                4577
+              ],
+              [
+                7081,
+                4576
+              ],
+              [
+                7067,
+                4420
+              ],
+              [
+                7071,
+                4420
+              ],
+              [
+                7069,
+                4393
+              ],
+              [
+                7156,
+                4385
+              ],
+              [
+                7151,
+                4328
+              ],
+              [
+                7207,
+                4323
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 57,
+        "sourceTile": {
+          "z": 16,
+          "x": 58179,
+          "y": 25729
+        },
+        "sourceFeatureIndex": 57,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "areaGroundApproxM2": 1412.6754855421445,
+      "geometrySHA256": "98d00ef4dc6493837e959fac8a25289df31e6a0d4e859053014a553b7a2e710a",
+      "identityApproved": false
+    }
+  ]
+}

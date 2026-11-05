@@ -1,0 +1,19 @@
+{
+  "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+  "baselineAsOf": "2026-11-05",
+  "performedMethods": [
+    "Current city card16632 and city facility page read",
+    "Operator facilities.html and 20241209.jpg whole site/detail plan read",
+    "9GSItiles full/local geometry comparison"
+  ],
+  "observation": "公式配布案内はふるさと物産センター、直売センター/情報センターではない。運営者案内図2024/12は方位記号なし、上向き矢印は至岡部駅。北を上と誤読しない。国道17号は数値では北側、図は下側。概ね180度回転すると情報センターの八角形1284が東側、トイレ1283南東、対象1278はその西、直売センター1273/1272さらに西、道路南側の列として一致する。NOLAの新しい配置と数値西端建物の詳細対応は未固定だが対象棟の相対位置と矩形外形を阻害しない。敷地北道路/東西接道も対応。対象面積約871m2、後続のかわもと調査で得た市2013基準白書物理87頁は岡部ふるさと物産センター延床1440.99m2と記載。外形約871m2との定義/階数差は未確認で、面積一致による同定根拠にしない。tile境界非接触。",
+  "scope": "取得01_michi_okabe.pdfはモニタリング資料で配置図根拠に使わない。",
+  "status": "candidate-building-point",
+  "candidateCoordinate": {
+    "lat": 36.2185348,
+    "lng": 139.2412954
+  },
+  "adoptionApproved": false,
+  "manifestModified": false,
+  "remainingWork": "独立原本同定と数値CRS確認。 2013白書延床1440.99m2と外形871m2の差の独立確認。"
+}

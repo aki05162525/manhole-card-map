@@ -1,0 +1,108 @@
+{
+  "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+  "vectorName": "nakagawa",
+  "combinedFeatureIndex": 2395,
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            9783,
+            4961
+          ],
+          [
+            9851,
+            5296
+          ],
+          [
+            9471,
+            5373
+          ],
+          [
+            9445,
+            5244
+          ],
+          [
+            9425,
+            5249
+          ],
+          [
+            9411,
+            5179
+          ],
+          [
+            9430,
+            5175
+          ],
+          [
+            9402,
+            5039
+          ],
+          [
+            9783,
+            4961
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3102,
+      "vt_lvorder": 0
+    },
+    "id": 0,
+    "type": "Feature",
+    "layer": "BldA",
+    "layerFeatureIndex": 24,
+    "sourceTile": {
+      "z": 16,
+      "x": 58229,
+      "y": 25772
+    },
+    "sourceFeatureIndex": 24,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "geometrySHA256": "7cea1fb5f4e1549f2cb821ca3251e2ff78cc824cc7264e423abde9e387aaede9",
+  "rawTile": {
+    "tile": {
+      "z": 16,
+      "x": 58229,
+      "y": 25772
+    },
+    "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+    "sha256": "d63d7e383d942a97c00b1160821c74ff348f0adfd419ef72323918636e205ea4"
+  },
+  "pointMethod": "shapely representative_point interior of single original BldA fragment; no entrance precision",
+  "pointTileXY": [
+    9614.31791044776,
+    5107.0
+  ],
+  "gridFrame": {
+    "z": 16,
+    "x": 58227,
+    "y": 25771
+  },
+  "extent": 4096,
+  "approximateGroundAreaM2": 1962.2266005517308,
+  "areaMethod": "WebMercator tile-unit area scaled by cos(latitude)^2; approximate ground footprint area, not total floor area",
+  "coordinateCheck": {
+    "coordinate": {
+      "lat": 35.8345292,
+      "lng": 139.8633577
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      9614.338585019112,
+      5106.989313274622
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "bindingApproved": false,
+  "selectionApproved": false,
+  "crsApproved": false,
+  "note": "国土地理院最適化ベクトルタイルを加工。製品CRS適用は県共通レビュー待ち。小数7桁は格子の数値保存で精度保証ではない。vt_code/vt_lvorderとタイル境界はfeatureに保持。"
+}

@@ -1,0 +1,155 @@
+{
+  "centerUsedForAcquisitionOnly": {
+    "z": 16,
+    "x": 58180,
+    "y": 25738
+  },
+  "tiles": [
+    {
+      "z": 16,
+      "x": 58179,
+      "y": 25737
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25737
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25737
+    },
+    {
+      "z": 16,
+      "x": 58179,
+      "y": 25738
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25738
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25738
+    },
+    {
+      "z": 16,
+      "x": 58179,
+      "y": 25739
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25739
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25739
+    }
+  ],
+  "elapsedSeconds": 1.1041779518127441,
+  "startedEpoch": 1793892941.443545,
+  "endedEpoch": 1793892942.5477242,
+  "featureCount": 9242,
+  "rawTiles": [
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58179-25737.pbf.gz",
+      "sha256": "1373d2e2ded8e83120b5fc17ae81be0b3221c25ccddcbeaea7c27fe4f3ad33d2",
+      "bytes": 20871,
+      "tile": {
+        "z": 16,
+        "x": 58179,
+        "y": 25737
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25737.pbf.gz",
+      "sha256": "373b6e3e836eecdaff73be2e60896d780d05e18e5a06fafb0f125b518b7dd420",
+      "bytes": 11463,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25737
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58181-25737.pbf.gz",
+      "sha256": "77467fa9290679d4c33b2fed79d8723aa734bac860fed2902534724763c2a361",
+      "bytes": 19050,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25737
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58179-25738.pbf.gz",
+      "sha256": "f7c5aa56cc61954fda4dbad31363240cb07d95b105b7920175d592f455520cb4",
+      "bytes": 20970,
+      "tile": {
+        "z": 16,
+        "x": 58179,
+        "y": 25738
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25738.pbf.gz",
+      "sha256": "b24c35bf2e2cd07bc24385a6b923678ecd94eca82686f0c7b5e4b5ac03658afb",
+      "bytes": 16761,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25738
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58181-25738.pbf.gz",
+      "sha256": "61b036c404ebd6d195f87d1c014fc69935212d2677b73d9e4f637ecdc958c5be",
+      "bytes": 19388,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25738
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58179-25739.pbf.gz",
+      "sha256": "cf90c2ba6c2c235088ecacda6cfc6619fd7c736f6a021b782777fc9a7577732d",
+      "bytes": 19884,
+      "tile": {
+        "z": 16,
+        "x": 58179,
+        "y": 25739
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58180-25739.pbf.gz",
+      "sha256": "944a1df0e76356b31744cba8692d8ec96d51d10589836c3350ccde50f63e248a",
+      "bytes": 22526,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25739
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-16-58181-25739.pbf.gz",
+      "sha256": "dbc730ae5c94cf46825f266a3b12d8f9f949ce3e38ff994191045680c885852d",
+      "bytes": 20490,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25739
+      }
+    }
+  ],
+  "fullNineTileRender": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-full.png",
+  "labelledLocalRender": "data/evidence/kanto-prefecture/saitama/groups/civic/ageo-local.png",
+  "orientation": "north up; decode y_coord_down=True",
+  "renderScope": "full 3x3 tile mosaic inspected; local crop supplementary, polygon holes may not be painted in local crop; raw geometry authoritative",
+  "adoptionApproved": false
+}

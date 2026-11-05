@@ -1,0 +1,28 @@
+{
+  "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+  "status": "candidate-building-point",
+  "performedMethods": [
+    "Inherited actual current card1056 and full2page official plan5427 comparison",
+    "Revalidated reused source hashes; shared main-building numeric rounded check"
+  ],
+  "reusedSources": [
+    {
+      "url": "https://www.city.kounosu.saitama.jp/page/1056.html",
+      "sha256": "734e678e6d519c85283eb67072d4ac5500f8522d03f53ec7e64ad46171a0c3d9",
+      "fetchedAt": "2026-11-05T14:46:56.045300+00:00"
+    },
+    {
+      "url": "https://www.city.kounosu.saitama.jp/uploaded/attachment/5427.pdf",
+      "sha256": "56e46037a247c65e71bcab7190a6ac1e01917d9b5897be12a286303ad2850857",
+      "fetchedAt": "2026-11-05T14:50:58.089887+00:00"
+    }
+  ],
+  "priorEvidence": "data/evidence/kanto-prefecture/saitama/comparison.json#/kounosu",
+  "observation": "A001水曜の市役所1階24番窓口、B001火曜と異なるrelation。同一建物本庁舎2523の既比較結果を継承。2016旧階を現配布階と混同しない。",
+  "candidateCoordinate": {
+    "lat": 36.0659298,
+    "lng": 139.5221246
+  },
+  "remainingWork": "独立原本同定・製品CRSレビュー。",
+  "adoptionApproved": false
+}

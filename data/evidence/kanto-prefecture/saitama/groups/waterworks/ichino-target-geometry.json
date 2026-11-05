@@ -1,0 +1,132 @@
+{
+  "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+  "vectorName": "ichino-target",
+  "combinedFeatureIndex": 649,
+  "feature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2965,
+            6959
+          ],
+          [
+            3007,
+            6960
+          ],
+          [
+            3006,
+            6984
+          ],
+          [
+            3231,
+            6993
+          ],
+          [
+            3225,
+            7144
+          ],
+          [
+            3045,
+            7136
+          ],
+          [
+            3044,
+            7170
+          ],
+          [
+            2985,
+            7168
+          ],
+          [
+            2986,
+            7134
+          ],
+          [
+            2800,
+            7126
+          ],
+          [
+            2804,
+            7039
+          ],
+          [
+            2809,
+            7039
+          ],
+          [
+            2812,
+            6977
+          ],
+          [
+            2964,
+            6983
+          ],
+          [
+            2965,
+            6959
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": 0,
+    "type": "Feature",
+    "layer": "BldA",
+    "layerFeatureIndex": 77,
+    "sourceTile": {
+      "z": 16,
+      "x": 58135,
+      "y": 25723
+    },
+    "sourceFeatureIndex": 77,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "geometrySHA256": "3908d40738c202f5a9a89071d16023cdd128347b19984879a75473c676d4984b",
+  "rawTile": {
+    "tile": {
+      "z": 16,
+      "x": 58135,
+      "y": 25723
+    },
+    "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/16-58135-25723.pbf.gz",
+    "sha256": "d42334b234958c2d573f91aa8d4262b955933581cacda9d656af314025c6d7d6"
+  },
+  "pointMethod": "shapely representative_point interior of single original BldA fragment; no entrance precision",
+  "pointTileXY": [
+    3014.7218543046356,
+    7082.5
+  ],
+  "gridFrame": {
+    "z": 16,
+    "x": 58135,
+    "y": 25722
+  },
+  "extent": 4096,
+  "approximateGroundAreaM2": 969.4838397892137,
+  "areaMethod": "WebMercator tile-unit area scaled by cos(latitude)^2; approximate ground footprint area, not total floor area",
+  "coordinateCheck": {
+    "coordinate": {
+      "lat": 36.050302,
+      "lng": 139.3491358
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      3014.6991081237793,
+      7082.482662081718
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "bindingApproved": false,
+  "selectionApproved": false,
+  "crsApproved": false,
+  "note": "国土地理院最適化ベクトルタイルを加工。製品CRS適用は県共通レビュー待ち。小数7桁は格子の数値保存で精度保証ではない。vt_code/vt_lvorderとタイル境界はfeatureに保持。"
+}

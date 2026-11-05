@@ -1,0 +1,93 @@
+{
+  "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+  "baseTile": {
+    "z": 16,
+    "x": 58110,
+    "y": 25682
+  },
+  "features": [
+    {
+      "combinedFeatureIndex": 1914,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6506,
+                6905
+              ],
+              [
+                6575,
+                6956
+              ],
+              [
+                6601,
+                6920
+              ],
+              [
+                6632,
+                6943
+              ],
+              [
+                6606,
+                6978
+              ],
+              [
+                6672,
+                7027
+              ],
+              [
+                6468,
+                7307
+              ],
+              [
+                6396,
+                7254
+              ],
+              [
+                6381,
+                7275
+              ],
+              [
+                6360,
+                7260
+              ],
+              [
+                6377,
+                7237
+              ],
+              [
+                6303,
+                7183
+              ],
+              [
+                6506,
+                6905
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 75,
+        "sourceTile": {
+          "z": 16,
+          "x": 58111,
+          "y": 25683
+        },
+        "sourceFeatureIndex": 75,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "areaGroundApproxM2": 1067.0231099198165,
+      "geometrySHA256": "353e1b39b4d5c9be07b5c18c012a0d642e0b96ad31250baa5b6ba02546c53977",
+      "identityApproved": false
+    }
+  ]
+}

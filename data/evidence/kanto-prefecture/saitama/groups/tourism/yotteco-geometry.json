@@ -1,0 +1,393 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 3091,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4926,
+                7093
+              ],
+              [
+                4948,
+                7154
+              ],
+              [
+                4872,
+                7183
+              ],
+              [
+                4847,
+                7123
+              ],
+              [
+                4926,
+                7093
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 133,
+        "sourceTile": {
+          "z": 16,
+          "x": 58107,
+          "y": 25708
+        },
+        "sourceFeatureIndex": 133,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25707
+      },
+      "representativeTileXY": [
+        4897.934084699453,
+        7138.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1168315,
+          "lng": 139.1923597
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4897.966070890427,
+          7138.5145557671785
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 78.27752447465828,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/yotteco-16-58107-25708.pbf.gz",
+      "snapshotSHA256": "381271554aef1b60780c1cb562b583877d40fc781559008e18142f8f361c6e08",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 3126,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5007,
+                7342
+              ],
+              [
+                5014,
+                7358
+              ],
+              [
+                5003,
+                7363
+              ],
+              [
+                4996,
+                7347
+              ],
+              [
+                5007,
+                7342
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 168,
+        "sourceTile": {
+          "z": 16,
+          "x": 58107,
+          "y": 25708
+        },
+        "sourceFeatureIndex": 168,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25707
+      },
+      "representativeTileXY": [
+        5005.0,
+        7352.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1165997,
+          "lng": 139.1925032
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5004.967426300049,
+          7352.4768800884485
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 3.0688694123014084,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/yotteco-16-58107-25708.pbf.gz",
+      "snapshotSHA256": "381271554aef1b60780c1cb562b583877d40fc781559008e18142f8f361c6e08",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 3147,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6315,
+                6583
+              ],
+              [
+                6332,
+                6648
+              ],
+              [
+                6293,
+                6658
+              ],
+              [
+                6296,
+                6667
+              ],
+              [
+                5981,
+                6750
+              ],
+              [
+                6065,
+                7078
+              ],
+              [
+                5937,
+                7149
+              ],
+              [
+                5532,
+                7254
+              ],
+              [
+                5501,
+                7131
+              ],
+              [
+                5485,
+                7135
+              ],
+              [
+                5465,
+                7057
+              ],
+              [
+                5477,
+                7054
+              ],
+              [
+                5443,
+                6924
+              ],
+              [
+                5372,
+                6942
+              ],
+              [
+                5361,
+                6901
+              ],
+              [
+                5440,
+                6881
+              ],
+              [
+                5422,
+                6813
+              ],
+              [
+                6315,
+                6583
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 189,
+        "sourceTile": {
+          "z": 16,
+          "x": 58107,
+          "y": 25708
+        },
+        "sourceFeatureIndex": 189,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25707
+      },
+      "representativeTileXY": [
+        5693.350609756098,
+        6912.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1170764,
+          "lng": 139.1934264
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5693.355240136385,
+          6912.459627896547
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 4137.120257668003,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/yotteco-16-58107-25708.pbf.gz",
+      "snapshotSHA256": "381271554aef1b60780c1cb562b583877d40fc781559008e18142f8f361c6e08",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 3148,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5244,
+                7102
+              ],
+              [
+                5289,
+                7223
+              ],
+              [
+                5201,
+                7256
+              ],
+              [
+                5170,
+                7172
+              ],
+              [
+                5189,
+                7164
+              ],
+              [
+                5184,
+                7149
+              ],
+              [
+                5207,
+                7141
+              ],
+              [
+                5199,
+                7119
+              ],
+              [
+                5244,
+                7102
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 190,
+        "sourceTile": {
+          "z": 16,
+          "x": 58107,
+          "y": 25708
+        },
+        "sourceFeatureIndex": 190,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58106,
+        "y": 25707
+      },
+      "representativeTileXY": [
+        5229.463621605668,
+        7197.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1167676,
+          "lng": 139.1928043
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5229.483859091997,
+          7197.497330322862
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 155.92262484492824,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/yotteco-16-58107-25708.pbf.gz",
+      "snapshotSHA256": "381271554aef1b60780c1cb562b583877d40fc781559008e18142f8f361c6e08",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

@@ -1,0 +1,15 @@
+{
+  "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
+  "baselineAsOf": "2026-11-05",
+  "performedMethods": [
+    "Current city18676 relocation/card page and city1499131548292 facility page read",
+    "City exterior02 and interior01 photos viewed",
+    "Official publicfacility whitebook searched entire extracted text; physical87 visually read,88/152 text read",
+    "9GSItiles full/local building and road geometry examined; areas1443/1448/1450 calculated"
+  ],
+  "observation": "2026-10-01以降は市役所から深谷市物産館へ変更。配布10–16時12:30–13:30除外。JA直売所長在家1279-2と物産館1280-1は別。公式物産館外観は細長い切妻棟。9タイル内敷地の1443約191m2、1448約448m2、1450約306m2を比較。白書2013基準の物産館250.91m2/直売所307.25m2は延床面積で外形一致を断定できない。公式写真には北や接道方向の手掛かり不足、白書配置図は市域図で敷地内の棟配置なし。北に水路、南に国道、四周道路を確認済み。1450が写真比率に近いが物産館と直売所の対応未確定。",
+  "status": "building-correspondence-unresolved",
+  "remainingWork": "敷地内案内図で物産館の棟を指定できれば数値外形との対応を解消。実調査済みで単純資料不足とはしない。",
+  "candidateCoordinate": null,
+  "adoptionApproved": false
+}

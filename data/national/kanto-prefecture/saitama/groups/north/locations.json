@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "coordinate": {
+        "lat": 36.0659298,
+        "lng": 139.5221246
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+        "snapshotSHA256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74",
+        "sourceLocator": "z16/58167/25720 BldA features[53]; kounosu-geometry.json. 2026-07-01 edition; research candidate, independent review pending.",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "鴻巣市公式配布案内の本庁舎1階24番窓口を、2016年11月広報12頁の新館南側・西駐車場東側の本庁舎配置と照合。本庁舎外形西側部分の重心をXYZ格子から逆投影し、小数7桁丸め前後内包を検査。入口・室内位置ではない。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。製品CRSへの一般仕様適用と旧図の現況対応は独立レビュー待ち。採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-9f36b9d69d27a034f19c",
+      "coordinate": {
+        "lat": 36.0659298,
+        "lng": 139.5221246
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz",
+        "snapshotSHA256": "b444e67aae9c6ac3738dd7af842b47e6f9c03cc39ca94d3d49c7302881c61a74",
+        "sourceLocator": "z16/58167/25720 BldA features[53]; kounosu-geometry.json. 2026-07-01 edition; research candidate, independent review pending.",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "鴻巣市公式配布案内の本庁舎1階24番窓口を、2016年11月広報12頁の新館南側・西駐車場東側の本庁舎配置と照合。本庁舎外形西側部分の重心をXYZ格子から逆投影し、小数7桁丸め前後内包を検査。入口・室内位置ではない。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。製品CRSへの一般仕様適用と旧図の現況対応は独立レビュー待ち。採用未承認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+      "coordinate": {
+        "lat": 36.0249327,
+        "lng": 139.7254059
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/north/muji-16-58204-25729.pbf.gz",
+        "snapshotSHA256": "5ca34375cb9918894c3f319fca27ab827879385a3f8e4530823cb38a0280a6ad",
+        "sourceLocator": "z16/58204/25729 BldA features[57]; muji-geometry.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "2026-10-01市町案内が70周年カード配布先を無印と明示、巨峰柄の新しい村/上下水道とは別。公式みんなの広場図は方位なし、駅方向矢印は北矢印でない。東武ストアリリース8頁周辺図の無印南東/ストア北西、北東の線路・駅、南東ロータリー、西側道路を数値4716に対応。約5802m2の外形は両店一棟でMUJI売場1989.54m2と一致要求しない。単独売場面積と建物屋根面積を区別。9tileの境界に触れない。 国土地理院最適化ベクトルタイルを加工。逆XYZ投影、7桁丸め前後内包。配布棟代表点候補、採用未承認、独立原本同定/CRSレビュー待ち。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-f328a302882bae5abddd",
+      "coordinate": {
+        "lat": 36.2185348,
+        "lng": 139.2412954
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/north/okabe-16-58116-25685.pbf.gz",
+        "snapshotSHA256": "1a409ba8223ad246ddf032f859c2088c092007899895f5e24e5209f6d1455c75",
+        "sourceLocator": "z16/58116/25685 BldA features[8]; okabe-geometry.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布案内はふるさと物産センター、直売センター/情報センターではない。運営者案内図2024/12は方位記号なし、上向き矢印は至岡部駅。北を上と誤読しない。国道17号は数値では北側、図は下側。概ね180度回転すると情報センターの八角形1284が東側、トイレ1283南東、対象1278はその西、直売センター1273/1272さらに西、道路南側の列として一致する。NOLAの新しい配置と数値西端建物の詳細対応は未固定だが対象棟の相対位置と矩形外形を阻害しない。敷地北道路/東西接道も対応。対象面積約871m2、後続のかわもと調査で得た市2013基準白書物理87頁は岡部ふるさと物産センター延床1440.99m2と記載。外形約871m2との定義/階数差は未確認で、面積一致による同定根拠にしない。tile境界非接触。 国土地理院最適化ベクトルタイルを加工。逆XYZ投影、7桁丸め前後内包。配布棟代表点候補、採用未承認、独立原本同定/CRSレビュー待ち。"
+      }
+    }
+  ]
+}

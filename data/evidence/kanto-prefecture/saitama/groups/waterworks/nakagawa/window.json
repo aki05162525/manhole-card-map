@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "name": "nakagawa",
+  "acquisitionCenterOnly": {
+    "lat": 35.8343871801588,
+    "lng": 139.86118401561484
+  },
+  "rawTiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58227,
+        "y": 25771
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25771.pbf.gz",
+      "sha256": "ff2b59ea68e688f7cd9879aa7e5cdbb0cadcd3045eb3441f1193b1121563d39d"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58228,
+        "y": 25771
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25771.pbf.gz",
+      "sha256": "a6e02d11f7ebb605c70b4c88d1c4c5d367e1106875f1b8d350f3ae5e7cb74aea"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58229,
+        "y": 25771
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25771.pbf.gz",
+      "sha256": "b0d79153e23e6ae111f8bc915ba0c31c22ffb712253f263c93a8172aa480c0a5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58227,
+        "y": 25772
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25772.pbf.gz",
+      "sha256": "91cb4da756fe2dafa5509c48b0e90368e1fd20a4f387fd510004c8aca41160d3"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58228,
+        "y": 25772
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25772.pbf.gz",
+      "sha256": "b72266cf1fe7c696b8c5d22feed6a28146972c70af64935074a7525e7f2de939"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58229,
+        "y": 25772
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25772.pbf.gz",
+      "sha256": "d63d7e383d942a97c00b1160821c74ff348f0adfd419ef72323918636e205ea4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58227,
+        "y": 25773
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58227-25773.pbf.gz",
+      "sha256": "2e00841bf4eef2bbbdf1df6efc81a760a27e195131af544713aa47291272ca8a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58228,
+        "y": 25773
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58228-25773.pbf.gz",
+      "sha256": "4dd38c712d770cbf7886b97bc1f05499e593778abf684c462768f382f49a657a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58229,
+        "y": 25773
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/16-58229-25773.pbf.gz",
+      "sha256": "808bf31b5daf10ae6463d4566e2509ef958995f5e155012024be9c77c16eeba6"
+    }
+  ],
+  "fullRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/nakagawa-full.png",
+  "localRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/nakagawa-local.png",
+  "localCropTileXYBounds": [
+    4493.522031903267,
+    1737.6123773157597,
+    11493.522031903267,
+    8737.61237731576
+  ],
+  "baseTile": {
+    "z": 16,
+    "x": 58227,
+    "y": 25771
+  },
+  "featureCount": 4931,
+  "elapsedSeconds": 2.0670721530914307
+}
