@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-45e8eab7ba6d2bdde8e5",
+  "asOf": "2026-11-05",
+  "actorType": "ai",
+  "humanReport": null,
+  "independentReview": "pending; parent assigns reviewer",
+  "sourceReading": {
+    "distribution": "保存市案内8f602255...の休日（土曜・日曜・祝日・年末年始）は市役所警備室、中央図書館側入口。平日上下水道事務所とは別。2026-11-02更新。",
+    "building": "保存本庁舎案内85444b...は議会棟1階に警備室と記載。",
+    "floorPlan": "r7_1f.pngとr7_1f.pdfを取得し双方全体を目視。PDFは1/1頁、Title 庁内MAP_1F_B_縦_260105（現在地なし）_ol、作成2026-01-05。2F/3F図は未取得・未読。",
+    "orientation": "北矢印なし。右の東側玄関、左の西側玄関、下の南側玄関の文字から概ね北上と判断。図の上を無条件に北としない。"
+  },
+  "comparison": {
+    "namedParts": "公式図南西の議会棟の斜め長棟、北の行政B棟、東の行政C棟と南東の扇形D棟、中央中庭の並びがGSI庁舎外形に一致。",
+    "differences": "公式図は議会棟南東端を角形に略記、GSIは丸みを帯びる。行政A棟西辺の角度も模式図と同一ではない。測量図として重ね合わせてはいない。",
+    "surroundings": "GSIでは敷地北側の東西道路、西側の南北道路、東側の曲線道路、議会棟西の大棟（BldA91）と南西2長棟を描画した。公式1F図に道路・隣接図書館は描かれず、道路/隣棟の名前付き独立照合は未完了。図書館との一致を断定しない。",
+    "tileBoundary": "z16 x58248..58250 / y25745..25747の9タイルを共通座標へ配置、全feature SVG・全域PNGと詳細PNGを確認。北隣25745も取得。BldA111はy=-80で切断した南側fragmentだが議会棟部分は収録。fragment境界と取得外端を区別。",
+    "selectedPoint": "BldA111の南西議会棟部分の内部点 [2944,354]（当該tile格子）。全庁舎重心、旧P05、Google表示中心は使用しない。",
+    "area": "moriya-geometry.jsonにfragment面積・境界距離。棟単独面積と称しない。",
+    "P05": "2022原本features988/993を比較のみ。両点は議会棟より北。現在の警備室対応の証拠としない。"
+  },
+  "status": "candidate-pending-independent-review-and-surrounding-corroboration",
+  "adoptionApproved": false,
+  "manifestChanged": false,
+  "remaining": [
+    "公式周辺配置または独立した隣接図書館と道路対応の補強",
+    "製品CRS適用根拠の独立審査",
+    "親によるCodex原本/数値レビュー"
+  ],
+  "distributionStatus": "既存active休日関係を保持。リアルタイム在庫・現地稼働は未確認。",
+  "relationChanges": []
+}

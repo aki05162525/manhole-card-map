@@ -1,0 +1,101 @@
+{
+  "center": {
+    "z": 16,
+    "x": 58377,
+    "y": 25745
+  },
+  "tiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58376,
+        "y": 25744
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58376-25744.pbf.gz",
+      "sha256": "2bce0b0f514a15caf29b329f455f916538851e4111d1f6586cb35175d9d631fa",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58376-25744.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58377,
+        "y": 25744
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58377-25744.pbf.gz",
+      "sha256": "95e889e2539605eb818ed2ed44439c4d676d33215658456971655bf4c44b8aab",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58377-25744.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58378,
+        "y": 25744
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58378-25744.pbf.gz",
+      "sha256": "bf007dd0720459e0f213e5b573a8798c31097c7e7bdd9a6c98e8aaac5fcce768",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58378-25744.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58376,
+        "y": 25745
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58376-25745.pbf.gz",
+      "sha256": "d799443c5e4530a22439b308f40407e867594b1a4bc2daf108ed72c1990bff29",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58376-25745.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58377,
+        "y": 25745
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58377-25745.pbf.gz",
+      "sha256": "7b76229c9170a08cfa9209defd15d99af3b50b23f6104359005994a530636459",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58377-25745.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58378,
+        "y": 25745
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58378-25745.pbf.gz",
+      "sha256": "f7346780f09c8cf7cd4c93f6cefef08dd47158ca7605d725c161945674b22a4c",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58378-25745.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58376,
+        "y": 25746
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58376-25746.pbf.gz",
+      "sha256": "337cbe9a9bd678ddedbbfe87e37422dad10ee0dadf5a477367d647f2aeef764c",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58376-25746.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58377,
+        "y": 25746
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58377-25746.pbf.gz",
+      "sha256": "c667ac8d83e37da9f11ed71677852d8b14c42b70759d11809829ac7d352ef964",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58377-25746.pbf.gz"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58378,
+        "y": 25746
+      },
+      "path": "data/work/kanto-ibaraki/round2/south/antlers/16-58378-25746.pbf.gz",
+      "sha256": "fac6ffe19b04222ea82b44b6b246e6ef8fe7b07aa1ff111facca1defb6bc67d0",
+      "retainedPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58378-25746.pbf.gz"
+    }
+  ],
+  "source": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+  "selection": "coarse search window only; not a candidate point"
+}

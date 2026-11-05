@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-north-02882996672a826c585c",
+      "identity": {
+        "name": "つくば駅前観光案内所",
+        "address": "茨城県つくば市吾妻一丁目8-10"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-02882996672a826c585c",
+        "coordinate": {
+          "lat": 36.0817314,
+          "lng": 140.1127918
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/bivi/16-58274-25716.pbf.gz",
+          "snapshotSHA256": "d9bed866f6130867aea110e7d17ce61e1400ac6dc941839013aa80f398856da9",
+          "sourceLocator": "z16/58274/25716 BldA feature[114]; data/evidence/kanto-prefecture/ibaraki/round2/south/bivi/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "9ca4fd1e35182d0fbb97712dc26adb3e064637a778239a4526963e194ebedde5",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; proposed only, independent review pending"
+    },
+    {
+      "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+      "identity": {
+        "name": "牛久シャトーショップ",
+        "address": "茨城県牛久市中央三丁目20番地1"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-1fd6ee704dfe58bb5411",
+        "coordinate": {
+          "lat": 35.9781444,
+          "lng": 140.1477435
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/ushiku/16-58281-25739.pbf.gz",
+          "snapshotSHA256": "f3f22382b166407b193afc8da495c5948e891a05a8046040510b240c1480f599",
+          "sourceLocator": "z16/58281/25739 BldA feature[275]; data/evidence/kanto-prefecture/ibaraki/round2/south/ushiku/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "2d0f3f400bcbe3c599b4310e449b397bc52a876f64bd527af658dbeb50c9c59b",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; proposed only, independent review pending"
+    },
+    {
+      "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+      "identity": {
+        "name": "龍ケ崎市観光物産センター",
+        "address": "茨城県龍ケ崎市佐貫町645-1 関鉄佐貫ビル2 1階南側"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-fb8539f44aa2bc8487c0",
+        "coordinate": {
+          "lat": 35.929619,
+          "lng": 140.1383402
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/ryugasaki/16-58279-25750.pbf.gz",
+          "snapshotSHA256": "c0dd93616aa876b9381d78ed1719ab79777d89e192e79b4fcdd2b0e90361214e",
+          "sourceLocator": "z16/58279/25750 BldA feature[393]; data/evidence/kanto-prefecture/ibaraki/round2/south/ryugasaki/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "1dad7f7fc03a0a05270e7dead76fe78887d71eb546f43927f821ab975d470aca",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; proposed only, independent review pending"
+    },
+    {
+      "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+      "identity": {
+        "name": "鹿島アントラーズオフィシャルショップ・クラブハウス店",
+        "address": "茨城県鹿嶋市粟生東山2887"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-north-a0cee7df87e79f814924",
+        "coordinate": {
+          "lat": 35.954806,
+          "lng": 140.6747925
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+          "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/16-58377-25745.pbf.gz",
+          "snapshotSHA256": "7b76229c9170a08cfa9209defd15d99af3b50b23f6104359005994a530636459",
+          "sourceLocator": "z16/58377/25745 BldA feature[2]; data/evidence/kanto-prefecture/ibaraki/round2/south/antlers/geometry.json; GSI optimal 2026-07-01版。国土地理院最適化ベクトルタイルを加工。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "現配布先と公式棟図を9タイル道路・隣棟配置へ照合。建物内部代表点を逆投影し小数7桁丸め後も内包。入口・室内測量ではない。製品固有CRSは既存source-conditions.jsonの根拠と限界を継承。独立レビュー未実施・採用未承認。"
+        }
+      },
+      "adoptionSHA256": "365230adb2f86f1d37e0c6e89fc2a108778c47b905f57e23a84f388e4797c7ad",
+      "sourceVersion": "GSI optimal PMTiles 2026-07-01; proposed only, independent review pending"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

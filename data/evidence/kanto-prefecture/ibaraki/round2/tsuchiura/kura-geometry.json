@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "facilityId": "facility:kanto-north-8b808446dd99e8fe8f0e",
+  "featureIndex": 473,
+  "tile": {
+    "z": 16,
+    "x": 58290,
+    "y": 25716
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          2771,
+          1890
+        ],
+        [
+          2785,
+          1949
+        ],
+        [
+          2672,
+          1977
+        ],
+        [
+          2658,
+          1922
+        ],
+        [
+          2651,
+          1924
+        ],
+        [
+          2650,
+          1918
+        ],
+        [
+          2771,
+          1890
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "vt_code": 3101,
+    "vt_lvorder": 0
+  },
+  "snapshotPath": "data/evidence/kanto-prefecture/ibaraki/round2/tsuchiura/kura/16-58290-25716.pbf.gz",
+  "snapshotSHA256": "8b94f0a7c7ff33eecbad44ce5963883b41574c8732eac131474b3a6e1a8c57c1",
+  "selectedTileXY": [
+    2720.476785961034,
+    1933.0686518354753
+  ],
+  "calculation": {
+    "coordinate": {
+      "lat": 36.0825262,
+      "lng": 140.2001816
+    },
+    "unroundedWithin": true,
+    "roundedWithin": true,
+    "roundedTileXY": [
+      2720.4418855905533,
+      1933.0568674206734
+    ],
+    "mechanicalChecksPassed": true,
+    "identityApproved": false,
+    "crsApproved": false
+  },
+  "approxGroundAreaM2": 105.3491876707899,
+  "areaMethod": "local Web Mercator scale cos(latitude); approximate footprint area, not floor area",
+  "boundsTileXY": [
+    2650.0,
+    1890.0,
+    2785.0,
+    1977.0
+  ],
+  "tileBoundaryTouched": false,
+  "selectionMethod": "centroid inside full raw polygon; not official map marker",
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/ibaraki/source-conditions.json",
+  "reviewStatus": "pending; manifest unmodified; adoption not approved"
+}

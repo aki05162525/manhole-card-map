@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "baselineCommit": "4f5253b8973cb388deecff0bc051f36770e77579",
+  "asOf": "2026-11-05",
+  "recordedAt": "2026-11-05T15:02:03.534594+00:00",
+  "inputSHA256": {
+    "data/evidence/kanto-prefecture/ibaraki/history.json": "31a754878589956727b1f113a3d072740837a5a79465caa1f0d7d4ccf4a6de36",
+    "data/evidence/kanto-prefecture/ibaraki/source-conditions.json": "b9e9acab560a45517950042f4817fa22b7745e378148d197bd4dda288cdd00a8",
+    "data/evidence/kanto-prefecture/ibaraki/vector-window.json": "14f56e87f15fb245b806bb5080cab45eb4064e2bbda5ed3bf7a187c1c47b7cc2",
+    "data/evidence/kanto-prefecture/ibaraki/16-58248-25747.pbf.gz": "5733301baae33628eecea4bff0efcd4be65d8a0370a186926d5d8e2663282b71",
+    "data/evidence/kanto-prefecture/ibaraki/16-58250-25746.pbf.gz": "f829e23b13b57a1e1b4905fa0c5920732b2eac5c8e9f57d6fec123eb07fea62f",
+    "data/evidence/kanto-prefecture/ibaraki/moriya-observation.json": "a2eca7649b6ce3e0c3f28d0e65291b24fb16d01846f3acaba3917ade57061d83",
+    "data/evidence/kanto-prefecture/ibaraki/vector-retrievals.json": "0cee57c4ee5b8380415f4263c8d14ac9e6471ebaacb09e0483a60998607ad859",
+    "data/evidence/kanto-prefecture/ibaraki/16-58248-25745.pbf.gz": "cb5d09915d69e595fffe2d957aa19e9a91354adc6a4b43f3b743fb9ba70f047c",
+    "data/evidence/kanto-prefecture/ibaraki/timing.json": "7e43ff878b1c53a73274d36946929403c62a9229e0ece9b20b639201206c788b",
+    "data/evidence/kanto-prefecture/ibaraki/moriya-geometry.json": "6eb3f7405d26f3425408ae958aff9a61c34dd3e10f971e41a36bc94d9706e4b8",
+    "data/evidence/kanto-prefecture/ibaraki/retrievals.json": "aa05512948b9abbf416ea13ab0e9b0e539c8eb401402f57aee36b9bc3f29d0cb",
+    "data/evidence/kanto-prefecture/ibaraki/old-values.json": "7d33cb95e1d22bd42b58e642ea39d1d8017a9860f3a5ae9a1a07262948d339e4",
+    "data/evidence/kanto-prefecture/ibaraki/targeted-validation.log": "a7b81bacdc9b57d3f931fefd2dcda2fe5d1b780600d2b6c18479ce18f3546f06",
+    "data/evidence/kanto-prefecture/ibaraki/moriya-all.svg": "ee6d7a6d9b408cedfd503a894d61f1a89b8da9aecaefdfb94e1d19da9bbc299d",
+    "data/evidence/kanto-prefecture/ibaraki/16-58249-25747.pbf.gz": "acee6a533c32323afaa527a2218907b2f3bcb915f8033708c48f8c8392438e8c",
+    "data/evidence/kanto-prefecture/ibaraki/16-58250-25747.pbf.gz": "fc14c73ab24198e982f2e5aedbd35c3981df5227fd1b18be73f679723c70bb88",
+    "data/evidence/kanto-prefecture/ibaraki/16-58250-25745.pbf.gz": "f80ebe88b20de8a7698fc078010cf12420f0fdb1a9cc72f2e43c354c6ff1b60a",
+    "data/evidence/kanto-prefecture/ibaraki/moriya-detail.png": "fcd9789cade303b2a81367fa7729e9d9e28a5e6a70b593b05b109456db9581d7",
+    "data/evidence/kanto-prefecture/ibaraki/16-58249-25745.pbf.gz": "2081c22822301af6a376406f8890a07ba22ad44b6c03bcb94fd49811f057e7f8",
+    "data/evidence/kanto-prefecture/ibaraki/16-58249-25746.pbf.gz": "87bf457e141ca2ef99bb9672174421e38cc40d0dbfc3d05a39e7f47297028549",
+    "data/evidence/kanto-prefecture/ibaraki/16-58248-25746.pbf.gz": "0886ebee53e4dc15f6a78de17994264a5c652301e68a571981b1cfbfe0cbbe7f",
+    "data/national/kanto-prefecture/ibaraki/outcomes.json": "14f030cb6a4d2f2875a635e68b6561926b01949c366040fd063765e492686131",
+    "data/national/kanto-prefecture/ibaraki/manifest-selection-proposed.json": "036a5b8e464e7e881866a3d1652860013c216ab634592a61b9feef38ef4eb0c7",
+    "data/national/kanto-prefecture/ibaraki/location-lifecycle-proposed.json": "a1bb105c3aa28f136b8aa8f5d6b2a1e510df8f632c3f6825f680efc6a73de312",
+    "data/national/kanto-prefecture/ibaraki/selection.json": "6e1216076ce710c8080c0ab6199f20773fceceff8c3d780f456aa671682298c0",
+    "data/national/kanto-prefecture/ibaraki/locations-proposed.json": "0f822607ce6bed619c22b6d055b86ae25192d35043b14be19f9256a8d0f0b80e",
+    "docs/verification/kanto-ibaraki.md": "0ab48bacd8af1e24b7a9842b7cd496caa62c0c9f9c5f53ed47e6e4d7774144cd"
+  },
+  "targeted": {
+    "command": "data/work/kanto-ibaraki/venv/bin/python data/work/kanto-ibaraki/validate.py",
+    "script": "import json,sys,copy,hashlib\nfrom pathlib import Path\nsys.path.insert(0,'tools/national')\nfrom assemble import assemble,read_json\nfrom research_common import decode_tile,rounded_coordinate\nroot=Path('.').resolve();m=read_json(root/'tools/national/manifest.json');before,a=assemble(root,m)\nN=Path('data/national/kanto-prefecture/ibaraki');E=Path('data/evidence/kanto-prefecture/ibaraki')\nsel=read_json(N/'selection.json');ps={p['id']:p for p in before['places']};ids=set(sel['facilityIds']);assert len(ids)==18\nassert {p['id'] for p in before['places'] if p['address'].startswith('茨城') and not p.get('coordinate')}==ids\nassert {r['placeId'] for r in before['relations'] if r['cardId'].startswith('08-') and not ps[r['placeId']].get('coordinate')}==ids\nassert a['inputSHA256']==sel['inputSHA256'];assert hashlib.sha256(Path('tools/national/manifest.json').read_bytes()).hexdigest()==sel['manifestSHA256']\nfor row in read_json(E/'history.json')['facilities']:\n for h in row['resolvedHistory']:\n  path,_,ptr=h['ref'].partition('#');raw=Path(path).read_bytes();assert hashlib.sha256(raw).hexdigest()==h['sha256']\n  if ptr:\n   v=json.loads(raw)\n   for k in ptr.strip('/').split('/'):v=v[int(k)] if isinstance(v,list) else v[k]\n for r in row['verifiedOriginals']:assert hashlib.sha256(Path(r['snapshotPath']).read_bytes()).hexdigest()==r['snapshotSHA256']\nfor r in read_json(E/'vector-window.json')['tiles']:assert hashlib.sha256(Path(r['retainedPath']).read_bytes()).hexdigest()==r['sha256']\ng=read_json(E/'moriya-geometry.json');raw=(E/'16-58249-25746.pbf.gz').read_bytes();geom=decode_tile(raw)['BldA']['features'][g['featureIndex']]['geometry'];assert geom==g['geometry'];assert rounded_coordinate(geom,g['tile'],g['selectedTileXY'])==g['calculation']\np=read_json(N/'manifest-selection-proposed.json');m['locations']+=p['locations'];m['locationLifecycle']+=p['locationLifecycle'];after,b=assemble(root,m)\nchanged=[x['id'] for x,y in zip(before['places'],after['places']) if x!=y];assert changed==[g['facilityId']];assert before['relations']==after['relations'];assert len(before['places'])==len(after['places'])==1586\nassert sum(not p.get('coordinate') for p in before['places'])==588\nprint('PASS: 18 target IDs, all inherited refs/source hashes, 9 retained tiles, raw geometry and rounded containment')\nprint('PASS: proposed schema/binding/selection; only Moriya place differs; all 1670 relations unchanged; actual manifest remains 588 unlocated')\n",
+    "exitCode": 0,
+    "log": "data/evidence/kanto-prefecture/ibaraki/targeted-validation.log"
+  },
+  "commitHook": {
+    "status": "pending",
+    "command": "mise exec -- git commit",
+    "expected": "go test -count=1 ./...; TestNationalAssemblyFailureGuards invokes national Python"
+  },
+  "unverified": [
+    "Codex independent review",
+    "official surroundings corroboration",
+    "product-specific CRS approval",
+    "17 additional building comparisons",
+    "UI/browser (out of scope)"
+  ]
+}

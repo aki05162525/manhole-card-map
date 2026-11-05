@@ -1,0 +1,816 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-north-009640d63f2fbbd2a23d",
+      "name": "水戸観光案内所",
+      "address": "茨城県水戸市宮町1-1-1(JR東日本常磐線水戸駅改札口脇)",
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/0",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/19",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/0",
+      "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+      "recordedStopCategories": null,
+      "recordedStage": null,
+      "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+      "performedMethod": null,
+      "plannedMethod": null,
+      "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/0/attempts",
+      "classificationCandidates": [
+        {
+          "category": "execution-not-recorded",
+          "label": "原記録の追加分類待ち",
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/0",
+          "excerpts": [
+            "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。"
+          ],
+          "assessment": "not proof of nonexecution or source insufficiency"
+        }
+      ],
+      "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+      "historicalReasonCategory": "insufficient-primary-coordinate-source",
+      "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：水戸観光コンベンション協会の案内所紹介で水戸駅改札口脇を確認。駅構内案内から独立した施設マーカー座標を得られず、市役所のアクセス座標は別施設なので除外。",
+      "resumeCondition": {
+        "url": "https://mitokoumon.com/access/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "nextAction": {
+        "url": "https://mitokoumon.com/access/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "resumability": "conditional-on-stated-evidence",
+      "automaticSelection": false,
+      "adoptionApproval": false,
+      "humanConfirmationRef": null,
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/0",
+          "kind": "original",
+          "sha256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "sha256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/19",
+          "kind": "history",
+          "sha256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope",
+          "sha256": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06"
+        }
+      ],
+      "verifiedOriginals": [
+        {
+          "sourceUrl": "https://www.city.mito.lg.jp/page/122030.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/b2a0a82f832160c2b8f34626.html",
+          "snapshotSHA256": "59cc4eaf3f8582220475c9daac7141c9cd48756c366b11d53cba84f525817306",
+          "fetchedAt": "2026-11-05T06:27:53.946165+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "マンホールカード配布のご案内（下水道計画課） - 水戸市ホームページ",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "http://www.mitokoumon.com/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/14702c3faf0dbc4a30f0b1c5.html",
+          "snapshotSHA256": "8c7dc828346790c400e312ffccb80a606e2683fb8424313a7d2cd03d5d344dce",
+          "fetchedAt": "2026-11-05T06:29:15.781177+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "水戸市の観光情報サイト「水戸旅」【公式】水戸観光コンベンション協会",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "https://mitokoumon.com/access/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/216f37ed4d41e7ffb2b797c8.html",
+          "snapshotSHA256": "fbaad8c175c0c39b9d21763e4dc835ddb9b656717e4e96564ca5b931b01bdef9",
+          "fetchedAt": "2026-11-05T06:29:15.707324+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "アクセス情報 «  水戸市の観光情報サイト「水戸旅」【公式】水戸観光コンベンション協会",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-00f47f5cf9124efaa36e",
+      "name": "アクアワールド茨城県大洗水族館入口チケット窓口",
+      "address": "茨城県東茨城郡大洗町磯浜町8252-3",
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/2",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/20",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/2",
+      "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+      "recordedStopCategories": null,
+      "recordedStage": null,
+      "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+      "performedMethod": null,
+      "plannedMethod": null,
+      "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/2/attempts",
+      "classificationCandidates": [
+        {
+          "category": "execution-not-recorded",
+          "label": "原記録の追加分類待ち",
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/2",
+          "excerpts": [
+            "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。"
+          ],
+          "assessment": "not proof of nonexecution or source insufficiency"
+        }
+      ],
+      "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+      "historicalReasonCategory": "excessive-indoor-precision-or-missing-building-point",
+      "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：県カード記事の数値入り地図は「マンホール蓋設置」節にあるため除外。水族館公式の車・電車アクセス案内でもチケット窓口の明示座標を確認できなかった。",
+      "resumeCondition": {
+        "url": "https://www.aquaworld-oarai.com/guide/access-car/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "nextAction": {
+        "url": "https://www.aquaworld-oarai.com/guide/access-car/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "resumability": "conditional-on-stated-evidence",
+      "automaticSelection": false,
+      "adoptionApproval": false,
+      "humanConfirmationRef": null,
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/2",
+          "kind": "original",
+          "sha256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "sha256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/20",
+          "kind": "history",
+          "sha256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope",
+          "sha256": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06"
+        }
+      ],
+      "verifiedOriginals": [
+        {
+          "sourceUrl": "https://www.pref.ibaraki.jp/doboku/gesui/kikaku/manholecard/aquaworld_manholecard.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/4423e76be3ce8ad567d8b467.html",
+          "snapshotSHA256": "78afce9e3abb9b735560608473b406d05d481f5938ad008c49da008c6971c685",
+          "fetchedAt": "2026-11-05T06:27:53.946769+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "アクアワールド・大洗をテーマにしたマンホールカードを配布します！／茨城県",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": true,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "https://www.aquaworld-oarai.com",
+          "snapshotPath": "data/evidence/issue7/north-kanto/ab4e01a7076a3952eadc1248.html",
+          "snapshotSHA256": "9fafbbb1c71c6324c8a730ba1672f92b3f7f06e11b0d1700828d185ff6855c70",
+          "fetchedAt": "2026-11-05T06:29:16.055616+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "【公式】アクアワールド茨城県大洗水族館 | 関東最大規模の海の総合ミュージアム",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "https://www.aquaworld-oarai.com/guide/access-car/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/d94b4571f8490bd8aa0c7fe3.html",
+          "snapshotSHA256": "aa01f6febf22270e74e0c21770b28e7f7f8abe47cf72c3b22b5886d29732ad1f",
+          "fetchedAt": "2026-11-05T06:29:15.884199+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "交通アクセス：お車でお越しの方 | アクアワールド茨城県大洗水族館【公式】",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-92eba9de67b549c59c91",
+      "name": "大洗町観光情報交流センター「うみまちテラス」",
+      "address": "茨城県東茨城郡大洗町桜道301",
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/44",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/44",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/44",
+      "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+      "recordedStopCategories": null,
+      "recordedStage": null,
+      "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+      "performedMethod": null,
+      "plannedMethod": null,
+      "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/44/attempts",
+      "classificationCandidates": [
+        {
+          "category": "execution-not-recorded",
+          "label": "原記録の追加分類待ち",
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/44",
+          "excerpts": [
+            "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。"
+          ],
+          "assessment": "not proof of nonexecution or source insufficiency"
+        }
+      ],
+      "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+      "historicalReasonCategory": "insufficient-primary-coordinate-source",
+      "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：大洗観光協会のうみまちテラス紹介はpb表示中心のみ。町公式の短縮地図は429。協会の広域アクセスdestinationは桜道301のテラスではないため除外。",
+      "resumeCondition": {
+        "url": "https://www.town.oarai.lg.jp/cat1/suidou/gesui/17000/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "nextAction": {
+        "url": "https://www.town.oarai.lg.jp/cat1/suidou/gesui/17000/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "resumability": "conditional-on-stated-evidence",
+      "automaticSelection": false,
+      "adoptionApproval": false,
+      "humanConfirmationRef": null,
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/44",
+          "kind": "original",
+          "sha256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "sha256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/44",
+          "kind": "history",
+          "sha256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope",
+          "sha256": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06"
+        }
+      ],
+      "verifiedOriginals": [
+        {
+          "sourceUrl": "https://www.town.oarai.lg.jp/cat1/suidou/gesui/17000/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/4109c256f9250e9939658563.html",
+          "snapshotSHA256": "4d9ad0b1fb40c7f7db2506a290491752797f48fc981cc9b2e55b53b21b57735b",
+          "fetchedAt": "2026-11-05T06:28:00.858758+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "マンホールカード | 大洗町公式ホームページ",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-9e5838ad85ddd56ff5a1",
+      "name": "ぷらっとひたち(日立駅情報交流プラザ)",
+      "address": "茨城県日立市幸町1-1-2(日立駅中央口北側)",
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/49",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/48",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/49",
+      "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+      "recordedStopCategories": null,
+      "recordedStage": null,
+      "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+      "performedMethod": null,
+      "plannedMethod": null,
+      "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/49/attempts",
+      "classificationCandidates": [
+        {
+          "category": "execution-not-recorded",
+          "label": "原記録の追加分類待ち",
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/49",
+          "excerpts": [
+            "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。"
+          ],
+          "assessment": "not proof of nonexecution or source insufficiency"
+        }
+      ],
+      "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+      "historicalReasonCategory": "insufficient-primary-coordinate-source",
+      "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：市の「日立駅情報交流プラザのご案内」を確認。幸町1-1-2の施設案内に座標指定を確認できず、助川町の市役所マーカーは転用しない。",
+      "resumeCondition": {
+        "url": "http://www.kankou-hitachi.jp/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "nextAction": {
+        "url": "http://www.kankou-hitachi.jp/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "resumability": "conditional-on-stated-evidence",
+      "automaticSelection": false,
+      "adoptionApproval": false,
+      "humanConfirmationRef": null,
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/49",
+          "kind": "original",
+          "sha256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "sha256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/48",
+          "kind": "history",
+          "sha256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope",
+          "sha256": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06"
+        }
+      ],
+      "verifiedOriginals": [
+        {
+          "sourceUrl": "https://www.city.hitachi.lg.jp/kigyo/koho_oshirase/1008759/1005112.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/fc7fc0646f708057e7a7ebb2.html",
+          "snapshotSHA256": "c97b385d1ca0f13bbfab0b933185c3213ca640d601e46e4d320965434afda21c",
+          "fetchedAt": "2026-11-05T06:27:55.242626+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "マンホールカードを配布しています。｜日立市公式ウェブサイト",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "https://www.city.hitachi.lg.jp/kigyo/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/2f540421e3d94f7b7c8b1339.html",
+          "snapshotSHA256": "c5335fadf9aa4ee9c6ec488e6bd195d20f20484596e0be2de7b2aae8cdac7f21",
+          "fetchedAt": "2026-11-05T06:29:19.303133+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "日立市企業局（水道・下水道）｜日立市公式ウェブサイト",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "http://www.kankou-hitachi.jp/",
+          "snapshotPath": "data/evidence/issue7/north-kanto/f42e1a5e3c55b65df7f9ad8c.html",
+          "snapshotSHA256": "beb8051d39d5d8e7367419ecebe6e738463b7bb9bd1e53fc4c9b6e96077e2931",
+          "fetchedAt": "2026-11-05T06:29:19.591154+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "トップページ | 日立市観光物産協会公式ホームページ",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-eda89f6600b8d5aa745d",
+      "name": "那珂市曲がり屋",
+      "address": "茨城県那珂市菅谷4520-1(一ノ関ため池親水公園)",
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/80",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/65",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "latestResultRef": "data/national/issue7/north-kanto.json#/unresolved/80",
+      "priorDecision": "new-web-fetch-and-p05-search; building-not-resolved",
+      "recordedStopCategories": null,
+      "recordedStage": null,
+      "originalInvestigationStatus": "new-web-fetch-and-p05-search; building-not-resolved",
+      "performedMethod": null,
+      "plannedMethod": null,
+      "attemptsRef": "data/national/issue7/north-kanto.json#/unresolved/80/attempts",
+      "classificationCandidates": [
+        {
+          "category": "execution-not-recorded",
+          "label": "原記録の追加分類待ち",
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/80",
+          "excerpts": [
+            "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。"
+          ],
+          "assessment": "not proof of nonexecution or source insufficiency"
+        }
+      ],
+      "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+      "historicalReasonCategory": "insufficient-primary-coordinate-source",
+      "stopCondition": "今回：公式ページの追加取得・数値構造走査とP05再検索を実施したが、建物点の確定に至らない。旧保留理由（旧時点の調査記述であり今回の取得結果ではない）：曲がり屋公式紹介のmap.php?code=42は「一の関ため池親水公園」の点。曲がり屋そのものとは確認できず、360度画像の撮影座標も建物点に転用しない。",
+      "resumeCondition": {
+        "url": "http://www.city.naka.lg.jp/page/dir000357.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "nextAction": {
+        "url": "http://www.city.naka.lg.jp/page/dir000357.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "resumability": "conditional-on-stated-evidence",
+      "automaticSelection": false,
+      "adoptionApproval": false,
+      "humanConfirmationRef": null,
+      "resolvedHistory": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/80",
+          "kind": "original",
+          "sha256": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history",
+          "sha256": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/65",
+          "kind": "history",
+          "sha256": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision",
+          "sha256": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope",
+          "sha256": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06"
+        }
+      ],
+      "verifiedOriginals": [
+        {
+          "sourceUrl": "https://www.city.naka.lg.jp/kurashi-tetsuduki/suidou-gesuidou/gesuidou/news/page005032.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/bc3346517bc98624fc0be9cb.html",
+          "snapshotSHA256": "ae6265b4b77a241ca4a1d03400fc16682ad4f966a4d4c49d6828a3d28e98cadd",
+          "fetchedAt": "2026-11-05T06:27:58.945288+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": "那珂市「マンホールカード」配布 | 那珂市公式ホームページ",
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "http://www.city.naka.lg.jp/page/page000512.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/08dab1bb02af947fcebddb2a.html",
+          "snapshotSHA256": "a805965ff70a341f4eebc9ea6e32c62f2cf059d5f2b41aacb76555e553e84316",
+          "fetchedAt": "2026-11-05T06:29:22.676877+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": null,
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        },
+        {
+          "sourceUrl": "http://www.city.naka.lg.jp/page/dir000357.html",
+          "snapshotPath": "data/evidence/issue7/north-kanto/1255d44a3171e22cd5ce2731.html",
+          "snapshotSHA256": "4cce1dd9e76526aef17840bf5b16340e2fb71782ad8404147c32fe279f9ceffc",
+          "fetchedAt": "2026-11-05T06:29:22.676646+00:00",
+          "status": 200,
+          "kind": "new-web-fetch",
+          "result": "実取得原本を保存。下記はHTMLの数値構造の走査であり建物同定の自動承認ではない。",
+          "title": null,
+          "coordinateSignals": {
+            "marker": false,
+            "viewport": false,
+            "numericQ": false,
+            "destination": false,
+            "geoProperty": false
+          }
+        }
+      ]
+    }
+  ],
+  "parentHistorySHA256": "31a754878589956727b1f113a3d072740837a5a79465caa1f0d7d4ccf4a6de36",
+  "humanQueueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+  "priorHumanQueueAnswersForTheseIDs": [],
+  "newHumanReportRef": "data/evidence/kanto-prefecture/ibaraki/round2/coastal/human-reports.json"
+}

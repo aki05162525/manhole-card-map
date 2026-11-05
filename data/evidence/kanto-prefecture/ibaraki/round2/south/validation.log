@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "validationCommit": "5a459b2920b3e9128c71801da7b32297815bea16",
+  "manifestSHA256": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+  "ledgerSHA256": "2d41a50e40340919511f0f8c3f69472e778994750ccac9a7f69b3ed158ce819f",
+  "command": "data/work/kanto-ibaraki/venv/bin/python data/evidence/kanto-prefecture/ibaraki/round2/south/validate-candidates.py",
+  "exitCode": 0,
+  "checks": [
+    "4 IDs schema/evidence/raw hashes and lifecycle bindings accepted by existing implementation",
+    "all 36 numerical tile hashes and chosen raw feature indices verified",
+    "full-building geometry equals retained raw fragment union",
+    "all 4 candidate points contained after 7-place rounding",
+    "complete ledger comparison: exactly 4 places changed; relations and ID set unchanged",
+    "inherited history and saved official original hashes match",
+    "new acquired general raw hashes verified in ignored work"
+  ],
+  "changedFacilityIds": [
+    "facility:kanto-north-02882996672a826c585c",
+    "facility:kanto-north-1fd6ee704dfe58bb5411",
+    "facility:kanto-north-a0cee7df87e79f814924",
+    "facility:kanto-north-fb8539f44aa2bc8487c0"
+  ],
+  "hypotheticalOnly": true,
+  "manifestApplied": false,
+  "independentIdentityAndCRSReview": "pending; mechanical success is not approval",
+  "inputs": {
+    "data/national/kanto-prefecture/ibaraki/round2/south/locations-proposed.json": "8a56a46a30582caa18791eef55af5af079ff3310bde1782fb52e76e809febd79",
+    "data/national/kanto-prefecture/ibaraki/round2/south/location-lifecycle-proposed.json": "6424741842407d394886ba14604130dab252b37e6051198d50317fdc795bf300",
+    "data/national/kanto-prefecture/ibaraki/round2/south/outcomes.json": "59a5b22d1c4cec4a562103faa291d4d59a35ec71f42329604ea23e6e457f7ff9",
+    "data/evidence/kanto-prefecture/ibaraki/round2/south/validate-candidates.py": "adea070c76b286d9b5fbd7997f94acc4dcaab7c90215d4f22d71eb3866398a1a",
+    "tools/national/research_common.py": "905384e54affc7325f08a302f4417483d3b5d277bf878eec8d78a7618b4a4adf",
+    "tools/national/assemble.py": "9bfbeff5ae3707696d2eecf23f85fab83cd3dc678ab32353b446dc6c02ead988",
+    "tools/national/location_lifecycle.py": "44f58e04eb28f7649b4a63a5fd7435e9d973ba8ffa484e71dde2b16dd63d1942"
+  }
+}

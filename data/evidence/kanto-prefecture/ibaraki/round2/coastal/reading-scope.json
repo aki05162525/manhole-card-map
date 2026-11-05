@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "scopes": {
+    "aqua": [
+      "aqua-map.pdf 全1頁 2023-03作成",
+      "aqua-old-map.pdf 全2頁 2023.3表示",
+      "aqua-2f.jpg / aqua-3f.jpg 全画像",
+      "aqua-access-map.png 全画像",
+      "aqua-floor.html / aqua-card.html 配布先と閉鎖範囲本文"
+    ],
+    "umimachi": [
+      "umimachi-plan.pdf 全1頁 2024-11作成、下部写真にGoogle表記のため数値導出に不使用",
+      "umimachi-pref.pdf 全2頁 印刷頁8–9 2021-03作成",
+      "umimachi.html / umimachi-card.html 本文"
+    ],
+    "naka": [
+      "naka-brochure.pdf 全2頁 2019-11メタデータ",
+      "naka-guide.pdf 全1頁 2025-02メタデータ",
+      "naka-location-photo.jpg / naka-location-photo2.jpg / naka-main-photo.jpg / naka-pond-photo.jpg 全画像",
+      "naka-strategy.pdf 295頁中本文検索、205頁のみ画像読解。206–209頁は生成のみ、残り未読",
+      "naka.html / naka-card.html / naka-location.html 本文と写真リンク",
+      "naka-map.html markerは池内の公園案内点として除外"
+    ],
+    "mito": [
+      "mito-map.png 全画像、URL年月2021-03、北口/南口を方位根拠とする",
+      "mito-info.html / mito-card.html 本文、2026協会事務所移転と区別",
+      "mito-photo.jpg 全画像。案内所カウンター・屋内通路の外観を確認、GSI外形番号の独立根拠にはしない。",
+      "JR構内図ページ/PNG/PDF直接取得失敗。web検索でリンク存在を確認しただけで原本読解成功にしない"
+    ],
+    "hitachi": [
+      "hitachi-plan.pdf 全2頁 2026-02-04メタデータ",
+      "hitachi-plaza.html / hitachi-card.html / hitachi-info.html 本文",
+      "hitachi-plaza-photo.jpg 全画像",
+      "JR構内図ページ/PNG直接取得失敗、採用根拠にしない"
+    ]
+  },
+  "vectorScope": "5施設ともz16周辺3x3全体windowとdetailを目視。うみまち・那珂は追加close画像も参照。描画はBldA/RdEdg/RdCL/WA/WL、RailCL等を描かない。source IDはタイル内番号で全域一意でない。",
+  "derivation": "数値はgeometry-comparison.jsonのrawに結合。建物候補は同定/承認とは別。選択点はshapely representative_point、逆投影/丸め/内包はresearch_common.rounded_coordinate。",
+  "timeScope": "timing.jsonは施設別実際の経過時間セッション。共有セットアップ/全件統合/最終検証時間は配賦しない。",
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/ibaraki/source-conditions.json",
+  "crsUpdate": "親はoptbv_dataspec.pdf全2頁を確認したがBldA属性定義で測地系宣言なしと報告。製品固有CRSの承認は未解消。"
+}

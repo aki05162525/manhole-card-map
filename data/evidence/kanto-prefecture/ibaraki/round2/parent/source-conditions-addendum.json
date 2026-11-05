@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "inherits": "data/evidence/kanto-prefecture/ibaraki/source-conditions.json",
+  "additionalProductSpec": {
+    "url": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+    "sha256": "f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b",
+    "textReadPages": "all 2",
+    "result": "BldA is building fill; attribute definitions updated 2022-09-06 / 2022-10-06. No datum statement. Product CRS approval remains unresolved; no datum conversion."
+  },
+  "approved": false
+}

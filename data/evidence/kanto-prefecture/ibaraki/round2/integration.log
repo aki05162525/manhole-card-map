@@ -1,0 +1,5 @@
+PASS 18 unique assigned IDs; 18 actual investigation records; 17 proposed coordinates; one documented correspondence hold
+PASS current assemble accepts all 17 explicit selection / canonical hash / binding proposals
+PASS full ledger difference exactly 17 place IDs; all other ledger sections and 1670 relations unchanged
+PASS all 17 evidence raw hashes and checkedAt preserved; actual shared manifest unchanged
+UNAPPROVED: historical 588 actual unlocated; hypothetical 571 only. CRS and independent identity review pending.
