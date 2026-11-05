@@ -84,8 +84,8 @@
       "bytes": 15263,
       "contentType": "text/html; charset=UTF-8",
       "fetchedAt": "2026-11-05T11:25:38.184251+00:00",
-      "usableDocument": false,
-      "finding": "メンテナンス応答。施設ページの取得成功とは数えない。"
+      "usableDocument": true,
+      "finding": "保存HTMLは正常な施設案内。所在地・敷地122000m²・延床68000m²。旧メンテナンス判定は検索ツール応答を保存原本と混同した誤り。"
     },
     {
       "key": "besshi-kids.pdf",
@@ -291,6 +291,78 @@
       "contentType": "text/plain; charset=utf-8",
       "fetchedAt": "2026-11-05T11:30:49.835323+00:00",
       "usableDocument": true
+    },
+    {
+      "key": "iyo-aed-urban.csv",
+      "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/documents/382108_aed_06.csv",
+      "requestStartedAt": "2026-11-05T11:52:10.790973+00:00",
+      "redistribution": "市のCC-BY表示確認（版指定なし）。原本はwork保持、事実抽出のみGit。利用規約入口はiyo-terms.html。",
+      "status": 200,
+      "finalUrl": "https://www.city.iyo.lg.jp/shise/opendata/documents/382108_aed_06.csv",
+      "snapshotPath": "data/work/location-batch2/shikoku/iyo-aed-urban.csv",
+      "snapshotSHA256": "71f58fbd823c102f042bb689a8fa8c09efc9afe2585383cc4f2ab716542005b2",
+      "bytes": 1566,
+      "contentType": "text/csv",
+      "fetchedAt": "2026-11-05T11:52:10.915155+00:00"
+    },
+    {
+      "key": "aeon-architecture.pdf",
+      "sourceUrl": "https://www.nikkenren.com/kenchiku/sb/pdf/381/05-044.pdf",
+      "requestStartedAt": "2026-11-05T11:52:33.124530+00:00",
+      "redistribution": "not-cleared; raw retained only in ignored work directory",
+      "status": 200,
+      "finalUrl": "https://www.nikkenren.com/kenchiku/sb/pdf/381/05-044.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/aeon-architecture.pdf",
+      "snapshotSHA256": "bfb0a35c163e894b1501b3eefc3cd81005e1e16e0662b957475e2961d6a4c21b",
+      "bytes": 3808435,
+      "contentType": "application/pdf",
+      "fetchedAt": "2026-11-05T11:52:33.976153+00:00"
+    },
+    {
+      "key": "aeon-opening.pdf",
+      "sourceUrl": "https://www.aeonretail.jp/pdf/160301R_2AR.pdf",
+      "requestStartedAt": "2026-11-05T11:52:33.976547+00:00",
+      "redistribution": "not-cleared; raw retained only in ignored work directory",
+      "error": "The read operation timed out"
+    },
+    {
+      "key": "moon-news.html",
+      "sourceUrl": "https://www.tsukimigaoka.com/cgi-bin/tab-news/topics.cgi",
+      "requestStartedAt": "2026-11-05T11:53:14.108363+00:00",
+      "redistribution": "not-cleared; raw retained only in ignored work directory",
+      "status": 200,
+      "finalUrl": "https://www.tsukimigaoka.com/cgi-bin/tab-news/topics.cgi",
+      "snapshotPath": "data/work/location-batch2/shikoku/moon-news.html",
+      "snapshotSHA256": "53561759a06f54c8a4aac210a93b12d77708303fdb7f046af8aae930338b7f59",
+      "bytes": 54197,
+      "contentType": "text/html; charset=shift_jis",
+      "fetchedAt": "2026-11-05T11:53:15.366055+00:00"
+    },
+    {
+      "key": "aeon-floor.pdf",
+      "sourceUrl": "https://file-cdn.aeonmall.jp/uploads/218be487-88fa-41c5-9fb6-f8d7f04dc6e4.pdf",
+      "requestStartedAt": "2026-11-05T11:54:11.949766+00:00",
+      "redistribution": "not-cleared; raw retained only in ignored work directory",
+      "status": 200,
+      "finalUrl": "https://file-cdn.aeonmall.jp/uploads/218be487-88fa-41c5-9fb6-f8d7f04dc6e4.pdf",
+      "snapshotPath": "data/work/location-batch2/shikoku/aeon-floor.pdf",
+      "snapshotSHA256": "1281a61034bc2832add8dd19f6651bb4710e94876d304238ef8aee30ea5fa846",
+      "bytes": 1841765,
+      "contentType": "application/pdf",
+      "fetchedAt": "2026-11-05T11:54:12.267773+00:00"
+    },
+    {
+      "key": "iyo-terms.html",
+      "sourceUrl": "https://www.city.iyo.lg.jp/shise/opendata/index.html",
+      "requestStartedAt": "2026-11-05T11:54:12.268061+00:00",
+      "redistribution": "not-cleared; raw retained only in ignored work directory",
+      "status": 200,
+      "finalUrl": "https://www.city.iyo.lg.jp/shise/opendata/index.html",
+      "snapshotPath": "data/work/location-batch2/shikoku/iyo-terms.html",
+      "snapshotSHA256": "4d235f28b0cc33d67b69dc17558d621c2ab9ec844094083ff6d22aca4d2521d7",
+      "bytes": 17584,
+      "contentType": "text/html",
+      "fetchedAt": "2026-11-05T11:54:12.893772+00:00"
     }
   ]
 }

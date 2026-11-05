@@ -1,4 +1,4 @@
-"""Verify research references and non-adoption; run from repository root.
+"""Verify research references and exact regional adoption delta; callable from any cwd.
 
 mise exec -- python3 -B data/evidence/location-batch2/shikoku/verify.py
 Add --raw to check ignored local retrieval bytes as well.
@@ -32,11 +32,16 @@ selected = set(selection['selectedIds'])
 assert len(selected) == len(selection['selectedIds']) == 8
 assert selected <= expected <= set(baseline['assembledUnlocatedIds'])
 assert {r['facilityId'] for r in outcomes['rows']} == selected
-assert all(r['decision'] == 'held' and not r['adopted']
-           and r['proposedCoordinate'] is None and r['lifecycleBinding'] is None
-           and r['resumeCondition'] for r in outcomes['rows'])
+adopted = {r['facilityId'] for r in outcomes['rows'] if r['adopted']}
+assert len(adopted) == outcomes['adoptedCount'] == 2
+assert outcomes['heldCount'] == 6
+assert all(r['resumeCondition'] and r['stopReason'] and 'numericParts' in r for r in outcomes['rows'])
+assert all(r['proposedCoordinate'] is None and r['lifecycleBinding'] is None
+           for r in outcomes['rows'] if not r['adopted'])
 for path, expected_hash in selection['inputSHA256'].items():
-    assert digest(ROOT / path) == expected_hash, path
+    raw = (subprocess.check_output(['git', 'show', 'f66b7e994ef250fadee78f396d22fdfc40ba6a83:' + path], cwd=ROOT)
+           if path == 'tools/national/manifest.json' else (ROOT / path).read_bytes())
+    assert hashlib.sha256(raw).hexdigest() == expected_hash, path
 for row in selection['rows']:
     path, pointer = row['originalRef'].split('#')
     value = read(ROOT / path)
@@ -70,12 +75,22 @@ with tempfile.TemporaryDirectory() as tmp:
                     '--out', str(output)], cwd=ROOT, check=True)
     ledger = read(output)
     places = {p['id']: p for p in ledger['places']}
-    assert all(not places[i].get('coordinate') for i in expected)
-    assert sum(not p.get('coordinate') for p in places.values()) == 608
+    assert {i for i in expected if places[i].get('coordinate')} == adopted
     for row in selection['rows']:
         assert row['name'] == places[row['facilityId']]['name']
         assert row['address'] == places[row['facilityId']]['address']
-    before = ROOT / 'data/work/location-batch2/shikoku/before-ledger.json'
-    if '--raw' in sys.argv:
-        assert read(before) == ledger, 'all places and relations must remain identical'
-print('PASS: population 15, selected/held 8, excluded 7, adopted 0; references/hashes; current assemble unchanged')
+
+calculations = read(E / 'reassessment-calculations.json')
+for path, expected_hash in calculations['dependencies'].items():
+    assert digest(ROOT / path) == expected_hash, path
+facts = read(E / 'facts.json')
+for ref in facts['references']:
+    record = next(r for r in retrievals if r['key'] == ref['key'])
+    for key in ('snapshotPath', 'snapshotSHA256', 'fetchedAt'):
+        assert ref[key] == record[key], (ref['key'], key)
+for ref in facts['reusedEvidence']:
+    assert digest(ROOT / ref['snapshotPath']) == ref['snapshotSHA256']
+subprocess.run([sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tools/national',
+                '-p', 'test_location_batch2_shikoku.py', '-v'], cwd=ROOT, check=True)
+print('PASS: population 15, selected 8, provisional adoption 2, held 6, excluded 7; hashes and exact delta')
+print('LIMIT: hashes/references and ledger invariants do not prove visual building identity or current distribution; independent review required')

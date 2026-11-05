@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "purpose": "調査専用。建物候補の地理対応は未承認。manifest選択なし。",
+  "purpose": "原本数値外形の調査・採用候補再現。旧吉野川/イオン2件をmanifest仮統合、独立再レビュー待ち。他のタイル内建物を採用した意味ではない。",
   "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
   "version": "2026-07-01 per README; HTTP Last-Modified 2026-09-17",
   "crs": "JGD2011 geographic on Web Mercator XYZ lattice (same specification reference as batch1); no datum transformation",
@@ -67,6 +67,36 @@
         "z": 16,
         "x": 56972,
         "y": 26169
+      }
+    },
+    {
+      "name": "aeon-east",
+      "path": "data/evidence/location-batch2/shikoku/aeon-east-tile.pbf.gz",
+      "sha256": "a1e8eddaa4c7e745a64303d30f82f7d93232cbc31ee1ece33908dfe4c338c373",
+      "tile": {
+        "z": 16,
+        "x": 56973,
+        "y": 26169
+      }
+    },
+    {
+      "name": "aeon-south",
+      "path": "data/evidence/location-batch2/shikoku/aeon-south-tile.pbf.gz",
+      "sha256": "1635edb057ee32251b8fb2f4afb870c03d66418b05bc059222dc4946ab52f3a9",
+      "tile": {
+        "z": 16,
+        "x": 56972,
+        "y": 26170
+      }
+    },
+    {
+      "name": "aeon-southeast",
+      "path": "data/evidence/location-batch2/shikoku/aeon-southeast-tile.pbf.gz",
+      "sha256": "3f4b2ea5bd965434a7f66bf9550491fba6933401aa7ea675a6c31dfcc2028012",
+      "tile": {
+        "z": 16,
+        "x": 56973,
+        "y": 26170
       }
     }
   ],
@@ -167,6 +197,33 @@
       "fetchedAt": "2026-11-05T11:29:01.996386+00:00",
       "snapshotPath": "data/work/location-batch2/shikoku/pmtiles-15484126928-6473.bin",
       "snapshotSHA256": "1f1ba3ab118aa0891182eee4d148e565c8979152f9e6529a226e4b3994c8879e",
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=15339202481-15339212084",
+      "fetchedAt": "2026-11-05T11:52:10.286061+00:00",
+      "snapshotPath": "data/work/location-batch2/shikoku/pmtiles-15339202481-9604.bin",
+      "snapshotSHA256": "a1e8eddaa4c7e745a64303d30f82f7d93232cbc31ee1ece33908dfe4c338c373",
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=15339239250-15339247135",
+      "fetchedAt": "2026-11-05T11:52:10.416996+00:00",
+      "snapshotPath": "data/work/location-batch2/shikoku/pmtiles-15339239250-7886.bin",
+      "snapshotSHA256": "1635edb057ee32251b8fb2f4afb870c03d66418b05bc059222dc4946ab52f3a9",
+      "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
+      "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
+    },
+    {
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "range": "bytes=15339247136-15339259500",
+      "fetchedAt": "2026-11-05T11:52:10.515112+00:00",
+      "snapshotPath": "data/work/location-batch2/shikoku/pmtiles-15339247136-12365.bin",
+      "snapshotSHA256": "3f4b2ea5bd965434a7f66bf9550491fba6933401aa7ea675a6c31dfcc2028012",
       "etag": "\"dfa81a9cba11aad28247d63a2d8361ec-2015\"",
       "lastModified": "Thu, 17 Sep 2026 07:32:00 GMT"
     }

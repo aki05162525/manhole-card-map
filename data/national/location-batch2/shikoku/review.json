@@ -1,13 +1,28 @@
 {
-  "schema": 1,
-  "provider": "antigravity",
-  "model": "gemini-4-argon",
-  "requestedAt": "2026-11-05T11:35:42.924952+00:00",
-  "status": "unavailable",
-  "taskId": "node:delegated-task:command%3Amcp%3A5e826faf-02bb-482c-9e71-37d95d04f274%3Adelegate-task%3Ae318ce42-7a64-4f9d-81bb-b3d04fa34887",
-  "error": "You have reached your Antigravity quota for this period.",
-  "findings": null,
-  "approved": false,
-  "response": "代替モデルを起動せず。採用0を維持し、Gemini未実施を明記したdraft PRとして親へ返す。",
-  "resumeCondition": "Antigravity quota回復後にgemini-4-argonの新規delegate_taskで独立レビュー。既存失敗を承認扱いしない。"
+  "schema": 2,
+  "history": [
+    {
+      "schema": 1,
+      "provider": "antigravity",
+      "model": "gemini-4-argon",
+      "requestedAt": "2026-11-05T11:35:42.924952+00:00",
+      "status": "unavailable",
+      "taskId": "node:delegated-task:command%3Amcp%3A5e826faf-02bb-482c-9e71-37d95d04f274%3Adelegate-task%3Ae318ce42-7a64-4f9d-81bb-b3d04fa34887",
+      "error": "You have reached your Antigravity quota for this period.",
+      "findings": null,
+      "approved": false,
+      "response": "代替モデルを起動せず。採用0を維持し、Gemini未実施を明記したdraft PRとして親へ返す。",
+      "resumeCondition": "Antigravity quota回復後にgemini-4-argonの新規delegate_taskで独立レビュー。既存失敗を承認扱いしない。"
+    },
+    {
+      "provider": "claudeAgent",
+      "model": "claude-opus-5-5",
+      "authorization": "ユーザー明示の代替レビュー許可",
+      "status": "changes-requested",
+      "record": "data/national/location-batch2/shikoku/opus-review-initial.json",
+      "response": "全6重大指摘を再調査・訂正。対応詳細facts.json/outcomes.json/地域文書。"
+    }
+  ],
+  "status": "opus-rereview-pending",
+  "approved": false
 }

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "origin": "http://127.0.0.1:4293",
+  "chromium": "156.0.8078.4",
+  "scope": "Generated real data full/split detail and outgoing Maps href; external Google destination not opened",
+  "results": [
+    {
+      "mode": "full",
+      "cardId": "36-000-A001",
+      "placeId": "facility:cs-1fe04097ed447030ce",
+      "mapsQuery": "34.1279514,134.6128622",
+      "detailName": true,
+      "placeButtonEnabled": true
+    },
+    {
+      "mode": "full",
+      "cardId": "38-202-C001",
+      "placeId": "facility:cs-66c4c4fbd8f914efac",
+      "mapsQuery": "34.04372,132.9622799",
+      "detailName": true,
+      "placeButtonEnabled": true
+    },
+    {
+      "mode": "split",
+      "cardId": "36-000-A001",
+      "placeId": "facility:cs-1fe04097ed447030ce",
+      "mapsQuery": "34.1279514,134.6128622",
+      "detailName": true,
+      "placeButtonEnabled": true
+    },
+    {
+      "mode": "split",
+      "cardId": "38-202-C001",
+      "placeId": "facility:cs-66c4c4fbd8f914efac",
+      "mapsQuery": "34.04372,132.9622799",
+      "detailName": true,
+      "placeButtonEnabled": true
+    }
+  ]
+}
