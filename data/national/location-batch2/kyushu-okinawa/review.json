@@ -2,14 +2,13 @@
   "schema": 1,
   "region": "kyushu-okinawa",
   "issue": 44,
-  "status": "unavailable-quota-exceeded",
-  "providerInstanceId": "antigravity",
-  "model": "gemini-4-argon",
-  "taskId": "node:delegated-task:command%3Amcp%3A7d3e92a6-2e13-4475-8c4e-1c46572b5d78%3Adelegate-task%3Ae29421e5-21b9-4575-a041-115908cd6e8e",
-  "reportedAt": "2026-11-05T11:35:31.001958+00:00",
-  "error": "You have reached your Antigravity quota for this period.",
-  "findings": null,
+  "status": "opus-re-review-pending",
   "approved": false,
-  "response": "代替モデルへ切替なし。独立レビュー未完了としてdraft PRに保存し、親へ引き継ぐ。採用0、manifest不変。",
-  "resumeCondition": "利用枠回復後、Gemini 4 Argonの新規delegate_taskで独立レビューし指摘対応。"
+  "geminiFailureRef": "data/national/location-batch2/kyushu-okinawa/review-gemini-failure.json",
+  "authorization": "利用者がClaude Opus代替レビューを明示許可。Gemini枠超過失敗を成功・承認と読み替えない。",
+  "initialOpusReviewRef": "data/national/location-batch2/kyushu-okinawa/review-opus-initial.json",
+  "initialOpusDecision": "changes-requested",
+  "providerInstanceId": "claudeAgent",
+  "model": "claude-opus-5-5",
+  "response": "既存資料と新規取得原本の実照合を追加。提案5ID・採用0・保留3。独立再レビュー前はmanifest選択なし。"
 }

@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "status": "not-selected-in-manifest",
+  "rows": [
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "status": "proposed-review-pending",
+      "oldRowSHA256": "3269b1ed617a21d0579e90ee401abbc29eecfd6f5a9b5bbafe274be13d39e732",
+      "oldRow": {
+        "id": "facility:ws-f5ea517afaab927bb9",
+        "legacyIds": [],
+        "name": "知名町役場上下水道課",
+        "address": "鹿児島県大島郡知名町大字知名1100番地",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/4fb086a751da5add77e7.html",
+          "snapshotSHA256": "f8688ed07fefd9633b08f21152bc9cf3f56826e6495aa400216d4ef3238919e4",
+          "sourceLocator": "46-534-A001 / 知名町役場上下水道課",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "proposal": {
+        "facilityId": "facility:ws-f5ea517afaab927bb9",
+        "coordinate": {
+          "lat": 27.338544,
+          "lng": 128.5738394
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[0]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのchina。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "status": "proposed-review-pending",
+      "oldRowSHA256": "623aeffb55574842194170d283f881001353df68165c514c54ffd9d3be426036",
+      "oldRow": {
+        "name": "諫早物産ホール諫早観光物産コンベンション協会",
+        "address": "長崎県諫早市高城町5-10",
+        "phone": "",
+        "id": "facility:kyushu-0457cc860e34e1f5a582",
+        "legacyIds": [
+          "place:0457cc860e34e1f5a582"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/bd56584967b85f7baffe.html",
+          "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7",
+          "sourceLocator": "42-000-A001 / マンホールカード配布場所・配布日時 / 諫早物産ホール諫早観光物産コンベンション協会",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "proposal": {
+        "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+        "coordinate": {
+          "lat": 32.8452193,
+          "lng": 130.0523047
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[1]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのisahaya。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "status": "proposed-review-pending",
+      "oldRowSHA256": "63ca992f4a702eb78725b5998f6c5f6e0fee61a6863af0d791c6bc7bf7a969a2",
+      "oldRow": {
+        "name": "徳之島町役場建設課",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地",
+        "phone": "0997-82-1111",
+        "id": "facility:kyushu-7a9f8dae19665147953f",
+        "legacyIds": [
+          "place:7a9f8dae19665147953f"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/9a2da8a57f13603c6013.html",
+          "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+          "sourceLocator": "46-530-A001 / マンホールカード配布場所・配布日時 / 徳之島町役場建設課",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "proposal": {
+        "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+        "coordinate": {
+          "lat": 27.726407,
+          "lng": 129.0186019
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      }
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "status": "proposed-review-pending",
+      "oldRowSHA256": "f4075c220b1f118367ee97aa4424ab02910f0c136e4ea4412d22324083e67a53",
+      "oldRow": {
+        "id": "facility:ws-61c944585418f01447",
+        "legacyIds": [],
+        "name": "徳之島町役場新庁舎1階宿直室",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/9a2da8a57f13603c6013.html",
+          "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+          "sourceLocator": "46-530-A001 / 徳之島町役場新庁舎1階宿直室",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "proposal": {
+        "facilityId": "facility:ws-61c944585418f01447",
+        "coordinate": {
+          "lat": 27.726407,
+          "lng": 129.0186019
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[2]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのtokunoshima。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "status": "proposed-review-pending",
+      "oldRowSHA256": "848dfb78f0392782ae315e3291e0f0c74af6c86e411991b867c1486f3eaa428d",
+      "oldRow": {
+        "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+        "address": "沖縄県うるま市勝連南風原3807-2",
+        "phone": "098-978-7373",
+        "id": "facility:kyushu-5adca0ddeb2263d545e6",
+        "legacyIds": [
+          "place:5adca0ddeb2263d545e6"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/5e371894a3f3a8a47918.html",
+          "snapshotSHA256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c",
+          "sourceLocator": "47-213-A001 / マンホールカード配布場所・配布日時 / うるま市観光案内所(あまわりパーク観光ターミナル)",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "proposal": {
+        "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+        "coordinate": {
+          "lat": 26.3324282,
+          "lng": 127.8808337
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/location-batch2/kyushu-okinawa/derived-points.json",
+          "snapshotSHA256": "1402386e2723c840127a28580f2034fc5468aab610c76982d54133c34215dccd",
+          "sourceLocator": "本プロジェクト派生記録 rows[3]。原タイルhash/地物はrecheck-tiles.json、同定はfacility-identification.jsonのuruma。GSI PMTiles 2026-07-01版。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工。PDL1.0出典・加工表示。独立の現施設配置資料と外形を照合。JGD2011のMVT格子から局所AEQDで建物重心を算出、逆投影後小数7桁へ丸め内包検査。WGS84測地系変換なし。建物代表点で入口・室内窓口測量ではない。"
+        }
+      }
+    }
+  ]
+}

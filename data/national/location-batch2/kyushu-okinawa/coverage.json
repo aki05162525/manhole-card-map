@@ -35,7 +35,34 @@
       "name": "徳之島町役場建設課",
       "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
       "selection": "selected",
-      "exclusionOrSelectionReason": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。"
+      "exclusionOrSelectionReason": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/2"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+        "groupId": "pilot-12",
+        "cardIds": [
+          "46-530-A001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/2",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "開庁案内配置を現建物外形と照合する",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
     },
     {
       "facilityId": "facility:ws-61c944585418f01447",
@@ -60,7 +87,34 @@
       "name": "徳之島町役場新庁舎1階宿直室",
       "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
       "selection": "selected",
-      "exclusionOrSelectionReason": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。"
+      "exclusionOrSelectionReason": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/3"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:ws-61c944585418f01447",
+        "groupId": "pilot-12",
+        "cardIds": [
+          "46-530-A001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/2",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "開庁案内配置を現建物外形と照合する",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
     },
     {
       "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
@@ -566,7 +620,36 @@
       "name": "北谷町観光情報センター",
       "previousReason": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）：観光協会公式施設詳細と県GISデータを照合。美浜16-3の観光情報センターの建物目的地座標を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
       "selection": "selected",
-      "exclusionOrSelectionReason": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。"
+      "exclusionOrSelectionReason": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/11"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+        "groupId": "pilot-19",
+        "cardIds": [
+          "47-326-A001",
+          "47-326-B001"
+        ],
+        "status": "held",
+        "stage": "retrieval-failed",
+        "conclusion": "町の現施設紹介と県のオープンデータ一覧を取得。北谷町AED一覧が次候補として見つかったがBODIK package APIは403。施設名掲載や座標有無は未確認で、取得成功と扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/11",
+          "data/evidence/issue16/group-b/retrievals.json#/records/12",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/1"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "AED原データの取得経路復旧後、センター行・CRS・版・ライセンスを確認",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
     },
     {
       "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
@@ -1289,7 +1372,33 @@
       "name": "北谷町立博物館",
       "previousReason": "北谷町立博物館（沖縄県中頭郡北谷町伊平1-11-1）：博物館公式アクセスのGoogleリンクは26.32444,127.7586443を含むが、対象ラベルが伊平1丁目という住所区域で、伊平1-11-1の博物館建物ではない。住所代表点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
       "selection": "deferred-this-batch",
-      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-a-outcomes.json#/outcomes/9"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+        "groupId": "pilot-08",
+        "cardIds": [
+          "47-326-B001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "博物館公式aboutページで伊礼原遺跡と博物館の案内図リンクを確認。図のweb取得はtimeout。住所区域点を施設点に変更していない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/9",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-a-retrievals.json#/retrievals/9"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+        "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+        "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+        "resumeCondition": "案内図を再取得し建物外形/数値原典と対応させる",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-a-review.json"
+      }
     },
     {
       "facilityId": "facility:kyushu-45251ad37ff8b4222481",
@@ -1705,5 +1814,6 @@
       "selection": "deferred-this-batch",
       "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
     }
-  ]
+  ],
+  "selectionTimingNote": "createdAtは初回選定ファイルの記録時刻。Web探索前だったという独立ログは残っていない。選定理由は計画、実施結果はoutcomesと取得記録で区別。"
 }
