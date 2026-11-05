@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "sourceCRS": "JGD2011 geographic; Web Mercator tile lattice; MVT local x right/y down",
+  "source": "国土地理院最適化ベクトルタイル",
+  "method": "PMTiles v1 Range取得、z16 BldAを全描画。未同定外形からの座標派生はしない。",
+  "rows": [
+    {
+      "id": "sado",
+      "path": "data/evidence/location-batch2/hokuriku/sado.pbf.gz",
+      "sha256": "a9e5c21e36f652ac65d0bd65f6f880726b6fa44373e620a63b0cc916471eaa34",
+      "bytes": 4489,
+      "tile": {
+        "z": 16,
+        "x": 57957,
+        "y": 25274
+      },
+      "extent": 4096,
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "seed": {
+        "lat": 38.01829995398106,
+        "lng": 138.36814709390015
+      },
+      "seedUse": "探索範囲だけ。包含地物の自動採用なし",
+      "buildingFeatures": 53,
+      "candidateCoordinate": null
+    },
+    {
+      "id": "sawata",
+      "path": "data/evidence/location-batch2/hokuriku/sawata.pbf.gz",
+      "sha256": "2c0ad2575b55ed12535f392131d5c6fb5e13b62a425ac56f480a383c65e1482e",
+      "bytes": 8168,
+      "tile": {
+        "z": 16,
+        "x": 57948,
+        "y": 25279
+      },
+      "extent": 4096,
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "seed": {
+        "lat": 37.99812392540416,
+        "lng": 138.3225069179761
+      },
+      "seedUse": "探索範囲だけ。包含地物の自動採用なし",
+      "buildingFeatures": 302,
+      "candidateCoordinate": null
+    },
+    {
+      "id": "wajima",
+      "path": "data/evidence/location-batch2/hokuriku/wajima.pbf.gz",
+      "sha256": "6c4ab87d4dbaa122c51867ffdf898c6287fb9001b88ea715e29fb1649c4c9469",
+      "bytes": 12516,
+      "tile": {
+        "z": 16,
+        "x": 57690,
+        "y": 25419
+      },
+      "extent": 4096,
+      "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+      "seed": {
+        "lat": 37.38892691992177,
+        "lng": 136.9041497718089
+      },
+      "seedUse": "探索範囲だけ。包含地物の自動採用なし",
+      "buildingFeatures": 406,
+      "candidateCoordinate": null
+    }
+  ],
+  "sourceVersion": "2026-07-01 per official readme; retrieval 2026-11-05",
+  "sourceAccuracy": "元図の編集・一般化を含む。現地測量精度未確認。座標派生・丸め・代表点計算は未実施。"
+}

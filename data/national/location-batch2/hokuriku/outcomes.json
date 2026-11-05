@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "region": "hokuriku",
+  "issue": 38,
+  "asOf": "2026-11-05",
+  "selectionCount": 8,
+  "numericLeadCount": 1,
+  "proposedAdoptionCount": 0,
+  "adoptedCount": 0,
+  "heldCount": 8,
+  "rows": [
+    {
+      "facilityId": "facility:chubu-east-23bfc837f9708f3a5bff",
+      "name": "佐渡市役所本庁舎1F 総合案内窓口",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/3",
+      "newMethod": "新庁舎建設時の配置図・竣工資料とGSI試験Vectorの比較",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "竣工案内で新旧庁舎の棟区別を確認。旧P05点を探索範囲にのみ用いz16外形を確認したが、西側の外形は取得タイル端に接し、新庁舎全体の同定・結合を完了していない。旧点は採用しない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/1",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/2"
+      ],
+      "stopCondition": "取得1タイルだけの外形と概略平面図から新庁舎の代表点を確定しない。",
+      "resumeCondition": "西側隣接タイルを含む外形結合と、竣工配置図・道路配置による新庁舎の独立対応を確認する。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-3309d6639e95492f62ff",
+      "name": "佐渡市役所本庁舎1F 宿日直室",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/5",
+      "newMethod": "新庁舎建設時の配置図・竣工資料とGSI試験Vectorの比較",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "竣工案内で新旧庁舎の棟区別を確認。旧P05点を探索範囲にのみ用いz16外形を確認したが、西側の外形は取得タイル端に接し、新庁舎全体の同定・結合を完了していない。旧点は採用しない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/1",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/2"
+      ],
+      "stopCondition": "取得1タイルだけの外形と概略平面図から新庁舎の代表点を確定しない。",
+      "resumeCondition": "西側隣接タイルを含む外形結合と、竣工配置図・道路配置による新庁舎の独立対応を確認する。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-9720552572da10795a23",
+      "name": "佐和田市民センター",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/15",
+      "newMethod": "公共施設個別計画・配置図で旧GIS競合を照合",
+      "status": "held",
+      "stage": "conflict-review",
+      "finding": "管理計画は会館の離島開発総合センターと旧圏民センターを区別。P05周辺のVector外形を取得したが、旧GISとの約500m競合を解消する棟名付き地理参照資料は得られない。法テラス移転仕様書の直接取得は404。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/3",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/4"
+      ],
+      "stopCondition": "管理計画の棟名やP05点の包含だけでは、競合の正誤を決定できない。",
+      "resumeCondition": "現市民センター・中央会館・用途転用された旧圏民センターを識別する配置図と旧GIS点の対象説明を取得。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-d96a5cb4a1b2f5fc4173",
+      "name": "佐渡中央会館",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/27",
+      "newMethod": "公共施設個別計画・配置図で旧GIS競合を照合",
+      "status": "held",
+      "stage": "conflict-review",
+      "finding": "管理計画は会館の離島開発総合センターと旧圏民センターを区別。P05周辺のVector外形を取得したが、旧GISとの約500m競合を解消する棟名付き地理参照資料は得られない。法テラス移転仕様書の直接取得は404。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/3",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/4"
+      ],
+      "stopCondition": "管理計画の棟名やP05点の包含だけでは、競合の正誤を決定できない。",
+      "resumeCondition": "現市民センター・中央会館・用途転用された旧圏民センターを識別する配置図と旧GIS点の対象説明を取得。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-d003d24aec02be8d661e",
+      "name": "輪島市上下水道局 1階窓口",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/26",
+      "newMethod": "局庁舎の公共施設資料・配置図を探索",
+      "status": "held",
+      "stage": "candidate-building-correspondence",
+      "finding": "別の市施設詳細にcenterと異なるmarkerInfos座標を発見。Vectorを探索したが、局庁舎の形・周辺配置を独立に識別する資料がない。CRS未記載markerの包含だけで外形を採用しない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/9",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/11"
+      ],
+      "stopCondition": "マーカーのCRS/作成方法と建物同定の独立根拠が不足。",
+      "resumeCondition": "局庁舎を示す配置図・外観と周辺配置、または施設マーカーのCRS/位置意味の一次説明を取得。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-08e3cd9cb85e36189dcd",
+      "name": "福井市一乗谷朝倉氏遺跡復原町並",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/0",
+      "newMethod": "復原町並の受付を示す配置図を探索",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "公式ポータルの地図はGoogle埋込、別の市周辺地図は遺跡の概略図。南北のチケット売場棟を数値外形へ接続できない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/8",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/12"
+      ],
+      "stopCondition": "遺跡全体・Google埋込・駐車場を受付棟の点として代用しない。",
+      "resumeCondition": "南北いずれかのカード受取可能なチケット売場を明記した建物配置資料と利用可能な外形を取得。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-1a2846e8da90dda974fe",
+      "name": "道の駅朝日 朝日みどりの里物産会館",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/1",
+      "newMethod": "道の駅再整備資料で物産会館棟を照合",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "新旧配置計画と運営者の渡廊下説明で、物産会館と食堂・将来の販売棟を区別できた。今回数値原典との結合や再整備中の現況外形の照合は完了していない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/5",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/6",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/16"
+      ],
+      "stopCondition": "計画の新販売棟や旧配置の位置を現配布建物点として無条件採用しない。",
+      "resumeCondition": "現況の物産会館の外形を、計画の整備前配置・渡廊下・周辺配置と照合し、利用可能なVector等へ地理参照する。",
+      "coordinate": null,
+      "adoptionBinding": null
+    },
+    {
+      "facilityId": "facility:chubu-east-1def973f29471b191a99",
+      "name": "雲龍山勝興寺",
+      "previousRef": "data/national/issue7/hokuriku.json#/unresolved/2",
+      "newMethod": "寺院境内配置図・受付建物資料を探索",
+      "status": "held",
+      "stage": "building-comparison",
+      "finding": "寺院公式の伽藍配置図を取得・目視。文化財の総門・唐門等は区別できるが拝観受付の建物名対応がない。",
+      "sourceRefs": [
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/7",
+        "data/evidence/location-batch2/hokuriku/retrievals.json#/10"
+      ],
+      "stopCondition": "境内中心や本堂・総門を受付建物と見なさない。",
+      "resumeCondition": "拝観受付の棟を識別する管理者案内・配置資料を取得し、同じ建物の外形/施設点へ接続。",
+      "coordinate": null,
+      "adoptionBinding": null
+    }
+  ]
+}

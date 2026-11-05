@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "rows": [
+    {
+      "sourceId": "sado-construction",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/0",
+      "locator": "本文「完成」「その他」",
+      "finding": "2024年3月改修完了、5月7日業務完全移行。新庁舎を第1庁舎、従来建物を第2庁舎と区別。",
+      "sourceVersion": "2024年2–3月工事進捗"
+    },
+    {
+      "sourceId": "sado-plan",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/1",
+      "locator": "PDF物理2–3頁",
+      "finding": "新庁舎建設中の範囲と予定全体計画を掲載。現況確定図ではなく予定として読む。",
+      "sourceVersion": "2022年時点（2023年10月31日竣工予定の記載）"
+    },
+    {
+      "sourceId": "sado-guide",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/15",
+      "locator": "PDF物理2頁・4頁",
+      "finding": "第1庁舎と第2庁舎の平面形が異なり渡廊下で接続。旧本庁舎を第2庁舎へ改修した経緯を明記。",
+      "sourceVersion": "令和6年5月"
+    },
+    {
+      "sourceId": "sado-floor",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/2",
+      "locator": "PDF1階窓口欄",
+      "finding": "新庁舎の窓口部門と千種232を確認。室内位置測量は不要だが旧建物点の共有はしない。",
+      "sourceVersion": "資料本文に発行日なし"
+    },
+    {
+      "sourceId": "sawata-management",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/3",
+      "locator": "PDF物理49頁・78頁",
+      "finding": "佐渡中央会館離島開発総合センター（管理No590-1）と旧圏民センター（590-2）は別行。用途転用後の名称を同一の会館点へ機械的に統合しない。",
+      "sourceVersion": "令和4年3月改訂（表紙）"
+    },
+    {
+      "sourceId": "sado-relocation",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/4",
+      "locator": "HTTP取得結果",
+      "finding": "検索で見つかった法テラス移転仕様書は直接取得404。検索要約を原本確認として使わない。",
+      "sourceVersion": "取得不能"
+    },
+    {
+      "sourceId": "wajima-water-building",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/11",
+      "locator": "HTML .body と data-map-view-target=setting",
+      "finding": "河井町21-1の上下水道局。OSMを背景に使う設定でcenterとmarkerInfosは異なる。marker座標は建物測量/CRSの説明を伴わない。",
+      "sourceVersion": "公開日2021-05-25、取得時点HTML"
+    },
+    {
+      "sourceId": "ichijodani-layout",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/8",
+      "locator": "HTML iframe.GoogleMap",
+      "finding": "「復原町並のマップ」はGoogle埋込。復原町並の利用者サービスにカードはあるが、南北チケット売場の独立数値ではない。",
+      "sourceVersion": "取得時点HTML"
+    },
+    {
+      "sourceId": "ichijodani-surroundings",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/12",
+      "locator": "PDF物理1頁（画像）",
+      "finding": "復原町並や周辺遺跡の広域図。チケット売場棟の外形を識別できる詳細図ではない。",
+      "sourceVersion": "本文に発行日なし"
+    },
+    {
+      "sourceId": "asahi-plan",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/5",
+      "locator": "PDF物理1頁「整備前」「整備後」「施設配置計画図」",
+      "finding": "整備前は食堂と物産会館が隣接。整備後は民間活用スペースとなる区画と新販売棟を分離。計画の販売棟を現在の配布棟へ代用しない。",
+      "sourceVersion": "説明会資料、詳細は今後の設計で変更される旨あり"
+    },
+    {
+      "sourceId": "asahi-baseline",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/6",
+      "locator": "PDF図2-2・表2-2（本文7頁）",
+      "finding": "物産会館は木造平屋940㎡として食堂419㎡と区別。旧配置を現時点の竣工状況の証拠にしない。",
+      "sourceVersion": "道の駅朝日拡充基本計画"
+    },
+    {
+      "sourceId": "asahi-current",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/16",
+      "locator": "HTML物産会館案内・多目的トイレ説明",
+      "finding": "運営者は物産会館と食堂間の渡廊下を案内。新販売棟への配布移転までは記載していない。",
+      "sourceVersion": "記事2020-03-04、更新表示2026-11-02"
+    },
+    {
+      "sourceId": "shoukouji-layout",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/7",
+      "locator": "HTML各番号の建築説明",
+      "finding": "本堂など13番号の文化財配置。寺院全体と入口受付建物を区別する必要がある。",
+      "sourceVersion": "取得時点HTML"
+    },
+    {
+      "sourceId": "shoukouji-map",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/10",
+      "locator": "画像全体・総門周辺",
+      "finding": "総門13・唐門11・鼓堂12は描かれるが、カードを受け取る拝観受付棟を名称付きで確定できない。",
+      "sourceVersion": "取得時点画像"
+    },
+    {
+      "sourceId": "gsi-readme",
+      "retrievalRef": "data/evidence/location-batch2/hokuriku/retrievals.json#/14",
+      "locator": "公開の位置づけ・PMTiles版更新情報",
+      "finding": "2026年7月1日時点のPMTiles。試験公開で基本測量成果ではない。GSI規約に従い出典を表示する。",
+      "sourceVersion": "2026-07-01データ、取得2026-11-05"
+    }
+  ]
+}
