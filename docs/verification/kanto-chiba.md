@@ -50,6 +50,48 @@
 
 ---
 
+## 全17ID統合の通常フック実行証跡
+
+対象データcommit: `fdcbf4d74edee88214213b86de2f2a201d686bbe`。コマンド: `mise exec -- git commit -m 'research: 千葉17施設の並行調査と未承認候補を統合'`、終了コード0。入力hashは[batch2/validation.json](../../data/evidence/kanto-prefecture/chiba/batch2/validation.json)に対応し、記録追記前に全hashを再照合した。validationHeadの05f1bbeは当時のHEAD、今回の研究ファイル本体はこのデータcommitで固定される。
+
+フックの `go test -count=1 ./...` は成功。`TestNationalAssemblyFailureGuards` が全国Pythonを内包する同じ実装を使用し、手動の全suiteを重ねていない。後続はこの証跡を記す文書のみで、研究データ/製品コードは同一。子の限定検証・県内仮選択成功と、未承認の建物判断/CRSを混同しない。
+
+```text
+╭──────────────────────────────────────╮
+│ lefthook  v2.2.2   hook:  pre-commit │
+╰──────────────────────────────────────╯
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	76.222s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.003s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+  ────────────────────────────────────
+summary: (done in 76.98 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (76.98 seconds)
+```
+
 ## 初回Draftの歴史記録（head 05f1bbe 時点）
 
 
