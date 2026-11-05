@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-281213c5dc294c44f2e5",
+      "coordinate": {
+        "lat": 35.37028971,
+        "lng": 139.225494
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.japan47go.travel/ja/detail/a0fb6c4c-f3eb-4fd3-8b84-681c45b66e5a",
+        "snapshotPath": "data/evidence/issue7/south-kanto/9e1fa2f9b4f28dfb07c27fbf.raw",
+        "snapshotSHA256": "f9f530e88dc7b8915b0fcf5ca561c406d3d2f2cc3de877b222f23894ee32c88b",
+        "sourceLocator": "script[type=application/ld+json] LocalBusiness=秦野駅観光案内所; 大秦町1-1; telephone=0463-80-2303; geo.latitude/geo.longitude。出典：日本観光振興協会 JAPAN47GO。2数値を抽出し変換なし。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが市配布案内・運営者の大秦町1-1小田急マルシェ秦野1階とDBの名称・住所・電話を照合。建物代表点であり入口・室内の測量ではない。原典に測地系明記なし。原本全文の公開許諾は認定しない。"
+      }
+    }
+  ],
+  "review": "data/national/issue7/reviews/south-kanto.json",
+  "note": "独立レビューの追加候補を親が原数値・施設名・電話・hash照合して採用。元調査の保留理由は履歴として保持。"
+}

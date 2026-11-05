@@ -1,0 +1,1858 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-11-05",
+  "actorType": "ai",
+  "reviewType": "independent",
+  "input": {
+    "path": "data/national/issue7/tokai.json",
+    "sha256": "9f76fc1819df28ce9ab89cda741c43c1ee089fb5102c5f2501e3fd098317ae55"
+  },
+  "criteria": "現施設と原典建物の合理的対応、建物代表点。入口・室内測量、2022以後改修なしの一律証明は不要。既知移転・別棟・座標競合は個別評価。",
+  "summary": {
+    "candidateCount": 17,
+    "accepted": 17,
+    "deferred": 35,
+    "correctionRequired": 0,
+    "acceptedCorrectionOperations": 9
+  },
+  "acceptedFacilityIds": [
+    "facility:chubu-iwata-water-counter",
+    "facility:chubu-minokamo-water-counter",
+    "facility:chubu-takayama-nakabashi",
+    "facility:chubu-west-08f2e7d930fa90a462e3",
+    "facility:chubu-west-13e9f9c24308f83ef3cd",
+    "facility:chubu-west-27d3e9286d3414e0cb80",
+    "facility:chubu-west-3ae4954df5521d92e778",
+    "facility:chubu-west-5c2eca0bf60a3cf39536",
+    "facility:chubu-west-5ea337a795edcf07581c",
+    "facility:chubu-west-8b10b99e9d58aaa58550",
+    "facility:chubu-west-aa2f784642e8d8d09de7",
+    "facility:chubu-west-b2f09c0252344a65be02",
+    "facility:chubu-west-b8c6ad4784789086f0d7",
+    "facility:chubu-west-e4875744d6ee2c5a0a4f",
+    "facility:chubu-west-f314eee8a2d1753372ca",
+    "facility:chubu-west-f860c41765b78b59c083",
+    "facility:chubu-yoshida-water-counter"
+  ],
+  "decisions": [
+    {
+      "facilityId": "facility:chubu-iwata-water-counter",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 34.681536,
+        "lng": 137.881063
+      },
+      "reason": "現行配布案内の福田400・福田支所2階とP05福田支所が一致。休館日代替という配布関係は座標承認と別。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/825; 福田支所 / 磐田市福田400",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行配布案内が福田400の福田支所2階を明記。名称住所はP05と一致。既知の移転・別棟矛盾はなく、改修履歴の不存在証明は建物代表点に不要。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-iwata-water-counter",
+        "coordinate": {
+          "lat": 34.681536,
+          "lng": 137.881063
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22211",
+            "P05_002": "2",
+            "P05_003": "福田支所",
+            "P05_004": "磐田市福田400"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.881063,
+              34.681536
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/825",
+        "gmlPosition": "34.68153600 137.88106300",
+        "gmlPoint": "pt825",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/bdfdefe3c6f22a457c32.html",
+          "snapshotSHA256": "adf0ec3ec5c76c0891313f103a9509b207fa701d5e0b68c8dc97ab6a266bc476",
+          "sourceUrl": "http://www.city.iwata.shizuoka.jp/kurashi_tetsuzuki/jougesuidou/gedsuidou/1004578.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-minokamo-water-counter",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.441741685039354,
+        "lng": 137.01337966257734
+      },
+      "reason": "市原本が上下水道課を太田町1900の分庁舎と明示。P05も分庁舎であり本庁の点の流用ではない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/667; 美濃加茂市役所分庁舎 / 美濃加茂市太田町1900",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行市配布案内は美濃加茂市上下水道課（市役所分庁舎）、太田町1900と明示。P05も分庁舎の同名同住所で本庁舎ではない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-minokamo-water-counter",
+        "coordinate": {
+          "lat": 35.441741685039354,
+          "lng": 137.01337966257734
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "21211",
+            "P05_002": "2",
+            "P05_003": "美濃加茂市役所分庁舎",
+            "P05_004": "美濃加茂市太田町1900"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.01337966257734,
+              35.441741685039354
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+        "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/667",
+        "gmlPosition": "35.44174169 137.01337966",
+        "gmlPoint": "pt667",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/21f980de953d19733592.html",
+          "snapshotSHA256": "0a24650915a6ba2ba5693bc6fcd6e7b386bfac0e2ef44fb1de45bd2e76eb51b2",
+          "sourceUrl": "https://www.city.minokamo.lg.jp/soshiki/17/1948.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-takayama-nakabashi",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 36.1400326,
+        "lng": 137.2587576
+      },
+      "reason": "施設個別ページの本町1-2、中橋観光案内所とid4827が対応。iframe place目的地qとgConfが同値。一般規約は開放許諾ではなく、採用判断は単独座標事実に限る。",
+      "evidence": {
+        "sourceUrl": "https://www.hidatakayama.or.jp/spot/detail_4827.html",
+        "snapshotPath": "data/evidence/issue7/tokai/f6bc175ab9f7279ed939.html",
+        "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+        "sourceLocator": "施設名「中橋観光案内所」、本町1-2; iframe embed/v1/place q=36.1400326,137.2587576; gConf(id:4827)と一致",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが今回取得した公式原本の名称付き目的地数値を抽出。飛騨高山観光公式の中橋観光案内所ページは本町1-2を明記し、当該施設iframeのplace数値qとgConfが一致。Google本体応答の抽出ではなく公式HTMLが指定する施設目的地。 原本に明示的な測地系の記載は未確認。Web地図用緯度経度として無変換で使用し、測量精度やWGS84への変換済みを主張しない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-takayama-nakabashi",
+        "coordinate": {
+          "lat": 36.1400326,
+          "lng": 137.2587576
+        },
+        "snapshotPath": "data/evidence/issue7/tokai/f6bc175ab9f7279ed939.html",
+        "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+        "evidenceFieldsMatchGo": true,
+        "rawNumbers": [
+          "36.1400326",
+          "137.2587576"
+        ],
+        "sourceAxisOrder": "gConf lat,lng; iframe q latitude,longitude",
+        "crs": "not explicitly stated in source",
+        "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/f6bc175ab9f7279ed939.html",
+          "snapshotSHA256": "eae2f3d9587b3c427e51c6b3e505c8434ef0c5edcbcaea7923ec9db5e56ca5b8",
+          "sourceUrl": "https://www.hidatakayama.or.jp/spot/detail_4827.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/b39bcaad6855c4f2f641.html",
+          "snapshotSHA256": "ff1e78064454f305782815ec5fcdfb96b2b735174411c5746e6ab2bfc19790d2",
+          "sourceUrl": "https://www.hidatakayama.or.jp/js/commonSpotMap.js"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/d1b919ec668692177f76.html",
+          "snapshotSHA256": "2255ec45e4d6817a1469e5d39e0a7ada47c51130d18e13d8b6da404203819ac4",
+          "sourceUrl": "https://www.hidatakayama.or.jp/sitePolicy/"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.391682842156115,
+        "lng": 136.68977610431787
+      },
+      "reason": "市施設原本が市民センターを穂積公民館・体育館の複合施設と明示。配布住所別府1300-3とP05穂積公民館が一致。建物代表点として合理的であり1階内部測量は要求しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/887; 穂積公民館 / 瑞穂市別府1300-3",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。市施設案内2207.htmが市民センターは瑞穂市穂積公民館と瑞穂市体育館の複合施設と明示。別府1300-3のP05穂積公民館を同定。体育館内部や1階窓口の精密測位は主張しない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-08f2e7d930fa90a462e3",
+        "coordinate": {
+          "lat": 35.391682842156115,
+          "lng": 136.68977610431787
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "21216",
+            "P05_002": "4",
+            "P05_003": "穂積公民館",
+            "P05_004": "瑞穂市別府1300-3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.68977610431787,
+              35.391682842156115
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+        "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/887",
+        "gmlPosition": "35.39168284 136.68977610",
+        "gmlPoint": "pt887",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/70b7463e46200328b402.html",
+          "snapshotSHA256": "c38c85a0cdad7211e59b69856911c7d762fbac0177e58598748e25b52abe2f56",
+          "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/b0667f0b06a1b8c410cd.html",
+          "snapshotSHA256": "e619e11b2f1c8f3662c09cbd84cb37cd4cfc8725a31bbb9b7e2713e90931f3d5",
+          "sourceUrl": "https://www.city.mizuho.lg.jp/3326.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/daaf0d81ff92399e414f.html",
+          "snapshotSHA256": "1624ed36bf95e2fdb424f16ee89d220fa47e03a2dd5f539e5571c10a38574c1e",
+          "sourceUrl": "https://www.city.mizuho.lg.jp/2207.htm"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 34.990793,
+        "lng": 137.010975
+      },
+      "reason": "観光協会原本が相生町1-1-6産業振興センター1Fと明示。P05収容建物点を採用。観光目的地34.99063742782774,137.01125979423523との約31m差は保持するが、目的地側の建物内位置は不明であり建物内位置検査対象のP05を優先する。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_23_GML.zip!P05-22_23.geojson#/features/969; 産業振興センター / 刈谷市相生町1-1-6",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。観光協会施設案内が刈谷駅前観光案内所の入居先を産業振興センター1F、相生町1-1-6と明示。P05産業振興センターの建物点を使用。観光協会HTMLの案内所目的地(34.99063742782774,137.01125979423523)とは約31m異なる。名称・住所と入居先が一致する一方、観光目的地の点を建物内部と判断する根拠はないため、建物外周内を位置検査対象とするP05収容建物点を優先。別数値を平均・付け替えせず記録する。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-13e9f9c24308f83ef3cd",
+        "coordinate": {
+          "lat": 34.990793,
+          "lng": 137.010975
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "23210",
+            "P05_002": "5",
+            "P05_003": "産業振興センター",
+            "P05_004": "刈谷市相生町1-1-6"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              137.010975,
+              34.990793
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "9ef9d45417b051bb52484063c8a1e702754e4fa95694846d8262f55cdc6810f1",
+        "locator": "P05-22_23_GML.zip!P05-22_23.geojson#/features/969",
+        "gmlPosition": "34.99079300 137.01097500",
+        "gmlPoint": "pt969",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/0cbc6863108b3d6f11ce.html",
+          "snapshotSHA256": "cd6d75ab3edb78202a0d358ea4d6a24d3d38f69760136477ccfe4aa7670e7b86",
+          "sourceUrl": "https://www.gk-p.jp/mhcard/?pref=zenkoku"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/030e9c0b756eaa1cf077.html",
+          "snapshotSHA256": "98e36a97017dfef89468963f42a157acfec5390760d6e04bcd78e161449d6465",
+          "sourceUrl": "https://www.kariya-guide.com/sightseeing/000107.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.44226985301179,
+        "lng": 136.5729551431789
+      },
+      "reason": "町の配布案内・役場所在地六之井1468-1とP05池田町役場が一致。別棟移転を示す証拠は今回の原本にない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/1317; 池田町役場 / 池田町六之井1468-1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行配布案内は池田町役場、町庁舎案内・所在地は六之井1468-1。P05同名同住所を建物代表点として同定。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-27d3e9286d3414e0cb80",
+        "coordinate": {
+          "lat": 35.44226985301179,
+          "lng": 136.5729551431789
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "21404",
+            "P05_002": "1",
+            "P05_003": "池田町役場",
+            "P05_004": "池田町六之井1468-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.5729551431789,
+              35.44226985301179
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+        "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/1317",
+        "gmlPosition": "35.44226985 136.57295514",
+        "gmlPoint": "pt1317",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/689a8f5590d85ab5f9a8.html",
+          "snapshotSHA256": "1fecd0323fb1bade04ceff4d89071e5bdda60bce91ef5403433d1848f322bfc0",
+          "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001112.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/1df63d0b9fe3f8c12a08.html",
+          "snapshotSHA256": "1bdf19f9f6a745c8ef6eeaba0a942d7741c04f391c71bda7addf0619e4286c96",
+          "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000001139.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/a51e2b7e826fe8e1fcc1.html",
+          "snapshotSHA256": "1db865f59e354add08c847fae30f225ea87d6c989f4e624a2a23df160604d984",
+          "sourceUrl": "https://www.town.gifu-ikeda.lg.jp/0000000042.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.096402,
+        "lng": 138.863022
+      },
+      "reason": "配布案内の水道部1階守衛室とAED ID30の水道部庁舎を名称・電話934-4851で対応付け。AED1階自動ドア前の公開点は建物代表として十分。統合コピーの住所2-20訂正を必須とする。",
+      "evidence": {
+        "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "sourceLocator": "AED設置箇所一覧 HTML table; ID=0000000030; 名称=水道部庁舎; 緯度・経度列; 設置位置=1階自動ドア前",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが今回取得した公式原本の名称付き目的地数値を抽出。県公開の沼津市AEDデータID 0000000030は水道部庁舎、御幸町2-20、1階自動ドア前、電話934-4851。現行市配布案内が水道部庁舎1階守衛室、電話一覧が同庁舎水道総務課庶務係934-4851を明示。同一建物を電話・名称・階で対応付け。台帳16-1は本庁住所なので訂正提案を分離。 原本に明示的な測地系の記載は未確認。Web地図用緯度経度として無変換で使用し、測量精度やWGS84への変換済みを主張しない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+        "coordinate": {
+          "lat": 35.096402,
+          "lng": 138.863022
+        },
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "evidenceFieldsMatchGo": true,
+        "rawRow": [
+          "222038",
+          "0000000030",
+          "静岡県沼津市",
+          "水道部庁舎",
+          "スイドウブチョウシャ",
+          "",
+          "222038",
+          "",
+          "静岡県沼津市御幸町2-20",
+          "静岡県",
+          "沼津市",
+          "御幸町",
+          "2-20",
+          "",
+          "35.096402",
+          "138.863022",
+          "",
+          "",
+          "1階自動ドア前",
+          "(055)934-4851",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "8000020222038",
+          "沼津市",
+          "月火水木金",
+          "08:30:00",
+          "17:15:00",
+          "祝日、休日、年末年始を除く",
+          "",
+          "https://city.numazu.shizuoka.jp/kurashi/anshin/aed/setti.htm",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sourceAxisOrder": "table 緯度 then 経度",
+        "crs": "not explicitly stated in source",
+        "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+          "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+          "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+          "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+          "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+          "sourceUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+          "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+          "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf"
+        }
+      ],
+      "requiredCorrectionIds": [
+        "tokai-correction-8"
+      ]
+    },
+    {
+      "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.095646,
+        "lng": 138.863556
+      },
+      "reason": "配布案内の本庁1階総合案内と御幸町16-1市役所P05点が対応。階図は別館と総合案内を区別し、本庁AED点も近傍。2-20の水道部とは別建物。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/437; 沼津市役所 / 沼津市御幸町16-1",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行配布案内は本庁舎1階総合案内。P05沼津市役所御幸町16-1を、2026年の市役所施設案内と県公開AEDの同住所1階正面玄関横・3階医務室内の2点に照合。P05は両点付近の本庁舎、別住所2-20の水道部庁舎とは約100m離れており区別。今回取得した本庁舎1階図で総合案内は正面玄関側、別館とは区別されている。総合案内の室内位置としては主張しない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-5c2eca0bf60a3cf39536",
+        "coordinate": {
+          "lat": 35.095646,
+          "lng": 138.863556
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22203",
+            "P05_002": "1",
+            "P05_003": "沼津市役所",
+            "P05_004": "沼津市御幸町16-1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.863556,
+              35.095646
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/437",
+        "gmlPosition": "35.09564600 138.86355600",
+        "gmlPoint": "pt437",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+          "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+          "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+          "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+          "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+          "sourceUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/24b83d2414b8a89210f1.html",
+          "snapshotSHA256": "f97775aa1c150fa20740ae242d4a1198fb26c35f9ede6c684a12f51a810e57f6",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/shiyakusho.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ffafe8f6cde99e31919f.html",
+          "snapshotSHA256": "73dbab8381d3ac6c8c617f166688e05d9bad19b4c13deed74413590b88922193",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/index.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/461674246c693ff28338.html",
+          "snapshotSHA256": "2797f79042e3ffe7f8216648ba03313de113ca8c6679eb1e0bd977db11db53f2",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/1kai.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+          "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+          "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/aa38a6dd6bfd53f55af8.html",
+          "snapshotSHA256": "aec4161ceef521c6db4ed8581b269301bd761329f1775b0b9708803b2fd2c08e",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu/office_map/images/1f.gif"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.222064,
+        "lng": 138.621654
+      },
+      "reason": "元22-207-C001 proposalは寄って宮休業時の臨時配布。現行逆さ富士案内の当直室は弓沢町150の市役所。庁舎移転という旧保留理由は撤回可能。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525; 富士宮市役所 / 富士宮市弓沢町150",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。旧移転理由は誤読。元地域監査の22-207-C001 proposalsは寄って宮休業時の臨時配布。現在の逆さ富士配布案内は市役所1階当直室で、下水道課案内は弓沢町150の市役所5階。P05富士宮市役所を同定。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+        "coordinate": {
+          "lat": 35.222064,
+          "lng": 138.621654
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22207",
+            "P05_002": "1",
+            "P05_003": "富士宮市役所",
+            "P05_004": "富士宮市弓沢町150"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.621654,
+              35.222064
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525",
+        "gmlPosition": "35.22206400 138.62165400",
+        "gmlPoint": "pt525",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/7bab59f2246fd1c52d07.html",
+          "snapshotSHA256": "23a8cdc40a34d5389f503712e403aa62383183fc94f13e5d1bc58db991d122a4",
+          "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ae84d27f2a27ba2fc791.html",
+          "snapshotSHA256": "6a8747f07e7e8c26ded7eb1d9946b13bf72c08bdf013697b5eb127c3e4b9cbc6",
+          "sourceUrl": "https://www.city.fujinomiya.lg.jp/info/p002518.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/be077840b22eb8efade3.html",
+          "snapshotSHA256": "34a4de3140c7cdc22d374602b4bef28445647cca4d3e685837158c83f42db110",
+          "sourceUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html"
+        }
+      ],
+      "requiredCorrectionIds": [
+        "tokai-correction-1",
+        "tokai-correction-2"
+      ]
+    },
+    {
+      "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 36.2350326,
+        "lng": 137.1863768
+      },
+      "reason": "旧・新モデルコース73のlabel4はまちなか観光案内所の名称と同一数値を持つ。市原本壱之町8-3と一致し駅横金森町8-32とは異なる。",
+      "evidence": {
+        "sourceUrl": "https://www.hida-kankou.jp/courses/73",
+        "snapshotPath": "data/evidence/issue7/tokai/ab548fdcccd6faf9a553.html",
+        "snapshotSHA256": "a98a8b8dc08fc34105a400eb556216ace03d21b66738fe1a533937432060527d",
+        "sourceLocator": "markerData.push label=4; name=飛騨古川まちなか観光案内所; lat/lng Number literals",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが今回取得した公式原本の名称付き目的地数値を抽出。飛騨市観光公式モデルコース73のmarkerData label 4は名称「飛騨古川まちなか観光案内所」と緯度経度を直接持つ。市配布案内の壱之町8-3の案内所と同定。駅横の別案内所と区別。 原本に明示的な測地系の記載は未確認。Web地図用緯度経度として無変換で使用し、測量精度やWGS84への変換済みを主張しない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+        "coordinate": {
+          "lat": 36.2350326,
+          "lng": 137.1863768
+        },
+        "snapshotPath": "data/evidence/issue7/tokai/ab548fdcccd6faf9a553.html",
+        "snapshotSHA256": "a98a8b8dc08fc34105a400eb556216ace03d21b66738fe1a533937432060527d",
+        "evidenceFieldsMatchGo": true,
+        "oldAndNewMarkerMatch": true,
+        "rawNumbers": [
+          "36.2350326",
+          "137.1863768"
+        ],
+        "sourceAxisOrder": "explicit lat/lng properties",
+        "crs": "not explicitly stated in source",
+        "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/d30b77eb8da1e0e2b8df.html",
+          "snapshotSHA256": "4e63247c2788b981c4d9d3a6e0b834e42968be4a7ace24326a97f23f9894c889",
+          "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/15/manhorucard.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ab548fdcccd6faf9a553.html",
+          "snapshotSHA256": "a98a8b8dc08fc34105a400eb556216ace03d21b66738fe1a533937432060527d",
+          "sourceUrl": "https://www.hida-kankou.jp/courses/73"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/f221fff7760089df9105.html",
+          "snapshotSHA256": "61623bbf861f1b257ec542e35add682973d67e53c9ddf5fa2d00257012835f34",
+          "sourceUrl": "https://www.city.hida.gifu.jp/soshiki/3/accsess.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/5765963b571a2ce68691.html",
+          "snapshotSHA256": "4b77180536621fa7bbd6ee6d915ea4b6a787230b5f7139df1691b7066fab6032",
+          "sourceUrl": "https://www.hida-kankou.jp/privacy"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/5dcf08d6151136fc2200.html",
+          "snapshotSHA256": "8106b428320bea82b2260301ec35a75ba60819caa0066ad24e25598dccf6dfc0",
+          "sourceUrl": "https://www.hida-kankou.jp/about-site"
+        }
+      ],
+      "requiredCorrectionIds": [
+        "tokai-correction-5",
+        "tokai-correction-6"
+      ]
+    },
+    {
+      "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.40406283064763,
+        "lng": 136.64978809698977
+      },
+      "reason": "市原本の宮田300番地2・巣南庁舎下水道課とP05 880が一致。879との約4m差は同住所同建物名称の重複で建物代表精度で競合しない。880を保持し平均しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/880; 瑞穂市役所巣南庁舎 / 瑞穂市宮田300-2",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行市配布案内は巣南庁舎下水道課、宮田300番地2。P05に同名同住所2点（879/880）が約4m離れて存在するが別棟名・異住所の競合ではなく、建物代表点精度では整合。正式市役所名の880を選択し平均は取らない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-aa2f784642e8d8d09de7",
+        "coordinate": {
+          "lat": 35.40406283064763,
+          "lng": 136.64978809698977
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "21216",
+            "P05_002": "2",
+            "P05_003": "瑞穂市役所巣南庁舎",
+            "P05_004": "瑞穂市宮田300-2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              136.64978809698977,
+              35.40406283064763
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "7b6ee3a9945fa0e18b28cb28b20fedfc8c89fbf98dfeac02ae576d1725ad275a",
+        "locator": "P05-22_21_GML.zip!P05-22_21.geojson#/features/880",
+        "gmlPosition": "35.40406283 136.64978810",
+        "gmlPoint": "pt880",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/70b7463e46200328b402.html",
+          "snapshotSHA256": "c38c85a0cdad7211e59b69856911c7d762fbac0177e58598748e25b52abe2f56",
+          "sourceUrl": "https://www.city.mizuho.lg.jp/12757.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/b0667f0b06a1b8c410cd.html",
+          "snapshotSHA256": "e619e11b2f1c8f3662c09cbd84cb37cd4cfc8725a31bbb9b7e2713e90931f3d5",
+          "sourceUrl": "https://www.city.mizuho.lg.jp/3326.htm"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.140919,
+        "lng": 138.895037
+      },
+      "reason": "町配布案内の納米里549ウエルピアと公開施設情報の健康づくりセンターが対応し、P05同名同住所を採用。役場とは区別。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1802; 健康づくりセンター / 長泉町納米里549",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。町配布案内と指定管理者アクセスはウエルピアながいずみ健康づくりセンター、納米里549。P05健康づくりセンター同住所の建物点を同定。町役場の点とは区別。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-b2f09c0252344a65be02",
+        "coordinate": {
+          "lat": 35.140919,
+          "lng": 138.895037
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22342",
+            "P05_002": "5",
+            "P05_003": "健康づくりセンター",
+            "P05_004": "長泉町納米里549"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.895037,
+              35.140919
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1802",
+        "gmlPosition": "35.14091900 138.89503700",
+        "gmlPoint": "pt1802",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ebff2daa14b40c2a38b6.html",
+          "snapshotSHA256": "18af16d1a718d299b204063584ca5b59fe35b608100414efb3dd486115d0f471",
+          "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/471237a79f01a04d41a2.html",
+          "snapshotSHA256": "48bd99aa424a2fc3ad4f6b3372687845712a616fabb6036a909cd0251ce16d94",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/283ab2d44063ad7bec6a.html",
+          "snapshotSHA256": "8717d910d893d45bd4a2561fd2f58d3ab773a08a885accf0574f22d11af30cf2",
+          "sourceUrl": "https://www.town.nagaizumi.lg.jp/Facility/index.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.1580946,
+        "lng": 138.6793826
+      },
+      "reason": "市配布原本は永田町1丁目100番地の北口守衛室。市1階図の北口に警備員室（夜間休日受付）があることを独立目視。P05富士市役所の建物代表点でよく県総合庁舎と混同しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/723; 富士市役所 / 富士市永田町1-100",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。市現行配布案内は富士市役所北口守衛室、永田町1丁目100番地。P05富士市役所の建物点を同定。県富士総合庁舎（本市場441-1）と区別し、北口の入口精密点は要求しない。今回取得した市庁舎1階図は北口に警備員室（夜間休日受付）を表示する。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-b8c6ad4784789086f0d7",
+        "coordinate": {
+          "lat": 35.1580946,
+          "lng": 138.6793826
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22210",
+            "P05_002": "1",
+            "P05_003": "富士市役所",
+            "P05_004": "富士市永田町1-100"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.6793826,
+              35.1580946
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/723",
+        "gmlPosition": "35.15809460 138.67938260",
+        "gmlPoint": "pt723",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/3b200be69fecf3ecbb2f.html",
+          "snapshotSHA256": "1f0ae5541cc6a436e1c2e308d3ea6f703e78a46033dee5bfb9b022eb8df589a4",
+          "sourceUrl": "https://www.city.fuji.shizuoka.jp/1545150000/p007434.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/f8d73c522298a8d9d06c.html",
+          "snapshotSHA256": "5404dc30e506f733a33a557db116ca385605de7dce61d1db97f2a6587a9e1939",
+          "sourceUrl": "https://www.city.fuji.shizuoka.jp/info/p005020.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/b8fc94687d970e5e38d2.html",
+          "snapshotSHA256": "a3991ad26a9fd4edb59dc97e075334aad5f9c48b1089205a5b83a1b9b7aa4bb3",
+          "sourceUrl": "https://www.city.fuji.shizuoka.jp/shiseijoho/gaiyo/chosha/floorguide/index.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/9812881ba1b21bdb8a85.html",
+          "snapshotSHA256": "5eddb68162add531e846703db332e8d09663119d8b3b623cbe6fdd1d64934137",
+          "sourceUrl": "https://www.city.fuji.shizuoka.jp/1005330000/p005001.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/88f983c8300051c05cb6.html",
+          "snapshotSHA256": "56470cb1aabc5f3a898c0e7652ba524545651014f7385e1eeb547dac52a1088a",
+          "sourceUrl": "https://www.city.fuji.shizuoka.jp/images/4943/1f_s.jpg"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.222064,
+        "lng": 138.621654
+      },
+      "reason": "市下水道課原本は弓沢町150、市役所5階。現行配布案内とも一致。臨時配布proposalを庁舎移転と読んだ旧理由は採用しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525; 富士宮市役所 / 富士宮市弓沢町150",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行下水道課ページが弓沢町150（市役所5階）を明記し配布案内も一致。旧臨時庁舎移転理由を元proposalに遡って棄却。P05富士宮市役所を同定。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+        "coordinate": {
+          "lat": 35.222064,
+          "lng": 138.621654
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22207",
+            "P05_002": "1",
+            "P05_003": "富士宮市役所",
+            "P05_004": "富士宮市弓沢町150"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.621654,
+              35.222064
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/525",
+        "gmlPosition": "35.22206400 138.62165400",
+        "gmlPoint": "pt525",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/7bab59f2246fd1c52d07.html",
+          "snapshotSHA256": "23a8cdc40a34d5389f503712e403aa62383183fc94f13e5d1bc58db991d122a4",
+          "sourceUrl": "http://www.city.fujinomiya.lg.jp/citizen/copy_of_visuf8000000xs1w.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ae84d27f2a27ba2fc791.html",
+          "snapshotSHA256": "6a8747f07e7e8c26ded7eb1d9946b13bf72c08bdf013697b5eb127c3e4b9cbc6",
+          "sourceUrl": "https://www.city.fujinomiya.lg.jp/info/p002518.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/be077840b22eb8efade3.html",
+          "snapshotSHA256": "34a4de3140c7cdc22d374602b4bef28445647cca4d3e685837158c83f42db110",
+          "sourceUrl": "https://www.city.fujinomiya.lg.jp/1045300000/p002597.html"
+        }
+      ],
+      "requiredCorrectionIds": [
+        "tokai-correction-3",
+        "tokai-correction-4"
+      ]
+    },
+    {
+      "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.137712,
+        "lng": 138.897258
+      },
+      "reason": "配布原本の長泉町役場・中土狩828・電話055-989-5524と連絡先原本の上下水道課本館2階が対応。P05役場を本館代表として採用。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1807; 長泉町役場 / 長泉町中土狩828",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行町配布案内は役場上下水道課、中土狩828。各課連絡先で上下水道課の本館2階を確認。P05長泉町役場の同名同住所点を本館代表点として対応付け。西館の課や窓口位置としては使用しない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-f314eee8a2d1753372ca",
+        "coordinate": {
+          "lat": 35.137712,
+          "lng": 138.897258
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22342",
+            "P05_002": "1",
+            "P05_003": "長泉町役場",
+            "P05_004": "長泉町中土狩828"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.897258,
+              35.137712
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1807",
+        "gmlPosition": "35.13771200 138.89725800",
+        "gmlPoint": "pt1807",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/ebff2daa14b40c2a38b6.html",
+          "snapshotSHA256": "18af16d1a718d299b204063584ca5b59fe35b608100414efb3dd486115d0f471",
+          "sourceUrl": "https://www.town.nagaizumi.lg.jp/soshiki/jyougesui/1_2/11067.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/471237a79f01a04d41a2.html",
+          "snapshotSHA256": "48bd99aa424a2fc3ad4f6b3372687845712a616fabb6036a909cd0251ce16d94",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/9608/resource/65286/content.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/283ab2d44063ad7bec6a.html",
+          "snapshotSHA256": "8717d910d893d45bd4a2561fd2f58d3ab773a08a885accf0574f22d11af30cf2",
+          "sourceUrl": "https://www.town.nagaizumi.lg.jp/Facility/index.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/e6e0c9743cee1aadf2e7.html",
+          "snapshotSHA256": "3d3026ede69b555be906c840d8782f5c6019f635a6d8889c213fe4a813f9850d",
+          "sourceUrl": "https://www.town.nagaizumi.lg.jp/contact/6480.html"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 35.096402,
+        "lng": 138.863022
+      },
+      "reason": "市原本は水道部庁舎2階水道総務課、電話一覧は同課庶務係934-4851。AEDの同電話・建物名・2-20で対応。1階点を2階窓口の精密点とはしない。統合コピーの住所訂正必須。",
+      "evidence": {
+        "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "sourceLocator": "AED設置箇所一覧 HTML table; ID=0000000030; 名称=水道部庁舎; 緯度・経度列; 設置位置=1階自動ドア前",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが今回取得した公式原本の名称付き目的地数値を抽出。県公開AED ID 0000000030の水道部庁舎を現行配布案内の水道部庁舎2階水道総務課及び公式電話一覧934-4851と同定。住所は2-20を根拠とし台帳16-1の訂正提案を分離。AEDは1階自動ドア前の建物代表点としてのみ使用し2階窓口精密点とはしない。 原本に明示的な測地系の記載は未確認。Web地図用緯度経度として無変換で使用し、測量精度やWGS84への変換済みを主張しない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+        "coordinate": {
+          "lat": 35.096402,
+          "lng": 138.863022
+        },
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "evidenceFieldsMatchGo": true,
+        "rawRow": [
+          "222038",
+          "0000000030",
+          "静岡県沼津市",
+          "水道部庁舎",
+          "スイドウブチョウシャ",
+          "",
+          "222038",
+          "",
+          "静岡県沼津市御幸町2-20",
+          "静岡県",
+          "沼津市",
+          "御幸町",
+          "2-20",
+          "",
+          "35.096402",
+          "138.863022",
+          "",
+          "",
+          "1階自動ドア前",
+          "(055)934-4851",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "8000020222038",
+          "沼津市",
+          "月火水木金",
+          "08:30:00",
+          "17:15:00",
+          "祝日、休日、年末年始を除く",
+          "",
+          "https://city.numazu.shizuoka.jp/kurashi/anshin/aed/setti.htm",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sourceAxisOrder": "table 緯度 then 経度",
+        "crs": "not explicitly stated in source",
+        "transformation": "none; published web-map latitude/longitude, not a survey or claimed WGS84 conversion"
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/3dc019aef1d363607a4d.html",
+          "snapshotSHA256": "83b179c24a7509e329ff8ce0ab5be861a91710be93c99524f5eca960389cdcc8",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/suido/shokai/sewage_line/mhcard.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+          "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/5d6a5a657358ead68b56.html",
+          "snapshotSHA256": "177a1c23a66a5ba66fdde90826fceb43bd821a5e432c2b183fb74700970ce81e",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/kurashi/shisetsu.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/daa7bc505327463f302c.html",
+          "snapshotSHA256": "94ebdbd8252d8e53ed2c4d770364f2bb7cf7089833a5028ee3858131edd6b6eb",
+          "sourceUrl": "https://city.numazu.shizuoka.jp/kurashi/telephone/index.htm"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/e4e50e38ee90453f7bca.html",
+          "snapshotSHA256": "a6400f52ec2e734367cec764117a6142e55d87cd9fe00e1be28a0f0d2f2f8a4b",
+          "sourceUrl": "https://opendata.pref.shizuoka.jp/dataset/8504.html"
+        },
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/bd8c7b07e9b638183f84.pdf",
+          "snapshotSHA256": "6551cd895b135c19d9528d8fca3c6a1b73d0efcd5bdd534646b5ff7b6d6987be",
+          "sourceUrl": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/seisaku/ictsuishin/doc/openkiyaku.pdf"
+        }
+      ],
+      "requiredCorrectionIds": [
+        "tokai-correction-9"
+      ]
+    },
+    {
+      "facilityId": "facility:chubu-yoshida-water-counter",
+      "status": "accepted",
+      "coordinateDecision": "accepted",
+      "scope": "building",
+      "coordinate": {
+        "lat": 34.77087,
+        "lng": 138.251943
+      },
+      "reason": "町配布原本はしらすの窓口定休日の吉田町役場2階上下水道課、住吉87。P05同名同住所と一致。代替配布条件は変更しない。",
+      "evidence": {
+        "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "sourceLocator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1837; 吉田町役場 / 吉田町住吉87",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "AIが国交省P05-22建物Pointの名称・住所を現行公式案内と照合。現行町配布案内はしらすの窓口定休日の代替が吉田町役場2階上下水道課、住吉87。P05同名同住所の建物点と照合。一般的な改修履歴証明だけを追加条件にしない。 EPSG:6668/JGD2011のGeoJSON原数値をlat/lngに順序変更のみ。P05の作成工程には住所ジオコーディングが含まれるが、本調査で住所から座標を生成してはいない。室内・入口測量ではない。"
+      },
+      "verification": {
+        "facilityId": "facility:chubu-yoshida-water-counter",
+        "coordinate": {
+          "lat": 34.77087,
+          "lng": 138.251943
+        },
+        "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+        "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+        "evidenceFieldsMatchGo": true,
+        "rawFeature": {
+          "type": "Feature",
+          "properties": {
+            "P05_001": "22424",
+            "P05_002": "1",
+            "P05_003": "吉田町役場",
+            "P05_004": "吉田町住吉87"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              138.251943,
+              34.77087
+            ]
+          }
+        },
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:EPSG::6668"
+          }
+        },
+        "sourceAxisOrder": "GeoJSON longitude,latitude; GML latitude,longitude",
+        "transformation": "axis reordering only; no WGS84 transformation",
+        "memberSHA256": "fc35fa93b34826c6de93a14e80d03ebcffb81de84c604d8c7d84e7b2e294bd50",
+        "locator": "P05-22_22_GML.zip!P05-22_22.geojson#/features/1837",
+        "gmlPosition": "34.77087000 138.25194300",
+        "gmlPoint": "pt1837",
+        "gmlWithin1e7Degree": true
+      },
+      "identitySources": [
+        {
+          "snapshotPath": "data/evidence/issue7/tokai/3e4a7c50833d565690c7.html",
+          "snapshotSHA256": "ca8f5de91413a455d96df746010b79aea652dfb362ef8a3ff0b9fecd8550dba9",
+          "sourceUrl": "http://www.town.yoshida.shizuoka.jp/6491.htm"
+        }
+      ],
+      "requiredCorrectionIds": []
+    },
+    {
+      "facilityId": "facility:chubu-irozaki-ocean-park",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "町の現行案内で年末年始の石廊崎546-5を再確認。運営者アクセスはTLS hostname mismatchで取得不能。公園名だけでは休憩棟を選べない。",
+      "nextSource": "運営者の休憩棟配置図と建物GIS"
+    },
+    {
+      "facilityId": "facility:chubu-tarui-tourist-information",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "町の現行案内は1812-10の駅北口案内所を明記するが数値建物点は掲載しない。P05に対象案内所の確実な一致なし。",
+      "nextSource": "垂井駅北口観光案内所の自治体施設GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-0bc3f40e4a788b25c5ee",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行案内の地図URLは施設名qとll表示中心のまま。観光公式アクセスにも対象建物の数値は得られなかった。駅構内という情報だけでllを採用しない。",
+      "nextSource": "伊東駅駅舎の公開建物外形と案内所入居説明"
+    },
+    {
+      "facilityId": "facility:chubu-west-1b6382f20cc3aec78ecd",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市の配布案内と観光協会aboutを再取得し栄町1-2-14を確認。今回取得HTMLに建物を特定した数値なし。Google制限先は再訪しない。",
+      "nextSource": "観光協会建物の自治体GISまたは施設台帳"
+    },
+    {
+      "facilityId": "facility:chubu-west-29febbd64ae38b41c6fc",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "観光公式配布ページと施設詳細を再取得。施設詳細には複数の地点・施設が含まれ、本社/史料館/売店のどの建物で配布するか未解決。",
+      "nextSource": "カクキューのカード配布棟と棟別配置図"
+    },
+    {
+      "facilityId": "facility:chubu-west-2c746636b1d8b34ff7c1",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行配布案内は第二庁舎1階。一般市役所施設ページの数値qは中央町1-1の庁舎代表で第二庁舎との対応を確定できず、P05第一庁舎候補を流用しない。",
+      "nextSource": "熱海第二庁舎の棟別GISと所在地"
+    },
+    {
+      "facilityId": "facility:chubu-west-2eab45ac31e88d3cb71e",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "県Wi-Fiの施設名付き点を再取得したが砂山町265-16と固定台帳265-13の差が残る。駅内建物の対応を示す資料を今回得られなかった。",
+      "nextSource": "観光案内所と駅舎の入居図及び住所対応"
+    },
+    {
+      "facilityId": "facility:chubu-west-305c4ff7d31e4b18d58b",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布先は新居関所史料館1227-5。観光協会埋込は新居関所の住所featureであり史料館棟の点にはしない。",
+      "nextSource": "史料館棟を識別できる市施設GISまたは建物外形"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "町配布案内と県の観光施設データを再取得。県の点は道の駅ふじおやま名で、観光案内所が入る棟との対応は今回未確定。",
+      "nextSource": "道の駅の観光案内所入居棟図と建物外形"
+    },
+    {
+      "facilityId": "facility:chubu-west-423fcab6c8f81568e652",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市の陶磁器会館施設詳細は403。別のやきもの散歩道公式案内を追加取得して住所・施設を調査。市ページへの制限回避は行わない。",
+      "nextSource": "陶磁器会館の建物目的地を示す公開GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-4404f19ea7b0642d5a01",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行市案内は中央公園内の千福7-1で、llは表示中心。観光協会公式は403。公園住所を事務所棟の点と言い換えない。",
+      "nextSource": "観光協会事務所の棟別地図"
+    },
+    {
+      "facilityId": "facility:chubu-west-44c55ff47f14ec6d456e",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行配布先北庁舎2階を確認。新たに有効な市ドメインの庁舎案内図ページを取得できたがP05一般市役所点と北庁舎の数値対応は未解決。",
+      "nextSource": "関市北庁舎の建物外形とP05重ね合わせ"
+    },
+    {
+      "facilityId": "facility:chubu-west-51ec8a66f05dedab114b",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内と運営者駅舎カフェaccessを再取得。駅全体の埋込しか得られず駅舎建物を数値で区別できなかった。",
+      "nextSource": "郡上八幡駅舎の建物外形または公式施設marker"
+    },
+    {
+      "facilityId": "facility:chubu-west-56f3a4266eeae373c798",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "配布先は掛川城券売所と再確認。市庁舎案内はこの窓口の座標根拠にならず、城公園の点を流用しない。",
+      "nextSource": "券売所棟の公園配置図と地理参照可能な建物外形"
+    },
+    {
+      "facilityId": "facility:chubu-west-5932e2e45330110f4e22",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市施設案内は名称qと表示中心ll。売店・レストラン・足湯があり当該配布建物の数値を確認できず。",
+      "nextSource": "道の駅潮見坂の配布建物案内と公開建物点"
+    },
+    {
+      "facilityId": "facility:chubu-west-5c6fb9ffe9787f7dcf8b",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市の配布先と運営者ホームを再取得。温泉・物産等の複数施設があり道の駅全体の埋込だけでは配布棟を特定できない。",
+      "nextSource": "道の駅やまと窓口の入居棟図"
+    },
+    {
+      "facilityId": "facility:chubu-west-5e018b80beeddee90a38",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行市配布案内と庁舎案内を再取得。上下水道課の西館という旧記録を棄却する資料なし。P05一般市役所点を西館へ流用しない。",
+      "nextSource": "海津市西館の建物外形と案内図"
+    },
+    {
+      "facilityId": "facility:chubu-west-6174b986d89b31577298",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布ページ403に対し運営者園内図・トップを取得。P05樹空の森と富士山交流センターは約126m異なる。ビジターセンターとの地理的対応は未確定。",
+      "nextSource": "園内図のビジターセンターとP05の2点の位置照合"
+    },
+    {
+      "facilityId": "facility:chubu-west-661449b87d5ae63962c2",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行GKPで登窯広場展示工房館を確認しP05を検索したが、名称住所付き一致点が得られない。今回施設個別ページの追加取得までは未実施。",
+      "nextSource": "登窯広場展示工房館の市施設ページと建物GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-92032ce5cf770c2813c4",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内とskydome公式を新規取得。公式埋込は依然住所ラベルで建物外形由来か不明。旧Google抽出を採用しない。",
+      "nextSource": "道の駅の建物外形と店舗配布場所"
+    },
+    {
+      "facilityId": "facility:chubu-west-92b7b359d5ae1c55761b",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "北庁舎1階守衛室を現行配布案内で再確認。北庁舎2階と同じ棟でよいが一般P05市役所点との対応が未確認。",
+      "nextSource": "関市北庁舎の公開棟別GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-9967da81268c03d26284",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "高山市の配布案内と岐阜観光公式施設ページを再取得。後者は数値qを持つが道の駅内配布棟との対応を今回確認できない。",
+      "nextSource": "道の駅ひだ朝日村の配布棟配置図"
+    },
+    {
+      "facilityId": "facility:chubu-west-ac91b1a9ed9a8365efe6",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行市配布案内と既存アクセスの再調査で新町2-34の施設を確認。現建物とP05の旧施設との同一性が未確認のため、旧施設点に対応させない。",
+      "nextSource": "ひと・まちテラスの現行建物外形/施設GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-adab25c66d301ba3b4e8",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "町の配布案内は下賀茂の道の駅内観光協会。今回の原本にはこの建物を特定する数値なし。別施設オーシャンパークとは分離。",
+      "nextSource": "南伊豆町観光協会の建物GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-b128731fef6309f26ed0",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行の配布原典取得を試みた。既知の403を突破せず、森川町井桁西25-1にある観光協会の建物座標原典は今回確保できていない。",
+      "nextSource": "愛西市公開GIS又は観光協会建物図"
+    },
+    {
+      "facilityId": "facility:chubu-west-b93c428182c323c9093b",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "現行市配布案内と市役所詳細は取得。第一庁舎1階警備員室とP05一般市役所点の棟対応は第二庁舎との区別資料不足で保留。",
+      "nextSource": "熱海第一・第二庁舎の棟別配置図"
+    },
+    {
+      "facilityId": "facility:chubu-west-b943f5c6151615096149",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内と観光協会accessを再取得。埋込は中泉1-1-5の住所featureであり建物点の生成根拠は不明。福田支所の点を流用しない。",
+      "nextSource": "磐田観光協会建物の公開GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-c2c5fb9c50cfbaf2f9e7",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "観光公式配布ページとまるや運営者トップを新規取得。配布紹介は旧住所表記、運営者は八丁町52番地。本社markerが配布棟かは未確定。",
+      "nextSource": "まるや配布棟案内と住所変更対応"
+    },
+    {
+      "facilityId": "facility:chubu-west-c9411b8d4b5166d4dd66",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内・市観光詳細・道の駅公式を再取得。市の旧MyMaps埋込は表示中心しか得られず2階事務局棟の数値にはできない。",
+      "nextSource": "下田市観光協会事務局が入る棟の公開GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-cee0813d2aeb67ba5ec9",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内と道の駅美並公式accessを再取得。物産館名は配布先にあるが地図は道の駅全体で棟との対応未確認。",
+      "nextSource": "美並物産館の建物外形と施設配置図"
+    },
+    {
+      "facilityId": "facility:chubu-west-d065e4d0f8f352af76bb",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "旧URLが現行サイトへ転送され取得成功。配布は庁舎2階事務室と確認。ポンプ場名付き埋込のviewportは庁舎座標にはしない。",
+      "nextSource": "岳南排水路管理組合の庁舎棟配置図/公開GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-da2c46732042f07a4ce1",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市の現行配布案内を取得。あじさいエコパークの配布棟指定は引き続き本文にない。分庁舎点は別IDへ限定。",
+      "nextSource": "蜂屋川クリーンセンター管理棟の配布案内と建物外形"
+    },
+    {
+      "facilityId": "facility:chubu-west-ea050d1cbc4a2d578cde",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "市配布案内とアントレテナントページを再取得し2階入居確認。駅ビル建物の数値原典を得られず。",
+      "nextSource": "アントレ駅ビル建物外形/施設GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-ec4b19393f5d955232db",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "科学館配布・利用案内を再取得して住所を確認。取得HTMLから対象建物の数値を確定できず、他市の科学館点は不使用。",
+      "nextSource": "愛知県下水道科学館の建物GIS"
+    },
+    {
+      "facilityId": "facility:chubu-west-ecee06e2dfb98541610e",
+      "status": "deferred",
+      "reviewDepth": "classification-only; no independent exhaustive investigation",
+      "reason": "今回の独立深掘り対象は17候補。残件は候補未成立として保留を維持。以下は提出者の記録であり調査完了の認定ではない。",
+      "submittedReason": "GKP現行行を取得。県観光の施設詳細はタイムアウトで取得できず、JR大府駅構内という記載だけでは当該建物点を確定できない。",
+      "nextSource": "KURUTO運営者の駅舎入居図と建物外形"
+    }
+  ],
+  "corrections": [
+    {
+      "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+      "targetPath": "data/national/issue5/chubu.json",
+      "jsonPointer": "/unresolved/104/reason",
+      "old": "元地域監査に臨時市役所への移転proposalあり。旧庁舎当直室と代替窓口の有効性・目的地を分離するため保留。",
+      "new": "元地域監査22-207-C001のproposalは寄って宮臨時休業時の市役所での臨時配布であり、臨時庁舎への移転ではない。現行市役所窓口は弓沢町150。座標候補はissue7/tokaiのP05根拠を参照。",
+      "basis": {
+        "sourcePath": "data/national/regions/chubu-west.json",
+        "sourceLocator": "cardId=22-207-C001 proposals; 保存済み原本 data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html と今回取得の市配布案内/下水道課案内を照合"
+      },
+      "reviewOperationId": "tokai-correction-1",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "元proposalは寄って宮休業時の臨時配布。庁舎移転を示さない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-5ea337a795edcf07581c",
+      "targetPath": "data/national/location-updates/chubu-west.json",
+      "jsonPointer": "/unresolved/12/reason",
+      "old": "元地域監査に臨時市役所への移転proposalあり。旧庁舎当直室と代替窓口の有効性・目的地を分離するため保留。",
+      "new": "元地域監査22-207-C001のproposalは寄って宮臨時休業時の市役所での臨時配布であり、臨時庁舎への移転ではない。現行市役所窓口は弓沢町150。座標候補はissue7/tokaiのP05根拠を参照。",
+      "basis": {
+        "sourcePath": "data/national/regions/chubu-west.json",
+        "sourceLocator": "cardId=22-207-C001 proposals; 保存済み原本 data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html と今回取得の市配布案内/下水道課案内を照合"
+      },
+      "reviewOperationId": "tokai-correction-2",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "元proposalは寄って宮休業時の臨時配布。庁舎移転を示さない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "targetPath": "data/national/issue5/chubu.json",
+      "jsonPointer": "/unresolved/124/reason",
+      "old": "元地域監査に臨時市役所への移転proposalあり。弓沢町150の旧庁舎座標を現在窓口へ流用しない。",
+      "new": "元地域監査22-207-C001のproposalは寄って宮臨時休業時の市役所での臨時配布であり、臨時庁舎への移転ではない。現行市役所窓口は弓沢町150。座標候補はissue7/tokaiのP05根拠を参照。",
+      "basis": {
+        "sourcePath": "data/national/regions/chubu-west.json",
+        "sourceLocator": "cardId=22-207-C001 proposals; 保存済み原本 data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html と今回取得の市配布案内/下水道課案内を照合"
+      },
+      "reviewOperationId": "tokai-correction-3",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "元proposalは寄って宮休業時の臨時配布。庁舎移転を示さない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-e4875744d6ee2c5a0a4f",
+      "targetPath": "data/national/location-updates/chubu-west.json",
+      "jsonPointer": "/unresolved/22/reason",
+      "old": "元地域監査に臨時市役所への移転proposalあり。弓沢町150の旧庁舎座標を現在窓口へ流用しない。",
+      "new": "元地域監査22-207-C001のproposalは寄って宮臨時休業時の市役所での臨時配布であり、臨時庁舎への移転ではない。現行市役所窓口は弓沢町150。座標候補はissue7/tokaiのP05根拠を参照。",
+      "basis": {
+        "sourcePath": "data/national/regions/chubu-west.json",
+        "sourceLocator": "cardId=22-207-C001 proposals; 保存済み原本 data/evidence/national/chubu-west/7bab59f2246fd1c52d07.html と今回取得の市配布案内/下水道課案内を照合"
+      },
+      "reviewOperationId": "tokai-correction-4",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "元proposalは寄って宮休業時の臨時配布。庁舎移転を示さない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "targetPath": "data/national/issue5/chubu.json",
+      "jsonPointer": "/unresolved/107/reason",
+      "old": "飛騨公式観光のモデルコースに壱之町8-3の案内所は掲載されているが、原本中に当該施設マーカー座標がない。金森町8-32の駅横観光案内所とは区別。",
+      "new": "保存済み公式モデルコース73のmarkerData label=4に飛騨古川まちなか観光案内所の緯度36.2350326、経度137.1863768が存在する。今回の再取得でも一致した。金森町8-32の駅横施設とは区別する。",
+      "basis": {
+        "snapshotPath": "data/evidence/national/locations-chubu-west/ab548fdcccd6faf9a5538375.html",
+        "snapshotSHA256": "d908ebe07064a4209a0da48efc57b3104215fa104a71283c55c03434ceb3691a",
+        "sourceLocator": "markerData.push label=4, name, lat, lng"
+      },
+      "reviewOperationId": "tokai-correction-5",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "旧原本にも名称付きmarkerが存在する。"
+    },
+    {
+      "facilityId": "facility:chubu-west-8b10b99e9d58aaa58550",
+      "targetPath": "data/national/location-updates/chubu-west.json",
+      "jsonPointer": "/unresolved/13/reason",
+      "old": "飛騨公式観光のモデルコースに壱之町8-3の案内所は掲載されているが、原本中に当該施設マーカー座標がない。金森町8-32の駅横観光案内所とは区別。",
+      "new": "保存済み公式モデルコース73のmarkerData label=4に飛騨古川まちなか観光案内所の緯度36.2350326、経度137.1863768が存在する。今回の再取得でも一致した。金森町8-32の駅横施設とは区別する。",
+      "basis": {
+        "snapshotPath": "data/evidence/national/locations-chubu-west/ab548fdcccd6faf9a5538375.html",
+        "snapshotSHA256": "d908ebe07064a4209a0da48efc57b3104215fa104a71283c55c03434ceb3691a",
+        "sourceLocator": "markerData.push label=4, name, lat, lng"
+      },
+      "reviewOperationId": "tokai-correction-6",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "旧原本にも名称付きmarkerが存在する。"
+    },
+    {
+      "targetPath": "data/evidence/national/chubu-west/README.md",
+      "textReplacement": true,
+      "old": "富士宮臨時市役所",
+      "new": "寄って宮臨時休業時の富士宮市役所での臨時配布",
+      "basis": {
+        "sourcePath": "data/national/regions/chubu-west.json",
+        "sourceLocator": "cardId=22-207-C001 proposals。臨時庁舎移転の提案ではない。"
+      },
+      "reviewOperationId": "tokai-correction-7",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "元proposalは寄って宮休業時の臨時配布。庁舎移転を示さない。"
+    },
+    {
+      "facilityId": "facility:chubu-west-3ae4954df5521d92e778",
+      "targetPath": "data/work/issue7-baseline/ledger.json",
+      "selector": {
+        "id": "facility:chubu-west-3ae4954df5521d92e778",
+        "field": "address"
+      },
+      "old": "静岡県沼津市御幸町16-1 水道部庁舎1階",
+      "new": "静岡県沼津市御幸町2-20 水道部庁舎1階",
+      "applyTo": "親の将来統合コピーのみ。固定入力は変更禁止。",
+      "basis": {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "fetchedAt": "2026-11-05T06:28:02.624754+00:00",
+        "sourceLocator": "ID=0000000030 水道部庁舎、電話934-4851。市電話一覧の水道総務課庶務係と同定。"
+      },
+      "reviewOperationId": "tokai-correction-8",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "水道部庁舎の名称・電話とAED住所2-20が一致。本庁16-1を訂正。固定入力への適用は禁止。"
+    },
+    {
+      "facilityId": "facility:chubu-west-f860c41765b78b59c083",
+      "targetPath": "data/work/issue7-baseline/ledger.json",
+      "selector": {
+        "id": "facility:chubu-west-f860c41765b78b59c083",
+        "field": "address"
+      },
+      "old": "静岡県沼津市御幸町16-1(水道部庁舎2階)",
+      "new": "静岡県沼津市御幸町2-20(水道部庁舎2階)",
+      "applyTo": "親の将来統合コピーのみ。固定入力は変更禁止。",
+      "basis": {
+        "url": "https://opendata.pref.shizuoka.jp/dataset/8504/resource/51192/content.html",
+        "snapshotPath": "data/evidence/issue7/tokai/0c45dc50adbc5456ed70.html",
+        "snapshotSHA256": "b625f896e8bfa4cf5e79657ead9d018cf1a5958f871321161c77f164252b6d28",
+        "fetchedAt": "2026-11-05T06:28:02.624754+00:00",
+        "sourceLocator": "ID=0000000030 水道部庁舎、電話934-4851。市電話一覧の水道総務課庶務係と同定。"
+      },
+      "reviewOperationId": "tokai-correction-9",
+      "status": "accepted",
+      "oldValueVerified": true,
+      "applied": false,
+      "reviewReason": "水道部庁舎の名称・電話とAED住所2-20が一致。本庁16-1を訂正。固定入力への適用は禁止。"
+    }
+  ],
+  "integrationRequirements": [
+    "9訂正を親の統合先へ適用。固定baselineは変更禁止。",
+    "沼津2窓口は座標acceptedだが住所2-20訂正を統合の必須条件とする。",
+    "座標承認は配布状態やrelationsの新規承認・変更を意味しない。",
+    "原本HTML全体の公開再配布はこの採否から許諾済みと扱わない。"
+  ],
+  "documentationCodeDiscrepancies": [],
+  "sourceRecordDiscrepancies": [
+    "富士宮の臨時配布を庁舎移転とした旧理由4か所と旧README1か所。",
+    "飛騨古川markerなしとした旧理由2か所。",
+    "沼津水道部2施設の台帳住所16-1とAED建物住所2-20。"
+  ],
+  "limitations": [
+    "残35件は一意ID分類と提出保留理由を確認したのみ。全件深掘り済みとはしない。",
+    "保存原本を再読した独立レビュー。今回の新規ネットワーク取得・現地確認なし。",
+    "HTML/AED数値のCRSは原本で明記されず、測量精度とWGS84変換を主張しない。"
+  ],
+  "rightsReviewPath": "data/evidence/issue7/review-tokai/rights-review.json",
+  "validationPath": "data/evidence/issue7/review-tokai/validation.json"
+}
