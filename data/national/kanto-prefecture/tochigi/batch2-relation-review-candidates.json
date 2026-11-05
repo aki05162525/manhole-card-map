@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "adoptionApproval": false,
+  "automaticPatch": false,
+  "candidates": [
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "kind": "address-source-disagreement",
+      "detailRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-east/distribution-correction-proposed.json",
+      "oldValue": "栃木県河内郡上三川町しらさぎ1-3-5(むかしなつかし館内)",
+      "proposedText": "町/協会資料ではしらさぎ1-3-8、県配布記事は1-3-5。台帳未変更、原典差の別審査。"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "kind": "hours-source-disagreement",
+      "detailRef": "data/evidence/kanto-prefecture/tochigi/batch2/group-south/kanuma-followup/observation.json",
+      "oldValue": "配布原本9:00～19:00",
+      "proposedText": "現施設本館9:00～18:00・毎月第2水曜定休。配布時間の訂正根拠として自動採用せず、配布原本側の整合を確認する。"
+    }
+  ]
+}
