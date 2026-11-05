@@ -49,7 +49,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-14336e747375e6550de3",
@@ -77,7 +77,7 @@
       "axisOrder": null,
       "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
@@ -108,7 +108,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-2e945c5e9faf1a16c8d7",
@@ -139,7 +139,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-95b116c7383dbf61b3b4",
@@ -164,7 +164,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-c73669beeeb24f667599",
@@ -196,7 +196,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。 derive.pyで外形重心・逆投影・小数7桁丸め・丸め後内包を再現。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-f45d3f2e581350eedec5",
@@ -223,7 +223,7 @@
       "axisOrder": null,
       "processing": "配置資料の取得・本文/図の確認。数値座標の採用・CRS変換・代表点派生なし。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     },
     {
       "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
@@ -250,7 +250,7 @@
       "axisOrder": "tile x east/y south; output lat/lng",
       "processing": "revision-scan.pyでBldA/道路/水部/注記をデコードしrender-revision.pyで北上比較図を作成。外形参照はcomparison-facts.json。",
       "precision": "建物代表点が目標。入口・室内測量は不要。今回精度未確定。",
-      "independentReview": "Opus再レビュー待ち（Gemini失敗はreview.json、旧Opus重大指摘はreview-response.json）"
+      "independentReview": "Opus再レビューはAPI rate limitで失敗・未承認。Gemini失敗履歴と別記（review-response.json）。"
     }
   ],
   "unverified": [

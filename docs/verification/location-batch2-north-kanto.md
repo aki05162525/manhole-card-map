@@ -58,3 +58,7 @@ Gemini利用枠超過の失敗は[review.json](../../data/national/location-batc
 旧Issue5北関東READMEの正確な記述は「今回読んだ範囲では発見していない」で、初回の「不一致なし」という引用を訂正した。旧assemble.pyはEvidenceにfetchedAtを追加するが、現Go Evidenceは7項目。旧コード/文書は保持し、今回の取得時刻は調査メタデータへ分離した。
 
 初回文書の3棟・道路未照合・全件保留・manifest不変、および既往URLを新規とする説明は今回の照合結果へ訂正。履歴ファイルの値は当時の記録で、現成果に適用しない。現地/在庫、未選定83件、一般原本の再配布許諾、鹿沼/深谷の数値外形は未確認。
+
+### 再レビュー起動結果
+
+統合済みhead `496689ee9941d0fd47f1037b1593eff730bef5f6`をClaude Opus 5.5へ新規独立再レビュー依頼したが、`Claude API rate limit reached. Try again later.` で失敗した。レビュー結果・採用承認は得られていない。`review-response.json.reReviewAttempt`へGemini失敗とは別に記録。2件は仮統合、6件は保留を維持し、Draft解除・マージは行わない。今回の追記は失敗履歴と文書の整合のみで、座標・manifest・binding・コードに変更はない。
