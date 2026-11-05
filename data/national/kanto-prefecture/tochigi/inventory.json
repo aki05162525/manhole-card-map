@@ -1,0 +1,2019 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "baselineCommit": "4f5253b8973cb388deecff0bc051f36770e77579",
+  "scope": "初回調査の対象照合。現在の配布先の独立再確認は施設ごとに別記。",
+  "nationalUnlocated": 588,
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-060fbafce589ea4ae65d",
+      "name": "太平記館",
+      "address": "栃木県足利市伊勢町3-6-4(足利市観光協会駐車場内)",
+      "baselinePlace": {
+        "id": "facility:kanto-north-060fbafce589ea4ae65d",
+        "legacyIds": [
+          "place:060fbafce589ea4ae65d"
+        ],
+        "name": "太平記館",
+        "address": "栃木県足利市伊勢町3-6-4(足利市観光協会駐車場内)",
+        "phone": "0284-43-3000",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-202-A001 / 太平記館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-202-A001",
+          "placeId": "facility:kanto-north-060fbafce589ea4ae65d",
+          "sourceHash": "3c11836c381e4f34df15e92db57c34ca5121c1dc5241278b1c59573479839d93",
+          "hours": [
+            "在庫切れにより配布休止。再開未定"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "http://www.city.ashikaga.tochigi.jp/site/jougesuidou/manholecard-short.html",
+            "snapshotPath": "data/evidence/national/kanto-north/f79c704a3aeb2add6269.html",
+            "snapshotSHA256": "a53966e1607e8ecf7d0e4b03ed56fae5c52f4ee1eb2f2d861f32aac914ac6563",
+            "sourceLocator": "09-202-A001 / 太平記館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。Aは2026-05-04、Bは2026-05-09に在庫終了。再開未定のため恒久終了とはしない。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/4",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/70",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.ashikaga-kankou.jp/access/details/id=334",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.109131+00:00",
+      "elapsedSeconds": 0.003186,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-067336979043529fa019",
+      "name": "壬生町役場宿直室",
+      "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-067336979043529fa019",
+        "legacyIds": [
+          "place:067336979043529fa019"
+        ],
+        "name": "壬生町役場宿直室",
+        "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-361-A001 / 壬生町役場宿直室 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-361-A001",
+          "placeId": "facility:kanto-north-067336979043529fa019",
+          "sourceHash": "b16a5082fc26a90d88de98337ef640968f0c3696359358731bf111742b7a7a4b",
+          "hours": [
+            "現在配布休止。2026-11-10再開予定",
+            "再開初日から約1週間は下水道課付近の特設会場。通常9:00～17:00"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.town.mibu.tochigi.jp/docs/2021041300025/",
+            "snapshotPath": "data/evidence/national/kanto-north/61b9fbe8da08f9f60df7.html",
+            "snapshotSHA256": "e6aa3046ae0374ede8dd98278fd0b46ecd9cab0f45977cf31d10dc73c3b4fd34",
+            "sourceLocator": "09-361-A001 / 壬生町役場宿直室 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。再開予定は自動承認しない。Aは2027-01-20以降16:30終了の予定もあり再確認。"
+          },
+          "reviewUntil": "2026-11-09"
+        },
+        {
+          "cardId": "09-361-B001",
+          "placeId": "facility:kanto-north-067336979043529fa019",
+          "sourceHash": "bf7dad30128006bf82de14786fae5a09dbcfeafeee0b0132ae0956d825d9b4e2",
+          "hours": [
+            "現在配布休止。2026-11-10再開予定",
+            "再開初日から約1週間は下水道課付近の特設会場。通常9:00～17:00"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.town.mibu.tochigi.jp/docs/2023102000042/",
+            "snapshotPath": "data/evidence/national/kanto-north/a7f334b9e497d743fe20.html",
+            "snapshotSHA256": "51655a9822b22401d7c1631fac7e5483db19186ff64fef6d1f8609b3babf71c8",
+            "sourceLocator": "09-361-B001 / 壬生町役場宿直室 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。再開予定は自動承認しない。Aは2027-01-20以降16:30終了の予定もあり再確認。"
+          },
+          "reviewUntil": "2026-11-09"
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/5",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/11",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2026110400033/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.112380+00:00",
+      "elapsedSeconds": 0.002544,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+      "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+      "address": "栃木県佐野市栃本町300番地1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-071cd7f65ad7c1a06c54",
+        "legacyIds": [
+          "place:071cd7f65ad7c1a06c54"
+        ],
+        "name": "佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会)",
+        "address": "栃木県佐野市栃本町300番地1",
+        "phone": "050-5799-4502",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-204-B001 / 佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会) / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-204-B001",
+          "placeId": "facility:kanto-north-071cd7f65ad7c1a06c54",
+          "sourceHash": "874891d12fb2e46fa39511359cc88649a081be813a492d990f21498d4274f205",
+          "hours": [
+            "月・水・木・土・日10:00～16:00（火・金定休）",
+            "2026-12-11～2027-01-12は冬季休業・配布休止予定"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+            "snapshotPath": "data/evidence/national/kanto-north/ddfbf3e8e365a94d7ee6.html",
+            "snapshotSHA256": "b2f8e8810cd763b062be7a3da31ddf5bce8f51865bfdb6013f8ec7e8e06c4a44",
+            "sourceLocator": "09-204-B001 / 佐野市国際クリケット場Tearoom at the SICG (運営者:一般社団法人日本クリケット協会) / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。11/5時点は休止期間前。将来休止を現在の休止と誤認しない。12/11以降は再確認へ。"
+          },
+          "reviewUntil": "2026-12-10"
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/6",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/22",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.sano.lg.jp/sp/cricket/28597.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.114944+00:00",
+      "elapsedSeconds": 0.002428,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+      "name": "宇都宮城址公園清明館",
+      "address": "栃木県宇都宮市本丸町1-15",
+      "baselinePlace": {
+        "id": "facility:kanto-north-0ddcdc066bc44685ab0b",
+        "legacyIds": [
+          "place:0ddcdc066bc44685ab0b"
+        ],
+        "name": "宇都宮城址公園清明館",
+        "address": "栃木県宇都宮市本丸町1-15",
+        "phone": "028-638-9390",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-201-D001 / 宇都宮城址公園清明館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-201-D001",
+          "placeId": "facility:kanto-north-0ddcdc066bc44685ab0b",
+          "sourceHash": "23538fc5fbafd0c0841cb35265a0143eae90d52648dfe0cd0f6a874676be2086",
+          "hours": [
+            "休日9:00～17:00",
+            "12/29～1/3は配布なし"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.utsunomiya.lg.jp/event/bunka/hyakunin/1007440.html",
+            "snapshotPath": "data/evidence/national/kanto-north/287233c3fd5b74c83aaa.html",
+            "snapshotSHA256": "b9fe20baceebe4e0f92a314a38bca412d506bcc66adce629c36fae4dd164d4ad",
+            "sourceLocator": "09-201-D001 / 宇都宮城址公園清明館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/9",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/71",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.utsunomiya.lg.jp/event/rekishi/1035012/1016836.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.117383+00:00",
+      "elapsedSeconds": 0.002324,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+      "name": "栃木県立日光自然博物館(奥日光インフォメーションセンター)",
+      "address": "栃木県日光市中宮祠2480-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-13edf2a6bfc4d92522b0",
+        "legacyIds": [
+          "place:13edf2a6bfc4d92522b0"
+        ],
+        "name": "栃木県立日光自然博物館(奥日光インフォメーションセンター)",
+        "address": "栃木県日光市中宮祠2480-1",
+        "phone": "0288-55-0880",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-206-B001 / 栃木県立日光自然博物館(奥日光インフォメーションセンター) / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-206-B001",
+          "placeId": "facility:kanto-north-13edf2a6bfc4d92522b0",
+          "sourceHash": "37d243a571123edc87a90b488d3b41fcae910d6fd2aa3d91b5ca0f787ea52a33",
+          "hours": [
+            "配布休止中"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+            "snapshotPath": "data/evidence/national/kanto-north/68399a56526e74bd60c6.html",
+            "snapshotSHA256": "49c39e17957481af13b8d8da3b27f951e179d1bdfeb00f25e885e99ede0208ba",
+            "sourceLocator": "09-206-B001 / 栃木県立日光自然博物館(奥日光インフォメーションセンター) / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/12",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/72",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.nikko.lg.jp/city_nikko/shisetsu/1/1/index.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.119716+00:00",
+      "elapsedSeconds": 0.002383,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-14336e747375e6550de3",
+      "name": "まちの駅 新・鹿沼宿",
+      "address": "栃木県鹿沼市仲町1604-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-14336e747375e6550de3",
+        "legacyIds": [
+          "place:14336e747375e6550de3"
+        ],
+        "name": "まちの駅 新・鹿沼宿",
+        "address": "栃木県鹿沼市仲町1604-1",
+        "phone": "0289-60-2507",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-205-A001 / まちの駅 新・鹿沼宿 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-205-A001",
+          "placeId": "facility:kanto-north-14336e747375e6550de3",
+          "sourceHash": "82b0bf56ddc5b29cfac928a23e0a85683ce3635cc7a4f71e8d0b566126650770",
+          "hours": [
+            "9:00～19:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+            "snapshotPath": "data/evidence/national/kanto-north/e6f58e515da7f6e84a6e.html",
+            "snapshotSHA256": "3e82545e42e7c052892e4b5d7ec3d275e7e41f1ea5dd73c2c7ffe56b8851a028",
+            "sourceLocator": "09-205-A001 / まちの駅 新・鹿沼宿 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/13",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/initial-outcomes.json#/rows/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/outcomes.json#/rows/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/selection.json#/selected/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": {
+        "id": "human-29",
+        "facilityId": "facility:kanto-north-14336e747375e6550de3",
+        "facilityIds": [
+          "facility:kanto-north-14336e747375e6550de3"
+        ],
+        "name": "新・鹿沼宿",
+        "cardIds": [
+          "09-205-A001"
+        ],
+        "checkedAt": "2026-11-05",
+        "actorType": "user",
+        "answer": "配布先は本館。2011整備時配置図で例幣使街道沿い東側が本館、西隣物産館。現紹介でも別棟。",
+        "sourceDescription": "市配布案内／2011配置図／施設紹介",
+        "sourceURLs": [
+          "https://www.city.kanuma.tochigi.jp/0705/info-0000005483-0.html",
+          "https://www.town.ami.lg.jp/cmsfiles/contents/0000005/5787/3.03_shiryo1-2_syuttyou-fukumei.pdf",
+          "https://kanumajuku.com/facility.html"
+        ],
+        "sourceURLProvided": true,
+        "remainingUncertainty": "最新配置図は未確認。カード配布時間と現営業時間の差は勝手に統一しない。",
+        "answerStatus": "received",
+        "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+        "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+        "adoptionApproval": false,
+        "answerRef": "data/national/issue57/human-responses.json#/responses/28",
+        "status": "answer-received-not-location-approved",
+        "previousQuestions": [],
+        "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/28",
+        "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+        "receivedQuestionSummary": "本館配置",
+        "questionSummaryAsAsked": "本館配置"
+      },
+      "priorNextAction": "本館を名指す配置図と道路・外形の対応を取得する。Google埋込値や施設全体の旧マーカーを本館点として流用しない。",
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.122106+00:00",
+      "elapsedSeconds": 0.002952,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+      "name": "一般社団法人 矢板市観光協会",
+      "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)",
+      "baselinePlace": {
+        "id": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+        "legacyIds": [
+          "place:1c3ab1ee8ca76b7c99e0"
+        ],
+        "name": "一般社団法人 矢板市観光協会",
+        "address": "栃木県矢板市川崎反町295 (矢板市城の湯温泉センター内)",
+        "phone": "0287-47-4252",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-211-A001",
+          "placeId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+          "sourceHash": "f0ea031f3571baa606a790406552070d1d22b1b762378d4f08a53a8c6c5838ef",
+          "hours": [
+            "9:00～15:00",
+            "第1・第3火曜日（祝祭日は翌日）休み。城の湯温泉センター休館日に準じる"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.yaita.tochigi.jp/site/kankou/manho-ru2026.html",
+            "snapshotPath": "data/evidence/national/kanto-north/6717f8fcf9553cc79a83.html",
+            "snapshotSHA256": "886a4f427dab89faec7cc381ccaadc8e517171633492d59ce14407ea09ba671f",
+            "sourceLocator": "09-211-A001 / 09-211-A001 / 一般社団法人 矢板市観光協会 / 配布場所・配布時間・在庫状況 / 現GKPで休止・10/23再開予定文が消失。市10/23午前9時再配布告知、観光協会窓口9～15時・第1第3火曜休を再読。",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存公式原典の対象カード・実窓口・曜日・配布条件を再読照合。現地確認・人による確認ではない。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/16",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/initial-outcomes.json#/rows/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/outcomes.json#/rows/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/selection.json#/selected/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": {
+        "id": "human-30",
+        "facilityId": "facility:kanto-north-1c3ab1ee8ca76b7c99e0",
+        "facilityIds": [
+          "facility:kanto-north-1c3ab1ee8ca76b7c99e0"
+        ],
+        "name": "矢板観光協会",
+        "cardIds": [
+          "09-211-A001"
+        ],
+        "checkedAt": "2026-11-05",
+        "actorType": "user",
+        "answer": "城の湯宿泊棟側受付。正面向かって右の宿泊棟受付入口から館内観光協会受付へ。公式PDF4〜5頁に写真動線。",
+        "sourceDescription": "観光協会PDF4〜5頁／館内図",
+        "sourceURLs": [
+          "https://www.yaita-kankou.com/images/配布場所・駐車場のお知らせ.pdf",
+          "https://www.yaita-onsen-shironoyu.jp/_contents/wp-content/uploads/2024/04/kannai.jpg"
+        ],
+        "sourceURLProvided": true,
+        "remainingUncertainty": "数値外形対応は別。",
+        "answerStatus": "received",
+        "problemStatus": "remaining-uncertainty-recorded; not-location-approved",
+        "agentAcquisitionStatus": "existing-URL-and-hash-crosscheck-only; no-new-fetch; user-viewed-bytes-unverified",
+        "adoptionApproval": false,
+        "answerRef": "data/national/issue57/human-responses.json#/responses/29",
+        "status": "answer-received-not-location-approved",
+        "previousQuestions": [],
+        "agentSourceCrosscheckRef": "data/evidence/issue57/human/source-crosscheck.json#/rows/29",
+        "questionHistoryNote": "受領回答から質問全文を再構成しない。初回6問は保存snapshot、追加10問は親提示の質問要旨を保持。",
+        "receivedQuestionSummary": "宿泊棟との同棟/別棟と配置",
+        "questionSummaryAsAsked": "宿泊棟との同棟/別棟と配置"
+      },
+      "priorNextAction": "宿泊棟を名指す地理的周辺配置（道路・川等）を取得し892/900の対応を確定する。入口・窓口測量は不要。",
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.125067+00:00",
+      "elapsedSeconds": 0.003146,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2783364591474d8e2902",
+      "name": "久保記念観光文化交流館",
+      "address": "栃木県真岡市荒町1105番地1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-2783364591474d8e2902",
+        "legacyIds": [
+          "place:2783364591474d8e2902"
+        ],
+        "name": "久保記念観光文化交流館",
+        "address": "栃木県真岡市荒町1105番地1",
+        "phone": "0285-82-2012",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-209-A001 / 久保記念観光文化交流館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-209-A001",
+          "placeId": "facility:kanto-north-2783364591474d8e2902",
+          "sourceHash": "b73aae4496160e6e8841a740823f3d5f35f2204f8ab42f730dd98b974e2532dd",
+          "hours": [
+            "在庫終了。今後の配布再開予定なし"
+          ],
+          "status": "ended",
+          "evidence": {
+            "sourceUrl": "https://www.city.moka.lg.jp/kakuka/gesuido/gyomu/jogesuido/9271.html",
+            "snapshotPath": "data/evidence/national/kanto-north/a71a6f136840a3a87e68.html",
+            "snapshotSHA256": "e3c4a70fcbdc7d8d53bbde0b215b2256b870f466157909bc639fdd72d4f5c9a3",
+            "sourceLocator": "09-209-A001 / 久保記念観光文化交流館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。市公式2026-04-08更新。旧窓口の同定はGKPと施設公式資料で補助する。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/19",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/73",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.moka.lg.jp/kakuka/gesuido/gyomu/jogesuido/9271.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.128226+00:00",
+      "elapsedSeconds": 0.003098,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+      "name": "日光市観光協会 今市支部",
+      "address": "栃木県日光市今市717-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-2c4fa5aeef25f7b88864",
+        "legacyIds": [
+          "place:2c4fa5aeef25f7b88864"
+        ],
+        "name": "日光市観光協会 今市支部",
+        "address": "栃木県日光市今市717-1",
+        "phone": "0288-22-1525",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-206-A001 / 日光市観光協会 今市支部 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-206-A001",
+          "placeId": "facility:kanto-north-2c4fa5aeef25f7b88864",
+          "sourceHash": "0098782266d1ce7745221a1b5f12d6dd4a2435f61ea4671190822ef55dbce05c",
+          "hours": [
+            "配布休止中"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.city.nikko.lg.jp/soshiki/8/1037/5/1/536.html",
+            "snapshotPath": "data/evidence/national/kanto-north/68399a56526e74bd60c6.html",
+            "snapshotSHA256": "49c39e17957481af13b8d8da3b27f951e179d1bdfeb00f25e885e99ede0208ba",
+            "sourceLocator": "09-206-A001 / 日光市観光協会 今市支部 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/21",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/75",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.nikko-kankou.org/public/access",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.131346+00:00",
+      "elapsedSeconds": 0.00313,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-861c082f98ee56059de9",
+      "name": "一般社団法人栃木市観光協会",
+      "address": "栃木県栃木市倭町14-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-861c082f98ee56059de9",
+        "legacyIds": [
+          "place:861c082f98ee56059de9"
+        ],
+        "name": "一般社団法人栃木市観光協会",
+        "address": "栃木県栃木市倭町14-1",
+        "phone": "0282-25-2356",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-203-A001 / 一般社団法人栃木市観光協会 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-203-A001",
+          "placeId": "facility:kanto-north-861c082f98ee56059de9",
+          "sourceHash": "99c715dba51ad4a2f2e129643644ea4f7196fe5b17d971762019491708e437e1",
+          "hours": [
+            "8:30～17:00（年末年始を除く）",
+            "状況により変更の場合あり。観光協会HPで確認"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.tochigi.lg.jp/site/suidou/6987.html",
+            "snapshotPath": "data/evidence/national/kanto-north/1d98422dacdb203473e5.html",
+            "snapshotSHA256": "f660e532daf5a9689e52428f4ca1c97b3c2be05186497fc266051a56affe6860",
+            "sourceLocator": "09-203-A001 / 一般社団法人栃木市観光協会 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/39",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/39",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.tochigi.lg.jp/site/suidou/6987.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.134515+00:00",
+      "elapsedSeconds": 0.003568,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "name": "小山市役所 市役所4階 下水道施設課内",
+      "address": "栃木県小山市中央町1-1-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+        "legacyIds": [
+          "place:8c9c3d00b39e57cb61d7"
+        ],
+        "name": "小山市役所 市役所4階 下水道施設課内",
+        "address": "栃木県小山市中央町1-1-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-208-A001 / 小山市役所 市役所4階 下水道施設課内 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-208-A001",
+          "placeId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+          "sourceHash": "e5255a835375e700209991f99a8fc64454ae9d58f6489b924319493be4b421b9",
+          "hours": [
+            "平日8:30～17:15"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.oyama.tochigi.jp/soshiki/46/242777.html",
+            "snapshotPath": "data/evidence/national/kanto-north/1692a825bf071b8f73b8.html",
+            "snapshotSHA256": "95b46e0c4a30a3d6b055d5cddb7bf5938c11e85062f9b1ee1af12d6ec8dc3e21",
+            "sourceLocator": "09-208-A001 / 小山市役所 市役所4階 下水道施設課内 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。休日は西側入口の守衛室。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/updates/9",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/9",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/9/exactCandidateCorrection/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/exactOldNewCorrectionProposals/0/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/group-b-outcomes.json#/outcomes/4",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review.json#/scope",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review.json#/outcomes/4",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/selection.json#/groups/12",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue20/oyama-outcomes.json#/outcomes/0",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue20/selection.json#/groups/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/42",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/group-a-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review-resolution.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/issue20/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": "提供者のCSV記法/CRS説明・訂正版、または再利用可能な地理院等の全建物外形と現庁舎配置の対応を確定し、出典/版/CRS/加工法/精度と利用条件を揃えて新代表点を独立レビューする。入口測量は要件にしない。",
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.138112+00:00",
+      "elapsedSeconds": 0.006452,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+      "name": "足利まちなか遊学館",
+      "address": "栃木県足利市通1-2673-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+        "legacyIds": [
+          "place:a7d0e450dcc7ad3eca6e"
+        ],
+        "name": "足利まちなか遊学館",
+        "address": "栃木県足利市通1-2673-1",
+        "phone": "0284-41-8201",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-202-B001 / 足利まちなか遊学館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-202-B001",
+          "placeId": "facility:kanto-north-a7d0e450dcc7ad3eca6e",
+          "sourceHash": "474a57d13291b541bb22b43bb3cc0b46847f1ee0823a6ca241183ebf8663cf25",
+          "hours": [
+            "在庫切れにより配布休止。再開未定"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "http://www.city.ashikaga.tochigi.jp/site/jougesuidou/manholecard-short.html",
+            "snapshotPath": "data/evidence/national/kanto-north/f79c704a3aeb2add6269.html",
+            "snapshotSHA256": "a53966e1607e8ecf7d0e4b03ed56fae5c52f4ee1eb2f2d861f32aac914ac6563",
+            "sourceLocator": "09-202-B001 / 足利まちなか遊学館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。Aは2026-05-04、Bは2026-05-09に在庫終了。再開未定のため恒久終了とはしない。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/53",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/81",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.ashikaga.tochigi.jp/industory/000061/000327/p002753.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.144595+00:00",
+      "elapsedSeconds": 0.003028,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-a95e49dc07df945f06e9",
+      "name": "しもつけ風土記の丘資料館",
+      "address": "栃木県下野市国分寺993",
+      "baselinePlace": {
+        "id": "facility:kanto-north-a95e49dc07df945f06e9",
+        "legacyIds": [
+          "place:a95e49dc07df945f06e9"
+        ],
+        "name": "しもつけ風土記の丘資料館",
+        "address": "栃木県下野市国分寺993",
+        "phone": "0285-44-5049\"",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-216-B001 / しもつけ風土記の丘資料館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-216-B001",
+          "placeId": "facility:kanto-north-a95e49dc07df945f06e9",
+          "sourceHash": "eb4c5d5c826ea13cea93043ea0b2ae4fd99f6fc0f6a96b03ffd7768c7a5ce224",
+          "hours": [
+            "在庫切れにより配布停止。入荷時に告知"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.city.shimotsuke.lg.jp/0918/info-0000010551-3.html",
+            "snapshotPath": "data/evidence/national/kanto-north/cde03caeeeaa0ada26ff.html",
+            "snapshotSHA256": "983090c5108bedc9dd9a9175a03012ba27b41f4a119c35e3479d786fb2dab43c",
+            "sourceLocator": "09-216-B001 / しもつけ風土記の丘資料館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。文化財サイト503のため市公式に迂回。両資料館が対象。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/54",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/82",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.shimotsuke.lg.jp/0918/info-0000010551-3.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.147645+00:00",
+      "elapsedSeconds": 0.002869,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+      "name": "上三川町ORIGAMIプラザ",
+      "address": "栃木県河内郡上三川町大字上三川4173番地1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-ab5de7e90313a0f18ac5",
+        "legacyIds": [
+          "place:ab5de7e90313a0f18ac5"
+        ],
+        "name": "上三川町ORIGAMIプラザ",
+        "address": "栃木県河内郡上三川町大字上三川4173番地1",
+        "phone": "0285-56-9159",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-301-A001 / 上三川町ORIGAMIプラザ / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-301-A001",
+          "placeId": "facility:kanto-north-ab5de7e90313a0f18ac5",
+          "sourceHash": "5d82d69464aa6d066e2c90507d7eb51bb6aed2e28d830a1ff0e36878ddb0a284",
+          "hours": [
+            "在庫終了につき配布中止。再開時は告知"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.town.kaminokawa.lg.jp/0092/info-0000003312-0.html",
+            "snapshotPath": "data/evidence/national/kanto-north/6e95468b4edd22001ee4.html",
+            "snapshotSHA256": "56b8b51a0dd234f10b03a59998450413f0bcf501b51e08c02ac7db6dda956318",
+            "sourceLocator": "09-301-A001 / 上三川町ORIGAMIプラザ / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/56",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/15",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.town.kaminokawa.lg.jp/0357/info-0000003314-0.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.150536+00:00",
+      "elapsedSeconds": 0.003575,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "name": "小山市役所 市役所1階 中央管理室(庁舎西側)",
+      "address": "栃木県小山市中央町1-1-1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-caa883741cf60ee761be",
+        "legacyIds": [
+          "place:caa883741cf60ee761be"
+        ],
+        "name": "小山市役所 市役所1階 中央管理室(庁舎西側)",
+        "address": "栃木県小山市中央町1-1-1",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-208-A001 / 小山市役所 市役所1階 中央管理室(庁舎西側) / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-208-A001",
+          "placeId": "facility:kanto-north-caa883741cf60ee761be",
+          "sourceHash": "e5255a835375e700209991f99a8fc64454ae9d58f6489b924319493be4b421b9",
+          "hours": [
+            "土日祝8:30～17:15"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.oyama.tochigi.jp/soshiki/46/242777.html",
+            "snapshotPath": "data/evidence/national/kanto-north/1692a825bf071b8f73b8.html",
+            "snapshotSHA256": "95b46e0c4a30a3d6b055d5cddb7bf5938c11e85062f9b1ee1af12d6ec8dc3e21",
+            "sourceLocator": "09-208-A001 / 小山市役所 市役所1階 中央管理室(庁舎西側) / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。休日は西側入口の守衛室。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/updates/15",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/15",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/reviews/15/exactCandidateCorrection/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue7/reviews/north-kanto.json#/exactOldNewCorrectionProposals/2/old",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/group-b-outcomes.json#/outcomes/5",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review.json#/scope",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review.json#/outcomes/5",
+          "kind": "review"
+        },
+        {
+          "ref": "data/national/issue16/selection.json#/groups/12",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue20/oyama-outcomes.json#/outcomes/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue20/selection.json#/groups/2",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/1",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/55",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/issue16/group-a-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/issue16/group-b-review-resolution.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/issue20/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": "提供者のCSV記法/CRS説明・訂正版、または再利用可能な地理院等の全建物外形と現庁舎配置の対応を確定し、出典/版/CRS/加工法/精度と利用条件を揃えて新代表点を独立レビューする。入口測量は要件にしない。",
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.154134+00:00",
+      "elapsedSeconds": 0.005355,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-cfbbd4559bc94f487c62",
+      "name": "小山市まちの駅思季彩館",
+      "address": "栃木県小山市中央町3-5-3",
+      "baselinePlace": {
+        "id": "facility:kanto-north-cfbbd4559bc94f487c62",
+        "legacyIds": [
+          "place:cfbbd4559bc94f487c62"
+        ],
+        "name": "小山市まちの駅思季彩館",
+        "address": "栃木県小山市中央町3-5-3",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-208-B001 / 小山市まちの駅思季彩館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-208-B001",
+          "placeId": "facility:kanto-north-cfbbd4559bc94f487c62",
+          "sourceHash": "d22ff2d9e00673216c1348e0a5b8b0711db20b7395a036b0552b52fdbad4c0f2",
+          "hours": [
+            "9:00～17:00",
+            "水曜日・年末年始休み"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.oyama.tochigi.jp/kurashi/suido-gesuido/gesuido/page010516.html",
+            "snapshotPath": "data/evidence/national/kanto-north/d38154535aaff55d2306.html",
+            "snapshotSHA256": "de355dc1da86f3c6b9ad42b4e470b24e1e53a3acda692138d863db0669cd0731",
+            "sourceLocator": "09-208-B001 / 小山市まちの駅思季彩館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/68",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/57",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.city.oyama.tochigi.jp/shisei/shisetsu/etc/page006531.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.159515+00:00",
+      "elapsedSeconds": 0.003275,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-da24aa34d750c88eacd3",
+      "name": "壬生町役場下水道課",
+      "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+      "baselinePlace": {
+        "id": "facility:kanto-north-da24aa34d750c88eacd3",
+        "legacyIds": [
+          "place:da24aa34d750c88eacd3",
+          "place:2aa9d59c74e11dca842e"
+        ],
+        "name": "壬生町役場下水道課",
+        "address": "栃木県下都賀郡壬生町大字壬生甲3841番地1",
+        "phone": "0282-81-1859",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-361-A001 / 壬生町役場下水道課 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-361-A001",
+          "placeId": "facility:kanto-north-da24aa34d750c88eacd3",
+          "sourceHash": "b16a5082fc26a90d88de98337ef640968f0c3696359358731bf111742b7a7a4b",
+          "hours": [
+            "現在配布休止。2026-11-10再開予定",
+            "再開初日から約1週間は下水道課付近の特設会場。通常9:00～17:00"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.town.mibu.tochigi.jp/docs/2021041300025/",
+            "snapshotPath": "data/evidence/national/kanto-north/61b9fbe8da08f9f60df7.html",
+            "snapshotSHA256": "e6aa3046ae0374ede8dd98278fd0b46ecd9cab0f45977cf31d10dc73c3b4fd34",
+            "sourceLocator": "09-361-A001 / 壬生町役場下水道課 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。再開予定は自動承認しない。Aは2027-01-20以降16:30終了の予定もあり再確認。"
+          },
+          "reviewUntil": "2026-11-09"
+        },
+        {
+          "cardId": "09-361-B001",
+          "placeId": "facility:kanto-north-da24aa34d750c88eacd3",
+          "sourceHash": "bf7dad30128006bf82de14786fae5a09dbcfeafeee0b0132ae0956d825d9b4e2",
+          "hours": [
+            "現在配布休止。2026-11-10再開予定",
+            "再開初日から約1週間は下水道課付近の特設会場。通常9:00～17:00"
+          ],
+          "status": "suspended",
+          "evidence": {
+            "sourceUrl": "https://www.town.mibu.tochigi.jp/docs/2023102000042/",
+            "snapshotPath": "data/evidence/national/kanto-north/a7f334b9e497d743fe20.html",
+            "snapshotSHA256": "51655a9822b22401d7c1631fac7e5483db19186ff64fef6d1f8609b3babf71c8",
+            "sourceLocator": "09-361-B001 / 壬生町役場下水道課 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。再開予定は自動承認しない。Aは2027-01-20以降16:30終了の予定もあり再確認。"
+          },
+          "reviewUntil": "2026-11-09"
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/70",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/17",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.town.mibu.tochigi.jp/docs/2026110400033/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.162830+00:00",
+      "elapsedSeconds": 0.003021,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e30071f0e179e2492a48",
+      "name": "道の駅 那須与一の郷 物産館",
+      "address": "栃木県大田原市南金丸1584-6",
+      "baselinePlace": {
+        "id": "facility:kanto-north-e30071f0e179e2492a48",
+        "legacyIds": [
+          "place:e30071f0e179e2492a48"
+        ],
+        "name": "道の駅 那須与一の郷 物産館",
+        "address": "栃木県大田原市南金丸1584-6",
+        "phone": "0287-23-8641",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-210-A001 / 道の駅 那須与一の郷 物産館 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-210-A001",
+          "placeId": "facility:kanto-north-e30071f0e179e2492a48",
+          "sourceHash": "b7532c47689976403f6a7eac7682840ec1c4a5dcee2b5d2f4a4b92ff02f9fa1f",
+          "hours": [
+            "9:00～17:00",
+            "12月～3月第2週まで毎週月曜日休館"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.ohtawara.tochigi.jp/docs/2022111000029/",
+            "snapshotPath": "data/evidence/national/kanto-north/eb5414701da69c3315d8.html",
+            "snapshotSHA256": "37e79a565814d9e68de225caa229d7aadf56c4503abe96975707bd343bf57b67",
+            "sourceLocator": "09-210-A001 / 道の駅 那須与一の郷 物産館 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。市配布案内の季節休館を採用。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/74",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/62",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.nasuno-yoichi.jp/parking/",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.165877+00:00",
+      "elapsedSeconds": 0.002929,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+      "name": "栃木県下水道管理事務所",
+      "address": "栃木県河内郡上三川町多功1159",
+      "baselinePlace": {
+        "id": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+        "legacyIds": [
+          "place:e59ebd8f60bb60f5aab7"
+        ],
+        "name": "栃木県下水道管理事務所",
+        "address": "栃木県河内郡上三川町多功1159",
+        "phone": "0285-53-5695",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-000-A001 / 栃木県下水道管理事務所 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-000-A001",
+          "placeId": "facility:kanto-north-e59ebd8f60bb60f5aab7",
+          "sourceHash": "ddf83879c62725f94a717eb25b914ffb391afd2a868744fb747f1a046d170241",
+          "hours": [
+            "平日9:00～12:00、13:00～16:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+            "snapshotPath": "data/evidence/national/kanto-north/53320519c26c6a86d593.html",
+            "snapshotSHA256": "909e89100c3d6b468ac275c139b74cc3e8872e6843d45d4bbd98d6d8a665af2f",
+            "sourceLocator": "09-000-A001 / 栃木県下水道管理事務所 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公式の昼休みを補記。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/75",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/63",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.168826+00:00",
+      "elapsedSeconds": 0.002659,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    },
+    {
+      "facilityId": "facility:kanto-north-f1b47f3c916256fbbc00",
+      "name": "上三川町観光協会",
+      "address": "栃木県河内郡上三川町しらさぎ1-3-5(むかしなつかし館内)",
+      "baselinePlace": {
+        "id": "facility:kanto-north-f1b47f3c916256fbbc00",
+        "legacyIds": [
+          "place:f1b47f3c916256fbbc00"
+        ],
+        "name": "上三川町観光協会",
+        "address": "栃木県河内郡上三川町しらさぎ1-3-5(むかしなつかし館内)",
+        "phone": "0285-57-2335",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "09-000-A001 / 上三川町観光協会 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "baselineRelations": [
+        {
+          "cardId": "09-000-A001",
+          "placeId": "facility:kanto-north-f1b47f3c916256fbbc00",
+          "sourceHash": "ddf83879c62725f94a717eb25b914ffb391afd2a868744fb747f1a046d170241",
+          "hours": [
+            "休日11:00～12:00、13:00～16:00",
+            "臨時休館は観光協会へ要確認"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.pref.tochigi.lg.jp/h60/koumu/manhole/card02.html",
+            "snapshotPath": "data/evidence/national/kanto-north/53320519c26c6a86d593.html",
+            "snapshotSHA256": "909e89100c3d6b468ac275c139b74cc3e8872e6843d45d4bbd98d6d8a665af2f",
+            "sourceLocator": "09-000-A001 / 上三川町観光協会 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公式の昼休みを補記。"
+          }
+        }
+      ],
+      "history": [
+        {
+          "ref": "data/national/issue7/north-kanto.json#/unresolved/81",
+          "kind": "original"
+        },
+        {
+          "ref": "data/national/location-batch1/coverage.json#/groups/3",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/coverage.json#/rows/66",
+          "kind": "history"
+        },
+        {
+          "ref": "data/national/location-batch1/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch1/validation-review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-response.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review.json#",
+          "kind": "scoped-review; inspect decision"
+        },
+        {
+          "ref": "data/national/location-batch2/north-kanto/review-flash.md",
+          "kind": "prose-review; inspect scope"
+        }
+      ],
+      "humanAnswer": null,
+      "priorNextAction": {
+        "url": "https://www.pref.tochigi.lg.jp/b06/system/gaido/annai/access.html",
+        "required": "当該建物名・番地に対応する公開GIS地点または配置図と建物外形。既知の移転・別棟・座標競合は上記個別障害を解消する原典。室内窓口精度は不要。"
+      },
+      "currentStage": "history-and-ledger-inventory-only",
+      "newBuildingComparison": "not-started",
+      "adoptionApproval": false,
+      "startedAt": "2026-11-05T14:46:41.171506+00:00",
+      "elapsedSeconds": 0.004121,
+      "timingScope": "機械的な履歴解決・現台帳・施設証拠hash照合のみ。読解時間ではない。"
+    }
+  ],
+  "extraCardPrefectureCandidates": [],
+  "inputSHA256": {
+    "data/national/issue7/north-kanto.json": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb",
+    "data/national/location-batch1/coverage.json": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+    "data/national/location-batch2/north-kanto/coverage.json": "458e053d85d9346a5b258c59cac5901e6ba6ab69170de2bf7b7b1c5e7e63cc78",
+    "data/national/location-batch1/review.json": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+    "data/national/location-batch1/validation-review.json": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+    "data/national/location-batch2/north-kanto/review-response.json": "ac131bcd85b1fc90ea68f04304384351bd47a13a78b1b0f118b57b3c56612acf",
+    "data/national/location-batch2/north-kanto/review.json": "92d21700d80c618ccdbf6949f98c9985d2bd4c17bb70a33a3380a048ee0cd0cc",
+    "data/national/location-batch2/north-kanto/review-flash.md": "8ade6c0a61152e9c1b83db6864a6766511b1019f75d00456c7e628fa168bba06",
+    "data/national/location-batch2/north-kanto/initial-outcomes.json": "300067b96bca39c5ab3a2d0346d1046e053d15d643de8d9834b939c803dd4f21",
+    "data/national/location-batch2/north-kanto/outcomes.json": "ad4b63fc7a628c6c073c52c58d6cca434cb7044fe8cbb90d9164fb86081070d7",
+    "data/national/location-batch2/north-kanto/selection.json": "c9f7e8da059cc4d88f152a25a628dbb74e2165a1bb8446f3217a8ea14d175bec",
+    "data/national/issue57/human-confirmation-queue.json": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+    "data/national/issue7/reviews/north-kanto.json": "a7e530005cd6a33000ff5eb5ef7e75d0d6045f8813ca4e654dc038f3c57f4515",
+    "data/national/issue16/group-b-outcomes.json": "e29a1614570ce3c184906b05e15828c3aee1ccfb6e7b208464503a597d31b388",
+    "data/national/issue16/group-b-review.json": "a6515101303c3e0d3ec1ca4891236068e8c21b0e728e0ddc20b3a6d5a5b16f22",
+    "data/national/issue16/selection.json": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6",
+    "data/national/issue20/oyama-outcomes.json": "aaf523fc45db7b98e61d6f4d5406d1b9a55b24efc163bdadc192c77efc82f6ea",
+    "data/national/issue20/selection.json": "b09b492082515175b44362c47ed3fe53a25e5f9934bc7db7d42f253419a8a3cc",
+    "data/national/issue16/group-a-review.json": "154a3417ff1836fbbd719a08e3468ccfde3c76844630bc5ef3699c3f82196b4a",
+    "data/national/issue16/group-b-review-resolution.json": "c872e34e12bfb6f9e810741468b3198ccfba22df4ed80370b06ee18880088e2d",
+    "data/national/issue20/review.json": "8ab6b526ef4d8b7d7944ee58b589b321984e9a2ad659defce61da6f083f51e54",
+    "tools/national/manifest.json": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+    "data/national/issue57/remaining-index.json": "094c568165004c98650d42fc9c3ec349b3bdbcec72c0d9ce7555b4c3c14f34a5"
+  }
+}
