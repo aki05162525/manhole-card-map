@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "scopeInputSHA256": "1af356226fb26103e67f2171f7f9be845a89a84527f439f19ca9f828430b3c3b",
+  "facilities": [
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-south-2eec15147b3a40fb17b7",
+        "legacyIds": [
+          "place:2eec15147b3a40fb17b7"
+        ],
+        "name": "四之宮ふれあいセンター",
+        "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+        "phone": "0463-54-6419",
+        "evidence": {
+          "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+          "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+          "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "oldPlaceSHA256": "c3ee34ccabedefa8edbcbb0dbee74269922dcd436702feab13b5ac45d1b7d992"
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-south-36fae9051046490c8149",
+        "legacyIds": [
+          "place:36fae9051046490c8149"
+        ],
+        "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+        "address": "神奈川県秦野市上大槻190番地",
+        "phone": "0463-81-4114",
+        "evidence": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+          "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+          "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "oldPlaceSHA256": "ebfde28f9e84db026f20a99878c2c59f921bb355b03d38c0cecb99785ca92b00"
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "legacyIds": [
+          "place:ee83b23f6b285cc3df5a"
+        ],
+        "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "address": "神奈川県伊勢原市神戸120",
+        "phone": "0463-92-3341",
+        "evidence": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+          "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+          "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "oldPlaceSHA256": "29edf4b884454e5a7fd42050190468c08992331bcfdb9114f43f110abecdacf9"
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-11",
+      "oldCoordinate": null,
+      "oldPlace": {
+        "id": "facility:kanto-south-integration-11",
+        "legacyIds": [],
+        "name": "オーエンス文化会館 第2駐車場",
+        "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/8e0eb220dc912e75ebdc.html",
+          "snapshotSHA256": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298",
+          "sourceLocator": "施設詳細／所在地。第二駐車場南側の窓口指定は配布案内を参照",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "oldPlaceSHA256": "f6764c10bba7a2826eec94a1c10a517b9fb40ef3917a6dff21a7e1e9f156b9d5"
+    }
+  ]
+}

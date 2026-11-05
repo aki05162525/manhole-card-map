@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "bindings": [
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "identity": {
+        "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+        "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)"
+      },
+      "adoption": {
+        "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+        "coordinate": {
+          "lat": 35.5717352,
+          "lng": 139.3726981
+        },
+        "scope": "building",
+        "evidence": {
+          "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+          "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json",
+          "snapshotSHA256": "5435e7f4f43fec017edb536b5be1ab65f75d7846dd028353c486ccafbeee0eb1",
+          "sourceLocator": "PMTiles z16/58140/25831 BldA[39]、隣接58139/25831 BldA[761]。市周辺案内図の第1別館を比較。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "未承認の調査候補。XYZ Web Mercator逆投影、extent4096、元点と小数7桁丸め後の内包検査。製品固有の測地系適用と独立同定は未承認。入口測量・測量精度の保証なし。"
+        }
+      },
+      "adoptionSHA256": "b556a9c804b3b3de711d7e4661f1ec18f2c958d1e84a62bba426eb9a60ba4c3d",
+      "sourceVersion": "GSI optimal_bvmap 2026-07-01; 候補のみ/独立レビュー未了"
+    }
+  ],
+  "events": [],
+  "groups": []
+}

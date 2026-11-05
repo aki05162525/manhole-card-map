@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "coordinate": {
+        "lat": 35.2637086,
+        "lng": 139.5785511
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+        "snapshotSHA256": "b2cc83e0d10534f6ac078d00690e1932af2765bfc6ebf0ea4533da6002ec2acf",
+        "sourceLocator": "PMTiles2026-07-01 z16/58177/25899 BldA125; hayama-followup/observation.json参照。利用者報告と町公式入口写真/第三者撮影案内板を分離して比較。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認追加候補。基準日維持、利用者回答日2026-11-06を別記。extent4096、7桁丸め後内包確認。第三者案内板の図版年代・入口棟背面輪郭は未確認。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "coordinate": {
+        "lat": 35.1446872,
+        "lng": 139.6208024
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/miura-point.json",
+        "snapshotSHA256": "a6300bc59846d9363c4b4960937ef1f7ed704ca80c4b465033469f0044adff78",
+        "sourceLocator": "58185-25926-BldA-244; data/evidence/kanto-prefecture/kanagawa/peninsula/miura-observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。PMTiles2026-07-01版、extent4096、Web Mercator逆投影、小数7桁丸め後内包。建物同定と製品CRS適用は独立レビュー未了。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+      "coordinate": {
+        "lat": 35.519306,
+        "lng": 139.7395574
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/iriezaki-west/numeric.json",
+        "snapshotSHA256": "eb0c9c1c9dc1edcee5121486a3379769835483caef5448bb555054a0ed310465",
+        "sourceLocator": "PMTiles z16/58206/25842 BldA443。2018市計画p3/2026環境省PDFp45を60度表示回転の数値図で照合。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認候補。主棟443内部代表点のXYZ逆投影と小数7桁丸め内包。上端突出・付属444・ポンプ432・L字447・道路向かい西系3/4を照合。製品固有CRS・独立採用承認前。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+      "coordinate": {
+        "lat": 35.3596009,
+        "lng": 139.3619751
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/numeric.json",
+        "snapshotSHA256": "912dcd2ce0c162e80b402e74a442e10d167daf56fbc9a565a7b9aebc1ebdf446",
+        "sourceLocator": "PMTiles z16/58138/25878 BldA[43]。data/evidence/kanto-prefecture/kanagawa/west/shinomiya-south/observation.jsonの公式図/周囲との実比較。出典:国土地理院最適化Vector、加工:manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。XYZ逆投影、extent4096、ポリゴン妥当性と小数7桁丸め前後内包検査。製品固有CRS・同定・利用条件の独立レビューは未了。入口測量なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-36fae9051046490c8149",
+      "coordinate": {
+        "lat": 35.3648249,
+        "lng": 139.2430079
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/west/hadano-south/numeric.json",
+        "snapshotSHA256": "152862848339d17e0281438882f6e9afc2f928492595f34de1552d19f1bb52ee",
+        "sourceLocator": "PMTiles z16/58116/25877 BldA[55]。data/evidence/kanto-prefecture/kanagawa/west/hadano-south/observation.jsonの公式図/周囲との実比較。出典:国土地理院最適化Vector、加工:manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。XYZ逆投影、extent4096、ポリゴン妥当性と小数7桁丸め前後内包検査。製品固有CRS・同定・利用条件の独立レビューは未了。入口測量なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-a60af499924663813476",
+      "coordinate": {
+        "lat": 35.5320363,
+        "lng": 139.6982029
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/kita/numeric.json",
+        "snapshotSHA256": "35a17e45419e255950062005ca794c332be002a30719fc61ec1ef5c2041b06bc",
+        "sourceLocator": "PMTiles BldA; data/evidence/kanto-prefecture/kanagawa/north/kita/observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。公式棟図と9タイル比較、元点/小数7桁丸め後内包。製品固有CRSと独立同定の承認前。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+      "coordinate": {
+        "lat": 35.5311698,
+        "lng": 139.4350792
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/north/sagamix/numeric.json",
+        "snapshotSHA256": "1ac6b373188d708c7248d7d62f94fc3bd81297c842165003c09ce8dfd80f9321",
+        "sourceLocator": "PMTiles BldA; data/evidence/kanto-prefecture/kanagawa/north/sagamix/observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。公式棟図と9タイル比較、元点/小数7桁丸め後内包。製品固有CRSと独立同定の承認前。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+      "coordinate": {
+        "lat": 35.5717352,
+        "lng": 139.3726981
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/sagamihara-numeric.json",
+        "snapshotSHA256": "5435e7f4f43fec017edb536b5be1ab65f75d7846dd028353c486ccafbeee0eb1",
+        "sourceLocator": "PMTiles z16/58140/25831 BldA[39]、隣接58139/25831 BldA[761]。市周辺案内図の第1別館を比較。出典・加工: 国土地理院最適化Vector/manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。XYZ Web Mercator逆投影、extent4096、元点と小数7桁丸め後の内包検査。製品固有の測地系適用と独立同定は未承認。入口測量・測量精度の保証なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+      "coordinate": {
+        "lat": 35.3872848,
+        "lng": 139.2971013
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/west/isehara/numeric.json",
+        "snapshotSHA256": "60f635a6f1bca5496bbdebddfb977d48caf26874703ec3482171f9b585ab210b",
+        "sourceLocator": "PMTiles z16/58126/25872 BldA[37]。data/evidence/kanto-prefecture/kanagawa/west/isehara/observation.jsonの公式図/周囲との実比較。出典:国土地理院最適化Vector、加工:manhole-card-map。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。XYZ逆投影、extent4096、ポリゴン妥当性と小数7桁丸め前後内包検査。製品固有CRS・同定・利用条件の独立レビューは未了。入口測量なし。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-08",
+      "coordinate": {
+        "lat": 35.2844707,
+        "lng": 139.6572924
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/kanagawa/peninsula/verny-point.json",
+        "snapshotSHA256": "710b83c791f92a5baa33e38e78801b17b33e2651adc4b4311e6e968fca4139bd",
+        "sourceLocator": "58191-25895-BldA-291; data/evidence/kanto-prefecture/kanagawa/peninsula/verny-observation.json; 出典・加工: 国土地理院最適化Vector/manhole-card-map",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認調査候補。PMTiles2026-07-01版、extent4096、Web Mercator逆投影、小数7桁丸め後内包。建物同定と製品CRS適用は独立レビュー未了。"
+      }
+    }
+  ]
+}

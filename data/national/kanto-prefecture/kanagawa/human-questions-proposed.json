@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "questions": [
+    {
+      "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+      "name": "葉山しおさい公園",
+      "officialUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+      "question": "休日のヨットデザインカードは、公園入口の入園受付棟で受け取れますか。",
+      "resolves": "博物館AED点を公園窓口に流用せず、現配布棟を絞る。",
+      "status": "proposed-to-parent; not asked directly",
+      "previousAnswer": "issue57キューに該当IDなし",
+      "noMunicipalContact": true
+    },
+    {
+      "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+      "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+      "officialUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+      "question": "現在このカードを市役所で受け取る窓口は、城山町1-1の旧第2分館ですか、それとも移転先庁舎ですか（棟名・住所が分かれば併記）。",
+      "resolves": "旧配布表と移転予定資料の矛盾を解消し、位置採用と関係修正を分ける。",
+      "status": "proposed-to-parent; not asked directly",
+      "previousAnswer": "issue57キューに該当IDなし",
+      "noMunicipalContact": true
+    }
+  ]
+}
