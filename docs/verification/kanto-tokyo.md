@@ -87,9 +87,9 @@
 ╭──────────────────────────────────────╮
 │ lefthook  v2.2.2   hook:  pre-commit │
 ╰──────────────────────────────────────╯
-┃  frontend ❯ 
+┃  frontend ❯
 
-┃  go-test ❯ 
+┃  go-test ❯
 + go test -count=1 ./...
 ?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
 ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	77.911s
@@ -129,9 +129,9 @@ summary: (done in 78.77 seconds)
 ╭──────────────────────────────────────╮
 │ lefthook  v2.2.2   hook:  pre-commit │
 ╰──────────────────────────────────────╯
-┃  frontend ❯ 
+┃  frontend ❯
 
-┃  go-test ❯ 
+┃  go-test ❯
 + go test -count=1 ./...
 ?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
 ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	73.952s
@@ -179,9 +179,9 @@ summary: (done in 74.67 seconds)
 ╭──────────────────────────────────────╮
 │ lefthook  v2.2.2   hook:  pre-commit │
 ╰──────────────────────────────────────╯
-┃  frontend ❯ 
+┃  frontend ❯
 
-┃  go-test ❯ 
+┃  go-test ❯
 + go test -count=1 ./...
 ?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
 ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	73.245s
@@ -222,3 +222,13 @@ summary: (done in 73.84 seconds)
 この補足は文書のみ。新しい原本取得・数値計算・現地確認・自治体連絡は行っていない。同じ質問を再送せず、直接の図面や該当箇所が得られた場合に再照合する。全24件の区分と座標・lifecycle・共有manifestに変更なし。新しいコード／文書不一致はない。
 
 検証：`git diff --check`、候補データを含むdocs以外の追跡ファイル差分なしを確認。全国Python・非cache Goの結果は対象commit `b39aa9c637344d12013c69baf5ecd2718ff0c3cd` の前節証跡を継承し、通常フックは省略しない。研究保存PRのマージ可否と位置採用は別判断であり、子によるマージは行わない。
+
+## Codex最終レビューへの訂正
+
+原記録は保持し、`data/evidence/kanto-prefecture/tokyo/review-corrections/corrections.json` を訂正版とする。
+
+- Hintmationの位置参照112行は旧手順が列を一つずつずらして読んでいた。CSVヘッダー名で街区符号・緯度・経度を読み直し、赤羽台二丁目1番の照合値も復元した。「北端点から約33m」は未検証として撤回。旧 `hint3-command.py.txt` / `hint_write-command.py.txt` は歴史記録であり再生成には使用しない。
+- RdCLの切れた参照8件は、同一hashのmaruyoshiタイルへの対応表を追加した。旧記録は書き換えていない。
+- フックログの末尾空白を除去した。過去の検査成功をPR全差分の成功と読み替えない。
+
+訂正版の読取専用検査: `python3 -B data/evidence/kanto-prefecture/tokyo/review-corrections/check.py`。旧112行の緯度範囲検査で失敗を再現し、訂正版は原ZIP hash・112行・街区抽出・8タイルhashを検査する。候補座標・binding・相似変換・manifestは変更しない。全24件の位置採用は未承認、製品CRSは未確定。
