@@ -1,0 +1,2664 @@
+{
+  "schema": 1,
+  "region": "kinki-west",
+  "rows": [
+    {
+      "facilityId": "facility:kinki-itami-gallery-temporary",
+      "name": "伊丹市立観光物産ギャラリー 仮設店舗",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/102",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/102"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-207-B001",
+        "28-207-C001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "batch1-hold",
+      "reason": "第1弾の停止・再開条件を維持。今回新手法を割り当てていない。",
+      "reevaluateWhen": "初回3群のいずれかが完了/停止した時に次の候補として最初に再審査。仮設店舗の終了・再移転・利用者報告が出たら待たず再評価。"
+    },
+    {
+      "facilityId": "facility:kinki-00076aa000243841ea36",
+      "name": "奈良町南観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/0"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-201-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。奈良市の公開文化財GIS・施設CSVを新規探索し、鹿の舟「繭」の建物識別情報を探す。既存運営者アクセスの再取得やP05再検索はしない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-0ab43e23e56721ae344c",
+      "name": "ダムパークいばきた パークセンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/1"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-211-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。大阪府のダムパーク公園計画・配置図からパークセンター棟を特定する別資料を探索する。2022年P05や公園中心を用いない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-0df3699f1debe84ccd2a",
+      "name": "稲美町役場地域整備部水道課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/2"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-381-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。町の庁舎耐震・施設管理資料を探索し、新館の配置と数値外形への対応を確認する。旧アクセス図だけの再取得はしない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-0f86b9f28ca3800b81c4",
+      "name": "芦屋市役所 北館地下1階警備室",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/3"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-206-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。芦屋市オープンデータの公共施設一覧を探索し北館・東館の区別と座標仕様を確認する。単一役所点を共有しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-1be70e72fc99db54a2c4",
+      "name": "守口市役所 総合案内",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/9"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-209-A001"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。守口市公開施設CSV・新庁舎資料を探索し現庁舎と競合P05点を区別する。丸めたP05点は再提案しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-1ca68b2dbec83466c8f0",
+      "name": "柏原市市役所別館1階 下水工務課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/10"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-221-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。柏原市公開施設データ・庁舎配置資料を探索し別館の独立した建物情報を探す。本館点を転用しない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-2e26386ad29411013be5",
+      "name": "守口市役所 環境下水道部 下水道課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/19"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-209-A001"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。守口市共通資料で5階南エリアを含む庁舎の同定を行う。総合案内と住所一致だけで同棟認定せず各IDを保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-5c6786f83ef5b440d278",
+      "name": "庁舎正面入口のインターホンにて警備員にお申しつけ下さい",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/33"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-383-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-5cade60bb6200407cec5",
+      "name": "芦屋市役所 東館1階下水道課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/34"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-206-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "selected",
+      "reason": "初ピン候補かつ移転・別棟/競合の誤誘導リスクを優先。芦屋市共通CSVで東館を個別識別できるか検証する。北館との座標共用はしない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6f7e572fc387b69390d7",
+      "name": "羽曳野市下水道総務課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/45",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/45"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-222-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-89b25c9cb369d4ce912e",
+      "name": "たつの市役所下水道管理課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/56",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/56"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-229-B001"
+      ],
+      "blockers": [
+        "conflict"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a0c0f50006d2757a8c8b",
+      "name": "道の駅 いずみ山愛の里",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/62",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/62"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-219-B001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a5abac7c12eb8a378220",
+      "name": "高槻市役所 下水河川企画課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/66",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/66"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-207-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-c8c261ef28a3887401ad",
+      "name": "御坊市役所1階 みやこ姫ロビー",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/81",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/81"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "30-205-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-c98e214d42e9b107f4cd",
+      "name": "千早赤阪村役場都市整備課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/83",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/83"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-383-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-dcd7f98f6661c1743631",
+      "name": "寝屋川流域下水道 鴻池水みらいセンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/91",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/91"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-000-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-eb17399090b3ca34093b",
+      "name": "御坊市役所1階 夜間休日窓口",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/95",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/95"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "30-205-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-fb4b43b63da166b6b021",
+      "name": "枚方市観光案内所Syuku56",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/98",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/98"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-210-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-karako-information",
+      "name": "唐古・鍵遺跡史跡公園 遺構展示情報館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/103",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/103"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-363-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-sennan-annex",
+      "name": "泉南市役所別館2階 下水道課窓口",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/104",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/104"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-228-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-507fc6c8fa978e4618f2",
+      "name": "四條畷市役所 都市整備部 下水道課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/28"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6f8549ee753cbea13b34",
+      "name": "四條畷市役所 宿直室",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/46",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/46"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-7c94ba7a999f14ad29b9",
+      "name": "田尻町役場別館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/52",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/52"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-b6ae02f6302875f4ca7f",
+      "name": "加西市生活環境部 上下水道課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/75",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/75"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-5ef4b8538c8df02b55f4",
+      "name": "大東市上下水道局 総務課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/35",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/35"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-218-A001",
+        "27-218-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "existing-hold",
+      "reason": "Issue25/27の保留条件を維持。今回新たな再開資料を選定していない。",
+      "reevaluateWhen": "局敷地の棟配置、宿直窓口の所属棟、利用可能な建物外形または直接代表座標の新資料を得る。"
+    },
+    {
+      "facilityId": "facility:kinki-608e56a7ed0f7036b2a5",
+      "name": "原田処理場(スカイランドHARADA管理事務所)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/36"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-000-A001",
+        "28-000-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-677fb9a18c933486a439",
+      "name": "大東市上下水道局 宿直室",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/41",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/41"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-218-A001",
+        "27-218-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "existing-hold",
+      "reason": "Issue25/27の保留条件を維持。今回新たな再開資料を選定していない。",
+      "reevaluateWhen": "局敷地の棟配置、宿直窓口の所属棟、利用可能な建物外形または直接代表座標の新資料を得る。"
+    },
+    {
+      "facilityId": "facility:kinki-9f39963fd788d29d7a00",
+      "name": "加東市役所 商工観光課（3階）",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/60",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/60"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-228-A001",
+        "28-228-B001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "classification": "existing-hold",
+      "reason": "Issue25/27の保留条件を維持。今回新たな再開資料を選定していない。",
+      "reevaluateWhen": "カード別の現窓口、変更日、対象期間を確定できる市/運営者の明示資料が得られる。"
+    },
+    {
+      "facilityId": "facility:kinki-c5d10ff37b683a499161",
+      "name": "(一社)加東市観光協会",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/79",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/79"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-228-A001",
+        "28-228-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "existing-hold",
+      "reason": "Issue25/27の保留条件を維持。今回新たな再開資料を選定していない。",
+      "reevaluateWhen": "カード別の現窓口、変更日、対象期間を確定できる市/運営者の明示資料が得られる。"
+    },
+    {
+      "facilityId": "facility:kinki-0fcf12cda481cf26b84f",
+      "name": "姫路市観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/4"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-201-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-1435805d8cdc92f82308",
+      "name": "明石市立天文科学館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/5"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "batch1-hold",
+      "reason": "第1弾の停止・再開条件を維持。今回新手法を割り当てていない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-16fb4e440571f625f427",
+      "name": "カーミンの観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/6"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-446-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-18407c7d342c050ce443",
+      "name": "道の駅 奥河内くろまろの郷",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/7"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-216-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-216cded227809ea5a7c7",
+      "name": "まちづくりの館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/12"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-202-C001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-23e158dd32bc9d143679",
+      "name": "豊中市上下水道局 経営部 経営企画課(3F)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/13"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-2657ffe8de47bc2b6212",
+      "name": "箕面交通・観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/14"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-220-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-26dca137eb9b0e69e31f",
+      "name": "東水環境センター 東灘処理場",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/16"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-100-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-2a39f775dea712cf3776",
+      "name": "3階 下水道事業課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/17"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-224-A001"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-2c4debf723273279546a",
+      "name": "三木市上下水道部庁舎",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/18"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-215-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-3046e0d385ffb38ae68d",
+      "name": "豊中市上下水道局 警備員室(1F)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/20"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-348d70ced83b49e4afc2",
+      "name": "大阪府臨海スポーツセンター管理事務所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/21"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-225-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-401709fbed244ac9be6a",
+      "name": "岸和田駅前観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/22"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-202-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-47c3135b0a3aad88bcce",
+      "name": "日本遺産龍田古道ビジターセンター インフォメーションカウンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/24"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-343-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-4818019032b1e3aac845",
+      "name": "三木市観光協会",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/25"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-215-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-5541e22064b914088d81",
+      "name": "大阪市下水道科学館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/30"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-100-C001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "already-adopted",
+      "reason": "第1弾で採用済み。今回の対象から除外。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-560ec92fc5daae89d908",
+      "name": "能勢浄化センター ささゆりの丘",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/31"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-322-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-5890eab6e8c133c75016",
+      "name": "吉野町観光案内所(近鉄吉野駅前)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/32"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-441-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6239a33fa7de3d368fe8",
+      "name": "伊丹市上下水道局 水道サービスステーション",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/37",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/37"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-207-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-639ab6c72f8fcd731d94",
+      "name": "観光案内所(IKOBA)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/38",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/38"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-209-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-63a3b36410f47b4ebd8a",
+      "name": "醬油の郷 大正ロマン館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/39",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/39"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-229-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-65bebcfcae7710dc09bc",
+      "name": "高槻城公園芸術文化劇場 南館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/40",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/40"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-207-C001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6a897a8ec6265a54d22a",
+      "name": "三郷町下水道課(立野汚水中継ポンプ場2階)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/42",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/42"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-343-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6edf2f45e34026831b26",
+      "name": "旧岡田家住宅・酒蔵",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/43",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/43"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-207-D001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "batch1-hold",
+      "reason": "第1弾の停止・再開条件を維持。今回新手法を割り当てていない。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-6ee4ee955755a6bfa7b7",
+      "name": "安満遺跡公園ボーネルンドパークセンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/44",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/44"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-207-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-77dcfd9605bd83bd5b64",
+      "name": "門真市環境水道部 お客さまセンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/47",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/47"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-223-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-7fa9299caf5b50e9e66c",
+      "name": "神戸空港 1階総合案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/54",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/54"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-100-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-8928b0e88e78dd57d386",
+      "name": "道の駅「愛彩ランド」",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/55",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/55"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-202-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-8aab8c6abec799b476b5",
+      "name": "観光交流施設きらめきファクトリー",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/57",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/57"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-214-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-958e879f17eafbb8e973",
+      "name": "泉南市観光協会観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/58",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/58"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-228-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-9a89ff7b1625b66ddbd8",
+      "name": "柏原市役所本館2階 かしわらテラス図書スペース",
+      "originalRef": "data/national/issue7/kinki-west.json#/updates/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/reviews/15",
+        "data/national/issue7/reviews/kinki-west.json#/corrections/4"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-221-A001"
+      ],
+      "blockers": [],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-9ad8021637995f607dd7",
+      "name": "北野観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/59",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/59"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-100-D001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-9f51e4ef0b602c7f03c4",
+      "name": "有田川町観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/61",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/61"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "30-366-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a14e4d4fae9c3eaf9d08",
+      "name": "和泉市いずみの国 観光おもてなし処",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/63",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/63"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-219-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a39de4697e0157ac0eb8",
+      "name": "茨木市文化・子育て複合施設 おにクル 1階コンシェルジュ",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/64",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/64"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-211-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a592e005b236f7218498",
+      "name": "たつの観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/65",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/65"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-229-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-a778ef6e6dd8552c4743",
+      "name": "門真市泉町浄水場 当直室",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/67",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/67"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-223-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-ab4d9df5429f29cc4208",
+      "name": "1階 お客さま窓口",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/69",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/69"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-224-A001"
+      ],
+      "blockers": [
+        "identity"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-ab91f9a19111fa61686b",
+      "name": "宝塚市立文化芸術センター 1階受付",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/70",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/70"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-214-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-ab9f4dc49dbc88088817",
+      "name": "クリエートにしのみや(ららぽーと甲子園2F)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/71",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/71"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-204-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-abc816170980d4f8c6db",
+      "name": "加古川観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/72",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/72"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-210-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-akashi-information",
+      "name": "あかし案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/73",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/73"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-b26c4a7829f736426734",
+      "name": "道の駅レスティ唐古・鍵",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/74",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/74"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-363-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-bd50aa62d0cdf1746b04",
+      "name": "天理市立黒塚古墳展示館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/76",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/76"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-204-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-bdfebcf28c671b15f164",
+      "name": "岩出市観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/77",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/77"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "30-209-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-c75fe5e57c94810e2724",
+      "name": "日本のへそ日時計の丘公園オートキャンプ場 管理棟",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/80",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/80"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-213-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-c8ea8d7650a6cc58c39e",
+      "name": "あじさいフローラみき",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/82",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/82"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-215-C001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-ca76c3b83b941d5c6531",
+      "name": "播磨町郷土資料館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/84",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/84"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-382-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-cd9cf08aa448ddce137c",
+      "name": "池田市観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/85",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/85"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-204-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-ce0f4e60767ae89a271d",
+      "name": "北条町駅",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/86",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/86"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-220-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-d03efeeb5e2760ad5647",
+      "name": "丹波市観光協会 かいばら観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/87",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/87"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-223-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-d4a34c89914311188940",
+      "name": "JR高槻駅観光案内所(JR高槻駅中央改札階)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/88",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/88"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-207-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-d9e13b21408adc9fb34c",
+      "name": "芦屋市立美術博物館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/90",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/90"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-206-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-daaa4e44e2c541067679",
+      "name": "スワンホール",
+      "originalRef": "data/national/issue7/kinki-west.json#/updates/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/reviews/23",
+        "data/national/issue7/reviews/kinki-west.json#/corrections/5"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "28-207-A001"
+      ],
+      "blockers": [],
+      "classification": "already-adopted",
+      "reason": "第1弾で採用済み。今回の対象から除外。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-e5b8e80cdd4564099f87",
+      "name": "大阪府立狭山池博物館 受付",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/93",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/93"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-231-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-f1a04ff552a8ea4cdfb8",
+      "name": "はしもと広域観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/96",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/96"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "30-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-f93d37dd46d29cf43095",
+      "name": "橿原市藤原京資料室",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/97",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/97"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "29-205-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-habikino-visitor",
+      "name": "はびきのビジターセンター",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/101",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/101"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "27-222-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-1a59dc2a1c6607a3c533",
+      "name": "丹波篠山市立歴史美術館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/8"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-1f53e017c012bc0ed6af",
+      "name": "大和郡山市上下水道部 下水道推進課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/11"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-267189d890c0c740b45b",
+      "name": "道の駅いながわ",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/15"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-4316f4367d52ae800b9a",
+      "name": "安中新田会所跡 旧植田家住宅",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/23"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-4ac5ff61db71997a359d",
+      "name": "道の駅よかわ(山田錦の館)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/26"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-4e5b0da0769b73d0b9e1",
+      "name": "工楽松右衛門旧宅",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/27"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-50fd7780197e359a9c8e",
+      "name": "伊丹市立観光物産ギャラリー",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/29"
+      ],
+      "distribution": {
+        "classification": "ended-only",
+        "statuses": [
+          "ended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "ended-only",
+      "reason": "保存一覧評価で終了のみ。再開資料なし。",
+      "reevaluateWhen": "原典更新または配布再開の明示を確認した際に関係と位置を再評価する。"
+    },
+    {
+      "facilityId": "facility:kinki-7899e1fbcdc39cc8f87a",
+      "name": "島本町立歴史文化資料館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/48",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/48"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-78cbd40384055357a1b0",
+      "name": "阪南市都市整備部下水道課(阪南市分室2階)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/49",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/49"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-7a20fbceb66cb5ebb731",
+      "name": "にしわき経緯度地球科学館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/50",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/50"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-7b408797f0748634ad5e",
+      "name": "大薮浄水場",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/51",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/51"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-7ca7be428c056941e3f7",
+      "name": "熊取町駅前観光案内所 駅下にぎわい館",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/53",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/53"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-aa58d39ff7470acf878c",
+      "name": "上郡町上下水道課(上郡町水道管理事務所内)",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/68",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/68"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-c47b534e556537bd3103",
+      "name": "池田市上下水道部経営企画課",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/78",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/78"
+      ],
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "active",
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-d6915f3dfb02605bc65a",
+      "name": "大阪池田ゲストインフォメーション",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/89",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/89"
+      ],
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "active",
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-e2d676f58090fbacb7f9",
+      "name": "松原市観光協会",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/92",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/92"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-eabe58611fd2c6d53a3e",
+      "name": "まちの駅かいづか",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/94",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/94"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-fukusaki-ekimae",
+      "name": "福崎町駅前観光交流センター（フクちゃんプラザ）",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/99",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/99"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-fukusaki-tsujikawa",
+      "name": "福崎町辻川観光交流センター（サキちゃんプラザ）",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/100",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/100"
+      ],
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    },
+    {
+      "facilityId": "facility:kinki-tajiri-tourism",
+      "name": "田尻町観光協会 観光案内所",
+      "originalRef": "data/national/issue7/kinki-west.json#/unresolved/105",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kinki-west.json#/remaining/105"
+      ],
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": null,
+      "blockers": [
+        "source"
+      ],
+      "classification": "outside-this-eight",
+      "reason": "初ピン・移転競合の8施設への限定調査。完了や重要度なしを意味しない。元のblockerと再評価条件を保持。",
+      "reevaluateWhen": "利用者報告、移転/座標競合の新根拠、利用可能な別原典/建物外形、配布関係の改訂が得られた時、又は初回3群の完了/停止レビュー時に再優先付けする。既存原本の同手法反復は再開としない。"
+    }
+  ]
+}
