@@ -1,9 +1,9 @@
 import { readdir, readFile, mkdir, writeFile } from "node:fs/promises";
 import { gzipSync, brotliCompressSync, constants } from "node:zlib";
 const results = [];
-for (const dir of ["dist/assets", "public/data"])
+for (const dir of ["dist/assets", "public/data", "public/background"])
   for (const file of await readdir(dir)) {
-    if (!/\.(js|css|json)$/.test(file)) continue;
+    if (!/\.(js|css|json|geojson)$/.test(file)) continue;
     const b = await readFile(`${dir}/${file}`);
     results.push({
       file: `${dir}/${file}`,

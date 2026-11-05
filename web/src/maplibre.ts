@@ -206,12 +206,12 @@ export const create: Create = (pins, onSelect, view) => {
       map.jumpTo({ center: [lng, lat], zoom: 14 });
     },
     async exercise() {
-      map.jumpTo({ center: [139.76, 35.68], zoom: 10 });
+      map.jumpTo({ center: [139.76, 35.68], zoom: 7 });
       await new Promise((r) => setTimeout(r, 1500));
       for (let i = 0; i < 6; i++) {
         map.panBy([i % 2 ? 80 : -80, 30], { duration: 300 });
         await new Promise((r) => setTimeout(r, 400));
-        map.zoomTo(i % 2 ? 10 : 11, { duration: 300 });
+        map.zoomTo(i % 2 ? 7 : 8, { duration: 300 });
         await new Promise((r) => setTimeout(r, 400));
       }
     },

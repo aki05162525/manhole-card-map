@@ -14,14 +14,15 @@ export function commandsFor(sitesFile) {
     sitesFile,
     "alias=sites",
     "-filter",
-    "$.area >= 100000 || sites.some(p => p[0] >= $.bounds[0]-0.02 && p[0] <= $.bounds[2]+0.02 && p[1] >= $.bounds[1]-0.02 && p[1] <= $.bounds[3]+0.02)",
+    "$.area >= 1000000 || sites.some(p => p[0] >= $.bounds[0]-0.02 && p[0] <= $.bounds[2]+0.02 && p[1] >= $.bounds[1]-0.02 && p[1] <= $.bounds[3]+0.02)",
     "-simplify",
     "dp",
-    "interval=100m",
+    "interval=800m",
     "keep-shapes",
     "stats",
     "-o",
     "format=geojson",
+    "precision=0.000001",
     "background.geojson",
   ];
 }

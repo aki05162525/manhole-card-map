@@ -40,6 +40,12 @@ jobs:
       - name: Build with explicit synthetic fixtures
         working-directory: web
         run: bun run build:fixture
+      - name: Install browser for integration checks
+        working-directory: web
+        run: bunx --no-install playwright install --with-deps chromium
+      - name: Browser checks with synthetic cards
+        working-directory: web
+        run: node scripts/browser-check.mjs
       - name: Save build-only fixture (not for deployment)
         uses: actions/upload-artifact@v4
         with:

@@ -1,9 +1,11 @@
 import { afterEach, expect, it, vi } from "vitest";
 const captured = vi.hoisted(() => ({
+  maxZoom: 0,
   install: undefined as undefined | ((map: unknown) => Promise<void>),
 }));
 vi.mock("./leaflet-common", () => ({
-  leafletCreate: (_max: number, install: (map: unknown) => Promise<void>) => {
+  leafletCreate: (max: number, install: (map: unknown) => Promise<void>) => {
+    captured.maxZoom = max;
     captured.install = install;
     return install;
   },
@@ -57,4 +59,8 @@ it("rejects an empty background rather than hanging ready", async () => {
     }),
   );
   await expect(captured.install!(map)).rejects.toThrow("形式");
+});
+
+it("limits navigation to the supported overview scale", () => {
+  expect(captured.maxZoom).toBe(8);
 });

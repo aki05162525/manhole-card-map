@@ -2,6 +2,7 @@ import L from "leaflet";
 import { firstCanvasDraw } from "./canvas-ready";
 import type { FeatureCollection } from "geojson";
 import { leafletCreate } from "./leaflet-common";
+import { groupBackgroundShapes } from "./background-shapes";
 
 // Approximate label anchors, not geocoded facilities or selectable card pins.
 const labels: [string, number, number][] = [
@@ -18,7 +19,7 @@ const labels: [string, number, number][] = [
   ["那覇", 26.21, 127.68],
 ];
 
-export const create = leafletCreate(10, async (map) => {
+export const create = leafletCreate(8, async (map) => {
   map.attributionControl.addAttribution(
     '<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html">国土数値情報（行政区域）2026年</a>を加工 / 概略図',
   );
@@ -51,7 +52,7 @@ export const create = leafletCreate(10, async (map) => {
       fillOpacity: 1,
     },
   };
-  L.geoJSON(data, options).addTo(map);
+  L.geoJSON(groupBackgroundShapes(data), options).addTo(map);
   for (const [name, lat, lng] of labels) {
     L.marker([lat, lng], {
       interactive: false,

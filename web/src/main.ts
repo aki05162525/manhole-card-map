@@ -11,6 +11,7 @@ import {
   type Adapter,
   type Card,
   type Data,
+  type Pin,
   type View,
   labels,
   painted,
@@ -23,10 +24,19 @@ const params = new URLSearchParams(location.search),
     requestedEngine === "d"
       ? requestedEngine
       : "c";
+if (engine === "c") {
+  const background = document.createElement("link");
+  background.rel = "preload";
+  background.as = "fetch";
+  background.href = "/background/japan.geojson";
+  background.crossOrigin = "anonymous";
+  document.head.append(background);
+}
 const notice = document.querySelector<HTMLElement>("#notice")!,
   detail = document.querySelector<HTMLElement>("#detail")!,
   select = document.querySelector<HTMLSelectElement>("#cards")!;
 let adapter: Adapter | undefined, data: Data;
+let selectedPins: Pin[] | undefined;
 let cards = new Map<string, Card>();
 let returnFocus: HTMLElement | null = null;
 let inputEvent: Event | null = null;
@@ -139,6 +149,7 @@ function renderCard(c: Card) {
 }
 function closeDetail() {
   detail.hidden = true;
+  selectedPins = [];
   adapter?.select([]);
   returnFocus?.focus();
 }
@@ -198,13 +209,10 @@ async function show(ids: string[], selectedId?: string) {
     };
     detail.append(choices, open);
   } else detail.append(text("p", "該当するカードはありません。"));
-  adapter?.select(
-    data.pins.filter((p) =>
-      p.cardIds.some((id) =>
-        selected ? id === selected.id : ids.includes(id),
-      ),
-    ),
+  selectedPins = data.pins.filter((p) =>
+    p.cardIds.some((id) => (selected ? id === selected.id : ids.includes(id))),
   );
+  adapter?.select(selectedPins);
   const heading = detail.querySelector("h2");
   if (heading) {
     heading.tabIndex = -1;
@@ -249,6 +257,13 @@ async function start() {
     c: () => import("./simplified"),
     d: () => import("./blank"),
   };
+  // Fetch code alongside data, while handling a failed import immediately.
+  // Lists remain usable even when the map module or its background fails.
+  const modulePromise = adapters[engine]().then(
+    (module) => ({ module }),
+    (error: unknown) => ({ error }),
+  );
+  performance.mark("data-requested");
   if (metrics.mode === "full") data = await json("/data/full.json");
   else {
     const [pins, details] = await Promise.all([
@@ -257,6 +272,15 @@ async function start() {
     ]);
     if (pins.updated !== details.updated) throw Error("データの版が一致しない");
     data = { ...details, pins: pins.pins };
+  }
+  performance.mark("data-ready");
+  performance.measure("data-load", "data-requested", "data-ready");
+  if ("fixture" in data && data.fixture) {
+    const warning = document.createElement("p");
+    warning.id = "fixture-warning";
+    warning.textContent =
+      "合成テストデータです。実在のカード・配布施設ではありません。";
+    document.querySelector("header")!.after(warning);
   }
   cards = new Map(data.cards.map((c) => [c.id, c]));
   list();
@@ -277,12 +301,13 @@ async function start() {
       { timeout: 8000 },
     );
   };
-  void offline();
   const description = `${engine.toUpperCase()} / ${data.cards.length}枚 / ${data.pins.length}ピン。${engine === "c" ? "簡略図（道路なし）。" : engine === "d" ? "診断用：背景なし。" : ""}${data.pins.some((p) => p.kind === "place" && p.reference) ? "未確定の配布場所ピンは参考位置。" : ""}`;
   notice.textContent = description;
   try {
-    const module = await adapters[engine]();
-    const activeAdapter: Adapter = module.create(
+    const loaded = await modulePromise;
+    if ("error" in loaded) throw loaded.error;
+    performance.mark("map-create");
+    const activeAdapter: Adapter = loaded.module.create(
       data.pins,
       (ids: string[]) => void show(ids),
       params.has("benchmark") ? null : stored(),
@@ -296,14 +321,20 @@ async function start() {
       }
     });
     await activeAdapter.ready;
+    document.querySelector<HTMLButtonElement>("#locate")!.disabled = false;
+    if (selectedPins !== undefined) activeAdapter.select(selectedPins);
     await painted();
     metrics.ready = performance.now();
     performance.mark("map-ready");
+    performance.measure("map-render", "map-create", "map-ready");
     performance.measure("startup", { start: 0, end: "map-ready" });
     notice.textContent = description;
   } catch (e) {
     metrics.errors.push(String(e));
     notice.textContent = `${description} 地図を読み込めませんでした。一覧・検索からカードを閲覧できます。`;
+  } finally {
+    // Keep SW downloads out of startup measurements; save lists on map failure too.
+    void offline();
   }
 }
 start().catch((e) => {

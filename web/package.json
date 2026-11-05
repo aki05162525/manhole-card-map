@@ -16,7 +16,9 @@
     "lint": "oxlint --max-warnings=0 src scripts *.ts",
     "format": "oxfmt src scripts *.ts *.json .ox*.json index.html",
     "format:check": "oxfmt --check src scripts *.ts *.json .ox*.json index.html",
-    "hooks:install": "lefthook install"
+    "hooks:install": "lefthook install",
+    "build:comparison": "bun run typecheck && vite build && node scripts/prepare.mjs --comparison",
+    "test:browser": "node scripts/browser-check.mjs"
   },
   "dependencies": {
     "@protomaps/basemaps": "5.7.2",
