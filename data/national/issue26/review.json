@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "issues": [
+    25,
+    26,
+    27
+  ],
+  "reviewer": "Gemini 4 Argon / antigravity",
+  "recordedAt": "2026-11-05T10:28:58.426702+00:00",
+  "baselineCommit": "b17fb66b",
+  "scope": "未コミット調査・住所訂正・テスト・文書とローカル原本/前後生成物。レビュー後の注記追補は親が実施。",
+  "blockers": 0,
+  "optionalFindings": [
+    {
+      "id": 1,
+      "finding": "調査単体ファイルのpendingと親統合済み状態に時点差がある",
+      "resolution": "調査/提案JSONは作成時点の履歴として保持し、各調査文書に最終統合記録への注記を追加。現在の判断は本reviewとintegrationで参照可能にした。"
+    }
+  ],
+  "decisions": {
+    "25": "両カードの曜日窓口4関係を維持。一般営業時間差/祝日振替は未確認。",
+    "26": "住所と証拠の2フィールド訂正を支持。1階/全配布関係/未位置状態を保持。",
+    "27": "同住所による座標共有をせず、棟対応と利用条件の根拠待ちを支持。"
+  },
+  "coordinateAdoptions": 0,
+  "addressCorrections": 1,
+  "closeAssessment": "3件とも限定調査としてクローズ可能。5施設の位置整備完了ではなく停止再開条件を保持。",
+  "reviewerValidation": [
+    "Python90 tests passed",
+    "Go full passed",
+    "原本hash/bytes・JSON参照・新旧住所表・議決記録・DOCX等の照合",
+    "前後台帳/full/details/pinsの差分確認"
+  ],
+  "limitations": [
+    "現地・Google Maps上の到達地点未確認",
+    "自作事実記録のhashは原本の意味を自動保証しない",
+    "一般営業時間差・祝日振替・5施設の建物代表座標は未解決"
+  ]
+}

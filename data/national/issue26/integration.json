@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "issues": [
+    25,
+    26,
+    27
+  ],
+  "checkedAt": "2026-11-05T10:22:21.145195+00:00",
+  "asOf": "2026-11-05",
+  "listingAcquired": "2026-10-21",
+  "reviewListing": "data/evidence/national/list-source/gkp-20261105.html",
+  "baselineCommit": "b17fb66b",
+  "addressCorrections": 1,
+  "coordinateAdoptions": 0,
+  "remainingAssembledUnlocated": 612,
+  "generatedUnlocated": 761,
+  "changedFacilityId": "facility:north-3443a4a6d08de5680f46",
+  "ledgerDelta": [
+    "address",
+    "evidence"
+  ],
+  "generatedDelta": [
+    "address",
+    "evidence",
+    "coordinate.source (derived from evidence, still unconfirmed)"
+  ],
+  "unchanged": [
+    "all relations",
+    "all numeric coordinates",
+    "pin records"
+  ],
+  "generationMetadataChanged": [
+    "pins.detailsSHA256",
+    "manifest.files",
+    "manifest.inputs for ledger path/hash"
+  ],
+  "tests": {
+    "python": 90,
+    "go": "passed",
+    "realBrowser": "existing real-data regression passed, plus A001/B001 exact facility-heading new address/Maps search checks in full and split",
+    "build": "real-data build and typecheck passed; existing large-chunk warning remains"
+  },
+  "evidenceChecks": {
+    "distinctPathHashPairs": 40,
+    "jsonReferences": 21
+  },
+  "files": {
+    "before": {
+      "full": "d2934e149d7d04676017560c9d1689bd167e676afb1f62e713afca79a70cbeb5",
+      "details": "e5515e1178c412a27c9f54e9c9a1411bd8f6f6d0944a13f0badf64b25011ccbb",
+      "pins": "14fb25c8ec3d4214c44c7cfeea06beb6f5ee93fd4fa62f754e5d7f29bbc415c4"
+    },
+    "after": {
+      "full": "b638de9ed41a48ea9bd21bba80ec9b53c7340372393cfdc4bcafd26ffe93fde5",
+      "details": "13360b148604955bd4c1884d52f85b776a89ccf4d32f24343be4d00a838c4db9",
+      "pins": "cef14084507161232bb0214c08cfbf46cf06d4527ad07b57c54e2f398e4e066b"
+    }
+  }
+}
