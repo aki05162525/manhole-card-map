@@ -6,7 +6,7 @@ W = Path('data/work/location-batch2/north-kanto')
 E = Path('data/evidence/location-batch2/north-kanto')
 def read(p): return json.loads(p.read_text())
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
-a = read(W/'after-generated/full.json'); b = read(W/'before-generated/full.json')
+a = read(W/'after-generated/full.json'); b = read(W/'before-main-generated/full.json')
 expected = {r['facilityId']: r for r in read(Path('data/national/location-batch2/north-kanto/locations.json'))['updates']}
 assert a['cards'] == b['cards'] and a['relations'] == b['relations']
 old = {p['id']: p for p in b['places']}; new = {p['id']: p for p in a['places']}

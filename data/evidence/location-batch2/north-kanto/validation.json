@@ -3,7 +3,7 @@
   "python": {
     "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
     "exitCode": 0,
-    "tests": 94
+    "tests": 95
   },
   "go": {
     "command": "mise exec -- go test -count=1 ./...",
@@ -20,18 +20,21 @@
     "selected": 8,
     "integrated": 2,
     "held": 6,
-    "nationalUnlocated": 606,
-    "allRelationsUnchanged": true
+    "nationalUnlocated": 605,
+    "allRelationsUnchanged": true,
+    "parentUnlocated": 607
   },
   "generated": "generated-check.json",
   "maps": "maps-check.json",
   "audit": {
-    "path": "data/work/location-batch2/north-kanto/after-audit.json",
-    "sha256": "a8c06aa2d9ebb694db20216391fe2591e5a959e0c2893866d14b775ad58cdf62"
+    "path": "data/work/location-batch2/north-kanto/after-main-audit.json",
+    "sha256": "dd1966bf943a216c5d4f6b72086a5a8b157c22b6141a00440a56ba46d5a7b61d"
   },
   "limitations": [
     "ブラウザー画面操作・外部Maps遷移・現地ナビは未検証。UIコード変更なし。",
     "builddata初回はmunicheck不足で失敗。元hash付き既存原本をコピー後に前後両生成成功。",
     "新規施設CSV探索は未実施。"
-  ]
+  ],
+  "mergedMain": "ccc473e4bdbc9ecc1165e86bc783f144fea33395",
+  "postMergeVerification": "Python全95/Go-count=1は統合後再実行しexit0。最新mainとの差分で前後builddata/全国監査/full-details-pins/Maps関数を再検査。"
 }

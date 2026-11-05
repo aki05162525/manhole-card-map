@@ -2,7 +2,7 @@
 
 基準commit `f66b7e994ef250fadee78f396d22fdfc40ba6a83`、評価日2026-11-05。開始時はIssue24 originalRefで北関東91ID、第1弾baselineとの一致と未採用をassembleで検証した。全国608は開始時集合。Issue24保存分類はactive78・suspended12・ended-only1で、当日の在庫確認ではない。
 
-選定8件のうち**2件を採用候補として仮統合、6件を保留**。独立再レビュー未完のため採用承認はまだない。仮統合で地域未位置89、全国606、配布施設ピン978→980。全関係と既存ピンは不変。未選定83件は未調査である。
+選定8件のうち**2件を採用候補として仮統合、6件を保留**。独立再レビュー未完のため採用承認はまだない。最新main `ccc473e4`（北海道PR56の1採用を含む）統合後、北関東仮統合で地域未位置91→89、全国607→605、配布施設ピン979→981。開始時全国608とは区別する。全関係と既存ピンは不変。未選定83件は未調査である。
 
 [selection.json](../../data/national/location-batch2/north-kanto/selection.json)は8IDを最初に保存した記録を維持し、当初予定と実施手法を分離した。公開CSVを実施済みとは扱わない。[coverage.json](../../data/national/location-batch2/north-kanto/coverage.json)に91件の除外理由と保留参照を保持。ぱりっせ/入間2窓口の選定判断補足は事後明文化と明示した。
 
@@ -39,11 +39,11 @@ Issue16白岡`group-a-outcomes.json#/outcomes/8`と吉岡`#/outcomes/3`を引き
 
 [locations.json](../../data/national/location-batch2/north-kanto/locations.json)の2行をmanifestで明示し、[location-lifecycle.json](../../data/national/location-batch2/north-kanto/location-lifecycle.json)でidentity/adoption/hashを結び付けた。対象は日立`facility:kanto-north-2e945c5e9faf1a16c8d7`と羽生`facility:kanto-north-c73669beeeb24f667599`だけ。元施設の座標はnull、台帳差分はcoordinate/evidence/locationReviewのみ。元台帳の旧値/hashは`old-values.json`、生成後の旧値hashと生成差分は[generated-check.json](../../data/evidence/location-batch2/north-kanto/generated-check.json)。
 
-採用差分テストはmanifest追加前に3failure、追加後に成功。`test_location_batch2_north_kanto.py`は実manifestの2施設・bindingと6非採用、全関係/他施設不変を検査する。共有`test_assemble.py`の変更は3つの履歴テストでlocation-batch2のselection/bindingを除外するだけで、844等の旧期待値やdigestは書き換えていない。
+採用差分テストはmanifest追加前に3failure、追加後に成功。`test_location_batch2_north_kanto.py`は実manifestの2施設・bindingと6非採用、全関係/他施設不変を検査する。共有`test_assemble.py`はmain側の`batch1_manifest`ヘルパーへ統一し、現mainに対する差分はない。3履歴テストで第2弾を除外する意味を保持し、844等の期待値/digestは不変。北海道の採用/binding/地域テストも保持。両地域テストは各自のprefixだけを除いたmanifestと比較する。
 
 `vector-scan.py`のキャッシュ再実行失敗を再現後、保存provenanceの復元・hash検査・版混在拒否へ修正。`check-cache.py`でネットワークなしの再利用成功、provenance欠落とhash改竄の拒否を確認した。
 
-実施結果は[validation.json](../../data/evidence/location-batch2/north-kanto/validation.json)。Python全94テスト、Go `-count=1` が成功（終了コードを直接確認）。`verify.py --with-work`は159原本/Range/タイル参照、母集団、旧保留の許可再開、旧台帳と正確な差分を検証。builddataは保存一覧20261021・review-list20261105・as-of2026-11-05で前後生成し全国監査も成功。full/details/pinsとmanifest/世代hashが一致、全カード/関係/既存ピンが不変。
+実施結果は[validation.json](../../data/evidence/location-batch2/north-kanto/validation.json)。統合後Python全95テスト、Go `-count=1` が成功（終了コードを直接確認）。`verify.py --with-work`は159原本/Range/タイル参照、母集団、旧保留の許可再開、旧台帳と正確な差分を検証。builddataは保存一覧20261021・review-list20261105・as-of2026-11-05で前後生成し全国監査も成功。full/details/pinsとmanifest/世代hashが一致、全カード/関係/既存ピンが不変。
 
 [Maps検査](../../data/evidence/location-batch2/north-kanto/maps-check.json)は生成detailsの2施設・実関係をUIの`facilityMapLink`へ渡して確定座標リンクを確認した。外部Maps遷移・ブラウザー操作・現地ナビは未検証。UIコード変更/サーバー起動はない。フックは省略しない。
 

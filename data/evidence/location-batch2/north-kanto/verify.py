@@ -60,7 +60,9 @@ def main():
     assert selected == {r['facilityId'] for r in outcomes['rows']}
     assert all(not places[id].get('coordinate') for id in covered - accepted.keys())
     assert all(places[id]['coordinate'] == row['coordinate'] for id, row in accepted.items())
-    assert sum(not p.get('coordinate') for p in places.values()) == 606
+    before_unlocated = sum(not p.get('coordinate') for p in before_ledger['places'])
+    after_unlocated = sum(not p.get('coordinate') for p in places.values())
+    assert after_unlocated == before_unlocated - len(accepted)
     assert len(outcomes['updates']) == len(outcomes['bindings']) == 2
     for row in coverage['rows']:
         assert pointer(row['originalRef'])['facilityId'] == row['facilityId']
@@ -108,7 +110,11 @@ def main():
             assert sha(row['path']) == row['sha256']
             raw_count += 1
         before = read('data/work/location-batch2/north-kanto/before-ledger.json')
-        assert before_ledger == before, 'Historical baseline must remain exact'
+        batch1_manifest = copy.deepcopy(manifest)
+        for key in ('locations', 'locationLifecycle'):
+            batch1_manifest[key] = [r for r in batch1_manifest[key] if not r['path'].startswith('data/national/location-batch2/')]
+        batch1_ledger, _ = assemble(ROOT, batch1_manifest)
+        assert batch1_ledger == before, 'Historical baseline must remain exact'
         for window in read(evidence + 'revision-windows.json')['windows']:
             for tile in window['tiles']:
                 assert sha(tile['path']) == tile['sha256']
@@ -117,7 +123,7 @@ def main():
             for key in ('comparisonImage','decodedFile'):
                 assert sha(r[key]['path']) == r[key]['sha256']
     print(json.dumps(dict(population=91,selected=8,integrated=len(accepted),held=6,
-        nationalUnlocated=606,manifestUnchanged=(manifest == historical),rawFilesChecked=raw_count,
+        nationalUnlocated=after_unlocated,parentUnlocated=before_unlocated,manifestUnchanged=(manifest == historical),rawFilesChecked=raw_count,
         fullLedgerCompared=args.with_work), ensure_ascii=False))
 
 

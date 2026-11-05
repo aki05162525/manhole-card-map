@@ -1,0 +1,16 @@
+{
+  "facilityId": "facility:north-53b2b9df9a8da2705261",
+  "coordinate": {
+    "lat": 43.1170659,
+    "lng": 141.3425854
+  },
+  "method": "polygon centroid in tile plane; inverse Web Mercator",
+  "pointTileXY": [
+    2590.4858720513826,
+    4053.330275935895
+  ],
+  "centroidWithin": true,
+  "roundedPointWithin": true,
+  "source": "国土地理院最適化ベクトルタイルを加工",
+  "precision": "建物代表点。小数7桁は出力精度で測量精度ではない。"
+}
