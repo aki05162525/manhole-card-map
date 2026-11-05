@@ -1,0 +1,449 @@
+{
+  "schema": 1,
+  "region": "north-kanto",
+  "checkedAt": "2026-11-05",
+  "actorType": "ai",
+  "reviewMethod": "保存公式原本・リンク・baseline・旧レビューの独立再読。現行Web再取得や現地測量ではない。",
+  "summary": {
+    "accepted": 0,
+    "deferred": 0,
+    "correction-required": 4,
+    "coordinateAccepted": 4,
+    "unresolvedRetained": 112
+  },
+  "reviews": [
+    {
+      "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+      "name": "筑西市役所上下水道部下水道課",
+      "decision": "correction-required",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 36.3052692,
+        "lng": 139.9794245
+      },
+      "scope": "building",
+      "reason": "配布記事が平日3階下水道課と休日1階総合案内を同じ本庁舎内と明示。本庁舎ラベルの目的地点を採録。0x0:0x0は名前付きPOIではないが建物指定を否定しない。@中心・下館駅の蓋・東側駐車場とは別。旧POI説明は今回候補で解消。P05の386.3m離れた未承認候補は採用根拠にしていない。 ただしfetchedAtがGo非対応のため、現状の候補行はそのまま統合不可。",
+      "priorReview": [
+        {
+          "path": "data/national/reviews/kanto-north-itg-locations.json",
+          "value": {
+            "updateIndex": 16,
+            "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+            "name": "筑西市役所上下水道部下水道課",
+            "address": "茨城県筑西市丙360番地",
+            "decision": "correction-required",
+            "proposedCoordinate": {
+              "lat": 36.3052692,
+              "lng": 139.9794245
+            },
+            "reason": "公式配布記事の本庁舎リンクと丙360、平日休日とも同一建物という本文は適合。ただしURLは0x0:0x0の緯度経度地点であり名前付きPOIではない。座標は維持できるがevidence説明を訂正するまで統合しない。P05未承認候補の別地点は採用しない。",
+            "evidence": [
+              {
+                "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+                "snapshotPath": "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/reused-e0a856fded24fd7f9b03.html",
+                "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+                "hashMatches": true,
+                "locator": "配布場所a[href]の!8m2!3d/!4d目的地POI"
+              }
+            ],
+            "existingRelations": [
+              {
+                "cardId": "08-227-A001",
+                "existingStatus": "active",
+                "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+                "snapshotPath": "data/evidence/national/kanto-north/e0a856fded24fd7f9b03.html",
+                "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465"
+              }
+            ],
+            "p05Overlaps": [
+              {
+                "section": "candidates",
+                "coordinate": {
+                  "lat": 36.30711395122272,
+                  "lng": 139.98307728075082,
+                  "crs": "EPSG:6668"
+                },
+                "distanceMeters": 386.3,
+                "action": "unapproved candidate only; no automatic replacement",
+                "datasetName": "筑西市役所"
+              }
+            ],
+            "externalMapEvidence": {
+              "links": [
+                "https://www.google.co.jp/maps/place/36%C2%B018",
+                "https://www.city.chikusei.lg.jp/map.php?code=6",
+                "../../sitemap.php"
+              ],
+              "coordinateContexts": [
+                "pan><span class=\"fs_medium\"><span class=\"fs_large\" style=\"color: #ff0000; background-color: #ffff00;\"><span class=\"fs_small\" style=\"color: #000000; background-color: #ffffff;\">※年末年始も配布いたします。</span><br /></span></span><span class=\"fs_medium\" style=\"color: #000000;\"><br /></span></p>\n<p><strong><span style=\"color: #ff0000;\">　</span><span style=\"color: #ff6600;\"><a  href=\"https://www.google.co.jp/maps/place/36%C2%B018'19.0%22N+139%C2%B058'45.9%22E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja\" target=\"_blank\" rel=\"noopener\"><span class=\"fs_medium\" style=\"color: #ff6600;\">筑西市役所本庁舎</span></a></span></strong><span style=\"color: #000000;\">（筑西市丙360番地）</span><span class=\"icon_blank\"><span class=\"icon_blank\">（新しいウインドウで開きます）<br />&nbsp;&nbsp; ※お車でお越しの方 &rArr; </span></span><span class=\"icon_blank\">駐車場は本庁舎の隣（東側）にある立体駐車場または平面駐車場をご利用ください。<br />&nbsp;&nbsp; ※電車でお越しの方 &rArr; 最寄駅：JR水戸線下館駅北口から徒歩2分</span><span class=\"icon_blank\"><br />　<br />　<span style=\"color: #ff6600;\">★平日、土日・祝日とも、配布場所は同じ建物内です</span><span style=\"color: #ff6600;\">。（階が異なりますのでご注意ください。）</span><b",
+                "#ff0000; background-color: #ffff00;\"><span class=\"fs_small\" style=\"color: #000000; background-color: #ffffff;\">※年末年始も配布いたします。</span><br /></span></span><span class=\"fs_medium\" style=\"color: #000000;\"><br /></span></p>\n<p><strong><span style=\"color: #ff0000;\">　</span><span style=\"color: #ff6600;\"><a  href=\"https://www.google.co.jp/maps/place/36%C2%B018'19.0%22N+139%C2%B058'45.9%22E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja\" target=\"_blank\" rel=\"noopener\"><span class=\"fs_medium\" style=\"color: #ff6600;\">筑西市役所本庁舎</span></a></span></strong><span style=\"color: #000000;\">（筑西市丙360番地）</span><span class=\"icon_blank\"><span class=\"icon_blank\">（新しいウインドウで開きます）<br />&nbsp;&nbsp; ※お車でお越しの方 &rArr; </span></span><span class=\"icon_blank\">駐車場は本庁舎の隣（東側）にある立体駐車場または平面駐車場をご利用ください。<br />&nbsp;&nbsp; ※電車でお越しの方 &rArr; 最寄駅：JR水戸線下館駅北口から徒歩2分</span><span class=\"icon_blank\"><br />　<br />　<span style=\"color: #ff6600;\">★平日、土日・祝日とも、配布場所は同じ建物内です</span><span style=\"color: #ff6600;\">。（階が異なりますのでご注意ください。）</span><br /></span></p>\n<h5><span class=\"fs_medium\" style=\"color: #000000"
+              ],
+              "scope": "原本href・埋込マーカーを検査。地図サービス返却HTMLの表示中心は座標根拠にしない。"
+            },
+            "mergePolicy": "Only coordinate approval for this existing facility. Preserve all relation states; no new facility/relocation/relation approval. Never overwrite another coordinate automatically."
+          }
+        }
+      ],
+      "baselineCoordinateStatus": {
+        "status": "unconfirmed",
+        "source": "https://www.gk-p.jp/mhcard/",
+        "reason": "施設情報・配布状況のみ確認。施設座標は未確認",
+        "review": "ai / 2026-11-05"
+      },
+      "identityEvidence": [
+        {
+          "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+          "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+          "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465"
+        },
+        {
+          "sourceUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+          "snapshotPath": "data/evidence/issue5/north-kanto/f1e9fc9e8025e9512ad0.html",
+          "snapshotSHA256": "bc27f0333834f6c530a8edc6aa72be7005b3a633ebdf133c008d0559c59ed931"
+        }
+      ],
+      "coordinateEvidence": {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+        "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+        "sourceLocator": "配布場所の「筑西市役所本庁舎（筑西市丙360番地）」リンク !8m2!3d36.3052692!4d139.9794245。0x0:0x0で名前付きPOIではない。蓋設置場所節とは別。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布記事の平日下水道課・休日1階総合案内は同じ建物内との明示と本庁舎フロア案内を照合。 室内・階・入口の測量ではなく建物代表点。親レビュー前の候補。",
+        "fetchedAt": "2026-11-05T05:45:15.062910+00:00"
+      },
+      "requiredCorrection": {
+        "targetFile": "data/national/issue5/north-kanto.json",
+        "operation": "remove",
+        "path": "/updates/0/evidence/fetchedAt",
+        "old": "2026-11-05T05:45:15.062910+00:00",
+        "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+        "coordinateChange": false,
+        "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+        "preserveIn": [
+          "data/evidence/issue5/north-kanto/fetch-records.json",
+          "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+          "data/evidence/issue5/review-north-kanto/original-evidence.json"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+      "name": "筑西市役所1階総合案内",
+      "decision": "correction-required",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 36.3052692,
+        "lng": 139.9794245
+      },
+      "scope": "building",
+      "reason": "同一建物であることは配布記事本文に明示され、総合案内用の別棟点を推定していない。3階窓口と同じ建物代表点の共有が妥当。旧POI説明は今回候補で解消。 ただしfetchedAtがGo非対応のため、現状の候補行はそのまま統合不可。",
+      "priorReview": [
+        {
+          "path": "data/national/reviews/kanto-north-itg-locations.json",
+          "value": {
+            "updateIndex": 17,
+            "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+            "name": "筑西市役所1階総合案内",
+            "address": "茨城県筑西市丙360番地",
+            "decision": "correction-required",
+            "proposedCoordinate": {
+              "lat": 36.3052692,
+              "lng": 139.9794245
+            },
+            "reason": "公式本文が平日休日とも同一建物と明記し総合案内の本庁舎に対応。16と同じ座標指定URLでありPOIというevidence説明を訂正する必要がある。",
+            "evidence": [
+              {
+                "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+                "snapshotPath": "data/evidence/national/locations-kanto-north-ibaraki-tochigi-gunma/reused-e0a856fded24fd7f9b03.html",
+                "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+                "hashMatches": true,
+                "locator": "配布場所a[href]の!8m2!3d/!4d目的地POI"
+              }
+            ],
+            "existingRelations": [
+              {
+                "cardId": "08-227-A001",
+                "existingStatus": "active",
+                "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+                "snapshotPath": "data/evidence/national/kanto-north/e0a856fded24fd7f9b03.html",
+                "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465"
+              }
+            ],
+            "p05Overlaps": [
+              {
+                "section": "candidates",
+                "coordinate": {
+                  "lat": 36.30711395122272,
+                  "lng": 139.98307728075082,
+                  "crs": "EPSG:6668"
+                },
+                "distanceMeters": 386.3,
+                "action": "unapproved candidate only; no automatic replacement",
+                "datasetName": "筑西市役所"
+              }
+            ],
+            "externalMapEvidence": {
+              "links": [
+                "https://www.google.co.jp/maps/place/36%C2%B018",
+                "https://www.city.chikusei.lg.jp/map.php?code=6",
+                "../../sitemap.php"
+              ],
+              "coordinateContexts": [
+                "pan><span class=\"fs_medium\"><span class=\"fs_large\" style=\"color: #ff0000; background-color: #ffff00;\"><span class=\"fs_small\" style=\"color: #000000; background-color: #ffffff;\">※年末年始も配布いたします。</span><br /></span></span><span class=\"fs_medium\" style=\"color: #000000;\"><br /></span></p>\n<p><strong><span style=\"color: #ff0000;\">　</span><span style=\"color: #ff6600;\"><a  href=\"https://www.google.co.jp/maps/place/36%C2%B018'19.0%22N+139%C2%B058'45.9%22E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja\" target=\"_blank\" rel=\"noopener\"><span class=\"fs_medium\" style=\"color: #ff6600;\">筑西市役所本庁舎</span></a></span></strong><span style=\"color: #000000;\">（筑西市丙360番地）</span><span class=\"icon_blank\"><span class=\"icon_blank\">（新しいウインドウで開きます）<br />&nbsp;&nbsp; ※お車でお越しの方 &rArr; </span></span><span class=\"icon_blank\">駐車場は本庁舎の隣（東側）にある立体駐車場または平面駐車場をご利用ください。<br />&nbsp;&nbsp; ※電車でお越しの方 &rArr; 最寄駅：JR水戸線下館駅北口から徒歩2分</span><span class=\"icon_blank\"><br />　<br />　<span style=\"color: #ff6600;\">★平日、土日・祝日とも、配布場所は同じ建物内です</span><span style=\"color: #ff6600;\">。（階が異なりますのでご注意ください。）</span><b",
+                "#ff0000; background-color: #ffff00;\"><span class=\"fs_small\" style=\"color: #000000; background-color: #ffffff;\">※年末年始も配布いたします。</span><br /></span></span><span class=\"fs_medium\" style=\"color: #000000;\"><br /></span></p>\n<p><strong><span style=\"color: #ff0000;\">　</span><span style=\"color: #ff6600;\"><a  href=\"https://www.google.co.jp/maps/place/36%C2%B018'19.0%22N+139%C2%B058'45.9%22E/@36.3052692,139.9772358,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d36.3052692!4d139.9794245?hl=ja\" target=\"_blank\" rel=\"noopener\"><span class=\"fs_medium\" style=\"color: #ff6600;\">筑西市役所本庁舎</span></a></span></strong><span style=\"color: #000000;\">（筑西市丙360番地）</span><span class=\"icon_blank\"><span class=\"icon_blank\">（新しいウインドウで開きます）<br />&nbsp;&nbsp; ※お車でお越しの方 &rArr; </span></span><span class=\"icon_blank\">駐車場は本庁舎の隣（東側）にある立体駐車場または平面駐車場をご利用ください。<br />&nbsp;&nbsp; ※電車でお越しの方 &rArr; 最寄駅：JR水戸線下館駅北口から徒歩2分</span><span class=\"icon_blank\"><br />　<br />　<span style=\"color: #ff6600;\">★平日、土日・祝日とも、配布場所は同じ建物内です</span><span style=\"color: #ff6600;\">。（階が異なりますのでご注意ください。）</span><br /></span></p>\n<h5><span class=\"fs_medium\" style=\"color: #000000"
+              ],
+              "scope": "原本href・埋込マーカーを検査。地図サービス返却HTMLの表示中心は座標根拠にしない。"
+            },
+            "mergePolicy": "Only coordinate approval for this existing facility. Preserve all relation states; no new facility/relocation/relation approval. Never overwrite another coordinate automatically."
+          }
+        }
+      ],
+      "baselineCoordinateStatus": {
+        "status": "unconfirmed",
+        "source": "https://www.gk-p.jp/mhcard/",
+        "reason": "施設情報・配布状況のみ確認。施設座標は未確認",
+        "review": "ai / 2026-11-05"
+      },
+      "identityEvidence": [
+        {
+          "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+          "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+          "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465"
+        },
+        {
+          "sourceUrl": "https://www.city.chikusei.lg.jp/gyousei/soshiki-shisetsu/floor-map/page001123.html",
+          "snapshotPath": "data/evidence/issue5/north-kanto/f1e9fc9e8025e9512ad0.html",
+          "snapshotSHA256": "bc27f0333834f6c530a8edc6aa72be7005b3a633ebdf133c008d0559c59ed931"
+        }
+      ],
+      "coordinateEvidence": {
+        "sourceUrl": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/gesuidou/page006377.html",
+        "snapshotPath": "data/evidence/issue5/north-kanto/e0a856fded24fd7f9b03.html",
+        "snapshotSHA256": "9cf00a2925e83b4ff2e273b0b0f8ffb434f2190140aa1b541a64595e0be22465",
+        "sourceLocator": "配布場所の「筑西市役所本庁舎（筑西市丙360番地）」リンク !8m2!3d36.3052692!4d139.9794245。0x0:0x0で名前付きPOIではない。蓋設置場所節とは別。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "公式配布記事の平日下水道課・休日1階総合案内は同じ建物内との明示と本庁舎フロア案内を照合。 室内・階・入口の測量ではなく建物代表点。親レビュー前の候補。",
+        "fetchedAt": "2026-11-05T05:45:15.062910+00:00"
+      },
+      "requiredCorrection": {
+        "targetFile": "data/national/issue5/north-kanto.json",
+        "operation": "remove",
+        "path": "/updates/1/evidence/fetchedAt",
+        "old": "2026-11-05T05:45:15.062910+00:00",
+        "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+        "coordinateChange": false,
+        "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+        "preserveIn": [
+          "data/evidence/issue5/north-kanto/fetch-records.json",
+          "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+          "data/evidence/issue5/review-north-kanto/original-evidence.json"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-sakuragawa-makabe-water",
+      "name": "桜川市水道お客様センター（真壁庁舎2階）",
+      "decision": "correction-required",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 36.2783968826407,
+        "lng": 140.091696381569
+      },
+      "scope": "building",
+      "reason": "配布記事の水道お客様センター＝真壁庁舎2階・飯塚911を、公式公共施設ガイドの真壁庁舎名称・住所・q数値リンクに接続できる。岩瀬・大和庁舎、住所の自動ジオコード、蓋展示点ではない。旧baselineの座標未確認は建物目的地点の原典で解消。 ただしfetchedAtがGo非対応のため、現状の候補行はそのまま統合不可。",
+      "priorReview": [],
+      "baselineCoordinateStatus": {
+        "status": "unconfirmed",
+        "source": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+        "reason": "施設情報・配布状況のみ確認。施設座標は未確認",
+        "review": "ai / 2026-11-05"
+      },
+      "identityEvidence": [
+        {
+          "sourceUrl": "https://www.city.sakuragawa.lg.jp/kurashi/news/page006330.html",
+          "snapshotPath": "data/evidence/issue5/north-kanto/46cfe2892a6fb58a2c97.html",
+          "snapshotSHA256": "13b1cc09282d74121f0cee1e312acdf70cbb0cd295651b4e85579a73b77c48ff"
+        }
+      ],
+      "coordinateEvidence": {
+        "sourceUrl": "https://www.city.sakuragawa.lg.jp/map.php?type=0",
+        "snapshotPath": "data/evidence/issue5/north-kanto/4b31a7ac547841fadb01.html",
+        "snapshotSHA256": "81c2b861cefde5c6d2a9f995a5468e7d3cdad1c370699e281bb3e648caa5880c",
+        "sourceLocator": "公共施設ガイドマップ「桜川市役所 真壁庁舎」a[href] q=36.2783968826407,140.091696381569、飯塚911",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現行カード配布記事は水道お客様センターを真壁庁舎2階と指定。施設案内の真壁庁舎の名称・飯塚911が一致し岩瀬・大和庁舎と区別。 室内・階・入口の測量ではなく建物代表点。親レビュー前の候補。",
+        "fetchedAt": "2026-11-05T05:45:44.441338+00:00"
+      },
+      "requiredCorrection": {
+        "targetFile": "data/national/issue5/north-kanto.json",
+        "operation": "remove",
+        "path": "/updates/2/evidence/fetchedAt",
+        "old": "2026-11-05T05:45:44.441338+00:00",
+        "facilityId": "facility:kanto-north-sakuragawa-makabe-water",
+        "coordinateChange": false,
+        "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+        "preserveIn": [
+          "data/evidence/issue5/north-kanto/fetch-records.json",
+          "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+          "data/evidence/issue5/review-north-kanto/original-evidence.json"
+        ]
+      }
+    },
+    {
+      "facilityId": "facility:kanto-north-kawajima-water",
+      "name": "川島町役場1階 上下水道課",
+      "decision": "correction-required",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 35.9925196,
+        "lng": 139.4844419
+      },
+      "scope": "building",
+      "reason": "配布本文が役場1階上下水道課でも配布と明示。役場アクセス記事の下八ツ林870-1と、徒歩経路の第2地点（川島町役場）が一致。出発バス停・@中心・さまちか事務所923を除外できる。旧baselineの座標未確認は役場目的地点の原典で解消。 ただしfetchedAtがGo非対応のため、現状の候補行はそのまま統合不可。",
+      "priorReview": [],
+      "baselineCoordinateStatus": {
+        "status": "unconfirmed",
+        "source": "https://www.town.kawajima.saitama.jp/6276.htm",
+        "reason": "施設情報・配布状況のみ確認。施設座標は未確認",
+        "review": "ai / 2026-11-05"
+      },
+      "identityEvidence": [
+        {
+          "sourceUrl": "https://www.town.kawajima.saitama.jp/6276.htm",
+          "snapshotPath": "data/evidence/issue5/north-kanto/fbb24fac0b7e67537966.html",
+          "snapshotSHA256": "ef73e288e80befc81c3b4325c200c72bea81bffe5ea15d000d628b55b1b0384b"
+        }
+      ],
+      "coordinateEvidence": {
+        "sourceUrl": "https://www.town.kawajima.saitama.jp/1825.htm",
+        "snapshotPath": "data/evidence/issue5/north-kanto/94c03d33f97df4713b57.html",
+        "snapshotSHA256": "f60c9a8c10e8849965441113d9766c8f430f6eece6fb80273dcbd04d1bf33106",
+        "sourceLocator": "八ツ林バス停から川島町役場への徒歩経路リンク。2番目!1m5の目的地 !1d139.4844419!2d35.9925196。出発点と@表示中心は除外。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "現行配布本文は川島町役場1階上下水道課でも配布と明記。役場交通アクセスの下八ツ林870-1の目的地を照合。さまちかの923とは別建物。 室内・階・入口の測量ではなく建物代表点。親レビュー前の候補。",
+        "fetchedAt": "2026-11-05T05:45:44.513397+00:00"
+      },
+      "requiredCorrection": {
+        "targetFile": "data/national/issue5/north-kanto.json",
+        "operation": "remove",
+        "path": "/updates/3/evidence/fetchedAt",
+        "old": "2026-11-05T05:45:44.513397+00:00",
+        "facilityId": "facility:kanto-north-kawajima-water",
+        "coordinateChange": false,
+        "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+        "preserveIn": [
+          "data/evidence/issue5/north-kanto/fetch-records.json",
+          "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+          "data/evidence/issue5/review-north-kanto/original-evidence.json"
+        ]
+      }
+    }
+  ],
+  "exactCorrections": [
+    {
+      "targetFile": "data/national/issue5/north-kanto.json",
+      "operation": "remove",
+      "path": "/updates/0/evidence/fetchedAt",
+      "old": "2026-11-05T05:45:15.062910+00:00",
+      "facilityId": "facility:kanto-north-95b25d7d3d1f8e92606f",
+      "coordinateChange": false,
+      "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+      "preserveIn": [
+        "data/evidence/issue5/north-kanto/fetch-records.json",
+        "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+        "data/evidence/issue5/review-north-kanto/original-evidence.json"
+      ]
+    },
+    {
+      "targetFile": "data/national/issue5/north-kanto.json",
+      "operation": "remove",
+      "path": "/updates/1/evidence/fetchedAt",
+      "old": "2026-11-05T05:45:15.062910+00:00",
+      "facilityId": "facility:kanto-north-943e6a0012c75808a6ab",
+      "coordinateChange": false,
+      "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+      "preserveIn": [
+        "data/evidence/issue5/north-kanto/fetch-records.json",
+        "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+        "data/evidence/issue5/review-north-kanto/original-evidence.json"
+      ]
+    },
+    {
+      "targetFile": "data/national/issue5/north-kanto.json",
+      "operation": "remove",
+      "path": "/updates/2/evidence/fetchedAt",
+      "old": "2026-11-05T05:45:44.441338+00:00",
+      "facilityId": "facility:kanto-north-sakuragawa-makabe-water",
+      "coordinateChange": false,
+      "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+      "preserveIn": [
+        "data/evidence/issue5/north-kanto/fetch-records.json",
+        "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+        "data/evidence/issue5/review-north-kanto/original-evidence.json"
+      ]
+    },
+    {
+      "targetFile": "data/national/issue5/north-kanto.json",
+      "operation": "remove",
+      "path": "/updates/3/evidence/fetchedAt",
+      "old": "2026-11-05T05:45:44.513397+00:00",
+      "facilityId": "facility:kanto-north-kawajima-water",
+      "coordinateChange": false,
+      "applyTo": "新規の統合用コピーのみ。元候補を変更しない。",
+      "preserveIn": [
+        "data/evidence/issue5/north-kanto/fetch-records.json",
+        "data/evidence/issue5/north-kanto/fetch-additional-records.json",
+        "data/evidence/issue5/review-north-kanto/original-evidence.json"
+      ]
+    }
+  ],
+  "unresolvedScope": "112件は旧履歴を保持。現行全件再調査済み・解消とは扱わない。",
+  "rights": "PRIVATE repo・デプロイなし。建物数値地点の採用判断と原本HTMLの外部公開許諾は別。包括ライセンスを付与しない。筑西の転載制限は原本に確認。桜川・川島の包括許諾は確認していない。",
+  "documentCodeDiscrepancies": [
+    {
+      "document": "data/evidence/issue5/north-kanto/README.md",
+      "claim": "文書と実装コードの食い違いは、今回読んだ範囲では発見していない",
+      "finding": "候補evidence.fetchedAtを生成するがGo Evidenceは7フィールドのみ。assembler evidence()はcheckedAtだけ正規化して未知キーを保持し、apply_locations()がそのままplace.evidenceへ渡す。厳密デコードで失敗を再現。",
+      "code": [
+        "data/evidence/issue5/north-kanto/assemble.py:39",
+        "tools/national/assemble.py:60",
+        "tools/national/assemble.py:160",
+        "cmd/builddata/ledger.go:17",
+        "cmd/builddata/ledger.go:88"
+      ]
+    }
+  ],
+  "historicalEvidenceDiscrepancy": "筑西2件の旧「目的地POI／本庁舎POI」は原本の0x0:0x0と不一致。旧4フィールドのexact old一致を検証、訂正案を保持。",
+  "verification": {
+    "inputHashes": {
+      "data/national/issue5/north-kanto.json": "38c8e6d7d9317963ef9f2ef1f8e86eac7a7db7d61e245cbd1047ba70b17cb2f2",
+      "data/work/issue5-baseline/ledger.json": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b",
+      "data/work/issue5-baseline/full.json": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150",
+      "tools/national/assemble.py": "3a0fdd6a6c2ec9a280eb9b88bf5ebf2b77d49f4b042e3ce597db4f1dcb0333a0",
+      "cmd/builddata/ledger.go": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695",
+      "data/evidence/issue5/north-kanto/README.md": "8390b4e20df6f30a52f18ff95079742238036fb2949ecffe535e6b5cd7c27f9b"
+    },
+    "uniqueSourceHashesVerified": 7,
+    "coordinateLiteralsVerified": 4,
+    "oldCorrectionValuesVerified": 4,
+    "decodeProbe": [
+      {
+        "case": "original",
+        "returncode": 1,
+        "stdout": "json: unknown field \"fetchedAt\"",
+        "stderr": "exit status 1"
+      },
+      {
+        "case": "proposed",
+        "returncode": 0,
+        "stdout": "decodeLedger: OK",
+        "stderr": ""
+      }
+    ],
+    "scopeHandling": "scopeはapply_locationsが転記せず、facilityIdでplaceを特定。coordinateとevidenceのみ更新。fetchedAtはevidence内部なので通過。"
+  }
+}
