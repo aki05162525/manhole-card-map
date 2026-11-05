@@ -1,0 +1,1819 @@
+{
+  "schema": 1,
+  "region": "kyushu-okinawa",
+  "issue": 44,
+  "asOf": "2026-11-05",
+  "createdAt": "2026-11-05T11:24:17.448614+00:00",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/work/location-batch2/kyushu-okinawa/before.json": "c98f4616c3ba3bc25baba5c8908d88d21f3b3b6066281a9a62703ec2a2a4a525"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/33"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-530-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "徳之島町役場建設課",
+      "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "旧庁舎への誤誘導リスクと初ピン。新庁舎の完成図・設計資料を探索しP05住所一致依存を解消する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/2"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+        "groupId": "pilot-12",
+        "cardIds": [
+          "46-530-A001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/2",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "開庁案内配置を現建物外形と照合する",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/57"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-530-A001"
+      ],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "徳之島町役場新庁舎1階宿直室",
+      "previousReason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "徳之島新庁舎の時間外窓口。建設課とはIDを保持し、新庁舎配置資料を共同調査する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/3"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:ws-61c944585418f01447",
+        "groupId": "pilot-12",
+        "cardIds": [
+          "46-530-A001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "公式開庁記事と案内PDFを取得。移転後の案内は得たが、同住所のP05旧棟候補と新棟の地理的対応は未解決。PDF取得だけを建物照合済みとは扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/2",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/5"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "開庁案内配置を現建物外形と照合する",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/0",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/0"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "conflict"
+      ],
+      "name": "諫早物産ホール諫早観光物産コンベンション協会",
+      "previousReason": "新P05照合で物産ホールfeature419と諫早商工会館ビルfeature518を発見。現運営者hallページは物産ホール＝商工会館1階、高城町5-10と同定するが、二点は約38m離れる。どちらが建物内か外形照合未完了のため採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "物産ホールと商工会館のP05競合。商工会議所の建物案内・設計資料という別資料で建物対応を探す。"
+    },
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/64",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/64"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "relocation"
+      ],
+      "name": "知名町役場上下水道課",
+      "previousReason": "現公式アクセスは知名1100。P05知名町役場feature1457は知名307の旧庁舎で不一致。追加取得した新アクセスのllは表示中心、qは役場名であり数値建物markerとは扱えない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "知名町の新旧庁舎混同を防ぐ。新庁舎整備事業の配置資料・竣工資料を探索する。"
+    },
+    {
+      "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/29",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/29"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-F001",
+        "43-100-J001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "リブワーク藤崎台球場",
+      "previousReason": "リブワーク藤崎台球場（熊本市中央区宮内4番1号）：球場管理者アクセスと県スポーツ施設案内を確認。宮内4-1の球場について採用可能な数値目的地マーカーを確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:kyushu-6f3f17db75d830d03ed7",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "受付建物を現配置図と地理参照付き外形で接続する追加根拠。",
+        "stopCondition": "クスノキ群、球場グラウンド中央、旧P05点で代用しない。",
+        "resumeCondition": "受付建物を現配置図と地理参照付き外形で接続する追加根拠。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/2"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "受付建物を現配置図と地理参照付き外形で接続する追加根拠。"
+    },
+    {
+      "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/37",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/37"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-C001",
+        "43-100-G001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "パークドーム熊本 受付兼事務所",
+      "previousReason": "パークドーム熊本 受付兼事務所（熊本県熊本市東区平山町2972番地）：管理者のパークドームアクセスを確認。平山2972の施設目的地点を示す数値マーカーは取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:kyushu-9377b59290d3e126d82c",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "隣接タイルの外周ポリゴン結合と、西翼受付を含む建物対応の独立照合。",
+        "stopCondition": "円形主空間重心をそのまま受付棟点として採用しない。",
+        "resumeCondition": "隣接タイルの外周ポリゴン結合と、西翼受付を含む建物対応の独立照合。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/3"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "隣接タイルの外周ポリゴン結合と、西翼受付を含む建物対応の独立照合。"
+    },
+    {
+      "facilityId": "facility:kyushu-fa023783ed7f7b1e4171",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/53",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/53"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-F001",
+        "43-100-J001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "熊本県民総合運動公園 受付兼事務所",
+      "previousReason": "熊本県民総合運動公園 受付兼事務所（熊本県熊本市東区石原2丁目9-1）：管理者の運動公園アクセスを確認。石原2-9-1の広い公園の代表点では受付兼事務所の建物を区別できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-056030efbe436e3617a8",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/2",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/2"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-341-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "宇美町役場 本館 警備室",
+      "previousReason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-27873221b74e521bc34d",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/3",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/3"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-K001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "花畑広場サービス棟",
+      "previousReason": "花畑広場サービス棟（熊本県熊本市中央区花畑町7-7）：広場公式アクセスを確認。花畑7-7の広場全体とサービス棟を区別する建物目的地が未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-2c563d0c054fa158905a",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/4",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/4"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-220-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "観光ステーションむなたびラボ(道の駅むなかた南館)",
+      "previousReason": "観光ステーションむなたびラボ(道の駅むなかた南館)（福岡県宗像市江口1177-1）：市の開所記事で道の駅入口右の南館1階と確認。道の駅全体・物産館の点では南館を区別できず、南館の明示目的地点が必要。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-36b4ad8b697e9a275512",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/5"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-223-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "福岡県古賀市役所上下水道庁舎",
+      "previousReason": "福岡県古賀市役所上下水道庁舎（福岡県古賀市駅東1-1-1）：古賀市公共施設CSVの古賀市役所庁舎と同じ駅東1-1-1だが、配布先は上下水道庁舎。市役所代表点を別庁舎に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-3f7df6c1e3db027d5517",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/8",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/8"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-209-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)",
+      "previousReason": "「豊後高田昭和の町」観光案内所 豊後高田市観光まちづくり株式会社(昭和ロマン蔵内)（大分県豊後高田市新町989-1）：県観光施設案内を確認。33.557885,131.43851599999994は地図centerと周辺検索の引数で、昭和ロマン蔵内案内所の明示マーカーとしては確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-431427a75efc404fc5c1",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/10",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/10"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-341-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "宇美町役場 南館 上下水道課",
+      "previousReason": "公式配布原本は南館上下水道課と本館警備室を区別。P05の宇美町役場点・同住所の地域包括支援センター点だけで各棟を確定できない。旧レビューの単なる数値不足より棟同定が先。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-46c335509894f026bbaa",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/12",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/12"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-204-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "枕崎駅前観光案内所",
+      "previousReason": "枕崎駅前観光案内所（鹿児島県枕崎市東本町200）：公式案内の短縮リンクの解決先は東本町の県道266号であり、東本町200の駅前観光案内所という建物対象を確認できない。道路上の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-475d355ad6294a2b61a8",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/13",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/addressCorrection",
+        "data/national/issue7/reviews/kyushu-okinawa.json#/addressCorrection/proposedCorrection",
+        "data/national/issue7/reviews/kyushu-okinawa.json#/exactCorrections/9",
+        "data/national/issue7/reviews/kyushu-okinawa.json#/acceptedAddressCorrectionProposal",
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/13"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-308-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "もとぶかりゆし市場",
+      "previousReason": "もとぶかりゆし市場（沖和県国頭郡本部町字大浜881-1）：市場運営者のアクセスと県GIS施設データを照合。大浜881-1の市場建物の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-4aa5f9a0d74b3fb87974",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/15",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/15"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-130-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "福岡市下水道博物館",
+      "previousReason": "福岡市下水道博物館（福岡県福岡市博多区祇園町8-3(ぽんプラザ2階)）：ぽんプラザの市公式施設案内を確認したが、取得原本から建物の明示数値目的地点を確定できない。福岡市公共施設CSVでも一致行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-4b6c8f692d562ba8fc1f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/17",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/17"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-215-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "下甑島観光案内所",
+      "previousReason": "下甑島観光案内所（鹿児島県薩摩川内市下甑町長浜913番4）：公式観光案内所詳細を確認。長浜913-4の港ターミナル内案内所の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-500296f58e26ea863c1f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/18",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/18"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-202-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "WANDER COMPASS BEPPU(ワンダーコンパス別府)",
+      "previousReason": "WANDER COMPASS BEPPU(ワンダーコンパス別府)（大分県別府市駅前町12番13号えきマチ1丁目 別府BIS南館内）：公式観光施設案内を確認。駅前12-13の駅構内案内所の数値目的地は未確認。別府市配布ページの他の短縮リンクは上野口1-15を指し、当施設に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-52557966acb8dec24849",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/19",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/19"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "41-203-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "新鳥栖駅観光案内所",
+      "previousReason": "新鳥栖駅観光案内所（佐賀県鳥栖市原古賀町220-2）：市の新鳥栖駅観光案内所ページを確認。原古賀220-2の駅舎・案内所の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-527347c20ae2968cc662",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/20",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/20"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-L001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "水前寺競技場 事務所",
+      "previousReason": "水前寺競技場 事務所（熊本県熊本市中央区水前寺5丁目23-3）：競技場運営者のアクセスと県スポーツ施設案内を確認。水前寺5-23-3の事務所の入る競技場目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/21"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-326-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "北谷町観光情報センター",
+      "previousReason": "北谷町観光情報センター（沖縄県中頭郡北谷町字美浜16-3）：観光協会公式施設詳細と県GISデータを照合。美浜16-3の観光情報センターの建物目的地座標を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "沖縄の初ピン。北谷町観光情報センターの指定管理資料・施設図面を探索する。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-b-outcomes.json#/outcomes/11"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+        "groupId": "pilot-19",
+        "cardIds": [
+          "47-326-A001",
+          "47-326-B001"
+        ],
+        "status": "held",
+        "stage": "retrieval-failed",
+        "conclusion": "町の現施設紹介と県のオープンデータ一覧を取得。北谷町AED一覧が次候補として見つかったがBODIK package APIは403。施設名掲載や座標有無は未確認で、取得成功と扱わない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/21",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-b/retrievals.json#/records/11",
+          "data/evidence/issue16/group-b/retrievals.json#/records/12",
+          "data/evidence/issue16/group-b/followup-retrievals.json#/records/1"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "Source/diagram/numeric correspondence inspection; no coordinate adoption",
+        "sourceConditions": "採用用の数値原典・加工条件は未確定。新原本は条件確認までdata/workのみ保持。",
+        "stopCondition": "不足を増やさない同一数値検索を止め、記録した次資料/条件の確認に移る。",
+        "resumeCondition": "AED原データの取得経路復旧後、センター行・CRS・版・ライセンスを確認",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-b-review.json"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/22",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/22"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-213-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+      "previousReason": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）：管理者の施設紹介・アクセスを追加確認。勝連城跡や歴史文化施設と観光ターミナル（南風原3807-2）を区別する建物目的地を未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "沖縄の初ピン、歴史文化施設との棟混同。観光ターミナルの指定管理資料・配置図を探索する。"
+    },
+    {
+      "facilityId": "facility:kyushu-5bd9ed457378cacb6524",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/23",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/23"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-223-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "古賀水再生センター",
+      "previousReason": "古賀水再生センター（福岡県古賀市古賀1337-3）：市庁舎案内は駅東1-1-1であり、古賀1337-3の水再生センターと異なる。公共施設CSVにも当該センターの建物点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-628964aa1208c4c45303",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/24",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/24"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-201-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "大分市竹町通商店街振興組合",
+      "previousReason": "大分市竹町通商店街振興組合（大分市中央町3丁目6番7号）：商店街の公式共同事業案内を追加調査。中央町3-6-7の竹町通商店街振興組合事務所に対応する数値目的地を確保できない。別組合の事務所を採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-62e5bba8872fe20f0c0f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/25",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/25"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "41-201-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "東よか干潟ビジターセンター「ひがさす」",
+      "previousReason": "東よか干潟ビジターセンター「ひがさす」（佐賀県佐賀市東与賀町大字田中2757-4）：県観光案内は田中2757-4と数値q/destination=33.174981,130.27021を掲載するが、タイトルが「東よか干潟／ひがさす」の複合施設案内。干潟とビジターセンター建物のどちらを指すか裏付け不足として保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-6a8e8508cf7afc2b0ab7",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/27",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/27"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "41-201-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "佐賀市下水浄化センター 事務室",
+      "previousReason": "佐賀市下水浄化センター 事務室（佐賀県佐賀市西与賀町大字高太郎2667(管理棟2階)）：下水浄化センター施設案内を確認。広い処理場内の管理棟2階事務室に対応する建物目的地点を特定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-6e0d67b8eaadcf680cdb",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/28",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/28"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-209-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "名護市営市場",
+      "previousReason": "名護市営市場（沖縄県名護市城1-4-11）：市場公式アクセスと県GISデータを照合。城1-4-11の市営市場の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "沖縄の初ピン。名護市営市場の施設管理資料・階別図を新たに探しアクセス地図以外の対応を調べる。"
+    },
+    {
+      "facilityId": "facility:kyushu-79566b7301f7f95b9ea0",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/32",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/32"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-215-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "川内駅観光案内所",
+      "previousReason": "川内駅観光案内所（鹿児島県薩摩川内市鳥追町1番1号）：公式観光案内所詳細を確認。鳥追町1-1の川内駅2階案内所の入る建物目的地を取得原本から数値で確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-8bbab01afd77e40b5bdb",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/35",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/35"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-000-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "沖縄観光情報センター",
+      "previousReason": "沖縄観光情報センター（沖縄県那覇市泉﨑1-20ー6カフーナ旭橋A街区2階）：県観光案内と県GIS避難ビルデータを追加照合。カフーナ旭橋A街区のGIS住所は泉崎1-20-1、配布先は1-20-6。棟・住所の同一性を確定できず保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-9c9600ef3b6f5d63e1f1",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/38",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/38"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-201-D001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "大分市美術館",
+      "previousReason": "大分市美術館（大分県大分市大字上野865番地）：市美術館公式アクセスを確認。上野865の美術館の数値目的地を取得原本から確定できず、民間施設ディレクトリの緯度経度は不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "already-adopted",
+      "exclusionOrSelectionReason": "現manifestで座標採用済み。対象外。"
+    },
+    {
+      "facilityId": "facility:kyushu-a4cd93cc1425ac573ac5",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/39",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/39"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "45-205-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "小林市役所上下水道課 第2別館2階下水道グループ",
+      "previousReason": "小林市役所上下水道課 第2別館2階下水道グループ（宮崎県小林市細野300番地）：市公式と公共施設データを探索。細野300の市役所本庁代表点では第2別館を区別できないため採用保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-a7f2c9a57f74387fbabb",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/updates/5",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/candidates/5",
+        "data/national/issue7/reviews/kyushu-okinawa.json#/exactCorrections/5"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-218-A001"
+      ],
+      "blockers": [],
+      "name": "国分シビックセンター1階総合窓口",
+      "previousReason": "福岡県古賀市役所上下水道庁舎（福岡県古賀市駅東1-1-1）：古賀市公共施設CSVの古賀市役所庁舎と同じ駅東1-1-1だが、配布先は上下水道庁舎。市役所代表点を別庁舎に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/40",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/40"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "熊本市上下水道局",
+      "previousReason": "熊本市上下水道局（熊本県熊本市中央区水前寺6-2-45）：水道局公式案内と県公開施設CSVを照合。水前寺6-2-45の局庁舎の採用可能な数値目的地行を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:kyushu-a8a906ff5132dcc841f4",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。",
+        "stopCondition": "大きな近傍矩形や同住所別棟を本館として採用しない。",
+        "resumeCondition": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/4"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。"
+    },
+    {
+      "facilityId": "facility:kyushu-aae8a5e8cdb120497a24",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/41",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/41"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-100-D001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "セブン-イレブン若松区役所前店",
+      "previousReason": "セブン-イレブン若松区役所前店（福岡県北九州市若松区浜町1丁目1ー4）：店舗公式案内の取得原本で店舗の数値目的地を確認できない。公共施設CSVの若松区役所（浜町1-1-1）は当店（1-1-4）と別建物なので代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-c377ae7db47aa8c7a0c3",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/42",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/42"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "45-205-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "小林まちづくり株式会社 観光案内所",
+      "previousReason": "小林まちづくり株式会社 観光案内所（宮崎県小林市細野1829-16 KITTO小林）：運営会社案内を追加確認。別ページの埋込ラベルはコミュニティスペース（小林まちづくり株式会社）であり、細野1829-16 KITTO内観光案内所の数値目的地点として確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-db16f89ef3a741afd0fe",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/45",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/45"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-000-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "首里城首里杜館総合案内所",
+      "previousReason": "首里城首里杜館総合案内所（沖縄県那覇市首里金城町1-2）：公園管理者の首里杜館案内を確認。首里城公園全体やマンホール蓋の点を首里杜館に流用しない。建物単位の数値目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/46",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/46"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-201-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "大分市観光案内所",
+      "previousReason": "大分市観光案内所（大分県大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:kyushu-e401ae7935c2f856b758",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。",
+        "stopCondition": "Google表示中心や大分駅注記を配布建物点へ転用しない。",
+        "resumeCondition": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/6"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。"
+    },
+    {
+      "facilityId": "facility:kyushu-e4fe20203350934b0e63",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/47",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/47"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "47-201-A001"
+      ],
+      "blockers": [
+        "building"
+      ],
+      "name": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)",
+      "previousReason": "まちぐゎー総合案内所(那覇市第一牧志公設市場1F)（沖縄県那覇市松尾2丁目10番1号）：市公式案内と県GIS施設データを照合。新しい第一牧志公設市場の建物内案内所について、旧市場・仮設市場と区別して採用できる点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "selected",
+      "exclusionOrSelectionReason": "初ピンと旧・仮設市場への誤誘導リスク。新市場の施設図・再整備竣工資料を探す。"
+    },
+    {
+      "facilityId": "facility:kyushu-eacba90579d3dbedfc8c",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/50",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/50"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "46-216-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "日置市観光協会",
+      "previousReason": "日置市観光協会（鹿児島県日置市伊集院町徳重285-12）：観光協会の団体・アクセス案内を追加確認。徳重285-12の協会施設の数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/51",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/51"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "44-201-B001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "大分市観光案内所",
+      "previousReason": "大分市観光案内所（大分市要町1-1(JR大分駅構内)）：市観光協会の施設・アクセス案内を追加確認。要町1-1の大分駅構内観光案内所に対応する数値目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:kyushu-f4947f3eb4091dab6430",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。",
+        "stopCondition": "Google表示中心や大分駅注記を配布建物点へ転用しない。",
+        "resumeCondition": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/7"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "現行JR駅構内配置と地理参照付き駅舎外形の対応、または案内所の利用可能な直接数値原典。"
+    },
+    {
+      "facilityId": "facility:kyushu-fd6ecb1635ce74789ef8",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/54",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/54"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "45-206-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "まちの駅 とみたか(日向市駅 南側・高架下)",
+      "previousReason": "まちの駅 とみたか(日向市駅 南側・高架下)（宮崎県日向市上町1-19）：日向市観光協会のアクセスを追加確認。上町1-19の日向市駅南側高架下「とみたか」の数値目的地を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-8fca35672837332639",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/60",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/60"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "43-100-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "熊本市上下水道局1階 時間外業務窓口",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "followup": {
+        "facilityId": "facility:ws-8fca35672837332639",
+        "stage": "building-comparison",
+        "blockers": [
+          "building"
+        ],
+        "nextAction": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。",
+        "stopCondition": "大きな近傍矩形や同住所別棟を本館として採用しない。",
+        "resumeCondition": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。",
+        "sourceConditions": "review-required",
+        "references": [
+          "data/national/location-batch1/west-outcomes.json#/outcomes/5"
+        ]
+      },
+      "selection": "existing-batch1-hold",
+      "exclusionOrSelectionReason": "本館配置と地理参照付き建物外形の一致、または条件明示の局本館座標。"
+    },
+    {
+      "facilityId": "facility:ws-9aba1585a794a70f9c",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/61",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/61"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-100-D001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "北九州市響灘ビオトープ",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-b16bb4e05b36ef7277",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/62",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/62"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [
+        "40-220-A001"
+      ],
+      "blockers": [
+        "source"
+      ],
+      "name": "宗像終末処理場内 下水道課",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-04dd6fa162496df84411",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/1",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/1"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "東彼杵町観光案内所",
+      "previousReason": "東彼杵町観光案内所（長崎県東彼杵郡東彼杵町彼杵宿郷747-2(道の駅彼杵の荘)）：観光協会の活動・施設案内で道の駅彼杵の荘に併設する2023年開設の案内所と確認。道の駅本体と案内所を区別する明示数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-37487cd1fb5f5fdb7207",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/6",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/6"
+      ],
+      "distribution": {
+        "classification": "mixed",
+        "statuses": [
+          "active",
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "那珂川市役所 下水道課",
+      "previousReason": "那珂川市役所 下水道課（福岡県那珂川市大字安徳702番地1）：下水道課の公式住所は安徳702-1。市役所本庁の西隈1-1-1とは異なるため、本庁点を採用しない。部署案内に数値の建物目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-3cb5f29b6d7fae86e248",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/7",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/7"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "荒尾市企業局",
+      "previousReason": "荒尾市企業局（熊本県荒尾市増永1903番地）：市の企業局関連施設情報と公共施設CSVを追加調査。増永1903の企業局庁舎に対応する採用可能な数値目的地を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/9",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/9"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "北谷町立博物館",
+      "previousReason": "北谷町立博物館（沖縄県中頭郡北谷町伊平1-11-1）：博物館公式アクセスのGoogleリンクは26.32444,127.7586443を含むが、対象ラベルが伊平1丁目という住所区域で、伊平1-11-1の博物館建物ではない。住所代表点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。",
+      "priorIssue16Refs": [
+        "data/national/issue16/group-a-outcomes.json#/outcomes/9"
+      ],
+      "priorIssue16Outcome": {
+        "facilityId": "facility:kyushu-428058a75ee4c5492bba",
+        "groupId": "pilot-08",
+        "cardIds": [
+          "47-326-B001"
+        ],
+        "status": "held",
+        "stage": "retrieved",
+        "conclusion": "博物館公式aboutページで伊礼原遺跡と博物館の案内図リンクを確認。図のweb取得はtimeout。住所区域点を施設点に変更していない。",
+        "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/9",
+        "newEvidenceRefs": [
+          "data/evidence/issue16/group-a-retrievals.json#/retrievals/9"
+        ],
+        "coordinate": null,
+        "crs": null,
+        "precision": "building representative intended; not established",
+        "processing": "No coordinate extraction/adoption; source and building correspondence research only",
+        "sourceConditions": "個別資料の再配布・座標加工条件未確認。新取得原本は非配布data/workのみ。P05一般条件は#15の条件付き確認を再利用するが旧点/別棟の利用を許可しない。",
+        "stopCondition": "今回見つけた資料だけでは同定/数値/条件の不足が残るため、既知の数値検索の反復を止める。",
+        "resumeCondition": "案内図を再取得し建物外形/数値原典と対応させる",
+        "actorType": "ai",
+        "independentReview": "data/national/issue16/group-a-review.json"
+      }
+    },
+    {
+      "facilityId": "facility:kyushu-45251ad37ff8b4222481",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/11",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/11"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "日明浄化センター",
+      "previousReason": "CSVは日明浄化センター全体の点。公式配布案内は見学者への配布を示すが、受付建物・管理棟とこの点の対応を示さない。現在の受付建物代表点としては保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-48facba373e0ace71a79",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/14",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/14"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "宮古島市 下水道課",
+      "previousReason": "宮古島市 下水道課（沖縄県宮古島市平良字西仲宗根565-6）：市のクリーンセンター施設詳細を確認。埋込は住所検索とviewport中心で、西仲宗根565-6の管理棟に対応する明示マーカーではない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-4aca915a11bca836ac11",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/16",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/16"
+      ],
+      "distribution": {
+        "classification": "ended-only",
+        "statuses": [
+          "ended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所",
+      "previousReason": "道の駅「ぎのざ」 宜野座村観光拠点施設1F観光案内所（沖縄県国頭郡宜野座村字漢那1633番地）：道の駅公式アクセスを確認。物産館等の複数建物があるため、漢那1633の観光拠点施設1階と区別できない敷地・道路の点を不採用。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "ended-only",
+      "exclusionOrSelectionReason": "終了のみ。再開・新配布関係の根拠が出るまで今回は選ばない。"
+    },
+    {
+      "facilityId": "facility:kyushu-6a607bd1f8ff8e4f7cd5",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/26",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/26"
+      ],
+      "distribution": {
+        "classification": "suspended",
+        "statuses": [
+          "suspended"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "熊本県立総合体育館 事務所",
+      "previousReason": "熊本県立総合体育館 事務所（熊本県熊本市西区上熊本1丁目9番28号）：管理者の総合体育館アクセスと県スポーツ施設案内を確認。上熊本1-9-28の体育館目的地点を取得原本から確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-721597ce8a871ee7907f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/30",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/30"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "八代市水処理センター管理棟2階",
+      "previousReason": "八代市水処理センター管理棟2階（熊本県八代市新港町三丁目1番地）：市の施設関連ページと公共施設CSVを確認。新港3-1の水処理センター管理棟に該当する数値目的地点を確保できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-77b2078f3d92eae241e6",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/31",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/31"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "中尾城公園管理事務所",
+      "previousReason": "中尾城公園管理事務所（長崎県西彼杵郡長与町吉無田郷61番地1）：長与町公共施設CSVには中尾城公園32.820645,129.88234があるが管理事務所の点ではない。吉無田61-1の公園代表点を配布建物に流用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-83173665e8ef18a5eed0",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/34",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/34"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "大村湾南部浄化センター",
+      "previousReason": "大村湾南部浄化センター（長崎県諫早市貝津町1410）：市の下水道施設一覧を追加調査。貝津町1410の大村湾南部浄化センターについて建物単位の数値目的地点を確認できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-8c90fac8c05c5f8fcb80",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/36",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/36"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "観光物産交流施設「きやったもんせ南さつま」",
+      "previousReason": "観光物産交流施設「きやったもんせ南さつま」（鹿児島県南さつま市加世田本町43番地9）：観光協会の施設詳細を追加確認。加世田本43-9の店舗の数値目的地は未確認。市ページの短縮リンクは別の市役所を指すため代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-c7ce832b34e06d96ad33",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/43",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/43"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "宜野湾市上下水道局業務サービス課",
+      "previousReason": "宜野湾市上下水道局業務サービス課（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-db074910d35fc98cfcff",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/44",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/44"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "御笠川浄化センター",
+      "previousReason": "御笠川浄化センター（福岡県福岡市博多区那珂4-5-1）：管理者の施設案内と地図短縮リンクzcMyWを確認。解決先はviewport中心のみで、配布先の正門横守衛室または建物目的地点を確定できない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-e6d46c885e30b1c754cb",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/48",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/48"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "小郡市役所 下水道課",
+      "previousReason": "配布原本は市役所下水道課（西別館2階）。CSVは小郡市役所という総称のみで、西別館を同定する情報がない。小郡255-1という同番地だけで同棟扱いできない。西別館の代表点が確定するまで保留。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-e7eae1c92a37ac5f0745",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/49",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/49"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "building"
+      ],
+      "name": "中間市役所下水道課",
+      "previousReason": "今回の2026年4月更新庁舎案内と別館1階画像1485.jpgで下水道課は別館1階と確定（画像を目視確認）。P05中間市役所feature1332は本庁総称点で、この別館の数値点と同定できない。部署名・住所の一致だけでは採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:kyushu-f659f3d40d25570465de",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/52",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/52"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "宜野湾市上下水道局業務サービス課排水設備係",
+      "previousReason": "宜野湾市上下水道局業務サービス課排水設備係（沖縄県宜野湾市字野嵩730）：水道局公式施設案内と県GIS施設データを照合。野嵩730の上下水道局庁舎に対応する数値目的地を確定できない。市役所の点は代用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-11eacc27427ab619f0",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/55",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/55"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "久留米市企業局1階上下水道料金センター窓口",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-571a1c21a1a6a8b166",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/56",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/56"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "太宰府市観光案内所",
+      "previousReason": "2026-10-01～12-22の現行配布先は西鉄太宰府駅構内の観光案内所。旧太宰府館のCSV/P05点をこの施設に流用しない。駅構内の当該建物の公開座標原典が未確保。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-6ba1bca2e1474a7cd2",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/58",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/58"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "大野城市役所新館2階 企業総務課",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-8c2f2fd56f3678dbba",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/59",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/59"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "沖縄市上下水道局 下水道課",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    },
+    {
+      "facilityId": "facility:ws-c42fbe5f44427d0284",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/63",
+      "reviewRefs": [
+        "data/national/issue7/reviews/kyushu-okinawa.json#/preservedDeferrals/63"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "firstPinCardIds": [],
+      "blockers": [
+        "source"
+      ],
+      "name": "大野城市役所北玄関横通用口 警備員室",
+      "previousReason": "追加proposal施設。公式配布関係の原本は保存済みだが、当該建物を特定する座標原典の照合が未完了。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+      "selection": "deferred-this-batch",
+      "exclusionOrSelectionReason": "今回は移転・競合4IDと沖縄初ピン4IDの新資料探索を優先。原調査の不足条件を維持し、重要性なしや調査完了とは扱わない。"
+    }
+  ],
+  "selectionTimingNote": "createdAtは初回選定ファイルの記録時刻。Web探索前だったという独立ログは残っていない。選定理由は計画、実施結果はoutcomesと取得記録で区別。"
+}

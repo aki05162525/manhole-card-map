@@ -1,0 +1,378 @@
+{
+  "schema": 1,
+  "baselineCommit": "93904c720fc2b279db26ff3a9329fcf2855c2311",
+  "rows": [
+    {
+      "facilityId": "facility:ws-f5ea517afaab927bb9",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/64",
+      "originalRow": {
+        "facilityId": "facility:ws-f5ea517afaab927bb9",
+        "reasonCategory": "移転・旧新地点の対応未確定",
+        "reason": "現公式アクセスは知名1100。P05知名町役場feature1457は知名307の旧庁舎で不一致。追加取得した新アクセスのllは表示中心、qは役場名であり数値建物markerとは扱えない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+        "nextSource": {
+          "url": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+          "required": "知名町役場上下水道課（鹿児島県大島郡知名町大字知名1100番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+        },
+        "investigationStatus": "new-investigation-unresolved",
+        "attempts": [
+          {
+            "type": "new-local-original-analysis",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+            "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+            "finalUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+            "fetchedAt": "2026-11-05T06:28:34.079422+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/6592094fcd74de778bd9e272.html",
+            "snapshotSHA256": "6592094fcd74de778bd9e272bae291f9a7712dd1d1a70671e0eff2e4ae972030",
+            "purpose": "distribution",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.town.china.lg.jp/soshiki/1001/12/2709.html",
+            "finalUrl": "https://www.town.china.lg.jp/soshiki/1001/12/2709.html",
+            "fetchedAt": "2026-11-05T06:29:46.478269+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fbc08f67f2a5e5246841aff7.html",
+            "snapshotSHA256": "fbc08f67f2a5e5246841aff74d0636b3dfabdab426e2bdc0ec5533642cc63c50",
+            "purpose": "additional-building-identification",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "b03ec1247d62c22dfc30320c4f51be9c1249d0c67cfc7aa4ee8d49227ddb3fad",
+      "previousPlace": {
+        "id": "facility:ws-f5ea517afaab927bb9",
+        "legacyIds": [],
+        "name": "知名町役場上下水道課",
+        "address": "鹿児島県大島郡知名町大字知名1100番地",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.town.china.lg.jp/soshiki/1014/3/761.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/4fb086a751da5add77e7.html",
+          "snapshotSHA256": "f8688ed07fefd9633b08f21152bc9cf3f56826e6495aa400216d4ef3238919e4",
+          "sourceLocator": "46-534-A001 / 知名町役場上下水道課",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "previousPlaceSHA256": "3269b1ed617a21d0579e90ee401abbc29eecfd6f5a9b5bbafe274be13d39e732"
+    },
+    {
+      "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/0",
+      "originalRow": {
+        "facilityId": "facility:kyushu-0457cc860e34e1f5a582",
+        "reasonCategory": "座標競合",
+        "reason": "新P05照合で物産ホールfeature419と諫早商工会館ビルfeature518を発見。現運営者hallページは物産ホール＝商工会館1階、高城町5-10と同定するが、二点は約38m離れる。どちらが建物内か外形照合未完了のため採用しない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+        "nextSource": {
+          "url": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "required": "諫早物産ホール諫早観光物産コンベンション協会（長崎県諫早市高城町5-10）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+        },
+        "investigationStatus": "new-investigation-unresolved",
+        "attempts": [
+          {
+            "type": "new-local-original-analysis",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補4行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+            "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+            "finalUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+            "fetchedAt": "2026-11-05T06:27:58.237016+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/48546c856302f2db65623d97.html",
+            "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7",
+            "purpose": "distribution",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.isahaya-kankou.com/",
+            "finalUrl": "https://www.isahaya-kankou.com/",
+            "fetchedAt": "2026-11-05T06:27:58.716906+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/efc3ef4e28163845a1fda7ec.html",
+            "snapshotSHA256": "efc3ef4e28163845a1fda7ec9303272e0ce705a6baf2d891fba578fb462162d2",
+            "purpose": "facility",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.isahaya-kankou.com/hall",
+            "finalUrl": "https://www.isahaya-kankou.com/hall",
+            "fetchedAt": "2026-11-05T06:30:52.227569+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/95d3eae1d6205a1d6330e631.html",
+            "snapshotSHA256": "95d3eae1d6205a1d6330e6316cf7958f9066b5c9871617eda03986219110426d",
+            "purpose": "additional-building-identification",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "c49003489f8680fa68190a309a562057ab365ca152234c981b7bfe14aa6a19c4",
+      "previousPlace": {
+        "name": "諫早物産ホール諫早観光物産コンベンション協会",
+        "address": "長崎県諫早市高城町5-10",
+        "phone": "",
+        "id": "facility:kyushu-0457cc860e34e1f5a582",
+        "legacyIds": [
+          "place:0457cc860e34e1f5a582"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.pref.nagasaki.jp/doc/page-359173.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/bd56584967b85f7baffe.html",
+          "snapshotSHA256": "48546c856302f2db65623d978874843118cd8a683477bcb4b4c0c81ede4b5da7",
+          "sourceLocator": "42-000-A001 / マンホールカード配布場所・配布日時 / 諫早物産ホール諫早観光物産コンベンション協会",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "623aeffb55574842194170d283f881001353df68165c514c54ffd9d3be426036"
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/33",
+      "originalRow": {
+        "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+        "reasonCategory": "移転・旧新地点の対応未確定",
+        "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+        "nextSource": {
+          "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "required": "徳之島町役場建設課（鹿児島県大島郡徳之島町亀津7203番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+        },
+        "investigationStatus": "new-investigation-unresolved",
+        "attempts": [
+          {
+            "type": "new-local-original-analysis",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+            "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+            "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+            "fetchedAt": "2026-11-05T06:28:16.891440+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a69e9fd0cba8280082ff6e0d.html",
+            "snapshotSHA256": "a69e9fd0cba8280082ff6e0ddbbfed41a68bdd2a66bec3562ce4418b5b804510",
+            "purpose": "distribution",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.tokunoshima-town.org/shisetsu/yakuba/s001.html",
+            "finalUrl": "https://www.tokunoshima-town.org/shisetsu/yakuba/s001.html",
+            "fetchedAt": "2026-11-05T06:28:16.900184+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/08304f51f1916ecfd92b9344.html",
+            "snapshotSHA256": "08304f51f1916ecfd92b934470940a2f742e3d78f5eefcb7ea33a293fd9fdb8b",
+            "purpose": "facility",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+            "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+            "fetchedAt": "2026-11-05T06:29:46.207886+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3ed620a45b57836d2ebac8ae.pdf",
+            "snapshotSHA256": "3ed620a45b57836d2ebac8ae9835e6995f8407bb6c4f8f8b55c6312cbb5a5047",
+            "purpose": "additional-building-identification",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "0e7a0a033534b1f67aba52715c21efe4ffaf98e27274972989ddc69fac9502c8",
+      "previousPlace": {
+        "name": "徳之島町役場建設課",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地",
+        "phone": "0997-82-1111",
+        "id": "facility:kyushu-7a9f8dae19665147953f",
+        "legacyIds": [
+          "place:7a9f8dae19665147953f"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/9a2da8a57f13603c6013.html",
+          "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+          "sourceLocator": "46-530-A001 / マンホールカード配布場所・配布日時 / 徳之島町役場建設課",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "63ca992f4a702eb78725b5998f6c5f6e0fee61a6863af0d791c6bc7bf7a969a2"
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/57",
+      "originalRow": {
+        "facilityId": "facility:ws-61c944585418f01447",
+        "reasonCategory": "移転・旧新地点の対応未確定",
+        "reason": "現配布案内・新庁舎移転PDFを追加取得。2022年10月移転を再確認。P05 feature1373の住所は亀津7203だが位置はGDMap2旧点付近で、住所一致のみでは新庁舎との同定ができない。原図から新庁舎建物の数値を確定していない。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+        "nextSource": {
+          "url": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "required": "徳之島町役場新庁舎1階宿直室（鹿児島県大島郡徳之島町亀津7203番地）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+        },
+        "investigationStatus": "new-investigation-unresolved",
+        "attempts": [
+          {
+            "type": "new-local-original-analysis",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補1行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+            "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+            "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+            "fetchedAt": "2026-11-05T06:28:16.891440+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/a69e9fd0cba8280082ff6e0d.html",
+            "snapshotSHA256": "a69e9fd0cba8280082ff6e0ddbbfed41a68bdd2a66bec3562ce4418b5b804510",
+            "purpose": "distribution",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+            "finalUrl": "https://www.tokunoshima-town.org/kensetsuka/documents/sintyousya.pdf",
+            "fetchedAt": "2026-11-05T06:29:46.207886+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/3ed620a45b57836d2ebac8ae.pdf",
+            "snapshotSHA256": "3ed620a45b57836d2ebac8ae9835e6995f8407bb6c4f8f8b55c6312cbb5a5047",
+            "purpose": "additional-building-identification",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "8943d25db3e6098f24152a5e8d565c5b5484665c0083e753cc5efb552debbfcf",
+      "previousPlace": {
+        "id": "facility:ws-61c944585418f01447",
+        "legacyIds": [],
+        "name": "徳之島町役場新庁舎1階宿直室",
+        "address": "鹿児島県大島郡徳之島町亀津7203番地",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.tokunoshima-town.org/kensetsuka/mannhorukado.html",
+          "snapshotPath": "data/evidence/national/proposals-west-south/9a2da8a57f13603c6013.html",
+          "snapshotSHA256": "81bbb902b34164e7b89df5d026b45e5b1dccddfc3311036457c28bc986fb4bdb",
+          "sourceLocator": "46-530-A001 / 徳之島町役場新庁舎1階宿直室",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "保存済み自治体・施設公式原本のカード種別と窓口・曜日条件を再照合。現GKP保存原本を比較。位置は未承認。"
+        }
+      },
+      "previousPlaceSHA256": "f4075c220b1f118367ee97aa4424ab02910f0c136e4ea4412d22324083e67a53"
+    },
+    {
+      "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+      "originalRef": "data/national/issue7/kyushu-okinawa.json#/unresolved/22",
+      "originalRow": {
+        "facilityId": "facility:kyushu-5adca0ddeb2263d545e6",
+        "reasonCategory": "複数棟・建物同定未完了",
+        "reason": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）：管理者の施設紹介・アクセスを追加確認。勝連城跡や歴史文化施設と観光ターミナル（南風原3807-2）を区別する建物目的地を未確認。 今回の新規取得・P05原値照合の範囲では、採用できる現建物の数値原典を確定できなかった。室内窓口・入口の測量は要求していない。",
+        "nextSource": {
+          "url": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+          "required": "うるま市観光案内所(あまわりパーク観光ターミナル)（沖縄県うるま市勝連南風原3807-2）を指す公開GIS/建物外形または公式施設marker。既取得の表示中心・旧地点の再利用では不足。"
+        },
+        "investigationStatus": "new-investigation-unresolved",
+        "attempts": [
+          {
+            "type": "new-local-original-analysis",
+            "sourceUrl": "https://nlftp.mlit.go.jp/ksj/gml/data/P05/P05-22/P05-22_GML.zip",
+            "snapshotPath": "data/evidence/issue5/chubu/P05-22_GML.zip",
+            "snapshotSHA256": "3056d3e0d02248143f1f2c9a5e62fd37717eb761a7257106b5d252415aef4cdc",
+            "outcome": "九州沖縄8県P05原ZIPを新たに名称・番地照合。候補0行（弱い文字列一致を含む、未一致は施設不存在を意味しない）。個別結果はp05-leads.json。",
+            "checkedAt": "2026-11-05T06:38:45.524300+00:00"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+            "finalUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+            "fetchedAt": "2026-11-05T06:28:07.852890+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fd704b5c58fee72e60fbf7bd.html",
+            "snapshotSHA256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c",
+            "purpose": "distribution",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.katsuren-jo.jp/about_amawari-park/",
+            "finalUrl": "https://www.katsuren-jo.jp/about_amawari-park/",
+            "fetchedAt": "2026-11-05T06:28:07.793329+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/ac02261283b060e9cd41aaa8.html",
+            "snapshotSHA256": "ac02261283b060e9cd41aaa8dd3dfd2c1ec1267935148249408ef5e8b41d1566",
+            "purpose": "facility",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          },
+          {
+            "type": "new-http-retrieval",
+            "sourceUrl": "https://www.katsuren-jo.jp/access/",
+            "finalUrl": "https://www.katsuren-jo.jp/access/",
+            "fetchedAt": "2026-11-05T06:29:46.801520+00:00",
+            "status": 200,
+            "error": null,
+            "snapshotPath": "data/evidence/issue7/kyushu-okinawa/fc767ee98347c7ae2f638cf1.html",
+            "snapshotSHA256": "fc767ee98347c7ae2f638cf11b2d00782418bc33b97f4b0c90676375e8259fd0",
+            "purpose": "additional-building-identification",
+            "outcome": "取得原本を追加照合。HTTP成功だけで建物座標が確認済みとは扱わない。"
+          }
+        ]
+      },
+      "originalRowSHA256": "2e688d81bf4813ea5a1efea9a6ad49ea5f9464a22e6c9cab18f3b68518ae1cc7",
+      "previousPlace": {
+        "name": "うるま市観光案内所(あまわりパーク観光ターミナル)",
+        "address": "沖縄県うるま市勝連南風原3807-2",
+        "phone": "098-978-7373",
+        "id": "facility:kyushu-5adca0ddeb2263d545e6",
+        "legacyIds": [
+          "place:5adca0ddeb2263d545e6"
+        ],
+        "evidence": {
+          "sourceUrl": "https://www.city.uruma.lg.jp/6001004000/contents/p000076.html",
+          "snapshotPath": "data/evidence/national/kyushu-okinawa/5e371894a3f3a8a47918.html",
+          "snapshotSHA256": "fd704b5c58fee72e60fbf7bd4aeac11c9a9c3fde2252f0a42fe5357f712a049c",
+          "sourceLocator": "47-213-A001 / マンホールカード配布場所・配布日時 / うるま市観光案内所(あまわりパーク観光ターミナル)",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが配布先名称・原典の住所情報と公式配布案内を照合。施設状態のみの採用。公式目的地座標は未確定のためcoordinateを設定しない。現地確認ではない。"
+        }
+      },
+      "previousPlaceSHA256": "848dfb78f0392782ae315e3291e0f0c74af6c86e411991b867c1486f3eaa428d"
+    }
+  ]
+}
