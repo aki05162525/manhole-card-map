@@ -20,5 +20,7 @@
     "facility:kyushu-e4fe20203350934b0e63"
   ],
   "approvedEvidenceUnchanged": true,
-  "red": "新地域差分テストが未採用5IDで失敗（exit 1）、manifest選択・binding統合後GREENを確認する。"
+  "red": "新地域差分テストが未採用5IDで失敗（exit 1）、manifest選択・binding統合後GREENを確認する。",
+  "historicalOnly": "93904c72への初回採用統合。最新統合はlatestIntegrationRefを参照。",
+  "latestIntegrationRef": "data/evidence/location-batch2/kyushu-okinawa/main0359458-integration.json"
 }

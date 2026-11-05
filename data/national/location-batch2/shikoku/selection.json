@@ -1,0 +1,419 @@
+{
+  "schema": 1,
+  "region": "shikoku",
+  "issue": 43,
+  "selectedAt": "2026-11-05T11:24:08.711174+00:00",
+  "baseCommit": "f66b7e994ef250fadee78f396d22fdfc40ba6a83",
+  "asOf": "2026-11-05",
+  "nationalUnlocatedAtStart": 608,
+  "regionalPopulation": 15,
+  "selectedIds": [
+    "facility:cs-1fe04097ed447030ce",
+    "facility:cs-4273f7af29262d7c74",
+    "facility:cs-966cf6f4a303ce7b1c",
+    "facility:cs-ba24f603e6bac38d9e",
+    "facility:cs-c7eae2022b55200128",
+    "facility:cs-c859f2f66b0d2b847c",
+    "facility:cs-f48988ec217d052e92",
+    "facility:cs-66c4c4fbd8f914efac"
+  ],
+  "inputSHA256": {
+    "tools/national/manifest.json": "59e832eb12b83c28f6a0156b0ec8a230b826dbdec6e23162d3e700b3ed3e98da",
+    "data/national/issue24/priorities-snapshot.json": "1bbe21616174fac1e6e923fce5e792cfc4d687fb2c6f1a87030c249b1bed82fb",
+    "data/national/location-batch1/baseline.json": "99a96f0fcaf15ff4f610afaa2321d743d3955ccba2ecfb6f3ea10bc49ab6e24d",
+    "data/national/issue7/shikoku.json": "66f11d531a69c70a3f1a19478aebe16681e533576aac636fd7a166b13e3c9813",
+    "data/national/location-batch1/integration.json": "0932cd4daf333e549cfcffefb91cfb5692ed4500e334f8208f6d5adfbbd99732",
+    "data/national/location-batch1/followups.json": "49439a80e825cac9dc09c125a452a4bf7fa842151e5ec9ba3dbb3b50ac6bcb2d",
+    "data/national/issue20/selection.json": "b09b492082515175b44362c47ed3fe53a25e5f9934bc7db7d42f253419a8a3cc",
+    "data/national/issue20/north-outcomes.json": "f055dd39d553830abc79f6cf1fec281fae3b46f26c22c3d230238cdb37897522",
+    "data/national/issue20/oyama-outcomes.json": "aaf523fc45db7b98e61d6f4d5406d1b9a55b24efc163bdadc192c77efc82f6ea",
+    "data/national/issue20/fujioyama-outcomes.json": "2f175ce9c9bb6f90636183a3a1bafba9971f8b6ac8ce5f134a2ae96088cd2d86",
+    "data/national/issue25/investigation.json": "dbc09d81d7e68f4dd55f0575d98d16234510d83219969f62b1bee93b9f1fc0ba",
+    "data/national/issue26/outcomes.json": "ee4a53b8fec20b82ce2e348929580898bda65ae27be81f9a6f558c3c0bac41ac",
+    "data/national/issue27/outcomes.json": "efaba117ed85745039dd70808be3e6ff6a114d74b90070b2b2fb5e6704477d06",
+    "data/national/issue7/reviews/shikoku.json": "9bf4dd23b010f00a0a54be70662333ea2349281a3174dc45e606dfa54b51dc6f"
+  },
+  "rows": [
+    {
+      "facilityId": "facility:cs-1fe04097ed447030ce",
+      "name": "旧吉野川浄化センター(愛称:アクアきらら月見ヶ丘)",
+      "address": "板野郡松茂町豊岡字山の手41",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/1",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "36-000-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "指定管理者のアクセス・施設概要・2026年パンフレットを追加取得。アクセスのpbは表示中心。複数処理棟のうち配布管理棟に結び付く数値原典は未確定。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-4273f7af29262d7c74",
+      "name": "龍河洞観光センター",
+      "address": "高知県香美市土佐山田町逆川1424",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/3",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "39-212-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "龍河洞保存会の施設案内を追加取得し観光センターの存在を確認。市markerは龍河洞で、複数の施設から観光センター建物へ結び付ける数値原典を得ていない。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-966cf6f4a303ce7b1c",
+      "name": "ウェルピア伊予",
+      "address": "愛媛県伊予市下三谷1761番地1",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/8",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "38-210-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "施設ガイドマップを追加取得。P05施設点132.717016,33.770037と公式OG点132.717616,33.770134は約56m差。フロントを収容する本館・別館・体育館があるため、この差を室内精度の問題とせず本館外形との照合を次に行う。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-ba24f603e6bac38d9e",
+      "name": "中讃流域下水道金倉川浄化センター",
+      "address": "香川県仲多度郡多度津町堀江5-10-1",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/9",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "37-000-A002"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "公社の金倉川施設詳細を追加取得。大束川点は流用しない。管理棟と処理施設群を区別する数値位置が不足。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-c7eae2022b55200128",
+      "name": "中讃流域下水道大束川浄化センター",
+      "address": "香川県綾歌郡宇多津町吉田4001-4",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/10",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "37-000-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "公社の大束川詳細と県再評価資料の管理棟入り平面図を追加取得。管理棟図はあるが地理座標との対応は未実施。画像から推測した座標を登録しない。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-c859f2f66b0d2b847c",
+      "name": "月見ヶ丘海浜公園",
+      "address": "板野郡松茂町豊岡字山の手42",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/11",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "36-000-A001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "公式ビジターセンター案内を追加取得。公園アクセスYahoo埋込に目的地点hlat/hlonはあるが公園全体の点で、管理棟と一致するか未確定。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-f48988ec217d052e92",
+      "name": "マイントピア別子 本館1階チケット売り場",
+      "address": "愛媛県新居浜市立川町707-3",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/13",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "38-205-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "市配布先・県観光marker・運営者アクセスを新規HTTP取得して再照合。端出場と東平の区別は可能だが、端出場の広い複合施設markerを本館へ割り当てる外形対応は未確定。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-1da8c893b7e0da18dd",
+      "name": "丸亀市浄化センター",
+      "address": "香川県丸亀市昭和町21番地1",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/0",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "新施設完成ページと避難施設案内を追加取得。配布案内は昭和町21-1を明示し旧31-1を明確に除外。新管理棟の数値原典は未確定。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:ws-9ff461d7f7a6c20c9b",
+      "name": "道の駅やす 地域情報コーナー",
+      "address": "高知県香南市夜須町千切537-90",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/14",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": null,
+      "distribution": {
+        "classification": "needs-review",
+        "statuses": [
+          "active",
+          "unknown"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "relocation"
+      ],
+      "previousReason": "県観光サイト・バリアフリー施設案内・四国道の駅連絡会を追加取得。地域情報コーナーは管理事務所内と同定したが、道の駅全体marker33.534195,133.7537と当該建物の対応は未確定。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:cs-51f8a875d8e4c4dd9f",
+      "name": "東温アートヴィレッジセンター",
+      "address": "愛媛県東温市見奈良1125番地 レスパスシティ内クールスモール2階",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/4",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "38-215-B001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "施設の別公式利用案内を追加取得。クールスモール2階との同定は可能だが建物markerを確認できず。室内位置は必要条件にしていない。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:cs-66c4c4fbd8f914efac",
+      "name": "イオンモール今治新都市1F インフォメーションカウンター",
+      "address": "愛媛県今治市にぎわい広場1番地1",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/7",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "38-202-C001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "モール公式フロアマップを追加取得。1階カウンターの厳密位置は要求しないが、アクセスのpb表示中心を建物点とする根拠がなく、モール建物の別数値原典を得ていない。",
+      "selection": "selected",
+      "reason": "初ピン候補。複合施設と配布建物の取り違え防止を優先。公式配置図と公開施設CSV/建物外形の独立照合を新手法として探索。",
+      "resumeMethod": "既存P05・表示中心の再抽出はしない。未調査の配置図/自治体オープンデータから建物対応を独立確認。"
+    },
+    {
+      "facilityId": "facility:cs-ef53a3d23bf2f8f4f2",
+      "name": "かみんか(愛と勇気の物語交流館)",
+      "address": "高知県香美市香北町美良布1141-1",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/12",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [
+        "39-212-E001"
+      ],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "市の新施設案内を追加取得。2026年古民家改修開館と美良布1141-1を確認。地図埋込は表示中心のみで、新施設建物の数値原典は不足。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:cs-256deac4b524a7a91a",
+      "name": "高須浄化センター",
+      "address": "高知県高知市高須304",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/2",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "県の施設概要を追加取得、見学ページ再取得。公開検索にはヘリ離着陸場の数値もあるが南側グラウンド・広場であり建物点へ転用しない。配布建物の数値原典が不足。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:cs-5b94c854a92178a084",
+      "name": "徳島市上下水道局 お客さまセンター",
+      "address": "徳島県徳島市南前川町5丁目1番地の4 上下水道局本庁舎1階",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/5",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "配布ページと水道局アクセスを新規HTTP取得して再読。本庁舎南前川町5-1-4を同定したが数値は住所名義のpb表示中心である。P05にも該当建物を発見できず、数値建物原典が不足。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    },
+    {
+      "facilityId": "facility:cs-5bd7b7e3810ea3b76e",
+      "name": "海老ノ丸ポンプ場2階事務所",
+      "address": "高知市海老ノ丸13-6",
+      "originalRef": "data/national/issue7/shikoku.json#/unresolved/6",
+      "baselineMember": true,
+      "currentlyUnlocated": true,
+      "firstPinCardIds": [],
+      "distribution": {
+        "classification": "active",
+        "statuses": [
+          "active"
+        ],
+        "matchesCurrentRelations": true,
+        "allRelationsVerified": true
+      },
+      "blockers": [
+        "source"
+      ],
+      "previousReason": "市の雨水処理施設ページを追加取得し海老ノ丸ポンプ場を確認。配布ページとの名称一致はあるが建物座標の数値原典が不足。",
+      "selection": "excluded-this-batch",
+      "reason": "今回は初ピン候補のうち別棟誤誘導の解消と大型モール外形に8枠を集中。旧保留を維持し完了扱いしない。",
+      "resumeMethod": null
+    }
+  ]
+}

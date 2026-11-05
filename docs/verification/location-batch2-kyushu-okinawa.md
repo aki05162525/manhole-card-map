@@ -1,12 +1,12 @@
 # 第2弾 九州・沖縄の位置調査（Issue #44）
 
-2026-11-05、基準コミット `f66b7e994ef250fadee78f396d22fdfc40ba6a83`。初回Opusレビューの重大指摘を受けて原本と数値外形を再調査した。Gemini 3.8 Flashの独立最終レビューで5候補が承認され、**選定8施設、提案5施設・採用5施設（4建物）、保留3**となった。最新main `93904c720fc2b279db26ff3a9329fcf2855c2311` を取り込み、5IDだけをmanifestとlocationLifecycleへ明示選択した。全配布関係・既存ピンは不変。地域全件を解決したという意味ではない。
+2026-11-05、基準コミット `f66b7e994ef250fadee78f396d22fdfc40ba6a83`。初回Opusレビューの重大指摘を受けて原本と数値外形を再調査した。Gemini 3.8 Flashの独立最終レビューで5候補が承認され、**選定8施設、提案5施設・採用5施設（4建物）、保留3**となった。初回採用時main `93904c720fc2b279db26ff3a9329fcf2855c2311` を取り込み、5IDだけをmanifestとlocationLifecycleへ明示選択した。全配布関係・既存ピンは不変。地域全件を解決したという意味ではない。
 
 ## 母集団・計画と実績
 
 [selection.json](../../data/national/location-batch2/kyushu-okinawa/selection.json)の選定8IDは変更していない。`createdAt`は初回ファイルの記録時刻で、Web探索より前だったことを独立に示すログはなく、旧文書の断定を撤回する。選定理由は計画、実施結果は[outcomes.json](../../data/national/location-batch2/kyushu-okinawa/outcomes.json)・取得記録で区別する。
 
-Issue24 snapshotの`originalRef`が地域原記録を指す66IDは、すべて第1弾baselineに含まれる。基準manifestをassembleすると既採用の大分市美術館1件を除いて地域未位置65件、全国台帳内未位置608件。これは開始時集合であり、採用後の推計ではない。統合基準mainの全国台帳内未位置595件から今回5ID採用で590件、地域は65→60件。開始時608件からの他地域効果13件と地域効果5件を分離する。生成全体の未位置744→739件は台帳の595→590件と別集合。
+Issue24 snapshotの`originalRef`が地域原記録を指す66IDは、すべて第1弾baselineに含まれる。基準manifestをassembleすると既採用の大分市美術館1件を除いて地域未位置65件、全国台帳内未位置608件。これは開始時集合であり、採用後の推計ではない。初回統合基準mainの全国台帳内未位置595件から5ID採用で590件（履歴）、地域は65→60件。開始時608件からの他地域効果13件と地域効果5件を分離する。生成全体の未位置744→739件は台帳の595→590件と別集合。
 
 [coverage.json](../../data/national/location-batch2/kyushu-okinawa/coverage.json)は全66IDを分類する。選定8、既採用1、第1弾保留6、終了のみ1、今回見送り50。内訳を検証スクリプトで検査する。#20・#25・#26・#27の保留と選定8IDの重複はなく、第1弾熊本・大分6保留は再開しない。Issue16の地域4ID（徳之島2、北谷観光情報センター、未選定の北谷博物館）は参照と旧結果を継承した。未選定を重要性なしとは扱わない。
 
@@ -63,3 +63,9 @@ mise exec -- go test -count=1 ./...
 採用5IDの実生成detailsと本番`facilityMapLink`でMapsリンクが承認座標を渡すことを確認（`check-maps.ts`/`maps-check.json`）。UIコード変更なし。ブラウザー画面・Google Maps外部画面・現地確認は未実施。画面の視覚回帰を実施したという報告ではない。共有変更はmanifestの地域追加のみで、共有進捗文書・アプリコードを変更していない。フックは省略しない。
 
 Gemini 4 Argon枠超過、Claude providerのrate limit、Antigravity Opus枠超過の履歴を別ファイルで保持。Gemini 3.8 Flashの独立最終レビュー全文は`review-gemini-flash.json`、採否は`review.json`。重大なし、5ID承認、3保留支持。任意指摘のpending表記とmain基準差を本更新で解消した。レビューの「5候補/4施設」は5施設ID/4建物と訂正して使用する。原本・座標・根拠不変の統合であり、ユーザー指定に従い追加再レビューは起動しない。CI監視とマージは親が担当する。
+
+## 四国採用後mainへの追従
+
+最新main `0359458e10258b92cc567123cfabaaeb06130271` を取り込み、manifestの同時追記競合を解消。四国2採用/bindingを含む全地域成果を保持し、九州・沖縄の5ID採用行・証拠・bindingはbytes不変。実assembleで全国台帳未位置は**593→588**、地域65→60。開始608、初回main595→590、今回main593→588を別時点として扱う。
+
+今回の検証はPython全国119テスト・Go非キャッシュとも終了コード0で成功。範囲は地域固有の全台帳差分・旧値/hash・非採用検査。原本・数値・採用根拠が変わらないため再レビューなし。前節の実生成/世代hash/Mapsは初回93904c72基準の履歴で、今回の全体生成値ではない。競合解消に必要な検証に限定して再生成・画面検証を繰り返していない。結果は[main0359458-integration.json](../../data/evidence/location-batch2/kyushu-okinawa/main0359458-integration.json)。共有進捗文書は変更なし。
