@@ -35,3 +35,5 @@ mise exec -- uv run --no-project --python 3.13.12 --with mapbox-vector-tile==2.2
 `verify.py` は32施設の母集団、8選定、旧JSON pointer、取得参照、監査stage列挙、未採用を検査する。開始時manifestの原bytesを `baseline-manifest.json` に固定し、selection記録の旧hashと照合して歴史的608件を再assembleする。現manifestも別にassembleし、北陸32施設の全フィールド不変と現件数を検査する。他地域の採用だけでは608の期待値を書き換えない。全国の台帳全フィールド一致は現manifestが開始時hashと同じ場合に検査する。旧入力自体が変更された場合は固定hash検査が失敗するので、無条件に最新mainへ追随する検証器ではない。`--raw` は保存原本55ファイルのbytes/hashと開始時台帳も確認する。
 
 `check-vector.py` は初回3タイル、`compare-vector.py` は追加10枚を含む13タイルを検査。第三者の再取得時に同じ内容を得られる保証ではなく、建物同定と現況の意味判断は独立レビューが必要。
+
+検査範囲：`check-vector.py` は初回3タイル、`compare-vector.py` は追加分を含む計13タイルを検査する。

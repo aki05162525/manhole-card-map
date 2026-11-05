@@ -32,7 +32,7 @@
 
 ## レビュー履歴・文書と実態の訂正
 
-Gemini 4 Argonはクォータ上限で失敗し、レビュー未完了。[review.json](../../data/national/location-batch2/hokuriku/review.json)は当時の応答として保持する。その後、ユーザーがClaude Opus代替レビューを明示許可。初回Opusはhead `81ae122816c29c93efaf331a2d9be4f032cccfea` に重大1件を指摘しready化を止めた。[review-opus-initial.json](../../data/national/location-batch2/hokuriku/review-opus-initial.json)に全指摘と対応を別記。採用承認とは扱わない。修正後head `b8a8a19ab22fc5372fe540b2602a58ecc00f6437` に新規Opus再レビューを依頼したが、Claude API rate limit/session limitで途中失敗した。[再試行記録](../../data/national/location-batch2/hokuriku/review-opus-recheck.json)を保存。指摘解消・承認済みとはせずDraftを維持し、新規レビューの再開を待つ。ユーザー指定の順序に従い、PR本文の最終更新/ready化もその解消後に残る。
+Gemini 4 Argonはクォータ上限で失敗し、レビュー未完了。[review.json](../../data/national/location-batch2/hokuriku/review.json)は当時の応答として保持する。その後、ユーザーがClaude Opus代替レビューを明示許可。初回Opusはhead `81ae122816c29c93efaf331a2d9be4f032cccfea` に重大1件を指摘しready化を止めた。[review-opus-initial.json](../../data/national/location-batch2/hokuriku/review-opus-initial.json)に全指摘と対応を別記。採用承認とは扱わない。修正後head `b8a8a19ab22fc5372fe540b2602a58ecc00f6437` に新規Opus再レビューを依頼したが、Claude API rate limit/session limitで途中失敗した。[再試行記録](../../data/national/location-batch2/hokuriku/review-opus-recheck.json)を保存。その後、ユーザー指定のGemini 3.8 Flashがhead `4d12d5ae6a7d969423502d5dcc29b5a1ca52e43e` を独立再レビューし、旧指摘の解消と採用0・保留8を確認した。残るPR本文の旧記述を本記録に合わせて更新した。これは座標採用の承認ではない。[再レビュー結果](../../data/national/location-batch2/hokuriku/review-gemini-flash.json)を参照。
 
 今回判明した不一致は次のとおり。コードの列挙・実行結果に合わせて訂正した。
 
