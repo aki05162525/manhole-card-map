@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "recordType": "independently-authored-factual-extraction",
+  "facilityId": "facility:north-3443a4a6d08de5680f46",
+  "preparedBy": "Codex source_inventory",
+  "preparedAt": "2026-11-05T10:14:36.588801+00:00",
+  "rawRedistribution": "Original PDFs/HTML/images remain in ignored data/work/issue26. This JSON records factual findings and retrieval provenance, not a reproduction of original pages.",
+  "facts": [
+    {
+      "id": "address-transition",
+      "finding": {
+        "facilityName": "石巻市かわまち交流センター",
+        "oldAddress": "石巻市中央二丁目11番21",
+        "newAddress": "石巻市中央二丁目11番12号",
+        "reason": "中央二丁目地区の区画整理に伴う道路形状変更と住居番号の振り直し。誤記訂正ではない。"
+      },
+      "source": {
+        "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/10181000/0070/8063/021/03_21_shiryou_0208/03_21_youshi.pdf",
+        "snapshotPath": "data/work/issue26/amendment-meeting.pdf",
+        "snapshotSHA256": "dea8e6d060498365e535f4427d2d5e80e935a545d88b56b445d56e9612bad36a",
+        "retrievedAt": "2026-11-05T10:10:33.821542+00:00",
+        "sourceLocator": "physical page 1; 審議事項1, (1) 主な内容 table first row",
+        "sourceVersion": "2022-02-08"
+      }
+    },
+    {
+      "id": "ordinance-amendment",
+      "finding": {
+        "bill": "令和4年第1回定例会 第56号議案",
+        "amendment": "石巻市かわまち交流拠点条例第2条の施設位置表で11番21から11番12号へ変更",
+        "effectiveDate": "2022-03-19"
+      },
+      "source": {
+        "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/30101000/0000/0400/0410/R4-1teirei.pdf",
+        "snapshotPath": "data/work/issue26/council-amendment.pdf",
+        "snapshotSHA256": "f8319c098a68fb249aea44f9f7f483d9929dad0f2e28a2f1d3e8a8d0b646d5d7",
+        "retrievedAt": "2026-11-05T10:11:24.156438+00:00",
+        "sourceLocator": "physical page 20 (追加提出議案一覧その1); 第56号議案 table first row and commencement statement",
+        "sourceVersion": "2022年第1回定例会"
+      }
+    },
+    {
+      "id": "bill-passed",
+      "finding": {
+        "bill": "第56号議案",
+        "result": "原案可決"
+      },
+      "source": {
+        "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/30101000/0000/0400/0410/20220225164226.html",
+        "snapshotPath": "data/work/issue26/council-result.html",
+        "snapshotSHA256": "2b8e4197303f18aded200ee7a6fdf3c4f6a7443362d78ddb8fde05b7c847f0bf",
+        "retrievedAt": "2026-11-05T10:11:23.984584+00:00",
+        "sourceLocator": "議案一覧 table row 第56号議案",
+        "sourceVersion": "2022年第1回定例会議決結果"
+      }
+    },
+    {
+      "id": "current-management",
+      "finding": {
+        "facilityName": "石巻市かわまち交流センター",
+        "address": "石巻市中央二丁目11番12",
+        "manager": "一般社団法人石巻観光協会",
+        "managementPeriod": "2022-04-01 through 2027-03-31"
+      },
+      "source": {
+        "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/10162000/0008/shiteikanri_ichiran_R8.4.1.pdf",
+        "snapshotPath": "data/work/issue26/management-current.pdf",
+        "snapshotSHA256": "915c4176eeb02938b1589c1e50149acf7e149ccf951a2c4bdd50655afc1b8004",
+        "retrievedAt": "2026-11-05T10:11:24.347552+00:00",
+        "sourceLocator": "physical page 2, row 71",
+        "sourceVersion": "2026-04-01"
+      }
+    },
+    {
+      "id": "operator-address",
+      "finding": {
+        "operatorName": "一般社団法人石巻観光協会",
+        "address": "宮城県石巻市中央2丁目11-12"
+      },
+      "source": {
+        "sourceUrl": "https://www.i-kanko.com/contact/",
+        "snapshotPath": "data/work/issue26/operator-current.html",
+        "snapshotSHA256": "22c17acf1a3354aacde537360508a5ab810cd1e8cc674ff878fdfdd941c4615d",
+        "retrievedAt": "2026-11-05T10:11:15.063021+00:00",
+        "sourceLocator": "footer association name and postal address",
+        "sourceVersion": null
+      }
+    },
+    {
+      "id": "distribution-floor-retained",
+      "finding": {
+        "facilityName": "石巻市かわまち交流センター",
+        "floor": "1階",
+        "oldAddressStillDisplayed": "石巻市中央二丁目11番21",
+        "scope": "ロボコン配布移転案内は川開き祭り花火大会カードと同じ配布場所と明示。旧番地は原文として保持し、配布関係をこの記録で変更しない。"
+      },
+      "source": {
+        "sourceUrl": "https://www.city.ishinomaki.lg.jp/cont/10505200/1212/20180919113612.html",
+        "snapshotPath": "data/work/issue26/cards-current.html",
+        "snapshotSHA256": "5460e8c9d33281fff32b64eacc6b6898fa6449bcd473cbb6c6e498e0490d82d7",
+        "retrievedAt": "2026-11-05T10:13:00.387592+00:00",
+        "sourceLocator": "section マンホールカードの配布場所が変わります; bold destination and following same-location sentence",
+        "sourceVersion": "notice refers to 2026-10-19 through early April 2027; date changes possible"
+      }
+    }
+  ]
+}

@@ -113,7 +113,7 @@ class AssemblyTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
         inputs, patches, updates = a.load_selection(root, manifest)
-        self.assertEqual(len(patches), 111)
+        self.assertEqual(len(patches), 113)  # Issue26 adds only address and evidence fields.
         self.assertEqual(len(updates), 840)
         self.assertTrue(all(p['target'] in inputs for p in patches))
         self.assertTrue(all(p['new'] is not None for p in patches))
@@ -140,6 +140,10 @@ class AssemblyTests(unittest.TestCase):
         # opens that work file and needs no full.json/cards.json/raw inputs.
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
+        # Keep the reviewed pre-Issue26 baseline intact. The next test proves
+        # the exact address/evidence-only delta of the newly selected patch.
+        manifest['patches'] = [p for p in manifest['patches']
+                               if p['path'] != 'data/national/issue26/address-patch.json']
         paths = manifest['inputs'] + [p['path'] for p in manifest['patches'] + manifest['locations']]
         before = {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths}
         output, audit = a.assemble(root, manifest)
@@ -148,6 +152,30 @@ class AssemblyTests(unittest.TestCase):
         self.assertEqual((len(output['places']), len(output['relations'])), (1586, 1670))
         self.assertEqual((audit['patchesApplied'], audit['locationsApplied']), (111, 840))
         self.assertEqual(before, {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths})
+
+    def test_ishinomaki_address_renumbering_preserves_floor_and_other_records(self):
+        root = Path(__file__).resolve().parents[2]
+        manifest = a.read_json(root / 'tools/national/manifest.json')
+        output, _ = a.assemble(root, manifest)
+        fid = 'facility:north-3443a4a6d08de5680f46'
+        actual = next(p for p in output['places'] if p['id'] == fid)
+        self.assertEqual(actual['address'], '宮城県石巻市中央二丁目11番12号 1階')
+        self.assertNotIn('coordinate', actual)
+        selection = 'data/national/issue26/address-patch.json'
+        historical = copy.deepcopy(manifest)
+        historical['patches'] = [p for p in historical['patches'] if p['path'] != selection]
+        before, _ = a.assemble(root, historical)
+        expected = copy.deepcopy(before)
+        old = next(p for p in expected['places'] if p['id'] == fid)
+        self.assertEqual(old['address'], '宮城県石巻市中央二丁目11番21 1階')
+        patch = a.read_json(root / selection)['patches']
+        self.assertEqual([p['field'] for p in patch], ['address', 'evidence'])
+        for change in patch:
+            self.assertEqual(change['match'], {'id': fid})
+            self.assertEqual(old[change['field']], change['old'])
+            old[change['field']] = change['new']
+        self.assertEqual(output, expected)
+        self.assertEqual(output['relations'], before['relations'])
 
     def test_whole_row_exact_and_overlapping_patches(self):
         replacement = dict(self.place, name='Replacement')

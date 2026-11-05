@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "analyzedAt": "2026-11-05T10:15:11.638510+00:00",
+  "source": {
+    "url": "https://www.city.daito.lg.jp/uploaded/attachment/15499.docx",
+    "snapshotPath": "data/evidence/issue7/kinki-west/snapshots/10b8e4b806574cb08976297d.html",
+    "snapshotSHA256": "7314f1d8c22c131b863e8ddcf7740affe7194f7d4ddd2b8b1e393efda4b405d4",
+    "acquiredAt": "2026-11-05T06:28:34.572855+00:00",
+    "retrievalRef": "data/national/issue7/kinki-west.json#/unresolved/35/attempts",
+    "version": "DOCX metadata revision5, modified2015-08-07T08:28:00Z。公開ページ更新2022-04-28を原図作成年に代用しない。"
+  },
+  "format": "ZIP/Office Open XML Word。保存拡張子.htmlだがHTMLではない。",
+  "contents": {
+    "media": [
+      "word/media/image1.emf"
+    ],
+    "externalDocumentRelationships": [],
+    "textAssessment": "上下水道局と市役所両方の所在地、駅/道路/交差点の案内。宿直室・管理棟・別館の個別配置図ではない。"
+  },
+  "rendering": {
+    "tool": "LibreOffice 26.8.0.3 headless via nix shell; pdftoppm -f1 -l1 -scale-to1600 -png",
+    "outputs": [
+      {
+        "path": "data/work/issue27/10b8e4b806574cb08976297d.pdf",
+        "sha256": "f3cd8fe8316b785415ffa7e7878d8d4c0a2d94d95d163b0501ac55ecde1a288e"
+      },
+      {
+        "path": "data/work/issue27/access-render.png",
+        "sha256": "4af485bb958b44628cde70e2f797a655d2f7b7a9c79ab321662c7583a29cb9d8"
+      }
+    ],
+    "visualCheck": "局は道路脇の緑色の矩形記号で表現。市役所までの道路と住道駅を示す概略図。建物内の宿直室や棟外形はない。変換時に一部文字の重なりとshape/EMF警告あり。正確な原図レイアウトの再現を保証しない。XMLテキストと合わせて判読。",
+    "derivationLimit": "概略記号の中心を座標化しない。"
+  },
+  "priorFindingCorrection": "原調査の添付精査未完を解消。資料は対象局を案内するが必要な棟配置を供給しない。"
+}
