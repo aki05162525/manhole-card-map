@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "approval": false,
+  "manifestApplied": false,
+  "integrationBlockedBy": [
+    "independent Codex review",
+    "product-specific CRS applicability",
+    "per-facility remaining reasons in outcomes.json",
+    "no target footprint; derivation method and source reuse conditions unapproved"
+  ],
+  "warning": "approved is only the manifest schema field; no approval granted. derived-held must not be applied.",
+  "sources": [
+    {
+      "path": "data/national/kanto-prefecture/tokyo/locations-proposal.json",
+      "sha256": "2d15d3a635833cfa3af52678d1820f8a6108081ead6e0822dafdb32dab3b2213"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/lifecycle-proposal.json",
+      "sha256": "1f5ee09fff3dc2675571211645c446fce3caaf8024c8fa66ff0d4c238e7883ec"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/north/locations-proposal.json",
+      "sha256": "262f48286dae3a4c66f3b570544a91eadc423d727ce2084e21d69f03765e5fc1"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/north/lifecycle-proposal.json",
+      "sha256": "669b405d579deedd21ac36037cef88dda6cb70c998cc162b9246660aeffa627d"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/east/locations-proposal.json",
+      "sha256": "235a494229e9ddb78f4284afe9091921be4cab8496cc0bfe3c19e791ed2fe75c"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/east/lifecycle-proposal.json",
+      "sha256": "324491e161dd10a12302a9d64ba7df4dfd45bba07b3c3f0b231a57e4242d81c6"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/south/locations-proposal.json",
+      "sha256": "0dbd1e6b7268a91ddcc32faff4c99c8087c6435446bb0062335cf57735030fc8"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/south/lifecycle-proposal.json",
+      "sha256": "7909daabd4d7334dd81c8002ff53f79642c9e22df58920f91168455ff5f50c0d"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/west/locations-proposal.json",
+      "sha256": "e93f483ece3c6e0eb05ce5bd412eb8e312b56afef30c70897e6fa24ec7b36034"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/west/lifecycle-proposal.json",
+      "sha256": "521805a6d9135bf9f8eecb82583cf7e2d13a083fd1f94227bda0a2d0dba90896"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/locations-proposal.json",
+      "sha256": "9039076d92235b1e013603c8bf8fc6ee4286419770f1da2079d0868f3ff919e5"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-proposal.json",
+      "sha256": "dce94e95a0452f76d02da847afc1cdd798ac081d8540d5da83eb93021150b250"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/locations-plan-derived-proposal.json",
+      "sha256": "66ed6f7698211103de7f2ea02d28b081d5de408f9629b2d997b58fd52950fabe"
+    },
+    {
+      "path": "data/national/kanto-prefecture/tokyo/outer/lifecycle-plan-derived-proposal.json",
+      "sha256": "963ae5c17076a87ba4140601b294f1538f79e6feb0ec3a2053d8a4d6e5fdf479"
+    }
+  ],
+  "proposedManifestAppend": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/integration/derived-held-locations-proposal.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+            "sha256": "63328dde134879a8bbbaa764aa053f2ae6e5303d557f56ac45097b7f45be33ea"
+          },
+          {
+            "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+            "sha256": "7fe98e174011c64134eb42c6e0e809830e82c5f3774bb42422b8553e4ace2281"
+          },
+          {
+            "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+            "sha256": "cd80e231bbf7f1cf928c229bb4c28525fb62e85791f39308b7e80a9fbc5c35a7"
+          },
+          {
+            "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+            "sha256": "10cdd4ab7c0459bd506408e24dbacf889ce9b8e325e787cfd89342abf33bb0c4"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/tokyo/integration/derived-held-lifecycle-proposal.json",
+        "sha256": "29a56926965069b6fbfbcac5a4fe289cb0bfa5cabdc04a08e453ba32f38832b2"
+      }
+    ]
+  }
+}

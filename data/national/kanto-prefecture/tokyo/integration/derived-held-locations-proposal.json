@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-south-1a3833b4bda5568eaddb",
+      "coordinate": {
+        "lat": 35.7763847,
+        "lng": 139.7150606
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://chintai.r6.ur-net.go.jp/chintai/img_photo/20/20_694/20_694_AP_01_l.gif",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/hintmation-comparison.json",
+        "snapshotSHA256": "90b4a53c8142faebcaaadb8b1337f0b5eface133600d22fd28401fb9c9d82df1",
+        "sourceLocator": "hintmation-comparison.json: officialDiagram 20_694_AP_01_l.gif 15号棟を6棟相似変換で写像した矩形の中心",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。UR公式住棟配置図の15号棟中心を、製品外形と対応する周辺6棟の相似変換で写像し逆投影。15号棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-6a2bb91437d927e8d76f",
+      "coordinate": {
+        "lat": 35.7767568,
+        "lng": 139.7159833
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://akabanemuseum.ur-net.go.jp/asset_trial_competition/img/URmuseum_map.pdf",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/north/museum-comparison.json",
+        "snapshotSHA256": "5f2f0937c8a9c3311e50fb9aabc762989a5f6fe1eccde0c1c1d88a5fb29e4522",
+        "sourceLocator": "museum-comparison.json: officialDiagram URmuseum_map.pdf ミュージアム棟塗り重心を4棟相似変換で写像",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の調査候補。UR公式縮尺付き配置図のミュージアム棟重心を、製品外形と対応する41〜44号棟の相似変換（残差1m未満）で写像し逆投影。ミュージアム棟の製品外形は未収録で、内包は公式図写像矩形に対する検査。公式図からの座標導出の利用条件と製品測地系適用、独立レビューは未完了。測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-c673e03f2340f9a5bfef",
+      "coordinate": {
+        "lat": 35.710432,
+        "lng": 139.8057884
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://github.com/gsi-cyberjapan/optimal_bvmap",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/east/connect-comparison.json",
+        "snapshotSHA256": "42b5a829cc07b108be9cc41c7c5d6646c036f6d0931ac4d7345121303d327d3c",
+        "sourceLocator": "connect-comparison.json: RailCL z16/58218/25800 高架中心線への垂線の足。BldAなし",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の低信頼候補。公式区画順と住所検索の号点から高架中心線上へ投影。外形内包不可。住所検索APIの利用条件未確認。 製品測地系適用と独立レビューは未完了。国土地理院最適化ベクトルタイルをmanhole-card-mapが加工、基本測量成果・測量点ではない。"
+      }
+    },
+    {
+      "facilityId": "facility:kanto-south-8d82eff13732778fad69",
+      "coordinate": {
+        "lat": 35.7325569,
+        "lng": 139.2288693
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://www.city.akiruno.tokyo.jp/kanko/0000019221.html",
+        "snapshotPath": "data/evidence/kanto-prefecture/tokyo/outer/flare-comparison.json",
+        "snapshotSHA256": "5e6baeae3c5390b9e28b4dbc6dbaedbe97c1aa3361cf92dfd5bf757bdc250c75",
+        "sourceLocator": "flare-comparison.json: reading.planDerivedEstimate; flare-estimate.json",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "未承認の推定点。対象棟の数値外形なし。市公式配置図の概寸で交番外形からオフセットし、計算後に別画像の屋根中央との一致を目視。外形内包検査は実施不可。採用方式自体が親判断待ち。"
+      }
+    }
+  ]
+}

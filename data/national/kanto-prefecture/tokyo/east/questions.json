@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "questions": [
+    {
+      "facilityId": "facility:kanto-south-cdc3bc3e1d850a2e973d",
+      "name": "国指定重要文化財 旧三河島汚水処分場喞筒場施設",
+      "officialUrl": "https://www.tgs-mikawashimayoyaku.jp/news/detail/22",
+      "question": "マンホールカード(13-100-D101)を受け取る「三河島重要文化財見学受付」は、正門近くの旧事務棟の中にありますか。",
+      "resolves": "カード窓口の棟。旧事務棟の候補点を確定できるか",
+      "status": "unanswered",
+      "blocking": false,
+      "noMunicipalContact": true
+    }
+  ]
+}
