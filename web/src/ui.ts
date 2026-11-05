@@ -23,7 +23,12 @@ export function facilityMapLink(
 ): MapLink | null {
   if (!place || (relation?.review === "needs-review" && relation.evidence))
     return null;
-  const query = confirmedQuery(place.coordinate);
+  const location = place.locationReview;
+  if (location && location.addressStatus !== "valid") return null;
+  const query =
+    !location || location.status === "confirmed"
+      ? confirmedQuery(place.coordinate)
+      : null;
   if (query !== null)
     return maps(query, "配布施設をGoogle Mapsで表示（確定座標）");
   const search = [place.name.trim(), place.address.trim()]

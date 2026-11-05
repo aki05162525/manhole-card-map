@@ -72,7 +72,7 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
         return dict(status='verified', path=name, expectedSHA256=expected, actualSHA256=actual)
 
     m = document(manifest)
-    paths = m['inputs'] + [s['path'] for s in m['patches'] + m['locations']]
+    paths = m['inputs'] + [s['path'] for s in m['patches'] + m['locations'] + m.get('locationLifecycle', [])]
     for path in paths:
         file_hash(path)
     # Keep assembly's existing evidence, old-value and approval checks intact.
@@ -85,6 +85,7 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
     for collection in ('places', 'relations'):
         for original in base[collection]:
             snapshot(original['evidence'], True)
+    current_places = {p['id']: p for p in integrated['places']}
     adopted_ids = {p['id'] for p in integrated['places'] if 'coordinate' in p}
     records = {}
 
@@ -104,7 +105,13 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
             return
         ev = row.get('evidence', {})
         snap = snapshot(ev, adoption != 'candidate')
+        current = current_places.get(fid, {})
+        review = current.get('locationReview')
+        normalized_ev = dict(ev, checkedAt=ev.get('checkedAt', '').split('T')[0])
+        currently_adopted = (adoption != 'candidate' and fid in adopted_ids and
+                             (review is None or (current.get('coordinate') == row['coordinate'] and current.get('evidence') == normalized_ev)))
         records[key] = dict(facilityId=fid, recordSHA256=row_hash,
+                            currentlyAdoptedRecord=currently_adopted, locationReview=review,
                             adoption=adoption, currentlyAdoptedFacility=fid in adopted_ids,
                             origins=[origin], recordCollection=collection,
                             coordinate=row['coordinate'], scope=row.get('scope'), evidence=ev,
@@ -135,6 +142,18 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
                 reject(f'duplicate approval: {key[0]}')
             selected_keys.add(key)
             add(row, row['facilityId'], 'manifest-location', selection['path'], 'updates')
+
+    for p in integrated['places']:
+        if p.get('locationReview') and 'coordinate' in p:
+            if not any(r['facilityId'] == p['id'] and r['currentlyAdoptedRecord'] for r in records.values()):
+                origins = [selection['path'] for selection in m.get('locationLifecycle', [])
+                           if any(row.get('facilityId') == p['id']
+                                  for collection in ('bindings', 'events')
+                                  for row in document(selection['path'])[collection])]
+                if not origins:
+                    reject(f'missing lifecycle origin: {p["id"]}')
+                add(p, p['id'], 'lifecycle-current', origins[0], 'places-after-lifecycle')
+                records[(p['id'], digest(p))]['origins'] = sorted(origins)
 
     candidate_paths = sorted(set([s['path'] for s in m['locations']] +
                                 list(DEFAULT_CANDIDATES if candidate_files is None else candidate_files)))
@@ -225,7 +244,7 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
                                             identity=identity, facilityIds=[], records=[]))
         group['facilityIds'].append(row['facilityId'])
         group['records'].append(dict(facilityId=row['facilityId'], recordSHA256=row['recordSHA256'],
-                                     adoption=row['adoption'], termsStatus=row['termsStatus']))
+                                     adoption=row['adoption'], currentlyAdoptedRecord=row['currentlyAdoptedRecord'], termsStatus=row['termsStatus']))
     for group in groups.values():
         group['facilityIds'] = sorted(set(group['facilityIds']))
     # Fail if any input changed during assembly or evidence verification.
@@ -233,7 +252,7 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
         if hashlib.sha256(repo_path(root, name).read_bytes()).hexdigest() != expected:
             reject(f'input changed during inventory: {name}')
     return dict(schema=1, evaluatedAt=as_of, inputSHA256=dict(sorted(hashes.items())),
-                definitions=dict(adopted='coordinates in assembled ledger; not distribution/inventory confirmation',
+                definitions=dict(adopted='currentlyAdoptedRecord counts effective assembled coordinates; adoption names historical provenance and survives withdrawal; not distribution/inventory confirmation',
                                  candidate='unselected distinct facilityId+recordSHA256 rows in explicit candidate files',
                                  snapshot='bytes/hash checked; coordinate interpretation is not automatically verified',
                                  terms='exact record review only; absent review is unreviewed, never inferred from a URL'),
@@ -244,7 +263,7 @@ def inventory(root, manifest='tools/national/manifest.json', candidate_files=Non
                                           'candidate files not explicitly listed',
                                           'browser-generated data; this tool inventories canonical ledger and proposals']),
                 summary=dict(adoptedFacilities=len(adopted_ids),
-                             adoptedRecords=sum(r['adoption'] != 'candidate' for r in rows),
+                             adoptedRecords=sum(r['currentlyAdoptedRecord'] for r in rows),
                              candidateRecords=sum(r['adoption'] == 'candidate' for r in rows),
                              termsStatus=dict(sorted(Counter(r['termsStatus'] for r in rows).items()))),
                 records=rows, sourceGroups=[groups[k] for k in sorted(groups)],

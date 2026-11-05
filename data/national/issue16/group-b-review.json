@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "reviewType": "investigation-conclusion-review-not-coordinate-adoption",
+  "reviewer": "Codex source_inventory independent agent",
+  "actorType": "ai",
+  "reviewedAt": "2026-11-05T09:14:24.894518+00:00",
+  "reviewedFile": "data/national/issue16/group-b-outcomes.json",
+  "reviewedFileSHA256": "239c83c3b499fc3eafb1537096d0b262aef0b54c105591424d411d71305f2065",
+  "selectionSHA256": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6",
+  "inputSHA256": {
+    "data/national/issue16/group-b-outcomes.json": "239c83c3b499fc3eafb1537096d0b262aef0b54c105591424d411d71305f2065",
+    "data/national/issue16/selection.json": "db647a66c22121a057929e0e7aaec8e1b9cd2f0d2775418a6a0781dcf4f0bbf6",
+    "data/evidence/issue16/group-b/detail-retrievals.json": "722661149a7c1457a8bcf4d740141ddd4b15d3333b1a6868ecdb71d017d38d30",
+    "data/evidence/issue16/group-b/followup-retrievals.json": "1efc9eca252f074cf656823f6ae61b85fbc8546401ff50f025592e01886d3998",
+    "data/evidence/issue16/group-b/oyama-csv-retrievals.json": "8bd3c3897835e335ceb6ae1c85ae8af6ccb460f17d2a117ea83689e3e02cc1f2",
+    "data/evidence/issue16/group-b/oyama-retrievals.json": "73147734944c46ae12aa5d445c614fb6151063245718e0657d7f2f588c95f30c",
+    "data/evidence/issue16/group-b/retrievals.json": "30195f57ab59302deca4cbd9b429a33e341168d6278bf6c9ca0f814f9f018b55",
+    "data/evidence/issue16/group-b/tenno-comparison.json": "6daf713b9c9b8b2919188286b13ee7235a46abfadff22c1e866f3da8371a1e2f"
+  },
+  "decision": "held-decisions-supported; editorial-corrections-required",
+  "scope": {
+    "groups": [
+      "pilot-11",
+      "pilot-12",
+      "pilot-13",
+      "pilot-14",
+      "pilot-15",
+      "pilot-16",
+      "pilot-17",
+      "pilot-18",
+      "pilot-19",
+      "pilot-20"
+    ],
+    "facilityIds": [
+      "facility:chubu-west-3ff6821525e60d2dab4d",
+      "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "facility:kanto-north-caa883741cf60ee761be",
+      "facility:kinki-d03efeeb5e2760ad5647",
+      "facility:kyushu-56eedbb06c5d778bde53",
+      "facility:kyushu-7a9f8dae19665147953f",
+      "facility:north-4855b77907547ff0f2c6",
+      "facility:north-7e8db3d9c7245b172fcf",
+      "facility:north-a3a29a0bb04d24bdf7ac",
+      "facility:north-d708d48e0d4d4cae8869",
+      "facility:north-e5fc22bb4348acd7bcdb",
+      "facility:north-proposal-daisen-grandport",
+      "facility:ws-61c944585418f01447"
+    ],
+    "coordinateProposals": 0,
+    "coordinateAdoptions": 0
+  },
+  "checks": {
+    "selectionHashMatches": true,
+    "originalPointersResolveToFacilityIds": true,
+    "newEvidencePointersResolve": true,
+    "successfulRetrievalOriginalsChecked": 23,
+    "failedRetrievalsNotTreatedAsSuccess": 2,
+    "successfulRawBytesAndHashesMatch": true,
+    "tennoTileHashMatches": true,
+    "tennoProjectionRecomputed": true
+  },
+  "findings": [
+    {
+      "id": "B-01",
+      "severity": "documentation",
+      "facilityIds": [
+        "facility:chubu-west-3ff6821525e60d2dab4d"
+      ],
+      "field": "conclusion",
+      "finding": "2018パンフレットの施設図には地理的な北向きが明示されず、「南西側」は図の左下側から地理方位を推測している。PDFは物理4頁であり「両頁」は閲覧範囲を曖昧にする。",
+      "correction": "「2018パンフレット物理1・2頁の画像を確認。観光案内所金太郎ステーションは施設案内図の左下側で直売所に接する区画として示され、農村活性化センターは敷地案内図上の別棟として区別。地理方位・現入居継続・県座標点との対応は未確認」とする。",
+      "impact": "位置保留の結論は妥当で変更不要。入口精度や別の数値原典を一律に追加要求しない。"
+    },
+    {
+      "id": "B-02",
+      "severity": "documentation",
+      "facilityIds": [
+        "facility:north-4855b77907547ff0f2c6",
+        "facility:north-e5fc22bb4348acd7bcdb",
+        "facility:kyushu-7a9f8dae19665147953f",
+        "facility:ws-61c944585418f01447",
+        "facility:chubu-west-3ff6821525e60d2dab4d",
+        "facility:north-7e8db3d9c7245b172fcf",
+        "facility:north-d708d48e0d4d4cae8869",
+        "facility:north-proposal-daisen-grandport",
+        "facility:kinki-d03efeeb5e2760ad5647",
+        "facility:kyushu-56eedbb06c5d778bde53",
+        "facility:north-a3a29a0bb04d24bdf7ac"
+      ],
+      "field": "sourceConditions",
+      "finding": "小山市CSVのCC BY4.0/数値記法の説明が小山以外の全行に複写され、当該施設の出典条件を説明していない。",
+      "correction": "小山以外の各行から小山市CSVへの言及を除き、「当該候補の数値原典・版・加工条件は未確認。今回取得原本は非配布data/workで保持」とする。Google埋込等は確認した取得方式に限って記載する。",
+      "impact": "全件保留・新座標提案0の判断は変わらない。"
+    }
+  ],
+  "outcomes": [
+    {
+      "facilityId": "facility:north-4855b77907547ff0f2c6",
+      "groupId": "pilot-11",
+      "status": "held-supported",
+      "note": "保存PDF物理5頁相当の配置計画画像と本文を確認。郵便局隣の新庁舎、旧敷地の駐車場/広場を区別できる。竣工後の外形との対応は未確認で保留妥当。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:north-e5fc22bb4348acd7bcdb",
+      "groupId": "pilot-11",
+      "status": "held-supported",
+      "note": "保存PDF物理5頁相当の配置計画画像と本文を確認。郵便局隣の新庁舎、旧敷地の駐車場/広場を区別できる。竣工後の外形との対応は未確認で保留妥当。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-7a9f8dae19665147953f",
+      "groupId": "pilot-12",
+      "status": "held-supported",
+      "note": "公式HTMLとPDFの取得成功・hashを確認。結論は取得済みにとどまり建物照合済みとはしておらず、到達段階の表現は妥当。新旧棟の数値対応はこのレビューでも未確認。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:ws-61c944585418f01447",
+      "groupId": "pilot-12",
+      "status": "held-supported",
+      "note": "公式HTMLとPDFの取得成功・hashを確認。結論は取得済みにとどまり建物照合済みとはしておらず、到達段階の表現は妥当。新旧棟の数値対応はこのレビューでも未確認。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-north-8c9c3d00b39e57cb61d7",
+      "groupId": "pilot-13",
+      "status": "held-supported",
+      "note": "CSVを列名で読み、小山市役所行の緯度36.1851728/経度139.4802911を再確認。カタログHTMLのCC BY4.0リンクと2026年3月3日表示を確認。値は小数度として有効範囲内だが既知候補と離れる。度分秒形式の可能性は仮説にすぎず、推測変換しない保留が妥当。",
+      "requiredCorrections": []
+    },
+    {
+      "facilityId": "facility:kanto-north-caa883741cf60ee761be",
+      "groupId": "pilot-13",
+      "status": "held-supported",
+      "note": "CSVを列名で読み、小山市役所行の緯度36.1851728/経度139.4802911を再確認。カタログHTMLのCC BY4.0リンクと2026年3月3日表示を確認。値は小数度として有効範囲内だが既知候補と離れる。度分秒形式の可能性は仮説にすぎず、推測変換しない保留が妥当。",
+      "requiredCorrections": []
+    },
+    {
+      "facilityId": "facility:chubu-west-3ff6821525e60d2dab4d",
+      "groupId": "pilot-14",
+      "status": "held-supported",
+      "note": "原PDFの2018年7月表記、施設案内図の金太郎ステーション区画と敷地図の農村活性化センター別棟を確認。現在入居継続と県点の地理対応は未確定。方位・閲覧範囲の説明はB-01訂正が必要。",
+      "requiredCorrections": [
+        "B-01",
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:north-7e8db3d9c7245b172fcf",
+      "groupId": "pilot-15",
+      "status": "held-supported",
+      "note": "街あるきマップ原本にGoogle Maps JavaScript API参照があることを確認。周辺スポットを資料館固有点へ付け替える根拠はなく、条件未確認の保留は妥当。全掲載数値や外部GISを探索済みとは判定しない。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:north-d708d48e0d4d4cae8869",
+      "groupId": "pilot-16",
+      "status": "held-supported",
+      "note": "旧記録のP05 feature805の数値と今回比較値が一致。Web Mercator計算を独立再実行しtile18/233024/99378、pixel(8.1587091,195.9298226)が一致。取得タイルを目視し当該点が建物面内にないこと、公式配置図のマーケット/くららの湯/タワー区別を確認。タイル改訂日と正確な建物対応は未確認で、旧施設点という断定を避けた保留は妥当。外形内条件だけで採否を決めない。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:north-proposal-daisen-grandport",
+      "groupId": "pilot-17",
+      "status": "held-supported",
+      "note": "観光協会HTML本文に大曲通町6番5号（JR大曲駅内）、フッターに駅2階を確認。Google Maps Engine iframeを確認。近隣P05施設との同棟性は証明できず、座標を共有しない保留は妥当。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:kinki-d03efeeb5e2760ad5647",
+      "groupId": "pilot-18",
+      "status": "held-supported",
+      "note": "個別案内HTMLのGoogle埋込iframeを確認。viewport中心を施設固有点として採用しない扱いは妥当。すべての埋込値が表示中心だと断定したものではない。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:kyushu-56eedbb06c5d778bde53",
+      "groupId": "pilot-19",
+      "status": "held-supported",
+      "note": "現施設紹介・県データ一覧の取得成功とpackage APIの403失敗記録を区別できる。AEDデータ内の施設名/座標を取得できたとの主張はなく保留妥当。API以外の取得経路や提供者の配信資料が再開候補。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    },
+    {
+      "facilityId": "facility:north-a3a29a0bb04d24bdf7ac",
+      "groupId": "pilot-20",
+      "status": "held-supported",
+      "note": "HTMLに1階図とPottoラベル/リンクの対応があることを確認。フロアの論理区画は地理外形と同一ではなく、棟対応・座標原典が未確認という保留は妥当。",
+      "requiredCorrections": [
+        "B-02"
+      ]
+    }
+  ],
+  "limits": [
+    "新座標の採用レビューではない。updatesは空のまま維持する。",
+    "取得時点後の現施設・原典更新を再確認していない。",
+    "新取得原本の全文再配布や座標利用条件をこのレビューで承認しない。",
+    "全ての候補情報源を探索し尽くしたとの判定ではない。",
+    "数値原典が別に必要とは一律に要求しない。再利用可能な建物外形と現施設との対応を証明した代表点加工も次手段になりうる。"
+  ],
+  "supersession": "上記reviewedFileSHA256の調査結論に対するレビュー。訂正後のoutcomeは親がこの指摘との対応と新hashを記録する。"
+}
