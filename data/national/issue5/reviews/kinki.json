@@ -1,0 +1,407 @@
+{
+  "schema": 1,
+  "region": "kinki",
+  "checkedAt": "2026-11-05",
+  "actorType": "ai",
+  "reviewMethod": "保存公式原本の独立再読と構造別座標抽出。現行Web再取得・Google地図コンテンツ取得・現地測量なし。",
+  "summary": {
+    "accepted": 3,
+    "deferred": 0,
+    "correction-required": 1,
+    "coordinateAccepted": 4,
+    "unresolvedRetained": 188
+  },
+  "reviews": [
+    {
+      "facilityId": "facility:kinki-katano-guard",
+      "name": "交野市上下水道部1階 警備員室窓口",
+      "decision": "accepted",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 34.7739206,
+        "lng": 135.6831364
+      },
+      "scope": "building",
+      "reason": "公式配布表の第9弾の平日1階と休日警備員室は共に私市2丁目24番1号。施設原本の水道局markerInfosのlat/lngが一致。市役所別館の旧窓口や第16弾の配布休止と区別できる。",
+      "sourceKind": "municipal-html-marker",
+      "googleMapContentFetched": false,
+      "evidence": [
+        {
+          "kind": "coordinateEvidence",
+          "sourceUrl": "https://www.city.katano.osaka.jp/docs/2011083000083/",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-2aa2279cf2f5e93925571dcc1793531e356d7ac8e7a8ed3f317524189aaea873.html",
+          "snapshotSHA256": "2aa2279cf2f5e93925571dcc1793531e356d7ac8e7a8ed3f317524189aaea873",
+          "sourceLocator": "水道局のmarkerInfos title水道局のlat/lng。所在地私市2-24-1、2階に下水道課。2026年4月2日更新の施設案内。centerだけではなく明示マーカーを使用。 原典数値: 34.7739206, 135.6831364 / 公式配布表は平日窓口と休日警備員室をともに私市2丁目24番1号の上下水道部1階と明記。水道局施設ページのmarkerInfosのtitle=水道局を照合。市役所ではない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。",
+          "hashMatches": true
+        },
+        {
+          "kind": "distributionEvidence",
+          "sourceUrl": "https://www.city.katano.osaka.jp/docs/2018053100033/",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c.html",
+          "snapshotSHA256": "3c088e9b193a77aab1ad8fd04ea9294ef9d80970df786e39b7788157d6fd885c",
+          "sourceLocator": "交野市上下水道部（旧水道局）1階 警備員室窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。",
+          "hashMatches": true
+        }
+      ],
+      "sourceFacilityId": "facility:kinki-8914b9e6744511e117c2",
+      "sourceCoordinateMatches": true,
+      "existingRelations": [
+        {
+          "cardId": "27-230-A001",
+          "placeId": "facility:kinki-katano-guard",
+          "status": "active"
+        }
+      ],
+      "datum": "原典に測地系名称の明示なし。十進度の数値をそのまま採録。変換・精度上乗せなし。",
+      "licenseDecision": "資料中に明示的な座標オープンデータライセンスは未確認。座標事実の採用判定とHTML全文の公開再配布を分離する。HTML公開許諾の承認ではない。",
+      "exactCorrections": []
+    },
+    {
+      "facilityId": "facility:kinki-neyagawa-holiday",
+      "name": "寝屋川市上下水道局庁舎1階 窓口",
+      "decision": "correction-required",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 34.765068,
+        "lng": 135.62728879999997
+      },
+      "scope": "building",
+      "reason": "公式配布詳細は平日2階下水道事業室と休日1階窓口を同じ上下水道局庁舎内に指定。下水道事業室の所在地は本町15番1号。掲載Googleリンクのqが目的地点で、llと異なる。座標は適合するが終了状態・旧配布施設という説明をsuspended維持と整合させる必要がある。",
+      "sourceKind": "municipal-html-google-link-destination",
+      "googleMapContentFetched": false,
+      "evidence": [
+        {
+          "kind": "coordinateEvidence",
+          "sourceUrl": "https://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/index.html",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-91098476fc503da211a304d1c28387e2cb0f9d2ad854c2cd583a95a07ea30554.html",
+          "snapshotSHA256": "91098476fc503da211a304d1c28387e2cb0f9d2ad854c2cd583a95a07ea30554",
+          "sourceLocator": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。終了状態の訂正を変えず旧配布施設の位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。",
+          "hashMatches": true
+        },
+        {
+          "kind": "distributionEvidence",
+          "sourceUrl": "https://www.city.neyagawa.osaka.jp/organization_list/joge_suido/gesuido/manholecard/1531978868131.html",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad.html",
+          "snapshotSHA256": "dc0375fcd1de0dc33caaefacde8144a5c413ffbfbc2aa7867051755c237f2dad",
+          "sourceLocator": "上下水道局庁舎1階 窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。",
+          "hashMatches": true
+        }
+      ],
+      "sourceFacilityId": "facility:kinki-2d25fa4fd7e5424d29b7",
+      "sourceCoordinateMatches": true,
+      "existingRelations": [
+        {
+          "cardId": "27-215-A001",
+          "placeId": "facility:kinki-neyagawa-holiday",
+          "status": "suspended"
+        }
+      ],
+      "datum": "原典に測地系名称の明示なし。十進度の数値をそのまま採録。変換・精度上乗せなし。",
+      "licenseDecision": "資料中に明示的な座標オープンデータライセンスは未確認。座標事実の採用判定とHTML全文の公開再配布を分離する。HTML公開許諾の承認ではない。",
+      "exactCorrections": [
+        {
+          "targetPath": "data/national/issue5/kinki.json",
+          "selector": {
+            "facilityId": "facility:kinki-neyagawa-holiday",
+            "field": "updates.evidence.sourceLocator"
+          },
+          "old": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。終了状態の訂正を変えず旧配布施設の位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+          "new": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。在庫切れ・再開未定のsuspendedを維持し、配布案内に記載された上下水道局庁舎の建物位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+          "applied": false
+        },
+        {
+          "targetPath": "data/evidence/issue5/kinki/coordinate-review.json",
+          "selector": {
+            "facilityId": "facility:kinki-neyagawa-holiday",
+            "field": "coordinateEvidence.sourceLocator"
+          },
+          "old": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。終了状態の訂正を変えず旧配布施設の位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+          "new": "下水道事業室公式案内、寝屋川市本町15番1号（上下水道局2階）。地図q。在庫切れ・再開未定のsuspendedを維持し、配布案内に記載された上下水道局庁舎の建物位置のみ補う。 原典数値: 34.765068, 135.62728879999997 / 配布案内の土日祝1階窓口と平日2階下水道事業室は同じ上下水道局庁舎。本町15番1号。地図qの目的点とll表示中心は別で、qを採用。配布は在庫切れ・再開未定のsuspendedを維持。",
+          "applied": false
+        },
+        {
+          "targetPath": "data/evidence/issue5/kinki/build.py",
+          "selector": {
+            "kind": "exact-line"
+          },
+          "old": " e['sourceLocator']+=' / '+note;e['verificationMethod']='AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。'",
+          "new": " if fid=='facility:kinki-neyagawa-holiday':e['sourceLocator']=e['sourceLocator'].replace('終了状態の訂正を変えず旧配布施設の位置のみ補う。','在庫切れ・再開未定のsuspendedを維持し、配布案内に記載された上下水道局庁舎の建物位置のみ補う。')\n e['sourceLocator']+=' / '+note;e['verificationMethod']='AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。'",
+          "applied": false
+        }
+      ]
+    },
+    {
+      "facilityId": "facility:kinki-toyono-guard",
+      "name": "豊能町役場本庁舎1階 警備室窓口",
+      "decision": "accepted",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 34.9188505,
+        "lng": 135.4940959
+      },
+      "scope": "building",
+      "reason": "配布原本が本庁舎3階と1階警備室を共に余野414-1と明記し、吉川支所を除外。施設原本のlatlngがL.markerに渡り、豊能町役場popupの住所と結び付く。",
+      "sourceKind": "municipal-html-marker",
+      "googleMapContentFetched": false,
+      "evidence": [
+        {
+          "kind": "coordinateEvidence",
+          "sourceUrl": "https://www.town.toyono.osaka.jp/kurashi/seikatsu-infura/koukyou-koutsuu/page000638.html",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-6bbd75e63afa090f17beaa9613191c3be04306a1d87f06c79f0ae07ecdae17e3.html",
+          "snapshotSHA256": "6bbd75e63afa090f17beaa9613191c3be04306a1d87f06c79f0ae07ecdae17e3",
+          "sourceLocator": "Leaflet L.marker(latlng)に渡される値。popupは豊能町役場、余野414番地の1。本庁と吉川支所を区別。 原典数値: 34.9188505, 135.4940959 / 配布案内が本庁舎3階と本庁舎1階警備室を区別し、共に余野414-1と明記。施設ページの豊能町役場popupに紐づくL.marker(latlng)。吉川支所ではない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。",
+          "hashMatches": true
+        },
+        {
+          "kind": "distributionEvidence",
+          "sourceUrl": "https://www.town.toyono.osaka.jp/kurashi/seikatsu-infura/gesuidou/page002821.html",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8.html",
+          "snapshotSHA256": "da44530dc3c9463363c556dec9227dde1b43b2fc4f8e9d44b2378ef2aa6079e8",
+          "sourceLocator": "閉庁日 ：豊能町役場 本庁舎1階 警備室窓口",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。",
+          "hashMatches": true
+        }
+      ],
+      "sourceFacilityId": "facility:kinki-87988ebfde4fcebbf78a",
+      "sourceCoordinateMatches": true,
+      "existingRelations": [
+        {
+          "cardId": "27-321-A001",
+          "placeId": "facility:kinki-toyono-guard",
+          "status": "active"
+        }
+      ],
+      "datum": "原典に測地系名称の明示なし。十進度の数値をそのまま採録。変換・精度上乗せなし。",
+      "licenseDecision": "資料中に明示的な座標オープンデータライセンスは未確認。座標事実の採用判定とHTML全文の公開再配布を分離する。HTML公開許諾の承認ではない。",
+      "exactCorrections": []
+    },
+    {
+      "facilityId": "facility:kinki-yokkaichi-holiday",
+      "name": "四日市市上下水道局 夜間休日窓口",
+      "decision": "accepted",
+      "coordinateDecision": "accepted",
+      "coordinate": {
+        "lat": 34.9723329,
+        "lng": 136.6140131
+      },
+      "scope": "building",
+      "reason": "公式配布場所節は堀木一丁目3-18の上下水道局2階総務課と土日祝の夜間休日窓口を記載し、直後の地図リンクは上下水道局管理部総務課総務係のplace目的点。@中心や蓋位置を転用していない。",
+      "sourceKind": "municipal-html-google-link-destination",
+      "googleMapContentFetched": false,
+      "evidence": [
+        {
+          "kind": "coordinateEvidence",
+          "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003.html",
+          "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+          "sourceLocator": "施設名・住所 / こちら / https://www.google.co.jp/maps/place/四日市市上下水道局+管理部総務課総務係/@34.9723894,136.6127705,18z/data=!4m5!3m4!1s0x0:0x406212661c98a2cd!8m2!3d34.9723329!4d136.6140131?hl=ja&shorturl=1 / 配布場所欄は堀木一丁目3-18の上下水道局2階総務課、土日祝は夜間休日窓口と明記。その直後の地図リンクのplace目的点を照合。後段のマンホール設置場所ではない。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式配布案内と座標原本を再照合し、同一建物の追加窓口と同定。住所検索・viewport・蓋座標は不使用。室内窓口の測量ではない。",
+          "hashMatches": true
+        },
+        {
+          "kind": "distributionEvidence",
+          "sourceUrl": "https://www.city.yokkaichi.mie.jp/new_water/manhole-card/salvia/",
+          "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003.html",
+          "snapshotSHA256": "16a66401531b41a119d1c3955c4446a786029c6151716032ec315410b3daf003",
+          "sourceLocator": "※土日・祝日は夜間休日窓口で配布します。",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが保存公式原本の施設・配布条件を照合。現地確認・人確認ではない。座標は未採用。",
+          "hashMatches": true
+        }
+      ],
+      "sourceFacilityId": "facility:kinki-efdb8ded331038c52b06",
+      "sourceCoordinateMatches": true,
+      "existingRelations": [
+        {
+          "cardId": "24-202-C001",
+          "placeId": "facility:kinki-yokkaichi-holiday",
+          "status": "active"
+        }
+      ],
+      "datum": "原典に測地系名称の明示なし。十進度の数値をそのまま採録。変換・精度上乗せなし。",
+      "licenseDecision": "資料中に明示的な座標オープンデータライセンスは未確認。座標事実の採用判定とHTML全文の公開再配布を分離する。HTML公開許諾の承認ではない。",
+      "exactCorrections": []
+    }
+  ],
+  "kyotoCorrectionReview": {
+    "decision": "accepted",
+    "meaning": "説明訂正案の妥当性のみ。元ファイルへ未適用、座標未採用を維持。",
+    "proposal": {
+      "facilityId": "facility:kinki-395deea0ac07ef85eee7",
+      "targetPath": "data/national/location-updates/kinki.json",
+      "selector": {
+        "facilityId": "facility:kinki-395deea0ac07ef85eee7",
+        "field": "unresolved.reason"
+      },
+      "old": "取得した配布原典・関連施設案内・アクセス案内を探索したが、対象「京都市上下水道局総合庁舎 総合受付」（京都府京都市南区上鳥羽鉾立町11番地3）の現住所に結びついた明示目的地点を確定できない。関連する市役所・他施設の地点、住所検索、表示中心を流用しない。",
+      "new": "総合庁舎の公式紹介に施設マップid=1000001826へのリンクとlat=34.971/lng=135.75614がある。しかし表示引数と施設レコードを区別できるGIS原本が403。建物マーカーの座標としては保留。",
+      "evidence": {
+        "sourceUrl": "https://www.city.kyoto.lg.jp/suido/page/0000309702.html",
+        "snapshotPath": "data/evidence/issue5/kinki/snapshots/reused-160181ce72f32eb40c0e5c7b9bad4581ac39c8dc65382bd64c6b33a10b6a6b1d.html",
+        "snapshotSHA256": "160181ce72f32eb40c0e5c7b9bad4581ac39c8dc65382bd64c6b33a10b6a6b1d",
+        "sourceLocator": "施設マップ（京都市上下水道局総合庁舎）href; id=1000001826",
+        "verificationMethod": "AI原本再読。URL数値の存在とマーカー採用可否を区別。",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai"
+      },
+      "kind": "research-explanation-only-not-coordinate"
+    },
+    "oldExactMatch": true,
+    "linkQuery": {
+      "id": "1000001826",
+      "lat": "34.971000000000000",
+      "lng": "135.756140000000000",
+      "zoom": "14"
+    },
+    "gisFailureEvidence": {
+      "path": "data/evidence/issue5/kinki/fetch-log.json",
+      "error": "HTTP Error 403: Forbidden",
+      "responseBodySaved": false
+    },
+    "reason": "公式紹介に数値付き施設リンクが実在。URL引数が中心かマーカーか確定せず、GIS原本未取得のため座標保留が妥当。"
+  },
+  "documentationCodeDiscrepancies": [
+    {
+      "id": "KINKI-R1",
+      "severity": "medium",
+      "description": "READMEはsuspended維持と記すがbuild.pyはbaselineの終了状態・旧配布施設というsourceLocatorを残して追記する。候補JSON/coordinate-reviewに矛盾する説明が再生成される。",
+      "exactCorrectionsIn": "reviews[facility:kinki-neyagawa-holiday].exactCorrections",
+      "readmeExactCorrection": {
+        "targetPath": "data/evidence/issue5/kinki/README.md",
+        "old": "文書とコードの食い違いは今回検出していない。",
+        "new": "独立レビューで、寝屋川のsourceLocatorに旧説明「終了状態の訂正を変えず旧配布施設」が残り、suspended維持の記述と整合しない点が見つかった。座標とsuspendedは維持し、説明と再生成処理の訂正を提案する。",
+        "applied": false
+      }
+    }
+  ],
+  "rightsEvidence": [
+    {
+      "url": "https://www.city.katano.osaka.jp/docs/about-site/",
+      "fetchedAt": "2026-11-05T05:48:03.828681+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.katano.osaka.jp/docs/about-site/",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/2226679534eb6d7f1853.bin",
+      "snapshotSHA256": "4d4c14b55ac79ff83a94bdea5e556c6174e3ae7cd93ccff8779bf87c015dee54",
+      "contentType": "text/html"
+    },
+    {
+      "url": "https://www.city.neyagawa.osaka.jp/site/link.html",
+      "fetchedAt": "2026-11-05T05:48:03.993639+00:00",
+      "status": 200,
+      "finalUrl": "https://www.city.neyagawa.osaka.jp/site/link.html",
+      "snapshotPath": "data/evidence/issue5/kinki/snapshots/aa965eec22d6b5616b72.bin",
+      "snapshotSHA256": "fd74fb9997532f4c1e718eac5028003d3a05aa904660a3bc3f8ba00549b26776",
+      "contentType": "text/html"
+    }
+  ],
+  "rightsScope": "保存ポリシーの記載確認のみ。ライセンス未確認を全ての事実値の採録禁止とはみなさず、座標acceptedをHTML公開再配布許諾ともみなさない。Google側コンテンツは取得せず自治体HTMLの掲載リンクを読んだ。",
+  "coverageScope": "192施設の排他・網羅検査。188保留全件の新規調査・再取得・意味的再監査を主張しない。",
+  "inputs": [
+    {
+      "path": "data/national/issue5/kinki.json",
+      "sha256": "28c43f65663d5d8798580b538a7404dbf4da2bcffa271faa53272344d2b0f6b5"
+    },
+    {
+      "path": "data/evidence/issue5/kinki/README.md",
+      "sha256": "7948b8716b920122acb799c1ad4c9e61779a432bd147dc7243fbb8e86e18aae5"
+    },
+    {
+      "path": "data/evidence/issue5/kinki/build.py",
+      "sha256": "1491737c9376fca2206aa52920c11ee885676812442621eb85910c098f6b5a09"
+    },
+    {
+      "path": "data/evidence/issue5/kinki/coordinate-review.json",
+      "sha256": "fc2b06913498ca468bda17807ccb7f7565198e39b7f8a8c143667fb0492da3d9"
+    },
+    {
+      "path": "data/evidence/issue5/kinki/fetch-log.json",
+      "sha256": "d6ac7668f5111d176de00f62559fba321875a68757fed0c530d75fa78096d261"
+    },
+    {
+      "path": "data/evidence/issue5/kinki/reused-sources.json",
+      "sha256": "363961387b28eef25340e99b578e9d1f212c90c4c2bead6710ef300d43b5bd5d"
+    },
+    {
+      "path": "data/work/issue5-baseline/ledger.json",
+      "sha256": "bb1a61b437a16582d5a6323614da26f88e6a193cb2973b20af8cd0665e7f671b"
+    },
+    {
+      "path": "data/work/issue5-baseline/full.json",
+      "sha256": "b37be905cf426f098947fe567a74b849b6a2b2ac080b7e30c1885af838a3b150"
+    },
+    {
+      "path": "data/national/location-updates/kinki.json",
+      "sha256": "e37d441d645d5a2e190098fcb09a4428a6c921b2601d8a9bcc2a61f39201fb06"
+    },
+    {
+      "path": "cmd/builddata/ledger.go",
+      "sha256": "e03971d5e6f15ac581ea852c800be760bf26ea9744ba5afc2fb1d12d08474695"
+    }
+  ],
+  "validation": {
+    "targetCount": 192,
+    "updateCount": 4,
+    "unresolvedCount": 188,
+    "reusedHashesVerified": 125,
+    "coordinates": [
+      {
+        "facilityId": "facility:kinki-katano-guard",
+        "extracted": [
+          34.7739206,
+          135.6831364
+        ],
+        "cardId": "27-230-A001",
+        "status": "active"
+      },
+      {
+        "facilityId": "facility:kinki-neyagawa-holiday",
+        "extracted": [
+          34.765068,
+          135.62728879999997
+        ],
+        "cardId": "27-215-A001",
+        "status": "suspended"
+      },
+      {
+        "facilityId": "facility:kinki-toyono-guard",
+        "extracted": [
+          34.9188505,
+          135.4940959
+        ],
+        "cardId": "27-321-A001",
+        "status": "active"
+      },
+      {
+        "facilityId": "facility:kinki-yokkaichi-holiday",
+        "extracted": [
+          34.9723329,
+          136.6140131
+        ],
+        "cardId": "24-202-C001",
+        "status": "active"
+      }
+    ],
+    "kyotoOldExactMatch": true,
+    "kyotoCoordinateUnadopted": true
+  }
+}

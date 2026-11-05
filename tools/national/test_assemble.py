@@ -89,8 +89,8 @@ class AssemblyTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[2]
         manifest = a.read_json(root / 'tools/national/manifest.json')
         inputs, patches, updates = a.load_selection(root, manifest)
-        self.assertEqual(len(patches), 98)
-        self.assertEqual(len(updates), 605)
+        self.assertEqual(len(patches), 103)
+        self.assertEqual(len(updates), 642)
         self.assertTrue(all(p['target'] in inputs for p in patches))
         self.assertTrue(all(p['new'] is not None for p in patches))
         chiba = a.read_json(root / 'data/national/location-updates/kanto-south-chiba.json')
@@ -108,9 +108,9 @@ class AssemblyTests(unittest.TestCase):
         before = {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths}
         output, audit = a.assemble(root, manifest)
         digest = hashlib.sha256(json.dumps(output, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
-        self.assertEqual(digest, 'f2f4e1282aaa4f1bab34669fca4adff62700c660896f366a51ac83fa14067ec3')
+        self.assertEqual(digest, '38d0451c51fc2f3fcf74f3d73fb42ba28e71a18927bdbb5253e532528e6f91f6')
         self.assertEqual((len(output['places']), len(output['relations'])), (1586, 1670))
-        self.assertEqual((audit['patchesApplied'], audit['locationsApplied']), (98, 605))
+        self.assertEqual((audit['patchesApplied'], audit['locationsApplied']), (103, 642))
         self.assertEqual(before, {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths})
 
     def test_whole_row_exact_and_overlapping_patches(self):
