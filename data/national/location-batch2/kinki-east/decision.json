@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "status": "adopted-after-independent-review",
+  "adoptedIds": [
+    "facility:kinki-5d739ed0da591dafd1d2",
+    "facility:kinki-5d377b6a926c0d1e6fa1"
+  ],
+  "heldIds": [
+    "facility:kinki-332ce8ce5ad5b6583d87",
+    "facility:kinki-443a928ce299052ac36e",
+    "facility:kinki-686caad0ba490d412755",
+    "facility:kinki-6ad3133f41924d1d4b10",
+    "facility:kinki-981f92e7ecb53d46d9ca",
+    "facility:kinki-b3c184c7aed571b773cd"
+  ],
+  "manifestChanged": true,
+  "bindings": [
+    "data/national/location-batch2/kinki-east/location-lifecycle.json#/bindings/0",
+    "data/national/location-batch2/kinki-east/location-lifecycle.json#/bindings/1"
+  ],
+  "reason": "Gemini 3.8 Flash独立レビューとユーザー採用指示に基づき、鈴鹿・洛西の承認済座標を根拠不変で採用。",
+  "reviewRef": "data/national/location-batch2/kinki-east/gemini-flash-review.json"
+}
