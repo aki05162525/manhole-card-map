@@ -2,5 +2,13 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "categories": {
     "correctness": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/components/ui/map.tsx"],
+      "rules": {
+        "unicorn/no-useless-fallback-in-spread": "off"
+      }
+    }
+  ]
 }

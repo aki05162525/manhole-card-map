@@ -1,6 +1,7 @@
-// Production browser checks using synthetic cards; no live services.
+// Production fixture checks: behavior and layout, not real-device FPS.
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
+import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright";
 const port = process.env.PORT || "4179";
 const origin = `http://127.0.0.1:${port}`;
@@ -9,6 +10,104 @@ const server = spawn(process.execPath, ["scripts/serve.mjs"], {
   stdio: ["ignore", "pipe", "inherit"],
 });
 let browser;
+const errors = [],
+  external = [];
+async function context(options = {}, expectedFailure = false) {
+  const ctx = await browser.newContext({
+    viewport: { width: 412, height: 823 },
+    hasTouch: true,
+    isMobile: true,
+    ...options,
+  });
+  ctx.setDefaultTimeout(20000);
+  await ctx.route("**/*", (route) => {
+    const url = route.request().url();
+    if (!url.startsWith(origin) && !/^(data|blob):/.test(url)) {
+      external.push(url);
+      return route.abort();
+    }
+    return route.continue();
+  });
+  ctx.on("page", (page) => {
+    if (!expectedFailure)
+      page.on("pageerror", (error) => errors.push(String(error)));
+  });
+  return ctx;
+}
+const ready = (page) =>
+  page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+const cardList = (page) =>
+  page.waitForFunction(
+    () => document.querySelector("#cards")?.options.length === 6,
+  );
+async function closeDetail(page) {
+  await page.getByRole("button", { name: "閉じる", exact: true }).click();
+  await page.waitForFunction(() => !document.querySelector("#detail"));
+}
+async function choose(page, id) {
+  await page.locator("#cards").selectOption(id);
+  await page.locator("#detail h2").waitFor();
+}
+async function stableMap(page) {
+  await mkdir("results", { recursive: true });
+  const before = await page.locator("#map").boundingBox();
+  const viewport = await page.evaluate(() => ({
+    width: innerWidth,
+    height: innerHeight,
+  }));
+  assert.ok(
+    Math.abs(before.width - viewport.width) < 1 &&
+      Math.abs(before.height - viewport.height) < 1,
+    "map fills viewport",
+  );
+  const screen = viewport.width < 600 ? "mobile" : "desktop";
+  await page.screenshot({ path: `results/mapcn-check-${screen}.png` });
+  await choose(page, "TEST-TOKYO-1");
+  await page.waitForFunction(() => {
+    const view = window.prototype.adapter.view();
+    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
+    return (
+      view.zoom > 14.9 &&
+      saved &&
+      Math.abs(saved.lat - view.lat) < 1e-8 &&
+      Math.abs(saved.lng - view.lng) < 1e-8
+    );
+  });
+  const visibleTarget = await page.evaluate(() =>
+    window.prototype.adapter.tapPoint(),
+  );
+  assert.ok(
+    visibleTarget,
+    "selected geometry must remain reachable outside the detail panel",
+  );
+  for (const label of ["Zoom in", "Zoom out"]) {
+    const control = page.getByRole("button", { name: label, exact: true });
+    assert.equal(
+      await control.evaluate((element) => {
+        const r = element.getBoundingClientRect();
+        return element.contains(
+          document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2),
+        );
+      }),
+      true,
+      "zoom controls must not be covered by detail",
+    );
+  }
+  await page.screenshot({ path: `results/mapcn-check-${screen}-detail.png` });
+  assert.deepEqual(
+    await page.locator("#map").boundingBox(),
+    before,
+    "detail must not resize or move map",
+  );
+  assert.equal(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+    true,
+    "no horizontal overflow",
+  );
+  await closeDetail(page);
+}
 try {
   await new Promise((resolve, reject) => {
     const timeout = setTimeout(
@@ -27,65 +126,85 @@ try {
   });
   browser = await chromium.launch({
     ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}),
-    args: ["--no-sandbox"],
+    args: ["--no-sandbox", "--enable-unsafe-swiftshader"],
   });
-  const errors = [];
-  const context = await browser.newContext({
-    viewport: { width: 412, height: 823 },
-    hasTouch: true,
-    isMobile: true,
-  });
-  context.setDefaultTimeout(15000);
-  const page = await context.newPage();
-  page.on("pageerror", (error) => errors.push(String(error)));
-  const external = [];
-  const backgroundRequests = [];
-  page.on("request", (request) => {
-    if (request.url().endsWith("/background/japan.geojson"))
-      backgroundRequests.push(request.url());
-    if (!request.url().startsWith(origin) && !request.url().startsWith("data:"))
-      external.push(request.url());
-  });
+  const ctx = await context();
+  const page = await ctx.newPage();
+  const requests = [];
+  page.on("request", (request) => requests.push(request.url()));
   await page.goto(origin);
-  await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+  await ready(page);
   assert.equal(await page.locator("#fixture-warning").count(), 1);
-  assert.equal(backgroundRequests.length, 1, "preload must be reused by fetch");
   assert.equal(await page.locator("#cards option").count(), 6);
-  assert.match(await page.locator("#notice").innerText(), /簡略図/);
+  assert.equal(
+    await page.evaluate(() => window.prototype.metrics.engine),
+    "mapcn",
+  );
+  assert.equal(await page.locator(".maplibregl-canvas").count(), 1);
+  assert.equal(
+    requests.some((url) => url.endsWith("/background/japan.geojson")),
+    false,
+  );
+  await stableMap(page);
   await page.locator("#search").fill("位置未確定");
   assert.equal(await page.locator("#cards option").count(), 2);
-  await page.locator("#cards").selectOption("TEST-UNKNOWN");
-  await page.locator("#detail h2").waitFor();
+  await page.locator("#cards").focus();
+  await choose(page, "TEST-UNKNOWN");
   assert.equal(
     await page.locator('#detail a[href*="google.com/maps"]').count(),
     0,
   );
-  await page.locator("#detail").press("Escape");
-  assert.equal(await page.locator("#detail").isVisible(), false);
+  await page.locator("#detail h2").press("Escape");
+  assert.equal(await page.locator("#detail").count(), 0);
+  assert.equal(
+    await page
+      .locator("#cards")
+      .evaluate((element) => document.activeElement === element),
+    true,
+    "Escape restores focus",
+  );
   await page.locator("#search").fill("");
-  await page.locator("#cards").selectOption("TEST-TOKYO-1");
-  await page.locator("#detail h3").first().waitFor();
+  await choose(page, "TEST-TOKYO-1");
   assert.equal(await page.locator("#detail h3").count(), 2);
   const links = await page
     .locator('#detail a[href*="google.com/maps"]')
     .evaluateAll((nodes) =>
-      nodes.map((n) => ({ href: n.href, text: n.textContent })),
+      nodes.map((node) => ({
+        href: node.href,
+        text: node.textContent,
+        rel: node.rel,
+      })),
     );
   assert.equal(links.length, 3);
-  const search = links.find((l) => l.text.includes("施設名・住所で検索"));
   assert.equal(
-    new URL(search.href).searchParams.get("query"),
+    new URL(
+      links.find((link) => link.text.includes("施設名・住所で検索")).href,
+    ).searchParams.get("query"),
     "合成テスト休日配布所 架空 & テスト #2",
   );
   assert.equal(
-    new URL(links.find((l) => l.text.startsWith("蓋")).href).searchParams.get(
-      "query",
-    ),
+    new URL(
+      links.find((link) => link.text.startsWith("蓋")).href,
+    ).searchParams.get("query"),
     "35.68,139.76",
   );
-  await page.getByRole("button", { name: "閉じる", exact: true }).click();
-  await page.evaluate(() => window.prototype.adapter.locate(35.68, 139.76));
-  await page.locator(".cluster").filter({ hasText: "3" }).first().click();
+  assert.ok(links.every((link) => link.rel.includes("noopener")));
+  await closeDetail(page);
+  // Fresh maximum-zoom cluster, without selected overlays from earlier cases.
+  // Click rendered geometry; never invoke the selection callback.
+  await page.evaluate(() =>
+    localStorage.setItem(
+      "map-view",
+      JSON.stringify({ lat: 35.68, lng: 139.76, zoom: 18 }),
+    ),
+  );
+  await page.reload();
+  await ready(page);
+  await page.waitForFunction(
+    () => window.prototype.adapter.tapPoint() !== null,
+  );
+  const point = await page.evaluate(() => window.prototype.adapter.tapPoint());
+  await page.mouse.click(point.x, point.y);
   const group = page.getByLabel("この位置・範囲のカード一覧");
   await group.waitFor();
   assert.equal(await group.locator("option").count(), 2);
@@ -95,15 +214,26 @@ try {
   assert.match(await page.locator("#detail h2").innerText(), /東京B/);
   await page.getByRole("button", { name: "一覧に戻る（2枚）" }).click();
   assert.equal(await group.locator("option").count(), 2);
-  await page.getByRole("button", { name: "閉じる", exact: true }).click();
+  await closeDetail(page);
+  await page.evaluate(() => window.prototype.adapter.locate(34.69, 135.5));
+  await page.waitForFunction(() => {
+    const saved = JSON.parse(localStorage.getItem("map-view") || "null");
+    return (
+      saved &&
+      Math.abs(saved.lat - 34.69) < 0.01 &&
+      Math.abs(saved.zoom - 14) < 0.01
+    );
+  });
   const saved = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("map-view")),
   );
   await page.reload();
-  await page.waitForFunction(() => window.prototype?.metrics.ready > 0);
+  await ready(page);
   const restored = await page.evaluate(() => window.prototype.adapter.view());
-  assert.ok(Math.abs(saved.lat - restored.lat) < 0.02);
-  assert.ok(Math.abs(saved.lng - restored.lng) < 0.02);
+  assert.ok(
+    Math.abs(saved.lat - restored.lat) < 0.02 &&
+      Math.abs(saved.lng - restored.lng) < 0.02,
+  );
   await page.getByRole("button", { name: "現在地", exact: true }).click();
   await page.waitForFunction(() =>
     document
@@ -113,113 +243,117 @@ try {
   await page.waitForFunction(() =>
     document.querySelector("#offline").textContent.includes("準備完了"),
   );
-  const cached = await page.evaluate(async () => {
-    const names = await caches.keys();
-    return (
+  const cached = await page.evaluate(async () =>
+    (
       await Promise.all(
-        names.map(async (name) =>
-          (await (await caches.open(name)).keys()).map((r) => r.url),
+        (await caches.keys()).map(async (name) =>
+          (await (await caches.open(name)).keys()).map(
+            (request) => request.url,
+          ),
         ),
       )
-    ).flat();
-  });
-  assert.ok(
-    !cached.some((url) => /\/(background|maps|fonts|sprites)\//.test(url)),
-    "background must not enter the offline guarantee",
+    ).flat(),
   );
-  const cdp = await context.newCDPSession(page);
+  assert.ok(
+    !cached.some(
+      (url) =>
+        /\/(background|maps|fonts|sprites)\//.test(url) ||
+        url.endsWith("/map-style.json"),
+    ),
+  );
+  assert.ok(cached.some((url) => url.endsWith("/maplibre-gl-worker.mjs")));
+  const cdp = await ctx.newCDPSession(page);
   await cdp.send("Network.enable");
   await cdp.send("Network.clearBrowserCache");
-  await context.setOffline(true);
+  await ctx.setOffline(true);
   await page.reload({ waitUntil: "domcontentloaded" });
-  await page.waitForFunction(
-    () => document.querySelector("#cards").options.length === 6,
-  );
-  await page.locator("#cards").selectOption("TEST-TOKYO-1");
-  await page.locator("#detail h2").waitFor();
+  await cardList(page);
+  await choose(page, "TEST-TOKYO-1");
   assert.equal(await page.locator("#detail h3").count(), 2);
-  await page.waitForFunction(() => window.prototype?.metrics.errors.length > 0);
+  await page.waitForFunction(() => window.prototype.metrics.errors.length > 0);
   assert.equal(await page.evaluate(() => window.prototype.metrics.ready), 0);
-  assert.deepEqual(errors, []);
-  assert.deepEqual(external, []);
-  await context.close();
-  // Selection before a slow dynamic map import must be replayed on the map.
-  const slow = await browser.newContext({
+  await ctx.close();
+  // Delayed map module: accessible list first, replay initial selection later.
+  const slow = await context({
     serviceWorkers: "block",
     geolocation: { latitude: 34.69, longitude: 135.5 },
     permissions: ["geolocation"],
   });
-  slow.setDefaultTimeout(15000);
   let release;
   const gate = new Promise((resolve) => {
     release = resolve;
   });
-  await slow.route("**/assets/simplified-*.js", async (route) => {
+  await slow.route("**/assets/card-map-*.js", async (route) => {
     await gate;
     await route.continue();
   });
   const early = await slow.newPage();
   await early.goto(origin, { waitUntil: "domcontentloaded" });
-  await early.waitForFunction(
-    () => document.querySelector("#cards").options.length === 6,
-  );
-  await early.locator("#cards").selectOption("TEST-TOKYO-1");
-  await early.locator("#detail h2").waitFor();
-  assert.equal(
-    await early
-      .getByRole("button", { name: "現在地", exact: true })
-      .isDisabled(),
-    true,
-  );
+  await cardList(early);
+  await choose(early, "TEST-TOKYO-1");
+  assert.equal(await early.locator("#locate").isDisabled(), true);
   release();
-  await early.waitForFunction(() => window.prototype?.metrics.ready > 0);
-  assert.ok(
-    (await early.locator(".pin.selected").count()) > 0,
-    "early selection must be highlighted after map load",
-  );
-  await early.getByRole("button", { name: "現在地", exact: true }).click();
+  await ready(early);
+  await early.waitForFunction(() => {
+    const view = window.prototype.adapter.view();
+    return view.zoom > 13 && Math.abs(view.lng - 139.76) < 0.02;
+  });
+  await closeDetail(early);
+  await early.locator("#locate").click();
   await early.waitForFunction(
     () => Math.abs(window.prototype.adapter.view().lat - 34.69) < 0.01,
   );
   await slow.close();
-  // Background download must overlap card download, not wait for all details.
-  const prefetch = await browser.newContext({ serviceWorkers: "block" });
-  prefetch.setDefaultTimeout(15000);
-  let releaseData;
-  const dataGate = new Promise((resolve) => {
-    releaseData = resolve;
+  const desktop = await context({
+    viewport: { width: 1440, height: 900 },
+    isMobile: false,
+    hasTouch: false,
+    serviceWorkers: "block",
   });
-  await prefetch.route("**/data/full.json", async (route) => {
-    await dataGate;
-    await route.continue();
+  const wide = await desktop.newPage();
+  await wide.goto(`${origin}/?data=split`);
+  await ready(wide);
+  await stableMap(wide);
+  await desktop.close();
+  // WebGL unavailable: list, detail and outbound links remain usable.
+  const failed = await context({ serviceWorkers: "block" }, true);
+  await failed.addInitScript(() => {
+    const original = HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext = function (kind, ...args) {
+      if (["webgl", "webgl2", "experimental-webgl"].includes(kind)) return null;
+      return original.call(this, kind, ...args);
+    };
   });
-  const parallel = await prefetch.newPage();
-  const requestedBackground = parallel
-    .waitForRequest("**/background/japan.geojson", { timeout: 5000 })
-    .then(
-      () => true,
-      () => false,
-    );
-  await parallel.goto(origin, { waitUntil: "domcontentloaded" });
-  const overlapping = await requestedBackground;
-  releaseData();
+  const fallback = await failed.newPage();
+  await fallback.goto(origin);
+  await cardList(fallback);
+  await fallback.waitForFunction(() =>
+    document.querySelector("#notice").textContent.includes("一覧・検索から"),
+  );
+  await choose(fallback, "TEST-TOKYO-1");
   assert.equal(
-    overlapping,
-    true,
-    "background and cards must download concurrently",
+    await fallback.locator('#detail a[href*="google.com/maps"]').count(),
+    3,
   );
-  await prefetch.close();
-  const diagnostic = await browser.newPage();
-  diagnostic.setDefaultTimeout(15000);
-  await diagnostic.goto(`${origin}/?engine=d&benchmark`);
-  await diagnostic.waitForFunction(() => window.prototype?.metrics.ready > 0);
-  assert.match(
-    await diagnostic.locator("#notice").innerText(),
-    /診断用：背景なし/,
-  );
-  await diagnostic.close();
+  assert.equal(await fallback.locator("#locate").isDisabled(), true);
+  await failed.close();
+  const legacy = await context({ serviceWorkers: "block" });
+  for (const engine of ["c", "d"]) {
+    const old = await legacy.newPage();
+    await old.goto(`${origin}/legacy.html?engine=${engine}&benchmark`);
+    await ready(old);
+    assert.equal(await old.locator("#cards option").count(), 6);
+    assert.equal(
+      await old.evaluate(() => window.prototype.metrics.engine),
+      engine,
+    );
+    await old.close();
+  }
+  await legacy.close();
+  assert.deepEqual(errors, []);
+  assert.deepEqual(external, []);
   console.log(
-    "Browser checks passed: synthetic data, links, clusters, keyboard, view restore, denial, offline, diagnostic.",
+    "Browser checks passed: mapcn, geometry clicks, grouped cards, links, focus, restore, geolocation, offline, early selection, stable mobile/desktop viewport, WebGL fallback, legacy C/D.",
   );
 } finally {
   await browser?.close();

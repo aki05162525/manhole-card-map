@@ -1,0 +1,33 @@
+name: Agent skills
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agents-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reproducibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Agent Package Manager
+        run: python -m pip install apm-cli==0.35.0
+      - name: Restore locked skills
+        run: apm install --frozen
+      - name: Check skill integrity and replay
+        run: apm audit --ci
+      - name: Require committed manifest, lockfile and skill output
+        run: |
+          git diff --exit-code -- apm.yml apm.lock.yaml .agents/skills .gitignore
+          test -z "$(git ls-files --others --exclude-standard -- .agents/skills)"

@@ -1,0 +1,8 @@
+name: manhole-card-map
+version: 0.1.0
+description: Pinned development skills for the manhole card map
+targets:
+  - codex
+dependencies:
+  apm:
+    - AnmolSaini16/mapcn/skills/mapcn#5f0491955ad3ac7b51a7ed16b1f72f9c7ae9dab0
