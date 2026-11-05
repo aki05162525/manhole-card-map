@@ -3,7 +3,7 @@
   "python": {
     "command": "mise exec -- python3 -B -m unittest discover -s tools/national -v",
     "exitCode": 0,
-    "tests": 96
+    "tests": 99
   },
   "go": {
     "command": "mise exec -- go test -count=1 ./...",
@@ -20,21 +20,24 @@
     "selected": 8,
     "integrated": 2,
     "held": 6,
-    "nationalUnlocated": 603,
+    "nationalUnlocated": 599,
     "allRelationsUnchanged": true,
-    "parentUnlocated": 605
+    "parentUnlocated": 601,
+    "adopted": 2
   },
   "generated": "generated-check.json",
   "maps": "maps-check.json",
   "audit": {
-    "path": "data/work/location-batch2/north-kanto/after-main2-audit.json",
-    "sha256": "1739e6f064ede37aeb0d5248816948aa0a896a8f506979dbe618133b74dcb7dd"
+    "path": "data/work/location-batch2/north-kanto/after-final-audit.json",
+    "sha256": "255d30b7d671fdc75ca2e1462ea634d5e89f1c3d250ad01c9e5fa1361a7d3bb6"
   },
   "limitations": [
     "ブラウザー画面操作・外部Maps遷移・現地ナビは未検証。UIコード変更なし。",
     "builddata初回はmunicheck不足で失敗。元hash付き既存原本をコピー後に前後両生成成功。",
     "新規施設CSV探索は未実施。"
   ],
-  "mergedMain": "65e7b2f7bc0f3ee9429a39e97d169c4e662fbf41",
-  "postMergeVerification": "main65e7b2f7統合後Python全96/Go-count=1を再実行しexit0。最新mainとの前後生成・全国監査・full/details/pins・Maps関数・159原本参照検査成功。"
+  "mergedMain": "d8800718ee8331356ff19751e5b07f6bdcb20818",
+  "postMergeVerification": "main d8800718統合後Python全99/Go-count=1を再実行しexit0。最新mainとの前後生成・全国監査・full/details/pins・Maps関数・159原本参照検査成功。",
+  "reviewedEvidenceUnchanged": true,
+  "redExplanation": "初回3failureは2施設subTest＋差分テスト。現2メソッドと矛盾しない。元RED単独ログはworkに見つからず、後日再現をred-reproduction.jsonに分離。"
 }
