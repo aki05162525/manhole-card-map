@@ -1,0 +1,1704 @@
+{
+  "schema": 1,
+  "baselineCommit": "4f5253b8973cb388deecff0bc051f36770e77579",
+  "asOf": "2026-11-05",
+  "inputSHA256": {
+    "data/overrides/places.json": "152bb738c77e95fcbd54702e42a2107cfd5949d614c7e6b4a706c94cba2a41fe",
+    "data/overrides/regions/north.json": "802f2d8cec2f2ae7279f616326a1ec095f8875d7d7081fb1d465fc408fdcb3b3",
+    "data/overrides/regions/kanto-north.json": "c3e88a7814f56ec16bb09d426cdc608f35415990bae2fa93243490e523dbd4ba",
+    "data/overrides/regions/kanto-south.json": "c88c6dbde122c1eb940ab14f3ad3f3ce6bc59573dd4eeddf53384102f52e9f51",
+    "data/overrides/regions/chubu-east.json": "05e288475d1b3b5a9a69e3cddc3f6f01fb17e3024a5039728e77af08e414762d",
+    "data/overrides/regions/chubu-west.json": "e87f5940ff145e3af61b470fd3d048d8048a7ae14d0744ee3d92188ce926a223",
+    "data/overrides/regions/kinki.json": "d1aa57ee76aca69596d24d17f608befbf276b3a0cbfb3c768bf17856dc4801df",
+    "data/overrides/regions/chugoku-shikoku.json": "449d3bc8244629d9ecfe24fe35823c1f82b0a757024e7ba274b7a8285281d91e",
+    "data/overrides/regions/kyushu-okinawa.json": "9dba12a76bcde4169f159547ac300e82a88d0525749535efcf0a7f3573b3b983",
+    "data/overrides/proposals/kanto-south.json": "528b23138dbe66f61775aa9a46f9b3620eb6d00fd48f548c365a75907022250d",
+    "data/overrides/proposals/kinki.json": "a93be488b588eaa6248c17328ef928f7cdc2c552555e88802366a89fd0434f20",
+    "data/overrides/proposals/west-south.json": "b80446f0b2a788d76b724d0852ed5b720bd83e26b3578918f65eef0ce43bf5fb",
+    "data/overrides/proposals/north.json": "c3a45d01d89adde2543c94f5c6e9d84ebe1b9e37d797c963388f4b9324991e79",
+    "data/overrides/proposals/kanto-north.json": "6e9b658ec50e2c5a5f6f218b49df2239956552ce9b1173823cf2155e768fa375",
+    "data/overrides/proposals/chubu.json": "7b57ed540180497dc12283a337aa7c00c9e06010a1ef4ff72d026407971da8c7",
+    "data/national/patches/kanto-south-integration.json": "ced0302cbdd7d0e0351de906f72661b6f54576f9a1cd3fdecaacc1a5cd6bd4a4",
+    "data/national/patches/kinki.json": "7774f0e4388f832a874e8ba07ecabbdddb42b6024370eddd68120cf5b4d5546b",
+    "data/national/patches/west-south.json": "b001596c6f6103a7fec598856b3223a4df83d11cdc8fce2ccfa75f981f754be4",
+    "data/national/patches/north.json": "26857d9fb90de9fc7caa29ee72d26c7d65861c36196bde662fda1b2660710d28",
+    "data/national/patches/kanto-north.json": "71140047167d917dfcdeac7564d0266f6541a14021b562b139687cbec09fbd26",
+    "data/national/patches/chubu.json": "aa8536a25169ef53806cb7a80c42d9096843a9d14c77e60059a8cb79528aad17",
+    "data/national/patches/chubu-west-reviewed-closure.json": "57c2253082525cb489dc9825148ae1e928ff7a4385e4f5d95287ce8b2d9f6ebe",
+    "data/national/issue5/west-south-reviewed-patches.json": "58948fa635eee63620ce913f935c10e33ee270e51b681320eed54fa89f1124f4",
+    "data/national/issue5/north-reviewed-patches.json": "bdfc8eacb898bc8883e267d9358313b7f343adcc03e8d2da69928c7493224a30",
+    "data/national/issue7/address-reviewed-patches.json": "90d196ba633a7b7b762b23114481965261da739e48f42b3b999f2e205face58b",
+    "data/national/issue7/chugoku-reviewed-patches.json": "085913daf5e98615f5a7a8d6cb7b94ffdcb12ac990f0eafc17d658f1ecf6e9cb",
+    "data/national/issue26/address-patch.json": "910b3c13f7671d85ee9a53b50ad3dffeb2b21ea1f2c939e8c8b68f0bf7b417d7",
+    "data/national/location-updates/kanto-south-chiba.json": "3eb8e10a28cfe562d9ff770338649a796f9609ab32a4ea2fd5626d3cd82a6b64",
+    "data/national/location-updates/chubu-east-south.json": "edc8ced99e18a654069f306029da341a52660fbd84c07c7b2de32dcee9d86707",
+    "data/national/location-updates/kanto-south-kanagawa.json": "d2e0c1a29268d6e965680d68ac4f7154f74028f28a06972a17b8a3059e10db4f",
+    "data/national/location-updates/kanto-south-tokyo.json": "8bd683869f51b67409e38a2e75a50daa66997f4302d5e85385b7f97eba670211",
+    "data/national/location-updates/kinki.json": "e37d441d645d5a2e190098fcb09a4428a6c921b2601d8a9bcc2a61f39201fb06",
+    "data/national/location-updates/north-tohoku.json": "cfe472ee7101181af3a00a07df1026ecac09f43cc3ce0e95ee1d8f65c812e448",
+    "data/national/location-updates/north-hokkaido.json": "35f36f8f5803fdd51a8e8ca6c4855a1250c199ec574a616416b84852c9047bea",
+    "data/national/location-updates/chubu-west.json": "c65e5e0d458d31a8c5e69d056106248f00128f498ed7d235919906b64c1cd8ee",
+    "data/national/location-updates/kyushu-okinawa.json": "8d772f99ec505aec65b5ea159a603eab1b286fe4b0bdafbd2bc957e4d63e9488",
+    "data/national/location-updates/kyushu-okinawa-reviewed-corrections.json": "c179f691bac10cff602a4fe4ebdb988b1b9b7a0c515fe1ad2a6bc6d44509f85f",
+    "data/national/location-updates/chubu-east-north.json": "0f4b62883e8fd96def94fccc293149e4c15af1225f2165defac298ec3fd51a0f",
+    "data/national/location-updates/chugoku-saitama-reviewed.json": "85b46769b14b26a035eec1797230a9167aab695ec1688440fafdc2e6a9f82f1e",
+    "data/national/location-updates/kanto-north-ibaraki-tochigi-gunma.json": "169264cad0fe331d549dc371bd15c38a56d68bede75c91bce4f76c4c1dee2d98",
+    "data/evidence/issue5/review-north-kanto/proposed-location-updates.json": "1dfa0facd91841421f25c84ca7d013de9f0b4d06136b1a2d91c02788c582c0cb",
+    "data/national/issue5/south-kanto.json": "06df12fae2c5c586fd4139809fe073a19b03feb1d1ef1aa3238c0aa7d4637b67",
+    "data/national/issue5/kinki-reviewed.json": "013f621652af1552f4bdf4ccc88df97c78e8653e7547827c80294e1f2b69acb8",
+    "data/national/issue5/west-south.json": "f627ab7b241490cf015508ae8a6c0c1b03c6d6600d5d038f9f1e44196481bba3",
+    "data/national/issue5/north-reviewed.json": "789c7be9db7b40b71ba7490efff97795fd801ede0c0ed6e2c068e6172241bb0f",
+    "data/national/issue5/chubu-reviewed.json": "d4204442f53cf0175c8a308f6584c6172312eeadc41f3b00702660dbafea911d",
+    "data/national/issue5/yokohama-priority.json": "8e04b3ca473e02c4808bc4500614795312d7f6a1a98cae26462b282e52c801d6",
+    "data/national/issue7/north-kanto.json": "4fcf8d4141d1f4d440b5cffab055d58beba838df26ef73f14c8999635d19e1eb",
+    "data/national/issue7/south-kanto.json": "57a4d3dffeb838e9173100e4b356d108e98afec113331d20ab8d7c461f076f05",
+    "data/national/issue7/hokuriku.json": "18cc2489d27cf6cf91b891e07a3cb711a600c7dcac77abae39cc3a382f891611",
+    "data/national/issue7/kinki-east.json": "ae2fe95758a3d2ccb45bf78abffaeb025800ae172b64893e78c4178c5e9b706f",
+    "data/national/issue7/koshin-reviewed.json": "70b6b746598efe233bbb9340248f191faaf8bd6582806e78ba75fc52abe38e29",
+    "data/national/issue7/sakuragicho-followup.json": "c3772e737c2c827c170026796c810dcd3161c5f1077d1e9740180dd86338189a",
+    "data/national/issue7/shikoku.json": "66f11d531a69c70a3f1a19478aebe16681e533576aac636fd7a166b13e3c9813",
+    "data/national/issue7/tokai.json": "9f76fc1819df28ce9ab89cda741c43c1ee089fb5102c5f2501e3fd098317ae55",
+    "data/national/issue7/kyushu-okinawa-reviewed.json": "d395427a63751e07b23ff7d180cd124bbf807bccd0c7004cc1fe6f1ea982ca4d",
+    "data/national/issue7/chugoku.json": "bc74330871afdc67f3f867c7e3c9f17e06d1074c1d003eebf8fc393829b8bd42",
+    "data/national/issue7/tohoku.json": "423cf730443f099417a6bb482d4192f09122cc012139d7fa353b22ee015ed8e9",
+    "data/national/issue7/hadano-reviewed.json": "6ce473f10683a5b2f04070a164be365fba0a230efdbdc47c87e98c9b8ecb9dd5",
+    "data/national/issue7/kinki-west.json": "d8126f0dd30d71156e93d4d6ad74579b23c2c8042409ab1648e7e3e1401d86df",
+    "data/national/issue7/hokkaido-reviewed.json": "a4ab7267a195dc5ea588151f76cb9faa4a8f51e52064bb0ddd5c2e0219acd5c3",
+    "data/national/location-batch1/locations-reviewed.json": "ef65dbcd6347f43dba328b1a6bc41b10bca6d1354ff9b38797bc2809a5185e4f",
+    "data/national/location-batch2/hokkaido/locations-reviewed.json": "fa4535f3c74d7f96ce09a0597966612e22e6294971cd6b607920eb78b221dccf",
+    "data/national/location-batch2/kinki-west/locations.json": "f228827f90f022306b7bb5ee329e226c675703ba23dfb3cb11750906c1c79f4d",
+    "data/national/location-batch2/koshin/locations.json": "ceb4213b4fbbcace08544b3c20b13d1963875a25b2867db3b840be16f96fbaf3",
+    "data/national/location-batch2/tohoku/locations.json": "249c634814be408c903bf578ef64644e5b5d694d02748cc28407a1f8d5bb737e",
+    "data/national/location-batch2/north-kanto/locations.json": "8f8aae6f666d53c27671ddede237cccbfab66986cd942f412d539224c859d547",
+    "data/national/location-batch2/kinki-east/locations.json": "2fb49eb5b16fd63088c5b13903724cecda62a97154868105bc491c7b2b56c473",
+    "data/national/location-batch2/shikoku/locations.json": "a9523f866c67eb0cc8d7b67bd22dc7df377d83cd2a65627e4ea64bc45dc9cc74",
+    "data/national/location-batch2/kyushu-okinawa/locations.json": "fbad40b41ec7de09088ec7ef7e7bd8b26b68cfb85ea969fc8a1ca5f502ddc815",
+    "data/national/location-batch1/location-lifecycle.json": "4e30ca96071698234d997d5beff6ed34a2d4c4ee274c1f2c4e370b0db3fe1e24",
+    "data/national/location-batch2/hokkaido/location-lifecycle.json": "5ab69d1935b65fdda07368cb581110efbfadc266eb3f592055dc8baf87e40cb2",
+    "data/national/location-batch2/kinki-west/location-lifecycle.json": "bb71bb4df7df2fc79ea21f3812242e79debcbcda49a6b1d51081e95552779e97",
+    "data/national/location-batch2/koshin/location-lifecycle.json": "977c399607acae00dcbe867b57f7b345d7e40cf92e3f500386438d1cbabec7ef",
+    "data/national/location-batch2/tohoku/location-lifecycle.json": "267ca7b715ebaac172a02f7a48441ff8b15cba9d03b6b2b98c57af2d80153aa7",
+    "data/national/location-batch2/north-kanto/location-lifecycle.json": "01491803ee4fd5a05c8941f6593b3f1fcd5a25af59880a5f3fc5d59560f7db71",
+    "data/national/location-batch2/kinki-east/location-lifecycle.json": "b1dfde2c5a5d50b82dffe303b09e0208ae4dafbc4468daab2e84c76a4d9fd28d",
+    "data/national/location-batch2/shikoku/location-lifecycle.json": "4c721a8fa1e23de0c5ff94945a9f96b07b24e61bcfbd1354b721acc9b4acdb69",
+    "data/national/location-batch2/kyushu-okinawa/location-lifecycle.json": "db05d9ea9893c044eeb56296139440065dd367bafdf12de0660c831bfa94e6d8",
+    "tools/national/manifest.json": "8ea5c77c31f9b30c765da8a44601d419d941b81f216b2e5cee3d129eca55fc8d",
+    "data/national/issue7/reviews/south-kanto.json": "4e7849afb37d8a3e358342bf03f94c20bc22a0a034bb8702fdefd9c61a6eb0ae",
+    "data/national/location-batch1/coverage.json": "c54e87e72ccf9d7ae2d0b18c8ec71bec383dc005645ac0dab85ee96746b3e332",
+    "data/national/location-batch2/south-kanto/selection.json": "d4e9fea1a633d39caf75b1a55f39145457015443c0cc4401033ef3111ec135a2",
+    "data/national/location-batch1/review.json": "c459e67dfe926eaffcc448c9ff91b002549d89c9503e18b65b7584ea715e4306",
+    "data/national/location-batch1/validation-review.json": "1755aab186f333190a8953b86e883dd37e231628e8ec52a16ec4b554b73f8d6a",
+    "data/national/location-batch2/south-kanto/review.json": "c9f7d586dc8168332b34e6c08ea7bd76346769c3de9edc82010fc2076af64f5b",
+    "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+    "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+    "data/evidence/national/kanto-south/fad43320780149b74501.html": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+    "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+    "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+    "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+    "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+    "data/national/location-batch2/south-kanto/outcomes.json": "ffe6d224d64537c43c1ee500a49bebc8f702f566cbc75b847fd7afbdef6ae0de",
+    "data/evidence/national/kanto-south/5c8237da89bea4665566.html": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+    "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+    "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+    "data/evidence/national/kanto-south-integration/8e0eb220dc912e75ebdc.html": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298",
+    "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+    "data/national/issue57/remaining-index.json": "094c568165004c98650d42fc9c3ec349b3bdbcec72c0d9ce7555b4c3c14f34a5",
+    "data/national/issue57/human-confirmation-queue.json": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+    "docs/verification/issue57-human-queue.md": "b37d68d20dc868131ee1364fcdf4216e3c1332774b8236538a951ebf96ed9487"
+  },
+  "population": {
+    "nationalUnlocated": 588,
+    "selected": 14
+  },
+  "selectionMethod": "現assembleの全未位置施設を神奈川県・全市町村名称で検索し14件。川崎反町（栃木県矢板市）1件は除外。カード14-所属も照合。県省略2件は三浦市配布表と綾瀬市施設詳細の原本で市を確認。未記載地名や未知の移転先の網羅保証ではない。",
+  "humanQueue": "全対象humanConfirmationRef=null。回答済み34群の対象と重複なし。",
+  "facilities": [
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "name": "葉山しおさい公園",
+        "address": "神奈川県三浦郡葉山町一色2123-1",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/0",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/7",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/42",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/0",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/0/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/0",
+            "excerpts": [
+              "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：町公園詳細は園内写真と概略地図。AED一覧の同住所地点はしおさい博物館入口であり、公園のカード配布窓口と同一建物の根拠にならない。公園全体の中心や博物館座標で代用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：町公園詳細は園内写真と概略地図。AED一覧の同住所地点はしおさい博物館入口であり、公園のカード配布窓口と同一建物の根拠にならない。公園全体の中心や博物館座標で代用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+        "legacyIds": [
+          "place:040c3fa2cd62eb9cfd10"
+        ],
+        "name": "葉山しおさい公園",
+        "address": "神奈川県三浦郡葉山町一色2123-1",
+        "phone": "046-876-1140",
+        "evidence": {
+          "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+          "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+          "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+          "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-301-A001",
+          "placeId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+          "sourceHash": "e39f84c2b600863ed6c8eaa10603da38701bc76792ea08058eda19bece12a20a",
+          "hours": [
+            "平日役場8:30～17:00。休日しおさい公園8:30～17:00（入園16:30まで、月曜・祝日翌日・12月28日～1月3日休園）。"
+          ],
+          "status": "active",
+          "condition": "休日",
+          "evidence": {
+            "sourceUrl": "https://www.town.hayama.lg.jp/soshiki/gesui/1_1/10040.html",
+            "snapshotPath": "data/evidence/national/kanto-south/b9bc4d09645b7813a008.html",
+            "snapshotSHA256": "eeef4dbc918550a1482405de36d138c4a9446216e100b7dbba36be072416e818",
+            "sourceLocator": "14-301-A001／葉山町役場・葉山しおさい公園：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-0ded97a30e37e98782cb",
+        "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+        "address": "神奈川県三浦市城山町1-1",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/2",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/9",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/9",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/2",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/2/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/2",
+            "excerpts": [
+              "新取得の市配布案内・移転関連原典を照合したが、第2分館の旧IDと新庁舎の対応を確定していない。P05本庁舎点で置換不可。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "新取得の市配布案内・移転関連原典を照合したが、第2分館の旧IDと新庁舎の対応を確定していない。P05本庁舎点で置換不可。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-0ded97a30e37e98782cb",
+        "legacyIds": [
+          "place:0ded97a30e37e98782cb"
+        ],
+        "name": "三浦市役所第2分館2階上下水道部下水道課窓口",
+        "address": "神奈川県三浦市城山町1-1",
+        "phone": "046-882-1111",
+        "evidence": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+          "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-210-A001",
+          "placeId": "facility:kanto-south-0ded97a30e37e98782cb",
+          "sourceHash": "e1ba96b7a9c1d5a1c13727079aa1476cc27891631400cb894b5b57dbf4d2a7d3",
+          "hours": [
+            "市役所平日8:30～17:15。観光インフォメーションセンター平日・休日9:00～17:30。いずれも12月28日～1月3日配布なし。"
+          ],
+          "status": "active",
+          "condition": "平日",
+          "evidence": {
+            "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+            "snapshotPath": "data/evidence/national/kanto-south/47fed0a2ffde2bdb5a94.html",
+            "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+            "sourceLocator": "14-210-A001／三浦市役所第2分館2階上下水道部下水道課窓口・三浦市観光インフォメーションセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-20ebba51b4a3684b8c98",
+        "name": "川崎市入江崎水処理センター ワクワクアクア",
+        "address": "神奈川県川崎市川崎区塩浜3-17-1",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/8",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/15",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/19",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/8",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/8/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/8",
+            "excerpts": [
+              "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市ワクワクアクア施設見学案内の所在地・アクセスを確認したが広報施設建物の数値地点なし。市公共施設CSVの入江崎公園は塩浜3-13-1の別施設であり流用不可。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市ワクワクアクア施設見学案内の所在地・アクセスを確認したが広報施設建物の数値地点なし。市公共施設CSVの入江崎公園は塩浜3-13-1の別施設であり流用不可。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-20ebba51b4a3684b8c98",
+        "legacyIds": [
+          "place:20ebba51b4a3684b8c98"
+        ],
+        "name": "川崎市入江崎水処理センター ワクワクアクア",
+        "address": "神奈川県川崎市川崎区塩浜3-17-1",
+        "phone": "044-287-5214",
+        "evidence": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+          "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-130-B001",
+          "placeId": "facility:kanto-south-20ebba51b4a3684b8c98",
+          "sourceHash": "f03217b579ea3a42d2beed8165f2910484b53387e7bd4d62cb31a2fafbbf3252",
+          "hours": [
+            "平日ワクワクアクアは8:45～12:00、13:00～16:15（水曜・年末年始除く）。1週間前までに予約し見学した方のみ。土日祝はきたテラス9:00～19:00（平日は配布なし）。"
+          ],
+          "status": "active",
+          "condition": "平日",
+          "evidence": {
+            "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+            "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+            "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+            "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-2eec15147b3a40fb17b7",
+        "name": "四之宮ふれあいセンター",
+        "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/11",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/18",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/21",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/11",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/11/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/11",
+            "excerpts": [
+              "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市施設詳細の地図は住所qのみ。市公共施設CSVには四之宮ふれあいセンターの該当行がなく、同地区公園・水質測定局は別施設。処理場敷地全体や住所ジオコードを受付建物位置にしない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市施設詳細の地図は住所qのみ。市公共施設CSVには四之宮ふれあいセンターの該当行がなく、同地区公園・水質測定局は別施設。処理場敷地全体や住所ジオコードを受付建物位置にしない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-2eec15147b3a40fb17b7",
+        "legacyIds": [
+          "place:2eec15147b3a40fb17b7"
+        ],
+        "name": "四之宮ふれあいセンター",
+        "address": "神奈川県平塚市四之宮4-19-2(相模川流域下水道右岸処理場内)",
+        "phone": "0463-54-6419",
+        "evidence": {
+          "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+          "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+          "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+          "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-203-A001",
+          "placeId": "facility:kanto-south-2eec15147b3a40fb17b7",
+          "sourceHash": "aa8baa860aad20a469178c25f98d0695e028ca9faa8e5f7ea2eea3771bc78c1d",
+          "hours": [
+            "9:30～17:00。月曜日、12月28日～1月4日除く。"
+          ],
+          "status": "active",
+          "condition": "",
+          "evidence": {
+            "sourceUrl": "https://www.city.hiratsuka.kanagawa.jp/machizukuri/page-c_02061.html",
+            "snapshotPath": "data/evidence/national/kanto-south/ef31e50cabb315aaba33.html",
+            "snapshotSHA256": "407d43c68d553de18b00e817e78538548242e5d8ab046df53c1b50bd0c16abf8",
+            "sourceLocator": "14-203-A001／四之宮ふれあいセンター：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-36fae9051046490c8149",
+        "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+        "address": "神奈川県秦野市上大槻190番地",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/13",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/20",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/47",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/13",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/13/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/13",
+            "excerpts": [
+              "今回5出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市浄水管理センター案内図は略図。公共施設CSVに当該管理棟の座標がなく、AED一覧には管理棟1階玄関ホールの行があるが緯度・経度欄は空。図からの数値補間や処理場全体への代用はしない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回5出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市浄水管理センター案内図は略図。公共施設CSVに当該管理棟の座標がなく、AED一覧には管理棟1階玄関ホールの行があるが緯度・経度欄は空。図からの数値補間や処理場全体への代用はしない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-36fae9051046490c8149",
+        "legacyIds": [
+          "place:36fae9051046490c8149"
+        ],
+        "name": "秦野市浄水管理センター 秦野市上下水道局下水道施設課",
+        "address": "神奈川県秦野市上大槻190番地",
+        "phone": "0463-81-4114",
+        "evidence": {
+          "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+          "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+          "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+          "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-211-A001",
+          "placeId": "facility:kanto-south-36fae9051046490c8149",
+          "sourceHash": "3ac04aac4b07e0cd3c519f1224b3b42dc526fa6d711d26aa4ecc7453ba1a8211",
+          "hours": [
+            "平日・土曜日は浄水管理センター9:00～17:00、日曜・祝祭日は秦野駅観光案内所9:00～17:00。"
+          ],
+          "status": "active",
+          "condition": "平日・土曜",
+          "evidence": {
+            "sourceUrl": "https://www.city.hadano.kanagawa.jp/soshiki/11/1068/2/2/1994.html",
+            "snapshotPath": "data/evidence/national/kanto-south/21cc0a8cf326ce86f1f1.html",
+            "snapshotSHA256": "8d0d7de2a6a27d5933efdadfb3701bff57246b8a863f02de27cbddca97968e4c",
+            "sourceLocator": "14-211-A001／秦野市浄水管理センター 秦野市上下水道局下水道施設課・秦野駅観光案内所：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-a60af499924663813476",
+        "name": "かわさききたテラス(川崎市観光案内所)",
+        "address": "神奈川県川崎市川崎区駅前本町26-1(アトレ3階 かわさききたテラス内)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/28",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/35",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/15",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/28",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/28/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/28",
+            "excerpts": [
+              "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市の観光案内所詳細に北口・アトレ3階の所在はあるが数値の目的地点なし。市公共施設CSVでも当該窓口の同定済み地点が得られず、川崎駅全体の中心を採用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回3出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市の観光案内所詳細に北口・アトレ3階の所在はあるが数値の目的地点なし。市公共施設CSVでも当該窓口の同定済み地点が得られず、川崎駅全体の中心を採用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-a60af499924663813476",
+        "legacyIds": [
+          "place:a60af499924663813476",
+          "place:b504192ea2e346dd5657"
+        ],
+        "name": "かわさききたテラス(川崎市観光案内所)",
+        "address": "神奈川県川崎市川崎区駅前本町26-1(アトレ3階 かわさききたテラス内)",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+          "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+          "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+          "sourceLocator": "14-130-A001／かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-130-A001",
+          "placeId": "facility:kanto-south-a60af499924663813476",
+          "sourceHash": "b57786b0206cee87cdbafa7314341ffdeb0b126209c23dff0e7f5a95998ebe72",
+          "hours": [
+            "平日9:00～20:00、土日祝9:00～19:00。"
+          ],
+          "status": "active",
+          "condition": "",
+          "evidence": {
+            "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+            "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+            "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+            "sourceLocator": "14-130-A001／かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        },
+        {
+          "cardId": "14-130-B001",
+          "placeId": "facility:kanto-south-a60af499924663813476",
+          "sourceHash": "f03217b579ea3a42d2beed8165f2910484b53387e7bd4d62cb31a2fafbbf3252",
+          "hours": [
+            "平日ワクワクアクアは8:45～12:00、13:00～16:15（水曜・年末年始除く）。1週間前までに予約し見学した方のみ。土日祝はきたテラス9:00～19:00（平日は配布なし）。"
+          ],
+          "status": "active",
+          "condition": "土日・祝日",
+          "evidence": {
+            "sourceUrl": "https://www.city.kawasaki.jp/800/page/0000088344.html",
+            "snapshotPath": "data/evidence/national/kanto-south/fad43320780149b74501.html",
+            "snapshotSHA256": "1f3eda67d0eb48364c2b8e4a417875f9d12a6be2bc282ca74b246a20741597c5",
+            "sourceLocator": "14-130-B001／川崎市入江崎水処理センター ワクワクアクア・かわさききたテラス(川崎市観光案内所)：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-a917541f326ca3f8f2d7",
+        "name": "さがみはらアンテナショップsagamix",
+        "address": "神奈川県相模原市南区相模大野3-2-1ボーノ相模大野ショッピングセンター2F",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/29",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/36",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/31",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/29",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/29/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/29",
+            "excerpts": [
+              "今回5出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：観光協会の施設ページは403。建物運営者ボーノ公式accessの埋込レスポンスは名称bono（ボーノ）相模大野だが住所3丁目1-2・地点35.5324412,139.4382801で、配布先ショッピングセンター3-2-1と不一致。第三者さがみっけ掲載値も一次の施設運営者原典ではないため採用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回5出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：観光協会の施設ページは403。建物運営者ボーノ公式accessの埋込レスポンスは名称bono（ボーノ）相模大野だが住所3丁目1-2・地点35.5324412,139.4382801で、配布先ショッピングセンター3-2-1と不一致。第三者さがみっけ掲載値も一次の施設運営者原典ではないため採用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-a917541f326ca3f8f2d7",
+        "legacyIds": [
+          "place:a917541f326ca3f8f2d7"
+        ],
+        "name": "さがみはらアンテナショップsagamix",
+        "address": "神奈川県相模原市南区相模大野3-2-1ボーノ相模大野ショッピングセンター2F",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+          "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "sourceLocator": "14-150-D001／さがみはらアンテナショップsagamix：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-150-D001",
+          "placeId": "facility:kanto-south-a917541f326ca3f8f2d7",
+          "sourceHash": "de09de31dc9b7895dbbd82198defa07f9769dd77324a30c366bb18355826c0c8",
+          "hours": [
+            "10:00～21:00。施設休館日除く。"
+          ],
+          "status": "active",
+          "condition": "",
+          "evidence": {
+            "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+            "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+            "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+            "sourceLocator": "14-150-D001／さがみはらアンテナショップsagamix：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+        "name": "衣笠商店街サービスセンター",
+        "address": "神奈川県横須賀市衣笠栄町2丁目28",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/31",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/38",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/32",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/31",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/31/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/31",
+            "excerpts": [
+              "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：公式サービスセンター詳細・商店街アクセス・最新加盟店PDFを確認。アクセス地図の地点は衣笠栄町1-70（商店街全体/事務所側）で、センター2-28とは別。PDF案内図から数値座標を補間しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：公式サービスセンター詳細・商店街アクセス・最新加盟店PDFを確認。アクセス地図の地点は衣笠栄町1-70（商店街全体/事務所側）で、センター2-28とは別。PDF案内図から数値座標を補間しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+        "legacyIds": [
+          "place:b8a0f5c7b930cf13dc47"
+        ],
+        "name": "衣笠商店街サービスセンター",
+        "address": "神奈川県横須賀市衣笠栄町2丁目28",
+        "phone": "046-853-8686",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-201-D001",
+          "placeId": "facility:kanto-south-b8a0f5c7b930cf13dc47",
+          "sourceHash": "056464f777b0485f8a6f9b6d96d681ed646b0acba893e4c0e2f286a52cfec5e0",
+          "hours": [
+            "10:00～12:00、13:00～15:00。月水金土サービスセンター、火木は事務所（祝日休業）。日曜・年末年始休み。"
+          ],
+          "status": "active",
+          "condition": "月・水・金・土",
+          "evidence": {
+            "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+            "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+            "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+            "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+        "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+        "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/38",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/45",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/4",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/4",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/location-batch2/south-kanto/outcomes.json#/rows/4",
+        "priorDecision": "held",
+        "recordedStopCategories": null,
+        "recordedStage": "building-comparison",
+        "originalInvestigationStatus": null,
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": null,
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/location-batch2/south-kanto/outcomes.json#/rows/4",
+            "excerpts": [
+              "新方針と旧周辺案内図で棟の区別を確認し、Vectorを表示したが、図の回転・概略化と本館/接続部を含む外形の対応を確定していない。市役所代表点を流用しない。\n令和8年2月基本方針は本館・第1別館・第2別館を区別し、第1別館は1981年竣工と記す。原調査周辺案内図は本館の西側の第1別館を描く。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": null,
+        "stopCondition": "新方針と旧周辺案内図で棟の区別を確認し、Vectorを表示したが、図の回転・概略化と本館/接続部を含む外形の対応を確定していない。市役所代表点を流用しない。",
+        "resumeCondition": "概略案内図に加え第1別館の形状と接続部を示す建築資料、または棟定義が明示された公的施設点でVector対象領域を独立確定する。",
+        "nextAction": "概略案内図に加え第1別館の形状と接続部を示す建築資料、または棟定義が明示された公的施設点でVector対象領域を独立確定する。",
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+        "legacyIds": [
+          "place:d3e8ff1b9fe8cdfa07d3"
+        ],
+        "name": "相模原市役所 都市建設局 土木部 下水道経営課総務・計画班",
+        "address": "神奈川県相模原市中央区中央2-11-15(第1別館2階)",
+        "phone": "042-707-1840",
+        "evidence": {
+          "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+          "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+          "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+          "sourceLocator": "14-150-A001／相模原市役所 都市建設局 土木部 下水道経営課総務・計画班：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-150-A001",
+          "placeId": "facility:kanto-south-d3e8ff1b9fe8cdfa07d3",
+          "sourceHash": "a63f9ade691461a98f184edee4f31087b547d1520fc1059f3904dc7cc0e18590",
+          "hours": [
+            "平日8:30～17:15。土日祝等・年末年始除く。"
+          ],
+          "status": "active",
+          "condition": "",
+          "evidence": {
+            "sourceUrl": "https://www.city.sagamihara.kanagawa.jp/shisei/1026823/gesuido/1004546/1014470.html",
+            "snapshotPath": "data/evidence/national/kanto-south/43d0d90ed2e17fb0c07c.html",
+            "snapshotSHA256": "fd571520b440cdceaaac7f6d8d662e910fcdbc45b40253d4cf69b7b195395a68",
+            "sourceLocator": "14-150-A001／相模原市役所 都市建設局 土木部 下水道経営課総務・計画班：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-ec19477e52b814868f78",
+        "name": "衣笠商店街事務所",
+        "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/43",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/50",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/39",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/43",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/43/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/43",
+            "excerpts": [
+              "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：公式商店街アクセスのGoogle地点は衣笠商店街という広域名称。住所1-70は一致するが、本文が商店街全体の交通案内で商栄会館3階事務所を目的地点と明示しないため承認保留。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回4出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：公式商店街アクセスのGoogle地点は衣笠商店街という広域名称。住所1-70は一致するが、本文が商店街全体の交通案内で商栄会館3階事務所を目的地点と明示しないため承認保留。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-ec19477e52b814868f78",
+        "legacyIds": [
+          "place:ec19477e52b814868f78"
+        ],
+        "name": "衣笠商店街事務所",
+        "address": "神奈川県横須賀市衣笠栄町1-70 商栄会館3階",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-201-D001",
+          "placeId": "facility:kanto-south-ec19477e52b814868f78",
+          "sourceHash": "056464f777b0485f8a6f9b6d96d681ed646b0acba893e4c0e2f286a52cfec5e0",
+          "hours": [
+            "10:00～12:00、13:00～15:00。月水金土サービスセンター、火木は事務所（祝日休業）。日曜・年末年始休み。"
+          ],
+          "status": "active",
+          "condition": "火・木",
+          "evidence": {
+            "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+            "snapshotPath": "data/evidence/national/kanto-south/91d71cd0c6731874bb58.html",
+            "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+            "sourceLocator": "14-201-D001／衣笠商店街サービスセンター・衣笠商店街事務所：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "address": "神奈川県伊勢原市神戸120",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/44",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/51",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/51",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/44",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/44/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/44",
+            "excerpts": [
+              "今回7出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市交通案内・PDFでアクアクリーンセンター所在地と経路は確認。公開AED/WiFi/データ一覧に同施設の数値地点を確認できず、案内略図から数値を捏造しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回7出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。今回取得本文から対象建物に対応する数値座標を新たに特定できていない。残る確認事項：市交通案内・PDFでアクアクリーンセンター所在地と経路は確認。公開AED/WiFi/データ一覧に同施設の数値地点を確認できず、案内略図から数値を捏造しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-ee83b23f6b285cc3df5a",
+        "legacyIds": [
+          "place:ee83b23f6b285cc3df5a"
+        ],
+        "name": "アクアクリーンセンター 2階 下水道経営課窓口",
+        "address": "神奈川県伊勢原市神戸120",
+        "phone": "0463-92-3341",
+        "evidence": {
+          "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+          "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+          "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+          "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-214-A001",
+          "placeId": "facility:kanto-south-ee83b23f6b285cc3df5a",
+          "sourceHash": "1d6cdc6a06e2c99d4b3065b15833e955b850a1d572eda40474c3b10e311cd59b",
+          "hours": [
+            "平日8:30～12:00、13:00～17:00。土日祝は駅窓口センター9:30～17:00（火・木の祝日、年末年始除く）。"
+          ],
+          "status": "active",
+          "condition": "平日",
+          "evidence": {
+            "sourceUrl": "https://www.city.isehara.kanagawa.jp/docs/2024070800023/",
+            "snapshotPath": "data/evidence/national/kanto-south/5c8237da89bea4665566.html",
+            "snapshotSHA256": "d072d790d93c29780a5b53cb9a6f235a070a1cc129993033e6f09f6ae3700956",
+            "sourceLocator": "14-214-A001／アクアクリーンセンター 2階 下水道経営課窓口・伊勢原市役所駅窓口センター 小田急伊勢原駅改札から南口方面へ直進、小田急マルシェ伊勢原 2階：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-integration-08",
+        "name": "ヴェルニー公園管理事務所",
+        "address": "神奈川県横須賀市汐入町1-1 ヴェルニー公園内",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/51",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/58",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/53",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/51",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/51/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/51",
+            "excerpts": [
+              "今回1出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：ヴェルニー公園管理事務所。公園全体やティボディエ邸を事務所棟へ転用しない。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "原典不足",
+        "stopCondition": "今回1出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：ヴェルニー公園管理事務所。公園全体やティボディエ邸を事務所棟へ転用しない。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-integration-08",
+        "legacyIds": [],
+        "name": "ヴェルニー公園管理事務所",
+        "address": "神奈川県横須賀市汐入町1-1 ヴェルニー公園内",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html",
+          "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+          "sourceLocator": "ヴェルニー公園管理事務所／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-201-C001",
+          "placeId": "facility:kanto-south-integration-08",
+          "sourceHash": "3d6ea77df75aab5e91250f0ed19fae6dc6dd69232fbf4a6772973b9371bb31f6",
+          "hours": [
+            "2026年10月26日～11月13日9:00～16:00。"
+          ],
+          "condition": "2026年10月26日～11月13日9:00～16:00。",
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.yokosuka.kanagawa.jp/6710/torikukmi/manhole.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/91d71cd0c6731874bb58.html",
+            "snapshotSHA256": "adf22573017259e811475f772fe86029bea08df1ea2fd5771b176a7b4c4a0aa7",
+            "sourceLocator": "ヴェルニー公園管理事務所／配布場所・配布条件／追加窓口の条件を再確認",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+            "previousPlaceIds": [
+              "place:6395cd4a64b6b5ba4d71"
+            ],
+            "raw": [
+              "注：令和8年10月26日（月曜日）～11月13日（金曜日）は下記の「ヴェルニー公園管理事務所」にて配布します。"
+            ]
+          },
+          "validFrom": "2026-10-26",
+          "validTo": "2026-11-13"
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-integration-10",
+        "name": "三浦海岸駅前観光案内所",
+        "address": "三浦海岸駅改札前",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/52",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/59",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/corrections/9",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/12",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/52",
+        "priorDecision": "new-fetch-and-targeted-review",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-targeted-review",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/52/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/52",
+            "excerpts": [
+              "新取得の三浦市観光協会本文で、駅前案内所=上宮田1497・駅改札外、海岸側センター=1450-4と別所在地を確認。同一建物ではなく、海岸側DB点の共有不可。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "移転別棟",
+        "stopCondition": "新取得の三浦市観光協会本文で、駅前案内所=上宮田1497・駅改札外、海岸側センター=1450-4と別所在地を確認。同一建物ではなく、海岸側DB点の共有不可。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-integration-10",
+        "legacyIds": [],
+        "name": "三浦海岸駅前観光案内所",
+        "address": "三浦海岸駅改札前",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html",
+          "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+          "sourceLocator": "三浦海岸駅前観光案内所／配布場所・配布条件／追加窓口の条件を再確認",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-210-A001",
+          "placeId": "facility:kanto-south-integration-10",
+          "sourceHash": "e1ba96b7a9c1d5a1c13727079aa1476cc27891631400cb894b5b57dbf4d2a7d3",
+          "hours": [
+            "平日・休日9:30～17:00。12月28日～1月3日休み。"
+          ],
+          "condition": "平日・休日9:30～17:00。12月28日～1月3日休み。",
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/699.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/47fed0a2ffde2bdb5a94.html",
+            "snapshotSHA256": "a8f1d7031716881e4f04ccc785bf29da75a955c3bd1f04aa19f083f2621f60b6",
+            "sourceLocator": "三浦海岸駅前観光案内所／配布場所・配布条件／追加窓口の条件を再確認",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+            "previousPlaceIds": [],
+            "raw": [
+              "三浦海岸駅前観光案内所"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "inheritedIndex": {
+        "facilityId": "facility:kanto-south-integration-11",
+        "name": "オーエンス文化会館 第2駐車場",
+        "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+        "history": [
+          {
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/53",
+            "kind": "original"
+          },
+          {
+            "ref": "data/national/issue7/reviews/south-kanto.json#/decisions/60",
+            "kind": "review"
+          },
+          {
+            "ref": "data/national/location-batch1/coverage.json#/groups/3",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/selection.json#/rows/54",
+            "kind": "history"
+          },
+          {
+            "ref": "data/national/location-batch1/review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch1/validation-review.json#",
+            "kind": "scoped-review; inspect decision"
+          },
+          {
+            "ref": "data/national/location-batch2/south-kanto/review.json#",
+            "kind": "scoped-review; inspect decision"
+          }
+        ],
+        "latestResultRef": "data/national/issue7/south-kanto.json#/unresolved/53",
+        "priorDecision": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "recordedStopCategories": null,
+        "recordedStage": null,
+        "originalInvestigationStatus": "new-fetch-and-numeric-screening; building-identification-incomplete",
+        "performedMethod": null,
+        "plannedMethod": null,
+        "attemptsRef": "data/national/issue7/south-kanto.json#/unresolved/53/attempts",
+        "classificationCandidates": [
+          {
+            "category": "execution-not-recorded",
+            "label": "原記録の追加分類待ち",
+            "ref": "data/national/issue7/south-kanto.json#/unresolved/53",
+            "excerpts": [
+              "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：第二駐車場南側のイベント窓口。文化会館本館位置を配布建物位置として使えない。建物として扱えるかも要確認。"
+            ],
+            "assessment": "not proof of nonexecution or source insufficiency"
+          }
+        ],
+        "classificationStatus": "requires-assessment; candidates are not confirmed stop reasons",
+        "historicalReasonCategory": "建物対象外の可能性",
+        "stopCondition": "今回2出典を実取得し、公式本文の座標・目的地パラメータを追加スクリーニングした。数値を含む資料は1件だが、建物代表点としての対象同定には未到達。残る確認事項：第二駐車場南側のイベント窓口。文化会館本館位置を配布建物位置として使えない。建物として扱えるかも要確認。",
+        "resumeCondition": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "nextAction": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+          "required": "当該建物の公式GIS施設Point、自治体施設CSVまたは建物外形。入口・室内窓口の精密座標は不要。詳細はreasonの棟・移転対応を確認。"
+        },
+        "resumability": "conditional-on-stated-evidence",
+        "automaticSelection": false,
+        "adoptionApproval": false,
+        "humanConfirmationRef": null
+      },
+      "currentPlace": {
+        "id": "facility:kanto-south-integration-11",
+        "legacyIds": [],
+        "name": "オーエンス文化会館 第2駐車場",
+        "address": "綾瀬市深谷中一丁目3番1号（市民文化センター）第二駐車場南側",
+        "phone": "",
+        "evidence": {
+          "sourceUrl": "https://www.city.ayase.kanagawa.jp/location/library/genre/publicfacility/17263.html",
+          "snapshotPath": "data/evidence/national/kanto-south-integration/8e0eb220dc912e75ebdc.html",
+          "snapshotSHA256": "3ac3ff63fa9abd233b2d4021fcba7acbbdca890852ff17a4644c0fe48417a298",
+          "sourceLocator": "施設詳細／所在地。第二駐車場南側の窓口指定は配布案内を参照",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+        }
+      },
+      "currentRelations": [
+        {
+          "cardId": "14-218-B001",
+          "placeId": "facility:kanto-south-integration-11",
+          "sourceHash": "e2b4238abdbceba26427ec96e0edfbe2a01680e5f3bd4d1203b836c22c32678d",
+          "hours": [
+            "2026年11月22日9:00～15:00予定。荒天中止の場合あり。在庫限り。"
+          ],
+          "condition": "2026年11月22日9:00～15:00予定。荒天中止の場合あり。在庫限り。",
+          "status": "upcoming",
+          "evidence": {
+            "sourceUrl": "https://www.city.ayase.kanagawa.jp/soshiki/shokosinkoka/sangyorenkeitanto/kanko_tokusan/dezainmanhoru/index.html",
+            "snapshotPath": "data/evidence/national/kanto-south-integration/1df2d178605a4cc60f3f.html",
+            "snapshotSHA256": "d74b3771a1e2d9e95aaf2614752331de22132123d502be1a6e681859ffbe65f8",
+            "sourceLocator": "オーエンス文化会館 第2駐車場／配布場所・配布条件／追加窓口の条件を再確認",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが原典の当該デザイン・窓口・条件を独立再照合。現地確認ではない。"
+          },
+          "change": {
+            "kind": "addition",
+            "reason": "現公式配布案内に明記された追加窓口。旧関係は保持し自動終了しない。",
+            "previousPlaceIds": [],
+            "raw": [
+              "場所：オーエンス文化会館 第二駐車場（南側）（予定）"
+            ]
+          },
+          "validFrom": "2026-11-22",
+          "validTo": "2026-11-22",
+          "reviewUntil": "2026-11-21"
+        }
+      ]
+    }
+  ]
+}
