@@ -74,10 +74,12 @@ try {
         protectedPinsSHA256: createHash("sha256")
           .update(await readFile("background/protected-pins.json"))
           .digest("hex"),
-        minimumUnprotectedIslandAreaM2: 100000,
+        minimumUnprotectedIslandAreaM2: 1000000,
         protectedPinMarginDegrees: 0.02,
-        simplificationThresholdMeters: 100,
-        maxZoom: 10,
+        simplificationThresholdMeters: 800,
+        outputPrecisionDegrees: 0.000001,
+        roundingMaximumAxisErrorDegrees: 0.0000005,
+        maxZoom: 8,
         features: data.features.length,
         bytes: bytes.length,
         gzipBytes: gzipSync(bytes, { level: 9 }).length,

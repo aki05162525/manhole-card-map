@@ -83,7 +83,7 @@ export function leafletCreate(
         map.invalidateSize({ pan: false });
         selected.clearLayers();
         for (const p of ps)
-          L.marker([p.lat, p.lng], { icon: icon(p, true) })
+          L.marker([p.lat, p.lng], { icon: icon(p, true), zIndexOffset: 1000 })
             .on("click", () => onSelect(p.cardIds))
             .addTo(selected);
         if (ps.length)
@@ -104,12 +104,12 @@ export function leafletCreate(
         map.setView([lat, lng], boundedZoom(14, maxZoom));
       },
       async exercise() {
-        map.setView([35.68, 139.76], 10, { animate: false });
+        map.setView([35.68, 139.76], 7, { animate: false });
         await new Promise((r) => setTimeout(r, 1500));
         for (let i = 0; i < 6; i++) {
           map.panBy([i % 2 ? 80 : -80, 30], { animate: true, duration: 0.3 });
           await new Promise((r) => setTimeout(r, 400));
-          map.setZoom(boundedZoom(i % 2 ? 10 : 11, maxZoom), { animate: true });
+          map.setZoom(boundedZoom(i % 2 ? 7 : 8, maxZoom), { animate: true });
           await new Promise((r) => setTimeout(r, 400));
         }
       },

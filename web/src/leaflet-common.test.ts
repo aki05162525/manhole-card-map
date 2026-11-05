@@ -7,6 +7,8 @@ const state = vi.hoisted(() => ({
   options: {} as Record<string, unknown>,
   setView: vi.fn(),
   fitBounds: vi.fn(),
+  setZoom: vi.fn(),
+  markerOptions: [] as Record<string, unknown>[],
 }));
 vi.mock("leaflet.markercluster", () => ({}));
 vi.mock("./types", async (original) => ({
@@ -29,6 +31,8 @@ vi.mock("leaflet", () => {
       map: () => ({
         setView: state.setView,
         fitBounds: state.fitBounds,
+        setZoom: state.setZoom,
+        panBy() {},
         getZoom: () => state.zoom,
         invalidateSize() {},
       }),
@@ -44,7 +48,10 @@ vi.mock("leaflet", () => {
           },
         };
       },
-      marker: layer,
+      marker: (_point: unknown, options: Record<string, unknown>) => {
+        state.markerOptions.push(options);
+        return layer();
+      },
       layerGroup: layer,
       circleMarker: layer,
       divIcon: () => ({}),
@@ -52,6 +59,26 @@ vi.mock("leaflet", () => {
     },
   };
 });
+it.each([8, 18])(
+  "actually zooms through the same supported range with ceiling %s",
+  async (ceiling) => {
+    vi.useFakeTimers();
+    try {
+      const adapter = leafletCreate(ceiling, async () => {})(
+        pins,
+        vi.fn(),
+        null,
+      );
+      const exercise = adapter.exercise();
+      await vi.runAllTimersAsync();
+      await exercise;
+      const zooms = new Set(state.setZoom.mock.calls.map(([zoom]) => zoom));
+      expect(zooms).toEqual(new Set([7, 8]));
+    } finally {
+      vi.useRealTimers();
+    }
+  },
+);
 import { leafletCreate } from "./leaflet-common";
 const pins: Pin[] = [
   {
@@ -75,8 +102,16 @@ const pins: Pin[] = [
 ];
 beforeEach(() => {
   state.markers = [];
+  state.markerOptions = [];
   state.zoom = 10;
   vi.clearAllMocks();
+});
+it("keeps selected pins above nearby clusters", async () => {
+  const adapter = leafletCreate(8, async () => {})(pins, vi.fn(), null);
+  await adapter.ready;
+  adapter.select(pins);
+  for (const options of state.markerOptions.slice(pins.length))
+    expect(options.zIndexOffset).toBeGreaterThanOrEqual(1000);
 });
 it("selects all cluster cards at the ceiling and zooms below it", async () => {
   const select = vi.fn();

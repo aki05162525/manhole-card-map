@@ -9,23 +9,21 @@ import {
   access,
 } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { fixtureData } from "./fixtures.ts";
 const args = process.argv.slice(2);
-if (args.length > 1 || (args.length === 1 && args[0] !== "--fixture"))
-  throw new Error("Usage: node scripts/prepare.mjs [--fixture]");
+if (
+  args.length > 1 ||
+  (args.length === 1 && !["--fixture", "--comparison"].includes(args[0]))
+)
+  throw new Error("Usage: node scripts/prepare.mjs [--fixture|--comparison]");
 const fixture = args[0] === "--fixture";
+const comparison = args[0] === "--comparison";
 const output = fixture ? "dist-fixture" : "dist";
 if (fixture) {
-  // Build-only fixture: deliberately no real cards, fonts, sprites or PMTiles.
+  // Synthetic cards for CI/browser tests, never real facilities or card data.
   // Never write to public/ or the real-data dist/ directory.
   await mkdir(`${output}/data`, { recursive: true });
-  const data = {
-    schema: 1,
-    updated: "1970-01-01T00:00:00Z",
-    cards: [],
-    places: [],
-    relations: [],
-    pins: [],
-  };
+  const data = fixtureData;
   const files = {};
   async function writeFixture(name, value) {
     const bytes = JSON.stringify(value) + "\n";
@@ -47,23 +45,26 @@ if (fixture) {
     schema: data.schema,
     updated: data.updated,
     fixture: true,
-    purpose: "CI build only; synthetic cards with simplified background",
+    purpose:
+      "CI/browser synthetic cards with simplified background; not for deployment",
     files,
     inputs: {},
     referencePlaces: false,
   });
   await writeFile(
     `${output}/FIXTURE_ONLY.txt`,
-    "CI build fixture only. Empty synthetic card data. No PMTiles, fonts or sprites.\n" +
-      "Not a deployable map or a substitute for real-data/browser verification.\n",
+    "Synthetic cards for CI/browser tests only. No real cards, PMTiles, fonts or sprites.\n" +
+      "Not for deployment or use as real destination data.\n",
   );
 } else {
   // Missing real inputs must fail; do not silently fall back to fixtures.
-  for (const name of ["data", "fonts", "sprites", "maps/japan.pmtiles"])
+  for (const name of comparison
+    ? ["data", "fonts", "sprites", "maps/japan.pmtiles"]
+    : ["data"])
     await access(`public/${name}`);
-  for (const name of ["data", "fonts", "sprites"])
+  for (const name of comparison ? ["data", "fonts", "sprites"] : ["data"])
     await cp(`public/${name}`, `${output}/${name}`, { recursive: true });
-  await symlink("../public/maps", `${output}/maps`, "dir");
+  if (comparison) await symlink("../public/maps", `${output}/maps`, "dir");
 }
 // Background is deployable in both builds, but deliberately outside SW FILES.
 const backgroundFiles = [

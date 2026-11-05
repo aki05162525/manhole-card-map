@@ -1,7 +1,8 @@
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
 import { mkdir, writeFile } from "node:fs/promises";
-await mkdir("results", { recursive: true });
+const resultDir = process.env.RESULTS_DIR || "results";
+await mkdir(resultDir, { recursive: true });
 const rows = [];
 for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
   for (const engine of (process.env.ENGINES || "a,b").split(",")) {
@@ -30,7 +31,7 @@ for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
           page,
         );
         await writeFile(
-          `results/lighthouse-${engine}-${run}-${cache}.json`,
+          `${resultDir}/lighthouse-${engine}-${run}-${cache}.json`,
           result.report,
         );
         await page.waitForFunction(() => window.prototype?.metrics.ready > 0, {
@@ -98,7 +99,7 @@ for (let run = 1; run <= Number(process.env.RUNS || 5); run++)
           }),
         );
         await writeFile(
-          "results/lighthouse.json",
+          `${resultDir}/lighthouse.json`,
           JSON.stringify(rows, null, 2),
         );
         await session.detach();
