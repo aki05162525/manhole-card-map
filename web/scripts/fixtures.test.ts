@@ -13,8 +13,15 @@ describe("explicit synthetic browser fixtures", () => {
       expect(cards.has(relation.cardId)).toBe(true);
       expect(places.has(relation.placeId)).toBe(true);
     }
-    for (const pin of fixtureData.pins)
+    for (const pin of fixtureData.pins) {
       for (const id of pin.cardIds) expect(cards.has(id)).toBe(true);
+      if (pin.kind === "place") {
+        const place = fixtureData.places.find((p) => p.id === pin.id);
+        expect(place?.coordinate.status).toBe("confirmed");
+        expect(place?.coordinate.lat).toBe(pin.lat);
+        expect(place?.coordinate.lng).toBe(pin.lng);
+      }
+    }
   });
   it("exercises shared facilities, alternatives, dense pins and cards without pins", () => {
     expect(fixtureData.pins.some((p) => p.cardIds.length > 1)).toBe(true);

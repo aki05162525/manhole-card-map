@@ -1,0 +1,253 @@
+package main
+
+import (
+	"github.com/aki05162525/manhole-card-map/internal/gkp"
+	"os"
+	"path/filepath"
+	"testing"
+	"time"
+)
+
+func TestIncompleteCoordinateCannotBecomeConfirmedZero(t *testing.T) {
+	for _, coordinate := range []string{`{}`, `{"lat":35}`, `{"lng":139}`, `{"lat":null,"lng":139}`} {
+		var ledger PlaceLedger
+		if err := decodeLedger([]byte(`{"schema":1,"places":[{"coordinate":`+coordinate+`}]}`), &ledger); err == nil {
+			t.Fatalf("incomplete coordinate accepted: %s", coordinate)
+		}
+	}
+	var ledger PlaceLedger
+	if err := decodeLedger([]byte(`{"schema":1,"places":[{"coordinate":{"lat":0,"lng":0}},{"coordinate":null},{}]}`), &ledger); err != nil {
+		t.Fatal(err)
+	}
+}
+
+func pilotFixture(t *testing.T) (Data, PlaceLedger) {
+	t.Helper()
+	path := filepath.Join(t.TempDir(), "official.html")
+	if err := os.WriteFile(path, []byte("official evidence"), 0600); err != nil {
+		t.Fatal(err)
+	}
+	ev := Evidence{SourceURL: "https://example.gov.jp/card", SnapshotPath: path, SnapshotSHA256: hash([]byte("official evidence")), SourceLocator: "distribution and map", CheckedAt: "2026-11-05", ActorType: "ai", VerificationMethod: "official facility map coordinates and distribution notice checked"}
+	d := Data{Cards: []Card{{ID: "card-a", PlaceText: []string{"facility"}, Hours: []string{"9-17"}}}, Places: []Place{{ID: "place:old", Name: "old"}}, Relations: []Relation{{CardID: "card-a", PlaceID: "place:old"}}}
+	l := PlaceLedger{Schema: 1, Places: []LedgerPlace{{ID: "facility:one", LegacyIDs: []string{"place:old"}, Name: "facility", Address: "address", Coordinate: &LedgerCoordinate{Lat: 35, Lng: 139}, Evidence: ev}}, Relations: []LedgerRelation{{CardID: "card-a", PlaceID: "facility:one", SourceHash: cardSourceHash(d.Cards[0]), Hours: []string{"9-17"}, Status: "active", Evidence: ev}}}
+	return d, l
+}
+func TestLedgerApprovedPlacePinAndStableIdentity(t *testing.T) {
+	d, l := pilotFixture(t)
+	now, _ := time.Parse("2006-01-02", "2026-11-05")
+	if err := applyPlaceLedger(&d, l, now); err != nil {
+		t.Fatal(err)
+	}
+	appendPlacePins(&d, false)
+	if len(d.Pins) != 1 || d.Pins[0].ID != "facility:one" || d.Pins[0].Reference {
+		t.Fatalf("%+v", d.Pins)
+	}
+	if d.Relations[0].Review != "verified" || d.Relations[0].Hours[0] != "9-17" {
+		t.Fatal(d.Relations)
+	}
+}
+func TestLedgerSourceChangeRequiresReview(t *testing.T) {
+	d, l := pilotFixture(t)
+	d.Cards[0].Hours = []string{"changed"}
+	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	appendPlacePins(&d, false)
+	if len(d.Pins) != 0 || d.Relations[0].Review != "needs-review" || d.Relations[0].Status != "unknown" {
+		t.Fatal(d)
+	}
+}
+func TestLedgerRejectsInvalidEvidenceAndReferences(t *testing.T) {
+	for _, change := range []func(*PlaceLedger){
+		func(l *PlaceLedger) { l.Places[0].Coordinate.Lat = 100 },
+		func(l *PlaceLedger) { l.Places[0].Evidence.SourceURL = "javascript:alert(1)" },
+		func(l *PlaceLedger) { l.Places[0].Evidence.SnapshotSHA256 = "wrong" },
+		func(l *PlaceLedger) { l.Relations[0].CardID = "missing" },
+		func(l *PlaceLedger) { l.Relations[0].Status = "bogus" },
+		func(l *PlaceLedger) { l.Relations[0].ValidFrom = "wrong" },
+	} {
+		d, l := pilotFixture(t)
+		change(&l)
+		if applyPlaceLedger(&d, l, time.Now()) == nil {
+			t.Fatal("invalid ledger accepted")
+		}
+	}
+}
+func TestLedgerFutureAndExpiredWindows(t *testing.T) {
+	for _, tc := range []struct{ from, to, want string }{{"2026-12-01", "", "upcoming"}, {"", "2026-10-01", "ended"}} {
+		d, l := pilotFixture(t)
+		l.Relations[0].ValidFrom = tc.from
+		l.Relations[0].ValidTo = tc.to
+		now, _ := time.Parse("2006-01-02", "2026-11-05")
+		if err := applyPlaceLedger(&d, l, now); err != nil {
+			t.Fatal(err)
+		}
+		if d.Relations[0].Status != tc.want {
+			t.Fatal(d.Relations)
+		}
+	}
+}
+
+func TestHistoricalAliasesSurviveSourceCorrections(t *testing.T) {
+	d, l := pilotFixture(t)
+	d.Places[0].ID = "place:corrected"
+	d.Relations[0].PlaceID = "place:corrected"
+	l.Places[0].LegacyIDs = append(l.Places[0].LegacyIDs, "place:corrected")
+	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	if d.Places[0].ID != "facility:one" {
+		t.Fatal(d.Places)
+	}
+}
+func TestSharedFacilityPinIncludesOnlyReviewedCards(t *testing.T) {
+	d, l := pilotFixture(t)
+	d.Cards = append(d.Cards, Card{ID: "unreviewed"})
+	d.Relations = append(d.Relations, Relation{CardID: "unreviewed", PlaceID: "place:old"})
+	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	appendPlacePins(&d, false)
+	if len(d.Pins) != 1 || len(d.Pins[0].CardIDs) != 1 || d.Pins[0].CardIDs[0] != "card-a" {
+		t.Fatal(d.Pins)
+	}
+}
+func TestPartialClosureDoesNotEndWholeCard(t *testing.T) {
+	now, _ := time.Parse("2006-01-02", "2026-11-05")
+	if got := distribution(gkp.Row{Place: []string{"東京都庁（東京都新宿区西新宿2-8-1）", "追加2施設は配布終了"}}, now); got == "ended" {
+		t.Fatal(got)
+	}
+}
+
+func TestLedgerLinksAndStockChangesRequireReview(t *testing.T) {
+	for _, change := range []func(*Card){func(c *Card) { c.SourceStock = []string{"在庫切れ"} }, func(c *Card) { c.Links = []string{"https://example.gov.jp/new"} }} {
+		d, l := pilotFixture(t)
+		change(&d.Cards[0])
+		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+			t.Fatal(err)
+		}
+		appendPlacePins(&d, false)
+		if len(d.Pins) != 0 || d.Relations[0].Review != "needs-review" {
+			t.Fatal(d)
+		}
+	}
+}
+
+// CI validates checked-in provenance even when the untracked full source dataset
+// is unavailable. The full build additionally verifies identities and source hashes.
+func TestCheckedInLedgerEvidence(t *testing.T) {
+	root, err := filepath.Abs("../..")
+	if err != nil {
+		t.Fatal(err)
+	}
+	path := filepath.Join(root, "data/overrides/places.json")
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var l PlaceLedger
+	if err := decodeLedger(raw, &l); err != nil {
+		t.Fatal(err)
+	}
+	if l.Schema != 1 {
+		t.Fatal("unsupported ledger schema")
+	}
+	evidence := []Evidence{}
+	for _, p := range l.Places {
+		evidence = append(evidence, p.Evidence)
+	}
+	for _, r := range l.Relations {
+		evidence = append(evidence, r.Evidence)
+		if _, err := relationStatus(r, time.Now()); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for _, e := range evidence {
+		if !filepath.IsAbs(e.SnapshotPath) {
+			e.SnapshotPath = filepath.Join(root, e.SnapshotPath)
+		}
+		if err := validateEvidence(e); err != nil {
+			t.Fatal(err)
+		}
+	}
+}
+
+func TestReviewedPartialClosurePreservesActiveCard(t *testing.T) {
+	d, l := pilotFixture(t)
+	d.Places = append(d.Places, Place{ID: "place:second"})
+	d.Relations = append(d.Relations, Relation{CardID: "card-a", PlaceID: "place:second"})
+	p := l.Places[0]
+	p.ID = "facility:two"
+	p.LegacyIDs = []string{"place:second"}
+	l.Places = append(l.Places, p)
+	r := l.Relations[0]
+	r.PlaceID = "facility:two"
+	r.Status = "ended"
+	l.Relations = append(l.Relations, r)
+	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	if d.Cards[0].Status != "active" {
+		t.Fatal(d.Cards)
+	}
+}
+
+func TestVerifiedConditionOverridesOriginalButStaleDoesNot(t *testing.T) {
+	for _, stale := range []bool{false, true} {
+		d, l := pilotFixture(t)
+		d.Relations[0].Condition = "土日"
+		condition := "土日祝日"
+		l.Relations[0].Condition = &condition
+		if stale {
+			d.Cards[0].SourceStock = []string{"changed"}
+		}
+		if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+			t.Fatal(err)
+		}
+		want := "土日祝日"
+		if stale {
+			want = "土日"
+		}
+		if d.Relations[0].Condition != want {
+			t.Fatal(d.Relations)
+		}
+	}
+}
+
+func TestReviewedStatusDoesNotRequireFacilityCoordinates(t *testing.T) {
+	d, l := pilotFixture(t)
+	l.Places[0].Coordinate = nil
+	l.Relations[0].Status = "suspended"
+	if err := applyPlaceLedger(&d, l, time.Now()); err != nil {
+		t.Fatal(err)
+	}
+	appendPlacePins(&d, false)
+	if len(d.Pins) != 0 || d.Places[0].Coordinate.Status != "unconfirmed" || d.Places[0].Coordinate.Lat != nil {
+		t.Fatal(d)
+	}
+	if d.Relations[0].Review != "verified" || d.Relations[0].Status != "suspended" || d.Cards[0].Status != "suspended" {
+		t.Fatal(d)
+	}
+}
+
+func TestExpiredReviewDoesNotTurnSuspensionIntoEndOrActive(t *testing.T) {
+	for _, tc := range []struct{ date, review, status string }{{"2027-01-04", "verified", "suspended"}, {"2027-01-05", "needs-review", "unknown"}} {
+		d, l := pilotFixture(t)
+		d.Cards[0].Status = "active"
+		l.Relations[0].Status = "suspended"
+		l.Relations[0].ReviewUntil = "2027-01-04"
+		now, _ := time.Parse("2006-01-02", tc.date)
+		if err := applyPlaceLedger(&d, l, now); err != nil {
+			t.Fatal(err)
+		}
+		if d.Relations[0].Review != tc.review || d.Relations[0].Status != tc.status || d.Cards[0].Status != tc.status {
+			t.Fatal(d)
+		}
+		if tc.status == "unknown" {
+			appendPlacePins(&d, false)
+			if len(d.Pins) != 0 {
+				t.Fatal(d.Pins)
+			}
+		}
+	}
+}
