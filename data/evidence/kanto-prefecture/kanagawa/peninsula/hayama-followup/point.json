@@ -1,0 +1,85 @@
+{
+  "coordinate": {
+    "lat": 35.2637086,
+    "lng": 139.5785511
+  },
+  "unroundedWithin": true,
+  "roundedWithin": true,
+  "roundedTileXY": [
+    2047.145410567522,
+    3961.9949672967196
+  ],
+  "mechanicalChecksPassed": true,
+  "identityApproved": false,
+  "crsApproved": false,
+  "facilityId": "facility:kanto-south-040c3fa2cd62eb9cfd10",
+  "sourceFeature": {
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            2030,
+            3876
+          ],
+          [
+            2089,
+            3877
+          ],
+          [
+            2088,
+            3993
+          ],
+          [
+            2006,
+            3992
+          ],
+          [
+            2006,
+            3932
+          ],
+          [
+            2030,
+            3932
+          ],
+          [
+            2030,
+            3876
+          ]
+        ]
+      ]
+    },
+    "properties": {
+      "vt_code": 3101,
+      "vt_lvorder": 0
+    },
+    "id": "58177-25899-BldA-125",
+    "type": "Feature",
+    "sourceLayer": "BldA",
+    "layerFeatureIndex": 125,
+    "sourceTile": {
+      "z": 16,
+      "x": 58177,
+      "y": 25899
+    },
+    "sourceFeatureIndex": 125,
+    "tileBoundaryTouched": false,
+    "outerBoundaryTouched": false
+  },
+  "baseTile": {
+    "z": 16,
+    "x": 58177,
+    "y": 25899
+  },
+  "pointXY": [
+    2047.1336206896551,
+    3962.0
+  ],
+  "areaSquareMetresApprox": 122.414215667331,
+  "areaMethod": "local Mercator cosine scale approximation; not measured building area",
+  "pointMethod": "interior representative from inherited original GSI BldA125; original numeric value preserved",
+  "adoptionApproved": false,
+  "sourceVersion": "GSI optimal_bvmap PMTiles2026-07-01",
+  "priorNumericRef": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-comparison.json",
+  "priorNumericSHA256": "45b676131728fe0af172689400cdf1c9133157d84fb5f06ed7f9af1056c412ff"
+}

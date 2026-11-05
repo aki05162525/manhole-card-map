@@ -1,0 +1,138 @@
+{
+  "priorFullSuiteCommit": "fe6e5f1a945f0562277d604b103aaefda42ca979",
+  "priorFullSuiteExitCode": 0,
+  "changes": "追加回答2件を独立再照合、葉山候補1追加、三浦海岸保留理由更新。旧9候補の観察/原タイルは不変。",
+  "targetCommand": "python3 -B -m unittest discover -s tools/national -p test_kanto_kanagawa.py -v",
+  "targetExitCode": 0,
+  "targetLog": "data/evidence/kanto-prefecture/kanagawa/annex-followup/feedback-green.log",
+  "newNumericCommand": "mise exec -- uv run --with mapbox-vector-tile==2.2.0 python -B /tmp/kg-feedback-numeric.py",
+  "newNumericExitCode": 0,
+  "newNumericResult": "data/evidence/kanto-prefecture/kanagawa/annex-followup/feedback-numeric-checks.json",
+  "inputHashes": [
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/all-outcomes.json",
+      "sha256": "98196352e4bfabbddc0117fb11a097871bcfd7dcd4fa55fd72c0839246b18112"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/human-questions-all.json",
+      "sha256": "56ebd4e7413538d3c238ebf54b64a1935a5ef79a98e64e6ebe1fef4d59ba5e09"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/locations-all-proposed.json",
+      "sha256": "e539ac9c162a84f2e7a8d0c40c9fbaf938daf6d706f59600d53114d7c52ec36c"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/lifecycle-all-proposed.json",
+      "sha256": "7650de50e3c8479288b9cbd891b0d97cfaa456024be1be2d9144a30108c53bfe"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/selection-all-proposed.json",
+      "sha256": "f229592a1fd1f91c8bb3eb20416bfd71b90f83ae732a0f0723e75f54f789c063"
+    },
+    {
+      "path": "tools/national/test_kanto_kanagawa.py",
+      "sha256": "cda245628eeaa04439a435e3183e995075ee52e497bb7fb73361548146e37b1a"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/miura-followup/locations-proposed.json",
+      "sha256": "7cc1849ad6b60015a364d9add156b50ce9e9e315c511f166cc7b0d2a69cc4c94"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/north/miura-followup/outcomes.json",
+      "sha256": "707b971b065ac539870293b4760e460630f0c815ba281879fc322c5f29a5c82a"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/lifecycle-proposed.json",
+      "sha256": "da05f89e05a0df70078f7b421ea99bcaab48bd4ee74db7b612b2e5771e88dc69"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/locations-proposed.json",
+      "sha256": "97d3e7e184071cdc82b5870db80bceda50e4ba6e3fec48be361f0f1c3ed7463d"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/outcome.json",
+      "sha256": "48b3fdd051b1138aec57be247f13200246d7c5ec32b93c350910ca0dbf804cdb"
+    },
+    {
+      "path": "data/national/kanto-prefecture/kanagawa/peninsula/hayama-followup/selection-proposed.json",
+      "sha256": "bf29c64c9c1985c425e21ee7481500e0d8ee248ea4985f387a9d368f4163f235"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/kanagawa-miura-analysis.py.txt",
+      "sha256": "dcbf46b1fb5fabafa2eb9bdeb61dcac0c5e72628cb6c8a19d41a8229096b3dda"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/kanagawa-miura-followup.py.txt",
+      "sha256": "12ef2c890415934bfab5887679710e670ad32646c9f28829f4945b97af0d5f34"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/kanagawa-miura-raster.py.txt",
+      "sha256": "4da4539cceff174236af021608f712e89c61e9c21c9b197ebd26ff6fccc6bb7b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/kanagawa-miura-record.py.txt",
+      "sha256": "7fe852b9caf04a168ae214aff08037cdb9a88dd304855e78cda3513cd7fb6aca"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/nearby-geometries.json",
+      "sha256": "753d75debe66aef8f413956a8f4dc75b3b2d3e0d897e12226acb1b6e64e8cb0e"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/observation.json",
+      "sha256": "d64fecc78032cea32857a3be3e8f3357e646ad7eee0805f3bd468897356bc398"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/raster-retrievals.json",
+      "sha256": "586039cc884d822c4c1c77b556302e3cbfb4c38288f9c16cb8f0412e315e8809"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/retrievals.json",
+      "sha256": "fef79eb93b2f91dcc1191d09309cc84d1e424db6a181e8405ded27480bb8ad4f"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/reused-originals.json",
+      "sha256": "3628a669cdcb67634fe49c9afff68f1e68dbe237745fa236a7e653c35a243bb2"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/timing.json",
+      "sha256": "3cbf77011cb5a7d7457bdf24be12a29486b80f01e2f7fd97d4230b5a72211cde"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/user-report.json",
+      "sha256": "b9402c18604aa211c193039438d24841b8e4206b110809e3c5b55bb5bdc706a9"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/north/miura-followup/validation.json",
+      "sha256": "67bab9d1a2424cabc32279bde7aef2843b505bcbabd295bf9690115496a316ea"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/observation.json",
+      "sha256": "8d73f4c31f21a39d6a65e38fe58bf315398eb52fdea026af431f388a815ea55b"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/point.json",
+      "sha256": "b2cc83e0d10534f6ac078d00690e1932af2765bfc6ebf0ea4533da6002ec2acf"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/reproduction.py.txt",
+      "sha256": "05229b176a3545659655fc70bf900829320c6c01d15736a8cef69745f5a44b63"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/retrievals.json",
+      "sha256": "a876d9a108e8417f27d995be6bf382b89779fe40ccc672ef1438d9704968a624"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/timing.json",
+      "sha256": "a36fc27173578407ab079c80ac1e4eae39702430c24ae5b35bdb7fd4eed836d9"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/user-report.json",
+      "sha256": "d281e45b76c14049d39fe53c1103370a086b4e684e3570099d8751e5ccc2f7e6"
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/kanagawa/peninsula/hayama-followup/validation.json",
+      "sha256": "224f00c133276fb825d0f371560103ee8645b552ed9b8338ff7f438d63a0dd6c"
+    }
+  ],
+  "fullSuitePolicy": "候補の追加とdata変更があるため既存の通常commit hookを実行。手動で全国suiteを重複実行しない。hook結果は検証文書へ追記。"
+}

@@ -1,0 +1,21 @@
+import json,math,hashlib
+from pathlib import Path
+from shapely.geometry import shape
+E=Path('data/evidence/kanto-prefecture/kanagawa/north/miura-followup');W=Path('data/work/kanto-kanagawa/north/miura-followup');old=E.parent
+c=json.load(open('data/work/kanto-kanagawa/north/miura/combined.json'));rows=[]
+for f in c['features']:
+ if f['sourceLayer']=='BldA' and f['sourceTile']=={'z':16,'x':58191,'y':25916} and f['layerFeatureIndex'] in [123,124,125,134,169,170]:
+  g=shape(f['geometry']);scale=math.cos(math.radians(35.188))*2*math.pi*6378137/(2**16*4096);rows.append({'feature':f,'areaApproxSquareMetres':g.area*scale**2,'geometryValid':g.is_valid,'boundsCombinedXY':list(g.bounds)})
+(E/'nearby-geometries.json').write_text(json.dumps({'sourceEdition':'PMTiles2026-07-01','sourceInputsRef':str(old/'miura/tile-inputs.json'),'purpose':'Compare station platform-roof polygons and neighbouring buildings; no adopted coordinate','features':rows,'structuralLimit':'BldA124/134 are vt_code3111 open-sided roof polygons. They trace the two separated long platform canopies, not a closed combined station/viaduct ground-floor envelope. The region between the two is not contained by either roof polygon.'},ensure_ascii=False,indent=2)+'\n')
+print([(r['feature']['layerFeatureIndex'],round(r['areaApproxSquareMetres'],1)) for r in rows])
+# preserve reused-source hash chain, not refresh old checkedAt
+ret=json.load(open(old/'retrievals.json'))['records'];keys=['miura-photo.jpg','miura-card.html','miura-tourism.html','miura-city-photo.jpg','miura-open.html'];refs=[]
+for r in ret:
+ if r['key'] in keys:
+  assert hashlib.sha256(Path(r['rawPath']).read_bytes()).hexdigest()==r['sha256'];refs.append(r)
+(E/'reused-originals.json').write_text(json.dumps({'sourceRetrievalLedger':str(old/'retrievals.json'),'records':refs},ensure_ascii=False,indent=2)+'\n')
+p=E/'raster-retrievals.json';j=json.load(open(p))
+for r in j['records']:
+ for k in ('rawPath','responseRawPath'):
+  if r.get(k):r[k]=str(Path(r[k]).relative_to(Path.cwd()))
+p.write_text(json.dumps(j,ensure_ascii=False,indent=2)+'\n')
