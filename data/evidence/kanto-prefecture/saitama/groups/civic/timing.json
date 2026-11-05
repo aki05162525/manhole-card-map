@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "note": "Facility manual intervals start before detailed source reading; initial shared instruction/assignment read excluded; no retrospective allocation. Retrieval elapsedSeconds are separately recorded. Some cross-facility follow-up calls occurred while another reading interval was open; intervals are wall-clock windows, not exclusive labor allocation. Unlogged short follow-ups are not retrospectively assigned.",
+  "events": [
+    {
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "start": 1793892257.7711875,
+      "activity": "detailed-source-and-vector-comparison",
+      "end": 1793892385.5731091,
+      "elapsedSeconds": 127.80192160606384
+    },
+    {
+      "facilityId": "facility:kanto-north-365e6c6bea1d082fb583",
+      "start": 1793892440.2364547,
+      "activity": "source-and-footprint-research",
+      "end": 1793892508.8183084,
+      "elapsedSeconds": 68.58185362815857
+    },
+    {
+      "facilityId": "facility:kanto-north-4244d9dc97ba1a68e1de",
+      "start": 1793892508.8183095,
+      "activity": "source-and-footprint-research",
+      "end": 1793892810.4990873,
+      "elapsedSeconds": 301.68077778816223
+    },
+    {
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "start": 1793892810.4990892,
+      "activity": "source-and-footprint-research",
+      "end": 1793892907.0155456,
+      "elapsedSeconds": 96.51645636558533
+    },
+    {
+      "facilityId": "facility:kanto-north-c296841d2a4b31ceb758",
+      "start": 1793892907.0155463,
+      "activity": "source-and-footprint-research",
+      "end": 1793893002.698982,
+      "elapsedSeconds": 95.68343567848206
+    },
+    {
+      "facilityId": "facility:kanto-north-cb0d94bb8b91f48a986f",
+      "start": 1793893002.6989827,
+      "activity": "source-and-footprint-research",
+      "end": 1793893041.4215956,
+      "elapsedSeconds": 38.7226128578186
+    },
+    {
+      "facilityId": "facility:kanto-north-e9b95c73682cd106b4e8",
+      "start": 1793893041.4215965,
+      "activity": "source-and-footprint-research",
+      "end": 1793893120.166705,
+      "elapsedSeconds": 78.74510836601257
+    },
+    {
+      "facilityId": "facility:kanto-north-shiraoka-temporary-shoko",
+      "start": 1793893120.1667056,
+      "activity": "source-and-footprint-research",
+      "end": 1793893251.337093,
+      "elapsedSeconds": 131.17038750648499
+    },
+    {
+      "facilityId": "facility:kanto-north-9c30c84d390ac7961fee",
+      "start": 1793893251.337094,
+      "activity": "additional-original-building-comparison",
+      "end": 1793893313.648214,
+      "elapsedSeconds": 62.31112003326416
+    },
+    {
+      "facilityId": "facility:kanto-north-2bef1ef8fe90f960751c",
+      "start": 1793893313.648215,
+      "activity": "additional-official-water-plan-reading",
+      "end": 1793893932.127844,
+      "elapsedSeconds": 618.4796290397644
+    }
+  ]
+}

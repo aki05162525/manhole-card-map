@@ -1,0 +1,155 @@
+{
+  "centerUsedForAcquisitionOnly": {
+    "z": 16,
+    "x": 58181,
+    "y": 25705
+  },
+  "tiles": [
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25704
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25704
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25704
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25705
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25705
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25705
+    },
+    {
+      "z": 16,
+      "x": 58180,
+      "y": 25706
+    },
+    {
+      "z": 16,
+      "x": 58181,
+      "y": 25706
+    },
+    {
+      "z": 16,
+      "x": 58182,
+      "y": 25706
+    }
+  ],
+  "elapsedSeconds": 1.8114256858825684,
+  "startedEpoch": 1793893087.629558,
+  "endedEpoch": 1793893089.4409852,
+  "featureCount": 8521,
+  "rawTiles": [
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58180-25704.pbf.gz",
+      "sha256": "ca1339b02136c6aa1887882f416ba91c53a1eea5ed4e253ec799db4cd849d31c",
+      "bytes": 11867,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25704
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58181-25704.pbf.gz",
+      "sha256": "8c056cda97ac3af0c9571c8e941b663b10fcc806e64474fdee4977c22259070a",
+      "bytes": 13024,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25704
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58182-25704.pbf.gz",
+      "sha256": "37fd764a1150a7018f059a66eb37bedfd8c437ed304c519395f4865245f3c7eb",
+      "bytes": 8778,
+      "tile": {
+        "z": 16,
+        "x": 58182,
+        "y": 25704
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58180-25705.pbf.gz",
+      "sha256": "b34932dd6471a3d1e0c49765c7bfa8219205e1a2222391b8ca1a5651efb5b914",
+      "bytes": 22045,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25705
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58181-25705.pbf.gz",
+      "sha256": "ce0c7cd1163e3f2bab94aa9a400771d4978b581bb9633b16c7da799d5842b6c4",
+      "bytes": 18374,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25705
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58182-25705.pbf.gz",
+      "sha256": "dd5ca0214ca2547327e6e76b38a74951ebd26ddbe87eed2447de5c19e513dd4c",
+      "bytes": 13834,
+      "tile": {
+        "z": 16,
+        "x": 58182,
+        "y": 25705
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58180-25706.pbf.gz",
+      "sha256": "7314cea8690821a09f58b9289648362fe13beb9b97f59c6f596b78a8eee31b34",
+      "bytes": 27666,
+      "tile": {
+        "z": 16,
+        "x": 58180,
+        "y": 25706
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58181-25706.pbf.gz",
+      "sha256": "ac05a3d5e4ad196e66c3f3dc48c9e37bb4c61397c56c0c80594987334d5243fc",
+      "bytes": 24036,
+      "tile": {
+        "z": 16,
+        "x": 58181,
+        "y": 25706
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-16-58182-25706.pbf.gz",
+      "sha256": "3bd2f98994e5dd29d73d1a092564cc6d2f69b8cbc3440a490722ca7acf901cc4",
+      "bytes": 22533,
+      "tile": {
+        "z": 16,
+        "x": 58182,
+        "y": 25706
+      }
+    }
+  ],
+  "fullNineTileRender": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-full.png",
+  "labelledLocalRender": "data/evidence/kanto-prefecture/saitama/groups/civic/kazo-cityhall-local.png",
+  "orientation": "north up; decode y_coord_down=True",
+  "renderScope": "full 3x3 tile mosaic inspected; local crop supplementary, polygon holes may not be painted in local crop; raw geometry authoritative",
+  "adoptionApproved": false
+}

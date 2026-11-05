@@ -1,0 +1,79 @@
+[38;2;56;56;56m╭──────────────────────────────────────╮[m
+[38;2;56;56;56m│[m lefthook  v2.2.2   hook:  [1mpre-commit[m [38;2;56;56;56m│[m
+[38;2;56;56;56m╰──────────────────────────────────────╯[m
+┃  frontend ❯ 
+
+┃  go-test ❯ 
++ go test -count=1 ./...
+?   	github.com/aki05162525/manhole-card-map/cmd/addresses	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/builddata	86.418s
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchimages	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/fetchlist	[no test files]
+?   	github.com/aki05162525/manhole-card-map/cmd/inspect	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/cmd/listdiff	0.003s
+ok  	github.com/aki05162525/manhole-card-map/cmd/municheck	0.006s
+?   	github.com/aki05162525/manhole-card-map/cmd/ocrcheck	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-west-south	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue5/review-yokohama-priority	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-chugoku	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-hokkaido	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kinki-west	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-koshin	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-kyushu-okinawa	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-south-kanto	[no test files]
+?   	github.com/aki05162525/manhole-card-map/data/evidence/issue7/review-tohoku	[no test files]
+ok  	github.com/aki05162525/manhole-card-map/internal/cardimg	0.004s
+ok  	github.com/aki05162525/manhole-card-map/internal/gkp	0.003s
+ok  	github.com/aki05162525/manhole-card-map/internal/municipality	0.003s
+
+[38;2;56;56;56m  ────────────────────────────────────[m
+summary: (done in 87.43 seconds)
+✓ frontend (0.03 seconds)
+✓ go-test (87.43 seconds)
+[t3/saitama-location-research 467d14b4] research(saitama): draft Kounosu candidates and 39-facility inventory
+ 44 files changed, 14269 insertions(+)
+ create mode 100644 data/evidence/kanto-prefecture/saitama/acquire-fukaya.py
+ create mode 100644 data/evidence/kanto-prefecture/saitama/acquire-kounosu.py
+ create mode 100644 data/evidence/kanto-prefecture/saitama/comparison.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58115-25704.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58115-25705.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58115-25706.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58116-25704.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58116-25705.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58116-25706.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58117-25704.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58117-25705.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-16-58117-25706.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/fukaya-nine-tiles.png
+ create mode 100644 data/evidence/kanto-prefecture/saitama/green.log
+ create mode 100644 data/evidence/kanto-prefecture/saitama/history.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25719.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25720.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58166-25721.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25719.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25720.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58167-25721.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25719.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25720.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-16-58168-25721.pbf.gz
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-comparison.png
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-geometry.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-vector-retrievals.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/kounosu-vector-window.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/red.log
+ create mode 100644 data/evidence/kanto-prefecture/saitama/render-kounosu.py
+ create mode 100644 data/evidence/kanto-prefecture/saitama/retrievals.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/scope-audit.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/source-conditions.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/timing.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/vector-retrievals.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/vector-window.json
+ create mode 100644 data/evidence/kanto-prefecture/saitama/verification.json
+ create mode 100644 data/national/kanto-prefecture/saitama/inventory.json
+ create mode 100644 data/national/kanto-prefecture/saitama/location-lifecycle.json
+ create mode 100644 data/national/kanto-prefecture/saitama/locations.json
+ create mode 100644 data/national/kanto-prefecture/saitama/outcomes.json
+ create mode 100644 data/national/kanto-prefecture/saitama/selection-proposal.json
+ create mode 100644 docs/verification/kanto-saitama.md
+ create mode 100644 tools/national/test_kanto_saitama.py

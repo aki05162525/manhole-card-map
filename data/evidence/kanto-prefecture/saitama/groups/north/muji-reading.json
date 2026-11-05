@@ -1,0 +1,20 @@
+{
+  "facilityId": "facility:kanto-north-d35c60a8c05e97e3a3a9",
+  "baselineAsOf": "2026-11-05",
+  "performedMethods": [
+    "Current town distribution13667 read; historic26168 event link examined",
+    "Official MUJI store page and square-facility plan read",
+    "Ryohin2021-08-13 PDF both2 pages text read; Tobustore2021-08-27 PDF8 pages text read, p1/p8 visually examined",
+    "9GSItiles decoded; full and local vector drawings compared"
+  ],
+  "observation": "2026-10-01市町案内が70周年カード配布先を無印と明示、巨峰柄の新しい村/上下水道とは別。公式みんなの広場図は方位なし、駅方向矢印は北矢印でない。東武ストアリリース8頁周辺図の無印南東/ストア北西、北東の線路・駅、南東ロータリー、西側道路を数値4716に対応。約5802m2の外形は両店一棟でMUJI売場1989.54m2と一致要求しない。単独売場面積と建物屋根面積を区別。9tileの境界に触れない。",
+  "failures": "東武鉄道news_20210813.pdfはHTTP500、検索結果だけで原本読了にしない。町イベント要項4頁全文テキストに棟図なし。",
+  "candidateCoordinate": {
+    "lat": 36.0249327,
+    "lng": 139.7254059
+  },
+  "status": "candidate-building-point",
+  "adoptionApproved": false,
+  "manifestModified": false,
+  "remainingWork": "独立同定/CRS確認と県親レビュー。"
+}

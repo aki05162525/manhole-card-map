@@ -1,0 +1,286 @@
+{
+  "schema": 1,
+  "asOf": "2026-11-05",
+  "authority": "AI independent source reading and inference, not user report, not Codex independent review",
+  "kounosu": {
+    "facilityIds": [
+      "facility:kanto-north-a51582814cdc995742e5",
+      "facility:kanto-north-9f36b9d69d27a034f19c"
+    ],
+    "distributionSources": [
+      {
+        "url": "https://www.city.kounosu.saitama.jp/page/1056.html",
+        "cardId": "11-217-A001",
+        "condition": "水曜日のみ市役所、本庁舎1階24番窓口",
+        "version": "2025-03-12 updated page"
+      },
+      {
+        "url": "https://www.city.kounosu.saitama.jp/page/15979.html",
+        "cardId": "11-217-B001",
+        "condition": "火曜日のみ市役所、本庁舎1階24番窓口",
+        "version": "2025-06-01 updated page"
+      }
+    ],
+    "stock": "Both pages display stock available; this is page text at checked date, no real-time stock guarantee; no status changes proposed.",
+    "plan": {
+      "url": "https://www.city.kounosu.saitama.jp/uploaded/attachment/5427.pdf",
+      "sha256": "56e46037a247c65e71bcab7190a6ac1e01917d9b5897be12a286303ad2850857",
+      "edition": "2016-11 広報こうのす No.780",
+      "physicalPagesRead": [
+        1,
+        2
+      ],
+      "printedPages": [
+        12,
+        13
+      ],
+      "totalPages": 2,
+      "unreadPages": [],
+      "orientation": "敷地図は上に免許センター方面、下に鴻巣駅方面。北矢印ではない。西道路・北側道路と本庁舎/新館の相対配置を使い、紙面の上をそのまま真北とみなさない。",
+      "ageLimit": "2017業務再開に向けた図で、当時の下水道課は2階。現2025配布案内の1階を優先。旧図の室内部署は現配布階の証明に使わない。"
+    },
+    "buildingMatchInference": "敷地図の本庁舎は新館南側、西駐車場東側、南側道路の内側。数値図の2523/2524接続形はその位置と西側張出しに対応し、北の横長2562は新館と対応。点は本庁舎西側2523内部に限定。室内24番そのものは測量しない。",
+    "surroundings": "北道路のさらに北に水路と公共施設群、西側の南北道路、敷地西駐車場へ回り込む道路、東側の縦路を比較。古図の会議室棟の現対応は確認不足で同定アンカーに採用しない。",
+    "geometryRefs": [
+      "kounosu-geometry.json",
+      "kounosu-vector-window.json"
+    ],
+    "comparisonFeatures": [
+      {
+        "combinedIndex": 2523,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4962,
+                4790
+              ],
+              [
+                5197,
+                4898
+              ],
+              [
+                5095,
+                5122
+              ],
+              [
+                4860,
+                5014
+              ],
+              [
+                4962,
+                4790
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 4
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 53,
+        "sourceTile": {
+          "z": 16,
+          "x": 58167,
+          "y": 25720
+        },
+        "sourceFeatureIndex": 53,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      {
+        "combinedIndex": 2524,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5094,
+                4751
+              ],
+              [
+                5322,
+                4856
+              ],
+              [
+                5141,
+                5253
+              ],
+              [
+                4916,
+                5150
+              ],
+              [
+                4957,
+                5059
+              ],
+              [
+                5095,
+                5122
+              ],
+              [
+                5197,
+                4898
+              ],
+              [
+                5056,
+                4833
+              ],
+              [
+                5094,
+                4751
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 54,
+        "sourceTile": {
+          "z": 16,
+          "x": 58167,
+          "y": 25720
+        },
+        "sourceFeatureIndex": 54,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      {
+        "combinedIndex": 2562,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5010,
+                4295
+              ],
+              [
+                5493,
+                4514
+              ],
+              [
+                5402,
+                4716
+              ],
+              [
+                4919,
+                4497
+              ],
+              [
+                5010,
+                4295
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 92,
+        "sourceTile": {
+          "z": 16,
+          "x": 58167,
+          "y": 25720
+        },
+        "sourceFeatureIndex": 92,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      {
+        "combinedIndex": 2546,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4772,
+                5260
+              ],
+              [
+                5068,
+                5394
+              ],
+              [
+                5032,
+                5474
+              ],
+              [
+                4736,
+                5340
+              ],
+              [
+                4772,
+                5260
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 76,
+        "sourceTile": {
+          "z": 16,
+          "x": 58167,
+          "y": 25720
+        },
+        "sourceFeatureIndex": 76,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      }
+    ],
+    "boundary": "候補2523はsourceTileBoundaryTouched=false、outerBoundaryTouched=false。周辺9タイル全featureを描画後、3000×3000格子の局所図を追加。局所図は追加表示で、全範囲取得を省略していない。",
+    "area": "2523の約927平方mは外形西側部分の局所メルカトル縮尺補正値。庁舎全体の建築面積/延床面積とは比較していない。",
+    "reviewRequired": [
+      "旧敷地図と現外形の接続部分を含む本庁舎同定",
+      "製品へのJGD2011一般仕様適用根拠",
+      "新しい案内図17417.pdfは取得失敗。現況部署の図面確認が不十分。"
+    ]
+  },
+  "fukaya": {
+    "facilityId": "facility:kanto-north-3f70fe18aa4d98644d5b",
+    "distributionURL": "https://www.city.fukaya.saitama.jp/soshiki/kankyosuido/gesuido/tanto/00218/14193.html",
+    "distributionReading": "配布再開記事の管理棟事務所を対象。市のGoogle llは探索窓にのみ使用し採用点にしない。",
+    "planURL": "https://fukaya-terracepark.jp/img/area_map.png",
+    "planSHA256": "83dbe26b21b8b5c80834c7b8ff3163ad374784824bc17492f8d84a05c3eeedd4",
+    "planVersion": "画像に版・公開日表示なし。サイト現掲載画像として取得。",
+    "orientation": "園内図左上のN/E/S/Wで北上を確認。北にヤサイな仲間たちファーム、南側のふかや花園駅への動線、東道路、調整池東・円形広場南西の管理棟を区別。",
+    "otherSource": {
+      "url": "https://fukaya-terracepark.jp/pdf/FukayaTerracePark202003.pdf",
+      "sha256": "7bb5af1aab8c58d4ab0fa6b9e155e88e585f0ec5a8799c81140753b61eaaefc4",
+      "physicalPagesRead": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalPages": 4,
+      "edition": "本文2022-03-24。URLの202003を資料日とみなさない。",
+      "area": "2頁の公園約15000m2・調整池約4200m2。管理棟面積ではない。",
+      "coverage": "1頁鳥瞰、2頁施設説明、3頁管理棟イメージ/全体配置、4頁開発計画文を確認。"
+    },
+    "numericalObservation": "周辺9タイル3336featureを全描画。探索地域に旧農地状の道路割・外形が残り、公式図の管理棟/北ファーム/調整池を同時に対応できない。近隣矩形を面積だけで選ばない。",
+    "status": "compared-no-matching-footprint",
+    "limit": "数値外形の全国的未収録を証明したものではない。取得9タイルとこの版で対応外形を確認できないという限定結果。",
+    "mechanicalChecks": "No candidate point; containment and area of selected building not applicable.",
+    "nextAction": "整備後の数値外形/棟別公共地点を取得して再照合。人への園内窓口再質問は不要。"
+  }
+}

@@ -1,0 +1,23 @@
+test_full_proposal_has_only_bound_location_changes (test_kanto_saitama.SaitamaFullInvestigationTests.test_full_proposal_has_only_bound_location_changes) ... ERROR
+
+======================================================================
+ERROR: test_full_proposal_has_only_bound_location_changes (test_kanto_saitama.SaitamaFullInvestigationTests.test_full_proposal_has_only_bound_location_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/tools/national/test_kanto_saitama.py", line 67, in test_full_proposal_has_only_bound_location_changes
+    proposal = read_json(ROOT / (N + 'full-selection-proposal.json'))
+  File "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/tools/national/assemble.py", line 27, in read_json
+    return json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_object,
+                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/pathlib/__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/akihiro/.local/share/mise/installs/python/3.14.8/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/national/kanto-prefecture/saitama/full-selection-proposal.json'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

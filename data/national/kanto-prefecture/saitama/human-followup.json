@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "baselineAsOf": "2026-11-05",
+  "responses": [
+    {
+      "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+      "name": "公益財団法人埼玉県下水道公社 荒川左岸北部支社",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 98,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+      "name": "公益財団法人埼玉県下水道公社 古利根川支社",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 231,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+      "name": "公益財団法人埼玉県下水道公社 中川支社",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 197,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+      "name": "埼玉県市野川水循環センター",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 284,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+      "name": "埼玉県荒川上流水循環センター",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 258,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+      "name": "埼玉県小山川水循環センター",
+      "officialURL": "https://www.saitama-swg.or.jp/manholecard.html",
+      "planURL": "https://www.pref.saitama.lg.jp/documents/280146/all.pdf",
+      "physicalPage": 308,
+      "question": "カードの受取窓口は、公式配置図に管理棟（中川は管理本館）と表示された棟の中ですか。別棟ならその名称は何ですか。",
+      "resolves": "配布表のセンター名と配置図管理棟との直接binding",
+      "priorAnswerAudit": {
+        "queueRef": "data/national/issue57/human-confirmation-queue.json",
+        "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+        "matchedPreviousAnswers": [],
+        "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+        "proseQueueMatch": "対象10施設の管理棟回答なし",
+        "historyHumanConfirmationRef": null
+      },
+      "status": "answered-user-report",
+      "note": "入口・室内位置の測量は不要。公社accessの支社住所は確認、元荒川案内PDF/古利根川地図はセンター全体のみ。中川accessは経路本文とGoogle viewportのみで管理棟直接ラベルなし。",
+      "answer": "管理棟（中川は管理本館）内の事務室・受付で受取。",
+      "answerDate": "2026-11-06",
+      "authority": "user-report; not independently explicit original source and not coordinate approval"
+    },
+    {
+      "facilityId": "facility:kanto-north-3c2f7159dc235081f4f2",
+      "answerDate": "2026-11-06",
+      "answer": "管理本館。下水道課工務担当の事務・受付が所在、正門/来庁者駐車場側。",
+      "authority": "user-report",
+      "coordinateApproved": false
+    },
+    {
+      "facilityId": "facility:kanto-north-e2961b63ac4d4c596eb9",
+      "answerDate": "2026-11-06",
+      "answer": "正門の入園券売場（管理事務所窓口）。カードのみなら有料エリア入場不要との利用者説明。",
+      "authority": "user-report; free-entry statement not independently verified",
+      "coordinateApproved": false
+    }
+  ]
+}

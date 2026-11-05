@@ -1,0 +1,713 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 3087,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4921,
+                4816
+              ],
+              [
+                5046,
+                4907
+              ],
+              [
+                4976,
+                5004
+              ],
+              [
+                5054,
+                5061
+              ],
+              [
+                4702,
+                5547
+              ],
+              [
+                4610,
+                5480
+              ],
+              [
+                4597,
+                5498
+              ],
+              [
+                4502,
+                5428
+              ],
+              [
+                4515,
+                5411
+              ],
+              [
+                4421,
+                5342
+              ],
+              [
+                4772,
+                4856
+              ],
+              [
+                4850,
+                4913
+              ],
+              [
+                4921,
+                4816
+              ]
+            ],
+            [
+              [
+                4766,
+                5040
+              ],
+              [
+                4695,
+                5138
+              ],
+              [
+                4715,
+                5152
+              ],
+              [
+                4710,
+                5160
+              ],
+              [
+                4796,
+                5223
+              ],
+              [
+                4787,
+                5235
+              ],
+              [
+                4797,
+                5243
+              ],
+              [
+                4882,
+                5125
+              ],
+              [
+                4766,
+                5040
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 32,
+        "sourceTile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 32,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        4641.347222222223,
+        5191.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8567011,
+          "lng": 139.5490712
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4641.338745713234,
+          5191.4664575606585
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "areaApproxSquareMetres": 3095.0616579539746,
+      "areaMethod": "local Web Mercator scale corrected by cos(latitude)^2; not surveyed floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+      "snapshotSHA256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515",
+      "originalPropertiesVerified": true
+    },
+    {
+      "combinedIndex": 3088,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4719,
+                5524
+              ],
+              [
+                4819,
+                5597
+              ],
+              [
+                4804,
+                5618
+              ],
+              [
+                4704,
+                5545
+              ],
+              [
+                4719,
+                5524
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3111,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 33,
+        "sourceTile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 33,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        4761.5,
+        5571.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8562886,
+          "lng": 139.5492323
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4761.463612288237,
+          5570.969680160284
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "areaApproxSquareMetres": 46.777016011041496,
+      "areaMethod": "local Web Mercator scale corrected by cos(latitude)^2; not surveyed floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+      "snapshotSHA256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515",
+      "originalPropertiesVerified": true
+    },
+    {
+      "combinedIndex": 3089,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4831,
+                5579
+              ],
+              [
+                4968,
+                5679
+              ],
+              [
+                4931,
+                5730
+              ],
+              [
+                4940,
+                5737
+              ],
+              [
+                4915,
+                5772
+              ],
+              [
+                4906,
+                5765
+              ],
+              [
+                4868,
+                5817
+              ],
+              [
+                4732,
+                5717
+              ],
+              [
+                4769,
+                5665
+              ],
+              [
+                4760,
+                5658
+              ],
+              [
+                4785,
+                5624
+              ],
+              [
+                4794,
+                5631
+              ],
+              [
+                4831,
+                5579
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 34,
+        "sourceTile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 34,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        4849.8674585218705,
+        5698.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8561505,
+          "lng": 139.5493509
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4849.89818200469,
+          5698.022317841649
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "areaApproxSquareMetres": 435.85496657219335,
+      "areaMethod": "local Web Mercator scale corrected by cos(latitude)^2; not surveyed floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+      "snapshotSHA256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515",
+      "originalPropertiesVerified": true
+    },
+    {
+      "combinedIndex": 3097,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5858,
+                4101
+              ],
+              [
+                5922,
+                4146
+              ],
+              [
+                5937,
+                4124
+              ],
+              [
+                6150,
+                4275
+              ],
+              [
+                6132,
+                4300
+              ],
+              [
+                6167,
+                4324
+              ],
+              [
+                6145,
+                4354
+              ],
+              [
+                6352,
+                4501
+              ],
+              [
+                6335,
+                4526
+              ],
+              [
+                6372,
+                4552
+              ],
+              [
+                6276,
+                4690
+              ],
+              [
+                6278,
+                4699
+              ],
+              [
+                6272,
+                4708
+              ],
+              [
+                6261,
+                4710
+              ],
+              [
+                6234,
+                4691
+              ],
+              [
+                6220,
+                4713
+              ],
+              [
+                6195,
+                4741
+              ],
+              [
+                6166,
+                4763
+              ],
+              [
+                6144,
+                4774
+              ],
+              [
+                6108,
+                4784
+              ],
+              [
+                6084,
+                4787
+              ],
+              [
+                6035,
+                4782
+              ],
+              [
+                6000,
+                4769
+              ],
+              [
+                5960,
+                4742
+              ],
+              [
+                5942,
+                4724
+              ],
+              [
+                5928,
+                4704
+              ],
+              [
+                5916,
+                4682
+              ],
+              [
+                5908,
+                4659
+              ],
+              [
+                5901,
+                4622
+              ],
+              [
+                5905,
+                4573
+              ],
+              [
+                5921,
+                4527
+              ],
+              [
+                5949,
+                4488
+              ],
+              [
+                5782,
+                4370
+              ],
+              [
+                5769,
+                4376
+              ],
+              [
+                5773,
+                4384
+              ],
+              [
+                5571,
+                4483
+              ],
+              [
+                5568,
+                4476
+              ],
+              [
+                5516,
+                4502
+              ],
+              [
+                5589,
+                4651
+              ],
+              [
+                5606,
+                4653
+              ],
+              [
+                5613,
+                4635
+              ],
+              [
+                5631,
+                4622
+              ],
+              [
+                5652,
+                4619
+              ],
+              [
+                5672,
+                4627
+              ],
+              [
+                5685,
+                4644
+              ],
+              [
+                5687,
+                4666
+              ],
+              [
+                5679,
+                4686
+              ],
+              [
+                5664,
+                4697
+              ],
+              [
+                5672,
+                4711
+              ],
+              [
+                5643,
+                4726
+              ],
+              [
+                5622,
+                4718
+              ],
+              [
+                5678,
+                4831
+              ],
+              [
+                5633,
+                4853
+              ],
+              [
+                5613,
+                4812
+              ],
+              [
+                5583,
+                4827
+              ],
+              [
+                5576,
+                4814
+              ],
+              [
+                5566,
+                4819
+              ],
+              [
+                5531,
+                4747
+              ],
+              [
+                5545,
+                4740
+              ],
+              [
+                5521,
+                4691
+              ],
+              [
+                5486,
+                4709
+              ],
+              [
+                5413,
+                4561
+              ],
+              [
+                5449,
+                4543
+              ],
+              [
+                5425,
+                4494
+              ],
+              [
+                5386,
+                4513
+              ],
+              [
+                5333,
+                4406
+              ],
+              [
+                5291,
+                4320
+              ],
+              [
+                5664,
+                4135
+              ],
+              [
+                5689,
+                4186
+              ],
+              [
+                5718,
+                4172
+              ],
+              [
+                5778,
+                4294
+              ],
+              [
+                5865,
+                4251
+              ],
+              [
+                5858,
+                4101
+              ]
+            ],
+            [
+              [
+                5920,
+                4277
+              ],
+              [
+                5897,
+                4310
+              ],
+              [
+                5939,
+                4341
+              ],
+              [
+                5963,
+                4307
+              ],
+              [
+                5920,
+                4277
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 42,
+        "sourceTile": {
+          "z": 16,
+          "x": 58172,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 42,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58171,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        6129.347414389485,
+        4479.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.857475,
+          "lng": 139.5510668
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6129.365956842899,
+          4479.467083960772
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "areaApproxSquareMetres": 5408.871633614237,
+      "areaMethod": "local Web Mercator scale corrected by cos(latitude)^2; not surveyed floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/west/fujimi-16-58172-25767.pbf.gz",
+      "snapshotSHA256": "bb656facb2bccaca6fa5b564d67ceb8af796f7080d09a92e11ef01704a067515",
+      "originalPropertiesVerified": true
+    }
+  ],
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/source-conditions.json",
+  "crsApproved": false
+}

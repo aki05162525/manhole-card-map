@@ -1,0 +1,433 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 4139,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7186,
+                4485
+              ],
+              [
+                7222,
+                4620
+              ],
+              [
+                7452,
+                4559
+              ],
+              [
+                7506,
+                4653
+              ],
+              [
+                7494,
+                4665
+              ],
+              [
+                7453,
+                4597
+              ],
+              [
+                7275,
+                4648
+              ],
+              [
+                7281,
+                4730
+              ],
+              [
+                7233,
+                4739
+              ],
+              [
+                7242,
+                4969
+              ],
+              [
+                7136,
+                4996
+              ],
+              [
+                7020,
+                4804
+              ],
+              [
+                7005,
+                4569
+              ],
+              [
+                7133,
+                4529
+              ],
+              [
+                7125,
+                4502
+              ],
+              [
+                7186,
+                4485
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 332,
+        "sourceTile": {
+          "z": 16,
+          "x": 58218,
+          "y": 25770
+        },
+        "sourceFeatureIndex": 332,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58217,
+        "y": 25769
+      },
+      "representativeTileXY": [
+        7126.098635522664,
+        4771.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8438002,
+          "lng": 139.8050891
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7126.121330946684,
+          4771.46059897542
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": true,
+      "areaApproxSquareMetres": 1499.8550615018326,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+      "snapshotSHA256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4141,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7453,
+                4597
+              ],
+              [
+                7583,
+                4813
+              ],
+              [
+                7572,
+                4889
+              ],
+              [
+                7597,
+                4887
+              ],
+              [
+                7597,
+                5012
+              ],
+              [
+                7375,
+                5079
+              ],
+              [
+                7305,
+                4960
+              ],
+              [
+                7340,
+                4951
+              ],
+              [
+                7293,
+                4888
+              ],
+              [
+                7275,
+                4648
+              ],
+              [
+                7453,
+                4597
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 334,
+        "sourceTile": {
+          "z": 16,
+          "x": 58218,
+          "y": 25770
+        },
+        "sourceFeatureIndex": 334,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58217,
+        "y": 25769
+      },
+      "representativeTileXY": [
+        7433.897368421052,
+        4850.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8437148,
+          "lng": 139.8055019
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7433.927320450544,
+          4850.016646683216
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 1636.9093585244127,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+      "snapshotSHA256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4131,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7074,
+                5046
+              ],
+              [
+                7084,
+                5079
+              ],
+              [
+                7103,
+                5074
+              ],
+              [
+                7145,
+                5227
+              ],
+              [
+                7062,
+                5250
+              ],
+              [
+                7053,
+                5217
+              ],
+              [
+                7035,
+                5222
+              ],
+              [
+                6992,
+                5069
+              ],
+              [
+                7074,
+                5046
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 324,
+        "sourceTile": {
+          "z": 16,
+          "x": 58218,
+          "y": 25770
+        },
+        "sourceFeatureIndex": 324,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58217,
+        "y": 25769
+      },
+      "representativeTileXY": [
+        7068.758169934641,
+        5148.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8433909,
+          "lng": 139.8050122
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7068.780534863472,
+          5147.958545982838
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 278.11722825476164,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+      "snapshotSHA256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4138,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7717,
+                4016
+              ],
+              [
+                7741,
+                4096
+              ],
+              [
+                7792,
+                4265
+              ],
+              [
+                7550,
+                4337
+              ],
+              [
+                7535,
+                4285
+              ],
+              [
+                7452,
+                4309
+              ],
+              [
+                7388,
+                4096
+              ],
+              [
+                7381,
+                4070
+              ],
+              [
+                7459,
+                4047
+              ],
+              [
+                7449,
+                4016
+              ],
+              [
+                7717,
+                4016
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 331,
+        "sourceTile": {
+          "z": 16,
+          "x": 58218,
+          "y": 25770
+        },
+        "sourceFeatureIndex": 331,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58217,
+        "y": 25769
+      },
+      "representativeTileXY": [
+        7589.944835680752,
+        4180.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8444426,
+          "lng": 139.8057111
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7589.918146550655,
+          4180.5397958904505
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 1414.9113353263224,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/parisse-16-58218-25770.pbf.gz",
+      "snapshotSHA256": "54f0f41db489e27489e5d1fd75ff300a336c3ccca7b6e02ef2cb7232e6d789aa",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

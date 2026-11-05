@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "updates": [
+    {
+      "facilityId": "facility:kanto-north-4244d9dc97ba1a68e1de",
+      "coordinate": {
+        "lat": 35.991271,
+        "lng": 139.4844059
+      },
+      "scope": "building",
+      "evidence": {
+        "sourceUrl": "https://cyberjapandata.gsi.go.jp/xyz/optimal_bvmap-v1/optimal_bvmap-v1.pmtiles",
+        "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25737.pbf.gz",
+        "snapshotSHA256": "5aa222b287c62a76e27c3ac090fe52ebecd448e73d136c89823b1be2e388f7eb",
+        "sourceLocator": "z16/58160/25737 BldA features[19], vt_code=3101, vt_lvorder=0; north continuation z16/58160/25736 features[39]. geometry-comparisons.json#/samachika. Unapproved candidate.",
+        "checkedAt": "2026-11-05",
+        "actorType": "ai",
+        "verificationMethod": "町公式配布案内の下八ツ林923コミュニティセンター2階を、2024年10月21日作成の公式会場図全1頁に示す町民会館と体育館の間の棟と照合。GSI数値外形の同じ中央棟を北隣図書館・東側公園/道路・南側駐車場と比較。南タイル部分の内点をXYZ格子から逆投影し小数7桁丸め前後内包確認。入口や室内点ではない。国土地理院最適化ベクトルタイルを加工。採用・製品CRS/条件の独立レビュー未承認。"
+      }
+    }
+  ]
+}

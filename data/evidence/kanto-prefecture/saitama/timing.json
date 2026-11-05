@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "measurements": [
+    {
+      "facilityId": "facility:kanto-north-a51582814cdc995742e5",
+      "startEpoch": 1793890257.6665142,
+      "scope": "Additional official floor-plan and numerical footprint comparison only; prior shared source search not timed",
+      "endedEpoch": 1793890618.445107,
+      "elapsedSeconds": 360.7785928249359,
+      "limitation": "Wall-clock interval includes GSI common terms investigation, other-ID source read and candidate/test preparation; cannot claim per-facility exclusive time. Not retrospectively split between two IDs."
+    }
+  ],
+  "mechanicalPerIdRef": "scope-audit.json#/sourceAudit",
+  "retrievalDurationsRef": "retrievals.json",
+  "vectorDurationsRefs": [
+    "vector-window.json",
+    "kounosu-vector-window.json"
+  ],
+  "unmeasured": "Initial source searches/manual reads and Fukaya manual comparison were not individually timed. No back-allocation; per-ID manual-time requirement remains incomplete."
+}

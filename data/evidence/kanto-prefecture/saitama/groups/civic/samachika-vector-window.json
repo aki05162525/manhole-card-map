@@ -1,0 +1,155 @@
+{
+  "centerUsedForAcquisitionOnly": {
+    "z": 16,
+    "x": 58160,
+    "y": 25736
+  },
+  "tiles": [
+    {
+      "z": 16,
+      "x": 58159,
+      "y": 25735
+    },
+    {
+      "z": 16,
+      "x": 58160,
+      "y": 25735
+    },
+    {
+      "z": 16,
+      "x": 58161,
+      "y": 25735
+    },
+    {
+      "z": 16,
+      "x": 58159,
+      "y": 25736
+    },
+    {
+      "z": 16,
+      "x": 58160,
+      "y": 25736
+    },
+    {
+      "z": 16,
+      "x": 58161,
+      "y": 25736
+    },
+    {
+      "z": 16,
+      "x": 58159,
+      "y": 25737
+    },
+    {
+      "z": 16,
+      "x": 58160,
+      "y": 25737
+    },
+    {
+      "z": 16,
+      "x": 58161,
+      "y": 25737
+    }
+  ],
+  "elapsedSeconds": 0.9841761589050293,
+  "startedEpoch": 1793892763.316719,
+  "endedEpoch": 1793892764.3008962,
+  "featureCount": 2732,
+  "rawTiles": [
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25735.pbf.gz",
+      "sha256": "817b6e5871bf07d0eaf8c8ba9d2f8e2a69fa7fe2937fd7abf4d06857d6cbbb8b",
+      "bytes": 9391,
+      "tile": {
+        "z": 16,
+        "x": 58159,
+        "y": 25735
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25735.pbf.gz",
+      "sha256": "5809aef7ebe48dae92e572820b9639eb33b0fde166814c8e93346b8ab1c82f85",
+      "bytes": 8469,
+      "tile": {
+        "z": 16,
+        "x": 58160,
+        "y": 25735
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25735.pbf.gz",
+      "sha256": "b627849aafef488e23b199baf2e3acb7dceba4dcc67f0c001b40fd2c9786c586",
+      "bytes": 10691,
+      "tile": {
+        "z": 16,
+        "x": 58161,
+        "y": 25735
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25736.pbf.gz",
+      "sha256": "6ac2d37ed7873f210c980c9a37f659c7a21d87c07ebf52b4b32be6d8747bce55",
+      "bytes": 3052,
+      "tile": {
+        "z": 16,
+        "x": 58159,
+        "y": 25736
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25736.pbf.gz",
+      "sha256": "90a015a683bcf8844223ed6bba9308e14955f1c1dc39942dd57b46fbf7cbaced",
+      "bytes": 7549,
+      "tile": {
+        "z": 16,
+        "x": 58160,
+        "y": 25736
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25736.pbf.gz",
+      "sha256": "aa34530566fbad94cb14f8b49e21f53b4b19dd9fa7c370fc9a3d19107b9242ae",
+      "bytes": 6305,
+      "tile": {
+        "z": 16,
+        "x": 58161,
+        "y": 25736
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58159-25737.pbf.gz",
+      "sha256": "e50def12564decdc4bafa7f2a7cf3fd362036d911df5e590915d9aba1997ff86",
+      "bytes": 3249,
+      "tile": {
+        "z": 16,
+        "x": 58159,
+        "y": 25737
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58160-25737.pbf.gz",
+      "sha256": "5aa222b287c62a76e27c3ac090fe52ebecd448e73d136c89823b1be2e388f7eb",
+      "bytes": 5973,
+      "tile": {
+        "z": 16,
+        "x": 58160,
+        "y": 25737
+      }
+    },
+    {
+      "path": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-16-58161-25737.pbf.gz",
+      "sha256": "b849c8358308468e7e620215b4f68cc7273d83bf99f30b5c46f3af2e69f48473",
+      "bytes": 7174,
+      "tile": {
+        "z": 16,
+        "x": 58161,
+        "y": 25737
+      }
+    }
+  ],
+  "fullNineTileRender": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-full.png",
+  "labelledLocalRender": "data/evidence/kanto-prefecture/saitama/groups/civic/samachika-local.png",
+  "orientation": "north up; decode y_coord_down=True",
+  "renderScope": "full 3x3 tile mosaic inspected; local crop supplementary, polygon holes may not be painted in local crop; raw geometry authoritative",
+  "adoptionApproved": false
+}

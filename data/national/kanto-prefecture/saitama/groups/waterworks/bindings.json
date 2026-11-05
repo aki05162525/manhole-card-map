@@ -1,0 +1,500 @@
+{
+  "schema": 1,
+  "inventoryPath": "data/national/kanto-prefecture/saitama/inventory.json",
+  "inventorySHA256": "d9b68b64920cc5602b0fddcb5a3032ffdce632e4a7ff51beba66647d56eaf22b",
+  "rows": [
+    {
+      "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+      "oldPlace": {
+        "id": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+        "legacyIds": [
+          "place:1a5c86a3e21c20b9dcc2"
+        ],
+        "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+        "address": "埼玉県戸田市笹目5-37-14",
+        "phone": "048-421-5861",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-A001 / 公益財団法人埼玉県下水道公社 荒川左岸南部支社 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-A001",
+          "placeId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+          "sourceHash": "bb566a749b6837b86898a9072f0f29436db3eb10a83e6e2925df3e47cd9808f6",
+          "hours": [
+            "平日9:00～12:00、13:00～17:00",
+            "土日祝9:00～12:00、13:00～16:30"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-A001 / 公益財団法人埼玉県下水道公社 荒川左岸南部支社 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "170300a134e39c3b0cd903d669a3aa5648c9780b96f62515bea578d53a830e0b",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/1",
+      "newCoordinate": null,
+      "selectedForIntegration": false,
+      "reason": "図と数値外形の棟対応が未確定"
+    },
+    {
+      "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+      "oldPlace": {
+        "id": "facility:kanto-north-80e64df38987c39b7386",
+        "legacyIds": [
+          "place:80e64df38987c39b7386"
+        ],
+        "name": "荒川水循環センター(守衛室)",
+        "address": "埼玉県戸田市笹目5-37-14",
+        "phone": "048-421-5861",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-010-A001 / 荒川水循環センター(守衛室) / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-010-A001",
+          "placeId": "facility:kanto-north-80e64df38987c39b7386",
+          "sourceHash": "e75e49afbd2cc4abb82b417dcb7f2ca06bdeb32fd87a76b62d724899b9a1307f",
+          "hours": [
+            "9:00～12:00、13:00～16:30（平日・土日祝）"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "https://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/9c2161fbc43a30b825a0.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-010-A001 / 荒川水循環センター(守衛室) / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "c7ccf68ac87eba7b781bc7ad7095bfe5ec5d0cca052d60d94e78a45e790de89c",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/12",
+      "newCoordinate": null,
+      "selectedForIntegration": false,
+      "reason": "図と数値外形の棟対応が未確定"
+    },
+    {
+      "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+      "oldPlace": {
+        "id": "facility:kanto-north-6193af412ca73d91d288",
+        "legacyIds": [
+          "place:6193af412ca73d91d288"
+        ],
+        "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+        "address": "埼玉県和光市新倉6-1-1",
+        "phone": "048-466-2400",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-C001 / 公益財団法人埼玉県下水道公社 荒川右岸支社 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-C001",
+          "placeId": "facility:kanto-north-6193af412ca73d91d288",
+          "sourceHash": "bbdd010ec883eec9ba09ea0b51e917bf777400634d7f2d50be0711a7b324e257",
+          "hours": [
+            "平日のみ9:00～12:00、13:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-C001 / 公益財団法人埼玉県下水道公社 荒川右岸支社 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公社配布表の昼休みを採用。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "2574668dd4180fe670281b06480f9edf57ebc762397cda82853002e0c1b38d16",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/10",
+      "newCoordinate": null,
+      "selectedForIntegration": false,
+      "reason": "図と数値外形の棟対応が未確定"
+    },
+    {
+      "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+      "oldPlace": {
+        "id": "facility:kanto-north-9366bd29aeba766aae7f",
+        "legacyIds": [
+          "place:9366bd29aeba766aae7f"
+        ],
+        "name": "公益財団法人埼玉県下水道公社 荒川左岸北部支社",
+        "address": "埼玉県桶川市大字小針領家939",
+        "phone": "048-728-2011",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-B001 / 公益財団法人埼玉県下水道公社 荒川左岸北部支社 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-B001",
+          "placeId": "facility:kanto-north-9366bd29aeba766aae7f",
+          "sourceHash": "65a2bd4432610da4888ca31f6c7ec695a4ed8c5d169ac8b946d3ac301b77fac2",
+          "hours": [
+            "平日のみ9:00～12:00、13:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-B001 / 公益財団法人埼玉県下水道公社 荒川左岸北部支社 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公社配布表の昼休みを採用。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "7b42490610682a9aa3a50f4918a57a69d7e1273d555c10f49b76387dc76f9606",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/14",
+      "newCoordinate": {
+        "lat": 36.0264533,
+        "lng": 139.5909964
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟の外形対応は候補。配布窓口が当管理棟かの直接表記と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+      "oldPlace": {
+        "id": "facility:kanto-north-e1e48bd4fbf356515d0f",
+        "legacyIds": [
+          "place:e1e48bd4fbf356515d0f"
+        ],
+        "name": "公益財団法人埼玉県下水道公社 古利根川支社",
+        "address": "埼玉県久喜市吉羽772-1",
+        "phone": "0480-22-3819",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-E001 / 公益財団法人埼玉県下水道公社 古利根川支社 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-E001",
+          "placeId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+          "sourceHash": "47dd8fd77a2542a69d7c51478bfc75be91a44bdef8be97f4b6f74d824837e8bd",
+          "hours": [
+            "平日のみ9:00～12:00、13:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-E001 / 公益財団法人埼玉県下水道公社 古利根川支社 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公社配布表の昼休みを採用。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "8d62fbcd83a7de7f82082c91455a86152d64ab2c7acaed46b41deb406e8059b4",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/29",
+      "newCoordinate": {
+        "lat": 36.0583985,
+        "lng": 139.6892344
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟外形を候補化。配布窓口が当管理棟との直接表記と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+      "oldPlace": {
+        "id": "facility:kanto-north-c8b6772285e4ba7b42be",
+        "legacyIds": [
+          "place:c8b6772285e4ba7b42be"
+        ],
+        "name": "公益財団法人埼玉県下水道公社 中川支社",
+        "address": "埼玉県三郷市番匠免3-2-2",
+        "phone": "048-952-3351",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-D001 / 公益財団法人埼玉県下水道公社 中川支社 / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-D001",
+          "placeId": "facility:kanto-north-c8b6772285e4ba7b42be",
+          "sourceHash": "7b42197f3664a203ea00a1490a8120e24049d6e5c1d4b7d22b738db5a4979a7a",
+          "hours": [
+            "平日のみ9:00～12:00、13:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-D001 / 公益財団法人埼玉県下水道公社 中川支社 / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。公社配布表の昼休みを採用。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "0f97e47e1a4a30b7c0a701c75d4cd09309b2549f863e5a820c297eccc5ffc6ac",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/25",
+      "newCoordinate": {
+        "lat": 35.8345292,
+        "lng": 139.8633577
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟外形を候補化。現在の配布棟と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+      "oldPlace": {
+        "id": "facility:kanto-north-6777261cc63db7a86bfb",
+        "legacyIds": [
+          "place:6777261cc63db7a86bfb"
+        ],
+        "name": "埼玉県市野川水循環センター",
+        "address": "埼玉県比企郡滑川町大字月輪521-6",
+        "phone": "0493-62-0410",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-G001 / 埼玉県市野川水循環センター / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-G001",
+          "placeId": "facility:kanto-north-6777261cc63db7a86bfb",
+          "sourceHash": "01ed1c4853db44b8905c4db2463996e98657c84da698f03dc1460d009c00b88b",
+          "hours": [
+            "平日のみ9:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-G001 / 埼玉県市野川水循環センター / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "db6ede9302748c11c3088546190b49e39f4f5bc7dffcba64953c60ab65b41306",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/11",
+      "newCoordinate": {
+        "lat": 36.050302,
+        "lng": 139.3491358
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟外形を候補化。現在のカード受取棟の直接表記と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+      "oldPlace": {
+        "id": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+        "legacyIds": [
+          "place:8a61ac8c818d5fd1fa6e"
+        ],
+        "name": "埼玉県荒川上流水循環センター",
+        "address": "埼玉県深谷市菅沼984",
+        "phone": "048-583-7525",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-F001 / 埼玉県荒川上流水循環センター / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-F001",
+          "placeId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+          "sourceHash": "bf0b2e7d5a7d28d7d31a0dde7b675c7f7d26c64c3ef969be4b3765bb61971cfc",
+          "hours": [
+            "平日のみ9:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-F001 / 埼玉県荒川上流水循環センター / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "be3d721595359156f40bf80a4e4770954a0f6f788bc7ead5056c3d09ee5525b7",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/13",
+      "newCoordinate": {
+        "lat": 36.1366877,
+        "lng": 139.2851845
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟外形を候補化。現在の受取棟直接表記と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+      "oldPlace": {
+        "id": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+        "legacyIds": [
+          "place:9dce5a0d82eb96d95e6c"
+        ],
+        "name": "埼玉県小山川水循環センター",
+        "address": "埼玉県本庄市東五十子382-1",
+        "phone": "0495-21-7997",
+        "evidence": {
+          "sourceUrl": "https://www.gk-p.jp/mhcard/",
+          "snapshotPath": "data/evidence/national/kanto-north/gkp-current-design.html",
+          "snapshotSHA256": "ad9d5072b1e99c7b44edd51336219a535b9a8d5c6b94dfed0f3acfd37016f2cc",
+          "sourceLocator": "11-000-H001 / 埼玉県小山川水循環センター / 配布場所",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが現行自治体・施設の配布先名称とGKP原典窓口を照合。住所は原典表記を維持（明示訂正は別記）。施設座標は未承認。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "11-000-H001",
+          "placeId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+          "sourceHash": "8502e24075737ffe72d77828a2dccd2bfbda87d6b1cae51e949a29af58667583",
+          "hours": [
+            "平日のみ9:00～17:00"
+          ],
+          "status": "active",
+          "evidence": {
+            "sourceUrl": "http://www.saitama-swg.or.jp/manholecard.html",
+            "snapshotPath": "data/evidence/national/kanto-north/70c100deac275dad3cad.html",
+            "snapshotSHA256": "eeba35276d26a7c3e943f461c089dd0c68928a0f9093d029359e257986e7bd4b",
+            "sourceLocator": "11-000-H001 / 埼玉県小山川水循環センター / 配布場所・配布時間・在庫状況",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが保存済み公式本文（画像・PDFは記載欄）をカード図柄・施設・曜日条件ごとに照合。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "24ed2ef12de1c98aa26ee13b4ccb6fc161efe80c5d81b652a81be705b3d4c12e",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/17",
+      "newCoordinate": {
+        "lat": 36.2277261,
+        "lng": 139.2164642
+      },
+      "selectedForIntegration": false,
+      "reason": "管理棟外形を候補化。現在配布棟との直接表記と独立レビューが残る"
+    },
+    {
+      "facilityId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+      "oldPlace": {
+        "id": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+        "legacyIds": [
+          "place:c5f3c43a0c2bf2667f5d"
+        ],
+        "name": "日本下水道事業団研修センター管理課",
+        "address": "埼玉県戸田市下笹目5141",
+        "phone": "048-421-2691",
+        "evidence": {
+          "sourceUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+          "snapshotPath": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html",
+          "snapshotSHA256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a",
+          "sourceLocator": "00-101-A001／日本下水道事業団研修センター管理課：配布場所・配布時間・在庫状況（該当デザインの節）",
+          "checkedAt": "2026-11-05",
+          "actorType": "ai",
+          "verificationMethod": "AIが公式配布案内と入力窓口の名称・所在地を照合。座標未確定のため省略。現地確認ではない。"
+        }
+      },
+      "oldRelations": [
+        {
+          "cardId": "00-101-A001",
+          "placeId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+          "sourceHash": "6ad6fa226b6f31312adaed26f13a81940a0fe093e434a12db0648c83f93770b9",
+          "hours": [
+            "平日10:00～12:00、13:00～16:00。土日祝13:00～15:00。年末年始・お盆期間配布なし。業務都合による急な中止はJS公式で確認。"
+          ],
+          "status": "active",
+          "condition": "",
+          "evidence": {
+            "sourceUrl": "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+            "snapshotPath": "data/evidence/national/kanto-south/c9a598507cc9e9ff2ea8.html",
+            "snapshotSHA256": "8f5774fee54bab2a88d4895c11fb1bd2b22e598e455fa438efbdd100353d163a",
+            "sourceLocator": "00-101-A001／日本下水道事業団研修センター管理課：配布場所・配布時間・在庫状況（該当デザインの節）",
+            "checkedAt": "2026-11-05",
+            "actorType": "ai",
+            "verificationMethod": "AIが当該カードの公式配布案内本文を照合して手動転記。現地・人の確認ではない。"
+          }
+        }
+      ],
+      "oldCoordinate": null,
+      "oldRowSHA256": "74ff87e4b79df5e6e13336314c335ce67e3b4a59e122a727a3937940902ad944",
+      "historyRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/38",
+      "newCoordinate": {
+        "lat": 35.811008,
+        "lng": 139.6402727
+      },
+      "selectedForIntegration": false,
+      "reason": "管理本館の直接bindingと外形比較完了。製品CRS共通検討・独立レビューが残る"
+    }
+  ]
+}

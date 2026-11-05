@@ -1,0 +1,505 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 4388,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                3104,
+                5925
+              ],
+              [
+                3491,
+                6075
+              ],
+              [
+                3497,
+                6061
+              ],
+              [
+                4096,
+                6331
+              ],
+              [
+                4176,
+                6367
+              ],
+              [
+                4176,
+                6487
+              ],
+              [
+                4096,
+                6451
+              ],
+              [
+                3968,
+                6394
+              ],
+              [
+                3074,
+                5991
+              ],
+              [
+                3104,
+                5925
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3111,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 864,
+        "sourceTile": {
+          "z": 16,
+          "x": 58142,
+          "y": 25703
+        },
+        "sourceFeatureIndex": 864,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58142,
+        "y": 25702
+      },
+      "representativeTileXY": [
+        3678.1612167999265,
+        6203.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1400289,
+          "lng": 139.3884777
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          3678.1459592580795,
+          6203.02548481524
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 1732.992678688847,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58142-25703.pbf.gz",
+      "snapshotSHA256": "4c27846f34ee387b82e49254d565914bab73fd5eb8dc5a44ba7cc28e3ae1d846",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 5026,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4121,
+                5978
+              ],
+              [
+                4363,
+                6092
+              ],
+              [
+                4783,
+                6287
+              ],
+              [
+                4852,
+                6128
+              ],
+              [
+                5306,
+                6324
+              ],
+              [
+                5282,
+                6380
+              ],
+              [
+                5377,
+                6420
+              ],
+              [
+                5282,
+                6642
+              ],
+              [
+                5305,
+                6652
+              ],
+              [
+                5242,
+                6801
+              ],
+              [
+                4253,
+                6375
+              ],
+              [
+                4339,
+                6174
+              ],
+              [
+                4096,
+                6068
+              ],
+              [
+                4096,
+                6063
+              ],
+              [
+                4110,
+                6030
+              ],
+              [
+                4099,
+                6025
+              ],
+              [
+                4121,
+                5978
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3102,
+          "vt_lvorder": 4
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 256,
+        "sourceTile": {
+          "z": 16,
+          "x": 58143,
+          "y": 25703
+        },
+        "sourceFeatureIndex": 256,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58142,
+        "y": 25702
+      },
+      "representativeTileXY": [
+        4820.269953051644,
+        6400.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1398156,
+          "lng": 139.3900094
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4820.264259129763,
+          6399.969657480717
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 6304.853896209952,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+      "snapshotSHA256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 5027,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4016,
+                6295
+              ],
+              [
+                4096,
+                6331
+              ],
+              [
+                5782,
+                7092
+              ],
+              [
+                5776,
+                7105
+              ],
+              [
+                6193,
+                7320
+              ],
+              [
+                6163,
+                7384
+              ],
+              [
+                4096,
+                6451
+              ],
+              [
+                4016,
+                6415
+              ],
+              [
+                4016,
+                6295
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3111,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 257,
+        "sourceTile": {
+          "z": 16,
+          "x": 58143,
+          "y": 25703
+        },
+        "sourceFeatureIndex": 257,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58142,
+        "y": 25702
+      },
+      "representativeTileXY": [
+        4938.988489295267,
+        6771.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1394132,
+          "lng": 139.3901686
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4938.972383022308,
+          6771.512199029326
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 3605.2360388655366,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+      "snapshotSHA256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 5024,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                4300,
+                6752
+              ],
+              [
+                4555,
+                6867
+              ],
+              [
+                4513,
+                6960
+              ],
+              [
+                4395,
+                6907
+              ],
+              [
+                4311,
+                7096
+              ],
+              [
+                4346,
+                7112
+              ],
+              [
+                4292,
+                7221
+              ],
+              [
+                4153,
+                7335
+              ],
+              [
+                4159,
+                7343
+              ],
+              [
+                4149,
+                7351
+              ],
+              [
+                4142,
+                7343
+              ],
+              [
+                4147,
+                7338
+              ],
+              [
+                4096,
+                7276
+              ],
+              [
+                4091,
+                7270
+              ],
+              [
+                4096,
+                7265
+              ],
+              [
+                4193,
+                7186
+              ],
+              [
+                4200,
+                7179
+              ],
+              [
+                4182,
+                7171
+              ],
+              [
+                4186,
+                7161
+              ],
+              [
+                4161,
+                7150
+              ],
+              [
+                4173,
+                7123
+              ],
+              [
+                4177,
+                7124
+              ],
+              [
+                4185,
+                7105
+              ],
+              [
+                4211,
+                7117
+              ],
+              [
+                4208,
+                7124
+              ],
+              [
+                4224,
+                7131
+              ],
+              [
+                4262,
+                7047
+              ],
+              [
+                4189,
+                6998
+              ],
+              [
+                4300,
+                6752
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 4
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 254,
+        "sourceTile": {
+          "z": 16,
+          "x": 58143,
+          "y": 25703
+        },
+        "sourceFeatureIndex": 254,
+        "tileBoundaryTouched": true,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58142,
+        "y": 25702
+      },
+      "representativeTileXY": [
+        4286.402777777777,
+        7071.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 36.1390883,
+          "lng": 139.3892934
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          4286.375963330269,
+          7071.496324911714
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 1261.8619610577982,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/kumagaya-16-58143-25703.pbf.gz",
+      "snapshotSHA256": "b8480bc31de45f5936c2b85a608d1442bddd964de367b167ff23bc1893650cdc",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

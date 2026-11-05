@@ -1,0 +1,349 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 4004,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7019,
+                7042
+              ],
+              [
+                7158,
+                7068
+              ],
+              [
+                7123,
+                7253
+              ],
+              [
+                7030,
+                7235
+              ],
+              [
+                7049,
+                7135
+              ],
+              [
+                7009,
+                7127
+              ],
+              [
+                6979,
+                7283
+              ],
+              [
+                6894,
+                7266
+              ],
+              [
+                6936,
+                7044
+              ],
+              [
+                7015,
+                7059
+              ],
+              [
+                7019,
+                7042
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 746,
+        "sourceTile": {
+          "z": 16,
+          "x": 58129,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 746,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58128,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        6955.0,
+        7200.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8545179,
+          "lng": 139.315968
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6954.994892805815,
+          7200.005083188415
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": true,
+      "areaApproxSquareMetres": 601.634934393224,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+      "snapshotSHA256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4003,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7016,
+                6930
+              ],
+              [
+                7050,
+                6936
+              ],
+              [
+                7032,
+                7031
+              ],
+              [
+                6999,
+                7025
+              ],
+              [
+                7016,
+                6930
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 745,
+        "sourceTile": {
+          "z": 16,
+          "x": 58129,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 745,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58128,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        7024.265789473684,
+        6980.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8547565,
+          "lng": 139.3160609
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7024.266153544188,
+          6980.496362626553
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 48.133140482773996,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+      "snapshotSHA256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4096,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                7139,
+                6920
+              ],
+              [
+                7261,
+                6944
+              ],
+              [
+                7235,
+                7077
+              ],
+              [
+                7114,
+                7054
+              ],
+              [
+                7139,
+                6920
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 838,
+        "sourceTile": {
+          "z": 16,
+          "x": 58129,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 838,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58128,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        7187.254657165302,
+        6999.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8547364,
+          "lng": 139.3162795
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          7187.266127645969,
+          6998.988111838698
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 246.25878839298278,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+      "snapshotSHA256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 4046,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6851,
+                7098
+              ],
+              [
+                6909,
+                7108
+              ],
+              [
+                6885,
+                7246
+              ],
+              [
+                6827,
+                7236
+              ],
+              [
+                6851,
+                7098
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 788,
+        "sourceTile": {
+          "z": 16,
+          "x": 58129,
+          "y": 25767
+        },
+        "sourceFeatureIndex": 788,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58128,
+        "y": 25766
+      },
+      "representativeTileXY": [
+        6868.0,
+        7172.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.8545483,
+          "lng": 139.3158513
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6867.977065771818,
+          7172.037537753582
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 120.70317694805155,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hanno-16-58129-25767.pbf.gz",
+      "snapshotSHA256": "662ef889f640492b300376246fd64beb850972acc3756ea7218ae2b2bf103af4",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

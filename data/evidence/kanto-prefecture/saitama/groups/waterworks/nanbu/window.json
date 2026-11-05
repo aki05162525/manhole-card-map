@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "name": "nanbu",
+  "acquisitionCenterOnly": {
+    "lat": 35.81296,
+    "lng": 139.63939
+  },
+  "rawTiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58187,
+        "y": 25776
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25776.pbf.gz",
+      "sha256": "7405892aaee1daac2121b3adccd22d830da8dcc6834eba4397b83505d58f0905"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58188,
+        "y": 25776
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25776.pbf.gz",
+      "sha256": "6b7ce284a2db38d0d3bd573d1c907274d47612fa2c50080fdf3bd822700bda4a"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58189,
+        "y": 25776
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25776.pbf.gz",
+      "sha256": "14c44f979eb97a713ea4bffddd05b840d0352365cb06b07e539acf735c0d54c7"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58187,
+        "y": 25777
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25777.pbf.gz",
+      "sha256": "4a5eead50744e7da75f3f83bfac3a513c116fc8c3de676b112530916209108c4"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58188,
+        "y": 25777
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25777.pbf.gz",
+      "sha256": "b88ac907162404f16d57bc37538207b59f638eace392a8b11ac84160eb3cabe2"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58189,
+        "y": 25777
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25777.pbf.gz",
+      "sha256": "748051e94107b475feb5276e1a183dc8d123761be9bc1a3fb144cdf42dff0771"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58187,
+        "y": 25778
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58187-25778.pbf.gz",
+      "sha256": "4ed2aea7d9aa61911d81b666555fcf4b207d6b31d892d40ee188220217aac265"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58188,
+        "y": 25778
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58188-25778.pbf.gz",
+      "sha256": "ed5050e23e2a097cb4509236fd06119c9e3b1e081db929951ec7655c29500006"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58189,
+        "y": 25778
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/16-58189-25778.pbf.gz",
+      "sha256": "1d4c8ff0a06463a1b2246cf170b1e44a6bd629bdfbff4385849c84f46fe14ce2"
+    }
+  ],
+  "fullRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-full.png",
+  "localRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/nanbu-local.png",
+  "localCropTileXYBounds": [
+    2951.917255103588,
+    962.6310355067253,
+    9951.917255103588,
+    7962.631035506725
+  ],
+  "baseTile": {
+    "z": 16,
+    "x": 58187,
+    "y": 25776
+  },
+  "featureCount": 4402,
+  "elapsedSeconds": 2.174858331680298
+}

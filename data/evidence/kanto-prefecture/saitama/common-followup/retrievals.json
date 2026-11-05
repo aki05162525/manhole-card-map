@@ -1,0 +1,58 @@
+[
+  {
+    "schema": 1,
+    "url": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+    "version": "saitama-full-investigation",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:26:08.694057+00:00",
+    "httpStatus": 200,
+    "etag": "\"655f0a13b702331531793a90bd817fe0\"",
+    "lastModified": "Fri, 07 Mar 2025 07:52:29 GMT",
+    "contentType": "application/pdf",
+    "contentRange": null,
+    "responseURL": "https://maps.gsi.go.jp/help/pdf/vector/optbv_dataspec.pdf",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:26:08.758943+00:00",
+    "sha256": "f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/common-followup/cache/f423a2f3c2831df7966921bd43fae5585e4e34c1892124b6325a45dba81d253b.raw",
+    "bytes": 101792
+  },
+  {
+    "schema": 1,
+    "url": "https://maps.gsi.go.jp/help/pdf/vector/optbv_featurecodes.pdf",
+    "version": "saitama-full-investigation",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:26:08.759315+00:00",
+    "httpStatus": 200,
+    "etag": "\"0e678988d3b93e10111b9481bd5412ea\"",
+    "lastModified": "Fri, 07 Mar 2025 07:52:30 GMT",
+    "contentType": "application/pdf",
+    "contentRange": null,
+    "responseURL": "https://maps.gsi.go.jp/help/pdf/vector/optbv_featurecodes.pdf",
+    "status": "acquired",
+    "fetchedAt": "2026-11-05T15:26:08.851689+00:00",
+    "sha256": "6c670b9eb7a5bacfce139af5c2a3cf61dbd0cc546df26562d747b471114344c5",
+    "rawPath": "/home/akihiro/.t3/worktrees/manhole-card-map/t3-60b8ee0c/data/work/kanto-prefecture/saitama/common-followup/cache/6c670b9eb7a5bacfce139af5c2a3cf61dbd0cc546df26562d747b471114344c5.raw",
+    "bytes": 328643
+  },
+  {
+    "schema": 1,
+    "url": "https://www.gsi.go.jp/sokuchikijun/hyoko2024rev.html",
+    "version": "saitama-full-investigation",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:26:08.852256+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+    "finishedAt": "2026-11-05T15:26:09.169622+00:00"
+  },
+  {
+    "schema": 1,
+    "url": "https://www.gsi.go.jp/common/000276862.pdf",
+    "version": "saitama-full-investigation",
+    "requestHeaders": {},
+    "attemptedAt": "2026-11-05T15:26:09.170490+00:00",
+    "status": "failed",
+    "error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1082)>",
+    "finishedAt": "2026-11-05T15:26:09.496925+00:00"
+  }
+]

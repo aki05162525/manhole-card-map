@@ -1,0 +1,341 @@
+{
+  "schema": 1,
+  "source": "GSI optimal_bvmap-v1",
+  "attribution": "国土地理院最適化ベクトルタイルをmanhole-card-mapが加工",
+  "features": [
+    {
+      "combinedIndex": 1476,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6068,
+                4229
+              ],
+              [
+                6193,
+                4351
+              ],
+              [
+                5963,
+                4587
+              ],
+              [
+                5839,
+                4465
+              ],
+              [
+                6068,
+                4229
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 7,
+        "sourceTile": {
+          "z": 16,
+          "x": 58142,
+          "y": 25757
+        },
+        "sourceFeatureIndex": 7,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25756
+      },
+      "representativeTileXY": [
+        6015.879237288136,
+        4408.0
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.9020609,
+          "lng": 139.3861197
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6015.893722444773,
+          4408.039896503091
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": true,
+      "areaApproxSquareMetres": 839.1273013975594,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+      "snapshotSHA256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 1477,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                5745,
+                4564
+              ],
+              [
+                5854,
+                4669
+              ],
+              [
+                5609,
+                4926
+              ],
+              [
+                5544,
+                4863
+              ],
+              [
+                5523,
+                4885
+              ],
+              [
+                5479,
+                4842
+              ],
+              [
+                5745,
+                4564
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 8,
+        "sourceTile": {
+          "z": 16,
+          "x": 58142,
+          "y": 25757
+        },
+        "sourceFeatureIndex": 8,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25756
+      },
+      "representativeTileXY": [
+        5666.652548778098,
+        4755.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.9016834,
+          "lng": 139.3856513
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          5666.629368036985,
+          4755.5418592989445
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 814.2819496315731,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+      "snapshotSHA256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 1489,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6275,
+                4433
+              ],
+              [
+                6396,
+                4551
+              ],
+              [
+                6278,
+                4673
+              ],
+              [
+                6157,
+                4556
+              ],
+              [
+                6275,
+                4433
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 20,
+        "sourceTile": {
+          "z": 16,
+          "x": 58142,
+          "y": 25757
+        },
+        "sourceFeatureIndex": 20,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25756
+      },
+      "representativeTileXY": [
+        6276.490170598427,
+        4553.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.9019029,
+          "lng": 139.3864692
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6276.499810963869,
+          4553.48462831974
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 419.52145435207507,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+      "snapshotSHA256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    },
+    {
+      "combinedIndex": 1496,
+      "feature": {
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                6751,
+                4919
+              ],
+              [
+                6834,
+                5001
+              ],
+              [
+                6846,
+                4989
+              ],
+              [
+                6898,
+                5039
+              ],
+              [
+                6759,
+                5184
+              ],
+              [
+                6618,
+                5058
+              ],
+              [
+                6751,
+                4919
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "vt_code": 3101,
+          "vt_lvorder": 0
+        },
+        "id": 0,
+        "type": "Feature",
+        "layer": "BldA",
+        "layerFeatureIndex": 27,
+        "sourceTile": {
+          "z": 16,
+          "x": 58142,
+          "y": 25757
+        },
+        "sourceFeatureIndex": 27,
+        "tileBoundaryTouched": false,
+        "outerBoundaryTouched": false
+      },
+      "baseTile": {
+        "z": 16,
+        "x": 58141,
+        "y": 25756
+      },
+      "representativeTileXY": [
+        6757.991515752915,
+        5048.5
+      ],
+      "calculation": {
+        "coordinate": {
+          "lat": 35.9013652,
+          "lng": 139.3871149
+        },
+        "unroundedWithin": true,
+        "roundedWithin": true,
+        "roundedTileXY": [
+          6757.968627512455,
+          5048.454809188843
+        ],
+        "mechanicalChecksPassed": true,
+        "identityApproved": false,
+        "crsApproved": false
+      },
+      "isLocationCandidate": false,
+      "areaApproxSquareMetres": 537.3018627836352,
+      "areaMethod": "local Mercator cos(latitude)^2 corrected roof/footprint area, not surveyed building/floor area",
+      "snapshotPath": "data/evidence/kanto-prefecture/saitama/groups/tourism/hidaka-16-58142-25757.pbf.gz",
+      "snapshotSHA256": "5e5f19f56a0aa8cec510668284bbd3f94de493afd445d06c371c97a7911e0731",
+      "originalPropertiesVerified": true,
+      "validGeometry": true
+    }
+  ],
+  "crsApproved": false,
+  "sourceConditionsRef": "data/evidence/kanto-prefecture/saitama/common-followup/source-interpretation.json"
+}

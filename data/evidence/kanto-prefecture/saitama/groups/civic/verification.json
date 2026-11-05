@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "command": "/tmp/saitama-research-venv/bin/python data/evidence/kanto-prefecture/saitama/groups/civic/verify-local.py",
+  "headAtVerification": "073346448850f81195f86234a3c6c866b88d6f9e",
+  "dirtyResearchInputs": true,
+  "inputSHA256": {
+    "data/national/kanto-prefecture/saitama/groups/civic/assignment.json": "5971c1de174dfcf7c61487a80e0554dd51ffda98310fec234d18c904cf81b7c1",
+    "data/national/kanto-prefecture/saitama/groups/civic/outcomes.json": "69c4890388475f5bd3d02c7feb7403408b480e8616cfbdc90e7d704e9a827ade",
+    "data/national/kanto-prefecture/saitama/groups/civic/old-bindings.json": "c21919e7d89ffc0e52f2527574eac9ecf23274acd9e78141cdb51cafa1513506",
+    "data/national/kanto-prefecture/saitama/groups/civic/locations.json": "459616b7133420eba9f5a1a2f37129661b557925ffdf17748e286fbdee85761b",
+    "data/national/kanto-prefecture/saitama/groups/civic/selection.json": "c2deece987bcd40b7cf693edc0774cb5ee0dacc1392c190959394d79cb6dc164",
+    "data/evidence/kanto-prefecture/saitama/groups/civic/retrievals.json": "2ea31446e66be4944551425a7d694b9181573e88e0343d60634942eafad1f8f8",
+    "data/evidence/kanto-prefecture/saitama/groups/civic/geometry-comparisons.json": "f7942636fc68307c142395a475631c6b6be45ab385a18bc1632bee6bb250f79e",
+    "tools/national/research_common.py": "905384e54affc7325f08a302f4417483d3b5d277bf878eec8d78a7618b4a4adf"
+  },
+  "exitCode": 0,
+  "verifiedAt": "2026-11-05T15:53:30.761292+00:00",
+  "counts": {
+    "facilities": 8,
+    "generalRetrievalHashes": 52,
+    "rawVectorTiles": 72,
+    "candidateLocations": 1
+  },
+  "checks": [
+    "assignment equals all outcomes",
+    "general source raw hashes",
+    "all 72 tile hashes/decode",
+    "selected comparison features bind exactly to original layer feature index and properties",
+    "every mechanical comparison point rounds inside its footprint",
+    "candidate snapshot hash and checkedAt",
+    "all old bindings equal inventory",
+    "selection hash matches location proposal"
+  ],
+  "limits": [
+    "No independent source-reading approval",
+    "No product CRS/conditions approval",
+    "No manifest integration",
+    "No whole suite or commit; parent handles integration checks"
+  ]
+}

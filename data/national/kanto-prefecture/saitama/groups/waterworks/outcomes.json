@@ -1,0 +1,608 @@
+[
+  {
+    "facilityId": "facility:kanto-north-1a5c86a3e21c20b9dcc2",
+    "status": "building-correspondence-unconfirmed",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/1a5c86a3e21c20b9dcc2-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        55
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "管理本館と沈砂池・ポンプ棟が図上で連接。公式アクセス図の正門・笹目川・JS研修センター、配置図の円形分水槽・雨水滞水池と比較。2212/2503は大きな連接外形候補だが管理本館部とポンプ棟部の切分け未確定。図に北矢印なし。国道298号を基準に回転関係を確認中。 再読解で2212/2503はタイル境界分割の大外形と確認。ただし管理本館区画の内部境界はGSI未収録、区画同定を追加確認。",
+      "consideredCombinedFeatureIndices": [
+        2212,
+        2503
+      ],
+      "vectorName": "nanbu",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": null,
+    "stopReason": "管理本館とポンプ/沈砂池の合体外形2212/2503のうち、管理本館が含まれる範囲の同定が未確定。小棟や施設全体点を代用しない。",
+    "nextAction": "管理本館区画を示す詳細配置図と2212/2503を再比較。",
+    "distributionJudgment": "11-000-A001は平日事務室、土日祝守衛室。既存guard IDへの休日関係を別候補化。",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "公益財団法人埼玉県下水道公社 荒川左岸南部支社",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/1",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "外形対応未確定"
+  },
+  {
+    "facilityId": "facility:kanto-north-80e64df38987c39b7386",
+    "status": "building-correspondence-unconfirmed",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/80e64df38987c39b7386-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        55
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "公式配布表は守衛室を明記。配置図55ページと公式アクセスGIFは正門・管理本館のみで守衛室ラベルなし。2026-11-06利用者報告: 正門脇の独立小棟。外形IDは未確認。門周辺小外形492/494/498等と比較中。 利用者回答の独立棟と正門脇を照合したが、外形494/498の識別は未確定。北東という呼称は北上GSIの正門候補位置からのAI推論で利用者回答には含めない。",
+      "consideredCombinedFeatureIndices": [
+        492,
+        494,
+        498
+      ],
+      "vectorName": "nanbu",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": null,
+    "stopReason": "正門脇の独立小棟との利用者回答あり。494/498等のどの外形が守衛棟か未確定、492はトイレ候補として除外方向。守衛ラベルあるR7修繕PDF2件と清掃PDFは404。",
+    "nextAction": "回答を維持し、守衛ラベルを持つ取得可能な配置図又は現地外観と小棟外形を照合。再質問は棟種でなく外形選択に限る。",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "荒川水循環センター(守衛室)",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/12",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "外形対応未確定",
+    "userReport": {
+      "report": "正門脇の独立小棟",
+      "receivedLocalDate": "2026-11-06",
+      "channel": "parent relayed explicit user answer",
+      "buildingFeatureIdConfirmedByUser": false,
+      "coordinateConfirmedByUser": false
+    }
+  },
+  {
+    "facilityId": "facility:kanto-north-6193af412ca73d91d288",
+    "status": "building-correspondence-unconfirmed",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/ugan/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/6193af412ca73d91d288-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        148,
+        149,
+        150
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "p148が新河岸川（和光市）の配置図、p149は新河岸川上流（別施設）で代用不可、p150管渠広域図。p148左下にポンプ棟・管理棟・沈砂池が一体。外環道の西側、流入渠付近。GSIには処理水槽地下部の外形がなく疎な地物。公式アクセスGoogle viewportは施設中心の証拠ではない。全9タイル画像も閲覧したが管理棟の対応外形選択は未完。 追加調達図410-shi-tinsatikikai-shuzen.pdf取得は404で本文未読、成功扱いしない。",
+      "consideredCombinedFeatureIndices": [
+        822
+      ],
+      "vectorName": "ugan",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": null,
+    "stopReason": "p148管理棟の模式図と9タイル外形の回転・棟対応が未確定。822は検討した外形で同定済みでない。追加R7沈砂池修繕PDFも404。",
+    "nextAction": "取得済p148とGSI全景を再照合し、外環道/新河岸川/場内道路の方位を確定して管理棟外形選択。",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "公益財団法人埼玉県下水道公社 荒川右岸支社",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/10",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "外形対応未確定"
+  },
+  {
+    "facilityId": "facility:kanto-north-9366bd29aeba766aae7f",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/motoara-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/9366bd29aeba766aae7f-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        98
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "北側綾瀬川、西側道路・元荒川と一致。北中央の管理棟/沈砂池はGSI1433、南隣1435ポンプ室、1438送風機棟、1441高圧電気棟の並びと一致。第5/6/7系列西側・第1/2系列東側との位置関係一致。管理棟1433の建物代表点候補。図北矢印なし、綾瀬川北辺/元荒川西側からほぼ北上と判定。",
+      "consideredCombinedFeatureIndices": [
+        1433
+      ],
+      "vectorName": "motoara",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 1412.674545907662,
+      "vtProperties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 36.0264533,
+      "lng": 139.5909964
+    },
+    "stopReason": "管理棟の外形対応は候補。配布窓口が当管理棟かの直接表記と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "公益財団法人埼玉県下水道公社 荒川左岸北部支社",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/14",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-north-e1e48bd4fbf356515d0f",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/e1e48bd4fbf356515d0f-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        231
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "方位記号がほぼ上向き。西道路・南の川・北農地境界が一致。管理棟6286は北に電気室6284、西正面に庭園状6281、南西に第1次沈砂池ポンプ棟8443/8445、東に処理施設6295が一致。管理棟とブロワー室は連接して描かれる。",
+      "consideredCombinedFeatureIndices": [
+        6286
+      ],
+      "vectorName": "furutone",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 1154.9202445447338,
+      "vtProperties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 36.0583985,
+      "lng": 139.6892344
+    },
+    "stopReason": "管理棟外形を候補化。配布窓口が当管理棟との直接表記と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "公益財団法人埼玉県下水道公社 古利根川支社",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/29",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-north-c8b6772285e4ba7b42be",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/nakagawa-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/c8b6772285e4ba7b42be-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        197
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "県配置図は令和6年度概要収載だが図凡例はR4.8。西の高速道路IC、南道路、管理本館北の新ポンプ棟/電気棟、東の変電棟との並びからBldA2395が管理本館候補。R7脱硫剤仕様書21頁中17頁配置図を追加読解。",
+      "consideredCombinedFeatureIndices": [
+        2395
+      ],
+      "vectorName": "nakagawa",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 1962.2266005517308,
+      "vtProperties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 35.8345292,
+      "lng": 139.8633577
+    },
+    "stopReason": "管理棟外形を候補化。現在の配布棟と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "公益財団法人埼玉県下水道公社 中川支社",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/25",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-north-6777261cc63db7a86bfb",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/ichino-target-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/6777261cc63db7a86bfb-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        284
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "県図に北矢印あり、市野川は北辺。南西管理棟649、東隣沈砂池ポンプ棟657、北西汚泥処理棟647、北東2円形池と再利用棟894が一致。県公開h30航空写真は南向きで配置を追加照合。名称検索GSIは千葉県勝浦市市野川という誤ヒットを返し不使用。月輪の住所代表点は初期取得範囲用のみ、初回9タイルで西端切れのため西に再取得。",
+      "consideredCombinedFeatureIndices": [
+        649
+      ],
+      "vectorName": "ichino-target",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 969.4838397892137,
+      "vtProperties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 36.050302,
+      "lng": 139.3491358
+    },
+    "stopReason": "管理棟外形を候補化。現在のカード受取棟の直接表記と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "埼玉県市野川水循環センター",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/11",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-north-8a61ac8c818d5fd1fa6e",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/arajo-target-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/8a61ac8c818d5fd1fa6e-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        258
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "県図は北矢印が左上、北上GSIへ約30度回転して比較。管理棟は3880、北東に沈砂池ポンプ棟3885、東に円形最終沈殿池群、南東に荒川・敷地道路が対応。県h30航空写真の管理棟/ポンプ棟配置も確認。隣接3872/3881はvt_code3111の小屋根状外形で本体3101と区別。住所984検索は川側代表点を返すため不採用、西に9タイル再取得。",
+      "consideredCombinedFeatureIndices": [
+        3880
+      ],
+      "vectorName": "arajo-target",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 527.786228920879,
+      "vtProperties": {
+        "vt_code": 3101,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 36.1366877,
+      "lng": 139.2851845
+    },
+    "stopReason": "管理棟外形を候補化。現在の受取棟直接表記と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "埼玉県荒川上流水循環センター",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/13",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-north-9dce5a0d82eb96d95e6c",
+    "status": "candidate-pending-binding",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTMLの本文・表読解",
+      "remaining-index・県inventory/historical references継承",
+      "県令和6年度維持管理概要の該当配置図実読解",
+      "GSI最適化ベクトル9タイル取得・全外形描画・局所比較"
+    ],
+    "sourceRefs": [
+      "https://www.saitama-swg.or.jp/manholecard.html",
+      "https://www.pref.saitama.lg.jp/documents/280146/all.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/koyama-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/9dce5a0d82eb96d95e6c-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        308
+      ],
+      "documentTotalPages": 325,
+      "wholeDocumentVisuallyRead": false,
+      "observations": "図の北矢印は右上約50度。北上GSIへ反時計回転し、小山川/橋/場内アクセス道路と比較。管理棟1914（長辺約40mの図示）、南西隣L字沈砂池ポンプ棟1917、東側の屋外処理系列、南西汚泥処理建物2801の位置関係一致。県h30航空写真も全景を実読解。地下/屋外水処理槽はBldAに一部未収録で、管理棟外形とは分離判断。",
+      "consideredCombinedFeatureIndices": [
+        1914
+      ],
+      "vectorName": "koyama",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 1067.02315650783,
+      "vtProperties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 36.2277261,
+      "lng": 139.2164642
+    },
+    "stopReason": "管理棟外形を候補化。現在配布棟との直接表記と独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "現配布表の対象センター。稼働・在庫・位置採用とは独立",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "埼玉県小山川水循環センター",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/17",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  },
+  {
+    "facilityId": "facility:kanto-south-c5f3c43a0c2bf2667f5d",
+    "status": "candidate-pending-independent-review",
+    "checkedAt": "2026-11-05",
+    "performedMethods": [
+      "現配布公式HTML読解",
+      "remaining-index/県inventory/history継承",
+      "公式access.pdf2頁全頁視認",
+      "南部取得GSI9タイルrawをhash維持再利用し外形照合"
+    ],
+    "sourceRefs": [
+      "https://www.jswa.go.jp/company/50th-anniversary/manhole-card.html",
+      "https://www.jswa.go.jp/company/50th-anniversary/pdf/access.pdf"
+    ],
+    "evidenceRefs": [
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/retrievals.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/nanbu/window.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/js-geometry.json",
+      "data/evidence/kanto-prefecture/saitama/groups/waterworks/c5f3c43a0c2bf2667f5d-considered-geometries.json"
+    ],
+    "buildingComparison": {
+      "planPhysicalPages": [
+        1,
+        2
+      ],
+      "documentTotalPages": 2,
+      "wholeDocumentVisuallyRead": true,
+      "observations": "JS配布案内PDF2頁全て視認。1頁は管理本館棟1階、平日A玄関・休日B玄関を明示。北矢印は左向き、北上へ90度時計回転。管理本館2239が北西、新寮2250が南西、総合実習棟2248/2249が東、正門が北側道路、敷地西南側斜辺と一致。2頁の正門から白い管理本館への坂・A/B玄関写真も読解。南部と同じ9タイルrawを再利用し別棟を選択。町域検索は遠い下笹目代表点なので候補には使わない。",
+      "consideredCombinedFeatureIndices": [
+        2239
+      ],
+      "vectorName": "nanbu",
+      "fullRenderChecked": true,
+      "localRenderChecked": true,
+      "approximateGroundAreaM2": 1364.238768591344,
+      "vtProperties": {
+        "vt_code": 3102,
+        "vt_lvorder": 0
+      },
+      "fullRenderReviewMethod": "全9タイル描画の全景と局所番号図を視認。6施設全景は2列3段contact sheetでも確認。BldA/RdCL/RdEdg/WA/WL対象。"
+    },
+    "candidateCoordinate": {
+      "lat": 35.811008,
+      "lng": 139.6402727
+    },
+    "stopReason": "管理本館の直接bindingと外形比較完了。製品CRS共通検討・独立レビューが残る",
+    "nextAction": "独立レビューで図とBldA同定を確認し、確認できた建物の内点計算へ進む",
+    "distributionJudgment": "JS管理本館1階の平日A玄関/休日B玄関。入口変更は同一棟。現在在庫判断は別。",
+    "lifecycleJudgment": "変更案なし（営業継続/在庫を再確認済みに更新しない）",
+    "locationAdoption": "未承認・manifest未反映",
+    "name": "日本下水道事業団研修センター管理課",
+    "inheritedHistoryRef": "data/evidence/kanto-prefecture/saitama/history.json#/rows/38",
+    "humanAnswerAudit": {
+      "queueRef": "data/national/issue57/human-confirmation-queue.json",
+      "queueSHA256": "cf7ed69cba0de1c1577f209d08be61a94ec76a8150a936e5f3a50a5b8744caa2",
+      "matchedPreviousAnswers": [],
+      "proseQueueChecked": "docs/verification/issue57-human-queue.md",
+      "proseQueueMatch": "対象10施設の管理棟回答なし",
+      "historyHumanConfirmationRef": null
+    },
+    "stockJudgment": "今回原本表に有の表示がある場合も、在庫確認日更新・常時在庫保証は行わない。",
+    "buildingIdentityJudgment": "図に基づく候補、採用未承認"
+  }
+]

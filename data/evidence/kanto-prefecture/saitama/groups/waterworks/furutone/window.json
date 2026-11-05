@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "name": "furutone",
+  "acquisitionCenterOnly": {
+    "lat": 36.058387380108115,
+    "lng": 139.68706991561993
+  },
+  "rawTiles": [
+    {
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25720
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25720.pbf.gz",
+      "sha256": "130b1a6b9a9212afa8c0496d20cec62d7b520823db8e0d08ff44c4fa1a841351"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58197,
+        "y": 25720
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25720.pbf.gz",
+      "sha256": "8fdc7f12d8b089b79a44be4f62713bd8daa2990da74a50c72a87bcd267229065"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58198,
+        "y": 25720
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25720.pbf.gz",
+      "sha256": "745df2f12ba24d4f8e7da340c6e72cdd40e5c84d9d0541859ace4dc2bfafedbe"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25721
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25721.pbf.gz",
+      "sha256": "aafae194495c671064cc5a0b0ef3751bfbf5886fa2711b3da71419216e67c157"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58197,
+        "y": 25721
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25721.pbf.gz",
+      "sha256": "a2134a1be89a36b23ba8d1487957fdea20cbc8a6c9750067cfaae6412831c6c5"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58198,
+        "y": 25721
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25721.pbf.gz",
+      "sha256": "0759cf26478c0f9aa1f2c4b19ede2d93d94b23ac298ce90444ccb4844b04ec96"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58196,
+        "y": 25722
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58196-25722.pbf.gz",
+      "sha256": "d88e333cdb130ee4210a461218665070a4035385e70703e72aedcbddeaa23cb1"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58197,
+        "y": 25722
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58197-25722.pbf.gz",
+      "sha256": "d7c1761b27651ce4552ed2549aac2f4f847bf1725a5ebeed5ba92f2b737310d7"
+    },
+    {
+      "tile": {
+        "z": 16,
+        "x": 58198,
+        "y": 25722
+      },
+      "path": "data/evidence/kanto-prefecture/saitama/groups/waterworks/furutone/16-58198-25722.pbf.gz",
+      "sha256": "e595bead1b25e0661a037fc943263458bbee09daebe33efe703d8156ff7032c6"
+    }
+  ],
+  "fullRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/furutone-full.png",
+  "localRenderPath": "data/work/kanto-prefecture/saitama/groups/waterworks/furutone-local.png",
+  "localCropTileXYBounds": [
+    1640.6391758918762,
+    4317.214582070708,
+    8640.639175891876,
+    11317.214582070708
+  ],
+  "baseTile": {
+    "z": 16,
+    "x": 58196,
+    "y": 25720
+  },
+  "featureCount": 8959,
+  "elapsedSeconds": 2.9670891761779785
+}
