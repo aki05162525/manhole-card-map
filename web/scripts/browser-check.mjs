@@ -73,11 +73,13 @@ async function stableMap(page) {
       Math.abs(saved.lng - view.lng) < 1e-8
     );
   });
-  const visibleTarget = await page.evaluate(() =>
+  // moveend/localStorage can settle before the worker renders the new tiles.
+  // Wait for reachable geometry, as the geometry-click check below does.
+  const visibleTarget = await page.waitForFunction(() =>
     window.prototype.adapter.tapPoint(),
   );
   assert.ok(
-    visibleTarget,
+    await visibleTarget.jsonValue(),
     "selected geometry must remain reachable outside the detail panel",
   );
   for (const label of ["Zoom in", "Zoom out"]) {

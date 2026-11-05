@@ -20,7 +20,7 @@ bun run test
 
 mise をシェルで有効化していない場合は `mise exec --` を付ける。Bun は依存管理とスクリプト起動、Node.js は Vite / Vitest / 検証スクリプトに使う。依存は `bun.lock`、ツールはルートの `mise.toml` に固定する。APM は別途 [開発スキルの手順](../docs/development-agents.md)で導入する。
 
-lefthook の pre-commit は lint・format・型検査・Go テスト、pre-push は Vitest。整形は `bun run format`。mapcn 生成ファイルだけ Oxlint の冗長な spread の規則を無効にし、その他の検査は適用する。新機能は失敗するテストを書いてから実装し、成功を確認する。
+lefthook の pre-commit はステージ済みの変更から対象を選ぶ。lint・format は変更ファイルのみ、型検査はフロントエンドのコード変更時、Go テストは Go・台帳・全国統合処理の変更時に実行する。型検査と Go テストは依存先の破損も検出するため全体を対象とし、設定・依存の変更時は lint・format も全体へ戻す。削除・移動元も判定する。文書だけの変更ではこれらを実行しない。検査対象の内容は作業ツリーなので、部分ステージ時の未ステージ変更は含まれる。pre-push の Vitest は廃止し、PR の CI で実行する。整形は `bun run format`。mapcn 生成ファイルだけ Oxlint の冗長な spread の規則を無効にし、その他の検査は適用する。新機能は失敗するテストを書いてから実装し、成功を確認する。
 
 ## 合成データで動かす
 
@@ -72,7 +72,14 @@ MapLibre Worker と shared モジュールはインストールした版から�
 
 ## CI と性能検証
 
-GitHub Actions は Go、lint、format、型検査、Vitest、fixture ビルド、Chromium 操作検査を実行する。`web-build-fixture-<SHA>` を7日保存し、デプロイはしない。別ワークフローで APM frozen install・監査・配置内容の一致を確認する。
+GitHub Actions は PR、main への push、手動実行で起動する。作業ブランチの push と PR で二重実行しない。PR は base とマージ結果の差分、main の push は前回 SHA との差分で対象を選ぶ。削除・移動元を含め、比較元を取得できない場合・未知のファイル・CI 共通設定の変更・手動実行は全検査へ戻す。
+
+- `web/` の変更：lint、format、Vitest、fixture ビルド内の型検査、Chromium 操作検査、オフライン更新回帰。`web-build-fixture-<SHA>` を7日保存する。
+- Go・`data/`・`tools/national/` の変更：`go test -count=1 ./...`。`TestNationalAssemblyFailureGuards` が Python の全 unittest も実行するため、CI 内で別途重複実行しない。コンパイルキャッシュは利用し、テスト結果キャッシュは使わない。
+- APM 入力・除外設定の変更：別ワークフローで frozen install・監査・再インストールの安定性を確認する。
+- 文書だけの変更：差分判定とフックのテストのみ。既存の `checks` と `reproducibility` の結果は引き続き返す。
+
+フロントエンドとバックエンドは必要な場合に並列実行し、Bun のダウンロードキャッシュと Go のモジュール・コンパイルキャッシュを再利用する。CI の `checks` は対象ジョブの失敗・キャンセルを失敗として集約する。外部デプロイはしない。差分判定・フックの回帰テストはルートで `python3 -B -m unittest discover -s tools/ci -v` と `python3 -B -m unittest discover -s tools/dev -v`。
 
 速度は起動・詳細応答・移動時のフレーム間隔を分けて評価する。`CHROME` で Chrome の実行ファイルを指定できる。fixture の無地背景の速度は実地図の評価に使わず、PC の模擬計測だけでスマホ性能の合格とはしない。今回の実施範囲と残課題は [技術検証8](../docs/verification/08-mapcn.md) に記録する。
 

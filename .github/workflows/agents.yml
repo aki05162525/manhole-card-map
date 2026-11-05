@@ -2,6 +2,7 @@ name: Agent skills
 
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -18,23 +19,33 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Select affected suites
+        id: scope
+        run: python3 -B tools/ci/changes.py
       - name: Use an isolated APM cache
+        if: steps.scope.outputs.agents == 'true'
         run: echo "APM_CACHE_DIR=$RUNNER_TEMP/apm-cache" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v5
+        if: steps.scope.outputs.agents == 'true'
         with:
           python-version: '3.12'
       - name: Install pinned Agent Package Manager
+        if: steps.scope.outputs.agents == 'true'
         run: python -m pip install apm-cli==0.35.0
       - name: Restore locked skills
+        if: steps.scope.outputs.agents == 'true'
         run: |
           apm install --frozen
           test -f .agents/skills/mapcn/SKILL.md
       - name: Check skill integrity and replay
+        if: steps.scope.outputs.agents == 'true'
         run: apm audit --ci
       - name: Verify repeated install is stable
+        if: steps.scope.outputs.agents == 'true'
         run: |
           apm install --frozen
           apm audit --ci
       - name: Require unchanged manifest and lockfile
+        if: steps.scope.outputs.agents == 'true'
         run: |
           git diff --exit-code -- apm.yml apm.lock.yaml .gitignore
