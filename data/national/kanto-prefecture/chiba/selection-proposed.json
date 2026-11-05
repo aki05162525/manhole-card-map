@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "status": "NOT APPROVED; NOT APPLIED",
+  "locations": {
+    "path": "data/national/kanto-prefecture/chiba/locations-proposed.json",
+    "approved": []
+  },
+  "locationLifecycle": [],
+  "candidateOnly": [
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "sha256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d",
+      "bindingSHA256": "5c25feda157f7b2c915ac1f3cec52dbbc1c511d1f7d402b6849892db54916a47",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "85a019de8b724bae24f3b7a2d2ba1627e2ea3fc8c6b95d2d7d11ed3cdda4f0d1",
+      "requires": [
+        "independent building review",
+        "product-specific CRS applicability resolution",
+        "parent approval"
+      ]
+    }
+  ],
+  "relationPatches": [],
+  "afterIndependentApprovalOnly": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/chiba/locations-proposed.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+            "sha256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/chiba/location-lifecycle-proposed.json",
+        "sha256": "71fd96d967fd6795fb092cd7ec39f843e97694684d3e47c0a188775edf71104c"
+      }
+    ]
+  }
+}
