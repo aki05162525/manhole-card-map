@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "status": "NOT APPROVED; NOT APPLIED",
+  "locations": {
+    "path": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+    "approved": []
+  },
+  "locationLifecycle": [],
+  "candidateOnly": [
+    {
+      "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+      "sha256": "41f8f19042717c745d83acaf6520f5abc79686410eb5cd1cebb2399e8db3becf",
+      "bindingSHA256": "48b46ecaa498ab2d2e9330aca91227555a44891c0ca280881a58fdf64a2b66e7",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "2082467033dd8342b9059c9d71674fcfc8d6245fa4495bc7987001979299ec99",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+      "sha256": "d17f30d418bbfb56b7254e91feeeff6d10b443dc9a4ee6e1fdd4c215f1a686ad",
+      "bindingSHA256": "bf626c255a7a09dc8608c3008e17e890e20cb03957741cc87ccfd10fc9e8bb43",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "14f09a0fcb69cac0ec8e5ade8463bbeba87385567c76bee11687c6d6d0fa8011",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-46630cd19483230497e8",
+      "sha256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b",
+      "bindingSHA256": "1ff0d16516d100f0ba933ed163c7e59919305f9de514f318e0abacd4883b307e",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "12ea11509d2d87c74c941f178f0639c9e5b5ade2108a6f786a6bccca66a77b7a",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+      "sha256": "1001def466970dc73c03c4090974b71c7b3537b84f97ff59a1355fb839031701",
+      "bindingSHA256": "ccf8bab3fa17ad60a03fd66572da93df58f3b0ccfcb5f760d41d981ac1fbc870",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "1f42f745a7c2f9aab1cf983a0fba386fb103c13b108af91349fe4616e08e5362",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+      "sha256": "a83ac6892dd10451a2b5a523e2c5522927b1ad61e7528e7a3d6df436cdf40df2",
+      "bindingSHA256": "c8675a16342218873f4a12153de57cbee18a74ac73b3d09d93f6b4aeefeb3656",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "b113327510a14aafa6a9defffd9cec9575885e53891b018a6f0ed94990d6185c",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+      "sha256": "7435a04df1e5a6fd17fbe272ce4df94f4fd8bc3be9103dbdd9ecb0dc43359e73",
+      "bindingSHA256": "1b29e0bfc5359b1b9dcb02c733e69fe09fb0064aeec544cf714946e98970f085",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "8155126b15b0ac800fea56201bd548a662b80b935db3116281fc4146d3a5528d",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+      "sha256": "b6620c3ba26268a9514e36dbbc3721d2c91e75ab48285ad822f823c647b1a5f0",
+      "bindingSHA256": "ffb3ca6499663f90d0df366073c2199e90bd929915b9444076b874bf93ec4459",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "fb642cd2d847a1745129a2d5248ea72ceea2c8bce5cb2b87f1429811e045a62e",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+      "sha256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d",
+      "bindingSHA256": "93269097d8be5f077249263a0dd9614b9d0a4557ca2057627cda8b2aec6768ef",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "85a019de8b724bae24f3b7a2d2ba1627e2ea3fc8c6b95d2d7d11ed3cdda4f0d1",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+      "sha256": "1b48b524014812ef9789f0cd3e30d7d82f0886a93b0f8e8fa3522648ebe64a4e",
+      "bindingSHA256": "7d9958f7157bb2fbdd555d0c9e8de0cddc3dbc1f9b3b79268c7df9dbe1190e7d",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "45efaf0d1da6f4e533891857c55b99c2b07298e0864364a739130cbfc3f41757",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+      "sha256": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58",
+      "bindingSHA256": "5c86a346df9b4d77e5d4f08a7b589abac9b06fec0bd698d18c01abcb3048f067",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "b1e45764ab1324de14bf4d28514cb389d35ab049f0f024142cea00354480843c",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-01",
+      "sha256": "d29845041c32c066f3662db49e492b5a33e56b09a3d1d1e5ecff9c7ccbb96448",
+      "bindingSHA256": "722b929622366de8834cfda8db6f5bbc7bbded77dcaea595a6f28cbd1d4b0236",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "b39f0087cf25c9861cf368056b2a36b1fdd85dd3c794848c7fd64937cc3ee8e1",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-02",
+      "sha256": "b7575d4abfd52f1183de5125e411cc0b3aa85cfdf05bf5138f418658fc33d9a3",
+      "bindingSHA256": "140168613b3613b4ec8d6b35c6d3f5000b43836b77ca7c5adec5ea061d29d4ae",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "36fb3641adbe166ba0ba891080f43340d9b6ea96eb77929cdd923b5b8f147551",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    },
+    {
+      "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+      "sha256": "b3373bd6fe1d4ec4c23beaff8878422e4e2ed11d8e0cb42e0bbf8ae71c54c675",
+      "bindingSHA256": "b144296499d4314094641cd919280057abcab911914a3b9700723e6e8ca41225",
+      "expectedOldCoordinate": null,
+      "expectedOldPlaceSHA256": "24b6876c9f1cbbb8c809fd312bcc1c778c351339f641c7e2354c83e41ad012f9",
+      "requires": [
+        "independent per-building review (Narashino parent reports completed)",
+        "product-specific CRS applicability",
+        "parent selection approval"
+      ]
+    }
+  ],
+  "relationPatches": [],
+  "afterIndependentApprovalOnly": {
+    "locations": [
+      {
+        "path": "data/national/kanto-prefecture/chiba/batch2/locations-proposed.json",
+        "approved": [
+          {
+            "facilityId": "facility:kanto-south-34abbed67b76aca3d2d2",
+            "sha256": "41f8f19042717c745d83acaf6520f5abc79686410eb5cd1cebb2399e8db3becf"
+          },
+          {
+            "facilityId": "facility:kanto-south-38d7a5c180ebcf42c381",
+            "sha256": "d17f30d418bbfb56b7254e91feeeff6d10b443dc9a4ee6e1fdd4c215f1a686ad"
+          },
+          {
+            "facilityId": "facility:kanto-south-46630cd19483230497e8",
+            "sha256": "90c56e2b9643e1aaced458fb8525f3393fc99a5778ada646d019fee2b058113b"
+          },
+          {
+            "facilityId": "facility:kanto-south-5724e90e3e451f22eeef",
+            "sha256": "1001def466970dc73c03c4090974b71c7b3537b84f97ff59a1355fb839031701"
+          },
+          {
+            "facilityId": "facility:kanto-south-668322fd5a7c4bbcbf55",
+            "sha256": "a83ac6892dd10451a2b5a523e2c5522927b1ad61e7528e7a3d6df436cdf40df2"
+          },
+          {
+            "facilityId": "facility:kanto-south-7a134ba2f20e70f69407",
+            "sha256": "7435a04df1e5a6fd17fbe272ce4df94f4fd8bc3be9103dbdd9ecb0dc43359e73"
+          },
+          {
+            "facilityId": "facility:kanto-south-7e3c5c2330870eee7f79",
+            "sha256": "b6620c3ba26268a9514e36dbbc3721d2c91e75ab48285ad822f823c647b1a5f0"
+          },
+          {
+            "facilityId": "facility:kanto-south-b3c83a3795c4697c100b",
+            "sha256": "a55cb10272f8815162d33dd55d08b15162e69859afd851e3f2bd2f3fa36e122d"
+          },
+          {
+            "facilityId": "facility:kanto-south-caac2827c5303ba03047",
+            "sha256": "1b48b524014812ef9789f0cd3e30d7d82f0886a93b0f8e8fa3522648ebe64a4e"
+          },
+          {
+            "facilityId": "facility:kanto-south-cb5698330ef87617cf42",
+            "sha256": "86dfad7683e02950d231c7a5a5eddd3fdc5f2fb25db0c655dcff51c29cb48b58"
+          },
+          {
+            "facilityId": "facility:kanto-south-integration-01",
+            "sha256": "d29845041c32c066f3662db49e492b5a33e56b09a3d1d1e5ecff9c7ccbb96448"
+          },
+          {
+            "facilityId": "facility:kanto-south-integration-02",
+            "sha256": "b7575d4abfd52f1183de5125e411cc0b3aa85cfdf05bf5138f418658fc33d9a3"
+          },
+          {
+            "facilityId": "facility:kanto-south-integration-legacy-yachiyo-0",
+            "sha256": "b3373bd6fe1d4ec4c23beaff8878422e4e2ed11d8e0cb42e0bbf8ae71c54c675"
+          }
+        ]
+      }
+    ],
+    "locationLifecycle": [
+      {
+        "path": "data/national/kanto-prefecture/chiba/batch2/location-lifecycle-proposed.json",
+        "sha256": "1de11002db135f82498b31bd26010a5a6dc89370f7c0deb5432a55094f9e331e"
+      }
+    ]
+  }
+}
